@@ -44,17 +44,22 @@ Aws::String ${typeInfo.className}::SerializePayload() const
 #if($member.value.shape.flattened)
 #if($member.value.shape.listMember.locationName)
 #set($location = $member.value.shape.listMember.locationName)
+#if($metadata.protocol == "ec2")
+#set($location = $CppViewHelper.capitalizeFirstChar($location))
+#end
 #else
 #set($location = $member.key)
 #end
 #else
 #if($member.value.locationName)
 #set($location = $member.value.locationName)
-#else
-#set($location = $member.key + ".member")
-#end
 #if($metadata.protocol == "ec2")
 #set($location = $CppViewHelper.capitalizeFirstChar($location))
+#end
+#elseif($metadata.protocol == "ec2")
+#set($location = $member.key)
+#else
+#set($location = $member.key + ".member")
 #end
 #end
 #if($member.value.shape.listMember.shape.structure)
@@ -135,11 +140,11 @@ Aws::String ${typeInfo.className}::SerializePayload() const
 #else
 #if($member.value.locationName)
 #set($location = $member.value.locationName)
-#else
-#set($location = $member.key)
-#end
 #if($metadata.protocol == "ec2")
 #set($location = $CppViewHelper.capitalizeFirstChar($location))
+#end
+#else
+#set($location = $member.key)
 #end
 #if($member.value.shape.blob)
   ${spaces}ss << "${location}=" << HashingUtils::Base64Encode(${memberVarName}) << "&";
