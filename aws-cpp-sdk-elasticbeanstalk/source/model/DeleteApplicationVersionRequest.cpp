@@ -43,7 +43,7 @@ Aws::String DeleteApplicationVersionRequest::SerializePayload() const
 
   if(m_deleteSourceBundleHasBeenSet)
   {
-    ss << "DeleteSourceBundle=" << m_deleteSourceBundle << "&";
+    ss << "DeleteSourceBundle=" << std::boolalpha << m_deleteSourceBundle << "&";
   }
 
   ss << "Version=2010-12-01";

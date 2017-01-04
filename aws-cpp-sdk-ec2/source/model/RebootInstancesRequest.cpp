@@ -32,7 +32,7 @@ Aws::String RebootInstancesRequest::SerializePayload() const
   ss << "Action=RebootInstances&";
   if(m_dryRunHasBeenSet)
   {
-    ss << "DryRun=" << m_dryRun << "&";
+    ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
   if(m_instanceIdsHasBeenSet)

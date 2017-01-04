@@ -294,7 +294,7 @@ void RequestSpotLaunchSpecification::OutputToStream(Aws::OStream& oStream, const
 
   if(m_ebsOptimizedHasBeenSet)
   {
-      oStream << location << index << locationValue << ".EbsOptimized=" << m_ebsOptimized << "&";
+      oStream << location << index << locationValue << ".EbsOptimized=" << std::boolalpha << m_ebsOptimized << "&";
   }
 
   if(m_monitoringHasBeenSet)
@@ -330,7 +330,7 @@ void RequestSpotLaunchSpecification::OutputToStream(Aws::OStream& oStream, const
       unsigned securityGroupsIdx = 1;
       for(auto& item : m_securityGroups)
       {
-        oStream << location << ".item." << securityGroupsIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
+        oStream << location << ".Item." << securityGroupsIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
   }
   if(m_userDataHasBeenSet)
@@ -365,7 +365,7 @@ void RequestSpotLaunchSpecification::OutputToStream(Aws::OStream& oStream, const
       for(auto& item : m_blockDeviceMappings)
       {
         Aws::StringStream blockDeviceMappingsSs;
-        blockDeviceMappingsSs << location <<  ".item." << blockDeviceMappingsIdx++;
+        blockDeviceMappingsSs << location <<  ".Item." << blockDeviceMappingsIdx++;
         item.OutputToStream(oStream, blockDeviceMappingsSs.str().c_str());
       }
   }
@@ -379,7 +379,7 @@ void RequestSpotLaunchSpecification::OutputToStream(Aws::OStream& oStream, const
       for(auto& item : m_networkInterfaces)
       {
         Aws::StringStream networkInterfacesSs;
-        networkInterfacesSs << location <<  ".item." << networkInterfacesIdx++;
+        networkInterfacesSs << location <<  ".Item." << networkInterfacesIdx++;
         item.OutputToStream(oStream, networkInterfacesSs.str().c_str());
       }
   }
@@ -391,7 +391,7 @@ void RequestSpotLaunchSpecification::OutputToStream(Aws::OStream& oStream, const
   }
   if(m_ebsOptimizedHasBeenSet)
   {
-      oStream << location << ".EbsOptimized=" << m_ebsOptimized << "&";
+      oStream << location << ".EbsOptimized=" << std::boolalpha << m_ebsOptimized << "&";
   }
   if(m_monitoringHasBeenSet)
   {
@@ -404,7 +404,7 @@ void RequestSpotLaunchSpecification::OutputToStream(Aws::OStream& oStream, const
       unsigned securityGroupIdsIdx = 1;
       for(auto& item : m_securityGroupIds)
       {
-        oStream << location << ".item." << securityGroupIdsIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
+        oStream << location << ".Item." << securityGroupIdsIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
   }
 }

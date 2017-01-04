@@ -42,7 +42,7 @@ Aws::String RevokeSecurityGroupIngressRequest::SerializePayload() const
   ss << "Action=RevokeSecurityGroupIngress&";
   if(m_dryRunHasBeenSet)
   {
-    ss << "DryRun=" << m_dryRun << "&";
+    ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
   if(m_groupNameHasBeenSet)
@@ -90,7 +90,7 @@ Aws::String RevokeSecurityGroupIngressRequest::SerializePayload() const
     unsigned ipPermissionsCount = 1;
     for(auto& item : m_ipPermissions)
     {
-      item.OutputToStream(ss, "IpPermissions.member.", ipPermissionsCount, "");
+      item.OutputToStream(ss, "IpPermissions.", ipPermissionsCount, "");
       ipPermissionsCount++;
     }
   }

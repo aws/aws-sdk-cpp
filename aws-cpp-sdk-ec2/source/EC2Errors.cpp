@@ -35,6 +35,7 @@ static const int OPERATION_NOT_PERMITTED_HASH = HashingUtils::HashString("Operat
 static const int SECURITY_GROUP_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("SecurityGroupLimitExceeded");
 static const int ATTACHMENT_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("AttachmentLimitExceeded");
 static const int INVALID_STATE_HASH = HashingUtils::HashString("InvalidState");
+static const int DRY_RUN_OPERATION_HASH = HashingUtils::HashString("DryRunOperation");
 static const int RESERVED_INSTANCES_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("ReservedInstancesLimitExceeded");
 static const int INVALID_EXPORT_TASK_I_D__NOT_FOUND_HASH = HashingUtils::HashString("InvalidExportTaskID.NotFound");
 static const int INVALID_KEY_PAIR__FORMAT_HASH = HashingUtils::HashString("InvalidKeyPair.Format");
@@ -247,6 +248,11 @@ static bool GetErrorForNameHelper0(int hashCode, AWSError<CoreErrors>& error)
   else if (hashCode == INVALID_STATE_HASH)
   {
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::INVALID_STATE), false);
+    return true;
+  }
+  else if (hashCode == DRY_RUN_OPERATION_HASH)
+  {
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::DRY_RUN_OPERATION), false);
     return true;
   }
   else if (hashCode == RESERVED_INSTANCES_LIMIT_EXCEEDED_HASH)
@@ -814,17 +820,17 @@ static bool GetErrorForNameHelper0(int hashCode, AWSError<CoreErrors>& error)
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::INVALID_NETWORK_ACL_I_D__NOT_FOUND), false);
     return true;
   }
-  else if (hashCode == INVALID_VPN_CONNECTION_I_D__NOT_FOUND_HASH)
-  {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::INVALID_VPN_CONNECTION_I_D__NOT_FOUND), false);
-    return true;
-  }
   return false;
 }
 
 static bool GetErrorForNameHelper1(int hashCode, AWSError<CoreErrors>& error)
 {
-  if (hashCode == INVALID_NETWORK_INTERFACE_ATTACHMENT_I_D__MALFORMED_HASH)
+  if (hashCode == INVALID_VPN_CONNECTION_I_D__NOT_FOUND_HASH)
+  {
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::INVALID_VPN_CONNECTION_I_D__NOT_FOUND), false);
+    return true;
+  }
+  else if (hashCode == INVALID_NETWORK_INTERFACE_ATTACHMENT_I_D__MALFORMED_HASH)
   {
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::INVALID_NETWORK_INTERFACE_ATTACHMENT_I_D__MALFORMED), false);
     return true;

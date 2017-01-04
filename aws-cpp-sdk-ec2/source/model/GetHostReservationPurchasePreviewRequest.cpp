@@ -39,7 +39,7 @@ Aws::String GetHostReservationPurchasePreviewRequest::SerializePayload() const
     unsigned hostIdSetCount = 1;
     for(auto& item : m_hostIdSet)
     {
-      ss << "HostIdSet.member." << hostIdSetCount << "="
+      ss << "HostIdSet." << hostIdSetCount << "="
           << StringUtils::URLEncode(item.c_str()) << "&";
       hostIdSetCount++;
     }

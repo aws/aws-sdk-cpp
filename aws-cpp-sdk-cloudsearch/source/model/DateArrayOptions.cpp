@@ -109,17 +109,17 @@ void DateArrayOptions::OutputToStream(Aws::OStream& oStream, const char* locatio
 
   if(m_facetEnabledHasBeenSet)
   {
-      oStream << location << index << locationValue << ".FacetEnabled=" << m_facetEnabled << "&";
+      oStream << location << index << locationValue << ".FacetEnabled=" << std::boolalpha << m_facetEnabled << "&";
   }
 
   if(m_searchEnabledHasBeenSet)
   {
-      oStream << location << index << locationValue << ".SearchEnabled=" << m_searchEnabled << "&";
+      oStream << location << index << locationValue << ".SearchEnabled=" << std::boolalpha << m_searchEnabled << "&";
   }
 
   if(m_returnEnabledHasBeenSet)
   {
-      oStream << location << index << locationValue << ".ReturnEnabled=" << m_returnEnabled << "&";
+      oStream << location << index << locationValue << ".ReturnEnabled=" << std::boolalpha << m_returnEnabled << "&";
   }
 
 }
@@ -136,15 +136,15 @@ void DateArrayOptions::OutputToStream(Aws::OStream& oStream, const char* locatio
   }
   if(m_facetEnabledHasBeenSet)
   {
-      oStream << location << ".FacetEnabled=" << m_facetEnabled << "&";
+      oStream << location << ".FacetEnabled=" << std::boolalpha << m_facetEnabled << "&";
   }
   if(m_searchEnabledHasBeenSet)
   {
-      oStream << location << ".SearchEnabled=" << m_searchEnabled << "&";
+      oStream << location << ".SearchEnabled=" << std::boolalpha << m_searchEnabled << "&";
   }
   if(m_returnEnabledHasBeenSet)
   {
-      oStream << location << ".ReturnEnabled=" << m_returnEnabled << "&";
+      oStream << location << ".ReturnEnabled=" << std::boolalpha << m_returnEnabled << "&";
   }
 }
 

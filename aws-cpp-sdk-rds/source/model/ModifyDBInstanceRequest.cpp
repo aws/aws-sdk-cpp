@@ -115,7 +115,7 @@ Aws::String ModifyDBInstanceRequest::SerializePayload() const
 
   if(m_applyImmediatelyHasBeenSet)
   {
-    ss << "ApplyImmediately=" << m_applyImmediately << "&";
+    ss << "ApplyImmediately=" << std::boolalpha << m_applyImmediately << "&";
   }
 
   if(m_masterUserPasswordHasBeenSet)
@@ -145,7 +145,7 @@ Aws::String ModifyDBInstanceRequest::SerializePayload() const
 
   if(m_multiAZHasBeenSet)
   {
-    ss << "MultiAZ=" << m_multiAZ << "&";
+    ss << "MultiAZ=" << std::boolalpha << m_multiAZ << "&";
   }
 
   if(m_engineVersionHasBeenSet)
@@ -155,12 +155,12 @@ Aws::String ModifyDBInstanceRequest::SerializePayload() const
 
   if(m_allowMajorVersionUpgradeHasBeenSet)
   {
-    ss << "AllowMajorVersionUpgrade=" << m_allowMajorVersionUpgrade << "&";
+    ss << "AllowMajorVersionUpgrade=" << std::boolalpha << m_allowMajorVersionUpgrade << "&";
   }
 
   if(m_autoMinorVersionUpgradeHasBeenSet)
   {
-    ss << "AutoMinorVersionUpgrade=" << m_autoMinorVersionUpgrade << "&";
+    ss << "AutoMinorVersionUpgrade=" << std::boolalpha << m_autoMinorVersionUpgrade << "&";
   }
 
   if(m_licenseModelHasBeenSet)
@@ -210,7 +210,7 @@ Aws::String ModifyDBInstanceRequest::SerializePayload() const
 
   if(m_copyTagsToSnapshotHasBeenSet)
   {
-    ss << "CopyTagsToSnapshot=" << m_copyTagsToSnapshot << "&";
+    ss << "CopyTagsToSnapshot=" << std::boolalpha << m_copyTagsToSnapshot << "&";
   }
 
   if(m_monitoringIntervalHasBeenSet)
@@ -225,7 +225,7 @@ Aws::String ModifyDBInstanceRequest::SerializePayload() const
 
   if(m_publiclyAccessibleHasBeenSet)
   {
-    ss << "PubliclyAccessible=" << m_publiclyAccessible << "&";
+    ss << "PubliclyAccessible=" << std::boolalpha << m_publiclyAccessible << "&";
   }
 
   if(m_monitoringRoleArnHasBeenSet)

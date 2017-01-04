@@ -216,7 +216,7 @@ void IpPermission::OutputToStream(Aws::OStream& oStream, const char* location) c
       for(auto& item : m_userIdGroupPairs)
       {
         Aws::StringStream userIdGroupPairsSs;
-        userIdGroupPairsSs << location <<  ".item." << userIdGroupPairsIdx++;
+        userIdGroupPairsSs << location <<  ".Item." << userIdGroupPairsIdx++;
         item.OutputToStream(oStream, userIdGroupPairsSs.str().c_str());
       }
   }
@@ -226,7 +226,7 @@ void IpPermission::OutputToStream(Aws::OStream& oStream, const char* location) c
       for(auto& item : m_ipRanges)
       {
         Aws::StringStream ipRangesSs;
-        ipRangesSs << location <<  ".item." << ipRangesIdx++;
+        ipRangesSs << location <<  ".Item." << ipRangesIdx++;
         item.OutputToStream(oStream, ipRangesSs.str().c_str());
       }
   }
@@ -236,7 +236,7 @@ void IpPermission::OutputToStream(Aws::OStream& oStream, const char* location) c
       for(auto& item : m_ipv6Ranges)
       {
         Aws::StringStream ipv6RangesSs;
-        ipv6RangesSs << location <<  ".item." << ipv6RangesIdx++;
+        ipv6RangesSs << location <<  ".Item." << ipv6RangesIdx++;
         item.OutputToStream(oStream, ipv6RangesSs.str().c_str());
       }
   }
@@ -246,7 +246,7 @@ void IpPermission::OutputToStream(Aws::OStream& oStream, const char* location) c
       for(auto& item : m_prefixListIds)
       {
         Aws::StringStream prefixListIdsSs;
-        prefixListIdsSs << location <<  ".item." << prefixListIdsIdx++;
+        prefixListIdsSs << location <<  ".Item." << prefixListIdsIdx++;
         item.OutputToStream(oStream, prefixListIdsSs.str().c_str());
       }
   }

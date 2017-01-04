@@ -38,7 +38,7 @@ Aws::String DeleteReplicationGroupRequest::SerializePayload() const
 
   if(m_retainPrimaryClusterHasBeenSet)
   {
-    ss << "RetainPrimaryCluster=" << m_retainPrimaryCluster << "&";
+    ss << "RetainPrimaryCluster=" << std::boolalpha << m_retainPrimaryCluster << "&";
   }
 
   if(m_finalSnapshotIdentifierHasBeenSet)

@@ -32,7 +32,7 @@ Aws::String DeleteInternetGatewayRequest::SerializePayload() const
   ss << "Action=DeleteInternetGateway&";
   if(m_dryRunHasBeenSet)
   {
-    ss << "DryRun=" << m_dryRun << "&";
+    ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
   if(m_internetGatewayIdHasBeenSet)

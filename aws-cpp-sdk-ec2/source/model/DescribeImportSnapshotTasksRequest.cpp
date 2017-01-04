@@ -36,7 +36,7 @@ Aws::String DescribeImportSnapshotTasksRequest::SerializePayload() const
   ss << "Action=DescribeImportSnapshotTasks&";
   if(m_dryRunHasBeenSet)
   {
-    ss << "DryRun=" << m_dryRun << "&";
+    ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
   if(m_importTaskIdsHasBeenSet)
@@ -65,7 +65,7 @@ Aws::String DescribeImportSnapshotTasksRequest::SerializePayload() const
     unsigned filtersCount = 1;
     for(auto& item : m_filters)
     {
-      item.OutputToStream(ss, "Filters.member.", filtersCount, "");
+      item.OutputToStream(ss, "Filters.", filtersCount, "");
       filtersCount++;
     }
   }

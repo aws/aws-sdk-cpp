@@ -32,7 +32,7 @@ Aws::String RequestSpotFleetRequest::SerializePayload() const
   ss << "Action=RequestSpotFleet&";
   if(m_dryRunHasBeenSet)
   {
-    ss << "DryRun=" << m_dryRun << "&";
+    ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
   if(m_spotFleetRequestConfigHasBeenSet)

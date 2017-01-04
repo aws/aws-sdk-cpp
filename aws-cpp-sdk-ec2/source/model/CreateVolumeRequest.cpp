@@ -42,7 +42,7 @@ Aws::String CreateVolumeRequest::SerializePayload() const
   ss << "Action=CreateVolume&";
   if(m_dryRunHasBeenSet)
   {
-    ss << "DryRun=" << m_dryRun << "&";
+    ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
   if(m_sizeHasBeenSet)
@@ -72,7 +72,7 @@ Aws::String CreateVolumeRequest::SerializePayload() const
 
   if(m_encryptedHasBeenSet)
   {
-    ss << "Encrypted=" << m_encrypted << "&";
+    ss << "Encrypted=" << std::boolalpha << m_encrypted << "&";
   }
 
   if(m_kmsKeyIdHasBeenSet)

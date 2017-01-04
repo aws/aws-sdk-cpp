@@ -119,7 +119,7 @@ void OptionStatus::OutputToStream(Aws::OStream& oStream, const char* location, u
 
   if(m_pendingDeletionHasBeenSet)
   {
-      oStream << location << index << locationValue << ".PendingDeletion=" << m_pendingDeletion << "&";
+      oStream << location << index << locationValue << ".PendingDeletion=" << std::boolalpha << m_pendingDeletion << "&";
   }
 
 }
@@ -144,7 +144,7 @@ void OptionStatus::OutputToStream(Aws::OStream& oStream, const char* location) c
   }
   if(m_pendingDeletionHasBeenSet)
   {
-      oStream << location << ".PendingDeletion=" << m_pendingDeletion << "&";
+      oStream << location << ".PendingDeletion=" << std::boolalpha << m_pendingDeletion << "&";
   }
 }
 

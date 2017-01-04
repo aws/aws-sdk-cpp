@@ -111,7 +111,7 @@ void CreateVolumePermissionModifications::OutputToStream(Aws::OStream& oStream, 
       for(auto& item : m_add)
       {
         Aws::StringStream addSs;
-        addSs << location <<  ".item." << addIdx++;
+        addSs << location <<  ".Item." << addIdx++;
         item.OutputToStream(oStream, addSs.str().c_str());
       }
   }
@@ -121,7 +121,7 @@ void CreateVolumePermissionModifications::OutputToStream(Aws::OStream& oStream, 
       for(auto& item : m_remove)
       {
         Aws::StringStream removeSs;
-        removeSs << location <<  ".item." << removeIdx++;
+        removeSs << location <<  ".Item." << removeIdx++;
         item.OutputToStream(oStream, removeSs.str().c_str());
       }
   }

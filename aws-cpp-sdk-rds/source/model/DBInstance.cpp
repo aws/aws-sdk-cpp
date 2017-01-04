@@ -612,7 +612,7 @@ void DBInstance::OutputToStream(Aws::OStream& oStream, const char* location, uns
 
   if(m_multiAZHasBeenSet)
   {
-      oStream << location << index << locationValue << ".MultiAZ=" << m_multiAZ << "&";
+      oStream << location << index << locationValue << ".MultiAZ=" << std::boolalpha << m_multiAZ << "&";
   }
 
   if(m_engineVersionHasBeenSet)
@@ -622,7 +622,7 @@ void DBInstance::OutputToStream(Aws::OStream& oStream, const char* location, uns
 
   if(m_autoMinorVersionUpgradeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".AutoMinorVersionUpgrade=" << m_autoMinorVersionUpgrade << "&";
+      oStream << location << index << locationValue << ".AutoMinorVersionUpgrade=" << std::boolalpha << m_autoMinorVersionUpgrade << "&";
   }
 
   if(m_readReplicaSourceDBInstanceIdentifierHasBeenSet)
@@ -672,7 +672,7 @@ void DBInstance::OutputToStream(Aws::OStream& oStream, const char* location, uns
 
   if(m_publiclyAccessibleHasBeenSet)
   {
-      oStream << location << index << locationValue << ".PubliclyAccessible=" << m_publiclyAccessible << "&";
+      oStream << location << index << locationValue << ".PubliclyAccessible=" << std::boolalpha << m_publiclyAccessible << "&";
   }
 
   if(m_statusInfosHasBeenSet)
@@ -708,7 +708,7 @@ void DBInstance::OutputToStream(Aws::OStream& oStream, const char* location, uns
 
   if(m_storageEncryptedHasBeenSet)
   {
-      oStream << location << index << locationValue << ".StorageEncrypted=" << m_storageEncrypted << "&";
+      oStream << location << index << locationValue << ".StorageEncrypted=" << std::boolalpha << m_storageEncrypted << "&";
   }
 
   if(m_kmsKeyIdHasBeenSet)
@@ -739,7 +739,7 @@ void DBInstance::OutputToStream(Aws::OStream& oStream, const char* location, uns
 
   if(m_copyTagsToSnapshotHasBeenSet)
   {
-      oStream << location << index << locationValue << ".CopyTagsToSnapshot=" << m_copyTagsToSnapshot << "&";
+      oStream << location << index << locationValue << ".CopyTagsToSnapshot=" << std::boolalpha << m_copyTagsToSnapshot << "&";
   }
 
   if(m_monitoringIntervalHasBeenSet)
@@ -878,7 +878,7 @@ void DBInstance::OutputToStream(Aws::OStream& oStream, const char* location) con
   }
   if(m_multiAZHasBeenSet)
   {
-      oStream << location << ".MultiAZ=" << m_multiAZ << "&";
+      oStream << location << ".MultiAZ=" << std::boolalpha << m_multiAZ << "&";
   }
   if(m_engineVersionHasBeenSet)
   {
@@ -886,7 +886,7 @@ void DBInstance::OutputToStream(Aws::OStream& oStream, const char* location) con
   }
   if(m_autoMinorVersionUpgradeHasBeenSet)
   {
-      oStream << location << ".AutoMinorVersionUpgrade=" << m_autoMinorVersionUpgrade << "&";
+      oStream << location << ".AutoMinorVersionUpgrade=" << std::boolalpha << m_autoMinorVersionUpgrade << "&";
   }
   if(m_readReplicaSourceDBInstanceIdentifierHasBeenSet)
   {
@@ -928,7 +928,7 @@ void DBInstance::OutputToStream(Aws::OStream& oStream, const char* location) con
   }
   if(m_publiclyAccessibleHasBeenSet)
   {
-      oStream << location << ".PubliclyAccessible=" << m_publiclyAccessible << "&";
+      oStream << location << ".PubliclyAccessible=" << std::boolalpha << m_publiclyAccessible << "&";
   }
   if(m_statusInfosHasBeenSet)
   {
@@ -958,7 +958,7 @@ void DBInstance::OutputToStream(Aws::OStream& oStream, const char* location) con
   }
   if(m_storageEncryptedHasBeenSet)
   {
-      oStream << location << ".StorageEncrypted=" << m_storageEncrypted << "&";
+      oStream << location << ".StorageEncrypted=" << std::boolalpha << m_storageEncrypted << "&";
   }
   if(m_kmsKeyIdHasBeenSet)
   {
@@ -984,7 +984,7 @@ void DBInstance::OutputToStream(Aws::OStream& oStream, const char* location) con
   }
   if(m_copyTagsToSnapshotHasBeenSet)
   {
-      oStream << location << ".CopyTagsToSnapshot=" << m_copyTagsToSnapshot << "&";
+      oStream << location << ".CopyTagsToSnapshot=" << std::boolalpha << m_copyTagsToSnapshot << "&";
   }
   if(m_monitoringIntervalHasBeenSet)
   {

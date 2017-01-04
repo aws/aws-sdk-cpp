@@ -36,7 +36,7 @@ Aws::String DescribeMovingAddressesRequest::SerializePayload() const
   ss << "Action=DescribeMovingAddresses&";
   if(m_dryRunHasBeenSet)
   {
-    ss << "DryRun=" << m_dryRun << "&";
+    ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
   if(m_publicIpsHasBeenSet)

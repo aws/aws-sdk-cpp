@@ -45,12 +45,12 @@ namespace Model
      * or one of the <a
      * href="http://docs.aws.amazon.com/IAM/latest/APIReference/API_AssumeRole.html">AssumeRole</a>
      * APIs to restrict what a user can do while using the temporary credentials.</p>
-     * <p>This parameter allows (per its <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
-     * consisting of any printable ASCII character ranging from the space character
-     * (\u0020) through end of the ASCII character range (\u00FF). It also includes the
-     * special characters tab (\u0009), line feed (\u000A), and carriage return
-     * (\u000D).</p>
+     * <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to
+     * validate this parameter is a string of characters consisting of any printable
+     * ASCII character ranging from the space character (\u0020) through end of the
+     * ASCII character range as well as the printable characters in the Basic Latin and
+     * Latin-1 Supplement character set (through \u00FF). It also includes the special
+     * characters tab (\u0009), line feed (\u000A), and carriage return (\u000D).</p>
      */
     inline const Aws::Vector<Aws::String>& GetPolicyInputList() const{ return m_policyInputList; }
 
@@ -65,12 +65,12 @@ namespace Model
      * or one of the <a
      * href="http://docs.aws.amazon.com/IAM/latest/APIReference/API_AssumeRole.html">AssumeRole</a>
      * APIs to restrict what a user can do while using the temporary credentials.</p>
-     * <p>This parameter allows (per its <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
-     * consisting of any printable ASCII character ranging from the space character
-     * (\u0020) through end of the ASCII character range (\u00FF). It also includes the
-     * special characters tab (\u0009), line feed (\u000A), and carriage return
-     * (\u000D).</p>
+     * <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to
+     * validate this parameter is a string of characters consisting of any printable
+     * ASCII character ranging from the space character (\u0020) through end of the
+     * ASCII character range as well as the printable characters in the Basic Latin and
+     * Latin-1 Supplement character set (through \u00FF). It also includes the special
+     * characters tab (\u0009), line feed (\u000A), and carriage return (\u000D).</p>
      */
     inline void SetPolicyInputList(const Aws::Vector<Aws::String>& value) { m_policyInputListHasBeenSet = true; m_policyInputList = value; }
 
@@ -85,12 +85,12 @@ namespace Model
      * or one of the <a
      * href="http://docs.aws.amazon.com/IAM/latest/APIReference/API_AssumeRole.html">AssumeRole</a>
      * APIs to restrict what a user can do while using the temporary credentials.</p>
-     * <p>This parameter allows (per its <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
-     * consisting of any printable ASCII character ranging from the space character
-     * (\u0020) through end of the ASCII character range (\u00FF). It also includes the
-     * special characters tab (\u0009), line feed (\u000A), and carriage return
-     * (\u000D).</p>
+     * <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to
+     * validate this parameter is a string of characters consisting of any printable
+     * ASCII character ranging from the space character (\u0020) through end of the
+     * ASCII character range as well as the printable characters in the Basic Latin and
+     * Latin-1 Supplement character set (through \u00FF). It also includes the special
+     * characters tab (\u0009), line feed (\u000A), and carriage return (\u000D).</p>
      */
     inline void SetPolicyInputList(Aws::Vector<Aws::String>&& value) { m_policyInputListHasBeenSet = true; m_policyInputList = value; }
 
@@ -105,12 +105,12 @@ namespace Model
      * or one of the <a
      * href="http://docs.aws.amazon.com/IAM/latest/APIReference/API_AssumeRole.html">AssumeRole</a>
      * APIs to restrict what a user can do while using the temporary credentials.</p>
-     * <p>This parameter allows (per its <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
-     * consisting of any printable ASCII character ranging from the space character
-     * (\u0020) through end of the ASCII character range (\u00FF). It also includes the
-     * special characters tab (\u0009), line feed (\u000A), and carriage return
-     * (\u000D).</p>
+     * <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to
+     * validate this parameter is a string of characters consisting of any printable
+     * ASCII character ranging from the space character (\u0020) through end of the
+     * ASCII character range as well as the printable characters in the Basic Latin and
+     * Latin-1 Supplement character set (through \u00FF). It also includes the special
+     * characters tab (\u0009), line feed (\u000A), and carriage return (\u000D).</p>
      */
     inline SimulateCustomPolicyRequest& WithPolicyInputList(const Aws::Vector<Aws::String>& value) { SetPolicyInputList(value); return *this;}
 
@@ -125,12 +125,12 @@ namespace Model
      * or one of the <a
      * href="http://docs.aws.amazon.com/IAM/latest/APIReference/API_AssumeRole.html">AssumeRole</a>
      * APIs to restrict what a user can do while using the temporary credentials.</p>
-     * <p>This parameter allows (per its <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
-     * consisting of any printable ASCII character ranging from the space character
-     * (\u0020) through end of the ASCII character range (\u00FF). It also includes the
-     * special characters tab (\u0009), line feed (\u000A), and carriage return
-     * (\u000D).</p>
+     * <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to
+     * validate this parameter is a string of characters consisting of any printable
+     * ASCII character ranging from the space character (\u0020) through end of the
+     * ASCII character range as well as the printable characters in the Basic Latin and
+     * Latin-1 Supplement character set (through \u00FF). It also includes the special
+     * characters tab (\u0009), line feed (\u000A), and carriage return (\u000D).</p>
      */
     inline SimulateCustomPolicyRequest& WithPolicyInputList(Aws::Vector<Aws::String>&& value) { SetPolicyInputList(value); return *this;}
 
@@ -145,12 +145,12 @@ namespace Model
      * or one of the <a
      * href="http://docs.aws.amazon.com/IAM/latest/APIReference/API_AssumeRole.html">AssumeRole</a>
      * APIs to restrict what a user can do while using the temporary credentials.</p>
-     * <p>This parameter allows (per its <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
-     * consisting of any printable ASCII character ranging from the space character
-     * (\u0020) through end of the ASCII character range (\u00FF). It also includes the
-     * special characters tab (\u0009), line feed (\u000A), and carriage return
-     * (\u000D).</p>
+     * <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to
+     * validate this parameter is a string of characters consisting of any printable
+     * ASCII character ranging from the space character (\u0020) through end of the
+     * ASCII character range as well as the printable characters in the Basic Latin and
+     * Latin-1 Supplement character set (through \u00FF). It also includes the special
+     * characters tab (\u0009), line feed (\u000A), and carriage return (\u000D).</p>
      */
     inline SimulateCustomPolicyRequest& AddPolicyInputList(const Aws::String& value) { m_policyInputListHasBeenSet = true; m_policyInputList.push_back(value); return *this; }
 
@@ -165,12 +165,12 @@ namespace Model
      * or one of the <a
      * href="http://docs.aws.amazon.com/IAM/latest/APIReference/API_AssumeRole.html">AssumeRole</a>
      * APIs to restrict what a user can do while using the temporary credentials.</p>
-     * <p>This parameter allows (per its <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
-     * consisting of any printable ASCII character ranging from the space character
-     * (\u0020) through end of the ASCII character range (\u00FF). It also includes the
-     * special characters tab (\u0009), line feed (\u000A), and carriage return
-     * (\u000D).</p>
+     * <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to
+     * validate this parameter is a string of characters consisting of any printable
+     * ASCII character ranging from the space character (\u0020) through end of the
+     * ASCII character range as well as the printable characters in the Basic Latin and
+     * Latin-1 Supplement character set (through \u00FF). It also includes the special
+     * characters tab (\u0009), line feed (\u000A), and carriage return (\u000D).</p>
      */
     inline SimulateCustomPolicyRequest& AddPolicyInputList(Aws::String&& value) { m_policyInputListHasBeenSet = true; m_policyInputList.push_back(value); return *this; }
 
@@ -185,12 +185,12 @@ namespace Model
      * or one of the <a
      * href="http://docs.aws.amazon.com/IAM/latest/APIReference/API_AssumeRole.html">AssumeRole</a>
      * APIs to restrict what a user can do while using the temporary credentials.</p>
-     * <p>This parameter allows (per its <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
-     * consisting of any printable ASCII character ranging from the space character
-     * (\u0020) through end of the ASCII character range (\u00FF). It also includes the
-     * special characters tab (\u0009), line feed (\u000A), and carriage return
-     * (\u000D).</p>
+     * <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to
+     * validate this parameter is a string of characters consisting of any printable
+     * ASCII character ranging from the space character (\u0020) through end of the
+     * ASCII character range as well as the printable characters in the Basic Latin and
+     * Latin-1 Supplement character set (through \u00FF). It also includes the special
+     * characters tab (\u0009), line feed (\u000A), and carriage return (\u000D).</p>
      */
     inline SimulateCustomPolicyRequest& AddPolicyInputList(const char* value) { m_policyInputListHasBeenSet = true; m_policyInputList.push_back(value); return *this; }
 
@@ -397,84 +397,91 @@ namespace Model
     /**
      * <p>A resource-based policy to include in the simulation provided as a string.
      * Each resource in the simulation is treated as if it had this policy attached.
-     * You can include only one resource-based policy in a simulation.</p> <p>This
-     * parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex
-     * pattern</a>) a string of characters consisting of any printable ASCII character
+     * You can include only one resource-based policy in a simulation.</p> <p>The <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this
+     * parameter is a string of characters consisting of any printable ASCII character
      * ranging from the space character (\u0020) through end of the ASCII character
-     * range (\u00FF). It also includes the special characters tab (\u0009), line feed
-     * (\u000A), and carriage return (\u000D).</p>
+     * range as well as the printable characters in the Basic Latin and Latin-1
+     * Supplement character set (through \u00FF). It also includes the special
+     * characters tab (\u0009), line feed (\u000A), and carriage return (\u000D).</p>
      */
     inline const Aws::String& GetResourcePolicy() const{ return m_resourcePolicy; }
 
     /**
      * <p>A resource-based policy to include in the simulation provided as a string.
      * Each resource in the simulation is treated as if it had this policy attached.
-     * You can include only one resource-based policy in a simulation.</p> <p>This
-     * parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex
-     * pattern</a>) a string of characters consisting of any printable ASCII character
+     * You can include only one resource-based policy in a simulation.</p> <p>The <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this
+     * parameter is a string of characters consisting of any printable ASCII character
      * ranging from the space character (\u0020) through end of the ASCII character
-     * range (\u00FF). It also includes the special characters tab (\u0009), line feed
-     * (\u000A), and carriage return (\u000D).</p>
+     * range as well as the printable characters in the Basic Latin and Latin-1
+     * Supplement character set (through \u00FF). It also includes the special
+     * characters tab (\u0009), line feed (\u000A), and carriage return (\u000D).</p>
      */
     inline void SetResourcePolicy(const Aws::String& value) { m_resourcePolicyHasBeenSet = true; m_resourcePolicy = value; }
 
     /**
      * <p>A resource-based policy to include in the simulation provided as a string.
      * Each resource in the simulation is treated as if it had this policy attached.
-     * You can include only one resource-based policy in a simulation.</p> <p>This
-     * parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex
-     * pattern</a>) a string of characters consisting of any printable ASCII character
+     * You can include only one resource-based policy in a simulation.</p> <p>The <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this
+     * parameter is a string of characters consisting of any printable ASCII character
      * ranging from the space character (\u0020) through end of the ASCII character
-     * range (\u00FF). It also includes the special characters tab (\u0009), line feed
-     * (\u000A), and carriage return (\u000D).</p>
+     * range as well as the printable characters in the Basic Latin and Latin-1
+     * Supplement character set (through \u00FF). It also includes the special
+     * characters tab (\u0009), line feed (\u000A), and carriage return (\u000D).</p>
      */
     inline void SetResourcePolicy(Aws::String&& value) { m_resourcePolicyHasBeenSet = true; m_resourcePolicy = value; }
 
     /**
      * <p>A resource-based policy to include in the simulation provided as a string.
      * Each resource in the simulation is treated as if it had this policy attached.
-     * You can include only one resource-based policy in a simulation.</p> <p>This
-     * parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex
-     * pattern</a>) a string of characters consisting of any printable ASCII character
+     * You can include only one resource-based policy in a simulation.</p> <p>The <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this
+     * parameter is a string of characters consisting of any printable ASCII character
      * ranging from the space character (\u0020) through end of the ASCII character
-     * range (\u00FF). It also includes the special characters tab (\u0009), line feed
-     * (\u000A), and carriage return (\u000D).</p>
+     * range as well as the printable characters in the Basic Latin and Latin-1
+     * Supplement character set (through \u00FF). It also includes the special
+     * characters tab (\u0009), line feed (\u000A), and carriage return (\u000D).</p>
      */
     inline void SetResourcePolicy(const char* value) { m_resourcePolicyHasBeenSet = true; m_resourcePolicy.assign(value); }
 
     /**
      * <p>A resource-based policy to include in the simulation provided as a string.
      * Each resource in the simulation is treated as if it had this policy attached.
-     * You can include only one resource-based policy in a simulation.</p> <p>This
-     * parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex
-     * pattern</a>) a string of characters consisting of any printable ASCII character
+     * You can include only one resource-based policy in a simulation.</p> <p>The <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this
+     * parameter is a string of characters consisting of any printable ASCII character
      * ranging from the space character (\u0020) through end of the ASCII character
-     * range (\u00FF). It also includes the special characters tab (\u0009), line feed
-     * (\u000A), and carriage return (\u000D).</p>
+     * range as well as the printable characters in the Basic Latin and Latin-1
+     * Supplement character set (through \u00FF). It also includes the special
+     * characters tab (\u0009), line feed (\u000A), and carriage return (\u000D).</p>
      */
     inline SimulateCustomPolicyRequest& WithResourcePolicy(const Aws::String& value) { SetResourcePolicy(value); return *this;}
 
     /**
      * <p>A resource-based policy to include in the simulation provided as a string.
      * Each resource in the simulation is treated as if it had this policy attached.
-     * You can include only one resource-based policy in a simulation.</p> <p>This
-     * parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex
-     * pattern</a>) a string of characters consisting of any printable ASCII character
+     * You can include only one resource-based policy in a simulation.</p> <p>The <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this
+     * parameter is a string of characters consisting of any printable ASCII character
      * ranging from the space character (\u0020) through end of the ASCII character
-     * range (\u00FF). It also includes the special characters tab (\u0009), line feed
-     * (\u000A), and carriage return (\u000D).</p>
+     * range as well as the printable characters in the Basic Latin and Latin-1
+     * Supplement character set (through \u00FF). It also includes the special
+     * characters tab (\u0009), line feed (\u000A), and carriage return (\u000D).</p>
      */
     inline SimulateCustomPolicyRequest& WithResourcePolicy(Aws::String&& value) { SetResourcePolicy(value); return *this;}
 
     /**
      * <p>A resource-based policy to include in the simulation provided as a string.
      * Each resource in the simulation is treated as if it had this policy attached.
-     * You can include only one resource-based policy in a simulation.</p> <p>This
-     * parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex
-     * pattern</a>) a string of characters consisting of any printable ASCII character
+     * You can include only one resource-based policy in a simulation.</p> <p>The <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this
+     * parameter is a string of characters consisting of any printable ASCII character
      * ranging from the space character (\u0020) through end of the ASCII character
-     * range (\u00FF). It also includes the special characters tab (\u0009), line feed
-     * (\u000A), and carriage return (\u000D).</p>
+     * range as well as the printable characters in the Basic Latin and Latin-1
+     * Supplement character set (through \u00FF). It also includes the special
+     * characters tab (\u0009), line feed (\u000A), and carriage return (\u000D).</p>
      */
     inline SimulateCustomPolicyRequest& WithResourcePolicy(const char* value) { SetResourcePolicy(value); return *this;}
 

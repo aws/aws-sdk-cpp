@@ -37,7 +37,7 @@ Aws::String CreateImageRequest::SerializePayload() const
   ss << "Action=CreateImage&";
   if(m_dryRunHasBeenSet)
   {
-    ss << "DryRun=" << m_dryRun << "&";
+    ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
   if(m_instanceIdHasBeenSet)
@@ -57,7 +57,7 @@ Aws::String CreateImageRequest::SerializePayload() const
 
   if(m_noRebootHasBeenSet)
   {
-    ss << "NoReboot=" << m_noReboot << "&";
+    ss << "NoReboot=" << std::boolalpha << m_noReboot << "&";
   }
 
   if(m_blockDeviceMappingsHasBeenSet)

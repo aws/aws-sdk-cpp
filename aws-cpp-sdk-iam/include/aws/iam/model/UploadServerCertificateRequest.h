@@ -215,219 +215,240 @@ namespace Model
     inline UploadServerCertificateRequest& WithServerCertificateName(const char* value) { SetServerCertificateName(value); return *this;}
 
     /**
-     * <p>The contents of the public key certificate in PEM-encoded format.</p> <p>This
-     * parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex
-     * pattern</a>) a string of characters consisting of any printable ASCII character
-     * ranging from the space character (\u0020) through end of the ASCII character
-     * range (\u00FF). It also includes the special characters tab (\u0009), line feed
-     * (\u000A), and carriage return (\u000D).</p>
+     * <p>The contents of the public key certificate in PEM-encoded format.</p> <p>The
+     * <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate
+     * this parameter is a string of characters consisting of any printable ASCII
+     * character ranging from the space character (\u0020) through end of the ASCII
+     * character range as well as the printable characters in the Basic Latin and
+     * Latin-1 Supplement character set (through \u00FF). It also includes the special
+     * characters tab (\u0009), line feed (\u000A), and carriage return (\u000D).</p>
      */
     inline const Aws::String& GetCertificateBody() const{ return m_certificateBody; }
 
     /**
-     * <p>The contents of the public key certificate in PEM-encoded format.</p> <p>This
-     * parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex
-     * pattern</a>) a string of characters consisting of any printable ASCII character
-     * ranging from the space character (\u0020) through end of the ASCII character
-     * range (\u00FF). It also includes the special characters tab (\u0009), line feed
-     * (\u000A), and carriage return (\u000D).</p>
+     * <p>The contents of the public key certificate in PEM-encoded format.</p> <p>The
+     * <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate
+     * this parameter is a string of characters consisting of any printable ASCII
+     * character ranging from the space character (\u0020) through end of the ASCII
+     * character range as well as the printable characters in the Basic Latin and
+     * Latin-1 Supplement character set (through \u00FF). It also includes the special
+     * characters tab (\u0009), line feed (\u000A), and carriage return (\u000D).</p>
      */
     inline void SetCertificateBody(const Aws::String& value) { m_certificateBodyHasBeenSet = true; m_certificateBody = value; }
 
     /**
-     * <p>The contents of the public key certificate in PEM-encoded format.</p> <p>This
-     * parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex
-     * pattern</a>) a string of characters consisting of any printable ASCII character
-     * ranging from the space character (\u0020) through end of the ASCII character
-     * range (\u00FF). It also includes the special characters tab (\u0009), line feed
-     * (\u000A), and carriage return (\u000D).</p>
+     * <p>The contents of the public key certificate in PEM-encoded format.</p> <p>The
+     * <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate
+     * this parameter is a string of characters consisting of any printable ASCII
+     * character ranging from the space character (\u0020) through end of the ASCII
+     * character range as well as the printable characters in the Basic Latin and
+     * Latin-1 Supplement character set (through \u00FF). It also includes the special
+     * characters tab (\u0009), line feed (\u000A), and carriage return (\u000D).</p>
      */
     inline void SetCertificateBody(Aws::String&& value) { m_certificateBodyHasBeenSet = true; m_certificateBody = value; }
 
     /**
-     * <p>The contents of the public key certificate in PEM-encoded format.</p> <p>This
-     * parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex
-     * pattern</a>) a string of characters consisting of any printable ASCII character
-     * ranging from the space character (\u0020) through end of the ASCII character
-     * range (\u00FF). It also includes the special characters tab (\u0009), line feed
-     * (\u000A), and carriage return (\u000D).</p>
+     * <p>The contents of the public key certificate in PEM-encoded format.</p> <p>The
+     * <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate
+     * this parameter is a string of characters consisting of any printable ASCII
+     * character ranging from the space character (\u0020) through end of the ASCII
+     * character range as well as the printable characters in the Basic Latin and
+     * Latin-1 Supplement character set (through \u00FF). It also includes the special
+     * characters tab (\u0009), line feed (\u000A), and carriage return (\u000D).</p>
      */
     inline void SetCertificateBody(const char* value) { m_certificateBodyHasBeenSet = true; m_certificateBody.assign(value); }
 
     /**
-     * <p>The contents of the public key certificate in PEM-encoded format.</p> <p>This
-     * parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex
-     * pattern</a>) a string of characters consisting of any printable ASCII character
-     * ranging from the space character (\u0020) through end of the ASCII character
-     * range (\u00FF). It also includes the special characters tab (\u0009), line feed
-     * (\u000A), and carriage return (\u000D).</p>
+     * <p>The contents of the public key certificate in PEM-encoded format.</p> <p>The
+     * <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate
+     * this parameter is a string of characters consisting of any printable ASCII
+     * character ranging from the space character (\u0020) through end of the ASCII
+     * character range as well as the printable characters in the Basic Latin and
+     * Latin-1 Supplement character set (through \u00FF). It also includes the special
+     * characters tab (\u0009), line feed (\u000A), and carriage return (\u000D).</p>
      */
     inline UploadServerCertificateRequest& WithCertificateBody(const Aws::String& value) { SetCertificateBody(value); return *this;}
 
     /**
-     * <p>The contents of the public key certificate in PEM-encoded format.</p> <p>This
-     * parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex
-     * pattern</a>) a string of characters consisting of any printable ASCII character
-     * ranging from the space character (\u0020) through end of the ASCII character
-     * range (\u00FF). It also includes the special characters tab (\u0009), line feed
-     * (\u000A), and carriage return (\u000D).</p>
+     * <p>The contents of the public key certificate in PEM-encoded format.</p> <p>The
+     * <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate
+     * this parameter is a string of characters consisting of any printable ASCII
+     * character ranging from the space character (\u0020) through end of the ASCII
+     * character range as well as the printable characters in the Basic Latin and
+     * Latin-1 Supplement character set (through \u00FF). It also includes the special
+     * characters tab (\u0009), line feed (\u000A), and carriage return (\u000D).</p>
      */
     inline UploadServerCertificateRequest& WithCertificateBody(Aws::String&& value) { SetCertificateBody(value); return *this;}
 
     /**
-     * <p>The contents of the public key certificate in PEM-encoded format.</p> <p>This
-     * parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex
-     * pattern</a>) a string of characters consisting of any printable ASCII character
-     * ranging from the space character (\u0020) through end of the ASCII character
-     * range (\u00FF). It also includes the special characters tab (\u0009), line feed
-     * (\u000A), and carriage return (\u000D).</p>
+     * <p>The contents of the public key certificate in PEM-encoded format.</p> <p>The
+     * <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate
+     * this parameter is a string of characters consisting of any printable ASCII
+     * character ranging from the space character (\u0020) through end of the ASCII
+     * character range as well as the printable characters in the Basic Latin and
+     * Latin-1 Supplement character set (through \u00FF). It also includes the special
+     * characters tab (\u0009), line feed (\u000A), and carriage return (\u000D).</p>
      */
     inline UploadServerCertificateRequest& WithCertificateBody(const char* value) { SetCertificateBody(value); return *this;}
 
     /**
-     * <p>The contents of the private key in PEM-encoded format.</p> <p>This parameter
-     * allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
-     * string of characters consisting of any printable ASCII character ranging from
-     * the space character (\u0020) through end of the ASCII character range (\u00FF).
-     * It also includes the special characters tab (\u0009), line feed (\u000A), and
-     * carriage return (\u000D).</p>
+     * <p>The contents of the private key in PEM-encoded format.</p> <p>The <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this
+     * parameter is a string of characters consisting of any printable ASCII character
+     * ranging from the space character (\u0020) through end of the ASCII character
+     * range as well as the printable characters in the Basic Latin and Latin-1
+     * Supplement character set (through \u00FF). It also includes the special
+     * characters tab (\u0009), line feed (\u000A), and carriage return (\u000D).</p>
      */
     inline const Aws::String& GetPrivateKey() const{ return m_privateKey; }
 
     /**
-     * <p>The contents of the private key in PEM-encoded format.</p> <p>This parameter
-     * allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
-     * string of characters consisting of any printable ASCII character ranging from
-     * the space character (\u0020) through end of the ASCII character range (\u00FF).
-     * It also includes the special characters tab (\u0009), line feed (\u000A), and
-     * carriage return (\u000D).</p>
+     * <p>The contents of the private key in PEM-encoded format.</p> <p>The <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this
+     * parameter is a string of characters consisting of any printable ASCII character
+     * ranging from the space character (\u0020) through end of the ASCII character
+     * range as well as the printable characters in the Basic Latin and Latin-1
+     * Supplement character set (through \u00FF). It also includes the special
+     * characters tab (\u0009), line feed (\u000A), and carriage return (\u000D).</p>
      */
     inline void SetPrivateKey(const Aws::String& value) { m_privateKeyHasBeenSet = true; m_privateKey = value; }
 
     /**
-     * <p>The contents of the private key in PEM-encoded format.</p> <p>This parameter
-     * allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
-     * string of characters consisting of any printable ASCII character ranging from
-     * the space character (\u0020) through end of the ASCII character range (\u00FF).
-     * It also includes the special characters tab (\u0009), line feed (\u000A), and
-     * carriage return (\u000D).</p>
+     * <p>The contents of the private key in PEM-encoded format.</p> <p>The <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this
+     * parameter is a string of characters consisting of any printable ASCII character
+     * ranging from the space character (\u0020) through end of the ASCII character
+     * range as well as the printable characters in the Basic Latin and Latin-1
+     * Supplement character set (through \u00FF). It also includes the special
+     * characters tab (\u0009), line feed (\u000A), and carriage return (\u000D).</p>
      */
     inline void SetPrivateKey(Aws::String&& value) { m_privateKeyHasBeenSet = true; m_privateKey = value; }
 
     /**
-     * <p>The contents of the private key in PEM-encoded format.</p> <p>This parameter
-     * allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
-     * string of characters consisting of any printable ASCII character ranging from
-     * the space character (\u0020) through end of the ASCII character range (\u00FF).
-     * It also includes the special characters tab (\u0009), line feed (\u000A), and
-     * carriage return (\u000D).</p>
+     * <p>The contents of the private key in PEM-encoded format.</p> <p>The <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this
+     * parameter is a string of characters consisting of any printable ASCII character
+     * ranging from the space character (\u0020) through end of the ASCII character
+     * range as well as the printable characters in the Basic Latin and Latin-1
+     * Supplement character set (through \u00FF). It also includes the special
+     * characters tab (\u0009), line feed (\u000A), and carriage return (\u000D).</p>
      */
     inline void SetPrivateKey(const char* value) { m_privateKeyHasBeenSet = true; m_privateKey.assign(value); }
 
     /**
-     * <p>The contents of the private key in PEM-encoded format.</p> <p>This parameter
-     * allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
-     * string of characters consisting of any printable ASCII character ranging from
-     * the space character (\u0020) through end of the ASCII character range (\u00FF).
-     * It also includes the special characters tab (\u0009), line feed (\u000A), and
-     * carriage return (\u000D).</p>
+     * <p>The contents of the private key in PEM-encoded format.</p> <p>The <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this
+     * parameter is a string of characters consisting of any printable ASCII character
+     * ranging from the space character (\u0020) through end of the ASCII character
+     * range as well as the printable characters in the Basic Latin and Latin-1
+     * Supplement character set (through \u00FF). It also includes the special
+     * characters tab (\u0009), line feed (\u000A), and carriage return (\u000D).</p>
      */
     inline UploadServerCertificateRequest& WithPrivateKey(const Aws::String& value) { SetPrivateKey(value); return *this;}
 
     /**
-     * <p>The contents of the private key in PEM-encoded format.</p> <p>This parameter
-     * allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
-     * string of characters consisting of any printable ASCII character ranging from
-     * the space character (\u0020) through end of the ASCII character range (\u00FF).
-     * It also includes the special characters tab (\u0009), line feed (\u000A), and
-     * carriage return (\u000D).</p>
+     * <p>The contents of the private key in PEM-encoded format.</p> <p>The <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this
+     * parameter is a string of characters consisting of any printable ASCII character
+     * ranging from the space character (\u0020) through end of the ASCII character
+     * range as well as the printable characters in the Basic Latin and Latin-1
+     * Supplement character set (through \u00FF). It also includes the special
+     * characters tab (\u0009), line feed (\u000A), and carriage return (\u000D).</p>
      */
     inline UploadServerCertificateRequest& WithPrivateKey(Aws::String&& value) { SetPrivateKey(value); return *this;}
 
     /**
-     * <p>The contents of the private key in PEM-encoded format.</p> <p>This parameter
-     * allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
-     * string of characters consisting of any printable ASCII character ranging from
-     * the space character (\u0020) through end of the ASCII character range (\u00FF).
-     * It also includes the special characters tab (\u0009), line feed (\u000A), and
-     * carriage return (\u000D).</p>
+     * <p>The contents of the private key in PEM-encoded format.</p> <p>The <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this
+     * parameter is a string of characters consisting of any printable ASCII character
+     * ranging from the space character (\u0020) through end of the ASCII character
+     * range as well as the printable characters in the Basic Latin and Latin-1
+     * Supplement character set (through \u00FF). It also includes the special
+     * characters tab (\u0009), line feed (\u000A), and carriage return (\u000D).</p>
      */
     inline UploadServerCertificateRequest& WithPrivateKey(const char* value) { SetPrivateKey(value); return *this;}
 
     /**
      * <p>The contents of the certificate chain. This is typically a concatenation of
-     * the PEM-encoded public key certificates of the chain.</p> <p>This parameter
-     * allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
-     * string of characters consisting of any printable ASCII character ranging from
-     * the space character (\u0020) through end of the ASCII character range (\u00FF).
-     * It also includes the special characters tab (\u0009), line feed (\u000A), and
-     * carriage return (\u000D).</p>
+     * the PEM-encoded public key certificates of the chain.</p> <p>The <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this
+     * parameter is a string of characters consisting of any printable ASCII character
+     * ranging from the space character (\u0020) through end of the ASCII character
+     * range as well as the printable characters in the Basic Latin and Latin-1
+     * Supplement character set (through \u00FF). It also includes the special
+     * characters tab (\u0009), line feed (\u000A), and carriage return (\u000D).</p>
      */
     inline const Aws::String& GetCertificateChain() const{ return m_certificateChain; }
 
     /**
      * <p>The contents of the certificate chain. This is typically a concatenation of
-     * the PEM-encoded public key certificates of the chain.</p> <p>This parameter
-     * allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
-     * string of characters consisting of any printable ASCII character ranging from
-     * the space character (\u0020) through end of the ASCII character range (\u00FF).
-     * It also includes the special characters tab (\u0009), line feed (\u000A), and
-     * carriage return (\u000D).</p>
+     * the PEM-encoded public key certificates of the chain.</p> <p>The <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this
+     * parameter is a string of characters consisting of any printable ASCII character
+     * ranging from the space character (\u0020) through end of the ASCII character
+     * range as well as the printable characters in the Basic Latin and Latin-1
+     * Supplement character set (through \u00FF). It also includes the special
+     * characters tab (\u0009), line feed (\u000A), and carriage return (\u000D).</p>
      */
     inline void SetCertificateChain(const Aws::String& value) { m_certificateChainHasBeenSet = true; m_certificateChain = value; }
 
     /**
      * <p>The contents of the certificate chain. This is typically a concatenation of
-     * the PEM-encoded public key certificates of the chain.</p> <p>This parameter
-     * allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
-     * string of characters consisting of any printable ASCII character ranging from
-     * the space character (\u0020) through end of the ASCII character range (\u00FF).
-     * It also includes the special characters tab (\u0009), line feed (\u000A), and
-     * carriage return (\u000D).</p>
+     * the PEM-encoded public key certificates of the chain.</p> <p>The <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this
+     * parameter is a string of characters consisting of any printable ASCII character
+     * ranging from the space character (\u0020) through end of the ASCII character
+     * range as well as the printable characters in the Basic Latin and Latin-1
+     * Supplement character set (through \u00FF). It also includes the special
+     * characters tab (\u0009), line feed (\u000A), and carriage return (\u000D).</p>
      */
     inline void SetCertificateChain(Aws::String&& value) { m_certificateChainHasBeenSet = true; m_certificateChain = value; }
 
     /**
      * <p>The contents of the certificate chain. This is typically a concatenation of
-     * the PEM-encoded public key certificates of the chain.</p> <p>This parameter
-     * allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
-     * string of characters consisting of any printable ASCII character ranging from
-     * the space character (\u0020) through end of the ASCII character range (\u00FF).
-     * It also includes the special characters tab (\u0009), line feed (\u000A), and
-     * carriage return (\u000D).</p>
+     * the PEM-encoded public key certificates of the chain.</p> <p>The <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this
+     * parameter is a string of characters consisting of any printable ASCII character
+     * ranging from the space character (\u0020) through end of the ASCII character
+     * range as well as the printable characters in the Basic Latin and Latin-1
+     * Supplement character set (through \u00FF). It also includes the special
+     * characters tab (\u0009), line feed (\u000A), and carriage return (\u000D).</p>
      */
     inline void SetCertificateChain(const char* value) { m_certificateChainHasBeenSet = true; m_certificateChain.assign(value); }
 
     /**
      * <p>The contents of the certificate chain. This is typically a concatenation of
-     * the PEM-encoded public key certificates of the chain.</p> <p>This parameter
-     * allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
-     * string of characters consisting of any printable ASCII character ranging from
-     * the space character (\u0020) through end of the ASCII character range (\u00FF).
-     * It also includes the special characters tab (\u0009), line feed (\u000A), and
-     * carriage return (\u000D).</p>
+     * the PEM-encoded public key certificates of the chain.</p> <p>The <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this
+     * parameter is a string of characters consisting of any printable ASCII character
+     * ranging from the space character (\u0020) through end of the ASCII character
+     * range as well as the printable characters in the Basic Latin and Latin-1
+     * Supplement character set (through \u00FF). It also includes the special
+     * characters tab (\u0009), line feed (\u000A), and carriage return (\u000D).</p>
      */
     inline UploadServerCertificateRequest& WithCertificateChain(const Aws::String& value) { SetCertificateChain(value); return *this;}
 
     /**
      * <p>The contents of the certificate chain. This is typically a concatenation of
-     * the PEM-encoded public key certificates of the chain.</p> <p>This parameter
-     * allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
-     * string of characters consisting of any printable ASCII character ranging from
-     * the space character (\u0020) through end of the ASCII character range (\u00FF).
-     * It also includes the special characters tab (\u0009), line feed (\u000A), and
-     * carriage return (\u000D).</p>
+     * the PEM-encoded public key certificates of the chain.</p> <p>The <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this
+     * parameter is a string of characters consisting of any printable ASCII character
+     * ranging from the space character (\u0020) through end of the ASCII character
+     * range as well as the printable characters in the Basic Latin and Latin-1
+     * Supplement character set (through \u00FF). It also includes the special
+     * characters tab (\u0009), line feed (\u000A), and carriage return (\u000D).</p>
      */
     inline UploadServerCertificateRequest& WithCertificateChain(Aws::String&& value) { SetCertificateChain(value); return *this;}
 
     /**
      * <p>The contents of the certificate chain. This is typically a concatenation of
-     * the PEM-encoded public key certificates of the chain.</p> <p>This parameter
-     * allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
-     * string of characters consisting of any printable ASCII character ranging from
-     * the space character (\u0020) through end of the ASCII character range (\u00FF).
-     * It also includes the special characters tab (\u0009), line feed (\u000A), and
-     * carriage return (\u000D).</p>
+     * the PEM-encoded public key certificates of the chain.</p> <p>The <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this
+     * parameter is a string of characters consisting of any printable ASCII character
+     * ranging from the space character (\u0020) through end of the ASCII character
+     * range as well as the printable characters in the Basic Latin and Latin-1
+     * Supplement character set (through \u00FF). It also includes the special
+     * characters tab (\u0009), line feed (\u000A), and carriage return (\u000D).</p>
      */
     inline UploadServerCertificateRequest& WithCertificateChain(const char* value) { SetCertificateChain(value); return *this;}
 

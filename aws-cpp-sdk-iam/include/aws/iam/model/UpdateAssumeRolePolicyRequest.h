@@ -89,72 +89,79 @@ namespace Model
     inline UpdateAssumeRolePolicyRequest& WithRoleName(const char* value) { SetRoleName(value); return *this;}
 
     /**
-     * <p>The policy that grants an entity permission to assume the role.</p> <p>This
-     * parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex
-     * pattern</a>) a string of characters consisting of any printable ASCII character
+     * <p>The policy that grants an entity permission to assume the role.</p> <p>The <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this
+     * parameter is a string of characters consisting of any printable ASCII character
      * ranging from the space character (\u0020) through end of the ASCII character
-     * range (\u00FF). It also includes the special characters tab (\u0009), line feed
-     * (\u000A), and carriage return (\u000D).</p>
+     * range as well as the printable characters in the Basic Latin and Latin-1
+     * Supplement character set (through \u00FF). It also includes the special
+     * characters tab (\u0009), line feed (\u000A), and carriage return (\u000D).</p>
      */
     inline const Aws::String& GetPolicyDocument() const{ return m_policyDocument; }
 
     /**
-     * <p>The policy that grants an entity permission to assume the role.</p> <p>This
-     * parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex
-     * pattern</a>) a string of characters consisting of any printable ASCII character
+     * <p>The policy that grants an entity permission to assume the role.</p> <p>The <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this
+     * parameter is a string of characters consisting of any printable ASCII character
      * ranging from the space character (\u0020) through end of the ASCII character
-     * range (\u00FF). It also includes the special characters tab (\u0009), line feed
-     * (\u000A), and carriage return (\u000D).</p>
+     * range as well as the printable characters in the Basic Latin and Latin-1
+     * Supplement character set (through \u00FF). It also includes the special
+     * characters tab (\u0009), line feed (\u000A), and carriage return (\u000D).</p>
      */
     inline void SetPolicyDocument(const Aws::String& value) { m_policyDocumentHasBeenSet = true; m_policyDocument = value; }
 
     /**
-     * <p>The policy that grants an entity permission to assume the role.</p> <p>This
-     * parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex
-     * pattern</a>) a string of characters consisting of any printable ASCII character
+     * <p>The policy that grants an entity permission to assume the role.</p> <p>The <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this
+     * parameter is a string of characters consisting of any printable ASCII character
      * ranging from the space character (\u0020) through end of the ASCII character
-     * range (\u00FF). It also includes the special characters tab (\u0009), line feed
-     * (\u000A), and carriage return (\u000D).</p>
+     * range as well as the printable characters in the Basic Latin and Latin-1
+     * Supplement character set (through \u00FF). It also includes the special
+     * characters tab (\u0009), line feed (\u000A), and carriage return (\u000D).</p>
      */
     inline void SetPolicyDocument(Aws::String&& value) { m_policyDocumentHasBeenSet = true; m_policyDocument = value; }
 
     /**
-     * <p>The policy that grants an entity permission to assume the role.</p> <p>This
-     * parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex
-     * pattern</a>) a string of characters consisting of any printable ASCII character
+     * <p>The policy that grants an entity permission to assume the role.</p> <p>The <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this
+     * parameter is a string of characters consisting of any printable ASCII character
      * ranging from the space character (\u0020) through end of the ASCII character
-     * range (\u00FF). It also includes the special characters tab (\u0009), line feed
-     * (\u000A), and carriage return (\u000D).</p>
+     * range as well as the printable characters in the Basic Latin and Latin-1
+     * Supplement character set (through \u00FF). It also includes the special
+     * characters tab (\u0009), line feed (\u000A), and carriage return (\u000D).</p>
      */
     inline void SetPolicyDocument(const char* value) { m_policyDocumentHasBeenSet = true; m_policyDocument.assign(value); }
 
     /**
-     * <p>The policy that grants an entity permission to assume the role.</p> <p>This
-     * parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex
-     * pattern</a>) a string of characters consisting of any printable ASCII character
+     * <p>The policy that grants an entity permission to assume the role.</p> <p>The <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this
+     * parameter is a string of characters consisting of any printable ASCII character
      * ranging from the space character (\u0020) through end of the ASCII character
-     * range (\u00FF). It also includes the special characters tab (\u0009), line feed
-     * (\u000A), and carriage return (\u000D).</p>
+     * range as well as the printable characters in the Basic Latin and Latin-1
+     * Supplement character set (through \u00FF). It also includes the special
+     * characters tab (\u0009), line feed (\u000A), and carriage return (\u000D).</p>
      */
     inline UpdateAssumeRolePolicyRequest& WithPolicyDocument(const Aws::String& value) { SetPolicyDocument(value); return *this;}
 
     /**
-     * <p>The policy that grants an entity permission to assume the role.</p> <p>This
-     * parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex
-     * pattern</a>) a string of characters consisting of any printable ASCII character
+     * <p>The policy that grants an entity permission to assume the role.</p> <p>The <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this
+     * parameter is a string of characters consisting of any printable ASCII character
      * ranging from the space character (\u0020) through end of the ASCII character
-     * range (\u00FF). It also includes the special characters tab (\u0009), line feed
-     * (\u000A), and carriage return (\u000D).</p>
+     * range as well as the printable characters in the Basic Latin and Latin-1
+     * Supplement character set (through \u00FF). It also includes the special
+     * characters tab (\u0009), line feed (\u000A), and carriage return (\u000D).</p>
      */
     inline UpdateAssumeRolePolicyRequest& WithPolicyDocument(Aws::String&& value) { SetPolicyDocument(value); return *this;}
 
     /**
-     * <p>The policy that grants an entity permission to assume the role.</p> <p>This
-     * parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex
-     * pattern</a>) a string of characters consisting of any printable ASCII character
+     * <p>The policy that grants an entity permission to assume the role.</p> <p>The <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this
+     * parameter is a string of characters consisting of any printable ASCII character
      * ranging from the space character (\u0020) through end of the ASCII character
-     * range (\u00FF). It also includes the special characters tab (\u0009), line feed
-     * (\u000A), and carriage return (\u000D).</p>
+     * range as well as the printable characters in the Basic Latin and Latin-1
+     * Supplement character set (through \u00FF). It also includes the special
+     * characters tab (\u0009), line feed (\u000A), and carriage return (\u000D).</p>
      */
     inline UpdateAssumeRolePolicyRequest& WithPolicyDocument(const char* value) { SetPolicyDocument(value); return *this;}
 

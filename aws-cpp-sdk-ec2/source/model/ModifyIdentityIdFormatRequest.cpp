@@ -38,7 +38,7 @@ Aws::String ModifyIdentityIdFormatRequest::SerializePayload() const
 
   if(m_useLongIdsHasBeenSet)
   {
-    ss << "UseLongIds=" << m_useLongIds << "&";
+    ss << "UseLongIds=" << std::boolalpha << m_useLongIds << "&";
   }
 
   if(m_principalArnHasBeenSet)

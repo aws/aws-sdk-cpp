@@ -438,18 +438,26 @@ namespace Model
      * <code>CopyDBSnapshot</code> API action in the AWS region that contains the
      * source DB snapshot to copy. The <code>PreSignedUrl</code> parameter must be used
      * when copying an encrypted DB snapshot from another AWS region.</p> <p>The
-     * pre-signed URL must be a valid request for the <code>CopyDBSnapshot</code> API
+     * presigned URL must be a valid request for the <code>CopyDBSnapshot</code> API
      * action that can be executed in the source region that contains the encrypted DB
-     * snapshot to be copied. The pre-signed URL request must contain the following
-     * parameter values:</p> <ul> <li> <p> <code>KmsKeyId</code> - The KMS key
-     * identifier for the key to use to encrypt the copy of the DB snapshot in the
-     * destination region. This is the same identifier for both the
-     * <code>CopyDBSnapshot</code> action that is called in the destination region, and
-     * the action contained in the pre-signed URL.</p> </li> <li> <p>
-     * <code>SourceDBSnapshotIdentifier</code> - the DB snapshot identifier for the
-     * encrypted snapshot to be copied. This identifier must be in the Amazon Resource
-     * Name (ARN) format for the source region. For example, if you are copying an
-     * encrypted DB snapshot from the us-west-2 region, then your
+     * snapshot to be copied. The presigned URL request must contain the following
+     * parameter values:</p> <ul> <li> <p> <code>DestinationRegion</code> - The AWS
+     * Region that the encrypted DB snapshot will be copied to. This region is the same
+     * one where the <code>CopyDBSnapshot</code> action is called that contains this
+     * presigned URL. </p> <p>For example, if you copy an encrypted DB snapshot from
+     * the us-west-2 region to the us-east-1 region, then you will call the
+     * <code>CopyDBSnapshot</code> action in the us-east-1 region and provide a
+     * presigned URL that contains a call to the <code>CopyDBSnapshot</code> action in
+     * the us-west-2 region. For this example, the <code>DestinationRegion</code> in
+     * the presigned URL must be set to the us-east-1 region.</p> </li> <li> <p>
+     * <code>KmsKeyId</code> - The KMS key identifier for the key to use to encrypt the
+     * copy of the DB snapshot in the destination region. This is the same identifier
+     * for both the <code>CopyDBSnapshot</code> action that is called in the
+     * destination region, and the action contained in the presigned URL.</p> </li>
+     * <li> <p> <code>SourceDBSnapshotIdentifier</code> - The DB snapshot identifier
+     * for the encrypted snapshot to be copied. This identifier must be in the Amazon
+     * Resource Name (ARN) format for the source region. For example, if you are
+     * copying an encrypted DB snapshot from the us-west-2 region, then your
      * <code>SourceDBSnapshotIdentifier</code> would look like Example:
      * <code>arn:aws:rds:us-west-2:123456789012:snapshot:mysql-instance1-snapshot-20161115</code>.</p>
      * </li> </ul> <p>To learn how to generate a Signature Version 4 signed request,
@@ -467,18 +475,26 @@ namespace Model
      * <code>CopyDBSnapshot</code> API action in the AWS region that contains the
      * source DB snapshot to copy. The <code>PreSignedUrl</code> parameter must be used
      * when copying an encrypted DB snapshot from another AWS region.</p> <p>The
-     * pre-signed URL must be a valid request for the <code>CopyDBSnapshot</code> API
+     * presigned URL must be a valid request for the <code>CopyDBSnapshot</code> API
      * action that can be executed in the source region that contains the encrypted DB
-     * snapshot to be copied. The pre-signed URL request must contain the following
-     * parameter values:</p> <ul> <li> <p> <code>KmsKeyId</code> - The KMS key
-     * identifier for the key to use to encrypt the copy of the DB snapshot in the
-     * destination region. This is the same identifier for both the
-     * <code>CopyDBSnapshot</code> action that is called in the destination region, and
-     * the action contained in the pre-signed URL.</p> </li> <li> <p>
-     * <code>SourceDBSnapshotIdentifier</code> - the DB snapshot identifier for the
-     * encrypted snapshot to be copied. This identifier must be in the Amazon Resource
-     * Name (ARN) format for the source region. For example, if you are copying an
-     * encrypted DB snapshot from the us-west-2 region, then your
+     * snapshot to be copied. The presigned URL request must contain the following
+     * parameter values:</p> <ul> <li> <p> <code>DestinationRegion</code> - The AWS
+     * Region that the encrypted DB snapshot will be copied to. This region is the same
+     * one where the <code>CopyDBSnapshot</code> action is called that contains this
+     * presigned URL. </p> <p>For example, if you copy an encrypted DB snapshot from
+     * the us-west-2 region to the us-east-1 region, then you will call the
+     * <code>CopyDBSnapshot</code> action in the us-east-1 region and provide a
+     * presigned URL that contains a call to the <code>CopyDBSnapshot</code> action in
+     * the us-west-2 region. For this example, the <code>DestinationRegion</code> in
+     * the presigned URL must be set to the us-east-1 region.</p> </li> <li> <p>
+     * <code>KmsKeyId</code> - The KMS key identifier for the key to use to encrypt the
+     * copy of the DB snapshot in the destination region. This is the same identifier
+     * for both the <code>CopyDBSnapshot</code> action that is called in the
+     * destination region, and the action contained in the presigned URL.</p> </li>
+     * <li> <p> <code>SourceDBSnapshotIdentifier</code> - The DB snapshot identifier
+     * for the encrypted snapshot to be copied. This identifier must be in the Amazon
+     * Resource Name (ARN) format for the source region. For example, if you are
+     * copying an encrypted DB snapshot from the us-west-2 region, then your
      * <code>SourceDBSnapshotIdentifier</code> would look like Example:
      * <code>arn:aws:rds:us-west-2:123456789012:snapshot:mysql-instance1-snapshot-20161115</code>.</p>
      * </li> </ul> <p>To learn how to generate a Signature Version 4 signed request,
@@ -496,18 +512,26 @@ namespace Model
      * <code>CopyDBSnapshot</code> API action in the AWS region that contains the
      * source DB snapshot to copy. The <code>PreSignedUrl</code> parameter must be used
      * when copying an encrypted DB snapshot from another AWS region.</p> <p>The
-     * pre-signed URL must be a valid request for the <code>CopyDBSnapshot</code> API
+     * presigned URL must be a valid request for the <code>CopyDBSnapshot</code> API
      * action that can be executed in the source region that contains the encrypted DB
-     * snapshot to be copied. The pre-signed URL request must contain the following
-     * parameter values:</p> <ul> <li> <p> <code>KmsKeyId</code> - The KMS key
-     * identifier for the key to use to encrypt the copy of the DB snapshot in the
-     * destination region. This is the same identifier for both the
-     * <code>CopyDBSnapshot</code> action that is called in the destination region, and
-     * the action contained in the pre-signed URL.</p> </li> <li> <p>
-     * <code>SourceDBSnapshotIdentifier</code> - the DB snapshot identifier for the
-     * encrypted snapshot to be copied. This identifier must be in the Amazon Resource
-     * Name (ARN) format for the source region. For example, if you are copying an
-     * encrypted DB snapshot from the us-west-2 region, then your
+     * snapshot to be copied. The presigned URL request must contain the following
+     * parameter values:</p> <ul> <li> <p> <code>DestinationRegion</code> - The AWS
+     * Region that the encrypted DB snapshot will be copied to. This region is the same
+     * one where the <code>CopyDBSnapshot</code> action is called that contains this
+     * presigned URL. </p> <p>For example, if you copy an encrypted DB snapshot from
+     * the us-west-2 region to the us-east-1 region, then you will call the
+     * <code>CopyDBSnapshot</code> action in the us-east-1 region and provide a
+     * presigned URL that contains a call to the <code>CopyDBSnapshot</code> action in
+     * the us-west-2 region. For this example, the <code>DestinationRegion</code> in
+     * the presigned URL must be set to the us-east-1 region.</p> </li> <li> <p>
+     * <code>KmsKeyId</code> - The KMS key identifier for the key to use to encrypt the
+     * copy of the DB snapshot in the destination region. This is the same identifier
+     * for both the <code>CopyDBSnapshot</code> action that is called in the
+     * destination region, and the action contained in the presigned URL.</p> </li>
+     * <li> <p> <code>SourceDBSnapshotIdentifier</code> - The DB snapshot identifier
+     * for the encrypted snapshot to be copied. This identifier must be in the Amazon
+     * Resource Name (ARN) format for the source region. For example, if you are
+     * copying an encrypted DB snapshot from the us-west-2 region, then your
      * <code>SourceDBSnapshotIdentifier</code> would look like Example:
      * <code>arn:aws:rds:us-west-2:123456789012:snapshot:mysql-instance1-snapshot-20161115</code>.</p>
      * </li> </ul> <p>To learn how to generate a Signature Version 4 signed request,
@@ -525,18 +549,26 @@ namespace Model
      * <code>CopyDBSnapshot</code> API action in the AWS region that contains the
      * source DB snapshot to copy. The <code>PreSignedUrl</code> parameter must be used
      * when copying an encrypted DB snapshot from another AWS region.</p> <p>The
-     * pre-signed URL must be a valid request for the <code>CopyDBSnapshot</code> API
+     * presigned URL must be a valid request for the <code>CopyDBSnapshot</code> API
      * action that can be executed in the source region that contains the encrypted DB
-     * snapshot to be copied. The pre-signed URL request must contain the following
-     * parameter values:</p> <ul> <li> <p> <code>KmsKeyId</code> - The KMS key
-     * identifier for the key to use to encrypt the copy of the DB snapshot in the
-     * destination region. This is the same identifier for both the
-     * <code>CopyDBSnapshot</code> action that is called in the destination region, and
-     * the action contained in the pre-signed URL.</p> </li> <li> <p>
-     * <code>SourceDBSnapshotIdentifier</code> - the DB snapshot identifier for the
-     * encrypted snapshot to be copied. This identifier must be in the Amazon Resource
-     * Name (ARN) format for the source region. For example, if you are copying an
-     * encrypted DB snapshot from the us-west-2 region, then your
+     * snapshot to be copied. The presigned URL request must contain the following
+     * parameter values:</p> <ul> <li> <p> <code>DestinationRegion</code> - The AWS
+     * Region that the encrypted DB snapshot will be copied to. This region is the same
+     * one where the <code>CopyDBSnapshot</code> action is called that contains this
+     * presigned URL. </p> <p>For example, if you copy an encrypted DB snapshot from
+     * the us-west-2 region to the us-east-1 region, then you will call the
+     * <code>CopyDBSnapshot</code> action in the us-east-1 region and provide a
+     * presigned URL that contains a call to the <code>CopyDBSnapshot</code> action in
+     * the us-west-2 region. For this example, the <code>DestinationRegion</code> in
+     * the presigned URL must be set to the us-east-1 region.</p> </li> <li> <p>
+     * <code>KmsKeyId</code> - The KMS key identifier for the key to use to encrypt the
+     * copy of the DB snapshot in the destination region. This is the same identifier
+     * for both the <code>CopyDBSnapshot</code> action that is called in the
+     * destination region, and the action contained in the presigned URL.</p> </li>
+     * <li> <p> <code>SourceDBSnapshotIdentifier</code> - The DB snapshot identifier
+     * for the encrypted snapshot to be copied. This identifier must be in the Amazon
+     * Resource Name (ARN) format for the source region. For example, if you are
+     * copying an encrypted DB snapshot from the us-west-2 region, then your
      * <code>SourceDBSnapshotIdentifier</code> would look like Example:
      * <code>arn:aws:rds:us-west-2:123456789012:snapshot:mysql-instance1-snapshot-20161115</code>.</p>
      * </li> </ul> <p>To learn how to generate a Signature Version 4 signed request,
@@ -554,18 +586,26 @@ namespace Model
      * <code>CopyDBSnapshot</code> API action in the AWS region that contains the
      * source DB snapshot to copy. The <code>PreSignedUrl</code> parameter must be used
      * when copying an encrypted DB snapshot from another AWS region.</p> <p>The
-     * pre-signed URL must be a valid request for the <code>CopyDBSnapshot</code> API
+     * presigned URL must be a valid request for the <code>CopyDBSnapshot</code> API
      * action that can be executed in the source region that contains the encrypted DB
-     * snapshot to be copied. The pre-signed URL request must contain the following
-     * parameter values:</p> <ul> <li> <p> <code>KmsKeyId</code> - The KMS key
-     * identifier for the key to use to encrypt the copy of the DB snapshot in the
-     * destination region. This is the same identifier for both the
-     * <code>CopyDBSnapshot</code> action that is called in the destination region, and
-     * the action contained in the pre-signed URL.</p> </li> <li> <p>
-     * <code>SourceDBSnapshotIdentifier</code> - the DB snapshot identifier for the
-     * encrypted snapshot to be copied. This identifier must be in the Amazon Resource
-     * Name (ARN) format for the source region. For example, if you are copying an
-     * encrypted DB snapshot from the us-west-2 region, then your
+     * snapshot to be copied. The presigned URL request must contain the following
+     * parameter values:</p> <ul> <li> <p> <code>DestinationRegion</code> - The AWS
+     * Region that the encrypted DB snapshot will be copied to. This region is the same
+     * one where the <code>CopyDBSnapshot</code> action is called that contains this
+     * presigned URL. </p> <p>For example, if you copy an encrypted DB snapshot from
+     * the us-west-2 region to the us-east-1 region, then you will call the
+     * <code>CopyDBSnapshot</code> action in the us-east-1 region and provide a
+     * presigned URL that contains a call to the <code>CopyDBSnapshot</code> action in
+     * the us-west-2 region. For this example, the <code>DestinationRegion</code> in
+     * the presigned URL must be set to the us-east-1 region.</p> </li> <li> <p>
+     * <code>KmsKeyId</code> - The KMS key identifier for the key to use to encrypt the
+     * copy of the DB snapshot in the destination region. This is the same identifier
+     * for both the <code>CopyDBSnapshot</code> action that is called in the
+     * destination region, and the action contained in the presigned URL.</p> </li>
+     * <li> <p> <code>SourceDBSnapshotIdentifier</code> - The DB snapshot identifier
+     * for the encrypted snapshot to be copied. This identifier must be in the Amazon
+     * Resource Name (ARN) format for the source region. For example, if you are
+     * copying an encrypted DB snapshot from the us-west-2 region, then your
      * <code>SourceDBSnapshotIdentifier</code> would look like Example:
      * <code>arn:aws:rds:us-west-2:123456789012:snapshot:mysql-instance1-snapshot-20161115</code>.</p>
      * </li> </ul> <p>To learn how to generate a Signature Version 4 signed request,
@@ -583,18 +623,26 @@ namespace Model
      * <code>CopyDBSnapshot</code> API action in the AWS region that contains the
      * source DB snapshot to copy. The <code>PreSignedUrl</code> parameter must be used
      * when copying an encrypted DB snapshot from another AWS region.</p> <p>The
-     * pre-signed URL must be a valid request for the <code>CopyDBSnapshot</code> API
+     * presigned URL must be a valid request for the <code>CopyDBSnapshot</code> API
      * action that can be executed in the source region that contains the encrypted DB
-     * snapshot to be copied. The pre-signed URL request must contain the following
-     * parameter values:</p> <ul> <li> <p> <code>KmsKeyId</code> - The KMS key
-     * identifier for the key to use to encrypt the copy of the DB snapshot in the
-     * destination region. This is the same identifier for both the
-     * <code>CopyDBSnapshot</code> action that is called in the destination region, and
-     * the action contained in the pre-signed URL.</p> </li> <li> <p>
-     * <code>SourceDBSnapshotIdentifier</code> - the DB snapshot identifier for the
-     * encrypted snapshot to be copied. This identifier must be in the Amazon Resource
-     * Name (ARN) format for the source region. For example, if you are copying an
-     * encrypted DB snapshot from the us-west-2 region, then your
+     * snapshot to be copied. The presigned URL request must contain the following
+     * parameter values:</p> <ul> <li> <p> <code>DestinationRegion</code> - The AWS
+     * Region that the encrypted DB snapshot will be copied to. This region is the same
+     * one where the <code>CopyDBSnapshot</code> action is called that contains this
+     * presigned URL. </p> <p>For example, if you copy an encrypted DB snapshot from
+     * the us-west-2 region to the us-east-1 region, then you will call the
+     * <code>CopyDBSnapshot</code> action in the us-east-1 region and provide a
+     * presigned URL that contains a call to the <code>CopyDBSnapshot</code> action in
+     * the us-west-2 region. For this example, the <code>DestinationRegion</code> in
+     * the presigned URL must be set to the us-east-1 region.</p> </li> <li> <p>
+     * <code>KmsKeyId</code> - The KMS key identifier for the key to use to encrypt the
+     * copy of the DB snapshot in the destination region. This is the same identifier
+     * for both the <code>CopyDBSnapshot</code> action that is called in the
+     * destination region, and the action contained in the presigned URL.</p> </li>
+     * <li> <p> <code>SourceDBSnapshotIdentifier</code> - The DB snapshot identifier
+     * for the encrypted snapshot to be copied. This identifier must be in the Amazon
+     * Resource Name (ARN) format for the source region. For example, if you are
+     * copying an encrypted DB snapshot from the us-west-2 region, then your
      * <code>SourceDBSnapshotIdentifier</code> would look like Example:
      * <code>arn:aws:rds:us-west-2:123456789012:snapshot:mysql-instance1-snapshot-20161115</code>.</p>
      * </li> </ul> <p>To learn how to generate a Signature Version 4 signed request,
@@ -612,18 +660,26 @@ namespace Model
      * <code>CopyDBSnapshot</code> API action in the AWS region that contains the
      * source DB snapshot to copy. The <code>PreSignedUrl</code> parameter must be used
      * when copying an encrypted DB snapshot from another AWS region.</p> <p>The
-     * pre-signed URL must be a valid request for the <code>CopyDBSnapshot</code> API
+     * presigned URL must be a valid request for the <code>CopyDBSnapshot</code> API
      * action that can be executed in the source region that contains the encrypted DB
-     * snapshot to be copied. The pre-signed URL request must contain the following
-     * parameter values:</p> <ul> <li> <p> <code>KmsKeyId</code> - The KMS key
-     * identifier for the key to use to encrypt the copy of the DB snapshot in the
-     * destination region. This is the same identifier for both the
-     * <code>CopyDBSnapshot</code> action that is called in the destination region, and
-     * the action contained in the pre-signed URL.</p> </li> <li> <p>
-     * <code>SourceDBSnapshotIdentifier</code> - the DB snapshot identifier for the
-     * encrypted snapshot to be copied. This identifier must be in the Amazon Resource
-     * Name (ARN) format for the source region. For example, if you are copying an
-     * encrypted DB snapshot from the us-west-2 region, then your
+     * snapshot to be copied. The presigned URL request must contain the following
+     * parameter values:</p> <ul> <li> <p> <code>DestinationRegion</code> - The AWS
+     * Region that the encrypted DB snapshot will be copied to. This region is the same
+     * one where the <code>CopyDBSnapshot</code> action is called that contains this
+     * presigned URL. </p> <p>For example, if you copy an encrypted DB snapshot from
+     * the us-west-2 region to the us-east-1 region, then you will call the
+     * <code>CopyDBSnapshot</code> action in the us-east-1 region and provide a
+     * presigned URL that contains a call to the <code>CopyDBSnapshot</code> action in
+     * the us-west-2 region. For this example, the <code>DestinationRegion</code> in
+     * the presigned URL must be set to the us-east-1 region.</p> </li> <li> <p>
+     * <code>KmsKeyId</code> - The KMS key identifier for the key to use to encrypt the
+     * copy of the DB snapshot in the destination region. This is the same identifier
+     * for both the <code>CopyDBSnapshot</code> action that is called in the
+     * destination region, and the action contained in the presigned URL.</p> </li>
+     * <li> <p> <code>SourceDBSnapshotIdentifier</code> - The DB snapshot identifier
+     * for the encrypted snapshot to be copied. This identifier must be in the Amazon
+     * Resource Name (ARN) format for the source region. For example, if you are
+     * copying an encrypted DB snapshot from the us-west-2 region, then your
      * <code>SourceDBSnapshotIdentifier</code> would look like Example:
      * <code>arn:aws:rds:us-west-2:123456789012:snapshot:mysql-instance1-snapshot-20161115</code>.</p>
      * </li> </ul> <p>To learn how to generate a Signature Version 4 signed request,

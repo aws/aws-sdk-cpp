@@ -89,7 +89,7 @@ void ReplaceableAttribute::OutputToStream(Aws::OStream& oStream, const char* loc
 
   if(m_replaceHasBeenSet)
   {
-      oStream << location << index << locationValue << ".Replace=" << m_replace << "&";
+      oStream << location << index << locationValue << ".Replace=" << std::boolalpha << m_replace << "&";
   }
 
 }
@@ -106,7 +106,7 @@ void ReplaceableAttribute::OutputToStream(Aws::OStream& oStream, const char* loc
   }
   if(m_replaceHasBeenSet)
   {
-      oStream << location << ".Replace=" << m_replace << "&";
+      oStream << location << ".Replace=" << std::boolalpha << m_replace << "&";
   }
 }
 

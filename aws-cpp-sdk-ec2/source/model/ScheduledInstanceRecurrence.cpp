@@ -122,7 +122,7 @@ void ScheduledInstanceRecurrence::OutputToStream(Aws::OStream& oStream, const ch
 
   if(m_occurrenceRelativeToEndHasBeenSet)
   {
-      oStream << location << index << locationValue << ".OccurrenceRelativeToEnd=" << m_occurrenceRelativeToEnd << "&";
+      oStream << location << index << locationValue << ".OccurrenceRelativeToEnd=" << std::boolalpha << m_occurrenceRelativeToEnd << "&";
   }
 
   if(m_occurrenceUnitHasBeenSet)
@@ -147,12 +147,12 @@ void ScheduledInstanceRecurrence::OutputToStream(Aws::OStream& oStream, const ch
       unsigned occurrenceDaySetIdx = 1;
       for(auto& item : m_occurrenceDaySet)
       {
-        oStream << location << ".item." << occurrenceDaySetIdx++ << "=" << item << "&";
+        oStream << location << ".Item." << occurrenceDaySetIdx++ << "=" << item << "&";
       }
   }
   if(m_occurrenceRelativeToEndHasBeenSet)
   {
-      oStream << location << ".OccurrenceRelativeToEnd=" << m_occurrenceRelativeToEnd << "&";
+      oStream << location << ".OccurrenceRelativeToEnd=" << std::boolalpha << m_occurrenceRelativeToEnd << "&";
   }
   if(m_occurrenceUnitHasBeenSet)
   {

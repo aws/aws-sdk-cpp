@@ -31,7 +31,7 @@ Aws::String DescribeSpotDatafeedSubscriptionRequest::SerializePayload() const
   ss << "Action=DescribeSpotDatafeedSubscription&";
   if(m_dryRunHasBeenSet)
   {
-    ss << "DryRun=" << m_dryRun << "&";
+    ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
   ss << "Version=2016-11-15";

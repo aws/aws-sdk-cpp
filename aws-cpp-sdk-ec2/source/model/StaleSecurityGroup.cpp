@@ -179,7 +179,7 @@ void StaleSecurityGroup::OutputToStream(Aws::OStream& oStream, const char* locat
       for(auto& item : m_staleIpPermissions)
       {
         Aws::StringStream staleIpPermissionsSs;
-        staleIpPermissionsSs << location <<  ".item." << staleIpPermissionsIdx++;
+        staleIpPermissionsSs << location <<  ".Item." << staleIpPermissionsIdx++;
         item.OutputToStream(oStream, staleIpPermissionsSs.str().c_str());
       }
   }
@@ -189,7 +189,7 @@ void StaleSecurityGroup::OutputToStream(Aws::OStream& oStream, const char* locat
       for(auto& item : m_staleIpPermissionsEgress)
       {
         Aws::StringStream staleIpPermissionsEgressSs;
-        staleIpPermissionsEgressSs << location <<  ".item." << staleIpPermissionsEgressIdx++;
+        staleIpPermissionsEgressSs << location <<  ".Item." << staleIpPermissionsEgressIdx++;
         item.OutputToStream(oStream, staleIpPermissionsEgressSs.str().c_str());
       }
   }

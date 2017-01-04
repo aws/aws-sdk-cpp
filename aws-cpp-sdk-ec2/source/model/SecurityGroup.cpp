@@ -217,7 +217,7 @@ void SecurityGroup::OutputToStream(Aws::OStream& oStream, const char* location) 
       for(auto& item : m_ipPermissions)
       {
         Aws::StringStream ipPermissionsSs;
-        ipPermissionsSs << location <<  ".item." << ipPermissionsIdx++;
+        ipPermissionsSs << location <<  ".Item." << ipPermissionsIdx++;
         item.OutputToStream(oStream, ipPermissionsSs.str().c_str());
       }
   }
@@ -227,7 +227,7 @@ void SecurityGroup::OutputToStream(Aws::OStream& oStream, const char* location) 
       for(auto& item : m_ipPermissionsEgress)
       {
         Aws::StringStream ipPermissionsEgressSs;
-        ipPermissionsEgressSs << location <<  ".item." << ipPermissionsEgressIdx++;
+        ipPermissionsEgressSs << location <<  ".Item." << ipPermissionsEgressIdx++;
         item.OutputToStream(oStream, ipPermissionsEgressSs.str().c_str());
       }
   }
@@ -241,7 +241,7 @@ void SecurityGroup::OutputToStream(Aws::OStream& oStream, const char* location) 
       for(auto& item : m_tags)
       {
         Aws::StringStream tagsSs;
-        tagsSs << location <<  ".item." << tagsIdx++;
+        tagsSs << location <<  ".Item." << tagsIdx++;
         item.OutputToStream(oStream, tagsSs.str().c_str());
       }
   }

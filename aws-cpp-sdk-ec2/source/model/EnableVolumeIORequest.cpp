@@ -32,7 +32,7 @@ Aws::String EnableVolumeIORequest::SerializePayload() const
   ss << "Action=EnableVolumeIO&";
   if(m_dryRunHasBeenSet)
   {
-    ss << "DryRun=" << m_dryRun << "&";
+    ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
   if(m_volumeIdHasBeenSet)

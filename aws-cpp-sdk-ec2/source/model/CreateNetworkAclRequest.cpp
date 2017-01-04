@@ -32,7 +32,7 @@ Aws::String CreateNetworkAclRequest::SerializePayload() const
   ss << "Action=CreateNetworkAcl&";
   if(m_dryRunHasBeenSet)
   {
-    ss << "DryRun=" << m_dryRun << "&";
+    ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
   if(m_vpcIdHasBeenSet)

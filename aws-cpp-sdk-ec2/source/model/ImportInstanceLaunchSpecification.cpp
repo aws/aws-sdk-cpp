@@ -208,7 +208,7 @@ void ImportInstanceLaunchSpecification::OutputToStream(Aws::OStream& oStream, co
 
   if(m_monitoringHasBeenSet)
   {
-      oStream << location << index << locationValue << ".Monitoring=" << m_monitoring << "&";
+      oStream << location << index << locationValue << ".Monitoring=" << std::boolalpha << m_monitoring << "&";
   }
 
   if(m_subnetIdHasBeenSet)
@@ -272,7 +272,7 @@ void ImportInstanceLaunchSpecification::OutputToStream(Aws::OStream& oStream, co
   }
   if(m_monitoringHasBeenSet)
   {
-      oStream << location << ".Monitoring=" << m_monitoring << "&";
+      oStream << location << ".Monitoring=" << std::boolalpha << m_monitoring << "&";
   }
   if(m_subnetIdHasBeenSet)
   {

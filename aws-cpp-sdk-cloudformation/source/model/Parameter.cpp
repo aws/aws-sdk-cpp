@@ -89,7 +89,7 @@ void Parameter::OutputToStream(Aws::OStream& oStream, const char* location, unsi
 
   if(m_usePreviousValueHasBeenSet)
   {
-      oStream << location << index << locationValue << ".UsePreviousValue=" << m_usePreviousValue << "&";
+      oStream << location << index << locationValue << ".UsePreviousValue=" << std::boolalpha << m_usePreviousValue << "&";
   }
 
 }
@@ -106,7 +106,7 @@ void Parameter::OutputToStream(Aws::OStream& oStream, const char* location) cons
   }
   if(m_usePreviousValueHasBeenSet)
   {
-      oStream << location << ".UsePreviousValue=" << m_usePreviousValue << "&";
+      oStream << location << ".UsePreviousValue=" << std::boolalpha << m_usePreviousValue << "&";
   }
 }
 

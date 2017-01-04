@@ -38,7 +38,7 @@ Aws::String ResetCacheParameterGroupRequest::SerializePayload() const
 
   if(m_resetAllParametersHasBeenSet)
   {
-    ss << "ResetAllParameters=" << m_resetAllParameters << "&";
+    ss << "ResetAllParameters=" << std::boolalpha << m_resetAllParameters << "&";
   }
 
   if(m_parameterNameValuesHasBeenSet)

@@ -477,7 +477,7 @@ void Cluster::OutputToStream(Aws::OStream& oStream, const char* location, unsign
 
   if(m_allowVersionUpgradeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".AllowVersionUpgrade=" << m_allowVersionUpgrade << "&";
+      oStream << location << index << locationValue << ".AllowVersionUpgrade=" << std::boolalpha << m_allowVersionUpgrade << "&";
   }
 
   if(m_numberOfNodesHasBeenSet)
@@ -487,12 +487,12 @@ void Cluster::OutputToStream(Aws::OStream& oStream, const char* location, unsign
 
   if(m_publiclyAccessibleHasBeenSet)
   {
-      oStream << location << index << locationValue << ".PubliclyAccessible=" << m_publiclyAccessible << "&";
+      oStream << location << index << locationValue << ".PubliclyAccessible=" << std::boolalpha << m_publiclyAccessible << "&";
   }
 
   if(m_encryptedHasBeenSet)
   {
-      oStream << location << index << locationValue << ".Encrypted=" << m_encrypted << "&";
+      oStream << location << index << locationValue << ".Encrypted=" << std::boolalpha << m_encrypted << "&";
   }
 
   if(m_restoreStatusHasBeenSet)
@@ -562,7 +562,7 @@ void Cluster::OutputToStream(Aws::OStream& oStream, const char* location, unsign
 
   if(m_enhancedVpcRoutingHasBeenSet)
   {
-      oStream << location << index << locationValue << ".EnhancedVpcRouting=" << m_enhancedVpcRouting << "&";
+      oStream << location << index << locationValue << ".EnhancedVpcRouting=" << std::boolalpha << m_enhancedVpcRouting << "&";
   }
 
   if(m_iamRolesHasBeenSet)
@@ -676,7 +676,7 @@ void Cluster::OutputToStream(Aws::OStream& oStream, const char* location) const
   }
   if(m_allowVersionUpgradeHasBeenSet)
   {
-      oStream << location << ".AllowVersionUpgrade=" << m_allowVersionUpgrade << "&";
+      oStream << location << ".AllowVersionUpgrade=" << std::boolalpha << m_allowVersionUpgrade << "&";
   }
   if(m_numberOfNodesHasBeenSet)
   {
@@ -684,11 +684,11 @@ void Cluster::OutputToStream(Aws::OStream& oStream, const char* location) const
   }
   if(m_publiclyAccessibleHasBeenSet)
   {
-      oStream << location << ".PubliclyAccessible=" << m_publiclyAccessible << "&";
+      oStream << location << ".PubliclyAccessible=" << std::boolalpha << m_publiclyAccessible << "&";
   }
   if(m_encryptedHasBeenSet)
   {
-      oStream << location << ".Encrypted=" << m_encrypted << "&";
+      oStream << location << ".Encrypted=" << std::boolalpha << m_encrypted << "&";
   }
   if(m_restoreStatusHasBeenSet)
   {
@@ -748,7 +748,7 @@ void Cluster::OutputToStream(Aws::OStream& oStream, const char* location) const
   }
   if(m_enhancedVpcRoutingHasBeenSet)
   {
-      oStream << location << ".EnhancedVpcRouting=" << m_enhancedVpcRouting << "&";
+      oStream << location << ".EnhancedVpcRouting=" << std::boolalpha << m_enhancedVpcRouting << "&";
   }
   if(m_iamRolesHasBeenSet)
   {

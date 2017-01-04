@@ -41,6 +41,7 @@ namespace Aws
         static const int monthly_revenue_annual_subscriptions_HASH = HashingUtils::HashString("monthly_revenue_annual_subscriptions");
         static const int disbursed_amount_by_product_HASH = HashingUtils::HashString("disbursed_amount_by_product");
         static const int disbursed_amount_by_product_with_uncollected_funds_HASH = HashingUtils::HashString("disbursed_amount_by_product_with_uncollected_funds");
+        static const int disbursed_amount_by_instance_hours_HASH = HashingUtils::HashString("disbursed_amount_by_instance_hours");
         static const int disbursed_amount_by_customer_geo_HASH = HashingUtils::HashString("disbursed_amount_by_customer_geo");
         static const int disbursed_amount_by_age_of_uncollected_funds_HASH = HashingUtils::HashString("disbursed_amount_by_age_of_uncollected_funds");
         static const int disbursed_amount_by_age_of_disbursed_funds_HASH = HashingUtils::HashString("disbursed_amount_by_age_of_disbursed_funds");
@@ -100,6 +101,10 @@ namespace Aws
           else if (hashCode == disbursed_amount_by_product_with_uncollected_funds_HASH)
           {
             return DataSetType::disbursed_amount_by_product_with_uncollected_funds;
+          }
+          else if (hashCode == disbursed_amount_by_instance_hours_HASH)
+          {
+            return DataSetType::disbursed_amount_by_instance_hours;
           }
           else if (hashCode == disbursed_amount_by_customer_geo_HASH)
           {
@@ -167,6 +172,8 @@ namespace Aws
             return "disbursed_amount_by_product";
           case DataSetType::disbursed_amount_by_product_with_uncollected_funds:
             return "disbursed_amount_by_product_with_uncollected_funds";
+          case DataSetType::disbursed_amount_by_instance_hours:
+            return "disbursed_amount_by_instance_hours";
           case DataSetType::disbursed_amount_by_customer_geo:
             return "disbursed_amount_by_customer_geo";
           case DataSetType::disbursed_amount_by_age_of_uncollected_funds:

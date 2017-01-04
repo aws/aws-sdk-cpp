@@ -89,7 +89,7 @@ void UpdateCondition::OutputToStream(Aws::OStream& oStream, const char* location
 
   if(m_existsHasBeenSet)
   {
-      oStream << location << index << locationValue << ".Exists=" << m_exists << "&";
+      oStream << location << index << locationValue << ".Exists=" << std::boolalpha << m_exists << "&";
   }
 
 }
@@ -106,7 +106,7 @@ void UpdateCondition::OutputToStream(Aws::OStream& oStream, const char* location
   }
   if(m_existsHasBeenSet)
   {
-      oStream << location << ".Exists=" << m_exists << "&";
+      oStream << location << ".Exists=" << std::boolalpha << m_exists << "&";
   }
 }
 

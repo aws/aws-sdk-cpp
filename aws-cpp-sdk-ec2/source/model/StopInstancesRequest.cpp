@@ -34,7 +34,7 @@ Aws::String StopInstancesRequest::SerializePayload() const
   ss << "Action=StopInstances&";
   if(m_dryRunHasBeenSet)
   {
-    ss << "DryRun=" << m_dryRun << "&";
+    ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
   if(m_instanceIdsHasBeenSet)
@@ -50,7 +50,7 @@ Aws::String StopInstancesRequest::SerializePayload() const
 
   if(m_forceHasBeenSet)
   {
-    ss << "Force=" << m_force << "&";
+    ss << "Force=" << std::boolalpha << m_force << "&";
   }
 
   ss << "Version=2016-11-15";

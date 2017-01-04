@@ -43,7 +43,7 @@ Aws::String CreateLoginProfileRequest::SerializePayload() const
 
   if(m_passwordResetRequiredHasBeenSet)
   {
-    ss << "PasswordResetRequired=" << m_passwordResetRequired << "&";
+    ss << "PasswordResetRequired=" << std::boolalpha << m_passwordResetRequired << "&";
   }
 
   ss << "Version=2010-05-08";

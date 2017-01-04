@@ -69,12 +69,12 @@ Aws::String CreateApplicationVersionRequest::SerializePayload() const
 
   if(m_autoCreateApplicationHasBeenSet)
   {
-    ss << "AutoCreateApplication=" << m_autoCreateApplication << "&";
+    ss << "AutoCreateApplication=" << std::boolalpha << m_autoCreateApplication << "&";
   }
 
   if(m_processHasBeenSet)
   {
-    ss << "Process=" << m_process << "&";
+    ss << "Process=" << std::boolalpha << m_process << "&";
   }
 
   ss << "Version=2010-12-01";

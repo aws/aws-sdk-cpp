@@ -36,7 +36,7 @@ Aws::String DescribeInstancesRequest::SerializePayload() const
   ss << "Action=DescribeInstances&";
   if(m_dryRunHasBeenSet)
   {
-    ss << "DryRun=" << m_dryRun << "&";
+    ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
   if(m_instanceIdsHasBeenSet)

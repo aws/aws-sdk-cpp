@@ -39,7 +39,7 @@ Aws::String CopyImageRequest::SerializePayload() const
   ss << "Action=CopyImage&";
   if(m_dryRunHasBeenSet)
   {
-    ss << "DryRun=" << m_dryRun << "&";
+    ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
   if(m_sourceRegionHasBeenSet)
@@ -69,7 +69,7 @@ Aws::String CopyImageRequest::SerializePayload() const
 
   if(m_encryptedHasBeenSet)
   {
-    ss << "Encrypted=" << m_encrypted << "&";
+    ss << "Encrypted=" << std::boolalpha << m_encrypted << "&";
   }
 
   if(m_kmsKeyIdHasBeenSet)

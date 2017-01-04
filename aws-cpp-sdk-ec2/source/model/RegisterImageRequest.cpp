@@ -44,7 +44,7 @@ Aws::String RegisterImageRequest::SerializePayload() const
   ss << "Action=RegisterImage&";
   if(m_dryRunHasBeenSet)
   {
-    ss << "DryRun=" << m_dryRun << "&";
+    ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
   if(m_imageLocationHasBeenSet)
@@ -104,7 +104,7 @@ Aws::String RegisterImageRequest::SerializePayload() const
 
   if(m_enaSupportHasBeenSet)
   {
-    ss << "EnaSupport=" << m_enaSupport << "&";
+    ss << "EnaSupport=" << std::boolalpha << m_enaSupport << "&";
   }
 
   ss << "Version=2016-11-15";

@@ -187,7 +187,7 @@ void ReservedDBInstancesOffering::OutputToStream(Aws::OStream& oStream, const ch
 
   if(m_multiAZHasBeenSet)
   {
-      oStream << location << index << locationValue << ".MultiAZ=" << m_multiAZ << "&";
+      oStream << location << index << locationValue << ".MultiAZ=" << std::boolalpha << m_multiAZ << "&";
   }
 
   if(m_recurringChargesHasBeenSet)
@@ -239,7 +239,7 @@ void ReservedDBInstancesOffering::OutputToStream(Aws::OStream& oStream, const ch
   }
   if(m_multiAZHasBeenSet)
   {
-      oStream << location << ".MultiAZ=" << m_multiAZ << "&";
+      oStream << location << ".MultiAZ=" << std::boolalpha << m_multiAZ << "&";
   }
   if(m_recurringChargesHasBeenSet)
   {

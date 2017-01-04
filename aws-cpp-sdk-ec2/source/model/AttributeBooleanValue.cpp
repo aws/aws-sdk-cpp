@@ -63,7 +63,7 @@ void AttributeBooleanValue::OutputToStream(Aws::OStream& oStream, const char* lo
 {
   if(m_valueHasBeenSet)
   {
-      oStream << location << index << locationValue << ".Value=" << m_value << "&";
+      oStream << location << index << locationValue << ".Value=" << std::boolalpha << m_value << "&";
   }
 
 }
@@ -72,7 +72,7 @@ void AttributeBooleanValue::OutputToStream(Aws::OStream& oStream, const char* lo
 {
   if(m_valueHasBeenSet)
   {
-      oStream << location << ".Value=" << m_value << "&";
+      oStream << location << ".Value=" << std::boolalpha << m_value << "&";
   }
 }
 

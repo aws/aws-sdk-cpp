@@ -56,7 +56,7 @@ Aws::String RestoreDBClusterToPointInTimeRequest::SerializePayload() const
 
   if(m_useLatestRestorableTimeHasBeenSet)
   {
-    ss << "UseLatestRestorableTime=" << m_useLatestRestorableTime << "&";
+    ss << "UseLatestRestorableTime=" << std::boolalpha << m_useLatestRestorableTime << "&";
   }
 
   if(m_portHasBeenSet)

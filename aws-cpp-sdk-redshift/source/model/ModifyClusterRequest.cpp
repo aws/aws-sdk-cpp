@@ -119,7 +119,7 @@ Aws::String ModifyClusterRequest::SerializePayload() const
 
   if(m_allowVersionUpgradeHasBeenSet)
   {
-    ss << "AllowVersionUpgrade=" << m_allowVersionUpgrade << "&";
+    ss << "AllowVersionUpgrade=" << std::boolalpha << m_allowVersionUpgrade << "&";
   }
 
   if(m_hsmClientCertificateIdentifierHasBeenSet)
@@ -139,7 +139,7 @@ Aws::String ModifyClusterRequest::SerializePayload() const
 
   if(m_publiclyAccessibleHasBeenSet)
   {
-    ss << "PubliclyAccessible=" << m_publiclyAccessible << "&";
+    ss << "PubliclyAccessible=" << std::boolalpha << m_publiclyAccessible << "&";
   }
 
   if(m_elasticIpHasBeenSet)
@@ -149,7 +149,7 @@ Aws::String ModifyClusterRequest::SerializePayload() const
 
   if(m_enhancedVpcRoutingHasBeenSet)
   {
-    ss << "EnhancedVpcRouting=" << m_enhancedVpcRouting << "&";
+    ss << "EnhancedVpcRouting=" << std::boolalpha << m_enhancedVpcRouting << "&";
   }
 
   ss << "Version=2012-12-01";

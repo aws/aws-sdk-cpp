@@ -89,72 +89,79 @@ namespace Model
     inline UploadSigningCertificateRequest& WithUserName(const char* value) { SetUserName(value); return *this;}
 
     /**
-     * <p>The contents of the signing certificate.</p> <p>This parameter allows (per
-     * its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
-     * characters consisting of any printable ASCII character ranging from the space
-     * character (\u0020) through end of the ASCII character range (\u00FF). It also
-     * includes the special characters tab (\u0009), line feed (\u000A), and carriage
-     * return (\u000D).</p>
+     * <p>The contents of the signing certificate.</p> <p>The <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this
+     * parameter is a string of characters consisting of any printable ASCII character
+     * ranging from the space character (\u0020) through end of the ASCII character
+     * range as well as the printable characters in the Basic Latin and Latin-1
+     * Supplement character set (through \u00FF). It also includes the special
+     * characters tab (\u0009), line feed (\u000A), and carriage return (\u000D).</p>
      */
     inline const Aws::String& GetCertificateBody() const{ return m_certificateBody; }
 
     /**
-     * <p>The contents of the signing certificate.</p> <p>This parameter allows (per
-     * its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
-     * characters consisting of any printable ASCII character ranging from the space
-     * character (\u0020) through end of the ASCII character range (\u00FF). It also
-     * includes the special characters tab (\u0009), line feed (\u000A), and carriage
-     * return (\u000D).</p>
+     * <p>The contents of the signing certificate.</p> <p>The <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this
+     * parameter is a string of characters consisting of any printable ASCII character
+     * ranging from the space character (\u0020) through end of the ASCII character
+     * range as well as the printable characters in the Basic Latin and Latin-1
+     * Supplement character set (through \u00FF). It also includes the special
+     * characters tab (\u0009), line feed (\u000A), and carriage return (\u000D).</p>
      */
     inline void SetCertificateBody(const Aws::String& value) { m_certificateBodyHasBeenSet = true; m_certificateBody = value; }
 
     /**
-     * <p>The contents of the signing certificate.</p> <p>This parameter allows (per
-     * its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
-     * characters consisting of any printable ASCII character ranging from the space
-     * character (\u0020) through end of the ASCII character range (\u00FF). It also
-     * includes the special characters tab (\u0009), line feed (\u000A), and carriage
-     * return (\u000D).</p>
+     * <p>The contents of the signing certificate.</p> <p>The <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this
+     * parameter is a string of characters consisting of any printable ASCII character
+     * ranging from the space character (\u0020) through end of the ASCII character
+     * range as well as the printable characters in the Basic Latin and Latin-1
+     * Supplement character set (through \u00FF). It also includes the special
+     * characters tab (\u0009), line feed (\u000A), and carriage return (\u000D).</p>
      */
     inline void SetCertificateBody(Aws::String&& value) { m_certificateBodyHasBeenSet = true; m_certificateBody = value; }
 
     /**
-     * <p>The contents of the signing certificate.</p> <p>This parameter allows (per
-     * its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
-     * characters consisting of any printable ASCII character ranging from the space
-     * character (\u0020) through end of the ASCII character range (\u00FF). It also
-     * includes the special characters tab (\u0009), line feed (\u000A), and carriage
-     * return (\u000D).</p>
+     * <p>The contents of the signing certificate.</p> <p>The <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this
+     * parameter is a string of characters consisting of any printable ASCII character
+     * ranging from the space character (\u0020) through end of the ASCII character
+     * range as well as the printable characters in the Basic Latin and Latin-1
+     * Supplement character set (through \u00FF). It also includes the special
+     * characters tab (\u0009), line feed (\u000A), and carriage return (\u000D).</p>
      */
     inline void SetCertificateBody(const char* value) { m_certificateBodyHasBeenSet = true; m_certificateBody.assign(value); }
 
     /**
-     * <p>The contents of the signing certificate.</p> <p>This parameter allows (per
-     * its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
-     * characters consisting of any printable ASCII character ranging from the space
-     * character (\u0020) through end of the ASCII character range (\u00FF). It also
-     * includes the special characters tab (\u0009), line feed (\u000A), and carriage
-     * return (\u000D).</p>
+     * <p>The contents of the signing certificate.</p> <p>The <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this
+     * parameter is a string of characters consisting of any printable ASCII character
+     * ranging from the space character (\u0020) through end of the ASCII character
+     * range as well as the printable characters in the Basic Latin and Latin-1
+     * Supplement character set (through \u00FF). It also includes the special
+     * characters tab (\u0009), line feed (\u000A), and carriage return (\u000D).</p>
      */
     inline UploadSigningCertificateRequest& WithCertificateBody(const Aws::String& value) { SetCertificateBody(value); return *this;}
 
     /**
-     * <p>The contents of the signing certificate.</p> <p>This parameter allows (per
-     * its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
-     * characters consisting of any printable ASCII character ranging from the space
-     * character (\u0020) through end of the ASCII character range (\u00FF). It also
-     * includes the special characters tab (\u0009), line feed (\u000A), and carriage
-     * return (\u000D).</p>
+     * <p>The contents of the signing certificate.</p> <p>The <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this
+     * parameter is a string of characters consisting of any printable ASCII character
+     * ranging from the space character (\u0020) through end of the ASCII character
+     * range as well as the printable characters in the Basic Latin and Latin-1
+     * Supplement character set (through \u00FF). It also includes the special
+     * characters tab (\u0009), line feed (\u000A), and carriage return (\u000D).</p>
      */
     inline UploadSigningCertificateRequest& WithCertificateBody(Aws::String&& value) { SetCertificateBody(value); return *this;}
 
     /**
-     * <p>The contents of the signing certificate.</p> <p>This parameter allows (per
-     * its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
-     * characters consisting of any printable ASCII character ranging from the space
-     * character (\u0020) through end of the ASCII character range (\u00FF). It also
-     * includes the special characters tab (\u0009), line feed (\u000A), and carriage
-     * return (\u000D).</p>
+     * <p>The contents of the signing certificate.</p> <p>The <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this
+     * parameter is a string of characters consisting of any printable ASCII character
+     * ranging from the space character (\u0020) through end of the ASCII character
+     * range as well as the printable characters in the Basic Latin and Latin-1
+     * Supplement character set (through \u00FF). It also includes the special
+     * characters tab (\u0009), line feed (\u000A), and carriage return (\u000D).</p>
      */
     inline UploadSigningCertificateRequest& WithCertificateBody(const char* value) { SetCertificateBody(value); return *this;}
 

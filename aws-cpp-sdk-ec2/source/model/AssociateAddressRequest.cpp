@@ -38,7 +38,7 @@ Aws::String AssociateAddressRequest::SerializePayload() const
   ss << "Action=AssociateAddress&";
   if(m_dryRunHasBeenSet)
   {
-    ss << "DryRun=" << m_dryRun << "&";
+    ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
   if(m_instanceIdHasBeenSet)
@@ -68,7 +68,7 @@ Aws::String AssociateAddressRequest::SerializePayload() const
 
   if(m_allowReassociationHasBeenSet)
   {
-    ss << "AllowReassociation=" << m_allowReassociation << "&";
+    ss << "AllowReassociation=" << std::boolalpha << m_allowReassociation << "&";
   }
 
   ss << "Version=2016-11-15";

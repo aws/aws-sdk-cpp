@@ -358,7 +358,7 @@ void CacheCluster::OutputToStream(Aws::OStream& oStream, const char* location, u
 
   if(m_autoMinorVersionUpgradeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".AutoMinorVersionUpgrade=" << m_autoMinorVersionUpgrade << "&";
+      oStream << location << index << locationValue << ".AutoMinorVersionUpgrade=" << std::boolalpha << m_autoMinorVersionUpgrade << "&";
   }
 
   if(m_securityGroupsHasBeenSet)
@@ -481,7 +481,7 @@ void CacheCluster::OutputToStream(Aws::OStream& oStream, const char* location) c
   }
   if(m_autoMinorVersionUpgradeHasBeenSet)
   {
-      oStream << location << ".AutoMinorVersionUpgrade=" << m_autoMinorVersionUpgrade << "&";
+      oStream << location << ".AutoMinorVersionUpgrade=" << std::boolalpha << m_autoMinorVersionUpgrade << "&";
   }
   if(m_securityGroupsHasBeenSet)
   {

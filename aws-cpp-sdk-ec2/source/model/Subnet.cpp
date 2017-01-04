@@ -194,7 +194,7 @@ void Subnet::OutputToStream(Aws::OStream& oStream, const char* location, unsigne
 
   if(m_assignIpv6AddressOnCreationHasBeenSet)
   {
-      oStream << location << index << locationValue << ".AssignIpv6AddressOnCreation=" << m_assignIpv6AddressOnCreation << "&";
+      oStream << location << index << locationValue << ".AssignIpv6AddressOnCreation=" << std::boolalpha << m_assignIpv6AddressOnCreation << "&";
   }
 
   if(m_availableIpAddressCountHasBeenSet)
@@ -209,12 +209,12 @@ void Subnet::OutputToStream(Aws::OStream& oStream, const char* location, unsigne
 
   if(m_defaultForAzHasBeenSet)
   {
-      oStream << location << index << locationValue << ".DefaultForAz=" << m_defaultForAz << "&";
+      oStream << location << index << locationValue << ".DefaultForAz=" << std::boolalpha << m_defaultForAz << "&";
   }
 
   if(m_mapPublicIpOnLaunchHasBeenSet)
   {
-      oStream << location << index << locationValue << ".MapPublicIpOnLaunch=" << m_mapPublicIpOnLaunch << "&";
+      oStream << location << index << locationValue << ".MapPublicIpOnLaunch=" << std::boolalpha << m_mapPublicIpOnLaunch << "&";
   }
 
   if(m_tagsHasBeenSet)
@@ -254,13 +254,13 @@ void Subnet::OutputToStream(Aws::OStream& oStream, const char* location) const
       for(auto& item : m_ipv6CidrBlockAssociationSet)
       {
         Aws::StringStream ipv6CidrBlockAssociationSetSs;
-        ipv6CidrBlockAssociationSetSs << location <<  ".item." << ipv6CidrBlockAssociationSetIdx++;
+        ipv6CidrBlockAssociationSetSs << location <<  ".Item." << ipv6CidrBlockAssociationSetIdx++;
         item.OutputToStream(oStream, ipv6CidrBlockAssociationSetSs.str().c_str());
       }
   }
   if(m_assignIpv6AddressOnCreationHasBeenSet)
   {
-      oStream << location << ".AssignIpv6AddressOnCreation=" << m_assignIpv6AddressOnCreation << "&";
+      oStream << location << ".AssignIpv6AddressOnCreation=" << std::boolalpha << m_assignIpv6AddressOnCreation << "&";
   }
   if(m_availableIpAddressCountHasBeenSet)
   {
@@ -272,11 +272,11 @@ void Subnet::OutputToStream(Aws::OStream& oStream, const char* location) const
   }
   if(m_defaultForAzHasBeenSet)
   {
-      oStream << location << ".DefaultForAz=" << m_defaultForAz << "&";
+      oStream << location << ".DefaultForAz=" << std::boolalpha << m_defaultForAz << "&";
   }
   if(m_mapPublicIpOnLaunchHasBeenSet)
   {
-      oStream << location << ".MapPublicIpOnLaunch=" << m_mapPublicIpOnLaunch << "&";
+      oStream << location << ".MapPublicIpOnLaunch=" << std::boolalpha << m_mapPublicIpOnLaunch << "&";
   }
   if(m_tagsHasBeenSet)
   {
@@ -284,7 +284,7 @@ void Subnet::OutputToStream(Aws::OStream& oStream, const char* location) const
       for(auto& item : m_tags)
       {
         Aws::StringStream tagsSs;
-        tagsSs << location <<  ".item." << tagsIdx++;
+        tagsSs << location <<  ".Item." << tagsIdx++;
         item.OutputToStream(oStream, tagsSs.str().c_str());
       }
   }

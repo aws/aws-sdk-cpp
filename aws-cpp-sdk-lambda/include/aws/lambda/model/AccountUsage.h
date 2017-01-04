@@ -44,20 +44,17 @@ namespace Model
     Aws::Utils::Json::JsonValue Jsonize() const;
 
     /**
-     * <p>Total size, in megabytes, of the account's deployment packages per
-     * region.</p>
+     * <p>Total size, in bytes, of the account's deployment packages per region.</p>
      */
     inline long long GetTotalCodeSize() const{ return m_totalCodeSize; }
 
     /**
-     * <p>Total size, in megabytes, of the account's deployment packages per
-     * region.</p>
+     * <p>Total size, in bytes, of the account's deployment packages per region.</p>
      */
     inline void SetTotalCodeSize(long long value) { m_totalCodeSizeHasBeenSet = true; m_totalCodeSize = value; }
 
     /**
-     * <p>Total size, in megabytes, of the account's deployment packages per
-     * region.</p>
+     * <p>Total size, in bytes, of the account's deployment packages per region.</p>
      */
     inline AccountUsage& WithTotalCodeSize(long long value) { SetTotalCodeSize(value); return *this;}
 

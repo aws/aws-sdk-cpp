@@ -432,7 +432,7 @@ void DBCluster::OutputToStream(Aws::OStream& oStream, const char* location, unsi
 
   if(m_multiAZHasBeenSet)
   {
-      oStream << location << index << locationValue << ".MultiAZ=" << m_multiAZ << "&";
+      oStream << location << index << locationValue << ".MultiAZ=" << std::boolalpha << m_multiAZ << "&";
   }
 
   if(m_engineHasBeenSet)
@@ -524,7 +524,7 @@ void DBCluster::OutputToStream(Aws::OStream& oStream, const char* location, unsi
 
   if(m_storageEncryptedHasBeenSet)
   {
-      oStream << location << index << locationValue << ".StorageEncrypted=" << m_storageEncrypted << "&";
+      oStream << location << index << locationValue << ".StorageEncrypted=" << std::boolalpha << m_storageEncrypted << "&";
   }
 
   if(m_kmsKeyIdHasBeenSet)
@@ -620,7 +620,7 @@ void DBCluster::OutputToStream(Aws::OStream& oStream, const char* location) cons
   }
   if(m_multiAZHasBeenSet)
   {
-      oStream << location << ".MultiAZ=" << m_multiAZ << "&";
+      oStream << location << ".MultiAZ=" << std::boolalpha << m_multiAZ << "&";
   }
   if(m_engineHasBeenSet)
   {
@@ -698,7 +698,7 @@ void DBCluster::OutputToStream(Aws::OStream& oStream, const char* location) cons
   }
   if(m_storageEncryptedHasBeenSet)
   {
-      oStream << location << ".StorageEncrypted=" << m_storageEncrypted << "&";
+      oStream << location << ".StorageEncrypted=" << std::boolalpha << m_storageEncrypted << "&";
   }
   if(m_kmsKeyIdHasBeenSet)
   {

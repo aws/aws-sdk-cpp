@@ -458,31 +458,31 @@ namespace Model
     inline UpdateFunctionCodeResult& WithVpcConfig(VpcConfigResponse&& value) { SetVpcConfig(value); return *this;}
 
     /**
-     * <p>The parent object that contains the target ARN (Amazon Resource Name) of an
+     * <p>The parent object that contains the target Amazon Resource Name (ARN) of an
      * Amazon SQS queue or Amazon SNS topic.</p>
      */
     inline const DeadLetterConfig& GetDeadLetterConfig() const{ return m_deadLetterConfig; }
 
     /**
-     * <p>The parent object that contains the target ARN (Amazon Resource Name) of an
+     * <p>The parent object that contains the target Amazon Resource Name (ARN) of an
      * Amazon SQS queue or Amazon SNS topic.</p>
      */
     inline void SetDeadLetterConfig(const DeadLetterConfig& value) { m_deadLetterConfig = value; }
 
     /**
-     * <p>The parent object that contains the target ARN (Amazon Resource Name) of an
+     * <p>The parent object that contains the target Amazon Resource Name (ARN) of an
      * Amazon SQS queue or Amazon SNS topic.</p>
      */
     inline void SetDeadLetterConfig(DeadLetterConfig&& value) { m_deadLetterConfig = value; }
 
     /**
-     * <p>The parent object that contains the target ARN (Amazon Resource Name) of an
+     * <p>The parent object that contains the target Amazon Resource Name (ARN) of an
      * Amazon SQS queue or Amazon SNS topic.</p>
      */
     inline UpdateFunctionCodeResult& WithDeadLetterConfig(const DeadLetterConfig& value) { SetDeadLetterConfig(value); return *this;}
 
     /**
-     * <p>The parent object that contains the target ARN (Amazon Resource Name) of an
+     * <p>The parent object that contains the target Amazon Resource Name (ARN) of an
      * Amazon SQS queue or Amazon SNS topic.</p>
      */
     inline UpdateFunctionCodeResult& WithDeadLetterConfig(DeadLetterConfig&& value) { SetDeadLetterConfig(value); return *this;}

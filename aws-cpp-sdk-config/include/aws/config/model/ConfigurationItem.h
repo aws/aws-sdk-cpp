@@ -37,10 +37,8 @@ namespace Model
 {
 
   /**
-   * <p>A list that contains detailed configurations of a specified resource.</p>
-   * <note> <p>Currently, the list does not contain information about non-AWS
-   * components (for example, applications on your Amazon EC2 instances).</p>
-   * </note><p><h3>See Also:</h3>   <a
+   * <p>A list that contains detailed configurations of a specified
+   * resource.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/ConfigurationItem">AWS
    * API Reference</a></p>
    */

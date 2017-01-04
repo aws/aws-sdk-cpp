@@ -87,35 +87,35 @@ namespace Model
 
     /**
      * <p> The Base32 seed defined as specified in <a
-     * href="http://www.ietf.org/rfc/rfc3548.txt">RFC3548</a>. The
+     * href="https://tools.ietf.org/html/rfc3548.txt">RFC3548</a>. The
      * <code>Base32StringSeed</code> is Base64-encoded. </p>
      */
     inline const Aws::Utils::ByteBuffer& GetBase32StringSeed() const{ return m_base32StringSeed; }
 
     /**
      * <p> The Base32 seed defined as specified in <a
-     * href="http://www.ietf.org/rfc/rfc3548.txt">RFC3548</a>. The
+     * href="https://tools.ietf.org/html/rfc3548.txt">RFC3548</a>. The
      * <code>Base32StringSeed</code> is Base64-encoded. </p>
      */
     inline void SetBase32StringSeed(const Aws::Utils::ByteBuffer& value) { m_base32StringSeedHasBeenSet = true; m_base32StringSeed = value; }
 
     /**
      * <p> The Base32 seed defined as specified in <a
-     * href="http://www.ietf.org/rfc/rfc3548.txt">RFC3548</a>. The
+     * href="https://tools.ietf.org/html/rfc3548.txt">RFC3548</a>. The
      * <code>Base32StringSeed</code> is Base64-encoded. </p>
      */
     inline void SetBase32StringSeed(Aws::Utils::ByteBuffer&& value) { m_base32StringSeedHasBeenSet = true; m_base32StringSeed = value; }
 
     /**
      * <p> The Base32 seed defined as specified in <a
-     * href="http://www.ietf.org/rfc/rfc3548.txt">RFC3548</a>. The
+     * href="https://tools.ietf.org/html/rfc3548.txt">RFC3548</a>. The
      * <code>Base32StringSeed</code> is Base64-encoded. </p>
      */
     inline VirtualMFADevice& WithBase32StringSeed(const Aws::Utils::ByteBuffer& value) { SetBase32StringSeed(value); return *this;}
 
     /**
      * <p> The Base32 seed defined as specified in <a
-     * href="http://www.ietf.org/rfc/rfc3548.txt">RFC3548</a>. The
+     * href="https://tools.ietf.org/html/rfc3548.txt">RFC3548</a>. The
      * <code>Base32StringSeed</code> is Base64-encoded. </p>
      */
     inline VirtualMFADevice& WithBase32StringSeed(Aws::Utils::ByteBuffer&& value) { SetBase32StringSeed(value); return *this;}

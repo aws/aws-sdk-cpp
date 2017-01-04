@@ -218,7 +218,7 @@ void ScheduledInstancesNetworkInterface::OutputToStream(Aws::OStream& oStream, c
 
   if(m_associatePublicIpAddressHasBeenSet)
   {
-      oStream << location << index << locationValue << ".AssociatePublicIpAddress=" << m_associatePublicIpAddress << "&";
+      oStream << location << index << locationValue << ".AssociatePublicIpAddress=" << std::boolalpha << m_associatePublicIpAddress << "&";
   }
 
   if(m_groupsHasBeenSet)
@@ -232,7 +232,7 @@ void ScheduledInstancesNetworkInterface::OutputToStream(Aws::OStream& oStream, c
 
   if(m_deleteOnTerminationHasBeenSet)
   {
-      oStream << location << index << locationValue << ".DeleteOnTermination=" << m_deleteOnTermination << "&";
+      oStream << location << index << locationValue << ".DeleteOnTermination=" << std::boolalpha << m_deleteOnTermination << "&";
   }
 
   if(m_ipv6AddressesHasBeenSet)
@@ -291,7 +291,7 @@ void ScheduledInstancesNetworkInterface::OutputToStream(Aws::OStream& oStream, c
   }
   if(m_associatePublicIpAddressHasBeenSet)
   {
-      oStream << location << ".AssociatePublicIpAddress=" << m_associatePublicIpAddress << "&";
+      oStream << location << ".AssociatePublicIpAddress=" << std::boolalpha << m_associatePublicIpAddress << "&";
   }
   if(m_groupsHasBeenSet)
   {
@@ -303,7 +303,7 @@ void ScheduledInstancesNetworkInterface::OutputToStream(Aws::OStream& oStream, c
   }
   if(m_deleteOnTerminationHasBeenSet)
   {
-      oStream << location << ".DeleteOnTermination=" << m_deleteOnTermination << "&";
+      oStream << location << ".DeleteOnTermination=" << std::boolalpha << m_deleteOnTermination << "&";
   }
   if(m_ipv6AddressesHasBeenSet)
   {

@@ -37,6 +37,7 @@ namespace Model
     monthly_revenue_annual_subscriptions,
     disbursed_amount_by_product,
     disbursed_amount_by_product_with_uncollected_funds,
+    disbursed_amount_by_instance_hours,
     disbursed_amount_by_customer_geo,
     disbursed_amount_by_age_of_uncollected_funds,
     disbursed_amount_by_age_of_disbursed_funds,

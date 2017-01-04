@@ -38,7 +38,7 @@ Aws::String DescribeSpotFleetRequestHistoryRequest::SerializePayload() const
   ss << "Action=DescribeSpotFleetRequestHistory&";
   if(m_dryRunHasBeenSet)
   {
-    ss << "DryRun=" << m_dryRun << "&";
+    ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
   if(m_spotFleetRequestIdHasBeenSet)

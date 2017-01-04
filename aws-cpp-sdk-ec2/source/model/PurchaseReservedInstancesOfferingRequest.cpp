@@ -35,7 +35,7 @@ Aws::String PurchaseReservedInstancesOfferingRequest::SerializePayload() const
   ss << "Action=PurchaseReservedInstancesOffering&";
   if(m_dryRunHasBeenSet)
   {
-    ss << "DryRun=" << m_dryRun << "&";
+    ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
   if(m_reservedInstancesOfferingIdHasBeenSet)

@@ -141,12 +141,12 @@ Aws::String CreateLaunchConfigurationRequest::SerializePayload() const
 
   if(m_ebsOptimizedHasBeenSet)
   {
-    ss << "EbsOptimized=" << m_ebsOptimized << "&";
+    ss << "EbsOptimized=" << std::boolalpha << m_ebsOptimized << "&";
   }
 
   if(m_associatePublicIpAddressHasBeenSet)
   {
-    ss << "AssociatePublicIpAddress=" << m_associatePublicIpAddress << "&";
+    ss << "AssociatePublicIpAddress=" << std::boolalpha << m_associatePublicIpAddress << "&";
   }
 
   if(m_placementTenancyHasBeenSet)

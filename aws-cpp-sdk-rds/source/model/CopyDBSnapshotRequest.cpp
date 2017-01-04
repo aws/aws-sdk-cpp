@@ -61,7 +61,7 @@ Aws::String CopyDBSnapshotRequest::SerializePayload() const
 
   if(m_copyTagsHasBeenSet)
   {
-    ss << "CopyTags=" << m_copyTags << "&";
+    ss << "CopyTags=" << std::boolalpha << m_copyTags << "&";
   }
 
   if(m_preSignedUrlHasBeenSet)

@@ -32,7 +32,7 @@ Aws::String DeleteCustomerGatewayRequest::SerializePayload() const
   ss << "Action=DeleteCustomerGateway&";
   if(m_dryRunHasBeenSet)
   {
-    ss << "DryRun=" << m_dryRun << "&";
+    ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
   if(m_customerGatewayIdHasBeenSet)

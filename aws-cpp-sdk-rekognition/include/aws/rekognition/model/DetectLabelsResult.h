@@ -79,8 +79,8 @@ namespace Model
     /**
      * <p> Amazon Rekognition returns the orientation of the input image that was
      * detected (clockwise direction). If your application displays the image, you can
-     * use this value to correct the orientation. If Rekognition detects that the input
-     * image was rotated (for example, by 90 degrees), it first corrects the
+     * use this value to correct the orientation. If Amazon Rekognition detects that
+     * the input image was rotated (for example, by 90 degrees), it first corrects the
      * orientation before detecting the labels. </p>
      */
     inline const OrientationCorrection& GetOrientationCorrection() const{ return m_orientationCorrection; }
@@ -88,8 +88,8 @@ namespace Model
     /**
      * <p> Amazon Rekognition returns the orientation of the input image that was
      * detected (clockwise direction). If your application displays the image, you can
-     * use this value to correct the orientation. If Rekognition detects that the input
-     * image was rotated (for example, by 90 degrees), it first corrects the
+     * use this value to correct the orientation. If Amazon Rekognition detects that
+     * the input image was rotated (for example, by 90 degrees), it first corrects the
      * orientation before detecting the labels. </p>
      */
     inline void SetOrientationCorrection(const OrientationCorrection& value) { m_orientationCorrection = value; }
@@ -97,8 +97,8 @@ namespace Model
     /**
      * <p> Amazon Rekognition returns the orientation of the input image that was
      * detected (clockwise direction). If your application displays the image, you can
-     * use this value to correct the orientation. If Rekognition detects that the input
-     * image was rotated (for example, by 90 degrees), it first corrects the
+     * use this value to correct the orientation. If Amazon Rekognition detects that
+     * the input image was rotated (for example, by 90 degrees), it first corrects the
      * orientation before detecting the labels. </p>
      */
     inline void SetOrientationCorrection(OrientationCorrection&& value) { m_orientationCorrection = value; }
@@ -106,8 +106,8 @@ namespace Model
     /**
      * <p> Amazon Rekognition returns the orientation of the input image that was
      * detected (clockwise direction). If your application displays the image, you can
-     * use this value to correct the orientation. If Rekognition detects that the input
-     * image was rotated (for example, by 90 degrees), it first corrects the
+     * use this value to correct the orientation. If Amazon Rekognition detects that
+     * the input image was rotated (for example, by 90 degrees), it first corrects the
      * orientation before detecting the labels. </p>
      */
     inline DetectLabelsResult& WithOrientationCorrection(const OrientationCorrection& value) { SetOrientationCorrection(value); return *this;}
@@ -115,8 +115,8 @@ namespace Model
     /**
      * <p> Amazon Rekognition returns the orientation of the input image that was
      * detected (clockwise direction). If your application displays the image, you can
-     * use this value to correct the orientation. If Rekognition detects that the input
-     * image was rotated (for example, by 90 degrees), it first corrects the
+     * use this value to correct the orientation. If Amazon Rekognition detects that
+     * the input image was rotated (for example, by 90 degrees), it first corrects the
      * orientation before detecting the labels. </p>
      */
     inline DetectLabelsResult& WithOrientationCorrection(OrientationCorrection&& value) { SetOrientationCorrection(value); return *this;}

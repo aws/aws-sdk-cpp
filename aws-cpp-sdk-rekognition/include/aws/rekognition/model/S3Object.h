@@ -31,7 +31,11 @@ namespace Model
 {
 
   /**
-   * <p>Provides the S3 bucket name and object name.</p><p><h3>See Also:</h3>   <a
+   * <p>Provides the S3 bucket name and object name.</p> <p>The region for the S3
+   * bucket containing the S3 object must match the region you use for Amazon
+   * Rekognition operations.</p> <p>For Amazon Rekognition to process an S3 object,
+   * the user must have permission to access the S3 object. For more information, see
+   * <a>manage-access-resource-policies</a>. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/S3Object">AWS
    * API Reference</a></p>
    */

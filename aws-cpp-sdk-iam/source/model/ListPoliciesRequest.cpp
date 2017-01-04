@@ -42,7 +42,7 @@ Aws::String ListPoliciesRequest::SerializePayload() const
 
   if(m_onlyAttachedHasBeenSet)
   {
-    ss << "OnlyAttached=" << m_onlyAttached << "&";
+    ss << "OnlyAttached=" << std::boolalpha << m_onlyAttached << "&";
   }
 
   if(m_pathPrefixHasBeenSet)

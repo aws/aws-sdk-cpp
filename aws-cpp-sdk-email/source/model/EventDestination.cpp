@@ -106,7 +106,7 @@ void EventDestination::OutputToStream(Aws::OStream& oStream, const char* locatio
 
   if(m_enabledHasBeenSet)
   {
-      oStream << location << index << locationValue << ".Enabled=" << m_enabled << "&";
+      oStream << location << index << locationValue << ".Enabled=" << std::boolalpha << m_enabled << "&";
   }
 
   if(m_matchingEventTypesHasBeenSet)
@@ -142,7 +142,7 @@ void EventDestination::OutputToStream(Aws::OStream& oStream, const char* locatio
   }
   if(m_enabledHasBeenSet)
   {
-      oStream << location << ".Enabled=" << m_enabled << "&";
+      oStream << location << ".Enabled=" << std::boolalpha << m_enabled << "&";
   }
   if(m_matchingEventTypesHasBeenSet)
   {

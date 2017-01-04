@@ -43,7 +43,7 @@ Aws::String ReplaceNetworkAclEntryRequest::SerializePayload() const
   ss << "Action=ReplaceNetworkAclEntry&";
   if(m_dryRunHasBeenSet)
   {
-    ss << "DryRun=" << m_dryRun << "&";
+    ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
   if(m_networkAclIdHasBeenSet)
@@ -68,7 +68,7 @@ Aws::String ReplaceNetworkAclEntryRequest::SerializePayload() const
 
   if(m_egressHasBeenSet)
   {
-    ss << "Egress=" << m_egress << "&";
+    ss << "Egress=" << std::boolalpha << m_egress << "&";
   }
 
   if(m_cidrBlockHasBeenSet)

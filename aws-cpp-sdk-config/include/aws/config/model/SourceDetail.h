@@ -80,62 +80,97 @@ namespace Model
     inline SourceDetail& WithEventSource(EventSource&& value) { SetEventSource(value); return *this;}
 
     /**
-     * <p>The type of notification that triggers AWS Config to run an evaluation. You
-     * can specify the following notification types:</p> <p>
+     * <p>The type of notification that triggers AWS Config to run an evaluation for a
+     * rule. You can specify the following notification types:</p> <ul> <li> <p>
      * <code>ConfigurationItemChangeNotification</code> - Triggers an evaluation when
-     * AWS Config delivers a configuration item change notification.</p> <p>
+     * AWS Config delivers a configuration item as a result of a resource change.</p>
+     * </li> <li> <p> <code>OversizedConfigurationItemChangeNotification</code> -
+     * Triggers an evaluation when AWS Config delivers an oversized configuration item.
+     * AWS Config may generate this notification type when a resource changes and the
+     * notification exceeds the maximum size allowed by Amazon SNS.</p> </li> <li> <p>
      * <code>ScheduledNotification</code> - Triggers a periodic evaluation at the
-     * frequency specified for <code>MaximumExecutionFrequency</code>.</p> <p>
-     * <code>ConfigurationSnapshotDeliveryCompleted</code> - Triggers a periodic
-     * evaluation when AWS Config delivers a configuration snapshot.</p>
+     * frequency specified for <code>MaximumExecutionFrequency</code>.</p> </li> <li>
+     * <p> <code>ConfigurationSnapshotDeliveryCompleted</code> - Triggers a periodic
+     * evaluation when AWS Config delivers a configuration snapshot.</p> </li> </ul>
+     * <p>If you want your custom rule to be triggered by configuration changes,
+     * specify both <code>ConfigurationItemChangeNotification</code> and
+     * <code>OversizedConfigurationItemChangeNotification</code>. </p>
      */
     inline const MessageType& GetMessageType() const{ return m_messageType; }
 
     /**
-     * <p>The type of notification that triggers AWS Config to run an evaluation. You
-     * can specify the following notification types:</p> <p>
+     * <p>The type of notification that triggers AWS Config to run an evaluation for a
+     * rule. You can specify the following notification types:</p> <ul> <li> <p>
      * <code>ConfigurationItemChangeNotification</code> - Triggers an evaluation when
-     * AWS Config delivers a configuration item change notification.</p> <p>
+     * AWS Config delivers a configuration item as a result of a resource change.</p>
+     * </li> <li> <p> <code>OversizedConfigurationItemChangeNotification</code> -
+     * Triggers an evaluation when AWS Config delivers an oversized configuration item.
+     * AWS Config may generate this notification type when a resource changes and the
+     * notification exceeds the maximum size allowed by Amazon SNS.</p> </li> <li> <p>
      * <code>ScheduledNotification</code> - Triggers a periodic evaluation at the
-     * frequency specified for <code>MaximumExecutionFrequency</code>.</p> <p>
-     * <code>ConfigurationSnapshotDeliveryCompleted</code> - Triggers a periodic
-     * evaluation when AWS Config delivers a configuration snapshot.</p>
+     * frequency specified for <code>MaximumExecutionFrequency</code>.</p> </li> <li>
+     * <p> <code>ConfigurationSnapshotDeliveryCompleted</code> - Triggers a periodic
+     * evaluation when AWS Config delivers a configuration snapshot.</p> </li> </ul>
+     * <p>If you want your custom rule to be triggered by configuration changes,
+     * specify both <code>ConfigurationItemChangeNotification</code> and
+     * <code>OversizedConfigurationItemChangeNotification</code>. </p>
      */
     inline void SetMessageType(const MessageType& value) { m_messageTypeHasBeenSet = true; m_messageType = value; }
 
     /**
-     * <p>The type of notification that triggers AWS Config to run an evaluation. You
-     * can specify the following notification types:</p> <p>
+     * <p>The type of notification that triggers AWS Config to run an evaluation for a
+     * rule. You can specify the following notification types:</p> <ul> <li> <p>
      * <code>ConfigurationItemChangeNotification</code> - Triggers an evaluation when
-     * AWS Config delivers a configuration item change notification.</p> <p>
+     * AWS Config delivers a configuration item as a result of a resource change.</p>
+     * </li> <li> <p> <code>OversizedConfigurationItemChangeNotification</code> -
+     * Triggers an evaluation when AWS Config delivers an oversized configuration item.
+     * AWS Config may generate this notification type when a resource changes and the
+     * notification exceeds the maximum size allowed by Amazon SNS.</p> </li> <li> <p>
      * <code>ScheduledNotification</code> - Triggers a periodic evaluation at the
-     * frequency specified for <code>MaximumExecutionFrequency</code>.</p> <p>
-     * <code>ConfigurationSnapshotDeliveryCompleted</code> - Triggers a periodic
-     * evaluation when AWS Config delivers a configuration snapshot.</p>
+     * frequency specified for <code>MaximumExecutionFrequency</code>.</p> </li> <li>
+     * <p> <code>ConfigurationSnapshotDeliveryCompleted</code> - Triggers a periodic
+     * evaluation when AWS Config delivers a configuration snapshot.</p> </li> </ul>
+     * <p>If you want your custom rule to be triggered by configuration changes,
+     * specify both <code>ConfigurationItemChangeNotification</code> and
+     * <code>OversizedConfigurationItemChangeNotification</code>. </p>
      */
     inline void SetMessageType(MessageType&& value) { m_messageTypeHasBeenSet = true; m_messageType = value; }
 
     /**
-     * <p>The type of notification that triggers AWS Config to run an evaluation. You
-     * can specify the following notification types:</p> <p>
+     * <p>The type of notification that triggers AWS Config to run an evaluation for a
+     * rule. You can specify the following notification types:</p> <ul> <li> <p>
      * <code>ConfigurationItemChangeNotification</code> - Triggers an evaluation when
-     * AWS Config delivers a configuration item change notification.</p> <p>
+     * AWS Config delivers a configuration item as a result of a resource change.</p>
+     * </li> <li> <p> <code>OversizedConfigurationItemChangeNotification</code> -
+     * Triggers an evaluation when AWS Config delivers an oversized configuration item.
+     * AWS Config may generate this notification type when a resource changes and the
+     * notification exceeds the maximum size allowed by Amazon SNS.</p> </li> <li> <p>
      * <code>ScheduledNotification</code> - Triggers a periodic evaluation at the
-     * frequency specified for <code>MaximumExecutionFrequency</code>.</p> <p>
-     * <code>ConfigurationSnapshotDeliveryCompleted</code> - Triggers a periodic
-     * evaluation when AWS Config delivers a configuration snapshot.</p>
+     * frequency specified for <code>MaximumExecutionFrequency</code>.</p> </li> <li>
+     * <p> <code>ConfigurationSnapshotDeliveryCompleted</code> - Triggers a periodic
+     * evaluation when AWS Config delivers a configuration snapshot.</p> </li> </ul>
+     * <p>If you want your custom rule to be triggered by configuration changes,
+     * specify both <code>ConfigurationItemChangeNotification</code> and
+     * <code>OversizedConfigurationItemChangeNotification</code>. </p>
      */
     inline SourceDetail& WithMessageType(const MessageType& value) { SetMessageType(value); return *this;}
 
     /**
-     * <p>The type of notification that triggers AWS Config to run an evaluation. You
-     * can specify the following notification types:</p> <p>
+     * <p>The type of notification that triggers AWS Config to run an evaluation for a
+     * rule. You can specify the following notification types:</p> <ul> <li> <p>
      * <code>ConfigurationItemChangeNotification</code> - Triggers an evaluation when
-     * AWS Config delivers a configuration item change notification.</p> <p>
+     * AWS Config delivers a configuration item as a result of a resource change.</p>
+     * </li> <li> <p> <code>OversizedConfigurationItemChangeNotification</code> -
+     * Triggers an evaluation when AWS Config delivers an oversized configuration item.
+     * AWS Config may generate this notification type when a resource changes and the
+     * notification exceeds the maximum size allowed by Amazon SNS.</p> </li> <li> <p>
      * <code>ScheduledNotification</code> - Triggers a periodic evaluation at the
-     * frequency specified for <code>MaximumExecutionFrequency</code>.</p> <p>
-     * <code>ConfigurationSnapshotDeliveryCompleted</code> - Triggers a periodic
-     * evaluation when AWS Config delivers a configuration snapshot.</p>
+     * frequency specified for <code>MaximumExecutionFrequency</code>.</p> </li> <li>
+     * <p> <code>ConfigurationSnapshotDeliveryCompleted</code> - Triggers a periodic
+     * evaluation when AWS Config delivers a configuration snapshot.</p> </li> </ul>
+     * <p>If you want your custom rule to be triggered by configuration changes,
+     * specify both <code>ConfigurationItemChangeNotification</code> and
+     * <code>OversizedConfigurationItemChangeNotification</code>. </p>
      */
     inline SourceDetail& WithMessageType(MessageType&& value) { SetMessageType(value); return *this;}
 

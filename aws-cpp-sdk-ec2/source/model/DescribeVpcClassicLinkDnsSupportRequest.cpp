@@ -36,7 +36,7 @@ Aws::String DescribeVpcClassicLinkDnsSupportRequest::SerializePayload() const
     unsigned vpcIdsCount = 1;
     for(auto& item : m_vpcIds)
     {
-      ss << "VpcIds.member." << vpcIdsCount << "="
+      ss << "VpcIds." << vpcIdsCount << "="
           << StringUtils::URLEncode(item.c_str()) << "&";
       vpcIdsCount++;
     }
