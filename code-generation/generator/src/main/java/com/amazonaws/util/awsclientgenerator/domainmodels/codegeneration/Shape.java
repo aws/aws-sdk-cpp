@@ -73,6 +73,10 @@ public class Shape {
         return "blob".equals(type.toLowerCase());
     }
 
+    public boolean isBoolean() {
+        return "boolean".equals(type.toLowerCase());
+    }
+
     public boolean isPrimitive() {
         return !isMap() && !isList() && !isStructure() && !isString() && !isEnum() && !isBlob() && !isTimeStamp();
     }
