@@ -25,8 +25,8 @@ if(BUILD_CURL OR BUILD_OPENSSL OR BUILD_ZLIB)
         #likely, some of the things here are unnecessary
         ExternalProject_Add(ZLIB
             SOURCE_DIR ${ZLIB_SOURCE_DIR}
-            URL http://zlib.net/zlib-1.2.8.tar.gz
-            URL_HASH "SHA256=36658cb768a54c1d4dec43c3116c27ed893e88b02ecfcb44f2166f9c0b7f2a0d"
+            URL http://zlib.net/zlib-1.2.10.tar.gz
+            URL_HASH "SHA256=8d7e9f698ce48787b6e1c67e6bff79e487303e66077e25cb9784ac8835978017"
             PATCH_COMMAND patch CMakeLists.txt < ${CMAKE_SOURCE_DIR}/android-build/patches/zlib/CMakeLists.patch
             CMAKE_ARGS
             -DCMAKE_TOOLCHAIN_FILE=${CMAKE_TOOLCHAIN_FILE}
