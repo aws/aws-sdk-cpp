@@ -48,15 +48,15 @@ getAppointmentBillResult& getAppointmentBillResult::operator =(const AmazonWebSe
 
   }
 
-  if(jsonValue.ValueExists("totalPrice"))
-  {
-    m_totalPrice = jsonValue.GetString("totalPrice");
-
-  }
-
   if(jsonValue.ValueExists("doctorServiceFee"))
   {
     m_doctorServiceFee = jsonValue.GetString("doctorServiceFee");
+
+  }
+
+  if(jsonValue.ValueExists("totalPrice"))
+  {
+    m_totalPrice = jsonValue.GetString("totalPrice");
 
   }
 

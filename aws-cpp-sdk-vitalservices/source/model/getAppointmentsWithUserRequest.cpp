@@ -22,11 +22,11 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 getAppointmentsWithUserRequest::getAppointmentsWithUserRequest() : 
-    m_getDoctors(false),
-    m_getDoctorsHasBeenSet(false),
+    m_userIdHasBeenSet(false),
     m_getPatients(false),
     m_getPatientsHasBeenSet(false),
-    m_userIdHasBeenSet(false)
+    m_getDoctors(false),
+    m_getDoctorsHasBeenSet(false)
 {
 }
 
@@ -34,9 +34,9 @@ Aws::String getAppointmentsWithUserRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  if(m_getDoctorsHasBeenSet)
+  if(m_userIdHasBeenSet)
   {
-   payload.WithBool("getDoctors", m_getDoctors);
+   payload.WithString("userId", m_userId);
 
   }
 
@@ -46,9 +46,9 @@ Aws::String getAppointmentsWithUserRequest::SerializePayload() const
 
   }
 
-  if(m_userIdHasBeenSet)
+  if(m_getDoctorsHasBeenSet)
   {
-   payload.WithString("userId", m_userId);
+   payload.WithBool("getDoctors", m_getDoctors);
 
   }
 

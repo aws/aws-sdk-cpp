@@ -33,6 +33,27 @@ namespace Model
     Aws::String SerializePayload() const override;
 
     
+    inline const Aws::String& GetDoctorId() const{ return m_doctorId; }
+
+    
+    inline void SetDoctorId(const Aws::String& value) { m_doctorIdHasBeenSet = true; m_doctorId = value; }
+
+    
+    inline void SetDoctorId(Aws::String&& value) { m_doctorIdHasBeenSet = true; m_doctorId = value; }
+
+    
+    inline void SetDoctorId(const char* value) { m_doctorIdHasBeenSet = true; m_doctorId.assign(value); }
+
+    
+    inline urlForFileRequest& WithDoctorId(const Aws::String& value) { SetDoctorId(value); return *this;}
+
+    
+    inline urlForFileRequest& WithDoctorId(Aws::String&& value) { SetDoctorId(value); return *this;}
+
+    
+    inline urlForFileRequest& WithDoctorId(const char* value) { SetDoctorId(value); return *this;}
+
+    
     inline const Aws::String& GetFileName() const{ return m_fileName; }
 
     
@@ -52,27 +73,6 @@ namespace Model
 
     
     inline urlForFileRequest& WithFileName(const char* value) { SetFileName(value); return *this;}
-
-    
-    inline const Aws::String& GetHttpMethod() const{ return m_httpMethod; }
-
-    
-    inline void SetHttpMethod(const Aws::String& value) { m_httpMethodHasBeenSet = true; m_httpMethod = value; }
-
-    
-    inline void SetHttpMethod(Aws::String&& value) { m_httpMethodHasBeenSet = true; m_httpMethod = value; }
-
-    
-    inline void SetHttpMethod(const char* value) { m_httpMethodHasBeenSet = true; m_httpMethod.assign(value); }
-
-    
-    inline urlForFileRequest& WithHttpMethod(const Aws::String& value) { SetHttpMethod(value); return *this;}
-
-    
-    inline urlForFileRequest& WithHttpMethod(Aws::String&& value) { SetHttpMethod(value); return *this;}
-
-    
-    inline urlForFileRequest& WithHttpMethod(const char* value) { SetHttpMethod(value); return *this;}
 
     
     inline const Aws::String& GetPatientId() const{ return m_patientId; }
@@ -96,35 +96,35 @@ namespace Model
     inline urlForFileRequest& WithPatientId(const char* value) { SetPatientId(value); return *this;}
 
     
-    inline const Aws::String& GetDoctorId() const{ return m_doctorId; }
+    inline const Aws::String& GetHttpMethod() const{ return m_httpMethod; }
 
     
-    inline void SetDoctorId(const Aws::String& value) { m_doctorIdHasBeenSet = true; m_doctorId = value; }
+    inline void SetHttpMethod(const Aws::String& value) { m_httpMethodHasBeenSet = true; m_httpMethod = value; }
 
     
-    inline void SetDoctorId(Aws::String&& value) { m_doctorIdHasBeenSet = true; m_doctorId = value; }
+    inline void SetHttpMethod(Aws::String&& value) { m_httpMethodHasBeenSet = true; m_httpMethod = value; }
 
     
-    inline void SetDoctorId(const char* value) { m_doctorIdHasBeenSet = true; m_doctorId.assign(value); }
+    inline void SetHttpMethod(const char* value) { m_httpMethodHasBeenSet = true; m_httpMethod.assign(value); }
 
     
-    inline urlForFileRequest& WithDoctorId(const Aws::String& value) { SetDoctorId(value); return *this;}
+    inline urlForFileRequest& WithHttpMethod(const Aws::String& value) { SetHttpMethod(value); return *this;}
 
     
-    inline urlForFileRequest& WithDoctorId(Aws::String&& value) { SetDoctorId(value); return *this;}
+    inline urlForFileRequest& WithHttpMethod(Aws::String&& value) { SetHttpMethod(value); return *this;}
 
     
-    inline urlForFileRequest& WithDoctorId(const char* value) { SetDoctorId(value); return *this;}
+    inline urlForFileRequest& WithHttpMethod(const char* value) { SetHttpMethod(value); return *this;}
 
   private:
-    Aws::String m_fileName;
-    bool m_fileNameHasBeenSet;
-    Aws::String m_httpMethod;
-    bool m_httpMethodHasBeenSet;
-    Aws::String m_patientId;
-    bool m_patientIdHasBeenSet;
     Aws::String m_doctorId;
     bool m_doctorIdHasBeenSet;
+    Aws::String m_fileName;
+    bool m_fileNameHasBeenSet;
+    Aws::String m_patientId;
+    bool m_patientIdHasBeenSet;
+    Aws::String m_httpMethod;
+    bool m_httpMethodHasBeenSet;
   };
 
 } // namespace Model

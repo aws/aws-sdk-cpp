@@ -28,24 +28,31 @@ namespace Model
 {
 
 GetDoctorSpecialtiesResult_specialtiesItem::GetDoctorSpecialtiesResult_specialtiesItem() : 
+    m_nameHasBeenSet(false),
     m_idHasBeenSet(false),
     m_isCommon(false),
-    m_isCommonHasBeenSet(false),
-    m_nameHasBeenSet(false)
+    m_isCommonHasBeenSet(false)
 {
 }
 
 GetDoctorSpecialtiesResult_specialtiesItem::GetDoctorSpecialtiesResult_specialtiesItem(const JsonValue& jsonValue) : 
+    m_nameHasBeenSet(false),
     m_idHasBeenSet(false),
     m_isCommon(false),
-    m_isCommonHasBeenSet(false),
-    m_nameHasBeenSet(false)
+    m_isCommonHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
 GetDoctorSpecialtiesResult_specialtiesItem& GetDoctorSpecialtiesResult_specialtiesItem::operator =(const JsonValue& jsonValue)
 {
+  if(jsonValue.ValueExists("name"))
+  {
+    m_name = jsonValue.GetString("name");
+
+    m_nameHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
@@ -60,19 +67,18 @@ GetDoctorSpecialtiesResult_specialtiesItem& GetDoctorSpecialtiesResult_specialti
     m_isCommonHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("name"))
-  {
-    m_name = jsonValue.GetString("name");
-
-    m_nameHasBeenSet = true;
-  }
-
   return *this;
 }
 
 JsonValue GetDoctorSpecialtiesResult_specialtiesItem::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_nameHasBeenSet)
+  {
+   payload.WithString("name", m_name);
+
+  }
 
   if(m_idHasBeenSet)
   {
@@ -83,12 +89,6 @@ JsonValue GetDoctorSpecialtiesResult_specialtiesItem::Jsonize() const
   if(m_isCommonHasBeenSet)
   {
    payload.WithBool("isCommon", m_isCommon);
-
-  }
-
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("name", m_name);
 
   }
 

@@ -82,27 +82,6 @@ namespace Model
     inline getAppointmentBillResult& WithBasePrice(const char* value) { SetBasePrice(value); return *this;}
 
     
-    inline const Aws::String& GetTotalPrice() const{ return m_totalPrice; }
-
-    
-    inline void SetTotalPrice(const Aws::String& value) { m_totalPrice = value; }
-
-    
-    inline void SetTotalPrice(Aws::String&& value) { m_totalPrice = value; }
-
-    
-    inline void SetTotalPrice(const char* value) { m_totalPrice.assign(value); }
-
-    
-    inline getAppointmentBillResult& WithTotalPrice(const Aws::String& value) { SetTotalPrice(value); return *this;}
-
-    
-    inline getAppointmentBillResult& WithTotalPrice(Aws::String&& value) { SetTotalPrice(value); return *this;}
-
-    
-    inline getAppointmentBillResult& WithTotalPrice(const char* value) { SetTotalPrice(value); return *this;}
-
-    
     inline const Aws::String& GetDoctorServiceFee() const{ return m_doctorServiceFee; }
 
     
@@ -122,6 +101,27 @@ namespace Model
 
     
     inline getAppointmentBillResult& WithDoctorServiceFee(const char* value) { SetDoctorServiceFee(value); return *this;}
+
+    
+    inline const Aws::String& GetTotalPrice() const{ return m_totalPrice; }
+
+    
+    inline void SetTotalPrice(const Aws::String& value) { m_totalPrice = value; }
+
+    
+    inline void SetTotalPrice(Aws::String&& value) { m_totalPrice = value; }
+
+    
+    inline void SetTotalPrice(const char* value) { m_totalPrice.assign(value); }
+
+    
+    inline getAppointmentBillResult& WithTotalPrice(const Aws::String& value) { SetTotalPrice(value); return *this;}
+
+    
+    inline getAppointmentBillResult& WithTotalPrice(Aws::String&& value) { SetTotalPrice(value); return *this;}
+
+    
+    inline getAppointmentBillResult& WithTotalPrice(const char* value) { SetTotalPrice(value); return *this;}
 
     
     inline const Aws::String& GetPatientServiceFee() const{ return m_patientServiceFee; }
@@ -147,8 +147,8 @@ namespace Model
   private:
     Aws::String m_version;
     Aws::String m_basePrice;
-    Aws::String m_totalPrice;
     Aws::String m_doctorServiceFee;
+    Aws::String m_totalPrice;
     Aws::String m_patientServiceFee;
   };
 

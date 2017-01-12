@@ -36,12 +36,12 @@ getAppointmentsWithUserResult::getAppointmentsWithUserResult(const AmazonWebServ
 getAppointmentsWithUserResult& getAppointmentsWithUserResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
-  if(jsonValue.ValueExists("appointments"))
+  if(jsonValue.ValueExists("doctors"))
   {
-    Array<JsonValue> appointmentsJsonList = jsonValue.GetArray("appointments");
-    for(unsigned appointmentsIndex = 0; appointmentsIndex < appointmentsJsonList.GetLength(); ++appointmentsIndex)
+    Array<JsonValue> doctorsJsonList = jsonValue.GetArray("doctors");
+    for(unsigned doctorsIndex = 0; doctorsIndex < doctorsJsonList.GetLength(); ++doctorsIndex)
     {
-      m_appointments.push_back(appointmentsJsonList[appointmentsIndex].AsObject());
+      m_doctors.push_back(doctorsJsonList[doctorsIndex].AsObject());
     }
   }
 
@@ -54,12 +54,12 @@ getAppointmentsWithUserResult& getAppointmentsWithUserResult::operator =(const A
     }
   }
 
-  if(jsonValue.ValueExists("doctors"))
+  if(jsonValue.ValueExists("appointments"))
   {
-    Array<JsonValue> doctorsJsonList = jsonValue.GetArray("doctors");
-    for(unsigned doctorsIndex = 0; doctorsIndex < doctorsJsonList.GetLength(); ++doctorsIndex)
+    Array<JsonValue> appointmentsJsonList = jsonValue.GetArray("appointments");
+    for(unsigned appointmentsIndex = 0; appointmentsIndex < appointmentsJsonList.GetLength(); ++appointmentsIndex)
     {
-      m_doctors.push_back(doctorsJsonList[doctorsIndex].AsObject());
+      m_appointments.push_back(appointmentsJsonList[appointmentsIndex].AsObject());
     }
   }
 

@@ -33,6 +33,27 @@ namespace Model
     Aws::String SerializePayload() const override;
 
     
+    inline const Aws::String& GetFirstName() const{ return m_firstName; }
+
+    
+    inline void SetFirstName(const Aws::String& value) { m_firstNameHasBeenSet = true; m_firstName = value; }
+
+    
+    inline void SetFirstName(Aws::String&& value) { m_firstNameHasBeenSet = true; m_firstName = value; }
+
+    
+    inline void SetFirstName(const char* value) { m_firstNameHasBeenSet = true; m_firstName.assign(value); }
+
+    
+    inline registerUserRequest& WithFirstName(const Aws::String& value) { SetFirstName(value); return *this;}
+
+    
+    inline registerUserRequest& WithFirstName(Aws::String&& value) { SetFirstName(value); return *this;}
+
+    
+    inline registerUserRequest& WithFirstName(const char* value) { SetFirstName(value); return *this;}
+
+    
     inline const Aws::String& GetMobileNumber() const{ return m_mobileNumber; }
 
     
@@ -75,27 +96,6 @@ namespace Model
     inline registerUserRequest& WithEmail(const char* value) { SetEmail(value); return *this;}
 
     
-    inline const Aws::String& GetFirstName() const{ return m_firstName; }
-
-    
-    inline void SetFirstName(const Aws::String& value) { m_firstNameHasBeenSet = true; m_firstName = value; }
-
-    
-    inline void SetFirstName(Aws::String&& value) { m_firstNameHasBeenSet = true; m_firstName = value; }
-
-    
-    inline void SetFirstName(const char* value) { m_firstNameHasBeenSet = true; m_firstName.assign(value); }
-
-    
-    inline registerUserRequest& WithFirstName(const Aws::String& value) { SetFirstName(value); return *this;}
-
-    
-    inline registerUserRequest& WithFirstName(Aws::String&& value) { SetFirstName(value); return *this;}
-
-    
-    inline registerUserRequest& WithFirstName(const char* value) { SetFirstName(value); return *this;}
-
-    
     inline const Aws::String& GetLastName() const{ return m_lastName; }
 
     
@@ -117,12 +117,12 @@ namespace Model
     inline registerUserRequest& WithLastName(const char* value) { SetLastName(value); return *this;}
 
   private:
+    Aws::String m_firstName;
+    bool m_firstNameHasBeenSet;
     Aws::String m_mobileNumber;
     bool m_mobileNumberHasBeenSet;
     Aws::String m_email;
     bool m_emailHasBeenSet;
-    Aws::String m_firstName;
-    bool m_firstNameHasBeenSet;
     Aws::String m_lastName;
     bool m_lastNameHasBeenSet;
   };

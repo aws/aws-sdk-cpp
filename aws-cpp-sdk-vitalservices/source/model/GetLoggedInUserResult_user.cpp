@@ -28,32 +28,46 @@ namespace Model
 {
 
 GetLoggedInUserResult_user::GetLoggedInUserResult_user() : 
+    m_doctorIdHasBeenSet(false),
+    m_idHasBeenSet(false),
     m_profilePhotoUrlHasBeenSet(false),
     m_stripeCustomerIdHasBeenSet(false),
     m_firstNameHasBeenSet(false),
     m_lastNameHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_mobileNumberHasBeenSet(false),
     m_emailHasBeenSet(false),
-    m_doctorIdHasBeenSet(false)
+    m_mobileNumberHasBeenSet(false)
 {
 }
 
 GetLoggedInUserResult_user::GetLoggedInUserResult_user(const JsonValue& jsonValue) : 
+    m_doctorIdHasBeenSet(false),
+    m_idHasBeenSet(false),
     m_profilePhotoUrlHasBeenSet(false),
     m_stripeCustomerIdHasBeenSet(false),
     m_firstNameHasBeenSet(false),
     m_lastNameHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_mobileNumberHasBeenSet(false),
     m_emailHasBeenSet(false),
-    m_doctorIdHasBeenSet(false)
+    m_mobileNumberHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
 GetLoggedInUserResult_user& GetLoggedInUserResult_user::operator =(const JsonValue& jsonValue)
 {
+  if(jsonValue.ValueExists("doctorId"))
+  {
+    m_doctorId = jsonValue.GetString("doctorId");
+
+    m_doctorIdHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("id"))
+  {
+    m_id = jsonValue.GetString("id");
+
+    m_idHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("profilePhotoUrl"))
   {
     m_profilePhotoUrl = jsonValue.GetString("profilePhotoUrl");
@@ -82,11 +96,11 @@ GetLoggedInUserResult_user& GetLoggedInUserResult_user::operator =(const JsonVal
     m_lastNameHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("id"))
+  if(jsonValue.ValueExists("email"))
   {
-    m_id = jsonValue.GetString("id");
+    m_email = jsonValue.GetString("email");
 
-    m_idHasBeenSet = true;
+    m_emailHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("mobileNumber"))
@@ -96,26 +110,24 @@ GetLoggedInUserResult_user& GetLoggedInUserResult_user::operator =(const JsonVal
     m_mobileNumberHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("email"))
-  {
-    m_email = jsonValue.GetString("email");
-
-    m_emailHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("doctorId"))
-  {
-    m_doctorId = jsonValue.GetString("doctorId");
-
-    m_doctorIdHasBeenSet = true;
-  }
-
   return *this;
 }
 
 JsonValue GetLoggedInUserResult_user::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_doctorIdHasBeenSet)
+  {
+   payload.WithString("doctorId", m_doctorId);
+
+  }
+
+  if(m_idHasBeenSet)
+  {
+   payload.WithString("id", m_id);
+
+  }
 
   if(m_profilePhotoUrlHasBeenSet)
   {
@@ -141,27 +153,15 @@ JsonValue GetLoggedInUserResult_user::Jsonize() const
 
   }
 
-  if(m_idHasBeenSet)
-  {
-   payload.WithString("id", m_id);
-
-  }
-
-  if(m_mobileNumberHasBeenSet)
-  {
-   payload.WithString("mobileNumber", m_mobileNumber);
-
-  }
-
   if(m_emailHasBeenSet)
   {
    payload.WithString("email", m_email);
 
   }
 
-  if(m_doctorIdHasBeenSet)
+  if(m_mobileNumberHasBeenSet)
   {
-   payload.WithString("doctorId", m_doctorId);
+   payload.WithString("mobileNumber", m_mobileNumber);
 
   }
 

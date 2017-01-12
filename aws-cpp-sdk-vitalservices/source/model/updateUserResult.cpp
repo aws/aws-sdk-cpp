@@ -36,6 +36,18 @@ updateUserResult::updateUserResult(const AmazonWebServiceResult<JsonValue>& resu
 updateUserResult& updateUserResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
+  if(jsonValue.ValueExists("doctorId"))
+  {
+    m_doctorId = jsonValue.GetString("doctorId");
+
+  }
+
+  if(jsonValue.ValueExists("id"))
+  {
+    m_id = jsonValue.GetString("id");
+
+  }
+
   if(jsonValue.ValueExists("profilePhotoUrl"))
   {
     m_profilePhotoUrl = jsonValue.GetString("profilePhotoUrl");
@@ -60,27 +72,15 @@ updateUserResult& updateUserResult::operator =(const AmazonWebServiceResult<Json
 
   }
 
-  if(jsonValue.ValueExists("id"))
-  {
-    m_id = jsonValue.GetString("id");
-
-  }
-
-  if(jsonValue.ValueExists("mobileNumber"))
-  {
-    m_mobileNumber = jsonValue.GetString("mobileNumber");
-
-  }
-
   if(jsonValue.ValueExists("email"))
   {
     m_email = jsonValue.GetString("email");
 
   }
 
-  if(jsonValue.ValueExists("doctorId"))
+  if(jsonValue.ValueExists("mobileNumber"))
   {
-    m_doctorId = jsonValue.GetString("doctorId");
+    m_mobileNumber = jsonValue.GetString("mobileNumber");
 
   }
 

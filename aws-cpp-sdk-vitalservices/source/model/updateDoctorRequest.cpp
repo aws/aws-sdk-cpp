@@ -12,7 +12,7 @@
 * express or implied. See the License for the specific language governing
 * permissions and limitations under the License.
 */
-#include <aws/vitalservices/model/registerUserRequest.h>
+#include <aws/vitalservices/model/updateDoctorRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 
 #include <utility>
@@ -21,39 +21,25 @@ using namespace Aws::VitalServices::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-registerUserRequest::registerUserRequest() : 
-    m_firstNameHasBeenSet(false),
-    m_mobileNumberHasBeenSet(false),
-    m_emailHasBeenSet(false),
-    m_lastNameHasBeenSet(false)
+updateDoctorRequest::updateDoctorRequest() : 
+    m_doctorIdHasBeenSet(false),
+    m_officeNumberHasBeenSet(false)
 {
 }
 
-Aws::String registerUserRequest::SerializePayload() const
+Aws::String updateDoctorRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  if(m_firstNameHasBeenSet)
+  if(m_doctorIdHasBeenSet)
   {
-   payload.WithString("firstName", m_firstName);
+   payload.WithString("doctorId", m_doctorId);
 
   }
 
-  if(m_mobileNumberHasBeenSet)
+  if(m_officeNumberHasBeenSet)
   {
-   payload.WithString("mobileNumber", m_mobileNumber);
-
-  }
-
-  if(m_emailHasBeenSet)
-  {
-   payload.WithString("email", m_email);
-
-  }
-
-  if(m_lastNameHasBeenSet)
-  {
-   payload.WithString("lastName", m_lastName);
+   payload.WithString("officeNumber", m_officeNumber);
 
   }
 

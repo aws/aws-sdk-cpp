@@ -22,8 +22,8 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 updateUserRequest::updateUserRequest() : 
-    m_mobileNumberHasBeenSet(false),
-    m_emailHasBeenSet(false)
+    m_emailHasBeenSet(false),
+    m_mobileNumberHasBeenSet(false)
 {
 }
 
@@ -31,15 +31,15 @@ Aws::String updateUserRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  if(m_mobileNumberHasBeenSet)
-  {
-   payload.WithString("mobileNumber", m_mobileNumber);
-
-  }
-
   if(m_emailHasBeenSet)
   {
    payload.WithString("email", m_email);
+
+  }
+
+  if(m_mobileNumberHasBeenSet)
+  {
+   payload.WithString("mobileNumber", m_mobileNumber);
 
   }
 
