@@ -23,8 +23,8 @@ using namespace Aws::Utils;
 
 queryDoctorScheduleRequest::queryDoctorScheduleRequest() : 
     m_doctorIdHasBeenSet(false),
-    m_lastTimeHasBeenSet(false),
-    m_firstTimeHasBeenSet(false)
+    m_firstTimeHasBeenSet(false),
+    m_lastTimeHasBeenSet(false)
 {
 }
 
@@ -38,15 +38,15 @@ Aws::String queryDoctorScheduleRequest::SerializePayload() const
 
   }
 
-  if(m_lastTimeHasBeenSet)
-  {
-   payload.WithString("lastTime", m_lastTime);
-
-  }
-
   if(m_firstTimeHasBeenSet)
   {
    payload.WithString("firstTime", m_firstTime);
+
+  }
+
+  if(m_lastTimeHasBeenSet)
+  {
+   payload.WithString("lastTime", m_lastTime);
 
   }
 

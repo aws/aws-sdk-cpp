@@ -75,27 +75,6 @@ namespace Model
     inline urlForFileRequest& WithFileName(const char* value) { SetFileName(value); return *this;}
 
     
-    inline const Aws::String& GetPatientId() const{ return m_patientId; }
-
-    
-    inline void SetPatientId(const Aws::String& value) { m_patientIdHasBeenSet = true; m_patientId = value; }
-
-    
-    inline void SetPatientId(Aws::String&& value) { m_patientIdHasBeenSet = true; m_patientId = value; }
-
-    
-    inline void SetPatientId(const char* value) { m_patientIdHasBeenSet = true; m_patientId.assign(value); }
-
-    
-    inline urlForFileRequest& WithPatientId(const Aws::String& value) { SetPatientId(value); return *this;}
-
-    
-    inline urlForFileRequest& WithPatientId(Aws::String&& value) { SetPatientId(value); return *this;}
-
-    
-    inline urlForFileRequest& WithPatientId(const char* value) { SetPatientId(value); return *this;}
-
-    
     inline const Aws::String& GetHttpMethod() const{ return m_httpMethod; }
 
     
@@ -116,15 +95,36 @@ namespace Model
     
     inline urlForFileRequest& WithHttpMethod(const char* value) { SetHttpMethod(value); return *this;}
 
+    
+    inline const Aws::String& GetPatientId() const{ return m_patientId; }
+
+    
+    inline void SetPatientId(const Aws::String& value) { m_patientIdHasBeenSet = true; m_patientId = value; }
+
+    
+    inline void SetPatientId(Aws::String&& value) { m_patientIdHasBeenSet = true; m_patientId = value; }
+
+    
+    inline void SetPatientId(const char* value) { m_patientIdHasBeenSet = true; m_patientId.assign(value); }
+
+    
+    inline urlForFileRequest& WithPatientId(const Aws::String& value) { SetPatientId(value); return *this;}
+
+    
+    inline urlForFileRequest& WithPatientId(Aws::String&& value) { SetPatientId(value); return *this;}
+
+    
+    inline urlForFileRequest& WithPatientId(const char* value) { SetPatientId(value); return *this;}
+
   private:
     Aws::String m_doctorId;
     bool m_doctorIdHasBeenSet;
     Aws::String m_fileName;
     bool m_fileNameHasBeenSet;
-    Aws::String m_patientId;
-    bool m_patientIdHasBeenSet;
     Aws::String m_httpMethod;
     bool m_httpMethodHasBeenSet;
+    Aws::String m_patientId;
+    bool m_patientIdHasBeenSet;
   };
 
 } // namespace Model

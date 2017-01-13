@@ -23,8 +23,10 @@ using namespace Aws::Utils;
 
 getAppointmentBillRequest::getAppointmentBillRequest() : 
     m_doctorIdHasBeenSet(false),
+    m_totalPriceHasBeenSet(false),
     m_startTimeHasBeenSet(false),
-    m_serviceIdHasBeenSet(false)
+    m_serviceIdHasBeenSet(false),
+    m_billFingerprintHasBeenSet(false)
 {
 }
 
@@ -38,6 +40,12 @@ Aws::String getAppointmentBillRequest::SerializePayload() const
 
   }
 
+  if(m_totalPriceHasBeenSet)
+  {
+   payload.WithString("totalPrice", m_totalPrice);
+
+  }
+
   if(m_startTimeHasBeenSet)
   {
    payload.WithString("startTime", m_startTime);
@@ -47,6 +55,12 @@ Aws::String getAppointmentBillRequest::SerializePayload() const
   if(m_serviceIdHasBeenSet)
   {
    payload.WithString("serviceId", m_serviceId);
+
+  }
+
+  if(m_billFingerprintHasBeenSet)
+  {
+   payload.WithString("billFingerprint", m_billFingerprint);
 
   }
 

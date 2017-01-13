@@ -36,15 +36,6 @@ getAppointmentsWithUserResult::getAppointmentsWithUserResult(const AmazonWebServ
 getAppointmentsWithUserResult& getAppointmentsWithUserResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
-  if(jsonValue.ValueExists("doctors"))
-  {
-    Array<JsonValue> doctorsJsonList = jsonValue.GetArray("doctors");
-    for(unsigned doctorsIndex = 0; doctorsIndex < doctorsJsonList.GetLength(); ++doctorsIndex)
-    {
-      m_doctors.push_back(doctorsJsonList[doctorsIndex].AsObject());
-    }
-  }
-
   if(jsonValue.ValueExists("patients"))
   {
     Array<JsonValue> patientsJsonList = jsonValue.GetArray("patients");
@@ -60,6 +51,15 @@ getAppointmentsWithUserResult& getAppointmentsWithUserResult::operator =(const A
     for(unsigned appointmentsIndex = 0; appointmentsIndex < appointmentsJsonList.GetLength(); ++appointmentsIndex)
     {
       m_appointments.push_back(appointmentsJsonList[appointmentsIndex].AsObject());
+    }
+  }
+
+  if(jsonValue.ValueExists("doctors"))
+  {
+    Array<JsonValue> doctorsJsonList = jsonValue.GetArray("doctors");
+    for(unsigned doctorsIndex = 0; doctorsIndex < doctorsJsonList.GetLength(); ++doctorsIndex)
+    {
+      m_doctors.push_back(doctorsJsonList[doctorsIndex].AsObject());
     }
   }
 

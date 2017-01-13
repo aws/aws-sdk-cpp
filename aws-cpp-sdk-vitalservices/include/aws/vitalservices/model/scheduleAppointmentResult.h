@@ -38,17 +38,6 @@ namespace Model
     scheduleAppointmentResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     scheduleAppointmentResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
-    
-    inline bool GetSucceeded() const{ return m_succeeded; }
-
-    
-    inline void SetSucceeded(bool value) { m_succeeded = value; }
-
-    
-    inline scheduleAppointmentResult& WithSucceeded(bool value) { SetSucceeded(value); return *this;}
-
-  private:
-    bool m_succeeded;
   };
 
 } // namespace Model

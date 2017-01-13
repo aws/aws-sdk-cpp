@@ -29,25 +29,25 @@ namespace Model
 
 GetLoggedInUserResult_user::GetLoggedInUserResult_user() : 
     m_doctorIdHasBeenSet(false),
-    m_idHasBeenSet(false),
+    m_emailHasBeenSet(false),
     m_profilePhotoUrlHasBeenSet(false),
-    m_stripeCustomerIdHasBeenSet(false),
+    m_mobileNumberHasBeenSet(false),
     m_firstNameHasBeenSet(false),
     m_lastNameHasBeenSet(false),
-    m_emailHasBeenSet(false),
-    m_mobileNumberHasBeenSet(false)
+    m_idHasBeenSet(false),
+    m_stripeCustomerIdHasBeenSet(false)
 {
 }
 
 GetLoggedInUserResult_user::GetLoggedInUserResult_user(const JsonValue& jsonValue) : 
     m_doctorIdHasBeenSet(false),
-    m_idHasBeenSet(false),
+    m_emailHasBeenSet(false),
     m_profilePhotoUrlHasBeenSet(false),
-    m_stripeCustomerIdHasBeenSet(false),
+    m_mobileNumberHasBeenSet(false),
     m_firstNameHasBeenSet(false),
     m_lastNameHasBeenSet(false),
-    m_emailHasBeenSet(false),
-    m_mobileNumberHasBeenSet(false)
+    m_idHasBeenSet(false),
+    m_stripeCustomerIdHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -61,11 +61,11 @@ GetLoggedInUserResult_user& GetLoggedInUserResult_user::operator =(const JsonVal
     m_doctorIdHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("id"))
+  if(jsonValue.ValueExists("email"))
   {
-    m_id = jsonValue.GetString("id");
+    m_email = jsonValue.GetString("email");
 
-    m_idHasBeenSet = true;
+    m_emailHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("profilePhotoUrl"))
@@ -75,11 +75,11 @@ GetLoggedInUserResult_user& GetLoggedInUserResult_user::operator =(const JsonVal
     m_profilePhotoUrlHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("stripeCustomerId"))
+  if(jsonValue.ValueExists("mobileNumber"))
   {
-    m_stripeCustomerId = jsonValue.GetString("stripeCustomerId");
+    m_mobileNumber = jsonValue.GetString("mobileNumber");
 
-    m_stripeCustomerIdHasBeenSet = true;
+    m_mobileNumberHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("firstName"))
@@ -96,18 +96,18 @@ GetLoggedInUserResult_user& GetLoggedInUserResult_user::operator =(const JsonVal
     m_lastNameHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("email"))
+  if(jsonValue.ValueExists("id"))
   {
-    m_email = jsonValue.GetString("email");
+    m_id = jsonValue.GetString("id");
 
-    m_emailHasBeenSet = true;
+    m_idHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("mobileNumber"))
+  if(jsonValue.ValueExists("stripeCustomerId"))
   {
-    m_mobileNumber = jsonValue.GetString("mobileNumber");
+    m_stripeCustomerId = jsonValue.GetString("stripeCustomerId");
 
-    m_mobileNumberHasBeenSet = true;
+    m_stripeCustomerIdHasBeenSet = true;
   }
 
   return *this;
@@ -123,9 +123,9 @@ JsonValue GetLoggedInUserResult_user::Jsonize() const
 
   }
 
-  if(m_idHasBeenSet)
+  if(m_emailHasBeenSet)
   {
-   payload.WithString("id", m_id);
+   payload.WithString("email", m_email);
 
   }
 
@@ -135,9 +135,9 @@ JsonValue GetLoggedInUserResult_user::Jsonize() const
 
   }
 
-  if(m_stripeCustomerIdHasBeenSet)
+  if(m_mobileNumberHasBeenSet)
   {
-   payload.WithString("stripeCustomerId", m_stripeCustomerId);
+   payload.WithString("mobileNumber", m_mobileNumber);
 
   }
 
@@ -153,15 +153,15 @@ JsonValue GetLoggedInUserResult_user::Jsonize() const
 
   }
 
-  if(m_emailHasBeenSet)
+  if(m_idHasBeenSet)
   {
-   payload.WithString("email", m_email);
+   payload.WithString("id", m_id);
 
   }
 
-  if(m_mobileNumberHasBeenSet)
+  if(m_stripeCustomerIdHasBeenSet)
   {
-   payload.WithString("mobileNumber", m_mobileNumber);
+   payload.WithString("stripeCustomerId", m_stripeCustomerId);
 
   }
 

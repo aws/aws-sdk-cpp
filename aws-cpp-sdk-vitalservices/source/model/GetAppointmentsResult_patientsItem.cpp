@@ -29,19 +29,19 @@ namespace Model
 
 GetAppointmentsResult_patientsItem::GetAppointmentsResult_patientsItem() : 
     m_idHasBeenSet(false),
-    m_mobileNumberHasBeenSet(false),
-    m_lastNameHasBeenSet(false),
     m_profilePhotoUrlHasBeenSet(false),
-    m_firstNameHasBeenSet(false)
+    m_mobileNumberHasBeenSet(false),
+    m_firstNameHasBeenSet(false),
+    m_lastNameHasBeenSet(false)
 {
 }
 
 GetAppointmentsResult_patientsItem::GetAppointmentsResult_patientsItem(const JsonValue& jsonValue) : 
     m_idHasBeenSet(false),
-    m_mobileNumberHasBeenSet(false),
-    m_lastNameHasBeenSet(false),
     m_profilePhotoUrlHasBeenSet(false),
-    m_firstNameHasBeenSet(false)
+    m_mobileNumberHasBeenSet(false),
+    m_firstNameHasBeenSet(false),
+    m_lastNameHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -55,20 +55,6 @@ GetAppointmentsResult_patientsItem& GetAppointmentsResult_patientsItem::operator
     m_idHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("mobileNumber"))
-  {
-    m_mobileNumber = jsonValue.GetString("mobileNumber");
-
-    m_mobileNumberHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("lastName"))
-  {
-    m_lastName = jsonValue.GetString("lastName");
-
-    m_lastNameHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("profilePhotoUrl"))
   {
     m_profilePhotoUrl = jsonValue.GetString("profilePhotoUrl");
@@ -76,11 +62,25 @@ GetAppointmentsResult_patientsItem& GetAppointmentsResult_patientsItem::operator
     m_profilePhotoUrlHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("mobileNumber"))
+  {
+    m_mobileNumber = jsonValue.GetString("mobileNumber");
+
+    m_mobileNumberHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("firstName"))
   {
     m_firstName = jsonValue.GetString("firstName");
 
     m_firstNameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("lastName"))
+  {
+    m_lastName = jsonValue.GetString("lastName");
+
+    m_lastNameHasBeenSet = true;
   }
 
   return *this;
@@ -96,27 +96,27 @@ JsonValue GetAppointmentsResult_patientsItem::Jsonize() const
 
   }
 
-  if(m_mobileNumberHasBeenSet)
-  {
-   payload.WithString("mobileNumber", m_mobileNumber);
-
-  }
-
-  if(m_lastNameHasBeenSet)
-  {
-   payload.WithString("lastName", m_lastName);
-
-  }
-
   if(m_profilePhotoUrlHasBeenSet)
   {
    payload.WithString("profilePhotoUrl", m_profilePhotoUrl);
 
   }
 
+  if(m_mobileNumberHasBeenSet)
+  {
+   payload.WithString("mobileNumber", m_mobileNumber);
+
+  }
+
   if(m_firstNameHasBeenSet)
   {
    payload.WithString("firstName", m_firstName);
+
+  }
+
+  if(m_lastNameHasBeenSet)
+  {
+   payload.WithString("lastName", m_lastName);
 
   }
 

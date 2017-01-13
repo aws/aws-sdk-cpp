@@ -26,15 +26,15 @@ using namespace Aws;
 
 updateDoctorResult::updateDoctorResult() : 
     m_latitude(0.0),
-    m_payoutInfoIsSet(false),
-    m_longitude(0.0)
+    m_longitude(0.0),
+    m_payoutInfoIsSet(false)
 {
 }
 
 updateDoctorResult::updateDoctorResult(const AmazonWebServiceResult<JsonValue>& result) : 
     m_latitude(0.0),
-    m_payoutInfoIsSet(false),
-    m_longitude(0.0)
+    m_longitude(0.0),
+    m_payoutInfoIsSet(false)
 {
   *this = result;
 }
@@ -42,27 +42,15 @@ updateDoctorResult::updateDoctorResult(const AmazonWebServiceResult<JsonValue>& 
 updateDoctorResult& updateDoctorResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
-  if(jsonValue.ValueExists("id"))
+  if(jsonValue.ValueExists("latitude"))
   {
-    m_id = jsonValue.GetString("id");
+    m_latitude = jsonValue.GetDouble("latitude");
 
   }
 
-  if(jsonValue.ValueExists("postalCode"))
+  if(jsonValue.ValueExists("specialtyId"))
   {
-    m_postalCode = jsonValue.GetString("postalCode");
-
-  }
-
-  if(jsonValue.ValueExists("profilePhotoUrl"))
-  {
-    m_profilePhotoUrl = jsonValue.GetString("profilePhotoUrl");
-
-  }
-
-  if(jsonValue.ValueExists("city"))
-  {
-    m_city = jsonValue.GetString("city");
+    m_specialtyId = jsonValue.GetString("specialtyId");
 
   }
 
@@ -72,45 +60,15 @@ updateDoctorResult& updateDoctorResult::operator =(const AmazonWebServiceResult<
 
   }
 
-  if(jsonValue.ValueExists("coverPhotoUrl"))
+  if(jsonValue.ValueExists("lastName"))
   {
-    m_coverPhotoUrl = jsonValue.GetString("coverPhotoUrl");
+    m_lastName = jsonValue.GetString("lastName");
 
   }
 
-  if(jsonValue.ValueExists("latitude"))
+  if(jsonValue.ValueExists("id"))
   {
-    m_latitude = jsonValue.GetDouble("latitude");
-
-  }
-
-  if(jsonValue.ValueExists("suite"))
-  {
-    m_suite = jsonValue.GetString("suite");
-
-  }
-
-  if(jsonValue.ValueExists("payoutInfoIsSet"))
-  {
-    m_payoutInfoIsSet = jsonValue.GetBool("payoutInfoIsSet");
-
-  }
-
-  if(jsonValue.ValueExists("officeNumber"))
-  {
-    m_officeNumber = jsonValue.GetString("officeNumber");
-
-  }
-
-  if(jsonValue.ValueExists("administrativeAreaL1"))
-  {
-    m_administrativeAreaL1 = jsonValue.GetString("administrativeAreaL1");
-
-  }
-
-  if(jsonValue.ValueExists("specialtyId"))
-  {
-    m_specialtyId = jsonValue.GetString("specialtyId");
+    m_id = jsonValue.GetString("id");
 
   }
 
@@ -123,6 +81,54 @@ updateDoctorResult& updateDoctorResult::operator =(const AmazonWebServiceResult<
     }
   }
 
+  if(jsonValue.ValueExists("longitude"))
+  {
+    m_longitude = jsonValue.GetDouble("longitude");
+
+  }
+
+  if(jsonValue.ValueExists("suite"))
+  {
+    m_suite = jsonValue.GetString("suite");
+
+  }
+
+  if(jsonValue.ValueExists("administrativeAreaL1"))
+  {
+    m_administrativeAreaL1 = jsonValue.GetString("administrativeAreaL1");
+
+  }
+
+  if(jsonValue.ValueExists("profilePhotoUrl"))
+  {
+    m_profilePhotoUrl = jsonValue.GetString("profilePhotoUrl");
+
+  }
+
+  if(jsonValue.ValueExists("streetNumberAndName"))
+  {
+    m_streetNumberAndName = jsonValue.GetString("streetNumberAndName");
+
+  }
+
+  if(jsonValue.ValueExists("city"))
+  {
+    m_city = jsonValue.GetString("city");
+
+  }
+
+  if(jsonValue.ValueExists("officeNumber"))
+  {
+    m_officeNumber = jsonValue.GetString("officeNumber");
+
+  }
+
+  if(jsonValue.ValueExists("payoutInfoIsSet"))
+  {
+    m_payoutInfoIsSet = jsonValue.GetBool("payoutInfoIsSet");
+
+  }
+
   if(jsonValue.ValueExists("serviceDetailsList"))
   {
     Array<JsonValue> serviceDetailsListJsonList = jsonValue.GetArray("serviceDetailsList");
@@ -132,21 +138,15 @@ updateDoctorResult& updateDoctorResult::operator =(const AmazonWebServiceResult<
     }
   }
 
-  if(jsonValue.ValueExists("lastName"))
+  if(jsonValue.ValueExists("postalCode"))
   {
-    m_lastName = jsonValue.GetString("lastName");
+    m_postalCode = jsonValue.GetString("postalCode");
 
   }
 
-  if(jsonValue.ValueExists("longitude"))
+  if(jsonValue.ValueExists("coverPhotoUrl"))
   {
-    m_longitude = jsonValue.GetDouble("longitude");
-
-  }
-
-  if(jsonValue.ValueExists("streetNumberAndName"))
-  {
-    m_streetNumberAndName = jsonValue.GetString("streetNumberAndName");
+    m_coverPhotoUrl = jsonValue.GetString("coverPhotoUrl");
 
   }
 

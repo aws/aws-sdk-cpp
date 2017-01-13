@@ -39,27 +39,6 @@ namespace Model
     Aws::Utils::Json::JsonValue Jsonize() const;
 
     
-    inline const Aws::String& GetName() const{ return m_name; }
-
-    
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-
-    
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
-
-    
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-
-    
-    inline GetDoctorSpecialtiesResult_specialtiesItem& WithName(const Aws::String& value) { SetName(value); return *this;}
-
-    
-    inline GetDoctorSpecialtiesResult_specialtiesItem& WithName(Aws::String&& value) { SetName(value); return *this;}
-
-    
-    inline GetDoctorSpecialtiesResult_specialtiesItem& WithName(const char* value) { SetName(value); return *this;}
-
-    
     inline const Aws::String& GetId() const{ return m_id; }
 
     
@@ -81,6 +60,27 @@ namespace Model
     inline GetDoctorSpecialtiesResult_specialtiesItem& WithId(const char* value) { SetId(value); return *this;}
 
     
+    inline const Aws::String& GetName() const{ return m_name; }
+
+    
+    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
+
+    
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
+
+    
+    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
+
+    
+    inline GetDoctorSpecialtiesResult_specialtiesItem& WithName(const Aws::String& value) { SetName(value); return *this;}
+
+    
+    inline GetDoctorSpecialtiesResult_specialtiesItem& WithName(Aws::String&& value) { SetName(value); return *this;}
+
+    
+    inline GetDoctorSpecialtiesResult_specialtiesItem& WithName(const char* value) { SetName(value); return *this;}
+
+    
     inline bool GetIsCommon() const{ return m_isCommon; }
 
     
@@ -90,10 +90,10 @@ namespace Model
     inline GetDoctorSpecialtiesResult_specialtiesItem& WithIsCommon(bool value) { SetIsCommon(value); return *this;}
 
   private:
-    Aws::String m_name;
-    bool m_nameHasBeenSet;
     Aws::String m_id;
     bool m_idHasBeenSet;
+    Aws::String m_name;
+    bool m_nameHasBeenSet;
     bool m_isCommon;
     bool m_isCommonHasBeenSet;
   };

@@ -60,25 +60,25 @@ namespace Model
     inline GetLoggedInUserResult_user& WithDoctorId(const char* value) { SetDoctorId(value); return *this;}
 
     
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline const Aws::String& GetEmail() const{ return m_email; }
 
     
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
+    inline void SetEmail(const Aws::String& value) { m_emailHasBeenSet = true; m_email = value; }
 
     
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = value; }
+    inline void SetEmail(Aws::String&& value) { m_emailHasBeenSet = true; m_email = value; }
 
     
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
+    inline void SetEmail(const char* value) { m_emailHasBeenSet = true; m_email.assign(value); }
 
     
-    inline GetLoggedInUserResult_user& WithId(const Aws::String& value) { SetId(value); return *this;}
+    inline GetLoggedInUserResult_user& WithEmail(const Aws::String& value) { SetEmail(value); return *this;}
 
     
-    inline GetLoggedInUserResult_user& WithId(Aws::String&& value) { SetId(value); return *this;}
+    inline GetLoggedInUserResult_user& WithEmail(Aws::String&& value) { SetEmail(value); return *this;}
 
     
-    inline GetLoggedInUserResult_user& WithId(const char* value) { SetId(value); return *this;}
+    inline GetLoggedInUserResult_user& WithEmail(const char* value) { SetEmail(value); return *this;}
 
     
     inline const Aws::String& GetProfilePhotoUrl() const{ return m_profilePhotoUrl; }
@@ -102,25 +102,25 @@ namespace Model
     inline GetLoggedInUserResult_user& WithProfilePhotoUrl(const char* value) { SetProfilePhotoUrl(value); return *this;}
 
     
-    inline const Aws::String& GetStripeCustomerId() const{ return m_stripeCustomerId; }
+    inline const Aws::String& GetMobileNumber() const{ return m_mobileNumber; }
 
     
-    inline void SetStripeCustomerId(const Aws::String& value) { m_stripeCustomerIdHasBeenSet = true; m_stripeCustomerId = value; }
+    inline void SetMobileNumber(const Aws::String& value) { m_mobileNumberHasBeenSet = true; m_mobileNumber = value; }
 
     
-    inline void SetStripeCustomerId(Aws::String&& value) { m_stripeCustomerIdHasBeenSet = true; m_stripeCustomerId = value; }
+    inline void SetMobileNumber(Aws::String&& value) { m_mobileNumberHasBeenSet = true; m_mobileNumber = value; }
 
     
-    inline void SetStripeCustomerId(const char* value) { m_stripeCustomerIdHasBeenSet = true; m_stripeCustomerId.assign(value); }
+    inline void SetMobileNumber(const char* value) { m_mobileNumberHasBeenSet = true; m_mobileNumber.assign(value); }
 
     
-    inline GetLoggedInUserResult_user& WithStripeCustomerId(const Aws::String& value) { SetStripeCustomerId(value); return *this;}
+    inline GetLoggedInUserResult_user& WithMobileNumber(const Aws::String& value) { SetMobileNumber(value); return *this;}
 
     
-    inline GetLoggedInUserResult_user& WithStripeCustomerId(Aws::String&& value) { SetStripeCustomerId(value); return *this;}
+    inline GetLoggedInUserResult_user& WithMobileNumber(Aws::String&& value) { SetMobileNumber(value); return *this;}
 
     
-    inline GetLoggedInUserResult_user& WithStripeCustomerId(const char* value) { SetStripeCustomerId(value); return *this;}
+    inline GetLoggedInUserResult_user& WithMobileNumber(const char* value) { SetMobileNumber(value); return *this;}
 
     
     inline const Aws::String& GetFirstName() const{ return m_firstName; }
@@ -165,64 +165,64 @@ namespace Model
     inline GetLoggedInUserResult_user& WithLastName(const char* value) { SetLastName(value); return *this;}
 
     
-    inline const Aws::String& GetEmail() const{ return m_email; }
+    inline const Aws::String& GetId() const{ return m_id; }
 
     
-    inline void SetEmail(const Aws::String& value) { m_emailHasBeenSet = true; m_email = value; }
+    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     
-    inline void SetEmail(Aws::String&& value) { m_emailHasBeenSet = true; m_email = value; }
+    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = value; }
 
     
-    inline void SetEmail(const char* value) { m_emailHasBeenSet = true; m_email.assign(value); }
+    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
 
     
-    inline GetLoggedInUserResult_user& WithEmail(const Aws::String& value) { SetEmail(value); return *this;}
+    inline GetLoggedInUserResult_user& WithId(const Aws::String& value) { SetId(value); return *this;}
 
     
-    inline GetLoggedInUserResult_user& WithEmail(Aws::String&& value) { SetEmail(value); return *this;}
+    inline GetLoggedInUserResult_user& WithId(Aws::String&& value) { SetId(value); return *this;}
 
     
-    inline GetLoggedInUserResult_user& WithEmail(const char* value) { SetEmail(value); return *this;}
+    inline GetLoggedInUserResult_user& WithId(const char* value) { SetId(value); return *this;}
 
     
-    inline const Aws::String& GetMobileNumber() const{ return m_mobileNumber; }
+    inline const Aws::String& GetStripeCustomerId() const{ return m_stripeCustomerId; }
 
     
-    inline void SetMobileNumber(const Aws::String& value) { m_mobileNumberHasBeenSet = true; m_mobileNumber = value; }
+    inline void SetStripeCustomerId(const Aws::String& value) { m_stripeCustomerIdHasBeenSet = true; m_stripeCustomerId = value; }
 
     
-    inline void SetMobileNumber(Aws::String&& value) { m_mobileNumberHasBeenSet = true; m_mobileNumber = value; }
+    inline void SetStripeCustomerId(Aws::String&& value) { m_stripeCustomerIdHasBeenSet = true; m_stripeCustomerId = value; }
 
     
-    inline void SetMobileNumber(const char* value) { m_mobileNumberHasBeenSet = true; m_mobileNumber.assign(value); }
+    inline void SetStripeCustomerId(const char* value) { m_stripeCustomerIdHasBeenSet = true; m_stripeCustomerId.assign(value); }
 
     
-    inline GetLoggedInUserResult_user& WithMobileNumber(const Aws::String& value) { SetMobileNumber(value); return *this;}
+    inline GetLoggedInUserResult_user& WithStripeCustomerId(const Aws::String& value) { SetStripeCustomerId(value); return *this;}
 
     
-    inline GetLoggedInUserResult_user& WithMobileNumber(Aws::String&& value) { SetMobileNumber(value); return *this;}
+    inline GetLoggedInUserResult_user& WithStripeCustomerId(Aws::String&& value) { SetStripeCustomerId(value); return *this;}
 
     
-    inline GetLoggedInUserResult_user& WithMobileNumber(const char* value) { SetMobileNumber(value); return *this;}
+    inline GetLoggedInUserResult_user& WithStripeCustomerId(const char* value) { SetStripeCustomerId(value); return *this;}
 
   private:
     Aws::String m_doctorId;
     bool m_doctorIdHasBeenSet;
-    Aws::String m_id;
-    bool m_idHasBeenSet;
+    Aws::String m_email;
+    bool m_emailHasBeenSet;
     Aws::String m_profilePhotoUrl;
     bool m_profilePhotoUrlHasBeenSet;
-    Aws::String m_stripeCustomerId;
-    bool m_stripeCustomerIdHasBeenSet;
+    Aws::String m_mobileNumber;
+    bool m_mobileNumberHasBeenSet;
     Aws::String m_firstName;
     bool m_firstNameHasBeenSet;
     Aws::String m_lastName;
     bool m_lastNameHasBeenSet;
-    Aws::String m_email;
-    bool m_emailHasBeenSet;
-    Aws::String m_mobileNumber;
-    bool m_mobileNumberHasBeenSet;
+    Aws::String m_id;
+    bool m_idHasBeenSet;
+    Aws::String m_stripeCustomerId;
+    bool m_stripeCustomerIdHasBeenSet;
   };
 
 } // namespace Model

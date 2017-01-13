@@ -39,27 +39,6 @@ namespace Model
     Aws::Utils::Json::JsonValue Jsonize() const;
 
     
-    inline const Aws::String& GetName() const{ return m_name; }
-
-    
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-
-    
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
-
-    
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-
-    
-    inline GetAllDoctorServicesResult_servicesItem& WithName(const Aws::String& value) { SetName(value); return *this;}
-
-    
-    inline GetAllDoctorServicesResult_servicesItem& WithName(Aws::String&& value) { SetName(value); return *this;}
-
-    
-    inline GetAllDoctorServicesResult_servicesItem& WithName(const char* value) { SetName(value); return *this;}
-
-    
     inline const Aws::String& GetId() const{ return m_id; }
 
     
@@ -81,25 +60,25 @@ namespace Model
     inline GetAllDoctorServicesResult_servicesItem& WithId(const char* value) { SetId(value); return *this;}
 
     
-    inline const Aws::String& GetAdditionalDescription() const{ return m_additionalDescription; }
+    inline const Aws::String& GetName() const{ return m_name; }
 
     
-    inline void SetAdditionalDescription(const Aws::String& value) { m_additionalDescriptionHasBeenSet = true; m_additionalDescription = value; }
+    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     
-    inline void SetAdditionalDescription(Aws::String&& value) { m_additionalDescriptionHasBeenSet = true; m_additionalDescription = value; }
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
 
     
-    inline void SetAdditionalDescription(const char* value) { m_additionalDescriptionHasBeenSet = true; m_additionalDescription.assign(value); }
+    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     
-    inline GetAllDoctorServicesResult_servicesItem& WithAdditionalDescription(const Aws::String& value) { SetAdditionalDescription(value); return *this;}
+    inline GetAllDoctorServicesResult_servicesItem& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     
-    inline GetAllDoctorServicesResult_servicesItem& WithAdditionalDescription(Aws::String&& value) { SetAdditionalDescription(value); return *this;}
+    inline GetAllDoctorServicesResult_servicesItem& WithName(Aws::String&& value) { SetName(value); return *this;}
 
     
-    inline GetAllDoctorServicesResult_servicesItem& WithAdditionalDescription(const char* value) { SetAdditionalDescription(value); return *this;}
+    inline GetAllDoctorServicesResult_servicesItem& WithName(const char* value) { SetName(value); return *this;}
 
     
     inline const Aws::String& GetIndefiniteArticle() const{ return m_indefiniteArticle; }
@@ -122,15 +101,36 @@ namespace Model
     
     inline GetAllDoctorServicesResult_servicesItem& WithIndefiniteArticle(const char* value) { SetIndefiniteArticle(value); return *this;}
 
+    
+    inline const Aws::String& GetAdditionalDescription() const{ return m_additionalDescription; }
+
+    
+    inline void SetAdditionalDescription(const Aws::String& value) { m_additionalDescriptionHasBeenSet = true; m_additionalDescription = value; }
+
+    
+    inline void SetAdditionalDescription(Aws::String&& value) { m_additionalDescriptionHasBeenSet = true; m_additionalDescription = value; }
+
+    
+    inline void SetAdditionalDescription(const char* value) { m_additionalDescriptionHasBeenSet = true; m_additionalDescription.assign(value); }
+
+    
+    inline GetAllDoctorServicesResult_servicesItem& WithAdditionalDescription(const Aws::String& value) { SetAdditionalDescription(value); return *this;}
+
+    
+    inline GetAllDoctorServicesResult_servicesItem& WithAdditionalDescription(Aws::String&& value) { SetAdditionalDescription(value); return *this;}
+
+    
+    inline GetAllDoctorServicesResult_servicesItem& WithAdditionalDescription(const char* value) { SetAdditionalDescription(value); return *this;}
+
   private:
-    Aws::String m_name;
-    bool m_nameHasBeenSet;
     Aws::String m_id;
     bool m_idHasBeenSet;
-    Aws::String m_additionalDescription;
-    bool m_additionalDescriptionHasBeenSet;
+    Aws::String m_name;
+    bool m_nameHasBeenSet;
     Aws::String m_indefiniteArticle;
     bool m_indefiniteArticleHasBeenSet;
+    Aws::String m_additionalDescription;
+    bool m_additionalDescriptionHasBeenSet;
   };
 
 } // namespace Model

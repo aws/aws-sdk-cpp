@@ -28,31 +28,24 @@ namespace Model
 {
 
 GetAllDoctorServicesResult_servicesItem::GetAllDoctorServicesResult_servicesItem() : 
-    m_nameHasBeenSet(false),
     m_idHasBeenSet(false),
-    m_additionalDescriptionHasBeenSet(false),
-    m_indefiniteArticleHasBeenSet(false)
+    m_nameHasBeenSet(false),
+    m_indefiniteArticleHasBeenSet(false),
+    m_additionalDescriptionHasBeenSet(false)
 {
 }
 
 GetAllDoctorServicesResult_servicesItem::GetAllDoctorServicesResult_servicesItem(const JsonValue& jsonValue) : 
-    m_nameHasBeenSet(false),
     m_idHasBeenSet(false),
-    m_additionalDescriptionHasBeenSet(false),
-    m_indefiniteArticleHasBeenSet(false)
+    m_nameHasBeenSet(false),
+    m_indefiniteArticleHasBeenSet(false),
+    m_additionalDescriptionHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
 GetAllDoctorServicesResult_servicesItem& GetAllDoctorServicesResult_servicesItem::operator =(const JsonValue& jsonValue)
 {
-  if(jsonValue.ValueExists("name"))
-  {
-    m_name = jsonValue.GetString("name");
-
-    m_nameHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
@@ -60,11 +53,11 @@ GetAllDoctorServicesResult_servicesItem& GetAllDoctorServicesResult_servicesItem
     m_idHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("additionalDescription"))
+  if(jsonValue.ValueExists("name"))
   {
-    m_additionalDescription = jsonValue.GetString("additionalDescription");
+    m_name = jsonValue.GetString("name");
 
-    m_additionalDescriptionHasBeenSet = true;
+    m_nameHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("indefiniteArticle"))
@@ -74,6 +67,13 @@ GetAllDoctorServicesResult_servicesItem& GetAllDoctorServicesResult_servicesItem
     m_indefiniteArticleHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("additionalDescription"))
+  {
+    m_additionalDescription = jsonValue.GetString("additionalDescription");
+
+    m_additionalDescriptionHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -81,27 +81,27 @@ JsonValue GetAllDoctorServicesResult_servicesItem::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("name", m_name);
-
-  }
-
   if(m_idHasBeenSet)
   {
    payload.WithString("id", m_id);
 
   }
 
-  if(m_additionalDescriptionHasBeenSet)
+  if(m_nameHasBeenSet)
   {
-   payload.WithString("additionalDescription", m_additionalDescription);
+   payload.WithString("name", m_name);
 
   }
 
   if(m_indefiniteArticleHasBeenSet)
   {
    payload.WithString("indefiniteArticle", m_indefiniteArticle);
+
+  }
+
+  if(m_additionalDescriptionHasBeenSet)
+  {
+   payload.WithString("additionalDescription", m_additionalDescription);
 
   }
 

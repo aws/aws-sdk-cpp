@@ -28,82 +28,68 @@ namespace Model
 {
 
 SearchForDoctorsResult_doctorsItem::SearchForDoctorsResult_doctorsItem() : 
-    m_idHasBeenSet(false),
-    m_postalCodeHasBeenSet(false),
-    m_profilePhotoUrlHasBeenSet(false),
-    m_cityHasBeenSet(false),
-    m_firstNameHasBeenSet(false),
-    m_coverPhotoUrlHasBeenSet(false),
     m_latitude(0.0),
     m_latitudeHasBeenSet(false),
-    m_suiteHasBeenSet(false),
-    m_payoutInfoIsSet(false),
-    m_payoutInfoIsSetHasBeenSet(false),
-    m_officeNumberHasBeenSet(false),
-    m_administrativeAreaL1HasBeenSet(false),
     m_specialtyIdHasBeenSet(false),
-    m_servicesOfferedHasBeenSet(false),
-    m_serviceDetailsListHasBeenSet(false),
+    m_firstNameHasBeenSet(false),
     m_lastNameHasBeenSet(false),
+    m_idHasBeenSet(false),
+    m_servicesOfferedHasBeenSet(false),
     m_longitude(0.0),
     m_longitudeHasBeenSet(false),
-    m_streetNumberAndNameHasBeenSet(false)
+    m_suiteHasBeenSet(false),
+    m_administrativeAreaL1HasBeenSet(false),
+    m_profilePhotoUrlHasBeenSet(false),
+    m_streetNumberAndNameHasBeenSet(false),
+    m_cityHasBeenSet(false),
+    m_officeNumberHasBeenSet(false),
+    m_payoutInfoIsSet(false),
+    m_payoutInfoIsSetHasBeenSet(false),
+    m_serviceDetailsListHasBeenSet(false),
+    m_postalCodeHasBeenSet(false),
+    m_coverPhotoUrlHasBeenSet(false)
 {
 }
 
 SearchForDoctorsResult_doctorsItem::SearchForDoctorsResult_doctorsItem(const JsonValue& jsonValue) : 
-    m_idHasBeenSet(false),
-    m_postalCodeHasBeenSet(false),
-    m_profilePhotoUrlHasBeenSet(false),
-    m_cityHasBeenSet(false),
-    m_firstNameHasBeenSet(false),
-    m_coverPhotoUrlHasBeenSet(false),
     m_latitude(0.0),
     m_latitudeHasBeenSet(false),
-    m_suiteHasBeenSet(false),
-    m_payoutInfoIsSet(false),
-    m_payoutInfoIsSetHasBeenSet(false),
-    m_officeNumberHasBeenSet(false),
-    m_administrativeAreaL1HasBeenSet(false),
     m_specialtyIdHasBeenSet(false),
-    m_servicesOfferedHasBeenSet(false),
-    m_serviceDetailsListHasBeenSet(false),
+    m_firstNameHasBeenSet(false),
     m_lastNameHasBeenSet(false),
+    m_idHasBeenSet(false),
+    m_servicesOfferedHasBeenSet(false),
     m_longitude(0.0),
     m_longitudeHasBeenSet(false),
-    m_streetNumberAndNameHasBeenSet(false)
+    m_suiteHasBeenSet(false),
+    m_administrativeAreaL1HasBeenSet(false),
+    m_profilePhotoUrlHasBeenSet(false),
+    m_streetNumberAndNameHasBeenSet(false),
+    m_cityHasBeenSet(false),
+    m_officeNumberHasBeenSet(false),
+    m_payoutInfoIsSet(false),
+    m_payoutInfoIsSetHasBeenSet(false),
+    m_serviceDetailsListHasBeenSet(false),
+    m_postalCodeHasBeenSet(false),
+    m_coverPhotoUrlHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
 SearchForDoctorsResult_doctorsItem& SearchForDoctorsResult_doctorsItem::operator =(const JsonValue& jsonValue)
 {
-  if(jsonValue.ValueExists("id"))
+  if(jsonValue.ValueExists("latitude"))
   {
-    m_id = jsonValue.GetString("id");
+    m_latitude = jsonValue.GetDouble("latitude");
 
-    m_idHasBeenSet = true;
+    m_latitudeHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("postalCode"))
+  if(jsonValue.ValueExists("specialtyId"))
   {
-    m_postalCode = jsonValue.GetString("postalCode");
+    m_specialtyId = jsonValue.GetString("specialtyId");
 
-    m_postalCodeHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("profilePhotoUrl"))
-  {
-    m_profilePhotoUrl = jsonValue.GetString("profilePhotoUrl");
-
-    m_profilePhotoUrlHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("city"))
-  {
-    m_city = jsonValue.GetString("city");
-
-    m_cityHasBeenSet = true;
+    m_specialtyIdHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("firstName"))
@@ -113,53 +99,18 @@ SearchForDoctorsResult_doctorsItem& SearchForDoctorsResult_doctorsItem::operator
     m_firstNameHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("coverPhotoUrl"))
+  if(jsonValue.ValueExists("lastName"))
   {
-    m_coverPhotoUrl = jsonValue.GetString("coverPhotoUrl");
+    m_lastName = jsonValue.GetString("lastName");
 
-    m_coverPhotoUrlHasBeenSet = true;
+    m_lastNameHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("latitude"))
+  if(jsonValue.ValueExists("id"))
   {
-    m_latitude = jsonValue.GetDouble("latitude");
+    m_id = jsonValue.GetString("id");
 
-    m_latitudeHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("suite"))
-  {
-    m_suite = jsonValue.GetString("suite");
-
-    m_suiteHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("payoutInfoIsSet"))
-  {
-    m_payoutInfoIsSet = jsonValue.GetBool("payoutInfoIsSet");
-
-    m_payoutInfoIsSetHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("officeNumber"))
-  {
-    m_officeNumber = jsonValue.GetString("officeNumber");
-
-    m_officeNumberHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("administrativeAreaL1"))
-  {
-    m_administrativeAreaL1 = jsonValue.GetString("administrativeAreaL1");
-
-    m_administrativeAreaL1HasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("specialtyId"))
-  {
-    m_specialtyId = jsonValue.GetString("specialtyId");
-
-    m_specialtyIdHasBeenSet = true;
+    m_idHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("servicesOffered"))
@@ -172,6 +123,62 @@ SearchForDoctorsResult_doctorsItem& SearchForDoctorsResult_doctorsItem::operator
     m_servicesOfferedHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("longitude"))
+  {
+    m_longitude = jsonValue.GetDouble("longitude");
+
+    m_longitudeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("suite"))
+  {
+    m_suite = jsonValue.GetString("suite");
+
+    m_suiteHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("administrativeAreaL1"))
+  {
+    m_administrativeAreaL1 = jsonValue.GetString("administrativeAreaL1");
+
+    m_administrativeAreaL1HasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("profilePhotoUrl"))
+  {
+    m_profilePhotoUrl = jsonValue.GetString("profilePhotoUrl");
+
+    m_profilePhotoUrlHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("streetNumberAndName"))
+  {
+    m_streetNumberAndName = jsonValue.GetString("streetNumberAndName");
+
+    m_streetNumberAndNameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("city"))
+  {
+    m_city = jsonValue.GetString("city");
+
+    m_cityHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("officeNumber"))
+  {
+    m_officeNumber = jsonValue.GetString("officeNumber");
+
+    m_officeNumberHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("payoutInfoIsSet"))
+  {
+    m_payoutInfoIsSet = jsonValue.GetBool("payoutInfoIsSet");
+
+    m_payoutInfoIsSetHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("serviceDetailsList"))
   {
     Array<JsonValue> serviceDetailsListJsonList = jsonValue.GetArray("serviceDetailsList");
@@ -182,25 +189,18 @@ SearchForDoctorsResult_doctorsItem& SearchForDoctorsResult_doctorsItem::operator
     m_serviceDetailsListHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("lastName"))
+  if(jsonValue.ValueExists("postalCode"))
   {
-    m_lastName = jsonValue.GetString("lastName");
+    m_postalCode = jsonValue.GetString("postalCode");
 
-    m_lastNameHasBeenSet = true;
+    m_postalCodeHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("longitude"))
+  if(jsonValue.ValueExists("coverPhotoUrl"))
   {
-    m_longitude = jsonValue.GetDouble("longitude");
+    m_coverPhotoUrl = jsonValue.GetString("coverPhotoUrl");
 
-    m_longitudeHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("streetNumberAndName"))
-  {
-    m_streetNumberAndName = jsonValue.GetString("streetNumberAndName");
-
-    m_streetNumberAndNameHasBeenSet = true;
+    m_coverPhotoUrlHasBeenSet = true;
   }
 
   return *this;
@@ -210,27 +210,15 @@ JsonValue SearchForDoctorsResult_doctorsItem::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_idHasBeenSet)
+  if(m_latitudeHasBeenSet)
   {
-   payload.WithString("id", m_id);
+   payload.WithDouble("latitude", m_latitude);
 
   }
 
-  if(m_postalCodeHasBeenSet)
+  if(m_specialtyIdHasBeenSet)
   {
-   payload.WithString("postalCode", m_postalCode);
-
-  }
-
-  if(m_profilePhotoUrlHasBeenSet)
-  {
-   payload.WithString("profilePhotoUrl", m_profilePhotoUrl);
-
-  }
-
-  if(m_cityHasBeenSet)
-  {
-   payload.WithString("city", m_city);
+   payload.WithString("specialtyId", m_specialtyId);
 
   }
 
@@ -240,45 +228,15 @@ JsonValue SearchForDoctorsResult_doctorsItem::Jsonize() const
 
   }
 
-  if(m_coverPhotoUrlHasBeenSet)
+  if(m_lastNameHasBeenSet)
   {
-   payload.WithString("coverPhotoUrl", m_coverPhotoUrl);
+   payload.WithString("lastName", m_lastName);
 
   }
 
-  if(m_latitudeHasBeenSet)
+  if(m_idHasBeenSet)
   {
-   payload.WithDouble("latitude", m_latitude);
-
-  }
-
-  if(m_suiteHasBeenSet)
-  {
-   payload.WithString("suite", m_suite);
-
-  }
-
-  if(m_payoutInfoIsSetHasBeenSet)
-  {
-   payload.WithBool("payoutInfoIsSet", m_payoutInfoIsSet);
-
-  }
-
-  if(m_officeNumberHasBeenSet)
-  {
-   payload.WithString("officeNumber", m_officeNumber);
-
-  }
-
-  if(m_administrativeAreaL1HasBeenSet)
-  {
-   payload.WithString("administrativeAreaL1", m_administrativeAreaL1);
-
-  }
-
-  if(m_specialtyIdHasBeenSet)
-  {
-   payload.WithString("specialtyId", m_specialtyId);
+   payload.WithString("id", m_id);
 
   }
 
@@ -293,6 +251,54 @@ JsonValue SearchForDoctorsResult_doctorsItem::Jsonize() const
 
   }
 
+  if(m_longitudeHasBeenSet)
+  {
+   payload.WithDouble("longitude", m_longitude);
+
+  }
+
+  if(m_suiteHasBeenSet)
+  {
+   payload.WithString("suite", m_suite);
+
+  }
+
+  if(m_administrativeAreaL1HasBeenSet)
+  {
+   payload.WithString("administrativeAreaL1", m_administrativeAreaL1);
+
+  }
+
+  if(m_profilePhotoUrlHasBeenSet)
+  {
+   payload.WithString("profilePhotoUrl", m_profilePhotoUrl);
+
+  }
+
+  if(m_streetNumberAndNameHasBeenSet)
+  {
+   payload.WithString("streetNumberAndName", m_streetNumberAndName);
+
+  }
+
+  if(m_cityHasBeenSet)
+  {
+   payload.WithString("city", m_city);
+
+  }
+
+  if(m_officeNumberHasBeenSet)
+  {
+   payload.WithString("officeNumber", m_officeNumber);
+
+  }
+
+  if(m_payoutInfoIsSetHasBeenSet)
+  {
+   payload.WithBool("payoutInfoIsSet", m_payoutInfoIsSet);
+
+  }
+
   if(m_serviceDetailsListHasBeenSet)
   {
    Array<JsonValue> serviceDetailsListJsonList(m_serviceDetailsList.size());
@@ -304,21 +310,15 @@ JsonValue SearchForDoctorsResult_doctorsItem::Jsonize() const
 
   }
 
-  if(m_lastNameHasBeenSet)
+  if(m_postalCodeHasBeenSet)
   {
-   payload.WithString("lastName", m_lastName);
+   payload.WithString("postalCode", m_postalCode);
 
   }
 
-  if(m_longitudeHasBeenSet)
+  if(m_coverPhotoUrlHasBeenSet)
   {
-   payload.WithDouble("longitude", m_longitude);
-
-  }
-
-  if(m_streetNumberAndNameHasBeenSet)
-  {
-   payload.WithString("streetNumberAndName", m_streetNumberAndName);
+   payload.WithString("coverPhotoUrl", m_coverPhotoUrl);
 
   }
 

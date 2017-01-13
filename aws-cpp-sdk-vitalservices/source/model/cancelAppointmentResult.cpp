@@ -36,15 +36,15 @@ cancelAppointmentResult::cancelAppointmentResult(const AmazonWebServiceResult<Js
 cancelAppointmentResult& cancelAppointmentResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
-  if(jsonValue.ValueExists("appointment"))
-  {
-    m_appointment = jsonValue.GetObject("appointment");
-
-  }
-
   if(jsonValue.ValueExists("errorCode"))
   {
     m_errorCode = jsonValue.GetString("errorCode");
+
+  }
+
+  if(jsonValue.ValueExists("appointment"))
+  {
+    m_appointment = jsonValue.GetObject("appointment");
 
   }
 

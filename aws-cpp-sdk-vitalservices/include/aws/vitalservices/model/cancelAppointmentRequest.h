@@ -33,6 +33,15 @@ namespace Model
     Aws::String SerializePayload() const override;
 
     
+    inline bool GetLateCancellation() const{ return m_lateCancellation; }
+
+    
+    inline void SetLateCancellation(bool value) { m_lateCancellationHasBeenSet = true; m_lateCancellation = value; }
+
+    
+    inline cancelAppointmentRequest& WithLateCancellation(bool value) { SetLateCancellation(value); return *this;}
+
+    
     inline const Aws::String& GetAppointmentId() const{ return m_appointmentId; }
 
     
@@ -53,20 +62,11 @@ namespace Model
     
     inline cancelAppointmentRequest& WithAppointmentId(const char* value) { SetAppointmentId(value); return *this;}
 
-    
-    inline bool GetLateCancellation() const{ return m_lateCancellation; }
-
-    
-    inline void SetLateCancellation(bool value) { m_lateCancellationHasBeenSet = true; m_lateCancellation = value; }
-
-    
-    inline cancelAppointmentRequest& WithLateCancellation(bool value) { SetLateCancellation(value); return *this;}
-
   private:
-    Aws::String m_appointmentId;
-    bool m_appointmentIdHasBeenSet;
     bool m_lateCancellation;
     bool m_lateCancellationHasBeenSet;
+    Aws::String m_appointmentId;
+    bool m_appointmentIdHasBeenSet;
   };
 
 } // namespace Model

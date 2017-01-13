@@ -24,26 +24,18 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-scheduleAppointmentResult::scheduleAppointmentResult() : 
-    m_succeeded(false)
+scheduleAppointmentResult::scheduleAppointmentResult()
 {
 }
 
-scheduleAppointmentResult::scheduleAppointmentResult(const AmazonWebServiceResult<JsonValue>& result) : 
-    m_succeeded(false)
+scheduleAppointmentResult::scheduleAppointmentResult(const AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
 scheduleAppointmentResult& scheduleAppointmentResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
-  if(jsonValue.ValueExists("succeeded"))
-  {
-    m_succeeded = jsonValue.GetBool("succeeded");
-
-  }
-
+  AWS_UNREFERENCED_PARAM(result);
 
 
   return *this;

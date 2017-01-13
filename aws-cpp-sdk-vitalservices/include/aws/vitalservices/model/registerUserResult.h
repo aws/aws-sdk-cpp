@@ -61,25 +61,25 @@ namespace Model
     inline registerUserResult& WithDoctorId(const char* value) { SetDoctorId(value); return *this;}
 
     
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline const Aws::String& GetEmail() const{ return m_email; }
 
     
-    inline void SetId(const Aws::String& value) { m_id = value; }
+    inline void SetEmail(const Aws::String& value) { m_email = value; }
 
     
-    inline void SetId(Aws::String&& value) { m_id = value; }
+    inline void SetEmail(Aws::String&& value) { m_email = value; }
 
     
-    inline void SetId(const char* value) { m_id.assign(value); }
+    inline void SetEmail(const char* value) { m_email.assign(value); }
 
     
-    inline registerUserResult& WithId(const Aws::String& value) { SetId(value); return *this;}
+    inline registerUserResult& WithEmail(const Aws::String& value) { SetEmail(value); return *this;}
 
     
-    inline registerUserResult& WithId(Aws::String&& value) { SetId(value); return *this;}
+    inline registerUserResult& WithEmail(Aws::String&& value) { SetEmail(value); return *this;}
 
     
-    inline registerUserResult& WithId(const char* value) { SetId(value); return *this;}
+    inline registerUserResult& WithEmail(const char* value) { SetEmail(value); return *this;}
 
     
     inline const Aws::String& GetProfilePhotoUrl() const{ return m_profilePhotoUrl; }
@@ -103,25 +103,25 @@ namespace Model
     inline registerUserResult& WithProfilePhotoUrl(const char* value) { SetProfilePhotoUrl(value); return *this;}
 
     
-    inline const Aws::String& GetStripeCustomerId() const{ return m_stripeCustomerId; }
+    inline const Aws::String& GetMobileNumber() const{ return m_mobileNumber; }
 
     
-    inline void SetStripeCustomerId(const Aws::String& value) { m_stripeCustomerId = value; }
+    inline void SetMobileNumber(const Aws::String& value) { m_mobileNumber = value; }
 
     
-    inline void SetStripeCustomerId(Aws::String&& value) { m_stripeCustomerId = value; }
+    inline void SetMobileNumber(Aws::String&& value) { m_mobileNumber = value; }
 
     
-    inline void SetStripeCustomerId(const char* value) { m_stripeCustomerId.assign(value); }
+    inline void SetMobileNumber(const char* value) { m_mobileNumber.assign(value); }
 
     
-    inline registerUserResult& WithStripeCustomerId(const Aws::String& value) { SetStripeCustomerId(value); return *this;}
+    inline registerUserResult& WithMobileNumber(const Aws::String& value) { SetMobileNumber(value); return *this;}
 
     
-    inline registerUserResult& WithStripeCustomerId(Aws::String&& value) { SetStripeCustomerId(value); return *this;}
+    inline registerUserResult& WithMobileNumber(Aws::String&& value) { SetMobileNumber(value); return *this;}
 
     
-    inline registerUserResult& WithStripeCustomerId(const char* value) { SetStripeCustomerId(value); return *this;}
+    inline registerUserResult& WithMobileNumber(const char* value) { SetMobileNumber(value); return *this;}
 
     
     inline const Aws::String& GetFirstName() const{ return m_firstName; }
@@ -166,56 +166,56 @@ namespace Model
     inline registerUserResult& WithLastName(const char* value) { SetLastName(value); return *this;}
 
     
-    inline const Aws::String& GetEmail() const{ return m_email; }
+    inline const Aws::String& GetId() const{ return m_id; }
 
     
-    inline void SetEmail(const Aws::String& value) { m_email = value; }
+    inline void SetId(const Aws::String& value) { m_id = value; }
 
     
-    inline void SetEmail(Aws::String&& value) { m_email = value; }
+    inline void SetId(Aws::String&& value) { m_id = value; }
 
     
-    inline void SetEmail(const char* value) { m_email.assign(value); }
+    inline void SetId(const char* value) { m_id.assign(value); }
 
     
-    inline registerUserResult& WithEmail(const Aws::String& value) { SetEmail(value); return *this;}
+    inline registerUserResult& WithId(const Aws::String& value) { SetId(value); return *this;}
 
     
-    inline registerUserResult& WithEmail(Aws::String&& value) { SetEmail(value); return *this;}
+    inline registerUserResult& WithId(Aws::String&& value) { SetId(value); return *this;}
 
     
-    inline registerUserResult& WithEmail(const char* value) { SetEmail(value); return *this;}
+    inline registerUserResult& WithId(const char* value) { SetId(value); return *this;}
 
     
-    inline const Aws::String& GetMobileNumber() const{ return m_mobileNumber; }
+    inline const Aws::String& GetStripeCustomerId() const{ return m_stripeCustomerId; }
 
     
-    inline void SetMobileNumber(const Aws::String& value) { m_mobileNumber = value; }
+    inline void SetStripeCustomerId(const Aws::String& value) { m_stripeCustomerId = value; }
 
     
-    inline void SetMobileNumber(Aws::String&& value) { m_mobileNumber = value; }
+    inline void SetStripeCustomerId(Aws::String&& value) { m_stripeCustomerId = value; }
 
     
-    inline void SetMobileNumber(const char* value) { m_mobileNumber.assign(value); }
+    inline void SetStripeCustomerId(const char* value) { m_stripeCustomerId.assign(value); }
 
     
-    inline registerUserResult& WithMobileNumber(const Aws::String& value) { SetMobileNumber(value); return *this;}
+    inline registerUserResult& WithStripeCustomerId(const Aws::String& value) { SetStripeCustomerId(value); return *this;}
 
     
-    inline registerUserResult& WithMobileNumber(Aws::String&& value) { SetMobileNumber(value); return *this;}
+    inline registerUserResult& WithStripeCustomerId(Aws::String&& value) { SetStripeCustomerId(value); return *this;}
 
     
-    inline registerUserResult& WithMobileNumber(const char* value) { SetMobileNumber(value); return *this;}
+    inline registerUserResult& WithStripeCustomerId(const char* value) { SetStripeCustomerId(value); return *this;}
 
   private:
     Aws::String m_doctorId;
-    Aws::String m_id;
+    Aws::String m_email;
     Aws::String m_profilePhotoUrl;
-    Aws::String m_stripeCustomerId;
+    Aws::String m_mobileNumber;
     Aws::String m_firstName;
     Aws::String m_lastName;
-    Aws::String m_email;
-    Aws::String m_mobileNumber;
+    Aws::String m_id;
+    Aws::String m_stripeCustomerId;
   };
 
 } // namespace Model

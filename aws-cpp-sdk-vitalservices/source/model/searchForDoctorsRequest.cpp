@@ -22,14 +22,14 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 searchForDoctorsRequest::searchForDoctorsRequest() : 
-    m_firstTimeHasBeenSet(false),
-    m_specialtyIdHasBeenSet(false),
-    m_serviceIdHasBeenSet(false),
-    m_lastTimeHasBeenSet(false),
     m_latitude(0.0),
     m_latitudeHasBeenSet(false),
+    m_specialtyIdHasBeenSet(false),
+    m_firstTimeHasBeenSet(false),
+    m_lastTimeHasBeenSet(false),
     m_longitude(0.0),
-    m_longitudeHasBeenSet(false)
+    m_longitudeHasBeenSet(false),
+    m_serviceIdHasBeenSet(false)
 {
 }
 
@@ -37,9 +37,9 @@ Aws::String searchForDoctorsRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  if(m_firstTimeHasBeenSet)
+  if(m_latitudeHasBeenSet)
   {
-   payload.WithString("firstTime", m_firstTime);
+   payload.WithDouble("latitude", m_latitude);
 
   }
 
@@ -49,9 +49,9 @@ Aws::String searchForDoctorsRequest::SerializePayload() const
 
   }
 
-  if(m_serviceIdHasBeenSet)
+  if(m_firstTimeHasBeenSet)
   {
-   payload.WithString("serviceId", m_serviceId);
+   payload.WithString("firstTime", m_firstTime);
 
   }
 
@@ -61,15 +61,15 @@ Aws::String searchForDoctorsRequest::SerializePayload() const
 
   }
 
-  if(m_latitudeHasBeenSet)
-  {
-   payload.WithDouble("latitude", m_latitude);
-
-  }
-
   if(m_longitudeHasBeenSet)
   {
    payload.WithDouble("longitude", m_longitude);
+
+  }
+
+  if(m_serviceIdHasBeenSet)
+  {
+   payload.WithString("serviceId", m_serviceId);
 
   }
 
