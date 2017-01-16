@@ -22,60 +22,60 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 getLoggedInUserRequest::getLoggedInUserRequest() : 
-    m_employerIdentificationNumberHasBeenSet(false),
-    m_availableTimeSlotsHasBeenSet(false),
-    m_getDoctors(false),
-    m_getDoctorsHasBeenSet(false),
-    m_string2HasBeenSet(false),
-    m_durationMinutesHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_priceDollarsHasBeenSet(false),
-    m_cardTokenHasBeenSet(false),
-    m_pictureUrlHasBeenSet(false),
-    m_streetNumberAndNameHasBeenSet(false),
-    m_doctorIdsHasBeenSet(false),
-    m_billVersionHasBeenSet(false),
-    m_lastTimeHasBeenSet(false),
+    m_birthdateMonthHasBeenSet(false),
+    m_ssnLast4HasBeenSet(false),
+    m_cityHasBeenSet(false),
+    m_stateHasBeenSet(false),
     m_string3HasBeenSet(false),
-    m_postalCodeHasBeenSet(false),
     m_getPatients(false),
     m_getPatientsHasBeenSet(false),
-    m_birthdateMonthHasBeenSet(false),
-    m_appointmentIdsHasBeenSet(false),
-    m_birthdateYearHasBeenSet(false),
-    m_patientIdsHasBeenSet(false),
-    m_mobileNumberHasBeenSet(false),
-    m_serviceIdHasBeenSet(false),
+    m_officeNumberHasBeenSet(false),
+    m_appointmentIdHasBeenSet(false),
+    m_firstNameHasBeenSet(false),
     m_emailHasBeenSet(false),
-    m_httpMethodHasBeenSet(false),
+    m_employerIdentificationNumberHasBeenSet(false),
+    m_suiteHasBeenSet(false),
+    m_priceDollarsHasBeenSet(false),
+    m_doctorIdsHasBeenSet(false),
+    m_sourceIdHasBeenSet(false),
+    m_mobileNumberHasBeenSet(false),
     m_string1HasBeenSet(false),
+    m_birthdateYearHasBeenSet(false),
+    m_streetNumberAndNameHasBeenSet(false),
+    m_businessNameHasBeenSet(false),
+    m_operationHasBeenSet(false),
+    m_lastTimeHasBeenSet(false),
+    m_patientIdHasBeenSet(false),
+    m_firstTimeHasBeenSet(false),
+    m_doctorIdHasBeenSet(false),
+    m_birthdateDayHasBeenSet(false),
+    m_lastNameHasBeenSet(false),
+    m_billVersionHasBeenSet(false),
+    m_fileHasBeenSet(false),
     m_lateCancellation(false),
     m_lateCancellationHasBeenSet(false),
-    m_latitude(0.0),
-    m_latitudeHasBeenSet(false),
-    m_bankAccountTokenHasBeenSet(false),
+    m_postalCodeHasBeenSet(false),
+    m_availableTimeSlotsHasBeenSet(false),
+    m_pictureUrlHasBeenSet(false),
+    m_unavailableTimeSlotsHasBeenSet(false),
+    m_specialtyIdHasBeenSet(false),
     m_longitude(0.0),
     m_longitudeHasBeenSet(false),
-    m_appointmentIdHasBeenSet(false),
-    m_doctorIdHasBeenSet(false),
+    m_bankAccountTokenHasBeenSet(false),
+    m_string2HasBeenSet(false),
+    m_httpMethodHasBeenSet(false),
+    m_cardTokenHasBeenSet(false),
+    m_patientIdsHasBeenSet(false),
+    m_durationMinutesHasBeenSet(false),
+    m_startTimeHasBeenSet(false),
+    m_latitude(0.0),
+    m_latitudeHasBeenSet(false),
     m_string4HasBeenSet(false),
-    m_ssnLast4HasBeenSet(false),
-    m_operationHasBeenSet(false),
-    m_cityHasBeenSet(false),
-    m_firstTimeHasBeenSet(false),
-    m_sourceIdHasBeenSet(false),
-    m_stateHasBeenSet(false),
-    m_firstNameHasBeenSet(false),
-    m_lastNameHasBeenSet(false),
-    m_unavailableTimeSlotsHasBeenSet(false),
-    m_businessNameHasBeenSet(false),
-    m_birthdateDayHasBeenSet(false),
-    m_suiteHasBeenSet(false),
     m_serviceIdsHasBeenSet(false),
-    m_specialtyIdHasBeenSet(false),
-    m_patientIdHasBeenSet(false),
-    m_officeNumberHasBeenSet(false),
-    m_fileHasBeenSet(false)
+    m_appointmentIdsHasBeenSet(false),
+    m_getDoctors(false),
+    m_getDoctorsHasBeenSet(false),
+    m_serviceIdHasBeenSet(false)
 {
 }
 
@@ -83,9 +83,194 @@ Aws::String getLoggedInUserRequest::SerializePayload() const
 {
   JsonValue payload;
 
+  if(m_birthdateMonthHasBeenSet)
+  {
+   payload.WithString("birthdateMonth", m_birthdateMonth);
+
+  }
+
+  if(m_ssnLast4HasBeenSet)
+  {
+   payload.WithString("ssnLast4", m_ssnLast4);
+
+  }
+
+  if(m_cityHasBeenSet)
+  {
+   payload.WithString("city", m_city);
+
+  }
+
+  if(m_stateHasBeenSet)
+  {
+   payload.WithString("state", m_state);
+
+  }
+
+  if(m_string3HasBeenSet)
+  {
+   payload.WithString("string3", m_string3);
+
+  }
+
+  if(m_getPatientsHasBeenSet)
+  {
+   payload.WithBool("getPatients", m_getPatients);
+
+  }
+
+  if(m_officeNumberHasBeenSet)
+  {
+   payload.WithString("officeNumber", m_officeNumber);
+
+  }
+
+  if(m_appointmentIdHasBeenSet)
+  {
+   payload.WithString("appointmentId", m_appointmentId);
+
+  }
+
+  if(m_firstNameHasBeenSet)
+  {
+   payload.WithString("firstName", m_firstName);
+
+  }
+
+  if(m_emailHasBeenSet)
+  {
+   payload.WithString("email", m_email);
+
+  }
+
   if(m_employerIdentificationNumberHasBeenSet)
   {
    payload.WithString("employerIdentificationNumber", m_employerIdentificationNumber);
+
+  }
+
+  if(m_suiteHasBeenSet)
+  {
+   payload.WithString("suite", m_suite);
+
+  }
+
+  if(m_priceDollarsHasBeenSet)
+  {
+   payload.WithString("priceDollars", m_priceDollars);
+
+  }
+
+  if(m_doctorIdsHasBeenSet)
+  {
+   Array<JsonValue> doctorIdsJsonList(m_doctorIds.size());
+   for(unsigned doctorIdsIndex = 0; doctorIdsIndex < doctorIdsJsonList.GetLength(); ++doctorIdsIndex)
+   {
+     doctorIdsJsonList[doctorIdsIndex].AsString(m_doctorIds[doctorIdsIndex]);
+   }
+   payload.WithArray("doctorIds", std::move(doctorIdsJsonList));
+
+  }
+
+  if(m_sourceIdHasBeenSet)
+  {
+   payload.WithString("sourceId", m_sourceId);
+
+  }
+
+  if(m_mobileNumberHasBeenSet)
+  {
+   payload.WithString("mobileNumber", m_mobileNumber);
+
+  }
+
+  if(m_string1HasBeenSet)
+  {
+   payload.WithString("string1", m_string1);
+
+  }
+
+  if(m_birthdateYearHasBeenSet)
+  {
+   payload.WithString("birthdateYear", m_birthdateYear);
+
+  }
+
+  if(m_streetNumberAndNameHasBeenSet)
+  {
+   payload.WithString("streetNumberAndName", m_streetNumberAndName);
+
+  }
+
+  if(m_businessNameHasBeenSet)
+  {
+   payload.WithString("businessName", m_businessName);
+
+  }
+
+  if(m_operationHasBeenSet)
+  {
+   payload.WithString("operation", m_operation);
+
+  }
+
+  if(m_lastTimeHasBeenSet)
+  {
+   payload.WithString("lastTime", m_lastTime);
+
+  }
+
+  if(m_patientIdHasBeenSet)
+  {
+   payload.WithString("patientId", m_patientId);
+
+  }
+
+  if(m_firstTimeHasBeenSet)
+  {
+   payload.WithString("firstTime", m_firstTime);
+
+  }
+
+  if(m_doctorIdHasBeenSet)
+  {
+   payload.WithString("doctorId", m_doctorId);
+
+  }
+
+  if(m_birthdateDayHasBeenSet)
+  {
+   payload.WithString("birthdateDay", m_birthdateDay);
+
+  }
+
+  if(m_lastNameHasBeenSet)
+  {
+   payload.WithString("lastName", m_lastName);
+
+  }
+
+  if(m_billVersionHasBeenSet)
+  {
+   payload.WithString("billVersion", m_billVersion);
+
+  }
+
+  if(m_fileHasBeenSet)
+  {
+   payload.WithString("file", m_file);
+
+  }
+
+  if(m_lateCancellationHasBeenSet)
+  {
+   payload.WithBool("lateCancellation", m_lateCancellation);
+
+  }
+
+  if(m_postalCodeHasBeenSet)
+  {
+   payload.WithString("postalCode", m_postalCode);
 
   }
 
@@ -100,15 +285,67 @@ Aws::String getLoggedInUserRequest::SerializePayload() const
 
   }
 
-  if(m_getDoctorsHasBeenSet)
+  if(m_pictureUrlHasBeenSet)
   {
-   payload.WithBool("getDoctors", m_getDoctors);
+   payload.WithString("pictureUrl", m_pictureUrl);
+
+  }
+
+  if(m_unavailableTimeSlotsHasBeenSet)
+  {
+   Array<JsonValue> unavailableTimeSlotsJsonList(m_unavailableTimeSlots.size());
+   for(unsigned unavailableTimeSlotsIndex = 0; unavailableTimeSlotsIndex < unavailableTimeSlotsJsonList.GetLength(); ++unavailableTimeSlotsIndex)
+   {
+     unavailableTimeSlotsJsonList[unavailableTimeSlotsIndex].AsString(m_unavailableTimeSlots[unavailableTimeSlotsIndex]);
+   }
+   payload.WithArray("unavailableTimeSlots", std::move(unavailableTimeSlotsJsonList));
+
+  }
+
+  if(m_specialtyIdHasBeenSet)
+  {
+   payload.WithString("specialtyId", m_specialtyId);
+
+  }
+
+  if(m_longitudeHasBeenSet)
+  {
+   payload.WithDouble("longitude", m_longitude);
+
+  }
+
+  if(m_bankAccountTokenHasBeenSet)
+  {
+   payload.WithString("bankAccountToken", m_bankAccountToken);
 
   }
 
   if(m_string2HasBeenSet)
   {
    payload.WithString("string2", m_string2);
+
+  }
+
+  if(m_httpMethodHasBeenSet)
+  {
+   payload.WithString("httpMethod", m_httpMethod);
+
+  }
+
+  if(m_cardTokenHasBeenSet)
+  {
+   payload.WithString("cardToken", m_cardToken);
+
+  }
+
+  if(m_patientIdsHasBeenSet)
+  {
+   Array<JsonValue> patientIdsJsonList(m_patientIds.size());
+   for(unsigned patientIdsIndex = 0; patientIdsIndex < patientIdsJsonList.GetLength(); ++patientIdsIndex)
+   {
+     patientIdsJsonList[patientIdsIndex].AsString(m_patientIds[patientIdsIndex]);
+   }
+   payload.WithArray("patientIds", std::move(patientIdsJsonList));
 
   }
 
@@ -124,251 +361,15 @@ Aws::String getLoggedInUserRequest::SerializePayload() const
 
   }
 
-  if(m_priceDollarsHasBeenSet)
-  {
-   payload.WithString("priceDollars", m_priceDollars);
-
-  }
-
-  if(m_cardTokenHasBeenSet)
-  {
-   payload.WithString("cardToken", m_cardToken);
-
-  }
-
-  if(m_pictureUrlHasBeenSet)
-  {
-   payload.WithString("pictureUrl", m_pictureUrl);
-
-  }
-
-  if(m_streetNumberAndNameHasBeenSet)
-  {
-   payload.WithString("streetNumberAndName", m_streetNumberAndName);
-
-  }
-
-  if(m_doctorIdsHasBeenSet)
-  {
-   Array<JsonValue> doctorIdsJsonList(m_doctorIds.size());
-   for(unsigned doctorIdsIndex = 0; doctorIdsIndex < doctorIdsJsonList.GetLength(); ++doctorIdsIndex)
-   {
-     doctorIdsJsonList[doctorIdsIndex].AsString(m_doctorIds[doctorIdsIndex]);
-   }
-   payload.WithArray("doctorIds", std::move(doctorIdsJsonList));
-
-  }
-
-  if(m_billVersionHasBeenSet)
-  {
-   payload.WithString("billVersion", m_billVersion);
-
-  }
-
-  if(m_lastTimeHasBeenSet)
-  {
-   payload.WithString("lastTime", m_lastTime);
-
-  }
-
-  if(m_string3HasBeenSet)
-  {
-   payload.WithString("string3", m_string3);
-
-  }
-
-  if(m_postalCodeHasBeenSet)
-  {
-   payload.WithString("postalCode", m_postalCode);
-
-  }
-
-  if(m_getPatientsHasBeenSet)
-  {
-   payload.WithBool("getPatients", m_getPatients);
-
-  }
-
-  if(m_birthdateMonthHasBeenSet)
-  {
-   payload.WithString("birthdateMonth", m_birthdateMonth);
-
-  }
-
-  if(m_appointmentIdsHasBeenSet)
-  {
-   Array<JsonValue> appointmentIdsJsonList(m_appointmentIds.size());
-   for(unsigned appointmentIdsIndex = 0; appointmentIdsIndex < appointmentIdsJsonList.GetLength(); ++appointmentIdsIndex)
-   {
-     appointmentIdsJsonList[appointmentIdsIndex].AsString(m_appointmentIds[appointmentIdsIndex]);
-   }
-   payload.WithArray("appointmentIds", std::move(appointmentIdsJsonList));
-
-  }
-
-  if(m_birthdateYearHasBeenSet)
-  {
-   payload.WithString("birthdateYear", m_birthdateYear);
-
-  }
-
-  if(m_patientIdsHasBeenSet)
-  {
-   Array<JsonValue> patientIdsJsonList(m_patientIds.size());
-   for(unsigned patientIdsIndex = 0; patientIdsIndex < patientIdsJsonList.GetLength(); ++patientIdsIndex)
-   {
-     patientIdsJsonList[patientIdsIndex].AsString(m_patientIds[patientIdsIndex]);
-   }
-   payload.WithArray("patientIds", std::move(patientIdsJsonList));
-
-  }
-
-  if(m_mobileNumberHasBeenSet)
-  {
-   payload.WithString("mobileNumber", m_mobileNumber);
-
-  }
-
-  if(m_serviceIdHasBeenSet)
-  {
-   payload.WithString("serviceId", m_serviceId);
-
-  }
-
-  if(m_emailHasBeenSet)
-  {
-   payload.WithString("email", m_email);
-
-  }
-
-  if(m_httpMethodHasBeenSet)
-  {
-   payload.WithString("httpMethod", m_httpMethod);
-
-  }
-
-  if(m_string1HasBeenSet)
-  {
-   payload.WithString("string1", m_string1);
-
-  }
-
-  if(m_lateCancellationHasBeenSet)
-  {
-   payload.WithBool("lateCancellation", m_lateCancellation);
-
-  }
-
   if(m_latitudeHasBeenSet)
   {
    payload.WithDouble("latitude", m_latitude);
 
   }
 
-  if(m_bankAccountTokenHasBeenSet)
-  {
-   payload.WithString("bankAccountToken", m_bankAccountToken);
-
-  }
-
-  if(m_longitudeHasBeenSet)
-  {
-   payload.WithDouble("longitude", m_longitude);
-
-  }
-
-  if(m_appointmentIdHasBeenSet)
-  {
-   payload.WithString("appointmentId", m_appointmentId);
-
-  }
-
-  if(m_doctorIdHasBeenSet)
-  {
-   payload.WithString("doctorId", m_doctorId);
-
-  }
-
   if(m_string4HasBeenSet)
   {
    payload.WithString("string4", m_string4);
-
-  }
-
-  if(m_ssnLast4HasBeenSet)
-  {
-   payload.WithString("ssnLast4", m_ssnLast4);
-
-  }
-
-  if(m_operationHasBeenSet)
-  {
-   payload.WithString("operation", m_operation);
-
-  }
-
-  if(m_cityHasBeenSet)
-  {
-   payload.WithString("city", m_city);
-
-  }
-
-  if(m_firstTimeHasBeenSet)
-  {
-   payload.WithString("firstTime", m_firstTime);
-
-  }
-
-  if(m_sourceIdHasBeenSet)
-  {
-   payload.WithString("sourceId", m_sourceId);
-
-  }
-
-  if(m_stateHasBeenSet)
-  {
-   payload.WithString("state", m_state);
-
-  }
-
-  if(m_firstNameHasBeenSet)
-  {
-   payload.WithString("firstName", m_firstName);
-
-  }
-
-  if(m_lastNameHasBeenSet)
-  {
-   payload.WithString("lastName", m_lastName);
-
-  }
-
-  if(m_unavailableTimeSlotsHasBeenSet)
-  {
-   Array<JsonValue> unavailableTimeSlotsJsonList(m_unavailableTimeSlots.size());
-   for(unsigned unavailableTimeSlotsIndex = 0; unavailableTimeSlotsIndex < unavailableTimeSlotsJsonList.GetLength(); ++unavailableTimeSlotsIndex)
-   {
-     unavailableTimeSlotsJsonList[unavailableTimeSlotsIndex].AsString(m_unavailableTimeSlots[unavailableTimeSlotsIndex]);
-   }
-   payload.WithArray("unavailableTimeSlots", std::move(unavailableTimeSlotsJsonList));
-
-  }
-
-  if(m_businessNameHasBeenSet)
-  {
-   payload.WithString("businessName", m_businessName);
-
-  }
-
-  if(m_birthdateDayHasBeenSet)
-  {
-   payload.WithString("birthdateDay", m_birthdateDay);
-
-  }
-
-  if(m_suiteHasBeenSet)
-  {
-   payload.WithString("suite", m_suite);
 
   }
 
@@ -383,27 +384,26 @@ Aws::String getLoggedInUserRequest::SerializePayload() const
 
   }
 
-  if(m_specialtyIdHasBeenSet)
+  if(m_appointmentIdsHasBeenSet)
   {
-   payload.WithString("specialtyId", m_specialtyId);
+   Array<JsonValue> appointmentIdsJsonList(m_appointmentIds.size());
+   for(unsigned appointmentIdsIndex = 0; appointmentIdsIndex < appointmentIdsJsonList.GetLength(); ++appointmentIdsIndex)
+   {
+     appointmentIdsJsonList[appointmentIdsIndex].AsString(m_appointmentIds[appointmentIdsIndex]);
+   }
+   payload.WithArray("appointmentIds", std::move(appointmentIdsJsonList));
 
   }
 
-  if(m_patientIdHasBeenSet)
+  if(m_getDoctorsHasBeenSet)
   {
-   payload.WithString("patientId", m_patientId);
+   payload.WithBool("getDoctors", m_getDoctors);
 
   }
 
-  if(m_officeNumberHasBeenSet)
+  if(m_serviceIdHasBeenSet)
   {
-   payload.WithString("officeNumber", m_officeNumber);
-
-  }
-
-  if(m_fileHasBeenSet)
-  {
-   payload.WithString("file", m_file);
+   payload.WithString("serviceId", m_serviceId);
 
   }
 

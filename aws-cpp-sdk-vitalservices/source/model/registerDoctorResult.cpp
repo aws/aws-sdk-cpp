@@ -12,7 +12,7 @@
 * express or implied. See the License for the specific language governing
 * permissions and limitations under the License.
 */
-#include <aws/vitalservices/model/updateDoctorResult.h>
+#include <aws/vitalservices/model/registerDoctorResult.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/UnreferencedParam.h>
@@ -24,14 +24,14 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-updateDoctorResult::updateDoctorResult() : 
+registerDoctorResult::registerDoctorResult() : 
     m_payoutInfoIsSet(false),
     m_latitude(0.0),
     m_longitude(0.0)
 {
 }
 
-updateDoctorResult::updateDoctorResult(const AmazonWebServiceResult<JsonValue>& result) : 
+registerDoctorResult::registerDoctorResult(const AmazonWebServiceResult<JsonValue>& result) : 
     m_payoutInfoIsSet(false),
     m_latitude(0.0),
     m_longitude(0.0)
@@ -39,7 +39,7 @@ updateDoctorResult::updateDoctorResult(const AmazonWebServiceResult<JsonValue>& 
   *this = result;
 }
 
-updateDoctorResult& updateDoctorResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+registerDoctorResult& registerDoctorResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("profilePhotoUrl"))

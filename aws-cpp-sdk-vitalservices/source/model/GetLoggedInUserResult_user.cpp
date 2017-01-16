@@ -28,46 +28,32 @@ namespace Model
 {
 
 GetLoggedInUserResult_user::GetLoggedInUserResult_user() : 
-    m_doctorIdHasBeenSet(false),
-    m_emailHasBeenSet(false),
     m_profilePhotoUrlHasBeenSet(false),
-    m_mobileNumberHasBeenSet(false),
-    m_firstNameHasBeenSet(false),
-    m_lastNameHasBeenSet(false),
     m_idHasBeenSet(false),
-    m_stripeCustomerIdHasBeenSet(false)
+    m_doctorIdHasBeenSet(false),
+    m_mobileNumberHasBeenSet(false),
+    m_stripeCustomerIdHasBeenSet(false),
+    m_emailHasBeenSet(false),
+    m_firstNameHasBeenSet(false),
+    m_lastNameHasBeenSet(false)
 {
 }
 
 GetLoggedInUserResult_user::GetLoggedInUserResult_user(const JsonValue& jsonValue) : 
-    m_doctorIdHasBeenSet(false),
-    m_emailHasBeenSet(false),
     m_profilePhotoUrlHasBeenSet(false),
-    m_mobileNumberHasBeenSet(false),
-    m_firstNameHasBeenSet(false),
-    m_lastNameHasBeenSet(false),
     m_idHasBeenSet(false),
-    m_stripeCustomerIdHasBeenSet(false)
+    m_doctorIdHasBeenSet(false),
+    m_mobileNumberHasBeenSet(false),
+    m_stripeCustomerIdHasBeenSet(false),
+    m_emailHasBeenSet(false),
+    m_firstNameHasBeenSet(false),
+    m_lastNameHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
 GetLoggedInUserResult_user& GetLoggedInUserResult_user::operator =(const JsonValue& jsonValue)
 {
-  if(jsonValue.ValueExists("doctorId"))
-  {
-    m_doctorId = jsonValue.GetString("doctorId");
-
-    m_doctorIdHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("email"))
-  {
-    m_email = jsonValue.GetString("email");
-
-    m_emailHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("profilePhotoUrl"))
   {
     m_profilePhotoUrl = jsonValue.GetString("profilePhotoUrl");
@@ -75,11 +61,39 @@ GetLoggedInUserResult_user& GetLoggedInUserResult_user::operator =(const JsonVal
     m_profilePhotoUrlHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("id"))
+  {
+    m_id = jsonValue.GetString("id");
+
+    m_idHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("doctorId"))
+  {
+    m_doctorId = jsonValue.GetString("doctorId");
+
+    m_doctorIdHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("mobileNumber"))
   {
     m_mobileNumber = jsonValue.GetString("mobileNumber");
 
     m_mobileNumberHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("stripeCustomerId"))
+  {
+    m_stripeCustomerId = jsonValue.GetString("stripeCustomerId");
+
+    m_stripeCustomerIdHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("email"))
+  {
+    m_email = jsonValue.GetString("email");
+
+    m_emailHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("firstName"))
@@ -96,20 +110,6 @@ GetLoggedInUserResult_user& GetLoggedInUserResult_user::operator =(const JsonVal
     m_lastNameHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("id"))
-  {
-    m_id = jsonValue.GetString("id");
-
-    m_idHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("stripeCustomerId"))
-  {
-    m_stripeCustomerId = jsonValue.GetString("stripeCustomerId");
-
-    m_stripeCustomerIdHasBeenSet = true;
-  }
-
   return *this;
 }
 
@@ -117,27 +117,39 @@ JsonValue GetLoggedInUserResult_user::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_doctorIdHasBeenSet)
-  {
-   payload.WithString("doctorId", m_doctorId);
-
-  }
-
-  if(m_emailHasBeenSet)
-  {
-   payload.WithString("email", m_email);
-
-  }
-
   if(m_profilePhotoUrlHasBeenSet)
   {
    payload.WithString("profilePhotoUrl", m_profilePhotoUrl);
 
   }
 
+  if(m_idHasBeenSet)
+  {
+   payload.WithString("id", m_id);
+
+  }
+
+  if(m_doctorIdHasBeenSet)
+  {
+   payload.WithString("doctorId", m_doctorId);
+
+  }
+
   if(m_mobileNumberHasBeenSet)
   {
    payload.WithString("mobileNumber", m_mobileNumber);
+
+  }
+
+  if(m_stripeCustomerIdHasBeenSet)
+  {
+   payload.WithString("stripeCustomerId", m_stripeCustomerId);
+
+  }
+
+  if(m_emailHasBeenSet)
+  {
+   payload.WithString("email", m_email);
 
   }
 
@@ -150,18 +162,6 @@ JsonValue GetLoggedInUserResult_user::Jsonize() const
   if(m_lastNameHasBeenSet)
   {
    payload.WithString("lastName", m_lastName);
-
-  }
-
-  if(m_idHasBeenSet)
-  {
-   payload.WithString("id", m_id);
-
-  }
-
-  if(m_stripeCustomerIdHasBeenSet)
-  {
-   payload.WithString("stripeCustomerId", m_stripeCustomerId);
 
   }
 

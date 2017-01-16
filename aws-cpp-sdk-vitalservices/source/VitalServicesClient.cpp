@@ -26,24 +26,25 @@
 #include <aws/vitalservices/VitalServicesClient.h>
 #include <aws/vitalservices/VitalServicesEndpoint.h>
 #include <aws/vitalservices/VitalServicesErrorMarshaller.h>
-#include <aws/vitalservices/model/getDoctorSpecialtiesRequest.h>
-#include <aws/vitalservices/model/urlForFileRequest.h>
+#include <aws/vitalservices/model/getAppointmentsWithUserRequest.h>
+#include <aws/vitalservices/model/getAppointmentBillRequest.h>
 #include <aws/vitalservices/model/addCreditCardRequest.h>
+#include <aws/vitalservices/model/getDoctorsRequest.h>
+#include <aws/vitalservices/model/getDoctorSpecialtiesRequest.h>
 #include <aws/vitalservices/model/updateDoctorRequest.h>
-#include <aws/vitalservices/model/getAppointmentPaymentMethodRequest.h>
+#include <aws/vitalservices/model/setDefaultPaymentSourceRequest.h>
+#include <aws/vitalservices/model/registerUserRequest.h>
+#include <aws/vitalservices/model/getAllDoctorServicesRequest.h>
+#include <aws/vitalservices/model/scheduleAppointmentRequest.h>
 #include <aws/vitalservices/model/getLoggedInUserRequest.h>
 #include <aws/vitalservices/model/cancelAppointmentRequest.h>
-#include <aws/vitalservices/model/getStripeCustomerRequest.h>
-#include <aws/vitalservices/model/getAllDoctorServicesRequest.h>
-#include <aws/vitalservices/model/getAppointmentBillRequest.h>
-#include <aws/vitalservices/model/registerUserRequest.h>
-#include <aws/vitalservices/model/getDoctorsRequest.h>
-#include <aws/vitalservices/model/updateUserRequest.h>
-#include <aws/vitalservices/model/setDefaultPaymentSourceRequest.h>
-#include <aws/vitalservices/model/scheduleAppointmentRequest.h>
-#include <aws/vitalservices/model/searchForDoctorsRequest.h>
-#include <aws/vitalservices/model/getAppointmentsWithUserRequest.h>
 #include <aws/vitalservices/model/queryDoctorScheduleRequest.h>
+#include <aws/vitalservices/model/updateUserRequest.h>
+#include <aws/vitalservices/model/registerDoctorRequest.h>
+#include <aws/vitalservices/model/urlForFileRequest.h>
+#include <aws/vitalservices/model/getAppointmentPaymentMethodRequest.h>
+#include <aws/vitalservices/model/searchForDoctorsRequest.h>
+#include <aws/vitalservices/model/getStripeCustomerRequest.h>
 
 using namespace Aws;
 using namespace Aws::Auth;
@@ -109,72 +110,72 @@ void VitalServicesClient::init(const ClientConfiguration& config)
   m_uri = ss.str();
 }
 
-getDoctorSpecialtiesOutcome VitalServicesClient::getDoctorSpecialties(const getDoctorSpecialtiesRequest& request) const
+getAppointmentsWithUserOutcome VitalServicesClient::getAppointmentsWithUser(const getAppointmentsWithUserRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/prod/get-doctor-specialties";
+  ss << m_uri << "/prod/get-appointments-with-user";
 
   JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
-    return getDoctorSpecialtiesOutcome(getDoctorSpecialtiesResult(outcome.GetResult()));
+    return getAppointmentsWithUserOutcome(getAppointmentsWithUserResult(outcome.GetResult()));
   }
   else
   {
-    return getDoctorSpecialtiesOutcome(outcome.GetError());
+    return getAppointmentsWithUserOutcome(outcome.GetError());
   }
 }
 
-getDoctorSpecialtiesOutcomeCallable VitalServicesClient::getDoctorSpecialtiesCallable(const getDoctorSpecialtiesRequest& request) const
+getAppointmentsWithUserOutcomeCallable VitalServicesClient::getAppointmentsWithUserCallable(const getAppointmentsWithUserRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< getDoctorSpecialtiesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->getDoctorSpecialties(request); } );
+  auto task = Aws::MakeShared< std::packaged_task< getAppointmentsWithUserOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->getAppointmentsWithUser(request); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
 
-void VitalServicesClient::getDoctorSpecialtiesAsync(const getDoctorSpecialtiesRequest& request, const getDoctorSpecialtiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void VitalServicesClient::getAppointmentsWithUserAsync(const getAppointmentsWithUserRequest& request, const getAppointmentsWithUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->getDoctorSpecialtiesAsyncHelper( request, handler, context ); } );
+  m_executor->Submit( [this, request, handler, context](){ this->getAppointmentsWithUserAsyncHelper( request, handler, context ); } );
 }
 
-void VitalServicesClient::getDoctorSpecialtiesAsyncHelper(const getDoctorSpecialtiesRequest& request, const getDoctorSpecialtiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void VitalServicesClient::getAppointmentsWithUserAsyncHelper(const getAppointmentsWithUserRequest& request, const getAppointmentsWithUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, getDoctorSpecialties(request), context);
+  handler(this, request, getAppointmentsWithUser(request), context);
 }
 
-urlForFileOutcome VitalServicesClient::urlForFile(const urlForFileRequest& request) const
+getAppointmentBillOutcome VitalServicesClient::getAppointmentBill(const getAppointmentBillRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/prod/url-for-file";
+  ss << m_uri << "/prod/get-appointment-bill";
 
   JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
-    return urlForFileOutcome(urlForFileResult(outcome.GetResult()));
+    return getAppointmentBillOutcome(getAppointmentBillResult(outcome.GetResult()));
   }
   else
   {
-    return urlForFileOutcome(outcome.GetError());
+    return getAppointmentBillOutcome(outcome.GetError());
   }
 }
 
-urlForFileOutcomeCallable VitalServicesClient::urlForFileCallable(const urlForFileRequest& request) const
+getAppointmentBillOutcomeCallable VitalServicesClient::getAppointmentBillCallable(const getAppointmentBillRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< urlForFileOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->urlForFile(request); } );
+  auto task = Aws::MakeShared< std::packaged_task< getAppointmentBillOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->getAppointmentBill(request); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
 
-void VitalServicesClient::urlForFileAsync(const urlForFileRequest& request, const urlForFileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void VitalServicesClient::getAppointmentBillAsync(const getAppointmentBillRequest& request, const getAppointmentBillResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->urlForFileAsyncHelper( request, handler, context ); } );
+  m_executor->Submit( [this, request, handler, context](){ this->getAppointmentBillAsyncHelper( request, handler, context ); } );
 }
 
-void VitalServicesClient::urlForFileAsyncHelper(const urlForFileRequest& request, const urlForFileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void VitalServicesClient::getAppointmentBillAsyncHelper(const getAppointmentBillRequest& request, const getAppointmentBillResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, urlForFile(request), context);
+  handler(this, request, getAppointmentBill(request), context);
 }
 
 addCreditCardOutcome VitalServicesClient::addCreditCard(const addCreditCardRequest& request) const
@@ -211,6 +212,74 @@ void VitalServicesClient::addCreditCardAsyncHelper(const addCreditCardRequest& r
   handler(this, request, addCreditCard(request), context);
 }
 
+getDoctorsOutcome VitalServicesClient::getDoctors(const getDoctorsRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/prod/get-doctors";
+
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return getDoctorsOutcome(getDoctorsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return getDoctorsOutcome(outcome.GetError());
+  }
+}
+
+getDoctorsOutcomeCallable VitalServicesClient::getDoctorsCallable(const getDoctorsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< getDoctorsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->getDoctors(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void VitalServicesClient::getDoctorsAsync(const getDoctorsRequest& request, const getDoctorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->getDoctorsAsyncHelper( request, handler, context ); } );
+}
+
+void VitalServicesClient::getDoctorsAsyncHelper(const getDoctorsRequest& request, const getDoctorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, getDoctors(request), context);
+}
+
+getDoctorSpecialtiesOutcome VitalServicesClient::getDoctorSpecialties(const getDoctorSpecialtiesRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/prod/get-doctor-specialties";
+
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return getDoctorSpecialtiesOutcome(getDoctorSpecialtiesResult(outcome.GetResult()));
+  }
+  else
+  {
+    return getDoctorSpecialtiesOutcome(outcome.GetError());
+  }
+}
+
+getDoctorSpecialtiesOutcomeCallable VitalServicesClient::getDoctorSpecialtiesCallable(const getDoctorSpecialtiesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< getDoctorSpecialtiesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->getDoctorSpecialties(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void VitalServicesClient::getDoctorSpecialtiesAsync(const getDoctorSpecialtiesRequest& request, const getDoctorSpecialtiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->getDoctorSpecialtiesAsyncHelper( request, handler, context ); } );
+}
+
+void VitalServicesClient::getDoctorSpecialtiesAsyncHelper(const getDoctorSpecialtiesRequest& request, const getDoctorSpecialtiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, getDoctorSpecialties(request), context);
+}
+
 updateDoctorOutcome VitalServicesClient::updateDoctor(const updateDoctorRequest& request) const
 {
   Aws::StringStream ss;
@@ -245,38 +314,140 @@ void VitalServicesClient::updateDoctorAsyncHelper(const updateDoctorRequest& req
   handler(this, request, updateDoctor(request), context);
 }
 
-getAppointmentPaymentMethodOutcome VitalServicesClient::getAppointmentPaymentMethod(const getAppointmentPaymentMethodRequest& request) const
+setDefaultPaymentSourceOutcome VitalServicesClient::setDefaultPaymentSource(const setDefaultPaymentSourceRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/prod/get-appointment-payment-method";
+  ss << m_uri << "/prod/set-default-payment-source";
 
   JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
-    return getAppointmentPaymentMethodOutcome(getAppointmentPaymentMethodResult(outcome.GetResult()));
+    return setDefaultPaymentSourceOutcome(setDefaultPaymentSourceResult(outcome.GetResult()));
   }
   else
   {
-    return getAppointmentPaymentMethodOutcome(outcome.GetError());
+    return setDefaultPaymentSourceOutcome(outcome.GetError());
   }
 }
 
-getAppointmentPaymentMethodOutcomeCallable VitalServicesClient::getAppointmentPaymentMethodCallable(const getAppointmentPaymentMethodRequest& request) const
+setDefaultPaymentSourceOutcomeCallable VitalServicesClient::setDefaultPaymentSourceCallable(const setDefaultPaymentSourceRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< getAppointmentPaymentMethodOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->getAppointmentPaymentMethod(request); } );
+  auto task = Aws::MakeShared< std::packaged_task< setDefaultPaymentSourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->setDefaultPaymentSource(request); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
 
-void VitalServicesClient::getAppointmentPaymentMethodAsync(const getAppointmentPaymentMethodRequest& request, const getAppointmentPaymentMethodResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void VitalServicesClient::setDefaultPaymentSourceAsync(const setDefaultPaymentSourceRequest& request, const setDefaultPaymentSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->getAppointmentPaymentMethodAsyncHelper( request, handler, context ); } );
+  m_executor->Submit( [this, request, handler, context](){ this->setDefaultPaymentSourceAsyncHelper( request, handler, context ); } );
 }
 
-void VitalServicesClient::getAppointmentPaymentMethodAsyncHelper(const getAppointmentPaymentMethodRequest& request, const getAppointmentPaymentMethodResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void VitalServicesClient::setDefaultPaymentSourceAsyncHelper(const setDefaultPaymentSourceRequest& request, const setDefaultPaymentSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, getAppointmentPaymentMethod(request), context);
+  handler(this, request, setDefaultPaymentSource(request), context);
+}
+
+registerUserOutcome VitalServicesClient::registerUser(const registerUserRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/prod/register-user";
+
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return registerUserOutcome(registerUserResult(outcome.GetResult()));
+  }
+  else
+  {
+    return registerUserOutcome(outcome.GetError());
+  }
+}
+
+registerUserOutcomeCallable VitalServicesClient::registerUserCallable(const registerUserRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< registerUserOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->registerUser(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void VitalServicesClient::registerUserAsync(const registerUserRequest& request, const registerUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->registerUserAsyncHelper( request, handler, context ); } );
+}
+
+void VitalServicesClient::registerUserAsyncHelper(const registerUserRequest& request, const registerUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, registerUser(request), context);
+}
+
+getAllDoctorServicesOutcome VitalServicesClient::getAllDoctorServices(const getAllDoctorServicesRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/prod/get-all-doctor-services";
+
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return getAllDoctorServicesOutcome(getAllDoctorServicesResult(outcome.GetResult()));
+  }
+  else
+  {
+    return getAllDoctorServicesOutcome(outcome.GetError());
+  }
+}
+
+getAllDoctorServicesOutcomeCallable VitalServicesClient::getAllDoctorServicesCallable(const getAllDoctorServicesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< getAllDoctorServicesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->getAllDoctorServices(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void VitalServicesClient::getAllDoctorServicesAsync(const getAllDoctorServicesRequest& request, const getAllDoctorServicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->getAllDoctorServicesAsyncHelper( request, handler, context ); } );
+}
+
+void VitalServicesClient::getAllDoctorServicesAsyncHelper(const getAllDoctorServicesRequest& request, const getAllDoctorServicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, getAllDoctorServices(request), context);
+}
+
+scheduleAppointmentOutcome VitalServicesClient::scheduleAppointment(const scheduleAppointmentRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/prod/schedule-appointment";
+
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return scheduleAppointmentOutcome(scheduleAppointmentResult(outcome.GetResult()));
+  }
+  else
+  {
+    return scheduleAppointmentOutcome(outcome.GetError());
+  }
+}
+
+scheduleAppointmentOutcomeCallable VitalServicesClient::scheduleAppointmentCallable(const scheduleAppointmentRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< scheduleAppointmentOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->scheduleAppointment(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void VitalServicesClient::scheduleAppointmentAsync(const scheduleAppointmentRequest& request, const scheduleAppointmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->scheduleAppointmentAsyncHelper( request, handler, context ); } );
+}
+
+void VitalServicesClient::scheduleAppointmentAsyncHelper(const scheduleAppointmentRequest& request, const scheduleAppointmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, scheduleAppointment(request), context);
 }
 
 getLoggedInUserOutcome VitalServicesClient::getLoggedInUser(const getLoggedInUserRequest& request) const
@@ -347,174 +518,38 @@ void VitalServicesClient::cancelAppointmentAsyncHelper(const cancelAppointmentRe
   handler(this, request, cancelAppointment(request), context);
 }
 
-getStripeCustomerOutcome VitalServicesClient::getStripeCustomer(const getStripeCustomerRequest& request) const
+queryDoctorScheduleOutcome VitalServicesClient::queryDoctorSchedule(const queryDoctorScheduleRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/prod/get-stripe-customer";
+  ss << m_uri << "/prod/query-doctor-schedule";
 
   JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
-    return getStripeCustomerOutcome(getStripeCustomerResult(outcome.GetResult()));
+    return queryDoctorScheduleOutcome(queryDoctorScheduleResult(outcome.GetResult()));
   }
   else
   {
-    return getStripeCustomerOutcome(outcome.GetError());
+    return queryDoctorScheduleOutcome(outcome.GetError());
   }
 }
 
-getStripeCustomerOutcomeCallable VitalServicesClient::getStripeCustomerCallable(const getStripeCustomerRequest& request) const
+queryDoctorScheduleOutcomeCallable VitalServicesClient::queryDoctorScheduleCallable(const queryDoctorScheduleRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< getStripeCustomerOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->getStripeCustomer(request); } );
+  auto task = Aws::MakeShared< std::packaged_task< queryDoctorScheduleOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->queryDoctorSchedule(request); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
 
-void VitalServicesClient::getStripeCustomerAsync(const getStripeCustomerRequest& request, const getStripeCustomerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void VitalServicesClient::queryDoctorScheduleAsync(const queryDoctorScheduleRequest& request, const queryDoctorScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->getStripeCustomerAsyncHelper( request, handler, context ); } );
+  m_executor->Submit( [this, request, handler, context](){ this->queryDoctorScheduleAsyncHelper( request, handler, context ); } );
 }
 
-void VitalServicesClient::getStripeCustomerAsyncHelper(const getStripeCustomerRequest& request, const getStripeCustomerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void VitalServicesClient::queryDoctorScheduleAsyncHelper(const queryDoctorScheduleRequest& request, const queryDoctorScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, getStripeCustomer(request), context);
-}
-
-getAllDoctorServicesOutcome VitalServicesClient::getAllDoctorServices(const getAllDoctorServicesRequest& request) const
-{
-  Aws::StringStream ss;
-  ss << m_uri << "/prod/get-all-doctor-services";
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
-  if(outcome.IsSuccess())
-  {
-    return getAllDoctorServicesOutcome(getAllDoctorServicesResult(outcome.GetResult()));
-  }
-  else
-  {
-    return getAllDoctorServicesOutcome(outcome.GetError());
-  }
-}
-
-getAllDoctorServicesOutcomeCallable VitalServicesClient::getAllDoctorServicesCallable(const getAllDoctorServicesRequest& request) const
-{
-  auto task = Aws::MakeShared< std::packaged_task< getAllDoctorServicesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->getAllDoctorServices(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
-}
-
-void VitalServicesClient::getAllDoctorServicesAsync(const getAllDoctorServicesRequest& request, const getAllDoctorServicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  m_executor->Submit( [this, request, handler, context](){ this->getAllDoctorServicesAsyncHelper( request, handler, context ); } );
-}
-
-void VitalServicesClient::getAllDoctorServicesAsyncHelper(const getAllDoctorServicesRequest& request, const getAllDoctorServicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, getAllDoctorServices(request), context);
-}
-
-getAppointmentBillOutcome VitalServicesClient::getAppointmentBill(const getAppointmentBillRequest& request) const
-{
-  Aws::StringStream ss;
-  ss << m_uri << "/prod/get-appointment-bill";
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
-  if(outcome.IsSuccess())
-  {
-    return getAppointmentBillOutcome(getAppointmentBillResult(outcome.GetResult()));
-  }
-  else
-  {
-    return getAppointmentBillOutcome(outcome.GetError());
-  }
-}
-
-getAppointmentBillOutcomeCallable VitalServicesClient::getAppointmentBillCallable(const getAppointmentBillRequest& request) const
-{
-  auto task = Aws::MakeShared< std::packaged_task< getAppointmentBillOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->getAppointmentBill(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
-}
-
-void VitalServicesClient::getAppointmentBillAsync(const getAppointmentBillRequest& request, const getAppointmentBillResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  m_executor->Submit( [this, request, handler, context](){ this->getAppointmentBillAsyncHelper( request, handler, context ); } );
-}
-
-void VitalServicesClient::getAppointmentBillAsyncHelper(const getAppointmentBillRequest& request, const getAppointmentBillResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, getAppointmentBill(request), context);
-}
-
-registerUserOutcome VitalServicesClient::registerUser(const registerUserRequest& request) const
-{
-  Aws::StringStream ss;
-  ss << m_uri << "/prod/register-user";
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
-  if(outcome.IsSuccess())
-  {
-    return registerUserOutcome(registerUserResult(outcome.GetResult()));
-  }
-  else
-  {
-    return registerUserOutcome(outcome.GetError());
-  }
-}
-
-registerUserOutcomeCallable VitalServicesClient::registerUserCallable(const registerUserRequest& request) const
-{
-  auto task = Aws::MakeShared< std::packaged_task< registerUserOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->registerUser(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
-}
-
-void VitalServicesClient::registerUserAsync(const registerUserRequest& request, const registerUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  m_executor->Submit( [this, request, handler, context](){ this->registerUserAsyncHelper( request, handler, context ); } );
-}
-
-void VitalServicesClient::registerUserAsyncHelper(const registerUserRequest& request, const registerUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, registerUser(request), context);
-}
-
-getDoctorsOutcome VitalServicesClient::getDoctors(const getDoctorsRequest& request) const
-{
-  Aws::StringStream ss;
-  ss << m_uri << "/prod/get-doctors";
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
-  if(outcome.IsSuccess())
-  {
-    return getDoctorsOutcome(getDoctorsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return getDoctorsOutcome(outcome.GetError());
-  }
-}
-
-getDoctorsOutcomeCallable VitalServicesClient::getDoctorsCallable(const getDoctorsRequest& request) const
-{
-  auto task = Aws::MakeShared< std::packaged_task< getDoctorsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->getDoctors(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
-}
-
-void VitalServicesClient::getDoctorsAsync(const getDoctorsRequest& request, const getDoctorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  m_executor->Submit( [this, request, handler, context](){ this->getDoctorsAsyncHelper( request, handler, context ); } );
-}
-
-void VitalServicesClient::getDoctorsAsyncHelper(const getDoctorsRequest& request, const getDoctorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, getDoctors(request), context);
+  handler(this, request, queryDoctorSchedule(request), context);
 }
 
 updateUserOutcome VitalServicesClient::updateUser(const updateUserRequest& request) const
@@ -551,72 +586,106 @@ void VitalServicesClient::updateUserAsyncHelper(const updateUserRequest& request
   handler(this, request, updateUser(request), context);
 }
 
-setDefaultPaymentSourceOutcome VitalServicesClient::setDefaultPaymentSource(const setDefaultPaymentSourceRequest& request) const
+registerDoctorOutcome VitalServicesClient::registerDoctor(const registerDoctorRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/prod/set-default-payment-source";
+  ss << m_uri << "/prod/register-doctor";
 
   JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
-    return setDefaultPaymentSourceOutcome(setDefaultPaymentSourceResult(outcome.GetResult()));
+    return registerDoctorOutcome(registerDoctorResult(outcome.GetResult()));
   }
   else
   {
-    return setDefaultPaymentSourceOutcome(outcome.GetError());
+    return registerDoctorOutcome(outcome.GetError());
   }
 }
 
-setDefaultPaymentSourceOutcomeCallable VitalServicesClient::setDefaultPaymentSourceCallable(const setDefaultPaymentSourceRequest& request) const
+registerDoctorOutcomeCallable VitalServicesClient::registerDoctorCallable(const registerDoctorRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< setDefaultPaymentSourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->setDefaultPaymentSource(request); } );
+  auto task = Aws::MakeShared< std::packaged_task< registerDoctorOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->registerDoctor(request); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
 
-void VitalServicesClient::setDefaultPaymentSourceAsync(const setDefaultPaymentSourceRequest& request, const setDefaultPaymentSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void VitalServicesClient::registerDoctorAsync(const registerDoctorRequest& request, const registerDoctorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->setDefaultPaymentSourceAsyncHelper( request, handler, context ); } );
+  m_executor->Submit( [this, request, handler, context](){ this->registerDoctorAsyncHelper( request, handler, context ); } );
 }
 
-void VitalServicesClient::setDefaultPaymentSourceAsyncHelper(const setDefaultPaymentSourceRequest& request, const setDefaultPaymentSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void VitalServicesClient::registerDoctorAsyncHelper(const registerDoctorRequest& request, const registerDoctorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, setDefaultPaymentSource(request), context);
+  handler(this, request, registerDoctor(request), context);
 }
 
-scheduleAppointmentOutcome VitalServicesClient::scheduleAppointment(const scheduleAppointmentRequest& request) const
+urlForFileOutcome VitalServicesClient::urlForFile(const urlForFileRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/prod/schedule-appointment";
+  ss << m_uri << "/prod/url-for-file";
 
   JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
-    return scheduleAppointmentOutcome(scheduleAppointmentResult(outcome.GetResult()));
+    return urlForFileOutcome(urlForFileResult(outcome.GetResult()));
   }
   else
   {
-    return scheduleAppointmentOutcome(outcome.GetError());
+    return urlForFileOutcome(outcome.GetError());
   }
 }
 
-scheduleAppointmentOutcomeCallable VitalServicesClient::scheduleAppointmentCallable(const scheduleAppointmentRequest& request) const
+urlForFileOutcomeCallable VitalServicesClient::urlForFileCallable(const urlForFileRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< scheduleAppointmentOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->scheduleAppointment(request); } );
+  auto task = Aws::MakeShared< std::packaged_task< urlForFileOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->urlForFile(request); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
 
-void VitalServicesClient::scheduleAppointmentAsync(const scheduleAppointmentRequest& request, const scheduleAppointmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void VitalServicesClient::urlForFileAsync(const urlForFileRequest& request, const urlForFileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->scheduleAppointmentAsyncHelper( request, handler, context ); } );
+  m_executor->Submit( [this, request, handler, context](){ this->urlForFileAsyncHelper( request, handler, context ); } );
 }
 
-void VitalServicesClient::scheduleAppointmentAsyncHelper(const scheduleAppointmentRequest& request, const scheduleAppointmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void VitalServicesClient::urlForFileAsyncHelper(const urlForFileRequest& request, const urlForFileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, scheduleAppointment(request), context);
+  handler(this, request, urlForFile(request), context);
+}
+
+getAppointmentPaymentMethodOutcome VitalServicesClient::getAppointmentPaymentMethod(const getAppointmentPaymentMethodRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/prod/get-appointment-payment-method";
+
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return getAppointmentPaymentMethodOutcome(getAppointmentPaymentMethodResult(outcome.GetResult()));
+  }
+  else
+  {
+    return getAppointmentPaymentMethodOutcome(outcome.GetError());
+  }
+}
+
+getAppointmentPaymentMethodOutcomeCallable VitalServicesClient::getAppointmentPaymentMethodCallable(const getAppointmentPaymentMethodRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< getAppointmentPaymentMethodOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->getAppointmentPaymentMethod(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void VitalServicesClient::getAppointmentPaymentMethodAsync(const getAppointmentPaymentMethodRequest& request, const getAppointmentPaymentMethodResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->getAppointmentPaymentMethodAsyncHelper( request, handler, context ); } );
+}
+
+void VitalServicesClient::getAppointmentPaymentMethodAsyncHelper(const getAppointmentPaymentMethodRequest& request, const getAppointmentPaymentMethodResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, getAppointmentPaymentMethod(request), context);
 }
 
 searchForDoctorsOutcome VitalServicesClient::searchForDoctors(const searchForDoctorsRequest& request) const
@@ -653,71 +722,37 @@ void VitalServicesClient::searchForDoctorsAsyncHelper(const searchForDoctorsRequ
   handler(this, request, searchForDoctors(request), context);
 }
 
-getAppointmentsWithUserOutcome VitalServicesClient::getAppointmentsWithUser(const getAppointmentsWithUserRequest& request) const
+getStripeCustomerOutcome VitalServicesClient::getStripeCustomer(const getStripeCustomerRequest& request) const
 {
   Aws::StringStream ss;
-  ss << m_uri << "/prod/get-appointments-with-user";
+  ss << m_uri << "/prod/get-stripe-customer";
 
   JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
-    return getAppointmentsWithUserOutcome(getAppointmentsWithUserResult(outcome.GetResult()));
+    return getStripeCustomerOutcome(getStripeCustomerResult(outcome.GetResult()));
   }
   else
   {
-    return getAppointmentsWithUserOutcome(outcome.GetError());
+    return getStripeCustomerOutcome(outcome.GetError());
   }
 }
 
-getAppointmentsWithUserOutcomeCallable VitalServicesClient::getAppointmentsWithUserCallable(const getAppointmentsWithUserRequest& request) const
+getStripeCustomerOutcomeCallable VitalServicesClient::getStripeCustomerCallable(const getStripeCustomerRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< getAppointmentsWithUserOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->getAppointmentsWithUser(request); } );
+  auto task = Aws::MakeShared< std::packaged_task< getStripeCustomerOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->getStripeCustomer(request); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
 
-void VitalServicesClient::getAppointmentsWithUserAsync(const getAppointmentsWithUserRequest& request, const getAppointmentsWithUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void VitalServicesClient::getStripeCustomerAsync(const getStripeCustomerRequest& request, const getStripeCustomerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->getAppointmentsWithUserAsyncHelper( request, handler, context ); } );
+  m_executor->Submit( [this, request, handler, context](){ this->getStripeCustomerAsyncHelper( request, handler, context ); } );
 }
 
-void VitalServicesClient::getAppointmentsWithUserAsyncHelper(const getAppointmentsWithUserRequest& request, const getAppointmentsWithUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void VitalServicesClient::getStripeCustomerAsyncHelper(const getStripeCustomerRequest& request, const getStripeCustomerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, getAppointmentsWithUser(request), context);
-}
-
-queryDoctorScheduleOutcome VitalServicesClient::queryDoctorSchedule(const queryDoctorScheduleRequest& request) const
-{
-  Aws::StringStream ss;
-  ss << m_uri << "/prod/query-doctor-schedule";
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
-  if(outcome.IsSuccess())
-  {
-    return queryDoctorScheduleOutcome(queryDoctorScheduleResult(outcome.GetResult()));
-  }
-  else
-  {
-    return queryDoctorScheduleOutcome(outcome.GetError());
-  }
-}
-
-queryDoctorScheduleOutcomeCallable VitalServicesClient::queryDoctorScheduleCallable(const queryDoctorScheduleRequest& request) const
-{
-  auto task = Aws::MakeShared< std::packaged_task< queryDoctorScheduleOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->queryDoctorSchedule(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
-}
-
-void VitalServicesClient::queryDoctorScheduleAsync(const queryDoctorScheduleRequest& request, const queryDoctorScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  m_executor->Submit( [this, request, handler, context](){ this->queryDoctorScheduleAsyncHelper( request, handler, context ); } );
-}
-
-void VitalServicesClient::queryDoctorScheduleAsyncHelper(const queryDoctorScheduleRequest& request, const queryDoctorScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, queryDoctorSchedule(request), context);
+  handler(this, request, getStripeCustomer(request), context);
 }
 

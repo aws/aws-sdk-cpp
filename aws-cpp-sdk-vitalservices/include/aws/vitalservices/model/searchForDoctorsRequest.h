@@ -42,27 +42,6 @@ namespace Model
     inline searchForDoctorsRequest& WithLatitude(double value) { SetLatitude(value); return *this;}
 
     
-    inline const Aws::String& GetSpecialtyId() const{ return m_specialtyId; }
-
-    
-    inline void SetSpecialtyId(const Aws::String& value) { m_specialtyIdHasBeenSet = true; m_specialtyId = value; }
-
-    
-    inline void SetSpecialtyId(Aws::String&& value) { m_specialtyIdHasBeenSet = true; m_specialtyId = value; }
-
-    
-    inline void SetSpecialtyId(const char* value) { m_specialtyIdHasBeenSet = true; m_specialtyId.assign(value); }
-
-    
-    inline searchForDoctorsRequest& WithSpecialtyId(const Aws::String& value) { SetSpecialtyId(value); return *this;}
-
-    
-    inline searchForDoctorsRequest& WithSpecialtyId(Aws::String&& value) { SetSpecialtyId(value); return *this;}
-
-    
-    inline searchForDoctorsRequest& WithSpecialtyId(const char* value) { SetSpecialtyId(value); return *this;}
-
-    
     inline const Aws::String& GetFirstTime() const{ return m_firstTime; }
 
     
@@ -82,6 +61,27 @@ namespace Model
 
     
     inline searchForDoctorsRequest& WithFirstTime(const char* value) { SetFirstTime(value); return *this;}
+
+    
+    inline const Aws::String& GetSpecialtyId() const{ return m_specialtyId; }
+
+    
+    inline void SetSpecialtyId(const Aws::String& value) { m_specialtyIdHasBeenSet = true; m_specialtyId = value; }
+
+    
+    inline void SetSpecialtyId(Aws::String&& value) { m_specialtyIdHasBeenSet = true; m_specialtyId = value; }
+
+    
+    inline void SetSpecialtyId(const char* value) { m_specialtyIdHasBeenSet = true; m_specialtyId.assign(value); }
+
+    
+    inline searchForDoctorsRequest& WithSpecialtyId(const Aws::String& value) { SetSpecialtyId(value); return *this;}
+
+    
+    inline searchForDoctorsRequest& WithSpecialtyId(Aws::String&& value) { SetSpecialtyId(value); return *this;}
+
+    
+    inline searchForDoctorsRequest& WithSpecialtyId(const char* value) { SetSpecialtyId(value); return *this;}
 
     
     inline const Aws::String& GetLastTime() const{ return m_lastTime; }
@@ -137,10 +137,10 @@ namespace Model
   private:
     double m_latitude;
     bool m_latitudeHasBeenSet;
-    Aws::String m_specialtyId;
-    bool m_specialtyIdHasBeenSet;
     Aws::String m_firstTime;
     bool m_firstTimeHasBeenSet;
+    Aws::String m_specialtyId;
+    bool m_specialtyIdHasBeenSet;
     Aws::String m_lastTime;
     bool m_lastTimeHasBeenSet;
     double m_longitude;

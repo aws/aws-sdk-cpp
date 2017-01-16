@@ -39,6 +39,27 @@ namespace Model
     Aws::Utils::Json::JsonValue Jsonize() const;
 
     
+    inline const Aws::String& GetIndefiniteArticle() const{ return m_indefiniteArticle; }
+
+    
+    inline void SetIndefiniteArticle(const Aws::String& value) { m_indefiniteArticleHasBeenSet = true; m_indefiniteArticle = value; }
+
+    
+    inline void SetIndefiniteArticle(Aws::String&& value) { m_indefiniteArticleHasBeenSet = true; m_indefiniteArticle = value; }
+
+    
+    inline void SetIndefiniteArticle(const char* value) { m_indefiniteArticleHasBeenSet = true; m_indefiniteArticle.assign(value); }
+
+    
+    inline GetAllDoctorServicesResult_servicesItem& WithIndefiniteArticle(const Aws::String& value) { SetIndefiniteArticle(value); return *this;}
+
+    
+    inline GetAllDoctorServicesResult_servicesItem& WithIndefiniteArticle(Aws::String&& value) { SetIndefiniteArticle(value); return *this;}
+
+    
+    inline GetAllDoctorServicesResult_servicesItem& WithIndefiniteArticle(const char* value) { SetIndefiniteArticle(value); return *this;}
+
+    
     inline const Aws::String& GetId() const{ return m_id; }
 
     
@@ -81,27 +102,6 @@ namespace Model
     inline GetAllDoctorServicesResult_servicesItem& WithName(const char* value) { SetName(value); return *this;}
 
     
-    inline const Aws::String& GetIndefiniteArticle() const{ return m_indefiniteArticle; }
-
-    
-    inline void SetIndefiniteArticle(const Aws::String& value) { m_indefiniteArticleHasBeenSet = true; m_indefiniteArticle = value; }
-
-    
-    inline void SetIndefiniteArticle(Aws::String&& value) { m_indefiniteArticleHasBeenSet = true; m_indefiniteArticle = value; }
-
-    
-    inline void SetIndefiniteArticle(const char* value) { m_indefiniteArticleHasBeenSet = true; m_indefiniteArticle.assign(value); }
-
-    
-    inline GetAllDoctorServicesResult_servicesItem& WithIndefiniteArticle(const Aws::String& value) { SetIndefiniteArticle(value); return *this;}
-
-    
-    inline GetAllDoctorServicesResult_servicesItem& WithIndefiniteArticle(Aws::String&& value) { SetIndefiniteArticle(value); return *this;}
-
-    
-    inline GetAllDoctorServicesResult_servicesItem& WithIndefiniteArticle(const char* value) { SetIndefiniteArticle(value); return *this;}
-
-    
     inline const Aws::String& GetAdditionalDescription() const{ return m_additionalDescription; }
 
     
@@ -123,12 +123,12 @@ namespace Model
     inline GetAllDoctorServicesResult_servicesItem& WithAdditionalDescription(const char* value) { SetAdditionalDescription(value); return *this;}
 
   private:
+    Aws::String m_indefiniteArticle;
+    bool m_indefiniteArticleHasBeenSet;
     Aws::String m_id;
     bool m_idHasBeenSet;
     Aws::String m_name;
     bool m_nameHasBeenSet;
-    Aws::String m_indefiniteArticle;
-    bool m_indefiniteArticleHasBeenSet;
     Aws::String m_additionalDescription;
     bool m_additionalDescriptionHasBeenSet;
   };

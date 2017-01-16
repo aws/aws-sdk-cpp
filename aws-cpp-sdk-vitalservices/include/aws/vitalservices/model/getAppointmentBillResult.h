@@ -40,27 +40,6 @@ namespace Model
     getAppointmentBillResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
     
-    inline const Aws::String& GetDoctorServiceFee() const{ return m_doctorServiceFee; }
-
-    
-    inline void SetDoctorServiceFee(const Aws::String& value) { m_doctorServiceFee = value; }
-
-    
-    inline void SetDoctorServiceFee(Aws::String&& value) { m_doctorServiceFee = value; }
-
-    
-    inline void SetDoctorServiceFee(const char* value) { m_doctorServiceFee.assign(value); }
-
-    
-    inline getAppointmentBillResult& WithDoctorServiceFee(const Aws::String& value) { SetDoctorServiceFee(value); return *this;}
-
-    
-    inline getAppointmentBillResult& WithDoctorServiceFee(Aws::String&& value) { SetDoctorServiceFee(value); return *this;}
-
-    
-    inline getAppointmentBillResult& WithDoctorServiceFee(const char* value) { SetDoctorServiceFee(value); return *this;}
-
-    
     inline const Aws::String& GetPatientServiceFee() const{ return m_patientServiceFee; }
 
     
@@ -103,6 +82,27 @@ namespace Model
     inline getAppointmentBillResult& WithTotalPrice(const char* value) { SetTotalPrice(value); return *this;}
 
     
+    inline const Aws::String& GetFingerprint() const{ return m_fingerprint; }
+
+    
+    inline void SetFingerprint(const Aws::String& value) { m_fingerprint = value; }
+
+    
+    inline void SetFingerprint(Aws::String&& value) { m_fingerprint = value; }
+
+    
+    inline void SetFingerprint(const char* value) { m_fingerprint.assign(value); }
+
+    
+    inline getAppointmentBillResult& WithFingerprint(const Aws::String& value) { SetFingerprint(value); return *this;}
+
+    
+    inline getAppointmentBillResult& WithFingerprint(Aws::String&& value) { SetFingerprint(value); return *this;}
+
+    
+    inline getAppointmentBillResult& WithFingerprint(const char* value) { SetFingerprint(value); return *this;}
+
+    
     inline const Aws::String& GetBasePrice() const{ return m_basePrice; }
 
     
@@ -124,32 +124,32 @@ namespace Model
     inline getAppointmentBillResult& WithBasePrice(const char* value) { SetBasePrice(value); return *this;}
 
     
-    inline const Aws::String& GetFingerprint() const{ return m_fingerprint; }
+    inline const Aws::String& GetDoctorServiceFee() const{ return m_doctorServiceFee; }
 
     
-    inline void SetFingerprint(const Aws::String& value) { m_fingerprint = value; }
+    inline void SetDoctorServiceFee(const Aws::String& value) { m_doctorServiceFee = value; }
 
     
-    inline void SetFingerprint(Aws::String&& value) { m_fingerprint = value; }
+    inline void SetDoctorServiceFee(Aws::String&& value) { m_doctorServiceFee = value; }
 
     
-    inline void SetFingerprint(const char* value) { m_fingerprint.assign(value); }
+    inline void SetDoctorServiceFee(const char* value) { m_doctorServiceFee.assign(value); }
 
     
-    inline getAppointmentBillResult& WithFingerprint(const Aws::String& value) { SetFingerprint(value); return *this;}
+    inline getAppointmentBillResult& WithDoctorServiceFee(const Aws::String& value) { SetDoctorServiceFee(value); return *this;}
 
     
-    inline getAppointmentBillResult& WithFingerprint(Aws::String&& value) { SetFingerprint(value); return *this;}
+    inline getAppointmentBillResult& WithDoctorServiceFee(Aws::String&& value) { SetDoctorServiceFee(value); return *this;}
 
     
-    inline getAppointmentBillResult& WithFingerprint(const char* value) { SetFingerprint(value); return *this;}
+    inline getAppointmentBillResult& WithDoctorServiceFee(const char* value) { SetDoctorServiceFee(value); return *this;}
 
   private:
-    Aws::String m_doctorServiceFee;
     Aws::String m_patientServiceFee;
     Aws::String m_totalPrice;
-    Aws::String m_basePrice;
     Aws::String m_fingerprint;
+    Aws::String m_basePrice;
+    Aws::String m_doctorServiceFee;
   };
 
 } // namespace Model

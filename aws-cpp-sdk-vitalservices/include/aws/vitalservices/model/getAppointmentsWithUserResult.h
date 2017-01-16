@@ -16,8 +16,8 @@
 #include <aws/vitalservices/VitalServices_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/vitalservices/model/GetAppointmentsResult_patientsItem.h>
-#include <aws/vitalservices/model/GetAppointmentsResult_appointmentsItem.h>
 #include <aws/vitalservices/model/GetAppointmentsResult_doctorsItem.h>
+#include <aws/vitalservices/model/GetAppointmentsResult_appointmentsItem.h>
 
 namespace Aws
 {
@@ -64,27 +64,6 @@ namespace Model
     inline getAppointmentsWithUserResult& AddPatients(GetAppointmentsResult_patientsItem&& value) { m_patients.push_back(value); return *this; }
 
     
-    inline const Aws::Vector<GetAppointmentsResult_appointmentsItem>& GetAppointments() const{ return m_appointments; }
-
-    
-    inline void SetAppointments(const Aws::Vector<GetAppointmentsResult_appointmentsItem>& value) { m_appointments = value; }
-
-    
-    inline void SetAppointments(Aws::Vector<GetAppointmentsResult_appointmentsItem>&& value) { m_appointments = value; }
-
-    
-    inline getAppointmentsWithUserResult& WithAppointments(const Aws::Vector<GetAppointmentsResult_appointmentsItem>& value) { SetAppointments(value); return *this;}
-
-    
-    inline getAppointmentsWithUserResult& WithAppointments(Aws::Vector<GetAppointmentsResult_appointmentsItem>&& value) { SetAppointments(value); return *this;}
-
-    
-    inline getAppointmentsWithUserResult& AddAppointments(const GetAppointmentsResult_appointmentsItem& value) { m_appointments.push_back(value); return *this; }
-
-    
-    inline getAppointmentsWithUserResult& AddAppointments(GetAppointmentsResult_appointmentsItem&& value) { m_appointments.push_back(value); return *this; }
-
-    
     inline const Aws::Vector<GetAppointmentsResult_doctorsItem>& GetDoctors() const{ return m_doctors; }
 
     
@@ -105,10 +84,31 @@ namespace Model
     
     inline getAppointmentsWithUserResult& AddDoctors(GetAppointmentsResult_doctorsItem&& value) { m_doctors.push_back(value); return *this; }
 
+    
+    inline const Aws::Vector<GetAppointmentsResult_appointmentsItem>& GetAppointments() const{ return m_appointments; }
+
+    
+    inline void SetAppointments(const Aws::Vector<GetAppointmentsResult_appointmentsItem>& value) { m_appointments = value; }
+
+    
+    inline void SetAppointments(Aws::Vector<GetAppointmentsResult_appointmentsItem>&& value) { m_appointments = value; }
+
+    
+    inline getAppointmentsWithUserResult& WithAppointments(const Aws::Vector<GetAppointmentsResult_appointmentsItem>& value) { SetAppointments(value); return *this;}
+
+    
+    inline getAppointmentsWithUserResult& WithAppointments(Aws::Vector<GetAppointmentsResult_appointmentsItem>&& value) { SetAppointments(value); return *this;}
+
+    
+    inline getAppointmentsWithUserResult& AddAppointments(const GetAppointmentsResult_appointmentsItem& value) { m_appointments.push_back(value); return *this; }
+
+    
+    inline getAppointmentsWithUserResult& AddAppointments(GetAppointmentsResult_appointmentsItem&& value) { m_appointments.push_back(value); return *this; }
+
   private:
     Aws::Vector<GetAppointmentsResult_patientsItem> m_patients;
-    Aws::Vector<GetAppointmentsResult_appointmentsItem> m_appointments;
     Aws::Vector<GetAppointmentsResult_doctorsItem> m_doctors;
+    Aws::Vector<GetAppointmentsResult_appointmentsItem> m_appointments;
   };
 
 } // namespace Model

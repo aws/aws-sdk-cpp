@@ -12,7 +12,7 @@
 * express or implied. See the License for the specific language governing
 * permissions and limitations under the License.
 */
-#include <aws/vitalservices/model/cancelAppointmentRequest.h>
+#include <aws/vitalservices/model/registerDoctorRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 
 #include <utility>
@@ -21,26 +21,25 @@ using namespace Aws::VitalServices::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-cancelAppointmentRequest::cancelAppointmentRequest() : 
-    m_appointmentIdHasBeenSet(false),
-    m_lateCancellation(false),
-    m_lateCancellationHasBeenSet(false)
+registerDoctorRequest::registerDoctorRequest() : 
+    m_officeNumberHasBeenSet(false),
+    m_specialtyIdHasBeenSet(false)
 {
 }
 
-Aws::String cancelAppointmentRequest::SerializePayload() const
+Aws::String registerDoctorRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  if(m_appointmentIdHasBeenSet)
+  if(m_officeNumberHasBeenSet)
   {
-   payload.WithString("appointmentId", m_appointmentId);
+   payload.WithString("officeNumber", m_officeNumber);
 
   }
 
-  if(m_lateCancellationHasBeenSet)
+  if(m_specialtyIdHasBeenSet)
   {
-   payload.WithBool("lateCancellation", m_lateCancellation);
+   payload.WithString("specialtyId", m_specialtyId);
 
   }
 

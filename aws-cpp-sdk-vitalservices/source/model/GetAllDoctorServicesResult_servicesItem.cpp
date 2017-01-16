@@ -28,17 +28,17 @@ namespace Model
 {
 
 GetAllDoctorServicesResult_servicesItem::GetAllDoctorServicesResult_servicesItem() : 
+    m_indefiniteArticleHasBeenSet(false),
     m_idHasBeenSet(false),
     m_nameHasBeenSet(false),
-    m_indefiniteArticleHasBeenSet(false),
     m_additionalDescriptionHasBeenSet(false)
 {
 }
 
 GetAllDoctorServicesResult_servicesItem::GetAllDoctorServicesResult_servicesItem(const JsonValue& jsonValue) : 
+    m_indefiniteArticleHasBeenSet(false),
     m_idHasBeenSet(false),
     m_nameHasBeenSet(false),
-    m_indefiniteArticleHasBeenSet(false),
     m_additionalDescriptionHasBeenSet(false)
 {
   *this = jsonValue;
@@ -46,6 +46,13 @@ GetAllDoctorServicesResult_servicesItem::GetAllDoctorServicesResult_servicesItem
 
 GetAllDoctorServicesResult_servicesItem& GetAllDoctorServicesResult_servicesItem::operator =(const JsonValue& jsonValue)
 {
+  if(jsonValue.ValueExists("indefiniteArticle"))
+  {
+    m_indefiniteArticle = jsonValue.GetString("indefiniteArticle");
+
+    m_indefiniteArticleHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
@@ -58,13 +65,6 @@ GetAllDoctorServicesResult_servicesItem& GetAllDoctorServicesResult_servicesItem
     m_name = jsonValue.GetString("name");
 
     m_nameHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("indefiniteArticle"))
-  {
-    m_indefiniteArticle = jsonValue.GetString("indefiniteArticle");
-
-    m_indefiniteArticleHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("additionalDescription"))
@@ -81,6 +81,12 @@ JsonValue GetAllDoctorServicesResult_servicesItem::Jsonize() const
 {
   JsonValue payload;
 
+  if(m_indefiniteArticleHasBeenSet)
+  {
+   payload.WithString("indefiniteArticle", m_indefiniteArticle);
+
+  }
+
   if(m_idHasBeenSet)
   {
    payload.WithString("id", m_id);
@@ -90,12 +96,6 @@ JsonValue GetAllDoctorServicesResult_servicesItem::Jsonize() const
   if(m_nameHasBeenSet)
   {
    payload.WithString("name", m_name);
-
-  }
-
-  if(m_indefiniteArticleHasBeenSet)
-  {
-   payload.WithString("indefiniteArticle", m_indefiniteArticle);
 
   }
 

@@ -26,10 +26,10 @@ namespace Model
 
   /**
    */
-  class AWS_VITALSERVICES_API updateDoctorRequest : public VitalServicesRequest
+  class AWS_VITALSERVICES_API registerDoctorRequest : public VitalServicesRequest
   {
   public:
-    updateDoctorRequest();
+    registerDoctorRequest();
     Aws::String SerializePayload() const override;
 
     
@@ -45,40 +45,40 @@ namespace Model
     inline void SetOfficeNumber(const char* value) { m_officeNumberHasBeenSet = true; m_officeNumber.assign(value); }
 
     
-    inline updateDoctorRequest& WithOfficeNumber(const Aws::String& value) { SetOfficeNumber(value); return *this;}
+    inline registerDoctorRequest& WithOfficeNumber(const Aws::String& value) { SetOfficeNumber(value); return *this;}
 
     
-    inline updateDoctorRequest& WithOfficeNumber(Aws::String&& value) { SetOfficeNumber(value); return *this;}
+    inline registerDoctorRequest& WithOfficeNumber(Aws::String&& value) { SetOfficeNumber(value); return *this;}
 
     
-    inline updateDoctorRequest& WithOfficeNumber(const char* value) { SetOfficeNumber(value); return *this;}
+    inline registerDoctorRequest& WithOfficeNumber(const char* value) { SetOfficeNumber(value); return *this;}
 
     
-    inline const Aws::String& GetDoctorId() const{ return m_doctorId; }
+    inline const Aws::String& GetSpecialtyId() const{ return m_specialtyId; }
 
     
-    inline void SetDoctorId(const Aws::String& value) { m_doctorIdHasBeenSet = true; m_doctorId = value; }
+    inline void SetSpecialtyId(const Aws::String& value) { m_specialtyIdHasBeenSet = true; m_specialtyId = value; }
 
     
-    inline void SetDoctorId(Aws::String&& value) { m_doctorIdHasBeenSet = true; m_doctorId = value; }
+    inline void SetSpecialtyId(Aws::String&& value) { m_specialtyIdHasBeenSet = true; m_specialtyId = value; }
 
     
-    inline void SetDoctorId(const char* value) { m_doctorIdHasBeenSet = true; m_doctorId.assign(value); }
+    inline void SetSpecialtyId(const char* value) { m_specialtyIdHasBeenSet = true; m_specialtyId.assign(value); }
 
     
-    inline updateDoctorRequest& WithDoctorId(const Aws::String& value) { SetDoctorId(value); return *this;}
+    inline registerDoctorRequest& WithSpecialtyId(const Aws::String& value) { SetSpecialtyId(value); return *this;}
 
     
-    inline updateDoctorRequest& WithDoctorId(Aws::String&& value) { SetDoctorId(value); return *this;}
+    inline registerDoctorRequest& WithSpecialtyId(Aws::String&& value) { SetSpecialtyId(value); return *this;}
 
     
-    inline updateDoctorRequest& WithDoctorId(const char* value) { SetDoctorId(value); return *this;}
+    inline registerDoctorRequest& WithSpecialtyId(const char* value) { SetSpecialtyId(value); return *this;}
 
   private:
     Aws::String m_officeNumber;
     bool m_officeNumberHasBeenSet;
-    Aws::String m_doctorId;
-    bool m_doctorIdHasBeenSet;
+    Aws::String m_specialtyId;
+    bool m_specialtyIdHasBeenSet;
   };
 
 } // namespace Model

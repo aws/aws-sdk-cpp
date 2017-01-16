@@ -33,27 +33,6 @@ namespace Model
     Aws::String SerializePayload() const override;
 
     
-    inline const Aws::String& GetEmail() const{ return m_email; }
-
-    
-    inline void SetEmail(const Aws::String& value) { m_emailHasBeenSet = true; m_email = value; }
-
-    
-    inline void SetEmail(Aws::String&& value) { m_emailHasBeenSet = true; m_email = value; }
-
-    
-    inline void SetEmail(const char* value) { m_emailHasBeenSet = true; m_email.assign(value); }
-
-    
-    inline registerUserRequest& WithEmail(const Aws::String& value) { SetEmail(value); return *this;}
-
-    
-    inline registerUserRequest& WithEmail(Aws::String&& value) { SetEmail(value); return *this;}
-
-    
-    inline registerUserRequest& WithEmail(const char* value) { SetEmail(value); return *this;}
-
-    
     inline const Aws::String& GetMobileNumber() const{ return m_mobileNumber; }
 
     
@@ -73,6 +52,27 @@ namespace Model
 
     
     inline registerUserRequest& WithMobileNumber(const char* value) { SetMobileNumber(value); return *this;}
+
+    
+    inline const Aws::String& GetEmail() const{ return m_email; }
+
+    
+    inline void SetEmail(const Aws::String& value) { m_emailHasBeenSet = true; m_email = value; }
+
+    
+    inline void SetEmail(Aws::String&& value) { m_emailHasBeenSet = true; m_email = value; }
+
+    
+    inline void SetEmail(const char* value) { m_emailHasBeenSet = true; m_email.assign(value); }
+
+    
+    inline registerUserRequest& WithEmail(const Aws::String& value) { SetEmail(value); return *this;}
+
+    
+    inline registerUserRequest& WithEmail(Aws::String&& value) { SetEmail(value); return *this;}
+
+    
+    inline registerUserRequest& WithEmail(const char* value) { SetEmail(value); return *this;}
 
     
     inline const Aws::String& GetFirstName() const{ return m_firstName; }
@@ -117,10 +117,10 @@ namespace Model
     inline registerUserRequest& WithLastName(const char* value) { SetLastName(value); return *this;}
 
   private:
-    Aws::String m_email;
-    bool m_emailHasBeenSet;
     Aws::String m_mobileNumber;
     bool m_mobileNumberHasBeenSet;
+    Aws::String m_email;
+    bool m_emailHasBeenSet;
     Aws::String m_firstName;
     bool m_firstNameHasBeenSet;
     Aws::String m_lastName;
