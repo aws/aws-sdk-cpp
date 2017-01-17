@@ -66,11 +66,9 @@ using namespace Aws::CognitoIdentity;
 //fill these in before running the test.
 static const char* SIMPLE_FUNCTION = TEST_FUNCTION_PREFIX "Simple";
 static const char* HANDLED_ERROR_FUNCTION = TEST_FUNCTION_PREFIX "HandledError";
-static const char* UNHANDLED_ERROR_FUNCTION = TEST_FUNCTION_PREFIX "UnhandledError";
 
 static const char* SIMPLE_FUNCTION_CODE = RESOURCES_DIR "/succeed.zip";
 static const char* HANDLED_ERROR_FUNCTION_CODE = RESOURCES_DIR "/handled.zip";
-static const char* UNHANDLED_ERROR_FUNCTION_CODE = RESOURCES_DIR "/unhandled.zip";
 
 static const char* ALLOCATION_TAG = "FunctionTest";
 
@@ -152,14 +150,12 @@ protected:
     {
         CreateFunction(SIMPLE_FUNCTION, SIMPLE_FUNCTION_CODE);
         CreateFunction(HANDLED_ERROR_FUNCTION, HANDLED_ERROR_FUNCTION_CODE);
-        CreateFunction(UNHANDLED_ERROR_FUNCTION, UNHANDLED_ERROR_FUNCTION_CODE);
     }
 
     static void DeleteAllFunctions()
     {
         DeleteFunction(SIMPLE_FUNCTION);
         DeleteFunction(HANDLED_ERROR_FUNCTION);
-        DeleteFunction(UNHANDLED_ERROR_FUNCTION);
     }
 
     enum class ResourceStatusType
@@ -248,8 +244,6 @@ protected:
         //Get the ARN off the IAM role.  We'll need this for creating the functions.
         auto & roleARN = m_role->GetArn();
 
-	    std::cout << "Creating function " << functionName << " from location " << zipLocation << " with role arn " << roleARN << std::endl;
-
         //Now attempt to create the function.
         CreateFunctionRequest createFunctionRequest;
         createFunctionRequest.SetHandler("test.handler");
@@ -262,18 +256,16 @@ protected:
         Aws::StringStream buffer;
         buffer << fc.rdbuf();
 
-	    std::cout << "read zip file " << filePath << " of length " << buffer.str().length() << std::endl;
-
         functionCode.SetZipFile(Aws::Utils::ByteBuffer((unsigned char*)buffer.str().c_str(), buffer.str().length()));
         createFunctionRequest.SetCode(functionCode);
-        createFunctionRequest.SetRuntime(Aws::Lambda::Model::Runtime::nodejs);
+        createFunctionRequest.SetRuntime(Aws::Lambda::Model::Runtime::nodejs4_3);
 
         CreateFunctionOutcome createFunctionOutcome = m_client->CreateFunction(createFunctionRequest);
         ASSERT_TRUE(createFunctionOutcome.IsSuccess());
         ASSERT_EQ(functionName,createFunctionOutcome.GetResult().GetFunctionName());
         ASSERT_EQ("test.handler",createFunctionOutcome.GetResult().GetHandler());
         ASSERT_EQ(roleARN,createFunctionOutcome.GetResult().GetRole());
-        ASSERT_EQ("nodejs", Aws::Lambda::Model::RuntimeMapper::GetNameForRuntime(createFunctionOutcome.GetResult().GetRuntime()));
+        ASSERT_EQ(Aws::Lambda::Model::Runtime::nodejs4_3, createFunctionOutcome.GetResult().GetRuntime());
         functionArnMapping[functionName] = createFunctionOutcome.GetResult().GetFunctionArn();
 
         WaitForFunctionStatus(functionName, ResourceStatusType::READY);
@@ -404,7 +396,7 @@ TEST_F(FunctionTest, TestGetFunction)
     EXPECT_TRUE(getFunctionOutcome.IsSuccess());
 
     GetFunctionResult getFunctionResult = getFunctionOutcome.GetResult();
-    EXPECT_EQ(Runtime::nodejs, getFunctionResult.GetConfiguration().GetRuntime());
+    EXPECT_EQ(Runtime::nodejs4_3, getFunctionResult.GetConfiguration().GetRuntime());
     EXPECT_EQ("test.handler",getFunctionResult.GetConfiguration().GetHandler());
     EXPECT_EQ(SIMPLE_FUNCTION,getFunctionResult.GetConfiguration().GetFunctionName());
     //Just see that is looks like an aws url
@@ -420,7 +412,7 @@ TEST_F(FunctionTest, TestGetFunctionConfiguration)
     EXPECT_TRUE(getFunctionConfigurationOutcome.IsSuccess());
 
     GetFunctionConfigurationResult getFunctionConfigurationResult = getFunctionConfigurationOutcome.GetResult();
-    EXPECT_EQ(Runtime::nodejs, getFunctionConfigurationResult.GetRuntime());
+    EXPECT_EQ(Runtime::nodejs4_3, getFunctionConfigurationResult.GetRuntime());
     EXPECT_EQ("test.handler",getFunctionConfigurationResult.GetHandler());
     EXPECT_EQ(SIMPLE_FUNCTION,getFunctionConfigurationResult.GetFunctionName());
 }
@@ -521,30 +513,6 @@ TEST_F(FunctionTest, TestInvokeSyncHandledFunctionError)
 
     //This is the same as the last test, but we should have a FunctionError
     EXPECT_EQ("Handled", result.GetFunctionError());
-
-}
-
-TEST_F(FunctionTest, TestInvokeSyncUnhandledFunctionError)
-{
-    InvokeRequest invokeRequest;
-    invokeRequest.SetFunctionName(UNHANDLED_ERROR_FUNCTION);
-    invokeRequest.SetInvocationType(InvocationType::RequestResponse);
-    invokeRequest.SetContentType("application/javascript");
-    invokeRequest.SetLogType(LogType::Tail);
-    std::shared_ptr<Aws::IOStream> payload = Aws::MakeShared<Aws::StringStream>("FunctionTest");
-    Aws::Utils::Json::JsonValue jsonPayload;
-    jsonPayload.WithString("input", "ThePayload");
-    *payload << jsonPayload.WriteReadable();
-    invokeRequest.SetBody(payload);
-
-    InvokeOutcome invokeOutcome = m_client->Invoke(invokeRequest);
-    EXPECT_TRUE(invokeOutcome.IsSuccess());
-    const auto& result = invokeOutcome.GetResult();
-    EXPECT_EQ(200,result.GetStatusCode());
-
-    //This is the same as the last test, but we should have an unhandled FunctionError
-    //This test is unhandled because it times out
-    EXPECT_EQ("Unhandled", result.GetFunctionError());
 
 }
 
