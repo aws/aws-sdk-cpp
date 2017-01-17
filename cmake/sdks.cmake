@@ -32,6 +32,7 @@ list(APPEND C2J_LIST "codepipeline:2015-07-09")
 list(APPEND C2J_LIST "cognito-identity:2014-06-30")
 list(APPEND C2J_LIST "cognito-sync:2014-06-30")
 list(APPEND C2J_LIST "config:2014-11-12")
+list(APPEND C2J_LIST "cur:2017-01-06")
 list(APPEND C2J_LIST "datapipeline:2012-10-29")
 list(APPEND C2J_LIST "devicefarm:2015-06-23")
 list(APPEND C2J_LIST "directconnect:2012-10-25")
@@ -226,7 +227,7 @@ else()
 
         SET(SDK_DIR "aws-cpp-sdk-${SDK}")
         
-        if(NOT IS_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/${SDK_DIR}")
+        if(NOT IS_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/${SDK_DIR}" AND NOT REGENERATE_CLIENTS)
             SET(REMOVE_SDK 1)
         endif()
 
