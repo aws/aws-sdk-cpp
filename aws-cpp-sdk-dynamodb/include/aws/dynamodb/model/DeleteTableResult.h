@@ -33,7 +33,7 @@ namespace DynamoDB
 namespace Model
 {
   /**
-   * <p>Represents the output of a <i>DeleteTable</i> operation.</p><p><h3>See
+   * <p>Represents the output of a <code>DeleteTable</code> operation.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DeleteTableOutput">AWS
    * API Reference</a></p>
@@ -45,19 +45,29 @@ namespace Model
     DeleteTableResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     DeleteTableResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
-    
+    /**
+     * <p>Represents the properties of a table.</p>
+     */
     inline const TableDescription& GetTableDescription() const{ return m_tableDescription; }
 
-    
+    /**
+     * <p>Represents the properties of a table.</p>
+     */
     inline void SetTableDescription(const TableDescription& value) { m_tableDescription = value; }
 
-    
+    /**
+     * <p>Represents the properties of a table.</p>
+     */
     inline void SetTableDescription(TableDescription&& value) { m_tableDescription = value; }
 
-    
+    /**
+     * <p>Represents the properties of a table.</p>
+     */
     inline DeleteTableResult& WithTableDescription(const TableDescription& value) { SetTableDescription(value); return *this;}
 
-    
+    /**
+     * <p>Represents the properties of a table.</p>
+     */
     inline DeleteTableResult& WithTableDescription(TableDescription&& value) { SetTableDescription(value); return *this;}
 
   private:

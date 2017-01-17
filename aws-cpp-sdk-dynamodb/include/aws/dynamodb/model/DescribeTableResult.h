@@ -33,8 +33,8 @@ namespace DynamoDB
 namespace Model
 {
   /**
-   * <p>Represents the output of a <i>DescribeTable</i> operation.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>Represents the output of a <code>DescribeTable</code>
+   * operation.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeTableOutput">AWS
    * API Reference</a></p>
    */
@@ -45,19 +45,29 @@ namespace Model
     DescribeTableResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     DescribeTableResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
-    
+    /**
+     * <p>The properties of the table.</p>
+     */
     inline const TableDescription& GetTable() const{ return m_table; }
 
-    
+    /**
+     * <p>The properties of the table.</p>
+     */
     inline void SetTable(const TableDescription& value) { m_table = value; }
 
-    
+    /**
+     * <p>The properties of the table.</p>
+     */
     inline void SetTable(TableDescription&& value) { m_table = value; }
 
-    
+    /**
+     * <p>The properties of the table.</p>
+     */
     inline DescribeTableResult& WithTable(const TableDescription& value) { SetTable(value); return *this;}
 
-    
+    /**
+     * <p>The properties of the table.</p>
+     */
     inline DescribeTableResult& WithTable(TableDescription&& value) { SetTable(value); return *this;}
 
   private:

@@ -87,7 +87,9 @@ namespace Model
      * <p>The algorithm detects the image orientation. If it detects that the image was
      * rotated, it returns the degree of rotation. You can use this value to correct
      * the orientation and also appropriately analyze the bounding box coordinates that
-     * are returned. </p>
+     * are returned. </p> <note> <p>If the source image Exif metadata populates the
+     * orientation field, Amazon Rekognition does not perform orientation correction
+     * and the value of OrientationCorrection will be nil.</p> </note>
      */
     inline const OrientationCorrection& GetOrientationCorrection() const{ return m_orientationCorrection; }
 
@@ -95,7 +97,9 @@ namespace Model
      * <p>The algorithm detects the image orientation. If it detects that the image was
      * rotated, it returns the degree of rotation. You can use this value to correct
      * the orientation and also appropriately analyze the bounding box coordinates that
-     * are returned. </p>
+     * are returned. </p> <note> <p>If the source image Exif metadata populates the
+     * orientation field, Amazon Rekognition does not perform orientation correction
+     * and the value of OrientationCorrection will be nil.</p> </note>
      */
     inline void SetOrientationCorrection(const OrientationCorrection& value) { m_orientationCorrection = value; }
 
@@ -103,7 +107,9 @@ namespace Model
      * <p>The algorithm detects the image orientation. If it detects that the image was
      * rotated, it returns the degree of rotation. You can use this value to correct
      * the orientation and also appropriately analyze the bounding box coordinates that
-     * are returned. </p>
+     * are returned. </p> <note> <p>If the source image Exif metadata populates the
+     * orientation field, Amazon Rekognition does not perform orientation correction
+     * and the value of OrientationCorrection will be nil.</p> </note>
      */
     inline void SetOrientationCorrection(OrientationCorrection&& value) { m_orientationCorrection = value; }
 
@@ -111,7 +117,9 @@ namespace Model
      * <p>The algorithm detects the image orientation. If it detects that the image was
      * rotated, it returns the degree of rotation. You can use this value to correct
      * the orientation and also appropriately analyze the bounding box coordinates that
-     * are returned. </p>
+     * are returned. </p> <note> <p>If the source image Exif metadata populates the
+     * orientation field, Amazon Rekognition does not perform orientation correction
+     * and the value of OrientationCorrection will be nil.</p> </note>
      */
     inline IndexFacesResult& WithOrientationCorrection(const OrientationCorrection& value) { SetOrientationCorrection(value); return *this;}
 
@@ -119,7 +127,9 @@ namespace Model
      * <p>The algorithm detects the image orientation. If it detects that the image was
      * rotated, it returns the degree of rotation. You can use this value to correct
      * the orientation and also appropriately analyze the bounding box coordinates that
-     * are returned. </p>
+     * are returned. </p> <note> <p>If the source image Exif metadata populates the
+     * orientation field, Amazon Rekognition does not perform orientation correction
+     * and the value of OrientationCorrection will be nil.</p> </note>
      */
     inline IndexFacesResult& WithOrientationCorrection(OrientationCorrection&& value) { SetOrientationCorrection(value); return *this;}
 

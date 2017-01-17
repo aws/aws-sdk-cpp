@@ -131,46 +131,46 @@ namespace Model
 
     /**
      * <p>The maximum number of strongly consistent reads consumed per second before
-     * DynamoDB returns a <i>ThrottlingException</i>. Eventually consistent reads
+     * DynamoDB returns a <code>ThrottlingException</code>. Eventually consistent reads
      * require less effort than strongly consistent reads, so a setting of 50
-     * <i>ReadCapacityUnits</i> per second provides 100 eventually consistent
-     * <i>ReadCapacityUnits</i> per second.</p>
+     * <code>ReadCapacityUnits</code> per second provides 100 eventually consistent
+     * <code>ReadCapacityUnits</code> per second.</p>
      */
     inline long long GetReadCapacityUnits() const{ return m_readCapacityUnits; }
 
     /**
      * <p>The maximum number of strongly consistent reads consumed per second before
-     * DynamoDB returns a <i>ThrottlingException</i>. Eventually consistent reads
+     * DynamoDB returns a <code>ThrottlingException</code>. Eventually consistent reads
      * require less effort than strongly consistent reads, so a setting of 50
-     * <i>ReadCapacityUnits</i> per second provides 100 eventually consistent
-     * <i>ReadCapacityUnits</i> per second.</p>
+     * <code>ReadCapacityUnits</code> per second provides 100 eventually consistent
+     * <code>ReadCapacityUnits</code> per second.</p>
      */
     inline void SetReadCapacityUnits(long long value) { m_readCapacityUnitsHasBeenSet = true; m_readCapacityUnits = value; }
 
     /**
      * <p>The maximum number of strongly consistent reads consumed per second before
-     * DynamoDB returns a <i>ThrottlingException</i>. Eventually consistent reads
+     * DynamoDB returns a <code>ThrottlingException</code>. Eventually consistent reads
      * require less effort than strongly consistent reads, so a setting of 50
-     * <i>ReadCapacityUnits</i> per second provides 100 eventually consistent
-     * <i>ReadCapacityUnits</i> per second.</p>
+     * <code>ReadCapacityUnits</code> per second provides 100 eventually consistent
+     * <code>ReadCapacityUnits</code> per second.</p>
      */
     inline ProvisionedThroughputDescription& WithReadCapacityUnits(long long value) { SetReadCapacityUnits(value); return *this;}
 
     /**
      * <p>The maximum number of writes consumed per second before DynamoDB returns a
-     * <i>ThrottlingException</i>.</p>
+     * <code>ThrottlingException</code>.</p>
      */
     inline long long GetWriteCapacityUnits() const{ return m_writeCapacityUnits; }
 
     /**
      * <p>The maximum number of writes consumed per second before DynamoDB returns a
-     * <i>ThrottlingException</i>.</p>
+     * <code>ThrottlingException</code>.</p>
      */
     inline void SetWriteCapacityUnits(long long value) { m_writeCapacityUnitsHasBeenSet = true; m_writeCapacityUnits = value; }
 
     /**
      * <p>The maximum number of writes consumed per second before DynamoDB returns a
-     * <i>ThrottlingException</i>.</p>
+     * <code>ThrottlingException</code>.</p>
      */
     inline ProvisionedThroughputDescription& WithWriteCapacityUnits(long long value) { SetWriteCapacityUnits(value); return *this;}
 

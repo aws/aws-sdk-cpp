@@ -32,8 +32,8 @@ namespace DynamoDB
 namespace Model
 {
   /**
-   * <p>Represents the output of a <i>DescribeLimits</i> operation.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>Represents the output of a <code>DescribeLimits</code>
+   * operation.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeLimitsOutput">AWS
    * API Reference</a></p>
    */

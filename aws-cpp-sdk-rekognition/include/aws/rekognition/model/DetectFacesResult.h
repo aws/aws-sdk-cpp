@@ -83,7 +83,9 @@ namespace Model
      * example, if the service detects that the input image was rotated by 90 degrees,
      * it corrects orientation, performs face detection, and then returns the faces.
      * That is, the bounding box coordinates in the response are based on the corrected
-     * orientation. </p>
+     * orientation. </p> <note> <p>If the source image Exif metadata populates the
+     * orientation field, Amazon Rekognition does not perform orientation correction
+     * and the value of OrientationCorrection will be nil.</p> </note>
      */
     inline const OrientationCorrection& GetOrientationCorrection() const{ return m_orientationCorrection; }
 
@@ -94,7 +96,9 @@ namespace Model
      * example, if the service detects that the input image was rotated by 90 degrees,
      * it corrects orientation, performs face detection, and then returns the faces.
      * That is, the bounding box coordinates in the response are based on the corrected
-     * orientation. </p>
+     * orientation. </p> <note> <p>If the source image Exif metadata populates the
+     * orientation field, Amazon Rekognition does not perform orientation correction
+     * and the value of OrientationCorrection will be nil.</p> </note>
      */
     inline void SetOrientationCorrection(const OrientationCorrection& value) { m_orientationCorrection = value; }
 
@@ -105,7 +109,9 @@ namespace Model
      * example, if the service detects that the input image was rotated by 90 degrees,
      * it corrects orientation, performs face detection, and then returns the faces.
      * That is, the bounding box coordinates in the response are based on the corrected
-     * orientation. </p>
+     * orientation. </p> <note> <p>If the source image Exif metadata populates the
+     * orientation field, Amazon Rekognition does not perform orientation correction
+     * and the value of OrientationCorrection will be nil.</p> </note>
      */
     inline void SetOrientationCorrection(OrientationCorrection&& value) { m_orientationCorrection = value; }
 
@@ -116,7 +122,9 @@ namespace Model
      * example, if the service detects that the input image was rotated by 90 degrees,
      * it corrects orientation, performs face detection, and then returns the faces.
      * That is, the bounding box coordinates in the response are based on the corrected
-     * orientation. </p>
+     * orientation. </p> <note> <p>If the source image Exif metadata populates the
+     * orientation field, Amazon Rekognition does not perform orientation correction
+     * and the value of OrientationCorrection will be nil.</p> </note>
      */
     inline DetectFacesResult& WithOrientationCorrection(const OrientationCorrection& value) { SetOrientationCorrection(value); return *this;}
 
@@ -127,7 +135,9 @@ namespace Model
      * example, if the service detects that the input image was rotated by 90 degrees,
      * it corrects orientation, performs face detection, and then returns the faces.
      * That is, the bounding box coordinates in the response are based on the corrected
-     * orientation. </p>
+     * orientation. </p> <note> <p>If the source image Exif metadata populates the
+     * orientation field, Amazon Rekognition does not perform orientation correction
+     * and the value of OrientationCorrection will be nil.</p> </note>
      */
     inline DetectFacesResult& WithOrientationCorrection(OrientationCorrection&& value) { SetOrientationCorrection(value); return *this;}
 

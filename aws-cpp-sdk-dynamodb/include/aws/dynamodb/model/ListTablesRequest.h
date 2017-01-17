@@ -25,7 +25,7 @@ namespace Model
 {
 
   /**
-   * <p>Represents the input of a <i>ListTables</i> operation.</p><p><h3>See
+   * <p>Represents the input of a <code>ListTables</code> operation.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ListTablesInput">AWS
    * API Reference</a></p>
@@ -40,50 +40,50 @@ namespace Model
 
     /**
      * <p>The first table name that this operation will evaluate. Use the value that
-     * was returned for <i>LastEvaluatedTableName</i> in a previous operation, so that
-     * you can obtain the next page of results.</p>
+     * was returned for <code>LastEvaluatedTableName</code> in a previous operation, so
+     * that you can obtain the next page of results.</p>
      */
     inline const Aws::String& GetExclusiveStartTableName() const{ return m_exclusiveStartTableName; }
 
     /**
      * <p>The first table name that this operation will evaluate. Use the value that
-     * was returned for <i>LastEvaluatedTableName</i> in a previous operation, so that
-     * you can obtain the next page of results.</p>
+     * was returned for <code>LastEvaluatedTableName</code> in a previous operation, so
+     * that you can obtain the next page of results.</p>
      */
     inline void SetExclusiveStartTableName(const Aws::String& value) { m_exclusiveStartTableNameHasBeenSet = true; m_exclusiveStartTableName = value; }
 
     /**
      * <p>The first table name that this operation will evaluate. Use the value that
-     * was returned for <i>LastEvaluatedTableName</i> in a previous operation, so that
-     * you can obtain the next page of results.</p>
+     * was returned for <code>LastEvaluatedTableName</code> in a previous operation, so
+     * that you can obtain the next page of results.</p>
      */
     inline void SetExclusiveStartTableName(Aws::String&& value) { m_exclusiveStartTableNameHasBeenSet = true; m_exclusiveStartTableName = value; }
 
     /**
      * <p>The first table name that this operation will evaluate. Use the value that
-     * was returned for <i>LastEvaluatedTableName</i> in a previous operation, so that
-     * you can obtain the next page of results.</p>
+     * was returned for <code>LastEvaluatedTableName</code> in a previous operation, so
+     * that you can obtain the next page of results.</p>
      */
     inline void SetExclusiveStartTableName(const char* value) { m_exclusiveStartTableNameHasBeenSet = true; m_exclusiveStartTableName.assign(value); }
 
     /**
      * <p>The first table name that this operation will evaluate. Use the value that
-     * was returned for <i>LastEvaluatedTableName</i> in a previous operation, so that
-     * you can obtain the next page of results.</p>
+     * was returned for <code>LastEvaluatedTableName</code> in a previous operation, so
+     * that you can obtain the next page of results.</p>
      */
     inline ListTablesRequest& WithExclusiveStartTableName(const Aws::String& value) { SetExclusiveStartTableName(value); return *this;}
 
     /**
      * <p>The first table name that this operation will evaluate. Use the value that
-     * was returned for <i>LastEvaluatedTableName</i> in a previous operation, so that
-     * you can obtain the next page of results.</p>
+     * was returned for <code>LastEvaluatedTableName</code> in a previous operation, so
+     * that you can obtain the next page of results.</p>
      */
     inline ListTablesRequest& WithExclusiveStartTableName(Aws::String&& value) { SetExclusiveStartTableName(value); return *this;}
 
     /**
      * <p>The first table name that this operation will evaluate. Use the value that
-     * was returned for <i>LastEvaluatedTableName</i> in a previous operation, so that
-     * you can obtain the next page of results.</p>
+     * was returned for <code>LastEvaluatedTableName</code> in a previous operation, so
+     * that you can obtain the next page of results.</p>
      */
     inline ListTablesRequest& WithExclusiveStartTableName(const char* value) { SetExclusiveStartTableName(value); return *this;}
 
