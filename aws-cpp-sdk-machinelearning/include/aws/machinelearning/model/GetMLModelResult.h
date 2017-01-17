@@ -39,7 +39,9 @@ namespace Model
 {
   /**
    * <p>Represents the output of a <code>GetMLModel</code> operation, and provides
-   * detailed information about a <code>MLModel</code>.</p>
+   * detailed information about a <code>MLModel</code>.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/GetMLModelOutput">AWS
+   * API Reference</a></p>
    */
   class AWS_MACHINELEARNING_API GetMLModelResult
   {

@@ -27,7 +27,10 @@ namespace Model
 {
 
   /**
-   * <p>Represents the input for <a>DisableEnhancedMonitoring</a>.</p>
+   * <p>Represents the input for <a>DisableEnhancedMonitoring</a>.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/DisableEnhancedMonitoringInput">AWS
+   * API Reference</a></p>
    */
   class AWS_KINESIS_API DisableEnhancedMonitoringRequest : public KinesisRequest
   {

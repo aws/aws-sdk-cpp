@@ -36,7 +36,9 @@ namespace Model
 
   /**
    * <p>Represents the settings for a run. Includes things like location, radio
-   * states, auxiliary apps, and network profiles.</p>
+   * states, auxiliary apps, and network profiles.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ScheduleRunConfiguration">AWS
+   * API Reference</a></p>
    */
   class AWS_DEVICEFARM_API ScheduleRunConfiguration
   {

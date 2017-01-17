@@ -35,7 +35,10 @@ namespace Model
 {
   /**
    * <p>The result of a <code><a>DefineAnalysisScheme</a></code> request. Contains
-   * the status of the newly-configured analysis scheme.</p>
+   * the status of the newly-configured analysis scheme.</p><p><h3>See Also:</h3>  
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/DefineAnalysisSchemeResponse">AWS
+   * API Reference</a></p>
    */
   class AWS_CLOUDSEARCH_API DefineAnalysisSchemeResult
   {

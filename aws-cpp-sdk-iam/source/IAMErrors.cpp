@@ -27,6 +27,7 @@ namespace IAM
 namespace IAMErrorMapper
 {
 
+static const int SERVICE_NOT_SUPPORTED_HASH = HashingUtils::HashString("NotSupportedService");
 static const int CREDENTIAL_REPORT_NOT_PRESENT_HASH = HashingUtils::HashString("ReportNotPresent");
 static const int CREDENTIAL_REPORT_NOT_READY_HASH = HashingUtils::HashString("ReportInProgress");
 static const int INVALID_CERTIFICATE_HASH = HashingUtils::HashString("InvalidCertificate");
@@ -55,7 +56,11 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
   int hashCode = HashingUtils::HashString(errorName);
 
-  if (hashCode == CREDENTIAL_REPORT_NOT_PRESENT_HASH)
+  if (hashCode == SERVICE_NOT_SUPPORTED_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(IAMErrors::SERVICE_NOT_SUPPORTED), false);
+  }
+  else if (hashCode == CREDENTIAL_REPORT_NOT_PRESENT_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(IAMErrors::CREDENTIAL_REPORT_NOT_PRESENT), false);
   }

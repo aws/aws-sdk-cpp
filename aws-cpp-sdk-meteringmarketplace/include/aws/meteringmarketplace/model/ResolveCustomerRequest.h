@@ -25,7 +25,10 @@ namespace Model
 {
 
   /**
-   * <p>Contains input to the ResolveCustomer operation.</p>
+   * <p>Contains input to the ResolveCustomer operation.</p><p><h3>See Also:</h3>  
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/meteringmarketplace-2016-01-14/ResolveCustomerRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_MARKETPLACEMETERING_API ResolveCustomerRequest : public MarketplaceMeteringRequest
   {

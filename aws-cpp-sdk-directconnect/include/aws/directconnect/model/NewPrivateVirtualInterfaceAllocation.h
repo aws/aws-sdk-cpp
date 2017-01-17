@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/directconnect/DirectConnect_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/directconnect/model/AddressFamily.h>
 
 namespace Aws
 {
@@ -32,7 +33,9 @@ namespace Model
 
   /**
    * <p>A structure containing information about a private virtual interface that
-   * will be provisioned on a connection.</p>
+   * will be provisioned on a connection.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/NewPrivateVirtualInterfaceAllocation">AWS
+   * API Reference</a></p>
    */
   class AWS_DIRECTCONNECT_API NewPrivateVirtualInterfaceAllocation
   {
@@ -124,6 +127,21 @@ namespace Model
     inline NewPrivateVirtualInterfaceAllocation& WithAmazonAddress(const char* value) { SetAmazonAddress(value); return *this;}
 
     
+    inline const AddressFamily& GetAddressFamily() const{ return m_addressFamily; }
+
+    
+    inline void SetAddressFamily(const AddressFamily& value) { m_addressFamilyHasBeenSet = true; m_addressFamily = value; }
+
+    
+    inline void SetAddressFamily(AddressFamily&& value) { m_addressFamilyHasBeenSet = true; m_addressFamily = value; }
+
+    
+    inline NewPrivateVirtualInterfaceAllocation& WithAddressFamily(const AddressFamily& value) { SetAddressFamily(value); return *this;}
+
+    
+    inline NewPrivateVirtualInterfaceAllocation& WithAddressFamily(AddressFamily&& value) { SetAddressFamily(value); return *this;}
+
+    
     inline const Aws::String& GetCustomerAddress() const{ return m_customerAddress; }
 
     
@@ -155,6 +173,8 @@ namespace Model
     bool m_authKeyHasBeenSet;
     Aws::String m_amazonAddress;
     bool m_amazonAddressHasBeenSet;
+    AddressFamily m_addressFamily;
+    bool m_addressFamilyHasBeenSet;
     Aws::String m_customerAddress;
     bool m_customerAddressHasBeenSet;
   };

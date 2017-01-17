@@ -25,7 +25,10 @@ namespace Model
 {
 
   /**
-   * <p>The CheckDomainAvailability request contains the following elements.</p>
+   * <p>The CheckDomainAvailability request contains the following
+   * elements.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/CheckDomainAvailabilityRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_ROUTE53DOMAINS_API CheckDomainAvailabilityRequest : public Route53DomainsRequest
   {

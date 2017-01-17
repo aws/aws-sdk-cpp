@@ -33,7 +33,9 @@ namespace Model
 
   /**
    * <p>An object that represents the recording of configuration changes of an AWS
-   * resource.</p>
+   * resource.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/ConfigurationRecorder">AWS
+   * API Reference</a></p>
    */
   class AWS_CONFIGSERVICE_API ConfigurationRecorder
   {

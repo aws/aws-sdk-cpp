@@ -26,10 +26,12 @@
 #include <aws/directconnect/model/ConfirmConnectionResult.h>
 #include <aws/directconnect/model/ConfirmPrivateVirtualInterfaceResult.h>
 #include <aws/directconnect/model/ConfirmPublicVirtualInterfaceResult.h>
+#include <aws/directconnect/model/CreateBGPPeerResult.h>
 #include <aws/directconnect/model/CreateConnectionResult.h>
 #include <aws/directconnect/model/CreateInterconnectResult.h>
 #include <aws/directconnect/model/CreatePrivateVirtualInterfaceResult.h>
 #include <aws/directconnect/model/CreatePublicVirtualInterfaceResult.h>
+#include <aws/directconnect/model/DeleteBGPPeerResult.h>
 #include <aws/directconnect/model/DeleteConnectionResult.h>
 #include <aws/directconnect/model/DeleteInterconnectResult.h>
 #include <aws/directconnect/model/DeleteVirtualInterfaceResult.h>
@@ -95,10 +97,12 @@ namespace Model
         class ConfirmConnectionRequest;
         class ConfirmPrivateVirtualInterfaceRequest;
         class ConfirmPublicVirtualInterfaceRequest;
+        class CreateBGPPeerRequest;
         class CreateConnectionRequest;
         class CreateInterconnectRequest;
         class CreatePrivateVirtualInterfaceRequest;
         class CreatePublicVirtualInterfaceRequest;
+        class DeleteBGPPeerRequest;
         class DeleteConnectionRequest;
         class DeleteInterconnectRequest;
         class DeleteVirtualInterfaceRequest;
@@ -118,10 +122,12 @@ namespace Model
         typedef Aws::Utils::Outcome<ConfirmConnectionResult, Aws::Client::AWSError<DirectConnectErrors>> ConfirmConnectionOutcome;
         typedef Aws::Utils::Outcome<ConfirmPrivateVirtualInterfaceResult, Aws::Client::AWSError<DirectConnectErrors>> ConfirmPrivateVirtualInterfaceOutcome;
         typedef Aws::Utils::Outcome<ConfirmPublicVirtualInterfaceResult, Aws::Client::AWSError<DirectConnectErrors>> ConfirmPublicVirtualInterfaceOutcome;
+        typedef Aws::Utils::Outcome<CreateBGPPeerResult, Aws::Client::AWSError<DirectConnectErrors>> CreateBGPPeerOutcome;
         typedef Aws::Utils::Outcome<CreateConnectionResult, Aws::Client::AWSError<DirectConnectErrors>> CreateConnectionOutcome;
         typedef Aws::Utils::Outcome<CreateInterconnectResult, Aws::Client::AWSError<DirectConnectErrors>> CreateInterconnectOutcome;
         typedef Aws::Utils::Outcome<CreatePrivateVirtualInterfaceResult, Aws::Client::AWSError<DirectConnectErrors>> CreatePrivateVirtualInterfaceOutcome;
         typedef Aws::Utils::Outcome<CreatePublicVirtualInterfaceResult, Aws::Client::AWSError<DirectConnectErrors>> CreatePublicVirtualInterfaceOutcome;
+        typedef Aws::Utils::Outcome<DeleteBGPPeerResult, Aws::Client::AWSError<DirectConnectErrors>> DeleteBGPPeerOutcome;
         typedef Aws::Utils::Outcome<DeleteConnectionResult, Aws::Client::AWSError<DirectConnectErrors>> DeleteConnectionOutcome;
         typedef Aws::Utils::Outcome<DeleteInterconnectResult, Aws::Client::AWSError<DirectConnectErrors>> DeleteInterconnectOutcome;
         typedef Aws::Utils::Outcome<DeleteVirtualInterfaceResult, Aws::Client::AWSError<DirectConnectErrors>> DeleteVirtualInterfaceOutcome;
@@ -143,10 +149,12 @@ namespace Model
         typedef std::future<ConfirmConnectionOutcome> ConfirmConnectionOutcomeCallable;
         typedef std::future<ConfirmPrivateVirtualInterfaceOutcome> ConfirmPrivateVirtualInterfaceOutcomeCallable;
         typedef std::future<ConfirmPublicVirtualInterfaceOutcome> ConfirmPublicVirtualInterfaceOutcomeCallable;
+        typedef std::future<CreateBGPPeerOutcome> CreateBGPPeerOutcomeCallable;
         typedef std::future<CreateConnectionOutcome> CreateConnectionOutcomeCallable;
         typedef std::future<CreateInterconnectOutcome> CreateInterconnectOutcomeCallable;
         typedef std::future<CreatePrivateVirtualInterfaceOutcome> CreatePrivateVirtualInterfaceOutcomeCallable;
         typedef std::future<CreatePublicVirtualInterfaceOutcome> CreatePublicVirtualInterfaceOutcomeCallable;
+        typedef std::future<DeleteBGPPeerOutcome> DeleteBGPPeerOutcomeCallable;
         typedef std::future<DeleteConnectionOutcome> DeleteConnectionOutcomeCallable;
         typedef std::future<DeleteInterconnectOutcome> DeleteInterconnectOutcomeCallable;
         typedef std::future<DeleteVirtualInterfaceOutcome> DeleteVirtualInterfaceOutcomeCallable;
@@ -171,10 +179,12 @@ namespace Model
     typedef std::function<void(const DirectConnectClient*, const Model::ConfirmConnectionRequest&, const Model::ConfirmConnectionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ConfirmConnectionResponseReceivedHandler;
     typedef std::function<void(const DirectConnectClient*, const Model::ConfirmPrivateVirtualInterfaceRequest&, const Model::ConfirmPrivateVirtualInterfaceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ConfirmPrivateVirtualInterfaceResponseReceivedHandler;
     typedef std::function<void(const DirectConnectClient*, const Model::ConfirmPublicVirtualInterfaceRequest&, const Model::ConfirmPublicVirtualInterfaceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ConfirmPublicVirtualInterfaceResponseReceivedHandler;
+    typedef std::function<void(const DirectConnectClient*, const Model::CreateBGPPeerRequest&, const Model::CreateBGPPeerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateBGPPeerResponseReceivedHandler;
     typedef std::function<void(const DirectConnectClient*, const Model::CreateConnectionRequest&, const Model::CreateConnectionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateConnectionResponseReceivedHandler;
     typedef std::function<void(const DirectConnectClient*, const Model::CreateInterconnectRequest&, const Model::CreateInterconnectOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateInterconnectResponseReceivedHandler;
     typedef std::function<void(const DirectConnectClient*, const Model::CreatePrivateVirtualInterfaceRequest&, const Model::CreatePrivateVirtualInterfaceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreatePrivateVirtualInterfaceResponseReceivedHandler;
     typedef std::function<void(const DirectConnectClient*, const Model::CreatePublicVirtualInterfaceRequest&, const Model::CreatePublicVirtualInterfaceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreatePublicVirtualInterfaceResponseReceivedHandler;
+    typedef std::function<void(const DirectConnectClient*, const Model::DeleteBGPPeerRequest&, const Model::DeleteBGPPeerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteBGPPeerResponseReceivedHandler;
     typedef std::function<void(const DirectConnectClient*, const Model::DeleteConnectionRequest&, const Model::DeleteConnectionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteConnectionResponseReceivedHandler;
     typedef std::function<void(const DirectConnectClient*, const Model::DeleteInterconnectRequest&, const Model::DeleteInterconnectOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteInterconnectResponseReceivedHandler;
     typedef std::function<void(const DirectConnectClient*, const Model::DeleteVirtualInterfaceRequest&, const Model::DeleteVirtualInterfaceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteVirtualInterfaceResponseReceivedHandler;
@@ -234,7 +244,9 @@ namespace Model
          * <p>Creates a hosted connection on an interconnect.</p> <p>Allocates a VLAN
          * number and a specified amount of bandwidth for use by a hosted connection on the
          * given interconnect.</p> <note> <p>This is intended for use by AWS Direct Connect
-         * partners only.</p> </note>
+         * partners only.</p> </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/AllocateConnectionOnInterconnect">AWS
+         * API Reference</a></p>
          */
         virtual Model::AllocateConnectionOnInterconnectOutcome AllocateConnectionOnInterconnect(const Model::AllocateConnectionOnInterconnectRequest& request) const;
 
@@ -242,7 +254,9 @@ namespace Model
          * <p>Creates a hosted connection on an interconnect.</p> <p>Allocates a VLAN
          * number and a specified amount of bandwidth for use by a hosted connection on the
          * given interconnect.</p> <note> <p>This is intended for use by AWS Direct Connect
-         * partners only.</p> </note>
+         * partners only.</p> </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/AllocateConnectionOnInterconnect">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -252,7 +266,9 @@ namespace Model
          * <p>Creates a hosted connection on an interconnect.</p> <p>Allocates a VLAN
          * number and a specified amount of bandwidth for use by a hosted connection on the
          * given interconnect.</p> <note> <p>This is intended for use by AWS Direct Connect
-         * partners only.</p> </note>
+         * partners only.</p> </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/AllocateConnectionOnInterconnect">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -265,7 +281,9 @@ namespace Model
          * <p>Virtual interfaces created using this function must be confirmed by the
          * virtual interface owner by calling ConfirmPrivateVirtualInterface. Until this
          * step has been completed, the virtual interface will be in 'Confirming' state,
-         * and will not be available for handling traffic.</p>
+         * and will not be available for handling traffic.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/AllocatePrivateVirtualInterface">AWS
+         * API Reference</a></p>
          */
         virtual Model::AllocatePrivateVirtualInterfaceOutcome AllocatePrivateVirtualInterface(const Model::AllocatePrivateVirtualInterfaceRequest& request) const;
 
@@ -276,7 +294,9 @@ namespace Model
          * <p>Virtual interfaces created using this function must be confirmed by the
          * virtual interface owner by calling ConfirmPrivateVirtualInterface. Until this
          * step has been completed, the virtual interface will be in 'Confirming' state,
-         * and will not be available for handling traffic.</p>
+         * and will not be available for handling traffic.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/AllocatePrivateVirtualInterface">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -289,7 +309,9 @@ namespace Model
          * <p>Virtual interfaces created using this function must be confirmed by the
          * virtual interface owner by calling ConfirmPrivateVirtualInterface. Until this
          * step has been completed, the virtual interface will be in 'Confirming' state,
-         * and will not be available for handling traffic.</p>
+         * and will not be available for handling traffic.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/AllocatePrivateVirtualInterface">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -302,7 +324,12 @@ namespace Model
          * <p>Virtual interfaces created using this function must be confirmed by the
          * virtual interface owner by calling ConfirmPublicVirtualInterface. Until this
          * step has been completed, the virtual interface will be in 'Confirming' state,
-         * and will not be available for handling traffic.</p>
+         * and will not be available for handling traffic.</p> <p>When creating an IPv6
+         * public virtual interface (addressFamily is 'ipv6'), the customer and amazon
+         * address fields should be left blank to use auto-assigned IPv6 space. Custom IPv6
+         * Addresses are currently not supported.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/AllocatePublicVirtualInterface">AWS
+         * API Reference</a></p>
          */
         virtual Model::AllocatePublicVirtualInterfaceOutcome AllocatePublicVirtualInterface(const Model::AllocatePublicVirtualInterfaceRequest& request) const;
 
@@ -313,7 +340,12 @@ namespace Model
          * <p>Virtual interfaces created using this function must be confirmed by the
          * virtual interface owner by calling ConfirmPublicVirtualInterface. Until this
          * step has been completed, the virtual interface will be in 'Confirming' state,
-         * and will not be available for handling traffic.</p>
+         * and will not be available for handling traffic.</p> <p>When creating an IPv6
+         * public virtual interface (addressFamily is 'ipv6'), the customer and amazon
+         * address fields should be left blank to use auto-assigned IPv6 space. Custom IPv6
+         * Addresses are currently not supported.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/AllocatePublicVirtualInterface">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -326,7 +358,12 @@ namespace Model
          * <p>Virtual interfaces created using this function must be confirmed by the
          * virtual interface owner by calling ConfirmPublicVirtualInterface. Until this
          * step has been completed, the virtual interface will be in 'Confirming' state,
-         * and will not be available for handling traffic.</p>
+         * and will not be available for handling traffic.</p> <p>When creating an IPv6
+         * public virtual interface (addressFamily is 'ipv6'), the customer and amazon
+         * address fields should be left blank to use auto-assigned IPv6 space. Custom IPv6
+         * Addresses are currently not supported.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/AllocatePublicVirtualInterface">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -336,7 +373,9 @@ namespace Model
          * <p>Confirm the creation of a hosted connection on an interconnect.</p> <p>Upon
          * creation, the hosted connection is initially in the 'Ordering' state, and will
          * remain in this state until the owner calls ConfirmConnection to confirm creation
-         * of the hosted connection.</p>
+         * of the hosted connection.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/ConfirmConnection">AWS
+         * API Reference</a></p>
          */
         virtual Model::ConfirmConnectionOutcome ConfirmConnection(const Model::ConfirmConnectionRequest& request) const;
 
@@ -344,7 +383,9 @@ namespace Model
          * <p>Confirm the creation of a hosted connection on an interconnect.</p> <p>Upon
          * creation, the hosted connection is initially in the 'Ordering' state, and will
          * remain in this state until the owner calls ConfirmConnection to confirm creation
-         * of the hosted connection.</p>
+         * of the hosted connection.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/ConfirmConnection">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -354,7 +395,9 @@ namespace Model
          * <p>Confirm the creation of a hosted connection on an interconnect.</p> <p>Upon
          * creation, the hosted connection is initially in the 'Ordering' state, and will
          * remain in this state until the owner calls ConfirmConnection to confirm creation
-         * of the hosted connection.</p>
+         * of the hosted connection.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/ConfirmConnection">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -364,7 +407,10 @@ namespace Model
          * <p>Accept ownership of a private virtual interface created by another
          * customer.</p> <p>After the virtual interface owner calls this function, the
          * virtual interface will be created and attached to the given virtual private
-         * gateway, and will be available for handling traffic.</p>
+         * gateway, and will be available for handling traffic.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/ConfirmPrivateVirtualInterface">AWS
+         * API Reference</a></p>
          */
         virtual Model::ConfirmPrivateVirtualInterfaceOutcome ConfirmPrivateVirtualInterface(const Model::ConfirmPrivateVirtualInterfaceRequest& request) const;
 
@@ -372,7 +418,10 @@ namespace Model
          * <p>Accept ownership of a private virtual interface created by another
          * customer.</p> <p>After the virtual interface owner calls this function, the
          * virtual interface will be created and attached to the given virtual private
-         * gateway, and will be available for handling traffic.</p>
+         * gateway, and will be available for handling traffic.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/ConfirmPrivateVirtualInterface">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -382,7 +431,10 @@ namespace Model
          * <p>Accept ownership of a private virtual interface created by another
          * customer.</p> <p>After the virtual interface owner calls this function, the
          * virtual interface will be created and attached to the given virtual private
-         * gateway, and will be available for handling traffic.</p>
+         * gateway, and will be available for handling traffic.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/ConfirmPrivateVirtualInterface">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -392,7 +444,9 @@ namespace Model
          * <p>Accept ownership of a public virtual interface created by another
          * customer.</p> <p>After the virtual interface owner calls this function, the
          * specified virtual interface will be created and made available for handling
-         * traffic.</p>
+         * traffic.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/ConfirmPublicVirtualInterface">AWS
+         * API Reference</a></p>
          */
         virtual Model::ConfirmPublicVirtualInterfaceOutcome ConfirmPublicVirtualInterface(const Model::ConfirmPublicVirtualInterfaceRequest& request) const;
 
@@ -400,7 +454,9 @@ namespace Model
          * <p>Accept ownership of a public virtual interface created by another
          * customer.</p> <p>After the virtual interface owner calls this function, the
          * specified virtual interface will be created and made available for handling
-         * traffic.</p>
+         * traffic.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/ConfirmPublicVirtualInterface">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -410,11 +466,62 @@ namespace Model
          * <p>Accept ownership of a public virtual interface created by another
          * customer.</p> <p>After the virtual interface owner calls this function, the
          * specified virtual interface will be created and made available for handling
-         * traffic.</p>
+         * traffic.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/ConfirmPublicVirtualInterface">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ConfirmPublicVirtualInterfaceAsync(const Model::ConfirmPublicVirtualInterfaceRequest& request, const ConfirmPublicVirtualInterfaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Creates a new BGP peer on a specified virtual interface. The BGP peer cannot
+         * be in the same address family (IPv4/IPv6) of an existing BGP peer on the virtual
+         * interface.</p> <p>You must create a BGP peer for the corresponding address
+         * family in order to access AWS resources that also use that address family.</p>
+         * <p>When creating a IPv6 BGP peer, the Amazon address and customer address fields
+         * must be left blank. IPv6 addresses are automatically assigned from Amazon's pool
+         * of IPv6 addresses; you cannot specify custom IPv6 addresses.</p> <p>For a public
+         * virtual interface, the Autonomous System Number (ASN) must be private or already
+         * whitelisted for the virtual interface.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/CreateBGPPeer">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateBGPPeerOutcome CreateBGPPeer(const Model::CreateBGPPeerRequest& request) const;
+
+        /**
+         * <p>Creates a new BGP peer on a specified virtual interface. The BGP peer cannot
+         * be in the same address family (IPv4/IPv6) of an existing BGP peer on the virtual
+         * interface.</p> <p>You must create a BGP peer for the corresponding address
+         * family in order to access AWS resources that also use that address family.</p>
+         * <p>When creating a IPv6 BGP peer, the Amazon address and customer address fields
+         * must be left blank. IPv6 addresses are automatically assigned from Amazon's pool
+         * of IPv6 addresses; you cannot specify custom IPv6 addresses.</p> <p>For a public
+         * virtual interface, the Autonomous System Number (ASN) must be private or already
+         * whitelisted for the virtual interface.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/CreateBGPPeer">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateBGPPeerOutcomeCallable CreateBGPPeerCallable(const Model::CreateBGPPeerRequest& request) const;
+
+        /**
+         * <p>Creates a new BGP peer on a specified virtual interface. The BGP peer cannot
+         * be in the same address family (IPv4/IPv6) of an existing BGP peer on the virtual
+         * interface.</p> <p>You must create a BGP peer for the corresponding address
+         * family in order to access AWS resources that also use that address family.</p>
+         * <p>When creating a IPv6 BGP peer, the Amazon address and customer address fields
+         * must be left blank. IPv6 addresses are automatically assigned from Amazon's pool
+         * of IPv6 addresses; you cannot specify custom IPv6 addresses.</p> <p>For a public
+         * virtual interface, the Autonomous System Number (ASN) must be private or already
+         * whitelisted for the virtual interface.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/CreateBGPPeer">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateBGPPeerAsync(const Model::CreateBGPPeerRequest& request, const CreateBGPPeerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a new connection between the customer network and a specific AWS
@@ -424,7 +531,10 @@ namespace Model
          * to an AWS Direct Connect router. An AWS Direct Connect location provides access
          * to Amazon Web Services in the region it is associated with. You can establish
          * connections with AWS Direct Connect locations in multiple regions, but a
-         * connection in one region does not provide connectivity to other regions.</p>
+         * connection in one region does not provide connectivity to other
+         * regions.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/CreateConnection">AWS
+         * API Reference</a></p>
          */
         virtual Model::CreateConnectionOutcome CreateConnection(const Model::CreateConnectionRequest& request) const;
 
@@ -436,7 +546,10 @@ namespace Model
          * to an AWS Direct Connect router. An AWS Direct Connect location provides access
          * to Amazon Web Services in the region it is associated with. You can establish
          * connections with AWS Direct Connect locations in multiple regions, but a
-         * connection in one region does not provide connectivity to other regions.</p>
+         * connection in one region does not provide connectivity to other
+         * regions.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/CreateConnection">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -450,7 +563,10 @@ namespace Model
          * to an AWS Direct Connect router. An AWS Direct Connect location provides access
          * to Amazon Web Services in the region it is associated with. You can establish
          * connections with AWS Direct Connect locations in multiple regions, but a
-         * connection in one region does not provide connectivity to other regions.</p>
+         * connection in one region does not provide connectivity to other
+         * regions.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/CreateConnection">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -470,7 +586,9 @@ namespace Model
          * The end customer can then connect to AWS resources by creating a virtual
          * interface on their connection, using the VLAN assigned to them by the AWS Direct
          * Connect partner.</p> <note> <p>This is intended for use by AWS Direct Connect
-         * partners only.</p> </note>
+         * partners only.</p> </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/CreateInterconnect">AWS
+         * API Reference</a></p>
          */
         virtual Model::CreateInterconnectOutcome CreateInterconnect(const Model::CreateInterconnectRequest& request) const;
 
@@ -488,7 +606,9 @@ namespace Model
          * The end customer can then connect to AWS resources by creating a virtual
          * interface on their connection, using the VLAN assigned to them by the AWS Direct
          * Connect partner.</p> <note> <p>This is intended for use by AWS Direct Connect
-         * partners only.</p> </note>
+         * partners only.</p> </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/CreateInterconnect">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -508,7 +628,9 @@ namespace Model
          * The end customer can then connect to AWS resources by creating a virtual
          * interface on their connection, using the VLAN assigned to them by the AWS Direct
          * Connect partner.</p> <note> <p>This is intended for use by AWS Direct Connect
-         * partners only.</p> </note>
+         * partners only.</p> </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/CreateInterconnect">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -517,14 +639,20 @@ namespace Model
         /**
          * <p>Creates a new private virtual interface. A virtual interface is the VLAN that
          * transports AWS Direct Connect traffic. A private virtual interface supports
-         * sending traffic to a single virtual private cloud (VPC).</p>
+         * sending traffic to a single virtual private cloud (VPC).</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/CreatePrivateVirtualInterface">AWS
+         * API Reference</a></p>
          */
         virtual Model::CreatePrivateVirtualInterfaceOutcome CreatePrivateVirtualInterface(const Model::CreatePrivateVirtualInterfaceRequest& request) const;
 
         /**
          * <p>Creates a new private virtual interface. A virtual interface is the VLAN that
          * transports AWS Direct Connect traffic. A private virtual interface supports
-         * sending traffic to a single virtual private cloud (VPC).</p>
+         * sending traffic to a single virtual private cloud (VPC).</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/CreatePrivateVirtualInterface">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -533,7 +661,10 @@ namespace Model
         /**
          * <p>Creates a new private virtual interface. A virtual interface is the VLAN that
          * transports AWS Direct Connect traffic. A private virtual interface supports
-         * sending traffic to a single virtual private cloud (VPC).</p>
+         * sending traffic to a single virtual private cloud (VPC).</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/CreatePrivateVirtualInterface">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -543,7 +674,12 @@ namespace Model
          * <p>Creates a new public virtual interface. A virtual interface is the VLAN that
          * transports AWS Direct Connect traffic. A public virtual interface supports
          * sending traffic to public services of AWS such as Amazon Simple Storage Service
-         * (Amazon S3).</p>
+         * (Amazon S3).</p> <p>When creating an IPv6 public virtual interface
+         * (addressFamily is 'ipv6'), the customer and amazon address fields should be left
+         * blank to use auto-assigned IPv6 space. Custom IPv6 Addresses are currently not
+         * supported.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/CreatePublicVirtualInterface">AWS
+         * API Reference</a></p>
          */
         virtual Model::CreatePublicVirtualInterfaceOutcome CreatePublicVirtualInterface(const Model::CreatePublicVirtualInterfaceRequest& request) const;
 
@@ -551,7 +687,12 @@ namespace Model
          * <p>Creates a new public virtual interface. A virtual interface is the VLAN that
          * transports AWS Direct Connect traffic. A public virtual interface supports
          * sending traffic to public services of AWS such as Amazon Simple Storage Service
-         * (Amazon S3).</p>
+         * (Amazon S3).</p> <p>When creating an IPv6 public virtual interface
+         * (addressFamily is 'ipv6'), the customer and amazon address fields should be left
+         * blank to use auto-assigned IPv6 space. Custom IPv6 Addresses are currently not
+         * supported.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/CreatePublicVirtualInterface">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -561,17 +702,56 @@ namespace Model
          * <p>Creates a new public virtual interface. A virtual interface is the VLAN that
          * transports AWS Direct Connect traffic. A public virtual interface supports
          * sending traffic to public services of AWS such as Amazon Simple Storage Service
-         * (Amazon S3).</p>
+         * (Amazon S3).</p> <p>When creating an IPv6 public virtual interface
+         * (addressFamily is 'ipv6'), the customer and amazon address fields should be left
+         * blank to use auto-assigned IPv6 space. Custom IPv6 Addresses are currently not
+         * supported.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/CreatePublicVirtualInterface">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreatePublicVirtualInterfaceAsync(const Model::CreatePublicVirtualInterfaceRequest& request, const CreatePublicVirtualInterfaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Deletes a BGP peer on the specified virtual interface that matches the
+         * specified customer address and ASN. You cannot delete the last BGP peer from a
+         * virtual interface.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DeleteBGPPeer">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteBGPPeerOutcome DeleteBGPPeer(const Model::DeleteBGPPeerRequest& request) const;
+
+        /**
+         * <p>Deletes a BGP peer on the specified virtual interface that matches the
+         * specified customer address and ASN. You cannot delete the last BGP peer from a
+         * virtual interface.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DeleteBGPPeer">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteBGPPeerOutcomeCallable DeleteBGPPeerCallable(const Model::DeleteBGPPeerRequest& request) const;
+
+        /**
+         * <p>Deletes a BGP peer on the specified virtual interface that matches the
+         * specified customer address and ASN. You cannot delete the last BGP peer from a
+         * virtual interface.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DeleteBGPPeer">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteBGPPeerAsync(const Model::DeleteBGPPeerRequest& request, const DeleteBGPPeerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Deletes the connection.</p> <p>Deleting a connection only stops the AWS
          * Direct Connect port hour and data transfer charges. You need to cancel
          * separately with the providers any services or charges for cross-connects or
-         * network circuits that connect you to the AWS Direct Connect location.</p>
+         * network circuits that connect you to the AWS Direct Connect
+         * location.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DeleteConnection">AWS
+         * API Reference</a></p>
          */
         virtual Model::DeleteConnectionOutcome DeleteConnection(const Model::DeleteConnectionRequest& request) const;
 
@@ -579,7 +759,10 @@ namespace Model
          * <p>Deletes the connection.</p> <p>Deleting a connection only stops the AWS
          * Direct Connect port hour and data transfer charges. You need to cancel
          * separately with the providers any services or charges for cross-connects or
-         * network circuits that connect you to the AWS Direct Connect location.</p>
+         * network circuits that connect you to the AWS Direct Connect
+         * location.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DeleteConnection">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -589,7 +772,10 @@ namespace Model
          * <p>Deletes the connection.</p> <p>Deleting a connection only stops the AWS
          * Direct Connect port hour and data transfer charges. You need to cancel
          * separately with the providers any services or charges for cross-connects or
-         * network circuits that connect you to the AWS Direct Connect location.</p>
+         * network circuits that connect you to the AWS Direct Connect
+         * location.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DeleteConnection">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -597,13 +783,17 @@ namespace Model
 
         /**
          * <p>Deletes the specified interconnect.</p> <note> <p>This is intended for use by
-         * AWS Direct Connect partners only.</p> </note>
+         * AWS Direct Connect partners only.</p> </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DeleteInterconnect">AWS
+         * API Reference</a></p>
          */
         virtual Model::DeleteInterconnectOutcome DeleteInterconnect(const Model::DeleteInterconnectRequest& request) const;
 
         /**
          * <p>Deletes the specified interconnect.</p> <note> <p>This is intended for use by
-         * AWS Direct Connect partners only.</p> </note>
+         * AWS Direct Connect partners only.</p> </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DeleteInterconnect">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -611,26 +801,34 @@ namespace Model
 
         /**
          * <p>Deletes the specified interconnect.</p> <note> <p>This is intended for use by
-         * AWS Direct Connect partners only.</p> </note>
+         * AWS Direct Connect partners only.</p> </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DeleteInterconnect">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteInterconnectAsync(const Model::DeleteInterconnectRequest& request, const DeleteInterconnectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes a virtual interface.</p>
+         * <p>Deletes a virtual interface.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DeleteVirtualInterface">AWS
+         * API Reference</a></p>
          */
         virtual Model::DeleteVirtualInterfaceOutcome DeleteVirtualInterface(const Model::DeleteVirtualInterfaceRequest& request) const;
 
         /**
-         * <p>Deletes a virtual interface.</p>
+         * <p>Deletes a virtual interface.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DeleteVirtualInterface">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DeleteVirtualInterfaceOutcomeCallable DeleteVirtualInterfaceCallable(const Model::DeleteVirtualInterfaceRequest& request) const;
 
         /**
-         * <p>Deletes a virtual interface.</p>
+         * <p>Deletes a virtual interface.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DeleteVirtualInterface">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -643,7 +841,9 @@ namespace Model
          * colocation facility. For more information, see <a
          * href="http://docs.aws.amazon.com/directconnect/latest/UserGuide/Colocation.html">Requesting
          * Cross Connects at AWS Direct Connect Locations</a> in the AWS Direct Connect
-         * user guide.</p>
+         * user guide.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeConnectionLoa">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeConnectionLoaOutcome DescribeConnectionLoa(const Model::DescribeConnectionLoaRequest& request) const;
 
@@ -654,7 +854,9 @@ namespace Model
          * colocation facility. For more information, see <a
          * href="http://docs.aws.amazon.com/directconnect/latest/UserGuide/Colocation.html">Requesting
          * Cross Connects at AWS Direct Connect Locations</a> in the AWS Direct Connect
-         * user guide.</p>
+         * user guide.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeConnectionLoa">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -667,7 +869,9 @@ namespace Model
          * colocation facility. For more information, see <a
          * href="http://docs.aws.amazon.com/directconnect/latest/UserGuide/Colocation.html">Requesting
          * Cross Connects at AWS Direct Connect Locations</a> in the AWS Direct Connect
-         * user guide.</p>
+         * user guide.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeConnectionLoa">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -675,13 +879,19 @@ namespace Model
 
         /**
          * <p>Displays all connections in this region.</p> <p>If a connection ID is
-         * provided, the call returns only that particular connection.</p>
+         * provided, the call returns only that particular connection.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeConnections">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeConnectionsOutcome DescribeConnections(const Model::DescribeConnectionsRequest& request) const;
 
         /**
          * <p>Displays all connections in this region.</p> <p>If a connection ID is
-         * provided, the call returns only that particular connection.</p>
+         * provided, the call returns only that particular connection.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeConnections">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -689,7 +899,10 @@ namespace Model
 
         /**
          * <p>Displays all connections in this region.</p> <p>If a connection ID is
-         * provided, the call returns only that particular connection.</p>
+         * provided, the call returns only that particular connection.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeConnections">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -698,14 +911,18 @@ namespace Model
         /**
          * <p>Return a list of connections that have been provisioned on the given
          * interconnect.</p> <note> <p>This is intended for use by AWS Direct Connect
-         * partners only.</p> </note>
+         * partners only.</p> </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeConnectionsOnInterconnect">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeConnectionsOnInterconnectOutcome DescribeConnectionsOnInterconnect(const Model::DescribeConnectionsOnInterconnectRequest& request) const;
 
         /**
          * <p>Return a list of connections that have been provisioned on the given
          * interconnect.</p> <note> <p>This is intended for use by AWS Direct Connect
-         * partners only.</p> </note>
+         * partners only.</p> </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeConnectionsOnInterconnect">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -714,7 +931,9 @@ namespace Model
         /**
          * <p>Return a list of connections that have been provisioned on the given
          * interconnect.</p> <note> <p>This is intended for use by AWS Direct Connect
-         * partners only.</p> </note>
+         * partners only.</p> </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeConnectionsOnInterconnect">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -727,7 +946,9 @@ namespace Model
          * information, see <a
          * href="http://docs.aws.amazon.com/directconnect/latest/UserGuide/Colocation.html">Requesting
          * Cross Connects at AWS Direct Connect Locations</a> in the AWS Direct Connect
-         * user guide.</p>
+         * user guide.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeInterconnectLoa">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeInterconnectLoaOutcome DescribeInterconnectLoa(const Model::DescribeInterconnectLoaRequest& request) const;
 
@@ -738,7 +959,9 @@ namespace Model
          * information, see <a
          * href="http://docs.aws.amazon.com/directconnect/latest/UserGuide/Colocation.html">Requesting
          * Cross Connects at AWS Direct Connect Locations</a> in the AWS Direct Connect
-         * user guide.</p>
+         * user guide.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeInterconnectLoa">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -751,7 +974,9 @@ namespace Model
          * information, see <a
          * href="http://docs.aws.amazon.com/directconnect/latest/UserGuide/Colocation.html">Requesting
          * Cross Connects at AWS Direct Connect Locations</a> in the AWS Direct Connect
-         * user guide.</p>
+         * user guide.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeInterconnectLoa">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -760,14 +985,18 @@ namespace Model
         /**
          * <p>Returns a list of interconnects owned by the AWS account.</p> <p>If an
          * interconnect ID is provided, it will only return this particular
-         * interconnect.</p>
+         * interconnect.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeInterconnects">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeInterconnectsOutcome DescribeInterconnects(const Model::DescribeInterconnectsRequest& request) const;
 
         /**
          * <p>Returns a list of interconnects owned by the AWS account.</p> <p>If an
          * interconnect ID is provided, it will only return this particular
-         * interconnect.</p>
+         * interconnect.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeInterconnects">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -776,7 +1005,9 @@ namespace Model
         /**
          * <p>Returns a list of interconnects owned by the AWS account.</p> <p>If an
          * interconnect ID is provided, it will only return this particular
-         * interconnect.</p>
+         * interconnect.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeInterconnects">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -785,14 +1016,18 @@ namespace Model
         /**
          * <p>Returns the list of AWS Direct Connect locations in the current AWS region.
          * These are the locations that may be selected when calling CreateConnection or
-         * CreateInterconnect.</p>
+         * CreateInterconnect.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeLocations">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeLocationsOutcome DescribeLocations() const;
 
         /**
          * <p>Returns the list of AWS Direct Connect locations in the current AWS region.
          * These are the locations that may be selected when calling CreateConnection or
-         * CreateInterconnect.</p>
+         * CreateInterconnect.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeLocations">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -801,20 +1036,26 @@ namespace Model
         /**
          * <p>Returns the list of AWS Direct Connect locations in the current AWS region.
          * These are the locations that may be selected when calling CreateConnection or
-         * CreateInterconnect.</p>
+         * CreateInterconnect.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeLocations">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeLocationsAsync(const DescribeLocationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
         /**
          * <p>Describes the tags associated with the specified Direct Connect
-         * resources.</p>
+         * resources.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeTags">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeTagsOutcome DescribeTags(const Model::DescribeTagsRequest& request) const;
 
         /**
          * <p>Describes the tags associated with the specified Direct Connect
-         * resources.</p>
+         * resources.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeTags">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -822,7 +1063,9 @@ namespace Model
 
         /**
          * <p>Describes the tags associated with the specified Direct Connect
-         * resources.</p>
+         * resources.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeTags">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -834,7 +1077,9 @@ namespace Model
          * linking to a virtual private gateway. A virtual private gateway can be managed
          * via Amazon Virtual Private Cloud (VPC) console or the <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-CreateVpnGateway.html">EC2
-         * CreateVpnGateway</a> action.</p>
+         * CreateVpnGateway</a> action.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeVirtualGateways">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeVirtualGatewaysOutcome DescribeVirtualGateways() const;
 
@@ -844,7 +1089,9 @@ namespace Model
          * linking to a virtual private gateway. A virtual private gateway can be managed
          * via Amazon Virtual Private Cloud (VPC) console or the <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-CreateVpnGateway.html">EC2
-         * CreateVpnGateway</a> action.</p>
+         * CreateVpnGateway</a> action.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeVirtualGateways">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -856,7 +1103,9 @@ namespace Model
          * linking to a virtual private gateway. A virtual private gateway can be managed
          * via Amazon Virtual Private Cloud (VPC) console or the <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-CreateVpnGateway.html">EC2
-         * CreateVpnGateway</a> action.</p>
+         * CreateVpnGateway</a> action.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeVirtualGateways">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -870,7 +1119,10 @@ namespace Model
          * interface (VLAN) transmits the traffic between the AWS Direct Connect location
          * and the customer.</p> <p>If a connection ID is provided, only virtual interfaces
          * provisioned on the specified connection will be returned. If a virtual interface
-         * ID is provided, only this particular virtual interface will be returned.</p>
+         * ID is provided, only this particular virtual interface will be
+         * returned.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeVirtualInterfaces">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeVirtualInterfacesOutcome DescribeVirtualInterfaces(const Model::DescribeVirtualInterfacesRequest& request) const;
 
@@ -883,7 +1135,10 @@ namespace Model
          * interface (VLAN) transmits the traffic between the AWS Direct Connect location
          * and the customer.</p> <p>If a connection ID is provided, only virtual interfaces
          * provisioned on the specified connection will be returned. If a virtual interface
-         * ID is provided, only this particular virtual interface will be returned.</p>
+         * ID is provided, only this particular virtual interface will be
+         * returned.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeVirtualInterfaces">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -898,7 +1153,10 @@ namespace Model
          * interface (VLAN) transmits the traffic between the AWS Direct Connect location
          * and the customer.</p> <p>If a connection ID is provided, only virtual interfaces
          * provisioned on the specified connection will be returned. If a virtual interface
-         * ID is provided, only this particular virtual interface will be returned.</p>
+         * ID is provided, only this particular virtual interface will be
+         * returned.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeVirtualInterfaces">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -908,7 +1166,10 @@ namespace Model
          * <p>Adds the specified tags to the specified Direct Connect resource. Each Direct
          * Connect resource can have a maximum of 50 tags.</p> <p>Each tag consists of a
          * key and an optional value. If a tag with the same key is already associated with
-         * the Direct Connect resource, this action updates its value.</p>
+         * the Direct Connect resource, this action updates its value.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/TagResource">AWS
+         * API Reference</a></p>
          */
         virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
 
@@ -916,7 +1177,10 @@ namespace Model
          * <p>Adds the specified tags to the specified Direct Connect resource. Each Direct
          * Connect resource can have a maximum of 50 tags.</p> <p>Each tag consists of a
          * key and an optional value. If a tag with the same key is already associated with
-         * the Direct Connect resource, this action updates its value.</p>
+         * the Direct Connect resource, this action updates its value.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/TagResource">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -926,26 +1190,38 @@ namespace Model
          * <p>Adds the specified tags to the specified Direct Connect resource. Each Direct
          * Connect resource can have a maximum of 50 tags.</p> <p>Each tag consists of a
          * key and an optional value. If a tag with the same key is already associated with
-         * the Direct Connect resource, this action updates its value.</p>
+         * the Direct Connect resource, this action updates its value.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/TagResource">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void TagResourceAsync(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Removes one or more tags from the specified Direct Connect resource.</p>
+         * <p>Removes one or more tags from the specified Direct Connect
+         * resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/UntagResource">AWS
+         * API Reference</a></p>
          */
         virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
 
         /**
-         * <p>Removes one or more tags from the specified Direct Connect resource.</p>
+         * <p>Removes one or more tags from the specified Direct Connect
+         * resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/UntagResource">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::UntagResourceOutcomeCallable UntagResourceCallable(const Model::UntagResourceRequest& request) const;
 
         /**
-         * <p>Removes one or more tags from the specified Direct Connect resource.</p>
+         * <p>Removes one or more tags from the specified Direct Connect
+         * resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/UntagResource">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -962,10 +1238,12 @@ namespace Model
         void ConfirmConnectionAsyncHelper(const Model::ConfirmConnectionRequest& request, const ConfirmConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ConfirmPrivateVirtualInterfaceAsyncHelper(const Model::ConfirmPrivateVirtualInterfaceRequest& request, const ConfirmPrivateVirtualInterfaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ConfirmPublicVirtualInterfaceAsyncHelper(const Model::ConfirmPublicVirtualInterfaceRequest& request, const ConfirmPublicVirtualInterfaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateBGPPeerAsyncHelper(const Model::CreateBGPPeerRequest& request, const CreateBGPPeerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateConnectionAsyncHelper(const Model::CreateConnectionRequest& request, const CreateConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateInterconnectAsyncHelper(const Model::CreateInterconnectRequest& request, const CreateInterconnectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreatePrivateVirtualInterfaceAsyncHelper(const Model::CreatePrivateVirtualInterfaceRequest& request, const CreatePrivateVirtualInterfaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreatePublicVirtualInterfaceAsyncHelper(const Model::CreatePublicVirtualInterfaceRequest& request, const CreatePublicVirtualInterfaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteBGPPeerAsyncHelper(const Model::DeleteBGPPeerRequest& request, const DeleteBGPPeerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteConnectionAsyncHelper(const Model::DeleteConnectionRequest& request, const DeleteConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteInterconnectAsyncHelper(const Model::DeleteInterconnectRequest& request, const DeleteInterconnectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteVirtualInterfaceAsyncHelper(const Model::DeleteVirtualInterfaceRequest& request, const DeleteVirtualInterfaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

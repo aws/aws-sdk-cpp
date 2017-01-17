@@ -27,7 +27,9 @@ namespace Model
 {
 
   /**
-   * <p/>
+   * <p/><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/SendMessageRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_SQS_API SendMessageRequest : public SQSRequest
   {
@@ -36,204 +38,260 @@ namespace Model
     Aws::String SerializePayload() const override;
 
     /**
-     * <p>The URL of the Amazon SQS queue to take action on.</p> <p>Queue URLs are
-     * case-sensitive.</p>
+     * <p>The URL of the Amazon SQS queue to which a message is sent.</p> <p>Queue URLs
+     * are case-sensitive.</p>
      */
     inline const Aws::String& GetQueueUrl() const{ return m_queueUrl; }
 
     /**
-     * <p>The URL of the Amazon SQS queue to take action on.</p> <p>Queue URLs are
-     * case-sensitive.</p>
+     * <p>The URL of the Amazon SQS queue to which a message is sent.</p> <p>Queue URLs
+     * are case-sensitive.</p>
      */
     inline void SetQueueUrl(const Aws::String& value) { m_queueUrlHasBeenSet = true; m_queueUrl = value; }
 
     /**
-     * <p>The URL of the Amazon SQS queue to take action on.</p> <p>Queue URLs are
-     * case-sensitive.</p>
+     * <p>The URL of the Amazon SQS queue to which a message is sent.</p> <p>Queue URLs
+     * are case-sensitive.</p>
      */
     inline void SetQueueUrl(Aws::String&& value) { m_queueUrlHasBeenSet = true; m_queueUrl = value; }
 
     /**
-     * <p>The URL of the Amazon SQS queue to take action on.</p> <p>Queue URLs are
-     * case-sensitive.</p>
+     * <p>The URL of the Amazon SQS queue to which a message is sent.</p> <p>Queue URLs
+     * are case-sensitive.</p>
      */
     inline void SetQueueUrl(const char* value) { m_queueUrlHasBeenSet = true; m_queueUrl.assign(value); }
 
     /**
-     * <p>The URL of the Amazon SQS queue to take action on.</p> <p>Queue URLs are
-     * case-sensitive.</p>
+     * <p>The URL of the Amazon SQS queue to which a message is sent.</p> <p>Queue URLs
+     * are case-sensitive.</p>
      */
     inline SendMessageRequest& WithQueueUrl(const Aws::String& value) { SetQueueUrl(value); return *this;}
 
     /**
-     * <p>The URL of the Amazon SQS queue to take action on.</p> <p>Queue URLs are
-     * case-sensitive.</p>
+     * <p>The URL of the Amazon SQS queue to which a message is sent.</p> <p>Queue URLs
+     * are case-sensitive.</p>
      */
     inline SendMessageRequest& WithQueueUrl(Aws::String&& value) { SetQueueUrl(value); return *this;}
 
     /**
-     * <p>The URL of the Amazon SQS queue to take action on.</p> <p>Queue URLs are
-     * case-sensitive.</p>
+     * <p>The URL of the Amazon SQS queue to which a message is sent.</p> <p>Queue URLs
+     * are case-sensitive.</p>
      */
     inline SendMessageRequest& WithQueueUrl(const char* value) { SetQueueUrl(value); return *this;}
 
     /**
-     * <p>The message to send. String maximum 256 KB in size. For a list of allowed
-     * characters, see the preceding note.</p>
+     * <p>The message to send. The maximum string size is 256 KB.</p> <important>
+     * <p>The following list shows the characters (in Unicode) that are allowed in your
+     * message, according to the W3C XML specification:</p> <ul> <li> <p>
+     * <code>#x9</code> </p> </li> <li> <p> <code>#xA</code> </p> </li> <li> <p>
+     * <code>#xD</code> </p> </li> <li> <p> <code>#x20</code> to <code>#xD7FF</code>
+     * </p> </li> <li> <p> <code>#xE000</code> to <code>#xFFFD</code> </p> </li> <li>
+     * <p> <code>#x10000</code> to <code>#x10FFFF</code> </p> </li> </ul> <p>For more
+     * information, see <a href="https://www.ietf.org/rfc/rfc1321.txt">RFC1321</a>. If
+     * you send any characters that aren't included in this list, your request is
+     * rejected.</p> </important>
      */
     inline const Aws::String& GetMessageBody() const{ return m_messageBody; }
 
     /**
-     * <p>The message to send. String maximum 256 KB in size. For a list of allowed
-     * characters, see the preceding note.</p>
+     * <p>The message to send. The maximum string size is 256 KB.</p> <important>
+     * <p>The following list shows the characters (in Unicode) that are allowed in your
+     * message, according to the W3C XML specification:</p> <ul> <li> <p>
+     * <code>#x9</code> </p> </li> <li> <p> <code>#xA</code> </p> </li> <li> <p>
+     * <code>#xD</code> </p> </li> <li> <p> <code>#x20</code> to <code>#xD7FF</code>
+     * </p> </li> <li> <p> <code>#xE000</code> to <code>#xFFFD</code> </p> </li> <li>
+     * <p> <code>#x10000</code> to <code>#x10FFFF</code> </p> </li> </ul> <p>For more
+     * information, see <a href="https://www.ietf.org/rfc/rfc1321.txt">RFC1321</a>. If
+     * you send any characters that aren't included in this list, your request is
+     * rejected.</p> </important>
      */
     inline void SetMessageBody(const Aws::String& value) { m_messageBodyHasBeenSet = true; m_messageBody = value; }
 
     /**
-     * <p>The message to send. String maximum 256 KB in size. For a list of allowed
-     * characters, see the preceding note.</p>
+     * <p>The message to send. The maximum string size is 256 KB.</p> <important>
+     * <p>The following list shows the characters (in Unicode) that are allowed in your
+     * message, according to the W3C XML specification:</p> <ul> <li> <p>
+     * <code>#x9</code> </p> </li> <li> <p> <code>#xA</code> </p> </li> <li> <p>
+     * <code>#xD</code> </p> </li> <li> <p> <code>#x20</code> to <code>#xD7FF</code>
+     * </p> </li> <li> <p> <code>#xE000</code> to <code>#xFFFD</code> </p> </li> <li>
+     * <p> <code>#x10000</code> to <code>#x10FFFF</code> </p> </li> </ul> <p>For more
+     * information, see <a href="https://www.ietf.org/rfc/rfc1321.txt">RFC1321</a>. If
+     * you send any characters that aren't included in this list, your request is
+     * rejected.</p> </important>
      */
     inline void SetMessageBody(Aws::String&& value) { m_messageBodyHasBeenSet = true; m_messageBody = value; }
 
     /**
-     * <p>The message to send. String maximum 256 KB in size. For a list of allowed
-     * characters, see the preceding note.</p>
+     * <p>The message to send. The maximum string size is 256 KB.</p> <important>
+     * <p>The following list shows the characters (in Unicode) that are allowed in your
+     * message, according to the W3C XML specification:</p> <ul> <li> <p>
+     * <code>#x9</code> </p> </li> <li> <p> <code>#xA</code> </p> </li> <li> <p>
+     * <code>#xD</code> </p> </li> <li> <p> <code>#x20</code> to <code>#xD7FF</code>
+     * </p> </li> <li> <p> <code>#xE000</code> to <code>#xFFFD</code> </p> </li> <li>
+     * <p> <code>#x10000</code> to <code>#x10FFFF</code> </p> </li> </ul> <p>For more
+     * information, see <a href="https://www.ietf.org/rfc/rfc1321.txt">RFC1321</a>. If
+     * you send any characters that aren't included in this list, your request is
+     * rejected.</p> </important>
      */
     inline void SetMessageBody(const char* value) { m_messageBodyHasBeenSet = true; m_messageBody.assign(value); }
 
     /**
-     * <p>The message to send. String maximum 256 KB in size. For a list of allowed
-     * characters, see the preceding note.</p>
+     * <p>The message to send. The maximum string size is 256 KB.</p> <important>
+     * <p>The following list shows the characters (in Unicode) that are allowed in your
+     * message, according to the W3C XML specification:</p> <ul> <li> <p>
+     * <code>#x9</code> </p> </li> <li> <p> <code>#xA</code> </p> </li> <li> <p>
+     * <code>#xD</code> </p> </li> <li> <p> <code>#x20</code> to <code>#xD7FF</code>
+     * </p> </li> <li> <p> <code>#xE000</code> to <code>#xFFFD</code> </p> </li> <li>
+     * <p> <code>#x10000</code> to <code>#x10FFFF</code> </p> </li> </ul> <p>For more
+     * information, see <a href="https://www.ietf.org/rfc/rfc1321.txt">RFC1321</a>. If
+     * you send any characters that aren't included in this list, your request is
+     * rejected.</p> </important>
      */
     inline SendMessageRequest& WithMessageBody(const Aws::String& value) { SetMessageBody(value); return *this;}
 
     /**
-     * <p>The message to send. String maximum 256 KB in size. For a list of allowed
-     * characters, see the preceding note.</p>
+     * <p>The message to send. The maximum string size is 256 KB.</p> <important>
+     * <p>The following list shows the characters (in Unicode) that are allowed in your
+     * message, according to the W3C XML specification:</p> <ul> <li> <p>
+     * <code>#x9</code> </p> </li> <li> <p> <code>#xA</code> </p> </li> <li> <p>
+     * <code>#xD</code> </p> </li> <li> <p> <code>#x20</code> to <code>#xD7FF</code>
+     * </p> </li> <li> <p> <code>#xE000</code> to <code>#xFFFD</code> </p> </li> <li>
+     * <p> <code>#x10000</code> to <code>#x10FFFF</code> </p> </li> </ul> <p>For more
+     * information, see <a href="https://www.ietf.org/rfc/rfc1321.txt">RFC1321</a>. If
+     * you send any characters that aren't included in this list, your request is
+     * rejected.</p> </important>
      */
     inline SendMessageRequest& WithMessageBody(Aws::String&& value) { SetMessageBody(value); return *this;}
 
     /**
-     * <p>The message to send. String maximum 256 KB in size. For a list of allowed
-     * characters, see the preceding note.</p>
+     * <p>The message to send. The maximum string size is 256 KB.</p> <important>
+     * <p>The following list shows the characters (in Unicode) that are allowed in your
+     * message, according to the W3C XML specification:</p> <ul> <li> <p>
+     * <code>#x9</code> </p> </li> <li> <p> <code>#xA</code> </p> </li> <li> <p>
+     * <code>#xD</code> </p> </li> <li> <p> <code>#x20</code> to <code>#xD7FF</code>
+     * </p> </li> <li> <p> <code>#xE000</code> to <code>#xFFFD</code> </p> </li> <li>
+     * <p> <code>#x10000</code> to <code>#x10FFFF</code> </p> </li> </ul> <p>For more
+     * information, see <a href="https://www.ietf.org/rfc/rfc1321.txt">RFC1321</a>. If
+     * you send any characters that aren't included in this list, your request is
+     * rejected.</p> </important>
      */
     inline SendMessageRequest& WithMessageBody(const char* value) { SetMessageBody(value); return *this;}
 
     /**
-     * <p> The number of seconds (0 to 900 - 15 minutes) to delay a specific message.
-     * Messages with a positive <code>DelaySeconds</code> value become available for
-     * processing after the delay time is finished. If you don't specify a value, the
-     * default value for the queue applies. </p> <note> <p>When you set
-     * <code>FifoQueue</code>, you can't set <code>DelaySeconds</code> per message. You
-     * can set this parameter only on a queue level.</p> </note>
+     * <p> The number of seconds to delay a specific message. Valid values: 0 to 900.
+     * Maximum: 15 minutes. Messages with a positive <code>DelaySeconds</code> value
+     * become available for processing after the delay period is finished. If you don't
+     * specify a value, the default value for the queue applies. </p> <note> <p>When
+     * you set <code>FifoQueue</code>, you can't set <code>DelaySeconds</code> per
+     * message. You can set this parameter only on a queue level.</p> </note>
      */
     inline int GetDelaySeconds() const{ return m_delaySeconds; }
 
     /**
-     * <p> The number of seconds (0 to 900 - 15 minutes) to delay a specific message.
-     * Messages with a positive <code>DelaySeconds</code> value become available for
-     * processing after the delay time is finished. If you don't specify a value, the
-     * default value for the queue applies. </p> <note> <p>When you set
-     * <code>FifoQueue</code>, you can't set <code>DelaySeconds</code> per message. You
-     * can set this parameter only on a queue level.</p> </note>
+     * <p> The number of seconds to delay a specific message. Valid values: 0 to 900.
+     * Maximum: 15 minutes. Messages with a positive <code>DelaySeconds</code> value
+     * become available for processing after the delay period is finished. If you don't
+     * specify a value, the default value for the queue applies. </p> <note> <p>When
+     * you set <code>FifoQueue</code>, you can't set <code>DelaySeconds</code> per
+     * message. You can set this parameter only on a queue level.</p> </note>
      */
     inline void SetDelaySeconds(int value) { m_delaySecondsHasBeenSet = true; m_delaySeconds = value; }
 
     /**
-     * <p> The number of seconds (0 to 900 - 15 minutes) to delay a specific message.
-     * Messages with a positive <code>DelaySeconds</code> value become available for
-     * processing after the delay time is finished. If you don't specify a value, the
-     * default value for the queue applies. </p> <note> <p>When you set
-     * <code>FifoQueue</code>, you can't set <code>DelaySeconds</code> per message. You
-     * can set this parameter only on a queue level.</p> </note>
+     * <p> The number of seconds to delay a specific message. Valid values: 0 to 900.
+     * Maximum: 15 minutes. Messages with a positive <code>DelaySeconds</code> value
+     * become available for processing after the delay period is finished. If you don't
+     * specify a value, the default value for the queue applies. </p> <note> <p>When
+     * you set <code>FifoQueue</code>, you can't set <code>DelaySeconds</code> per
+     * message. You can set this parameter only on a queue level.</p> </note>
      */
     inline SendMessageRequest& WithDelaySeconds(int value) { SetDelaySeconds(value); return *this;}
 
     /**
-     * <p>Each message attribute consists of a Name, Type, and Value. For more
-     * information, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/SQSMessageAttributes.html#SQSMessageAttributesNTV">Message
-     * Attribute Items</a> in the <i>Amazon SQS Developer Guide</i>.</p>
+     * <p>Each message attribute consists of a <code>Name</code>, <code>Type</code>,
+     * and <code>Value</code>. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html#message-attributes-items-validation">Message
+     * Attribute Items and Validation</a> in the <i>Amazon SQS Developer Guide</i>.</p>
      */
     inline const Aws::Map<Aws::String, MessageAttributeValue>& GetMessageAttributes() const{ return m_messageAttributes; }
 
     /**
-     * <p>Each message attribute consists of a Name, Type, and Value. For more
-     * information, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/SQSMessageAttributes.html#SQSMessageAttributesNTV">Message
-     * Attribute Items</a> in the <i>Amazon SQS Developer Guide</i>.</p>
+     * <p>Each message attribute consists of a <code>Name</code>, <code>Type</code>,
+     * and <code>Value</code>. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html#message-attributes-items-validation">Message
+     * Attribute Items and Validation</a> in the <i>Amazon SQS Developer Guide</i>.</p>
      */
     inline void SetMessageAttributes(const Aws::Map<Aws::String, MessageAttributeValue>& value) { m_messageAttributesHasBeenSet = true; m_messageAttributes = value; }
 
     /**
-     * <p>Each message attribute consists of a Name, Type, and Value. For more
-     * information, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/SQSMessageAttributes.html#SQSMessageAttributesNTV">Message
-     * Attribute Items</a> in the <i>Amazon SQS Developer Guide</i>.</p>
+     * <p>Each message attribute consists of a <code>Name</code>, <code>Type</code>,
+     * and <code>Value</code>. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html#message-attributes-items-validation">Message
+     * Attribute Items and Validation</a> in the <i>Amazon SQS Developer Guide</i>.</p>
      */
     inline void SetMessageAttributes(Aws::Map<Aws::String, MessageAttributeValue>&& value) { m_messageAttributesHasBeenSet = true; m_messageAttributes = value; }
 
     /**
-     * <p>Each message attribute consists of a Name, Type, and Value. For more
-     * information, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/SQSMessageAttributes.html#SQSMessageAttributesNTV">Message
-     * Attribute Items</a> in the <i>Amazon SQS Developer Guide</i>.</p>
+     * <p>Each message attribute consists of a <code>Name</code>, <code>Type</code>,
+     * and <code>Value</code>. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html#message-attributes-items-validation">Message
+     * Attribute Items and Validation</a> in the <i>Amazon SQS Developer Guide</i>.</p>
      */
     inline SendMessageRequest& WithMessageAttributes(const Aws::Map<Aws::String, MessageAttributeValue>& value) { SetMessageAttributes(value); return *this;}
 
     /**
-     * <p>Each message attribute consists of a Name, Type, and Value. For more
-     * information, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/SQSMessageAttributes.html#SQSMessageAttributesNTV">Message
-     * Attribute Items</a> in the <i>Amazon SQS Developer Guide</i>.</p>
+     * <p>Each message attribute consists of a <code>Name</code>, <code>Type</code>,
+     * and <code>Value</code>. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html#message-attributes-items-validation">Message
+     * Attribute Items and Validation</a> in the <i>Amazon SQS Developer Guide</i>.</p>
      */
     inline SendMessageRequest& WithMessageAttributes(Aws::Map<Aws::String, MessageAttributeValue>&& value) { SetMessageAttributes(value); return *this;}
 
     /**
-     * <p>Each message attribute consists of a Name, Type, and Value. For more
-     * information, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/SQSMessageAttributes.html#SQSMessageAttributesNTV">Message
-     * Attribute Items</a> in the <i>Amazon SQS Developer Guide</i>.</p>
+     * <p>Each message attribute consists of a <code>Name</code>, <code>Type</code>,
+     * and <code>Value</code>. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html#message-attributes-items-validation">Message
+     * Attribute Items and Validation</a> in the <i>Amazon SQS Developer Guide</i>.</p>
      */
     inline SendMessageRequest& AddMessageAttributes(const Aws::String& key, const MessageAttributeValue& value) { m_messageAttributesHasBeenSet = true; m_messageAttributes[key] = value; return *this; }
 
     /**
-     * <p>Each message attribute consists of a Name, Type, and Value. For more
-     * information, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/SQSMessageAttributes.html#SQSMessageAttributesNTV">Message
-     * Attribute Items</a> in the <i>Amazon SQS Developer Guide</i>.</p>
+     * <p>Each message attribute consists of a <code>Name</code>, <code>Type</code>,
+     * and <code>Value</code>. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html#message-attributes-items-validation">Message
+     * Attribute Items and Validation</a> in the <i>Amazon SQS Developer Guide</i>.</p>
      */
     inline SendMessageRequest& AddMessageAttributes(Aws::String&& key, const MessageAttributeValue& value) { m_messageAttributesHasBeenSet = true; m_messageAttributes[key] = value; return *this; }
 
     /**
-     * <p>Each message attribute consists of a Name, Type, and Value. For more
-     * information, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/SQSMessageAttributes.html#SQSMessageAttributesNTV">Message
-     * Attribute Items</a> in the <i>Amazon SQS Developer Guide</i>.</p>
+     * <p>Each message attribute consists of a <code>Name</code>, <code>Type</code>,
+     * and <code>Value</code>. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html#message-attributes-items-validation">Message
+     * Attribute Items and Validation</a> in the <i>Amazon SQS Developer Guide</i>.</p>
      */
     inline SendMessageRequest& AddMessageAttributes(const Aws::String& key, MessageAttributeValue&& value) { m_messageAttributesHasBeenSet = true; m_messageAttributes[key] = value; return *this; }
 
     /**
-     * <p>Each message attribute consists of a Name, Type, and Value. For more
-     * information, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/SQSMessageAttributes.html#SQSMessageAttributesNTV">Message
-     * Attribute Items</a> in the <i>Amazon SQS Developer Guide</i>.</p>
+     * <p>Each message attribute consists of a <code>Name</code>, <code>Type</code>,
+     * and <code>Value</code>. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html#message-attributes-items-validation">Message
+     * Attribute Items and Validation</a> in the <i>Amazon SQS Developer Guide</i>.</p>
      */
     inline SendMessageRequest& AddMessageAttributes(Aws::String&& key, MessageAttributeValue&& value) { m_messageAttributesHasBeenSet = true; m_messageAttributes[key] = value; return *this; }
 
     /**
-     * <p>Each message attribute consists of a Name, Type, and Value. For more
-     * information, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/SQSMessageAttributes.html#SQSMessageAttributesNTV">Message
-     * Attribute Items</a> in the <i>Amazon SQS Developer Guide</i>.</p>
+     * <p>Each message attribute consists of a <code>Name</code>, <code>Type</code>,
+     * and <code>Value</code>. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html#message-attributes-items-validation">Message
+     * Attribute Items and Validation</a> in the <i>Amazon SQS Developer Guide</i>.</p>
      */
     inline SendMessageRequest& AddMessageAttributes(const char* key, MessageAttributeValue&& value) { m_messageAttributesHasBeenSet = true; m_messageAttributes[key] = value; return *this; }
 
     /**
-     * <p>Each message attribute consists of a Name, Type, and Value. For more
-     * information, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/SQSMessageAttributes.html#SQSMessageAttributesNTV">Message
-     * Attribute Items</a> in the <i>Amazon SQS Developer Guide</i>.</p>
+     * <p>Each message attribute consists of a <code>Name</code>, <code>Type</code>,
+     * and <code>Value</code>. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html#message-attributes-items-validation">Message
+     * Attribute Items and Validation</a> in the <i>Amazon SQS Developer Guide</i>.</p>
      */
     inline SendMessageRequest& AddMessageAttributes(const char* key, const MessageAttributeValue& value) { m_messageAttributesHasBeenSet = true; m_messageAttributes[key] = value; return *this; }
 
@@ -268,7 +326,7 @@ namespace Model
      * as duplicates and only one copy of the message is delivered. </p> </li> </ul>
      * <note> <p>The <code>MessageDeduplicationId</code> is available to the recipient
      * of the message (this can be useful for troubleshooting delivery issues).</p>
-     * <p>If a message is sent successfully but the acknowledgdment is lost and the
+     * <p>If a message is sent successfully but the acknowledgement is lost and the
      * message is resent with the same <code>MessageDeduplicationId</code> after the
      * deduplication interval, Amazon SQS can't detect duplicate messages.</p> </note>
      * <p>The length of <code>MessageDeduplicationId</code> is 128 characters.
@@ -313,7 +371,7 @@ namespace Model
      * as duplicates and only one copy of the message is delivered. </p> </li> </ul>
      * <note> <p>The <code>MessageDeduplicationId</code> is available to the recipient
      * of the message (this can be useful for troubleshooting delivery issues).</p>
-     * <p>If a message is sent successfully but the acknowledgdment is lost and the
+     * <p>If a message is sent successfully but the acknowledgement is lost and the
      * message is resent with the same <code>MessageDeduplicationId</code> after the
      * deduplication interval, Amazon SQS can't detect duplicate messages.</p> </note>
      * <p>The length of <code>MessageDeduplicationId</code> is 128 characters.
@@ -358,7 +416,7 @@ namespace Model
      * as duplicates and only one copy of the message is delivered. </p> </li> </ul>
      * <note> <p>The <code>MessageDeduplicationId</code> is available to the recipient
      * of the message (this can be useful for troubleshooting delivery issues).</p>
-     * <p>If a message is sent successfully but the acknowledgdment is lost and the
+     * <p>If a message is sent successfully but the acknowledgement is lost and the
      * message is resent with the same <code>MessageDeduplicationId</code> after the
      * deduplication interval, Amazon SQS can't detect duplicate messages.</p> </note>
      * <p>The length of <code>MessageDeduplicationId</code> is 128 characters.
@@ -403,7 +461,7 @@ namespace Model
      * as duplicates and only one copy of the message is delivered. </p> </li> </ul>
      * <note> <p>The <code>MessageDeduplicationId</code> is available to the recipient
      * of the message (this can be useful for troubleshooting delivery issues).</p>
-     * <p>If a message is sent successfully but the acknowledgdment is lost and the
+     * <p>If a message is sent successfully but the acknowledgement is lost and the
      * message is resent with the same <code>MessageDeduplicationId</code> after the
      * deduplication interval, Amazon SQS can't detect duplicate messages.</p> </note>
      * <p>The length of <code>MessageDeduplicationId</code> is 128 characters.
@@ -448,7 +506,7 @@ namespace Model
      * as duplicates and only one copy of the message is delivered. </p> </li> </ul>
      * <note> <p>The <code>MessageDeduplicationId</code> is available to the recipient
      * of the message (this can be useful for troubleshooting delivery issues).</p>
-     * <p>If a message is sent successfully but the acknowledgdment is lost and the
+     * <p>If a message is sent successfully but the acknowledgement is lost and the
      * message is resent with the same <code>MessageDeduplicationId</code> after the
      * deduplication interval, Amazon SQS can't detect duplicate messages.</p> </note>
      * <p>The length of <code>MessageDeduplicationId</code> is 128 characters.
@@ -493,7 +551,7 @@ namespace Model
      * as duplicates and only one copy of the message is delivered. </p> </li> </ul>
      * <note> <p>The <code>MessageDeduplicationId</code> is available to the recipient
      * of the message (this can be useful for troubleshooting delivery issues).</p>
-     * <p>If a message is sent successfully but the acknowledgdment is lost and the
+     * <p>If a message is sent successfully but the acknowledgement is lost and the
      * message is resent with the same <code>MessageDeduplicationId</code> after the
      * deduplication interval, Amazon SQS can't detect duplicate messages.</p> </note>
      * <p>The length of <code>MessageDeduplicationId</code> is 128 characters.
@@ -538,7 +596,7 @@ namespace Model
      * as duplicates and only one copy of the message is delivered. </p> </li> </ul>
      * <note> <p>The <code>MessageDeduplicationId</code> is available to the recipient
      * of the message (this can be useful for troubleshooting delivery issues).</p>
-     * <p>If a message is sent successfully but the acknowledgdment is lost and the
+     * <p>If a message is sent successfully but the acknowledgement is lost and the
      * message is resent with the same <code>MessageDeduplicationId</code> after the
      * deduplication interval, Amazon SQS can't detect duplicate messages.</p> </note>
      * <p>The length of <code>MessageDeduplicationId</code> is 128 characters.

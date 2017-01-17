@@ -26,7 +26,9 @@ namespace Model
 
   /**
    * <p>Requests Amazon API Gateway to get information about a <a>Stage</a>
-   * resource.</p>
+   * resource.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetStageRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_APIGATEWAY_API GetStageRequest : public APIGatewayRequest
   {

@@ -37,7 +37,9 @@ namespace Model
 {
   /**
    * <p>Provides details about a DB cluster parameter group including the parameters
-   * in the DB cluster parameter group.</p>
+   * in the DB cluster parameter group.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DBClusterParameterGroupDetails">AWS
+   * API Reference</a></p>
    */
   class AWS_RDS_API DescribeDBClusterParametersResult
   {

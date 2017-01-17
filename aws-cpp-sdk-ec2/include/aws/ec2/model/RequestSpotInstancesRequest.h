@@ -28,7 +28,10 @@ namespace Model
 {
 
   /**
-   * <p>Contains the parameters for RequestSpotInstances.</p>
+   * <p>Contains the parameters for RequestSpotInstances.</p><p><h3>See Also:</h3>  
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RequestSpotInstancesRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_EC2_API RequestSpotInstancesRequest : public EC2Request
   {
@@ -181,27 +184,27 @@ namespace Model
     inline RequestSpotInstancesRequest& WithInstanceCount(int value) { SetInstanceCount(value); return *this;}
 
     /**
-     * <p>The Spot instance request type.</p> <p>Default: <code>one-time</code></p>
+     * <p>The Spot instance request type.</p> <p>Default: <code>one-time</code> </p>
      */
     inline const SpotInstanceType& GetType() const{ return m_type; }
 
     /**
-     * <p>The Spot instance request type.</p> <p>Default: <code>one-time</code></p>
+     * <p>The Spot instance request type.</p> <p>Default: <code>one-time</code> </p>
      */
     inline void SetType(const SpotInstanceType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
-     * <p>The Spot instance request type.</p> <p>Default: <code>one-time</code></p>
+     * <p>The Spot instance request type.</p> <p>Default: <code>one-time</code> </p>
      */
     inline void SetType(SpotInstanceType&& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
-     * <p>The Spot instance request type.</p> <p>Default: <code>one-time</code></p>
+     * <p>The Spot instance request type.</p> <p>Default: <code>one-time</code> </p>
      */
     inline RequestSpotInstancesRequest& WithType(const SpotInstanceType& value) { SetType(value); return *this;}
 
     /**
-     * <p>The Spot instance request type.</p> <p>Default: <code>one-time</code></p>
+     * <p>The Spot instance request type.</p> <p>Default: <code>one-time</code> </p>
      */
     inline RequestSpotInstancesRequest& WithType(SpotInstanceType&& value) { SetType(value); return *this;}
 

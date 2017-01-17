@@ -32,7 +32,10 @@ namespace Model
 {
 
   /**
-   * <p>Describes a tag applied to a resource in an environment.</p>
+   * <p>Describes a tag applied to a resource in an environment.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/Tag">AWS
+   * API Reference</a></p>
    */
   class AWS_ELASTICBEANSTALK_API Tag
   {

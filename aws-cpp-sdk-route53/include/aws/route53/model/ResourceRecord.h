@@ -33,7 +33,9 @@ namespace Model
   /**
    * <p>Information specific to the resource record.</p> <note> <p>If you are
    * creating an alias resource record set, omit <code>ResourceRecord</code>.</p>
-   * </note>
+   * </note><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ResourceRecord">AWS
+   * API Reference</a></p>
    */
   class AWS_ROUTE53_API ResourceRecord
   {

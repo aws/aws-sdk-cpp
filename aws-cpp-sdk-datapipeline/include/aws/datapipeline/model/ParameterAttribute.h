@@ -31,7 +31,10 @@ namespace Model
 {
 
   /**
-   * <p>The attributes allowed or specified with a parameter object.</p>
+   * <p>The attributes allowed or specified with a parameter object.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/ParameterAttribute">AWS
+   * API Reference</a></p>
    */
   class AWS_DATAPIPELINE_API ParameterAttribute
   {

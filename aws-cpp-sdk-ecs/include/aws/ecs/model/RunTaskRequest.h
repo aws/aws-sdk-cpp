@@ -17,6 +17,9 @@
 #include <aws/ecs/ECSRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ecs/model/TaskOverride.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/ecs/model/PlacementConstraint.h>
+#include <aws/ecs/model/PlacementStrategy.h>
 
 namespace Aws
 {
@@ -206,23 +209,20 @@ namespace Model
     inline RunTaskRequest& WithOverrides(TaskOverride&& value) { SetOverrides(value); return *this;}
 
     /**
-     * <p>The number of instantiations of the specified task to place on your
-     * cluster.</p> <important> <p>The <code>count</code> parameter is limited to 10
-     * tasks per call.</p> </important>
+     * <p>The number of instantiations of the specified task to place on your cluster.
+     * You can specify up to 10 tasks per call.</p>
      */
     inline int GetCount() const{ return m_count; }
 
     /**
-     * <p>The number of instantiations of the specified task to place on your
-     * cluster.</p> <important> <p>The <code>count</code> parameter is limited to 10
-     * tasks per call.</p> </important>
+     * <p>The number of instantiations of the specified task to place on your cluster.
+     * You can specify up to 10 tasks per call.</p>
      */
     inline void SetCount(int value) { m_countHasBeenSet = true; m_count = value; }
 
     /**
-     * <p>The number of instantiations of the specified task to place on your
-     * cluster.</p> <important> <p>The <code>count</code> parameter is limited to 10
-     * tasks per call.</p> </important>
+     * <p>The number of instantiations of the specified task to place on your cluster.
+     * You can specify up to 10 tasks per call.</p>
      */
     inline RunTaskRequest& WithCount(int value) { SetCount(value); return *this;}
 
@@ -317,6 +317,139 @@ namespace Model
      */
     inline RunTaskRequest& WithStartedBy(const char* value) { SetStartedBy(value); return *this;}
 
+    /**
+     * <p>The task group to associate with the task. By default, if you do not specify
+     * a task group, the group <code>family:TASKDEF-FAMILY</code> is applied. </p>
+     */
+    inline const Aws::String& GetGroup() const{ return m_group; }
+
+    /**
+     * <p>The task group to associate with the task. By default, if you do not specify
+     * a task group, the group <code>family:TASKDEF-FAMILY</code> is applied. </p>
+     */
+    inline void SetGroup(const Aws::String& value) { m_groupHasBeenSet = true; m_group = value; }
+
+    /**
+     * <p>The task group to associate with the task. By default, if you do not specify
+     * a task group, the group <code>family:TASKDEF-FAMILY</code> is applied. </p>
+     */
+    inline void SetGroup(Aws::String&& value) { m_groupHasBeenSet = true; m_group = value; }
+
+    /**
+     * <p>The task group to associate with the task. By default, if you do not specify
+     * a task group, the group <code>family:TASKDEF-FAMILY</code> is applied. </p>
+     */
+    inline void SetGroup(const char* value) { m_groupHasBeenSet = true; m_group.assign(value); }
+
+    /**
+     * <p>The task group to associate with the task. By default, if you do not specify
+     * a task group, the group <code>family:TASKDEF-FAMILY</code> is applied. </p>
+     */
+    inline RunTaskRequest& WithGroup(const Aws::String& value) { SetGroup(value); return *this;}
+
+    /**
+     * <p>The task group to associate with the task. By default, if you do not specify
+     * a task group, the group <code>family:TASKDEF-FAMILY</code> is applied. </p>
+     */
+    inline RunTaskRequest& WithGroup(Aws::String&& value) { SetGroup(value); return *this;}
+
+    /**
+     * <p>The task group to associate with the task. By default, if you do not specify
+     * a task group, the group <code>family:TASKDEF-FAMILY</code> is applied. </p>
+     */
+    inline RunTaskRequest& WithGroup(const char* value) { SetGroup(value); return *this;}
+
+    /**
+     * <p>An array of placement constraint objects to use for the task. You can specify
+     * up to 10 constraints per task (including constraints in the task definition and
+     * those specified at run time).</p>
+     */
+    inline const Aws::Vector<PlacementConstraint>& GetPlacementConstraints() const{ return m_placementConstraints; }
+
+    /**
+     * <p>An array of placement constraint objects to use for the task. You can specify
+     * up to 10 constraints per task (including constraints in the task definition and
+     * those specified at run time).</p>
+     */
+    inline void SetPlacementConstraints(const Aws::Vector<PlacementConstraint>& value) { m_placementConstraintsHasBeenSet = true; m_placementConstraints = value; }
+
+    /**
+     * <p>An array of placement constraint objects to use for the task. You can specify
+     * up to 10 constraints per task (including constraints in the task definition and
+     * those specified at run time).</p>
+     */
+    inline void SetPlacementConstraints(Aws::Vector<PlacementConstraint>&& value) { m_placementConstraintsHasBeenSet = true; m_placementConstraints = value; }
+
+    /**
+     * <p>An array of placement constraint objects to use for the task. You can specify
+     * up to 10 constraints per task (including constraints in the task definition and
+     * those specified at run time).</p>
+     */
+    inline RunTaskRequest& WithPlacementConstraints(const Aws::Vector<PlacementConstraint>& value) { SetPlacementConstraints(value); return *this;}
+
+    /**
+     * <p>An array of placement constraint objects to use for the task. You can specify
+     * up to 10 constraints per task (including constraints in the task definition and
+     * those specified at run time).</p>
+     */
+    inline RunTaskRequest& WithPlacementConstraints(Aws::Vector<PlacementConstraint>&& value) { SetPlacementConstraints(value); return *this;}
+
+    /**
+     * <p>An array of placement constraint objects to use for the task. You can specify
+     * up to 10 constraints per task (including constraints in the task definition and
+     * those specified at run time).</p>
+     */
+    inline RunTaskRequest& AddPlacementConstraints(const PlacementConstraint& value) { m_placementConstraintsHasBeenSet = true; m_placementConstraints.push_back(value); return *this; }
+
+    /**
+     * <p>An array of placement constraint objects to use for the task. You can specify
+     * up to 10 constraints per task (including constraints in the task definition and
+     * those specified at run time).</p>
+     */
+    inline RunTaskRequest& AddPlacementConstraints(PlacementConstraint&& value) { m_placementConstraintsHasBeenSet = true; m_placementConstraints.push_back(value); return *this; }
+
+    /**
+     * <p>The placement strategy objects to use for the task. You can specify a maximum
+     * of 5 strategy rules per task.</p>
+     */
+    inline const Aws::Vector<PlacementStrategy>& GetPlacementStrategy() const{ return m_placementStrategy; }
+
+    /**
+     * <p>The placement strategy objects to use for the task. You can specify a maximum
+     * of 5 strategy rules per task.</p>
+     */
+    inline void SetPlacementStrategy(const Aws::Vector<PlacementStrategy>& value) { m_placementStrategyHasBeenSet = true; m_placementStrategy = value; }
+
+    /**
+     * <p>The placement strategy objects to use for the task. You can specify a maximum
+     * of 5 strategy rules per task.</p>
+     */
+    inline void SetPlacementStrategy(Aws::Vector<PlacementStrategy>&& value) { m_placementStrategyHasBeenSet = true; m_placementStrategy = value; }
+
+    /**
+     * <p>The placement strategy objects to use for the task. You can specify a maximum
+     * of 5 strategy rules per task.</p>
+     */
+    inline RunTaskRequest& WithPlacementStrategy(const Aws::Vector<PlacementStrategy>& value) { SetPlacementStrategy(value); return *this;}
+
+    /**
+     * <p>The placement strategy objects to use for the task. You can specify a maximum
+     * of 5 strategy rules per task.</p>
+     */
+    inline RunTaskRequest& WithPlacementStrategy(Aws::Vector<PlacementStrategy>&& value) { SetPlacementStrategy(value); return *this;}
+
+    /**
+     * <p>The placement strategy objects to use for the task. You can specify a maximum
+     * of 5 strategy rules per task.</p>
+     */
+    inline RunTaskRequest& AddPlacementStrategy(const PlacementStrategy& value) { m_placementStrategyHasBeenSet = true; m_placementStrategy.push_back(value); return *this; }
+
+    /**
+     * <p>The placement strategy objects to use for the task. You can specify a maximum
+     * of 5 strategy rules per task.</p>
+     */
+    inline RunTaskRequest& AddPlacementStrategy(PlacementStrategy&& value) { m_placementStrategyHasBeenSet = true; m_placementStrategy.push_back(value); return *this; }
+
   private:
     Aws::String m_cluster;
     bool m_clusterHasBeenSet;
@@ -328,6 +461,12 @@ namespace Model
     bool m_countHasBeenSet;
     Aws::String m_startedBy;
     bool m_startedByHasBeenSet;
+    Aws::String m_group;
+    bool m_groupHasBeenSet;
+    Aws::Vector<PlacementConstraint> m_placementConstraints;
+    bool m_placementConstraintsHasBeenSet;
+    Aws::Vector<PlacementStrategy> m_placementStrategy;
+    bool m_placementStrategyHasBeenSet;
   };
 
 } // namespace Model

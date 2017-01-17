@@ -25,7 +25,10 @@ namespace Model
 {
 
   /**
-   * <p>Request to execute a scheduled managed action immediately.</p>
+   * <p>Request to execute a scheduled managed action immediately.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/ApplyEnvironmentManagedActionRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_ELASTICBEANSTALK_API ApplyEnvironmentManagedActionRequest : public ElasticBeanstalkRequest
   {

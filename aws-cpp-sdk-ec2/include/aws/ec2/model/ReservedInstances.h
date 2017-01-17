@@ -24,6 +24,8 @@
 #include <aws/ec2/model/Tenancy.h>
 #include <aws/ec2/model/CurrencyCodeValues.h>
 #include <aws/ec2/model/OfferingTypeValues.h>
+#include <aws/ec2/model/OfferingClassType.h>
+#include <aws/ec2/model/Scope.h>
 #include <aws/ec2/model/Tag.h>
 #include <aws/ec2/model/RecurringCharge.h>
 
@@ -42,7 +44,9 @@ namespace Model
 {
 
   /**
-   * <p>Describes a Reserved Instance.</p>
+   * <p>Describes a Reserved Instance.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ReservedInstances">AWS
+   * API Reference</a></p>
    */
   class AWS_EC2_API ReservedInstances
   {
@@ -464,6 +468,56 @@ namespace Model
      */
     inline ReservedInstances& AddRecurringCharges(RecurringCharge&& value) { m_recurringChargesHasBeenSet = true; m_recurringCharges.push_back(value); return *this; }
 
+    /**
+     * <p>The offering class of the Reserved Instance.</p>
+     */
+    inline const OfferingClassType& GetOfferingClass() const{ return m_offeringClass; }
+
+    /**
+     * <p>The offering class of the Reserved Instance.</p>
+     */
+    inline void SetOfferingClass(const OfferingClassType& value) { m_offeringClassHasBeenSet = true; m_offeringClass = value; }
+
+    /**
+     * <p>The offering class of the Reserved Instance.</p>
+     */
+    inline void SetOfferingClass(OfferingClassType&& value) { m_offeringClassHasBeenSet = true; m_offeringClass = value; }
+
+    /**
+     * <p>The offering class of the Reserved Instance.</p>
+     */
+    inline ReservedInstances& WithOfferingClass(const OfferingClassType& value) { SetOfferingClass(value); return *this;}
+
+    /**
+     * <p>The offering class of the Reserved Instance.</p>
+     */
+    inline ReservedInstances& WithOfferingClass(OfferingClassType&& value) { SetOfferingClass(value); return *this;}
+
+    /**
+     * <p>The scope of the Reserved Instance.</p>
+     */
+    inline const Scope& GetScope() const{ return m_scope; }
+
+    /**
+     * <p>The scope of the Reserved Instance.</p>
+     */
+    inline void SetScope(const Scope& value) { m_scopeHasBeenSet = true; m_scope = value; }
+
+    /**
+     * <p>The scope of the Reserved Instance.</p>
+     */
+    inline void SetScope(Scope&& value) { m_scopeHasBeenSet = true; m_scope = value; }
+
+    /**
+     * <p>The scope of the Reserved Instance.</p>
+     */
+    inline ReservedInstances& WithScope(const Scope& value) { SetScope(value); return *this;}
+
+    /**
+     * <p>The scope of the Reserved Instance.</p>
+     */
+    inline ReservedInstances& WithScope(Scope&& value) { SetScope(value); return *this;}
+
   private:
     Aws::String m_reservedInstancesId;
     bool m_reservedInstancesIdHasBeenSet;
@@ -497,6 +551,10 @@ namespace Model
     bool m_offeringTypeHasBeenSet;
     Aws::Vector<RecurringCharge> m_recurringCharges;
     bool m_recurringChargesHasBeenSet;
+    OfferingClassType m_offeringClass;
+    bool m_offeringClassHasBeenSet;
+    Scope m_scope;
+    bool m_scopeHasBeenSet;
   };
 
 } // namespace Model

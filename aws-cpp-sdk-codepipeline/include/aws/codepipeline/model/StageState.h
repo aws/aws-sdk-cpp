@@ -35,7 +35,10 @@ namespace Model
 {
 
   /**
-   * <p>Represents information about the state of the stage.</p>
+   * <p>Represents information about the state of the stage.</p><p><h3>See Also:</h3>
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/StageState">AWS
+   * API Reference</a></p>
    */
   class AWS_CODEPIPELINE_API StageState
   {

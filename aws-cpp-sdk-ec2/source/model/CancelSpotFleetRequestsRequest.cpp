@@ -31,10 +31,10 @@ CancelSpotFleetRequestsRequest::CancelSpotFleetRequestsRequest() :
 Aws::String CancelSpotFleetRequestsRequest::SerializePayload() const
 {
   Aws::StringStream ss;
-  ss << "Action=CancelSpotFleets&";
+  ss << "Action=CancelSpotFleetRequests&";
   if(m_dryRunHasBeenSet)
   {
-    ss << "DryRun=" << m_dryRun << "&";
+    ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
   if(m_spotFleetRequestIdsHasBeenSet)
@@ -50,10 +50,10 @@ Aws::String CancelSpotFleetRequestsRequest::SerializePayload() const
 
   if(m_terminateInstancesHasBeenSet)
   {
-    ss << "TerminateInstances=" << m_terminateInstances << "&";
+    ss << "TerminateInstances=" << std::boolalpha << m_terminateInstances << "&";
   }
 
-  ss << "Version=2015-10-01";
+  ss << "Version=2016-11-15";
   return ss.str();
 }
 

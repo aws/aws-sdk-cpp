@@ -37,7 +37,9 @@ namespace Model
   /**
    * <p>For a resource with <code>Modify</code> as the action, the
    * <code>ResourceChange</code> structure describes the changes AWS CloudFormation
-   * will make to that resource.</p>
+   * will make to that resource.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ResourceChangeDetail">AWS
+   * API Reference</a></p>
    */
   class AWS_CLOUDFORMATION_API ResourceChangeDetail
   {

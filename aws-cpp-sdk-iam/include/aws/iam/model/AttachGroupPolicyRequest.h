@@ -34,64 +34,64 @@ namespace Model
 
     /**
      * <p>The name (friendly name, not ARN) of the group to attach the policy to.</p>
-     * <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
-     * parameter is a string of characters consisting of upper and lowercase
-     * alphanumeric characters with no spaces. You can also include any of the
-     * following characters: =,.@-</p>
+     * <p>This parameter allows (per its <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
+     * consisting of upper and lowercase alphanumeric characters with no spaces. You
+     * can also include any of the following characters: =,.@-</p>
      */
     inline const Aws::String& GetGroupName() const{ return m_groupName; }
 
     /**
      * <p>The name (friendly name, not ARN) of the group to attach the policy to.</p>
-     * <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
-     * parameter is a string of characters consisting of upper and lowercase
-     * alphanumeric characters with no spaces. You can also include any of the
-     * following characters: =,.@-</p>
+     * <p>This parameter allows (per its <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
+     * consisting of upper and lowercase alphanumeric characters with no spaces. You
+     * can also include any of the following characters: =,.@-</p>
      */
     inline void SetGroupName(const Aws::String& value) { m_groupNameHasBeenSet = true; m_groupName = value; }
 
     /**
      * <p>The name (friendly name, not ARN) of the group to attach the policy to.</p>
-     * <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
-     * parameter is a string of characters consisting of upper and lowercase
-     * alphanumeric characters with no spaces. You can also include any of the
-     * following characters: =,.@-</p>
+     * <p>This parameter allows (per its <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
+     * consisting of upper and lowercase alphanumeric characters with no spaces. You
+     * can also include any of the following characters: =,.@-</p>
      */
     inline void SetGroupName(Aws::String&& value) { m_groupNameHasBeenSet = true; m_groupName = value; }
 
     /**
      * <p>The name (friendly name, not ARN) of the group to attach the policy to.</p>
-     * <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
-     * parameter is a string of characters consisting of upper and lowercase
-     * alphanumeric characters with no spaces. You can also include any of the
-     * following characters: =,.@-</p>
+     * <p>This parameter allows (per its <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
+     * consisting of upper and lowercase alphanumeric characters with no spaces. You
+     * can also include any of the following characters: =,.@-</p>
      */
     inline void SetGroupName(const char* value) { m_groupNameHasBeenSet = true; m_groupName.assign(value); }
 
     /**
      * <p>The name (friendly name, not ARN) of the group to attach the policy to.</p>
-     * <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
-     * parameter is a string of characters consisting of upper and lowercase
-     * alphanumeric characters with no spaces. You can also include any of the
-     * following characters: =,.@-</p>
+     * <p>This parameter allows (per its <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
+     * consisting of upper and lowercase alphanumeric characters with no spaces. You
+     * can also include any of the following characters: =,.@-</p>
      */
     inline AttachGroupPolicyRequest& WithGroupName(const Aws::String& value) { SetGroupName(value); return *this;}
 
     /**
      * <p>The name (friendly name, not ARN) of the group to attach the policy to.</p>
-     * <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
-     * parameter is a string of characters consisting of upper and lowercase
-     * alphanumeric characters with no spaces. You can also include any of the
-     * following characters: =,.@-</p>
+     * <p>This parameter allows (per its <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
+     * consisting of upper and lowercase alphanumeric characters with no spaces. You
+     * can also include any of the following characters: =,.@-</p>
      */
     inline AttachGroupPolicyRequest& WithGroupName(Aws::String&& value) { SetGroupName(value); return *this;}
 
     /**
      * <p>The name (friendly name, not ARN) of the group to attach the policy to.</p>
-     * <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
-     * parameter is a string of characters consisting of upper and lowercase
-     * alphanumeric characters with no spaces. You can also include any of the
-     * following characters: =,.@-</p>
+     * <p>This parameter allows (per its <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
+     * consisting of upper and lowercase alphanumeric characters with no spaces. You
+     * can also include any of the following characters: =,.@-</p>
      */
     inline AttachGroupPolicyRequest& WithGroupName(const char* value) { SetGroupName(value); return *this;}
 

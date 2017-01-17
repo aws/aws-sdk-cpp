@@ -36,7 +36,7 @@ Aws::String DescribePrefixListsRequest::SerializePayload() const
   ss << "Action=DescribePrefixLists&";
   if(m_dryRunHasBeenSet)
   {
-    ss << "DryRun=" << m_dryRun << "&";
+    ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
   if(m_prefixListIdsHasBeenSet)
@@ -70,7 +70,7 @@ Aws::String DescribePrefixListsRequest::SerializePayload() const
     ss << "NextToken=" << StringUtils::URLEncode(m_nextToken.c_str()) << "&";
   }
 
-  ss << "Version=2015-10-01";
+  ss << "Version=2016-11-15";
   return ss.str();
 }
 

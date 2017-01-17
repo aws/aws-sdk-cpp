@@ -35,7 +35,9 @@ namespace Model
 {
 
   /**
-   * <p>Detailed information about an instance group.</p>
+   * <p>Detailed information about an instance group.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/InstanceGroupDetail">AWS
+   * API Reference</a></p>
    */
   class AWS_EMR_API InstanceGroupDetail
   {

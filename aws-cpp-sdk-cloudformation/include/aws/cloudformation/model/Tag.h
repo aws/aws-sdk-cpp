@@ -33,7 +33,10 @@ namespace Model
 
   /**
    * <p>The Tag type enables you to specify a key-value pair that can be used to
-   * store information about an AWS CloudFormation stack.</p>
+   * store information about an AWS CloudFormation stack.</p><p><h3>See Also:</h3>  
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/Tag">AWS
+   * API Reference</a></p>
    */
   class AWS_CLOUDFORMATION_API Tag
   {

@@ -51,7 +51,7 @@ Aws::String UpdateJobRequest::SerializePayload() const
 
   if(m_validateOnlyHasBeenSet)
   {
-    ss << "ValidateOnly=" << m_validateOnly << "&";
+    ss << "ValidateOnly=" << std::boolalpha << m_validateOnly << "&";
   }
 
   if(m_aPIVersionHasBeenSet)

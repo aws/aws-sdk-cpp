@@ -38,7 +38,9 @@ namespace Model
    * the <code>Marker</code> parameter to control the delegation set that the list
    * begins with.</p> <note> <p>Amazon Route 53 returns a maximum of 100 items. If
    * you set <code>MaxItems</code> to a value greater than 100, Amazon Route 53
-   * returns only the first 100.</p> </note>
+   * returns only the first 100.</p> </note><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListReusableDelegationSetsRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_ROUTE53_API ListReusableDelegationSetsRequest : public Route53Request
   {

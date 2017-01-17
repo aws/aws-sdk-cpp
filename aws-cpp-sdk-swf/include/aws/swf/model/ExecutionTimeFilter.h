@@ -35,7 +35,9 @@ namespace Model
    * time-based rules. Each parameter, if specified, defines a rule that must be
    * satisfied by each returned query result. The parameter values are in the <a
    * href="https://en.wikipedia.org/wiki/Unix_time">Unix Time format</a>. For
-   * example: <code>"oldestDate": 1325376070.</code></p>
+   * example: <code>"oldestDate": 1325376070.</code></p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/ExecutionTimeFilter">AWS
+   * API Reference</a></p>
    */
   class AWS_SWF_API ExecutionTimeFilter
   {

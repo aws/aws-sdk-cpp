@@ -33,56 +33,56 @@ namespace Model
     Aws::String SerializePayload() const override;
 
     /**
-     * <p>The name of the role to list instance profiles for.</p> <p>The <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a
+     * <p>The name of the role to list instance profiles for.</p> <p>This parameter
+     * allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
      * string of characters consisting of upper and lowercase alphanumeric characters
      * with no spaces. You can also include any of the following characters: =,.@-</p>
      */
     inline const Aws::String& GetRoleName() const{ return m_roleName; }
 
     /**
-     * <p>The name of the role to list instance profiles for.</p> <p>The <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a
+     * <p>The name of the role to list instance profiles for.</p> <p>This parameter
+     * allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
      * string of characters consisting of upper and lowercase alphanumeric characters
      * with no spaces. You can also include any of the following characters: =,.@-</p>
      */
     inline void SetRoleName(const Aws::String& value) { m_roleNameHasBeenSet = true; m_roleName = value; }
 
     /**
-     * <p>The name of the role to list instance profiles for.</p> <p>The <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a
+     * <p>The name of the role to list instance profiles for.</p> <p>This parameter
+     * allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
      * string of characters consisting of upper and lowercase alphanumeric characters
      * with no spaces. You can also include any of the following characters: =,.@-</p>
      */
     inline void SetRoleName(Aws::String&& value) { m_roleNameHasBeenSet = true; m_roleName = value; }
 
     /**
-     * <p>The name of the role to list instance profiles for.</p> <p>The <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a
+     * <p>The name of the role to list instance profiles for.</p> <p>This parameter
+     * allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
      * string of characters consisting of upper and lowercase alphanumeric characters
      * with no spaces. You can also include any of the following characters: =,.@-</p>
      */
     inline void SetRoleName(const char* value) { m_roleNameHasBeenSet = true; m_roleName.assign(value); }
 
     /**
-     * <p>The name of the role to list instance profiles for.</p> <p>The <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a
+     * <p>The name of the role to list instance profiles for.</p> <p>This parameter
+     * allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
      * string of characters consisting of upper and lowercase alphanumeric characters
      * with no spaces. You can also include any of the following characters: =,.@-</p>
      */
     inline ListInstanceProfilesForRoleRequest& WithRoleName(const Aws::String& value) { SetRoleName(value); return *this;}
 
     /**
-     * <p>The name of the role to list instance profiles for.</p> <p>The <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a
+     * <p>The name of the role to list instance profiles for.</p> <p>This parameter
+     * allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
      * string of characters consisting of upper and lowercase alphanumeric characters
      * with no spaces. You can also include any of the following characters: =,.@-</p>
      */
     inline ListInstanceProfilesForRoleRequest& WithRoleName(Aws::String&& value) { SetRoleName(value); return *this;}
 
     /**
-     * <p>The name of the role to list instance profiles for.</p> <p>The <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a
+     * <p>The name of the role to list instance profiles for.</p> <p>This parameter
+     * allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
      * string of characters consisting of upper and lowercase alphanumeric characters
      * with no spaces. You can also include any of the following characters: =,.@-</p>
      */
@@ -145,11 +145,11 @@ namespace Model
     inline ListInstanceProfilesForRoleRequest& WithMarker(const char* value) { SetMarker(value); return *this;}
 
     /**
-     * <p>Use this only when paginating results to indicate the maximum number of items
-     * you want in the response. If additional items exist beyond the maximum you
-     * specify, the <code>IsTruncated</code> response element is <code>true</code>.</p>
-     * <p>This parameter is optional. If you do not include it, it defaults to 100.
-     * Note that IAM might return fewer results, even when there are more results
+     * <p>(Optional) Use this only when paginating results to indicate the maximum
+     * number of items you want in the response. If additional items exist beyond the
+     * maximum you specify, the <code>IsTruncated</code> response element is
+     * <code>true</code>.</p> <p>If you do not include this parameter, it defaults to
+     * 100. Note that IAM might return fewer results, even when there are more results
      * available. In that case, the <code>IsTruncated</code> response element returns
      * <code>true</code> and <code>Marker</code> contains a value to include in the
      * subsequent call that tells the service where to continue from.</p>
@@ -157,11 +157,11 @@ namespace Model
     inline int GetMaxItems() const{ return m_maxItems; }
 
     /**
-     * <p>Use this only when paginating results to indicate the maximum number of items
-     * you want in the response. If additional items exist beyond the maximum you
-     * specify, the <code>IsTruncated</code> response element is <code>true</code>.</p>
-     * <p>This parameter is optional. If you do not include it, it defaults to 100.
-     * Note that IAM might return fewer results, even when there are more results
+     * <p>(Optional) Use this only when paginating results to indicate the maximum
+     * number of items you want in the response. If additional items exist beyond the
+     * maximum you specify, the <code>IsTruncated</code> response element is
+     * <code>true</code>.</p> <p>If you do not include this parameter, it defaults to
+     * 100. Note that IAM might return fewer results, even when there are more results
      * available. In that case, the <code>IsTruncated</code> response element returns
      * <code>true</code> and <code>Marker</code> contains a value to include in the
      * subsequent call that tells the service where to continue from.</p>
@@ -169,11 +169,11 @@ namespace Model
     inline void SetMaxItems(int value) { m_maxItemsHasBeenSet = true; m_maxItems = value; }
 
     /**
-     * <p>Use this only when paginating results to indicate the maximum number of items
-     * you want in the response. If additional items exist beyond the maximum you
-     * specify, the <code>IsTruncated</code> response element is <code>true</code>.</p>
-     * <p>This parameter is optional. If you do not include it, it defaults to 100.
-     * Note that IAM might return fewer results, even when there are more results
+     * <p>(Optional) Use this only when paginating results to indicate the maximum
+     * number of items you want in the response. If additional items exist beyond the
+     * maximum you specify, the <code>IsTruncated</code> response element is
+     * <code>true</code>.</p> <p>If you do not include this parameter, it defaults to
+     * 100. Note that IAM might return fewer results, even when there are more results
      * available. In that case, the <code>IsTruncated</code> response element returns
      * <code>true</code> and <code>Marker</code> contains a value to include in the
      * subsequent call that tells the service where to continue from.</p>

@@ -26,7 +26,9 @@ namespace Model
 {
 
   /**
-   * <p>Confirms the device request.</p>
+   * <p>Confirms the device request.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ConfirmDeviceRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_COGNITOIDENTITYPROVIDER_API ConfirmDeviceRequest : public CognitoIdentityProviderRequest
   {

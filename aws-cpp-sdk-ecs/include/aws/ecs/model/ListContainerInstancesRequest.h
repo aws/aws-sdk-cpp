@@ -84,6 +84,69 @@ namespace Model
     inline ListContainerInstancesRequest& WithCluster(const char* value) { SetCluster(value); return *this;}
 
     /**
+     * <p>You can filter the results of a <code>ListContainerInstances</code> operation
+     * with cluster query language statements. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster
+     * Query Language</a> in the <i>Amazon EC2 Container Service Developer
+     * Guide</i>.</p>
+     */
+    inline const Aws::String& GetFilter() const{ return m_filter; }
+
+    /**
+     * <p>You can filter the results of a <code>ListContainerInstances</code> operation
+     * with cluster query language statements. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster
+     * Query Language</a> in the <i>Amazon EC2 Container Service Developer
+     * Guide</i>.</p>
+     */
+    inline void SetFilter(const Aws::String& value) { m_filterHasBeenSet = true; m_filter = value; }
+
+    /**
+     * <p>You can filter the results of a <code>ListContainerInstances</code> operation
+     * with cluster query language statements. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster
+     * Query Language</a> in the <i>Amazon EC2 Container Service Developer
+     * Guide</i>.</p>
+     */
+    inline void SetFilter(Aws::String&& value) { m_filterHasBeenSet = true; m_filter = value; }
+
+    /**
+     * <p>You can filter the results of a <code>ListContainerInstances</code> operation
+     * with cluster query language statements. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster
+     * Query Language</a> in the <i>Amazon EC2 Container Service Developer
+     * Guide</i>.</p>
+     */
+    inline void SetFilter(const char* value) { m_filterHasBeenSet = true; m_filter.assign(value); }
+
+    /**
+     * <p>You can filter the results of a <code>ListContainerInstances</code> operation
+     * with cluster query language statements. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster
+     * Query Language</a> in the <i>Amazon EC2 Container Service Developer
+     * Guide</i>.</p>
+     */
+    inline ListContainerInstancesRequest& WithFilter(const Aws::String& value) { SetFilter(value); return *this;}
+
+    /**
+     * <p>You can filter the results of a <code>ListContainerInstances</code> operation
+     * with cluster query language statements. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster
+     * Query Language</a> in the <i>Amazon EC2 Container Service Developer
+     * Guide</i>.</p>
+     */
+    inline ListContainerInstancesRequest& WithFilter(Aws::String&& value) { SetFilter(value); return *this;}
+
+    /**
+     * <p>You can filter the results of a <code>ListContainerInstances</code> operation
+     * with cluster query language statements. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster
+     * Query Language</a> in the <i>Amazon EC2 Container Service Developer
+     * Guide</i>.</p>
+     */
+    inline ListContainerInstancesRequest& WithFilter(const char* value) { SetFilter(value); return *this;}
+
+    /**
      * <p>The <code>nextToken</code> value returned from a previous paginated
      * <code>ListContainerInstances</code> request where <code>maxResults</code> was
      * used and the results exceeded the value of that parameter. Pagination continues
@@ -209,6 +272,8 @@ namespace Model
   private:
     Aws::String m_cluster;
     bool m_clusterHasBeenSet;
+    Aws::String m_filter;
+    bool m_filterHasBeenSet;
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
     int m_maxResults;

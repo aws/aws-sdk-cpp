@@ -26,7 +26,10 @@ namespace Model
 {
 
   /**
-   * <p>Contains the parameters for DescribeAutoScalingGroups.</p>
+   * <p>Contains the parameters for DescribeAutoScalingGroups.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/AutoScalingGroupNamesType">AWS
+   * API Reference</a></p>
    */
   class AWS_AUTOSCALING_API DescribeAutoScalingGroupsRequest : public AutoScalingRequest
   {

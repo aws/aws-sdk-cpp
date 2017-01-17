@@ -34,7 +34,9 @@ namespace Model
 
   /**
    * Container for replication rules. You can add as many as 1,000 rules. Total
-   * replication configuration size can be up to 2 MB.
+   * replication configuration size can be up to 2 MB.<p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/ReplicationConfiguration">AWS
+   * API Reference</a></p>
    */
   class AWS_S3_API ReplicationConfiguration
   {

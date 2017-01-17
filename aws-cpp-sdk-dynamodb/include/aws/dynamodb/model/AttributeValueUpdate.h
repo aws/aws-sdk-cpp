@@ -39,7 +39,9 @@ namespace Model
    * a new item with new attributes.</p> </note> <p>Attribute values cannot be null;
    * string and binary type attributes must have lengths greater than zero; and set
    * type attributes must not be empty. Requests with empty values will be rejected
-   * with a <i>ValidationException</i> exception.</p>
+   * with a <i>ValidationException</i> exception.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/AttributeValueUpdate">AWS
+   * API Reference</a></p>
    */
   class AWS_DYNAMODB_API AttributeValueUpdate
   {

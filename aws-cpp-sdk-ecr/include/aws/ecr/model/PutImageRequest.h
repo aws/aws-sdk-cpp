@@ -153,6 +153,48 @@ namespace Model
      */
     inline PutImageRequest& WithImageManifest(const char* value) { SetImageManifest(value); return *this;}
 
+    /**
+     * <p>The tag to associate with the image. This parameter is required for images
+     * that use the Docker Image Manifest V2 Schema 2 or OCI formats.</p>
+     */
+    inline const Aws::String& GetImageTag() const{ return m_imageTag; }
+
+    /**
+     * <p>The tag to associate with the image. This parameter is required for images
+     * that use the Docker Image Manifest V2 Schema 2 or OCI formats.</p>
+     */
+    inline void SetImageTag(const Aws::String& value) { m_imageTagHasBeenSet = true; m_imageTag = value; }
+
+    /**
+     * <p>The tag to associate with the image. This parameter is required for images
+     * that use the Docker Image Manifest V2 Schema 2 or OCI formats.</p>
+     */
+    inline void SetImageTag(Aws::String&& value) { m_imageTagHasBeenSet = true; m_imageTag = value; }
+
+    /**
+     * <p>The tag to associate with the image. This parameter is required for images
+     * that use the Docker Image Manifest V2 Schema 2 or OCI formats.</p>
+     */
+    inline void SetImageTag(const char* value) { m_imageTagHasBeenSet = true; m_imageTag.assign(value); }
+
+    /**
+     * <p>The tag to associate with the image. This parameter is required for images
+     * that use the Docker Image Manifest V2 Schema 2 or OCI formats.</p>
+     */
+    inline PutImageRequest& WithImageTag(const Aws::String& value) { SetImageTag(value); return *this;}
+
+    /**
+     * <p>The tag to associate with the image. This parameter is required for images
+     * that use the Docker Image Manifest V2 Schema 2 or OCI formats.</p>
+     */
+    inline PutImageRequest& WithImageTag(Aws::String&& value) { SetImageTag(value); return *this;}
+
+    /**
+     * <p>The tag to associate with the image. This parameter is required for images
+     * that use the Docker Image Manifest V2 Schema 2 or OCI formats.</p>
+     */
+    inline PutImageRequest& WithImageTag(const char* value) { SetImageTag(value); return *this;}
+
   private:
     Aws::String m_registryId;
     bool m_registryIdHasBeenSet;
@@ -160,6 +202,8 @@ namespace Model
     bool m_repositoryNameHasBeenSet;
     Aws::String m_imageManifest;
     bool m_imageManifestHasBeenSet;
+    Aws::String m_imageTag;
+    bool m_imageTagHasBeenSet;
   };
 
 } // namespace Model

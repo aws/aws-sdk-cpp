@@ -37,7 +37,9 @@ namespace Model
    * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html">Creating
    * Apps</a> or <a
    * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook.html">Custom
-   * Recipes and Cookbooks</a>.</p>
+   * Recipes and Cookbooks</a>.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/Source">AWS API
+   * Reference</a></p>
    */
   class AWS_OPSWORKS_API Source
   {

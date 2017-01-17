@@ -40,7 +40,9 @@ namespace Model
    * server. To authenticate an API client (or user), use a custom
    * <a>Authorizer</a>.</div> <div class="seeAlso"> <a
    * href="http://docs.aws.amazon.com/apigateway/latest/developerguide/getting-started-client-side-ssl-authentication.html">Use
-   * Client-Side Certificate</a> </div>
+   * Client-Side Certificate</a> </div><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/ClientCertificate">AWS
+   * API Reference</a></p>
    */
   class AWS_APIGATEWAY_API UpdateClientCertificateResult
   {

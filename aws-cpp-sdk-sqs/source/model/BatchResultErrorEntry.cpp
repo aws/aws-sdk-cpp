@@ -92,7 +92,7 @@ void BatchResultErrorEntry::OutputToStream(Aws::OStream& oStream, const char* lo
 
   if(m_senderFaultHasBeenSet)
   {
-      oStream << location << index << locationValue << ".SenderFault=" << m_senderFault << "&";
+      oStream << location << index << locationValue << ".SenderFault=" << std::boolalpha << m_senderFault << "&";
   }
 
   if(m_codeHasBeenSet)
@@ -115,7 +115,7 @@ void BatchResultErrorEntry::OutputToStream(Aws::OStream& oStream, const char* lo
   }
   if(m_senderFaultHasBeenSet)
   {
-      oStream << location << ".SenderFault=" << m_senderFault << "&";
+      oStream << location << ".SenderFault=" << std::boolalpha << m_senderFault << "&";
   }
   if(m_codeHasBeenSet)
   {

@@ -33,7 +33,10 @@ namespace Model
 
   /**
    * <p>Contains the specific price and frequency of a recurring charges for a
-   * reserved cache node, or for a reserved cache node offering.</p>
+   * reserved cache node, or for a reserved cache node offering.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/RecurringCharge">AWS
+   * API Reference</a></p>
    */
   class AWS_ELASTICACHE_API RecurringCharge
   {

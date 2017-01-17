@@ -26,6 +26,7 @@ public class ShapeMember {
     String documentation;
     String location;
     String locationName;
+    String queryName;
     String xmlnsUri;
     boolean isFlattened;
 

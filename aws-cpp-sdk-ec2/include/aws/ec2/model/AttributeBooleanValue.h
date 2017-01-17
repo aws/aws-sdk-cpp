@@ -31,7 +31,10 @@ namespace Model
 {
 
   /**
-   * <p>The value to use when a resource attribute accepts a Boolean value.</p>
+   * <p>Describes a value for a resource attribute that is a Boolean
+   * value.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AttributeBooleanValue">AWS
+   * API Reference</a></p>
    */
   class AWS_EC2_API AttributeBooleanValue
   {
@@ -44,17 +47,20 @@ namespace Model
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
     /**
-     * <p>Valid values are <code>true</code> or <code>false</code>.</p>
+     * <p>The attribute value. The valid values are <code>true</code> or
+     * <code>false</code>.</p>
      */
     inline bool GetValue() const{ return m_value; }
 
     /**
-     * <p>Valid values are <code>true</code> or <code>false</code>.</p>
+     * <p>The attribute value. The valid values are <code>true</code> or
+     * <code>false</code>.</p>
      */
     inline void SetValue(bool value) { m_valueHasBeenSet = true; m_value = value; }
 
     /**
-     * <p>Valid values are <code>true</code> or <code>false</code>.</p>
+     * <p>The attribute value. The valid values are <code>true</code> or
+     * <code>false</code>.</p>
      */
     inline AttributeBooleanValue& WithValue(bool value) { SetValue(value); return *this;}
 

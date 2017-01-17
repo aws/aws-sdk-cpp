@@ -16,6 +16,7 @@
 #include <aws/snowball/Snowball_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/snowball/model/S3Resource.h>
+#include <aws/snowball/model/LambdaResource.h>
 
 namespace Aws
 {
@@ -34,7 +35,10 @@ namespace Model
   /**
    * <p>Contains an array of <code>S3Resource</code> objects. Each
    * <code>S3Resource</code> object represents an Amazon S3 bucket that your
-   * transferred data will be exported from or imported into.</p>
+   * transferred data will be exported from or imported into.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/JobResource">AWS
+   * API Reference</a></p>
    */
   class AWS_SNOWBALL_API JobResource
   {
@@ -79,9 +83,46 @@ namespace Model
      */
     inline JobResource& AddS3Resources(S3Resource&& value) { m_s3ResourcesHasBeenSet = true; m_s3Resources.push_back(value); return *this; }
 
+    /**
+     * <p>The Python-language Lambda functions for this job.</p>
+     */
+    inline const Aws::Vector<LambdaResource>& GetLambdaResources() const{ return m_lambdaResources; }
+
+    /**
+     * <p>The Python-language Lambda functions for this job.</p>
+     */
+    inline void SetLambdaResources(const Aws::Vector<LambdaResource>& value) { m_lambdaResourcesHasBeenSet = true; m_lambdaResources = value; }
+
+    /**
+     * <p>The Python-language Lambda functions for this job.</p>
+     */
+    inline void SetLambdaResources(Aws::Vector<LambdaResource>&& value) { m_lambdaResourcesHasBeenSet = true; m_lambdaResources = value; }
+
+    /**
+     * <p>The Python-language Lambda functions for this job.</p>
+     */
+    inline JobResource& WithLambdaResources(const Aws::Vector<LambdaResource>& value) { SetLambdaResources(value); return *this;}
+
+    /**
+     * <p>The Python-language Lambda functions for this job.</p>
+     */
+    inline JobResource& WithLambdaResources(Aws::Vector<LambdaResource>&& value) { SetLambdaResources(value); return *this;}
+
+    /**
+     * <p>The Python-language Lambda functions for this job.</p>
+     */
+    inline JobResource& AddLambdaResources(const LambdaResource& value) { m_lambdaResourcesHasBeenSet = true; m_lambdaResources.push_back(value); return *this; }
+
+    /**
+     * <p>The Python-language Lambda functions for this job.</p>
+     */
+    inline JobResource& AddLambdaResources(LambdaResource&& value) { m_lambdaResourcesHasBeenSet = true; m_lambdaResources.push_back(value); return *this; }
+
   private:
     Aws::Vector<S3Resource> m_s3Resources;
     bool m_s3ResourcesHasBeenSet;
+    Aws::Vector<LambdaResource> m_lambdaResources;
+    bool m_lambdaResourcesHasBeenSet;
   };
 
 } // namespace Model

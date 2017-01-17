@@ -25,7 +25,8 @@ namespace Model
   enum class SourceRepository
   {
     NOT_SET,
-    CodeCommit
+    CodeCommit,
+    S3
   };
 
 namespace SourceRepositoryMapper

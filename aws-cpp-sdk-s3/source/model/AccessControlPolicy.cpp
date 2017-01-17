@@ -86,7 +86,7 @@ void AccessControlPolicy::AddToNode(XmlNode& parentNode) const
 
   if(m_ownerHasBeenSet)
   {
-   XmlNode ownerNode = parentNode.CreateChildElement("AccessControlList");
+   XmlNode ownerNode = parentNode.CreateChildElement("Owner");
    m_owner.AddToNode(ownerNode);
   }
 

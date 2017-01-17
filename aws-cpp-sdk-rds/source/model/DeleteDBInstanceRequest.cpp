@@ -38,7 +38,7 @@ Aws::String DeleteDBInstanceRequest::SerializePayload() const
 
   if(m_skipFinalSnapshotHasBeenSet)
   {
-    ss << "SkipFinalSnapshot=" << m_skipFinalSnapshot << "&";
+    ss << "SkipFinalSnapshot=" << std::boolalpha << m_skipFinalSnapshot << "&";
   }
 
   if(m_finalDBSnapshotIdentifierHasBeenSet)

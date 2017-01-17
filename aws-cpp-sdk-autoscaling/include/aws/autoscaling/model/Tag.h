@@ -32,7 +32,9 @@ namespace Model
 {
 
   /**
-   * <p>Describes a tag for an Auto Scaling group.</p>
+   * <p>Describes a tag for an Auto Scaling group.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/Tag">AWS API
+   * Reference</a></p>
    */
   class AWS_AUTOSCALING_API Tag
   {

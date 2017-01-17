@@ -89,7 +89,7 @@ cmake_policy(SET CMP0056 NEW)
 
 project("aws-cpp-sdk-all" VERSION "${PROJECT_VERSION}" LANGUAGES CXX)
 
-# http client, encryption, zlib, uuid
+# http client, encryption, zlib
 include(external_dependencies)
 
 if(COMMAND apply_post_project_platform_settings)

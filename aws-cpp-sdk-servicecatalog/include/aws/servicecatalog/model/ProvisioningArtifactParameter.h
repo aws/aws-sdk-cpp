@@ -33,7 +33,9 @@ namespace Model
 
   /**
    * <p>A parameter used to successfully provision the product. This value includes a
-   * list of allowable values and additional metadata. </p>
+   * list of allowable values and additional metadata. </p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ProvisioningArtifactParameter">AWS
+   * API Reference</a></p>
    */
   class AWS_SERVICECATALOG_API ProvisioningArtifactParameter
   {

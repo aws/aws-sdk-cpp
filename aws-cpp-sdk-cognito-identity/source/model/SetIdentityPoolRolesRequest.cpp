@@ -23,7 +23,8 @@ using namespace Aws::Utils;
 
 SetIdentityPoolRolesRequest::SetIdentityPoolRolesRequest() : 
     m_identityPoolIdHasBeenSet(false),
-    m_rolesHasBeenSet(false)
+    m_rolesHasBeenSet(false),
+    m_roleMappingsHasBeenSet(false)
 {
 }
 
@@ -45,6 +46,17 @@ Aws::String SetIdentityPoolRolesRequest::SerializePayload() const
      rolesJsonMap.WithString(rolesItem.first, rolesItem.second);
    }
    payload.WithObject("Roles", std::move(rolesJsonMap));
+
+  }
+
+  if(m_roleMappingsHasBeenSet)
+  {
+   JsonValue roleMappingsJsonMap;
+   for(auto& roleMappingsItem : m_roleMappings)
+   {
+     roleMappingsJsonMap.WithObject(roleMappingsItem.first, roleMappingsItem.second.Jsonize());
+   }
+   payload.WithObject("RoleMappings", std::move(roleMappingsJsonMap));
 
   }
 

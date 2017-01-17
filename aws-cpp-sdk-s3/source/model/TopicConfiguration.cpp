@@ -98,7 +98,7 @@ void TopicConfiguration::AddToNode(XmlNode& parentNode) const
 
   if(m_topicArnHasBeenSet)
   {
-   XmlNode topicArnNode = parentNode.CreateChildElement("TopicArn");
+   XmlNode topicArnNode = parentNode.CreateChildElement("Topic");
    topicArnNode.SetText(m_topicArn);
   }
 
@@ -113,7 +113,7 @@ void TopicConfiguration::AddToNode(XmlNode& parentNode) const
 
   if(m_filterHasBeenSet)
   {
-   XmlNode filterNode = parentNode.CreateChildElement("Event");
+   XmlNode filterNode = parentNode.CreateChildElement("Filter");
    m_filter.AddToNode(filterNode);
   }
 

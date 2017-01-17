@@ -32,7 +32,9 @@ namespace Model
 
   /**
    * <p>The parent object that contains error information associated with your
-   * configuration settings.</p>
+   * configuration settings.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/EnvironmentError">AWS
+   * API Reference</a></p>
    */
   class AWS_LAMBDA_API EnvironmentError
   {

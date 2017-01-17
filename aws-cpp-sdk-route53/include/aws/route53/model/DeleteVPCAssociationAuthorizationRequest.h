@@ -28,7 +28,10 @@ namespace Model
   /**
    * <p>A complex type that contains information about the request to remove
    * authorization to associate a VPC that was created by one AWS account with a
-   * hosted zone that was created with a different AWS account. </p>
+   * hosted zone that was created with a different AWS account. </p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DeleteVPCAssociationAuthorizationRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_ROUTE53_API DeleteVPCAssociationAuthorizationRequest : public Route53Request
   {

@@ -24,6 +24,7 @@
 #include <aws/ec2/model/GroupIdentifier.h>
 #include <aws/ec2/model/Tag.h>
 #include <aws/ec2/model/NetworkInterfacePrivateIpAddress.h>
+#include <aws/ec2/model/NetworkInterfaceIpv6Address.h>
 
 namespace Aws
 {
@@ -40,7 +41,9 @@ namespace Model
 {
 
   /**
-   * <p>Describes a network interface.</p>
+   * <p>Describes a network interface.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/NetworkInterface">AWS
+   * API Reference</a></p>
    */
   class AWS_EC2_API NetworkInterface
   {
@@ -380,37 +383,37 @@ namespace Model
     inline NetworkInterface& WithMacAddress(const char* value) { SetMacAddress(value); return *this;}
 
     /**
-     * <p>The IP address of the network interface within the subnet.</p>
+     * <p>The IPv4 address of the network interface within the subnet.</p>
      */
     inline const Aws::String& GetPrivateIpAddress() const{ return m_privateIpAddress; }
 
     /**
-     * <p>The IP address of the network interface within the subnet.</p>
+     * <p>The IPv4 address of the network interface within the subnet.</p>
      */
     inline void SetPrivateIpAddress(const Aws::String& value) { m_privateIpAddressHasBeenSet = true; m_privateIpAddress = value; }
 
     /**
-     * <p>The IP address of the network interface within the subnet.</p>
+     * <p>The IPv4 address of the network interface within the subnet.</p>
      */
     inline void SetPrivateIpAddress(Aws::String&& value) { m_privateIpAddressHasBeenSet = true; m_privateIpAddress = value; }
 
     /**
-     * <p>The IP address of the network interface within the subnet.</p>
+     * <p>The IPv4 address of the network interface within the subnet.</p>
      */
     inline void SetPrivateIpAddress(const char* value) { m_privateIpAddressHasBeenSet = true; m_privateIpAddress.assign(value); }
 
     /**
-     * <p>The IP address of the network interface within the subnet.</p>
+     * <p>The IPv4 address of the network interface within the subnet.</p>
      */
     inline NetworkInterface& WithPrivateIpAddress(const Aws::String& value) { SetPrivateIpAddress(value); return *this;}
 
     /**
-     * <p>The IP address of the network interface within the subnet.</p>
+     * <p>The IPv4 address of the network interface within the subnet.</p>
      */
     inline NetworkInterface& WithPrivateIpAddress(Aws::String&& value) { SetPrivateIpAddress(value); return *this;}
 
     /**
-     * <p>The IP address of the network interface within the subnet.</p>
+     * <p>The IPv4 address of the network interface within the subnet.</p>
      */
     inline NetworkInterface& WithPrivateIpAddress(const char* value) { SetPrivateIpAddress(value); return *this;}
 
@@ -525,32 +528,32 @@ namespace Model
     inline NetworkInterface& WithAttachment(NetworkInterfaceAttachment&& value) { SetAttachment(value); return *this;}
 
     /**
-     * <p>The association information for an Elastic IP associated with the network
-     * interface.</p>
+     * <p>The association information for an Elastic IP address (IPv4) associated with
+     * the network interface.</p>
      */
     inline const NetworkInterfaceAssociation& GetAssociation() const{ return m_association; }
 
     /**
-     * <p>The association information for an Elastic IP associated with the network
-     * interface.</p>
+     * <p>The association information for an Elastic IP address (IPv4) associated with
+     * the network interface.</p>
      */
     inline void SetAssociation(const NetworkInterfaceAssociation& value) { m_associationHasBeenSet = true; m_association = value; }
 
     /**
-     * <p>The association information for an Elastic IP associated with the network
-     * interface.</p>
+     * <p>The association information for an Elastic IP address (IPv4) associated with
+     * the network interface.</p>
      */
     inline void SetAssociation(NetworkInterfaceAssociation&& value) { m_associationHasBeenSet = true; m_association = value; }
 
     /**
-     * <p>The association information for an Elastic IP associated with the network
-     * interface.</p>
+     * <p>The association information for an Elastic IP address (IPv4) associated with
+     * the network interface.</p>
      */
     inline NetworkInterface& WithAssociation(const NetworkInterfaceAssociation& value) { SetAssociation(value); return *this;}
 
     /**
-     * <p>The association information for an Elastic IP associated with the network
-     * interface.</p>
+     * <p>The association information for an Elastic IP address (IPv4) associated with
+     * the network interface.</p>
      */
     inline NetworkInterface& WithAssociation(NetworkInterfaceAssociation&& value) { SetAssociation(value); return *this;}
 
@@ -590,62 +593,97 @@ namespace Model
     inline NetworkInterface& AddTagSet(Tag&& value) { m_tagSetHasBeenSet = true; m_tagSet.push_back(value); return *this; }
 
     /**
-     * <p>The private IP addresses associated with the network interface.</p>
+     * <p>The private IPv4 addresses associated with the network interface.</p>
      */
     inline const Aws::Vector<NetworkInterfacePrivateIpAddress>& GetPrivateIpAddresses() const{ return m_privateIpAddresses; }
 
     /**
-     * <p>The private IP addresses associated with the network interface.</p>
+     * <p>The private IPv4 addresses associated with the network interface.</p>
      */
     inline void SetPrivateIpAddresses(const Aws::Vector<NetworkInterfacePrivateIpAddress>& value) { m_privateIpAddressesHasBeenSet = true; m_privateIpAddresses = value; }
 
     /**
-     * <p>The private IP addresses associated with the network interface.</p>
+     * <p>The private IPv4 addresses associated with the network interface.</p>
      */
     inline void SetPrivateIpAddresses(Aws::Vector<NetworkInterfacePrivateIpAddress>&& value) { m_privateIpAddressesHasBeenSet = true; m_privateIpAddresses = value; }
 
     /**
-     * <p>The private IP addresses associated with the network interface.</p>
+     * <p>The private IPv4 addresses associated with the network interface.</p>
      */
     inline NetworkInterface& WithPrivateIpAddresses(const Aws::Vector<NetworkInterfacePrivateIpAddress>& value) { SetPrivateIpAddresses(value); return *this;}
 
     /**
-     * <p>The private IP addresses associated with the network interface.</p>
+     * <p>The private IPv4 addresses associated with the network interface.</p>
      */
     inline NetworkInterface& WithPrivateIpAddresses(Aws::Vector<NetworkInterfacePrivateIpAddress>&& value) { SetPrivateIpAddresses(value); return *this;}
 
     /**
-     * <p>The private IP addresses associated with the network interface.</p>
+     * <p>The private IPv4 addresses associated with the network interface.</p>
      */
     inline NetworkInterface& AddPrivateIpAddresses(const NetworkInterfacePrivateIpAddress& value) { m_privateIpAddressesHasBeenSet = true; m_privateIpAddresses.push_back(value); return *this; }
 
     /**
-     * <p>The private IP addresses associated with the network interface.</p>
+     * <p>The private IPv4 addresses associated with the network interface.</p>
      */
     inline NetworkInterface& AddPrivateIpAddresses(NetworkInterfacePrivateIpAddress&& value) { m_privateIpAddressesHasBeenSet = true; m_privateIpAddresses.push_back(value); return *this; }
 
     /**
-     * <p>The type of interface. </p>
+     * <p>The IPv6 addresses associated with the network interface.</p>
+     */
+    inline const Aws::Vector<NetworkInterfaceIpv6Address>& GetIpv6Addresses() const{ return m_ipv6Addresses; }
+
+    /**
+     * <p>The IPv6 addresses associated with the network interface.</p>
+     */
+    inline void SetIpv6Addresses(const Aws::Vector<NetworkInterfaceIpv6Address>& value) { m_ipv6AddressesHasBeenSet = true; m_ipv6Addresses = value; }
+
+    /**
+     * <p>The IPv6 addresses associated with the network interface.</p>
+     */
+    inline void SetIpv6Addresses(Aws::Vector<NetworkInterfaceIpv6Address>&& value) { m_ipv6AddressesHasBeenSet = true; m_ipv6Addresses = value; }
+
+    /**
+     * <p>The IPv6 addresses associated with the network interface.</p>
+     */
+    inline NetworkInterface& WithIpv6Addresses(const Aws::Vector<NetworkInterfaceIpv6Address>& value) { SetIpv6Addresses(value); return *this;}
+
+    /**
+     * <p>The IPv6 addresses associated with the network interface.</p>
+     */
+    inline NetworkInterface& WithIpv6Addresses(Aws::Vector<NetworkInterfaceIpv6Address>&& value) { SetIpv6Addresses(value); return *this;}
+
+    /**
+     * <p>The IPv6 addresses associated with the network interface.</p>
+     */
+    inline NetworkInterface& AddIpv6Addresses(const NetworkInterfaceIpv6Address& value) { m_ipv6AddressesHasBeenSet = true; m_ipv6Addresses.push_back(value); return *this; }
+
+    /**
+     * <p>The IPv6 addresses associated with the network interface.</p>
+     */
+    inline NetworkInterface& AddIpv6Addresses(NetworkInterfaceIpv6Address&& value) { m_ipv6AddressesHasBeenSet = true; m_ipv6Addresses.push_back(value); return *this; }
+
+    /**
+     * <p>The type of interface.</p>
      */
     inline const NetworkInterfaceType& GetInterfaceType() const{ return m_interfaceType; }
 
     /**
-     * <p>The type of interface. </p>
+     * <p>The type of interface.</p>
      */
     inline void SetInterfaceType(const NetworkInterfaceType& value) { m_interfaceTypeHasBeenSet = true; m_interfaceType = value; }
 
     /**
-     * <p>The type of interface. </p>
+     * <p>The type of interface.</p>
      */
     inline void SetInterfaceType(NetworkInterfaceType&& value) { m_interfaceTypeHasBeenSet = true; m_interfaceType = value; }
 
     /**
-     * <p>The type of interface. </p>
+     * <p>The type of interface.</p>
      */
     inline NetworkInterface& WithInterfaceType(const NetworkInterfaceType& value) { SetInterfaceType(value); return *this;}
 
     /**
-     * <p>The type of interface. </p>
+     * <p>The type of interface.</p>
      */
     inline NetworkInterface& WithInterfaceType(NetworkInterfaceType&& value) { SetInterfaceType(value); return *this;}
 
@@ -686,6 +724,8 @@ namespace Model
     bool m_tagSetHasBeenSet;
     Aws::Vector<NetworkInterfacePrivateIpAddress> m_privateIpAddresses;
     bool m_privateIpAddressesHasBeenSet;
+    Aws::Vector<NetworkInterfaceIpv6Address> m_ipv6Addresses;
+    bool m_ipv6AddressesHasBeenSet;
     NetworkInterfaceType m_interfaceType;
     bool m_interfaceTypeHasBeenSet;
   };

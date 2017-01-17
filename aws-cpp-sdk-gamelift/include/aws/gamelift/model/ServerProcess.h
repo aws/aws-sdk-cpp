@@ -35,7 +35,10 @@ namespace Model
    * fleet. Each instruction set identifies the location of the server executable,
    * optional launch parameters, and the number of server processes with this
    * configuration to maintain concurrently on the instance. Server process
-   * configurations make up a fleet's <code> <a>RuntimeConfiguration</a> </code>.</p>
+   * configurations make up a fleet's <code> <a>RuntimeConfiguration</a>
+   * </code>.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/ServerProcess">AWS
+   * API Reference</a></p>
    */
   class AWS_GAMELIFT_API ServerProcess
   {

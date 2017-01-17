@@ -31,7 +31,9 @@ namespace Model
 {
 
   /**
-   * <p>Describes a gateway's network interface.</p>
+   * <p>Describes a gateway's network interface.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/NetworkInterface">AWS
+   * API Reference</a></p>
    */
   class AWS_STORAGEGATEWAY_API NetworkInterface
   {
@@ -77,44 +79,44 @@ namespace Model
     inline NetworkInterface& WithIpv4Address(const char* value) { SetIpv4Address(value); return *this;}
 
     /**
-     * <p>The Media Access Control (MAC) address of the interface.</p> <note><p>This is
-     * currently unsupported and will not be returned in output.</p> </note>
+     * <p>The Media Access Control (MAC) address of the interface.</p> <note> <p>This
+     * is currently unsupported and will not be returned in output.</p> </note>
      */
     inline const Aws::String& GetMacAddress() const{ return m_macAddress; }
 
     /**
-     * <p>The Media Access Control (MAC) address of the interface.</p> <note><p>This is
-     * currently unsupported and will not be returned in output.</p> </note>
+     * <p>The Media Access Control (MAC) address of the interface.</p> <note> <p>This
+     * is currently unsupported and will not be returned in output.</p> </note>
      */
     inline void SetMacAddress(const Aws::String& value) { m_macAddressHasBeenSet = true; m_macAddress = value; }
 
     /**
-     * <p>The Media Access Control (MAC) address of the interface.</p> <note><p>This is
-     * currently unsupported and will not be returned in output.</p> </note>
+     * <p>The Media Access Control (MAC) address of the interface.</p> <note> <p>This
+     * is currently unsupported and will not be returned in output.</p> </note>
      */
     inline void SetMacAddress(Aws::String&& value) { m_macAddressHasBeenSet = true; m_macAddress = value; }
 
     /**
-     * <p>The Media Access Control (MAC) address of the interface.</p> <note><p>This is
-     * currently unsupported and will not be returned in output.</p> </note>
+     * <p>The Media Access Control (MAC) address of the interface.</p> <note> <p>This
+     * is currently unsupported and will not be returned in output.</p> </note>
      */
     inline void SetMacAddress(const char* value) { m_macAddressHasBeenSet = true; m_macAddress.assign(value); }
 
     /**
-     * <p>The Media Access Control (MAC) address of the interface.</p> <note><p>This is
-     * currently unsupported and will not be returned in output.</p> </note>
+     * <p>The Media Access Control (MAC) address of the interface.</p> <note> <p>This
+     * is currently unsupported and will not be returned in output.</p> </note>
      */
     inline NetworkInterface& WithMacAddress(const Aws::String& value) { SetMacAddress(value); return *this;}
 
     /**
-     * <p>The Media Access Control (MAC) address of the interface.</p> <note><p>This is
-     * currently unsupported and will not be returned in output.</p> </note>
+     * <p>The Media Access Control (MAC) address of the interface.</p> <note> <p>This
+     * is currently unsupported and will not be returned in output.</p> </note>
      */
     inline NetworkInterface& WithMacAddress(Aws::String&& value) { SetMacAddress(value); return *this;}
 
     /**
-     * <p>The Media Access Control (MAC) address of the interface.</p> <note><p>This is
-     * currently unsupported and will not be returned in output.</p> </note>
+     * <p>The Media Access Control (MAC) address of the interface.</p> <note> <p>This
+     * is currently unsupported and will not be returned in output.</p> </note>
      */
     inline NetworkInterface& WithMacAddress(const char* value) { SetMacAddress(value); return *this;}
 

@@ -35,7 +35,9 @@ namespace Model
 
   /**
    * <p>Represents the structure of actions and stages to be performed in the
-   * pipeline.</p>
+   * pipeline.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/PipelineDeclaration">AWS
+   * API Reference</a></p>
    */
   class AWS_CODEPIPELINE_API PipelineDeclaration
   {

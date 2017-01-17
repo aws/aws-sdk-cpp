@@ -31,7 +31,10 @@ namespace Model
 {
 
   /**
-   * <p>Specifies the type and name of a resource referenced by an event.</p>
+   * <p>Specifies the type and name of a resource referenced by an
+   * event.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/Resource">AWS
+   * API Reference</a></p>
    */
   class AWS_CLOUDTRAIL_API Resource
   {

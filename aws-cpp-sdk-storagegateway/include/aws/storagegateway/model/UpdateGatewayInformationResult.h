@@ -33,7 +33,10 @@ namespace StorageGateway
 namespace Model
 {
   /**
-   * <p>A JSON object containing the ARN of the gateway that was updated.</p>
+   * <p>A JSON object containing the ARN of the gateway that was
+   * updated.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/UpdateGatewayInformationOutput">AWS
+   * API Reference</a></p>
    */
   class AWS_STORAGEGATEWAY_API UpdateGatewayInformationResult
   {

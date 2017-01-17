@@ -99,7 +99,7 @@ void Job::OutputToStream(Aws::OStream& oStream, const char* location, unsigned i
 
   if(m_isCanceledHasBeenSet)
   {
-      oStream << location << index << locationValue << ".IsCanceled=" << m_isCanceled << "&";
+      oStream << location << index << locationValue << ".IsCanceled=" << std::boolalpha << m_isCanceled << "&";
   }
 
   if(m_jobTypeHasBeenSet)
@@ -121,7 +121,7 @@ void Job::OutputToStream(Aws::OStream& oStream, const char* location) const
   }
   if(m_isCanceledHasBeenSet)
   {
-      oStream << location << ".IsCanceled=" << m_isCanceled << "&";
+      oStream << location << ".IsCanceled=" << std::boolalpha << m_isCanceled << "&";
   }
   if(m_jobTypeHasBeenSet)
   {

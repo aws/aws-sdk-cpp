@@ -44,7 +44,9 @@ namespace Model
    * <a>ModifyDBCluster</a> </p> </li> <li> <p> <a>RestoreDBClusterFromSnapshot</a>
    * </p> </li> <li> <p> <a>RestoreDBClusterToPointInTime</a> </p> </li> </ul>
    * <p>This data type is used as a response element in the <a>DescribeDBClusters</a>
-   * action.</p>
+   * action.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DBCluster">AWS API
+   * Reference</a></p>
    */
   class AWS_RDS_API DBCluster
   {
@@ -586,6 +588,24 @@ namespace Model
      * endpoint.</p>
      */
     inline DBCluster& WithReaderEndpoint(const char* value) { SetReaderEndpoint(value); return *this;}
+
+    /**
+     * <p>Specifies whether the DB cluster has instances in multiple Availability
+     * Zones.</p>
+     */
+    inline bool GetMultiAZ() const{ return m_multiAZ; }
+
+    /**
+     * <p>Specifies whether the DB cluster has instances in multiple Availability
+     * Zones.</p>
+     */
+    inline void SetMultiAZ(bool value) { m_multiAZHasBeenSet = true; m_multiAZ = value; }
+
+    /**
+     * <p>Specifies whether the DB cluster has instances in multiple Availability
+     * Zones.</p>
+     */
+    inline DBCluster& WithMultiAZ(bool value) { SetMultiAZ(value); return *this;}
 
     /**
      * <p>Provides the name of the database engine to be used for this DB cluster.</p>
@@ -1262,6 +1282,36 @@ namespace Model
      */
     inline DBCluster& AddAssociatedRoles(DBClusterRole&& value) { m_associatedRolesHasBeenSet = true; m_associatedRoles.push_back(value); return *this; }
 
+    /**
+     * <p>Specifies the time when the DB cluster was created, in Universal Coordinated
+     * Time (UTC).</p>
+     */
+    inline const Aws::Utils::DateTime& GetClusterCreateTime() const{ return m_clusterCreateTime; }
+
+    /**
+     * <p>Specifies the time when the DB cluster was created, in Universal Coordinated
+     * Time (UTC).</p>
+     */
+    inline void SetClusterCreateTime(const Aws::Utils::DateTime& value) { m_clusterCreateTimeHasBeenSet = true; m_clusterCreateTime = value; }
+
+    /**
+     * <p>Specifies the time when the DB cluster was created, in Universal Coordinated
+     * Time (UTC).</p>
+     */
+    inline void SetClusterCreateTime(Aws::Utils::DateTime&& value) { m_clusterCreateTimeHasBeenSet = true; m_clusterCreateTime = value; }
+
+    /**
+     * <p>Specifies the time when the DB cluster was created, in Universal Coordinated
+     * Time (UTC).</p>
+     */
+    inline DBCluster& WithClusterCreateTime(const Aws::Utils::DateTime& value) { SetClusterCreateTime(value); return *this;}
+
+    /**
+     * <p>Specifies the time when the DB cluster was created, in Universal Coordinated
+     * Time (UTC).</p>
+     */
+    inline DBCluster& WithClusterCreateTime(Aws::Utils::DateTime&& value) { SetClusterCreateTime(value); return *this;}
+
   private:
     int m_allocatedStorage;
     bool m_allocatedStorageHasBeenSet;
@@ -1289,6 +1339,8 @@ namespace Model
     bool m_endpointHasBeenSet;
     Aws::String m_readerEndpoint;
     bool m_readerEndpointHasBeenSet;
+    bool m_multiAZ;
+    bool m_multiAZHasBeenSet;
     Aws::String m_engine;
     bool m_engineHasBeenSet;
     Aws::String m_engineVersion;
@@ -1325,6 +1377,8 @@ namespace Model
     bool m_dBClusterArnHasBeenSet;
     Aws::Vector<DBClusterRole> m_associatedRoles;
     bool m_associatedRolesHasBeenSet;
+    Aws::Utils::DateTime m_clusterCreateTime;
+    bool m_clusterCreateTimeHasBeenSet;
   };
 
 } // namespace Model

@@ -26,7 +26,9 @@ namespace Model
 
   /**
    * <p>Request to generate a sample mapping template used to transform the
-   * payload.</p>
+   * payload.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetModelTemplateRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_APIGATEWAY_API GetModelTemplateRequest : public APIGatewayRequest
   {

@@ -33,7 +33,9 @@ namespace DeviceFarm
 namespace Model
 {
   /**
-   * <p>The result of a renewal offering.</p>
+   * <p>The result of a renewal offering.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/RenewOfferingResult">AWS
+   * API Reference</a></p>
    */
   class AWS_DEVICEFARM_API RenewOfferingResult
   {

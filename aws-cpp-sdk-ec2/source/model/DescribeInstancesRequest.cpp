@@ -36,7 +36,7 @@ Aws::String DescribeInstancesRequest::SerializePayload() const
   ss << "Action=DescribeInstances&";
   if(m_dryRunHasBeenSet)
   {
-    ss << "DryRun=" << m_dryRun << "&";
+    ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
   if(m_instanceIdsHasBeenSet)
@@ -70,7 +70,7 @@ Aws::String DescribeInstancesRequest::SerializePayload() const
     ss << "MaxResults=" << m_maxResults << "&";
   }
 
-  ss << "Version=2015-10-01";
+  ss << "Version=2016-11-15";
   return ss.str();
 }
 

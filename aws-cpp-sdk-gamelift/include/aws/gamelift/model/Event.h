@@ -35,7 +35,10 @@ namespace Model
   /**
    * <p>Log entry describing an event involving Amazon GameLift resources (such as a
    * fleet). In addition to tracking activity, event codes and messages can provide
-   * additional information for troubleshooting and debugging problems.</p>
+   * additional information for troubleshooting and debugging problems.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/Event">AWS API
+   * Reference</a></p>
    */
   class AWS_GAMELIFT_API Event
   {

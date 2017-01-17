@@ -27,7 +27,10 @@ namespace Model
   /**
    * <p>A JSON object containing one or more of the following fields:</p> <ul> <li>
    * <p> <a>DeleteChapCredentialsInput$InitiatorName</a> </p> </li> <li> <p>
-   * <a>DeleteChapCredentialsInput$TargetARN</a> </p> </li> </ul>
+   * <a>DeleteChapCredentialsInput$TargetARN</a> </p> </li> </ul><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DeleteChapCredentialsInput">AWS
+   * API Reference</a></p>
    */
   class AWS_STORAGEGATEWAY_API DeleteChapCredentialsRequest : public StorageGatewayRequest
   {

@@ -170,7 +170,10 @@ namespace Model
    * role attached to invoke AWS Lambda functions.</li> <li>
    * <b>StartLambdaFunctionFailed</b>: Failed to invoke the scheduled function in the
    * AWS Lambda service. This happens when the AWS Lambda service is not available in
-   * the current region, or received too many requests.</li> </ul>
+   * the current region, or received too many requests.</li> </ul><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/HistoryEvent">AWS
+   * API Reference</a></p>
    */
   class AWS_SWF_API HistoryEvent
   {

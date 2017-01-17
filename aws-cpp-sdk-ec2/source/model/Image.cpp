@@ -48,6 +48,8 @@ Image::Image() :
     m_platform(PlatformValues::NOT_SET),
     m_platformHasBeenSet(false),
     m_sriovNetSupportHasBeenSet(false),
+    m_enaSupport(false),
+    m_enaSupportHasBeenSet(false),
     m_stateReasonHasBeenSet(false),
     m_imageOwnerAliasHasBeenSet(false),
     m_nameHasBeenSet(false),
@@ -83,6 +85,8 @@ Image::Image(const XmlNode& xmlNode) :
     m_platform(PlatformValues::NOT_SET),
     m_platformHasBeenSet(false),
     m_sriovNetSupportHasBeenSet(false),
+    m_enaSupport(false),
+    m_enaSupportHasBeenSet(false),
     m_stateReasonHasBeenSet(false),
     m_imageOwnerAliasHasBeenSet(false),
     m_nameHasBeenSet(false),
@@ -190,6 +194,12 @@ Image& Image::operator =(const XmlNode& xmlNode)
       m_sriovNetSupport = StringUtils::Trim(sriovNetSupportNode.GetText().c_str());
       m_sriovNetSupportHasBeenSet = true;
     }
+    XmlNode enaSupportNode = resultNode.FirstChild("enaSupport");
+    if(!enaSupportNode.IsNull())
+    {
+      m_enaSupport = StringUtils::ConvertToBool(StringUtils::Trim(enaSupportNode.GetText().c_str()).c_str());
+      m_enaSupportHasBeenSet = true;
+    }
     XmlNode stateReasonNode = resultNode.FirstChild("stateReason");
     if(!stateReasonNode.IsNull())
     {
@@ -296,7 +306,7 @@ void Image::OutputToStream(Aws::OStream& oStream, const char* location, unsigned
 
   if(m_publicHasBeenSet)
   {
-      oStream << location << index << locationValue << ".Public=" << m_public << "&";
+      oStream << location << index << locationValue << ".Public=" << std::boolalpha << m_public << "&";
   }
 
   if(m_productCodesHasBeenSet)
@@ -338,6 +348,11 @@ void Image::OutputToStream(Aws::OStream& oStream, const char* location, unsigned
   if(m_sriovNetSupportHasBeenSet)
   {
       oStream << location << index << locationValue << ".SriovNetSupport=" << StringUtils::URLEncode(m_sriovNetSupport.c_str()) << "&";
+  }
+
+  if(m_enaSupportHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".EnaSupport=" << std::boolalpha << m_enaSupport << "&";
   }
 
   if(m_stateReasonHasBeenSet)
@@ -430,7 +445,7 @@ void Image::OutputToStream(Aws::OStream& oStream, const char* location) const
   }
   if(m_publicHasBeenSet)
   {
-      oStream << location << ".Public=" << m_public << "&";
+      oStream << location << ".Public=" << std::boolalpha << m_public << "&";
   }
   if(m_productCodesHasBeenSet)
   {
@@ -438,7 +453,7 @@ void Image::OutputToStream(Aws::OStream& oStream, const char* location) const
       for(auto& item : m_productCodes)
       {
         Aws::StringStream productCodesSs;
-        productCodesSs << location <<  ".item." << productCodesIdx++;
+        productCodesSs << location <<  ".Item." << productCodesIdx++;
         item.OutputToStream(oStream, productCodesSs.str().c_str());
       }
   }
@@ -465,6 +480,10 @@ void Image::OutputToStream(Aws::OStream& oStream, const char* location) const
   if(m_sriovNetSupportHasBeenSet)
   {
       oStream << location << ".SriovNetSupport=" << StringUtils::URLEncode(m_sriovNetSupport.c_str()) << "&";
+  }
+  if(m_enaSupportHasBeenSet)
+  {
+      oStream << location << ".EnaSupport=" << std::boolalpha << m_enaSupport << "&";
   }
   if(m_stateReasonHasBeenSet)
   {
@@ -498,7 +517,7 @@ void Image::OutputToStream(Aws::OStream& oStream, const char* location) const
       for(auto& item : m_blockDeviceMappings)
       {
         Aws::StringStream blockDeviceMappingsSs;
-        blockDeviceMappingsSs << location <<  ".item." << blockDeviceMappingsIdx++;
+        blockDeviceMappingsSs << location <<  ".Item." << blockDeviceMappingsIdx++;
         item.OutputToStream(oStream, blockDeviceMappingsSs.str().c_str());
       }
   }
@@ -512,7 +531,7 @@ void Image::OutputToStream(Aws::OStream& oStream, const char* location) const
       for(auto& item : m_tags)
       {
         Aws::StringStream tagsSs;
-        tagsSs << location <<  ".item." << tagsIdx++;
+        tagsSs << location <<  ".Item." << tagsIdx++;
         item.OutputToStream(oStream, tagsSs.str().c_str());
       }
   }

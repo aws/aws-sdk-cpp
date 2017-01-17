@@ -26,7 +26,10 @@ namespace Model
 {
 
   /**
-   * <p>A complex type that contains the health check request information.</p>
+   * <p>A complex type that contains the health check request
+   * information.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/CreateHealthCheckRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_ROUTE53_API CreateHealthCheckRequest : public Route53Request
   {

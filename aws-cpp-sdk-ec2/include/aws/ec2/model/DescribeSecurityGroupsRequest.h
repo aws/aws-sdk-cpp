@@ -27,7 +27,10 @@ namespace Model
 {
 
   /**
-   * <p>Contains the parameters for DescribeSecurityGroups.</p>
+   * <p>Contains the parameters for DescribeSecurityGroups.</p><p><h3>See Also:</h3> 
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeSecurityGroupsRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_EC2_API DescribeSecurityGroupsRequest : public EC2Request
   {
@@ -174,210 +177,224 @@ namespace Model
     /**
      * <p>One or more filters. If using multiple filters for rules, the results include
      * security groups for which any combination of rules - not necessarily a single
-     * rule - match all filters.</p> <ul> <li> <p><code>description</code> - The
-     * description of the security group.</p> </li> <li>
-     * <p><code>egress.ip-permission.prefix-list-id</code> - The ID (prefix) of the AWS
-     * service to which the security group allows access.</p> </li> <li>
-     * <p><code>group-id</code> - The ID of the security group. </p> </li> <li>
-     * <p><code>group-name</code> - The name of the security group.</p> </li> <li>
-     * <p><code>ip-permission.cidr</code> - A CIDR range that has been granted
-     * permission.</p> </li> <li> <p><code>ip-permission.from-port</code> - The start
-     * of port range for the TCP and UDP protocols, or an ICMP type number.</p> </li>
-     * <li> <p><code>ip-permission.group-id</code> - The ID of a security group that
-     * has been granted permission.</p> </li> <li>
-     * <p><code>ip-permission.group-name</code> - The name of a security group that has
-     * been granted permission.</p> </li> <li> <p><code>ip-permission.protocol</code> -
-     * The IP protocol for the permission (<code>tcp</code> | <code>udp</code> |
-     * <code>icmp</code> or a protocol number).</p> </li> <li>
-     * <p><code>ip-permission.to-port</code> - The end of port range for the TCP and
-     * UDP protocols, or an ICMP code.</p> </li> <li>
-     * <p><code>ip-permission.user-id</code> - The ID of an AWS account that has been
-     * granted permission.</p> </li> <li> <p><code>owner-id</code> - The AWS account ID
-     * of the owner of the security group.</p> </li> <li> <p><code>tag-key</code> - The
-     * key of a tag assigned to the security group.</p> </li> <li>
-     * <p><code>tag-value</code> - The value of a tag assigned to the security
-     * group.</p> </li> <li> <p><code>vpc-id</code> - The ID of the VPC specified when
-     * the security group was created.</p> </li> </ul>
+     * rule - match all filters.</p> <ul> <li> <p> <code>description</code> - The
+     * description of the security group.</p> </li> <li> <p>
+     * <code>egress.ip-permission.prefix-list-id</code> - The ID (prefix) of the AWS
+     * service to which the security group allows access.</p> </li> <li> <p>
+     * <code>group-id</code> - The ID of the security group. </p> </li> <li> <p>
+     * <code>group-name</code> - The name of the security group.</p> </li> <li> <p>
+     * <code>ip-permission.cidr</code> - An IPv4 CIDR range that has been granted
+     * permission in a security group rule.</p> </li> <li> <p>
+     * <code>ip-permission.from-port</code> - The start of port range for the TCP and
+     * UDP protocols, or an ICMP type number.</p> </li> <li> <p>
+     * <code>ip-permission.group-id</code> - The ID of a security group that has been
+     * granted permission.</p> </li> <li> <p> <code>ip-permission.group-name</code> -
+     * The name of a security group that has been granted permission.</p> </li> <li>
+     * <p> <code>ip-permission.ipv6-cidr</code> - An IPv6 CIDR range that has been
+     * granted permission in a security group rule.</p> </li> <li> <p>
+     * <code>ip-permission.protocol</code> - The IP protocol for the permission
+     * (<code>tcp</code> | <code>udp</code> | <code>icmp</code> or a protocol
+     * number).</p> </li> <li> <p> <code>ip-permission.to-port</code> - The end of port
+     * range for the TCP and UDP protocols, or an ICMP code.</p> </li> <li> <p>
+     * <code>ip-permission.user-id</code> - The ID of an AWS account that has been
+     * granted permission.</p> </li> <li> <p> <code>owner-id</code> - The AWS account
+     * ID of the owner of the security group.</p> </li> <li> <p> <code>tag-key</code> -
+     * The key of a tag assigned to the security group.</p> </li> <li> <p>
+     * <code>tag-value</code> - The value of a tag assigned to the security group.</p>
+     * </li> <li> <p> <code>vpc-id</code> - The ID of the VPC specified when the
+     * security group was created.</p> </li> </ul>
      */
     inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
 
     /**
      * <p>One or more filters. If using multiple filters for rules, the results include
      * security groups for which any combination of rules - not necessarily a single
-     * rule - match all filters.</p> <ul> <li> <p><code>description</code> - The
-     * description of the security group.</p> </li> <li>
-     * <p><code>egress.ip-permission.prefix-list-id</code> - The ID (prefix) of the AWS
-     * service to which the security group allows access.</p> </li> <li>
-     * <p><code>group-id</code> - The ID of the security group. </p> </li> <li>
-     * <p><code>group-name</code> - The name of the security group.</p> </li> <li>
-     * <p><code>ip-permission.cidr</code> - A CIDR range that has been granted
-     * permission.</p> </li> <li> <p><code>ip-permission.from-port</code> - The start
-     * of port range for the TCP and UDP protocols, or an ICMP type number.</p> </li>
-     * <li> <p><code>ip-permission.group-id</code> - The ID of a security group that
-     * has been granted permission.</p> </li> <li>
-     * <p><code>ip-permission.group-name</code> - The name of a security group that has
-     * been granted permission.</p> </li> <li> <p><code>ip-permission.protocol</code> -
-     * The IP protocol for the permission (<code>tcp</code> | <code>udp</code> |
-     * <code>icmp</code> or a protocol number).</p> </li> <li>
-     * <p><code>ip-permission.to-port</code> - The end of port range for the TCP and
-     * UDP protocols, or an ICMP code.</p> </li> <li>
-     * <p><code>ip-permission.user-id</code> - The ID of an AWS account that has been
-     * granted permission.</p> </li> <li> <p><code>owner-id</code> - The AWS account ID
-     * of the owner of the security group.</p> </li> <li> <p><code>tag-key</code> - The
-     * key of a tag assigned to the security group.</p> </li> <li>
-     * <p><code>tag-value</code> - The value of a tag assigned to the security
-     * group.</p> </li> <li> <p><code>vpc-id</code> - The ID of the VPC specified when
-     * the security group was created.</p> </li> </ul>
+     * rule - match all filters.</p> <ul> <li> <p> <code>description</code> - The
+     * description of the security group.</p> </li> <li> <p>
+     * <code>egress.ip-permission.prefix-list-id</code> - The ID (prefix) of the AWS
+     * service to which the security group allows access.</p> </li> <li> <p>
+     * <code>group-id</code> - The ID of the security group. </p> </li> <li> <p>
+     * <code>group-name</code> - The name of the security group.</p> </li> <li> <p>
+     * <code>ip-permission.cidr</code> - An IPv4 CIDR range that has been granted
+     * permission in a security group rule.</p> </li> <li> <p>
+     * <code>ip-permission.from-port</code> - The start of port range for the TCP and
+     * UDP protocols, or an ICMP type number.</p> </li> <li> <p>
+     * <code>ip-permission.group-id</code> - The ID of a security group that has been
+     * granted permission.</p> </li> <li> <p> <code>ip-permission.group-name</code> -
+     * The name of a security group that has been granted permission.</p> </li> <li>
+     * <p> <code>ip-permission.ipv6-cidr</code> - An IPv6 CIDR range that has been
+     * granted permission in a security group rule.</p> </li> <li> <p>
+     * <code>ip-permission.protocol</code> - The IP protocol for the permission
+     * (<code>tcp</code> | <code>udp</code> | <code>icmp</code> or a protocol
+     * number).</p> </li> <li> <p> <code>ip-permission.to-port</code> - The end of port
+     * range for the TCP and UDP protocols, or an ICMP code.</p> </li> <li> <p>
+     * <code>ip-permission.user-id</code> - The ID of an AWS account that has been
+     * granted permission.</p> </li> <li> <p> <code>owner-id</code> - The AWS account
+     * ID of the owner of the security group.</p> </li> <li> <p> <code>tag-key</code> -
+     * The key of a tag assigned to the security group.</p> </li> <li> <p>
+     * <code>tag-value</code> - The value of a tag assigned to the security group.</p>
+     * </li> <li> <p> <code>vpc-id</code> - The ID of the VPC specified when the
+     * security group was created.</p> </li> </ul>
      */
     inline void SetFilters(const Aws::Vector<Filter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
     /**
      * <p>One or more filters. If using multiple filters for rules, the results include
      * security groups for which any combination of rules - not necessarily a single
-     * rule - match all filters.</p> <ul> <li> <p><code>description</code> - The
-     * description of the security group.</p> </li> <li>
-     * <p><code>egress.ip-permission.prefix-list-id</code> - The ID (prefix) of the AWS
-     * service to which the security group allows access.</p> </li> <li>
-     * <p><code>group-id</code> - The ID of the security group. </p> </li> <li>
-     * <p><code>group-name</code> - The name of the security group.</p> </li> <li>
-     * <p><code>ip-permission.cidr</code> - A CIDR range that has been granted
-     * permission.</p> </li> <li> <p><code>ip-permission.from-port</code> - The start
-     * of port range for the TCP and UDP protocols, or an ICMP type number.</p> </li>
-     * <li> <p><code>ip-permission.group-id</code> - The ID of a security group that
-     * has been granted permission.</p> </li> <li>
-     * <p><code>ip-permission.group-name</code> - The name of a security group that has
-     * been granted permission.</p> </li> <li> <p><code>ip-permission.protocol</code> -
-     * The IP protocol for the permission (<code>tcp</code> | <code>udp</code> |
-     * <code>icmp</code> or a protocol number).</p> </li> <li>
-     * <p><code>ip-permission.to-port</code> - The end of port range for the TCP and
-     * UDP protocols, or an ICMP code.</p> </li> <li>
-     * <p><code>ip-permission.user-id</code> - The ID of an AWS account that has been
-     * granted permission.</p> </li> <li> <p><code>owner-id</code> - The AWS account ID
-     * of the owner of the security group.</p> </li> <li> <p><code>tag-key</code> - The
-     * key of a tag assigned to the security group.</p> </li> <li>
-     * <p><code>tag-value</code> - The value of a tag assigned to the security
-     * group.</p> </li> <li> <p><code>vpc-id</code> - The ID of the VPC specified when
-     * the security group was created.</p> </li> </ul>
+     * rule - match all filters.</p> <ul> <li> <p> <code>description</code> - The
+     * description of the security group.</p> </li> <li> <p>
+     * <code>egress.ip-permission.prefix-list-id</code> - The ID (prefix) of the AWS
+     * service to which the security group allows access.</p> </li> <li> <p>
+     * <code>group-id</code> - The ID of the security group. </p> </li> <li> <p>
+     * <code>group-name</code> - The name of the security group.</p> </li> <li> <p>
+     * <code>ip-permission.cidr</code> - An IPv4 CIDR range that has been granted
+     * permission in a security group rule.</p> </li> <li> <p>
+     * <code>ip-permission.from-port</code> - The start of port range for the TCP and
+     * UDP protocols, or an ICMP type number.</p> </li> <li> <p>
+     * <code>ip-permission.group-id</code> - The ID of a security group that has been
+     * granted permission.</p> </li> <li> <p> <code>ip-permission.group-name</code> -
+     * The name of a security group that has been granted permission.</p> </li> <li>
+     * <p> <code>ip-permission.ipv6-cidr</code> - An IPv6 CIDR range that has been
+     * granted permission in a security group rule.</p> </li> <li> <p>
+     * <code>ip-permission.protocol</code> - The IP protocol for the permission
+     * (<code>tcp</code> | <code>udp</code> | <code>icmp</code> or a protocol
+     * number).</p> </li> <li> <p> <code>ip-permission.to-port</code> - The end of port
+     * range for the TCP and UDP protocols, or an ICMP code.</p> </li> <li> <p>
+     * <code>ip-permission.user-id</code> - The ID of an AWS account that has been
+     * granted permission.</p> </li> <li> <p> <code>owner-id</code> - The AWS account
+     * ID of the owner of the security group.</p> </li> <li> <p> <code>tag-key</code> -
+     * The key of a tag assigned to the security group.</p> </li> <li> <p>
+     * <code>tag-value</code> - The value of a tag assigned to the security group.</p>
+     * </li> <li> <p> <code>vpc-id</code> - The ID of the VPC specified when the
+     * security group was created.</p> </li> </ul>
      */
     inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
     /**
      * <p>One or more filters. If using multiple filters for rules, the results include
      * security groups for which any combination of rules - not necessarily a single
-     * rule - match all filters.</p> <ul> <li> <p><code>description</code> - The
-     * description of the security group.</p> </li> <li>
-     * <p><code>egress.ip-permission.prefix-list-id</code> - The ID (prefix) of the AWS
-     * service to which the security group allows access.</p> </li> <li>
-     * <p><code>group-id</code> - The ID of the security group. </p> </li> <li>
-     * <p><code>group-name</code> - The name of the security group.</p> </li> <li>
-     * <p><code>ip-permission.cidr</code> - A CIDR range that has been granted
-     * permission.</p> </li> <li> <p><code>ip-permission.from-port</code> - The start
-     * of port range for the TCP and UDP protocols, or an ICMP type number.</p> </li>
-     * <li> <p><code>ip-permission.group-id</code> - The ID of a security group that
-     * has been granted permission.</p> </li> <li>
-     * <p><code>ip-permission.group-name</code> - The name of a security group that has
-     * been granted permission.</p> </li> <li> <p><code>ip-permission.protocol</code> -
-     * The IP protocol for the permission (<code>tcp</code> | <code>udp</code> |
-     * <code>icmp</code> or a protocol number).</p> </li> <li>
-     * <p><code>ip-permission.to-port</code> - The end of port range for the TCP and
-     * UDP protocols, or an ICMP code.</p> </li> <li>
-     * <p><code>ip-permission.user-id</code> - The ID of an AWS account that has been
-     * granted permission.</p> </li> <li> <p><code>owner-id</code> - The AWS account ID
-     * of the owner of the security group.</p> </li> <li> <p><code>tag-key</code> - The
-     * key of a tag assigned to the security group.</p> </li> <li>
-     * <p><code>tag-value</code> - The value of a tag assigned to the security
-     * group.</p> </li> <li> <p><code>vpc-id</code> - The ID of the VPC specified when
-     * the security group was created.</p> </li> </ul>
+     * rule - match all filters.</p> <ul> <li> <p> <code>description</code> - The
+     * description of the security group.</p> </li> <li> <p>
+     * <code>egress.ip-permission.prefix-list-id</code> - The ID (prefix) of the AWS
+     * service to which the security group allows access.</p> </li> <li> <p>
+     * <code>group-id</code> - The ID of the security group. </p> </li> <li> <p>
+     * <code>group-name</code> - The name of the security group.</p> </li> <li> <p>
+     * <code>ip-permission.cidr</code> - An IPv4 CIDR range that has been granted
+     * permission in a security group rule.</p> </li> <li> <p>
+     * <code>ip-permission.from-port</code> - The start of port range for the TCP and
+     * UDP protocols, or an ICMP type number.</p> </li> <li> <p>
+     * <code>ip-permission.group-id</code> - The ID of a security group that has been
+     * granted permission.</p> </li> <li> <p> <code>ip-permission.group-name</code> -
+     * The name of a security group that has been granted permission.</p> </li> <li>
+     * <p> <code>ip-permission.ipv6-cidr</code> - An IPv6 CIDR range that has been
+     * granted permission in a security group rule.</p> </li> <li> <p>
+     * <code>ip-permission.protocol</code> - The IP protocol for the permission
+     * (<code>tcp</code> | <code>udp</code> | <code>icmp</code> or a protocol
+     * number).</p> </li> <li> <p> <code>ip-permission.to-port</code> - The end of port
+     * range for the TCP and UDP protocols, or an ICMP code.</p> </li> <li> <p>
+     * <code>ip-permission.user-id</code> - The ID of an AWS account that has been
+     * granted permission.</p> </li> <li> <p> <code>owner-id</code> - The AWS account
+     * ID of the owner of the security group.</p> </li> <li> <p> <code>tag-key</code> -
+     * The key of a tag assigned to the security group.</p> </li> <li> <p>
+     * <code>tag-value</code> - The value of a tag assigned to the security group.</p>
+     * </li> <li> <p> <code>vpc-id</code> - The ID of the VPC specified when the
+     * security group was created.</p> </li> </ul>
      */
     inline DescribeSecurityGroupsRequest& WithFilters(const Aws::Vector<Filter>& value) { SetFilters(value); return *this;}
 
     /**
      * <p>One or more filters. If using multiple filters for rules, the results include
      * security groups for which any combination of rules - not necessarily a single
-     * rule - match all filters.</p> <ul> <li> <p><code>description</code> - The
-     * description of the security group.</p> </li> <li>
-     * <p><code>egress.ip-permission.prefix-list-id</code> - The ID (prefix) of the AWS
-     * service to which the security group allows access.</p> </li> <li>
-     * <p><code>group-id</code> - The ID of the security group. </p> </li> <li>
-     * <p><code>group-name</code> - The name of the security group.</p> </li> <li>
-     * <p><code>ip-permission.cidr</code> - A CIDR range that has been granted
-     * permission.</p> </li> <li> <p><code>ip-permission.from-port</code> - The start
-     * of port range for the TCP and UDP protocols, or an ICMP type number.</p> </li>
-     * <li> <p><code>ip-permission.group-id</code> - The ID of a security group that
-     * has been granted permission.</p> </li> <li>
-     * <p><code>ip-permission.group-name</code> - The name of a security group that has
-     * been granted permission.</p> </li> <li> <p><code>ip-permission.protocol</code> -
-     * The IP protocol for the permission (<code>tcp</code> | <code>udp</code> |
-     * <code>icmp</code> or a protocol number).</p> </li> <li>
-     * <p><code>ip-permission.to-port</code> - The end of port range for the TCP and
-     * UDP protocols, or an ICMP code.</p> </li> <li>
-     * <p><code>ip-permission.user-id</code> - The ID of an AWS account that has been
-     * granted permission.</p> </li> <li> <p><code>owner-id</code> - The AWS account ID
-     * of the owner of the security group.</p> </li> <li> <p><code>tag-key</code> - The
-     * key of a tag assigned to the security group.</p> </li> <li>
-     * <p><code>tag-value</code> - The value of a tag assigned to the security
-     * group.</p> </li> <li> <p><code>vpc-id</code> - The ID of the VPC specified when
-     * the security group was created.</p> </li> </ul>
+     * rule - match all filters.</p> <ul> <li> <p> <code>description</code> - The
+     * description of the security group.</p> </li> <li> <p>
+     * <code>egress.ip-permission.prefix-list-id</code> - The ID (prefix) of the AWS
+     * service to which the security group allows access.</p> </li> <li> <p>
+     * <code>group-id</code> - The ID of the security group. </p> </li> <li> <p>
+     * <code>group-name</code> - The name of the security group.</p> </li> <li> <p>
+     * <code>ip-permission.cidr</code> - An IPv4 CIDR range that has been granted
+     * permission in a security group rule.</p> </li> <li> <p>
+     * <code>ip-permission.from-port</code> - The start of port range for the TCP and
+     * UDP protocols, or an ICMP type number.</p> </li> <li> <p>
+     * <code>ip-permission.group-id</code> - The ID of a security group that has been
+     * granted permission.</p> </li> <li> <p> <code>ip-permission.group-name</code> -
+     * The name of a security group that has been granted permission.</p> </li> <li>
+     * <p> <code>ip-permission.ipv6-cidr</code> - An IPv6 CIDR range that has been
+     * granted permission in a security group rule.</p> </li> <li> <p>
+     * <code>ip-permission.protocol</code> - The IP protocol for the permission
+     * (<code>tcp</code> | <code>udp</code> | <code>icmp</code> or a protocol
+     * number).</p> </li> <li> <p> <code>ip-permission.to-port</code> - The end of port
+     * range for the TCP and UDP protocols, or an ICMP code.</p> </li> <li> <p>
+     * <code>ip-permission.user-id</code> - The ID of an AWS account that has been
+     * granted permission.</p> </li> <li> <p> <code>owner-id</code> - The AWS account
+     * ID of the owner of the security group.</p> </li> <li> <p> <code>tag-key</code> -
+     * The key of a tag assigned to the security group.</p> </li> <li> <p>
+     * <code>tag-value</code> - The value of a tag assigned to the security group.</p>
+     * </li> <li> <p> <code>vpc-id</code> - The ID of the VPC specified when the
+     * security group was created.</p> </li> </ul>
      */
     inline DescribeSecurityGroupsRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(value); return *this;}
 
     /**
      * <p>One or more filters. If using multiple filters for rules, the results include
      * security groups for which any combination of rules - not necessarily a single
-     * rule - match all filters.</p> <ul> <li> <p><code>description</code> - The
-     * description of the security group.</p> </li> <li>
-     * <p><code>egress.ip-permission.prefix-list-id</code> - The ID (prefix) of the AWS
-     * service to which the security group allows access.</p> </li> <li>
-     * <p><code>group-id</code> - The ID of the security group. </p> </li> <li>
-     * <p><code>group-name</code> - The name of the security group.</p> </li> <li>
-     * <p><code>ip-permission.cidr</code> - A CIDR range that has been granted
-     * permission.</p> </li> <li> <p><code>ip-permission.from-port</code> - The start
-     * of port range for the TCP and UDP protocols, or an ICMP type number.</p> </li>
-     * <li> <p><code>ip-permission.group-id</code> - The ID of a security group that
-     * has been granted permission.</p> </li> <li>
-     * <p><code>ip-permission.group-name</code> - The name of a security group that has
-     * been granted permission.</p> </li> <li> <p><code>ip-permission.protocol</code> -
-     * The IP protocol for the permission (<code>tcp</code> | <code>udp</code> |
-     * <code>icmp</code> or a protocol number).</p> </li> <li>
-     * <p><code>ip-permission.to-port</code> - The end of port range for the TCP and
-     * UDP protocols, or an ICMP code.</p> </li> <li>
-     * <p><code>ip-permission.user-id</code> - The ID of an AWS account that has been
-     * granted permission.</p> </li> <li> <p><code>owner-id</code> - The AWS account ID
-     * of the owner of the security group.</p> </li> <li> <p><code>tag-key</code> - The
-     * key of a tag assigned to the security group.</p> </li> <li>
-     * <p><code>tag-value</code> - The value of a tag assigned to the security
-     * group.</p> </li> <li> <p><code>vpc-id</code> - The ID of the VPC specified when
-     * the security group was created.</p> </li> </ul>
+     * rule - match all filters.</p> <ul> <li> <p> <code>description</code> - The
+     * description of the security group.</p> </li> <li> <p>
+     * <code>egress.ip-permission.prefix-list-id</code> - The ID (prefix) of the AWS
+     * service to which the security group allows access.</p> </li> <li> <p>
+     * <code>group-id</code> - The ID of the security group. </p> </li> <li> <p>
+     * <code>group-name</code> - The name of the security group.</p> </li> <li> <p>
+     * <code>ip-permission.cidr</code> - An IPv4 CIDR range that has been granted
+     * permission in a security group rule.</p> </li> <li> <p>
+     * <code>ip-permission.from-port</code> - The start of port range for the TCP and
+     * UDP protocols, or an ICMP type number.</p> </li> <li> <p>
+     * <code>ip-permission.group-id</code> - The ID of a security group that has been
+     * granted permission.</p> </li> <li> <p> <code>ip-permission.group-name</code> -
+     * The name of a security group that has been granted permission.</p> </li> <li>
+     * <p> <code>ip-permission.ipv6-cidr</code> - An IPv6 CIDR range that has been
+     * granted permission in a security group rule.</p> </li> <li> <p>
+     * <code>ip-permission.protocol</code> - The IP protocol for the permission
+     * (<code>tcp</code> | <code>udp</code> | <code>icmp</code> or a protocol
+     * number).</p> </li> <li> <p> <code>ip-permission.to-port</code> - The end of port
+     * range for the TCP and UDP protocols, or an ICMP code.</p> </li> <li> <p>
+     * <code>ip-permission.user-id</code> - The ID of an AWS account that has been
+     * granted permission.</p> </li> <li> <p> <code>owner-id</code> - The AWS account
+     * ID of the owner of the security group.</p> </li> <li> <p> <code>tag-key</code> -
+     * The key of a tag assigned to the security group.</p> </li> <li> <p>
+     * <code>tag-value</code> - The value of a tag assigned to the security group.</p>
+     * </li> <li> <p> <code>vpc-id</code> - The ID of the VPC specified when the
+     * security group was created.</p> </li> </ul>
      */
     inline DescribeSecurityGroupsRequest& AddFilters(const Filter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
 
     /**
      * <p>One or more filters. If using multiple filters for rules, the results include
      * security groups for which any combination of rules - not necessarily a single
-     * rule - match all filters.</p> <ul> <li> <p><code>description</code> - The
-     * description of the security group.</p> </li> <li>
-     * <p><code>egress.ip-permission.prefix-list-id</code> - The ID (prefix) of the AWS
-     * service to which the security group allows access.</p> </li> <li>
-     * <p><code>group-id</code> - The ID of the security group. </p> </li> <li>
-     * <p><code>group-name</code> - The name of the security group.</p> </li> <li>
-     * <p><code>ip-permission.cidr</code> - A CIDR range that has been granted
-     * permission.</p> </li> <li> <p><code>ip-permission.from-port</code> - The start
-     * of port range for the TCP and UDP protocols, or an ICMP type number.</p> </li>
-     * <li> <p><code>ip-permission.group-id</code> - The ID of a security group that
-     * has been granted permission.</p> </li> <li>
-     * <p><code>ip-permission.group-name</code> - The name of a security group that has
-     * been granted permission.</p> </li> <li> <p><code>ip-permission.protocol</code> -
-     * The IP protocol for the permission (<code>tcp</code> | <code>udp</code> |
-     * <code>icmp</code> or a protocol number).</p> </li> <li>
-     * <p><code>ip-permission.to-port</code> - The end of port range for the TCP and
-     * UDP protocols, or an ICMP code.</p> </li> <li>
-     * <p><code>ip-permission.user-id</code> - The ID of an AWS account that has been
-     * granted permission.</p> </li> <li> <p><code>owner-id</code> - The AWS account ID
-     * of the owner of the security group.</p> </li> <li> <p><code>tag-key</code> - The
-     * key of a tag assigned to the security group.</p> </li> <li>
-     * <p><code>tag-value</code> - The value of a tag assigned to the security
-     * group.</p> </li> <li> <p><code>vpc-id</code> - The ID of the VPC specified when
-     * the security group was created.</p> </li> </ul>
+     * rule - match all filters.</p> <ul> <li> <p> <code>description</code> - The
+     * description of the security group.</p> </li> <li> <p>
+     * <code>egress.ip-permission.prefix-list-id</code> - The ID (prefix) of the AWS
+     * service to which the security group allows access.</p> </li> <li> <p>
+     * <code>group-id</code> - The ID of the security group. </p> </li> <li> <p>
+     * <code>group-name</code> - The name of the security group.</p> </li> <li> <p>
+     * <code>ip-permission.cidr</code> - An IPv4 CIDR range that has been granted
+     * permission in a security group rule.</p> </li> <li> <p>
+     * <code>ip-permission.from-port</code> - The start of port range for the TCP and
+     * UDP protocols, or an ICMP type number.</p> </li> <li> <p>
+     * <code>ip-permission.group-id</code> - The ID of a security group that has been
+     * granted permission.</p> </li> <li> <p> <code>ip-permission.group-name</code> -
+     * The name of a security group that has been granted permission.</p> </li> <li>
+     * <p> <code>ip-permission.ipv6-cidr</code> - An IPv6 CIDR range that has been
+     * granted permission in a security group rule.</p> </li> <li> <p>
+     * <code>ip-permission.protocol</code> - The IP protocol for the permission
+     * (<code>tcp</code> | <code>udp</code> | <code>icmp</code> or a protocol
+     * number).</p> </li> <li> <p> <code>ip-permission.to-port</code> - The end of port
+     * range for the TCP and UDP protocols, or an ICMP code.</p> </li> <li> <p>
+     * <code>ip-permission.user-id</code> - The ID of an AWS account that has been
+     * granted permission.</p> </li> <li> <p> <code>owner-id</code> - The AWS account
+     * ID of the owner of the security group.</p> </li> <li> <p> <code>tag-key</code> -
+     * The key of a tag assigned to the security group.</p> </li> <li> <p>
+     * <code>tag-value</code> - The value of a tag assigned to the security group.</p>
+     * </li> <li> <p> <code>vpc-id</code> - The ID of the VPC specified when the
+     * security group was created.</p> </li> </ul>
      */
     inline DescribeSecurityGroupsRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
 

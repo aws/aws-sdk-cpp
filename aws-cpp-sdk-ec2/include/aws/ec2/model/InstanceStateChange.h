@@ -33,7 +33,9 @@ namespace Model
 {
 
   /**
-   * <p>Describes an instance state change.</p>
+   * <p>Describes an instance state change.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/InstanceStateChange">AWS
+   * API Reference</a></p>
    */
   class AWS_EC2_API InstanceStateChange
   {

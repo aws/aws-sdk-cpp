@@ -37,10 +37,10 @@ Aws::String ModifyIdFormatRequest::SerializePayload() const
 
   if(m_useLongIdsHasBeenSet)
   {
-    ss << "UseLongIds=" << m_useLongIds << "&";
+    ss << "UseLongIds=" << std::boolalpha << m_useLongIds << "&";
   }
 
-  ss << "Version=2015-10-01";
+  ss << "Version=2016-11-15";
   return ss.str();
 }
 

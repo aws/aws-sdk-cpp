@@ -57,7 +57,9 @@ namespace Model
    * }</code></pre> <p/> </div> <div class="seeAlso"> <a>Method</a>,
    * <a>IntegrationResponse</a>, <a>Integration</a> <a
    * href="http://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-create-api.html">Creating
-   * an API</a> </div>
+   * an API</a> </div><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/MethodResponse">AWS
+   * API Reference</a></p>
    */
   class AWS_APIGATEWAY_API MethodResponse
   {

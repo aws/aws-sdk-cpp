@@ -61,7 +61,10 @@ namespace Model
    * <code>deliveryFrequency</code> value by using the
    * <code>DescribeDeliveryChannnels</code> action.</p> <p>To update the
    * <code>deliveryFrequency</code> with which AWS Config delivers your configuration
-   * snapshots, use the <code>PutDeliveryChannel</code> action.</p>
+   * snapshots, use the <code>PutDeliveryChannel</code> action.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/ConfigSnapshotDeliveryProperties">AWS
+   * API Reference</a></p>
    */
   class AWS_CONFIGSERVICE_API ConfigSnapshotDeliveryProperties
   {

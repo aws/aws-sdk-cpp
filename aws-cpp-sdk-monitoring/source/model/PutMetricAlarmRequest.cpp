@@ -62,7 +62,7 @@ Aws::String PutMetricAlarmRequest::SerializePayload() const
 
   if(m_actionsEnabledHasBeenSet)
   {
-    ss << "ActionsEnabled=" << m_actionsEnabled << "&";
+    ss << "ActionsEnabled=" << std::boolalpha << m_actionsEnabled << "&";
   }
 
   if(m_oKActionsHasBeenSet)

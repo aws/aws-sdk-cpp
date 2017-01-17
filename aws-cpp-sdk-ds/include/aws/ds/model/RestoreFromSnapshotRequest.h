@@ -26,7 +26,9 @@ namespace Model
 
   /**
    * <p>An object representing the inputs for the <a>RestoreFromSnapshot</a>
-   * operation.</p>
+   * operation.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/RestoreFromSnapshotRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_DIRECTORYSERVICE_API RestoreFromSnapshotRequest : public DirectoryServiceRequest
   {

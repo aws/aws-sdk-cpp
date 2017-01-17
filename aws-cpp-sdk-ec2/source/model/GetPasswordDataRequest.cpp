@@ -32,7 +32,7 @@ Aws::String GetPasswordDataRequest::SerializePayload() const
   ss << "Action=GetPasswordData&";
   if(m_dryRunHasBeenSet)
   {
-    ss << "DryRun=" << m_dryRun << "&";
+    ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
   if(m_instanceIdHasBeenSet)
@@ -40,7 +40,7 @@ Aws::String GetPasswordDataRequest::SerializePayload() const
     ss << "InstanceId=" << StringUtils::URLEncode(m_instanceId.c_str()) << "&";
   }
 
-  ss << "Version=2015-10-01";
+  ss << "Version=2016-11-15";
   return ss.str();
 }
 

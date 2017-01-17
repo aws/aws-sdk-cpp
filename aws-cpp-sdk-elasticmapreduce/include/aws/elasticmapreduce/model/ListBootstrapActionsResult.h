@@ -35,7 +35,10 @@ namespace EMR
 namespace Model
 {
   /**
-   * <p>This output contains the bootstrap actions detail.</p>
+   * <p>This output contains the bootstrap actions detail.</p><p><h3>See Also:</h3>  
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/ListBootstrapActionsOutput">AWS
+   * API Reference</a></p>
    */
   class AWS_EMR_API ListBootstrapActionsResult
   {

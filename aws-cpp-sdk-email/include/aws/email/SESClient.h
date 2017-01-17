@@ -17,6 +17,7 @@
 #include <aws/email/SESErrors.h>
 #include <aws/core/client/AWSError.h>
 #include <aws/core/client/ClientConfiguration.h>
+#include <aws/core/AmazonSerializableWebServiceRequest.h>
 #include <aws/core/client/AWSClient.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
@@ -352,6 +353,12 @@ namespace Model
 
         virtual ~SESClient();
 
+       /**
+        * Converts any request object to a presigned URL with the GET method, using region for the signer and a timeout of 15 minutes.
+        */
+        Aws::String ConvertRequestToPresignedUrl(const AmazonSerializableWebServiceRequest& requestToConvert, const char* region) const;
+
+
         /**
          * <p>Creates a receipt rule set by cloning an existing one. All receipt rules and
          * configurations are copied to the new receipt rule set and are completely
@@ -359,7 +366,9 @@ namespace Model
          * sets, see the <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-receipt-rule-set.html">Amazon
          * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
-         * second.</p>
+         * second.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/CloneReceiptRuleSet">AWS
+         * API Reference</a></p>
          */
         virtual Model::CloneReceiptRuleSetOutcome CloneReceiptRuleSet(const Model::CloneReceiptRuleSetRequest& request) const;
 
@@ -370,7 +379,9 @@ namespace Model
          * sets, see the <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-receipt-rule-set.html">Amazon
          * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
-         * second.</p>
+         * second.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/CloneReceiptRuleSet">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -383,7 +394,9 @@ namespace Model
          * sets, see the <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-receipt-rule-set.html">Amazon
          * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
-         * second.</p>
+         * second.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/CloneReceiptRuleSet">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -394,7 +407,9 @@ namespace Model
          * email sending events. For information about using configuration sets, see the <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon
          * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
-         * second.</p>
+         * second.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/CreateConfigurationSet">AWS
+         * API Reference</a></p>
          */
         virtual Model::CreateConfigurationSetOutcome CreateConfigurationSet(const Model::CreateConfigurationSetRequest& request) const;
 
@@ -403,7 +418,9 @@ namespace Model
          * email sending events. For information about using configuration sets, see the <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon
          * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
-         * second.</p>
+         * second.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/CreateConfigurationSet">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -414,7 +431,9 @@ namespace Model
          * email sending events. For information about using configuration sets, see the <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon
          * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
-         * second.</p>
+         * second.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/CreateConfigurationSet">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -429,7 +448,9 @@ namespace Model
          * about using configuration sets, see the <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon
          * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
-         * second.</p>
+         * second.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/CreateConfigurationSetEventDestination">AWS
+         * API Reference</a></p>
          */
         virtual Model::CreateConfigurationSetEventDestinationOutcome CreateConfigurationSetEventDestination(const Model::CreateConfigurationSetEventDestinationRequest& request) const;
 
@@ -442,7 +463,9 @@ namespace Model
          * about using configuration sets, see the <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon
          * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
-         * second.</p>
+         * second.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/CreateConfigurationSetEventDestination">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -457,7 +480,9 @@ namespace Model
          * about using configuration sets, see the <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon
          * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
-         * second.</p>
+         * second.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/CreateConfigurationSetEventDestination">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -468,7 +493,9 @@ namespace Model
          * address filters, see the <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-ip-filters.html">Amazon
          * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
-         * second.</p>
+         * second.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/CreateReceiptFilter">AWS
+         * API Reference</a></p>
          */
         virtual Model::CreateReceiptFilterOutcome CreateReceiptFilter(const Model::CreateReceiptFilterRequest& request) const;
 
@@ -477,7 +504,9 @@ namespace Model
          * address filters, see the <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-ip-filters.html">Amazon
          * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
-         * second.</p>
+         * second.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/CreateReceiptFilter">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -488,7 +517,9 @@ namespace Model
          * address filters, see the <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-ip-filters.html">Amazon
          * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
-         * second.</p>
+         * second.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/CreateReceiptFilter">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -499,7 +530,9 @@ namespace Model
          * rules, see the <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-receipt-rules.html">Amazon
          * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
-         * second.</p>
+         * second.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/CreateReceiptRule">AWS
+         * API Reference</a></p>
          */
         virtual Model::CreateReceiptRuleOutcome CreateReceiptRule(const Model::CreateReceiptRuleRequest& request) const;
 
@@ -508,7 +541,9 @@ namespace Model
          * rules, see the <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-receipt-rules.html">Amazon
          * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
-         * second.</p>
+         * second.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/CreateReceiptRule">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -519,7 +554,9 @@ namespace Model
          * rules, see the <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-receipt-rules.html">Amazon
          * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
-         * second.</p>
+         * second.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/CreateReceiptRule">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -530,7 +567,9 @@ namespace Model
          * receipt rule sets, see the <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-receipt-rule-set.html">Amazon
          * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
-         * second.</p>
+         * second.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/CreateReceiptRuleSet">AWS
+         * API Reference</a></p>
          */
         virtual Model::CreateReceiptRuleSetOutcome CreateReceiptRuleSet(const Model::CreateReceiptRuleSetRequest& request) const;
 
@@ -539,7 +578,9 @@ namespace Model
          * receipt rule sets, see the <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-receipt-rule-set.html">Amazon
          * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
-         * second.</p>
+         * second.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/CreateReceiptRuleSet">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -550,7 +591,9 @@ namespace Model
          * receipt rule sets, see the <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-receipt-rule-set.html">Amazon
          * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
-         * second.</p>
+         * second.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/CreateReceiptRuleSet">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -561,7 +604,9 @@ namespace Model
          * email sending events. For information about using configuration sets, see the <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon
          * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
-         * second.</p>
+         * second.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/DeleteConfigurationSet">AWS
+         * API Reference</a></p>
          */
         virtual Model::DeleteConfigurationSetOutcome DeleteConfigurationSet(const Model::DeleteConfigurationSetRequest& request) const;
 
@@ -570,7 +615,9 @@ namespace Model
          * email sending events. For information about using configuration sets, see the <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon
          * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
-         * second.</p>
+         * second.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/DeleteConfigurationSet">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -581,7 +628,9 @@ namespace Model
          * email sending events. For information about using configuration sets, see the <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon
          * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
-         * second.</p>
+         * second.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/DeleteConfigurationSet">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -593,7 +642,9 @@ namespace Model
          * email sending events. For information about using configuration sets, see the <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon
          * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
-         * second.</p>
+         * second.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/DeleteConfigurationSetEventDestination">AWS
+         * API Reference</a></p>
          */
         virtual Model::DeleteConfigurationSetEventDestinationOutcome DeleteConfigurationSetEventDestination(const Model::DeleteConfigurationSetEventDestinationRequest& request) const;
 
@@ -603,7 +654,9 @@ namespace Model
          * email sending events. For information about using configuration sets, see the <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon
          * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
-         * second.</p>
+         * second.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/DeleteConfigurationSetEventDestination">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -615,7 +668,9 @@ namespace Model
          * email sending events. For information about using configuration sets, see the <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon
          * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
-         * second.</p>
+         * second.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/DeleteConfigurationSetEventDestination">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -624,14 +679,18 @@ namespace Model
         /**
          * <p>Deletes the specified identity (an email address or a domain) from the list
          * of verified identities.</p> <p>This action is throttled at one request per
-         * second.</p>
+         * second.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/DeleteIdentity">AWS
+         * API Reference</a></p>
          */
         virtual Model::DeleteIdentityOutcome DeleteIdentity(const Model::DeleteIdentityRequest& request) const;
 
         /**
          * <p>Deletes the specified identity (an email address or a domain) from the list
          * of verified identities.</p> <p>This action is throttled at one request per
-         * second.</p>
+         * second.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/DeleteIdentity">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -640,7 +699,9 @@ namespace Model
         /**
          * <p>Deletes the specified identity (an email address or a domain) from the list
          * of verified identities.</p> <p>This action is throttled at one request per
-         * second.</p>
+         * second.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/DeleteIdentity">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -656,7 +717,9 @@ namespace Model
          * about using sending authorization, see the <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
          * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
-         * second.</p>
+         * second.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/DeleteIdentityPolicy">AWS
+         * API Reference</a></p>
          */
         virtual Model::DeleteIdentityPolicyOutcome DeleteIdentityPolicy(const Model::DeleteIdentityPolicyRequest& request) const;
 
@@ -670,7 +733,9 @@ namespace Model
          * about using sending authorization, see the <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
          * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
-         * second.</p>
+         * second.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/DeleteIdentityPolicy">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -686,7 +751,9 @@ namespace Model
          * about using sending authorization, see the <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
          * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
-         * second.</p>
+         * second.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/DeleteIdentityPolicy">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -697,7 +764,9 @@ namespace Model
          * managing IP address filters, see the <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-ip-filters.html">Amazon
          * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
-         * second.</p>
+         * second.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/DeleteReceiptFilter">AWS
+         * API Reference</a></p>
          */
         virtual Model::DeleteReceiptFilterOutcome DeleteReceiptFilter(const Model::DeleteReceiptFilterRequest& request) const;
 
@@ -706,7 +775,9 @@ namespace Model
          * managing IP address filters, see the <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-ip-filters.html">Amazon
          * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
-         * second.</p>
+         * second.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/DeleteReceiptFilter">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -717,7 +788,9 @@ namespace Model
          * managing IP address filters, see the <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-ip-filters.html">Amazon
          * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
-         * second.</p>
+         * second.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/DeleteReceiptFilter">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -728,7 +801,9 @@ namespace Model
          * receipt rules, see the <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-receipt-rules.html">Amazon
          * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
-         * second.</p>
+         * second.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/DeleteReceiptRule">AWS
+         * API Reference</a></p>
          */
         virtual Model::DeleteReceiptRuleOutcome DeleteReceiptRule(const Model::DeleteReceiptRuleRequest& request) const;
 
@@ -737,7 +812,9 @@ namespace Model
          * receipt rules, see the <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-receipt-rules.html">Amazon
          * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
-         * second.</p>
+         * second.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/DeleteReceiptRule">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -748,7 +825,9 @@ namespace Model
          * receipt rules, see the <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-receipt-rules.html">Amazon
          * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
-         * second.</p>
+         * second.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/DeleteReceiptRule">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -760,7 +839,9 @@ namespace Model
          * </note> <p>For information about managing receipt rule sets, see the <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-receipt-rule-sets.html">Amazon
          * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
-         * second.</p>
+         * second.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/DeleteReceiptRuleSet">AWS
+         * API Reference</a></p>
          */
         virtual Model::DeleteReceiptRuleSetOutcome DeleteReceiptRuleSet(const Model::DeleteReceiptRuleSetRequest& request) const;
 
@@ -770,7 +851,9 @@ namespace Model
          * </note> <p>For information about managing receipt rule sets, see the <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-receipt-rule-sets.html">Amazon
          * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
-         * second.</p>
+         * second.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/DeleteReceiptRuleSet">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -782,7 +865,9 @@ namespace Model
          * </note> <p>For information about managing receipt rule sets, see the <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-receipt-rule-sets.html">Amazon
          * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
-         * second.</p>
+         * second.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/DeleteReceiptRuleSet">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -793,7 +878,9 @@ namespace Model
          * <important> <p>The DeleteVerifiedEmailAddress action is deprecated as of the May
          * 15, 2012 release of Domain Verification. The DeleteIdentity action is now
          * preferred.</p> </important> <p>This action is throttled at one request per
-         * second.</p>
+         * second.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/DeleteVerifiedEmailAddress">AWS
+         * API Reference</a></p>
          */
         virtual Model::DeleteVerifiedEmailAddressOutcome DeleteVerifiedEmailAddress(const Model::DeleteVerifiedEmailAddressRequest& request) const;
 
@@ -802,7 +889,9 @@ namespace Model
          * <important> <p>The DeleteVerifiedEmailAddress action is deprecated as of the May
          * 15, 2012 release of Domain Verification. The DeleteIdentity action is now
          * preferred.</p> </important> <p>This action is throttled at one request per
-         * second.</p>
+         * second.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/DeleteVerifiedEmailAddress">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -813,7 +902,9 @@ namespace Model
          * <important> <p>The DeleteVerifiedEmailAddress action is deprecated as of the May
          * 15, 2012 release of Domain Verification. The DeleteIdentity action is now
          * preferred.</p> </important> <p>This action is throttled at one request per
-         * second.</p>
+         * second.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/DeleteVerifiedEmailAddress">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -825,7 +916,9 @@ namespace Model
          * the <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-receipt-rule-set.html">Amazon
          * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
-         * second.</p>
+         * second.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/DescribeActiveReceiptRuleSet">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeActiveReceiptRuleSetOutcome DescribeActiveReceiptRuleSet(const Model::DescribeActiveReceiptRuleSetRequest& request) const;
 
@@ -835,7 +928,9 @@ namespace Model
          * the <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-receipt-rule-set.html">Amazon
          * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
-         * second.</p>
+         * second.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/DescribeActiveReceiptRuleSet">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -847,7 +942,9 @@ namespace Model
          * the <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-receipt-rule-set.html">Amazon
          * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
-         * second.</p>
+         * second.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/DescribeActiveReceiptRuleSet">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -859,7 +956,9 @@ namespace Model
          * configuration sets, see the <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon
          * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
-         * second.</p>
+         * second.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/DescribeConfigurationSet">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeConfigurationSetOutcome DescribeConfigurationSet(const Model::DescribeConfigurationSetRequest& request) const;
 
@@ -869,7 +968,9 @@ namespace Model
          * configuration sets, see the <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon
          * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
-         * second.</p>
+         * second.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/DescribeConfigurationSet">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -881,7 +982,9 @@ namespace Model
          * configuration sets, see the <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon
          * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
-         * second.</p>
+         * second.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/DescribeConfigurationSet">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -892,7 +995,9 @@ namespace Model
          * about setting up receipt rules, see the <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-receipt-rules.html">Amazon
          * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
-         * second.</p>
+         * second.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/DescribeReceiptRule">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeReceiptRuleOutcome DescribeReceiptRule(const Model::DescribeReceiptRuleRequest& request) const;
 
@@ -901,7 +1006,9 @@ namespace Model
          * about setting up receipt rules, see the <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-receipt-rules.html">Amazon
          * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
-         * second.</p>
+         * second.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/DescribeReceiptRule">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -912,7 +1019,9 @@ namespace Model
          * about setting up receipt rules, see the <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-receipt-rules.html">Amazon
          * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
-         * second.</p>
+         * second.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/DescribeReceiptRule">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -923,7 +1032,9 @@ namespace Model
          * about managing receipt rule sets, see the <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-receipt-rule-sets.html">Amazon
          * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
-         * second.</p>
+         * second.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/DescribeReceiptRuleSet">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeReceiptRuleSetOutcome DescribeReceiptRuleSet(const Model::DescribeReceiptRuleSetRequest& request) const;
 
@@ -932,7 +1043,9 @@ namespace Model
          * about managing receipt rule sets, see the <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-receipt-rule-sets.html">Amazon
          * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
-         * second.</p>
+         * second.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/DescribeReceiptRuleSet">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -943,7 +1056,9 @@ namespace Model
          * about managing receipt rule sets, see the <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-receipt-rule-sets.html">Amazon
          * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
-         * second.</p>
+         * second.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/DescribeReceiptRuleSet">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -964,7 +1079,9 @@ namespace Model
          * and can only get DKIM attributes for up to 100 identities at a time.</p> <p>For
          * more information about creating DNS records using DKIM tokens, go to the <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim-dns-records.html">Amazon
-         * SES Developer Guide</a>.</p>
+         * SES Developer Guide</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/GetIdentityDkimAttributes">AWS
+         * API Reference</a></p>
          */
         virtual Model::GetIdentityDkimAttributesOutcome GetIdentityDkimAttributes(const Model::GetIdentityDkimAttributesRequest& request) const;
 
@@ -983,7 +1100,9 @@ namespace Model
          * and can only get DKIM attributes for up to 100 identities at a time.</p> <p>For
          * more information about creating DNS records using DKIM tokens, go to the <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim-dns-records.html">Amazon
-         * SES Developer Guide</a>.</p>
+         * SES Developer Guide</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/GetIdentityDkimAttributes">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1004,7 +1123,9 @@ namespace Model
          * and can only get DKIM attributes for up to 100 identities at a time.</p> <p>For
          * more information about creating DNS records using DKIM tokens, go to the <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim-dns-records.html">Amazon
-         * SES Developer Guide</a>.</p>
+         * SES Developer Guide</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/GetIdentityDkimAttributes">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1014,7 +1135,9 @@ namespace Model
          * <p>Returns the custom MAIL FROM attributes for a list of identities (email
          * addresses and/or domains).</p> <p>This action is throttled at one request per
          * second and can only get custom MAIL FROM attributes for up to 100 identities at
-         * a time.</p>
+         * a time.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/GetIdentityMailFromDomainAttributes">AWS
+         * API Reference</a></p>
          */
         virtual Model::GetIdentityMailFromDomainAttributesOutcome GetIdentityMailFromDomainAttributes(const Model::GetIdentityMailFromDomainAttributesRequest& request) const;
 
@@ -1022,7 +1145,9 @@ namespace Model
          * <p>Returns the custom MAIL FROM attributes for a list of identities (email
          * addresses and/or domains).</p> <p>This action is throttled at one request per
          * second and can only get custom MAIL FROM attributes for up to 100 identities at
-         * a time.</p>
+         * a time.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/GetIdentityMailFromDomainAttributes">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1032,7 +1157,9 @@ namespace Model
          * <p>Returns the custom MAIL FROM attributes for a list of identities (email
          * addresses and/or domains).</p> <p>This action is throttled at one request per
          * second and can only get custom MAIL FROM attributes for up to 100 identities at
-         * a time.</p>
+         * a time.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/GetIdentityMailFromDomainAttributes">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1045,7 +1172,9 @@ namespace Model
          * up to 100 identities at a time.</p> <p>For more information about using
          * notifications with Amazon SES, see the <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/notifications.html">Amazon
-         * SES Developer Guide</a>.</p>
+         * SES Developer Guide</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/GetIdentityNotificationAttributes">AWS
+         * API Reference</a></p>
          */
         virtual Model::GetIdentityNotificationAttributesOutcome GetIdentityNotificationAttributes(const Model::GetIdentityNotificationAttributesRequest& request) const;
 
@@ -1056,7 +1185,9 @@ namespace Model
          * up to 100 identities at a time.</p> <p>For more information about using
          * notifications with Amazon SES, see the <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/notifications.html">Amazon
-         * SES Developer Guide</a>.</p>
+         * SES Developer Guide</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/GetIdentityNotificationAttributes">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1069,7 +1200,9 @@ namespace Model
          * up to 100 identities at a time.</p> <p>For more information about using
          * notifications with Amazon SES, see the <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/notifications.html">Amazon
-         * SES Developer Guide</a>.</p>
+         * SES Developer Guide</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/GetIdentityNotificationAttributes">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1086,7 +1219,9 @@ namespace Model
          * authorization, see the <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
          * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
-         * second.</p>
+         * second.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/GetIdentityPolicies">AWS
+         * API Reference</a></p>
          */
         virtual Model::GetIdentityPoliciesOutcome GetIdentityPolicies(const Model::GetIdentityPoliciesRequest& request) const;
 
@@ -1101,7 +1236,9 @@ namespace Model
          * authorization, see the <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
          * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
-         * second.</p>
+         * second.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/GetIdentityPolicies">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1118,7 +1255,9 @@ namespace Model
          * authorization, see the <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
          * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
-         * second.</p>
+         * second.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/GetIdentityPolicies">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1128,7 +1267,10 @@ namespace Model
          * <p>Given a list of identities (email addresses and/or domains), returns the
          * verification status and (for domain identities) the verification token for each
          * identity.</p> <p>This action is throttled at one request per second and can only
-         * get verification attributes for up to 100 identities at a time.</p>
+         * get verification attributes for up to 100 identities at a time.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/GetIdentityVerificationAttributes">AWS
+         * API Reference</a></p>
          */
         virtual Model::GetIdentityVerificationAttributesOutcome GetIdentityVerificationAttributes(const Model::GetIdentityVerificationAttributesRequest& request) const;
 
@@ -1136,7 +1278,10 @@ namespace Model
          * <p>Given a list of identities (email addresses and/or domains), returns the
          * verification status and (for domain identities) the verification token for each
          * identity.</p> <p>This action is throttled at one request per second and can only
-         * get verification attributes for up to 100 identities at a time.</p>
+         * get verification attributes for up to 100 identities at a time.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/GetIdentityVerificationAttributes">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1146,7 +1291,10 @@ namespace Model
          * <p>Given a list of identities (email addresses and/or domains), returns the
          * verification status and (for domain identities) the verification token for each
          * identity.</p> <p>This action is throttled at one request per second and can only
-         * get verification attributes for up to 100 identities at a time.</p>
+         * get verification attributes for up to 100 identities at a time.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/GetIdentityVerificationAttributes">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1154,13 +1302,17 @@ namespace Model
 
         /**
          * <p>Returns the user's current sending limits.</p> <p>This action is throttled at
-         * one request per second.</p>
+         * one request per second.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/GetSendQuota">AWS
+         * API Reference</a></p>
          */
         virtual Model::GetSendQuotaOutcome GetSendQuota(const Model::GetSendQuotaRequest& request) const;
 
         /**
          * <p>Returns the user's current sending limits.</p> <p>This action is throttled at
-         * one request per second.</p>
+         * one request per second.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/GetSendQuota">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1168,7 +1320,9 @@ namespace Model
 
         /**
          * <p>Returns the user's current sending limits.</p> <p>This action is throttled at
-         * one request per second.</p>
+         * one request per second.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/GetSendQuota">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1178,7 +1332,9 @@ namespace Model
          * <p>Returns the user's sending statistics. The result is a list of data points,
          * representing the last two weeks of sending activity.</p> <p>Each data point in
          * the list contains statistics for a 15-minute interval.</p> <p>This action is
-         * throttled at one request per second.</p>
+         * throttled at one request per second.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/GetSendStatistics">AWS
+         * API Reference</a></p>
          */
         virtual Model::GetSendStatisticsOutcome GetSendStatistics(const Model::GetSendStatisticsRequest& request) const;
 
@@ -1186,7 +1342,9 @@ namespace Model
          * <p>Returns the user's sending statistics. The result is a list of data points,
          * representing the last two weeks of sending activity.</p> <p>Each data point in
          * the list contains statistics for a 15-minute interval.</p> <p>This action is
-         * throttled at one request per second.</p>
+         * throttled at one request per second.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/GetSendStatistics">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1196,7 +1354,9 @@ namespace Model
          * <p>Returns the user's sending statistics. The result is a list of data points,
          * representing the last two weeks of sending activity.</p> <p>Each data point in
          * the list contains statistics for a 15-minute interval.</p> <p>This action is
-         * throttled at one request per second.</p>
+         * throttled at one request per second.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/GetSendStatistics">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1208,7 +1368,10 @@ namespace Model
          * information about using configuration sets, see the <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon
          * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
-         * second and can return up to 50 configuration sets at a time.</p>
+         * second and can return up to 50 configuration sets at a time.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/ListConfigurationSets">AWS
+         * API Reference</a></p>
          */
         virtual Model::ListConfigurationSetsOutcome ListConfigurationSets(const Model::ListConfigurationSetsRequest& request) const;
 
@@ -1218,7 +1381,10 @@ namespace Model
          * information about using configuration sets, see the <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon
          * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
-         * second and can return up to 50 configuration sets at a time.</p>
+         * second and can return up to 50 configuration sets at a time.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/ListConfigurationSets">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1230,7 +1396,10 @@ namespace Model
          * information about using configuration sets, see the <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon
          * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
-         * second and can return up to 50 configuration sets at a time.</p>
+         * second and can return up to 50 configuration sets at a time.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/ListConfigurationSets">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1239,14 +1408,18 @@ namespace Model
         /**
          * <p>Returns a list containing all of the identities (email addresses and domains)
          * for your AWS account, regardless of verification status.</p> <p>This action is
-         * throttled at one request per second.</p>
+         * throttled at one request per second.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/ListIdentities">AWS
+         * API Reference</a></p>
          */
         virtual Model::ListIdentitiesOutcome ListIdentities(const Model::ListIdentitiesRequest& request) const;
 
         /**
          * <p>Returns a list containing all of the identities (email addresses and domains)
          * for your AWS account, regardless of verification status.</p> <p>This action is
-         * throttled at one request per second.</p>
+         * throttled at one request per second.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/ListIdentities">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1255,7 +1428,9 @@ namespace Model
         /**
          * <p>Returns a list containing all of the identities (email addresses and domains)
          * for your AWS account, regardless of verification status.</p> <p>This action is
-         * throttled at one request per second.</p>
+         * throttled at one request per second.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/ListIdentities">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1272,7 +1447,9 @@ namespace Model
          * about using sending authorization, see the <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
          * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
-         * second.</p>
+         * second.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/ListIdentityPolicies">AWS
+         * API Reference</a></p>
          */
         virtual Model::ListIdentityPoliciesOutcome ListIdentityPolicies(const Model::ListIdentityPoliciesRequest& request) const;
 
@@ -1287,7 +1464,9 @@ namespace Model
          * about using sending authorization, see the <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
          * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
-         * second.</p>
+         * second.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/ListIdentityPolicies">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1304,7 +1483,9 @@ namespace Model
          * about using sending authorization, see the <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
          * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
-         * second.</p>
+         * second.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/ListIdentityPolicies">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1315,7 +1496,9 @@ namespace Model
          * information about managing IP address filters, see the <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-ip-filters.html">Amazon
          * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
-         * second.</p>
+         * second.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/ListReceiptFilters">AWS
+         * API Reference</a></p>
          */
         virtual Model::ListReceiptFiltersOutcome ListReceiptFilters(const Model::ListReceiptFiltersRequest& request) const;
 
@@ -1324,7 +1507,9 @@ namespace Model
          * information about managing IP address filters, see the <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-ip-filters.html">Amazon
          * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
-         * second.</p>
+         * second.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/ListReceiptFilters">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1335,7 +1520,9 @@ namespace Model
          * information about managing IP address filters, see the <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-ip-filters.html">Amazon
          * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
-         * second.</p>
+         * second.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/ListReceiptFilters">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1349,7 +1536,9 @@ namespace Model
          * information about managing receipt rule sets, see the <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-receipt-rule-sets.html">Amazon
          * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
-         * second.</p>
+         * second.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/ListReceiptRuleSets">AWS
+         * API Reference</a></p>
          */
         virtual Model::ListReceiptRuleSetsOutcome ListReceiptRuleSets(const Model::ListReceiptRuleSetsRequest& request) const;
 
@@ -1361,7 +1550,9 @@ namespace Model
          * information about managing receipt rule sets, see the <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-receipt-rule-sets.html">Amazon
          * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
-         * second.</p>
+         * second.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/ListReceiptRuleSets">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1375,7 +1566,9 @@ namespace Model
          * information about managing receipt rule sets, see the <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-receipt-rule-sets.html">Amazon
          * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
-         * second.</p>
+         * second.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/ListReceiptRuleSets">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1386,7 +1579,9 @@ namespace Model
          * verified.</p> <important> <p>The ListVerifiedEmailAddresses action is deprecated
          * as of the May 15, 2012 release of Domain Verification. The ListIdentities action
          * is now preferred.</p> </important> <p>This action is throttled at one request
-         * per second.</p>
+         * per second.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/ListVerifiedEmailAddresses">AWS
+         * API Reference</a></p>
          */
         virtual Model::ListVerifiedEmailAddressesOutcome ListVerifiedEmailAddresses(const Model::ListVerifiedEmailAddressesRequest& request) const;
 
@@ -1395,7 +1590,9 @@ namespace Model
          * verified.</p> <important> <p>The ListVerifiedEmailAddresses action is deprecated
          * as of the May 15, 2012 release of Domain Verification. The ListIdentities action
          * is now preferred.</p> </important> <p>This action is throttled at one request
-         * per second.</p>
+         * per second.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/ListVerifiedEmailAddresses">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1406,7 +1603,9 @@ namespace Model
          * verified.</p> <important> <p>The ListVerifiedEmailAddresses action is deprecated
          * as of the May 15, 2012 release of Domain Verification. The ListIdentities action
          * is now preferred.</p> </important> <p>This action is throttled at one request
-         * per second.</p>
+         * per second.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/ListVerifiedEmailAddresses">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1421,7 +1620,9 @@ namespace Model
          * sending authorization, see the <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
          * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
-         * second.</p>
+         * second.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/PutIdentityPolicy">AWS
+         * API Reference</a></p>
          */
         virtual Model::PutIdentityPolicyOutcome PutIdentityPolicy(const Model::PutIdentityPolicyRequest& request) const;
 
@@ -1434,7 +1635,9 @@ namespace Model
          * sending authorization, see the <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
          * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
-         * second.</p>
+         * second.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/PutIdentityPolicy">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1449,7 +1652,9 @@ namespace Model
          * sending authorization, see the <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
          * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
-         * second.</p>
+         * second.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/PutIdentityPolicy">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1463,7 +1668,9 @@ namespace Model
          * the <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-receipt-rule-sets.html">Amazon
          * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
-         * second.</p>
+         * second.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/ReorderReceiptRuleSet">AWS
+         * API Reference</a></p>
          */
         virtual Model::ReorderReceiptRuleSetOutcome ReorderReceiptRuleSet(const Model::ReorderReceiptRuleSetRequest& request) const;
 
@@ -1475,7 +1682,9 @@ namespace Model
          * the <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-receipt-rule-sets.html">Amazon
          * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
-         * second.</p>
+         * second.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/ReorderReceiptRuleSet">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1489,7 +1698,9 @@ namespace Model
          * the <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-receipt-rule-sets.html">Amazon
          * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
-         * second.</p>
+         * second.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/ReorderReceiptRuleSet">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1503,7 +1714,9 @@ namespace Model
          * about receiving email through Amazon SES, see the <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email.html">Amazon
          * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
-         * second.</p>
+         * second.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/SendBounce">AWS
+         * API Reference</a></p>
          */
         virtual Model::SendBounceOutcome SendBounce(const Model::SendBounceRequest& request) const;
 
@@ -1515,7 +1728,9 @@ namespace Model
          * about receiving email through Amazon SES, see the <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email.html">Amazon
          * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
-         * second.</p>
+         * second.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/SendBounce">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1529,7 +1744,9 @@ namespace Model
          * about receiving email through Amazon SES, see the <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email.html">Amazon
          * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
-         * second.</p>
+         * second.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/SendBounce">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1555,7 +1772,9 @@ namespace Model
          * counted against your sending quota - the maximum number of emails you can send
          * in a 24-hour period. For information about your sending quota, go to the <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/manage-sending-limits.html">Amazon
-         * SES Developer Guide</a>.</p> </li> </ul>
+         * SES Developer Guide</a>.</p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/SendEmail">AWS API
+         * Reference</a></p>
          */
         virtual Model::SendEmailOutcome SendEmail(const Model::SendEmailRequest& request) const;
 
@@ -1579,7 +1798,9 @@ namespace Model
          * counted against your sending quota - the maximum number of emails you can send
          * in a 24-hour period. For information about your sending quota, go to the <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/manage-sending-limits.html">Amazon
-         * SES Developer Guide</a>.</p> </li> </ul>
+         * SES Developer Guide</a>.</p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/SendEmail">AWS API
+         * Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1605,7 +1826,9 @@ namespace Model
          * counted against your sending quota - the maximum number of emails you can send
          * in a 24-hour period. For information about your sending quota, go to the <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/manage-sending-limits.html">Amazon
-         * SES Developer Guide</a>.</p> </li> </ul>
+         * SES Developer Guide</a>.</p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/SendEmail">AWS API
+         * Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1658,7 +1881,9 @@ namespace Model
          * <code>SourceIdentityArn</code>. For more information about sending
          * authorization, see the <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
-         * SES Developer Guide</a>.</p> </li> </ul>
+         * SES Developer Guide</a>.</p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/SendRawEmail">AWS
+         * API Reference</a></p>
          */
         virtual Model::SendRawEmailOutcome SendRawEmail(const Model::SendRawEmailRequest& request) const;
 
@@ -1709,7 +1934,9 @@ namespace Model
          * <code>SourceIdentityArn</code>. For more information about sending
          * authorization, see the <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
-         * SES Developer Guide</a>.</p> </li> </ul>
+         * SES Developer Guide</a>.</p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/SendRawEmail">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1762,7 +1989,9 @@ namespace Model
          * <code>SourceIdentityArn</code>. For more information about sending
          * authorization, see the <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
-         * SES Developer Guide</a>.</p> </li> </ul>
+         * SES Developer Guide</a>.</p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/SendRawEmail">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1775,7 +2004,9 @@ namespace Model
          * managing receipt rule sets, see the <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-receipt-rule-sets.html">Amazon
          * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
-         * second.</p>
+         * second.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/SetActiveReceiptRuleSet">AWS
+         * API Reference</a></p>
          */
         virtual Model::SetActiveReceiptRuleSetOutcome SetActiveReceiptRuleSet(const Model::SetActiveReceiptRuleSetRequest& request) const;
 
@@ -1786,7 +2017,9 @@ namespace Model
          * managing receipt rule sets, see the <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-receipt-rule-sets.html">Amazon
          * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
-         * second.</p>
+         * second.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/SetActiveReceiptRuleSet">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1799,7 +2032,9 @@ namespace Model
          * managing receipt rule sets, see the <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-receipt-rule-sets.html">Amazon
          * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
-         * second.</p>
+         * second.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/SetActiveReceiptRuleSet">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1819,7 +2054,9 @@ namespace Model
          * request per second.</p> <p>For more information about Easy DKIM signing, go to
          * the <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Amazon
-         * SES Developer Guide</a>.</p>
+         * SES Developer Guide</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/SetIdentityDkimEnabled">AWS
+         * API Reference</a></p>
          */
         virtual Model::SetIdentityDkimEnabledOutcome SetIdentityDkimEnabled(const Model::SetIdentityDkimEnabledRequest& request) const;
 
@@ -1837,7 +2074,9 @@ namespace Model
          * request per second.</p> <p>For more information about Easy DKIM signing, go to
          * the <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Amazon
-         * SES Developer Guide</a>.</p>
+         * SES Developer Guide</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/SetIdentityDkimEnabled">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1857,7 +2096,9 @@ namespace Model
          * request per second.</p> <p>For more information about Easy DKIM signing, go to
          * the <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Amazon
-         * SES Developer Guide</a>.</p>
+         * SES Developer Guide</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/SetIdentityDkimEnabled">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1873,7 +2114,9 @@ namespace Model
          * is throttled at one request per second.</p> <p>For more information about using
          * notifications with Amazon SES, see the <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/notifications.html">Amazon
-         * SES Developer Guide</a>.</p>
+         * SES Developer Guide</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/SetIdentityFeedbackForwardingEnabled">AWS
+         * API Reference</a></p>
          */
         virtual Model::SetIdentityFeedbackForwardingEnabledOutcome SetIdentityFeedbackForwardingEnabled(const Model::SetIdentityFeedbackForwardingEnabledRequest& request) const;
 
@@ -1887,7 +2130,9 @@ namespace Model
          * is throttled at one request per second.</p> <p>For more information about using
          * notifications with Amazon SES, see the <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/notifications.html">Amazon
-         * SES Developer Guide</a>.</p>
+         * SES Developer Guide</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/SetIdentityFeedbackForwardingEnabled">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1903,7 +2148,9 @@ namespace Model
          * is throttled at one request per second.</p> <p>For more information about using
          * notifications with Amazon SES, see the <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/notifications.html">Amazon
-         * SES Developer Guide</a>.</p>
+         * SES Developer Guide</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/SetIdentityFeedbackForwardingEnabled">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1916,7 +2163,9 @@ namespace Model
          * at one request per second.</p> <p>For more information about using notifications
          * with Amazon SES, see the <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/notifications.html">Amazon
-         * SES Developer Guide</a>.</p>
+         * SES Developer Guide</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/SetIdentityHeadersInNotificationsEnabled">AWS
+         * API Reference</a></p>
          */
         virtual Model::SetIdentityHeadersInNotificationsEnabledOutcome SetIdentityHeadersInNotificationsEnabled(const Model::SetIdentityHeadersInNotificationsEnabledRequest& request) const;
 
@@ -1927,7 +2176,9 @@ namespace Model
          * at one request per second.</p> <p>For more information about using notifications
          * with Amazon SES, see the <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/notifications.html">Amazon
-         * SES Developer Guide</a>.</p>
+         * SES Developer Guide</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/SetIdentityHeadersInNotificationsEnabled">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1940,7 +2191,9 @@ namespace Model
          * at one request per second.</p> <p>For more information about using notifications
          * with Amazon SES, see the <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/notifications.html">Amazon
-         * SES Developer Guide</a>.</p>
+         * SES Developer Guide</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/SetIdentityHeadersInNotificationsEnabled">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1955,7 +2208,9 @@ namespace Model
          * <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/mail-from-set.html">Amazon
          * SES Developer Guide</a>.</p> </important> <p>This action is throttled at one
-         * request per second.</p>
+         * request per second.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/SetIdentityMailFromDomain">AWS
+         * API Reference</a></p>
          */
         virtual Model::SetIdentityMailFromDomainOutcome SetIdentityMailFromDomain(const Model::SetIdentityMailFromDomainRequest& request) const;
 
@@ -1968,7 +2223,9 @@ namespace Model
          * <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/mail-from-set.html">Amazon
          * SES Developer Guide</a>.</p> </important> <p>This action is throttled at one
-         * request per second.</p>
+         * request per second.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/SetIdentityMailFromDomain">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1983,7 +2240,9 @@ namespace Model
          * <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/mail-from-set.html">Amazon
          * SES Developer Guide</a>.</p> </important> <p>This action is throttled at one
-         * request per second.</p>
+         * request per second.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/SetIdentityMailFromDomain">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1999,7 +2258,9 @@ namespace Model
          * </note> <p>This action is throttled at one request per second.</p> <p>For more
          * information about feedback notification, see the <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/notifications.html">Amazon
-         * SES Developer Guide</a>.</p>
+         * SES Developer Guide</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/SetIdentityNotificationTopic">AWS
+         * API Reference</a></p>
          */
         virtual Model::SetIdentityNotificationTopicOutcome SetIdentityNotificationTopic(const Model::SetIdentityNotificationTopicRequest& request) const;
 
@@ -2013,7 +2274,9 @@ namespace Model
          * </note> <p>This action is throttled at one request per second.</p> <p>For more
          * information about feedback notification, see the <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/notifications.html">Amazon
-         * SES Developer Guide</a>.</p>
+         * SES Developer Guide</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/SetIdentityNotificationTopic">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -2029,7 +2292,9 @@ namespace Model
          * </note> <p>This action is throttled at one request per second.</p> <p>For more
          * information about feedback notification, see the <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/notifications.html">Amazon
-         * SES Developer Guide</a>.</p>
+         * SES Developer Guide</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/SetIdentityNotificationTopic">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -2040,7 +2305,9 @@ namespace Model
          * <p>For information about managing receipt rules, see the <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-receipt-rules.html">Amazon
          * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
-         * second.</p>
+         * second.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/SetReceiptRulePosition">AWS
+         * API Reference</a></p>
          */
         virtual Model::SetReceiptRulePositionOutcome SetReceiptRulePosition(const Model::SetReceiptRulePositionRequest& request) const;
 
@@ -2049,7 +2316,9 @@ namespace Model
          * <p>For information about managing receipt rules, see the <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-receipt-rules.html">Amazon
          * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
-         * second.</p>
+         * second.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/SetReceiptRulePosition">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -2060,7 +2329,9 @@ namespace Model
          * <p>For information about managing receipt rules, see the <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-receipt-rules.html">Amazon
          * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
-         * second.</p>
+         * second.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/SetReceiptRulePosition">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -2076,7 +2347,9 @@ namespace Model
          * <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon
          * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
-         * second.</p>
+         * second.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/UpdateConfigurationSetEventDestination">AWS
+         * API Reference</a></p>
          */
         virtual Model::UpdateConfigurationSetEventDestinationOutcome UpdateConfigurationSetEventDestination(const Model::UpdateConfigurationSetEventDestinationRequest& request) const;
 
@@ -2090,7 +2363,9 @@ namespace Model
          * <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon
          * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
-         * second.</p>
+         * second.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/UpdateConfigurationSetEventDestination">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -2106,7 +2381,9 @@ namespace Model
          * <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon
          * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
-         * second.</p>
+         * second.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/UpdateConfigurationSetEventDestination">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -2117,7 +2394,9 @@ namespace Model
          * see the <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-receipt-rules.html">Amazon
          * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
-         * second.</p>
+         * second.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/UpdateReceiptRule">AWS
+         * API Reference</a></p>
          */
         virtual Model::UpdateReceiptRuleOutcome UpdateReceiptRule(const Model::UpdateReceiptRuleRequest& request) const;
 
@@ -2126,7 +2405,9 @@ namespace Model
          * see the <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-receipt-rules.html">Amazon
          * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
-         * second.</p>
+         * second.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/UpdateReceiptRule">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -2137,7 +2418,9 @@ namespace Model
          * see the <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-receipt-rules.html">Amazon
          * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
-         * second.</p>
+         * second.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/UpdateReceiptRule">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -2155,7 +2438,9 @@ namespace Model
          * <code>SetIdentityDkimEnabled</code> action.</p> <p>For more information about
          * creating DNS records using DKIM tokens, go to the <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim-dns-records.html">Amazon
-         * SES Developer Guide</a>.</p>
+         * SES Developer Guide</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/VerifyDomainDkim">AWS
+         * API Reference</a></p>
          */
         virtual Model::VerifyDomainDkimOutcome VerifyDomainDkim(const Model::VerifyDomainDkimRequest& request) const;
 
@@ -2171,7 +2456,9 @@ namespace Model
          * <code>SetIdentityDkimEnabled</code> action.</p> <p>For more information about
          * creating DNS records using DKIM tokens, go to the <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim-dns-records.html">Amazon
-         * SES Developer Guide</a>.</p>
+         * SES Developer Guide</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/VerifyDomainDkim">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -2189,7 +2476,9 @@ namespace Model
          * <code>SetIdentityDkimEnabled</code> action.</p> <p>For more information about
          * creating DNS records using DKIM tokens, go to the <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim-dns-records.html">Amazon
-         * SES Developer Guide</a>.</p>
+         * SES Developer Guide</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/VerifyDomainDkim">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -2197,13 +2486,17 @@ namespace Model
 
         /**
          * <p>Verifies a domain.</p> <p>This action is throttled at one request per
-         * second.</p>
+         * second.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/VerifyDomainIdentity">AWS
+         * API Reference</a></p>
          */
         virtual Model::VerifyDomainIdentityOutcome VerifyDomainIdentity(const Model::VerifyDomainIdentityRequest& request) const;
 
         /**
          * <p>Verifies a domain.</p> <p>This action is throttled at one request per
-         * second.</p>
+         * second.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/VerifyDomainIdentity">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -2211,7 +2504,9 @@ namespace Model
 
         /**
          * <p>Verifies a domain.</p> <p>This action is throttled at one request per
-         * second.</p>
+         * second.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/VerifyDomainIdentity">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -2222,7 +2517,9 @@ namespace Model
          * be sent to the specified address.</p> <important> <p>The VerifyEmailAddress
          * action is deprecated as of the May 15, 2012 release of Domain Verification. The
          * VerifyEmailIdentity action is now preferred.</p> </important> <p>This action is
-         * throttled at one request per second.</p>
+         * throttled at one request per second.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/VerifyEmailAddress">AWS
+         * API Reference</a></p>
          */
         virtual Model::VerifyEmailAddressOutcome VerifyEmailAddress(const Model::VerifyEmailAddressRequest& request) const;
 
@@ -2231,7 +2528,9 @@ namespace Model
          * be sent to the specified address.</p> <important> <p>The VerifyEmailAddress
          * action is deprecated as of the May 15, 2012 release of Domain Verification. The
          * VerifyEmailIdentity action is now preferred.</p> </important> <p>This action is
-         * throttled at one request per second.</p>
+         * throttled at one request per second.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/VerifyEmailAddress">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -2242,7 +2541,9 @@ namespace Model
          * be sent to the specified address.</p> <important> <p>The VerifyEmailAddress
          * action is deprecated as of the May 15, 2012 release of Domain Verification. The
          * VerifyEmailIdentity action is now preferred.</p> </important> <p>This action is
-         * throttled at one request per second.</p>
+         * throttled at one request per second.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/VerifyEmailAddress">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -2251,14 +2552,18 @@ namespace Model
         /**
          * <p>Verifies an email address. This action causes a confirmation email message to
          * be sent to the specified address.</p> <p>This action is throttled at one request
-         * per second.</p>
+         * per second.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/VerifyEmailIdentity">AWS
+         * API Reference</a></p>
          */
         virtual Model::VerifyEmailIdentityOutcome VerifyEmailIdentity(const Model::VerifyEmailIdentityRequest& request) const;
 
         /**
          * <p>Verifies an email address. This action causes a confirmation email message to
          * be sent to the specified address.</p> <p>This action is throttled at one request
-         * per second.</p>
+         * per second.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/VerifyEmailIdentity">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -2267,7 +2572,9 @@ namespace Model
         /**
          * <p>Verifies an email address. This action causes a confirmation email message to
          * be sent to the specified address.</p> <p>This action is throttled at one request
-         * per second.</p>
+         * per second.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/VerifyEmailIdentity">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */

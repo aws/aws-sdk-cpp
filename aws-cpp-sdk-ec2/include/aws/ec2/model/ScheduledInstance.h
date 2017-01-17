@@ -34,7 +34,9 @@ namespace Model
 {
 
   /**
-   * <p>Describes a Scheduled Instance.</p>
+   * <p>Describes a Scheduled Instance.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ScheduledInstance">AWS
+   * API Reference</a></p>
    */
   class AWS_EC2_API ScheduledInstance
   {

@@ -34,7 +34,9 @@ namespace EC2
 namespace Model
 {
   /**
-   * <p>Describes a key pair.</p>
+   * <p>Describes a key pair.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/KeyPair">AWS API
+   * Reference</a></p>
    */
   class AWS_EC2_API CreateKeyPairResponse
   {

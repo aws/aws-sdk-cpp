@@ -38,7 +38,9 @@ namespace Model
    * <code>BasePathMapping</code> specification identifies a deployed <a>RestApi</a>
    * in a given stage of the owner <a>Account</a>.</div> <div class="seeAlso"> <a
    * href="http://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-custom-domains.html">Use
-   * Custom Domain Names</a> </div>
+   * Custom Domain Names</a> </div><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/BasePathMapping">AWS
+   * API Reference</a></p>
    */
   class AWS_APIGATEWAY_API GetBasePathMappingResult
   {

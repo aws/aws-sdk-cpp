@@ -38,7 +38,7 @@ Aws::String DeleteClusterRequest::SerializePayload() const
 
   if(m_skipFinalClusterSnapshotHasBeenSet)
   {
-    ss << "SkipFinalClusterSnapshot=" << m_skipFinalClusterSnapshot << "&";
+    ss << "SkipFinalClusterSnapshot=" << std::boolalpha << m_skipFinalClusterSnapshot << "&";
   }
 
   if(m_finalClusterSnapshotIdentifierHasBeenSet)

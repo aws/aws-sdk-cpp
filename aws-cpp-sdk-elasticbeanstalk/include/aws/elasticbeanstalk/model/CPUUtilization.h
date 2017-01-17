@@ -31,10 +31,9 @@ namespace Model
 {
 
   /**
-   * <p>Represents CPU utilization information from the specified instance that
-   * belongs to the AWS Elastic Beanstalk environment. Use the
-   * <code>instanceId</code> property to specify the application instance for which
-   * you'd like to return data.</p>
+   * <p>CPU utilization metrics for an instance.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/CPUUtilization">AWS
+   * API Reference</a></p>
    */
   class AWS_ELASTICBEANSTALK_API CPUUtilization
   {

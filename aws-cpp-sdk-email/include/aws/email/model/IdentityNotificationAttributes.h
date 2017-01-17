@@ -35,7 +35,10 @@ namespace Model
    * <p>Represents the notification attributes of an identity, including whether an
    * identity has Amazon Simple Notification Service (Amazon SNS) topics set for
    * bounce, complaint, and/or delivery notifications, and whether feedback
-   * forwarding is enabled for bounce and complaint notifications.</p>
+   * forwarding is enabled for bounce and complaint notifications.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/IdentityNotificationAttributes">AWS
+   * API Reference</a></p>
    */
   class AWS_SES_API IdentityNotificationAttributes
   {

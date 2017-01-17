@@ -34,8 +34,10 @@ namespace Model
 {
 
   /**
-   * <p>Contains the details of a single Amazon SQS message along with a
-   * <code>Id</code>. </p>
+   * <p>Contains the details of a single Amazon SQS message along with an
+   * <code>Id</code>.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/SendMessageBatchRequestEntry">AWS
+   * API Reference</a></p>
    */
   class AWS_SQS_API SendMessageBatchRequestEntry
   {
@@ -48,204 +50,207 @@ namespace Model
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
     /**
-     * <p>An identifier for the message in this batch. This is used to communicate the
-     * result. Note that the <code>Id</code>s of a batch request need to be unique
-     * within the request.</p>
+     * <p>An identifier for a message in this batch used to communicate the result.</p>
+     * <note> <p>The <code>Id</code>s of a batch request need to be unique within a
+     * request</p> </note>
      */
     inline const Aws::String& GetId() const{ return m_id; }
 
     /**
-     * <p>An identifier for the message in this batch. This is used to communicate the
-     * result. Note that the <code>Id</code>s of a batch request need to be unique
-     * within the request.</p>
+     * <p>An identifier for a message in this batch used to communicate the result.</p>
+     * <note> <p>The <code>Id</code>s of a batch request need to be unique within a
+     * request</p> </note>
      */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
-     * <p>An identifier for the message in this batch. This is used to communicate the
-     * result. Note that the <code>Id</code>s of a batch request need to be unique
-     * within the request.</p>
+     * <p>An identifier for a message in this batch used to communicate the result.</p>
+     * <note> <p>The <code>Id</code>s of a batch request need to be unique within a
+     * request</p> </note>
      */
     inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
-     * <p>An identifier for the message in this batch. This is used to communicate the
-     * result. Note that the <code>Id</code>s of a batch request need to be unique
-     * within the request.</p>
+     * <p>An identifier for a message in this batch used to communicate the result.</p>
+     * <note> <p>The <code>Id</code>s of a batch request need to be unique within a
+     * request</p> </note>
      */
     inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
 
     /**
-     * <p>An identifier for the message in this batch. This is used to communicate the
-     * result. Note that the <code>Id</code>s of a batch request need to be unique
-     * within the request.</p>
+     * <p>An identifier for a message in this batch used to communicate the result.</p>
+     * <note> <p>The <code>Id</code>s of a batch request need to be unique within a
+     * request</p> </note>
      */
     inline SendMessageBatchRequestEntry& WithId(const Aws::String& value) { SetId(value); return *this;}
 
     /**
-     * <p>An identifier for the message in this batch. This is used to communicate the
-     * result. Note that the <code>Id</code>s of a batch request need to be unique
-     * within the request.</p>
+     * <p>An identifier for a message in this batch used to communicate the result.</p>
+     * <note> <p>The <code>Id</code>s of a batch request need to be unique within a
+     * request</p> </note>
      */
     inline SendMessageBatchRequestEntry& WithId(Aws::String&& value) { SetId(value); return *this;}
 
     /**
-     * <p>An identifier for the message in this batch. This is used to communicate the
-     * result. Note that the <code>Id</code>s of a batch request need to be unique
-     * within the request.</p>
+     * <p>An identifier for a message in this batch used to communicate the result.</p>
+     * <note> <p>The <code>Id</code>s of a batch request need to be unique within a
+     * request</p> </note>
      */
     inline SendMessageBatchRequestEntry& WithId(const char* value) { SetId(value); return *this;}
 
     /**
-     * <p>Body of the message.</p>
+     * <p>The body of the message.</p>
      */
     inline const Aws::String& GetMessageBody() const{ return m_messageBody; }
 
     /**
-     * <p>Body of the message.</p>
+     * <p>The body of the message.</p>
      */
     inline void SetMessageBody(const Aws::String& value) { m_messageBodyHasBeenSet = true; m_messageBody = value; }
 
     /**
-     * <p>Body of the message.</p>
+     * <p>The body of the message.</p>
      */
     inline void SetMessageBody(Aws::String&& value) { m_messageBodyHasBeenSet = true; m_messageBody = value; }
 
     /**
-     * <p>Body of the message.</p>
+     * <p>The body of the message.</p>
      */
     inline void SetMessageBody(const char* value) { m_messageBodyHasBeenSet = true; m_messageBody.assign(value); }
 
     /**
-     * <p>Body of the message.</p>
+     * <p>The body of the message.</p>
      */
     inline SendMessageBatchRequestEntry& WithMessageBody(const Aws::String& value) { SetMessageBody(value); return *this;}
 
     /**
-     * <p>Body of the message.</p>
+     * <p>The body of the message.</p>
      */
     inline SendMessageBatchRequestEntry& WithMessageBody(Aws::String&& value) { SetMessageBody(value); return *this;}
 
     /**
-     * <p>Body of the message.</p>
+     * <p>The body of the message.</p>
      */
     inline SendMessageBatchRequestEntry& WithMessageBody(const char* value) { SetMessageBody(value); return *this;}
 
     /**
-     * <p>The number of seconds (0 to 900 - 15 minutes) to delay a specific message.
-     * Messages with a positive <code>DelaySeconds</code> value become available for
-     * processing after the delay time is finished. If you don't specify a value, the
-     * default value for the queue applies. </p> <note> <p>When you set
-     * <code>FifoQueue</code>, you can't set <code>DelaySeconds</code> per message. You
-     * can set this parameter only on a queue level.</p> </note>
+     * <p>The number of seconds for which a specific message is delayed. Valid values:
+     * 0 to 900. Maximum: 15 minutes. Messages with a positive
+     * <code>DelaySeconds</code> value become available for processing after the delay
+     * period is finished. If you don't specify a value, the default value for the
+     * queue is applied. </p> <note> <p>When you set <code>FifoQueue</code>, you can't
+     * set <code>DelaySeconds</code> per message. You can set this parameter only on a
+     * queue level.</p> </note>
      */
     inline int GetDelaySeconds() const{ return m_delaySeconds; }
 
     /**
-     * <p>The number of seconds (0 to 900 - 15 minutes) to delay a specific message.
-     * Messages with a positive <code>DelaySeconds</code> value become available for
-     * processing after the delay time is finished. If you don't specify a value, the
-     * default value for the queue applies. </p> <note> <p>When you set
-     * <code>FifoQueue</code>, you can't set <code>DelaySeconds</code> per message. You
-     * can set this parameter only on a queue level.</p> </note>
+     * <p>The number of seconds for which a specific message is delayed. Valid values:
+     * 0 to 900. Maximum: 15 minutes. Messages with a positive
+     * <code>DelaySeconds</code> value become available for processing after the delay
+     * period is finished. If you don't specify a value, the default value for the
+     * queue is applied. </p> <note> <p>When you set <code>FifoQueue</code>, you can't
+     * set <code>DelaySeconds</code> per message. You can set this parameter only on a
+     * queue level.</p> </note>
      */
     inline void SetDelaySeconds(int value) { m_delaySecondsHasBeenSet = true; m_delaySeconds = value; }
 
     /**
-     * <p>The number of seconds (0 to 900 - 15 minutes) to delay a specific message.
-     * Messages with a positive <code>DelaySeconds</code> value become available for
-     * processing after the delay time is finished. If you don't specify a value, the
-     * default value for the queue applies. </p> <note> <p>When you set
-     * <code>FifoQueue</code>, you can't set <code>DelaySeconds</code> per message. You
-     * can set this parameter only on a queue level.</p> </note>
+     * <p>The number of seconds for which a specific message is delayed. Valid values:
+     * 0 to 900. Maximum: 15 minutes. Messages with a positive
+     * <code>DelaySeconds</code> value become available for processing after the delay
+     * period is finished. If you don't specify a value, the default value for the
+     * queue is applied. </p> <note> <p>When you set <code>FifoQueue</code>, you can't
+     * set <code>DelaySeconds</code> per message. You can set this parameter only on a
+     * queue level.</p> </note>
      */
     inline SendMessageBatchRequestEntry& WithDelaySeconds(int value) { SetDelaySeconds(value); return *this;}
 
     /**
-     * <p>Each message attribute consists of a Name, Type, and Value. For more
-     * information, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/SQSMessageAttributes.html#SQSMessageAttributesNTV">Message
-     * Attribute Items</a> in the <i>Amazon SQS Developer Guide</i>.</p>
+     * <p>Each message attribute consists of a <code>Name</code>, <code>Type</code>,
+     * and <code>Value</code>. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html#message-attributes-items-validation">Message
+     * Attribute Items and Validation</a> in the <i>Amazon SQS Developer Guide</i>.</p>
      */
     inline const Aws::Map<Aws::String, MessageAttributeValue>& GetMessageAttributes() const{ return m_messageAttributes; }
 
     /**
-     * <p>Each message attribute consists of a Name, Type, and Value. For more
-     * information, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/SQSMessageAttributes.html#SQSMessageAttributesNTV">Message
-     * Attribute Items</a> in the <i>Amazon SQS Developer Guide</i>.</p>
+     * <p>Each message attribute consists of a <code>Name</code>, <code>Type</code>,
+     * and <code>Value</code>. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html#message-attributes-items-validation">Message
+     * Attribute Items and Validation</a> in the <i>Amazon SQS Developer Guide</i>.</p>
      */
     inline void SetMessageAttributes(const Aws::Map<Aws::String, MessageAttributeValue>& value) { m_messageAttributesHasBeenSet = true; m_messageAttributes = value; }
 
     /**
-     * <p>Each message attribute consists of a Name, Type, and Value. For more
-     * information, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/SQSMessageAttributes.html#SQSMessageAttributesNTV">Message
-     * Attribute Items</a> in the <i>Amazon SQS Developer Guide</i>.</p>
+     * <p>Each message attribute consists of a <code>Name</code>, <code>Type</code>,
+     * and <code>Value</code>. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html#message-attributes-items-validation">Message
+     * Attribute Items and Validation</a> in the <i>Amazon SQS Developer Guide</i>.</p>
      */
     inline void SetMessageAttributes(Aws::Map<Aws::String, MessageAttributeValue>&& value) { m_messageAttributesHasBeenSet = true; m_messageAttributes = value; }
 
     /**
-     * <p>Each message attribute consists of a Name, Type, and Value. For more
-     * information, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/SQSMessageAttributes.html#SQSMessageAttributesNTV">Message
-     * Attribute Items</a> in the <i>Amazon SQS Developer Guide</i>.</p>
+     * <p>Each message attribute consists of a <code>Name</code>, <code>Type</code>,
+     * and <code>Value</code>. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html#message-attributes-items-validation">Message
+     * Attribute Items and Validation</a> in the <i>Amazon SQS Developer Guide</i>.</p>
      */
     inline SendMessageBatchRequestEntry& WithMessageAttributes(const Aws::Map<Aws::String, MessageAttributeValue>& value) { SetMessageAttributes(value); return *this;}
 
     /**
-     * <p>Each message attribute consists of a Name, Type, and Value. For more
-     * information, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/SQSMessageAttributes.html#SQSMessageAttributesNTV">Message
-     * Attribute Items</a> in the <i>Amazon SQS Developer Guide</i>.</p>
+     * <p>Each message attribute consists of a <code>Name</code>, <code>Type</code>,
+     * and <code>Value</code>. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html#message-attributes-items-validation">Message
+     * Attribute Items and Validation</a> in the <i>Amazon SQS Developer Guide</i>.</p>
      */
     inline SendMessageBatchRequestEntry& WithMessageAttributes(Aws::Map<Aws::String, MessageAttributeValue>&& value) { SetMessageAttributes(value); return *this;}
 
     /**
-     * <p>Each message attribute consists of a Name, Type, and Value. For more
-     * information, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/SQSMessageAttributes.html#SQSMessageAttributesNTV">Message
-     * Attribute Items</a> in the <i>Amazon SQS Developer Guide</i>.</p>
+     * <p>Each message attribute consists of a <code>Name</code>, <code>Type</code>,
+     * and <code>Value</code>. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html#message-attributes-items-validation">Message
+     * Attribute Items and Validation</a> in the <i>Amazon SQS Developer Guide</i>.</p>
      */
     inline SendMessageBatchRequestEntry& AddMessageAttributes(const Aws::String& key, const MessageAttributeValue& value) { m_messageAttributesHasBeenSet = true; m_messageAttributes[key] = value; return *this; }
 
     /**
-     * <p>Each message attribute consists of a Name, Type, and Value. For more
-     * information, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/SQSMessageAttributes.html#SQSMessageAttributesNTV">Message
-     * Attribute Items</a> in the <i>Amazon SQS Developer Guide</i>.</p>
+     * <p>Each message attribute consists of a <code>Name</code>, <code>Type</code>,
+     * and <code>Value</code>. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html#message-attributes-items-validation">Message
+     * Attribute Items and Validation</a> in the <i>Amazon SQS Developer Guide</i>.</p>
      */
     inline SendMessageBatchRequestEntry& AddMessageAttributes(Aws::String&& key, const MessageAttributeValue& value) { m_messageAttributesHasBeenSet = true; m_messageAttributes[key] = value; return *this; }
 
     /**
-     * <p>Each message attribute consists of a Name, Type, and Value. For more
-     * information, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/SQSMessageAttributes.html#SQSMessageAttributesNTV">Message
-     * Attribute Items</a> in the <i>Amazon SQS Developer Guide</i>.</p>
+     * <p>Each message attribute consists of a <code>Name</code>, <code>Type</code>,
+     * and <code>Value</code>. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html#message-attributes-items-validation">Message
+     * Attribute Items and Validation</a> in the <i>Amazon SQS Developer Guide</i>.</p>
      */
     inline SendMessageBatchRequestEntry& AddMessageAttributes(const Aws::String& key, MessageAttributeValue&& value) { m_messageAttributesHasBeenSet = true; m_messageAttributes[key] = value; return *this; }
 
     /**
-     * <p>Each message attribute consists of a Name, Type, and Value. For more
-     * information, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/SQSMessageAttributes.html#SQSMessageAttributesNTV">Message
-     * Attribute Items</a> in the <i>Amazon SQS Developer Guide</i>.</p>
+     * <p>Each message attribute consists of a <code>Name</code>, <code>Type</code>,
+     * and <code>Value</code>. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html#message-attributes-items-validation">Message
+     * Attribute Items and Validation</a> in the <i>Amazon SQS Developer Guide</i>.</p>
      */
     inline SendMessageBatchRequestEntry& AddMessageAttributes(Aws::String&& key, MessageAttributeValue&& value) { m_messageAttributesHasBeenSet = true; m_messageAttributes[key] = value; return *this; }
 
     /**
-     * <p>Each message attribute consists of a Name, Type, and Value. For more
-     * information, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/SQSMessageAttributes.html#SQSMessageAttributesNTV">Message
-     * Attribute Items</a> in the <i>Amazon SQS Developer Guide</i>.</p>
+     * <p>Each message attribute consists of a <code>Name</code>, <code>Type</code>,
+     * and <code>Value</code>. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html#message-attributes-items-validation">Message
+     * Attribute Items and Validation</a> in the <i>Amazon SQS Developer Guide</i>.</p>
      */
     inline SendMessageBatchRequestEntry& AddMessageAttributes(const char* key, MessageAttributeValue&& value) { m_messageAttributesHasBeenSet = true; m_messageAttributes[key] = value; return *this; }
 
     /**
-     * <p>Each message attribute consists of a Name, Type, and Value. For more
-     * information, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/SQSMessageAttributes.html#SQSMessageAttributesNTV">Message
-     * Attribute Items</a> in the <i>Amazon SQS Developer Guide</i>.</p>
+     * <p>Each message attribute consists of a <code>Name</code>, <code>Type</code>,
+     * and <code>Value</code>. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html#message-attributes-items-validation">Message
+     * Attribute Items and Validation</a> in the <i>Amazon SQS Developer Guide</i>.</p>
      */
     inline SendMessageBatchRequestEntry& AddMessageAttributes(const char* key, const MessageAttributeValue& value) { m_messageAttributesHasBeenSet = true; m_messageAttributes[key] = value; return *this; }
 

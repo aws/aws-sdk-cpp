@@ -45,12 +45,12 @@ Aws::String TerminateEnvironmentRequest::SerializePayload() const
 
   if(m_terminateResourcesHasBeenSet)
   {
-    ss << "TerminateResources=" << m_terminateResources << "&";
+    ss << "TerminateResources=" << std::boolalpha << m_terminateResources << "&";
   }
 
   if(m_forceTerminateHasBeenSet)
   {
-    ss << "ForceTerminate=" << m_forceTerminate << "&";
+    ss << "ForceTerminate=" << std::boolalpha << m_forceTerminate << "&";
   }
 
   ss << "Version=2010-12-01";

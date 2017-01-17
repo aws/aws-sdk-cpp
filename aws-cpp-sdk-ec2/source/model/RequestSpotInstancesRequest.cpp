@@ -41,10 +41,10 @@ RequestSpotInstancesRequest::RequestSpotInstancesRequest() :
 Aws::String RequestSpotInstancesRequest::SerializePayload() const
 {
   Aws::StringStream ss;
-  ss << "Action=SpotInstances&";
+  ss << "Action=RequestSpotInstances&";
   if(m_dryRunHasBeenSet)
   {
-    ss << "DryRun=" << m_dryRun << "&";
+    ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
   if(m_spotPriceHasBeenSet)
@@ -97,7 +97,7 @@ Aws::String RequestSpotInstancesRequest::SerializePayload() const
     m_launchSpecification.OutputToStream(ss, "LaunchSpecification");
   }
 
-  ss << "Version=2015-10-01";
+  ss << "Version=2016-11-15";
   return ss.str();
 }
 

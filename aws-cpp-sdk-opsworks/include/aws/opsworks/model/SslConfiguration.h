@@ -31,7 +31,9 @@ namespace Model
 {
 
   /**
-   * <p>Describes an app's SSL configuration.</p>
+   * <p>Describes an app's SSL configuration.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/SslConfiguration">AWS
+   * API Reference</a></p>
    */
   class AWS_OPSWORKS_API SslConfiguration
   {

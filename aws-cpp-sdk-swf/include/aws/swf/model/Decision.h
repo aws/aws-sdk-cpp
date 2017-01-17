@@ -161,7 +161,10 @@ namespace Model
    * <a>CancelTimerDecisionAttributes</a> </li> <li>
    * <a>SignalExternalWorkflowExecutionDecisionAttributes</a> </li> <li>
    * <a>RequestCancelExternalWorkflowExecutionDecisionAttributes</a> </li> <li>
-   * <a>StartChildWorkflowExecutionDecisionAttributes</a> </li> </ul>
+   * <a>StartChildWorkflowExecutionDecisionAttributes</a> </li> </ul><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/Decision">AWS API
+   * Reference</a></p>
    */
   class AWS_SWF_API Decision
   {

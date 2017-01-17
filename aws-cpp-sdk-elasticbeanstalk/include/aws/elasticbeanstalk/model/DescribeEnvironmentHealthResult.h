@@ -39,7 +39,10 @@ namespace ElasticBeanstalk
 namespace Model
 {
   /**
-   * <p>See the example below for a sample response.</p>
+   * <p>Health details for an AWS Elastic Beanstalk environment.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeEnvironmentHealthResult">AWS
+   * API Reference</a></p>
    */
   class AWS_ELASTICBEANSTALK_API DescribeEnvironmentHealthResult
   {
@@ -49,270 +52,293 @@ namespace Model
     DescribeEnvironmentHealthResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
     /**
-     * <p>The AWS Elastic Beanstalk environment name.</p>
+     * <p>The environment's name.</p>
      */
     inline const Aws::String& GetEnvironmentName() const{ return m_environmentName; }
 
     /**
-     * <p>The AWS Elastic Beanstalk environment name.</p>
+     * <p>The environment's name.</p>
      */
     inline void SetEnvironmentName(const Aws::String& value) { m_environmentName = value; }
 
     /**
-     * <p>The AWS Elastic Beanstalk environment name.</p>
+     * <p>The environment's name.</p>
      */
     inline void SetEnvironmentName(Aws::String&& value) { m_environmentName = value; }
 
     /**
-     * <p>The AWS Elastic Beanstalk environment name.</p>
+     * <p>The environment's name.</p>
      */
     inline void SetEnvironmentName(const char* value) { m_environmentName.assign(value); }
 
     /**
-     * <p>The AWS Elastic Beanstalk environment name.</p>
+     * <p>The environment's name.</p>
      */
     inline DescribeEnvironmentHealthResult& WithEnvironmentName(const Aws::String& value) { SetEnvironmentName(value); return *this;}
 
     /**
-     * <p>The AWS Elastic Beanstalk environment name.</p>
+     * <p>The environment's name.</p>
      */
     inline DescribeEnvironmentHealthResult& WithEnvironmentName(Aws::String&& value) { SetEnvironmentName(value); return *this;}
 
     /**
-     * <p>The AWS Elastic Beanstalk environment name.</p>
+     * <p>The environment's name.</p>
      */
     inline DescribeEnvironmentHealthResult& WithEnvironmentName(const char* value) { SetEnvironmentName(value); return *this;}
 
     /**
-     * <p>Contains the response body with information about the health of the
-     * environment.</p>
+     * <p>The <a
+     * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">health
+     * status</a> of the environment. For example, <code>Ok</code>.</p>
      */
     inline const Aws::String& GetHealthStatus() const{ return m_healthStatus; }
 
     /**
-     * <p>Contains the response body with information about the health of the
-     * environment.</p>
+     * <p>The <a
+     * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">health
+     * status</a> of the environment. For example, <code>Ok</code>.</p>
      */
     inline void SetHealthStatus(const Aws::String& value) { m_healthStatus = value; }
 
     /**
-     * <p>Contains the response body with information about the health of the
-     * environment.</p>
+     * <p>The <a
+     * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">health
+     * status</a> of the environment. For example, <code>Ok</code>.</p>
      */
     inline void SetHealthStatus(Aws::String&& value) { m_healthStatus = value; }
 
     /**
-     * <p>Contains the response body with information about the health of the
-     * environment.</p>
+     * <p>The <a
+     * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">health
+     * status</a> of the environment. For example, <code>Ok</code>.</p>
      */
     inline void SetHealthStatus(const char* value) { m_healthStatus.assign(value); }
 
     /**
-     * <p>Contains the response body with information about the health of the
-     * environment.</p>
+     * <p>The <a
+     * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">health
+     * status</a> of the environment. For example, <code>Ok</code>.</p>
      */
     inline DescribeEnvironmentHealthResult& WithHealthStatus(const Aws::String& value) { SetHealthStatus(value); return *this;}
 
     /**
-     * <p>Contains the response body with information about the health of the
-     * environment.</p>
+     * <p>The <a
+     * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">health
+     * status</a> of the environment. For example, <code>Ok</code>.</p>
      */
     inline DescribeEnvironmentHealthResult& WithHealthStatus(Aws::String&& value) { SetHealthStatus(value); return *this;}
 
     /**
-     * <p>Contains the response body with information about the health of the
-     * environment.</p>
+     * <p>The <a
+     * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">health
+     * status</a> of the environment. For example, <code>Ok</code>.</p>
      */
     inline DescribeEnvironmentHealthResult& WithHealthStatus(const char* value) { SetHealthStatus(value); return *this;}
 
     /**
-     * <p>Returns the health status value of the environment. For more information, see
-     * <a
-     * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health
-     * Colors and Statuses</a>.</p>
+     * <p>The environment's operational status. <code>Ready</code>,
+     * <code>Launching</code>, <code>Updating</code>, <code>Terminating</code>, or
+     * <code>Terminated</code>.</p>
      */
     inline const EnvironmentHealth& GetStatus() const{ return m_status; }
 
     /**
-     * <p>Returns the health status value of the environment. For more information, see
-     * <a
-     * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health
-     * Colors and Statuses</a>.</p>
+     * <p>The environment's operational status. <code>Ready</code>,
+     * <code>Launching</code>, <code>Updating</code>, <code>Terminating</code>, or
+     * <code>Terminated</code>.</p>
      */
     inline void SetStatus(const EnvironmentHealth& value) { m_status = value; }
 
     /**
-     * <p>Returns the health status value of the environment. For more information, see
-     * <a
-     * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health
-     * Colors and Statuses</a>.</p>
+     * <p>The environment's operational status. <code>Ready</code>,
+     * <code>Launching</code>, <code>Updating</code>, <code>Terminating</code>, or
+     * <code>Terminated</code>.</p>
      */
     inline void SetStatus(EnvironmentHealth&& value) { m_status = value; }
 
     /**
-     * <p>Returns the health status value of the environment. For more information, see
-     * <a
-     * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health
-     * Colors and Statuses</a>.</p>
+     * <p>The environment's operational status. <code>Ready</code>,
+     * <code>Launching</code>, <code>Updating</code>, <code>Terminating</code>, or
+     * <code>Terminated</code>.</p>
      */
     inline DescribeEnvironmentHealthResult& WithStatus(const EnvironmentHealth& value) { SetStatus(value); return *this;}
 
     /**
-     * <p>Returns the health status value of the environment. For more information, see
-     * <a
-     * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health
-     * Colors and Statuses</a>.</p>
+     * <p>The environment's operational status. <code>Ready</code>,
+     * <code>Launching</code>, <code>Updating</code>, <code>Terminating</code>, or
+     * <code>Terminated</code>.</p>
      */
     inline DescribeEnvironmentHealthResult& WithStatus(EnvironmentHealth&& value) { SetStatus(value); return *this;}
 
     /**
-     * <p>Returns the color indicator that tells you information about the health of
-     * the environment. For more information, see <a
-     * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health
-     * Colors and Statuses</a>.</p>
+     * <p>The <a
+     * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">health
+     * color</a> of the environment.</p>
      */
     inline const Aws::String& GetColor() const{ return m_color; }
 
     /**
-     * <p>Returns the color indicator that tells you information about the health of
-     * the environment. For more information, see <a
-     * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health
-     * Colors and Statuses</a>.</p>
+     * <p>The <a
+     * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">health
+     * color</a> of the environment.</p>
      */
     inline void SetColor(const Aws::String& value) { m_color = value; }
 
     /**
-     * <p>Returns the color indicator that tells you information about the health of
-     * the environment. For more information, see <a
-     * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health
-     * Colors and Statuses</a>.</p>
+     * <p>The <a
+     * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">health
+     * color</a> of the environment.</p>
      */
     inline void SetColor(Aws::String&& value) { m_color = value; }
 
     /**
-     * <p>Returns the color indicator that tells you information about the health of
-     * the environment. For more information, see <a
-     * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health
-     * Colors and Statuses</a>.</p>
+     * <p>The <a
+     * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">health
+     * color</a> of the environment.</p>
      */
     inline void SetColor(const char* value) { m_color.assign(value); }
 
     /**
-     * <p>Returns the color indicator that tells you information about the health of
-     * the environment. For more information, see <a
-     * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health
-     * Colors and Statuses</a>.</p>
+     * <p>The <a
+     * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">health
+     * color</a> of the environment.</p>
      */
     inline DescribeEnvironmentHealthResult& WithColor(const Aws::String& value) { SetColor(value); return *this;}
 
     /**
-     * <p>Returns the color indicator that tells you information about the health of
-     * the environment. For more information, see <a
-     * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health
-     * Colors and Statuses</a>.</p>
+     * <p>The <a
+     * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">health
+     * color</a> of the environment.</p>
      */
     inline DescribeEnvironmentHealthResult& WithColor(Aws::String&& value) { SetColor(value); return *this;}
 
     /**
-     * <p>Returns the color indicator that tells you information about the health of
-     * the environment. For more information, see <a
-     * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health
-     * Colors and Statuses</a>.</p>
+     * <p>The <a
+     * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">health
+     * color</a> of the environment.</p>
      */
     inline DescribeEnvironmentHealthResult& WithColor(const char* value) { SetColor(value); return *this;}
 
     /**
-     * <p>Returns potential causes for the reported status.</p>
+     * <p>Descriptions of the data that contributed to the environment's current health
+     * status.</p>
      */
     inline const Aws::Vector<Aws::String>& GetCauses() const{ return m_causes; }
 
     /**
-     * <p>Returns potential causes for the reported status.</p>
+     * <p>Descriptions of the data that contributed to the environment's current health
+     * status.</p>
      */
     inline void SetCauses(const Aws::Vector<Aws::String>& value) { m_causes = value; }
 
     /**
-     * <p>Returns potential causes for the reported status.</p>
+     * <p>Descriptions of the data that contributed to the environment's current health
+     * status.</p>
      */
     inline void SetCauses(Aws::Vector<Aws::String>&& value) { m_causes = value; }
 
     /**
-     * <p>Returns potential causes for the reported status.</p>
+     * <p>Descriptions of the data that contributed to the environment's current health
+     * status.</p>
      */
     inline DescribeEnvironmentHealthResult& WithCauses(const Aws::Vector<Aws::String>& value) { SetCauses(value); return *this;}
 
     /**
-     * <p>Returns potential causes for the reported status.</p>
+     * <p>Descriptions of the data that contributed to the environment's current health
+     * status.</p>
      */
     inline DescribeEnvironmentHealthResult& WithCauses(Aws::Vector<Aws::String>&& value) { SetCauses(value); return *this;}
 
     /**
-     * <p>Returns potential causes for the reported status.</p>
+     * <p>Descriptions of the data that contributed to the environment's current health
+     * status.</p>
      */
     inline DescribeEnvironmentHealthResult& AddCauses(const Aws::String& value) { m_causes.push_back(value); return *this; }
 
     /**
-     * <p>Returns potential causes for the reported status.</p>
+     * <p>Descriptions of the data that contributed to the environment's current health
+     * status.</p>
      */
     inline DescribeEnvironmentHealthResult& AddCauses(Aws::String&& value) { m_causes.push_back(value); return *this; }
 
     /**
-     * <p>Returns potential causes for the reported status.</p>
+     * <p>Descriptions of the data that contributed to the environment's current health
+     * status.</p>
      */
     inline DescribeEnvironmentHealthResult& AddCauses(const char* value) { m_causes.push_back(value); return *this; }
 
-    
+    /**
+     * <p>Application request metrics for the environment.</p>
+     */
     inline const ApplicationMetrics& GetApplicationMetrics() const{ return m_applicationMetrics; }
 
-    
+    /**
+     * <p>Application request metrics for the environment.</p>
+     */
     inline void SetApplicationMetrics(const ApplicationMetrics& value) { m_applicationMetrics = value; }
 
-    
+    /**
+     * <p>Application request metrics for the environment.</p>
+     */
     inline void SetApplicationMetrics(ApplicationMetrics&& value) { m_applicationMetrics = value; }
 
-    
+    /**
+     * <p>Application request metrics for the environment.</p>
+     */
     inline DescribeEnvironmentHealthResult& WithApplicationMetrics(const ApplicationMetrics& value) { SetApplicationMetrics(value); return *this;}
 
-    
+    /**
+     * <p>Application request metrics for the environment.</p>
+     */
     inline DescribeEnvironmentHealthResult& WithApplicationMetrics(ApplicationMetrics&& value) { SetApplicationMetrics(value); return *this;}
 
-    
+    /**
+     * <p>Summary health information for the instances in the environment.</p>
+     */
     inline const InstanceHealthSummary& GetInstancesHealth() const{ return m_instancesHealth; }
 
-    
+    /**
+     * <p>Summary health information for the instances in the environment.</p>
+     */
     inline void SetInstancesHealth(const InstanceHealthSummary& value) { m_instancesHealth = value; }
 
-    
+    /**
+     * <p>Summary health information for the instances in the environment.</p>
+     */
     inline void SetInstancesHealth(InstanceHealthSummary&& value) { m_instancesHealth = value; }
 
-    
+    /**
+     * <p>Summary health information for the instances in the environment.</p>
+     */
     inline DescribeEnvironmentHealthResult& WithInstancesHealth(const InstanceHealthSummary& value) { SetInstancesHealth(value); return *this;}
 
-    
+    /**
+     * <p>Summary health information for the instances in the environment.</p>
+     */
     inline DescribeEnvironmentHealthResult& WithInstancesHealth(InstanceHealthSummary&& value) { SetInstancesHealth(value); return *this;}
 
     /**
-     * <p>The date and time the information was last refreshed.</p>
+     * <p>The date and time that the health information was retrieved.</p>
      */
     inline const Aws::Utils::DateTime& GetRefreshedAt() const{ return m_refreshedAt; }
 
     /**
-     * <p>The date and time the information was last refreshed.</p>
+     * <p>The date and time that the health information was retrieved.</p>
      */
     inline void SetRefreshedAt(const Aws::Utils::DateTime& value) { m_refreshedAt = value; }
 
     /**
-     * <p>The date and time the information was last refreshed.</p>
+     * <p>The date and time that the health information was retrieved.</p>
      */
     inline void SetRefreshedAt(Aws::Utils::DateTime&& value) { m_refreshedAt = value; }
 
     /**
-     * <p>The date and time the information was last refreshed.</p>
+     * <p>The date and time that the health information was retrieved.</p>
      */
     inline DescribeEnvironmentHealthResult& WithRefreshedAt(const Aws::Utils::DateTime& value) { SetRefreshedAt(value); return *this;}
 
     /**
-     * <p>The date and time the information was last refreshed.</p>
+     * <p>The date and time that the health information was retrieved.</p>
      */
     inline DescribeEnvironmentHealthResult& WithRefreshedAt(Aws::Utils::DateTime&& value) { SetRefreshedAt(value); return *this;}
 

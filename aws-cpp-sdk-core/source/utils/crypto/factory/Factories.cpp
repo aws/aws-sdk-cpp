@@ -49,6 +49,7 @@ static std::shared_ptr<SymmetricCipherFactory> s_AES_GCMFactory(nullptr);
 static std::shared_ptr<SymmetricCipherFactory> s_AES_KeyWrapFactory(nullptr);
 
 static std::shared_ptr<SecureRandomFactory> s_SecureRandomFactory(nullptr);
+static std::shared_ptr<SecureRandomBytes> s_SecureRandom(nullptr);
 
 static bool s_InitCleanupOpenSSLFlag(false);
 
@@ -636,13 +637,15 @@ void Aws::Utils::Crypto::InitCrypto()
 
     if(s_SecureRandomFactory)
     {
-        s_SecureRandomFactory->InitStaticState();
+        s_SecureRandomFactory->InitStaticState();       
     }
     else
     {
         s_SecureRandomFactory = Aws::MakeShared<DefaultSecureRandFactory>(s_allocationTag);
         s_SecureRandomFactory->InitStaticState();
-    }   
+    }  
+    
+    s_SecureRandom = s_SecureRandomFactory->CreateImplementation();
 }
 
 void Aws::Utils::Crypto::CleanupCrypto()
@@ -691,6 +694,7 @@ void Aws::Utils::Crypto::CleanupCrypto()
 
     if(s_SecureRandomFactory)
     {
+        s_SecureRandom = nullptr;
         s_SecureRandomFactory->CleanupStaticState();
         s_SecureRandomFactory = nullptr;
     }   
@@ -842,5 +846,5 @@ std::shared_ptr<SymmetricCipher> Aws::Utils::Crypto::CreateAES_KeyWrapImplementa
 
 std::shared_ptr<SecureRandomBytes> Aws::Utils::Crypto::CreateSecureRandomBytesImplementation()
 {
-    return s_SecureRandomFactory->CreateImplementation();
+    return s_SecureRandom;
 }

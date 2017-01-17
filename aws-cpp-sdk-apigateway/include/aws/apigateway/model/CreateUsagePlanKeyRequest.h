@@ -26,7 +26,9 @@ namespace Model
 
   /**
    * <p>The POST request to create a usage plan key for adding an existing API key to
-   * a usage plan.</p>
+   * a usage plan.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/CreateUsagePlanKeyRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_APIGATEWAY_API CreateUsagePlanKeyRequest : public APIGatewayRequest
   {

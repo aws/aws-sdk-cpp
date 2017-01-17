@@ -35,7 +35,9 @@ namespace Model
 {
 
   /**
-   * <p>Details on a task in a cluster.</p>
+   * <p>Details on a task in a cluster.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/Task">AWS API
+   * Reference</a></p>
    */
   class AWS_ECS_API Task
   {
@@ -533,6 +535,41 @@ namespace Model
      */
     inline Task& WithStoppedAt(Aws::Utils::DateTime&& value) { SetStoppedAt(value); return *this;}
 
+    /**
+     * <p>The task group associated with the task.</p>
+     */
+    inline const Aws::String& GetGroup() const{ return m_group; }
+
+    /**
+     * <p>The task group associated with the task.</p>
+     */
+    inline void SetGroup(const Aws::String& value) { m_groupHasBeenSet = true; m_group = value; }
+
+    /**
+     * <p>The task group associated with the task.</p>
+     */
+    inline void SetGroup(Aws::String&& value) { m_groupHasBeenSet = true; m_group = value; }
+
+    /**
+     * <p>The task group associated with the task.</p>
+     */
+    inline void SetGroup(const char* value) { m_groupHasBeenSet = true; m_group.assign(value); }
+
+    /**
+     * <p>The task group associated with the task.</p>
+     */
+    inline Task& WithGroup(const Aws::String& value) { SetGroup(value); return *this;}
+
+    /**
+     * <p>The task group associated with the task.</p>
+     */
+    inline Task& WithGroup(Aws::String&& value) { SetGroup(value); return *this;}
+
+    /**
+     * <p>The task group associated with the task.</p>
+     */
+    inline Task& WithGroup(const char* value) { SetGroup(value); return *this;}
+
   private:
     Aws::String m_taskArn;
     bool m_taskArnHasBeenSet;
@@ -562,6 +599,8 @@ namespace Model
     bool m_startedAtHasBeenSet;
     Aws::Utils::DateTime m_stoppedAt;
     bool m_stoppedAtHasBeenSet;
+    Aws::String m_group;
+    bool m_groupHasBeenSet;
   };
 
 } // namespace Model

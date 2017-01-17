@@ -75,7 +75,7 @@ Aws::String CreateDBInstanceReadReplicaRequest::SerializePayload() const
 
   if(m_autoMinorVersionUpgradeHasBeenSet)
   {
-    ss << "AutoMinorVersionUpgrade=" << m_autoMinorVersionUpgrade << "&";
+    ss << "AutoMinorVersionUpgrade=" << std::boolalpha << m_autoMinorVersionUpgrade << "&";
   }
 
   if(m_iopsHasBeenSet)
@@ -90,7 +90,7 @@ Aws::String CreateDBInstanceReadReplicaRequest::SerializePayload() const
 
   if(m_publiclyAccessibleHasBeenSet)
   {
-    ss << "PubliclyAccessible=" << m_publiclyAccessible << "&";
+    ss << "PubliclyAccessible=" << std::boolalpha << m_publiclyAccessible << "&";
   }
 
   if(m_tagsHasBeenSet)
@@ -115,7 +115,7 @@ Aws::String CreateDBInstanceReadReplicaRequest::SerializePayload() const
 
   if(m_copyTagsToSnapshotHasBeenSet)
   {
-    ss << "CopyTagsToSnapshot=" << m_copyTagsToSnapshot << "&";
+    ss << "CopyTagsToSnapshot=" << std::boolalpha << m_copyTagsToSnapshot << "&";
   }
 
   if(m_monitoringIntervalHasBeenSet)

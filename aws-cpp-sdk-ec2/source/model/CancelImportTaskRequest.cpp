@@ -33,7 +33,7 @@ Aws::String CancelImportTaskRequest::SerializePayload() const
   ss << "Action=CancelImportTask&";
   if(m_dryRunHasBeenSet)
   {
-    ss << "DryRun=" << m_dryRun << "&";
+    ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
   if(m_importTaskIdHasBeenSet)
@@ -46,7 +46,7 @@ Aws::String CancelImportTaskRequest::SerializePayload() const
     ss << "CancelReason=" << StringUtils::URLEncode(m_cancelReason.c_str()) << "&";
   }
 
-  ss << "Version=2015-10-01";
+  ss << "Version=2016-11-15";
   return ss.str();
 }
 

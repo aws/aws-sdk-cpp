@@ -166,7 +166,7 @@ void VolumeStatusItem::OutputToStream(Aws::OStream& oStream, const char* locatio
       for(auto& item : m_events)
       {
         Aws::StringStream eventsSs;
-        eventsSs << location <<  ".item." << eventsIdx++;
+        eventsSs << location <<  ".Item." << eventsIdx++;
         item.OutputToStream(oStream, eventsSs.str().c_str());
       }
   }
@@ -176,7 +176,7 @@ void VolumeStatusItem::OutputToStream(Aws::OStream& oStream, const char* locatio
       for(auto& item : m_actions)
       {
         Aws::StringStream actionsSs;
-        actionsSs << location <<  ".item." << actionsIdx++;
+        actionsSs << location <<  ".Item." << actionsIdx++;
         item.OutputToStream(oStream, actionsSs.str().c_str());
       }
   }

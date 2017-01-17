@@ -34,7 +34,9 @@ namespace Model
 {
 
   /**
-   * <p>Describes a route in a route table.</p>
+   * <p>Describes a route in a route table.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/Route">AWS API
+   * Reference</a></p>
    */
   class AWS_EC2_API Route
   {
@@ -47,37 +49,37 @@ namespace Model
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
     /**
-     * <p>The CIDR block used for the destination match.</p>
+     * <p>The IPv4 CIDR block used for the destination match.</p>
      */
     inline const Aws::String& GetDestinationCidrBlock() const{ return m_destinationCidrBlock; }
 
     /**
-     * <p>The CIDR block used for the destination match.</p>
+     * <p>The IPv4 CIDR block used for the destination match.</p>
      */
     inline void SetDestinationCidrBlock(const Aws::String& value) { m_destinationCidrBlockHasBeenSet = true; m_destinationCidrBlock = value; }
 
     /**
-     * <p>The CIDR block used for the destination match.</p>
+     * <p>The IPv4 CIDR block used for the destination match.</p>
      */
     inline void SetDestinationCidrBlock(Aws::String&& value) { m_destinationCidrBlockHasBeenSet = true; m_destinationCidrBlock = value; }
 
     /**
-     * <p>The CIDR block used for the destination match.</p>
+     * <p>The IPv4 CIDR block used for the destination match.</p>
      */
     inline void SetDestinationCidrBlock(const char* value) { m_destinationCidrBlockHasBeenSet = true; m_destinationCidrBlock.assign(value); }
 
     /**
-     * <p>The CIDR block used for the destination match.</p>
+     * <p>The IPv4 CIDR block used for the destination match.</p>
      */
     inline Route& WithDestinationCidrBlock(const Aws::String& value) { SetDestinationCidrBlock(value); return *this;}
 
     /**
-     * <p>The CIDR block used for the destination match.</p>
+     * <p>The IPv4 CIDR block used for the destination match.</p>
      */
     inline Route& WithDestinationCidrBlock(Aws::String&& value) { SetDestinationCidrBlock(value); return *this;}
 
     /**
-     * <p>The CIDR block used for the destination match.</p>
+     * <p>The IPv4 CIDR block used for the destination match.</p>
      */
     inline Route& WithDestinationCidrBlock(const char* value) { SetDestinationCidrBlock(value); return *this;}
 
@@ -362,54 +364,124 @@ namespace Model
     inline Route& WithState(RouteState&& value) { SetState(value); return *this;}
 
     /**
-     * <p>Describes how the route was created.</p> <ul>
-     * <li><p><code>CreateRouteTable</code> - The route was automatically created when
-     * the route table was created.</p></li> <li><p><code>CreateRoute</code> - The
-     * route was manually added to the route table.</p></li>
-     * <li><p><code>EnableVgwRoutePropagation</code> - The route was propagated by
-     * route propagation.</p></li> </ul>
+     * <p>Describes how the route was created.</p> <ul> <li> <p>
+     * <code>CreateRouteTable</code> - The route was automatically created when the
+     * route table was created.</p> </li> <li> <p> <code>CreateRoute</code> - The route
+     * was manually added to the route table.</p> </li> <li> <p>
+     * <code>EnableVgwRoutePropagation</code> - The route was propagated by route
+     * propagation.</p> </li> </ul>
      */
     inline const RouteOrigin& GetOrigin() const{ return m_origin; }
 
     /**
-     * <p>Describes how the route was created.</p> <ul>
-     * <li><p><code>CreateRouteTable</code> - The route was automatically created when
-     * the route table was created.</p></li> <li><p><code>CreateRoute</code> - The
-     * route was manually added to the route table.</p></li>
-     * <li><p><code>EnableVgwRoutePropagation</code> - The route was propagated by
-     * route propagation.</p></li> </ul>
+     * <p>Describes how the route was created.</p> <ul> <li> <p>
+     * <code>CreateRouteTable</code> - The route was automatically created when the
+     * route table was created.</p> </li> <li> <p> <code>CreateRoute</code> - The route
+     * was manually added to the route table.</p> </li> <li> <p>
+     * <code>EnableVgwRoutePropagation</code> - The route was propagated by route
+     * propagation.</p> </li> </ul>
      */
     inline void SetOrigin(const RouteOrigin& value) { m_originHasBeenSet = true; m_origin = value; }
 
     /**
-     * <p>Describes how the route was created.</p> <ul>
-     * <li><p><code>CreateRouteTable</code> - The route was automatically created when
-     * the route table was created.</p></li> <li><p><code>CreateRoute</code> - The
-     * route was manually added to the route table.</p></li>
-     * <li><p><code>EnableVgwRoutePropagation</code> - The route was propagated by
-     * route propagation.</p></li> </ul>
+     * <p>Describes how the route was created.</p> <ul> <li> <p>
+     * <code>CreateRouteTable</code> - The route was automatically created when the
+     * route table was created.</p> </li> <li> <p> <code>CreateRoute</code> - The route
+     * was manually added to the route table.</p> </li> <li> <p>
+     * <code>EnableVgwRoutePropagation</code> - The route was propagated by route
+     * propagation.</p> </li> </ul>
      */
     inline void SetOrigin(RouteOrigin&& value) { m_originHasBeenSet = true; m_origin = value; }
 
     /**
-     * <p>Describes how the route was created.</p> <ul>
-     * <li><p><code>CreateRouteTable</code> - The route was automatically created when
-     * the route table was created.</p></li> <li><p><code>CreateRoute</code> - The
-     * route was manually added to the route table.</p></li>
-     * <li><p><code>EnableVgwRoutePropagation</code> - The route was propagated by
-     * route propagation.</p></li> </ul>
+     * <p>Describes how the route was created.</p> <ul> <li> <p>
+     * <code>CreateRouteTable</code> - The route was automatically created when the
+     * route table was created.</p> </li> <li> <p> <code>CreateRoute</code> - The route
+     * was manually added to the route table.</p> </li> <li> <p>
+     * <code>EnableVgwRoutePropagation</code> - The route was propagated by route
+     * propagation.</p> </li> </ul>
      */
     inline Route& WithOrigin(const RouteOrigin& value) { SetOrigin(value); return *this;}
 
     /**
-     * <p>Describes how the route was created.</p> <ul>
-     * <li><p><code>CreateRouteTable</code> - The route was automatically created when
-     * the route table was created.</p></li> <li><p><code>CreateRoute</code> - The
-     * route was manually added to the route table.</p></li>
-     * <li><p><code>EnableVgwRoutePropagation</code> - The route was propagated by
-     * route propagation.</p></li> </ul>
+     * <p>Describes how the route was created.</p> <ul> <li> <p>
+     * <code>CreateRouteTable</code> - The route was automatically created when the
+     * route table was created.</p> </li> <li> <p> <code>CreateRoute</code> - The route
+     * was manually added to the route table.</p> </li> <li> <p>
+     * <code>EnableVgwRoutePropagation</code> - The route was propagated by route
+     * propagation.</p> </li> </ul>
      */
     inline Route& WithOrigin(RouteOrigin&& value) { SetOrigin(value); return *this;}
+
+    /**
+     * <p>The IPv6 CIDR block used for the destination match.</p>
+     */
+    inline const Aws::String& GetDestinationIpv6CidrBlock() const{ return m_destinationIpv6CidrBlock; }
+
+    /**
+     * <p>The IPv6 CIDR block used for the destination match.</p>
+     */
+    inline void SetDestinationIpv6CidrBlock(const Aws::String& value) { m_destinationIpv6CidrBlockHasBeenSet = true; m_destinationIpv6CidrBlock = value; }
+
+    /**
+     * <p>The IPv6 CIDR block used for the destination match.</p>
+     */
+    inline void SetDestinationIpv6CidrBlock(Aws::String&& value) { m_destinationIpv6CidrBlockHasBeenSet = true; m_destinationIpv6CidrBlock = value; }
+
+    /**
+     * <p>The IPv6 CIDR block used for the destination match.</p>
+     */
+    inline void SetDestinationIpv6CidrBlock(const char* value) { m_destinationIpv6CidrBlockHasBeenSet = true; m_destinationIpv6CidrBlock.assign(value); }
+
+    /**
+     * <p>The IPv6 CIDR block used for the destination match.</p>
+     */
+    inline Route& WithDestinationIpv6CidrBlock(const Aws::String& value) { SetDestinationIpv6CidrBlock(value); return *this;}
+
+    /**
+     * <p>The IPv6 CIDR block used for the destination match.</p>
+     */
+    inline Route& WithDestinationIpv6CidrBlock(Aws::String&& value) { SetDestinationIpv6CidrBlock(value); return *this;}
+
+    /**
+     * <p>The IPv6 CIDR block used for the destination match.</p>
+     */
+    inline Route& WithDestinationIpv6CidrBlock(const char* value) { SetDestinationIpv6CidrBlock(value); return *this;}
+
+    /**
+     * <p>The ID of the egress-only Internet gateway.</p>
+     */
+    inline const Aws::String& GetEgressOnlyInternetGatewayId() const{ return m_egressOnlyInternetGatewayId; }
+
+    /**
+     * <p>The ID of the egress-only Internet gateway.</p>
+     */
+    inline void SetEgressOnlyInternetGatewayId(const Aws::String& value) { m_egressOnlyInternetGatewayIdHasBeenSet = true; m_egressOnlyInternetGatewayId = value; }
+
+    /**
+     * <p>The ID of the egress-only Internet gateway.</p>
+     */
+    inline void SetEgressOnlyInternetGatewayId(Aws::String&& value) { m_egressOnlyInternetGatewayIdHasBeenSet = true; m_egressOnlyInternetGatewayId = value; }
+
+    /**
+     * <p>The ID of the egress-only Internet gateway.</p>
+     */
+    inline void SetEgressOnlyInternetGatewayId(const char* value) { m_egressOnlyInternetGatewayIdHasBeenSet = true; m_egressOnlyInternetGatewayId.assign(value); }
+
+    /**
+     * <p>The ID of the egress-only Internet gateway.</p>
+     */
+    inline Route& WithEgressOnlyInternetGatewayId(const Aws::String& value) { SetEgressOnlyInternetGatewayId(value); return *this;}
+
+    /**
+     * <p>The ID of the egress-only Internet gateway.</p>
+     */
+    inline Route& WithEgressOnlyInternetGatewayId(Aws::String&& value) { SetEgressOnlyInternetGatewayId(value); return *this;}
+
+    /**
+     * <p>The ID of the egress-only Internet gateway.</p>
+     */
+    inline Route& WithEgressOnlyInternetGatewayId(const char* value) { SetEgressOnlyInternetGatewayId(value); return *this;}
 
   private:
     Aws::String m_destinationCidrBlock;
@@ -432,6 +504,10 @@ namespace Model
     bool m_stateHasBeenSet;
     RouteOrigin m_origin;
     bool m_originHasBeenSet;
+    Aws::String m_destinationIpv6CidrBlock;
+    bool m_destinationIpv6CidrBlockHasBeenSet;
+    Aws::String m_egressOnlyInternetGatewayId;
+    bool m_egressOnlyInternetGatewayIdHasBeenSet;
   };
 
 } // namespace Model

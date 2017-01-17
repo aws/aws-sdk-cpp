@@ -32,7 +32,10 @@ namespace Model
 
   /**
    * <p>Represents the amount of CPU that an app is using on a physical device.</p>
-   * <p>Note that this does not represent system-wide CPU usage.</p>
+   * <p>Note that this does not represent system-wide CPU usage.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/CPU">AWS API
+   * Reference</a></p>
    */
   class AWS_DEVICEFARM_API CPU
   {

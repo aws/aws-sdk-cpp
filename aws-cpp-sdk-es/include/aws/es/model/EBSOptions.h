@@ -34,7 +34,9 @@ namespace Model
    * <p>Options to enable, disable, and specify the properties of EBS storage
    * volumes. For more information, see <a
    * href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-ebs"
-   * target="_blank"> Configuring EBS-based Storage</a>.</p>
+   * target="_blank"> Configuring EBS-based Storage</a>.</p><p><h3>See Also:</h3>  
+   * <a href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/EBSOptions">AWS
+   * API Reference</a></p>
    */
   class AWS_ELASTICSEARCHSERVICE_API EBSOptions
   {

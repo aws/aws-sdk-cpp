@@ -26,7 +26,9 @@ namespace Model
 {
 
   /**
-   * <p>Specifies a list of trail tags to return.</p>
+   * <p>Specifies a list of trail tags to return.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/ListTagsRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_CLOUDTRAIL_API ListTagsRequest : public CloudTrailRequest
   {

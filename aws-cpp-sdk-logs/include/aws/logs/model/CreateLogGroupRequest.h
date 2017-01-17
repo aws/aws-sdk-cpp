@@ -16,6 +16,7 @@
 #include <aws/logs/CloudWatchLogs_EXPORTS.h>
 #include <aws/logs/CloudWatchLogsRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 
 namespace Aws
 {
@@ -69,9 +70,71 @@ namespace Model
      */
     inline CreateLogGroupRequest& WithLogGroupName(const char* value) { SetLogGroupName(value); return *this;}
 
+    /**
+     * <p>The key-value pairs to use for the tags.</p>
+     */
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>The key-value pairs to use for the tags.</p>
+     */
+    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
+
+    /**
+     * <p>The key-value pairs to use for the tags.</p>
+     */
+    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = value; }
+
+    /**
+     * <p>The key-value pairs to use for the tags.</p>
+     */
+    inline CreateLogGroupRequest& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
+
+    /**
+     * <p>The key-value pairs to use for the tags.</p>
+     */
+    inline CreateLogGroupRequest& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(value); return *this;}
+
+    /**
+     * <p>The key-value pairs to use for the tags.</p>
+     */
+    inline CreateLogGroupRequest& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags[key] = value; return *this; }
+
+    /**
+     * <p>The key-value pairs to use for the tags.</p>
+     */
+    inline CreateLogGroupRequest& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags[key] = value; return *this; }
+
+    /**
+     * <p>The key-value pairs to use for the tags.</p>
+     */
+    inline CreateLogGroupRequest& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags[key] = value; return *this; }
+
+    /**
+     * <p>The key-value pairs to use for the tags.</p>
+     */
+    inline CreateLogGroupRequest& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags[key] = value; return *this; }
+
+    /**
+     * <p>The key-value pairs to use for the tags.</p>
+     */
+    inline CreateLogGroupRequest& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags[key] = value; return *this; }
+
+    /**
+     * <p>The key-value pairs to use for the tags.</p>
+     */
+    inline CreateLogGroupRequest& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags[key] = value; return *this; }
+
+    /**
+     * <p>The key-value pairs to use for the tags.</p>
+     */
+    inline CreateLogGroupRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags[key] = value; return *this; }
+
   private:
     Aws::String m_logGroupName;
     bool m_logGroupNameHasBeenSet;
+    Aws::Map<Aws::String, Aws::String> m_tags;
+    bool m_tagsHasBeenSet;
   };
 
 } // namespace Model

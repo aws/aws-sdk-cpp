@@ -26,7 +26,9 @@ namespace Model
 
   /**
    * <p>The GET request to list an existing <a>RestApi</a> defined for your
-   * collection. </p>
+   * collection. </p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetRestApiRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_APIGATEWAY_API GetRestApiRequest : public APIGatewayRequest
   {

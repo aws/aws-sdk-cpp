@@ -117,7 +117,7 @@ void PrefixList::OutputToStream(Aws::OStream& oStream, const char* location) con
       unsigned cidrsIdx = 1;
       for(auto& item : m_cidrs)
       {
-        oStream << location << ".item." << cidrsIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
+        oStream << location << ".Item." << cidrsIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
   }
 }

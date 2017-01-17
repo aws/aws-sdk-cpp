@@ -33,114 +33,114 @@ namespace Model
     Aws::String SerializePayload() const override;
 
     /**
-     * <p>The name of the group the policy is associated with.</p> <p>The <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a
+     * <p>The name of the group the policy is associated with.</p> <p>This parameter
+     * allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
      * string of characters consisting of upper and lowercase alphanumeric characters
      * with no spaces. You can also include any of the following characters: =,.@-</p>
      */
     inline const Aws::String& GetGroupName() const{ return m_groupName; }
 
     /**
-     * <p>The name of the group the policy is associated with.</p> <p>The <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a
+     * <p>The name of the group the policy is associated with.</p> <p>This parameter
+     * allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
      * string of characters consisting of upper and lowercase alphanumeric characters
      * with no spaces. You can also include any of the following characters: =,.@-</p>
      */
     inline void SetGroupName(const Aws::String& value) { m_groupNameHasBeenSet = true; m_groupName = value; }
 
     /**
-     * <p>The name of the group the policy is associated with.</p> <p>The <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a
+     * <p>The name of the group the policy is associated with.</p> <p>This parameter
+     * allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
      * string of characters consisting of upper and lowercase alphanumeric characters
      * with no spaces. You can also include any of the following characters: =,.@-</p>
      */
     inline void SetGroupName(Aws::String&& value) { m_groupNameHasBeenSet = true; m_groupName = value; }
 
     /**
-     * <p>The name of the group the policy is associated with.</p> <p>The <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a
+     * <p>The name of the group the policy is associated with.</p> <p>This parameter
+     * allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
      * string of characters consisting of upper and lowercase alphanumeric characters
      * with no spaces. You can also include any of the following characters: =,.@-</p>
      */
     inline void SetGroupName(const char* value) { m_groupNameHasBeenSet = true; m_groupName.assign(value); }
 
     /**
-     * <p>The name of the group the policy is associated with.</p> <p>The <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a
+     * <p>The name of the group the policy is associated with.</p> <p>This parameter
+     * allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
      * string of characters consisting of upper and lowercase alphanumeric characters
      * with no spaces. You can also include any of the following characters: =,.@-</p>
      */
     inline GetGroupPolicyRequest& WithGroupName(const Aws::String& value) { SetGroupName(value); return *this;}
 
     /**
-     * <p>The name of the group the policy is associated with.</p> <p>The <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a
+     * <p>The name of the group the policy is associated with.</p> <p>This parameter
+     * allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
      * string of characters consisting of upper and lowercase alphanumeric characters
      * with no spaces. You can also include any of the following characters: =,.@-</p>
      */
     inline GetGroupPolicyRequest& WithGroupName(Aws::String&& value) { SetGroupName(value); return *this;}
 
     /**
-     * <p>The name of the group the policy is associated with.</p> <p>The <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a
+     * <p>The name of the group the policy is associated with.</p> <p>This parameter
+     * allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
      * string of characters consisting of upper and lowercase alphanumeric characters
      * with no spaces. You can also include any of the following characters: =,.@-</p>
      */
     inline GetGroupPolicyRequest& WithGroupName(const char* value) { SetGroupName(value); return *this;}
 
     /**
-     * <p>The name of the policy document to get.</p> <p>The <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a
-     * string of characters consisting of upper and lowercase alphanumeric characters
-     * with no spaces. You can also include any of the following characters: =,.@-</p>
+     * <p>The name of the policy document to get.</p> <p>This parameter allows (per its
+     * <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * characters consisting of upper and lowercase alphanumeric characters with no
+     * spaces. You can also include any of the following characters: =,.@-</p>
      */
     inline const Aws::String& GetPolicyName() const{ return m_policyName; }
 
     /**
-     * <p>The name of the policy document to get.</p> <p>The <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a
-     * string of characters consisting of upper and lowercase alphanumeric characters
-     * with no spaces. You can also include any of the following characters: =,.@-</p>
+     * <p>The name of the policy document to get.</p> <p>This parameter allows (per its
+     * <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * characters consisting of upper and lowercase alphanumeric characters with no
+     * spaces. You can also include any of the following characters: =,.@-</p>
      */
     inline void SetPolicyName(const Aws::String& value) { m_policyNameHasBeenSet = true; m_policyName = value; }
 
     /**
-     * <p>The name of the policy document to get.</p> <p>The <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a
-     * string of characters consisting of upper and lowercase alphanumeric characters
-     * with no spaces. You can also include any of the following characters: =,.@-</p>
+     * <p>The name of the policy document to get.</p> <p>This parameter allows (per its
+     * <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * characters consisting of upper and lowercase alphanumeric characters with no
+     * spaces. You can also include any of the following characters: =,.@-</p>
      */
     inline void SetPolicyName(Aws::String&& value) { m_policyNameHasBeenSet = true; m_policyName = value; }
 
     /**
-     * <p>The name of the policy document to get.</p> <p>The <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a
-     * string of characters consisting of upper and lowercase alphanumeric characters
-     * with no spaces. You can also include any of the following characters: =,.@-</p>
+     * <p>The name of the policy document to get.</p> <p>This parameter allows (per its
+     * <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * characters consisting of upper and lowercase alphanumeric characters with no
+     * spaces. You can also include any of the following characters: =,.@-</p>
      */
     inline void SetPolicyName(const char* value) { m_policyNameHasBeenSet = true; m_policyName.assign(value); }
 
     /**
-     * <p>The name of the policy document to get.</p> <p>The <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a
-     * string of characters consisting of upper and lowercase alphanumeric characters
-     * with no spaces. You can also include any of the following characters: =,.@-</p>
+     * <p>The name of the policy document to get.</p> <p>This parameter allows (per its
+     * <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * characters consisting of upper and lowercase alphanumeric characters with no
+     * spaces. You can also include any of the following characters: =,.@-</p>
      */
     inline GetGroupPolicyRequest& WithPolicyName(const Aws::String& value) { SetPolicyName(value); return *this;}
 
     /**
-     * <p>The name of the policy document to get.</p> <p>The <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a
-     * string of characters consisting of upper and lowercase alphanumeric characters
-     * with no spaces. You can also include any of the following characters: =,.@-</p>
+     * <p>The name of the policy document to get.</p> <p>This parameter allows (per its
+     * <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * characters consisting of upper and lowercase alphanumeric characters with no
+     * spaces. You can also include any of the following characters: =,.@-</p>
      */
     inline GetGroupPolicyRequest& WithPolicyName(Aws::String&& value) { SetPolicyName(value); return *this;}
 
     /**
-     * <p>The name of the policy document to get.</p> <p>The <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a
-     * string of characters consisting of upper and lowercase alphanumeric characters
-     * with no spaces. You can also include any of the following characters: =,.@-</p>
+     * <p>The name of the policy document to get.</p> <p>This parameter allows (per its
+     * <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * characters consisting of upper and lowercase alphanumeric characters with no
+     * spaces. You can also include any of the following characters: =,.@-</p>
      */
     inline GetGroupPolicyRequest& WithPolicyName(const char* value) { SetPolicyName(value); return *this;}
 

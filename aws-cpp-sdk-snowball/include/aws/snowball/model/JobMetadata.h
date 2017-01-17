@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/snowball/model/JobState.h>
 #include <aws/snowball/model/JobType.h>
+#include <aws/snowball/model/SnowballType.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/snowball/model/JobResource.h>
 #include <aws/snowball/model/ShippingDetails.h>
@@ -42,7 +43,10 @@ namespace Model
   /**
    * <p>Contains information about a specific job including shipping information, job
    * status, and other important metadata. This information is returned as a part of
-   * the response syntax of the <code>DescribeJob</code> action.</p>
+   * the response syntax of the <code>DescribeJob</code> action.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/JobMetadata">AWS
+   * API Reference</a></p>
    */
   class AWS_SNOWBALL_API JobMetadata
   {
@@ -95,27 +99,27 @@ namespace Model
     inline JobMetadata& WithJobId(const char* value) { SetJobId(value); return *this;}
 
     /**
-     * <p>The current state of the jobs.</p>
+     * <p>The current status of the jobs.</p>
      */
     inline const JobState& GetJobState() const{ return m_jobState; }
 
     /**
-     * <p>The current state of the jobs.</p>
+     * <p>The current status of the jobs.</p>
      */
     inline void SetJobState(const JobState& value) { m_jobStateHasBeenSet = true; m_jobState = value; }
 
     /**
-     * <p>The current state of the jobs.</p>
+     * <p>The current status of the jobs.</p>
      */
     inline void SetJobState(JobState&& value) { m_jobStateHasBeenSet = true; m_jobState = value; }
 
     /**
-     * <p>The current state of the jobs.</p>
+     * <p>The current status of the jobs.</p>
      */
     inline JobMetadata& WithJobState(const JobState& value) { SetJobState(value); return *this;}
 
     /**
-     * <p>The current state of the jobs.</p>
+     * <p>The current status of the jobs.</p>
      */
     inline JobMetadata& WithJobState(JobState&& value) { SetJobState(value); return *this;}
 
@@ -143,6 +147,31 @@ namespace Model
      * <p>The type of job.</p>
      */
     inline JobMetadata& WithJobType(JobType&& value) { SetJobType(value); return *this;}
+
+    /**
+     * <p>The type of appliance used with this job.</p>
+     */
+    inline const SnowballType& GetSnowballType() const{ return m_snowballType; }
+
+    /**
+     * <p>The type of appliance used with this job.</p>
+     */
+    inline void SetSnowballType(const SnowballType& value) { m_snowballTypeHasBeenSet = true; m_snowballType = value; }
+
+    /**
+     * <p>The type of appliance used with this job.</p>
+     */
+    inline void SetSnowballType(SnowballType&& value) { m_snowballTypeHasBeenSet = true; m_snowballType = value; }
+
+    /**
+     * <p>The type of appliance used with this job.</p>
+     */
+    inline JobMetadata& WithSnowballType(const SnowballType& value) { SetSnowballType(value); return *this;}
+
+    /**
+     * <p>The type of appliance used with this job.</p>
+     */
+    inline JobMetadata& WithSnowballType(SnowballType&& value) { SetSnowballType(value); return *this;}
 
     /**
      * <p>The creation date for this job.</p>
@@ -479,7 +508,7 @@ namespace Model
 
     /**
      * <p>A value that defines the real-time status of a Snowball's data transfer while
-     * the appliance is at AWS. Note that this data is only available while a job has a
+     * the appliance is at AWS. This data is only available while a job has a
      * <code>JobState</code> value of <code>InProgress</code>, for both import and
      * export jobs.</p>
      */
@@ -487,7 +516,7 @@ namespace Model
 
     /**
      * <p>A value that defines the real-time status of a Snowball's data transfer while
-     * the appliance is at AWS. Note that this data is only available while a job has a
+     * the appliance is at AWS. This data is only available while a job has a
      * <code>JobState</code> value of <code>InProgress</code>, for both import and
      * export jobs.</p>
      */
@@ -495,7 +524,7 @@ namespace Model
 
     /**
      * <p>A value that defines the real-time status of a Snowball's data transfer while
-     * the appliance is at AWS. Note that this data is only available while a job has a
+     * the appliance is at AWS. This data is only available while a job has a
      * <code>JobState</code> value of <code>InProgress</code>, for both import and
      * export jobs.</p>
      */
@@ -503,7 +532,7 @@ namespace Model
 
     /**
      * <p>A value that defines the real-time status of a Snowball's data transfer while
-     * the appliance is at AWS. Note that this data is only available while a job has a
+     * the appliance is at AWS. This data is only available while a job has a
      * <code>JobState</code> value of <code>InProgress</code>, for both import and
      * export jobs.</p>
      */
@@ -511,7 +540,7 @@ namespace Model
 
     /**
      * <p>A value that defines the real-time status of a Snowball's data transfer while
-     * the appliance is at AWS. Note that this data is only available while a job has a
+     * the appliance is at AWS. This data is only available while a job has a
      * <code>JobState</code> value of <code>InProgress</code>, for both import and
      * export jobs.</p>
      */
@@ -557,6 +586,48 @@ namespace Model
      */
     inline JobMetadata& WithJobLogInfo(JobLogs&& value) { SetJobLogInfo(value); return *this;}
 
+    /**
+     * <p>The 39-character ID for the cluster, for example
+     * <code>CID123e4567-e89b-12d3-a456-426655440000</code>.</p>
+     */
+    inline const Aws::String& GetClusterId() const{ return m_clusterId; }
+
+    /**
+     * <p>The 39-character ID for the cluster, for example
+     * <code>CID123e4567-e89b-12d3-a456-426655440000</code>.</p>
+     */
+    inline void SetClusterId(const Aws::String& value) { m_clusterIdHasBeenSet = true; m_clusterId = value; }
+
+    /**
+     * <p>The 39-character ID for the cluster, for example
+     * <code>CID123e4567-e89b-12d3-a456-426655440000</code>.</p>
+     */
+    inline void SetClusterId(Aws::String&& value) { m_clusterIdHasBeenSet = true; m_clusterId = value; }
+
+    /**
+     * <p>The 39-character ID for the cluster, for example
+     * <code>CID123e4567-e89b-12d3-a456-426655440000</code>.</p>
+     */
+    inline void SetClusterId(const char* value) { m_clusterIdHasBeenSet = true; m_clusterId.assign(value); }
+
+    /**
+     * <p>The 39-character ID for the cluster, for example
+     * <code>CID123e4567-e89b-12d3-a456-426655440000</code>.</p>
+     */
+    inline JobMetadata& WithClusterId(const Aws::String& value) { SetClusterId(value); return *this;}
+
+    /**
+     * <p>The 39-character ID for the cluster, for example
+     * <code>CID123e4567-e89b-12d3-a456-426655440000</code>.</p>
+     */
+    inline JobMetadata& WithClusterId(Aws::String&& value) { SetClusterId(value); return *this;}
+
+    /**
+     * <p>The 39-character ID for the cluster, for example
+     * <code>CID123e4567-e89b-12d3-a456-426655440000</code>.</p>
+     */
+    inline JobMetadata& WithClusterId(const char* value) { SetClusterId(value); return *this;}
+
   private:
     Aws::String m_jobId;
     bool m_jobIdHasBeenSet;
@@ -564,6 +635,8 @@ namespace Model
     bool m_jobStateHasBeenSet;
     JobType m_jobType;
     bool m_jobTypeHasBeenSet;
+    SnowballType m_snowballType;
+    bool m_snowballTypeHasBeenSet;
     Aws::Utils::DateTime m_creationDate;
     bool m_creationDateHasBeenSet;
     JobResource m_resources;
@@ -586,6 +659,8 @@ namespace Model
     bool m_dataTransferProgressHasBeenSet;
     JobLogs m_jobLogInfo;
     bool m_jobLogInfoHasBeenSet;
+    Aws::String m_clusterId;
+    bool m_clusterIdHasBeenSet;
   };
 
 } // namespace Model

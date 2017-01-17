@@ -192,7 +192,7 @@ void SpotFleetRequestConfigData::OutputToStream(Aws::OStream& oStream, const cha
 
   if(m_terminateInstancesWithExpirationHasBeenSet)
   {
-      oStream << location << index << locationValue << ".TerminateInstancesWithExpiration=" << m_terminateInstancesWithExpiration << "&";
+      oStream << location << index << locationValue << ".TerminateInstancesWithExpiration=" << std::boolalpha << m_terminateInstancesWithExpiration << "&";
   }
 
   if(m_iamFleetRoleHasBeenSet)
@@ -257,7 +257,7 @@ void SpotFleetRequestConfigData::OutputToStream(Aws::OStream& oStream, const cha
   }
   if(m_terminateInstancesWithExpirationHasBeenSet)
   {
-      oStream << location << ".TerminateInstancesWithExpiration=" << m_terminateInstancesWithExpiration << "&";
+      oStream << location << ".TerminateInstancesWithExpiration=" << std::boolalpha << m_terminateInstancesWithExpiration << "&";
   }
   if(m_iamFleetRoleHasBeenSet)
   {
@@ -269,7 +269,7 @@ void SpotFleetRequestConfigData::OutputToStream(Aws::OStream& oStream, const cha
       for(auto& item : m_launchSpecifications)
       {
         Aws::StringStream launchSpecificationsSs;
-        launchSpecificationsSs << location <<  ".item." << launchSpecificationsIdx++;
+        launchSpecificationsSs << location <<  ".Item." << launchSpecificationsIdx++;
         item.OutputToStream(oStream, launchSpecificationsSs.str().c_str());
       }
   }

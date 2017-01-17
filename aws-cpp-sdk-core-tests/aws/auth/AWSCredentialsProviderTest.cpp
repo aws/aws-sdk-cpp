@@ -46,7 +46,6 @@ TEST(ProfileConfigFileAWSCredentialsProviderTest, TestDefaultConfig)
 
     Aws::String configFileName = ProfileConfigFileAWSCredentialsProvider::GetCredentialsProfileFilename();
     Aws::String tempFileName = configFileName + "_tempMv";
-    std::cout << tempFileName << std::endl;
     Aws::FileSystem::RelocateFileOrDirectory(configFileName.c_str(), tempFileName.c_str());
 
     Aws::OFStream configFile(configFileName.c_str(), Aws::OFStream::out | Aws::OFStream::trunc);

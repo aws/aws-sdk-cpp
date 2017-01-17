@@ -26,7 +26,10 @@ namespace Model
 {
 
   /**
-   * <p>The input values for <code>InitiateVaultLock</code>.</p>
+   * <p>The input values for <code>InitiateVaultLock</code>.</p><p><h3>See Also:</h3>
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/InitiateVaultLockInput">AWS
+   * API Reference</a></p>
    */
   class AWS_GLACIER_API InitiateVaultLockRequest : public GlacierRequest
   {

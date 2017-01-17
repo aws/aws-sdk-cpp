@@ -36,7 +36,9 @@ namespace Model
   /**
    * <p> Represents the output of <code>GetEvaluation</code> operation. </p> <p>The
    * content consists of the detailed metadata and data file information and the
-   * current status of the <code>Evaluation</code>.</p>
+   * current status of the <code>Evaluation</code>.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/Evaluation">AWS
+   * API Reference</a></p>
    */
   class AWS_MACHINELEARNING_API Evaluation
   {

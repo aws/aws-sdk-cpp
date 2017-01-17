@@ -36,7 +36,9 @@ namespace EC2
 namespace Model
 {
   /**
-   * <p>Contains the output of ModifyHosts.</p>
+   * <p>Contains the output of ModifyHosts.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyHostsResult">AWS
+   * API Reference</a></p>
    */
   class AWS_EC2_API ModifyHostsResponse
   {
@@ -46,83 +48,83 @@ namespace Model
     ModifyHostsResponse& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
     /**
-     * <p>The IDs of the Dedicated hosts that were successfully modified.</p>
+     * <p>The IDs of the Dedicated Hosts that were successfully modified.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSuccessful() const{ return m_successful; }
 
     /**
-     * <p>The IDs of the Dedicated hosts that were successfully modified.</p>
+     * <p>The IDs of the Dedicated Hosts that were successfully modified.</p>
      */
     inline void SetSuccessful(const Aws::Vector<Aws::String>& value) { m_successful = value; }
 
     /**
-     * <p>The IDs of the Dedicated hosts that were successfully modified.</p>
+     * <p>The IDs of the Dedicated Hosts that were successfully modified.</p>
      */
     inline void SetSuccessful(Aws::Vector<Aws::String>&& value) { m_successful = value; }
 
     /**
-     * <p>The IDs of the Dedicated hosts that were successfully modified.</p>
+     * <p>The IDs of the Dedicated Hosts that were successfully modified.</p>
      */
     inline ModifyHostsResponse& WithSuccessful(const Aws::Vector<Aws::String>& value) { SetSuccessful(value); return *this;}
 
     /**
-     * <p>The IDs of the Dedicated hosts that were successfully modified.</p>
+     * <p>The IDs of the Dedicated Hosts that were successfully modified.</p>
      */
     inline ModifyHostsResponse& WithSuccessful(Aws::Vector<Aws::String>&& value) { SetSuccessful(value); return *this;}
 
     /**
-     * <p>The IDs of the Dedicated hosts that were successfully modified.</p>
+     * <p>The IDs of the Dedicated Hosts that were successfully modified.</p>
      */
     inline ModifyHostsResponse& AddSuccessful(const Aws::String& value) { m_successful.push_back(value); return *this; }
 
     /**
-     * <p>The IDs of the Dedicated hosts that were successfully modified.</p>
+     * <p>The IDs of the Dedicated Hosts that were successfully modified.</p>
      */
     inline ModifyHostsResponse& AddSuccessful(Aws::String&& value) { m_successful.push_back(value); return *this; }
 
     /**
-     * <p>The IDs of the Dedicated hosts that were successfully modified.</p>
+     * <p>The IDs of the Dedicated Hosts that were successfully modified.</p>
      */
     inline ModifyHostsResponse& AddSuccessful(const char* value) { m_successful.push_back(value); return *this; }
 
     /**
-     * <p>The IDs of the Dedicated hosts that could not be modified. Check whether the
+     * <p>The IDs of the Dedicated Hosts that could not be modified. Check whether the
      * setting you requested can be used.</p>
      */
     inline const Aws::Vector<UnsuccessfulItem>& GetUnsuccessful() const{ return m_unsuccessful; }
 
     /**
-     * <p>The IDs of the Dedicated hosts that could not be modified. Check whether the
+     * <p>The IDs of the Dedicated Hosts that could not be modified. Check whether the
      * setting you requested can be used.</p>
      */
     inline void SetUnsuccessful(const Aws::Vector<UnsuccessfulItem>& value) { m_unsuccessful = value; }
 
     /**
-     * <p>The IDs of the Dedicated hosts that could not be modified. Check whether the
+     * <p>The IDs of the Dedicated Hosts that could not be modified. Check whether the
      * setting you requested can be used.</p>
      */
     inline void SetUnsuccessful(Aws::Vector<UnsuccessfulItem>&& value) { m_unsuccessful = value; }
 
     /**
-     * <p>The IDs of the Dedicated hosts that could not be modified. Check whether the
+     * <p>The IDs of the Dedicated Hosts that could not be modified. Check whether the
      * setting you requested can be used.</p>
      */
     inline ModifyHostsResponse& WithUnsuccessful(const Aws::Vector<UnsuccessfulItem>& value) { SetUnsuccessful(value); return *this;}
 
     /**
-     * <p>The IDs of the Dedicated hosts that could not be modified. Check whether the
+     * <p>The IDs of the Dedicated Hosts that could not be modified. Check whether the
      * setting you requested can be used.</p>
      */
     inline ModifyHostsResponse& WithUnsuccessful(Aws::Vector<UnsuccessfulItem>&& value) { SetUnsuccessful(value); return *this;}
 
     /**
-     * <p>The IDs of the Dedicated hosts that could not be modified. Check whether the
+     * <p>The IDs of the Dedicated Hosts that could not be modified. Check whether the
      * setting you requested can be used.</p>
      */
     inline ModifyHostsResponse& AddUnsuccessful(const UnsuccessfulItem& value) { m_unsuccessful.push_back(value); return *this; }
 
     /**
-     * <p>The IDs of the Dedicated hosts that could not be modified. Check whether the
+     * <p>The IDs of the Dedicated Hosts that could not be modified. Check whether the
      * setting you requested can be used.</p>
      */
     inline ModifyHostsResponse& AddUnsuccessful(UnsuccessfulItem&& value) { m_unsuccessful.push_back(value); return *this; }

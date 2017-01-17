@@ -49,7 +49,7 @@ Aws::String SetInstanceProtectionRequest::SerializePayload() const
 
   if(m_protectedFromScaleInHasBeenSet)
   {
-    ss << "ProtectedFromScaleIn=" << m_protectedFromScaleIn << "&";
+    ss << "ProtectedFromScaleIn=" << std::boolalpha << m_protectedFromScaleIn << "&";
   }
 
   ss << "Version=2011-01-01";

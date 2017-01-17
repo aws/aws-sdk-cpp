@@ -40,7 +40,7 @@ Aws::String ImportImageRequest::SerializePayload() const
   ss << "Action=ImportImage&";
   if(m_dryRunHasBeenSet)
   {
-    ss << "DryRun=" << m_dryRun << "&";
+    ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
   if(m_descriptionHasBeenSet)
@@ -93,7 +93,7 @@ Aws::String ImportImageRequest::SerializePayload() const
     ss << "RoleName=" << StringUtils::URLEncode(m_roleName.c_str()) << "&";
   }
 
-  ss << "Version=2015-10-01";
+  ss << "Version=2016-11-15";
   return ss.str();
 }
 

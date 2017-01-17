@@ -35,7 +35,10 @@ namespace Model
    * transition to the STANDARD_IA or GLACIER storage class. If your bucket is
    * versioning-enabled (or versioning is suspended), you can set this action to
    * request that Amazon S3 transition noncurrent object versions to the STANDARD_IA
-   * or GLACIER storage class at a specific period in the object's lifetime.
+   * or GLACIER storage class at a specific period in the object's
+   * lifetime.<p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/NoncurrentVersionTransition">AWS
+   * API Reference</a></p>
    */
   class AWS_S3_API NoncurrentVersionTransition
   {

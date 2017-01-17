@@ -40,7 +40,10 @@ namespace Model
 {
 
   /**
-   * A summary of the information for an Amazon CloudFront distribution.
+   * A summary of the information for an Amazon CloudFront distribution.<p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-01-28/DistributionSummary">AWS
+   * API Reference</a></p>
    */
   class AWS_CLOUDFRONT_API DistributionSummary
   {

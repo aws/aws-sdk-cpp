@@ -25,7 +25,10 @@ namespace Model
 {
 
   /**
-   * <p>Represents the request to change a user password.</p>
+   * <p>Represents the request to change a user password.</p><p><h3>See Also:</h3>  
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ChangePasswordRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_COGNITOIDENTITYPROVIDER_API ChangePasswordRequest : public CognitoIdentityProviderRequest
   {

@@ -77,7 +77,7 @@ Aws::String CreateReplicationGroupRequest::SerializePayload() const
 
   if(m_automaticFailoverEnabledHasBeenSet)
   {
-    ss << "AutomaticFailoverEnabled=" << m_automaticFailoverEnabled << "&";
+    ss << "AutomaticFailoverEnabled=" << std::boolalpha << m_automaticFailoverEnabled << "&";
   }
 
   if(m_numCacheClustersHasBeenSet)
@@ -206,7 +206,7 @@ Aws::String CreateReplicationGroupRequest::SerializePayload() const
 
   if(m_autoMinorVersionUpgradeHasBeenSet)
   {
-    ss << "AutoMinorVersionUpgrade=" << m_autoMinorVersionUpgrade << "&";
+    ss << "AutoMinorVersionUpgrade=" << std::boolalpha << m_autoMinorVersionUpgrade << "&";
   }
 
   if(m_snapshotRetentionLimitHasBeenSet)

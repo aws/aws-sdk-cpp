@@ -44,13 +44,16 @@
 #include <aws/logs/model/DescribeSubscriptionFiltersRequest.h>
 #include <aws/logs/model/FilterLogEventsRequest.h>
 #include <aws/logs/model/GetLogEventsRequest.h>
+#include <aws/logs/model/ListTagsLogGroupRequest.h>
 #include <aws/logs/model/PutDestinationRequest.h>
 #include <aws/logs/model/PutDestinationPolicyRequest.h>
 #include <aws/logs/model/PutLogEventsRequest.h>
 #include <aws/logs/model/PutMetricFilterRequest.h>
 #include <aws/logs/model/PutRetentionPolicyRequest.h>
 #include <aws/logs/model/PutSubscriptionFilterRequest.h>
+#include <aws/logs/model/TagLogGroupRequest.h>
 #include <aws/logs/model/TestMetricFilterRequest.h>
+#include <aws/logs/model/UntagLogGroupRequest.h>
 
 using namespace Aws;
 using namespace Aws::Auth;
@@ -728,6 +731,40 @@ void CloudWatchLogsClient::GetLogEventsAsyncHelper(const GetLogEventsRequest& re
   handler(this, request, GetLogEvents(request), context);
 }
 
+ListTagsLogGroupOutcome CloudWatchLogsClient::ListTagsLogGroup(const ListTagsLogGroupRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return ListTagsLogGroupOutcome(ListTagsLogGroupResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ListTagsLogGroupOutcome(outcome.GetError());
+  }
+}
+
+ListTagsLogGroupOutcomeCallable CloudWatchLogsClient::ListTagsLogGroupCallable(const ListTagsLogGroupRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListTagsLogGroupOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListTagsLogGroup(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CloudWatchLogsClient::ListTagsLogGroupAsync(const ListTagsLogGroupRequest& request, const ListTagsLogGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListTagsLogGroupAsyncHelper( request, handler, context ); } );
+}
+
+void CloudWatchLogsClient::ListTagsLogGroupAsyncHelper(const ListTagsLogGroupRequest& request, const ListTagsLogGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListTagsLogGroup(request), context);
+}
+
 PutDestinationOutcome CloudWatchLogsClient::PutDestination(const PutDestinationRequest& request) const
 {
   Aws::StringStream ss;
@@ -932,6 +969,40 @@ void CloudWatchLogsClient::PutSubscriptionFilterAsyncHelper(const PutSubscriptio
   handler(this, request, PutSubscriptionFilter(request), context);
 }
 
+TagLogGroupOutcome CloudWatchLogsClient::TagLogGroup(const TagLogGroupRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return TagLogGroupOutcome(NoResult());
+  }
+  else
+  {
+    return TagLogGroupOutcome(outcome.GetError());
+  }
+}
+
+TagLogGroupOutcomeCallable CloudWatchLogsClient::TagLogGroupCallable(const TagLogGroupRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< TagLogGroupOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->TagLogGroup(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CloudWatchLogsClient::TagLogGroupAsync(const TagLogGroupRequest& request, const TagLogGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->TagLogGroupAsyncHelper( request, handler, context ); } );
+}
+
+void CloudWatchLogsClient::TagLogGroupAsyncHelper(const TagLogGroupRequest& request, const TagLogGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, TagLogGroup(request), context);
+}
+
 TestMetricFilterOutcome CloudWatchLogsClient::TestMetricFilter(const TestMetricFilterRequest& request) const
 {
   Aws::StringStream ss;
@@ -964,5 +1035,39 @@ void CloudWatchLogsClient::TestMetricFilterAsync(const TestMetricFilterRequest& 
 void CloudWatchLogsClient::TestMetricFilterAsyncHelper(const TestMetricFilterRequest& request, const TestMetricFilterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, TestMetricFilter(request), context);
+}
+
+UntagLogGroupOutcome CloudWatchLogsClient::UntagLogGroup(const UntagLogGroupRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return UntagLogGroupOutcome(NoResult());
+  }
+  else
+  {
+    return UntagLogGroupOutcome(outcome.GetError());
+  }
+}
+
+UntagLogGroupOutcomeCallable CloudWatchLogsClient::UntagLogGroupCallable(const UntagLogGroupRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UntagLogGroupOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UntagLogGroup(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CloudWatchLogsClient::UntagLogGroupAsync(const UntagLogGroupRequest& request, const UntagLogGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UntagLogGroupAsyncHelper( request, handler, context ); } );
+}
+
+void CloudWatchLogsClient::UntagLogGroupAsyncHelper(const UntagLogGroupRequest& request, const UntagLogGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UntagLogGroup(request), context);
 }
 

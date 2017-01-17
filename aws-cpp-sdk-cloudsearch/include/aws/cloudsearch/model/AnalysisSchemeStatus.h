@@ -33,7 +33,10 @@ namespace Model
 {
 
   /**
-   * <p>The status and configuration of an <code>AnalysisScheme</code>.</p>
+   * <p>The status and configuration of an <code>AnalysisScheme</code>.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/AnalysisSchemeStatus">AWS
+   * API Reference</a></p>
    */
   class AWS_CLOUDSEARCH_API AnalysisSchemeStatus
   {

@@ -33,7 +33,9 @@ namespace Model
 
   /**
    * Subscriber model. Each notification may contain multiple subscribers with
-   * different addresses.
+   * different addresses.<p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/Subscriber">AWS
+   * API Reference</a></p>
    */
   class AWS_BUDGETS_API Subscriber
   {

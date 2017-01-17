@@ -38,7 +38,10 @@ namespace Model
    * contain any other characters, then you must use MIME encoded-word syntax (RFC
    * 2047) instead of a literal string. MIME encoded-word syntax uses the following
    * form: <code>=?charset?encoding?encoded-text?=</code>. For more information, see
-   * <a href="http://tools.ietf.org/html/rfc2047">RFC 2047</a>. </p>
+   * <a href="http://tools.ietf.org/html/rfc2047">RFC 2047</a>. </p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/Destination">AWS
+   * API Reference</a></p>
    */
   class AWS_SES_API Destination
   {

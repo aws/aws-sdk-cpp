@@ -35,7 +35,9 @@ namespace Model
 {
 
   /**
-   * <p>Contains information about a delivery stream.</p>
+   * <p>Contains information about a delivery stream.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/DeliveryStreamDescription">AWS
+   * API Reference</a></p>
    */
   class AWS_FIREHOSE_API DeliveryStreamDescription
   {
@@ -141,65 +143,58 @@ namespace Model
     inline DeliveryStreamDescription& WithDeliveryStreamStatus(DeliveryStreamStatus&& value) { SetDeliveryStreamStatus(value); return *this;}
 
     /**
-     * <p>Used when calling the <a>UpdateDestination</a> operation. Each time the
-     * destination is updated for the delivery stream, the VersionId is changed, and
-     * the current VersionId is required when updating the destination. This is so that
-     * the service knows it is applying the changes to the correct version of the
-     * delivery stream.</p>
+     * <p>Each time the destination is updated for a delivery stream, the version ID is
+     * changed, and the current version ID is required when updating the destination.
+     * This is so that the service knows it is applying the changes to the correct
+     * version of the delivery stream.</p>
      */
     inline const Aws::String& GetVersionId() const{ return m_versionId; }
 
     /**
-     * <p>Used when calling the <a>UpdateDestination</a> operation. Each time the
-     * destination is updated for the delivery stream, the VersionId is changed, and
-     * the current VersionId is required when updating the destination. This is so that
-     * the service knows it is applying the changes to the correct version of the
-     * delivery stream.</p>
+     * <p>Each time the destination is updated for a delivery stream, the version ID is
+     * changed, and the current version ID is required when updating the destination.
+     * This is so that the service knows it is applying the changes to the correct
+     * version of the delivery stream.</p>
      */
     inline void SetVersionId(const Aws::String& value) { m_versionIdHasBeenSet = true; m_versionId = value; }
 
     /**
-     * <p>Used when calling the <a>UpdateDestination</a> operation. Each time the
-     * destination is updated for the delivery stream, the VersionId is changed, and
-     * the current VersionId is required when updating the destination. This is so that
-     * the service knows it is applying the changes to the correct version of the
-     * delivery stream.</p>
+     * <p>Each time the destination is updated for a delivery stream, the version ID is
+     * changed, and the current version ID is required when updating the destination.
+     * This is so that the service knows it is applying the changes to the correct
+     * version of the delivery stream.</p>
      */
     inline void SetVersionId(Aws::String&& value) { m_versionIdHasBeenSet = true; m_versionId = value; }
 
     /**
-     * <p>Used when calling the <a>UpdateDestination</a> operation. Each time the
-     * destination is updated for the delivery stream, the VersionId is changed, and
-     * the current VersionId is required when updating the destination. This is so that
-     * the service knows it is applying the changes to the correct version of the
-     * delivery stream.</p>
+     * <p>Each time the destination is updated for a delivery stream, the version ID is
+     * changed, and the current version ID is required when updating the destination.
+     * This is so that the service knows it is applying the changes to the correct
+     * version of the delivery stream.</p>
      */
     inline void SetVersionId(const char* value) { m_versionIdHasBeenSet = true; m_versionId.assign(value); }
 
     /**
-     * <p>Used when calling the <a>UpdateDestination</a> operation. Each time the
-     * destination is updated for the delivery stream, the VersionId is changed, and
-     * the current VersionId is required when updating the destination. This is so that
-     * the service knows it is applying the changes to the correct version of the
-     * delivery stream.</p>
+     * <p>Each time the destination is updated for a delivery stream, the version ID is
+     * changed, and the current version ID is required when updating the destination.
+     * This is so that the service knows it is applying the changes to the correct
+     * version of the delivery stream.</p>
      */
     inline DeliveryStreamDescription& WithVersionId(const Aws::String& value) { SetVersionId(value); return *this;}
 
     /**
-     * <p>Used when calling the <a>UpdateDestination</a> operation. Each time the
-     * destination is updated for the delivery stream, the VersionId is changed, and
-     * the current VersionId is required when updating the destination. This is so that
-     * the service knows it is applying the changes to the correct version of the
-     * delivery stream.</p>
+     * <p>Each time the destination is updated for a delivery stream, the version ID is
+     * changed, and the current version ID is required when updating the destination.
+     * This is so that the service knows it is applying the changes to the correct
+     * version of the delivery stream.</p>
      */
     inline DeliveryStreamDescription& WithVersionId(Aws::String&& value) { SetVersionId(value); return *this;}
 
     /**
-     * <p>Used when calling the <a>UpdateDestination</a> operation. Each time the
-     * destination is updated for the delivery stream, the VersionId is changed, and
-     * the current VersionId is required when updating the destination. This is so that
-     * the service knows it is applying the changes to the correct version of the
-     * delivery stream.</p>
+     * <p>Each time the destination is updated for a delivery stream, the version ID is
+     * changed, and the current version ID is required when updating the destination.
+     * This is so that the service knows it is applying the changes to the correct
+     * version of the delivery stream.</p>
      */
     inline DeliveryStreamDescription& WithVersionId(const char* value) { SetVersionId(value); return *this;}
 

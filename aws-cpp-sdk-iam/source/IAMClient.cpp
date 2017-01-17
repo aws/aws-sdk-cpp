@@ -43,6 +43,7 @@
 #include <aws/iam/model/CreatePolicyVersionRequest.h>
 #include <aws/iam/model/CreateRoleRequest.h>
 #include <aws/iam/model/CreateSAMLProviderRequest.h>
+#include <aws/iam/model/CreateServiceSpecificCredentialRequest.h>
 #include <aws/iam/model/CreateUserRequest.h>
 #include <aws/iam/model/CreateVirtualMFADeviceRequest.h>
 #include <aws/iam/model/DeactivateMFADeviceRequest.h>
@@ -61,6 +62,7 @@
 #include <aws/iam/model/DeleteSAMLProviderRequest.h>
 #include <aws/iam/model/DeleteSSHPublicKeyRequest.h>
 #include <aws/iam/model/DeleteServerCertificateRequest.h>
+#include <aws/iam/model/DeleteServiceSpecificCredentialRequest.h>
 #include <aws/iam/model/DeleteSigningCertificateRequest.h>
 #include <aws/iam/model/DeleteUserRequest.h>
 #include <aws/iam/model/DeleteUserPolicyRequest.h>
@@ -111,6 +113,7 @@
 #include <aws/iam/model/ListSAMLProvidersRequest.h>
 #include <aws/iam/model/ListSSHPublicKeysRequest.h>
 #include <aws/iam/model/ListServerCertificatesRequest.h>
+#include <aws/iam/model/ListServiceSpecificCredentialsRequest.h>
 #include <aws/iam/model/ListSigningCertificatesRequest.h>
 #include <aws/iam/model/ListUserPoliciesRequest.h>
 #include <aws/iam/model/ListUsersRequest.h>
@@ -121,6 +124,7 @@
 #include <aws/iam/model/RemoveClientIDFromOpenIDConnectProviderRequest.h>
 #include <aws/iam/model/RemoveRoleFromInstanceProfileRequest.h>
 #include <aws/iam/model/RemoveUserFromGroupRequest.h>
+#include <aws/iam/model/ResetServiceSpecificCredentialRequest.h>
 #include <aws/iam/model/ResyncMFADeviceRequest.h>
 #include <aws/iam/model/SetDefaultPolicyVersionRequest.h>
 #include <aws/iam/model/SimulateCustomPolicyRequest.h>
@@ -134,6 +138,7 @@
 #include <aws/iam/model/UpdateSAMLProviderRequest.h>
 #include <aws/iam/model/UpdateSSHPublicKeyRequest.h>
 #include <aws/iam/model/UpdateServerCertificateRequest.h>
+#include <aws/iam/model/UpdateServiceSpecificCredentialRequest.h>
 #include <aws/iam/model/UpdateSigningCertificateRequest.h>
 #include <aws/iam/model/UpdateUserRequest.h>
 #include <aws/iam/model/UploadSSHPublicKeyRequest.h>
@@ -203,6 +208,16 @@ void IAMClient::init(const ClientConfiguration& config)
   }
 
   m_uri = ss.str();
+}
+
+Aws::String IAMClient::ConvertRequestToPresignedUrl(const AmazonSerializableWebServiceRequest& requestToConvert, const char* region) const
+{
+  Aws::StringStream ss;
+  ss << "https://" << IAMEndpoint::ForRegion(region);
+  ss << "?" << requestToConvert.SerializePayload();
+
+  URI uri(ss.str());
+  return GeneratePresignedUrl(uri, HttpMethod::HTTP_GET, region, 3600);
 }
 
 AddClientIDToOpenIDConnectProviderOutcome IAMClient::AddClientIDToOpenIDConnectProvider(const AddClientIDToOpenIDConnectProviderRequest& request) const
@@ -764,6 +779,39 @@ void IAMClient::CreateSAMLProviderAsync(const CreateSAMLProviderRequest& request
 void IAMClient::CreateSAMLProviderAsyncHelper(const CreateSAMLProviderRequest& request, const CreateSAMLProviderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, CreateSAMLProvider(request), context);
+}
+
+CreateServiceSpecificCredentialOutcome IAMClient::CreateServiceSpecificCredential(const CreateServiceSpecificCredentialRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return CreateServiceSpecificCredentialOutcome(CreateServiceSpecificCredentialResult(outcome.GetResult()));
+  }
+  else
+  {
+    return CreateServiceSpecificCredentialOutcome(outcome.GetError());
+  }
+}
+
+CreateServiceSpecificCredentialOutcomeCallable IAMClient::CreateServiceSpecificCredentialCallable(const CreateServiceSpecificCredentialRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateServiceSpecificCredentialOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateServiceSpecificCredential(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IAMClient::CreateServiceSpecificCredentialAsync(const CreateServiceSpecificCredentialRequest& request, const CreateServiceSpecificCredentialResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateServiceSpecificCredentialAsyncHelper( request, handler, context ); } );
+}
+
+void IAMClient::CreateServiceSpecificCredentialAsyncHelper(const CreateServiceSpecificCredentialRequest& request, const CreateServiceSpecificCredentialResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateServiceSpecificCredential(request), context);
 }
 
 CreateUserOutcome IAMClient::CreateUser(const CreateUserRequest& request) const
@@ -1358,6 +1406,39 @@ void IAMClient::DeleteServerCertificateAsync(const DeleteServerCertificateReques
 void IAMClient::DeleteServerCertificateAsyncHelper(const DeleteServerCertificateRequest& request, const DeleteServerCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DeleteServerCertificate(request), context);
+}
+
+DeleteServiceSpecificCredentialOutcome IAMClient::DeleteServiceSpecificCredential(const DeleteServiceSpecificCredentialRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return DeleteServiceSpecificCredentialOutcome(NoResult());
+  }
+  else
+  {
+    return DeleteServiceSpecificCredentialOutcome(outcome.GetError());
+  }
+}
+
+DeleteServiceSpecificCredentialOutcomeCallable IAMClient::DeleteServiceSpecificCredentialCallable(const DeleteServiceSpecificCredentialRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteServiceSpecificCredentialOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteServiceSpecificCredential(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IAMClient::DeleteServiceSpecificCredentialAsync(const DeleteServiceSpecificCredentialRequest& request, const DeleteServiceSpecificCredentialResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteServiceSpecificCredentialAsyncHelper( request, handler, context ); } );
+}
+
+void IAMClient::DeleteServiceSpecificCredentialAsyncHelper(const DeleteServiceSpecificCredentialRequest& request, const DeleteServiceSpecificCredentialResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteServiceSpecificCredential(request), context);
 }
 
 DeleteSigningCertificateOutcome IAMClient::DeleteSigningCertificate(const DeleteSigningCertificateRequest& request) const
@@ -3010,6 +3091,39 @@ void IAMClient::ListServerCertificatesAsyncHelper(const ListServerCertificatesRe
   handler(this, request, ListServerCertificates(request), context);
 }
 
+ListServiceSpecificCredentialsOutcome IAMClient::ListServiceSpecificCredentials(const ListServiceSpecificCredentialsRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return ListServiceSpecificCredentialsOutcome(ListServiceSpecificCredentialsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ListServiceSpecificCredentialsOutcome(outcome.GetError());
+  }
+}
+
+ListServiceSpecificCredentialsOutcomeCallable IAMClient::ListServiceSpecificCredentialsCallable(const ListServiceSpecificCredentialsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListServiceSpecificCredentialsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListServiceSpecificCredentials(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IAMClient::ListServiceSpecificCredentialsAsync(const ListServiceSpecificCredentialsRequest& request, const ListServiceSpecificCredentialsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListServiceSpecificCredentialsAsyncHelper( request, handler, context ); } );
+}
+
+void IAMClient::ListServiceSpecificCredentialsAsyncHelper(const ListServiceSpecificCredentialsRequest& request, const ListServiceSpecificCredentialsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListServiceSpecificCredentials(request), context);
+}
+
 ListSigningCertificatesOutcome IAMClient::ListSigningCertificates(const ListSigningCertificatesRequest& request) const
 {
   Aws::StringStream ss;
@@ -3338,6 +3452,39 @@ void IAMClient::RemoveUserFromGroupAsync(const RemoveUserFromGroupRequest& reque
 void IAMClient::RemoveUserFromGroupAsyncHelper(const RemoveUserFromGroupRequest& request, const RemoveUserFromGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, RemoveUserFromGroup(request), context);
+}
+
+ResetServiceSpecificCredentialOutcome IAMClient::ResetServiceSpecificCredential(const ResetServiceSpecificCredentialRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return ResetServiceSpecificCredentialOutcome(ResetServiceSpecificCredentialResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ResetServiceSpecificCredentialOutcome(outcome.GetError());
+  }
+}
+
+ResetServiceSpecificCredentialOutcomeCallable IAMClient::ResetServiceSpecificCredentialCallable(const ResetServiceSpecificCredentialRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ResetServiceSpecificCredentialOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ResetServiceSpecificCredential(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IAMClient::ResetServiceSpecificCredentialAsync(const ResetServiceSpecificCredentialRequest& request, const ResetServiceSpecificCredentialResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ResetServiceSpecificCredentialAsyncHelper( request, handler, context ); } );
+}
+
+void IAMClient::ResetServiceSpecificCredentialAsyncHelper(const ResetServiceSpecificCredentialRequest& request, const ResetServiceSpecificCredentialResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ResetServiceSpecificCredential(request), context);
 }
 
 ResyncMFADeviceOutcome IAMClient::ResyncMFADevice(const ResyncMFADeviceRequest& request) const
@@ -3769,6 +3916,39 @@ void IAMClient::UpdateServerCertificateAsyncHelper(const UpdateServerCertificate
   handler(this, request, UpdateServerCertificate(request), context);
 }
 
+UpdateServiceSpecificCredentialOutcome IAMClient::UpdateServiceSpecificCredential(const UpdateServiceSpecificCredentialRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return UpdateServiceSpecificCredentialOutcome(NoResult());
+  }
+  else
+  {
+    return UpdateServiceSpecificCredentialOutcome(outcome.GetError());
+  }
+}
+
+UpdateServiceSpecificCredentialOutcomeCallable IAMClient::UpdateServiceSpecificCredentialCallable(const UpdateServiceSpecificCredentialRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateServiceSpecificCredentialOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateServiceSpecificCredential(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IAMClient::UpdateServiceSpecificCredentialAsync(const UpdateServiceSpecificCredentialRequest& request, const UpdateServiceSpecificCredentialResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateServiceSpecificCredentialAsyncHelper( request, handler, context ); } );
+}
+
+void IAMClient::UpdateServiceSpecificCredentialAsyncHelper(const UpdateServiceSpecificCredentialRequest& request, const UpdateServiceSpecificCredentialResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateServiceSpecificCredential(request), context);
+}
+
 UpdateSigningCertificateOutcome IAMClient::UpdateSigningCertificate(const UpdateSigningCertificateRequest& request) const
 {
   Aws::StringStream ss;
@@ -3933,4 +4113,6 @@ void IAMClient::UploadSigningCertificateAsyncHelper(const UploadSigningCertifica
 {
   handler(this, request, UploadSigningCertificate(request), context);
 }
+
+
 

@@ -32,7 +32,9 @@ namespace Model
 {
 
   /**
-   * <p>Reserved for future use.</p>
+   * <p>Reserved for future use.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/BlockerDeclaration">AWS
+   * API Reference</a></p>
    */
   class AWS_CODEPIPELINE_API BlockerDeclaration
   {

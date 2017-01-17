@@ -33,7 +33,9 @@ namespace Model
 
   /**
    * <p>This data type is used as a response element to
-   * <a>DescribeDBLogFiles</a>.</p>
+   * <a>DescribeDBLogFiles</a>.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBLogFilesDetails">AWS
+   * API Reference</a></p>
    */
   class AWS_RDS_API DescribeDBLogFilesDetails
   {

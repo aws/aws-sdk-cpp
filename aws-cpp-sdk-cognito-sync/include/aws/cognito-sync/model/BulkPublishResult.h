@@ -33,7 +33,9 @@ namespace CognitoSync
 namespace Model
 {
   /**
-   * The output for the BulkPublish operation.
+   * The output for the BulkPublish operation.<p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-sync-2014-06-30/BulkPublishResponse">AWS
+   * API Reference</a></p>
    */
   class AWS_COGNITOSYNC_API BulkPublishResult
   {

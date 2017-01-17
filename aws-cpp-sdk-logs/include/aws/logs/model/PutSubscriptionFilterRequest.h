@@ -16,6 +16,7 @@
 #include <aws/logs/CloudWatchLogs_EXPORTS.h>
 #include <aws/logs/CloudWatchLogsRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/logs/model/Distribution.h>
 
 namespace Aws
 {
@@ -279,6 +280,41 @@ namespace Model
      */
     inline PutSubscriptionFilterRequest& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
 
+    /**
+     * <p>The method used to distribute log data to the destination, when the
+     * destination is an Amazon Kinesis stream. By default, log data is grouped by log
+     * stream. For a more even distribution, you can group log data randomly.</p>
+     */
+    inline const Distribution& GetDistribution() const{ return m_distribution; }
+
+    /**
+     * <p>The method used to distribute log data to the destination, when the
+     * destination is an Amazon Kinesis stream. By default, log data is grouped by log
+     * stream. For a more even distribution, you can group log data randomly.</p>
+     */
+    inline void SetDistribution(const Distribution& value) { m_distributionHasBeenSet = true; m_distribution = value; }
+
+    /**
+     * <p>The method used to distribute log data to the destination, when the
+     * destination is an Amazon Kinesis stream. By default, log data is grouped by log
+     * stream. For a more even distribution, you can group log data randomly.</p>
+     */
+    inline void SetDistribution(Distribution&& value) { m_distributionHasBeenSet = true; m_distribution = value; }
+
+    /**
+     * <p>The method used to distribute log data to the destination, when the
+     * destination is an Amazon Kinesis stream. By default, log data is grouped by log
+     * stream. For a more even distribution, you can group log data randomly.</p>
+     */
+    inline PutSubscriptionFilterRequest& WithDistribution(const Distribution& value) { SetDistribution(value); return *this;}
+
+    /**
+     * <p>The method used to distribute log data to the destination, when the
+     * destination is an Amazon Kinesis stream. By default, log data is grouped by log
+     * stream. For a more even distribution, you can group log data randomly.</p>
+     */
+    inline PutSubscriptionFilterRequest& WithDistribution(Distribution&& value) { SetDistribution(value); return *this;}
+
   private:
     Aws::String m_logGroupName;
     bool m_logGroupNameHasBeenSet;
@@ -290,6 +326,8 @@ namespace Model
     bool m_destinationArnHasBeenSet;
     Aws::String m_roleArn;
     bool m_roleArnHasBeenSet;
+    Distribution m_distribution;
+    bool m_distributionHasBeenSet;
   };
 
 } // namespace Model

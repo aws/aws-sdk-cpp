@@ -115,7 +115,7 @@ void Tag::OutputToStream(Aws::OStream& oStream, const char* location, unsigned i
 
   if(m_propagateAtLaunchHasBeenSet)
   {
-      oStream << location << index << locationValue << ".PropagateAtLaunch=" << m_propagateAtLaunch << "&";
+      oStream << location << index << locationValue << ".PropagateAtLaunch=" << std::boolalpha << m_propagateAtLaunch << "&";
   }
 
 }
@@ -140,7 +140,7 @@ void Tag::OutputToStream(Aws::OStream& oStream, const char* location) const
   }
   if(m_propagateAtLaunchHasBeenSet)
   {
-      oStream << location << ".PropagateAtLaunch=" << m_propagateAtLaunch << "&";
+      oStream << location << ".PropagateAtLaunch=" << std::boolalpha << m_propagateAtLaunch << "&";
   }
 }
 

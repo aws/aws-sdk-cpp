@@ -25,7 +25,10 @@ namespace Model
 {
 
   /**
-   * <p>The request that specifies the name of a trail to delete.</p>
+   * <p>The request that specifies the name of a trail to delete.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/DeleteTrailRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_CLOUDTRAIL_API DeleteTrailRequest : public CloudTrailRequest
   {

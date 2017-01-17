@@ -28,7 +28,9 @@ namespace Model
 
   /**
    * <p>Request to add a new <a>Authorizer</a> to an existing <a>RestApi</a>
-   * resource.</p>
+   * resource.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/CreateAuthorizerRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_APIGATEWAY_API CreateAuthorizerRequest : public APIGatewayRequest
   {

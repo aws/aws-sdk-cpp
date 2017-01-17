@@ -33,6 +33,7 @@ namespace Aws
         static const int Unprocessed_HASH = HashingUtils::HashString("Unprocessed");
         static const int Failed_HASH = HashingUtils::HashString("Failed");
         static const int Processing_HASH = HashingUtils::HashString("Processing");
+        static const int Building_HASH = HashingUtils::HashString("Building");
 
 
         ApplicationVersionStatus GetApplicationVersionStatusForName(const Aws::String& name)
@@ -53,6 +54,10 @@ namespace Aws
           else if (hashCode == Processing_HASH)
           {
             return ApplicationVersionStatus::Processing;
+          }
+          else if (hashCode == Building_HASH)
+          {
+            return ApplicationVersionStatus::Building;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -76,6 +81,8 @@ namespace Aws
             return "Failed";
           case ApplicationVersionStatus::Processing:
             return "Processing";
+          case ApplicationVersionStatus::Building:
+            return "Building";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

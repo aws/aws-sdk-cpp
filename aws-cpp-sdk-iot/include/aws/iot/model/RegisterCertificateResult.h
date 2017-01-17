@@ -33,7 +33,10 @@ namespace IoT
 namespace Model
 {
   /**
-   * <p>The output from the RegisterCertificate operation.</p>
+   * <p>The output from the RegisterCertificate operation.</p><p><h3>See Also:</h3>  
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/RegisterCertificateResponse">AWS
+   * API Reference</a></p>
    */
   class AWS_IOT_API RegisterCertificateResult
   {

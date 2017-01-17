@@ -32,7 +32,10 @@ namespace DirectConnect
 namespace Model
 {
   /**
-   * <p>The response received when UntagResource is called.</p>
+   * <p>The response received when UntagResource is called.</p><p><h3>See Also:</h3> 
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/UntagResourceResponse">AWS
+   * API Reference</a></p>
    */
   class AWS_DIRECTCONNECT_API UntagResourceResult
   {

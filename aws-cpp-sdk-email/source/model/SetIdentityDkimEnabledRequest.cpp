@@ -37,7 +37,7 @@ Aws::String SetIdentityDkimEnabledRequest::SerializePayload() const
 
   if(m_dkimEnabledHasBeenSet)
   {
-    ss << "DkimEnabled=" << m_dkimEnabled << "&";
+    ss << "DkimEnabled=" << std::boolalpha << m_dkimEnabled << "&";
   }
 
   ss << "Version=2010-12-01";

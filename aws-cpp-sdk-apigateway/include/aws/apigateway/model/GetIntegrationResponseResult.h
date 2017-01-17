@@ -39,7 +39,9 @@ namespace Model
    * <a>MethodResponse</a>, and parameters and templates can be used to transform the
    * back-end response.</p> <div class="seeAlso"> <a
    * href="http://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-create-api.html">Creating
-   * an API</a> </div>
+   * an API</a> </div><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/IntegrationResponse">AWS
+   * API Reference</a></p>
    */
   class AWS_APIGATEWAY_API GetIntegrationResponseResult
   {

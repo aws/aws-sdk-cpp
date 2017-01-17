@@ -34,7 +34,9 @@ namespace Model
 
   /**
    * <p>Information about SNS topic and AWS Directory Service directory
-   * associations.</p>
+   * associations.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/EventTopic">AWS API
+   * Reference</a></p>
    */
   class AWS_DIRECTORYSERVICE_API EventTopic
   {

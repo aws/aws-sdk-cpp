@@ -41,12 +41,14 @@ namespace Aws
         static const int monthly_revenue_annual_subscriptions_HASH = HashingUtils::HashString("monthly_revenue_annual_subscriptions");
         static const int disbursed_amount_by_product_HASH = HashingUtils::HashString("disbursed_amount_by_product");
         static const int disbursed_amount_by_product_with_uncollected_funds_HASH = HashingUtils::HashString("disbursed_amount_by_product_with_uncollected_funds");
+        static const int disbursed_amount_by_instance_hours_HASH = HashingUtils::HashString("disbursed_amount_by_instance_hours");
         static const int disbursed_amount_by_customer_geo_HASH = HashingUtils::HashString("disbursed_amount_by_customer_geo");
         static const int disbursed_amount_by_age_of_uncollected_funds_HASH = HashingUtils::HashString("disbursed_amount_by_age_of_uncollected_funds");
         static const int disbursed_amount_by_age_of_disbursed_funds_HASH = HashingUtils::HashString("disbursed_amount_by_age_of_disbursed_funds");
         static const int customer_profile_by_industry_HASH = HashingUtils::HashString("customer_profile_by_industry");
         static const int customer_profile_by_revenue_HASH = HashingUtils::HashString("customer_profile_by_revenue");
         static const int customer_profile_by_geography_HASH = HashingUtils::HashString("customer_profile_by_geography");
+        static const int sales_compensation_billed_revenue_HASH = HashingUtils::HashString("sales_compensation_billed_revenue");
 
 
         DataSetType GetDataSetTypeForName(const Aws::String& name)
@@ -100,6 +102,10 @@ namespace Aws
           {
             return DataSetType::disbursed_amount_by_product_with_uncollected_funds;
           }
+          else if (hashCode == disbursed_amount_by_instance_hours_HASH)
+          {
+            return DataSetType::disbursed_amount_by_instance_hours;
+          }
           else if (hashCode == disbursed_amount_by_customer_geo_HASH)
           {
             return DataSetType::disbursed_amount_by_customer_geo;
@@ -123,6 +129,10 @@ namespace Aws
           else if (hashCode == customer_profile_by_geography_HASH)
           {
             return DataSetType::customer_profile_by_geography;
+          }
+          else if (hashCode == sales_compensation_billed_revenue_HASH)
+          {
+            return DataSetType::sales_compensation_billed_revenue;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -162,6 +172,8 @@ namespace Aws
             return "disbursed_amount_by_product";
           case DataSetType::disbursed_amount_by_product_with_uncollected_funds:
             return "disbursed_amount_by_product_with_uncollected_funds";
+          case DataSetType::disbursed_amount_by_instance_hours:
+            return "disbursed_amount_by_instance_hours";
           case DataSetType::disbursed_amount_by_customer_geo:
             return "disbursed_amount_by_customer_geo";
           case DataSetType::disbursed_amount_by_age_of_uncollected_funds:
@@ -174,6 +186,8 @@ namespace Aws
             return "customer_profile_by_revenue";
           case DataSetType::customer_profile_by_geography:
             return "customer_profile_by_geography";
+          case DataSetType::sales_compensation_billed_revenue:
+            return "sales_compensation_billed_revenue";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

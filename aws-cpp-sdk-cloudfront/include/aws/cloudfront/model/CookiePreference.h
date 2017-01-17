@@ -33,7 +33,9 @@ namespace Model
 
   /**
    * A complex type that specifies the cookie preferences associated with this cache
-   * behavior.
+   * behavior.<p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-01-28/CookiePreference">AWS
+   * API Reference</a></p>
    */
   class AWS_CLOUDFRONT_API CookiePreference
   {

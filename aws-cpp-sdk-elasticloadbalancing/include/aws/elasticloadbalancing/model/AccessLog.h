@@ -32,7 +32,10 @@ namespace Model
 {
 
   /**
-   * <p>Information about the <code>AccessLog</code> attribute.</p>
+   * <p>Information about the <code>AccessLog</code> attribute.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/AccessLog">AWS
+   * API Reference</a></p>
    */
   class AWS_ELASTICLOADBALANCING_API AccessLog
   {

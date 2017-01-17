@@ -25,7 +25,10 @@ namespace Model
 {
 
   /**
-   * <p>The input for the CancelCertificateTransfer operation.</p>
+   * <p>The input for the CancelCertificateTransfer operation.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CancelCertificateTransferRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_IOT_API CancelCertificateTransferRequest : public IoTRequest
   {

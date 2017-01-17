@@ -27,7 +27,10 @@ namespace Model
 {
 
   /**
-   * <p>Represents the input of an AddTagsToResource operation.</p>
+   * <p>Represents the input of an AddTagsToResource operation.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/AddTagsToResourceMessage">AWS
+   * API Reference</a></p>
    */
   class AWS_ELASTICACHE_API AddTagsToResourceRequest : public ElastiCacheRequest
   {

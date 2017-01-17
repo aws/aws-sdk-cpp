@@ -158,32 +158,32 @@ void PasswordPolicy::OutputToStream(Aws::OStream& oStream, const char* location,
 
   if(m_requireSymbolsHasBeenSet)
   {
-      oStream << location << index << locationValue << ".RequireSymbols=" << m_requireSymbols << "&";
+      oStream << location << index << locationValue << ".RequireSymbols=" << std::boolalpha << m_requireSymbols << "&";
   }
 
   if(m_requireNumbersHasBeenSet)
   {
-      oStream << location << index << locationValue << ".RequireNumbers=" << m_requireNumbers << "&";
+      oStream << location << index << locationValue << ".RequireNumbers=" << std::boolalpha << m_requireNumbers << "&";
   }
 
   if(m_requireUppercaseCharactersHasBeenSet)
   {
-      oStream << location << index << locationValue << ".RequireUppercaseCharacters=" << m_requireUppercaseCharacters << "&";
+      oStream << location << index << locationValue << ".RequireUppercaseCharacters=" << std::boolalpha << m_requireUppercaseCharacters << "&";
   }
 
   if(m_requireLowercaseCharactersHasBeenSet)
   {
-      oStream << location << index << locationValue << ".RequireLowercaseCharacters=" << m_requireLowercaseCharacters << "&";
+      oStream << location << index << locationValue << ".RequireLowercaseCharacters=" << std::boolalpha << m_requireLowercaseCharacters << "&";
   }
 
   if(m_allowUsersToChangePasswordHasBeenSet)
   {
-      oStream << location << index << locationValue << ".AllowUsersToChangePassword=" << m_allowUsersToChangePassword << "&";
+      oStream << location << index << locationValue << ".AllowUsersToChangePassword=" << std::boolalpha << m_allowUsersToChangePassword << "&";
   }
 
   if(m_expirePasswordsHasBeenSet)
   {
-      oStream << location << index << locationValue << ".ExpirePasswords=" << m_expirePasswords << "&";
+      oStream << location << index << locationValue << ".ExpirePasswords=" << std::boolalpha << m_expirePasswords << "&";
   }
 
   if(m_maxPasswordAgeHasBeenSet)
@@ -198,7 +198,7 @@ void PasswordPolicy::OutputToStream(Aws::OStream& oStream, const char* location,
 
   if(m_hardExpiryHasBeenSet)
   {
-      oStream << location << index << locationValue << ".HardExpiry=" << m_hardExpiry << "&";
+      oStream << location << index << locationValue << ".HardExpiry=" << std::boolalpha << m_hardExpiry << "&";
   }
 
 }
@@ -211,27 +211,27 @@ void PasswordPolicy::OutputToStream(Aws::OStream& oStream, const char* location)
   }
   if(m_requireSymbolsHasBeenSet)
   {
-      oStream << location << ".RequireSymbols=" << m_requireSymbols << "&";
+      oStream << location << ".RequireSymbols=" << std::boolalpha << m_requireSymbols << "&";
   }
   if(m_requireNumbersHasBeenSet)
   {
-      oStream << location << ".RequireNumbers=" << m_requireNumbers << "&";
+      oStream << location << ".RequireNumbers=" << std::boolalpha << m_requireNumbers << "&";
   }
   if(m_requireUppercaseCharactersHasBeenSet)
   {
-      oStream << location << ".RequireUppercaseCharacters=" << m_requireUppercaseCharacters << "&";
+      oStream << location << ".RequireUppercaseCharacters=" << std::boolalpha << m_requireUppercaseCharacters << "&";
   }
   if(m_requireLowercaseCharactersHasBeenSet)
   {
-      oStream << location << ".RequireLowercaseCharacters=" << m_requireLowercaseCharacters << "&";
+      oStream << location << ".RequireLowercaseCharacters=" << std::boolalpha << m_requireLowercaseCharacters << "&";
   }
   if(m_allowUsersToChangePasswordHasBeenSet)
   {
-      oStream << location << ".AllowUsersToChangePassword=" << m_allowUsersToChangePassword << "&";
+      oStream << location << ".AllowUsersToChangePassword=" << std::boolalpha << m_allowUsersToChangePassword << "&";
   }
   if(m_expirePasswordsHasBeenSet)
   {
-      oStream << location << ".ExpirePasswords=" << m_expirePasswords << "&";
+      oStream << location << ".ExpirePasswords=" << std::boolalpha << m_expirePasswords << "&";
   }
   if(m_maxPasswordAgeHasBeenSet)
   {
@@ -243,7 +243,7 @@ void PasswordPolicy::OutputToStream(Aws::OStream& oStream, const char* location)
   }
   if(m_hardExpiryHasBeenSet)
   {
-      oStream << location << ".HardExpiry=" << m_hardExpiry << "&";
+      oStream << location << ".HardExpiry=" << std::boolalpha << m_hardExpiry << "&";
   }
 }
 

@@ -26,7 +26,9 @@ namespace Model
 {
 
   /**
-   * <p>Creates a Microsoft AD in the AWS cloud.</p>
+   * <p>Creates a Microsoft AD in the AWS cloud.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/CreateMicrosoftADRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_DIRECTORYSERVICE_API CreateMicrosoftADRequest : public DirectoryServiceRequest
   {

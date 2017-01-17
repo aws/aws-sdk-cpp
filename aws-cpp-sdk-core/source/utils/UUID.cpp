@@ -16,12 +16,21 @@
 #include <aws/core/utils/UUID.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/crypto/Factories.h>
+#include <aws/core/utils/crypto/SecureRandom.h>
 #include <iomanip>
 
 namespace Aws
 {
     namespace Utils
     {
+        static const size_t VERSION_LOCATION = 0x06u;
+        static const size_t VARIANT_LOCATION = 0x08u;
+        static const unsigned char VERSION = 0x40u;
+        static const unsigned char VERSION_MASK = 0x0Fu;
+        static const unsigned char VARIANT = 0x80u;
+        static const unsigned char VARIANT_MASK = 0x3Fu;
+
         void WriteRangeOutToStream(Aws::StringStream& ss, unsigned char* toWrite, size_t min, size_t max)
         {
             for (size_t i = min; i < max; ++i)
@@ -66,6 +75,24 @@ namespace Aws
             WriteRangeOutToStream(ss, m_uuid, 10, 16);
             
             return ss.str();
-        }        
+        } 
+        
+        UUID UUID::RandomUUID()
+        {
+            auto secureRandom = Crypto::CreateSecureRandomBytesImplementation();
+            assert(secureRandom);
+
+            unsigned char randomBytes[UUID_BINARY_SIZE];
+            memset(randomBytes, 0, UUID_BINARY_SIZE);
+            secureRandom->GetBytes(randomBytes, UUID_BINARY_SIZE);
+            //Set version bits to 0100
+            //https://tools.ietf.org/html/rfc4122#section-4.1.3
+            randomBytes[VERSION_LOCATION] = (randomBytes[VERSION_LOCATION] & VERSION_MASK) | VERSION;
+            //set variant bits to 10
+            //https://tools.ietf.org/html/rfc4122#section-4.1.1
+            randomBytes[VARIANT_LOCATION] = (randomBytes[VARIANT_LOCATION] & VARIANT_MASK) | VARIANT;
+
+            return UUID(randomBytes);
+        }
     }
 }

@@ -33,7 +33,9 @@ namespace CognitoIdentity
 namespace Model
 {
   /**
-   * Returned in response to a GetId request.
+   * <p>Returned in response to a GetId request.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/GetIdResponse">AWS
+   * API Reference</a></p>
    */
   class AWS_COGNITOIDENTITY_API GetIdResult
   {
@@ -43,37 +45,37 @@ namespace Model
     GetIdResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
     /**
-     * A unique identifier in the format REGION:GUID.
+     * <p>A unique identifier in the format REGION:GUID.</p>
      */
     inline const Aws::String& GetIdentityId() const{ return m_identityId; }
 
     /**
-     * A unique identifier in the format REGION:GUID.
+     * <p>A unique identifier in the format REGION:GUID.</p>
      */
     inline void SetIdentityId(const Aws::String& value) { m_identityId = value; }
 
     /**
-     * A unique identifier in the format REGION:GUID.
+     * <p>A unique identifier in the format REGION:GUID.</p>
      */
     inline void SetIdentityId(Aws::String&& value) { m_identityId = value; }
 
     /**
-     * A unique identifier in the format REGION:GUID.
+     * <p>A unique identifier in the format REGION:GUID.</p>
      */
     inline void SetIdentityId(const char* value) { m_identityId.assign(value); }
 
     /**
-     * A unique identifier in the format REGION:GUID.
+     * <p>A unique identifier in the format REGION:GUID.</p>
      */
     inline GetIdResult& WithIdentityId(const Aws::String& value) { SetIdentityId(value); return *this;}
 
     /**
-     * A unique identifier in the format REGION:GUID.
+     * <p>A unique identifier in the format REGION:GUID.</p>
      */
     inline GetIdResult& WithIdentityId(Aws::String&& value) { SetIdentityId(value); return *this;}
 
     /**
-     * A unique identifier in the format REGION:GUID.
+     * <p>A unique identifier in the format REGION:GUID.</p>
      */
     inline GetIdResult& WithIdentityId(const char* value) { SetIdentityId(value); return *this;}
 

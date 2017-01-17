@@ -32,7 +32,10 @@ namespace Model
 {
 
   /**
-   * <p>Configuration settings registered with the activity type.</p>
+   * <p>Configuration settings registered with the activity type.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/ActivityTypeConfiguration">AWS
+   * API Reference</a></p>
    */
   class AWS_SWF_API ActivityTypeConfiguration
   {

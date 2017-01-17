@@ -33,7 +33,9 @@ namespace ElasticLoadBalancingv2
 namespace Model
 {
   /**
-   * <p>Contains the output of DeregisterTargets.</p>
+   * <p>Contains the output of DeregisterTargets.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DeregisterTargetsOutput">AWS
+   * API Reference</a></p>
    */
   class AWS_ELASTICLOADBALANCINGV2_API DeregisterTargetsResult
   {

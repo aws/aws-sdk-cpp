@@ -32,7 +32,9 @@ namespace Model
 {
 
   /**
-   * <p>Provides a description of a mount target.</p>
+   * <p>Provides a description of a mount target.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/MountTargetDescription">AWS
+   * API Reference</a></p>
    */
   class AWS_EFS_API MountTargetDescription
   {

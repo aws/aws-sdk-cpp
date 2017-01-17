@@ -21,7 +21,8 @@ using namespace Aws::Utils;
 
 ModifySubnetAttributeRequest::ModifySubnetAttributeRequest() : 
     m_subnetIdHasBeenSet(false),
-    m_mapPublicIpOnLaunchHasBeenSet(false)
+    m_mapPublicIpOnLaunchHasBeenSet(false),
+    m_assignIpv6AddressOnCreationHasBeenSet(false)
 {
 }
 
@@ -39,7 +40,12 @@ Aws::String ModifySubnetAttributeRequest::SerializePayload() const
     m_mapPublicIpOnLaunch.OutputToStream(ss, "MapPublicIpOnLaunch");
   }
 
-  ss << "Version=2015-10-01";
+  if(m_assignIpv6AddressOnCreationHasBeenSet)
+  {
+    m_assignIpv6AddressOnCreation.OutputToStream(ss, "AssignIpv6AddressOnCreation");
+  }
+
+  ss << "Version=2016-11-15";
   return ss.str();
 }
 

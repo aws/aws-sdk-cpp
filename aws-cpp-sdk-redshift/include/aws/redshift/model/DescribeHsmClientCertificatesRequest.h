@@ -26,7 +26,9 @@ namespace Model
 {
 
   /**
-   * <p/>
+   * <p/><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeHsmClientCertificatesMessage">AWS
+   * API Reference</a></p>
    */
   class AWS_REDSHIFT_API DescribeHsmClientCertificatesRequest : public RedshiftRequest
   {

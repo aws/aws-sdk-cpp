@@ -42,7 +42,7 @@ Aws::String CreateVolumeRequest::SerializePayload() const
   ss << "Action=CreateVolume&";
   if(m_dryRunHasBeenSet)
   {
-    ss << "DryRun=" << m_dryRun << "&";
+    ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
   if(m_sizeHasBeenSet)
@@ -72,7 +72,7 @@ Aws::String CreateVolumeRequest::SerializePayload() const
 
   if(m_encryptedHasBeenSet)
   {
-    ss << "Encrypted=" << m_encrypted << "&";
+    ss << "Encrypted=" << std::boolalpha << m_encrypted << "&";
   }
 
   if(m_kmsKeyIdHasBeenSet)
@@ -80,7 +80,7 @@ Aws::String CreateVolumeRequest::SerializePayload() const
     ss << "KmsKeyId=" << StringUtils::URLEncode(m_kmsKeyId.c_str()) << "&";
   }
 
-  ss << "Version=2015-10-01";
+  ss << "Version=2016-11-15";
   return ss.str();
 }
 

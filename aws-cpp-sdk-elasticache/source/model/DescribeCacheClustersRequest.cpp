@@ -50,7 +50,7 @@ Aws::String DescribeCacheClustersRequest::SerializePayload() const
 
   if(m_showCacheNodeInfoHasBeenSet)
   {
-    ss << "ShowCacheNodeInfo=" << m_showCacheNodeInfo << "&";
+    ss << "ShowCacheNodeInfo=" << std::boolalpha << m_showCacheNodeInfo << "&";
   }
 
   ss << "Version=2015-02-02";

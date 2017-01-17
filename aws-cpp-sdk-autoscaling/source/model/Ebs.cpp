@@ -124,7 +124,7 @@ void Ebs::OutputToStream(Aws::OStream& oStream, const char* location, unsigned i
 
   if(m_deleteOnTerminationHasBeenSet)
   {
-      oStream << location << index << locationValue << ".DeleteOnTermination=" << m_deleteOnTermination << "&";
+      oStream << location << index << locationValue << ".DeleteOnTermination=" << std::boolalpha << m_deleteOnTermination << "&";
   }
 
   if(m_iopsHasBeenSet)
@@ -134,7 +134,7 @@ void Ebs::OutputToStream(Aws::OStream& oStream, const char* location, unsigned i
 
   if(m_encryptedHasBeenSet)
   {
-      oStream << location << index << locationValue << ".Encrypted=" << m_encrypted << "&";
+      oStream << location << index << locationValue << ".Encrypted=" << std::boolalpha << m_encrypted << "&";
   }
 
 }
@@ -155,7 +155,7 @@ void Ebs::OutputToStream(Aws::OStream& oStream, const char* location) const
   }
   if(m_deleteOnTerminationHasBeenSet)
   {
-      oStream << location << ".DeleteOnTermination=" << m_deleteOnTermination << "&";
+      oStream << location << ".DeleteOnTermination=" << std::boolalpha << m_deleteOnTermination << "&";
   }
   if(m_iopsHasBeenSet)
   {
@@ -163,7 +163,7 @@ void Ebs::OutputToStream(Aws::OStream& oStream, const char* location) const
   }
   if(m_encryptedHasBeenSet)
   {
-      oStream << location << ".Encrypted=" << m_encrypted << "&";
+      oStream << location << ".Encrypted=" << std::boolalpha << m_encrypted << "&";
   }
 }
 

@@ -31,7 +31,9 @@ namespace Model
 {
 
   /**
-   * <p>The description of the user poool client.</p>
+   * <p>The description of the user pool client.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/UserPoolClientDescription">AWS
+   * API Reference</a></p>
    */
   class AWS_COGNITOIDENTITYPROVIDER_API UserPoolClientDescription
   {

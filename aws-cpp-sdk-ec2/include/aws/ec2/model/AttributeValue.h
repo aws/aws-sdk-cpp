@@ -32,7 +32,10 @@ namespace Model
 {
 
   /**
-   * <p>The value to use for a resource attribute.</p>
+   * <p>Describes a value for a resource attribute that is a String.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AttributeValue">AWS
+   * API Reference</a></p>
    */
   class AWS_EC2_API AttributeValue
   {
@@ -45,37 +48,37 @@ namespace Model
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
     /**
-     * <p>Valid values are case-sensitive and vary by action.</p>
+     * <p>The attribute value. Note that the value is case-sensitive.</p>
      */
     inline const Aws::String& GetValue() const{ return m_value; }
 
     /**
-     * <p>Valid values are case-sensitive and vary by action.</p>
+     * <p>The attribute value. Note that the value is case-sensitive.</p>
      */
     inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
 
     /**
-     * <p>Valid values are case-sensitive and vary by action.</p>
+     * <p>The attribute value. Note that the value is case-sensitive.</p>
      */
     inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = value; }
 
     /**
-     * <p>Valid values are case-sensitive and vary by action.</p>
+     * <p>The attribute value. Note that the value is case-sensitive.</p>
      */
     inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
 
     /**
-     * <p>Valid values are case-sensitive and vary by action.</p>
+     * <p>The attribute value. Note that the value is case-sensitive.</p>
      */
     inline AttributeValue& WithValue(const Aws::String& value) { SetValue(value); return *this;}
 
     /**
-     * <p>Valid values are case-sensitive and vary by action.</p>
+     * <p>The attribute value. Note that the value is case-sensitive.</p>
      */
     inline AttributeValue& WithValue(Aws::String&& value) { SetValue(value); return *this;}
 
     /**
-     * <p>Valid values are case-sensitive and vary by action.</p>
+     * <p>The attribute value. Note that the value is case-sensitive.</p>
      */
     inline AttributeValue& WithValue(const char* value) { SetValue(value); return *this;}
 

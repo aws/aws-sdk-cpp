@@ -34,7 +34,9 @@ namespace Model
 
   /**
    * <p>The settings to be applied to the Redis replication group, either immediately
-   * or during the next maintenance window.</p>
+   * or during the next maintenance window.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/ReplicationGroupPendingModifiedValues">AWS
+   * API Reference</a></p>
    */
   class AWS_ELASTICACHE_API ReplicationGroupPendingModifiedValues
   {

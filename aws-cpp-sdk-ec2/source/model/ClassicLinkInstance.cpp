@@ -145,7 +145,7 @@ void ClassicLinkInstance::OutputToStream(Aws::OStream& oStream, const char* loca
       for(auto& item : m_groups)
       {
         Aws::StringStream groupsSs;
-        groupsSs << location <<  ".item." << groupsIdx++;
+        groupsSs << location <<  ".Item." << groupsIdx++;
         item.OutputToStream(oStream, groupsSs.str().c_str());
       }
   }
@@ -155,7 +155,7 @@ void ClassicLinkInstance::OutputToStream(Aws::OStream& oStream, const char* loca
       for(auto& item : m_tags)
       {
         Aws::StringStream tagsSs;
-        tagsSs << location <<  ".item." << tagsIdx++;
+        tagsSs << location <<  ".Item." << tagsIdx++;
         item.OutputToStream(oStream, tagsSs.str().c_str());
       }
   }

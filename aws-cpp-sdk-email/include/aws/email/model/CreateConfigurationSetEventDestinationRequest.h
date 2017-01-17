@@ -32,7 +32,9 @@ namespace Model
    * the email sending events associated with a configuration set. For information
    * about using configuration sets, see the <a
    * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon
-   * SES Developer Guide</a>.</p>
+   * SES Developer Guide</a>.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/CreateConfigurationSetEventDestinationRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_SES_API CreateConfigurationSetEventDestinationRequest : public SESRequest
   {

@@ -32,7 +32,10 @@ namespace Model
 {
 
   /**
-   * <p>Specifies where in a web request to look for <code>TargetString</code>.</p>
+   * <p>Specifies where in a web request to look for
+   * <code>TargetString</code>.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/FieldToMatch">AWS
+   * API Reference</a></p>
    */
   class AWS_WAF_API FieldToMatch
   {

@@ -27,7 +27,9 @@ namespace Model
 {
 
   /**
-   * <p>Contains the parameters for DescribeRegions.</p>
+   * <p>Contains the parameters for DescribeRegions.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeRegionsRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_EC2_API DescribeRegionsRequest : public EC2Request
   {
@@ -100,57 +102,57 @@ namespace Model
     inline DescribeRegionsRequest& AddRegionNames(const char* value) { m_regionNamesHasBeenSet = true; m_regionNames.push_back(value); return *this; }
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p><code>endpoint</code> - The endpoint of
-     * the region (for example, <code>ec2.us-east-1.amazonaws.com</code>).</p> </li>
-     * <li> <p><code>region-name</code> - The name of the region (for example,
+     * <p>One or more filters.</p> <ul> <li> <p> <code>endpoint</code> - The endpoint
+     * of the region (for example, <code>ec2.us-east-1.amazonaws.com</code>).</p> </li>
+     * <li> <p> <code>region-name</code> - The name of the region (for example,
      * <code>us-east-1</code>).</p> </li> </ul>
      */
     inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p><code>endpoint</code> - The endpoint of
-     * the region (for example, <code>ec2.us-east-1.amazonaws.com</code>).</p> </li>
-     * <li> <p><code>region-name</code> - The name of the region (for example,
+     * <p>One or more filters.</p> <ul> <li> <p> <code>endpoint</code> - The endpoint
+     * of the region (for example, <code>ec2.us-east-1.amazonaws.com</code>).</p> </li>
+     * <li> <p> <code>region-name</code> - The name of the region (for example,
      * <code>us-east-1</code>).</p> </li> </ul>
      */
     inline void SetFilters(const Aws::Vector<Filter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p><code>endpoint</code> - The endpoint of
-     * the region (for example, <code>ec2.us-east-1.amazonaws.com</code>).</p> </li>
-     * <li> <p><code>region-name</code> - The name of the region (for example,
+     * <p>One or more filters.</p> <ul> <li> <p> <code>endpoint</code> - The endpoint
+     * of the region (for example, <code>ec2.us-east-1.amazonaws.com</code>).</p> </li>
+     * <li> <p> <code>region-name</code> - The name of the region (for example,
      * <code>us-east-1</code>).</p> </li> </ul>
      */
     inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p><code>endpoint</code> - The endpoint of
-     * the region (for example, <code>ec2.us-east-1.amazonaws.com</code>).</p> </li>
-     * <li> <p><code>region-name</code> - The name of the region (for example,
+     * <p>One or more filters.</p> <ul> <li> <p> <code>endpoint</code> - The endpoint
+     * of the region (for example, <code>ec2.us-east-1.amazonaws.com</code>).</p> </li>
+     * <li> <p> <code>region-name</code> - The name of the region (for example,
      * <code>us-east-1</code>).</p> </li> </ul>
      */
     inline DescribeRegionsRequest& WithFilters(const Aws::Vector<Filter>& value) { SetFilters(value); return *this;}
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p><code>endpoint</code> - The endpoint of
-     * the region (for example, <code>ec2.us-east-1.amazonaws.com</code>).</p> </li>
-     * <li> <p><code>region-name</code> - The name of the region (for example,
+     * <p>One or more filters.</p> <ul> <li> <p> <code>endpoint</code> - The endpoint
+     * of the region (for example, <code>ec2.us-east-1.amazonaws.com</code>).</p> </li>
+     * <li> <p> <code>region-name</code> - The name of the region (for example,
      * <code>us-east-1</code>).</p> </li> </ul>
      */
     inline DescribeRegionsRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(value); return *this;}
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p><code>endpoint</code> - The endpoint of
-     * the region (for example, <code>ec2.us-east-1.amazonaws.com</code>).</p> </li>
-     * <li> <p><code>region-name</code> - The name of the region (for example,
+     * <p>One or more filters.</p> <ul> <li> <p> <code>endpoint</code> - The endpoint
+     * of the region (for example, <code>ec2.us-east-1.amazonaws.com</code>).</p> </li>
+     * <li> <p> <code>region-name</code> - The name of the region (for example,
      * <code>us-east-1</code>).</p> </li> </ul>
      */
     inline DescribeRegionsRequest& AddFilters(const Filter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p><code>endpoint</code> - The endpoint of
-     * the region (for example, <code>ec2.us-east-1.amazonaws.com</code>).</p> </li>
-     * <li> <p><code>region-name</code> - The name of the region (for example,
+     * <p>One or more filters.</p> <ul> <li> <p> <code>endpoint</code> - The endpoint
+     * of the region (for example, <code>ec2.us-east-1.amazonaws.com</code>).</p> </li>
+     * <li> <p> <code>region-name</code> - The name of the region (for example,
      * <code>us-east-1</code>).</p> </li> </ul>
      */
     inline DescribeRegionsRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }

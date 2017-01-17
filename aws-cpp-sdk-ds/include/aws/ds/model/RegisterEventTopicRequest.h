@@ -25,7 +25,9 @@ namespace Model
 {
 
   /**
-   * <p>Registers a new event topic.</p>
+   * <p>Registers a new event topic.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/RegisterEventTopicRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_DIRECTORYSERVICE_API RegisterEventTopicRequest : public DirectoryServiceRequest
   {

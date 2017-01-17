@@ -35,7 +35,10 @@ namespace SNS
 namespace Model
 {
   /**
-   * <p>Response for GetPlatformApplicationAttributes action.</p>
+   * <p>Response for GetPlatformApplicationAttributes action.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/GetPlatformApplicationAttributesResponse">AWS
+   * API Reference</a></p>
    */
   class AWS_SNS_API GetPlatformApplicationAttributesResult
   {

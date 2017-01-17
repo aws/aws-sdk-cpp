@@ -37,7 +37,9 @@ namespace Model
 {
   /**
    * <p>Represents the output of a <code>DescribeCacheParameterGroups</code>
-   * operation.</p>
+   * operation.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/CacheParameterGroupsMessage">AWS
+   * API Reference</a></p>
    */
   class AWS_ELASTICACHE_API DescribeCacheParameterGroupsResult
   {

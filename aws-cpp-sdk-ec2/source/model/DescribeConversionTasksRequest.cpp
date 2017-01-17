@@ -22,7 +22,6 @@ using namespace Aws::Utils;
 DescribeConversionTasksRequest::DescribeConversionTasksRequest() : 
     m_dryRun(false),
     m_dryRunHasBeenSet(false),
-    m_filtersHasBeenSet(false),
     m_conversionTaskIdsHasBeenSet(false)
 {
 }
@@ -33,17 +32,7 @@ Aws::String DescribeConversionTasksRequest::SerializePayload() const
   ss << "Action=DescribeConversionTasks&";
   if(m_dryRunHasBeenSet)
   {
-    ss << "DryRun=" << m_dryRun << "&";
-  }
-
-  if(m_filtersHasBeenSet)
-  {
-    unsigned filtersCount = 1;
-    for(auto& item : m_filters)
-    {
-      item.OutputToStream(ss, "Filter.", filtersCount, "");
-      filtersCount++;
-    }
+    ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
   if(m_conversionTaskIdsHasBeenSet)
@@ -57,7 +46,7 @@ Aws::String DescribeConversionTasksRequest::SerializePayload() const
     }
   }
 
-  ss << "Version=2015-10-01";
+  ss << "Version=2016-11-15";
   return ss.str();
 }
 

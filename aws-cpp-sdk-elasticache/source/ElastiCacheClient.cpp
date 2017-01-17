@@ -130,6 +130,16 @@ void ElastiCacheClient::init(const ClientConfiguration& config)
   m_uri = ss.str();
 }
 
+Aws::String ElastiCacheClient::ConvertRequestToPresignedUrl(const AmazonSerializableWebServiceRequest& requestToConvert, const char* region) const
+{
+  Aws::StringStream ss;
+  ss << "https://" << ElastiCacheEndpoint::ForRegion(region);
+  ss << "?" << requestToConvert.SerializePayload();
+
+  URI uri(ss.str());
+  return GeneratePresignedUrl(uri, HttpMethod::HTTP_GET, region, 3600);
+}
+
 AddTagsToResourceOutcome ElastiCacheClient::AddTagsToResource(const AddTagsToResourceRequest& request) const
 {
   Aws::StringStream ss;
@@ -1383,4 +1393,6 @@ void ElastiCacheClient::RevokeCacheSecurityGroupIngressAsyncHelper(const RevokeC
 {
   handler(this, request, RevokeCacheSecurityGroupIngress(request), context);
 }
+
+
 

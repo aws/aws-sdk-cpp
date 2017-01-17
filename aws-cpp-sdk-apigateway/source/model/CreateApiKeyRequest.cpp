@@ -29,7 +29,8 @@ CreateApiKeyRequest::CreateApiKeyRequest() :
     m_generateDistinctId(false),
     m_generateDistinctIdHasBeenSet(false),
     m_valueHasBeenSet(false),
-    m_stageKeysHasBeenSet(false)
+    m_stageKeysHasBeenSet(false),
+    m_customerIdHasBeenSet(false)
 {
 }
 
@@ -75,6 +76,12 @@ Aws::String CreateApiKeyRequest::SerializePayload() const
      stageKeysJsonList[stageKeysIndex].AsObject(m_stageKeys[stageKeysIndex].Jsonize());
    }
    payload.WithArray("stageKeys", std::move(stageKeysJsonList));
+
+  }
+
+  if(m_customerIdHasBeenSet)
+  {
+   payload.WithString("customerId", m_customerId);
 
   }
 

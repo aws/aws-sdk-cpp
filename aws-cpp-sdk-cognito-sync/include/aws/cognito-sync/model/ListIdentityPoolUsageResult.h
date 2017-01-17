@@ -35,7 +35,10 @@ namespace CognitoSync
 namespace Model
 {
   /**
-   * Returned for a successful ListIdentityPoolUsage request.
+   * Returned for a successful ListIdentityPoolUsage request.<p><h3>See Also:</h3>  
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-sync-2014-06-30/ListIdentityPoolUsageResponse">AWS
+   * API Reference</a></p>
    */
   class AWS_COGNITOSYNC_API ListIdentityPoolUsageResult
   {

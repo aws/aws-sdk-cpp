@@ -32,7 +32,9 @@ namespace Model
 {
 
   /**
-   * <p>An object representing an Amazon ECR image layer.</p>
+   * <p>An object representing an Amazon ECR image layer.</p><p><h3>See Also:</h3>  
+   * <a href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/Layer">AWS API
+   * Reference</a></p>
    */
   class AWS_ECR_API Layer
   {
@@ -78,32 +80,27 @@ namespace Model
     inline Layer& WithLayerDigest(const char* value) { SetLayerDigest(value); return *this;}
 
     /**
-     * <p>The availability status of the image layer. Valid values are
-     * <code>AVAILABLE</code> and <code>UNAVAILABLE</code>.</p>
+     * <p>The availability status of the image layer.</p>
      */
     inline const LayerAvailability& GetLayerAvailability() const{ return m_layerAvailability; }
 
     /**
-     * <p>The availability status of the image layer. Valid values are
-     * <code>AVAILABLE</code> and <code>UNAVAILABLE</code>.</p>
+     * <p>The availability status of the image layer.</p>
      */
     inline void SetLayerAvailability(const LayerAvailability& value) { m_layerAvailabilityHasBeenSet = true; m_layerAvailability = value; }
 
     /**
-     * <p>The availability status of the image layer. Valid values are
-     * <code>AVAILABLE</code> and <code>UNAVAILABLE</code>.</p>
+     * <p>The availability status of the image layer.</p>
      */
     inline void SetLayerAvailability(LayerAvailability&& value) { m_layerAvailabilityHasBeenSet = true; m_layerAvailability = value; }
 
     /**
-     * <p>The availability status of the image layer. Valid values are
-     * <code>AVAILABLE</code> and <code>UNAVAILABLE</code>.</p>
+     * <p>The availability status of the image layer.</p>
      */
     inline Layer& WithLayerAvailability(const LayerAvailability& value) { SetLayerAvailability(value); return *this;}
 
     /**
-     * <p>The availability status of the image layer. Valid values are
-     * <code>AVAILABLE</code> and <code>UNAVAILABLE</code>.</p>
+     * <p>The availability status of the image layer.</p>
      */
     inline Layer& WithLayerAvailability(LayerAvailability&& value) { SetLayerAvailability(value); return *this;}
 
@@ -122,6 +119,55 @@ namespace Model
      */
     inline Layer& WithLayerSize(long long value) { SetLayerSize(value); return *this;}
 
+    /**
+     * <p>The media type of the layer, such as
+     * <code>application/vnd.docker.image.rootfs.diff.tar.gzip</code> or
+     * <code>application/vnd.oci.image.layer.v1.tar+gzip</code>.</p>
+     */
+    inline const Aws::String& GetMediaType() const{ return m_mediaType; }
+
+    /**
+     * <p>The media type of the layer, such as
+     * <code>application/vnd.docker.image.rootfs.diff.tar.gzip</code> or
+     * <code>application/vnd.oci.image.layer.v1.tar+gzip</code>.</p>
+     */
+    inline void SetMediaType(const Aws::String& value) { m_mediaTypeHasBeenSet = true; m_mediaType = value; }
+
+    /**
+     * <p>The media type of the layer, such as
+     * <code>application/vnd.docker.image.rootfs.diff.tar.gzip</code> or
+     * <code>application/vnd.oci.image.layer.v1.tar+gzip</code>.</p>
+     */
+    inline void SetMediaType(Aws::String&& value) { m_mediaTypeHasBeenSet = true; m_mediaType = value; }
+
+    /**
+     * <p>The media type of the layer, such as
+     * <code>application/vnd.docker.image.rootfs.diff.tar.gzip</code> or
+     * <code>application/vnd.oci.image.layer.v1.tar+gzip</code>.</p>
+     */
+    inline void SetMediaType(const char* value) { m_mediaTypeHasBeenSet = true; m_mediaType.assign(value); }
+
+    /**
+     * <p>The media type of the layer, such as
+     * <code>application/vnd.docker.image.rootfs.diff.tar.gzip</code> or
+     * <code>application/vnd.oci.image.layer.v1.tar+gzip</code>.</p>
+     */
+    inline Layer& WithMediaType(const Aws::String& value) { SetMediaType(value); return *this;}
+
+    /**
+     * <p>The media type of the layer, such as
+     * <code>application/vnd.docker.image.rootfs.diff.tar.gzip</code> or
+     * <code>application/vnd.oci.image.layer.v1.tar+gzip</code>.</p>
+     */
+    inline Layer& WithMediaType(Aws::String&& value) { SetMediaType(value); return *this;}
+
+    /**
+     * <p>The media type of the layer, such as
+     * <code>application/vnd.docker.image.rootfs.diff.tar.gzip</code> or
+     * <code>application/vnd.oci.image.layer.v1.tar+gzip</code>.</p>
+     */
+    inline Layer& WithMediaType(const char* value) { SetMediaType(value); return *this;}
+
   private:
     Aws::String m_layerDigest;
     bool m_layerDigestHasBeenSet;
@@ -129,6 +175,8 @@ namespace Model
     bool m_layerAvailabilityHasBeenSet;
     long long m_layerSize;
     bool m_layerSizeHasBeenSet;
+    Aws::String m_mediaType;
+    bool m_mediaTypeHasBeenSet;
   };
 
 } // namespace Model

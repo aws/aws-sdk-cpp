@@ -37,9 +37,10 @@ namespace Model
 {
 
   /**
-   * <p>Represents health information from the specified instance that belongs to the
-   * AWS Elastic Beanstalk environment. Use the <code>InstanceId</code> property to
-   * specify the application instance for which you'd like to return data.</p>
+   * <p>Detailed health information about an Amazon EC2 instance in your Elastic
+   * Beanstalk environment.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/SingleInstanceHealth">AWS
+   * API Reference</a></p>
    */
   class AWS_ELASTICBEANSTALK_API SingleInstanceHealth
   {
@@ -271,34 +272,54 @@ namespace Model
      */
     inline SingleInstanceHealth& WithLaunchedAt(Aws::Utils::DateTime&& value) { SetLaunchedAt(value); return *this;}
 
-    
+    /**
+     * <p>Request metrics from your application.</p>
+     */
     inline const ApplicationMetrics& GetApplicationMetrics() const{ return m_applicationMetrics; }
 
-    
+    /**
+     * <p>Request metrics from your application.</p>
+     */
     inline void SetApplicationMetrics(const ApplicationMetrics& value) { m_applicationMetricsHasBeenSet = true; m_applicationMetrics = value; }
 
-    
+    /**
+     * <p>Request metrics from your application.</p>
+     */
     inline void SetApplicationMetrics(ApplicationMetrics&& value) { m_applicationMetricsHasBeenSet = true; m_applicationMetrics = value; }
 
-    
+    /**
+     * <p>Request metrics from your application.</p>
+     */
     inline SingleInstanceHealth& WithApplicationMetrics(const ApplicationMetrics& value) { SetApplicationMetrics(value); return *this;}
 
-    
+    /**
+     * <p>Request metrics from your application.</p>
+     */
     inline SingleInstanceHealth& WithApplicationMetrics(ApplicationMetrics&& value) { SetApplicationMetrics(value); return *this;}
 
-    
+    /**
+     * <p>Operating system metrics from the instance.</p>
+     */
     inline const SystemStatus& GetSystem() const{ return m_system; }
 
-    
+    /**
+     * <p>Operating system metrics from the instance.</p>
+     */
     inline void SetSystem(const SystemStatus& value) { m_systemHasBeenSet = true; m_system = value; }
 
-    
+    /**
+     * <p>Operating system metrics from the instance.</p>
+     */
     inline void SetSystem(SystemStatus&& value) { m_systemHasBeenSet = true; m_system = value; }
 
-    
+    /**
+     * <p>Operating system metrics from the instance.</p>
+     */
     inline SingleInstanceHealth& WithSystem(const SystemStatus& value) { SetSystem(value); return *this;}
 
-    
+    /**
+     * <p>Operating system metrics from the instance.</p>
+     */
     inline SingleInstanceHealth& WithSystem(SystemStatus&& value) { SetSystem(value); return *this;}
 
     /**

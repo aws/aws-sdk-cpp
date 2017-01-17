@@ -31,4 +31,5 @@ public class C2jMetadata {
     private String protocol;
     private String clientProjectName;
     private String clientClassNamePrefix;
+    private String uid;
 }

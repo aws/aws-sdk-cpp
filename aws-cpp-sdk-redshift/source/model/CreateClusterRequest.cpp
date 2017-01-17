@@ -150,7 +150,7 @@ Aws::String CreateClusterRequest::SerializePayload() const
 
   if(m_allowVersionUpgradeHasBeenSet)
   {
-    ss << "AllowVersionUpgrade=" << m_allowVersionUpgrade << "&";
+    ss << "AllowVersionUpgrade=" << std::boolalpha << m_allowVersionUpgrade << "&";
   }
 
   if(m_numberOfNodesHasBeenSet)
@@ -160,12 +160,12 @@ Aws::String CreateClusterRequest::SerializePayload() const
 
   if(m_publiclyAccessibleHasBeenSet)
   {
-    ss << "PubliclyAccessible=" << m_publiclyAccessible << "&";
+    ss << "PubliclyAccessible=" << std::boolalpha << m_publiclyAccessible << "&";
   }
 
   if(m_encryptedHasBeenSet)
   {
-    ss << "Encrypted=" << m_encrypted << "&";
+    ss << "Encrypted=" << std::boolalpha << m_encrypted << "&";
   }
 
   if(m_hsmClientCertificateIdentifierHasBeenSet)
@@ -200,7 +200,7 @@ Aws::String CreateClusterRequest::SerializePayload() const
 
   if(m_enhancedVpcRoutingHasBeenSet)
   {
-    ss << "EnhancedVpcRouting=" << m_enhancedVpcRouting << "&";
+    ss << "EnhancedVpcRouting=" << std::boolalpha << m_enhancedVpcRouting << "&";
   }
 
   if(m_additionalInfoHasBeenSet)

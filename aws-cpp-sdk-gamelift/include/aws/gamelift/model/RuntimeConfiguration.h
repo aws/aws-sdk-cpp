@@ -47,7 +47,9 @@ namespace Model
    * simultaneously. To calculate the total number of processes specified in a
    * runtime configuration, add the values of the <code>ConcurrentExecutions</code>
    * parameter for each <code> <a>ServerProcess</a> </code> object in the runtime
-   * configuration.</p>
+   * configuration.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/RuntimeConfiguration">AWS
+   * API Reference</a></p>
    */
   class AWS_GAMELIFT_API RuntimeConfiguration
   {

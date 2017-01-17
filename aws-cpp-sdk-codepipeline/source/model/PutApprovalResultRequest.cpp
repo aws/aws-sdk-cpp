@@ -70,7 +70,7 @@ Aws::String PutApprovalResultRequest::SerializePayload() const
 Aws::Http::HeaderValueCollection PutApprovalResultRequest::GetRequestSpecificHeaders() const
 {
   Aws::Http::HeaderValueCollection headers;
-  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "CodePipeline_20150709.PutApproval"));
+  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "CodePipeline_20150709.PutApprovalResult"));
   return headers;
 
 }

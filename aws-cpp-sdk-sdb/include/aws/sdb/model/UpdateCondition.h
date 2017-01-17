@@ -35,7 +35,10 @@ namespace Model
    * <p> Specifies the conditions under which data should be updated. If an update
    * condition is specified for a request, the data will only be updated if the
    * condition is satisfied. For example, if an attribute with a specific name and
-   * value exists, or if a specific attribute doesn't exist. </p>
+   * value exists, or if a specific attribute doesn't exist. </p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/sdb-2009-04-15/UpdateCondition">AWS
+   * API Reference</a></p>
    */
   class AWS_SIMPLEDB_API UpdateCondition
   {

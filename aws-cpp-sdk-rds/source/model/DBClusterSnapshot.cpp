@@ -290,7 +290,7 @@ void DBClusterSnapshot::OutputToStream(Aws::OStream& oStream, const char* locati
 
   if(m_storageEncryptedHasBeenSet)
   {
-      oStream << location << index << locationValue << ".StorageEncrypted=" << m_storageEncrypted << "&";
+      oStream << location << index << locationValue << ".StorageEncrypted=" << std::boolalpha << m_storageEncrypted << "&";
   }
 
   if(m_kmsKeyIdHasBeenSet)
@@ -373,7 +373,7 @@ void DBClusterSnapshot::OutputToStream(Aws::OStream& oStream, const char* locati
   }
   if(m_storageEncryptedHasBeenSet)
   {
-      oStream << location << ".StorageEncrypted=" << m_storageEncrypted << "&";
+      oStream << location << ".StorageEncrypted=" << std::boolalpha << m_storageEncrypted << "&";
   }
   if(m_kmsKeyIdHasBeenSet)
   {

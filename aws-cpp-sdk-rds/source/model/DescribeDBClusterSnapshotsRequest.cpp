@@ -75,12 +75,12 @@ Aws::String DescribeDBClusterSnapshotsRequest::SerializePayload() const
 
   if(m_includeSharedHasBeenSet)
   {
-    ss << "IncludeShared=" << m_includeShared << "&";
+    ss << "IncludeShared=" << std::boolalpha << m_includeShared << "&";
   }
 
   if(m_includePublicHasBeenSet)
   {
-    ss << "IncludePublic=" << m_includePublic << "&";
+    ss << "IncludePublic=" << std::boolalpha << m_includePublic << "&";
   }
 
   ss << "Version=2014-10-31";

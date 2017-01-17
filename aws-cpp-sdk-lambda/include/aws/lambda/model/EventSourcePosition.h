@@ -26,7 +26,8 @@ namespace Model
   {
     NOT_SET,
     TRIM_HORIZON,
-    LATEST
+    LATEST,
+    AT_TIMESTAMP
   };
 
 namespace EventSourcePositionMapper

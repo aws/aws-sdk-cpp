@@ -38,7 +38,7 @@ Aws::String DescribeSnapshotsRequest::SerializePayload() const
   ss << "Action=DescribeSnapshots&";
   if(m_dryRunHasBeenSet)
   {
-    ss << "DryRun=" << m_dryRun << "&";
+    ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
   if(m_snapshotIdsHasBeenSet)
@@ -94,7 +94,7 @@ Aws::String DescribeSnapshotsRequest::SerializePayload() const
     ss << "MaxResults=" << m_maxResults << "&";
   }
 
-  ss << "Version=2015-10-01";
+  ss << "Version=2016-11-15";
   return ss.str();
 }
 

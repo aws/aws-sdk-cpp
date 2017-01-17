@@ -298,36 +298,36 @@ namespace Model
 
     /**
      * <p>The updated <code>SnowballCapacityPreference</code> of this job's
-     * <a>JobMetadata</a> object. Note that the 50 TB Snowballs are only available in
-     * the US regions.</p>
+     * <a>JobMetadata</a> object. The 50 TB Snowballs are only available in the US
+     * regions.</p>
      */
     inline const SnowballCapacity& GetSnowballCapacityPreference() const{ return m_snowballCapacityPreference; }
 
     /**
      * <p>The updated <code>SnowballCapacityPreference</code> of this job's
-     * <a>JobMetadata</a> object. Note that the 50 TB Snowballs are only available in
-     * the US regions.</p>
+     * <a>JobMetadata</a> object. The 50 TB Snowballs are only available in the US
+     * regions.</p>
      */
     inline void SetSnowballCapacityPreference(const SnowballCapacity& value) { m_snowballCapacityPreferenceHasBeenSet = true; m_snowballCapacityPreference = value; }
 
     /**
      * <p>The updated <code>SnowballCapacityPreference</code> of this job's
-     * <a>JobMetadata</a> object. Note that the 50 TB Snowballs are only available in
-     * the US regions.</p>
+     * <a>JobMetadata</a> object. The 50 TB Snowballs are only available in the US
+     * regions.</p>
      */
     inline void SetSnowballCapacityPreference(SnowballCapacity&& value) { m_snowballCapacityPreferenceHasBeenSet = true; m_snowballCapacityPreference = value; }
 
     /**
      * <p>The updated <code>SnowballCapacityPreference</code> of this job's
-     * <a>JobMetadata</a> object. Note that the 50 TB Snowballs are only available in
-     * the US regions.</p>
+     * <a>JobMetadata</a> object. The 50 TB Snowballs are only available in the US
+     * regions.</p>
      */
     inline UpdateJobRequest& WithSnowballCapacityPreference(const SnowballCapacity& value) { SetSnowballCapacityPreference(value); return *this;}
 
     /**
      * <p>The updated <code>SnowballCapacityPreference</code> of this job's
-     * <a>JobMetadata</a> object. Note that the 50 TB Snowballs are only available in
-     * the US regions.</p>
+     * <a>JobMetadata</a> object. The 50 TB Snowballs are only available in the US
+     * regions.</p>
      */
     inline UpdateJobRequest& WithSnowballCapacityPreference(SnowballCapacity&& value) { SetSnowballCapacityPreference(value); return *this;}
 

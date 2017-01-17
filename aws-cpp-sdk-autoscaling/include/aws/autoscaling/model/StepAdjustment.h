@@ -47,7 +47,9 @@ namespace Model
    * adjustment can have a null upper bound. If one step adjustment has a positive
    * upper bound, then there must be a step adjustment with a null upper bound.</p>
    * </li> <li> <p>The upper and lower bound can't be null in the same step
-   * adjustment.</p> </li> </ul>
+   * adjustment.</p> </li> </ul><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/StepAdjustment">AWS
+   * API Reference</a></p>
    */
   class AWS_AUTOSCALING_API StepAdjustment
   {

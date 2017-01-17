@@ -36,9 +36,12 @@ namespace SQS
 namespace Model
 {
   /**
-   * <p> For each message in the batch, the response contains a
-   * <a>DeleteMessageBatchResultEntry</a> tag if the message is deleted or a
-   * <a>BatchResultErrorEntry</a> tag if the message can't be deleted. </p>
+   * <p>For each message in the batch, the response contains a <code>
+   * <a>DeleteMessageBatchResultEntry</a> </code> tag if the message is deleted or a
+   * <code> <a>BatchResultErrorEntry</a> </code> tag if the message can't be
+   * deleted.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/DeleteMessageBatchResult">AWS
+   * API Reference</a></p>
    */
   class AWS_SQS_API DeleteMessageBatchResult
   {
@@ -48,72 +51,72 @@ namespace Model
     DeleteMessageBatchResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
     /**
-     * <p>A list of <a>DeleteMessageBatchResultEntry</a> items.</p>
+     * <p>A list of <code> <a>DeleteMessageBatchResultEntry</a> </code> items.</p>
      */
     inline const Aws::Vector<DeleteMessageBatchResultEntry>& GetSuccessful() const{ return m_successful; }
 
     /**
-     * <p>A list of <a>DeleteMessageBatchResultEntry</a> items.</p>
+     * <p>A list of <code> <a>DeleteMessageBatchResultEntry</a> </code> items.</p>
      */
     inline void SetSuccessful(const Aws::Vector<DeleteMessageBatchResultEntry>& value) { m_successful = value; }
 
     /**
-     * <p>A list of <a>DeleteMessageBatchResultEntry</a> items.</p>
+     * <p>A list of <code> <a>DeleteMessageBatchResultEntry</a> </code> items.</p>
      */
     inline void SetSuccessful(Aws::Vector<DeleteMessageBatchResultEntry>&& value) { m_successful = value; }
 
     /**
-     * <p>A list of <a>DeleteMessageBatchResultEntry</a> items.</p>
+     * <p>A list of <code> <a>DeleteMessageBatchResultEntry</a> </code> items.</p>
      */
     inline DeleteMessageBatchResult& WithSuccessful(const Aws::Vector<DeleteMessageBatchResultEntry>& value) { SetSuccessful(value); return *this;}
 
     /**
-     * <p>A list of <a>DeleteMessageBatchResultEntry</a> items.</p>
+     * <p>A list of <code> <a>DeleteMessageBatchResultEntry</a> </code> items.</p>
      */
     inline DeleteMessageBatchResult& WithSuccessful(Aws::Vector<DeleteMessageBatchResultEntry>&& value) { SetSuccessful(value); return *this;}
 
     /**
-     * <p>A list of <a>DeleteMessageBatchResultEntry</a> items.</p>
+     * <p>A list of <code> <a>DeleteMessageBatchResultEntry</a> </code> items.</p>
      */
     inline DeleteMessageBatchResult& AddSuccessful(const DeleteMessageBatchResultEntry& value) { m_successful.push_back(value); return *this; }
 
     /**
-     * <p>A list of <a>DeleteMessageBatchResultEntry</a> items.</p>
+     * <p>A list of <code> <a>DeleteMessageBatchResultEntry</a> </code> items.</p>
      */
     inline DeleteMessageBatchResult& AddSuccessful(DeleteMessageBatchResultEntry&& value) { m_successful.push_back(value); return *this; }
 
     /**
-     * <p>A list of <a>BatchResultErrorEntry</a> items.</p>
+     * <p>A list of <code> <a>BatchResultErrorEntry</a> </code> items.</p>
      */
     inline const Aws::Vector<BatchResultErrorEntry>& GetFailed() const{ return m_failed; }
 
     /**
-     * <p>A list of <a>BatchResultErrorEntry</a> items.</p>
+     * <p>A list of <code> <a>BatchResultErrorEntry</a> </code> items.</p>
      */
     inline void SetFailed(const Aws::Vector<BatchResultErrorEntry>& value) { m_failed = value; }
 
     /**
-     * <p>A list of <a>BatchResultErrorEntry</a> items.</p>
+     * <p>A list of <code> <a>BatchResultErrorEntry</a> </code> items.</p>
      */
     inline void SetFailed(Aws::Vector<BatchResultErrorEntry>&& value) { m_failed = value; }
 
     /**
-     * <p>A list of <a>BatchResultErrorEntry</a> items.</p>
+     * <p>A list of <code> <a>BatchResultErrorEntry</a> </code> items.</p>
      */
     inline DeleteMessageBatchResult& WithFailed(const Aws::Vector<BatchResultErrorEntry>& value) { SetFailed(value); return *this;}
 
     /**
-     * <p>A list of <a>BatchResultErrorEntry</a> items.</p>
+     * <p>A list of <code> <a>BatchResultErrorEntry</a> </code> items.</p>
      */
     inline DeleteMessageBatchResult& WithFailed(Aws::Vector<BatchResultErrorEntry>&& value) { SetFailed(value); return *this;}
 
     /**
-     * <p>A list of <a>BatchResultErrorEntry</a> items.</p>
+     * <p>A list of <code> <a>BatchResultErrorEntry</a> </code> items.</p>
      */
     inline DeleteMessageBatchResult& AddFailed(const BatchResultErrorEntry& value) { m_failed.push_back(value); return *this; }
 
     /**
-     * <p>A list of <a>BatchResultErrorEntry</a> items.</p>
+     * <p>A list of <code> <a>BatchResultErrorEntry</a> </code> items.</p>
      */
     inline DeleteMessageBatchResult& AddFailed(BatchResultErrorEntry&& value) { m_failed.push_back(value); return *this; }
 

@@ -151,7 +151,7 @@ Aws::String CreateAutoScalingGroupRequest::SerializePayload() const
 
   if(m_newInstancesProtectedFromScaleInHasBeenSet)
   {
-    ss << "NewInstancesProtectedFromScaleIn=" << m_newInstancesProtectedFromScaleIn << "&";
+    ss << "NewInstancesProtectedFromScaleIn=" << std::boolalpha << m_newInstancesProtectedFromScaleIn << "&";
   }
 
   if(m_tagsHasBeenSet)

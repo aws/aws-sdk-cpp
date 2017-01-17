@@ -34,7 +34,7 @@ Aws::String ModifyVpcPeeringConnectionOptionsRequest::SerializePayload() const
   ss << "Action=ModifyVpcPeeringConnectionOptions&";
   if(m_dryRunHasBeenSet)
   {
-    ss << "DryRun=" << m_dryRun << "&";
+    ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
   if(m_vpcPeeringConnectionIdHasBeenSet)
@@ -52,7 +52,7 @@ Aws::String ModifyVpcPeeringConnectionOptionsRequest::SerializePayload() const
     m_accepterPeeringConnectionOptions.OutputToStream(ss, "AccepterPeeringConnectionOptions");
   }
 
-  ss << "Version=2015-10-01";
+  ss << "Version=2016-11-15";
   return ss.str();
 }
 

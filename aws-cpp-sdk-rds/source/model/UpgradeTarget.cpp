@@ -112,12 +112,12 @@ void UpgradeTarget::OutputToStream(Aws::OStream& oStream, const char* location, 
 
   if(m_autoUpgradeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".AutoUpgrade=" << m_autoUpgrade << "&";
+      oStream << location << index << locationValue << ".AutoUpgrade=" << std::boolalpha << m_autoUpgrade << "&";
   }
 
   if(m_isMajorVersionUpgradeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".IsMajorVersionUpgrade=" << m_isMajorVersionUpgrade << "&";
+      oStream << location << index << locationValue << ".IsMajorVersionUpgrade=" << std::boolalpha << m_isMajorVersionUpgrade << "&";
   }
 
 }
@@ -138,11 +138,11 @@ void UpgradeTarget::OutputToStream(Aws::OStream& oStream, const char* location) 
   }
   if(m_autoUpgradeHasBeenSet)
   {
-      oStream << location << ".AutoUpgrade=" << m_autoUpgrade << "&";
+      oStream << location << ".AutoUpgrade=" << std::boolalpha << m_autoUpgrade << "&";
   }
   if(m_isMajorVersionUpgradeHasBeenSet)
   {
-      oStream << location << ".IsMajorVersionUpgrade=" << m_isMajorVersionUpgrade << "&";
+      oStream << location << ".IsMajorVersionUpgrade=" << std::boolalpha << m_isMajorVersionUpgrade << "&";
   }
 }
 

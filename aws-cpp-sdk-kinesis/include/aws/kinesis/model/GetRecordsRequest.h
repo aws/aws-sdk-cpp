@@ -25,7 +25,9 @@ namespace Model
 {
 
   /**
-   * <p>Represents the input for <a>GetRecords</a>.</p>
+   * <p>Represents the input for <a>GetRecords</a>.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/GetRecordsInput">AWS
+   * API Reference</a></p>
    */
   class AWS_KINESIS_API GetRecordsRequest : public KinesisRequest
   {

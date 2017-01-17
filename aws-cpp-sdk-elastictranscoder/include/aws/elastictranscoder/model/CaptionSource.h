@@ -33,7 +33,9 @@ namespace Model
 
   /**
    * <p>A source file for the input sidecar captions used during the transcoding
-   * process.</p>
+   * process.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/CaptionSource">AWS
+   * API Reference</a></p>
    */
   class AWS_ELASTICTRANSCODER_API CaptionSource
   {

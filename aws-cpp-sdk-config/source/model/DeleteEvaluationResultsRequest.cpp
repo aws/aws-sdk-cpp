@@ -42,7 +42,7 @@ Aws::String DeleteEvaluationResultsRequest::SerializePayload() const
 Aws::Http::HeaderValueCollection DeleteEvaluationResultsRequest::GetRequestSpecificHeaders() const
 {
   Aws::Http::HeaderValueCollection headers;
-  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "StarlingDoveService.DeleteEvaluations"));
+  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "StarlingDoveService.DeleteEvaluationResults"));
   return headers;
 
 }

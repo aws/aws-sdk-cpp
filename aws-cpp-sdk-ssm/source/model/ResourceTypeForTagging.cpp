@@ -30,6 +30,8 @@ namespace Aws
       {
 
         static const int ManagedInstance_HASH = HashingUtils::HashString("ManagedInstance");
+        static const int MaintenanceWindow_HASH = HashingUtils::HashString("MaintenanceWindow");
+        static const int Parameter_HASH = HashingUtils::HashString("Parameter");
 
 
         ResourceTypeForTagging GetResourceTypeForTaggingForName(const Aws::String& name)
@@ -38,6 +40,14 @@ namespace Aws
           if (hashCode == ManagedInstance_HASH)
           {
             return ResourceTypeForTagging::ManagedInstance;
+          }
+          else if (hashCode == MaintenanceWindow_HASH)
+          {
+            return ResourceTypeForTagging::MaintenanceWindow;
+          }
+          else if (hashCode == Parameter_HASH)
+          {
+            return ResourceTypeForTagging::Parameter;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -55,6 +65,10 @@ namespace Aws
           {
           case ResourceTypeForTagging::ManagedInstance:
             return "ManagedInstance";
+          case ResourceTypeForTagging::MaintenanceWindow:
+            return "MaintenanceWindow";
+          case ResourceTypeForTagging::Parameter:
+            return "Parameter";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

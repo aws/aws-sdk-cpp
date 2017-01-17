@@ -27,6 +27,7 @@ using namespace Aws;
 AllocatePrivateVirtualInterfaceResult::AllocatePrivateVirtualInterfaceResult() : 
     m_vlan(0),
     m_asn(0),
+    m_addressFamily(AddressFamily::NOT_SET),
     m_virtualInterfaceState(VirtualInterfaceState::NOT_SET)
 {
 }
@@ -34,6 +35,7 @@ AllocatePrivateVirtualInterfaceResult::AllocatePrivateVirtualInterfaceResult() :
 AllocatePrivateVirtualInterfaceResult::AllocatePrivateVirtualInterfaceResult(const AmazonWebServiceResult<JsonValue>& result) : 
     m_vlan(0),
     m_asn(0),
+    m_addressFamily(AddressFamily::NOT_SET),
     m_virtualInterfaceState(VirtualInterfaceState::NOT_SET)
 {
   *this = result;
@@ -108,6 +110,12 @@ AllocatePrivateVirtualInterfaceResult& AllocatePrivateVirtualInterfaceResult::op
 
   }
 
+  if(jsonValue.ValueExists("addressFamily"))
+  {
+    m_addressFamily = AddressFamilyMapper::GetAddressFamilyForName(jsonValue.GetString("addressFamily"));
+
+  }
+
   if(jsonValue.ValueExists("virtualInterfaceState"))
   {
     m_virtualInterfaceState = VirtualInterfaceStateMapper::GetVirtualInterfaceStateForName(jsonValue.GetString("virtualInterfaceState"));
@@ -132,6 +140,15 @@ AllocatePrivateVirtualInterfaceResult& AllocatePrivateVirtualInterfaceResult::op
     for(unsigned routeFilterPrefixesIndex = 0; routeFilterPrefixesIndex < routeFilterPrefixesJsonList.GetLength(); ++routeFilterPrefixesIndex)
     {
       m_routeFilterPrefixes.push_back(routeFilterPrefixesJsonList[routeFilterPrefixesIndex].AsObject());
+    }
+  }
+
+  if(jsonValue.ValueExists("bgpPeers"))
+  {
+    Array<JsonValue> bgpPeersJsonList = jsonValue.GetArray("bgpPeers");
+    for(unsigned bgpPeersIndex = 0; bgpPeersIndex < bgpPeersJsonList.GetLength(); ++bgpPeersIndex)
+    {
+      m_bgpPeers.push_back(bgpPeersJsonList[bgpPeersIndex].AsObject());
     }
   }
 

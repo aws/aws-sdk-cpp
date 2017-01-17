@@ -104,7 +104,7 @@ void BlockDeviceMapping::OutputToStream(Aws::OStream& oStream, const char* locat
 
   if(m_noDeviceHasBeenSet)
   {
-      oStream << location << index << locationValue << ".NoDevice=" << m_noDevice << "&";
+      oStream << location << index << locationValue << ".NoDevice=" << std::boolalpha << m_noDevice << "&";
   }
 
 }
@@ -127,7 +127,7 @@ void BlockDeviceMapping::OutputToStream(Aws::OStream& oStream, const char* locat
   }
   if(m_noDeviceHasBeenSet)
   {
-      oStream << location << ".NoDevice=" << m_noDevice << "&";
+      oStream << location << ".NoDevice=" << std::boolalpha << m_noDevice << "&";
   }
 }
 

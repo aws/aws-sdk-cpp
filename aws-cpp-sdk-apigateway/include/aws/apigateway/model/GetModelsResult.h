@@ -38,7 +38,9 @@ namespace Model
    * <p>Represents a collection of <a>Model</a> resources.</p> <div class="seeAlso">
    * <a>Method</a>, <a>MethodResponse</a>, <a
    * href="http://docs.aws.amazon.com/apigateway/latest/developerguide/models-mappings.html">Models
-   * and Mappings</a> </div>
+   * and Mappings</a> </div><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/Models">AWS
+   * API Reference</a></p>
    */
   class AWS_APIGATEWAY_API GetModelsResult
   {

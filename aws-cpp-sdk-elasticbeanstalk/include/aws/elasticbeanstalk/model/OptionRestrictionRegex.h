@@ -33,7 +33,9 @@ namespace Model
 
   /**
    * <p>A regular expression representing a restriction on a string configuration
-   * option value.</p>
+   * option value.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/OptionRestrictionRegex">AWS
+   * API Reference</a></p>
    */
   class AWS_ELASTICBEANSTALK_API OptionRestrictionRegex
   {

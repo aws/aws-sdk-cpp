@@ -60,7 +60,7 @@ Aws::String ModifyOptionGroupRequest::SerializePayload() const
 
   if(m_applyImmediatelyHasBeenSet)
   {
-    ss << "ApplyImmediately=" << m_applyImmediately << "&";
+    ss << "ApplyImmediately=" << std::boolalpha << m_applyImmediately << "&";
   }
 
   ss << "Version=2014-10-31";

@@ -35,7 +35,9 @@ namespace Model
 {
 
   /**
-   * <p>Describes an entry in a network ACL.</p>
+   * <p>Describes an entry in a network ACL.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/NetworkAclEntry">AWS
+   * API Reference</a></p>
    */
   class AWS_EC2_API NetworkAclEntry
   {
@@ -144,39 +146,74 @@ namespace Model
     inline NetworkAclEntry& WithEgress(bool value) { SetEgress(value); return *this;}
 
     /**
-     * <p>The network range to allow or deny, in CIDR notation.</p>
+     * <p>The IPv4 network range to allow or deny, in CIDR notation.</p>
      */
     inline const Aws::String& GetCidrBlock() const{ return m_cidrBlock; }
 
     /**
-     * <p>The network range to allow or deny, in CIDR notation.</p>
+     * <p>The IPv4 network range to allow or deny, in CIDR notation.</p>
      */
     inline void SetCidrBlock(const Aws::String& value) { m_cidrBlockHasBeenSet = true; m_cidrBlock = value; }
 
     /**
-     * <p>The network range to allow or deny, in CIDR notation.</p>
+     * <p>The IPv4 network range to allow or deny, in CIDR notation.</p>
      */
     inline void SetCidrBlock(Aws::String&& value) { m_cidrBlockHasBeenSet = true; m_cidrBlock = value; }
 
     /**
-     * <p>The network range to allow or deny, in CIDR notation.</p>
+     * <p>The IPv4 network range to allow or deny, in CIDR notation.</p>
      */
     inline void SetCidrBlock(const char* value) { m_cidrBlockHasBeenSet = true; m_cidrBlock.assign(value); }
 
     /**
-     * <p>The network range to allow or deny, in CIDR notation.</p>
+     * <p>The IPv4 network range to allow or deny, in CIDR notation.</p>
      */
     inline NetworkAclEntry& WithCidrBlock(const Aws::String& value) { SetCidrBlock(value); return *this;}
 
     /**
-     * <p>The network range to allow or deny, in CIDR notation.</p>
+     * <p>The IPv4 network range to allow or deny, in CIDR notation.</p>
      */
     inline NetworkAclEntry& WithCidrBlock(Aws::String&& value) { SetCidrBlock(value); return *this;}
 
     /**
-     * <p>The network range to allow or deny, in CIDR notation.</p>
+     * <p>The IPv4 network range to allow or deny, in CIDR notation.</p>
      */
     inline NetworkAclEntry& WithCidrBlock(const char* value) { SetCidrBlock(value); return *this;}
+
+    /**
+     * <p>The IPv6 network range to allow or deny, in CIDR notation.</p>
+     */
+    inline const Aws::String& GetIpv6CidrBlock() const{ return m_ipv6CidrBlock; }
+
+    /**
+     * <p>The IPv6 network range to allow or deny, in CIDR notation.</p>
+     */
+    inline void SetIpv6CidrBlock(const Aws::String& value) { m_ipv6CidrBlockHasBeenSet = true; m_ipv6CidrBlock = value; }
+
+    /**
+     * <p>The IPv6 network range to allow or deny, in CIDR notation.</p>
+     */
+    inline void SetIpv6CidrBlock(Aws::String&& value) { m_ipv6CidrBlockHasBeenSet = true; m_ipv6CidrBlock = value; }
+
+    /**
+     * <p>The IPv6 network range to allow or deny, in CIDR notation.</p>
+     */
+    inline void SetIpv6CidrBlock(const char* value) { m_ipv6CidrBlockHasBeenSet = true; m_ipv6CidrBlock.assign(value); }
+
+    /**
+     * <p>The IPv6 network range to allow or deny, in CIDR notation.</p>
+     */
+    inline NetworkAclEntry& WithIpv6CidrBlock(const Aws::String& value) { SetIpv6CidrBlock(value); return *this;}
+
+    /**
+     * <p>The IPv6 network range to allow or deny, in CIDR notation.</p>
+     */
+    inline NetworkAclEntry& WithIpv6CidrBlock(Aws::String&& value) { SetIpv6CidrBlock(value); return *this;}
+
+    /**
+     * <p>The IPv6 network range to allow or deny, in CIDR notation.</p>
+     */
+    inline NetworkAclEntry& WithIpv6CidrBlock(const char* value) { SetIpv6CidrBlock(value); return *this;}
 
     /**
      * <p>ICMP protocol: The ICMP type and code.</p>
@@ -239,6 +276,8 @@ namespace Model
     bool m_egressHasBeenSet;
     Aws::String m_cidrBlock;
     bool m_cidrBlockHasBeenSet;
+    Aws::String m_ipv6CidrBlock;
+    bool m_ipv6CidrBlockHasBeenSet;
     IcmpTypeCode m_icmpTypeCode;
     bool m_icmpTypeCodeHasBeenSet;
     PortRange m_portRange;

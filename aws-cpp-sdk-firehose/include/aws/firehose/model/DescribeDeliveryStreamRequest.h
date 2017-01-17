@@ -25,7 +25,6 @@ namespace Model
 {
 
   /**
-   * <p>Contains the parameters for <a>DescribeDeliveryStream</a>.</p>
    */
   class AWS_FIREHOSE_API DescribeDeliveryStreamRequest : public FirehoseRequest
   {
@@ -89,43 +88,43 @@ namespace Model
     inline DescribeDeliveryStreamRequest& WithLimit(int value) { SetLimit(value); return *this;}
 
     /**
-     * <p>Specifies the destination ID to start returning the destination information.
+     * <p>The ID of the destination to start returning the destination information.
      * Currently Firehose supports one destination per delivery stream.</p>
      */
     inline const Aws::String& GetExclusiveStartDestinationId() const{ return m_exclusiveStartDestinationId; }
 
     /**
-     * <p>Specifies the destination ID to start returning the destination information.
+     * <p>The ID of the destination to start returning the destination information.
      * Currently Firehose supports one destination per delivery stream.</p>
      */
     inline void SetExclusiveStartDestinationId(const Aws::String& value) { m_exclusiveStartDestinationIdHasBeenSet = true; m_exclusiveStartDestinationId = value; }
 
     /**
-     * <p>Specifies the destination ID to start returning the destination information.
+     * <p>The ID of the destination to start returning the destination information.
      * Currently Firehose supports one destination per delivery stream.</p>
      */
     inline void SetExclusiveStartDestinationId(Aws::String&& value) { m_exclusiveStartDestinationIdHasBeenSet = true; m_exclusiveStartDestinationId = value; }
 
     /**
-     * <p>Specifies the destination ID to start returning the destination information.
+     * <p>The ID of the destination to start returning the destination information.
      * Currently Firehose supports one destination per delivery stream.</p>
      */
     inline void SetExclusiveStartDestinationId(const char* value) { m_exclusiveStartDestinationIdHasBeenSet = true; m_exclusiveStartDestinationId.assign(value); }
 
     /**
-     * <p>Specifies the destination ID to start returning the destination information.
+     * <p>The ID of the destination to start returning the destination information.
      * Currently Firehose supports one destination per delivery stream.</p>
      */
     inline DescribeDeliveryStreamRequest& WithExclusiveStartDestinationId(const Aws::String& value) { SetExclusiveStartDestinationId(value); return *this;}
 
     /**
-     * <p>Specifies the destination ID to start returning the destination information.
+     * <p>The ID of the destination to start returning the destination information.
      * Currently Firehose supports one destination per delivery stream.</p>
      */
     inline DescribeDeliveryStreamRequest& WithExclusiveStartDestinationId(Aws::String&& value) { SetExclusiveStartDestinationId(value); return *this;}
 
     /**
-     * <p>Specifies the destination ID to start returning the destination information.
+     * <p>The ID of the destination to start returning the destination information.
      * Currently Firehose supports one destination per delivery stream.</p>
      */
     inline DescribeDeliveryStreamRequest& WithExclusiveStartDestinationId(const char* value) { SetExclusiveStartDestinationId(value); return *this;}

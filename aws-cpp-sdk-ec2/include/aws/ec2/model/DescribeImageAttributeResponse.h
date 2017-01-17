@@ -39,7 +39,9 @@ namespace EC2
 namespace Model
 {
   /**
-   * <p>Describes an image attribute.</p>
+   * <p>Describes an image attribute.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ImageAttribute">AWS
+   * API Reference</a></p>
    */
   class AWS_EC2_API DescribeImageAttributeResponse
   {
@@ -228,19 +230,34 @@ namespace Model
      */
     inline DescribeImageAttributeResponse& WithDescription(AttributeValue&& value) { SetDescription(value); return *this;}
 
-    
+    /**
+     * <p>Indicates whether enhanced networking with the Intel 82599 Virtual Function
+     * interface is enabled.</p>
+     */
     inline const AttributeValue& GetSriovNetSupport() const{ return m_sriovNetSupport; }
 
-    
+    /**
+     * <p>Indicates whether enhanced networking with the Intel 82599 Virtual Function
+     * interface is enabled.</p>
+     */
     inline void SetSriovNetSupport(const AttributeValue& value) { m_sriovNetSupport = value; }
 
-    
+    /**
+     * <p>Indicates whether enhanced networking with the Intel 82599 Virtual Function
+     * interface is enabled.</p>
+     */
     inline void SetSriovNetSupport(AttributeValue&& value) { m_sriovNetSupport = value; }
 
-    
+    /**
+     * <p>Indicates whether enhanced networking with the Intel 82599 Virtual Function
+     * interface is enabled.</p>
+     */
     inline DescribeImageAttributeResponse& WithSriovNetSupport(const AttributeValue& value) { SetSriovNetSupport(value); return *this;}
 
-    
+    /**
+     * <p>Indicates whether enhanced networking with the Intel 82599 Virtual Function
+     * interface is enabled.</p>
+     */
     inline DescribeImageAttributeResponse& WithSriovNetSupport(AttributeValue&& value) { SetSriovNetSupport(value); return *this;}
 
     /**

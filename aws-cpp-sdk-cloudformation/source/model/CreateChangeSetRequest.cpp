@@ -60,7 +60,7 @@ Aws::String CreateChangeSetRequest::SerializePayload() const
 
   if(m_usePreviousTemplateHasBeenSet)
   {
-    ss << "UsePreviousTemplate=" << m_usePreviousTemplate << "&";
+    ss << "UsePreviousTemplate=" << std::boolalpha << m_usePreviousTemplate << "&";
   }
 
   if(m_parametersHasBeenSet)

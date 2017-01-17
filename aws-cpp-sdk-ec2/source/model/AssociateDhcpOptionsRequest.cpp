@@ -33,7 +33,7 @@ Aws::String AssociateDhcpOptionsRequest::SerializePayload() const
   ss << "Action=AssociateDhcpOptions&";
   if(m_dryRunHasBeenSet)
   {
-    ss << "DryRun=" << m_dryRun << "&";
+    ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
   if(m_dhcpOptionsIdHasBeenSet)
@@ -46,7 +46,7 @@ Aws::String AssociateDhcpOptionsRequest::SerializePayload() const
     ss << "VpcId=" << StringUtils::URLEncode(m_vpcId.c_str()) << "&";
   }
 
-  ss << "Version=2015-10-01";
+  ss << "Version=2016-11-15";
   return ss.str();
 }
 

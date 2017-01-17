@@ -33,7 +33,10 @@ namespace Model
 
   /**
    * <p>Describes cluster attributes that are in a pending state. A change to one or
-   * more the attributes was requested and is in progress or will be applied.</p>
+   * more the attributes was requested and is in progress or will be
+   * applied.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/PendingModifiedValues">AWS
+   * API Reference</a></p>
    */
   class AWS_REDSHIFT_API PendingModifiedValues
   {

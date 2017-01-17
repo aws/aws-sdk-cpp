@@ -372,7 +372,9 @@ namespace Model
          * fleet alias, specify an alias name, routing strategy, and optional description.
          * If successful, a new alias record is returned, including an alias ID, which you
          * can reference when creating a game session. To reassign the alias to another
-         * fleet ID, call <a>UpdateAlias</a>.</p>
+         * fleet ID, call <a>UpdateAlias</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreateAlias">AWS
+         * API Reference</a></p>
          */
         virtual Model::CreateAliasOutcome CreateAlias(const Model::CreateAliasRequest& request) const;
 
@@ -387,7 +389,9 @@ namespace Model
          * fleet alias, specify an alias name, routing strategy, and optional description.
          * If successful, a new alias record is returned, including an alias ID, which you
          * can reference when creating a game session. To reassign the alias to another
-         * fleet ID, call <a>UpdateAlias</a>.</p>
+         * fleet ID, call <a>UpdateAlias</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreateAlias">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -404,7 +408,9 @@ namespace Model
          * fleet alias, specify an alias name, routing strategy, and optional description.
          * If successful, a new alias record is returned, including an alias ID, which you
          * can reference when creating a game session. To reassign the alias to another
-         * fleet ID, call <a>UpdateAlias</a>.</p>
+         * fleet ID, call <a>UpdateAlias</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreateAlias">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -427,7 +433,10 @@ namespace Model
          * properties in the build record and is displayed in the GameLift console (it is
          * not visible to players). If successful, this action returns the newly created
          * build record along with the Amazon S3 storage location and AWS account
-         * credentials. Use the location and credentials to upload your game build.</p>
+         * credentials. Use the location and credentials to upload your game
+         * build.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreateBuild">AWS
+         * API Reference</a></p>
          */
         virtual Model::CreateBuildOutcome CreateBuild(const Model::CreateBuildRequest& request) const;
 
@@ -448,7 +457,10 @@ namespace Model
          * properties in the build record and is displayed in the GameLift console (it is
          * not visible to players). If successful, this action returns the newly created
          * build record along with the Amazon S3 storage location and AWS account
-         * credentials. Use the location and credentials to upload your game build.</p>
+         * credentials. Use the location and credentials to upload your game
+         * build.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreateBuild">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -471,7 +483,10 @@ namespace Model
          * properties in the build record and is displayed in the GameLift console (it is
          * not visible to players). If successful, this action returns the newly created
          * build record along with the Amazon S3 storage location and AWS account
-         * credentials. Use the location and credentials to upload your game build.</p>
+         * credentials. Use the location and credentials to upload your game
+         * build.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreateBuild">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -511,7 +526,9 @@ namespace Model
          * allow access to incoming traffic.</p> </li> <li> <p>
          * <a>UpdateRuntimeConfiguration</a> -- Change how server processes are launched in
          * the fleet, including launch path, launch parameters, and the number of
-         * concurrent processes.</p> </li> </ul>
+         * concurrent processes.</p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreateFleet">AWS
+         * API Reference</a></p>
          */
         virtual Model::CreateFleetOutcome CreateFleet(const Model::CreateFleetRequest& request) const;
 
@@ -549,7 +566,9 @@ namespace Model
          * allow access to incoming traffic.</p> </li> <li> <p>
          * <a>UpdateRuntimeConfiguration</a> -- Change how server processes are launched in
          * the fleet, including launch path, launch parameters, and the number of
-         * concurrent processes.</p> </li> </ul>
+         * concurrent processes.</p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreateFleet">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -589,7 +608,9 @@ namespace Model
          * allow access to incoming traffic.</p> </li> <li> <p>
          * <a>UpdateRuntimeConfiguration</a> -- Change how server processes are launched in
          * the fleet, including launch path, launch parameters, and the number of
-         * concurrent processes.</p> </li> </ul>
+         * concurrent processes.</p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreateFleet">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -608,7 +629,9 @@ namespace Model
          * change the game sessions player session creation policy.</p> <p>When creating a
          * game session on a fleet with a resource limit creation policy, the request
          * should include a creator ID. If none is provided, GameLift does not evaluate the
-         * fleet's resource limit creation policy.</p>
+         * fleet's resource limit creation policy.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreateGameSession">AWS
+         * API Reference</a></p>
          */
         virtual Model::CreateGameSessionOutcome CreateGameSession(const Model::CreateGameSessionRequest& request) const;
 
@@ -625,7 +648,9 @@ namespace Model
          * change the game sessions player session creation policy.</p> <p>When creating a
          * game session on a fleet with a resource limit creation policy, the request
          * should include a creator ID. If none is provided, GameLift does not evaluate the
-         * fleet's resource limit creation policy.</p>
+         * fleet's resource limit creation policy.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreateGameSession">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -644,7 +669,9 @@ namespace Model
          * change the game sessions player session creation policy.</p> <p>When creating a
          * game session on a fleet with a resource limit creation policy, the request
          * should include a creator ID. If none is provided, GameLift does not evaluate the
-         * fleet's resource limit creation policy.</p>
+         * fleet's resource limit creation policy.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreateGameSession">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -656,7 +683,9 @@ namespace Model
          * <code>ALLOW_ALL</code>, and have an open player slot before players can be added
          * to the session.</p> <p>To create a player session, specify a game session ID and
          * player ID. If successful, the player is added to the game session and a new
-         * <a>PlayerSession</a> object is returned. </p>
+         * <a>PlayerSession</a> object is returned. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreatePlayerSession">AWS
+         * API Reference</a></p>
          */
         virtual Model::CreatePlayerSessionOutcome CreatePlayerSession(const Model::CreatePlayerSessionRequest& request) const;
 
@@ -666,7 +695,9 @@ namespace Model
          * <code>ALLOW_ALL</code>, and have an open player slot before players can be added
          * to the session.</p> <p>To create a player session, specify a game session ID and
          * player ID. If successful, the player is added to the game session and a new
-         * <a>PlayerSession</a> object is returned. </p>
+         * <a>PlayerSession</a> object is returned. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreatePlayerSession">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -678,7 +709,9 @@ namespace Model
          * <code>ALLOW_ALL</code>, and have an open player slot before players can be added
          * to the session.</p> <p>To create a player session, specify a game session ID and
          * player ID. If successful, the player is added to the game session and a new
-         * <a>PlayerSession</a> object is returned. </p>
+         * <a>PlayerSession</a> object is returned. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreatePlayerSession">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -693,7 +726,9 @@ namespace Model
          * players can be added to the session.</p> <p>To create player sessions, specify a
          * game session ID and a list of player IDs. If successful, the players are added
          * to the game session and a set of new <a>PlayerSession</a> objects is returned.
-         * </p>
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreatePlayerSessions">AWS
+         * API Reference</a></p>
          */
         virtual Model::CreatePlayerSessionsOutcome CreatePlayerSessions(const Model::CreatePlayerSessionsRequest& request) const;
 
@@ -706,7 +741,9 @@ namespace Model
          * players can be added to the session.</p> <p>To create player sessions, specify a
          * game session ID and a list of player IDs. If successful, the players are added
          * to the game session and a set of new <a>PlayerSession</a> objects is returned.
-         * </p>
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreatePlayerSessions">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -721,7 +758,9 @@ namespace Model
          * players can be added to the session.</p> <p>To create player sessions, specify a
          * game session ID and a list of player IDs. If successful, the players are added
          * to the game session and a set of new <a>PlayerSession</a> objects is returned.
-         * </p>
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreatePlayerSessions">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -730,14 +769,20 @@ namespace Model
         /**
          * <p>Deletes an alias. This action removes all record of the alias; game clients
          * attempting to access a server process using the deleted alias receive an error.
-         * To delete an alias, specify the alias ID to be deleted.</p>
+         * To delete an alias, specify the alias ID to be deleted.</p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DeleteAlias">AWS
+         * API Reference</a></p>
          */
         virtual Model::DeleteAliasOutcome DeleteAlias(const Model::DeleteAliasRequest& request) const;
 
         /**
          * <p>Deletes an alias. This action removes all record of the alias; game clients
          * attempting to access a server process using the deleted alias receive an error.
-         * To delete an alias, specify the alias ID to be deleted.</p>
+         * To delete an alias, specify the alias ID to be deleted.</p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DeleteAlias">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -746,7 +791,10 @@ namespace Model
         /**
          * <p>Deletes an alias. This action removes all record of the alias; game clients
          * attempting to access a server process using the deleted alias receive an error.
-         * To delete an alias, specify the alias ID to be deleted.</p>
+         * To delete an alias, specify the alias ID to be deleted.</p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DeleteAlias">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -756,7 +804,9 @@ namespace Model
          * <p>Deletes a build. This action permanently deletes the build record and any
          * uploaded build files.</p> <p>To delete a build, specify its ID. Deleting a build
          * does not affect the status of any active fleets using the build, but you can no
-         * longer create new fleets with the deleted build.</p>
+         * longer create new fleets with the deleted build.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DeleteBuild">AWS
+         * API Reference</a></p>
          */
         virtual Model::DeleteBuildOutcome DeleteBuild(const Model::DeleteBuildRequest& request) const;
 
@@ -764,7 +814,9 @@ namespace Model
          * <p>Deletes a build. This action permanently deletes the build record and any
          * uploaded build files.</p> <p>To delete a build, specify its ID. Deleting a build
          * does not affect the status of any active fleets using the build, but you can no
-         * longer create new fleets with the deleted build.</p>
+         * longer create new fleets with the deleted build.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DeleteBuild">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -774,7 +826,9 @@ namespace Model
          * <p>Deletes a build. This action permanently deletes the build record and any
          * uploaded build files.</p> <p>To delete a build, specify its ID. Deleting a build
          * does not affect the status of any active fleets using the build, but you can no
-         * longer create new fleets with the deleted build.</p>
+         * longer create new fleets with the deleted build.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DeleteBuild">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -784,7 +838,9 @@ namespace Model
          * <p>Deletes everything related to a fleet. Before deleting a fleet, you must set
          * the fleet's desired capacity to zero. See <a>UpdateFleetCapacity</a>.</p>
          * <p>This action removes the fleet's resources and the fleet record. Once a fleet
-         * is deleted, you can no longer use that fleet.</p>
+         * is deleted, you can no longer use that fleet.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DeleteFleet">AWS
+         * API Reference</a></p>
          */
         virtual Model::DeleteFleetOutcome DeleteFleet(const Model::DeleteFleetRequest& request) const;
 
@@ -792,7 +848,9 @@ namespace Model
          * <p>Deletes everything related to a fleet. Before deleting a fleet, you must set
          * the fleet's desired capacity to zero. See <a>UpdateFleetCapacity</a>.</p>
          * <p>This action removes the fleet's resources and the fleet record. Once a fleet
-         * is deleted, you can no longer use that fleet.</p>
+         * is deleted, you can no longer use that fleet.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DeleteFleet">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -802,7 +860,9 @@ namespace Model
          * <p>Deletes everything related to a fleet. Before deleting a fleet, you must set
          * the fleet's desired capacity to zero. See <a>UpdateFleetCapacity</a>.</p>
          * <p>This action removes the fleet's resources and the fleet record. Once a fleet
-         * is deleted, you can no longer use that fleet.</p>
+         * is deleted, you can no longer use that fleet.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DeleteFleet">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -811,14 +871,20 @@ namespace Model
         /**
          * <p>Deletes a fleet scaling policy. This action means that the policy is no
          * longer in force and removes all record of it. To delete a scaling policy,
-         * specify both the scaling policy name and the fleet ID it is associated with.</p>
+         * specify both the scaling policy name and the fleet ID it is associated
+         * with.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DeleteScalingPolicy">AWS
+         * API Reference</a></p>
          */
         virtual Model::DeleteScalingPolicyOutcome DeleteScalingPolicy(const Model::DeleteScalingPolicyRequest& request) const;
 
         /**
          * <p>Deletes a fleet scaling policy. This action means that the policy is no
          * longer in force and removes all record of it. To delete a scaling policy,
-         * specify both the scaling policy name and the fleet ID it is associated with.</p>
+         * specify both the scaling policy name and the fleet ID it is associated
+         * with.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DeleteScalingPolicy">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -827,7 +893,10 @@ namespace Model
         /**
          * <p>Deletes a fleet scaling policy. This action means that the policy is no
          * longer in force and removes all record of it. To delete a scaling policy,
-         * specify both the scaling policy name and the fleet ID it is associated with.</p>
+         * specify both the scaling policy name and the fleet ID it is associated
+         * with.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DeleteScalingPolicy">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -835,13 +904,19 @@ namespace Model
 
         /**
          * <p>Retrieves properties for a specified alias. To get the alias, specify an
-         * alias ID. If successful, an <a>Alias</a> object is returned.</p>
+         * alias ID. If successful, an <a>Alias</a> object is returned.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeAlias">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeAliasOutcome DescribeAlias(const Model::DescribeAliasRequest& request) const;
 
         /**
          * <p>Retrieves properties for a specified alias. To get the alias, specify an
-         * alias ID. If successful, an <a>Alias</a> object is returned.</p>
+         * alias ID. If successful, an <a>Alias</a> object is returned.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeAlias">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -849,7 +924,10 @@ namespace Model
 
         /**
          * <p>Retrieves properties for a specified alias. To get the alias, specify an
-         * alias ID. If successful, an <a>Alias</a> object is returned.</p>
+         * alias ID. If successful, an <a>Alias</a> object is returned.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeAlias">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -857,13 +935,19 @@ namespace Model
 
         /**
          * <p>Retrieves properties for a build. To get a build record, specify a build ID.
-         * If successful, an object containing the build properties is returned.</p>
+         * If successful, an object containing the build properties is
+         * returned.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeBuild">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeBuildOutcome DescribeBuild(const Model::DescribeBuildRequest& request) const;
 
         /**
          * <p>Retrieves properties for a build. To get a build record, specify a build ID.
-         * If successful, an object containing the build properties is returned.</p>
+         * If successful, an object containing the build properties is
+         * returned.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeBuild">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -871,7 +955,10 @@ namespace Model
 
         /**
          * <p>Retrieves properties for a build. To get a build record, specify a build ID.
-         * If successful, an object containing the build properties is returned.</p>
+         * If successful, an object containing the build properties is
+         * returned.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeBuild">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -883,7 +970,9 @@ namespace Model
          * limit)</p> </li> <li> <p>current usage level for the AWS account</p> </li> </ul>
          * <p>Service limits vary depending on region. Available regions for GameLift can
          * be found in the AWS Management Console for GameLift (see the drop-down list in
-         * the upper right corner).</p>
+         * the upper right corner).</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeEC2InstanceLimits">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeEC2InstanceLimitsOutcome DescribeEC2InstanceLimits(const Model::DescribeEC2InstanceLimitsRequest& request) const;
 
@@ -893,7 +982,9 @@ namespace Model
          * limit)</p> </li> <li> <p>current usage level for the AWS account</p> </li> </ul>
          * <p>Service limits vary depending on region. Available regions for GameLift can
          * be found in the AWS Management Console for GameLift (see the drop-down list in
-         * the upper right corner).</p>
+         * the upper right corner).</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeEC2InstanceLimits">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -905,7 +996,9 @@ namespace Model
          * limit)</p> </li> <li> <p>current usage level for the AWS account</p> </li> </ul>
          * <p>Service limits vary depending on region. Available regions for GameLift can
          * be found in the AWS Management Console for GameLift (see the drop-down list in
-         * the upper right corner).</p>
+         * the upper right corner).</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeEC2InstanceLimits">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -920,7 +1013,10 @@ namespace Model
          * ID. When specifying a list of fleet IDs, attribute objects are returned only for
          * fleets that currently exist. </p> <note> <p>Some API actions may limit the
          * number of fleet IDs allowed in one request. If a request exceeds this limit, the
-         * request fails and the error message includes the maximum allowed.</p> </note>
+         * request fails and the error message includes the maximum allowed.</p>
+         * </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeFleetAttributes">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeFleetAttributesOutcome DescribeFleetAttributes(const Model::DescribeFleetAttributesRequest& request) const;
 
@@ -933,7 +1029,10 @@ namespace Model
          * ID. When specifying a list of fleet IDs, attribute objects are returned only for
          * fleets that currently exist. </p> <note> <p>Some API actions may limit the
          * number of fleet IDs allowed in one request. If a request exceeds this limit, the
-         * request fails and the error message includes the maximum allowed.</p> </note>
+         * request fails and the error message includes the maximum allowed.</p>
+         * </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeFleetAttributes">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -948,7 +1047,10 @@ namespace Model
          * ID. When specifying a list of fleet IDs, attribute objects are returned only for
          * fleets that currently exist. </p> <note> <p>Some API actions may limit the
          * number of fleet IDs allowed in one request. If a request exceeds this limit, the
-         * request fails and the error message includes the maximum allowed.</p> </note>
+         * request fails and the error message includes the maximum allowed.</p>
+         * </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeFleetAttributes">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -964,7 +1066,10 @@ namespace Model
          * ID. When specifying a list of fleet IDs, attribute objects are returned only for
          * fleets that currently exist. </p> <note> <p>Some API actions may limit the
          * number of fleet IDs allowed in one request. If a request exceeds this limit, the
-         * request fails and the error message includes the maximum allowed.</p> </note>
+         * request fails and the error message includes the maximum allowed.</p>
+         * </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeFleetCapacity">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeFleetCapacityOutcome DescribeFleetCapacity(const Model::DescribeFleetCapacityRequest& request) const;
 
@@ -978,7 +1083,10 @@ namespace Model
          * ID. When specifying a list of fleet IDs, attribute objects are returned only for
          * fleets that currently exist. </p> <note> <p>Some API actions may limit the
          * number of fleet IDs allowed in one request. If a request exceeds this limit, the
-         * request fails and the error message includes the maximum allowed.</p> </note>
+         * request fails and the error message includes the maximum allowed.</p>
+         * </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeFleetCapacity">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -994,7 +1102,10 @@ namespace Model
          * ID. When specifying a list of fleet IDs, attribute objects are returned only for
          * fleets that currently exist. </p> <note> <p>Some API actions may limit the
          * number of fleet IDs allowed in one request. If a request exceeds this limit, the
-         * request fails and the error message includes the maximum allowed.</p> </note>
+         * request fails and the error message includes the maximum allowed.</p>
+         * </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeFleetCapacity">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1004,7 +1115,9 @@ namespace Model
          * <p>Retrieves entries from the specified fleet's event log. You can specify a
          * time range to limit the result set. Use the pagination parameters to retrieve
          * results as a set of sequential pages. If successful, a collection of event log
-         * entries matching the request are returned.</p>
+         * entries matching the request are returned.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeFleetEvents">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeFleetEventsOutcome DescribeFleetEvents(const Model::DescribeFleetEventsRequest& request) const;
 
@@ -1012,7 +1125,9 @@ namespace Model
          * <p>Retrieves entries from the specified fleet's event log. You can specify a
          * time range to limit the result set. Use the pagination parameters to retrieve
          * results as a set of sequential pages. If successful, a collection of event log
-         * entries matching the request are returned.</p>
+         * entries matching the request are returned.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeFleetEvents">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1022,7 +1137,9 @@ namespace Model
          * <p>Retrieves entries from the specified fleet's event log. You can specify a
          * time range to limit the result set. Use the pagination parameters to retrieve
          * results as a set of sequential pages. If successful, a collection of event log
-         * entries matching the request are returned.</p>
+         * entries matching the request are returned.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeFleetEvents">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1034,7 +1151,10 @@ namespace Model
          * traffic can use to access server processes in the fleet. To get a fleet's
          * inbound connection permissions, specify a fleet ID. If successful, a collection
          * of <a>IpPermission</a> objects is returned for the requested fleet ID. If the
-         * requested fleet has been deleted, the result set is empty.</p>
+         * requested fleet has been deleted, the result set is empty.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeFleetPortSettings">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeFleetPortSettingsOutcome DescribeFleetPortSettings(const Model::DescribeFleetPortSettingsRequest& request) const;
 
@@ -1044,7 +1164,10 @@ namespace Model
          * traffic can use to access server processes in the fleet. To get a fleet's
          * inbound connection permissions, specify a fleet ID. If successful, a collection
          * of <a>IpPermission</a> objects is returned for the requested fleet ID. If the
-         * requested fleet has been deleted, the result set is empty.</p>
+         * requested fleet has been deleted, the result set is empty.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeFleetPortSettings">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1056,7 +1179,10 @@ namespace Model
          * traffic can use to access server processes in the fleet. To get a fleet's
          * inbound connection permissions, specify a fleet ID. If successful, a collection
          * of <a>IpPermission</a> objects is returned for the requested fleet ID. If the
-         * requested fleet has been deleted, the result set is empty.</p>
+         * requested fleet has been deleted, the result set is empty.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeFleetPortSettings">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1071,7 +1197,9 @@ namespace Model
          * IDs, utilization objects are returned only for fleets that currently exist. </p>
          * <note> <p>Some API actions may limit the number of fleet IDs allowed in one
          * request. If a request exceeds this limit, the request fails and the error
-         * message includes the maximum allowed.</p> </note>
+         * message includes the maximum allowed.</p> </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeFleetUtilization">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeFleetUtilizationOutcome DescribeFleetUtilization(const Model::DescribeFleetUtilizationRequest& request) const;
 
@@ -1084,7 +1212,9 @@ namespace Model
          * IDs, utilization objects are returned only for fleets that currently exist. </p>
          * <note> <p>Some API actions may limit the number of fleet IDs allowed in one
          * request. If a request exceeds this limit, the request fails and the error
-         * message includes the maximum allowed.</p> </note>
+         * message includes the maximum allowed.</p> </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeFleetUtilization">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1099,7 +1229,9 @@ namespace Model
          * IDs, utilization objects are returned only for fleets that currently exist. </p>
          * <note> <p>Some API actions may limit the number of fleet IDs allowed in one
          * request. If a request exceeds this limit, the request fails and the error
-         * message includes the maximum allowed.</p> </note>
+         * message includes the maximum allowed.</p> </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeFleetUtilization">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1115,7 +1247,9 @@ namespace Model
          * alias ID. You can filter this request by game session status. Use the pagination
          * parameters to retrieve results as a set of sequential pages. If successful, a
          * <a>GameSessionDetail</a> object is returned for each session matching the
-         * request.</p>
+         * request.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeGameSessionDetails">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeGameSessionDetailsOutcome DescribeGameSessionDetails(const Model::DescribeGameSessionDetailsRequest& request) const;
 
@@ -1129,7 +1263,9 @@ namespace Model
          * alias ID. You can filter this request by game session status. Use the pagination
          * parameters to retrieve results as a set of sequential pages. If successful, a
          * <a>GameSessionDetail</a> object is returned for each session matching the
-         * request.</p>
+         * request.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeGameSessionDetails">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1145,7 +1281,9 @@ namespace Model
          * alias ID. You can filter this request by game session status. Use the pagination
          * parameters to retrieve results as a set of sequential pages. If successful, a
          * <a>GameSessionDetail</a> object is returned for each session matching the
-         * request.</p>
+         * request.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeGameSessionDetails">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1163,7 +1301,10 @@ namespace Model
          * record(s), specify just one of the following: game session ID, fleet ID, or
          * alias ID. You can filter this request by game session status. Use the pagination
          * parameters to retrieve results as a set of sequential pages. If successful, a
-         * <a>GameSession</a> object is returned for each session matching the request.</p>
+         * <a>GameSession</a> object is returned for each session matching the
+         * request.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeGameSessions">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeGameSessionsOutcome DescribeGameSessions(const Model::DescribeGameSessionsRequest& request) const;
 
@@ -1179,7 +1320,10 @@ namespace Model
          * record(s), specify just one of the following: game session ID, fleet ID, or
          * alias ID. You can filter this request by game session status. Use the pagination
          * parameters to retrieve results as a set of sequential pages. If successful, a
-         * <a>GameSession</a> object is returned for each session matching the request.</p>
+         * <a>GameSession</a> object is returned for each session matching the
+         * request.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeGameSessions">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1197,7 +1341,10 @@ namespace Model
          * record(s), specify just one of the following: game session ID, fleet ID, or
          * alias ID. You can filter this request by game session status. Use the pagination
          * parameters to retrieve results as a set of sequential pages. If successful, a
-         * <a>GameSession</a> object is returned for each session matching the request.</p>
+         * <a>GameSession</a> object is returned for each session matching the
+         * request.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeGameSessions">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1209,7 +1356,10 @@ namespace Model
          * specific instance.</p> <p>To get a specific instance, specify fleet ID and
          * instance ID. To get all instances in a fleet, specify a fleet ID only. Use the
          * pagination parameters to retrieve results as a set of sequential pages. If
-         * successful, an <a>Instance</a> object is returned for each result.</p>
+         * successful, an <a>Instance</a> object is returned for each result.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeInstances">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeInstancesOutcome DescribeInstances(const Model::DescribeInstancesRequest& request) const;
 
@@ -1219,7 +1369,10 @@ namespace Model
          * specific instance.</p> <p>To get a specific instance, specify fleet ID and
          * instance ID. To get all instances in a fleet, specify a fleet ID only. Use the
          * pagination parameters to retrieve results as a set of sequential pages. If
-         * successful, an <a>Instance</a> object is returned for each result.</p>
+         * successful, an <a>Instance</a> object is returned for each result.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeInstances">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1231,7 +1384,10 @@ namespace Model
          * specific instance.</p> <p>To get a specific instance, specify fleet ID and
          * instance ID. To get all instances in a fleet, specify a fleet ID only. Use the
          * pagination parameters to retrieve results as a set of sequential pages. If
-         * successful, an <a>Instance</a> object is returned for each result.</p>
+         * successful, an <a>Instance</a> object is returned for each result.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeInstances">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1248,7 +1404,10 @@ namespace Model
          * player session ID, a game session ID, or a player ID. You can filter this
          * request by player session status. Use the pagination parameters to retrieve
          * results as a set of sequential pages. If successful, a <a>PlayerSession</a>
-         * object is returned for each session matching the request.</p>
+         * object is returned for each session matching the request.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribePlayerSessions">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribePlayerSessionsOutcome DescribePlayerSessions(const Model::DescribePlayerSessionsRequest& request) const;
 
@@ -1263,7 +1422,10 @@ namespace Model
          * player session ID, a game session ID, or a player ID. You can filter this
          * request by player session status. Use the pagination parameters to retrieve
          * results as a set of sequential pages. If successful, a <a>PlayerSession</a>
-         * object is returned for each session matching the request.</p>
+         * object is returned for each session matching the request.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribePlayerSessions">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1280,7 +1442,10 @@ namespace Model
          * player session ID, a game session ID, or a player ID. You can filter this
          * request by player session status. Use the pagination parameters to retrieve
          * results as a set of sequential pages. If successful, a <a>PlayerSession</a>
-         * object is returned for each session matching the request.</p>
+         * object is returned for each session matching the request.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribePlayerSessions">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1289,14 +1454,18 @@ namespace Model
         /**
          * <p>Retrieves the current runtime configuration for the specified fleet. The
          * runtime configuration tells GameLift how to launch server processes on instances
-         * in the fleet.</p>
+         * in the fleet.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeRuntimeConfiguration">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeRuntimeConfigurationOutcome DescribeRuntimeConfiguration(const Model::DescribeRuntimeConfigurationRequest& request) const;
 
         /**
          * <p>Retrieves the current runtime configuration for the specified fleet. The
          * runtime configuration tells GameLift how to launch server processes on instances
-         * in the fleet.</p>
+         * in the fleet.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeRuntimeConfiguration">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1305,7 +1474,9 @@ namespace Model
         /**
          * <p>Retrieves the current runtime configuration for the specified fleet. The
          * runtime configuration tells GameLift how to launch server processes on instances
-         * in the fleet.</p>
+         * in the fleet.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeRuntimeConfiguration">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1316,7 +1487,10 @@ namespace Model
          * scaling policies, specify the fleet ID. You can filter this request by policy
          * status, such as to retrieve only active scaling policies. Use the pagination
          * parameters to retrieve results as a set of sequential pages. If successful, set
-         * of <a>ScalingPolicy</a> objects is returned for the fleet.</p>
+         * of <a>ScalingPolicy</a> objects is returned for the fleet.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeScalingPolicies">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeScalingPoliciesOutcome DescribeScalingPolicies(const Model::DescribeScalingPoliciesRequest& request) const;
 
@@ -1325,7 +1499,10 @@ namespace Model
          * scaling policies, specify the fleet ID. You can filter this request by policy
          * status, such as to retrieve only active scaling policies. Use the pagination
          * parameters to retrieve results as a set of sequential pages. If successful, set
-         * of <a>ScalingPolicy</a> objects is returned for the fleet.</p>
+         * of <a>ScalingPolicy</a> objects is returned for the fleet.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeScalingPolicies">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1336,7 +1513,10 @@ namespace Model
          * scaling policies, specify the fleet ID. You can filter this request by policy
          * status, such as to retrieve only active scaling policies. Use the pagination
          * parameters to retrieve results as a set of sequential pages. If successful, set
-         * of <a>ScalingPolicy</a> objects is returned for the fleet.</p>
+         * of <a>ScalingPolicy</a> objects is returned for the fleet.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeScalingPolicies">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1349,7 +1529,9 @@ namespace Model
          * <a
          * href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_gamelift">AWS
          * Service Limits</a> page for maximum log file sizes. Log files that exceed this
-         * limit are not saved.</p> </note>
+         * limit are not saved.</p> </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/GetGameSessionLogUrl">AWS
+         * API Reference</a></p>
          */
         virtual Model::GetGameSessionLogUrlOutcome GetGameSessionLogUrl(const Model::GetGameSessionLogUrlRequest& request) const;
 
@@ -1360,7 +1542,9 @@ namespace Model
          * <a
          * href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_gamelift">AWS
          * Service Limits</a> page for maximum log file sizes. Log files that exceed this
-         * limit are not saved.</p> </note>
+         * limit are not saved.</p> </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/GetGameSessionLogUrl">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1373,7 +1557,9 @@ namespace Model
          * <a
          * href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_gamelift">AWS
          * Service Limits</a> page for maximum log file sizes. Log files that exceed this
-         * limit are not saved.</p> </note>
+         * limit are not saved.</p> </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/GetGameSessionLogUrl">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1394,7 +1580,9 @@ namespace Model
          * Accessing an Instance</a>.</p> <p>To request access to a specific instance,
          * specify the IDs of the instance and the fleet it belongs to. If successful, an
          * <a>InstanceAccess</a> object is returned containing the instance's IP address
-         * and a set of credentials.</p>
+         * and a set of credentials.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/GetInstanceAccess">AWS
+         * API Reference</a></p>
          */
         virtual Model::GetInstanceAccessOutcome GetInstanceAccess(const Model::GetInstanceAccessRequest& request) const;
 
@@ -1413,7 +1601,9 @@ namespace Model
          * Accessing an Instance</a>.</p> <p>To request access to a specific instance,
          * specify the IDs of the instance and the fleet it belongs to. If successful, an
          * <a>InstanceAccess</a> object is returned containing the instance's IP address
-         * and a set of credentials.</p>
+         * and a set of credentials.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/GetInstanceAccess">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1434,7 +1624,9 @@ namespace Model
          * Accessing an Instance</a>.</p> <p>To request access to a specific instance,
          * specify the IDs of the instance and the fleet it belongs to. If successful, an
          * <a>InstanceAccess</a> object is returned containing the instance's IP address
-         * and a set of credentials.</p>
+         * and a set of credentials.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/GetInstanceAccess">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1444,7 +1636,9 @@ namespace Model
          * <p>Retrieves a collection of alias records for this AWS account. You can filter
          * the result set by alias name and/or routing strategy type. Use the pagination
          * parameters to retrieve results in sequential pages.</p> <note> <p>Aliases are
-         * not listed in any particular order.</p> </note>
+         * not listed in any particular order.</p> </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/ListAliases">AWS
+         * API Reference</a></p>
          */
         virtual Model::ListAliasesOutcome ListAliases(const Model::ListAliasesRequest& request) const;
 
@@ -1452,7 +1646,9 @@ namespace Model
          * <p>Retrieves a collection of alias records for this AWS account. You can filter
          * the result set by alias name and/or routing strategy type. Use the pagination
          * parameters to retrieve results in sequential pages.</p> <note> <p>Aliases are
-         * not listed in any particular order.</p> </note>
+         * not listed in any particular order.</p> </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/ListAliases">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1462,7 +1658,9 @@ namespace Model
          * <p>Retrieves a collection of alias records for this AWS account. You can filter
          * the result set by alias name and/or routing strategy type. Use the pagination
          * parameters to retrieve results in sequential pages.</p> <note> <p>Aliases are
-         * not listed in any particular order.</p> </note>
+         * not listed in any particular order.</p> </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/ListAliases">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1473,7 +1671,9 @@ namespace Model
          * use. You can limit results to builds that are in a specific status by using the
          * <code>Status</code> parameter. Use the pagination parameters to retrieve results
          * in a set of sequential pages. </p> <note> <p>Build records are not listed in any
-         * particular order.</p> </note>
+         * particular order.</p> </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/ListBuilds">AWS
+         * API Reference</a></p>
          */
         virtual Model::ListBuildsOutcome ListBuilds(const Model::ListBuildsRequest& request) const;
 
@@ -1482,7 +1682,9 @@ namespace Model
          * use. You can limit results to builds that are in a specific status by using the
          * <code>Status</code> parameter. Use the pagination parameters to retrieve results
          * in a set of sequential pages. </p> <note> <p>Build records are not listed in any
-         * particular order.</p> </note>
+         * particular order.</p> </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/ListBuilds">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1493,7 +1695,9 @@ namespace Model
          * use. You can limit results to builds that are in a specific status by using the
          * <code>Status</code> parameter. Use the pagination parameters to retrieve results
          * in a set of sequential pages. </p> <note> <p>Build records are not listed in any
-         * particular order.</p> </note>
+         * particular order.</p> </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/ListBuilds">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1503,7 +1707,9 @@ namespace Model
          * <p>Retrieves a collection of fleet records for this AWS account. You can filter
          * the result set by build ID. Use the pagination parameters to retrieve results in
          * sequential pages.</p> <note> <p>Fleet records are not listed in any particular
-         * order.</p> </note>
+         * order.</p> </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/ListFleets">AWS
+         * API Reference</a></p>
          */
         virtual Model::ListFleetsOutcome ListFleets(const Model::ListFleetsRequest& request) const;
 
@@ -1511,7 +1717,9 @@ namespace Model
          * <p>Retrieves a collection of fleet records for this AWS account. You can filter
          * the result set by build ID. Use the pagination parameters to retrieve results in
          * sequential pages.</p> <note> <p>Fleet records are not listed in any particular
-         * order.</p> </note>
+         * order.</p> </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/ListFleets">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1521,7 +1729,9 @@ namespace Model
          * <p>Retrieves a collection of fleet records for this AWS account. You can filter
          * the result set by build ID. Use the pagination parameters to retrieve results in
          * sequential pages.</p> <note> <p>Fleet records are not listed in any particular
-         * order.</p> </note>
+         * order.</p> </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/ListFleets">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1545,7 +1755,9 @@ namespace Model
          * combination of name and fleet ID, and set the rule values. All parameters for
          * this action are required. If successful, the policy name is returned. Scaling
          * policies cannot be suspended or made inactive. To stop enforcing a scaling
-         * policy, call <a>DeleteScalingPolicy</a>.</p>
+         * policy, call <a>DeleteScalingPolicy</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/PutScalingPolicy">AWS
+         * API Reference</a></p>
          */
         virtual Model::PutScalingPolicyOutcome PutScalingPolicy(const Model::PutScalingPolicyRequest& request) const;
 
@@ -1567,7 +1779,9 @@ namespace Model
          * combination of name and fleet ID, and set the rule values. All parameters for
          * this action are required. If successful, the policy name is returned. Scaling
          * policies cannot be suspended or made inactive. To stop enforcing a scaling
-         * policy, call <a>DeleteScalingPolicy</a>.</p>
+         * policy, call <a>DeleteScalingPolicy</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/PutScalingPolicy">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1591,7 +1805,9 @@ namespace Model
          * combination of name and fleet ID, and set the rule values. All parameters for
          * this action are required. If successful, the policy name is returned. Scaling
          * policies cannot be suspended or made inactive. To stop enforcing a scaling
-         * policy, call <a>DeleteScalingPolicy</a>.</p>
+         * policy, call <a>DeleteScalingPolicy</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/PutScalingPolicy">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1608,7 +1824,9 @@ namespace Model
          * create the build, but they have a limited lifespan. You can get fresh
          * credentials and use them to re-upload game files until the status of that build
          * changes to <code>READY</code>. Once this happens, you must create a brand new
-         * build.</p>
+         * build.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/RequestUploadCredentials">AWS
+         * API Reference</a></p>
          */
         virtual Model::RequestUploadCredentialsOutcome RequestUploadCredentials(const Model::RequestUploadCredentialsRequest& request) const;
 
@@ -1623,7 +1841,9 @@ namespace Model
          * create the build, but they have a limited lifespan. You can get fresh
          * credentials and use them to re-upload game files until the status of that build
          * changes to <code>READY</code>. Once this happens, you must create a brand new
-         * build.</p>
+         * build.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/RequestUploadCredentials">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1640,26 +1860,37 @@ namespace Model
          * create the build, but they have a limited lifespan. You can get fresh
          * credentials and use them to re-upload game files until the status of that build
          * changes to <code>READY</code>. Once this happens, you must create a brand new
-         * build.</p>
+         * build.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/RequestUploadCredentials">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void RequestUploadCredentialsAsync(const Model::RequestUploadCredentialsRequest& request, const RequestUploadCredentialsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Retrieves the fleet ID that a specified alias is currently pointing to.</p>
+         * <p>Retrieves the fleet ID that a specified alias is currently pointing
+         * to.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/ResolveAlias">AWS
+         * API Reference</a></p>
          */
         virtual Model::ResolveAliasOutcome ResolveAlias(const Model::ResolveAliasRequest& request) const;
 
         /**
-         * <p>Retrieves the fleet ID that a specified alias is currently pointing to.</p>
+         * <p>Retrieves the fleet ID that a specified alias is currently pointing
+         * to.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/ResolveAlias">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ResolveAliasOutcomeCallable ResolveAliasCallable(const Model::ResolveAliasRequest& request) const;
 
         /**
-         * <p>Retrieves the fleet ID that a specified alias is currently pointing to.</p>
+         * <p>Retrieves the fleet ID that a specified alias is currently pointing
+         * to.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/ResolveAlias">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1699,7 +1930,10 @@ namespace Model
          * <code>playerSessionCount</code> and <code>hasAvailablePlayerSessions</code>
          * change quickly as players join sessions and others drop out. Results should be
          * considered a snapshot in time. Be sure to refresh search results often, and
-         * handle sessions that fill up before a player can join. </p> </note>
+         * handle sessions that fill up before a player can join. </p> </note><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/SearchGameSessions">AWS
+         * API Reference</a></p>
          */
         virtual Model::SearchGameSessionsOutcome SearchGameSessions(const Model::SearchGameSessionsRequest& request) const;
 
@@ -1737,7 +1971,10 @@ namespace Model
          * <code>playerSessionCount</code> and <code>hasAvailablePlayerSessions</code>
          * change quickly as players join sessions and others drop out. Results should be
          * considered a snapshot in time. Be sure to refresh search results often, and
-         * handle sessions that fill up before a player can join. </p> </note>
+         * handle sessions that fill up before a player can join. </p> </note><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/SearchGameSessions">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1777,7 +2014,10 @@ namespace Model
          * <code>playerSessionCount</code> and <code>hasAvailablePlayerSessions</code>
          * change quickly as players join sessions and others drop out. Results should be
          * considered a snapshot in time. Be sure to refresh search results often, and
-         * handle sessions that fill up before a player can join. </p> </note>
+         * handle sessions that fill up before a player can join. </p> </note><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/SearchGameSessions">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1787,7 +2027,9 @@ namespace Model
          * <p>Updates properties for an alias. To update properties, specify the alias ID
          * to be updated and provide the information to be changed. To reassign an alias to
          * another fleet, provide an updated routing strategy. If successful, the updated
-         * alias record is returned.</p>
+         * alias record is returned.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateAlias">AWS
+         * API Reference</a></p>
          */
         virtual Model::UpdateAliasOutcome UpdateAlias(const Model::UpdateAliasRequest& request) const;
 
@@ -1795,7 +2037,9 @@ namespace Model
          * <p>Updates properties for an alias. To update properties, specify the alias ID
          * to be updated and provide the information to be changed. To reassign an alias to
          * another fleet, provide an updated routing strategy. If successful, the updated
-         * alias record is returned.</p>
+         * alias record is returned.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateAlias">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1805,7 +2049,9 @@ namespace Model
          * <p>Updates properties for an alias. To update properties, specify the alias ID
          * to be updated and provide the information to be changed. To reassign an alias to
          * another fleet, provide an updated routing strategy. If successful, the updated
-         * alias record is returned.</p>
+         * alias record is returned.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateAlias">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1814,14 +2060,20 @@ namespace Model
         /**
          * <p>Updates metadata in a build record, including the build name and version. To
          * update the metadata, specify the build ID to update and provide the new values.
-         * If successful, a build object containing the updated metadata is returned.</p>
+         * If successful, a build object containing the updated metadata is
+         * returned.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateBuild">AWS
+         * API Reference</a></p>
          */
         virtual Model::UpdateBuildOutcome UpdateBuild(const Model::UpdateBuildRequest& request) const;
 
         /**
          * <p>Updates metadata in a build record, including the build name and version. To
          * update the metadata, specify the build ID to update and provide the new values.
-         * If successful, a build object containing the updated metadata is returned.</p>
+         * If successful, a build object containing the updated metadata is
+         * returned.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateBuild">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1830,7 +2082,10 @@ namespace Model
         /**
          * <p>Updates metadata in a build record, including the build name and version. To
          * update the metadata, specify the build ID to update and provide the new values.
-         * If successful, a build object containing the updated metadata is returned.</p>
+         * If successful, a build object containing the updated metadata is
+         * returned.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateBuild">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1839,14 +2094,20 @@ namespace Model
         /**
          * <p>Updates fleet properties, including name and description, for a fleet. To
          * update metadata, specify the fleet ID and the property values you want to
-         * change. If successful, the fleet ID for the updated fleet is returned.</p>
+         * change. If successful, the fleet ID for the updated fleet is
+         * returned.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateFleetAttributes">AWS
+         * API Reference</a></p>
          */
         virtual Model::UpdateFleetAttributesOutcome UpdateFleetAttributes(const Model::UpdateFleetAttributesRequest& request) const;
 
         /**
          * <p>Updates fleet properties, including name and description, for a fleet. To
          * update metadata, specify the fleet ID and the property values you want to
-         * change. If successful, the fleet ID for the updated fleet is returned.</p>
+         * change. If successful, the fleet ID for the updated fleet is
+         * returned.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateFleetAttributes">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1855,7 +2116,10 @@ namespace Model
         /**
          * <p>Updates fleet properties, including name and description, for a fleet. To
          * update metadata, specify the fleet ID and the property values you want to
-         * change. If successful, the fleet ID for the updated fleet is returned.</p>
+         * change. If successful, the fleet ID for the updated fleet is
+         * returned.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateFleetAttributes">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1875,7 +2139,10 @@ namespace Model
          * or terminates instances so that the fleet's active instance count matches the
          * desired instance count. You can view a fleet's current capacity information by
          * calling <a>DescribeFleetCapacity</a>. If the desired instance count is higher
-         * than the instance type's limit, the "Limit Exceeded" exception occurs.</p>
+         * than the instance type's limit, the "Limit Exceeded" exception
+         * occurs.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateFleetCapacity">AWS
+         * API Reference</a></p>
          */
         virtual Model::UpdateFleetCapacityOutcome UpdateFleetCapacity(const Model::UpdateFleetCapacityRequest& request) const;
 
@@ -1893,7 +2160,10 @@ namespace Model
          * or terminates instances so that the fleet's active instance count matches the
          * desired instance count. You can view a fleet's current capacity information by
          * calling <a>DescribeFleetCapacity</a>. If the desired instance count is higher
-         * than the instance type's limit, the "Limit Exceeded" exception occurs.</p>
+         * than the instance type's limit, the "Limit Exceeded" exception
+         * occurs.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateFleetCapacity">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1913,7 +2183,10 @@ namespace Model
          * or terminates instances so that the fleet's active instance count matches the
          * desired instance count. You can view a fleet's current capacity information by
          * calling <a>DescribeFleetCapacity</a>. If the desired instance count is higher
-         * than the instance type's limit, the "Limit Exceeded" exception occurs.</p>
+         * than the instance type's limit, the "Limit Exceeded" exception
+         * occurs.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateFleetCapacity">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1925,7 +2198,9 @@ namespace Model
          * you want to add in <code>InboundPermissionAuthorizations</code>, and permissions
          * you want to remove in <code>InboundPermissionRevocations</code>. Permissions to
          * be removed must match existing fleet permissions. If successful, the fleet ID
-         * for the updated fleet is returned.</p>
+         * for the updated fleet is returned.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateFleetPortSettings">AWS
+         * API Reference</a></p>
          */
         virtual Model::UpdateFleetPortSettingsOutcome UpdateFleetPortSettings(const Model::UpdateFleetPortSettingsRequest& request) const;
 
@@ -1935,7 +2210,9 @@ namespace Model
          * you want to add in <code>InboundPermissionAuthorizations</code>, and permissions
          * you want to remove in <code>InboundPermissionRevocations</code>. Permissions to
          * be removed must match existing fleet permissions. If successful, the fleet ID
-         * for the updated fleet is returned.</p>
+         * for the updated fleet is returned.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateFleetPortSettings">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1947,7 +2224,9 @@ namespace Model
          * you want to add in <code>InboundPermissionAuthorizations</code>, and permissions
          * you want to remove in <code>InboundPermissionRevocations</code>. Permissions to
          * be removed must match existing fleet permissions. If successful, the fleet ID
-         * for the updated fleet is returned.</p>
+         * for the updated fleet is returned.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateFleetPortSettings">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1959,7 +2238,10 @@ namespace Model
          * session can be terminated during a scale-down event, and the player session
          * creation policy, which controls whether or not new players can join the session.
          * To update a game session, specify the game session ID and the values you want to
-         * change. If successful, an updated <a>GameSession</a> object is returned. </p>
+         * change. If successful, an updated <a>GameSession</a> object is returned.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateGameSession">AWS
+         * API Reference</a></p>
          */
         virtual Model::UpdateGameSessionOutcome UpdateGameSession(const Model::UpdateGameSessionRequest& request) const;
 
@@ -1969,7 +2251,10 @@ namespace Model
          * session can be terminated during a scale-down event, and the player session
          * creation policy, which controls whether or not new players can join the session.
          * To update a game session, specify the game session ID and the values you want to
-         * change. If successful, an updated <a>GameSession</a> object is returned. </p>
+         * change. If successful, an updated <a>GameSession</a> object is returned.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateGameSession">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1981,7 +2266,10 @@ namespace Model
          * session can be terminated during a scale-down event, and the player session
          * creation policy, which controls whether or not new players can join the session.
          * To update a game session, specify the game session ID and the values you want to
-         * change. If successful, an updated <a>GameSession</a> object is returned. </p>
+         * change. If successful, an updated <a>GameSession</a> object is returned.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateGameSession">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -2001,7 +2289,9 @@ namespace Model
          * GameLift simply adds new server processes to fit the current runtime
          * configuration. As a result, the runtime configuration changes are applied
          * gradually as existing processes shut down and new processes are launched in
-         * GameLift's normal process recycling activity.</p>
+         * GameLift's normal process recycling activity.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateRuntimeConfiguration">AWS
+         * API Reference</a></p>
          */
         virtual Model::UpdateRuntimeConfigurationOutcome UpdateRuntimeConfiguration(const Model::UpdateRuntimeConfigurationRequest& request) const;
 
@@ -2019,7 +2309,9 @@ namespace Model
          * GameLift simply adds new server processes to fit the current runtime
          * configuration. As a result, the runtime configuration changes are applied
          * gradually as existing processes shut down and new processes are launched in
-         * GameLift's normal process recycling activity.</p>
+         * GameLift's normal process recycling activity.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateRuntimeConfiguration">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -2039,7 +2331,9 @@ namespace Model
          * GameLift simply adds new server processes to fit the current runtime
          * configuration. As a result, the runtime configuration changes are applied
          * gradually as existing processes shut down and new processes are launched in
-         * GameLift's normal process recycling activity.</p>
+         * GameLift's normal process recycling activity.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateRuntimeConfiguration">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */

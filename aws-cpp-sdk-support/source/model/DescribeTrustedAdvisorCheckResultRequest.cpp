@@ -49,7 +49,7 @@ Aws::String DescribeTrustedAdvisorCheckResultRequest::SerializePayload() const
 Aws::Http::HeaderValueCollection DescribeTrustedAdvisorCheckResultRequest::GetRequestSpecificHeaders() const
 {
   Aws::Http::HeaderValueCollection headers;
-  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "AWSSupport_20130415.DescribeTrustedAdvisorCheck"));
+  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "AWSSupport_20130415.DescribeTrustedAdvisorCheckResult"));
   return headers;
 
 }

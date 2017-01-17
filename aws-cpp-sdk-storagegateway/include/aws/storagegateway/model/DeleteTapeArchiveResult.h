@@ -33,7 +33,9 @@ namespace StorageGateway
 namespace Model
 {
   /**
-   * <p>DeleteTapeArchiveOutput</p>
+   * <p>DeleteTapeArchiveOutput</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DeleteTapeArchiveOutput">AWS
+   * API Reference</a></p>
    */
   class AWS_STORAGEGATEWAY_API DeleteTapeArchiveResult
   {

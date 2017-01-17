@@ -177,7 +177,7 @@ void ConfigurationOptionDescription::OutputToStream(Aws::OStream& oStream, const
 
   if(m_userDefinedHasBeenSet)
   {
-      oStream << location << index << locationValue << ".UserDefined=" << m_userDefined << "&";
+      oStream << location << index << locationValue << ".UserDefined=" << std::boolalpha << m_userDefined << "&";
   }
 
   if(m_valueTypeHasBeenSet)
@@ -238,7 +238,7 @@ void ConfigurationOptionDescription::OutputToStream(Aws::OStream& oStream, const
   }
   if(m_userDefinedHasBeenSet)
   {
-      oStream << location << ".UserDefined=" << m_userDefined << "&";
+      oStream << location << ".UserDefined=" << std::boolalpha << m_userDefined << "&";
   }
   if(m_valueTypeHasBeenSet)
   {

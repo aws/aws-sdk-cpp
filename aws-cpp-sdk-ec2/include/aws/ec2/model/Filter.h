@@ -35,7 +35,9 @@ namespace Model
   /**
    * <p>A filter name and value pair that is used to return a more specific list of
    * results. Filters can be used to match a set of resources by various criteria,
-   * such as tags, attributes, or IDs.</p>
+   * such as tags, attributes, or IDs.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/Filter">AWS API
+   * Reference</a></p>
    */
   class AWS_EC2_API Filter
   {

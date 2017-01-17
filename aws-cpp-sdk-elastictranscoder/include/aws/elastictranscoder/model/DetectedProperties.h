@@ -32,7 +32,9 @@ namespace Model
 
   /**
    * <p>The detected properties of the input file. Elastic Transcoder identifies
-   * these values from the input file.</p>
+   * these values from the input file.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/DetectedProperties">AWS
+   * API Reference</a></p>
    */
   class AWS_ELASTICTRANSCODER_API DetectedProperties
   {

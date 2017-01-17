@@ -28,7 +28,10 @@ namespace Model
 
   /**
    * <p>Deletes specified images within a specified repository. Images are specified
-   * with either the <code>imageTag</code> or <code>imageDigest</code>.</p>
+   * with either the <code>imageTag</code> or <code>imageDigest</code>.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/BatchDeleteImageRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_ECR_API BatchDeleteImageRequest : public ECRRequest
   {

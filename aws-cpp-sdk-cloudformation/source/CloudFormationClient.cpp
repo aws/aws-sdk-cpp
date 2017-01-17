@@ -118,6 +118,16 @@ void CloudFormationClient::init(const ClientConfiguration& config)
   m_uri = ss.str();
 }
 
+Aws::String CloudFormationClient::ConvertRequestToPresignedUrl(const AmazonSerializableWebServiceRequest& requestToConvert, const char* region) const
+{
+  Aws::StringStream ss;
+  ss << "https://" << CloudFormationEndpoint::ForRegion(region);
+  ss << "?" << requestToConvert.SerializePayload();
+
+  URI uri(ss.str());
+  return GeneratePresignedUrl(uri, HttpMethod::HTTP_GET, region, 3600);
+}
+
 CancelUpdateStackOutcome CloudFormationClient::CancelUpdateStack(const CancelUpdateStackRequest& request) const
 {
   Aws::StringStream ss;
@@ -975,4 +985,6 @@ void CloudFormationClient::ValidateTemplateAsyncHelper(const ValidateTemplateReq
 {
   handler(this, request, ValidateTemplate(request), context);
 }
+
+
 

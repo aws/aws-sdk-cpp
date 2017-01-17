@@ -192,7 +192,7 @@ void PendingModifiedValues::OutputToStream(Aws::OStream& oStream, const char* lo
 
   if(m_multiAZHasBeenSet)
   {
-      oStream << location << index << locationValue << ".MultiAZ=" << m_multiAZ << "&";
+      oStream << location << index << locationValue << ".MultiAZ=" << std::boolalpha << m_multiAZ << "&";
   }
 
   if(m_engineVersionHasBeenSet)
@@ -256,7 +256,7 @@ void PendingModifiedValues::OutputToStream(Aws::OStream& oStream, const char* lo
   }
   if(m_multiAZHasBeenSet)
   {
-      oStream << location << ".MultiAZ=" << m_multiAZ << "&";
+      oStream << location << ".MultiAZ=" << std::boolalpha << m_multiAZ << "&";
   }
   if(m_engineVersionHasBeenSet)
   {

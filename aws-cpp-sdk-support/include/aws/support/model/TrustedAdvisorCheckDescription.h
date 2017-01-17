@@ -32,7 +32,10 @@ namespace Model
 {
 
   /**
-   * <p>The description and metadata for a Trusted Advisor check.</p>
+   * <p>The description and metadata for a Trusted Advisor check.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/TrustedAdvisorCheckDescription">AWS
+   * API Reference</a></p>
    */
   class AWS_SUPPORT_API TrustedAdvisorCheckDescription
   {

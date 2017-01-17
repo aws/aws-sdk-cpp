@@ -35,7 +35,10 @@ namespace SES
 namespace Model
 {
   /**
-   * <p>Represents the requested sending authorization policies.</p>
+   * <p>Represents the requested sending authorization policies.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/GetIdentityPoliciesResponse">AWS
+   * API Reference</a></p>
    */
   class AWS_SES_API GetIdentityPoliciesResult
   {

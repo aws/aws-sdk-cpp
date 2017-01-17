@@ -63,7 +63,7 @@ void VpnConnectionOptionsSpecification::OutputToStream(Aws::OStream& oStream, co
 {
   if(m_staticRoutesOnlyHasBeenSet)
   {
-      oStream << location << index << locationValue << ".StaticRoutesOnly=" << m_staticRoutesOnly << "&";
+      oStream << location << index << locationValue << ".StaticRoutesOnly=" << std::boolalpha << m_staticRoutesOnly << "&";
   }
 
 }
@@ -72,7 +72,7 @@ void VpnConnectionOptionsSpecification::OutputToStream(Aws::OStream& oStream, co
 {
   if(m_staticRoutesOnlyHasBeenSet)
   {
-      oStream << location << ".StaticRoutesOnly=" << m_staticRoutesOnly << "&";
+      oStream << location << ".StaticRoutesOnly=" << std::boolalpha << m_staticRoutesOnly << "&";
   }
 }
 

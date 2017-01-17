@@ -32,7 +32,10 @@ namespace Model
 
   /**
    * <p>When updating application input configuration, provides information about an
-   * Amazon Kinesis Firehose delivery stream as the streaming source.</p>
+   * Amazon Kinesis Firehose delivery stream as the streaming source.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/KinesisFirehoseInputUpdate">AWS
+   * API Reference</a></p>
    */
   class AWS_KINESISANALYTICS_API KinesisFirehoseInputUpdate
   {

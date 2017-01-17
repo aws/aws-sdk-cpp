@@ -42,7 +42,10 @@ namespace CloudFormation
 namespace Model
 {
   /**
-   * <p>The output for the <a>DescribeChangeSet</a> action.</p>
+   * <p>The output for the <a>DescribeChangeSet</a> action.</p><p><h3>See Also:</h3> 
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeChangeSetOutput">AWS
+   * API Reference</a></p>
    */
   class AWS_CLOUDFORMATION_API DescribeChangeSetResult
   {

@@ -34,64 +34,64 @@ namespace Model
 
     /**
      * <p>The name of the server certificate you want to retrieve information
-     * about.</p> <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
-     * for this parameter is a string of characters consisting of upper and lowercase
-     * alphanumeric characters with no spaces. You can also include any of the
-     * following characters: =,.@-</p>
+     * about.</p> <p>This parameter allows (per its <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
+     * consisting of upper and lowercase alphanumeric characters with no spaces. You
+     * can also include any of the following characters: =,.@-</p>
      */
     inline const Aws::String& GetServerCertificateName() const{ return m_serverCertificateName; }
 
     /**
      * <p>The name of the server certificate you want to retrieve information
-     * about.</p> <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
-     * for this parameter is a string of characters consisting of upper and lowercase
-     * alphanumeric characters with no spaces. You can also include any of the
-     * following characters: =,.@-</p>
+     * about.</p> <p>This parameter allows (per its <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
+     * consisting of upper and lowercase alphanumeric characters with no spaces. You
+     * can also include any of the following characters: =,.@-</p>
      */
     inline void SetServerCertificateName(const Aws::String& value) { m_serverCertificateNameHasBeenSet = true; m_serverCertificateName = value; }
 
     /**
      * <p>The name of the server certificate you want to retrieve information
-     * about.</p> <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
-     * for this parameter is a string of characters consisting of upper and lowercase
-     * alphanumeric characters with no spaces. You can also include any of the
-     * following characters: =,.@-</p>
+     * about.</p> <p>This parameter allows (per its <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
+     * consisting of upper and lowercase alphanumeric characters with no spaces. You
+     * can also include any of the following characters: =,.@-</p>
      */
     inline void SetServerCertificateName(Aws::String&& value) { m_serverCertificateNameHasBeenSet = true; m_serverCertificateName = value; }
 
     /**
      * <p>The name of the server certificate you want to retrieve information
-     * about.</p> <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
-     * for this parameter is a string of characters consisting of upper and lowercase
-     * alphanumeric characters with no spaces. You can also include any of the
-     * following characters: =,.@-</p>
+     * about.</p> <p>This parameter allows (per its <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
+     * consisting of upper and lowercase alphanumeric characters with no spaces. You
+     * can also include any of the following characters: =,.@-</p>
      */
     inline void SetServerCertificateName(const char* value) { m_serverCertificateNameHasBeenSet = true; m_serverCertificateName.assign(value); }
 
     /**
      * <p>The name of the server certificate you want to retrieve information
-     * about.</p> <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
-     * for this parameter is a string of characters consisting of upper and lowercase
-     * alphanumeric characters with no spaces. You can also include any of the
-     * following characters: =,.@-</p>
+     * about.</p> <p>This parameter allows (per its <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
+     * consisting of upper and lowercase alphanumeric characters with no spaces. You
+     * can also include any of the following characters: =,.@-</p>
      */
     inline GetServerCertificateRequest& WithServerCertificateName(const Aws::String& value) { SetServerCertificateName(value); return *this;}
 
     /**
      * <p>The name of the server certificate you want to retrieve information
-     * about.</p> <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
-     * for this parameter is a string of characters consisting of upper and lowercase
-     * alphanumeric characters with no spaces. You can also include any of the
-     * following characters: =,.@-</p>
+     * about.</p> <p>This parameter allows (per its <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
+     * consisting of upper and lowercase alphanumeric characters with no spaces. You
+     * can also include any of the following characters: =,.@-</p>
      */
     inline GetServerCertificateRequest& WithServerCertificateName(Aws::String&& value) { SetServerCertificateName(value); return *this;}
 
     /**
      * <p>The name of the server certificate you want to retrieve information
-     * about.</p> <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
-     * for this parameter is a string of characters consisting of upper and lowercase
-     * alphanumeric characters with no spaces. You can also include any of the
-     * following characters: =,.@-</p>
+     * about.</p> <p>This parameter allows (per its <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
+     * consisting of upper and lowercase alphanumeric characters with no spaces. You
+     * can also include any of the following characters: =,.@-</p>
      */
     inline GetServerCertificateRequest& WithServerCertificateName(const char* value) { SetServerCertificateName(value); return *this;}
 

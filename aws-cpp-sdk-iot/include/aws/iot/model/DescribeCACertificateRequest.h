@@ -25,7 +25,10 @@ namespace Model
 {
 
   /**
-   * <p>The input for the DescribeCACertificate operation.</p>
+   * <p>The input for the DescribeCACertificate operation.</p><p><h3>See Also:</h3>  
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeCACertificateRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_IOT_API DescribeCACertificateRequest : public IoTRequest
   {

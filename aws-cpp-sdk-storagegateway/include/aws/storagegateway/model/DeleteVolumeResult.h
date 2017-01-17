@@ -33,7 +33,10 @@ namespace StorageGateway
 namespace Model
 {
   /**
-   * <p>A JSON object containing the of the storage volume that was deleted</p>
+   * <p>A JSON object containing the of the storage volume that was
+   * deleted</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DeleteVolumeOutput">AWS
+   * API Reference</a></p>
    */
   class AWS_STORAGEGATEWAY_API DeleteVolumeResult
   {

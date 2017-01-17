@@ -40,7 +40,9 @@ namespace Model
    * one output for a job, information about that output. If you specified multiple
    * outputs for a job, the <code>Output</code> object lists information about the
    * first output. This duplicates the information that is listed for the first
-   * output in the <code>Outputs</code> object.</p>
+   * output in the <code>Outputs</code> object.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/JobOutput">AWS
+   * API Reference</a></p>
    */
   class AWS_ELASTICTRANSCODER_API JobOutput
   {

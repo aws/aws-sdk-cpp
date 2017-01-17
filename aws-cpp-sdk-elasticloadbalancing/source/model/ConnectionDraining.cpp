@@ -73,7 +73,7 @@ void ConnectionDraining::OutputToStream(Aws::OStream& oStream, const char* locat
 {
   if(m_enabledHasBeenSet)
   {
-      oStream << location << index << locationValue << ".Enabled=" << m_enabled << "&";
+      oStream << location << index << locationValue << ".Enabled=" << std::boolalpha << m_enabled << "&";
   }
 
   if(m_timeoutHasBeenSet)
@@ -87,7 +87,7 @@ void ConnectionDraining::OutputToStream(Aws::OStream& oStream, const char* locat
 {
   if(m_enabledHasBeenSet)
   {
-      oStream << location << ".Enabled=" << m_enabled << "&";
+      oStream << location << ".Enabled=" << std::boolalpha << m_enabled << "&";
   }
   if(m_timeoutHasBeenSet)
   {

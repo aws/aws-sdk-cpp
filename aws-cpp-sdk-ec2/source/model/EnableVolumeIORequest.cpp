@@ -32,7 +32,7 @@ Aws::String EnableVolumeIORequest::SerializePayload() const
   ss << "Action=EnableVolumeIO&";
   if(m_dryRunHasBeenSet)
   {
-    ss << "DryRun=" << m_dryRun << "&";
+    ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
   if(m_volumeIdHasBeenSet)
@@ -40,7 +40,7 @@ Aws::String EnableVolumeIORequest::SerializePayload() const
     ss << "VolumeId=" << StringUtils::URLEncode(m_volumeId.c_str()) << "&";
   }
 
-  ss << "Version=2015-10-01";
+  ss << "Version=2016-11-15";
   return ss.str();
 }
 

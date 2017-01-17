@@ -37,7 +37,9 @@ namespace Model
 {
 
   /**
-   * <p>Describes a NAT gateway.</p>
+   * <p>Describes a NAT gateway.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/NatGateway">AWS API
+   * Reference</a></p>
    */
   class AWS_EC2_API NatGateway
   {
@@ -247,75 +249,75 @@ namespace Model
     inline NatGateway& AddNatGatewayAddresses(NatGatewayAddress&& value) { m_natGatewayAddressesHasBeenSet = true; m_natGatewayAddresses.push_back(value); return *this; }
 
     /**
-     * <p>The state of the NAT gateway.</p> <ul> <li> <p><code>pending</code>: The NAT
-     * gateway is being created and is not ready to process traffic.</p> </li> <li>
-     * <p><code>failed</code>: The NAT gateway could not be created. Check the
+     * <p>The state of the NAT gateway.</p> <ul> <li> <p> <code>pending</code>: The NAT
+     * gateway is being created and is not ready to process traffic.</p> </li> <li> <p>
+     * <code>failed</code>: The NAT gateway could not be created. Check the
      * <code>failureCode</code> and <code>failureMessage</code> fields for the
-     * reason.</p> </li> <li> <p><code>available</code>: The NAT gateway is able to
+     * reason.</p> </li> <li> <p> <code>available</code>: The NAT gateway is able to
      * process traffic. This status remains until you delete the NAT gateway, and does
-     * not indicate the health of the NAT gateway.</p> </li> <li>
-     * <p><code>deleting</code>: The NAT gateway is in the process of being terminated
-     * and may still be processing traffic.</p> </li> <li> <p><code>deleted</code>: The
+     * not indicate the health of the NAT gateway.</p> </li> <li> <p>
+     * <code>deleting</code>: The NAT gateway is in the process of being terminated and
+     * may still be processing traffic.</p> </li> <li> <p> <code>deleted</code>: The
      * NAT gateway has been terminated and is no longer processing traffic.</p> </li>
      * </ul>
      */
     inline const NatGatewayState& GetState() const{ return m_state; }
 
     /**
-     * <p>The state of the NAT gateway.</p> <ul> <li> <p><code>pending</code>: The NAT
-     * gateway is being created and is not ready to process traffic.</p> </li> <li>
-     * <p><code>failed</code>: The NAT gateway could not be created. Check the
+     * <p>The state of the NAT gateway.</p> <ul> <li> <p> <code>pending</code>: The NAT
+     * gateway is being created and is not ready to process traffic.</p> </li> <li> <p>
+     * <code>failed</code>: The NAT gateway could not be created. Check the
      * <code>failureCode</code> and <code>failureMessage</code> fields for the
-     * reason.</p> </li> <li> <p><code>available</code>: The NAT gateway is able to
+     * reason.</p> </li> <li> <p> <code>available</code>: The NAT gateway is able to
      * process traffic. This status remains until you delete the NAT gateway, and does
-     * not indicate the health of the NAT gateway.</p> </li> <li>
-     * <p><code>deleting</code>: The NAT gateway is in the process of being terminated
-     * and may still be processing traffic.</p> </li> <li> <p><code>deleted</code>: The
+     * not indicate the health of the NAT gateway.</p> </li> <li> <p>
+     * <code>deleting</code>: The NAT gateway is in the process of being terminated and
+     * may still be processing traffic.</p> </li> <li> <p> <code>deleted</code>: The
      * NAT gateway has been terminated and is no longer processing traffic.</p> </li>
      * </ul>
      */
     inline void SetState(const NatGatewayState& value) { m_stateHasBeenSet = true; m_state = value; }
 
     /**
-     * <p>The state of the NAT gateway.</p> <ul> <li> <p><code>pending</code>: The NAT
-     * gateway is being created and is not ready to process traffic.</p> </li> <li>
-     * <p><code>failed</code>: The NAT gateway could not be created. Check the
+     * <p>The state of the NAT gateway.</p> <ul> <li> <p> <code>pending</code>: The NAT
+     * gateway is being created and is not ready to process traffic.</p> </li> <li> <p>
+     * <code>failed</code>: The NAT gateway could not be created. Check the
      * <code>failureCode</code> and <code>failureMessage</code> fields for the
-     * reason.</p> </li> <li> <p><code>available</code>: The NAT gateway is able to
+     * reason.</p> </li> <li> <p> <code>available</code>: The NAT gateway is able to
      * process traffic. This status remains until you delete the NAT gateway, and does
-     * not indicate the health of the NAT gateway.</p> </li> <li>
-     * <p><code>deleting</code>: The NAT gateway is in the process of being terminated
-     * and may still be processing traffic.</p> </li> <li> <p><code>deleted</code>: The
+     * not indicate the health of the NAT gateway.</p> </li> <li> <p>
+     * <code>deleting</code>: The NAT gateway is in the process of being terminated and
+     * may still be processing traffic.</p> </li> <li> <p> <code>deleted</code>: The
      * NAT gateway has been terminated and is no longer processing traffic.</p> </li>
      * </ul>
      */
     inline void SetState(NatGatewayState&& value) { m_stateHasBeenSet = true; m_state = value; }
 
     /**
-     * <p>The state of the NAT gateway.</p> <ul> <li> <p><code>pending</code>: The NAT
-     * gateway is being created and is not ready to process traffic.</p> </li> <li>
-     * <p><code>failed</code>: The NAT gateway could not be created. Check the
+     * <p>The state of the NAT gateway.</p> <ul> <li> <p> <code>pending</code>: The NAT
+     * gateway is being created and is not ready to process traffic.</p> </li> <li> <p>
+     * <code>failed</code>: The NAT gateway could not be created. Check the
      * <code>failureCode</code> and <code>failureMessage</code> fields for the
-     * reason.</p> </li> <li> <p><code>available</code>: The NAT gateway is able to
+     * reason.</p> </li> <li> <p> <code>available</code>: The NAT gateway is able to
      * process traffic. This status remains until you delete the NAT gateway, and does
-     * not indicate the health of the NAT gateway.</p> </li> <li>
-     * <p><code>deleting</code>: The NAT gateway is in the process of being terminated
-     * and may still be processing traffic.</p> </li> <li> <p><code>deleted</code>: The
+     * not indicate the health of the NAT gateway.</p> </li> <li> <p>
+     * <code>deleting</code>: The NAT gateway is in the process of being terminated and
+     * may still be processing traffic.</p> </li> <li> <p> <code>deleted</code>: The
      * NAT gateway has been terminated and is no longer processing traffic.</p> </li>
      * </ul>
      */
     inline NatGateway& WithState(const NatGatewayState& value) { SetState(value); return *this;}
 
     /**
-     * <p>The state of the NAT gateway.</p> <ul> <li> <p><code>pending</code>: The NAT
-     * gateway is being created and is not ready to process traffic.</p> </li> <li>
-     * <p><code>failed</code>: The NAT gateway could not be created. Check the
+     * <p>The state of the NAT gateway.</p> <ul> <li> <p> <code>pending</code>: The NAT
+     * gateway is being created and is not ready to process traffic.</p> </li> <li> <p>
+     * <code>failed</code>: The NAT gateway could not be created. Check the
      * <code>failureCode</code> and <code>failureMessage</code> fields for the
-     * reason.</p> </li> <li> <p><code>available</code>: The NAT gateway is able to
+     * reason.</p> </li> <li> <p> <code>available</code>: The NAT gateway is able to
      * process traffic. This status remains until you delete the NAT gateway, and does
-     * not indicate the health of the NAT gateway.</p> </li> <li>
-     * <p><code>deleting</code>: The NAT gateway is in the process of being terminated
-     * and may still be processing traffic.</p> </li> <li> <p><code>deleted</code>: The
+     * not indicate the health of the NAT gateway.</p> </li> <li> <p>
+     * <code>deleting</code>: The NAT gateway is in the process of being terminated and
+     * may still be processing traffic.</p> </li> <li> <p> <code>deleted</code>: The
      * NAT gateway has been terminated and is no longer processing traffic.</p> </li>
      * </ul>
      */
@@ -386,113 +388,120 @@ namespace Model
 
     /**
      * <p>If the NAT gateway could not be created, specifies the error message for the
-     * failure, that corresponds to the error code. </p> <ul> <li><p>For
+     * failure, that corresponds to the error code.</p> <ul> <li> <p>For
      * InsufficientFreeAddressesInSubnet: "Subnet has insufficient free addresses to
-     * create this NAT gateway"</p></li> <li><p>For Gateway.NotAttached: "Network
-     * vpc-xxxxxxxx has no Internet gateway attached"</p></li> <li><p>For
+     * create this NAT gateway"</p> </li> <li> <p>For Gateway.NotAttached: "Network
+     * vpc-xxxxxxxx has no Internet gateway attached"</p> </li> <li> <p>For
      * InvalidAllocationID.NotFound: "Elastic IP address eipalloc-xxxxxxxx could not be
-     * associated with this NAT gateway"</p></li> <li><p>For
+     * associated with this NAT gateway"</p> </li> <li> <p>For
      * Resource.AlreadyAssociated: "Elastic IP address eipalloc-xxxxxxxx is already
-     * associated"</p></li> <li><p>For InternalError: "Network interface eni-xxxxxxxx,
-     * created and used internally by this NAT gateway is in an invalid state. Please
-     * try again."</p></li> <li><p>For InvalidSubnetID.NotFound: "The specified subnet
-     * subnet-xxxxxxxx does not exist or could not be found."</p></li> </ul>
+     * associated"</p> </li> <li> <p>For InternalError: "Network interface
+     * eni-xxxxxxxx, created and used internally by this NAT gateway is in an invalid
+     * state. Please try again."</p> </li> <li> <p>For InvalidSubnetID.NotFound: "The
+     * specified subnet subnet-xxxxxxxx does not exist or could not be found."</p>
+     * </li> </ul>
      */
     inline const Aws::String& GetFailureMessage() const{ return m_failureMessage; }
 
     /**
      * <p>If the NAT gateway could not be created, specifies the error message for the
-     * failure, that corresponds to the error code. </p> <ul> <li><p>For
+     * failure, that corresponds to the error code.</p> <ul> <li> <p>For
      * InsufficientFreeAddressesInSubnet: "Subnet has insufficient free addresses to
-     * create this NAT gateway"</p></li> <li><p>For Gateway.NotAttached: "Network
-     * vpc-xxxxxxxx has no Internet gateway attached"</p></li> <li><p>For
+     * create this NAT gateway"</p> </li> <li> <p>For Gateway.NotAttached: "Network
+     * vpc-xxxxxxxx has no Internet gateway attached"</p> </li> <li> <p>For
      * InvalidAllocationID.NotFound: "Elastic IP address eipalloc-xxxxxxxx could not be
-     * associated with this NAT gateway"</p></li> <li><p>For
+     * associated with this NAT gateway"</p> </li> <li> <p>For
      * Resource.AlreadyAssociated: "Elastic IP address eipalloc-xxxxxxxx is already
-     * associated"</p></li> <li><p>For InternalError: "Network interface eni-xxxxxxxx,
-     * created and used internally by this NAT gateway is in an invalid state. Please
-     * try again."</p></li> <li><p>For InvalidSubnetID.NotFound: "The specified subnet
-     * subnet-xxxxxxxx does not exist or could not be found."</p></li> </ul>
+     * associated"</p> </li> <li> <p>For InternalError: "Network interface
+     * eni-xxxxxxxx, created and used internally by this NAT gateway is in an invalid
+     * state. Please try again."</p> </li> <li> <p>For InvalidSubnetID.NotFound: "The
+     * specified subnet subnet-xxxxxxxx does not exist or could not be found."</p>
+     * </li> </ul>
      */
     inline void SetFailureMessage(const Aws::String& value) { m_failureMessageHasBeenSet = true; m_failureMessage = value; }
 
     /**
      * <p>If the NAT gateway could not be created, specifies the error message for the
-     * failure, that corresponds to the error code. </p> <ul> <li><p>For
+     * failure, that corresponds to the error code.</p> <ul> <li> <p>For
      * InsufficientFreeAddressesInSubnet: "Subnet has insufficient free addresses to
-     * create this NAT gateway"</p></li> <li><p>For Gateway.NotAttached: "Network
-     * vpc-xxxxxxxx has no Internet gateway attached"</p></li> <li><p>For
+     * create this NAT gateway"</p> </li> <li> <p>For Gateway.NotAttached: "Network
+     * vpc-xxxxxxxx has no Internet gateway attached"</p> </li> <li> <p>For
      * InvalidAllocationID.NotFound: "Elastic IP address eipalloc-xxxxxxxx could not be
-     * associated with this NAT gateway"</p></li> <li><p>For
+     * associated with this NAT gateway"</p> </li> <li> <p>For
      * Resource.AlreadyAssociated: "Elastic IP address eipalloc-xxxxxxxx is already
-     * associated"</p></li> <li><p>For InternalError: "Network interface eni-xxxxxxxx,
-     * created and used internally by this NAT gateway is in an invalid state. Please
-     * try again."</p></li> <li><p>For InvalidSubnetID.NotFound: "The specified subnet
-     * subnet-xxxxxxxx does not exist or could not be found."</p></li> </ul>
+     * associated"</p> </li> <li> <p>For InternalError: "Network interface
+     * eni-xxxxxxxx, created and used internally by this NAT gateway is in an invalid
+     * state. Please try again."</p> </li> <li> <p>For InvalidSubnetID.NotFound: "The
+     * specified subnet subnet-xxxxxxxx does not exist or could not be found."</p>
+     * </li> </ul>
      */
     inline void SetFailureMessage(Aws::String&& value) { m_failureMessageHasBeenSet = true; m_failureMessage = value; }
 
     /**
      * <p>If the NAT gateway could not be created, specifies the error message for the
-     * failure, that corresponds to the error code. </p> <ul> <li><p>For
+     * failure, that corresponds to the error code.</p> <ul> <li> <p>For
      * InsufficientFreeAddressesInSubnet: "Subnet has insufficient free addresses to
-     * create this NAT gateway"</p></li> <li><p>For Gateway.NotAttached: "Network
-     * vpc-xxxxxxxx has no Internet gateway attached"</p></li> <li><p>For
+     * create this NAT gateway"</p> </li> <li> <p>For Gateway.NotAttached: "Network
+     * vpc-xxxxxxxx has no Internet gateway attached"</p> </li> <li> <p>For
      * InvalidAllocationID.NotFound: "Elastic IP address eipalloc-xxxxxxxx could not be
-     * associated with this NAT gateway"</p></li> <li><p>For
+     * associated with this NAT gateway"</p> </li> <li> <p>For
      * Resource.AlreadyAssociated: "Elastic IP address eipalloc-xxxxxxxx is already
-     * associated"</p></li> <li><p>For InternalError: "Network interface eni-xxxxxxxx,
-     * created and used internally by this NAT gateway is in an invalid state. Please
-     * try again."</p></li> <li><p>For InvalidSubnetID.NotFound: "The specified subnet
-     * subnet-xxxxxxxx does not exist or could not be found."</p></li> </ul>
+     * associated"</p> </li> <li> <p>For InternalError: "Network interface
+     * eni-xxxxxxxx, created and used internally by this NAT gateway is in an invalid
+     * state. Please try again."</p> </li> <li> <p>For InvalidSubnetID.NotFound: "The
+     * specified subnet subnet-xxxxxxxx does not exist or could not be found."</p>
+     * </li> </ul>
      */
     inline void SetFailureMessage(const char* value) { m_failureMessageHasBeenSet = true; m_failureMessage.assign(value); }
 
     /**
      * <p>If the NAT gateway could not be created, specifies the error message for the
-     * failure, that corresponds to the error code. </p> <ul> <li><p>For
+     * failure, that corresponds to the error code.</p> <ul> <li> <p>For
      * InsufficientFreeAddressesInSubnet: "Subnet has insufficient free addresses to
-     * create this NAT gateway"</p></li> <li><p>For Gateway.NotAttached: "Network
-     * vpc-xxxxxxxx has no Internet gateway attached"</p></li> <li><p>For
+     * create this NAT gateway"</p> </li> <li> <p>For Gateway.NotAttached: "Network
+     * vpc-xxxxxxxx has no Internet gateway attached"</p> </li> <li> <p>For
      * InvalidAllocationID.NotFound: "Elastic IP address eipalloc-xxxxxxxx could not be
-     * associated with this NAT gateway"</p></li> <li><p>For
+     * associated with this NAT gateway"</p> </li> <li> <p>For
      * Resource.AlreadyAssociated: "Elastic IP address eipalloc-xxxxxxxx is already
-     * associated"</p></li> <li><p>For InternalError: "Network interface eni-xxxxxxxx,
-     * created and used internally by this NAT gateway is in an invalid state. Please
-     * try again."</p></li> <li><p>For InvalidSubnetID.NotFound: "The specified subnet
-     * subnet-xxxxxxxx does not exist or could not be found."</p></li> </ul>
+     * associated"</p> </li> <li> <p>For InternalError: "Network interface
+     * eni-xxxxxxxx, created and used internally by this NAT gateway is in an invalid
+     * state. Please try again."</p> </li> <li> <p>For InvalidSubnetID.NotFound: "The
+     * specified subnet subnet-xxxxxxxx does not exist or could not be found."</p>
+     * </li> </ul>
      */
     inline NatGateway& WithFailureMessage(const Aws::String& value) { SetFailureMessage(value); return *this;}
 
     /**
      * <p>If the NAT gateway could not be created, specifies the error message for the
-     * failure, that corresponds to the error code. </p> <ul> <li><p>For
+     * failure, that corresponds to the error code.</p> <ul> <li> <p>For
      * InsufficientFreeAddressesInSubnet: "Subnet has insufficient free addresses to
-     * create this NAT gateway"</p></li> <li><p>For Gateway.NotAttached: "Network
-     * vpc-xxxxxxxx has no Internet gateway attached"</p></li> <li><p>For
+     * create this NAT gateway"</p> </li> <li> <p>For Gateway.NotAttached: "Network
+     * vpc-xxxxxxxx has no Internet gateway attached"</p> </li> <li> <p>For
      * InvalidAllocationID.NotFound: "Elastic IP address eipalloc-xxxxxxxx could not be
-     * associated with this NAT gateway"</p></li> <li><p>For
+     * associated with this NAT gateway"</p> </li> <li> <p>For
      * Resource.AlreadyAssociated: "Elastic IP address eipalloc-xxxxxxxx is already
-     * associated"</p></li> <li><p>For InternalError: "Network interface eni-xxxxxxxx,
-     * created and used internally by this NAT gateway is in an invalid state. Please
-     * try again."</p></li> <li><p>For InvalidSubnetID.NotFound: "The specified subnet
-     * subnet-xxxxxxxx does not exist or could not be found."</p></li> </ul>
+     * associated"</p> </li> <li> <p>For InternalError: "Network interface
+     * eni-xxxxxxxx, created and used internally by this NAT gateway is in an invalid
+     * state. Please try again."</p> </li> <li> <p>For InvalidSubnetID.NotFound: "The
+     * specified subnet subnet-xxxxxxxx does not exist or could not be found."</p>
+     * </li> </ul>
      */
     inline NatGateway& WithFailureMessage(Aws::String&& value) { SetFailureMessage(value); return *this;}
 
     /**
      * <p>If the NAT gateway could not be created, specifies the error message for the
-     * failure, that corresponds to the error code. </p> <ul> <li><p>For
+     * failure, that corresponds to the error code.</p> <ul> <li> <p>For
      * InsufficientFreeAddressesInSubnet: "Subnet has insufficient free addresses to
-     * create this NAT gateway"</p></li> <li><p>For Gateway.NotAttached: "Network
-     * vpc-xxxxxxxx has no Internet gateway attached"</p></li> <li><p>For
+     * create this NAT gateway"</p> </li> <li> <p>For Gateway.NotAttached: "Network
+     * vpc-xxxxxxxx has no Internet gateway attached"</p> </li> <li> <p>For
      * InvalidAllocationID.NotFound: "Elastic IP address eipalloc-xxxxxxxx could not be
-     * associated with this NAT gateway"</p></li> <li><p>For
+     * associated with this NAT gateway"</p> </li> <li> <p>For
      * Resource.AlreadyAssociated: "Elastic IP address eipalloc-xxxxxxxx is already
-     * associated"</p></li> <li><p>For InternalError: "Network interface eni-xxxxxxxx,
-     * created and used internally by this NAT gateway is in an invalid state. Please
-     * try again."</p></li> <li><p>For InvalidSubnetID.NotFound: "The specified subnet
-     * subnet-xxxxxxxx does not exist or could not be found."</p></li> </ul>
+     * associated"</p> </li> <li> <p>For InternalError: "Network interface
+     * eni-xxxxxxxx, created and used internally by this NAT gateway is in an invalid
+     * state. Please try again."</p> </li> <li> <p>For InvalidSubnetID.NotFound: "The
+     * specified subnet subnet-xxxxxxxx does not exist or could not be found."</p>
+     * </li> </ul>
      */
     inline NatGateway& WithFailureMessage(const char* value) { SetFailureMessage(value); return *this;}
 

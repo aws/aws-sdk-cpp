@@ -31,7 +31,10 @@ namespace Model
 {
 
   /**
-   * <p>A number representing the monetary amount for an offering or transaction.</p>
+   * <p>A number representing the monetary amount for an offering or
+   * transaction.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/MonetaryAmount">AWS
+   * API Reference</a></p>
    */
   class AWS_DEVICEFARM_API MonetaryAmount
   {

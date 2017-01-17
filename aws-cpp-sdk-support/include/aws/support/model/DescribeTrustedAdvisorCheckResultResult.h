@@ -34,7 +34,10 @@ namespace Model
 {
   /**
    * <p>The result of the Trusted Advisor check returned by the
-   * <a>DescribeTrustedAdvisorCheckResult</a> operation.</p>
+   * <a>DescribeTrustedAdvisorCheckResult</a> operation.</p><p><h3>See Also:</h3>  
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/DescribeTrustedAdvisorCheckResultResponse">AWS
+   * API Reference</a></p>
    */
   class AWS_SUPPORT_API DescribeTrustedAdvisorCheckResultResult
   {

@@ -87,7 +87,7 @@ void IdentityDkimAttributes::OutputToStream(Aws::OStream& oStream, const char* l
 {
   if(m_dkimEnabledHasBeenSet)
   {
-      oStream << location << index << locationValue << ".DkimEnabled=" << m_dkimEnabled << "&";
+      oStream << location << index << locationValue << ".DkimEnabled=" << std::boolalpha << m_dkimEnabled << "&";
   }
 
   if(m_dkimVerificationStatusHasBeenSet)
@@ -110,7 +110,7 @@ void IdentityDkimAttributes::OutputToStream(Aws::OStream& oStream, const char* l
 {
   if(m_dkimEnabledHasBeenSet)
   {
-      oStream << location << ".DkimEnabled=" << m_dkimEnabled << "&";
+      oStream << location << ".DkimEnabled=" << std::boolalpha << m_dkimEnabled << "&";
   }
   if(m_dkimVerificationStatusHasBeenSet)
   {

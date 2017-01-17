@@ -272,7 +272,7 @@ void ScheduledInstancesLaunchSpecification::OutputToStream(Aws::OStream& oStream
 
   if(m_ebsOptimizedHasBeenSet)
   {
-      oStream << location << index << locationValue << ".EbsOptimized=" << m_ebsOptimized << "&";
+      oStream << location << index << locationValue << ".EbsOptimized=" << std::boolalpha << m_ebsOptimized << "&";
   }
 
 }
@@ -355,7 +355,7 @@ void ScheduledInstancesLaunchSpecification::OutputToStream(Aws::OStream& oStream
   }
   if(m_ebsOptimizedHasBeenSet)
   {
-      oStream << location << ".EbsOptimized=" << m_ebsOptimized << "&";
+      oStream << location << ".EbsOptimized=" << std::boolalpha << m_ebsOptimized << "&";
   }
 }
 

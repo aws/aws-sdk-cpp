@@ -36,7 +36,10 @@ namespace Model
 {
   /**
    * <p>Represents the query results from a <code>DescribeEvaluations</code>
-   * operation. The content is essentially a list of <code>Evaluation</code>.</p>
+   * operation. The content is essentially a list of
+   * <code>Evaluation</code>.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/DescribeEvaluationsOutput">AWS
+   * API Reference</a></p>
    */
   class AWS_MACHINELEARNING_API DescribeEvaluationsResult
   {

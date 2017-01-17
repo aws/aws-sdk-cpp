@@ -38,7 +38,7 @@ namespace Model
      * <p>A unique identifier for the CMK.</p> <p>Use the CMK's unique identifier or
      * its Amazon Resource Name (ARN). For example:</p> <ul> <li> <p>Unique ID:
      * 1234abcd-12ab-34cd-56ef-1234567890ab</p> </li> <li> <p>ARN:
-     * arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</p>
+     * arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</p>
      * </li> </ul>
      */
     inline const Aws::String& GetKeyId() const{ return m_keyId; }
@@ -47,7 +47,7 @@ namespace Model
      * <p>A unique identifier for the CMK.</p> <p>Use the CMK's unique identifier or
      * its Amazon Resource Name (ARN). For example:</p> <ul> <li> <p>Unique ID:
      * 1234abcd-12ab-34cd-56ef-1234567890ab</p> </li> <li> <p>ARN:
-     * arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</p>
+     * arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</p>
      * </li> </ul>
      */
     inline void SetKeyId(const Aws::String& value) { m_keyIdHasBeenSet = true; m_keyId = value; }
@@ -56,7 +56,7 @@ namespace Model
      * <p>A unique identifier for the CMK.</p> <p>Use the CMK's unique identifier or
      * its Amazon Resource Name (ARN). For example:</p> <ul> <li> <p>Unique ID:
      * 1234abcd-12ab-34cd-56ef-1234567890ab</p> </li> <li> <p>ARN:
-     * arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</p>
+     * arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</p>
      * </li> </ul>
      */
     inline void SetKeyId(Aws::String&& value) { m_keyIdHasBeenSet = true; m_keyId = value; }
@@ -65,7 +65,7 @@ namespace Model
      * <p>A unique identifier for the CMK.</p> <p>Use the CMK's unique identifier or
      * its Amazon Resource Name (ARN). For example:</p> <ul> <li> <p>Unique ID:
      * 1234abcd-12ab-34cd-56ef-1234567890ab</p> </li> <li> <p>ARN:
-     * arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</p>
+     * arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</p>
      * </li> </ul>
      */
     inline void SetKeyId(const char* value) { m_keyIdHasBeenSet = true; m_keyId.assign(value); }
@@ -74,7 +74,7 @@ namespace Model
      * <p>A unique identifier for the CMK.</p> <p>Use the CMK's unique identifier or
      * its Amazon Resource Name (ARN). For example:</p> <ul> <li> <p>Unique ID:
      * 1234abcd-12ab-34cd-56ef-1234567890ab</p> </li> <li> <p>ARN:
-     * arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</p>
+     * arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</p>
      * </li> </ul>
      */
     inline PutKeyPolicyRequest& WithKeyId(const Aws::String& value) { SetKeyId(value); return *this;}
@@ -83,7 +83,7 @@ namespace Model
      * <p>A unique identifier for the CMK.</p> <p>Use the CMK's unique identifier or
      * its Amazon Resource Name (ARN). For example:</p> <ul> <li> <p>Unique ID:
      * 1234abcd-12ab-34cd-56ef-1234567890ab</p> </li> <li> <p>ARN:
-     * arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</p>
+     * arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</p>
      * </li> </ul>
      */
     inline PutKeyPolicyRequest& WithKeyId(Aws::String&& value) { SetKeyId(value); return *this;}
@@ -92,7 +92,7 @@ namespace Model
      * <p>A unique identifier for the CMK.</p> <p>Use the CMK's unique identifier or
      * its Amazon Resource Name (ARN). For example:</p> <ul> <li> <p>Unique ID:
      * 1234abcd-12ab-34cd-56ef-1234567890ab</p> </li> <li> <p>ARN:
-     * arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</p>
+     * arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</p>
      * </li> </ul>
      */
     inline PutKeyPolicyRequest& WithKeyId(const char* value) { SetKeyId(value); return *this;}

@@ -32,7 +32,10 @@ namespace Model
 {
 
   /**
-   * <p>The Amazon EBS configuration of a cluster instance.</p>
+   * <p>The Amazon EBS configuration of a cluster instance.</p><p><h3>See Also:</h3> 
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/EbsConfiguration">AWS
+   * API Reference</a></p>
    */
   class AWS_EMR_API EbsConfiguration
   {

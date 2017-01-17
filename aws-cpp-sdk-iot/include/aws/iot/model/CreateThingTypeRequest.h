@@ -26,7 +26,9 @@ namespace Model
 {
 
   /**
-   * <p>The input for the CreateThingType operation.</p>
+   * <p>The input for the CreateThingType operation.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateThingTypeRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_IOT_API CreateThingTypeRequest : public IoTRequest
   {

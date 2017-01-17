@@ -32,7 +32,9 @@ namespace Model
 
   /**
    * <p>Represents the context of an action within the stage of a pipeline to a job
-   * worker.</p>
+   * worker.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/ActionContext">AWS
+   * API Reference</a></p>
    */
   class AWS_CODEPIPELINE_API ActionContext
   {

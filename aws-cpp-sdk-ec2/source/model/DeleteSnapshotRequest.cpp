@@ -32,7 +32,7 @@ Aws::String DeleteSnapshotRequest::SerializePayload() const
   ss << "Action=DeleteSnapshot&";
   if(m_dryRunHasBeenSet)
   {
-    ss << "DryRun=" << m_dryRun << "&";
+    ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
   if(m_snapshotIdHasBeenSet)
@@ -40,7 +40,7 @@ Aws::String DeleteSnapshotRequest::SerializePayload() const
     ss << "SnapshotId=" << StringUtils::URLEncode(m_snapshotId.c_str()) << "&";
   }
 
-  ss << "Version=2015-10-01";
+  ss << "Version=2016-11-15";
   return ss.str();
 }
 

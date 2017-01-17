@@ -37,7 +37,9 @@ namespace Model
 {
 
   /**
-   * <p>General properties describing a fleet.</p>
+   * <p>General properties describing a fleet.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/FleetAttributes">AWS
+   * API Reference</a></p>
    */
   class AWS_GAMELIFT_API FleetAttributes
   {

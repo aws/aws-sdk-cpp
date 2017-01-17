@@ -36,7 +36,9 @@ namespace Model
 {
   /**
    * <p>The results from a request to change the configuration settings of an
-   * environment.</p>
+   * environment.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/ConfigurationSettingsDescriptions">AWS
+   * API Reference</a></p>
    */
   class AWS_ELASTICBEANSTALK_API DescribeConfigurationSettingsResult
   {

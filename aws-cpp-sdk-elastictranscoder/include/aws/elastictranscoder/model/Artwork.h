@@ -38,7 +38,9 @@ namespace Model
    * <code>Merge Policy</code> to "Replace" and use an empty <code>Artwork</code>
    * array.</p> <p>To pass through existing artwork unchanged, set the <code>Merge
    * Policy</code> to "Prepend", "Append", or "Fallback", and use an empty
-   * <code>Artwork</code> array.</p>
+   * <code>Artwork</code> array.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/Artwork">AWS
+   * API Reference</a></p>
    */
   class AWS_ELASTICTRANSCODER_API Artwork
   {

@@ -70,121 +70,114 @@ namespace Model
     inline RetireGrantRequest& WithGrantToken(const char* value) { SetGrantToken(value); return *this;}
 
     /**
-     * <p>A unique identifier for the customer master key associated with the grant.
-     * This value can be a globally unique identifier or a fully specified ARN of the
-     * key.</p> <ul> <li> <p>Key ARN Example -
-     * arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</p>
-     * </li> <li> <p>Globally Unique Key ID Example -
-     * 12345678-1234-1234-1234-123456789012</p> </li> </ul>
+     * <p>The Amazon Resource Name of the CMK associated with the grant. Example:</p>
+     * <ul> <li>
+     * <p>arn:aws:kms:us-east-2:444455556666:key/1234abcd-12ab-34cd-56ef-1234567890ab</p>
+     * </li> </ul>
      */
     inline const Aws::String& GetKeyId() const{ return m_keyId; }
 
     /**
-     * <p>A unique identifier for the customer master key associated with the grant.
-     * This value can be a globally unique identifier or a fully specified ARN of the
-     * key.</p> <ul> <li> <p>Key ARN Example -
-     * arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</p>
-     * </li> <li> <p>Globally Unique Key ID Example -
-     * 12345678-1234-1234-1234-123456789012</p> </li> </ul>
+     * <p>The Amazon Resource Name of the CMK associated with the grant. Example:</p>
+     * <ul> <li>
+     * <p>arn:aws:kms:us-east-2:444455556666:key/1234abcd-12ab-34cd-56ef-1234567890ab</p>
+     * </li> </ul>
      */
     inline void SetKeyId(const Aws::String& value) { m_keyIdHasBeenSet = true; m_keyId = value; }
 
     /**
-     * <p>A unique identifier for the customer master key associated with the grant.
-     * This value can be a globally unique identifier or a fully specified ARN of the
-     * key.</p> <ul> <li> <p>Key ARN Example -
-     * arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</p>
-     * </li> <li> <p>Globally Unique Key ID Example -
-     * 12345678-1234-1234-1234-123456789012</p> </li> </ul>
+     * <p>The Amazon Resource Name of the CMK associated with the grant. Example:</p>
+     * <ul> <li>
+     * <p>arn:aws:kms:us-east-2:444455556666:key/1234abcd-12ab-34cd-56ef-1234567890ab</p>
+     * </li> </ul>
      */
     inline void SetKeyId(Aws::String&& value) { m_keyIdHasBeenSet = true; m_keyId = value; }
 
     /**
-     * <p>A unique identifier for the customer master key associated with the grant.
-     * This value can be a globally unique identifier or a fully specified ARN of the
-     * key.</p> <ul> <li> <p>Key ARN Example -
-     * arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</p>
-     * </li> <li> <p>Globally Unique Key ID Example -
-     * 12345678-1234-1234-1234-123456789012</p> </li> </ul>
+     * <p>The Amazon Resource Name of the CMK associated with the grant. Example:</p>
+     * <ul> <li>
+     * <p>arn:aws:kms:us-east-2:444455556666:key/1234abcd-12ab-34cd-56ef-1234567890ab</p>
+     * </li> </ul>
      */
     inline void SetKeyId(const char* value) { m_keyIdHasBeenSet = true; m_keyId.assign(value); }
 
     /**
-     * <p>A unique identifier for the customer master key associated with the grant.
-     * This value can be a globally unique identifier or a fully specified ARN of the
-     * key.</p> <ul> <li> <p>Key ARN Example -
-     * arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</p>
-     * </li> <li> <p>Globally Unique Key ID Example -
-     * 12345678-1234-1234-1234-123456789012</p> </li> </ul>
+     * <p>The Amazon Resource Name of the CMK associated with the grant. Example:</p>
+     * <ul> <li>
+     * <p>arn:aws:kms:us-east-2:444455556666:key/1234abcd-12ab-34cd-56ef-1234567890ab</p>
+     * </li> </ul>
      */
     inline RetireGrantRequest& WithKeyId(const Aws::String& value) { SetKeyId(value); return *this;}
 
     /**
-     * <p>A unique identifier for the customer master key associated with the grant.
-     * This value can be a globally unique identifier or a fully specified ARN of the
-     * key.</p> <ul> <li> <p>Key ARN Example -
-     * arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</p>
-     * </li> <li> <p>Globally Unique Key ID Example -
-     * 12345678-1234-1234-1234-123456789012</p> </li> </ul>
+     * <p>The Amazon Resource Name of the CMK associated with the grant. Example:</p>
+     * <ul> <li>
+     * <p>arn:aws:kms:us-east-2:444455556666:key/1234abcd-12ab-34cd-56ef-1234567890ab</p>
+     * </li> </ul>
      */
     inline RetireGrantRequest& WithKeyId(Aws::String&& value) { SetKeyId(value); return *this;}
 
     /**
-     * <p>A unique identifier for the customer master key associated with the grant.
-     * This value can be a globally unique identifier or a fully specified ARN of the
-     * key.</p> <ul> <li> <p>Key ARN Example -
-     * arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</p>
-     * </li> <li> <p>Globally Unique Key ID Example -
-     * 12345678-1234-1234-1234-123456789012</p> </li> </ul>
+     * <p>The Amazon Resource Name of the CMK associated with the grant. Example:</p>
+     * <ul> <li>
+     * <p>arn:aws:kms:us-east-2:444455556666:key/1234abcd-12ab-34cd-56ef-1234567890ab</p>
+     * </li> </ul>
      */
     inline RetireGrantRequest& WithKeyId(const char* value) { SetKeyId(value); return *this;}
 
     /**
-     * <p>Unique identifier of the grant to be retired. The grant ID is returned by the
-     * <code>CreateGrant</code> function.</p> <ul> <li> <p>Grant ID Example -
-     * 0123456789012345678901234567890123456789012345678901234567890123</p> </li> </ul>
+     * <p>Unique identifier of the grant to retire. The grant ID is returned in the
+     * response to a <code>CreateGrant</code> operation.</p> <ul> <li> <p>Grant ID
+     * Example - 0123456789012345678901234567890123456789012345678901234567890123</p>
+     * </li> </ul>
      */
     inline const Aws::String& GetGrantId() const{ return m_grantId; }
 
     /**
-     * <p>Unique identifier of the grant to be retired. The grant ID is returned by the
-     * <code>CreateGrant</code> function.</p> <ul> <li> <p>Grant ID Example -
-     * 0123456789012345678901234567890123456789012345678901234567890123</p> </li> </ul>
+     * <p>Unique identifier of the grant to retire. The grant ID is returned in the
+     * response to a <code>CreateGrant</code> operation.</p> <ul> <li> <p>Grant ID
+     * Example - 0123456789012345678901234567890123456789012345678901234567890123</p>
+     * </li> </ul>
      */
     inline void SetGrantId(const Aws::String& value) { m_grantIdHasBeenSet = true; m_grantId = value; }
 
     /**
-     * <p>Unique identifier of the grant to be retired. The grant ID is returned by the
-     * <code>CreateGrant</code> function.</p> <ul> <li> <p>Grant ID Example -
-     * 0123456789012345678901234567890123456789012345678901234567890123</p> </li> </ul>
+     * <p>Unique identifier of the grant to retire. The grant ID is returned in the
+     * response to a <code>CreateGrant</code> operation.</p> <ul> <li> <p>Grant ID
+     * Example - 0123456789012345678901234567890123456789012345678901234567890123</p>
+     * </li> </ul>
      */
     inline void SetGrantId(Aws::String&& value) { m_grantIdHasBeenSet = true; m_grantId = value; }
 
     /**
-     * <p>Unique identifier of the grant to be retired. The grant ID is returned by the
-     * <code>CreateGrant</code> function.</p> <ul> <li> <p>Grant ID Example -
-     * 0123456789012345678901234567890123456789012345678901234567890123</p> </li> </ul>
+     * <p>Unique identifier of the grant to retire. The grant ID is returned in the
+     * response to a <code>CreateGrant</code> operation.</p> <ul> <li> <p>Grant ID
+     * Example - 0123456789012345678901234567890123456789012345678901234567890123</p>
+     * </li> </ul>
      */
     inline void SetGrantId(const char* value) { m_grantIdHasBeenSet = true; m_grantId.assign(value); }
 
     /**
-     * <p>Unique identifier of the grant to be retired. The grant ID is returned by the
-     * <code>CreateGrant</code> function.</p> <ul> <li> <p>Grant ID Example -
-     * 0123456789012345678901234567890123456789012345678901234567890123</p> </li> </ul>
+     * <p>Unique identifier of the grant to retire. The grant ID is returned in the
+     * response to a <code>CreateGrant</code> operation.</p> <ul> <li> <p>Grant ID
+     * Example - 0123456789012345678901234567890123456789012345678901234567890123</p>
+     * </li> </ul>
      */
     inline RetireGrantRequest& WithGrantId(const Aws::String& value) { SetGrantId(value); return *this;}
 
     /**
-     * <p>Unique identifier of the grant to be retired. The grant ID is returned by the
-     * <code>CreateGrant</code> function.</p> <ul> <li> <p>Grant ID Example -
-     * 0123456789012345678901234567890123456789012345678901234567890123</p> </li> </ul>
+     * <p>Unique identifier of the grant to retire. The grant ID is returned in the
+     * response to a <code>CreateGrant</code> operation.</p> <ul> <li> <p>Grant ID
+     * Example - 0123456789012345678901234567890123456789012345678901234567890123</p>
+     * </li> </ul>
      */
     inline RetireGrantRequest& WithGrantId(Aws::String&& value) { SetGrantId(value); return *this;}
 
     /**
-     * <p>Unique identifier of the grant to be retired. The grant ID is returned by the
-     * <code>CreateGrant</code> function.</p> <ul> <li> <p>Grant ID Example -
-     * 0123456789012345678901234567890123456789012345678901234567890123</p> </li> </ul>
+     * <p>Unique identifier of the grant to retire. The grant ID is returned in the
+     * response to a <code>CreateGrant</code> operation.</p> <ul> <li> <p>Grant ID
+     * Example - 0123456789012345678901234567890123456789012345678901234567890123</p>
+     * </li> </ul>
      */
     inline RetireGrantRequest& WithGrantId(const char* value) { SetGrantId(value); return *this;}
 

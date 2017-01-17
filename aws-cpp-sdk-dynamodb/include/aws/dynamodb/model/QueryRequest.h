@@ -32,7 +32,10 @@ namespace Model
 {
 
   /**
-   * <p>Represents the input of a <i>Query</i> operation.</p>
+   * <p>Represents the input of a <i>Query</i> operation.</p><p><h3>See Also:</h3>  
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/QueryInput">AWS
+   * API Reference</a></p>
    */
   class AWS_DYNAMODB_API QueryRequest : public DynamoDBRequest
   {

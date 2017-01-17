@@ -227,7 +227,7 @@ void NatGateway::OutputToStream(Aws::OStream& oStream, const char* location) con
       for(auto& item : m_natGatewayAddresses)
       {
         Aws::StringStream natGatewayAddressesSs;
-        natGatewayAddressesSs << location <<  ".item." << natGatewayAddressesIdx++;
+        natGatewayAddressesSs << location <<  ".Item." << natGatewayAddressesIdx++;
         item.OutputToStream(oStream, natGatewayAddressesSs.str().c_str());
       }
   }

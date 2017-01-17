@@ -62,7 +62,7 @@ Aws::String DescribeCacheEngineVersionsRequest::SerializePayload() const
 
   if(m_defaultOnlyHasBeenSet)
   {
-    ss << "DefaultOnly=" << m_defaultOnly << "&";
+    ss << "DefaultOnly=" << std::boolalpha << m_defaultOnly << "&";
   }
 
   ss << "Version=2015-02-02";

@@ -35,7 +35,9 @@ namespace CloudTrail
 namespace Model
 {
   /**
-   * <p>Contains a response to a LookupEvents action.</p>
+   * <p>Contains a response to a LookupEvents action.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/LookupEventsResponse">AWS
+   * API Reference</a></p>
    */
   class AWS_CLOUDTRAIL_API LookupEventsResult
   {

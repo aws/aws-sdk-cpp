@@ -29,7 +29,9 @@ namespace Model
    * account. Configuration sets enable you to publish email sending events. For
    * information about using configuration sets, see the <a
    * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon
-   * SES Developer Guide</a>.</p>
+   * SES Developer Guide</a>.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/ListConfigurationSetsRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_SES_API ListConfigurationSetsRequest : public SESRequest
   {

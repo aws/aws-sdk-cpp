@@ -23,7 +23,8 @@ using namespace Aws::Utils;
 
 DescribeAssociationRequest::DescribeAssociationRequest() : 
     m_nameHasBeenSet(false),
-    m_instanceIdHasBeenSet(false)
+    m_instanceIdHasBeenSet(false),
+    m_associationIdHasBeenSet(false)
 {
 }
 
@@ -40,6 +41,12 @@ Aws::String DescribeAssociationRequest::SerializePayload() const
   if(m_instanceIdHasBeenSet)
   {
    payload.WithString("InstanceId", m_instanceId);
+
+  }
+
+  if(m_associationIdHasBeenSet)
+  {
+   payload.WithString("AssociationId", m_associationId);
 
   }
 

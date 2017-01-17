@@ -25,7 +25,10 @@ namespace Model
 {
 
   /**
-   * <p>This input determines which bootstrap actions to retrieve.</p>
+   * <p>This input determines which bootstrap actions to retrieve.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/ListBootstrapActionsInput">AWS
+   * API Reference</a></p>
    */
   class AWS_EMR_API ListBootstrapActionsRequest : public EMRRequest
   {

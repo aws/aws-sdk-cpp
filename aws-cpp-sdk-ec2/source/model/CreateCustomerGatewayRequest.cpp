@@ -36,7 +36,7 @@ Aws::String CreateCustomerGatewayRequest::SerializePayload() const
   ss << "Action=CreateCustomerGateway&";
   if(m_dryRunHasBeenSet)
   {
-    ss << "DryRun=" << m_dryRun << "&";
+    ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
   if(m_typeHasBeenSet)
@@ -46,7 +46,7 @@ Aws::String CreateCustomerGatewayRequest::SerializePayload() const
 
   if(m_publicIpHasBeenSet)
   {
-    ss << "PublicIp=" << StringUtils::URLEncode(m_publicIp.c_str()) << "&";
+    ss << "IpAddress=" << StringUtils::URLEncode(m_publicIp.c_str()) << "&";
   }
 
   if(m_bgpAsnHasBeenSet)
@@ -54,7 +54,7 @@ Aws::String CreateCustomerGatewayRequest::SerializePayload() const
     ss << "BgpAsn=" << m_bgpAsn << "&";
   }
 
-  ss << "Version=2015-10-01";
+  ss << "Version=2016-11-15";
   return ss.str();
 }
 

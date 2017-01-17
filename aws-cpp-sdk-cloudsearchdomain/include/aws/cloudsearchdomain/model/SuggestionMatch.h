@@ -32,7 +32,9 @@ namespace Model
 
   /**
    * <p>An autocomplete suggestion that matches the query string specified in a
-   * <code>SuggestRequest</code>. </p>
+   * <code>SuggestRequest</code>. </p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearchdomain-2013-01-01/SuggestionMatch">AWS
+   * API Reference</a></p>
    */
   class AWS_CLOUDSEARCHDOMAIN_API SuggestionMatch
   {

@@ -26,7 +26,10 @@ namespace Model
 {
 
   /**
-   * <p>The input for the <a>DeliveryChannelStatus</a> action.</p>
+   * <p>The input for the <a>DeliveryChannelStatus</a> action.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeDeliveryChannelStatusRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_CONFIGSERVICE_API DescribeDeliveryChannelStatusRequest : public ConfigServiceRequest
   {

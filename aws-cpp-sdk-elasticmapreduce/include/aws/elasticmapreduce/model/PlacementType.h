@@ -31,7 +31,9 @@ namespace Model
 {
 
   /**
-   * <p>The Amazon EC2 location for the job flow.</p>
+   * <p>The Amazon EC2 location for the job flow.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/PlacementType">AWS
+   * API Reference</a></p>
    */
   class AWS_EMR_API PlacementType
   {

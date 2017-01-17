@@ -32,7 +32,9 @@ namespace CognitoSync
 namespace Model
 {
   /**
-   * <p>Response to a SubscribeToDataset request.</p>
+   * <p>Response to a SubscribeToDataset request.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-sync-2014-06-30/SubscribeToDatasetResponse">AWS
+   * API Reference</a></p>
    */
   class AWS_COGNITOSYNC_API SubscribeToDatasetResult
   {

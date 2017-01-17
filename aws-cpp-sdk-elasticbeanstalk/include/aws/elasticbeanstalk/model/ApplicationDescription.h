@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/elasticbeanstalk/model/ApplicationResourceLifecycleConfig.h>
 
 namespace Aws
 {
@@ -34,7 +35,9 @@ namespace Model
 {
 
   /**
-   * <p>Describes the properties of an application.</p>
+   * <p>Describes the properties of an application.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/ApplicationDescription">AWS
+   * API Reference</a></p>
    */
   class AWS_ELASTICBEANSTALK_API ApplicationDescription
   {
@@ -254,6 +257,31 @@ namespace Model
      */
     inline ApplicationDescription& AddConfigurationTemplates(const char* value) { m_configurationTemplatesHasBeenSet = true; m_configurationTemplates.push_back(value); return *this; }
 
+    /**
+     * <p>The lifecycle settings for the application.</p>
+     */
+    inline const ApplicationResourceLifecycleConfig& GetResourceLifecycleConfig() const{ return m_resourceLifecycleConfig; }
+
+    /**
+     * <p>The lifecycle settings for the application.</p>
+     */
+    inline void SetResourceLifecycleConfig(const ApplicationResourceLifecycleConfig& value) { m_resourceLifecycleConfigHasBeenSet = true; m_resourceLifecycleConfig = value; }
+
+    /**
+     * <p>The lifecycle settings for the application.</p>
+     */
+    inline void SetResourceLifecycleConfig(ApplicationResourceLifecycleConfig&& value) { m_resourceLifecycleConfigHasBeenSet = true; m_resourceLifecycleConfig = value; }
+
+    /**
+     * <p>The lifecycle settings for the application.</p>
+     */
+    inline ApplicationDescription& WithResourceLifecycleConfig(const ApplicationResourceLifecycleConfig& value) { SetResourceLifecycleConfig(value); return *this;}
+
+    /**
+     * <p>The lifecycle settings for the application.</p>
+     */
+    inline ApplicationDescription& WithResourceLifecycleConfig(ApplicationResourceLifecycleConfig&& value) { SetResourceLifecycleConfig(value); return *this;}
+
   private:
     Aws::String m_applicationName;
     bool m_applicationNameHasBeenSet;
@@ -267,6 +295,8 @@ namespace Model
     bool m_versionsHasBeenSet;
     Aws::Vector<Aws::String> m_configurationTemplates;
     bool m_configurationTemplatesHasBeenSet;
+    ApplicationResourceLifecycleConfig m_resourceLifecycleConfig;
+    bool m_resourceLifecycleConfigHasBeenSet;
   };
 
 } // namespace Model

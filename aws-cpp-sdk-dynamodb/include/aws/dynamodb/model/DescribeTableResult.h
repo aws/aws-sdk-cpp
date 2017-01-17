@@ -33,7 +33,10 @@ namespace DynamoDB
 namespace Model
 {
   /**
-   * <p>Represents the output of a <i>DescribeTable</i> operation.</p>
+   * <p>Represents the output of a <i>DescribeTable</i> operation.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeTableOutput">AWS
+   * API Reference</a></p>
    */
   class AWS_DYNAMODB_API DescribeTableResult
   {

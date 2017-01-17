@@ -33,7 +33,9 @@ namespace Model
 {
 
   /**
-   * <p>The status of domain configuration option.</p>
+   * <p>The status of domain configuration option.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/OptionStatus">AWS
+   * API Reference</a></p>
    */
   class AWS_CLOUDSEARCH_API OptionStatus
   {

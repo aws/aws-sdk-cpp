@@ -27,7 +27,10 @@ namespace Model
 {
 
   /**
-   * <p>Represents the request to update the user pool client.</p>
+   * <p>Represents the request to update the user pool client.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/UpdateUserPoolClientRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_COGNITOIDENTITYPROVIDER_API UpdateUserPoolClientRequest : public CognitoIdentityProviderRequest
   {
@@ -150,17 +153,17 @@ namespace Model
     inline UpdateUserPoolClientRequest& WithClientName(const char* value) { SetClientName(value); return *this;}
 
     /**
-     * <p>The validity of the refresh token.</p>
+     * <p>The validity of the refresh token, in days.</p>
      */
     inline int GetRefreshTokenValidity() const{ return m_refreshTokenValidity; }
 
     /**
-     * <p>The validity of the refresh token.</p>
+     * <p>The validity of the refresh token, in days.</p>
      */
     inline void SetRefreshTokenValidity(int value) { m_refreshTokenValidityHasBeenSet = true; m_refreshTokenValidity = value; }
 
     /**
-     * <p>The validity of the refresh token.</p>
+     * <p>The validity of the refresh token, in days.</p>
      */
     inline UpdateUserPoolClientRequest& WithRefreshTokenValidity(int value) { SetRefreshTokenValidity(value); return *this;}
 

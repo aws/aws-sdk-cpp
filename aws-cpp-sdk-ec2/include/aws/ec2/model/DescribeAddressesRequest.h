@@ -27,7 +27,9 @@ namespace Model
 {
 
   /**
-   * <p>Contains the parameters for DescribeAddresses.</p>
+   * <p>Contains the parameters for DescribeAddresses.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeAddressesRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_EC2_API DescribeAddressesRequest : public EC2Request
   {
@@ -109,120 +111,120 @@ namespace Model
 
     /**
      * <p>One or more filters. Filter names and values are case-sensitive.</p> <ul>
-     * <li> <p><code>allocation-id</code> - [EC2-VPC] The allocation ID for the
-     * address.</p> </li> <li> <p><code>association-id</code> - [EC2-VPC] The
-     * association ID for the address.</p> </li> <li> <p><code>domain</code> -
+     * <li> <p> <code>allocation-id</code> - [EC2-VPC] The allocation ID for the
+     * address.</p> </li> <li> <p> <code>association-id</code> - [EC2-VPC] The
+     * association ID for the address.</p> </li> <li> <p> <code>domain</code> -
      * Indicates whether the address is for use in EC2-Classic (<code>standard</code>)
-     * or in a VPC (<code>vpc</code>).</p> </li> <li> <p><code>instance-id</code> - The
-     * ID of the instance the address is associated with, if any.</p> </li> <li>
-     * <p><code>network-interface-id</code> - [EC2-VPC] The ID of the network interface
-     * that the address is associated with, if any.</p> </li> <li>
-     * <p><code>network-interface-owner-id</code> - The AWS account ID of the
-     * owner.</p> </li> <li> <p><code>private-ip-address</code> - [EC2-VPC] The private
-     * IP address associated with the Elastic IP address.</p> </li> <li>
-     * <p><code>public-ip</code> - The Elastic IP address.</p> </li> </ul>
+     * or in a VPC (<code>vpc</code>).</p> </li> <li> <p> <code>instance-id</code> -
+     * The ID of the instance the address is associated with, if any.</p> </li> <li>
+     * <p> <code>network-interface-id</code> - [EC2-VPC] The ID of the network
+     * interface that the address is associated with, if any.</p> </li> <li> <p>
+     * <code>network-interface-owner-id</code> - The AWS account ID of the owner.</p>
+     * </li> <li> <p> <code>private-ip-address</code> - [EC2-VPC] The private IP
+     * address associated with the Elastic IP address.</p> </li> <li> <p>
+     * <code>public-ip</code> - The Elastic IP address.</p> </li> </ul>
      */
     inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
 
     /**
      * <p>One or more filters. Filter names and values are case-sensitive.</p> <ul>
-     * <li> <p><code>allocation-id</code> - [EC2-VPC] The allocation ID for the
-     * address.</p> </li> <li> <p><code>association-id</code> - [EC2-VPC] The
-     * association ID for the address.</p> </li> <li> <p><code>domain</code> -
+     * <li> <p> <code>allocation-id</code> - [EC2-VPC] The allocation ID for the
+     * address.</p> </li> <li> <p> <code>association-id</code> - [EC2-VPC] The
+     * association ID for the address.</p> </li> <li> <p> <code>domain</code> -
      * Indicates whether the address is for use in EC2-Classic (<code>standard</code>)
-     * or in a VPC (<code>vpc</code>).</p> </li> <li> <p><code>instance-id</code> - The
-     * ID of the instance the address is associated with, if any.</p> </li> <li>
-     * <p><code>network-interface-id</code> - [EC2-VPC] The ID of the network interface
-     * that the address is associated with, if any.</p> </li> <li>
-     * <p><code>network-interface-owner-id</code> - The AWS account ID of the
-     * owner.</p> </li> <li> <p><code>private-ip-address</code> - [EC2-VPC] The private
-     * IP address associated with the Elastic IP address.</p> </li> <li>
-     * <p><code>public-ip</code> - The Elastic IP address.</p> </li> </ul>
+     * or in a VPC (<code>vpc</code>).</p> </li> <li> <p> <code>instance-id</code> -
+     * The ID of the instance the address is associated with, if any.</p> </li> <li>
+     * <p> <code>network-interface-id</code> - [EC2-VPC] The ID of the network
+     * interface that the address is associated with, if any.</p> </li> <li> <p>
+     * <code>network-interface-owner-id</code> - The AWS account ID of the owner.</p>
+     * </li> <li> <p> <code>private-ip-address</code> - [EC2-VPC] The private IP
+     * address associated with the Elastic IP address.</p> </li> <li> <p>
+     * <code>public-ip</code> - The Elastic IP address.</p> </li> </ul>
      */
     inline void SetFilters(const Aws::Vector<Filter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
     /**
      * <p>One or more filters. Filter names and values are case-sensitive.</p> <ul>
-     * <li> <p><code>allocation-id</code> - [EC2-VPC] The allocation ID for the
-     * address.</p> </li> <li> <p><code>association-id</code> - [EC2-VPC] The
-     * association ID for the address.</p> </li> <li> <p><code>domain</code> -
+     * <li> <p> <code>allocation-id</code> - [EC2-VPC] The allocation ID for the
+     * address.</p> </li> <li> <p> <code>association-id</code> - [EC2-VPC] The
+     * association ID for the address.</p> </li> <li> <p> <code>domain</code> -
      * Indicates whether the address is for use in EC2-Classic (<code>standard</code>)
-     * or in a VPC (<code>vpc</code>).</p> </li> <li> <p><code>instance-id</code> - The
-     * ID of the instance the address is associated with, if any.</p> </li> <li>
-     * <p><code>network-interface-id</code> - [EC2-VPC] The ID of the network interface
-     * that the address is associated with, if any.</p> </li> <li>
-     * <p><code>network-interface-owner-id</code> - The AWS account ID of the
-     * owner.</p> </li> <li> <p><code>private-ip-address</code> - [EC2-VPC] The private
-     * IP address associated with the Elastic IP address.</p> </li> <li>
-     * <p><code>public-ip</code> - The Elastic IP address.</p> </li> </ul>
+     * or in a VPC (<code>vpc</code>).</p> </li> <li> <p> <code>instance-id</code> -
+     * The ID of the instance the address is associated with, if any.</p> </li> <li>
+     * <p> <code>network-interface-id</code> - [EC2-VPC] The ID of the network
+     * interface that the address is associated with, if any.</p> </li> <li> <p>
+     * <code>network-interface-owner-id</code> - The AWS account ID of the owner.</p>
+     * </li> <li> <p> <code>private-ip-address</code> - [EC2-VPC] The private IP
+     * address associated with the Elastic IP address.</p> </li> <li> <p>
+     * <code>public-ip</code> - The Elastic IP address.</p> </li> </ul>
      */
     inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
     /**
      * <p>One or more filters. Filter names and values are case-sensitive.</p> <ul>
-     * <li> <p><code>allocation-id</code> - [EC2-VPC] The allocation ID for the
-     * address.</p> </li> <li> <p><code>association-id</code> - [EC2-VPC] The
-     * association ID for the address.</p> </li> <li> <p><code>domain</code> -
+     * <li> <p> <code>allocation-id</code> - [EC2-VPC] The allocation ID for the
+     * address.</p> </li> <li> <p> <code>association-id</code> - [EC2-VPC] The
+     * association ID for the address.</p> </li> <li> <p> <code>domain</code> -
      * Indicates whether the address is for use in EC2-Classic (<code>standard</code>)
-     * or in a VPC (<code>vpc</code>).</p> </li> <li> <p><code>instance-id</code> - The
-     * ID of the instance the address is associated with, if any.</p> </li> <li>
-     * <p><code>network-interface-id</code> - [EC2-VPC] The ID of the network interface
-     * that the address is associated with, if any.</p> </li> <li>
-     * <p><code>network-interface-owner-id</code> - The AWS account ID of the
-     * owner.</p> </li> <li> <p><code>private-ip-address</code> - [EC2-VPC] The private
-     * IP address associated with the Elastic IP address.</p> </li> <li>
-     * <p><code>public-ip</code> - The Elastic IP address.</p> </li> </ul>
+     * or in a VPC (<code>vpc</code>).</p> </li> <li> <p> <code>instance-id</code> -
+     * The ID of the instance the address is associated with, if any.</p> </li> <li>
+     * <p> <code>network-interface-id</code> - [EC2-VPC] The ID of the network
+     * interface that the address is associated with, if any.</p> </li> <li> <p>
+     * <code>network-interface-owner-id</code> - The AWS account ID of the owner.</p>
+     * </li> <li> <p> <code>private-ip-address</code> - [EC2-VPC] The private IP
+     * address associated with the Elastic IP address.</p> </li> <li> <p>
+     * <code>public-ip</code> - The Elastic IP address.</p> </li> </ul>
      */
     inline DescribeAddressesRequest& WithFilters(const Aws::Vector<Filter>& value) { SetFilters(value); return *this;}
 
     /**
      * <p>One or more filters. Filter names and values are case-sensitive.</p> <ul>
-     * <li> <p><code>allocation-id</code> - [EC2-VPC] The allocation ID for the
-     * address.</p> </li> <li> <p><code>association-id</code> - [EC2-VPC] The
-     * association ID for the address.</p> </li> <li> <p><code>domain</code> -
+     * <li> <p> <code>allocation-id</code> - [EC2-VPC] The allocation ID for the
+     * address.</p> </li> <li> <p> <code>association-id</code> - [EC2-VPC] The
+     * association ID for the address.</p> </li> <li> <p> <code>domain</code> -
      * Indicates whether the address is for use in EC2-Classic (<code>standard</code>)
-     * or in a VPC (<code>vpc</code>).</p> </li> <li> <p><code>instance-id</code> - The
-     * ID of the instance the address is associated with, if any.</p> </li> <li>
-     * <p><code>network-interface-id</code> - [EC2-VPC] The ID of the network interface
-     * that the address is associated with, if any.</p> </li> <li>
-     * <p><code>network-interface-owner-id</code> - The AWS account ID of the
-     * owner.</p> </li> <li> <p><code>private-ip-address</code> - [EC2-VPC] The private
-     * IP address associated with the Elastic IP address.</p> </li> <li>
-     * <p><code>public-ip</code> - The Elastic IP address.</p> </li> </ul>
+     * or in a VPC (<code>vpc</code>).</p> </li> <li> <p> <code>instance-id</code> -
+     * The ID of the instance the address is associated with, if any.</p> </li> <li>
+     * <p> <code>network-interface-id</code> - [EC2-VPC] The ID of the network
+     * interface that the address is associated with, if any.</p> </li> <li> <p>
+     * <code>network-interface-owner-id</code> - The AWS account ID of the owner.</p>
+     * </li> <li> <p> <code>private-ip-address</code> - [EC2-VPC] The private IP
+     * address associated with the Elastic IP address.</p> </li> <li> <p>
+     * <code>public-ip</code> - The Elastic IP address.</p> </li> </ul>
      */
     inline DescribeAddressesRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(value); return *this;}
 
     /**
      * <p>One or more filters. Filter names and values are case-sensitive.</p> <ul>
-     * <li> <p><code>allocation-id</code> - [EC2-VPC] The allocation ID for the
-     * address.</p> </li> <li> <p><code>association-id</code> - [EC2-VPC] The
-     * association ID for the address.</p> </li> <li> <p><code>domain</code> -
+     * <li> <p> <code>allocation-id</code> - [EC2-VPC] The allocation ID for the
+     * address.</p> </li> <li> <p> <code>association-id</code> - [EC2-VPC] The
+     * association ID for the address.</p> </li> <li> <p> <code>domain</code> -
      * Indicates whether the address is for use in EC2-Classic (<code>standard</code>)
-     * or in a VPC (<code>vpc</code>).</p> </li> <li> <p><code>instance-id</code> - The
-     * ID of the instance the address is associated with, if any.</p> </li> <li>
-     * <p><code>network-interface-id</code> - [EC2-VPC] The ID of the network interface
-     * that the address is associated with, if any.</p> </li> <li>
-     * <p><code>network-interface-owner-id</code> - The AWS account ID of the
-     * owner.</p> </li> <li> <p><code>private-ip-address</code> - [EC2-VPC] The private
-     * IP address associated with the Elastic IP address.</p> </li> <li>
-     * <p><code>public-ip</code> - The Elastic IP address.</p> </li> </ul>
+     * or in a VPC (<code>vpc</code>).</p> </li> <li> <p> <code>instance-id</code> -
+     * The ID of the instance the address is associated with, if any.</p> </li> <li>
+     * <p> <code>network-interface-id</code> - [EC2-VPC] The ID of the network
+     * interface that the address is associated with, if any.</p> </li> <li> <p>
+     * <code>network-interface-owner-id</code> - The AWS account ID of the owner.</p>
+     * </li> <li> <p> <code>private-ip-address</code> - [EC2-VPC] The private IP
+     * address associated with the Elastic IP address.</p> </li> <li> <p>
+     * <code>public-ip</code> - The Elastic IP address.</p> </li> </ul>
      */
     inline DescribeAddressesRequest& AddFilters(const Filter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
 
     /**
      * <p>One or more filters. Filter names and values are case-sensitive.</p> <ul>
-     * <li> <p><code>allocation-id</code> - [EC2-VPC] The allocation ID for the
-     * address.</p> </li> <li> <p><code>association-id</code> - [EC2-VPC] The
-     * association ID for the address.</p> </li> <li> <p><code>domain</code> -
+     * <li> <p> <code>allocation-id</code> - [EC2-VPC] The allocation ID for the
+     * address.</p> </li> <li> <p> <code>association-id</code> - [EC2-VPC] The
+     * association ID for the address.</p> </li> <li> <p> <code>domain</code> -
      * Indicates whether the address is for use in EC2-Classic (<code>standard</code>)
-     * or in a VPC (<code>vpc</code>).</p> </li> <li> <p><code>instance-id</code> - The
-     * ID of the instance the address is associated with, if any.</p> </li> <li>
-     * <p><code>network-interface-id</code> - [EC2-VPC] The ID of the network interface
-     * that the address is associated with, if any.</p> </li> <li>
-     * <p><code>network-interface-owner-id</code> - The AWS account ID of the
-     * owner.</p> </li> <li> <p><code>private-ip-address</code> - [EC2-VPC] The private
-     * IP address associated with the Elastic IP address.</p> </li> <li>
-     * <p><code>public-ip</code> - The Elastic IP address.</p> </li> </ul>
+     * or in a VPC (<code>vpc</code>).</p> </li> <li> <p> <code>instance-id</code> -
+     * The ID of the instance the address is associated with, if any.</p> </li> <li>
+     * <p> <code>network-interface-id</code> - [EC2-VPC] The ID of the network
+     * interface that the address is associated with, if any.</p> </li> <li> <p>
+     * <code>network-interface-owner-id</code> - The AWS account ID of the owner.</p>
+     * </li> <li> <p> <code>private-ip-address</code> - [EC2-VPC] The private IP
+     * address associated with the Elastic IP address.</p> </li> <li> <p>
+     * <code>public-ip</code> - The Elastic IP address.</p> </li> </ul>
      */
     inline DescribeAddressesRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
 

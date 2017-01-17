@@ -33,7 +33,9 @@ namespace Model
 {
 
   /**
-   * <p>Returns information about a specific commit.</p>
+   * <p>Returns information about a specific commit.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/Commit">AWS
+   * API Reference</a></p>
    */
   class AWS_CODECOMMIT_API Commit
   {

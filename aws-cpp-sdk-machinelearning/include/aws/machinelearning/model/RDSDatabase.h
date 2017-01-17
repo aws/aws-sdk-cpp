@@ -31,7 +31,9 @@ namespace Model
 {
 
   /**
-   * <p>The database details of an Amazon RDS database.</p>
+   * <p>The database details of an Amazon RDS database.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/RDSDatabase">AWS
+   * API Reference</a></p>
    */
   class AWS_MACHINELEARNING_API RDSDatabase
   {
