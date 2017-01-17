@@ -49,6 +49,7 @@
 #include <aws/iam/IAMClient.h>
 #include <aws/access-management/AccessManagementClient.h>
 #include <aws/cognito-identity/CognitoIdentityClient.h>
+#include <aws/testing/TestingEnvironment.h>
 
 using namespace Aws::Auth;
 using namespace Aws::Http;
@@ -61,22 +62,28 @@ using namespace Aws::CognitoIdentity;
 
 
 #define TEST_FUNCTION_PREFIX  "IntegrationTest_"
-#define KINESIS_STREAM_NAME  "AWSNativeSDKIntegrationTest"
+#define BASE_KINESIS_STREAM_NAME  "AWSNativeSDKIntegrationTest"
 
 //fill these in before running the test.
-static const char* SIMPLE_FUNCTION = TEST_FUNCTION_PREFIX "Simple";
-static const char* HANDLED_ERROR_FUNCTION = TEST_FUNCTION_PREFIX "HandledError";
+static const char* BASE_SIMPLE_FUNCTION = TEST_FUNCTION_PREFIX "Simple";
+static const char* BASE_HANDLED_ERROR_FUNCTION = TEST_FUNCTION_PREFIX "HandledError";
 
 static const char* SIMPLE_FUNCTION_CODE = RESOURCES_DIR "/succeed.zip";
 static const char* HANDLED_ERROR_FUNCTION_CODE = RESOURCES_DIR "/handled.zip";
 
 static const char* ALLOCATION_TAG = "FunctionTest";
 
-static const char* IAM_ROLE_NAME = "AWSNativeSDKLambdaIntegrationTestRole";
+static const char* BASE_IAM_ROLE_NAME = "AWSNativeSDKLambdaIntegrationTestRole";
 static const char* IAM_POLICY_ARN = "arn:aws:iam::aws:policy/service-role/AWSLambdaKinesisExecutionRole";
 
 
 namespace {
+
+// role + functions only; policy can be shared since it's permanent and read only
+Aws::String BuildResourceName(const char* baseName)
+{
+    return Aws::Testing::GetAwsResourcePrefix() + baseName;
+}
 
 class FunctionTest : public ::testing::Test {
 
@@ -148,14 +155,14 @@ protected:
 
     static void CreateAllFunctions()
     {
-        CreateFunction(SIMPLE_FUNCTION, SIMPLE_FUNCTION_CODE);
-        CreateFunction(HANDLED_ERROR_FUNCTION, HANDLED_ERROR_FUNCTION_CODE);
+        CreateFunction(BuildResourceName(BASE_SIMPLE_FUNCTION), SIMPLE_FUNCTION_CODE);
+        CreateFunction(BuildResourceName(BASE_HANDLED_ERROR_FUNCTION), HANDLED_ERROR_FUNCTION_CODE);
     }
 
     static void DeleteAllFunctions()
     {
-        DeleteFunction(SIMPLE_FUNCTION);
-        DeleteFunction(HANDLED_ERROR_FUNCTION);
+        DeleteFunction(BuildResourceName(BASE_SIMPLE_FUNCTION));
+        DeleteFunction(BuildResourceName(BASE_HANDLED_ERROR_FUNCTION));
     }
 
     enum class ResourceStatusType
@@ -273,8 +280,10 @@ protected:
 
     static void CreateKinesisStream()
     {
+        Aws::String streamName = BuildResourceName(BASE_KINESIS_STREAM_NAME);
+
         CreateStreamRequest createStreamRequest;
-        createStreamRequest.SetStreamName(KINESIS_STREAM_NAME);
+        createStreamRequest.SetStreamName(streamName);
         createStreamRequest.SetShardCount(1);
         CreateStreamOutcome createOutcome = m_kinesis_client->CreateStream(createStreamRequest);
         if(!createOutcome.IsSuccess())
@@ -282,7 +291,7 @@ protected:
             ASSERT_EQ(KinesisErrors::RESOURCE_IN_USE, createOutcome.GetError().GetErrorType());
         }
 
-        WaitForKinesisStream(KINESIS_STREAM_NAME, ResourceStatusType::READY);
+        WaitForKinesisStream(streamName, ResourceStatusType::READY);
 
     }
 
@@ -323,11 +332,13 @@ protected:
 
     static void DeleteKinesisStream()
     {
+        Aws::String streamName = BuildResourceName(BASE_KINESIS_STREAM_NAME);
+
         DeleteStreamRequest deleteStreamRequest;
-        deleteStreamRequest.SetStreamName(KINESIS_STREAM_NAME);
+        deleteStreamRequest.SetStreamName(streamName);
         m_kinesis_client->DeleteStream(deleteStreamRequest);
 
-        WaitForKinesisStream(KINESIS_STREAM_NAME, ResourceStatusType::NOT_FOUND);
+        WaitForKinesisStream(streamName, ResourceStatusType::NOT_FOUND);
     }
 
     static void CreateIAMRole()
@@ -347,18 +358,20 @@ protected:
                 "}"
               "]"
             "}";
-        const bool roleCreationSuccessful = m_accessManagementClient->CreateRole(IAM_ROLE_NAME, trustRelationship, *m_role);
+
+        Aws::String iamRoleName = BuildResourceName(BASE_IAM_ROLE_NAME);
+        const bool roleCreationSuccessful = m_accessManagementClient->CreateRole(iamRoleName, trustRelationship, *m_role);
         ASSERT_TRUE(roleCreationSuccessful);
 
         //Apply the policy ARN saying what this role is allowed to do.
-        const bool policyApplied = m_accessManagementClient->AttachPolicyToRole(IAM_POLICY_ARN, IAM_ROLE_NAME);
+        const bool policyApplied = m_accessManagementClient->AttachPolicyToRole(IAM_POLICY_ARN, iamRoleName);
         ASSERT_TRUE(policyApplied);
     }
 
     static void DeleteIAMRole()
     {
         //This will return true even if the IAM role never existed.
-        const bool removedSuccessfully = m_accessManagementClient->DeleteRole(IAM_ROLE_NAME);
+        const bool removedSuccessfully = m_accessManagementClient->DeleteRole(BuildResourceName(BASE_IAM_ROLE_NAME));
         ASSERT_TRUE(removedSuccessfully);
     }
 };
@@ -379,26 +392,29 @@ TEST_F(FunctionTest, TestListFunction)
     EXPECT_TRUE(listFunctionsOutcome.IsSuccess());
     //We are just going to make sure the simple function above is in the list
     Aws::Vector <FunctionConfiguration> filteredFunctionConfigurations;
-    auto functions =listFunctionsOutcome.GetResult().GetFunctions();
+    auto functions = listFunctionsOutcome.GetResult().GetFunctions();
+    Aws::String simpleFunctionName = BuildResourceName(BASE_SIMPLE_FUNCTION);
     std::copy_if(functions.cbegin(), functions.cend(),
-    std::back_inserter(filteredFunctionConfigurations),
-    [](const FunctionConfiguration& function) { return function.GetFunctionName().find(SIMPLE_FUNCTION) == 0;});
+        std::back_inserter(filteredFunctionConfigurations),
+        [=](const FunctionConfiguration& function) { return function.GetFunctionName().find(simpleFunctionName) == 0;});
 
     ASSERT_EQ(1uL, filteredFunctionConfigurations.size());
-    EXPECT_EQ(SIMPLE_FUNCTION, filteredFunctionConfigurations[0].GetFunctionName());
+    EXPECT_EQ(simpleFunctionName, filteredFunctionConfigurations[0].GetFunctionName());
 }
 
 TEST_F(FunctionTest, TestGetFunction)
 {
+    Aws::String simpleFunctionName = BuildResourceName(BASE_SIMPLE_FUNCTION);
+
     GetFunctionRequest getFunctionRequest;
-    getFunctionRequest.SetFunctionName(SIMPLE_FUNCTION);
+    getFunctionRequest.SetFunctionName(simpleFunctionName);
     GetFunctionOutcome getFunctionOutcome = m_client->GetFunction(getFunctionRequest);
     EXPECT_TRUE(getFunctionOutcome.IsSuccess());
 
     GetFunctionResult getFunctionResult = getFunctionOutcome.GetResult();
     EXPECT_EQ(Runtime::nodejs4_3, getFunctionResult.GetConfiguration().GetRuntime());
     EXPECT_EQ("test.handler",getFunctionResult.GetConfiguration().GetHandler());
-    EXPECT_EQ(SIMPLE_FUNCTION,getFunctionResult.GetConfiguration().GetFunctionName());
+    EXPECT_EQ(simpleFunctionName,getFunctionResult.GetConfiguration().GetFunctionName());
     //Just see that is looks like an aws url
     EXPECT_NE(std::string::npos, getFunctionResult.GetCode().GetLocation().find("amazonaws"));
     EXPECT_EQ("S3", getFunctionResult.GetCode().GetRepositoryType());
@@ -406,22 +422,26 @@ TEST_F(FunctionTest, TestGetFunction)
 
 TEST_F(FunctionTest, TestGetFunctionConfiguration)
 {
+    Aws::String simpleFunctionName = BuildResourceName(BASE_SIMPLE_FUNCTION);
+
     GetFunctionConfigurationRequest getFunctionConfigurationRequest;
-    getFunctionConfigurationRequest.SetFunctionName(SIMPLE_FUNCTION);
+    getFunctionConfigurationRequest.SetFunctionName(simpleFunctionName);
     GetFunctionConfigurationOutcome getFunctionConfigurationOutcome = m_client->GetFunctionConfiguration(getFunctionConfigurationRequest); 
     EXPECT_TRUE(getFunctionConfigurationOutcome.IsSuccess());
 
     GetFunctionConfigurationResult getFunctionConfigurationResult = getFunctionConfigurationOutcome.GetResult();
     EXPECT_EQ(Runtime::nodejs4_3, getFunctionConfigurationResult.GetRuntime());
     EXPECT_EQ("test.handler",getFunctionConfigurationResult.GetHandler());
-    EXPECT_EQ(SIMPLE_FUNCTION,getFunctionConfigurationResult.GetFunctionName());
+    EXPECT_EQ(simpleFunctionName,getFunctionConfigurationResult.GetFunctionName());
 }
 
 
 TEST_F(FunctionTest, TestInvokeEvent)
 {
+    Aws::String simpleFunctionName = BuildResourceName(BASE_SIMPLE_FUNCTION);
+
     InvokeRequest invokeRequest;
-    invokeRequest.SetFunctionName(SIMPLE_FUNCTION);
+    invokeRequest.SetFunctionName(simpleFunctionName);
     invokeRequest.SetInvocationType(InvocationType::Event);
 
     InvokeOutcome invokeOutcome = m_client->Invoke(invokeRequest);
@@ -431,8 +451,10 @@ TEST_F(FunctionTest, TestInvokeEvent)
 
 TEST_F(FunctionTest, TestInvokeEventFromARN)
 {
+    Aws::String simpleFunctionName = BuildResourceName(BASE_SIMPLE_FUNCTION);
+
     InvokeRequest invokeRequest;
-    invokeRequest.SetFunctionName(functionArnMapping[SIMPLE_FUNCTION]);
+    invokeRequest.SetFunctionName(functionArnMapping[simpleFunctionName]);
     invokeRequest.SetInvocationType(InvocationType::Event);
 
     InvokeOutcome invokeOutcome = m_client->Invoke(invokeRequest);
@@ -444,7 +466,7 @@ TEST_F(FunctionTest, TestInvokeEventFromARN)
 TEST_F(FunctionTest, TestInvokeDryRun)
 {
     InvokeRequest invokeRequest;
-    invokeRequest.SetFunctionName(SIMPLE_FUNCTION);
+    invokeRequest.SetFunctionName(BuildResourceName(BASE_SIMPLE_FUNCTION));
     invokeRequest.SetInvocationType(InvocationType::DryRun);
 
     InvokeOutcome invokeOutcome = m_client->Invoke(invokeRequest);
@@ -455,7 +477,7 @@ TEST_F(FunctionTest, TestInvokeDryRun)
 TEST_F(FunctionTest, TestInvokeSync)
 {
     InvokeRequest invokeRequest;
-    invokeRequest.SetFunctionName(SIMPLE_FUNCTION);
+    invokeRequest.SetFunctionName(BuildResourceName(BASE_SIMPLE_FUNCTION));
     invokeRequest.SetInvocationType(InvocationType::RequestResponse);
     invokeRequest.SetContentType("application/javascript");
     invokeRequest.SetLogType(LogType::Tail);
@@ -495,7 +517,7 @@ TEST_F(FunctionTest, TestInvokeSync)
 TEST_F(FunctionTest, TestInvokeSyncHandledFunctionError)
 {
     InvokeRequest invokeRequest;
-    invokeRequest.SetFunctionName(HANDLED_ERROR_FUNCTION);
+    invokeRequest.SetFunctionName(BuildResourceName(BASE_HANDLED_ERROR_FUNCTION));
     invokeRequest.SetInvocationType(InvocationType::RequestResponse);
     invokeRequest.SetContentType("application/javascript");
     invokeRequest.SetLogType(LogType::Tail);
@@ -518,8 +540,10 @@ TEST_F(FunctionTest, TestInvokeSyncHandledFunctionError)
 
 TEST_F(FunctionTest, TestPermissions)
 {
+    Aws::String simpleFunctionName = BuildResourceName(BASE_SIMPLE_FUNCTION);
+
     AddPermissionRequest addPermissionRequest;
-    addPermissionRequest.SetFunctionName(SIMPLE_FUNCTION);
+    addPermissionRequest.SetFunctionName(simpleFunctionName);
     addPermissionRequest.SetAction("lambda:Invoke");
     addPermissionRequest.SetPrincipal("s3.amazonaws.com");
     addPermissionRequest.SetStatementId("12345");
@@ -531,11 +555,11 @@ TEST_F(FunctionTest, TestPermissions)
     auto statement = Aws::Utils::Json::JsonValue(result.GetStatement());
 
     EXPECT_EQ("12345",statement.GetString("Sid"));
-    EXPECT_NE(std::string::npos, statement.GetString("Resource").find(SIMPLE_FUNCTION));
+    EXPECT_NE(std::string::npos, statement.GetString("Resource").find(simpleFunctionName));
 
 
     GetPolicyRequest getPolicyRequest;
-    getPolicyRequest.SetFunctionName(SIMPLE_FUNCTION);
+    getPolicyRequest.SetFunctionName(simpleFunctionName);
     auto getPolicyOutcome = m_client->GetPolicy(getPolicyRequest);
     //If this fails, stop.
     ASSERT_TRUE(getPolicyOutcome.IsSuccess());
@@ -546,7 +570,7 @@ TEST_F(FunctionTest, TestPermissions)
     EXPECT_EQ("lambda:Invoke", getPolicyStatement.GetArray("Statement").GetItem(0).GetString("Action"));
 
     RemovePermissionRequest removePermissionRequest;
-    removePermissionRequest.SetFunctionName(SIMPLE_FUNCTION);
+    removePermissionRequest.SetFunctionName(simpleFunctionName);
     removePermissionRequest.SetStatementId("12345");
     auto removePermissionOutcome = m_client->RemovePermission(removePermissionRequest);
     EXPECT_TRUE(removePermissionOutcome.IsSuccess());
@@ -570,9 +594,12 @@ TEST_F(FunctionTest, TestPermissions)
 
 TEST_F(FunctionTest, TestEventSources) 
 {
+    Aws::String simpleFunctionName = BuildResourceName(BASE_SIMPLE_FUNCTION);
+    Aws::String streamName = BuildResourceName(BASE_KINESIS_STREAM_NAME);
+
     //Attempt to get the ARN of the stream we created during the init.
     DescribeStreamRequest describeStreamRequest;
-    describeStreamRequest.SetStreamName(KINESIS_STREAM_NAME);
+    describeStreamRequest.SetStreamName(streamName);
 
     Aws::String streamARN;
     bool done = false;
@@ -596,7 +623,7 @@ TEST_F(FunctionTest, TestEventSources)
     }
 
     CreateEventSourceMappingRequest createEventSourceMappingRequest;
-    createEventSourceMappingRequest.SetFunctionName(SIMPLE_FUNCTION);
+    createEventSourceMappingRequest.SetFunctionName(simpleFunctionName);
     createEventSourceMappingRequest.SetEnabled(false);
     //Not a real stream
     createEventSourceMappingRequest.SetEventSourceArn(streamARN);
@@ -609,7 +636,7 @@ TEST_F(FunctionTest, TestEventSources)
     {
         CreateEventSourceMappingResult createResult = createOutcome.GetResult();
         EXPECT_EQ(99,createResult.GetBatchSize());
-        EXPECT_NE(std::string::npos,createResult.GetFunctionArn().find(SIMPLE_FUNCTION));
+        EXPECT_NE(std::string::npos,createResult.GetFunctionArn().find(simpleFunctionName));
         EXPECT_EQ("Creating",createResult.GetState());
         EXPECT_EQ(streamARN,createResult.GetEventSourceArn());
         createdMappingUUID = createResult.GetUUID();
@@ -628,7 +655,7 @@ TEST_F(FunctionTest, TestEventSources)
     EXPECT_TRUE(getEventSourceMappingOutcome.IsSuccess());
     GetEventSourceMappingResult getResult = getEventSourceMappingOutcome.GetResult();
     EXPECT_EQ(99, getResult.GetBatchSize());
-    EXPECT_NE(std::string::npos, getResult.GetFunctionArn().find(SIMPLE_FUNCTION));
+    EXPECT_NE(std::string::npos, getResult.GetFunctionArn().find(simpleFunctionName));
 
     //We're not actually changing anything, we're just testing a successful call and result
     UpdateEventSourceMappingRequest updateRequest;

@@ -41,5 +41,24 @@ void RedirectHomeToTempIfAppropriate()
     #endif // !defined(DISABLE_HOME_DIR_REDIRECT)
 }
 
+static Aws::String s_resourcePrefix("");
+
+void SetAwsResourcePrefix(const char* resourcePrefix)
+{
+    if(resourcePrefix)
+    {
+        s_resourcePrefix = resourcePrefix;
+    }
+    else
+    {
+        s_resourcePrefix = "";
+    }
+}
+
+const Aws::String& GetAwsResourcePrefix()
+{
+    return s_resourcePrefix;
+}
+
 } // namespace Testing
 } // namespace Aws
