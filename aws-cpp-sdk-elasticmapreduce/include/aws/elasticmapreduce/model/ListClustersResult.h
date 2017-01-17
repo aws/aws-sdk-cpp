@@ -36,7 +36,9 @@ namespace Model
 {
   /**
    * <p>This contains a ClusterSummaryList with the cluster details; for example, the
-   * cluster IDs, names, and status.</p>
+   * cluster IDs, names, and status.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/ListClustersOutput">AWS
+   * API Reference</a></p>
    */
   class AWS_EMR_API ListClustersResult
   {

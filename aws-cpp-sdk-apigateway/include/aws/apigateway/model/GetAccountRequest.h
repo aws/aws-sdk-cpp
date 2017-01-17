@@ -25,7 +25,9 @@ namespace Model
 
   /**
    * <p>Requests Amazon API Gateway to get information about the current
-   * <a>Account</a> resource.</p>
+   * <a>Account</a> resource.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetAccountRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_APIGATEWAY_API GetAccountRequest : public APIGatewayRequest
   {

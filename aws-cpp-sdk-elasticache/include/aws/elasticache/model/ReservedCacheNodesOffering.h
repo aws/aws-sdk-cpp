@@ -34,7 +34,10 @@ namespace Model
 {
 
   /**
-   * <p>Describes all of the attributes of a reserved cache node offering.</p>
+   * <p>Describes all of the attributes of a reserved cache node
+   * offering.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/ReservedCacheNodesOffering">AWS
+   * API Reference</a></p>
    */
   class AWS_ELASTICACHE_API ReservedCacheNodesOffering
   {

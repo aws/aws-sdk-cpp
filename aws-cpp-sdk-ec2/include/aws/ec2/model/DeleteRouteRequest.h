@@ -25,7 +25,9 @@ namespace Model
 {
 
   /**
-   * <p>Contains the parameters for DeleteRoute.</p>
+   * <p>Contains the parameters for DeleteRoute.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteRouteRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_EC2_API DeleteRouteRequest : public EC2Request
   {
@@ -93,46 +95,88 @@ namespace Model
     inline DeleteRouteRequest& WithRouteTableId(const char* value) { SetRouteTableId(value); return *this;}
 
     /**
-     * <p>The CIDR range for the route. The value you specify must match the CIDR for
-     * the route exactly.</p>
+     * <p>The IPv4 CIDR range for the route. The value you specify must match the CIDR
+     * for the route exactly.</p>
      */
     inline const Aws::String& GetDestinationCidrBlock() const{ return m_destinationCidrBlock; }
 
     /**
-     * <p>The CIDR range for the route. The value you specify must match the CIDR for
-     * the route exactly.</p>
+     * <p>The IPv4 CIDR range for the route. The value you specify must match the CIDR
+     * for the route exactly.</p>
      */
     inline void SetDestinationCidrBlock(const Aws::String& value) { m_destinationCidrBlockHasBeenSet = true; m_destinationCidrBlock = value; }
 
     /**
-     * <p>The CIDR range for the route. The value you specify must match the CIDR for
-     * the route exactly.</p>
+     * <p>The IPv4 CIDR range for the route. The value you specify must match the CIDR
+     * for the route exactly.</p>
      */
     inline void SetDestinationCidrBlock(Aws::String&& value) { m_destinationCidrBlockHasBeenSet = true; m_destinationCidrBlock = value; }
 
     /**
-     * <p>The CIDR range for the route. The value you specify must match the CIDR for
-     * the route exactly.</p>
+     * <p>The IPv4 CIDR range for the route. The value you specify must match the CIDR
+     * for the route exactly.</p>
      */
     inline void SetDestinationCidrBlock(const char* value) { m_destinationCidrBlockHasBeenSet = true; m_destinationCidrBlock.assign(value); }
 
     /**
-     * <p>The CIDR range for the route. The value you specify must match the CIDR for
-     * the route exactly.</p>
+     * <p>The IPv4 CIDR range for the route. The value you specify must match the CIDR
+     * for the route exactly.</p>
      */
     inline DeleteRouteRequest& WithDestinationCidrBlock(const Aws::String& value) { SetDestinationCidrBlock(value); return *this;}
 
     /**
-     * <p>The CIDR range for the route. The value you specify must match the CIDR for
-     * the route exactly.</p>
+     * <p>The IPv4 CIDR range for the route. The value you specify must match the CIDR
+     * for the route exactly.</p>
      */
     inline DeleteRouteRequest& WithDestinationCidrBlock(Aws::String&& value) { SetDestinationCidrBlock(value); return *this;}
 
     /**
-     * <p>The CIDR range for the route. The value you specify must match the CIDR for
-     * the route exactly.</p>
+     * <p>The IPv4 CIDR range for the route. The value you specify must match the CIDR
+     * for the route exactly.</p>
      */
     inline DeleteRouteRequest& WithDestinationCidrBlock(const char* value) { SetDestinationCidrBlock(value); return *this;}
+
+    /**
+     * <p>The IPv6 CIDR range for the route. The value you specify must match the CIDR
+     * for the route exactly.</p>
+     */
+    inline const Aws::String& GetDestinationIpv6CidrBlock() const{ return m_destinationIpv6CidrBlock; }
+
+    /**
+     * <p>The IPv6 CIDR range for the route. The value you specify must match the CIDR
+     * for the route exactly.</p>
+     */
+    inline void SetDestinationIpv6CidrBlock(const Aws::String& value) { m_destinationIpv6CidrBlockHasBeenSet = true; m_destinationIpv6CidrBlock = value; }
+
+    /**
+     * <p>The IPv6 CIDR range for the route. The value you specify must match the CIDR
+     * for the route exactly.</p>
+     */
+    inline void SetDestinationIpv6CidrBlock(Aws::String&& value) { m_destinationIpv6CidrBlockHasBeenSet = true; m_destinationIpv6CidrBlock = value; }
+
+    /**
+     * <p>The IPv6 CIDR range for the route. The value you specify must match the CIDR
+     * for the route exactly.</p>
+     */
+    inline void SetDestinationIpv6CidrBlock(const char* value) { m_destinationIpv6CidrBlockHasBeenSet = true; m_destinationIpv6CidrBlock.assign(value); }
+
+    /**
+     * <p>The IPv6 CIDR range for the route. The value you specify must match the CIDR
+     * for the route exactly.</p>
+     */
+    inline DeleteRouteRequest& WithDestinationIpv6CidrBlock(const Aws::String& value) { SetDestinationIpv6CidrBlock(value); return *this;}
+
+    /**
+     * <p>The IPv6 CIDR range for the route. The value you specify must match the CIDR
+     * for the route exactly.</p>
+     */
+    inline DeleteRouteRequest& WithDestinationIpv6CidrBlock(Aws::String&& value) { SetDestinationIpv6CidrBlock(value); return *this;}
+
+    /**
+     * <p>The IPv6 CIDR range for the route. The value you specify must match the CIDR
+     * for the route exactly.</p>
+     */
+    inline DeleteRouteRequest& WithDestinationIpv6CidrBlock(const char* value) { SetDestinationIpv6CidrBlock(value); return *this;}
 
   private:
     bool m_dryRun;
@@ -141,6 +185,8 @@ namespace Model
     bool m_routeTableIdHasBeenSet;
     Aws::String m_destinationCidrBlock;
     bool m_destinationCidrBlockHasBeenSet;
+    Aws::String m_destinationIpv6CidrBlock;
+    bool m_destinationIpv6CidrBlockHasBeenSet;
   };
 
 } // namespace Model

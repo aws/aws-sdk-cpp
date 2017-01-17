@@ -25,7 +25,9 @@ namespace Model
 {
 
   /**
-   * <p>The input for <a>DescribeStacks</a> action.</p>
+   * <p>The input for <a>DescribeStacks</a> action.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeStacksInput">AWS
+   * API Reference</a></p>
    */
   class AWS_CLOUDFORMATION_API DescribeStacksRequest : public CloudFormationRequest
   {

@@ -31,7 +31,9 @@ namespace Model
   /**
    * <p>Container for the parameters to the
    * <code><a>UpdateElasticsearchDomain</a></code> operation. Specifies the type and
-   * number of instances in the domain cluster.</p>
+   * number of instances in the domain cluster.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/UpdateElasticsearchDomainConfigRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_ELASTICSEARCHSERVICE_API UpdateElasticsearchDomainConfigRequest : public ElasticsearchServiceRequest
   {

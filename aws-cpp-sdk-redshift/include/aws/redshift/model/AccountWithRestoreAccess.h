@@ -32,7 +32,10 @@ namespace Model
 {
 
   /**
-   * <p>Describes an AWS customer account authorized to restore a snapshot.</p>
+   * <p>Describes an AWS customer account authorized to restore a
+   * snapshot.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/AccountWithRestoreAccess">AWS
+   * API Reference</a></p>
    */
   class AWS_REDSHIFT_API AccountWithRestoreAccess
   {

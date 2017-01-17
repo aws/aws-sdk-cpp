@@ -31,7 +31,9 @@ namespace Model
 {
 
   /**
-   * <p>Describes the tag of the WorkSpace.</p>
+   * <p>Describes the tag of the WorkSpace.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/Tag">AWS API
+   * Reference</a></p>
    */
   class AWS_WORKSPACES_API Tag
   {

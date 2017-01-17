@@ -30,7 +30,9 @@ namespace Model
    * href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-multipart-abort-upload.html">Abort
    * Multipart Upload</a>. For conceptual information, see <a
    * href="http://docs.aws.amazon.com/amazonglacier/latest/dev/working-with-archives.html">Working
-   * with Archives in Amazon Glacier</a>.</p>
+   * with Archives in Amazon Glacier</a>.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/AbortMultipartUploadInput">AWS
+   * API Reference</a></p>
    */
   class AWS_GLACIER_API AbortMultipartUploadRequest : public GlacierRequest
   {

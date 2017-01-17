@@ -32,7 +32,10 @@ namespace Model
 {
 
   /**
-   * <p>The information for each resource record set that you want to change.</p>
+   * <p>The information for each resource record set that you want to
+   * change.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/Change">AWS API
+   * Reference</a></p>
    */
   class AWS_ROUTE53_API Change
   {

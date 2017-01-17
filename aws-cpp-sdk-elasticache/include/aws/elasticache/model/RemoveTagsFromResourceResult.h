@@ -37,7 +37,9 @@ namespace Model
   /**
    * <p>Represents the output from the <code>AddTagsToResource</code>,
    * <code>ListTagsOnResource</code>, and <code>RemoveTagsFromResource</code>
-   * operations.</p>
+   * operations.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/TagListMessage">AWS
+   * API Reference</a></p>
    */
   class AWS_ELASTICACHE_API RemoveTagsFromResourceResult
   {

@@ -26,7 +26,10 @@ namespace Model
 {
 
   /**
-   * <p>Represents the input of a put job failure result action.</p>
+   * <p>Represents the input of a put job failure result action.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/PutJobFailureResultInput">AWS
+   * API Reference</a></p>
    */
   class AWS_CODEPIPELINE_API PutJobFailureResultRequest : public CodePipelineRequest
   {

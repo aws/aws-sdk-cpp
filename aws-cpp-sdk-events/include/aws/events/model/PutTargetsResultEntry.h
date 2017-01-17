@@ -31,7 +31,10 @@ namespace Model
 {
 
   /**
-   * <p>A PutTargetsResult contains a list of PutTargetsResultEntry.</p>
+   * <p>A PutTargetsResult contains a list of PutTargetsResultEntry.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/PutTargetsResultEntry">AWS
+   * API Reference</a></p>
    */
   class AWS_CLOUDWATCHEVENTS_API PutTargetsResultEntry
   {

@@ -58,7 +58,9 @@ namespace Model
    * Center.</p> </li> <li> <p> <b>subject.</b> The subject line of the case.</p>
    * </li> <li> <p> <b>submittedBy.</b> The email address of the account that
    * submitted the case.</p> </li> <li> <p> <b>timeCreated.</b> The time the case was
-   * created, in ISO-8601 format.</p> </li> </ul>
+   * created, in ISO-8601 format.</p> </li> </ul><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/CaseDetails">AWS
+   * API Reference</a></p>
    */
   class AWS_SUPPORT_API CaseDetails
   {

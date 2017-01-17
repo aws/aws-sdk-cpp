@@ -34,7 +34,9 @@ namespace SNS
 namespace Model
 {
   /**
-   * <p>Response from CreateEndpoint action.</p>
+   * <p>Response from CreateEndpoint action.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/CreateEndpointResponse">AWS
+   * API Reference</a></p>
    */
   class AWS_SNS_API CreatePlatformEndpointResult
   {

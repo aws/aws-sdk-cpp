@@ -34,7 +34,10 @@ namespace Model
   /**
    * <p>Options for a field that contains an array of literal strings. Present if
    * <code>IndexFieldType</code> specifies the field is of type
-   * <code>literal-array</code>. All options are enabled by default.</p>
+   * <code>literal-array</code>. All options are enabled by default.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/LiteralArrayOptions">AWS
+   * API Reference</a></p>
    */
   class AWS_CLOUDSEARCH_API LiteralArrayOptions
   {

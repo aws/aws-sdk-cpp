@@ -26,7 +26,9 @@ namespace Model
 
   /**
    * <p>Passes the request to CloudTrail to stop logging AWS API calls for the
-   * specified account.</p>
+   * specified account.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/StopLoggingRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_CLOUDTRAIL_API StopLoggingRequest : public CloudTrailRequest
   {

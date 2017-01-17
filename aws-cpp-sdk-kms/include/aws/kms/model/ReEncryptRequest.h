@@ -38,27 +38,27 @@ namespace Model
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
     /**
-     * <p>Ciphertext of the data to re-encrypt.</p>
+     * <p>Ciphertext of the data to reencrypt.</p>
      */
     inline const Aws::Utils::ByteBuffer& GetCiphertextBlob() const{ return m_ciphertextBlob; }
 
     /**
-     * <p>Ciphertext of the data to re-encrypt.</p>
+     * <p>Ciphertext of the data to reencrypt.</p>
      */
     inline void SetCiphertextBlob(const Aws::Utils::ByteBuffer& value) { m_ciphertextBlobHasBeenSet = true; m_ciphertextBlob = value; }
 
     /**
-     * <p>Ciphertext of the data to re-encrypt.</p>
+     * <p>Ciphertext of the data to reencrypt.</p>
      */
     inline void SetCiphertextBlob(Aws::Utils::ByteBuffer&& value) { m_ciphertextBlobHasBeenSet = true; m_ciphertextBlob = value; }
 
     /**
-     * <p>Ciphertext of the data to re-encrypt.</p>
+     * <p>Ciphertext of the data to reencrypt.</p>
      */
     inline ReEncryptRequest& WithCiphertextBlob(const Aws::Utils::ByteBuffer& value) { SetCiphertextBlob(value); return *this;}
 
     /**
-     * <p>Ciphertext of the data to re-encrypt.</p>
+     * <p>Ciphertext of the data to reencrypt.</p>
      */
     inline ReEncryptRequest& WithCiphertextBlob(Aws::Utils::ByteBuffer&& value) { SetCiphertextBlob(value); return *this;}
 
@@ -135,10 +135,9 @@ namespace Model
     inline ReEncryptRequest& AddSourceEncryptionContext(const char* key, const char* value) { m_sourceEncryptionContextHasBeenSet = true; m_sourceEncryptionContext[key] = value; return *this; }
 
     /**
-     * <p>A unique identifier for the customer master key used to re-encrypt the data.
-     * This value can be a globally unique identifier, a fully specified ARN to either
-     * an alias or a key, or an alias name prefixed by "alias/".</p> <ul> <li> <p>Key
-     * ARN Example -
+     * <p>A unique identifier for the CMK to use to reencrypt the data. This value can
+     * be a globally unique identifier, a fully specified ARN to either an alias or a
+     * key, or an alias name prefixed by "alias/".</p> <ul> <li> <p>Key ARN Example -
      * arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</p>
      * </li> <li> <p>Alias ARN Example -
      * arn:aws:kms:us-east-1:123456789012:alias/MyAliasName</p> </li> <li> <p>Globally
@@ -148,10 +147,9 @@ namespace Model
     inline const Aws::String& GetDestinationKeyId() const{ return m_destinationKeyId; }
 
     /**
-     * <p>A unique identifier for the customer master key used to re-encrypt the data.
-     * This value can be a globally unique identifier, a fully specified ARN to either
-     * an alias or a key, or an alias name prefixed by "alias/".</p> <ul> <li> <p>Key
-     * ARN Example -
+     * <p>A unique identifier for the CMK to use to reencrypt the data. This value can
+     * be a globally unique identifier, a fully specified ARN to either an alias or a
+     * key, or an alias name prefixed by "alias/".</p> <ul> <li> <p>Key ARN Example -
      * arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</p>
      * </li> <li> <p>Alias ARN Example -
      * arn:aws:kms:us-east-1:123456789012:alias/MyAliasName</p> </li> <li> <p>Globally
@@ -161,10 +159,9 @@ namespace Model
     inline void SetDestinationKeyId(const Aws::String& value) { m_destinationKeyIdHasBeenSet = true; m_destinationKeyId = value; }
 
     /**
-     * <p>A unique identifier for the customer master key used to re-encrypt the data.
-     * This value can be a globally unique identifier, a fully specified ARN to either
-     * an alias or a key, or an alias name prefixed by "alias/".</p> <ul> <li> <p>Key
-     * ARN Example -
+     * <p>A unique identifier for the CMK to use to reencrypt the data. This value can
+     * be a globally unique identifier, a fully specified ARN to either an alias or a
+     * key, or an alias name prefixed by "alias/".</p> <ul> <li> <p>Key ARN Example -
      * arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</p>
      * </li> <li> <p>Alias ARN Example -
      * arn:aws:kms:us-east-1:123456789012:alias/MyAliasName</p> </li> <li> <p>Globally
@@ -174,10 +171,9 @@ namespace Model
     inline void SetDestinationKeyId(Aws::String&& value) { m_destinationKeyIdHasBeenSet = true; m_destinationKeyId = value; }
 
     /**
-     * <p>A unique identifier for the customer master key used to re-encrypt the data.
-     * This value can be a globally unique identifier, a fully specified ARN to either
-     * an alias or a key, or an alias name prefixed by "alias/".</p> <ul> <li> <p>Key
-     * ARN Example -
+     * <p>A unique identifier for the CMK to use to reencrypt the data. This value can
+     * be a globally unique identifier, a fully specified ARN to either an alias or a
+     * key, or an alias name prefixed by "alias/".</p> <ul> <li> <p>Key ARN Example -
      * arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</p>
      * </li> <li> <p>Alias ARN Example -
      * arn:aws:kms:us-east-1:123456789012:alias/MyAliasName</p> </li> <li> <p>Globally
@@ -187,10 +183,9 @@ namespace Model
     inline void SetDestinationKeyId(const char* value) { m_destinationKeyIdHasBeenSet = true; m_destinationKeyId.assign(value); }
 
     /**
-     * <p>A unique identifier for the customer master key used to re-encrypt the data.
-     * This value can be a globally unique identifier, a fully specified ARN to either
-     * an alias or a key, or an alias name prefixed by "alias/".</p> <ul> <li> <p>Key
-     * ARN Example -
+     * <p>A unique identifier for the CMK to use to reencrypt the data. This value can
+     * be a globally unique identifier, a fully specified ARN to either an alias or a
+     * key, or an alias name prefixed by "alias/".</p> <ul> <li> <p>Key ARN Example -
      * arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</p>
      * </li> <li> <p>Alias ARN Example -
      * arn:aws:kms:us-east-1:123456789012:alias/MyAliasName</p> </li> <li> <p>Globally
@@ -200,10 +195,9 @@ namespace Model
     inline ReEncryptRequest& WithDestinationKeyId(const Aws::String& value) { SetDestinationKeyId(value); return *this;}
 
     /**
-     * <p>A unique identifier for the customer master key used to re-encrypt the data.
-     * This value can be a globally unique identifier, a fully specified ARN to either
-     * an alias or a key, or an alias name prefixed by "alias/".</p> <ul> <li> <p>Key
-     * ARN Example -
+     * <p>A unique identifier for the CMK to use to reencrypt the data. This value can
+     * be a globally unique identifier, a fully specified ARN to either an alias or a
+     * key, or an alias name prefixed by "alias/".</p> <ul> <li> <p>Key ARN Example -
      * arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</p>
      * </li> <li> <p>Alias ARN Example -
      * arn:aws:kms:us-east-1:123456789012:alias/MyAliasName</p> </li> <li> <p>Globally
@@ -213,10 +207,9 @@ namespace Model
     inline ReEncryptRequest& WithDestinationKeyId(Aws::String&& value) { SetDestinationKeyId(value); return *this;}
 
     /**
-     * <p>A unique identifier for the customer master key used to re-encrypt the data.
-     * This value can be a globally unique identifier, a fully specified ARN to either
-     * an alias or a key, or an alias name prefixed by "alias/".</p> <ul> <li> <p>Key
-     * ARN Example -
+     * <p>A unique identifier for the CMK to use to reencrypt the data. This value can
+     * be a globally unique identifier, a fully specified ARN to either an alias or a
+     * key, or an alias name prefixed by "alias/".</p> <ul> <li> <p>Key ARN Example -
      * arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</p>
      * </li> <li> <p>Alias ARN Example -
      * arn:aws:kms:us-east-1:123456789012:alias/MyAliasName</p> </li> <li> <p>Globally
@@ -226,62 +219,62 @@ namespace Model
     inline ReEncryptRequest& WithDestinationKeyId(const char* value) { SetDestinationKeyId(value); return *this;}
 
     /**
-     * <p>Encryption context to be used when the data is re-encrypted.</p>
+     * <p>Encryption context to use when the data is reencrypted.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetDestinationEncryptionContext() const{ return m_destinationEncryptionContext; }
 
     /**
-     * <p>Encryption context to be used when the data is re-encrypted.</p>
+     * <p>Encryption context to use when the data is reencrypted.</p>
      */
     inline void SetDestinationEncryptionContext(const Aws::Map<Aws::String, Aws::String>& value) { m_destinationEncryptionContextHasBeenSet = true; m_destinationEncryptionContext = value; }
 
     /**
-     * <p>Encryption context to be used when the data is re-encrypted.</p>
+     * <p>Encryption context to use when the data is reencrypted.</p>
      */
     inline void SetDestinationEncryptionContext(Aws::Map<Aws::String, Aws::String>&& value) { m_destinationEncryptionContextHasBeenSet = true; m_destinationEncryptionContext = value; }
 
     /**
-     * <p>Encryption context to be used when the data is re-encrypted.</p>
+     * <p>Encryption context to use when the data is reencrypted.</p>
      */
     inline ReEncryptRequest& WithDestinationEncryptionContext(const Aws::Map<Aws::String, Aws::String>& value) { SetDestinationEncryptionContext(value); return *this;}
 
     /**
-     * <p>Encryption context to be used when the data is re-encrypted.</p>
+     * <p>Encryption context to use when the data is reencrypted.</p>
      */
     inline ReEncryptRequest& WithDestinationEncryptionContext(Aws::Map<Aws::String, Aws::String>&& value) { SetDestinationEncryptionContext(value); return *this;}
 
     /**
-     * <p>Encryption context to be used when the data is re-encrypted.</p>
+     * <p>Encryption context to use when the data is reencrypted.</p>
      */
     inline ReEncryptRequest& AddDestinationEncryptionContext(const Aws::String& key, const Aws::String& value) { m_destinationEncryptionContextHasBeenSet = true; m_destinationEncryptionContext[key] = value; return *this; }
 
     /**
-     * <p>Encryption context to be used when the data is re-encrypted.</p>
+     * <p>Encryption context to use when the data is reencrypted.</p>
      */
     inline ReEncryptRequest& AddDestinationEncryptionContext(Aws::String&& key, const Aws::String& value) { m_destinationEncryptionContextHasBeenSet = true; m_destinationEncryptionContext[key] = value; return *this; }
 
     /**
-     * <p>Encryption context to be used when the data is re-encrypted.</p>
+     * <p>Encryption context to use when the data is reencrypted.</p>
      */
     inline ReEncryptRequest& AddDestinationEncryptionContext(const Aws::String& key, Aws::String&& value) { m_destinationEncryptionContextHasBeenSet = true; m_destinationEncryptionContext[key] = value; return *this; }
 
     /**
-     * <p>Encryption context to be used when the data is re-encrypted.</p>
+     * <p>Encryption context to use when the data is reencrypted.</p>
      */
     inline ReEncryptRequest& AddDestinationEncryptionContext(Aws::String&& key, Aws::String&& value) { m_destinationEncryptionContextHasBeenSet = true; m_destinationEncryptionContext[key] = value; return *this; }
 
     /**
-     * <p>Encryption context to be used when the data is re-encrypted.</p>
+     * <p>Encryption context to use when the data is reencrypted.</p>
      */
     inline ReEncryptRequest& AddDestinationEncryptionContext(const char* key, Aws::String&& value) { m_destinationEncryptionContextHasBeenSet = true; m_destinationEncryptionContext[key] = value; return *this; }
 
     /**
-     * <p>Encryption context to be used when the data is re-encrypted.</p>
+     * <p>Encryption context to use when the data is reencrypted.</p>
      */
     inline ReEncryptRequest& AddDestinationEncryptionContext(Aws::String&& key, const char* value) { m_destinationEncryptionContextHasBeenSet = true; m_destinationEncryptionContext[key] = value; return *this; }
 
     /**
-     * <p>Encryption context to be used when the data is re-encrypted.</p>
+     * <p>Encryption context to use when the data is reencrypted.</p>
      */
     inline ReEncryptRequest& AddDestinationEncryptionContext(const char* key, const char* value) { m_destinationEncryptionContextHasBeenSet = true; m_destinationEncryptionContext[key] = value; return *this; }
 

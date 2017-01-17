@@ -35,7 +35,10 @@ namespace Model
    * <p>Details on the network bindings between a container and its host container
    * instance. After a task reaches the <code>RUNNING</code> status, manual and
    * automatic host and container port assignments are visible in the
-   * <code>networkBindings</code> section of <a>DescribeTasks</a> API responses.</p>
+   * <code>networkBindings</code> section of <a>DescribeTasks</a> API
+   * responses.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/NetworkBinding">AWS
+   * API Reference</a></p>
    */
   class AWS_ECS_API NetworkBinding
   {

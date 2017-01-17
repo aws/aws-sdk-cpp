@@ -31,7 +31,9 @@ namespace Model
 {
 
   /**
-   * <p>The email configuration type.</p>
+   * <p>The email configuration type.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/EmailConfigurationType">AWS
+   * API Reference</a></p>
    */
   class AWS_COGNITOIDENTITYPROVIDER_API EmailConfigurationType
   {

@@ -21,6 +21,7 @@
 #include <aws/ecs/model/ContainerDefinition.h>
 #include <aws/ecs/model/Volume.h>
 #include <aws/ecs/model/Attribute.h>
+#include <aws/ecs/model/TaskDefinitionPlacementConstraint.h>
 
 namespace Aws
 {
@@ -37,7 +38,9 @@ namespace Model
 {
 
   /**
-   * <p>Details of a task definition.</p>
+   * <p>Details of a task definition.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/TaskDefinition">AWS
+   * API Reference</a></p>
    */
   class AWS_ECS_API TaskDefinition
   {
@@ -459,6 +462,41 @@ namespace Model
      */
     inline TaskDefinition& AddRequiresAttributes(Attribute&& value) { m_requiresAttributesHasBeenSet = true; m_requiresAttributes.push_back(value); return *this; }
 
+    /**
+     * <p>An array of placement constraint objects to use for tasks. </p>
+     */
+    inline const Aws::Vector<TaskDefinitionPlacementConstraint>& GetPlacementConstraints() const{ return m_placementConstraints; }
+
+    /**
+     * <p>An array of placement constraint objects to use for tasks. </p>
+     */
+    inline void SetPlacementConstraints(const Aws::Vector<TaskDefinitionPlacementConstraint>& value) { m_placementConstraintsHasBeenSet = true; m_placementConstraints = value; }
+
+    /**
+     * <p>An array of placement constraint objects to use for tasks. </p>
+     */
+    inline void SetPlacementConstraints(Aws::Vector<TaskDefinitionPlacementConstraint>&& value) { m_placementConstraintsHasBeenSet = true; m_placementConstraints = value; }
+
+    /**
+     * <p>An array of placement constraint objects to use for tasks. </p>
+     */
+    inline TaskDefinition& WithPlacementConstraints(const Aws::Vector<TaskDefinitionPlacementConstraint>& value) { SetPlacementConstraints(value); return *this;}
+
+    /**
+     * <p>An array of placement constraint objects to use for tasks. </p>
+     */
+    inline TaskDefinition& WithPlacementConstraints(Aws::Vector<TaskDefinitionPlacementConstraint>&& value) { SetPlacementConstraints(value); return *this;}
+
+    /**
+     * <p>An array of placement constraint objects to use for tasks. </p>
+     */
+    inline TaskDefinition& AddPlacementConstraints(const TaskDefinitionPlacementConstraint& value) { m_placementConstraintsHasBeenSet = true; m_placementConstraints.push_back(value); return *this; }
+
+    /**
+     * <p>An array of placement constraint objects to use for tasks. </p>
+     */
+    inline TaskDefinition& AddPlacementConstraints(TaskDefinitionPlacementConstraint&& value) { m_placementConstraintsHasBeenSet = true; m_placementConstraints.push_back(value); return *this; }
+
   private:
     Aws::String m_taskDefinitionArn;
     bool m_taskDefinitionArnHasBeenSet;
@@ -478,6 +516,8 @@ namespace Model
     bool m_statusHasBeenSet;
     Aws::Vector<Attribute> m_requiresAttributes;
     bool m_requiresAttributesHasBeenSet;
+    Aws::Vector<TaskDefinitionPlacementConstraint> m_placementConstraints;
+    bool m_placementConstraintsHasBeenSet;
   };
 
 } // namespace Model

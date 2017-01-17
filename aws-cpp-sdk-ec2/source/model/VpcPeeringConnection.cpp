@@ -179,7 +179,7 @@ void VpcPeeringConnection::OutputToStream(Aws::OStream& oStream, const char* loc
       for(auto& item : m_tags)
       {
         Aws::StringStream tagsSs;
-        tagsSs << location <<  ".item." << tagsIdx++;
+        tagsSs << location <<  ".Item." << tagsIdx++;
         item.OutputToStream(oStream, tagsSs.str().c_str());
       }
   }

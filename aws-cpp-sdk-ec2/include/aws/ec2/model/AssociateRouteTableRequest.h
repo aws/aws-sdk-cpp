@@ -25,7 +25,10 @@ namespace Model
 {
 
   /**
-   * <p>Contains the parameters for AssociateRouteTable.</p>
+   * <p>Contains the parameters for AssociateRouteTable.</p><p><h3>See Also:</h3>  
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateRouteTableRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_EC2_API AssociateRouteTableRequest : public EC2Request
   {

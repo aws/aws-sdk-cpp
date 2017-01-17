@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/InstanceType.h>
+#include <aws/ec2/model/Scope.h>
 
 namespace Aws
 {
@@ -33,7 +34,10 @@ namespace Model
 {
 
   /**
-   * <p>Describes the configuration settings for the modified Reserved Instances.</p>
+   * <p>Describes the configuration settings for the modified Reserved
+   * Instances.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ReservedInstancesConfiguration">AWS
+   * API Reference</a></p>
    */
   class AWS_EC2_API ReservedInstancesConfiguration
   {
@@ -162,6 +166,36 @@ namespace Model
      */
     inline ReservedInstancesConfiguration& WithInstanceType(InstanceType&& value) { SetInstanceType(value); return *this;}
 
+    /**
+     * <p>Whether the Reserved Instance is applied to instances in a region or
+     * instances in a specific Availability Zone.</p>
+     */
+    inline const Scope& GetScope() const{ return m_scope; }
+
+    /**
+     * <p>Whether the Reserved Instance is applied to instances in a region or
+     * instances in a specific Availability Zone.</p>
+     */
+    inline void SetScope(const Scope& value) { m_scopeHasBeenSet = true; m_scope = value; }
+
+    /**
+     * <p>Whether the Reserved Instance is applied to instances in a region or
+     * instances in a specific Availability Zone.</p>
+     */
+    inline void SetScope(Scope&& value) { m_scopeHasBeenSet = true; m_scope = value; }
+
+    /**
+     * <p>Whether the Reserved Instance is applied to instances in a region or
+     * instances in a specific Availability Zone.</p>
+     */
+    inline ReservedInstancesConfiguration& WithScope(const Scope& value) { SetScope(value); return *this;}
+
+    /**
+     * <p>Whether the Reserved Instance is applied to instances in a region or
+     * instances in a specific Availability Zone.</p>
+     */
+    inline ReservedInstancesConfiguration& WithScope(Scope&& value) { SetScope(value); return *this;}
+
   private:
     Aws::String m_availabilityZone;
     bool m_availabilityZoneHasBeenSet;
@@ -171,6 +205,8 @@ namespace Model
     bool m_instanceCountHasBeenSet;
     InstanceType m_instanceType;
     bool m_instanceTypeHasBeenSet;
+    Scope m_scope;
+    bool m_scopeHasBeenSet;
   };
 
 } // namespace Model

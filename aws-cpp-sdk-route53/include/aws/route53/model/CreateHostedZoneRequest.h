@@ -27,7 +27,10 @@ namespace Model
 {
 
   /**
-   * <p>A complex type containing the hosted zone request information.</p>
+   * <p>A complex type containing the hosted zone request information.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/CreateHostedZoneRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_ROUTE53_API CreateHostedZoneRequest : public Route53Request
   {

@@ -26,7 +26,10 @@ namespace Model
 {
 
   /**
-   * <p>The POST Request to add a new <a>RestApi</a> resource to your collection.</p>
+   * <p>The POST Request to add a new <a>RestApi</a> resource to your
+   * collection.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/CreateRestApiRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_APIGATEWAY_API CreateRestApiRequest : public APIGatewayRequest
   {
@@ -103,6 +106,41 @@ namespace Model
      * <p>The description of the <a>RestApi</a>.</p>
      */
     inline CreateRestApiRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+
+    /**
+     * <p>A version identifier for the API.</p>
+     */
+    inline const Aws::String& GetVersion() const{ return m_version; }
+
+    /**
+     * <p>A version identifier for the API.</p>
+     */
+    inline void SetVersion(const Aws::String& value) { m_versionHasBeenSet = true; m_version = value; }
+
+    /**
+     * <p>A version identifier for the API.</p>
+     */
+    inline void SetVersion(Aws::String&& value) { m_versionHasBeenSet = true; m_version = value; }
+
+    /**
+     * <p>A version identifier for the API.</p>
+     */
+    inline void SetVersion(const char* value) { m_versionHasBeenSet = true; m_version.assign(value); }
+
+    /**
+     * <p>A version identifier for the API.</p>
+     */
+    inline CreateRestApiRequest& WithVersion(const Aws::String& value) { SetVersion(value); return *this;}
+
+    /**
+     * <p>A version identifier for the API.</p>
+     */
+    inline CreateRestApiRequest& WithVersion(Aws::String&& value) { SetVersion(value); return *this;}
+
+    /**
+     * <p>A version identifier for the API.</p>
+     */
+    inline CreateRestApiRequest& WithVersion(const char* value) { SetVersion(value); return *this;}
 
     /**
      * <p>The ID of the <a>RestApi</a> that you want to clone from.</p>
@@ -192,6 +230,8 @@ namespace Model
     bool m_nameHasBeenSet;
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+    Aws::String m_version;
+    bool m_versionHasBeenSet;
     Aws::String m_cloneFrom;
     bool m_cloneFromHasBeenSet;
     Aws::Vector<Aws::String> m_binaryMediaTypes;

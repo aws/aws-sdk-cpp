@@ -33,7 +33,9 @@ namespace Model
   /**
    * <p>A complex type that contains an optional comment about your hosted zone. If
    * you don't want to specify a comment, omit both the <code>HostedZoneConfig</code>
-   * and <code>Comment</code> elements.</p>
+   * and <code>Comment</code> elements.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/HostedZoneConfig">AWS
+   * API Reference</a></p>
    */
   class AWS_ROUTE53_API HostedZoneConfig
   {

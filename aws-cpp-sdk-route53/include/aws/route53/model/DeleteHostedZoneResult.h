@@ -33,7 +33,10 @@ namespace Route53
 namespace Model
 {
   /**
-   * <p>A complex type containing the response information for the request.</p>
+   * <p>A complex type containing the response information for the
+   * request.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DeleteHostedZoneResponse">AWS
+   * API Reference</a></p>
    */
   class AWS_ROUTE53_API DeleteHostedZoneResult
   {

@@ -19,6 +19,7 @@
 #include <aws/ec2/model/BatchState.h>
 #include <aws/ec2/model/SpotFleetRequestConfigData.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/ec2/model/ActivityStatus.h>
 
 namespace Aws
 {
@@ -35,7 +36,9 @@ namespace Model
 {
 
   /**
-   * <p>Describes a Spot fleet request.</p>
+   * <p>Describes a Spot fleet request.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/SpotFleetRequestConfig">AWS
+   * API Reference</a></p>
    */
   class AWS_EC2_API SpotFleetRequestConfig
   {
@@ -157,6 +160,56 @@ namespace Model
      */
     inline SpotFleetRequestConfig& WithCreateTime(Aws::Utils::DateTime&& value) { SetCreateTime(value); return *this;}
 
+    /**
+     * <p>The progress of the Spot fleet request. If there is an error, the status is
+     * <code>error</code>. After all bids are placed, the status is
+     * <code>pending_fulfillment</code>. If the size of the fleet is equal to or
+     * greater than its target capacity, the status is <code>fulfilled</code>. If the
+     * size of the fleet is decreased, the status is <code>pending_termination</code>
+     * while Spot instances are terminating.</p>
+     */
+    inline const ActivityStatus& GetActivityStatus() const{ return m_activityStatus; }
+
+    /**
+     * <p>The progress of the Spot fleet request. If there is an error, the status is
+     * <code>error</code>. After all bids are placed, the status is
+     * <code>pending_fulfillment</code>. If the size of the fleet is equal to or
+     * greater than its target capacity, the status is <code>fulfilled</code>. If the
+     * size of the fleet is decreased, the status is <code>pending_termination</code>
+     * while Spot instances are terminating.</p>
+     */
+    inline void SetActivityStatus(const ActivityStatus& value) { m_activityStatusHasBeenSet = true; m_activityStatus = value; }
+
+    /**
+     * <p>The progress of the Spot fleet request. If there is an error, the status is
+     * <code>error</code>. After all bids are placed, the status is
+     * <code>pending_fulfillment</code>. If the size of the fleet is equal to or
+     * greater than its target capacity, the status is <code>fulfilled</code>. If the
+     * size of the fleet is decreased, the status is <code>pending_termination</code>
+     * while Spot instances are terminating.</p>
+     */
+    inline void SetActivityStatus(ActivityStatus&& value) { m_activityStatusHasBeenSet = true; m_activityStatus = value; }
+
+    /**
+     * <p>The progress of the Spot fleet request. If there is an error, the status is
+     * <code>error</code>. After all bids are placed, the status is
+     * <code>pending_fulfillment</code>. If the size of the fleet is equal to or
+     * greater than its target capacity, the status is <code>fulfilled</code>. If the
+     * size of the fleet is decreased, the status is <code>pending_termination</code>
+     * while Spot instances are terminating.</p>
+     */
+    inline SpotFleetRequestConfig& WithActivityStatus(const ActivityStatus& value) { SetActivityStatus(value); return *this;}
+
+    /**
+     * <p>The progress of the Spot fleet request. If there is an error, the status is
+     * <code>error</code>. After all bids are placed, the status is
+     * <code>pending_fulfillment</code>. If the size of the fleet is equal to or
+     * greater than its target capacity, the status is <code>fulfilled</code>. If the
+     * size of the fleet is decreased, the status is <code>pending_termination</code>
+     * while Spot instances are terminating.</p>
+     */
+    inline SpotFleetRequestConfig& WithActivityStatus(ActivityStatus&& value) { SetActivityStatus(value); return *this;}
+
   private:
     Aws::String m_spotFleetRequestId;
     bool m_spotFleetRequestIdHasBeenSet;
@@ -166,6 +219,8 @@ namespace Model
     bool m_spotFleetRequestConfigHasBeenSet;
     Aws::Utils::DateTime m_createTime;
     bool m_createTimeHasBeenSet;
+    ActivityStatus m_activityStatus;
+    bool m_activityStatusHasBeenSet;
   };
 
 } // namespace Model

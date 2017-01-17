@@ -37,7 +37,7 @@ Aws::String DeleteApplicationRequest::SerializePayload() const
 
   if(m_terminateEnvByForceHasBeenSet)
   {
-    ss << "TerminateEnvByForce=" << m_terminateEnvByForce << "&";
+    ss << "TerminateEnvByForce=" << std::boolalpha << m_terminateEnvByForce << "&";
   }
 
   ss << "Version=2010-12-01";

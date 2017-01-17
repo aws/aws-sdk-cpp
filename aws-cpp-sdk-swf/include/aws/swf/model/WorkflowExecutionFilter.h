@@ -32,7 +32,9 @@ namespace Model
 
   /**
    * <p>Used to filter the workflow executions in visibility APIs by their
-   * <code>workflowId</code>.</p>
+   * <code>workflowId</code>.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/WorkflowExecutionFilter">AWS
+   * API Reference</a></p>
    */
   class AWS_SWF_API WorkflowExecutionFilter
   {

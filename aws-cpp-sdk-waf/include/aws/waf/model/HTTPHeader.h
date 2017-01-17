@@ -35,7 +35,9 @@ namespace Model
    * <code>HTTPHeader</code> complex type that appears as <code>Headers</code> in the
    * response syntax. <code>HTTPHeader</code> contains the names and values of all of
    * the headers that appear in one of the web requests that were returned by
-   * <code>GetSampledRequests</code>. </p>
+   * <code>GetSampledRequests</code>. </p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/HTTPHeader">AWS API
+   * Reference</a></p>
    */
   class AWS_WAF_API HTTPHeader
   {

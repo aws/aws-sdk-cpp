@@ -27,7 +27,9 @@ namespace Model
 {
 
   /**
-   * <p/>
+   * <p/><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/ModifyEndpointMessage">AWS
+   * API Reference</a></p>
    */
   class AWS_DATABASEMIGRATIONSERVICE_API ModifyEndpointRequest : public DatabaseMigrationServiceRequest
   {
@@ -155,43 +157,43 @@ namespace Model
 
     /**
      * <p>The type of engine for the endpoint. Valid values include MYSQL, ORACLE,
-     * POSTGRES, MARIADB, AURORA, REDSHIFT, and SQLSERVER.</p>
+     * POSTGRES, MARIADB, AURORA, REDSHIFT, SYBASE, and SQLSERVER.</p>
      */
     inline const Aws::String& GetEngineName() const{ return m_engineName; }
 
     /**
      * <p>The type of engine for the endpoint. Valid values include MYSQL, ORACLE,
-     * POSTGRES, MARIADB, AURORA, REDSHIFT, and SQLSERVER.</p>
+     * POSTGRES, MARIADB, AURORA, REDSHIFT, SYBASE, and SQLSERVER.</p>
      */
     inline void SetEngineName(const Aws::String& value) { m_engineNameHasBeenSet = true; m_engineName = value; }
 
     /**
      * <p>The type of engine for the endpoint. Valid values include MYSQL, ORACLE,
-     * POSTGRES, MARIADB, AURORA, REDSHIFT, and SQLSERVER.</p>
+     * POSTGRES, MARIADB, AURORA, REDSHIFT, SYBASE, and SQLSERVER.</p>
      */
     inline void SetEngineName(Aws::String&& value) { m_engineNameHasBeenSet = true; m_engineName = value; }
 
     /**
      * <p>The type of engine for the endpoint. Valid values include MYSQL, ORACLE,
-     * POSTGRES, MARIADB, AURORA, REDSHIFT, and SQLSERVER.</p>
+     * POSTGRES, MARIADB, AURORA, REDSHIFT, SYBASE, and SQLSERVER.</p>
      */
     inline void SetEngineName(const char* value) { m_engineNameHasBeenSet = true; m_engineName.assign(value); }
 
     /**
      * <p>The type of engine for the endpoint. Valid values include MYSQL, ORACLE,
-     * POSTGRES, MARIADB, AURORA, REDSHIFT, and SQLSERVER.</p>
+     * POSTGRES, MARIADB, AURORA, REDSHIFT, SYBASE, and SQLSERVER.</p>
      */
     inline ModifyEndpointRequest& WithEngineName(const Aws::String& value) { SetEngineName(value); return *this;}
 
     /**
      * <p>The type of engine for the endpoint. Valid values include MYSQL, ORACLE,
-     * POSTGRES, MARIADB, AURORA, REDSHIFT, and SQLSERVER.</p>
+     * POSTGRES, MARIADB, AURORA, REDSHIFT, SYBASE, and SQLSERVER.</p>
      */
     inline ModifyEndpointRequest& WithEngineName(Aws::String&& value) { SetEngineName(value); return *this;}
 
     /**
      * <p>The type of engine for the endpoint. Valid values include MYSQL, ORACLE,
-     * POSTGRES, MARIADB, AURORA, REDSHIFT, and SQLSERVER.</p>
+     * POSTGRES, MARIADB, AURORA, REDSHIFT, SYBASE, and SQLSERVER.</p>
      */
     inline ModifyEndpointRequest& WithEngineName(const char* value) { SetEngineName(value); return *this;}
 

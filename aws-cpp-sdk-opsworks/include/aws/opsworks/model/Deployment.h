@@ -33,7 +33,9 @@ namespace Model
 {
 
   /**
-   * <p>Describes a deployment of a stack or app.</p>
+   * <p>Describes a deployment of a stack or app.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/Deployment">AWS
+   * API Reference</a></p>
    */
   class AWS_OPSWORKS_API Deployment
   {

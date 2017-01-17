@@ -31,7 +31,9 @@ namespace Model
 
   /**
    * <p>Configures retry behavior in the event that Firehose is unable to deliver
-   * documents to Amazon Redshift.</p>
+   * documents to Amazon Redshift.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/RedshiftRetryOptions">AWS
+   * API Reference</a></p>
    */
   class AWS_FIREHOSE_API RedshiftRetryOptions
   {

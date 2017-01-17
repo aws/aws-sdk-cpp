@@ -287,5 +287,15 @@ public class CppViewHelperTest {
         assertEquals("OperationName", CppViewHelper.computeOperationNameFromInputOutputShape("OperationNameRequest"));
         assertEquals("OperationName", CppViewHelper.computeOperationNameFromInputOutputShape("OperationNameResult"));
         assertEquals("OperationNameOther", CppViewHelper.computeOperationNameFromInputOutputShape("OperationNameOther"));
+
+        assertEquals("OperationNameRequests", CppViewHelper.computeOperationNameFromInputOutputShape("OperationNameRequestsRequest"));
+        assertEquals("OperationNameRequests", CppViewHelper.computeOperationNameFromInputOutputShape("OperationNameRequestsResult"));
+        assertEquals("OperationNameResults", CppViewHelper.computeOperationNameFromInputOutputShape("OperationNameResultsRequest"));
+        assertEquals("OperationNameResults", CppViewHelper.computeOperationNameFromInputOutputShape("OperationNameResultsResult"));
+        assertEquals("OperationNameResultsRequestResultRequest", CppViewHelper.computeOperationNameFromInputOutputShape("OperationNameResultsRequestResultRequestResult"));
+        assertEquals("OperationNameResultsRequestResultRequest", CppViewHelper.computeOperationNameFromInputOutputShape("OperationNameResultsRequestResultRequestRequest"));
+
+        assertEquals("OperationNameResultsRequestResultRequestDerp", CppViewHelper.computeOperationNameFromInputOutputShape("OperationNameResultsRequestResultRequestDerp"));
+
     }
 }

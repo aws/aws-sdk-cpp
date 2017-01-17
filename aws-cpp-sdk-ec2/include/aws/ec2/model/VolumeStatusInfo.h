@@ -34,7 +34,9 @@ namespace Model
 {
 
   /**
-   * <p>Describes the status of a volume.</p>
+   * <p>Describes the status of a volume.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/VolumeStatusInfo">AWS
+   * API Reference</a></p>
    */
   class AWS_EC2_API VolumeStatusInfo
   {

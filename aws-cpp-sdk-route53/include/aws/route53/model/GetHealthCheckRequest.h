@@ -32,7 +32,9 @@ namespace Model
    * <a
    * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover.html">Amazon
    * Route 53 Health Checks and DNS Failover</a> in the <i>Amazon Route 53 Developer
-   * Guide</i>.</p>
+   * Guide</i>.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetHealthCheckRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_ROUTE53_API GetHealthCheckRequest : public Route53Request
   {

@@ -38,7 +38,9 @@ namespace Model
    * consistent when there are no writes to the file system. That is, the value will
    * represent the actual size only if the file system is not modified for a period
    * longer than a couple of hours. Otherwise, the value is not necessarily the exact
-   * size the file system was at any instant in time.</p>
+   * size the file system was at any instant in time.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/FileSystemSize">AWS
+   * API Reference</a></p>
    */
   class AWS_EFS_API FileSystemSize
   {

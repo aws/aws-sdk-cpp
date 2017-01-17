@@ -27,7 +27,9 @@ namespace Model
   /**
    * <p>Container for the parameters to the
    * <code><a>DeleteElasticsearchDomain</a></code> operation. Specifies the name of
-   * the Elasticsearch domain that you want to delete.</p>
+   * the Elasticsearch domain that you want to delete.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/DeleteElasticsearchDomainRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_ELASTICSEARCHSERVICE_API DeleteElasticsearchDomainRequest : public ElasticsearchServiceRequest
   {

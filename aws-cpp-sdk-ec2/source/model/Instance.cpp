@@ -76,7 +76,9 @@ Instance::Instance() :
     m_iamInstanceProfileHasBeenSet(false),
     m_ebsOptimized(false),
     m_ebsOptimizedHasBeenSet(false),
-    m_sriovNetSupportHasBeenSet(false)
+    m_sriovNetSupportHasBeenSet(false),
+    m_enaSupport(false),
+    m_enaSupportHasBeenSet(false)
 {
 }
 
@@ -127,7 +129,9 @@ Instance::Instance(const XmlNode& xmlNode) :
     m_iamInstanceProfileHasBeenSet(false),
     m_ebsOptimized(false),
     m_ebsOptimizedHasBeenSet(false),
-    m_sriovNetSupportHasBeenSet(false)
+    m_sriovNetSupportHasBeenSet(false),
+    m_enaSupport(false),
+    m_enaSupportHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -390,6 +394,12 @@ Instance& Instance::operator =(const XmlNode& xmlNode)
       m_sriovNetSupport = StringUtils::Trim(sriovNetSupportNode.GetText().c_str());
       m_sriovNetSupportHasBeenSet = true;
     }
+    XmlNode enaSupportNode = resultNode.FirstChild("enaSupport");
+    if(!enaSupportNode.IsNull())
+    {
+      m_enaSupport = StringUtils::ConvertToBool(StringUtils::Trim(enaSupportNode.GetText().c_str()).c_str());
+      m_enaSupportHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -586,7 +596,7 @@ void Instance::OutputToStream(Aws::OStream& oStream, const char* location, unsig
 
   if(m_sourceDestCheckHasBeenSet)
   {
-      oStream << location << index << locationValue << ".SourceDestCheck=" << m_sourceDestCheck << "&";
+      oStream << location << index << locationValue << ".SourceDestCheck=" << std::boolalpha << m_sourceDestCheck << "&";
   }
 
   if(m_hypervisorHasBeenSet)
@@ -614,12 +624,17 @@ void Instance::OutputToStream(Aws::OStream& oStream, const char* location, unsig
 
   if(m_ebsOptimizedHasBeenSet)
   {
-      oStream << location << index << locationValue << ".EbsOptimized=" << m_ebsOptimized << "&";
+      oStream << location << index << locationValue << ".EbsOptimized=" << std::boolalpha << m_ebsOptimized << "&";
   }
 
   if(m_sriovNetSupportHasBeenSet)
   {
       oStream << location << index << locationValue << ".SriovNetSupport=" << StringUtils::URLEncode(m_sriovNetSupport.c_str()) << "&";
+  }
+
+  if(m_enaSupportHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".EnaSupport=" << std::boolalpha << m_enaSupport << "&";
   }
 
 }
@@ -666,7 +681,7 @@ void Instance::OutputToStream(Aws::OStream& oStream, const char* location) const
       for(auto& item : m_productCodes)
       {
         Aws::StringStream productCodesSs;
-        productCodesSs << location <<  ".item." << productCodesIdx++;
+        productCodesSs << location <<  ".Item." << productCodesIdx++;
         item.OutputToStream(oStream, productCodesSs.str().c_str());
       }
   }
@@ -742,7 +757,7 @@ void Instance::OutputToStream(Aws::OStream& oStream, const char* location) const
       for(auto& item : m_blockDeviceMappings)
       {
         Aws::StringStream blockDeviceMappingsSs;
-        blockDeviceMappingsSs << location <<  ".item." << blockDeviceMappingsIdx++;
+        blockDeviceMappingsSs << location <<  ".Item." << blockDeviceMappingsIdx++;
         item.OutputToStream(oStream, blockDeviceMappingsSs.str().c_str());
       }
   }
@@ -768,7 +783,7 @@ void Instance::OutputToStream(Aws::OStream& oStream, const char* location) const
       for(auto& item : m_tags)
       {
         Aws::StringStream tagsSs;
-        tagsSs << location <<  ".item." << tagsIdx++;
+        tagsSs << location <<  ".Item." << tagsIdx++;
         item.OutputToStream(oStream, tagsSs.str().c_str());
       }
   }
@@ -778,13 +793,13 @@ void Instance::OutputToStream(Aws::OStream& oStream, const char* location) const
       for(auto& item : m_securityGroups)
       {
         Aws::StringStream securityGroupsSs;
-        securityGroupsSs << location <<  ".item." << securityGroupsIdx++;
+        securityGroupsSs << location <<  ".Item." << securityGroupsIdx++;
         item.OutputToStream(oStream, securityGroupsSs.str().c_str());
       }
   }
   if(m_sourceDestCheckHasBeenSet)
   {
-      oStream << location << ".SourceDestCheck=" << m_sourceDestCheck << "&";
+      oStream << location << ".SourceDestCheck=" << std::boolalpha << m_sourceDestCheck << "&";
   }
   if(m_hypervisorHasBeenSet)
   {
@@ -796,7 +811,7 @@ void Instance::OutputToStream(Aws::OStream& oStream, const char* location) const
       for(auto& item : m_networkInterfaces)
       {
         Aws::StringStream networkInterfacesSs;
-        networkInterfacesSs << location <<  ".item." << networkInterfacesIdx++;
+        networkInterfacesSs << location <<  ".Item." << networkInterfacesIdx++;
         item.OutputToStream(oStream, networkInterfacesSs.str().c_str());
       }
   }
@@ -808,11 +823,15 @@ void Instance::OutputToStream(Aws::OStream& oStream, const char* location) const
   }
   if(m_ebsOptimizedHasBeenSet)
   {
-      oStream << location << ".EbsOptimized=" << m_ebsOptimized << "&";
+      oStream << location << ".EbsOptimized=" << std::boolalpha << m_ebsOptimized << "&";
   }
   if(m_sriovNetSupportHasBeenSet)
   {
       oStream << location << ".SriovNetSupport=" << StringUtils::URLEncode(m_sriovNetSupport.c_str()) << "&";
+  }
+  if(m_enaSupportHasBeenSet)
+  {
+      oStream << location << ".EnaSupport=" << std::boolalpha << m_enaSupport << "&";
   }
 }
 

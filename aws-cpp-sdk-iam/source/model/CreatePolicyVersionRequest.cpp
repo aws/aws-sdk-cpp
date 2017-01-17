@@ -43,7 +43,7 @@ Aws::String CreatePolicyVersionRequest::SerializePayload() const
 
   if(m_setAsDefaultHasBeenSet)
   {
-    ss << "SetAsDefault=" << m_setAsDefault << "&";
+    ss << "SetAsDefault=" << std::boolalpha << m_setAsDefault << "&";
   }
 
   ss << "Version=2010-05-08";

@@ -32,7 +32,7 @@ Aws::String AcceptVpcPeeringConnectionRequest::SerializePayload() const
   ss << "Action=AcceptVpcPeeringConnection&";
   if(m_dryRunHasBeenSet)
   {
-    ss << "DryRun=" << m_dryRun << "&";
+    ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
   if(m_vpcPeeringConnectionIdHasBeenSet)
@@ -40,7 +40,7 @@ Aws::String AcceptVpcPeeringConnectionRequest::SerializePayload() const
     ss << "VpcPeeringConnectionId=" << StringUtils::URLEncode(m_vpcPeeringConnectionId.c_str()) << "&";
   }
 
-  ss << "Version=2015-10-01";
+  ss << "Version=2016-11-15";
   return ss.str();
 }
 

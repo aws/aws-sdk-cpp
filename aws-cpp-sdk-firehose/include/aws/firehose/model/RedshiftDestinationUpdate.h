@@ -18,6 +18,8 @@
 #include <aws/firehose/model/CopyCommand.h>
 #include <aws/firehose/model/RedshiftRetryOptions.h>
 #include <aws/firehose/model/S3DestinationUpdate.h>
+#include <aws/firehose/model/ProcessingConfiguration.h>
+#include <aws/firehose/model/RedshiftS3BackupMode.h>
 #include <aws/firehose/model/CloudWatchLoggingOptions.h>
 
 namespace Aws
@@ -35,7 +37,10 @@ namespace Model
 {
 
   /**
-   * <p>Describes an update for a destination in Amazon Redshift.</p>
+   * <p>Describes an update for a destination in Amazon Redshift.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/RedshiftDestinationUpdate">AWS
+   * API Reference</a></p>
    */
   class AWS_FIREHOSE_API RedshiftDestinationUpdate
   {
@@ -211,32 +216,32 @@ namespace Model
     inline RedshiftDestinationUpdate& WithPassword(const char* value) { SetPassword(value); return *this;}
 
     /**
-     * <p>Configures retry behavior in the event that Firehose is unable to deliver
-     * documents to Amazon Redshift. Default value is 3600 (60 minutes).</p>
+     * <p>The retry behavior in the event that Firehose is unable to deliver documents
+     * to Amazon Redshift. Default value is 3600 (60 minutes).</p>
      */
     inline const RedshiftRetryOptions& GetRetryOptions() const{ return m_retryOptions; }
 
     /**
-     * <p>Configures retry behavior in the event that Firehose is unable to deliver
-     * documents to Amazon Redshift. Default value is 3600 (60 minutes).</p>
+     * <p>The retry behavior in the event that Firehose is unable to deliver documents
+     * to Amazon Redshift. Default value is 3600 (60 minutes).</p>
      */
     inline void SetRetryOptions(const RedshiftRetryOptions& value) { m_retryOptionsHasBeenSet = true; m_retryOptions = value; }
 
     /**
-     * <p>Configures retry behavior in the event that Firehose is unable to deliver
-     * documents to Amazon Redshift. Default value is 3600 (60 minutes).</p>
+     * <p>The retry behavior in the event that Firehose is unable to deliver documents
+     * to Amazon Redshift. Default value is 3600 (60 minutes).</p>
      */
     inline void SetRetryOptions(RedshiftRetryOptions&& value) { m_retryOptionsHasBeenSet = true; m_retryOptions = value; }
 
     /**
-     * <p>Configures retry behavior in the event that Firehose is unable to deliver
-     * documents to Amazon Redshift. Default value is 3600 (60 minutes).</p>
+     * <p>The retry behavior in the event that Firehose is unable to deliver documents
+     * to Amazon Redshift. Default value is 3600 (60 minutes).</p>
      */
     inline RedshiftDestinationUpdate& WithRetryOptions(const RedshiftRetryOptions& value) { SetRetryOptions(value); return *this;}
 
     /**
-     * <p>Configures retry behavior in the event that Firehose is unable to deliver
-     * documents to Amazon Redshift. Default value is 3600 (60 minutes).</p>
+     * <p>The retry behavior in the event that Firehose is unable to deliver documents
+     * to Amazon Redshift. Default value is 3600 (60 minutes).</p>
      */
     inline RedshiftDestinationUpdate& WithRetryOptions(RedshiftRetryOptions&& value) { SetRetryOptions(value); return *this;}
 
@@ -286,27 +291,102 @@ namespace Model
     inline RedshiftDestinationUpdate& WithS3Update(S3DestinationUpdate&& value) { SetS3Update(value); return *this;}
 
     /**
-     * <p>Describes CloudWatch logging options for your delivery stream.</p>
+     * <p>The data processing configuration.</p>
+     */
+    inline const ProcessingConfiguration& GetProcessingConfiguration() const{ return m_processingConfiguration; }
+
+    /**
+     * <p>The data processing configuration.</p>
+     */
+    inline void SetProcessingConfiguration(const ProcessingConfiguration& value) { m_processingConfigurationHasBeenSet = true; m_processingConfiguration = value; }
+
+    /**
+     * <p>The data processing configuration.</p>
+     */
+    inline void SetProcessingConfiguration(ProcessingConfiguration&& value) { m_processingConfigurationHasBeenSet = true; m_processingConfiguration = value; }
+
+    /**
+     * <p>The data processing configuration.</p>
+     */
+    inline RedshiftDestinationUpdate& WithProcessingConfiguration(const ProcessingConfiguration& value) { SetProcessingConfiguration(value); return *this;}
+
+    /**
+     * <p>The data processing configuration.</p>
+     */
+    inline RedshiftDestinationUpdate& WithProcessingConfiguration(ProcessingConfiguration&& value) { SetProcessingConfiguration(value); return *this;}
+
+    /**
+     * <p>The Amazon S3 backup mode.</p>
+     */
+    inline const RedshiftS3BackupMode& GetS3BackupMode() const{ return m_s3BackupMode; }
+
+    /**
+     * <p>The Amazon S3 backup mode.</p>
+     */
+    inline void SetS3BackupMode(const RedshiftS3BackupMode& value) { m_s3BackupModeHasBeenSet = true; m_s3BackupMode = value; }
+
+    /**
+     * <p>The Amazon S3 backup mode.</p>
+     */
+    inline void SetS3BackupMode(RedshiftS3BackupMode&& value) { m_s3BackupModeHasBeenSet = true; m_s3BackupMode = value; }
+
+    /**
+     * <p>The Amazon S3 backup mode.</p>
+     */
+    inline RedshiftDestinationUpdate& WithS3BackupMode(const RedshiftS3BackupMode& value) { SetS3BackupMode(value); return *this;}
+
+    /**
+     * <p>The Amazon S3 backup mode.</p>
+     */
+    inline RedshiftDestinationUpdate& WithS3BackupMode(RedshiftS3BackupMode&& value) { SetS3BackupMode(value); return *this;}
+
+    /**
+     * <p>The Amazon S3 destination for backup.</p>
+     */
+    inline const S3DestinationUpdate& GetS3BackupUpdate() const{ return m_s3BackupUpdate; }
+
+    /**
+     * <p>The Amazon S3 destination for backup.</p>
+     */
+    inline void SetS3BackupUpdate(const S3DestinationUpdate& value) { m_s3BackupUpdateHasBeenSet = true; m_s3BackupUpdate = value; }
+
+    /**
+     * <p>The Amazon S3 destination for backup.</p>
+     */
+    inline void SetS3BackupUpdate(S3DestinationUpdate&& value) { m_s3BackupUpdateHasBeenSet = true; m_s3BackupUpdate = value; }
+
+    /**
+     * <p>The Amazon S3 destination for backup.</p>
+     */
+    inline RedshiftDestinationUpdate& WithS3BackupUpdate(const S3DestinationUpdate& value) { SetS3BackupUpdate(value); return *this;}
+
+    /**
+     * <p>The Amazon S3 destination for backup.</p>
+     */
+    inline RedshiftDestinationUpdate& WithS3BackupUpdate(S3DestinationUpdate&& value) { SetS3BackupUpdate(value); return *this;}
+
+    /**
+     * <p>The CloudWatch logging options for your delivery stream.</p>
      */
     inline const CloudWatchLoggingOptions& GetCloudWatchLoggingOptions() const{ return m_cloudWatchLoggingOptions; }
 
     /**
-     * <p>Describes CloudWatch logging options for your delivery stream.</p>
+     * <p>The CloudWatch logging options for your delivery stream.</p>
      */
     inline void SetCloudWatchLoggingOptions(const CloudWatchLoggingOptions& value) { m_cloudWatchLoggingOptionsHasBeenSet = true; m_cloudWatchLoggingOptions = value; }
 
     /**
-     * <p>Describes CloudWatch logging options for your delivery stream.</p>
+     * <p>The CloudWatch logging options for your delivery stream.</p>
      */
     inline void SetCloudWatchLoggingOptions(CloudWatchLoggingOptions&& value) { m_cloudWatchLoggingOptionsHasBeenSet = true; m_cloudWatchLoggingOptions = value; }
 
     /**
-     * <p>Describes CloudWatch logging options for your delivery stream.</p>
+     * <p>The CloudWatch logging options for your delivery stream.</p>
      */
     inline RedshiftDestinationUpdate& WithCloudWatchLoggingOptions(const CloudWatchLoggingOptions& value) { SetCloudWatchLoggingOptions(value); return *this;}
 
     /**
-     * <p>Describes CloudWatch logging options for your delivery stream.</p>
+     * <p>The CloudWatch logging options for your delivery stream.</p>
      */
     inline RedshiftDestinationUpdate& WithCloudWatchLoggingOptions(CloudWatchLoggingOptions&& value) { SetCloudWatchLoggingOptions(value); return *this;}
 
@@ -325,6 +405,12 @@ namespace Model
     bool m_retryOptionsHasBeenSet;
     S3DestinationUpdate m_s3Update;
     bool m_s3UpdateHasBeenSet;
+    ProcessingConfiguration m_processingConfiguration;
+    bool m_processingConfigurationHasBeenSet;
+    RedshiftS3BackupMode m_s3BackupMode;
+    bool m_s3BackupModeHasBeenSet;
+    S3DestinationUpdate m_s3BackupUpdate;
+    bool m_s3BackupUpdateHasBeenSet;
     CloudWatchLoggingOptions m_cloudWatchLoggingOptions;
     bool m_cloudWatchLoggingOptionsHasBeenSet;
   };

@@ -32,7 +32,9 @@ namespace Model
 
   /**
    * A complex type that controls whether access logs are written for the
-   * distribution.
+   * distribution.<p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-01-28/LoggingConfig">AWS
+   * API Reference</a></p>
    */
   class AWS_CLOUDFRONT_API LoggingConfig
   {

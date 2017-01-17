@@ -107,7 +107,7 @@ void CloudFunctionConfiguration::AddToNode(XmlNode& parentNode) const
 
   if(m_cloudFunctionHasBeenSet)
   {
-   XmlNode cloudFunctionNode = parentNode.CreateChildElement("Event");
+   XmlNode cloudFunctionNode = parentNode.CreateChildElement("CloudFunction");
    cloudFunctionNode.SetText(m_cloudFunction);
   }
 

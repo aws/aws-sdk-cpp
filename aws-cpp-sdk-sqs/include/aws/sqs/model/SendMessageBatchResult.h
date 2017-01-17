@@ -36,9 +36,12 @@ namespace SQS
 namespace Model
 {
   /**
-   * <p>For each message in the batch, the response contains a
-   * <a>SendMessageBatchResultEntry</a> tag if the message succeeds or a
-   * <a>BatchResultErrorEntry</a> tag if the message fails.</p>
+   * <p>For each message in the batch, the response contains a <code>
+   * <a>SendMessageBatchResultEntry</a> </code> tag if the message succeeds or a
+   * <code> <a>BatchResultErrorEntry</a> </code> tag if the message
+   * fails.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/SendMessageBatchResult">AWS
+   * API Reference</a></p>
    */
   class AWS_SQS_API SendMessageBatchResult
   {
@@ -48,79 +51,79 @@ namespace Model
     SendMessageBatchResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
     /**
-     * <p>A list of <a>SendMessageBatchResultEntry</a> items.</p>
+     * <p>A list of <code> <a>SendMessageBatchResultEntry</a> </code> items.</p>
      */
     inline const Aws::Vector<SendMessageBatchResultEntry>& GetSuccessful() const{ return m_successful; }
 
     /**
-     * <p>A list of <a>SendMessageBatchResultEntry</a> items.</p>
+     * <p>A list of <code> <a>SendMessageBatchResultEntry</a> </code> items.</p>
      */
     inline void SetSuccessful(const Aws::Vector<SendMessageBatchResultEntry>& value) { m_successful = value; }
 
     /**
-     * <p>A list of <a>SendMessageBatchResultEntry</a> items.</p>
+     * <p>A list of <code> <a>SendMessageBatchResultEntry</a> </code> items.</p>
      */
     inline void SetSuccessful(Aws::Vector<SendMessageBatchResultEntry>&& value) { m_successful = value; }
 
     /**
-     * <p>A list of <a>SendMessageBatchResultEntry</a> items.</p>
+     * <p>A list of <code> <a>SendMessageBatchResultEntry</a> </code> items.</p>
      */
     inline SendMessageBatchResult& WithSuccessful(const Aws::Vector<SendMessageBatchResultEntry>& value) { SetSuccessful(value); return *this;}
 
     /**
-     * <p>A list of <a>SendMessageBatchResultEntry</a> items.</p>
+     * <p>A list of <code> <a>SendMessageBatchResultEntry</a> </code> items.</p>
      */
     inline SendMessageBatchResult& WithSuccessful(Aws::Vector<SendMessageBatchResultEntry>&& value) { SetSuccessful(value); return *this;}
 
     /**
-     * <p>A list of <a>SendMessageBatchResultEntry</a> items.</p>
+     * <p>A list of <code> <a>SendMessageBatchResultEntry</a> </code> items.</p>
      */
     inline SendMessageBatchResult& AddSuccessful(const SendMessageBatchResultEntry& value) { m_successful.push_back(value); return *this; }
 
     /**
-     * <p>A list of <a>SendMessageBatchResultEntry</a> items.</p>
+     * <p>A list of <code> <a>SendMessageBatchResultEntry</a> </code> items.</p>
      */
     inline SendMessageBatchResult& AddSuccessful(SendMessageBatchResultEntry&& value) { m_successful.push_back(value); return *this; }
 
     /**
-     * <p>A list of <a>BatchResultErrorEntry</a> items with the error detail about each
-     * message that could not be enqueued.</p>
+     * <p>A list of <code> <a>BatchResultErrorEntry</a> </code> items with error
+     * details about each message that can't be enqueued.</p>
      */
     inline const Aws::Vector<BatchResultErrorEntry>& GetFailed() const{ return m_failed; }
 
     /**
-     * <p>A list of <a>BatchResultErrorEntry</a> items with the error detail about each
-     * message that could not be enqueued.</p>
+     * <p>A list of <code> <a>BatchResultErrorEntry</a> </code> items with error
+     * details about each message that can't be enqueued.</p>
      */
     inline void SetFailed(const Aws::Vector<BatchResultErrorEntry>& value) { m_failed = value; }
 
     /**
-     * <p>A list of <a>BatchResultErrorEntry</a> items with the error detail about each
-     * message that could not be enqueued.</p>
+     * <p>A list of <code> <a>BatchResultErrorEntry</a> </code> items with error
+     * details about each message that can't be enqueued.</p>
      */
     inline void SetFailed(Aws::Vector<BatchResultErrorEntry>&& value) { m_failed = value; }
 
     /**
-     * <p>A list of <a>BatchResultErrorEntry</a> items with the error detail about each
-     * message that could not be enqueued.</p>
+     * <p>A list of <code> <a>BatchResultErrorEntry</a> </code> items with error
+     * details about each message that can't be enqueued.</p>
      */
     inline SendMessageBatchResult& WithFailed(const Aws::Vector<BatchResultErrorEntry>& value) { SetFailed(value); return *this;}
 
     /**
-     * <p>A list of <a>BatchResultErrorEntry</a> items with the error detail about each
-     * message that could not be enqueued.</p>
+     * <p>A list of <code> <a>BatchResultErrorEntry</a> </code> items with error
+     * details about each message that can't be enqueued.</p>
      */
     inline SendMessageBatchResult& WithFailed(Aws::Vector<BatchResultErrorEntry>&& value) { SetFailed(value); return *this;}
 
     /**
-     * <p>A list of <a>BatchResultErrorEntry</a> items with the error detail about each
-     * message that could not be enqueued.</p>
+     * <p>A list of <code> <a>BatchResultErrorEntry</a> </code> items with error
+     * details about each message that can't be enqueued.</p>
      */
     inline SendMessageBatchResult& AddFailed(const BatchResultErrorEntry& value) { m_failed.push_back(value); return *this; }
 
     /**
-     * <p>A list of <a>BatchResultErrorEntry</a> items with the error detail about each
-     * message that could not be enqueued.</p>
+     * <p>A list of <code> <a>BatchResultErrorEntry</a> </code> items with error
+     * details about each message that can't be enqueued.</p>
      */
     inline SendMessageBatchResult& AddFailed(BatchResultErrorEntry&& value) { m_failed.push_back(value); return *this; }
 

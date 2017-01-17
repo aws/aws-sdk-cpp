@@ -26,7 +26,10 @@ namespace Model
 
   /**
    * <p>This action deletes a health check. Send a <code>DELETE</code> request to the
-   * <code>/2013-04-01/DeleteHealthCheckRequest</code> resource.</p>
+   * <code>/2013-04-01/DeleteHealthCheckRequest</code> resource.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DeleteHealthCheckRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_ROUTE53_API DeleteHealthCheckRequest : public Route53Request
   {

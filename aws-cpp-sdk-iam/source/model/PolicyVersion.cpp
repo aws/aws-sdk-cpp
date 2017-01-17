@@ -97,7 +97,7 @@ void PolicyVersion::OutputToStream(Aws::OStream& oStream, const char* location, 
 
   if(m_isDefaultVersionHasBeenSet)
   {
-      oStream << location << index << locationValue << ".IsDefaultVersion=" << m_isDefaultVersion << "&";
+      oStream << location << index << locationValue << ".IsDefaultVersion=" << std::boolalpha << m_isDefaultVersion << "&";
   }
 
   if(m_createDateHasBeenSet)
@@ -119,7 +119,7 @@ void PolicyVersion::OutputToStream(Aws::OStream& oStream, const char* location) 
   }
   if(m_isDefaultVersionHasBeenSet)
   {
-      oStream << location << ".IsDefaultVersion=" << m_isDefaultVersion << "&";
+      oStream << location << ".IsDefaultVersion=" << std::boolalpha << m_isDefaultVersion << "&";
   }
   if(m_createDateHasBeenSet)
   {

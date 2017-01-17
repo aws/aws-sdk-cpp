@@ -186,7 +186,10 @@ namespace Model
          * <p>The CancelJob operation cancels an unfinished job.</p> <note> <p>You can only
          * cancel a job that has a status of <code>Submitted</code>. To prevent a pipeline
          * from starting to process a job while you're getting the job identifier, use
-         * <a>UpdatePipelineStatus</a> to temporarily pause the pipeline.</p> </note>
+         * <a>UpdatePipelineStatus</a> to temporarily pause the pipeline.</p>
+         * </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/CancelJob">AWS
+         * API Reference</a></p>
          */
         virtual Model::CancelJobOutcome CancelJob(const Model::CancelJobRequest& request) const;
 
@@ -194,7 +197,10 @@ namespace Model
          * <p>The CancelJob operation cancels an unfinished job.</p> <note> <p>You can only
          * cancel a job that has a status of <code>Submitted</code>. To prevent a pipeline
          * from starting to process a job while you're getting the job identifier, use
-         * <a>UpdatePipelineStatus</a> to temporarily pause the pipeline.</p> </note>
+         * <a>UpdatePipelineStatus</a> to temporarily pause the pipeline.</p>
+         * </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/CancelJob">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -204,7 +210,10 @@ namespace Model
          * <p>The CancelJob operation cancels an unfinished job.</p> <note> <p>You can only
          * cancel a job that has a status of <code>Submitted</code>. To prevent a pipeline
          * from starting to process a job while you're getting the job identifier, use
-         * <a>UpdatePipelineStatus</a> to temporarily pause the pipeline.</p> </note>
+         * <a>UpdatePipelineStatus</a> to temporarily pause the pipeline.</p>
+         * </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/CancelJob">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -216,7 +225,9 @@ namespace Model
          * <p>If you have specified more than one output for your jobs (for example, one
          * output for the Kindle Fire and another output for the Apple iPhone 4s), you
          * currently must use the Elastic Transcoder API to list the jobs (as opposed to
-         * the AWS Console).</p>
+         * the AWS Console).</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/CreateJob">AWS
+         * API Reference</a></p>
          */
         virtual Model::CreateJobOutcome CreateJob(const Model::CreateJobRequest& request) const;
 
@@ -226,7 +237,9 @@ namespace Model
          * <p>If you have specified more than one output for your jobs (for example, one
          * output for the Kindle Fire and another output for the Apple iPhone 4s), you
          * currently must use the Elastic Transcoder API to list the jobs (as opposed to
-         * the AWS Console).</p>
+         * the AWS Console).</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/CreateJob">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -238,7 +251,9 @@ namespace Model
          * <p>If you have specified more than one output for your jobs (for example, one
          * output for the Kindle Fire and another output for the Apple iPhone 4s), you
          * currently must use the Elastic Transcoder API to list the jobs (as opposed to
-         * the AWS Console).</p>
+         * the AWS Console).</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/CreateJob">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -246,13 +261,17 @@ namespace Model
 
         /**
          * <p>The CreatePipeline operation creates a pipeline with settings that you
-         * specify.</p>
+         * specify.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/CreatePipeline">AWS
+         * API Reference</a></p>
          */
         virtual Model::CreatePipelineOutcome CreatePipeline(const Model::CreatePipelineRequest& request) const;
 
         /**
          * <p>The CreatePipeline operation creates a pipeline with settings that you
-         * specify.</p>
+         * specify.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/CreatePipeline">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -260,7 +279,9 @@ namespace Model
 
         /**
          * <p>The CreatePipeline operation creates a pipeline with settings that you
-         * specify.</p>
+         * specify.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/CreatePipeline">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -280,7 +301,10 @@ namespace Model
          * video that Elastic Transcoder produces.</p> </important> <p>Elastic Transcoder
          * uses the H.264 video-compression format. For more information, see the
          * International Telecommunication Union publication <i>Recommendation ITU-T H.264:
-         * Advanced video coding for generic audiovisual services</i>.</p>
+         * Advanced video coding for generic audiovisual services</i>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/CreatePreset">AWS
+         * API Reference</a></p>
          */
         virtual Model::CreatePresetOutcome CreatePreset(const Model::CreatePresetRequest& request) const;
 
@@ -298,7 +322,10 @@ namespace Model
          * video that Elastic Transcoder produces.</p> </important> <p>Elastic Transcoder
          * uses the H.264 video-compression format. For more information, see the
          * International Telecommunication Union publication <i>Recommendation ITU-T H.264:
-         * Advanced video coding for generic audiovisual services</i>.</p>
+         * Advanced video coding for generic audiovisual services</i>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/CreatePreset">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -318,7 +345,10 @@ namespace Model
          * video that Elastic Transcoder produces.</p> </important> <p>Elastic Transcoder
          * uses the H.264 video-compression format. For more information, see the
          * International Telecommunication Union publication <i>Recommendation ITU-T H.264:
-         * Advanced video coding for generic audiovisual services</i>.</p>
+         * Advanced video coding for generic audiovisual services</i>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/CreatePreset">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -328,7 +358,9 @@ namespace Model
          * <p>The DeletePipeline operation removes a pipeline.</p> <p> You can only delete
          * a pipeline that has never been used or that is not currently in use (doesn't
          * contain any active jobs). If the pipeline is currently in use,
-         * <code>DeletePipeline</code> returns an error. </p>
+         * <code>DeletePipeline</code> returns an error. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/DeletePipeline">AWS
+         * API Reference</a></p>
          */
         virtual Model::DeletePipelineOutcome DeletePipeline(const Model::DeletePipelineRequest& request) const;
 
@@ -336,7 +368,9 @@ namespace Model
          * <p>The DeletePipeline operation removes a pipeline.</p> <p> You can only delete
          * a pipeline that has never been used or that is not currently in use (doesn't
          * contain any active jobs). If the pipeline is currently in use,
-         * <code>DeletePipeline</code> returns an error. </p>
+         * <code>DeletePipeline</code> returns an error. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/DeletePipeline">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -346,7 +380,9 @@ namespace Model
          * <p>The DeletePipeline operation removes a pipeline.</p> <p> You can only delete
          * a pipeline that has never been used or that is not currently in use (doesn't
          * contain any active jobs). If the pipeline is currently in use,
-         * <code>DeletePipeline</code> returns an error. </p>
+         * <code>DeletePipeline</code> returns an error. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/DeletePipeline">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -355,14 +391,18 @@ namespace Model
         /**
          * <p>The DeletePreset operation removes a preset that you've added in an AWS
          * region.</p> <note> <p>You can't delete the default presets that are included
-         * with Elastic Transcoder.</p> </note>
+         * with Elastic Transcoder.</p> </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/DeletePreset">AWS
+         * API Reference</a></p>
          */
         virtual Model::DeletePresetOutcome DeletePreset(const Model::DeletePresetRequest& request) const;
 
         /**
          * <p>The DeletePreset operation removes a preset that you've added in an AWS
          * region.</p> <note> <p>You can't delete the default presets that are included
-         * with Elastic Transcoder.</p> </note>
+         * with Elastic Transcoder.</p> </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/DeletePreset">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -371,7 +411,9 @@ namespace Model
         /**
          * <p>The DeletePreset operation removes a preset that you've added in an AWS
          * region.</p> <note> <p>You can't delete the default presets that are included
-         * with Elastic Transcoder.</p> </note>
+         * with Elastic Transcoder.</p> </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/DeletePreset">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -381,7 +423,9 @@ namespace Model
          * <p>The ListJobsByPipeline operation gets a list of the jobs currently in a
          * pipeline.</p> <p>Elastic Transcoder returns all of the jobs currently in the
          * specified pipeline. The response body contains one element for each job that
-         * satisfies the search criteria.</p>
+         * satisfies the search criteria.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/ListJobsByPipeline">AWS
+         * API Reference</a></p>
          */
         virtual Model::ListJobsByPipelineOutcome ListJobsByPipeline(const Model::ListJobsByPipelineRequest& request) const;
 
@@ -389,7 +433,9 @@ namespace Model
          * <p>The ListJobsByPipeline operation gets a list of the jobs currently in a
          * pipeline.</p> <p>Elastic Transcoder returns all of the jobs currently in the
          * specified pipeline. The response body contains one element for each job that
-         * satisfies the search criteria.</p>
+         * satisfies the search criteria.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/ListJobsByPipeline">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -399,7 +445,9 @@ namespace Model
          * <p>The ListJobsByPipeline operation gets a list of the jobs currently in a
          * pipeline.</p> <p>Elastic Transcoder returns all of the jobs currently in the
          * specified pipeline. The response body contains one element for each job that
-         * satisfies the search criteria.</p>
+         * satisfies the search criteria.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/ListJobsByPipeline">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -408,14 +456,18 @@ namespace Model
         /**
          * <p>The ListJobsByStatus operation gets a list of jobs that have a specified
          * status. The response body contains one element for each job that satisfies the
-         * search criteria.</p>
+         * search criteria.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/ListJobsByStatus">AWS
+         * API Reference</a></p>
          */
         virtual Model::ListJobsByStatusOutcome ListJobsByStatus(const Model::ListJobsByStatusRequest& request) const;
 
         /**
          * <p>The ListJobsByStatus operation gets a list of jobs that have a specified
          * status. The response body contains one element for each job that satisfies the
-         * search criteria.</p>
+         * search criteria.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/ListJobsByStatus">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -424,7 +476,9 @@ namespace Model
         /**
          * <p>The ListJobsByStatus operation gets a list of jobs that have a specified
          * status. The response body contains one element for each job that satisfies the
-         * search criteria.</p>
+         * search criteria.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/ListJobsByStatus">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -432,13 +486,17 @@ namespace Model
 
         /**
          * <p>The ListPipelines operation gets a list of the pipelines associated with the
-         * current AWS account.</p>
+         * current AWS account.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/ListPipelines">AWS
+         * API Reference</a></p>
          */
         virtual Model::ListPipelinesOutcome ListPipelines(const Model::ListPipelinesRequest& request) const;
 
         /**
          * <p>The ListPipelines operation gets a list of the pipelines associated with the
-         * current AWS account.</p>
+         * current AWS account.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/ListPipelines">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -446,7 +504,9 @@ namespace Model
 
         /**
          * <p>The ListPipelines operation gets a list of the pipelines associated with the
-         * current AWS account.</p>
+         * current AWS account.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/ListPipelines">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -454,13 +514,19 @@ namespace Model
 
         /**
          * <p>The ListPresets operation gets a list of the default presets included with
-         * Elastic Transcoder and the presets that you've added in an AWS region.</p>
+         * Elastic Transcoder and the presets that you've added in an AWS
+         * region.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/ListPresets">AWS
+         * API Reference</a></p>
          */
         virtual Model::ListPresetsOutcome ListPresets(const Model::ListPresetsRequest& request) const;
 
         /**
          * <p>The ListPresets operation gets a list of the default presets included with
-         * Elastic Transcoder and the presets that you've added in an AWS region.</p>
+         * Elastic Transcoder and the presets that you've added in an AWS
+         * region.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/ListPresets">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -468,64 +534,94 @@ namespace Model
 
         /**
          * <p>The ListPresets operation gets a list of the default presets included with
-         * Elastic Transcoder and the presets that you've added in an AWS region.</p>
+         * Elastic Transcoder and the presets that you've added in an AWS
+         * region.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/ListPresets">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListPresetsAsync(const Model::ListPresetsRequest& request, const ListPresetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>The ReadJob operation returns detailed information about a job.</p>
+         * <p>The ReadJob operation returns detailed information about a job.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/ReadJob">AWS
+         * API Reference</a></p>
          */
         virtual Model::ReadJobOutcome ReadJob(const Model::ReadJobRequest& request) const;
 
         /**
-         * <p>The ReadJob operation returns detailed information about a job.</p>
+         * <p>The ReadJob operation returns detailed information about a job.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/ReadJob">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ReadJobOutcomeCallable ReadJobCallable(const Model::ReadJobRequest& request) const;
 
         /**
-         * <p>The ReadJob operation returns detailed information about a job.</p>
+         * <p>The ReadJob operation returns detailed information about a job.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/ReadJob">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ReadJobAsync(const Model::ReadJobRequest& request, const ReadJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>The ReadPipeline operation gets detailed information about a pipeline.</p>
+         * <p>The ReadPipeline operation gets detailed information about a
+         * pipeline.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/ReadPipeline">AWS
+         * API Reference</a></p>
          */
         virtual Model::ReadPipelineOutcome ReadPipeline(const Model::ReadPipelineRequest& request) const;
 
         /**
-         * <p>The ReadPipeline operation gets detailed information about a pipeline.</p>
+         * <p>The ReadPipeline operation gets detailed information about a
+         * pipeline.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/ReadPipeline">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ReadPipelineOutcomeCallable ReadPipelineCallable(const Model::ReadPipelineRequest& request) const;
 
         /**
-         * <p>The ReadPipeline operation gets detailed information about a pipeline.</p>
+         * <p>The ReadPipeline operation gets detailed information about a
+         * pipeline.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/ReadPipeline">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ReadPipelineAsync(const Model::ReadPipelineRequest& request, const ReadPipelineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>The ReadPreset operation gets detailed information about a preset.</p>
+         * <p>The ReadPreset operation gets detailed information about a
+         * preset.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/ReadPreset">AWS
+         * API Reference</a></p>
          */
         virtual Model::ReadPresetOutcome ReadPreset(const Model::ReadPresetRequest& request) const;
 
         /**
-         * <p>The ReadPreset operation gets detailed information about a preset.</p>
+         * <p>The ReadPreset operation gets detailed information about a
+         * preset.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/ReadPreset">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ReadPresetOutcomeCallable ReadPresetCallable(const Model::ReadPresetRequest& request) const;
 
         /**
-         * <p>The ReadPreset operation gets detailed information about a preset.</p>
+         * <p>The ReadPreset operation gets detailed information about a
+         * preset.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/ReadPreset">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -536,7 +632,9 @@ namespace Model
          * pipeline.</p> <important> <p>When you change pipeline settings, your changes
          * take effect immediately. Jobs that you have already submitted and that Elastic
          * Transcoder has not started to process are affected in addition to jobs that you
-         * submit after you change settings. </p> </important>
+         * submit after you change settings. </p> </important><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/UpdatePipeline">AWS
+         * API Reference</a></p>
          */
         virtual Model::UpdatePipelineOutcome UpdatePipeline(const Model::UpdatePipelineRequest& request) const;
 
@@ -545,7 +643,9 @@ namespace Model
          * pipeline.</p> <important> <p>When you change pipeline settings, your changes
          * take effect immediately. Jobs that you have already submitted and that Elastic
          * Transcoder has not started to process are affected in addition to jobs that you
-         * submit after you change settings. </p> </important>
+         * submit after you change settings. </p> </important><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/UpdatePipeline">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -556,7 +656,9 @@ namespace Model
          * pipeline.</p> <important> <p>When you change pipeline settings, your changes
          * take effect immediately. Jobs that you have already submitted and that Elastic
          * Transcoder has not started to process are affected in addition to jobs that you
-         * submit after you change settings. </p> </important>
+         * submit after you change settings. </p> </important><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/UpdatePipeline">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -566,7 +668,9 @@ namespace Model
          * <p>With the UpdatePipelineNotifications operation, you can update Amazon Simple
          * Notification Service (Amazon SNS) notifications for a pipeline.</p> <p>When you
          * update notifications for a pipeline, Elastic Transcoder returns the values that
-         * you specified in the request.</p>
+         * you specified in the request.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/UpdatePipelineNotifications">AWS
+         * API Reference</a></p>
          */
         virtual Model::UpdatePipelineNotificationsOutcome UpdatePipelineNotifications(const Model::UpdatePipelineNotificationsRequest& request) const;
 
@@ -574,7 +678,9 @@ namespace Model
          * <p>With the UpdatePipelineNotifications operation, you can update Amazon Simple
          * Notification Service (Amazon SNS) notifications for a pipeline.</p> <p>When you
          * update notifications for a pipeline, Elastic Transcoder returns the values that
-         * you specified in the request.</p>
+         * you specified in the request.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/UpdatePipelineNotifications">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -584,7 +690,9 @@ namespace Model
          * <p>With the UpdatePipelineNotifications operation, you can update Amazon Simple
          * Notification Service (Amazon SNS) notifications for a pipeline.</p> <p>When you
          * update notifications for a pipeline, Elastic Transcoder returns the values that
-         * you specified in the request.</p>
+         * you specified in the request.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/UpdatePipelineNotifications">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -597,7 +705,9 @@ namespace Model
          * cancel jobs after Elastic Transcoder has started processing them; if you pause
          * the pipeline to which you submitted the jobs, you have more time to get the job
          * IDs for the jobs that you want to cancel, and to send a <a>CancelJob</a>
-         * request. </p>
+         * request. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/UpdatePipelineStatus">AWS
+         * API Reference</a></p>
          */
         virtual Model::UpdatePipelineStatusOutcome UpdatePipelineStatus(const Model::UpdatePipelineStatusRequest& request) const;
 
@@ -608,7 +718,9 @@ namespace Model
          * cancel jobs after Elastic Transcoder has started processing them; if you pause
          * the pipeline to which you submitted the jobs, you have more time to get the job
          * IDs for the jobs that you want to cancel, and to send a <a>CancelJob</a>
-         * request. </p>
+         * request. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/UpdatePipelineStatus">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -621,7 +733,9 @@ namespace Model
          * cancel jobs after Elastic Transcoder has started processing them; if you pause
          * the pipeline to which you submitted the jobs, you have more time to get the job
          * IDs for the jobs that you want to cancel, and to send a <a>CancelJob</a>
-         * request. </p>
+         * request. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/UpdatePipelineStatus">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */

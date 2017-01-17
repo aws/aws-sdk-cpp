@@ -25,7 +25,9 @@ namespace Model
 {
 
   /**
-   * <p>Input for ListSubscriptionsByTopic action.</p>
+   * <p>Input for ListSubscriptionsByTopic action.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ListSubscriptionsByTopicInput">AWS
+   * API Reference</a></p>
    */
   class AWS_SNS_API ListSubscriptionsByTopicRequest : public SNSRequest
   {

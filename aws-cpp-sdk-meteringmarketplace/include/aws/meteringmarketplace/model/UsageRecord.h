@@ -34,7 +34,9 @@ namespace Model
   /**
    * <p>A UsageRecord indicates a quantity of usage for a given product, customer,
    * dimension and time.</p> <p>Multiple requests with the same UsageRecords as input
-   * will be deduplicated to prevent double charges.</p>
+   * will be deduplicated to prevent double charges.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/meteringmarketplace-2016-01-14/UsageRecord">AWS
+   * API Reference</a></p>
    */
   class AWS_MARKETPLACEMETERING_API UsageRecord
   {

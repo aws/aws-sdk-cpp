@@ -41,7 +41,9 @@ namespace Model
 {
 
   /**
-   * <p>Describes the properties of an environment.</p>
+   * <p>Describes the properties of an environment.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/EnvironmentDescription">AWS
+   * API Reference</a></p>
    */
   class AWS_ELASTICBEANSTALK_API EnvironmentDescription
   {

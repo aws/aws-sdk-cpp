@@ -31,7 +31,10 @@ namespace Model
 {
 
   /**
-   * <p>Metadata assigned to the stream, consisting of a key-value pair.</p>
+   * <p>Metadata assigned to the stream, consisting of a key-value
+   * pair.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/Tag">AWS API
+   * Reference</a></p>
    */
   class AWS_KINESIS_API Tag
   {

@@ -33,7 +33,7 @@ Aws::String DescribeInternetGatewaysRequest::SerializePayload() const
   ss << "Action=DescribeInternetGateways&";
   if(m_dryRunHasBeenSet)
   {
-    ss << "DryRun=" << m_dryRun << "&";
+    ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
   if(m_internetGatewayIdsHasBeenSet)
@@ -57,7 +57,7 @@ Aws::String DescribeInternetGatewaysRequest::SerializePayload() const
     }
   }
 
-  ss << "Version=2015-10-01";
+  ss << "Version=2016-11-15";
   return ss.str();
 }
 

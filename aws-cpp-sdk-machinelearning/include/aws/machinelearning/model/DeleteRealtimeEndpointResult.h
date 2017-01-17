@@ -36,7 +36,10 @@ namespace Model
   /**
    * <p>Represents the output of an <code>DeleteRealtimeEndpoint</code>
    * operation.</p> <p>The result contains the <code>MLModelId</code> and the
-   * endpoint information for the <code>MLModel</code>. </p>
+   * endpoint information for the <code>MLModel</code>. </p><p><h3>See Also:</h3>  
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/DeleteRealtimeEndpointOutput">AWS
+   * API Reference</a></p>
    */
   class AWS_MACHINELEARNING_API DeleteRealtimeEndpointResult
   {

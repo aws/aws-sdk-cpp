@@ -37,7 +37,7 @@ Aws::String UpdateAvailabilityOptionsRequest::SerializePayload() const
 
   if(m_multiAZHasBeenSet)
   {
-    ss << "MultiAZ=" << m_multiAZ << "&";
+    ss << "MultiAZ=" << std::boolalpha << m_multiAZ << "&";
   }
 
   ss << "Version=2013-01-01";

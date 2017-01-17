@@ -304,7 +304,10 @@ namespace Model
          * nonexistent items consume the minimum read capacity units according to the type
          * of read. For more information, see <a
          * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#CapacityUnitCalculations">Capacity
-         * Units Calculations</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+         * Units Calculations</a> in the <i>Amazon DynamoDB Developer
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/BatchGetItem">AWS
+         * API Reference</a></p>
          */
         virtual Model::BatchGetItemOutcome BatchGetItem(const Model::BatchGetItemRequest& request) const;
 
@@ -351,7 +354,10 @@ namespace Model
          * nonexistent items consume the minimum read capacity units according to the type
          * of read. For more information, see <a
          * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#CapacityUnitCalculations">Capacity
-         * Units Calculations</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+         * Units Calculations</a> in the <i>Amazon DynamoDB Developer
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/BatchGetItem">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -400,7 +406,10 @@ namespace Model
          * nonexistent items consume the minimum read capacity units according to the type
          * of read. For more information, see <a
          * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#CapacityUnitCalculations">Capacity
-         * Units Calculations</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+         * Units Calculations</a> in the <i>Amazon DynamoDB Developer
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/BatchGetItem">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -460,7 +469,9 @@ namespace Model
          * item in the same <i>BatchWriteItem</i> request. </p> </li> <li> <p>There are
          * more than 25 requests in the batch.</p> </li> <li> <p>Any individual item in a
          * batch exceeds 400 KB.</p> </li> <li> <p>The total request size exceeds 16
-         * MB.</p> </li> </ul>
+         * MB.</p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/BatchWriteItem">AWS
+         * API Reference</a></p>
          */
         virtual Model::BatchWriteItemOutcome BatchWriteItem(const Model::BatchWriteItemRequest& request) const;
 
@@ -518,7 +529,9 @@ namespace Model
          * item in the same <i>BatchWriteItem</i> request. </p> </li> <li> <p>There are
          * more than 25 requests in the batch.</p> </li> <li> <p>Any individual item in a
          * batch exceeds 400 KB.</p> </li> <li> <p>The total request size exceeds 16
-         * MB.</p> </li> </ul>
+         * MB.</p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/BatchWriteItem">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -578,7 +591,9 @@ namespace Model
          * item in the same <i>BatchWriteItem</i> request. </p> </li> <li> <p>There are
          * more than 25 requests in the batch.</p> </li> <li> <p>Any individual item in a
          * batch exceeds 400 KB.</p> </li> <li> <p>The total request size exceeds 16
-         * MB.</p> </li> </ul>
+         * MB.</p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/BatchWriteItem">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -598,7 +613,9 @@ namespace Model
          * secondary indexes on them, you must create the tables sequentially. Only one
          * table with secondary indexes can be in the <code>CREATING</code> state at any
          * given time.</p> <p>You can use the <i>DescribeTable</i> API to check the table
-         * status.</p>
+         * status.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/CreateTable">AWS
+         * API Reference</a></p>
          */
         virtual Model::CreateTableOutcome CreateTable(const Model::CreateTableRequest& request) const;
 
@@ -616,7 +633,9 @@ namespace Model
          * secondary indexes on them, you must create the tables sequentially. Only one
          * table with secondary indexes can be in the <code>CREATING</code> state at any
          * given time.</p> <p>You can use the <i>DescribeTable</i> API to check the table
-         * status.</p>
+         * status.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/CreateTable">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -636,7 +655,9 @@ namespace Model
          * secondary indexes on them, you must create the tables sequentially. Only one
          * table with secondary indexes can be in the <code>CREATING</code> state at any
          * given time.</p> <p>You can use the <i>DescribeTable</i> API to check the table
-         * status.</p>
+         * status.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/CreateTable">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -652,7 +673,9 @@ namespace Model
          * same item or attribute does <i>not</i> result in an error response.</p>
          * <p>Conditional deletes are useful for deleting items only if specific conditions
          * are met. If those conditions are met, DynamoDB performs the delete. Otherwise,
-         * the item is not deleted.</p>
+         * the item is not deleted.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DeleteItem">AWS
+         * API Reference</a></p>
          */
         virtual Model::DeleteItemOutcome DeleteItem(const Model::DeleteItemRequest& request) const;
 
@@ -666,7 +689,9 @@ namespace Model
          * same item or attribute does <i>not</i> result in an error response.</p>
          * <p>Conditional deletes are useful for deleting items only if specific conditions
          * are met. If those conditions are met, DynamoDB performs the delete. Otherwise,
-         * the item is not deleted.</p>
+         * the item is not deleted.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DeleteItem">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -682,7 +707,9 @@ namespace Model
          * same item or attribute does <i>not</i> result in an error response.</p>
          * <p>Conditional deletes are useful for deleting items only if specific conditions
          * are met. If those conditions are met, DynamoDB performs the delete. Otherwise,
-         * the item is not deleted.</p>
+         * the item is not deleted.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DeleteItem">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -704,7 +731,9 @@ namespace Model
          * table, then the corresponding stream on that table goes into the
          * <code>DISABLED</code> state, and the stream is automatically deleted after 24
          * hours.</p> <p>Use the <i>DescribeTable</i> API to check the status of the table.
-         * </p>
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DeleteTable">AWS
+         * API Reference</a></p>
          */
         virtual Model::DeleteTableOutcome DeleteTable(const Model::DeleteTableRequest& request) const;
 
@@ -724,7 +753,9 @@ namespace Model
          * table, then the corresponding stream on that table goes into the
          * <code>DISABLED</code> state, and the stream is automatically deleted after 24
          * hours.</p> <p>Use the <i>DescribeTable</i> API to check the status of the table.
-         * </p>
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DeleteTable">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -746,7 +777,9 @@ namespace Model
          * table, then the corresponding stream on that table goes into the
          * <code>DISABLED</code> state, and the stream is automatically deleted after 24
          * hours.</p> <p>Use the <i>DescribeTable</i> API to check the status of the table.
-         * </p>
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DeleteTable">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -792,7 +825,9 @@ namespace Model
          * exceed either of the per-account limits.</p> <note> <p> <i>DescribeLimits</i>
          * should only be called periodically. You can expect throttling errors if you call
          * it more than once in a minute.</p> </note> <p>The <i>DescribeLimits</i> Request
-         * element has no content.</p>
+         * element has no content.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeLimits">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeLimitsOutcome DescribeLimits(const Model::DescribeLimitsRequest& request) const;
 
@@ -836,7 +871,9 @@ namespace Model
          * exceed either of the per-account limits.</p> <note> <p> <i>DescribeLimits</i>
          * should only be called periodically. You can expect throttling errors if you call
          * it more than once in a minute.</p> </note> <p>The <i>DescribeLimits</i> Request
-         * element has no content.</p>
+         * element has no content.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeLimits">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -882,7 +919,9 @@ namespace Model
          * exceed either of the per-account limits.</p> <note> <p> <i>DescribeLimits</i>
          * should only be called periodically. You can expect throttling errors if you call
          * it more than once in a minute.</p> </note> <p>The <i>DescribeLimits</i> Request
-         * element has no content.</p>
+         * element has no content.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeLimits">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -896,7 +935,9 @@ namespace Model
          * <i>ResourceNotFoundException</i>. This is because <i>DescribeTable</i> uses an
          * eventually consistent query, and the metadata for your table might not be
          * available at that moment. Wait for a few seconds, and then try the
-         * <i>DescribeTable</i> request again.</p> </note>
+         * <i>DescribeTable</i> request again.</p> </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeTable">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeTableOutcome DescribeTable(const Model::DescribeTableRequest& request) const;
 
@@ -908,7 +949,9 @@ namespace Model
          * <i>ResourceNotFoundException</i>. This is because <i>DescribeTable</i> uses an
          * eventually consistent query, and the metadata for your table might not be
          * available at that moment. Wait for a few seconds, and then try the
-         * <i>DescribeTable</i> request again.</p> </note>
+         * <i>DescribeTable</i> request again.</p> </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeTable">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -922,7 +965,9 @@ namespace Model
          * <i>ResourceNotFoundException</i>. This is because <i>DescribeTable</i> uses an
          * eventually consistent query, and the metadata for your table might not be
          * available at that moment. Wait for a few seconds, and then try the
-         * <i>DescribeTable</i> request again.</p> </note>
+         * <i>DescribeTable</i> request again.</p> </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeTable">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -935,7 +980,9 @@ namespace Model
          * by default. If your application requires a strongly consistent read, set
          * <i>ConsistentRead</i> to <code>true</code>. Although a strongly consistent read
          * might take more time than an eventually consistent read, it always returns the
-         * last updated value.</p>
+         * last updated value.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/GetItem">AWS
+         * API Reference</a></p>
          */
         virtual Model::GetItemOutcome GetItem(const Model::GetItemRequest& request) const;
 
@@ -946,7 +993,9 @@ namespace Model
          * by default. If your application requires a strongly consistent read, set
          * <i>ConsistentRead</i> to <code>true</code>. Although a strongly consistent read
          * might take more time than an eventually consistent read, it always returns the
-         * last updated value.</p>
+         * last updated value.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/GetItem">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -959,7 +1008,9 @@ namespace Model
          * by default. If your application requires a strongly consistent read, set
          * <i>ConsistentRead</i> to <code>true</code>. Although a strongly consistent read
          * might take more time than an eventually consistent read, it always returns the
-         * last updated value.</p>
+         * last updated value.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/GetItem">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -968,14 +1019,18 @@ namespace Model
         /**
          * <p>Returns an array of table names associated with the current account and
          * endpoint. The output from <i>ListTables</i> is paginated, with each page
-         * returning a maximum of 100 table names.</p>
+         * returning a maximum of 100 table names.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ListTables">AWS
+         * API Reference</a></p>
          */
         virtual Model::ListTablesOutcome ListTables(const Model::ListTablesRequest& request) const;
 
         /**
          * <p>Returns an array of table names associated with the current account and
          * endpoint. The output from <i>ListTables</i> is paginated, with each page
-         * returning a maximum of 100 table names.</p>
+         * returning a maximum of 100 table names.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ListTables">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -984,7 +1039,9 @@ namespace Model
         /**
          * <p>Returns an array of table names associated with the current account and
          * endpoint. The output from <i>ListTables</i> is paginated, with each page
-         * returning a maximum of 100 table names.</p>
+         * returning a maximum of 100 table names.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ListTables">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1013,7 +1070,10 @@ namespace Model
          * no matching item exists.</p> </note> <p>For more information about using this
          * API, see <a
          * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithItems.html">Working
-         * with Items</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+         * with Items</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/PutItem">AWS
+         * API Reference</a></p>
          */
         virtual Model::PutItemOutcome PutItem(const Model::PutItemRequest& request) const;
 
@@ -1040,7 +1100,10 @@ namespace Model
          * no matching item exists.</p> </note> <p>For more information about using this
          * API, see <a
          * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithItems.html">Working
-         * with Items</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+         * with Items</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/PutItem">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1069,7 +1132,10 @@ namespace Model
          * no matching item exists.</p> </note> <p>For more information about using this
          * API, see <a
          * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithItems.html">Working
-         * with Items</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+         * with Items</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/PutItem">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1097,7 +1163,10 @@ namespace Model
          * a local secondary index, you can set the <i>ConsistentRead</i> parameter to
          * <code>true</code> and obtain a strongly consistent result. Global secondary
          * indexes support eventually consistent reads only, so do not specify
-         * <i>ConsistentRead</i> when querying a global secondary index.</p>
+         * <i>ConsistentRead</i> when querying a global secondary index.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/Query">AWS API
+         * Reference</a></p>
          */
         virtual Model::QueryOutcome Query(const Model::QueryRequest& request) const;
 
@@ -1123,7 +1192,10 @@ namespace Model
          * a local secondary index, you can set the <i>ConsistentRead</i> parameter to
          * <code>true</code> and obtain a strongly consistent result. Global secondary
          * indexes support eventually consistent reads only, so do not specify
-         * <i>ConsistentRead</i> when querying a global secondary index.</p>
+         * <i>ConsistentRead</i> when querying a global secondary index.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/Query">AWS API
+         * Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1151,7 +1223,10 @@ namespace Model
          * a local secondary index, you can set the <i>ConsistentRead</i> parameter to
          * <code>true</code> and obtain a strongly consistent result. Global secondary
          * indexes support eventually consistent reads only, so do not specify
-         * <i>ConsistentRead</i> when querying a global secondary index.</p>
+         * <i>ConsistentRead</i> when querying a global secondary index.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/Query">AWS API
+         * Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1176,7 +1251,9 @@ namespace Model
          * therefore, the result set might not include the changes to data in the table
          * immediately before the operation began. If you need a consistent copy of the
          * data, as of the time that the Scan begins, you can set the <i>ConsistentRead</i>
-         * parameter to <i>true</i>.</p>
+         * parameter to <i>true</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/Scan">AWS API
+         * Reference</a></p>
          */
         virtual Model::ScanOutcome Scan(const Model::ScanRequest& request) const;
 
@@ -1199,7 +1276,9 @@ namespace Model
          * therefore, the result set might not include the changes to data in the table
          * immediately before the operation began. If you need a consistent copy of the
          * data, as of the time that the Scan begins, you can set the <i>ConsistentRead</i>
-         * parameter to <i>true</i>.</p>
+         * parameter to <i>true</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/Scan">AWS API
+         * Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1224,7 +1303,9 @@ namespace Model
          * therefore, the result set might not include the changes to data in the table
          * immediately before the operation began. If you need a consistent copy of the
          * data, as of the time that the Scan begins, you can set the <i>ConsistentRead</i>
-         * parameter to <i>true</i>.</p>
+         * parameter to <i>true</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/Scan">AWS API
+         * Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1237,7 +1318,9 @@ namespace Model
          * name-value pair if it doesn't exist, or replace an existing name-value pair if
          * it has certain expected attribute values).</p> <p>You can also return the item's
          * attribute values in the same <i>UpdateItem</i> operation using the
-         * <i>ReturnValues</i> parameter.</p>
+         * <i>ReturnValues</i> parameter.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/UpdateItem">AWS
+         * API Reference</a></p>
          */
         virtual Model::UpdateItemOutcome UpdateItem(const Model::UpdateItemRequest& request) const;
 
@@ -1248,7 +1331,9 @@ namespace Model
          * name-value pair if it doesn't exist, or replace an existing name-value pair if
          * it has certain expected attribute values).</p> <p>You can also return the item's
          * attribute values in the same <i>UpdateItem</i> operation using the
-         * <i>ReturnValues</i> parameter.</p>
+         * <i>ReturnValues</i> parameter.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/UpdateItem">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1261,7 +1346,9 @@ namespace Model
          * name-value pair if it doesn't exist, or replace an existing name-value pair if
          * it has certain expected attribute values).</p> <p>You can also return the item's
          * attribute values in the same <i>UpdateItem</i> operation using the
-         * <i>ReturnValues</i> parameter.</p>
+         * <i>ReturnValues</i> parameter.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/UpdateItem">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1279,7 +1366,10 @@ namespace Model
          * while it is executing, the table status changes from <code>ACTIVE</code> to
          * <code>UPDATING</code>. While it is <code>UPDATING</code>, you cannot issue
          * another <i>UpdateTable</i> request. When the table returns to the
-         * <code>ACTIVE</code> state, the <i>UpdateTable</i> operation is complete.</p>
+         * <code>ACTIVE</code> state, the <i>UpdateTable</i> operation is
+         * complete.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/UpdateTable">AWS
+         * API Reference</a></p>
          */
         virtual Model::UpdateTableOutcome UpdateTable(const Model::UpdateTableRequest& request) const;
 
@@ -1295,7 +1385,10 @@ namespace Model
          * while it is executing, the table status changes from <code>ACTIVE</code> to
          * <code>UPDATING</code>. While it is <code>UPDATING</code>, you cannot issue
          * another <i>UpdateTable</i> request. When the table returns to the
-         * <code>ACTIVE</code> state, the <i>UpdateTable</i> operation is complete.</p>
+         * <code>ACTIVE</code> state, the <i>UpdateTable</i> operation is
+         * complete.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/UpdateTable">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1313,7 +1406,10 @@ namespace Model
          * while it is executing, the table status changes from <code>ACTIVE</code> to
          * <code>UPDATING</code>. While it is <code>UPDATING</code>, you cannot issue
          * another <i>UpdateTable</i> request. When the table returns to the
-         * <code>ACTIVE</code> state, the <i>UpdateTable</i> operation is complete.</p>
+         * <code>ACTIVE</code> state, the <i>UpdateTable</i> operation is
+         * complete.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/UpdateTable">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */

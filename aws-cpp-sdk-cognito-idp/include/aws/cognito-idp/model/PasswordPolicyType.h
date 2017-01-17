@@ -30,7 +30,9 @@ namespace Model
 {
 
   /**
-   * <p>The password policy type.</p>
+   * <p>The password policy type.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/PasswordPolicyType">AWS
+   * API Reference</a></p>
    */
   class AWS_COGNITOIDENTITYPROVIDER_API PasswordPolicyType
   {

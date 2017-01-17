@@ -34,7 +34,9 @@ SpotFleetRequestConfig::SpotFleetRequestConfig() :
     m_spotFleetRequestState(BatchState::NOT_SET),
     m_spotFleetRequestStateHasBeenSet(false),
     m_spotFleetRequestConfigHasBeenSet(false),
-    m_createTimeHasBeenSet(false)
+    m_createTimeHasBeenSet(false),
+    m_activityStatus(ActivityStatus::NOT_SET),
+    m_activityStatusHasBeenSet(false)
 {
 }
 
@@ -43,7 +45,9 @@ SpotFleetRequestConfig::SpotFleetRequestConfig(const XmlNode& xmlNode) :
     m_spotFleetRequestState(BatchState::NOT_SET),
     m_spotFleetRequestStateHasBeenSet(false),
     m_spotFleetRequestConfigHasBeenSet(false),
-    m_createTimeHasBeenSet(false)
+    m_createTimeHasBeenSet(false),
+    m_activityStatus(ActivityStatus::NOT_SET),
+    m_activityStatusHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -78,6 +82,12 @@ SpotFleetRequestConfig& SpotFleetRequestConfig::operator =(const XmlNode& xmlNod
       m_createTime = DateTime(StringUtils::Trim(createTimeNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
       m_createTimeHasBeenSet = true;
     }
+    XmlNode activityStatusNode = resultNode.FirstChild("activityStatus");
+    if(!activityStatusNode.IsNull())
+    {
+      m_activityStatus = ActivityStatusMapper::GetActivityStatusForName(StringUtils::Trim(activityStatusNode.GetText().c_str()).c_str());
+      m_activityStatusHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -107,6 +117,11 @@ void SpotFleetRequestConfig::OutputToStream(Aws::OStream& oStream, const char* l
       oStream << location << index << locationValue << ".CreateTime=" << StringUtils::URLEncode(m_createTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
 
+  if(m_activityStatusHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".ActivityStatus=" << ActivityStatusMapper::GetNameForActivityStatus(m_activityStatus) << "&";
+  }
+
 }
 
 void SpotFleetRequestConfig::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -128,6 +143,10 @@ void SpotFleetRequestConfig::OutputToStream(Aws::OStream& oStream, const char* l
   if(m_createTimeHasBeenSet)
   {
       oStream << location << ".CreateTime=" << StringUtils::URLEncode(m_createTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+  }
+  if(m_activityStatusHasBeenSet)
+  {
+      oStream << location << ".ActivityStatus=" << ActivityStatusMapper::GetNameForActivityStatus(m_activityStatus) << "&";
   }
 }
 

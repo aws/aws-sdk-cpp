@@ -27,7 +27,8 @@ RegisterTaskDefinitionRequest::RegisterTaskDefinitionRequest() :
     m_networkMode(NetworkMode::NOT_SET),
     m_networkModeHasBeenSet(false),
     m_containerDefinitionsHasBeenSet(false),
-    m_volumesHasBeenSet(false)
+    m_volumesHasBeenSet(false),
+    m_placementConstraintsHasBeenSet(false)
 {
 }
 
@@ -71,6 +72,17 @@ Aws::String RegisterTaskDefinitionRequest::SerializePayload() const
      volumesJsonList[volumesIndex].AsObject(m_volumes[volumesIndex].Jsonize());
    }
    payload.WithArray("volumes", std::move(volumesJsonList));
+
+  }
+
+  if(m_placementConstraintsHasBeenSet)
+  {
+   Array<JsonValue> placementConstraintsJsonList(m_placementConstraints.size());
+   for(unsigned placementConstraintsIndex = 0; placementConstraintsIndex < placementConstraintsJsonList.GetLength(); ++placementConstraintsIndex)
+   {
+     placementConstraintsJsonList[placementConstraintsIndex].AsObject(m_placementConstraints[placementConstraintsIndex].Jsonize());
+   }
+   payload.WithArray("placementConstraints", std::move(placementConstraintsJsonList));
 
   }
 

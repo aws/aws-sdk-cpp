@@ -329,133 +329,178 @@ namespace Model
         virtual ~ServiceCatalogClient();
 
         /**
-         * <p>Accepts an offer to share a portfolio.</p>
+         * <p>Accepts an offer to share a portfolio.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/AcceptPortfolioShare">AWS
+         * API Reference</a></p>
          */
         virtual Model::AcceptPortfolioShareOutcome AcceptPortfolioShare(const Model::AcceptPortfolioShareRequest& request) const;
 
         /**
-         * <p>Accepts an offer to share a portfolio.</p>
+         * <p>Accepts an offer to share a portfolio.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/AcceptPortfolioShare">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::AcceptPortfolioShareOutcomeCallable AcceptPortfolioShareCallable(const Model::AcceptPortfolioShareRequest& request) const;
 
         /**
-         * <p>Accepts an offer to share a portfolio.</p>
+         * <p>Accepts an offer to share a portfolio.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/AcceptPortfolioShare">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void AcceptPortfolioShareAsync(const Model::AcceptPortfolioShareRequest& request, const AcceptPortfolioShareResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Associates the specified principal ARN with the specified portfolio.</p>
+         * <p>Associates the specified principal ARN with the specified
+         * portfolio.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/AssociatePrincipalWithPortfolio">AWS
+         * API Reference</a></p>
          */
         virtual Model::AssociatePrincipalWithPortfolioOutcome AssociatePrincipalWithPortfolio(const Model::AssociatePrincipalWithPortfolioRequest& request) const;
 
         /**
-         * <p>Associates the specified principal ARN with the specified portfolio.</p>
+         * <p>Associates the specified principal ARN with the specified
+         * portfolio.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/AssociatePrincipalWithPortfolio">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::AssociatePrincipalWithPortfolioOutcomeCallable AssociatePrincipalWithPortfolioCallable(const Model::AssociatePrincipalWithPortfolioRequest& request) const;
 
         /**
-         * <p>Associates the specified principal ARN with the specified portfolio.</p>
+         * <p>Associates the specified principal ARN with the specified
+         * portfolio.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/AssociatePrincipalWithPortfolio">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void AssociatePrincipalWithPortfolioAsync(const Model::AssociatePrincipalWithPortfolioRequest& request, const AssociatePrincipalWithPortfolioResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Associates a product with a portfolio.</p>
+         * <p>Associates a product with a portfolio.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/AssociateProductWithPortfolio">AWS
+         * API Reference</a></p>
          */
         virtual Model::AssociateProductWithPortfolioOutcome AssociateProductWithPortfolio(const Model::AssociateProductWithPortfolioRequest& request) const;
 
         /**
-         * <p>Associates a product with a portfolio.</p>
+         * <p>Associates a product with a portfolio.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/AssociateProductWithPortfolio">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::AssociateProductWithPortfolioOutcomeCallable AssociateProductWithPortfolioCallable(const Model::AssociateProductWithPortfolioRequest& request) const;
 
         /**
-         * <p>Associates a product with a portfolio.</p>
+         * <p>Associates a product with a portfolio.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/AssociateProductWithPortfolio">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void AssociateProductWithPortfolioAsync(const Model::AssociateProductWithPortfolioRequest& request, const AssociateProductWithPortfolioResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a new constraint.</p>
+         * <p>Creates a new constraint.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/CreateConstraint">AWS
+         * API Reference</a></p>
          */
         virtual Model::CreateConstraintOutcome CreateConstraint(const Model::CreateConstraintRequest& request) const;
 
         /**
-         * <p>Creates a new constraint.</p>
+         * <p>Creates a new constraint.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/CreateConstraint">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::CreateConstraintOutcomeCallable CreateConstraintCallable(const Model::CreateConstraintRequest& request) const;
 
         /**
-         * <p>Creates a new constraint.</p>
+         * <p>Creates a new constraint.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/CreateConstraint">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateConstraintAsync(const Model::CreateConstraintRequest& request, const CreateConstraintResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a new portfolio.</p>
+         * <p>Creates a new portfolio.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/CreatePortfolio">AWS
+         * API Reference</a></p>
          */
         virtual Model::CreatePortfolioOutcome CreatePortfolio(const Model::CreatePortfolioRequest& request) const;
 
         /**
-         * <p>Creates a new portfolio.</p>
+         * <p>Creates a new portfolio.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/CreatePortfolio">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::CreatePortfolioOutcomeCallable CreatePortfolioCallable(const Model::CreatePortfolioRequest& request) const;
 
         /**
-         * <p>Creates a new portfolio.</p>
+         * <p>Creates a new portfolio.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/CreatePortfolio">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreatePortfolioAsync(const Model::CreatePortfolioRequest& request, const CreatePortfolioResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a new portfolio share.</p>
+         * <p>Creates a new portfolio share.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/CreatePortfolioShare">AWS
+         * API Reference</a></p>
          */
         virtual Model::CreatePortfolioShareOutcome CreatePortfolioShare(const Model::CreatePortfolioShareRequest& request) const;
 
         /**
-         * <p>Creates a new portfolio share.</p>
+         * <p>Creates a new portfolio share.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/CreatePortfolioShare">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::CreatePortfolioShareOutcomeCallable CreatePortfolioShareCallable(const Model::CreatePortfolioShareRequest& request) const;
 
         /**
-         * <p>Creates a new portfolio share.</p>
+         * <p>Creates a new portfolio share.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/CreatePortfolioShare">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreatePortfolioShareAsync(const Model::CreatePortfolioShareRequest& request, const CreatePortfolioShareResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a new product.</p>
+         * <p>Creates a new product.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/CreateProduct">AWS
+         * API Reference</a></p>
          */
         virtual Model::CreateProductOutcome CreateProduct(const Model::CreateProductRequest& request) const;
 
         /**
-         * <p>Creates a new product.</p>
+         * <p>Creates a new product.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/CreateProduct">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::CreateProductOutcomeCallable CreateProductCallable(const Model::CreateProductRequest& request) const;
 
         /**
-         * <p>Creates a new product.</p>
+         * <p>Creates a new product.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/CreateProduct">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -463,13 +508,19 @@ namespace Model
 
         /**
          * <p>Create a new provisioning artifact for the specified product. This operation
-         * will not work with a product that has been shared with you.</p>
+         * will not work with a product that has been shared with you.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/CreateProvisioningArtifact">AWS
+         * API Reference</a></p>
          */
         virtual Model::CreateProvisioningArtifactOutcome CreateProvisioningArtifact(const Model::CreateProvisioningArtifactRequest& request) const;
 
         /**
          * <p>Create a new provisioning artifact for the specified product. This operation
-         * will not work with a product that has been shared with you.</p>
+         * will not work with a product that has been shared with you.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/CreateProvisioningArtifact">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -477,26 +528,35 @@ namespace Model
 
         /**
          * <p>Create a new provisioning artifact for the specified product. This operation
-         * will not work with a product that has been shared with you.</p>
+         * will not work with a product that has been shared with you.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/CreateProvisioningArtifact">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateProvisioningArtifactAsync(const Model::CreateProvisioningArtifactRequest& request, const CreateProvisioningArtifactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes the specified constraint.</p>
+         * <p>Deletes the specified constraint.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DeleteConstraint">AWS
+         * API Reference</a></p>
          */
         virtual Model::DeleteConstraintOutcome DeleteConstraint(const Model::DeleteConstraintRequest& request) const;
 
         /**
-         * <p>Deletes the specified constraint.</p>
+         * <p>Deletes the specified constraint.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DeleteConstraint">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DeleteConstraintOutcomeCallable DeleteConstraintCallable(const Model::DeleteConstraintRequest& request) const;
 
         /**
-         * <p>Deletes the specified constraint.</p>
+         * <p>Deletes the specified constraint.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DeleteConstraint">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -505,14 +565,20 @@ namespace Model
         /**
          * <p>Deletes the specified portfolio. This operation will not work with a
          * portfolio that has been shared with you or if it has products, users,
-         * constraints, or shared accounts associated with it.</p>
+         * constraints, or shared accounts associated with it.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DeletePortfolio">AWS
+         * API Reference</a></p>
          */
         virtual Model::DeletePortfolioOutcome DeletePortfolio(const Model::DeletePortfolioRequest& request) const;
 
         /**
          * <p>Deletes the specified portfolio. This operation will not work with a
          * portfolio that has been shared with you or if it has products, users,
-         * constraints, or shared accounts associated with it.</p>
+         * constraints, or shared accounts associated with it.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DeletePortfolio">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -521,26 +587,35 @@ namespace Model
         /**
          * <p>Deletes the specified portfolio. This operation will not work with a
          * portfolio that has been shared with you or if it has products, users,
-         * constraints, or shared accounts associated with it.</p>
+         * constraints, or shared accounts associated with it.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DeletePortfolio">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeletePortfolioAsync(const Model::DeletePortfolioRequest& request, const DeletePortfolioResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes the specified portfolio share.</p>
+         * <p>Deletes the specified portfolio share.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DeletePortfolioShare">AWS
+         * API Reference</a></p>
          */
         virtual Model::DeletePortfolioShareOutcome DeletePortfolioShare(const Model::DeletePortfolioShareRequest& request) const;
 
         /**
-         * <p>Deletes the specified portfolio share.</p>
+         * <p>Deletes the specified portfolio share.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DeletePortfolioShare">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DeletePortfolioShareOutcomeCallable DeletePortfolioShareCallable(const Model::DeletePortfolioShareRequest& request) const;
 
         /**
-         * <p>Deletes the specified portfolio share.</p>
+         * <p>Deletes the specified portfolio share.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DeletePortfolioShare">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -548,13 +623,19 @@ namespace Model
 
         /**
          * <p>Deletes the specified product. This operation will not work with a product
-         * that has been shared with you or is associated with a portfolio. </p>
+         * that has been shared with you or is associated with a portfolio. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DeleteProduct">AWS
+         * API Reference</a></p>
          */
         virtual Model::DeleteProductOutcome DeleteProduct(const Model::DeleteProductRequest& request) const;
 
         /**
          * <p>Deletes the specified product. This operation will not work with a product
-         * that has been shared with you or is associated with a portfolio. </p>
+         * that has been shared with you or is associated with a portfolio. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DeleteProduct">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -562,7 +643,10 @@ namespace Model
 
         /**
          * <p>Deletes the specified product. This operation will not work with a product
-         * that has been shared with you or is associated with a portfolio. </p>
+         * that has been shared with you or is associated with a portfolio. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DeleteProduct">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -572,7 +656,9 @@ namespace Model
          * <p>Deletes the specified provisioning artifact. This operation will not work on
          * a provisioning artifact associated with a product that has been shared with you,
          * or on the last provisioning artifact associated with a product (a product must
-         * have at least one provisioning artifact).</p>
+         * have at least one provisioning artifact).</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DeleteProvisioningArtifact">AWS
+         * API Reference</a></p>
          */
         virtual Model::DeleteProvisioningArtifactOutcome DeleteProvisioningArtifact(const Model::DeleteProvisioningArtifactRequest& request) const;
 
@@ -580,7 +666,9 @@ namespace Model
          * <p>Deletes the specified provisioning artifact. This operation will not work on
          * a provisioning artifact associated with a product that has been shared with you,
          * or on the last provisioning artifact associated with a product (a product must
-         * have at least one provisioning artifact).</p>
+         * have at least one provisioning artifact).</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DeleteProvisioningArtifact">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -590,26 +678,37 @@ namespace Model
          * <p>Deletes the specified provisioning artifact. This operation will not work on
          * a provisioning artifact associated with a product that has been shared with you,
          * or on the last provisioning artifact associated with a product (a product must
-         * have at least one provisioning artifact).</p>
+         * have at least one provisioning artifact).</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DeleteProvisioningArtifact">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteProvisioningArtifactAsync(const Model::DeleteProvisioningArtifactRequest& request, const DeleteProvisioningArtifactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Retrieves detailed information for a specified constraint.</p>
+         * <p>Retrieves detailed information for a specified constraint.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DescribeConstraint">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeConstraintOutcome DescribeConstraint(const Model::DescribeConstraintRequest& request) const;
 
         /**
-         * <p>Retrieves detailed information for a specified constraint.</p>
+         * <p>Retrieves detailed information for a specified constraint.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DescribeConstraint">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DescribeConstraintOutcomeCallable DescribeConstraintCallable(const Model::DescribeConstraintRequest& request) const;
 
         /**
-         * <p>Retrieves detailed information for a specified constraint.</p>
+         * <p>Retrieves detailed information for a specified constraint.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DescribeConstraint">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -617,13 +716,17 @@ namespace Model
 
         /**
          * <p>Retrieves detailed information and any tags associated with the specified
-         * portfolio.</p>
+         * portfolio.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DescribePortfolio">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribePortfolioOutcome DescribePortfolio(const Model::DescribePortfolioRequest& request) const;
 
         /**
          * <p>Retrieves detailed information and any tags associated with the specified
-         * portfolio.</p>
+         * portfolio.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DescribePortfolio">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -631,7 +734,9 @@ namespace Model
 
         /**
          * <p>Retrieves detailed information and any tags associated with the specified
-         * portfolio.</p>
+         * portfolio.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DescribePortfolio">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -640,14 +745,20 @@ namespace Model
         /**
          * <p>Retrieves information about a specified product.</p> <p>This operation is
          * functionally identical to <a>DescribeProductView</a> except that it takes as
-         * input <code>ProductId</code> instead of <code>ProductViewId</code>.</p>
+         * input <code>ProductId</code> instead of
+         * <code>ProductViewId</code>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DescribeProduct">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeProductOutcome DescribeProduct(const Model::DescribeProductRequest& request) const;
 
         /**
          * <p>Retrieves information about a specified product.</p> <p>This operation is
          * functionally identical to <a>DescribeProductView</a> except that it takes as
-         * input <code>ProductId</code> instead of <code>ProductViewId</code>.</p>
+         * input <code>ProductId</code> instead of
+         * <code>ProductViewId</code>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DescribeProduct">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -656,7 +767,10 @@ namespace Model
         /**
          * <p>Retrieves information about a specified product.</p> <p>This operation is
          * functionally identical to <a>DescribeProductView</a> except that it takes as
-         * input <code>ProductId</code> instead of <code>ProductViewId</code>.</p>
+         * input <code>ProductId</code> instead of
+         * <code>ProductViewId</code>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DescribeProduct">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -664,13 +778,17 @@ namespace Model
 
         /**
          * <p>Retrieves information about a specified product, run with administrator
-         * access.</p>
+         * access.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DescribeProductAsAdmin">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeProductAsAdminOutcome DescribeProductAsAdmin(const Model::DescribeProductAsAdminRequest& request) const;
 
         /**
          * <p>Retrieves information about a specified product, run with administrator
-         * access.</p>
+         * access.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DescribeProductAsAdmin">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -678,7 +796,9 @@ namespace Model
 
         /**
          * <p>Retrieves information about a specified product, run with administrator
-         * access.</p>
+         * access.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DescribeProductAsAdmin">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -687,14 +807,20 @@ namespace Model
         /**
          * <p>Retrieves information about a specified product.</p> <p>This operation is
          * functionally identical to <a>DescribeProduct</a> except that it takes as input
-         * <code>ProductViewId</code> instead of <code>ProductId</code>.</p>
+         * <code>ProductViewId</code> instead of <code>ProductId</code>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DescribeProductView">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeProductViewOutcome DescribeProductView(const Model::DescribeProductViewRequest& request) const;
 
         /**
          * <p>Retrieves information about a specified product.</p> <p>This operation is
          * functionally identical to <a>DescribeProduct</a> except that it takes as input
-         * <code>ProductViewId</code> instead of <code>ProductId</code>.</p>
+         * <code>ProductViewId</code> instead of <code>ProductId</code>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DescribeProductView">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -703,26 +829,38 @@ namespace Model
         /**
          * <p>Retrieves information about a specified product.</p> <p>This operation is
          * functionally identical to <a>DescribeProduct</a> except that it takes as input
-         * <code>ProductViewId</code> instead of <code>ProductId</code>.</p>
+         * <code>ProductViewId</code> instead of <code>ProductId</code>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DescribeProductView">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeProductViewAsync(const Model::DescribeProductViewRequest& request, const DescribeProductViewResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Retrieves detailed information about the specified provisioning artifact.</p>
+         * <p>Retrieves detailed information about the specified provisioning
+         * artifact.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DescribeProvisioningArtifact">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeProvisioningArtifactOutcome DescribeProvisioningArtifact(const Model::DescribeProvisioningArtifactRequest& request) const;
 
         /**
-         * <p>Retrieves detailed information about the specified provisioning artifact.</p>
+         * <p>Retrieves detailed information about the specified provisioning
+         * artifact.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DescribeProvisioningArtifact">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DescribeProvisioningArtifactOutcomeCallable DescribeProvisioningArtifactCallable(const Model::DescribeProvisioningArtifactRequest& request) const;
 
         /**
-         * <p>Retrieves detailed information about the specified provisioning artifact.</p>
+         * <p>Retrieves detailed information about the specified provisioning
+         * artifact.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DescribeProvisioningArtifact">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -732,7 +870,10 @@ namespace Model
          * <p>Provides information about parameters required to provision a specified
          * product in a specified manner. Use this operation to obtain the list of
          * <code>ProvisioningArtifactParameters</code> parameters available to call the
-         * <a>ProvisionProduct</a> operation for the specified product.</p>
+         * <a>ProvisionProduct</a> operation for the specified product.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DescribeProvisioningParameters">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeProvisioningParametersOutcome DescribeProvisioningParameters(const Model::DescribeProvisioningParametersRequest& request) const;
 
@@ -740,7 +881,10 @@ namespace Model
          * <p>Provides information about parameters required to provision a specified
          * product in a specified manner. Use this operation to obtain the list of
          * <code>ProvisioningArtifactParameters</code> parameters available to call the
-         * <a>ProvisionProduct</a> operation for the specified product.</p>
+         * <a>ProvisionProduct</a> operation for the specified product.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DescribeProvisioningParameters">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -750,7 +894,10 @@ namespace Model
          * <p>Provides information about parameters required to provision a specified
          * product in a specified manner. Use this operation to obtain the list of
          * <code>ProvisioningArtifactParameters</code> parameters available to call the
-         * <a>ProvisionProduct</a> operation for the specified product.</p>
+         * <a>ProvisionProduct</a> operation for the specified product.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DescribeProvisioningParameters">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -759,14 +906,20 @@ namespace Model
         /**
          * <p>Retrieves a paginated list of the full details of a specific request. Use
          * this operation after calling a request operation (<a>ProvisionProduct</a>,
-         * <a>TerminateProvisionedProduct</a>, or <a>UpdateProvisionedProduct</a>). </p>
+         * <a>TerminateProvisionedProduct</a>, or <a>UpdateProvisionedProduct</a>).
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DescribeRecord">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeRecordOutcome DescribeRecord(const Model::DescribeRecordRequest& request) const;
 
         /**
          * <p>Retrieves a paginated list of the full details of a specific request. Use
          * this operation after calling a request operation (<a>ProvisionProduct</a>,
-         * <a>TerminateProvisionedProduct</a>, or <a>UpdateProvisionedProduct</a>). </p>
+         * <a>TerminateProvisionedProduct</a>, or <a>UpdateProvisionedProduct</a>).
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DescribeRecord">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -775,7 +928,10 @@ namespace Model
         /**
          * <p>Retrieves a paginated list of the full details of a specific request. Use
          * this operation after calling a request operation (<a>ProvisionProduct</a>,
-         * <a>TerminateProvisionedProduct</a>, or <a>UpdateProvisionedProduct</a>). </p>
+         * <a>TerminateProvisionedProduct</a>, or <a>UpdateProvisionedProduct</a>).
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DescribeRecord">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -783,13 +939,17 @@ namespace Model
 
         /**
          * <p>Disassociates a previously associated principal ARN from a specified
-         * portfolio.</p>
+         * portfolio.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DisassociatePrincipalFromPortfolio">AWS
+         * API Reference</a></p>
          */
         virtual Model::DisassociatePrincipalFromPortfolioOutcome DisassociatePrincipalFromPortfolio(const Model::DisassociatePrincipalFromPortfolioRequest& request) const;
 
         /**
          * <p>Disassociates a previously associated principal ARN from a specified
-         * portfolio.</p>
+         * portfolio.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DisassociatePrincipalFromPortfolio">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -797,26 +957,37 @@ namespace Model
 
         /**
          * <p>Disassociates a previously associated principal ARN from a specified
-         * portfolio.</p>
+         * portfolio.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DisassociatePrincipalFromPortfolio">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DisassociatePrincipalFromPortfolioAsync(const Model::DisassociatePrincipalFromPortfolioRequest& request, const DisassociatePrincipalFromPortfolioResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Disassociates the specified product from the specified portfolio. </p>
+         * <p>Disassociates the specified product from the specified portfolio.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DisassociateProductFromPortfolio">AWS
+         * API Reference</a></p>
          */
         virtual Model::DisassociateProductFromPortfolioOutcome DisassociateProductFromPortfolio(const Model::DisassociateProductFromPortfolioRequest& request) const;
 
         /**
-         * <p>Disassociates the specified product from the specified portfolio. </p>
+         * <p>Disassociates the specified product from the specified portfolio.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DisassociateProductFromPortfolio">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DisassociateProductFromPortfolioOutcomeCallable DisassociateProductFromPortfolioCallable(const Model::DisassociateProductFromPortfolioRequest& request) const;
 
         /**
-         * <p>Disassociates the specified product from the specified portfolio. </p>
+         * <p>Disassociates the specified product from the specified portfolio.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DisassociateProductFromPortfolio">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -824,13 +995,17 @@ namespace Model
 
         /**
          * <p>Lists details of all portfolios for which sharing was accepted by this
-         * account.</p>
+         * account.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListAcceptedPortfolioShares">AWS
+         * API Reference</a></p>
          */
         virtual Model::ListAcceptedPortfolioSharesOutcome ListAcceptedPortfolioShares(const Model::ListAcceptedPortfolioSharesRequest& request) const;
 
         /**
          * <p>Lists details of all portfolios for which sharing was accepted by this
-         * account.</p>
+         * account.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListAcceptedPortfolioShares">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -838,7 +1013,9 @@ namespace Model
 
         /**
          * <p>Lists details of all portfolios for which sharing was accepted by this
-         * account.</p>
+         * account.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListAcceptedPortfolioShares">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -846,13 +1023,17 @@ namespace Model
 
         /**
          * <p>Retrieves detailed constraint information for the specified portfolio and
-         * product.</p>
+         * product.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListConstraintsForPortfolio">AWS
+         * API Reference</a></p>
          */
         virtual Model::ListConstraintsForPortfolioOutcome ListConstraintsForPortfolio(const Model::ListConstraintsForPortfolioRequest& request) const;
 
         /**
          * <p>Retrieves detailed constraint information for the specified portfolio and
-         * product.</p>
+         * product.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListConstraintsForPortfolio">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -860,7 +1041,9 @@ namespace Model
 
         /**
          * <p>Retrieves detailed constraint information for the specified portfolio and
-         * product.</p>
+         * product.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListConstraintsForPortfolio">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -869,14 +1052,20 @@ namespace Model
         /**
          * <p>Returns a paginated list of all paths to a specified product. A path is how
          * the user has access to a specified product, and is necessary when provisioning a
-         * product. A path also determines the constraints put on the product.</p>
+         * product. A path also determines the constraints put on the
+         * product.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListLaunchPaths">AWS
+         * API Reference</a></p>
          */
         virtual Model::ListLaunchPathsOutcome ListLaunchPaths(const Model::ListLaunchPathsRequest& request) const;
 
         /**
          * <p>Returns a paginated list of all paths to a specified product. A path is how
          * the user has access to a specified product, and is necessary when provisioning a
-         * product. A path also determines the constraints put on the product.</p>
+         * product. A path also determines the constraints put on the
+         * product.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListLaunchPaths">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -885,7 +1074,10 @@ namespace Model
         /**
          * <p>Returns a paginated list of all paths to a specified product. A path is how
          * the user has access to a specified product, and is necessary when provisioning a
-         * product. A path also determines the constraints put on the product.</p>
+         * product. A path also determines the constraints put on the
+         * product.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListLaunchPaths">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -893,13 +1085,17 @@ namespace Model
 
         /**
          * <p>Lists the account IDs that have been authorized sharing of the specified
-         * portfolio.</p>
+         * portfolio.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListPortfolioAccess">AWS
+         * API Reference</a></p>
          */
         virtual Model::ListPortfolioAccessOutcome ListPortfolioAccess(const Model::ListPortfolioAccessRequest& request) const;
 
         /**
          * <p>Lists the account IDs that have been authorized sharing of the specified
-         * portfolio.</p>
+         * portfolio.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListPortfolioAccess">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -907,83 +1103,118 @@ namespace Model
 
         /**
          * <p>Lists the account IDs that have been authorized sharing of the specified
-         * portfolio.</p>
+         * portfolio.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListPortfolioAccess">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListPortfolioAccessAsync(const Model::ListPortfolioAccessRequest& request, const ListPortfolioAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists all portfolios in the catalog.</p>
+         * <p>Lists all portfolios in the catalog.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListPortfolios">AWS
+         * API Reference</a></p>
          */
         virtual Model::ListPortfoliosOutcome ListPortfolios(const Model::ListPortfoliosRequest& request) const;
 
         /**
-         * <p>Lists all portfolios in the catalog.</p>
+         * <p>Lists all portfolios in the catalog.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListPortfolios">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListPortfoliosOutcomeCallable ListPortfoliosCallable(const Model::ListPortfoliosRequest& request) const;
 
         /**
-         * <p>Lists all portfolios in the catalog.</p>
+         * <p>Lists all portfolios in the catalog.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListPortfolios">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListPortfoliosAsync(const Model::ListPortfoliosRequest& request, const ListPortfoliosResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists all portfolios that the specified product is associated with.</p>
+         * <p>Lists all portfolios that the specified product is associated
+         * with.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListPortfoliosForProduct">AWS
+         * API Reference</a></p>
          */
         virtual Model::ListPortfoliosForProductOutcome ListPortfoliosForProduct(const Model::ListPortfoliosForProductRequest& request) const;
 
         /**
-         * <p>Lists all portfolios that the specified product is associated with.</p>
+         * <p>Lists all portfolios that the specified product is associated
+         * with.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListPortfoliosForProduct">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListPortfoliosForProductOutcomeCallable ListPortfoliosForProductCallable(const Model::ListPortfoliosForProductRequest& request) const;
 
         /**
-         * <p>Lists all portfolios that the specified product is associated with.</p>
+         * <p>Lists all portfolios that the specified product is associated
+         * with.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListPortfoliosForProduct">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListPortfoliosForProductAsync(const Model::ListPortfoliosForProductRequest& request, const ListPortfoliosForProductResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists all principal ARNs associated with the specified portfolio.</p>
+         * <p>Lists all principal ARNs associated with the specified
+         * portfolio.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListPrincipalsForPortfolio">AWS
+         * API Reference</a></p>
          */
         virtual Model::ListPrincipalsForPortfolioOutcome ListPrincipalsForPortfolio(const Model::ListPrincipalsForPortfolioRequest& request) const;
 
         /**
-         * <p>Lists all principal ARNs associated with the specified portfolio.</p>
+         * <p>Lists all principal ARNs associated with the specified
+         * portfolio.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListPrincipalsForPortfolio">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListPrincipalsForPortfolioOutcomeCallable ListPrincipalsForPortfolioCallable(const Model::ListPrincipalsForPortfolioRequest& request) const;
 
         /**
-         * <p>Lists all principal ARNs associated with the specified portfolio.</p>
+         * <p>Lists all principal ARNs associated with the specified
+         * portfolio.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListPrincipalsForPortfolio">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListPrincipalsForPortfolioAsync(const Model::ListPrincipalsForPortfolioRequest& request, const ListPrincipalsForPortfolioResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists all provisioning artifacts associated with the specified product.</p>
+         * <p>Lists all provisioning artifacts associated with the specified
+         * product.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListProvisioningArtifacts">AWS
+         * API Reference</a></p>
          */
         virtual Model::ListProvisioningArtifactsOutcome ListProvisioningArtifacts(const Model::ListProvisioningArtifactsRequest& request) const;
 
         /**
-         * <p>Lists all provisioning artifacts associated with the specified product.</p>
+         * <p>Lists all provisioning artifacts associated with the specified
+         * product.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListProvisioningArtifacts">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListProvisioningArtifactsOutcomeCallable ListProvisioningArtifactsCallable(const Model::ListProvisioningArtifactsRequest& request) const;
 
         /**
-         * <p>Lists all provisioning artifacts associated with the specified product.</p>
+         * <p>Lists all provisioning artifacts associated with the specified
+         * product.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListProvisioningArtifacts">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -991,13 +1222,19 @@ namespace Model
 
         /**
          * <p>Returns a paginated list of all performed requests, in the form of
-         * RecordDetails objects that are filtered as specified.</p>
+         * RecordDetails objects that are filtered as specified.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListRecordHistory">AWS
+         * API Reference</a></p>
          */
         virtual Model::ListRecordHistoryOutcome ListRecordHistory(const Model::ListRecordHistoryRequest& request) const;
 
         /**
          * <p>Returns a paginated list of all performed requests, in the form of
-         * RecordDetails objects that are filtered as specified.</p>
+         * RecordDetails objects that are filtered as specified.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListRecordHistory">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1005,7 +1242,10 @@ namespace Model
 
         /**
          * <p>Returns a paginated list of all performed requests, in the form of
-         * RecordDetails objects that are filtered as specified.</p>
+         * RecordDetails objects that are filtered as specified.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListRecordHistory">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1017,7 +1257,9 @@ namespace Model
          * provisioning a CloudFormation-template-backed product results in launching a
          * CloudFormation stack and all the underlying resources that come with it. </p>
          * <p>You can check the status of this request using the <a>DescribeRecord</a>
-         * operation.</p>
+         * operation.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ProvisionProduct">AWS
+         * API Reference</a></p>
          */
         virtual Model::ProvisionProductOutcome ProvisionProduct(const Model::ProvisionProductRequest& request) const;
 
@@ -1027,7 +1269,9 @@ namespace Model
          * provisioning a CloudFormation-template-backed product results in launching a
          * CloudFormation stack and all the underlying resources that come with it. </p>
          * <p>You can check the status of this request using the <a>DescribeRecord</a>
-         * operation.</p>
+         * operation.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ProvisionProduct">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1039,26 +1283,34 @@ namespace Model
          * provisioning a CloudFormation-template-backed product results in launching a
          * CloudFormation stack and all the underlying resources that come with it. </p>
          * <p>You can check the status of this request using the <a>DescribeRecord</a>
-         * operation.</p>
+         * operation.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ProvisionProduct">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ProvisionProductAsync(const Model::ProvisionProductRequest& request, const ProvisionProductResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Rejects an offer to share a portfolio.</p>
+         * <p>Rejects an offer to share a portfolio.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/RejectPortfolioShare">AWS
+         * API Reference</a></p>
          */
         virtual Model::RejectPortfolioShareOutcome RejectPortfolioShare(const Model::RejectPortfolioShareRequest& request) const;
 
         /**
-         * <p>Rejects an offer to share a portfolio.</p>
+         * <p>Rejects an offer to share a portfolio.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/RejectPortfolioShare">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::RejectPortfolioShareOutcomeCallable RejectPortfolioShareCallable(const Model::RejectPortfolioShareRequest& request) const;
 
         /**
-         * <p>Rejects an offer to share a portfolio.</p>
+         * <p>Rejects an offer to share a portfolio.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/RejectPortfolioShare">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1066,13 +1318,17 @@ namespace Model
 
         /**
          * <p>Returns a paginated list of all the ProvisionedProduct objects that are
-         * currently available (not terminated). </p>
+         * currently available (not terminated). </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ScanProvisionedProducts">AWS
+         * API Reference</a></p>
          */
         virtual Model::ScanProvisionedProductsOutcome ScanProvisionedProducts(const Model::ScanProvisionedProductsRequest& request) const;
 
         /**
          * <p>Returns a paginated list of all the ProvisionedProduct objects that are
-         * currently available (not terminated). </p>
+         * currently available (not terminated). </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ScanProvisionedProducts">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1080,7 +1336,9 @@ namespace Model
 
         /**
          * <p>Returns a paginated list of all the ProvisionedProduct objects that are
-         * currently available (not terminated). </p>
+         * currently available (not terminated). </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ScanProvisionedProducts">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1089,14 +1347,20 @@ namespace Model
         /**
          * <p>Returns a paginated list all of the <code>Products</code> objects to which
          * the caller has access. </p> <p>The output of this operation can be used as input
-         * for other operations, such as <a>DescribeProductView</a>.</p>
+         * for other operations, such as <a>DescribeProductView</a>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/SearchProducts">AWS
+         * API Reference</a></p>
          */
         virtual Model::SearchProductsOutcome SearchProducts(const Model::SearchProductsRequest& request) const;
 
         /**
          * <p>Returns a paginated list all of the <code>Products</code> objects to which
          * the caller has access. </p> <p>The output of this operation can be used as input
-         * for other operations, such as <a>DescribeProductView</a>.</p>
+         * for other operations, such as <a>DescribeProductView</a>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/SearchProducts">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1105,7 +1369,10 @@ namespace Model
         /**
          * <p>Returns a paginated list all of the <code>Products</code> objects to which
          * the caller has access. </p> <p>The output of this operation can be used as input
-         * for other operations, such as <a>DescribeProductView</a>.</p>
+         * for other operations, such as <a>DescribeProductView</a>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/SearchProducts">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1115,7 +1382,9 @@ namespace Model
          * <p>Retrieves summary and status information about all products created within
          * the caller's account. If a portfolio ID is provided, this operation retrieves
          * information for only those products that are associated with the specified
-         * portfolio.</p>
+         * portfolio.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/SearchProductsAsAdmin">AWS
+         * API Reference</a></p>
          */
         virtual Model::SearchProductsAsAdminOutcome SearchProductsAsAdmin(const Model::SearchProductsAsAdminRequest& request) const;
 
@@ -1123,7 +1392,9 @@ namespace Model
          * <p>Retrieves summary and status information about all products created within
          * the caller's account. If a portfolio ID is provided, this operation retrieves
          * information for only those products that are associated with the specified
-         * portfolio.</p>
+         * portfolio.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/SearchProductsAsAdmin">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1133,7 +1404,9 @@ namespace Model
          * <p>Retrieves summary and status information about all products created within
          * the caller's account. If a portfolio ID is provided, this operation retrieves
          * information for only those products that are associated with the specified
-         * portfolio.</p>
+         * portfolio.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/SearchProductsAsAdmin">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1144,7 +1417,10 @@ namespace Model
          * <code>Tags</code> associated with the object, they are terminated when the
          * ProvisionedProduct object is terminated. </p> <p>This operation does not delete
          * any records associated with the ProvisionedProduct object.</p> <p>You can check
-         * the status of this request using the <a>DescribeRecord</a> operation.</p>
+         * the status of this request using the <a>DescribeRecord</a>
+         * operation.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/TerminateProvisionedProduct">AWS
+         * API Reference</a></p>
          */
         virtual Model::TerminateProvisionedProductOutcome TerminateProvisionedProduct(const Model::TerminateProvisionedProductRequest& request) const;
 
@@ -1153,7 +1429,10 @@ namespace Model
          * <code>Tags</code> associated with the object, they are terminated when the
          * ProvisionedProduct object is terminated. </p> <p>This operation does not delete
          * any records associated with the ProvisionedProduct object.</p> <p>You can check
-         * the status of this request using the <a>DescribeRecord</a> operation.</p>
+         * the status of this request using the <a>DescribeRecord</a>
+         * operation.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/TerminateProvisionedProduct">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1164,26 +1443,35 @@ namespace Model
          * <code>Tags</code> associated with the object, they are terminated when the
          * ProvisionedProduct object is terminated. </p> <p>This operation does not delete
          * any records associated with the ProvisionedProduct object.</p> <p>You can check
-         * the status of this request using the <a>DescribeRecord</a> operation.</p>
+         * the status of this request using the <a>DescribeRecord</a>
+         * operation.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/TerminateProvisionedProduct">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void TerminateProvisionedProductAsync(const Model::TerminateProvisionedProductRequest& request, const TerminateProvisionedProductResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Updates an existing constraint.</p>
+         * <p>Updates an existing constraint.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/UpdateConstraint">AWS
+         * API Reference</a></p>
          */
         virtual Model::UpdateConstraintOutcome UpdateConstraint(const Model::UpdateConstraintRequest& request) const;
 
         /**
-         * <p>Updates an existing constraint.</p>
+         * <p>Updates an existing constraint.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/UpdateConstraint">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::UpdateConstraintOutcomeCallable UpdateConstraintCallable(const Model::UpdateConstraintRequest& request) const;
 
         /**
-         * <p>Updates an existing constraint.</p>
+         * <p>Updates an existing constraint.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/UpdateConstraint">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1191,13 +1479,17 @@ namespace Model
 
         /**
          * <p>Updates the specified portfolio's details. This operation will not work with
-         * a product that has been shared with you.</p>
+         * a product that has been shared with you.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/UpdatePortfolio">AWS
+         * API Reference</a></p>
          */
         virtual Model::UpdatePortfolioOutcome UpdatePortfolio(const Model::UpdatePortfolioRequest& request) const;
 
         /**
          * <p>Updates the specified portfolio's details. This operation will not work with
-         * a product that has been shared with you.</p>
+         * a product that has been shared with you.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/UpdatePortfolio">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1205,26 +1497,34 @@ namespace Model
 
         /**
          * <p>Updates the specified portfolio's details. This operation will not work with
-         * a product that has been shared with you.</p>
+         * a product that has been shared with you.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/UpdatePortfolio">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void UpdatePortfolioAsync(const Model::UpdatePortfolioRequest& request, const UpdatePortfolioResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Updates an existing product.</p>
+         * <p>Updates an existing product.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/UpdateProduct">AWS
+         * API Reference</a></p>
          */
         virtual Model::UpdateProductOutcome UpdateProduct(const Model::UpdateProductRequest& request) const;
 
         /**
-         * <p>Updates an existing product.</p>
+         * <p>Updates an existing product.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/UpdateProduct">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::UpdateProductOutcomeCallable UpdateProductCallable(const Model::UpdateProductRequest& request) const;
 
         /**
-         * <p>Updates an existing product.</p>
+         * <p>Updates an existing product.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/UpdateProduct">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1236,7 +1536,9 @@ namespace Model
          * added with this operation. Depending on the specific updates requested, this
          * operation may update with no interruption, with some interruption, or replace
          * the ProvisionedProduct object entirely. </p> <p>You can check the status of this
-         * request using the <a>DescribeRecord</a> operation.</p>
+         * request using the <a>DescribeRecord</a> operation.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/UpdateProvisionedProduct">AWS
+         * API Reference</a></p>
          */
         virtual Model::UpdateProvisionedProductOutcome UpdateProvisionedProduct(const Model::UpdateProvisionedProductRequest& request) const;
 
@@ -1246,7 +1548,9 @@ namespace Model
          * added with this operation. Depending on the specific updates requested, this
          * operation may update with no interruption, with some interruption, or replace
          * the ProvisionedProduct object entirely. </p> <p>You can check the status of this
-         * request using the <a>DescribeRecord</a> operation.</p>
+         * request using the <a>DescribeRecord</a> operation.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/UpdateProvisionedProduct">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1258,7 +1562,9 @@ namespace Model
          * added with this operation. Depending on the specific updates requested, this
          * operation may update with no interruption, with some interruption, or replace
          * the ProvisionedProduct object entirely. </p> <p>You can check the status of this
-         * request using the <a>DescribeRecord</a> operation.</p>
+         * request using the <a>DescribeRecord</a> operation.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/UpdateProvisionedProduct">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1267,14 +1573,18 @@ namespace Model
         /**
          * <p>Updates an existing provisioning artifact's information. This operation will
          * not work on a provisioning artifact associated with a product that has been
-         * shared with you.</p>
+         * shared with you.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/UpdateProvisioningArtifact">AWS
+         * API Reference</a></p>
          */
         virtual Model::UpdateProvisioningArtifactOutcome UpdateProvisioningArtifact(const Model::UpdateProvisioningArtifactRequest& request) const;
 
         /**
          * <p>Updates an existing provisioning artifact's information. This operation will
          * not work on a provisioning artifact associated with a product that has been
-         * shared with you.</p>
+         * shared with you.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/UpdateProvisioningArtifact">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1283,7 +1593,9 @@ namespace Model
         /**
          * <p>Updates an existing provisioning artifact's information. This operation will
          * not work on a provisioning artifact associated with a product that has been
-         * shared with you.</p>
+         * shared with you.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/UpdateProvisioningArtifact">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */

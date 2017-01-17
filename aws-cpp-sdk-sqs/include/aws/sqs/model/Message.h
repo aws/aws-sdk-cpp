@@ -35,7 +35,9 @@ namespace Model
 {
 
   /**
-   * <p>An Amazon SQS message.</p>
+   * <p>An Amazon SQS message.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/Message">AWS API
+   * Reference</a></p>
    */
   class AWS_SQS_API Message
   {
@@ -48,44 +50,44 @@ namespace Model
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
     /**
-     * <p>A unique identifier for the message. Message IDs are considered unique across
-     * all AWS accounts for an extended period of time.</p>
+     * <p>A unique identifier for the message. A <code>MessageId</code>is considered
+     * unique across all AWS accounts for an extended period of time.</p>
      */
     inline const Aws::String& GetMessageId() const{ return m_messageId; }
 
     /**
-     * <p>A unique identifier for the message. Message IDs are considered unique across
-     * all AWS accounts for an extended period of time.</p>
+     * <p>A unique identifier for the message. A <code>MessageId</code>is considered
+     * unique across all AWS accounts for an extended period of time.</p>
      */
     inline void SetMessageId(const Aws::String& value) { m_messageIdHasBeenSet = true; m_messageId = value; }
 
     /**
-     * <p>A unique identifier for the message. Message IDs are considered unique across
-     * all AWS accounts for an extended period of time.</p>
+     * <p>A unique identifier for the message. A <code>MessageId</code>is considered
+     * unique across all AWS accounts for an extended period of time.</p>
      */
     inline void SetMessageId(Aws::String&& value) { m_messageIdHasBeenSet = true; m_messageId = value; }
 
     /**
-     * <p>A unique identifier for the message. Message IDs are considered unique across
-     * all AWS accounts for an extended period of time.</p>
+     * <p>A unique identifier for the message. A <code>MessageId</code>is considered
+     * unique across all AWS accounts for an extended period of time.</p>
      */
     inline void SetMessageId(const char* value) { m_messageIdHasBeenSet = true; m_messageId.assign(value); }
 
     /**
-     * <p>A unique identifier for the message. Message IDs are considered unique across
-     * all AWS accounts for an extended period of time.</p>
+     * <p>A unique identifier for the message. A <code>MessageId</code>is considered
+     * unique across all AWS accounts for an extended period of time.</p>
      */
     inline Message& WithMessageId(const Aws::String& value) { SetMessageId(value); return *this;}
 
     /**
-     * <p>A unique identifier for the message. Message IDs are considered unique across
-     * all AWS accounts for an extended period of time.</p>
+     * <p>A unique identifier for the message. A <code>MessageId</code>is considered
+     * unique across all AWS accounts for an extended period of time.</p>
      */
     inline Message& WithMessageId(Aws::String&& value) { SetMessageId(value); return *this;}
 
     /**
-     * <p>A unique identifier for the message. Message IDs are considered unique across
-     * all AWS accounts for an extended period of time.</p>
+     * <p>A unique identifier for the message. A <code>MessageId</code>is considered
+     * unique across all AWS accounts for an extended period of time.</p>
      */
     inline Message& WithMessageId(const char* value) { SetMessageId(value); return *this;}
 
@@ -319,146 +321,146 @@ namespace Model
     inline Message& AddAttributes(const MessageSystemAttributeName& key, const char* value) { m_attributesHasBeenSet = true; m_attributes[key] = value; return *this; }
 
     /**
-     * <p>An MD5 digest of the non-URL-encoded message attribute string. This can be
-     * used to verify that Amazon SQS received the message correctly. Amazon SQS first
-     * URL decodes the message before creating the MD5 digest. For information about
+     * <p>An MD5 digest of the non-URL-encoded message attribute string. You can use
+     * this attribute to verify that Amazon SQS received the message correctly. Amazon
+     * SQS URL-decodes the message before creating the MD5 digest. For information on
      * MD5, see <a href="https://www.ietf.org/rfc/rfc1321.txt">RFC1321</a>.</p>
      */
     inline const Aws::String& GetMD5OfMessageAttributes() const{ return m_mD5OfMessageAttributes; }
 
     /**
-     * <p>An MD5 digest of the non-URL-encoded message attribute string. This can be
-     * used to verify that Amazon SQS received the message correctly. Amazon SQS first
-     * URL decodes the message before creating the MD5 digest. For information about
+     * <p>An MD5 digest of the non-URL-encoded message attribute string. You can use
+     * this attribute to verify that Amazon SQS received the message correctly. Amazon
+     * SQS URL-decodes the message before creating the MD5 digest. For information on
      * MD5, see <a href="https://www.ietf.org/rfc/rfc1321.txt">RFC1321</a>.</p>
      */
     inline void SetMD5OfMessageAttributes(const Aws::String& value) { m_mD5OfMessageAttributesHasBeenSet = true; m_mD5OfMessageAttributes = value; }
 
     /**
-     * <p>An MD5 digest of the non-URL-encoded message attribute string. This can be
-     * used to verify that Amazon SQS received the message correctly. Amazon SQS first
-     * URL decodes the message before creating the MD5 digest. For information about
+     * <p>An MD5 digest of the non-URL-encoded message attribute string. You can use
+     * this attribute to verify that Amazon SQS received the message correctly. Amazon
+     * SQS URL-decodes the message before creating the MD5 digest. For information on
      * MD5, see <a href="https://www.ietf.org/rfc/rfc1321.txt">RFC1321</a>.</p>
      */
     inline void SetMD5OfMessageAttributes(Aws::String&& value) { m_mD5OfMessageAttributesHasBeenSet = true; m_mD5OfMessageAttributes = value; }
 
     /**
-     * <p>An MD5 digest of the non-URL-encoded message attribute string. This can be
-     * used to verify that Amazon SQS received the message correctly. Amazon SQS first
-     * URL decodes the message before creating the MD5 digest. For information about
+     * <p>An MD5 digest of the non-URL-encoded message attribute string. You can use
+     * this attribute to verify that Amazon SQS received the message correctly. Amazon
+     * SQS URL-decodes the message before creating the MD5 digest. For information on
      * MD5, see <a href="https://www.ietf.org/rfc/rfc1321.txt">RFC1321</a>.</p>
      */
     inline void SetMD5OfMessageAttributes(const char* value) { m_mD5OfMessageAttributesHasBeenSet = true; m_mD5OfMessageAttributes.assign(value); }
 
     /**
-     * <p>An MD5 digest of the non-URL-encoded message attribute string. This can be
-     * used to verify that Amazon SQS received the message correctly. Amazon SQS first
-     * URL decodes the message before creating the MD5 digest. For information about
+     * <p>An MD5 digest of the non-URL-encoded message attribute string. You can use
+     * this attribute to verify that Amazon SQS received the message correctly. Amazon
+     * SQS URL-decodes the message before creating the MD5 digest. For information on
      * MD5, see <a href="https://www.ietf.org/rfc/rfc1321.txt">RFC1321</a>.</p>
      */
     inline Message& WithMD5OfMessageAttributes(const Aws::String& value) { SetMD5OfMessageAttributes(value); return *this;}
 
     /**
-     * <p>An MD5 digest of the non-URL-encoded message attribute string. This can be
-     * used to verify that Amazon SQS received the message correctly. Amazon SQS first
-     * URL decodes the message before creating the MD5 digest. For information about
+     * <p>An MD5 digest of the non-URL-encoded message attribute string. You can use
+     * this attribute to verify that Amazon SQS received the message correctly. Amazon
+     * SQS URL-decodes the message before creating the MD5 digest. For information on
      * MD5, see <a href="https://www.ietf.org/rfc/rfc1321.txt">RFC1321</a>.</p>
      */
     inline Message& WithMD5OfMessageAttributes(Aws::String&& value) { SetMD5OfMessageAttributes(value); return *this;}
 
     /**
-     * <p>An MD5 digest of the non-URL-encoded message attribute string. This can be
-     * used to verify that Amazon SQS received the message correctly. Amazon SQS first
-     * URL decodes the message before creating the MD5 digest. For information about
+     * <p>An MD5 digest of the non-URL-encoded message attribute string. You can use
+     * this attribute to verify that Amazon SQS received the message correctly. Amazon
+     * SQS URL-decodes the message before creating the MD5 digest. For information on
      * MD5, see <a href="https://www.ietf.org/rfc/rfc1321.txt">RFC1321</a>.</p>
      */
     inline Message& WithMD5OfMessageAttributes(const char* value) { SetMD5OfMessageAttributes(value); return *this;}
 
     /**
-     * <p>Each message attribute consists of a Name, Type, and Value. For more
-     * information, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/SQSMessageAttributes.html#SQSMessageAttributesNTV">Message
-     * Attribute Items</a> in the <i>Amazon SQS Developer Guide</i>.</p>
+     * <p>Each message attribute consists of a <code>Name</code>, <code>Type</code>,
+     * and <code>Value</code>. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html#message-attributes-items-validation">Message
+     * Attribute Items and Validation</a> in the <i>Amazon SQS Developer Guide</i>.</p>
      */
     inline const Aws::Map<Aws::String, MessageAttributeValue>& GetMessageAttributes() const{ return m_messageAttributes; }
 
     /**
-     * <p>Each message attribute consists of a Name, Type, and Value. For more
-     * information, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/SQSMessageAttributes.html#SQSMessageAttributesNTV">Message
-     * Attribute Items</a> in the <i>Amazon SQS Developer Guide</i>.</p>
+     * <p>Each message attribute consists of a <code>Name</code>, <code>Type</code>,
+     * and <code>Value</code>. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html#message-attributes-items-validation">Message
+     * Attribute Items and Validation</a> in the <i>Amazon SQS Developer Guide</i>.</p>
      */
     inline void SetMessageAttributes(const Aws::Map<Aws::String, MessageAttributeValue>& value) { m_messageAttributesHasBeenSet = true; m_messageAttributes = value; }
 
     /**
-     * <p>Each message attribute consists of a Name, Type, and Value. For more
-     * information, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/SQSMessageAttributes.html#SQSMessageAttributesNTV">Message
-     * Attribute Items</a> in the <i>Amazon SQS Developer Guide</i>.</p>
+     * <p>Each message attribute consists of a <code>Name</code>, <code>Type</code>,
+     * and <code>Value</code>. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html#message-attributes-items-validation">Message
+     * Attribute Items and Validation</a> in the <i>Amazon SQS Developer Guide</i>.</p>
      */
     inline void SetMessageAttributes(Aws::Map<Aws::String, MessageAttributeValue>&& value) { m_messageAttributesHasBeenSet = true; m_messageAttributes = value; }
 
     /**
-     * <p>Each message attribute consists of a Name, Type, and Value. For more
-     * information, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/SQSMessageAttributes.html#SQSMessageAttributesNTV">Message
-     * Attribute Items</a> in the <i>Amazon SQS Developer Guide</i>.</p>
+     * <p>Each message attribute consists of a <code>Name</code>, <code>Type</code>,
+     * and <code>Value</code>. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html#message-attributes-items-validation">Message
+     * Attribute Items and Validation</a> in the <i>Amazon SQS Developer Guide</i>.</p>
      */
     inline Message& WithMessageAttributes(const Aws::Map<Aws::String, MessageAttributeValue>& value) { SetMessageAttributes(value); return *this;}
 
     /**
-     * <p>Each message attribute consists of a Name, Type, and Value. For more
-     * information, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/SQSMessageAttributes.html#SQSMessageAttributesNTV">Message
-     * Attribute Items</a> in the <i>Amazon SQS Developer Guide</i>.</p>
+     * <p>Each message attribute consists of a <code>Name</code>, <code>Type</code>,
+     * and <code>Value</code>. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html#message-attributes-items-validation">Message
+     * Attribute Items and Validation</a> in the <i>Amazon SQS Developer Guide</i>.</p>
      */
     inline Message& WithMessageAttributes(Aws::Map<Aws::String, MessageAttributeValue>&& value) { SetMessageAttributes(value); return *this;}
 
     /**
-     * <p>Each message attribute consists of a Name, Type, and Value. For more
-     * information, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/SQSMessageAttributes.html#SQSMessageAttributesNTV">Message
-     * Attribute Items</a> in the <i>Amazon SQS Developer Guide</i>.</p>
+     * <p>Each message attribute consists of a <code>Name</code>, <code>Type</code>,
+     * and <code>Value</code>. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html#message-attributes-items-validation">Message
+     * Attribute Items and Validation</a> in the <i>Amazon SQS Developer Guide</i>.</p>
      */
     inline Message& AddMessageAttributes(const Aws::String& key, const MessageAttributeValue& value) { m_messageAttributesHasBeenSet = true; m_messageAttributes[key] = value; return *this; }
 
     /**
-     * <p>Each message attribute consists of a Name, Type, and Value. For more
-     * information, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/SQSMessageAttributes.html#SQSMessageAttributesNTV">Message
-     * Attribute Items</a> in the <i>Amazon SQS Developer Guide</i>.</p>
+     * <p>Each message attribute consists of a <code>Name</code>, <code>Type</code>,
+     * and <code>Value</code>. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html#message-attributes-items-validation">Message
+     * Attribute Items and Validation</a> in the <i>Amazon SQS Developer Guide</i>.</p>
      */
     inline Message& AddMessageAttributes(Aws::String&& key, const MessageAttributeValue& value) { m_messageAttributesHasBeenSet = true; m_messageAttributes[key] = value; return *this; }
 
     /**
-     * <p>Each message attribute consists of a Name, Type, and Value. For more
-     * information, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/SQSMessageAttributes.html#SQSMessageAttributesNTV">Message
-     * Attribute Items</a> in the <i>Amazon SQS Developer Guide</i>.</p>
+     * <p>Each message attribute consists of a <code>Name</code>, <code>Type</code>,
+     * and <code>Value</code>. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html#message-attributes-items-validation">Message
+     * Attribute Items and Validation</a> in the <i>Amazon SQS Developer Guide</i>.</p>
      */
     inline Message& AddMessageAttributes(const Aws::String& key, MessageAttributeValue&& value) { m_messageAttributesHasBeenSet = true; m_messageAttributes[key] = value; return *this; }
 
     /**
-     * <p>Each message attribute consists of a Name, Type, and Value. For more
-     * information, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/SQSMessageAttributes.html#SQSMessageAttributesNTV">Message
-     * Attribute Items</a> in the <i>Amazon SQS Developer Guide</i>.</p>
+     * <p>Each message attribute consists of a <code>Name</code>, <code>Type</code>,
+     * and <code>Value</code>. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html#message-attributes-items-validation">Message
+     * Attribute Items and Validation</a> in the <i>Amazon SQS Developer Guide</i>.</p>
      */
     inline Message& AddMessageAttributes(Aws::String&& key, MessageAttributeValue&& value) { m_messageAttributesHasBeenSet = true; m_messageAttributes[key] = value; return *this; }
 
     /**
-     * <p>Each message attribute consists of a Name, Type, and Value. For more
-     * information, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/SQSMessageAttributes.html#SQSMessageAttributesNTV">Message
-     * Attribute Items</a> in the <i>Amazon SQS Developer Guide</i>.</p>
+     * <p>Each message attribute consists of a <code>Name</code>, <code>Type</code>,
+     * and <code>Value</code>. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html#message-attributes-items-validation">Message
+     * Attribute Items and Validation</a> in the <i>Amazon SQS Developer Guide</i>.</p>
      */
     inline Message& AddMessageAttributes(const char* key, MessageAttributeValue&& value) { m_messageAttributesHasBeenSet = true; m_messageAttributes[key] = value; return *this; }
 
     /**
-     * <p>Each message attribute consists of a Name, Type, and Value. For more
-     * information, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/SQSMessageAttributes.html#SQSMessageAttributesNTV">Message
-     * Attribute Items</a> in the <i>Amazon SQS Developer Guide</i>.</p>
+     * <p>Each message attribute consists of a <code>Name</code>, <code>Type</code>,
+     * and <code>Value</code>. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html#message-attributes-items-validation">Message
+     * Attribute Items and Validation</a> in the <i>Amazon SQS Developer Guide</i>.</p>
      */
     inline Message& AddMessageAttributes(const char* key, const MessageAttributeValue& value) { m_messageAttributesHasBeenSet = true; m_messageAttributes[key] = value; return *this; }
 

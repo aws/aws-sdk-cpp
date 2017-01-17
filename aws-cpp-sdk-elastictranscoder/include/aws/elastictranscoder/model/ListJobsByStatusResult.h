@@ -35,7 +35,10 @@ namespace ElasticTranscoder
 namespace Model
 {
   /**
-   * <p> The <code>ListJobsByStatusResponse</code> structure. </p>
+   * <p> The <code>ListJobsByStatusResponse</code> structure. </p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/ListJobsByStatusResponse">AWS
+   * API Reference</a></p>
    */
   class AWS_ELASTICTRANSCODER_API ListJobsByStatusResult
   {

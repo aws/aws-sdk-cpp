@@ -46,7 +46,9 @@ namespace Model
 {
 
   /**
-   * <p>Describes a cluster.</p>
+   * <p>Describes a cluster.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/Cluster">AWS
+   * API Reference</a></p>
    */
   class AWS_REDSHIFT_API Cluster
   {

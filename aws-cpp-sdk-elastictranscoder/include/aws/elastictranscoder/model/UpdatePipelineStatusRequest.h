@@ -25,7 +25,10 @@ namespace Model
 {
 
   /**
-   * <p>The <code>UpdatePipelineStatusRequest</code> structure.</p>
+   * <p>The <code>UpdatePipelineStatusRequest</code> structure.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/UpdatePipelineStatusRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_ELASTICTRANSCODER_API UpdatePipelineStatusRequest : public ElasticTranscoderRequest
   {

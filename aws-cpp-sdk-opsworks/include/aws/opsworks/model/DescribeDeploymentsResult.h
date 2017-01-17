@@ -34,7 +34,10 @@ namespace OpsWorks
 namespace Model
 {
   /**
-   * <p>Contains the response to a <code>DescribeDeployments</code> request.</p>
+   * <p>Contains the response to a <code>DescribeDeployments</code>
+   * request.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeDeploymentsResult">AWS
+   * API Reference</a></p>
    */
   class AWS_OPSWORKS_API DescribeDeploymentsResult
   {

@@ -30,12 +30,16 @@ namespace Model
 CommandInvocation::CommandInvocation() : 
     m_commandIdHasBeenSet(false),
     m_instanceIdHasBeenSet(false),
+    m_instanceNameHasBeenSet(false),
     m_commentHasBeenSet(false),
     m_documentNameHasBeenSet(false),
     m_requestedDateTimeHasBeenSet(false),
     m_status(CommandInvocationStatus::NOT_SET),
     m_statusHasBeenSet(false),
+    m_statusDetailsHasBeenSet(false),
     m_traceOutputHasBeenSet(false),
+    m_standardOutputUrlHasBeenSet(false),
+    m_standardErrorUrlHasBeenSet(false),
     m_commandPluginsHasBeenSet(false),
     m_serviceRoleHasBeenSet(false),
     m_notificationConfigHasBeenSet(false)
@@ -45,12 +49,16 @@ CommandInvocation::CommandInvocation() :
 CommandInvocation::CommandInvocation(const JsonValue& jsonValue) : 
     m_commandIdHasBeenSet(false),
     m_instanceIdHasBeenSet(false),
+    m_instanceNameHasBeenSet(false),
     m_commentHasBeenSet(false),
     m_documentNameHasBeenSet(false),
     m_requestedDateTimeHasBeenSet(false),
     m_status(CommandInvocationStatus::NOT_SET),
     m_statusHasBeenSet(false),
+    m_statusDetailsHasBeenSet(false),
     m_traceOutputHasBeenSet(false),
+    m_standardOutputUrlHasBeenSet(false),
+    m_standardErrorUrlHasBeenSet(false),
     m_commandPluginsHasBeenSet(false),
     m_serviceRoleHasBeenSet(false),
     m_notificationConfigHasBeenSet(false)
@@ -72,6 +80,13 @@ CommandInvocation& CommandInvocation::operator =(const JsonValue& jsonValue)
     m_instanceId = jsonValue.GetString("InstanceId");
 
     m_instanceIdHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("InstanceName"))
+  {
+    m_instanceName = jsonValue.GetString("InstanceName");
+
+    m_instanceNameHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("Comment"))
@@ -102,11 +117,32 @@ CommandInvocation& CommandInvocation::operator =(const JsonValue& jsonValue)
     m_statusHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("StatusDetails"))
+  {
+    m_statusDetails = jsonValue.GetString("StatusDetails");
+
+    m_statusDetailsHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("TraceOutput"))
   {
     m_traceOutput = jsonValue.GetString("TraceOutput");
 
     m_traceOutputHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("StandardOutputUrl"))
+  {
+    m_standardOutputUrl = jsonValue.GetString("StandardOutputUrl");
+
+    m_standardOutputUrlHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("StandardErrorUrl"))
+  {
+    m_standardErrorUrl = jsonValue.GetString("StandardErrorUrl");
+
+    m_standardErrorUrlHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("CommandPlugins"))
@@ -152,6 +188,12 @@ JsonValue CommandInvocation::Jsonize() const
 
   }
 
+  if(m_instanceNameHasBeenSet)
+  {
+   payload.WithString("InstanceName", m_instanceName);
+
+  }
+
   if(m_commentHasBeenSet)
   {
    payload.WithString("Comment", m_comment);
@@ -174,9 +216,27 @@ JsonValue CommandInvocation::Jsonize() const
    payload.WithString("Status", CommandInvocationStatusMapper::GetNameForCommandInvocationStatus(m_status));
   }
 
+  if(m_statusDetailsHasBeenSet)
+  {
+   payload.WithString("StatusDetails", m_statusDetails);
+
+  }
+
   if(m_traceOutputHasBeenSet)
   {
    payload.WithString("TraceOutput", m_traceOutput);
+
+  }
+
+  if(m_standardOutputUrlHasBeenSet)
+  {
+   payload.WithString("StandardOutputUrl", m_standardOutputUrl);
+
+  }
+
+  if(m_standardErrorUrlHasBeenSet)
+  {
+   payload.WithString("StandardErrorUrl", m_standardErrorUrl);
 
   }
 

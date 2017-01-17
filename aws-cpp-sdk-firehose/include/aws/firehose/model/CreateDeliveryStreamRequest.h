@@ -16,7 +16,7 @@
 #include <aws/firehose/Firehose_EXPORTS.h>
 #include <aws/firehose/FirehoseRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/firehose/model/S3DestinationConfiguration.h>
+#include <aws/firehose/model/ExtendedS3DestinationConfiguration.h>
 #include <aws/firehose/model/RedshiftDestinationConfiguration.h>
 #include <aws/firehose/model/ElasticsearchDestinationConfiguration.h>
 
@@ -28,7 +28,6 @@ namespace Model
 {
 
   /**
-   * <p>Contains the parameters for <a>CreateDeliveryStream</a>.</p>
    */
   class AWS_FIREHOSE_API CreateDeliveryStreamRequest : public FirehoseRequest
   {
@@ -39,150 +38,134 @@ namespace Model
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
     /**
-     * <p>The name of the delivery stream.</p>
+     * <p>The name of the delivery stream. This name must be unique per AWS account in
+     * the same region. You can have multiple delivery streams with the same name if
+     * they are in different accounts or different regions.</p>
      */
     inline const Aws::String& GetDeliveryStreamName() const{ return m_deliveryStreamName; }
 
     /**
-     * <p>The name of the delivery stream.</p>
+     * <p>The name of the delivery stream. This name must be unique per AWS account in
+     * the same region. You can have multiple delivery streams with the same name if
+     * they are in different accounts or different regions.</p>
      */
     inline void SetDeliveryStreamName(const Aws::String& value) { m_deliveryStreamNameHasBeenSet = true; m_deliveryStreamName = value; }
 
     /**
-     * <p>The name of the delivery stream.</p>
+     * <p>The name of the delivery stream. This name must be unique per AWS account in
+     * the same region. You can have multiple delivery streams with the same name if
+     * they are in different accounts or different regions.</p>
      */
     inline void SetDeliveryStreamName(Aws::String&& value) { m_deliveryStreamNameHasBeenSet = true; m_deliveryStreamName = value; }
 
     /**
-     * <p>The name of the delivery stream.</p>
+     * <p>The name of the delivery stream. This name must be unique per AWS account in
+     * the same region. You can have multiple delivery streams with the same name if
+     * they are in different accounts or different regions.</p>
      */
     inline void SetDeliveryStreamName(const char* value) { m_deliveryStreamNameHasBeenSet = true; m_deliveryStreamName.assign(value); }
 
     /**
-     * <p>The name of the delivery stream.</p>
+     * <p>The name of the delivery stream. This name must be unique per AWS account in
+     * the same region. You can have multiple delivery streams with the same name if
+     * they are in different accounts or different regions.</p>
      */
     inline CreateDeliveryStreamRequest& WithDeliveryStreamName(const Aws::String& value) { SetDeliveryStreamName(value); return *this;}
 
     /**
-     * <p>The name of the delivery stream.</p>
+     * <p>The name of the delivery stream. This name must be unique per AWS account in
+     * the same region. You can have multiple delivery streams with the same name if
+     * they are in different accounts or different regions.</p>
      */
     inline CreateDeliveryStreamRequest& WithDeliveryStreamName(Aws::String&& value) { SetDeliveryStreamName(value); return *this;}
 
     /**
-     * <p>The name of the delivery stream.</p>
+     * <p>The name of the delivery stream. This name must be unique per AWS account in
+     * the same region. You can have multiple delivery streams with the same name if
+     * they are in different accounts or different regions.</p>
      */
     inline CreateDeliveryStreamRequest& WithDeliveryStreamName(const char* value) { SetDeliveryStreamName(value); return *this;}
 
     /**
-     * <p>The destination in Amazon S3. This value must be specified if
-     * <b>ElasticsearchDestinationConfiguration</b> or
-     * <b>RedshiftDestinationConfiguration</b> is specified (see restrictions listed
-     * above).</p>
+     * <p>The destination in Amazon S3. You can specify only one destination.</p>
      */
-    inline const S3DestinationConfiguration& GetS3DestinationConfiguration() const{ return m_s3DestinationConfiguration; }
+    inline const ExtendedS3DestinationConfiguration& GetExtendedS3DestinationConfiguration() const{ return m_extendedS3DestinationConfiguration; }
 
     /**
-     * <p>The destination in Amazon S3. This value must be specified if
-     * <b>ElasticsearchDestinationConfiguration</b> or
-     * <b>RedshiftDestinationConfiguration</b> is specified (see restrictions listed
-     * above).</p>
+     * <p>The destination in Amazon S3. You can specify only one destination.</p>
      */
-    inline void SetS3DestinationConfiguration(const S3DestinationConfiguration& value) { m_s3DestinationConfigurationHasBeenSet = true; m_s3DestinationConfiguration = value; }
+    inline void SetExtendedS3DestinationConfiguration(const ExtendedS3DestinationConfiguration& value) { m_extendedS3DestinationConfigurationHasBeenSet = true; m_extendedS3DestinationConfiguration = value; }
 
     /**
-     * <p>The destination in Amazon S3. This value must be specified if
-     * <b>ElasticsearchDestinationConfiguration</b> or
-     * <b>RedshiftDestinationConfiguration</b> is specified (see restrictions listed
-     * above).</p>
+     * <p>The destination in Amazon S3. You can specify only one destination.</p>
      */
-    inline void SetS3DestinationConfiguration(S3DestinationConfiguration&& value) { m_s3DestinationConfigurationHasBeenSet = true; m_s3DestinationConfiguration = value; }
+    inline void SetExtendedS3DestinationConfiguration(ExtendedS3DestinationConfiguration&& value) { m_extendedS3DestinationConfigurationHasBeenSet = true; m_extendedS3DestinationConfiguration = value; }
 
     /**
-     * <p>The destination in Amazon S3. This value must be specified if
-     * <b>ElasticsearchDestinationConfiguration</b> or
-     * <b>RedshiftDestinationConfiguration</b> is specified (see restrictions listed
-     * above).</p>
+     * <p>The destination in Amazon S3. You can specify only one destination.</p>
      */
-    inline CreateDeliveryStreamRequest& WithS3DestinationConfiguration(const S3DestinationConfiguration& value) { SetS3DestinationConfiguration(value); return *this;}
+    inline CreateDeliveryStreamRequest& WithExtendedS3DestinationConfiguration(const ExtendedS3DestinationConfiguration& value) { SetExtendedS3DestinationConfiguration(value); return *this;}
 
     /**
-     * <p>The destination in Amazon S3. This value must be specified if
-     * <b>ElasticsearchDestinationConfiguration</b> or
-     * <b>RedshiftDestinationConfiguration</b> is specified (see restrictions listed
-     * above).</p>
+     * <p>The destination in Amazon S3. You can specify only one destination.</p>
      */
-    inline CreateDeliveryStreamRequest& WithS3DestinationConfiguration(S3DestinationConfiguration&& value) { SetS3DestinationConfiguration(value); return *this;}
+    inline CreateDeliveryStreamRequest& WithExtendedS3DestinationConfiguration(ExtendedS3DestinationConfiguration&& value) { SetExtendedS3DestinationConfiguration(value); return *this;}
 
     /**
-     * <p>The destination in Amazon Redshift. This value cannot be specified if Amazon
-     * S3 or Amazon Elasticsearch is the desired destination (see restrictions listed
-     * above).</p>
+     * <p>The destination in Amazon Redshift. You can specify only one destination.</p>
      */
     inline const RedshiftDestinationConfiguration& GetRedshiftDestinationConfiguration() const{ return m_redshiftDestinationConfiguration; }
 
     /**
-     * <p>The destination in Amazon Redshift. This value cannot be specified if Amazon
-     * S3 or Amazon Elasticsearch is the desired destination (see restrictions listed
-     * above).</p>
+     * <p>The destination in Amazon Redshift. You can specify only one destination.</p>
      */
     inline void SetRedshiftDestinationConfiguration(const RedshiftDestinationConfiguration& value) { m_redshiftDestinationConfigurationHasBeenSet = true; m_redshiftDestinationConfiguration = value; }
 
     /**
-     * <p>The destination in Amazon Redshift. This value cannot be specified if Amazon
-     * S3 or Amazon Elasticsearch is the desired destination (see restrictions listed
-     * above).</p>
+     * <p>The destination in Amazon Redshift. You can specify only one destination.</p>
      */
     inline void SetRedshiftDestinationConfiguration(RedshiftDestinationConfiguration&& value) { m_redshiftDestinationConfigurationHasBeenSet = true; m_redshiftDestinationConfiguration = value; }
 
     /**
-     * <p>The destination in Amazon Redshift. This value cannot be specified if Amazon
-     * S3 or Amazon Elasticsearch is the desired destination (see restrictions listed
-     * above).</p>
+     * <p>The destination in Amazon Redshift. You can specify only one destination.</p>
      */
     inline CreateDeliveryStreamRequest& WithRedshiftDestinationConfiguration(const RedshiftDestinationConfiguration& value) { SetRedshiftDestinationConfiguration(value); return *this;}
 
     /**
-     * <p>The destination in Amazon Redshift. This value cannot be specified if Amazon
-     * S3 or Amazon Elasticsearch is the desired destination (see restrictions listed
-     * above).</p>
+     * <p>The destination in Amazon Redshift. You can specify only one destination.</p>
      */
     inline CreateDeliveryStreamRequest& WithRedshiftDestinationConfiguration(RedshiftDestinationConfiguration&& value) { SetRedshiftDestinationConfiguration(value); return *this;}
 
     /**
-     * <p>The destination in Amazon ES. This value cannot be specified if Amazon S3 or
-     * Amazon Redshift is the desired destination (see restrictions listed above).</p>
+     * <p>The destination in Amazon ES. You can specify only one destination.</p>
      */
     inline const ElasticsearchDestinationConfiguration& GetElasticsearchDestinationConfiguration() const{ return m_elasticsearchDestinationConfiguration; }
 
     /**
-     * <p>The destination in Amazon ES. This value cannot be specified if Amazon S3 or
-     * Amazon Redshift is the desired destination (see restrictions listed above).</p>
+     * <p>The destination in Amazon ES. You can specify only one destination.</p>
      */
     inline void SetElasticsearchDestinationConfiguration(const ElasticsearchDestinationConfiguration& value) { m_elasticsearchDestinationConfigurationHasBeenSet = true; m_elasticsearchDestinationConfiguration = value; }
 
     /**
-     * <p>The destination in Amazon ES. This value cannot be specified if Amazon S3 or
-     * Amazon Redshift is the desired destination (see restrictions listed above).</p>
+     * <p>The destination in Amazon ES. You can specify only one destination.</p>
      */
     inline void SetElasticsearchDestinationConfiguration(ElasticsearchDestinationConfiguration&& value) { m_elasticsearchDestinationConfigurationHasBeenSet = true; m_elasticsearchDestinationConfiguration = value; }
 
     /**
-     * <p>The destination in Amazon ES. This value cannot be specified if Amazon S3 or
-     * Amazon Redshift is the desired destination (see restrictions listed above).</p>
+     * <p>The destination in Amazon ES. You can specify only one destination.</p>
      */
     inline CreateDeliveryStreamRequest& WithElasticsearchDestinationConfiguration(const ElasticsearchDestinationConfiguration& value) { SetElasticsearchDestinationConfiguration(value); return *this;}
 
     /**
-     * <p>The destination in Amazon ES. This value cannot be specified if Amazon S3 or
-     * Amazon Redshift is the desired destination (see restrictions listed above).</p>
+     * <p>The destination in Amazon ES. You can specify only one destination.</p>
      */
     inline CreateDeliveryStreamRequest& WithElasticsearchDestinationConfiguration(ElasticsearchDestinationConfiguration&& value) { SetElasticsearchDestinationConfiguration(value); return *this;}
 
   private:
     Aws::String m_deliveryStreamName;
     bool m_deliveryStreamNameHasBeenSet;
-    S3DestinationConfiguration m_s3DestinationConfiguration;
-    bool m_s3DestinationConfigurationHasBeenSet;
+    ExtendedS3DestinationConfiguration m_extendedS3DestinationConfiguration;
+    bool m_extendedS3DestinationConfigurationHasBeenSet;
     RedshiftDestinationConfiguration m_redshiftDestinationConfiguration;
     bool m_redshiftDestinationConfigurationHasBeenSet;
     ElasticsearchDestinationConfiguration m_elasticsearchDestinationConfiguration;

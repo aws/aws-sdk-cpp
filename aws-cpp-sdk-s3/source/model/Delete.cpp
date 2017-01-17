@@ -87,7 +87,7 @@ void Delete::AddToNode(XmlNode& parentNode) const
 
   if(m_quietHasBeenSet)
   {
-   XmlNode quietNode = parentNode.CreateChildElement("Object");
+   XmlNode quietNode = parentNode.CreateChildElement("Quiet");
   ss << m_quiet;
    quietNode.SetText(ss.str());
   ss.str("");

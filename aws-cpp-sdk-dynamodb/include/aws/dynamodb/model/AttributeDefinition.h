@@ -33,7 +33,9 @@ namespace Model
 
   /**
    * <p>Represents an attribute for describing the key schema for the table and
-   * indexes.</p>
+   * indexes.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/AttributeDefinition">AWS
+   * API Reference</a></p>
    */
   class AWS_DYNAMODB_API AttributeDefinition
   {

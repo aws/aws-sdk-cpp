@@ -34,7 +34,9 @@ namespace Model
 
   /**
    * <p>Identifies an AWS resource and indicates whether it complies with the AWS
-   * Config rule that it was evaluated against.</p>
+   * Config rule that it was evaluated against.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/Evaluation">AWS
+   * API Reference</a></p>
    */
   class AWS_CONFIGSERVICE_API Evaluation
   {
@@ -225,8 +227,8 @@ namespace Model
      * <p>The time of the event in AWS Config that triggered the evaluation. For
      * event-based evaluations, the time indicates when AWS Config created the
      * configuration item that triggered the evaluation. For periodic evaluations, the
-     * time indicates when AWS Config delivered the configuration snapshot that
-     * triggered the evaluation.</p>
+     * time indicates when AWS Config triggered the evaluation at the frequency that
+     * you specified (for example, every 24 hours).</p>
      */
     inline const Aws::Utils::DateTime& GetOrderingTimestamp() const{ return m_orderingTimestamp; }
 
@@ -234,8 +236,8 @@ namespace Model
      * <p>The time of the event in AWS Config that triggered the evaluation. For
      * event-based evaluations, the time indicates when AWS Config created the
      * configuration item that triggered the evaluation. For periodic evaluations, the
-     * time indicates when AWS Config delivered the configuration snapshot that
-     * triggered the evaluation.</p>
+     * time indicates when AWS Config triggered the evaluation at the frequency that
+     * you specified (for example, every 24 hours).</p>
      */
     inline void SetOrderingTimestamp(const Aws::Utils::DateTime& value) { m_orderingTimestampHasBeenSet = true; m_orderingTimestamp = value; }
 
@@ -243,8 +245,8 @@ namespace Model
      * <p>The time of the event in AWS Config that triggered the evaluation. For
      * event-based evaluations, the time indicates when AWS Config created the
      * configuration item that triggered the evaluation. For periodic evaluations, the
-     * time indicates when AWS Config delivered the configuration snapshot that
-     * triggered the evaluation.</p>
+     * time indicates when AWS Config triggered the evaluation at the frequency that
+     * you specified (for example, every 24 hours).</p>
      */
     inline void SetOrderingTimestamp(Aws::Utils::DateTime&& value) { m_orderingTimestampHasBeenSet = true; m_orderingTimestamp = value; }
 
@@ -252,8 +254,8 @@ namespace Model
      * <p>The time of the event in AWS Config that triggered the evaluation. For
      * event-based evaluations, the time indicates when AWS Config created the
      * configuration item that triggered the evaluation. For periodic evaluations, the
-     * time indicates when AWS Config delivered the configuration snapshot that
-     * triggered the evaluation.</p>
+     * time indicates when AWS Config triggered the evaluation at the frequency that
+     * you specified (for example, every 24 hours).</p>
      */
     inline Evaluation& WithOrderingTimestamp(const Aws::Utils::DateTime& value) { SetOrderingTimestamp(value); return *this;}
 
@@ -261,8 +263,8 @@ namespace Model
      * <p>The time of the event in AWS Config that triggered the evaluation. For
      * event-based evaluations, the time indicates when AWS Config created the
      * configuration item that triggered the evaluation. For periodic evaluations, the
-     * time indicates when AWS Config delivered the configuration snapshot that
-     * triggered the evaluation.</p>
+     * time indicates when AWS Config triggered the evaluation at the frequency that
+     * you specified (for example, every 24 hours).</p>
      */
     inline Evaluation& WithOrderingTimestamp(Aws::Utils::DateTime&& value) { SetOrderingTimestamp(value); return *this;}
 

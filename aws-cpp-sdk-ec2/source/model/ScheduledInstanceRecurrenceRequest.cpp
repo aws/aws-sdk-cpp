@@ -122,7 +122,7 @@ void ScheduledInstanceRecurrenceRequest::OutputToStream(Aws::OStream& oStream, c
 
   if(m_occurrenceRelativeToEndHasBeenSet)
   {
-      oStream << location << index << locationValue << ".OccurrenceRelativeToEnd=" << m_occurrenceRelativeToEnd << "&";
+      oStream << location << index << locationValue << ".OccurrenceRelativeToEnd=" << std::boolalpha << m_occurrenceRelativeToEnd << "&";
   }
 
   if(m_occurrenceUnitHasBeenSet)
@@ -152,7 +152,7 @@ void ScheduledInstanceRecurrenceRequest::OutputToStream(Aws::OStream& oStream, c
   }
   if(m_occurrenceRelativeToEndHasBeenSet)
   {
-      oStream << location << ".OccurrenceRelativeToEnd=" << m_occurrenceRelativeToEnd << "&";
+      oStream << location << ".OccurrenceRelativeToEnd=" << std::boolalpha << m_occurrenceRelativeToEnd << "&";
   }
   if(m_occurrenceUnitHasBeenSet)
   {

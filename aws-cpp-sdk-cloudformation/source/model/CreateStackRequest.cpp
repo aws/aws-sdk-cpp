@@ -71,7 +71,7 @@ Aws::String CreateStackRequest::SerializePayload() const
 
   if(m_disableRollbackHasBeenSet)
   {
-    ss << "DisableRollback=" << m_disableRollback << "&";
+    ss << "DisableRollback=" << std::boolalpha << m_disableRollback << "&";
   }
 
   if(m_timeoutInMinutesHasBeenSet)

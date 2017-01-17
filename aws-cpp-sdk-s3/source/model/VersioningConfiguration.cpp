@@ -74,13 +74,13 @@ void VersioningConfiguration::AddToNode(XmlNode& parentNode) const
   Aws::StringStream ss;
   if(m_mFADeleteHasBeenSet)
   {
-   XmlNode mFADeleteNode = parentNode.CreateChildElement("MFADelete");
+   XmlNode mFADeleteNode = parentNode.CreateChildElement("MfaDelete");
    mFADeleteNode.SetText(MFADeleteMapper::GetNameForMFADelete(m_mFADelete));
   }
 
   if(m_statusHasBeenSet)
   {
-   XmlNode statusNode = parentNode.CreateChildElement("MfaDelete");
+   XmlNode statusNode = parentNode.CreateChildElement("Status");
    statusNode.SetText(BucketVersioningStatusMapper::GetNameForBucketVersioningStatus(m_status));
   }
 

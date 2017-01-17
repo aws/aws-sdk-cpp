@@ -198,22 +198,22 @@ void OrderableDBInstanceOption::OutputToStream(Aws::OStream& oStream, const char
 
   if(m_multiAZCapableHasBeenSet)
   {
-      oStream << location << index << locationValue << ".MultiAZCapable=" << m_multiAZCapable << "&";
+      oStream << location << index << locationValue << ".MultiAZCapable=" << std::boolalpha << m_multiAZCapable << "&";
   }
 
   if(m_readReplicaCapableHasBeenSet)
   {
-      oStream << location << index << locationValue << ".ReadReplicaCapable=" << m_readReplicaCapable << "&";
+      oStream << location << index << locationValue << ".ReadReplicaCapable=" << std::boolalpha << m_readReplicaCapable << "&";
   }
 
   if(m_vpcHasBeenSet)
   {
-      oStream << location << index << locationValue << ".Vpc=" << m_vpc << "&";
+      oStream << location << index << locationValue << ".Vpc=" << std::boolalpha << m_vpc << "&";
   }
 
   if(m_supportsStorageEncryptionHasBeenSet)
   {
-      oStream << location << index << locationValue << ".SupportsStorageEncryption=" << m_supportsStorageEncryption << "&";
+      oStream << location << index << locationValue << ".SupportsStorageEncryption=" << std::boolalpha << m_supportsStorageEncryption << "&";
   }
 
   if(m_storageTypeHasBeenSet)
@@ -223,12 +223,12 @@ void OrderableDBInstanceOption::OutputToStream(Aws::OStream& oStream, const char
 
   if(m_supportsIopsHasBeenSet)
   {
-      oStream << location << index << locationValue << ".SupportsIops=" << m_supportsIops << "&";
+      oStream << location << index << locationValue << ".SupportsIops=" << std::boolalpha << m_supportsIops << "&";
   }
 
   if(m_supportsEnhancedMonitoringHasBeenSet)
   {
-      oStream << location << index << locationValue << ".SupportsEnhancedMonitoring=" << m_supportsEnhancedMonitoring << "&";
+      oStream << location << index << locationValue << ".SupportsEnhancedMonitoring=" << std::boolalpha << m_supportsEnhancedMonitoring << "&";
   }
 
 }
@@ -263,19 +263,19 @@ void OrderableDBInstanceOption::OutputToStream(Aws::OStream& oStream, const char
   }
   if(m_multiAZCapableHasBeenSet)
   {
-      oStream << location << ".MultiAZCapable=" << m_multiAZCapable << "&";
+      oStream << location << ".MultiAZCapable=" << std::boolalpha << m_multiAZCapable << "&";
   }
   if(m_readReplicaCapableHasBeenSet)
   {
-      oStream << location << ".ReadReplicaCapable=" << m_readReplicaCapable << "&";
+      oStream << location << ".ReadReplicaCapable=" << std::boolalpha << m_readReplicaCapable << "&";
   }
   if(m_vpcHasBeenSet)
   {
-      oStream << location << ".Vpc=" << m_vpc << "&";
+      oStream << location << ".Vpc=" << std::boolalpha << m_vpc << "&";
   }
   if(m_supportsStorageEncryptionHasBeenSet)
   {
-      oStream << location << ".SupportsStorageEncryption=" << m_supportsStorageEncryption << "&";
+      oStream << location << ".SupportsStorageEncryption=" << std::boolalpha << m_supportsStorageEncryption << "&";
   }
   if(m_storageTypeHasBeenSet)
   {
@@ -283,11 +283,11 @@ void OrderableDBInstanceOption::OutputToStream(Aws::OStream& oStream, const char
   }
   if(m_supportsIopsHasBeenSet)
   {
-      oStream << location << ".SupportsIops=" << m_supportsIops << "&";
+      oStream << location << ".SupportsIops=" << std::boolalpha << m_supportsIops << "&";
   }
   if(m_supportsEnhancedMonitoringHasBeenSet)
   {
-      oStream << location << ".SupportsEnhancedMonitoring=" << m_supportsEnhancedMonitoring << "&";
+      oStream << location << ".SupportsEnhancedMonitoring=" << std::boolalpha << m_supportsEnhancedMonitoring << "&";
   }
 }
 

@@ -35,7 +35,10 @@ namespace DeviceFarm
 namespace Model
 {
   /**
-   * <p>Returns the status result for a device offering.</p>
+   * <p>Returns the status result for a device offering.</p><p><h3>See Also:</h3>  
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetOfferingStatusResult">AWS
+   * API Reference</a></p>
    */
   class AWS_DEVICEFARM_API GetOfferingStatusResult
   {

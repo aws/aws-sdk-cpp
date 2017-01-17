@@ -34,7 +34,9 @@ namespace Model
 {
 
   /**
-   * <p>Describes an instance export task.</p>
+   * <p>Describes an instance export task.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ExportToS3TaskSpecification">AWS
+   * API Reference</a></p>
    */
   class AWS_EC2_API ExportToS3TaskSpecification
   {

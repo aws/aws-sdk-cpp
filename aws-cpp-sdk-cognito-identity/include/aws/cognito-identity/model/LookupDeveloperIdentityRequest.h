@@ -25,7 +25,10 @@ namespace Model
 {
 
   /**
-   * <p>Input to the <code>LookupDeveloperIdentityInput</code> action.</p>
+   * <p>Input to the <code>LookupDeveloperIdentityInput</code> action.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/LookupDeveloperIdentityInput">AWS
+   * API Reference</a></p>
    */
   class AWS_COGNITOIDENTITY_API LookupDeveloperIdentityRequest : public CognitoIdentityRequest
   {

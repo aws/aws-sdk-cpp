@@ -30,6 +30,7 @@ namespace Aws
       {
 
         static const int Git_HASH = HashingUtils::HashString("Git");
+        static const int Zip_HASH = HashingUtils::HashString("Zip");
 
 
         SourceType GetSourceTypeForName(const Aws::String& name)
@@ -38,6 +39,10 @@ namespace Aws
           if (hashCode == Git_HASH)
           {
             return SourceType::Git;
+          }
+          else if (hashCode == Zip_HASH)
+          {
+            return SourceType::Zip;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -55,6 +60,8 @@ namespace Aws
           {
           case SourceType::Git:
             return "Git";
+          case SourceType::Zip:
+            return "Zip";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

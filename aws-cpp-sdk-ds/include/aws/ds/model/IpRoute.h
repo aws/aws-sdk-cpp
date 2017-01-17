@@ -32,7 +32,9 @@ namespace Model
 
   /**
    * <p>IP address block. This is often the address block of the DNS server used for
-   * your on-premises domain. </p>
+   * your on-premises domain. </p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/IpRoute">AWS API
+   * Reference</a></p>
    */
   class AWS_DIRECTORYSERVICE_API IpRoute
   {

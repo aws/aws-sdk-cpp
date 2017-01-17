@@ -26,7 +26,9 @@ namespace Model
 {
 
   /**
-   * <p>Contains the parameters for RemoveTags.</p>
+   * <p>Contains the parameters for RemoveTags.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/RemoveTagsInput">AWS
+   * API Reference</a></p>
    */
   class AWS_ELASTICLOADBALANCINGV2_API RemoveTagsRequest : public ElasticLoadBalancingv2Request
   {

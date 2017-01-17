@@ -34,7 +34,9 @@ namespace Model
 {
   /**
    * <p>Represents the response from the server for the request to create a user
-   * pool.</p>
+   * pool.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/CreateUserPoolResponse">AWS
+   * API Reference</a></p>
    */
   class AWS_COGNITOIDENTITYPROVIDER_API CreateUserPoolResult
   {

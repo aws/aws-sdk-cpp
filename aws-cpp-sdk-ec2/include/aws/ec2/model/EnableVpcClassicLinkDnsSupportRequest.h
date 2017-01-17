@@ -25,7 +25,10 @@ namespace Model
 {
 
   /**
-   * <p>Contains the parameters for EnableVpcClassicLinkDnsSupport.</p>
+   * <p>Contains the parameters for EnableVpcClassicLinkDnsSupport.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableVpcClassicLinkDnsSupportRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_EC2_API EnableVpcClassicLinkDnsSupportRequest : public EC2Request
   {
@@ -34,37 +37,37 @@ namespace Model
     Aws::String SerializePayload() const override;
 
     /**
-     * <p>The ID of the VPC. </p>
+     * <p>The ID of the VPC.</p>
      */
     inline const Aws::String& GetVpcId() const{ return m_vpcId; }
 
     /**
-     * <p>The ID of the VPC. </p>
+     * <p>The ID of the VPC.</p>
      */
     inline void SetVpcId(const Aws::String& value) { m_vpcIdHasBeenSet = true; m_vpcId = value; }
 
     /**
-     * <p>The ID of the VPC. </p>
+     * <p>The ID of the VPC.</p>
      */
     inline void SetVpcId(Aws::String&& value) { m_vpcIdHasBeenSet = true; m_vpcId = value; }
 
     /**
-     * <p>The ID of the VPC. </p>
+     * <p>The ID of the VPC.</p>
      */
     inline void SetVpcId(const char* value) { m_vpcIdHasBeenSet = true; m_vpcId.assign(value); }
 
     /**
-     * <p>The ID of the VPC. </p>
+     * <p>The ID of the VPC.</p>
      */
     inline EnableVpcClassicLinkDnsSupportRequest& WithVpcId(const Aws::String& value) { SetVpcId(value); return *this;}
 
     /**
-     * <p>The ID of the VPC. </p>
+     * <p>The ID of the VPC.</p>
      */
     inline EnableVpcClassicLinkDnsSupportRequest& WithVpcId(Aws::String&& value) { SetVpcId(value); return *this;}
 
     /**
-     * <p>The ID of the VPC. </p>
+     * <p>The ID of the VPC.</p>
      */
     inline EnableVpcClassicLinkDnsSupportRequest& WithVpcId(const char* value) { SetVpcId(value); return *this;}
 

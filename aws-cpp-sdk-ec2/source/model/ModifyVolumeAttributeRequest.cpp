@@ -33,7 +33,7 @@ Aws::String ModifyVolumeAttributeRequest::SerializePayload() const
   ss << "Action=ModifyVolumeAttribute&";
   if(m_dryRunHasBeenSet)
   {
-    ss << "DryRun=" << m_dryRun << "&";
+    ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
   if(m_volumeIdHasBeenSet)
@@ -46,7 +46,7 @@ Aws::String ModifyVolumeAttributeRequest::SerializePayload() const
     m_autoEnableIO.OutputToStream(ss, "AutoEnableIO");
   }
 
-  ss << "Version=2015-10-01";
+  ss << "Version=2016-11-15";
   return ss.str();
 }
 

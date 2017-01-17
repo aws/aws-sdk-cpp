@@ -36,7 +36,9 @@ namespace Model
    * <p>Represents a mapping template used to transform a payload.</p> <div
    * class="seeAlso"> <a
    * href="http://docs.aws.amazon.com/apigateway/latest/developerguide/models-mappings.html#models-mappings-mappings">Mapping
-   * Templates</a> </div>
+   * Templates</a> </div><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/Template">AWS
+   * API Reference</a></p>
    */
   class AWS_APIGATEWAY_API GetModelTemplateResult
   {

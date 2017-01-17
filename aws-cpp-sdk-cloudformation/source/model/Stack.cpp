@@ -268,7 +268,7 @@ void Stack::OutputToStream(Aws::OStream& oStream, const char* location, unsigned
 
   if(m_disableRollbackHasBeenSet)
   {
-      oStream << location << index << locationValue << ".DisableRollback=" << m_disableRollback << "&";
+      oStream << location << index << locationValue << ".DisableRollback=" << std::boolalpha << m_disableRollback << "&";
   }
 
   if(m_notificationARNsHasBeenSet)
@@ -369,7 +369,7 @@ void Stack::OutputToStream(Aws::OStream& oStream, const char* location) const
   }
   if(m_disableRollbackHasBeenSet)
   {
-      oStream << location << ".DisableRollback=" << m_disableRollback << "&";
+      oStream << location << ".DisableRollback=" << std::boolalpha << m_disableRollback << "&";
   }
   if(m_notificationARNsHasBeenSet)
   {

@@ -34,7 +34,7 @@ Aws::String DescribeVolumeAttributeRequest::SerializePayload() const
   ss << "Action=DescribeVolumeAttribute&";
   if(m_dryRunHasBeenSet)
   {
-    ss << "DryRun=" << m_dryRun << "&";
+    ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
   if(m_volumeIdHasBeenSet)
@@ -47,7 +47,7 @@ Aws::String DescribeVolumeAttributeRequest::SerializePayload() const
     ss << "Attribute=" << VolumeAttributeNameMapper::GetNameForVolumeAttributeName(m_attribute) << "&";
   }
 
-  ss << "Version=2015-10-01";
+  ss << "Version=2016-11-15";
   return ss.str();
 }
 

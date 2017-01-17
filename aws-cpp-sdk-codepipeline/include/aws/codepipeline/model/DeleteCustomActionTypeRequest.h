@@ -27,7 +27,9 @@ namespace Model
 
   /**
    * <p>Represents the input of a delete custom action operation. The custom action
-   * will be marked as deleted.</p>
+   * will be marked as deleted.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/DeleteCustomActionTypeInput">AWS
+   * API Reference</a></p>
    */
   class AWS_CODEPIPELINE_API DeleteCustomActionTypeRequest : public CodePipelineRequest
   {

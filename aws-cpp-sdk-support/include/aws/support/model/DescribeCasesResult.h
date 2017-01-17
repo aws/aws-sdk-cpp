@@ -36,7 +36,10 @@ namespace Model
 {
   /**
    * <p>Returns an array of <a>CaseDetails</a> objects and a <code>nextToken</code>
-   * that defines a point for pagination in the result set.</p>
+   * that defines a point for pagination in the result set.</p><p><h3>See Also:</h3> 
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/DescribeCasesResponse">AWS
+   * API Reference</a></p>
    */
   class AWS_SUPPORT_API DescribeCasesResult
   {

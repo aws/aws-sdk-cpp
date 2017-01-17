@@ -26,7 +26,10 @@ namespace Model
 {
 
   /**
-   * <p>Request to download logs retrieved with <a>RequestEnvironmentInfo</a>.</p>
+   * <p>Request to download logs retrieved with
+   * <a>RequestEnvironmentInfo</a>.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/RetrieveEnvironmentInfoMessage">AWS
+   * API Reference</a></p>
    */
   class AWS_ELASTICBEANSTALK_API RetrieveEnvironmentInfoRequest : public ElasticBeanstalkRequest
   {

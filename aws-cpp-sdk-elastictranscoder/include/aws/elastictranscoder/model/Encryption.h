@@ -35,7 +35,9 @@ namespace Model
    * files or encrypting your output files. If your input file is encrypted, you must
    * specify the mode that Elastic Transcoder uses to decrypt your file, otherwise
    * you must specify the mode you want Elastic Transcoder to use to encrypt your
-   * output files.</p>
+   * output files.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/Encryption">AWS
+   * API Reference</a></p>
    */
   class AWS_ELASTICTRANSCODER_API Encryption
   {

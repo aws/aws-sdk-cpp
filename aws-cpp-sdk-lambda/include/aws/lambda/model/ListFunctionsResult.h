@@ -36,7 +36,9 @@ namespace Model
 {
   /**
    * <p>Contains a list of AWS Lambda function configurations (see
-   * <a>FunctionConfiguration</a>.</p>
+   * <a>FunctionConfiguration</a>.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListFunctionsResponse">AWS
+   * API Reference</a></p>
    */
   class AWS_LAMBDA_API ListFunctionsResult
   {

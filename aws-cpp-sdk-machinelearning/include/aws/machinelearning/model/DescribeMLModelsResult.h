@@ -36,7 +36,10 @@ namespace Model
 {
   /**
    * <p>Represents the output of a <code>DescribeMLModels</code> operation. The
-   * content is essentially a list of <code>MLModel</code>.</p>
+   * content is essentially a list of <code>MLModel</code>.</p><p><h3>See Also:</h3> 
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/DescribeMLModelsOutput">AWS
+   * API Reference</a></p>
    */
   class AWS_MACHINELEARNING_API DescribeMLModelsResult
   {

@@ -43,7 +43,7 @@ Aws::String SetInstanceHealthRequest::SerializePayload() const
 
   if(m_shouldRespectGracePeriodHasBeenSet)
   {
-    ss << "ShouldRespectGracePeriod=" << m_shouldRespectGracePeriod << "&";
+    ss << "ShouldRespectGracePeriod=" << std::boolalpha << m_shouldRespectGracePeriod << "&";
   }
 
   ss << "Version=2011-01-01";

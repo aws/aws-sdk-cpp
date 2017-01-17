@@ -39,7 +39,7 @@ Aws::String ModifySnapshotAttributeRequest::SerializePayload() const
   ss << "Action=ModifySnapshotAttribute&";
   if(m_dryRunHasBeenSet)
   {
-    ss << "DryRun=" << m_dryRun << "&";
+    ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
   if(m_snapshotIdHasBeenSet)
@@ -84,7 +84,7 @@ Aws::String ModifySnapshotAttributeRequest::SerializePayload() const
     m_createVolumePermission.OutputToStream(ss, "CreateVolumePermission");
   }
 
-  ss << "Version=2015-10-01";
+  ss << "Version=2016-11-15";
   return ss.str();
 }
 

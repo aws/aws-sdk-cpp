@@ -34,7 +34,9 @@ namespace Model
 
   /**
    * <p>Describes the data specification of an Amazon Redshift
-   * <code>DataSource</code>.</p>
+   * <code>DataSource</code>.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/RedshiftDataSpec">AWS
+   * API Reference</a></p>
    */
   class AWS_MACHINELEARNING_API RedshiftDataSpec
   {

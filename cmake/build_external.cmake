@@ -27,7 +27,7 @@ if(BUILD_CURL OR BUILD_OPENSSL OR BUILD_ZLIB)
             SOURCE_DIR ${ZLIB_SOURCE_DIR}
             URL http://zlib.net/zlib-1.2.10.tar.gz
             URL_HASH "SHA256=8d7e9f698ce48787b6e1c67e6bff79e487303e66077e25cb9784ac8835978017"
-            PATCH_COMMAND patch CMakeLists.txt < ${CMAKE_SOURCE_DIR}/android-build/patches/zlib/CMakeLists.patch
+            PATCH_COMMAND ""
             CMAKE_ARGS
             -DCMAKE_TOOLCHAIN_FILE=${CMAKE_TOOLCHAIN_FILE}
             -DANDROID_NATIVE_API_LEVEL=${ANDROID_NATIVE_API_LEVEL}
@@ -117,7 +117,7 @@ if(BUILD_CURL OR BUILD_OPENSSL OR BUILD_ZLIB)
                 DEPENDS ZLIB OPENSSL
                 SOURCE_DIR ${CURL_SOURCE_DIR}
                 GIT_REPOSITORY https://github.com/bagder/curl.git
-                GIT_TAG 9819cec61b00cc872136ea5faf469627b3b87e69  # 7.48.0
+                GIT_TAG 44b9b4d4f56d6f6de92c89636994c03984e9cd01 # 7.52.1
                 UPDATE_COMMAND ""
                 PATCH_COMMAND ""
                 CMAKE_ARGS

@@ -33,7 +33,9 @@ namespace Model
 {
 
   /**
-   * <p>Information about a schema extension.</p>
+   * <p>Information about a schema extension.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/SchemaExtensionInfo">AWS
+   * API Reference</a></p>
    */
   class AWS_DIRECTORYSERVICE_API SchemaExtensionInfo
   {

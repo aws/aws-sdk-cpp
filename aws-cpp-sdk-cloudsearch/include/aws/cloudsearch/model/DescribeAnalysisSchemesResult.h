@@ -36,7 +36,10 @@ namespace Model
 {
   /**
    * <p>The result of a <code>DescribeAnalysisSchemes</code> request. Contains the
-   * analysis schemes configured for the domain specified in the request.</p>
+   * analysis schemes configured for the domain specified in the
+   * request.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/DescribeAnalysisSchemesResponse">AWS
+   * API Reference</a></p>
    */
   class AWS_CLOUDSEARCH_API DescribeAnalysisSchemesResult
   {

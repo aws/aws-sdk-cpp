@@ -35,7 +35,9 @@ namespace Model
   /**
    * <p>Represents a REST API.</p> <div class="seeAlso"> <a
    * href="http://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-create-api.html">Create
-   * an API</a> </div>
+   * an API</a> </div><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/RestApi">AWS
+   * API Reference</a></p>
    */
   class AWS_APIGATEWAY_API RestApi
   {
@@ -193,6 +195,41 @@ namespace Model
     inline RestApi& WithCreatedDate(Aws::Utils::DateTime&& value) { SetCreatedDate(value); return *this;}
 
     /**
+     * <p>A version identifier for the API.</p>
+     */
+    inline const Aws::String& GetVersion() const{ return m_version; }
+
+    /**
+     * <p>A version identifier for the API.</p>
+     */
+    inline void SetVersion(const Aws::String& value) { m_versionHasBeenSet = true; m_version = value; }
+
+    /**
+     * <p>A version identifier for the API.</p>
+     */
+    inline void SetVersion(Aws::String&& value) { m_versionHasBeenSet = true; m_version = value; }
+
+    /**
+     * <p>A version identifier for the API.</p>
+     */
+    inline void SetVersion(const char* value) { m_versionHasBeenSet = true; m_version.assign(value); }
+
+    /**
+     * <p>A version identifier for the API.</p>
+     */
+    inline RestApi& WithVersion(const Aws::String& value) { SetVersion(value); return *this;}
+
+    /**
+     * <p>A version identifier for the API.</p>
+     */
+    inline RestApi& WithVersion(Aws::String&& value) { SetVersion(value); return *this;}
+
+    /**
+     * <p>A version identifier for the API.</p>
+     */
+    inline RestApi& WithVersion(const char* value) { SetVersion(value); return *this;}
+
+    /**
      * <p>The warning messages reported when <code>failonwarnings</code> is turned on
      * during API import.</p>
      */
@@ -297,6 +334,8 @@ namespace Model
     bool m_descriptionHasBeenSet;
     Aws::Utils::DateTime m_createdDate;
     bool m_createdDateHasBeenSet;
+    Aws::String m_version;
+    bool m_versionHasBeenSet;
     Aws::Vector<Aws::String> m_warnings;
     bool m_warningsHasBeenSet;
     Aws::Vector<Aws::String> m_binaryMediaTypes;

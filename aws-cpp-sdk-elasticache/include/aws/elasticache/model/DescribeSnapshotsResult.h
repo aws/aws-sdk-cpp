@@ -36,7 +36,10 @@ namespace ElastiCache
 namespace Model
 {
   /**
-   * <p>Represents the output of a <code>DescribeSnapshots</code> operation.</p>
+   * <p>Represents the output of a <code>DescribeSnapshots</code>
+   * operation.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DescribeSnapshotsListMessage">AWS
+   * API Reference</a></p>
    */
   class AWS_ELASTICACHE_API DescribeSnapshotsResult
   {

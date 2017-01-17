@@ -34,7 +34,9 @@ namespace EMR
 namespace Model
 {
   /**
-   * <p>Output from an AddInstanceGroups call.</p>
+   * <p>Output from an AddInstanceGroups call.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/AddInstanceGroupsOutput">AWS
+   * API Reference</a></p>
    */
   class AWS_EMR_API AddInstanceGroupsResult
   {

@@ -174,7 +174,10 @@ namespace Model
          * streaming source using this operation, results in a new version of the
          * application. You can use the <a>DescribeApplication</a> operation to find the
          * current application version. </p> <p>This operation requires permissions to
-         * perform the <code>kinesisanalytics:AddApplicationInput</code> action.</p>
+         * perform the <code>kinesisanalytics:AddApplicationInput</code>
+         * action.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/AddApplicationInput">AWS
+         * API Reference</a></p>
          */
         virtual Model::AddApplicationInputOutcome AddApplicationInput(const Model::AddApplicationInputRequest& request) const;
 
@@ -189,7 +192,10 @@ namespace Model
          * streaming source using this operation, results in a new version of the
          * application. You can use the <a>DescribeApplication</a> operation to find the
          * current application version. </p> <p>This operation requires permissions to
-         * perform the <code>kinesisanalytics:AddApplicationInput</code> action.</p>
+         * perform the <code>kinesisanalytics:AddApplicationInput</code>
+         * action.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/AddApplicationInput">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -206,7 +212,10 @@ namespace Model
          * streaming source using this operation, results in a new version of the
          * application. You can use the <a>DescribeApplication</a> operation to find the
          * current application version. </p> <p>This operation requires permissions to
-         * perform the <code>kinesisanalytics:AddApplicationInput</code> action.</p>
+         * perform the <code>kinesisanalytics:AddApplicationInput</code>
+         * action.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/AddApplicationInput">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -231,7 +240,10 @@ namespace Model
          * number of application inputs and outputs you can configure, see <a
          * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/limits.html">Limits</a>.</p>
          * <p>This operation requires permissions to perform the
-         * <code>kinesisanalytics:AddApplicationOutput</code> action.</p>
+         * <code>kinesisanalytics:AddApplicationOutput</code> action.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/AddApplicationOutput">AWS
+         * API Reference</a></p>
          */
         virtual Model::AddApplicationOutputOutcome AddApplicationOutput(const Model::AddApplicationOutputRequest& request) const;
 
@@ -254,7 +266,10 @@ namespace Model
          * number of application inputs and outputs you can configure, see <a
          * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/limits.html">Limits</a>.</p>
          * <p>This operation requires permissions to perform the
-         * <code>kinesisanalytics:AddApplicationOutput</code> action.</p>
+         * <code>kinesisanalytics:AddApplicationOutput</code> action.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/AddApplicationOutput">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -279,7 +294,10 @@ namespace Model
          * number of application inputs and outputs you can configure, see <a
          * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/limits.html">Limits</a>.</p>
          * <p>This operation requires permissions to perform the
-         * <code>kinesisanalytics:AddApplicationOutput</code> action.</p>
+         * <code>kinesisanalytics:AddApplicationOutput</code> action.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/AddApplicationOutput">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -298,7 +316,10 @@ namespace Model
          * application, see <a
          * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/limits.html">Limits</a>.
          * </p> <p> This operation requires permissions to perform the
-         * <code>kinesisanalytics:AddApplicationOutput</code> action. </p>
+         * <code>kinesisanalytics:AddApplicationOutput</code> action. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/AddApplicationReferenceDataSource">AWS
+         * API Reference</a></p>
          */
         virtual Model::AddApplicationReferenceDataSourceOutcome AddApplicationReferenceDataSource(const Model::AddApplicationReferenceDataSourceRequest& request) const;
 
@@ -315,7 +336,10 @@ namespace Model
          * application, see <a
          * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/limits.html">Limits</a>.
          * </p> <p> This operation requires permissions to perform the
-         * <code>kinesisanalytics:AddApplicationOutput</code> action. </p>
+         * <code>kinesisanalytics:AddApplicationOutput</code> action. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/AddApplicationReferenceDataSource">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -334,7 +358,10 @@ namespace Model
          * application, see <a
          * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/limits.html">Limits</a>.
          * </p> <p> This operation requires permissions to perform the
-         * <code>kinesisanalytics:AddApplicationOutput</code> action. </p>
+         * <code>kinesisanalytics:AddApplicationOutput</code> action. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/AddApplicationReferenceDataSource">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -363,7 +390,9 @@ namespace Model
          * perform the <code>kinesisanalytics:CreateApplication</code> action. </p> <p> For
          * introductory exercises to create an Amazon Kinesis Analytics application, see <a
          * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/getting-started.html">Getting
-         * Started</a>. </p>
+         * Started</a>. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/CreateApplication">AWS
+         * API Reference</a></p>
          */
         virtual Model::CreateApplicationOutcome CreateApplication(const Model::CreateApplicationRequest& request) const;
 
@@ -390,7 +419,9 @@ namespace Model
          * perform the <code>kinesisanalytics:CreateApplication</code> action. </p> <p> For
          * introductory exercises to create an Amazon Kinesis Analytics application, see <a
          * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/getting-started.html">Getting
-         * Started</a>. </p>
+         * Started</a>. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/CreateApplication">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -419,7 +450,9 @@ namespace Model
          * perform the <code>kinesisanalytics:CreateApplication</code> action. </p> <p> For
          * introductory exercises to create an Amazon Kinesis Analytics application, see <a
          * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/getting-started.html">Getting
-         * Started</a>. </p>
+         * Started</a>. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/CreateApplication">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -430,7 +463,10 @@ namespace Model
          * execution and deletes the application, including any application artifacts (such
          * as in-application streams, reference table, and application code).</p> <p>This
          * operation requires permissions to perform the
-         * <code>kinesisanalytics:DeleteApplication</code> action.</p>
+         * <code>kinesisanalytics:DeleteApplication</code> action.</p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/DeleteApplication">AWS
+         * API Reference</a></p>
          */
         virtual Model::DeleteApplicationOutcome DeleteApplication(const Model::DeleteApplicationRequest& request) const;
 
@@ -439,7 +475,10 @@ namespace Model
          * execution and deletes the application, including any application artifacts (such
          * as in-application streams, reference table, and application code).</p> <p>This
          * operation requires permissions to perform the
-         * <code>kinesisanalytics:DeleteApplication</code> action.</p>
+         * <code>kinesisanalytics:DeleteApplication</code> action.</p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/DeleteApplication">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -450,7 +489,10 @@ namespace Model
          * execution and deletes the application, including any application artifacts (such
          * as in-application streams, reference table, and application code).</p> <p>This
          * operation requires permissions to perform the
-         * <code>kinesisanalytics:DeleteApplication</code> action.</p>
+         * <code>kinesisanalytics:DeleteApplication</code> action.</p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/DeleteApplication">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -461,7 +503,10 @@ namespace Model
          * Amazon Kinesis Analytics will no longer write data from the corresponding
          * in-application stream to the external output destination.</p> <p>This operation
          * requires permissions to perform the
-         * <code>kinesisanalytics:DeleteApplicationOutput</code> action.</p>
+         * <code>kinesisanalytics:DeleteApplicationOutput</code> action.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/DeleteApplicationOutput">AWS
+         * API Reference</a></p>
          */
         virtual Model::DeleteApplicationOutputOutcome DeleteApplicationOutput(const Model::DeleteApplicationOutputRequest& request) const;
 
@@ -470,7 +515,10 @@ namespace Model
          * Amazon Kinesis Analytics will no longer write data from the corresponding
          * in-application stream to the external output destination.</p> <p>This operation
          * requires permissions to perform the
-         * <code>kinesisanalytics:DeleteApplicationOutput</code> action.</p>
+         * <code>kinesisanalytics:DeleteApplicationOutput</code> action.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/DeleteApplicationOutput">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -481,7 +529,10 @@ namespace Model
          * Amazon Kinesis Analytics will no longer write data from the corresponding
          * in-application stream to the external output destination.</p> <p>This operation
          * requires permissions to perform the
-         * <code>kinesisanalytics:DeleteApplicationOutput</code> action.</p>
+         * <code>kinesisanalytics:DeleteApplicationOutput</code> action.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/DeleteApplicationOutput">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -493,7 +544,10 @@ namespace Model
          * immediately removes the in-application table that you created using the
          * <a>AddApplicationReferenceDataSource</a> operation. </p> <p>This operation
          * requires permissions to perform the
-         * <code>kinesisanalytics.DeleteApplicationReferenceDataSource</code> action.</p>
+         * <code>kinesisanalytics.DeleteApplicationReferenceDataSource</code>
+         * action.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/DeleteApplicationReferenceDataSource">AWS
+         * API Reference</a></p>
          */
         virtual Model::DeleteApplicationReferenceDataSourceOutcome DeleteApplicationReferenceDataSource(const Model::DeleteApplicationReferenceDataSourceRequest& request) const;
 
@@ -503,7 +557,10 @@ namespace Model
          * immediately removes the in-application table that you created using the
          * <a>AddApplicationReferenceDataSource</a> operation. </p> <p>This operation
          * requires permissions to perform the
-         * <code>kinesisanalytics.DeleteApplicationReferenceDataSource</code> action.</p>
+         * <code>kinesisanalytics.DeleteApplicationReferenceDataSource</code>
+         * action.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/DeleteApplicationReferenceDataSource">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -515,7 +572,10 @@ namespace Model
          * immediately removes the in-application table that you created using the
          * <a>AddApplicationReferenceDataSource</a> operation. </p> <p>This operation
          * requires permissions to perform the
-         * <code>kinesisanalytics.DeleteApplicationReferenceDataSource</code> action.</p>
+         * <code>kinesisanalytics.DeleteApplicationReferenceDataSource</code>
+         * action.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/DeleteApplicationReferenceDataSource">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -528,7 +588,10 @@ namespace Model
          * requires permissions to perform the
          * <code>kinesisanalytics:DescribeApplication</code> action. You can use
          * <code>DescribeApplication</code> to get the current application versionId, which
-         * you need to call other operations such as <code>Update</code>. </p>
+         * you need to call other operations such as <code>Update</code>. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/DescribeApplication">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeApplicationOutcome DescribeApplication(const Model::DescribeApplicationRequest& request) const;
 
@@ -539,7 +602,10 @@ namespace Model
          * requires permissions to perform the
          * <code>kinesisanalytics:DescribeApplication</code> action. You can use
          * <code>DescribeApplication</code> to get the current application versionId, which
-         * you need to call other operations such as <code>Update</code>. </p>
+         * you need to call other operations such as <code>Update</code>. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/DescribeApplication">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -552,7 +618,10 @@ namespace Model
          * requires permissions to perform the
          * <code>kinesisanalytics:DescribeApplication</code> action. You can use
          * <code>DescribeApplication</code> to get the current application versionId, which
-         * you need to call other operations such as <code>Update</code>. </p>
+         * you need to call other operations such as <code>Update</code>. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/DescribeApplication">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -570,7 +639,9 @@ namespace Model
          * Kinesis Analytics console, the console uses this operation to infer a schema and
          * show it in the console user interface. </p> <p> This operation requires
          * permissions to perform the <code>kinesisanalytics:DiscoverInputSchema</code>
-         * action. </p>
+         * action. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/DiscoverInputSchema">AWS
+         * API Reference</a></p>
          */
         virtual Model::DiscoverInputSchemaOutcome DiscoverInputSchema(const Model::DiscoverInputSchemaRequest& request) const;
 
@@ -586,7 +657,9 @@ namespace Model
          * Kinesis Analytics console, the console uses this operation to infer a schema and
          * show it in the console user interface. </p> <p> This operation requires
          * permissions to perform the <code>kinesisanalytics:DiscoverInputSchema</code>
-         * action. </p>
+         * action. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/DiscoverInputSchema">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -604,7 +677,9 @@ namespace Model
          * Kinesis Analytics console, the console uses this operation to infer a schema and
          * show it in the console user interface. </p> <p> This operation requires
          * permissions to perform the <code>kinesisanalytics:DiscoverInputSchema</code>
-         * action. </p>
+         * action. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/DiscoverInputSchema">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -619,7 +694,10 @@ namespace Model
          * set the value of this to the last application name from the previous response.
          * </p> <p>If you want detailed information about a specific application, use
          * <a>DescribeApplication</a>.</p> <p>This operation requires permissions to
-         * perform the <code>kinesisanalytics:ListApplications</code> action.</p>
+         * perform the <code>kinesisanalytics:ListApplications</code> action.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/ListApplications">AWS
+         * API Reference</a></p>
          */
         virtual Model::ListApplicationsOutcome ListApplications(const Model::ListApplicationsRequest& request) const;
 
@@ -632,7 +710,10 @@ namespace Model
          * set the value of this to the last application name from the previous response.
          * </p> <p>If you want detailed information about a specific application, use
          * <a>DescribeApplication</a>.</p> <p>This operation requires permissions to
-         * perform the <code>kinesisanalytics:ListApplications</code> action.</p>
+         * perform the <code>kinesisanalytics:ListApplications</code> action.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/ListApplications">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -647,7 +728,10 @@ namespace Model
          * set the value of this to the last application name from the previous response.
          * </p> <p>If you want detailed information about a specific application, use
          * <a>DescribeApplication</a>.</p> <p>This operation requires permissions to
-         * perform the <code>kinesisanalytics:ListApplications</code> action.</p>
+         * perform the <code>kinesisanalytics:ListApplications</code> action.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/ListApplications">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -663,7 +747,10 @@ namespace Model
          * <a>DescribeApplication</a> operation.</p> <p>After you start the application,
          * you can stop the application from processing the input by calling the
          * <a>StopApplication</a> operation.</p> <p>This operation requires permissions to
-         * perform the <code>kinesisanalytics:StartApplication</code> action.</p>
+         * perform the <code>kinesisanalytics:StartApplication</code> action.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/StartApplication">AWS
+         * API Reference</a></p>
          */
         virtual Model::StartApplicationOutcome StartApplication(const Model::StartApplicationRequest& request) const;
 
@@ -677,7 +764,10 @@ namespace Model
          * <a>DescribeApplication</a> operation.</p> <p>After you start the application,
          * you can stop the application from processing the input by calling the
          * <a>StopApplication</a> operation.</p> <p>This operation requires permissions to
-         * perform the <code>kinesisanalytics:StartApplication</code> action.</p>
+         * perform the <code>kinesisanalytics:StartApplication</code> action.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/StartApplication">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -693,7 +783,10 @@ namespace Model
          * <a>DescribeApplication</a> operation.</p> <p>After you start the application,
          * you can stop the application from processing the input by calling the
          * <a>StopApplication</a> operation.</p> <p>This operation requires permissions to
-         * perform the <code>kinesisanalytics:StartApplication</code> action.</p>
+         * perform the <code>kinesisanalytics:StartApplication</code> action.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/StartApplication">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -706,7 +799,10 @@ namespace Model
          * Amazon Kinesis Analytics stops reading data from the input, the application
          * stops processing data, and there is no output written to the destination. </p>
          * <p>This operation requires permissions to perform the
-         * <code>kinesisanalytics:StopApplication</code> action.</p>
+         * <code>kinesisanalytics:StopApplication</code> action.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/StopApplication">AWS
+         * API Reference</a></p>
          */
         virtual Model::StopApplicationOutcome StopApplication(const Model::StopApplicationRequest& request) const;
 
@@ -717,7 +813,10 @@ namespace Model
          * Amazon Kinesis Analytics stops reading data from the input, the application
          * stops processing data, and there is no output written to the destination. </p>
          * <p>This operation requires permissions to perform the
-         * <code>kinesisanalytics:StopApplication</code> action.</p>
+         * <code>kinesisanalytics:StopApplication</code> action.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/StopApplication">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -730,7 +829,10 @@ namespace Model
          * Amazon Kinesis Analytics stops reading data from the input, the application
          * stops processing data, and there is no output written to the destination. </p>
          * <p>This operation requires permissions to perform the
-         * <code>kinesisanalytics:StopApplication</code> action.</p>
+         * <code>kinesisanalytics:StopApplication</code> action.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/StopApplication">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -742,7 +844,10 @@ namespace Model
          * <p>Note that Kinesis Analytics updates the
          * <code>CurrentApplicationVersionId</code> each time you update your application.
          * </p> <p>This opeation requires permission for the
-         * <code>kinesisanalytics:UpdateApplication</code> action.</p>
+         * <code>kinesisanalytics:UpdateApplication</code> action.</p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/UpdateApplication">AWS
+         * API Reference</a></p>
          */
         virtual Model::UpdateApplicationOutcome UpdateApplication(const Model::UpdateApplicationRequest& request) const;
 
@@ -752,7 +857,10 @@ namespace Model
          * <p>Note that Kinesis Analytics updates the
          * <code>CurrentApplicationVersionId</code> each time you update your application.
          * </p> <p>This opeation requires permission for the
-         * <code>kinesisanalytics:UpdateApplication</code> action.</p>
+         * <code>kinesisanalytics:UpdateApplication</code> action.</p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/UpdateApplication">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -764,7 +872,10 @@ namespace Model
          * <p>Note that Kinesis Analytics updates the
          * <code>CurrentApplicationVersionId</code> each time you update your application.
          * </p> <p>This opeation requires permission for the
-         * <code>kinesisanalytics:UpdateApplication</code> action.</p>
+         * <code>kinesisanalytics:UpdateApplication</code> action.</p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/UpdateApplication">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */

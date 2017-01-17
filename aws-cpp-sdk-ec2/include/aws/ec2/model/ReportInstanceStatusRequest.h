@@ -29,7 +29,10 @@ namespace Model
 {
 
   /**
-   * <p>Contains the parameters for ReportInstanceStatus.</p>
+   * <p>Contains the parameters for ReportInstanceStatus.</p><p><h3>See Also:</h3>  
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ReportInstanceStatusRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_EC2_API ReportInstanceStatusRequest : public EC2Request
   {
@@ -178,133 +181,133 @@ namespace Model
 
     /**
      * <p>One or more reason codes that describes the health state of your
-     * instance.</p> <ul> <li> <p><code>instance-stuck-in-state</code>: My instance is
-     * stuck in a state.</p> </li> <li> <p><code>unresponsive</code>: My instance is
-     * unresponsive.</p> </li> <li> <p><code>not-accepting-credentials</code>: My
-     * instance is not accepting my credentials.</p> </li> <li>
-     * <p><code>password-not-available</code>: A password is not available for my
-     * instance.</p> </li> <li> <p><code>performance-network</code>: My instance is
+     * instance.</p> <ul> <li> <p> <code>instance-stuck-in-state</code>: My instance is
+     * stuck in a state.</p> </li> <li> <p> <code>unresponsive</code>: My instance is
+     * unresponsive.</p> </li> <li> <p> <code>not-accepting-credentials</code>: My
+     * instance is not accepting my credentials.</p> </li> <li> <p>
+     * <code>password-not-available</code>: A password is not available for my
+     * instance.</p> </li> <li> <p> <code>performance-network</code>: My instance is
      * experiencing performance problems which I believe are network related.</p> </li>
-     * <li> <p><code>performance-instance-store</code>: My instance is experiencing
+     * <li> <p> <code>performance-instance-store</code>: My instance is experiencing
      * performance problems which I believe are related to the instance stores.</p>
-     * </li> <li> <p><code>performance-ebs-volume</code>: My instance is experiencing
+     * </li> <li> <p> <code>performance-ebs-volume</code>: My instance is experiencing
      * performance problems which I believe are related to an EBS volume.</p> </li>
-     * <li> <p><code>performance-other</code>: My instance is experiencing performance
-     * problems.</p> </li> <li> <p><code>other</code>: [explain using the description
+     * <li> <p> <code>performance-other</code>: My instance is experiencing performance
+     * problems.</p> </li> <li> <p> <code>other</code>: [explain using the description
      * parameter]</p> </li> </ul>
      */
     inline const Aws::Vector<ReportInstanceReasonCodes>& GetReasonCodes() const{ return m_reasonCodes; }
 
     /**
      * <p>One or more reason codes that describes the health state of your
-     * instance.</p> <ul> <li> <p><code>instance-stuck-in-state</code>: My instance is
-     * stuck in a state.</p> </li> <li> <p><code>unresponsive</code>: My instance is
-     * unresponsive.</p> </li> <li> <p><code>not-accepting-credentials</code>: My
-     * instance is not accepting my credentials.</p> </li> <li>
-     * <p><code>password-not-available</code>: A password is not available for my
-     * instance.</p> </li> <li> <p><code>performance-network</code>: My instance is
+     * instance.</p> <ul> <li> <p> <code>instance-stuck-in-state</code>: My instance is
+     * stuck in a state.</p> </li> <li> <p> <code>unresponsive</code>: My instance is
+     * unresponsive.</p> </li> <li> <p> <code>not-accepting-credentials</code>: My
+     * instance is not accepting my credentials.</p> </li> <li> <p>
+     * <code>password-not-available</code>: A password is not available for my
+     * instance.</p> </li> <li> <p> <code>performance-network</code>: My instance is
      * experiencing performance problems which I believe are network related.</p> </li>
-     * <li> <p><code>performance-instance-store</code>: My instance is experiencing
+     * <li> <p> <code>performance-instance-store</code>: My instance is experiencing
      * performance problems which I believe are related to the instance stores.</p>
-     * </li> <li> <p><code>performance-ebs-volume</code>: My instance is experiencing
+     * </li> <li> <p> <code>performance-ebs-volume</code>: My instance is experiencing
      * performance problems which I believe are related to an EBS volume.</p> </li>
-     * <li> <p><code>performance-other</code>: My instance is experiencing performance
-     * problems.</p> </li> <li> <p><code>other</code>: [explain using the description
+     * <li> <p> <code>performance-other</code>: My instance is experiencing performance
+     * problems.</p> </li> <li> <p> <code>other</code>: [explain using the description
      * parameter]</p> </li> </ul>
      */
     inline void SetReasonCodes(const Aws::Vector<ReportInstanceReasonCodes>& value) { m_reasonCodesHasBeenSet = true; m_reasonCodes = value; }
 
     /**
      * <p>One or more reason codes that describes the health state of your
-     * instance.</p> <ul> <li> <p><code>instance-stuck-in-state</code>: My instance is
-     * stuck in a state.</p> </li> <li> <p><code>unresponsive</code>: My instance is
-     * unresponsive.</p> </li> <li> <p><code>not-accepting-credentials</code>: My
-     * instance is not accepting my credentials.</p> </li> <li>
-     * <p><code>password-not-available</code>: A password is not available for my
-     * instance.</p> </li> <li> <p><code>performance-network</code>: My instance is
+     * instance.</p> <ul> <li> <p> <code>instance-stuck-in-state</code>: My instance is
+     * stuck in a state.</p> </li> <li> <p> <code>unresponsive</code>: My instance is
+     * unresponsive.</p> </li> <li> <p> <code>not-accepting-credentials</code>: My
+     * instance is not accepting my credentials.</p> </li> <li> <p>
+     * <code>password-not-available</code>: A password is not available for my
+     * instance.</p> </li> <li> <p> <code>performance-network</code>: My instance is
      * experiencing performance problems which I believe are network related.</p> </li>
-     * <li> <p><code>performance-instance-store</code>: My instance is experiencing
+     * <li> <p> <code>performance-instance-store</code>: My instance is experiencing
      * performance problems which I believe are related to the instance stores.</p>
-     * </li> <li> <p><code>performance-ebs-volume</code>: My instance is experiencing
+     * </li> <li> <p> <code>performance-ebs-volume</code>: My instance is experiencing
      * performance problems which I believe are related to an EBS volume.</p> </li>
-     * <li> <p><code>performance-other</code>: My instance is experiencing performance
-     * problems.</p> </li> <li> <p><code>other</code>: [explain using the description
+     * <li> <p> <code>performance-other</code>: My instance is experiencing performance
+     * problems.</p> </li> <li> <p> <code>other</code>: [explain using the description
      * parameter]</p> </li> </ul>
      */
     inline void SetReasonCodes(Aws::Vector<ReportInstanceReasonCodes>&& value) { m_reasonCodesHasBeenSet = true; m_reasonCodes = value; }
 
     /**
      * <p>One or more reason codes that describes the health state of your
-     * instance.</p> <ul> <li> <p><code>instance-stuck-in-state</code>: My instance is
-     * stuck in a state.</p> </li> <li> <p><code>unresponsive</code>: My instance is
-     * unresponsive.</p> </li> <li> <p><code>not-accepting-credentials</code>: My
-     * instance is not accepting my credentials.</p> </li> <li>
-     * <p><code>password-not-available</code>: A password is not available for my
-     * instance.</p> </li> <li> <p><code>performance-network</code>: My instance is
+     * instance.</p> <ul> <li> <p> <code>instance-stuck-in-state</code>: My instance is
+     * stuck in a state.</p> </li> <li> <p> <code>unresponsive</code>: My instance is
+     * unresponsive.</p> </li> <li> <p> <code>not-accepting-credentials</code>: My
+     * instance is not accepting my credentials.</p> </li> <li> <p>
+     * <code>password-not-available</code>: A password is not available for my
+     * instance.</p> </li> <li> <p> <code>performance-network</code>: My instance is
      * experiencing performance problems which I believe are network related.</p> </li>
-     * <li> <p><code>performance-instance-store</code>: My instance is experiencing
+     * <li> <p> <code>performance-instance-store</code>: My instance is experiencing
      * performance problems which I believe are related to the instance stores.</p>
-     * </li> <li> <p><code>performance-ebs-volume</code>: My instance is experiencing
+     * </li> <li> <p> <code>performance-ebs-volume</code>: My instance is experiencing
      * performance problems which I believe are related to an EBS volume.</p> </li>
-     * <li> <p><code>performance-other</code>: My instance is experiencing performance
-     * problems.</p> </li> <li> <p><code>other</code>: [explain using the description
+     * <li> <p> <code>performance-other</code>: My instance is experiencing performance
+     * problems.</p> </li> <li> <p> <code>other</code>: [explain using the description
      * parameter]</p> </li> </ul>
      */
     inline ReportInstanceStatusRequest& WithReasonCodes(const Aws::Vector<ReportInstanceReasonCodes>& value) { SetReasonCodes(value); return *this;}
 
     /**
      * <p>One or more reason codes that describes the health state of your
-     * instance.</p> <ul> <li> <p><code>instance-stuck-in-state</code>: My instance is
-     * stuck in a state.</p> </li> <li> <p><code>unresponsive</code>: My instance is
-     * unresponsive.</p> </li> <li> <p><code>not-accepting-credentials</code>: My
-     * instance is not accepting my credentials.</p> </li> <li>
-     * <p><code>password-not-available</code>: A password is not available for my
-     * instance.</p> </li> <li> <p><code>performance-network</code>: My instance is
+     * instance.</p> <ul> <li> <p> <code>instance-stuck-in-state</code>: My instance is
+     * stuck in a state.</p> </li> <li> <p> <code>unresponsive</code>: My instance is
+     * unresponsive.</p> </li> <li> <p> <code>not-accepting-credentials</code>: My
+     * instance is not accepting my credentials.</p> </li> <li> <p>
+     * <code>password-not-available</code>: A password is not available for my
+     * instance.</p> </li> <li> <p> <code>performance-network</code>: My instance is
      * experiencing performance problems which I believe are network related.</p> </li>
-     * <li> <p><code>performance-instance-store</code>: My instance is experiencing
+     * <li> <p> <code>performance-instance-store</code>: My instance is experiencing
      * performance problems which I believe are related to the instance stores.</p>
-     * </li> <li> <p><code>performance-ebs-volume</code>: My instance is experiencing
+     * </li> <li> <p> <code>performance-ebs-volume</code>: My instance is experiencing
      * performance problems which I believe are related to an EBS volume.</p> </li>
-     * <li> <p><code>performance-other</code>: My instance is experiencing performance
-     * problems.</p> </li> <li> <p><code>other</code>: [explain using the description
+     * <li> <p> <code>performance-other</code>: My instance is experiencing performance
+     * problems.</p> </li> <li> <p> <code>other</code>: [explain using the description
      * parameter]</p> </li> </ul>
      */
     inline ReportInstanceStatusRequest& WithReasonCodes(Aws::Vector<ReportInstanceReasonCodes>&& value) { SetReasonCodes(value); return *this;}
 
     /**
      * <p>One or more reason codes that describes the health state of your
-     * instance.</p> <ul> <li> <p><code>instance-stuck-in-state</code>: My instance is
-     * stuck in a state.</p> </li> <li> <p><code>unresponsive</code>: My instance is
-     * unresponsive.</p> </li> <li> <p><code>not-accepting-credentials</code>: My
-     * instance is not accepting my credentials.</p> </li> <li>
-     * <p><code>password-not-available</code>: A password is not available for my
-     * instance.</p> </li> <li> <p><code>performance-network</code>: My instance is
+     * instance.</p> <ul> <li> <p> <code>instance-stuck-in-state</code>: My instance is
+     * stuck in a state.</p> </li> <li> <p> <code>unresponsive</code>: My instance is
+     * unresponsive.</p> </li> <li> <p> <code>not-accepting-credentials</code>: My
+     * instance is not accepting my credentials.</p> </li> <li> <p>
+     * <code>password-not-available</code>: A password is not available for my
+     * instance.</p> </li> <li> <p> <code>performance-network</code>: My instance is
      * experiencing performance problems which I believe are network related.</p> </li>
-     * <li> <p><code>performance-instance-store</code>: My instance is experiencing
+     * <li> <p> <code>performance-instance-store</code>: My instance is experiencing
      * performance problems which I believe are related to the instance stores.</p>
-     * </li> <li> <p><code>performance-ebs-volume</code>: My instance is experiencing
+     * </li> <li> <p> <code>performance-ebs-volume</code>: My instance is experiencing
      * performance problems which I believe are related to an EBS volume.</p> </li>
-     * <li> <p><code>performance-other</code>: My instance is experiencing performance
-     * problems.</p> </li> <li> <p><code>other</code>: [explain using the description
+     * <li> <p> <code>performance-other</code>: My instance is experiencing performance
+     * problems.</p> </li> <li> <p> <code>other</code>: [explain using the description
      * parameter]</p> </li> </ul>
      */
     inline ReportInstanceStatusRequest& AddReasonCodes(const ReportInstanceReasonCodes& value) { m_reasonCodesHasBeenSet = true; m_reasonCodes.push_back(value); return *this; }
 
     /**
      * <p>One or more reason codes that describes the health state of your
-     * instance.</p> <ul> <li> <p><code>instance-stuck-in-state</code>: My instance is
-     * stuck in a state.</p> </li> <li> <p><code>unresponsive</code>: My instance is
-     * unresponsive.</p> </li> <li> <p><code>not-accepting-credentials</code>: My
-     * instance is not accepting my credentials.</p> </li> <li>
-     * <p><code>password-not-available</code>: A password is not available for my
-     * instance.</p> </li> <li> <p><code>performance-network</code>: My instance is
+     * instance.</p> <ul> <li> <p> <code>instance-stuck-in-state</code>: My instance is
+     * stuck in a state.</p> </li> <li> <p> <code>unresponsive</code>: My instance is
+     * unresponsive.</p> </li> <li> <p> <code>not-accepting-credentials</code>: My
+     * instance is not accepting my credentials.</p> </li> <li> <p>
+     * <code>password-not-available</code>: A password is not available for my
+     * instance.</p> </li> <li> <p> <code>performance-network</code>: My instance is
      * experiencing performance problems which I believe are network related.</p> </li>
-     * <li> <p><code>performance-instance-store</code>: My instance is experiencing
+     * <li> <p> <code>performance-instance-store</code>: My instance is experiencing
      * performance problems which I believe are related to the instance stores.</p>
-     * </li> <li> <p><code>performance-ebs-volume</code>: My instance is experiencing
+     * </li> <li> <p> <code>performance-ebs-volume</code>: My instance is experiencing
      * performance problems which I believe are related to an EBS volume.</p> </li>
-     * <li> <p><code>performance-other</code>: My instance is experiencing performance
-     * problems.</p> </li> <li> <p><code>other</code>: [explain using the description
+     * <li> <p> <code>performance-other</code>: My instance is experiencing performance
+     * problems.</p> </li> <li> <p> <code>other</code>: [explain using the description
      * parameter]</p> </li> </ul>
      */
     inline ReportInstanceStatusRequest& AddReasonCodes(ReportInstanceReasonCodes&& value) { m_reasonCodesHasBeenSet = true; m_reasonCodes.push_back(value); return *this; }

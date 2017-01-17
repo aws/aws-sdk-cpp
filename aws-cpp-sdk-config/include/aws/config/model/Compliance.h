@@ -33,7 +33,10 @@ namespace Model
 
   /**
    * <p>Indicates whether an AWS resource or AWS Config rule is compliant and
-   * provides the number of contributors that affect the compliance.</p>
+   * provides the number of contributors that affect the compliance.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/Compliance">AWS
+   * API Reference</a></p>
    */
   class AWS_CONFIGSERVICE_API Compliance
   {

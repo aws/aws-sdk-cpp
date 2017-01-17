@@ -240,7 +240,7 @@ void ImportImageTask::OutputToStream(Aws::OStream& oStream, const char* location
       for(auto& item : m_snapshotDetails)
       {
         Aws::StringStream snapshotDetailsSs;
-        snapshotDetailsSs << location <<  ".item." << snapshotDetailsIdx++;
+        snapshotDetailsSs << location <<  ".Item." << snapshotDetailsIdx++;
         item.OutputToStream(oStream, snapshotDetailsSs.str().c_str());
       }
   }

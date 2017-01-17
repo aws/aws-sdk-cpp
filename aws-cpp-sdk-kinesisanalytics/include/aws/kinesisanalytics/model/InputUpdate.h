@@ -36,7 +36,9 @@ namespace Model
 
   /**
    * <p>Describes updates to a specific input configuration (identified by the
-   * <code>InputId</code> of an application). </p>
+   * <code>InputId</code> of an application). </p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/InputUpdate">AWS
+   * API Reference</a></p>
    */
   class AWS_KINESISANALYTICS_API InputUpdate
   {

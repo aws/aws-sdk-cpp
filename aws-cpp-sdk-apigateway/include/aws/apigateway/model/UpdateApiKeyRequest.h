@@ -27,7 +27,10 @@ namespace Model
 {
 
   /**
-   * <p>A request to change information about an <a>ApiKey</a> resource.</p>
+   * <p>A request to change information about an <a>ApiKey</a>
+   * resource.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateApiKeyRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_APIGATEWAY_API UpdateApiKeyRequest : public APIGatewayRequest
   {

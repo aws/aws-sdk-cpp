@@ -32,7 +32,10 @@ namespace Model
 {
 
   /**
-   * <p>The status change reason details for the instance group.</p>
+   * <p>The status change reason details for the instance group.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/InstanceGroupStateChangeReason">AWS
+   * API Reference</a></p>
    */
   class AWS_EMR_API InstanceGroupStateChangeReason
   {

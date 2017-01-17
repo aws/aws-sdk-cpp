@@ -39,7 +39,9 @@ namespace Model
   /**
    * <p>Contains the results of a simulation.</p> <p>This data type is used by the
    * return parameter of <code> <a>SimulateCustomPolicy</a> </code> and <code>
-   * <a>SimulatePrincipalPolicy</a> </code>.</p>
+   * <a>SimulatePrincipalPolicy</a> </code>.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/EvaluationResult">AWS
+   * API Reference</a></p>
    */
   class AWS_IAM_API EvaluationResult
   {

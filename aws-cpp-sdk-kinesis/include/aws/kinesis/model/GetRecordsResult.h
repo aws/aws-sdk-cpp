@@ -35,7 +35,9 @@ namespace Kinesis
 namespace Model
 {
   /**
-   * <p>Represents the output for <a>GetRecords</a>.</p>
+   * <p>Represents the output for <a>GetRecords</a>.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/GetRecordsOutput">AWS
+   * API Reference</a></p>
    */
   class AWS_KINESIS_API GetRecordsResult
   {

@@ -32,7 +32,9 @@ namespace Model
 
   /**
    * <p>An AWS Direct Connect location where connections and interconnects can be
-   * requested.</p>
+   * requested.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/Location">AWS
+   * API Reference</a></p>
    */
   class AWS_DIRECTCONNECT_API Location
   {

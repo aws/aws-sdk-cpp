@@ -34,7 +34,7 @@ Aws::String GetConsoleScreenshotRequest::SerializePayload() const
   ss << "Action=GetConsoleScreenshot&";
   if(m_dryRunHasBeenSet)
   {
-    ss << "DryRun=" << m_dryRun << "&";
+    ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
   if(m_instanceIdHasBeenSet)
@@ -44,10 +44,10 @@ Aws::String GetConsoleScreenshotRequest::SerializePayload() const
 
   if(m_wakeUpHasBeenSet)
   {
-    ss << "WakeUp=" << m_wakeUp << "&";
+    ss << "WakeUp=" << std::boolalpha << m_wakeUp << "&";
   }
 
-  ss << "Version=2015-10-01";
+  ss << "Version=2016-11-15";
   return ss.str();
 }
 

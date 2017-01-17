@@ -36,7 +36,10 @@ namespace Model
    * <p>Contains the name and values of a manual DB cluster snapshot attribute.</p>
    * <p>Manual DB cluster snapshot attributes are used to authorize other AWS
    * accounts to restore a manual DB cluster snapshot. For more information, see the
-   * <a>ModifyDBClusterSnapshotAttribute</a> API action.</p>
+   * <a>ModifyDBClusterSnapshotAttribute</a> API action.</p><p><h3>See Also:</h3>  
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DBClusterSnapshotAttribute">AWS
+   * API Reference</a></p>
    */
   class AWS_RDS_API DBClusterSnapshotAttribute
   {

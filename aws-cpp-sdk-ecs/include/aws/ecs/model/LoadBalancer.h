@@ -31,7 +31,10 @@ namespace Model
 {
 
   /**
-   * <p>Details on a load balancer that is used with a service.</p>
+   * <p>Details on a load balancer that is used with a service.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/LoadBalancer">AWS
+   * API Reference</a></p>
    */
   class AWS_ECS_API LoadBalancer
   {

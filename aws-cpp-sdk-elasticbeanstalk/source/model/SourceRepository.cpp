@@ -30,6 +30,7 @@ namespace Aws
       {
 
         static const int CodeCommit_HASH = HashingUtils::HashString("CodeCommit");
+        static const int S3_HASH = HashingUtils::HashString("S3");
 
 
         SourceRepository GetSourceRepositoryForName(const Aws::String& name)
@@ -38,6 +39,10 @@ namespace Aws
           if (hashCode == CodeCommit_HASH)
           {
             return SourceRepository::CodeCommit;
+          }
+          else if (hashCode == S3_HASH)
+          {
+            return SourceRepository::S3;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -55,6 +60,8 @@ namespace Aws
           {
           case SourceRepository::CodeCommit:
             return "CodeCommit";
+          case SourceRepository::S3:
+            return "S3";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

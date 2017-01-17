@@ -27,7 +27,10 @@ namespace Model
 {
 
   /**
-   * <p>Contains the inputs for the <a>CreateDirectory</a> operation. </p>
+   * <p>Contains the inputs for the <a>CreateDirectory</a> operation. </p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/CreateDirectoryRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_DIRECTORYSERVICE_API CreateDirectoryRequest : public DirectoryServiceRequest
   {

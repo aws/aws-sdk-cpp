@@ -26,7 +26,10 @@ namespace Model
 {
 
   /**
-   * <p>The input for the <a>ContinueUpdateRollback</a> action.</p>
+   * <p>The input for the <a>ContinueUpdateRollback</a> action.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ContinueUpdateRollbackInput">AWS
+   * API Reference</a></p>
    */
   class AWS_CLOUDFORMATION_API ContinueUpdateRollbackRequest : public CloudFormationRequest
   {

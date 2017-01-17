@@ -37,7 +37,7 @@ Aws::String TerminateInstanceInAutoScalingGroupRequest::SerializePayload() const
 
   if(m_shouldDecrementDesiredCapacityHasBeenSet)
   {
-    ss << "ShouldDecrementDesiredCapacity=" << m_shouldDecrementDesiredCapacity << "&";
+    ss << "ShouldDecrementDesiredCapacity=" << std::boolalpha << m_shouldDecrementDesiredCapacity << "&";
   }
 
   ss << "Version=2011-01-01";

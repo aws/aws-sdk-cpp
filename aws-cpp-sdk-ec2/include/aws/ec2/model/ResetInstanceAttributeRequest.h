@@ -26,7 +26,10 @@ namespace Model
 {
 
   /**
-   * <p>Contains the parameters for ResetInstanceAttribute.</p>
+   * <p>Contains the parameters for ResetInstanceAttribute.</p><p><h3>See Also:</h3> 
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ResetInstanceAttributeRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_EC2_API ResetInstanceAttributeRequest : public EC2Request
   {
@@ -94,42 +97,42 @@ namespace Model
     inline ResetInstanceAttributeRequest& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
 
     /**
-     * <p>The attribute to reset.</p> <important><p>You can only reset the following
+     * <p>The attribute to reset.</p> <important> <p>You can only reset the following
      * attributes: <code>kernel</code> | <code>ramdisk</code> |
      * <code>sourceDestCheck</code>. To change an instance attribute, use
-     * <a>ModifyInstanceAttribute</a>.</p></important>
+     * <a>ModifyInstanceAttribute</a>.</p> </important>
      */
     inline const InstanceAttributeName& GetAttribute() const{ return m_attribute; }
 
     /**
-     * <p>The attribute to reset.</p> <important><p>You can only reset the following
+     * <p>The attribute to reset.</p> <important> <p>You can only reset the following
      * attributes: <code>kernel</code> | <code>ramdisk</code> |
      * <code>sourceDestCheck</code>. To change an instance attribute, use
-     * <a>ModifyInstanceAttribute</a>.</p></important>
+     * <a>ModifyInstanceAttribute</a>.</p> </important>
      */
     inline void SetAttribute(const InstanceAttributeName& value) { m_attributeHasBeenSet = true; m_attribute = value; }
 
     /**
-     * <p>The attribute to reset.</p> <important><p>You can only reset the following
+     * <p>The attribute to reset.</p> <important> <p>You can only reset the following
      * attributes: <code>kernel</code> | <code>ramdisk</code> |
      * <code>sourceDestCheck</code>. To change an instance attribute, use
-     * <a>ModifyInstanceAttribute</a>.</p></important>
+     * <a>ModifyInstanceAttribute</a>.</p> </important>
      */
     inline void SetAttribute(InstanceAttributeName&& value) { m_attributeHasBeenSet = true; m_attribute = value; }
 
     /**
-     * <p>The attribute to reset.</p> <important><p>You can only reset the following
+     * <p>The attribute to reset.</p> <important> <p>You can only reset the following
      * attributes: <code>kernel</code> | <code>ramdisk</code> |
      * <code>sourceDestCheck</code>. To change an instance attribute, use
-     * <a>ModifyInstanceAttribute</a>.</p></important>
+     * <a>ModifyInstanceAttribute</a>.</p> </important>
      */
     inline ResetInstanceAttributeRequest& WithAttribute(const InstanceAttributeName& value) { SetAttribute(value); return *this;}
 
     /**
-     * <p>The attribute to reset.</p> <important><p>You can only reset the following
+     * <p>The attribute to reset.</p> <important> <p>You can only reset the following
      * attributes: <code>kernel</code> | <code>ramdisk</code> |
      * <code>sourceDestCheck</code>. To change an instance attribute, use
-     * <a>ModifyInstanceAttribute</a>.</p></important>
+     * <a>ModifyInstanceAttribute</a>.</p> </important>
      */
     inline ResetInstanceAttributeRequest& WithAttribute(InstanceAttributeName&& value) { SetAttribute(value); return *this;}
 

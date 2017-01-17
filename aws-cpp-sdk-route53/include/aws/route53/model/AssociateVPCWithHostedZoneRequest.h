@@ -27,7 +27,9 @@ namespace Model
 
   /**
    * <p>A complex type that contains information about the request to associate a VPC
-   * with a private hosted zone.</p>
+   * with a private hosted zone.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/AssociateVPCWithHostedZoneRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_ROUTE53_API AssociateVPCWithHostedZoneRequest : public Route53Request
   {

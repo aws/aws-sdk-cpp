@@ -27,7 +27,10 @@ namespace Model
 {
 
   /**
-   * <p>A request to update an existing <a>MethodResponse</a> resource.</p>
+   * <p>A request to update an existing <a>MethodResponse</a> resource.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateMethodResponseRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_APIGATEWAY_API UpdateMethodResponseRequest : public APIGatewayRequest
   {

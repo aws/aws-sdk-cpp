@@ -31,7 +31,10 @@ namespace Model
 {
 
   /**
-   * <p>The <code>Id</code> and <code>Name</code> of an <code>XssMatchSet</code>.</p>
+   * <p>The <code>Id</code> and <code>Name</code> of an
+   * <code>XssMatchSet</code>.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/XssMatchSetSummary">AWS
+   * API Reference</a></p>
    */
   class AWS_WAF_API XssMatchSetSummary
   {

@@ -30,7 +30,9 @@ namespace Model
 {
 
   /**
-   * <p>Details about the timing of a job.</p>
+   * <p>Details about the timing of a job.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/Timing">AWS
+   * API Reference</a></p>
    */
   class AWS_ELASTICTRANSCODER_API Timing
   {

@@ -33,7 +33,9 @@ namespace Model
 
   /**
    * <p>An Active Directory Domain membership record associated with the DB
-   * instance.</p>
+   * instance.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DomainMembership">AWS
+   * API Reference</a></p>
    */
   class AWS_RDS_API DomainMembership
   {

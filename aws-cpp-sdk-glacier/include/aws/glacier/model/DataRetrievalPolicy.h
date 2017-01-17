@@ -32,7 +32,9 @@ namespace Model
 {
 
   /**
-   * <p>Data retrieval policy.</p>
+   * <p>Data retrieval policy.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/DataRetrievalPolicy">AWS
+   * API Reference</a></p>
    */
   class AWS_GLACIER_API DataRetrievalPolicy
   {

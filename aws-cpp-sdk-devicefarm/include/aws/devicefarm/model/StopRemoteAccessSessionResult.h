@@ -34,7 +34,9 @@ namespace Model
 {
   /**
    * <p>Represents the response from the server that describes the remote access
-   * session when AWS Device Farm stops the session.</p>
+   * session when AWS Device Farm stops the session.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/StopRemoteAccessSessionResult">AWS
+   * API Reference</a></p>
    */
   class AWS_DEVICEFARM_API StopRemoteAccessSessionResult
   {

@@ -32,7 +32,9 @@ namespace Model
 {
 
   /**
-   * <p>Provides the current status of the entity.</p>
+   * <p>Provides the current status of the entity.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/OptionStatus">AWS API
+   * Reference</a></p>
    */
   class AWS_ELASTICSEARCHSERVICE_API OptionStatus
   {

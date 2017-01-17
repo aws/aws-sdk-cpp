@@ -131,7 +131,7 @@ void NetworkAcl::OutputToStream(Aws::OStream& oStream, const char* location, uns
 
   if(m_isDefaultHasBeenSet)
   {
-      oStream << location << index << locationValue << ".IsDefault=" << m_isDefault << "&";
+      oStream << location << index << locationValue << ".IsDefault=" << std::boolalpha << m_isDefault << "&";
   }
 
   if(m_entriesHasBeenSet)
@@ -181,7 +181,7 @@ void NetworkAcl::OutputToStream(Aws::OStream& oStream, const char* location) con
   }
   if(m_isDefaultHasBeenSet)
   {
-      oStream << location << ".IsDefault=" << m_isDefault << "&";
+      oStream << location << ".IsDefault=" << std::boolalpha << m_isDefault << "&";
   }
   if(m_entriesHasBeenSet)
   {
@@ -189,7 +189,7 @@ void NetworkAcl::OutputToStream(Aws::OStream& oStream, const char* location) con
       for(auto& item : m_entries)
       {
         Aws::StringStream entriesSs;
-        entriesSs << location <<  ".item." << entriesIdx++;
+        entriesSs << location <<  ".Item." << entriesIdx++;
         item.OutputToStream(oStream, entriesSs.str().c_str());
       }
   }
@@ -199,7 +199,7 @@ void NetworkAcl::OutputToStream(Aws::OStream& oStream, const char* location) con
       for(auto& item : m_associations)
       {
         Aws::StringStream associationsSs;
-        associationsSs << location <<  ".item." << associationsIdx++;
+        associationsSs << location <<  ".Item." << associationsIdx++;
         item.OutputToStream(oStream, associationsSs.str().c_str());
       }
   }
@@ -209,7 +209,7 @@ void NetworkAcl::OutputToStream(Aws::OStream& oStream, const char* location) con
       for(auto& item : m_tags)
       {
         Aws::StringStream tagsSs;
-        tagsSs << location <<  ".item." << tagsIdx++;
+        tagsSs << location <<  ".Item." << tagsIdx++;
         item.OutputToStream(oStream, tagsSs.str().c_str());
       }
   }

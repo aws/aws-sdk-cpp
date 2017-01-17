@@ -55,7 +55,7 @@ Aws::String GetAttributesRequest::SerializePayload() const
 
   if(m_consistentReadHasBeenSet)
   {
-    ss << "ConsistentRead=" << m_consistentRead << "&";
+    ss << "ConsistentRead=" << std::boolalpha << m_consistentRead << "&";
   }
 
   ss << "Version=2009-04-15";

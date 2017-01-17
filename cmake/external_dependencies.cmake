@@ -113,23 +113,3 @@ if(NOT NO_HTTP_CLIENT)
 else()
     message(STATUS "You will need to inject an http client implementation before making any http requests!")
 endif()
-
-# UUID headers
-if(NOT PLATFORM_WINDOWS AND NOT PLATFORM_ANDROID AND NOT PLATFORM_CUSTOM)
-    message(STATUS "Finding uuid")
-
-    find_path(UUID_INCLUDE_DIR uuid/uuid.h)
-    if(NOT PLATFORM_APPLE)
-        find_library(UUID_LIBRARIES uuid)
-    endif()
-
-    if("${UUID_INCLUDE_DIR}" STREQUAL "UUID_INCLUDE_DIR-NOTFOUND" OR "${UUID_LIBRARIES}" STREQUAL "UUID_LIBRARIES-NOTFOUND")
-        message(FATAL_ERROR "Could not find uuid components")
-    else()
-        message(STATUS "  Uuid include directory: ${UUID_INCLUDE_DIR}")
-        message(STATUS "  Uuid library: ${UUID_LIBRARIES}")
-    endif()
-
-    include_directories(${UUID_INCLUDE_DIR})
-endif()
-

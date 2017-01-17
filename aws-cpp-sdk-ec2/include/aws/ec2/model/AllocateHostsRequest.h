@@ -26,7 +26,9 @@ namespace Model
 {
 
   /**
-   * <p>Contains the parameters for AllocateHosts.</p>
+   * <p>Contains the parameters for AllocateHosts.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AllocateHostsRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_EC2_API AllocateHostsRequest : public EC2Request
   {
@@ -36,35 +38,35 @@ namespace Model
 
     /**
      * <p>This is enabled by default. This property allows instances to be
-     * automatically placed onto available Dedicated hosts, when you are launching
+     * automatically placed onto available Dedicated Hosts, when you are launching
      * instances without specifying a host ID.</p> <p>Default: Enabled</p>
      */
     inline const AutoPlacement& GetAutoPlacement() const{ return m_autoPlacement; }
 
     /**
      * <p>This is enabled by default. This property allows instances to be
-     * automatically placed onto available Dedicated hosts, when you are launching
+     * automatically placed onto available Dedicated Hosts, when you are launching
      * instances without specifying a host ID.</p> <p>Default: Enabled</p>
      */
     inline void SetAutoPlacement(const AutoPlacement& value) { m_autoPlacementHasBeenSet = true; m_autoPlacement = value; }
 
     /**
      * <p>This is enabled by default. This property allows instances to be
-     * automatically placed onto available Dedicated hosts, when you are launching
+     * automatically placed onto available Dedicated Hosts, when you are launching
      * instances without specifying a host ID.</p> <p>Default: Enabled</p>
      */
     inline void SetAutoPlacement(AutoPlacement&& value) { m_autoPlacementHasBeenSet = true; m_autoPlacement = value; }
 
     /**
      * <p>This is enabled by default. This property allows instances to be
-     * automatically placed onto available Dedicated hosts, when you are launching
+     * automatically placed onto available Dedicated Hosts, when you are launching
      * instances without specifying a host ID.</p> <p>Default: Enabled</p>
      */
     inline AllocateHostsRequest& WithAutoPlacement(const AutoPlacement& value) { SetAutoPlacement(value); return *this;}
 
     /**
      * <p>This is enabled by default. This property allows instances to be
-     * automatically placed onto available Dedicated hosts, when you are launching
+     * automatically placed onto available Dedicated Hosts, when you are launching
      * instances without specifying a host ID.</p> <p>Default: Enabled</p>
      */
     inline AllocateHostsRequest& WithAutoPlacement(AutoPlacement&& value) { SetAutoPlacement(value); return *this;}
@@ -133,104 +135,104 @@ namespace Model
     inline AllocateHostsRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
 
     /**
-     * <p>Specify the instance type that you want your Dedicated hosts to be configured
+     * <p>Specify the instance type that you want your Dedicated Hosts to be configured
      * for. When you specify the instance type, that is the only instance type that you
      * can launch onto that host.</p>
      */
     inline const Aws::String& GetInstanceType() const{ return m_instanceType; }
 
     /**
-     * <p>Specify the instance type that you want your Dedicated hosts to be configured
+     * <p>Specify the instance type that you want your Dedicated Hosts to be configured
      * for. When you specify the instance type, that is the only instance type that you
      * can launch onto that host.</p>
      */
     inline void SetInstanceType(const Aws::String& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
 
     /**
-     * <p>Specify the instance type that you want your Dedicated hosts to be configured
+     * <p>Specify the instance type that you want your Dedicated Hosts to be configured
      * for. When you specify the instance type, that is the only instance type that you
      * can launch onto that host.</p>
      */
     inline void SetInstanceType(Aws::String&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
 
     /**
-     * <p>Specify the instance type that you want your Dedicated hosts to be configured
+     * <p>Specify the instance type that you want your Dedicated Hosts to be configured
      * for. When you specify the instance type, that is the only instance type that you
      * can launch onto that host.</p>
      */
     inline void SetInstanceType(const char* value) { m_instanceTypeHasBeenSet = true; m_instanceType.assign(value); }
 
     /**
-     * <p>Specify the instance type that you want your Dedicated hosts to be configured
+     * <p>Specify the instance type that you want your Dedicated Hosts to be configured
      * for. When you specify the instance type, that is the only instance type that you
      * can launch onto that host.</p>
      */
     inline AllocateHostsRequest& WithInstanceType(const Aws::String& value) { SetInstanceType(value); return *this;}
 
     /**
-     * <p>Specify the instance type that you want your Dedicated hosts to be configured
+     * <p>Specify the instance type that you want your Dedicated Hosts to be configured
      * for. When you specify the instance type, that is the only instance type that you
      * can launch onto that host.</p>
      */
     inline AllocateHostsRequest& WithInstanceType(Aws::String&& value) { SetInstanceType(value); return *this;}
 
     /**
-     * <p>Specify the instance type that you want your Dedicated hosts to be configured
+     * <p>Specify the instance type that you want your Dedicated Hosts to be configured
      * for. When you specify the instance type, that is the only instance type that you
      * can launch onto that host.</p>
      */
     inline AllocateHostsRequest& WithInstanceType(const char* value) { SetInstanceType(value); return *this;}
 
     /**
-     * <p>The number of Dedicated hosts you want to allocate to your account with these
+     * <p>The number of Dedicated Hosts you want to allocate to your account with these
      * parameters.</p>
      */
     inline int GetQuantity() const{ return m_quantity; }
 
     /**
-     * <p>The number of Dedicated hosts you want to allocate to your account with these
+     * <p>The number of Dedicated Hosts you want to allocate to your account with these
      * parameters.</p>
      */
     inline void SetQuantity(int value) { m_quantityHasBeenSet = true; m_quantity = value; }
 
     /**
-     * <p>The number of Dedicated hosts you want to allocate to your account with these
+     * <p>The number of Dedicated Hosts you want to allocate to your account with these
      * parameters.</p>
      */
     inline AllocateHostsRequest& WithQuantity(int value) { SetQuantity(value); return *this;}
 
     /**
-     * <p>The Availability Zone for the Dedicated hosts.</p>
+     * <p>The Availability Zone for the Dedicated Hosts.</p>
      */
     inline const Aws::String& GetAvailabilityZone() const{ return m_availabilityZone; }
 
     /**
-     * <p>The Availability Zone for the Dedicated hosts.</p>
+     * <p>The Availability Zone for the Dedicated Hosts.</p>
      */
     inline void SetAvailabilityZone(const Aws::String& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = value; }
 
     /**
-     * <p>The Availability Zone for the Dedicated hosts.</p>
+     * <p>The Availability Zone for the Dedicated Hosts.</p>
      */
     inline void SetAvailabilityZone(Aws::String&& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = value; }
 
     /**
-     * <p>The Availability Zone for the Dedicated hosts.</p>
+     * <p>The Availability Zone for the Dedicated Hosts.</p>
      */
     inline void SetAvailabilityZone(const char* value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone.assign(value); }
 
     /**
-     * <p>The Availability Zone for the Dedicated hosts.</p>
+     * <p>The Availability Zone for the Dedicated Hosts.</p>
      */
     inline AllocateHostsRequest& WithAvailabilityZone(const Aws::String& value) { SetAvailabilityZone(value); return *this;}
 
     /**
-     * <p>The Availability Zone for the Dedicated hosts.</p>
+     * <p>The Availability Zone for the Dedicated Hosts.</p>
      */
     inline AllocateHostsRequest& WithAvailabilityZone(Aws::String&& value) { SetAvailabilityZone(value); return *this;}
 
     /**
-     * <p>The Availability Zone for the Dedicated hosts.</p>
+     * <p>The Availability Zone for the Dedicated Hosts.</p>
      */
     inline AllocateHostsRequest& WithAvailabilityZone(const char* value) { SetAvailabilityZone(value); return *this;}
 

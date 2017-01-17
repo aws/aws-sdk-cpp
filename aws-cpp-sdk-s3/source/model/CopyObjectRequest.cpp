@@ -46,6 +46,8 @@ CopyObjectRequest::CopyObjectRequest() :
     m_metadataHasBeenSet(false),
     m_metadataDirective(MetadataDirective::NOT_SET),
     m_metadataDirectiveHasBeenSet(false),
+    m_taggingDirective(TaggingDirective::NOT_SET),
+    m_taggingDirectiveHasBeenSet(false),
     m_serverSideEncryption(ServerSideEncryption::NOT_SET),
     m_serverSideEncryptionHasBeenSet(false),
     m_storageClass(StorageClass::NOT_SET),
@@ -59,7 +61,8 @@ CopyObjectRequest::CopyObjectRequest() :
     m_copySourceSSECustomerKeyHasBeenSet(false),
     m_copySourceSSECustomerKeyMD5HasBeenSet(false),
     m_requestPayer(RequestPayer::NOT_SET),
-    m_requestPayerHasBeenSet(false)
+    m_requestPayerHasBeenSet(false),
+    m_taggingHasBeenSet(false)
 {
 }
 
@@ -192,6 +195,11 @@ Aws::Http::HeaderValueCollection CopyObjectRequest::GetRequestSpecificHeaders() 
     headers.insert(Aws::Http::HeaderValuePair("x-amz-metadata-directive", MetadataDirectiveMapper::GetNameForMetadataDirective(m_metadataDirective)));
   }
 
+  if(m_taggingDirectiveHasBeenSet)
+  {
+    headers.insert(Aws::Http::HeaderValuePair("x-amz-tagging-directive", TaggingDirectiveMapper::GetNameForTaggingDirective(m_taggingDirective)));
+  }
+
   if(m_serverSideEncryptionHasBeenSet)
   {
     headers.insert(Aws::Http::HeaderValuePair("x-amz-server-side-encryption", ServerSideEncryptionMapper::GetNameForServerSideEncryption(m_serverSideEncryption)));
@@ -261,6 +269,13 @@ Aws::Http::HeaderValueCollection CopyObjectRequest::GetRequestSpecificHeaders() 
   if(m_requestPayerHasBeenSet)
   {
     headers.insert(Aws::Http::HeaderValuePair("x-amz-request-payer", RequestPayerMapper::GetNameForRequestPayer(m_requestPayer)));
+  }
+
+  if(m_taggingHasBeenSet)
+  {
+    ss << m_tagging;
+    headers.insert(Aws::Http::HeaderValuePair("x-amz-tagging", ss.str()));
+    ss.str("");
   }
 
   return headers;

@@ -33,7 +33,9 @@ namespace Model
 
   /**
    * <p>The parent object that contains your environment's configuration
-   * settings.</p>
+   * settings.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/Environment">AWS
+   * API Reference</a></p>
    */
   class AWS_LAMBDA_API Environment
   {

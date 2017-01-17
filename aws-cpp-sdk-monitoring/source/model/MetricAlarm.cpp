@@ -289,7 +289,7 @@ void MetricAlarm::OutputToStream(Aws::OStream& oStream, const char* location, un
 
   if(m_actionsEnabledHasBeenSet)
   {
-      oStream << location << index << locationValue << ".ActionsEnabled=" << m_actionsEnabled << "&";
+      oStream << location << index << locationValue << ".ActionsEnabled=" << std::boolalpha << m_actionsEnabled << "&";
   }
 
   if(m_oKActionsHasBeenSet)
@@ -417,7 +417,7 @@ void MetricAlarm::OutputToStream(Aws::OStream& oStream, const char* location) co
   }
   if(m_actionsEnabledHasBeenSet)
   {
-      oStream << location << ".ActionsEnabled=" << m_actionsEnabled << "&";
+      oStream << location << ".ActionsEnabled=" << std::boolalpha << m_actionsEnabled << "&";
   }
   if(m_oKActionsHasBeenSet)
   {

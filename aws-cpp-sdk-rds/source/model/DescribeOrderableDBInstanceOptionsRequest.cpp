@@ -59,7 +59,7 @@ Aws::String DescribeOrderableDBInstanceOptionsRequest::SerializePayload() const
 
   if(m_vpcHasBeenSet)
   {
-    ss << "Vpc=" << m_vpc << "&";
+    ss << "Vpc=" << std::boolalpha << m_vpc << "&";
   }
 
   if(m_filtersHasBeenSet)

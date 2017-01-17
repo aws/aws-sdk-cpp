@@ -195,7 +195,9 @@ namespace Model
          * <p>Adds or updates tags for the specified Amazon Kinesis stream. Each stream can
          * have up to 10 tags.</p> <p>If tags have already been assigned to the stream,
          * <code>AddTagsToStream</code> overwrites any existing tags that correspond to the
-         * specified tag keys.</p>
+         * specified tag keys.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/AddTagsToStream">AWS
+         * API Reference</a></p>
          */
         virtual Model::AddTagsToStreamOutcome AddTagsToStream(const Model::AddTagsToStreamRequest& request) const;
 
@@ -203,7 +205,9 @@ namespace Model
          * <p>Adds or updates tags for the specified Amazon Kinesis stream. Each stream can
          * have up to 10 tags.</p> <p>If tags have already been assigned to the stream,
          * <code>AddTagsToStream</code> overwrites any existing tags that correspond to the
-         * specified tag keys.</p>
+         * specified tag keys.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/AddTagsToStream">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -213,7 +217,9 @@ namespace Model
          * <p>Adds or updates tags for the specified Amazon Kinesis stream. Each stream can
          * have up to 10 tags.</p> <p>If tags have already been assigned to the stream,
          * <code>AddTagsToStream</code> overwrites any existing tags that correspond to the
-         * specified tag keys.</p>
+         * specified tag keys.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/AddTagsToStream">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -250,7 +256,10 @@ namespace Model
          * href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html">contact
          * AWS Support</a>.</p> <p>You can use <code>DescribeStream</code> to check the
          * stream status, which is returned in <code>StreamStatus</code>.</p> <p>
-         * <a>CreateStream</a> has a limit of 5 transactions per second per account.</p>
+         * <a>CreateStream</a> has a limit of 5 transactions per second per
+         * account.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/CreateStream">AWS
+         * API Reference</a></p>
          */
         virtual Model::CreateStreamOutcome CreateStream(const Model::CreateStreamRequest& request) const;
 
@@ -285,7 +294,10 @@ namespace Model
          * href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html">contact
          * AWS Support</a>.</p> <p>You can use <code>DescribeStream</code> to check the
          * stream status, which is returned in <code>StreamStatus</code>.</p> <p>
-         * <a>CreateStream</a> has a limit of 5 transactions per second per account.</p>
+         * <a>CreateStream</a> has a limit of 5 transactions per second per
+         * account.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/CreateStream">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -322,7 +334,10 @@ namespace Model
          * href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html">contact
          * AWS Support</a>.</p> <p>You can use <code>DescribeStream</code> to check the
          * stream status, which is returned in <code>StreamStatus</code>.</p> <p>
-         * <a>CreateStream</a> has a limit of 5 transactions per second per account.</p>
+         * <a>CreateStream</a> has a limit of 5 transactions per second per
+         * account.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/CreateStream">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -334,7 +349,9 @@ namespace Model
          * minimum value of a stream's retention period is 24 hours.</p> <p>This operation
          * may result in lost data. For example, if the stream's retention period is 48
          * hours and is decreased to 24 hours, any data already in the stream that is older
-         * than 24 hours is inaccessible.</p>
+         * than 24 hours is inaccessible.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/DecreaseStreamRetentionPeriod">AWS
+         * API Reference</a></p>
          */
         virtual Model::DecreaseStreamRetentionPeriodOutcome DecreaseStreamRetentionPeriod(const Model::DecreaseStreamRetentionPeriodRequest& request) const;
 
@@ -344,7 +361,9 @@ namespace Model
          * minimum value of a stream's retention period is 24 hours.</p> <p>This operation
          * may result in lost data. For example, if the stream's retention period is 48
          * hours and is decreased to 24 hours, any data already in the stream that is older
-         * than 24 hours is inaccessible.</p>
+         * than 24 hours is inaccessible.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/DecreaseStreamRetentionPeriod">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -356,7 +375,9 @@ namespace Model
          * minimum value of a stream's retention period is 24 hours.</p> <p>This operation
          * may result in lost data. For example, if the stream's retention period is 48
          * hours and is decreased to 24 hours, any data already in the stream that is older
-         * than 24 hours is inaccessible.</p>
+         * than 24 hours is inaccessible.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/DecreaseStreamRetentionPeriod">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -377,7 +398,9 @@ namespace Model
          * deleted, and any tags are dissociated from the stream.</p> <p>You can use the
          * <a>DescribeStream</a> operation to check the state of the stream, which is
          * returned in <code>StreamStatus</code>.</p> <p> <a>DeleteStream</a> has a limit
-         * of 5 transactions per second per account.</p>
+         * of 5 transactions per second per account.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/DeleteStream">AWS
+         * API Reference</a></p>
          */
         virtual Model::DeleteStreamOutcome DeleteStream(const Model::DeleteStreamRequest& request) const;
 
@@ -396,7 +419,9 @@ namespace Model
          * deleted, and any tags are dissociated from the stream.</p> <p>You can use the
          * <a>DescribeStream</a> operation to check the state of the stream, which is
          * returned in <code>StreamStatus</code>.</p> <p> <a>DeleteStream</a> has a limit
-         * of 5 transactions per second per account.</p>
+         * of 5 transactions per second per account.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/DeleteStream">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -417,7 +442,9 @@ namespace Model
          * deleted, and any tags are dissociated from the stream.</p> <p>You can use the
          * <a>DescribeStream</a> operation to check the state of the stream, which is
          * returned in <code>StreamStatus</code>.</p> <p> <a>DeleteStream</a> has a limit
-         * of 5 transactions per second per account.</p>
+         * of 5 transactions per second per account.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/DeleteStream">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -426,14 +453,20 @@ namespace Model
         /**
          * <p>Describes the shard limits and usage for the account.</p> <p>If you update
          * your account limits, the old limits might be returned for a few minutes.</p>
-         * <p>This operation has a limit of 1 transaction per second per account.</p>
+         * <p>This operation has a limit of 1 transaction per second per
+         * account.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/DescribeLimits">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeLimitsOutcome DescribeLimits(const Model::DescribeLimitsRequest& request) const;
 
         /**
          * <p>Describes the shard limits and usage for the account.</p> <p>If you update
          * your account limits, the old limits might be returned for a few minutes.</p>
-         * <p>This operation has a limit of 1 transaction per second per account.</p>
+         * <p>This operation has a limit of 1 transaction per second per
+         * account.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/DescribeLimits">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -442,7 +475,10 @@ namespace Model
         /**
          * <p>Describes the shard limits and usage for the account.</p> <p>If you update
          * your account limits, the old limits might be returned for a few minutes.</p>
-         * <p>This operation has a limit of 1 transaction per second per account.</p>
+         * <p>This operation has a limit of 1 transaction per second per
+         * account.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/DescribeLimits">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -463,7 +499,9 @@ namespace Model
          * Guide</i>.</p> <p>There are no guarantees about the chronological order shards
          * returned. To process shards in chronological order, use the ID of the parent
          * shard to track the lineage to the oldest shard.</p> <p>This operation has a
-         * limit of 10 transactions per second per account.</p>
+         * limit of 10 transactions per second per account.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/DescribeStream">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeStreamOutcome DescribeStream(const Model::DescribeStreamRequest& request) const;
 
@@ -482,7 +520,9 @@ namespace Model
          * Guide</i>.</p> <p>There are no guarantees about the chronological order shards
          * returned. To process shards in chronological order, use the ID of the parent
          * shard to track the lineage to the oldest shard.</p> <p>This operation has a
-         * limit of 10 transactions per second per account.</p>
+         * limit of 10 transactions per second per account.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/DescribeStream">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -503,26 +543,34 @@ namespace Model
          * Guide</i>.</p> <p>There are no guarantees about the chronological order shards
          * returned. To process shards in chronological order, use the ID of the parent
          * shard to track the lineage to the oldest shard.</p> <p>This operation has a
-         * limit of 10 transactions per second per account.</p>
+         * limit of 10 transactions per second per account.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/DescribeStream">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeStreamAsync(const Model::DescribeStreamRequest& request, const DescribeStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Disables enhanced monitoring.</p>
+         * <p>Disables enhanced monitoring.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/DisableEnhancedMonitoring">AWS
+         * API Reference</a></p>
          */
         virtual Model::DisableEnhancedMonitoringOutcome DisableEnhancedMonitoring(const Model::DisableEnhancedMonitoringRequest& request) const;
 
         /**
-         * <p>Disables enhanced monitoring.</p>
+         * <p>Disables enhanced monitoring.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/DisableEnhancedMonitoring">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DisableEnhancedMonitoringOutcomeCallable DisableEnhancedMonitoringCallable(const Model::DisableEnhancedMonitoringRequest& request) const;
 
         /**
-         * <p>Disables enhanced monitoring.</p>
+         * <p>Disables enhanced monitoring.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/DisableEnhancedMonitoring">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -530,13 +578,17 @@ namespace Model
 
         /**
          * <p>Enables enhanced Amazon Kinesis stream monitoring for shard-level
-         * metrics.</p>
+         * metrics.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/EnableEnhancedMonitoring">AWS
+         * API Reference</a></p>
          */
         virtual Model::EnableEnhancedMonitoringOutcome EnableEnhancedMonitoring(const Model::EnableEnhancedMonitoringRequest& request) const;
 
         /**
          * <p>Enables enhanced Amazon Kinesis stream monitoring for shard-level
-         * metrics.</p>
+         * metrics.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/EnableEnhancedMonitoring">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -544,7 +596,9 @@ namespace Model
 
         /**
          * <p>Enables enhanced Amazon Kinesis stream monitoring for shard-level
-         * metrics.</p>
+         * metrics.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/EnableEnhancedMonitoring">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -600,7 +654,9 @@ namespace Model
          * <a>PutRecords</a>). The timestamp has millisecond precision. There are no
          * guarantees about the timestamp accuracy, or that the timestamp is always
          * increasing. For example, records in a shard or across a stream might have
-         * timestamps that are out of order.</p>
+         * timestamps that are out of order.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/GetRecords">AWS
+         * API Reference</a></p>
          */
         virtual Model::GetRecordsOutcome GetRecords(const Model::GetRecordsRequest& request) const;
 
@@ -654,7 +710,9 @@ namespace Model
          * <a>PutRecords</a>). The timestamp has millisecond precision. There are no
          * guarantees about the timestamp accuracy, or that the timestamp is always
          * increasing. For example, records in a shard or across a stream might have
-         * timestamps that are out of order.</p>
+         * timestamps that are out of order.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/GetRecords">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -710,7 +768,9 @@ namespace Model
          * <a>PutRecords</a>). The timestamp has millisecond precision. There are no
          * guarantees about the timestamp accuracy, or that the timestamp is always
          * increasing. For example, records in a shard or across a stream might have
-         * timestamps that are out of order.</p>
+         * timestamps that are out of order.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/GetRecords">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -749,7 +809,10 @@ namespace Model
          * shard is closed, <a>GetShardIterator</a> returns a valid iterator for the last
          * sequence number of the shard. Note that a shard can be closed as a result of
          * using <a>SplitShard</a> or <a>MergeShards</a>.</p> <p> <a>GetShardIterator</a>
-         * has a limit of 5 transactions per second per account per open shard.</p>
+         * has a limit of 5 transactions per second per account per open
+         * shard.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/GetShardIterator">AWS
+         * API Reference</a></p>
          */
         virtual Model::GetShardIteratorOutcome GetShardIterator(const Model::GetShardIteratorRequest& request) const;
 
@@ -786,7 +849,10 @@ namespace Model
          * shard is closed, <a>GetShardIterator</a> returns a valid iterator for the last
          * sequence number of the shard. Note that a shard can be closed as a result of
          * using <a>SplitShard</a> or <a>MergeShards</a>.</p> <p> <a>GetShardIterator</a>
-         * has a limit of 5 transactions per second per account per open shard.</p>
+         * has a limit of 5 transactions per second per account per open
+         * shard.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/GetShardIterator">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -825,7 +891,10 @@ namespace Model
          * shard is closed, <a>GetShardIterator</a> returns a valid iterator for the last
          * sequence number of the shard. Note that a shard can be closed as a result of
          * using <a>SplitShard</a> or <a>MergeShards</a>.</p> <p> <a>GetShardIterator</a>
-         * has a limit of 5 transactions per second per account per open shard.</p>
+         * has a limit of 5 transactions per second per account per open
+         * shard.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/GetShardIterator">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -841,7 +910,9 @@ namespace Model
          * period) accessible after the operation has been called. For example, if a
          * stream's retention period is set to 24 hours and is increased to 168 hours, any
          * data that is older than 24 hours will remain inaccessible to consumer
-         * applications.</p>
+         * applications.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/IncreaseStreamRetentionPeriod">AWS
+         * API Reference</a></p>
          */
         virtual Model::IncreaseStreamRetentionPeriodOutcome IncreaseStreamRetentionPeriod(const Model::IncreaseStreamRetentionPeriodRequest& request) const;
 
@@ -855,7 +926,9 @@ namespace Model
          * period) accessible after the operation has been called. For example, if a
          * stream's retention period is set to 24 hours and is increased to 168 hours, any
          * data that is older than 24 hours will remain inaccessible to consumer
-         * applications.</p>
+         * applications.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/IncreaseStreamRetentionPeriod">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -871,7 +944,9 @@ namespace Model
          * period) accessible after the operation has been called. For example, if a
          * stream's retention period is set to 24 hours and is increased to 168 hours, any
          * data that is older than 24 hours will remain inaccessible to consumer
-         * applications.</p>
+         * applications.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/IncreaseStreamRetentionPeriod">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -891,7 +966,9 @@ namespace Model
          * stream names returned by the subsequent request is then added to the list. You
          * can continue this process until all the stream names have been collected in the
          * list. </p> <p> <a>ListStreams</a> has a limit of 5 transactions per second per
-         * account.</p>
+         * account.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/ListStreams">AWS
+         * API Reference</a></p>
          */
         virtual Model::ListStreamsOutcome ListStreams(const Model::ListStreamsRequest& request) const;
 
@@ -909,7 +986,9 @@ namespace Model
          * stream names returned by the subsequent request is then added to the list. You
          * can continue this process until all the stream names have been collected in the
          * list. </p> <p> <a>ListStreams</a> has a limit of 5 transactions per second per
-         * account.</p>
+         * account.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/ListStreams">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -929,26 +1008,37 @@ namespace Model
          * stream names returned by the subsequent request is then added to the list. You
          * can continue this process until all the stream names have been collected in the
          * list. </p> <p> <a>ListStreams</a> has a limit of 5 transactions per second per
-         * account.</p>
+         * account.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/ListStreams">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListStreamsAsync(const Model::ListStreamsRequest& request, const ListStreamsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists the tags for the specified Amazon Kinesis stream.</p>
+         * <p>Lists the tags for the specified Amazon Kinesis stream.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/ListTagsForStream">AWS
+         * API Reference</a></p>
          */
         virtual Model::ListTagsForStreamOutcome ListTagsForStream(const Model::ListTagsForStreamRequest& request) const;
 
         /**
-         * <p>Lists the tags for the specified Amazon Kinesis stream.</p>
+         * <p>Lists the tags for the specified Amazon Kinesis stream.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/ListTagsForStream">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListTagsForStreamOutcomeCallable ListTagsForStreamCallable(const Model::ListTagsForStreamRequest& request) const;
 
         /**
-         * <p>Lists the tags for the specified Amazon Kinesis stream.</p>
+         * <p>Lists the tags for the specified Amazon Kinesis stream.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/ListTagsForStream">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -987,7 +1077,9 @@ namespace Model
          * many streams in parallel using <a>CreateStream</a>, <a>DeleteStream</a>,
          * <code>MergeShards</code> or <a>SplitShard</a>, you will receive a
          * <code>LimitExceededException</code>. </p> <p> <code>MergeShards</code> has limit
-         * of 5 transactions per second per account.</p>
+         * of 5 transactions per second per account.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/MergeShards">AWS
+         * API Reference</a></p>
          */
         virtual Model::MergeShardsOutcome MergeShards(const Model::MergeShardsRequest& request) const;
 
@@ -1024,7 +1116,9 @@ namespace Model
          * many streams in parallel using <a>CreateStream</a>, <a>DeleteStream</a>,
          * <code>MergeShards</code> or <a>SplitShard</a>, you will receive a
          * <code>LimitExceededException</code>. </p> <p> <code>MergeShards</code> has limit
-         * of 5 transactions per second per account.</p>
+         * of 5 transactions per second per account.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/MergeShards">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1063,7 +1157,9 @@ namespace Model
          * many streams in parallel using <a>CreateStream</a>, <a>DeleteStream</a>,
          * <code>MergeShards</code> or <a>SplitShard</a>, you will receive a
          * <code>LimitExceededException</code>. </p> <p> <code>MergeShards</code> has limit
-         * of 5 transactions per second per account.</p>
+         * of 5 transactions per second per account.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/MergeShards">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1102,7 +1198,10 @@ namespace Model
          * insufficient provisioned throughput on the shard involved in the request,
          * <code>PutRecord</code> throws
          * <code>ProvisionedThroughputExceededException</code>. </p> <p>Data records are
-         * accessible for only 24 hours from the time that they are added to a stream.</p>
+         * accessible for only 24 hours from the time that they are added to a
+         * stream.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/PutRecord">AWS
+         * API Reference</a></p>
          */
         virtual Model::PutRecordOutcome PutRecord(const Model::PutRecordRequest& request) const;
 
@@ -1139,7 +1238,10 @@ namespace Model
          * insufficient provisioned throughput on the shard involved in the request,
          * <code>PutRecord</code> throws
          * <code>ProvisionedThroughputExceededException</code>. </p> <p>Data records are
-         * accessible for only 24 hours from the time that they are added to a stream.</p>
+         * accessible for only 24 hours from the time that they are added to a
+         * stream.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/PutRecord">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1178,7 +1280,10 @@ namespace Model
          * insufficient provisioned throughput on the shard involved in the request,
          * <code>PutRecord</code> throws
          * <code>ProvisionedThroughputExceededException</code>. </p> <p>Data records are
-         * accessible for only 24 hours from the time that they are added to a stream.</p>
+         * accessible for only 24 hours from the time that they are added to a
+         * stream.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/PutRecord">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1238,7 +1343,9 @@ namespace Model
          * Guide</i>.</p> <p>By default, data records are accessible for only 24 hours from
          * the time that they are added to an Amazon Kinesis stream. This retention period
          * can be modified using the <a>DecreaseStreamRetentionPeriod</a> and
-         * <a>IncreaseStreamRetentionPeriod</a> operations.</p>
+         * <a>IncreaseStreamRetentionPeriod</a> operations.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/PutRecords">AWS
+         * API Reference</a></p>
          */
         virtual Model::PutRecordsOutcome PutRecords(const Model::PutRecordsRequest& request) const;
 
@@ -1296,7 +1403,9 @@ namespace Model
          * Guide</i>.</p> <p>By default, data records are accessible for only 24 hours from
          * the time that they are added to an Amazon Kinesis stream. This retention period
          * can be modified using the <a>DecreaseStreamRetentionPeriod</a> and
-         * <a>IncreaseStreamRetentionPeriod</a> operations.</p>
+         * <a>IncreaseStreamRetentionPeriod</a> operations.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/PutRecords">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1356,7 +1465,9 @@ namespace Model
          * Guide</i>.</p> <p>By default, data records are accessible for only 24 hours from
          * the time that they are added to an Amazon Kinesis stream. This retention period
          * can be modified using the <a>DecreaseStreamRetentionPeriod</a> and
-         * <a>IncreaseStreamRetentionPeriod</a> operations.</p>
+         * <a>IncreaseStreamRetentionPeriod</a> operations.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/PutRecords">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1365,14 +1476,20 @@ namespace Model
         /**
          * <p>Removes tags from the specified Amazon Kinesis stream. Removed tags are
          * deleted and cannot be recovered after this operation successfully completes.</p>
-         * <p>If you specify a tag that does not exist, it is ignored.</p>
+         * <p>If you specify a tag that does not exist, it is ignored.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/RemoveTagsFromStream">AWS
+         * API Reference</a></p>
          */
         virtual Model::RemoveTagsFromStreamOutcome RemoveTagsFromStream(const Model::RemoveTagsFromStreamRequest& request) const;
 
         /**
          * <p>Removes tags from the specified Amazon Kinesis stream. Removed tags are
          * deleted and cannot be recovered after this operation successfully completes.</p>
-         * <p>If you specify a tag that does not exist, it is ignored.</p>
+         * <p>If you specify a tag that does not exist, it is ignored.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/RemoveTagsFromStream">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1381,7 +1498,10 @@ namespace Model
         /**
          * <p>Removes tags from the specified Amazon Kinesis stream. Removed tags are
          * deleted and cannot be recovered after this operation successfully completes.</p>
-         * <p>If you specify a tag that does not exist, it is ignored.</p>
+         * <p>If you specify a tag that does not exist, it is ignored.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/RemoveTagsFromStream">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1430,7 +1550,10 @@ namespace Model
          * AWS Support</a>.</p> <p>If you try to operate on too many streams simultaneously
          * using <a>CreateStream</a>, <a>DeleteStream</a>, <a>MergeShards</a>, and/or
          * <a>SplitShard</a>, you receive a <code>LimitExceededException</code>. </p> <p>
-         * <code>SplitShard</code> has limit of 5 transactions per second per account.</p>
+         * <code>SplitShard</code> has limit of 5 transactions per second per
+         * account.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/SplitShard">AWS
+         * API Reference</a></p>
          */
         virtual Model::SplitShardOutcome SplitShard(const Model::SplitShardRequest& request) const;
 
@@ -1477,7 +1600,10 @@ namespace Model
          * AWS Support</a>.</p> <p>If you try to operate on too many streams simultaneously
          * using <a>CreateStream</a>, <a>DeleteStream</a>, <a>MergeShards</a>, and/or
          * <a>SplitShard</a>, you receive a <code>LimitExceededException</code>. </p> <p>
-         * <code>SplitShard</code> has limit of 5 transactions per second per account.</p>
+         * <code>SplitShard</code> has limit of 5 transactions per second per
+         * account.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/SplitShard">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1526,7 +1652,10 @@ namespace Model
          * AWS Support</a>.</p> <p>If you try to operate on too many streams simultaneously
          * using <a>CreateStream</a>, <a>DeleteStream</a>, <a>MergeShards</a>, and/or
          * <a>SplitShard</a>, you receive a <code>LimitExceededException</code>. </p> <p>
-         * <code>SplitShard</code> has limit of 5 transactions per second per account.</p>
+         * <code>SplitShard</code> has limit of 5 transactions per second per
+         * account.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/SplitShard">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1552,7 +1681,9 @@ namespace Model
          * Limits</a> in the <i>Amazon Kinesis Streams Developer Guide</i>. If you need to
          * increase a limit, <a
          * href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html">contact
-         * AWS Support</a>.</p>
+         * AWS Support</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/UpdateShardCount">AWS
+         * API Reference</a></p>
          */
         virtual Model::UpdateShardCountOutcome UpdateShardCount(const Model::UpdateShardCountRequest& request) const;
 
@@ -1576,7 +1707,9 @@ namespace Model
          * Limits</a> in the <i>Amazon Kinesis Streams Developer Guide</i>. If you need to
          * increase a limit, <a
          * href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html">contact
-         * AWS Support</a>.</p>
+         * AWS Support</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/UpdateShardCount">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1602,7 +1735,9 @@ namespace Model
          * Limits</a> in the <i>Amazon Kinesis Streams Developer Guide</i>. If you need to
          * increase a limit, <a
          * href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html">contact
-         * AWS Support</a>.</p>
+         * AWS Support</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/UpdateShardCount">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */

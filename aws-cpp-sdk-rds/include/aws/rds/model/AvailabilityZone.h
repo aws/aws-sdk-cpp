@@ -34,7 +34,9 @@ namespace Model
   /**
    * <p>Contains Availability Zone information.</p> <p> This data type is used as an
    * element in the following data type:</p> <ul> <li> <p>
-   * <a>OrderableDBInstanceOption</a> </p> </li> </ul>
+   * <a>OrderableDBInstanceOption</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/AvailabilityZone">AWS
+   * API Reference</a></p>
    */
   class AWS_RDS_API AvailabilityZone
   {

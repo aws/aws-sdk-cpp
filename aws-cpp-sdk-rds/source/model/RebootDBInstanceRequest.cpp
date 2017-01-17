@@ -37,7 +37,7 @@ Aws::String RebootDBInstanceRequest::SerializePayload() const
 
   if(m_forceFailoverHasBeenSet)
   {
-    ss << "ForceFailover=" << m_forceFailover << "&";
+    ss << "ForceFailover=" << std::boolalpha << m_forceFailover << "&";
   }
 
   ss << "Version=2014-10-31";

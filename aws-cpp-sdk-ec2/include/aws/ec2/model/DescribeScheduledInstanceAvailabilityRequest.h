@@ -29,7 +29,10 @@ namespace Model
 {
 
   /**
-   * <p>Contains the parameters for DescribeScheduledInstanceAvailability.</p>
+   * <p>Contains the parameters for
+   * DescribeScheduledInstanceAvailability.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeScheduledInstanceAvailabilityRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_EC2_API DescribeScheduledInstanceAvailabilityRequest : public EC2Request
   {
@@ -210,78 +213,78 @@ namespace Model
     inline DescribeScheduledInstanceAvailabilityRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p><code>availability-zone</code> - The
-     * Availability Zone (for example, <code>us-west-2a</code>).</p> </li> <li>
-     * <p><code>instance-type</code> - The instance type (for example,
-     * <code>c4.large</code>).</p> </li> <li> <p><code>network-platform</code> - The
+     * <p>One or more filters.</p> <ul> <li> <p> <code>availability-zone</code> - The
+     * Availability Zone (for example, <code>us-west-2a</code>).</p> </li> <li> <p>
+     * <code>instance-type</code> - The instance type (for example,
+     * <code>c4.large</code>).</p> </li> <li> <p> <code>network-platform</code> - The
      * network platform (<code>EC2-Classic</code> or <code>EC2-VPC</code>).</p> </li>
-     * <li> <p><code>platform</code> - The platform (<code>Linux/UNIX</code> or
+     * <li> <p> <code>platform</code> - The platform (<code>Linux/UNIX</code> or
      * <code>Windows</code>).</p> </li> </ul>
      */
     inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p><code>availability-zone</code> - The
-     * Availability Zone (for example, <code>us-west-2a</code>).</p> </li> <li>
-     * <p><code>instance-type</code> - The instance type (for example,
-     * <code>c4.large</code>).</p> </li> <li> <p><code>network-platform</code> - The
+     * <p>One or more filters.</p> <ul> <li> <p> <code>availability-zone</code> - The
+     * Availability Zone (for example, <code>us-west-2a</code>).</p> </li> <li> <p>
+     * <code>instance-type</code> - The instance type (for example,
+     * <code>c4.large</code>).</p> </li> <li> <p> <code>network-platform</code> - The
      * network platform (<code>EC2-Classic</code> or <code>EC2-VPC</code>).</p> </li>
-     * <li> <p><code>platform</code> - The platform (<code>Linux/UNIX</code> or
+     * <li> <p> <code>platform</code> - The platform (<code>Linux/UNIX</code> or
      * <code>Windows</code>).</p> </li> </ul>
      */
     inline void SetFilters(const Aws::Vector<Filter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p><code>availability-zone</code> - The
-     * Availability Zone (for example, <code>us-west-2a</code>).</p> </li> <li>
-     * <p><code>instance-type</code> - The instance type (for example,
-     * <code>c4.large</code>).</p> </li> <li> <p><code>network-platform</code> - The
+     * <p>One or more filters.</p> <ul> <li> <p> <code>availability-zone</code> - The
+     * Availability Zone (for example, <code>us-west-2a</code>).</p> </li> <li> <p>
+     * <code>instance-type</code> - The instance type (for example,
+     * <code>c4.large</code>).</p> </li> <li> <p> <code>network-platform</code> - The
      * network platform (<code>EC2-Classic</code> or <code>EC2-VPC</code>).</p> </li>
-     * <li> <p><code>platform</code> - The platform (<code>Linux/UNIX</code> or
+     * <li> <p> <code>platform</code> - The platform (<code>Linux/UNIX</code> or
      * <code>Windows</code>).</p> </li> </ul>
      */
     inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p><code>availability-zone</code> - The
-     * Availability Zone (for example, <code>us-west-2a</code>).</p> </li> <li>
-     * <p><code>instance-type</code> - The instance type (for example,
-     * <code>c4.large</code>).</p> </li> <li> <p><code>network-platform</code> - The
+     * <p>One or more filters.</p> <ul> <li> <p> <code>availability-zone</code> - The
+     * Availability Zone (for example, <code>us-west-2a</code>).</p> </li> <li> <p>
+     * <code>instance-type</code> - The instance type (for example,
+     * <code>c4.large</code>).</p> </li> <li> <p> <code>network-platform</code> - The
      * network platform (<code>EC2-Classic</code> or <code>EC2-VPC</code>).</p> </li>
-     * <li> <p><code>platform</code> - The platform (<code>Linux/UNIX</code> or
+     * <li> <p> <code>platform</code> - The platform (<code>Linux/UNIX</code> or
      * <code>Windows</code>).</p> </li> </ul>
      */
     inline DescribeScheduledInstanceAvailabilityRequest& WithFilters(const Aws::Vector<Filter>& value) { SetFilters(value); return *this;}
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p><code>availability-zone</code> - The
-     * Availability Zone (for example, <code>us-west-2a</code>).</p> </li> <li>
-     * <p><code>instance-type</code> - The instance type (for example,
-     * <code>c4.large</code>).</p> </li> <li> <p><code>network-platform</code> - The
+     * <p>One or more filters.</p> <ul> <li> <p> <code>availability-zone</code> - The
+     * Availability Zone (for example, <code>us-west-2a</code>).</p> </li> <li> <p>
+     * <code>instance-type</code> - The instance type (for example,
+     * <code>c4.large</code>).</p> </li> <li> <p> <code>network-platform</code> - The
      * network platform (<code>EC2-Classic</code> or <code>EC2-VPC</code>).</p> </li>
-     * <li> <p><code>platform</code> - The platform (<code>Linux/UNIX</code> or
+     * <li> <p> <code>platform</code> - The platform (<code>Linux/UNIX</code> or
      * <code>Windows</code>).</p> </li> </ul>
      */
     inline DescribeScheduledInstanceAvailabilityRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(value); return *this;}
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p><code>availability-zone</code> - The
-     * Availability Zone (for example, <code>us-west-2a</code>).</p> </li> <li>
-     * <p><code>instance-type</code> - The instance type (for example,
-     * <code>c4.large</code>).</p> </li> <li> <p><code>network-platform</code> - The
+     * <p>One or more filters.</p> <ul> <li> <p> <code>availability-zone</code> - The
+     * Availability Zone (for example, <code>us-west-2a</code>).</p> </li> <li> <p>
+     * <code>instance-type</code> - The instance type (for example,
+     * <code>c4.large</code>).</p> </li> <li> <p> <code>network-platform</code> - The
      * network platform (<code>EC2-Classic</code> or <code>EC2-VPC</code>).</p> </li>
-     * <li> <p><code>platform</code> - The platform (<code>Linux/UNIX</code> or
+     * <li> <p> <code>platform</code> - The platform (<code>Linux/UNIX</code> or
      * <code>Windows</code>).</p> </li> </ul>
      */
     inline DescribeScheduledInstanceAvailabilityRequest& AddFilters(const Filter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p><code>availability-zone</code> - The
-     * Availability Zone (for example, <code>us-west-2a</code>).</p> </li> <li>
-     * <p><code>instance-type</code> - The instance type (for example,
-     * <code>c4.large</code>).</p> </li> <li> <p><code>network-platform</code> - The
+     * <p>One or more filters.</p> <ul> <li> <p> <code>availability-zone</code> - The
+     * Availability Zone (for example, <code>us-west-2a</code>).</p> </li> <li> <p>
+     * <code>instance-type</code> - The instance type (for example,
+     * <code>c4.large</code>).</p> </li> <li> <p> <code>network-platform</code> - The
      * network platform (<code>EC2-Classic</code> or <code>EC2-VPC</code>).</p> </li>
-     * <li> <p><code>platform</code> - The platform (<code>Linux/UNIX</code> or
+     * <li> <p> <code>platform</code> - The platform (<code>Linux/UNIX</code> or
      * <code>Windows</code>).</p> </li> </ul>
      */
     inline DescribeScheduledInstanceAvailabilityRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }

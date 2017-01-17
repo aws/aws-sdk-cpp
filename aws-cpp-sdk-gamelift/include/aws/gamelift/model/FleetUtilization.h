@@ -32,7 +32,9 @@ namespace Model
 
   /**
    * <p>Current status of fleet utilization, including the number of game and player
-   * sessions being hosted.</p>
+   * sessions being hosted.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/FleetUtilization">AWS
+   * API Reference</a></p>
    */
   class AWS_GAMELIFT_API FleetUtilization
   {

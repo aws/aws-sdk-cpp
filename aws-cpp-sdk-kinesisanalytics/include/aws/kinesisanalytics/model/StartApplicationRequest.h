@@ -27,7 +27,9 @@ namespace Model
 {
 
   /**
-   * <p/>
+   * <p/><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/StartApplicationRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_KINESISANALYTICS_API StartApplicationRequest : public KinesisAnalyticsRequest
   {

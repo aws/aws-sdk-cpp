@@ -26,7 +26,10 @@ namespace Model
 
   /**
    * <p>Container for the parameters to the <code><a>CreateDomain</a></code>
-   * operation. Specifies a name for the new search domain.</p>
+   * operation. Specifies a name for the new search domain.</p><p><h3>See Also:</h3> 
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/CreateDomainRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_CLOUDSEARCH_API CreateDomainRequest : public CloudSearchRequest
   {

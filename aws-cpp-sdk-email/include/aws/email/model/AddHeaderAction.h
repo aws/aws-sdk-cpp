@@ -36,7 +36,9 @@ namespace Model
    * email.</p> <p>For information about adding a header using a receipt rule, see
    * the <a
    * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-action-add-header.html">Amazon
-   * SES Developer Guide</a>.</p>
+   * SES Developer Guide</a>.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/AddHeaderAction">AWS
+   * API Reference</a></p>
    */
   class AWS_SES_API AddHeaderAction
   {

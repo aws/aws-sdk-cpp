@@ -36,7 +36,9 @@ namespace Model
    * The address you provide must be located within the serviceable area of your
    * region. Although no individual elements of the <code>Address</code> are
    * required, if the address is invalid or unsupported, then an exception is
-   * thrown.</p>
+   * thrown.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/Address">AWS
+   * API Reference</a></p>
    */
   class AWS_SNOWBALL_API Address
   {
@@ -341,79 +343,79 @@ namespace Model
     inline Address& WithStateOrProvince(const char* value) { SetStateOrProvince(value); return *this;}
 
     /**
-     * <p>The prefecture or district in an address that a Snowball is to be delivered
-     * to.</p>
+     * <p>The prefecture or district that the appliance will be shipped to.</p>
      */
     inline const Aws::String& GetPrefectureOrDistrict() const{ return m_prefectureOrDistrict; }
 
     /**
-     * <p>The prefecture or district in an address that a Snowball is to be delivered
-     * to.</p>
+     * <p>The prefecture or district that the appliance will be shipped to.</p>
      */
     inline void SetPrefectureOrDistrict(const Aws::String& value) { m_prefectureOrDistrictHasBeenSet = true; m_prefectureOrDistrict = value; }
 
     /**
-     * <p>The prefecture or district in an address that a Snowball is to be delivered
-     * to.</p>
+     * <p>The prefecture or district that the appliance will be shipped to.</p>
      */
     inline void SetPrefectureOrDistrict(Aws::String&& value) { m_prefectureOrDistrictHasBeenSet = true; m_prefectureOrDistrict = value; }
 
     /**
-     * <p>The prefecture or district in an address that a Snowball is to be delivered
-     * to.</p>
+     * <p>The prefecture or district that the appliance will be shipped to.</p>
      */
     inline void SetPrefectureOrDistrict(const char* value) { m_prefectureOrDistrictHasBeenSet = true; m_prefectureOrDistrict.assign(value); }
 
     /**
-     * <p>The prefecture or district in an address that a Snowball is to be delivered
-     * to.</p>
+     * <p>The prefecture or district that the appliance will be shipped to.</p>
      */
     inline Address& WithPrefectureOrDistrict(const Aws::String& value) { SetPrefectureOrDistrict(value); return *this;}
 
     /**
-     * <p>The prefecture or district in an address that a Snowball is to be delivered
-     * to.</p>
+     * <p>The prefecture or district that the appliance will be shipped to.</p>
      */
     inline Address& WithPrefectureOrDistrict(Aws::String&& value) { SetPrefectureOrDistrict(value); return *this;}
 
     /**
-     * <p>The prefecture or district in an address that a Snowball is to be delivered
-     * to.</p>
+     * <p>The prefecture or district that the appliance will be shipped to.</p>
      */
     inline Address& WithPrefectureOrDistrict(const char* value) { SetPrefectureOrDistrict(value); return *this;}
 
     /**
-     * <p>A landmark listed in an address that a Snowball is to be delivered to.</p>
+     * <p>The landmark identifying the address that the appliance will be shipped
+     * to.</p>
      */
     inline const Aws::String& GetLandmark() const{ return m_landmark; }
 
     /**
-     * <p>A landmark listed in an address that a Snowball is to be delivered to.</p>
+     * <p>The landmark identifying the address that the appliance will be shipped
+     * to.</p>
      */
     inline void SetLandmark(const Aws::String& value) { m_landmarkHasBeenSet = true; m_landmark = value; }
 
     /**
-     * <p>A landmark listed in an address that a Snowball is to be delivered to.</p>
+     * <p>The landmark identifying the address that the appliance will be shipped
+     * to.</p>
      */
     inline void SetLandmark(Aws::String&& value) { m_landmarkHasBeenSet = true; m_landmark = value; }
 
     /**
-     * <p>A landmark listed in an address that a Snowball is to be delivered to.</p>
+     * <p>The landmark identifying the address that the appliance will be shipped
+     * to.</p>
      */
     inline void SetLandmark(const char* value) { m_landmarkHasBeenSet = true; m_landmark.assign(value); }
 
     /**
-     * <p>A landmark listed in an address that a Snowball is to be delivered to.</p>
+     * <p>The landmark identifying the address that the appliance will be shipped
+     * to.</p>
      */
     inline Address& WithLandmark(const Aws::String& value) { SetLandmark(value); return *this;}
 
     /**
-     * <p>A landmark listed in an address that a Snowball is to be delivered to.</p>
+     * <p>The landmark identifying the address that the appliance will be shipped
+     * to.</p>
      */
     inline Address& WithLandmark(Aws::String&& value) { SetLandmark(value); return *this;}
 
     /**
-     * <p>A landmark listed in an address that a Snowball is to be delivered to.</p>
+     * <p>The landmark identifying the address that the appliance will be shipped
+     * to.</p>
      */
     inline Address& WithLandmark(const char* value) { SetLandmark(value); return *this;}
 

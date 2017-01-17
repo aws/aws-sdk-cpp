@@ -51,7 +51,9 @@ namespace Model
 {
 
   /**
-   * <p>Describes an instance.</p>
+   * <p>Describes an instance.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/Instance">AWS API
+   * Reference</a></p>
    */
   class AWS_EC2_API Instance
   {
@@ -159,107 +161,128 @@ namespace Model
     inline Instance& WithState(InstanceState&& value) { SetState(value); return *this;}
 
     /**
-     * <p>The private DNS name assigned to the instance. This DNS name can only be used
-     * inside the Amazon EC2 network. This name is not available until the instance
-     * enters the <code>running</code> state. For EC2-VPC, this name is only available
-     * if you've enabled DNS hostnames for your VPC.</p>
+     * <p>(IPv4 only) The private DNS hostname name assigned to the instance. This DNS
+     * hostname can only be used inside the Amazon EC2 network. This name is not
+     * available until the instance enters the <code>running</code> state. </p>
+     * <p>[EC2-VPC] The Amazon-provided DNS server will resolve Amazon-provided private
+     * DNS hostnames if you've enabled DNS resolution and DNS hostnames in your VPC. If
+     * you are not using the Amazon-provided DNS server in your VPC, your custom domain
+     * name servers must resolve the hostname as appropriate.</p>
      */
     inline const Aws::String& GetPrivateDnsName() const{ return m_privateDnsName; }
 
     /**
-     * <p>The private DNS name assigned to the instance. This DNS name can only be used
-     * inside the Amazon EC2 network. This name is not available until the instance
-     * enters the <code>running</code> state. For EC2-VPC, this name is only available
-     * if you've enabled DNS hostnames for your VPC.</p>
+     * <p>(IPv4 only) The private DNS hostname name assigned to the instance. This DNS
+     * hostname can only be used inside the Amazon EC2 network. This name is not
+     * available until the instance enters the <code>running</code> state. </p>
+     * <p>[EC2-VPC] The Amazon-provided DNS server will resolve Amazon-provided private
+     * DNS hostnames if you've enabled DNS resolution and DNS hostnames in your VPC. If
+     * you are not using the Amazon-provided DNS server in your VPC, your custom domain
+     * name servers must resolve the hostname as appropriate.</p>
      */
     inline void SetPrivateDnsName(const Aws::String& value) { m_privateDnsNameHasBeenSet = true; m_privateDnsName = value; }
 
     /**
-     * <p>The private DNS name assigned to the instance. This DNS name can only be used
-     * inside the Amazon EC2 network. This name is not available until the instance
-     * enters the <code>running</code> state. For EC2-VPC, this name is only available
-     * if you've enabled DNS hostnames for your VPC.</p>
+     * <p>(IPv4 only) The private DNS hostname name assigned to the instance. This DNS
+     * hostname can only be used inside the Amazon EC2 network. This name is not
+     * available until the instance enters the <code>running</code> state. </p>
+     * <p>[EC2-VPC] The Amazon-provided DNS server will resolve Amazon-provided private
+     * DNS hostnames if you've enabled DNS resolution and DNS hostnames in your VPC. If
+     * you are not using the Amazon-provided DNS server in your VPC, your custom domain
+     * name servers must resolve the hostname as appropriate.</p>
      */
     inline void SetPrivateDnsName(Aws::String&& value) { m_privateDnsNameHasBeenSet = true; m_privateDnsName = value; }
 
     /**
-     * <p>The private DNS name assigned to the instance. This DNS name can only be used
-     * inside the Amazon EC2 network. This name is not available until the instance
-     * enters the <code>running</code> state. For EC2-VPC, this name is only available
-     * if you've enabled DNS hostnames for your VPC.</p>
+     * <p>(IPv4 only) The private DNS hostname name assigned to the instance. This DNS
+     * hostname can only be used inside the Amazon EC2 network. This name is not
+     * available until the instance enters the <code>running</code> state. </p>
+     * <p>[EC2-VPC] The Amazon-provided DNS server will resolve Amazon-provided private
+     * DNS hostnames if you've enabled DNS resolution and DNS hostnames in your VPC. If
+     * you are not using the Amazon-provided DNS server in your VPC, your custom domain
+     * name servers must resolve the hostname as appropriate.</p>
      */
     inline void SetPrivateDnsName(const char* value) { m_privateDnsNameHasBeenSet = true; m_privateDnsName.assign(value); }
 
     /**
-     * <p>The private DNS name assigned to the instance. This DNS name can only be used
-     * inside the Amazon EC2 network. This name is not available until the instance
-     * enters the <code>running</code> state. For EC2-VPC, this name is only available
-     * if you've enabled DNS hostnames for your VPC.</p>
+     * <p>(IPv4 only) The private DNS hostname name assigned to the instance. This DNS
+     * hostname can only be used inside the Amazon EC2 network. This name is not
+     * available until the instance enters the <code>running</code> state. </p>
+     * <p>[EC2-VPC] The Amazon-provided DNS server will resolve Amazon-provided private
+     * DNS hostnames if you've enabled DNS resolution and DNS hostnames in your VPC. If
+     * you are not using the Amazon-provided DNS server in your VPC, your custom domain
+     * name servers must resolve the hostname as appropriate.</p>
      */
     inline Instance& WithPrivateDnsName(const Aws::String& value) { SetPrivateDnsName(value); return *this;}
 
     /**
-     * <p>The private DNS name assigned to the instance. This DNS name can only be used
-     * inside the Amazon EC2 network. This name is not available until the instance
-     * enters the <code>running</code> state. For EC2-VPC, this name is only available
-     * if you've enabled DNS hostnames for your VPC.</p>
+     * <p>(IPv4 only) The private DNS hostname name assigned to the instance. This DNS
+     * hostname can only be used inside the Amazon EC2 network. This name is not
+     * available until the instance enters the <code>running</code> state. </p>
+     * <p>[EC2-VPC] The Amazon-provided DNS server will resolve Amazon-provided private
+     * DNS hostnames if you've enabled DNS resolution and DNS hostnames in your VPC. If
+     * you are not using the Amazon-provided DNS server in your VPC, your custom domain
+     * name servers must resolve the hostname as appropriate.</p>
      */
     inline Instance& WithPrivateDnsName(Aws::String&& value) { SetPrivateDnsName(value); return *this;}
 
     /**
-     * <p>The private DNS name assigned to the instance. This DNS name can only be used
-     * inside the Amazon EC2 network. This name is not available until the instance
-     * enters the <code>running</code> state. For EC2-VPC, this name is only available
-     * if you've enabled DNS hostnames for your VPC.</p>
+     * <p>(IPv4 only) The private DNS hostname name assigned to the instance. This DNS
+     * hostname can only be used inside the Amazon EC2 network. This name is not
+     * available until the instance enters the <code>running</code> state. </p>
+     * <p>[EC2-VPC] The Amazon-provided DNS server will resolve Amazon-provided private
+     * DNS hostnames if you've enabled DNS resolution and DNS hostnames in your VPC. If
+     * you are not using the Amazon-provided DNS server in your VPC, your custom domain
+     * name servers must resolve the hostname as appropriate.</p>
      */
     inline Instance& WithPrivateDnsName(const char* value) { SetPrivateDnsName(value); return *this;}
 
     /**
-     * <p>The public DNS name assigned to the instance. This name is not available
-     * until the instance enters the <code>running</code> state. For EC2-VPC, this name
-     * is only available if you've enabled DNS hostnames for your VPC.</p>
+     * <p>(IPv4 only) The public DNS name assigned to the instance. This name is not
+     * available until the instance enters the <code>running</code> state. For EC2-VPC,
+     * this name is only available if you've enabled DNS hostnames for your VPC.</p>
      */
     inline const Aws::String& GetPublicDnsName() const{ return m_publicDnsName; }
 
     /**
-     * <p>The public DNS name assigned to the instance. This name is not available
-     * until the instance enters the <code>running</code> state. For EC2-VPC, this name
-     * is only available if you've enabled DNS hostnames for your VPC.</p>
+     * <p>(IPv4 only) The public DNS name assigned to the instance. This name is not
+     * available until the instance enters the <code>running</code> state. For EC2-VPC,
+     * this name is only available if you've enabled DNS hostnames for your VPC.</p>
      */
     inline void SetPublicDnsName(const Aws::String& value) { m_publicDnsNameHasBeenSet = true; m_publicDnsName = value; }
 
     /**
-     * <p>The public DNS name assigned to the instance. This name is not available
-     * until the instance enters the <code>running</code> state. For EC2-VPC, this name
-     * is only available if you've enabled DNS hostnames for your VPC.</p>
+     * <p>(IPv4 only) The public DNS name assigned to the instance. This name is not
+     * available until the instance enters the <code>running</code> state. For EC2-VPC,
+     * this name is only available if you've enabled DNS hostnames for your VPC.</p>
      */
     inline void SetPublicDnsName(Aws::String&& value) { m_publicDnsNameHasBeenSet = true; m_publicDnsName = value; }
 
     /**
-     * <p>The public DNS name assigned to the instance. This name is not available
-     * until the instance enters the <code>running</code> state. For EC2-VPC, this name
-     * is only available if you've enabled DNS hostnames for your VPC.</p>
+     * <p>(IPv4 only) The public DNS name assigned to the instance. This name is not
+     * available until the instance enters the <code>running</code> state. For EC2-VPC,
+     * this name is only available if you've enabled DNS hostnames for your VPC.</p>
      */
     inline void SetPublicDnsName(const char* value) { m_publicDnsNameHasBeenSet = true; m_publicDnsName.assign(value); }
 
     /**
-     * <p>The public DNS name assigned to the instance. This name is not available
-     * until the instance enters the <code>running</code> state. For EC2-VPC, this name
-     * is only available if you've enabled DNS hostnames for your VPC.</p>
+     * <p>(IPv4 only) The public DNS name assigned to the instance. This name is not
+     * available until the instance enters the <code>running</code> state. For EC2-VPC,
+     * this name is only available if you've enabled DNS hostnames for your VPC.</p>
      */
     inline Instance& WithPublicDnsName(const Aws::String& value) { SetPublicDnsName(value); return *this;}
 
     /**
-     * <p>The public DNS name assigned to the instance. This name is not available
-     * until the instance enters the <code>running</code> state. For EC2-VPC, this name
-     * is only available if you've enabled DNS hostnames for your VPC.</p>
+     * <p>(IPv4 only) The public DNS name assigned to the instance. This name is not
+     * available until the instance enters the <code>running</code> state. For EC2-VPC,
+     * this name is only available if you've enabled DNS hostnames for your VPC.</p>
      */
     inline Instance& WithPublicDnsName(Aws::String&& value) { SetPublicDnsName(value); return *this;}
 
     /**
-     * <p>The public DNS name assigned to the instance. This name is not available
-     * until the instance enters the <code>running</code> state. For EC2-VPC, this name
-     * is only available if you've enabled DNS hostnames for your VPC.</p>
+     * <p>(IPv4 only) The public DNS name assigned to the instance. This name is not
+     * available until the instance enters the <code>running</code> state. For EC2-VPC,
+     * this name is only available if you've enabled DNS hostnames for your VPC.</p>
      */
     inline Instance& WithPublicDnsName(const char* value) { SetPublicDnsName(value); return *this;}
 
@@ -571,27 +594,27 @@ namespace Model
     inline Instance& WithPlatform(PlatformValues&& value) { SetPlatform(value); return *this;}
 
     /**
-     * <p>The monitoring information for the instance.</p>
+     * <p>The monitoring for the instance.</p>
      */
     inline const Monitoring& GetMonitoring() const{ return m_monitoring; }
 
     /**
-     * <p>The monitoring information for the instance.</p>
+     * <p>The monitoring for the instance.</p>
      */
     inline void SetMonitoring(const Monitoring& value) { m_monitoringHasBeenSet = true; m_monitoring = value; }
 
     /**
-     * <p>The monitoring information for the instance.</p>
+     * <p>The monitoring for the instance.</p>
      */
     inline void SetMonitoring(Monitoring&& value) { m_monitoringHasBeenSet = true; m_monitoring = value; }
 
     /**
-     * <p>The monitoring information for the instance.</p>
+     * <p>The monitoring for the instance.</p>
      */
     inline Instance& WithMonitoring(const Monitoring& value) { SetMonitoring(value); return *this;}
 
     /**
-     * <p>The monitoring information for the instance.</p>
+     * <p>The monitoring for the instance.</p>
      */
     inline Instance& WithMonitoring(Monitoring&& value) { SetMonitoring(value); return *this;}
 
@@ -666,72 +689,72 @@ namespace Model
     inline Instance& WithVpcId(const char* value) { SetVpcId(value); return *this;}
 
     /**
-     * <p>The private IP address assigned to the instance.</p>
+     * <p>The private IPv4 address assigned to the instance.</p>
      */
     inline const Aws::String& GetPrivateIpAddress() const{ return m_privateIpAddress; }
 
     /**
-     * <p>The private IP address assigned to the instance.</p>
+     * <p>The private IPv4 address assigned to the instance.</p>
      */
     inline void SetPrivateIpAddress(const Aws::String& value) { m_privateIpAddressHasBeenSet = true; m_privateIpAddress = value; }
 
     /**
-     * <p>The private IP address assigned to the instance.</p>
+     * <p>The private IPv4 address assigned to the instance.</p>
      */
     inline void SetPrivateIpAddress(Aws::String&& value) { m_privateIpAddressHasBeenSet = true; m_privateIpAddress = value; }
 
     /**
-     * <p>The private IP address assigned to the instance.</p>
+     * <p>The private IPv4 address assigned to the instance.</p>
      */
     inline void SetPrivateIpAddress(const char* value) { m_privateIpAddressHasBeenSet = true; m_privateIpAddress.assign(value); }
 
     /**
-     * <p>The private IP address assigned to the instance.</p>
+     * <p>The private IPv4 address assigned to the instance.</p>
      */
     inline Instance& WithPrivateIpAddress(const Aws::String& value) { SetPrivateIpAddress(value); return *this;}
 
     /**
-     * <p>The private IP address assigned to the instance.</p>
+     * <p>The private IPv4 address assigned to the instance.</p>
      */
     inline Instance& WithPrivateIpAddress(Aws::String&& value) { SetPrivateIpAddress(value); return *this;}
 
     /**
-     * <p>The private IP address assigned to the instance.</p>
+     * <p>The private IPv4 address assigned to the instance.</p>
      */
     inline Instance& WithPrivateIpAddress(const char* value) { SetPrivateIpAddress(value); return *this;}
 
     /**
-     * <p>The public IP address assigned to the instance, if applicable.</p>
+     * <p>The public IPv4 address assigned to the instance, if applicable.</p>
      */
     inline const Aws::String& GetPublicIpAddress() const{ return m_publicIpAddress; }
 
     /**
-     * <p>The public IP address assigned to the instance, if applicable.</p>
+     * <p>The public IPv4 address assigned to the instance, if applicable.</p>
      */
     inline void SetPublicIpAddress(const Aws::String& value) { m_publicIpAddressHasBeenSet = true; m_publicIpAddress = value; }
 
     /**
-     * <p>The public IP address assigned to the instance, if applicable.</p>
+     * <p>The public IPv4 address assigned to the instance, if applicable.</p>
      */
     inline void SetPublicIpAddress(Aws::String&& value) { m_publicIpAddressHasBeenSet = true; m_publicIpAddress = value; }
 
     /**
-     * <p>The public IP address assigned to the instance, if applicable.</p>
+     * <p>The public IPv4 address assigned to the instance, if applicable.</p>
      */
     inline void SetPublicIpAddress(const char* value) { m_publicIpAddressHasBeenSet = true; m_publicIpAddress.assign(value); }
 
     /**
-     * <p>The public IP address assigned to the instance, if applicable.</p>
+     * <p>The public IPv4 address assigned to the instance, if applicable.</p>
      */
     inline Instance& WithPublicIpAddress(const Aws::String& value) { SetPublicIpAddress(value); return *this;}
 
     /**
-     * <p>The public IP address assigned to the instance, if applicable.</p>
+     * <p>The public IPv4 address assigned to the instance, if applicable.</p>
      */
     inline Instance& WithPublicIpAddress(Aws::String&& value) { SetPublicIpAddress(value); return *this;}
 
     /**
-     * <p>The public IP address assigned to the instance, if applicable.</p>
+     * <p>The public IPv4 address assigned to the instance, if applicable.</p>
      */
     inline Instance& WithPublicIpAddress(const char* value) { SetPublicIpAddress(value); return *this;}
 
@@ -1235,39 +1258,61 @@ namespace Model
     inline Instance& WithEbsOptimized(bool value) { SetEbsOptimized(value); return *this;}
 
     /**
-     * <p>Specifies whether enhanced networking is enabled. </p>
+     * <p>Specifies whether enhanced networking with the Intel 82599 Virtual Function
+     * interface is enabled.</p>
      */
     inline const Aws::String& GetSriovNetSupport() const{ return m_sriovNetSupport; }
 
     /**
-     * <p>Specifies whether enhanced networking is enabled. </p>
+     * <p>Specifies whether enhanced networking with the Intel 82599 Virtual Function
+     * interface is enabled.</p>
      */
     inline void SetSriovNetSupport(const Aws::String& value) { m_sriovNetSupportHasBeenSet = true; m_sriovNetSupport = value; }
 
     /**
-     * <p>Specifies whether enhanced networking is enabled. </p>
+     * <p>Specifies whether enhanced networking with the Intel 82599 Virtual Function
+     * interface is enabled.</p>
      */
     inline void SetSriovNetSupport(Aws::String&& value) { m_sriovNetSupportHasBeenSet = true; m_sriovNetSupport = value; }
 
     /**
-     * <p>Specifies whether enhanced networking is enabled. </p>
+     * <p>Specifies whether enhanced networking with the Intel 82599 Virtual Function
+     * interface is enabled.</p>
      */
     inline void SetSriovNetSupport(const char* value) { m_sriovNetSupportHasBeenSet = true; m_sriovNetSupport.assign(value); }
 
     /**
-     * <p>Specifies whether enhanced networking is enabled. </p>
+     * <p>Specifies whether enhanced networking with the Intel 82599 Virtual Function
+     * interface is enabled.</p>
      */
     inline Instance& WithSriovNetSupport(const Aws::String& value) { SetSriovNetSupport(value); return *this;}
 
     /**
-     * <p>Specifies whether enhanced networking is enabled. </p>
+     * <p>Specifies whether enhanced networking with the Intel 82599 Virtual Function
+     * interface is enabled.</p>
      */
     inline Instance& WithSriovNetSupport(Aws::String&& value) { SetSriovNetSupport(value); return *this;}
 
     /**
-     * <p>Specifies whether enhanced networking is enabled. </p>
+     * <p>Specifies whether enhanced networking with the Intel 82599 Virtual Function
+     * interface is enabled.</p>
      */
     inline Instance& WithSriovNetSupport(const char* value) { SetSriovNetSupport(value); return *this;}
+
+    /**
+     * <p>Specifies whether enhanced networking with ENA is enabled.</p>
+     */
+    inline bool GetEnaSupport() const{ return m_enaSupport; }
+
+    /**
+     * <p>Specifies whether enhanced networking with ENA is enabled.</p>
+     */
+    inline void SetEnaSupport(bool value) { m_enaSupportHasBeenSet = true; m_enaSupport = value; }
+
+    /**
+     * <p>Specifies whether enhanced networking with ENA is enabled.</p>
+     */
+    inline Instance& WithEnaSupport(bool value) { SetEnaSupport(value); return *this;}
 
   private:
     Aws::String m_instanceId;
@@ -1344,6 +1389,8 @@ namespace Model
     bool m_ebsOptimizedHasBeenSet;
     Aws::String m_sriovNetSupport;
     bool m_sriovNetSupportHasBeenSet;
+    bool m_enaSupport;
+    bool m_enaSupportHasBeenSet;
   };
 
 } // namespace Model

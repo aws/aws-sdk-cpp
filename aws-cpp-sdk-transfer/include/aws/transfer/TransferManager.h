@@ -35,6 +35,7 @@ namespace Aws
         typedef std::function<void(const TransferManager*, const TransferHandle&)> DownloadProgressCallback;
         typedef std::function<void(const TransferManager*, const TransferHandle&)> TransferStatusUpdatedCallback;
         typedef std::function<void(const TransferManager*, const TransferHandle&, const Aws::Client::AWSError<Aws::S3::S3Errors>&)> ErrorCallback;
+        typedef std::function<void(const TransferManager*, const std::shared_ptr<TransferHandle>&)> TransferInitiatedCallback;
         typedef std::function<Aws::IOStream*(void)> CreateDownloadStreamCallback;
 
         const uint64_t MB5 = 5 * 1024 * 1024;
@@ -108,6 +109,10 @@ namespace Aws
              */
             TransferStatusUpdatedCallback transferStatusUpdatedCallback;
             /**
+             * Callback to receive initiated transfers for the directory operations.
+             */
+            TransferInitiatedCallback transferInitiatedCallback;
+            /**
              * Callback to receive all errors that are thrown over the course of a transfer.
              */
             ErrorCallback errorCallback;
@@ -168,6 +173,28 @@ namespace Aws
              */
             void AbortMultipartUpload(const std::shared_ptr<TransferHandle>& inProgressHandle);
 
+            /**
+             * Uploads entire contents of directory to Amazon S3 bucket and stores them in a directory starting at prefix. This is an asynchronous method. You will receive notifications
+             * that an upload has started via the transferInitiatedCallback callback function in your configuration. If you do not set this callback, then you will not be able to handle
+             * the file transfers.
+             *
+             * directory: the absolute directory on disk to upload
+             * bucketName: the name of the S3 bucket to upload to
+             * prefix: the prefix to put on all objects uploaded (e.g. put them in x directory in the bucket).
+             */
+            void UploadDirectory(const Aws::String& directory, const Aws::String& bucketName, const Aws::String& prefix, const Aws::Map<Aws::String, Aws::String>& metadata);
+
+            /**
+            * Downloads entire contents of an Amazon S3 bucket starting at prefix stores them in a directory (not including the prefix). This is an asynchronous method. You will receive notifications
+            * that a download has started via the transferInitiatedCallback callback function in your configuration. If you do not set this callback, then you will not be able to handle
+            * the file transfers. If an error occurs prior to the transfer being initiated (e.g. list objects fails, then an error will be passed through the errorCallback).
+            *
+            * directory: the absolute directory on disk to download to
+            * bucketName: the name of the S3 bucket to upload to
+            * prefix: the prefix in the bucket to use as the root directory (e.g. download all objects at x prefix in S3 and then store them starting in directory with the prefix stripped out).
+            */
+            void DownloadToDirectory(const Aws::String& directory, const Aws::String& bucketName, const Aws::String& prefix = Aws::String());
+
         private:
             void DoMultipartUpload(const std::shared_ptr<Aws::IOStream>& streamToPut, const std::shared_ptr<TransferHandle>& handle);
             void DoSinglePartUpload(const std::shared_ptr<Aws::IOStream>& streamToPut, const std::shared_ptr<TransferHandle>& handle);
@@ -177,12 +204,15 @@ namespace Aws
 
             void HandleUploadPartResponse(const Aws::S3::S3Client*, const Aws::S3::Model::UploadPartRequest&, const Aws::S3::Model::UploadPartOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&);
             void HandlePutObjectResponse(const Aws::S3::S3Client*, const Aws::S3::Model::PutObjectRequest&, const Aws::S3::Model::PutObjectOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&);
+            void HandleListObjectsResponse(const Aws::S3::S3Client*, const Aws::S3::Model::ListObjectsV2Request&, const Aws::S3::Model::ListObjectsV2Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&);
 
             TransferStatus DetermineIfFailedOrCanceled(const TransferHandle&) const;
             void TriggerUploadProgressCallback(const TransferHandle&) const;
             void TriggerDownloadProgressCallback(const TransferHandle&) const;
             void TriggerTransferStatusUpdatedCallback(const TransferHandle&) const;
             void TriggerErrorCallback(const TransferHandle&, const Aws::Client::AWSError<Aws::S3::S3Errors>& error)const;
+
+            static Aws::String DetermineFilePath(const Aws::String& directory, const Aws::String& prefix, const Aws::String& keyName);
 
             Aws::Utils::ExclusiveOwnershipResourceManager<Aws::Utils::Array<uint8_t>*> m_bufferManager;
             TransferManagerConfiguration m_transferConfig;

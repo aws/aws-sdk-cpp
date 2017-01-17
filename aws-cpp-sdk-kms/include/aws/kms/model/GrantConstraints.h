@@ -37,7 +37,10 @@ namespace Model
    * the operations permitted by the grant only when a specified encryption context
    * is present. For more information about encryption context, see <a
    * href="http://docs.aws.amazon.com/kms/latest/developerguide/encryption-context.html">Encryption
-   * Context</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
+   * Context</a> in the <i>AWS Key Management Service Developer
+   * Guide</i>.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/GrantConstraints">AWS
+   * API Reference</a></p>
    */
   class AWS_KMS_API GrantConstraints
   {

@@ -27,7 +27,9 @@ namespace Model
 {
 
   /**
-   * <p>Represents an update integration request.</p>
+   * <p>Represents an update integration request.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateIntegrationRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_APIGATEWAY_API UpdateIntegrationRequest : public APIGatewayRequest
   {

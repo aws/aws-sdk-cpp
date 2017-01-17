@@ -14,6 +14,7 @@
 */
 #include <aws/dms/model/ImportCertificateRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/HashingUtils.h>
 
 #include <utility>
 
@@ -23,7 +24,8 @@ using namespace Aws::Utils;
 
 ImportCertificateRequest::ImportCertificateRequest() : 
     m_certificateIdentifierHasBeenSet(false),
-    m_certificatePemHasBeenSet(false)
+    m_certificatePemHasBeenSet(false),
+    m_certificateWalletHasBeenSet(false)
 {
 }
 
@@ -41,6 +43,11 @@ Aws::String ImportCertificateRequest::SerializePayload() const
   {
    payload.WithString("CertificatePem", m_certificatePem);
 
+  }
+
+  if(m_certificateWalletHasBeenSet)
+  {
+   payload.WithString("CertificateWallet", HashingUtils::Base64Encode(m_certificateWallet));
   }
 
   return payload.WriteReadable();

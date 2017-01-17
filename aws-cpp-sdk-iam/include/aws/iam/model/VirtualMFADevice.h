@@ -35,7 +35,10 @@ namespace Model
 {
 
   /**
-   * <p>Contains information about a virtual MFA device.</p>
+   * <p>Contains information about a virtual MFA device.</p><p><h3>See Also:</h3>  
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/VirtualMFADevice">AWS
+   * API Reference</a></p>
    */
   class AWS_IAM_API VirtualMFADevice
   {
@@ -84,35 +87,35 @@ namespace Model
 
     /**
      * <p> The Base32 seed defined as specified in <a
-     * href="http://www.ietf.org/rfc/rfc3548.txt">RFC3548</a>. The
+     * href="https://tools.ietf.org/html/rfc3548.txt">RFC3548</a>. The
      * <code>Base32StringSeed</code> is Base64-encoded. </p>
      */
     inline const Aws::Utils::ByteBuffer& GetBase32StringSeed() const{ return m_base32StringSeed; }
 
     /**
      * <p> The Base32 seed defined as specified in <a
-     * href="http://www.ietf.org/rfc/rfc3548.txt">RFC3548</a>. The
+     * href="https://tools.ietf.org/html/rfc3548.txt">RFC3548</a>. The
      * <code>Base32StringSeed</code> is Base64-encoded. </p>
      */
     inline void SetBase32StringSeed(const Aws::Utils::ByteBuffer& value) { m_base32StringSeedHasBeenSet = true; m_base32StringSeed = value; }
 
     /**
      * <p> The Base32 seed defined as specified in <a
-     * href="http://www.ietf.org/rfc/rfc3548.txt">RFC3548</a>. The
+     * href="https://tools.ietf.org/html/rfc3548.txt">RFC3548</a>. The
      * <code>Base32StringSeed</code> is Base64-encoded. </p>
      */
     inline void SetBase32StringSeed(Aws::Utils::ByteBuffer&& value) { m_base32StringSeedHasBeenSet = true; m_base32StringSeed = value; }
 
     /**
      * <p> The Base32 seed defined as specified in <a
-     * href="http://www.ietf.org/rfc/rfc3548.txt">RFC3548</a>. The
+     * href="https://tools.ietf.org/html/rfc3548.txt">RFC3548</a>. The
      * <code>Base32StringSeed</code> is Base64-encoded. </p>
      */
     inline VirtualMFADevice& WithBase32StringSeed(const Aws::Utils::ByteBuffer& value) { SetBase32StringSeed(value); return *this;}
 
     /**
      * <p> The Base32 seed defined as specified in <a
-     * href="http://www.ietf.org/rfc/rfc3548.txt">RFC3548</a>. The
+     * href="https://tools.ietf.org/html/rfc3548.txt">RFC3548</a>. The
      * <code>Base32StringSeed</code> is Base64-encoded. </p>
      */
     inline VirtualMFADevice& WithBase32StringSeed(Aws::Utils::ByteBuffer&& value) { SetBase32StringSeed(value); return *this;}
@@ -167,19 +170,29 @@ namespace Model
      */
     inline VirtualMFADevice& WithQRCodePNG(Aws::Utils::ByteBuffer&& value) { SetQRCodePNG(value); return *this;}
 
-    
+    /**
+     * <p>The user to whom the MFA device is assigned.</p>
+     */
     inline const User& GetUser() const{ return m_user; }
 
-    
+    /**
+     * <p>The user to whom the MFA device is assigned.</p>
+     */
     inline void SetUser(const User& value) { m_userHasBeenSet = true; m_user = value; }
 
-    
+    /**
+     * <p>The user to whom the MFA device is assigned.</p>
+     */
     inline void SetUser(User&& value) { m_userHasBeenSet = true; m_user = value; }
 
-    
+    /**
+     * <p>The user to whom the MFA device is assigned.</p>
+     */
     inline VirtualMFADevice& WithUser(const User& value) { SetUser(value); return *this;}
 
-    
+    /**
+     * <p>The user to whom the MFA device is assigned.</p>
+     */
     inline VirtualMFADevice& WithUser(User&& value) { SetUser(value); return *this;}
 
     /**

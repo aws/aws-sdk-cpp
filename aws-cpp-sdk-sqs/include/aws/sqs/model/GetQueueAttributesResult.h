@@ -36,7 +36,9 @@ namespace SQS
 namespace Model
 {
   /**
-   * <p>A list of returned queue attributes.</p>
+   * <p>A list of returned queue attributes.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/GetQueueAttributesResult">AWS
+   * API Reference</a></p>
    */
   class AWS_SQS_API GetQueueAttributesResult
   {
@@ -46,57 +48,57 @@ namespace Model
     GetQueueAttributesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
     /**
-     * <p>A map of attributes to the respective values.</p>
+     * <p>A map of attributes to their respective values.</p>
      */
     inline const Aws::Map<QueueAttributeName, Aws::String>& GetAttributes() const{ return m_attributes; }
 
     /**
-     * <p>A map of attributes to the respective values.</p>
+     * <p>A map of attributes to their respective values.</p>
      */
     inline void SetAttributes(const Aws::Map<QueueAttributeName, Aws::String>& value) { m_attributes = value; }
 
     /**
-     * <p>A map of attributes to the respective values.</p>
+     * <p>A map of attributes to their respective values.</p>
      */
     inline void SetAttributes(Aws::Map<QueueAttributeName, Aws::String>&& value) { m_attributes = value; }
 
     /**
-     * <p>A map of attributes to the respective values.</p>
+     * <p>A map of attributes to their respective values.</p>
      */
     inline GetQueueAttributesResult& WithAttributes(const Aws::Map<QueueAttributeName, Aws::String>& value) { SetAttributes(value); return *this;}
 
     /**
-     * <p>A map of attributes to the respective values.</p>
+     * <p>A map of attributes to their respective values.</p>
      */
     inline GetQueueAttributesResult& WithAttributes(Aws::Map<QueueAttributeName, Aws::String>&& value) { SetAttributes(value); return *this;}
 
     /**
-     * <p>A map of attributes to the respective values.</p>
+     * <p>A map of attributes to their respective values.</p>
      */
     inline GetQueueAttributesResult& AddAttributes(const QueueAttributeName& key, const Aws::String& value) { m_attributes[key] = value; return *this; }
 
     /**
-     * <p>A map of attributes to the respective values.</p>
+     * <p>A map of attributes to their respective values.</p>
      */
     inline GetQueueAttributesResult& AddAttributes(QueueAttributeName&& key, const Aws::String& value) { m_attributes[key] = value; return *this; }
 
     /**
-     * <p>A map of attributes to the respective values.</p>
+     * <p>A map of attributes to their respective values.</p>
      */
     inline GetQueueAttributesResult& AddAttributes(const QueueAttributeName& key, Aws::String&& value) { m_attributes[key] = value; return *this; }
 
     /**
-     * <p>A map of attributes to the respective values.</p>
+     * <p>A map of attributes to their respective values.</p>
      */
     inline GetQueueAttributesResult& AddAttributes(QueueAttributeName&& key, Aws::String&& value) { m_attributes[key] = value; return *this; }
 
     /**
-     * <p>A map of attributes to the respective values.</p>
+     * <p>A map of attributes to their respective values.</p>
      */
     inline GetQueueAttributesResult& AddAttributes(QueueAttributeName&& key, const char* value) { m_attributes[key] = value; return *this; }
 
     /**
-     * <p>A map of attributes to the respective values.</p>
+     * <p>A map of attributes to their respective values.</p>
      */
     inline GetQueueAttributesResult& AddAttributes(const QueueAttributeName& key, const char* value) { m_attributes[key] = value; return *this; }
 

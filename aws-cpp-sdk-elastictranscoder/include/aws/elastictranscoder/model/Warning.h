@@ -34,7 +34,10 @@ namespace Model
    * <p>Elastic Transcoder returns a warning if the resources used by your pipeline
    * are not in the same region as the pipeline.</p> <p>Using resources in the same
    * region, such as your Amazon S3 buckets, Amazon SNS notification topics, and AWS
-   * KMS key, reduces processing time and prevents cross-regional charges.</p>
+   * KMS key, reduces processing time and prevents cross-regional
+   * charges.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/Warning">AWS
+   * API Reference</a></p>
    */
   class AWS_ELASTICTRANSCODER_API Warning
   {

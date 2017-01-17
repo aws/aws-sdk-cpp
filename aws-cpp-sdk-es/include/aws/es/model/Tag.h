@@ -31,7 +31,9 @@ namespace Model
 {
 
   /**
-   * <p>Specifies a key value pair for a resource tag.</p>
+   * <p>Specifies a key value pair for a resource tag.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/Tag">AWS API
+   * Reference</a></p>
    */
   class AWS_ELASTICSEARCHSERVICE_API Tag
   {

@@ -257,7 +257,7 @@ void VpnConnection::OutputToStream(Aws::OStream& oStream, const char* location) 
       for(auto& item : m_tags)
       {
         Aws::StringStream tagsSs;
-        tagsSs << location <<  ".item." << tagsIdx++;
+        tagsSs << location <<  ".Item." << tagsIdx++;
         item.OutputToStream(oStream, tagsSs.str().c_str());
       }
   }
@@ -267,7 +267,7 @@ void VpnConnection::OutputToStream(Aws::OStream& oStream, const char* location) 
       for(auto& item : m_vgwTelemetry)
       {
         Aws::StringStream vgwTelemetrySs;
-        vgwTelemetrySs << location <<  ".item." << vgwTelemetryIdx++;
+        vgwTelemetrySs << location <<  ".Item." << vgwTelemetryIdx++;
         item.OutputToStream(oStream, vgwTelemetrySs.str().c_str());
       }
   }
@@ -283,7 +283,7 @@ void VpnConnection::OutputToStream(Aws::OStream& oStream, const char* location) 
       for(auto& item : m_routes)
       {
         Aws::StringStream routesSs;
-        routesSs << location <<  ".item." << routesIdx++;
+        routesSs << location <<  ".Item." << routesIdx++;
         item.OutputToStream(oStream, routesSs.str().c_str());
       }
   }

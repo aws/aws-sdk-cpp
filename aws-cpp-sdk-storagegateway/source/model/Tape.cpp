@@ -30,6 +30,7 @@ namespace Model
 Tape::Tape() : 
     m_tapeARNHasBeenSet(false),
     m_tapeBarcodeHasBeenSet(false),
+    m_tapeCreatedDateHasBeenSet(false),
     m_tapeSizeInBytes(0),
     m_tapeSizeInBytesHasBeenSet(false),
     m_tapeStatusHasBeenSet(false),
@@ -42,6 +43,7 @@ Tape::Tape() :
 Tape::Tape(const JsonValue& jsonValue) : 
     m_tapeARNHasBeenSet(false),
     m_tapeBarcodeHasBeenSet(false),
+    m_tapeCreatedDateHasBeenSet(false),
     m_tapeSizeInBytes(0),
     m_tapeSizeInBytesHasBeenSet(false),
     m_tapeStatusHasBeenSet(false),
@@ -66,6 +68,13 @@ Tape& Tape::operator =(const JsonValue& jsonValue)
     m_tapeBarcode = jsonValue.GetString("TapeBarcode");
 
     m_tapeBarcodeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("TapeCreatedDate"))
+  {
+    m_tapeCreatedDate = jsonValue.GetDouble("TapeCreatedDate");
+
+    m_tapeCreatedDateHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("TapeSizeInBytes"))
@@ -113,6 +122,11 @@ JsonValue Tape::Jsonize() const
   {
    payload.WithString("TapeBarcode", m_tapeBarcode);
 
+  }
+
+  if(m_tapeCreatedDateHasBeenSet)
+  {
+   payload.WithDouble("TapeCreatedDate", m_tapeCreatedDate.SecondsWithMSPrecision());
   }
 
   if(m_tapeSizeInBytesHasBeenSet)

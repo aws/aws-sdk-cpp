@@ -27,11 +27,12 @@ namespace Model
     NOT_SET,
     Pending,
     InProgress,
-    Cancelling,
+    Delayed,
     Success,
-    TimedOut,
     Cancelled,
-    Failed
+    TimedOut,
+    Failed,
+    Cancelling
   };
 
 namespace CommandInvocationStatusMapper

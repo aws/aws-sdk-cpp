@@ -25,7 +25,10 @@ namespace Model
 {
 
   /**
-   * <p>Represents the request to stop the remote access session.</p>
+   * <p>Represents the request to stop the remote access session.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/StopRemoteAccessSessionRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_DEVICEFARM_API StopRemoteAccessSessionRequest : public DeviceFarmRequest
   {

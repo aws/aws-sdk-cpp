@@ -35,7 +35,9 @@ namespace EC2
 namespace Model
 {
   /**
-   * <p>Contains the output of DescribeRouteTables.</p>
+   * <p>Contains the output of DescribeRouteTables.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeRouteTablesResult">AWS
+   * API Reference</a></p>
    */
   class AWS_EC2_API DescribeRouteTablesResponse
   {
@@ -45,37 +47,37 @@ namespace Model
     DescribeRouteTablesResponse& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
     /**
-     * <p>Information about one or more route tables. </p>
+     * <p>Information about one or more route tables.</p>
      */
     inline const Aws::Vector<RouteTable>& GetRouteTables() const{ return m_routeTables; }
 
     /**
-     * <p>Information about one or more route tables. </p>
+     * <p>Information about one or more route tables.</p>
      */
     inline void SetRouteTables(const Aws::Vector<RouteTable>& value) { m_routeTables = value; }
 
     /**
-     * <p>Information about one or more route tables. </p>
+     * <p>Information about one or more route tables.</p>
      */
     inline void SetRouteTables(Aws::Vector<RouteTable>&& value) { m_routeTables = value; }
 
     /**
-     * <p>Information about one or more route tables. </p>
+     * <p>Information about one or more route tables.</p>
      */
     inline DescribeRouteTablesResponse& WithRouteTables(const Aws::Vector<RouteTable>& value) { SetRouteTables(value); return *this;}
 
     /**
-     * <p>Information about one or more route tables. </p>
+     * <p>Information about one or more route tables.</p>
      */
     inline DescribeRouteTablesResponse& WithRouteTables(Aws::Vector<RouteTable>&& value) { SetRouteTables(value); return *this;}
 
     /**
-     * <p>Information about one or more route tables. </p>
+     * <p>Information about one or more route tables.</p>
      */
     inline DescribeRouteTablesResponse& AddRouteTables(const RouteTable& value) { m_routeTables.push_back(value); return *this; }
 
     /**
-     * <p>Information about one or more route tables. </p>
+     * <p>Information about one or more route tables.</p>
      */
     inline DescribeRouteTablesResponse& AddRouteTables(RouteTable&& value) { m_routeTables.push_back(value); return *this; }
 

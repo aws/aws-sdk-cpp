@@ -31,7 +31,10 @@ namespace Model
 {
 
   /**
-   * <p>Returns information about the settings for an action type.</p>
+   * <p>Returns information about the settings for an action type.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/ActionTypeSettings">AWS
+   * API Reference</a></p>
    */
   class AWS_CODEPIPELINE_API ActionTypeSettings
   {

@@ -35,7 +35,9 @@ namespace CognitoIdentity
 namespace Model
 {
   /**
-   * The response to a ListIdentities request.
+   * <p>The response to a ListIdentities request.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/ListIdentitiesResponse">AWS
+   * API Reference</a></p>
    */
   class AWS_COGNITOIDENTITY_API ListIdentitiesResult
   {
@@ -45,107 +47,107 @@ namespace Model
     ListIdentitiesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
     /**
-     * An identity pool ID in the format REGION:GUID.
+     * <p>An identity pool ID in the format REGION:GUID.</p>
      */
     inline const Aws::String& GetIdentityPoolId() const{ return m_identityPoolId; }
 
     /**
-     * An identity pool ID in the format REGION:GUID.
+     * <p>An identity pool ID in the format REGION:GUID.</p>
      */
     inline void SetIdentityPoolId(const Aws::String& value) { m_identityPoolId = value; }
 
     /**
-     * An identity pool ID in the format REGION:GUID.
+     * <p>An identity pool ID in the format REGION:GUID.</p>
      */
     inline void SetIdentityPoolId(Aws::String&& value) { m_identityPoolId = value; }
 
     /**
-     * An identity pool ID in the format REGION:GUID.
+     * <p>An identity pool ID in the format REGION:GUID.</p>
      */
     inline void SetIdentityPoolId(const char* value) { m_identityPoolId.assign(value); }
 
     /**
-     * An identity pool ID in the format REGION:GUID.
+     * <p>An identity pool ID in the format REGION:GUID.</p>
      */
     inline ListIdentitiesResult& WithIdentityPoolId(const Aws::String& value) { SetIdentityPoolId(value); return *this;}
 
     /**
-     * An identity pool ID in the format REGION:GUID.
+     * <p>An identity pool ID in the format REGION:GUID.</p>
      */
     inline ListIdentitiesResult& WithIdentityPoolId(Aws::String&& value) { SetIdentityPoolId(value); return *this;}
 
     /**
-     * An identity pool ID in the format REGION:GUID.
+     * <p>An identity pool ID in the format REGION:GUID.</p>
      */
     inline ListIdentitiesResult& WithIdentityPoolId(const char* value) { SetIdentityPoolId(value); return *this;}
 
     /**
-     * An object containing a set of identities and associated mappings.
+     * <p>An object containing a set of identities and associated mappings.</p>
      */
     inline const Aws::Vector<IdentityDescription>& GetIdentities() const{ return m_identities; }
 
     /**
-     * An object containing a set of identities and associated mappings.
+     * <p>An object containing a set of identities and associated mappings.</p>
      */
     inline void SetIdentities(const Aws::Vector<IdentityDescription>& value) { m_identities = value; }
 
     /**
-     * An object containing a set of identities and associated mappings.
+     * <p>An object containing a set of identities and associated mappings.</p>
      */
     inline void SetIdentities(Aws::Vector<IdentityDescription>&& value) { m_identities = value; }
 
     /**
-     * An object containing a set of identities and associated mappings.
+     * <p>An object containing a set of identities and associated mappings.</p>
      */
     inline ListIdentitiesResult& WithIdentities(const Aws::Vector<IdentityDescription>& value) { SetIdentities(value); return *this;}
 
     /**
-     * An object containing a set of identities and associated mappings.
+     * <p>An object containing a set of identities and associated mappings.</p>
      */
     inline ListIdentitiesResult& WithIdentities(Aws::Vector<IdentityDescription>&& value) { SetIdentities(value); return *this;}
 
     /**
-     * An object containing a set of identities and associated mappings.
+     * <p>An object containing a set of identities and associated mappings.</p>
      */
     inline ListIdentitiesResult& AddIdentities(const IdentityDescription& value) { m_identities.push_back(value); return *this; }
 
     /**
-     * An object containing a set of identities and associated mappings.
+     * <p>An object containing a set of identities and associated mappings.</p>
      */
     inline ListIdentitiesResult& AddIdentities(IdentityDescription&& value) { m_identities.push_back(value); return *this; }
 
     /**
-     * A pagination token.
+     * <p>A pagination token.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * A pagination token.
+     * <p>A pagination token.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
 
     /**
-     * A pagination token.
+     * <p>A pagination token.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = value; }
 
     /**
-     * A pagination token.
+     * <p>A pagination token.</p>
      */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
 
     /**
-     * A pagination token.
+     * <p>A pagination token.</p>
      */
     inline ListIdentitiesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * A pagination token.
+     * <p>A pagination token.</p>
      */
     inline ListIdentitiesResult& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
 
     /**
-     * A pagination token.
+     * <p>A pagination token.</p>
      */
     inline ListIdentitiesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 

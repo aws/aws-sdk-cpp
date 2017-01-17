@@ -36,7 +36,9 @@ namespace Model
    * ways, such as grouping clusters to track your Amazon EMR resource allocation
    * costs. For more information, see <a
    * href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-plan-tags.html">Tagging
-   * Amazon EMR Resources</a>. </p>
+   * Amazon EMR Resources</a>. </p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/Tag">AWS
+   * API Reference</a></p>
    */
   class AWS_EMR_API Tag
   {

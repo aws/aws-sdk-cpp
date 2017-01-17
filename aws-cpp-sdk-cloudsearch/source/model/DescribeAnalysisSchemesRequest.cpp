@@ -49,7 +49,7 @@ Aws::String DescribeAnalysisSchemesRequest::SerializePayload() const
 
   if(m_deployedHasBeenSet)
   {
-    ss << "Deployed=" << m_deployed << "&";
+    ss << "Deployed=" << std::boolalpha << m_deployed << "&";
   }
 
   ss << "Version=2013-01-01";

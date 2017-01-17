@@ -27,7 +27,9 @@ namespace Model
 
   /**
    * <p>A complex type that contains information about the VPC that you want to
-   * disassociate from a specified private hosted zone.</p>
+   * disassociate from a specified private hosted zone.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DisassociateVPCFromHostedZoneRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_ROUTE53_API DisassociateVPCFromHostedZoneRequest : public Route53Request
   {

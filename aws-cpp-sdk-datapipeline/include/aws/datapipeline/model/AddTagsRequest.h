@@ -27,7 +27,9 @@ namespace Model
 {
 
   /**
-   * <p>Contains the parameters for AddTags.</p>
+   * <p>Contains the parameters for AddTags.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/AddTagsInput">AWS
+   * API Reference</a></p>
    */
   class AWS_DATAPIPELINE_API AddTagsRequest : public DataPipelineRequest
   {

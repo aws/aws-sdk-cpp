@@ -31,7 +31,9 @@ namespace Model
 {
 
   /**
-   * <p>The VPC peering connection options.</p>
+   * <p>The VPC peering connection options.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/PeeringConnectionOptionsRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_EC2_API PeeringConnectionOptionsRequest
   {
@@ -79,11 +81,31 @@ namespace Model
      */
     inline PeeringConnectionOptionsRequest& WithAllowEgressFromLocalVpcToRemoteClassicLink(bool value) { SetAllowEgressFromLocalVpcToRemoteClassicLink(value); return *this;}
 
+    /**
+     * <p>If true, enables a local VPC to resolve public DNS hostnames to private IP
+     * addresses when queried from instances in the peer VPC.</p>
+     */
+    inline bool GetAllowDnsResolutionFromRemoteVpc() const{ return m_allowDnsResolutionFromRemoteVpc; }
+
+    /**
+     * <p>If true, enables a local VPC to resolve public DNS hostnames to private IP
+     * addresses when queried from instances in the peer VPC.</p>
+     */
+    inline void SetAllowDnsResolutionFromRemoteVpc(bool value) { m_allowDnsResolutionFromRemoteVpcHasBeenSet = true; m_allowDnsResolutionFromRemoteVpc = value; }
+
+    /**
+     * <p>If true, enables a local VPC to resolve public DNS hostnames to private IP
+     * addresses when queried from instances in the peer VPC.</p>
+     */
+    inline PeeringConnectionOptionsRequest& WithAllowDnsResolutionFromRemoteVpc(bool value) { SetAllowDnsResolutionFromRemoteVpc(value); return *this;}
+
   private:
     bool m_allowEgressFromLocalClassicLinkToRemoteVpc;
     bool m_allowEgressFromLocalClassicLinkToRemoteVpcHasBeenSet;
     bool m_allowEgressFromLocalVpcToRemoteClassicLink;
     bool m_allowEgressFromLocalVpcToRemoteClassicLinkHasBeenSet;
+    bool m_allowDnsResolutionFromRemoteVpc;
+    bool m_allowDnsResolutionFromRemoteVpcHasBeenSet;
   };
 
 } // namespace Model

@@ -36,7 +36,9 @@ namespace Model
 {
   /**
    * <p>Result message containing a description of the requested environment
-   * info.</p>
+   * info.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/RetrieveEnvironmentInfoResultMessage">AWS
+   * API Reference</a></p>
    */
   class AWS_ELASTICBEANSTALK_API RetrieveEnvironmentInfoResult
   {

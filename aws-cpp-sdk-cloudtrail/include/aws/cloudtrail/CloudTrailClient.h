@@ -194,7 +194,9 @@ namespace Model
          * an existing tag key. If you specify a key without a value, the tag will be
          * created with the specified key and a value of null. You can tag a trail that
          * applies to all regions only from the region in which the trail was created (that
-         * is, from its home region).</p>
+         * is, from its home region).</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/AddTags">AWS
+         * API Reference</a></p>
          */
         virtual Model::AddTagsOutcome AddTags(const Model::AddTagsRequest& request) const;
 
@@ -204,7 +206,9 @@ namespace Model
          * an existing tag key. If you specify a key without a value, the tag will be
          * created with the specified key and a value of null. You can tag a trail that
          * applies to all regions only from the region in which the trail was created (that
-         * is, from its home region).</p>
+         * is, from its home region).</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/AddTags">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -216,7 +220,9 @@ namespace Model
          * an existing tag key. If you specify a key without a value, the tag will be
          * created with the specified key and a value of null. You can tag a trail that
          * applies to all regions only from the region in which the trail was created (that
-         * is, from its home region).</p>
+         * is, from its home region).</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/AddTags">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -225,14 +231,18 @@ namespace Model
         /**
          * <p>Creates a trail that specifies the settings for delivery of log data to an
          * Amazon S3 bucket. A maximum of five trails can exist in a region, irrespective
-         * of the region in which they were created.</p>
+         * of the region in which they were created.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/CreateTrail">AWS
+         * API Reference</a></p>
          */
         virtual Model::CreateTrailOutcome CreateTrail(const Model::CreateTrailRequest& request) const;
 
         /**
          * <p>Creates a trail that specifies the settings for delivery of log data to an
          * Amazon S3 bucket. A maximum of five trails can exist in a region, irrespective
-         * of the region in which they were created.</p>
+         * of the region in which they were created.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/CreateTrail">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -241,7 +251,9 @@ namespace Model
         /**
          * <p>Creates a trail that specifies the settings for delivery of log data to an
          * Amazon S3 bucket. A maximum of five trails can exist in a region, irrespective
-         * of the region in which they were created.</p>
+         * of the region in which they were created.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/CreateTrail">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -251,7 +263,9 @@ namespace Model
          * <p>Deletes a trail. This operation must be called from the region in which the
          * trail was created. <code>DeleteTrail</code> cannot be called on the shadow
          * trails (replicated trails in other regions) of a trail that is enabled in all
-         * regions.</p>
+         * regions.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/DeleteTrail">AWS
+         * API Reference</a></p>
          */
         virtual Model::DeleteTrailOutcome DeleteTrail(const Model::DeleteTrailRequest& request) const;
 
@@ -259,7 +273,9 @@ namespace Model
          * <p>Deletes a trail. This operation must be called from the region in which the
          * trail was created. <code>DeleteTrail</code> cannot be called on the shadow
          * trails (replicated trails in other regions) of a trail that is enabled in all
-         * regions.</p>
+         * regions.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/DeleteTrail">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -269,7 +285,9 @@ namespace Model
          * <p>Deletes a trail. This operation must be called from the region in which the
          * trail was created. <code>DeleteTrail</code> cannot be called on the shadow
          * trails (replicated trails in other regions) of a trail that is enabled in all
-         * regions.</p>
+         * regions.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/DeleteTrail">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -277,13 +295,17 @@ namespace Model
 
         /**
          * <p>Retrieves settings for the trail associated with the current region for your
-         * account.</p>
+         * account.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/DescribeTrails">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeTrailsOutcome DescribeTrails(const Model::DescribeTrailsRequest& request) const;
 
         /**
          * <p>Retrieves settings for the trail associated with the current region for your
-         * account.</p>
+         * account.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/DescribeTrails">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -291,7 +313,9 @@ namespace Model
 
         /**
          * <p>Retrieves settings for the trail associated with the current region for your
-         * account.</p>
+         * account.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/DescribeTrails">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -305,7 +329,10 @@ namespace Model
          * </li> <li> <p>If your event selector includes read-only events, write-only
          * events, or all. </p> </li> </ul> <p>For more information, see <a
          * href="http://docs.aws.amazon.com/awscloudtrail/latest/userguide/create-event-selectors-for-a-trail.html">Configuring
-         * Event Selectors for Trails</a> in the <i>AWS CloudTrail User Guide</i>.</p>
+         * Event Selectors for Trails</a> in the <i>AWS CloudTrail User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/GetEventSelectors">AWS
+         * API Reference</a></p>
          */
         virtual Model::GetEventSelectorsOutcome GetEventSelectors(const Model::GetEventSelectorsRequest& request) const;
 
@@ -317,7 +344,10 @@ namespace Model
          * </li> <li> <p>If your event selector includes read-only events, write-only
          * events, or all. </p> </li> </ul> <p>For more information, see <a
          * href="http://docs.aws.amazon.com/awscloudtrail/latest/userguide/create-event-selectors-for-a-trail.html">Configuring
-         * Event Selectors for Trails</a> in the <i>AWS CloudTrail User Guide</i>.</p>
+         * Event Selectors for Trails</a> in the <i>AWS CloudTrail User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/GetEventSelectors">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -331,7 +361,10 @@ namespace Model
          * </li> <li> <p>If your event selector includes read-only events, write-only
          * events, or all. </p> </li> </ul> <p>For more information, see <a
          * href="http://docs.aws.amazon.com/awscloudtrail/latest/userguide/create-event-selectors-for-a-trail.html">Configuring
-         * Event Selectors for Trails</a> in the <i>AWS CloudTrail User Guide</i>.</p>
+         * Event Selectors for Trails</a> in the <i>AWS CloudTrail User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/GetEventSelectors">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -342,7 +375,9 @@ namespace Model
          * Fields include information on delivery errors, Amazon SNS and Amazon S3 errors,
          * and start and stop logging times for each trail. This operation returns trail
          * status from a single region. To return trail status from all regions, you must
-         * call the operation on each region.</p>
+         * call the operation on each region.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/GetTrailStatus">AWS
+         * API Reference</a></p>
          */
         virtual Model::GetTrailStatusOutcome GetTrailStatus(const Model::GetTrailStatusRequest& request) const;
 
@@ -351,7 +386,9 @@ namespace Model
          * Fields include information on delivery errors, Amazon SNS and Amazon S3 errors,
          * and start and stop logging times for each trail. This operation returns trail
          * status from a single region. To return trail status from all regions, you must
-         * call the operation on each region.</p>
+         * call the operation on each region.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/GetTrailStatus">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -362,7 +399,9 @@ namespace Model
          * Fields include information on delivery errors, Amazon SNS and Amazon S3 errors,
          * and start and stop logging times for each trail. This operation returns trail
          * status from a single region. To return trail status from all regions, you must
-         * call the operation on each region.</p>
+         * call the operation on each region.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/GetTrailStatus">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -375,7 +414,9 @@ namespace Model
          * <p>CloudTrail uses different private/public key pairs per region. Each digest
          * file is signed with a private key unique to its region. Therefore, when you
          * validate a digest file from a particular region, you must look in the same
-         * region for its corresponding public key.</p> </note>
+         * region for its corresponding public key.</p> </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/ListPublicKeys">AWS
+         * API Reference</a></p>
          */
         virtual Model::ListPublicKeysOutcome ListPublicKeys(const Model::ListPublicKeysRequest& request) const;
 
@@ -386,7 +427,9 @@ namespace Model
          * <p>CloudTrail uses different private/public key pairs per region. Each digest
          * file is signed with a private key unique to its region. Therefore, when you
          * validate a digest file from a particular region, you must look in the same
-         * region for its corresponding public key.</p> </note>
+         * region for its corresponding public key.</p> </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/ListPublicKeys">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -399,26 +442,37 @@ namespace Model
          * <p>CloudTrail uses different private/public key pairs per region. Each digest
          * file is signed with a private key unique to its region. Therefore, when you
          * validate a digest file from a particular region, you must look in the same
-         * region for its corresponding public key.</p> </note>
+         * region for its corresponding public key.</p> </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/ListPublicKeys">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListPublicKeysAsync(const Model::ListPublicKeysRequest& request, const ListPublicKeysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists the tags for the trail in the current region.</p>
+         * <p>Lists the tags for the trail in the current region.</p><p><h3>See Also:</h3> 
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/ListTags">AWS
+         * API Reference</a></p>
          */
         virtual Model::ListTagsOutcome ListTags(const Model::ListTagsRequest& request) const;
 
         /**
-         * <p>Lists the tags for the trail in the current region.</p>
+         * <p>Lists the tags for the trail in the current region.</p><p><h3>See Also:</h3> 
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/ListTags">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListTagsOutcomeCallable ListTagsCallable(const Model::ListTagsRequest& request) const;
 
         /**
-         * <p>Lists the tags for the trail in the current region.</p>
+         * <p>Lists the tags for the trail in the current region.</p><p><h3>See Also:</h3> 
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/ListTags">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -437,7 +491,9 @@ namespace Model
          * second per account. If this limit is exceeded, a throttling error occurs.</p>
          * </important> <important> <p>Events that occurred during the selected time range
          * will not be available for lookup if CloudTrail logging was not enabled when the
-         * events occurred.</p> </important>
+         * events occurred.</p> </important><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/LookupEvents">AWS
+         * API Reference</a></p>
          */
         virtual Model::LookupEventsOutcome LookupEvents(const Model::LookupEventsRequest& request) const;
 
@@ -454,7 +510,9 @@ namespace Model
          * second per account. If this limit is exceeded, a throttling error occurs.</p>
          * </important> <important> <p>Events that occurred during the selected time range
          * will not be available for lookup if CloudTrail logging was not enabled when the
-         * events occurred.</p> </important>
+         * events occurred.</p> </important><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/LookupEvents">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -473,7 +531,9 @@ namespace Model
          * second per account. If this limit is exceeded, a throttling error occurs.</p>
          * </important> <important> <p>Events that occurred during the selected time range
          * will not be available for lookup if CloudTrail logging was not enabled when the
-         * events occurred.</p> </important>
+         * events occurred.</p> </important><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/LookupEvents">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -498,7 +558,10 @@ namespace Model
          * <code>InvalidHomeRegionException</code> is thrown.</p> <p>You can configure up
          * to five event selectors for each trail. For more information, see <a
          * href="http://docs.aws.amazon.com/awscloudtrail/latest/userguide/create-event-selectors-for-a-trail.html">Configuring
-         * Event Selectors for Trails</a> in the <i>AWS CloudTrail User Guide</i>.</p>
+         * Event Selectors for Trails</a> in the <i>AWS CloudTrail User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/PutEventSelectors">AWS
+         * API Reference</a></p>
          */
         virtual Model::PutEventSelectorsOutcome PutEventSelectors(const Model::PutEventSelectorsRequest& request) const;
 
@@ -521,7 +584,10 @@ namespace Model
          * <code>InvalidHomeRegionException</code> is thrown.</p> <p>You can configure up
          * to five event selectors for each trail. For more information, see <a
          * href="http://docs.aws.amazon.com/awscloudtrail/latest/userguide/create-event-selectors-for-a-trail.html">Configuring
-         * Event Selectors for Trails</a> in the <i>AWS CloudTrail User Guide</i>.</p>
+         * Event Selectors for Trails</a> in the <i>AWS CloudTrail User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/PutEventSelectors">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -546,26 +612,35 @@ namespace Model
          * <code>InvalidHomeRegionException</code> is thrown.</p> <p>You can configure up
          * to five event selectors for each trail. For more information, see <a
          * href="http://docs.aws.amazon.com/awscloudtrail/latest/userguide/create-event-selectors-for-a-trail.html">Configuring
-         * Event Selectors for Trails</a> in the <i>AWS CloudTrail User Guide</i>.</p>
+         * Event Selectors for Trails</a> in the <i>AWS CloudTrail User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/PutEventSelectors">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void PutEventSelectorsAsync(const Model::PutEventSelectorsRequest& request, const PutEventSelectorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Removes the specified tags from a trail.</p>
+         * <p>Removes the specified tags from a trail.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/RemoveTags">AWS
+         * API Reference</a></p>
          */
         virtual Model::RemoveTagsOutcome RemoveTags(const Model::RemoveTagsRequest& request) const;
 
         /**
-         * <p>Removes the specified tags from a trail.</p>
+         * <p>Removes the specified tags from a trail.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/RemoveTags">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::RemoveTagsOutcomeCallable RemoveTagsCallable(const Model::RemoveTagsRequest& request) const;
 
         /**
-         * <p>Removes the specified tags from a trail.</p>
+         * <p>Removes the specified tags from a trail.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/RemoveTags">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -576,7 +651,9 @@ namespace Model
          * a trail that is enabled in all regions, this operation must be called from the
          * region in which the trail was created. This operation cannot be called on the
          * shadow trails (replicated trails in other regions) of a trail that is enabled in
-         * all regions.</p>
+         * all regions.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/StartLogging">AWS
+         * API Reference</a></p>
          */
         virtual Model::StartLoggingOutcome StartLogging(const Model::StartLoggingRequest& request) const;
 
@@ -585,7 +662,9 @@ namespace Model
          * a trail that is enabled in all regions, this operation must be called from the
          * region in which the trail was created. This operation cannot be called on the
          * shadow trails (replicated trails in other regions) of a trail that is enabled in
-         * all regions.</p>
+         * all regions.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/StartLogging">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -596,7 +675,9 @@ namespace Model
          * a trail that is enabled in all regions, this operation must be called from the
          * region in which the trail was created. This operation cannot be called on the
          * shadow trails (replicated trails in other regions) of a trail that is enabled in
-         * all regions.</p>
+         * all regions.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/StartLogging">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -610,7 +691,9 @@ namespace Model
          * called from the region in which the trail was created, or an
          * <code>InvalidHomeRegionException</code> will occur. This operation cannot be
          * called on the shadow trails (replicated trails in other regions) of a trail
-         * enabled in all regions.</p>
+         * enabled in all regions.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/StopLogging">AWS
+         * API Reference</a></p>
          */
         virtual Model::StopLoggingOutcome StopLogging(const Model::StopLoggingRequest& request) const;
 
@@ -622,7 +705,9 @@ namespace Model
          * called from the region in which the trail was created, or an
          * <code>InvalidHomeRegionException</code> will occur. This operation cannot be
          * called on the shadow trails (replicated trails in other regions) of a trail
-         * enabled in all regions.</p>
+         * enabled in all regions.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/StopLogging">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -636,7 +721,9 @@ namespace Model
          * called from the region in which the trail was created, or an
          * <code>InvalidHomeRegionException</code> will occur. This operation cannot be
          * called on the shadow trails (replicated trails in other regions) of a trail
-         * enabled in all regions.</p>
+         * enabled in all regions.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/StopLogging">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -648,7 +735,10 @@ namespace Model
          * existing bucket for log delivery. If the existing bucket has previously been a
          * target for CloudTrail log files, an IAM policy exists for the bucket.
          * <code>UpdateTrail</code> must be called from the region in which the trail was
-         * created; otherwise, an <code>InvalidHomeRegionException</code> is thrown.</p>
+         * created; otherwise, an <code>InvalidHomeRegionException</code> is
+         * thrown.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/UpdateTrail">AWS
+         * API Reference</a></p>
          */
         virtual Model::UpdateTrailOutcome UpdateTrail(const Model::UpdateTrailRequest& request) const;
 
@@ -658,7 +748,10 @@ namespace Model
          * existing bucket for log delivery. If the existing bucket has previously been a
          * target for CloudTrail log files, an IAM policy exists for the bucket.
          * <code>UpdateTrail</code> must be called from the region in which the trail was
-         * created; otherwise, an <code>InvalidHomeRegionException</code> is thrown.</p>
+         * created; otherwise, an <code>InvalidHomeRegionException</code> is
+         * thrown.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/UpdateTrail">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -670,7 +763,10 @@ namespace Model
          * existing bucket for log delivery. If the existing bucket has previously been a
          * target for CloudTrail log files, an IAM policy exists for the bucket.
          * <code>UpdateTrail</code> must be called from the region in which the trail was
-         * created; otherwise, an <code>InvalidHomeRegionException</code> is thrown.</p>
+         * created; otherwise, an <code>InvalidHomeRegionException</code> is
+         * thrown.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/UpdateTrail">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */

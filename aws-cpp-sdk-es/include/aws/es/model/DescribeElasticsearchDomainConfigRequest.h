@@ -27,7 +27,9 @@ namespace Model
   /**
    * <p> Container for the parameters to the
    * <code>DescribeElasticsearchDomainConfig</code> operation. Specifies the domain
-   * name for which you want configuration information.</p>
+   * name for which you want configuration information.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/DescribeElasticsearchDomainConfigRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_ELASTICSEARCHSERVICE_API DescribeElasticsearchDomainConfigRequest : public ElasticsearchServiceRequest
   {

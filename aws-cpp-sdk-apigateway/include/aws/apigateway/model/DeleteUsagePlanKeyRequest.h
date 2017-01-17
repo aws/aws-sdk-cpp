@@ -26,7 +26,9 @@ namespace Model
 
   /**
    * <p>The DELETE request to delete a usage plan key and remove the underlying API
-   * key from the associated usage plan.</p>
+   * key from the associated usage plan.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DeleteUsagePlanKeyRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_APIGATEWAY_API DeleteUsagePlanKeyRequest : public APIGatewayRequest
   {

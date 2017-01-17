@@ -33,7 +33,10 @@ namespace Model
 
   /**
    * <p>Represents sending statistics data. Each <code>SendDataPoint</code> contains
-   * statistics for a 15-minute period of sending activity. </p>
+   * statistics for a 15-minute period of sending activity. </p><p><h3>See Also:</h3>
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/SendDataPoint">AWS
+   * API Reference</a></p>
    */
   class AWS_SES_API SendDataPoint
   {

@@ -37,7 +37,9 @@ namespace Model
    * operation, and is an acknowledgement that Amazon ML received the request.</p>
    * <p>The <code>CreateDataSourceFromRedshift</code> operation is asynchronous. You
    * can poll for updates by using the <code>GetBatchPrediction</code> operation and
-   * checking the <code>Status</code> parameter. </p>
+   * checking the <code>Status</code> parameter. </p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/CreateDataSourceFromRedshiftOutput">AWS
+   * API Reference</a></p>
    */
   class AWS_MACHINELEARNING_API CreateDataSourceFromRedshiftResult
   {

@@ -25,7 +25,10 @@ namespace Model
 {
 
   /**
-   * <p>Contains the parameters for DescribeLoadBalancerTargetGroups.</p>
+   * <p>Contains the parameters for DescribeLoadBalancerTargetGroups.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeLoadBalancerTargetGroupsRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_AUTOSCALING_API DescribeLoadBalancerTargetGroupsRequest : public AutoScalingRequest
   {

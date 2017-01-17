@@ -130,7 +130,7 @@ void Instance::OutputToStream(Aws::OStream& oStream, const char* location, unsig
 
   if(m_protectedFromScaleInHasBeenSet)
   {
-      oStream << location << index << locationValue << ".ProtectedFromScaleIn=" << m_protectedFromScaleIn << "&";
+      oStream << location << index << locationValue << ".ProtectedFromScaleIn=" << std::boolalpha << m_protectedFromScaleIn << "&";
   }
 
 }
@@ -159,7 +159,7 @@ void Instance::OutputToStream(Aws::OStream& oStream, const char* location) const
   }
   if(m_protectedFromScaleInHasBeenSet)
   {
-      oStream << location << ".ProtectedFromScaleIn=" << m_protectedFromScaleIn << "&";
+      oStream << location << ".ProtectedFromScaleIn=" << std::boolalpha << m_protectedFromScaleIn << "&";
   }
 }
 

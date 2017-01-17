@@ -33,7 +33,9 @@ namespace Model
 {
 
   /**
-   * <p>Provisioning artifact properties.</p>
+   * <p>Provisioning artifact properties.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ProvisioningArtifactProperties">AWS
+   * API Reference</a></p>
    */
   class AWS_SERVICECATALOG_API ProvisioningArtifactProperties
   {

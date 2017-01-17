@@ -36,12 +36,12 @@ namespace Model
      * <p> The path to the group. For more information about paths, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
      * Identifiers</a> in the <i>IAM User Guide</i>.</p> <p>This parameter is optional.
-     * If it is not included, it defaults to a slash (/).</p> <p>The <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a
-     * string of characters consisting of either a forward slash (/) by itself or a
-     * string that must begin and end with forward slashes, containing any ASCII
-     * character from the ! (\u0021) thru the DEL character (\u007F), including most
-     * punctuation characters, digits, and upper and lowercased letters.</p>
+     * If it is not included, it defaults to a slash (/).</p> <p>This paramater allows
+     * (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string
+     * of characters consisting of either a forward slash (/) by itself or a string
+     * that must begin and end with forward slashes, containing any ASCII character
+     * from the ! (\u0021) thru the DEL character (\u007F), including most punctuation
+     * characters, digits, and upper and lowercased letters.</p>
      */
     inline const Aws::String& GetPath() const{ return m_path; }
 
@@ -49,12 +49,12 @@ namespace Model
      * <p> The path to the group. For more information about paths, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
      * Identifiers</a> in the <i>IAM User Guide</i>.</p> <p>This parameter is optional.
-     * If it is not included, it defaults to a slash (/).</p> <p>The <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a
-     * string of characters consisting of either a forward slash (/) by itself or a
-     * string that must begin and end with forward slashes, containing any ASCII
-     * character from the ! (\u0021) thru the DEL character (\u007F), including most
-     * punctuation characters, digits, and upper and lowercased letters.</p>
+     * If it is not included, it defaults to a slash (/).</p> <p>This paramater allows
+     * (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string
+     * of characters consisting of either a forward slash (/) by itself or a string
+     * that must begin and end with forward slashes, containing any ASCII character
+     * from the ! (\u0021) thru the DEL character (\u007F), including most punctuation
+     * characters, digits, and upper and lowercased letters.</p>
      */
     inline void SetPath(const Aws::String& value) { m_pathHasBeenSet = true; m_path = value; }
 
@@ -62,12 +62,12 @@ namespace Model
      * <p> The path to the group. For more information about paths, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
      * Identifiers</a> in the <i>IAM User Guide</i>.</p> <p>This parameter is optional.
-     * If it is not included, it defaults to a slash (/).</p> <p>The <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a
-     * string of characters consisting of either a forward slash (/) by itself or a
-     * string that must begin and end with forward slashes, containing any ASCII
-     * character from the ! (\u0021) thru the DEL character (\u007F), including most
-     * punctuation characters, digits, and upper and lowercased letters.</p>
+     * If it is not included, it defaults to a slash (/).</p> <p>This paramater allows
+     * (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string
+     * of characters consisting of either a forward slash (/) by itself or a string
+     * that must begin and end with forward slashes, containing any ASCII character
+     * from the ! (\u0021) thru the DEL character (\u007F), including most punctuation
+     * characters, digits, and upper and lowercased letters.</p>
      */
     inline void SetPath(Aws::String&& value) { m_pathHasBeenSet = true; m_path = value; }
 
@@ -75,12 +75,12 @@ namespace Model
      * <p> The path to the group. For more information about paths, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
      * Identifiers</a> in the <i>IAM User Guide</i>.</p> <p>This parameter is optional.
-     * If it is not included, it defaults to a slash (/).</p> <p>The <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a
-     * string of characters consisting of either a forward slash (/) by itself or a
-     * string that must begin and end with forward slashes, containing any ASCII
-     * character from the ! (\u0021) thru the DEL character (\u007F), including most
-     * punctuation characters, digits, and upper and lowercased letters.</p>
+     * If it is not included, it defaults to a slash (/).</p> <p>This paramater allows
+     * (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string
+     * of characters consisting of either a forward slash (/) by itself or a string
+     * that must begin and end with forward slashes, containing any ASCII character
+     * from the ! (\u0021) thru the DEL character (\u007F), including most punctuation
+     * characters, digits, and upper and lowercased letters.</p>
      */
     inline void SetPath(const char* value) { m_pathHasBeenSet = true; m_path.assign(value); }
 
@@ -88,12 +88,12 @@ namespace Model
      * <p> The path to the group. For more information about paths, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
      * Identifiers</a> in the <i>IAM User Guide</i>.</p> <p>This parameter is optional.
-     * If it is not included, it defaults to a slash (/).</p> <p>The <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a
-     * string of characters consisting of either a forward slash (/) by itself or a
-     * string that must begin and end with forward slashes, containing any ASCII
-     * character from the ! (\u0021) thru the DEL character (\u007F), including most
-     * punctuation characters, digits, and upper and lowercased letters.</p>
+     * If it is not included, it defaults to a slash (/).</p> <p>This paramater allows
+     * (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string
+     * of characters consisting of either a forward slash (/) by itself or a string
+     * that must begin and end with forward slashes, containing any ASCII character
+     * from the ! (\u0021) thru the DEL character (\u007F), including most punctuation
+     * characters, digits, and upper and lowercased letters.</p>
      */
     inline CreateGroupRequest& WithPath(const Aws::String& value) { SetPath(value); return *this;}
 
@@ -101,12 +101,12 @@ namespace Model
      * <p> The path to the group. For more information about paths, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
      * Identifiers</a> in the <i>IAM User Guide</i>.</p> <p>This parameter is optional.
-     * If it is not included, it defaults to a slash (/).</p> <p>The <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a
-     * string of characters consisting of either a forward slash (/) by itself or a
-     * string that must begin and end with forward slashes, containing any ASCII
-     * character from the ! (\u0021) thru the DEL character (\u007F), including most
-     * punctuation characters, digits, and upper and lowercased letters.</p>
+     * If it is not included, it defaults to a slash (/).</p> <p>This paramater allows
+     * (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string
+     * of characters consisting of either a forward slash (/) by itself or a string
+     * that must begin and end with forward slashes, containing any ASCII character
+     * from the ! (\u0021) thru the DEL character (\u007F), including most punctuation
+     * characters, digits, and upper and lowercased letters.</p>
      */
     inline CreateGroupRequest& WithPath(Aws::String&& value) { SetPath(value); return *this;}
 
@@ -114,89 +114,89 @@ namespace Model
      * <p> The path to the group. For more information about paths, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
      * Identifiers</a> in the <i>IAM User Guide</i>.</p> <p>This parameter is optional.
-     * If it is not included, it defaults to a slash (/).</p> <p>The <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a
-     * string of characters consisting of either a forward slash (/) by itself or a
-     * string that must begin and end with forward slashes, containing any ASCII
-     * character from the ! (\u0021) thru the DEL character (\u007F), including most
-     * punctuation characters, digits, and upper and lowercased letters.</p>
+     * If it is not included, it defaults to a slash (/).</p> <p>This paramater allows
+     * (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string
+     * of characters consisting of either a forward slash (/) by itself or a string
+     * that must begin and end with forward slashes, containing any ASCII character
+     * from the ! (\u0021) thru the DEL character (\u007F), including most punctuation
+     * characters, digits, and upper and lowercased letters.</p>
      */
     inline CreateGroupRequest& WithPath(const char* value) { SetPath(value); return *this;}
 
     /**
      * <p>The name of the group to create. Do not include the path in this value.</p>
-     * <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
-     * parameter is a string of characters consisting of upper and lowercase
-     * alphanumeric characters with no spaces. You can also include any of the
-     * following characters: =,.@-. The group name must be unique within the account.
-     * Group names are not distinguished by case. For example, you cannot create groups
-     * named both "ADMINS" and "admins".</p>
+     * <p>This parameter allows (per its <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
+     * consisting of upper and lowercase alphanumeric characters with no spaces. You
+     * can also include any of the following characters: =,.@-. The group name must be
+     * unique within the account. Group names are not distinguished by case. For
+     * example, you cannot create groups named both "ADMINS" and "admins".</p>
      */
     inline const Aws::String& GetGroupName() const{ return m_groupName; }
 
     /**
      * <p>The name of the group to create. Do not include the path in this value.</p>
-     * <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
-     * parameter is a string of characters consisting of upper and lowercase
-     * alphanumeric characters with no spaces. You can also include any of the
-     * following characters: =,.@-. The group name must be unique within the account.
-     * Group names are not distinguished by case. For example, you cannot create groups
-     * named both "ADMINS" and "admins".</p>
+     * <p>This parameter allows (per its <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
+     * consisting of upper and lowercase alphanumeric characters with no spaces. You
+     * can also include any of the following characters: =,.@-. The group name must be
+     * unique within the account. Group names are not distinguished by case. For
+     * example, you cannot create groups named both "ADMINS" and "admins".</p>
      */
     inline void SetGroupName(const Aws::String& value) { m_groupNameHasBeenSet = true; m_groupName = value; }
 
     /**
      * <p>The name of the group to create. Do not include the path in this value.</p>
-     * <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
-     * parameter is a string of characters consisting of upper and lowercase
-     * alphanumeric characters with no spaces. You can also include any of the
-     * following characters: =,.@-. The group name must be unique within the account.
-     * Group names are not distinguished by case. For example, you cannot create groups
-     * named both "ADMINS" and "admins".</p>
+     * <p>This parameter allows (per its <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
+     * consisting of upper and lowercase alphanumeric characters with no spaces. You
+     * can also include any of the following characters: =,.@-. The group name must be
+     * unique within the account. Group names are not distinguished by case. For
+     * example, you cannot create groups named both "ADMINS" and "admins".</p>
      */
     inline void SetGroupName(Aws::String&& value) { m_groupNameHasBeenSet = true; m_groupName = value; }
 
     /**
      * <p>The name of the group to create. Do not include the path in this value.</p>
-     * <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
-     * parameter is a string of characters consisting of upper and lowercase
-     * alphanumeric characters with no spaces. You can also include any of the
-     * following characters: =,.@-. The group name must be unique within the account.
-     * Group names are not distinguished by case. For example, you cannot create groups
-     * named both "ADMINS" and "admins".</p>
+     * <p>This parameter allows (per its <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
+     * consisting of upper and lowercase alphanumeric characters with no spaces. You
+     * can also include any of the following characters: =,.@-. The group name must be
+     * unique within the account. Group names are not distinguished by case. For
+     * example, you cannot create groups named both "ADMINS" and "admins".</p>
      */
     inline void SetGroupName(const char* value) { m_groupNameHasBeenSet = true; m_groupName.assign(value); }
 
     /**
      * <p>The name of the group to create. Do not include the path in this value.</p>
-     * <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
-     * parameter is a string of characters consisting of upper and lowercase
-     * alphanumeric characters with no spaces. You can also include any of the
-     * following characters: =,.@-. The group name must be unique within the account.
-     * Group names are not distinguished by case. For example, you cannot create groups
-     * named both "ADMINS" and "admins".</p>
+     * <p>This parameter allows (per its <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
+     * consisting of upper and lowercase alphanumeric characters with no spaces. You
+     * can also include any of the following characters: =,.@-. The group name must be
+     * unique within the account. Group names are not distinguished by case. For
+     * example, you cannot create groups named both "ADMINS" and "admins".</p>
      */
     inline CreateGroupRequest& WithGroupName(const Aws::String& value) { SetGroupName(value); return *this;}
 
     /**
      * <p>The name of the group to create. Do not include the path in this value.</p>
-     * <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
-     * parameter is a string of characters consisting of upper and lowercase
-     * alphanumeric characters with no spaces. You can also include any of the
-     * following characters: =,.@-. The group name must be unique within the account.
-     * Group names are not distinguished by case. For example, you cannot create groups
-     * named both "ADMINS" and "admins".</p>
+     * <p>This parameter allows (per its <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
+     * consisting of upper and lowercase alphanumeric characters with no spaces. You
+     * can also include any of the following characters: =,.@-. The group name must be
+     * unique within the account. Group names are not distinguished by case. For
+     * example, you cannot create groups named both "ADMINS" and "admins".</p>
      */
     inline CreateGroupRequest& WithGroupName(Aws::String&& value) { SetGroupName(value); return *this;}
 
     /**
      * <p>The name of the group to create. Do not include the path in this value.</p>
-     * <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
-     * parameter is a string of characters consisting of upper and lowercase
-     * alphanumeric characters with no spaces. You can also include any of the
-     * following characters: =,.@-. The group name must be unique within the account.
-     * Group names are not distinguished by case. For example, you cannot create groups
-     * named both "ADMINS" and "admins".</p>
+     * <p>This parameter allows (per its <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
+     * consisting of upper and lowercase alphanumeric characters with no spaces. You
+     * can also include any of the following characters: =,.@-. The group name must be
+     * unique within the account. Group names are not distinguished by case. For
+     * example, you cannot create groups named both "ADMINS" and "admins".</p>
      */
     inline CreateGroupRequest& WithGroupName(const char* value) { SetGroupName(value); return *this;}
 

@@ -35,7 +35,9 @@ namespace ImportExport
 namespace Model
 {
   /**
-   * Output structure for the ListJobs operation.
+   * Output structure for the ListJobs operation.<p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/importexport-2010-06-01/ListJobsOutput">AWS
+   * API Reference</a></p>
    */
   class AWS_IMPORTEXPORT_API ListJobsResult
   {

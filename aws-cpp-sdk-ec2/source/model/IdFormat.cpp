@@ -84,7 +84,7 @@ void IdFormat::OutputToStream(Aws::OStream& oStream, const char* location, unsig
 
   if(m_useLongIdsHasBeenSet)
   {
-      oStream << location << index << locationValue << ".UseLongIds=" << m_useLongIds << "&";
+      oStream << location << index << locationValue << ".UseLongIds=" << std::boolalpha << m_useLongIds << "&";
   }
 
   if(m_deadlineHasBeenSet)
@@ -102,7 +102,7 @@ void IdFormat::OutputToStream(Aws::OStream& oStream, const char* location) const
   }
   if(m_useLongIdsHasBeenSet)
   {
-      oStream << location << ".UseLongIds=" << m_useLongIds << "&";
+      oStream << location << ".UseLongIds=" << std::boolalpha << m_useLongIds << "&";
   }
   if(m_deadlineHasBeenSet)
   {

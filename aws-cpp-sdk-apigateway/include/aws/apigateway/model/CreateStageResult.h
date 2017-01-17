@@ -41,7 +41,9 @@ namespace Model
    * <p>Represents a unique identifier for a version of a deployed <a>RestApi</a>
    * that is callable by users.</p> <div class="seeAlso"> <a
    * href="http://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-deploy-api.html">Deploy
-   * an API</a> </div>
+   * an API</a> </div><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/Stage">AWS
+   * API Reference</a></p>
    */
   class AWS_APIGATEWAY_API CreateStageResult
   {
@@ -435,6 +437,41 @@ namespace Model
     inline CreateStageResult& AddVariables(const char* key, const char* value) { m_variables[key] = value; return *this; }
 
     /**
+     * <p>The version of the associated API documentation.</p>
+     */
+    inline const Aws::String& GetDocumentationVersion() const{ return m_documentationVersion; }
+
+    /**
+     * <p>The version of the associated API documentation.</p>
+     */
+    inline void SetDocumentationVersion(const Aws::String& value) { m_documentationVersion = value; }
+
+    /**
+     * <p>The version of the associated API documentation.</p>
+     */
+    inline void SetDocumentationVersion(Aws::String&& value) { m_documentationVersion = value; }
+
+    /**
+     * <p>The version of the associated API documentation.</p>
+     */
+    inline void SetDocumentationVersion(const char* value) { m_documentationVersion.assign(value); }
+
+    /**
+     * <p>The version of the associated API documentation.</p>
+     */
+    inline CreateStageResult& WithDocumentationVersion(const Aws::String& value) { SetDocumentationVersion(value); return *this;}
+
+    /**
+     * <p>The version of the associated API documentation.</p>
+     */
+    inline CreateStageResult& WithDocumentationVersion(Aws::String&& value) { SetDocumentationVersion(value); return *this;}
+
+    /**
+     * <p>The version of the associated API documentation.</p>
+     */
+    inline CreateStageResult& WithDocumentationVersion(const char* value) { SetDocumentationVersion(value); return *this;}
+
+    /**
      * <p>The date and time that the stage was created, in <a
      * href="http://www.iso.org/iso/home/standards/iso8601.htm" target="_blank">ISO
      * 8601 format</a>.</p>
@@ -514,6 +551,7 @@ namespace Model
     CacheClusterStatus m_cacheClusterStatus;
     Aws::Map<Aws::String, MethodSetting> m_methodSettings;
     Aws::Map<Aws::String, Aws::String> m_variables;
+    Aws::String m_documentationVersion;
     Aws::Utils::DateTime m_createdDate;
     Aws::Utils::DateTime m_lastUpdatedDate;
   };

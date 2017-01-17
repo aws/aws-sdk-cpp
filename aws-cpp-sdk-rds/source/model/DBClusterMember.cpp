@@ -94,7 +94,7 @@ void DBClusterMember::OutputToStream(Aws::OStream& oStream, const char* location
 
   if(m_isClusterWriterHasBeenSet)
   {
-      oStream << location << index << locationValue << ".IsClusterWriter=" << m_isClusterWriter << "&";
+      oStream << location << index << locationValue << ".IsClusterWriter=" << std::boolalpha << m_isClusterWriter << "&";
   }
 
   if(m_dBClusterParameterGroupStatusHasBeenSet)
@@ -117,7 +117,7 @@ void DBClusterMember::OutputToStream(Aws::OStream& oStream, const char* location
   }
   if(m_isClusterWriterHasBeenSet)
   {
-      oStream << location << ".IsClusterWriter=" << m_isClusterWriter << "&";
+      oStream << location << ".IsClusterWriter=" << std::boolalpha << m_isClusterWriter << "&";
   }
   if(m_dBClusterParameterGroupStatusHasBeenSet)
   {

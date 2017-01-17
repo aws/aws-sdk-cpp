@@ -37,7 +37,7 @@ Aws::String ModifyVpcEndpointRequest::SerializePayload() const
   ss << "Action=ModifyVpcEndpoint&";
   if(m_dryRunHasBeenSet)
   {
-    ss << "DryRun=" << m_dryRun << "&";
+    ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
   if(m_vpcEndpointIdHasBeenSet)
@@ -47,7 +47,7 @@ Aws::String ModifyVpcEndpointRequest::SerializePayload() const
 
   if(m_resetPolicyHasBeenSet)
   {
-    ss << "ResetPolicy=" << m_resetPolicy << "&";
+    ss << "ResetPolicy=" << std::boolalpha << m_resetPolicy << "&";
   }
 
   if(m_policyDocumentHasBeenSet)
@@ -77,7 +77,7 @@ Aws::String ModifyVpcEndpointRequest::SerializePayload() const
     }
   }
 
-  ss << "Version=2015-10-01";
+  ss << "Version=2016-11-15";
   return ss.str();
 }
 

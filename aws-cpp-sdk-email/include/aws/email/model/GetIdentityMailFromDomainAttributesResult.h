@@ -36,7 +36,10 @@ namespace SES
 namespace Model
 {
   /**
-   * <p>Represents the custom MAIL FROM attributes for a list of identities.</p>
+   * <p>Represents the custom MAIL FROM attributes for a list of
+   * identities.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/GetIdentityMailFromDomainAttributesResponse">AWS
+   * API Reference</a></p>
    */
   class AWS_SES_API GetIdentityMailFromDomainAttributesResult
   {

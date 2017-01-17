@@ -31,7 +31,9 @@ namespace Model
 {
 
   /**
-   * <p>Describes stack or user permissions.</p>
+   * <p>Describes stack or user permissions.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/Permission">AWS
+   * API Reference</a></p>
    */
   class AWS_OPSWORKS_API Permission
   {

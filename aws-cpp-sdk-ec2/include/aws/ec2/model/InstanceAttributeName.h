@@ -37,7 +37,8 @@ namespace Model
     sourceDestCheck,
     groupSet,
     ebsOptimized,
-    sriovNetSupport
+    sriovNetSupport,
+    enaSupport
   };
 
 namespace InstanceAttributeNameMapper

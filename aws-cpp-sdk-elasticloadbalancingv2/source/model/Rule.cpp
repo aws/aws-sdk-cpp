@@ -139,7 +139,7 @@ void Rule::OutputToStream(Aws::OStream& oStream, const char* location, unsigned 
 
   if(m_isDefaultHasBeenSet)
   {
-      oStream << location << index << locationValue << ".IsDefault=" << m_isDefault << "&";
+      oStream << location << index << locationValue << ".IsDefault=" << std::boolalpha << m_isDefault << "&";
   }
 
 }
@@ -176,7 +176,7 @@ void Rule::OutputToStream(Aws::OStream& oStream, const char* location) const
   }
   if(m_isDefaultHasBeenSet)
   {
-      oStream << location << ".IsDefault=" << m_isDefault << "&";
+      oStream << location << ".IsDefault=" << std::boolalpha << m_isDefault << "&";
   }
 }
 

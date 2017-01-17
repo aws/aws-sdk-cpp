@@ -25,7 +25,10 @@ namespace Model
 {
 
   /**
-   * <p>The DELETE request to delete a uasge plan of a given plan Id.</p>
+   * <p>The DELETE request to delete a uasge plan of a given plan Id.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DeleteUsagePlanRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_APIGATEWAY_API DeleteUsagePlanRequest : public APIGatewayRequest
   {

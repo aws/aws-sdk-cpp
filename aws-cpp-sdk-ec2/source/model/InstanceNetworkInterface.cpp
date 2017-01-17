@@ -45,7 +45,8 @@ InstanceNetworkInterface::InstanceNetworkInterface() :
     m_groupsHasBeenSet(false),
     m_attachmentHasBeenSet(false),
     m_associationHasBeenSet(false),
-    m_privateIpAddressesHasBeenSet(false)
+    m_privateIpAddressesHasBeenSet(false),
+    m_ipv6AddressesHasBeenSet(false)
 {
 }
 
@@ -65,7 +66,8 @@ InstanceNetworkInterface::InstanceNetworkInterface(const XmlNode& xmlNode) :
     m_groupsHasBeenSet(false),
     m_attachmentHasBeenSet(false),
     m_associationHasBeenSet(false),
-    m_privateIpAddressesHasBeenSet(false)
+    m_privateIpAddressesHasBeenSet(false),
+    m_ipv6AddressesHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -172,6 +174,18 @@ InstanceNetworkInterface& InstanceNetworkInterface::operator =(const XmlNode& xm
 
       m_privateIpAddressesHasBeenSet = true;
     }
+    XmlNode ipv6AddressesNode = resultNode.FirstChild("ipv6AddressesSet");
+    if(!ipv6AddressesNode.IsNull())
+    {
+      XmlNode ipv6AddressesMember = ipv6AddressesNode.FirstChild("item");
+      while(!ipv6AddressesMember.IsNull())
+      {
+        m_ipv6Addresses.push_back(ipv6AddressesMember);
+        ipv6AddressesMember = ipv6AddressesMember.NextNode("item");
+      }
+
+      m_ipv6AddressesHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -226,7 +240,7 @@ void InstanceNetworkInterface::OutputToStream(Aws::OStream& oStream, const char*
 
   if(m_sourceDestCheckHasBeenSet)
   {
-      oStream << location << index << locationValue << ".SourceDestCheck=" << m_sourceDestCheck << "&";
+      oStream << location << index << locationValue << ".SourceDestCheck=" << std::boolalpha << m_sourceDestCheck << "&";
   }
 
   if(m_groupsHasBeenSet)
@@ -262,6 +276,17 @@ void InstanceNetworkInterface::OutputToStream(Aws::OStream& oStream, const char*
         Aws::StringStream privateIpAddressesSs;
         privateIpAddressesSs << location << index << locationValue << ".PrivateIpAddressesSet." << privateIpAddressesIdx++;
         item.OutputToStream(oStream, privateIpAddressesSs.str().c_str());
+      }
+  }
+
+  if(m_ipv6AddressesHasBeenSet)
+  {
+      unsigned ipv6AddressesIdx = 1;
+      for(auto& item : m_ipv6Addresses)
+      {
+        Aws::StringStream ipv6AddressesSs;
+        ipv6AddressesSs << location << index << locationValue << ".Ipv6AddressesSet." << ipv6AddressesIdx++;
+        item.OutputToStream(oStream, ipv6AddressesSs.str().c_str());
       }
   }
 
@@ -307,7 +332,7 @@ void InstanceNetworkInterface::OutputToStream(Aws::OStream& oStream, const char*
   }
   if(m_sourceDestCheckHasBeenSet)
   {
-      oStream << location << ".SourceDestCheck=" << m_sourceDestCheck << "&";
+      oStream << location << ".SourceDestCheck=" << std::boolalpha << m_sourceDestCheck << "&";
   }
   if(m_groupsHasBeenSet)
   {
@@ -315,7 +340,7 @@ void InstanceNetworkInterface::OutputToStream(Aws::OStream& oStream, const char*
       for(auto& item : m_groups)
       {
         Aws::StringStream groupsSs;
-        groupsSs << location <<  ".item." << groupsIdx++;
+        groupsSs << location <<  ".Item." << groupsIdx++;
         item.OutputToStream(oStream, groupsSs.str().c_str());
       }
   }
@@ -337,8 +362,18 @@ void InstanceNetworkInterface::OutputToStream(Aws::OStream& oStream, const char*
       for(auto& item : m_privateIpAddresses)
       {
         Aws::StringStream privateIpAddressesSs;
-        privateIpAddressesSs << location <<  ".item." << privateIpAddressesIdx++;
+        privateIpAddressesSs << location <<  ".Item." << privateIpAddressesIdx++;
         item.OutputToStream(oStream, privateIpAddressesSs.str().c_str());
+      }
+  }
+  if(m_ipv6AddressesHasBeenSet)
+  {
+      unsigned ipv6AddressesIdx = 1;
+      for(auto& item : m_ipv6Addresses)
+      {
+        Aws::StringStream ipv6AddressesSs;
+        ipv6AddressesSs << location <<  ".Item." << ipv6AddressesIdx++;
+        item.OutputToStream(oStream, ipv6AddressesSs.str().c_str());
       }
   }
 }

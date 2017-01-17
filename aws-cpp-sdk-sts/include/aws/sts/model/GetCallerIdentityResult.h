@@ -35,7 +35,10 @@ namespace Model
 {
   /**
    * <p>Contains the response to a successful <a>GetCallerIdentity</a> request,
-   * including information about the entity making the request.</p>
+   * including information about the entity making the request.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/sts-2011-06-15/GetCallerIdentityResponse">AWS
+   * API Reference</a></p>
    */
   class AWS_STS_API GetCallerIdentityResult
   {

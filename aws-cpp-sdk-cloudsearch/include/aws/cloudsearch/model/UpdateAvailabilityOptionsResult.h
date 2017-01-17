@@ -35,7 +35,9 @@ namespace Model
 {
   /**
    * <p>The result of a <code>UpdateAvailabilityOptions</code> request. Contains the
-   * status of the domain's availability options. </p>
+   * status of the domain's availability options. </p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/UpdateAvailabilityOptionsResponse">AWS
+   * API Reference</a></p>
    */
   class AWS_CLOUDSEARCH_API UpdateAvailabilityOptionsResult
   {

@@ -36,7 +36,9 @@ namespace Model
 {
 
   /**
-   * <p/>
+   * <p/><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/ReplicationInstance">AWS
+   * API Reference</a></p>
    */
   class AWS_DATABASEMIGRATIONSERVICE_API ReplicationInstance
   {
@@ -667,6 +669,48 @@ namespace Model
      */
     inline ReplicationInstance& WithPubliclyAccessible(bool value) { SetPubliclyAccessible(value); return *this;}
 
+    /**
+     * <p>The availability zone of the standby replication instance in a Multi-AZ
+     * deployment.</p>
+     */
+    inline const Aws::String& GetSecondaryAvailabilityZone() const{ return m_secondaryAvailabilityZone; }
+
+    /**
+     * <p>The availability zone of the standby replication instance in a Multi-AZ
+     * deployment.</p>
+     */
+    inline void SetSecondaryAvailabilityZone(const Aws::String& value) { m_secondaryAvailabilityZoneHasBeenSet = true; m_secondaryAvailabilityZone = value; }
+
+    /**
+     * <p>The availability zone of the standby replication instance in a Multi-AZ
+     * deployment.</p>
+     */
+    inline void SetSecondaryAvailabilityZone(Aws::String&& value) { m_secondaryAvailabilityZoneHasBeenSet = true; m_secondaryAvailabilityZone = value; }
+
+    /**
+     * <p>The availability zone of the standby replication instance in a Multi-AZ
+     * deployment.</p>
+     */
+    inline void SetSecondaryAvailabilityZone(const char* value) { m_secondaryAvailabilityZoneHasBeenSet = true; m_secondaryAvailabilityZone.assign(value); }
+
+    /**
+     * <p>The availability zone of the standby replication instance in a Multi-AZ
+     * deployment.</p>
+     */
+    inline ReplicationInstance& WithSecondaryAvailabilityZone(const Aws::String& value) { SetSecondaryAvailabilityZone(value); return *this;}
+
+    /**
+     * <p>The availability zone of the standby replication instance in a Multi-AZ
+     * deployment.</p>
+     */
+    inline ReplicationInstance& WithSecondaryAvailabilityZone(Aws::String&& value) { SetSecondaryAvailabilityZone(value); return *this;}
+
+    /**
+     * <p>The availability zone of the standby replication instance in a Multi-AZ
+     * deployment.</p>
+     */
+    inline ReplicationInstance& WithSecondaryAvailabilityZone(const char* value) { SetSecondaryAvailabilityZone(value); return *this;}
+
   private:
     Aws::String m_replicationInstanceIdentifier;
     bool m_replicationInstanceIdentifierHasBeenSet;
@@ -704,6 +748,8 @@ namespace Model
     bool m_replicationInstancePrivateIpAddressesHasBeenSet;
     bool m_publiclyAccessible;
     bool m_publiclyAccessibleHasBeenSet;
+    Aws::String m_secondaryAvailabilityZone;
+    bool m_secondaryAvailabilityZoneHasBeenSet;
   };
 
 } // namespace Model

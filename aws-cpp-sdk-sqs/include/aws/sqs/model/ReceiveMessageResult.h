@@ -35,7 +35,9 @@ namespace SQS
 namespace Model
 {
   /**
-   * <p>A list of received messages.</p>
+   * <p>A list of received messages.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/ReceiveMessageResult">AWS
+   * API Reference</a></p>
    */
   class AWS_SQS_API ReceiveMessageResult
   {

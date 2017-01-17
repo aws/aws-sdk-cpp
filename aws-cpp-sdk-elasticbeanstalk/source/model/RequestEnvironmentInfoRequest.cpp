@@ -30,7 +30,7 @@ RequestEnvironmentInfoRequest::RequestEnvironmentInfoRequest() :
 Aws::String RequestEnvironmentInfoRequest::SerializePayload() const
 {
   Aws::StringStream ss;
-  ss << "Action=EnvironmentInfo&";
+  ss << "Action=RequestEnvironmentInfo&";
   if(m_environmentIdHasBeenSet)
   {
     ss << "EnvironmentId=" << StringUtils::URLEncode(m_environmentId.c_str()) << "&";

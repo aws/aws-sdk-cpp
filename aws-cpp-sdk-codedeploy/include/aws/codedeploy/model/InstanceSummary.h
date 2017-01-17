@@ -35,7 +35,9 @@ namespace Model
 {
 
   /**
-   * <p>Information about an instance in a deployment.</p>
+   * <p>Information about an instance in a deployment.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/InstanceSummary">AWS
+   * API Reference</a></p>
    */
   class AWS_CODEDEPLOY_API InstanceSummary
   {

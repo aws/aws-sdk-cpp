@@ -30,7 +30,10 @@ namespace Model
 {
 
   /**
-   * <p>Contains directory limit information for a region.</p>
+   * <p>Contains directory limit information for a region.</p><p><h3>See Also:</h3>  
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DirectoryLimits">AWS
+   * API Reference</a></p>
    */
   class AWS_DIRECTORYSERVICE_API DirectoryLimits
   {

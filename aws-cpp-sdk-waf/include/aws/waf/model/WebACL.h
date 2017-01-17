@@ -43,7 +43,9 @@ namespace Model
    * identify the requests that you want AWS WAF to filter. If you add more than one
    * <code>Rule</code> to a <code>WebACL</code>, a request needs to match only one of
    * the specifications to be allowed, blocked, or counted. For more information, see
-   * <a>UpdateWebACL</a>.</p>
+   * <a>UpdateWebACL</a>.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/WebACL">AWS API
+   * Reference</a></p>
    */
   class AWS_WAF_API WebACL
   {
@@ -158,25 +160,60 @@ namespace Model
      */
     inline WebACL& WithName(const char* value) { SetName(value); return *this;}
 
-    
+    /**
+     * <p>A friendly name or description for the metrics for this <code>WebACL</code>.
+     * The name can contain only alphanumeric characters (A-Z, a-z, 0-9); the name
+     * can't contain whitespace. You can't change <code>MetricName</code> after you
+     * create the <code>WebACL</code>.</p>
+     */
     inline const Aws::String& GetMetricName() const{ return m_metricName; }
 
-    
+    /**
+     * <p>A friendly name or description for the metrics for this <code>WebACL</code>.
+     * The name can contain only alphanumeric characters (A-Z, a-z, 0-9); the name
+     * can't contain whitespace. You can't change <code>MetricName</code> after you
+     * create the <code>WebACL</code>.</p>
+     */
     inline void SetMetricName(const Aws::String& value) { m_metricNameHasBeenSet = true; m_metricName = value; }
 
-    
+    /**
+     * <p>A friendly name or description for the metrics for this <code>WebACL</code>.
+     * The name can contain only alphanumeric characters (A-Z, a-z, 0-9); the name
+     * can't contain whitespace. You can't change <code>MetricName</code> after you
+     * create the <code>WebACL</code>.</p>
+     */
     inline void SetMetricName(Aws::String&& value) { m_metricNameHasBeenSet = true; m_metricName = value; }
 
-    
+    /**
+     * <p>A friendly name or description for the metrics for this <code>WebACL</code>.
+     * The name can contain only alphanumeric characters (A-Z, a-z, 0-9); the name
+     * can't contain whitespace. You can't change <code>MetricName</code> after you
+     * create the <code>WebACL</code>.</p>
+     */
     inline void SetMetricName(const char* value) { m_metricNameHasBeenSet = true; m_metricName.assign(value); }
 
-    
+    /**
+     * <p>A friendly name or description for the metrics for this <code>WebACL</code>.
+     * The name can contain only alphanumeric characters (A-Z, a-z, 0-9); the name
+     * can't contain whitespace. You can't change <code>MetricName</code> after you
+     * create the <code>WebACL</code>.</p>
+     */
     inline WebACL& WithMetricName(const Aws::String& value) { SetMetricName(value); return *this;}
 
-    
+    /**
+     * <p>A friendly name or description for the metrics for this <code>WebACL</code>.
+     * The name can contain only alphanumeric characters (A-Z, a-z, 0-9); the name
+     * can't contain whitespace. You can't change <code>MetricName</code> after you
+     * create the <code>WebACL</code>.</p>
+     */
     inline WebACL& WithMetricName(Aws::String&& value) { SetMetricName(value); return *this;}
 
-    
+    /**
+     * <p>A friendly name or description for the metrics for this <code>WebACL</code>.
+     * The name can contain only alphanumeric characters (A-Z, a-z, 0-9); the name
+     * can't contain whitespace. You can't change <code>MetricName</code> after you
+     * create the <code>WebACL</code>.</p>
+     */
     inline WebACL& WithMetricName(const char* value) { SetMetricName(value); return *this;}
 
     /**

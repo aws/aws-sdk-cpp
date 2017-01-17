@@ -17,6 +17,8 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/ssm/model/InstanceAssociationOutputLocation.h>
+#include <aws/ssm/model/Target.h>
 
 namespace Aws
 {
@@ -33,7 +35,10 @@ namespace Model
 {
 
   /**
-   * <p> Describes the association of an SSM document and an instance. </p>
+   * <p> Describes the association of an SSM document and an instance. </p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateAssociationBatchRequestEntry">AWS
+   * API Reference</a></p>
    */
   class AWS_SSM_API CreateAssociationBatchRequestEntry
   {
@@ -168,6 +173,136 @@ namespace Model
      */
     inline CreateAssociationBatchRequestEntry& AddParameters(const char* key, const Aws::Vector<Aws::String>& value) { m_parametersHasBeenSet = true; m_parameters[key] = value; return *this; }
 
+    /**
+     * <p>The document version.</p>
+     */
+    inline const Aws::String& GetDocumentVersion() const{ return m_documentVersion; }
+
+    /**
+     * <p>The document version.</p>
+     */
+    inline void SetDocumentVersion(const Aws::String& value) { m_documentVersionHasBeenSet = true; m_documentVersion = value; }
+
+    /**
+     * <p>The document version.</p>
+     */
+    inline void SetDocumentVersion(Aws::String&& value) { m_documentVersionHasBeenSet = true; m_documentVersion = value; }
+
+    /**
+     * <p>The document version.</p>
+     */
+    inline void SetDocumentVersion(const char* value) { m_documentVersionHasBeenSet = true; m_documentVersion.assign(value); }
+
+    /**
+     * <p>The document version.</p>
+     */
+    inline CreateAssociationBatchRequestEntry& WithDocumentVersion(const Aws::String& value) { SetDocumentVersion(value); return *this;}
+
+    /**
+     * <p>The document version.</p>
+     */
+    inline CreateAssociationBatchRequestEntry& WithDocumentVersion(Aws::String&& value) { SetDocumentVersion(value); return *this;}
+
+    /**
+     * <p>The document version.</p>
+     */
+    inline CreateAssociationBatchRequestEntry& WithDocumentVersion(const char* value) { SetDocumentVersion(value); return *this;}
+
+    /**
+     * <p>The instances targeted by the request.</p>
+     */
+    inline const Aws::Vector<Target>& GetTargets() const{ return m_targets; }
+
+    /**
+     * <p>The instances targeted by the request.</p>
+     */
+    inline void SetTargets(const Aws::Vector<Target>& value) { m_targetsHasBeenSet = true; m_targets = value; }
+
+    /**
+     * <p>The instances targeted by the request.</p>
+     */
+    inline void SetTargets(Aws::Vector<Target>&& value) { m_targetsHasBeenSet = true; m_targets = value; }
+
+    /**
+     * <p>The instances targeted by the request.</p>
+     */
+    inline CreateAssociationBatchRequestEntry& WithTargets(const Aws::Vector<Target>& value) { SetTargets(value); return *this;}
+
+    /**
+     * <p>The instances targeted by the request.</p>
+     */
+    inline CreateAssociationBatchRequestEntry& WithTargets(Aws::Vector<Target>&& value) { SetTargets(value); return *this;}
+
+    /**
+     * <p>The instances targeted by the request.</p>
+     */
+    inline CreateAssociationBatchRequestEntry& AddTargets(const Target& value) { m_targetsHasBeenSet = true; m_targets.push_back(value); return *this; }
+
+    /**
+     * <p>The instances targeted by the request.</p>
+     */
+    inline CreateAssociationBatchRequestEntry& AddTargets(Target&& value) { m_targetsHasBeenSet = true; m_targets.push_back(value); return *this; }
+
+    /**
+     * <p>A cron expression that specifies a schedule when the association runs.</p>
+     */
+    inline const Aws::String& GetScheduleExpression() const{ return m_scheduleExpression; }
+
+    /**
+     * <p>A cron expression that specifies a schedule when the association runs.</p>
+     */
+    inline void SetScheduleExpression(const Aws::String& value) { m_scheduleExpressionHasBeenSet = true; m_scheduleExpression = value; }
+
+    /**
+     * <p>A cron expression that specifies a schedule when the association runs.</p>
+     */
+    inline void SetScheduleExpression(Aws::String&& value) { m_scheduleExpressionHasBeenSet = true; m_scheduleExpression = value; }
+
+    /**
+     * <p>A cron expression that specifies a schedule when the association runs.</p>
+     */
+    inline void SetScheduleExpression(const char* value) { m_scheduleExpressionHasBeenSet = true; m_scheduleExpression.assign(value); }
+
+    /**
+     * <p>A cron expression that specifies a schedule when the association runs.</p>
+     */
+    inline CreateAssociationBatchRequestEntry& WithScheduleExpression(const Aws::String& value) { SetScheduleExpression(value); return *this;}
+
+    /**
+     * <p>A cron expression that specifies a schedule when the association runs.</p>
+     */
+    inline CreateAssociationBatchRequestEntry& WithScheduleExpression(Aws::String&& value) { SetScheduleExpression(value); return *this;}
+
+    /**
+     * <p>A cron expression that specifies a schedule when the association runs.</p>
+     */
+    inline CreateAssociationBatchRequestEntry& WithScheduleExpression(const char* value) { SetScheduleExpression(value); return *this;}
+
+    /**
+     * <p>An Amazon S3 bucket where you want to store the results of this request.</p>
+     */
+    inline const InstanceAssociationOutputLocation& GetOutputLocation() const{ return m_outputLocation; }
+
+    /**
+     * <p>An Amazon S3 bucket where you want to store the results of this request.</p>
+     */
+    inline void SetOutputLocation(const InstanceAssociationOutputLocation& value) { m_outputLocationHasBeenSet = true; m_outputLocation = value; }
+
+    /**
+     * <p>An Amazon S3 bucket where you want to store the results of this request.</p>
+     */
+    inline void SetOutputLocation(InstanceAssociationOutputLocation&& value) { m_outputLocationHasBeenSet = true; m_outputLocation = value; }
+
+    /**
+     * <p>An Amazon S3 bucket where you want to store the results of this request.</p>
+     */
+    inline CreateAssociationBatchRequestEntry& WithOutputLocation(const InstanceAssociationOutputLocation& value) { SetOutputLocation(value); return *this;}
+
+    /**
+     * <p>An Amazon S3 bucket where you want to store the results of this request.</p>
+     */
+    inline CreateAssociationBatchRequestEntry& WithOutputLocation(InstanceAssociationOutputLocation&& value) { SetOutputLocation(value); return *this;}
+
   private:
     Aws::String m_name;
     bool m_nameHasBeenSet;
@@ -175,6 +310,14 @@ namespace Model
     bool m_instanceIdHasBeenSet;
     Aws::Map<Aws::String, Aws::Vector<Aws::String>> m_parameters;
     bool m_parametersHasBeenSet;
+    Aws::String m_documentVersion;
+    bool m_documentVersionHasBeenSet;
+    Aws::Vector<Target> m_targets;
+    bool m_targetsHasBeenSet;
+    Aws::String m_scheduleExpression;
+    bool m_scheduleExpressionHasBeenSet;
+    InstanceAssociationOutputLocation m_outputLocation;
+    bool m_outputLocationHasBeenSet;
   };
 
 } // namespace Model

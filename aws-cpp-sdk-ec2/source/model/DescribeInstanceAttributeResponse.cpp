@@ -119,6 +119,11 @@ DescribeInstanceAttributeResponse& DescribeInstanceAttributeResponse::operator =
     {
       m_sriovNetSupport = sriovNetSupportNode;
     }
+    XmlNode enaSupportNode = resultNode.FirstChild("enaSupport");
+    if(!enaSupportNode.IsNull())
+    {
+      m_enaSupport = enaSupportNode;
+    }
     XmlNode sourceDestCheckNode = resultNode.FirstChild("sourceDestCheck");
     if(!sourceDestCheckNode.IsNull())
     {

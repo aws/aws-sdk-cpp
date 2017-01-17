@@ -29,7 +29,9 @@ namespace Model
    * <p>Container for the parameters to the <code><a>DescribeDomains</a></code>
    * operation. By default shows the status of all domains. To restrict the response
    * to particular domains, specify the names of the domains you want to
-   * describe.</p>
+   * describe.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/DescribeDomainsRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_CLOUDSEARCH_API DescribeDomainsRequest : public CloudSearchRequest
   {

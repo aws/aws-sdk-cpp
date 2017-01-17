@@ -38,7 +38,10 @@ namespace Model
    * AWS WAF to take when a web request matches the <code>Rule</code>
    * (<code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>).</p> <p>To
    * specify whether to insert or delete a <code>Rule</code>, use the
-   * <code>Action</code> parameter in the <a>WebACLUpdate</a> data type.</p>
+   * <code>Action</code> parameter in the <a>WebACLUpdate</a> data
+   * type.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/ActivatedRule">AWS
+   * API Reference</a></p>
    */
   class AWS_WAF_API ActivatedRule
   {

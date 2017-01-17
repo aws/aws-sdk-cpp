@@ -34,7 +34,9 @@ namespace Model
 {
 
   /**
-   * <p>A user pool of the client type.</p>
+   * <p>A user pool of the client type.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/UserPoolClientType">AWS
+   * API Reference</a></p>
    */
   class AWS_COGNITOIDENTITYPROVIDER_API UserPoolClientType
   {
@@ -235,17 +237,17 @@ namespace Model
     inline UserPoolClientType& WithCreationDate(Aws::Utils::DateTime&& value) { SetCreationDate(value); return *this;}
 
     /**
-     * <p>The validity of the refresh token.</p>
+     * <p>The validity of the refresh token, in days.</p>
      */
     inline int GetRefreshTokenValidity() const{ return m_refreshTokenValidity; }
 
     /**
-     * <p>The validity of the refresh token.</p>
+     * <p>The validity of the refresh token, in days.</p>
      */
     inline void SetRefreshTokenValidity(int value) { m_refreshTokenValidityHasBeenSet = true; m_refreshTokenValidity = value; }
 
     /**
-     * <p>The validity of the refresh token.</p>
+     * <p>The validity of the refresh token, in days.</p>
      */
     inline UserPoolClientType& WithRefreshTokenValidity(int value) { SetRefreshTokenValidity(value); return *this;}
 

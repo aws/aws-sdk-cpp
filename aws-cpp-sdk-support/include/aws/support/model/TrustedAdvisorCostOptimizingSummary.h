@@ -31,7 +31,9 @@ namespace Model
 
   /**
    * <p>The estimated cost savings that might be realized if the recommended actions
-   * are taken.</p>
+   * are taken.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/TrustedAdvisorCostOptimizingSummary">AWS
+   * API Reference</a></p>
    */
   class AWS_SUPPORT_API TrustedAdvisorCostOptimizingSummary
   {

@@ -181,7 +181,7 @@ void ManagedPolicyDetail::OutputToStream(Aws::OStream& oStream, const char* loca
 
   if(m_isAttachableHasBeenSet)
   {
-      oStream << location << index << locationValue << ".IsAttachable=" << m_isAttachable << "&";
+      oStream << location << index << locationValue << ".IsAttachable=" << std::boolalpha << m_isAttachable << "&";
   }
 
   if(m_descriptionHasBeenSet)
@@ -240,7 +240,7 @@ void ManagedPolicyDetail::OutputToStream(Aws::OStream& oStream, const char* loca
   }
   if(m_isAttachableHasBeenSet)
   {
-      oStream << location << ".IsAttachable=" << m_isAttachable << "&";
+      oStream << location << ".IsAttachable=" << std::boolalpha << m_isAttachable << "&";
   }
   if(m_descriptionHasBeenSet)
   {

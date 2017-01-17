@@ -25,7 +25,10 @@ namespace Model
 {
 
   /**
-   * <p>Provides options for deleting an archive from an Amazon Glacier vault.</p>
+   * <p>Provides options for deleting an archive from an Amazon Glacier
+   * vault.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/DeleteArchiveInput">AWS
+   * API Reference</a></p>
    */
   class AWS_GLACIER_API DeleteArchiveRequest : public GlacierRequest
   {

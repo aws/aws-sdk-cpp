@@ -74,7 +74,7 @@ Aws::String RestoreDBInstanceToPointInTimeRequest::SerializePayload() const
 
   if(m_useLatestRestorableTimeHasBeenSet)
   {
-    ss << "UseLatestRestorableTime=" << m_useLatestRestorableTime << "&";
+    ss << "UseLatestRestorableTime=" << std::boolalpha << m_useLatestRestorableTime << "&";
   }
 
   if(m_dBInstanceClassHasBeenSet)
@@ -99,17 +99,17 @@ Aws::String RestoreDBInstanceToPointInTimeRequest::SerializePayload() const
 
   if(m_multiAZHasBeenSet)
   {
-    ss << "MultiAZ=" << m_multiAZ << "&";
+    ss << "MultiAZ=" << std::boolalpha << m_multiAZ << "&";
   }
 
   if(m_publiclyAccessibleHasBeenSet)
   {
-    ss << "PubliclyAccessible=" << m_publiclyAccessible << "&";
+    ss << "PubliclyAccessible=" << std::boolalpha << m_publiclyAccessible << "&";
   }
 
   if(m_autoMinorVersionUpgradeHasBeenSet)
   {
-    ss << "AutoMinorVersionUpgrade=" << m_autoMinorVersionUpgrade << "&";
+    ss << "AutoMinorVersionUpgrade=" << std::boolalpha << m_autoMinorVersionUpgrade << "&";
   }
 
   if(m_licenseModelHasBeenSet)
@@ -139,7 +139,7 @@ Aws::String RestoreDBInstanceToPointInTimeRequest::SerializePayload() const
 
   if(m_copyTagsToSnapshotHasBeenSet)
   {
-    ss << "CopyTagsToSnapshot=" << m_copyTagsToSnapshot << "&";
+    ss << "CopyTagsToSnapshot=" << std::boolalpha << m_copyTagsToSnapshot << "&";
   }
 
   if(m_tagsHasBeenSet)

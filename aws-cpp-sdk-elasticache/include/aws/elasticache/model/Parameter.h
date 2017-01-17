@@ -34,7 +34,9 @@ namespace Model
 
   /**
    * <p>Describes an individual setting that controls some aspect of ElastiCache
-   * behavior.</p>
+   * behavior.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/Parameter">AWS
+   * API Reference</a></p>
    */
   class AWS_ELASTICACHE_API Parameter
   {

@@ -164,12 +164,12 @@ void OptionSetting::OutputToStream(Aws::OStream& oStream, const char* location, 
 
   if(m_isModifiableHasBeenSet)
   {
-      oStream << location << index << locationValue << ".IsModifiable=" << m_isModifiable << "&";
+      oStream << location << index << locationValue << ".IsModifiable=" << std::boolalpha << m_isModifiable << "&";
   }
 
   if(m_isCollectionHasBeenSet)
   {
-      oStream << location << index << locationValue << ".IsCollection=" << m_isCollection << "&";
+      oStream << location << index << locationValue << ".IsCollection=" << std::boolalpha << m_isCollection << "&";
   }
 
 }
@@ -206,11 +206,11 @@ void OptionSetting::OutputToStream(Aws::OStream& oStream, const char* location) 
   }
   if(m_isModifiableHasBeenSet)
   {
-      oStream << location << ".IsModifiable=" << m_isModifiable << "&";
+      oStream << location << ".IsModifiable=" << std::boolalpha << m_isModifiable << "&";
   }
   if(m_isCollectionHasBeenSet)
   {
-      oStream << location << ".IsCollection=" << m_isCollection << "&";
+      oStream << location << ".IsCollection=" << std::boolalpha << m_isCollection << "&";
   }
 }
 

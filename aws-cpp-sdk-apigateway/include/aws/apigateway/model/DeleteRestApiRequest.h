@@ -25,7 +25,10 @@ namespace Model
 {
 
   /**
-   * <p>Request to delete the specified API from your collection.</p>
+   * <p>Request to delete the specified API from your collection.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DeleteRestApiRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_APIGATEWAY_API DeleteRestApiRequest : public APIGatewayRequest
   {

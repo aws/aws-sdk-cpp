@@ -251,7 +251,9 @@ namespace Model
          * make a <code>PutConfigRule</code> or <code>DeleteConfigRule</code> request for
          * the rule, you will receive a <code>ResourceInUseException</code>.</p> <p>You can
          * check the state of a rule by using the <code>DescribeConfigRules</code>
-         * request.</p>
+         * request.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeleteConfigRule">AWS
+         * API Reference</a></p>
          */
         virtual Model::DeleteConfigRuleOutcome DeleteConfigRule(const Model::DeleteConfigRuleRequest& request) const;
 
@@ -262,7 +264,9 @@ namespace Model
          * make a <code>PutConfigRule</code> or <code>DeleteConfigRule</code> request for
          * the rule, you will receive a <code>ResourceInUseException</code>.</p> <p>You can
          * check the state of a rule by using the <code>DescribeConfigRules</code>
-         * request.</p>
+         * request.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeleteConfigRule">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -275,7 +279,9 @@ namespace Model
          * make a <code>PutConfigRule</code> or <code>DeleteConfigRule</code> request for
          * the rule, you will receive a <code>ResourceInUseException</code>.</p> <p>You can
          * check the state of a rule by using the <code>DescribeConfigRules</code>
-         * request.</p>
+         * request.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeleteConfigRule">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -289,7 +295,9 @@ namespace Model
          * access the previously recorded information by using the
          * <code>GetResourceConfigHistory</code> action, but you will not be able to access
          * this information in the AWS Config console until you create a new configuration
-         * recorder.</p>
+         * recorder.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeleteConfigurationRecorder">AWS
+         * API Reference</a></p>
          */
         virtual Model::DeleteConfigurationRecorderOutcome DeleteConfigurationRecorder(const Model::DeleteConfigurationRecorderRequest& request) const;
 
@@ -301,7 +309,9 @@ namespace Model
          * access the previously recorded information by using the
          * <code>GetResourceConfigHistory</code> action, but you will not be able to access
          * this information in the AWS Config console until you create a new configuration
-         * recorder.</p>
+         * recorder.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeleteConfigurationRecorder">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -315,7 +325,9 @@ namespace Model
          * access the previously recorded information by using the
          * <code>GetResourceConfigHistory</code> action, but you will not be able to access
          * this information in the AWS Config console until you create a new configuration
-         * recorder.</p>
+         * recorder.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeleteConfigurationRecorder">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -324,14 +336,18 @@ namespace Model
         /**
          * <p>Deletes the delivery channel.</p> <p>Before you can delete the delivery
          * channel, you must stop the configuration recorder by using the
-         * <a>StopConfigurationRecorder</a> action.</p>
+         * <a>StopConfigurationRecorder</a> action.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeleteDeliveryChannel">AWS
+         * API Reference</a></p>
          */
         virtual Model::DeleteDeliveryChannelOutcome DeleteDeliveryChannel(const Model::DeleteDeliveryChannelRequest& request) const;
 
         /**
          * <p>Deletes the delivery channel.</p> <p>Before you can delete the delivery
          * channel, you must stop the configuration recorder by using the
-         * <a>StopConfigurationRecorder</a> action.</p>
+         * <a>StopConfigurationRecorder</a> action.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeleteDeliveryChannel">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -340,7 +356,9 @@ namespace Model
         /**
          * <p>Deletes the delivery channel.</p> <p>Before you can delete the delivery
          * channel, you must stop the configuration recorder by using the
-         * <a>StopConfigurationRecorder</a> action.</p>
+         * <a>StopConfigurationRecorder</a> action.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeleteDeliveryChannel">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -350,7 +368,9 @@ namespace Model
          * <p>Deletes the evaluation results for the specified Config rule. You can specify
          * one Config rule per request. After you delete the evaluation results, you can
          * call the <a>StartConfigRulesEvaluation</a> API to start evaluating your AWS
-         * resources against the rule.</p>
+         * resources against the rule.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeleteEvaluationResults">AWS
+         * API Reference</a></p>
          */
         virtual Model::DeleteEvaluationResultsOutcome DeleteEvaluationResults(const Model::DeleteEvaluationResultsRequest& request) const;
 
@@ -358,7 +378,9 @@ namespace Model
          * <p>Deletes the evaluation results for the specified Config rule. You can specify
          * one Config rule per request. After you delete the evaluation results, you can
          * call the <a>StartConfigRulesEvaluation</a> API to start evaluating your AWS
-         * resources against the rule.</p>
+         * resources against the rule.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeleteEvaluationResults">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -368,7 +390,9 @@ namespace Model
          * <p>Deletes the evaluation results for the specified Config rule. You can specify
          * one Config rule per request. After you delete the evaluation results, you can
          * call the <a>StartConfigRulesEvaluation</a> API to start evaluating your AWS
-         * resources against the rule.</p>
+         * resources against the rule.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeleteEvaluationResults">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -381,7 +405,9 @@ namespace Model
          * <ul> <li> <p>Notification of starting the delivery.</p> </li> <li>
          * <p>Notification of delivery completed, if the delivery was successfully
          * completed.</p> </li> <li> <p>Notification of delivery failure, if the delivery
-         * failed to complete.</p> </li> </ul>
+         * failed to complete.</p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeliverConfigSnapshot">AWS
+         * API Reference</a></p>
          */
         virtual Model::DeliverConfigSnapshotOutcome DeliverConfigSnapshot(const Model::DeliverConfigSnapshotRequest& request) const;
 
@@ -392,7 +418,9 @@ namespace Model
          * <ul> <li> <p>Notification of starting the delivery.</p> </li> <li>
          * <p>Notification of delivery completed, if the delivery was successfully
          * completed.</p> </li> <li> <p>Notification of delivery failure, if the delivery
-         * failed to complete.</p> </li> </ul>
+         * failed to complete.</p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeliverConfigSnapshot">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -405,7 +433,9 @@ namespace Model
          * <ul> <li> <p>Notification of starting the delivery.</p> </li> <li>
          * <p>Notification of delivery completed, if the delivery was successfully
          * completed.</p> </li> <li> <p>Notification of delivery failure, if the delivery
-         * failed to complete.</p> </li> </ul>
+         * failed to complete.</p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeliverConfigSnapshot">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -430,7 +460,9 @@ namespace Model
          * <code>config:PutEvaluations</code> permission.</p> </li> <li> <p>The rule's AWS
          * Lambda function has returned <code>NOT_APPLICABLE</code> for all evaluation
          * results. This can occur if the resources were deleted or removed from the rule's
-         * scope.</p> </li> </ul>
+         * scope.</p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeComplianceByConfigRule">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeComplianceByConfigRuleOutcome DescribeComplianceByConfigRule(const Model::DescribeComplianceByConfigRuleRequest& request) const;
 
@@ -453,7 +485,9 @@ namespace Model
          * <code>config:PutEvaluations</code> permission.</p> </li> <li> <p>The rule's AWS
          * Lambda function has returned <code>NOT_APPLICABLE</code> for all evaluation
          * results. This can occur if the resources were deleted or removed from the rule's
-         * scope.</p> </li> </ul>
+         * scope.</p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeComplianceByConfigRule">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -478,7 +512,9 @@ namespace Model
          * <code>config:PutEvaluations</code> permission.</p> </li> <li> <p>The rule's AWS
          * Lambda function has returned <code>NOT_APPLICABLE</code> for all evaluation
          * results. This can occur if the resources were deleted or removed from the rule's
-         * scope.</p> </li> </ul>
+         * scope.</p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeComplianceByConfigRule">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -504,7 +540,9 @@ namespace Model
          * <code>config:PutEvaluations</code> permission.</p> </li> <li> <p>The rule's AWS
          * Lambda function has returned <code>NOT_APPLICABLE</code> for all evaluation
          * results. This can occur if the resources were deleted or removed from the rule's
-         * scope.</p> </li> </ul>
+         * scope.</p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeComplianceByResource">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeComplianceByResourceOutcome DescribeComplianceByResource(const Model::DescribeComplianceByResourceRequest& request) const;
 
@@ -528,7 +566,9 @@ namespace Model
          * <code>config:PutEvaluations</code> permission.</p> </li> <li> <p>The rule's AWS
          * Lambda function has returned <code>NOT_APPLICABLE</code> for all evaluation
          * results. This can occur if the resources were deleted or removed from the rule's
-         * scope.</p> </li> </ul>
+         * scope.</p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeComplianceByResource">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -554,7 +594,9 @@ namespace Model
          * <code>config:PutEvaluations</code> permission.</p> </li> <li> <p>The rule's AWS
          * Lambda function has returned <code>NOT_APPLICABLE</code> for all evaluation
          * results. This can occur if the resources were deleted or removed from the rule's
-         * scope.</p> </li> </ul>
+         * scope.</p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeComplianceByResource">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -564,7 +606,9 @@ namespace Model
          * <p>Returns status information for each of your AWS managed Config rules. The
          * status includes information such as the last time AWS Config invoked the rule,
          * the last time AWS Config failed to invoke the rule, and the related error for
-         * the last failure.</p>
+         * the last failure.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeConfigRuleEvaluationStatus">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeConfigRuleEvaluationStatusOutcome DescribeConfigRuleEvaluationStatus(const Model::DescribeConfigRuleEvaluationStatusRequest& request) const;
 
@@ -572,7 +616,9 @@ namespace Model
          * <p>Returns status information for each of your AWS managed Config rules. The
          * status includes information such as the last time AWS Config invoked the rule,
          * the last time AWS Config failed to invoke the rule, and the related error for
-         * the last failure.</p>
+         * the last failure.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeConfigRuleEvaluationStatus">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -582,26 +628,34 @@ namespace Model
          * <p>Returns status information for each of your AWS managed Config rules. The
          * status includes information such as the last time AWS Config invoked the rule,
          * the last time AWS Config failed to invoke the rule, and the related error for
-         * the last failure.</p>
+         * the last failure.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeConfigRuleEvaluationStatus">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeConfigRuleEvaluationStatusAsync(const Model::DescribeConfigRuleEvaluationStatusRequest& request, const DescribeConfigRuleEvaluationStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns details about your AWS Config rules.</p>
+         * <p>Returns details about your AWS Config rules.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeConfigRules">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeConfigRulesOutcome DescribeConfigRules(const Model::DescribeConfigRulesRequest& request) const;
 
         /**
-         * <p>Returns details about your AWS Config rules.</p>
+         * <p>Returns details about your AWS Config rules.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeConfigRules">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DescribeConfigRulesOutcomeCallable DescribeConfigRulesCallable(const Model::DescribeConfigRulesRequest& request) const;
 
         /**
-         * <p>Returns details about your AWS Config rules.</p>
+         * <p>Returns details about your AWS Config rules.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeConfigRules">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -612,7 +666,9 @@ namespace Model
          * configuration recorder is not specified, this action returns the status of all
          * configuration recorder associated with the account.</p> <note> <p>Currently, you
          * can specify only one configuration recorder per region in your account.</p>
-         * </note>
+         * </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeConfigurationRecorderStatus">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeConfigurationRecorderStatusOutcome DescribeConfigurationRecorderStatus(const Model::DescribeConfigurationRecorderStatusRequest& request) const;
 
@@ -621,7 +677,9 @@ namespace Model
          * configuration recorder is not specified, this action returns the status of all
          * configuration recorder associated with the account.</p> <note> <p>Currently, you
          * can specify only one configuration recorder per region in your account.</p>
-         * </note>
+         * </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeConfigurationRecorderStatus">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -632,7 +690,9 @@ namespace Model
          * configuration recorder is not specified, this action returns the status of all
          * configuration recorder associated with the account.</p> <note> <p>Currently, you
          * can specify only one configuration recorder per region in your account.</p>
-         * </note>
+         * </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeConfigurationRecorderStatus">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -643,7 +703,9 @@ namespace Model
          * configuration recorder is not specified, this action returns the details for all
          * configuration recorders associated with the account.</p> <note> <p>Currently,
          * you can specify only one configuration recorder per region in your account.</p>
-         * </note>
+         * </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeConfigurationRecorders">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeConfigurationRecordersOutcome DescribeConfigurationRecorders(const Model::DescribeConfigurationRecordersRequest& request) const;
 
@@ -652,7 +714,9 @@ namespace Model
          * configuration recorder is not specified, this action returns the details for all
          * configuration recorders associated with the account.</p> <note> <p>Currently,
          * you can specify only one configuration recorder per region in your account.</p>
-         * </note>
+         * </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeConfigurationRecorders">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -663,7 +727,9 @@ namespace Model
          * configuration recorder is not specified, this action returns the details for all
          * configuration recorders associated with the account.</p> <note> <p>Currently,
          * you can specify only one configuration recorder per region in your account.</p>
-         * </note>
+         * </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeConfigurationRecorders">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -673,7 +739,10 @@ namespace Model
          * <p>Returns the current status of the specified delivery channel. If a delivery
          * channel is not specified, this action returns the current status of all delivery
          * channels associated with the account.</p> <note> <p>Currently, you can specify
-         * only one delivery channel per region in your account.</p> </note>
+         * only one delivery channel per region in your account.</p> </note><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeDeliveryChannelStatus">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeDeliveryChannelStatusOutcome DescribeDeliveryChannelStatus(const Model::DescribeDeliveryChannelStatusRequest& request) const;
 
@@ -681,7 +750,10 @@ namespace Model
          * <p>Returns the current status of the specified delivery channel. If a delivery
          * channel is not specified, this action returns the current status of all delivery
          * channels associated with the account.</p> <note> <p>Currently, you can specify
-         * only one delivery channel per region in your account.</p> </note>
+         * only one delivery channel per region in your account.</p> </note><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeDeliveryChannelStatus">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -691,7 +763,10 @@ namespace Model
          * <p>Returns the current status of the specified delivery channel. If a delivery
          * channel is not specified, this action returns the current status of all delivery
          * channels associated with the account.</p> <note> <p>Currently, you can specify
-         * only one delivery channel per region in your account.</p> </note>
+         * only one delivery channel per region in your account.</p> </note><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeDeliveryChannelStatus">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -701,7 +776,10 @@ namespace Model
          * <p>Returns details about the specified delivery channel. If a delivery channel
          * is not specified, this action returns the details of all delivery channels
          * associated with the account.</p> <note> <p>Currently, you can specify only one
-         * delivery channel per region in your account.</p> </note>
+         * delivery channel per region in your account.</p> </note><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeDeliveryChannels">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeDeliveryChannelsOutcome DescribeDeliveryChannels(const Model::DescribeDeliveryChannelsRequest& request) const;
 
@@ -709,7 +787,10 @@ namespace Model
          * <p>Returns details about the specified delivery channel. If a delivery channel
          * is not specified, this action returns the details of all delivery channels
          * associated with the account.</p> <note> <p>Currently, you can specify only one
-         * delivery channel per region in your account.</p> </note>
+         * delivery channel per region in your account.</p> </note><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeDeliveryChannels">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -719,7 +800,10 @@ namespace Model
          * <p>Returns details about the specified delivery channel. If a delivery channel
          * is not specified, this action returns the details of all delivery channels
          * associated with the account.</p> <note> <p>Currently, you can specify only one
-         * delivery channel per region in your account.</p> </note>
+         * delivery channel per region in your account.</p> </note><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeDeliveryChannels">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -728,14 +812,20 @@ namespace Model
         /**
          * <p>Returns the evaluation results for the specified AWS Config rule. The results
          * indicate which AWS resources were evaluated by the rule, when each resource was
-         * last evaluated, and whether each resource complies with the rule.</p>
+         * last evaluated, and whether each resource complies with the rule.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetComplianceDetailsByConfigRule">AWS
+         * API Reference</a></p>
          */
         virtual Model::GetComplianceDetailsByConfigRuleOutcome GetComplianceDetailsByConfigRule(const Model::GetComplianceDetailsByConfigRuleRequest& request) const;
 
         /**
          * <p>Returns the evaluation results for the specified AWS Config rule. The results
          * indicate which AWS resources were evaluated by the rule, when each resource was
-         * last evaluated, and whether each resource complies with the rule.</p>
+         * last evaluated, and whether each resource complies with the rule.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetComplianceDetailsByConfigRule">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -744,7 +834,10 @@ namespace Model
         /**
          * <p>Returns the evaluation results for the specified AWS Config rule. The results
          * indicate which AWS resources were evaluated by the rule, when each resource was
-         * last evaluated, and whether each resource complies with the rule.</p>
+         * last evaluated, and whether each resource complies with the rule.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetComplianceDetailsByConfigRule">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -753,14 +846,20 @@ namespace Model
         /**
          * <p>Returns the evaluation results for the specified AWS resource. The results
          * indicate which AWS Config rules were used to evaluate the resource, when each
-         * rule was last used, and whether the resource complies with each rule.</p>
+         * rule was last used, and whether the resource complies with each
+         * rule.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetComplianceDetailsByResource">AWS
+         * API Reference</a></p>
          */
         virtual Model::GetComplianceDetailsByResourceOutcome GetComplianceDetailsByResource(const Model::GetComplianceDetailsByResourceRequest& request) const;
 
         /**
          * <p>Returns the evaluation results for the specified AWS resource. The results
          * indicate which AWS Config rules were used to evaluate the resource, when each
-         * rule was last used, and whether the resource complies with each rule.</p>
+         * rule was last used, and whether the resource complies with each
+         * rule.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetComplianceDetailsByResource">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -769,7 +868,10 @@ namespace Model
         /**
          * <p>Returns the evaluation results for the specified AWS resource. The results
          * indicate which AWS Config rules were used to evaluate the resource, when each
-         * rule was last used, and whether the resource complies with each rule.</p>
+         * rule was last used, and whether the resource complies with each
+         * rule.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetComplianceDetailsByResource">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -777,13 +879,17 @@ namespace Model
 
         /**
          * <p>Returns the number of AWS Config rules that are compliant and noncompliant,
-         * up to a maximum of 25 for each.</p>
+         * up to a maximum of 25 for each.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetComplianceSummaryByConfigRule">AWS
+         * API Reference</a></p>
          */
         virtual Model::GetComplianceSummaryByConfigRuleOutcome GetComplianceSummaryByConfigRule() const;
 
         /**
          * <p>Returns the number of AWS Config rules that are compliant and noncompliant,
-         * up to a maximum of 25 for each.</p>
+         * up to a maximum of 25 for each.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetComplianceSummaryByConfigRule">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -791,7 +897,9 @@ namespace Model
 
         /**
          * <p>Returns the number of AWS Config rules that are compliant and noncompliant,
-         * up to a maximum of 25 for each.</p>
+         * up to a maximum of 25 for each.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetComplianceSummaryByConfigRule">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -799,14 +907,20 @@ namespace Model
         /**
          * <p>Returns the number of resources that are compliant and the number that are
          * noncompliant. You can specify one or more resource types to get these numbers
-         * for each resource type. The maximum number returned is 100.</p>
+         * for each resource type. The maximum number returned is 100.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetComplianceSummaryByResourceType">AWS
+         * API Reference</a></p>
          */
         virtual Model::GetComplianceSummaryByResourceTypeOutcome GetComplianceSummaryByResourceType(const Model::GetComplianceSummaryByResourceTypeRequest& request) const;
 
         /**
          * <p>Returns the number of resources that are compliant and the number that are
          * noncompliant. You can specify one or more resource types to get these numbers
-         * for each resource type. The maximum number returned is 100.</p>
+         * for each resource type. The maximum number returned is 100.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetComplianceSummaryByResourceType">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -815,7 +929,10 @@ namespace Model
         /**
          * <p>Returns the number of resources that are compliant and the number that are
          * noncompliant. You can specify one or more resource types to get these numbers
-         * for each resource type. The maximum number returned is 100.</p>
+         * for each resource type. The maximum number returned is 100.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetComplianceSummaryByResourceType">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -832,7 +949,9 @@ namespace Model
          * the API is limited to span a duration of seven days. It is likely that the
          * number of records returned is smaller than the specified <code>limit</code>. In
          * such cases, you can make another call, using the <code>nextToken</code>.</p>
-         * </note>
+         * </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetResourceConfigHistory">AWS
+         * API Reference</a></p>
          */
         virtual Model::GetResourceConfigHistoryOutcome GetResourceConfigHistory(const Model::GetResourceConfigHistoryRequest& request) const;
 
@@ -847,7 +966,9 @@ namespace Model
          * the API is limited to span a duration of seven days. It is likely that the
          * number of records returned is smaller than the specified <code>limit</code>. In
          * such cases, you can make another call, using the <code>nextToken</code>.</p>
-         * </note>
+         * </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetResourceConfigHistory">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -864,7 +985,9 @@ namespace Model
          * the API is limited to span a duration of seven days. It is likely that the
          * number of records returned is smaller than the specified <code>limit</code>. In
          * such cases, you can make another call, using the <code>nextToken</code>.</p>
-         * </note>
+         * </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetResourceConfigHistory">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -882,7 +1005,10 @@ namespace Model
          * identifiers on each page. You can customize this number with the
          * <code>limit</code> parameter. The response includes a <code>nextToken</code>
          * string, and to get the next page of results, run the request again and enter
-         * this string for the <code>nextToken</code> parameter.</p>
+         * this string for the <code>nextToken</code> parameter.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/ListDiscoveredResources">AWS
+         * API Reference</a></p>
          */
         virtual Model::ListDiscoveredResourcesOutcome ListDiscoveredResources(const Model::ListDiscoveredResourcesRequest& request) const;
 
@@ -898,7 +1024,10 @@ namespace Model
          * identifiers on each page. You can customize this number with the
          * <code>limit</code> parameter. The response includes a <code>nextToken</code>
          * string, and to get the next page of results, run the request again and enter
-         * this string for the <code>nextToken</code> parameter.</p>
+         * this string for the <code>nextToken</code> parameter.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/ListDiscoveredResources">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -916,7 +1045,10 @@ namespace Model
          * identifiers on each page. You can customize this number with the
          * <code>limit</code> parameter. The response includes a <code>nextToken</code>
          * string, and to get the next page of results, run the request again and enter
-         * this string for the <code>nextToken</code> parameter.</p>
+         * this string for the <code>nextToken</code> parameter.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/ListDiscoveredResources">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -946,11 +1078,15 @@ namespace Model
          * <code>ConfigRuleName</code>, <code>ConfigRuleId</code>, or
          * <code>ConfigRuleArn</code> in the <code>ConfigRule</code> data type that you use
          * in this request.</p> <p>The maximum number of rules that AWS Config supports is
-         * 25.</p> <p>For more information about developing and using AWS Config rules, see
-         * <a
+         * 50.</p> <p>For more information about requesting a rule limit increase, see <a
+         * href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_config">AWS
+         * Config Limits</a> in the <i>AWS General Reference Guide</i>.</p> <p>For more
+         * information about developing and using AWS Config rules, see <a
          * href="http://docs.aws.amazon.com/config/latest/developerguide/evaluate-config.html">Evaluating
          * AWS Resource Configurations with AWS Config</a> in the <i>AWS Config Developer
-         * Guide</i>.</p>
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutConfigRule">AWS
+         * API Reference</a></p>
          */
         virtual Model::PutConfigRuleOutcome PutConfigRule(const Model::PutConfigRuleRequest& request) const;
 
@@ -978,11 +1114,15 @@ namespace Model
          * <code>ConfigRuleName</code>, <code>ConfigRuleId</code>, or
          * <code>ConfigRuleArn</code> in the <code>ConfigRule</code> data type that you use
          * in this request.</p> <p>The maximum number of rules that AWS Config supports is
-         * 25.</p> <p>For more information about developing and using AWS Config rules, see
-         * <a
+         * 50.</p> <p>For more information about requesting a rule limit increase, see <a
+         * href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_config">AWS
+         * Config Limits</a> in the <i>AWS General Reference Guide</i>.</p> <p>For more
+         * information about developing and using AWS Config rules, see <a
          * href="http://docs.aws.amazon.com/config/latest/developerguide/evaluate-config.html">Evaluating
          * AWS Resource Configurations with AWS Config</a> in the <i>AWS Config Developer
-         * Guide</i>.</p>
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutConfigRule">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1012,11 +1152,15 @@ namespace Model
          * <code>ConfigRuleName</code>, <code>ConfigRuleId</code>, or
          * <code>ConfigRuleArn</code> in the <code>ConfigRule</code> data type that you use
          * in this request.</p> <p>The maximum number of rules that AWS Config supports is
-         * 25.</p> <p>For more information about developing and using AWS Config rules, see
-         * <a
+         * 50.</p> <p>For more information about requesting a rule limit increase, see <a
+         * href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_config">AWS
+         * Config Limits</a> in the <i>AWS General Reference Guide</i>.</p> <p>For more
+         * information about developing and using AWS Config rules, see <a
          * href="http://docs.aws.amazon.com/config/latest/developerguide/evaluate-config.html">Evaluating
          * AWS Resource Configurations with AWS Config</a> in the <i>AWS Config Developer
-         * Guide</i>.</p>
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutConfigRule">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1031,7 +1175,9 @@ namespace Model
          * configuration recorder per region in your account.</p> <p>If
          * <code>ConfigurationRecorder</code> does not have the <b>recordingGroup</b>
          * parameter specified, the default is to record all supported resource types.</p>
-         * </note>
+         * </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutConfigurationRecorder">AWS
+         * API Reference</a></p>
          */
         virtual Model::PutConfigurationRecorderOutcome PutConfigurationRecorder(const Model::PutConfigurationRecorderRequest& request) const;
 
@@ -1044,7 +1190,9 @@ namespace Model
          * configuration recorder per region in your account.</p> <p>If
          * <code>ConfigurationRecorder</code> does not have the <b>recordingGroup</b>
          * parameter specified, the default is to record all supported resource types.</p>
-         * </note>
+         * </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutConfigurationRecorder">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1059,7 +1207,9 @@ namespace Model
          * configuration recorder per region in your account.</p> <p>If
          * <code>ConfigurationRecorder</code> does not have the <b>recordingGroup</b>
          * parameter specified, the default is to record all supported resource types.</p>
-         * </note>
+         * </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutConfigurationRecorder">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1075,7 +1225,9 @@ namespace Model
          * If you specify a different value for either the S3 bucket or the SNS topic, this
          * action will keep the existing value for the parameter that is not changed.</p>
          * <note> <p>You can have only one delivery channel per region in your account.</p>
-         * </note>
+         * </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutDeliveryChannel">AWS
+         * API Reference</a></p>
          */
         virtual Model::PutDeliveryChannelOutcome PutDeliveryChannel(const Model::PutDeliveryChannelRequest& request) const;
 
@@ -1089,7 +1241,9 @@ namespace Model
          * If you specify a different value for either the S3 bucket or the SNS topic, this
          * action will keep the existing value for the parameter that is not changed.</p>
          * <note> <p>You can have only one delivery channel per region in your account.</p>
-         * </note>
+         * </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutDeliveryChannel">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1105,7 +1259,9 @@ namespace Model
          * If you specify a different value for either the S3 bucket or the SNS topic, this
          * action will keep the existing value for the parameter that is not changed.</p>
          * <note> <p>You can have only one delivery channel per region in your account.</p>
-         * </note>
+         * </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutDeliveryChannel">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1114,14 +1270,18 @@ namespace Model
         /**
          * <p>Used by an AWS Lambda function to deliver evaluation results to AWS Config.
          * This action is required in every AWS Lambda function that is invoked by an AWS
-         * Config rule.</p>
+         * Config rule.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutEvaluations">AWS
+         * API Reference</a></p>
          */
         virtual Model::PutEvaluationsOutcome PutEvaluations(const Model::PutEvaluationsRequest& request) const;
 
         /**
          * <p>Used by an AWS Lambda function to deliver evaluation results to AWS Config.
          * This action is required in every AWS Lambda function that is invoked by an AWS
-         * Config rule.</p>
+         * Config rule.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutEvaluations">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1130,77 +1290,103 @@ namespace Model
         /**
          * <p>Used by an AWS Lambda function to deliver evaluation results to AWS Config.
          * This action is required in every AWS Lambda function that is invoked by an AWS
-         * Config rule.</p>
+         * Config rule.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutEvaluations">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void PutEvaluationsAsync(const Model::PutEvaluationsRequest& request, const PutEvaluationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Evaluates your resources against the specified Config rules. You can specify
-         * up to 25 Config rules per request.</p> <p>An existing
-         * <a>StartConfigRulesEvaluation</a> call must complete for the specified rules
-         * before you can call the API again. If you chose to have AWS Config stream to an
-         * Amazon SNS topic, you will receive a <code>ConfigRuleEvaluationStarted</code>
-         * notification when the evaluation starts.</p> <note> <p>You don't need to call
-         * the <code>StartConfigRulesEvaluation</code> API to run an evaluation for a new
-         * rule. When you create a new rule, AWS Config automatically evaluates your
-         * resources against the rule. </p> </note> <p>The
-         * <code>StartConfigRulesEvaluation</code> API is useful if you want to run
-         * on-demand evaluations, such as the following example:</p> <ol> <li> <p>You have
-         * a custom rule that evaluates your IAM resources every 24 hours.</p> </li> <li>
-         * <p>You update your Lambda function to add additional conditions to your
-         * rule.</p> </li> <li> <p>Instead of waiting for the next periodic evaluation, you
-         * call the <code>StartConfigRulesEvaluation</code> API.</p> </li> <li> <p>AWS
-         * Config invokes your Lambda function and evaluates your IAM resources.</p> </li>
-         * <li> <p>Your custom rule will still run periodic evaluations every 24 hours.</p>
-         * </li> </ol>
+         * <p>Runs an on-demand evaluation for the specified Config rules against the last
+         * known configuration state of the resources. Use
+         * <code>StartConfigRulesEvaluation</code> when you want to test a rule that you
+         * updated is working as expected. <code>StartConfigRulesEvaluation</code> does not
+         * re-record the latest configuration state for your resources; it re-runs an
+         * evaluation against the last known state of your resources. </p> <p>You can
+         * specify up to 25 Config rules per request. </p> <p>An existing
+         * <code>StartConfigRulesEvaluation</code> call must complete for the specified
+         * rules before you can call the API again. If you chose to have AWS Config stream
+         * to an Amazon SNS topic, you will receive a
+         * <code>ConfigRuleEvaluationStarted</code> notification when the evaluation
+         * starts.</p> <note> <p>You don't need to call the
+         * <code>StartConfigRulesEvaluation</code> API to run an evaluation for a new rule.
+         * When you create a new rule, AWS Config automatically evaluates your resources
+         * against the rule. </p> </note> <p>The <code>StartConfigRulesEvaluation</code>
+         * API is useful if you want to run on-demand evaluations, such as the following
+         * example:</p> <ol> <li> <p>You have a custom rule that evaluates your IAM
+         * resources every 24 hours.</p> </li> <li> <p>You update your Lambda function to
+         * add additional conditions to your rule.</p> </li> <li> <p>Instead of waiting for
+         * the next periodic evaluation, you call the
+         * <code>StartConfigRulesEvaluation</code> API.</p> </li> <li> <p>AWS Config
+         * invokes your Lambda function and evaluates your IAM resources.</p> </li> <li>
+         * <p>Your custom rule will still run periodic evaluations every 24 hours.</p>
+         * </li> </ol><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/StartConfigRulesEvaluation">AWS
+         * API Reference</a></p>
          */
         virtual Model::StartConfigRulesEvaluationOutcome StartConfigRulesEvaluation(const Model::StartConfigRulesEvaluationRequest& request) const;
 
         /**
-         * <p>Evaluates your resources against the specified Config rules. You can specify
-         * up to 25 Config rules per request.</p> <p>An existing
-         * <a>StartConfigRulesEvaluation</a> call must complete for the specified rules
-         * before you can call the API again. If you chose to have AWS Config stream to an
-         * Amazon SNS topic, you will receive a <code>ConfigRuleEvaluationStarted</code>
-         * notification when the evaluation starts.</p> <note> <p>You don't need to call
-         * the <code>StartConfigRulesEvaluation</code> API to run an evaluation for a new
-         * rule. When you create a new rule, AWS Config automatically evaluates your
-         * resources against the rule. </p> </note> <p>The
-         * <code>StartConfigRulesEvaluation</code> API is useful if you want to run
-         * on-demand evaluations, such as the following example:</p> <ol> <li> <p>You have
-         * a custom rule that evaluates your IAM resources every 24 hours.</p> </li> <li>
-         * <p>You update your Lambda function to add additional conditions to your
-         * rule.</p> </li> <li> <p>Instead of waiting for the next periodic evaluation, you
-         * call the <code>StartConfigRulesEvaluation</code> API.</p> </li> <li> <p>AWS
-         * Config invokes your Lambda function and evaluates your IAM resources.</p> </li>
-         * <li> <p>Your custom rule will still run periodic evaluations every 24 hours.</p>
-         * </li> </ol>
+         * <p>Runs an on-demand evaluation for the specified Config rules against the last
+         * known configuration state of the resources. Use
+         * <code>StartConfigRulesEvaluation</code> when you want to test a rule that you
+         * updated is working as expected. <code>StartConfigRulesEvaluation</code> does not
+         * re-record the latest configuration state for your resources; it re-runs an
+         * evaluation against the last known state of your resources. </p> <p>You can
+         * specify up to 25 Config rules per request. </p> <p>An existing
+         * <code>StartConfigRulesEvaluation</code> call must complete for the specified
+         * rules before you can call the API again. If you chose to have AWS Config stream
+         * to an Amazon SNS topic, you will receive a
+         * <code>ConfigRuleEvaluationStarted</code> notification when the evaluation
+         * starts.</p> <note> <p>You don't need to call the
+         * <code>StartConfigRulesEvaluation</code> API to run an evaluation for a new rule.
+         * When you create a new rule, AWS Config automatically evaluates your resources
+         * against the rule. </p> </note> <p>The <code>StartConfigRulesEvaluation</code>
+         * API is useful if you want to run on-demand evaluations, such as the following
+         * example:</p> <ol> <li> <p>You have a custom rule that evaluates your IAM
+         * resources every 24 hours.</p> </li> <li> <p>You update your Lambda function to
+         * add additional conditions to your rule.</p> </li> <li> <p>Instead of waiting for
+         * the next periodic evaluation, you call the
+         * <code>StartConfigRulesEvaluation</code> API.</p> </li> <li> <p>AWS Config
+         * invokes your Lambda function and evaluates your IAM resources.</p> </li> <li>
+         * <p>Your custom rule will still run periodic evaluations every 24 hours.</p>
+         * </li> </ol><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/StartConfigRulesEvaluation">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::StartConfigRulesEvaluationOutcomeCallable StartConfigRulesEvaluationCallable(const Model::StartConfigRulesEvaluationRequest& request) const;
 
         /**
-         * <p>Evaluates your resources against the specified Config rules. You can specify
-         * up to 25 Config rules per request.</p> <p>An existing
-         * <a>StartConfigRulesEvaluation</a> call must complete for the specified rules
-         * before you can call the API again. If you chose to have AWS Config stream to an
-         * Amazon SNS topic, you will receive a <code>ConfigRuleEvaluationStarted</code>
-         * notification when the evaluation starts.</p> <note> <p>You don't need to call
-         * the <code>StartConfigRulesEvaluation</code> API to run an evaluation for a new
-         * rule. When you create a new rule, AWS Config automatically evaluates your
-         * resources against the rule. </p> </note> <p>The
-         * <code>StartConfigRulesEvaluation</code> API is useful if you want to run
-         * on-demand evaluations, such as the following example:</p> <ol> <li> <p>You have
-         * a custom rule that evaluates your IAM resources every 24 hours.</p> </li> <li>
-         * <p>You update your Lambda function to add additional conditions to your
-         * rule.</p> </li> <li> <p>Instead of waiting for the next periodic evaluation, you
-         * call the <code>StartConfigRulesEvaluation</code> API.</p> </li> <li> <p>AWS
-         * Config invokes your Lambda function and evaluates your IAM resources.</p> </li>
-         * <li> <p>Your custom rule will still run periodic evaluations every 24 hours.</p>
-         * </li> </ol>
+         * <p>Runs an on-demand evaluation for the specified Config rules against the last
+         * known configuration state of the resources. Use
+         * <code>StartConfigRulesEvaluation</code> when you want to test a rule that you
+         * updated is working as expected. <code>StartConfigRulesEvaluation</code> does not
+         * re-record the latest configuration state for your resources; it re-runs an
+         * evaluation against the last known state of your resources. </p> <p>You can
+         * specify up to 25 Config rules per request. </p> <p>An existing
+         * <code>StartConfigRulesEvaluation</code> call must complete for the specified
+         * rules before you can call the API again. If you chose to have AWS Config stream
+         * to an Amazon SNS topic, you will receive a
+         * <code>ConfigRuleEvaluationStarted</code> notification when the evaluation
+         * starts.</p> <note> <p>You don't need to call the
+         * <code>StartConfigRulesEvaluation</code> API to run an evaluation for a new rule.
+         * When you create a new rule, AWS Config automatically evaluates your resources
+         * against the rule. </p> </note> <p>The <code>StartConfigRulesEvaluation</code>
+         * API is useful if you want to run on-demand evaluations, such as the following
+         * example:</p> <ol> <li> <p>You have a custom rule that evaluates your IAM
+         * resources every 24 hours.</p> </li> <li> <p>You update your Lambda function to
+         * add additional conditions to your rule.</p> </li> <li> <p>Instead of waiting for
+         * the next periodic evaluation, you call the
+         * <code>StartConfigRulesEvaluation</code> API.</p> </li> <li> <p>AWS Config
+         * invokes your Lambda function and evaluates your IAM resources.</p> </li> <li>
+         * <p>Your custom rule will still run periodic evaluations every 24 hours.</p>
+         * </li> </ol><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/StartConfigRulesEvaluation">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1209,14 +1395,20 @@ namespace Model
         /**
          * <p>Starts recording configurations of the AWS resources you have selected to
          * record in your AWS account.</p> <p>You must have created at least one delivery
-         * channel to successfully start the configuration recorder.</p>
+         * channel to successfully start the configuration recorder.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/StartConfigurationRecorder">AWS
+         * API Reference</a></p>
          */
         virtual Model::StartConfigurationRecorderOutcome StartConfigurationRecorder(const Model::StartConfigurationRecorderRequest& request) const;
 
         /**
          * <p>Starts recording configurations of the AWS resources you have selected to
          * record in your AWS account.</p> <p>You must have created at least one delivery
-         * channel to successfully start the configuration recorder.</p>
+         * channel to successfully start the configuration recorder.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/StartConfigurationRecorder">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1225,7 +1417,10 @@ namespace Model
         /**
          * <p>Starts recording configurations of the AWS resources you have selected to
          * record in your AWS account.</p> <p>You must have created at least one delivery
-         * channel to successfully start the configuration recorder.</p>
+         * channel to successfully start the configuration recorder.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/StartConfigurationRecorder">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1233,13 +1428,17 @@ namespace Model
 
         /**
          * <p>Stops recording configurations of the AWS resources you have selected to
-         * record in your AWS account.</p>
+         * record in your AWS account.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/StopConfigurationRecorder">AWS
+         * API Reference</a></p>
          */
         virtual Model::StopConfigurationRecorderOutcome StopConfigurationRecorder(const Model::StopConfigurationRecorderRequest& request) const;
 
         /**
          * <p>Stops recording configurations of the AWS resources you have selected to
-         * record in your AWS account.</p>
+         * record in your AWS account.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/StopConfigurationRecorder">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1247,7 +1446,9 @@ namespace Model
 
         /**
          * <p>Stops recording configurations of the AWS resources you have selected to
-         * record in your AWS account.</p>
+         * record in your AWS account.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/StopConfigurationRecorder">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */

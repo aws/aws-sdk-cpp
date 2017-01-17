@@ -34,7 +34,9 @@ namespace Model
 {
   /**
    * <p>The AWS Support case ID returned by a successful completion of the
-   * <a>CreateCase</a> operation. </p>
+   * <a>CreateCase</a> operation. </p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/CreateCaseResponse">AWS
+   * API Reference</a></p>
    */
   class AWS_SUPPORT_API CreateCaseResult
   {

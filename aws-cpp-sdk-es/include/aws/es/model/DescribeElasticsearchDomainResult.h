@@ -34,7 +34,9 @@ namespace Model
 {
   /**
    * <p>The result of a <code>DescribeElasticsearchDomain</code> request. Contains
-   * the status of the domain specified in the request.</p>
+   * the status of the domain specified in the request.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/DescribeElasticsearchDomainResponse">AWS
+   * API Reference</a></p>
    */
   class AWS_ELASTICSEARCHSERVICE_API DescribeElasticsearchDomainResult
   {

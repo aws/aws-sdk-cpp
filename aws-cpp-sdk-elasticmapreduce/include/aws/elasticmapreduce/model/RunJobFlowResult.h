@@ -33,7 +33,10 @@ namespace EMR
 namespace Model
 {
   /**
-   * <p> The result of the <a>RunJobFlow</a> operation. </p>
+   * <p> The result of the <a>RunJobFlow</a> operation. </p><p><h3>See Also:</h3>  
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/RunJobFlowOutput">AWS
+   * API Reference</a></p>
    */
   class AWS_EMR_API RunJobFlowResult
   {

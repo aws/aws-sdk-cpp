@@ -33,7 +33,9 @@ namespace Model
 {
 
   /**
-   * <p>Modify an instance group size.</p>
+   * <p>Modify an instance group size.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/InstanceGroupModifyConfig">AWS
+   * API Reference</a></p>
    */
   class AWS_EMR_API InstanceGroupModifyConfig
   {

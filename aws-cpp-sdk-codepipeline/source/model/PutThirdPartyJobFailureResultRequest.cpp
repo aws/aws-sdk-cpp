@@ -56,7 +56,7 @@ Aws::String PutThirdPartyJobFailureResultRequest::SerializePayload() const
 Aws::Http::HeaderValueCollection PutThirdPartyJobFailureResultRequest::GetRequestSpecificHeaders() const
 {
   Aws::Http::HeaderValueCollection headers;
-  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "CodePipeline_20150709.PutThirdPartyJobFailure"));
+  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "CodePipeline_20150709.PutThirdPartyJobFailureResult"));
   return headers;
 
 }

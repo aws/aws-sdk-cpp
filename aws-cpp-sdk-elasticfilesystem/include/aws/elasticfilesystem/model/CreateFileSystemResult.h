@@ -37,7 +37,9 @@ namespace EFS
 namespace Model
 {
   /**
-   * <p>Description of the file system.</p>
+   * <p>Description of the file system.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/FileSystemDescription">AWS
+   * API Reference</a></p>
    */
   class AWS_EFS_API CreateFileSystemResult
   {

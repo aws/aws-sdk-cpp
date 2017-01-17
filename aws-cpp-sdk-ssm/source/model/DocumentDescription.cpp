@@ -37,9 +37,15 @@ DocumentDescription::DocumentDescription() :
     m_createdDateHasBeenSet(false),
     m_status(DocumentStatus::NOT_SET),
     m_statusHasBeenSet(false),
+    m_documentVersionHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_parametersHasBeenSet(false),
-    m_platformTypesHasBeenSet(false)
+    m_platformTypesHasBeenSet(false),
+    m_documentType(DocumentType::NOT_SET),
+    m_documentTypeHasBeenSet(false),
+    m_schemaVersionHasBeenSet(false),
+    m_latestVersionHasBeenSet(false),
+    m_defaultVersionHasBeenSet(false)
 {
 }
 
@@ -53,9 +59,15 @@ DocumentDescription::DocumentDescription(const JsonValue& jsonValue) :
     m_createdDateHasBeenSet(false),
     m_status(DocumentStatus::NOT_SET),
     m_statusHasBeenSet(false),
+    m_documentVersionHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_parametersHasBeenSet(false),
-    m_platformTypesHasBeenSet(false)
+    m_platformTypesHasBeenSet(false),
+    m_documentType(DocumentType::NOT_SET),
+    m_documentTypeHasBeenSet(false),
+    m_schemaVersionHasBeenSet(false),
+    m_latestVersionHasBeenSet(false),
+    m_defaultVersionHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -111,6 +123,13 @@ DocumentDescription& DocumentDescription::operator =(const JsonValue& jsonValue)
     m_statusHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("DocumentVersion"))
+  {
+    m_documentVersion = jsonValue.GetString("DocumentVersion");
+
+    m_documentVersionHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
@@ -136,6 +155,34 @@ DocumentDescription& DocumentDescription::operator =(const JsonValue& jsonValue)
       m_platformTypes.push_back(PlatformTypeMapper::GetPlatformTypeForName(platformTypesJsonList[platformTypesIndex].AsString()));
     }
     m_platformTypesHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("DocumentType"))
+  {
+    m_documentType = DocumentTypeMapper::GetDocumentTypeForName(jsonValue.GetString("DocumentType"));
+
+    m_documentTypeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("SchemaVersion"))
+  {
+    m_schemaVersion = jsonValue.GetString("SchemaVersion");
+
+    m_schemaVersionHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("LatestVersion"))
+  {
+    m_latestVersion = jsonValue.GetString("LatestVersion");
+
+    m_latestVersionHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("DefaultVersion"))
+  {
+    m_defaultVersion = jsonValue.GetString("DefaultVersion");
+
+    m_defaultVersionHasBeenSet = true;
   }
 
   return *this;
@@ -184,6 +231,12 @@ JsonValue DocumentDescription::Jsonize() const
    payload.WithString("Status", DocumentStatusMapper::GetNameForDocumentStatus(m_status));
   }
 
+  if(m_documentVersionHasBeenSet)
+  {
+   payload.WithString("DocumentVersion", m_documentVersion);
+
+  }
+
   if(m_descriptionHasBeenSet)
   {
    payload.WithString("Description", m_description);
@@ -209,6 +262,29 @@ JsonValue DocumentDescription::Jsonize() const
      platformTypesJsonList[platformTypesIndex].AsString(PlatformTypeMapper::GetNameForPlatformType(m_platformTypes[platformTypesIndex]));
    }
    payload.WithArray("PlatformTypes", std::move(platformTypesJsonList));
+
+  }
+
+  if(m_documentTypeHasBeenSet)
+  {
+   payload.WithString("DocumentType", DocumentTypeMapper::GetNameForDocumentType(m_documentType));
+  }
+
+  if(m_schemaVersionHasBeenSet)
+  {
+   payload.WithString("SchemaVersion", m_schemaVersion);
+
+  }
+
+  if(m_latestVersionHasBeenSet)
+  {
+   payload.WithString("LatestVersion", m_latestVersion);
+
+  }
+
+  if(m_defaultVersionHasBeenSet)
+  {
+   payload.WithString("DefaultVersion", m_defaultVersion);
 
   }
 

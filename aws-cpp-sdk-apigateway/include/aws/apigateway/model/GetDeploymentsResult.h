@@ -46,7 +46,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-deploy-api.html">Deploying
    * an API</a>, <a
    * href="http://docs.aws.amazon.com/cli/latest/reference/apigateway/get-deployment.html">AWS
-   * CLI</a>, <a href="https://aws.amazon.com/tools/">AWS SDKs</a> </div>
+   * CLI</a>, <a href="https://aws.amazon.com/tools/">AWS SDKs</a> </div><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/Deployments">AWS
+   * API Reference</a></p>
    */
   class AWS_APIGATEWAY_API GetDeploymentsResult
   {

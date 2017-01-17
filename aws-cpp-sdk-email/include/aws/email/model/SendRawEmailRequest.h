@@ -31,7 +31,9 @@ namespace Model
    * <p>Represents a request to send a single raw email using Amazon SES. For more
    * information, see the <a
    * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-raw.html">Amazon
-   * SES Developer Guide</a>.</p>
+   * SES Developer Guide</a>.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/SendRawEmailRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_SES_API SendRawEmailRequest : public SESRequest
   {

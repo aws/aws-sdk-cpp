@@ -31,7 +31,9 @@ namespace Model
 {
 
   /**
-   * <p>Details on a data volume from another container.</p>
+   * <p>Details on a data volume from another container.</p><p><h3>See Also:</h3>  
+   * <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/VolumeFrom">AWS
+   * API Reference</a></p>
    */
   class AWS_ECS_API VolumeFrom
   {

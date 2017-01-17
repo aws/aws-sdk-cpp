@@ -35,7 +35,9 @@ namespace Model
    * <p>When configuring application input at the time of creating or updating an
    * application, provides additional mapping information specific to the record
    * format (such as JSON, CSV, or record fields delimited by some delimiter) on the
-   * streaming source.</p>
+   * streaming source.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/MappingParameters">AWS
+   * API Reference</a></p>
    */
   class AWS_KINESISANALYTICS_API MappingParameters
   {

@@ -36,7 +36,10 @@ namespace Model
 {
   /**
    * <p>Represents the output of a <code>DescribeBatchPredictions</code> operation.
-   * The content is essentially a list of <code>BatchPrediction</code>s.</p>
+   * The content is essentially a list of
+   * <code>BatchPrediction</code>s.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/DescribeBatchPredictionsOutput">AWS
+   * API Reference</a></p>
    */
   class AWS_MACHINELEARNING_API DescribeBatchPredictionsResult
   {

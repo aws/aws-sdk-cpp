@@ -34,7 +34,9 @@ namespace Model
   /**
    * <p>Defines a validation warning. Validation warnings do not prevent pipeline
    * activation. The set of validation warnings that can be returned are defined by
-   * AWS Data Pipeline.</p>
+   * AWS Data Pipeline.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/ValidationWarning">AWS
+   * API Reference</a></p>
    */
   class AWS_DATAPIPELINE_API ValidationWarning
   {

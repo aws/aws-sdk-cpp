@@ -34,7 +34,7 @@ Aws::String DescribeSecurityGroupsRequest::SerializePayload() const
   ss << "Action=DescribeSecurityGroups&";
   if(m_dryRunHasBeenSet)
   {
-    ss << "DryRun=" << m_dryRun << "&";
+    ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
   if(m_groupNamesHasBeenSet)
@@ -69,7 +69,7 @@ Aws::String DescribeSecurityGroupsRequest::SerializePayload() const
     }
   }
 
-  ss << "Version=2015-10-01";
+  ss << "Version=2016-11-15";
   return ss.str();
 }
 

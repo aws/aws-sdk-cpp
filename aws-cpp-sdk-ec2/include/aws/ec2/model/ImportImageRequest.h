@@ -28,7 +28,9 @@ namespace Model
 {
 
   /**
-   * <p>Contains the parameters for ImportImage.</p>
+   * <p>Contains the parameters for ImportImage.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ImportImageRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_EC2_API ImportImageRequest : public EC2Request
   {
@@ -132,197 +134,197 @@ namespace Model
 
     /**
      * <p>The license type to be used for the Amazon Machine Image (AMI) after
-     * importing.</p> <p><b>Note:</b> You may only use BYOL if you have existing
+     * importing.</p> <p> <b>Note:</b> You may only use BYOL if you have existing
      * licenses with rights to use these licenses in a third party cloud like AWS. For
      * more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/VMImportPrerequisites.html">VM
-     * Import/Export Prerequisites</a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i>.</p> <p>Valid values: <code>AWS</code> | <code>BYOL</code></p>
+     * href="http://docs.aws.amazon.com/vm-import/latest/userguide/vmimport-image-import.html#prerequisites-image">Prerequisites</a>
+     * in the VM Import/Export User Guide.</p> <p>Valid values: <code>AWS</code> |
+     * <code>BYOL</code> </p>
      */
     inline const Aws::String& GetLicenseType() const{ return m_licenseType; }
 
     /**
      * <p>The license type to be used for the Amazon Machine Image (AMI) after
-     * importing.</p> <p><b>Note:</b> You may only use BYOL if you have existing
+     * importing.</p> <p> <b>Note:</b> You may only use BYOL if you have existing
      * licenses with rights to use these licenses in a third party cloud like AWS. For
      * more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/VMImportPrerequisites.html">VM
-     * Import/Export Prerequisites</a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i>.</p> <p>Valid values: <code>AWS</code> | <code>BYOL</code></p>
+     * href="http://docs.aws.amazon.com/vm-import/latest/userguide/vmimport-image-import.html#prerequisites-image">Prerequisites</a>
+     * in the VM Import/Export User Guide.</p> <p>Valid values: <code>AWS</code> |
+     * <code>BYOL</code> </p>
      */
     inline void SetLicenseType(const Aws::String& value) { m_licenseTypeHasBeenSet = true; m_licenseType = value; }
 
     /**
      * <p>The license type to be used for the Amazon Machine Image (AMI) after
-     * importing.</p> <p><b>Note:</b> You may only use BYOL if you have existing
+     * importing.</p> <p> <b>Note:</b> You may only use BYOL if you have existing
      * licenses with rights to use these licenses in a third party cloud like AWS. For
      * more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/VMImportPrerequisites.html">VM
-     * Import/Export Prerequisites</a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i>.</p> <p>Valid values: <code>AWS</code> | <code>BYOL</code></p>
+     * href="http://docs.aws.amazon.com/vm-import/latest/userguide/vmimport-image-import.html#prerequisites-image">Prerequisites</a>
+     * in the VM Import/Export User Guide.</p> <p>Valid values: <code>AWS</code> |
+     * <code>BYOL</code> </p>
      */
     inline void SetLicenseType(Aws::String&& value) { m_licenseTypeHasBeenSet = true; m_licenseType = value; }
 
     /**
      * <p>The license type to be used for the Amazon Machine Image (AMI) after
-     * importing.</p> <p><b>Note:</b> You may only use BYOL if you have existing
+     * importing.</p> <p> <b>Note:</b> You may only use BYOL if you have existing
      * licenses with rights to use these licenses in a third party cloud like AWS. For
      * more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/VMImportPrerequisites.html">VM
-     * Import/Export Prerequisites</a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i>.</p> <p>Valid values: <code>AWS</code> | <code>BYOL</code></p>
+     * href="http://docs.aws.amazon.com/vm-import/latest/userguide/vmimport-image-import.html#prerequisites-image">Prerequisites</a>
+     * in the VM Import/Export User Guide.</p> <p>Valid values: <code>AWS</code> |
+     * <code>BYOL</code> </p>
      */
     inline void SetLicenseType(const char* value) { m_licenseTypeHasBeenSet = true; m_licenseType.assign(value); }
 
     /**
      * <p>The license type to be used for the Amazon Machine Image (AMI) after
-     * importing.</p> <p><b>Note:</b> You may only use BYOL if you have existing
+     * importing.</p> <p> <b>Note:</b> You may only use BYOL if you have existing
      * licenses with rights to use these licenses in a third party cloud like AWS. For
      * more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/VMImportPrerequisites.html">VM
-     * Import/Export Prerequisites</a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i>.</p> <p>Valid values: <code>AWS</code> | <code>BYOL</code></p>
+     * href="http://docs.aws.amazon.com/vm-import/latest/userguide/vmimport-image-import.html#prerequisites-image">Prerequisites</a>
+     * in the VM Import/Export User Guide.</p> <p>Valid values: <code>AWS</code> |
+     * <code>BYOL</code> </p>
      */
     inline ImportImageRequest& WithLicenseType(const Aws::String& value) { SetLicenseType(value); return *this;}
 
     /**
      * <p>The license type to be used for the Amazon Machine Image (AMI) after
-     * importing.</p> <p><b>Note:</b> You may only use BYOL if you have existing
+     * importing.</p> <p> <b>Note:</b> You may only use BYOL if you have existing
      * licenses with rights to use these licenses in a third party cloud like AWS. For
      * more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/VMImportPrerequisites.html">VM
-     * Import/Export Prerequisites</a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i>.</p> <p>Valid values: <code>AWS</code> | <code>BYOL</code></p>
+     * href="http://docs.aws.amazon.com/vm-import/latest/userguide/vmimport-image-import.html#prerequisites-image">Prerequisites</a>
+     * in the VM Import/Export User Guide.</p> <p>Valid values: <code>AWS</code> |
+     * <code>BYOL</code> </p>
      */
     inline ImportImageRequest& WithLicenseType(Aws::String&& value) { SetLicenseType(value); return *this;}
 
     /**
      * <p>The license type to be used for the Amazon Machine Image (AMI) after
-     * importing.</p> <p><b>Note:</b> You may only use BYOL if you have existing
+     * importing.</p> <p> <b>Note:</b> You may only use BYOL if you have existing
      * licenses with rights to use these licenses in a third party cloud like AWS. For
      * more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/VMImportPrerequisites.html">VM
-     * Import/Export Prerequisites</a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i>.</p> <p>Valid values: <code>AWS</code> | <code>BYOL</code></p>
+     * href="http://docs.aws.amazon.com/vm-import/latest/userguide/vmimport-image-import.html#prerequisites-image">Prerequisites</a>
+     * in the VM Import/Export User Guide.</p> <p>Valid values: <code>AWS</code> |
+     * <code>BYOL</code> </p>
      */
     inline ImportImageRequest& WithLicenseType(const char* value) { SetLicenseType(value); return *this;}
 
     /**
-     * <p>The target hypervisor platform.</p> <p>Valid values: <code>xen</code></p>
+     * <p>The target hypervisor platform.</p> <p>Valid values: <code>xen</code> </p>
      */
     inline const Aws::String& GetHypervisor() const{ return m_hypervisor; }
 
     /**
-     * <p>The target hypervisor platform.</p> <p>Valid values: <code>xen</code></p>
+     * <p>The target hypervisor platform.</p> <p>Valid values: <code>xen</code> </p>
      */
     inline void SetHypervisor(const Aws::String& value) { m_hypervisorHasBeenSet = true; m_hypervisor = value; }
 
     /**
-     * <p>The target hypervisor platform.</p> <p>Valid values: <code>xen</code></p>
+     * <p>The target hypervisor platform.</p> <p>Valid values: <code>xen</code> </p>
      */
     inline void SetHypervisor(Aws::String&& value) { m_hypervisorHasBeenSet = true; m_hypervisor = value; }
 
     /**
-     * <p>The target hypervisor platform.</p> <p>Valid values: <code>xen</code></p>
+     * <p>The target hypervisor platform.</p> <p>Valid values: <code>xen</code> </p>
      */
     inline void SetHypervisor(const char* value) { m_hypervisorHasBeenSet = true; m_hypervisor.assign(value); }
 
     /**
-     * <p>The target hypervisor platform.</p> <p>Valid values: <code>xen</code></p>
+     * <p>The target hypervisor platform.</p> <p>Valid values: <code>xen</code> </p>
      */
     inline ImportImageRequest& WithHypervisor(const Aws::String& value) { SetHypervisor(value); return *this;}
 
     /**
-     * <p>The target hypervisor platform.</p> <p>Valid values: <code>xen</code></p>
+     * <p>The target hypervisor platform.</p> <p>Valid values: <code>xen</code> </p>
      */
     inline ImportImageRequest& WithHypervisor(Aws::String&& value) { SetHypervisor(value); return *this;}
 
     /**
-     * <p>The target hypervisor platform.</p> <p>Valid values: <code>xen</code></p>
+     * <p>The target hypervisor platform.</p> <p>Valid values: <code>xen</code> </p>
      */
     inline ImportImageRequest& WithHypervisor(const char* value) { SetHypervisor(value); return *this;}
 
     /**
      * <p>The architecture of the virtual machine.</p> <p>Valid values:
-     * <code>i386</code> | <code>x86_64</code></p>
+     * <code>i386</code> | <code>x86_64</code> </p>
      */
     inline const Aws::String& GetArchitecture() const{ return m_architecture; }
 
     /**
      * <p>The architecture of the virtual machine.</p> <p>Valid values:
-     * <code>i386</code> | <code>x86_64</code></p>
+     * <code>i386</code> | <code>x86_64</code> </p>
      */
     inline void SetArchitecture(const Aws::String& value) { m_architectureHasBeenSet = true; m_architecture = value; }
 
     /**
      * <p>The architecture of the virtual machine.</p> <p>Valid values:
-     * <code>i386</code> | <code>x86_64</code></p>
+     * <code>i386</code> | <code>x86_64</code> </p>
      */
     inline void SetArchitecture(Aws::String&& value) { m_architectureHasBeenSet = true; m_architecture = value; }
 
     /**
      * <p>The architecture of the virtual machine.</p> <p>Valid values:
-     * <code>i386</code> | <code>x86_64</code></p>
+     * <code>i386</code> | <code>x86_64</code> </p>
      */
     inline void SetArchitecture(const char* value) { m_architectureHasBeenSet = true; m_architecture.assign(value); }
 
     /**
      * <p>The architecture of the virtual machine.</p> <p>Valid values:
-     * <code>i386</code> | <code>x86_64</code></p>
+     * <code>i386</code> | <code>x86_64</code> </p>
      */
     inline ImportImageRequest& WithArchitecture(const Aws::String& value) { SetArchitecture(value); return *this;}
 
     /**
      * <p>The architecture of the virtual machine.</p> <p>Valid values:
-     * <code>i386</code> | <code>x86_64</code></p>
+     * <code>i386</code> | <code>x86_64</code> </p>
      */
     inline ImportImageRequest& WithArchitecture(Aws::String&& value) { SetArchitecture(value); return *this;}
 
     /**
      * <p>The architecture of the virtual machine.</p> <p>Valid values:
-     * <code>i386</code> | <code>x86_64</code></p>
+     * <code>i386</code> | <code>x86_64</code> </p>
      */
     inline ImportImageRequest& WithArchitecture(const char* value) { SetArchitecture(value); return *this;}
 
     /**
      * <p>The operating system of the virtual machine.</p> <p>Valid values:
-     * <code>Windows</code> | <code>Linux</code></p>
+     * <code>Windows</code> | <code>Linux</code> </p>
      */
     inline const Aws::String& GetPlatform() const{ return m_platform; }
 
     /**
      * <p>The operating system of the virtual machine.</p> <p>Valid values:
-     * <code>Windows</code> | <code>Linux</code></p>
+     * <code>Windows</code> | <code>Linux</code> </p>
      */
     inline void SetPlatform(const Aws::String& value) { m_platformHasBeenSet = true; m_platform = value; }
 
     /**
      * <p>The operating system of the virtual machine.</p> <p>Valid values:
-     * <code>Windows</code> | <code>Linux</code></p>
+     * <code>Windows</code> | <code>Linux</code> </p>
      */
     inline void SetPlatform(Aws::String&& value) { m_platformHasBeenSet = true; m_platform = value; }
 
     /**
      * <p>The operating system of the virtual machine.</p> <p>Valid values:
-     * <code>Windows</code> | <code>Linux</code></p>
+     * <code>Windows</code> | <code>Linux</code> </p>
      */
     inline void SetPlatform(const char* value) { m_platformHasBeenSet = true; m_platform.assign(value); }
 
     /**
      * <p>The operating system of the virtual machine.</p> <p>Valid values:
-     * <code>Windows</code> | <code>Linux</code></p>
+     * <code>Windows</code> | <code>Linux</code> </p>
      */
     inline ImportImageRequest& WithPlatform(const Aws::String& value) { SetPlatform(value); return *this;}
 
     /**
      * <p>The operating system of the virtual machine.</p> <p>Valid values:
-     * <code>Windows</code> | <code>Linux</code></p>
+     * <code>Windows</code> | <code>Linux</code> </p>
      */
     inline ImportImageRequest& WithPlatform(Aws::String&& value) { SetPlatform(value); return *this;}
 
     /**
      * <p>The operating system of the virtual machine.</p> <p>Valid values:
-     * <code>Windows</code> | <code>Linux</code></p>
+     * <code>Windows</code> | <code>Linux</code> </p>
      */
     inline ImportImageRequest& WithPlatform(const char* value) { SetPlatform(value); return *this;}
 

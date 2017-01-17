@@ -37,7 +37,9 @@ namespace Model
 {
   /**
    * <p>Represents the output of a <code>GetEvaluation</code> operation and describes
-   * an <code>Evaluation</code>.</p>
+   * an <code>Evaluation</code>.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/GetEvaluationOutput">AWS
+   * API Reference</a></p>
    */
   class AWS_MACHINELEARNING_API GetEvaluationResult
   {

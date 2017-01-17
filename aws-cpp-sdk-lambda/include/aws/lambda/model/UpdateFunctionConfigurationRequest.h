@@ -19,6 +19,7 @@
 #include <aws/lambda/model/VpcConfig.h>
 #include <aws/lambda/model/Environment.h>
 #include <aws/lambda/model/Runtime.h>
+#include <aws/lambda/model/DeadLetterConfig.h>
 
 namespace Aws
 {
@@ -28,7 +29,9 @@ namespace Model
 {
 
   /**
-   * <p/>
+   * <p/><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/UpdateFunctionConfigurationRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_LAMBDA_API UpdateFunctionConfigurationRequest : public LambdaRequest
   {
@@ -343,6 +346,81 @@ namespace Model
     inline UpdateFunctionConfigurationRequest& WithEnvironment(Environment&& value) { SetEnvironment(value); return *this;}
 
     /**
+     * <p>The runtime environment for the Lambda function.</p> <p>To use the Node.js
+     * runtime v4.3, set the value to "nodejs4.3". To use earlier runtime (v0.10.42),
+     * set the value to "nodejs".</p> <note> <p>You can no longer downgrade to the
+     * v0.10.42 runtime version. This version will no longer be supported as of early
+     * 2017.</p> </note>
+     */
+    inline const Runtime& GetRuntime() const{ return m_runtime; }
+
+    /**
+     * <p>The runtime environment for the Lambda function.</p> <p>To use the Node.js
+     * runtime v4.3, set the value to "nodejs4.3". To use earlier runtime (v0.10.42),
+     * set the value to "nodejs".</p> <note> <p>You can no longer downgrade to the
+     * v0.10.42 runtime version. This version will no longer be supported as of early
+     * 2017.</p> </note>
+     */
+    inline void SetRuntime(const Runtime& value) { m_runtimeHasBeenSet = true; m_runtime = value; }
+
+    /**
+     * <p>The runtime environment for the Lambda function.</p> <p>To use the Node.js
+     * runtime v4.3, set the value to "nodejs4.3". To use earlier runtime (v0.10.42),
+     * set the value to "nodejs".</p> <note> <p>You can no longer downgrade to the
+     * v0.10.42 runtime version. This version will no longer be supported as of early
+     * 2017.</p> </note>
+     */
+    inline void SetRuntime(Runtime&& value) { m_runtimeHasBeenSet = true; m_runtime = value; }
+
+    /**
+     * <p>The runtime environment for the Lambda function.</p> <p>To use the Node.js
+     * runtime v4.3, set the value to "nodejs4.3". To use earlier runtime (v0.10.42),
+     * set the value to "nodejs".</p> <note> <p>You can no longer downgrade to the
+     * v0.10.42 runtime version. This version will no longer be supported as of early
+     * 2017.</p> </note>
+     */
+    inline UpdateFunctionConfigurationRequest& WithRuntime(const Runtime& value) { SetRuntime(value); return *this;}
+
+    /**
+     * <p>The runtime environment for the Lambda function.</p> <p>To use the Node.js
+     * runtime v4.3, set the value to "nodejs4.3". To use earlier runtime (v0.10.42),
+     * set the value to "nodejs".</p> <note> <p>You can no longer downgrade to the
+     * v0.10.42 runtime version. This version will no longer be supported as of early
+     * 2017.</p> </note>
+     */
+    inline UpdateFunctionConfigurationRequest& WithRuntime(Runtime&& value) { SetRuntime(value); return *this;}
+
+    /**
+     * <p>The parent object that contains the target Amazon Resource Name (ARN) of an
+     * Amazon SQS queue or Amazon SNS topic.</p>
+     */
+    inline const DeadLetterConfig& GetDeadLetterConfig() const{ return m_deadLetterConfig; }
+
+    /**
+     * <p>The parent object that contains the target Amazon Resource Name (ARN) of an
+     * Amazon SQS queue or Amazon SNS topic.</p>
+     */
+    inline void SetDeadLetterConfig(const DeadLetterConfig& value) { m_deadLetterConfigHasBeenSet = true; m_deadLetterConfig = value; }
+
+    /**
+     * <p>The parent object that contains the target Amazon Resource Name (ARN) of an
+     * Amazon SQS queue or Amazon SNS topic.</p>
+     */
+    inline void SetDeadLetterConfig(DeadLetterConfig&& value) { m_deadLetterConfigHasBeenSet = true; m_deadLetterConfig = value; }
+
+    /**
+     * <p>The parent object that contains the target Amazon Resource Name (ARN) of an
+     * Amazon SQS queue or Amazon SNS topic.</p>
+     */
+    inline UpdateFunctionConfigurationRequest& WithDeadLetterConfig(const DeadLetterConfig& value) { SetDeadLetterConfig(value); return *this;}
+
+    /**
+     * <p>The parent object that contains the target Amazon Resource Name (ARN) of an
+     * Amazon SQS queue or Amazon SNS topic.</p>
+     */
+    inline UpdateFunctionConfigurationRequest& WithDeadLetterConfig(DeadLetterConfig&& value) { SetDeadLetterConfig(value); return *this;}
+
+    /**
      * <p>The Amazon Resource Name (ARN) of the KMS key used to encrypt your function's
      * environment variables. If you elect to use the AWS Lambda default service key,
      * pass in an empty string ("") for this parameter.</p>
@@ -391,41 +469,6 @@ namespace Model
      */
     inline UpdateFunctionConfigurationRequest& WithKMSKeyArn(const char* value) { SetKMSKeyArn(value); return *this;}
 
-    /**
-     * <p>The runtime environment for the Lambda function.</p> <p>To use the Node.js
-     * runtime v4.3, set the value to "nodejs4.3". To use earlier runtime (v0.10.42),
-     * set the value to "nodejs".</p>
-     */
-    inline const Runtime& GetRuntime() const{ return m_runtime; }
-
-    /**
-     * <p>The runtime environment for the Lambda function.</p> <p>To use the Node.js
-     * runtime v4.3, set the value to "nodejs4.3". To use earlier runtime (v0.10.42),
-     * set the value to "nodejs".</p>
-     */
-    inline void SetRuntime(const Runtime& value) { m_runtimeHasBeenSet = true; m_runtime = value; }
-
-    /**
-     * <p>The runtime environment for the Lambda function.</p> <p>To use the Node.js
-     * runtime v4.3, set the value to "nodejs4.3". To use earlier runtime (v0.10.42),
-     * set the value to "nodejs".</p>
-     */
-    inline void SetRuntime(Runtime&& value) { m_runtimeHasBeenSet = true; m_runtime = value; }
-
-    /**
-     * <p>The runtime environment for the Lambda function.</p> <p>To use the Node.js
-     * runtime v4.3, set the value to "nodejs4.3". To use earlier runtime (v0.10.42),
-     * set the value to "nodejs".</p>
-     */
-    inline UpdateFunctionConfigurationRequest& WithRuntime(const Runtime& value) { SetRuntime(value); return *this;}
-
-    /**
-     * <p>The runtime environment for the Lambda function.</p> <p>To use the Node.js
-     * runtime v4.3, set the value to "nodejs4.3". To use earlier runtime (v0.10.42),
-     * set the value to "nodejs".</p>
-     */
-    inline UpdateFunctionConfigurationRequest& WithRuntime(Runtime&& value) { SetRuntime(value); return *this;}
-
   private:
     Aws::String m_functionName;
     bool m_functionNameHasBeenSet;
@@ -443,10 +486,12 @@ namespace Model
     bool m_vpcConfigHasBeenSet;
     Environment m_environment;
     bool m_environmentHasBeenSet;
-    Aws::String m_kMSKeyArn;
-    bool m_kMSKeyArnHasBeenSet;
     Runtime m_runtime;
     bool m_runtimeHasBeenSet;
+    DeadLetterConfig m_deadLetterConfig;
+    bool m_deadLetterConfigHasBeenSet;
+    Aws::String m_kMSKeyArn;
+    bool m_kMSKeyArnHasBeenSet;
   };
 
 } // namespace Model

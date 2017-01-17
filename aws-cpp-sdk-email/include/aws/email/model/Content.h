@@ -35,7 +35,10 @@ namespace Model
    * <p>Represents textual data, plus an optional character set specification.</p>
    * <p>By default, the text must be 7-bit ASCII, due to the constraints of the SMTP
    * protocol. If the text must contain any other characters, then you must also
-   * specify a character set. Examples include UTF-8, ISO-8859-1, and Shift_JIS.</p>
+   * specify a character set. Examples include UTF-8, ISO-8859-1, and
+   * Shift_JIS.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/Content">AWS API
+   * Reference</a></p>
    */
   class AWS_SES_API Content
   {

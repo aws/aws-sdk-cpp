@@ -263,10 +263,13 @@ namespace Model
     typedef std::function<void(const WAFClient*, const Model::UpdateXssMatchSetRequest&, const Model::UpdateXssMatchSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateXssMatchSetResponseReceivedHandler;
 
   /**
-   * <p>This is the <i>AWS WAF API Reference</i>. This guide is for developers who
-   * need detailed information about the AWS WAF API actions, data types, and errors.
-   * For detailed information about AWS WAF features and an overview of how to use
-   * the AWS WAF API, see the <a
+   * <p>This is the <i>AWS WAF API Reference</i> for using AWS WAF with Amazon
+   * CloudFront. The AWS WAF actions and data types listed in the reference are
+   * available for protecting Amazon CloudFront distributions. You can use these
+   * actions and data types via the endpoint <i>waf.amazonaws.com</i>. This guide is
+   * for developers who need detailed information about the AWS WAF API actions, data
+   * types, and errors. For detailed information about AWS WAF features and an
+   * overview of how to use the AWS WAF API, see the <a
    * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
    * Guide</a>.</p>
    */
@@ -316,7 +319,9 @@ namespace Model
          * </li> </ol> <p>For more information about how to use the AWS WAF API to allow or
          * block HTTP requests, see the <a
          * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
-         * Guide</a>.</p>
+         * Guide</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/CreateByteMatchSet">AWS
+         * API Reference</a></p>
          */
         virtual Model::CreateByteMatchSetOutcome CreateByteMatchSet(const Model::CreateByteMatchSetRequest& request) const;
 
@@ -340,7 +345,9 @@ namespace Model
          * </li> </ol> <p>For more information about how to use the AWS WAF API to allow or
          * block HTTP requests, see the <a
          * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
-         * Guide</a>.</p>
+         * Guide</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/CreateByteMatchSet">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -366,7 +373,9 @@ namespace Model
          * </li> </ol> <p>For more information about how to use the AWS WAF API to allow or
          * block HTTP requests, see the <a
          * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
-         * Guide</a>.</p>
+         * Guide</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/CreateByteMatchSet">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -389,7 +398,9 @@ namespace Model
          * that you want AWS WAF to watch for.</p> </li> </ol> <p>For more information
          * about how to use the AWS WAF API to allow or block HTTP requests, see the <a
          * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
-         * Guide</a>.</p>
+         * Guide</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/CreateIPSet">AWS API
+         * Reference</a></p>
          */
         virtual Model::CreateIPSetOutcome CreateIPSet(const Model::CreateIPSetRequest& request) const;
 
@@ -410,7 +421,9 @@ namespace Model
          * that you want AWS WAF to watch for.</p> </li> </ol> <p>For more information
          * about how to use the AWS WAF API to allow or block HTTP requests, see the <a
          * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
-         * Guide</a>.</p>
+         * Guide</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/CreateIPSet">AWS API
+         * Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -433,7 +446,9 @@ namespace Model
          * that you want AWS WAF to watch for.</p> </li> </ol> <p>For more information
          * about how to use the AWS WAF API to allow or block HTTP requests, see the <a
          * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
-         * Guide</a>.</p>
+         * Guide</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/CreateIPSet">AWS API
+         * Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -468,7 +483,9 @@ namespace Model
          * information, see <a>CreateWebACL</a>.</p> </li> </ol> <p>For more information
          * about how to use the AWS WAF API to allow or block HTTP requests, see the <a
          * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
-         * Guide</a>.</p>
+         * Guide</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/CreateRule">AWS API
+         * Reference</a></p>
          */
         virtual Model::CreateRuleOutcome CreateRule(const Model::CreateRuleRequest& request) const;
 
@@ -501,7 +518,9 @@ namespace Model
          * information, see <a>CreateWebACL</a>.</p> </li> </ol> <p>For more information
          * about how to use the AWS WAF API to allow or block HTTP requests, see the <a
          * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
-         * Guide</a>.</p>
+         * Guide</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/CreateRule">AWS API
+         * Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -536,7 +555,9 @@ namespace Model
          * information, see <a>CreateWebACL</a>.</p> </li> </ol> <p>For more information
          * about how to use the AWS WAF API to allow or block HTTP requests, see the <a
          * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
-         * Guide</a>.</p>
+         * Guide</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/CreateRule">AWS API
+         * Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -562,7 +583,9 @@ namespace Model
          * that you want AWS WAF to watch for.</p> </li> </ol> <p>For more information
          * about how to use the AWS WAF API to allow or block HTTP requests, see the <a
          * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
-         * Guide</a>.</p>
+         * Guide</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/CreateSizeConstraintSet">AWS
+         * API Reference</a></p>
          */
         virtual Model::CreateSizeConstraintSetOutcome CreateSizeConstraintSet(const Model::CreateSizeConstraintSetRequest& request) const;
 
@@ -586,7 +609,9 @@ namespace Model
          * that you want AWS WAF to watch for.</p> </li> </ol> <p>For more information
          * about how to use the AWS WAF API to allow or block HTTP requests, see the <a
          * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
-         * Guide</a>.</p>
+         * Guide</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/CreateSizeConstraintSet">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -612,7 +637,9 @@ namespace Model
          * that you want AWS WAF to watch for.</p> </li> </ol> <p>For more information
          * about how to use the AWS WAF API to allow or block HTTP requests, see the <a
          * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
-         * Guide</a>.</p>
+         * Guide</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/CreateSizeConstraintSet">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -635,7 +662,9 @@ namespace Model
          * <p>For more information about how to use the AWS WAF API to allow or block HTTP
          * requests, see the <a
          * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
-         * Guide</a>.</p>
+         * Guide</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/CreateSqlInjectionMatchSet">AWS
+         * API Reference</a></p>
          */
         virtual Model::CreateSqlInjectionMatchSetOutcome CreateSqlInjectionMatchSet(const Model::CreateSqlInjectionMatchSetRequest& request) const;
 
@@ -656,7 +685,9 @@ namespace Model
          * <p>For more information about how to use the AWS WAF API to allow or block HTTP
          * requests, see the <a
          * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
-         * Guide</a>.</p>
+         * Guide</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/CreateSqlInjectionMatchSet">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -679,7 +710,9 @@ namespace Model
          * <p>For more information about how to use the AWS WAF API to allow or block HTTP
          * requests, see the <a
          * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
-         * Guide</a>.</p>
+         * Guide</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/CreateSqlInjectionMatchSet">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -712,7 +745,9 @@ namespace Model
          * distribution.</p> </li> </ol> <p>For more information about how to use the AWS
          * WAF API, see the <a
          * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
-         * Guide</a>.</p>
+         * Guide</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/CreateWebACL">AWS
+         * API Reference</a></p>
          */
         virtual Model::CreateWebACLOutcome CreateWebACL(const Model::CreateWebACLRequest& request) const;
 
@@ -743,7 +778,9 @@ namespace Model
          * distribution.</p> </li> </ol> <p>For more information about how to use the AWS
          * WAF API, see the <a
          * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
-         * Guide</a>.</p>
+         * Guide</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/CreateWebACL">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -776,7 +813,9 @@ namespace Model
          * distribution.</p> </li> </ol> <p>For more information about how to use the AWS
          * WAF API, see the <a
          * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
-         * Guide</a>.</p>
+         * Guide</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/CreateWebACL">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -798,7 +837,9 @@ namespace Model
          * attacks.</p> </li> </ol> <p>For more information about how to use the AWS WAF
          * API to allow or block HTTP requests, see the <a
          * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
-         * Guide</a>.</p>
+         * Guide</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/CreateXssMatchSet">AWS
+         * API Reference</a></p>
          */
         virtual Model::CreateXssMatchSetOutcome CreateXssMatchSet(const Model::CreateXssMatchSetRequest& request) const;
 
@@ -818,7 +859,9 @@ namespace Model
          * attacks.</p> </li> </ol> <p>For more information about how to use the AWS WAF
          * API to allow or block HTTP requests, see the <a
          * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
-         * Guide</a>.</p>
+         * Guide</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/CreateXssMatchSet">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -840,7 +883,9 @@ namespace Model
          * attacks.</p> </li> </ol> <p>For more information about how to use the AWS WAF
          * API to allow or block HTTP requests, see the <a
          * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
-         * Guide</a>.</p>
+         * Guide</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/CreateXssMatchSet">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -857,7 +902,10 @@ namespace Model
          * <a>UpdateByteMatchSet</a>.</p> </li> <li> <p>Use <a>GetChangeToken</a> to get
          * the change token that you provide in the <code>ChangeToken</code> parameter of a
          * <code>DeleteByteMatchSet</code> request.</p> </li> <li> <p>Submit a
-         * <code>DeleteByteMatchSet</code> request.</p> </li> </ol>
+         * <code>DeleteByteMatchSet</code> request.</p> </li> </ol><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/DeleteByteMatchSet">AWS
+         * API Reference</a></p>
          */
         virtual Model::DeleteByteMatchSetOutcome DeleteByteMatchSet(const Model::DeleteByteMatchSetRequest& request) const;
 
@@ -872,7 +920,10 @@ namespace Model
          * <a>UpdateByteMatchSet</a>.</p> </li> <li> <p>Use <a>GetChangeToken</a> to get
          * the change token that you provide in the <code>ChangeToken</code> parameter of a
          * <code>DeleteByteMatchSet</code> request.</p> </li> <li> <p>Submit a
-         * <code>DeleteByteMatchSet</code> request.</p> </li> </ol>
+         * <code>DeleteByteMatchSet</code> request.</p> </li> </ol><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/DeleteByteMatchSet">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -889,7 +940,10 @@ namespace Model
          * <a>UpdateByteMatchSet</a>.</p> </li> <li> <p>Use <a>GetChangeToken</a> to get
          * the change token that you provide in the <code>ChangeToken</code> parameter of a
          * <code>DeleteByteMatchSet</code> request.</p> </li> <li> <p>Submit a
-         * <code>DeleteByteMatchSet</code> request.</p> </li> </ol>
+         * <code>DeleteByteMatchSet</code> request.</p> </li> </ol><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/DeleteByteMatchSet">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -905,7 +959,9 @@ namespace Model
          * information, see <a>UpdateIPSet</a>.</p> </li> <li> <p>Use <a>GetChangeToken</a>
          * to get the change token that you provide in the <code>ChangeToken</code>
          * parameter of a <code>DeleteIPSet</code> request.</p> </li> <li> <p>Submit a
-         * <code>DeleteIPSet</code> request.</p> </li> </ol>
+         * <code>DeleteIPSet</code> request.</p> </li> </ol><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/DeleteIPSet">AWS API
+         * Reference</a></p>
          */
         virtual Model::DeleteIPSetOutcome DeleteIPSet(const Model::DeleteIPSetRequest& request) const;
 
@@ -919,7 +975,9 @@ namespace Model
          * information, see <a>UpdateIPSet</a>.</p> </li> <li> <p>Use <a>GetChangeToken</a>
          * to get the change token that you provide in the <code>ChangeToken</code>
          * parameter of a <code>DeleteIPSet</code> request.</p> </li> <li> <p>Submit a
-         * <code>DeleteIPSet</code> request.</p> </li> </ol>
+         * <code>DeleteIPSet</code> request.</p> </li> </ol><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/DeleteIPSet">AWS API
+         * Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -935,7 +993,9 @@ namespace Model
          * information, see <a>UpdateIPSet</a>.</p> </li> <li> <p>Use <a>GetChangeToken</a>
          * to get the change token that you provide in the <code>ChangeToken</code>
          * parameter of a <code>DeleteIPSet</code> request.</p> </li> <li> <p>Submit a
-         * <code>DeleteIPSet</code> request.</p> </li> </ol>
+         * <code>DeleteIPSet</code> request.</p> </li> </ol><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/DeleteIPSet">AWS API
+         * Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -952,7 +1012,9 @@ namespace Model
          * </li> <li> <p>Use <a>GetChangeToken</a> to get the change token that you provide
          * in the <code>ChangeToken</code> parameter of a <code>DeleteRule</code>
          * request.</p> </li> <li> <p>Submit a <code>DeleteRule</code> request.</p> </li>
-         * </ol>
+         * </ol><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/DeleteRule">AWS API
+         * Reference</a></p>
          */
         virtual Model::DeleteRuleOutcome DeleteRule(const Model::DeleteRuleRequest& request) const;
 
@@ -967,7 +1029,9 @@ namespace Model
          * </li> <li> <p>Use <a>GetChangeToken</a> to get the change token that you provide
          * in the <code>ChangeToken</code> parameter of a <code>DeleteRule</code>
          * request.</p> </li> <li> <p>Submit a <code>DeleteRule</code> request.</p> </li>
-         * </ol>
+         * </ol><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/DeleteRule">AWS API
+         * Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -984,7 +1048,9 @@ namespace Model
          * </li> <li> <p>Use <a>GetChangeToken</a> to get the change token that you provide
          * in the <code>ChangeToken</code> parameter of a <code>DeleteRule</code>
          * request.</p> </li> <li> <p>Submit a <code>DeleteRule</code> request.</p> </li>
-         * </ol>
+         * </ol><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/DeleteRule">AWS API
+         * Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1002,7 +1068,9 @@ namespace Model
          * <a>GetChangeToken</a> to get the change token that you provide in the
          * <code>ChangeToken</code> parameter of a <code>DeleteSizeConstraintSet</code>
          * request.</p> </li> <li> <p>Submit a <code>DeleteSizeConstraintSet</code>
-         * request.</p> </li> </ol>
+         * request.</p> </li> </ol><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/DeleteSizeConstraintSet">AWS
+         * API Reference</a></p>
          */
         virtual Model::DeleteSizeConstraintSetOutcome DeleteSizeConstraintSet(const Model::DeleteSizeConstraintSetRequest& request) const;
 
@@ -1018,7 +1086,9 @@ namespace Model
          * <a>GetChangeToken</a> to get the change token that you provide in the
          * <code>ChangeToken</code> parameter of a <code>DeleteSizeConstraintSet</code>
          * request.</p> </li> <li> <p>Submit a <code>DeleteSizeConstraintSet</code>
-         * request.</p> </li> </ol>
+         * request.</p> </li> </ol><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/DeleteSizeConstraintSet">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1036,7 +1106,9 @@ namespace Model
          * <a>GetChangeToken</a> to get the change token that you provide in the
          * <code>ChangeToken</code> parameter of a <code>DeleteSizeConstraintSet</code>
          * request.</p> </li> <li> <p>Submit a <code>DeleteSizeConstraintSet</code>
-         * request.</p> </li> </ol>
+         * request.</p> </li> </ol><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/DeleteSizeConstraintSet">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1054,7 +1126,9 @@ namespace Model
          * <p>Use <a>GetChangeToken</a> to get the change token that you provide in the
          * <code>ChangeToken</code> parameter of a <code>DeleteSqlInjectionMatchSet</code>
          * request.</p> </li> <li> <p>Submit a <code>DeleteSqlInjectionMatchSet</code>
-         * request.</p> </li> </ol>
+         * request.</p> </li> </ol><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/DeleteSqlInjectionMatchSet">AWS
+         * API Reference</a></p>
          */
         virtual Model::DeleteSqlInjectionMatchSetOutcome DeleteSqlInjectionMatchSet(const Model::DeleteSqlInjectionMatchSetRequest& request) const;
 
@@ -1070,7 +1144,9 @@ namespace Model
          * <p>Use <a>GetChangeToken</a> to get the change token that you provide in the
          * <code>ChangeToken</code> parameter of a <code>DeleteSqlInjectionMatchSet</code>
          * request.</p> </li> <li> <p>Submit a <code>DeleteSqlInjectionMatchSet</code>
-         * request.</p> </li> </ol>
+         * request.</p> </li> </ol><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/DeleteSqlInjectionMatchSet">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1088,7 +1164,9 @@ namespace Model
          * <p>Use <a>GetChangeToken</a> to get the change token that you provide in the
          * <code>ChangeToken</code> parameter of a <code>DeleteSqlInjectionMatchSet</code>
          * request.</p> </li> <li> <p>Submit a <code>DeleteSqlInjectionMatchSet</code>
-         * request.</p> </li> </ol>
+         * request.</p> </li> </ol><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/DeleteSqlInjectionMatchSet">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1102,7 +1180,9 @@ namespace Model
          * see <a>UpdateWebACL</a>.</p> </li> <li> <p>Use <a>GetChangeToken</a> to get the
          * change token that you provide in the <code>ChangeToken</code> parameter of a
          * <code>DeleteWebACL</code> request.</p> </li> <li> <p>Submit a
-         * <code>DeleteWebACL</code> request.</p> </li> </ol>
+         * <code>DeleteWebACL</code> request.</p> </li> </ol><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/DeleteWebACL">AWS
+         * API Reference</a></p>
          */
         virtual Model::DeleteWebACLOutcome DeleteWebACL(const Model::DeleteWebACLRequest& request) const;
 
@@ -1114,7 +1194,9 @@ namespace Model
          * see <a>UpdateWebACL</a>.</p> </li> <li> <p>Use <a>GetChangeToken</a> to get the
          * change token that you provide in the <code>ChangeToken</code> parameter of a
          * <code>DeleteWebACL</code> request.</p> </li> <li> <p>Submit a
-         * <code>DeleteWebACL</code> request.</p> </li> </ol>
+         * <code>DeleteWebACL</code> request.</p> </li> </ol><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/DeleteWebACL">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1128,7 +1210,9 @@ namespace Model
          * see <a>UpdateWebACL</a>.</p> </li> <li> <p>Use <a>GetChangeToken</a> to get the
          * change token that you provide in the <code>ChangeToken</code> parameter of a
          * <code>DeleteWebACL</code> request.</p> </li> <li> <p>Submit a
-         * <code>DeleteWebACL</code> request.</p> </li> </ol>
+         * <code>DeleteWebACL</code> request.</p> </li> </ol><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/DeleteWebACL">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1145,7 +1229,10 @@ namespace Model
          * <a>UpdateXssMatchSet</a>.</p> </li> <li> <p>Use <a>GetChangeToken</a> to get the
          * change token that you provide in the <code>ChangeToken</code> parameter of a
          * <code>DeleteXssMatchSet</code> request.</p> </li> <li> <p>Submit a
-         * <code>DeleteXssMatchSet</code> request.</p> </li> </ol>
+         * <code>DeleteXssMatchSet</code> request.</p> </li> </ol><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/DeleteXssMatchSet">AWS
+         * API Reference</a></p>
          */
         virtual Model::DeleteXssMatchSetOutcome DeleteXssMatchSet(const Model::DeleteXssMatchSetRequest& request) const;
 
@@ -1160,7 +1247,10 @@ namespace Model
          * <a>UpdateXssMatchSet</a>.</p> </li> <li> <p>Use <a>GetChangeToken</a> to get the
          * change token that you provide in the <code>ChangeToken</code> parameter of a
          * <code>DeleteXssMatchSet</code> request.</p> </li> <li> <p>Submit a
-         * <code>DeleteXssMatchSet</code> request.</p> </li> </ol>
+         * <code>DeleteXssMatchSet</code> request.</p> </li> </ol><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/DeleteXssMatchSet">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1177,26 +1267,38 @@ namespace Model
          * <a>UpdateXssMatchSet</a>.</p> </li> <li> <p>Use <a>GetChangeToken</a> to get the
          * change token that you provide in the <code>ChangeToken</code> parameter of a
          * <code>DeleteXssMatchSet</code> request.</p> </li> <li> <p>Submit a
-         * <code>DeleteXssMatchSet</code> request.</p> </li> </ol>
+         * <code>DeleteXssMatchSet</code> request.</p> </li> </ol><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/DeleteXssMatchSet">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteXssMatchSetAsync(const Model::DeleteXssMatchSetRequest& request, const DeleteXssMatchSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns the <a>ByteMatchSet</a> specified by <code>ByteMatchSetId</code>.</p>
+         * <p>Returns the <a>ByteMatchSet</a> specified by
+         * <code>ByteMatchSetId</code>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/GetByteMatchSet">AWS
+         * API Reference</a></p>
          */
         virtual Model::GetByteMatchSetOutcome GetByteMatchSet(const Model::GetByteMatchSetRequest& request) const;
 
         /**
-         * <p>Returns the <a>ByteMatchSet</a> specified by <code>ByteMatchSetId</code>.</p>
+         * <p>Returns the <a>ByteMatchSet</a> specified by
+         * <code>ByteMatchSetId</code>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/GetByteMatchSet">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::GetByteMatchSetOutcomeCallable GetByteMatchSetCallable(const Model::GetByteMatchSetRequest& request) const;
 
         /**
-         * <p>Returns the <a>ByteMatchSet</a> specified by <code>ByteMatchSetId</code>.</p>
+         * <p>Returns the <a>ByteMatchSet</a> specified by
+         * <code>ByteMatchSetId</code>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/GetByteMatchSet">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1215,7 +1317,9 @@ namespace Model
          * request, the status of the change token changes to <code>PENDING</code>, which
          * indicates that AWS WAF is propagating the change to all AWS WAF servers. Use
          * <code>GetChangeTokenStatus</code> to determine the status of your change
-         * token.</p>
+         * token.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/GetChangeToken">AWS
+         * API Reference</a></p>
          */
         virtual Model::GetChangeTokenOutcome GetChangeToken(const Model::GetChangeTokenRequest& request) const;
 
@@ -1232,7 +1336,9 @@ namespace Model
          * request, the status of the change token changes to <code>PENDING</code>, which
          * indicates that AWS WAF is propagating the change to all AWS WAF servers. Use
          * <code>GetChangeTokenStatus</code> to determine the status of your change
-         * token.</p>
+         * token.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/GetChangeToken">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1251,7 +1357,9 @@ namespace Model
          * request, the status of the change token changes to <code>PENDING</code>, which
          * indicates that AWS WAF is propagating the change to all AWS WAF servers. Use
          * <code>GetChangeTokenStatus</code> to determine the status of your change
-         * token.</p>
+         * token.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/GetChangeToken">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1265,7 +1373,9 @@ namespace Model
          * call to create, update, or delete an AWS WAF object.</p> </li> <li> <p>
          * <code>PENDING</code>: AWS WAF is propagating the create, update, or delete
          * request to all AWS WAF servers.</p> </li> <li> <p> <code>IN_SYNC</code>:
-         * Propagation is complete.</p> </li> </ul>
+         * Propagation is complete.</p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/GetChangeTokenStatus">AWS
+         * API Reference</a></p>
          */
         virtual Model::GetChangeTokenStatusOutcome GetChangeTokenStatus(const Model::GetChangeTokenStatusRequest& request) const;
 
@@ -1277,7 +1387,9 @@ namespace Model
          * call to create, update, or delete an AWS WAF object.</p> </li> <li> <p>
          * <code>PENDING</code>: AWS WAF is propagating the create, update, or delete
          * request to all AWS WAF servers.</p> </li> <li> <p> <code>IN_SYNC</code>:
-         * Propagation is complete.</p> </li> </ul>
+         * Propagation is complete.</p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/GetChangeTokenStatus">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1291,26 +1403,37 @@ namespace Model
          * call to create, update, or delete an AWS WAF object.</p> </li> <li> <p>
          * <code>PENDING</code>: AWS WAF is propagating the create, update, or delete
          * request to all AWS WAF servers.</p> </li> <li> <p> <code>IN_SYNC</code>:
-         * Propagation is complete.</p> </li> </ul>
+         * Propagation is complete.</p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/GetChangeTokenStatus">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetChangeTokenStatusAsync(const Model::GetChangeTokenStatusRequest& request, const GetChangeTokenStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns the <a>IPSet</a> that is specified by <code>IPSetId</code>.</p>
+         * <p>Returns the <a>IPSet</a> that is specified by
+         * <code>IPSetId</code>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/GetIPSet">AWS API
+         * Reference</a></p>
          */
         virtual Model::GetIPSetOutcome GetIPSet(const Model::GetIPSetRequest& request) const;
 
         /**
-         * <p>Returns the <a>IPSet</a> that is specified by <code>IPSetId</code>.</p>
+         * <p>Returns the <a>IPSet</a> that is specified by
+         * <code>IPSetId</code>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/GetIPSet">AWS API
+         * Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::GetIPSetOutcomeCallable GetIPSetCallable(const Model::GetIPSetRequest& request) const;
 
         /**
-         * <p>Returns the <a>IPSet</a> that is specified by <code>IPSetId</code>.</p>
+         * <p>Returns the <a>IPSet</a> that is specified by
+         * <code>IPSetId</code>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/GetIPSet">AWS API
+         * Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1318,13 +1441,17 @@ namespace Model
 
         /**
          * <p>Returns the <a>Rule</a> that is specified by the <code>RuleId</code> that you
-         * included in the <code>GetRule</code> request.</p>
+         * included in the <code>GetRule</code> request.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/GetRule">AWS API
+         * Reference</a></p>
          */
         virtual Model::GetRuleOutcome GetRule(const Model::GetRuleRequest& request) const;
 
         /**
          * <p>Returns the <a>Rule</a> that is specified by the <code>RuleId</code> that you
-         * included in the <code>GetRule</code> request.</p>
+         * included in the <code>GetRule</code> request.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/GetRule">AWS API
+         * Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1332,7 +1459,9 @@ namespace Model
 
         /**
          * <p>Returns the <a>Rule</a> that is specified by the <code>RuleId</code> that you
-         * included in the <code>GetRule</code> request.</p>
+         * included in the <code>GetRule</code> request.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/GetRule">AWS API
+         * Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1348,7 +1477,9 @@ namespace Model
          * resource (such as a CloudFront distribution) received 5,000 requests before the
          * specified time range elapsed, <code>GetSampledRequests</code> returns an updated
          * time range. This new time range indicates the actual period during which AWS WAF
-         * selected the requests in the sample.</p>
+         * selected the requests in the sample.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/GetSampledRequests">AWS
+         * API Reference</a></p>
          */
         virtual Model::GetSampledRequestsOutcome GetSampledRequests(const Model::GetSampledRequestsRequest& request) const;
 
@@ -1362,7 +1493,9 @@ namespace Model
          * resource (such as a CloudFront distribution) received 5,000 requests before the
          * specified time range elapsed, <code>GetSampledRequests</code> returns an updated
          * time range. This new time range indicates the actual period during which AWS WAF
-         * selected the requests in the sample.</p>
+         * selected the requests in the sample.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/GetSampledRequests">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1378,7 +1511,9 @@ namespace Model
          * resource (such as a CloudFront distribution) received 5,000 requests before the
          * specified time range elapsed, <code>GetSampledRequests</code> returns an updated
          * time range. This new time range indicates the actual period during which AWS WAF
-         * selected the requests in the sample.</p>
+         * selected the requests in the sample.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/GetSampledRequests">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1386,13 +1521,17 @@ namespace Model
 
         /**
          * <p>Returns the <a>SizeConstraintSet</a> specified by
-         * <code>SizeConstraintSetId</code>.</p>
+         * <code>SizeConstraintSetId</code>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/GetSizeConstraintSet">AWS
+         * API Reference</a></p>
          */
         virtual Model::GetSizeConstraintSetOutcome GetSizeConstraintSet(const Model::GetSizeConstraintSetRequest& request) const;
 
         /**
          * <p>Returns the <a>SizeConstraintSet</a> specified by
-         * <code>SizeConstraintSetId</code>.</p>
+         * <code>SizeConstraintSetId</code>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/GetSizeConstraintSet">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1400,7 +1539,9 @@ namespace Model
 
         /**
          * <p>Returns the <a>SizeConstraintSet</a> specified by
-         * <code>SizeConstraintSetId</code>.</p>
+         * <code>SizeConstraintSetId</code>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/GetSizeConstraintSet">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1408,13 +1549,17 @@ namespace Model
 
         /**
          * <p>Returns the <a>SqlInjectionMatchSet</a> that is specified by
-         * <code>SqlInjectionMatchSetId</code>.</p>
+         * <code>SqlInjectionMatchSetId</code>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/GetSqlInjectionMatchSet">AWS
+         * API Reference</a></p>
          */
         virtual Model::GetSqlInjectionMatchSetOutcome GetSqlInjectionMatchSet(const Model::GetSqlInjectionMatchSetRequest& request) const;
 
         /**
          * <p>Returns the <a>SqlInjectionMatchSet</a> that is specified by
-         * <code>SqlInjectionMatchSetId</code>.</p>
+         * <code>SqlInjectionMatchSetId</code>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/GetSqlInjectionMatchSet">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1422,26 +1567,37 @@ namespace Model
 
         /**
          * <p>Returns the <a>SqlInjectionMatchSet</a> that is specified by
-         * <code>SqlInjectionMatchSetId</code>.</p>
+         * <code>SqlInjectionMatchSetId</code>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/GetSqlInjectionMatchSet">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetSqlInjectionMatchSetAsync(const Model::GetSqlInjectionMatchSetRequest& request, const GetSqlInjectionMatchSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns the <a>WebACL</a> that is specified by <code>WebACLId</code>.</p>
+         * <p>Returns the <a>WebACL</a> that is specified by
+         * <code>WebACLId</code>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/GetWebACL">AWS API
+         * Reference</a></p>
          */
         virtual Model::GetWebACLOutcome GetWebACL(const Model::GetWebACLRequest& request) const;
 
         /**
-         * <p>Returns the <a>WebACL</a> that is specified by <code>WebACLId</code>.</p>
+         * <p>Returns the <a>WebACL</a> that is specified by
+         * <code>WebACLId</code>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/GetWebACL">AWS API
+         * Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::GetWebACLOutcomeCallable GetWebACLCallable(const Model::GetWebACLRequest& request) const;
 
         /**
-         * <p>Returns the <a>WebACL</a> that is specified by <code>WebACLId</code>.</p>
+         * <p>Returns the <a>WebACL</a> that is specified by
+         * <code>WebACLId</code>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/GetWebACL">AWS API
+         * Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1449,13 +1605,17 @@ namespace Model
 
         /**
          * <p>Returns the <a>XssMatchSet</a> that is specified by
-         * <code>XssMatchSetId</code>.</p>
+         * <code>XssMatchSetId</code>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/GetXssMatchSet">AWS
+         * API Reference</a></p>
          */
         virtual Model::GetXssMatchSetOutcome GetXssMatchSet(const Model::GetXssMatchSetRequest& request) const;
 
         /**
          * <p>Returns the <a>XssMatchSet</a> that is specified by
-         * <code>XssMatchSetId</code>.</p>
+         * <code>XssMatchSetId</code>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/GetXssMatchSet">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1463,140 +1623,199 @@ namespace Model
 
         /**
          * <p>Returns the <a>XssMatchSet</a> that is specified by
-         * <code>XssMatchSetId</code>.</p>
+         * <code>XssMatchSetId</code>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/GetXssMatchSet">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetXssMatchSetAsync(const Model::GetXssMatchSetRequest& request, const GetXssMatchSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns an array of <a>ByteMatchSetSummary</a> objects.</p>
+         * <p>Returns an array of <a>ByteMatchSetSummary</a> objects.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/ListByteMatchSets">AWS
+         * API Reference</a></p>
          */
         virtual Model::ListByteMatchSetsOutcome ListByteMatchSets(const Model::ListByteMatchSetsRequest& request) const;
 
         /**
-         * <p>Returns an array of <a>ByteMatchSetSummary</a> objects.</p>
+         * <p>Returns an array of <a>ByteMatchSetSummary</a> objects.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/ListByteMatchSets">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListByteMatchSetsOutcomeCallable ListByteMatchSetsCallable(const Model::ListByteMatchSetsRequest& request) const;
 
         /**
-         * <p>Returns an array of <a>ByteMatchSetSummary</a> objects.</p>
+         * <p>Returns an array of <a>ByteMatchSetSummary</a> objects.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/ListByteMatchSets">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListByteMatchSetsAsync(const Model::ListByteMatchSetsRequest& request, const ListByteMatchSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns an array of <a>IPSetSummary</a> objects in the response.</p>
+         * <p>Returns an array of <a>IPSetSummary</a> objects in the
+         * response.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/ListIPSets">AWS API
+         * Reference</a></p>
          */
         virtual Model::ListIPSetsOutcome ListIPSets(const Model::ListIPSetsRequest& request) const;
 
         /**
-         * <p>Returns an array of <a>IPSetSummary</a> objects in the response.</p>
+         * <p>Returns an array of <a>IPSetSummary</a> objects in the
+         * response.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/ListIPSets">AWS API
+         * Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListIPSetsOutcomeCallable ListIPSetsCallable(const Model::ListIPSetsRequest& request) const;
 
         /**
-         * <p>Returns an array of <a>IPSetSummary</a> objects in the response.</p>
+         * <p>Returns an array of <a>IPSetSummary</a> objects in the
+         * response.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/ListIPSets">AWS API
+         * Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListIPSetsAsync(const Model::ListIPSetsRequest& request, const ListIPSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns an array of <a>RuleSummary</a> objects.</p>
+         * <p>Returns an array of <a>RuleSummary</a> objects.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/ListRules">AWS API
+         * Reference</a></p>
          */
         virtual Model::ListRulesOutcome ListRules(const Model::ListRulesRequest& request) const;
 
         /**
-         * <p>Returns an array of <a>RuleSummary</a> objects.</p>
+         * <p>Returns an array of <a>RuleSummary</a> objects.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/ListRules">AWS API
+         * Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListRulesOutcomeCallable ListRulesCallable(const Model::ListRulesRequest& request) const;
 
         /**
-         * <p>Returns an array of <a>RuleSummary</a> objects.</p>
+         * <p>Returns an array of <a>RuleSummary</a> objects.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/ListRules">AWS API
+         * Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListRulesAsync(const Model::ListRulesRequest& request, const ListRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns an array of <a>SizeConstraintSetSummary</a> objects.</p>
+         * <p>Returns an array of <a>SizeConstraintSetSummary</a> objects.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/ListSizeConstraintSets">AWS
+         * API Reference</a></p>
          */
         virtual Model::ListSizeConstraintSetsOutcome ListSizeConstraintSets(const Model::ListSizeConstraintSetsRequest& request) const;
 
         /**
-         * <p>Returns an array of <a>SizeConstraintSetSummary</a> objects.</p>
+         * <p>Returns an array of <a>SizeConstraintSetSummary</a> objects.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/ListSizeConstraintSets">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListSizeConstraintSetsOutcomeCallable ListSizeConstraintSetsCallable(const Model::ListSizeConstraintSetsRequest& request) const;
 
         /**
-         * <p>Returns an array of <a>SizeConstraintSetSummary</a> objects.</p>
+         * <p>Returns an array of <a>SizeConstraintSetSummary</a> objects.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/ListSizeConstraintSets">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListSizeConstraintSetsAsync(const Model::ListSizeConstraintSetsRequest& request, const ListSizeConstraintSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns an array of <a>SqlInjectionMatchSet</a> objects.</p>
+         * <p>Returns an array of <a>SqlInjectionMatchSet</a> objects.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/ListSqlInjectionMatchSets">AWS
+         * API Reference</a></p>
          */
         virtual Model::ListSqlInjectionMatchSetsOutcome ListSqlInjectionMatchSets(const Model::ListSqlInjectionMatchSetsRequest& request) const;
 
         /**
-         * <p>Returns an array of <a>SqlInjectionMatchSet</a> objects.</p>
+         * <p>Returns an array of <a>SqlInjectionMatchSet</a> objects.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/ListSqlInjectionMatchSets">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListSqlInjectionMatchSetsOutcomeCallable ListSqlInjectionMatchSetsCallable(const Model::ListSqlInjectionMatchSetsRequest& request) const;
 
         /**
-         * <p>Returns an array of <a>SqlInjectionMatchSet</a> objects.</p>
+         * <p>Returns an array of <a>SqlInjectionMatchSet</a> objects.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/ListSqlInjectionMatchSets">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListSqlInjectionMatchSetsAsync(const Model::ListSqlInjectionMatchSetsRequest& request, const ListSqlInjectionMatchSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns an array of <a>WebACLSummary</a> objects in the response.</p>
+         * <p>Returns an array of <a>WebACLSummary</a> objects in the
+         * response.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/ListWebACLs">AWS API
+         * Reference</a></p>
          */
         virtual Model::ListWebACLsOutcome ListWebACLs(const Model::ListWebACLsRequest& request) const;
 
         /**
-         * <p>Returns an array of <a>WebACLSummary</a> objects in the response.</p>
+         * <p>Returns an array of <a>WebACLSummary</a> objects in the
+         * response.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/ListWebACLs">AWS API
+         * Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListWebACLsOutcomeCallable ListWebACLsCallable(const Model::ListWebACLsRequest& request) const;
 
         /**
-         * <p>Returns an array of <a>WebACLSummary</a> objects in the response.</p>
+         * <p>Returns an array of <a>WebACLSummary</a> objects in the
+         * response.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/ListWebACLs">AWS API
+         * Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListWebACLsAsync(const Model::ListWebACLsRequest& request, const ListWebACLsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns an array of <a>XssMatchSet</a> objects.</p>
+         * <p>Returns an array of <a>XssMatchSet</a> objects.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/ListXssMatchSets">AWS
+         * API Reference</a></p>
          */
         virtual Model::ListXssMatchSetsOutcome ListXssMatchSets(const Model::ListXssMatchSetsRequest& request) const;
 
         /**
-         * <p>Returns an array of <a>XssMatchSet</a> objects.</p>
+         * <p>Returns an array of <a>XssMatchSet</a> objects.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/ListXssMatchSets">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListXssMatchSetsOutcomeCallable ListXssMatchSetsCallable(const Model::ListXssMatchSetsRequest& request) const;
 
         /**
-         * <p>Returns an array of <a>XssMatchSet</a> objects.</p>
+         * <p>Returns an array of <a>XssMatchSet</a> objects.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/ListXssMatchSets">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1630,7 +1849,9 @@ namespace Model
          * that you want AWS WAF to watch for.</p> </li> </ol> <p>For more information
          * about how to use the AWS WAF API to allow or block HTTP requests, see the <a
          * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
-         * Guide</a>.</p>
+         * Guide</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/UpdateByteMatchSet">AWS
+         * API Reference</a></p>
          */
         virtual Model::UpdateByteMatchSetOutcome UpdateByteMatchSet(const Model::UpdateByteMatchSetRequest& request) const;
 
@@ -1662,7 +1883,9 @@ namespace Model
          * that you want AWS WAF to watch for.</p> </li> </ol> <p>For more information
          * about how to use the AWS WAF API to allow or block HTTP requests, see the <a
          * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
-         * Guide</a>.</p>
+         * Guide</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/UpdateByteMatchSet">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1696,7 +1919,9 @@ namespace Model
          * that you want AWS WAF to watch for.</p> </li> </ol> <p>For more information
          * about how to use the AWS WAF API to allow or block HTTP requests, see the <a
          * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
-         * Guide</a>.</p>
+         * Guide</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/UpdateByteMatchSet">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1708,16 +1933,20 @@ namespace Model
          * </p> <ul> <li> <p>Whether to insert or delete the object from the array. If you
          * want to change an <code>IPSetDescriptor</code> object, you delete the existing
          * object and add a new one.</p> </li> <li> <p>The IP address version,
-         * <code>IPv4</code>. </p> </li> <li> <p>The IP address in CIDR notation, for
-         * example, <code>192.0.2.0/24</code> (for the range of IP addresses from
-         * <code>192.0.2.0</code> to <code>192.0.2.255</code>) or
+         * <code>IPv4</code> or <code>IPv6</code>. </p> </li> <li> <p>The IP address in
+         * CIDR notation, for example, <code>192.0.2.0/24</code> (for the range of IP
+         * addresses from <code>192.0.2.0</code> to <code>192.0.2.255</code>) or
          * <code>192.0.2.44/32</code> (for the individual IP address
          * <code>192.0.2.44</code>). </p> </li> </ul> <p>AWS WAF supports /8, /16, /24, and
-         * /32 IP address ranges. For more information about CIDR notation, see the
-         * Wikipedia entry <a
+         * /32 IP address ranges for IPv4, and /24, /32, /48, /56, /64 and /128 for IPv6.
+         * For more information about CIDR notation, see the Wikipedia entry <a
          * href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Classless
-         * Inter-Domain Routing</a>.</p> <p>You use an <code>IPSet</code> to specify which
-         * web requests you want to allow or block based on the IP addresses that the
+         * Inter-Domain Routing</a>.</p> <p>IPv6 addresses can be represented using any of
+         * the following formats:</p> <ul> <li>
+         * <p>1111:0000:0000:0000:0000:0000:0000:0111/128</p> </li> <li>
+         * <p>1111:0:0:0:0:0:0:0111/128</p> </li> <li> <p>1111::0111/128</p> </li> <li>
+         * <p>1111::111/128</p> </li> </ul> <p>You use an <code>IPSet</code> to specify
+         * which web requests you want to allow or block based on the IP addresses that the
          * requests originated from. For example, if you're receiving a lot of requests
          * from one or a small number of IP addresses and you want to block the requests,
          * you can create an <code>IPSet</code> that specifies those IP addresses, and then
@@ -1733,7 +1962,9 @@ namespace Model
          * address and add the new one.</p> <p>For more information about how to use the
          * AWS WAF API to allow or block HTTP requests, see the <a
          * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
-         * Guide</a>.</p>
+         * Guide</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/UpdateIPSet">AWS API
+         * Reference</a></p>
          */
         virtual Model::UpdateIPSetOutcome UpdateIPSet(const Model::UpdateIPSetRequest& request) const;
 
@@ -1743,16 +1974,20 @@ namespace Model
          * </p> <ul> <li> <p>Whether to insert or delete the object from the array. If you
          * want to change an <code>IPSetDescriptor</code> object, you delete the existing
          * object and add a new one.</p> </li> <li> <p>The IP address version,
-         * <code>IPv4</code>. </p> </li> <li> <p>The IP address in CIDR notation, for
-         * example, <code>192.0.2.0/24</code> (for the range of IP addresses from
-         * <code>192.0.2.0</code> to <code>192.0.2.255</code>) or
+         * <code>IPv4</code> or <code>IPv6</code>. </p> </li> <li> <p>The IP address in
+         * CIDR notation, for example, <code>192.0.2.0/24</code> (for the range of IP
+         * addresses from <code>192.0.2.0</code> to <code>192.0.2.255</code>) or
          * <code>192.0.2.44/32</code> (for the individual IP address
          * <code>192.0.2.44</code>). </p> </li> </ul> <p>AWS WAF supports /8, /16, /24, and
-         * /32 IP address ranges. For more information about CIDR notation, see the
-         * Wikipedia entry <a
+         * /32 IP address ranges for IPv4, and /24, /32, /48, /56, /64 and /128 for IPv6.
+         * For more information about CIDR notation, see the Wikipedia entry <a
          * href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Classless
-         * Inter-Domain Routing</a>.</p> <p>You use an <code>IPSet</code> to specify which
-         * web requests you want to allow or block based on the IP addresses that the
+         * Inter-Domain Routing</a>.</p> <p>IPv6 addresses can be represented using any of
+         * the following formats:</p> <ul> <li>
+         * <p>1111:0000:0000:0000:0000:0000:0000:0111/128</p> </li> <li>
+         * <p>1111:0:0:0:0:0:0:0111/128</p> </li> <li> <p>1111::0111/128</p> </li> <li>
+         * <p>1111::111/128</p> </li> </ul> <p>You use an <code>IPSet</code> to specify
+         * which web requests you want to allow or block based on the IP addresses that the
          * requests originated from. For example, if you're receiving a lot of requests
          * from one or a small number of IP addresses and you want to block the requests,
          * you can create an <code>IPSet</code> that specifies those IP addresses, and then
@@ -1768,7 +2003,9 @@ namespace Model
          * address and add the new one.</p> <p>For more information about how to use the
          * AWS WAF API to allow or block HTTP requests, see the <a
          * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
-         * Guide</a>.</p>
+         * Guide</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/UpdateIPSet">AWS API
+         * Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1780,16 +2017,20 @@ namespace Model
          * </p> <ul> <li> <p>Whether to insert or delete the object from the array. If you
          * want to change an <code>IPSetDescriptor</code> object, you delete the existing
          * object and add a new one.</p> </li> <li> <p>The IP address version,
-         * <code>IPv4</code>. </p> </li> <li> <p>The IP address in CIDR notation, for
-         * example, <code>192.0.2.0/24</code> (for the range of IP addresses from
-         * <code>192.0.2.0</code> to <code>192.0.2.255</code>) or
+         * <code>IPv4</code> or <code>IPv6</code>. </p> </li> <li> <p>The IP address in
+         * CIDR notation, for example, <code>192.0.2.0/24</code> (for the range of IP
+         * addresses from <code>192.0.2.0</code> to <code>192.0.2.255</code>) or
          * <code>192.0.2.44/32</code> (for the individual IP address
          * <code>192.0.2.44</code>). </p> </li> </ul> <p>AWS WAF supports /8, /16, /24, and
-         * /32 IP address ranges. For more information about CIDR notation, see the
-         * Wikipedia entry <a
+         * /32 IP address ranges for IPv4, and /24, /32, /48, /56, /64 and /128 for IPv6.
+         * For more information about CIDR notation, see the Wikipedia entry <a
          * href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Classless
-         * Inter-Domain Routing</a>.</p> <p>You use an <code>IPSet</code> to specify which
-         * web requests you want to allow or block based on the IP addresses that the
+         * Inter-Domain Routing</a>.</p> <p>IPv6 addresses can be represented using any of
+         * the following formats:</p> <ul> <li>
+         * <p>1111:0000:0000:0000:0000:0000:0000:0111/128</p> </li> <li>
+         * <p>1111:0:0:0:0:0:0:0111/128</p> </li> <li> <p>1111::0111/128</p> </li> <li>
+         * <p>1111::111/128</p> </li> </ul> <p>You use an <code>IPSet</code> to specify
+         * which web requests you want to allow or block based on the IP addresses that the
          * requests originated from. For example, if you're receiving a lot of requests
          * from one or a small number of IP addresses and you want to block the requests,
          * you can create an <code>IPSet</code> that specifies those IP addresses, and then
@@ -1805,7 +2046,9 @@ namespace Model
          * address and add the new one.</p> <p>For more information about how to use the
          * AWS WAF API to allow or block HTTP requests, see the <a
          * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
-         * Guide</a>.</p>
+         * Guide</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/UpdateIPSet">AWS API
+         * Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1839,7 +2082,9 @@ namespace Model
          * with another, you delete the existing one and add the new one.</p> <p>For more
          * information about how to use the AWS WAF API to allow or block HTTP requests,
          * see the <a href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF
-         * Developer Guide</a>.</p>
+         * Developer Guide</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/UpdateRule">AWS API
+         * Reference</a></p>
          */
         virtual Model::UpdateRuleOutcome UpdateRule(const Model::UpdateRuleRequest& request) const;
 
@@ -1871,7 +2116,9 @@ namespace Model
          * with another, you delete the existing one and add the new one.</p> <p>For more
          * information about how to use the AWS WAF API to allow or block HTTP requests,
          * see the <a href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF
-         * Developer Guide</a>.</p>
+         * Developer Guide</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/UpdateRule">AWS API
+         * Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1905,7 +2152,9 @@ namespace Model
          * with another, you delete the existing one and add the new one.</p> <p>For more
          * information about how to use the AWS WAF API to allow or block HTTP requests,
          * see the <a href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF
-         * Developer Guide</a>.</p>
+         * Developer Guide</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/UpdateRule">AWS API
+         * Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1942,7 +2191,9 @@ namespace Model
          * value that you want AWS WAF to watch for.</p> </li> </ol> <p>For more
          * information about how to use the AWS WAF API to allow or block HTTP requests,
          * see the <a href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF
-         * Developer Guide</a>.</p>
+         * Developer Guide</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/UpdateSizeConstraintSet">AWS
+         * API Reference</a></p>
          */
         virtual Model::UpdateSizeConstraintSetOutcome UpdateSizeConstraintSet(const Model::UpdateSizeConstraintSetRequest& request) const;
 
@@ -1977,7 +2228,9 @@ namespace Model
          * value that you want AWS WAF to watch for.</p> </li> </ol> <p>For more
          * information about how to use the AWS WAF API to allow or block HTTP requests,
          * see the <a href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF
-         * Developer Guide</a>.</p>
+         * Developer Guide</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/UpdateSizeConstraintSet">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -2014,7 +2267,9 @@ namespace Model
          * value that you want AWS WAF to watch for.</p> </li> </ol> <p>For more
          * information about how to use the AWS WAF API to allow or block HTTP requests,
          * see the <a href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF
-         * Developer Guide</a>.</p>
+         * Developer Guide</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/UpdateSizeConstraintSet">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -2046,7 +2301,9 @@ namespace Model
          * </ol> <p>For more information about how to use the AWS WAF API to allow or block
          * HTTP requests, see the <a
          * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
-         * Guide</a>.</p>
+         * Guide</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/UpdateSqlInjectionMatchSet">AWS
+         * API Reference</a></p>
          */
         virtual Model::UpdateSqlInjectionMatchSetOutcome UpdateSqlInjectionMatchSet(const Model::UpdateSqlInjectionMatchSetRequest& request) const;
 
@@ -2076,7 +2333,9 @@ namespace Model
          * </ol> <p>For more information about how to use the AWS WAF API to allow or block
          * HTTP requests, see the <a
          * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
-         * Guide</a>.</p>
+         * Guide</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/UpdateSqlInjectionMatchSet">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -2108,7 +2367,9 @@ namespace Model
          * </ol> <p>For more information about how to use the AWS WAF API to allow or block
          * HTTP requests, see the <a
          * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
-         * Guide</a>.</p>
+         * Guide</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/UpdateSqlInjectionMatchSet">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -2154,7 +2415,9 @@ namespace Model
          * CloudFront distribution. </p> </li> </ol> <p>For more information about how to
          * use the AWS WAF API to allow or block HTTP requests, see the <a
          * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
-         * Guide</a>.</p>
+         * Guide</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/UpdateWebACL">AWS
+         * API Reference</a></p>
          */
         virtual Model::UpdateWebACLOutcome UpdateWebACL(const Model::UpdateWebACLRequest& request) const;
 
@@ -2198,7 +2461,9 @@ namespace Model
          * CloudFront distribution. </p> </li> </ol> <p>For more information about how to
          * use the AWS WAF API to allow or block HTTP requests, see the <a
          * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
-         * Guide</a>.</p>
+         * Guide</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/UpdateWebACL">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -2244,7 +2509,9 @@ namespace Model
          * CloudFront distribution. </p> </li> </ol> <p>For more information about how to
          * use the AWS WAF API to allow or block HTTP requests, see the <a
          * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
-         * Guide</a>.</p>
+         * Guide</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/UpdateWebACL">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -2275,7 +2542,9 @@ namespace Model
          * attacks.</p> </li> </ol> <p>For more information about how to use the AWS WAF
          * API to allow or block HTTP requests, see the <a
          * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
-         * Guide</a>.</p>
+         * Guide</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/UpdateXssMatchSet">AWS
+         * API Reference</a></p>
          */
         virtual Model::UpdateXssMatchSetOutcome UpdateXssMatchSet(const Model::UpdateXssMatchSetRequest& request) const;
 
@@ -2304,7 +2573,9 @@ namespace Model
          * attacks.</p> </li> </ol> <p>For more information about how to use the AWS WAF
          * API to allow or block HTTP requests, see the <a
          * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
-         * Guide</a>.</p>
+         * Guide</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/UpdateXssMatchSet">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -2335,7 +2606,9 @@ namespace Model
          * attacks.</p> </li> </ol> <p>For more information about how to use the AWS WAF
          * API to allow or block HTTP requests, see the <a
          * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
-         * Guide</a>.</p>
+         * Guide</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/UpdateXssMatchSet">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */

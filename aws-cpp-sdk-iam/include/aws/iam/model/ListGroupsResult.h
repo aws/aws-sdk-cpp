@@ -36,7 +36,10 @@ namespace IAM
 namespace Model
 {
   /**
-   * <p>Contains the response to a successful <a>ListGroups</a> request. </p>
+   * <p>Contains the response to a successful <a>ListGroups</a> request.
+   * </p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListGroupsResponse">AWS
+   * API Reference</a></p>
    */
   class AWS_IAM_API ListGroupsResult
   {

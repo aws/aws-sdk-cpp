@@ -65,7 +65,9 @@ namespace Model
    * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Memcached.html#ParameterGroups.Memcached.NodeSpecific">Cache
    * Node Type-Specific Parameters for Memcached</a> or <a
    * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Redis.html#ParameterGroups.Redis.NodeSpecific">Cache
-   * Node Type-Specific Parameters for Redis</a>.</p>
+   * Node Type-Specific Parameters for Redis</a>.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/CacheNode">AWS
+   * API Reference</a></p>
    */
   class AWS_ELASTICACHE_API CacheNode
   {

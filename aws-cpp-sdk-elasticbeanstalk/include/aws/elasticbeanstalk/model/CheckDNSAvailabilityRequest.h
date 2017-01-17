@@ -25,7 +25,10 @@ namespace Model
 {
 
   /**
-   * <p>Results message indicating whether a CNAME is available.</p>
+   * <p>Results message indicating whether a CNAME is available.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/CheckDNSAvailabilityMessage">AWS
+   * API Reference</a></p>
    */
   class AWS_ELASTICBEANSTALK_API CheckDNSAvailabilityRequest : public ElasticBeanstalkRequest
   {

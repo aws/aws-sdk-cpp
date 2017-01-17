@@ -56,7 +56,7 @@ Aws::String RequestCancelWorkflowExecutionRequest::SerializePayload() const
 Aws::Http::HeaderValueCollection RequestCancelWorkflowExecutionRequest::GetRequestSpecificHeaders() const
 {
   Aws::Http::HeaderValueCollection headers;
-  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "SimpleWorkflowService.CancelWorkflowExecution"));
+  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "SimpleWorkflowService.RequestCancelWorkflowExecution"));
   return headers;
 
 }

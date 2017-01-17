@@ -26,7 +26,10 @@ namespace Model
 {
 
   /**
-   * <p>Contains the parameters for CreateVpnConnection.</p>
+   * <p>Contains the parameters for CreateVpnConnection.</p><p><h3>See Also:</h3>  
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVpnConnectionRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_EC2_API CreateVpnConnectionRequest : public EC2Request
   {
@@ -166,35 +169,35 @@ namespace Model
     /**
      * <p>Indicates whether the VPN connection requires static routes. If you are
      * creating a VPN connection for a device that does not support BGP, you must
-     * specify <code>true</code>.</p> <p>Default: <code>false</code></p>
+     * specify <code>true</code>.</p> <p>Default: <code>false</code> </p>
      */
     inline const VpnConnectionOptionsSpecification& GetOptions() const{ return m_options; }
 
     /**
      * <p>Indicates whether the VPN connection requires static routes. If you are
      * creating a VPN connection for a device that does not support BGP, you must
-     * specify <code>true</code>.</p> <p>Default: <code>false</code></p>
+     * specify <code>true</code>.</p> <p>Default: <code>false</code> </p>
      */
     inline void SetOptions(const VpnConnectionOptionsSpecification& value) { m_optionsHasBeenSet = true; m_options = value; }
 
     /**
      * <p>Indicates whether the VPN connection requires static routes. If you are
      * creating a VPN connection for a device that does not support BGP, you must
-     * specify <code>true</code>.</p> <p>Default: <code>false</code></p>
+     * specify <code>true</code>.</p> <p>Default: <code>false</code> </p>
      */
     inline void SetOptions(VpnConnectionOptionsSpecification&& value) { m_optionsHasBeenSet = true; m_options = value; }
 
     /**
      * <p>Indicates whether the VPN connection requires static routes. If you are
      * creating a VPN connection for a device that does not support BGP, you must
-     * specify <code>true</code>.</p> <p>Default: <code>false</code></p>
+     * specify <code>true</code>.</p> <p>Default: <code>false</code> </p>
      */
     inline CreateVpnConnectionRequest& WithOptions(const VpnConnectionOptionsSpecification& value) { SetOptions(value); return *this;}
 
     /**
      * <p>Indicates whether the VPN connection requires static routes. If you are
      * creating a VPN connection for a device that does not support BGP, you must
-     * specify <code>true</code>.</p> <p>Default: <code>false</code></p>
+     * specify <code>true</code>.</p> <p>Default: <code>false</code> </p>
      */
     inline CreateVpnConnectionRequest& WithOptions(VpnConnectionOptionsSpecification&& value) { SetOptions(value); return *this;}
 

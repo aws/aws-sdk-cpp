@@ -32,7 +32,9 @@ namespace Model
 
   /**
    * <p>The range of possible hash key values for the shard, which is a set of
-   * ordered contiguous positive integers.</p>
+   * ordered contiguous positive integers.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/HashKeyRange">AWS
+   * API Reference</a></p>
    */
   class AWS_KINESIS_API HashKeyRange
   {

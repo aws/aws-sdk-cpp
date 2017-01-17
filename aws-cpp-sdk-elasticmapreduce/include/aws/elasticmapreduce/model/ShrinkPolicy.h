@@ -32,7 +32,10 @@ namespace Model
 
   /**
    * <p>Policy for customizing shrink operations. Allows configuration of
-   * decommissioning timeout and targeted instance shrinking.</p>
+   * decommissioning timeout and targeted instance shrinking.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/ShrinkPolicy">AWS
+   * API Reference</a></p>
    */
   class AWS_EMR_API ShrinkPolicy
   {

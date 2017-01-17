@@ -33,7 +33,9 @@ namespace Model
 {
 
   /**
-   * <p>Information about a condition for a rule.</p>
+   * <p>Information about a condition for a rule.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/RuleCondition">AWS
+   * API Reference</a></p>
    */
   class AWS_ELASTICLOADBALANCINGV2_API RuleCondition
   {

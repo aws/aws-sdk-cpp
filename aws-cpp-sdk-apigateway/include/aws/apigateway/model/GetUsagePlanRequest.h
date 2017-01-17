@@ -25,7 +25,10 @@ namespace Model
 {
 
   /**
-   * <p>The GET request to get a usage plan of a given plan identifier.</p>
+   * <p>The GET request to get a usage plan of a given plan identifier.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetUsagePlanRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_APIGATEWAY_API GetUsagePlanRequest : public APIGatewayRequest
   {

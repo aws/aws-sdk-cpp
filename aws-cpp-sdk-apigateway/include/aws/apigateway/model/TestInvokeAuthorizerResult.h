@@ -36,7 +36,9 @@ namespace Model
 {
   /**
    * <p>Represents the response of the test invoke request for a custom
-   * <a>Authorizer</a></p>
+   * <a>Authorizer</a></p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/TestInvokeAuthorizerResponse">AWS
+   * API Reference</a></p>
    */
   class AWS_APIGATEWAY_API TestInvokeAuthorizerResult
   {

@@ -32,7 +32,10 @@ namespace Model
 
   /**
    * <p>Identifies an AWS Config rule that evaluated an AWS resource, and provides
-   * the type and ID of the resource that the rule evaluated.</p>
+   * the type and ID of the resource that the rule evaluated.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/EvaluationResultQualifier">AWS
+   * API Reference</a></p>
    */
   class AWS_CONFIGSERVICE_API EvaluationResultQualifier
   {

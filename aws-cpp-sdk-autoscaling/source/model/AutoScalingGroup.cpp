@@ -434,7 +434,7 @@ void AutoScalingGroup::OutputToStream(Aws::OStream& oStream, const char* locatio
 
   if(m_newInstancesProtectedFromScaleInHasBeenSet)
   {
-      oStream << location << index << locationValue << ".NewInstancesProtectedFromScaleIn=" << m_newInstancesProtectedFromScaleIn << "&";
+      oStream << location << index << locationValue << ".NewInstancesProtectedFromScaleIn=" << std::boolalpha << m_newInstancesProtectedFromScaleIn << "&";
   }
 
 }
@@ -567,7 +567,7 @@ void AutoScalingGroup::OutputToStream(Aws::OStream& oStream, const char* locatio
   }
   if(m_newInstancesProtectedFromScaleInHasBeenSet)
   {
-      oStream << location << ".NewInstancesProtectedFromScaleIn=" << m_newInstancesProtectedFromScaleIn << "&";
+      oStream << location << ".NewInstancesProtectedFromScaleIn=" << std::boolalpha << m_newInstancesProtectedFromScaleIn << "&";
   }
 }
 

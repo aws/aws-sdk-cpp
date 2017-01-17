@@ -25,7 +25,9 @@ namespace Model
 {
 
   /**
-   * <p>Contains the parameters for CreateSubnet.</p>
+   * <p>Contains the parameters for CreateSubnet.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateSubnetRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_EC2_API CreateSubnetRequest : public EC2Request
   {
@@ -93,93 +95,135 @@ namespace Model
     inline CreateSubnetRequest& WithVpcId(const char* value) { SetVpcId(value); return *this;}
 
     /**
-     * <p>The network range for the subnet, in CIDR notation. For example,
+     * <p>The IPv4 network range for the subnet, in CIDR notation. For example,
      * <code>10.0.0.0/24</code>.</p>
      */
     inline const Aws::String& GetCidrBlock() const{ return m_cidrBlock; }
 
     /**
-     * <p>The network range for the subnet, in CIDR notation. For example,
+     * <p>The IPv4 network range for the subnet, in CIDR notation. For example,
      * <code>10.0.0.0/24</code>.</p>
      */
     inline void SetCidrBlock(const Aws::String& value) { m_cidrBlockHasBeenSet = true; m_cidrBlock = value; }
 
     /**
-     * <p>The network range for the subnet, in CIDR notation. For example,
+     * <p>The IPv4 network range for the subnet, in CIDR notation. For example,
      * <code>10.0.0.0/24</code>.</p>
      */
     inline void SetCidrBlock(Aws::String&& value) { m_cidrBlockHasBeenSet = true; m_cidrBlock = value; }
 
     /**
-     * <p>The network range for the subnet, in CIDR notation. For example,
+     * <p>The IPv4 network range for the subnet, in CIDR notation. For example,
      * <code>10.0.0.0/24</code>.</p>
      */
     inline void SetCidrBlock(const char* value) { m_cidrBlockHasBeenSet = true; m_cidrBlock.assign(value); }
 
     /**
-     * <p>The network range for the subnet, in CIDR notation. For example,
+     * <p>The IPv4 network range for the subnet, in CIDR notation. For example,
      * <code>10.0.0.0/24</code>.</p>
      */
     inline CreateSubnetRequest& WithCidrBlock(const Aws::String& value) { SetCidrBlock(value); return *this;}
 
     /**
-     * <p>The network range for the subnet, in CIDR notation. For example,
+     * <p>The IPv4 network range for the subnet, in CIDR notation. For example,
      * <code>10.0.0.0/24</code>.</p>
      */
     inline CreateSubnetRequest& WithCidrBlock(Aws::String&& value) { SetCidrBlock(value); return *this;}
 
     /**
-     * <p>The network range for the subnet, in CIDR notation. For example,
+     * <p>The IPv4 network range for the subnet, in CIDR notation. For example,
      * <code>10.0.0.0/24</code>.</p>
      */
     inline CreateSubnetRequest& WithCidrBlock(const char* value) { SetCidrBlock(value); return *this;}
 
     /**
+     * <p>The IPv6 network range for the subnet, in CIDR notation. The subnet size must
+     * use a /64 prefix length.</p>
+     */
+    inline const Aws::String& GetIpv6CidrBlock() const{ return m_ipv6CidrBlock; }
+
+    /**
+     * <p>The IPv6 network range for the subnet, in CIDR notation. The subnet size must
+     * use a /64 prefix length.</p>
+     */
+    inline void SetIpv6CidrBlock(const Aws::String& value) { m_ipv6CidrBlockHasBeenSet = true; m_ipv6CidrBlock = value; }
+
+    /**
+     * <p>The IPv6 network range for the subnet, in CIDR notation. The subnet size must
+     * use a /64 prefix length.</p>
+     */
+    inline void SetIpv6CidrBlock(Aws::String&& value) { m_ipv6CidrBlockHasBeenSet = true; m_ipv6CidrBlock = value; }
+
+    /**
+     * <p>The IPv6 network range for the subnet, in CIDR notation. The subnet size must
+     * use a /64 prefix length.</p>
+     */
+    inline void SetIpv6CidrBlock(const char* value) { m_ipv6CidrBlockHasBeenSet = true; m_ipv6CidrBlock.assign(value); }
+
+    /**
+     * <p>The IPv6 network range for the subnet, in CIDR notation. The subnet size must
+     * use a /64 prefix length.</p>
+     */
+    inline CreateSubnetRequest& WithIpv6CidrBlock(const Aws::String& value) { SetIpv6CidrBlock(value); return *this;}
+
+    /**
+     * <p>The IPv6 network range for the subnet, in CIDR notation. The subnet size must
+     * use a /64 prefix length.</p>
+     */
+    inline CreateSubnetRequest& WithIpv6CidrBlock(Aws::String&& value) { SetIpv6CidrBlock(value); return *this;}
+
+    /**
+     * <p>The IPv6 network range for the subnet, in CIDR notation. The subnet size must
+     * use a /64 prefix length.</p>
+     */
+    inline CreateSubnetRequest& WithIpv6CidrBlock(const char* value) { SetIpv6CidrBlock(value); return *this;}
+
+    /**
      * <p>The Availability Zone for the subnet.</p> <p>Default: AWS selects one for
      * you. If you create more than one subnet in your VPC, we may not necessarily
-     * select a different zone for each subnet. </p>
+     * select a different zone for each subnet.</p>
      */
     inline const Aws::String& GetAvailabilityZone() const{ return m_availabilityZone; }
 
     /**
      * <p>The Availability Zone for the subnet.</p> <p>Default: AWS selects one for
      * you. If you create more than one subnet in your VPC, we may not necessarily
-     * select a different zone for each subnet. </p>
+     * select a different zone for each subnet.</p>
      */
     inline void SetAvailabilityZone(const Aws::String& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = value; }
 
     /**
      * <p>The Availability Zone for the subnet.</p> <p>Default: AWS selects one for
      * you. If you create more than one subnet in your VPC, we may not necessarily
-     * select a different zone for each subnet. </p>
+     * select a different zone for each subnet.</p>
      */
     inline void SetAvailabilityZone(Aws::String&& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = value; }
 
     /**
      * <p>The Availability Zone for the subnet.</p> <p>Default: AWS selects one for
      * you. If you create more than one subnet in your VPC, we may not necessarily
-     * select a different zone for each subnet. </p>
+     * select a different zone for each subnet.</p>
      */
     inline void SetAvailabilityZone(const char* value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone.assign(value); }
 
     /**
      * <p>The Availability Zone for the subnet.</p> <p>Default: AWS selects one for
      * you. If you create more than one subnet in your VPC, we may not necessarily
-     * select a different zone for each subnet. </p>
+     * select a different zone for each subnet.</p>
      */
     inline CreateSubnetRequest& WithAvailabilityZone(const Aws::String& value) { SetAvailabilityZone(value); return *this;}
 
     /**
      * <p>The Availability Zone for the subnet.</p> <p>Default: AWS selects one for
      * you. If you create more than one subnet in your VPC, we may not necessarily
-     * select a different zone for each subnet. </p>
+     * select a different zone for each subnet.</p>
      */
     inline CreateSubnetRequest& WithAvailabilityZone(Aws::String&& value) { SetAvailabilityZone(value); return *this;}
 
     /**
      * <p>The Availability Zone for the subnet.</p> <p>Default: AWS selects one for
      * you. If you create more than one subnet in your VPC, we may not necessarily
-     * select a different zone for each subnet. </p>
+     * select a different zone for each subnet.</p>
      */
     inline CreateSubnetRequest& WithAvailabilityZone(const char* value) { SetAvailabilityZone(value); return *this;}
 
@@ -190,6 +234,8 @@ namespace Model
     bool m_vpcIdHasBeenSet;
     Aws::String m_cidrBlock;
     bool m_cidrBlockHasBeenSet;
+    Aws::String m_ipv6CidrBlock;
+    bool m_ipv6CidrBlockHasBeenSet;
     Aws::String m_availabilityZone;
     bool m_availabilityZoneHasBeenSet;
   };

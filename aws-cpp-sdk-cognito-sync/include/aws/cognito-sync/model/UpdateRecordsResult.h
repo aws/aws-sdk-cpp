@@ -34,7 +34,9 @@ namespace CognitoSync
 namespace Model
 {
   /**
-   * Returned for a successful UpdateRecordsRequest.
+   * Returned for a successful UpdateRecordsRequest.<p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-sync-2014-06-30/UpdateRecordsResponse">AWS
+   * API Reference</a></p>
    */
   class AWS_COGNITOSYNC_API UpdateRecordsResult
   {

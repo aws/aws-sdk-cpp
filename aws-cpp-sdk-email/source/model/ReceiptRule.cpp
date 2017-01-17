@@ -124,7 +124,7 @@ void ReceiptRule::OutputToStream(Aws::OStream& oStream, const char* location, un
 
   if(m_enabledHasBeenSet)
   {
-      oStream << location << index << locationValue << ".Enabled=" << m_enabled << "&";
+      oStream << location << index << locationValue << ".Enabled=" << std::boolalpha << m_enabled << "&";
   }
 
   if(m_tlsPolicyHasBeenSet)
@@ -154,7 +154,7 @@ void ReceiptRule::OutputToStream(Aws::OStream& oStream, const char* location, un
 
   if(m_scanEnabledHasBeenSet)
   {
-      oStream << location << index << locationValue << ".ScanEnabled=" << m_scanEnabled << "&";
+      oStream << location << index << locationValue << ".ScanEnabled=" << std::boolalpha << m_scanEnabled << "&";
   }
 
 }
@@ -167,7 +167,7 @@ void ReceiptRule::OutputToStream(Aws::OStream& oStream, const char* location) co
   }
   if(m_enabledHasBeenSet)
   {
-      oStream << location << ".Enabled=" << m_enabled << "&";
+      oStream << location << ".Enabled=" << std::boolalpha << m_enabled << "&";
   }
   if(m_tlsPolicyHasBeenSet)
   {
@@ -193,7 +193,7 @@ void ReceiptRule::OutputToStream(Aws::OStream& oStream, const char* location) co
   }
   if(m_scanEnabledHasBeenSet)
   {
-      oStream << location << ".ScanEnabled=" << m_scanEnabled << "&";
+      oStream << location << ".ScanEnabled=" << std::boolalpha << m_scanEnabled << "&";
   }
 }
 

@@ -32,7 +32,10 @@ namespace Model
 
   /**
    * <p>A response to a PollForThirdPartyJobs request returned by AWS CodePipeline
-   * when there is a job to be worked upon by a partner action.</p>
+   * when there is a job to be worked upon by a partner action.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/ThirdPartyJob">AWS
+   * API Reference</a></p>
    */
   class AWS_CODEPIPELINE_API ThirdPartyJob
   {

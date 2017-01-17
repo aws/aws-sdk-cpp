@@ -33,7 +33,10 @@ namespace Model
 {
 
   /**
-   * <p>Represents a single node within a node group (shard).</p>
+   * <p>Represents a single node within a node group (shard).</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/NodeGroupMember">AWS
+   * API Reference</a></p>
    */
   class AWS_ELASTICACHE_API NodeGroupMember
   {

@@ -33,7 +33,9 @@ namespace SNS
 namespace Model
 {
   /**
-   * <p>The response for the OptInPhoneNumber action.</p>
+   * <p>The response for the OptInPhoneNumber action.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/OptInPhoneNumberResponse">AWS
+   * API Reference</a></p>
    */
   class AWS_SNS_API OptInPhoneNumberResult
   {

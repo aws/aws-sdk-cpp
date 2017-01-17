@@ -36,7 +36,7 @@ Aws::String DescribeImportImageTasksRequest::SerializePayload() const
   ss << "Action=DescribeImportImageTasks&";
   if(m_dryRunHasBeenSet)
   {
-    ss << "DryRun=" << m_dryRun << "&";
+    ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
   if(m_importTaskIdsHasBeenSet)
@@ -65,12 +65,12 @@ Aws::String DescribeImportImageTasksRequest::SerializePayload() const
     unsigned filtersCount = 1;
     for(auto& item : m_filters)
     {
-      item.OutputToStream(ss, "Filters.member.", filtersCount, "");
+      item.OutputToStream(ss, "Filters.", filtersCount, "");
       filtersCount++;
     }
   }
 
-  ss << "Version=2015-10-01";
+  ss << "Version=2016-11-15";
   return ss.str();
 }
 

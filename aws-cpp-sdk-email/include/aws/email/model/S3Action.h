@@ -45,7 +45,9 @@ namespace Model
    * that will bounce.</p> </note> <p>For information about specifying Amazon S3
    * actions in receipt rules, see the <a
    * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-action-s3.html">Amazon
-   * SES Developer Guide</a>.</p>
+   * SES Developer Guide</a>.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/S3Action">AWS API
+   * Reference</a></p>
    */
   class AWS_SES_API S3Action
   {

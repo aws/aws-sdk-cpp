@@ -32,7 +32,9 @@ namespace Model
 {
 
   /**
-   * <p>Information about a deployment error.</p>
+   * <p>Information about a deployment error.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/ErrorInformation">AWS
+   * API Reference</a></p>
    */
   class AWS_CODEDEPLOY_API ErrorInformation
   {

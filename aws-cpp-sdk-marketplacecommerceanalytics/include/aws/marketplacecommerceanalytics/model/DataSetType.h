@@ -37,12 +37,14 @@ namespace Model
     monthly_revenue_annual_subscriptions,
     disbursed_amount_by_product,
     disbursed_amount_by_product_with_uncollected_funds,
+    disbursed_amount_by_instance_hours,
     disbursed_amount_by_customer_geo,
     disbursed_amount_by_age_of_uncollected_funds,
     disbursed_amount_by_age_of_disbursed_funds,
     customer_profile_by_industry,
     customer_profile_by_revenue,
-    customer_profile_by_geography
+    customer_profile_by_geography,
+    sales_compensation_billed_revenue
   };
 
 namespace DataSetTypeMapper

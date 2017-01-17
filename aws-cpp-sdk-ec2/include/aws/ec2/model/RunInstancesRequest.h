@@ -23,6 +23,7 @@
 #include <aws/ec2/model/ShutdownBehavior.h>
 #include <aws/ec2/model/IamInstanceProfileSpecification.h>
 #include <aws/ec2/model/BlockDeviceMapping.h>
+#include <aws/ec2/model/InstanceIpv6Address.h>
 #include <aws/ec2/model/InstanceNetworkInterfaceSpecification.h>
 
 namespace Aws
@@ -33,7 +34,9 @@ namespace Model
 {
 
   /**
-   * <p>Contains the parameters for RunInstances.</p>
+   * <p>Contains the parameters for RunInstances.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RunInstancesRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_EC2_API RunInstancesRequest : public EC2Request
   {
@@ -338,86 +341,79 @@ namespace Model
     inline RunInstancesRequest& AddSecurityGroupIds(const char* value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(value); return *this; }
 
     /**
-     * <p>Data to configure the instance, or a script to run during instance launch.
-     * For more information, see <a
+     * <p>The user data to make available to the instance. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html">Running
      * Commands on Your Linux Instance at Launch</a> (Linux) and <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-instance-metadata.html#instancedata-add-user-data">Adding
-     * User Data</a> (Windows). For API calls, the text must be base64-encoded. For
-     * command line tools, the encoding is performed for you, and you can load the text
-     * from a file.</p>
+     * User Data</a> (Windows). If you are using an AWS SDK or command line tool,
+     * Base64-encoding is performed for you, and you can load the text from a file.
+     * Otherwise, you must provide Base64-encoded text.</p>
      */
     inline const Aws::String& GetUserData() const{ return m_userData; }
 
     /**
-     * <p>Data to configure the instance, or a script to run during instance launch.
-     * For more information, see <a
+     * <p>The user data to make available to the instance. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html">Running
      * Commands on Your Linux Instance at Launch</a> (Linux) and <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-instance-metadata.html#instancedata-add-user-data">Adding
-     * User Data</a> (Windows). For API calls, the text must be base64-encoded. For
-     * command line tools, the encoding is performed for you, and you can load the text
-     * from a file.</p>
+     * User Data</a> (Windows). If you are using an AWS SDK or command line tool,
+     * Base64-encoding is performed for you, and you can load the text from a file.
+     * Otherwise, you must provide Base64-encoded text.</p>
      */
     inline void SetUserData(const Aws::String& value) { m_userDataHasBeenSet = true; m_userData = value; }
 
     /**
-     * <p>Data to configure the instance, or a script to run during instance launch.
-     * For more information, see <a
+     * <p>The user data to make available to the instance. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html">Running
      * Commands on Your Linux Instance at Launch</a> (Linux) and <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-instance-metadata.html#instancedata-add-user-data">Adding
-     * User Data</a> (Windows). For API calls, the text must be base64-encoded. For
-     * command line tools, the encoding is performed for you, and you can load the text
-     * from a file.</p>
+     * User Data</a> (Windows). If you are using an AWS SDK or command line tool,
+     * Base64-encoding is performed for you, and you can load the text from a file.
+     * Otherwise, you must provide Base64-encoded text.</p>
      */
     inline void SetUserData(Aws::String&& value) { m_userDataHasBeenSet = true; m_userData = value; }
 
     /**
-     * <p>Data to configure the instance, or a script to run during instance launch.
-     * For more information, see <a
+     * <p>The user data to make available to the instance. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html">Running
      * Commands on Your Linux Instance at Launch</a> (Linux) and <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-instance-metadata.html#instancedata-add-user-data">Adding
-     * User Data</a> (Windows). For API calls, the text must be base64-encoded. For
-     * command line tools, the encoding is performed for you, and you can load the text
-     * from a file.</p>
+     * User Data</a> (Windows). If you are using an AWS SDK or command line tool,
+     * Base64-encoding is performed for you, and you can load the text from a file.
+     * Otherwise, you must provide Base64-encoded text.</p>
      */
     inline void SetUserData(const char* value) { m_userDataHasBeenSet = true; m_userData.assign(value); }
 
     /**
-     * <p>Data to configure the instance, or a script to run during instance launch.
-     * For more information, see <a
+     * <p>The user data to make available to the instance. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html">Running
      * Commands on Your Linux Instance at Launch</a> (Linux) and <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-instance-metadata.html#instancedata-add-user-data">Adding
-     * User Data</a> (Windows). For API calls, the text must be base64-encoded. For
-     * command line tools, the encoding is performed for you, and you can load the text
-     * from a file.</p>
+     * User Data</a> (Windows). If you are using an AWS SDK or command line tool,
+     * Base64-encoding is performed for you, and you can load the text from a file.
+     * Otherwise, you must provide Base64-encoded text.</p>
      */
     inline RunInstancesRequest& WithUserData(const Aws::String& value) { SetUserData(value); return *this;}
 
     /**
-     * <p>Data to configure the instance, or a script to run during instance launch.
-     * For more information, see <a
+     * <p>The user data to make available to the instance. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html">Running
      * Commands on Your Linux Instance at Launch</a> (Linux) and <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-instance-metadata.html#instancedata-add-user-data">Adding
-     * User Data</a> (Windows). For API calls, the text must be base64-encoded. For
-     * command line tools, the encoding is performed for you, and you can load the text
-     * from a file.</p>
+     * User Data</a> (Windows). If you are using an AWS SDK or command line tool,
+     * Base64-encoding is performed for you, and you can load the text from a file.
+     * Otherwise, you must provide Base64-encoded text.</p>
      */
     inline RunInstancesRequest& WithUserData(Aws::String&& value) { SetUserData(value); return *this;}
 
     /**
-     * <p>Data to configure the instance, or a script to run during instance launch.
-     * For more information, see <a
+     * <p>The user data to make available to the instance. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html">Running
      * Commands on Your Linux Instance at Launch</a> (Linux) and <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-instance-metadata.html#instancedata-add-user-data">Adding
-     * User Data</a> (Windows). For API calls, the text must be base64-encoded. For
-     * command line tools, the encoding is performed for you, and you can load the text
-     * from a file.</p>
+     * User Data</a> (Windows). If you are using an AWS SDK or command line tool,
+     * Base64-encoding is performed for you, and you can load the text from a file.
+     * Otherwise, you must provide Base64-encoded text.</p>
      */
     inline RunInstancesRequest& WithUserData(const char* value) { SetUserData(value); return *this;}
 
@@ -425,7 +421,7 @@ namespace Model
      * <p>The instance type. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
      * Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> <p>Default:
-     * <code>m1.small</code></p>
+     * <code>m1.small</code> </p>
      */
     inline const InstanceType& GetInstanceType() const{ return m_instanceType; }
 
@@ -433,7 +429,7 @@ namespace Model
      * <p>The instance type. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
      * Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> <p>Default:
-     * <code>m1.small</code></p>
+     * <code>m1.small</code> </p>
      */
     inline void SetInstanceType(const InstanceType& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
 
@@ -441,7 +437,7 @@ namespace Model
      * <p>The instance type. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
      * Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> <p>Default:
-     * <code>m1.small</code></p>
+     * <code>m1.small</code> </p>
      */
     inline void SetInstanceType(InstanceType&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
 
@@ -449,7 +445,7 @@ namespace Model
      * <p>The instance type. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
      * Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> <p>Default:
-     * <code>m1.small</code></p>
+     * <code>m1.small</code> </p>
      */
     inline RunInstancesRequest& WithInstanceType(const InstanceType& value) { SetInstanceType(value); return *this;}
 
@@ -457,7 +453,7 @@ namespace Model
      * <p>The instance type. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
      * Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> <p>Default:
-     * <code>m1.small</code></p>
+     * <code>m1.small</code> </p>
      */
     inline RunInstancesRequest& WithInstanceType(InstanceType&& value) { SetInstanceType(value); return *this;}
 
@@ -613,37 +609,72 @@ namespace Model
     inline RunInstancesRequest& WithRamdiskId(const char* value) { SetRamdiskId(value); return *this;}
 
     /**
-     * <p>The block device mapping.</p>
+     * <p>The block device mapping.</p> <important> <p>Supplying both a snapshot ID and
+     * an encryption value as arguments for block-device mapping results in an error.
+     * This is because only blank volumes can be encrypted on start, and these are not
+     * created from a snapshot. If a snapshot is the basis for the volume, it contains
+     * data by definition and its encryption status cannot be changed using this
+     * action.</p> </important>
      */
     inline const Aws::Vector<BlockDeviceMapping>& GetBlockDeviceMappings() const{ return m_blockDeviceMappings; }
 
     /**
-     * <p>The block device mapping.</p>
+     * <p>The block device mapping.</p> <important> <p>Supplying both a snapshot ID and
+     * an encryption value as arguments for block-device mapping results in an error.
+     * This is because only blank volumes can be encrypted on start, and these are not
+     * created from a snapshot. If a snapshot is the basis for the volume, it contains
+     * data by definition and its encryption status cannot be changed using this
+     * action.</p> </important>
      */
     inline void SetBlockDeviceMappings(const Aws::Vector<BlockDeviceMapping>& value) { m_blockDeviceMappingsHasBeenSet = true; m_blockDeviceMappings = value; }
 
     /**
-     * <p>The block device mapping.</p>
+     * <p>The block device mapping.</p> <important> <p>Supplying both a snapshot ID and
+     * an encryption value as arguments for block-device mapping results in an error.
+     * This is because only blank volumes can be encrypted on start, and these are not
+     * created from a snapshot. If a snapshot is the basis for the volume, it contains
+     * data by definition and its encryption status cannot be changed using this
+     * action.</p> </important>
      */
     inline void SetBlockDeviceMappings(Aws::Vector<BlockDeviceMapping>&& value) { m_blockDeviceMappingsHasBeenSet = true; m_blockDeviceMappings = value; }
 
     /**
-     * <p>The block device mapping.</p>
+     * <p>The block device mapping.</p> <important> <p>Supplying both a snapshot ID and
+     * an encryption value as arguments for block-device mapping results in an error.
+     * This is because only blank volumes can be encrypted on start, and these are not
+     * created from a snapshot. If a snapshot is the basis for the volume, it contains
+     * data by definition and its encryption status cannot be changed using this
+     * action.</p> </important>
      */
     inline RunInstancesRequest& WithBlockDeviceMappings(const Aws::Vector<BlockDeviceMapping>& value) { SetBlockDeviceMappings(value); return *this;}
 
     /**
-     * <p>The block device mapping.</p>
+     * <p>The block device mapping.</p> <important> <p>Supplying both a snapshot ID and
+     * an encryption value as arguments for block-device mapping results in an error.
+     * This is because only blank volumes can be encrypted on start, and these are not
+     * created from a snapshot. If a snapshot is the basis for the volume, it contains
+     * data by definition and its encryption status cannot be changed using this
+     * action.</p> </important>
      */
     inline RunInstancesRequest& WithBlockDeviceMappings(Aws::Vector<BlockDeviceMapping>&& value) { SetBlockDeviceMappings(value); return *this;}
 
     /**
-     * <p>The block device mapping.</p>
+     * <p>The block device mapping.</p> <important> <p>Supplying both a snapshot ID and
+     * an encryption value as arguments for block-device mapping results in an error.
+     * This is because only blank volumes can be encrypted on start, and these are not
+     * created from a snapshot. If a snapshot is the basis for the volume, it contains
+     * data by definition and its encryption status cannot be changed using this
+     * action.</p> </important>
      */
     inline RunInstancesRequest& AddBlockDeviceMappings(const BlockDeviceMapping& value) { m_blockDeviceMappingsHasBeenSet = true; m_blockDeviceMappings.push_back(value); return *this; }
 
     /**
-     * <p>The block device mapping.</p>
+     * <p>The block device mapping.</p> <important> <p>Supplying both a snapshot ID and
+     * an encryption value as arguments for block-device mapping results in an error.
+     * This is because only blank volumes can be encrypted on start, and these are not
+     * created from a snapshot. If a snapshot is the basis for the volume, it contains
+     * data by definition and its encryption status cannot be changed using this
+     * action.</p> </important>
      */
     inline RunInstancesRequest& AddBlockDeviceMappings(BlockDeviceMapping&& value) { m_blockDeviceMappingsHasBeenSet = true; m_blockDeviceMappings.push_back(value); return *this; }
 
@@ -709,147 +740,231 @@ namespace Model
 
     /**
      * <p>If you set this parameter to <code>true</code>, you can't terminate the
-     * instance using the Amazon EC2 console, CLI, or API; otherwise, you can. If you
-     * set this parameter to <code>true</code> and then later want to be able to
-     * terminate the instance, you must first change the value of the
-     * <code>disableApiTermination</code> attribute to <code>false</code> using
+     * instance using the Amazon EC2 console, CLI, or API; otherwise, you can. To
+     * change this attribute to <code>false</code> after launch, use
      * <a>ModifyInstanceAttribute</a>. Alternatively, if you set
      * <code>InstanceInitiatedShutdownBehavior</code> to <code>terminate</code>, you
      * can terminate the instance by running the shutdown command from the
-     * instance.</p> <p>Default: <code>false</code></p>
+     * instance.</p> <p>Default: <code>false</code> </p>
      */
     inline bool GetDisableApiTermination() const{ return m_disableApiTermination; }
 
     /**
      * <p>If you set this parameter to <code>true</code>, you can't terminate the
-     * instance using the Amazon EC2 console, CLI, or API; otherwise, you can. If you
-     * set this parameter to <code>true</code> and then later want to be able to
-     * terminate the instance, you must first change the value of the
-     * <code>disableApiTermination</code> attribute to <code>false</code> using
+     * instance using the Amazon EC2 console, CLI, or API; otherwise, you can. To
+     * change this attribute to <code>false</code> after launch, use
      * <a>ModifyInstanceAttribute</a>. Alternatively, if you set
      * <code>InstanceInitiatedShutdownBehavior</code> to <code>terminate</code>, you
      * can terminate the instance by running the shutdown command from the
-     * instance.</p> <p>Default: <code>false</code></p>
+     * instance.</p> <p>Default: <code>false</code> </p>
      */
     inline void SetDisableApiTermination(bool value) { m_disableApiTerminationHasBeenSet = true; m_disableApiTermination = value; }
 
     /**
      * <p>If you set this parameter to <code>true</code>, you can't terminate the
-     * instance using the Amazon EC2 console, CLI, or API; otherwise, you can. If you
-     * set this parameter to <code>true</code> and then later want to be able to
-     * terminate the instance, you must first change the value of the
-     * <code>disableApiTermination</code> attribute to <code>false</code> using
+     * instance using the Amazon EC2 console, CLI, or API; otherwise, you can. To
+     * change this attribute to <code>false</code> after launch, use
      * <a>ModifyInstanceAttribute</a>. Alternatively, if you set
      * <code>InstanceInitiatedShutdownBehavior</code> to <code>terminate</code>, you
      * can terminate the instance by running the shutdown command from the
-     * instance.</p> <p>Default: <code>false</code></p>
+     * instance.</p> <p>Default: <code>false</code> </p>
      */
     inline RunInstancesRequest& WithDisableApiTermination(bool value) { SetDisableApiTermination(value); return *this;}
 
     /**
      * <p>Indicates whether an instance stops or terminates when you initiate shutdown
      * from the instance (using the operating system command for system shutdown).</p>
-     * <p>Default: <code>stop</code></p>
+     * <p>Default: <code>stop</code> </p>
      */
     inline const ShutdownBehavior& GetInstanceInitiatedShutdownBehavior() const{ return m_instanceInitiatedShutdownBehavior; }
 
     /**
      * <p>Indicates whether an instance stops or terminates when you initiate shutdown
      * from the instance (using the operating system command for system shutdown).</p>
-     * <p>Default: <code>stop</code></p>
+     * <p>Default: <code>stop</code> </p>
      */
     inline void SetInstanceInitiatedShutdownBehavior(const ShutdownBehavior& value) { m_instanceInitiatedShutdownBehaviorHasBeenSet = true; m_instanceInitiatedShutdownBehavior = value; }
 
     /**
      * <p>Indicates whether an instance stops or terminates when you initiate shutdown
      * from the instance (using the operating system command for system shutdown).</p>
-     * <p>Default: <code>stop</code></p>
+     * <p>Default: <code>stop</code> </p>
      */
     inline void SetInstanceInitiatedShutdownBehavior(ShutdownBehavior&& value) { m_instanceInitiatedShutdownBehaviorHasBeenSet = true; m_instanceInitiatedShutdownBehavior = value; }
 
     /**
      * <p>Indicates whether an instance stops or terminates when you initiate shutdown
      * from the instance (using the operating system command for system shutdown).</p>
-     * <p>Default: <code>stop</code></p>
+     * <p>Default: <code>stop</code> </p>
      */
     inline RunInstancesRequest& WithInstanceInitiatedShutdownBehavior(const ShutdownBehavior& value) { SetInstanceInitiatedShutdownBehavior(value); return *this;}
 
     /**
      * <p>Indicates whether an instance stops or terminates when you initiate shutdown
      * from the instance (using the operating system command for system shutdown).</p>
-     * <p>Default: <code>stop</code></p>
+     * <p>Default: <code>stop</code> </p>
      */
     inline RunInstancesRequest& WithInstanceInitiatedShutdownBehavior(ShutdownBehavior&& value) { SetInstanceInitiatedShutdownBehavior(value); return *this;}
 
     /**
-     * <p>[EC2-VPC] The primary IP address. You must specify a value from the IP
+     * <p>[EC2-VPC] The primary IPv4 address. You must specify a value from the IPv4
      * address range of the subnet.</p> <p>Only one private IP address can be
-     * designated as primary. Therefore, you can't specify this parameter if
-     * <code>PrivateIpAddresses.n.Primary</code> is set to <code>true</code> and
-     * <code>PrivateIpAddresses.n.PrivateIpAddress</code> is set to an IP address. </p>
-     * <p>Default: We select an IP address from the IP address range of the subnet.</p>
+     * designated as primary. You can't specify this option if you've specified the
+     * option to designate a private IP address as the primary IP address in a network
+     * interface specification. You cannot specify this option if you're launching more
+     * than one instance in the request.</p>
      */
     inline const Aws::String& GetPrivateIpAddress() const{ return m_privateIpAddress; }
 
     /**
-     * <p>[EC2-VPC] The primary IP address. You must specify a value from the IP
+     * <p>[EC2-VPC] The primary IPv4 address. You must specify a value from the IPv4
      * address range of the subnet.</p> <p>Only one private IP address can be
-     * designated as primary. Therefore, you can't specify this parameter if
-     * <code>PrivateIpAddresses.n.Primary</code> is set to <code>true</code> and
-     * <code>PrivateIpAddresses.n.PrivateIpAddress</code> is set to an IP address. </p>
-     * <p>Default: We select an IP address from the IP address range of the subnet.</p>
+     * designated as primary. You can't specify this option if you've specified the
+     * option to designate a private IP address as the primary IP address in a network
+     * interface specification. You cannot specify this option if you're launching more
+     * than one instance in the request.</p>
      */
     inline void SetPrivateIpAddress(const Aws::String& value) { m_privateIpAddressHasBeenSet = true; m_privateIpAddress = value; }
 
     /**
-     * <p>[EC2-VPC] The primary IP address. You must specify a value from the IP
+     * <p>[EC2-VPC] The primary IPv4 address. You must specify a value from the IPv4
      * address range of the subnet.</p> <p>Only one private IP address can be
-     * designated as primary. Therefore, you can't specify this parameter if
-     * <code>PrivateIpAddresses.n.Primary</code> is set to <code>true</code> and
-     * <code>PrivateIpAddresses.n.PrivateIpAddress</code> is set to an IP address. </p>
-     * <p>Default: We select an IP address from the IP address range of the subnet.</p>
+     * designated as primary. You can't specify this option if you've specified the
+     * option to designate a private IP address as the primary IP address in a network
+     * interface specification. You cannot specify this option if you're launching more
+     * than one instance in the request.</p>
      */
     inline void SetPrivateIpAddress(Aws::String&& value) { m_privateIpAddressHasBeenSet = true; m_privateIpAddress = value; }
 
     /**
-     * <p>[EC2-VPC] The primary IP address. You must specify a value from the IP
+     * <p>[EC2-VPC] The primary IPv4 address. You must specify a value from the IPv4
      * address range of the subnet.</p> <p>Only one private IP address can be
-     * designated as primary. Therefore, you can't specify this parameter if
-     * <code>PrivateIpAddresses.n.Primary</code> is set to <code>true</code> and
-     * <code>PrivateIpAddresses.n.PrivateIpAddress</code> is set to an IP address. </p>
-     * <p>Default: We select an IP address from the IP address range of the subnet.</p>
+     * designated as primary. You can't specify this option if you've specified the
+     * option to designate a private IP address as the primary IP address in a network
+     * interface specification. You cannot specify this option if you're launching more
+     * than one instance in the request.</p>
      */
     inline void SetPrivateIpAddress(const char* value) { m_privateIpAddressHasBeenSet = true; m_privateIpAddress.assign(value); }
 
     /**
-     * <p>[EC2-VPC] The primary IP address. You must specify a value from the IP
+     * <p>[EC2-VPC] The primary IPv4 address. You must specify a value from the IPv4
      * address range of the subnet.</p> <p>Only one private IP address can be
-     * designated as primary. Therefore, you can't specify this parameter if
-     * <code>PrivateIpAddresses.n.Primary</code> is set to <code>true</code> and
-     * <code>PrivateIpAddresses.n.PrivateIpAddress</code> is set to an IP address. </p>
-     * <p>Default: We select an IP address from the IP address range of the subnet.</p>
+     * designated as primary. You can't specify this option if you've specified the
+     * option to designate a private IP address as the primary IP address in a network
+     * interface specification. You cannot specify this option if you're launching more
+     * than one instance in the request.</p>
      */
     inline RunInstancesRequest& WithPrivateIpAddress(const Aws::String& value) { SetPrivateIpAddress(value); return *this;}
 
     /**
-     * <p>[EC2-VPC] The primary IP address. You must specify a value from the IP
+     * <p>[EC2-VPC] The primary IPv4 address. You must specify a value from the IPv4
      * address range of the subnet.</p> <p>Only one private IP address can be
-     * designated as primary. Therefore, you can't specify this parameter if
-     * <code>PrivateIpAddresses.n.Primary</code> is set to <code>true</code> and
-     * <code>PrivateIpAddresses.n.PrivateIpAddress</code> is set to an IP address. </p>
-     * <p>Default: We select an IP address from the IP address range of the subnet.</p>
+     * designated as primary. You can't specify this option if you've specified the
+     * option to designate a private IP address as the primary IP address in a network
+     * interface specification. You cannot specify this option if you're launching more
+     * than one instance in the request.</p>
      */
     inline RunInstancesRequest& WithPrivateIpAddress(Aws::String&& value) { SetPrivateIpAddress(value); return *this;}
 
     /**
-     * <p>[EC2-VPC] The primary IP address. You must specify a value from the IP
+     * <p>[EC2-VPC] The primary IPv4 address. You must specify a value from the IPv4
      * address range of the subnet.</p> <p>Only one private IP address can be
-     * designated as primary. Therefore, you can't specify this parameter if
-     * <code>PrivateIpAddresses.n.Primary</code> is set to <code>true</code> and
-     * <code>PrivateIpAddresses.n.PrivateIpAddress</code> is set to an IP address. </p>
-     * <p>Default: We select an IP address from the IP address range of the subnet.</p>
+     * designated as primary. You can't specify this option if you've specified the
+     * option to designate a private IP address as the primary IP address in a network
+     * interface specification. You cannot specify this option if you're launching more
+     * than one instance in the request.</p>
      */
     inline RunInstancesRequest& WithPrivateIpAddress(const char* value) { SetPrivateIpAddress(value); return *this;}
+
+    /**
+     * <p>[EC2-VPC] Specify one or more IPv6 addresses from the range of the subnet to
+     * associate with the primary network interface. You cannot specify this option and
+     * the option to assign a number of IPv6 addresses in the same request. You cannot
+     * specify this option if you've specified a minimum number of instances to
+     * launch.</p>
+     */
+    inline const Aws::Vector<InstanceIpv6Address>& GetIpv6Addresses() const{ return m_ipv6Addresses; }
+
+    /**
+     * <p>[EC2-VPC] Specify one or more IPv6 addresses from the range of the subnet to
+     * associate with the primary network interface. You cannot specify this option and
+     * the option to assign a number of IPv6 addresses in the same request. You cannot
+     * specify this option if you've specified a minimum number of instances to
+     * launch.</p>
+     */
+    inline void SetIpv6Addresses(const Aws::Vector<InstanceIpv6Address>& value) { m_ipv6AddressesHasBeenSet = true; m_ipv6Addresses = value; }
+
+    /**
+     * <p>[EC2-VPC] Specify one or more IPv6 addresses from the range of the subnet to
+     * associate with the primary network interface. You cannot specify this option and
+     * the option to assign a number of IPv6 addresses in the same request. You cannot
+     * specify this option if you've specified a minimum number of instances to
+     * launch.</p>
+     */
+    inline void SetIpv6Addresses(Aws::Vector<InstanceIpv6Address>&& value) { m_ipv6AddressesHasBeenSet = true; m_ipv6Addresses = value; }
+
+    /**
+     * <p>[EC2-VPC] Specify one or more IPv6 addresses from the range of the subnet to
+     * associate with the primary network interface. You cannot specify this option and
+     * the option to assign a number of IPv6 addresses in the same request. You cannot
+     * specify this option if you've specified a minimum number of instances to
+     * launch.</p>
+     */
+    inline RunInstancesRequest& WithIpv6Addresses(const Aws::Vector<InstanceIpv6Address>& value) { SetIpv6Addresses(value); return *this;}
+
+    /**
+     * <p>[EC2-VPC] Specify one or more IPv6 addresses from the range of the subnet to
+     * associate with the primary network interface. You cannot specify this option and
+     * the option to assign a number of IPv6 addresses in the same request. You cannot
+     * specify this option if you've specified a minimum number of instances to
+     * launch.</p>
+     */
+    inline RunInstancesRequest& WithIpv6Addresses(Aws::Vector<InstanceIpv6Address>&& value) { SetIpv6Addresses(value); return *this;}
+
+    /**
+     * <p>[EC2-VPC] Specify one or more IPv6 addresses from the range of the subnet to
+     * associate with the primary network interface. You cannot specify this option and
+     * the option to assign a number of IPv6 addresses in the same request. You cannot
+     * specify this option if you've specified a minimum number of instances to
+     * launch.</p>
+     */
+    inline RunInstancesRequest& AddIpv6Addresses(const InstanceIpv6Address& value) { m_ipv6AddressesHasBeenSet = true; m_ipv6Addresses.push_back(value); return *this; }
+
+    /**
+     * <p>[EC2-VPC] Specify one or more IPv6 addresses from the range of the subnet to
+     * associate with the primary network interface. You cannot specify this option and
+     * the option to assign a number of IPv6 addresses in the same request. You cannot
+     * specify this option if you've specified a minimum number of instances to
+     * launch.</p>
+     */
+    inline RunInstancesRequest& AddIpv6Addresses(InstanceIpv6Address&& value) { m_ipv6AddressesHasBeenSet = true; m_ipv6Addresses.push_back(value); return *this; }
+
+    /**
+     * <p>[EC2-VPC] A number of IPv6 addresses to associate with the primary network
+     * interface. Amazon EC2 chooses the IPv6 addresses from the range of your subnet.
+     * You cannot specify this option and the option to assign specific IPv6 addresses
+     * in the same request. You can specify this option if you've specified a minimum
+     * number of instances to launch.</p>
+     */
+    inline int GetIpv6AddressCount() const{ return m_ipv6AddressCount; }
+
+    /**
+     * <p>[EC2-VPC] A number of IPv6 addresses to associate with the primary network
+     * interface. Amazon EC2 chooses the IPv6 addresses from the range of your subnet.
+     * You cannot specify this option and the option to assign specific IPv6 addresses
+     * in the same request. You can specify this option if you've specified a minimum
+     * number of instances to launch.</p>
+     */
+    inline void SetIpv6AddressCount(int value) { m_ipv6AddressCountHasBeenSet = true; m_ipv6AddressCount = value; }
+
+    /**
+     * <p>[EC2-VPC] A number of IPv6 addresses to associate with the primary network
+     * interface. Amazon EC2 chooses the IPv6 addresses from the range of your subnet.
+     * You cannot specify this option and the option to assign specific IPv6 addresses
+     * in the same request. You can specify this option if you've specified a minimum
+     * number of instances to launch.</p>
+     */
+    inline RunInstancesRequest& WithIpv6AddressCount(int value) { SetIpv6AddressCount(value); return *this;}
 
     /**
      * <p>Unique, case-sensitive identifier you provide to ensure the idempotency of
@@ -1007,7 +1122,7 @@ namespace Model
      * provides dedicated throughput to Amazon EBS and an optimized configuration stack
      * to provide optimal EBS I/O performance. This optimization isn't available with
      * all instance types. Additional usage charges apply when using an EBS-optimized
-     * instance.</p> <p>Default: <code>false</code></p>
+     * instance.</p> <p>Default: <code>false</code> </p>
      */
     inline bool GetEbsOptimized() const{ return m_ebsOptimized; }
 
@@ -1016,7 +1131,7 @@ namespace Model
      * provides dedicated throughput to Amazon EBS and an optimized configuration stack
      * to provide optimal EBS I/O performance. This optimization isn't available with
      * all instance types. Additional usage charges apply when using an EBS-optimized
-     * instance.</p> <p>Default: <code>false</code></p>
+     * instance.</p> <p>Default: <code>false</code> </p>
      */
     inline void SetEbsOptimized(bool value) { m_ebsOptimizedHasBeenSet = true; m_ebsOptimized = value; }
 
@@ -1025,7 +1140,7 @@ namespace Model
      * provides dedicated throughput to Amazon EBS and an optimized configuration stack
      * to provide optimal EBS I/O performance. This optimization isn't available with
      * all instance types. Additional usage charges apply when using an EBS-optimized
-     * instance.</p> <p>Default: <code>false</code></p>
+     * instance.</p> <p>Default: <code>false</code> </p>
      */
     inline RunInstancesRequest& WithEbsOptimized(bool value) { SetEbsOptimized(value); return *this;}
 
@@ -1066,6 +1181,10 @@ namespace Model
     bool m_instanceInitiatedShutdownBehaviorHasBeenSet;
     Aws::String m_privateIpAddress;
     bool m_privateIpAddressHasBeenSet;
+    Aws::Vector<InstanceIpv6Address> m_ipv6Addresses;
+    bool m_ipv6AddressesHasBeenSet;
+    int m_ipv6AddressCount;
+    bool m_ipv6AddressCountHasBeenSet;
     Aws::String m_clientToken;
     bool m_clientTokenHasBeenSet;
     Aws::String m_additionalInfo;

@@ -31,7 +31,10 @@ namespace Model
 {
 
   /**
-   * <p>Specifies whether the attribute is standard or custom.</p>
+   * <p>Specifies whether the attribute is standard or custom.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AttributeType">AWS
+   * API Reference</a></p>
    */
   class AWS_COGNITOIDENTITYPROVIDER_API AttributeType
   {

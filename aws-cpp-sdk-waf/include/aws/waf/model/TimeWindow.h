@@ -40,7 +40,9 @@ namespace Model
    * that your AWS resource receives during the specified time period. If your
    * resource receives more than 5,000 requests during that period, AWS WAF stops
    * sampling after the 5,000th request. In that case, <code>EndTime</code> is the
-   * time that AWS WAF received the 5,000th request. </p>
+   * time that AWS WAF received the 5,000th request. </p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/TimeWindow">AWS API
+   * Reference</a></p>
    */
   class AWS_WAF_API TimeWindow
   {
@@ -53,74 +55,84 @@ namespace Model
     /**
      * <p>The beginning of the time range from which you want
      * <code>GetSampledRequests</code> to return a sample of the requests that your AWS
-     * resource received. You can specify any time range in the previous three
-     * hours.</p>
+     * resource received. Specify the date and time in the following format:
+     * <code>"2016-09-27T14:50Z"</code>. You can specify any time range in the previous
+     * three hours.</p>
      */
     inline const Aws::Utils::DateTime& GetStartTime() const{ return m_startTime; }
 
     /**
      * <p>The beginning of the time range from which you want
      * <code>GetSampledRequests</code> to return a sample of the requests that your AWS
-     * resource received. You can specify any time range in the previous three
-     * hours.</p>
+     * resource received. Specify the date and time in the following format:
+     * <code>"2016-09-27T14:50Z"</code>. You can specify any time range in the previous
+     * three hours.</p>
      */
     inline void SetStartTime(const Aws::Utils::DateTime& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
 
     /**
      * <p>The beginning of the time range from which you want
      * <code>GetSampledRequests</code> to return a sample of the requests that your AWS
-     * resource received. You can specify any time range in the previous three
-     * hours.</p>
+     * resource received. Specify the date and time in the following format:
+     * <code>"2016-09-27T14:50Z"</code>. You can specify any time range in the previous
+     * three hours.</p>
      */
     inline void SetStartTime(Aws::Utils::DateTime&& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
 
     /**
      * <p>The beginning of the time range from which you want
      * <code>GetSampledRequests</code> to return a sample of the requests that your AWS
-     * resource received. You can specify any time range in the previous three
-     * hours.</p>
+     * resource received. Specify the date and time in the following format:
+     * <code>"2016-09-27T14:50Z"</code>. You can specify any time range in the previous
+     * three hours.</p>
      */
     inline TimeWindow& WithStartTime(const Aws::Utils::DateTime& value) { SetStartTime(value); return *this;}
 
     /**
      * <p>The beginning of the time range from which you want
      * <code>GetSampledRequests</code> to return a sample of the requests that your AWS
-     * resource received. You can specify any time range in the previous three
-     * hours.</p>
+     * resource received. Specify the date and time in the following format:
+     * <code>"2016-09-27T14:50Z"</code>. You can specify any time range in the previous
+     * three hours.</p>
      */
     inline TimeWindow& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(value); return *this;}
 
     /**
      * <p>The end of the time range from which you want <code>GetSampledRequests</code>
-     * to return a sample of the requests that your AWS resource received. You can
+     * to return a sample of the requests that your AWS resource received. Specify the
+     * date and time in the following format: <code>"2016-09-27T14:50Z"</code>. You can
      * specify any time range in the previous three hours.</p>
      */
     inline const Aws::Utils::DateTime& GetEndTime() const{ return m_endTime; }
 
     /**
      * <p>The end of the time range from which you want <code>GetSampledRequests</code>
-     * to return a sample of the requests that your AWS resource received. You can
+     * to return a sample of the requests that your AWS resource received. Specify the
+     * date and time in the following format: <code>"2016-09-27T14:50Z"</code>. You can
      * specify any time range in the previous three hours.</p>
      */
     inline void SetEndTime(const Aws::Utils::DateTime& value) { m_endTimeHasBeenSet = true; m_endTime = value; }
 
     /**
      * <p>The end of the time range from which you want <code>GetSampledRequests</code>
-     * to return a sample of the requests that your AWS resource received. You can
+     * to return a sample of the requests that your AWS resource received. Specify the
+     * date and time in the following format: <code>"2016-09-27T14:50Z"</code>. You can
      * specify any time range in the previous three hours.</p>
      */
     inline void SetEndTime(Aws::Utils::DateTime&& value) { m_endTimeHasBeenSet = true; m_endTime = value; }
 
     /**
      * <p>The end of the time range from which you want <code>GetSampledRequests</code>
-     * to return a sample of the requests that your AWS resource received. You can
+     * to return a sample of the requests that your AWS resource received. Specify the
+     * date and time in the following format: <code>"2016-09-27T14:50Z"</code>. You can
      * specify any time range in the previous three hours.</p>
      */
     inline TimeWindow& WithEndTime(const Aws::Utils::DateTime& value) { SetEndTime(value); return *this;}
 
     /**
      * <p>The end of the time range from which you want <code>GetSampledRequests</code>
-     * to return a sample of the requests that your AWS resource received. You can
+     * to return a sample of the requests that your AWS resource received. Specify the
+     * date and time in the following format: <code>"2016-09-27T14:50Z"</code>. You can
      * specify any time range in the previous three hours.</p>
      */
     inline TimeWindow& WithEndTime(Aws::Utils::DateTime&& value) { SetEndTime(value); return *this;}

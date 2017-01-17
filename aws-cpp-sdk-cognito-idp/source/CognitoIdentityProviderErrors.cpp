@@ -29,6 +29,7 @@ namespace CognitoIdentityProviderErrorMapper
 
 static const int NOT_AUTHORIZED_HASH = HashingUtils::HashString("NotAuthorizedException");
 static const int ALIAS_EXISTS_HASH = HashingUtils::HashString("AliasExistsException");
+static const int GROUP_EXISTS_HASH = HashingUtils::HashString("GroupExistsException");
 static const int INVALID_USER_POOL_CONFIGURATION_HASH = HashingUtils::HashString("InvalidUserPoolConfigurationException");
 static const int INVALID_SMS_ROLE_ACCESS_POLICY_HASH = HashingUtils::HashString("InvalidSmsRoleAccessPolicyException");
 static const int CODE_DELIVERY_FAILURE_HASH = HashingUtils::HashString("CodeDeliveryFailureException");
@@ -52,6 +53,7 @@ static const int USER_NOT_CONFIRMED_HASH = HashingUtils::HashString("UserNotConf
 static const int UNSUPPORTED_USER_STATE_HASH = HashingUtils::HashString("UnsupportedUserStateException");
 static const int INVALID_SMS_ROLE_TRUST_RELATIONSHIP_HASH = HashingUtils::HashString("InvalidSmsRoleTrustRelationshipException");
 static const int M_F_A_METHOD_NOT_FOUND_HASH = HashingUtils::HashString("MFAMethodNotFoundException");
+static const int USER_POOL_TAGGING_HASH = HashingUtils::HashString("UserPoolTaggingException");
 static const int PASSWORD_RESET_REQUIRED_HASH = HashingUtils::HashString("PasswordResetRequiredException");
 static const int USERNAME_EXISTS_HASH = HashingUtils::HashString("UsernameExistsException");
 
@@ -67,6 +69,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == ALIAS_EXISTS_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CognitoIdentityProviderErrors::ALIAS_EXISTS), false);
+  }
+  else if (hashCode == GROUP_EXISTS_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CognitoIdentityProviderErrors::GROUP_EXISTS), false);
   }
   else if (hashCode == INVALID_USER_POOL_CONFIGURATION_HASH)
   {
@@ -159,6 +165,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == M_F_A_METHOD_NOT_FOUND_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CognitoIdentityProviderErrors::M_F_A_METHOD_NOT_FOUND), false);
+  }
+  else if (hashCode == USER_POOL_TAGGING_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CognitoIdentityProviderErrors::USER_POOL_TAGGING), false);
   }
   else if (hashCode == PASSWORD_RESET_REQUIRED_HASH)
   {

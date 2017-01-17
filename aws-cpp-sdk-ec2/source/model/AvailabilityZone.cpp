@@ -139,7 +139,7 @@ void AvailabilityZone::OutputToStream(Aws::OStream& oStream, const char* locatio
       for(auto& item : m_messages)
       {
         Aws::StringStream messagesSs;
-        messagesSs << location <<  ".item." << messagesIdx++;
+        messagesSs << location <<  ".Item." << messagesIdx++;
         item.OutputToStream(oStream, messagesSs.str().c_str());
       }
   }

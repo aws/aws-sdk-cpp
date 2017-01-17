@@ -28,6 +28,7 @@
 #include <aws/ecs/ECSErrorMarshaller.h>
 #include <aws/ecs/model/CreateClusterRequest.h>
 #include <aws/ecs/model/CreateServiceRequest.h>
+#include <aws/ecs/model/DeleteAttributesRequest.h>
 #include <aws/ecs/model/DeleteClusterRequest.h>
 #include <aws/ecs/model/DeleteServiceRequest.h>
 #include <aws/ecs/model/DeregisterContainerInstanceRequest.h>
@@ -38,12 +39,14 @@
 #include <aws/ecs/model/DescribeTaskDefinitionRequest.h>
 #include <aws/ecs/model/DescribeTasksRequest.h>
 #include <aws/ecs/model/DiscoverPollEndpointRequest.h>
+#include <aws/ecs/model/ListAttributesRequest.h>
 #include <aws/ecs/model/ListClustersRequest.h>
 #include <aws/ecs/model/ListContainerInstancesRequest.h>
 #include <aws/ecs/model/ListServicesRequest.h>
 #include <aws/ecs/model/ListTaskDefinitionFamiliesRequest.h>
 #include <aws/ecs/model/ListTaskDefinitionsRequest.h>
 #include <aws/ecs/model/ListTasksRequest.h>
+#include <aws/ecs/model/PutAttributesRequest.h>
 #include <aws/ecs/model/RegisterContainerInstanceRequest.h>
 #include <aws/ecs/model/RegisterTaskDefinitionRequest.h>
 #include <aws/ecs/model/RunTaskRequest.h>
@@ -184,6 +187,40 @@ void ECSClient::CreateServiceAsync(const CreateServiceRequest& request, const Cr
 void ECSClient::CreateServiceAsyncHelper(const CreateServiceRequest& request, const CreateServiceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, CreateService(request), context);
+}
+
+DeleteAttributesOutcome ECSClient::DeleteAttributes(const DeleteAttributesRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return DeleteAttributesOutcome(DeleteAttributesResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DeleteAttributesOutcome(outcome.GetError());
+  }
+}
+
+DeleteAttributesOutcomeCallable ECSClient::DeleteAttributesCallable(const DeleteAttributesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteAttributesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteAttributes(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ECSClient::DeleteAttributesAsync(const DeleteAttributesRequest& request, const DeleteAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteAttributesAsyncHelper( request, handler, context ); } );
+}
+
+void ECSClient::DeleteAttributesAsyncHelper(const DeleteAttributesRequest& request, const DeleteAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteAttributes(request), context);
 }
 
 DeleteClusterOutcome ECSClient::DeleteCluster(const DeleteClusterRequest& request) const
@@ -526,6 +563,40 @@ void ECSClient::DiscoverPollEndpointAsyncHelper(const DiscoverPollEndpointReques
   handler(this, request, DiscoverPollEndpoint(request), context);
 }
 
+ListAttributesOutcome ECSClient::ListAttributes(const ListAttributesRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return ListAttributesOutcome(ListAttributesResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ListAttributesOutcome(outcome.GetError());
+  }
+}
+
+ListAttributesOutcomeCallable ECSClient::ListAttributesCallable(const ListAttributesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListAttributesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListAttributes(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ECSClient::ListAttributesAsync(const ListAttributesRequest& request, const ListAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListAttributesAsyncHelper( request, handler, context ); } );
+}
+
+void ECSClient::ListAttributesAsyncHelper(const ListAttributesRequest& request, const ListAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListAttributes(request), context);
+}
+
 ListClustersOutcome ECSClient::ListClusters(const ListClustersRequest& request) const
 {
   Aws::StringStream ss;
@@ -728,6 +799,40 @@ void ECSClient::ListTasksAsync(const ListTasksRequest& request, const ListTasksR
 void ECSClient::ListTasksAsyncHelper(const ListTasksRequest& request, const ListTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ListTasks(request), context);
+}
+
+PutAttributesOutcome ECSClient::PutAttributes(const PutAttributesRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return PutAttributesOutcome(PutAttributesResult(outcome.GetResult()));
+  }
+  else
+  {
+    return PutAttributesOutcome(outcome.GetError());
+  }
+}
+
+PutAttributesOutcomeCallable ECSClient::PutAttributesCallable(const PutAttributesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< PutAttributesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PutAttributes(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ECSClient::PutAttributesAsync(const PutAttributesRequest& request, const PutAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->PutAttributesAsyncHelper( request, handler, context ); } );
+}
+
+void ECSClient::PutAttributesAsyncHelper(const PutAttributesRequest& request, const PutAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, PutAttributes(request), context);
 }
 
 RegisterContainerInstanceOutcome ECSClient::RegisterContainerInstance(const RegisterContainerInstanceRequest& request) const

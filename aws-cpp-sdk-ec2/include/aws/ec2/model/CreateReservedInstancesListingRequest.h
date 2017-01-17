@@ -27,7 +27,10 @@ namespace Model
 {
 
   /**
-   * <p>Contains the parameters for CreateReservedInstancesListing.</p>
+   * <p>Contains the parameters for CreateReservedInstancesListing.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateReservedInstancesListingRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_EC2_API CreateReservedInstancesListingRequest : public EC2Request
   {
@@ -36,37 +39,37 @@ namespace Model
     Aws::String SerializePayload() const override;
 
     /**
-     * <p>The ID of the active Reserved Instance.</p>
+     * <p>The ID of the active Standard Reserved Instance.</p>
      */
     inline const Aws::String& GetReservedInstancesId() const{ return m_reservedInstancesId; }
 
     /**
-     * <p>The ID of the active Reserved Instance.</p>
+     * <p>The ID of the active Standard Reserved Instance.</p>
      */
     inline void SetReservedInstancesId(const Aws::String& value) { m_reservedInstancesIdHasBeenSet = true; m_reservedInstancesId = value; }
 
     /**
-     * <p>The ID of the active Reserved Instance.</p>
+     * <p>The ID of the active Standard Reserved Instance.</p>
      */
     inline void SetReservedInstancesId(Aws::String&& value) { m_reservedInstancesIdHasBeenSet = true; m_reservedInstancesId = value; }
 
     /**
-     * <p>The ID of the active Reserved Instance.</p>
+     * <p>The ID of the active Standard Reserved Instance.</p>
      */
     inline void SetReservedInstancesId(const char* value) { m_reservedInstancesIdHasBeenSet = true; m_reservedInstancesId.assign(value); }
 
     /**
-     * <p>The ID of the active Reserved Instance.</p>
+     * <p>The ID of the active Standard Reserved Instance.</p>
      */
     inline CreateReservedInstancesListingRequest& WithReservedInstancesId(const Aws::String& value) { SetReservedInstancesId(value); return *this;}
 
     /**
-     * <p>The ID of the active Reserved Instance.</p>
+     * <p>The ID of the active Standard Reserved Instance.</p>
      */
     inline CreateReservedInstancesListingRequest& WithReservedInstancesId(Aws::String&& value) { SetReservedInstancesId(value); return *this;}
 
     /**
-     * <p>The ID of the active Reserved Instance.</p>
+     * <p>The ID of the active Standard Reserved Instance.</p>
      */
     inline CreateReservedInstancesListingRequest& WithReservedInstancesId(const char* value) { SetReservedInstancesId(value); return *this;}
 
@@ -95,44 +98,44 @@ namespace Model
     inline CreateReservedInstancesListingRequest& WithInstanceCount(int value) { SetInstanceCount(value); return *this;}
 
     /**
-     * <p>A list specifying the price of the Reserved Instance for each month remaining
-     * in the Reserved Instance term.</p>
+     * <p>A list specifying the price of the Standard Reserved Instance for each month
+     * remaining in the Reserved Instance term.</p>
      */
     inline const Aws::Vector<PriceScheduleSpecification>& GetPriceSchedules() const{ return m_priceSchedules; }
 
     /**
-     * <p>A list specifying the price of the Reserved Instance for each month remaining
-     * in the Reserved Instance term.</p>
+     * <p>A list specifying the price of the Standard Reserved Instance for each month
+     * remaining in the Reserved Instance term.</p>
      */
     inline void SetPriceSchedules(const Aws::Vector<PriceScheduleSpecification>& value) { m_priceSchedulesHasBeenSet = true; m_priceSchedules = value; }
 
     /**
-     * <p>A list specifying the price of the Reserved Instance for each month remaining
-     * in the Reserved Instance term.</p>
+     * <p>A list specifying the price of the Standard Reserved Instance for each month
+     * remaining in the Reserved Instance term.</p>
      */
     inline void SetPriceSchedules(Aws::Vector<PriceScheduleSpecification>&& value) { m_priceSchedulesHasBeenSet = true; m_priceSchedules = value; }
 
     /**
-     * <p>A list specifying the price of the Reserved Instance for each month remaining
-     * in the Reserved Instance term.</p>
+     * <p>A list specifying the price of the Standard Reserved Instance for each month
+     * remaining in the Reserved Instance term.</p>
      */
     inline CreateReservedInstancesListingRequest& WithPriceSchedules(const Aws::Vector<PriceScheduleSpecification>& value) { SetPriceSchedules(value); return *this;}
 
     /**
-     * <p>A list specifying the price of the Reserved Instance for each month remaining
-     * in the Reserved Instance term.</p>
+     * <p>A list specifying the price of the Standard Reserved Instance for each month
+     * remaining in the Reserved Instance term.</p>
      */
     inline CreateReservedInstancesListingRequest& WithPriceSchedules(Aws::Vector<PriceScheduleSpecification>&& value) { SetPriceSchedules(value); return *this;}
 
     /**
-     * <p>A list specifying the price of the Reserved Instance for each month remaining
-     * in the Reserved Instance term.</p>
+     * <p>A list specifying the price of the Standard Reserved Instance for each month
+     * remaining in the Reserved Instance term.</p>
      */
     inline CreateReservedInstancesListingRequest& AddPriceSchedules(const PriceScheduleSpecification& value) { m_priceSchedulesHasBeenSet = true; m_priceSchedules.push_back(value); return *this; }
 
     /**
-     * <p>A list specifying the price of the Reserved Instance for each month remaining
-     * in the Reserved Instance term.</p>
+     * <p>A list specifying the price of the Standard Reserved Instance for each month
+     * remaining in the Reserved Instance term.</p>
      */
     inline CreateReservedInstancesListingRequest& AddPriceSchedules(PriceScheduleSpecification&& value) { m_priceSchedulesHasBeenSet = true; m_priceSchedules.push_back(value); return *this; }
 

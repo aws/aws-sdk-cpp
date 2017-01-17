@@ -34,7 +34,9 @@ namespace Model
 {
 
   /**
-   * <p>Describes an orderable cluster option.</p>
+   * <p>Describes an orderable cluster option.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/OrderableClusterOption">AWS
+   * API Reference</a></p>
    */
   class AWS_REDSHIFT_API OrderableClusterOption
   {

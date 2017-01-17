@@ -36,7 +36,9 @@ namespace EC2
 namespace Model
 {
   /**
-   * <p>Contains the output of DescribeHosts.</p>
+   * <p>Contains the output of DescribeHosts.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeHostsResult">AWS
+   * API Reference</a></p>
    */
   class AWS_EC2_API DescribeHostsResponse
   {
@@ -46,37 +48,37 @@ namespace Model
     DescribeHostsResponse& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
     /**
-     * <p>Information about the Dedicated hosts.</p>
+     * <p>Information about the Dedicated Hosts.</p>
      */
     inline const Aws::Vector<Host>& GetHosts() const{ return m_hosts; }
 
     /**
-     * <p>Information about the Dedicated hosts.</p>
+     * <p>Information about the Dedicated Hosts.</p>
      */
     inline void SetHosts(const Aws::Vector<Host>& value) { m_hosts = value; }
 
     /**
-     * <p>Information about the Dedicated hosts.</p>
+     * <p>Information about the Dedicated Hosts.</p>
      */
     inline void SetHosts(Aws::Vector<Host>&& value) { m_hosts = value; }
 
     /**
-     * <p>Information about the Dedicated hosts.</p>
+     * <p>Information about the Dedicated Hosts.</p>
      */
     inline DescribeHostsResponse& WithHosts(const Aws::Vector<Host>& value) { SetHosts(value); return *this;}
 
     /**
-     * <p>Information about the Dedicated hosts.</p>
+     * <p>Information about the Dedicated Hosts.</p>
      */
     inline DescribeHostsResponse& WithHosts(Aws::Vector<Host>&& value) { SetHosts(value); return *this;}
 
     /**
-     * <p>Information about the Dedicated hosts.</p>
+     * <p>Information about the Dedicated Hosts.</p>
      */
     inline DescribeHostsResponse& AddHosts(const Host& value) { m_hosts.push_back(value); return *this; }
 
     /**
-     * <p>Information about the Dedicated hosts.</p>
+     * <p>Information about the Dedicated Hosts.</p>
      */
     inline DescribeHostsResponse& AddHosts(Host&& value) { m_hosts.push_back(value); return *this; }
 

@@ -35,7 +35,9 @@ namespace Model
 {
   /**
    * <p>The result of a <code>ListTags</code> operation. Contains tags for all
-   * requested Elasticsearch domains.</p>
+   * requested Elasticsearch domains.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/ListTagsResponse">AWS
+   * API Reference</a></p>
    */
   class AWS_ELASTICSEARCHSERVICE_API ListTagsResult
   {

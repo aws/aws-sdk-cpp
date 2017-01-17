@@ -158,7 +158,7 @@ Aws::String RestoreDBClusterFromS3Request::SerializePayload() const
 
   if(m_storageEncryptedHasBeenSet)
   {
-    ss << "StorageEncrypted=" << m_storageEncrypted << "&";
+    ss << "StorageEncrypted=" << std::boolalpha << m_storageEncrypted << "&";
   }
 
   if(m_kmsKeyIdHasBeenSet)

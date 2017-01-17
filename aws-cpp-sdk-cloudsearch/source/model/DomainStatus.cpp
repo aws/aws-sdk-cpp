@@ -184,12 +184,12 @@ void DomainStatus::OutputToStream(Aws::OStream& oStream, const char* location, u
 
   if(m_createdHasBeenSet)
   {
-      oStream << location << index << locationValue << ".Created=" << m_created << "&";
+      oStream << location << index << locationValue << ".Created=" << std::boolalpha << m_created << "&";
   }
 
   if(m_deletedHasBeenSet)
   {
-      oStream << location << index << locationValue << ".Deleted=" << m_deleted << "&";
+      oStream << location << index << locationValue << ".Deleted=" << std::boolalpha << m_deleted << "&";
   }
 
   if(m_docServiceHasBeenSet)
@@ -208,12 +208,12 @@ void DomainStatus::OutputToStream(Aws::OStream& oStream, const char* location, u
 
   if(m_requiresIndexDocumentsHasBeenSet)
   {
-      oStream << location << index << locationValue << ".RequiresIndexDocuments=" << m_requiresIndexDocuments << "&";
+      oStream << location << index << locationValue << ".RequiresIndexDocuments=" << std::boolalpha << m_requiresIndexDocuments << "&";
   }
 
   if(m_processingHasBeenSet)
   {
-      oStream << location << index << locationValue << ".Processing=" << m_processing << "&";
+      oStream << location << index << locationValue << ".Processing=" << std::boolalpha << m_processing << "&";
   }
 
   if(m_searchInstanceTypeHasBeenSet)
@@ -256,11 +256,11 @@ void DomainStatus::OutputToStream(Aws::OStream& oStream, const char* location) c
   }
   if(m_createdHasBeenSet)
   {
-      oStream << location << ".Created=" << m_created << "&";
+      oStream << location << ".Created=" << std::boolalpha << m_created << "&";
   }
   if(m_deletedHasBeenSet)
   {
-      oStream << location << ".Deleted=" << m_deleted << "&";
+      oStream << location << ".Deleted=" << std::boolalpha << m_deleted << "&";
   }
   if(m_docServiceHasBeenSet)
   {
@@ -276,11 +276,11 @@ void DomainStatus::OutputToStream(Aws::OStream& oStream, const char* location) c
   }
   if(m_requiresIndexDocumentsHasBeenSet)
   {
-      oStream << location << ".RequiresIndexDocuments=" << m_requiresIndexDocuments << "&";
+      oStream << location << ".RequiresIndexDocuments=" << std::boolalpha << m_requiresIndexDocuments << "&";
   }
   if(m_processingHasBeenSet)
   {
-      oStream << location << ".Processing=" << m_processing << "&";
+      oStream << location << ".Processing=" << std::boolalpha << m_processing << "&";
   }
   if(m_searchInstanceTypeHasBeenSet)
   {

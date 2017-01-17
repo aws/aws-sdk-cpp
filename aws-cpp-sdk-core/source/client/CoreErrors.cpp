@@ -45,6 +45,7 @@ static const int REQUEST_EXPIRED_HASH = HashingUtils::HashString("RequestExpired
 static const int REQUEST_EXPIRED_EXCEPTION_HASH = HashingUtils::HashString("RequestExpiredException");
 static const int SERVICE_UNAVAILABLE_HASH = HashingUtils::HashString("ServiceUnavailable");
 static const int SERVICE_UNAVAILABLE_EXCEPTION_HASH = HashingUtils::HashString("ServiceUnavailableException");
+static const int SERVICE_UNAVAILABLE_ERROR_HASH = HashingUtils::HashString("ServiceUnavailableError");
 static const int THROTTLING_HASH = HashingUtils::HashString("Throttling");
 static const int THROTTLING_EXCEPTION_HASH = HashingUtils::HashString("ThrottlingException");
 static const int VALIDATION_ERROR_HASH = HashingUtils::HashString("ValidationError");
@@ -60,6 +61,8 @@ static const int SLOW_DOWN_HASH = HashingUtils::HashString("SlowDown");
 static const int SLOW_DOWN_EXCEPTION_HASH = HashingUtils::HashString("SlowDownException");
 static const int SIGNATURE_DOES_NOT_MATCH_HASH = HashingUtils::HashString("SignatureDoesNotMatch");
 static const int SIGNATURE_DOES_NOT_MATCH_EXCEPTION_HASH = HashingUtils::HashString("SignatureDoesNotMatchException");
+static const int INVALID_ACCESS_KEY_ID_HASH = HashingUtils::HashString("InvalidAccessKeyId");
+static const int INVALID_ACCESS_KEY_ID_EXCEPTION_HASH = HashingUtils::HashString("InvalidAccessKeyIdException");
 static const int REQUEST_TIME_TOO_SKEWED_HASH = HashingUtils::HashString("RequestTimeTooSkewed");
 static const int REQUEST_TIME_TOO_SKEWED_EXCEPTION_HASH = HashingUtils::HashString("RequestTimeTooSkewedException");
 
@@ -73,7 +76,7 @@ AWSError<CoreErrors> CoreErrorsMapper::GetErrorForName(const char* errorName)
   }
   else if (errorHash == INVALID_SIGNATURE_EXCEPTION_HASH || errorHash == INVALID_SIGNATURE_HASH)
   {
-      return AWSError<CoreErrors>(CoreErrors::INVALID_SIGNATURE, true);
+      return AWSError<CoreErrors>(CoreErrors::INVALID_SIGNATURE, false);
   }
   else if (errorHash == INTERNAL_FAILURE_HASH || errorHash == INTERNAL_SERVER_ERROR_HASH)
   {
@@ -119,7 +122,7 @@ AWSError<CoreErrors> CoreErrorsMapper::GetErrorForName(const char* errorName)
   {
     return AWSError<CoreErrors>(CoreErrors::REQUEST_EXPIRED, true);
   }
-  else if (errorHash == SERVICE_UNAVAILABLE_HASH || errorHash == SERVICE_UNAVAILABLE_EXCEPTION_HASH)
+  else if (errorHash == SERVICE_UNAVAILABLE_HASH || errorHash == SERVICE_UNAVAILABLE_EXCEPTION_HASH || errorHash == SERVICE_UNAVAILABLE_ERROR_HASH)
   {
     return AWSError<CoreErrors>(CoreErrors::SERVICE_UNAVAILABLE, true);
   }
@@ -149,7 +152,11 @@ AWSError<CoreErrors> CoreErrorsMapper::GetErrorForName(const char* errorName)
   }
   else if (errorHash == SIGNATURE_DOES_NOT_MATCH_HASH || errorHash == SIGNATURE_DOES_NOT_MATCH_EXCEPTION_HASH)
   {
-      return AWSError<CoreErrors>(CoreErrors::SIGNATURE_DOES_NOT_MATCH, true);
+      return AWSError<CoreErrors>(CoreErrors::SIGNATURE_DOES_NOT_MATCH, false);
+  }
+  else if (errorHash == INVALID_ACCESS_KEY_ID_HASH || errorHash == INVALID_ACCESS_KEY_ID_EXCEPTION_HASH)
+  {
+      return AWSError<CoreErrors>(CoreErrors::INVALID_ACCESS_KEY_ID, false);
   }
   else if (errorHash == REQUEST_TIME_TOO_SKEWED_HASH || errorHash == REQUEST_TIME_TOO_SKEWED_EXCEPTION_HASH)
   {

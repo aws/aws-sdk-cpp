@@ -39,7 +39,8 @@ Vpc::Vpc() :
     m_instanceTenancy(Tenancy::NOT_SET),
     m_instanceTenancyHasBeenSet(false),
     m_isDefault(false),
-    m_isDefaultHasBeenSet(false)
+    m_isDefaultHasBeenSet(false),
+    m_ipv6CidrBlockAssociationSetHasBeenSet(false)
 {
 }
 
@@ -53,7 +54,8 @@ Vpc::Vpc(const XmlNode& xmlNode) :
     m_instanceTenancy(Tenancy::NOT_SET),
     m_instanceTenancyHasBeenSet(false),
     m_isDefault(false),
-    m_isDefaultHasBeenSet(false)
+    m_isDefaultHasBeenSet(false),
+    m_ipv6CidrBlockAssociationSetHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -112,6 +114,18 @@ Vpc& Vpc::operator =(const XmlNode& xmlNode)
       m_isDefault = StringUtils::ConvertToBool(StringUtils::Trim(isDefaultNode.GetText().c_str()).c_str());
       m_isDefaultHasBeenSet = true;
     }
+    XmlNode ipv6CidrBlockAssociationSetNode = resultNode.FirstChild("ipv6CidrBlockAssociationSet");
+    if(!ipv6CidrBlockAssociationSetNode.IsNull())
+    {
+      XmlNode ipv6CidrBlockAssociationSetMember = ipv6CidrBlockAssociationSetNode.FirstChild("item");
+      while(!ipv6CidrBlockAssociationSetMember.IsNull())
+      {
+        m_ipv6CidrBlockAssociationSet.push_back(ipv6CidrBlockAssociationSetMember);
+        ipv6CidrBlockAssociationSetMember = ipv6CidrBlockAssociationSetMember.NextNode("item");
+      }
+
+      m_ipv6CidrBlockAssociationSetHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -157,7 +171,18 @@ void Vpc::OutputToStream(Aws::OStream& oStream, const char* location, unsigned i
 
   if(m_isDefaultHasBeenSet)
   {
-      oStream << location << index << locationValue << ".IsDefault=" << m_isDefault << "&";
+      oStream << location << index << locationValue << ".IsDefault=" << std::boolalpha << m_isDefault << "&";
+  }
+
+  if(m_ipv6CidrBlockAssociationSetHasBeenSet)
+  {
+      unsigned ipv6CidrBlockAssociationSetIdx = 1;
+      for(auto& item : m_ipv6CidrBlockAssociationSet)
+      {
+        Aws::StringStream ipv6CidrBlockAssociationSetSs;
+        ipv6CidrBlockAssociationSetSs << location << index << locationValue << ".Ipv6CidrBlockAssociationSet." << ipv6CidrBlockAssociationSetIdx++;
+        item.OutputToStream(oStream, ipv6CidrBlockAssociationSetSs.str().c_str());
+      }
   }
 
 }
@@ -186,7 +211,7 @@ void Vpc::OutputToStream(Aws::OStream& oStream, const char* location) const
       for(auto& item : m_tags)
       {
         Aws::StringStream tagsSs;
-        tagsSs << location <<  ".item." << tagsIdx++;
+        tagsSs << location <<  ".Item." << tagsIdx++;
         item.OutputToStream(oStream, tagsSs.str().c_str());
       }
   }
@@ -196,7 +221,17 @@ void Vpc::OutputToStream(Aws::OStream& oStream, const char* location) const
   }
   if(m_isDefaultHasBeenSet)
   {
-      oStream << location << ".IsDefault=" << m_isDefault << "&";
+      oStream << location << ".IsDefault=" << std::boolalpha << m_isDefault << "&";
+  }
+  if(m_ipv6CidrBlockAssociationSetHasBeenSet)
+  {
+      unsigned ipv6CidrBlockAssociationSetIdx = 1;
+      for(auto& item : m_ipv6CidrBlockAssociationSet)
+      {
+        Aws::StringStream ipv6CidrBlockAssociationSetSs;
+        ipv6CidrBlockAssociationSetSs << location <<  ".Item." << ipv6CidrBlockAssociationSetIdx++;
+        item.OutputToStream(oStream, ipv6CidrBlockAssociationSetSs.str().c_str());
+      }
   }
 }
 

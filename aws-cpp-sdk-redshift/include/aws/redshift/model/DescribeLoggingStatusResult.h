@@ -35,7 +35,9 @@ namespace Redshift
 namespace Model
 {
   /**
-   * <p>Describes the status of logging for a cluster.</p>
+   * <p>Describes the status of logging for a cluster.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/LoggingStatus">AWS
+   * API Reference</a></p>
    */
   class AWS_REDSHIFT_API DescribeLoggingStatusResult
   {

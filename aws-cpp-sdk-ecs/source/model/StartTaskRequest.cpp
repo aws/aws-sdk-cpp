@@ -26,7 +26,8 @@ StartTaskRequest::StartTaskRequest() :
     m_taskDefinitionHasBeenSet(false),
     m_overridesHasBeenSet(false),
     m_containerInstancesHasBeenSet(false),
-    m_startedByHasBeenSet(false)
+    m_startedByHasBeenSet(false),
+    m_groupHasBeenSet(false)
 {
 }
 
@@ -66,6 +67,12 @@ Aws::String StartTaskRequest::SerializePayload() const
   if(m_startedByHasBeenSet)
   {
    payload.WithString("startedBy", m_startedBy);
+
+  }
+
+  if(m_groupHasBeenSet)
+  {
+   payload.WithString("group", m_group);
 
   }
 

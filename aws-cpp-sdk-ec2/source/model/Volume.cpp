@@ -235,7 +235,7 @@ void Volume::OutputToStream(Aws::OStream& oStream, const char* location, unsigne
 
   if(m_encryptedHasBeenSet)
   {
-      oStream << location << index << locationValue << ".Encrypted=" << m_encrypted << "&";
+      oStream << location << index << locationValue << ".Encrypted=" << std::boolalpha << m_encrypted << "&";
   }
 
   if(m_kmsKeyIdHasBeenSet)
@@ -284,7 +284,7 @@ void Volume::OutputToStream(Aws::OStream& oStream, const char* location) const
       for(auto& item : m_attachments)
       {
         Aws::StringStream attachmentsSs;
-        attachmentsSs << location <<  ".item." << attachmentsIdx++;
+        attachmentsSs << location <<  ".Item." << attachmentsIdx++;
         item.OutputToStream(oStream, attachmentsSs.str().c_str());
       }
   }
@@ -294,7 +294,7 @@ void Volume::OutputToStream(Aws::OStream& oStream, const char* location) const
       for(auto& item : m_tags)
       {
         Aws::StringStream tagsSs;
-        tagsSs << location <<  ".item." << tagsIdx++;
+        tagsSs << location <<  ".Item." << tagsIdx++;
         item.OutputToStream(oStream, tagsSs.str().c_str());
       }
   }
@@ -308,7 +308,7 @@ void Volume::OutputToStream(Aws::OStream& oStream, const char* location) const
   }
   if(m_encryptedHasBeenSet)
   {
-      oStream << location << ".Encrypted=" << m_encrypted << "&";
+      oStream << location << ".Encrypted=" << std::boolalpha << m_encrypted << "&";
   }
   if(m_kmsKeyIdHasBeenSet)
   {

@@ -210,7 +210,10 @@ namespace Model
          * Unicode characters. Applications that do not HTML-encode the description and
          * display it in a web page could expose users to potentially malicious code. Make
          * sure that you HTML-encode the description field in any application that uses
-         * this API to display the repository description on a web page.</p></note>
+         * this API to display the repository description on a web
+         * page.</p></note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/BatchGetRepositories">AWS
+         * API Reference</a></p>
          */
         virtual Model::BatchGetRepositoriesOutcome BatchGetRepositories(const Model::BatchGetRepositoriesRequest& request) const;
 
@@ -220,7 +223,10 @@ namespace Model
          * Unicode characters. Applications that do not HTML-encode the description and
          * display it in a web page could expose users to potentially malicious code. Make
          * sure that you HTML-encode the description field in any application that uses
-         * this API to display the repository description on a web page.</p></note>
+         * this API to display the repository description on a web
+         * page.</p></note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/BatchGetRepositories">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -232,7 +238,10 @@ namespace Model
          * Unicode characters. Applications that do not HTML-encode the description and
          * display it in a web page could expose users to potentially malicious code. Make
          * sure that you HTML-encode the description field in any application that uses
-         * this API to display the repository description on a web page.</p></note>
+         * this API to display the repository description on a web
+         * page.</p></note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/BatchGetRepositories">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -241,14 +250,20 @@ namespace Model
         /**
          * <p>Creates a new branch in a repository and points the branch to a commit.</p>
          * <note><p>Calling the create branch operation does not set a repository's default
-         * branch. To do this, call the update default branch operation.</p></note>
+         * branch. To do this, call the update default branch
+         * operation.</p></note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/CreateBranch">AWS
+         * API Reference</a></p>
          */
         virtual Model::CreateBranchOutcome CreateBranch(const Model::CreateBranchRequest& request) const;
 
         /**
          * <p>Creates a new branch in a repository and points the branch to a commit.</p>
          * <note><p>Calling the create branch operation does not set a repository's default
-         * branch. To do this, call the update default branch operation.</p></note>
+         * branch. To do this, call the update default branch
+         * operation.</p></note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/CreateBranch">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -257,26 +272,35 @@ namespace Model
         /**
          * <p>Creates a new branch in a repository and points the branch to a commit.</p>
          * <note><p>Calling the create branch operation does not set a repository's default
-         * branch. To do this, call the update default branch operation.</p></note>
+         * branch. To do this, call the update default branch
+         * operation.</p></note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/CreateBranch">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateBranchAsync(const Model::CreateBranchRequest& request, const CreateBranchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a new, empty repository.</p>
+         * <p>Creates a new, empty repository.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/CreateRepository">AWS
+         * API Reference</a></p>
          */
         virtual Model::CreateRepositoryOutcome CreateRepository(const Model::CreateRepositoryRequest& request) const;
 
         /**
-         * <p>Creates a new, empty repository.</p>
+         * <p>Creates a new, empty repository.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/CreateRepository">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::CreateRepositoryOutcomeCallable CreateRepositoryCallable(const Model::CreateRepositoryRequest& request) const;
 
         /**
-         * <p>Creates a new, empty repository.</p>
+         * <p>Creates a new, empty repository.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/CreateRepository">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -286,7 +310,10 @@ namespace Model
          * <p>Deletes a repository. If a specified repository was already deleted, a null
          * repository ID will be returned.</p> <important>Deleting a repository also
          * deletes all associated objects and metadata. After a repository is deleted, all
-         * future push calls to the deleted repository will fail.</important>
+         * future push calls to the deleted repository will fail.</important><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/DeleteRepository">AWS
+         * API Reference</a></p>
          */
         virtual Model::DeleteRepositoryOutcome DeleteRepository(const Model::DeleteRepositoryRequest& request) const;
 
@@ -294,7 +321,10 @@ namespace Model
          * <p>Deletes a repository. If a specified repository was already deleted, a null
          * repository ID will be returned.</p> <important>Deleting a repository also
          * deletes all associated objects and metadata. After a repository is deleted, all
-         * future push calls to the deleted repository will fail.</important>
+         * future push calls to the deleted repository will fail.</important><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/DeleteRepository">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -304,7 +334,10 @@ namespace Model
          * <p>Deletes a repository. If a specified repository was already deleted, a null
          * repository ID will be returned.</p> <important>Deleting a repository also
          * deletes all associated objects and metadata. After a repository is deleted, all
-         * future push calls to the deleted repository will fail.</important>
+         * future push calls to the deleted repository will fail.</important><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/DeleteRepository">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -312,13 +345,17 @@ namespace Model
 
         /**
          * <p>Returns information about a repository branch, including its name and the
-         * last commit ID.</p>
+         * last commit ID.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/GetBranch">AWS
+         * API Reference</a></p>
          */
         virtual Model::GetBranchOutcome GetBranch(const Model::GetBranchRequest& request) const;
 
         /**
          * <p>Returns information about a repository branch, including its name and the
-         * last commit ID.</p>
+         * last commit ID.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/GetBranch">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -326,7 +363,9 @@ namespace Model
 
         /**
          * <p>Returns information about a repository branch, including its name and the
-         * last commit ID.</p>
+         * last commit ID.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/GetBranch">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -334,13 +373,17 @@ namespace Model
 
         /**
          * <p>Returns information about a commit, including commit message and committer
-         * information.</p>
+         * information.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/GetCommit">AWS
+         * API Reference</a></p>
          */
         virtual Model::GetCommitOutcome GetCommit(const Model::GetCommitRequest& request) const;
 
         /**
          * <p>Returns information about a commit, including commit message and committer
-         * information.</p>
+         * information.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/GetCommit">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -348,7 +391,9 @@ namespace Model
 
         /**
          * <p>Returns information about a commit, including commit message and committer
-         * information.</p>
+         * information.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/GetCommit">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -360,7 +405,10 @@ namespace Model
          * Applications that do not HTML-encode the description and display it in a web
          * page could expose users to potentially malicious code. Make sure that you
          * HTML-encode the description field in any application that uses this API to
-         * display the repository description on a web page.</p></note>
+         * display the repository description on a web page.</p></note><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/GetRepository">AWS
+         * API Reference</a></p>
          */
         virtual Model::GetRepositoryOutcome GetRepository(const Model::GetRepositoryRequest& request) const;
 
@@ -370,7 +418,10 @@ namespace Model
          * Applications that do not HTML-encode the description and display it in a web
          * page could expose users to potentially malicious code. Make sure that you
          * HTML-encode the description field in any application that uses this API to
-         * display the repository description on a web page.</p></note>
+         * display the repository description on a web page.</p></note><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/GetRepository">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -382,64 +433,94 @@ namespace Model
          * Applications that do not HTML-encode the description and display it in a web
          * page could expose users to potentially malicious code. Make sure that you
          * HTML-encode the description field in any application that uses this API to
-         * display the repository description on a web page.</p></note>
+         * display the repository description on a web page.</p></note><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/GetRepository">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetRepositoryAsync(const Model::GetRepositoryRequest& request, const GetRepositoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Gets information about triggers configured for a repository.</p>
+         * <p>Gets information about triggers configured for a repository.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/GetRepositoryTriggers">AWS
+         * API Reference</a></p>
          */
         virtual Model::GetRepositoryTriggersOutcome GetRepositoryTriggers(const Model::GetRepositoryTriggersRequest& request) const;
 
         /**
-         * <p>Gets information about triggers configured for a repository.</p>
+         * <p>Gets information about triggers configured for a repository.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/GetRepositoryTriggers">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::GetRepositoryTriggersOutcomeCallable GetRepositoryTriggersCallable(const Model::GetRepositoryTriggersRequest& request) const;
 
         /**
-         * <p>Gets information about triggers configured for a repository.</p>
+         * <p>Gets information about triggers configured for a repository.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/GetRepositoryTriggers">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetRepositoryTriggersAsync(const Model::GetRepositoryTriggersRequest& request, const GetRepositoryTriggersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Gets information about one or more branches in a repository.</p>
+         * <p>Gets information about one or more branches in a repository.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/ListBranches">AWS
+         * API Reference</a></p>
          */
         virtual Model::ListBranchesOutcome ListBranches(const Model::ListBranchesRequest& request) const;
 
         /**
-         * <p>Gets information about one or more branches in a repository.</p>
+         * <p>Gets information about one or more branches in a repository.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/ListBranches">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListBranchesOutcomeCallable ListBranchesCallable(const Model::ListBranchesRequest& request) const;
 
         /**
-         * <p>Gets information about one or more branches in a repository.</p>
+         * <p>Gets information about one or more branches in a repository.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/ListBranches">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListBranchesAsync(const Model::ListBranchesRequest& request, const ListBranchesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Gets information about one or more repositories.</p>
+         * <p>Gets information about one or more repositories.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/ListRepositories">AWS
+         * API Reference</a></p>
          */
         virtual Model::ListRepositoriesOutcome ListRepositories(const Model::ListRepositoriesRequest& request) const;
 
         /**
-         * <p>Gets information about one or more repositories.</p>
+         * <p>Gets information about one or more repositories.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/ListRepositories">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListRepositoriesOutcomeCallable ListRepositoriesCallable(const Model::ListRepositoriesRequest& request) const;
 
         /**
-         * <p>Gets information about one or more repositories.</p>
+         * <p>Gets information about one or more repositories.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/ListRepositories">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -447,13 +528,17 @@ namespace Model
 
         /**
          * <p>Replaces all triggers for a repository. This can be used to create or delete
-         * triggers.</p>
+         * triggers.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/PutRepositoryTriggers">AWS
+         * API Reference</a></p>
          */
         virtual Model::PutRepositoryTriggersOutcome PutRepositoryTriggers(const Model::PutRepositoryTriggersRequest& request) const;
 
         /**
          * <p>Replaces all triggers for a repository. This can be used to create or delete
-         * triggers.</p>
+         * triggers.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/PutRepositoryTriggers">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -461,7 +546,9 @@ namespace Model
 
         /**
          * <p>Replaces all triggers for a repository. This can be used to create or delete
-         * triggers.</p>
+         * triggers.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/PutRepositoryTriggers">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -471,7 +558,9 @@ namespace Model
          * <p>Tests the functionality of repository triggers by sending information to the
          * trigger target. If real data is available in the repository, the test will send
          * data from the last commit. If no data is available, sample data will be
-         * generated.</p>
+         * generated.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/TestRepositoryTriggers">AWS
+         * API Reference</a></p>
          */
         virtual Model::TestRepositoryTriggersOutcome TestRepositoryTriggers(const Model::TestRepositoryTriggersRequest& request) const;
 
@@ -479,7 +568,9 @@ namespace Model
          * <p>Tests the functionality of repository triggers by sending information to the
          * trigger target. If real data is available in the repository, the test will send
          * data from the last commit. If no data is available, sample data will be
-         * generated.</p>
+         * generated.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/TestRepositoryTriggers">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -489,7 +580,9 @@ namespace Model
          * <p>Tests the functionality of repository triggers by sending information to the
          * trigger target. If real data is available in the repository, the test will send
          * data from the last commit. If no data is available, sample data will be
-         * generated.</p>
+         * generated.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/TestRepositoryTriggers">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -499,7 +592,9 @@ namespace Model
          * <p>Sets or changes the default branch name for the specified repository.</p>
          * <note><p>If you use this operation to change the default branch name to the
          * current default branch name, a success message is returned even though the
-         * default branch did not change.</p></note>
+         * default branch did not change.</p></note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/UpdateDefaultBranch">AWS
+         * API Reference</a></p>
          */
         virtual Model::UpdateDefaultBranchOutcome UpdateDefaultBranch(const Model::UpdateDefaultBranchRequest& request) const;
 
@@ -507,7 +602,9 @@ namespace Model
          * <p>Sets or changes the default branch name for the specified repository.</p>
          * <note><p>If you use this operation to change the default branch name to the
          * current default branch name, a success message is returned even though the
-         * default branch did not change.</p></note>
+         * default branch did not change.</p></note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/UpdateDefaultBranch">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -517,7 +614,9 @@ namespace Model
          * <p>Sets or changes the default branch name for the specified repository.</p>
          * <note><p>If you use this operation to change the default branch name to the
          * current default branch name, a success message is returned even though the
-         * default branch did not change.</p></note>
+         * default branch did not change.</p></note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/UpdateDefaultBranch">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -529,7 +628,10 @@ namespace Model
          * Unicode characters. Applications that do not HTML-encode the description and
          * display it in a web page could expose users to potentially malicious code. Make
          * sure that you HTML-encode the description field in any application that uses
-         * this API to display the repository description on a web page.</p></note>
+         * this API to display the repository description on a web
+         * page.</p></note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/UpdateRepositoryDescription">AWS
+         * API Reference</a></p>
          */
         virtual Model::UpdateRepositoryDescriptionOutcome UpdateRepositoryDescription(const Model::UpdateRepositoryDescriptionRequest& request) const;
 
@@ -539,7 +641,10 @@ namespace Model
          * Unicode characters. Applications that do not HTML-encode the description and
          * display it in a web page could expose users to potentially malicious code. Make
          * sure that you HTML-encode the description field in any application that uses
-         * this API to display the repository description on a web page.</p></note>
+         * this API to display the repository description on a web
+         * page.</p></note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/UpdateRepositoryDescription">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -551,7 +656,10 @@ namespace Model
          * Unicode characters. Applications that do not HTML-encode the description and
          * display it in a web page could expose users to potentially malicious code. Make
          * sure that you HTML-encode the description field in any application that uses
-         * this API to display the repository description on a web page.</p></note>
+         * this API to display the repository description on a web
+         * page.</p></note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/UpdateRepositoryDescription">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -564,7 +672,9 @@ namespace Model
          * suffix ".git" is prohibited. For a full description of the limits on repository
          * names, see <a
          * href="http://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">Limits</a>
-         * in the AWS CodeCommit User Guide.</p>
+         * in the AWS CodeCommit User Guide.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/UpdateRepositoryName">AWS
+         * API Reference</a></p>
          */
         virtual Model::UpdateRepositoryNameOutcome UpdateRepositoryName(const Model::UpdateRepositoryNameRequest& request) const;
 
@@ -575,7 +685,9 @@ namespace Model
          * suffix ".git" is prohibited. For a full description of the limits on repository
          * names, see <a
          * href="http://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">Limits</a>
-         * in the AWS CodeCommit User Guide.</p>
+         * in the AWS CodeCommit User Guide.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/UpdateRepositoryName">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -588,7 +700,9 @@ namespace Model
          * suffix ".git" is prohibited. For a full description of the limits on repository
          * names, see <a
          * href="http://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">Limits</a>
-         * in the AWS CodeCommit User Guide.</p>
+         * in the AWS CodeCommit User Guide.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/UpdateRepositoryName">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */

@@ -35,7 +35,7 @@ Aws::String CreateVpnConnectionRequest::SerializePayload() const
   ss << "Action=CreateVpnConnection&";
   if(m_dryRunHasBeenSet)
   {
-    ss << "DryRun=" << m_dryRun << "&";
+    ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
   if(m_typeHasBeenSet)
@@ -58,7 +58,7 @@ Aws::String CreateVpnConnectionRequest::SerializePayload() const
     m_options.OutputToStream(ss, "Options");
   }
 
-  ss << "Version=2015-10-01";
+  ss << "Version=2016-11-15";
   return ss.str();
 }
 

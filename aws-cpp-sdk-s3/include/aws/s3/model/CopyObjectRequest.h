@@ -20,6 +20,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/s3/model/MetadataDirective.h>
+#include <aws/s3/model/TaggingDirective.h>
 #include <aws/s3/model/ServerSideEncryption.h>
 #include <aws/s3/model/StorageClass.h>
 #include <aws/s3/model/RequestPayer.h>
@@ -715,6 +716,36 @@ namespace Model
     inline CopyObjectRequest& WithMetadataDirective(MetadataDirective&& value) { SetMetadataDirective(value); return *this;}
 
     /**
+     * Specifies whether the object tag-set are copied from the source object or
+     * replaced with tag-set provided in the request.
+     */
+    inline const TaggingDirective& GetTaggingDirective() const{ return m_taggingDirective; }
+
+    /**
+     * Specifies whether the object tag-set are copied from the source object or
+     * replaced with tag-set provided in the request.
+     */
+    inline void SetTaggingDirective(const TaggingDirective& value) { m_taggingDirectiveHasBeenSet = true; m_taggingDirective = value; }
+
+    /**
+     * Specifies whether the object tag-set are copied from the source object or
+     * replaced with tag-set provided in the request.
+     */
+    inline void SetTaggingDirective(TaggingDirective&& value) { m_taggingDirectiveHasBeenSet = true; m_taggingDirective = value; }
+
+    /**
+     * Specifies whether the object tag-set are copied from the source object or
+     * replaced with tag-set provided in the request.
+     */
+    inline CopyObjectRequest& WithTaggingDirective(const TaggingDirective& value) { SetTaggingDirective(value); return *this;}
+
+    /**
+     * Specifies whether the object tag-set are copied from the source object or
+     * replaced with tag-set provided in the request.
+     */
+    inline CopyObjectRequest& WithTaggingDirective(TaggingDirective&& value) { SetTaggingDirective(value); return *this;}
+
+    /**
      * The Server-side encryption algorithm used when storing this object in S3 (e.g.,
      * AES256, aws:kms).
      */
@@ -1176,6 +1207,55 @@ namespace Model
     
     inline CopyObjectRequest& WithRequestPayer(RequestPayer&& value) { SetRequestPayer(value); return *this;}
 
+    /**
+     * The tag-set for the object destination object this value must be used in
+     * conjunction with the TaggingDirective. The tag-set must be encoded as URL Query
+     * parameters
+     */
+    inline const Aws::String& GetTagging() const{ return m_tagging; }
+
+    /**
+     * The tag-set for the object destination object this value must be used in
+     * conjunction with the TaggingDirective. The tag-set must be encoded as URL Query
+     * parameters
+     */
+    inline void SetTagging(const Aws::String& value) { m_taggingHasBeenSet = true; m_tagging = value; }
+
+    /**
+     * The tag-set for the object destination object this value must be used in
+     * conjunction with the TaggingDirective. The tag-set must be encoded as URL Query
+     * parameters
+     */
+    inline void SetTagging(Aws::String&& value) { m_taggingHasBeenSet = true; m_tagging = value; }
+
+    /**
+     * The tag-set for the object destination object this value must be used in
+     * conjunction with the TaggingDirective. The tag-set must be encoded as URL Query
+     * parameters
+     */
+    inline void SetTagging(const char* value) { m_taggingHasBeenSet = true; m_tagging.assign(value); }
+
+    /**
+     * The tag-set for the object destination object this value must be used in
+     * conjunction with the TaggingDirective. The tag-set must be encoded as URL Query
+     * parameters
+     */
+    inline CopyObjectRequest& WithTagging(const Aws::String& value) { SetTagging(value); return *this;}
+
+    /**
+     * The tag-set for the object destination object this value must be used in
+     * conjunction with the TaggingDirective. The tag-set must be encoded as URL Query
+     * parameters
+     */
+    inline CopyObjectRequest& WithTagging(Aws::String&& value) { SetTagging(value); return *this;}
+
+    /**
+     * The tag-set for the object destination object this value must be used in
+     * conjunction with the TaggingDirective. The tag-set must be encoded as URL Query
+     * parameters
+     */
+    inline CopyObjectRequest& WithTagging(const char* value) { SetTagging(value); return *this;}
+
   private:
     ObjectCannedACL m_aCL;
     bool m_aCLHasBeenSet;
@@ -1217,6 +1297,8 @@ namespace Model
     bool m_metadataHasBeenSet;
     MetadataDirective m_metadataDirective;
     bool m_metadataDirectiveHasBeenSet;
+    TaggingDirective m_taggingDirective;
+    bool m_taggingDirectiveHasBeenSet;
     ServerSideEncryption m_serverSideEncryption;
     bool m_serverSideEncryptionHasBeenSet;
     StorageClass m_storageClass;
@@ -1239,6 +1321,8 @@ namespace Model
     bool m_copySourceSSECustomerKeyMD5HasBeenSet;
     RequestPayer m_requestPayer;
     bool m_requestPayerHasBeenSet;
+    Aws::String m_tagging;
+    bool m_taggingHasBeenSet;
   };
 
 } // namespace Model

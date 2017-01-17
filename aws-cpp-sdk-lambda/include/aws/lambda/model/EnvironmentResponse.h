@@ -35,7 +35,9 @@ namespace Model
   /**
    * <p>The parent object returned that contains your environment's configuration
    * settings or any error information associated with your configuration
-   * settings.</p>
+   * settings.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/EnvironmentResponse">AWS
+   * API Reference</a></p>
    */
   class AWS_LAMBDA_API EnvironmentResponse
   {

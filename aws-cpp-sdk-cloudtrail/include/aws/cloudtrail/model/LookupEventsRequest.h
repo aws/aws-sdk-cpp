@@ -28,7 +28,9 @@ namespace Model
 {
 
   /**
-   * <p>Contains a request for LookupEvents.</p>
+   * <p>Contains a request for LookupEvents.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/LookupEventsRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_CLOUDTRAIL_API LookupEventsRequest : public CloudTrailRequest
   {

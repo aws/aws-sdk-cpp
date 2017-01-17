@@ -40,7 +40,10 @@ namespace Model
    * PUT, PATCH, POST, and DELETE requests. If you pick the third choice, you may
    * need to restrict access to your Amazon S3 bucket or to your custom origin so
    * users can't perform operations that you don't want them to. For example, you may
-   * not want users to have permission to delete objects from your origin.
+   * not want users to have permission to delete objects from your origin.<p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-01-28/AllowedMethods">AWS
+   * API Reference</a></p>
    */
   class AWS_CLOUDFRONT_API AllowedMethods
   {

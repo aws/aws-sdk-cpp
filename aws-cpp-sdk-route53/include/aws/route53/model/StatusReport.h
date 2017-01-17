@@ -33,7 +33,9 @@ namespace Model
 
   /**
    * <p>A complex type that contains the status that one Amazon Route 53 health
-   * checker reports and the time of the health check.</p>
+   * checker reports and the time of the health check.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/StatusReport">AWS
+   * API Reference</a></p>
    */
   class AWS_ROUTE53_API StatusReport
   {

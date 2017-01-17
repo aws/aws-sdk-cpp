@@ -32,7 +32,9 @@ namespace Model
 {
 
   /**
-   * <p>Provides options for defining a job.</p>
+   * <p>Provides options for defining a job.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/JobParameters">AWS
+   * API Reference</a></p>
    */
   class AWS_GLACIER_API JobParameters
   {

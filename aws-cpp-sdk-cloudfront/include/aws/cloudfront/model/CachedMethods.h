@@ -37,7 +37,10 @@ namespace Model
    * responses to GET and HEAD requests. - CloudFront caches responses to GET, HEAD,
    * and OPTIONS requests. If you pick the second choice for your S3 Origin, you may
    * need to forward Access-Control-Request-Method, Access-Control-Request-Headers
-   * and Origin headers for the responses to be cached correctly.
+   * and Origin headers for the responses to be cached correctly.<p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-01-28/CachedMethods">AWS
+   * API Reference</a></p>
    */
   class AWS_CLOUDFRONT_API CachedMethods
   {

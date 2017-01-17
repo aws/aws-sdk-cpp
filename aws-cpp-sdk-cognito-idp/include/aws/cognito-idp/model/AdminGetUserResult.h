@@ -39,7 +39,9 @@ namespace Model
 {
   /**
    * <p>Represents the response from the server from the request to get the specified
-   * user as an administrator.</p>
+   * user as an administrator.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminGetUserResponse">AWS
+   * API Reference</a></p>
    */
   class AWS_COGNITOIDENTITYPROVIDER_API AdminGetUserResult
   {

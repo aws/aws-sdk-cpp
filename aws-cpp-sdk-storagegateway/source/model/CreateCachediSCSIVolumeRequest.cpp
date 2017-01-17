@@ -27,6 +27,7 @@ CreateCachediSCSIVolumeRequest::CreateCachediSCSIVolumeRequest() :
     m_volumeSizeInBytesHasBeenSet(false),
     m_snapshotIdHasBeenSet(false),
     m_targetNameHasBeenSet(false),
+    m_sourceVolumeARNHasBeenSet(false),
     m_networkInterfaceIdHasBeenSet(false),
     m_clientTokenHasBeenSet(false)
 {
@@ -57,6 +58,12 @@ Aws::String CreateCachediSCSIVolumeRequest::SerializePayload() const
   if(m_targetNameHasBeenSet)
   {
    payload.WithString("TargetName", m_targetName);
+
+  }
+
+  if(m_sourceVolumeARNHasBeenSet)
+  {
+   payload.WithString("SourceVolumeARN", m_sourceVolumeARN);
 
   }
 
