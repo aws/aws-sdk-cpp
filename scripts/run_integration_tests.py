@@ -61,10 +61,11 @@ def Main():
 
     for testName in testList:
         testExe = arguments["buildDir"] + "/" + testName + "/" + configDir + "/" + testName + exeExtension
+        prefix = platform.system().lower()
         print("testExe = " + testExe)
-
+        print("prefix = " + prefix)
         AddExecutableBit(testExe)
-        subprocess.check_call([testExe, platform.system().lower()])
+        subprocess.check_call([testExe, prefix])
 
 
 # Run from powershell; make sure msbuild is in PATH environment variable  
