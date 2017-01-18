@@ -1060,8 +1060,8 @@ namespace Model
         /**
          * <p>Creates a new Amazon Aurora DB cluster.</p> <p>You can use the
          * <code>ReplicationSourceIdentifier</code> parameter to create the DB cluster as a
-         * Read Replica of another DB cluster.</p> <p>For more information on Amazon
-         * Aurora, see <a
+         * Read Replica of another DB cluster or Amazon RDS MySQL DB instance.</p> <p>For
+         * more information on Amazon Aurora, see <a
          * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html">Aurora
          * on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> </p><p><h3>See Also:</h3>
          * <a
@@ -1073,8 +1073,8 @@ namespace Model
         /**
          * <p>Creates a new Amazon Aurora DB cluster.</p> <p>You can use the
          * <code>ReplicationSourceIdentifier</code> parameter to create the DB cluster as a
-         * Read Replica of another DB cluster.</p> <p>For more information on Amazon
-         * Aurora, see <a
+         * Read Replica of another DB cluster or Amazon RDS MySQL DB instance.</p> <p>For
+         * more information on Amazon Aurora, see <a
          * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html">Aurora
          * on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> </p><p><h3>See Also:</h3>
          * <a
@@ -1088,8 +1088,8 @@ namespace Model
         /**
          * <p>Creates a new Amazon Aurora DB cluster.</p> <p>You can use the
          * <code>ReplicationSourceIdentifier</code> parameter to create the DB cluster as a
-         * Read Replica of another DB cluster.</p> <p>For more information on Amazon
-         * Aurora, see <a
+         * Read Replica of another DB cluster or Amazon RDS MySQL DB instance.</p> <p>For
+         * more information on Amazon Aurora, see <a
          * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html">Aurora
          * on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> </p><p><h3>See Also:</h3>
          * <a
