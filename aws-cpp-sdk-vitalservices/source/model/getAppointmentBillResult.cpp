@@ -36,33 +36,33 @@ getAppointmentBillResult::getAppointmentBillResult(const AmazonWebServiceResult<
 getAppointmentBillResult& getAppointmentBillResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
-  if(jsonValue.ValueExists("patientServiceFee"))
+  if(jsonValue.ValueExists("basePriceCents"))
   {
-    m_patientServiceFee = jsonValue.GetString("patientServiceFee");
+    m_basePriceCents = jsonValue.GetString("basePriceCents");
 
   }
 
-  if(jsonValue.ValueExists("totalPrice"))
+  if(jsonValue.ValueExists("doctorServiceFeeCents"))
   {
-    m_totalPrice = jsonValue.GetString("totalPrice");
+    m_doctorServiceFeeCents = jsonValue.GetString("doctorServiceFeeCents");
+
+  }
+
+  if(jsonValue.ValueExists("totalPriceCents"))
+  {
+    m_totalPriceCents = jsonValue.GetString("totalPriceCents");
+
+  }
+
+  if(jsonValue.ValueExists("patientServiceFeeCents"))
+  {
+    m_patientServiceFeeCents = jsonValue.GetString("patientServiceFeeCents");
 
   }
 
   if(jsonValue.ValueExists("fingerprint"))
   {
     m_fingerprint = jsonValue.GetString("fingerprint");
-
-  }
-
-  if(jsonValue.ValueExists("basePrice"))
-  {
-    m_basePrice = jsonValue.GetString("basePrice");
-
-  }
-
-  if(jsonValue.ValueExists("doctorServiceFee"))
-  {
-    m_doctorServiceFee = jsonValue.GetString("doctorServiceFee");
 
   }
 

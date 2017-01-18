@@ -40,109 +40,25 @@ namespace Model
     updateUserResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
     
-    inline const Aws::String& GetStripeCustomerId() const{ return m_stripeCustomerId; }
+    inline const Aws::String& GetEmail() const{ return m_email; }
 
     
-    inline void SetStripeCustomerId(const Aws::String& value) { m_stripeCustomerId = value; }
+    inline void SetEmail(const Aws::String& value) { m_email = value; }
 
     
-    inline void SetStripeCustomerId(Aws::String&& value) { m_stripeCustomerId = value; }
+    inline void SetEmail(Aws::String&& value) { m_email = value; }
 
     
-    inline void SetStripeCustomerId(const char* value) { m_stripeCustomerId.assign(value); }
+    inline void SetEmail(const char* value) { m_email.assign(value); }
 
     
-    inline updateUserResult& WithStripeCustomerId(const Aws::String& value) { SetStripeCustomerId(value); return *this;}
+    inline updateUserResult& WithEmail(const Aws::String& value) { SetEmail(value); return *this;}
 
     
-    inline updateUserResult& WithStripeCustomerId(Aws::String&& value) { SetStripeCustomerId(value); return *this;}
+    inline updateUserResult& WithEmail(Aws::String&& value) { SetEmail(value); return *this;}
 
     
-    inline updateUserResult& WithStripeCustomerId(const char* value) { SetStripeCustomerId(value); return *this;}
-
-    
-    inline const Aws::String& GetDoctorId() const{ return m_doctorId; }
-
-    
-    inline void SetDoctorId(const Aws::String& value) { m_doctorId = value; }
-
-    
-    inline void SetDoctorId(Aws::String&& value) { m_doctorId = value; }
-
-    
-    inline void SetDoctorId(const char* value) { m_doctorId.assign(value); }
-
-    
-    inline updateUserResult& WithDoctorId(const Aws::String& value) { SetDoctorId(value); return *this;}
-
-    
-    inline updateUserResult& WithDoctorId(Aws::String&& value) { SetDoctorId(value); return *this;}
-
-    
-    inline updateUserResult& WithDoctorId(const char* value) { SetDoctorId(value); return *this;}
-
-    
-    inline const Aws::String& GetFirstName() const{ return m_firstName; }
-
-    
-    inline void SetFirstName(const Aws::String& value) { m_firstName = value; }
-
-    
-    inline void SetFirstName(Aws::String&& value) { m_firstName = value; }
-
-    
-    inline void SetFirstName(const char* value) { m_firstName.assign(value); }
-
-    
-    inline updateUserResult& WithFirstName(const Aws::String& value) { SetFirstName(value); return *this;}
-
-    
-    inline updateUserResult& WithFirstName(Aws::String&& value) { SetFirstName(value); return *this;}
-
-    
-    inline updateUserResult& WithFirstName(const char* value) { SetFirstName(value); return *this;}
-
-    
-    inline const Aws::String& GetMobileNumber() const{ return m_mobileNumber; }
-
-    
-    inline void SetMobileNumber(const Aws::String& value) { m_mobileNumber = value; }
-
-    
-    inline void SetMobileNumber(Aws::String&& value) { m_mobileNumber = value; }
-
-    
-    inline void SetMobileNumber(const char* value) { m_mobileNumber.assign(value); }
-
-    
-    inline updateUserResult& WithMobileNumber(const Aws::String& value) { SetMobileNumber(value); return *this;}
-
-    
-    inline updateUserResult& WithMobileNumber(Aws::String&& value) { SetMobileNumber(value); return *this;}
-
-    
-    inline updateUserResult& WithMobileNumber(const char* value) { SetMobileNumber(value); return *this;}
-
-    
-    inline const Aws::String& GetLastName() const{ return m_lastName; }
-
-    
-    inline void SetLastName(const Aws::String& value) { m_lastName = value; }
-
-    
-    inline void SetLastName(Aws::String&& value) { m_lastName = value; }
-
-    
-    inline void SetLastName(const char* value) { m_lastName.assign(value); }
-
-    
-    inline updateUserResult& WithLastName(const Aws::String& value) { SetLastName(value); return *this;}
-
-    
-    inline updateUserResult& WithLastName(Aws::String&& value) { SetLastName(value); return *this;}
-
-    
-    inline updateUserResult& WithLastName(const char* value) { SetLastName(value); return *this;}
+    inline updateUserResult& WithEmail(const char* value) { SetEmail(value); return *this;}
 
     
     inline const Aws::String& GetProfilePhotoUrl() const{ return m_profilePhotoUrl; }
@@ -166,6 +82,27 @@ namespace Model
     inline updateUserResult& WithProfilePhotoUrl(const char* value) { SetProfilePhotoUrl(value); return *this;}
 
     
+    inline const Aws::String& GetMobileNumber() const{ return m_mobileNumber; }
+
+    
+    inline void SetMobileNumber(const Aws::String& value) { m_mobileNumber = value; }
+
+    
+    inline void SetMobileNumber(Aws::String&& value) { m_mobileNumber = value; }
+
+    
+    inline void SetMobileNumber(const char* value) { m_mobileNumber.assign(value); }
+
+    
+    inline updateUserResult& WithMobileNumber(const Aws::String& value) { SetMobileNumber(value); return *this;}
+
+    
+    inline updateUserResult& WithMobileNumber(Aws::String&& value) { SetMobileNumber(value); return *this;}
+
+    
+    inline updateUserResult& WithMobileNumber(const char* value) { SetMobileNumber(value); return *this;}
+
+    
     inline const Aws::String& GetId() const{ return m_id; }
 
     
@@ -187,35 +124,98 @@ namespace Model
     inline updateUserResult& WithId(const char* value) { SetId(value); return *this;}
 
     
-    inline const Aws::String& GetEmail() const{ return m_email; }
+    inline const Aws::String& GetStripeCustomerId() const{ return m_stripeCustomerId; }
 
     
-    inline void SetEmail(const Aws::String& value) { m_email = value; }
+    inline void SetStripeCustomerId(const Aws::String& value) { m_stripeCustomerId = value; }
 
     
-    inline void SetEmail(Aws::String&& value) { m_email = value; }
+    inline void SetStripeCustomerId(Aws::String&& value) { m_stripeCustomerId = value; }
 
     
-    inline void SetEmail(const char* value) { m_email.assign(value); }
+    inline void SetStripeCustomerId(const char* value) { m_stripeCustomerId.assign(value); }
 
     
-    inline updateUserResult& WithEmail(const Aws::String& value) { SetEmail(value); return *this;}
+    inline updateUserResult& WithStripeCustomerId(const Aws::String& value) { SetStripeCustomerId(value); return *this;}
 
     
-    inline updateUserResult& WithEmail(Aws::String&& value) { SetEmail(value); return *this;}
+    inline updateUserResult& WithStripeCustomerId(Aws::String&& value) { SetStripeCustomerId(value); return *this;}
 
     
-    inline updateUserResult& WithEmail(const char* value) { SetEmail(value); return *this;}
+    inline updateUserResult& WithStripeCustomerId(const char* value) { SetStripeCustomerId(value); return *this;}
+
+    
+    inline const Aws::String& GetFirstName() const{ return m_firstName; }
+
+    
+    inline void SetFirstName(const Aws::String& value) { m_firstName = value; }
+
+    
+    inline void SetFirstName(Aws::String&& value) { m_firstName = value; }
+
+    
+    inline void SetFirstName(const char* value) { m_firstName.assign(value); }
+
+    
+    inline updateUserResult& WithFirstName(const Aws::String& value) { SetFirstName(value); return *this;}
+
+    
+    inline updateUserResult& WithFirstName(Aws::String&& value) { SetFirstName(value); return *this;}
+
+    
+    inline updateUserResult& WithFirstName(const char* value) { SetFirstName(value); return *this;}
+
+    
+    inline const Aws::String& GetDoctorId() const{ return m_doctorId; }
+
+    
+    inline void SetDoctorId(const Aws::String& value) { m_doctorId = value; }
+
+    
+    inline void SetDoctorId(Aws::String&& value) { m_doctorId = value; }
+
+    
+    inline void SetDoctorId(const char* value) { m_doctorId.assign(value); }
+
+    
+    inline updateUserResult& WithDoctorId(const Aws::String& value) { SetDoctorId(value); return *this;}
+
+    
+    inline updateUserResult& WithDoctorId(Aws::String&& value) { SetDoctorId(value); return *this;}
+
+    
+    inline updateUserResult& WithDoctorId(const char* value) { SetDoctorId(value); return *this;}
+
+    
+    inline const Aws::String& GetLastName() const{ return m_lastName; }
+
+    
+    inline void SetLastName(const Aws::String& value) { m_lastName = value; }
+
+    
+    inline void SetLastName(Aws::String&& value) { m_lastName = value; }
+
+    
+    inline void SetLastName(const char* value) { m_lastName.assign(value); }
+
+    
+    inline updateUserResult& WithLastName(const Aws::String& value) { SetLastName(value); return *this;}
+
+    
+    inline updateUserResult& WithLastName(Aws::String&& value) { SetLastName(value); return *this;}
+
+    
+    inline updateUserResult& WithLastName(const char* value) { SetLastName(value); return *this;}
 
   private:
-    Aws::String m_stripeCustomerId;
-    Aws::String m_doctorId;
-    Aws::String m_firstName;
-    Aws::String m_mobileNumber;
-    Aws::String m_lastName;
-    Aws::String m_profilePhotoUrl;
-    Aws::String m_id;
     Aws::String m_email;
+    Aws::String m_profilePhotoUrl;
+    Aws::String m_mobileNumber;
+    Aws::String m_id;
+    Aws::String m_stripeCustomerId;
+    Aws::String m_firstName;
+    Aws::String m_doctorId;
+    Aws::String m_lastName;
   };
 
 } // namespace Model

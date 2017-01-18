@@ -39,27 +39,6 @@ namespace Model
     Aws::Utils::Json::JsonValue Jsonize() const;
 
     
-    inline const Aws::String& GetTimeSlot() const{ return m_timeSlot; }
-
-    
-    inline void SetTimeSlot(const Aws::String& value) { m_timeSlotHasBeenSet = true; m_timeSlot = value; }
-
-    
-    inline void SetTimeSlot(Aws::String&& value) { m_timeSlotHasBeenSet = true; m_timeSlot = value; }
-
-    
-    inline void SetTimeSlot(const char* value) { m_timeSlotHasBeenSet = true; m_timeSlot.assign(value); }
-
-    
-    inline QueryDoctorScheduleResult_timeSlotsItem& WithTimeSlot(const Aws::String& value) { SetTimeSlot(value); return *this;}
-
-    
-    inline QueryDoctorScheduleResult_timeSlotsItem& WithTimeSlot(Aws::String&& value) { SetTimeSlot(value); return *this;}
-
-    
-    inline QueryDoctorScheduleResult_timeSlotsItem& WithTimeSlot(const char* value) { SetTimeSlot(value); return *this;}
-
-    
     inline const Aws::String& GetAppointmentId() const{ return m_appointmentId; }
 
     
@@ -80,11 +59,32 @@ namespace Model
     
     inline QueryDoctorScheduleResult_timeSlotsItem& WithAppointmentId(const char* value) { SetAppointmentId(value); return *this;}
 
+    
+    inline const Aws::String& GetTimeSlot() const{ return m_timeSlot; }
+
+    
+    inline void SetTimeSlot(const Aws::String& value) { m_timeSlotHasBeenSet = true; m_timeSlot = value; }
+
+    
+    inline void SetTimeSlot(Aws::String&& value) { m_timeSlotHasBeenSet = true; m_timeSlot = value; }
+
+    
+    inline void SetTimeSlot(const char* value) { m_timeSlotHasBeenSet = true; m_timeSlot.assign(value); }
+
+    
+    inline QueryDoctorScheduleResult_timeSlotsItem& WithTimeSlot(const Aws::String& value) { SetTimeSlot(value); return *this;}
+
+    
+    inline QueryDoctorScheduleResult_timeSlotsItem& WithTimeSlot(Aws::String&& value) { SetTimeSlot(value); return *this;}
+
+    
+    inline QueryDoctorScheduleResult_timeSlotsItem& WithTimeSlot(const char* value) { SetTimeSlot(value); return *this;}
+
   private:
-    Aws::String m_timeSlot;
-    bool m_timeSlotHasBeenSet;
     Aws::String m_appointmentId;
     bool m_appointmentIdHasBeenSet;
+    Aws::String m_timeSlot;
+    bool m_timeSlotHasBeenSet;
   };
 
 } // namespace Model

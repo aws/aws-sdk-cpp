@@ -48,27 +48,6 @@ namespace Model
     inline ClientDoctor_serviceDetailsListItem& WithDurationSeconds(double value) { SetDurationSeconds(value); return *this;}
 
     
-    inline const Aws::String& GetPriceDollars() const{ return m_priceDollars; }
-
-    
-    inline void SetPriceDollars(const Aws::String& value) { m_priceDollarsHasBeenSet = true; m_priceDollars = value; }
-
-    
-    inline void SetPriceDollars(Aws::String&& value) { m_priceDollarsHasBeenSet = true; m_priceDollars = value; }
-
-    
-    inline void SetPriceDollars(const char* value) { m_priceDollarsHasBeenSet = true; m_priceDollars.assign(value); }
-
-    
-    inline ClientDoctor_serviceDetailsListItem& WithPriceDollars(const Aws::String& value) { SetPriceDollars(value); return *this;}
-
-    
-    inline ClientDoctor_serviceDetailsListItem& WithPriceDollars(Aws::String&& value) { SetPriceDollars(value); return *this;}
-
-    
-    inline ClientDoctor_serviceDetailsListItem& WithPriceDollars(const char* value) { SetPriceDollars(value); return *this;}
-
-    
     inline const Aws::String& GetServiceId() const{ return m_serviceId; }
 
     
@@ -88,6 +67,27 @@ namespace Model
 
     
     inline ClientDoctor_serviceDetailsListItem& WithServiceId(const char* value) { SetServiceId(value); return *this;}
+
+    
+    inline const Aws::String& GetPriceDollars() const{ return m_priceDollars; }
+
+    
+    inline void SetPriceDollars(const Aws::String& value) { m_priceDollarsHasBeenSet = true; m_priceDollars = value; }
+
+    
+    inline void SetPriceDollars(Aws::String&& value) { m_priceDollarsHasBeenSet = true; m_priceDollars = value; }
+
+    
+    inline void SetPriceDollars(const char* value) { m_priceDollarsHasBeenSet = true; m_priceDollars.assign(value); }
+
+    
+    inline ClientDoctor_serviceDetailsListItem& WithPriceDollars(const Aws::String& value) { SetPriceDollars(value); return *this;}
+
+    
+    inline ClientDoctor_serviceDetailsListItem& WithPriceDollars(Aws::String&& value) { SetPriceDollars(value); return *this;}
+
+    
+    inline ClientDoctor_serviceDetailsListItem& WithPriceDollars(const char* value) { SetPriceDollars(value); return *this;}
 
     
     inline const Aws::String& GetDoctorId() const{ return m_doctorId; }
@@ -113,10 +113,10 @@ namespace Model
   private:
     double m_durationSeconds;
     bool m_durationSecondsHasBeenSet;
-    Aws::String m_priceDollars;
-    bool m_priceDollarsHasBeenSet;
     Aws::String m_serviceId;
     bool m_serviceIdHasBeenSet;
+    Aws::String m_priceDollars;
+    bool m_priceDollarsHasBeenSet;
     Aws::String m_doctorId;
     bool m_doctorIdHasBeenSet;
   };

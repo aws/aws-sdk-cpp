@@ -22,9 +22,9 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 cancelAppointmentRequest::cancelAppointmentRequest() : 
+    m_appointmentIdHasBeenSet(false),
     m_lateCancellation(false),
-    m_lateCancellationHasBeenSet(false),
-    m_appointmentIdHasBeenSet(false)
+    m_lateCancellationHasBeenSet(false)
 {
 }
 
@@ -32,15 +32,15 @@ Aws::String cancelAppointmentRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  if(m_lateCancellationHasBeenSet)
-  {
-   payload.WithBool("lateCancellation", m_lateCancellation);
-
-  }
-
   if(m_appointmentIdHasBeenSet)
   {
    payload.WithString("appointmentId", m_appointmentId);
+
+  }
+
+  if(m_lateCancellationHasBeenSet)
+  {
+   payload.WithBool("lateCancellation", m_lateCancellation);
 
   }
 

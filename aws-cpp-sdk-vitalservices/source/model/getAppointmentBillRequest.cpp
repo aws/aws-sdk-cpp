@@ -22,10 +22,10 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 getAppointmentBillRequest::getAppointmentBillRequest() : 
-    m_totalPriceHasBeenSet(false),
-    m_billFingerprintHasBeenSet(false),
     m_startTimeHasBeenSet(false),
+    m_totalPriceCentsHasBeenSet(false),
     m_serviceIdHasBeenSet(false),
+    m_billFingerprintHasBeenSet(false),
     m_doctorIdHasBeenSet(false)
 {
 }
@@ -34,27 +34,27 @@ Aws::String getAppointmentBillRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  if(m_totalPriceHasBeenSet)
-  {
-   payload.WithString("totalPrice", m_totalPrice);
-
-  }
-
-  if(m_billFingerprintHasBeenSet)
-  {
-   payload.WithString("billFingerprint", m_billFingerprint);
-
-  }
-
   if(m_startTimeHasBeenSet)
   {
    payload.WithString("startTime", m_startTime);
 
   }
 
+  if(m_totalPriceCentsHasBeenSet)
+  {
+   payload.WithString("totalPriceCents", m_totalPriceCents);
+
+  }
+
   if(m_serviceIdHasBeenSet)
   {
    payload.WithString("serviceId", m_serviceId);
+
+  }
+
+  if(m_billFingerprintHasBeenSet)
+  {
+   payload.WithString("billFingerprint", m_billFingerprint);
 
   }
 

@@ -42,6 +42,15 @@ namespace Model
     registerDoctorResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
     
+    inline double GetLongitude() const{ return m_longitude; }
+
+    
+    inline void SetLongitude(double value) { m_longitude = value; }
+
+    
+    inline registerDoctorResult& WithLongitude(double value) { SetLongitude(value); return *this;}
+
+    
     inline const Aws::String& GetOfficeNumber() const{ return m_officeNumber; }
 
     
@@ -63,171 +72,6 @@ namespace Model
     inline registerDoctorResult& WithOfficeNumber(const char* value) { SetOfficeNumber(value); return *this;}
 
     
-    inline const Aws::String& GetStreetNumberAndName() const{ return m_streetNumberAndName; }
-
-    
-    inline void SetStreetNumberAndName(const Aws::String& value) { m_streetNumberAndName = value; }
-
-    
-    inline void SetStreetNumberAndName(Aws::String&& value) { m_streetNumberAndName = value; }
-
-    
-    inline void SetStreetNumberAndName(const char* value) { m_streetNumberAndName.assign(value); }
-
-    
-    inline registerDoctorResult& WithStreetNumberAndName(const Aws::String& value) { SetStreetNumberAndName(value); return *this;}
-
-    
-    inline registerDoctorResult& WithStreetNumberAndName(Aws::String&& value) { SetStreetNumberAndName(value); return *this;}
-
-    
-    inline registerDoctorResult& WithStreetNumberAndName(const char* value) { SetStreetNumberAndName(value); return *this;}
-
-    
-    inline const Aws::String& GetLastName() const{ return m_lastName; }
-
-    
-    inline void SetLastName(const Aws::String& value) { m_lastName = value; }
-
-    
-    inline void SetLastName(Aws::String&& value) { m_lastName = value; }
-
-    
-    inline void SetLastName(const char* value) { m_lastName.assign(value); }
-
-    
-    inline registerDoctorResult& WithLastName(const Aws::String& value) { SetLastName(value); return *this;}
-
-    
-    inline registerDoctorResult& WithLastName(Aws::String&& value) { SetLastName(value); return *this;}
-
-    
-    inline registerDoctorResult& WithLastName(const char* value) { SetLastName(value); return *this;}
-
-    
-    inline const Aws::String& GetCoverPhotoUrl() const{ return m_coverPhotoUrl; }
-
-    
-    inline void SetCoverPhotoUrl(const Aws::String& value) { m_coverPhotoUrl = value; }
-
-    
-    inline void SetCoverPhotoUrl(Aws::String&& value) { m_coverPhotoUrl = value; }
-
-    
-    inline void SetCoverPhotoUrl(const char* value) { m_coverPhotoUrl.assign(value); }
-
-    
-    inline registerDoctorResult& WithCoverPhotoUrl(const Aws::String& value) { SetCoverPhotoUrl(value); return *this;}
-
-    
-    inline registerDoctorResult& WithCoverPhotoUrl(Aws::String&& value) { SetCoverPhotoUrl(value); return *this;}
-
-    
-    inline registerDoctorResult& WithCoverPhotoUrl(const char* value) { SetCoverPhotoUrl(value); return *this;}
-
-    
-    inline const Aws::String& GetId() const{ return m_id; }
-
-    
-    inline void SetId(const Aws::String& value) { m_id = value; }
-
-    
-    inline void SetId(Aws::String&& value) { m_id = value; }
-
-    
-    inline void SetId(const char* value) { m_id.assign(value); }
-
-    
-    inline registerDoctorResult& WithId(const Aws::String& value) { SetId(value); return *this;}
-
-    
-    inline registerDoctorResult& WithId(Aws::String&& value) { SetId(value); return *this;}
-
-    
-    inline registerDoctorResult& WithId(const char* value) { SetId(value); return *this;}
-
-    
-    inline const Aws::String& GetProfilePhotoUrl() const{ return m_profilePhotoUrl; }
-
-    
-    inline void SetProfilePhotoUrl(const Aws::String& value) { m_profilePhotoUrl = value; }
-
-    
-    inline void SetProfilePhotoUrl(Aws::String&& value) { m_profilePhotoUrl = value; }
-
-    
-    inline void SetProfilePhotoUrl(const char* value) { m_profilePhotoUrl.assign(value); }
-
-    
-    inline registerDoctorResult& WithProfilePhotoUrl(const Aws::String& value) { SetProfilePhotoUrl(value); return *this;}
-
-    
-    inline registerDoctorResult& WithProfilePhotoUrl(Aws::String&& value) { SetProfilePhotoUrl(value); return *this;}
-
-    
-    inline registerDoctorResult& WithProfilePhotoUrl(const char* value) { SetProfilePhotoUrl(value); return *this;}
-
-    
-    inline const Aws::String& GetPostalCode() const{ return m_postalCode; }
-
-    
-    inline void SetPostalCode(const Aws::String& value) { m_postalCode = value; }
-
-    
-    inline void SetPostalCode(Aws::String&& value) { m_postalCode = value; }
-
-    
-    inline void SetPostalCode(const char* value) { m_postalCode.assign(value); }
-
-    
-    inline registerDoctorResult& WithPostalCode(const Aws::String& value) { SetPostalCode(value); return *this;}
-
-    
-    inline registerDoctorResult& WithPostalCode(Aws::String&& value) { SetPostalCode(value); return *this;}
-
-    
-    inline registerDoctorResult& WithPostalCode(const char* value) { SetPostalCode(value); return *this;}
-
-    
-    inline const Aws::Vector<ClientDoctor_serviceDetailsListItem>& GetServiceDetailsList() const{ return m_serviceDetailsList; }
-
-    
-    inline void SetServiceDetailsList(const Aws::Vector<ClientDoctor_serviceDetailsListItem>& value) { m_serviceDetailsList = value; }
-
-    
-    inline void SetServiceDetailsList(Aws::Vector<ClientDoctor_serviceDetailsListItem>&& value) { m_serviceDetailsList = value; }
-
-    
-    inline registerDoctorResult& WithServiceDetailsList(const Aws::Vector<ClientDoctor_serviceDetailsListItem>& value) { SetServiceDetailsList(value); return *this;}
-
-    
-    inline registerDoctorResult& WithServiceDetailsList(Aws::Vector<ClientDoctor_serviceDetailsListItem>&& value) { SetServiceDetailsList(value); return *this;}
-
-    
-    inline registerDoctorResult& AddServiceDetailsList(const ClientDoctor_serviceDetailsListItem& value) { m_serviceDetailsList.push_back(value); return *this; }
-
-    
-    inline registerDoctorResult& AddServiceDetailsList(ClientDoctor_serviceDetailsListItem&& value) { m_serviceDetailsList.push_back(value); return *this; }
-
-    
-    inline double GetLongitude() const{ return m_longitude; }
-
-    
-    inline void SetLongitude(double value) { m_longitude = value; }
-
-    
-    inline registerDoctorResult& WithLongitude(double value) { SetLongitude(value); return *this;}
-
-    
-    inline bool GetPayoutInfoIsSet() const{ return m_payoutInfoIsSet; }
-
-    
-    inline void SetPayoutInfoIsSet(bool value) { m_payoutInfoIsSet = value; }
-
-    
-    inline registerDoctorResult& WithPayoutInfoIsSet(bool value) { SetPayoutInfoIsSet(value); return *this;}
-
-    
     inline const Aws::String& GetSuite() const{ return m_suite; }
 
     
@@ -247,30 +91,6 @@ namespace Model
 
     
     inline registerDoctorResult& WithSuite(const char* value) { SetSuite(value); return *this;}
-
-    
-    inline const Aws::Vector<Aws::String>& GetServicesOffered() const{ return m_servicesOffered; }
-
-    
-    inline void SetServicesOffered(const Aws::Vector<Aws::String>& value) { m_servicesOffered = value; }
-
-    
-    inline void SetServicesOffered(Aws::Vector<Aws::String>&& value) { m_servicesOffered = value; }
-
-    
-    inline registerDoctorResult& WithServicesOffered(const Aws::Vector<Aws::String>& value) { SetServicesOffered(value); return *this;}
-
-    
-    inline registerDoctorResult& WithServicesOffered(Aws::Vector<Aws::String>&& value) { SetServicesOffered(value); return *this;}
-
-    
-    inline registerDoctorResult& AddServicesOffered(const Aws::String& value) { m_servicesOffered.push_back(value); return *this; }
-
-    
-    inline registerDoctorResult& AddServicesOffered(Aws::String&& value) { m_servicesOffered.push_back(value); return *this; }
-
-    
-    inline registerDoctorResult& AddServicesOffered(const char* value) { m_servicesOffered.push_back(value); return *this; }
 
     
     inline const Aws::String& GetCity() const{ return m_city; }
@@ -315,25 +135,133 @@ namespace Model
     inline registerDoctorResult& WithFirstName(const char* value) { SetFirstName(value); return *this;}
 
     
-    inline const Aws::String& GetSpecialtyId() const{ return m_specialtyId; }
+    inline const Aws::String& GetPostalCode() const{ return m_postalCode; }
 
     
-    inline void SetSpecialtyId(const Aws::String& value) { m_specialtyId = value; }
+    inline void SetPostalCode(const Aws::String& value) { m_postalCode = value; }
 
     
-    inline void SetSpecialtyId(Aws::String&& value) { m_specialtyId = value; }
+    inline void SetPostalCode(Aws::String&& value) { m_postalCode = value; }
 
     
-    inline void SetSpecialtyId(const char* value) { m_specialtyId.assign(value); }
+    inline void SetPostalCode(const char* value) { m_postalCode.assign(value); }
 
     
-    inline registerDoctorResult& WithSpecialtyId(const Aws::String& value) { SetSpecialtyId(value); return *this;}
+    inline registerDoctorResult& WithPostalCode(const Aws::String& value) { SetPostalCode(value); return *this;}
 
     
-    inline registerDoctorResult& WithSpecialtyId(Aws::String&& value) { SetSpecialtyId(value); return *this;}
+    inline registerDoctorResult& WithPostalCode(Aws::String&& value) { SetPostalCode(value); return *this;}
 
     
-    inline registerDoctorResult& WithSpecialtyId(const char* value) { SetSpecialtyId(value); return *this;}
+    inline registerDoctorResult& WithPostalCode(const char* value) { SetPostalCode(value); return *this;}
+
+    
+    inline const Aws::String& GetLastName() const{ return m_lastName; }
+
+    
+    inline void SetLastName(const Aws::String& value) { m_lastName = value; }
+
+    
+    inline void SetLastName(Aws::String&& value) { m_lastName = value; }
+
+    
+    inline void SetLastName(const char* value) { m_lastName.assign(value); }
+
+    
+    inline registerDoctorResult& WithLastName(const Aws::String& value) { SetLastName(value); return *this;}
+
+    
+    inline registerDoctorResult& WithLastName(Aws::String&& value) { SetLastName(value); return *this;}
+
+    
+    inline registerDoctorResult& WithLastName(const char* value) { SetLastName(value); return *this;}
+
+    
+    inline const Aws::Vector<ClientDoctor_serviceDetailsListItem>& GetServiceDetailsList() const{ return m_serviceDetailsList; }
+
+    
+    inline void SetServiceDetailsList(const Aws::Vector<ClientDoctor_serviceDetailsListItem>& value) { m_serviceDetailsList = value; }
+
+    
+    inline void SetServiceDetailsList(Aws::Vector<ClientDoctor_serviceDetailsListItem>&& value) { m_serviceDetailsList = value; }
+
+    
+    inline registerDoctorResult& WithServiceDetailsList(const Aws::Vector<ClientDoctor_serviceDetailsListItem>& value) { SetServiceDetailsList(value); return *this;}
+
+    
+    inline registerDoctorResult& WithServiceDetailsList(Aws::Vector<ClientDoctor_serviceDetailsListItem>&& value) { SetServiceDetailsList(value); return *this;}
+
+    
+    inline registerDoctorResult& AddServiceDetailsList(const ClientDoctor_serviceDetailsListItem& value) { m_serviceDetailsList.push_back(value); return *this; }
+
+    
+    inline registerDoctorResult& AddServiceDetailsList(ClientDoctor_serviceDetailsListItem&& value) { m_serviceDetailsList.push_back(value); return *this; }
+
+    
+    inline const Aws::String& GetProfilePhotoUrl() const{ return m_profilePhotoUrl; }
+
+    
+    inline void SetProfilePhotoUrl(const Aws::String& value) { m_profilePhotoUrl = value; }
+
+    
+    inline void SetProfilePhotoUrl(Aws::String&& value) { m_profilePhotoUrl = value; }
+
+    
+    inline void SetProfilePhotoUrl(const char* value) { m_profilePhotoUrl.assign(value); }
+
+    
+    inline registerDoctorResult& WithProfilePhotoUrl(const Aws::String& value) { SetProfilePhotoUrl(value); return *this;}
+
+    
+    inline registerDoctorResult& WithProfilePhotoUrl(Aws::String&& value) { SetProfilePhotoUrl(value); return *this;}
+
+    
+    inline registerDoctorResult& WithProfilePhotoUrl(const char* value) { SetProfilePhotoUrl(value); return *this;}
+
+    
+    inline const Aws::String& GetCoverPhotoUrl() const{ return m_coverPhotoUrl; }
+
+    
+    inline void SetCoverPhotoUrl(const Aws::String& value) { m_coverPhotoUrl = value; }
+
+    
+    inline void SetCoverPhotoUrl(Aws::String&& value) { m_coverPhotoUrl = value; }
+
+    
+    inline void SetCoverPhotoUrl(const char* value) { m_coverPhotoUrl.assign(value); }
+
+    
+    inline registerDoctorResult& WithCoverPhotoUrl(const Aws::String& value) { SetCoverPhotoUrl(value); return *this;}
+
+    
+    inline registerDoctorResult& WithCoverPhotoUrl(Aws::String&& value) { SetCoverPhotoUrl(value); return *this;}
+
+    
+    inline registerDoctorResult& WithCoverPhotoUrl(const char* value) { SetCoverPhotoUrl(value); return *this;}
+
+    
+    inline const Aws::Vector<Aws::String>& GetServicesOffered() const{ return m_servicesOffered; }
+
+    
+    inline void SetServicesOffered(const Aws::Vector<Aws::String>& value) { m_servicesOffered = value; }
+
+    
+    inline void SetServicesOffered(Aws::Vector<Aws::String>&& value) { m_servicesOffered = value; }
+
+    
+    inline registerDoctorResult& WithServicesOffered(const Aws::Vector<Aws::String>& value) { SetServicesOffered(value); return *this;}
+
+    
+    inline registerDoctorResult& WithServicesOffered(Aws::Vector<Aws::String>&& value) { SetServicesOffered(value); return *this;}
+
+    
+    inline registerDoctorResult& AddServicesOffered(const Aws::String& value) { m_servicesOffered.push_back(value); return *this; }
+
+    
+    inline registerDoctorResult& AddServicesOffered(Aws::String&& value) { m_servicesOffered.push_back(value); return *this; }
+
+    
+    inline registerDoctorResult& AddServicesOffered(const char* value) { m_servicesOffered.push_back(value); return *this; }
 
     
     inline double GetLatitude() const{ return m_latitude; }
@@ -343,6 +271,36 @@ namespace Model
 
     
     inline registerDoctorResult& WithLatitude(double value) { SetLatitude(value); return *this;}
+
+    
+    inline const Aws::String& GetId() const{ return m_id; }
+
+    
+    inline void SetId(const Aws::String& value) { m_id = value; }
+
+    
+    inline void SetId(Aws::String&& value) { m_id = value; }
+
+    
+    inline void SetId(const char* value) { m_id.assign(value); }
+
+    
+    inline registerDoctorResult& WithId(const Aws::String& value) { SetId(value); return *this;}
+
+    
+    inline registerDoctorResult& WithId(Aws::String&& value) { SetId(value); return *this;}
+
+    
+    inline registerDoctorResult& WithId(const char* value) { SetId(value); return *this;}
+
+    
+    inline bool GetPayoutInfoIsSet() const{ return m_payoutInfoIsSet; }
+
+    
+    inline void SetPayoutInfoIsSet(bool value) { m_payoutInfoIsSet = value; }
+
+    
+    inline registerDoctorResult& WithPayoutInfoIsSet(bool value) { SetPayoutInfoIsSet(value); return *this;}
 
     
     inline const Aws::String& GetAdministrativeAreaL1() const{ return m_administrativeAreaL1; }
@@ -365,24 +323,66 @@ namespace Model
     
     inline registerDoctorResult& WithAdministrativeAreaL1(const char* value) { SetAdministrativeAreaL1(value); return *this;}
 
+    
+    inline const Aws::String& GetSpecialtyId() const{ return m_specialtyId; }
+
+    
+    inline void SetSpecialtyId(const Aws::String& value) { m_specialtyId = value; }
+
+    
+    inline void SetSpecialtyId(Aws::String&& value) { m_specialtyId = value; }
+
+    
+    inline void SetSpecialtyId(const char* value) { m_specialtyId.assign(value); }
+
+    
+    inline registerDoctorResult& WithSpecialtyId(const Aws::String& value) { SetSpecialtyId(value); return *this;}
+
+    
+    inline registerDoctorResult& WithSpecialtyId(Aws::String&& value) { SetSpecialtyId(value); return *this;}
+
+    
+    inline registerDoctorResult& WithSpecialtyId(const char* value) { SetSpecialtyId(value); return *this;}
+
+    
+    inline const Aws::String& GetStreetNumberAndName() const{ return m_streetNumberAndName; }
+
+    
+    inline void SetStreetNumberAndName(const Aws::String& value) { m_streetNumberAndName = value; }
+
+    
+    inline void SetStreetNumberAndName(Aws::String&& value) { m_streetNumberAndName = value; }
+
+    
+    inline void SetStreetNumberAndName(const char* value) { m_streetNumberAndName.assign(value); }
+
+    
+    inline registerDoctorResult& WithStreetNumberAndName(const Aws::String& value) { SetStreetNumberAndName(value); return *this;}
+
+    
+    inline registerDoctorResult& WithStreetNumberAndName(Aws::String&& value) { SetStreetNumberAndName(value); return *this;}
+
+    
+    inline registerDoctorResult& WithStreetNumberAndName(const char* value) { SetStreetNumberAndName(value); return *this;}
+
   private:
-    Aws::String m_officeNumber;
-    Aws::String m_streetNumberAndName;
-    Aws::String m_lastName;
-    Aws::String m_coverPhotoUrl;
-    Aws::String m_id;
-    Aws::String m_profilePhotoUrl;
-    Aws::String m_postalCode;
-    Aws::Vector<ClientDoctor_serviceDetailsListItem> m_serviceDetailsList;
     double m_longitude;
-    bool m_payoutInfoIsSet;
+    Aws::String m_officeNumber;
     Aws::String m_suite;
-    Aws::Vector<Aws::String> m_servicesOffered;
     Aws::String m_city;
     Aws::String m_firstName;
-    Aws::String m_specialtyId;
+    Aws::String m_postalCode;
+    Aws::String m_lastName;
+    Aws::Vector<ClientDoctor_serviceDetailsListItem> m_serviceDetailsList;
+    Aws::String m_profilePhotoUrl;
+    Aws::String m_coverPhotoUrl;
+    Aws::Vector<Aws::String> m_servicesOffered;
     double m_latitude;
+    Aws::String m_id;
+    bool m_payoutInfoIsSet;
     Aws::String m_administrativeAreaL1;
+    Aws::String m_specialtyId;
+    Aws::String m_streetNumberAndName;
   };
 
 } // namespace Model

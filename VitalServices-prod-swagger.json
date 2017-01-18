@@ -1,7 +1,7 @@
 {
   "swagger" : "2.0",
   "info" : {
-    "version" : "2017-01-18T15:33:24Z",
+    "version" : "2017-01-18T21:18:16Z",
     "title" : "VitalServices"
   },
   "host" : "h6wguq9ghl.execute-api.us-east-1.amazonaws.com",
@@ -925,7 +925,7 @@
     },
     "ScheduleAppointmentRequest" : {
       "type" : "object",
-      "required" : [ "billFingerprint", "doctorId", "serviceId", "startTime", "totalPrice" ],
+      "required" : [ "billFingerprint", "doctorId", "serviceId", "startTime", "totalPriceCents" ],
       "properties" : {
         "doctorId" : {
           "type" : "string"
@@ -936,7 +936,7 @@
         "serviceId" : {
           "type" : "string"
         },
-        "totalPrice" : {
+        "totalPriceCents" : {
           "type" : "string"
         },
         "billFingerprint" : {
@@ -1120,18 +1120,18 @@
     },
     "ClientAppointmentBill" : {
       "type" : "object",
-      "required" : [ "basePrice", "doctorServiceFee", "fingerprint", "patientServiceFee", "totalPrice" ],
+      "required" : [ "fingerprint" ],
       "properties" : {
-        "basePrice" : {
+        "basePriceCents" : {
           "type" : "string"
         },
-        "doctorServiceFee" : {
+        "doctorServiceFeeCents" : {
           "type" : "string"
         },
-        "patientServiceFee" : {
+        "patientServiceFeeCents" : {
           "type" : "string"
         },
-        "totalPrice" : {
+        "totalPriceCents" : {
           "type" : "string"
         },
         "fingerprint" : {
@@ -1295,7 +1295,7 @@
     },
     "ClientAppointment" : {
       "type" : "object",
-      "required" : [ "appointmentState", "basePrice", "chargeId", "dateBooked", "doctorEarnings", "doctorId", "doctorServiceFee", "durationSeconds", "id", "patientId", "patientServiceFee", "serviceId", "startTime", "totalPrice" ],
+      "required" : [ "appointmentState", "chargeId", "dateBooked", "doctorId", "durationSeconds", "id", "patientId", "serviceId", "startTime" ],
       "properties" : {
         "id" : {
           "type" : "string",
@@ -1304,7 +1304,7 @@
         "appointmentState" : {
           "type" : "string"
         },
-        "basePrice" : {
+        "basePriceCents" : {
           "type" : "string"
         },
         "chargeId" : {
@@ -1313,13 +1313,13 @@
         "dateBooked" : {
           "type" : "string"
         },
-        "doctorEarnings" : {
+        "doctorEarningsCents" : {
           "type" : "string"
         },
         "doctorId" : {
           "type" : "string"
         },
-        "doctorServiceFee" : {
+        "doctorServiceFeeCents" : {
           "type" : "string"
         },
         "durationSeconds" : {
@@ -1328,7 +1328,7 @@
         "patientId" : {
           "type" : "string"
         },
-        "patientServiceFee" : {
+        "patientServiceFeeCents" : {
           "type" : "string"
         },
         "serviceId" : {
@@ -1337,10 +1337,10 @@
         "startTime" : {
           "type" : "string"
         },
-        "totalPrice" : {
+        "totalPriceCents" : {
           "type" : "string"
         },
-        "amountRefunded" : {
+        "amountRefundedCents" : {
           "type" : "string"
         },
         "cancellationDate" : {

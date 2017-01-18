@@ -36,33 +36,9 @@ updateUserResult::updateUserResult(const AmazonWebServiceResult<JsonValue>& resu
 updateUserResult& updateUserResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
-  if(jsonValue.ValueExists("stripeCustomerId"))
+  if(jsonValue.ValueExists("email"))
   {
-    m_stripeCustomerId = jsonValue.GetString("stripeCustomerId");
-
-  }
-
-  if(jsonValue.ValueExists("doctorId"))
-  {
-    m_doctorId = jsonValue.GetString("doctorId");
-
-  }
-
-  if(jsonValue.ValueExists("firstName"))
-  {
-    m_firstName = jsonValue.GetString("firstName");
-
-  }
-
-  if(jsonValue.ValueExists("mobileNumber"))
-  {
-    m_mobileNumber = jsonValue.GetString("mobileNumber");
-
-  }
-
-  if(jsonValue.ValueExists("lastName"))
-  {
-    m_lastName = jsonValue.GetString("lastName");
+    m_email = jsonValue.GetString("email");
 
   }
 
@@ -72,15 +48,39 @@ updateUserResult& updateUserResult::operator =(const AmazonWebServiceResult<Json
 
   }
 
+  if(jsonValue.ValueExists("mobileNumber"))
+  {
+    m_mobileNumber = jsonValue.GetString("mobileNumber");
+
+  }
+
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
 
   }
 
-  if(jsonValue.ValueExists("email"))
+  if(jsonValue.ValueExists("stripeCustomerId"))
   {
-    m_email = jsonValue.GetString("email");
+    m_stripeCustomerId = jsonValue.GetString("stripeCustomerId");
+
+  }
+
+  if(jsonValue.ValueExists("firstName"))
+  {
+    m_firstName = jsonValue.GetString("firstName");
+
+  }
+
+  if(jsonValue.ValueExists("doctorId"))
+  {
+    m_doctorId = jsonValue.GetString("doctorId");
+
+  }
+
+  if(jsonValue.ValueExists("lastName"))
+  {
+    m_lastName = jsonValue.GetString("lastName");
 
   }
 

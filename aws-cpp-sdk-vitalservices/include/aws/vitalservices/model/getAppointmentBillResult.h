@@ -40,46 +40,88 @@ namespace Model
     getAppointmentBillResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
     
-    inline const Aws::String& GetPatientServiceFee() const{ return m_patientServiceFee; }
+    inline const Aws::String& GetBasePriceCents() const{ return m_basePriceCents; }
 
     
-    inline void SetPatientServiceFee(const Aws::String& value) { m_patientServiceFee = value; }
+    inline void SetBasePriceCents(const Aws::String& value) { m_basePriceCents = value; }
 
     
-    inline void SetPatientServiceFee(Aws::String&& value) { m_patientServiceFee = value; }
+    inline void SetBasePriceCents(Aws::String&& value) { m_basePriceCents = value; }
 
     
-    inline void SetPatientServiceFee(const char* value) { m_patientServiceFee.assign(value); }
+    inline void SetBasePriceCents(const char* value) { m_basePriceCents.assign(value); }
 
     
-    inline getAppointmentBillResult& WithPatientServiceFee(const Aws::String& value) { SetPatientServiceFee(value); return *this;}
+    inline getAppointmentBillResult& WithBasePriceCents(const Aws::String& value) { SetBasePriceCents(value); return *this;}
 
     
-    inline getAppointmentBillResult& WithPatientServiceFee(Aws::String&& value) { SetPatientServiceFee(value); return *this;}
+    inline getAppointmentBillResult& WithBasePriceCents(Aws::String&& value) { SetBasePriceCents(value); return *this;}
 
     
-    inline getAppointmentBillResult& WithPatientServiceFee(const char* value) { SetPatientServiceFee(value); return *this;}
+    inline getAppointmentBillResult& WithBasePriceCents(const char* value) { SetBasePriceCents(value); return *this;}
 
     
-    inline const Aws::String& GetTotalPrice() const{ return m_totalPrice; }
+    inline const Aws::String& GetDoctorServiceFeeCents() const{ return m_doctorServiceFeeCents; }
 
     
-    inline void SetTotalPrice(const Aws::String& value) { m_totalPrice = value; }
+    inline void SetDoctorServiceFeeCents(const Aws::String& value) { m_doctorServiceFeeCents = value; }
 
     
-    inline void SetTotalPrice(Aws::String&& value) { m_totalPrice = value; }
+    inline void SetDoctorServiceFeeCents(Aws::String&& value) { m_doctorServiceFeeCents = value; }
 
     
-    inline void SetTotalPrice(const char* value) { m_totalPrice.assign(value); }
+    inline void SetDoctorServiceFeeCents(const char* value) { m_doctorServiceFeeCents.assign(value); }
 
     
-    inline getAppointmentBillResult& WithTotalPrice(const Aws::String& value) { SetTotalPrice(value); return *this;}
+    inline getAppointmentBillResult& WithDoctorServiceFeeCents(const Aws::String& value) { SetDoctorServiceFeeCents(value); return *this;}
 
     
-    inline getAppointmentBillResult& WithTotalPrice(Aws::String&& value) { SetTotalPrice(value); return *this;}
+    inline getAppointmentBillResult& WithDoctorServiceFeeCents(Aws::String&& value) { SetDoctorServiceFeeCents(value); return *this;}
 
     
-    inline getAppointmentBillResult& WithTotalPrice(const char* value) { SetTotalPrice(value); return *this;}
+    inline getAppointmentBillResult& WithDoctorServiceFeeCents(const char* value) { SetDoctorServiceFeeCents(value); return *this;}
+
+    
+    inline const Aws::String& GetTotalPriceCents() const{ return m_totalPriceCents; }
+
+    
+    inline void SetTotalPriceCents(const Aws::String& value) { m_totalPriceCents = value; }
+
+    
+    inline void SetTotalPriceCents(Aws::String&& value) { m_totalPriceCents = value; }
+
+    
+    inline void SetTotalPriceCents(const char* value) { m_totalPriceCents.assign(value); }
+
+    
+    inline getAppointmentBillResult& WithTotalPriceCents(const Aws::String& value) { SetTotalPriceCents(value); return *this;}
+
+    
+    inline getAppointmentBillResult& WithTotalPriceCents(Aws::String&& value) { SetTotalPriceCents(value); return *this;}
+
+    
+    inline getAppointmentBillResult& WithTotalPriceCents(const char* value) { SetTotalPriceCents(value); return *this;}
+
+    
+    inline const Aws::String& GetPatientServiceFeeCents() const{ return m_patientServiceFeeCents; }
+
+    
+    inline void SetPatientServiceFeeCents(const Aws::String& value) { m_patientServiceFeeCents = value; }
+
+    
+    inline void SetPatientServiceFeeCents(Aws::String&& value) { m_patientServiceFeeCents = value; }
+
+    
+    inline void SetPatientServiceFeeCents(const char* value) { m_patientServiceFeeCents.assign(value); }
+
+    
+    inline getAppointmentBillResult& WithPatientServiceFeeCents(const Aws::String& value) { SetPatientServiceFeeCents(value); return *this;}
+
+    
+    inline getAppointmentBillResult& WithPatientServiceFeeCents(Aws::String&& value) { SetPatientServiceFeeCents(value); return *this;}
+
+    
+    inline getAppointmentBillResult& WithPatientServiceFeeCents(const char* value) { SetPatientServiceFeeCents(value); return *this;}
 
     
     inline const Aws::String& GetFingerprint() const{ return m_fingerprint; }
@@ -102,54 +144,12 @@ namespace Model
     
     inline getAppointmentBillResult& WithFingerprint(const char* value) { SetFingerprint(value); return *this;}
 
-    
-    inline const Aws::String& GetBasePrice() const{ return m_basePrice; }
-
-    
-    inline void SetBasePrice(const Aws::String& value) { m_basePrice = value; }
-
-    
-    inline void SetBasePrice(Aws::String&& value) { m_basePrice = value; }
-
-    
-    inline void SetBasePrice(const char* value) { m_basePrice.assign(value); }
-
-    
-    inline getAppointmentBillResult& WithBasePrice(const Aws::String& value) { SetBasePrice(value); return *this;}
-
-    
-    inline getAppointmentBillResult& WithBasePrice(Aws::String&& value) { SetBasePrice(value); return *this;}
-
-    
-    inline getAppointmentBillResult& WithBasePrice(const char* value) { SetBasePrice(value); return *this;}
-
-    
-    inline const Aws::String& GetDoctorServiceFee() const{ return m_doctorServiceFee; }
-
-    
-    inline void SetDoctorServiceFee(const Aws::String& value) { m_doctorServiceFee = value; }
-
-    
-    inline void SetDoctorServiceFee(Aws::String&& value) { m_doctorServiceFee = value; }
-
-    
-    inline void SetDoctorServiceFee(const char* value) { m_doctorServiceFee.assign(value); }
-
-    
-    inline getAppointmentBillResult& WithDoctorServiceFee(const Aws::String& value) { SetDoctorServiceFee(value); return *this;}
-
-    
-    inline getAppointmentBillResult& WithDoctorServiceFee(Aws::String&& value) { SetDoctorServiceFee(value); return *this;}
-
-    
-    inline getAppointmentBillResult& WithDoctorServiceFee(const char* value) { SetDoctorServiceFee(value); return *this;}
-
   private:
-    Aws::String m_patientServiceFee;
-    Aws::String m_totalPrice;
+    Aws::String m_basePriceCents;
+    Aws::String m_doctorServiceFeeCents;
+    Aws::String m_totalPriceCents;
+    Aws::String m_patientServiceFeeCents;
     Aws::String m_fingerprint;
-    Aws::String m_basePrice;
-    Aws::String m_doctorServiceFee;
   };
 
 } // namespace Model

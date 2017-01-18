@@ -28,32 +28,32 @@ namespace Model
 {
 
 QueryDoctorScheduleResult_timeSlotsItem::QueryDoctorScheduleResult_timeSlotsItem() : 
-    m_timeSlotHasBeenSet(false),
-    m_appointmentIdHasBeenSet(false)
+    m_appointmentIdHasBeenSet(false),
+    m_timeSlotHasBeenSet(false)
 {
 }
 
 QueryDoctorScheduleResult_timeSlotsItem::QueryDoctorScheduleResult_timeSlotsItem(const JsonValue& jsonValue) : 
-    m_timeSlotHasBeenSet(false),
-    m_appointmentIdHasBeenSet(false)
+    m_appointmentIdHasBeenSet(false),
+    m_timeSlotHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
 QueryDoctorScheduleResult_timeSlotsItem& QueryDoctorScheduleResult_timeSlotsItem::operator =(const JsonValue& jsonValue)
 {
-  if(jsonValue.ValueExists("timeSlot"))
-  {
-    m_timeSlot = jsonValue.GetString("timeSlot");
-
-    m_timeSlotHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("appointmentId"))
   {
     m_appointmentId = jsonValue.GetString("appointmentId");
 
     m_appointmentIdHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("timeSlot"))
+  {
+    m_timeSlot = jsonValue.GetString("timeSlot");
+
+    m_timeSlotHasBeenSet = true;
   }
 
   return *this;
@@ -63,15 +63,15 @@ JsonValue QueryDoctorScheduleResult_timeSlotsItem::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_timeSlotHasBeenSet)
-  {
-   payload.WithString("timeSlot", m_timeSlot);
-
-  }
-
   if(m_appointmentIdHasBeenSet)
   {
    payload.WithString("appointmentId", m_appointmentId);
+
+  }
+
+  if(m_timeSlotHasBeenSet)
+  {
+   payload.WithString("timeSlot", m_timeSlot);
 
   }
 

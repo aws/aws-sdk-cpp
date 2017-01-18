@@ -22,10 +22,10 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 registerUserRequest::registerUserRequest() : 
-    m_firstNameHasBeenSet(false),
+    m_emailHasBeenSet(false),
     m_mobileNumberHasBeenSet(false),
-    m_lastNameHasBeenSet(false),
-    m_emailHasBeenSet(false)
+    m_firstNameHasBeenSet(false),
+    m_lastNameHasBeenSet(false)
 {
 }
 
@@ -33,9 +33,9 @@ Aws::String registerUserRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  if(m_firstNameHasBeenSet)
+  if(m_emailHasBeenSet)
   {
-   payload.WithString("firstName", m_firstName);
+   payload.WithString("email", m_email);
 
   }
 
@@ -45,15 +45,15 @@ Aws::String registerUserRequest::SerializePayload() const
 
   }
 
-  if(m_lastNameHasBeenSet)
+  if(m_firstNameHasBeenSet)
   {
-   payload.WithString("lastName", m_lastName);
+   payload.WithString("firstName", m_firstName);
 
   }
 
-  if(m_emailHasBeenSet)
+  if(m_lastNameHasBeenSet)
   {
-   payload.WithString("email", m_email);
+   payload.WithString("lastName", m_lastName);
 
   }
 
