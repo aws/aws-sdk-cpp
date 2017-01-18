@@ -20,25 +20,25 @@
 #include <aws/core/client/AWSClient.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/json/JsonSerializer.h>
-#include <aws/vitalservices/model/getAppointmentsWithUserResult.h>
-#include <aws/vitalservices/model/getAppointmentBillResult.h>
-#include <aws/vitalservices/model/addCreditCardResult.h>
-#include <aws/vitalservices/model/getDoctorsResult.h>
-#include <aws/vitalservices/model/getDoctorSpecialtiesResult.h>
+#include <aws/vitalservices/model/getAppointmentPaymentMethodResult.h>
 #include <aws/vitalservices/model/updateDoctorResult.h>
+#include <aws/vitalservices/model/urlForFileResult.h>
 #include <aws/vitalservices/model/setDefaultPaymentSourceResult.h>
+#include <aws/vitalservices/model/getAppointmentsWithUserResult.h>
+#include <aws/vitalservices/model/queryDoctorScheduleResult.h>
+#include <aws/vitalservices/model/registerDoctorResult.h>
 #include <aws/vitalservices/model/registerUserResult.h>
-#include <aws/vitalservices/model/getAllDoctorServicesResult.h>
+#include <aws/vitalservices/model/updateUserResult.h>
+#include <aws/vitalservices/model/getDoctorSpecialtiesResult.h>
+#include <aws/vitalservices/model/addCreditCardResult.h>
 #include <aws/vitalservices/model/scheduleAppointmentResult.h>
+#include <aws/vitalservices/model/getDoctorsResult.h>
 #include <aws/vitalservices/model/getLoggedInUserResult.h>
 #include <aws/vitalservices/model/cancelAppointmentResult.h>
-#include <aws/vitalservices/model/queryDoctorScheduleResult.h>
-#include <aws/vitalservices/model/updateUserResult.h>
-#include <aws/vitalservices/model/registerDoctorResult.h>
-#include <aws/vitalservices/model/urlForFileResult.h>
-#include <aws/vitalservices/model/getAppointmentPaymentMethodResult.h>
-#include <aws/vitalservices/model/searchForDoctorsResult.h>
+#include <aws/vitalservices/model/getAllDoctorServicesResult.h>
 #include <aws/vitalservices/model/getStripeCustomerResult.h>
+#include <aws/vitalservices/model/getAppointmentBillResult.h>
+#include <aws/vitalservices/model/searchForDoctorsResult.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
 #include <future>
@@ -84,88 +84,88 @@ namespace VitalServices
 
 namespace Model
 {
-        class getAppointmentsWithUserRequest;
-        class getAppointmentBillRequest;
-        class addCreditCardRequest;
-        class getDoctorsRequest;
-        class getDoctorSpecialtiesRequest;
+        class getAppointmentPaymentMethodRequest;
         class updateDoctorRequest;
+        class urlForFileRequest;
         class setDefaultPaymentSourceRequest;
+        class getAppointmentsWithUserRequest;
+        class queryDoctorScheduleRequest;
+        class registerDoctorRequest;
         class registerUserRequest;
-        class getAllDoctorServicesRequest;
+        class updateUserRequest;
+        class getDoctorSpecialtiesRequest;
+        class addCreditCardRequest;
         class scheduleAppointmentRequest;
+        class getDoctorsRequest;
         class getLoggedInUserRequest;
         class cancelAppointmentRequest;
-        class queryDoctorScheduleRequest;
-        class updateUserRequest;
-        class registerDoctorRequest;
-        class urlForFileRequest;
-        class getAppointmentPaymentMethodRequest;
-        class searchForDoctorsRequest;
+        class getAllDoctorServicesRequest;
         class getStripeCustomerRequest;
+        class getAppointmentBillRequest;
+        class searchForDoctorsRequest;
 
-        typedef Aws::Utils::Outcome<getAppointmentsWithUserResult, Aws::Client::AWSError<VitalServicesErrors>> getAppointmentsWithUserOutcome;
-        typedef Aws::Utils::Outcome<getAppointmentBillResult, Aws::Client::AWSError<VitalServicesErrors>> getAppointmentBillOutcome;
-        typedef Aws::Utils::Outcome<addCreditCardResult, Aws::Client::AWSError<VitalServicesErrors>> addCreditCardOutcome;
-        typedef Aws::Utils::Outcome<getDoctorsResult, Aws::Client::AWSError<VitalServicesErrors>> getDoctorsOutcome;
-        typedef Aws::Utils::Outcome<getDoctorSpecialtiesResult, Aws::Client::AWSError<VitalServicesErrors>> getDoctorSpecialtiesOutcome;
+        typedef Aws::Utils::Outcome<getAppointmentPaymentMethodResult, Aws::Client::AWSError<VitalServicesErrors>> getAppointmentPaymentMethodOutcome;
         typedef Aws::Utils::Outcome<updateDoctorResult, Aws::Client::AWSError<VitalServicesErrors>> updateDoctorOutcome;
+        typedef Aws::Utils::Outcome<urlForFileResult, Aws::Client::AWSError<VitalServicesErrors>> urlForFileOutcome;
         typedef Aws::Utils::Outcome<setDefaultPaymentSourceResult, Aws::Client::AWSError<VitalServicesErrors>> setDefaultPaymentSourceOutcome;
+        typedef Aws::Utils::Outcome<getAppointmentsWithUserResult, Aws::Client::AWSError<VitalServicesErrors>> getAppointmentsWithUserOutcome;
+        typedef Aws::Utils::Outcome<queryDoctorScheduleResult, Aws::Client::AWSError<VitalServicesErrors>> queryDoctorScheduleOutcome;
+        typedef Aws::Utils::Outcome<registerDoctorResult, Aws::Client::AWSError<VitalServicesErrors>> registerDoctorOutcome;
         typedef Aws::Utils::Outcome<registerUserResult, Aws::Client::AWSError<VitalServicesErrors>> registerUserOutcome;
-        typedef Aws::Utils::Outcome<getAllDoctorServicesResult, Aws::Client::AWSError<VitalServicesErrors>> getAllDoctorServicesOutcome;
+        typedef Aws::Utils::Outcome<updateUserResult, Aws::Client::AWSError<VitalServicesErrors>> updateUserOutcome;
+        typedef Aws::Utils::Outcome<getDoctorSpecialtiesResult, Aws::Client::AWSError<VitalServicesErrors>> getDoctorSpecialtiesOutcome;
+        typedef Aws::Utils::Outcome<addCreditCardResult, Aws::Client::AWSError<VitalServicesErrors>> addCreditCardOutcome;
         typedef Aws::Utils::Outcome<scheduleAppointmentResult, Aws::Client::AWSError<VitalServicesErrors>> scheduleAppointmentOutcome;
+        typedef Aws::Utils::Outcome<getDoctorsResult, Aws::Client::AWSError<VitalServicesErrors>> getDoctorsOutcome;
         typedef Aws::Utils::Outcome<getLoggedInUserResult, Aws::Client::AWSError<VitalServicesErrors>> getLoggedInUserOutcome;
         typedef Aws::Utils::Outcome<cancelAppointmentResult, Aws::Client::AWSError<VitalServicesErrors>> cancelAppointmentOutcome;
-        typedef Aws::Utils::Outcome<queryDoctorScheduleResult, Aws::Client::AWSError<VitalServicesErrors>> queryDoctorScheduleOutcome;
-        typedef Aws::Utils::Outcome<updateUserResult, Aws::Client::AWSError<VitalServicesErrors>> updateUserOutcome;
-        typedef Aws::Utils::Outcome<registerDoctorResult, Aws::Client::AWSError<VitalServicesErrors>> registerDoctorOutcome;
-        typedef Aws::Utils::Outcome<urlForFileResult, Aws::Client::AWSError<VitalServicesErrors>> urlForFileOutcome;
-        typedef Aws::Utils::Outcome<getAppointmentPaymentMethodResult, Aws::Client::AWSError<VitalServicesErrors>> getAppointmentPaymentMethodOutcome;
-        typedef Aws::Utils::Outcome<searchForDoctorsResult, Aws::Client::AWSError<VitalServicesErrors>> searchForDoctorsOutcome;
+        typedef Aws::Utils::Outcome<getAllDoctorServicesResult, Aws::Client::AWSError<VitalServicesErrors>> getAllDoctorServicesOutcome;
         typedef Aws::Utils::Outcome<getStripeCustomerResult, Aws::Client::AWSError<VitalServicesErrors>> getStripeCustomerOutcome;
+        typedef Aws::Utils::Outcome<getAppointmentBillResult, Aws::Client::AWSError<VitalServicesErrors>> getAppointmentBillOutcome;
+        typedef Aws::Utils::Outcome<searchForDoctorsResult, Aws::Client::AWSError<VitalServicesErrors>> searchForDoctorsOutcome;
 
-        typedef std::future<getAppointmentsWithUserOutcome> getAppointmentsWithUserOutcomeCallable;
-        typedef std::future<getAppointmentBillOutcome> getAppointmentBillOutcomeCallable;
-        typedef std::future<addCreditCardOutcome> addCreditCardOutcomeCallable;
-        typedef std::future<getDoctorsOutcome> getDoctorsOutcomeCallable;
-        typedef std::future<getDoctorSpecialtiesOutcome> getDoctorSpecialtiesOutcomeCallable;
+        typedef std::future<getAppointmentPaymentMethodOutcome> getAppointmentPaymentMethodOutcomeCallable;
         typedef std::future<updateDoctorOutcome> updateDoctorOutcomeCallable;
+        typedef std::future<urlForFileOutcome> urlForFileOutcomeCallable;
         typedef std::future<setDefaultPaymentSourceOutcome> setDefaultPaymentSourceOutcomeCallable;
+        typedef std::future<getAppointmentsWithUserOutcome> getAppointmentsWithUserOutcomeCallable;
+        typedef std::future<queryDoctorScheduleOutcome> queryDoctorScheduleOutcomeCallable;
+        typedef std::future<registerDoctorOutcome> registerDoctorOutcomeCallable;
         typedef std::future<registerUserOutcome> registerUserOutcomeCallable;
-        typedef std::future<getAllDoctorServicesOutcome> getAllDoctorServicesOutcomeCallable;
+        typedef std::future<updateUserOutcome> updateUserOutcomeCallable;
+        typedef std::future<getDoctorSpecialtiesOutcome> getDoctorSpecialtiesOutcomeCallable;
+        typedef std::future<addCreditCardOutcome> addCreditCardOutcomeCallable;
         typedef std::future<scheduleAppointmentOutcome> scheduleAppointmentOutcomeCallable;
+        typedef std::future<getDoctorsOutcome> getDoctorsOutcomeCallable;
         typedef std::future<getLoggedInUserOutcome> getLoggedInUserOutcomeCallable;
         typedef std::future<cancelAppointmentOutcome> cancelAppointmentOutcomeCallable;
-        typedef std::future<queryDoctorScheduleOutcome> queryDoctorScheduleOutcomeCallable;
-        typedef std::future<updateUserOutcome> updateUserOutcomeCallable;
-        typedef std::future<registerDoctorOutcome> registerDoctorOutcomeCallable;
-        typedef std::future<urlForFileOutcome> urlForFileOutcomeCallable;
-        typedef std::future<getAppointmentPaymentMethodOutcome> getAppointmentPaymentMethodOutcomeCallable;
-        typedef std::future<searchForDoctorsOutcome> searchForDoctorsOutcomeCallable;
+        typedef std::future<getAllDoctorServicesOutcome> getAllDoctorServicesOutcomeCallable;
         typedef std::future<getStripeCustomerOutcome> getStripeCustomerOutcomeCallable;
+        typedef std::future<getAppointmentBillOutcome> getAppointmentBillOutcomeCallable;
+        typedef std::future<searchForDoctorsOutcome> searchForDoctorsOutcomeCallable;
 } // namespace Model
 
   class VitalServicesClient;
 
-    typedef std::function<void(const VitalServicesClient*, const Model::getAppointmentsWithUserRequest&, const Model::getAppointmentsWithUserOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > getAppointmentsWithUserResponseReceivedHandler;
-    typedef std::function<void(const VitalServicesClient*, const Model::getAppointmentBillRequest&, const Model::getAppointmentBillOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > getAppointmentBillResponseReceivedHandler;
-    typedef std::function<void(const VitalServicesClient*, const Model::addCreditCardRequest&, const Model::addCreditCardOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > addCreditCardResponseReceivedHandler;
-    typedef std::function<void(const VitalServicesClient*, const Model::getDoctorsRequest&, const Model::getDoctorsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > getDoctorsResponseReceivedHandler;
-    typedef std::function<void(const VitalServicesClient*, const Model::getDoctorSpecialtiesRequest&, const Model::getDoctorSpecialtiesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > getDoctorSpecialtiesResponseReceivedHandler;
+    typedef std::function<void(const VitalServicesClient*, const Model::getAppointmentPaymentMethodRequest&, const Model::getAppointmentPaymentMethodOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > getAppointmentPaymentMethodResponseReceivedHandler;
     typedef std::function<void(const VitalServicesClient*, const Model::updateDoctorRequest&, const Model::updateDoctorOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > updateDoctorResponseReceivedHandler;
+    typedef std::function<void(const VitalServicesClient*, const Model::urlForFileRequest&, const Model::urlForFileOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > urlForFileResponseReceivedHandler;
     typedef std::function<void(const VitalServicesClient*, const Model::setDefaultPaymentSourceRequest&, const Model::setDefaultPaymentSourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > setDefaultPaymentSourceResponseReceivedHandler;
+    typedef std::function<void(const VitalServicesClient*, const Model::getAppointmentsWithUserRequest&, const Model::getAppointmentsWithUserOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > getAppointmentsWithUserResponseReceivedHandler;
+    typedef std::function<void(const VitalServicesClient*, const Model::queryDoctorScheduleRequest&, const Model::queryDoctorScheduleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > queryDoctorScheduleResponseReceivedHandler;
+    typedef std::function<void(const VitalServicesClient*, const Model::registerDoctorRequest&, const Model::registerDoctorOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > registerDoctorResponseReceivedHandler;
     typedef std::function<void(const VitalServicesClient*, const Model::registerUserRequest&, const Model::registerUserOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > registerUserResponseReceivedHandler;
-    typedef std::function<void(const VitalServicesClient*, const Model::getAllDoctorServicesRequest&, const Model::getAllDoctorServicesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > getAllDoctorServicesResponseReceivedHandler;
+    typedef std::function<void(const VitalServicesClient*, const Model::updateUserRequest&, const Model::updateUserOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > updateUserResponseReceivedHandler;
+    typedef std::function<void(const VitalServicesClient*, const Model::getDoctorSpecialtiesRequest&, const Model::getDoctorSpecialtiesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > getDoctorSpecialtiesResponseReceivedHandler;
+    typedef std::function<void(const VitalServicesClient*, const Model::addCreditCardRequest&, const Model::addCreditCardOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > addCreditCardResponseReceivedHandler;
     typedef std::function<void(const VitalServicesClient*, const Model::scheduleAppointmentRequest&, const Model::scheduleAppointmentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > scheduleAppointmentResponseReceivedHandler;
+    typedef std::function<void(const VitalServicesClient*, const Model::getDoctorsRequest&, const Model::getDoctorsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > getDoctorsResponseReceivedHandler;
     typedef std::function<void(const VitalServicesClient*, const Model::getLoggedInUserRequest&, const Model::getLoggedInUserOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > getLoggedInUserResponseReceivedHandler;
     typedef std::function<void(const VitalServicesClient*, const Model::cancelAppointmentRequest&, const Model::cancelAppointmentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > cancelAppointmentResponseReceivedHandler;
-    typedef std::function<void(const VitalServicesClient*, const Model::queryDoctorScheduleRequest&, const Model::queryDoctorScheduleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > queryDoctorScheduleResponseReceivedHandler;
-    typedef std::function<void(const VitalServicesClient*, const Model::updateUserRequest&, const Model::updateUserOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > updateUserResponseReceivedHandler;
-    typedef std::function<void(const VitalServicesClient*, const Model::registerDoctorRequest&, const Model::registerDoctorOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > registerDoctorResponseReceivedHandler;
-    typedef std::function<void(const VitalServicesClient*, const Model::urlForFileRequest&, const Model::urlForFileOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > urlForFileResponseReceivedHandler;
-    typedef std::function<void(const VitalServicesClient*, const Model::getAppointmentPaymentMethodRequest&, const Model::getAppointmentPaymentMethodOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > getAppointmentPaymentMethodResponseReceivedHandler;
-    typedef std::function<void(const VitalServicesClient*, const Model::searchForDoctorsRequest&, const Model::searchForDoctorsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > searchForDoctorsResponseReceivedHandler;
+    typedef std::function<void(const VitalServicesClient*, const Model::getAllDoctorServicesRequest&, const Model::getAllDoctorServicesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > getAllDoctorServicesResponseReceivedHandler;
     typedef std::function<void(const VitalServicesClient*, const Model::getStripeCustomerRequest&, const Model::getStripeCustomerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > getStripeCustomerResponseReceivedHandler;
+    typedef std::function<void(const VitalServicesClient*, const Model::getAppointmentBillRequest&, const Model::getAppointmentBillOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > getAppointmentBillResponseReceivedHandler;
+    typedef std::function<void(const VitalServicesClient*, const Model::searchForDoctorsRequest&, const Model::searchForDoctorsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > searchForDoctorsResponseReceivedHandler;
 
   class AWS_VITALSERVICES_API VitalServicesClient : public Aws::Client::AWSJsonClient
   {
@@ -196,97 +196,21 @@ namespace Model
         /**
          * 
          */
-        virtual Model::getAppointmentsWithUserOutcome getAppointmentsWithUser(const Model::getAppointmentsWithUserRequest& request) const;
+        virtual Model::getAppointmentPaymentMethodOutcome getAppointmentPaymentMethod(const Model::getAppointmentPaymentMethodRequest& request) const;
 
         /**
          * 
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
-        virtual Model::getAppointmentsWithUserOutcomeCallable getAppointmentsWithUserCallable(const Model::getAppointmentsWithUserRequest& request) const;
+        virtual Model::getAppointmentPaymentMethodOutcomeCallable getAppointmentPaymentMethodCallable(const Model::getAppointmentPaymentMethodRequest& request) const;
 
         /**
          * 
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
-        virtual void getAppointmentsWithUserAsync(const Model::getAppointmentsWithUserRequest& request, const getAppointmentsWithUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
-
-        /**
-         * 
-         */
-        virtual Model::getAppointmentBillOutcome getAppointmentBill(const Model::getAppointmentBillRequest& request) const;
-
-        /**
-         * 
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::getAppointmentBillOutcomeCallable getAppointmentBillCallable(const Model::getAppointmentBillRequest& request) const;
-
-        /**
-         * 
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void getAppointmentBillAsync(const Model::getAppointmentBillRequest& request, const getAppointmentBillResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
-
-        /**
-         * 
-         */
-        virtual Model::addCreditCardOutcome addCreditCard(const Model::addCreditCardRequest& request) const;
-
-        /**
-         * 
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::addCreditCardOutcomeCallable addCreditCardCallable(const Model::addCreditCardRequest& request) const;
-
-        /**
-         * 
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void addCreditCardAsync(const Model::addCreditCardRequest& request, const addCreditCardResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
-
-        /**
-         * 
-         */
-        virtual Model::getDoctorsOutcome getDoctors(const Model::getDoctorsRequest& request) const;
-
-        /**
-         * 
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::getDoctorsOutcomeCallable getDoctorsCallable(const Model::getDoctorsRequest& request) const;
-
-        /**
-         * 
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void getDoctorsAsync(const Model::getDoctorsRequest& request, const getDoctorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
-
-        /**
-         * 
-         */
-        virtual Model::getDoctorSpecialtiesOutcome getDoctorSpecialties(const Model::getDoctorSpecialtiesRequest& request) const;
-
-        /**
-         * 
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::getDoctorSpecialtiesOutcomeCallable getDoctorSpecialtiesCallable(const Model::getDoctorSpecialtiesRequest& request) const;
-
-        /**
-         * 
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void getDoctorSpecialtiesAsync(const Model::getDoctorSpecialtiesRequest& request, const getDoctorSpecialtiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+        virtual void getAppointmentPaymentMethodAsync(const Model::getAppointmentPaymentMethodRequest& request, const getAppointmentPaymentMethodResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * 
@@ -310,6 +234,25 @@ namespace Model
         /**
          * 
          */
+        virtual Model::urlForFileOutcome urlForFile(const Model::urlForFileRequest& request) const;
+
+        /**
+         * 
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::urlForFileOutcomeCallable urlForFileCallable(const Model::urlForFileRequest& request) const;
+
+        /**
+         * 
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void urlForFileAsync(const Model::urlForFileRequest& request, const urlForFileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * 
+         */
         virtual Model::setDefaultPaymentSourceOutcome setDefaultPaymentSource(const Model::setDefaultPaymentSourceRequest& request) const;
 
         /**
@@ -325,6 +268,63 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void setDefaultPaymentSourceAsync(const Model::setDefaultPaymentSourceRequest& request, const setDefaultPaymentSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * 
+         */
+        virtual Model::getAppointmentsWithUserOutcome getAppointmentsWithUser(const Model::getAppointmentsWithUserRequest& request) const;
+
+        /**
+         * 
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::getAppointmentsWithUserOutcomeCallable getAppointmentsWithUserCallable(const Model::getAppointmentsWithUserRequest& request) const;
+
+        /**
+         * 
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void getAppointmentsWithUserAsync(const Model::getAppointmentsWithUserRequest& request, const getAppointmentsWithUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * 
+         */
+        virtual Model::queryDoctorScheduleOutcome queryDoctorSchedule(const Model::queryDoctorScheduleRequest& request) const;
+
+        /**
+         * 
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::queryDoctorScheduleOutcomeCallable queryDoctorScheduleCallable(const Model::queryDoctorScheduleRequest& request) const;
+
+        /**
+         * 
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void queryDoctorScheduleAsync(const Model::queryDoctorScheduleRequest& request, const queryDoctorScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * 
+         */
+        virtual Model::registerDoctorOutcome registerDoctor(const Model::registerDoctorRequest& request) const;
+
+        /**
+         * 
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::registerDoctorOutcomeCallable registerDoctorCallable(const Model::registerDoctorRequest& request) const;
+
+        /**
+         * 
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void registerDoctorAsync(const Model::registerDoctorRequest& request, const registerDoctorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * 
@@ -348,21 +348,59 @@ namespace Model
         /**
          * 
          */
-        virtual Model::getAllDoctorServicesOutcome getAllDoctorServices(const Model::getAllDoctorServicesRequest& request) const;
+        virtual Model::updateUserOutcome updateUser(const Model::updateUserRequest& request) const;
 
         /**
          * 
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
-        virtual Model::getAllDoctorServicesOutcomeCallable getAllDoctorServicesCallable(const Model::getAllDoctorServicesRequest& request) const;
+        virtual Model::updateUserOutcomeCallable updateUserCallable(const Model::updateUserRequest& request) const;
 
         /**
          * 
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
-        virtual void getAllDoctorServicesAsync(const Model::getAllDoctorServicesRequest& request, const getAllDoctorServicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+        virtual void updateUserAsync(const Model::updateUserRequest& request, const updateUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * 
+         */
+        virtual Model::getDoctorSpecialtiesOutcome getDoctorSpecialties(const Model::getDoctorSpecialtiesRequest& request) const;
+
+        /**
+         * 
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::getDoctorSpecialtiesOutcomeCallable getDoctorSpecialtiesCallable(const Model::getDoctorSpecialtiesRequest& request) const;
+
+        /**
+         * 
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void getDoctorSpecialtiesAsync(const Model::getDoctorSpecialtiesRequest& request, const getDoctorSpecialtiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * 
+         */
+        virtual Model::addCreditCardOutcome addCreditCard(const Model::addCreditCardRequest& request) const;
+
+        /**
+         * 
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::addCreditCardOutcomeCallable addCreditCardCallable(const Model::addCreditCardRequest& request) const;
+
+        /**
+         * 
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void addCreditCardAsync(const Model::addCreditCardRequest& request, const addCreditCardResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * 
@@ -382,6 +420,25 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void scheduleAppointmentAsync(const Model::scheduleAppointmentRequest& request, const scheduleAppointmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * 
+         */
+        virtual Model::getDoctorsOutcome getDoctors(const Model::getDoctorsRequest& request) const;
+
+        /**
+         * 
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::getDoctorsOutcomeCallable getDoctorsCallable(const Model::getDoctorsRequest& request) const;
+
+        /**
+         * 
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void getDoctorsAsync(const Model::getDoctorsRequest& request, const getDoctorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * 
@@ -424,116 +481,21 @@ namespace Model
         /**
          * 
          */
-        virtual Model::queryDoctorScheduleOutcome queryDoctorSchedule(const Model::queryDoctorScheduleRequest& request) const;
+        virtual Model::getAllDoctorServicesOutcome getAllDoctorServices(const Model::getAllDoctorServicesRequest& request) const;
 
         /**
          * 
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
-        virtual Model::queryDoctorScheduleOutcomeCallable queryDoctorScheduleCallable(const Model::queryDoctorScheduleRequest& request) const;
+        virtual Model::getAllDoctorServicesOutcomeCallable getAllDoctorServicesCallable(const Model::getAllDoctorServicesRequest& request) const;
 
         /**
          * 
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
-        virtual void queryDoctorScheduleAsync(const Model::queryDoctorScheduleRequest& request, const queryDoctorScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
-
-        /**
-         * 
-         */
-        virtual Model::updateUserOutcome updateUser(const Model::updateUserRequest& request) const;
-
-        /**
-         * 
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::updateUserOutcomeCallable updateUserCallable(const Model::updateUserRequest& request) const;
-
-        /**
-         * 
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void updateUserAsync(const Model::updateUserRequest& request, const updateUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
-
-        /**
-         * 
-         */
-        virtual Model::registerDoctorOutcome registerDoctor(const Model::registerDoctorRequest& request) const;
-
-        /**
-         * 
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::registerDoctorOutcomeCallable registerDoctorCallable(const Model::registerDoctorRequest& request) const;
-
-        /**
-         * 
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void registerDoctorAsync(const Model::registerDoctorRequest& request, const registerDoctorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
-
-        /**
-         * 
-         */
-        virtual Model::urlForFileOutcome urlForFile(const Model::urlForFileRequest& request) const;
-
-        /**
-         * 
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::urlForFileOutcomeCallable urlForFileCallable(const Model::urlForFileRequest& request) const;
-
-        /**
-         * 
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void urlForFileAsync(const Model::urlForFileRequest& request, const urlForFileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
-
-        /**
-         * 
-         */
-        virtual Model::getAppointmentPaymentMethodOutcome getAppointmentPaymentMethod(const Model::getAppointmentPaymentMethodRequest& request) const;
-
-        /**
-         * 
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::getAppointmentPaymentMethodOutcomeCallable getAppointmentPaymentMethodCallable(const Model::getAppointmentPaymentMethodRequest& request) const;
-
-        /**
-         * 
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void getAppointmentPaymentMethodAsync(const Model::getAppointmentPaymentMethodRequest& request, const getAppointmentPaymentMethodResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
-
-        /**
-         * 
-         */
-        virtual Model::searchForDoctorsOutcome searchForDoctors(const Model::searchForDoctorsRequest& request) const;
-
-        /**
-         * 
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::searchForDoctorsOutcomeCallable searchForDoctorsCallable(const Model::searchForDoctorsRequest& request) const;
-
-        /**
-         * 
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void searchForDoctorsAsync(const Model::searchForDoctorsRequest& request, const searchForDoctorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+        virtual void getAllDoctorServicesAsync(const Model::getAllDoctorServicesRequest& request, const getAllDoctorServicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * 
@@ -554,36 +516,74 @@ namespace Model
          */
         virtual void getStripeCustomerAsync(const Model::getStripeCustomerRequest& request, const getStripeCustomerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
+        /**
+         * 
+         */
+        virtual Model::getAppointmentBillOutcome getAppointmentBill(const Model::getAppointmentBillRequest& request) const;
 
-      virtual void BuildHttpRequest(const Aws::AmazonWebServiceRequest& request, const std::shared_ptr<Http::HttpRequest>& httpRequest) const override
-      {
-          BASECLASS::BuildHttpRequest(request, httpRequest);
-          httpRequest->SetContentType("application/json");
-      }
+        /**
+         * 
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::getAppointmentBillOutcomeCallable getAppointmentBillCallable(const Model::getAppointmentBillRequest& request) const;
+
+        /**
+         * 
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void getAppointmentBillAsync(const Model::getAppointmentBillRequest& request, const getAppointmentBillResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * 
+         */
+        virtual Model::searchForDoctorsOutcome searchForDoctors(const Model::searchForDoctorsRequest& request) const;
+
+        /**
+         * 
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::searchForDoctorsOutcomeCallable searchForDoctorsCallable(const Model::searchForDoctorsRequest& request) const;
+
+        /**
+         * 
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void searchForDoctorsAsync(const Model::searchForDoctorsRequest& request, const searchForDoctorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+
+        virtual void BuildHttpRequest(const Aws::AmazonWebServiceRequest& request, const std::shared_ptr<Http::HttpRequest>& httpRequest) const override
+        {
+            BASECLASS::BuildHttpRequest(request, httpRequest);
+            httpRequest->SetContentType("application/json");
+        }
 
     private:
       void init(const Client::ClientConfiguration& clientConfiguration);
 
         /**Async helpers**/
-        void getAppointmentsWithUserAsyncHelper(const Model::getAppointmentsWithUserRequest& request, const getAppointmentsWithUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void getAppointmentBillAsyncHelper(const Model::getAppointmentBillRequest& request, const getAppointmentBillResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void addCreditCardAsyncHelper(const Model::addCreditCardRequest& request, const addCreditCardResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void getDoctorsAsyncHelper(const Model::getDoctorsRequest& request, const getDoctorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void getDoctorSpecialtiesAsyncHelper(const Model::getDoctorSpecialtiesRequest& request, const getDoctorSpecialtiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void getAppointmentPaymentMethodAsyncHelper(const Model::getAppointmentPaymentMethodRequest& request, const getAppointmentPaymentMethodResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void updateDoctorAsyncHelper(const Model::updateDoctorRequest& request, const updateDoctorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void urlForFileAsyncHelper(const Model::urlForFileRequest& request, const urlForFileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void setDefaultPaymentSourceAsyncHelper(const Model::setDefaultPaymentSourceRequest& request, const setDefaultPaymentSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void getAppointmentsWithUserAsyncHelper(const Model::getAppointmentsWithUserRequest& request, const getAppointmentsWithUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void queryDoctorScheduleAsyncHelper(const Model::queryDoctorScheduleRequest& request, const queryDoctorScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void registerDoctorAsyncHelper(const Model::registerDoctorRequest& request, const registerDoctorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void registerUserAsyncHelper(const Model::registerUserRequest& request, const registerUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void getAllDoctorServicesAsyncHelper(const Model::getAllDoctorServicesRequest& request, const getAllDoctorServicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void updateUserAsyncHelper(const Model::updateUserRequest& request, const updateUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void getDoctorSpecialtiesAsyncHelper(const Model::getDoctorSpecialtiesRequest& request, const getDoctorSpecialtiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void addCreditCardAsyncHelper(const Model::addCreditCardRequest& request, const addCreditCardResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void scheduleAppointmentAsyncHelper(const Model::scheduleAppointmentRequest& request, const scheduleAppointmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void getDoctorsAsyncHelper(const Model::getDoctorsRequest& request, const getDoctorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void getLoggedInUserAsyncHelper(const Model::getLoggedInUserRequest& request, const getLoggedInUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void cancelAppointmentAsyncHelper(const Model::cancelAppointmentRequest& request, const cancelAppointmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void queryDoctorScheduleAsyncHelper(const Model::queryDoctorScheduleRequest& request, const queryDoctorScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void updateUserAsyncHelper(const Model::updateUserRequest& request, const updateUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void registerDoctorAsyncHelper(const Model::registerDoctorRequest& request, const registerDoctorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void urlForFileAsyncHelper(const Model::urlForFileRequest& request, const urlForFileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void getAppointmentPaymentMethodAsyncHelper(const Model::getAppointmentPaymentMethodRequest& request, const getAppointmentPaymentMethodResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void searchForDoctorsAsyncHelper(const Model::searchForDoctorsRequest& request, const searchForDoctorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void getAllDoctorServicesAsyncHelper(const Model::getAllDoctorServicesRequest& request, const getAllDoctorServicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void getStripeCustomerAsyncHelper(const Model::getStripeCustomerRequest& request, const getStripeCustomerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void getAppointmentBillAsyncHelper(const Model::getAppointmentBillRequest& request, const getAppointmentBillResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void searchForDoctorsAsyncHelper(const Model::searchForDoctorsRequest& request, const searchForDoctorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 
       Aws::String m_uri;
       std::shared_ptr<Utils::Threading::Executor> m_executor;

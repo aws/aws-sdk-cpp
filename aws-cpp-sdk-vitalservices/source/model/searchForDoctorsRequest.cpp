@@ -24,12 +24,12 @@ using namespace Aws::Utils;
 searchForDoctorsRequest::searchForDoctorsRequest() : 
     m_latitude(0.0),
     m_latitudeHasBeenSet(false),
+    m_serviceIdHasBeenSet(false),
+    m_lastTimeHasBeenSet(false),
     m_firstTimeHasBeenSet(false),
     m_specialtyIdHasBeenSet(false),
-    m_lastTimeHasBeenSet(false),
     m_longitude(0.0),
-    m_longitudeHasBeenSet(false),
-    m_serviceIdHasBeenSet(false)
+    m_longitudeHasBeenSet(false)
 {
 }
 
@@ -40,6 +40,18 @@ Aws::String searchForDoctorsRequest::SerializePayload() const
   if(m_latitudeHasBeenSet)
   {
    payload.WithDouble("latitude", m_latitude);
+
+  }
+
+  if(m_serviceIdHasBeenSet)
+  {
+   payload.WithString("serviceId", m_serviceId);
+
+  }
+
+  if(m_lastTimeHasBeenSet)
+  {
+   payload.WithString("lastTime", m_lastTime);
 
   }
 
@@ -55,21 +67,9 @@ Aws::String searchForDoctorsRequest::SerializePayload() const
 
   }
 
-  if(m_lastTimeHasBeenSet)
-  {
-   payload.WithString("lastTime", m_lastTime);
-
-  }
-
   if(m_longitudeHasBeenSet)
   {
    payload.WithDouble("longitude", m_longitude);
-
-  }
-
-  if(m_serviceIdHasBeenSet)
-  {
-   payload.WithString("serviceId", m_serviceId);
 
   }
 

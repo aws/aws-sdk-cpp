@@ -81,6 +81,27 @@ namespace Model
     inline GetAppointmentsResult_patientsItem& WithMobileNumber(const char* value) { SetMobileNumber(value); return *this;}
 
     
+    inline const Aws::String& GetLastName() const{ return m_lastName; }
+
+    
+    inline void SetLastName(const Aws::String& value) { m_lastNameHasBeenSet = true; m_lastName = value; }
+
+    
+    inline void SetLastName(Aws::String&& value) { m_lastNameHasBeenSet = true; m_lastName = value; }
+
+    
+    inline void SetLastName(const char* value) { m_lastNameHasBeenSet = true; m_lastName.assign(value); }
+
+    
+    inline GetAppointmentsResult_patientsItem& WithLastName(const Aws::String& value) { SetLastName(value); return *this;}
+
+    
+    inline GetAppointmentsResult_patientsItem& WithLastName(Aws::String&& value) { SetLastName(value); return *this;}
+
+    
+    inline GetAppointmentsResult_patientsItem& WithLastName(const char* value) { SetLastName(value); return *this;}
+
+    
     inline const Aws::String& GetProfilePhotoUrl() const{ return m_profilePhotoUrl; }
 
     
@@ -122,38 +143,17 @@ namespace Model
     
     inline GetAppointmentsResult_patientsItem& WithId(const char* value) { SetId(value); return *this;}
 
-    
-    inline const Aws::String& GetLastName() const{ return m_lastName; }
-
-    
-    inline void SetLastName(const Aws::String& value) { m_lastNameHasBeenSet = true; m_lastName = value; }
-
-    
-    inline void SetLastName(Aws::String&& value) { m_lastNameHasBeenSet = true; m_lastName = value; }
-
-    
-    inline void SetLastName(const char* value) { m_lastNameHasBeenSet = true; m_lastName.assign(value); }
-
-    
-    inline GetAppointmentsResult_patientsItem& WithLastName(const Aws::String& value) { SetLastName(value); return *this;}
-
-    
-    inline GetAppointmentsResult_patientsItem& WithLastName(Aws::String&& value) { SetLastName(value); return *this;}
-
-    
-    inline GetAppointmentsResult_patientsItem& WithLastName(const char* value) { SetLastName(value); return *this;}
-
   private:
     Aws::String m_firstName;
     bool m_firstNameHasBeenSet;
     Aws::String m_mobileNumber;
     bool m_mobileNumberHasBeenSet;
+    Aws::String m_lastName;
+    bool m_lastNameHasBeenSet;
     Aws::String m_profilePhotoUrl;
     bool m_profilePhotoUrlHasBeenSet;
     Aws::String m_id;
     bool m_idHasBeenSet;
-    Aws::String m_lastName;
-    bool m_lastNameHasBeenSet;
   };
 
 } // namespace Model

@@ -25,16 +25,16 @@ using namespace Aws::Utils;
 using namespace Aws;
 
 registerDoctorResult::registerDoctorResult() : 
+    m_longitude(0.0),
     m_payoutInfoIsSet(false),
-    m_latitude(0.0),
-    m_longitude(0.0)
+    m_latitude(0.0)
 {
 }
 
 registerDoctorResult::registerDoctorResult(const AmazonWebServiceResult<JsonValue>& result) : 
+    m_longitude(0.0),
     m_payoutInfoIsSet(false),
-    m_latitude(0.0),
-    m_longitude(0.0)
+    m_latitude(0.0)
 {
   *this = result;
 }
@@ -42,6 +42,36 @@ registerDoctorResult::registerDoctorResult(const AmazonWebServiceResult<JsonValu
 registerDoctorResult& registerDoctorResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
+  if(jsonValue.ValueExists("officeNumber"))
+  {
+    m_officeNumber = jsonValue.GetString("officeNumber");
+
+  }
+
+  if(jsonValue.ValueExists("streetNumberAndName"))
+  {
+    m_streetNumberAndName = jsonValue.GetString("streetNumberAndName");
+
+  }
+
+  if(jsonValue.ValueExists("lastName"))
+  {
+    m_lastName = jsonValue.GetString("lastName");
+
+  }
+
+  if(jsonValue.ValueExists("coverPhotoUrl"))
+  {
+    m_coverPhotoUrl = jsonValue.GetString("coverPhotoUrl");
+
+  }
+
+  if(jsonValue.ValueExists("id"))
+  {
+    m_id = jsonValue.GetString("id");
+
+  }
+
   if(jsonValue.ValueExists("profilePhotoUrl"))
   {
     m_profilePhotoUrl = jsonValue.GetString("profilePhotoUrl");
@@ -54,36 +84,6 @@ registerDoctorResult& registerDoctorResult::operator =(const AmazonWebServiceRes
 
   }
 
-  if(jsonValue.ValueExists("lastName"))
-  {
-    m_lastName = jsonValue.GetString("lastName");
-
-  }
-
-  if(jsonValue.ValueExists("firstName"))
-  {
-    m_firstName = jsonValue.GetString("firstName");
-
-  }
-
-  if(jsonValue.ValueExists("administrativeAreaL1"))
-  {
-    m_administrativeAreaL1 = jsonValue.GetString("administrativeAreaL1");
-
-  }
-
-  if(jsonValue.ValueExists("id"))
-  {
-    m_id = jsonValue.GetString("id");
-
-  }
-
-  if(jsonValue.ValueExists("city"))
-  {
-    m_city = jsonValue.GetString("city");
-
-  }
-
   if(jsonValue.ValueExists("serviceDetailsList"))
   {
     Array<JsonValue> serviceDetailsListJsonList = jsonValue.GetArray("serviceDetailsList");
@@ -93,45 +93,15 @@ registerDoctorResult& registerDoctorResult::operator =(const AmazonWebServiceRes
     }
   }
 
-  if(jsonValue.ValueExists("payoutInfoIsSet"))
-  {
-    m_payoutInfoIsSet = jsonValue.GetBool("payoutInfoIsSet");
-
-  }
-
-  if(jsonValue.ValueExists("latitude"))
-  {
-    m_latitude = jsonValue.GetDouble("latitude");
-
-  }
-
-  if(jsonValue.ValueExists("coverPhotoUrl"))
-  {
-    m_coverPhotoUrl = jsonValue.GetString("coverPhotoUrl");
-
-  }
-
-  if(jsonValue.ValueExists("streetNumberAndName"))
-  {
-    m_streetNumberAndName = jsonValue.GetString("streetNumberAndName");
-
-  }
-
-  if(jsonValue.ValueExists("specialtyId"))
-  {
-    m_specialtyId = jsonValue.GetString("specialtyId");
-
-  }
-
   if(jsonValue.ValueExists("longitude"))
   {
     m_longitude = jsonValue.GetDouble("longitude");
 
   }
 
-  if(jsonValue.ValueExists("officeNumber"))
+  if(jsonValue.ValueExists("payoutInfoIsSet"))
   {
-    m_officeNumber = jsonValue.GetString("officeNumber");
+    m_payoutInfoIsSet = jsonValue.GetBool("payoutInfoIsSet");
 
   }
 
@@ -148,6 +118,36 @@ registerDoctorResult& registerDoctorResult::operator =(const AmazonWebServiceRes
     {
       m_servicesOffered.push_back(servicesOfferedJsonList[servicesOfferedIndex].AsString());
     }
+  }
+
+  if(jsonValue.ValueExists("city"))
+  {
+    m_city = jsonValue.GetString("city");
+
+  }
+
+  if(jsonValue.ValueExists("firstName"))
+  {
+    m_firstName = jsonValue.GetString("firstName");
+
+  }
+
+  if(jsonValue.ValueExists("specialtyId"))
+  {
+    m_specialtyId = jsonValue.GetString("specialtyId");
+
+  }
+
+  if(jsonValue.ValueExists("latitude"))
+  {
+    m_latitude = jsonValue.GetDouble("latitude");
+
+  }
+
+  if(jsonValue.ValueExists("administrativeAreaL1"))
+  {
+    m_administrativeAreaL1 = jsonValue.GetString("administrativeAreaL1");
+
   }
 
 

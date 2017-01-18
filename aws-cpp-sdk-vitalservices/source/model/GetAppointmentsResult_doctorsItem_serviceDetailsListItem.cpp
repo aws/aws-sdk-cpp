@@ -28,18 +28,20 @@ namespace Model
 {
 
 GetAppointmentsResult_doctorsItem_serviceDetailsListItem::GetAppointmentsResult_doctorsItem_serviceDetailsListItem() : 
+    m_durationSeconds(0.0),
     m_durationSecondsHasBeenSet(false),
-    m_doctorIdHasBeenSet(false),
     m_priceDollarsHasBeenSet(false),
-    m_serviceIdHasBeenSet(false)
+    m_serviceIdHasBeenSet(false),
+    m_doctorIdHasBeenSet(false)
 {
 }
 
 GetAppointmentsResult_doctorsItem_serviceDetailsListItem::GetAppointmentsResult_doctorsItem_serviceDetailsListItem(const JsonValue& jsonValue) : 
+    m_durationSeconds(0.0),
     m_durationSecondsHasBeenSet(false),
-    m_doctorIdHasBeenSet(false),
     m_priceDollarsHasBeenSet(false),
-    m_serviceIdHasBeenSet(false)
+    m_serviceIdHasBeenSet(false),
+    m_doctorIdHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -48,16 +50,9 @@ GetAppointmentsResult_doctorsItem_serviceDetailsListItem& GetAppointmentsResult_
 {
   if(jsonValue.ValueExists("durationSeconds"))
   {
-    m_durationSeconds = jsonValue.GetString("durationSeconds");
+    m_durationSeconds = jsonValue.GetDouble("durationSeconds");
 
     m_durationSecondsHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("doctorId"))
-  {
-    m_doctorId = jsonValue.GetString("doctorId");
-
-    m_doctorIdHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("priceDollars"))
@@ -74,6 +69,13 @@ GetAppointmentsResult_doctorsItem_serviceDetailsListItem& GetAppointmentsResult_
     m_serviceIdHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("doctorId"))
+  {
+    m_doctorId = jsonValue.GetString("doctorId");
+
+    m_doctorIdHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -83,13 +85,7 @@ JsonValue GetAppointmentsResult_doctorsItem_serviceDetailsListItem::Jsonize() co
 
   if(m_durationSecondsHasBeenSet)
   {
-   payload.WithString("durationSeconds", m_durationSeconds);
-
-  }
-
-  if(m_doctorIdHasBeenSet)
-  {
-   payload.WithString("doctorId", m_doctorId);
+   payload.WithDouble("durationSeconds", m_durationSeconds);
 
   }
 
@@ -102,6 +98,12 @@ JsonValue GetAppointmentsResult_doctorsItem_serviceDetailsListItem::Jsonize() co
   if(m_serviceIdHasBeenSet)
   {
    payload.WithString("serviceId", m_serviceId);
+
+  }
+
+  if(m_doctorIdHasBeenSet)
+  {
+   payload.WithString("doctorId", m_doctorId);
 
   }
 

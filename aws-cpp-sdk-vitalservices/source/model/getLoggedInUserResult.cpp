@@ -38,15 +38,15 @@ getLoggedInUserResult::getLoggedInUserResult(const AmazonWebServiceResult<JsonVa
 getLoggedInUserResult& getLoggedInUserResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
-  if(jsonValue.ValueExists("user"))
-  {
-    m_user = jsonValue.GetObject("user");
-
-  }
-
   if(jsonValue.ValueExists("userExists"))
   {
     m_userExists = jsonValue.GetBool("userExists");
+
+  }
+
+  if(jsonValue.ValueExists("user"))
+  {
+    m_user = jsonValue.GetObject("user");
 
   }
 

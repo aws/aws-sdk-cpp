@@ -14,8 +14,8 @@
 */
 #pragma once
 #include <aws/vitalservices/VitalServices_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/vitalservices/model/CancelAppointmentResult_appointment.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 
 namespace Aws
 {
@@ -41,6 +41,21 @@ namespace Model
     cancelAppointmentResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
     
+    inline const CancelAppointmentResult_appointment& GetAppointment() const{ return m_appointment; }
+
+    
+    inline void SetAppointment(const CancelAppointmentResult_appointment& value) { m_appointment = value; }
+
+    
+    inline void SetAppointment(CancelAppointmentResult_appointment&& value) { m_appointment = value; }
+
+    
+    inline cancelAppointmentResult& WithAppointment(const CancelAppointmentResult_appointment& value) { SetAppointment(value); return *this;}
+
+    
+    inline cancelAppointmentResult& WithAppointment(CancelAppointmentResult_appointment&& value) { SetAppointment(value); return *this;}
+
+    
     inline const Aws::String& GetErrorCode() const{ return m_errorCode; }
 
     
@@ -61,24 +76,9 @@ namespace Model
     
     inline cancelAppointmentResult& WithErrorCode(const char* value) { SetErrorCode(value); return *this;}
 
-    
-    inline const CancelAppointmentResult_appointment& GetAppointment() const{ return m_appointment; }
-
-    
-    inline void SetAppointment(const CancelAppointmentResult_appointment& value) { m_appointment = value; }
-
-    
-    inline void SetAppointment(CancelAppointmentResult_appointment&& value) { m_appointment = value; }
-
-    
-    inline cancelAppointmentResult& WithAppointment(const CancelAppointmentResult_appointment& value) { SetAppointment(value); return *this;}
-
-    
-    inline cancelAppointmentResult& WithAppointment(CancelAppointmentResult_appointment&& value) { SetAppointment(value); return *this;}
-
   private:
-    Aws::String m_errorCode;
     CancelAppointmentResult_appointment m_appointment;
+    Aws::String m_errorCode;
   };
 
 } // namespace Model

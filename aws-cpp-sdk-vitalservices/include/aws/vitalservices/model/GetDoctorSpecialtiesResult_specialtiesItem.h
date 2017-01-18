@@ -39,25 +39,13 @@ namespace Model
     Aws::Utils::Json::JsonValue Jsonize() const;
 
     
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline bool GetIsCommon() const{ return m_isCommon; }
 
     
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
+    inline void SetIsCommon(bool value) { m_isCommonHasBeenSet = true; m_isCommon = value; }
 
     
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = value; }
-
-    
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-
-    
-    inline GetDoctorSpecialtiesResult_specialtiesItem& WithId(const Aws::String& value) { SetId(value); return *this;}
-
-    
-    inline GetDoctorSpecialtiesResult_specialtiesItem& WithId(Aws::String&& value) { SetId(value); return *this;}
-
-    
-    inline GetDoctorSpecialtiesResult_specialtiesItem& WithId(const char* value) { SetId(value); return *this;}
+    inline GetDoctorSpecialtiesResult_specialtiesItem& WithIsCommon(bool value) { SetIsCommon(value); return *this;}
 
     
     inline const Aws::String& GetName() const{ return m_name; }
@@ -81,21 +69,33 @@ namespace Model
     inline GetDoctorSpecialtiesResult_specialtiesItem& WithName(const char* value) { SetName(value); return *this;}
 
     
-    inline bool GetIsCommon() const{ return m_isCommon; }
+    inline const Aws::String& GetId() const{ return m_id; }
 
     
-    inline void SetIsCommon(bool value) { m_isCommonHasBeenSet = true; m_isCommon = value; }
+    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     
-    inline GetDoctorSpecialtiesResult_specialtiesItem& WithIsCommon(bool value) { SetIsCommon(value); return *this;}
+    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = value; }
+
+    
+    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
+
+    
+    inline GetDoctorSpecialtiesResult_specialtiesItem& WithId(const Aws::String& value) { SetId(value); return *this;}
+
+    
+    inline GetDoctorSpecialtiesResult_specialtiesItem& WithId(Aws::String&& value) { SetId(value); return *this;}
+
+    
+    inline GetDoctorSpecialtiesResult_specialtiesItem& WithId(const char* value) { SetId(value); return *this;}
 
   private:
-    Aws::String m_id;
-    bool m_idHasBeenSet;
-    Aws::String m_name;
-    bool m_nameHasBeenSet;
     bool m_isCommon;
     bool m_isCommonHasBeenSet;
+    Aws::String m_name;
+    bool m_nameHasBeenSet;
+    Aws::String m_id;
+    bool m_idHasBeenSet;
   };
 
 } // namespace Model
