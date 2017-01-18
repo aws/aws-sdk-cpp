@@ -18,12 +18,17 @@
 
 #include <aws/testing/Testing_EXPORTS.h>
 
+#include <aws/core/utils/memory/stl/AWSString.h>
+
 namespace Aws
 {
 namespace Testing
 {
 
     AWS_TESTING_API void RedirectHomeToTempIfAppropriate();
+
+    AWS_TESTING_API void SetAwsResourcePrefix(const char* resourcePrefix);
+    AWS_TESTING_API const Aws::String& GetAwsResourcePrefix();
 
 } // namespace Testing
 } // namespace Aws

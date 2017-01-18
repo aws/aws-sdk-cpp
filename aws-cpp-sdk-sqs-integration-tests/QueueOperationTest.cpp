@@ -42,6 +42,7 @@
 #include <aws/iam/IAMClient.h>
 #include <aws/cognito-identity/CognitoIdentityClient.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/testing/TestingEnvironment.h>
 
 using namespace Aws::Http;
 using namespace Aws;
@@ -53,17 +54,27 @@ using namespace Aws::Utils::Json;
 
 #define TEST_QUEUE_PREFIX "IntegrationTest_"
 
-static const char* SIMPLE_QUEUE_NAME = TEST_QUEUE_PREFIX "Simple";
-static const char* SEND_RECEIVE_QUEUE_NAME = TEST_QUEUE_PREFIX "SendReceive";
-static const char* ATTRIBUTES_QUEUE_NAME = TEST_QUEUE_PREFIX "Attributes";
-static const char* PERMISSIONS_QUEUE_NAME = TEST_QUEUE_PREFIX "Permissions";
-static const char* DEAD_LETTER_QUEUE_NAME = TEST_QUEUE_PREFIX "DeadLetter";
-static const char* DEAD_LETTER_SOURCE_QUEUE_NAME = TEST_QUEUE_PREFIX "DeadLetterSource";
-static const char* CHANGE_MESSAGE_VISIBILITY_BATCH_QUEUE_NAME = TEST_QUEUE_PREFIX "ChangeMessageVisibilityBatch";
+static const char* BASE_SIMPLE_QUEUE_NAME = TEST_QUEUE_PREFIX "Simple";
+static const char* BASE_SEND_RECEIVE_QUEUE_NAME = TEST_QUEUE_PREFIX "SendReceive";
+static const char* BASE_ATTRIBUTES_QUEUE_NAME = TEST_QUEUE_PREFIX "Attributes";
+static const char* BASE_PERMISSIONS_QUEUE_NAME = TEST_QUEUE_PREFIX "Permissions";
+static const char* BASE_DEAD_LETTER_QUEUE_NAME = TEST_QUEUE_PREFIX "DeadLetter";
+static const char* BASE_DEAD_LETTER_SOURCE_QUEUE_NAME = TEST_QUEUE_PREFIX "DeadLetterSource";
+static const char* BASE_CHANGE_MESSAGE_VISIBILITY_BATCH_QUEUE_NAME = TEST_QUEUE_PREFIX "ChangeMessageVisibilityBatch";
 static const char* ALLOCATION_TAG = "QueueOperationTest";
 
 namespace
 {
+
+Aws::String BuildResourceName(const char* baseName)
+{
+    return Aws::Testing::GetAwsResourcePrefix() + baseName;
+}
+
+Aws::String BuildResourcePrefix()
+{
+    return Aws::Testing::GetAwsResourcePrefix() + TEST_QUEUE_PREFIX;
+}
 
 class QueueOperationTest : public ::testing::Test
 {
@@ -128,7 +139,7 @@ protected:
     void DeleteAllTestQueues()
     {
         ListQueuesRequest listQueueRequest;
-        listQueueRequest.WithQueueNamePrefix(TEST_QUEUE_PREFIX);
+        listQueueRequest.WithQueueNamePrefix(BuildResourcePrefix());
 
         ListQueuesOutcome listQueuesOutcome = sqsClient->ListQueues(listQueueRequest);
         ListQueuesResult listQueuesResult = listQueuesOutcome.GetResult();
@@ -166,7 +177,7 @@ protected:
 TEST_F(QueueOperationTest, TestCreateAndDeleteQueue)
 {
     CreateQueueRequest createQueueRequest;
-    createQueueRequest.SetQueueName(SIMPLE_QUEUE_NAME);
+    createQueueRequest.SetQueueName(BuildResourceName(BASE_SIMPLE_QUEUE_NAME));
 
     CreateQueueOutcome createQueueOutcome;
     bool shouldContinue = true;
@@ -200,7 +211,7 @@ TEST_F(QueueOperationTest, TestCreateAndDeleteQueue)
     for (int attempt = 0; ; attempt++)
     {
         ListQueuesRequest listQueueRequest;
-        listQueueRequest.WithQueueNamePrefix(TEST_QUEUE_PREFIX);
+        listQueueRequest.WithQueueNamePrefix(BuildResourcePrefix());
 
         ListQueuesOutcome listQueuesOutcome = sqsClient->ListQueues(listQueueRequest);
         if (listQueuesOutcome.IsSuccess())
@@ -226,8 +237,9 @@ TEST_F(QueueOperationTest, TestCreateAndDeleteQueue)
 
 TEST_F(QueueOperationTest, TestSendReceiveDelete)
 {
-    Aws::String queueUrl = CreateDefaultQueue(SEND_RECEIVE_QUEUE_NAME);
-    ASSERT_TRUE(queueUrl.find(SEND_RECEIVE_QUEUE_NAME) != Aws::String::npos);
+    Aws::String queueName = BuildResourceName(BASE_SEND_RECEIVE_QUEUE_NAME);
+    Aws::String queueUrl = CreateDefaultQueue(queueName);
+    ASSERT_TRUE(queueUrl.find(queueName) != Aws::String::npos);
 
     SendMessageRequest sendMessageRequest;
     sendMessageRequest.SetMessageBody("TestMessageBody");
@@ -290,7 +302,7 @@ TEST_F(QueueOperationTest, TestSendReceiveDelete)
 TEST_F(QueueOperationTest, TestQueueAttributes)
 {
     CreateQueueRequest createQueueRequest;
-    createQueueRequest.SetQueueName(ATTRIBUTES_QUEUE_NAME);
+    createQueueRequest.SetQueueName(BuildResourceName(BASE_ATTRIBUTES_QUEUE_NAME));
     createQueueRequest.AddAttributes(QueueAttributeName::DelaySeconds, "45");
 
     CreateQueueOutcome createQueueOutcome = sqsClient->CreateQueue(createQueueRequest);
@@ -324,8 +336,9 @@ TEST_F(QueueOperationTest, TestQueueAttributes)
 
 TEST_F(QueueOperationTest, TestPermissions)
 {
-    Aws::String queueUrl = CreateDefaultQueue(PERMISSIONS_QUEUE_NAME);
-    ASSERT_TRUE(queueUrl.find(PERMISSIONS_QUEUE_NAME) != Aws::String::npos);
+    Aws::String queueName = BuildResourceName(BASE_PERMISSIONS_QUEUE_NAME);
+    Aws::String queueUrl = CreateDefaultQueue(queueName);
+    ASSERT_TRUE(queueUrl.find(queueName) != Aws::String::npos);
 
     AddPermissionRequest addPermissionRequest;
     addPermissionRequest.AddAWSAccountIds(m_accountId).AddActions("ReceiveMessage").WithLabel("Test").WithQueueUrl(
@@ -366,14 +379,17 @@ TEST_F(QueueOperationTest, TestPermissions)
 
 TEST_F(QueueOperationTest, TestListDeadLetterSourceQueues)
 {
+    Aws::String sourceQueueName = BuildResourceName(BASE_DEAD_LETTER_SOURCE_QUEUE_NAME);
+
     CreateQueueRequest createQueueRequest;
-    createQueueRequest.SetQueueName(DEAD_LETTER_SOURCE_QUEUE_NAME);
+    createQueueRequest.SetQueueName(sourceQueueName);
 
     CreateQueueOutcome createQueueOutcome = sqsClient->CreateQueue(createQueueRequest);
     ASSERT_TRUE(createQueueOutcome.IsSuccess());
     Aws::String queueUrl = createQueueOutcome.GetResult().GetQueueUrl();
 
-    createQueueRequest.SetQueueName(DEAD_LETTER_QUEUE_NAME);
+    Aws::String queueName = BuildResourceName(BASE_DEAD_LETTER_QUEUE_NAME);
+    createQueueRequest.SetQueueName(queueName);
     createQueueOutcome = sqsClient->CreateQueue(createQueueRequest);
     ASSERT_TRUE(createQueueOutcome.IsSuccess());
     Aws::String deadLetterQueueUrl = createQueueOutcome.GetResult().GetQueueUrl();
@@ -427,7 +443,7 @@ TEST_F(QueueOperationTest, TestListDeadLetterSourceQueues)
 TEST_F(QueueOperationTest, ChangeMessageVisibilityBatch)
 {
   CreateQueueRequest createQueueRequest;
-  createQueueRequest.SetQueueName(CHANGE_MESSAGE_VISIBILITY_BATCH_QUEUE_NAME);
+  createQueueRequest.SetQueueName(BuildResourceName(BASE_CHANGE_MESSAGE_VISIBILITY_BATCH_QUEUE_NAME));
 
   auto createQueueOutcome = sqsClient->CreateQueue(createQueueRequest);
   ASSERT_TRUE(createQueueOutcome.IsSuccess());
