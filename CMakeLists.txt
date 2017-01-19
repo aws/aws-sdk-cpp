@@ -82,10 +82,18 @@ endif()
 
 include(initialize_project_version)
 
-cmake_policy(SET CMP0028 NEW)
-cmake_policy(SET CMP0048 NEW)
-cmake_policy(SET CMP0054 NEW)
-cmake_policy(SET CMP0056 NEW)
+if(POLICY CMP0028)
+    cmake_policy(SET CMP0028 NEW)
+endif()
+if(POLICY CMP0048)
+    cmake_policy(SET CMP0048 NEW)
+endif()
+if(POLICY CMP0054)
+    cmake_policy(SET CMP0054 NEW)
+endif()
+if(POLICY CMP0056)
+    cmake_policy(SET CMP0056 NEW)
+endif()
 
 project("aws-cpp-sdk-all" VERSION "${PROJECT_VERSION}" LANGUAGES CXX)
 
