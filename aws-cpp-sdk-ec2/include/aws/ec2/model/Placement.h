@@ -165,44 +165,44 @@ namespace Model
     inline Placement& WithTenancy(Tenancy&& value) { SetTenancy(value); return *this;}
 
     /**
-     * <p>The ID of the Dedicted host on which the instance resides. This parameter is
-     * not support for the <a>ImportInstance</a> command.</p>
+     * <p>The ID of the Dedicated Host on which the instance resides. This parameter is
+     * not supported for the <a>ImportInstance</a> command.</p>
      */
     inline const Aws::String& GetHostId() const{ return m_hostId; }
 
     /**
-     * <p>The ID of the Dedicted host on which the instance resides. This parameter is
-     * not support for the <a>ImportInstance</a> command.</p>
+     * <p>The ID of the Dedicated Host on which the instance resides. This parameter is
+     * not supported for the <a>ImportInstance</a> command.</p>
      */
     inline void SetHostId(const Aws::String& value) { m_hostIdHasBeenSet = true; m_hostId = value; }
 
     /**
-     * <p>The ID of the Dedicted host on which the instance resides. This parameter is
-     * not support for the <a>ImportInstance</a> command.</p>
+     * <p>The ID of the Dedicated Host on which the instance resides. This parameter is
+     * not supported for the <a>ImportInstance</a> command.</p>
      */
     inline void SetHostId(Aws::String&& value) { m_hostIdHasBeenSet = true; m_hostId = value; }
 
     /**
-     * <p>The ID of the Dedicted host on which the instance resides. This parameter is
-     * not support for the <a>ImportInstance</a> command.</p>
+     * <p>The ID of the Dedicated Host on which the instance resides. This parameter is
+     * not supported for the <a>ImportInstance</a> command.</p>
      */
     inline void SetHostId(const char* value) { m_hostIdHasBeenSet = true; m_hostId.assign(value); }
 
     /**
-     * <p>The ID of the Dedicted host on which the instance resides. This parameter is
-     * not support for the <a>ImportInstance</a> command.</p>
+     * <p>The ID of the Dedicated Host on which the instance resides. This parameter is
+     * not supported for the <a>ImportInstance</a> command.</p>
      */
     inline Placement& WithHostId(const Aws::String& value) { SetHostId(value); return *this;}
 
     /**
-     * <p>The ID of the Dedicted host on which the instance resides. This parameter is
-     * not support for the <a>ImportInstance</a> command.</p>
+     * <p>The ID of the Dedicated Host on which the instance resides. This parameter is
+     * not supported for the <a>ImportInstance</a> command.</p>
      */
     inline Placement& WithHostId(Aws::String&& value) { SetHostId(value); return *this;}
 
     /**
-     * <p>The ID of the Dedicted host on which the instance resides. This parameter is
-     * not support for the <a>ImportInstance</a> command.</p>
+     * <p>The ID of the Dedicated Host on which the instance resides. This parameter is
+     * not supported for the <a>ImportInstance</a> command.</p>
      */
     inline Placement& WithHostId(const char* value) { SetHostId(value); return *this;}
 

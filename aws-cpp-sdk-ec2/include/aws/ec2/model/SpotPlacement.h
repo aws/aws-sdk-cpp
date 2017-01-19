@@ -16,6 +16,7 @@
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ec2/model/Tenancy.h>
 
 namespace Aws
 {
@@ -130,11 +131,48 @@ namespace Model
      */
     inline SpotPlacement& WithGroupName(const char* value) { SetGroupName(value); return *this;}
 
+    /**
+     * <p>The tenancy of the instance (if the instance is running in a VPC). An
+     * instance with a tenancy of <code>dedicated</code> runs on single-tenant
+     * hardware. The <code>host</code> tenancy is not supported for Spot instances.</p>
+     */
+    inline const Tenancy& GetTenancy() const{ return m_tenancy; }
+
+    /**
+     * <p>The tenancy of the instance (if the instance is running in a VPC). An
+     * instance with a tenancy of <code>dedicated</code> runs on single-tenant
+     * hardware. The <code>host</code> tenancy is not supported for Spot instances.</p>
+     */
+    inline void SetTenancy(const Tenancy& value) { m_tenancyHasBeenSet = true; m_tenancy = value; }
+
+    /**
+     * <p>The tenancy of the instance (if the instance is running in a VPC). An
+     * instance with a tenancy of <code>dedicated</code> runs on single-tenant
+     * hardware. The <code>host</code> tenancy is not supported for Spot instances.</p>
+     */
+    inline void SetTenancy(Tenancy&& value) { m_tenancyHasBeenSet = true; m_tenancy = value; }
+
+    /**
+     * <p>The tenancy of the instance (if the instance is running in a VPC). An
+     * instance with a tenancy of <code>dedicated</code> runs on single-tenant
+     * hardware. The <code>host</code> tenancy is not supported for Spot instances.</p>
+     */
+    inline SpotPlacement& WithTenancy(const Tenancy& value) { SetTenancy(value); return *this;}
+
+    /**
+     * <p>The tenancy of the instance (if the instance is running in a VPC). An
+     * instance with a tenancy of <code>dedicated</code> runs on single-tenant
+     * hardware. The <code>host</code> tenancy is not supported for Spot instances.</p>
+     */
+    inline SpotPlacement& WithTenancy(Tenancy&& value) { SetTenancy(value); return *this;}
+
   private:
     Aws::String m_availabilityZone;
     bool m_availabilityZoneHasBeenSet;
     Aws::String m_groupName;
     bool m_groupNameHasBeenSet;
+    Tenancy m_tenancy;
+    bool m_tenancyHasBeenSet;
   };
 
 } // namespace Model

@@ -31,13 +31,17 @@ namespace Model
 
 SpotPlacement::SpotPlacement() : 
     m_availabilityZoneHasBeenSet(false),
-    m_groupNameHasBeenSet(false)
+    m_groupNameHasBeenSet(false),
+    m_tenancy(Tenancy::NOT_SET),
+    m_tenancyHasBeenSet(false)
 {
 }
 
 SpotPlacement::SpotPlacement(const XmlNode& xmlNode) : 
     m_availabilityZoneHasBeenSet(false),
-    m_groupNameHasBeenSet(false)
+    m_groupNameHasBeenSet(false),
+    m_tenancy(Tenancy::NOT_SET),
+    m_tenancyHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -60,6 +64,12 @@ SpotPlacement& SpotPlacement::operator =(const XmlNode& xmlNode)
       m_groupName = StringUtils::Trim(groupNameNode.GetText().c_str());
       m_groupNameHasBeenSet = true;
     }
+    XmlNode tenancyNode = resultNode.FirstChild("tenancy");
+    if(!tenancyNode.IsNull())
+    {
+      m_tenancy = TenancyMapper::GetTenancyForName(StringUtils::Trim(tenancyNode.GetText().c_str()).c_str());
+      m_tenancyHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -77,6 +87,11 @@ void SpotPlacement::OutputToStream(Aws::OStream& oStream, const char* location, 
       oStream << location << index << locationValue << ".GroupName=" << StringUtils::URLEncode(m_groupName.c_str()) << "&";
   }
 
+  if(m_tenancyHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".Tenancy=" << TenancyMapper::GetNameForTenancy(m_tenancy) << "&";
+  }
+
 }
 
 void SpotPlacement::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -88,6 +103,10 @@ void SpotPlacement::OutputToStream(Aws::OStream& oStream, const char* location) 
   if(m_groupNameHasBeenSet)
   {
       oStream << location << ".GroupName=" << StringUtils::URLEncode(m_groupName.c_str()) << "&";
+  }
+  if(m_tenancyHasBeenSet)
+  {
+      oStream << location << ".Tenancy=" << TenancyMapper::GetNameForTenancy(m_tenancy) << "&";
   }
 }
 
