@@ -22,8 +22,8 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 updateDoctorRequest::updateDoctorRequest() : 
-    m_officeNumberHasBeenSet(false),
-    m_doctorIdHasBeenSet(false)
+    m_doctorIdHasBeenSet(false),
+    m_officeNumberHasBeenSet(false)
 {
 }
 
@@ -31,15 +31,15 @@ Aws::String updateDoctorRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  if(m_officeNumberHasBeenSet)
-  {
-   payload.WithString("officeNumber", m_officeNumber);
-
-  }
-
   if(m_doctorIdHasBeenSet)
   {
    payload.WithString("doctorId", m_doctorId);
+
+  }
+
+  if(m_officeNumberHasBeenSet)
+  {
+   payload.WithString("officeNumber", m_officeNumber);
 
   }
 

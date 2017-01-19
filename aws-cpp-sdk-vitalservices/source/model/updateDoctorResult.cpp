@@ -26,15 +26,15 @@ using namespace Aws;
 
 updateDoctorResult::updateDoctorResult() : 
     m_longitude(0.0),
-    m_latitude(0.0),
-    m_payoutInfoIsSet(false)
+    m_payoutInfoIsSet(false),
+    m_latitude(0.0)
 {
 }
 
 updateDoctorResult::updateDoctorResult(const AmazonWebServiceResult<JsonValue>& result) : 
     m_longitude(0.0),
-    m_latitude(0.0),
-    m_payoutInfoIsSet(false)
+    m_payoutInfoIsSet(false),
+    m_latitude(0.0)
 {
   *this = result;
 }
@@ -42,21 +42,9 @@ updateDoctorResult::updateDoctorResult(const AmazonWebServiceResult<JsonValue>& 
 updateDoctorResult& updateDoctorResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
-  if(jsonValue.ValueExists("longitude"))
+  if(jsonValue.ValueExists("postalCode"))
   {
-    m_longitude = jsonValue.GetDouble("longitude");
-
-  }
-
-  if(jsonValue.ValueExists("officeNumber"))
-  {
-    m_officeNumber = jsonValue.GetString("officeNumber");
-
-  }
-
-  if(jsonValue.ValueExists("suite"))
-  {
-    m_suite = jsonValue.GetString("suite");
+    m_postalCode = jsonValue.GetString("postalCode");
 
   }
 
@@ -66,42 +54,9 @@ updateDoctorResult& updateDoctorResult::operator =(const AmazonWebServiceResult<
 
   }
 
-  if(jsonValue.ValueExists("firstName"))
+  if(jsonValue.ValueExists("administrativeAreaL1"))
   {
-    m_firstName = jsonValue.GetString("firstName");
-
-  }
-
-  if(jsonValue.ValueExists("postalCode"))
-  {
-    m_postalCode = jsonValue.GetString("postalCode");
-
-  }
-
-  if(jsonValue.ValueExists("lastName"))
-  {
-    m_lastName = jsonValue.GetString("lastName");
-
-  }
-
-  if(jsonValue.ValueExists("serviceDetailsList"))
-  {
-    Array<JsonValue> serviceDetailsListJsonList = jsonValue.GetArray("serviceDetailsList");
-    for(unsigned serviceDetailsListIndex = 0; serviceDetailsListIndex < serviceDetailsListJsonList.GetLength(); ++serviceDetailsListIndex)
-    {
-      m_serviceDetailsList.push_back(serviceDetailsListJsonList[serviceDetailsListIndex].AsObject());
-    }
-  }
-
-  if(jsonValue.ValueExists("profilePhotoUrl"))
-  {
-    m_profilePhotoUrl = jsonValue.GetString("profilePhotoUrl");
-
-  }
-
-  if(jsonValue.ValueExists("coverPhotoUrl"))
-  {
-    m_coverPhotoUrl = jsonValue.GetString("coverPhotoUrl");
+    m_administrativeAreaL1 = jsonValue.GetString("administrativeAreaL1");
 
   }
 
@@ -114,27 +69,39 @@ updateDoctorResult& updateDoctorResult::operator =(const AmazonWebServiceResult<
     }
   }
 
-  if(jsonValue.ValueExists("latitude"))
+  if(jsonValue.ValueExists("streetNumberAndName"))
   {
-    m_latitude = jsonValue.GetDouble("latitude");
+    m_streetNumberAndName = jsonValue.GetString("streetNumberAndName");
 
   }
 
-  if(jsonValue.ValueExists("id"))
+  if(jsonValue.ValueExists("profilePhotoUrl"))
   {
-    m_id = jsonValue.GetString("id");
+    m_profilePhotoUrl = jsonValue.GetString("profilePhotoUrl");
 
   }
 
-  if(jsonValue.ValueExists("payoutInfoIsSet"))
+  if(jsonValue.ValueExists("longitude"))
   {
-    m_payoutInfoIsSet = jsonValue.GetBool("payoutInfoIsSet");
+    m_longitude = jsonValue.GetDouble("longitude");
 
   }
 
-  if(jsonValue.ValueExists("administrativeAreaL1"))
+  if(jsonValue.ValueExists("suite"))
   {
-    m_administrativeAreaL1 = jsonValue.GetString("administrativeAreaL1");
+    m_suite = jsonValue.GetString("suite");
+
+  }
+
+  if(jsonValue.ValueExists("lastName"))
+  {
+    m_lastName = jsonValue.GetString("lastName");
+
+  }
+
+  if(jsonValue.ValueExists("coverPhotoUrl"))
+  {
+    m_coverPhotoUrl = jsonValue.GetString("coverPhotoUrl");
 
   }
 
@@ -144,9 +111,42 @@ updateDoctorResult& updateDoctorResult::operator =(const AmazonWebServiceResult<
 
   }
 
-  if(jsonValue.ValueExists("streetNumberAndName"))
+  if(jsonValue.ValueExists("officeNumber"))
   {
-    m_streetNumberAndName = jsonValue.GetString("streetNumberAndName");
+    m_officeNumber = jsonValue.GetString("officeNumber");
+
+  }
+
+  if(jsonValue.ValueExists("payoutInfoIsSet"))
+  {
+    m_payoutInfoIsSet = jsonValue.GetBool("payoutInfoIsSet");
+
+  }
+
+  if(jsonValue.ValueExists("serviceDetailsList"))
+  {
+    Array<JsonValue> serviceDetailsListJsonList = jsonValue.GetArray("serviceDetailsList");
+    for(unsigned serviceDetailsListIndex = 0; serviceDetailsListIndex < serviceDetailsListJsonList.GetLength(); ++serviceDetailsListIndex)
+    {
+      m_serviceDetailsList.push_back(serviceDetailsListJsonList[serviceDetailsListIndex].AsObject());
+    }
+  }
+
+  if(jsonValue.ValueExists("id"))
+  {
+    m_id = jsonValue.GetString("id");
+
+  }
+
+  if(jsonValue.ValueExists("latitude"))
+  {
+    m_latitude = jsonValue.GetDouble("latitude");
+
+  }
+
+  if(jsonValue.ValueExists("firstName"))
+  {
+    m_firstName = jsonValue.GetString("firstName");
 
   }
 

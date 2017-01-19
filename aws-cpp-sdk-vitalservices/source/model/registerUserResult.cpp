@@ -36,39 +36,9 @@ registerUserResult::registerUserResult(const AmazonWebServiceResult<JsonValue>& 
 registerUserResult& registerUserResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
-  if(jsonValue.ValueExists("email"))
+  if(jsonValue.ValueExists("lastName"))
   {
-    m_email = jsonValue.GetString("email");
-
-  }
-
-  if(jsonValue.ValueExists("profilePhotoUrl"))
-  {
-    m_profilePhotoUrl = jsonValue.GetString("profilePhotoUrl");
-
-  }
-
-  if(jsonValue.ValueExists("mobileNumber"))
-  {
-    m_mobileNumber = jsonValue.GetString("mobileNumber");
-
-  }
-
-  if(jsonValue.ValueExists("id"))
-  {
-    m_id = jsonValue.GetString("id");
-
-  }
-
-  if(jsonValue.ValueExists("stripeCustomerId"))
-  {
-    m_stripeCustomerId = jsonValue.GetString("stripeCustomerId");
-
-  }
-
-  if(jsonValue.ValueExists("firstName"))
-  {
-    m_firstName = jsonValue.GetString("firstName");
+    m_lastName = jsonValue.GetString("lastName");
 
   }
 
@@ -78,9 +48,39 @@ registerUserResult& registerUserResult::operator =(const AmazonWebServiceResult<
 
   }
 
-  if(jsonValue.ValueExists("lastName"))
+  if(jsonValue.ValueExists("profilePhotoUrl"))
   {
-    m_lastName = jsonValue.GetString("lastName");
+    m_profilePhotoUrl = jsonValue.GetString("profilePhotoUrl");
+
+  }
+
+  if(jsonValue.ValueExists("stripeCustomerId"))
+  {
+    m_stripeCustomerId = jsonValue.GetString("stripeCustomerId");
+
+  }
+
+  if(jsonValue.ValueExists("mobileNumber"))
+  {
+    m_mobileNumber = jsonValue.GetString("mobileNumber");
+
+  }
+
+  if(jsonValue.ValueExists("email"))
+  {
+    m_email = jsonValue.GetString("email");
+
+  }
+
+  if(jsonValue.ValueExists("id"))
+  {
+    m_id = jsonValue.GetString("id");
+
+  }
+
+  if(jsonValue.ValueExists("firstName"))
+  {
+    m_firstName = jsonValue.GetString("firstName");
 
   }
 

@@ -1,7 +1,7 @@
 {
   "swagger" : "2.0",
   "info" : {
-    "version" : "2017-01-18T21:18:16Z",
+    "version" : "2017-01-19T18:11:01Z",
     "title" : "VitalServices"
   },
   "host" : "h6wguq9ghl.execute-api.us-east-1.amazonaws.com",
@@ -872,14 +872,15 @@
     },
     "QueryDoctorScheduleRequest" : {
       "type" : "object",
+      "required" : [ "doctorId", "firstTimeInclusive", "lastTimeExclusive" ],
       "properties" : {
         "doctorId" : {
           "type" : "string"
         },
-        "firstTime" : {
+        "firstTimeInclusive" : {
           "type" : "string"
         },
-        "lastTime" : {
+        "lastTimeExclusive" : {
           "type" : "string"
         }
       },

@@ -33,48 +33,6 @@ namespace Model
     Aws::String SerializePayload() const override;
 
     
-    inline const Aws::String& GetFirstTime() const{ return m_firstTime; }
-
-    
-    inline void SetFirstTime(const Aws::String& value) { m_firstTimeHasBeenSet = true; m_firstTime = value; }
-
-    
-    inline void SetFirstTime(Aws::String&& value) { m_firstTimeHasBeenSet = true; m_firstTime = value; }
-
-    
-    inline void SetFirstTime(const char* value) { m_firstTimeHasBeenSet = true; m_firstTime.assign(value); }
-
-    
-    inline queryDoctorScheduleRequest& WithFirstTime(const Aws::String& value) { SetFirstTime(value); return *this;}
-
-    
-    inline queryDoctorScheduleRequest& WithFirstTime(Aws::String&& value) { SetFirstTime(value); return *this;}
-
-    
-    inline queryDoctorScheduleRequest& WithFirstTime(const char* value) { SetFirstTime(value); return *this;}
-
-    
-    inline const Aws::String& GetLastTime() const{ return m_lastTime; }
-
-    
-    inline void SetLastTime(const Aws::String& value) { m_lastTimeHasBeenSet = true; m_lastTime = value; }
-
-    
-    inline void SetLastTime(Aws::String&& value) { m_lastTimeHasBeenSet = true; m_lastTime = value; }
-
-    
-    inline void SetLastTime(const char* value) { m_lastTimeHasBeenSet = true; m_lastTime.assign(value); }
-
-    
-    inline queryDoctorScheduleRequest& WithLastTime(const Aws::String& value) { SetLastTime(value); return *this;}
-
-    
-    inline queryDoctorScheduleRequest& WithLastTime(Aws::String&& value) { SetLastTime(value); return *this;}
-
-    
-    inline queryDoctorScheduleRequest& WithLastTime(const char* value) { SetLastTime(value); return *this;}
-
-    
     inline const Aws::String& GetDoctorId() const{ return m_doctorId; }
 
     
@@ -95,13 +53,55 @@ namespace Model
     
     inline queryDoctorScheduleRequest& WithDoctorId(const char* value) { SetDoctorId(value); return *this;}
 
+    
+    inline const Aws::String& GetLastTimeExclusive() const{ return m_lastTimeExclusive; }
+
+    
+    inline void SetLastTimeExclusive(const Aws::String& value) { m_lastTimeExclusiveHasBeenSet = true; m_lastTimeExclusive = value; }
+
+    
+    inline void SetLastTimeExclusive(Aws::String&& value) { m_lastTimeExclusiveHasBeenSet = true; m_lastTimeExclusive = value; }
+
+    
+    inline void SetLastTimeExclusive(const char* value) { m_lastTimeExclusiveHasBeenSet = true; m_lastTimeExclusive.assign(value); }
+
+    
+    inline queryDoctorScheduleRequest& WithLastTimeExclusive(const Aws::String& value) { SetLastTimeExclusive(value); return *this;}
+
+    
+    inline queryDoctorScheduleRequest& WithLastTimeExclusive(Aws::String&& value) { SetLastTimeExclusive(value); return *this;}
+
+    
+    inline queryDoctorScheduleRequest& WithLastTimeExclusive(const char* value) { SetLastTimeExclusive(value); return *this;}
+
+    
+    inline const Aws::String& GetFirstTimeInclusive() const{ return m_firstTimeInclusive; }
+
+    
+    inline void SetFirstTimeInclusive(const Aws::String& value) { m_firstTimeInclusiveHasBeenSet = true; m_firstTimeInclusive = value; }
+
+    
+    inline void SetFirstTimeInclusive(Aws::String&& value) { m_firstTimeInclusiveHasBeenSet = true; m_firstTimeInclusive = value; }
+
+    
+    inline void SetFirstTimeInclusive(const char* value) { m_firstTimeInclusiveHasBeenSet = true; m_firstTimeInclusive.assign(value); }
+
+    
+    inline queryDoctorScheduleRequest& WithFirstTimeInclusive(const Aws::String& value) { SetFirstTimeInclusive(value); return *this;}
+
+    
+    inline queryDoctorScheduleRequest& WithFirstTimeInclusive(Aws::String&& value) { SetFirstTimeInclusive(value); return *this;}
+
+    
+    inline queryDoctorScheduleRequest& WithFirstTimeInclusive(const char* value) { SetFirstTimeInclusive(value); return *this;}
+
   private:
-    Aws::String m_firstTime;
-    bool m_firstTimeHasBeenSet;
-    Aws::String m_lastTime;
-    bool m_lastTimeHasBeenSet;
     Aws::String m_doctorId;
     bool m_doctorIdHasBeenSet;
+    Aws::String m_lastTimeExclusive;
+    bool m_lastTimeExclusiveHasBeenSet;
+    Aws::String m_firstTimeInclusive;
+    bool m_firstTimeInclusiveHasBeenSet;
   };
 
 } // namespace Model

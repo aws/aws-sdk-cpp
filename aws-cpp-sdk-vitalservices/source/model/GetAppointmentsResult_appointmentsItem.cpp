@@ -29,43 +29,43 @@ namespace Model
 
 GetAppointmentsResult_appointmentsItem::GetAppointmentsResult_appointmentsItem() : 
     m_basePriceCentsHasBeenSet(false),
-    m_chargeIdHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_serviceIdHasBeenSet(false),
-    m_reimbursementDateHasBeenSet(false),
-    m_cancellationDateHasBeenSet(false),
     m_doctorIdHasBeenSet(false),
+    m_doctorEarningsCentsHasBeenSet(false),
+    m_serviceIdHasBeenSet(false),
+    m_cancellationDateHasBeenSet(false),
+    m_startTimeHasBeenSet(false),
+    m_patientIdHasBeenSet(false),
+    m_amountRefundedCentsHasBeenSet(false),
+    m_chargeIdHasBeenSet(false),
+    m_durationSecondsHasBeenSet(false),
+    m_totalPriceCentsHasBeenSet(false),
     m_appointmentStateHasBeenSet(false),
     m_dateBookedHasBeenSet(false),
-    m_totalPriceCentsHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_amountRefundedCentsHasBeenSet(false),
-    m_patientIdHasBeenSet(false),
     m_doctorServiceFeeCentsHasBeenSet(false),
+    m_idHasBeenSet(false),
     m_patientServiceFeeCentsHasBeenSet(false),
-    m_durationSecondsHasBeenSet(false),
-    m_doctorEarningsCentsHasBeenSet(false)
+    m_reimbursementDateHasBeenSet(false)
 {
 }
 
 GetAppointmentsResult_appointmentsItem::GetAppointmentsResult_appointmentsItem(const JsonValue& jsonValue) : 
     m_basePriceCentsHasBeenSet(false),
-    m_chargeIdHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_serviceIdHasBeenSet(false),
-    m_reimbursementDateHasBeenSet(false),
-    m_cancellationDateHasBeenSet(false),
     m_doctorIdHasBeenSet(false),
+    m_doctorEarningsCentsHasBeenSet(false),
+    m_serviceIdHasBeenSet(false),
+    m_cancellationDateHasBeenSet(false),
+    m_startTimeHasBeenSet(false),
+    m_patientIdHasBeenSet(false),
+    m_amountRefundedCentsHasBeenSet(false),
+    m_chargeIdHasBeenSet(false),
+    m_durationSecondsHasBeenSet(false),
+    m_totalPriceCentsHasBeenSet(false),
     m_appointmentStateHasBeenSet(false),
     m_dateBookedHasBeenSet(false),
-    m_totalPriceCentsHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_amountRefundedCentsHasBeenSet(false),
-    m_patientIdHasBeenSet(false),
     m_doctorServiceFeeCentsHasBeenSet(false),
+    m_idHasBeenSet(false),
     m_patientServiceFeeCentsHasBeenSet(false),
-    m_durationSecondsHasBeenSet(false),
-    m_doctorEarningsCentsHasBeenSet(false)
+    m_reimbursementDateHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -79,18 +79,18 @@ GetAppointmentsResult_appointmentsItem& GetAppointmentsResult_appointmentsItem::
     m_basePriceCentsHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("chargeId"))
+  if(jsonValue.ValueExists("doctorId"))
   {
-    m_chargeId = jsonValue.GetString("chargeId");
+    m_doctorId = jsonValue.GetString("doctorId");
 
-    m_chargeIdHasBeenSet = true;
+    m_doctorIdHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("id"))
+  if(jsonValue.ValueExists("doctorEarningsCents"))
   {
-    m_id = jsonValue.GetString("id");
+    m_doctorEarningsCents = jsonValue.GetString("doctorEarningsCents");
 
-    m_idHasBeenSet = true;
+    m_doctorEarningsCentsHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("serviceId"))
@@ -100,13 +100,6 @@ GetAppointmentsResult_appointmentsItem& GetAppointmentsResult_appointmentsItem::
     m_serviceIdHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("reimbursementDate"))
-  {
-    m_reimbursementDate = jsonValue.GetString("reimbursementDate");
-
-    m_reimbursementDateHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("cancellationDate"))
   {
     m_cancellationDate = jsonValue.GetString("cancellationDate");
@@ -114,11 +107,46 @@ GetAppointmentsResult_appointmentsItem& GetAppointmentsResult_appointmentsItem::
     m_cancellationDateHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("doctorId"))
+  if(jsonValue.ValueExists("startTime"))
   {
-    m_doctorId = jsonValue.GetString("doctorId");
+    m_startTime = jsonValue.GetString("startTime");
 
-    m_doctorIdHasBeenSet = true;
+    m_startTimeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("patientId"))
+  {
+    m_patientId = jsonValue.GetString("patientId");
+
+    m_patientIdHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("amountRefundedCents"))
+  {
+    m_amountRefundedCents = jsonValue.GetString("amountRefundedCents");
+
+    m_amountRefundedCentsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("chargeId"))
+  {
+    m_chargeId = jsonValue.GetString("chargeId");
+
+    m_chargeIdHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("durationSeconds"))
+  {
+    m_durationSeconds = jsonValue.GetString("durationSeconds");
+
+    m_durationSecondsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("totalPriceCents"))
+  {
+    m_totalPriceCents = jsonValue.GetString("totalPriceCents");
+
+    m_totalPriceCentsHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("appointmentState"))
@@ -135,39 +163,18 @@ GetAppointmentsResult_appointmentsItem& GetAppointmentsResult_appointmentsItem::
     m_dateBookedHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("totalPriceCents"))
-  {
-    m_totalPriceCents = jsonValue.GetString("totalPriceCents");
-
-    m_totalPriceCentsHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("startTime"))
-  {
-    m_startTime = jsonValue.GetString("startTime");
-
-    m_startTimeHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("amountRefundedCents"))
-  {
-    m_amountRefundedCents = jsonValue.GetString("amountRefundedCents");
-
-    m_amountRefundedCentsHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("patientId"))
-  {
-    m_patientId = jsonValue.GetString("patientId");
-
-    m_patientIdHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("doctorServiceFeeCents"))
   {
     m_doctorServiceFeeCents = jsonValue.GetString("doctorServiceFeeCents");
 
     m_doctorServiceFeeCentsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("id"))
+  {
+    m_id = jsonValue.GetString("id");
+
+    m_idHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("patientServiceFeeCents"))
@@ -177,18 +184,11 @@ GetAppointmentsResult_appointmentsItem& GetAppointmentsResult_appointmentsItem::
     m_patientServiceFeeCentsHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("durationSeconds"))
+  if(jsonValue.ValueExists("reimbursementDate"))
   {
-    m_durationSeconds = jsonValue.GetString("durationSeconds");
+    m_reimbursementDate = jsonValue.GetString("reimbursementDate");
 
-    m_durationSecondsHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("doctorEarningsCents"))
-  {
-    m_doctorEarningsCents = jsonValue.GetString("doctorEarningsCents");
-
-    m_doctorEarningsCentsHasBeenSet = true;
+    m_reimbursementDateHasBeenSet = true;
   }
 
   return *this;
@@ -204,15 +204,15 @@ JsonValue GetAppointmentsResult_appointmentsItem::Jsonize() const
 
   }
 
-  if(m_chargeIdHasBeenSet)
+  if(m_doctorIdHasBeenSet)
   {
-   payload.WithString("chargeId", m_chargeId);
+   payload.WithString("doctorId", m_doctorId);
 
   }
 
-  if(m_idHasBeenSet)
+  if(m_doctorEarningsCentsHasBeenSet)
   {
-   payload.WithString("id", m_id);
+   payload.WithString("doctorEarningsCents", m_doctorEarningsCents);
 
   }
 
@@ -222,21 +222,45 @@ JsonValue GetAppointmentsResult_appointmentsItem::Jsonize() const
 
   }
 
-  if(m_reimbursementDateHasBeenSet)
-  {
-   payload.WithString("reimbursementDate", m_reimbursementDate);
-
-  }
-
   if(m_cancellationDateHasBeenSet)
   {
    payload.WithString("cancellationDate", m_cancellationDate);
 
   }
 
-  if(m_doctorIdHasBeenSet)
+  if(m_startTimeHasBeenSet)
   {
-   payload.WithString("doctorId", m_doctorId);
+   payload.WithString("startTime", m_startTime);
+
+  }
+
+  if(m_patientIdHasBeenSet)
+  {
+   payload.WithString("patientId", m_patientId);
+
+  }
+
+  if(m_amountRefundedCentsHasBeenSet)
+  {
+   payload.WithString("amountRefundedCents", m_amountRefundedCents);
+
+  }
+
+  if(m_chargeIdHasBeenSet)
+  {
+   payload.WithString("chargeId", m_chargeId);
+
+  }
+
+  if(m_durationSecondsHasBeenSet)
+  {
+   payload.WithString("durationSeconds", m_durationSeconds);
+
+  }
+
+  if(m_totalPriceCentsHasBeenSet)
+  {
+   payload.WithString("totalPriceCents", m_totalPriceCents);
 
   }
 
@@ -252,33 +276,15 @@ JsonValue GetAppointmentsResult_appointmentsItem::Jsonize() const
 
   }
 
-  if(m_totalPriceCentsHasBeenSet)
-  {
-   payload.WithString("totalPriceCents", m_totalPriceCents);
-
-  }
-
-  if(m_startTimeHasBeenSet)
-  {
-   payload.WithString("startTime", m_startTime);
-
-  }
-
-  if(m_amountRefundedCentsHasBeenSet)
-  {
-   payload.WithString("amountRefundedCents", m_amountRefundedCents);
-
-  }
-
-  if(m_patientIdHasBeenSet)
-  {
-   payload.WithString("patientId", m_patientId);
-
-  }
-
   if(m_doctorServiceFeeCentsHasBeenSet)
   {
    payload.WithString("doctorServiceFeeCents", m_doctorServiceFeeCents);
+
+  }
+
+  if(m_idHasBeenSet)
+  {
+   payload.WithString("id", m_id);
 
   }
 
@@ -288,15 +294,9 @@ JsonValue GetAppointmentsResult_appointmentsItem::Jsonize() const
 
   }
 
-  if(m_durationSecondsHasBeenSet)
+  if(m_reimbursementDateHasBeenSet)
   {
-   payload.WithString("durationSeconds", m_durationSeconds);
-
-  }
-
-  if(m_doctorEarningsCentsHasBeenSet)
-  {
-   payload.WithString("doctorEarningsCents", m_doctorEarningsCents);
+   payload.WithString("reimbursementDate", m_reimbursementDate);
 
   }
 

@@ -41,55 +41,25 @@ namespace Model
     Aws::Utils::Json::JsonValue Jsonize() const;
 
     
-    inline double GetLongitude() const{ return m_longitude; }
+    inline const Aws::String& GetPostalCode() const{ return m_postalCode; }
 
     
-    inline void SetLongitude(double value) { m_longitudeHasBeenSet = true; m_longitude = value; }
+    inline void SetPostalCode(const Aws::String& value) { m_postalCodeHasBeenSet = true; m_postalCode = value; }
 
     
-    inline GetAppointmentsResult_doctorsItem& WithLongitude(double value) { SetLongitude(value); return *this;}
+    inline void SetPostalCode(Aws::String&& value) { m_postalCodeHasBeenSet = true; m_postalCode = value; }
 
     
-    inline const Aws::String& GetOfficeNumber() const{ return m_officeNumber; }
+    inline void SetPostalCode(const char* value) { m_postalCodeHasBeenSet = true; m_postalCode.assign(value); }
 
     
-    inline void SetOfficeNumber(const Aws::String& value) { m_officeNumberHasBeenSet = true; m_officeNumber = value; }
+    inline GetAppointmentsResult_doctorsItem& WithPostalCode(const Aws::String& value) { SetPostalCode(value); return *this;}
 
     
-    inline void SetOfficeNumber(Aws::String&& value) { m_officeNumberHasBeenSet = true; m_officeNumber = value; }
+    inline GetAppointmentsResult_doctorsItem& WithPostalCode(Aws::String&& value) { SetPostalCode(value); return *this;}
 
     
-    inline void SetOfficeNumber(const char* value) { m_officeNumberHasBeenSet = true; m_officeNumber.assign(value); }
-
-    
-    inline GetAppointmentsResult_doctorsItem& WithOfficeNumber(const Aws::String& value) { SetOfficeNumber(value); return *this;}
-
-    
-    inline GetAppointmentsResult_doctorsItem& WithOfficeNumber(Aws::String&& value) { SetOfficeNumber(value); return *this;}
-
-    
-    inline GetAppointmentsResult_doctorsItem& WithOfficeNumber(const char* value) { SetOfficeNumber(value); return *this;}
-
-    
-    inline const Aws::String& GetSuite() const{ return m_suite; }
-
-    
-    inline void SetSuite(const Aws::String& value) { m_suiteHasBeenSet = true; m_suite = value; }
-
-    
-    inline void SetSuite(Aws::String&& value) { m_suiteHasBeenSet = true; m_suite = value; }
-
-    
-    inline void SetSuite(const char* value) { m_suiteHasBeenSet = true; m_suite.assign(value); }
-
-    
-    inline GetAppointmentsResult_doctorsItem& WithSuite(const Aws::String& value) { SetSuite(value); return *this;}
-
-    
-    inline GetAppointmentsResult_doctorsItem& WithSuite(Aws::String&& value) { SetSuite(value); return *this;}
-
-    
-    inline GetAppointmentsResult_doctorsItem& WithSuite(const char* value) { SetSuite(value); return *this;}
+    inline GetAppointmentsResult_doctorsItem& WithPostalCode(const char* value) { SetPostalCode(value); return *this;}
 
     
     inline const Aws::String& GetCity() const{ return m_city; }
@@ -113,130 +83,25 @@ namespace Model
     inline GetAppointmentsResult_doctorsItem& WithCity(const char* value) { SetCity(value); return *this;}
 
     
-    inline const Aws::String& GetFirstName() const{ return m_firstName; }
+    inline const Aws::String& GetAdministrativeAreaL1() const{ return m_administrativeAreaL1; }
 
     
-    inline void SetFirstName(const Aws::String& value) { m_firstNameHasBeenSet = true; m_firstName = value; }
+    inline void SetAdministrativeAreaL1(const Aws::String& value) { m_administrativeAreaL1HasBeenSet = true; m_administrativeAreaL1 = value; }
 
     
-    inline void SetFirstName(Aws::String&& value) { m_firstNameHasBeenSet = true; m_firstName = value; }
+    inline void SetAdministrativeAreaL1(Aws::String&& value) { m_administrativeAreaL1HasBeenSet = true; m_administrativeAreaL1 = value; }
 
     
-    inline void SetFirstName(const char* value) { m_firstNameHasBeenSet = true; m_firstName.assign(value); }
+    inline void SetAdministrativeAreaL1(const char* value) { m_administrativeAreaL1HasBeenSet = true; m_administrativeAreaL1.assign(value); }
 
     
-    inline GetAppointmentsResult_doctorsItem& WithFirstName(const Aws::String& value) { SetFirstName(value); return *this;}
+    inline GetAppointmentsResult_doctorsItem& WithAdministrativeAreaL1(const Aws::String& value) { SetAdministrativeAreaL1(value); return *this;}
 
     
-    inline GetAppointmentsResult_doctorsItem& WithFirstName(Aws::String&& value) { SetFirstName(value); return *this;}
+    inline GetAppointmentsResult_doctorsItem& WithAdministrativeAreaL1(Aws::String&& value) { SetAdministrativeAreaL1(value); return *this;}
 
     
-    inline GetAppointmentsResult_doctorsItem& WithFirstName(const char* value) { SetFirstName(value); return *this;}
-
-    
-    inline const Aws::String& GetPostalCode() const{ return m_postalCode; }
-
-    
-    inline void SetPostalCode(const Aws::String& value) { m_postalCodeHasBeenSet = true; m_postalCode = value; }
-
-    
-    inline void SetPostalCode(Aws::String&& value) { m_postalCodeHasBeenSet = true; m_postalCode = value; }
-
-    
-    inline void SetPostalCode(const char* value) { m_postalCodeHasBeenSet = true; m_postalCode.assign(value); }
-
-    
-    inline GetAppointmentsResult_doctorsItem& WithPostalCode(const Aws::String& value) { SetPostalCode(value); return *this;}
-
-    
-    inline GetAppointmentsResult_doctorsItem& WithPostalCode(Aws::String&& value) { SetPostalCode(value); return *this;}
-
-    
-    inline GetAppointmentsResult_doctorsItem& WithPostalCode(const char* value) { SetPostalCode(value); return *this;}
-
-    
-    inline const Aws::String& GetLastName() const{ return m_lastName; }
-
-    
-    inline void SetLastName(const Aws::String& value) { m_lastNameHasBeenSet = true; m_lastName = value; }
-
-    
-    inline void SetLastName(Aws::String&& value) { m_lastNameHasBeenSet = true; m_lastName = value; }
-
-    
-    inline void SetLastName(const char* value) { m_lastNameHasBeenSet = true; m_lastName.assign(value); }
-
-    
-    inline GetAppointmentsResult_doctorsItem& WithLastName(const Aws::String& value) { SetLastName(value); return *this;}
-
-    
-    inline GetAppointmentsResult_doctorsItem& WithLastName(Aws::String&& value) { SetLastName(value); return *this;}
-
-    
-    inline GetAppointmentsResult_doctorsItem& WithLastName(const char* value) { SetLastName(value); return *this;}
-
-    
-    inline const Aws::Vector<GetAppointmentsResult_doctorsItem_serviceDetailsListItem>& GetServiceDetailsList() const{ return m_serviceDetailsList; }
-
-    
-    inline void SetServiceDetailsList(const Aws::Vector<GetAppointmentsResult_doctorsItem_serviceDetailsListItem>& value) { m_serviceDetailsListHasBeenSet = true; m_serviceDetailsList = value; }
-
-    
-    inline void SetServiceDetailsList(Aws::Vector<GetAppointmentsResult_doctorsItem_serviceDetailsListItem>&& value) { m_serviceDetailsListHasBeenSet = true; m_serviceDetailsList = value; }
-
-    
-    inline GetAppointmentsResult_doctorsItem& WithServiceDetailsList(const Aws::Vector<GetAppointmentsResult_doctorsItem_serviceDetailsListItem>& value) { SetServiceDetailsList(value); return *this;}
-
-    
-    inline GetAppointmentsResult_doctorsItem& WithServiceDetailsList(Aws::Vector<GetAppointmentsResult_doctorsItem_serviceDetailsListItem>&& value) { SetServiceDetailsList(value); return *this;}
-
-    
-    inline GetAppointmentsResult_doctorsItem& AddServiceDetailsList(const GetAppointmentsResult_doctorsItem_serviceDetailsListItem& value) { m_serviceDetailsListHasBeenSet = true; m_serviceDetailsList.push_back(value); return *this; }
-
-    
-    inline GetAppointmentsResult_doctorsItem& AddServiceDetailsList(GetAppointmentsResult_doctorsItem_serviceDetailsListItem&& value) { m_serviceDetailsListHasBeenSet = true; m_serviceDetailsList.push_back(value); return *this; }
-
-    
-    inline const Aws::String& GetProfilePhotoUrl() const{ return m_profilePhotoUrl; }
-
-    
-    inline void SetProfilePhotoUrl(const Aws::String& value) { m_profilePhotoUrlHasBeenSet = true; m_profilePhotoUrl = value; }
-
-    
-    inline void SetProfilePhotoUrl(Aws::String&& value) { m_profilePhotoUrlHasBeenSet = true; m_profilePhotoUrl = value; }
-
-    
-    inline void SetProfilePhotoUrl(const char* value) { m_profilePhotoUrlHasBeenSet = true; m_profilePhotoUrl.assign(value); }
-
-    
-    inline GetAppointmentsResult_doctorsItem& WithProfilePhotoUrl(const Aws::String& value) { SetProfilePhotoUrl(value); return *this;}
-
-    
-    inline GetAppointmentsResult_doctorsItem& WithProfilePhotoUrl(Aws::String&& value) { SetProfilePhotoUrl(value); return *this;}
-
-    
-    inline GetAppointmentsResult_doctorsItem& WithProfilePhotoUrl(const char* value) { SetProfilePhotoUrl(value); return *this;}
-
-    
-    inline const Aws::String& GetCoverPhotoUrl() const{ return m_coverPhotoUrl; }
-
-    
-    inline void SetCoverPhotoUrl(const Aws::String& value) { m_coverPhotoUrlHasBeenSet = true; m_coverPhotoUrl = value; }
-
-    
-    inline void SetCoverPhotoUrl(Aws::String&& value) { m_coverPhotoUrlHasBeenSet = true; m_coverPhotoUrl = value; }
-
-    
-    inline void SetCoverPhotoUrl(const char* value) { m_coverPhotoUrlHasBeenSet = true; m_coverPhotoUrl.assign(value); }
-
-    
-    inline GetAppointmentsResult_doctorsItem& WithCoverPhotoUrl(const Aws::String& value) { SetCoverPhotoUrl(value); return *this;}
-
-    
-    inline GetAppointmentsResult_doctorsItem& WithCoverPhotoUrl(Aws::String&& value) { SetCoverPhotoUrl(value); return *this;}
-
-    
-    inline GetAppointmentsResult_doctorsItem& WithCoverPhotoUrl(const char* value) { SetCoverPhotoUrl(value); return *this;}
+    inline GetAppointmentsResult_doctorsItem& WithAdministrativeAreaL1(const char* value) { SetAdministrativeAreaL1(value); return *this;}
 
     
     inline const Aws::Vector<Aws::String>& GetServicesOffered() const{ return m_servicesOffered; }
@@ -263,64 +128,118 @@ namespace Model
     inline GetAppointmentsResult_doctorsItem& AddServicesOffered(const char* value) { m_servicesOfferedHasBeenSet = true; m_servicesOffered.push_back(value); return *this; }
 
     
-    inline double GetLatitude() const{ return m_latitude; }
+    inline const Aws::String& GetStreetNumberAndName() const{ return m_streetNumberAndName; }
 
     
-    inline void SetLatitude(double value) { m_latitudeHasBeenSet = true; m_latitude = value; }
+    inline void SetStreetNumberAndName(const Aws::String& value) { m_streetNumberAndNameHasBeenSet = true; m_streetNumberAndName = value; }
 
     
-    inline GetAppointmentsResult_doctorsItem& WithLatitude(double value) { SetLatitude(value); return *this;}
+    inline void SetStreetNumberAndName(Aws::String&& value) { m_streetNumberAndNameHasBeenSet = true; m_streetNumberAndName = value; }
 
     
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline void SetStreetNumberAndName(const char* value) { m_streetNumberAndNameHasBeenSet = true; m_streetNumberAndName.assign(value); }
 
     
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
+    inline GetAppointmentsResult_doctorsItem& WithStreetNumberAndName(const Aws::String& value) { SetStreetNumberAndName(value); return *this;}
 
     
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = value; }
+    inline GetAppointmentsResult_doctorsItem& WithStreetNumberAndName(Aws::String&& value) { SetStreetNumberAndName(value); return *this;}
 
     
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
+    inline GetAppointmentsResult_doctorsItem& WithStreetNumberAndName(const char* value) { SetStreetNumberAndName(value); return *this;}
 
     
-    inline GetAppointmentsResult_doctorsItem& WithId(const Aws::String& value) { SetId(value); return *this;}
+    inline const Aws::String& GetProfilePhotoUrl() const{ return m_profilePhotoUrl; }
 
     
-    inline GetAppointmentsResult_doctorsItem& WithId(Aws::String&& value) { SetId(value); return *this;}
+    inline void SetProfilePhotoUrl(const Aws::String& value) { m_profilePhotoUrlHasBeenSet = true; m_profilePhotoUrl = value; }
 
     
-    inline GetAppointmentsResult_doctorsItem& WithId(const char* value) { SetId(value); return *this;}
+    inline void SetProfilePhotoUrl(Aws::String&& value) { m_profilePhotoUrlHasBeenSet = true; m_profilePhotoUrl = value; }
 
     
-    inline bool GetPayoutInfoIsSet() const{ return m_payoutInfoIsSet; }
+    inline void SetProfilePhotoUrl(const char* value) { m_profilePhotoUrlHasBeenSet = true; m_profilePhotoUrl.assign(value); }
 
     
-    inline void SetPayoutInfoIsSet(bool value) { m_payoutInfoIsSetHasBeenSet = true; m_payoutInfoIsSet = value; }
+    inline GetAppointmentsResult_doctorsItem& WithProfilePhotoUrl(const Aws::String& value) { SetProfilePhotoUrl(value); return *this;}
 
     
-    inline GetAppointmentsResult_doctorsItem& WithPayoutInfoIsSet(bool value) { SetPayoutInfoIsSet(value); return *this;}
+    inline GetAppointmentsResult_doctorsItem& WithProfilePhotoUrl(Aws::String&& value) { SetProfilePhotoUrl(value); return *this;}
 
     
-    inline const Aws::String& GetAdministrativeAreaL1() const{ return m_administrativeAreaL1; }
+    inline GetAppointmentsResult_doctorsItem& WithProfilePhotoUrl(const char* value) { SetProfilePhotoUrl(value); return *this;}
 
     
-    inline void SetAdministrativeAreaL1(const Aws::String& value) { m_administrativeAreaL1HasBeenSet = true; m_administrativeAreaL1 = value; }
+    inline double GetLongitude() const{ return m_longitude; }
 
     
-    inline void SetAdministrativeAreaL1(Aws::String&& value) { m_administrativeAreaL1HasBeenSet = true; m_administrativeAreaL1 = value; }
+    inline void SetLongitude(double value) { m_longitudeHasBeenSet = true; m_longitude = value; }
 
     
-    inline void SetAdministrativeAreaL1(const char* value) { m_administrativeAreaL1HasBeenSet = true; m_administrativeAreaL1.assign(value); }
+    inline GetAppointmentsResult_doctorsItem& WithLongitude(double value) { SetLongitude(value); return *this;}
 
     
-    inline GetAppointmentsResult_doctorsItem& WithAdministrativeAreaL1(const Aws::String& value) { SetAdministrativeAreaL1(value); return *this;}
+    inline const Aws::String& GetSuite() const{ return m_suite; }
 
     
-    inline GetAppointmentsResult_doctorsItem& WithAdministrativeAreaL1(Aws::String&& value) { SetAdministrativeAreaL1(value); return *this;}
+    inline void SetSuite(const Aws::String& value) { m_suiteHasBeenSet = true; m_suite = value; }
 
     
-    inline GetAppointmentsResult_doctorsItem& WithAdministrativeAreaL1(const char* value) { SetAdministrativeAreaL1(value); return *this;}
+    inline void SetSuite(Aws::String&& value) { m_suiteHasBeenSet = true; m_suite = value; }
+
+    
+    inline void SetSuite(const char* value) { m_suiteHasBeenSet = true; m_suite.assign(value); }
+
+    
+    inline GetAppointmentsResult_doctorsItem& WithSuite(const Aws::String& value) { SetSuite(value); return *this;}
+
+    
+    inline GetAppointmentsResult_doctorsItem& WithSuite(Aws::String&& value) { SetSuite(value); return *this;}
+
+    
+    inline GetAppointmentsResult_doctorsItem& WithSuite(const char* value) { SetSuite(value); return *this;}
+
+    
+    inline const Aws::String& GetLastName() const{ return m_lastName; }
+
+    
+    inline void SetLastName(const Aws::String& value) { m_lastNameHasBeenSet = true; m_lastName = value; }
+
+    
+    inline void SetLastName(Aws::String&& value) { m_lastNameHasBeenSet = true; m_lastName = value; }
+
+    
+    inline void SetLastName(const char* value) { m_lastNameHasBeenSet = true; m_lastName.assign(value); }
+
+    
+    inline GetAppointmentsResult_doctorsItem& WithLastName(const Aws::String& value) { SetLastName(value); return *this;}
+
+    
+    inline GetAppointmentsResult_doctorsItem& WithLastName(Aws::String&& value) { SetLastName(value); return *this;}
+
+    
+    inline GetAppointmentsResult_doctorsItem& WithLastName(const char* value) { SetLastName(value); return *this;}
+
+    
+    inline const Aws::String& GetCoverPhotoUrl() const{ return m_coverPhotoUrl; }
+
+    
+    inline void SetCoverPhotoUrl(const Aws::String& value) { m_coverPhotoUrlHasBeenSet = true; m_coverPhotoUrl = value; }
+
+    
+    inline void SetCoverPhotoUrl(Aws::String&& value) { m_coverPhotoUrlHasBeenSet = true; m_coverPhotoUrl = value; }
+
+    
+    inline void SetCoverPhotoUrl(const char* value) { m_coverPhotoUrlHasBeenSet = true; m_coverPhotoUrl.assign(value); }
+
+    
+    inline GetAppointmentsResult_doctorsItem& WithCoverPhotoUrl(const Aws::String& value) { SetCoverPhotoUrl(value); return *this;}
+
+    
+    inline GetAppointmentsResult_doctorsItem& WithCoverPhotoUrl(Aws::String&& value) { SetCoverPhotoUrl(value); return *this;}
+
+    
+    inline GetAppointmentsResult_doctorsItem& WithCoverPhotoUrl(const char* value) { SetCoverPhotoUrl(value); return *this;}
 
     
     inline const Aws::String& GetSpecialtyId() const{ return m_specialtyId; }
@@ -344,61 +263,142 @@ namespace Model
     inline GetAppointmentsResult_doctorsItem& WithSpecialtyId(const char* value) { SetSpecialtyId(value); return *this;}
 
     
-    inline const Aws::String& GetStreetNumberAndName() const{ return m_streetNumberAndName; }
+    inline const Aws::String& GetOfficeNumber() const{ return m_officeNumber; }
 
     
-    inline void SetStreetNumberAndName(const Aws::String& value) { m_streetNumberAndNameHasBeenSet = true; m_streetNumberAndName = value; }
+    inline void SetOfficeNumber(const Aws::String& value) { m_officeNumberHasBeenSet = true; m_officeNumber = value; }
 
     
-    inline void SetStreetNumberAndName(Aws::String&& value) { m_streetNumberAndNameHasBeenSet = true; m_streetNumberAndName = value; }
+    inline void SetOfficeNumber(Aws::String&& value) { m_officeNumberHasBeenSet = true; m_officeNumber = value; }
 
     
-    inline void SetStreetNumberAndName(const char* value) { m_streetNumberAndNameHasBeenSet = true; m_streetNumberAndName.assign(value); }
+    inline void SetOfficeNumber(const char* value) { m_officeNumberHasBeenSet = true; m_officeNumber.assign(value); }
 
     
-    inline GetAppointmentsResult_doctorsItem& WithStreetNumberAndName(const Aws::String& value) { SetStreetNumberAndName(value); return *this;}
+    inline GetAppointmentsResult_doctorsItem& WithOfficeNumber(const Aws::String& value) { SetOfficeNumber(value); return *this;}
 
     
-    inline GetAppointmentsResult_doctorsItem& WithStreetNumberAndName(Aws::String&& value) { SetStreetNumberAndName(value); return *this;}
+    inline GetAppointmentsResult_doctorsItem& WithOfficeNumber(Aws::String&& value) { SetOfficeNumber(value); return *this;}
 
     
-    inline GetAppointmentsResult_doctorsItem& WithStreetNumberAndName(const char* value) { SetStreetNumberAndName(value); return *this;}
+    inline GetAppointmentsResult_doctorsItem& WithOfficeNumber(const char* value) { SetOfficeNumber(value); return *this;}
+
+    
+    inline bool GetPayoutInfoIsSet() const{ return m_payoutInfoIsSet; }
+
+    
+    inline void SetPayoutInfoIsSet(bool value) { m_payoutInfoIsSetHasBeenSet = true; m_payoutInfoIsSet = value; }
+
+    
+    inline GetAppointmentsResult_doctorsItem& WithPayoutInfoIsSet(bool value) { SetPayoutInfoIsSet(value); return *this;}
+
+    
+    inline const Aws::Vector<GetAppointmentsResult_doctorsItem_serviceDetailsListItem>& GetServiceDetailsList() const{ return m_serviceDetailsList; }
+
+    
+    inline void SetServiceDetailsList(const Aws::Vector<GetAppointmentsResult_doctorsItem_serviceDetailsListItem>& value) { m_serviceDetailsListHasBeenSet = true; m_serviceDetailsList = value; }
+
+    
+    inline void SetServiceDetailsList(Aws::Vector<GetAppointmentsResult_doctorsItem_serviceDetailsListItem>&& value) { m_serviceDetailsListHasBeenSet = true; m_serviceDetailsList = value; }
+
+    
+    inline GetAppointmentsResult_doctorsItem& WithServiceDetailsList(const Aws::Vector<GetAppointmentsResult_doctorsItem_serviceDetailsListItem>& value) { SetServiceDetailsList(value); return *this;}
+
+    
+    inline GetAppointmentsResult_doctorsItem& WithServiceDetailsList(Aws::Vector<GetAppointmentsResult_doctorsItem_serviceDetailsListItem>&& value) { SetServiceDetailsList(value); return *this;}
+
+    
+    inline GetAppointmentsResult_doctorsItem& AddServiceDetailsList(const GetAppointmentsResult_doctorsItem_serviceDetailsListItem& value) { m_serviceDetailsListHasBeenSet = true; m_serviceDetailsList.push_back(value); return *this; }
+
+    
+    inline GetAppointmentsResult_doctorsItem& AddServiceDetailsList(GetAppointmentsResult_doctorsItem_serviceDetailsListItem&& value) { m_serviceDetailsListHasBeenSet = true; m_serviceDetailsList.push_back(value); return *this; }
+
+    
+    inline const Aws::String& GetId() const{ return m_id; }
+
+    
+    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
+
+    
+    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = value; }
+
+    
+    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
+
+    
+    inline GetAppointmentsResult_doctorsItem& WithId(const Aws::String& value) { SetId(value); return *this;}
+
+    
+    inline GetAppointmentsResult_doctorsItem& WithId(Aws::String&& value) { SetId(value); return *this;}
+
+    
+    inline GetAppointmentsResult_doctorsItem& WithId(const char* value) { SetId(value); return *this;}
+
+    
+    inline double GetLatitude() const{ return m_latitude; }
+
+    
+    inline void SetLatitude(double value) { m_latitudeHasBeenSet = true; m_latitude = value; }
+
+    
+    inline GetAppointmentsResult_doctorsItem& WithLatitude(double value) { SetLatitude(value); return *this;}
+
+    
+    inline const Aws::String& GetFirstName() const{ return m_firstName; }
+
+    
+    inline void SetFirstName(const Aws::String& value) { m_firstNameHasBeenSet = true; m_firstName = value; }
+
+    
+    inline void SetFirstName(Aws::String&& value) { m_firstNameHasBeenSet = true; m_firstName = value; }
+
+    
+    inline void SetFirstName(const char* value) { m_firstNameHasBeenSet = true; m_firstName.assign(value); }
+
+    
+    inline GetAppointmentsResult_doctorsItem& WithFirstName(const Aws::String& value) { SetFirstName(value); return *this;}
+
+    
+    inline GetAppointmentsResult_doctorsItem& WithFirstName(Aws::String&& value) { SetFirstName(value); return *this;}
+
+    
+    inline GetAppointmentsResult_doctorsItem& WithFirstName(const char* value) { SetFirstName(value); return *this;}
 
   private:
-    double m_longitude;
-    bool m_longitudeHasBeenSet;
-    Aws::String m_officeNumber;
-    bool m_officeNumberHasBeenSet;
-    Aws::String m_suite;
-    bool m_suiteHasBeenSet;
-    Aws::String m_city;
-    bool m_cityHasBeenSet;
-    Aws::String m_firstName;
-    bool m_firstNameHasBeenSet;
     Aws::String m_postalCode;
     bool m_postalCodeHasBeenSet;
-    Aws::String m_lastName;
-    bool m_lastNameHasBeenSet;
-    Aws::Vector<GetAppointmentsResult_doctorsItem_serviceDetailsListItem> m_serviceDetailsList;
-    bool m_serviceDetailsListHasBeenSet;
-    Aws::String m_profilePhotoUrl;
-    bool m_profilePhotoUrlHasBeenSet;
-    Aws::String m_coverPhotoUrl;
-    bool m_coverPhotoUrlHasBeenSet;
-    Aws::Vector<Aws::String> m_servicesOffered;
-    bool m_servicesOfferedHasBeenSet;
-    double m_latitude;
-    bool m_latitudeHasBeenSet;
-    Aws::String m_id;
-    bool m_idHasBeenSet;
-    bool m_payoutInfoIsSet;
-    bool m_payoutInfoIsSetHasBeenSet;
+    Aws::String m_city;
+    bool m_cityHasBeenSet;
     Aws::String m_administrativeAreaL1;
     bool m_administrativeAreaL1HasBeenSet;
-    Aws::String m_specialtyId;
-    bool m_specialtyIdHasBeenSet;
+    Aws::Vector<Aws::String> m_servicesOffered;
+    bool m_servicesOfferedHasBeenSet;
     Aws::String m_streetNumberAndName;
     bool m_streetNumberAndNameHasBeenSet;
+    Aws::String m_profilePhotoUrl;
+    bool m_profilePhotoUrlHasBeenSet;
+    double m_longitude;
+    bool m_longitudeHasBeenSet;
+    Aws::String m_suite;
+    bool m_suiteHasBeenSet;
+    Aws::String m_lastName;
+    bool m_lastNameHasBeenSet;
+    Aws::String m_coverPhotoUrl;
+    bool m_coverPhotoUrlHasBeenSet;
+    Aws::String m_specialtyId;
+    bool m_specialtyIdHasBeenSet;
+    Aws::String m_officeNumber;
+    bool m_officeNumberHasBeenSet;
+    bool m_payoutInfoIsSet;
+    bool m_payoutInfoIsSetHasBeenSet;
+    Aws::Vector<GetAppointmentsResult_doctorsItem_serviceDetailsListItem> m_serviceDetailsList;
+    bool m_serviceDetailsListHasBeenSet;
+    Aws::String m_id;
+    bool m_idHasBeenSet;
+    double m_latitude;
+    bool m_latitudeHasBeenSet;
+    Aws::String m_firstName;
+    bool m_firstNameHasBeenSet;
   };
 
 } // namespace Model
