@@ -78,6 +78,11 @@ elseif(USE_GCC_FLAGS)
     endif()
 endif()
 
+# parallel build
+if(MSVC)
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /MP")
+endif()
+
 # other compiler flags
 if(MSVC)
     # some of the clients are exceeding the 16-bit code section limit when building x64 debug, so use /bigobj when we build
