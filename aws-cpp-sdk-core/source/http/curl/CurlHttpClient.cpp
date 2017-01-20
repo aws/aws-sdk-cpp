@@ -284,7 +284,7 @@ CurlHttpClient::CurlHttpClient(const ClientConfiguration& clientConfig) :
     m_curlHandleContainer(clientConfig.maxConnections, clientConfig.requestTimeoutMs, clientConfig.connectTimeoutMs),
     m_isUsingProxy(!clientConfig.proxyHost.empty()), m_proxyUserName(clientConfig.proxyUserName),
     m_proxyPassword(clientConfig.proxyPassword), m_proxyHost(clientConfig.proxyHost),
-    m_proxyPort(clientConfig.proxyPort), m_verifySSL(clientConfig.verifySSL), m_caPath(clientConfig.caPath), m_allowRedirects(clientConfig.followRedirects)
+    m_proxyPort(clientConfig.proxyPort), m_verifySSL(clientConfig.verifySSL), m_caPath(clientConfig.caPath), m_caCert(clientConfig.caFile), m_allowRedirects(clientConfig.followRedirects)
 {
 }
 
@@ -357,6 +357,10 @@ std::shared_ptr<HttpResponse> CurlHttpClient::MakeRequest(HttpRequest& request, 
         if(!m_caPath.empty())
         {
             curl_easy_setopt(connectionHandle, CURLOPT_CAPATH, m_caPath.c_str());
+        }
+        if(!m_caCert.empty())
+        {
+            curl_easy_setopt(connectionHandle, CURLOPT_CAINFO, m_caCert.c_str());
         }
 
 	// only set by android test builds because the emulator is missing a cert needed for aws services
