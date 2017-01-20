@@ -61,37 +61,44 @@ namespace Model
     inline DescribeEventTypesRequest& WithFilter(EventTypeFilter&& value) { SetFilter(value); return *this;}
 
     /**
-     * <p>The locale (language) to return information in. The default is English.</p>
+     * <p>The locale (language) to return information in. English (en) is the default
+     * and the only supported value at this time.</p>
      */
     inline const Aws::String& GetLocale() const{ return m_locale; }
 
     /**
-     * <p>The locale (language) to return information in. The default is English.</p>
+     * <p>The locale (language) to return information in. English (en) is the default
+     * and the only supported value at this time.</p>
      */
     inline void SetLocale(const Aws::String& value) { m_localeHasBeenSet = true; m_locale = value; }
 
     /**
-     * <p>The locale (language) to return information in. The default is English.</p>
+     * <p>The locale (language) to return information in. English (en) is the default
+     * and the only supported value at this time.</p>
      */
     inline void SetLocale(Aws::String&& value) { m_localeHasBeenSet = true; m_locale = value; }
 
     /**
-     * <p>The locale (language) to return information in. The default is English.</p>
+     * <p>The locale (language) to return information in. English (en) is the default
+     * and the only supported value at this time.</p>
      */
     inline void SetLocale(const char* value) { m_localeHasBeenSet = true; m_locale.assign(value); }
 
     /**
-     * <p>The locale (language) to return information in. The default is English.</p>
+     * <p>The locale (language) to return information in. English (en) is the default
+     * and the only supported value at this time.</p>
      */
     inline DescribeEventTypesRequest& WithLocale(const Aws::String& value) { SetLocale(value); return *this;}
 
     /**
-     * <p>The locale (language) to return information in. The default is English.</p>
+     * <p>The locale (language) to return information in. English (en) is the default
+     * and the only supported value at this time.</p>
      */
     inline DescribeEventTypesRequest& WithLocale(Aws::String&& value) { SetLocale(value); return *this;}
 
     /**
-     * <p>The locale (language) to return information in. The default is English.</p>
+     * <p>The locale (language) to return information in. English (en) is the default
+     * and the only supported value at this time.</p>
      */
     inline DescribeEventTypesRequest& WithLocale(const char* value) { SetLocale(value); return *this;}
 
@@ -159,17 +166,20 @@ namespace Model
     inline DescribeEventTypesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>The maximum number of items to return in one batch.</p>
+     * <p>The maximum number of items to return in one batch, between 10 and 100,
+     * inclusive.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
-     * <p>The maximum number of items to return in one batch.</p>
+     * <p>The maximum number of items to return in one batch, between 10 and 100,
+     * inclusive.</p>
      */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
-     * <p>The maximum number of items to return in one batch.</p>
+     * <p>The maximum number of items to return in one batch, between 10 and 100,
+     * inclusive.</p>
      */
     inline DescribeEventTypesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 

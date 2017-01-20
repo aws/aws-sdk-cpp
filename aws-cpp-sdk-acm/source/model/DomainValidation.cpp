@@ -30,14 +30,18 @@ namespace Model
 DomainValidation::DomainValidation() : 
     m_domainNameHasBeenSet(false),
     m_validationEmailsHasBeenSet(false),
-    m_validationDomainHasBeenSet(false)
+    m_validationDomainHasBeenSet(false),
+    m_validationStatus(DomainStatus::NOT_SET),
+    m_validationStatusHasBeenSet(false)
 {
 }
 
 DomainValidation::DomainValidation(const JsonValue& jsonValue) : 
     m_domainNameHasBeenSet(false),
     m_validationEmailsHasBeenSet(false),
-    m_validationDomainHasBeenSet(false)
+    m_validationDomainHasBeenSet(false),
+    m_validationStatus(DomainStatus::NOT_SET),
+    m_validationStatusHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -68,6 +72,13 @@ DomainValidation& DomainValidation::operator =(const JsonValue& jsonValue)
     m_validationDomainHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ValidationStatus"))
+  {
+    m_validationStatus = DomainStatusMapper::GetDomainStatusForName(jsonValue.GetString("ValidationStatus"));
+
+    m_validationStatusHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -96,6 +107,11 @@ JsonValue DomainValidation::Jsonize() const
   {
    payload.WithString("ValidationDomain", m_validationDomain);
 
+  }
+
+  if(m_validationStatusHasBeenSet)
+  {
+   payload.WithString("ValidationStatus", DomainStatusMapper::GetNameForDomainStatus(m_validationStatus));
   }
 
   return payload;

@@ -104,14 +104,15 @@ namespace Model
 
   /**
    * <fullname>AWS Health</fullname> <p>The AWS Health API provides programmatic
-   * access to the AWS Health information that is presented in the AWS Personal
-   * Health Dashboard. You can get information about events that affect your AWS
-   * resources:</p> <ul> <li> <p> <a>DescribeEvents</a>: Summary information about
-   * events.</p> </li> <li> <p> <a>DescribeEventDetails</a>: Detailed information
-   * about one or more events.</p> </li> <li> <p> <a>DescribeAffectedEntities</a>:
-   * Information about AWS resources that are affected by one or more events.</p>
-   * </li> </ul> <p>In addition, these operations provide information about event
-   * types and summary counts of events or affected entities:</p> <ul> <li> <p>
+   * access to the AWS Health information that is presented in the <a
+   * href="https://phd.aws.amazon.com/phd/home#/">AWS Personal Health Dashboard</a>.
+   * You can get information about events that affect your AWS resources:</p> <ul>
+   * <li> <p> <a>DescribeEvents</a>: Summary information about events.</p> </li> <li>
+   * <p> <a>DescribeEventDetails</a>: Detailed information about one or more
+   * events.</p> </li> <li> <p> <a>DescribeAffectedEntities</a>: Information about
+   * AWS resources that are affected by one or more events.</p> </li> </ul> <p>In
+   * addition, these operations provide information about event types and summary
+   * counts of events or affected entities:</p> <ul> <li> <p>
    * <a>DescribeEventTypes</a>: Information about the kinds of events that AWS Health
    * tracks.</p> </li> <li> <p> <a>DescribeEventAggregates</a>: A count of the number
    * of events that meet specified criteria.</p> </li> <li> <p>
