@@ -28,43 +28,29 @@ namespace Model
 {
 
 GetAllDoctorServicesResult_servicesItem::GetAllDoctorServicesResult_servicesItem() : 
-    m_indefiniteArticleHasBeenSet(false),
     m_additionalDescriptionHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false)
+    m_nameHasBeenSet(false),
+    m_indefiniteArticleHasBeenSet(false),
+    m_idHasBeenSet(false)
 {
 }
 
 GetAllDoctorServicesResult_servicesItem::GetAllDoctorServicesResult_servicesItem(const JsonValue& jsonValue) : 
-    m_indefiniteArticleHasBeenSet(false),
     m_additionalDescriptionHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false)
+    m_nameHasBeenSet(false),
+    m_indefiniteArticleHasBeenSet(false),
+    m_idHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
 GetAllDoctorServicesResult_servicesItem& GetAllDoctorServicesResult_servicesItem::operator =(const JsonValue& jsonValue)
 {
-  if(jsonValue.ValueExists("indefiniteArticle"))
-  {
-    m_indefiniteArticle = jsonValue.GetString("indefiniteArticle");
-
-    m_indefiniteArticleHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("additionalDescription"))
   {
     m_additionalDescription = jsonValue.GetString("additionalDescription");
 
     m_additionalDescriptionHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("id"))
-  {
-    m_id = jsonValue.GetString("id");
-
-    m_idHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("name"))
@@ -74,6 +60,20 @@ GetAllDoctorServicesResult_servicesItem& GetAllDoctorServicesResult_servicesItem
     m_nameHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("indefiniteArticle"))
+  {
+    m_indefiniteArticle = jsonValue.GetString("indefiniteArticle");
+
+    m_indefiniteArticleHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("id"))
+  {
+    m_id = jsonValue.GetString("id");
+
+    m_idHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -81,27 +81,27 @@ JsonValue GetAllDoctorServicesResult_servicesItem::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_indefiniteArticleHasBeenSet)
-  {
-   payload.WithString("indefiniteArticle", m_indefiniteArticle);
-
-  }
-
   if(m_additionalDescriptionHasBeenSet)
   {
    payload.WithString("additionalDescription", m_additionalDescription);
 
   }
 
-  if(m_idHasBeenSet)
-  {
-   payload.WithString("id", m_id);
-
-  }
-
   if(m_nameHasBeenSet)
   {
    payload.WithString("name", m_name);
+
+  }
+
+  if(m_indefiniteArticleHasBeenSet)
+  {
+   payload.WithString("indefiniteArticle", m_indefiniteArticle);
+
+  }
+
+  if(m_idHasBeenSet)
+  {
+   payload.WithString("id", m_id);
 
   }
 

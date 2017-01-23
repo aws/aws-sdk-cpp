@@ -33,27 +33,6 @@ namespace Model
     Aws::String SerializePayload() const override;
 
     
-    inline const Aws::String& GetSpecialtyId() const{ return m_specialtyId; }
-
-    
-    inline void SetSpecialtyId(const Aws::String& value) { m_specialtyIdHasBeenSet = true; m_specialtyId = value; }
-
-    
-    inline void SetSpecialtyId(Aws::String&& value) { m_specialtyIdHasBeenSet = true; m_specialtyId = value; }
-
-    
-    inline void SetSpecialtyId(const char* value) { m_specialtyIdHasBeenSet = true; m_specialtyId.assign(value); }
-
-    
-    inline registerDoctorRequest& WithSpecialtyId(const Aws::String& value) { SetSpecialtyId(value); return *this;}
-
-    
-    inline registerDoctorRequest& WithSpecialtyId(Aws::String&& value) { SetSpecialtyId(value); return *this;}
-
-    
-    inline registerDoctorRequest& WithSpecialtyId(const char* value) { SetSpecialtyId(value); return *this;}
-
-    
     inline const Aws::String& GetOfficeNumber() const{ return m_officeNumber; }
 
     
@@ -74,11 +53,32 @@ namespace Model
     
     inline registerDoctorRequest& WithOfficeNumber(const char* value) { SetOfficeNumber(value); return *this;}
 
+    
+    inline const Aws::String& GetSpecialtyId() const{ return m_specialtyId; }
+
+    
+    inline void SetSpecialtyId(const Aws::String& value) { m_specialtyIdHasBeenSet = true; m_specialtyId = value; }
+
+    
+    inline void SetSpecialtyId(Aws::String&& value) { m_specialtyIdHasBeenSet = true; m_specialtyId = value; }
+
+    
+    inline void SetSpecialtyId(const char* value) { m_specialtyIdHasBeenSet = true; m_specialtyId.assign(value); }
+
+    
+    inline registerDoctorRequest& WithSpecialtyId(const Aws::String& value) { SetSpecialtyId(value); return *this;}
+
+    
+    inline registerDoctorRequest& WithSpecialtyId(Aws::String&& value) { SetSpecialtyId(value); return *this;}
+
+    
+    inline registerDoctorRequest& WithSpecialtyId(const char* value) { SetSpecialtyId(value); return *this;}
+
   private:
-    Aws::String m_specialtyId;
-    bool m_specialtyIdHasBeenSet;
     Aws::String m_officeNumber;
     bool m_officeNumberHasBeenSet;
+    Aws::String m_specialtyId;
+    bool m_specialtyIdHasBeenSet;
   };
 
 } // namespace Model

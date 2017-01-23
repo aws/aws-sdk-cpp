@@ -33,48 +33,6 @@ namespace Model
     Aws::String SerializePayload() const override;
 
     
-    inline const Aws::String& GetDoctorId() const{ return m_doctorId; }
-
-    
-    inline void SetDoctorId(const Aws::String& value) { m_doctorIdHasBeenSet = true; m_doctorId = value; }
-
-    
-    inline void SetDoctorId(Aws::String&& value) { m_doctorIdHasBeenSet = true; m_doctorId = value; }
-
-    
-    inline void SetDoctorId(const char* value) { m_doctorIdHasBeenSet = true; m_doctorId.assign(value); }
-
-    
-    inline scheduleAppointmentRequest& WithDoctorId(const Aws::String& value) { SetDoctorId(value); return *this;}
-
-    
-    inline scheduleAppointmentRequest& WithDoctorId(Aws::String&& value) { SetDoctorId(value); return *this;}
-
-    
-    inline scheduleAppointmentRequest& WithDoctorId(const char* value) { SetDoctorId(value); return *this;}
-
-    
-    inline const Aws::String& GetStartTime() const{ return m_startTime; }
-
-    
-    inline void SetStartTime(const Aws::String& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
-
-    
-    inline void SetStartTime(Aws::String&& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
-
-    
-    inline void SetStartTime(const char* value) { m_startTimeHasBeenSet = true; m_startTime.assign(value); }
-
-    
-    inline scheduleAppointmentRequest& WithStartTime(const Aws::String& value) { SetStartTime(value); return *this;}
-
-    
-    inline scheduleAppointmentRequest& WithStartTime(Aws::String&& value) { SetStartTime(value); return *this;}
-
-    
-    inline scheduleAppointmentRequest& WithStartTime(const char* value) { SetStartTime(value); return *this;}
-
-    
     inline const Aws::String& GetTotalPriceCents() const{ return m_totalPriceCents; }
 
     
@@ -94,6 +52,27 @@ namespace Model
 
     
     inline scheduleAppointmentRequest& WithTotalPriceCents(const char* value) { SetTotalPriceCents(value); return *this;}
+
+    
+    inline const Aws::String& GetBillFingerprint() const{ return m_billFingerprint; }
+
+    
+    inline void SetBillFingerprint(const Aws::String& value) { m_billFingerprintHasBeenSet = true; m_billFingerprint = value; }
+
+    
+    inline void SetBillFingerprint(Aws::String&& value) { m_billFingerprintHasBeenSet = true; m_billFingerprint = value; }
+
+    
+    inline void SetBillFingerprint(const char* value) { m_billFingerprintHasBeenSet = true; m_billFingerprint.assign(value); }
+
+    
+    inline scheduleAppointmentRequest& WithBillFingerprint(const Aws::String& value) { SetBillFingerprint(value); return *this;}
+
+    
+    inline scheduleAppointmentRequest& WithBillFingerprint(Aws::String&& value) { SetBillFingerprint(value); return *this;}
+
+    
+    inline scheduleAppointmentRequest& WithBillFingerprint(const char* value) { SetBillFingerprint(value); return *this;}
 
     
     inline const Aws::String& GetServiceId() const{ return m_serviceId; }
@@ -117,37 +96,58 @@ namespace Model
     inline scheduleAppointmentRequest& WithServiceId(const char* value) { SetServiceId(value); return *this;}
 
     
-    inline const Aws::String& GetBillFingerprint() const{ return m_billFingerprint; }
+    inline const Aws::String& GetStartTime() const{ return m_startTime; }
 
     
-    inline void SetBillFingerprint(const Aws::String& value) { m_billFingerprintHasBeenSet = true; m_billFingerprint = value; }
+    inline void SetStartTime(const Aws::String& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
 
     
-    inline void SetBillFingerprint(Aws::String&& value) { m_billFingerprintHasBeenSet = true; m_billFingerprint = value; }
+    inline void SetStartTime(Aws::String&& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
 
     
-    inline void SetBillFingerprint(const char* value) { m_billFingerprintHasBeenSet = true; m_billFingerprint.assign(value); }
+    inline void SetStartTime(const char* value) { m_startTimeHasBeenSet = true; m_startTime.assign(value); }
 
     
-    inline scheduleAppointmentRequest& WithBillFingerprint(const Aws::String& value) { SetBillFingerprint(value); return *this;}
+    inline scheduleAppointmentRequest& WithStartTime(const Aws::String& value) { SetStartTime(value); return *this;}
 
     
-    inline scheduleAppointmentRequest& WithBillFingerprint(Aws::String&& value) { SetBillFingerprint(value); return *this;}
+    inline scheduleAppointmentRequest& WithStartTime(Aws::String&& value) { SetStartTime(value); return *this;}
 
     
-    inline scheduleAppointmentRequest& WithBillFingerprint(const char* value) { SetBillFingerprint(value); return *this;}
+    inline scheduleAppointmentRequest& WithStartTime(const char* value) { SetStartTime(value); return *this;}
+
+    
+    inline const Aws::String& GetDoctorId() const{ return m_doctorId; }
+
+    
+    inline void SetDoctorId(const Aws::String& value) { m_doctorIdHasBeenSet = true; m_doctorId = value; }
+
+    
+    inline void SetDoctorId(Aws::String&& value) { m_doctorIdHasBeenSet = true; m_doctorId = value; }
+
+    
+    inline void SetDoctorId(const char* value) { m_doctorIdHasBeenSet = true; m_doctorId.assign(value); }
+
+    
+    inline scheduleAppointmentRequest& WithDoctorId(const Aws::String& value) { SetDoctorId(value); return *this;}
+
+    
+    inline scheduleAppointmentRequest& WithDoctorId(Aws::String&& value) { SetDoctorId(value); return *this;}
+
+    
+    inline scheduleAppointmentRequest& WithDoctorId(const char* value) { SetDoctorId(value); return *this;}
 
   private:
-    Aws::String m_doctorId;
-    bool m_doctorIdHasBeenSet;
-    Aws::String m_startTime;
-    bool m_startTimeHasBeenSet;
     Aws::String m_totalPriceCents;
     bool m_totalPriceCentsHasBeenSet;
-    Aws::String m_serviceId;
-    bool m_serviceIdHasBeenSet;
     Aws::String m_billFingerprint;
     bool m_billFingerprintHasBeenSet;
+    Aws::String m_serviceId;
+    bool m_serviceIdHasBeenSet;
+    Aws::String m_startTime;
+    bool m_startTimeHasBeenSet;
+    Aws::String m_doctorId;
+    bool m_doctorIdHasBeenSet;
   };
 
 } // namespace Model

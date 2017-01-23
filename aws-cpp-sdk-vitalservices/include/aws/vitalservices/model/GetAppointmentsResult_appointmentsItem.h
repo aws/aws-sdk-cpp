@@ -39,67 +39,25 @@ namespace Model
     Aws::Utils::Json::JsonValue Jsonize() const;
 
     
-    inline const Aws::String& GetBasePriceCents() const{ return m_basePriceCents; }
+    inline const Aws::String& GetChargeId() const{ return m_chargeId; }
 
     
-    inline void SetBasePriceCents(const Aws::String& value) { m_basePriceCentsHasBeenSet = true; m_basePriceCents = value; }
+    inline void SetChargeId(const Aws::String& value) { m_chargeIdHasBeenSet = true; m_chargeId = value; }
 
     
-    inline void SetBasePriceCents(Aws::String&& value) { m_basePriceCentsHasBeenSet = true; m_basePriceCents = value; }
+    inline void SetChargeId(Aws::String&& value) { m_chargeIdHasBeenSet = true; m_chargeId = value; }
 
     
-    inline void SetBasePriceCents(const char* value) { m_basePriceCentsHasBeenSet = true; m_basePriceCents.assign(value); }
+    inline void SetChargeId(const char* value) { m_chargeIdHasBeenSet = true; m_chargeId.assign(value); }
 
     
-    inline GetAppointmentsResult_appointmentsItem& WithBasePriceCents(const Aws::String& value) { SetBasePriceCents(value); return *this;}
+    inline GetAppointmentsResult_appointmentsItem& WithChargeId(const Aws::String& value) { SetChargeId(value); return *this;}
 
     
-    inline GetAppointmentsResult_appointmentsItem& WithBasePriceCents(Aws::String&& value) { SetBasePriceCents(value); return *this;}
+    inline GetAppointmentsResult_appointmentsItem& WithChargeId(Aws::String&& value) { SetChargeId(value); return *this;}
 
     
-    inline GetAppointmentsResult_appointmentsItem& WithBasePriceCents(const char* value) { SetBasePriceCents(value); return *this;}
-
-    
-    inline const Aws::String& GetDoctorId() const{ return m_doctorId; }
-
-    
-    inline void SetDoctorId(const Aws::String& value) { m_doctorIdHasBeenSet = true; m_doctorId = value; }
-
-    
-    inline void SetDoctorId(Aws::String&& value) { m_doctorIdHasBeenSet = true; m_doctorId = value; }
-
-    
-    inline void SetDoctorId(const char* value) { m_doctorIdHasBeenSet = true; m_doctorId.assign(value); }
-
-    
-    inline GetAppointmentsResult_appointmentsItem& WithDoctorId(const Aws::String& value) { SetDoctorId(value); return *this;}
-
-    
-    inline GetAppointmentsResult_appointmentsItem& WithDoctorId(Aws::String&& value) { SetDoctorId(value); return *this;}
-
-    
-    inline GetAppointmentsResult_appointmentsItem& WithDoctorId(const char* value) { SetDoctorId(value); return *this;}
-
-    
-    inline const Aws::String& GetDoctorEarningsCents() const{ return m_doctorEarningsCents; }
-
-    
-    inline void SetDoctorEarningsCents(const Aws::String& value) { m_doctorEarningsCentsHasBeenSet = true; m_doctorEarningsCents = value; }
-
-    
-    inline void SetDoctorEarningsCents(Aws::String&& value) { m_doctorEarningsCentsHasBeenSet = true; m_doctorEarningsCents = value; }
-
-    
-    inline void SetDoctorEarningsCents(const char* value) { m_doctorEarningsCentsHasBeenSet = true; m_doctorEarningsCents.assign(value); }
-
-    
-    inline GetAppointmentsResult_appointmentsItem& WithDoctorEarningsCents(const Aws::String& value) { SetDoctorEarningsCents(value); return *this;}
-
-    
-    inline GetAppointmentsResult_appointmentsItem& WithDoctorEarningsCents(Aws::String&& value) { SetDoctorEarningsCents(value); return *this;}
-
-    
-    inline GetAppointmentsResult_appointmentsItem& WithDoctorEarningsCents(const char* value) { SetDoctorEarningsCents(value); return *this;}
+    inline GetAppointmentsResult_appointmentsItem& WithChargeId(const char* value) { SetChargeId(value); return *this;}
 
     
     inline const Aws::String& GetServiceId() const{ return m_serviceId; }
@@ -123,25 +81,25 @@ namespace Model
     inline GetAppointmentsResult_appointmentsItem& WithServiceId(const char* value) { SetServiceId(value); return *this;}
 
     
-    inline const Aws::String& GetCancellationDate() const{ return m_cancellationDate; }
+    inline const Aws::String& GetBasePriceCents() const{ return m_basePriceCents; }
 
     
-    inline void SetCancellationDate(const Aws::String& value) { m_cancellationDateHasBeenSet = true; m_cancellationDate = value; }
+    inline void SetBasePriceCents(const Aws::String& value) { m_basePriceCentsHasBeenSet = true; m_basePriceCents = value; }
 
     
-    inline void SetCancellationDate(Aws::String&& value) { m_cancellationDateHasBeenSet = true; m_cancellationDate = value; }
+    inline void SetBasePriceCents(Aws::String&& value) { m_basePriceCentsHasBeenSet = true; m_basePriceCents = value; }
 
     
-    inline void SetCancellationDate(const char* value) { m_cancellationDateHasBeenSet = true; m_cancellationDate.assign(value); }
+    inline void SetBasePriceCents(const char* value) { m_basePriceCentsHasBeenSet = true; m_basePriceCents.assign(value); }
 
     
-    inline GetAppointmentsResult_appointmentsItem& WithCancellationDate(const Aws::String& value) { SetCancellationDate(value); return *this;}
+    inline GetAppointmentsResult_appointmentsItem& WithBasePriceCents(const Aws::String& value) { SetBasePriceCents(value); return *this;}
 
     
-    inline GetAppointmentsResult_appointmentsItem& WithCancellationDate(Aws::String&& value) { SetCancellationDate(value); return *this;}
+    inline GetAppointmentsResult_appointmentsItem& WithBasePriceCents(Aws::String&& value) { SetBasePriceCents(value); return *this;}
 
     
-    inline GetAppointmentsResult_appointmentsItem& WithCancellationDate(const char* value) { SetCancellationDate(value); return *this;}
+    inline GetAppointmentsResult_appointmentsItem& WithBasePriceCents(const char* value) { SetBasePriceCents(value); return *this;}
 
     
     inline const Aws::String& GetStartTime() const{ return m_startTime; }
@@ -165,25 +123,46 @@ namespace Model
     inline GetAppointmentsResult_appointmentsItem& WithStartTime(const char* value) { SetStartTime(value); return *this;}
 
     
-    inline const Aws::String& GetPatientId() const{ return m_patientId; }
+    inline const Aws::String& GetDoctorEarningsCents() const{ return m_doctorEarningsCents; }
 
     
-    inline void SetPatientId(const Aws::String& value) { m_patientIdHasBeenSet = true; m_patientId = value; }
+    inline void SetDoctorEarningsCents(const Aws::String& value) { m_doctorEarningsCentsHasBeenSet = true; m_doctorEarningsCents = value; }
 
     
-    inline void SetPatientId(Aws::String&& value) { m_patientIdHasBeenSet = true; m_patientId = value; }
+    inline void SetDoctorEarningsCents(Aws::String&& value) { m_doctorEarningsCentsHasBeenSet = true; m_doctorEarningsCents = value; }
 
     
-    inline void SetPatientId(const char* value) { m_patientIdHasBeenSet = true; m_patientId.assign(value); }
+    inline void SetDoctorEarningsCents(const char* value) { m_doctorEarningsCentsHasBeenSet = true; m_doctorEarningsCents.assign(value); }
 
     
-    inline GetAppointmentsResult_appointmentsItem& WithPatientId(const Aws::String& value) { SetPatientId(value); return *this;}
+    inline GetAppointmentsResult_appointmentsItem& WithDoctorEarningsCents(const Aws::String& value) { SetDoctorEarningsCents(value); return *this;}
 
     
-    inline GetAppointmentsResult_appointmentsItem& WithPatientId(Aws::String&& value) { SetPatientId(value); return *this;}
+    inline GetAppointmentsResult_appointmentsItem& WithDoctorEarningsCents(Aws::String&& value) { SetDoctorEarningsCents(value); return *this;}
 
     
-    inline GetAppointmentsResult_appointmentsItem& WithPatientId(const char* value) { SetPatientId(value); return *this;}
+    inline GetAppointmentsResult_appointmentsItem& WithDoctorEarningsCents(const char* value) { SetDoctorEarningsCents(value); return *this;}
+
+    
+    inline const Aws::String& GetReimbursementDate() const{ return m_reimbursementDate; }
+
+    
+    inline void SetReimbursementDate(const Aws::String& value) { m_reimbursementDateHasBeenSet = true; m_reimbursementDate = value; }
+
+    
+    inline void SetReimbursementDate(Aws::String&& value) { m_reimbursementDateHasBeenSet = true; m_reimbursementDate = value; }
+
+    
+    inline void SetReimbursementDate(const char* value) { m_reimbursementDateHasBeenSet = true; m_reimbursementDate.assign(value); }
+
+    
+    inline GetAppointmentsResult_appointmentsItem& WithReimbursementDate(const Aws::String& value) { SetReimbursementDate(value); return *this;}
+
+    
+    inline GetAppointmentsResult_appointmentsItem& WithReimbursementDate(Aws::String&& value) { SetReimbursementDate(value); return *this;}
+
+    
+    inline GetAppointmentsResult_appointmentsItem& WithReimbursementDate(const char* value) { SetReimbursementDate(value); return *this;}
 
     
     inline const Aws::String& GetAmountRefundedCents() const{ return m_amountRefundedCents; }
@@ -205,27 +184,6 @@ namespace Model
 
     
     inline GetAppointmentsResult_appointmentsItem& WithAmountRefundedCents(const char* value) { SetAmountRefundedCents(value); return *this;}
-
-    
-    inline const Aws::String& GetChargeId() const{ return m_chargeId; }
-
-    
-    inline void SetChargeId(const Aws::String& value) { m_chargeIdHasBeenSet = true; m_chargeId = value; }
-
-    
-    inline void SetChargeId(Aws::String&& value) { m_chargeIdHasBeenSet = true; m_chargeId = value; }
-
-    
-    inline void SetChargeId(const char* value) { m_chargeIdHasBeenSet = true; m_chargeId.assign(value); }
-
-    
-    inline GetAppointmentsResult_appointmentsItem& WithChargeId(const Aws::String& value) { SetChargeId(value); return *this;}
-
-    
-    inline GetAppointmentsResult_appointmentsItem& WithChargeId(Aws::String&& value) { SetChargeId(value); return *this;}
-
-    
-    inline GetAppointmentsResult_appointmentsItem& WithChargeId(const char* value) { SetChargeId(value); return *this;}
 
     
     inline const Aws::String& GetDurationSeconds() const{ return m_durationSeconds; }
@@ -270,6 +228,111 @@ namespace Model
     inline GetAppointmentsResult_appointmentsItem& WithTotalPriceCents(const char* value) { SetTotalPriceCents(value); return *this;}
 
     
+    inline const Aws::String& GetDoctorServiceFeeCents() const{ return m_doctorServiceFeeCents; }
+
+    
+    inline void SetDoctorServiceFeeCents(const Aws::String& value) { m_doctorServiceFeeCentsHasBeenSet = true; m_doctorServiceFeeCents = value; }
+
+    
+    inline void SetDoctorServiceFeeCents(Aws::String&& value) { m_doctorServiceFeeCentsHasBeenSet = true; m_doctorServiceFeeCents = value; }
+
+    
+    inline void SetDoctorServiceFeeCents(const char* value) { m_doctorServiceFeeCentsHasBeenSet = true; m_doctorServiceFeeCents.assign(value); }
+
+    
+    inline GetAppointmentsResult_appointmentsItem& WithDoctorServiceFeeCents(const Aws::String& value) { SetDoctorServiceFeeCents(value); return *this;}
+
+    
+    inline GetAppointmentsResult_appointmentsItem& WithDoctorServiceFeeCents(Aws::String&& value) { SetDoctorServiceFeeCents(value); return *this;}
+
+    
+    inline GetAppointmentsResult_appointmentsItem& WithDoctorServiceFeeCents(const char* value) { SetDoctorServiceFeeCents(value); return *this;}
+
+    
+    inline const Aws::String& GetCancellationDate() const{ return m_cancellationDate; }
+
+    
+    inline void SetCancellationDate(const Aws::String& value) { m_cancellationDateHasBeenSet = true; m_cancellationDate = value; }
+
+    
+    inline void SetCancellationDate(Aws::String&& value) { m_cancellationDateHasBeenSet = true; m_cancellationDate = value; }
+
+    
+    inline void SetCancellationDate(const char* value) { m_cancellationDateHasBeenSet = true; m_cancellationDate.assign(value); }
+
+    
+    inline GetAppointmentsResult_appointmentsItem& WithCancellationDate(const Aws::String& value) { SetCancellationDate(value); return *this;}
+
+    
+    inline GetAppointmentsResult_appointmentsItem& WithCancellationDate(Aws::String&& value) { SetCancellationDate(value); return *this;}
+
+    
+    inline GetAppointmentsResult_appointmentsItem& WithCancellationDate(const char* value) { SetCancellationDate(value); return *this;}
+
+    
+    inline const Aws::String& GetDoctorId() const{ return m_doctorId; }
+
+    
+    inline void SetDoctorId(const Aws::String& value) { m_doctorIdHasBeenSet = true; m_doctorId = value; }
+
+    
+    inline void SetDoctorId(Aws::String&& value) { m_doctorIdHasBeenSet = true; m_doctorId = value; }
+
+    
+    inline void SetDoctorId(const char* value) { m_doctorIdHasBeenSet = true; m_doctorId.assign(value); }
+
+    
+    inline GetAppointmentsResult_appointmentsItem& WithDoctorId(const Aws::String& value) { SetDoctorId(value); return *this;}
+
+    
+    inline GetAppointmentsResult_appointmentsItem& WithDoctorId(Aws::String&& value) { SetDoctorId(value); return *this;}
+
+    
+    inline GetAppointmentsResult_appointmentsItem& WithDoctorId(const char* value) { SetDoctorId(value); return *this;}
+
+    
+    inline const Aws::String& GetPatientServiceFeeCents() const{ return m_patientServiceFeeCents; }
+
+    
+    inline void SetPatientServiceFeeCents(const Aws::String& value) { m_patientServiceFeeCentsHasBeenSet = true; m_patientServiceFeeCents = value; }
+
+    
+    inline void SetPatientServiceFeeCents(Aws::String&& value) { m_patientServiceFeeCentsHasBeenSet = true; m_patientServiceFeeCents = value; }
+
+    
+    inline void SetPatientServiceFeeCents(const char* value) { m_patientServiceFeeCentsHasBeenSet = true; m_patientServiceFeeCents.assign(value); }
+
+    
+    inline GetAppointmentsResult_appointmentsItem& WithPatientServiceFeeCents(const Aws::String& value) { SetPatientServiceFeeCents(value); return *this;}
+
+    
+    inline GetAppointmentsResult_appointmentsItem& WithPatientServiceFeeCents(Aws::String&& value) { SetPatientServiceFeeCents(value); return *this;}
+
+    
+    inline GetAppointmentsResult_appointmentsItem& WithPatientServiceFeeCents(const char* value) { SetPatientServiceFeeCents(value); return *this;}
+
+    
+    inline const Aws::String& GetPatientId() const{ return m_patientId; }
+
+    
+    inline void SetPatientId(const Aws::String& value) { m_patientIdHasBeenSet = true; m_patientId = value; }
+
+    
+    inline void SetPatientId(Aws::String&& value) { m_patientIdHasBeenSet = true; m_patientId = value; }
+
+    
+    inline void SetPatientId(const char* value) { m_patientIdHasBeenSet = true; m_patientId.assign(value); }
+
+    
+    inline GetAppointmentsResult_appointmentsItem& WithPatientId(const Aws::String& value) { SetPatientId(value); return *this;}
+
+    
+    inline GetAppointmentsResult_appointmentsItem& WithPatientId(Aws::String&& value) { SetPatientId(value); return *this;}
+
+    
+    inline GetAppointmentsResult_appointmentsItem& WithPatientId(const char* value) { SetPatientId(value); return *this;}
+
+    
     inline const Aws::String& GetAppointmentState() const{ return m_appointmentState; }
 
     
@@ -312,27 +375,6 @@ namespace Model
     inline GetAppointmentsResult_appointmentsItem& WithDateBooked(const char* value) { SetDateBooked(value); return *this;}
 
     
-    inline const Aws::String& GetDoctorServiceFeeCents() const{ return m_doctorServiceFeeCents; }
-
-    
-    inline void SetDoctorServiceFeeCents(const Aws::String& value) { m_doctorServiceFeeCentsHasBeenSet = true; m_doctorServiceFeeCents = value; }
-
-    
-    inline void SetDoctorServiceFeeCents(Aws::String&& value) { m_doctorServiceFeeCentsHasBeenSet = true; m_doctorServiceFeeCents = value; }
-
-    
-    inline void SetDoctorServiceFeeCents(const char* value) { m_doctorServiceFeeCentsHasBeenSet = true; m_doctorServiceFeeCents.assign(value); }
-
-    
-    inline GetAppointmentsResult_appointmentsItem& WithDoctorServiceFeeCents(const Aws::String& value) { SetDoctorServiceFeeCents(value); return *this;}
-
-    
-    inline GetAppointmentsResult_appointmentsItem& WithDoctorServiceFeeCents(Aws::String&& value) { SetDoctorServiceFeeCents(value); return *this;}
-
-    
-    inline GetAppointmentsResult_appointmentsItem& WithDoctorServiceFeeCents(const char* value) { SetDoctorServiceFeeCents(value); return *this;}
-
-    
     inline const Aws::String& GetId() const{ return m_id; }
 
     
@@ -353,83 +395,41 @@ namespace Model
     
     inline GetAppointmentsResult_appointmentsItem& WithId(const char* value) { SetId(value); return *this;}
 
-    
-    inline const Aws::String& GetPatientServiceFeeCents() const{ return m_patientServiceFeeCents; }
-
-    
-    inline void SetPatientServiceFeeCents(const Aws::String& value) { m_patientServiceFeeCentsHasBeenSet = true; m_patientServiceFeeCents = value; }
-
-    
-    inline void SetPatientServiceFeeCents(Aws::String&& value) { m_patientServiceFeeCentsHasBeenSet = true; m_patientServiceFeeCents = value; }
-
-    
-    inline void SetPatientServiceFeeCents(const char* value) { m_patientServiceFeeCentsHasBeenSet = true; m_patientServiceFeeCents.assign(value); }
-
-    
-    inline GetAppointmentsResult_appointmentsItem& WithPatientServiceFeeCents(const Aws::String& value) { SetPatientServiceFeeCents(value); return *this;}
-
-    
-    inline GetAppointmentsResult_appointmentsItem& WithPatientServiceFeeCents(Aws::String&& value) { SetPatientServiceFeeCents(value); return *this;}
-
-    
-    inline GetAppointmentsResult_appointmentsItem& WithPatientServiceFeeCents(const char* value) { SetPatientServiceFeeCents(value); return *this;}
-
-    
-    inline const Aws::String& GetReimbursementDate() const{ return m_reimbursementDate; }
-
-    
-    inline void SetReimbursementDate(const Aws::String& value) { m_reimbursementDateHasBeenSet = true; m_reimbursementDate = value; }
-
-    
-    inline void SetReimbursementDate(Aws::String&& value) { m_reimbursementDateHasBeenSet = true; m_reimbursementDate = value; }
-
-    
-    inline void SetReimbursementDate(const char* value) { m_reimbursementDateHasBeenSet = true; m_reimbursementDate.assign(value); }
-
-    
-    inline GetAppointmentsResult_appointmentsItem& WithReimbursementDate(const Aws::String& value) { SetReimbursementDate(value); return *this;}
-
-    
-    inline GetAppointmentsResult_appointmentsItem& WithReimbursementDate(Aws::String&& value) { SetReimbursementDate(value); return *this;}
-
-    
-    inline GetAppointmentsResult_appointmentsItem& WithReimbursementDate(const char* value) { SetReimbursementDate(value); return *this;}
-
   private:
-    Aws::String m_basePriceCents;
-    bool m_basePriceCentsHasBeenSet;
-    Aws::String m_doctorId;
-    bool m_doctorIdHasBeenSet;
-    Aws::String m_doctorEarningsCents;
-    bool m_doctorEarningsCentsHasBeenSet;
-    Aws::String m_serviceId;
-    bool m_serviceIdHasBeenSet;
-    Aws::String m_cancellationDate;
-    bool m_cancellationDateHasBeenSet;
-    Aws::String m_startTime;
-    bool m_startTimeHasBeenSet;
-    Aws::String m_patientId;
-    bool m_patientIdHasBeenSet;
-    Aws::String m_amountRefundedCents;
-    bool m_amountRefundedCentsHasBeenSet;
     Aws::String m_chargeId;
     bool m_chargeIdHasBeenSet;
+    Aws::String m_serviceId;
+    bool m_serviceIdHasBeenSet;
+    Aws::String m_basePriceCents;
+    bool m_basePriceCentsHasBeenSet;
+    Aws::String m_startTime;
+    bool m_startTimeHasBeenSet;
+    Aws::String m_doctorEarningsCents;
+    bool m_doctorEarningsCentsHasBeenSet;
+    Aws::String m_reimbursementDate;
+    bool m_reimbursementDateHasBeenSet;
+    Aws::String m_amountRefundedCents;
+    bool m_amountRefundedCentsHasBeenSet;
     Aws::String m_durationSeconds;
     bool m_durationSecondsHasBeenSet;
     Aws::String m_totalPriceCents;
     bool m_totalPriceCentsHasBeenSet;
+    Aws::String m_doctorServiceFeeCents;
+    bool m_doctorServiceFeeCentsHasBeenSet;
+    Aws::String m_cancellationDate;
+    bool m_cancellationDateHasBeenSet;
+    Aws::String m_doctorId;
+    bool m_doctorIdHasBeenSet;
+    Aws::String m_patientServiceFeeCents;
+    bool m_patientServiceFeeCentsHasBeenSet;
+    Aws::String m_patientId;
+    bool m_patientIdHasBeenSet;
     Aws::String m_appointmentState;
     bool m_appointmentStateHasBeenSet;
     Aws::String m_dateBooked;
     bool m_dateBookedHasBeenSet;
-    Aws::String m_doctorServiceFeeCents;
-    bool m_doctorServiceFeeCentsHasBeenSet;
     Aws::String m_id;
     bool m_idHasBeenSet;
-    Aws::String m_patientServiceFeeCents;
-    bool m_patientServiceFeeCentsHasBeenSet;
-    Aws::String m_reimbursementDate;
-    bool m_reimbursementDateHasBeenSet;
   };
 
 } // namespace Model

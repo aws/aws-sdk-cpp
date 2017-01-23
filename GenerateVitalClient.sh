@@ -29,6 +29,7 @@ do
           -DBUILD_ONLY="core" \
           -DADD_CUSTOM_CLIENTS="serviceName=vitalservices,version=2016-11-23" \
           -DCMAKE_BUILD_TYPE=Debug \
+          -DCPP_STANDARD=14 \
           -Wno-dev \
           $AWS_CPP_SOURCE_DIR
 

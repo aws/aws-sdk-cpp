@@ -39,6 +39,69 @@ namespace Model
     Aws::Utils::Json::JsonValue Jsonize() const;
 
     
+    inline const Aws::String& GetId() const{ return m_id; }
+
+    
+    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
+
+    
+    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = value; }
+
+    
+    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
+
+    
+    inline GetLoggedInUserResult_user& WithId(const Aws::String& value) { SetId(value); return *this;}
+
+    
+    inline GetLoggedInUserResult_user& WithId(Aws::String&& value) { SetId(value); return *this;}
+
+    
+    inline GetLoggedInUserResult_user& WithId(const char* value) { SetId(value); return *this;}
+
+    
+    inline const Aws::String& GetFirstName() const{ return m_firstName; }
+
+    
+    inline void SetFirstName(const Aws::String& value) { m_firstNameHasBeenSet = true; m_firstName = value; }
+
+    
+    inline void SetFirstName(Aws::String&& value) { m_firstNameHasBeenSet = true; m_firstName = value; }
+
+    
+    inline void SetFirstName(const char* value) { m_firstNameHasBeenSet = true; m_firstName.assign(value); }
+
+    
+    inline GetLoggedInUserResult_user& WithFirstName(const Aws::String& value) { SetFirstName(value); return *this;}
+
+    
+    inline GetLoggedInUserResult_user& WithFirstName(Aws::String&& value) { SetFirstName(value); return *this;}
+
+    
+    inline GetLoggedInUserResult_user& WithFirstName(const char* value) { SetFirstName(value); return *this;}
+
+    
+    inline const Aws::String& GetStripeCustomerId() const{ return m_stripeCustomerId; }
+
+    
+    inline void SetStripeCustomerId(const Aws::String& value) { m_stripeCustomerIdHasBeenSet = true; m_stripeCustomerId = value; }
+
+    
+    inline void SetStripeCustomerId(Aws::String&& value) { m_stripeCustomerIdHasBeenSet = true; m_stripeCustomerId = value; }
+
+    
+    inline void SetStripeCustomerId(const char* value) { m_stripeCustomerIdHasBeenSet = true; m_stripeCustomerId.assign(value); }
+
+    
+    inline GetLoggedInUserResult_user& WithStripeCustomerId(const Aws::String& value) { SetStripeCustomerId(value); return *this;}
+
+    
+    inline GetLoggedInUserResult_user& WithStripeCustomerId(Aws::String&& value) { SetStripeCustomerId(value); return *this;}
+
+    
+    inline GetLoggedInUserResult_user& WithStripeCustomerId(const char* value) { SetStripeCustomerId(value); return *this;}
+
+    
     inline const Aws::String& GetLastName() const{ return m_lastName; }
 
     
@@ -81,48 +144,6 @@ namespace Model
     inline GetLoggedInUserResult_user& WithDoctorId(const char* value) { SetDoctorId(value); return *this;}
 
     
-    inline const Aws::String& GetProfilePhotoUrl() const{ return m_profilePhotoUrl; }
-
-    
-    inline void SetProfilePhotoUrl(const Aws::String& value) { m_profilePhotoUrlHasBeenSet = true; m_profilePhotoUrl = value; }
-
-    
-    inline void SetProfilePhotoUrl(Aws::String&& value) { m_profilePhotoUrlHasBeenSet = true; m_profilePhotoUrl = value; }
-
-    
-    inline void SetProfilePhotoUrl(const char* value) { m_profilePhotoUrlHasBeenSet = true; m_profilePhotoUrl.assign(value); }
-
-    
-    inline GetLoggedInUserResult_user& WithProfilePhotoUrl(const Aws::String& value) { SetProfilePhotoUrl(value); return *this;}
-
-    
-    inline GetLoggedInUserResult_user& WithProfilePhotoUrl(Aws::String&& value) { SetProfilePhotoUrl(value); return *this;}
-
-    
-    inline GetLoggedInUserResult_user& WithProfilePhotoUrl(const char* value) { SetProfilePhotoUrl(value); return *this;}
-
-    
-    inline const Aws::String& GetStripeCustomerId() const{ return m_stripeCustomerId; }
-
-    
-    inline void SetStripeCustomerId(const Aws::String& value) { m_stripeCustomerIdHasBeenSet = true; m_stripeCustomerId = value; }
-
-    
-    inline void SetStripeCustomerId(Aws::String&& value) { m_stripeCustomerIdHasBeenSet = true; m_stripeCustomerId = value; }
-
-    
-    inline void SetStripeCustomerId(const char* value) { m_stripeCustomerIdHasBeenSet = true; m_stripeCustomerId.assign(value); }
-
-    
-    inline GetLoggedInUserResult_user& WithStripeCustomerId(const Aws::String& value) { SetStripeCustomerId(value); return *this;}
-
-    
-    inline GetLoggedInUserResult_user& WithStripeCustomerId(Aws::String&& value) { SetStripeCustomerId(value); return *this;}
-
-    
-    inline GetLoggedInUserResult_user& WithStripeCustomerId(const char* value) { SetStripeCustomerId(value); return *this;}
-
-    
     inline const Aws::String& GetMobileNumber() const{ return m_mobileNumber; }
 
     
@@ -142,6 +163,27 @@ namespace Model
 
     
     inline GetLoggedInUserResult_user& WithMobileNumber(const char* value) { SetMobileNumber(value); return *this;}
+
+    
+    inline const Aws::String& GetProfilePhotoUrl() const{ return m_profilePhotoUrl; }
+
+    
+    inline void SetProfilePhotoUrl(const Aws::String& value) { m_profilePhotoUrlHasBeenSet = true; m_profilePhotoUrl = value; }
+
+    
+    inline void SetProfilePhotoUrl(Aws::String&& value) { m_profilePhotoUrlHasBeenSet = true; m_profilePhotoUrl = value; }
+
+    
+    inline void SetProfilePhotoUrl(const char* value) { m_profilePhotoUrlHasBeenSet = true; m_profilePhotoUrl.assign(value); }
+
+    
+    inline GetLoggedInUserResult_user& WithProfilePhotoUrl(const Aws::String& value) { SetProfilePhotoUrl(value); return *this;}
+
+    
+    inline GetLoggedInUserResult_user& WithProfilePhotoUrl(Aws::String&& value) { SetProfilePhotoUrl(value); return *this;}
+
+    
+    inline GetLoggedInUserResult_user& WithProfilePhotoUrl(const char* value) { SetProfilePhotoUrl(value); return *this;}
 
     
     inline const Aws::String& GetEmail() const{ return m_email; }
@@ -164,65 +206,23 @@ namespace Model
     
     inline GetLoggedInUserResult_user& WithEmail(const char* value) { SetEmail(value); return *this;}
 
-    
-    inline const Aws::String& GetId() const{ return m_id; }
-
-    
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-
-    
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = value; }
-
-    
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-
-    
-    inline GetLoggedInUserResult_user& WithId(const Aws::String& value) { SetId(value); return *this;}
-
-    
-    inline GetLoggedInUserResult_user& WithId(Aws::String&& value) { SetId(value); return *this;}
-
-    
-    inline GetLoggedInUserResult_user& WithId(const char* value) { SetId(value); return *this;}
-
-    
-    inline const Aws::String& GetFirstName() const{ return m_firstName; }
-
-    
-    inline void SetFirstName(const Aws::String& value) { m_firstNameHasBeenSet = true; m_firstName = value; }
-
-    
-    inline void SetFirstName(Aws::String&& value) { m_firstNameHasBeenSet = true; m_firstName = value; }
-
-    
-    inline void SetFirstName(const char* value) { m_firstNameHasBeenSet = true; m_firstName.assign(value); }
-
-    
-    inline GetLoggedInUserResult_user& WithFirstName(const Aws::String& value) { SetFirstName(value); return *this;}
-
-    
-    inline GetLoggedInUserResult_user& WithFirstName(Aws::String&& value) { SetFirstName(value); return *this;}
-
-    
-    inline GetLoggedInUserResult_user& WithFirstName(const char* value) { SetFirstName(value); return *this;}
-
   private:
-    Aws::String m_lastName;
-    bool m_lastNameHasBeenSet;
-    Aws::String m_doctorId;
-    bool m_doctorIdHasBeenSet;
-    Aws::String m_profilePhotoUrl;
-    bool m_profilePhotoUrlHasBeenSet;
-    Aws::String m_stripeCustomerId;
-    bool m_stripeCustomerIdHasBeenSet;
-    Aws::String m_mobileNumber;
-    bool m_mobileNumberHasBeenSet;
-    Aws::String m_email;
-    bool m_emailHasBeenSet;
     Aws::String m_id;
     bool m_idHasBeenSet;
     Aws::String m_firstName;
     bool m_firstNameHasBeenSet;
+    Aws::String m_stripeCustomerId;
+    bool m_stripeCustomerIdHasBeenSet;
+    Aws::String m_lastName;
+    bool m_lastNameHasBeenSet;
+    Aws::String m_doctorId;
+    bool m_doctorIdHasBeenSet;
+    Aws::String m_mobileNumber;
+    bool m_mobileNumberHasBeenSet;
+    Aws::String m_profilePhotoUrl;
+    bool m_profilePhotoUrlHasBeenSet;
+    Aws::String m_email;
+    bool m_emailHasBeenSet;
   };
 
 } // namespace Model

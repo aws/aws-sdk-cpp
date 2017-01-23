@@ -40,27 +40,6 @@ namespace Model
     getAppointmentBillResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
     
-    inline const Aws::String& GetBasePriceCents() const{ return m_basePriceCents; }
-
-    
-    inline void SetBasePriceCents(const Aws::String& value) { m_basePriceCents = value; }
-
-    
-    inline void SetBasePriceCents(Aws::String&& value) { m_basePriceCents = value; }
-
-    
-    inline void SetBasePriceCents(const char* value) { m_basePriceCents.assign(value); }
-
-    
-    inline getAppointmentBillResult& WithBasePriceCents(const Aws::String& value) { SetBasePriceCents(value); return *this;}
-
-    
-    inline getAppointmentBillResult& WithBasePriceCents(Aws::String&& value) { SetBasePriceCents(value); return *this;}
-
-    
-    inline getAppointmentBillResult& WithBasePriceCents(const char* value) { SetBasePriceCents(value); return *this;}
-
-    
     inline const Aws::String& GetDoctorServiceFeeCents() const{ return m_doctorServiceFeeCents; }
 
     
@@ -80,27 +59,6 @@ namespace Model
 
     
     inline getAppointmentBillResult& WithDoctorServiceFeeCents(const char* value) { SetDoctorServiceFeeCents(value); return *this;}
-
-    
-    inline const Aws::String& GetTotalPriceCents() const{ return m_totalPriceCents; }
-
-    
-    inline void SetTotalPriceCents(const Aws::String& value) { m_totalPriceCents = value; }
-
-    
-    inline void SetTotalPriceCents(Aws::String&& value) { m_totalPriceCents = value; }
-
-    
-    inline void SetTotalPriceCents(const char* value) { m_totalPriceCents.assign(value); }
-
-    
-    inline getAppointmentBillResult& WithTotalPriceCents(const Aws::String& value) { SetTotalPriceCents(value); return *this;}
-
-    
-    inline getAppointmentBillResult& WithTotalPriceCents(Aws::String&& value) { SetTotalPriceCents(value); return *this;}
-
-    
-    inline getAppointmentBillResult& WithTotalPriceCents(const char* value) { SetTotalPriceCents(value); return *this;}
 
     
     inline const Aws::String& GetPatientServiceFeeCents() const{ return m_patientServiceFeeCents; }
@@ -124,6 +82,48 @@ namespace Model
     inline getAppointmentBillResult& WithPatientServiceFeeCents(const char* value) { SetPatientServiceFeeCents(value); return *this;}
 
     
+    inline const Aws::String& GetTotalPriceCents() const{ return m_totalPriceCents; }
+
+    
+    inline void SetTotalPriceCents(const Aws::String& value) { m_totalPriceCents = value; }
+
+    
+    inline void SetTotalPriceCents(Aws::String&& value) { m_totalPriceCents = value; }
+
+    
+    inline void SetTotalPriceCents(const char* value) { m_totalPriceCents.assign(value); }
+
+    
+    inline getAppointmentBillResult& WithTotalPriceCents(const Aws::String& value) { SetTotalPriceCents(value); return *this;}
+
+    
+    inline getAppointmentBillResult& WithTotalPriceCents(Aws::String&& value) { SetTotalPriceCents(value); return *this;}
+
+    
+    inline getAppointmentBillResult& WithTotalPriceCents(const char* value) { SetTotalPriceCents(value); return *this;}
+
+    
+    inline const Aws::String& GetBasePriceCents() const{ return m_basePriceCents; }
+
+    
+    inline void SetBasePriceCents(const Aws::String& value) { m_basePriceCents = value; }
+
+    
+    inline void SetBasePriceCents(Aws::String&& value) { m_basePriceCents = value; }
+
+    
+    inline void SetBasePriceCents(const char* value) { m_basePriceCents.assign(value); }
+
+    
+    inline getAppointmentBillResult& WithBasePriceCents(const Aws::String& value) { SetBasePriceCents(value); return *this;}
+
+    
+    inline getAppointmentBillResult& WithBasePriceCents(Aws::String&& value) { SetBasePriceCents(value); return *this;}
+
+    
+    inline getAppointmentBillResult& WithBasePriceCents(const char* value) { SetBasePriceCents(value); return *this;}
+
+    
     inline const Aws::String& GetFingerprint() const{ return m_fingerprint; }
 
     
@@ -145,10 +145,10 @@ namespace Model
     inline getAppointmentBillResult& WithFingerprint(const char* value) { SetFingerprint(value); return *this;}
 
   private:
-    Aws::String m_basePriceCents;
     Aws::String m_doctorServiceFeeCents;
-    Aws::String m_totalPriceCents;
     Aws::String m_patientServiceFeeCents;
+    Aws::String m_totalPriceCents;
+    Aws::String m_basePriceCents;
     Aws::String m_fingerprint;
   };
 

@@ -22,10 +22,10 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 urlForFileRequest::urlForFileRequest() : 
-    m_doctorIdHasBeenSet(false),
     m_fileNameHasBeenSet(false),
+    m_patientIdHasBeenSet(false),
     m_httpMethodHasBeenSet(false),
-    m_patientIdHasBeenSet(false)
+    m_doctorIdHasBeenSet(false)
 {
 }
 
@@ -33,15 +33,15 @@ Aws::String urlForFileRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  if(m_doctorIdHasBeenSet)
-  {
-   payload.WithString("doctorId", m_doctorId);
-
-  }
-
   if(m_fileNameHasBeenSet)
   {
    payload.WithString("fileName", m_fileName);
+
+  }
+
+  if(m_patientIdHasBeenSet)
+  {
+   payload.WithString("patientId", m_patientId);
 
   }
 
@@ -51,9 +51,9 @@ Aws::String urlForFileRequest::SerializePayload() const
 
   }
 
-  if(m_patientIdHasBeenSet)
+  if(m_doctorIdHasBeenSet)
   {
-   payload.WithString("patientId", m_patientId);
+   payload.WithString("doctorId", m_doctorId);
 
   }
 
