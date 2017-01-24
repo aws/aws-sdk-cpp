@@ -1,6 +1,6 @@
 #!/bin/bash
 
-FILES_CHANGED_STR=`git diff --name-only master@{1} master`
+FILES_CHANGED_STR=`git diff --name-only $1@{1} $1`
 FILES_CHANGED=${FILES_CHANGED_STR}
 
 declare -A DIRS_SET 
