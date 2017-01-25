@@ -70,8 +70,14 @@ void ResponseStream::ReleaseStream()
 
 static const char *DEFAULT_STREAM_TAG = "DefaultUnderlyingStream";
 
+#include <aws/core/utils/stream/GnustlAndroidStringBuf.h>
+
 DefaultUnderlyingStream::DefaultUnderlyingStream() :
+#ifdef NEVER
     Base( Aws::New< Aws::StringBuf >( DEFAULT_STREAM_TAG ) )
+#else
+    Base( Aws::New< Aws::Utils::Stream::GnustlAndroidStringBuf >( DEFAULT_STREAM_TAG ) )
+#endif
 {}
 
 DefaultUnderlyingStream::~DefaultUnderlyingStream()
