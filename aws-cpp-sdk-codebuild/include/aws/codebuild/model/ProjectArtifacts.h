@@ -34,8 +34,8 @@ namespace Model
 {
 
   /**
-   * <p>Information about the build project's build output artifacts.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>Information about the build output artifacts for the build
+   * project.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ProjectArtifacts">AWS
    * API Reference</a></p>
    */
@@ -48,8 +48,8 @@ namespace Model
     Aws::Utils::Json::JsonValue Jsonize() const;
 
     /**
-     * <p>The build output artifact's type. Valid values include:</p> <ul> <li> <p>
-     * <code>CODEPIPELINE</code>: The build project with have build output generated
+     * <p>The type of build output artifact. Valid values include:</p> <ul> <li> <p>
+     * <code>CODEPIPELINE</code>: The build project will have build output generated
      * through AWS CodePipeline.</p> </li> <li> <p> <code>NO_ARTIFACTS</code>: The
      * build project will not produce any build output.</p> </li> <li> <p>
      * <code>S3</code>: The build project will store build output in Amazon Simple
@@ -58,8 +58,8 @@ namespace Model
     inline const ArtifactsType& GetType() const{ return m_type; }
 
     /**
-     * <p>The build output artifact's type. Valid values include:</p> <ul> <li> <p>
-     * <code>CODEPIPELINE</code>: The build project with have build output generated
+     * <p>The type of build output artifact. Valid values include:</p> <ul> <li> <p>
+     * <code>CODEPIPELINE</code>: The build project will have build output generated
      * through AWS CodePipeline.</p> </li> <li> <p> <code>NO_ARTIFACTS</code>: The
      * build project will not produce any build output.</p> </li> <li> <p>
      * <code>S3</code>: The build project will store build output in Amazon Simple
@@ -68,8 +68,8 @@ namespace Model
     inline void SetType(const ArtifactsType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
-     * <p>The build output artifact's type. Valid values include:</p> <ul> <li> <p>
-     * <code>CODEPIPELINE</code>: The build project with have build output generated
+     * <p>The type of build output artifact. Valid values include:</p> <ul> <li> <p>
+     * <code>CODEPIPELINE</code>: The build project will have build output generated
      * through AWS CodePipeline.</p> </li> <li> <p> <code>NO_ARTIFACTS</code>: The
      * build project will not produce any build output.</p> </li> <li> <p>
      * <code>S3</code>: The build project will store build output in Amazon Simple
@@ -78,8 +78,8 @@ namespace Model
     inline void SetType(ArtifactsType&& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
-     * <p>The build output artifact's type. Valid values include:</p> <ul> <li> <p>
-     * <code>CODEPIPELINE</code>: The build project with have build output generated
+     * <p>The type of build output artifact. Valid values include:</p> <ul> <li> <p>
+     * <code>CODEPIPELINE</code>: The build project will have build output generated
      * through AWS CodePipeline.</p> </li> <li> <p> <code>NO_ARTIFACTS</code>: The
      * build project will not produce any build output.</p> </li> <li> <p>
      * <code>S3</code>: The build project will store build output in Amazon Simple
@@ -88,8 +88,8 @@ namespace Model
     inline ProjectArtifacts& WithType(const ArtifactsType& value) { SetType(value); return *this;}
 
     /**
-     * <p>The build output artifact's type. Valid values include:</p> <ul> <li> <p>
-     * <code>CODEPIPELINE</code>: The build project with have build output generated
+     * <p>The type of build output artifact. Valid values include:</p> <ul> <li> <p>
+     * <code>CODEPIPELINE</code>: The build project will have build output generated
      * through AWS CodePipeline.</p> </li> <li> <p> <code>NO_ARTIFACTS</code>: The
      * build project will not produce any build output.</p> </li> <li> <p>
      * <code>S3</code>: The build project will store build output in Amazon Simple
@@ -105,9 +105,7 @@ namespace Model
      * </li> <li> <p>If <code>type</code> is set to <code>NO_ARTIFACTS</code>, then
      * this value will be ignored if specified, because no build output will be
      * produced.</p> </li> <li> <p>If <code>type</code> is set to <code>S3</code>, this
-     * is the name of the output bucket. If <code>path</code> is not also specified,
-     * then <code>location</code> can also specify the path of the output artifact in
-     * the output bucket.</p> </li> </ul>
+     * is the name of the output bucket.</p> </li> </ul>
      */
     inline const Aws::String& GetLocation() const{ return m_location; }
 
@@ -119,9 +117,7 @@ namespace Model
      * </li> <li> <p>If <code>type</code> is set to <code>NO_ARTIFACTS</code>, then
      * this value will be ignored if specified, because no build output will be
      * produced.</p> </li> <li> <p>If <code>type</code> is set to <code>S3</code>, this
-     * is the name of the output bucket. If <code>path</code> is not also specified,
-     * then <code>location</code> can also specify the path of the output artifact in
-     * the output bucket.</p> </li> </ul>
+     * is the name of the output bucket.</p> </li> </ul>
      */
     inline void SetLocation(const Aws::String& value) { m_locationHasBeenSet = true; m_location = value; }
 
@@ -133,9 +129,7 @@ namespace Model
      * </li> <li> <p>If <code>type</code> is set to <code>NO_ARTIFACTS</code>, then
      * this value will be ignored if specified, because no build output will be
      * produced.</p> </li> <li> <p>If <code>type</code> is set to <code>S3</code>, this
-     * is the name of the output bucket. If <code>path</code> is not also specified,
-     * then <code>location</code> can also specify the path of the output artifact in
-     * the output bucket.</p> </li> </ul>
+     * is the name of the output bucket.</p> </li> </ul>
      */
     inline void SetLocation(Aws::String&& value) { m_locationHasBeenSet = true; m_location = value; }
 
@@ -147,9 +141,7 @@ namespace Model
      * </li> <li> <p>If <code>type</code> is set to <code>NO_ARTIFACTS</code>, then
      * this value will be ignored if specified, because no build output will be
      * produced.</p> </li> <li> <p>If <code>type</code> is set to <code>S3</code>, this
-     * is the name of the output bucket. If <code>path</code> is not also specified,
-     * then <code>location</code> can also specify the path of the output artifact in
-     * the output bucket.</p> </li> </ul>
+     * is the name of the output bucket.</p> </li> </ul>
      */
     inline void SetLocation(const char* value) { m_locationHasBeenSet = true; m_location.assign(value); }
 
@@ -161,9 +153,7 @@ namespace Model
      * </li> <li> <p>If <code>type</code> is set to <code>NO_ARTIFACTS</code>, then
      * this value will be ignored if specified, because no build output will be
      * produced.</p> </li> <li> <p>If <code>type</code> is set to <code>S3</code>, this
-     * is the name of the output bucket. If <code>path</code> is not also specified,
-     * then <code>location</code> can also specify the path of the output artifact in
-     * the output bucket.</p> </li> </ul>
+     * is the name of the output bucket.</p> </li> </ul>
      */
     inline ProjectArtifacts& WithLocation(const Aws::String& value) { SetLocation(value); return *this;}
 
@@ -175,9 +165,7 @@ namespace Model
      * </li> <li> <p>If <code>type</code> is set to <code>NO_ARTIFACTS</code>, then
      * this value will be ignored if specified, because no build output will be
      * produced.</p> </li> <li> <p>If <code>type</code> is set to <code>S3</code>, this
-     * is the name of the output bucket. If <code>path</code> is not also specified,
-     * then <code>location</code> can also specify the path of the output artifact in
-     * the output bucket.</p> </li> </ul>
+     * is the name of the output bucket.</p> </li> </ul>
      */
     inline ProjectArtifacts& WithLocation(Aws::String&& value) { SetLocation(value); return *this;}
 
@@ -189,9 +177,7 @@ namespace Model
      * </li> <li> <p>If <code>type</code> is set to <code>NO_ARTIFACTS</code>, then
      * this value will be ignored if specified, because no build output will be
      * produced.</p> </li> <li> <p>If <code>type</code> is set to <code>S3</code>, this
-     * is the name of the output bucket. If <code>path</code> is not also specified,
-     * then <code>location</code> can also specify the path of the output artifact in
-     * the output bucket.</p> </li> </ul>
+     * is the name of the output bucket.</p> </li> </ul>
      */
     inline ProjectArtifacts& WithLocation(const char* value) { SetLocation(value); return *this;}
 

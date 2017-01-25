@@ -536,37 +536,37 @@ namespace Model
     inline Task& WithStoppedAt(Aws::Utils::DateTime&& value) { SetStoppedAt(value); return *this;}
 
     /**
-     * <p>The task group associated with the task.</p>
+     * <p>The name of the task group associated with the task.</p>
      */
     inline const Aws::String& GetGroup() const{ return m_group; }
 
     /**
-     * <p>The task group associated with the task.</p>
+     * <p>The name of the task group associated with the task.</p>
      */
     inline void SetGroup(const Aws::String& value) { m_groupHasBeenSet = true; m_group = value; }
 
     /**
-     * <p>The task group associated with the task.</p>
+     * <p>The name of the task group associated with the task.</p>
      */
     inline void SetGroup(Aws::String&& value) { m_groupHasBeenSet = true; m_group = value; }
 
     /**
-     * <p>The task group associated with the task.</p>
+     * <p>The name of the task group associated with the task.</p>
      */
     inline void SetGroup(const char* value) { m_groupHasBeenSet = true; m_group.assign(value); }
 
     /**
-     * <p>The task group associated with the task.</p>
+     * <p>The name of the task group associated with the task.</p>
      */
     inline Task& WithGroup(const Aws::String& value) { SetGroup(value); return *this;}
 
     /**
-     * <p>The task group associated with the task.</p>
+     * <p>The name of the task group associated with the task.</p>
      */
     inline Task& WithGroup(Aws::String&& value) { SetGroup(value); return *this;}
 
     /**
-     * <p>The task group associated with the task.</p>
+     * <p>The name of the task group associated with the task.</p>
      */
     inline Task& WithGroup(const char* value) { SetGroup(value); return *this;}
 

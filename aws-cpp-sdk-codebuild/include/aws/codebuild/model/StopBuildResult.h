@@ -40,27 +40,27 @@ namespace Model
     StopBuildResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
     /**
-     * <p>Information about the build that was attempted to be stopped.</p>
+     * <p>Information about the build.</p>
      */
     inline const Build& GetBuild() const{ return m_build; }
 
     /**
-     * <p>Information about the build that was attempted to be stopped.</p>
+     * <p>Information about the build.</p>
      */
     inline void SetBuild(const Build& value) { m_build = value; }
 
     /**
-     * <p>Information about the build that was attempted to be stopped.</p>
+     * <p>Information about the build.</p>
      */
     inline void SetBuild(Build&& value) { m_build = value; }
 
     /**
-     * <p>Information about the build that was attempted to be stopped.</p>
+     * <p>Information about the build.</p>
      */
     inline StopBuildResult& WithBuild(const Build& value) { SetBuild(value); return *this;}
 
     /**
-     * <p>Information about the build that was attempted to be stopped.</p>
+     * <p>Information about the build.</p>
      */
     inline StopBuildResult& WithBuild(Build&& value) { SetBuild(value); return *this;}
 

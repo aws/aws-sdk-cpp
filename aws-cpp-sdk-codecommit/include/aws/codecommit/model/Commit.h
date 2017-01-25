@@ -121,102 +121,127 @@ namespace Model
     inline Commit& AddParents(const char* value) { m_parentsHasBeenSet = true; m_parents.push_back(value); return *this; }
 
     /**
-     * <p>The message associated with the specified commit.</p>
+     * <p>The commit message associated with the specified commit.</p>
      */
     inline const Aws::String& GetMessage() const{ return m_message; }
 
     /**
-     * <p>The message associated with the specified commit.</p>
+     * <p>The commit message associated with the specified commit.</p>
      */
     inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
 
     /**
-     * <p>The message associated with the specified commit.</p>
+     * <p>The commit message associated with the specified commit.</p>
      */
     inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = value; }
 
     /**
-     * <p>The message associated with the specified commit.</p>
+     * <p>The commit message associated with the specified commit.</p>
      */
     inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
 
     /**
-     * <p>The message associated with the specified commit.</p>
+     * <p>The commit message associated with the specified commit.</p>
      */
     inline Commit& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
 
     /**
-     * <p>The message associated with the specified commit.</p>
+     * <p>The commit message associated with the specified commit.</p>
      */
     inline Commit& WithMessage(Aws::String&& value) { SetMessage(value); return *this;}
 
     /**
-     * <p>The message associated with the specified commit.</p>
+     * <p>The commit message associated with the specified commit.</p>
      */
     inline Commit& WithMessage(const char* value) { SetMessage(value); return *this;}
 
     /**
-     * <p>Information about the author of the specified commit.</p>
+     * <p>Information about the author of the specified commit. Information includes
+     * the date in timestamp format with GMT offset, the name of the author, and the
+     * email address for the author, as configured in Git.</p>
      */
     inline const UserInfo& GetAuthor() const{ return m_author; }
 
     /**
-     * <p>Information about the author of the specified commit.</p>
+     * <p>Information about the author of the specified commit. Information includes
+     * the date in timestamp format with GMT offset, the name of the author, and the
+     * email address for the author, as configured in Git.</p>
      */
     inline void SetAuthor(const UserInfo& value) { m_authorHasBeenSet = true; m_author = value; }
 
     /**
-     * <p>Information about the author of the specified commit.</p>
+     * <p>Information about the author of the specified commit. Information includes
+     * the date in timestamp format with GMT offset, the name of the author, and the
+     * email address for the author, as configured in Git.</p>
      */
     inline void SetAuthor(UserInfo&& value) { m_authorHasBeenSet = true; m_author = value; }
 
     /**
-     * <p>Information about the author of the specified commit.</p>
+     * <p>Information about the author of the specified commit. Information includes
+     * the date in timestamp format with GMT offset, the name of the author, and the
+     * email address for the author, as configured in Git.</p>
      */
     inline Commit& WithAuthor(const UserInfo& value) { SetAuthor(value); return *this;}
 
     /**
-     * <p>Information about the author of the specified commit.</p>
+     * <p>Information about the author of the specified commit. Information includes
+     * the date in timestamp format with GMT offset, the name of the author, and the
+     * email address for the author, as configured in Git.</p>
      */
     inline Commit& WithAuthor(UserInfo&& value) { SetAuthor(value); return *this;}
 
     /**
      * <p>Information about the person who committed the specified commit, also known
-     * as the committer. For more information about the difference between an author
-     * and a committer in Git, see <a href="http://git-scm.com/book/ch2-3.html">Viewing
-     * the Commit History</a> in Pro Git by Scott Chacon and Ben Straub.</p>
+     * as the committer. Information includes the date in timestamp format with GMT
+     * offset, the name of the committer, and the email address for the committer, as
+     * configured in Git.</p> <p>For more information about the difference between an
+     * author and a committer in Git, see <a
+     * href="http://git-scm.com/book/ch2-3.html">Viewing the Commit History</a> in Pro
+     * Git by Scott Chacon and Ben Straub.</p>
      */
     inline const UserInfo& GetCommitter() const{ return m_committer; }
 
     /**
      * <p>Information about the person who committed the specified commit, also known
-     * as the committer. For more information about the difference between an author
-     * and a committer in Git, see <a href="http://git-scm.com/book/ch2-3.html">Viewing
-     * the Commit History</a> in Pro Git by Scott Chacon and Ben Straub.</p>
+     * as the committer. Information includes the date in timestamp format with GMT
+     * offset, the name of the committer, and the email address for the committer, as
+     * configured in Git.</p> <p>For more information about the difference between an
+     * author and a committer in Git, see <a
+     * href="http://git-scm.com/book/ch2-3.html">Viewing the Commit History</a> in Pro
+     * Git by Scott Chacon and Ben Straub.</p>
      */
     inline void SetCommitter(const UserInfo& value) { m_committerHasBeenSet = true; m_committer = value; }
 
     /**
      * <p>Information about the person who committed the specified commit, also known
-     * as the committer. For more information about the difference between an author
-     * and a committer in Git, see <a href="http://git-scm.com/book/ch2-3.html">Viewing
-     * the Commit History</a> in Pro Git by Scott Chacon and Ben Straub.</p>
+     * as the committer. Information includes the date in timestamp format with GMT
+     * offset, the name of the committer, and the email address for the committer, as
+     * configured in Git.</p> <p>For more information about the difference between an
+     * author and a committer in Git, see <a
+     * href="http://git-scm.com/book/ch2-3.html">Viewing the Commit History</a> in Pro
+     * Git by Scott Chacon and Ben Straub.</p>
      */
     inline void SetCommitter(UserInfo&& value) { m_committerHasBeenSet = true; m_committer = value; }
 
     /**
      * <p>Information about the person who committed the specified commit, also known
-     * as the committer. For more information about the difference between an author
-     * and a committer in Git, see <a href="http://git-scm.com/book/ch2-3.html">Viewing
-     * the Commit History</a> in Pro Git by Scott Chacon and Ben Straub.</p>
+     * as the committer. Information includes the date in timestamp format with GMT
+     * offset, the name of the committer, and the email address for the committer, as
+     * configured in Git.</p> <p>For more information about the difference between an
+     * author and a committer in Git, see <a
+     * href="http://git-scm.com/book/ch2-3.html">Viewing the Commit History</a> in Pro
+     * Git by Scott Chacon and Ben Straub.</p>
      */
     inline Commit& WithCommitter(const UserInfo& value) { SetCommitter(value); return *this;}
 
     /**
      * <p>Information about the person who committed the specified commit, also known
-     * as the committer. For more information about the difference between an author
-     * and a committer in Git, see <a href="http://git-scm.com/book/ch2-3.html">Viewing
-     * the Commit History</a> in Pro Git by Scott Chacon and Ben Straub.</p>
+     * as the committer. Information includes the date in timestamp format with GMT
+     * offset, the name of the committer, and the email address for the committer, as
+     * configured in Git.</p> <p>For more information about the difference between an
+     * author and a committer in Git, see <a
+     * href="http://git-scm.com/book/ch2-3.html">Viewing the Commit History</a> in Pro
+     * Git by Scott Chacon and Ben Straub.</p>
      */
     inline Commit& WithCommitter(UserInfo&& value) { SetCommitter(value); return *this;}
 

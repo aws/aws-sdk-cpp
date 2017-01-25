@@ -35,37 +35,37 @@ namespace Model
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
     /**
-     * <p>The ID of the build to attempt to stop running.</p>
+     * <p>The ID of the build.</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
 
     /**
-     * <p>The ID of the build to attempt to stop running.</p>
+     * <p>The ID of the build.</p>
      */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
-     * <p>The ID of the build to attempt to stop running.</p>
+     * <p>The ID of the build.</p>
      */
     inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
-     * <p>The ID of the build to attempt to stop running.</p>
+     * <p>The ID of the build.</p>
      */
     inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
 
     /**
-     * <p>The ID of the build to attempt to stop running.</p>
+     * <p>The ID of the build.</p>
      */
     inline StopBuildRequest& WithId(const Aws::String& value) { SetId(value); return *this;}
 
     /**
-     * <p>The ID of the build to attempt to stop running.</p>
+     * <p>The ID of the build.</p>
      */
     inline StopBuildRequest& WithId(Aws::String&& value) { SetId(value); return *this;}
 
     /**
-     * <p>The ID of the build to attempt to stop running.</p>
+     * <p>The ID of the build.</p>
      */
     inline StopBuildRequest& WithId(const char* value) { SetId(value); return *this;}
 

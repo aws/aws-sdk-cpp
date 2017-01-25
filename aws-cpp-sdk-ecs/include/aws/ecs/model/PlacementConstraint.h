@@ -51,35 +51,40 @@ namespace Model
     /**
      * <p>The type of constraint. Use <code>distinctInstance</code> to ensure that each
      * task in a particular group is running on a different container instance. Use
-     * <code>memberOf</code> to restrict selection to a group of valid candidates.</p>
+     * <code>memberOf</code> to restrict selection to a group of valid candidates. Note
+     * that <code>distinctInstance</code> is not supported in task definitions.</p>
      */
     inline const PlacementConstraintType& GetType() const{ return m_type; }
 
     /**
      * <p>The type of constraint. Use <code>distinctInstance</code> to ensure that each
      * task in a particular group is running on a different container instance. Use
-     * <code>memberOf</code> to restrict selection to a group of valid candidates.</p>
+     * <code>memberOf</code> to restrict selection to a group of valid candidates. Note
+     * that <code>distinctInstance</code> is not supported in task definitions.</p>
      */
     inline void SetType(const PlacementConstraintType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
      * <p>The type of constraint. Use <code>distinctInstance</code> to ensure that each
      * task in a particular group is running on a different container instance. Use
-     * <code>memberOf</code> to restrict selection to a group of valid candidates.</p>
+     * <code>memberOf</code> to restrict selection to a group of valid candidates. Note
+     * that <code>distinctInstance</code> is not supported in task definitions.</p>
      */
     inline void SetType(PlacementConstraintType&& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
      * <p>The type of constraint. Use <code>distinctInstance</code> to ensure that each
      * task in a particular group is running on a different container instance. Use
-     * <code>memberOf</code> to restrict selection to a group of valid candidates.</p>
+     * <code>memberOf</code> to restrict selection to a group of valid candidates. Note
+     * that <code>distinctInstance</code> is not supported in task definitions.</p>
      */
     inline PlacementConstraint& WithType(const PlacementConstraintType& value) { SetType(value); return *this;}
 
     /**
      * <p>The type of constraint. Use <code>distinctInstance</code> to ensure that each
      * task in a particular group is running on a different container instance. Use
-     * <code>memberOf</code> to restrict selection to a group of valid candidates.</p>
+     * <code>memberOf</code> to restrict selection to a group of valid candidates. Note
+     * that <code>distinctInstance</code> is not supported in task definitions.</p>
      */
     inline PlacementConstraint& WithType(PlacementConstraintType&& value) { SetType(value); return *this;}
 

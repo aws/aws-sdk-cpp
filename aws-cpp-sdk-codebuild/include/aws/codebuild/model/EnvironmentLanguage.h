@@ -47,27 +47,27 @@ namespace Model
     Aws::Utils::Json::JsonValue Jsonize() const;
 
     /**
-     * <p>The programming language for the related set of Docker images.</p>
+     * <p>The programming language for the Docker images.</p>
      */
     inline const LanguageType& GetLanguage() const{ return m_language; }
 
     /**
-     * <p>The programming language for the related set of Docker images.</p>
+     * <p>The programming language for the Docker images.</p>
      */
     inline void SetLanguage(const LanguageType& value) { m_languageHasBeenSet = true; m_language = value; }
 
     /**
-     * <p>The programming language for the related set of Docker images.</p>
+     * <p>The programming language for the Docker images.</p>
      */
     inline void SetLanguage(LanguageType&& value) { m_languageHasBeenSet = true; m_language = value; }
 
     /**
-     * <p>The programming language for the related set of Docker images.</p>
+     * <p>The programming language for the Docker images.</p>
      */
     inline EnvironmentLanguage& WithLanguage(const LanguageType& value) { SetLanguage(value); return *this;}
 
     /**
-     * <p>The programming language for the related set of Docker images.</p>
+     * <p>The programming language for the Docker images.</p>
      */
     inline EnvironmentLanguage& WithLanguage(LanguageType&& value) { SetLanguage(value); return *this;}
 

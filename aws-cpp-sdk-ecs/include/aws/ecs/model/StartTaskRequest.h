@@ -354,44 +354,44 @@ namespace Model
     inline StartTaskRequest& WithStartedBy(const char* value) { SetStartedBy(value); return *this;}
 
     /**
-     * <p>The task group to associate with the task. By default, if you do not specify
-     * a task group, the default group is <code>family:TASKDEF-FAMILY</code>.</p>
+     * <p>The name of the task group to associate with the task. The default value is
+     * the family name of the task definition (for example, family:my-family-name).</p>
      */
     inline const Aws::String& GetGroup() const{ return m_group; }
 
     /**
-     * <p>The task group to associate with the task. By default, if you do not specify
-     * a task group, the default group is <code>family:TASKDEF-FAMILY</code>.</p>
+     * <p>The name of the task group to associate with the task. The default value is
+     * the family name of the task definition (for example, family:my-family-name).</p>
      */
     inline void SetGroup(const Aws::String& value) { m_groupHasBeenSet = true; m_group = value; }
 
     /**
-     * <p>The task group to associate with the task. By default, if you do not specify
-     * a task group, the default group is <code>family:TASKDEF-FAMILY</code>.</p>
+     * <p>The name of the task group to associate with the task. The default value is
+     * the family name of the task definition (for example, family:my-family-name).</p>
      */
     inline void SetGroup(Aws::String&& value) { m_groupHasBeenSet = true; m_group = value; }
 
     /**
-     * <p>The task group to associate with the task. By default, if you do not specify
-     * a task group, the default group is <code>family:TASKDEF-FAMILY</code>.</p>
+     * <p>The name of the task group to associate with the task. The default value is
+     * the family name of the task definition (for example, family:my-family-name).</p>
      */
     inline void SetGroup(const char* value) { m_groupHasBeenSet = true; m_group.assign(value); }
 
     /**
-     * <p>The task group to associate with the task. By default, if you do not specify
-     * a task group, the default group is <code>family:TASKDEF-FAMILY</code>.</p>
+     * <p>The name of the task group to associate with the task. The default value is
+     * the family name of the task definition (for example, family:my-family-name).</p>
      */
     inline StartTaskRequest& WithGroup(const Aws::String& value) { SetGroup(value); return *this;}
 
     /**
-     * <p>The task group to associate with the task. By default, if you do not specify
-     * a task group, the default group is <code>family:TASKDEF-FAMILY</code>.</p>
+     * <p>The name of the task group to associate with the task. The default value is
+     * the family name of the task definition (for example, family:my-family-name).</p>
      */
     inline StartTaskRequest& WithGroup(Aws::String&& value) { SetGroup(value); return *this;}
 
     /**
-     * <p>The task group to associate with the task. By default, if you do not specify
-     * a task group, the default group is <code>family:TASKDEF-FAMILY</code>.</p>
+     * <p>The name of the task group to associate with the task. The default value is
+     * the family name of the task definition (for example, family:my-family-name).</p>
      */
     inline StartTaskRequest& WithGroup(const char* value) { SetGroup(value); return *this;}
 

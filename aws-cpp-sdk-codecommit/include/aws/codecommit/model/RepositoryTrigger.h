@@ -215,56 +215,56 @@ namespace Model
     /**
      * <p>The repository events that will cause the trigger to run actions in another
      * service, such as sending a notification through Amazon Simple Notification
-     * Service (SNS). If no events are specified, the trigger will run for all
-     * repository events.</p>
+     * Service (SNS). </p> <note> <p>The valid value "all" cannot be used with any
+     * other values.</p> </note>
      */
     inline const Aws::Vector<RepositoryTriggerEventEnum>& GetEvents() const{ return m_events; }
 
     /**
      * <p>The repository events that will cause the trigger to run actions in another
      * service, such as sending a notification through Amazon Simple Notification
-     * Service (SNS). If no events are specified, the trigger will run for all
-     * repository events.</p>
+     * Service (SNS). </p> <note> <p>The valid value "all" cannot be used with any
+     * other values.</p> </note>
      */
     inline void SetEvents(const Aws::Vector<RepositoryTriggerEventEnum>& value) { m_eventsHasBeenSet = true; m_events = value; }
 
     /**
      * <p>The repository events that will cause the trigger to run actions in another
      * service, such as sending a notification through Amazon Simple Notification
-     * Service (SNS). If no events are specified, the trigger will run for all
-     * repository events.</p>
+     * Service (SNS). </p> <note> <p>The valid value "all" cannot be used with any
+     * other values.</p> </note>
      */
     inline void SetEvents(Aws::Vector<RepositoryTriggerEventEnum>&& value) { m_eventsHasBeenSet = true; m_events = value; }
 
     /**
      * <p>The repository events that will cause the trigger to run actions in another
      * service, such as sending a notification through Amazon Simple Notification
-     * Service (SNS). If no events are specified, the trigger will run for all
-     * repository events.</p>
+     * Service (SNS). </p> <note> <p>The valid value "all" cannot be used with any
+     * other values.</p> </note>
      */
     inline RepositoryTrigger& WithEvents(const Aws::Vector<RepositoryTriggerEventEnum>& value) { SetEvents(value); return *this;}
 
     /**
      * <p>The repository events that will cause the trigger to run actions in another
      * service, such as sending a notification through Amazon Simple Notification
-     * Service (SNS). If no events are specified, the trigger will run for all
-     * repository events.</p>
+     * Service (SNS). </p> <note> <p>The valid value "all" cannot be used with any
+     * other values.</p> </note>
      */
     inline RepositoryTrigger& WithEvents(Aws::Vector<RepositoryTriggerEventEnum>&& value) { SetEvents(value); return *this;}
 
     /**
      * <p>The repository events that will cause the trigger to run actions in another
      * service, such as sending a notification through Amazon Simple Notification
-     * Service (SNS). If no events are specified, the trigger will run for all
-     * repository events.</p>
+     * Service (SNS). </p> <note> <p>The valid value "all" cannot be used with any
+     * other values.</p> </note>
      */
     inline RepositoryTrigger& AddEvents(const RepositoryTriggerEventEnum& value) { m_eventsHasBeenSet = true; m_events.push_back(value); return *this; }
 
     /**
      * <p>The repository events that will cause the trigger to run actions in another
      * service, such as sending a notification through Amazon Simple Notification
-     * Service (SNS). If no events are specified, the trigger will run for all
-     * repository events.</p>
+     * Service (SNS). </p> <note> <p>The valid value "all" cannot be used with any
+     * other values.</p> </note>
      */
     inline RepositoryTrigger& AddEvents(RepositoryTriggerEventEnum&& value) { m_eventsHasBeenSet = true; m_events.push_back(value); return *this; }
 
