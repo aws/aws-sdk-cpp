@@ -1,5 +1,5 @@
 if(GIT_FOUND)
-    execute_process(COMMAND ${GIT_EXECUTABLE} describe --abbrev=0 --tags
+    execute_process(COMMAND ${GIT_EXECUTABLE} --work-tree=${CMAKE_CURRENT_SOURCE_DIR} describe --abbrev=0 --tags
     WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
     OUTPUT_VARIABLE VERSION_STRING
     OUTPUT_STRIP_TRAILING_WHITESPACE)
