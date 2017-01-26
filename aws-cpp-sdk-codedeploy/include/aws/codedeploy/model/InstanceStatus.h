@@ -30,7 +30,8 @@ namespace Model
     Succeeded,
     Failed,
     Skipped,
-    Unknown
+    Unknown,
+    Ready
   };
 
 namespace InstanceStatusMapper

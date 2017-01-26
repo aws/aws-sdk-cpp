@@ -35,6 +35,7 @@ namespace Aws
         static const int Succeeded_HASH = HashingUtils::HashString("Succeeded");
         static const int Failed_HASH = HashingUtils::HashString("Failed");
         static const int Stopped_HASH = HashingUtils::HashString("Stopped");
+        static const int Ready_HASH = HashingUtils::HashString("Ready");
 
 
         DeploymentStatus GetDeploymentStatusForName(const Aws::String& name)
@@ -64,6 +65,10 @@ namespace Aws
           {
             return DeploymentStatus::Stopped;
           }
+          else if (hashCode == Ready_HASH)
+          {
+            return DeploymentStatus::Ready;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -90,6 +95,8 @@ namespace Aws
             return "Failed";
           case DeploymentStatus::Stopped:
             return "Stopped";
+          case DeploymentStatus::Ready:
+            return "Ready";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

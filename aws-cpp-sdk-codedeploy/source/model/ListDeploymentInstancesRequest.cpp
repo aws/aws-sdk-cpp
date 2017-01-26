@@ -24,7 +24,8 @@ using namespace Aws::Utils;
 ListDeploymentInstancesRequest::ListDeploymentInstancesRequest() : 
     m_deploymentIdHasBeenSet(false),
     m_nextTokenHasBeenSet(false),
-    m_instanceStatusFilterHasBeenSet(false)
+    m_instanceStatusFilterHasBeenSet(false),
+    m_instanceTypeFilterHasBeenSet(false)
 {
 }
 
@@ -52,6 +53,17 @@ Aws::String ListDeploymentInstancesRequest::SerializePayload() const
      instanceStatusFilterJsonList[instanceStatusFilterIndex].AsString(InstanceStatusMapper::GetNameForInstanceStatus(m_instanceStatusFilter[instanceStatusFilterIndex]));
    }
    payload.WithArray("instanceStatusFilter", std::move(instanceStatusFilterJsonList));
+
+  }
+
+  if(m_instanceTypeFilterHasBeenSet)
+  {
+   Array<JsonValue> instanceTypeFilterJsonList(m_instanceTypeFilter.size());
+   for(unsigned instanceTypeFilterIndex = 0; instanceTypeFilterIndex < instanceTypeFilterJsonList.GetLength(); ++instanceTypeFilterIndex)
+   {
+     instanceTypeFilterJsonList[instanceTypeFilterIndex].AsString(InstanceTypeMapper::GetNameForInstanceType(m_instanceTypeFilter[instanceTypeFilterIndex]));
+   }
+   payload.WithArray("instanceTypeFilter", std::move(instanceTypeFilterJsonList));
 
   }
 

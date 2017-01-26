@@ -32,7 +32,10 @@ UpdateDeploymentGroupRequest::UpdateDeploymentGroupRequest() :
     m_serviceRoleArnHasBeenSet(false),
     m_triggerConfigurationsHasBeenSet(false),
     m_alarmConfigurationHasBeenSet(false),
-    m_autoRollbackConfigurationHasBeenSet(false)
+    m_autoRollbackConfigurationHasBeenSet(false),
+    m_deploymentStyleHasBeenSet(false),
+    m_blueGreenDeploymentConfigurationHasBeenSet(false),
+    m_loadBalancerInfoHasBeenSet(false)
 {
 }
 
@@ -123,6 +126,24 @@ Aws::String UpdateDeploymentGroupRequest::SerializePayload() const
   if(m_autoRollbackConfigurationHasBeenSet)
   {
    payload.WithObject("autoRollbackConfiguration", m_autoRollbackConfiguration.Jsonize());
+
+  }
+
+  if(m_deploymentStyleHasBeenSet)
+  {
+   payload.WithObject("deploymentStyle", m_deploymentStyle.Jsonize());
+
+  }
+
+  if(m_blueGreenDeploymentConfigurationHasBeenSet)
+  {
+   payload.WithObject("blueGreenDeploymentConfiguration", m_blueGreenDeploymentConfiguration.Jsonize());
+
+  }
+
+  if(m_loadBalancerInfoHasBeenSet)
+  {
+   payload.WithObject("loadBalancerInfo", m_loadBalancerInfo.Jsonize());
 
   }
 

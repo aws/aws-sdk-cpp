@@ -19,6 +19,9 @@
 #include <aws/codedeploy/model/RevisionLocation.h>
 #include <aws/codedeploy/model/AlarmConfiguration.h>
 #include <aws/codedeploy/model/AutoRollbackConfiguration.h>
+#include <aws/codedeploy/model/DeploymentStyle.h>
+#include <aws/codedeploy/model/BlueGreenDeploymentConfiguration.h>
+#include <aws/codedeploy/model/LoadBalancerInfo.h>
 #include <aws/codedeploy/model/EC2TagFilter.h>
 #include <aws/codedeploy/model/TagFilter.h>
 #include <aws/codedeploy/model/AutoScalingGroup.h>
@@ -451,6 +454,86 @@ namespace Model
      */
     inline DeploymentGroupInfo& WithAutoRollbackConfiguration(AutoRollbackConfiguration&& value) { SetAutoRollbackConfiguration(value); return *this;}
 
+    /**
+     * <p>Information about the type of deployment, either standard or blue/green, you
+     * want to run and whether to route deployment traffic behind a load balancer.</p>
+     */
+    inline const DeploymentStyle& GetDeploymentStyle() const{ return m_deploymentStyle; }
+
+    /**
+     * <p>Information about the type of deployment, either standard or blue/green, you
+     * want to run and whether to route deployment traffic behind a load balancer.</p>
+     */
+    inline void SetDeploymentStyle(const DeploymentStyle& value) { m_deploymentStyleHasBeenSet = true; m_deploymentStyle = value; }
+
+    /**
+     * <p>Information about the type of deployment, either standard or blue/green, you
+     * want to run and whether to route deployment traffic behind a load balancer.</p>
+     */
+    inline void SetDeploymentStyle(DeploymentStyle&& value) { m_deploymentStyleHasBeenSet = true; m_deploymentStyle = value; }
+
+    /**
+     * <p>Information about the type of deployment, either standard or blue/green, you
+     * want to run and whether to route deployment traffic behind a load balancer.</p>
+     */
+    inline DeploymentGroupInfo& WithDeploymentStyle(const DeploymentStyle& value) { SetDeploymentStyle(value); return *this;}
+
+    /**
+     * <p>Information about the type of deployment, either standard or blue/green, you
+     * want to run and whether to route deployment traffic behind a load balancer.</p>
+     */
+    inline DeploymentGroupInfo& WithDeploymentStyle(DeploymentStyle&& value) { SetDeploymentStyle(value); return *this;}
+
+    /**
+     * <p>Information about blue/green deployment options for a deployment group.</p>
+     */
+    inline const BlueGreenDeploymentConfiguration& GetBlueGreenDeploymentConfiguration() const{ return m_blueGreenDeploymentConfiguration; }
+
+    /**
+     * <p>Information about blue/green deployment options for a deployment group.</p>
+     */
+    inline void SetBlueGreenDeploymentConfiguration(const BlueGreenDeploymentConfiguration& value) { m_blueGreenDeploymentConfigurationHasBeenSet = true; m_blueGreenDeploymentConfiguration = value; }
+
+    /**
+     * <p>Information about blue/green deployment options for a deployment group.</p>
+     */
+    inline void SetBlueGreenDeploymentConfiguration(BlueGreenDeploymentConfiguration&& value) { m_blueGreenDeploymentConfigurationHasBeenSet = true; m_blueGreenDeploymentConfiguration = value; }
+
+    /**
+     * <p>Information about blue/green deployment options for a deployment group.</p>
+     */
+    inline DeploymentGroupInfo& WithBlueGreenDeploymentConfiguration(const BlueGreenDeploymentConfiguration& value) { SetBlueGreenDeploymentConfiguration(value); return *this;}
+
+    /**
+     * <p>Information about blue/green deployment options for a deployment group.</p>
+     */
+    inline DeploymentGroupInfo& WithBlueGreenDeploymentConfiguration(BlueGreenDeploymentConfiguration&& value) { SetBlueGreenDeploymentConfiguration(value); return *this;}
+
+    /**
+     * <p>Information about the load balancer to use in a blue/green deployment.</p>
+     */
+    inline const LoadBalancerInfo& GetLoadBalancerInfo() const{ return m_loadBalancerInfo; }
+
+    /**
+     * <p>Information about the load balancer to use in a blue/green deployment.</p>
+     */
+    inline void SetLoadBalancerInfo(const LoadBalancerInfo& value) { m_loadBalancerInfoHasBeenSet = true; m_loadBalancerInfo = value; }
+
+    /**
+     * <p>Information about the load balancer to use in a blue/green deployment.</p>
+     */
+    inline void SetLoadBalancerInfo(LoadBalancerInfo&& value) { m_loadBalancerInfoHasBeenSet = true; m_loadBalancerInfo = value; }
+
+    /**
+     * <p>Information about the load balancer to use in a blue/green deployment.</p>
+     */
+    inline DeploymentGroupInfo& WithLoadBalancerInfo(const LoadBalancerInfo& value) { SetLoadBalancerInfo(value); return *this;}
+
+    /**
+     * <p>Information about the load balancer to use in a blue/green deployment.</p>
+     */
+    inline DeploymentGroupInfo& WithLoadBalancerInfo(LoadBalancerInfo&& value) { SetLoadBalancerInfo(value); return *this;}
+
   private:
     Aws::String m_applicationName;
     bool m_applicationNameHasBeenSet;
@@ -476,6 +559,12 @@ namespace Model
     bool m_alarmConfigurationHasBeenSet;
     AutoRollbackConfiguration m_autoRollbackConfiguration;
     bool m_autoRollbackConfigurationHasBeenSet;
+    DeploymentStyle m_deploymentStyle;
+    bool m_deploymentStyleHasBeenSet;
+    BlueGreenDeploymentConfiguration m_blueGreenDeploymentConfiguration;
+    bool m_blueGreenDeploymentConfigurationHasBeenSet;
+    LoadBalancerInfo m_loadBalancerInfo;
+    bool m_loadBalancerInfoHasBeenSet;
   };
 
 } // namespace Model

@@ -121,6 +121,24 @@ namespace Model
      */
     inline DeploymentOverview& WithSkipped(long long value) { SetSkipped(value); return *this;}
 
+    /**
+     * <p>The number of instances in a replacement environment ready to receive traffic
+     * in a blue/green deployment.</p>
+     */
+    inline long long GetReady() const{ return m_ready; }
+
+    /**
+     * <p>The number of instances in a replacement environment ready to receive traffic
+     * in a blue/green deployment.</p>
+     */
+    inline void SetReady(long long value) { m_readyHasBeenSet = true; m_ready = value; }
+
+    /**
+     * <p>The number of instances in a replacement environment ready to receive traffic
+     * in a blue/green deployment.</p>
+     */
+    inline DeploymentOverview& WithReady(long long value) { SetReady(value); return *this;}
+
   private:
     long long m_pending;
     bool m_pendingHasBeenSet;
@@ -132,6 +150,8 @@ namespace Model
     bool m_failedHasBeenSet;
     long long m_skipped;
     bool m_skippedHasBeenSet;
+    long long m_ready;
+    bool m_readyHasBeenSet;
   };
 
 } // namespace Model
