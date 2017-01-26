@@ -941,49 +941,49 @@ namespace Model
     inline DBInstance& AddReadReplicaDBInstanceIdentifiers(const char* value) { m_readReplicaDBInstanceIdentifiersHasBeenSet = true; m_readReplicaDBInstanceIdentifiers.push_back(value); return *this; }
 
     /**
-     * <p>Contains one or more identifiers of Aurora DB clusters that are read replicas
+     * <p>Contains one or more identifiers of Aurora DB clusters that are Read Replicas
      * of this DB instance.</p>
      */
     inline const Aws::Vector<Aws::String>& GetReadReplicaDBClusterIdentifiers() const{ return m_readReplicaDBClusterIdentifiers; }
 
     /**
-     * <p>Contains one or more identifiers of Aurora DB clusters that are read replicas
+     * <p>Contains one or more identifiers of Aurora DB clusters that are Read Replicas
      * of this DB instance.</p>
      */
     inline void SetReadReplicaDBClusterIdentifiers(const Aws::Vector<Aws::String>& value) { m_readReplicaDBClusterIdentifiersHasBeenSet = true; m_readReplicaDBClusterIdentifiers = value; }
 
     /**
-     * <p>Contains one or more identifiers of Aurora DB clusters that are read replicas
+     * <p>Contains one or more identifiers of Aurora DB clusters that are Read Replicas
      * of this DB instance.</p>
      */
     inline void SetReadReplicaDBClusterIdentifiers(Aws::Vector<Aws::String>&& value) { m_readReplicaDBClusterIdentifiersHasBeenSet = true; m_readReplicaDBClusterIdentifiers = value; }
 
     /**
-     * <p>Contains one or more identifiers of Aurora DB clusters that are read replicas
+     * <p>Contains one or more identifiers of Aurora DB clusters that are Read Replicas
      * of this DB instance.</p>
      */
     inline DBInstance& WithReadReplicaDBClusterIdentifiers(const Aws::Vector<Aws::String>& value) { SetReadReplicaDBClusterIdentifiers(value); return *this;}
 
     /**
-     * <p>Contains one or more identifiers of Aurora DB clusters that are read replicas
+     * <p>Contains one or more identifiers of Aurora DB clusters that are Read Replicas
      * of this DB instance.</p>
      */
     inline DBInstance& WithReadReplicaDBClusterIdentifiers(Aws::Vector<Aws::String>&& value) { SetReadReplicaDBClusterIdentifiers(value); return *this;}
 
     /**
-     * <p>Contains one or more identifiers of Aurora DB clusters that are read replicas
+     * <p>Contains one or more identifiers of Aurora DB clusters that are Read Replicas
      * of this DB instance.</p>
      */
     inline DBInstance& AddReadReplicaDBClusterIdentifiers(const Aws::String& value) { m_readReplicaDBClusterIdentifiersHasBeenSet = true; m_readReplicaDBClusterIdentifiers.push_back(value); return *this; }
 
     /**
-     * <p>Contains one or more identifiers of Aurora DB clusters that are read replicas
+     * <p>Contains one or more identifiers of Aurora DB clusters that are Read Replicas
      * of this DB instance.</p>
      */
     inline DBInstance& AddReadReplicaDBClusterIdentifiers(Aws::String&& value) { m_readReplicaDBClusterIdentifiersHasBeenSet = true; m_readReplicaDBClusterIdentifiers.push_back(value); return *this; }
 
     /**
-     * <p>Contains one or more identifiers of Aurora DB clusters that are read replicas
+     * <p>Contains one or more identifiers of Aurora DB clusters that are Read Replicas
      * of this DB instance.</p>
      */
     inline DBInstance& AddReadReplicaDBClusterIdentifiers(const char* value) { m_readReplicaDBClusterIdentifiersHasBeenSet = true; m_readReplicaDBClusterIdentifiers.push_back(value); return *this; }

@@ -229,18 +229,14 @@ namespace Model
      * <code>KmsKeyId</code> to encrypt the copy with a new KMS encryption key. If you
      * don't specify a value for <code>KmsKeyId</code>, then the copy of the DB
      * snapshot is encrypted with the same KMS key as the source DB snapshot. </p>
-     * <p>If you copy an encrypted DB snapshot from your AWS account, you can specify a
-     * value for <code>KmsKeyId</code> to encrypt the copy with a new KMS encryption
-     * key. If you don't specify a value for <code>KmsKeyId</code>, then the copy of
-     * the DB snapshot is encrypted with the same KMS key as the source DB snapshot. If
-     * you copy an encrypted snapshot to a different AWS region, then you must specify
-     * a KMS key for the destination AWS region.</p> <p>If you copy an encrypted DB
-     * snapshot that is shared from another AWS account, then you must specify a value
-     * for <code>KmsKeyId</code>. </p> <p>To copy an encrypted DB snapshot to another
-     * region, you must set <code>KmsKeyId</code> to the KMS key ID used to encrypt the
-     * copy of the DB snapshot in the destination region. KMS encryption keys are
-     * specific to the region that they are created in, and you cannot use encryption
-     * keys from one region in another region.</p>
+     * <p>If you copy an encrypted snapshot to a different AWS region, then you must
+     * specify a KMS key for the destination AWS region.</p> <p>If you copy an
+     * encrypted DB snapshot that is shared from another AWS account, then you must
+     * specify a value for <code>KmsKeyId</code>. </p> <p>To copy an encrypted DB
+     * snapshot to another region, you must set <code>KmsKeyId</code> to the KMS key ID
+     * used to encrypt the copy of the DB snapshot in the destination region. KMS
+     * encryption keys are specific to the region that they are created in, and you
+     * cannot use encryption keys from one region in another region.</p>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
 
@@ -254,18 +250,14 @@ namespace Model
      * <code>KmsKeyId</code> to encrypt the copy with a new KMS encryption key. If you
      * don't specify a value for <code>KmsKeyId</code>, then the copy of the DB
      * snapshot is encrypted with the same KMS key as the source DB snapshot. </p>
-     * <p>If you copy an encrypted DB snapshot from your AWS account, you can specify a
-     * value for <code>KmsKeyId</code> to encrypt the copy with a new KMS encryption
-     * key. If you don't specify a value for <code>KmsKeyId</code>, then the copy of
-     * the DB snapshot is encrypted with the same KMS key as the source DB snapshot. If
-     * you copy an encrypted snapshot to a different AWS region, then you must specify
-     * a KMS key for the destination AWS region.</p> <p>If you copy an encrypted DB
-     * snapshot that is shared from another AWS account, then you must specify a value
-     * for <code>KmsKeyId</code>. </p> <p>To copy an encrypted DB snapshot to another
-     * region, you must set <code>KmsKeyId</code> to the KMS key ID used to encrypt the
-     * copy of the DB snapshot in the destination region. KMS encryption keys are
-     * specific to the region that they are created in, and you cannot use encryption
-     * keys from one region in another region.</p>
+     * <p>If you copy an encrypted snapshot to a different AWS region, then you must
+     * specify a KMS key for the destination AWS region.</p> <p>If you copy an
+     * encrypted DB snapshot that is shared from another AWS account, then you must
+     * specify a value for <code>KmsKeyId</code>. </p> <p>To copy an encrypted DB
+     * snapshot to another region, you must set <code>KmsKeyId</code> to the KMS key ID
+     * used to encrypt the copy of the DB snapshot in the destination region. KMS
+     * encryption keys are specific to the region that they are created in, and you
+     * cannot use encryption keys from one region in another region.</p>
      */
     inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
 
@@ -279,18 +271,14 @@ namespace Model
      * <code>KmsKeyId</code> to encrypt the copy with a new KMS encryption key. If you
      * don't specify a value for <code>KmsKeyId</code>, then the copy of the DB
      * snapshot is encrypted with the same KMS key as the source DB snapshot. </p>
-     * <p>If you copy an encrypted DB snapshot from your AWS account, you can specify a
-     * value for <code>KmsKeyId</code> to encrypt the copy with a new KMS encryption
-     * key. If you don't specify a value for <code>KmsKeyId</code>, then the copy of
-     * the DB snapshot is encrypted with the same KMS key as the source DB snapshot. If
-     * you copy an encrypted snapshot to a different AWS region, then you must specify
-     * a KMS key for the destination AWS region.</p> <p>If you copy an encrypted DB
-     * snapshot that is shared from another AWS account, then you must specify a value
-     * for <code>KmsKeyId</code>. </p> <p>To copy an encrypted DB snapshot to another
-     * region, you must set <code>KmsKeyId</code> to the KMS key ID used to encrypt the
-     * copy of the DB snapshot in the destination region. KMS encryption keys are
-     * specific to the region that they are created in, and you cannot use encryption
-     * keys from one region in another region.</p>
+     * <p>If you copy an encrypted snapshot to a different AWS region, then you must
+     * specify a KMS key for the destination AWS region.</p> <p>If you copy an
+     * encrypted DB snapshot that is shared from another AWS account, then you must
+     * specify a value for <code>KmsKeyId</code>. </p> <p>To copy an encrypted DB
+     * snapshot to another region, you must set <code>KmsKeyId</code> to the KMS key ID
+     * used to encrypt the copy of the DB snapshot in the destination region. KMS
+     * encryption keys are specific to the region that they are created in, and you
+     * cannot use encryption keys from one region in another region.</p>
      */
     inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
 
@@ -304,18 +292,14 @@ namespace Model
      * <code>KmsKeyId</code> to encrypt the copy with a new KMS encryption key. If you
      * don't specify a value for <code>KmsKeyId</code>, then the copy of the DB
      * snapshot is encrypted with the same KMS key as the source DB snapshot. </p>
-     * <p>If you copy an encrypted DB snapshot from your AWS account, you can specify a
-     * value for <code>KmsKeyId</code> to encrypt the copy with a new KMS encryption
-     * key. If you don't specify a value for <code>KmsKeyId</code>, then the copy of
-     * the DB snapshot is encrypted with the same KMS key as the source DB snapshot. If
-     * you copy an encrypted snapshot to a different AWS region, then you must specify
-     * a KMS key for the destination AWS region.</p> <p>If you copy an encrypted DB
-     * snapshot that is shared from another AWS account, then you must specify a value
-     * for <code>KmsKeyId</code>. </p> <p>To copy an encrypted DB snapshot to another
-     * region, you must set <code>KmsKeyId</code> to the KMS key ID used to encrypt the
-     * copy of the DB snapshot in the destination region. KMS encryption keys are
-     * specific to the region that they are created in, and you cannot use encryption
-     * keys from one region in another region.</p>
+     * <p>If you copy an encrypted snapshot to a different AWS region, then you must
+     * specify a KMS key for the destination AWS region.</p> <p>If you copy an
+     * encrypted DB snapshot that is shared from another AWS account, then you must
+     * specify a value for <code>KmsKeyId</code>. </p> <p>To copy an encrypted DB
+     * snapshot to another region, you must set <code>KmsKeyId</code> to the KMS key ID
+     * used to encrypt the copy of the DB snapshot in the destination region. KMS
+     * encryption keys are specific to the region that they are created in, and you
+     * cannot use encryption keys from one region in another region.</p>
      */
     inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
 
@@ -329,18 +313,14 @@ namespace Model
      * <code>KmsKeyId</code> to encrypt the copy with a new KMS encryption key. If you
      * don't specify a value for <code>KmsKeyId</code>, then the copy of the DB
      * snapshot is encrypted with the same KMS key as the source DB snapshot. </p>
-     * <p>If you copy an encrypted DB snapshot from your AWS account, you can specify a
-     * value for <code>KmsKeyId</code> to encrypt the copy with a new KMS encryption
-     * key. If you don't specify a value for <code>KmsKeyId</code>, then the copy of
-     * the DB snapshot is encrypted with the same KMS key as the source DB snapshot. If
-     * you copy an encrypted snapshot to a different AWS region, then you must specify
-     * a KMS key for the destination AWS region.</p> <p>If you copy an encrypted DB
-     * snapshot that is shared from another AWS account, then you must specify a value
-     * for <code>KmsKeyId</code>. </p> <p>To copy an encrypted DB snapshot to another
-     * region, you must set <code>KmsKeyId</code> to the KMS key ID used to encrypt the
-     * copy of the DB snapshot in the destination region. KMS encryption keys are
-     * specific to the region that they are created in, and you cannot use encryption
-     * keys from one region in another region.</p>
+     * <p>If you copy an encrypted snapshot to a different AWS region, then you must
+     * specify a KMS key for the destination AWS region.</p> <p>If you copy an
+     * encrypted DB snapshot that is shared from another AWS account, then you must
+     * specify a value for <code>KmsKeyId</code>. </p> <p>To copy an encrypted DB
+     * snapshot to another region, you must set <code>KmsKeyId</code> to the KMS key ID
+     * used to encrypt the copy of the DB snapshot in the destination region. KMS
+     * encryption keys are specific to the region that they are created in, and you
+     * cannot use encryption keys from one region in another region.</p>
      */
     inline CopyDBSnapshotRequest& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
 
@@ -354,18 +334,14 @@ namespace Model
      * <code>KmsKeyId</code> to encrypt the copy with a new KMS encryption key. If you
      * don't specify a value for <code>KmsKeyId</code>, then the copy of the DB
      * snapshot is encrypted with the same KMS key as the source DB snapshot. </p>
-     * <p>If you copy an encrypted DB snapshot from your AWS account, you can specify a
-     * value for <code>KmsKeyId</code> to encrypt the copy with a new KMS encryption
-     * key. If you don't specify a value for <code>KmsKeyId</code>, then the copy of
-     * the DB snapshot is encrypted with the same KMS key as the source DB snapshot. If
-     * you copy an encrypted snapshot to a different AWS region, then you must specify
-     * a KMS key for the destination AWS region.</p> <p>If you copy an encrypted DB
-     * snapshot that is shared from another AWS account, then you must specify a value
-     * for <code>KmsKeyId</code>. </p> <p>To copy an encrypted DB snapshot to another
-     * region, you must set <code>KmsKeyId</code> to the KMS key ID used to encrypt the
-     * copy of the DB snapshot in the destination region. KMS encryption keys are
-     * specific to the region that they are created in, and you cannot use encryption
-     * keys from one region in another region.</p>
+     * <p>If you copy an encrypted snapshot to a different AWS region, then you must
+     * specify a KMS key for the destination AWS region.</p> <p>If you copy an
+     * encrypted DB snapshot that is shared from another AWS account, then you must
+     * specify a value for <code>KmsKeyId</code>. </p> <p>To copy an encrypted DB
+     * snapshot to another region, you must set <code>KmsKeyId</code> to the KMS key ID
+     * used to encrypt the copy of the DB snapshot in the destination region. KMS
+     * encryption keys are specific to the region that they are created in, and you
+     * cannot use encryption keys from one region in another region.</p>
      */
     inline CopyDBSnapshotRequest& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(value); return *this;}
 
@@ -379,18 +355,14 @@ namespace Model
      * <code>KmsKeyId</code> to encrypt the copy with a new KMS encryption key. If you
      * don't specify a value for <code>KmsKeyId</code>, then the copy of the DB
      * snapshot is encrypted with the same KMS key as the source DB snapshot. </p>
-     * <p>If you copy an encrypted DB snapshot from your AWS account, you can specify a
-     * value for <code>KmsKeyId</code> to encrypt the copy with a new KMS encryption
-     * key. If you don't specify a value for <code>KmsKeyId</code>, then the copy of
-     * the DB snapshot is encrypted with the same KMS key as the source DB snapshot. If
-     * you copy an encrypted snapshot to a different AWS region, then you must specify
-     * a KMS key for the destination AWS region.</p> <p>If you copy an encrypted DB
-     * snapshot that is shared from another AWS account, then you must specify a value
-     * for <code>KmsKeyId</code>. </p> <p>To copy an encrypted DB snapshot to another
-     * region, you must set <code>KmsKeyId</code> to the KMS key ID used to encrypt the
-     * copy of the DB snapshot in the destination region. KMS encryption keys are
-     * specific to the region that they are created in, and you cannot use encryption
-     * keys from one region in another region.</p>
+     * <p>If you copy an encrypted snapshot to a different AWS region, then you must
+     * specify a KMS key for the destination AWS region.</p> <p>If you copy an
+     * encrypted DB snapshot that is shared from another AWS account, then you must
+     * specify a value for <code>KmsKeyId</code>. </p> <p>To copy an encrypted DB
+     * snapshot to another region, you must set <code>KmsKeyId</code> to the KMS key ID
+     * used to encrypt the copy of the DB snapshot in the destination region. KMS
+     * encryption keys are specific to the region that they are created in, and you
+     * cannot use encryption keys from one region in another region.</p>
      */
     inline CopyDBSnapshotRequest& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
 
@@ -462,10 +434,10 @@ namespace Model
      * <code>arn:aws:rds:us-west-2:123456789012:snapshot:mysql-instance1-snapshot-20161115</code>.</p>
      * </li> </ul> <p>To learn how to generate a Signature Version 4 signed request,
      * see <a
-     * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html">
+     * href="http://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html">
      * Authenticating Requests: Using Query Parameters (AWS Signature Version 4)</a>
      * and <a
-     * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.com/general/latest/gr/signature-version-4.html">
+     * href="http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">
      * Signature Version 4 Signing Process</a>.</p>
      */
     inline const Aws::String& GetPreSignedUrl() const{ return m_preSignedUrl; }
@@ -499,10 +471,10 @@ namespace Model
      * <code>arn:aws:rds:us-west-2:123456789012:snapshot:mysql-instance1-snapshot-20161115</code>.</p>
      * </li> </ul> <p>To learn how to generate a Signature Version 4 signed request,
      * see <a
-     * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html">
+     * href="http://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html">
      * Authenticating Requests: Using Query Parameters (AWS Signature Version 4)</a>
      * and <a
-     * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.com/general/latest/gr/signature-version-4.html">
+     * href="http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">
      * Signature Version 4 Signing Process</a>.</p>
      */
     inline void SetPreSignedUrl(const Aws::String& value) { m_preSignedUrlHasBeenSet = true; m_preSignedUrl = value; }
@@ -536,10 +508,10 @@ namespace Model
      * <code>arn:aws:rds:us-west-2:123456789012:snapshot:mysql-instance1-snapshot-20161115</code>.</p>
      * </li> </ul> <p>To learn how to generate a Signature Version 4 signed request,
      * see <a
-     * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html">
+     * href="http://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html">
      * Authenticating Requests: Using Query Parameters (AWS Signature Version 4)</a>
      * and <a
-     * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.com/general/latest/gr/signature-version-4.html">
+     * href="http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">
      * Signature Version 4 Signing Process</a>.</p>
      */
     inline void SetPreSignedUrl(Aws::String&& value) { m_preSignedUrlHasBeenSet = true; m_preSignedUrl = value; }
@@ -573,10 +545,10 @@ namespace Model
      * <code>arn:aws:rds:us-west-2:123456789012:snapshot:mysql-instance1-snapshot-20161115</code>.</p>
      * </li> </ul> <p>To learn how to generate a Signature Version 4 signed request,
      * see <a
-     * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html">
+     * href="http://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html">
      * Authenticating Requests: Using Query Parameters (AWS Signature Version 4)</a>
      * and <a
-     * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.com/general/latest/gr/signature-version-4.html">
+     * href="http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">
      * Signature Version 4 Signing Process</a>.</p>
      */
     inline void SetPreSignedUrl(const char* value) { m_preSignedUrlHasBeenSet = true; m_preSignedUrl.assign(value); }
@@ -610,10 +582,10 @@ namespace Model
      * <code>arn:aws:rds:us-west-2:123456789012:snapshot:mysql-instance1-snapshot-20161115</code>.</p>
      * </li> </ul> <p>To learn how to generate a Signature Version 4 signed request,
      * see <a
-     * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html">
+     * href="http://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html">
      * Authenticating Requests: Using Query Parameters (AWS Signature Version 4)</a>
      * and <a
-     * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.com/general/latest/gr/signature-version-4.html">
+     * href="http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">
      * Signature Version 4 Signing Process</a>.</p>
      */
     inline CopyDBSnapshotRequest& WithPreSignedUrl(const Aws::String& value) { SetPreSignedUrl(value); return *this;}
@@ -647,10 +619,10 @@ namespace Model
      * <code>arn:aws:rds:us-west-2:123456789012:snapshot:mysql-instance1-snapshot-20161115</code>.</p>
      * </li> </ul> <p>To learn how to generate a Signature Version 4 signed request,
      * see <a
-     * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html">
+     * href="http://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html">
      * Authenticating Requests: Using Query Parameters (AWS Signature Version 4)</a>
      * and <a
-     * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.com/general/latest/gr/signature-version-4.html">
+     * href="http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">
      * Signature Version 4 Signing Process</a>.</p>
      */
     inline CopyDBSnapshotRequest& WithPreSignedUrl(Aws::String&& value) { SetPreSignedUrl(value); return *this;}
@@ -684,10 +656,10 @@ namespace Model
      * <code>arn:aws:rds:us-west-2:123456789012:snapshot:mysql-instance1-snapshot-20161115</code>.</p>
      * </li> </ul> <p>To learn how to generate a Signature Version 4 signed request,
      * see <a
-     * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html">
+     * href="http://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html">
      * Authenticating Requests: Using Query Parameters (AWS Signature Version 4)</a>
      * and <a
-     * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.com/general/latest/gr/signature-version-4.html">
+     * href="http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">
      * Signature Version 4 Signing Process</a>.</p>
      */
     inline CopyDBSnapshotRequest& WithPreSignedUrl(const char* value) { SetPreSignedUrl(value); return *this;}

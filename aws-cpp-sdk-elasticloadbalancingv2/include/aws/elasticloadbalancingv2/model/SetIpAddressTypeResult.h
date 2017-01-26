@@ -14,6 +14,7 @@
 */
 #pragma once
 #include <aws/elasticloadbalancingv2/ElasticLoadBalancingv2_EXPORTS.h>
+#include <aws/elasticloadbalancingv2/model/IpAddressType.h>
 #include <aws/elasticloadbalancingv2/model/ResponseMetadata.h>
 
 namespace Aws
@@ -32,12 +33,37 @@ namespace ElasticLoadBalancingv2
 {
 namespace Model
 {
-  class AWS_ELASTICLOADBALANCINGV2_API DeleteLoadBalancerResult
+  class AWS_ELASTICLOADBALANCINGV2_API SetIpAddressTypeResult
   {
   public:
-    DeleteLoadBalancerResult();
-    DeleteLoadBalancerResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DeleteLoadBalancerResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    SetIpAddressTypeResult();
+    SetIpAddressTypeResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    SetIpAddressTypeResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
+    /**
+     * <p>The IP address type.</p>
+     */
+    inline const IpAddressType& GetIpAddressType() const{ return m_ipAddressType; }
+
+    /**
+     * <p>The IP address type.</p>
+     */
+    inline void SetIpAddressType(const IpAddressType& value) { m_ipAddressType = value; }
+
+    /**
+     * <p>The IP address type.</p>
+     */
+    inline void SetIpAddressType(IpAddressType&& value) { m_ipAddressType = value; }
+
+    /**
+     * <p>The IP address type.</p>
+     */
+    inline SetIpAddressTypeResult& WithIpAddressType(const IpAddressType& value) { SetIpAddressType(value); return *this;}
+
+    /**
+     * <p>The IP address type.</p>
+     */
+    inline SetIpAddressTypeResult& WithIpAddressType(IpAddressType&& value) { SetIpAddressType(value); return *this;}
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
@@ -49,12 +75,13 @@ namespace Model
     inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
 
     
-    inline DeleteLoadBalancerResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+    inline SetIpAddressTypeResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
 
     
-    inline DeleteLoadBalancerResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
+    inline SetIpAddressTypeResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
 
   private:
+    IpAddressType m_ipAddressType;
     ResponseMetadata m_responseMetadata;
   };
 

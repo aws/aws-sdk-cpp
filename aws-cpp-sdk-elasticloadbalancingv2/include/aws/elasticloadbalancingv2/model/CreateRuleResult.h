@@ -34,11 +34,6 @@ namespace ElasticLoadBalancingv2
 {
 namespace Model
 {
-  /**
-   * <p>Contains the output of CreateRule.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/CreateRuleOutput">AWS
-   * API Reference</a></p>
-   */
   class AWS_ELASTICLOADBALANCINGV2_API CreateRuleResult
   {
   public:

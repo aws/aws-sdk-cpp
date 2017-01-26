@@ -32,11 +32,6 @@ namespace ElasticLoadBalancingv2
 {
 namespace Model
 {
-  /**
-   * <p>Contains the output of DeleteTargetGroup.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DeleteTargetGroupOutput">AWS
-   * API Reference</a></p>
-   */
   class AWS_ELASTICLOADBALANCINGV2_API DeleteTargetGroupResult
   {
   public:

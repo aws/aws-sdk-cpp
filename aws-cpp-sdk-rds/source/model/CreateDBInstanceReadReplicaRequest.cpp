@@ -40,7 +40,9 @@ CreateDBInstanceReadReplicaRequest::CreateDBInstanceReadReplicaRequest() :
     m_copyTagsToSnapshotHasBeenSet(false),
     m_monitoringInterval(0),
     m_monitoringIntervalHasBeenSet(false),
-    m_monitoringRoleArnHasBeenSet(false)
+    m_monitoringRoleArnHasBeenSet(false),
+    m_kmsKeyIdHasBeenSet(false),
+    m_preSignedUrlHasBeenSet(false)
 {
 }
 
@@ -126,6 +128,16 @@ Aws::String CreateDBInstanceReadReplicaRequest::SerializePayload() const
   if(m_monitoringRoleArnHasBeenSet)
   {
     ss << "MonitoringRoleArn=" << StringUtils::URLEncode(m_monitoringRoleArn.c_str()) << "&";
+  }
+
+  if(m_kmsKeyIdHasBeenSet)
+  {
+    ss << "KmsKeyId=" << StringUtils::URLEncode(m_kmsKeyId.c_str()) << "&";
+  }
+
+  if(m_preSignedUrlHasBeenSet)
+  {
+    ss << "PreSignedUrl=" << StringUtils::URLEncode(m_preSignedUrl.c_str()) << "&";
   }
 
   ss << "Version=2014-10-31";

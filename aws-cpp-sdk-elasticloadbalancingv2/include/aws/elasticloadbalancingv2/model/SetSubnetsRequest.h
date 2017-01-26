@@ -26,9 +26,6 @@ namespace Model
 {
 
   /**
-   * <p>Contains the parameters for SetSubnets.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/SetSubnetsInput">AWS
-   * API Reference</a></p>
    */
   class AWS_ELASTICLOADBALANCINGV2_API SetSubnetsRequest : public ElasticLoadBalancingv2Request
   {
