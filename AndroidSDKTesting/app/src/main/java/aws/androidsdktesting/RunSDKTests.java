@@ -111,7 +111,18 @@ public class RunSDKTests extends AppCompatActivity {
                 Log.i("AwsNativeSDK", "Loading common libraries ");
 
                 //System.loadLibrary("c");
-                System.loadLibrary("c++_shared");
+                try {
+                    System.loadLibrary("c++_shared");
+                } catch (Exception e) {
+                    ;
+                }
+
+                try {
+                    System.loadLibrary("gnustl_shared");
+                } catch (Exception e) {
+                    ;
+                }
+
                 System.loadLibrary("log");
                 System.loadLibrary("aws-cpp-sdk-core");
                 System.loadLibrary("testing-resources");

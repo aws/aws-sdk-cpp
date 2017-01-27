@@ -14,8 +14,10 @@
 * permissions and limitations under the License.
 */
 
-#include <aws/core/utils/stream/GnustlAndroidStringBuf.h>
+#include <aws/core/utils/stream/android/SimpleStreamBuf.h>
 #include <cassert>
+
+#include <aws/core/utils/logging/LogMacros.h>
 
 namespace Aws
 {
@@ -25,13 +27,13 @@ namespace Stream
 {
 
 static const uint32_t DEFAULT_BUFFER_SIZE = 100;
-static const char* GNU_ANDROID_ALLOCATION_TAG = "GnustlAndroidStringBufTag";
+static const char* SIMPLE_STREAMBUF_ALLOCATION_TAG = "SimpleStreamBufTag";
 
-GnustlAndroidStringBuf::GnustlAndroidStringBuf() :
+SimpleStreamBuf::SimpleStreamBuf() :
     m_buffer(nullptr),
     m_bufferSize(0)
 {
-    m_buffer = Aws::NewArray<char>(DEFAULT_BUFFER_SIZE, GNU_ANDROID_ALLOCATION_TAG);
+    m_buffer = Aws::NewArray<char>(DEFAULT_BUFFER_SIZE, SIMPLE_STREAMBUF_ALLOCATION_TAG);
     m_bufferSize = DEFAULT_BUFFER_SIZE;
 
     char* begin = m_buffer;
@@ -41,7 +43,7 @@ GnustlAndroidStringBuf::GnustlAndroidStringBuf() :
     setg(begin, begin, begin);
 }
 
-GnustlAndroidStringBuf::~GnustlAndroidStringBuf()
+SimpleStreamBuf::~SimpleStreamBuf()
 {
     if(m_buffer)
     {
@@ -52,7 +54,7 @@ GnustlAndroidStringBuf::~GnustlAndroidStringBuf()
     m_bufferSize = 0;
 }
 
-GnustlAndroidStringBuf::pos_type GnustlAndroidStringBuf::seekoff(off_type off, std::ios_base::seekdir dir, std::ios_base::openmode which)
+std::streampos SimpleStreamBuf::seekoff(std::streamoff off, std::ios_base::seekdir dir, std::ios_base::openmode which)
 {
     if (dir == std::ios_base::beg)
     {
@@ -77,7 +79,7 @@ GnustlAndroidStringBuf::pos_type GnustlAndroidStringBuf::seekoff(off_type off, s
     return off_type(-1);
 }
 
-GnustlAndroidStringBuf::pos_type GnustlAndroidStringBuf::seekpos(pos_type pos, std::ios_base::openmode which)
+std::streampos SimpleStreamBuf::seekpos(std::streampos pos, std::ios_base::openmode which)
 {
     size_t maxSeek = pptr() - m_buffer;
     assert(static_cast<size_t>(pos) <= maxSeek);
@@ -102,12 +104,12 @@ GnustlAndroidStringBuf::pos_type GnustlAndroidStringBuf::seekpos(pos_type pos, s
     return pos;
 }
 
-bool GnustlAndroidStringBuf::GrowBuffer()
+bool SimpleStreamBuf::GrowBuffer()
 {
     size_t currentSize = m_bufferSize;
-    size_t newSize = currentSize + currentSize / 2 + 1;
+    size_t newSize = currentSize * 2;
 
-    char* newBuffer = Aws::NewArray<char>(newSize, GNU_ANDROID_ALLOCATION_TAG);
+    char* newBuffer = Aws::NewArray<char>(newSize, SIMPLE_STREAMBUF_ALLOCATION_TAG);
     if(newBuffer == nullptr)
     {
         return false;
@@ -126,10 +128,12 @@ bool GnustlAndroidStringBuf::GrowBuffer()
     m_buffer = newBuffer;
     m_bufferSize = newSize;
 
+    AWS_LOGSTREAM_INFO("SimpleStreamBuf", "Grew buffer to size " << newSize);
+
     return true;
 }
 
-int GnustlAndroidStringBuf::overflow (int c)
+int SimpleStreamBuf::overflow (int c)
 {
     auto endOfFile = std::char_traits< char >::eof();
     if(c == endOfFile)
@@ -162,12 +166,42 @@ int GnustlAndroidStringBuf::overflow (int c)
     return c;
 }
 
-Aws::String GnustlAndroidStringBuf::str()
+std::streamsize SimpleStreamBuf::xsputn(const char* s, std::streamsize n)
+{
+    std::streamsize writeCount = 0;
+    while(writeCount < n)
+    {
+        char* current_pptr = pptr();
+        char* current_epptr = epptr();
+
+        if (current_pptr < current_epptr)
+        {
+            std::size_t copySize = std::min(static_cast< std::size_t >(n - writeCount),
+                                            static_cast< std::size_t >(current_epptr - current_pptr));
+
+            memcpy(current_pptr, s + writeCount, copySize);
+            writeCount += copySize;
+            setp(current_pptr + copySize, current_epptr);
+        }
+        else if (overflow(std::char_traits< char >::to_int_type(*(s + writeCount))) != std::char_traits<char>::eof())
+        {
+            writeCount++;
+        }
+        else
+        {
+            return writeCount;
+        }
+    }
+
+    return writeCount;
+}
+
+Aws::String SimpleStreamBuf::str()
 {
     return Aws::String(m_buffer, pptr());
 }
 
-int GnustlAndroidStringBuf::underflow()
+int SimpleStreamBuf::underflow()
 {
     if(egptr() != pptr())
     {
