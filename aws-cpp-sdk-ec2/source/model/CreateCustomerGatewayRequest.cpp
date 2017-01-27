@@ -36,7 +36,7 @@ Aws::String CreateCustomerGatewayRequest::SerializePayload() const
   ss << "Action=CreateCustomerGateway&";
   if(m_dryRunHasBeenSet)
   {
-    ss << "DryRun=" << m_dryRun << "&";
+    ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
   if(m_typeHasBeenSet)

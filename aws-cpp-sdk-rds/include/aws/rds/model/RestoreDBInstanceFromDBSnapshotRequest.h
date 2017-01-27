@@ -567,78 +567,78 @@ namespace Model
 
     /**
      * <p>The database engine to use for the new instance.</p> <p>Default: The same as
-     * source</p> <p>Constraint: Must be compatible with the engine of the source</p>
-     * <p> Valid Values: <code>MySQL</code> | <code>mariadb</code> |
-     * <code>oracle-se1</code> | <code>oracle-se</code> | <code>oracle-ee</code> |
-     * <code>sqlserver-ee</code> | <code>sqlserver-se</code> |
-     * <code>sqlserver-ex</code> | <code>sqlserver-web</code> | <code>postgres</code> |
-     * <code>aurora</code> </p>
+     * source</p> <p>Constraint: Must be compatible with the engine of the source. You
+     * can restore a MariaDB 10.1 DB instance from a MySQL 5.6 snapshot.</p> <p> Valid
+     * Values: <code>MySQL</code> | <code>mariadb</code> | <code>oracle-se1</code> |
+     * <code>oracle-se</code> | <code>oracle-ee</code> | <code>sqlserver-ee</code> |
+     * <code>sqlserver-se</code> | <code>sqlserver-ex</code> |
+     * <code>sqlserver-web</code> | <code>postgres</code> | <code>aurora</code> </p>
      */
     inline const Aws::String& GetEngine() const{ return m_engine; }
 
     /**
      * <p>The database engine to use for the new instance.</p> <p>Default: The same as
-     * source</p> <p>Constraint: Must be compatible with the engine of the source</p>
-     * <p> Valid Values: <code>MySQL</code> | <code>mariadb</code> |
-     * <code>oracle-se1</code> | <code>oracle-se</code> | <code>oracle-ee</code> |
-     * <code>sqlserver-ee</code> | <code>sqlserver-se</code> |
-     * <code>sqlserver-ex</code> | <code>sqlserver-web</code> | <code>postgres</code> |
-     * <code>aurora</code> </p>
+     * source</p> <p>Constraint: Must be compatible with the engine of the source. You
+     * can restore a MariaDB 10.1 DB instance from a MySQL 5.6 snapshot.</p> <p> Valid
+     * Values: <code>MySQL</code> | <code>mariadb</code> | <code>oracle-se1</code> |
+     * <code>oracle-se</code> | <code>oracle-ee</code> | <code>sqlserver-ee</code> |
+     * <code>sqlserver-se</code> | <code>sqlserver-ex</code> |
+     * <code>sqlserver-web</code> | <code>postgres</code> | <code>aurora</code> </p>
      */
     inline void SetEngine(const Aws::String& value) { m_engineHasBeenSet = true; m_engine = value; }
 
     /**
      * <p>The database engine to use for the new instance.</p> <p>Default: The same as
-     * source</p> <p>Constraint: Must be compatible with the engine of the source</p>
-     * <p> Valid Values: <code>MySQL</code> | <code>mariadb</code> |
-     * <code>oracle-se1</code> | <code>oracle-se</code> | <code>oracle-ee</code> |
-     * <code>sqlserver-ee</code> | <code>sqlserver-se</code> |
-     * <code>sqlserver-ex</code> | <code>sqlserver-web</code> | <code>postgres</code> |
-     * <code>aurora</code> </p>
+     * source</p> <p>Constraint: Must be compatible with the engine of the source. You
+     * can restore a MariaDB 10.1 DB instance from a MySQL 5.6 snapshot.</p> <p> Valid
+     * Values: <code>MySQL</code> | <code>mariadb</code> | <code>oracle-se1</code> |
+     * <code>oracle-se</code> | <code>oracle-ee</code> | <code>sqlserver-ee</code> |
+     * <code>sqlserver-se</code> | <code>sqlserver-ex</code> |
+     * <code>sqlserver-web</code> | <code>postgres</code> | <code>aurora</code> </p>
      */
     inline void SetEngine(Aws::String&& value) { m_engineHasBeenSet = true; m_engine = value; }
 
     /**
      * <p>The database engine to use for the new instance.</p> <p>Default: The same as
-     * source</p> <p>Constraint: Must be compatible with the engine of the source</p>
-     * <p> Valid Values: <code>MySQL</code> | <code>mariadb</code> |
-     * <code>oracle-se1</code> | <code>oracle-se</code> | <code>oracle-ee</code> |
-     * <code>sqlserver-ee</code> | <code>sqlserver-se</code> |
-     * <code>sqlserver-ex</code> | <code>sqlserver-web</code> | <code>postgres</code> |
-     * <code>aurora</code> </p>
+     * source</p> <p>Constraint: Must be compatible with the engine of the source. You
+     * can restore a MariaDB 10.1 DB instance from a MySQL 5.6 snapshot.</p> <p> Valid
+     * Values: <code>MySQL</code> | <code>mariadb</code> | <code>oracle-se1</code> |
+     * <code>oracle-se</code> | <code>oracle-ee</code> | <code>sqlserver-ee</code> |
+     * <code>sqlserver-se</code> | <code>sqlserver-ex</code> |
+     * <code>sqlserver-web</code> | <code>postgres</code> | <code>aurora</code> </p>
      */
     inline void SetEngine(const char* value) { m_engineHasBeenSet = true; m_engine.assign(value); }
 
     /**
      * <p>The database engine to use for the new instance.</p> <p>Default: The same as
-     * source</p> <p>Constraint: Must be compatible with the engine of the source</p>
-     * <p> Valid Values: <code>MySQL</code> | <code>mariadb</code> |
-     * <code>oracle-se1</code> | <code>oracle-se</code> | <code>oracle-ee</code> |
-     * <code>sqlserver-ee</code> | <code>sqlserver-se</code> |
-     * <code>sqlserver-ex</code> | <code>sqlserver-web</code> | <code>postgres</code> |
-     * <code>aurora</code> </p>
+     * source</p> <p>Constraint: Must be compatible with the engine of the source. You
+     * can restore a MariaDB 10.1 DB instance from a MySQL 5.6 snapshot.</p> <p> Valid
+     * Values: <code>MySQL</code> | <code>mariadb</code> | <code>oracle-se1</code> |
+     * <code>oracle-se</code> | <code>oracle-ee</code> | <code>sqlserver-ee</code> |
+     * <code>sqlserver-se</code> | <code>sqlserver-ex</code> |
+     * <code>sqlserver-web</code> | <code>postgres</code> | <code>aurora</code> </p>
      */
     inline RestoreDBInstanceFromDBSnapshotRequest& WithEngine(const Aws::String& value) { SetEngine(value); return *this;}
 
     /**
      * <p>The database engine to use for the new instance.</p> <p>Default: The same as
-     * source</p> <p>Constraint: Must be compatible with the engine of the source</p>
-     * <p> Valid Values: <code>MySQL</code> | <code>mariadb</code> |
-     * <code>oracle-se1</code> | <code>oracle-se</code> | <code>oracle-ee</code> |
-     * <code>sqlserver-ee</code> | <code>sqlserver-se</code> |
-     * <code>sqlserver-ex</code> | <code>sqlserver-web</code> | <code>postgres</code> |
-     * <code>aurora</code> </p>
+     * source</p> <p>Constraint: Must be compatible with the engine of the source. You
+     * can restore a MariaDB 10.1 DB instance from a MySQL 5.6 snapshot.</p> <p> Valid
+     * Values: <code>MySQL</code> | <code>mariadb</code> | <code>oracle-se1</code> |
+     * <code>oracle-se</code> | <code>oracle-ee</code> | <code>sqlserver-ee</code> |
+     * <code>sqlserver-se</code> | <code>sqlserver-ex</code> |
+     * <code>sqlserver-web</code> | <code>postgres</code> | <code>aurora</code> </p>
      */
     inline RestoreDBInstanceFromDBSnapshotRequest& WithEngine(Aws::String&& value) { SetEngine(value); return *this;}
 
     /**
      * <p>The database engine to use for the new instance.</p> <p>Default: The same as
-     * source</p> <p>Constraint: Must be compatible with the engine of the source</p>
-     * <p> Valid Values: <code>MySQL</code> | <code>mariadb</code> |
-     * <code>oracle-se1</code> | <code>oracle-se</code> | <code>oracle-ee</code> |
-     * <code>sqlserver-ee</code> | <code>sqlserver-se</code> |
-     * <code>sqlserver-ex</code> | <code>sqlserver-web</code> | <code>postgres</code> |
-     * <code>aurora</code> </p>
+     * source</p> <p>Constraint: Must be compatible with the engine of the source. You
+     * can restore a MariaDB 10.1 DB instance from a MySQL 5.6 snapshot.</p> <p> Valid
+     * Values: <code>MySQL</code> | <code>mariadb</code> | <code>oracle-se1</code> |
+     * <code>oracle-se</code> | <code>oracle-ee</code> | <code>sqlserver-ee</code> |
+     * <code>sqlserver-se</code> | <code>sqlserver-ex</code> |
+     * <code>sqlserver-web</code> | <code>postgres</code> | <code>aurora</code> </p>
      */
     inline RestoreDBInstanceFromDBSnapshotRequest& WithEngine(const char* value) { SetEngine(value); return *this;}
 

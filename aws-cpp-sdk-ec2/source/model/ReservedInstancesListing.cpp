@@ -253,7 +253,7 @@ void ReservedInstancesListing::OutputToStream(Aws::OStream& oStream, const char*
       for(auto& item : m_instanceCounts)
       {
         Aws::StringStream instanceCountsSs;
-        instanceCountsSs << location <<  ".item." << instanceCountsIdx++;
+        instanceCountsSs << location <<  ".Item." << instanceCountsIdx++;
         item.OutputToStream(oStream, instanceCountsSs.str().c_str());
       }
   }
@@ -263,7 +263,7 @@ void ReservedInstancesListing::OutputToStream(Aws::OStream& oStream, const char*
       for(auto& item : m_priceSchedules)
       {
         Aws::StringStream priceSchedulesSs;
-        priceSchedulesSs << location <<  ".item." << priceSchedulesIdx++;
+        priceSchedulesSs << location <<  ".Item." << priceSchedulesIdx++;
         item.OutputToStream(oStream, priceSchedulesSs.str().c_str());
       }
   }
@@ -273,7 +273,7 @@ void ReservedInstancesListing::OutputToStream(Aws::OStream& oStream, const char*
       for(auto& item : m_tags)
       {
         Aws::StringStream tagsSs;
-        tagsSs << location <<  ".item." << tagsIdx++;
+        tagsSs << location <<  ".Item." << tagsIdx++;
         item.OutputToStream(oStream, tagsSs.str().c_str());
       }
   }

@@ -37,7 +37,7 @@ Aws::String SetIdentityFeedbackForwardingEnabledRequest::SerializePayload() cons
 
   if(m_forwardingEnabledHasBeenSet)
   {
-    ss << "ForwardingEnabled=" << m_forwardingEnabled << "&";
+    ss << "ForwardingEnabled=" << std::boolalpha << m_forwardingEnabled << "&";
   }
 
   ss << "Version=2010-12-01";

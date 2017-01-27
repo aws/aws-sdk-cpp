@@ -124,7 +124,7 @@ namespace Model
      * <p>The contents of your zip file containing your deployment package. If you are
      * using the web API directly, the contents of the zip file must be base64-encoded.
      * If you are using the AWS SDKs or the AWS CLI, the SDKs or CLI will do the
-     * encoding for you. For more information about creating a .zip file, go to <a
+     * encoding for you. For more information about creating a .zip file, see <a
      * href="http://docs.aws.amazon.com/lambda/latest/dg/intro-permission-model.html#lambda-intro-execution-role.html">Execution
      * Permissions</a> in the <i>AWS Lambda Developer Guide</i>. </p>
      */
@@ -134,7 +134,7 @@ namespace Model
      * <p>The contents of your zip file containing your deployment package. If you are
      * using the web API directly, the contents of the zip file must be base64-encoded.
      * If you are using the AWS SDKs or the AWS CLI, the SDKs or CLI will do the
-     * encoding for you. For more information about creating a .zip file, go to <a
+     * encoding for you. For more information about creating a .zip file, see <a
      * href="http://docs.aws.amazon.com/lambda/latest/dg/intro-permission-model.html#lambda-intro-execution-role.html">Execution
      * Permissions</a> in the <i>AWS Lambda Developer Guide</i>. </p>
      */
@@ -144,7 +144,7 @@ namespace Model
      * <p>The contents of your zip file containing your deployment package. If you are
      * using the web API directly, the contents of the zip file must be base64-encoded.
      * If you are using the AWS SDKs or the AWS CLI, the SDKs or CLI will do the
-     * encoding for you. For more information about creating a .zip file, go to <a
+     * encoding for you. For more information about creating a .zip file, see <a
      * href="http://docs.aws.amazon.com/lambda/latest/dg/intro-permission-model.html#lambda-intro-execution-role.html">Execution
      * Permissions</a> in the <i>AWS Lambda Developer Guide</i>. </p>
      */
@@ -154,7 +154,7 @@ namespace Model
      * <p>The contents of your zip file containing your deployment package. If you are
      * using the web API directly, the contents of the zip file must be base64-encoded.
      * If you are using the AWS SDKs or the AWS CLI, the SDKs or CLI will do the
-     * encoding for you. For more information about creating a .zip file, go to <a
+     * encoding for you. For more information about creating a .zip file, see <a
      * href="http://docs.aws.amazon.com/lambda/latest/dg/intro-permission-model.html#lambda-intro-execution-role.html">Execution
      * Permissions</a> in the <i>AWS Lambda Developer Guide</i>. </p>
      */
@@ -164,7 +164,7 @@ namespace Model
      * <p>The contents of your zip file containing your deployment package. If you are
      * using the web API directly, the contents of the zip file must be base64-encoded.
      * If you are using the AWS SDKs or the AWS CLI, the SDKs or CLI will do the
-     * encoding for you. For more information about creating a .zip file, go to <a
+     * encoding for you. For more information about creating a .zip file, see <a
      * href="http://docs.aws.amazon.com/lambda/latest/dg/intro-permission-model.html#lambda-intro-execution-role.html">Execution
      * Permissions</a> in the <i>AWS Lambda Developer Guide</i>. </p>
      */
@@ -172,49 +172,49 @@ namespace Model
 
     /**
      * <p>Amazon S3 bucket name where the .zip file containing your deployment package
-     * is stored. This bucket must reside in the same AWS region where you are creating
+     * is stored. This bucket must reside in the same AWS Region where you are creating
      * the Lambda function.</p>
      */
     inline const Aws::String& GetS3Bucket() const{ return m_s3Bucket; }
 
     /**
      * <p>Amazon S3 bucket name where the .zip file containing your deployment package
-     * is stored. This bucket must reside in the same AWS region where you are creating
+     * is stored. This bucket must reside in the same AWS Region where you are creating
      * the Lambda function.</p>
      */
     inline void SetS3Bucket(const Aws::String& value) { m_s3BucketHasBeenSet = true; m_s3Bucket = value; }
 
     /**
      * <p>Amazon S3 bucket name where the .zip file containing your deployment package
-     * is stored. This bucket must reside in the same AWS region where you are creating
+     * is stored. This bucket must reside in the same AWS Region where you are creating
      * the Lambda function.</p>
      */
     inline void SetS3Bucket(Aws::String&& value) { m_s3BucketHasBeenSet = true; m_s3Bucket = value; }
 
     /**
      * <p>Amazon S3 bucket name where the .zip file containing your deployment package
-     * is stored. This bucket must reside in the same AWS region where you are creating
+     * is stored. This bucket must reside in the same AWS Region where you are creating
      * the Lambda function.</p>
      */
     inline void SetS3Bucket(const char* value) { m_s3BucketHasBeenSet = true; m_s3Bucket.assign(value); }
 
     /**
      * <p>Amazon S3 bucket name where the .zip file containing your deployment package
-     * is stored. This bucket must reside in the same AWS region where you are creating
+     * is stored. This bucket must reside in the same AWS Region where you are creating
      * the Lambda function.</p>
      */
     inline UpdateFunctionCodeRequest& WithS3Bucket(const Aws::String& value) { SetS3Bucket(value); return *this;}
 
     /**
      * <p>Amazon S3 bucket name where the .zip file containing your deployment package
-     * is stored. This bucket must reside in the same AWS region where you are creating
+     * is stored. This bucket must reside in the same AWS Region where you are creating
      * the Lambda function.</p>
      */
     inline UpdateFunctionCodeRequest& WithS3Bucket(Aws::String&& value) { SetS3Bucket(value); return *this;}
 
     /**
      * <p>Amazon S3 bucket name where the .zip file containing your deployment package
-     * is stored. This bucket must reside in the same AWS region where you are creating
+     * is stored. This bucket must reside in the same AWS Region where you are creating
      * the Lambda function.</p>
      */
     inline UpdateFunctionCodeRequest& WithS3Bucket(const char* value) { SetS3Bucket(value); return *this;}

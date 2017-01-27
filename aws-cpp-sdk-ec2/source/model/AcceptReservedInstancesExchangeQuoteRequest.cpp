@@ -33,7 +33,7 @@ Aws::String AcceptReservedInstancesExchangeQuoteRequest::SerializePayload() cons
   ss << "Action=AcceptReservedInstancesExchangeQuote&";
   if(m_dryRunHasBeenSet)
   {
-    ss << "DryRun=" << m_dryRun << "&";
+    ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
   if(m_reservedInstanceIdsHasBeenSet)

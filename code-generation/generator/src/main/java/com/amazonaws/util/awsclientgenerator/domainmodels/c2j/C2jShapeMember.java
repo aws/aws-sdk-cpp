@@ -25,6 +25,7 @@ public class C2jShapeMember {
     String documentation;
     String location;
     String locationName;
+    String queryName;
     C2jXmlNamespace xmlNamespace;
     boolean deprecated;
     boolean flattened;

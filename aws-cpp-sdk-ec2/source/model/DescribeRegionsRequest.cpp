@@ -33,7 +33,7 @@ Aws::String DescribeRegionsRequest::SerializePayload() const
   ss << "Action=DescribeRegions&";
   if(m_dryRunHasBeenSet)
   {
-    ss << "DryRun=" << m_dryRun << "&";
+    ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
   if(m_regionNamesHasBeenSet)

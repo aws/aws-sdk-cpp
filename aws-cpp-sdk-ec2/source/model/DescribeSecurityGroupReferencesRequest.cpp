@@ -32,7 +32,7 @@ Aws::String DescribeSecurityGroupReferencesRequest::SerializePayload() const
   ss << "Action=DescribeSecurityGroupReferences&";
   if(m_dryRunHasBeenSet)
   {
-    ss << "DryRun=" << m_dryRun << "&";
+    ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
   if(m_groupIdHasBeenSet)
@@ -40,7 +40,7 @@ Aws::String DescribeSecurityGroupReferencesRequest::SerializePayload() const
     unsigned groupIdCount = 1;
     for(auto& item : m_groupId)
     {
-      ss << "GroupId.member." << groupIdCount << "="
+      ss << "GroupId." << groupIdCount << "="
           << StringUtils::URLEncode(item.c_str()) << "&";
       groupIdCount++;
     }

@@ -63,17 +63,17 @@ namespace Model
     inline ComparedSourceImageFace& WithBoundingBox(BoundingBox&& value) { SetBoundingBox(value); return *this;}
 
     /**
-     * <p>Confidence that the selected bounding box contains a face.</p>
+     * <p>Confidence level that the selected bounding box contains a face.</p>
      */
     inline double GetConfidence() const{ return m_confidence; }
 
     /**
-     * <p>Confidence that the selected bounding box contains a face.</p>
+     * <p>Confidence level that the selected bounding box contains a face.</p>
      */
     inline void SetConfidence(double value) { m_confidenceHasBeenSet = true; m_confidence = value; }
 
     /**
-     * <p>Confidence that the selected bounding box contains a face.</p>
+     * <p>Confidence level that the selected bounding box contains a face.</p>
      */
     inline ComparedSourceImageFace& WithConfidence(double value) { SetConfidence(value); return *this;}
 

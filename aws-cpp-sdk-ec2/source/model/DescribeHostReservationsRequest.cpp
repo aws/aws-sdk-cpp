@@ -37,7 +37,7 @@ Aws::String DescribeHostReservationsRequest::SerializePayload() const
     unsigned hostReservationIdSetCount = 1;
     for(auto& item : m_hostReservationIdSet)
     {
-      ss << "HostReservationIdSet.member." << hostReservationIdSetCount << "="
+      ss << "HostReservationIdSet." << hostReservationIdSetCount << "="
           << StringUtils::URLEncode(item.c_str()) << "&";
       hostReservationIdSetCount++;
     }
@@ -48,7 +48,7 @@ Aws::String DescribeHostReservationsRequest::SerializePayload() const
     unsigned filterCount = 1;
     for(auto& item : m_filter)
     {
-      item.OutputToStream(ss, "Filter.member.", filterCount, "");
+      item.OutputToStream(ss, "Filter.", filterCount, "");
       filterCount++;
     }
   }

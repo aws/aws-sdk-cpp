@@ -77,7 +77,7 @@ if(NOT NO_HTTP_CLIENT)
 
         if(PLATFORM_ANDROID AND ANDROID_BUILD_CURL)
             set(BUILD_CURL 1)
-            message(STATUS "  Building Openssl as part of AWS SDK")
+            message(STATUS "  Building Curl as part of AWS SDK")
         else()
             include(FindCURL)
             if(NOT CURL_FOUND)

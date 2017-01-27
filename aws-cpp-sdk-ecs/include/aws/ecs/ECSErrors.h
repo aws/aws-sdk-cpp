@@ -54,7 +54,8 @@ enum class ECSErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  CLIENT= static_cast<int>(Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  ATTRIBUTE_LIMIT_EXCEEDED= static_cast<int>(Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  CLIENT,
   CLUSTER_CONTAINS_CONTAINER_INSTANCES,
   CLUSTER_CONTAINS_SERVICES,
   CLUSTER_NOT_FOUND,
@@ -64,6 +65,7 @@ enum class ECSErrors
   SERVER,
   SERVICE_NOT_ACTIVE,
   SERVICE_NOT_FOUND,
+  TARGET_NOT_FOUND,
   UPDATE_IN_PROGRESS
 };
 namespace ECSErrorMapper

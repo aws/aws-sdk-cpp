@@ -33,7 +33,7 @@ Aws::String AssociateDhcpOptionsRequest::SerializePayload() const
   ss << "Action=AssociateDhcpOptions&";
   if(m_dryRunHasBeenSet)
   {
-    ss << "DryRun=" << m_dryRun << "&";
+    ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
   if(m_dhcpOptionsIdHasBeenSet)

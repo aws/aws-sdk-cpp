@@ -52,72 +52,72 @@ namespace Model
     Aws::Utils::Json::JsonValue Jsonize() const;
 
     /**
-     * <p>The build's unique ID.</p>
+     * <p>The unique ID for the build.</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
 
     /**
-     * <p>The build's unique ID.</p>
+     * <p>The unique ID for the build.</p>
      */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
-     * <p>The build's unique ID.</p>
+     * <p>The unique ID for the build.</p>
      */
     inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
-     * <p>The build's unique ID.</p>
+     * <p>The unique ID for the build.</p>
      */
     inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
 
     /**
-     * <p>The build's unique ID.</p>
+     * <p>The unique ID for the build.</p>
      */
     inline Build& WithId(const Aws::String& value) { SetId(value); return *this;}
 
     /**
-     * <p>The build's unique ID.</p>
+     * <p>The unique ID for the build.</p>
      */
     inline Build& WithId(Aws::String&& value) { SetId(value); return *this;}
 
     /**
-     * <p>The build's unique ID.</p>
+     * <p>The unique ID for the build.</p>
      */
     inline Build& WithId(const char* value) { SetId(value); return *this;}
 
     /**
-     * <p>The build's Amazon Resource Name (ARN).</p>
+     * <p>The Amazon Resource Name (ARN) of the build.</p>
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
 
     /**
-     * <p>The build's Amazon Resource Name (ARN).</p>
+     * <p>The Amazon Resource Name (ARN) of the build.</p>
      */
     inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
 
     /**
-     * <p>The build's Amazon Resource Name (ARN).</p>
+     * <p>The Amazon Resource Name (ARN) of the build.</p>
      */
     inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = value; }
 
     /**
-     * <p>The build's Amazon Resource Name (ARN).</p>
+     * <p>The Amazon Resource Name (ARN) of the build.</p>
      */
     inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
 
     /**
-     * <p>The build's Amazon Resource Name (ARN).</p>
+     * <p>The Amazon Resource Name (ARN) of the build.</p>
      */
     inline Build& WithArn(const Aws::String& value) { SetArn(value); return *this;}
 
     /**
-     * <p>The build's Amazon Resource Name (ARN).</p>
+     * <p>The Amazon Resource Name (ARN) of the build.</p>
      */
     inline Build& WithArn(Aws::String&& value) { SetArn(value); return *this;}
 
     /**
-     * <p>The build's Amazon Resource Name (ARN).</p>
+     * <p>The Amazon Resource Name (ARN) of the build.</p>
      */
     inline Build& WithArn(const char* value) { SetArn(value); return *this;}
 
@@ -172,42 +172,42 @@ namespace Model
     inline Build& WithEndTime(Aws::Utils::DateTime&& value) { SetEndTime(value); return *this;}
 
     /**
-     * <p>The build's current build phase.</p>
+     * <p>The current build phase.</p>
      */
     inline const Aws::String& GetCurrentPhase() const{ return m_currentPhase; }
 
     /**
-     * <p>The build's current build phase.</p>
+     * <p>The current build phase.</p>
      */
     inline void SetCurrentPhase(const Aws::String& value) { m_currentPhaseHasBeenSet = true; m_currentPhase = value; }
 
     /**
-     * <p>The build's current build phase.</p>
+     * <p>The current build phase.</p>
      */
     inline void SetCurrentPhase(Aws::String&& value) { m_currentPhaseHasBeenSet = true; m_currentPhase = value; }
 
     /**
-     * <p>The build's current build phase.</p>
+     * <p>The current build phase.</p>
      */
     inline void SetCurrentPhase(const char* value) { m_currentPhaseHasBeenSet = true; m_currentPhase.assign(value); }
 
     /**
-     * <p>The build's current build phase.</p>
+     * <p>The current build phase.</p>
      */
     inline Build& WithCurrentPhase(const Aws::String& value) { SetCurrentPhase(value); return *this;}
 
     /**
-     * <p>The build's current build phase.</p>
+     * <p>The current build phase.</p>
      */
     inline Build& WithCurrentPhase(Aws::String&& value) { SetCurrentPhase(value); return *this;}
 
     /**
-     * <p>The build's current build phase.</p>
+     * <p>The current build phase.</p>
      */
     inline Build& WithCurrentPhase(const char* value) { SetCurrentPhase(value); return *this;}
 
     /**
-     * <p>The build's current status. Valid values include:</p> <ul> <li> <p>
+     * <p>The current status of the build. Valid values include:</p> <ul> <li> <p>
      * <code>FAILED</code>: The build failed.</p> </li> <li> <p> <code>FAULT</code>:
      * The build faulted.</p> </li> <li> <p> <code>IN_PROGRESS</code>: The build is
      * still in progress.</p> </li> <li> <p> <code>STOPPED</code>: The build
@@ -217,7 +217,7 @@ namespace Model
     inline const StatusType& GetBuildStatus() const{ return m_buildStatus; }
 
     /**
-     * <p>The build's current status. Valid values include:</p> <ul> <li> <p>
+     * <p>The current status of the build. Valid values include:</p> <ul> <li> <p>
      * <code>FAILED</code>: The build failed.</p> </li> <li> <p> <code>FAULT</code>:
      * The build faulted.</p> </li> <li> <p> <code>IN_PROGRESS</code>: The build is
      * still in progress.</p> </li> <li> <p> <code>STOPPED</code>: The build
@@ -227,7 +227,7 @@ namespace Model
     inline void SetBuildStatus(const StatusType& value) { m_buildStatusHasBeenSet = true; m_buildStatus = value; }
 
     /**
-     * <p>The build's current status. Valid values include:</p> <ul> <li> <p>
+     * <p>The current status of the build. Valid values include:</p> <ul> <li> <p>
      * <code>FAILED</code>: The build failed.</p> </li> <li> <p> <code>FAULT</code>:
      * The build faulted.</p> </li> <li> <p> <code>IN_PROGRESS</code>: The build is
      * still in progress.</p> </li> <li> <p> <code>STOPPED</code>: The build
@@ -237,7 +237,7 @@ namespace Model
     inline void SetBuildStatus(StatusType&& value) { m_buildStatusHasBeenSet = true; m_buildStatus = value; }
 
     /**
-     * <p>The build's current status. Valid values include:</p> <ul> <li> <p>
+     * <p>The current status of the build. Valid values include:</p> <ul> <li> <p>
      * <code>FAILED</code>: The build failed.</p> </li> <li> <p> <code>FAULT</code>:
      * The build faulted.</p> </li> <li> <p> <code>IN_PROGRESS</code>: The build is
      * still in progress.</p> </li> <li> <p> <code>STOPPED</code>: The build
@@ -247,7 +247,7 @@ namespace Model
     inline Build& WithBuildStatus(const StatusType& value) { SetBuildStatus(value); return *this;}
 
     /**
-     * <p>The build's current status. Valid values include:</p> <ul> <li> <p>
+     * <p>The current status of the build. Valid values include:</p> <ul> <li> <p>
      * <code>FAILED</code>: The build failed.</p> </li> <li> <p> <code>FAULT</code>:
      * The build faulted.</p> </li> <li> <p> <code>IN_PROGRESS</code>: The build is
      * still in progress.</p> </li> <li> <p> <code>STOPPED</code>: The build
@@ -292,79 +292,79 @@ namespace Model
     inline Build& WithSourceVersion(const char* value) { SetSourceVersion(value); return *this;}
 
     /**
-     * <p>The build project's name.</p>
+     * <p>The name of the build project.</p>
      */
     inline const Aws::String& GetProjectName() const{ return m_projectName; }
 
     /**
-     * <p>The build project's name.</p>
+     * <p>The name of the build project.</p>
      */
     inline void SetProjectName(const Aws::String& value) { m_projectNameHasBeenSet = true; m_projectName = value; }
 
     /**
-     * <p>The build project's name.</p>
+     * <p>The name of the build project.</p>
      */
     inline void SetProjectName(Aws::String&& value) { m_projectNameHasBeenSet = true; m_projectName = value; }
 
     /**
-     * <p>The build project's name.</p>
+     * <p>The name of the build project.</p>
      */
     inline void SetProjectName(const char* value) { m_projectNameHasBeenSet = true; m_projectName.assign(value); }
 
     /**
-     * <p>The build project's name.</p>
+     * <p>The name of the build project.</p>
      */
     inline Build& WithProjectName(const Aws::String& value) { SetProjectName(value); return *this;}
 
     /**
-     * <p>The build project's name.</p>
+     * <p>The name of the build project.</p>
      */
     inline Build& WithProjectName(Aws::String&& value) { SetProjectName(value); return *this;}
 
     /**
-     * <p>The build project's name.</p>
+     * <p>The name of the build project.</p>
      */
     inline Build& WithProjectName(const char* value) { SetProjectName(value); return *this;}
 
     /**
-     * <p>Information about all previous build phases that have completed, and
-     * information about any current build phase that has not yet completed.</p>
+     * <p>Information about all previous build phases that are completed and
+     * information about any current build phase that is not yet complete.</p>
      */
     inline const Aws::Vector<BuildPhase>& GetPhases() const{ return m_phases; }
 
     /**
-     * <p>Information about all previous build phases that have completed, and
-     * information about any current build phase that has not yet completed.</p>
+     * <p>Information about all previous build phases that are completed and
+     * information about any current build phase that is not yet complete.</p>
      */
     inline void SetPhases(const Aws::Vector<BuildPhase>& value) { m_phasesHasBeenSet = true; m_phases = value; }
 
     /**
-     * <p>Information about all previous build phases that have completed, and
-     * information about any current build phase that has not yet completed.</p>
+     * <p>Information about all previous build phases that are completed and
+     * information about any current build phase that is not yet complete.</p>
      */
     inline void SetPhases(Aws::Vector<BuildPhase>&& value) { m_phasesHasBeenSet = true; m_phases = value; }
 
     /**
-     * <p>Information about all previous build phases that have completed, and
-     * information about any current build phase that has not yet completed.</p>
+     * <p>Information about all previous build phases that are completed and
+     * information about any current build phase that is not yet complete.</p>
      */
     inline Build& WithPhases(const Aws::Vector<BuildPhase>& value) { SetPhases(value); return *this;}
 
     /**
-     * <p>Information about all previous build phases that have completed, and
-     * information about any current build phase that has not yet completed.</p>
+     * <p>Information about all previous build phases that are completed and
+     * information about any current build phase that is not yet complete.</p>
      */
     inline Build& WithPhases(Aws::Vector<BuildPhase>&& value) { SetPhases(value); return *this;}
 
     /**
-     * <p>Information about all previous build phases that have completed, and
-     * information about any current build phase that has not yet completed.</p>
+     * <p>Information about all previous build phases that are completed and
+     * information about any current build phase that is not yet complete.</p>
      */
     inline Build& AddPhases(const BuildPhase& value) { m_phasesHasBeenSet = true; m_phases.push_back(value); return *this; }
 
     /**
-     * <p>Information about all previous build phases that have completed, and
-     * information about any current build phase that has not yet completed.</p>
+     * <p>Information about all previous build phases that are completed and
+     * information about any current build phase that is not yet complete.</p>
      */
     inline Build& AddPhases(BuildPhase&& value) { m_phasesHasBeenSet = true; m_phases.push_back(value); return *this; }
 
@@ -394,27 +394,27 @@ namespace Model
     inline Build& WithSource(ProjectSource&& value) { SetSource(value); return *this;}
 
     /**
-     * <p>Information about the build's output artifacts.</p>
+     * <p>Information about the output artifacts for the build.</p>
      */
     inline const BuildArtifacts& GetArtifacts() const{ return m_artifacts; }
 
     /**
-     * <p>Information about the build's output artifacts.</p>
+     * <p>Information about the output artifacts for the build.</p>
      */
     inline void SetArtifacts(const BuildArtifacts& value) { m_artifactsHasBeenSet = true; m_artifacts = value; }
 
     /**
-     * <p>Information about the build's output artifacts.</p>
+     * <p>Information about the output artifacts for the build.</p>
      */
     inline void SetArtifacts(BuildArtifacts&& value) { m_artifactsHasBeenSet = true; m_artifacts = value; }
 
     /**
-     * <p>Information about the build's output artifacts.</p>
+     * <p>Information about the output artifacts for the build.</p>
      */
     inline Build& WithArtifacts(const BuildArtifacts& value) { SetArtifacts(value); return *this;}
 
     /**
-     * <p>Information about the build's output artifacts.</p>
+     * <p>Information about the output artifacts for the build.</p>
      */
     inline Build& WithArtifacts(BuildArtifacts&& value) { SetArtifacts(value); return *this;}
 
@@ -469,114 +469,111 @@ namespace Model
     inline Build& WithLogs(LogsLocation&& value) { SetLogs(value); return *this;}
 
     /**
-     * <p>How long in minutes for AWS CodeBuild to wait to timeout this build if it
-     * does not get marked as completed.</p>
+     * <p>How long, in minutes, for AWS CodeBuild to wait before timing out this build
+     * if it does not get marked as completed.</p>
      */
     inline int GetTimeoutInMinutes() const{ return m_timeoutInMinutes; }
 
     /**
-     * <p>How long in minutes for AWS CodeBuild to wait to timeout this build if it
-     * does not get marked as completed.</p>
+     * <p>How long, in minutes, for AWS CodeBuild to wait before timing out this build
+     * if it does not get marked as completed.</p>
      */
     inline void SetTimeoutInMinutes(int value) { m_timeoutInMinutesHasBeenSet = true; m_timeoutInMinutes = value; }
 
     /**
-     * <p>How long in minutes for AWS CodeBuild to wait to timeout this build if it
-     * does not get marked as completed.</p>
+     * <p>How long, in minutes, for AWS CodeBuild to wait before timing out this build
+     * if it does not get marked as completed.</p>
      */
     inline Build& WithTimeoutInMinutes(int value) { SetTimeoutInMinutes(value); return *this;}
 
     /**
-     * <p>Whether the build has finished. Valid values include true if completed;
-     * otherwise, false.</p>
+     * <p>Whether the build has finished. True if completed; otherwise, false.</p>
      */
     inline bool GetBuildComplete() const{ return m_buildComplete; }
 
     /**
-     * <p>Whether the build has finished. Valid values include true if completed;
-     * otherwise, false.</p>
+     * <p>Whether the build has finished. True if completed; otherwise, false.</p>
      */
     inline void SetBuildComplete(bool value) { m_buildCompleteHasBeenSet = true; m_buildComplete = value; }
 
     /**
-     * <p>Whether the build has finished. Valid values include true if completed;
-     * otherwise, false.</p>
+     * <p>Whether the build has finished. True if completed; otherwise, false.</p>
      */
     inline Build& WithBuildComplete(bool value) { SetBuildComplete(value); return *this;}
 
     /**
      * <p>The entity that started the build. Valid values include:</p> <ul> <li> <p>If
-     * AWS CodePipeline started the build, the pipeline's name, for example
-     * <code>codepipeline/my-demo-pipeline</code>.</p> </li> <li> <p>If an AWS Identity
-     * and Access Management (IAM) user started the build, the user's name, for example
-     * <code>MyUserName</code>.</p> </li> <li> <p>If the Jenkins plugin for AWS
-     * CodeBuild started the build, the string
+     * AWS CodePipeline started the build, the pipeline's name (for example,
+     * <code>codepipeline/my-demo-pipeline</code>).</p> </li> <li> <p>If an AWS
+     * Identity and Access Management (IAM) user started the build, the user's name
+     * (for example <code>MyUserName</code>).</p> </li> <li> <p>If the Jenkins plugin
+     * for AWS CodeBuild started the build, the string
      * <code>CodeBuild-Jenkins-Plugin</code>.</p> </li> </ul>
      */
     inline const Aws::String& GetInitiator() const{ return m_initiator; }
 
     /**
      * <p>The entity that started the build. Valid values include:</p> <ul> <li> <p>If
-     * AWS CodePipeline started the build, the pipeline's name, for example
-     * <code>codepipeline/my-demo-pipeline</code>.</p> </li> <li> <p>If an AWS Identity
-     * and Access Management (IAM) user started the build, the user's name, for example
-     * <code>MyUserName</code>.</p> </li> <li> <p>If the Jenkins plugin for AWS
-     * CodeBuild started the build, the string
+     * AWS CodePipeline started the build, the pipeline's name (for example,
+     * <code>codepipeline/my-demo-pipeline</code>).</p> </li> <li> <p>If an AWS
+     * Identity and Access Management (IAM) user started the build, the user's name
+     * (for example <code>MyUserName</code>).</p> </li> <li> <p>If the Jenkins plugin
+     * for AWS CodeBuild started the build, the string
      * <code>CodeBuild-Jenkins-Plugin</code>.</p> </li> </ul>
      */
     inline void SetInitiator(const Aws::String& value) { m_initiatorHasBeenSet = true; m_initiator = value; }
 
     /**
      * <p>The entity that started the build. Valid values include:</p> <ul> <li> <p>If
-     * AWS CodePipeline started the build, the pipeline's name, for example
-     * <code>codepipeline/my-demo-pipeline</code>.</p> </li> <li> <p>If an AWS Identity
-     * and Access Management (IAM) user started the build, the user's name, for example
-     * <code>MyUserName</code>.</p> </li> <li> <p>If the Jenkins plugin for AWS
-     * CodeBuild started the build, the string
+     * AWS CodePipeline started the build, the pipeline's name (for example,
+     * <code>codepipeline/my-demo-pipeline</code>).</p> </li> <li> <p>If an AWS
+     * Identity and Access Management (IAM) user started the build, the user's name
+     * (for example <code>MyUserName</code>).</p> </li> <li> <p>If the Jenkins plugin
+     * for AWS CodeBuild started the build, the string
      * <code>CodeBuild-Jenkins-Plugin</code>.</p> </li> </ul>
      */
     inline void SetInitiator(Aws::String&& value) { m_initiatorHasBeenSet = true; m_initiator = value; }
 
     /**
      * <p>The entity that started the build. Valid values include:</p> <ul> <li> <p>If
-     * AWS CodePipeline started the build, the pipeline's name, for example
-     * <code>codepipeline/my-demo-pipeline</code>.</p> </li> <li> <p>If an AWS Identity
-     * and Access Management (IAM) user started the build, the user's name, for example
-     * <code>MyUserName</code>.</p> </li> <li> <p>If the Jenkins plugin for AWS
-     * CodeBuild started the build, the string
+     * AWS CodePipeline started the build, the pipeline's name (for example,
+     * <code>codepipeline/my-demo-pipeline</code>).</p> </li> <li> <p>If an AWS
+     * Identity and Access Management (IAM) user started the build, the user's name
+     * (for example <code>MyUserName</code>).</p> </li> <li> <p>If the Jenkins plugin
+     * for AWS CodeBuild started the build, the string
      * <code>CodeBuild-Jenkins-Plugin</code>.</p> </li> </ul>
      */
     inline void SetInitiator(const char* value) { m_initiatorHasBeenSet = true; m_initiator.assign(value); }
 
     /**
      * <p>The entity that started the build. Valid values include:</p> <ul> <li> <p>If
-     * AWS CodePipeline started the build, the pipeline's name, for example
-     * <code>codepipeline/my-demo-pipeline</code>.</p> </li> <li> <p>If an AWS Identity
-     * and Access Management (IAM) user started the build, the user's name, for example
-     * <code>MyUserName</code>.</p> </li> <li> <p>If the Jenkins plugin for AWS
-     * CodeBuild started the build, the string
+     * AWS CodePipeline started the build, the pipeline's name (for example,
+     * <code>codepipeline/my-demo-pipeline</code>).</p> </li> <li> <p>If an AWS
+     * Identity and Access Management (IAM) user started the build, the user's name
+     * (for example <code>MyUserName</code>).</p> </li> <li> <p>If the Jenkins plugin
+     * for AWS CodeBuild started the build, the string
      * <code>CodeBuild-Jenkins-Plugin</code>.</p> </li> </ul>
      */
     inline Build& WithInitiator(const Aws::String& value) { SetInitiator(value); return *this;}
 
     /**
      * <p>The entity that started the build. Valid values include:</p> <ul> <li> <p>If
-     * AWS CodePipeline started the build, the pipeline's name, for example
-     * <code>codepipeline/my-demo-pipeline</code>.</p> </li> <li> <p>If an AWS Identity
-     * and Access Management (IAM) user started the build, the user's name, for example
-     * <code>MyUserName</code>.</p> </li> <li> <p>If the Jenkins plugin for AWS
-     * CodeBuild started the build, the string
+     * AWS CodePipeline started the build, the pipeline's name (for example,
+     * <code>codepipeline/my-demo-pipeline</code>).</p> </li> <li> <p>If an AWS
+     * Identity and Access Management (IAM) user started the build, the user's name
+     * (for example <code>MyUserName</code>).</p> </li> <li> <p>If the Jenkins plugin
+     * for AWS CodeBuild started the build, the string
      * <code>CodeBuild-Jenkins-Plugin</code>.</p> </li> </ul>
      */
     inline Build& WithInitiator(Aws::String&& value) { SetInitiator(value); return *this;}
 
     /**
      * <p>The entity that started the build. Valid values include:</p> <ul> <li> <p>If
-     * AWS CodePipeline started the build, the pipeline's name, for example
-     * <code>codepipeline/my-demo-pipeline</code>.</p> </li> <li> <p>If an AWS Identity
-     * and Access Management (IAM) user started the build, the user's name, for example
-     * <code>MyUserName</code>.</p> </li> <li> <p>If the Jenkins plugin for AWS
-     * CodeBuild started the build, the string
+     * AWS CodePipeline started the build, the pipeline's name (for example,
+     * <code>codepipeline/my-demo-pipeline</code>).</p> </li> <li> <p>If an AWS
+     * Identity and Access Management (IAM) user started the build, the user's name
+     * (for example <code>MyUserName</code>).</p> </li> <li> <p>If the Jenkins plugin
+     * for AWS CodeBuild started the build, the string
      * <code>CodeBuild-Jenkins-Plugin</code>.</p> </li> </ul>
      */
     inline Build& WithInitiator(const char* value) { SetInitiator(value); return *this;}

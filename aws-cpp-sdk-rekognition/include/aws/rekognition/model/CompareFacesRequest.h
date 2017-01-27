@@ -35,52 +35,52 @@ namespace Model
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
     /**
-     * <p>Source image either as bytes or an Amazon S3 object</p>
+     * <p>Source image either as bytes or an S3 object</p>
      */
     inline const Image& GetSourceImage() const{ return m_sourceImage; }
 
     /**
-     * <p>Source image either as bytes or an Amazon S3 object</p>
+     * <p>Source image either as bytes or an S3 object</p>
      */
     inline void SetSourceImage(const Image& value) { m_sourceImageHasBeenSet = true; m_sourceImage = value; }
 
     /**
-     * <p>Source image either as bytes or an Amazon S3 object</p>
+     * <p>Source image either as bytes or an S3 object</p>
      */
     inline void SetSourceImage(Image&& value) { m_sourceImageHasBeenSet = true; m_sourceImage = value; }
 
     /**
-     * <p>Source image either as bytes or an Amazon S3 object</p>
+     * <p>Source image either as bytes or an S3 object</p>
      */
     inline CompareFacesRequest& WithSourceImage(const Image& value) { SetSourceImage(value); return *this;}
 
     /**
-     * <p>Source image either as bytes or an Amazon S3 object</p>
+     * <p>Source image either as bytes or an S3 object</p>
      */
     inline CompareFacesRequest& WithSourceImage(Image&& value) { SetSourceImage(value); return *this;}
 
     /**
-     * <p>Target image either as bytes or an Amazon S3 object</p>
+     * <p>Target image either as bytes or an S3 object</p>
      */
     inline const Image& GetTargetImage() const{ return m_targetImage; }
 
     /**
-     * <p>Target image either as bytes or an Amazon S3 object</p>
+     * <p>Target image either as bytes or an S3 object</p>
      */
     inline void SetTargetImage(const Image& value) { m_targetImageHasBeenSet = true; m_targetImage = value; }
 
     /**
-     * <p>Target image either as bytes or an Amazon S3 object</p>
+     * <p>Target image either as bytes or an S3 object</p>
      */
     inline void SetTargetImage(Image&& value) { m_targetImageHasBeenSet = true; m_targetImage = value; }
 
     /**
-     * <p>Target image either as bytes or an Amazon S3 object</p>
+     * <p>Target image either as bytes or an S3 object</p>
      */
     inline CompareFacesRequest& WithTargetImage(const Image& value) { SetTargetImage(value); return *this;}
 
     /**
-     * <p>Target image either as bytes or an Amazon S3 object</p>
+     * <p>Target image either as bytes or an S3 object</p>
      */
     inline CompareFacesRequest& WithTargetImage(Image&& value) { SetTargetImage(value); return *this;}
 

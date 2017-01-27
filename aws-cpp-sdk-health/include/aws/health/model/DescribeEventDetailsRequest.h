@@ -92,37 +92,44 @@ namespace Model
     inline DescribeEventDetailsRequest& AddEventArns(const char* value) { m_eventArnsHasBeenSet = true; m_eventArns.push_back(value); return *this; }
 
     /**
-     * <p>The locale (language) to return information in. The default is English.</p>
+     * <p>The locale (language) to return information in. English (en) is the default
+     * and the only supported value at this time.</p>
      */
     inline const Aws::String& GetLocale() const{ return m_locale; }
 
     /**
-     * <p>The locale (language) to return information in. The default is English.</p>
+     * <p>The locale (language) to return information in. English (en) is the default
+     * and the only supported value at this time.</p>
      */
     inline void SetLocale(const Aws::String& value) { m_localeHasBeenSet = true; m_locale = value; }
 
     /**
-     * <p>The locale (language) to return information in. The default is English.</p>
+     * <p>The locale (language) to return information in. English (en) is the default
+     * and the only supported value at this time.</p>
      */
     inline void SetLocale(Aws::String&& value) { m_localeHasBeenSet = true; m_locale = value; }
 
     /**
-     * <p>The locale (language) to return information in. The default is English.</p>
+     * <p>The locale (language) to return information in. English (en) is the default
+     * and the only supported value at this time.</p>
      */
     inline void SetLocale(const char* value) { m_localeHasBeenSet = true; m_locale.assign(value); }
 
     /**
-     * <p>The locale (language) to return information in. The default is English.</p>
+     * <p>The locale (language) to return information in. English (en) is the default
+     * and the only supported value at this time.</p>
      */
     inline DescribeEventDetailsRequest& WithLocale(const Aws::String& value) { SetLocale(value); return *this;}
 
     /**
-     * <p>The locale (language) to return information in. The default is English.</p>
+     * <p>The locale (language) to return information in. English (en) is the default
+     * and the only supported value at this time.</p>
      */
     inline DescribeEventDetailsRequest& WithLocale(Aws::String&& value) { SetLocale(value); return *this;}
 
     /**
-     * <p>The locale (language) to return information in. The default is English.</p>
+     * <p>The locale (language) to return information in. English (en) is the default
+     * and the only supported value at this time.</p>
      */
     inline DescribeEventDetailsRequest& WithLocale(const char* value) { SetLocale(value); return *this;}
 

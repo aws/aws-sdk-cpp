@@ -63,7 +63,7 @@ void RunInstancesMonitoringEnabled::OutputToStream(Aws::OStream& oStream, const 
 {
   if(m_enabledHasBeenSet)
   {
-      oStream << location << index << locationValue << ".Enabled=" << m_enabled << "&";
+      oStream << location << index << locationValue << ".Enabled=" << std::boolalpha << m_enabled << "&";
   }
 
 }
@@ -72,7 +72,7 @@ void RunInstancesMonitoringEnabled::OutputToStream(Aws::OStream& oStream, const 
 {
   if(m_enabledHasBeenSet)
   {
-      oStream << location << ".Enabled=" << m_enabled << "&";
+      oStream << location << ".Enabled=" << std::boolalpha << m_enabled << "&";
   }
 }
 

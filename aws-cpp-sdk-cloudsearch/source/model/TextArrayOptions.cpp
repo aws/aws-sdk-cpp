@@ -107,12 +107,12 @@ void TextArrayOptions::OutputToStream(Aws::OStream& oStream, const char* locatio
 
   if(m_returnEnabledHasBeenSet)
   {
-      oStream << location << index << locationValue << ".ReturnEnabled=" << m_returnEnabled << "&";
+      oStream << location << index << locationValue << ".ReturnEnabled=" << std::boolalpha << m_returnEnabled << "&";
   }
 
   if(m_highlightEnabledHasBeenSet)
   {
-      oStream << location << index << locationValue << ".HighlightEnabled=" << m_highlightEnabled << "&";
+      oStream << location << index << locationValue << ".HighlightEnabled=" << std::boolalpha << m_highlightEnabled << "&";
   }
 
   if(m_analysisSchemeHasBeenSet)
@@ -134,11 +134,11 @@ void TextArrayOptions::OutputToStream(Aws::OStream& oStream, const char* locatio
   }
   if(m_returnEnabledHasBeenSet)
   {
-      oStream << location << ".ReturnEnabled=" << m_returnEnabled << "&";
+      oStream << location << ".ReturnEnabled=" << std::boolalpha << m_returnEnabled << "&";
   }
   if(m_highlightEnabledHasBeenSet)
   {
-      oStream << location << ".HighlightEnabled=" << m_highlightEnabled << "&";
+      oStream << location << ".HighlightEnabled=" << std::boolalpha << m_highlightEnabled << "&";
   }
   if(m_analysisSchemeHasBeenSet)
   {

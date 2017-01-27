@@ -47,7 +47,9 @@ SpotFleetRequestConfigData::SpotFleetRequestConfigData() :
     m_fulfilledCapacity(0.0),
     m_fulfilledCapacityHasBeenSet(false),
     m_type(FleetType::NOT_SET),
-    m_typeHasBeenSet(false)
+    m_typeHasBeenSet(false),
+    m_replaceUnhealthyInstances(false),
+    m_replaceUnhealthyInstancesHasBeenSet(false)
 {
 }
 
@@ -69,7 +71,9 @@ SpotFleetRequestConfigData::SpotFleetRequestConfigData(const XmlNode& xmlNode) :
     m_fulfilledCapacity(0.0),
     m_fulfilledCapacityHasBeenSet(false),
     m_type(FleetType::NOT_SET),
-    m_typeHasBeenSet(false)
+    m_typeHasBeenSet(false),
+    m_replaceUnhealthyInstances(false),
+    m_replaceUnhealthyInstancesHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -158,6 +162,12 @@ SpotFleetRequestConfigData& SpotFleetRequestConfigData::operator =(const XmlNode
       m_type = FleetTypeMapper::GetFleetTypeForName(StringUtils::Trim(typeNode.GetText().c_str()).c_str());
       m_typeHasBeenSet = true;
     }
+    XmlNode replaceUnhealthyInstancesNode = resultNode.FirstChild("replaceUnhealthyInstances");
+    if(!replaceUnhealthyInstancesNode.IsNull())
+    {
+      m_replaceUnhealthyInstances = StringUtils::ConvertToBool(StringUtils::Trim(replaceUnhealthyInstancesNode.GetText().c_str()).c_str());
+      m_replaceUnhealthyInstancesHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -192,7 +202,7 @@ void SpotFleetRequestConfigData::OutputToStream(Aws::OStream& oStream, const cha
 
   if(m_terminateInstancesWithExpirationHasBeenSet)
   {
-      oStream << location << index << locationValue << ".TerminateInstancesWithExpiration=" << m_terminateInstancesWithExpiration << "&";
+      oStream << location << index << locationValue << ".TerminateInstancesWithExpiration=" << std::boolalpha << m_terminateInstancesWithExpiration << "&";
   }
 
   if(m_iamFleetRoleHasBeenSet)
@@ -231,6 +241,11 @@ void SpotFleetRequestConfigData::OutputToStream(Aws::OStream& oStream, const cha
       oStream << location << index << locationValue << ".Type=" << FleetTypeMapper::GetNameForFleetType(m_type) << "&";
   }
 
+  if(m_replaceUnhealthyInstancesHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".ReplaceUnhealthyInstances=" << std::boolalpha << m_replaceUnhealthyInstances << "&";
+  }
+
 }
 
 void SpotFleetRequestConfigData::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -257,7 +272,7 @@ void SpotFleetRequestConfigData::OutputToStream(Aws::OStream& oStream, const cha
   }
   if(m_terminateInstancesWithExpirationHasBeenSet)
   {
-      oStream << location << ".TerminateInstancesWithExpiration=" << m_terminateInstancesWithExpiration << "&";
+      oStream << location << ".TerminateInstancesWithExpiration=" << std::boolalpha << m_terminateInstancesWithExpiration << "&";
   }
   if(m_iamFleetRoleHasBeenSet)
   {
@@ -269,7 +284,7 @@ void SpotFleetRequestConfigData::OutputToStream(Aws::OStream& oStream, const cha
       for(auto& item : m_launchSpecifications)
       {
         Aws::StringStream launchSpecificationsSs;
-        launchSpecificationsSs << location <<  ".item." << launchSpecificationsIdx++;
+        launchSpecificationsSs << location <<  ".Item." << launchSpecificationsIdx++;
         item.OutputToStream(oStream, launchSpecificationsSs.str().c_str());
       }
   }
@@ -288,6 +303,10 @@ void SpotFleetRequestConfigData::OutputToStream(Aws::OStream& oStream, const cha
   if(m_typeHasBeenSet)
   {
       oStream << location << ".Type=" << FleetTypeMapper::GetNameForFleetType(m_type) << "&";
+  }
+  if(m_replaceUnhealthyInstancesHasBeenSet)
+  {
+      oStream << location << ".ReplaceUnhealthyInstances=" << std::boolalpha << m_replaceUnhealthyInstances << "&";
   }
 }
 

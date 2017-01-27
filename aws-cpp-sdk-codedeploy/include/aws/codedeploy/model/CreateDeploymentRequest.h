@@ -17,6 +17,7 @@
 #include <aws/codedeploy/CodeDeployRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/codedeploy/model/RevisionLocation.h>
+#include <aws/codedeploy/model/TargetInstances.h>
 #include <aws/codedeploy/model/AutoRollbackConfiguration.h>
 
 namespace Aws
@@ -274,6 +275,36 @@ namespace Model
     inline CreateDeploymentRequest& WithIgnoreApplicationStopFailures(bool value) { SetIgnoreApplicationStopFailures(value); return *this;}
 
     /**
+     * <p>Information about the instances that will belong to the replacement
+     * environment in a blue/green deployment.</p>
+     */
+    inline const TargetInstances& GetTargetInstances() const{ return m_targetInstances; }
+
+    /**
+     * <p>Information about the instances that will belong to the replacement
+     * environment in a blue/green deployment.</p>
+     */
+    inline void SetTargetInstances(const TargetInstances& value) { m_targetInstancesHasBeenSet = true; m_targetInstances = value; }
+
+    /**
+     * <p>Information about the instances that will belong to the replacement
+     * environment in a blue/green deployment.</p>
+     */
+    inline void SetTargetInstances(TargetInstances&& value) { m_targetInstancesHasBeenSet = true; m_targetInstances = value; }
+
+    /**
+     * <p>Information about the instances that will belong to the replacement
+     * environment in a blue/green deployment.</p>
+     */
+    inline CreateDeploymentRequest& WithTargetInstances(const TargetInstances& value) { SetTargetInstances(value); return *this;}
+
+    /**
+     * <p>Information about the instances that will belong to the replacement
+     * environment in a blue/green deployment.</p>
+     */
+    inline CreateDeploymentRequest& WithTargetInstances(TargetInstances&& value) { SetTargetInstances(value); return *this;}
+
+    /**
      * <p>Configuration information for an automatic rollback that is added when a
      * deployment is created.</p>
      */
@@ -334,6 +365,8 @@ namespace Model
     bool m_descriptionHasBeenSet;
     bool m_ignoreApplicationStopFailures;
     bool m_ignoreApplicationStopFailuresHasBeenSet;
+    TargetInstances m_targetInstances;
+    bool m_targetInstancesHasBeenSet;
     AutoRollbackConfiguration m_autoRollbackConfiguration;
     bool m_autoRollbackConfigurationHasBeenSet;
     bool m_updateOutdatedInstancesOnly;

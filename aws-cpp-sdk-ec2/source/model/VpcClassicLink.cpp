@@ -90,7 +90,7 @@ void VpcClassicLink::OutputToStream(Aws::OStream& oStream, const char* location,
 
   if(m_classicLinkEnabledHasBeenSet)
   {
-      oStream << location << index << locationValue << ".ClassicLinkEnabled=" << m_classicLinkEnabled << "&";
+      oStream << location << index << locationValue << ".ClassicLinkEnabled=" << std::boolalpha << m_classicLinkEnabled << "&";
   }
 
   if(m_tagsHasBeenSet)
@@ -114,7 +114,7 @@ void VpcClassicLink::OutputToStream(Aws::OStream& oStream, const char* location)
   }
   if(m_classicLinkEnabledHasBeenSet)
   {
-      oStream << location << ".ClassicLinkEnabled=" << m_classicLinkEnabled << "&";
+      oStream << location << ".ClassicLinkEnabled=" << std::boolalpha << m_classicLinkEnabled << "&";
   }
   if(m_tagsHasBeenSet)
   {
@@ -122,7 +122,7 @@ void VpcClassicLink::OutputToStream(Aws::OStream& oStream, const char* location)
       for(auto& item : m_tags)
       {
         Aws::StringStream tagsSs;
-        tagsSs << location <<  ".item." << tagsIdx++;
+        tagsSs << location <<  ".Item." << tagsIdx++;
         item.OutputToStream(oStream, tagsSs.str().c_str());
       }
   }

@@ -395,7 +395,7 @@ void Snapshot::OutputToStream(Aws::OStream& oStream, const char* location, unsig
 
   if(m_encryptedHasBeenSet)
   {
-      oStream << location << index << locationValue << ".Encrypted=" << m_encrypted << "&";
+      oStream << location << index << locationValue << ".Encrypted=" << std::boolalpha << m_encrypted << "&";
   }
 
   if(m_kmsKeyIdHasBeenSet)
@@ -405,7 +405,7 @@ void Snapshot::OutputToStream(Aws::OStream& oStream, const char* location, unsig
 
   if(m_encryptedWithHSMHasBeenSet)
   {
-      oStream << location << index << locationValue << ".EncryptedWithHSM=" << m_encryptedWithHSM << "&";
+      oStream << location << index << locationValue << ".EncryptedWithHSM=" << std::boolalpha << m_encryptedWithHSM << "&";
   }
 
   if(m_accountsWithRestoreAccessHasBeenSet)
@@ -481,7 +481,7 @@ void Snapshot::OutputToStream(Aws::OStream& oStream, const char* location, unsig
 
   if(m_enhancedVpcRoutingHasBeenSet)
   {
-      oStream << location << index << locationValue << ".EnhancedVpcRouting=" << m_enhancedVpcRouting << "&";
+      oStream << location << index << locationValue << ".EnhancedVpcRouting=" << std::boolalpha << m_enhancedVpcRouting << "&";
   }
 
 }
@@ -546,7 +546,7 @@ void Snapshot::OutputToStream(Aws::OStream& oStream, const char* location) const
   }
   if(m_encryptedHasBeenSet)
   {
-      oStream << location << ".Encrypted=" << m_encrypted << "&";
+      oStream << location << ".Encrypted=" << std::boolalpha << m_encrypted << "&";
   }
   if(m_kmsKeyIdHasBeenSet)
   {
@@ -554,7 +554,7 @@ void Snapshot::OutputToStream(Aws::OStream& oStream, const char* location) const
   }
   if(m_encryptedWithHSMHasBeenSet)
   {
-      oStream << location << ".EncryptedWithHSM=" << m_encryptedWithHSM << "&";
+      oStream << location << ".EncryptedWithHSM=" << std::boolalpha << m_encryptedWithHSM << "&";
   }
   if(m_accountsWithRestoreAccessHasBeenSet)
   {
@@ -618,7 +618,7 @@ void Snapshot::OutputToStream(Aws::OStream& oStream, const char* location) const
   }
   if(m_enhancedVpcRoutingHasBeenSet)
   {
-      oStream << location << ".EnhancedVpcRouting=" << m_enhancedVpcRouting << "&";
+      oStream << location << ".EnhancedVpcRouting=" << std::boolalpha << m_enhancedVpcRouting << "&";
   }
 }
 

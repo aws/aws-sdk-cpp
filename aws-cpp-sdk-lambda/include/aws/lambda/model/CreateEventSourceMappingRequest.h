@@ -267,7 +267,7 @@ namespace Model
 
     /**
      * <p>The position in the stream where AWS Lambda should start reading. Valid only
-     * for Kinesis streams. For more information, go to <a
+     * for Kinesis streams. For more information, see <a
      * href="http://docs.aws.amazon.com/kinesis/latest/APIReference/API_GetShardIterator.html#Kinesis-GetShardIterator-request-ShardIteratorType">ShardIteratorType</a>
      * in the <i>Amazon Kinesis API Reference</i>. </p>
      */
@@ -275,7 +275,7 @@ namespace Model
 
     /**
      * <p>The position in the stream where AWS Lambda should start reading. Valid only
-     * for Kinesis streams. For more information, go to <a
+     * for Kinesis streams. For more information, see <a
      * href="http://docs.aws.amazon.com/kinesis/latest/APIReference/API_GetShardIterator.html#Kinesis-GetShardIterator-request-ShardIteratorType">ShardIteratorType</a>
      * in the <i>Amazon Kinesis API Reference</i>. </p>
      */
@@ -283,7 +283,7 @@ namespace Model
 
     /**
      * <p>The position in the stream where AWS Lambda should start reading. Valid only
-     * for Kinesis streams. For more information, go to <a
+     * for Kinesis streams. For more information, see <a
      * href="http://docs.aws.amazon.com/kinesis/latest/APIReference/API_GetShardIterator.html#Kinesis-GetShardIterator-request-ShardIteratorType">ShardIteratorType</a>
      * in the <i>Amazon Kinesis API Reference</i>. </p>
      */
@@ -291,7 +291,7 @@ namespace Model
 
     /**
      * <p>The position in the stream where AWS Lambda should start reading. Valid only
-     * for Kinesis streams. For more information, go to <a
+     * for Kinesis streams. For more information, see <a
      * href="http://docs.aws.amazon.com/kinesis/latest/APIReference/API_GetShardIterator.html#Kinesis-GetShardIterator-request-ShardIteratorType">ShardIteratorType</a>
      * in the <i>Amazon Kinesis API Reference</i>. </p>
      */
@@ -299,7 +299,7 @@ namespace Model
 
     /**
      * <p>The position in the stream where AWS Lambda should start reading. Valid only
-     * for Kinesis streams. For more information, go to <a
+     * for Kinesis streams. For more information, see <a
      * href="http://docs.aws.amazon.com/kinesis/latest/APIReference/API_GetShardIterator.html#Kinesis-GetShardIterator-request-ShardIteratorType">ShardIteratorType</a>
      * in the <i>Amazon Kinesis API Reference</i>. </p>
      */

@@ -56,7 +56,7 @@ Aws::String AssignPrivateIpAddressesRequest::SerializePayload() const
 
   if(m_allowReassignmentHasBeenSet)
   {
-    ss << "AllowReassignment=" << m_allowReassignment << "&";
+    ss << "AllowReassignment=" << std::boolalpha << m_allowReassignment << "&";
   }
 
   ss << "Version=2016-11-15";

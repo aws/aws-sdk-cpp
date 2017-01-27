@@ -159,7 +159,7 @@ void Parameter::OutputToStream(Aws::OStream& oStream, const char* location, unsi
 
   if(m_isModifiableHasBeenSet)
   {
-      oStream << location << index << locationValue << ".IsModifiable=" << m_isModifiable << "&";
+      oStream << location << index << locationValue << ".IsModifiable=" << std::boolalpha << m_isModifiable << "&";
   }
 
   if(m_minimumEngineVersionHasBeenSet)
@@ -202,7 +202,7 @@ void Parameter::OutputToStream(Aws::OStream& oStream, const char* location) cons
   }
   if(m_isModifiableHasBeenSet)
   {
-      oStream << location << ".IsModifiable=" << m_isModifiable << "&";
+      oStream << location << ".IsModifiable=" << std::boolalpha << m_isModifiable << "&";
   }
   if(m_minimumEngineVersionHasBeenSet)
   {

@@ -120,7 +120,7 @@ Aws::String UpdateAutoScalingGroupRequest::SerializePayload() const
 
   if(m_newInstancesProtectedFromScaleInHasBeenSet)
   {
-    ss << "NewInstancesProtectedFromScaleIn=" << m_newInstancesProtectedFromScaleIn << "&";
+    ss << "NewInstancesProtectedFromScaleIn=" << std::boolalpha << m_newInstancesProtectedFromScaleIn << "&";
   }
 
   ss << "Version=2011-01-01";

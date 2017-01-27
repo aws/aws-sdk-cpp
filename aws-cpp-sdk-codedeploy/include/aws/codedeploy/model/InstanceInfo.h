@@ -82,6 +82,41 @@ namespace Model
     inline InstanceInfo& WithInstanceName(const char* value) { SetInstanceName(value); return *this;}
 
     /**
+     * <p>The ARN of the IAM session associated with the on-premises instance.</p>
+     */
+    inline const Aws::String& GetIamSessionArn() const{ return m_iamSessionArn; }
+
+    /**
+     * <p>The ARN of the IAM session associated with the on-premises instance.</p>
+     */
+    inline void SetIamSessionArn(const Aws::String& value) { m_iamSessionArnHasBeenSet = true; m_iamSessionArn = value; }
+
+    /**
+     * <p>The ARN of the IAM session associated with the on-premises instance.</p>
+     */
+    inline void SetIamSessionArn(Aws::String&& value) { m_iamSessionArnHasBeenSet = true; m_iamSessionArn = value; }
+
+    /**
+     * <p>The ARN of the IAM session associated with the on-premises instance.</p>
+     */
+    inline void SetIamSessionArn(const char* value) { m_iamSessionArnHasBeenSet = true; m_iamSessionArn.assign(value); }
+
+    /**
+     * <p>The ARN of the IAM session associated with the on-premises instance.</p>
+     */
+    inline InstanceInfo& WithIamSessionArn(const Aws::String& value) { SetIamSessionArn(value); return *this;}
+
+    /**
+     * <p>The ARN of the IAM session associated with the on-premises instance.</p>
+     */
+    inline InstanceInfo& WithIamSessionArn(Aws::String&& value) { SetIamSessionArn(value); return *this;}
+
+    /**
+     * <p>The ARN of the IAM session associated with the on-premises instance.</p>
+     */
+    inline InstanceInfo& WithIamSessionArn(const char* value) { SetIamSessionArn(value); return *this;}
+
+    /**
      * <p>The IAM user ARN associated with the on-premises instance.</p>
      */
     inline const Aws::String& GetIamUserArn() const{ return m_iamUserArn; }
@@ -244,6 +279,8 @@ namespace Model
   private:
     Aws::String m_instanceName;
     bool m_instanceNameHasBeenSet;
+    Aws::String m_iamSessionArn;
+    bool m_iamSessionArnHasBeenSet;
     Aws::String m_iamUserArn;
     bool m_iamUserArnHasBeenSet;
     Aws::String m_instanceArn;

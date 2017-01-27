@@ -68,7 +68,7 @@ Aws::String DescribeSnapshotsRequest::SerializePayload() const
 
   if(m_showNodeGroupConfigHasBeenSet)
   {
-    ss << "ShowNodeGroupConfig=" << m_showNodeGroupConfig << "&";
+    ss << "ShowNodeGroupConfig=" << std::boolalpha << m_showNodeGroupConfig << "&";
   }
 
   ss << "Version=2015-02-02";

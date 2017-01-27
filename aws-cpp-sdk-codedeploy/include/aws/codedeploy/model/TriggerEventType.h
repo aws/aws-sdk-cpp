@@ -30,9 +30,11 @@ namespace Model
     DeploymentFailure,
     DeploymentStop,
     DeploymentRollback,
+    DeploymentReady,
     InstanceStart,
     InstanceSuccess,
-    InstanceFailure
+    InstanceFailure,
+    InstanceReady
   };
 
 namespace TriggerEventTypeMapper

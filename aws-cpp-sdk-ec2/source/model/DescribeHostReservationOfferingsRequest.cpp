@@ -56,7 +56,7 @@ Aws::String DescribeHostReservationOfferingsRequest::SerializePayload() const
     unsigned filterCount = 1;
     for(auto& item : m_filter)
     {
-      item.OutputToStream(ss, "Filter.member.", filterCount, "");
+      item.OutputToStream(ss, "Filter.", filterCount, "");
       filterCount++;
     }
   }

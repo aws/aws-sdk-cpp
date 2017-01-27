@@ -193,9 +193,9 @@ namespace Model
   /**
    * <fullname>AWS Lambda</fullname> <p> <b>Overview</b> </p> <p>This is the <i>AWS
    * Lambda API Reference</i>. The AWS Lambda Developer Guide provides additional
-   * information. For the service overview, go to <a
+   * information. For the service overview, see <a
    * href="http://docs.aws.amazon.com/lambda/latest/dg/welcome.html">What is AWS
-   * Lambda</a>, and for information about how the service works, go to <a
+   * Lambda</a>, and for information about how the service works, see <a
    * href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-introduction.html">AWS
    * Lambda: How it Works</a> in the <i>AWS Lambda Developer Guide</i>.</p>
    */
@@ -339,7 +339,7 @@ namespace Model
          * association between a stream source and a Lambda function is called the event
          * source mapping.</p> <important><p>This event source mapping is relevant only in
          * the AWS Lambda pull model, where AWS Lambda invokes the function. For more
-         * information, go to <a
+         * information, see <a
          * href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-introduction.html">AWS
          * Lambda: How it Works</a> in the <i>AWS Lambda Developer Guide</i>.</p>
          * </important> <p>You provide mapping information (for example, which stream to
@@ -365,7 +365,7 @@ namespace Model
          * association between a stream source and a Lambda function is called the event
          * source mapping.</p> <important><p>This event source mapping is relevant only in
          * the AWS Lambda pull model, where AWS Lambda invokes the function. For more
-         * information, go to <a
+         * information, see <a
          * href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-introduction.html">AWS
          * Lambda: How it Works</a> in the <i>AWS Lambda Developer Guide</i>.</p>
          * </important> <p>You provide mapping information (for example, which stream to
@@ -393,7 +393,7 @@ namespace Model
          * association between a stream source and a Lambda function is called the event
          * source mapping.</p> <important><p>This event source mapping is relevant only in
          * the AWS Lambda pull model, where AWS Lambda invokes the function. For more
-         * information, go to <a
+         * information, see <a
          * href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-introduction.html">AWS
          * Lambda: How it Works</a> in the <i>AWS Lambda Developer Guide</i>.</p>
          * </important> <p>You provide mapping information (for example, which stream to
@@ -597,11 +597,11 @@ namespace Model
 
         /**
          * <p>Returns a customer's account settings.</p> <p>You can use this operation to
-         * retrieve Lambda limit information such as code size and concurrency limits. For
-         * more information on limits, see <a
+         * retrieve Lambda limits information, such as code size and concurrency limits.
+         * For more information about limits, see <a
          * href="http://docs.aws.amazon.com/lambda/latest/dg/limits.html">AWS Lambda
-         * Limits</a>. You can also retrieve resource usage statistics such as code storage
-         * usage and function count.</p><p><h3>See Also:</h3>   <a
+         * Limits</a>. You can also retrieve resource usage statistics, such as code
+         * storage usage and function count.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetAccountSettings">AWS
          * API Reference</a></p>
          */
@@ -609,11 +609,11 @@ namespace Model
 
         /**
          * <p>Returns a customer's account settings.</p> <p>You can use this operation to
-         * retrieve Lambda limit information such as code size and concurrency limits. For
-         * more information on limits, see <a
+         * retrieve Lambda limits information, such as code size and concurrency limits.
+         * For more information about limits, see <a
          * href="http://docs.aws.amazon.com/lambda/latest/dg/limits.html">AWS Lambda
-         * Limits</a>. You can also retrieve resource usage statistics such as code storage
-         * usage and function count.</p><p><h3>See Also:</h3>   <a
+         * Limits</a>. You can also retrieve resource usage statistics, such as code
+         * storage usage and function count.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetAccountSettings">AWS
          * API Reference</a></p>
          *
@@ -623,11 +623,11 @@ namespace Model
 
         /**
          * <p>Returns a customer's account settings.</p> <p>You can use this operation to
-         * retrieve Lambda limit information such as code size and concurrency limits. For
-         * more information on limits, see <a
+         * retrieve Lambda limits information, such as code size and concurrency limits.
+         * For more information about limits, see <a
          * href="http://docs.aws.amazon.com/lambda/latest/dg/limits.html">AWS Lambda
-         * Limits</a>. You can also retrieve resource usage statistics such as code storage
-         * usage and function count.</p><p><h3>See Also:</h3>   <a
+         * Limits</a>. You can also retrieve resource usage statistics, such as code
+         * storage usage and function count.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetAccountSettings">AWS
          * API Reference</a></p>
          *

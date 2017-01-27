@@ -16,6 +16,7 @@
 #include <aws/ecs/ECS_EXPORTS.h>
 #include <aws/ecs/ECSRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ecs/model/ContainerInstanceStatus.h>
 
 namespace Aws
 {
@@ -82,6 +83,69 @@ namespace Model
      * cluster is assumed.</p>
      */
     inline ListContainerInstancesRequest& WithCluster(const char* value) { SetCluster(value); return *this;}
+
+    /**
+     * <p>You can filter the results of a <code>ListContainerInstances</code> operation
+     * with cluster query language statements. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster
+     * Query Language</a> in the <i>Amazon EC2 Container Service Developer
+     * Guide</i>.</p>
+     */
+    inline const Aws::String& GetFilter() const{ return m_filter; }
+
+    /**
+     * <p>You can filter the results of a <code>ListContainerInstances</code> operation
+     * with cluster query language statements. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster
+     * Query Language</a> in the <i>Amazon EC2 Container Service Developer
+     * Guide</i>.</p>
+     */
+    inline void SetFilter(const Aws::String& value) { m_filterHasBeenSet = true; m_filter = value; }
+
+    /**
+     * <p>You can filter the results of a <code>ListContainerInstances</code> operation
+     * with cluster query language statements. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster
+     * Query Language</a> in the <i>Amazon EC2 Container Service Developer
+     * Guide</i>.</p>
+     */
+    inline void SetFilter(Aws::String&& value) { m_filterHasBeenSet = true; m_filter = value; }
+
+    /**
+     * <p>You can filter the results of a <code>ListContainerInstances</code> operation
+     * with cluster query language statements. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster
+     * Query Language</a> in the <i>Amazon EC2 Container Service Developer
+     * Guide</i>.</p>
+     */
+    inline void SetFilter(const char* value) { m_filterHasBeenSet = true; m_filter.assign(value); }
+
+    /**
+     * <p>You can filter the results of a <code>ListContainerInstances</code> operation
+     * with cluster query language statements. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster
+     * Query Language</a> in the <i>Amazon EC2 Container Service Developer
+     * Guide</i>.</p>
+     */
+    inline ListContainerInstancesRequest& WithFilter(const Aws::String& value) { SetFilter(value); return *this;}
+
+    /**
+     * <p>You can filter the results of a <code>ListContainerInstances</code> operation
+     * with cluster query language statements. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster
+     * Query Language</a> in the <i>Amazon EC2 Container Service Developer
+     * Guide</i>.</p>
+     */
+    inline ListContainerInstancesRequest& WithFilter(Aws::String&& value) { SetFilter(value); return *this;}
+
+    /**
+     * <p>You can filter the results of a <code>ListContainerInstances</code> operation
+     * with cluster query language statements. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster
+     * Query Language</a> in the <i>Amazon EC2 Container Service Developer
+     * Guide</i>.</p>
+     */
+    inline ListContainerInstancesRequest& WithFilter(const char* value) { SetFilter(value); return *this;}
 
     /**
      * <p>The <code>nextToken</code> value returned from a previous paginated
@@ -206,13 +270,62 @@ namespace Model
      */
     inline ListContainerInstancesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
+    /**
+     * <p>The container instance status with which to filter the
+     * <code>ListContainerInstances</code> results. Specifying a container instance
+     * status of <code>DRAINING</code> limits the results to container instances that
+     * have been set to drain with the <a>UpdateContainerInstancesState</a>
+     * operation.</p>
+     */
+    inline const ContainerInstanceStatus& GetStatus() const{ return m_status; }
+
+    /**
+     * <p>The container instance status with which to filter the
+     * <code>ListContainerInstances</code> results. Specifying a container instance
+     * status of <code>DRAINING</code> limits the results to container instances that
+     * have been set to drain with the <a>UpdateContainerInstancesState</a>
+     * operation.</p>
+     */
+    inline void SetStatus(const ContainerInstanceStatus& value) { m_statusHasBeenSet = true; m_status = value; }
+
+    /**
+     * <p>The container instance status with which to filter the
+     * <code>ListContainerInstances</code> results. Specifying a container instance
+     * status of <code>DRAINING</code> limits the results to container instances that
+     * have been set to drain with the <a>UpdateContainerInstancesState</a>
+     * operation.</p>
+     */
+    inline void SetStatus(ContainerInstanceStatus&& value) { m_statusHasBeenSet = true; m_status = value; }
+
+    /**
+     * <p>The container instance status with which to filter the
+     * <code>ListContainerInstances</code> results. Specifying a container instance
+     * status of <code>DRAINING</code> limits the results to container instances that
+     * have been set to drain with the <a>UpdateContainerInstancesState</a>
+     * operation.</p>
+     */
+    inline ListContainerInstancesRequest& WithStatus(const ContainerInstanceStatus& value) { SetStatus(value); return *this;}
+
+    /**
+     * <p>The container instance status with which to filter the
+     * <code>ListContainerInstances</code> results. Specifying a container instance
+     * status of <code>DRAINING</code> limits the results to container instances that
+     * have been set to drain with the <a>UpdateContainerInstancesState</a>
+     * operation.</p>
+     */
+    inline ListContainerInstancesRequest& WithStatus(ContainerInstanceStatus&& value) { SetStatus(value); return *this;}
+
   private:
     Aws::String m_cluster;
     bool m_clusterHasBeenSet;
+    Aws::String m_filter;
+    bool m_filterHasBeenSet;
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
     int m_maxResults;
     bool m_maxResultsHasBeenSet;
+    ContainerInstanceStatus m_status;
+    bool m_statusHasBeenSet;
   };
 
 } // namespace Model

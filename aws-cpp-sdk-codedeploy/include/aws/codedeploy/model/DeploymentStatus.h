@@ -30,7 +30,8 @@ namespace Model
     InProgress,
     Succeeded,
     Failed,
-    Stopped
+    Stopped,
+    Ready
   };
 
 namespace DeploymentStatusMapper

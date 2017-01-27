@@ -68,6 +68,8 @@ namespace Model
      * was split into three data sets: disbursed_amount_by_product,
      * disbursed_amount_by_age_of_uncollected_funds, and
      * disbursed_amount_by_age_of_disbursed_funds. </li>
+     * <li><i>disbursed_amount_by_instance_hours</i> - Available every 30 days by 5:00
+     * PM Pacific Time since 2012-09-04.</li>
      * <li><i>disbursed_amount_by_customer_geo</i> - Available every 30 days by 5:00 PM
      * Pacific Time since 2012-04-19.</li>
      * <li><i>disbursed_amount_by_age_of_uncollected_funds</i> - Available every 30
@@ -111,6 +113,8 @@ namespace Model
      * was split into three data sets: disbursed_amount_by_product,
      * disbursed_amount_by_age_of_uncollected_funds, and
      * disbursed_amount_by_age_of_disbursed_funds. </li>
+     * <li><i>disbursed_amount_by_instance_hours</i> - Available every 30 days by 5:00
+     * PM Pacific Time since 2012-09-04.</li>
      * <li><i>disbursed_amount_by_customer_geo</i> - Available every 30 days by 5:00 PM
      * Pacific Time since 2012-04-19.</li>
      * <li><i>disbursed_amount_by_age_of_uncollected_funds</i> - Available every 30
@@ -154,6 +158,8 @@ namespace Model
      * was split into three data sets: disbursed_amount_by_product,
      * disbursed_amount_by_age_of_uncollected_funds, and
      * disbursed_amount_by_age_of_disbursed_funds. </li>
+     * <li><i>disbursed_amount_by_instance_hours</i> - Available every 30 days by 5:00
+     * PM Pacific Time since 2012-09-04.</li>
      * <li><i>disbursed_amount_by_customer_geo</i> - Available every 30 days by 5:00 PM
      * Pacific Time since 2012-04-19.</li>
      * <li><i>disbursed_amount_by_age_of_uncollected_funds</i> - Available every 30
@@ -197,6 +203,8 @@ namespace Model
      * was split into three data sets: disbursed_amount_by_product,
      * disbursed_amount_by_age_of_uncollected_funds, and
      * disbursed_amount_by_age_of_disbursed_funds. </li>
+     * <li><i>disbursed_amount_by_instance_hours</i> - Available every 30 days by 5:00
+     * PM Pacific Time since 2012-09-04.</li>
      * <li><i>disbursed_amount_by_customer_geo</i> - Available every 30 days by 5:00 PM
      * Pacific Time since 2012-04-19.</li>
      * <li><i>disbursed_amount_by_age_of_uncollected_funds</i> - Available every 30
@@ -240,6 +248,8 @@ namespace Model
      * was split into three data sets: disbursed_amount_by_product,
      * disbursed_amount_by_age_of_uncollected_funds, and
      * disbursed_amount_by_age_of_disbursed_funds. </li>
+     * <li><i>disbursed_amount_by_instance_hours</i> - Available every 30 days by 5:00
+     * PM Pacific Time since 2012-09-04.</li>
      * <li><i>disbursed_amount_by_customer_geo</i> - Available every 30 days by 5:00 PM
      * Pacific Time since 2012-04-19.</li>
      * <li><i>disbursed_amount_by_age_of_uncollected_funds</i> - Available every 30

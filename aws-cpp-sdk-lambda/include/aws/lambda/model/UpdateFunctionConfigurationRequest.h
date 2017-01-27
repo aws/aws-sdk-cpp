@@ -391,31 +391,31 @@ namespace Model
     inline UpdateFunctionConfigurationRequest& WithRuntime(Runtime&& value) { SetRuntime(value); return *this;}
 
     /**
-     * <p>The parent object that contains the target ARN (Amazon Resource Name) of an
+     * <p>The parent object that contains the target Amazon Resource Name (ARN) of an
      * Amazon SQS queue or Amazon SNS topic.</p>
      */
     inline const DeadLetterConfig& GetDeadLetterConfig() const{ return m_deadLetterConfig; }
 
     /**
-     * <p>The parent object that contains the target ARN (Amazon Resource Name) of an
+     * <p>The parent object that contains the target Amazon Resource Name (ARN) of an
      * Amazon SQS queue or Amazon SNS topic.</p>
      */
     inline void SetDeadLetterConfig(const DeadLetterConfig& value) { m_deadLetterConfigHasBeenSet = true; m_deadLetterConfig = value; }
 
     /**
-     * <p>The parent object that contains the target ARN (Amazon Resource Name) of an
+     * <p>The parent object that contains the target Amazon Resource Name (ARN) of an
      * Amazon SQS queue or Amazon SNS topic.</p>
      */
     inline void SetDeadLetterConfig(DeadLetterConfig&& value) { m_deadLetterConfigHasBeenSet = true; m_deadLetterConfig = value; }
 
     /**
-     * <p>The parent object that contains the target ARN (Amazon Resource Name) of an
+     * <p>The parent object that contains the target Amazon Resource Name (ARN) of an
      * Amazon SQS queue or Amazon SNS topic.</p>
      */
     inline UpdateFunctionConfigurationRequest& WithDeadLetterConfig(const DeadLetterConfig& value) { SetDeadLetterConfig(value); return *this;}
 
     /**
-     * <p>The parent object that contains the target ARN (Amazon Resource Name) of an
+     * <p>The parent object that contains the target Amazon Resource Name (ARN) of an
      * Amazon SQS queue or Amazon SNS topic.</p>
      */
     inline UpdateFunctionConfigurationRequest& WithDeadLetterConfig(DeadLetterConfig&& value) { SetDeadLetterConfig(value); return *this;}

@@ -53,7 +53,7 @@ Aws::String ModifyDBClusterRequest::SerializePayload() const
 
   if(m_applyImmediatelyHasBeenSet)
   {
-    ss << "ApplyImmediately=" << m_applyImmediately << "&";
+    ss << "ApplyImmediately=" << std::boolalpha << m_applyImmediately << "&";
   }
 
   if(m_backupRetentionPeriodHasBeenSet)

@@ -44,7 +44,7 @@ Aws::String RequestSpotInstancesRequest::SerializePayload() const
   ss << "Action=RequestSpotInstances&";
   if(m_dryRunHasBeenSet)
   {
-    ss << "DryRun=" << m_dryRun << "&";
+    ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
   if(m_spotPriceHasBeenSet)

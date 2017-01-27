@@ -61,7 +61,7 @@ Aws::String ModifyEventSubscriptionRequest::SerializePayload() const
 
   if(m_enabledHasBeenSet)
   {
-    ss << "Enabled=" << m_enabled << "&";
+    ss << "Enabled=" << std::boolalpha << m_enabled << "&";
   }
 
   ss << "Version=2014-10-31";

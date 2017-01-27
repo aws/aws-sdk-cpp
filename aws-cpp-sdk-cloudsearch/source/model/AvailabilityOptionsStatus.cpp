@@ -71,7 +71,7 @@ void AvailabilityOptionsStatus::OutputToStream(Aws::OStream& oStream, const char
 {
   if(m_optionsHasBeenSet)
   {
-      oStream << location << index << locationValue << ".Options=" << m_options << "&";
+      oStream << location << index << locationValue << ".Options=" << std::boolalpha << m_options << "&";
   }
 
   if(m_statusHasBeenSet)
@@ -87,7 +87,7 @@ void AvailabilityOptionsStatus::OutputToStream(Aws::OStream& oStream, const char
 {
   if(m_optionsHasBeenSet)
   {
-      oStream << location << ".Options=" << m_options << "&";
+      oStream << location << ".Options=" << std::boolalpha << m_options << "&";
   }
   if(m_statusHasBeenSet)
   {

@@ -37,7 +37,7 @@ Aws::String DeleteAutoScalingGroupRequest::SerializePayload() const
 
   if(m_forceDeleteHasBeenSet)
   {
-    ss << "ForceDelete=" << m_forceDelete << "&";
+    ss << "ForceDelete=" << std::boolalpha << m_forceDelete << "&";
   }
 
   ss << "Version=2011-01-01";

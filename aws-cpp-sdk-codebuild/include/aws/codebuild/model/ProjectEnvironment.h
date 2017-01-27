@@ -35,7 +35,7 @@ namespace Model
 {
 
   /**
-   * <p>Information about the build project's build environment.</p><p><h3>See
+   * <p>Information about the build environment of the build project.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ProjectEnvironment">AWS
    * API Reference</a></p>
@@ -49,37 +49,27 @@ namespace Model
     Aws::Utils::Json::JsonValue Jsonize() const;
 
     /**
-     * <p>The type of build environment to use for related builds.</p> <p>The only
-     * valid value is <code>LINUX_CONTAINER</code>, which represents a Linux-based
-     * build environment.</p>
+     * <p>The type of build environment to use for related builds.</p>
      */
     inline const EnvironmentType& GetType() const{ return m_type; }
 
     /**
-     * <p>The type of build environment to use for related builds.</p> <p>The only
-     * valid value is <code>LINUX_CONTAINER</code>, which represents a Linux-based
-     * build environment.</p>
+     * <p>The type of build environment to use for related builds.</p>
      */
     inline void SetType(const EnvironmentType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
-     * <p>The type of build environment to use for related builds.</p> <p>The only
-     * valid value is <code>LINUX_CONTAINER</code>, which represents a Linux-based
-     * build environment.</p>
+     * <p>The type of build environment to use for related builds.</p>
      */
     inline void SetType(EnvironmentType&& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
-     * <p>The type of build environment to use for related builds.</p> <p>The only
-     * valid value is <code>LINUX_CONTAINER</code>, which represents a Linux-based
-     * build environment.</p>
+     * <p>The type of build environment to use for related builds.</p>
      */
     inline ProjectEnvironment& WithType(const EnvironmentType& value) { SetType(value); return *this;}
 
     /**
-     * <p>The type of build environment to use for related builds.</p> <p>The only
-     * valid value is <code>LINUX_CONTAINER</code>, which represents a Linux-based
-     * build environment.</p>
+     * <p>The type of build environment to use for related builds.</p>
      */
     inline ProjectEnvironment& WithType(EnvironmentType&& value) { SetType(value); return *this;}
 

@@ -116,7 +116,10 @@ namespace Model
      * <p>Specify <code>true</code> to indicate that network interfaces created in the
      * specified subnet should be assigned an IPv6 address. This includes a network
      * interface that's created when launching an instance into the subnet (the
-     * instance therefore receives an IPv6 address).</p>
+     * instance therefore receives an IPv6 address). </p> <p>If you enable the IPv6
+     * addressing feature for your subnet, your network interface or instance only
+     * receives an IPv6 address if it's created using version <code>2016-11-15</code>
+     * or later of the Amazon EC2 API.</p>
      */
     inline const AttributeBooleanValue& GetAssignIpv6AddressOnCreation() const{ return m_assignIpv6AddressOnCreation; }
 
@@ -124,7 +127,10 @@ namespace Model
      * <p>Specify <code>true</code> to indicate that network interfaces created in the
      * specified subnet should be assigned an IPv6 address. This includes a network
      * interface that's created when launching an instance into the subnet (the
-     * instance therefore receives an IPv6 address).</p>
+     * instance therefore receives an IPv6 address). </p> <p>If you enable the IPv6
+     * addressing feature for your subnet, your network interface or instance only
+     * receives an IPv6 address if it's created using version <code>2016-11-15</code>
+     * or later of the Amazon EC2 API.</p>
      */
     inline void SetAssignIpv6AddressOnCreation(const AttributeBooleanValue& value) { m_assignIpv6AddressOnCreationHasBeenSet = true; m_assignIpv6AddressOnCreation = value; }
 
@@ -132,7 +138,10 @@ namespace Model
      * <p>Specify <code>true</code> to indicate that network interfaces created in the
      * specified subnet should be assigned an IPv6 address. This includes a network
      * interface that's created when launching an instance into the subnet (the
-     * instance therefore receives an IPv6 address).</p>
+     * instance therefore receives an IPv6 address). </p> <p>If you enable the IPv6
+     * addressing feature for your subnet, your network interface or instance only
+     * receives an IPv6 address if it's created using version <code>2016-11-15</code>
+     * or later of the Amazon EC2 API.</p>
      */
     inline void SetAssignIpv6AddressOnCreation(AttributeBooleanValue&& value) { m_assignIpv6AddressOnCreationHasBeenSet = true; m_assignIpv6AddressOnCreation = value; }
 
@@ -140,7 +149,10 @@ namespace Model
      * <p>Specify <code>true</code> to indicate that network interfaces created in the
      * specified subnet should be assigned an IPv6 address. This includes a network
      * interface that's created when launching an instance into the subnet (the
-     * instance therefore receives an IPv6 address).</p>
+     * instance therefore receives an IPv6 address). </p> <p>If you enable the IPv6
+     * addressing feature for your subnet, your network interface or instance only
+     * receives an IPv6 address if it's created using version <code>2016-11-15</code>
+     * or later of the Amazon EC2 API.</p>
      */
     inline ModifySubnetAttributeRequest& WithAssignIpv6AddressOnCreation(const AttributeBooleanValue& value) { SetAssignIpv6AddressOnCreation(value); return *this;}
 
@@ -148,7 +160,10 @@ namespace Model
      * <p>Specify <code>true</code> to indicate that network interfaces created in the
      * specified subnet should be assigned an IPv6 address. This includes a network
      * interface that's created when launching an instance into the subnet (the
-     * instance therefore receives an IPv6 address).</p>
+     * instance therefore receives an IPv6 address). </p> <p>If you enable the IPv6
+     * addressing feature for your subnet, your network interface or instance only
+     * receives an IPv6 address if it's created using version <code>2016-11-15</code>
+     * or later of the Amazon EC2 API.</p>
      */
     inline ModifySubnetAttributeRequest& WithAssignIpv6AddressOnCreation(AttributeBooleanValue&& value) { SetAssignIpv6AddressOnCreation(value); return *this;}
 

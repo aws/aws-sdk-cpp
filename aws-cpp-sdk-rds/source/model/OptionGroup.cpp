@@ -156,7 +156,7 @@ void OptionGroup::OutputToStream(Aws::OStream& oStream, const char* location, un
 
   if(m_allowsVpcAndNonVpcInstanceMembershipsHasBeenSet)
   {
-      oStream << location << index << locationValue << ".AllowsVpcAndNonVpcInstanceMemberships=" << m_allowsVpcAndNonVpcInstanceMemberships << "&";
+      oStream << location << index << locationValue << ".AllowsVpcAndNonVpcInstanceMemberships=" << std::boolalpha << m_allowsVpcAndNonVpcInstanceMemberships << "&";
   }
 
   if(m_vpcIdHasBeenSet)
@@ -201,7 +201,7 @@ void OptionGroup::OutputToStream(Aws::OStream& oStream, const char* location) co
   }
   if(m_allowsVpcAndNonVpcInstanceMembershipsHasBeenSet)
   {
-      oStream << location << ".AllowsVpcAndNonVpcInstanceMemberships=" << m_allowsVpcAndNonVpcInstanceMemberships << "&";
+      oStream << location << ".AllowsVpcAndNonVpcInstanceMemberships=" << std::boolalpha << m_allowsVpcAndNonVpcInstanceMemberships << "&";
   }
   if(m_vpcIdHasBeenSet)
   {

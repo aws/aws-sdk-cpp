@@ -273,7 +273,7 @@ void EnvironmentDescription::OutputToStream(Aws::OStream& oStream, const char* l
 
   if(m_abortableOperationInProgressHasBeenSet)
   {
-      oStream << location << index << locationValue << ".AbortableOperationInProgress=" << m_abortableOperationInProgress << "&";
+      oStream << location << index << locationValue << ".AbortableOperationInProgress=" << std::boolalpha << m_abortableOperationInProgress << "&";
   }
 
   if(m_healthHasBeenSet)
@@ -372,7 +372,7 @@ void EnvironmentDescription::OutputToStream(Aws::OStream& oStream, const char* l
   }
   if(m_abortableOperationInProgressHasBeenSet)
   {
-      oStream << location << ".AbortableOperationInProgress=" << m_abortableOperationInProgress << "&";
+      oStream << location << ".AbortableOperationInProgress=" << std::boolalpha << m_abortableOperationInProgress << "&";
   }
   if(m_healthHasBeenSet)
   {

@@ -33,7 +33,7 @@ Aws::String DetachInternetGatewayRequest::SerializePayload() const
   ss << "Action=DetachInternetGateway&";
   if(m_dryRunHasBeenSet)
   {
-    ss << "DryRun=" << m_dryRun << "&";
+    ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
   if(m_internetGatewayIdHasBeenSet)

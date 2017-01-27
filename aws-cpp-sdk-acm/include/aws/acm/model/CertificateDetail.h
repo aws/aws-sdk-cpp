@@ -22,6 +22,7 @@
 #include <aws/acm/model/KeyAlgorithm.h>
 #include <aws/acm/model/FailureReason.h>
 #include <aws/acm/model/CertificateType.h>
+#include <aws/acm/model/RenewalSummary.h>
 #include <aws/acm/model/DomainValidation.h>
 
 namespace Aws
@@ -39,9 +40,8 @@ namespace Model
 {
 
   /**
-   * <p>Contains detailed metadata about an ACM Certificate. This structure is
-   * returned in the response to a <a>DescribeCertificate</a> request.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>Contains metadata about an ACM certificate. This structure is returned in the
+   * response to a <a>DescribeCertificate</a> request.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/CertificateDetail">AWS
    * API Reference</a></p>
    */
@@ -231,51 +231,51 @@ namespace Model
     inline CertificateDetail& AddSubjectAlternativeNames(const char* value) { m_subjectAlternativeNamesHasBeenSet = true; m_subjectAlternativeNames.push_back(value); return *this; }
 
     /**
-     * <p>Contains information about the email address or addresses used for domain
-     * validation. This field exists only when the certificate type is
-     * <code>AMAZON_ISSUED</code>.</p>
+     * <p>Contains information about the initial validation of each domain name that
+     * occurs as a result of the <a>RequestCertificate</a> request. This field exists
+     * only when the certificate type is <code>AMAZON_ISSUED</code>.</p>
      */
     inline const Aws::Vector<DomainValidation>& GetDomainValidationOptions() const{ return m_domainValidationOptions; }
 
     /**
-     * <p>Contains information about the email address or addresses used for domain
-     * validation. This field exists only when the certificate type is
-     * <code>AMAZON_ISSUED</code>.</p>
+     * <p>Contains information about the initial validation of each domain name that
+     * occurs as a result of the <a>RequestCertificate</a> request. This field exists
+     * only when the certificate type is <code>AMAZON_ISSUED</code>.</p>
      */
     inline void SetDomainValidationOptions(const Aws::Vector<DomainValidation>& value) { m_domainValidationOptionsHasBeenSet = true; m_domainValidationOptions = value; }
 
     /**
-     * <p>Contains information about the email address or addresses used for domain
-     * validation. This field exists only when the certificate type is
-     * <code>AMAZON_ISSUED</code>.</p>
+     * <p>Contains information about the initial validation of each domain name that
+     * occurs as a result of the <a>RequestCertificate</a> request. This field exists
+     * only when the certificate type is <code>AMAZON_ISSUED</code>.</p>
      */
     inline void SetDomainValidationOptions(Aws::Vector<DomainValidation>&& value) { m_domainValidationOptionsHasBeenSet = true; m_domainValidationOptions = value; }
 
     /**
-     * <p>Contains information about the email address or addresses used for domain
-     * validation. This field exists only when the certificate type is
-     * <code>AMAZON_ISSUED</code>.</p>
+     * <p>Contains information about the initial validation of each domain name that
+     * occurs as a result of the <a>RequestCertificate</a> request. This field exists
+     * only when the certificate type is <code>AMAZON_ISSUED</code>.</p>
      */
     inline CertificateDetail& WithDomainValidationOptions(const Aws::Vector<DomainValidation>& value) { SetDomainValidationOptions(value); return *this;}
 
     /**
-     * <p>Contains information about the email address or addresses used for domain
-     * validation. This field exists only when the certificate type is
-     * <code>AMAZON_ISSUED</code>.</p>
+     * <p>Contains information about the initial validation of each domain name that
+     * occurs as a result of the <a>RequestCertificate</a> request. This field exists
+     * only when the certificate type is <code>AMAZON_ISSUED</code>.</p>
      */
     inline CertificateDetail& WithDomainValidationOptions(Aws::Vector<DomainValidation>&& value) { SetDomainValidationOptions(value); return *this;}
 
     /**
-     * <p>Contains information about the email address or addresses used for domain
-     * validation. This field exists only when the certificate type is
-     * <code>AMAZON_ISSUED</code>.</p>
+     * <p>Contains information about the initial validation of each domain name that
+     * occurs as a result of the <a>RequestCertificate</a> request. This field exists
+     * only when the certificate type is <code>AMAZON_ISSUED</code>.</p>
      */
     inline CertificateDetail& AddDomainValidationOptions(const DomainValidation& value) { m_domainValidationOptionsHasBeenSet = true; m_domainValidationOptions.push_back(value); return *this; }
 
     /**
-     * <p>Contains information about the email address or addresses used for domain
-     * validation. This field exists only when the certificate type is
-     * <code>AMAZON_ISSUED</code>.</p>
+     * <p>Contains information about the initial validation of each domain name that
+     * occurs as a result of the <a>RequestCertificate</a> request. This field exists
+     * only when the certificate type is <code>AMAZON_ISSUED</code>.</p>
      */
     inline CertificateDetail& AddDomainValidationOptions(DomainValidation&& value) { m_domainValidationOptionsHasBeenSet = true; m_domainValidationOptions.push_back(value); return *this; }
 
@@ -846,6 +846,46 @@ namespace Model
      */
     inline CertificateDetail& WithType(CertificateType&& value) { SetType(value); return *this;}
 
+    /**
+     * <p>Contains information about the status of ACM's <a
+     * href="http://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html">managed
+     * renewal</a> for the certificate. This field exists only when the certificate
+     * type is <code>AMAZON_ISSUED</code>.</p>
+     */
+    inline const RenewalSummary& GetRenewalSummary() const{ return m_renewalSummary; }
+
+    /**
+     * <p>Contains information about the status of ACM's <a
+     * href="http://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html">managed
+     * renewal</a> for the certificate. This field exists only when the certificate
+     * type is <code>AMAZON_ISSUED</code>.</p>
+     */
+    inline void SetRenewalSummary(const RenewalSummary& value) { m_renewalSummaryHasBeenSet = true; m_renewalSummary = value; }
+
+    /**
+     * <p>Contains information about the status of ACM's <a
+     * href="http://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html">managed
+     * renewal</a> for the certificate. This field exists only when the certificate
+     * type is <code>AMAZON_ISSUED</code>.</p>
+     */
+    inline void SetRenewalSummary(RenewalSummary&& value) { m_renewalSummaryHasBeenSet = true; m_renewalSummary = value; }
+
+    /**
+     * <p>Contains information about the status of ACM's <a
+     * href="http://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html">managed
+     * renewal</a> for the certificate. This field exists only when the certificate
+     * type is <code>AMAZON_ISSUED</code>.</p>
+     */
+    inline CertificateDetail& WithRenewalSummary(const RenewalSummary& value) { SetRenewalSummary(value); return *this;}
+
+    /**
+     * <p>Contains information about the status of ACM's <a
+     * href="http://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html">managed
+     * renewal</a> for the certificate. This field exists only when the certificate
+     * type is <code>AMAZON_ISSUED</code>.</p>
+     */
+    inline CertificateDetail& WithRenewalSummary(RenewalSummary&& value) { SetRenewalSummary(value); return *this;}
+
   private:
     Aws::String m_certificateArn;
     bool m_certificateArnHasBeenSet;
@@ -887,6 +927,8 @@ namespace Model
     bool m_failureReasonHasBeenSet;
     CertificateType m_type;
     bool m_typeHasBeenSet;
+    RenewalSummary m_renewalSummary;
+    bool m_renewalSummaryHasBeenSet;
   };
 
 } // namespace Model

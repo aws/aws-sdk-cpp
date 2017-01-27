@@ -41,42 +41,82 @@ namespace Model
     DescribeEventTypesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
     /**
-     * <p>List of event types to be matched with.</p>
+     * <p>A list of event types that match the filter criteria. Event types have a
+     * category (<code>issue</code>, <code>accountNotification</code>, or
+     * <code>scheduledChange</code>), a service (for example, <code>EC2</code>,
+     * <code>RDS</code>, <code>DATAPIPELINE</code>, <code>BILLING</code>), and a code
+     * (in the format <code>AWS_<i>SERVICE</i>_<i>DESCRIPTION</i> </code>; for example,
+     * <code>AWS_EC2_SYSTEM_MAINTENANCE_EVENT</code>).</p>
      */
     inline const Aws::Vector<Aws::String>& GetEventTypes() const{ return m_eventTypes; }
 
     /**
-     * <p>List of event types to be matched with.</p>
+     * <p>A list of event types that match the filter criteria. Event types have a
+     * category (<code>issue</code>, <code>accountNotification</code>, or
+     * <code>scheduledChange</code>), a service (for example, <code>EC2</code>,
+     * <code>RDS</code>, <code>DATAPIPELINE</code>, <code>BILLING</code>), and a code
+     * (in the format <code>AWS_<i>SERVICE</i>_<i>DESCRIPTION</i> </code>; for example,
+     * <code>AWS_EC2_SYSTEM_MAINTENANCE_EVENT</code>).</p>
      */
     inline void SetEventTypes(const Aws::Vector<Aws::String>& value) { m_eventTypes = value; }
 
     /**
-     * <p>List of event types to be matched with.</p>
+     * <p>A list of event types that match the filter criteria. Event types have a
+     * category (<code>issue</code>, <code>accountNotification</code>, or
+     * <code>scheduledChange</code>), a service (for example, <code>EC2</code>,
+     * <code>RDS</code>, <code>DATAPIPELINE</code>, <code>BILLING</code>), and a code
+     * (in the format <code>AWS_<i>SERVICE</i>_<i>DESCRIPTION</i> </code>; for example,
+     * <code>AWS_EC2_SYSTEM_MAINTENANCE_EVENT</code>).</p>
      */
     inline void SetEventTypes(Aws::Vector<Aws::String>&& value) { m_eventTypes = value; }
 
     /**
-     * <p>List of event types to be matched with.</p>
+     * <p>A list of event types that match the filter criteria. Event types have a
+     * category (<code>issue</code>, <code>accountNotification</code>, or
+     * <code>scheduledChange</code>), a service (for example, <code>EC2</code>,
+     * <code>RDS</code>, <code>DATAPIPELINE</code>, <code>BILLING</code>), and a code
+     * (in the format <code>AWS_<i>SERVICE</i>_<i>DESCRIPTION</i> </code>; for example,
+     * <code>AWS_EC2_SYSTEM_MAINTENANCE_EVENT</code>).</p>
      */
     inline DescribeEventTypesResult& WithEventTypes(const Aws::Vector<Aws::String>& value) { SetEventTypes(value); return *this;}
 
     /**
-     * <p>List of event types to be matched with.</p>
+     * <p>A list of event types that match the filter criteria. Event types have a
+     * category (<code>issue</code>, <code>accountNotification</code>, or
+     * <code>scheduledChange</code>), a service (for example, <code>EC2</code>,
+     * <code>RDS</code>, <code>DATAPIPELINE</code>, <code>BILLING</code>), and a code
+     * (in the format <code>AWS_<i>SERVICE</i>_<i>DESCRIPTION</i> </code>; for example,
+     * <code>AWS_EC2_SYSTEM_MAINTENANCE_EVENT</code>).</p>
      */
     inline DescribeEventTypesResult& WithEventTypes(Aws::Vector<Aws::String>&& value) { SetEventTypes(value); return *this;}
 
     /**
-     * <p>List of event types to be matched with.</p>
+     * <p>A list of event types that match the filter criteria. Event types have a
+     * category (<code>issue</code>, <code>accountNotification</code>, or
+     * <code>scheduledChange</code>), a service (for example, <code>EC2</code>,
+     * <code>RDS</code>, <code>DATAPIPELINE</code>, <code>BILLING</code>), and a code
+     * (in the format <code>AWS_<i>SERVICE</i>_<i>DESCRIPTION</i> </code>; for example,
+     * <code>AWS_EC2_SYSTEM_MAINTENANCE_EVENT</code>).</p>
      */
     inline DescribeEventTypesResult& AddEventTypes(const Aws::String& value) { m_eventTypes.push_back(value); return *this; }
 
     /**
-     * <p>List of event types to be matched with.</p>
+     * <p>A list of event types that match the filter criteria. Event types have a
+     * category (<code>issue</code>, <code>accountNotification</code>, or
+     * <code>scheduledChange</code>), a service (for example, <code>EC2</code>,
+     * <code>RDS</code>, <code>DATAPIPELINE</code>, <code>BILLING</code>), and a code
+     * (in the format <code>AWS_<i>SERVICE</i>_<i>DESCRIPTION</i> </code>; for example,
+     * <code>AWS_EC2_SYSTEM_MAINTENANCE_EVENT</code>).</p>
      */
     inline DescribeEventTypesResult& AddEventTypes(Aws::String&& value) { m_eventTypes.push_back(value); return *this; }
 
     /**
-     * <p>List of event types to be matched with.</p>
+     * <p>A list of event types that match the filter criteria. Event types have a
+     * category (<code>issue</code>, <code>accountNotification</code>, or
+     * <code>scheduledChange</code>), a service (for example, <code>EC2</code>,
+     * <code>RDS</code>, <code>DATAPIPELINE</code>, <code>BILLING</code>), and a code
+     * (in the format <code>AWS_<i>SERVICE</i>_<i>DESCRIPTION</i> </code>; for example,
+     * <code>AWS_EC2_SYSTEM_MAINTENANCE_EVENT</code>).</p>
      */
     inline DescribeEventTypesResult& AddEventTypes(const char* value) { m_eventTypes.push_back(value); return *this; }
 

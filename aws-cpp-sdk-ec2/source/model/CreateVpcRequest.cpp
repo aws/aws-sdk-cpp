@@ -36,7 +36,7 @@ Aws::String CreateVpcRequest::SerializePayload() const
   ss << "Action=CreateVpc&";
   if(m_dryRunHasBeenSet)
   {
-    ss << "DryRun=" << m_dryRun << "&";
+    ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
   if(m_cidrBlockHasBeenSet)
@@ -51,7 +51,7 @@ Aws::String CreateVpcRequest::SerializePayload() const
 
   if(m_amazonProvidedIpv6CidrBlockHasBeenSet)
   {
-    ss << "AmazonProvidedIpv6CidrBlock=" << m_amazonProvidedIpv6CidrBlock << "&";
+    ss << "AmazonProvidedIpv6CidrBlock=" << std::boolalpha << m_amazonProvidedIpv6CidrBlock << "&";
   }
 
   ss << "Version=2016-11-15";

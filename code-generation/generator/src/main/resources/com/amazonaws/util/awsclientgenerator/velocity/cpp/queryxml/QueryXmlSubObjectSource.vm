@@ -71,6 +71,8 @@ void ${typeInfo.className}::OutputToStream(Aws::OStream& oStream, const char* lo
   ${spaces}oStream << location << index << locationValue << ".${memberName}=" << StringUtils::URLEncode(HashingUtils::Base64Encode(${memberVarName}).c_str()) << "&";
 #elseif($member.shape.double)
     ${spaces}oStream << location << index << locationValue << ".${memberName}=" << StringUtils::URLEncode(${memberVarName}) << "&";
+#elseif($member.shape.boolean)
+  ${spaces}oStream << location << index << locationValue << ".${memberName}=" << std::boolalpha << ${memberVarName} << "&";
 #elseif($member.shape.primitive)
   ${spaces}oStream << location << index << locationValue << ".${memberName}=" << ${memberVarName} << "&";
 #elseif($member.shape.enum)
@@ -80,10 +82,12 @@ void ${typeInfo.className}::OutputToStream(Aws::OStream& oStream, const char* lo
   ${spaces}for(auto& item : ${memberVarName})
   ${spaces}{
 #if($metadata.protocol == "ec2")
-#if($member.locationName)
+#if($member.queryName)
+#set($location = $member.queryName)
+#elseif($member.locationName)
 #set($location = $CppViewHelper.capitalizeFirstChar($member.locationName))
 #else
-#set($location = $CppViewHelper.capitalizeFirstChar($memberName))
+#set($location = $memberName)
 #end
 #else
 #if($member.shape.listMember.locationName)
@@ -104,6 +108,8 @@ void ${typeInfo.className}::OutputToStream(Aws::OStream& oStream, const char* lo
   ${spaces}  oStream << location << index << locationValue << ".${location}." << ${lowerCaseVarName}Idx++ << "=" << StringUtils::URLEncode(HashingUtils::Base64Encode(item).c_str()) << "&";
 #elseif($member.shape.listMember.shape.double)
   ${spaces}  oStream << location << index << locationValue << ".${location}." << ${lowerCaseVarName}Idx++ << "=" << StringUtils::URLEncode(item) << "&";
+#elseif($member.shape.listMember.shape.boolean)
+  ${spaces}  oStream << location << index << locationValue << ".${location}." << ${lowerCaseVarName}Idx++ << "=" << std::boolalpha << item << "&";
 #elseif($member.shape.listMember.shape.primitive)
   ${spaces}  oStream << location << index << locationValue << ".${location}." << ${lowerCaseVarName}Idx++ << "=" << item << "&";
 #elseif($member.shape.listMember.shape.enum)
@@ -140,6 +146,8 @@ void ${typeInfo.className}::OutputToStream(Aws::OStream& oStream, const char* lo
   ${spaces}  item.first.OutputToStream(oStream, "${mapLocationName}.", ${lowerCaseVarName}Idx, ".${mapKeyLocationName}");
 #elseif($member.shape.mapKey.shape.double)
   ${spaces}      << StringUtils::URLEncode(item.first) << "&";
+#elseif($member.shape.mapKey.shape.boolean)
+  ${spaces}      << std::boolalpha << item.first << "&";
 #else
   ${spaces}      << item.first << "&";
 #end
@@ -158,6 +166,8 @@ void ${typeInfo.className}::OutputToStream(Aws::OStream& oStream, const char* lo
   ${spaces}  item.second.OutputToStream(oStream, ${lowerCaseVarName}Ss.str().c_str());
 #elseif($member.shape.mapValue.shape.double)
   ${spaces}      << StringUtils::URLEncode(item.second) << "&";
+#elseif($member.shape.mapValue.shape.boolean)
+  ${spaces}      << std::boolalpha << item.second << "&";
 #else
   ${spaces}      << item.second << "&";
 #end
@@ -197,6 +207,8 @@ void ${typeInfo.className}::OutputToStream(Aws::OStream& oStream, const char* lo
   ${spaces}oStream << location << ".${memberName}=" << StringUtils::URLEncode(HashingUtils::Base64Encode(${memberVarName}).c_str()) << "&";
 #elseif($member.shape.double)
     ${spaces}oStream << location << ".${memberName}=" << StringUtils::URLEncode(${memberVarName}) << "&";
+#elseif($member.shape.boolean)
+  ${spaces}oStream << location << ".${memberName}=" << std::boolalpha << ${memberVarName} << "&";
 #elseif($member.shape.primitive)
   ${spaces}oStream << location << ".${memberName}=" << ${memberVarName} << "&";
 #elseif($member.shape.enum)
@@ -205,8 +217,15 @@ void ${typeInfo.className}::OutputToStream(Aws::OStream& oStream, const char* lo
   ${spaces}unsigned ${lowerCaseVarName}Idx = 1;
   ${spaces}for(auto& item : ${memberVarName})
   ${spaces}{
-#if($member.shape.listMember.locationName)
+#if($member.shape.listMember.queryName)
+#set($location = $member.shape.listMember.queryName)
+#elseif($member.shape.listMember.locationName)
 #set($location = $member.shape.listMember.locationName)
+#if($metadata.protocol == "ec2")
+#set($location = $CppViewHelper.capitalizeFirstChar($location))
+#end
+#elseif($metadata.protocol == "ec2")
+#set($location = $memberName)
 #else
 #set($location = $memberName + ".member")
 #end
@@ -222,6 +241,8 @@ void ${typeInfo.className}::OutputToStream(Aws::OStream& oStream, const char* lo
   ${spaces}  oStream << location << ".${location}." << ${lowerCaseVarName}Idx++ << "=" << StringUtils::URLEncode(HashingUtils::Base64Encode(item).c_str()) << "&";
 #elseif($member.shape.listMember.shape.double)
     ${spaces}  oStream << location << ".${location}." << ${lowerCaseVarName}Idx++ << "=" << StringUtils::URLEncode(item) << "&";
+#elseif($member.shape.listMember.shape.boolean)
+  ${spaces}  oStream << location << ".${location}." << ${lowerCaseVarName}Idx++ << "=" << std::boolalpha << item << "&";
 #elseif($member.shape.listMember.shape.primitive)
   ${spaces}  oStream << location << ".${location}." << ${lowerCaseVarName}Idx++ << "=" << item << "&";
 #elseif($member.shape.listMember.shape.enum)
@@ -256,6 +277,8 @@ void ${typeInfo.className}::OutputToStream(Aws::OStream& oStream, const char* lo
   ${spaces}      << StringUtils::URLEncode(${member.shape.mapKey.shape.name}Mapper::GetNameFor${member.shape.mapKey.shape.name}(item.first).c_str()) << "&";
 #elseif($member.shape.mapKey.shape.double)
   ${spaces}      << StringUtils::URLEncode(item.first) << "&";
+#elseif($member.shape.mapKey.shape.boolean)
+  ${spaces}      << std::boolalpha << item.first << "&";
 #else
   ${spaces}      << item.first << "&";
 #end
@@ -274,6 +297,8 @@ void ${typeInfo.className}::OutputToStream(Aws::OStream& oStream, const char* lo
   ${spaces}  item.second.OutputToStream(oStream, ${lowerCaseVarName}Ss.str().c_str());
 #elseif($member.shape.mapValue.shape.double)
   ${spaces}      << StringUtils::URLEncode(item.second) << "&";
+#elseif($member.shape.mapValue.shape.boolean)
+  ${spaces}      << std::boolalpha << item.second << "&";
 #else
   ${spaces}      << item.second << "&";
 #end

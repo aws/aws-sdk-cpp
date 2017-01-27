@@ -97,7 +97,7 @@ void TemplateParameter::OutputToStream(Aws::OStream& oStream, const char* locati
 
   if(m_noEchoHasBeenSet)
   {
-      oStream << location << index << locationValue << ".NoEcho=" << m_noEcho << "&";
+      oStream << location << index << locationValue << ".NoEcho=" << std::boolalpha << m_noEcho << "&";
   }
 
   if(m_descriptionHasBeenSet)
@@ -119,7 +119,7 @@ void TemplateParameter::OutputToStream(Aws::OStream& oStream, const char* locati
   }
   if(m_noEchoHasBeenSet)
   {
-      oStream << location << ".NoEcho=" << m_noEcho << "&";
+      oStream << location << ".NoEcho=" << std::boolalpha << m_noEcho << "&";
   }
   if(m_descriptionHasBeenSet)
   {

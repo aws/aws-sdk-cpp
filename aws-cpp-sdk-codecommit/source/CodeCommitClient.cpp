@@ -30,8 +30,10 @@
 #include <aws/codecommit/model/CreateBranchRequest.h>
 #include <aws/codecommit/model/CreateRepositoryRequest.h>
 #include <aws/codecommit/model/DeleteRepositoryRequest.h>
+#include <aws/codecommit/model/GetBlobRequest.h>
 #include <aws/codecommit/model/GetBranchRequest.h>
 #include <aws/codecommit/model/GetCommitRequest.h>
+#include <aws/codecommit/model/GetDifferencesRequest.h>
 #include <aws/codecommit/model/GetRepositoryRequest.h>
 #include <aws/codecommit/model/GetRepositoryTriggersRequest.h>
 #include <aws/codecommit/model/ListBranchesRequest.h>
@@ -242,6 +244,40 @@ void CodeCommitClient::DeleteRepositoryAsyncHelper(const DeleteRepositoryRequest
   handler(this, request, DeleteRepository(request), context);
 }
 
+GetBlobOutcome CodeCommitClient::GetBlob(const GetBlobRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return GetBlobOutcome(GetBlobResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetBlobOutcome(outcome.GetError());
+  }
+}
+
+GetBlobOutcomeCallable CodeCommitClient::GetBlobCallable(const GetBlobRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetBlobOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetBlob(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CodeCommitClient::GetBlobAsync(const GetBlobRequest& request, const GetBlobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetBlobAsyncHelper( request, handler, context ); } );
+}
+
+void CodeCommitClient::GetBlobAsyncHelper(const GetBlobRequest& request, const GetBlobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetBlob(request), context);
+}
+
 GetBranchOutcome CodeCommitClient::GetBranch(const GetBranchRequest& request) const
 {
   Aws::StringStream ss;
@@ -308,6 +344,40 @@ void CodeCommitClient::GetCommitAsync(const GetCommitRequest& request, const Get
 void CodeCommitClient::GetCommitAsyncHelper(const GetCommitRequest& request, const GetCommitResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, GetCommit(request), context);
+}
+
+GetDifferencesOutcome CodeCommitClient::GetDifferences(const GetDifferencesRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return GetDifferencesOutcome(GetDifferencesResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetDifferencesOutcome(outcome.GetError());
+  }
+}
+
+GetDifferencesOutcomeCallable CodeCommitClient::GetDifferencesCallable(const GetDifferencesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetDifferencesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetDifferences(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CodeCommitClient::GetDifferencesAsync(const GetDifferencesRequest& request, const GetDifferencesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetDifferencesAsyncHelper( request, handler, context ); } );
+}
+
+void CodeCommitClient::GetDifferencesAsyncHelper(const GetDifferencesRequest& request, const GetDifferencesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetDifferences(request), context);
 }
 
 GetRepositoryOutcome CodeCommitClient::GetRepository(const GetRepositoryRequest& request) const

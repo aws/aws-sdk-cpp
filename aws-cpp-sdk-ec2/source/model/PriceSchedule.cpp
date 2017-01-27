@@ -108,7 +108,7 @@ void PriceSchedule::OutputToStream(Aws::OStream& oStream, const char* location, 
 
   if(m_activeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".Active=" << m_active << "&";
+      oStream << location << index << locationValue << ".Active=" << std::boolalpha << m_active << "&";
   }
 
 }
@@ -129,7 +129,7 @@ void PriceSchedule::OutputToStream(Aws::OStream& oStream, const char* location) 
   }
   if(m_activeHasBeenSet)
   {
-      oStream << location << ".Active=" << m_active << "&";
+      oStream << location << ".Active=" << std::boolalpha << m_active << "&";
   }
 }
 

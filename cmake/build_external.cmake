@@ -25,8 +25,8 @@ if(BUILD_CURL OR BUILD_OPENSSL OR BUILD_ZLIB)
         #likely, some of the things here are unnecessary
         ExternalProject_Add(ZLIB
             SOURCE_DIR ${ZLIB_SOURCE_DIR}
-            URL http://zlib.net/zlib-1.2.8.tar.gz
-            URL_HASH "SHA256=36658cb768a54c1d4dec43c3116c27ed893e88b02ecfcb44f2166f9c0b7f2a0d"
+            URL http://zlib.net/zlib-1.2.11.tar.gz
+            URL_HASH "SHA256=c3e5e9fdd5004dcb542feda5ee4f0ff0744628baf8ed2dd5d66f8ca1197cb1a1"
             PATCH_COMMAND ""
             CMAKE_ARGS
             -DCMAKE_TOOLCHAIN_FILE=${CMAKE_TOOLCHAIN_FILE}
@@ -51,6 +51,7 @@ if(BUILD_CURL OR BUILD_OPENSSL OR BUILD_ZLIB)
         add_library(zlib UNKNOWN IMPORTED)
         set_property(TARGET zlib PROPERTY IMPORTED_LOCATION ${ZLIB_LIBRARY_DIR}/${ZLIB_NAME}.a)
         set(ZLIB_LIBRARIES "${ZLIB_LIBRARY_DIR}/${ZLIB_NAME}.a")
+        set(CURL_ZLIB_DEPENDENCY "ZLIB")
     endif()
 
     # OpenSSL
@@ -59,8 +60,8 @@ if(BUILD_CURL OR BUILD_OPENSSL OR BUILD_ZLIB)
         set(OPENSSL_INSTALL_DIR ${EXTERNAL_INSTALL_DIR}/openssl CACHE INTERNAL "openssl install dir")
         set(OPENSSL_INCLUDE_DIR ${OPENSSL_INSTALL_DIR}/include CACHE INTERNAL "openssl include dir")
         set(OPENSSL_LIBRARY_DIR ${OPENSSL_INSTALL_DIR}/lib CACHE INTERNAL "openssl library dir")
-        set(OPENSSL_CXX_FLAGS "${EXTERNAL_CXX_FLAGS} ${ZLIB_INCLUDE_FLAGS} -fPIE" CACHE INTERNAL "openssl")
-        set(OPENSSL_C_FLAGS "${EXTERNAL_C_FLAGS} ${ZLIB_INCLUDE_FLAGS} -fPIE" CACHE INTERNAL "openssl")
+        set(OPENSSL_CXX_FLAGS "${EXTERNAL_CXX_FLAGS} -fPIE" CACHE INTERNAL "openssl")
+        set(OPENSSL_C_FLAGS "${EXTERNAL_C_FLAGS} -fPIE" CACHE INTERNAL "openssl")
         if(ANDROID_ABI STREQUAL "x86_64")
             set(OPENSSL_C_FLAGS "${OPENSSL_C_FLAGS} -DOPENSSL_NO_INLINE_ASM" CACHE INTERNAL "openssl")
         endif()
@@ -70,7 +71,6 @@ if(BUILD_CURL OR BUILD_OPENSSL OR BUILD_ZLIB)
         set(OPENSSL_LINKER_FLAGS "-L${OPENSSL_LIBRARY_DIR}" CACHE INTERNAL "linker flags to find openssl")
 
         ExternalProject_Add(OPENSSL
-            DEPENDS ZLIB
             SOURCE_DIR ${OPENSSL_SOURCE_DIR}
             GIT_REPOSITORY https://github.com/openssl/openssl.git
             GIT_TAG e216bf9d7ca761718f34e8b3094fcb32c7a143e4 # 1.0.2j
@@ -97,6 +97,7 @@ if(BUILD_CURL OR BUILD_OPENSSL OR BUILD_ZLIB)
         set_property(TARGET crypto PROPERTY IMPORTED_LOCATION ${OPENSSL_LIBRARY_DIR}/libcrypto.a)
 
         set(OPENSSL_LIBRARIES "${OPENSSL_LIBRARY_DIR}/libssl.a;${OPENSSL_LIBRARY_DIR}/libcrypto.a")
+        set(CURL_OPENSSL_DEPENDENCY "OPENSSL")
     endif()
 
     # curl
@@ -113,11 +114,17 @@ if(BUILD_CURL OR BUILD_OPENSSL OR BUILD_ZLIB)
         set( CURL_C_FLAGS "${EXTERNAL_C_FLAGS}  ${OPENSSL_INCLUDE_FLAGS} ${ZLIB_INCLUDE_FLAGS} -Wno-unused-value -fPIE ${ZLIB_LINKER_FLAGS} ${OPENSSL_LINKER_FLAGS}" CACHE INTERNAL "")
         set( CURL_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -fPIE -pie ${ZLIB_LINKER_FLAGS} ${OPENSSL_LINKER_FLAGS}" CACHE INTERNAL "" )
 
+	if(ZLIB_LIBRARIES)
+	    set(CURL_USE_ZLIB "ON")
+	else()
+	    set(CURL_USE_ZLIB "OFF")
+	endif()
+
         ExternalProject_Add(CURL
-                DEPENDS ZLIB OPENSSL
+                DEPENDS ${CURL_OPENSSL_DEPENDENCY} ${CURL_ZLIB_DEPENDENCY}
                 SOURCE_DIR ${CURL_SOURCE_DIR}
                 GIT_REPOSITORY https://github.com/bagder/curl.git
-                GIT_TAG 9819cec61b00cc872136ea5faf469627b3b87e69  # 7.48.0
+                GIT_TAG 44b9b4d4f56d6f6de92c89636994c03984e9cd01 # 7.52.1
                 UPDATE_COMMAND ""
                 PATCH_COMMAND ""
                 CMAKE_ARGS
@@ -140,6 +147,7 @@ if(BUILD_CURL OR BUILD_OPENSSL OR BUILD_ZLIB)
                 -DCURL_STATICLIB=ON
                 -DBUILD_CURL_EXE=ON
                 -DBUILD_CURL_TESTS=OFF
+		-DCURL_ZLIB=${CURL_USE_ZLIB}
                 )
 
         add_library(curl UNKNOWN IMPORTED)

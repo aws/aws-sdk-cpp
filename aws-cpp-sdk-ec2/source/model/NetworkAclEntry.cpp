@@ -138,7 +138,7 @@ void NetworkAclEntry::OutputToStream(Aws::OStream& oStream, const char* location
 
   if(m_egressHasBeenSet)
   {
-      oStream << location << index << locationValue << ".Egress=" << m_egress << "&";
+      oStream << location << index << locationValue << ".Egress=" << std::boolalpha << m_egress << "&";
   }
 
   if(m_cidrBlockHasBeenSet)
@@ -183,7 +183,7 @@ void NetworkAclEntry::OutputToStream(Aws::OStream& oStream, const char* location
   }
   if(m_egressHasBeenSet)
   {
-      oStream << location << ".Egress=" << m_egress << "&";
+      oStream << location << ".Egress=" << std::boolalpha << m_egress << "&";
   }
   if(m_cidrBlockHasBeenSet)
   {

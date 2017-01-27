@@ -34,7 +34,7 @@ Aws::String DescribeImageAttributeRequest::SerializePayload() const
   ss << "Action=DescribeImageAttribute&";
   if(m_dryRunHasBeenSet)
   {
-    ss << "DryRun=" << m_dryRun << "&";
+    ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
   if(m_imageIdHasBeenSet)

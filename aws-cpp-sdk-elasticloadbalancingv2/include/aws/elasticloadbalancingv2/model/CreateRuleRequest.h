@@ -28,9 +28,6 @@ namespace Model
 {
 
   /**
-   * <p>Contains the parameters for CreateRule.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/CreateRuleInput">AWS
-   * API Reference</a></p>
    */
   class AWS_ELASTICLOADBALANCINGV2_API CreateRuleRequest : public ElasticLoadBalancingv2Request
   {
@@ -75,71 +72,78 @@ namespace Model
 
     /**
      * <p>A condition. Each condition has the field <code>path-pattern</code> and
-     * specifies one path pattern. A path pattern is case sensitive, can be up to 255
-     * characters in length, and can contain any of the following characters:</p> <ul>
-     * <li> <p>A-Z, a-z, 0-9</p> </li> <li> <p>_ - . $ / ~ " ' @ : +</p> </li> <li>
-     * <p>&amp; (using &amp;amp;)</p> </li> <li> <p>* (matches 0 or more
-     * characters)</p> </li> <li> <p>? (matches exactly 1 character)</p> </li> </ul>
+     * specifies one path pattern. A path pattern is case sensitive, can be up to 128
+     * characters in length, and can contain any of the following characters. Note that
+     * you can include up to three wildcard characters in a path pattern.</p> <ul> <li>
+     * <p>A-Z, a-z, 0-9</p> </li> <li> <p>_ - . $ / ~ " ' @ : +</p> </li> <li> <p>&amp;
+     * (using &amp;amp;)</p> </li> <li> <p>* (matches 0 or more characters)</p> </li>
+     * <li> <p>? (matches exactly 1 character)</p> </li> </ul>
      */
     inline const Aws::Vector<RuleCondition>& GetConditions() const{ return m_conditions; }
 
     /**
      * <p>A condition. Each condition has the field <code>path-pattern</code> and
-     * specifies one path pattern. A path pattern is case sensitive, can be up to 255
-     * characters in length, and can contain any of the following characters:</p> <ul>
-     * <li> <p>A-Z, a-z, 0-9</p> </li> <li> <p>_ - . $ / ~ " ' @ : +</p> </li> <li>
-     * <p>&amp; (using &amp;amp;)</p> </li> <li> <p>* (matches 0 or more
-     * characters)</p> </li> <li> <p>? (matches exactly 1 character)</p> </li> </ul>
+     * specifies one path pattern. A path pattern is case sensitive, can be up to 128
+     * characters in length, and can contain any of the following characters. Note that
+     * you can include up to three wildcard characters in a path pattern.</p> <ul> <li>
+     * <p>A-Z, a-z, 0-9</p> </li> <li> <p>_ - . $ / ~ " ' @ : +</p> </li> <li> <p>&amp;
+     * (using &amp;amp;)</p> </li> <li> <p>* (matches 0 or more characters)</p> </li>
+     * <li> <p>? (matches exactly 1 character)</p> </li> </ul>
      */
     inline void SetConditions(const Aws::Vector<RuleCondition>& value) { m_conditionsHasBeenSet = true; m_conditions = value; }
 
     /**
      * <p>A condition. Each condition has the field <code>path-pattern</code> and
-     * specifies one path pattern. A path pattern is case sensitive, can be up to 255
-     * characters in length, and can contain any of the following characters:</p> <ul>
-     * <li> <p>A-Z, a-z, 0-9</p> </li> <li> <p>_ - . $ / ~ " ' @ : +</p> </li> <li>
-     * <p>&amp; (using &amp;amp;)</p> </li> <li> <p>* (matches 0 or more
-     * characters)</p> </li> <li> <p>? (matches exactly 1 character)</p> </li> </ul>
+     * specifies one path pattern. A path pattern is case sensitive, can be up to 128
+     * characters in length, and can contain any of the following characters. Note that
+     * you can include up to three wildcard characters in a path pattern.</p> <ul> <li>
+     * <p>A-Z, a-z, 0-9</p> </li> <li> <p>_ - . $ / ~ " ' @ : +</p> </li> <li> <p>&amp;
+     * (using &amp;amp;)</p> </li> <li> <p>* (matches 0 or more characters)</p> </li>
+     * <li> <p>? (matches exactly 1 character)</p> </li> </ul>
      */
     inline void SetConditions(Aws::Vector<RuleCondition>&& value) { m_conditionsHasBeenSet = true; m_conditions = value; }
 
     /**
      * <p>A condition. Each condition has the field <code>path-pattern</code> and
-     * specifies one path pattern. A path pattern is case sensitive, can be up to 255
-     * characters in length, and can contain any of the following characters:</p> <ul>
-     * <li> <p>A-Z, a-z, 0-9</p> </li> <li> <p>_ - . $ / ~ " ' @ : +</p> </li> <li>
-     * <p>&amp; (using &amp;amp;)</p> </li> <li> <p>* (matches 0 or more
-     * characters)</p> </li> <li> <p>? (matches exactly 1 character)</p> </li> </ul>
+     * specifies one path pattern. A path pattern is case sensitive, can be up to 128
+     * characters in length, and can contain any of the following characters. Note that
+     * you can include up to three wildcard characters in a path pattern.</p> <ul> <li>
+     * <p>A-Z, a-z, 0-9</p> </li> <li> <p>_ - . $ / ~ " ' @ : +</p> </li> <li> <p>&amp;
+     * (using &amp;amp;)</p> </li> <li> <p>* (matches 0 or more characters)</p> </li>
+     * <li> <p>? (matches exactly 1 character)</p> </li> </ul>
      */
     inline CreateRuleRequest& WithConditions(const Aws::Vector<RuleCondition>& value) { SetConditions(value); return *this;}
 
     /**
      * <p>A condition. Each condition has the field <code>path-pattern</code> and
-     * specifies one path pattern. A path pattern is case sensitive, can be up to 255
-     * characters in length, and can contain any of the following characters:</p> <ul>
-     * <li> <p>A-Z, a-z, 0-9</p> </li> <li> <p>_ - . $ / ~ " ' @ : +</p> </li> <li>
-     * <p>&amp; (using &amp;amp;)</p> </li> <li> <p>* (matches 0 or more
-     * characters)</p> </li> <li> <p>? (matches exactly 1 character)</p> </li> </ul>
+     * specifies one path pattern. A path pattern is case sensitive, can be up to 128
+     * characters in length, and can contain any of the following characters. Note that
+     * you can include up to three wildcard characters in a path pattern.</p> <ul> <li>
+     * <p>A-Z, a-z, 0-9</p> </li> <li> <p>_ - . $ / ~ " ' @ : +</p> </li> <li> <p>&amp;
+     * (using &amp;amp;)</p> </li> <li> <p>* (matches 0 or more characters)</p> </li>
+     * <li> <p>? (matches exactly 1 character)</p> </li> </ul>
      */
     inline CreateRuleRequest& WithConditions(Aws::Vector<RuleCondition>&& value) { SetConditions(value); return *this;}
 
     /**
      * <p>A condition. Each condition has the field <code>path-pattern</code> and
-     * specifies one path pattern. A path pattern is case sensitive, can be up to 255
-     * characters in length, and can contain any of the following characters:</p> <ul>
-     * <li> <p>A-Z, a-z, 0-9</p> </li> <li> <p>_ - . $ / ~ " ' @ : +</p> </li> <li>
-     * <p>&amp; (using &amp;amp;)</p> </li> <li> <p>* (matches 0 or more
-     * characters)</p> </li> <li> <p>? (matches exactly 1 character)</p> </li> </ul>
+     * specifies one path pattern. A path pattern is case sensitive, can be up to 128
+     * characters in length, and can contain any of the following characters. Note that
+     * you can include up to three wildcard characters in a path pattern.</p> <ul> <li>
+     * <p>A-Z, a-z, 0-9</p> </li> <li> <p>_ - . $ / ~ " ' @ : +</p> </li> <li> <p>&amp;
+     * (using &amp;amp;)</p> </li> <li> <p>* (matches 0 or more characters)</p> </li>
+     * <li> <p>? (matches exactly 1 character)</p> </li> </ul>
      */
     inline CreateRuleRequest& AddConditions(const RuleCondition& value) { m_conditionsHasBeenSet = true; m_conditions.push_back(value); return *this; }
 
     /**
      * <p>A condition. Each condition has the field <code>path-pattern</code> and
-     * specifies one path pattern. A path pattern is case sensitive, can be up to 255
-     * characters in length, and can contain any of the following characters:</p> <ul>
-     * <li> <p>A-Z, a-z, 0-9</p> </li> <li> <p>_ - . $ / ~ " ' @ : +</p> </li> <li>
-     * <p>&amp; (using &amp;amp;)</p> </li> <li> <p>* (matches 0 or more
-     * characters)</p> </li> <li> <p>? (matches exactly 1 character)</p> </li> </ul>
+     * specifies one path pattern. A path pattern is case sensitive, can be up to 128
+     * characters in length, and can contain any of the following characters. Note that
+     * you can include up to three wildcard characters in a path pattern.</p> <ul> <li>
+     * <p>A-Z, a-z, 0-9</p> </li> <li> <p>_ - . $ / ~ " ' @ : +</p> </li> <li> <p>&amp;
+     * (using &amp;amp;)</p> </li> <li> <p>* (matches 0 or more characters)</p> </li>
+     * <li> <p>? (matches exactly 1 character)</p> </li> </ul>
      */
     inline CreateRuleRequest& AddConditions(RuleCondition&& value) { m_conditionsHasBeenSet = true; m_conditions.push_back(value); return *this; }
 

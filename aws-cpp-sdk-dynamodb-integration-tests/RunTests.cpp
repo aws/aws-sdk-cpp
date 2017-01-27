@@ -16,12 +16,21 @@
 #include <aws/external/gtest.h>
 #include <aws/core/Aws.h>
 #include <aws/testing/platform/PlatformTesting.h>
+#include <aws/testing/TestingEnvironment.h>
+
+#include <iostream>
 
 int main(int argc, char** argv)
 {
     Aws::SDKOptions options;
+    options.loggingOptions.logLevel = Aws::Utils::Logging::LogLevel::Trace;
 
     Aws::Testing::InitPlatformTest(options);
+    if(argc > 1)
+    {
+        std::cout << "Resource prefix: " << argv[1] << std::endl;
+        Aws::Testing::SetAwsResourcePrefix(argv[1]);
+    }
 
     Aws::InitAPI(options);
     ::testing::InitGoogleTest(&argc, argv);

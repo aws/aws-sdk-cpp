@@ -27,7 +27,10 @@ RunTaskRequest::RunTaskRequest() :
     m_overridesHasBeenSet(false),
     m_count(0),
     m_countHasBeenSet(false),
-    m_startedByHasBeenSet(false)
+    m_startedByHasBeenSet(false),
+    m_groupHasBeenSet(false),
+    m_placementConstraintsHasBeenSet(false),
+    m_placementStrategyHasBeenSet(false)
 {
 }
 
@@ -62,6 +65,34 @@ Aws::String RunTaskRequest::SerializePayload() const
   if(m_startedByHasBeenSet)
   {
    payload.WithString("startedBy", m_startedBy);
+
+  }
+
+  if(m_groupHasBeenSet)
+  {
+   payload.WithString("group", m_group);
+
+  }
+
+  if(m_placementConstraintsHasBeenSet)
+  {
+   Array<JsonValue> placementConstraintsJsonList(m_placementConstraints.size());
+   for(unsigned placementConstraintsIndex = 0; placementConstraintsIndex < placementConstraintsJsonList.GetLength(); ++placementConstraintsIndex)
+   {
+     placementConstraintsJsonList[placementConstraintsIndex].AsObject(m_placementConstraints[placementConstraintsIndex].Jsonize());
+   }
+   payload.WithArray("placementConstraints", std::move(placementConstraintsJsonList));
+
+  }
+
+  if(m_placementStrategyHasBeenSet)
+  {
+   Array<JsonValue> placementStrategyJsonList(m_placementStrategy.size());
+   for(unsigned placementStrategyIndex = 0; placementStrategyIndex < placementStrategyJsonList.GetLength(); ++placementStrategyIndex)
+   {
+     placementStrategyJsonList[placementStrategyIndex].AsObject(m_placementStrategy[placementStrategyIndex].Jsonize());
+   }
+   payload.WithArray("placementStrategy", std::move(placementStrategyJsonList));
 
   }
 

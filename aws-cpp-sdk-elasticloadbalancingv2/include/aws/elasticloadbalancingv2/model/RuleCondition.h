@@ -84,81 +84,89 @@ namespace Model
 
     /**
      * <p>The path pattern. You can specify a single path pattern.</p> <p>A path
-     * pattern is case sensitive, can be up to 255 characters in length, and can
-     * contain any of the following characters:</p> <ul> <li> <p>A-Z, a-z, 0-9</p>
-     * </li> <li> <p>_ - . $ / ~ " ' @ : +</p> </li> <li> <p>&amp; (using
-     * &amp;amp;)</p> </li> <li> <p>* (matches 0 or more characters)</p> </li> <li>
-     * <p>? (matches exactly 1 character)</p> </li> </ul>
+     * pattern is case sensitive, can be up to 128 characters in length, and can
+     * contain any of the following characters. Note that you can include up to three
+     * wildcard characters in a path pattern.</p> <ul> <li> <p>A-Z, a-z, 0-9</p> </li>
+     * <li> <p>_ - . $ / ~ " ' @ : +</p> </li> <li> <p>&amp; (using &amp;amp;)</p>
+     * </li> <li> <p>* (matches 0 or more characters)</p> </li> <li> <p>? (matches
+     * exactly 1 character)</p> </li> </ul>
      */
     inline const Aws::Vector<Aws::String>& GetValues() const{ return m_values; }
 
     /**
      * <p>The path pattern. You can specify a single path pattern.</p> <p>A path
-     * pattern is case sensitive, can be up to 255 characters in length, and can
-     * contain any of the following characters:</p> <ul> <li> <p>A-Z, a-z, 0-9</p>
-     * </li> <li> <p>_ - . $ / ~ " ' @ : +</p> </li> <li> <p>&amp; (using
-     * &amp;amp;)</p> </li> <li> <p>* (matches 0 or more characters)</p> </li> <li>
-     * <p>? (matches exactly 1 character)</p> </li> </ul>
+     * pattern is case sensitive, can be up to 128 characters in length, and can
+     * contain any of the following characters. Note that you can include up to three
+     * wildcard characters in a path pattern.</p> <ul> <li> <p>A-Z, a-z, 0-9</p> </li>
+     * <li> <p>_ - . $ / ~ " ' @ : +</p> </li> <li> <p>&amp; (using &amp;amp;)</p>
+     * </li> <li> <p>* (matches 0 or more characters)</p> </li> <li> <p>? (matches
+     * exactly 1 character)</p> </li> </ul>
      */
     inline void SetValues(const Aws::Vector<Aws::String>& value) { m_valuesHasBeenSet = true; m_values = value; }
 
     /**
      * <p>The path pattern. You can specify a single path pattern.</p> <p>A path
-     * pattern is case sensitive, can be up to 255 characters in length, and can
-     * contain any of the following characters:</p> <ul> <li> <p>A-Z, a-z, 0-9</p>
-     * </li> <li> <p>_ - . $ / ~ " ' @ : +</p> </li> <li> <p>&amp; (using
-     * &amp;amp;)</p> </li> <li> <p>* (matches 0 or more characters)</p> </li> <li>
-     * <p>? (matches exactly 1 character)</p> </li> </ul>
+     * pattern is case sensitive, can be up to 128 characters in length, and can
+     * contain any of the following characters. Note that you can include up to three
+     * wildcard characters in a path pattern.</p> <ul> <li> <p>A-Z, a-z, 0-9</p> </li>
+     * <li> <p>_ - . $ / ~ " ' @ : +</p> </li> <li> <p>&amp; (using &amp;amp;)</p>
+     * </li> <li> <p>* (matches 0 or more characters)</p> </li> <li> <p>? (matches
+     * exactly 1 character)</p> </li> </ul>
      */
     inline void SetValues(Aws::Vector<Aws::String>&& value) { m_valuesHasBeenSet = true; m_values = value; }
 
     /**
      * <p>The path pattern. You can specify a single path pattern.</p> <p>A path
-     * pattern is case sensitive, can be up to 255 characters in length, and can
-     * contain any of the following characters:</p> <ul> <li> <p>A-Z, a-z, 0-9</p>
-     * </li> <li> <p>_ - . $ / ~ " ' @ : +</p> </li> <li> <p>&amp; (using
-     * &amp;amp;)</p> </li> <li> <p>* (matches 0 or more characters)</p> </li> <li>
-     * <p>? (matches exactly 1 character)</p> </li> </ul>
+     * pattern is case sensitive, can be up to 128 characters in length, and can
+     * contain any of the following characters. Note that you can include up to three
+     * wildcard characters in a path pattern.</p> <ul> <li> <p>A-Z, a-z, 0-9</p> </li>
+     * <li> <p>_ - . $ / ~ " ' @ : +</p> </li> <li> <p>&amp; (using &amp;amp;)</p>
+     * </li> <li> <p>* (matches 0 or more characters)</p> </li> <li> <p>? (matches
+     * exactly 1 character)</p> </li> </ul>
      */
     inline RuleCondition& WithValues(const Aws::Vector<Aws::String>& value) { SetValues(value); return *this;}
 
     /**
      * <p>The path pattern. You can specify a single path pattern.</p> <p>A path
-     * pattern is case sensitive, can be up to 255 characters in length, and can
-     * contain any of the following characters:</p> <ul> <li> <p>A-Z, a-z, 0-9</p>
-     * </li> <li> <p>_ - . $ / ~ " ' @ : +</p> </li> <li> <p>&amp; (using
-     * &amp;amp;)</p> </li> <li> <p>* (matches 0 or more characters)</p> </li> <li>
-     * <p>? (matches exactly 1 character)</p> </li> </ul>
+     * pattern is case sensitive, can be up to 128 characters in length, and can
+     * contain any of the following characters. Note that you can include up to three
+     * wildcard characters in a path pattern.</p> <ul> <li> <p>A-Z, a-z, 0-9</p> </li>
+     * <li> <p>_ - . $ / ~ " ' @ : +</p> </li> <li> <p>&amp; (using &amp;amp;)</p>
+     * </li> <li> <p>* (matches 0 or more characters)</p> </li> <li> <p>? (matches
+     * exactly 1 character)</p> </li> </ul>
      */
     inline RuleCondition& WithValues(Aws::Vector<Aws::String>&& value) { SetValues(value); return *this;}
 
     /**
      * <p>The path pattern. You can specify a single path pattern.</p> <p>A path
-     * pattern is case sensitive, can be up to 255 characters in length, and can
-     * contain any of the following characters:</p> <ul> <li> <p>A-Z, a-z, 0-9</p>
-     * </li> <li> <p>_ - . $ / ~ " ' @ : +</p> </li> <li> <p>&amp; (using
-     * &amp;amp;)</p> </li> <li> <p>* (matches 0 or more characters)</p> </li> <li>
-     * <p>? (matches exactly 1 character)</p> </li> </ul>
+     * pattern is case sensitive, can be up to 128 characters in length, and can
+     * contain any of the following characters. Note that you can include up to three
+     * wildcard characters in a path pattern.</p> <ul> <li> <p>A-Z, a-z, 0-9</p> </li>
+     * <li> <p>_ - . $ / ~ " ' @ : +</p> </li> <li> <p>&amp; (using &amp;amp;)</p>
+     * </li> <li> <p>* (matches 0 or more characters)</p> </li> <li> <p>? (matches
+     * exactly 1 character)</p> </li> </ul>
      */
     inline RuleCondition& AddValues(const Aws::String& value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
 
     /**
      * <p>The path pattern. You can specify a single path pattern.</p> <p>A path
-     * pattern is case sensitive, can be up to 255 characters in length, and can
-     * contain any of the following characters:</p> <ul> <li> <p>A-Z, a-z, 0-9</p>
-     * </li> <li> <p>_ - . $ / ~ " ' @ : +</p> </li> <li> <p>&amp; (using
-     * &amp;amp;)</p> </li> <li> <p>* (matches 0 or more characters)</p> </li> <li>
-     * <p>? (matches exactly 1 character)</p> </li> </ul>
+     * pattern is case sensitive, can be up to 128 characters in length, and can
+     * contain any of the following characters. Note that you can include up to three
+     * wildcard characters in a path pattern.</p> <ul> <li> <p>A-Z, a-z, 0-9</p> </li>
+     * <li> <p>_ - . $ / ~ " ' @ : +</p> </li> <li> <p>&amp; (using &amp;amp;)</p>
+     * </li> <li> <p>* (matches 0 or more characters)</p> </li> <li> <p>? (matches
+     * exactly 1 character)</p> </li> </ul>
      */
     inline RuleCondition& AddValues(Aws::String&& value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
 
     /**
      * <p>The path pattern. You can specify a single path pattern.</p> <p>A path
-     * pattern is case sensitive, can be up to 255 characters in length, and can
-     * contain any of the following characters:</p> <ul> <li> <p>A-Z, a-z, 0-9</p>
-     * </li> <li> <p>_ - . $ / ~ " ' @ : +</p> </li> <li> <p>&amp; (using
-     * &amp;amp;)</p> </li> <li> <p>* (matches 0 or more characters)</p> </li> <li>
-     * <p>? (matches exactly 1 character)</p> </li> </ul>
+     * pattern is case sensitive, can be up to 128 characters in length, and can
+     * contain any of the following characters. Note that you can include up to three
+     * wildcard characters in a path pattern.</p> <ul> <li> <p>A-Z, a-z, 0-9</p> </li>
+     * <li> <p>_ - . $ / ~ " ' @ : +</p> </li> <li> <p>&amp; (using &amp;amp;)</p>
+     * </li> <li> <p>* (matches 0 or more characters)</p> </li> <li> <p>? (matches
+     * exactly 1 character)</p> </li> </ul>
      */
     inline RuleCondition& AddValues(const char* value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
 

@@ -35,6 +35,7 @@ namespace Aws
         static const int Failed_HASH = HashingUtils::HashString("Failed");
         static const int Skipped_HASH = HashingUtils::HashString("Skipped");
         static const int Unknown_HASH = HashingUtils::HashString("Unknown");
+        static const int Ready_HASH = HashingUtils::HashString("Ready");
 
 
         InstanceStatus GetInstanceStatusForName(const Aws::String& name)
@@ -64,6 +65,10 @@ namespace Aws
           {
             return InstanceStatus::Unknown;
           }
+          else if (hashCode == Ready_HASH)
+          {
+            return InstanceStatus::Ready;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -90,6 +95,8 @@ namespace Aws
             return "Skipped";
           case InstanceStatus::Unknown:
             return "Unknown";
+          case InstanceStatus::Ready:
+            return "Ready";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/codedeploy/model/InstanceStatus.h>
+#include <aws/codedeploy/model/InstanceType.h>
 
 namespace Aws
 {
@@ -201,6 +202,55 @@ namespace Model
      */
     inline ListDeploymentInstancesRequest& AddInstanceStatusFilter(InstanceStatus&& value) { m_instanceStatusFilterHasBeenSet = true; m_instanceStatusFilter.push_back(value); return *this; }
 
+    /**
+     * <p>The set of instances in a blue/green deployment, either those in the original
+     * environment ("BLUE") or those in the replacement environment ("GREEN"), for
+     * which you want to view instance information.</p>
+     */
+    inline const Aws::Vector<InstanceType>& GetInstanceTypeFilter() const{ return m_instanceTypeFilter; }
+
+    /**
+     * <p>The set of instances in a blue/green deployment, either those in the original
+     * environment ("BLUE") or those in the replacement environment ("GREEN"), for
+     * which you want to view instance information.</p>
+     */
+    inline void SetInstanceTypeFilter(const Aws::Vector<InstanceType>& value) { m_instanceTypeFilterHasBeenSet = true; m_instanceTypeFilter = value; }
+
+    /**
+     * <p>The set of instances in a blue/green deployment, either those in the original
+     * environment ("BLUE") or those in the replacement environment ("GREEN"), for
+     * which you want to view instance information.</p>
+     */
+    inline void SetInstanceTypeFilter(Aws::Vector<InstanceType>&& value) { m_instanceTypeFilterHasBeenSet = true; m_instanceTypeFilter = value; }
+
+    /**
+     * <p>The set of instances in a blue/green deployment, either those in the original
+     * environment ("BLUE") or those in the replacement environment ("GREEN"), for
+     * which you want to view instance information.</p>
+     */
+    inline ListDeploymentInstancesRequest& WithInstanceTypeFilter(const Aws::Vector<InstanceType>& value) { SetInstanceTypeFilter(value); return *this;}
+
+    /**
+     * <p>The set of instances in a blue/green deployment, either those in the original
+     * environment ("BLUE") or those in the replacement environment ("GREEN"), for
+     * which you want to view instance information.</p>
+     */
+    inline ListDeploymentInstancesRequest& WithInstanceTypeFilter(Aws::Vector<InstanceType>&& value) { SetInstanceTypeFilter(value); return *this;}
+
+    /**
+     * <p>The set of instances in a blue/green deployment, either those in the original
+     * environment ("BLUE") or those in the replacement environment ("GREEN"), for
+     * which you want to view instance information.</p>
+     */
+    inline ListDeploymentInstancesRequest& AddInstanceTypeFilter(const InstanceType& value) { m_instanceTypeFilterHasBeenSet = true; m_instanceTypeFilter.push_back(value); return *this; }
+
+    /**
+     * <p>The set of instances in a blue/green deployment, either those in the original
+     * environment ("BLUE") or those in the replacement environment ("GREEN"), for
+     * which you want to view instance information.</p>
+     */
+    inline ListDeploymentInstancesRequest& AddInstanceTypeFilter(InstanceType&& value) { m_instanceTypeFilterHasBeenSet = true; m_instanceTypeFilter.push_back(value); return *this; }
+
   private:
     Aws::String m_deploymentId;
     bool m_deploymentIdHasBeenSet;
@@ -208,6 +258,8 @@ namespace Model
     bool m_nextTokenHasBeenSet;
     Aws::Vector<InstanceStatus> m_instanceStatusFilter;
     bool m_instanceStatusFilterHasBeenSet;
+    Aws::Vector<InstanceType> m_instanceTypeFilter;
+    bool m_instanceTypeFilterHasBeenSet;
   };
 
 } // namespace Model

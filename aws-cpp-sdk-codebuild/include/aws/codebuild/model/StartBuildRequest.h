@@ -137,136 +137,136 @@ namespace Model
 
     /**
      * <p>Build output artifact settings that override, for this build only, the latest
-     * ones already defined in the corresponding build project.</p>
+     * ones already defined in the build project.</p>
      */
     inline const ProjectArtifacts& GetArtifactsOverride() const{ return m_artifactsOverride; }
 
     /**
      * <p>Build output artifact settings that override, for this build only, the latest
-     * ones already defined in the corresponding build project.</p>
+     * ones already defined in the build project.</p>
      */
     inline void SetArtifactsOverride(const ProjectArtifacts& value) { m_artifactsOverrideHasBeenSet = true; m_artifactsOverride = value; }
 
     /**
      * <p>Build output artifact settings that override, for this build only, the latest
-     * ones already defined in the corresponding build project.</p>
+     * ones already defined in the build project.</p>
      */
     inline void SetArtifactsOverride(ProjectArtifacts&& value) { m_artifactsOverrideHasBeenSet = true; m_artifactsOverride = value; }
 
     /**
      * <p>Build output artifact settings that override, for this build only, the latest
-     * ones already defined in the corresponding build project.</p>
+     * ones already defined in the build project.</p>
      */
     inline StartBuildRequest& WithArtifactsOverride(const ProjectArtifacts& value) { SetArtifactsOverride(value); return *this;}
 
     /**
      * <p>Build output artifact settings that override, for this build only, the latest
-     * ones already defined in the corresponding build project.</p>
+     * ones already defined in the build project.</p>
      */
     inline StartBuildRequest& WithArtifactsOverride(ProjectArtifacts&& value) { SetArtifactsOverride(value); return *this;}
 
     /**
      * <p>A set of environment variables that overrides, for this build only, the
-     * latest ones already defined in the corresponding build project.</p>
+     * latest ones already defined in the build project.</p>
      */
     inline const Aws::Vector<EnvironmentVariable>& GetEnvironmentVariablesOverride() const{ return m_environmentVariablesOverride; }
 
     /**
      * <p>A set of environment variables that overrides, for this build only, the
-     * latest ones already defined in the corresponding build project.</p>
+     * latest ones already defined in the build project.</p>
      */
     inline void SetEnvironmentVariablesOverride(const Aws::Vector<EnvironmentVariable>& value) { m_environmentVariablesOverrideHasBeenSet = true; m_environmentVariablesOverride = value; }
 
     /**
      * <p>A set of environment variables that overrides, for this build only, the
-     * latest ones already defined in the corresponding build project.</p>
+     * latest ones already defined in the build project.</p>
      */
     inline void SetEnvironmentVariablesOverride(Aws::Vector<EnvironmentVariable>&& value) { m_environmentVariablesOverrideHasBeenSet = true; m_environmentVariablesOverride = value; }
 
     /**
      * <p>A set of environment variables that overrides, for this build only, the
-     * latest ones already defined in the corresponding build project.</p>
+     * latest ones already defined in the build project.</p>
      */
     inline StartBuildRequest& WithEnvironmentVariablesOverride(const Aws::Vector<EnvironmentVariable>& value) { SetEnvironmentVariablesOverride(value); return *this;}
 
     /**
      * <p>A set of environment variables that overrides, for this build only, the
-     * latest ones already defined in the corresponding build project.</p>
+     * latest ones already defined in the build project.</p>
      */
     inline StartBuildRequest& WithEnvironmentVariablesOverride(Aws::Vector<EnvironmentVariable>&& value) { SetEnvironmentVariablesOverride(value); return *this;}
 
     /**
      * <p>A set of environment variables that overrides, for this build only, the
-     * latest ones already defined in the corresponding build project.</p>
+     * latest ones already defined in the build project.</p>
      */
     inline StartBuildRequest& AddEnvironmentVariablesOverride(const EnvironmentVariable& value) { m_environmentVariablesOverrideHasBeenSet = true; m_environmentVariablesOverride.push_back(value); return *this; }
 
     /**
      * <p>A set of environment variables that overrides, for this build only, the
-     * latest ones already defined in the corresponding build project.</p>
+     * latest ones already defined in the build project.</p>
      */
     inline StartBuildRequest& AddEnvironmentVariablesOverride(EnvironmentVariable&& value) { m_environmentVariablesOverrideHasBeenSet = true; m_environmentVariablesOverride.push_back(value); return *this; }
 
     /**
      * <p>A build spec declaration that overrides, for this build only, the latest one
-     * already defined in the corresponding build project.</p>
+     * already defined in the build project.</p>
      */
     inline const Aws::String& GetBuildspecOverride() const{ return m_buildspecOverride; }
 
     /**
      * <p>A build spec declaration that overrides, for this build only, the latest one
-     * already defined in the corresponding build project.</p>
+     * already defined in the build project.</p>
      */
     inline void SetBuildspecOverride(const Aws::String& value) { m_buildspecOverrideHasBeenSet = true; m_buildspecOverride = value; }
 
     /**
      * <p>A build spec declaration that overrides, for this build only, the latest one
-     * already defined in the corresponding build project.</p>
+     * already defined in the build project.</p>
      */
     inline void SetBuildspecOverride(Aws::String&& value) { m_buildspecOverrideHasBeenSet = true; m_buildspecOverride = value; }
 
     /**
      * <p>A build spec declaration that overrides, for this build only, the latest one
-     * already defined in the corresponding build project.</p>
+     * already defined in the build project.</p>
      */
     inline void SetBuildspecOverride(const char* value) { m_buildspecOverrideHasBeenSet = true; m_buildspecOverride.assign(value); }
 
     /**
      * <p>A build spec declaration that overrides, for this build only, the latest one
-     * already defined in the corresponding build project.</p>
+     * already defined in the build project.</p>
      */
     inline StartBuildRequest& WithBuildspecOverride(const Aws::String& value) { SetBuildspecOverride(value); return *this;}
 
     /**
      * <p>A build spec declaration that overrides, for this build only, the latest one
-     * already defined in the corresponding build project.</p>
+     * already defined in the build project.</p>
      */
     inline StartBuildRequest& WithBuildspecOverride(Aws::String&& value) { SetBuildspecOverride(value); return *this;}
 
     /**
      * <p>A build spec declaration that overrides, for this build only, the latest one
-     * already defined in the corresponding build project.</p>
+     * already defined in the build project.</p>
      */
     inline StartBuildRequest& WithBuildspecOverride(const char* value) { SetBuildspecOverride(value); return *this;}
 
     /**
-     * <p>The number of build timeout minutes, from 5 to 480 (8 hours) that overrides,
-     * for this build only, the latest setting already defined in the corresponding
-     * build project.</p>
+     * <p>The number of build timeout minutes, from 5 to 480 (8 hours), that overrides,
+     * for this build only, the latest setting already defined in the build
+     * project.</p>
      */
     inline int GetTimeoutInMinutesOverride() const{ return m_timeoutInMinutesOverride; }
 
     /**
-     * <p>The number of build timeout minutes, from 5 to 480 (8 hours) that overrides,
-     * for this build only, the latest setting already defined in the corresponding
-     * build project.</p>
+     * <p>The number of build timeout minutes, from 5 to 480 (8 hours), that overrides,
+     * for this build only, the latest setting already defined in the build
+     * project.</p>
      */
     inline void SetTimeoutInMinutesOverride(int value) { m_timeoutInMinutesOverrideHasBeenSet = true; m_timeoutInMinutesOverride = value; }
 
     /**
-     * <p>The number of build timeout minutes, from 5 to 480 (8 hours) that overrides,
-     * for this build only, the latest setting already defined in the corresponding
-     * build project.</p>
+     * <p>The number of build timeout minutes, from 5 to 480 (8 hours), that overrides,
+     * for this build only, the latest setting already defined in the build
+     * project.</p>
      */
     inline StartBuildRequest& WithTimeoutInMinutesOverride(int value) { SetTimeoutInMinutesOverride(value); return *this;}
 

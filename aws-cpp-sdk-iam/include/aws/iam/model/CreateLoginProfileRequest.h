@@ -96,86 +96,93 @@ namespace Model
     inline CreateLoginProfileRequest& WithUserName(const char* value) { SetUserName(value); return *this;}
 
     /**
-     * <p>The new password for the user.</p> <p>This parameter allows (per its <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
-     * consisting of almost any printable ASCII character from the space (\u0020)
-     * through the end of the ASCII character range (\u00FF). You can also include the
-     * tab (\u0009), line feed (\u000A), and carriage return (\u000D) characters.
-     * Although any of these characters are valid in a password, note that many tools,
-     * such as the AWS Management Console, might restrict the ability to enter certain
-     * characters because they have special meaning within that tool.</p>
+     * <p>The new password for the user.</p> <p>The <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this
+     * parameter is a string of characters consisting of almost any printable ASCII
+     * character from the space (\u0020) through the end of the ASCII character range
+     * (\u00FF). You can also include the tab (\u0009), line feed (\u000A), and
+     * carriage return (\u000D) characters. Although any of these characters are valid
+     * in a password, note that many tools, such as the AWS Management Console, might
+     * restrict the ability to enter certain characters because they have special
+     * meaning within that tool.</p>
      */
     inline const Aws::String& GetPassword() const{ return m_password; }
 
     /**
-     * <p>The new password for the user.</p> <p>This parameter allows (per its <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
-     * consisting of almost any printable ASCII character from the space (\u0020)
-     * through the end of the ASCII character range (\u00FF). You can also include the
-     * tab (\u0009), line feed (\u000A), and carriage return (\u000D) characters.
-     * Although any of these characters are valid in a password, note that many tools,
-     * such as the AWS Management Console, might restrict the ability to enter certain
-     * characters because they have special meaning within that tool.</p>
+     * <p>The new password for the user.</p> <p>The <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this
+     * parameter is a string of characters consisting of almost any printable ASCII
+     * character from the space (\u0020) through the end of the ASCII character range
+     * (\u00FF). You can also include the tab (\u0009), line feed (\u000A), and
+     * carriage return (\u000D) characters. Although any of these characters are valid
+     * in a password, note that many tools, such as the AWS Management Console, might
+     * restrict the ability to enter certain characters because they have special
+     * meaning within that tool.</p>
      */
     inline void SetPassword(const Aws::String& value) { m_passwordHasBeenSet = true; m_password = value; }
 
     /**
-     * <p>The new password for the user.</p> <p>This parameter allows (per its <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
-     * consisting of almost any printable ASCII character from the space (\u0020)
-     * through the end of the ASCII character range (\u00FF). You can also include the
-     * tab (\u0009), line feed (\u000A), and carriage return (\u000D) characters.
-     * Although any of these characters are valid in a password, note that many tools,
-     * such as the AWS Management Console, might restrict the ability to enter certain
-     * characters because they have special meaning within that tool.</p>
+     * <p>The new password for the user.</p> <p>The <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this
+     * parameter is a string of characters consisting of almost any printable ASCII
+     * character from the space (\u0020) through the end of the ASCII character range
+     * (\u00FF). You can also include the tab (\u0009), line feed (\u000A), and
+     * carriage return (\u000D) characters. Although any of these characters are valid
+     * in a password, note that many tools, such as the AWS Management Console, might
+     * restrict the ability to enter certain characters because they have special
+     * meaning within that tool.</p>
      */
     inline void SetPassword(Aws::String&& value) { m_passwordHasBeenSet = true; m_password = value; }
 
     /**
-     * <p>The new password for the user.</p> <p>This parameter allows (per its <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
-     * consisting of almost any printable ASCII character from the space (\u0020)
-     * through the end of the ASCII character range (\u00FF). You can also include the
-     * tab (\u0009), line feed (\u000A), and carriage return (\u000D) characters.
-     * Although any of these characters are valid in a password, note that many tools,
-     * such as the AWS Management Console, might restrict the ability to enter certain
-     * characters because they have special meaning within that tool.</p>
+     * <p>The new password for the user.</p> <p>The <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this
+     * parameter is a string of characters consisting of almost any printable ASCII
+     * character from the space (\u0020) through the end of the ASCII character range
+     * (\u00FF). You can also include the tab (\u0009), line feed (\u000A), and
+     * carriage return (\u000D) characters. Although any of these characters are valid
+     * in a password, note that many tools, such as the AWS Management Console, might
+     * restrict the ability to enter certain characters because they have special
+     * meaning within that tool.</p>
      */
     inline void SetPassword(const char* value) { m_passwordHasBeenSet = true; m_password.assign(value); }
 
     /**
-     * <p>The new password for the user.</p> <p>This parameter allows (per its <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
-     * consisting of almost any printable ASCII character from the space (\u0020)
-     * through the end of the ASCII character range (\u00FF). You can also include the
-     * tab (\u0009), line feed (\u000A), and carriage return (\u000D) characters.
-     * Although any of these characters are valid in a password, note that many tools,
-     * such as the AWS Management Console, might restrict the ability to enter certain
-     * characters because they have special meaning within that tool.</p>
+     * <p>The new password for the user.</p> <p>The <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this
+     * parameter is a string of characters consisting of almost any printable ASCII
+     * character from the space (\u0020) through the end of the ASCII character range
+     * (\u00FF). You can also include the tab (\u0009), line feed (\u000A), and
+     * carriage return (\u000D) characters. Although any of these characters are valid
+     * in a password, note that many tools, such as the AWS Management Console, might
+     * restrict the ability to enter certain characters because they have special
+     * meaning within that tool.</p>
      */
     inline CreateLoginProfileRequest& WithPassword(const Aws::String& value) { SetPassword(value); return *this;}
 
     /**
-     * <p>The new password for the user.</p> <p>This parameter allows (per its <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
-     * consisting of almost any printable ASCII character from the space (\u0020)
-     * through the end of the ASCII character range (\u00FF). You can also include the
-     * tab (\u0009), line feed (\u000A), and carriage return (\u000D) characters.
-     * Although any of these characters are valid in a password, note that many tools,
-     * such as the AWS Management Console, might restrict the ability to enter certain
-     * characters because they have special meaning within that tool.</p>
+     * <p>The new password for the user.</p> <p>The <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this
+     * parameter is a string of characters consisting of almost any printable ASCII
+     * character from the space (\u0020) through the end of the ASCII character range
+     * (\u00FF). You can also include the tab (\u0009), line feed (\u000A), and
+     * carriage return (\u000D) characters. Although any of these characters are valid
+     * in a password, note that many tools, such as the AWS Management Console, might
+     * restrict the ability to enter certain characters because they have special
+     * meaning within that tool.</p>
      */
     inline CreateLoginProfileRequest& WithPassword(Aws::String&& value) { SetPassword(value); return *this;}
 
     /**
-     * <p>The new password for the user.</p> <p>This parameter allows (per its <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
-     * consisting of almost any printable ASCII character from the space (\u0020)
-     * through the end of the ASCII character range (\u00FF). You can also include the
-     * tab (\u0009), line feed (\u000A), and carriage return (\u000D) characters.
-     * Although any of these characters are valid in a password, note that many tools,
-     * such as the AWS Management Console, might restrict the ability to enter certain
-     * characters because they have special meaning within that tool.</p>
+     * <p>The new password for the user.</p> <p>The <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this
+     * parameter is a string of characters consisting of almost any printable ASCII
+     * character from the space (\u0020) through the end of the ASCII character range
+     * (\u00FF). You can also include the tab (\u0009), line feed (\u000A), and
+     * carriage return (\u000D) characters. Although any of these characters are valid
+     * in a password, note that many tools, such as the AWS Management Console, might
+     * restrict the ability to enter certain characters because they have special
+     * meaning within that tool.</p>
      */
     inline CreateLoginProfileRequest& WithPassword(const char* value) { SetPassword(value); return *this;}
 

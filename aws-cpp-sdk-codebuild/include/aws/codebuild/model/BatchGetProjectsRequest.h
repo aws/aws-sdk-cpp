@@ -36,42 +36,42 @@ namespace Model
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
     /**
-     * <p>The names of the build projects to get information about.</p>
+     * <p>The names of the build projects.</p>
      */
     inline const Aws::Vector<Aws::String>& GetNames() const{ return m_names; }
 
     /**
-     * <p>The names of the build projects to get information about.</p>
+     * <p>The names of the build projects.</p>
      */
     inline void SetNames(const Aws::Vector<Aws::String>& value) { m_namesHasBeenSet = true; m_names = value; }
 
     /**
-     * <p>The names of the build projects to get information about.</p>
+     * <p>The names of the build projects.</p>
      */
     inline void SetNames(Aws::Vector<Aws::String>&& value) { m_namesHasBeenSet = true; m_names = value; }
 
     /**
-     * <p>The names of the build projects to get information about.</p>
+     * <p>The names of the build projects.</p>
      */
     inline BatchGetProjectsRequest& WithNames(const Aws::Vector<Aws::String>& value) { SetNames(value); return *this;}
 
     /**
-     * <p>The names of the build projects to get information about.</p>
+     * <p>The names of the build projects.</p>
      */
     inline BatchGetProjectsRequest& WithNames(Aws::Vector<Aws::String>&& value) { SetNames(value); return *this;}
 
     /**
-     * <p>The names of the build projects to get information about.</p>
+     * <p>The names of the build projects.</p>
      */
     inline BatchGetProjectsRequest& AddNames(const Aws::String& value) { m_namesHasBeenSet = true; m_names.push_back(value); return *this; }
 
     /**
-     * <p>The names of the build projects to get information about.</p>
+     * <p>The names of the build projects.</p>
      */
     inline BatchGetProjectsRequest& AddNames(Aws::String&& value) { m_namesHasBeenSet = true; m_names.push_back(value); return *this; }
 
     /**
-     * <p>The names of the build projects to get information about.</p>
+     * <p>The names of the build projects.</p>
      */
     inline BatchGetProjectsRequest& AddNames(const char* value) { m_namesHasBeenSet = true; m_names.push_back(value); return *this; }
 

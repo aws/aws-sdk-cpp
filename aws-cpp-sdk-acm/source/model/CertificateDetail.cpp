@@ -52,7 +52,8 @@ CertificateDetail::CertificateDetail() :
     m_failureReason(FailureReason::NOT_SET),
     m_failureReasonHasBeenSet(false),
     m_type(CertificateType::NOT_SET),
-    m_typeHasBeenSet(false)
+    m_typeHasBeenSet(false),
+    m_renewalSummaryHasBeenSet(false)
 {
 }
 
@@ -81,7 +82,8 @@ CertificateDetail::CertificateDetail(const JsonValue& jsonValue) :
     m_failureReason(FailureReason::NOT_SET),
     m_failureReasonHasBeenSet(false),
     m_type(CertificateType::NOT_SET),
-    m_typeHasBeenSet(false)
+    m_typeHasBeenSet(false),
+    m_renewalSummaryHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -237,6 +239,13 @@ CertificateDetail& CertificateDetail::operator =(const JsonValue& jsonValue)
     m_typeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("RenewalSummary"))
+  {
+    m_renewalSummary = jsonValue.GetObject("RenewalSummary");
+
+    m_renewalSummaryHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -366,6 +375,12 @@ JsonValue CertificateDetail::Jsonize() const
   if(m_typeHasBeenSet)
   {
    payload.WithString("Type", CertificateTypeMapper::GetNameForCertificateType(m_type));
+  }
+
+  if(m_renewalSummaryHasBeenSet)
+  {
+   payload.WithObject("RenewalSummary", m_renewalSummary.Jsonize());
+
   }
 
   return payload;

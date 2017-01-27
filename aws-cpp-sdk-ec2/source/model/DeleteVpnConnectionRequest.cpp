@@ -32,7 +32,7 @@ Aws::String DeleteVpnConnectionRequest::SerializePayload() const
   ss << "Action=DeleteVpnConnection&";
   if(m_dryRunHasBeenSet)
   {
-    ss << "DryRun=" << m_dryRun << "&";
+    ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
   if(m_vpnConnectionIdHasBeenSet)

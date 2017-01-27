@@ -33,7 +33,7 @@ Aws::String CreateSnapshotRequest::SerializePayload() const
   ss << "Action=CreateSnapshot&";
   if(m_dryRunHasBeenSet)
   {
-    ss << "DryRun=" << m_dryRun << "&";
+    ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
   if(m_volumeIdHasBeenSet)

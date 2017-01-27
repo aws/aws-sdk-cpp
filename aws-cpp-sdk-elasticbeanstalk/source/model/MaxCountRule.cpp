@@ -83,7 +83,7 @@ void MaxCountRule::OutputToStream(Aws::OStream& oStream, const char* location, u
 {
   if(m_enabledHasBeenSet)
   {
-      oStream << location << index << locationValue << ".Enabled=" << m_enabled << "&";
+      oStream << location << index << locationValue << ".Enabled=" << std::boolalpha << m_enabled << "&";
   }
 
   if(m_maxCountHasBeenSet)
@@ -93,7 +93,7 @@ void MaxCountRule::OutputToStream(Aws::OStream& oStream, const char* location, u
 
   if(m_deleteSourceFromS3HasBeenSet)
   {
-      oStream << location << index << locationValue << ".DeleteSourceFromS3=" << m_deleteSourceFromS3 << "&";
+      oStream << location << index << locationValue << ".DeleteSourceFromS3=" << std::boolalpha << m_deleteSourceFromS3 << "&";
   }
 
 }
@@ -102,7 +102,7 @@ void MaxCountRule::OutputToStream(Aws::OStream& oStream, const char* location) c
 {
   if(m_enabledHasBeenSet)
   {
-      oStream << location << ".Enabled=" << m_enabled << "&";
+      oStream << location << ".Enabled=" << std::boolalpha << m_enabled << "&";
   }
   if(m_maxCountHasBeenSet)
   {
@@ -110,7 +110,7 @@ void MaxCountRule::OutputToStream(Aws::OStream& oStream, const char* location) c
   }
   if(m_deleteSourceFromS3HasBeenSet)
   {
-      oStream << location << ".DeleteSourceFromS3=" << m_deleteSourceFromS3 << "&";
+      oStream << location << ".DeleteSourceFromS3=" << std::boolalpha << m_deleteSourceFromS3 << "&";
   }
 }
 

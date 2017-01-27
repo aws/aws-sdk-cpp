@@ -171,7 +171,7 @@ void Vpc::OutputToStream(Aws::OStream& oStream, const char* location, unsigned i
 
   if(m_isDefaultHasBeenSet)
   {
-      oStream << location << index << locationValue << ".IsDefault=" << m_isDefault << "&";
+      oStream << location << index << locationValue << ".IsDefault=" << std::boolalpha << m_isDefault << "&";
   }
 
   if(m_ipv6CidrBlockAssociationSetHasBeenSet)
@@ -211,7 +211,7 @@ void Vpc::OutputToStream(Aws::OStream& oStream, const char* location) const
       for(auto& item : m_tags)
       {
         Aws::StringStream tagsSs;
-        tagsSs << location <<  ".item." << tagsIdx++;
+        tagsSs << location <<  ".Item." << tagsIdx++;
         item.OutputToStream(oStream, tagsSs.str().c_str());
       }
   }
@@ -221,7 +221,7 @@ void Vpc::OutputToStream(Aws::OStream& oStream, const char* location) const
   }
   if(m_isDefaultHasBeenSet)
   {
-      oStream << location << ".IsDefault=" << m_isDefault << "&";
+      oStream << location << ".IsDefault=" << std::boolalpha << m_isDefault << "&";
   }
   if(m_ipv6CidrBlockAssociationSetHasBeenSet)
   {
@@ -229,7 +229,7 @@ void Vpc::OutputToStream(Aws::OStream& oStream, const char* location) const
       for(auto& item : m_ipv6CidrBlockAssociationSet)
       {
         Aws::StringStream ipv6CidrBlockAssociationSetSs;
-        ipv6CidrBlockAssociationSetSs << location <<  ".item." << ipv6CidrBlockAssociationSetIdx++;
+        ipv6CidrBlockAssociationSetSs << location <<  ".Item." << ipv6CidrBlockAssociationSetIdx++;
         item.OutputToStream(oStream, ipv6CidrBlockAssociationSetSs.str().c_str());
       }
   }

@@ -62,7 +62,7 @@ Aws::String RunInstancesRequest::SerializePayload() const
   ss << "Action=RunInstances&";
   if(m_dryRunHasBeenSet)
   {
-    ss << "DryRun=" << m_dryRun << "&";
+    ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
   if(m_imageIdHasBeenSet)
@@ -154,7 +154,7 @@ Aws::String RunInstancesRequest::SerializePayload() const
 
   if(m_disableApiTerminationHasBeenSet)
   {
-    ss << "DisableApiTermination=" << m_disableApiTermination << "&";
+    ss << "DisableApiTermination=" << std::boolalpha << m_disableApiTermination << "&";
   }
 
   if(m_instanceInitiatedShutdownBehaviorHasBeenSet)
@@ -209,7 +209,7 @@ Aws::String RunInstancesRequest::SerializePayload() const
 
   if(m_ebsOptimizedHasBeenSet)
   {
-    ss << "EbsOptimized=" << m_ebsOptimized << "&";
+    ss << "EbsOptimized=" << std::boolalpha << m_ebsOptimized << "&";
   }
 
   ss << "Version=2016-11-15";

@@ -170,7 +170,7 @@ Aws::String CreateDBInstanceRequest::SerializePayload() const
 
   if(m_multiAZHasBeenSet)
   {
-    ss << "MultiAZ=" << m_multiAZ << "&";
+    ss << "MultiAZ=" << std::boolalpha << m_multiAZ << "&";
   }
 
   if(m_engineVersionHasBeenSet)
@@ -180,7 +180,7 @@ Aws::String CreateDBInstanceRequest::SerializePayload() const
 
   if(m_autoMinorVersionUpgradeHasBeenSet)
   {
-    ss << "AutoMinorVersionUpgrade=" << m_autoMinorVersionUpgrade << "&";
+    ss << "AutoMinorVersionUpgrade=" << std::boolalpha << m_autoMinorVersionUpgrade << "&";
   }
 
   if(m_licenseModelHasBeenSet)
@@ -205,7 +205,7 @@ Aws::String CreateDBInstanceRequest::SerializePayload() const
 
   if(m_publiclyAccessibleHasBeenSet)
   {
-    ss << "PubliclyAccessible=" << m_publiclyAccessible << "&";
+    ss << "PubliclyAccessible=" << std::boolalpha << m_publiclyAccessible << "&";
   }
 
   if(m_tagsHasBeenSet)
@@ -240,7 +240,7 @@ Aws::String CreateDBInstanceRequest::SerializePayload() const
 
   if(m_storageEncryptedHasBeenSet)
   {
-    ss << "StorageEncrypted=" << m_storageEncrypted << "&";
+    ss << "StorageEncrypted=" << std::boolalpha << m_storageEncrypted << "&";
   }
 
   if(m_kmsKeyIdHasBeenSet)
@@ -255,7 +255,7 @@ Aws::String CreateDBInstanceRequest::SerializePayload() const
 
   if(m_copyTagsToSnapshotHasBeenSet)
   {
-    ss << "CopyTagsToSnapshot=" << m_copyTagsToSnapshot << "&";
+    ss << "CopyTagsToSnapshot=" << std::boolalpha << m_copyTagsToSnapshot << "&";
   }
 
   if(m_monitoringIntervalHasBeenSet)

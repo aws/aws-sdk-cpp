@@ -63,87 +63,72 @@ namespace Model
     inline StreamSpecification& WithStreamEnabled(bool value) { SetStreamEnabled(value); return *this;}
 
     /**
-     * <p>The DynamoDB Streams settings for the table. These settings consist of:</p>
-     * <ul> <li> <p> <i>StreamEnabled</i> - Indicates whether DynamoDB Streams is
-     * enabled (true) or disabled (false) on the table.</p> </li> <li> <p>
-     * <i>StreamViewType</i> - When an item in the table is modified,
-     * <i>StreamViewType</i> determines what information is written to the stream for
-     * this table. Valid values for <i>StreamViewType</i> are:</p> <ul> <li> <p>
-     * <i>KEYS_ONLY</i> - Only the key attributes of the modified item are written to
-     * the stream.</p> </li> <li> <p> <i>NEW_IMAGE</i> - The entire item, as it appears
-     * after it was modified, is written to the stream.</p> </li> <li> <p>
-     * <i>OLD_IMAGE</i> - The entire item, as it appeared before it was modified, is
-     * written to the stream.</p> </li> <li> <p> <i>NEW_AND_OLD_IMAGES</i> - Both the
-     * new and the old item images of the item are written to the stream.</p> </li>
-     * </ul> </li> </ul>
+     * <p> When an item in the table is modified, <code>StreamViewType</code>
+     * determines what information is written to the stream for this table. Valid
+     * values for <code>StreamViewType</code> are:</p> <ul> <li> <p>
+     * <code>KEYS_ONLY</code> - Only the key attributes of the modified item are
+     * written to the stream.</p> </li> <li> <p> <code>NEW_IMAGE</code> - The entire
+     * item, as it appears after it was modified, is written to the stream.</p> </li>
+     * <li> <p> <code>OLD_IMAGE</code> - The entire item, as it appeared before it was
+     * modified, is written to the stream.</p> </li> <li> <p>
+     * <code>NEW_AND_OLD_IMAGES</code> - Both the new and the old item images of the
+     * item are written to the stream.</p> </li> </ul>
      */
     inline const StreamViewType& GetStreamViewType() const{ return m_streamViewType; }
 
     /**
-     * <p>The DynamoDB Streams settings for the table. These settings consist of:</p>
-     * <ul> <li> <p> <i>StreamEnabled</i> - Indicates whether DynamoDB Streams is
-     * enabled (true) or disabled (false) on the table.</p> </li> <li> <p>
-     * <i>StreamViewType</i> - When an item in the table is modified,
-     * <i>StreamViewType</i> determines what information is written to the stream for
-     * this table. Valid values for <i>StreamViewType</i> are:</p> <ul> <li> <p>
-     * <i>KEYS_ONLY</i> - Only the key attributes of the modified item are written to
-     * the stream.</p> </li> <li> <p> <i>NEW_IMAGE</i> - The entire item, as it appears
-     * after it was modified, is written to the stream.</p> </li> <li> <p>
-     * <i>OLD_IMAGE</i> - The entire item, as it appeared before it was modified, is
-     * written to the stream.</p> </li> <li> <p> <i>NEW_AND_OLD_IMAGES</i> - Both the
-     * new and the old item images of the item are written to the stream.</p> </li>
-     * </ul> </li> </ul>
+     * <p> When an item in the table is modified, <code>StreamViewType</code>
+     * determines what information is written to the stream for this table. Valid
+     * values for <code>StreamViewType</code> are:</p> <ul> <li> <p>
+     * <code>KEYS_ONLY</code> - Only the key attributes of the modified item are
+     * written to the stream.</p> </li> <li> <p> <code>NEW_IMAGE</code> - The entire
+     * item, as it appears after it was modified, is written to the stream.</p> </li>
+     * <li> <p> <code>OLD_IMAGE</code> - The entire item, as it appeared before it was
+     * modified, is written to the stream.</p> </li> <li> <p>
+     * <code>NEW_AND_OLD_IMAGES</code> - Both the new and the old item images of the
+     * item are written to the stream.</p> </li> </ul>
      */
     inline void SetStreamViewType(const StreamViewType& value) { m_streamViewTypeHasBeenSet = true; m_streamViewType = value; }
 
     /**
-     * <p>The DynamoDB Streams settings for the table. These settings consist of:</p>
-     * <ul> <li> <p> <i>StreamEnabled</i> - Indicates whether DynamoDB Streams is
-     * enabled (true) or disabled (false) on the table.</p> </li> <li> <p>
-     * <i>StreamViewType</i> - When an item in the table is modified,
-     * <i>StreamViewType</i> determines what information is written to the stream for
-     * this table. Valid values for <i>StreamViewType</i> are:</p> <ul> <li> <p>
-     * <i>KEYS_ONLY</i> - Only the key attributes of the modified item are written to
-     * the stream.</p> </li> <li> <p> <i>NEW_IMAGE</i> - The entire item, as it appears
-     * after it was modified, is written to the stream.</p> </li> <li> <p>
-     * <i>OLD_IMAGE</i> - The entire item, as it appeared before it was modified, is
-     * written to the stream.</p> </li> <li> <p> <i>NEW_AND_OLD_IMAGES</i> - Both the
-     * new and the old item images of the item are written to the stream.</p> </li>
-     * </ul> </li> </ul>
+     * <p> When an item in the table is modified, <code>StreamViewType</code>
+     * determines what information is written to the stream for this table. Valid
+     * values for <code>StreamViewType</code> are:</p> <ul> <li> <p>
+     * <code>KEYS_ONLY</code> - Only the key attributes of the modified item are
+     * written to the stream.</p> </li> <li> <p> <code>NEW_IMAGE</code> - The entire
+     * item, as it appears after it was modified, is written to the stream.</p> </li>
+     * <li> <p> <code>OLD_IMAGE</code> - The entire item, as it appeared before it was
+     * modified, is written to the stream.</p> </li> <li> <p>
+     * <code>NEW_AND_OLD_IMAGES</code> - Both the new and the old item images of the
+     * item are written to the stream.</p> </li> </ul>
      */
     inline void SetStreamViewType(StreamViewType&& value) { m_streamViewTypeHasBeenSet = true; m_streamViewType = value; }
 
     /**
-     * <p>The DynamoDB Streams settings for the table. These settings consist of:</p>
-     * <ul> <li> <p> <i>StreamEnabled</i> - Indicates whether DynamoDB Streams is
-     * enabled (true) or disabled (false) on the table.</p> </li> <li> <p>
-     * <i>StreamViewType</i> - When an item in the table is modified,
-     * <i>StreamViewType</i> determines what information is written to the stream for
-     * this table. Valid values for <i>StreamViewType</i> are:</p> <ul> <li> <p>
-     * <i>KEYS_ONLY</i> - Only the key attributes of the modified item are written to
-     * the stream.</p> </li> <li> <p> <i>NEW_IMAGE</i> - The entire item, as it appears
-     * after it was modified, is written to the stream.</p> </li> <li> <p>
-     * <i>OLD_IMAGE</i> - The entire item, as it appeared before it was modified, is
-     * written to the stream.</p> </li> <li> <p> <i>NEW_AND_OLD_IMAGES</i> - Both the
-     * new and the old item images of the item are written to the stream.</p> </li>
-     * </ul> </li> </ul>
+     * <p> When an item in the table is modified, <code>StreamViewType</code>
+     * determines what information is written to the stream for this table. Valid
+     * values for <code>StreamViewType</code> are:</p> <ul> <li> <p>
+     * <code>KEYS_ONLY</code> - Only the key attributes of the modified item are
+     * written to the stream.</p> </li> <li> <p> <code>NEW_IMAGE</code> - The entire
+     * item, as it appears after it was modified, is written to the stream.</p> </li>
+     * <li> <p> <code>OLD_IMAGE</code> - The entire item, as it appeared before it was
+     * modified, is written to the stream.</p> </li> <li> <p>
+     * <code>NEW_AND_OLD_IMAGES</code> - Both the new and the old item images of the
+     * item are written to the stream.</p> </li> </ul>
      */
     inline StreamSpecification& WithStreamViewType(const StreamViewType& value) { SetStreamViewType(value); return *this;}
 
     /**
-     * <p>The DynamoDB Streams settings for the table. These settings consist of:</p>
-     * <ul> <li> <p> <i>StreamEnabled</i> - Indicates whether DynamoDB Streams is
-     * enabled (true) or disabled (false) on the table.</p> </li> <li> <p>
-     * <i>StreamViewType</i> - When an item in the table is modified,
-     * <i>StreamViewType</i> determines what information is written to the stream for
-     * this table. Valid values for <i>StreamViewType</i> are:</p> <ul> <li> <p>
-     * <i>KEYS_ONLY</i> - Only the key attributes of the modified item are written to
-     * the stream.</p> </li> <li> <p> <i>NEW_IMAGE</i> - The entire item, as it appears
-     * after it was modified, is written to the stream.</p> </li> <li> <p>
-     * <i>OLD_IMAGE</i> - The entire item, as it appeared before it was modified, is
-     * written to the stream.</p> </li> <li> <p> <i>NEW_AND_OLD_IMAGES</i> - Both the
-     * new and the old item images of the item are written to the stream.</p> </li>
-     * </ul> </li> </ul>
+     * <p> When an item in the table is modified, <code>StreamViewType</code>
+     * determines what information is written to the stream for this table. Valid
+     * values for <code>StreamViewType</code> are:</p> <ul> <li> <p>
+     * <code>KEYS_ONLY</code> - Only the key attributes of the modified item are
+     * written to the stream.</p> </li> <li> <p> <code>NEW_IMAGE</code> - The entire
+     * item, as it appears after it was modified, is written to the stream.</p> </li>
+     * <li> <p> <code>OLD_IMAGE</code> - The entire item, as it appeared before it was
+     * modified, is written to the stream.</p> </li> <li> <p>
+     * <code>NEW_AND_OLD_IMAGES</code> - Both the new and the old item images of the
+     * item are written to the stream.</p> </li> </ul>
      */
     inline StreamSpecification& WithStreamViewType(StreamViewType&& value) { SetStreamViewType(value); return *this;}
 

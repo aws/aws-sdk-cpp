@@ -46,44 +46,44 @@ namespace Model
     Aws::Utils::Json::JsonValue Jsonize() const;
 
     /**
-     * <p>The name of the resource, such as <code>CPU</code>, <code>MEMORY</code>,
-     * <code>PORTS</code>, or a user-defined resource.</p>
+     * <p>The name of the resource, such as <code>cpu</code>, <code>memory</code>,
+     * <code>ports</code>, or a user-defined resource.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>The name of the resource, such as <code>CPU</code>, <code>MEMORY</code>,
-     * <code>PORTS</code>, or a user-defined resource.</p>
+     * <p>The name of the resource, such as <code>cpu</code>, <code>memory</code>,
+     * <code>ports</code>, or a user-defined resource.</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>The name of the resource, such as <code>CPU</code>, <code>MEMORY</code>,
-     * <code>PORTS</code>, or a user-defined resource.</p>
+     * <p>The name of the resource, such as <code>cpu</code>, <code>memory</code>,
+     * <code>ports</code>, or a user-defined resource.</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>The name of the resource, such as <code>CPU</code>, <code>MEMORY</code>,
-     * <code>PORTS</code>, or a user-defined resource.</p>
+     * <p>The name of the resource, such as <code>cpu</code>, <code>memory</code>,
+     * <code>ports</code>, or a user-defined resource.</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>The name of the resource, such as <code>CPU</code>, <code>MEMORY</code>,
-     * <code>PORTS</code>, or a user-defined resource.</p>
+     * <p>The name of the resource, such as <code>cpu</code>, <code>memory</code>,
+     * <code>ports</code>, or a user-defined resource.</p>
      */
     inline Resource& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>The name of the resource, such as <code>CPU</code>, <code>MEMORY</code>,
-     * <code>PORTS</code>, or a user-defined resource.</p>
+     * <p>The name of the resource, such as <code>cpu</code>, <code>memory</code>,
+     * <code>ports</code>, or a user-defined resource.</p>
      */
     inline Resource& WithName(Aws::String&& value) { SetName(value); return *this;}
 
     /**
-     * <p>The name of the resource, such as <code>CPU</code>, <code>MEMORY</code>,
-     * <code>PORTS</code>, or a user-defined resource.</p>
+     * <p>The name of the resource, such as <code>cpu</code>, <code>memory</code>,
+     * <code>ports</code>, or a user-defined resource.</p>
      */
     inline Resource& WithName(const char* value) { SetName(value); return *this;}
 

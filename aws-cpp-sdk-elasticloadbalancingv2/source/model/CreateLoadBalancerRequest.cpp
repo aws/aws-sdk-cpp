@@ -25,7 +25,9 @@ CreateLoadBalancerRequest::CreateLoadBalancerRequest() :
     m_securityGroupsHasBeenSet(false),
     m_scheme(LoadBalancerSchemeEnum::NOT_SET),
     m_schemeHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_ipAddressType(IpAddressType::NOT_SET),
+    m_ipAddressTypeHasBeenSet(false)
 {
 }
 
@@ -73,6 +75,11 @@ Aws::String CreateLoadBalancerRequest::SerializePayload() const
       item.OutputToStream(ss, "Tags.member.", tagsCount, "");
       tagsCount++;
     }
+  }
+
+  if(m_ipAddressTypeHasBeenSet)
+  {
+    ss << "IpAddressType=" << IpAddressTypeMapper::GetNameForIpAddressType(m_ipAddressType) << "&";
   }
 
   ss << "Version=2015-12-01";

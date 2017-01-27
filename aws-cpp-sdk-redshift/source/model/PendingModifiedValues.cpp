@@ -168,12 +168,12 @@ void PendingModifiedValues::OutputToStream(Aws::OStream& oStream, const char* lo
 
   if(m_publiclyAccessibleHasBeenSet)
   {
-      oStream << location << index << locationValue << ".PubliclyAccessible=" << m_publiclyAccessible << "&";
+      oStream << location << index << locationValue << ".PubliclyAccessible=" << std::boolalpha << m_publiclyAccessible << "&";
   }
 
   if(m_enhancedVpcRoutingHasBeenSet)
   {
-      oStream << location << index << locationValue << ".EnhancedVpcRouting=" << m_enhancedVpcRouting << "&";
+      oStream << location << index << locationValue << ".EnhancedVpcRouting=" << std::boolalpha << m_enhancedVpcRouting << "&";
   }
 
 }
@@ -210,11 +210,11 @@ void PendingModifiedValues::OutputToStream(Aws::OStream& oStream, const char* lo
   }
   if(m_publiclyAccessibleHasBeenSet)
   {
-      oStream << location << ".PubliclyAccessible=" << m_publiclyAccessible << "&";
+      oStream << location << ".PubliclyAccessible=" << std::boolalpha << m_publiclyAccessible << "&";
   }
   if(m_enhancedVpcRoutingHasBeenSet)
   {
-      oStream << location << ".EnhancedVpcRouting=" << m_enhancedVpcRouting << "&";
+      oStream << location << ".EnhancedVpcRouting=" << std::boolalpha << m_enhancedVpcRouting << "&";
   }
 }
 

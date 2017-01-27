@@ -42,19 +42,28 @@ Aws::String ${typeInfo.className}::SerializePayload() const
   ${spaces}for(auto& item : $memberVarName)
   ${spaces}{
 #if($member.value.shape.flattened)
-#if($member.value.shape.listMember.locationName)
+#if($member.value.shape.listMember.queryName)
+#set($location = $member.value.shape.listMember.queryName)
+#elseif($member.value.shape.listMember.locationName)
 #set($location = $member.value.shape.listMember.locationName)
+#if($metadata.protocol == "ec2")
+#set($location = $CppViewHelper.capitalizeFirstChar($location))
+#end
 #else
 #set($location = $member.key)
 #end
 #else
-#if($member.value.locationName)
+#if($member.value.queryName)
+#set($location = $member.value.queryName)
+#elseif($member.value.locationName)
 #set($location = $member.value.locationName)
-#else
-#set($location = $member.key + ".member")
-#end
 #if($metadata.protocol == "ec2")
 #set($location = $CppViewHelper.capitalizeFirstChar($location))
+#end
+#elseif($metadata.protocol == "ec2")
+#set($location = $member.key)
+#else
+#set($location = $member.key + ".member")
 #end
 #end
 #if($member.value.shape.listMember.shape.structure)
@@ -69,6 +78,8 @@ Aws::String ${typeInfo.className}::SerializePayload() const
   ${spaces}      << StringUtils::URLEncode(${member.value.shape.listMember.shape.name}Mapper::GetNameFor${member.value.shape.listMember.shape.name}(item).c_str()) << "&";
 #elseif($member.value.shape.listMember.shape.double)
   ${spaces}      << StringUtils::URLEncode(item) << "&";
+#elseif($member.value.shape.listMember.shape.boolean)
+ ${spaces}       << std::boolalpha << item << "&";
 #else
  ${spaces}       << item << "&";
 #end
@@ -104,7 +115,9 @@ Aws::String ${typeInfo.className}::SerializePayload() const
 #elseif($member.value.shape.mapKey.shape.structure)
   ${spaces}  item.first.OutputToStream(ss, "${mapLocationName}.", ${varName}Count, ".${keyLocationName}");
 #elseif($member.value.shape.mapKey.shape.double)
-    ${spaces}ss << StringUtils::URLEncode(item.first) << "&";
+    ${spaces}    << StringUtils::URLEncode(item.first) << "&";
+#elseif($member.value.shape.mapKey.shape.boolean)
+  ${spaces}      << std::boolalpha << item.first << "&";
 #else
   ${spaces}      << item.first << "&";
 #end
@@ -121,19 +134,23 @@ Aws::String ${typeInfo.className}::SerializePayload() const
   ${spaces}  item.second.OutputToStream(ss, "${mapLocationName}.", ${varName}Count, ".${valueLocationName}");
 #elseif($member.value.shape.mapValue.shape.double)
   ${spaces}      << StringUtils::URLEncode(item.second) << "&";
+#elseif($member.value.shape.mapValue.shape.boolean)
+  ${spaces}      << std::boolalpha << item.second << "&";
 #else
   ${spaces}      << item.second << "&";
 #end
   ${spaces}  ${varName}Count++;
   ${spaces}}
 #else
-#if($member.value.locationName)
+#if($member.value.queryName)
+#set($location = $member.value.queryName)
+#elseif($member.value.locationName)
 #set($location = $member.value.locationName)
-#else
-#set($location = $member.key)
-#end
 #if($metadata.protocol == "ec2")
 #set($location = $CppViewHelper.capitalizeFirstChar($location))
+#end
+#else
+#set($location = $member.key)
 #end
 #if($member.value.shape.blob)
   ${spaces}ss << "${location}=" << HashingUtils::Base64Encode(${memberVarName}) << "&";
@@ -147,6 +164,8 @@ Aws::String ${typeInfo.className}::SerializePayload() const
   ${spaces}${memberVarName}.OutputToStream(ss, "${location}");
 #elseif($member.value.shape.double)
   ${spaces}ss << "${location}=" << StringUtils::URLEncode(${memberVarName}) << "&";
+#elseif($member.value.shape.boolean)
+  ${spaces}ss << "${location}=" << std::boolalpha << ${memberVarName} << "&";
 #else
   ${spaces}ss << "${location}=" << ${memberVarName} << "&";
 #end

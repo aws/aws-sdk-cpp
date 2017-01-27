@@ -33,8 +33,8 @@ namespace Model
 {
 
   /**
-   * <p>Information about the build project's build input source code.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>Information about the build input source code for the build
+   * project.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ProjectSource">AWS
    * API Reference</a></p>
    */
@@ -115,14 +115,15 @@ namespace Model
      * (Amazon S3) input bucket, the path to the ZIP file that contains the source code
      * (for example, <code>
      * <i>bucket-name</i>/<i>path</i>/<i>to</i>/<i>object-name</i>.zip</code>)</p>
-     * </li> <li> <p>For source code in a GitHub repository, the HTTPS clone URL,
-     * including the user name and personal access token, to the repository that
-     * contains the source code and the build spec (for example,
-     * <code>https://<i>login-user-name</i>:<i>personal-access-token</i>@github.com/<i>repo-owner-name</i>/<i>repo-name</i>.git</code>).
-     * For more information, see <a
-     * href="https://help.github.com/articles/creating-an-access-token-for-command-line-use/">Creating
-     * an Access Token for Command-Line Use</a> on the GitHub Help website.</p> </li>
-     * </ul>
+     * </li> <li> <p>For source code in a GitHub repository, instead of specifying a
+     * value here, you connect your AWS account to your GitHub account. To do this, use
+     * the AWS CodeBuild console to begin creating a build project, and follow the
+     * on-screen instructions to complete the connection. (After you have connected to
+     * your GitHub account, you do not need to finish creating the build project, and
+     * you may then leave the AWS CodeBuild console.) To instruct AWS CodeBuild to then
+     * use this connection, in the <code>source</code> object, set the
+     * <code>auth</code> object's <code>type</code> value to <code>OAUTH</code>.</p>
+     * </li> </ul>
      */
     inline const Aws::String& GetLocation() const{ return m_location; }
 
@@ -140,14 +141,15 @@ namespace Model
      * (Amazon S3) input bucket, the path to the ZIP file that contains the source code
      * (for example, <code>
      * <i>bucket-name</i>/<i>path</i>/<i>to</i>/<i>object-name</i>.zip</code>)</p>
-     * </li> <li> <p>For source code in a GitHub repository, the HTTPS clone URL,
-     * including the user name and personal access token, to the repository that
-     * contains the source code and the build spec (for example,
-     * <code>https://<i>login-user-name</i>:<i>personal-access-token</i>@github.com/<i>repo-owner-name</i>/<i>repo-name</i>.git</code>).
-     * For more information, see <a
-     * href="https://help.github.com/articles/creating-an-access-token-for-command-line-use/">Creating
-     * an Access Token for Command-Line Use</a> on the GitHub Help website.</p> </li>
-     * </ul>
+     * </li> <li> <p>For source code in a GitHub repository, instead of specifying a
+     * value here, you connect your AWS account to your GitHub account. To do this, use
+     * the AWS CodeBuild console to begin creating a build project, and follow the
+     * on-screen instructions to complete the connection. (After you have connected to
+     * your GitHub account, you do not need to finish creating the build project, and
+     * you may then leave the AWS CodeBuild console.) To instruct AWS CodeBuild to then
+     * use this connection, in the <code>source</code> object, set the
+     * <code>auth</code> object's <code>type</code> value to <code>OAUTH</code>.</p>
+     * </li> </ul>
      */
     inline void SetLocation(const Aws::String& value) { m_locationHasBeenSet = true; m_location = value; }
 
@@ -165,14 +167,15 @@ namespace Model
      * (Amazon S3) input bucket, the path to the ZIP file that contains the source code
      * (for example, <code>
      * <i>bucket-name</i>/<i>path</i>/<i>to</i>/<i>object-name</i>.zip</code>)</p>
-     * </li> <li> <p>For source code in a GitHub repository, the HTTPS clone URL,
-     * including the user name and personal access token, to the repository that
-     * contains the source code and the build spec (for example,
-     * <code>https://<i>login-user-name</i>:<i>personal-access-token</i>@github.com/<i>repo-owner-name</i>/<i>repo-name</i>.git</code>).
-     * For more information, see <a
-     * href="https://help.github.com/articles/creating-an-access-token-for-command-line-use/">Creating
-     * an Access Token for Command-Line Use</a> on the GitHub Help website.</p> </li>
-     * </ul>
+     * </li> <li> <p>For source code in a GitHub repository, instead of specifying a
+     * value here, you connect your AWS account to your GitHub account. To do this, use
+     * the AWS CodeBuild console to begin creating a build project, and follow the
+     * on-screen instructions to complete the connection. (After you have connected to
+     * your GitHub account, you do not need to finish creating the build project, and
+     * you may then leave the AWS CodeBuild console.) To instruct AWS CodeBuild to then
+     * use this connection, in the <code>source</code> object, set the
+     * <code>auth</code> object's <code>type</code> value to <code>OAUTH</code>.</p>
+     * </li> </ul>
      */
     inline void SetLocation(Aws::String&& value) { m_locationHasBeenSet = true; m_location = value; }
 
@@ -190,14 +193,15 @@ namespace Model
      * (Amazon S3) input bucket, the path to the ZIP file that contains the source code
      * (for example, <code>
      * <i>bucket-name</i>/<i>path</i>/<i>to</i>/<i>object-name</i>.zip</code>)</p>
-     * </li> <li> <p>For source code in a GitHub repository, the HTTPS clone URL,
-     * including the user name and personal access token, to the repository that
-     * contains the source code and the build spec (for example,
-     * <code>https://<i>login-user-name</i>:<i>personal-access-token</i>@github.com/<i>repo-owner-name</i>/<i>repo-name</i>.git</code>).
-     * For more information, see <a
-     * href="https://help.github.com/articles/creating-an-access-token-for-command-line-use/">Creating
-     * an Access Token for Command-Line Use</a> on the GitHub Help website.</p> </li>
-     * </ul>
+     * </li> <li> <p>For source code in a GitHub repository, instead of specifying a
+     * value here, you connect your AWS account to your GitHub account. To do this, use
+     * the AWS CodeBuild console to begin creating a build project, and follow the
+     * on-screen instructions to complete the connection. (After you have connected to
+     * your GitHub account, you do not need to finish creating the build project, and
+     * you may then leave the AWS CodeBuild console.) To instruct AWS CodeBuild to then
+     * use this connection, in the <code>source</code> object, set the
+     * <code>auth</code> object's <code>type</code> value to <code>OAUTH</code>.</p>
+     * </li> </ul>
      */
     inline void SetLocation(const char* value) { m_locationHasBeenSet = true; m_location.assign(value); }
 
@@ -215,14 +219,15 @@ namespace Model
      * (Amazon S3) input bucket, the path to the ZIP file that contains the source code
      * (for example, <code>
      * <i>bucket-name</i>/<i>path</i>/<i>to</i>/<i>object-name</i>.zip</code>)</p>
-     * </li> <li> <p>For source code in a GitHub repository, the HTTPS clone URL,
-     * including the user name and personal access token, to the repository that
-     * contains the source code and the build spec (for example,
-     * <code>https://<i>login-user-name</i>:<i>personal-access-token</i>@github.com/<i>repo-owner-name</i>/<i>repo-name</i>.git</code>).
-     * For more information, see <a
-     * href="https://help.github.com/articles/creating-an-access-token-for-command-line-use/">Creating
-     * an Access Token for Command-Line Use</a> on the GitHub Help website.</p> </li>
-     * </ul>
+     * </li> <li> <p>For source code in a GitHub repository, instead of specifying a
+     * value here, you connect your AWS account to your GitHub account. To do this, use
+     * the AWS CodeBuild console to begin creating a build project, and follow the
+     * on-screen instructions to complete the connection. (After you have connected to
+     * your GitHub account, you do not need to finish creating the build project, and
+     * you may then leave the AWS CodeBuild console.) To instruct AWS CodeBuild to then
+     * use this connection, in the <code>source</code> object, set the
+     * <code>auth</code> object's <code>type</code> value to <code>OAUTH</code>.</p>
+     * </li> </ul>
      */
     inline ProjectSource& WithLocation(const Aws::String& value) { SetLocation(value); return *this;}
 
@@ -240,14 +245,15 @@ namespace Model
      * (Amazon S3) input bucket, the path to the ZIP file that contains the source code
      * (for example, <code>
      * <i>bucket-name</i>/<i>path</i>/<i>to</i>/<i>object-name</i>.zip</code>)</p>
-     * </li> <li> <p>For source code in a GitHub repository, the HTTPS clone URL,
-     * including the user name and personal access token, to the repository that
-     * contains the source code and the build spec (for example,
-     * <code>https://<i>login-user-name</i>:<i>personal-access-token</i>@github.com/<i>repo-owner-name</i>/<i>repo-name</i>.git</code>).
-     * For more information, see <a
-     * href="https://help.github.com/articles/creating-an-access-token-for-command-line-use/">Creating
-     * an Access Token for Command-Line Use</a> on the GitHub Help website.</p> </li>
-     * </ul>
+     * </li> <li> <p>For source code in a GitHub repository, instead of specifying a
+     * value here, you connect your AWS account to your GitHub account. To do this, use
+     * the AWS CodeBuild console to begin creating a build project, and follow the
+     * on-screen instructions to complete the connection. (After you have connected to
+     * your GitHub account, you do not need to finish creating the build project, and
+     * you may then leave the AWS CodeBuild console.) To instruct AWS CodeBuild to then
+     * use this connection, in the <code>source</code> object, set the
+     * <code>auth</code> object's <code>type</code> value to <code>OAUTH</code>.</p>
+     * </li> </ul>
      */
     inline ProjectSource& WithLocation(Aws::String&& value) { SetLocation(value); return *this;}
 
@@ -265,98 +271,109 @@ namespace Model
      * (Amazon S3) input bucket, the path to the ZIP file that contains the source code
      * (for example, <code>
      * <i>bucket-name</i>/<i>path</i>/<i>to</i>/<i>object-name</i>.zip</code>)</p>
-     * </li> <li> <p>For source code in a GitHub repository, the HTTPS clone URL,
-     * including the user name and personal access token, to the repository that
-     * contains the source code and the build spec (for example,
-     * <code>https://<i>login-user-name</i>:<i>personal-access-token</i>@github.com/<i>repo-owner-name</i>/<i>repo-name</i>.git</code>).
-     * For more information, see <a
-     * href="https://help.github.com/articles/creating-an-access-token-for-command-line-use/">Creating
-     * an Access Token for Command-Line Use</a> on the GitHub Help website.</p> </li>
-     * </ul>
+     * </li> <li> <p>For source code in a GitHub repository, instead of specifying a
+     * value here, you connect your AWS account to your GitHub account. To do this, use
+     * the AWS CodeBuild console to begin creating a build project, and follow the
+     * on-screen instructions to complete the connection. (After you have connected to
+     * your GitHub account, you do not need to finish creating the build project, and
+     * you may then leave the AWS CodeBuild console.) To instruct AWS CodeBuild to then
+     * use this connection, in the <code>source</code> object, set the
+     * <code>auth</code> object's <code>type</code> value to <code>OAUTH</code>.</p>
+     * </li> </ul>
      */
     inline ProjectSource& WithLocation(const char* value) { SetLocation(value); return *this;}
 
     /**
-     * <p>The build spec declaration to use for this build project's related
-     * builds.</p> <p>If this value is not specified, a build spec must be included
-     * along with the source code to be built.</p>
+     * <p>The build spec declaration to use for the builds in this build project.</p>
+     * <p>If this value is not specified, a build spec must be included along with the
+     * source code to be built.</p>
      */
     inline const Aws::String& GetBuildspec() const{ return m_buildspec; }
 
     /**
-     * <p>The build spec declaration to use for this build project's related
-     * builds.</p> <p>If this value is not specified, a build spec must be included
-     * along with the source code to be built.</p>
+     * <p>The build spec declaration to use for the builds in this build project.</p>
+     * <p>If this value is not specified, a build spec must be included along with the
+     * source code to be built.</p>
      */
     inline void SetBuildspec(const Aws::String& value) { m_buildspecHasBeenSet = true; m_buildspec = value; }
 
     /**
-     * <p>The build spec declaration to use for this build project's related
-     * builds.</p> <p>If this value is not specified, a build spec must be included
-     * along with the source code to be built.</p>
+     * <p>The build spec declaration to use for the builds in this build project.</p>
+     * <p>If this value is not specified, a build spec must be included along with the
+     * source code to be built.</p>
      */
     inline void SetBuildspec(Aws::String&& value) { m_buildspecHasBeenSet = true; m_buildspec = value; }
 
     /**
-     * <p>The build spec declaration to use for this build project's related
-     * builds.</p> <p>If this value is not specified, a build spec must be included
-     * along with the source code to be built.</p>
+     * <p>The build spec declaration to use for the builds in this build project.</p>
+     * <p>If this value is not specified, a build spec must be included along with the
+     * source code to be built.</p>
      */
     inline void SetBuildspec(const char* value) { m_buildspecHasBeenSet = true; m_buildspec.assign(value); }
 
     /**
-     * <p>The build spec declaration to use for this build project's related
-     * builds.</p> <p>If this value is not specified, a build spec must be included
-     * along with the source code to be built.</p>
+     * <p>The build spec declaration to use for the builds in this build project.</p>
+     * <p>If this value is not specified, a build spec must be included along with the
+     * source code to be built.</p>
      */
     inline ProjectSource& WithBuildspec(const Aws::String& value) { SetBuildspec(value); return *this;}
 
     /**
-     * <p>The build spec declaration to use for this build project's related
-     * builds.</p> <p>If this value is not specified, a build spec must be included
-     * along with the source code to be built.</p>
+     * <p>The build spec declaration to use for the builds in this build project.</p>
+     * <p>If this value is not specified, a build spec must be included along with the
+     * source code to be built.</p>
      */
     inline ProjectSource& WithBuildspec(Aws::String&& value) { SetBuildspec(value); return *this;}
 
     /**
-     * <p>The build spec declaration to use for this build project's related
-     * builds.</p> <p>If this value is not specified, a build spec must be included
-     * along with the source code to be built.</p>
+     * <p>The build spec declaration to use for the builds in this build project.</p>
+     * <p>If this value is not specified, a build spec must be included along with the
+     * source code to be built.</p>
      */
     inline ProjectSource& WithBuildspec(const char* value) { SetBuildspec(value); return *this;}
 
     /**
      * <p>Information about the authorization settings for AWS CodeBuild to access the
-     * source code to be built.</p> <p>This information is only for the AWS CodeBuild
-     * console's use. Your code should not get or set this information directly.</p>
+     * source code to be built.</p> <p>This information is for the AWS CodeBuild
+     * console's use only. Your code should not get or set this information directly
+     * (unless the build project's source <code>type</code> value is
+     * <code>GITHUB</code>).</p>
      */
     inline const SourceAuth& GetAuth() const{ return m_auth; }
 
     /**
      * <p>Information about the authorization settings for AWS CodeBuild to access the
-     * source code to be built.</p> <p>This information is only for the AWS CodeBuild
-     * console's use. Your code should not get or set this information directly.</p>
+     * source code to be built.</p> <p>This information is for the AWS CodeBuild
+     * console's use only. Your code should not get or set this information directly
+     * (unless the build project's source <code>type</code> value is
+     * <code>GITHUB</code>).</p>
      */
     inline void SetAuth(const SourceAuth& value) { m_authHasBeenSet = true; m_auth = value; }
 
     /**
      * <p>Information about the authorization settings for AWS CodeBuild to access the
-     * source code to be built.</p> <p>This information is only for the AWS CodeBuild
-     * console's use. Your code should not get or set this information directly.</p>
+     * source code to be built.</p> <p>This information is for the AWS CodeBuild
+     * console's use only. Your code should not get or set this information directly
+     * (unless the build project's source <code>type</code> value is
+     * <code>GITHUB</code>).</p>
      */
     inline void SetAuth(SourceAuth&& value) { m_authHasBeenSet = true; m_auth = value; }
 
     /**
      * <p>Information about the authorization settings for AWS CodeBuild to access the
-     * source code to be built.</p> <p>This information is only for the AWS CodeBuild
-     * console's use. Your code should not get or set this information directly.</p>
+     * source code to be built.</p> <p>This information is for the AWS CodeBuild
+     * console's use only. Your code should not get or set this information directly
+     * (unless the build project's source <code>type</code> value is
+     * <code>GITHUB</code>).</p>
      */
     inline ProjectSource& WithAuth(const SourceAuth& value) { SetAuth(value); return *this;}
 
     /**
      * <p>Information about the authorization settings for AWS CodeBuild to access the
-     * source code to be built.</p> <p>This information is only for the AWS CodeBuild
-     * console's use. Your code should not get or set this information directly.</p>
+     * source code to be built.</p> <p>This information is for the AWS CodeBuild
+     * console's use only. Your code should not get or set this information directly
+     * (unless the build project's source <code>type</code> value is
+     * <code>GITHUB</code>).</p>
      */
     inline ProjectSource& WithAuth(SourceAuth&& value) { SetAuth(value); return *this;}
 

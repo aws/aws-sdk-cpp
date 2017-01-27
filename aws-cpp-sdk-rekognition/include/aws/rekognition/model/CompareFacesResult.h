@@ -67,7 +67,7 @@ namespace Model
     inline CompareFacesResult& WithSourceImageFace(ComparedSourceImageFace&& value) { SetSourceImageFace(value); return *this;}
 
     /**
-     * <p>Provides an array of <code>CompareFacesMatch </code> objects. Each object
+     * <p>Provides an array of <code>CompareFacesMatch</code> objects. Each object
      * provides the bounding box, confidence that the bounding box contains a face, and
      * the similarity between the face in the bounding box and the face in the source
      * image.</p>
@@ -75,7 +75,7 @@ namespace Model
     inline const Aws::Vector<CompareFacesMatch>& GetFaceMatches() const{ return m_faceMatches; }
 
     /**
-     * <p>Provides an array of <code>CompareFacesMatch </code> objects. Each object
+     * <p>Provides an array of <code>CompareFacesMatch</code> objects. Each object
      * provides the bounding box, confidence that the bounding box contains a face, and
      * the similarity between the face in the bounding box and the face in the source
      * image.</p>
@@ -83,7 +83,7 @@ namespace Model
     inline void SetFaceMatches(const Aws::Vector<CompareFacesMatch>& value) { m_faceMatches = value; }
 
     /**
-     * <p>Provides an array of <code>CompareFacesMatch </code> objects. Each object
+     * <p>Provides an array of <code>CompareFacesMatch</code> objects. Each object
      * provides the bounding box, confidence that the bounding box contains a face, and
      * the similarity between the face in the bounding box and the face in the source
      * image.</p>
@@ -91,7 +91,7 @@ namespace Model
     inline void SetFaceMatches(Aws::Vector<CompareFacesMatch>&& value) { m_faceMatches = value; }
 
     /**
-     * <p>Provides an array of <code>CompareFacesMatch </code> objects. Each object
+     * <p>Provides an array of <code>CompareFacesMatch</code> objects. Each object
      * provides the bounding box, confidence that the bounding box contains a face, and
      * the similarity between the face in the bounding box and the face in the source
      * image.</p>
@@ -99,7 +99,7 @@ namespace Model
     inline CompareFacesResult& WithFaceMatches(const Aws::Vector<CompareFacesMatch>& value) { SetFaceMatches(value); return *this;}
 
     /**
-     * <p>Provides an array of <code>CompareFacesMatch </code> objects. Each object
+     * <p>Provides an array of <code>CompareFacesMatch</code> objects. Each object
      * provides the bounding box, confidence that the bounding box contains a face, and
      * the similarity between the face in the bounding box and the face in the source
      * image.</p>
@@ -107,7 +107,7 @@ namespace Model
     inline CompareFacesResult& WithFaceMatches(Aws::Vector<CompareFacesMatch>&& value) { SetFaceMatches(value); return *this;}
 
     /**
-     * <p>Provides an array of <code>CompareFacesMatch </code> objects. Each object
+     * <p>Provides an array of <code>CompareFacesMatch</code> objects. Each object
      * provides the bounding box, confidence that the bounding box contains a face, and
      * the similarity between the face in the bounding box and the face in the source
      * image.</p>
@@ -115,7 +115,7 @@ namespace Model
     inline CompareFacesResult& AddFaceMatches(const CompareFacesMatch& value) { m_faceMatches.push_back(value); return *this; }
 
     /**
-     * <p>Provides an array of <code>CompareFacesMatch </code> objects. Each object
+     * <p>Provides an array of <code>CompareFacesMatch</code> objects. Each object
      * provides the bounding box, confidence that the bounding box contains a face, and
      * the similarity between the face in the bounding box and the face in the source
      * image.</p>

@@ -32,7 +32,7 @@ Aws::String DeleteNetworkAclRequest::SerializePayload() const
   ss << "Action=DeleteNetworkAcl&";
   if(m_dryRunHasBeenSet)
   {
-    ss << "DryRun=" << m_dryRun << "&";
+    ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
   if(m_networkAclIdHasBeenSet)

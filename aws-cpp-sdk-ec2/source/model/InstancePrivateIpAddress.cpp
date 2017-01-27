@@ -97,7 +97,7 @@ void InstancePrivateIpAddress::OutputToStream(Aws::OStream& oStream, const char*
 
   if(m_primaryHasBeenSet)
   {
-      oStream << location << index << locationValue << ".Primary=" << m_primary << "&";
+      oStream << location << index << locationValue << ".Primary=" << std::boolalpha << m_primary << "&";
   }
 
   if(m_associationHasBeenSet)
@@ -121,7 +121,7 @@ void InstancePrivateIpAddress::OutputToStream(Aws::OStream& oStream, const char*
   }
   if(m_primaryHasBeenSet)
   {
-      oStream << location << ".Primary=" << m_primary << "&";
+      oStream << location << ".Primary=" << std::boolalpha << m_primary << "&";
   }
   if(m_associationHasBeenSet)
   {

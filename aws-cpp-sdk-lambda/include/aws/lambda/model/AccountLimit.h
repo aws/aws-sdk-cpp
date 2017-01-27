@@ -84,22 +84,22 @@ namespace Model
 
     /**
      * <p>Size, in bytes, of a single zipped code/dependencies package you can upload
-     * for your Lambda function(.zip/.jar file). Try using AWS S3 for uploading larger
-     * files. Default limit is 50 MB.</p>
+     * for your Lambda function(.zip/.jar file). Try using Amazon S3 for uploading
+     * larger files. Default limit is 50 MB.</p>
      */
     inline long long GetCodeSizeZipped() const{ return m_codeSizeZipped; }
 
     /**
      * <p>Size, in bytes, of a single zipped code/dependencies package you can upload
-     * for your Lambda function(.zip/.jar file). Try using AWS S3 for uploading larger
-     * files. Default limit is 50 MB.</p>
+     * for your Lambda function(.zip/.jar file). Try using Amazon S3 for uploading
+     * larger files. Default limit is 50 MB.</p>
      */
     inline void SetCodeSizeZipped(long long value) { m_codeSizeZippedHasBeenSet = true; m_codeSizeZipped = value; }
 
     /**
      * <p>Size, in bytes, of a single zipped code/dependencies package you can upload
-     * for your Lambda function(.zip/.jar file). Try using AWS S3 for uploading larger
-     * files. Default limit is 50 MB.</p>
+     * for your Lambda function(.zip/.jar file). Try using Amazon S3 for uploading
+     * larger files. Default limit is 50 MB.</p>
      */
     inline AccountLimit& WithCodeSizeZipped(long long value) { SetCodeSizeZipped(value); return *this;}
 

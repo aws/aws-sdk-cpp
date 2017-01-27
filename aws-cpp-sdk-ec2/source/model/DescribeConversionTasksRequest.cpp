@@ -32,7 +32,7 @@ Aws::String DescribeConversionTasksRequest::SerializePayload() const
   ss << "Action=DescribeConversionTasks&";
   if(m_dryRunHasBeenSet)
   {
-    ss << "DryRun=" << m_dryRun << "&";
+    ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
   if(m_conversionTaskIdsHasBeenSet)

@@ -36,7 +36,7 @@ Aws::String DeleteNetworkAclEntryRequest::SerializePayload() const
   ss << "Action=DeleteNetworkAclEntry&";
   if(m_dryRunHasBeenSet)
   {
-    ss << "DryRun=" << m_dryRun << "&";
+    ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
   if(m_networkAclIdHasBeenSet)
@@ -51,7 +51,7 @@ Aws::String DeleteNetworkAclEntryRequest::SerializePayload() const
 
   if(m_egressHasBeenSet)
   {
-    ss << "Egress=" << m_egress << "&";
+    ss << "Egress=" << std::boolalpha << m_egress << "&";
   }
 
   ss << "Version=2016-11-15";

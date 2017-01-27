@@ -211,7 +211,7 @@ void InstanceNetworkInterfaceSpecification::OutputToStream(Aws::OStream& oStream
 
   if(m_deleteOnTerminationHasBeenSet)
   {
-      oStream << location << index << locationValue << ".DeleteOnTermination=" << m_deleteOnTermination << "&";
+      oStream << location << index << locationValue << ".DeleteOnTermination=" << std::boolalpha << m_deleteOnTermination << "&";
   }
 
   if(m_privateIpAddressesHasBeenSet)
@@ -220,7 +220,7 @@ void InstanceNetworkInterfaceSpecification::OutputToStream(Aws::OStream& oStream
       for(auto& item : m_privateIpAddresses)
       {
         Aws::StringStream privateIpAddressesSs;
-        privateIpAddressesSs << location << index << locationValue << ".PrivateIpAddressesSet." << privateIpAddressesIdx++;
+        privateIpAddressesSs << location << index << locationValue << ".PrivateIpAddresses." << privateIpAddressesIdx++;
         item.OutputToStream(oStream, privateIpAddressesSs.str().c_str());
       }
   }
@@ -232,7 +232,7 @@ void InstanceNetworkInterfaceSpecification::OutputToStream(Aws::OStream& oStream
 
   if(m_associatePublicIpAddressHasBeenSet)
   {
-      oStream << location << index << locationValue << ".AssociatePublicIpAddress=" << m_associatePublicIpAddress << "&";
+      oStream << location << index << locationValue << ".AssociatePublicIpAddress=" << std::boolalpha << m_associatePublicIpAddress << "&";
   }
 
   if(m_ipv6AddressesHasBeenSet)
@@ -241,7 +241,7 @@ void InstanceNetworkInterfaceSpecification::OutputToStream(Aws::OStream& oStream
       for(auto& item : m_ipv6Addresses)
       {
         Aws::StringStream ipv6AddressesSs;
-        ipv6AddressesSs << location << index << locationValue << ".Ipv6AddressesSet." << ipv6AddressesIdx++;
+        ipv6AddressesSs << location << index << locationValue << ".Ipv6Addresses." << ipv6AddressesIdx++;
         item.OutputToStream(oStream, ipv6AddressesSs.str().c_str());
       }
   }
@@ -285,7 +285,7 @@ void InstanceNetworkInterfaceSpecification::OutputToStream(Aws::OStream& oStream
   }
   if(m_deleteOnTerminationHasBeenSet)
   {
-      oStream << location << ".DeleteOnTermination=" << m_deleteOnTermination << "&";
+      oStream << location << ".DeleteOnTermination=" << std::boolalpha << m_deleteOnTermination << "&";
   }
   if(m_privateIpAddressesHasBeenSet)
   {
@@ -293,7 +293,7 @@ void InstanceNetworkInterfaceSpecification::OutputToStream(Aws::OStream& oStream
       for(auto& item : m_privateIpAddresses)
       {
         Aws::StringStream privateIpAddressesSs;
-        privateIpAddressesSs << location <<  ".item." << privateIpAddressesIdx++;
+        privateIpAddressesSs << location <<  ".Item." << privateIpAddressesIdx++;
         item.OutputToStream(oStream, privateIpAddressesSs.str().c_str());
       }
   }
@@ -303,7 +303,7 @@ void InstanceNetworkInterfaceSpecification::OutputToStream(Aws::OStream& oStream
   }
   if(m_associatePublicIpAddressHasBeenSet)
   {
-      oStream << location << ".AssociatePublicIpAddress=" << m_associatePublicIpAddress << "&";
+      oStream << location << ".AssociatePublicIpAddress=" << std::boolalpha << m_associatePublicIpAddress << "&";
   }
   if(m_ipv6AddressesHasBeenSet)
   {
@@ -311,7 +311,7 @@ void InstanceNetworkInterfaceSpecification::OutputToStream(Aws::OStream& oStream
       for(auto& item : m_ipv6Addresses)
       {
         Aws::StringStream ipv6AddressesSs;
-        ipv6AddressesSs << location <<  ".item." << ipv6AddressesIdx++;
+        ipv6AddressesSs << location <<  ".Item." << ipv6AddressesIdx++;
         item.OutputToStream(oStream, ipv6AddressesSs.str().c_str());
       }
   }

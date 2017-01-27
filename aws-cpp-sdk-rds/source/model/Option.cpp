@@ -159,12 +159,12 @@ void Option::OutputToStream(Aws::OStream& oStream, const char* location, unsigne
 
   if(m_persistentHasBeenSet)
   {
-      oStream << location << index << locationValue << ".Persistent=" << m_persistent << "&";
+      oStream << location << index << locationValue << ".Persistent=" << std::boolalpha << m_persistent << "&";
   }
 
   if(m_permanentHasBeenSet)
   {
-      oStream << location << index << locationValue << ".Permanent=" << m_permanent << "&";
+      oStream << location << index << locationValue << ".Permanent=" << std::boolalpha << m_permanent << "&";
   }
 
   if(m_portHasBeenSet)
@@ -224,11 +224,11 @@ void Option::OutputToStream(Aws::OStream& oStream, const char* location) const
   }
   if(m_persistentHasBeenSet)
   {
-      oStream << location << ".Persistent=" << m_persistent << "&";
+      oStream << location << ".Persistent=" << std::boolalpha << m_persistent << "&";
   }
   if(m_permanentHasBeenSet)
   {
-      oStream << location << ".Permanent=" << m_permanent << "&";
+      oStream << location << ".Permanent=" << std::boolalpha << m_permanent << "&";
   }
   if(m_portHasBeenSet)
   {

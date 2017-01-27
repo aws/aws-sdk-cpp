@@ -33,7 +33,7 @@ namespace CodeCommit
 namespace Model
 {
   /**
-   * <p>Represents the output of a put repository triggers operation. </p><p><h3>See
+   * <p>Represents the output of a put repository triggers operation.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/PutRepositoryTriggersOutput">AWS
    * API Reference</a></p>
@@ -46,37 +46,37 @@ namespace Model
     PutRepositoryTriggersResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
     /**
-     * <p>The system-generated unique ID for the create or update operation. </p>
+     * <p>The system-generated unique ID for the create or update operation.</p>
      */
     inline const Aws::String& GetConfigurationId() const{ return m_configurationId; }
 
     /**
-     * <p>The system-generated unique ID for the create or update operation. </p>
+     * <p>The system-generated unique ID for the create or update operation.</p>
      */
     inline void SetConfigurationId(const Aws::String& value) { m_configurationId = value; }
 
     /**
-     * <p>The system-generated unique ID for the create or update operation. </p>
+     * <p>The system-generated unique ID for the create or update operation.</p>
      */
     inline void SetConfigurationId(Aws::String&& value) { m_configurationId = value; }
 
     /**
-     * <p>The system-generated unique ID for the create or update operation. </p>
+     * <p>The system-generated unique ID for the create or update operation.</p>
      */
     inline void SetConfigurationId(const char* value) { m_configurationId.assign(value); }
 
     /**
-     * <p>The system-generated unique ID for the create or update operation. </p>
+     * <p>The system-generated unique ID for the create or update operation.</p>
      */
     inline PutRepositoryTriggersResult& WithConfigurationId(const Aws::String& value) { SetConfigurationId(value); return *this;}
 
     /**
-     * <p>The system-generated unique ID for the create or update operation. </p>
+     * <p>The system-generated unique ID for the create or update operation.</p>
      */
     inline PutRepositoryTriggersResult& WithConfigurationId(Aws::String&& value) { SetConfigurationId(value); return *this;}
 
     /**
-     * <p>The system-generated unique ID for the create or update operation. </p>
+     * <p>The system-generated unique ID for the create or update operation.</p>
      */
     inline PutRepositoryTriggersResult& WithConfigurationId(const char* value) { SetConfigurationId(value); return *this;}
 
