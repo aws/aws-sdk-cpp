@@ -656,7 +656,7 @@ namespace Aws
                     }
 
                     previousPart = partState;
-                    handle->AddPendingPart(partState);
+                    handle->AddQueuedPart(partState);
                 }
             }
             else
@@ -673,8 +673,8 @@ namespace Aws
                 const auto& partState = queuedPart.second;
                 bool isFirstPart = partState->GetPartId() == 1;
                 std::size_t rangeStart = ( partState->GetPartId() - 1 ) * bufferSize;
-                std::size_t rangeEnd = rangeStart + partState->GetSizeInBytes();
-                Aws::Utils::Array<unsigned char> *buffer = nullptr;
+                std::size_t rangeEnd = rangeStart + partState->GetSizeInBytes() - 1;
+                auto buffer = m_bufferManager.Acquire();;
                 CreateDownloadStreamCallback responseStreamFunction;
 
                 if(isFirstPart)
@@ -732,6 +732,8 @@ namespace Aws
                     {
                         HandleGetObjectResponse(client, request, outcome, context);
                     };
+
+                    handle->AddPendingPart(queuedPart.second);
 
                     m_transferConfig.s3Client->GetObjectAsync(getObjectRangeRequest, callback, asyncContext);
                 }

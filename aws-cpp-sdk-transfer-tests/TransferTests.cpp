@@ -215,7 +215,7 @@ protected:
                                    const Aws::Map<Aws::String, Aws::String>& metadata)
     {
         Aws::String downloadFileName = MakeDownloadFileName(sourceFileName);
-        std::shared_ptr<TransferHandle> downloadPtr = transferManager.DownloadFile(bucket, key, downloadFileName);
+        std::shared_ptr<TransferHandle> downloadPtr = transferManager.DownloadFile2(bucket, key, [=](){ return Aws::New<Aws::FStream>(downloadFileName.c_str());});
 
         ASSERT_EQ(true, downloadPtr->ShouldContinue());
         ASSERT_EQ(TransferDirection::DOWNLOAD, downloadPtr->GetTransferDirection());
@@ -380,6 +380,7 @@ Aws::String TransferTests::m_contentTestFileName;
 Aws::String TransferTests::m_cancelTestFileName;
 Aws::String TransferTests::m_multiPartContentFileName;
 Aws::String TransferTests::m_nonsenseFileName;
+
 
 TEST_F(TransferTests, TransferManager_SinglePartUploadTest)
 {
