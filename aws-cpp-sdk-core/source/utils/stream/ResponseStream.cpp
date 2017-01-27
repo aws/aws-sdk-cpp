@@ -16,8 +16,9 @@
 #include <aws/core/utils/stream/ResponseStream.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 
-#if _GLIBCXX_FULLY_DYNAMIC_STRING == 0 && defined(__ANDROID__)
-#include <aws/core/utils/stream/android/SimpleStreamBuf.h>
+#ifndef NEVER
+//#if _GLIBCXX_FULLY_DYNAMIC_STRING == 0 && defined(__ANDROID__)
+#include <aws/core/utils/stream/SimpleStreamBuf.h>
 #endif
 
 using namespace Aws::Utils::Stream;
@@ -75,7 +76,8 @@ void ResponseStream::ReleaseStream()
 static const char *DEFAULT_STREAM_TAG = "DefaultUnderlyingStream";
 
 DefaultUnderlyingStream::DefaultUnderlyingStream() :
-#if _GLIBCXX_FULLY_DYNAMIC_STRING == 0 && defined(__ANDROID__)
+//#if _GLIBCXX_FULLY_DYNAMIC_STRING == 0 && defined(__ANDROID__)
+#ifndef NEVER
     Base( Aws::New< Aws::Utils::Stream::SimpleStreamBuf >( DEFAULT_STREAM_TAG ) )
 #else
     Base( Aws::New< Aws::StringBuf >( DEFAULT_STREAM_TAG ) )

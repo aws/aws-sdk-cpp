@@ -14,7 +14,7 @@
 * permissions and limitations under the License.
 */
 
-#include <aws/core/utils/stream/android/SimpleStreamBuf.h>
+#include <aws/core/utils/stream/SimpleStreamBuf.h>
 #include <cassert>
 
 #include <aws/core/utils/logging/LogMacros.h>
