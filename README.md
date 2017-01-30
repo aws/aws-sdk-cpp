@@ -12,7 +12,7 @@ the development efforts by submitting pull requests and sending us feedback and 
 Please use these community resources for getting help. We use the GitHub issues for tracking bugs and feature requests.
 * Ask a question on StackOverflow and tag it with the `aws-sdk-cpp` tag. 
 * If it turns out that you may have found a bug, please open an issue
-* Open a support ticket with AWS Support
+* Open a support ticket with [AWS Support]( https://console.aws.amazon.com/support/home#/)
  
  
 ## Opening Issues
