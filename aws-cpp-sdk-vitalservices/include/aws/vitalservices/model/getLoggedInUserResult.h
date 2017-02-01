@@ -14,7 +14,7 @@
 */
 #pragma once
 #include <aws/vitalservices/VitalServices_EXPORTS.h>
-#include <aws/vitalservices/model/GetLoggedInUserResult_user.h>
+#include <aws/vitalservices/model/ClientUser.h>
 
 namespace Aws
 {
@@ -49,23 +49,23 @@ namespace Model
     inline getLoggedInUserResult& WithUserExists(bool value) { SetUserExists(value); return *this;}
 
     
-    inline const GetLoggedInUserResult_user& GetUser() const{ return m_user; }
+    inline const ClientUser& GetUser() const{ return m_user; }
 
     
-    inline void SetUser(const GetLoggedInUserResult_user& value) { m_user = value; }
+    inline void SetUser(const ClientUser& value) { m_user = value; }
 
     
-    inline void SetUser(GetLoggedInUserResult_user&& value) { m_user = value; }
+    inline void SetUser(ClientUser&& value) { m_user = value; }
 
     
-    inline getLoggedInUserResult& WithUser(const GetLoggedInUserResult_user& value) { SetUser(value); return *this;}
+    inline getLoggedInUserResult& WithUser(const ClientUser& value) { SetUser(value); return *this;}
 
     
-    inline getLoggedInUserResult& WithUser(GetLoggedInUserResult_user&& value) { SetUser(value); return *this;}
+    inline getLoggedInUserResult& WithUser(ClientUser&& value) { SetUser(value); return *this;}
 
   private:
     bool m_userExists;
-    GetLoggedInUserResult_user m_user;
+    ClientUser m_user;
   };
 
 } // namespace Model

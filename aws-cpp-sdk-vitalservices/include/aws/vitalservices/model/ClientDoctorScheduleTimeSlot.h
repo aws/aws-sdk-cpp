@@ -30,12 +30,12 @@ namespace VitalServices
 namespace Model
 {
 
-  class AWS_VITALSERVICES_API QueryDoctorScheduleResult_timeSlotsItem
+  class AWS_VITALSERVICES_API ClientDoctorScheduleTimeSlot
   {
   public:
-    QueryDoctorScheduleResult_timeSlotsItem();
-    QueryDoctorScheduleResult_timeSlotsItem(const Aws::Utils::Json::JsonValue& jsonValue);
-    QueryDoctorScheduleResult_timeSlotsItem& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    ClientDoctorScheduleTimeSlot();
+    ClientDoctorScheduleTimeSlot(const Aws::Utils::Json::JsonValue& jsonValue);
+    ClientDoctorScheduleTimeSlot& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
     
@@ -51,13 +51,13 @@ namespace Model
     inline void SetTimeSlot(const char* value) { m_timeSlotHasBeenSet = true; m_timeSlot.assign(value); }
 
     
-    inline QueryDoctorScheduleResult_timeSlotsItem& WithTimeSlot(const Aws::String& value) { SetTimeSlot(value); return *this;}
+    inline ClientDoctorScheduleTimeSlot& WithTimeSlot(const Aws::String& value) { SetTimeSlot(value); return *this;}
 
     
-    inline QueryDoctorScheduleResult_timeSlotsItem& WithTimeSlot(Aws::String&& value) { SetTimeSlot(value); return *this;}
+    inline ClientDoctorScheduleTimeSlot& WithTimeSlot(Aws::String&& value) { SetTimeSlot(value); return *this;}
 
     
-    inline QueryDoctorScheduleResult_timeSlotsItem& WithTimeSlot(const char* value) { SetTimeSlot(value); return *this;}
+    inline ClientDoctorScheduleTimeSlot& WithTimeSlot(const char* value) { SetTimeSlot(value); return *this;}
 
     
     inline const Aws::String& GetAppointmentId() const{ return m_appointmentId; }
@@ -72,13 +72,13 @@ namespace Model
     inline void SetAppointmentId(const char* value) { m_appointmentIdHasBeenSet = true; m_appointmentId.assign(value); }
 
     
-    inline QueryDoctorScheduleResult_timeSlotsItem& WithAppointmentId(const Aws::String& value) { SetAppointmentId(value); return *this;}
+    inline ClientDoctorScheduleTimeSlot& WithAppointmentId(const Aws::String& value) { SetAppointmentId(value); return *this;}
 
     
-    inline QueryDoctorScheduleResult_timeSlotsItem& WithAppointmentId(Aws::String&& value) { SetAppointmentId(value); return *this;}
+    inline ClientDoctorScheduleTimeSlot& WithAppointmentId(Aws::String&& value) { SetAppointmentId(value); return *this;}
 
     
-    inline QueryDoctorScheduleResult_timeSlotsItem& WithAppointmentId(const char* value) { SetAppointmentId(value); return *this;}
+    inline ClientDoctorScheduleTimeSlot& WithAppointmentId(const char* value) { SetAppointmentId(value); return *this;}
 
   private:
     Aws::String m_timeSlot;

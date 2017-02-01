@@ -12,7 +12,7 @@
 * express or implied. See the License for the specific language governing
 * permissions and limitations under the License.
 */
-#include <aws/vitalservices/model/GetAppointmentsResult_patientsItem.h>
+#include <aws/vitalservices/model/ClientPatient.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 
 #include <utility>
@@ -27,32 +27,32 @@ namespace VitalServices
 namespace Model
 {
 
-GetAppointmentsResult_patientsItem::GetAppointmentsResult_patientsItem() : 
-    m_lastNameHasBeenSet(false),
+ClientPatient::ClientPatient() : 
+    m_idHasBeenSet(false),
     m_firstNameHasBeenSet(false),
+    m_lastNameHasBeenSet(false),
     m_mobileNumberHasBeenSet(false),
-    m_profilePhotoUrlHasBeenSet(false),
-    m_idHasBeenSet(false)
+    m_profilePhotoUrlHasBeenSet(false)
 {
 }
 
-GetAppointmentsResult_patientsItem::GetAppointmentsResult_patientsItem(const JsonValue& jsonValue) : 
-    m_lastNameHasBeenSet(false),
+ClientPatient::ClientPatient(const JsonValue& jsonValue) : 
+    m_idHasBeenSet(false),
     m_firstNameHasBeenSet(false),
+    m_lastNameHasBeenSet(false),
     m_mobileNumberHasBeenSet(false),
-    m_profilePhotoUrlHasBeenSet(false),
-    m_idHasBeenSet(false)
+    m_profilePhotoUrlHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-GetAppointmentsResult_patientsItem& GetAppointmentsResult_patientsItem::operator =(const JsonValue& jsonValue)
+ClientPatient& ClientPatient::operator =(const JsonValue& jsonValue)
 {
-  if(jsonValue.ValueExists("lastName"))
+  if(jsonValue.ValueExists("id"))
   {
-    m_lastName = jsonValue.GetString("lastName");
+    m_id = jsonValue.GetString("id");
 
-    m_lastNameHasBeenSet = true;
+    m_idHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("firstName"))
@@ -60,6 +60,13 @@ GetAppointmentsResult_patientsItem& GetAppointmentsResult_patientsItem::operator
     m_firstName = jsonValue.GetString("firstName");
 
     m_firstNameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("lastName"))
+  {
+    m_lastName = jsonValue.GetString("lastName");
+
+    m_lastNameHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("mobileNumber"))
@@ -76,29 +83,28 @@ GetAppointmentsResult_patientsItem& GetAppointmentsResult_patientsItem::operator
     m_profilePhotoUrlHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("id"))
-  {
-    m_id = jsonValue.GetString("id");
-
-    m_idHasBeenSet = true;
-  }
-
   return *this;
 }
 
-JsonValue GetAppointmentsResult_patientsItem::Jsonize() const
+JsonValue ClientPatient::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_lastNameHasBeenSet)
+  if(m_idHasBeenSet)
   {
-   payload.WithString("lastName", m_lastName);
+   payload.WithString("id", m_id);
 
   }
 
   if(m_firstNameHasBeenSet)
   {
    payload.WithString("firstName", m_firstName);
+
+  }
+
+  if(m_lastNameHasBeenSet)
+  {
+   payload.WithString("lastName", m_lastName);
 
   }
 
@@ -111,12 +117,6 @@ JsonValue GetAppointmentsResult_patientsItem::Jsonize() const
   if(m_profilePhotoUrlHasBeenSet)
   {
    payload.WithString("profilePhotoUrl", m_profilePhotoUrl);
-
-  }
-
-  if(m_idHasBeenSet)
-  {
-   payload.WithString("id", m_id);
 
   }
 

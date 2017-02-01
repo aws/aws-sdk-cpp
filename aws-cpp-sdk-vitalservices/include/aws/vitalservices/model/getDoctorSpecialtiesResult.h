@@ -15,7 +15,7 @@
 #pragma once
 #include <aws/vitalservices/VitalServices_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/vitalservices/model/GetDoctorSpecialtiesResult_specialtiesItem.h>
+#include <aws/vitalservices/model/ClientDoctorSpecialty.h>
 
 namespace Aws
 {
@@ -41,28 +41,28 @@ namespace Model
     getDoctorSpecialtiesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
     
-    inline const Aws::Vector<GetDoctorSpecialtiesResult_specialtiesItem>& GetSpecialties() const{ return m_specialties; }
+    inline const Aws::Vector<ClientDoctorSpecialty>& GetSpecialties() const{ return m_specialties; }
 
     
-    inline void SetSpecialties(const Aws::Vector<GetDoctorSpecialtiesResult_specialtiesItem>& value) { m_specialties = value; }
+    inline void SetSpecialties(const Aws::Vector<ClientDoctorSpecialty>& value) { m_specialties = value; }
 
     
-    inline void SetSpecialties(Aws::Vector<GetDoctorSpecialtiesResult_specialtiesItem>&& value) { m_specialties = value; }
+    inline void SetSpecialties(Aws::Vector<ClientDoctorSpecialty>&& value) { m_specialties = value; }
 
     
-    inline getDoctorSpecialtiesResult& WithSpecialties(const Aws::Vector<GetDoctorSpecialtiesResult_specialtiesItem>& value) { SetSpecialties(value); return *this;}
+    inline getDoctorSpecialtiesResult& WithSpecialties(const Aws::Vector<ClientDoctorSpecialty>& value) { SetSpecialties(value); return *this;}
 
     
-    inline getDoctorSpecialtiesResult& WithSpecialties(Aws::Vector<GetDoctorSpecialtiesResult_specialtiesItem>&& value) { SetSpecialties(value); return *this;}
+    inline getDoctorSpecialtiesResult& WithSpecialties(Aws::Vector<ClientDoctorSpecialty>&& value) { SetSpecialties(value); return *this;}
 
     
-    inline getDoctorSpecialtiesResult& AddSpecialties(const GetDoctorSpecialtiesResult_specialtiesItem& value) { m_specialties.push_back(value); return *this; }
+    inline getDoctorSpecialtiesResult& AddSpecialties(const ClientDoctorSpecialty& value) { m_specialties.push_back(value); return *this; }
 
     
-    inline getDoctorSpecialtiesResult& AddSpecialties(GetDoctorSpecialtiesResult_specialtiesItem&& value) { m_specialties.push_back(value); return *this; }
+    inline getDoctorSpecialtiesResult& AddSpecialties(ClientDoctorSpecialty&& value) { m_specialties.push_back(value); return *this; }
 
   private:
-    Aws::Vector<GetDoctorSpecialtiesResult_specialtiesItem> m_specialties;
+    Aws::Vector<ClientDoctorSpecialty> m_specialties;
   };
 
 } // namespace Model

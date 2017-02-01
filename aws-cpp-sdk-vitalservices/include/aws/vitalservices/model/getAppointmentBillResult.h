@@ -40,6 +40,27 @@ namespace Model
     getAppointmentBillResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
     
+    inline const Aws::String& GetBasePriceCents() const{ return m_basePriceCents; }
+
+    
+    inline void SetBasePriceCents(const Aws::String& value) { m_basePriceCents = value; }
+
+    
+    inline void SetBasePriceCents(Aws::String&& value) { m_basePriceCents = value; }
+
+    
+    inline void SetBasePriceCents(const char* value) { m_basePriceCents.assign(value); }
+
+    
+    inline getAppointmentBillResult& WithBasePriceCents(const Aws::String& value) { SetBasePriceCents(value); return *this;}
+
+    
+    inline getAppointmentBillResult& WithBasePriceCents(Aws::String&& value) { SetBasePriceCents(value); return *this;}
+
+    
+    inline getAppointmentBillResult& WithBasePriceCents(const char* value) { SetBasePriceCents(value); return *this;}
+
+    
     inline const Aws::String& GetDoctorServiceFeeCents() const{ return m_doctorServiceFeeCents; }
 
     
@@ -103,27 +124,6 @@ namespace Model
     inline getAppointmentBillResult& WithTotalPriceCents(const char* value) { SetTotalPriceCents(value); return *this;}
 
     
-    inline const Aws::String& GetBasePriceCents() const{ return m_basePriceCents; }
-
-    
-    inline void SetBasePriceCents(const Aws::String& value) { m_basePriceCents = value; }
-
-    
-    inline void SetBasePriceCents(Aws::String&& value) { m_basePriceCents = value; }
-
-    
-    inline void SetBasePriceCents(const char* value) { m_basePriceCents.assign(value); }
-
-    
-    inline getAppointmentBillResult& WithBasePriceCents(const Aws::String& value) { SetBasePriceCents(value); return *this;}
-
-    
-    inline getAppointmentBillResult& WithBasePriceCents(Aws::String&& value) { SetBasePriceCents(value); return *this;}
-
-    
-    inline getAppointmentBillResult& WithBasePriceCents(const char* value) { SetBasePriceCents(value); return *this;}
-
-    
     inline const Aws::String& GetFingerprint() const{ return m_fingerprint; }
 
     
@@ -145,10 +145,10 @@ namespace Model
     inline getAppointmentBillResult& WithFingerprint(const char* value) { SetFingerprint(value); return *this;}
 
   private:
+    Aws::String m_basePriceCents;
     Aws::String m_doctorServiceFeeCents;
     Aws::String m_patientServiceFeeCents;
     Aws::String m_totalPriceCents;
-    Aws::String m_basePriceCents;
     Aws::String m_fingerprint;
   };
 

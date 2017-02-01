@@ -12,7 +12,7 @@
 * express or implied. See the License for the specific language governing
 * permissions and limitations under the License.
 */
-#include <aws/vitalservices/model/GetAllDoctorServicesResult_servicesItem.h>
+#include <aws/vitalservices/model/ClientDoctorService.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 
 #include <utility>
@@ -27,37 +27,37 @@ namespace VitalServices
 namespace Model
 {
 
-GetAllDoctorServicesResult_servicesItem::GetAllDoctorServicesResult_servicesItem() : 
+ClientDoctorService::ClientDoctorService() : 
+    m_idHasBeenSet(false),
     m_additionalDescriptionHasBeenSet(false),
-    m_nameHasBeenSet(false),
     m_indefiniteArticleHasBeenSet(false),
-    m_idHasBeenSet(false)
+    m_nameHasBeenSet(false)
 {
 }
 
-GetAllDoctorServicesResult_servicesItem::GetAllDoctorServicesResult_servicesItem(const JsonValue& jsonValue) : 
+ClientDoctorService::ClientDoctorService(const JsonValue& jsonValue) : 
+    m_idHasBeenSet(false),
     m_additionalDescriptionHasBeenSet(false),
-    m_nameHasBeenSet(false),
     m_indefiniteArticleHasBeenSet(false),
-    m_idHasBeenSet(false)
+    m_nameHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-GetAllDoctorServicesResult_servicesItem& GetAllDoctorServicesResult_servicesItem::operator =(const JsonValue& jsonValue)
+ClientDoctorService& ClientDoctorService::operator =(const JsonValue& jsonValue)
 {
+  if(jsonValue.ValueExists("id"))
+  {
+    m_id = jsonValue.GetString("id");
+
+    m_idHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("additionalDescription"))
   {
     m_additionalDescription = jsonValue.GetString("additionalDescription");
 
     m_additionalDescriptionHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("name"))
-  {
-    m_name = jsonValue.GetString("name");
-
-    m_nameHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("indefiniteArticle"))
@@ -67,29 +67,29 @@ GetAllDoctorServicesResult_servicesItem& GetAllDoctorServicesResult_servicesItem
     m_indefiniteArticleHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("id"))
+  if(jsonValue.ValueExists("name"))
   {
-    m_id = jsonValue.GetString("id");
+    m_name = jsonValue.GetString("name");
 
-    m_idHasBeenSet = true;
+    m_nameHasBeenSet = true;
   }
 
   return *this;
 }
 
-JsonValue GetAllDoctorServicesResult_servicesItem::Jsonize() const
+JsonValue ClientDoctorService::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_idHasBeenSet)
+  {
+   payload.WithString("id", m_id);
+
+  }
 
   if(m_additionalDescriptionHasBeenSet)
   {
    payload.WithString("additionalDescription", m_additionalDescription);
-
-  }
-
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("name", m_name);
 
   }
 
@@ -99,9 +99,9 @@ JsonValue GetAllDoctorServicesResult_servicesItem::Jsonize() const
 
   }
 
-  if(m_idHasBeenSet)
+  if(m_nameHasBeenSet)
   {
-   payload.WithString("id", m_id);
+   payload.WithString("name", m_name);
 
   }
 

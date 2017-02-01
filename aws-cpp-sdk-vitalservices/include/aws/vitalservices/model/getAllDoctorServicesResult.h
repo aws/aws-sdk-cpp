@@ -15,7 +15,7 @@
 #pragma once
 #include <aws/vitalservices/VitalServices_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/vitalservices/model/GetAllDoctorServicesResult_servicesItem.h>
+#include <aws/vitalservices/model/ClientDoctorService.h>
 
 namespace Aws
 {
@@ -41,28 +41,28 @@ namespace Model
     getAllDoctorServicesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
     
-    inline const Aws::Vector<GetAllDoctorServicesResult_servicesItem>& GetServices() const{ return m_services; }
+    inline const Aws::Vector<ClientDoctorService>& GetServices() const{ return m_services; }
 
     
-    inline void SetServices(const Aws::Vector<GetAllDoctorServicesResult_servicesItem>& value) { m_services = value; }
+    inline void SetServices(const Aws::Vector<ClientDoctorService>& value) { m_services = value; }
 
     
-    inline void SetServices(Aws::Vector<GetAllDoctorServicesResult_servicesItem>&& value) { m_services = value; }
+    inline void SetServices(Aws::Vector<ClientDoctorService>&& value) { m_services = value; }
 
     
-    inline getAllDoctorServicesResult& WithServices(const Aws::Vector<GetAllDoctorServicesResult_servicesItem>& value) { SetServices(value); return *this;}
+    inline getAllDoctorServicesResult& WithServices(const Aws::Vector<ClientDoctorService>& value) { SetServices(value); return *this;}
 
     
-    inline getAllDoctorServicesResult& WithServices(Aws::Vector<GetAllDoctorServicesResult_servicesItem>&& value) { SetServices(value); return *this;}
+    inline getAllDoctorServicesResult& WithServices(Aws::Vector<ClientDoctorService>&& value) { SetServices(value); return *this;}
 
     
-    inline getAllDoctorServicesResult& AddServices(const GetAllDoctorServicesResult_servicesItem& value) { m_services.push_back(value); return *this; }
+    inline getAllDoctorServicesResult& AddServices(const ClientDoctorService& value) { m_services.push_back(value); return *this; }
 
     
-    inline getAllDoctorServicesResult& AddServices(GetAllDoctorServicesResult_servicesItem&& value) { m_services.push_back(value); return *this; }
+    inline getAllDoctorServicesResult& AddServices(ClientDoctorService&& value) { m_services.push_back(value); return *this; }
 
   private:
-    Aws::Vector<GetAllDoctorServicesResult_servicesItem> m_services;
+    Aws::Vector<ClientDoctorService> m_services;
   };
 
 } // namespace Model

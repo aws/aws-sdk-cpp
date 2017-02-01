@@ -33,27 +33,6 @@ namespace Model
     Aws::String SerializePayload() const override;
 
     
-    inline const Aws::String& GetMobileNumber() const{ return m_mobileNumber; }
-
-    
-    inline void SetMobileNumber(const Aws::String& value) { m_mobileNumberHasBeenSet = true; m_mobileNumber = value; }
-
-    
-    inline void SetMobileNumber(Aws::String&& value) { m_mobileNumberHasBeenSet = true; m_mobileNumber = value; }
-
-    
-    inline void SetMobileNumber(const char* value) { m_mobileNumberHasBeenSet = true; m_mobileNumber.assign(value); }
-
-    
-    inline updateUserRequest& WithMobileNumber(const Aws::String& value) { SetMobileNumber(value); return *this;}
-
-    
-    inline updateUserRequest& WithMobileNumber(Aws::String&& value) { SetMobileNumber(value); return *this;}
-
-    
-    inline updateUserRequest& WithMobileNumber(const char* value) { SetMobileNumber(value); return *this;}
-
-    
     inline const Aws::String& GetEmail() const{ return m_email; }
 
     
@@ -74,11 +53,32 @@ namespace Model
     
     inline updateUserRequest& WithEmail(const char* value) { SetEmail(value); return *this;}
 
+    
+    inline const Aws::String& GetMobileNumber() const{ return m_mobileNumber; }
+
+    
+    inline void SetMobileNumber(const Aws::String& value) { m_mobileNumberHasBeenSet = true; m_mobileNumber = value; }
+
+    
+    inline void SetMobileNumber(Aws::String&& value) { m_mobileNumberHasBeenSet = true; m_mobileNumber = value; }
+
+    
+    inline void SetMobileNumber(const char* value) { m_mobileNumberHasBeenSet = true; m_mobileNumber.assign(value); }
+
+    
+    inline updateUserRequest& WithMobileNumber(const Aws::String& value) { SetMobileNumber(value); return *this;}
+
+    
+    inline updateUserRequest& WithMobileNumber(Aws::String&& value) { SetMobileNumber(value); return *this;}
+
+    
+    inline updateUserRequest& WithMobileNumber(const char* value) { SetMobileNumber(value); return *this;}
+
   private:
-    Aws::String m_mobileNumber;
-    bool m_mobileNumberHasBeenSet;
     Aws::String m_email;
     bool m_emailHasBeenSet;
+    Aws::String m_mobileNumber;
+    bool m_mobileNumberHasBeenSet;
   };
 
 } // namespace Model

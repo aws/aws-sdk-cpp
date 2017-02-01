@@ -12,7 +12,7 @@
 * express or implied. See the License for the specific language governing
 * permissions and limitations under the License.
 */
-#include <aws/vitalservices/model/GetDoctorSpecialtiesResult_specialtiesItem.h>
+#include <aws/vitalservices/model/ClientDoctorSpecialty.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 
 #include <utility>
@@ -27,30 +27,30 @@ namespace VitalServices
 namespace Model
 {
 
-GetDoctorSpecialtiesResult_specialtiesItem::GetDoctorSpecialtiesResult_specialtiesItem() : 
-    m_nameHasBeenSet(false),
+ClientDoctorSpecialty::ClientDoctorSpecialty() : 
+    m_idHasBeenSet(false),
     m_isCommon(false),
     m_isCommonHasBeenSet(false),
-    m_idHasBeenSet(false)
+    m_nameHasBeenSet(false)
 {
 }
 
-GetDoctorSpecialtiesResult_specialtiesItem::GetDoctorSpecialtiesResult_specialtiesItem(const JsonValue& jsonValue) : 
-    m_nameHasBeenSet(false),
+ClientDoctorSpecialty::ClientDoctorSpecialty(const JsonValue& jsonValue) : 
+    m_idHasBeenSet(false),
     m_isCommon(false),
     m_isCommonHasBeenSet(false),
-    m_idHasBeenSet(false)
+    m_nameHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-GetDoctorSpecialtiesResult_specialtiesItem& GetDoctorSpecialtiesResult_specialtiesItem::operator =(const JsonValue& jsonValue)
+ClientDoctorSpecialty& ClientDoctorSpecialty::operator =(const JsonValue& jsonValue)
 {
-  if(jsonValue.ValueExists("name"))
+  if(jsonValue.ValueExists("id"))
   {
-    m_name = jsonValue.GetString("name");
+    m_id = jsonValue.GetString("id");
 
-    m_nameHasBeenSet = true;
+    m_idHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("isCommon"))
@@ -60,23 +60,23 @@ GetDoctorSpecialtiesResult_specialtiesItem& GetDoctorSpecialtiesResult_specialti
     m_isCommonHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("id"))
+  if(jsonValue.ValueExists("name"))
   {
-    m_id = jsonValue.GetString("id");
+    m_name = jsonValue.GetString("name");
 
-    m_idHasBeenSet = true;
+    m_nameHasBeenSet = true;
   }
 
   return *this;
 }
 
-JsonValue GetDoctorSpecialtiesResult_specialtiesItem::Jsonize() const
+JsonValue ClientDoctorSpecialty::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_nameHasBeenSet)
+  if(m_idHasBeenSet)
   {
-   payload.WithString("name", m_name);
+   payload.WithString("id", m_id);
 
   }
 
@@ -86,9 +86,9 @@ JsonValue GetDoctorSpecialtiesResult_specialtiesItem::Jsonize() const
 
   }
 
-  if(m_idHasBeenSet)
+  if(m_nameHasBeenSet)
   {
-   payload.WithString("id", m_id);
+   payload.WithString("name", m_name);
 
   }
 
