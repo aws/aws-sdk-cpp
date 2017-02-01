@@ -22,15 +22,21 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 queryDoctorScheduleRequest::queryDoctorScheduleRequest() : 
+    m_doctorIdHasBeenSet(false),
     m_firstTimeInclusiveHasBeenSet(false),
-    m_lastTimeExclusiveHasBeenSet(false),
-    m_doctorIdHasBeenSet(false)
+    m_lastTimeExclusiveHasBeenSet(false)
 {
 }
 
 Aws::String queryDoctorScheduleRequest::SerializePayload() const
 {
   JsonValue payload;
+
+  if(m_doctorIdHasBeenSet)
+  {
+   payload.WithString("doctorId", m_doctorId);
+
+  }
 
   if(m_firstTimeInclusiveHasBeenSet)
   {
@@ -41,12 +47,6 @@ Aws::String queryDoctorScheduleRequest::SerializePayload() const
   if(m_lastTimeExclusiveHasBeenSet)
   {
    payload.WithString("lastTimeExclusive", m_lastTimeExclusive);
-
-  }
-
-  if(m_doctorIdHasBeenSet)
-  {
-   payload.WithString("doctorId", m_doctorId);
 
   }
 

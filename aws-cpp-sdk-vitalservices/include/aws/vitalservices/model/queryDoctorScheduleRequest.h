@@ -33,6 +33,27 @@ namespace Model
     Aws::String SerializePayload() const override;
 
     
+    inline const Aws::String& GetDoctorId() const{ return m_doctorId; }
+
+    
+    inline void SetDoctorId(const Aws::String& value) { m_doctorIdHasBeenSet = true; m_doctorId = value; }
+
+    
+    inline void SetDoctorId(Aws::String&& value) { m_doctorIdHasBeenSet = true; m_doctorId = value; }
+
+    
+    inline void SetDoctorId(const char* value) { m_doctorIdHasBeenSet = true; m_doctorId.assign(value); }
+
+    
+    inline queryDoctorScheduleRequest& WithDoctorId(const Aws::String& value) { SetDoctorId(value); return *this;}
+
+    
+    inline queryDoctorScheduleRequest& WithDoctorId(Aws::String&& value) { SetDoctorId(value); return *this;}
+
+    
+    inline queryDoctorScheduleRequest& WithDoctorId(const char* value) { SetDoctorId(value); return *this;}
+
+    
     inline const Aws::String& GetFirstTimeInclusive() const{ return m_firstTimeInclusive; }
 
     
@@ -74,34 +95,13 @@ namespace Model
     
     inline queryDoctorScheduleRequest& WithLastTimeExclusive(const char* value) { SetLastTimeExclusive(value); return *this;}
 
-    
-    inline const Aws::String& GetDoctorId() const{ return m_doctorId; }
-
-    
-    inline void SetDoctorId(const Aws::String& value) { m_doctorIdHasBeenSet = true; m_doctorId = value; }
-
-    
-    inline void SetDoctorId(Aws::String&& value) { m_doctorIdHasBeenSet = true; m_doctorId = value; }
-
-    
-    inline void SetDoctorId(const char* value) { m_doctorIdHasBeenSet = true; m_doctorId.assign(value); }
-
-    
-    inline queryDoctorScheduleRequest& WithDoctorId(const Aws::String& value) { SetDoctorId(value); return *this;}
-
-    
-    inline queryDoctorScheduleRequest& WithDoctorId(Aws::String&& value) { SetDoctorId(value); return *this;}
-
-    
-    inline queryDoctorScheduleRequest& WithDoctorId(const char* value) { SetDoctorId(value); return *this;}
-
   private:
+    Aws::String m_doctorId;
+    bool m_doctorIdHasBeenSet;
     Aws::String m_firstTimeInclusive;
     bool m_firstTimeInclusiveHasBeenSet;
     Aws::String m_lastTimeExclusive;
     bool m_lastTimeExclusiveHasBeenSet;
-    Aws::String m_doctorId;
-    bool m_doctorIdHasBeenSet;
   };
 
 } // namespace Model

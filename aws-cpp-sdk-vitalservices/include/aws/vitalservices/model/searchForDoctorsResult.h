@@ -15,7 +15,7 @@
 #pragma once
 #include <aws/vitalservices/VitalServices_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/vitalservices/model/SearchForDoctorsResult_doctorsItem.h>
+#include <aws/vitalservices/model/ClientDoctor.h>
 
 namespace Aws
 {
@@ -41,28 +41,28 @@ namespace Model
     searchForDoctorsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
     
-    inline const Aws::Vector<SearchForDoctorsResult_doctorsItem>& GetDoctors() const{ return m_doctors; }
+    inline const Aws::Vector<ClientDoctor>& GetDoctors() const{ return m_doctors; }
 
     
-    inline void SetDoctors(const Aws::Vector<SearchForDoctorsResult_doctorsItem>& value) { m_doctors = value; }
+    inline void SetDoctors(const Aws::Vector<ClientDoctor>& value) { m_doctors = value; }
 
     
-    inline void SetDoctors(Aws::Vector<SearchForDoctorsResult_doctorsItem>&& value) { m_doctors = value; }
+    inline void SetDoctors(Aws::Vector<ClientDoctor>&& value) { m_doctors = value; }
 
     
-    inline searchForDoctorsResult& WithDoctors(const Aws::Vector<SearchForDoctorsResult_doctorsItem>& value) { SetDoctors(value); return *this;}
+    inline searchForDoctorsResult& WithDoctors(const Aws::Vector<ClientDoctor>& value) { SetDoctors(value); return *this;}
 
     
-    inline searchForDoctorsResult& WithDoctors(Aws::Vector<SearchForDoctorsResult_doctorsItem>&& value) { SetDoctors(value); return *this;}
+    inline searchForDoctorsResult& WithDoctors(Aws::Vector<ClientDoctor>&& value) { SetDoctors(value); return *this;}
 
     
-    inline searchForDoctorsResult& AddDoctors(const SearchForDoctorsResult_doctorsItem& value) { m_doctors.push_back(value); return *this; }
+    inline searchForDoctorsResult& AddDoctors(const ClientDoctor& value) { m_doctors.push_back(value); return *this; }
 
     
-    inline searchForDoctorsResult& AddDoctors(SearchForDoctorsResult_doctorsItem&& value) { m_doctors.push_back(value); return *this; }
+    inline searchForDoctorsResult& AddDoctors(ClientDoctor&& value) { m_doctors.push_back(value); return *this; }
 
   private:
-    Aws::Vector<SearchForDoctorsResult_doctorsItem> m_doctors;
+    Aws::Vector<ClientDoctor> m_doctors;
   };
 
 } // namespace Model

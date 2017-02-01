@@ -12,7 +12,7 @@
 * express or implied. See the License for the specific language governing
 * permissions and limitations under the License.
 */
-#include <aws/vitalservices/model/QueryDoctorScheduleResult_timeSlotsItem.h>
+#include <aws/vitalservices/model/ClientDoctorScheduleTimeSlot.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 
 #include <utility>
@@ -27,20 +27,20 @@ namespace VitalServices
 namespace Model
 {
 
-QueryDoctorScheduleResult_timeSlotsItem::QueryDoctorScheduleResult_timeSlotsItem() : 
+ClientDoctorScheduleTimeSlot::ClientDoctorScheduleTimeSlot() : 
     m_timeSlotHasBeenSet(false),
     m_appointmentIdHasBeenSet(false)
 {
 }
 
-QueryDoctorScheduleResult_timeSlotsItem::QueryDoctorScheduleResult_timeSlotsItem(const JsonValue& jsonValue) : 
+ClientDoctorScheduleTimeSlot::ClientDoctorScheduleTimeSlot(const JsonValue& jsonValue) : 
     m_timeSlotHasBeenSet(false),
     m_appointmentIdHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-QueryDoctorScheduleResult_timeSlotsItem& QueryDoctorScheduleResult_timeSlotsItem::operator =(const JsonValue& jsonValue)
+ClientDoctorScheduleTimeSlot& ClientDoctorScheduleTimeSlot::operator =(const JsonValue& jsonValue)
 {
   if(jsonValue.ValueExists("timeSlot"))
   {
@@ -59,7 +59,7 @@ QueryDoctorScheduleResult_timeSlotsItem& QueryDoctorScheduleResult_timeSlotsItem
   return *this;
 }
 
-JsonValue QueryDoctorScheduleResult_timeSlotsItem::Jsonize() const
+JsonValue ClientDoctorScheduleTimeSlot::Jsonize() const
 {
   JsonValue payload;
 

@@ -12,7 +12,7 @@
 * express or implied. See the License for the specific language governing
 * permissions and limitations under the License.
 */
-#include <aws/vitalservices/model/GetLoggedInUserResult_user.h>
+#include <aws/vitalservices/model/ClientUser.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 
 #include <utility>
@@ -27,38 +27,45 @@ namespace VitalServices
 namespace Model
 {
 
-GetLoggedInUserResult_user::GetLoggedInUserResult_user() : 
+ClientUser::ClientUser() : 
     m_idHasBeenSet(false),
-    m_firstNameHasBeenSet(false),
-    m_stripeCustomerIdHasBeenSet(false),
-    m_lastNameHasBeenSet(false),
     m_doctorIdHasBeenSet(false),
+    m_firstNameHasBeenSet(false),
+    m_lastNameHasBeenSet(false),
+    m_emailHasBeenSet(false),
     m_mobileNumberHasBeenSet(false),
     m_profilePhotoUrlHasBeenSet(false),
-    m_emailHasBeenSet(false)
+    m_stripeCustomerIdHasBeenSet(false)
 {
 }
 
-GetLoggedInUserResult_user::GetLoggedInUserResult_user(const JsonValue& jsonValue) : 
+ClientUser::ClientUser(const JsonValue& jsonValue) : 
     m_idHasBeenSet(false),
-    m_firstNameHasBeenSet(false),
-    m_stripeCustomerIdHasBeenSet(false),
-    m_lastNameHasBeenSet(false),
     m_doctorIdHasBeenSet(false),
+    m_firstNameHasBeenSet(false),
+    m_lastNameHasBeenSet(false),
+    m_emailHasBeenSet(false),
     m_mobileNumberHasBeenSet(false),
     m_profilePhotoUrlHasBeenSet(false),
-    m_emailHasBeenSet(false)
+    m_stripeCustomerIdHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-GetLoggedInUserResult_user& GetLoggedInUserResult_user::operator =(const JsonValue& jsonValue)
+ClientUser& ClientUser::operator =(const JsonValue& jsonValue)
 {
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
 
     m_idHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("doctorId"))
+  {
+    m_doctorId = jsonValue.GetString("doctorId");
+
+    m_doctorIdHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("firstName"))
@@ -68,13 +75,6 @@ GetLoggedInUserResult_user& GetLoggedInUserResult_user::operator =(const JsonVal
     m_firstNameHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("stripeCustomerId"))
-  {
-    m_stripeCustomerId = jsonValue.GetString("stripeCustomerId");
-
-    m_stripeCustomerIdHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("lastName"))
   {
     m_lastName = jsonValue.GetString("lastName");
@@ -82,11 +82,11 @@ GetLoggedInUserResult_user& GetLoggedInUserResult_user::operator =(const JsonVal
     m_lastNameHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("doctorId"))
+  if(jsonValue.ValueExists("email"))
   {
-    m_doctorId = jsonValue.GetString("doctorId");
+    m_email = jsonValue.GetString("email");
 
-    m_doctorIdHasBeenSet = true;
+    m_emailHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("mobileNumber"))
@@ -103,17 +103,17 @@ GetLoggedInUserResult_user& GetLoggedInUserResult_user::operator =(const JsonVal
     m_profilePhotoUrlHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("email"))
+  if(jsonValue.ValueExists("stripeCustomerId"))
   {
-    m_email = jsonValue.GetString("email");
+    m_stripeCustomerId = jsonValue.GetString("stripeCustomerId");
 
-    m_emailHasBeenSet = true;
+    m_stripeCustomerIdHasBeenSet = true;
   }
 
   return *this;
 }
 
-JsonValue GetLoggedInUserResult_user::Jsonize() const
+JsonValue ClientUser::Jsonize() const
 {
   JsonValue payload;
 
@@ -123,15 +123,15 @@ JsonValue GetLoggedInUserResult_user::Jsonize() const
 
   }
 
-  if(m_firstNameHasBeenSet)
+  if(m_doctorIdHasBeenSet)
   {
-   payload.WithString("firstName", m_firstName);
+   payload.WithString("doctorId", m_doctorId);
 
   }
 
-  if(m_stripeCustomerIdHasBeenSet)
+  if(m_firstNameHasBeenSet)
   {
-   payload.WithString("stripeCustomerId", m_stripeCustomerId);
+   payload.WithString("firstName", m_firstName);
 
   }
 
@@ -141,9 +141,9 @@ JsonValue GetLoggedInUserResult_user::Jsonize() const
 
   }
 
-  if(m_doctorIdHasBeenSet)
+  if(m_emailHasBeenSet)
   {
-   payload.WithString("doctorId", m_doctorId);
+   payload.WithString("email", m_email);
 
   }
 
@@ -159,9 +159,9 @@ JsonValue GetLoggedInUserResult_user::Jsonize() const
 
   }
 
-  if(m_emailHasBeenSet)
+  if(m_stripeCustomerIdHasBeenSet)
   {
-   payload.WithString("email", m_email);
+   payload.WithString("stripeCustomerId", m_stripeCustomerId);
 
   }
 

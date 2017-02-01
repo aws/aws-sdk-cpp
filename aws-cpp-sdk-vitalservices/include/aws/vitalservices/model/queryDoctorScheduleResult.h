@@ -15,7 +15,7 @@
 #pragma once
 #include <aws/vitalservices/VitalServices_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/vitalservices/model/QueryDoctorScheduleResult_timeSlotsItem.h>
+#include <aws/vitalservices/model/ClientDoctorScheduleTimeSlot.h>
 
 namespace Aws
 {
@@ -41,28 +41,28 @@ namespace Model
     queryDoctorScheduleResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
     
-    inline const Aws::Vector<QueryDoctorScheduleResult_timeSlotsItem>& GetTimeSlots() const{ return m_timeSlots; }
+    inline const Aws::Vector<ClientDoctorScheduleTimeSlot>& GetTimeSlots() const{ return m_timeSlots; }
 
     
-    inline void SetTimeSlots(const Aws::Vector<QueryDoctorScheduleResult_timeSlotsItem>& value) { m_timeSlots = value; }
+    inline void SetTimeSlots(const Aws::Vector<ClientDoctorScheduleTimeSlot>& value) { m_timeSlots = value; }
 
     
-    inline void SetTimeSlots(Aws::Vector<QueryDoctorScheduleResult_timeSlotsItem>&& value) { m_timeSlots = value; }
+    inline void SetTimeSlots(Aws::Vector<ClientDoctorScheduleTimeSlot>&& value) { m_timeSlots = value; }
 
     
-    inline queryDoctorScheduleResult& WithTimeSlots(const Aws::Vector<QueryDoctorScheduleResult_timeSlotsItem>& value) { SetTimeSlots(value); return *this;}
+    inline queryDoctorScheduleResult& WithTimeSlots(const Aws::Vector<ClientDoctorScheduleTimeSlot>& value) { SetTimeSlots(value); return *this;}
 
     
-    inline queryDoctorScheduleResult& WithTimeSlots(Aws::Vector<QueryDoctorScheduleResult_timeSlotsItem>&& value) { SetTimeSlots(value); return *this;}
+    inline queryDoctorScheduleResult& WithTimeSlots(Aws::Vector<ClientDoctorScheduleTimeSlot>&& value) { SetTimeSlots(value); return *this;}
 
     
-    inline queryDoctorScheduleResult& AddTimeSlots(const QueryDoctorScheduleResult_timeSlotsItem& value) { m_timeSlots.push_back(value); return *this; }
+    inline queryDoctorScheduleResult& AddTimeSlots(const ClientDoctorScheduleTimeSlot& value) { m_timeSlots.push_back(value); return *this; }
 
     
-    inline queryDoctorScheduleResult& AddTimeSlots(QueryDoctorScheduleResult_timeSlotsItem&& value) { m_timeSlots.push_back(value); return *this; }
+    inline queryDoctorScheduleResult& AddTimeSlots(ClientDoctorScheduleTimeSlot&& value) { m_timeSlots.push_back(value); return *this; }
 
   private:
-    Aws::Vector<QueryDoctorScheduleResult_timeSlotsItem> m_timeSlots;
+    Aws::Vector<ClientDoctorScheduleTimeSlot> m_timeSlots;
   };
 
 } // namespace Model

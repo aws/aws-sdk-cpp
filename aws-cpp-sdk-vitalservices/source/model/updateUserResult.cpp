@@ -42,15 +42,15 @@ updateUserResult& updateUserResult::operator =(const AmazonWebServiceResult<Json
 
   }
 
-  if(jsonValue.ValueExists("firstName"))
+  if(jsonValue.ValueExists("doctorId"))
   {
-    m_firstName = jsonValue.GetString("firstName");
+    m_doctorId = jsonValue.GetString("doctorId");
 
   }
 
-  if(jsonValue.ValueExists("stripeCustomerId"))
+  if(jsonValue.ValueExists("firstName"))
   {
-    m_stripeCustomerId = jsonValue.GetString("stripeCustomerId");
+    m_firstName = jsonValue.GetString("firstName");
 
   }
 
@@ -60,9 +60,9 @@ updateUserResult& updateUserResult::operator =(const AmazonWebServiceResult<Json
 
   }
 
-  if(jsonValue.ValueExists("doctorId"))
+  if(jsonValue.ValueExists("email"))
   {
-    m_doctorId = jsonValue.GetString("doctorId");
+    m_email = jsonValue.GetString("email");
 
   }
 
@@ -78,9 +78,9 @@ updateUserResult& updateUserResult::operator =(const AmazonWebServiceResult<Json
 
   }
 
-  if(jsonValue.ValueExists("email"))
+  if(jsonValue.ValueExists("stripeCustomerId"))
   {
-    m_email = jsonValue.GetString("email");
+    m_stripeCustomerId = jsonValue.GetString("stripeCustomerId");
 
   }
 

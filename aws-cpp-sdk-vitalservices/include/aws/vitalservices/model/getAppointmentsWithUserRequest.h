@@ -33,15 +33,6 @@ namespace Model
     Aws::String SerializePayload() const override;
 
     
-    inline bool GetGetPatients() const{ return m_getPatients; }
-
-    
-    inline void SetGetPatients(bool value) { m_getPatientsHasBeenSet = true; m_getPatients = value; }
-
-    
-    inline getAppointmentsWithUserRequest& WithGetPatients(bool value) { SetGetPatients(value); return *this;}
-
-    
     inline const Aws::String& GetUserId() const{ return m_userId; }
 
     
@@ -71,13 +62,22 @@ namespace Model
     
     inline getAppointmentsWithUserRequest& WithGetDoctors(bool value) { SetGetDoctors(value); return *this;}
 
+    
+    inline bool GetGetPatients() const{ return m_getPatients; }
+
+    
+    inline void SetGetPatients(bool value) { m_getPatientsHasBeenSet = true; m_getPatients = value; }
+
+    
+    inline getAppointmentsWithUserRequest& WithGetPatients(bool value) { SetGetPatients(value); return *this;}
+
   private:
-    bool m_getPatients;
-    bool m_getPatientsHasBeenSet;
     Aws::String m_userId;
     bool m_userIdHasBeenSet;
     bool m_getDoctors;
     bool m_getDoctorsHasBeenSet;
+    bool m_getPatients;
+    bool m_getPatientsHasBeenSet;
   };
 
 } // namespace Model

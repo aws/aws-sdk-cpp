@@ -7,32 +7,60 @@
         "serviceFullName": "VitalServices"
     },
     "operations": {
-        "getStripeCustomer": {
-            "name": "getStripeCustomer",
+        "addCreditCard": {
+            "name": "addCreditCard",
             "http": {
                 "method": "POST",
-                "requestUri": "/prod/get-stripe-customer",
+                "requestUri": "/prod/add-credit-card",
                 "responseCode": 200
             },
             "input": {
-                "shape": "GetStripeCustomerRequest"
+                "shape": "AddCreditCardRequest"
             },
             "output": {
-                "shape": "StripeObject"
+                "shape": "Empty"
             }
         },
-        "scheduleAppointment": {
-            "name": "scheduleAppointment",
+        "cancelAppointment": {
+            "name": "cancelAppointment",
             "http": {
                 "method": "POST",
-                "requestUri": "/prod/schedule-appointment",
+                "requestUri": "/prod/cancel-appointment",
+                "responseCode": 200
+            },
+            "input": {
+                "shape": "CancelAppointmentRequest"
+            },
+            "output": {
+                "shape": "CancelAppointmentResult"
+            }
+        },
+        "getAllDoctorServices": {
+            "name": "getAllDoctorServices",
+            "http": {
+                "method": "POST",
+                "requestUri": "/prod/get-all-doctor-services",
+                "responseCode": 200
+            },
+            "input": {
+                "shape": "GetAllDoctorServicesRequest"
+            },
+            "output": {
+                "shape": "GetAllDoctorServicesResult"
+            }
+        },
+        "getAppointmentBill": {
+            "name": "getAppointmentBill",
+            "http": {
+                "method": "POST",
+                "requestUri": "/prod/get-appointment-bill",
                 "responseCode": 200
             },
             "input": {
                 "shape": "ScheduleAppointmentRequest"
             },
             "output": {
-                "shape": "Empty"
+                "shape": "ClientAppointmentBill"
             }
         },
         "getAppointmentPaymentMethod": {
@@ -47,6 +75,90 @@
             },
             "output": {
                 "shape": "StripeObject"
+            }
+        },
+        "getAppointmentsWithUser": {
+            "name": "getAppointmentsWithUser",
+            "http": {
+                "method": "POST",
+                "requestUri": "/prod/get-appointments-with-user",
+                "responseCode": 200
+            },
+            "input": {
+                "shape": "GetAppointmentsWithUserRequest"
+            },
+            "output": {
+                "shape": "GetAppointmentsResult"
+            }
+        },
+        "getDoctorSpecialties": {
+            "name": "getDoctorSpecialties",
+            "http": {
+                "method": "POST",
+                "requestUri": "/prod/get-doctor-specialties",
+                "responseCode": 200
+            },
+            "input": {
+                "shape": "GetDoctorSpecialtiesRequest"
+            },
+            "output": {
+                "shape": "GetDoctorSpecialtiesResult"
+            }
+        },
+        "getDoctors": {
+            "name": "getDoctors",
+            "http": {
+                "method": "POST",
+                "requestUri": "/prod/get-doctors",
+                "responseCode": 200
+            },
+            "input": {
+                "shape": "GetDoctorsRequest"
+            },
+            "output": {
+                "shape": "GetDoctorsResult"
+            }
+        },
+        "getLoggedInUser": {
+            "name": "getLoggedInUser",
+            "http": {
+                "method": "POST",
+                "requestUri": "/prod/get-logged-in-user",
+                "responseCode": 200
+            },
+            "input": {
+                "shape": "VitalServicesRequest"
+            },
+            "output": {
+                "shape": "GetLoggedInUserResult"
+            }
+        },
+        "getStripeCustomer": {
+            "name": "getStripeCustomer",
+            "http": {
+                "method": "POST",
+                "requestUri": "/prod/get-stripe-customer",
+                "responseCode": 200
+            },
+            "input": {
+                "shape": "GetStripeCustomerRequest"
+            },
+            "output": {
+                "shape": "StripeObject"
+            }
+        },
+        "queryDoctorSchedule": {
+            "name": "queryDoctorSchedule",
+            "http": {
+                "method": "POST",
+                "requestUri": "/prod/query-doctor-schedule",
+                "responseCode": 200
+            },
+            "input": {
+                "shape": "QueryDoctorScheduleRequest"
+            },
+            "output": {
+                "shape": "QueryDoctorScheduleResult"
             }
         },
         "registerDoctor": {
@@ -77,60 +189,18 @@
                 "shape": "ClientUser"
             }
         },
-        "getLoggedInUser": {
-            "name": "getLoggedInUser",
+        "scheduleAppointment": {
+            "name": "scheduleAppointment",
             "http": {
                 "method": "POST",
-                "requestUri": "/prod/get-logged-in-user",
+                "requestUri": "/prod/schedule-appointment",
                 "responseCode": 200
             },
             "input": {
-                "shape": "VitalServicesRequest"
+                "shape": "ScheduleAppointmentRequest"
             },
             "output": {
-                "shape": "GetLoggedInUserResult"
-            }
-        },
-        "cancelAppointment": {
-            "name": "cancelAppointment",
-            "http": {
-                "method": "POST",
-                "requestUri": "/prod/cancel-appointment",
-                "responseCode": 200
-            },
-            "input": {
-                "shape": "CancelAppointmentRequest"
-            },
-            "output": {
-                "shape": "CancelAppointmentResult"
-            }
-        },
-        "queryDoctorSchedule": {
-            "name": "queryDoctorSchedule",
-            "http": {
-                "method": "POST",
-                "requestUri": "/prod/query-doctor-schedule",
-                "responseCode": 200
-            },
-            "input": {
-                "shape": "QueryDoctorScheduleRequest"
-            },
-            "output": {
-                "shape": "QueryDoctorScheduleResult"
-            }
-        },
-        "updateUser": {
-            "name": "updateUser",
-            "http": {
-                "method": "POST",
-                "requestUri": "/prod/update-user",
-                "responseCode": 200
-            },
-            "input": {
-                "shape": "UpdateUserRequest"
-            },
-            "output": {
-                "shape": "ClientUser"
+                "shape": "Empty"
             }
         },
         "searchForDoctors": {
@@ -161,48 +231,6 @@
                 "shape": "Empty"
             }
         },
-        "getAllDoctorServices": {
-            "name": "getAllDoctorServices",
-            "http": {
-                "method": "POST",
-                "requestUri": "/prod/get-all-doctor-services",
-                "responseCode": 200
-            },
-            "input": {
-                "shape": "GetAllDoctorServicesRequest"
-            },
-            "output": {
-                "shape": "GetAllDoctorServicesResult"
-            }
-        },
-        "getDoctorSpecialties": {
-            "name": "getDoctorSpecialties",
-            "http": {
-                "method": "POST",
-                "requestUri": "/prod/get-doctor-specialties",
-                "responseCode": 200
-            },
-            "input": {
-                "shape": "GetDoctorSpecialtiesRequest"
-            },
-            "output": {
-                "shape": "GetDoctorSpecialtiesResult"
-            }
-        },
-        "getAppointmentBill": {
-            "name": "getAppointmentBill",
-            "http": {
-                "method": "POST",
-                "requestUri": "/prod/get-appointment-bill",
-                "responseCode": 200
-            },
-            "input": {
-                "shape": "ScheduleAppointmentRequest"
-            },
-            "output": {
-                "shape": "ClientAppointmentBill"
-            }
-        },
         "updateDoctor": {
             "name": "updateDoctor",
             "http": {
@@ -217,18 +245,18 @@
                 "shape": "ClientDoctor"
             }
         },
-        "getAppointmentsWithUser": {
-            "name": "getAppointmentsWithUser",
+        "updateUser": {
+            "name": "updateUser",
             "http": {
                 "method": "POST",
-                "requestUri": "/prod/get-appointments-with-user",
+                "requestUri": "/prod/update-user",
                 "responseCode": 200
             },
             "input": {
-                "shape": "GetAppointmentsWithUserRequest"
+                "shape": "UpdateUserRequest"
             },
             "output": {
-                "shape": "GetAppointmentsResult"
+                "shape": "ClientUser"
             }
         },
         "urlForFile": {
@@ -244,189 +272,37 @@
             "output": {
                 "shape": "UrlForFileResult"
             }
-        },
-        "addCreditCard": {
-            "name": "addCreditCard",
-            "http": {
-                "method": "POST",
-                "requestUri": "/prod/add-credit-card",
-                "responseCode": 200
-            },
-            "input": {
-                "shape": "AddCreditCardRequest"
-            },
-            "output": {
-                "shape": "Empty"
-            }
-        },
-        "getDoctors": {
-            "name": "getDoctors",
-            "http": {
-                "method": "POST",
-                "requestUri": "/prod/get-doctors",
-                "responseCode": 200
-            },
-            "input": {
-                "shape": "GetDoctorsRequest"
-            },
-            "output": {
-                "shape": "GetDoctorsResult"
-            }
         }
     },
     "shapes": {
-        "GetStripeCustomerRequest_userId": {
-            "type": "string"
-        },
-        "GetStripeCustomerRequest": {
-            "type": "structure",
-            "required": [
-                "userId"
-            ],
-            "members": {
-                "userId": {
-                    "shape": "GetStripeCustomerRequest_userId"
-                }
-            }
-        },
-        "CancelAppointmentResult_appointment_chargeId": {
-            "type": "string"
-        },
-        "CancelAppointmentResult_appointment_serviceId": {
-            "type": "string"
-        },
-        "CancelAppointmentResult_appointment_basePriceCents": {
-            "type": "string"
-        },
-        "CancelAppointmentResult_appointment_startTime": {
-            "type": "string"
-        },
-        "CancelAppointmentResult_appointment_doctorEarningsCents": {
-            "type": "string"
-        },
-        "CancelAppointmentResult_appointment_reimbursementDate": {
-            "type": "string"
-        },
-        "CancelAppointmentResult_appointment_amountRefundedCents": {
-            "type": "string"
-        },
-        "CancelAppointmentResult_appointment_durationSeconds": {
-            "type": "string"
-        },
-        "CancelAppointmentResult_appointment_totalPriceCents": {
-            "type": "string"
-        },
-        "CancelAppointmentResult_appointment_doctorServiceFeeCents": {
-            "type": "string"
-        },
-        "CancelAppointmentResult_appointment_cancellationDate": {
-            "type": "string"
-        },
-        "CancelAppointmentResult_appointment_doctorId": {
-            "type": "string"
-        },
-        "CancelAppointmentResult_appointment_patientServiceFeeCents": {
-            "type": "string"
-        },
-        "CancelAppointmentResult_appointment_patientId": {
-            "type": "string"
-        },
-        "CancelAppointmentResult_appointment_appointmentState": {
-            "type": "string"
-        },
-        "CancelAppointmentResult_appointment_dateBooked": {
-            "type": "string"
-        },
-        "CancelAppointmentResult_appointment_id": {
-            "type": "string"
-        },
-        "CancelAppointmentResult_appointment": {
-            "type": "structure",
-            "required": [
-                "appointmentState",
-                "chargeId",
-                "dateBooked",
-                "doctorId",
-                "durationSeconds",
-                "id",
-                "patientId",
-                "serviceId",
-                "startTime"
-            ],
-            "members": {
-                "chargeId": {
-                    "shape": "CancelAppointmentResult_appointment_chargeId"
-                },
-                "serviceId": {
-                    "shape": "CancelAppointmentResult_appointment_serviceId"
-                },
-                "basePriceCents": {
-                    "shape": "CancelAppointmentResult_appointment_basePriceCents"
-                },
-                "startTime": {
-                    "shape": "CancelAppointmentResult_appointment_startTime"
-                },
-                "doctorEarningsCents": {
-                    "shape": "CancelAppointmentResult_appointment_doctorEarningsCents"
-                },
-                "reimbursementDate": {
-                    "shape": "CancelAppointmentResult_appointment_reimbursementDate"
-                },
-                "amountRefundedCents": {
-                    "shape": "CancelAppointmentResult_appointment_amountRefundedCents"
-                },
-                "durationSeconds": {
-                    "shape": "CancelAppointmentResult_appointment_durationSeconds"
-                },
-                "totalPriceCents": {
-                    "shape": "CancelAppointmentResult_appointment_totalPriceCents"
-                },
-                "doctorServiceFeeCents": {
-                    "shape": "CancelAppointmentResult_appointment_doctorServiceFeeCents"
-                },
-                "cancellationDate": {
-                    "shape": "CancelAppointmentResult_appointment_cancellationDate"
-                },
-                "doctorId": {
-                    "shape": "CancelAppointmentResult_appointment_doctorId"
-                },
-                "patientServiceFeeCents": {
-                    "shape": "CancelAppointmentResult_appointment_patientServiceFeeCents"
-                },
-                "patientId": {
-                    "shape": "CancelAppointmentResult_appointment_patientId"
-                },
-                "appointmentState": {
-                    "shape": "CancelAppointmentResult_appointment_appointmentState"
-                },
-                "dateBooked": {
-                    "shape": "CancelAppointmentResult_appointment_dateBooked"
-                },
-                "id": {
-                    "shape": "CancelAppointmentResult_appointment_id"
-                }
-            }
-        },
-        "CancelAppointmentResult_errorCode": {
-            "type": "string"
-        },
-        "CancelAppointmentResult": {
-            "type": "structure",
-            "required": [],
-            "members": {
-                "appointment": {
-                    "shape": "CancelAppointmentResult_appointment"
-                },
-                "errorCode": {
-                    "shape": "CancelAppointmentResult_errorCode"
-                }
-            }
-        },
-        "CancelAppointmentRequest_appointmentId": {
-            "type": "string"
-        },
-        "CancelAppointmentRequest_lateCancellation": {
+        "boolean": {
             "type": "boolean"
+        },
+        "double": {
+            "type": "double"
+        },
+        "integer": {
+            "type": "integer"
+        },
+        "long": {
+            "type": "long"
+        },
+        "string": {
+            "type": "string"
+        },
+        "timestamp": {
+            "type": "timestamp"
+        },
+        "AddCreditCardRequest": {
+            "type": "structure",
+            "required": [
+                "cardToken"
+            ],
+            "members": {
+                "cardToken": {
+                    "shape": "string"
+                }
+            }
         },
         "CancelAppointmentRequest": {
             "type": "structure",
@@ -436,1093 +312,12 @@
             ],
             "members": {
                 "appointmentId": {
-                    "shape": "CancelAppointmentRequest_appointmentId"
+                    "shape": "string"
                 },
                 "lateCancellation": {
-                    "shape": "CancelAppointmentRequest_lateCancellation"
+                    "shape": "boolean"
                 }
             }
-        },
-        "SearchForDoctorsResult_doctorsItem_longitude": {
-            "type": "double"
-        },
-        "SearchForDoctorsResult_doctorsItem_servicesOfferedItem": {
-            "type": "string"
-        },
-        "SearchForDoctorsResult_doctorsItem_servicesOffered": {
-            "type": "list",
-            "member": {
-                "shape": "SearchForDoctorsResult_doctorsItem_servicesOfferedItem"
-            }
-        },
-        "SearchForDoctorsResult_doctorsItem_payoutInfoIsSet": {
-            "type": "boolean"
-        },
-        "SearchForDoctorsResult_doctorsItem_city": {
-            "type": "string"
-        },
-        "SearchForDoctorsResult_doctorsItem_specialtyId": {
-            "type": "string"
-        },
-        "SearchForDoctorsResult_doctorsItem_suite": {
-            "type": "string"
-        },
-        "SearchForDoctorsResult_doctorsItem_officeNumber": {
-            "type": "string"
-        },
-        "SearchForDoctorsResult_doctorsItem_serviceDetailsListItem_priceDollars": {
-            "type": "string"
-        },
-        "SearchForDoctorsResult_doctorsItem_serviceDetailsListItem_durationSeconds": {
-            "type": "double"
-        },
-        "SearchForDoctorsResult_doctorsItem_serviceDetailsListItem_serviceId": {
-            "type": "string"
-        },
-        "SearchForDoctorsResult_doctorsItem_serviceDetailsListItem_doctorId": {
-            "type": "string"
-        },
-        "SearchForDoctorsResult_doctorsItem_serviceDetailsListItem": {
-            "type": "structure",
-            "required": [
-                "doctorId",
-                "durationSeconds",
-                "priceDollars",
-                "serviceId"
-            ],
-            "members": {
-                "priceDollars": {
-                    "shape": "SearchForDoctorsResult_doctorsItem_serviceDetailsListItem_priceDollars"
-                },
-                "durationSeconds": {
-                    "shape": "SearchForDoctorsResult_doctorsItem_serviceDetailsListItem_durationSeconds"
-                },
-                "serviceId": {
-                    "shape": "SearchForDoctorsResult_doctorsItem_serviceDetailsListItem_serviceId"
-                },
-                "doctorId": {
-                    "shape": "SearchForDoctorsResult_doctorsItem_serviceDetailsListItem_doctorId"
-                }
-            }
-        },
-        "SearchForDoctorsResult_doctorsItem_serviceDetailsList": {
-            "type": "list",
-            "member": {
-                "shape": "SearchForDoctorsResult_doctorsItem_serviceDetailsListItem"
-            }
-        },
-        "SearchForDoctorsResult_doctorsItem_firstName": {
-            "type": "string"
-        },
-        "SearchForDoctorsResult_doctorsItem_latitude": {
-            "type": "double"
-        },
-        "SearchForDoctorsResult_doctorsItem_postalCode": {
-            "type": "string"
-        },
-        "SearchForDoctorsResult_doctorsItem_streetNumberAndName": {
-            "type": "string"
-        },
-        "SearchForDoctorsResult_doctorsItem_administrativeAreaL1": {
-            "type": "string"
-        },
-        "SearchForDoctorsResult_doctorsItem_lastName": {
-            "type": "string"
-        },
-        "SearchForDoctorsResult_doctorsItem_coverPhotoUrl": {
-            "type": "string"
-        },
-        "SearchForDoctorsResult_doctorsItem_profilePhotoUrl": {
-            "type": "string"
-        },
-        "SearchForDoctorsResult_doctorsItem_id": {
-            "type": "string"
-        },
-        "SearchForDoctorsResult_doctorsItem": {
-            "type": "structure",
-            "required": [
-                "firstName",
-                "id",
-                "lastName",
-                "payoutInfoIsSet",
-                "servicesOffered",
-                "specialtyId"
-            ],
-            "members": {
-                "longitude": {
-                    "shape": "SearchForDoctorsResult_doctorsItem_longitude"
-                },
-                "servicesOffered": {
-                    "shape": "SearchForDoctorsResult_doctorsItem_servicesOffered"
-                },
-                "payoutInfoIsSet": {
-                    "shape": "SearchForDoctorsResult_doctorsItem_payoutInfoIsSet"
-                },
-                "city": {
-                    "shape": "SearchForDoctorsResult_doctorsItem_city"
-                },
-                "specialtyId": {
-                    "shape": "SearchForDoctorsResult_doctorsItem_specialtyId"
-                },
-                "suite": {
-                    "shape": "SearchForDoctorsResult_doctorsItem_suite"
-                },
-                "officeNumber": {
-                    "shape": "SearchForDoctorsResult_doctorsItem_officeNumber"
-                },
-                "serviceDetailsList": {
-                    "shape": "SearchForDoctorsResult_doctorsItem_serviceDetailsList"
-                },
-                "firstName": {
-                    "shape": "SearchForDoctorsResult_doctorsItem_firstName"
-                },
-                "latitude": {
-                    "shape": "SearchForDoctorsResult_doctorsItem_latitude"
-                },
-                "postalCode": {
-                    "shape": "SearchForDoctorsResult_doctorsItem_postalCode"
-                },
-                "streetNumberAndName": {
-                    "shape": "SearchForDoctorsResult_doctorsItem_streetNumberAndName"
-                },
-                "administrativeAreaL1": {
-                    "shape": "SearchForDoctorsResult_doctorsItem_administrativeAreaL1"
-                },
-                "lastName": {
-                    "shape": "SearchForDoctorsResult_doctorsItem_lastName"
-                },
-                "coverPhotoUrl": {
-                    "shape": "SearchForDoctorsResult_doctorsItem_coverPhotoUrl"
-                },
-                "profilePhotoUrl": {
-                    "shape": "SearchForDoctorsResult_doctorsItem_profilePhotoUrl"
-                },
-                "id": {
-                    "shape": "SearchForDoctorsResult_doctorsItem_id"
-                }
-            }
-        },
-        "SearchForDoctorsResult_doctors": {
-            "type": "list",
-            "member": {
-                "shape": "SearchForDoctorsResult_doctorsItem"
-            }
-        },
-        "SearchForDoctorsResult": {
-            "type": "structure",
-            "required": [],
-            "members": {
-                "doctors": {
-                    "shape": "SearchForDoctorsResult_doctors"
-                }
-            }
-        },
-        "Empty": {
-            "type": "structure",
-            "required": [],
-            "members": {}
-        },
-        "GetAppointmentsResult_patientsItem_lastName": {
-            "type": "string"
-        },
-        "GetAppointmentsResult_patientsItem_firstName": {
-            "type": "string"
-        },
-        "GetAppointmentsResult_patientsItem_mobileNumber": {
-            "type": "string"
-        },
-        "GetAppointmentsResult_patientsItem_profilePhotoUrl": {
-            "type": "string"
-        },
-        "GetAppointmentsResult_patientsItem_id": {
-            "type": "string"
-        },
-        "GetAppointmentsResult_patientsItem": {
-            "type": "structure",
-            "required": [
-                "firstName",
-                "id",
-                "lastName",
-                "mobileNumber"
-            ],
-            "members": {
-                "lastName": {
-                    "shape": "GetAppointmentsResult_patientsItem_lastName"
-                },
-                "firstName": {
-                    "shape": "GetAppointmentsResult_patientsItem_firstName"
-                },
-                "mobileNumber": {
-                    "shape": "GetAppointmentsResult_patientsItem_mobileNumber"
-                },
-                "profilePhotoUrl": {
-                    "shape": "GetAppointmentsResult_patientsItem_profilePhotoUrl"
-                },
-                "id": {
-                    "shape": "GetAppointmentsResult_patientsItem_id"
-                }
-            }
-        },
-        "GetAppointmentsResult_patients": {
-            "type": "list",
-            "member": {
-                "shape": "GetAppointmentsResult_patientsItem"
-            }
-        },
-        "GetAppointmentsResult_appointmentsItem_chargeId": {
-            "type": "string"
-        },
-        "GetAppointmentsResult_appointmentsItem_serviceId": {
-            "type": "string"
-        },
-        "GetAppointmentsResult_appointmentsItem_basePriceCents": {
-            "type": "string"
-        },
-        "GetAppointmentsResult_appointmentsItem_startTime": {
-            "type": "string"
-        },
-        "GetAppointmentsResult_appointmentsItem_doctorEarningsCents": {
-            "type": "string"
-        },
-        "GetAppointmentsResult_appointmentsItem_reimbursementDate": {
-            "type": "string"
-        },
-        "GetAppointmentsResult_appointmentsItem_amountRefundedCents": {
-            "type": "string"
-        },
-        "GetAppointmentsResult_appointmentsItem_durationSeconds": {
-            "type": "string"
-        },
-        "GetAppointmentsResult_appointmentsItem_totalPriceCents": {
-            "type": "string"
-        },
-        "GetAppointmentsResult_appointmentsItem_doctorServiceFeeCents": {
-            "type": "string"
-        },
-        "GetAppointmentsResult_appointmentsItem_cancellationDate": {
-            "type": "string"
-        },
-        "GetAppointmentsResult_appointmentsItem_doctorId": {
-            "type": "string"
-        },
-        "GetAppointmentsResult_appointmentsItem_patientServiceFeeCents": {
-            "type": "string"
-        },
-        "GetAppointmentsResult_appointmentsItem_patientId": {
-            "type": "string"
-        },
-        "GetAppointmentsResult_appointmentsItem_appointmentState": {
-            "type": "string"
-        },
-        "GetAppointmentsResult_appointmentsItem_dateBooked": {
-            "type": "string"
-        },
-        "GetAppointmentsResult_appointmentsItem_id": {
-            "type": "string"
-        },
-        "GetAppointmentsResult_appointmentsItem": {
-            "type": "structure",
-            "required": [
-                "appointmentState",
-                "chargeId",
-                "dateBooked",
-                "doctorId",
-                "durationSeconds",
-                "id",
-                "patientId",
-                "serviceId",
-                "startTime"
-            ],
-            "members": {
-                "chargeId": {
-                    "shape": "GetAppointmentsResult_appointmentsItem_chargeId"
-                },
-                "serviceId": {
-                    "shape": "GetAppointmentsResult_appointmentsItem_serviceId"
-                },
-                "basePriceCents": {
-                    "shape": "GetAppointmentsResult_appointmentsItem_basePriceCents"
-                },
-                "startTime": {
-                    "shape": "GetAppointmentsResult_appointmentsItem_startTime"
-                },
-                "doctorEarningsCents": {
-                    "shape": "GetAppointmentsResult_appointmentsItem_doctorEarningsCents"
-                },
-                "reimbursementDate": {
-                    "shape": "GetAppointmentsResult_appointmentsItem_reimbursementDate"
-                },
-                "amountRefundedCents": {
-                    "shape": "GetAppointmentsResult_appointmentsItem_amountRefundedCents"
-                },
-                "durationSeconds": {
-                    "shape": "GetAppointmentsResult_appointmentsItem_durationSeconds"
-                },
-                "totalPriceCents": {
-                    "shape": "GetAppointmentsResult_appointmentsItem_totalPriceCents"
-                },
-                "doctorServiceFeeCents": {
-                    "shape": "GetAppointmentsResult_appointmentsItem_doctorServiceFeeCents"
-                },
-                "cancellationDate": {
-                    "shape": "GetAppointmentsResult_appointmentsItem_cancellationDate"
-                },
-                "doctorId": {
-                    "shape": "GetAppointmentsResult_appointmentsItem_doctorId"
-                },
-                "patientServiceFeeCents": {
-                    "shape": "GetAppointmentsResult_appointmentsItem_patientServiceFeeCents"
-                },
-                "patientId": {
-                    "shape": "GetAppointmentsResult_appointmentsItem_patientId"
-                },
-                "appointmentState": {
-                    "shape": "GetAppointmentsResult_appointmentsItem_appointmentState"
-                },
-                "dateBooked": {
-                    "shape": "GetAppointmentsResult_appointmentsItem_dateBooked"
-                },
-                "id": {
-                    "shape": "GetAppointmentsResult_appointmentsItem_id"
-                }
-            }
-        },
-        "GetAppointmentsResult_appointments": {
-            "type": "list",
-            "member": {
-                "shape": "GetAppointmentsResult_appointmentsItem"
-            }
-        },
-        "GetAppointmentsResult_doctorsItem_longitude": {
-            "type": "double"
-        },
-        "GetAppointmentsResult_doctorsItem_servicesOfferedItem": {
-            "type": "string"
-        },
-        "GetAppointmentsResult_doctorsItem_servicesOffered": {
-            "type": "list",
-            "member": {
-                "shape": "GetAppointmentsResult_doctorsItem_servicesOfferedItem"
-            }
-        },
-        "GetAppointmentsResult_doctorsItem_payoutInfoIsSet": {
-            "type": "boolean"
-        },
-        "GetAppointmentsResult_doctorsItem_city": {
-            "type": "string"
-        },
-        "GetAppointmentsResult_doctorsItem_specialtyId": {
-            "type": "string"
-        },
-        "GetAppointmentsResult_doctorsItem_suite": {
-            "type": "string"
-        },
-        "GetAppointmentsResult_doctorsItem_officeNumber": {
-            "type": "string"
-        },
-        "GetAppointmentsResult_doctorsItem_serviceDetailsListItem_priceDollars": {
-            "type": "string"
-        },
-        "GetAppointmentsResult_doctorsItem_serviceDetailsListItem_durationSeconds": {
-            "type": "double"
-        },
-        "GetAppointmentsResult_doctorsItem_serviceDetailsListItem_serviceId": {
-            "type": "string"
-        },
-        "GetAppointmentsResult_doctorsItem_serviceDetailsListItem_doctorId": {
-            "type": "string"
-        },
-        "GetAppointmentsResult_doctorsItem_serviceDetailsListItem": {
-            "type": "structure",
-            "required": [
-                "doctorId",
-                "durationSeconds",
-                "priceDollars",
-                "serviceId"
-            ],
-            "members": {
-                "priceDollars": {
-                    "shape": "GetAppointmentsResult_doctorsItem_serviceDetailsListItem_priceDollars"
-                },
-                "durationSeconds": {
-                    "shape": "GetAppointmentsResult_doctorsItem_serviceDetailsListItem_durationSeconds"
-                },
-                "serviceId": {
-                    "shape": "GetAppointmentsResult_doctorsItem_serviceDetailsListItem_serviceId"
-                },
-                "doctorId": {
-                    "shape": "GetAppointmentsResult_doctorsItem_serviceDetailsListItem_doctorId"
-                }
-            }
-        },
-        "GetAppointmentsResult_doctorsItem_serviceDetailsList": {
-            "type": "list",
-            "member": {
-                "shape": "GetAppointmentsResult_doctorsItem_serviceDetailsListItem"
-            }
-        },
-        "GetAppointmentsResult_doctorsItem_firstName": {
-            "type": "string"
-        },
-        "GetAppointmentsResult_doctorsItem_latitude": {
-            "type": "double"
-        },
-        "GetAppointmentsResult_doctorsItem_postalCode": {
-            "type": "string"
-        },
-        "GetAppointmentsResult_doctorsItem_streetNumberAndName": {
-            "type": "string"
-        },
-        "GetAppointmentsResult_doctorsItem_administrativeAreaL1": {
-            "type": "string"
-        },
-        "GetAppointmentsResult_doctorsItem_lastName": {
-            "type": "string"
-        },
-        "GetAppointmentsResult_doctorsItem_coverPhotoUrl": {
-            "type": "string"
-        },
-        "GetAppointmentsResult_doctorsItem_profilePhotoUrl": {
-            "type": "string"
-        },
-        "GetAppointmentsResult_doctorsItem_id": {
-            "type": "string"
-        },
-        "GetAppointmentsResult_doctorsItem": {
-            "type": "structure",
-            "required": [
-                "firstName",
-                "id",
-                "lastName",
-                "payoutInfoIsSet",
-                "servicesOffered",
-                "specialtyId"
-            ],
-            "members": {
-                "longitude": {
-                    "shape": "GetAppointmentsResult_doctorsItem_longitude"
-                },
-                "servicesOffered": {
-                    "shape": "GetAppointmentsResult_doctorsItem_servicesOffered"
-                },
-                "payoutInfoIsSet": {
-                    "shape": "GetAppointmentsResult_doctorsItem_payoutInfoIsSet"
-                },
-                "city": {
-                    "shape": "GetAppointmentsResult_doctorsItem_city"
-                },
-                "specialtyId": {
-                    "shape": "GetAppointmentsResult_doctorsItem_specialtyId"
-                },
-                "suite": {
-                    "shape": "GetAppointmentsResult_doctorsItem_suite"
-                },
-                "officeNumber": {
-                    "shape": "GetAppointmentsResult_doctorsItem_officeNumber"
-                },
-                "serviceDetailsList": {
-                    "shape": "GetAppointmentsResult_doctorsItem_serviceDetailsList"
-                },
-                "firstName": {
-                    "shape": "GetAppointmentsResult_doctorsItem_firstName"
-                },
-                "latitude": {
-                    "shape": "GetAppointmentsResult_doctorsItem_latitude"
-                },
-                "postalCode": {
-                    "shape": "GetAppointmentsResult_doctorsItem_postalCode"
-                },
-                "streetNumberAndName": {
-                    "shape": "GetAppointmentsResult_doctorsItem_streetNumberAndName"
-                },
-                "administrativeAreaL1": {
-                    "shape": "GetAppointmentsResult_doctorsItem_administrativeAreaL1"
-                },
-                "lastName": {
-                    "shape": "GetAppointmentsResult_doctorsItem_lastName"
-                },
-                "coverPhotoUrl": {
-                    "shape": "GetAppointmentsResult_doctorsItem_coverPhotoUrl"
-                },
-                "profilePhotoUrl": {
-                    "shape": "GetAppointmentsResult_doctorsItem_profilePhotoUrl"
-                },
-                "id": {
-                    "shape": "GetAppointmentsResult_doctorsItem_id"
-                }
-            }
-        },
-        "GetAppointmentsResult_doctors": {
-            "type": "list",
-            "member": {
-                "shape": "GetAppointmentsResult_doctorsItem"
-            }
-        },
-        "GetAppointmentsResult": {
-            "type": "structure",
-            "required": [
-                "appointments"
-            ],
-            "members": {
-                "patients": {
-                    "shape": "GetAppointmentsResult_patients"
-                },
-                "appointments": {
-                    "shape": "GetAppointmentsResult_appointments"
-                },
-                "doctors": {
-                    "shape": "GetAppointmentsResult_doctors"
-                }
-            }
-        },
-        "ClientAppointmentBill_doctorServiceFeeCents": {
-            "type": "string"
-        },
-        "ClientAppointmentBill_patientServiceFeeCents": {
-            "type": "string"
-        },
-        "ClientAppointmentBill_totalPriceCents": {
-            "type": "string"
-        },
-        "ClientAppointmentBill_basePriceCents": {
-            "type": "string"
-        },
-        "ClientAppointmentBill_fingerprint": {
-            "type": "string"
-        },
-        "ClientAppointmentBill": {
-            "type": "structure",
-            "required": [
-                "fingerprint"
-            ],
-            "members": {
-                "doctorServiceFeeCents": {
-                    "shape": "ClientAppointmentBill_doctorServiceFeeCents"
-                },
-                "patientServiceFeeCents": {
-                    "shape": "ClientAppointmentBill_patientServiceFeeCents"
-                },
-                "totalPriceCents": {
-                    "shape": "ClientAppointmentBill_totalPriceCents"
-                },
-                "basePriceCents": {
-                    "shape": "ClientAppointmentBill_basePriceCents"
-                },
-                "fingerprint": {
-                    "shape": "ClientAppointmentBill_fingerprint"
-                }
-            }
-        },
-        "GetDoctorsResult_doctorsItem_longitude": {
-            "type": "double"
-        },
-        "GetDoctorsResult_doctorsItem_servicesOfferedItem": {
-            "type": "string"
-        },
-        "GetDoctorsResult_doctorsItem_servicesOffered": {
-            "type": "list",
-            "member": {
-                "shape": "GetDoctorsResult_doctorsItem_servicesOfferedItem"
-            }
-        },
-        "GetDoctorsResult_doctorsItem_payoutInfoIsSet": {
-            "type": "boolean"
-        },
-        "GetDoctorsResult_doctorsItem_city": {
-            "type": "string"
-        },
-        "GetDoctorsResult_doctorsItem_specialtyId": {
-            "type": "string"
-        },
-        "GetDoctorsResult_doctorsItem_suite": {
-            "type": "string"
-        },
-        "GetDoctorsResult_doctorsItem_officeNumber": {
-            "type": "string"
-        },
-        "GetDoctorsResult_doctorsItem_serviceDetailsListItem_priceDollars": {
-            "type": "string"
-        },
-        "GetDoctorsResult_doctorsItem_serviceDetailsListItem_durationSeconds": {
-            "type": "double"
-        },
-        "GetDoctorsResult_doctorsItem_serviceDetailsListItem_serviceId": {
-            "type": "string"
-        },
-        "GetDoctorsResult_doctorsItem_serviceDetailsListItem_doctorId": {
-            "type": "string"
-        },
-        "GetDoctorsResult_doctorsItem_serviceDetailsListItem": {
-            "type": "structure",
-            "required": [
-                "doctorId",
-                "durationSeconds",
-                "priceDollars",
-                "serviceId"
-            ],
-            "members": {
-                "priceDollars": {
-                    "shape": "GetDoctorsResult_doctorsItem_serviceDetailsListItem_priceDollars"
-                },
-                "durationSeconds": {
-                    "shape": "GetDoctorsResult_doctorsItem_serviceDetailsListItem_durationSeconds"
-                },
-                "serviceId": {
-                    "shape": "GetDoctorsResult_doctorsItem_serviceDetailsListItem_serviceId"
-                },
-                "doctorId": {
-                    "shape": "GetDoctorsResult_doctorsItem_serviceDetailsListItem_doctorId"
-                }
-            }
-        },
-        "GetDoctorsResult_doctorsItem_serviceDetailsList": {
-            "type": "list",
-            "member": {
-                "shape": "GetDoctorsResult_doctorsItem_serviceDetailsListItem"
-            }
-        },
-        "GetDoctorsResult_doctorsItem_firstName": {
-            "type": "string"
-        },
-        "GetDoctorsResult_doctorsItem_latitude": {
-            "type": "double"
-        },
-        "GetDoctorsResult_doctorsItem_postalCode": {
-            "type": "string"
-        },
-        "GetDoctorsResult_doctorsItem_streetNumberAndName": {
-            "type": "string"
-        },
-        "GetDoctorsResult_doctorsItem_administrativeAreaL1": {
-            "type": "string"
-        },
-        "GetDoctorsResult_doctorsItem_lastName": {
-            "type": "string"
-        },
-        "GetDoctorsResult_doctorsItem_coverPhotoUrl": {
-            "type": "string"
-        },
-        "GetDoctorsResult_doctorsItem_profilePhotoUrl": {
-            "type": "string"
-        },
-        "GetDoctorsResult_doctorsItem_id": {
-            "type": "string"
-        },
-        "GetDoctorsResult_doctorsItem": {
-            "type": "structure",
-            "required": [
-                "firstName",
-                "id",
-                "lastName",
-                "payoutInfoIsSet",
-                "servicesOffered",
-                "specialtyId"
-            ],
-            "members": {
-                "longitude": {
-                    "shape": "GetDoctorsResult_doctorsItem_longitude"
-                },
-                "servicesOffered": {
-                    "shape": "GetDoctorsResult_doctorsItem_servicesOffered"
-                },
-                "payoutInfoIsSet": {
-                    "shape": "GetDoctorsResult_doctorsItem_payoutInfoIsSet"
-                },
-                "city": {
-                    "shape": "GetDoctorsResult_doctorsItem_city"
-                },
-                "specialtyId": {
-                    "shape": "GetDoctorsResult_doctorsItem_specialtyId"
-                },
-                "suite": {
-                    "shape": "GetDoctorsResult_doctorsItem_suite"
-                },
-                "officeNumber": {
-                    "shape": "GetDoctorsResult_doctorsItem_officeNumber"
-                },
-                "serviceDetailsList": {
-                    "shape": "GetDoctorsResult_doctorsItem_serviceDetailsList"
-                },
-                "firstName": {
-                    "shape": "GetDoctorsResult_doctorsItem_firstName"
-                },
-                "latitude": {
-                    "shape": "GetDoctorsResult_doctorsItem_latitude"
-                },
-                "postalCode": {
-                    "shape": "GetDoctorsResult_doctorsItem_postalCode"
-                },
-                "streetNumberAndName": {
-                    "shape": "GetDoctorsResult_doctorsItem_streetNumberAndName"
-                },
-                "administrativeAreaL1": {
-                    "shape": "GetDoctorsResult_doctorsItem_administrativeAreaL1"
-                },
-                "lastName": {
-                    "shape": "GetDoctorsResult_doctorsItem_lastName"
-                },
-                "coverPhotoUrl": {
-                    "shape": "GetDoctorsResult_doctorsItem_coverPhotoUrl"
-                },
-                "profilePhotoUrl": {
-                    "shape": "GetDoctorsResult_doctorsItem_profilePhotoUrl"
-                },
-                "id": {
-                    "shape": "GetDoctorsResult_doctorsItem_id"
-                }
-            }
-        },
-        "GetDoctorsResult_doctors": {
-            "type": "list",
-            "member": {
-                "shape": "GetDoctorsResult_doctorsItem"
-            }
-        },
-        "GetDoctorsResult": {
-            "type": "structure",
-            "required": [],
-            "members": {
-                "doctors": {
-                    "shape": "GetDoctorsResult_doctors"
-                }
-            }
-        },
-        "StripeObject_jsonString": {
-            "type": "string"
-        },
-        "StripeObject": {
-            "type": "structure",
-            "required": [],
-            "members": {
-                "jsonString": {
-                    "shape": "StripeObject_jsonString"
-                }
-            }
-        },
-        "QueryDoctorScheduleResult_timeSlotsItem_timeSlot": {
-            "type": "string"
-        },
-        "QueryDoctorScheduleResult_timeSlotsItem_appointmentId": {
-            "type": "string"
-        },
-        "QueryDoctorScheduleResult_timeSlotsItem": {
-            "type": "structure",
-            "required": [
-                "timeSlot"
-            ],
-            "members": {
-                "timeSlot": {
-                    "shape": "QueryDoctorScheduleResult_timeSlotsItem_timeSlot"
-                },
-                "appointmentId": {
-                    "shape": "QueryDoctorScheduleResult_timeSlotsItem_appointmentId"
-                }
-            }
-        },
-        "QueryDoctorScheduleResult_timeSlots": {
-            "type": "list",
-            "member": {
-                "shape": "QueryDoctorScheduleResult_timeSlotsItem"
-            }
-        },
-        "QueryDoctorScheduleResult": {
-            "type": "structure",
-            "required": [],
-            "members": {
-                "timeSlots": {
-                    "shape": "QueryDoctorScheduleResult_timeSlots"
-                }
-            }
-        },
-        "RegisterDoctorRequest_officeNumber": {
-            "type": "string"
-        },
-        "RegisterDoctorRequest_specialtyId": {
-            "type": "string"
-        },
-        "RegisterDoctorRequest": {
-            "type": "structure",
-            "required": [
-                "officeNumber",
-                "specialtyId"
-            ],
-            "members": {
-                "officeNumber": {
-                    "shape": "RegisterDoctorRequest_officeNumber"
-                },
-                "specialtyId": {
-                    "shape": "RegisterDoctorRequest_specialtyId"
-                }
-            }
-        },
-        "GetDoctorsRequest_doctorIdsItem": {
-            "type": "string"
-        },
-        "GetDoctorsRequest_doctorIds": {
-            "type": "list",
-            "member": {
-                "shape": "GetDoctorsRequest_doctorIdsItem"
-            }
-        },
-        "GetDoctorsRequest": {
-            "type": "structure",
-            "required": [],
-            "members": {
-                "doctorIds": {
-                    "shape": "GetDoctorsRequest_doctorIds"
-                }
-            }
-        },
-        "ScheduleAppointmentRequest_totalPriceCents": {
-            "type": "string"
-        },
-        "ScheduleAppointmentRequest_billFingerprint": {
-            "type": "string"
-        },
-        "ScheduleAppointmentRequest_serviceId": {
-            "type": "string"
-        },
-        "ScheduleAppointmentRequest_startTime": {
-            "type": "string"
-        },
-        "ScheduleAppointmentRequest_doctorId": {
-            "type": "string"
-        },
-        "ScheduleAppointmentRequest": {
-            "type": "structure",
-            "required": [
-                "billFingerprint",
-                "doctorId",
-                "serviceId",
-                "startTime",
-                "totalPriceCents"
-            ],
-            "members": {
-                "totalPriceCents": {
-                    "shape": "ScheduleAppointmentRequest_totalPriceCents"
-                },
-                "billFingerprint": {
-                    "shape": "ScheduleAppointmentRequest_billFingerprint"
-                },
-                "serviceId": {
-                    "shape": "ScheduleAppointmentRequest_serviceId"
-                },
-                "startTime": {
-                    "shape": "ScheduleAppointmentRequest_startTime"
-                },
-                "doctorId": {
-                    "shape": "ScheduleAppointmentRequest_doctorId"
-                }
-            }
-        },
-        "GetDoctorSpecialtiesResult_specialtiesItem_name": {
-            "type": "string"
-        },
-        "GetDoctorSpecialtiesResult_specialtiesItem_isCommon": {
-            "type": "boolean"
-        },
-        "GetDoctorSpecialtiesResult_specialtiesItem_id": {
-            "type": "string"
-        },
-        "GetDoctorSpecialtiesResult_specialtiesItem": {
-            "type": "structure",
-            "required": [
-                "id",
-                "isCommon",
-                "name"
-            ],
-            "members": {
-                "name": {
-                    "shape": "GetDoctorSpecialtiesResult_specialtiesItem_name"
-                },
-                "isCommon": {
-                    "shape": "GetDoctorSpecialtiesResult_specialtiesItem_isCommon"
-                },
-                "id": {
-                    "shape": "GetDoctorSpecialtiesResult_specialtiesItem_id"
-                }
-            }
-        },
-        "GetDoctorSpecialtiesResult_specialties": {
-            "type": "list",
-            "member": {
-                "shape": "GetDoctorSpecialtiesResult_specialtiesItem"
-            }
-        },
-        "GetDoctorSpecialtiesResult": {
-            "type": "structure",
-            "required": [],
-            "members": {
-                "specialties": {
-                    "shape": "GetDoctorSpecialtiesResult_specialties"
-                }
-            }
-        },
-        "UrlForFileResult_url": {
-            "type": "string"
-        },
-        "UrlForFileResult": {
-            "type": "structure",
-            "required": [],
-            "members": {
-                "url": {
-                    "shape": "UrlForFileResult_url"
-                }
-            }
-        },
-        "ClientPatient_lastName": {
-            "type": "string"
-        },
-        "ClientPatient_firstName": {
-            "type": "string"
-        },
-        "ClientPatient_mobileNumber": {
-            "type": "string"
-        },
-        "ClientPatient_profilePhotoUrl": {
-            "type": "string"
-        },
-        "ClientPatient_id": {
-            "type": "string"
-        },
-        "ClientPatient": {
-            "type": "structure",
-            "required": [
-                "firstName",
-                "id",
-                "lastName",
-                "mobileNumber"
-            ],
-            "members": {
-                "lastName": {
-                    "shape": "ClientPatient_lastName"
-                },
-                "firstName": {
-                    "shape": "ClientPatient_firstName"
-                },
-                "mobileNumber": {
-                    "shape": "ClientPatient_mobileNumber"
-                },
-                "profilePhotoUrl": {
-                    "shape": "ClientPatient_profilePhotoUrl"
-                },
-                "id": {
-                    "shape": "ClientPatient_id"
-                }
-            }
-        },
-        "RegisterUserRequest_email": {
-            "type": "string"
-        },
-        "RegisterUserRequest_firstName": {
-            "type": "string"
-        },
-        "RegisterUserRequest_mobileNumber": {
-            "type": "string"
-        },
-        "RegisterUserRequest_lastName": {
-            "type": "string"
-        },
-        "RegisterUserRequest": {
-            "type": "structure",
-            "required": [
-                "email",
-                "firstName",
-                "lastName",
-                "mobileNumber"
-            ],
-            "members": {
-                "email": {
-                    "shape": "RegisterUserRequest_email"
-                },
-                "firstName": {
-                    "shape": "RegisterUserRequest_firstName"
-                },
-                "mobileNumber": {
-                    "shape": "RegisterUserRequest_mobileNumber"
-                },
-                "lastName": {
-                    "shape": "RegisterUserRequest_lastName"
-                }
-            }
-        },
-        "ClientDoctorSpecialty_name": {
-            "type": "string"
-        },
-        "ClientDoctorSpecialty_isCommon": {
-            "type": "boolean"
-        },
-        "ClientDoctorSpecialty_id": {
-            "type": "string"
-        },
-        "ClientDoctorSpecialty": {
-            "type": "structure",
-            "required": [
-                "id",
-                "isCommon",
-                "name"
-            ],
-            "members": {
-                "name": {
-                    "shape": "ClientDoctorSpecialty_name"
-                },
-                "isCommon": {
-                    "shape": "ClientDoctorSpecialty_isCommon"
-                },
-                "id": {
-                    "shape": "ClientDoctorSpecialty_id"
-                }
-            }
-        },
-        "SetDefaultPaymentSourceRequest_paymentMethodId": {
-            "type": "string"
-        },
-        "SetDefaultPaymentSourceRequest": {
-            "type": "structure",
-            "required": [],
-            "members": {
-                "paymentMethodId": {
-                    "shape": "SetDefaultPaymentSourceRequest_paymentMethodId"
-                }
-            }
-        },
-        "UpdateDoctorRequest_officeNumber": {
-            "type": "string"
-        },
-        "UpdateDoctorRequest_doctorId": {
-            "type": "string"
-        },
-        "UpdateDoctorRequest": {
-            "type": "structure",
-            "required": [
-                "doctorId"
-            ],
-            "members": {
-                "officeNumber": {
-                    "shape": "UpdateDoctorRequest_officeNumber"
-                },
-                "doctorId": {
-                    "shape": "UpdateDoctorRequest_doctorId"
-                }
-            }
-        },
-        "SearchForDoctorsRequest_longitude": {
-            "type": "double"
-        },
-        "SearchForDoctorsRequest_serviceId": {
-            "type": "string"
-        },
-        "SearchForDoctorsRequest_specialtyId": {
-            "type": "string"
-        },
-        "SearchForDoctorsRequest_firstTime": {
-            "type": "string"
-        },
-        "SearchForDoctorsRequest_latitude": {
-            "type": "double"
-        },
-        "SearchForDoctorsRequest_lastTime": {
-            "type": "string"
         },
         "SearchForDoctorsRequest": {
             "type": "structure",
@@ -1535,31 +330,193 @@
                 "specialtyId"
             ],
             "members": {
+                "latitude": {
+                    "shape": "double"
+                },
                 "longitude": {
-                    "shape": "SearchForDoctorsRequest_longitude"
-                },
-                "serviceId": {
-                    "shape": "SearchForDoctorsRequest_serviceId"
-                },
-                "specialtyId": {
-                    "shape": "SearchForDoctorsRequest_specialtyId"
+                    "shape": "double"
                 },
                 "firstTime": {
-                    "shape": "SearchForDoctorsRequest_firstTime"
-                },
-                "latitude": {
-                    "shape": "SearchForDoctorsRequest_latitude"
+                    "shape": "string"
                 },
                 "lastTime": {
-                    "shape": "SearchForDoctorsRequest_lastTime"
+                    "shape": "string"
+                },
+                "specialtyId": {
+                    "shape": "string"
+                },
+                "serviceId": {
+                    "shape": "string"
                 }
             }
         },
-        "ClientDoctorScheduleTimeSlot_timeSlot": {
-            "type": "string"
+        "UrlForFileResult": {
+            "type": "structure",
+            "required": [],
+            "members": {
+                "url": {
+                    "shape": "string"
+                }
+            }
         },
-        "ClientDoctorScheduleTimeSlot_appointmentId": {
-            "type": "string"
+        "stringList": {
+            "type": "list",
+            "member": {
+                "shape": "string"
+            }
+        },
+        "VitalServicesRequest": {
+            "type": "structure",
+            "required": [],
+            "members": {
+                "operation": {
+                    "shape": "string"
+                },
+                "appointmentIds": {
+                    "shape": "stringList"
+                },
+                "appointmentId": {
+                    "shape": "string"
+                },
+                "availableTimeSlots": {
+                    "shape": "stringList"
+                },
+                "bankAccountToken": {
+                    "shape": "string"
+                },
+                "billVersion": {
+                    "shape": "string"
+                },
+                "birthdateDay": {
+                    "shape": "string"
+                },
+                "birthdateMonth": {
+                    "shape": "string"
+                },
+                "birthdateYear": {
+                    "shape": "string"
+                },
+                "businessName": {
+                    "shape": "string"
+                },
+                "cardToken": {
+                    "shape": "string"
+                },
+                "city": {
+                    "shape": "string"
+                },
+                "doctorId": {
+                    "shape": "string"
+                },
+                "doctorIds": {
+                    "shape": "stringList"
+                },
+                "durationMinutes": {
+                    "shape": "string"
+                },
+                "email": {
+                    "shape": "string"
+                },
+                "employerIdentificationNumber": {
+                    "shape": "string"
+                },
+                "file": {
+                    "shape": "string"
+                },
+                "firstName": {
+                    "shape": "string"
+                },
+                "firstTime": {
+                    "shape": "string"
+                },
+                "getDoctors": {
+                    "shape": "boolean"
+                },
+                "getPatients": {
+                    "shape": "boolean"
+                },
+                "httpMethod": {
+                    "shape": "string"
+                },
+                "lastName": {
+                    "shape": "string"
+                },
+                "lastTime": {
+                    "shape": "string"
+                },
+                "lateCancellation": {
+                    "shape": "boolean"
+                },
+                "latitude": {
+                    "shape": "double"
+                },
+                "longitude": {
+                    "shape": "double"
+                },
+                "mobileNumber": {
+                    "shape": "string"
+                },
+                "officeNumber": {
+                    "shape": "string"
+                },
+                "patientId": {
+                    "shape": "string"
+                },
+                "patientIds": {
+                    "shape": "stringList"
+                },
+                "pictureUrl": {
+                    "shape": "string"
+                },
+                "postalCode": {
+                    "shape": "string"
+                },
+                "priceDollars": {
+                    "shape": "string"
+                },
+                "serviceId": {
+                    "shape": "string"
+                },
+                "serviceIds": {
+                    "shape": "stringList"
+                },
+                "specialtyId": {
+                    "shape": "string"
+                },
+                "startTime": {
+                    "shape": "string"
+                },
+                "state": {
+                    "shape": "string"
+                },
+                "streetNumberAndName": {
+                    "shape": "string"
+                },
+                "string1": {
+                    "shape": "string"
+                },
+                "string2": {
+                    "shape": "string"
+                },
+                "string3": {
+                    "shape": "string"
+                },
+                "string4": {
+                    "shape": "string"
+                },
+                "sourceId": {
+                    "shape": "string"
+                },
+                "ssnLast4": {
+                    "shape": "string"
+                },
+                "suite": {
+                    "shape": "string"
+                },
+                "unavailableTimeSlots": {
+                    "shape": "stringList"
+                }
+            }
         },
         "ClientDoctorScheduleTimeSlot": {
             "type": "structure",
@@ -1568,69 +525,164 @@
             ],
             "members": {
                 "timeSlot": {
-                    "shape": "ClientDoctorScheduleTimeSlot_timeSlot"
+                    "shape": "string"
                 },
                 "appointmentId": {
-                    "shape": "ClientDoctorScheduleTimeSlot_appointmentId"
+                    "shape": "string"
                 }
             }
         },
-        "UrlForFileRequest_fileName": {
-            "type": "string"
-        },
-        "UrlForFileRequest_patientId": {
-            "type": "string"
-        },
-        "UrlForFileRequest_httpMethod": {
-            "type": "string"
-        },
-        "UrlForFileRequest_doctorId": {
-            "type": "string"
-        },
-        "UrlForFileRequest": {
+        "ClientDoctorSpecialty": {
             "type": "structure",
             "required": [
-                "fileName",
-                "httpMethod"
+                "id",
+                "isCommon",
+                "name"
             ],
             "members": {
-                "fileName": {
-                    "shape": "UrlForFileRequest_fileName"
+                "id": {
+                    "shape": "string"
                 },
-                "patientId": {
-                    "shape": "UrlForFileRequest_patientId"
+                "isCommon": {
+                    "shape": "boolean"
                 },
-                "httpMethod": {
-                    "shape": "UrlForFileRequest_httpMethod"
-                },
-                "doctorId": {
-                    "shape": "UrlForFileRequest_doctorId"
+                "name": {
+                    "shape": "string"
                 }
             }
         },
-        "ClientUser_id": {
-            "type": "string"
+        "SetDefaultPaymentSourceRequest": {
+            "type": "structure",
+            "required": [],
+            "members": {
+                "paymentMethodId": {
+                    "shape": "string"
+                }
+            }
         },
-        "ClientUser_firstName": {
-            "type": "string"
+        "ClientDoctorScheduleTimeSlotList": {
+            "type": "list",
+            "member": {
+                "shape": "ClientDoctorScheduleTimeSlot"
+            }
         },
-        "ClientUser_stripeCustomerId": {
-            "type": "string"
+        "QueryDoctorScheduleResult": {
+            "type": "structure",
+            "required": [],
+            "members": {
+                "timeSlots": {
+                    "shape": "ClientDoctorScheduleTimeSlotList"
+                }
+            }
         },
-        "ClientUser_lastName": {
-            "type": "string"
+        "RegisterDoctorRequest": {
+            "type": "structure",
+            "required": [
+                "officeNumber",
+                "specialtyId"
+            ],
+            "members": {
+                "specialtyId": {
+                    "shape": "string"
+                },
+                "officeNumber": {
+                    "shape": "string"
+                }
+            }
         },
-        "ClientUser_doctorId": {
-            "type": "string"
+        "Empty": {
+            "type": "structure",
+            "required": [],
+            "members": {}
         },
-        "ClientUser_mobileNumber": {
-            "type": "string"
+        "QueryDoctorScheduleRequest": {
+            "type": "structure",
+            "required": [
+                "doctorId",
+                "firstTimeInclusive",
+                "lastTimeExclusive"
+            ],
+            "members": {
+                "doctorId": {
+                    "shape": "string"
+                },
+                "firstTimeInclusive": {
+                    "shape": "string"
+                },
+                "lastTimeExclusive": {
+                    "shape": "string"
+                }
+            }
         },
-        "ClientUser_profilePhotoUrl": {
-            "type": "string"
+        "GetAppointmentPaymentMethodRequest": {
+            "type": "structure",
+            "required": [],
+            "members": {
+                "appointmentId": {
+                    "shape": "string"
+                }
+            }
         },
-        "ClientUser_email": {
-            "type": "string"
+        "GetStripeCustomerRequest": {
+            "type": "structure",
+            "required": [
+                "userId"
+            ],
+            "members": {
+                "userId": {
+                    "shape": "string"
+                }
+            }
+        },
+        "ClientDoctorServiceDetails": {
+            "type": "structure",
+            "required": [
+                "doctorId",
+                "durationSeconds",
+                "priceDollars",
+                "serviceId"
+            ],
+            "members": {
+                "doctorId": {
+                    "shape": "string"
+                },
+                "serviceId": {
+                    "shape": "string"
+                },
+                "priceDollars": {
+                    "shape": "string"
+                },
+                "durationSeconds": {
+                    "shape": "double"
+                }
+            }
+        },
+        "ScheduleAppointmentRequest": {
+            "type": "structure",
+            "required": [
+                "billFingerprint",
+                "doctorId",
+                "serviceId",
+                "startTime",
+                "totalPriceCents"
+            ],
+            "members": {
+                "doctorId": {
+                    "shape": "string"
+                },
+                "startTime": {
+                    "shape": "string"
+                },
+                "serviceId": {
+                    "shape": "string"
+                },
+                "totalPriceCents": {
+                    "shape": "string"
+                },
+                "billFingerprint": {
+                    "shape": "string"
+                }
+            }
         },
         "ClientUser": {
             "type": "structure",
@@ -1642,479 +694,257 @@
             ],
             "members": {
                 "id": {
-                    "shape": "ClientUser_id"
-                },
-                "firstName": {
-                    "shape": "ClientUser_firstName"
-                },
-                "stripeCustomerId": {
-                    "shape": "ClientUser_stripeCustomerId"
-                },
-                "lastName": {
-                    "shape": "ClientUser_lastName"
+                    "shape": "string"
                 },
                 "doctorId": {
-                    "shape": "ClientUser_doctorId"
+                    "shape": "string"
+                },
+                "firstName": {
+                    "shape": "string"
+                },
+                "lastName": {
+                    "shape": "string"
+                },
+                "email": {
+                    "shape": "string"
                 },
                 "mobileNumber": {
-                    "shape": "ClientUser_mobileNumber"
+                    "shape": "string"
                 },
                 "profilePhotoUrl": {
-                    "shape": "ClientUser_profilePhotoUrl"
+                    "shape": "string"
                 },
-                "email": {
-                    "shape": "ClientUser_email"
+                "stripeCustomerId": {
+                    "shape": "string"
                 }
             }
         },
-        "VitalServicesRequest_serviceId": {
-            "type": "string"
-        },
-        "VitalServicesRequest_string4": {
-            "type": "string"
-        },
-        "VitalServicesRequest_startTime": {
-            "type": "string"
-        },
-        "VitalServicesRequest_priceDollars": {
-            "type": "string"
-        },
-        "VitalServicesRequest_availableTimeSlotsItem": {
-            "type": "string"
-        },
-        "VitalServicesRequest_availableTimeSlots": {
-            "type": "list",
-            "member": {
-                "shape": "VitalServicesRequest_availableTimeSlotsItem"
-            }
-        },
-        "VitalServicesRequest_firstTime": {
-            "type": "string"
-        },
-        "VitalServicesRequest_httpMethod": {
-            "type": "string"
-        },
-        "VitalServicesRequest_lateCancellation": {
-            "type": "boolean"
-        },
-        "VitalServicesRequest_appointmentIdsItem": {
-            "type": "string"
-        },
-        "VitalServicesRequest_appointmentIds": {
-            "type": "list",
-            "member": {
-                "shape": "VitalServicesRequest_appointmentIdsItem"
-            }
-        },
-        "VitalServicesRequest_string2": {
-            "type": "string"
-        },
-        "VitalServicesRequest_mobileNumber": {
-            "type": "string"
-        },
-        "VitalServicesRequest_birthdateYear": {
-            "type": "string"
-        },
-        "VitalServicesRequest_suite": {
-            "type": "string"
-        },
-        "VitalServicesRequest_latitude": {
-            "type": "double"
-        },
-        "VitalServicesRequest_postalCode": {
-            "type": "string"
-        },
-        "VitalServicesRequest_officeNumber": {
-            "type": "string"
-        },
-        "VitalServicesRequest_sourceId": {
-            "type": "string"
-        },
-        "VitalServicesRequest_patientIdsItem": {
-            "type": "string"
-        },
-        "VitalServicesRequest_patientIds": {
-            "type": "list",
-            "member": {
-                "shape": "VitalServicesRequest_patientIdsItem"
-            }
-        },
-        "VitalServicesRequest_businessName": {
-            "type": "string"
-        },
-        "VitalServicesRequest_patientId": {
-            "type": "string"
-        },
-        "VitalServicesRequest_appointmentId": {
-            "type": "string"
-        },
-        "VitalServicesRequest_birthdateDay": {
-            "type": "string"
-        },
-        "VitalServicesRequest_longitude": {
-            "type": "double"
-        },
-        "VitalServicesRequest_birthdateMonth": {
-            "type": "string"
-        },
-        "VitalServicesRequest_getPatients": {
-            "type": "boolean"
-        },
-        "VitalServicesRequest_doctorIdsItem": {
-            "type": "string"
-        },
-        "VitalServicesRequest_doctorIds": {
-            "type": "list",
-            "member": {
-                "shape": "VitalServicesRequest_doctorIdsItem"
-            }
-        },
-        "VitalServicesRequest_firstName": {
-            "type": "string"
-        },
-        "VitalServicesRequest_streetNumberAndName": {
-            "type": "string"
-        },
-        "VitalServicesRequest_email": {
-            "type": "string"
-        },
-        "VitalServicesRequest_bankAccountToken": {
-            "type": "string"
-        },
-        "VitalServicesRequest_string1": {
-            "type": "string"
-        },
-        "VitalServicesRequest_lastName": {
-            "type": "string"
-        },
-        "VitalServicesRequest_unavailableTimeSlotsItem": {
-            "type": "string"
-        },
-        "VitalServicesRequest_unavailableTimeSlots": {
-            "type": "list",
-            "member": {
-                "shape": "VitalServicesRequest_unavailableTimeSlotsItem"
-            }
-        },
-        "VitalServicesRequest_billVersion": {
-            "type": "string"
-        },
-        "VitalServicesRequest_specialtyId": {
-            "type": "string"
-        },
-        "VitalServicesRequest_durationMinutes": {
-            "type": "string"
-        },
-        "VitalServicesRequest_pictureUrl": {
-            "type": "string"
-        },
-        "VitalServicesRequest_doctorId": {
-            "type": "string"
-        },
-        "VitalServicesRequest_city": {
-            "type": "string"
-        },
-        "VitalServicesRequest_serviceIdsItem": {
-            "type": "string"
-        },
-        "VitalServicesRequest_serviceIds": {
-            "type": "list",
-            "member": {
-                "shape": "VitalServicesRequest_serviceIdsItem"
-            }
-        },
-        "VitalServicesRequest_ssnLast4": {
-            "type": "string"
-        },
-        "VitalServicesRequest_operation": {
-            "type": "string"
-        },
-        "VitalServicesRequest_file": {
-            "type": "string"
-        },
-        "VitalServicesRequest_string3": {
-            "type": "string"
-        },
-        "VitalServicesRequest_cardToken": {
-            "type": "string"
-        },
-        "VitalServicesRequest_state": {
-            "type": "string"
-        },
-        "VitalServicesRequest_employerIdentificationNumber": {
-            "type": "string"
-        },
-        "VitalServicesRequest_getDoctors": {
-            "type": "boolean"
-        },
-        "VitalServicesRequest_lastTime": {
-            "type": "string"
-        },
-        "VitalServicesRequest": {
-            "type": "structure",
-            "required": [],
-            "members": {
-                "serviceId": {
-                    "shape": "VitalServicesRequest_serviceId"
-                },
-                "string4": {
-                    "shape": "VitalServicesRequest_string4"
-                },
-                "startTime": {
-                    "shape": "VitalServicesRequest_startTime"
-                },
-                "priceDollars": {
-                    "shape": "VitalServicesRequest_priceDollars"
-                },
-                "availableTimeSlots": {
-                    "shape": "VitalServicesRequest_availableTimeSlots"
-                },
-                "firstTime": {
-                    "shape": "VitalServicesRequest_firstTime"
-                },
-                "httpMethod": {
-                    "shape": "VitalServicesRequest_httpMethod"
-                },
-                "lateCancellation": {
-                    "shape": "VitalServicesRequest_lateCancellation"
-                },
-                "appointmentIds": {
-                    "shape": "VitalServicesRequest_appointmentIds"
-                },
-                "string2": {
-                    "shape": "VitalServicesRequest_string2"
-                },
-                "mobileNumber": {
-                    "shape": "VitalServicesRequest_mobileNumber"
-                },
-                "birthdateYear": {
-                    "shape": "VitalServicesRequest_birthdateYear"
-                },
-                "suite": {
-                    "shape": "VitalServicesRequest_suite"
-                },
-                "latitude": {
-                    "shape": "VitalServicesRequest_latitude"
-                },
-                "postalCode": {
-                    "shape": "VitalServicesRequest_postalCode"
-                },
-                "officeNumber": {
-                    "shape": "VitalServicesRequest_officeNumber"
-                },
-                "sourceId": {
-                    "shape": "VitalServicesRequest_sourceId"
-                },
-                "patientIds": {
-                    "shape": "VitalServicesRequest_patientIds"
-                },
-                "businessName": {
-                    "shape": "VitalServicesRequest_businessName"
-                },
-                "patientId": {
-                    "shape": "VitalServicesRequest_patientId"
-                },
-                "appointmentId": {
-                    "shape": "VitalServicesRequest_appointmentId"
-                },
-                "birthdateDay": {
-                    "shape": "VitalServicesRequest_birthdateDay"
-                },
-                "longitude": {
-                    "shape": "VitalServicesRequest_longitude"
-                },
-                "birthdateMonth": {
-                    "shape": "VitalServicesRequest_birthdateMonth"
-                },
-                "getPatients": {
-                    "shape": "VitalServicesRequest_getPatients"
-                },
-                "doctorIds": {
-                    "shape": "VitalServicesRequest_doctorIds"
-                },
-                "firstName": {
-                    "shape": "VitalServicesRequest_firstName"
-                },
-                "streetNumberAndName": {
-                    "shape": "VitalServicesRequest_streetNumberAndName"
-                },
-                "email": {
-                    "shape": "VitalServicesRequest_email"
-                },
-                "bankAccountToken": {
-                    "shape": "VitalServicesRequest_bankAccountToken"
-                },
-                "string1": {
-                    "shape": "VitalServicesRequest_string1"
-                },
-                "lastName": {
-                    "shape": "VitalServicesRequest_lastName"
-                },
-                "unavailableTimeSlots": {
-                    "shape": "VitalServicesRequest_unavailableTimeSlots"
-                },
-                "billVersion": {
-                    "shape": "VitalServicesRequest_billVersion"
-                },
-                "specialtyId": {
-                    "shape": "VitalServicesRequest_specialtyId"
-                },
-                "durationMinutes": {
-                    "shape": "VitalServicesRequest_durationMinutes"
-                },
-                "pictureUrl": {
-                    "shape": "VitalServicesRequest_pictureUrl"
-                },
-                "doctorId": {
-                    "shape": "VitalServicesRequest_doctorId"
-                },
-                "city": {
-                    "shape": "VitalServicesRequest_city"
-                },
-                "serviceIds": {
-                    "shape": "VitalServicesRequest_serviceIds"
-                },
-                "ssnLast4": {
-                    "shape": "VitalServicesRequest_ssnLast4"
-                },
-                "operation": {
-                    "shape": "VitalServicesRequest_operation"
-                },
-                "file": {
-                    "shape": "VitalServicesRequest_file"
-                },
-                "string3": {
-                    "shape": "VitalServicesRequest_string3"
-                },
-                "cardToken": {
-                    "shape": "VitalServicesRequest_cardToken"
-                },
-                "state": {
-                    "shape": "VitalServicesRequest_state"
-                },
-                "employerIdentificationNumber": {
-                    "shape": "VitalServicesRequest_employerIdentificationNumber"
-                },
-                "getDoctors": {
-                    "shape": "VitalServicesRequest_getDoctors"
-                },
-                "lastTime": {
-                    "shape": "VitalServicesRequest_lastTime"
-                }
-            }
-        },
-        "UpdateUserRequest_mobileNumber": {
-            "type": "string"
-        },
-        "UpdateUserRequest_email": {
-            "type": "string"
-        },
-        "UpdateUserRequest": {
-            "type": "structure",
-            "required": [],
-            "members": {
-                "mobileNumber": {
-                    "shape": "UpdateUserRequest_mobileNumber"
-                },
-                "email": {
-                    "shape": "UpdateUserRequest_email"
-                }
-            }
-        },
-        "ClientDoctorServiceDetails_priceDollars": {
-            "type": "string"
-        },
-        "ClientDoctorServiceDetails_durationSeconds": {
-            "type": "double"
-        },
-        "ClientDoctorServiceDetails_serviceId": {
-            "type": "string"
-        },
-        "ClientDoctorServiceDetails_doctorId": {
-            "type": "string"
-        },
-        "ClientDoctorServiceDetails": {
-            "type": "structure",
-            "required": [
-                "doctorId",
-                "durationSeconds",
-                "priceDollars",
-                "serviceId"
-            ],
-            "members": {
-                "priceDollars": {
-                    "shape": "ClientDoctorServiceDetails_priceDollars"
-                },
-                "durationSeconds": {
-                    "shape": "ClientDoctorServiceDetails_durationSeconds"
-                },
-                "serviceId": {
-                    "shape": "ClientDoctorServiceDetails_serviceId"
-                },
-                "doctorId": {
-                    "shape": "ClientDoctorServiceDetails_doctorId"
-                }
-            }
-        },
-        "GetLoggedInUserResult_userExists": {
-            "type": "boolean"
-        },
-        "GetLoggedInUserResult_user_id": {
-            "type": "string"
-        },
-        "GetLoggedInUserResult_user_firstName": {
-            "type": "string"
-        },
-        "GetLoggedInUserResult_user_stripeCustomerId": {
-            "type": "string"
-        },
-        "GetLoggedInUserResult_user_lastName": {
-            "type": "string"
-        },
-        "GetLoggedInUserResult_user_doctorId": {
-            "type": "string"
-        },
-        "GetLoggedInUserResult_user_mobileNumber": {
-            "type": "string"
-        },
-        "GetLoggedInUserResult_user_profilePhotoUrl": {
-            "type": "string"
-        },
-        "GetLoggedInUserResult_user_email": {
-            "type": "string"
-        },
-        "GetLoggedInUserResult_user": {
+        "RegisterUserRequest": {
             "type": "structure",
             "required": [
                 "email",
                 "firstName",
+                "lastName",
+                "mobileNumber"
+            ],
+            "members": {
+                "firstName": {
+                    "shape": "string"
+                },
+                "lastName": {
+                    "shape": "string"
+                },
+                "email": {
+                    "shape": "string"
+                },
+                "mobileNumber": {
+                    "shape": "string"
+                }
+            }
+        },
+        "GetAllDoctorServicesRequest": {
+            "type": "structure",
+            "required": [],
+            "members": {
+                "dummy": {
+                    "shape": "string"
+                }
+            }
+        },
+        "ClientPatient": {
+            "type": "structure",
+            "required": [
+                "firstName",
                 "id",
-                "lastName"
+                "lastName",
+                "mobileNumber"
             ],
             "members": {
                 "id": {
-                    "shape": "GetLoggedInUserResult_user_id"
+                    "shape": "string"
                 },
                 "firstName": {
-                    "shape": "GetLoggedInUserResult_user_firstName"
-                },
-                "stripeCustomerId": {
-                    "shape": "GetLoggedInUserResult_user_stripeCustomerId"
+                    "shape": "string"
                 },
                 "lastName": {
-                    "shape": "GetLoggedInUserResult_user_lastName"
-                },
-                "doctorId": {
-                    "shape": "GetLoggedInUserResult_user_doctorId"
+                    "shape": "string"
                 },
                 "mobileNumber": {
-                    "shape": "GetLoggedInUserResult_user_mobileNumber"
+                    "shape": "string"
                 },
                 "profilePhotoUrl": {
-                    "shape": "GetLoggedInUserResult_user_profilePhotoUrl"
+                    "shape": "string"
+                }
+            }
+        },
+        "GetAppointmentsWithUserRequest": {
+            "type": "structure",
+            "required": [
+                "getDoctors",
+                "getPatients",
+                "userId"
+            ],
+            "members": {
+                "userId": {
+                    "shape": "string"
                 },
-                "email": {
-                    "shape": "GetLoggedInUserResult_user_email"
+                "getDoctors": {
+                    "shape": "boolean"
+                },
+                "getPatients": {
+                    "shape": "boolean"
+                }
+            }
+        },
+        "ClientDoctorList": {
+            "type": "list",
+            "member": {
+                "shape": "ClientDoctor"
+            }
+        },
+        "SearchForDoctorsResult": {
+            "type": "structure",
+            "required": [],
+            "members": {
+                "doctors": {
+                    "shape": "ClientDoctorList"
+                }
+            }
+        },
+        "ClientDoctorServiceDetailsList": {
+            "type": "list",
+            "member": {
+                "shape": "ClientDoctorServiceDetails"
+            }
+        },
+        "ClientDoctor": {
+            "type": "structure",
+            "required": [
+                "firstName",
+                "id",
+                "lastName",
+                "payoutInfoIsSet",
+                "servicesOffered",
+                "specialtyId"
+            ],
+            "members": {
+                "id": {
+                    "shape": "string"
+                },
+                "firstName": {
+                    "shape": "string"
+                },
+                "lastName": {
+                    "shape": "string"
+                },
+                "specialtyId": {
+                    "shape": "string"
+                },
+                "officeNumber": {
+                    "shape": "string"
+                },
+                "administrativeAreaL1": {
+                    "shape": "string"
+                },
+                "city": {
+                    "shape": "string"
+                },
+                "postalCode": {
+                    "shape": "string"
+                },
+                "streetNumberAndName": {
+                    "shape": "string"
+                },
+                "suite": {
+                    "shape": "string"
+                },
+                "latitude": {
+                    "shape": "double"
+                },
+                "longitude": {
+                    "shape": "double"
+                },
+                "servicesOffered": {
+                    "shape": "stringList"
+                },
+                "payoutInfoIsSet": {
+                    "shape": "boolean"
+                },
+                "coverPhotoUrl": {
+                    "shape": "string"
+                },
+                "profilePhotoUrl": {
+                    "shape": "string"
+                },
+                "serviceDetailsList": {
+                    "shape": "ClientDoctorServiceDetailsList"
+                }
+            }
+        },
+        "ClientAppointmentBill": {
+            "type": "structure",
+            "required": [
+                "fingerprint"
+            ],
+            "members": {
+                "basePriceCents": {
+                    "shape": "string"
+                },
+                "doctorServiceFeeCents": {
+                    "shape": "string"
+                },
+                "patientServiceFeeCents": {
+                    "shape": "string"
+                },
+                "totalPriceCents": {
+                    "shape": "string"
+                },
+                "fingerprint": {
+                    "shape": "string"
+                }
+            }
+        },
+        "ClientDoctorServiceList": {
+            "type": "list",
+            "member": {
+                "shape": "ClientDoctorService"
+            }
+        },
+        "GetAllDoctorServicesResult": {
+            "type": "structure",
+            "required": [],
+            "members": {
+                "services": {
+                    "shape": "ClientDoctorServiceList"
+                }
+            }
+        },
+        "ClientAppointmentList": {
+            "type": "list",
+            "member": {
+                "shape": "ClientAppointment"
+            }
+        },
+        "ClientPatientList": {
+            "type": "list",
+            "member": {
+                "shape": "ClientPatient"
+            }
+        },
+        "GetAppointmentsResult": {
+            "type": "structure",
+            "required": [
+                "appointments"
+            ],
+            "members": {
+                "appointments": {
+                    "shape": "ClientAppointmentList"
+                },
+                "doctors": {
+                    "shape": "ClientDoctorList"
+                },
+                "patients": {
+                    "shape": "ClientPatientList"
                 }
             }
         },
@@ -2123,75 +953,119 @@
             "required": [],
             "members": {
                 "userExists": {
-                    "shape": "GetLoggedInUserResult_userExists"
+                    "shape": "boolean"
                 },
                 "user": {
-                    "shape": "GetLoggedInUserResult_user"
+                    "shape": "ClientUser"
                 }
             }
         },
-        "GetDoctorSpecialtiesRequest_dummy": {
-            "type": "string"
+        "ClientDoctorSpecialtyList": {
+            "type": "list",
+            "member": {
+                "shape": "ClientDoctorSpecialty"
+            }
+        },
+        "GetDoctorSpecialtiesResult": {
+            "type": "structure",
+            "required": [],
+            "members": {
+                "specialties": {
+                    "shape": "ClientDoctorSpecialtyList"
+                }
+            }
+        },
+        "StripeObject": {
+            "type": "structure",
+            "required": [],
+            "members": {
+                "jsonString": {
+                    "shape": "string"
+                }
+            }
         },
         "GetDoctorSpecialtiesRequest": {
             "type": "structure",
             "required": [],
             "members": {
                 "dummy": {
-                    "shape": "GetDoctorSpecialtiesRequest_dummy"
+                    "shape": "string"
                 }
             }
         },
-        "ClientAppointment_chargeId": {
-            "type": "string"
+        "GetDoctorsRequest": {
+            "type": "structure",
+            "required": [],
+            "members": {
+                "doctorIds": {
+                    "shape": "stringList"
+                }
+            }
         },
-        "ClientAppointment_serviceId": {
-            "type": "string"
+        "ClientDoctorService": {
+            "type": "structure",
+            "required": [
+                "additionalDescription",
+                "id",
+                "indefiniteArticle",
+                "name"
+            ],
+            "members": {
+                "id": {
+                    "shape": "string"
+                },
+                "additionalDescription": {
+                    "shape": "string"
+                },
+                "indefiniteArticle": {
+                    "shape": "string"
+                },
+                "name": {
+                    "shape": "string"
+                }
+            }
         },
-        "ClientAppointment_basePriceCents": {
-            "type": "string"
+        "CancelAppointmentResult": {
+            "type": "structure",
+            "required": [],
+            "members": {
+                "appointment": {
+                    "shape": "ClientAppointment"
+                },
+                "errorCode": {
+                    "shape": "string"
+                }
+            }
         },
-        "ClientAppointment_startTime": {
-            "type": "string"
+        "GetDoctorsResult": {
+            "type": "structure",
+            "required": [],
+            "members": {
+                "doctors": {
+                    "shape": "ClientDoctorList"
+                }
+            }
         },
-        "ClientAppointment_doctorEarningsCents": {
-            "type": "string"
-        },
-        "ClientAppointment_reimbursementDate": {
-            "type": "string"
-        },
-        "ClientAppointment_amountRefundedCents": {
-            "type": "string"
-        },
-        "ClientAppointment_durationSeconds": {
-            "type": "string"
-        },
-        "ClientAppointment_totalPriceCents": {
-            "type": "string"
-        },
-        "ClientAppointment_doctorServiceFeeCents": {
-            "type": "string"
-        },
-        "ClientAppointment_cancellationDate": {
-            "type": "string"
-        },
-        "ClientAppointment_doctorId": {
-            "type": "string"
-        },
-        "ClientAppointment_patientServiceFeeCents": {
-            "type": "string"
-        },
-        "ClientAppointment_patientId": {
-            "type": "string"
-        },
-        "ClientAppointment_appointmentState": {
-            "type": "string"
-        },
-        "ClientAppointment_dateBooked": {
-            "type": "string"
-        },
-        "ClientAppointment_id": {
-            "type": "string"
+        "UrlForFileRequest": {
+            "type": "structure",
+            "required": [
+                "fileName",
+                "httpMethod"
+            ],
+            "members": {
+                "patientId": {
+                    "shape": "string"
+                },
+                "doctorId": {
+                    "shape": "string"
+                },
+                "fileName": {
+                    "shape": "string"
+                },
+                "httpMethod": {
+                    "shape": "string"
+                }
+            }
         },
         "ClientAppointment": {
             "type": "structure",
@@ -2207,394 +1081,82 @@
                 "startTime"
             ],
             "members": {
-                "chargeId": {
-                    "shape": "ClientAppointment_chargeId"
-                },
-                "serviceId": {
-                    "shape": "ClientAppointment_serviceId"
-                },
-                "basePriceCents": {
-                    "shape": "ClientAppointment_basePriceCents"
-                },
-                "startTime": {
-                    "shape": "ClientAppointment_startTime"
-                },
-                "doctorEarningsCents": {
-                    "shape": "ClientAppointment_doctorEarningsCents"
-                },
-                "reimbursementDate": {
-                    "shape": "ClientAppointment_reimbursementDate"
-                },
-                "amountRefundedCents": {
-                    "shape": "ClientAppointment_amountRefundedCents"
-                },
-                "durationSeconds": {
-                    "shape": "ClientAppointment_durationSeconds"
-                },
-                "totalPriceCents": {
-                    "shape": "ClientAppointment_totalPriceCents"
-                },
-                "doctorServiceFeeCents": {
-                    "shape": "ClientAppointment_doctorServiceFeeCents"
-                },
-                "cancellationDate": {
-                    "shape": "ClientAppointment_cancellationDate"
-                },
-                "doctorId": {
-                    "shape": "ClientAppointment_doctorId"
-                },
-                "patientServiceFeeCents": {
-                    "shape": "ClientAppointment_patientServiceFeeCents"
-                },
-                "patientId": {
-                    "shape": "ClientAppointment_patientId"
+                "id": {
+                    "shape": "string"
                 },
                 "appointmentState": {
-                    "shape": "ClientAppointment_appointmentState"
+                    "shape": "string"
+                },
+                "basePriceCents": {
+                    "shape": "string"
+                },
+                "chargeId": {
+                    "shape": "string"
                 },
                 "dateBooked": {
-                    "shape": "ClientAppointment_dateBooked"
+                    "shape": "string"
                 },
-                "id": {
-                    "shape": "ClientAppointment_id"
-                }
-            }
-        },
-        "ClientDoctor_longitude": {
-            "type": "double"
-        },
-        "ClientDoctor_servicesOfferedItem": {
-            "type": "string"
-        },
-        "ClientDoctor_servicesOffered": {
-            "type": "list",
-            "member": {
-                "shape": "ClientDoctor_servicesOfferedItem"
-            }
-        },
-        "ClientDoctor_payoutInfoIsSet": {
-            "type": "boolean"
-        },
-        "ClientDoctor_city": {
-            "type": "string"
-        },
-        "ClientDoctor_specialtyId": {
-            "type": "string"
-        },
-        "ClientDoctor_suite": {
-            "type": "string"
-        },
-        "ClientDoctor_officeNumber": {
-            "type": "string"
-        },
-        "ClientDoctor_serviceDetailsListItem_priceDollars": {
-            "type": "string"
-        },
-        "ClientDoctor_serviceDetailsListItem_durationSeconds": {
-            "type": "double"
-        },
-        "ClientDoctor_serviceDetailsListItem_serviceId": {
-            "type": "string"
-        },
-        "ClientDoctor_serviceDetailsListItem_doctorId": {
-            "type": "string"
-        },
-        "ClientDoctor_serviceDetailsListItem": {
-            "type": "structure",
-            "required": [
-                "doctorId",
-                "durationSeconds",
-                "priceDollars",
-                "serviceId"
-            ],
-            "members": {
-                "priceDollars": {
-                    "shape": "ClientDoctor_serviceDetailsListItem_priceDollars"
+                "doctorEarningsCents": {
+                    "shape": "string"
+                },
+                "doctorId": {
+                    "shape": "string"
+                },
+                "doctorServiceFeeCents": {
+                    "shape": "string"
                 },
                 "durationSeconds": {
-                    "shape": "ClientDoctor_serviceDetailsListItem_durationSeconds"
+                    "shape": "string"
+                },
+                "patientId": {
+                    "shape": "string"
+                },
+                "patientServiceFeeCents": {
+                    "shape": "string"
                 },
                 "serviceId": {
-                    "shape": "ClientDoctor_serviceDetailsListItem_serviceId"
+                    "shape": "string"
                 },
-                "doctorId": {
-                    "shape": "ClientDoctor_serviceDetailsListItem_doctorId"
+                "startTime": {
+                    "shape": "string"
+                },
+                "totalPriceCents": {
+                    "shape": "string"
+                },
+                "amountRefundedCents": {
+                    "shape": "string"
+                },
+                "cancellationDate": {
+                    "shape": "string"
+                },
+                "reimbursementDate": {
+                    "shape": "string"
                 }
             }
         },
-        "ClientDoctor_serviceDetailsList": {
-            "type": "list",
-            "member": {
-                "shape": "ClientDoctor_serviceDetailsListItem"
+        "UpdateUserRequest": {
+            "type": "structure",
+            "required": [],
+            "members": {
+                "email": {
+                    "shape": "string"
+                },
+                "mobileNumber": {
+                    "shape": "string"
+                }
             }
         },
-        "ClientDoctor_firstName": {
-            "type": "string"
-        },
-        "ClientDoctor_latitude": {
-            "type": "double"
-        },
-        "ClientDoctor_postalCode": {
-            "type": "string"
-        },
-        "ClientDoctor_streetNumberAndName": {
-            "type": "string"
-        },
-        "ClientDoctor_administrativeAreaL1": {
-            "type": "string"
-        },
-        "ClientDoctor_lastName": {
-            "type": "string"
-        },
-        "ClientDoctor_coverPhotoUrl": {
-            "type": "string"
-        },
-        "ClientDoctor_profilePhotoUrl": {
-            "type": "string"
-        },
-        "ClientDoctor_id": {
-            "type": "string"
-        },
-        "ClientDoctor": {
+        "UpdateDoctorRequest": {
             "type": "structure",
             "required": [
-                "firstName",
-                "id",
-                "lastName",
-                "payoutInfoIsSet",
-                "servicesOffered",
-                "specialtyId"
+                "doctorId"
             ],
             "members": {
-                "longitude": {
-                    "shape": "ClientDoctor_longitude"
-                },
-                "servicesOffered": {
-                    "shape": "ClientDoctor_servicesOffered"
-                },
-                "payoutInfoIsSet": {
-                    "shape": "ClientDoctor_payoutInfoIsSet"
-                },
-                "city": {
-                    "shape": "ClientDoctor_city"
-                },
-                "specialtyId": {
-                    "shape": "ClientDoctor_specialtyId"
-                },
-                "suite": {
-                    "shape": "ClientDoctor_suite"
+                "doctorId": {
+                    "shape": "string"
                 },
                 "officeNumber": {
-                    "shape": "ClientDoctor_officeNumber"
-                },
-                "serviceDetailsList": {
-                    "shape": "ClientDoctor_serviceDetailsList"
-                },
-                "firstName": {
-                    "shape": "ClientDoctor_firstName"
-                },
-                "latitude": {
-                    "shape": "ClientDoctor_latitude"
-                },
-                "postalCode": {
-                    "shape": "ClientDoctor_postalCode"
-                },
-                "streetNumberAndName": {
-                    "shape": "ClientDoctor_streetNumberAndName"
-                },
-                "administrativeAreaL1": {
-                    "shape": "ClientDoctor_administrativeAreaL1"
-                },
-                "lastName": {
-                    "shape": "ClientDoctor_lastName"
-                },
-                "coverPhotoUrl": {
-                    "shape": "ClientDoctor_coverPhotoUrl"
-                },
-                "profilePhotoUrl": {
-                    "shape": "ClientDoctor_profilePhotoUrl"
-                },
-                "id": {
-                    "shape": "ClientDoctor_id"
-                }
-            }
-        },
-        "AddCreditCardRequest_cardToken": {
-            "type": "string"
-        },
-        "AddCreditCardRequest": {
-            "type": "structure",
-            "required": [
-                "cardToken"
-            ],
-            "members": {
-                "cardToken": {
-                    "shape": "AddCreditCardRequest_cardToken"
-                }
-            }
-        },
-        "GetAllDoctorServicesResult_servicesItem_additionalDescription": {
-            "type": "string"
-        },
-        "GetAllDoctorServicesResult_servicesItem_name": {
-            "type": "string"
-        },
-        "GetAllDoctorServicesResult_servicesItem_indefiniteArticle": {
-            "type": "string"
-        },
-        "GetAllDoctorServicesResult_servicesItem_id": {
-            "type": "string"
-        },
-        "GetAllDoctorServicesResult_servicesItem": {
-            "type": "structure",
-            "required": [
-                "additionalDescription",
-                "id",
-                "indefiniteArticle",
-                "name"
-            ],
-            "members": {
-                "additionalDescription": {
-                    "shape": "GetAllDoctorServicesResult_servicesItem_additionalDescription"
-                },
-                "name": {
-                    "shape": "GetAllDoctorServicesResult_servicesItem_name"
-                },
-                "indefiniteArticle": {
-                    "shape": "GetAllDoctorServicesResult_servicesItem_indefiniteArticle"
-                },
-                "id": {
-                    "shape": "GetAllDoctorServicesResult_servicesItem_id"
-                }
-            }
-        },
-        "GetAllDoctorServicesResult_services": {
-            "type": "list",
-            "member": {
-                "shape": "GetAllDoctorServicesResult_servicesItem"
-            }
-        },
-        "GetAllDoctorServicesResult": {
-            "type": "structure",
-            "required": [],
-            "members": {
-                "services": {
-                    "shape": "GetAllDoctorServicesResult_services"
-                }
-            }
-        },
-        "ClientDoctorService_additionalDescription": {
-            "type": "string"
-        },
-        "ClientDoctorService_name": {
-            "type": "string"
-        },
-        "ClientDoctorService_indefiniteArticle": {
-            "type": "string"
-        },
-        "ClientDoctorService_id": {
-            "type": "string"
-        },
-        "ClientDoctorService": {
-            "type": "structure",
-            "required": [
-                "additionalDescription",
-                "id",
-                "indefiniteArticle",
-                "name"
-            ],
-            "members": {
-                "additionalDescription": {
-                    "shape": "ClientDoctorService_additionalDescription"
-                },
-                "name": {
-                    "shape": "ClientDoctorService_name"
-                },
-                "indefiniteArticle": {
-                    "shape": "ClientDoctorService_indefiniteArticle"
-                },
-                "id": {
-                    "shape": "ClientDoctorService_id"
-                }
-            }
-        },
-        "GetAppointmentPaymentMethodRequest_appointmentId": {
-            "type": "string"
-        },
-        "GetAppointmentPaymentMethodRequest": {
-            "type": "structure",
-            "required": [],
-            "members": {
-                "appointmentId": {
-                    "shape": "GetAppointmentPaymentMethodRequest_appointmentId"
-                }
-            }
-        },
-        "QueryDoctorScheduleRequest_firstTimeInclusive": {
-            "type": "string"
-        },
-        "QueryDoctorScheduleRequest_lastTimeExclusive": {
-            "type": "string"
-        },
-        "QueryDoctorScheduleRequest_doctorId": {
-            "type": "string"
-        },
-        "QueryDoctorScheduleRequest": {
-            "type": "structure",
-            "required": [
-                "doctorId",
-                "firstTimeInclusive",
-                "lastTimeExclusive"
-            ],
-            "members": {
-                "firstTimeInclusive": {
-                    "shape": "QueryDoctorScheduleRequest_firstTimeInclusive"
-                },
-                "lastTimeExclusive": {
-                    "shape": "QueryDoctorScheduleRequest_lastTimeExclusive"
-                },
-                "doctorId": {
-                    "shape": "QueryDoctorScheduleRequest_doctorId"
-                }
-            }
-        },
-        "GetAllDoctorServicesRequest_dummy": {
-            "type": "string"
-        },
-        "GetAllDoctorServicesRequest": {
-            "type": "structure",
-            "required": [],
-            "members": {
-                "dummy": {
-                    "shape": "GetAllDoctorServicesRequest_dummy"
-                }
-            }
-        },
-        "GetAppointmentsWithUserRequest_getPatients": {
-            "type": "boolean"
-        },
-        "GetAppointmentsWithUserRequest_userId": {
-            "type": "string"
-        },
-        "GetAppointmentsWithUserRequest_getDoctors": {
-            "type": "boolean"
-        },
-        "GetAppointmentsWithUserRequest": {
-            "type": "structure",
-            "required": [
-                "getDoctors",
-                "getPatients",
-                "userId"
-            ],
-            "members": {
-                "getPatients": {
-                    "shape": "GetAppointmentsWithUserRequest_getPatients"
-                },
-                "userId": {
-                    "shape": "GetAppointmentsWithUserRequest_userId"
-                },
-                "getDoctors": {
-                    "shape": "GetAppointmentsWithUserRequest_getDoctors"
+                    "shape": "string"
                 }
             }
         }
