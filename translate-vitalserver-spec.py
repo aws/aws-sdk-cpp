@@ -13,11 +13,24 @@ JSON_REF_KEYWORD = "$ref"
 INTERNAL_DEFINITION_URI_PATTERN = r"#/definitions/(.*)"
 
 def get_referenced_definition_name(reference_uri):
+    """
+    Takes a reference to a definition and returns the name of what is being
+    referenced. For example, the input "#/definitions/AddCreditCardRequest"
+    results in the output "AddCreditCardRequest".
+    :param reference_uri: The URI string that is referencing a definition.
+    :return The name of the definition that the URI references.
+    """
     match_result = re.match(INTERNAL_DEFINITION_URI_PATTERN, reference_uri)
     return match_result.group(1)
 
 
 def build_metadata(swagger_schema):
+    """
+    Builds the "metadata" portion of the AWS schema.
+    :param swagger_schema: The API's swagger schema as a dictionary.
+    :return An ordeered dictionary that represents the AWS schema's
+    "metadata"
+    """
     version_date_time_string = swagger_schema["info"]["version"]
     match = re.match(r"(\d{4}-\d{2}-\d{2})T", version_date_time_string)
     aws_api_version = match.group(1)
@@ -30,6 +43,12 @@ def build_metadata(swagger_schema):
 
 
 def build_operations(swagger_schema):
+    """
+    Builds the "operations" portion of the AWS schema.
+    :param swagger_schema: The API's swagger schema as a dictionary.
+    :return An ordered dictionary that represents the AWS schema's
+    "operations".
+    """
     base_path = swagger_schema["basePath"]
     operations = collections.OrderedDict()
     for path, path_info in swagger_schema["paths"].items():
@@ -71,13 +90,17 @@ def build_operations(swagger_schema):
 
         aws_input = collections.OrderedDict([("shape",
                                               post_parameter_schema_name)])
+
+        # Get the name of the schema referenced in the swagger schema's 200 response.
         response_schema_ref_string = \
             post_info["responses"]["200"]["schema"]["$ref"]
 
-        match_result = re.match(r"#/definitions/(.*)",
-                                response_schema_ref_string)
+        definition_name = get_referenced_definition_name(response_schema_ref_string)
 
-        aws_output = {"shape": match_result.group(1)}
+        # Make the AWS schema's output a shape of the same name.
+        aws_output = {"shape": definition_name}
+
+        # Build the operation.
         operation_info = collections.OrderedDict(
                             [("name", aws_name),
                              ("http", aws_http_info),
@@ -90,6 +113,11 @@ def build_operations(swagger_schema):
 
 
 def build_shapes(swagger_schema):
+    """
+    Builds the "shapes" portion of the api-definition.
+    :param swagger_schema: The API swagger schema as a dictionary.
+    :return An ordered dictionary that represents the api-definition's "shapes".
+    """
     shapes = collections.OrderedDict()
     top_level_definitions = swagger_schema["definitions"]
     resolved_definitions = collections.OrderedDict()
@@ -106,6 +134,7 @@ def build_shapes(swagger_schema):
         add_shape_from_swagger_definition(name, definition, shapes)
 
     return shapes
+
 
 def resolve_json_refs(definition, top_level_swagger_definitions):
     if "$ref" in definition:
@@ -176,6 +205,11 @@ def add_shape_from_swagger_definition(name, definition, shapes):
 
 
 def build_aws_schema(swagger_schema):
+    """
+    Builds an AWS schema from a swagger schema.
+    :param swagger_schema: An API's swagger schema as a dictionary.
+    :return The API's AWS schema as an ordered dictionary.
+    """
     aws_metadata = build_metadata(swagger_schema)
     aws_operations = build_operations(swagger_schema)
     aws_shapes = build_shapes(swagger_schema)
@@ -188,7 +222,7 @@ def build_aws_schema(swagger_schema):
 
 def main():
     with open("./VitalServices-prod-swagger.json", "r") as swagger_file:
-        swagger_schema = json.load(swagger_file)
+        swagger_schema = json.load(swagger_file, object_pairs_hook=collections.OrderedDict)
         aws_schema = build_aws_schema(swagger_schema)
         print(json.dumps(aws_schema, indent=4))
 
