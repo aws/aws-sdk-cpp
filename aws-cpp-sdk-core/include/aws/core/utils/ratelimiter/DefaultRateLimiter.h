@@ -109,7 +109,11 @@ namespace Aws
                  */
                 virtual void ApplyAndPayForCost(int64_t cost) override
                 {
-                    std::this_thread::sleep_for(ApplyCost(cost));
+                    auto costInMilliseconds = ApplyCost(cost);
+                    if(costInMilliseconds.count() > 0)
+                    {
+                        std::this_thread::sleep_for(costInMilliseconds);
+                    }
                 }
 
                 /**

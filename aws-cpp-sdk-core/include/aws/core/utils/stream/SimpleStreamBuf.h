@@ -34,7 +34,10 @@ namespace Stream
     {
         public:
 
+            using base = std::streambuf;
+
             SimpleStreamBuf();
+            explicit SimpleStreamBuf(const Aws::String& value);
 
             SimpleStreamBuf(const SimpleStreamBuf&) = delete;
             SimpleStreamBuf& operator=(const SimpleStreamBuf&) = delete;
@@ -45,6 +48,9 @@ namespace Stream
             virtual ~SimpleStreamBuf();
 
             Aws::String str();
+            void str(const Aws::String& value);
+
+            void swap(SimpleStreamBuf& rhs);
 
         protected:
             virtual std::streampos seekoff(std::streamoff off, std::ios_base::seekdir dir, std::ios_base::openmode which = std::ios_base::in | std::ios_base::out) override;

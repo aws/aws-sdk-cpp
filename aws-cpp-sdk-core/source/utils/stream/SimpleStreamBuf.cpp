@@ -15,9 +15,9 @@
 */
 
 #include <aws/core/utils/stream/SimpleStreamBuf.h>
-#include <cassert>
 
-#include <aws/core/utils/logging/LogMacros.h>
+#include <algorithm>
+#include <cassert>
 
 namespace Aws
 {
@@ -40,6 +40,24 @@ SimpleStreamBuf::SimpleStreamBuf() :
     char* end = begin + m_bufferSize;
 
     setp(begin, end);
+    setg(begin, begin, begin);
+}
+
+SimpleStreamBuf::SimpleStreamBuf(const Aws::String& value) :
+    m_buffer(nullptr),
+    m_bufferSize(0)
+{
+    size_t baseSize = std::max(value.size(), static_cast<std::size_t>(DEFAULT_BUFFER_SIZE));
+
+    m_buffer = Aws::NewArray<char>(baseSize, SIMPLE_STREAMBUF_ALLOCATION_TAG);
+    m_bufferSize = baseSize;
+
+    memcpy(m_buffer, value.c_str(), value.size());
+
+    char* begin = m_buffer;
+    char* end = begin + m_bufferSize;
+
+    setp(begin + value.size(), end);
     setg(begin, begin, begin);
 }
 
@@ -216,6 +234,31 @@ int SimpleStreamBuf::underflow()
     {
         return std::char_traits< char >::eof();
     }
+}
+
+void SimpleStreamBuf::swap(SimpleStreamBuf& rhs)
+{
+    base::swap((base&)rhs);
+
+    auto oldBuffer = m_buffer;
+    auto oldBufferSize = m_bufferSize;
+
+    m_buffer = rhs.m_buffer;
+    m_bufferSize = rhs.m_bufferSize;
+
+    rhs.m_buffer = oldBuffer;
+    rhs.m_bufferSize = oldBufferSize;
+}
+
+void str(const Aws::String& value);
+{
+    char* begin = m_buffer;
+    char* end = begin + m_bufferSize;
+
+    setp(begin, end);
+    setg(begin, begin, begin);
+
+    xsputn(value.c_str(), value.size());
 }
 
 }
