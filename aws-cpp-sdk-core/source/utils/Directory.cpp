@@ -65,13 +65,18 @@ namespace Aws
 
         bool DeepCopyDirectory(const char* from, const char* to)
         {
+			if (!from || !to) return false;
+
             DirectoryTree fromDir(from);
+
+			if (!fromDir) return false;
 
             CreateDirectoryIfNotExists(to);
             DirectoryTree toDir(to);
-            bool success(true);
 
-            if(!from || !to) return false;
+			if (!toDir) return false;
+
+            bool success(true);            
 
             auto visitor = [to,&success](const DirectoryTree*, const DirectoryEntry& entry)
             {
