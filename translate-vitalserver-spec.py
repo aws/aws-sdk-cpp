@@ -18,12 +18,26 @@ SWAGGER_PRIMITIVE_TO_SHAPE_MAP = {
 }
 
 PRIMITIVE_SHAPES = collections.OrderedDict([
-    ("boolean", {"type": "boolean"}),
-    ("double", {"type": "double"}),
-    ("integer", {"type": "integer"}),
-    ("long", {"type": "long"}),
-    ("string", {"type": "string"}),
-    ("timestamp", {"type": "timestamp"})])
+    ("boolean", {
+        "type": "boolean"
+    }),
+    ("double", {
+        "type": "double"
+    }),
+    ("integer", {
+        "type": "integer"
+    }),
+    ("long", {
+        "type": "long"
+    }),
+    ("string", {
+        "type": "string"
+    }),
+    ("timestamp", {
+        "type": "timestamp"
+    }),
+])
+
 
 def get_referenced_schema_name(reference_uri):
     """
@@ -211,8 +225,7 @@ def define_list_shape(item_schema, all_shapes):
         item_shape_name = get_referenced_schema_name(schema_reference)
 
     else:
-        item_shape_name = shape_from_swagger_primitive(
-            item_schema["type"])
+        item_shape_name = shape_from_swagger_primitive(item_schema["type"])
 
     list_shape_name = "{}List".format(item_shape_name)
     list_shape = collections.OrderedDict([
