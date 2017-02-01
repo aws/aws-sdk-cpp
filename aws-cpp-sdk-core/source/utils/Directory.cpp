@@ -27,36 +27,41 @@ namespace Aws
     {
         Aws::String Join(const Aws::String& leftSegment, const Aws::String& rightSegment)
         {
-            Aws::StringStream ss;
-
-            if (!leftSegment.empty())
-            {
-                if (leftSegment.back() == PATH_DELIM)
-                {
-                    ss << leftSegment.substr(0, leftSegment.length() - 1);
-                }
-                else
-                {
-                    ss << leftSegment;
-                }
-            }
-
-            ss << PATH_DELIM;
-
-            if (!rightSegment.empty())
-            {
-                if (rightSegment.front() == PATH_DELIM)
-                {
-                    ss << rightSegment.substr(1);
-                }
-                else
-                {
-                    ss << rightSegment;
-                }
-            }
-
-            return ss.str();
+			return Join(PATH_DELIM, leftSegment, rightSegment);
         }
+
+		Aws::String Join(char delimiter, const Aws::String& leftSegment, const Aws::String& rightSegment)
+		{
+			Aws::StringStream ss;
+
+			if (!leftSegment.empty())
+			{
+				if (leftSegment.back() == delimiter)
+				{
+					ss << leftSegment.substr(0, leftSegment.length() - 1);
+				}
+				else
+				{
+					ss << leftSegment;
+				}
+			}
+
+			ss << delimiter;
+
+			if (!rightSegment.empty())
+			{
+				if (rightSegment.front() == delimiter)
+				{
+					ss << rightSegment.substr(1);
+				}
+				else
+				{
+					ss << rightSegment;
+				}
+			}
+
+			return ss.str();
+		}
 
         bool DeepCopyDirectory(const char* from, const char* to)
         {

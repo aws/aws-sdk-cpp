@@ -229,6 +229,25 @@ Aws::String CreateTempFilePath()
     return tempFile;
 }
 
+Aws::String GetExecutableDirectory()
+{
+    char dest[PATH_MAX];
+    size_t destSize = sizeof(dest);
+    memset(dest, 0, destSize);
+
+    if(readlink("/proc/self/exe", dest, destSize))
+    {
+        Aws::String executablePath(dest);
+        auto lastSlash = executablePath.find_last_of('/');
+        if(lastSlash != std::string::npos)
+        {
+            return executablePath.substr(0, lastSlash);
+        }	
+    }    
+
+    return "./";
+}
+
 std::shared_ptr<Directory> OpenDirectory(const Aws::String& path, const Aws::String& relativePath)
 {
     return Aws::MakeShared<PosixDirectory>(FILE_SYSTEM_UTILS_LOG_TAG, path, relativePath);
