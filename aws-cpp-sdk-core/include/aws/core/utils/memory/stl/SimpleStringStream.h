@@ -24,7 +24,7 @@
 namespace Aws
 {
 
-class SimpleStringStream : public std::iostream
+class AWS_CORE_API SimpleStringStream : public std::iostream
 {
     public:
 
@@ -62,7 +62,7 @@ class SimpleStringStream : public std::iostream
         Aws::Utils::Stream::SimpleStreamBuf m_streamBuffer;
 };
 
-class SimpleIStringStream : public std::istream
+class AWS_CORE_API SimpleIStringStream : public std::istream
 {
     public:
 
@@ -100,7 +100,7 @@ class SimpleIStringStream : public std::istream
         Aws::Utils::Stream::SimpleStreamBuf m_streamBuffer;
 };
 
-class SimpleOStringStream : public std::ostream
+class AWS_CORE_API SimpleOStringStream : public std::ostream
 {
     public:
 

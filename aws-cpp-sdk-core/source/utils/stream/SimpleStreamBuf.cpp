@@ -146,8 +146,6 @@ bool SimpleStreamBuf::GrowBuffer()
     m_buffer = newBuffer;
     m_bufferSize = newSize;
 
-    AWS_LOGSTREAM_INFO("SimpleStreamBuf", "Grew buffer to size " << newSize);
-
     return true;
 }
 
@@ -250,7 +248,7 @@ void SimpleStreamBuf::swap(SimpleStreamBuf& rhs)
     rhs.m_bufferSize = oldBufferSize;
 }
 
-void str(const Aws::String& value);
+void SimpleStreamBuf::str(const Aws::String& value)
 {
     char* begin = m_buffer;
     char* end = begin + m_bufferSize;

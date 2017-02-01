@@ -125,3 +125,32 @@ TEST(SimpleStreamBufTest, TestZeroLengthSeekFromEnd)
     // could check ch == 0 but I don't think the standard guarantees that
     ASSERT_TRUE(ioStream.eof());
 }
+
+TEST(SimpleStreamBufTest, SetStr)
+{
+    SimpleStreamBuf streamBuf;
+    streamBuf.str(bufferStr);
+
+    ASSERT_STREQ(bufferStr, streamBuf.str().c_str());
+}
+
+TEST(SimpleStreamBufTest, StringConstructor)
+{
+    SimpleStreamBuf streamBuf(bufferStr);
+    ASSERT_STREQ(bufferStr, streamBuf.str().c_str());
+}
+
+static const char* STRING1 = "string1";
+static const char* STRING2 = "somethingdifferent";
+
+TEST(SimpleStreamBufTest, Swap)
+{
+    SimpleStreamBuf streamBuf1(STRING1);
+    SimpleStreamBuf streamBuf2(STRING2);
+
+    streamBuf1.swap(streamBuf2);
+
+    ASSERT_STREQ(STRING2, streamBuf1.str().c_str());
+    ASSERT_STREQ(STRING1, streamBuf2.str().c_str());
+}
+
