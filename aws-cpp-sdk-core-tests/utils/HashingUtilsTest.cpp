@@ -14,7 +14,6 @@
   */
 
 #include <aws/external/gtest.h>
-#include <aws/testing/MemoryTesting.h>
 
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
@@ -24,8 +23,6 @@ using namespace Aws::Utils;
 
 TEST(HashingUtilsTest, TestBase64Encoding)
 {
-    AWS_BEGIN_MEMORY_TEST(16, 10)
-
     //these are the standard testing vectors from RFC 4648
     Aws::String test1 = HashingUtils::Base64Encode(ByteBuffer((unsigned char*)"", 0));
     ASSERT_STREQ("", test1.c_str());
@@ -47,14 +44,10 @@ TEST(HashingUtilsTest, TestBase64Encoding)
 
     Aws::String test7 = HashingUtils::Base64Encode(ByteBuffer((unsigned char*) "foobar", 6));
     ASSERT_STREQ("Zm9vYmFy", test7.c_str());
-
-    AWS_END_MEMORY_TEST
 }
 
 TEST(HashingUtilsTest, TestBase64Decoding)
 {
-    AWS_BEGIN_MEMORY_TEST(16, 10)
-
     //these are the standard testing vectors from RFC 4648
     ByteBuffer test1 = HashingUtils::Base64Decode("");
     ASSERT_EQ(ByteBuffer((unsigned char*)"", 0), test1);
@@ -76,8 +69,6 @@ TEST(HashingUtilsTest, TestBase64Decoding)
 
     ByteBuffer test7 = HashingUtils::Base64Decode("Zm9vYmFy");
     ASSERT_EQ(ByteBuffer((unsigned char*) "foobar", 6), test7);
-
-    AWS_END_MEMORY_TEST
 }
 
 TEST(HashingUtilsTest, TestHexEncodingDecoding)
@@ -87,8 +78,6 @@ TEST(HashingUtilsTest, TestHexEncodingDecoding)
             0x0D, 0x0E, 0x0F, 0x11, 0x22, 0x33, 0x44, 0x55, 0x66, 0x77, 0x78, 0x69,
             0x5A, 0x4B, 0x3C, 0x2D, 0x1E, 0x0F, 0x10, 0x00 };
 
-    AWS_BEGIN_MEMORY_TEST(16, 10)
-
     Aws::String hexEncodedValue = HashingUtils::HexEncode(ByteBuffer(beforeHexEncoding, 32));
 
     const char* afterEncoding =
@@ -97,8 +86,6 @@ TEST(HashingUtilsTest, TestHexEncodingDecoding)
 
     ByteBuffer hexBuffer(beforeHexEncoding, 32);
     ASSERT_EQ(hexBuffer, HashingUtils::HexDecode(afterEncoding));
-
-    AWS_END_MEMORY_TEST
 }
 
 TEST(HashingUtilsTest, TestSHA256HMAC)
@@ -106,38 +93,28 @@ TEST(HashingUtilsTest, TestSHA256HMAC)
     const char* toHash = "TestHash";
     const char* secret = "TestSecret";
 
-    AWS_BEGIN_MEMORY_TEST(16, 10)
-
     ByteBuffer digest = HashingUtils::CalculateSHA256HMAC(
             ByteBuffer((unsigned char*) toHash, 8), ByteBuffer((unsigned char*) secret, 10));
 
     Aws::String computedHashAsHex = HashingUtils::HexEncode(digest);
 
     ASSERT_EQ(32uL, digest.GetLength());
-    EXPECT_STREQ("43cf04fa24b873a456670d34ef9af2cb7870483327b5767509336fa66fb7986c", computedHashAsHex.c_str());
-
-    AWS_END_MEMORY_TEST
+    EXPECT_STREQ("43cf04fa24b873a456670d34ef9af2cb7870483327b5767509336fa66fb7986c", computedHashAsHex.c_str());    
 }
 
 TEST(HashingUtilsTest, TestSHA256FromString)
 {
-    AWS_BEGIN_MEMORY_TEST(16, 10)
-
     Aws::String toHash = "TestToHash";
 
     ByteBuffer digest = HashingUtils::CalculateSHA256(toHash);
     ASSERT_EQ(32uL, digest.GetLength());
 
     Aws::String base64Hash = HashingUtils::Base64Encode(digest);
-    EXPECT_STREQ("No9GqyFhBA5QWj9+YUchjN83IByaCH5Lqji0McSOKyg=", base64Hash.c_str());
-
-    AWS_END_MEMORY_TEST
+    EXPECT_STREQ("No9GqyFhBA5QWj9+YUchjN83IByaCH5Lqji0McSOKyg=", base64Hash.c_str());    
 }
 
 TEST(HashingUtilsTest, TestSHA256FromStream)
 {
-    AWS_BEGIN_MEMORY_TEST(16, 10)
-
     Aws::StringStream toHash;
     toHash << "TestToHash";
 
@@ -146,8 +123,6 @@ TEST(HashingUtilsTest, TestSHA256FromStream)
 
     Aws::String base64Hash = HashingUtils::Base64Encode(digest);
     EXPECT_STREQ("No9GqyFhBA5QWj9+YUchjN83IByaCH5Lqji0McSOKyg=", base64Hash.c_str());
-
-    AWS_END_MEMORY_TEST
 }
 
 static void TestMD5FromString(const char* value, const char* expectedBase64Hash)
@@ -163,8 +138,6 @@ static void TestMD5FromString(const char* value, const char* expectedBase64Hash)
 
 TEST(HashingUtilsTest, TestMD5FromString)
 {
-    AWS_BEGIN_MEMORY_TEST(16, 10)
-
     // "" -> d41d8cd98f00b204e9800998ecf8427e -> 1B2M2Y8AsgTpgAmY7PhCfg== (base 64)
     TestMD5FromString( "", "1B2M2Y8AsgTpgAmY7PhCfg==" );
 
@@ -185,8 +158,6 @@ TEST(HashingUtilsTest, TestMD5FromString)
 
     // "12345678901234567890123456789012345678901234567890123456789012345678901234567890" -> 57edf4a22be3c955ac49da2e2107b67a -> V+30oivjyVWsSdouIQe2eg== (base 64)
     TestMD5FromString( "12345678901234567890123456789012345678901234567890123456789012345678901234567890", "V+30oivjyVWsSdouIQe2eg==" );
-
-    AWS_END_MEMORY_TEST
 }
 
 static void TestMD5FromStream(const char* value, const char* expectedBase64Hash)
@@ -203,8 +174,6 @@ static void TestMD5FromStream(const char* value, const char* expectedBase64Hash)
 
 TEST(HashingUtilsTest, TestMD5FromStream)
 {
-    AWS_BEGIN_MEMORY_TEST(16, 10)
-
     // "" -> d41d8cd98f00b204e9800998ecf8427e -> 1B2M2Y8AsgTpgAmY7PhCfg== (base 64)
     TestMD5FromStream( "", "1B2M2Y8AsgTpgAmY7PhCfg==" );
 
@@ -225,7 +194,5 @@ TEST(HashingUtilsTest, TestMD5FromStream)
 
     // "12345678901234567890123456789012345678901234567890123456789012345678901234567890" -> 57edf4a22be3c955ac49da2e2107b67a -> V+30oivjyVWsSdouIQe2eg== (base 64)
     TestMD5FromStream( "12345678901234567890123456789012345678901234567890123456789012345678901234567890", "V+30oivjyVWsSdouIQe2eg==" );
-
-    AWS_END_MEMORY_TEST
 }
 

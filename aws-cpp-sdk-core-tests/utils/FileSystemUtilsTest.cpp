@@ -17,7 +17,6 @@
 #include <aws/core/utils/FileSystemUtils.h>
 #include <aws/core/utils/memory/stl/AWSSet.h>
 #include <aws/external/gtest.h>
-#include <aws/testing/MemoryTesting.h>
 
 #include <fstream>
 

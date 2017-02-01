@@ -14,26 +14,19 @@
   */
 
 #include <aws/external/gtest.h>
-#include <aws/testing/MemoryTesting.h>
-
 #include <aws/core/http/URI.h>
 
 using namespace Aws::Http;
 TEST(URITest, DefaultConstructor)
 {
-    AWS_BEGIN_MEMORY_TEST(16, 10)
-
     URI uri;
     EXPECT_EQ(Scheme::HTTP, uri.GetScheme());
     EXPECT_EQ(HTTP_DEFAULT_PORT, uri.GetPort());
-
-    AWS_END_MEMORY_TEST
+	    
 }
 
 TEST(URITest, TestSchemeChanges)
 {
-    AWS_BEGIN_MEMORY_TEST(16, 10)
-
     URI uri;
     EXPECT_EQ(Scheme::HTTP, uri.GetScheme());
     EXPECT_EQ(HTTP_DEFAULT_PORT, uri.GetPort());
@@ -53,13 +46,10 @@ TEST(URITest, TestSchemeChanges)
     EXPECT_EQ(Scheme::HTTPS, uri.GetScheme());
     EXPECT_EQ(8080, uri.GetPort());
 
-    AWS_END_MEMORY_TEST
 }
 
 TEST(URITest, TestSetPath)
 {
-    AWS_BEGIN_MEMORY_TEST(16, 10)
-
     URI uri;
     Aws::String path = "/path/to/resource";
 
@@ -71,15 +61,11 @@ TEST(URITest, TestSetPath)
     uri.SetPath(path);
     EXPECT_EQ("/path/with%20space/to/resource", uri.GetURLEncodedPath());
     //make sure we return an UnEncoded path properly
-    EXPECT_EQ(path, uri.GetPath());
-
-    AWS_END_MEMORY_TEST
+    EXPECT_EQ(path, uri.GetPath());    
 }
 
 TEST(URITest, TestAddQueryStringParameters)
 {
-    AWS_BEGIN_MEMORY_TEST(16, 10)
-
     URI uri;
     Aws::String path = "/path/to/resource";
     uri.SetPath(path);
@@ -103,14 +89,10 @@ TEST(URITest, TestAddQueryStringParameters)
     //let's go ahead and make sure the url is constructed properly.
     EXPECT_STREQ("http://www.test.com/path/to/resource?test1=value1&test%20needs%20escaping=value%20needs%20escaping",
         uri.GetURIString().c_str());
-
-    AWS_END_MEMORY_TEST
 }
 
 TEST(URITest, TestCanonicalizeQueryStringParameters)
 {
-    AWS_BEGIN_MEMORY_TEST(16, 10)
-
     URI uri;
     Aws::String path = "/path/to/resource";
     uri.SetPath(path);
@@ -129,13 +111,10 @@ TEST(URITest, TestCanonicalizeQueryStringParameters)
     nonStandardUri.CanonicalizeQueryString();
     EXPECT_EQ("?nonStandard", nonStandardUri.GetQueryString());
 
-    AWS_END_MEMORY_TEST
 }
 
 TEST(URITest, TestPort)
 {
-    AWS_BEGIN_MEMORY_TEST(16, 10)
-
     URI uri;
     Aws::String path = "/path/to/resource";
     uri.SetPath(path);
@@ -143,13 +122,10 @@ TEST(URITest, TestPort)
     uri.SetPort(8080);
 
     EXPECT_STREQ("http://www.test.com:8080/path/to/resource", uri.GetURIString().c_str());
-
-    AWS_END_MEMORY_TEST
 }
 
 TEST(URITest, TestParse)
 {
-    AWS_BEGIN_MEMORY_TEST(16, 10)
 
     const char* strUri = "https://www.test.com:8443/path/to/resource?test1=value1&test%20space=value%20space";
     URI uri(strUri);
@@ -177,14 +153,10 @@ TEST(URITest, TestParse)
     EXPECT_EQ(80, uriThatBrokeTheOtherDay.GetPort());
     EXPECT_EQ("/686094048/testQueueName/", uriThatBrokeTheOtherDay.GetPath());
     EXPECT_EQ("http://sqs.us-east-1.amazonaws.com/686094048/testQueueName/", uriThatBrokeTheOtherDay.GetURIString());
-
-    AWS_END_MEMORY_TEST
 }
 
 TEST(URITest, TestParseWithColon)
 {
-    AWS_BEGIN_MEMORY_TEST(16, 10)
-
     const char* strUri = "https://test.com/path/1234:_Some_Path";
     URI uri(strUri);
 
@@ -212,7 +184,6 @@ TEST(URITest, TestParseWithColon)
     EXPECT_EQ(80, complexUri.GetPort());
     EXPECT_STREQ("/awsnativesdkputobjectstestbucket20150702T200059Z/TestObject:1234/awsnativesdkputobjectstestbucket20150702T200059Z/TestObject:Key", complexUri.GetPath().c_str());
     EXPECT_STREQ(strComplexUri, complexUri.GetURIString().c_str());
-
-    AWS_END_MEMORY_TEST
+    
 }
 

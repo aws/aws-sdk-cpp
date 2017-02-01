@@ -19,20 +19,28 @@
 #include <aws/core/Aws.h>
 #include <aws/testing/TestingEnvironment.h>
 #include <aws/testing/platform/PlatformTesting.h>
+#include <aws/testing/MemoryTesting.h>
 
 int main(int argc, char** argv)
 {
 
     Aws::Testing::RedirectHomeToTempIfAppropriate();
 
-    Aws::SDKOptions options;
+    Aws::SDKOptions options;	
 
+	ExactTestMemorySystem memorySystem(16, 10);
+	options.memoryManagementOptions.memoryManager = &memorySystem;
     Aws::Testing::InitPlatformTest(options);
+
+	options.loggingOptions.logLevel = Aws::Utils::Logging::LogLevel::Trace;
 
     Aws::InitAPI(options);
     ::testing::InitGoogleTest(&argc, argv);
     int retVal = RUN_ALL_TESTS();
     Aws::ShutdownAPI(options);
+	EXPECT_EQ(memorySystem.GetCurrentOutstandingAllocations(), 0ULL);
+	EXPECT_EQ(memorySystem.GetCurrentBytesAllocated(), 0ULL);
+	EXPECT_TRUE(memorySystem.IsClean());
 
     Aws::Testing::ShutdownPlatformTest(options);
 
