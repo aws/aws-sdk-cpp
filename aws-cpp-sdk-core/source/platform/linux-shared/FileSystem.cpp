@@ -78,9 +78,13 @@ static const char* FILE_SYSTEM_UTILS_LOG_TAG = "FileSystemUtils";
                 {
                     Aws::String entryName = dirEntry->d_name;
                     if(entryName != ".." && entryName != ".")
-                    {
+                    {                        
                         entry = ParseFileInfo(dirEntry, true);
                         invalidEntry = false;
+                    }
+                    else
+                    {
+                        AWS_LOGSTREAM_DEBUG(FILE_SYSTEM_UTILS_LOG_TAG, "skipping . or ..");
                     }
                 }
                 else
@@ -120,16 +124,20 @@ static const char* FILE_SYSTEM_UTILS_LOG_TAG = "FileSystemUtils";
                 entry.relativePath = m_directoryEntry.relativePath;
             }
 
+            AWS_LOGSTREAM_DEBUG(FILE_SYSTEM_UTILS_LOG_TAG, "file " << dirEnt->d_name << " type " << dirEnt->d_type);
             if(dirEnt->d_type == DT_DIR)
             {
+                AWS_LOGSTREAM_DEBUG(FILE_SYSTEM_UTILS_LOG_TAG, "type directory detected");
                 entry.fileType = FileType::Directory;
             }
             else if(dirEnt->d_type == DT_LNK)
             {
+                AWS_LOGSTREAM_DEBUG(FILE_SYSTEM_UTILS_LOG_TAG, "type symlink detected");
                 entry.fileType = FileType::Symlink;
             }
             else
             {
+                AWS_LOGSTREAM_DEBUG(FILE_SYSTEM_UTILS_LOG_TAG, "type file assumed");
                 entry.fileType = FileType::File;
                 FILE* fp = fopen(entry.path.c_str(), "r");
                 if(fp)
