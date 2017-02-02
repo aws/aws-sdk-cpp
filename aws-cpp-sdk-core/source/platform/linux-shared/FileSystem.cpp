@@ -62,7 +62,7 @@ static const char* FILE_SYSTEM_UTILS_LOG_TAG = "FileSystemUtils";
             }
         }
 
-		operator bool() const override { return m_directoryEntry.operator bool() && m_dir != nullptr; }
+        operator bool() const override { return m_directoryEntry.operator bool() && m_dir != nullptr; }
 
         DirectoryEntry Next() override
         {
@@ -123,35 +123,37 @@ static const char* FILE_SYSTEM_UTILS_LOG_TAG = "FileSystemUtils";
                 entry.path = m_directoryEntry.path;
                 entry.relativePath = m_directoryEntry.relativePath;
             }
+            
+            AWS_LOGSTREAM_TRACE(FILE_SYSTEM_UTILS_LOG_TAG, "Calling stat on path " << entry.path);
+            
+            struct stat dirInfo;
+            if(!lstat(entry.path.c_str(), &dirInfo))
+            {
+               if(S_ISDIR(dirInfo.st_mode))
+               {
+                   AWS_LOGSTREAM_DEBUG(FILE_SYSTEM_UTILS_LOG_TAG, "type directory detected");
+                   entry.fileType = FileType::Directory;
+               }
+               else if(S_ISLNK(dirInfo.st_mode))
+               {
+                   AWS_LOGSTREAM_DEBUG(FILE_SYSTEM_UTILS_LOG_TAG, "type symlink detected");
+                   entry.fileType = FileType::Symlink;
+               }
+               else if(S_ISREG(dirInfo.st_mode))
+               {
+                   AWS_LOGSTREAM_DEBUG(FILE_SYSTEM_UTILS_LOG_TAG, "type file detected");
+                   entry.fileType = FileType::File;
+               }
 
-            AWS_LOGSTREAM_DEBUG(FILE_SYSTEM_UTILS_LOG_TAG, "file " << dirEnt->d_name << " type " << static_cast<int>(dirEnt->d_type));
-            if(dirEnt->d_type == DT_DIR)
-            {
-                AWS_LOGSTREAM_DEBUG(FILE_SYSTEM_UTILS_LOG_TAG, "type directory detected");
-                entry.fileType = FileType::Directory;
-            }
-            else if(dirEnt->d_type == DT_LNK)
-            {
-                AWS_LOGSTREAM_DEBUG(FILE_SYSTEM_UTILS_LOG_TAG, "type symlink detected");
-                entry.fileType = FileType::Symlink;
+               entry.fileSize = static_cast<int64_t>(dirInfo.st_size);
+               AWS_LOGSTREAM_DEBUG(FILE_SYSTEM_UTILS_LOG_TAG, "file size detected as " << entry.fileSize);
             }
             else
             {
-                AWS_LOGSTREAM_DEBUG(FILE_SYSTEM_UTILS_LOG_TAG, "type file assumed");
-                entry.fileType = FileType::File;
-                FILE* fp = fopen(entry.path.c_str(), "r");
-                if(fp)
-                {
-                    auto pos = ftell(fp);
-                    fseek(fp, 0, SEEK_END);
-                    auto end = ftell(fp);
-                    fseek(fp, pos, SEEK_SET);
-                    entry.fileSize = static_cast<int64_t>(end);
-                    fclose(fp);
-                }
+                AWS_LOGSTREAM_ERROR(FILE_SYSTEM_UTILS_LOG_TAG, "Failed to stat file path " << entry.path << " with error code " << errno);
             }
 
-            return entry;
+            return entry; 
         }
 
         DIR* m_dir;
