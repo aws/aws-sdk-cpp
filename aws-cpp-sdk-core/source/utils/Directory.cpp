@@ -150,16 +150,23 @@ namespace Aws
             auto trimmedPath = Utils::StringUtils::Trim(path.c_str());
             auto trimmedRelativePath = Utils::StringUtils::Trim(relativePath.c_str());
 
-            if (trimmedPath[trimmedPath.length() - 1] == PATH_DELIM)
+            if (!trimmedPath.empty() && trimmedPath[trimmedPath.length() - 1] == PATH_DELIM)
             {
                 m_directoryEntry.path = trimmedPath.substr(0, trimmedPath.length() - 1);
             }
             else
             {
                 m_directoryEntry.path = trimmedPath;
-            }     
-            
-            m_directoryEntry.relativePath = trimmedRelativePath;
+            }    
+
+			if (!trimmedRelativePath.empty() && trimmedRelativePath[trimmedRelativePath.length() - 1] == PATH_DELIM)
+			{
+				m_directoryEntry.relativePath = trimmedRelativePath.substr(0, trimmedRelativePath.length() - 1);
+			}
+			else
+			{
+				m_directoryEntry.relativePath = trimmedRelativePath;
+			}          
         }        
 
         Directory& Directory::Descend(const DirectoryEntry& directoryEntry)

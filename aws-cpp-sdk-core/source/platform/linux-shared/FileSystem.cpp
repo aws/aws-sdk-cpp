@@ -24,6 +24,7 @@
 #include <pwd.h>
 #include <sys/stat.h>
 #include <dirent.h>
+#include <errno.h>
 
 #include <cassert>
 
@@ -40,11 +41,17 @@ static const char* FILE_SYSTEM_UTILS_LOG_TAG = "FileSystemUtils";
         PosixDirectory(const Aws::String& path, const Aws::String& relativePath) : Directory(path, relativePath), m_dir(nullptr)
         {
             m_dir = opendir(m_directoryEntry.path.c_str());
+			AWS_LOGSTREAM_TRACE(FILE_SYSTEM_UTILS_LOG_TAG, "Entering directory " << m_directoryEntry.path);
 
             if(m_dir)
             {
+				AWS_LOGSTREAM_TRACE(FILE_SYSTEM_UTILS_LOG_TAG, "Successfully opened directory " << m_directoryEntry.path);
                 m_directoryEntry.fileType = FileType::Directory;
             }
+			else
+			{
+				AWS_LOGSTREAM_ERROR(FILE_SYSTEM_UTILS_LOG_TAG, "Could not load directory " << m_directoryEntry.path << " with error code " << errno);
+			}
         }
 
         ~PosixDirectory()
@@ -54,6 +61,8 @@ static const char* FILE_SYSTEM_UTILS_LOG_TAG = "FileSystemUtils";
                 closedir(m_dir);
             }
         }
+
+		operator bool() const override { return m_directoryEntry.operator bool() && m_dir != nullptr; }
 
         DirectoryEntry Next() override
         {

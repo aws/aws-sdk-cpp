@@ -38,12 +38,18 @@ static const char* FILE_SYSTEM_UTILS_LOG_TAG = "FileSystem";
     public:
         AndroidDirectory(const Aws::String& path, const Aws::String& relativePath) : Directory(path, relativePath), m_dir(nullptr)
         {
-            m_dir = opendir(m_directoryEntry.path.c_str());
+			m_dir = opendir(m_directoryEntry.path.c_str());
+			AWS_LOGSTREAM_TRACE(FILE_SYSTEM_UTILS_LOG_TAG, "Entering directory " << m_directoryEntry.path);
 
-            if(m_dir)
-            {
-                m_directoryEntry.fileType = FileType::Directory;
-            }
+			if (m_dir)
+			{
+				AWS_LOGSTREAM_TRACE(FILE_SYSTEM_UTILS_LOG_TAG, "Successfully opened directory " << m_directoryEntry.path);
+				m_directoryEntry.fileType = FileType::Directory;
+			}
+			else
+			{
+				AWS_LOGSTREAM_ERROR(FILE_SYSTEM_UTILS_LOG_TAG, "Could not load directory " << m_directoryEntry.path << " with error code " << errno);
+			}
         }
 
         ~AndroidDirectory()
@@ -53,6 +59,8 @@ static const char* FILE_SYSTEM_UTILS_LOG_TAG = "FileSystem";
                 closedir(m_dir);
             }
         }
+
+		operator bool() const override { return m_directoryEntry.operator bool() && m_dir != nullptr; }
 
         DirectoryEntry Next() override
         {
@@ -195,6 +203,25 @@ Aws::String CreateTempFilePath()
     AWS_LOGSTREAM_DEBUG(FILE_SYSTEM_UTILS_LOG_TAG, "CreateTempFilePath generated: " << pathStream.str());
 
     return pathStream.str();
+}
+
+Aws::String GetExecutableDirectory()
+{
+	char dest[PATH_MAX];
+	size_t destSize = sizeof(dest);
+	memset(dest, 0, destSize);
+
+	if (readlink("/proc/self/exe", dest, destSize))
+	{
+		Aws::String executablePath(dest);
+		auto lastSlash = executablePath.find_last_of('/');
+		if (lastSlash != std::string::npos)
+		{
+			return executablePath.substr(0, lastSlash);
+		}
+	}
+
+	return "./";
 }
 
 std::shared_ptr<Directory> OpenDirectory(const Aws::String& path, const Aws::String& relativePath)
