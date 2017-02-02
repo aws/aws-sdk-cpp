@@ -45,13 +45,13 @@ static const char* FILE_SYSTEM_UTILS_LOG_TAG = "FileSystemUtils";
 
             if(m_dir)
             {
-				AWS_LOGSTREAM_TRACE(FILE_SYSTEM_UTILS_LOG_TAG, "Successfully opened directory " << m_directoryEntry.path);
+                AWS_LOGSTREAM_TRACE(FILE_SYSTEM_UTILS_LOG_TAG, "Successfully opened directory " << m_directoryEntry.path);
                 m_directoryEntry.fileType = FileType::Directory;
             }
-			else
-			{
-				AWS_LOGSTREAM_ERROR(FILE_SYSTEM_UTILS_LOG_TAG, "Could not load directory " << m_directoryEntry.path << " with error code " << errno);
-			}
+            else
+            {
+                AWS_LOGSTREAM_ERROR(FILE_SYSTEM_UTILS_LOG_TAG, "Could not load directory " << m_directoryEntry.path << " with error code " << errno);
+            }
         }
 
         ~PosixDirectory()
@@ -124,7 +124,7 @@ static const char* FILE_SYSTEM_UTILS_LOG_TAG = "FileSystemUtils";
                 entry.relativePath = m_directoryEntry.relativePath;
             }
 
-            AWS_LOGSTREAM_DEBUG(FILE_SYSTEM_UTILS_LOG_TAG, "file " << dirEnt->d_name << " type " << dirEnt->d_type);
+            AWS_LOGSTREAM_DEBUG(FILE_SYSTEM_UTILS_LOG_TAG, "file " << dirEnt->d_name << " type " << static_cast<int>(dirEnt->d_type));
             if(dirEnt->d_type == DT_DIR)
             {
                 AWS_LOGSTREAM_DEBUG(FILE_SYSTEM_UTILS_LOG_TAG, "type directory detected");
