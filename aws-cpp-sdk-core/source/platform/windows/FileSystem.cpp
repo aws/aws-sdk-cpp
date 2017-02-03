@@ -60,6 +60,8 @@ public:
         }
     }
 
+	operator bool() const override { return m_directoryEntry.operator bool() && m_find != INVALID_HANDLE_VALUE; }
+
     DirectoryEntry Next() override
     {
         assert(m_find != INVALID_HANDLE_VALUE);
@@ -169,6 +171,28 @@ Aws::String GetHomeDirectory()
     }
     
     return retVal;
+}
+
+Aws::String GetExecutableDirectory()
+{
+    static const unsigned long long bufferSize = 256;
+    char buffer[bufferSize];
+
+    memset(buffer, 0, bufferSize);
+
+    if (GetModuleFileNameA(nullptr, buffer, static_cast<DWORD>(bufferSize)))
+    {
+        Aws::String bufferStr(buffer);
+        auto fileNameStart = bufferStr.find_last_of(PATH_DELIM);
+        if (fileNameStart != std::string::npos)
+        {
+            bufferStr = bufferStr.substr(0, fileNameStart);
+        }
+
+        return bufferStr;
+    }
+
+    return "";
 }
 
 bool CreateDirectoryIfNotExists(const char* path)

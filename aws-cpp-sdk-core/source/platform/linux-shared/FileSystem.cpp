@@ -24,6 +24,7 @@
 #include <pwd.h>
 #include <sys/stat.h>
 #include <dirent.h>
+#include <errno.h>
 
 #include <cassert>
 
@@ -40,10 +41,16 @@ static const char* FILE_SYSTEM_UTILS_LOG_TAG = "FileSystemUtils";
         PosixDirectory(const Aws::String& path, const Aws::String& relativePath) : Directory(path, relativePath), m_dir(nullptr)
         {
             m_dir = opendir(m_directoryEntry.path.c_str());
+			AWS_LOGSTREAM_TRACE(FILE_SYSTEM_UTILS_LOG_TAG, "Entering directory " << m_directoryEntry.path);
 
             if(m_dir)
             {
+                AWS_LOGSTREAM_TRACE(FILE_SYSTEM_UTILS_LOG_TAG, "Successfully opened directory " << m_directoryEntry.path);
                 m_directoryEntry.fileType = FileType::Directory;
+            }
+            else
+            {
+                AWS_LOGSTREAM_ERROR(FILE_SYSTEM_UTILS_LOG_TAG, "Could not load directory " << m_directoryEntry.path << " with error code " << errno);
             }
         }
 
@@ -54,6 +61,8 @@ static const char* FILE_SYSTEM_UTILS_LOG_TAG = "FileSystemUtils";
                 closedir(m_dir);
             }
         }
+
+        operator bool() const override { return m_directoryEntry.operator bool() && m_dir != nullptr; }
 
         DirectoryEntry Next() override
         {
@@ -69,9 +78,13 @@ static const char* FILE_SYSTEM_UTILS_LOG_TAG = "FileSystemUtils";
                 {
                     Aws::String entryName = dirEntry->d_name;
                     if(entryName != ".." && entryName != ".")
-                    {
+                    {                        
                         entry = ParseFileInfo(dirEntry, true);
                         invalidEntry = false;
+                    }
+                    else
+                    {
+                        AWS_LOGSTREAM_DEBUG(FILE_SYSTEM_UTILS_LOG_TAG, "skipping . or ..");
                     }
                 }
                 else
@@ -110,31 +123,37 @@ static const char* FILE_SYSTEM_UTILS_LOG_TAG = "FileSystemUtils";
                 entry.path = m_directoryEntry.path;
                 entry.relativePath = m_directoryEntry.relativePath;
             }
+            
+            AWS_LOGSTREAM_TRACE(FILE_SYSTEM_UTILS_LOG_TAG, "Calling stat on path " << entry.path);
+            
+            struct stat dirInfo;
+            if(!lstat(entry.path.c_str(), &dirInfo))
+            {
+               if(S_ISDIR(dirInfo.st_mode))
+               {
+                   AWS_LOGSTREAM_DEBUG(FILE_SYSTEM_UTILS_LOG_TAG, "type directory detected");
+                   entry.fileType = FileType::Directory;
+               }
+               else if(S_ISLNK(dirInfo.st_mode))
+               {
+                   AWS_LOGSTREAM_DEBUG(FILE_SYSTEM_UTILS_LOG_TAG, "type symlink detected");
+                   entry.fileType = FileType::Symlink;
+               }
+               else if(S_ISREG(dirInfo.st_mode))
+               {
+                   AWS_LOGSTREAM_DEBUG(FILE_SYSTEM_UTILS_LOG_TAG, "type file detected");
+                   entry.fileType = FileType::File;
+               }
 
-            if(dirEnt->d_type == DT_DIR)
-            {
-                entry.fileType = FileType::Directory;
-            }
-            else if(dirEnt->d_type == DT_LNK)
-            {
-                entry.fileType = FileType::Symlink;
+               entry.fileSize = static_cast<int64_t>(dirInfo.st_size);
+               AWS_LOGSTREAM_DEBUG(FILE_SYSTEM_UTILS_LOG_TAG, "file size detected as " << entry.fileSize);
             }
             else
             {
-                entry.fileType = FileType::File;
-                FILE* fp = fopen(entry.path.c_str(), "r");
-                if(fp)
-                {
-                    auto pos = ftell(fp);
-                    fseek(fp, 0, SEEK_END);
-                    auto end = ftell(fp);
-                    fseek(fp, pos, SEEK_SET);
-                    entry.fileSize = static_cast<int64_t>(end);
-                    fclose(fp);
-                }
+                AWS_LOGSTREAM_ERROR(FILE_SYSTEM_UTILS_LOG_TAG, "Failed to stat file path " << entry.path << " with error code " << errno);
             }
 
-            return entry;
+            return entry; 
         }
 
         DIR* m_dir;
@@ -227,6 +246,25 @@ Aws::String CreateTempFilePath()
     AWS_LOGSTREAM_DEBUG(FILE_SYSTEM_UTILS_LOG_TAG, "CreateTempFilePath generated: " << tempFile);
 
     return tempFile;
+}
+
+Aws::String GetExecutableDirectory()
+{
+    char dest[PATH_MAX];
+    size_t destSize = sizeof(dest);
+    memset(dest, 0, destSize);
+
+    if(readlink("/proc/self/exe", dest, destSize))
+    {
+        Aws::String executablePath(dest);
+        auto lastSlash = executablePath.find_last_of('/');
+        if(lastSlash != std::string::npos)
+        {
+            return executablePath.substr(0, lastSlash);
+        }	
+    }    
+
+    return "./";
 }
 
 std::shared_ptr<Directory> OpenDirectory(const Aws::String& path, const Aws::String& relativePath)

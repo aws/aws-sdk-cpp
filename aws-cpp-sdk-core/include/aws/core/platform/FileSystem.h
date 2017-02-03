@@ -40,6 +40,11 @@ namespace FileSystem
     AWS_CORE_API Aws::String GetHomeDirectory();
 
     /**
+     * Returns the directory path for the directory containing the currently running executable
+     */
+    AWS_CORE_API Aws::String GetExecutableDirectory();
+
+    /**
     * Creates directory if it doesn't exist. Returns true if the directory was created
     * or already exists. False for failure.
     */
@@ -87,6 +92,12 @@ namespace FileSystem
      */
     AWS_CORE_API Aws::String Join(const Aws::String& leftSegment, const Aws::String& rightSegment);
 
+	/**
+	* Joins the leftSegment and rightSegment of a path together using the specified delimiter.
+	* e.g. with delimiter & C:\users\name\ and .aws becomes C:\users\name&.aws
+	*/
+	AWS_CORE_API Aws::String Join(char delimiter, const Aws::String& leftSegment, const Aws::String& rightSegment);
+
     /**
      * Type of directory entry encountered.
      */
@@ -125,7 +136,7 @@ namespace FileSystem
         /**
          * If this directory is valid for use.
          */
-        operator bool() const { return m_directoryEntry.operator bool(); }
+        virtual operator bool() const { return m_directoryEntry.operator bool(); }
 
         /**
          * Get the entry representing this current directory object.
