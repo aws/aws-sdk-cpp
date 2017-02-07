@@ -234,20 +234,6 @@ int SimpleStreamBuf::underflow()
     }
 }
 
-void SimpleStreamBuf::swap(SimpleStreamBuf& rhs)
-{
-    base::swap((base&)rhs);
-
-    auto oldBuffer = m_buffer;
-    auto oldBufferSize = m_bufferSize;
-
-    m_buffer = rhs.m_buffer;
-    m_bufferSize = rhs.m_bufferSize;
-
-    rhs.m_buffer = oldBuffer;
-    rhs.m_bufferSize = oldBufferSize;
-}
-
 void SimpleStreamBuf::str(const Aws::String& value)
 {
     char* begin = m_buffer;

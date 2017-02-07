@@ -17,7 +17,7 @@
 
 #include <aws/core/Core_EXPORTS.h>
 
-#if _GLIBCXX_FULLY_DYNAMIC_STRING == 0 && defined(__ANDROID__)
+#if defined(_GLIBCXX_FULLY_DYNAMIC_STRING) && _GLIBCXX_FULLY_DYNAMIC_STRING == 0 && defined(__ANDROID__)
 
 #include <aws/core/utils/memory/stl/SimpleStringStream.h>
 
@@ -32,7 +32,7 @@
 namespace Aws
 {
 
-#if _GLIBCXX_FULLY_DYNAMIC_STRING == 0 && defined(__ANDROID__)
+#if defined(_GLIBCXX_FULLY_DYNAMIC_STRING) && _GLIBCXX_FULLY_DYNAMIC_STRING == 0 && defined(__ANDROID__)
 
 typedef Aws::SimpleStringStream StringStream;
 typedef Aws::SimpleIStringStream IStringStream;

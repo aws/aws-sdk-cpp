@@ -140,17 +140,3 @@ TEST(SimpleStreamBufTest, StringConstructor)
     ASSERT_STREQ(bufferStr, streamBuf.str().c_str());
 }
 
-static const char* STRING1 = "string1";
-static const char* STRING2 = "somethingdifferent";
-
-TEST(SimpleStreamBufTest, Swap)
-{
-    SimpleStreamBuf streamBuf1(STRING1);
-    SimpleStreamBuf streamBuf2(STRING2);
-
-    streamBuf1.swap(streamBuf2);
-
-    ASSERT_STREQ(STRING2, streamBuf1.str().c_str());
-    ASSERT_STREQ(STRING1, streamBuf2.str().c_str());
-}
-

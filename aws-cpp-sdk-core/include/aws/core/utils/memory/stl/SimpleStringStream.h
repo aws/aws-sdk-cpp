@@ -50,12 +50,10 @@ class AWS_CORE_API SimpleStringStream : public std::iostream
         SimpleStringStream(SimpleStringStream&& rhs) = delete;
         SimpleStringStream& operator=(SimpleStringStream&& rhs) = delete;
 
-        std::streambuf* rdbuf() const { return const_cast<Aws::Utils::Stream::SimpleStreamBuf*>(&m_streamBuffer); }
+        Aws::Utils::Stream::SimpleStreamBuf* rdbuf() const { return const_cast<Aws::Utils::Stream::SimpleStreamBuf*>(&m_streamBuffer); }
 
         Aws::String str() { return m_streamBuffer.str(); }
         void str(const Aws::String value);
-
-        void swap(SimpleStringStream& rhs);
 
     private:
 
@@ -88,12 +86,10 @@ class AWS_CORE_API SimpleIStringStream : public std::istream
         SimpleIStringStream(SimpleIStringStream&& rhs) = delete;
         SimpleIStringStream& operator=(SimpleIStringStream&& rhs) = delete;
 
-        std::streambuf* rdbuf() const { return const_cast<Aws::Utils::Stream::SimpleStreamBuf*>(&m_streamBuffer); }
+        Aws::Utils::Stream::SimpleStreamBuf* rdbuf() const { return const_cast<Aws::Utils::Stream::SimpleStreamBuf*>(&m_streamBuffer); }
 
         Aws::String str() { return m_streamBuffer.str(); }
         void str(const Aws::String value);
-
-        void swap(SimpleIStringStream& rhs);
 
     private:
 
@@ -126,12 +122,10 @@ class AWS_CORE_API SimpleOStringStream : public std::ostream
         SimpleOStringStream(SimpleOStringStream&& rhs) = delete;
         SimpleOStringStream& operator=(SimpleOStringStream&& rhs) = delete;
 
-        std::streambuf* rdbuf() const { return const_cast<Aws::Utils::Stream::SimpleStreamBuf*>(&m_streamBuffer); }
+        Aws::Utils::Stream::SimpleStreamBuf* rdbuf() const { return const_cast<Aws::Utils::Stream::SimpleStreamBuf*>(&m_streamBuffer); }
 
         Aws::String str() { return m_streamBuffer.str(); }
         void str(const Aws::String value);
-
-        void swap(SimpleOStringStream& rhs);
 
     private:
 

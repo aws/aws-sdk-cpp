@@ -35,12 +35,6 @@ void SimpleStringStream::str(const Aws::String value)
     m_streamBuffer.str(value);
 }
 
-void SimpleStringStream::swap(SimpleStringStream& rhs)
-{
-    base::swap(rhs);
-    m_streamBuffer.swap(rhs.m_streamBuffer);
-}
-
 //
 
 SimpleIStringStream::SimpleIStringStream() :
@@ -58,12 +52,6 @@ SimpleIStringStream::SimpleIStringStream(const Aws::String& value) :
 void SimpleIStringStream::str(const Aws::String value)
 {
     m_streamBuffer.str(value);
-}
-
-void SimpleIStringStream::swap(SimpleIStringStream& rhs)
-{
-    base::swap(rhs);
-    m_streamBuffer.swap(rhs.m_streamBuffer);
 }
 
 //
@@ -85,9 +73,4 @@ void SimpleOStringStream::str(const Aws::String value)
     m_streamBuffer.str(value);
 }
 
-void SimpleOStringStream::swap(SimpleOStringStream& rhs)
-{
-    base::swap(rhs);
-    m_streamBuffer.swap(rhs.m_streamBuffer);
-}
-}
+} // namespace Aws
