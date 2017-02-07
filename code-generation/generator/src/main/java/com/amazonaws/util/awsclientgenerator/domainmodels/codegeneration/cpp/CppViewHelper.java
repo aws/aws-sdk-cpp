@@ -70,6 +70,7 @@ public class CppViewHelper {
         CORAL_TYPE_TO_DEFAULT_VALUES.put("double", "0.0");
         CORAL_TYPE_TO_DEFAULT_VALUES.put("float", "0.0");
 
+        CORAL_TO_CONTENT_TYPE_MAPPING.put("application/json", "JSON_CONTENT_TYPE");
         CORAL_TO_CONTENT_TYPE_MAPPING.put("json", "AMZN_JSON_CONTENT_TYPE_1_1");
         CORAL_TO_CONTENT_TYPE_MAPPING.put("json1.0", "AMZN_JSON_CONTENT_TYPE_1_0");
         CORAL_TO_CONTENT_TYPE_MAPPING.put("json1.1", "AMZN_JSON_CONTENT_TYPE_1_1");
