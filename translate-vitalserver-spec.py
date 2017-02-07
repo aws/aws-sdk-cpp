@@ -64,9 +64,10 @@ def build_metadata(swagger_schema):
     service_name = swagger_schema["info"]["title"]
     return collections.OrderedDict([
         ("apiVersion", aws_api_version),
-        ("endpointPrefix", "execute-api"),
+        ("endpointPrefix", "h6wguq9ghl.execute-api"),
         ("protocol", "application/json"),
         ("serviceFullName", service_name),
+        ("signingName", "execute-api"),
     ])
 
 
