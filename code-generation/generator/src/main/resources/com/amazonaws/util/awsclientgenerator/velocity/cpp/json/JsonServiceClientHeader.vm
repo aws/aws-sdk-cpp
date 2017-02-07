@@ -77,12 +77,6 @@ namespace Model
 
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/ServiceClientHeaderOperations.vm")
 
-        virtual void BuildHttpRequest(const Aws::AmazonWebServiceRequest& request, const std::shared_ptr<Http::HttpRequest>& httpRequest) const override
-        {
-            BASECLASS::BuildHttpRequest(request, httpRequest);
-            httpRequest->SetContentType("application/json");
-        }
-
     private:
       void init(const Client::ClientConfiguration& clientConfiguration);
 
