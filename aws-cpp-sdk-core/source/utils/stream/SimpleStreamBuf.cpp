@@ -106,17 +106,14 @@ std::streampos SimpleStreamBuf::seekpos(std::streampos pos, std::ios_base::openm
         return pos_type(off_type(-1));
     }
 
-    char* begin = m_buffer;
-    char* end = begin + maxSeek;
-
     if (which == std::ios_base::in)
     {
-        setg(begin, begin + static_cast<size_t>(pos), end);                    
+        setg(m_buffer, m_buffer + static_cast<size_t>(pos), egptr());                    
     }
 
     if (which == std::ios_base::out)
     {
-        setp(begin + static_cast<size_t>(pos), end);
+        setp(m_buffer + static_cast<size_t>(pos), epptr());
     }
 
     return pos;

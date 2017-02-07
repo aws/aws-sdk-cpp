@@ -16,7 +16,7 @@
 #include <aws/core/utils/stream/ResponseStream.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 
-#if _GLIBCXX_FULLY_DYNAMIC_STRING == 0 && defined(__ANDROID__)
+#if defined(_GLIBCXX_FULLY_DYNAMIC_STRING) && _GLIBCXX_FULLY_DYNAMIC_STRING == 0 && defined(__ANDROID__)
 #include <aws/core/utils/stream/SimpleStreamBuf.h>
 using DefaultStreamBufType = Aws::Utils::Stream::SimpleStreamBuf;
 #else
