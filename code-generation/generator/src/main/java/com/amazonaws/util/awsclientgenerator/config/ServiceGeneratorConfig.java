@@ -44,6 +44,7 @@ public class ServiceGeneratorConfig {
 
     static {
         try {
+            LANGUAGE_PROTOCOL_DEFAULT_MAPPING.put("cpp-application/json", new JsonCppClientGenerator());
             LANGUAGE_PROTOCOL_DEFAULT_MAPPING.put("cpp-json", new JsonCppClientGenerator());
             LANGUAGE_PROTOCOL_DEFAULT_MAPPING.put("cpp-rest-json", new JsonCppClientGenerator());
             LANGUAGE_PROTOCOL_DEFAULT_MAPPING.put("cpp-rest-xml", new RestXmlCppClientGenerator());
@@ -67,7 +68,7 @@ public class ServiceGeneratorConfig {
             SPEC_OVERRIDE_MAPPING.put("cpp-machinelearning", new MachineLearningJsonCppClientGenerator());
             SPEC_OVERRIDE_MAPPING.put("cpp-route53", new Route53CppClientGenerator());
             SPEC_OVERRIDE_MAPPING.put("cpp-budgets", new BudgetsCppClientGenerator());
-//            SPEC_OVERRIDE_MAPPING.put("cpp-rds", new RDSCppClientGenerator()); 
+//            SPEC_OVERRIDE_MAPPING.put("cpp-rds", new RDSCppClientGenerator());
 
         } catch (Exception e) {
             e.printStackTrace();
