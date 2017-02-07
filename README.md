@@ -2,11 +2,24 @@
 For 0.12+ all applications must call the Aws::InitAPI() function before making any other SDK calls, and the Aws::ShutdownAPI function when finished using the SDK. More information can be found here:
 https://aws.amazon.com/blogs/developer/aws-sdk-for-c-simplified-configuration-and-initialization/
 
-# aws-sdk-cpp
+# AWS SDK for C++
 The AWS SDK for C++ provides a modern C++ (version C++ 11 or later) interface for Amazon Web Services (AWS). It is meant to be performant and fully functioning with low- and high-level SDKs, while minimizing dependencies and providing platform portability (Windows, OSX, Linux, and mobile).  
 
 AWS SDK for C++ is in now in General Availability and recommended for production use. We invite our customers to join
 the development efforts by submitting pull requests and sending us feedback and ideas via GitHub Issues.
+
+## Getting Help
+Please use these community resources for getting help. We use the GitHub issues for tracking bugs and feature requests.
+* Ask a question on StackOverflow and tag it with the `aws-sdk-cpp` tag. 
+* If it turns out that you may have found a bug, please open an issue
+* Open a support ticket with [AWS Support]( https://console.aws.amazon.com/support/home#/)
+ 
+ 
+## Opening Issues
+If you encounter a bug with the AWS SDK for C++ we would like to hear about it. Search the [existing issues]( https://github.com/aws/aws-sdk-cpp/issues) and see if others are also experiencing the issue before opening a new issue. Please include the version of AWS SDK for CPP, Compiler, Compiler Version, CMake version, and OS you’re using. Please also include repro case when appropriate.
+ 
+The GitHub issues are intended for bug reports and feature requests. For help and questions with using AWS SDK for C++, please make use of the resources listed in the [Getting Help]( https://github.com/aws/aws-sdk-cpp#getting-help) section. Keeping the list of open issues lean we can respond in a timely manner.
+
 
 ### Introducing the AWS SDK for C++ from AWS re:invent 2015
 The following video explains many of the core features and also high-level SDKs

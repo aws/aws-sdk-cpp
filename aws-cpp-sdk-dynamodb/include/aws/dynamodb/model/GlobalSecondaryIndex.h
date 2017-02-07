@@ -188,34 +188,84 @@ namespace Model
      */
     inline GlobalSecondaryIndex& AddKeySchema(KeySchemaElement&& value) { m_keySchemaHasBeenSet = true; m_keySchema.push_back(value); return *this; }
 
-    
+    /**
+     * <p>Represents attributes that are copied (projected) from the table into the
+     * global secondary index. These are in addition to the primary key attributes and
+     * index key attributes, which are automatically projected. </p>
+     */
     inline const Projection& GetProjection() const{ return m_projection; }
 
-    
+    /**
+     * <p>Represents attributes that are copied (projected) from the table into the
+     * global secondary index. These are in addition to the primary key attributes and
+     * index key attributes, which are automatically projected. </p>
+     */
     inline void SetProjection(const Projection& value) { m_projectionHasBeenSet = true; m_projection = value; }
 
-    
+    /**
+     * <p>Represents attributes that are copied (projected) from the table into the
+     * global secondary index. These are in addition to the primary key attributes and
+     * index key attributes, which are automatically projected. </p>
+     */
     inline void SetProjection(Projection&& value) { m_projectionHasBeenSet = true; m_projection = value; }
 
-    
+    /**
+     * <p>Represents attributes that are copied (projected) from the table into the
+     * global secondary index. These are in addition to the primary key attributes and
+     * index key attributes, which are automatically projected. </p>
+     */
     inline GlobalSecondaryIndex& WithProjection(const Projection& value) { SetProjection(value); return *this;}
 
-    
+    /**
+     * <p>Represents attributes that are copied (projected) from the table into the
+     * global secondary index. These are in addition to the primary key attributes and
+     * index key attributes, which are automatically projected. </p>
+     */
     inline GlobalSecondaryIndex& WithProjection(Projection&& value) { SetProjection(value); return *this;}
 
-    
+    /**
+     * <p>Represents the provisioned throughput settings for the specified global
+     * secondary index.</p> <p>For current minimum and maximum provisioned throughput
+     * values, see <a
+     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a>
+     * in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+     */
     inline const ProvisionedThroughput& GetProvisionedThroughput() const{ return m_provisionedThroughput; }
 
-    
+    /**
+     * <p>Represents the provisioned throughput settings for the specified global
+     * secondary index.</p> <p>For current minimum and maximum provisioned throughput
+     * values, see <a
+     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a>
+     * in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+     */
     inline void SetProvisionedThroughput(const ProvisionedThroughput& value) { m_provisionedThroughputHasBeenSet = true; m_provisionedThroughput = value; }
 
-    
+    /**
+     * <p>Represents the provisioned throughput settings for the specified global
+     * secondary index.</p> <p>For current minimum and maximum provisioned throughput
+     * values, see <a
+     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a>
+     * in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+     */
     inline void SetProvisionedThroughput(ProvisionedThroughput&& value) { m_provisionedThroughputHasBeenSet = true; m_provisionedThroughput = value; }
 
-    
+    /**
+     * <p>Represents the provisioned throughput settings for the specified global
+     * secondary index.</p> <p>For current minimum and maximum provisioned throughput
+     * values, see <a
+     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a>
+     * in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+     */
     inline GlobalSecondaryIndex& WithProvisionedThroughput(const ProvisionedThroughput& value) { SetProvisionedThroughput(value); return *this;}
 
-    
+    /**
+     * <p>Represents the provisioned throughput settings for the specified global
+     * secondary index.</p> <p>For current minimum and maximum provisioned throughput
+     * values, see <a
+     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a>
+     * in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+     */
     inline GlobalSecondaryIndex& WithProvisionedThroughput(ProvisionedThroughput&& value) { SetProvisionedThroughput(value); return *this;}
 
   private:

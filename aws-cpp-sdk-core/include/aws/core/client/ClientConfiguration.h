@@ -112,9 +112,16 @@ namespace Aws
             bool verifySSL;
             /**
              * If your Certificate Authority path is different from the default, you can tell
-             * curl where to find your CA trust store.
+             * clients that aren't using the default trust store where to find your CA trust store.
+             * If you are on windows or apple, you likely don't want this.
              */
             Aws::String caPath;
+            /**
+             * If you certificate file is different from the default, you can tell clients that
+             * aren't using the default trust store where to find your ca file.
+             * If you are on windows or apple, you likely dont't want this.
+             */
+             Aws::String caFile;
             /**
              * Rate Limiter implementation for outgoing bandwidth. Default is wide-open.
              */

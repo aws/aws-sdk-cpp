@@ -35,37 +35,37 @@ namespace Model
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
     /**
-     * <p>The name of the build project to delete.</p>
+     * <p>The name of the build project.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>The name of the build project to delete.</p>
+     * <p>The name of the build project.</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>The name of the build project to delete.</p>
+     * <p>The name of the build project.</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>The name of the build project to delete.</p>
+     * <p>The name of the build project.</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>The name of the build project to delete.</p>
+     * <p>The name of the build project.</p>
      */
     inline DeleteProjectRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>The name of the build project to delete.</p>
+     * <p>The name of the build project.</p>
      */
     inline DeleteProjectRequest& WithName(Aws::String&& value) { SetName(value); return *this;}
 
     /**
-     * <p>The name of the build project to delete.</p>
+     * <p>The name of the build project.</p>
      */
     inline DeleteProjectRequest& WithName(const char* value) { SetName(value); return *this;}
 

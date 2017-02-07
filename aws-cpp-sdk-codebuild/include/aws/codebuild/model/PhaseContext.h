@@ -31,8 +31,9 @@ namespace Model
 {
 
   /**
-   * <p>Additional information about a build phase that has an error, which you can
-   * use to help troubleshoot a failed build.</p><p><h3>See Also:</h3>   <a
+   * <p>Additional information about a build phase that has an error. You can use
+   * this information to help troubleshoot a failed build.</p><p><h3>See Also:</h3>  
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/PhaseContext">AWS
    * API Reference</a></p>
    */
@@ -80,43 +81,43 @@ namespace Model
     inline PhaseContext& WithStatusCode(const char* value) { SetStatusCode(value); return *this;}
 
     /**
-     * <p>An explanation of the build phase's context. This explanation may include a
+     * <p>An explanation of the build phase's context. This explanation might include a
      * command ID and an exit code.</p>
      */
     inline const Aws::String& GetMessage() const{ return m_message; }
 
     /**
-     * <p>An explanation of the build phase's context. This explanation may include a
+     * <p>An explanation of the build phase's context. This explanation might include a
      * command ID and an exit code.</p>
      */
     inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
 
     /**
-     * <p>An explanation of the build phase's context. This explanation may include a
+     * <p>An explanation of the build phase's context. This explanation might include a
      * command ID and an exit code.</p>
      */
     inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = value; }
 
     /**
-     * <p>An explanation of the build phase's context. This explanation may include a
+     * <p>An explanation of the build phase's context. This explanation might include a
      * command ID and an exit code.</p>
      */
     inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
 
     /**
-     * <p>An explanation of the build phase's context. This explanation may include a
+     * <p>An explanation of the build phase's context. This explanation might include a
      * command ID and an exit code.</p>
      */
     inline PhaseContext& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
 
     /**
-     * <p>An explanation of the build phase's context. This explanation may include a
+     * <p>An explanation of the build phase's context. This explanation might include a
      * command ID and an exit code.</p>
      */
     inline PhaseContext& WithMessage(Aws::String&& value) { SetMessage(value); return *this;}
 
     /**
-     * <p>An explanation of the build phase's context. This explanation may include a
+     * <p>An explanation of the build phase's context. This explanation might include a
      * command ID and an exit code.</p>
      */
     inline PhaseContext& WithMessage(const char* value) { SetMessage(value); return *this;}

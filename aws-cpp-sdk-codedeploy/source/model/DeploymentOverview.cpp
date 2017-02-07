@@ -37,7 +37,9 @@ DeploymentOverview::DeploymentOverview() :
     m_failed(0),
     m_failedHasBeenSet(false),
     m_skipped(0),
-    m_skippedHasBeenSet(false)
+    m_skippedHasBeenSet(false),
+    m_ready(0),
+    m_readyHasBeenSet(false)
 {
 }
 
@@ -51,7 +53,9 @@ DeploymentOverview::DeploymentOverview(const JsonValue& jsonValue) :
     m_failed(0),
     m_failedHasBeenSet(false),
     m_skipped(0),
-    m_skippedHasBeenSet(false)
+    m_skippedHasBeenSet(false),
+    m_ready(0),
+    m_readyHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -93,6 +97,13 @@ DeploymentOverview& DeploymentOverview::operator =(const JsonValue& jsonValue)
     m_skippedHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Ready"))
+  {
+    m_ready = jsonValue.GetInt64("Ready");
+
+    m_readyHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -127,6 +138,12 @@ JsonValue DeploymentOverview::Jsonize() const
   if(m_skippedHasBeenSet)
   {
    payload.WithInt64("Skipped", m_skipped);
+
+  }
+
+  if(m_readyHasBeenSet)
+  {
+   payload.WithInt64("Ready", m_ready);
 
   }
 

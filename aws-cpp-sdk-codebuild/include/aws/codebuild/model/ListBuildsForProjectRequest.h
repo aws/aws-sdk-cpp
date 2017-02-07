@@ -36,37 +36,37 @@ namespace Model
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
     /**
-     * <p>The name of the build project to get a list of build IDs for.</p>
+     * <p>The name of the build project.</p>
      */
     inline const Aws::String& GetProjectName() const{ return m_projectName; }
 
     /**
-     * <p>The name of the build project to get a list of build IDs for.</p>
+     * <p>The name of the build project.</p>
      */
     inline void SetProjectName(const Aws::String& value) { m_projectNameHasBeenSet = true; m_projectName = value; }
 
     /**
-     * <p>The name of the build project to get a list of build IDs for.</p>
+     * <p>The name of the build project.</p>
      */
     inline void SetProjectName(Aws::String&& value) { m_projectNameHasBeenSet = true; m_projectName = value; }
 
     /**
-     * <p>The name of the build project to get a list of build IDs for.</p>
+     * <p>The name of the build project.</p>
      */
     inline void SetProjectName(const char* value) { m_projectNameHasBeenSet = true; m_projectName.assign(value); }
 
     /**
-     * <p>The name of the build project to get a list of build IDs for.</p>
+     * <p>The name of the build project.</p>
      */
     inline ListBuildsForProjectRequest& WithProjectName(const Aws::String& value) { SetProjectName(value); return *this;}
 
     /**
-     * <p>The name of the build project to get a list of build IDs for.</p>
+     * <p>The name of the build project.</p>
      */
     inline ListBuildsForProjectRequest& WithProjectName(Aws::String&& value) { SetProjectName(value); return *this;}
 
     /**
-     * <p>The name of the build project to get a list of build IDs for.</p>
+     * <p>The name of the build project.</p>
      */
     inline ListBuildsForProjectRequest& WithProjectName(const char* value) { SetProjectName(value); return *this;}
 

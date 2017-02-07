@@ -182,63 +182,83 @@ namespace Model
      */
     inline GlobalSecondaryIndexDescription& AddKeySchema(KeySchemaElement&& value) { m_keySchemaHasBeenSet = true; m_keySchema.push_back(value); return *this; }
 
-    
+    /**
+     * <p>Represents attributes that are copied (projected) from the table into the
+     * global secondary index. These are in addition to the primary key attributes and
+     * index key attributes, which are automatically projected. </p>
+     */
     inline const Projection& GetProjection() const{ return m_projection; }
 
-    
+    /**
+     * <p>Represents attributes that are copied (projected) from the table into the
+     * global secondary index. These are in addition to the primary key attributes and
+     * index key attributes, which are automatically projected. </p>
+     */
     inline void SetProjection(const Projection& value) { m_projectionHasBeenSet = true; m_projection = value; }
 
-    
+    /**
+     * <p>Represents attributes that are copied (projected) from the table into the
+     * global secondary index. These are in addition to the primary key attributes and
+     * index key attributes, which are automatically projected. </p>
+     */
     inline void SetProjection(Projection&& value) { m_projectionHasBeenSet = true; m_projection = value; }
 
-    
+    /**
+     * <p>Represents attributes that are copied (projected) from the table into the
+     * global secondary index. These are in addition to the primary key attributes and
+     * index key attributes, which are automatically projected. </p>
+     */
     inline GlobalSecondaryIndexDescription& WithProjection(const Projection& value) { SetProjection(value); return *this;}
 
-    
+    /**
+     * <p>Represents attributes that are copied (projected) from the table into the
+     * global secondary index. These are in addition to the primary key attributes and
+     * index key attributes, which are automatically projected. </p>
+     */
     inline GlobalSecondaryIndexDescription& WithProjection(Projection&& value) { SetProjection(value); return *this;}
 
     /**
      * <p>The current state of the global secondary index:</p> <ul> <li> <p>
-     * <i>CREATING</i> - The index is being created.</p> </li> <li> <p> <i>UPDATING</i>
-     * - The index is being updated.</p> </li> <li> <p> <i>DELETING</i> - The index is
-     * being deleted.</p> </li> <li> <p> <i>ACTIVE</i> - The index is ready for
-     * use.</p> </li> </ul>
+     * <code>CREATING</code> - The index is being created.</p> </li> <li> <p>
+     * <code>UPDATING</code> - The index is being updated.</p> </li> <li> <p>
+     * <code>DELETING</code> - The index is being deleted.</p> </li> <li> <p>
+     * <code>ACTIVE</code> - The index is ready for use.</p> </li> </ul>
      */
     inline const IndexStatus& GetIndexStatus() const{ return m_indexStatus; }
 
     /**
      * <p>The current state of the global secondary index:</p> <ul> <li> <p>
-     * <i>CREATING</i> - The index is being created.</p> </li> <li> <p> <i>UPDATING</i>
-     * - The index is being updated.</p> </li> <li> <p> <i>DELETING</i> - The index is
-     * being deleted.</p> </li> <li> <p> <i>ACTIVE</i> - The index is ready for
-     * use.</p> </li> </ul>
+     * <code>CREATING</code> - The index is being created.</p> </li> <li> <p>
+     * <code>UPDATING</code> - The index is being updated.</p> </li> <li> <p>
+     * <code>DELETING</code> - The index is being deleted.</p> </li> <li> <p>
+     * <code>ACTIVE</code> - The index is ready for use.</p> </li> </ul>
      */
     inline void SetIndexStatus(const IndexStatus& value) { m_indexStatusHasBeenSet = true; m_indexStatus = value; }
 
     /**
      * <p>The current state of the global secondary index:</p> <ul> <li> <p>
-     * <i>CREATING</i> - The index is being created.</p> </li> <li> <p> <i>UPDATING</i>
-     * - The index is being updated.</p> </li> <li> <p> <i>DELETING</i> - The index is
-     * being deleted.</p> </li> <li> <p> <i>ACTIVE</i> - The index is ready for
-     * use.</p> </li> </ul>
+     * <code>CREATING</code> - The index is being created.</p> </li> <li> <p>
+     * <code>UPDATING</code> - The index is being updated.</p> </li> <li> <p>
+     * <code>DELETING</code> - The index is being deleted.</p> </li> <li> <p>
+     * <code>ACTIVE</code> - The index is ready for use.</p> </li> </ul>
      */
     inline void SetIndexStatus(IndexStatus&& value) { m_indexStatusHasBeenSet = true; m_indexStatus = value; }
 
     /**
      * <p>The current state of the global secondary index:</p> <ul> <li> <p>
-     * <i>CREATING</i> - The index is being created.</p> </li> <li> <p> <i>UPDATING</i>
-     * - The index is being updated.</p> </li> <li> <p> <i>DELETING</i> - The index is
-     * being deleted.</p> </li> <li> <p> <i>ACTIVE</i> - The index is ready for
-     * use.</p> </li> </ul>
+     * <code>CREATING</code> - The index is being created.</p> </li> <li> <p>
+     * <code>UPDATING</code> - The index is being updated.</p> </li> <li> <p>
+     * <code>DELETING</code> - The index is being deleted.</p> </li> <li> <p>
+     * <code>ACTIVE</code> - The index is ready for use.</p> </li> </ul>
      */
     inline GlobalSecondaryIndexDescription& WithIndexStatus(const IndexStatus& value) { SetIndexStatus(value); return *this;}
 
     /**
      * <p>The current state of the global secondary index:</p> <ul> <li> <p>
-     * <i>CREATING</i> - The index is being created.</p> </li> <li> <p> <i>UPDATING</i>
-     * - The index is being updated.</p> </li> <li> <p> <i>DELETING</i> - The index is
-     * being deleted.</p> </li> <li> <p> <i>ACTIVE</i> - The index is ready for
-     * use.</p> </li> </ul>
+     * <code>CREATING</code> - The index is being created.</p> </li> <li> <p>
+     * <code>UPDATING</code> - The index is being updated.</p> </li> <li> <p>
+     * <code>DELETING</code> - The index is being deleted.</p> </li> <li> <p>
+     * <code>ACTIVE</code> - The index is ready for use.</p> </li> </ul>
      */
     inline GlobalSecondaryIndexDescription& WithIndexStatus(IndexStatus&& value) { SetIndexStatus(value); return *this;}
 
@@ -248,9 +268,10 @@ namespace Model
      * added to the index. (Not all items will qualify: For example, a partition key
      * cannot have any duplicate values.) If an item can be added to the index,
      * DynamoDB will do so. After all items have been processed, the backfilling
-     * operation is complete and <i>Backfilling</i> is false.</p> <note> <p>For indexes
-     * that were created during a <i>CreateTable</i> operation, the <i>Backfilling</i>
-     * attribute does not appear in the <i>DescribeTable</i> output.</p> </note>
+     * operation is complete and <code>Backfilling</code> is false.</p> <note> <p>For
+     * indexes that were created during a <code>CreateTable</code> operation, the
+     * <code>Backfilling</code> attribute does not appear in the
+     * <code>DescribeTable</code> output.</p> </note>
      */
     inline bool GetBackfilling() const{ return m_backfilling; }
 
@@ -260,9 +281,10 @@ namespace Model
      * added to the index. (Not all items will qualify: For example, a partition key
      * cannot have any duplicate values.) If an item can be added to the index,
      * DynamoDB will do so. After all items have been processed, the backfilling
-     * operation is complete and <i>Backfilling</i> is false.</p> <note> <p>For indexes
-     * that were created during a <i>CreateTable</i> operation, the <i>Backfilling</i>
-     * attribute does not appear in the <i>DescribeTable</i> output.</p> </note>
+     * operation is complete and <code>Backfilling</code> is false.</p> <note> <p>For
+     * indexes that were created during a <code>CreateTable</code> operation, the
+     * <code>Backfilling</code> attribute does not appear in the
+     * <code>DescribeTable</code> output.</p> </note>
      */
     inline void SetBackfilling(bool value) { m_backfillingHasBeenSet = true; m_backfilling = value; }
 
@@ -272,25 +294,56 @@ namespace Model
      * added to the index. (Not all items will qualify: For example, a partition key
      * cannot have any duplicate values.) If an item can be added to the index,
      * DynamoDB will do so. After all items have been processed, the backfilling
-     * operation is complete and <i>Backfilling</i> is false.</p> <note> <p>For indexes
-     * that were created during a <i>CreateTable</i> operation, the <i>Backfilling</i>
-     * attribute does not appear in the <i>DescribeTable</i> output.</p> </note>
+     * operation is complete and <code>Backfilling</code> is false.</p> <note> <p>For
+     * indexes that were created during a <code>CreateTable</code> operation, the
+     * <code>Backfilling</code> attribute does not appear in the
+     * <code>DescribeTable</code> output.</p> </note>
      */
     inline GlobalSecondaryIndexDescription& WithBackfilling(bool value) { SetBackfilling(value); return *this;}
 
-    
+    /**
+     * <p>Represents the provisioned throughput settings for the specified global
+     * secondary index.</p> <p>For current minimum and maximum provisioned throughput
+     * values, see <a
+     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a>
+     * in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+     */
     inline const ProvisionedThroughputDescription& GetProvisionedThroughput() const{ return m_provisionedThroughput; }
 
-    
+    /**
+     * <p>Represents the provisioned throughput settings for the specified global
+     * secondary index.</p> <p>For current minimum and maximum provisioned throughput
+     * values, see <a
+     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a>
+     * in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+     */
     inline void SetProvisionedThroughput(const ProvisionedThroughputDescription& value) { m_provisionedThroughputHasBeenSet = true; m_provisionedThroughput = value; }
 
-    
+    /**
+     * <p>Represents the provisioned throughput settings for the specified global
+     * secondary index.</p> <p>For current minimum and maximum provisioned throughput
+     * values, see <a
+     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a>
+     * in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+     */
     inline void SetProvisionedThroughput(ProvisionedThroughputDescription&& value) { m_provisionedThroughputHasBeenSet = true; m_provisionedThroughput = value; }
 
-    
+    /**
+     * <p>Represents the provisioned throughput settings for the specified global
+     * secondary index.</p> <p>For current minimum and maximum provisioned throughput
+     * values, see <a
+     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a>
+     * in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+     */
     inline GlobalSecondaryIndexDescription& WithProvisionedThroughput(const ProvisionedThroughputDescription& value) { SetProvisionedThroughput(value); return *this;}
 
-    
+    /**
+     * <p>Represents the provisioned throughput settings for the specified global
+     * secondary index.</p> <p>For current minimum and maximum provisioned throughput
+     * values, see <a
+     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a>
+     * in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+     */
     inline GlobalSecondaryIndexDescription& WithProvisionedThroughput(ProvisionedThroughputDescription&& value) { SetProvisionedThroughput(value); return *this;}
 
     /**

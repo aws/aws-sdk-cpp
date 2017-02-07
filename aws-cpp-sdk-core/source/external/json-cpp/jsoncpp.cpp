@@ -3105,6 +3105,7 @@ Value& Path::make(Value& root) const {
 #define IS_FINITE isfinite
 #else
 #define IS_FINITE std::isfinite
+#include <cmath>
 #endif
 
 #endif

@@ -58,6 +58,7 @@ DBInstance::DBInstance() :
     m_autoMinorVersionUpgradeHasBeenSet(false),
     m_readReplicaSourceDBInstanceIdentifierHasBeenSet(false),
     m_readReplicaDBInstanceIdentifiersHasBeenSet(false),
+    m_readReplicaDBClusterIdentifiersHasBeenSet(false),
     m_licenseModelHasBeenSet(false),
     m_iops(0),
     m_iopsHasBeenSet(false),
@@ -120,6 +121,7 @@ DBInstance::DBInstance(const XmlNode& xmlNode) :
     m_autoMinorVersionUpgradeHasBeenSet(false),
     m_readReplicaSourceDBInstanceIdentifierHasBeenSet(false),
     m_readReplicaDBInstanceIdentifiersHasBeenSet(false),
+    m_readReplicaDBClusterIdentifiersHasBeenSet(false),
     m_licenseModelHasBeenSet(false),
     m_iops(0),
     m_iopsHasBeenSet(false),
@@ -327,6 +329,18 @@ DBInstance& DBInstance::operator =(const XmlNode& xmlNode)
       }
 
       m_readReplicaDBInstanceIdentifiersHasBeenSet = true;
+    }
+    XmlNode readReplicaDBClusterIdentifiersNode = resultNode.FirstChild("ReadReplicaDBClusterIdentifiers");
+    if(!readReplicaDBClusterIdentifiersNode.IsNull())
+    {
+      XmlNode readReplicaDBClusterIdentifiersMember = readReplicaDBClusterIdentifiersNode.FirstChild("ReadReplicaDBClusterIdentifier");
+      while(!readReplicaDBClusterIdentifiersMember.IsNull())
+      {
+        m_readReplicaDBClusterIdentifiers.push_back(StringUtils::Trim(readReplicaDBClusterIdentifiersMember.GetText().c_str()));
+        readReplicaDBClusterIdentifiersMember = readReplicaDBClusterIdentifiersMember.NextNode("ReadReplicaDBClusterIdentifier");
+      }
+
+      m_readReplicaDBClusterIdentifiersHasBeenSet = true;
     }
     XmlNode licenseModelNode = resultNode.FirstChild("LicenseModel");
     if(!licenseModelNode.IsNull())
@@ -639,6 +653,15 @@ void DBInstance::OutputToStream(Aws::OStream& oStream, const char* location, uns
       }
   }
 
+  if(m_readReplicaDBClusterIdentifiersHasBeenSet)
+  {
+      unsigned readReplicaDBClusterIdentifiersIdx = 1;
+      for(auto& item : m_readReplicaDBClusterIdentifiers)
+      {
+        oStream << location << index << locationValue << ".ReadReplicaDBClusterIdentifier." << readReplicaDBClusterIdentifiersIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
+      }
+  }
+
   if(m_licenseModelHasBeenSet)
   {
       oStream << location << index << locationValue << ".LicenseModel=" << StringUtils::URLEncode(m_licenseModel.c_str()) << "&";
@@ -898,6 +921,14 @@ void DBInstance::OutputToStream(Aws::OStream& oStream, const char* location) con
       for(auto& item : m_readReplicaDBInstanceIdentifiers)
       {
         oStream << location << ".ReadReplicaDBInstanceIdentifier." << readReplicaDBInstanceIdentifiersIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
+      }
+  }
+  if(m_readReplicaDBClusterIdentifiersHasBeenSet)
+  {
+      unsigned readReplicaDBClusterIdentifiersIdx = 1;
+      for(auto& item : m_readReplicaDBClusterIdentifiers)
+      {
+        oStream << location << ".ReadReplicaDBClusterIdentifier." << readReplicaDBClusterIdentifiersIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
   }
   if(m_licenseModelHasBeenSet)

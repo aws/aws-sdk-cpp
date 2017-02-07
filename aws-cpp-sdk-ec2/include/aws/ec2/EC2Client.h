@@ -3179,14 +3179,17 @@ namespace Model
          * <p>Creates a listing for Amazon EC2 Standard Reserved Instances to be sold in
          * the Reserved Instance Marketplace. You can submit one Standard Reserved Instance
          * listing at a time. To get a list of your Standard Reserved Instances, you can
-         * use the <a>DescribeReservedInstances</a> operation.</p> <p>The Reserved Instance
-         * Marketplace matches sellers who want to resell Standard Reserved Instance
-         * capacity that they no longer need with buyers who want to purchase additional
-         * capacity. Reserved Instances bought and sold through the Reserved Instance
-         * Marketplace work like any other Reserved Instances.</p> <p>To sell your Standard
-         * Reserved Instances, you must first register as a seller in the Reserved Instance
-         * Marketplace. After completing the registration process, you can create a
-         * Reserved Instance Marketplace listing of some or all of your Standard Reserved
+         * use the <a>DescribeReservedInstances</a> operation.</p> <note> <p>Only Standard
+         * Reserved Instances with a capacity reservation can be sold in the Reserved
+         * Instance Marketplace. Convertible Reserved Instances and Standard Reserved
+         * Instances with a regional benefit cannot be sold.</p> </note> <p>The Reserved
+         * Instance Marketplace matches sellers who want to resell Standard Reserved
+         * Instance capacity that they no longer need with buyers who want to purchase
+         * additional capacity. Reserved Instances bought and sold through the Reserved
+         * Instance Marketplace work like any other Reserved Instances.</p> <p>To sell your
+         * Standard Reserved Instances, you must first register as a seller in the Reserved
+         * Instance Marketplace. After completing the registration process, you can create
+         * a Reserved Instance Marketplace listing of some or all of your Standard Reserved
          * Instances, and specify the upfront price to receive for them. Your Standard
          * Reserved Instance listings then become available for purchase. To view the
          * details of your Standard Reserved Instance listing, you can use the
@@ -3204,14 +3207,17 @@ namespace Model
          * <p>Creates a listing for Amazon EC2 Standard Reserved Instances to be sold in
          * the Reserved Instance Marketplace. You can submit one Standard Reserved Instance
          * listing at a time. To get a list of your Standard Reserved Instances, you can
-         * use the <a>DescribeReservedInstances</a> operation.</p> <p>The Reserved Instance
-         * Marketplace matches sellers who want to resell Standard Reserved Instance
-         * capacity that they no longer need with buyers who want to purchase additional
-         * capacity. Reserved Instances bought and sold through the Reserved Instance
-         * Marketplace work like any other Reserved Instances.</p> <p>To sell your Standard
-         * Reserved Instances, you must first register as a seller in the Reserved Instance
-         * Marketplace. After completing the registration process, you can create a
-         * Reserved Instance Marketplace listing of some or all of your Standard Reserved
+         * use the <a>DescribeReservedInstances</a> operation.</p> <note> <p>Only Standard
+         * Reserved Instances with a capacity reservation can be sold in the Reserved
+         * Instance Marketplace. Convertible Reserved Instances and Standard Reserved
+         * Instances with a regional benefit cannot be sold.</p> </note> <p>The Reserved
+         * Instance Marketplace matches sellers who want to resell Standard Reserved
+         * Instance capacity that they no longer need with buyers who want to purchase
+         * additional capacity. Reserved Instances bought and sold through the Reserved
+         * Instance Marketplace work like any other Reserved Instances.</p> <p>To sell your
+         * Standard Reserved Instances, you must first register as a seller in the Reserved
+         * Instance Marketplace. After completing the registration process, you can create
+         * a Reserved Instance Marketplace listing of some or all of your Standard Reserved
          * Instances, and specify the upfront price to receive for them. Your Standard
          * Reserved Instance listings then become available for purchase. To view the
          * details of your Standard Reserved Instance listing, you can use the
@@ -3231,14 +3237,17 @@ namespace Model
          * <p>Creates a listing for Amazon EC2 Standard Reserved Instances to be sold in
          * the Reserved Instance Marketplace. You can submit one Standard Reserved Instance
          * listing at a time. To get a list of your Standard Reserved Instances, you can
-         * use the <a>DescribeReservedInstances</a> operation.</p> <p>The Reserved Instance
-         * Marketplace matches sellers who want to resell Standard Reserved Instance
-         * capacity that they no longer need with buyers who want to purchase additional
-         * capacity. Reserved Instances bought and sold through the Reserved Instance
-         * Marketplace work like any other Reserved Instances.</p> <p>To sell your Standard
-         * Reserved Instances, you must first register as a seller in the Reserved Instance
-         * Marketplace. After completing the registration process, you can create a
-         * Reserved Instance Marketplace listing of some or all of your Standard Reserved
+         * use the <a>DescribeReservedInstances</a> operation.</p> <note> <p>Only Standard
+         * Reserved Instances with a capacity reservation can be sold in the Reserved
+         * Instance Marketplace. Convertible Reserved Instances and Standard Reserved
+         * Instances with a regional benefit cannot be sold.</p> </note> <p>The Reserved
+         * Instance Marketplace matches sellers who want to resell Standard Reserved
+         * Instance capacity that they no longer need with buyers who want to purchase
+         * additional capacity. Reserved Instances bought and sold through the Reserved
+         * Instance Marketplace work like any other Reserved Instances.</p> <p>To sell your
+         * Standard Reserved Instances, you must first register as a seller in the Reserved
+         * Instance Marketplace. After completing the registration process, you can create
+         * a Reserved Instance Marketplace listing of some or all of your Standard Reserved
          * Instances, and specify the upfront price to receive for them. Your Standard
          * Reserved Instance listings then become available for purchase. To view the
          * details of your Standard Reserved Instance listing, you can use the
@@ -3823,8 +3832,8 @@ namespace Model
          * <p>You can specify the instance tenancy value for the VPC when you create it.
          * You can't change this value for the VPC after you create it. For more
          * information, see <a
-         * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/dedicated-instance.html.html">Dedicated
-         * Instances</a> in the <i>Amazon Virtual Private Cloud User
+         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-instance.html">Dedicated
+         * Instances</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVpc">AWS API
          * Reference</a></p>
@@ -3849,8 +3858,8 @@ namespace Model
          * <p>You can specify the instance tenancy value for the VPC when you create it.
          * You can't change this value for the VPC after you create it. For more
          * information, see <a
-         * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/dedicated-instance.html.html">Dedicated
-         * Instances</a> in the <i>Amazon Virtual Private Cloud User
+         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-instance.html">Dedicated
+         * Instances</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVpc">AWS API
          * Reference</a></p>
@@ -3877,8 +3886,8 @@ namespace Model
          * <p>You can specify the instance tenancy value for the VPC when you create it.
          * You can't change this value for the VPC after you create it. For more
          * information, see <a
-         * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/dedicated-instance.html.html">Dedicated
-         * Instances</a> in the <i>Amazon Virtual Private Cloud User
+         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-instance.html">Dedicated
+         * Instances</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVpc">AWS API
          * Reference</a></p>
@@ -3892,8 +3901,8 @@ namespace Model
          * to create a private connection between your VPC and another AWS service in your
          * account. You can specify an endpoint policy to attach to the endpoint that will
          * control access to the service from your VPC. You can also specify the VPC route
-         * tables that use the endpoint.</p> <p>Currently, only endpoints to Amazon S3 are
-         * supported.</p><p><h3>See Also:</h3>   <a
+         * tables that use the endpoint.</p> <p>Use <a>DescribeVpcEndpointServices</a> to
+         * get a list of supported AWS services.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVpcEndpoint">AWS
          * API Reference</a></p>
          */
@@ -3904,8 +3913,8 @@ namespace Model
          * to create a private connection between your VPC and another AWS service in your
          * account. You can specify an endpoint policy to attach to the endpoint that will
          * control access to the service from your VPC. You can also specify the VPC route
-         * tables that use the endpoint.</p> <p>Currently, only endpoints to Amazon S3 are
-         * supported.</p><p><h3>See Also:</h3>   <a
+         * tables that use the endpoint.</p> <p>Use <a>DescribeVpcEndpointServices</a> to
+         * get a list of supported AWS services.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVpcEndpoint">AWS
          * API Reference</a></p>
          *
@@ -3918,8 +3927,8 @@ namespace Model
          * to create a private connection between your VPC and another AWS service in your
          * account. You can specify an endpoint policy to attach to the endpoint that will
          * control access to the service from your VPC. You can also specify the VPC route
-         * tables that use the endpoint.</p> <p>Currently, only endpoints to Amazon S3 are
-         * supported.</p><p><h3>See Also:</h3>   <a
+         * tables that use the endpoint.</p> <p>Use <a>DescribeVpcEndpointServices</a> to
+         * get a list of supported AWS services.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVpcEndpoint">AWS
          * API Reference</a></p>
          *

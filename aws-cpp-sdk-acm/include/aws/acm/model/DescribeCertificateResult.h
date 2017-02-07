@@ -40,32 +40,27 @@ namespace Model
     DescribeCertificateResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
     /**
-     * <p>Contains a <a>CertificateDetail</a> structure that lists the fields of an ACM
-     * Certificate.</p>
+     * <p>Metadata about an ACM certificate.</p>
      */
     inline const CertificateDetail& GetCertificate() const{ return m_certificate; }
 
     /**
-     * <p>Contains a <a>CertificateDetail</a> structure that lists the fields of an ACM
-     * Certificate.</p>
+     * <p>Metadata about an ACM certificate.</p>
      */
     inline void SetCertificate(const CertificateDetail& value) { m_certificate = value; }
 
     /**
-     * <p>Contains a <a>CertificateDetail</a> structure that lists the fields of an ACM
-     * Certificate.</p>
+     * <p>Metadata about an ACM certificate.</p>
      */
     inline void SetCertificate(CertificateDetail&& value) { m_certificate = value; }
 
     /**
-     * <p>Contains a <a>CertificateDetail</a> structure that lists the fields of an ACM
-     * Certificate.</p>
+     * <p>Metadata about an ACM certificate.</p>
      */
     inline DescribeCertificateResult& WithCertificate(const CertificateDetail& value) { SetCertificate(value); return *this;}
 
     /**
-     * <p>Contains a <a>CertificateDetail</a> structure that lists the fields of an ACM
-     * Certificate.</p>
+     * <p>Metadata about an ACM certificate.</p>
      */
     inline DescribeCertificateResult& WithCertificate(CertificateDetail&& value) { SetCertificate(value); return *this;}
 

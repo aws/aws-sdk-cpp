@@ -45,72 +45,72 @@ namespace Model
     Aws::Utils::Json::JsonValue Jsonize() const;
 
     /**
-     * <p>The Docker image's name.</p>
+     * <p>The name of the Docker image.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>The Docker image's name.</p>
+     * <p>The name of the Docker image.</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>The Docker image's name.</p>
+     * <p>The name of the Docker image.</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>The Docker image's name.</p>
+     * <p>The name of the Docker image.</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>The Docker image's name.</p>
+     * <p>The name of the Docker image.</p>
      */
     inline EnvironmentImage& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>The Docker image's name.</p>
+     * <p>The name of the Docker image.</p>
      */
     inline EnvironmentImage& WithName(Aws::String&& value) { SetName(value); return *this;}
 
     /**
-     * <p>The Docker image's name.</p>
+     * <p>The name of the Docker image.</p>
      */
     inline EnvironmentImage& WithName(const char* value) { SetName(value); return *this;}
 
     /**
-     * <p>The Docker image's description.</p>
+     * <p>The description of the Docker image.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
 
     /**
-     * <p>The Docker image's description.</p>
+     * <p>The description of the Docker image.</p>
      */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
-     * <p>The Docker image's description.</p>
+     * <p>The description of the Docker image.</p>
      */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
-     * <p>The Docker image's description.</p>
+     * <p>The description of the Docker image.</p>
      */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
 
     /**
-     * <p>The Docker image's description.</p>
+     * <p>The description of the Docker image.</p>
      */
     inline EnvironmentImage& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
 
     /**
-     * <p>The Docker image's description.</p>
+     * <p>The description of the Docker image.</p>
      */
     inline EnvironmentImage& WithDescription(Aws::String&& value) { SetDescription(value); return *this;}
 
     /**
-     * <p>The Docker image's description.</p>
+     * <p>The description of the Docker image.</p>
      */
     inline EnvironmentImage& WithDescription(const char* value) { SetDescription(value); return *this;}
 

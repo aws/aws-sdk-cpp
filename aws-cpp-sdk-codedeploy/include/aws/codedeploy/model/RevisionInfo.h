@@ -71,31 +71,31 @@ namespace Model
 
     /**
      * <p>Information about an application revision, including usage details and
-     * currently associated deployment groups.</p>
+     * associated deployment groups.</p>
      */
     inline const GenericRevisionInfo& GetGenericRevisionInfo() const{ return m_genericRevisionInfo; }
 
     /**
      * <p>Information about an application revision, including usage details and
-     * currently associated deployment groups.</p>
+     * associated deployment groups.</p>
      */
     inline void SetGenericRevisionInfo(const GenericRevisionInfo& value) { m_genericRevisionInfoHasBeenSet = true; m_genericRevisionInfo = value; }
 
     /**
      * <p>Information about an application revision, including usage details and
-     * currently associated deployment groups.</p>
+     * associated deployment groups.</p>
      */
     inline void SetGenericRevisionInfo(GenericRevisionInfo&& value) { m_genericRevisionInfoHasBeenSet = true; m_genericRevisionInfo = value; }
 
     /**
      * <p>Information about an application revision, including usage details and
-     * currently associated deployment groups.</p>
+     * associated deployment groups.</p>
      */
     inline RevisionInfo& WithGenericRevisionInfo(const GenericRevisionInfo& value) { SetGenericRevisionInfo(value); return *this;}
 
     /**
      * <p>Information about an application revision, including usage details and
-     * currently associated deployment groups.</p>
+     * associated deployment groups.</p>
      */
     inline RevisionInfo& WithGenericRevisionInfo(GenericRevisionInfo&& value) { SetGenericRevisionInfo(value); return *this;}
 

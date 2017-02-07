@@ -14,7 +14,6 @@
   */
 
 #include <aws/external/gtest.h>
-#include <aws/testing/MemoryTesting.h>
 
 #include <aws/core/utils/ratelimiter/DefaultRateLimiter.h>
 
@@ -52,20 +51,14 @@ TestDefaultRateLimiter::InternalTimePointType DefaultRateLimitTest::m_currentTim
 
 TEST_F(DefaultRateLimitTest, nopTest)
 {
-    AWS_BEGIN_MEMORY_TEST(16, 10)
-
     TestDefaultRateLimiter limiter(10, DefaultRateLimitTest::GetTestTime);
     auto delay = limiter.ApplyCost(0);
 
     ASSERT_TRUE(delay.count() == 0);
-
-    AWS_END_MEMORY_TEST
 }
 
 TEST_F(DefaultRateLimitTest, trivialTest)
 {
-    AWS_BEGIN_MEMORY_TEST(16, 10)
-
     TestDefaultRateLimiter limiter(10, DefaultRateLimitTest::GetTestTime);
 
     auto delay = limiter.ApplyCost(1);
@@ -73,14 +66,10 @@ TEST_F(DefaultRateLimitTest, trivialTest)
 
     delay = limiter.ApplyCost(0);
     ASSERT_TRUE(delay.count() == 0);
-
-    AWS_END_MEMORY_TEST
 }
 
 TEST_F(DefaultRateLimitTest, limitEdgeTest)
 {
-    AWS_BEGIN_MEMORY_TEST(16, 10)
-
     TestDefaultRateLimiter limiter(10, DefaultRateLimitTest::GetTestTime);
 
     auto delay = limiter.ApplyCost(10);
@@ -88,14 +77,10 @@ TEST_F(DefaultRateLimitTest, limitEdgeTest)
 
     delay = limiter.ApplyCost(0);
     ASSERT_TRUE(delay.count() == 0);
-
-    AWS_END_MEMORY_TEST
 }
 
 TEST_F(DefaultRateLimitTest, doubleLimitTest)
 {
-    AWS_BEGIN_MEMORY_TEST(16, 10)
-
     TestDefaultRateLimiter limiter(10, DefaultRateLimitTest::GetTestTime);
 
     auto delay = limiter.ApplyCost(20);
@@ -103,14 +88,10 @@ TEST_F(DefaultRateLimitTest, doubleLimitTest)
 
     delay = limiter.ApplyCost(0);
     ASSERT_TRUE(delay.count() == 1000);
-
-    AWS_END_MEMORY_TEST
 }
 
 TEST_F(DefaultRateLimitTest, delayedLimitEdgeLimitTest)
 {
-    AWS_BEGIN_MEMORY_TEST(16, 10)
-
     TestDefaultRateLimiter limiter(10, DefaultRateLimitTest::GetTestTime);
     limiter.ApplyCost(10);
 
@@ -120,15 +101,11 @@ TEST_F(DefaultRateLimitTest, delayedLimitEdgeLimitTest)
     ASSERT_TRUE(delay.count() == 0);
 
     delay = limiter.ApplyCost(0);
-    ASSERT_TRUE(delay.count() == 0);
-
-    AWS_END_MEMORY_TEST
+    ASSERT_TRUE(delay.count() == 0);    
 }
 
 TEST_F(DefaultRateLimitTest, delayedOverLimitTest)
 {
-    AWS_BEGIN_MEMORY_TEST(16, 10)
-
     TestDefaultRateLimiter limiter(10, DefaultRateLimitTest::GetTestTime);
     limiter.ApplyCost(10);
 
@@ -138,15 +115,11 @@ TEST_F(DefaultRateLimitTest, delayedOverLimitTest)
     ASSERT_TRUE(delay.count() == 0);
 
     delay = limiter.ApplyCost(0);
-    ASSERT_TRUE(delay.count() == 100);
-
-    AWS_END_MEMORY_TEST
+    ASSERT_TRUE(delay.count() == 100);    
 }
 
 TEST_F(DefaultRateLimitTest, twoDelayOverLimitTest)
 {
-    AWS_BEGIN_MEMORY_TEST(16, 10)
-
     TestDefaultRateLimiter limiter(100, DefaultRateLimitTest::GetTestTime);
 
     // cost to -50
@@ -168,15 +141,11 @@ TEST_F(DefaultRateLimitTest, twoDelayOverLimitTest)
 
     // expect a delay of ( 10 / 100 ) * 1000 = 100
     delay = limiter.ApplyCost(0);
-    ASSERT_TRUE(delay.count() == 100);
-
-    AWS_END_MEMORY_TEST
+    ASSERT_TRUE(delay.count() == 100);    
 }
 
 TEST_F(DefaultRateLimitTest, longDelayLimitTest)
 {
-    AWS_BEGIN_MEMORY_TEST(16, 10)
-
     TestDefaultRateLimiter limiter(100, DefaultRateLimitTest::GetTestTime);
     limiter.ApplyCost(150);
 
@@ -196,15 +165,11 @@ TEST_F(DefaultRateLimitTest, longDelayLimitTest)
     ASSERT_TRUE(delay.count() == 0);
 
     delay = limiter.ApplyCost(0);
-    ASSERT_TRUE(delay.count() == 100);
-
-    AWS_END_MEMORY_TEST
+    ASSERT_TRUE(delay.count() == 100);    
 }
 
 TEST_F(DefaultRateLimitTest, renormalizedChangeRateLimitTest)
 {
-    AWS_BEGIN_MEMORY_TEST(16, 10)
-
     TestDefaultRateLimiter limiter(100, DefaultRateLimitTest::GetTestTime);
 
     // cost to -600
@@ -242,15 +207,11 @@ TEST_F(DefaultRateLimitTest, renormalizedChangeRateLimitTest)
     // cost to -500
     SetMillisecondsElapsed(2100);
     delay = limiter.ApplyCost(0);
-    ASSERT_TRUE(delay.count() == 5000);
-
-    AWS_END_MEMORY_TEST
+    ASSERT_TRUE(delay.count() == 5000);    
 }
 
 TEST_F(DefaultRateLimitTest, unnormalizedChangeRateLimitTest)
 {
-    AWS_BEGIN_MEMORY_TEST(16, 10)
-
     // same operations as the normalized test, just with different assert values
     DefaultRateLimiter<std::chrono::high_resolution_clock, std::chrono::seconds, false> limiter(100, DefaultRateLimitTest::GetTestTime);
 
@@ -289,15 +250,11 @@ TEST_F(DefaultRateLimitTest, unnormalizedChangeRateLimitTest)
     // cost to -491
     SetMillisecondsElapsed(2100);
     delay = limiter.ApplyCost(0);
-    ASSERT_TRUE(delay.count() == 4910);
-
-    AWS_END_MEMORY_TEST
+    ASSERT_TRUE(delay.count() == 4910);    
 }
 
 TEST_F(DefaultRateLimitTest, fractionalLimitTest)
 {
-    AWS_BEGIN_MEMORY_TEST(16, 10)
-
     TestDefaultRateLimiter limiter(100, DefaultRateLimitTest::GetTestTime);
 
     limiter.ApplyCost(101);
@@ -318,7 +275,5 @@ TEST_F(DefaultRateLimitTest, fractionalLimitTest)
 
     SetMillisecondsElapsed(10);
     delay = limiter.ApplyCost(0);
-    ASSERT_TRUE(delay.count() == 0);
-
-    AWS_END_MEMORY_TEST
+    ASSERT_TRUE(delay.count() == 0);    
 }

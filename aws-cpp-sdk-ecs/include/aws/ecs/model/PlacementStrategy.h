@@ -114,7 +114,8 @@ namespace Model
      * (or <code>host</code>, which has the same effect), or any platform or custom
      * attribute that is applied to a container instance, such as
      * <code>attribute:ecs.availability-zone</code>. For the <code>binpack</code>
-     * placement strategy, valid values are <code>CPU and MEMORY</code>.</p>
+     * placement strategy, valid values are <code>cpu</code> and <code>memory</code>.
+     * For the <code>random</code> placement strategy, this field is not used.</p>
      */
     inline const Aws::String& GetField() const{ return m_field; }
 
@@ -124,7 +125,8 @@ namespace Model
      * (or <code>host</code>, which has the same effect), or any platform or custom
      * attribute that is applied to a container instance, such as
      * <code>attribute:ecs.availability-zone</code>. For the <code>binpack</code>
-     * placement strategy, valid values are <code>CPU and MEMORY</code>.</p>
+     * placement strategy, valid values are <code>cpu</code> and <code>memory</code>.
+     * For the <code>random</code> placement strategy, this field is not used.</p>
      */
     inline void SetField(const Aws::String& value) { m_fieldHasBeenSet = true; m_field = value; }
 
@@ -134,7 +136,8 @@ namespace Model
      * (or <code>host</code>, which has the same effect), or any platform or custom
      * attribute that is applied to a container instance, such as
      * <code>attribute:ecs.availability-zone</code>. For the <code>binpack</code>
-     * placement strategy, valid values are <code>CPU and MEMORY</code>.</p>
+     * placement strategy, valid values are <code>cpu</code> and <code>memory</code>.
+     * For the <code>random</code> placement strategy, this field is not used.</p>
      */
     inline void SetField(Aws::String&& value) { m_fieldHasBeenSet = true; m_field = value; }
 
@@ -144,7 +147,8 @@ namespace Model
      * (or <code>host</code>, which has the same effect), or any platform or custom
      * attribute that is applied to a container instance, such as
      * <code>attribute:ecs.availability-zone</code>. For the <code>binpack</code>
-     * placement strategy, valid values are <code>CPU and MEMORY</code>.</p>
+     * placement strategy, valid values are <code>cpu</code> and <code>memory</code>.
+     * For the <code>random</code> placement strategy, this field is not used.</p>
      */
     inline void SetField(const char* value) { m_fieldHasBeenSet = true; m_field.assign(value); }
 
@@ -154,7 +158,8 @@ namespace Model
      * (or <code>host</code>, which has the same effect), or any platform or custom
      * attribute that is applied to a container instance, such as
      * <code>attribute:ecs.availability-zone</code>. For the <code>binpack</code>
-     * placement strategy, valid values are <code>CPU and MEMORY</code>.</p>
+     * placement strategy, valid values are <code>cpu</code> and <code>memory</code>.
+     * For the <code>random</code> placement strategy, this field is not used.</p>
      */
     inline PlacementStrategy& WithField(const Aws::String& value) { SetField(value); return *this;}
 
@@ -164,7 +169,8 @@ namespace Model
      * (or <code>host</code>, which has the same effect), or any platform or custom
      * attribute that is applied to a container instance, such as
      * <code>attribute:ecs.availability-zone</code>. For the <code>binpack</code>
-     * placement strategy, valid values are <code>CPU and MEMORY</code>.</p>
+     * placement strategy, valid values are <code>cpu</code> and <code>memory</code>.
+     * For the <code>random</code> placement strategy, this field is not used.</p>
      */
     inline PlacementStrategy& WithField(Aws::String&& value) { SetField(value); return *this;}
 
@@ -174,7 +180,8 @@ namespace Model
      * (or <code>host</code>, which has the same effect), or any platform or custom
      * attribute that is applied to a container instance, such as
      * <code>attribute:ecs.availability-zone</code>. For the <code>binpack</code>
-     * placement strategy, valid values are <code>CPU and MEMORY</code>.</p>
+     * placement strategy, valid values are <code>cpu</code> and <code>memory</code>.
+     * For the <code>random</code> placement strategy, this field is not used.</p>
      */
     inline PlacementStrategy& WithField(const char* value) { SetField(value); return *this;}
 

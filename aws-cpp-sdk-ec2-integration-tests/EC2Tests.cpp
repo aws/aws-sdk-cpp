@@ -30,6 +30,7 @@
 #include <aws/ec2/model/DescribeSpotFleetRequestsResponse.h>
 #include <aws/ec2/model/DescribeVpcsRequest.h>
 #include <aws/ec2/model/DescribeVpcsResponse.h>
+#include <aws/testing/TestingEnvironment.h>
 
 #include <chrono>
 #include <thread>
@@ -42,7 +43,12 @@ namespace
 {
 
 static const char* ALLOCATION_TAG = "EC2Tests";
-static const char* SECURITY_GROUP_NAME = "CppSDKIntegrationTestSecurityGroup";
+static const char* BASE_SECURITY_GROUP_NAME = "CppSDKIntegrationTestSecurityGroup";
+
+Aws::String BuildResourceName(const char* baseName)
+{
+    return Aws::Testing::GetAwsResourcePrefix() + baseName;
+}
 
 class EC2OperationTest : public ::testing::Test
 {
@@ -64,12 +70,12 @@ protected:
 
         m_EC2Client = Aws::MakeShared<Aws::EC2::EC2Client>(ALLOCATION_TAG, Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG), config);
 
-        DeleteSecurityGroup(SECURITY_GROUP_NAME);
+        DeleteSecurityGroup(BuildResourceName(BASE_SECURITY_GROUP_NAME));
     }
 
     static void TearDownTestCase()
     {
-        DeleteSecurityGroup(SECURITY_GROUP_NAME);
+        DeleteSecurityGroup(BuildResourceName(BASE_SECURITY_GROUP_NAME));
 
         m_EC2Client = nullptr;
     }
@@ -98,7 +104,7 @@ protected:
             if (describeOutcome.IsSuccess())
             {
                 const Aws::Vector< Aws::EC2::Model::SecurityGroup >& groups = describeOutcome.GetResult().GetSecurityGroups();
-                bool exists = std::find_if(groups.cbegin(), groups.cend(), [](const Aws::EC2::Model::SecurityGroup& group){ return group.GetGroupName() == SECURITY_GROUP_NAME; }) != groups.cend();
+                bool exists = std::find_if(groups.cbegin(), groups.cend(), [](const Aws::EC2::Model::SecurityGroup& group){ return group.GetGroupName() == BuildResourceName(BASE_SECURITY_GROUP_NAME); }) != groups.cend();
                 finished = (objectState == ObjectState::Nonexistent && !exists) || (objectState == ObjectState::Ready && exists);
             } 
             else if (describeOutcome.GetError().GetErrorType() == Aws::EC2::EC2Errors::INVALID_GROUP__NOT_FOUND)
@@ -130,14 +136,16 @@ TEST_F(EC2OperationTest, DescribeSpotFleet)
 TEST_F(EC2OperationTest, CreateSecurityGroup)
 {
     Aws::EC2::Model::CreateSecurityGroupRequest createRequest;
-    createRequest.SetGroupName(SECURITY_GROUP_NAME);
+
+    Aws::String securityGroupName = BuildResourceName(BASE_SECURITY_GROUP_NAME);
+    createRequest.SetGroupName(securityGroupName);
     createRequest.SetDescription("A dummy description");
 
     auto createOutcome = m_EC2Client->CreateSecurityGroup(createRequest);
     ASSERT_TRUE(createOutcome.IsSuccess());
 
-    WaitOnSecurityGroupState(SECURITY_GROUP_NAME, ObjectState::Ready);
-    DeleteSecurityGroup(SECURITY_GROUP_NAME);
+    WaitOnSecurityGroupState(securityGroupName, ObjectState::Ready);
+    DeleteSecurityGroup(securityGroupName);
 }
 
 

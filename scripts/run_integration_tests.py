@@ -50,78 +50,23 @@ def Main():
         configDir = arguments["configuration"]
         exeExtension = ".exe"
 
-    dynamoDbTest = ( arguments["buildDir"] + 
-                     "/aws-cpp-sdk-dynamodb-integration-tests/" + 
-                     configDir + 
-                     "/aws-cpp-sdk-dynamodb-integration-tests" + 
-                     exeExtension )
-    AddExecutableBit(dynamoDbTest)
-    subprocess.check_call(dynamoDbTest)
+    testList = [ "aws-cpp-sdk-dynamodb-integration-tests",
+                 "aws-cpp-sdk-sqs-integration-tests",
+                 "aws-cpp-sdk-s3-integration-tests",
+                 "aws-cpp-sdk-lambda-integration-tests",
+                 "aws-cpp-sdk-cognitoidentity-integration-tests",
+                 "aws-cpp-sdk-transfer-tests",
+                 "aws-cpp-sdk-s3-encryption-integration-tests",
+                 "aws-cpp-sdk-ec2-integration-tests" ]
 
-    sqsTest = ( arguments["buildDir"] + 
-                "/aws-cpp-sdk-sqs-integration-tests/" + 
-                configDir + 
-                "/aws-cpp-sdk-sqs-integration-tests" + 
-                exeExtension )
-    AddExecutableBit(sqsTest)
-    subprocess.check_call(sqsTest)
+    for testName in testList:
+        testExe = arguments["buildDir"] + "/" + testName + "/" + configDir + "/" + testName + exeExtension
+        prefix = platform.system().lower()
+        print("testExe = " + testExe)
+        print("prefix = " + prefix)
+        AddExecutableBit(testExe)
+        subprocess.check_call([testExe, prefix])
 
-    s3Test = ( arguments["buildDir"] + 
-               "/aws-cpp-sdk-s3-integration-tests/" + 
-               configDir + 
-               "/aws-cpp-sdk-s3-integration-tests" + 
-               exeExtension )
-    AddExecutableBit(s3Test)
-    subprocess.check_call(s3Test)
-
-    lambdaTest = ( arguments["buildDir"] + 
-                   "/aws-cpp-sdk-lambda-integration-tests/" + 
-                   configDir + 
-                   "/aws-cpp-sdk-lambda-integration-tests" + 
-                   exeExtension )
-    AddExecutableBit(lambdaTest)   
-    subprocess.check_call(lambdaTest)
-
-    cognitoTest = ( arguments["buildDir"] + 
-                    "/aws-cpp-sdk-cognitoidentity-integration-tests/" + 
-                    configDir + 
-                    "/aws-cpp-sdk-cognitoidentity-integration-tests" +
-                    exeExtension )
-    AddExecutableBit(cognitoTest)   
-    subprocess.check_call(cognitoTest)
-
-    transferTest = ( arguments["buildDir"] + 
-                     "/aws-cpp-sdk-transfer-tests/" + 
-                     configDir + 
-                     "/aws-cpp-sdk-transfer-tests" + 
-                     exeExtension )
-    AddExecutableBit(transferTest)  
-    subprocess.check_call(transferTest)
-
-    s3EncryptionTest = ( arguments["buildDir"] +
-                     "/aws-cpp-sdk-s3-encryption-integration-tests/" +
-                     configDir +
-                     "/aws-cpp-sdk-s3-encryption-integration-tests" +
-                     exeExtension )
-    AddExecutableBit(s3EncryptionTest)
-    subprocess.check_call(s3EncryptionTest)
-
-    ec2Test = ( arguments["buildDir"] +
-                "/aws-cpp-sdk-ec2-integration-tests/" +
-                configDir +
-                "/aws-cpp-sdk-ec2-integration-tests" +
-                exeExtension )
-    AddExecutableBit(ec2Test)
-    subprocess.check_call(ec2Test)
-
-    #These will cost you lots of money, don't run them unless you decide you want to test this functionality
-    #cloudFrontTests = ( arguments["buildDir"] + "/aws-cpp-sdk-cloudfront-integration-tests/" + configDir + "/aws-cpp-sdk-cloudfront-integration-tests" + exeExtension )
-    #AddExecutableBit(cloudFrontTests)
-    #subprocess.check_call(cloudFrontTests)
-
-    #redshiftTests = ( arguments["buildDir"] + "/aws-cpp-sdk-redshift-integration-tests/" + configDir + "/aws-cpp-sdk-redshift-integration-tests" + exeExtension )
-    #AddExecutableBit(redshiftTests)
-    #subprocess.check_call(redshiftTests)
 
 # Run from powershell; make sure msbuild is in PATH environment variable  
 Main()

@@ -87,17 +87,20 @@ namespace Model
     inline DescribeEventAggregatesRequest& WithAggregateField(EventAggregateField&& value) { SetAggregateField(value); return *this;}
 
     /**
-     * <p>The maximum number of items to return in one batch.</p>
+     * <p>The maximum number of items to return in one batch, between 10 and 100,
+     * inclusive.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
-     * <p>The maximum number of items to return in one batch.</p>
+     * <p>The maximum number of items to return in one batch, between 10 and 100,
+     * inclusive.</p>
      */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
-     * <p>The maximum number of items to return in one batch.</p>
+     * <p>The maximum number of items to return in one batch, between 10 and 100,
+     * inclusive.</p>
      */
     inline DescribeEventAggregatesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 

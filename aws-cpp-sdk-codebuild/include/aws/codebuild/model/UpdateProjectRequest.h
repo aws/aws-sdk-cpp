@@ -40,44 +40,44 @@ namespace Model
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
     /**
-     * <p>The name of the existing build project to change settings.</p> <note> <p>You
-     * cannot change an existing build project's name.</p> </note>
+     * <p>The name of the build project.</p> <note> <p>You cannot change a build
+     * project's name.</p> </note>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>The name of the existing build project to change settings.</p> <note> <p>You
-     * cannot change an existing build project's name.</p> </note>
+     * <p>The name of the build project.</p> <note> <p>You cannot change a build
+     * project's name.</p> </note>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>The name of the existing build project to change settings.</p> <note> <p>You
-     * cannot change an existing build project's name.</p> </note>
+     * <p>The name of the build project.</p> <note> <p>You cannot change a build
+     * project's name.</p> </note>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>The name of the existing build project to change settings.</p> <note> <p>You
-     * cannot change an existing build project's name.</p> </note>
+     * <p>The name of the build project.</p> <note> <p>You cannot change a build
+     * project's name.</p> </note>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>The name of the existing build project to change settings.</p> <note> <p>You
-     * cannot change an existing build project's name.</p> </note>
+     * <p>The name of the build project.</p> <note> <p>You cannot change a build
+     * project's name.</p> </note>
      */
     inline UpdateProjectRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>The name of the existing build project to change settings.</p> <note> <p>You
-     * cannot change an existing build project's name.</p> </note>
+     * <p>The name of the build project.</p> <note> <p>You cannot change a build
+     * project's name.</p> </note>
      */
     inline UpdateProjectRequest& WithName(Aws::String&& value) { SetName(value); return *this;}
 
     /**
-     * <p>The name of the existing build project to change settings.</p> <note> <p>You
-     * cannot change an existing build project's name.</p> </note>
+     * <p>The name of the build project.</p> <note> <p>You cannot change a build
+     * project's name.</p> </note>
      */
     inline UpdateProjectRequest& WithName(const char* value) { SetName(value); return *this;}
 
@@ -117,210 +117,218 @@ namespace Model
     inline UpdateProjectRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
 
     /**
-     * <p>Information to be changed about the build project's build input source
-     * code.</p>
+     * <p>Information to be changed about the build input source code for the build
+     * project.</p>
      */
     inline const ProjectSource& GetSource() const{ return m_source; }
 
     /**
-     * <p>Information to be changed about the build project's build input source
-     * code.</p>
+     * <p>Information to be changed about the build input source code for the build
+     * project.</p>
      */
     inline void SetSource(const ProjectSource& value) { m_sourceHasBeenSet = true; m_source = value; }
 
     /**
-     * <p>Information to be changed about the build project's build input source
-     * code.</p>
+     * <p>Information to be changed about the build input source code for the build
+     * project.</p>
      */
     inline void SetSource(ProjectSource&& value) { m_sourceHasBeenSet = true; m_source = value; }
 
     /**
-     * <p>Information to be changed about the build project's build input source
-     * code.</p>
+     * <p>Information to be changed about the build input source code for the build
+     * project.</p>
      */
     inline UpdateProjectRequest& WithSource(const ProjectSource& value) { SetSource(value); return *this;}
 
     /**
-     * <p>Information to be changed about the build project's build input source
-     * code.</p>
+     * <p>Information to be changed about the build input source code for the build
+     * project.</p>
      */
     inline UpdateProjectRequest& WithSource(ProjectSource&& value) { SetSource(value); return *this;}
 
     /**
-     * <p>Information to be changed about the build project's build output
-     * artifacts.</p>
+     * <p>Information to be changed about the build output artifacts for the build
+     * project.</p>
      */
     inline const ProjectArtifacts& GetArtifacts() const{ return m_artifacts; }
 
     /**
-     * <p>Information to be changed about the build project's build output
-     * artifacts.</p>
+     * <p>Information to be changed about the build output artifacts for the build
+     * project.</p>
      */
     inline void SetArtifacts(const ProjectArtifacts& value) { m_artifactsHasBeenSet = true; m_artifacts = value; }
 
     /**
-     * <p>Information to be changed about the build project's build output
-     * artifacts.</p>
+     * <p>Information to be changed about the build output artifacts for the build
+     * project.</p>
      */
     inline void SetArtifacts(ProjectArtifacts&& value) { m_artifactsHasBeenSet = true; m_artifacts = value; }
 
     /**
-     * <p>Information to be changed about the build project's build output
-     * artifacts.</p>
+     * <p>Information to be changed about the build output artifacts for the build
+     * project.</p>
      */
     inline UpdateProjectRequest& WithArtifacts(const ProjectArtifacts& value) { SetArtifacts(value); return *this;}
 
     /**
-     * <p>Information to be changed about the build project's build output
-     * artifacts.</p>
+     * <p>Information to be changed about the build output artifacts for the build
+     * project.</p>
      */
     inline UpdateProjectRequest& WithArtifacts(ProjectArtifacts&& value) { SetArtifacts(value); return *this;}
 
     /**
-     * <p>Information to be changed about the build project's build environment.</p>
+     * <p>Information to be changed about the build environment for the build
+     * project.</p>
      */
     inline const ProjectEnvironment& GetEnvironment() const{ return m_environment; }
 
     /**
-     * <p>Information to be changed about the build project's build environment.</p>
+     * <p>Information to be changed about the build environment for the build
+     * project.</p>
      */
     inline void SetEnvironment(const ProjectEnvironment& value) { m_environmentHasBeenSet = true; m_environment = value; }
 
     /**
-     * <p>Information to be changed about the build project's build environment.</p>
+     * <p>Information to be changed about the build environment for the build
+     * project.</p>
      */
     inline void SetEnvironment(ProjectEnvironment&& value) { m_environmentHasBeenSet = true; m_environment = value; }
 
     /**
-     * <p>Information to be changed about the build project's build environment.</p>
+     * <p>Information to be changed about the build environment for the build
+     * project.</p>
      */
     inline UpdateProjectRequest& WithEnvironment(const ProjectEnvironment& value) { SetEnvironment(value); return *this;}
 
     /**
-     * <p>Information to be changed about the build project's build environment.</p>
+     * <p>Information to be changed about the build environment for the build
+     * project.</p>
      */
     inline UpdateProjectRequest& WithEnvironment(ProjectEnvironment&& value) { SetEnvironment(value); return *this;}
 
     /**
-     * <p>The replacement Amazon Resource Name (ARN) of the AWS Identity and Access
-     * Management (IAM) role that enables AWS CodeBuild to interact with dependent AWS
-     * services on behalf of the AWS account.</p>
+     * <p>The replacement ARN of the AWS Identity and Access Management (IAM) role that
+     * enables AWS CodeBuild to interact with dependent AWS services on behalf of the
+     * AWS account.</p>
      */
     inline const Aws::String& GetServiceRole() const{ return m_serviceRole; }
 
     /**
-     * <p>The replacement Amazon Resource Name (ARN) of the AWS Identity and Access
-     * Management (IAM) role that enables AWS CodeBuild to interact with dependent AWS
-     * services on behalf of the AWS account.</p>
+     * <p>The replacement ARN of the AWS Identity and Access Management (IAM) role that
+     * enables AWS CodeBuild to interact with dependent AWS services on behalf of the
+     * AWS account.</p>
      */
     inline void SetServiceRole(const Aws::String& value) { m_serviceRoleHasBeenSet = true; m_serviceRole = value; }
 
     /**
-     * <p>The replacement Amazon Resource Name (ARN) of the AWS Identity and Access
-     * Management (IAM) role that enables AWS CodeBuild to interact with dependent AWS
-     * services on behalf of the AWS account.</p>
+     * <p>The replacement ARN of the AWS Identity and Access Management (IAM) role that
+     * enables AWS CodeBuild to interact with dependent AWS services on behalf of the
+     * AWS account.</p>
      */
     inline void SetServiceRole(Aws::String&& value) { m_serviceRoleHasBeenSet = true; m_serviceRole = value; }
 
     /**
-     * <p>The replacement Amazon Resource Name (ARN) of the AWS Identity and Access
-     * Management (IAM) role that enables AWS CodeBuild to interact with dependent AWS
-     * services on behalf of the AWS account.</p>
+     * <p>The replacement ARN of the AWS Identity and Access Management (IAM) role that
+     * enables AWS CodeBuild to interact with dependent AWS services on behalf of the
+     * AWS account.</p>
      */
     inline void SetServiceRole(const char* value) { m_serviceRoleHasBeenSet = true; m_serviceRole.assign(value); }
 
     /**
-     * <p>The replacement Amazon Resource Name (ARN) of the AWS Identity and Access
-     * Management (IAM) role that enables AWS CodeBuild to interact with dependent AWS
-     * services on behalf of the AWS account.</p>
+     * <p>The replacement ARN of the AWS Identity and Access Management (IAM) role that
+     * enables AWS CodeBuild to interact with dependent AWS services on behalf of the
+     * AWS account.</p>
      */
     inline UpdateProjectRequest& WithServiceRole(const Aws::String& value) { SetServiceRole(value); return *this;}
 
     /**
-     * <p>The replacement Amazon Resource Name (ARN) of the AWS Identity and Access
-     * Management (IAM) role that enables AWS CodeBuild to interact with dependent AWS
-     * services on behalf of the AWS account.</p>
+     * <p>The replacement ARN of the AWS Identity and Access Management (IAM) role that
+     * enables AWS CodeBuild to interact with dependent AWS services on behalf of the
+     * AWS account.</p>
      */
     inline UpdateProjectRequest& WithServiceRole(Aws::String&& value) { SetServiceRole(value); return *this;}
 
     /**
-     * <p>The replacement Amazon Resource Name (ARN) of the AWS Identity and Access
-     * Management (IAM) role that enables AWS CodeBuild to interact with dependent AWS
-     * services on behalf of the AWS account.</p>
+     * <p>The replacement ARN of the AWS Identity and Access Management (IAM) role that
+     * enables AWS CodeBuild to interact with dependent AWS services on behalf of the
+     * AWS account.</p>
      */
     inline UpdateProjectRequest& WithServiceRole(const char* value) { SetServiceRole(value); return *this;}
 
     /**
      * <p>The replacement value in minutes, from 5 to 480 (8 hours), for AWS CodeBuild
-     * to wait to timeout any related build that did not get marked as completed.</p>
+     * to wait before timing out any related build that did not get marked as
+     * completed.</p>
      */
     inline int GetTimeoutInMinutes() const{ return m_timeoutInMinutes; }
 
     /**
      * <p>The replacement value in minutes, from 5 to 480 (8 hours), for AWS CodeBuild
-     * to wait to timeout any related build that did not get marked as completed.</p>
+     * to wait before timing out any related build that did not get marked as
+     * completed.</p>
      */
     inline void SetTimeoutInMinutes(int value) { m_timeoutInMinutesHasBeenSet = true; m_timeoutInMinutes = value; }
 
     /**
      * <p>The replacement value in minutes, from 5 to 480 (8 hours), for AWS CodeBuild
-     * to wait to timeout any related build that did not get marked as completed.</p>
+     * to wait before timing out any related build that did not get marked as
+     * completed.</p>
      */
     inline UpdateProjectRequest& WithTimeoutInMinutes(int value) { SetTimeoutInMinutes(value); return *this;}
 
     /**
      * <p>The replacement AWS Key Management Service (AWS KMS) customer master key
-     * (CMK) to be used for encrypting the build project's build output artifacts.</p>
-     * <p>You can specify either the CMK's Amazon Resource Name (ARN) or, if available,
-     * the CMK's alias (using the format <code>alias/<i>alias-name</i> </code>).</p>
+     * (CMK) to be used for encrypting the build output artifacts.</p> <p>You can
+     * specify either the CMK's Amazon Resource Name (ARN) or, if available, the CMK's
+     * alias (using the format <code>alias/<i>alias-name</i> </code>).</p>
      */
     inline const Aws::String& GetEncryptionKey() const{ return m_encryptionKey; }
 
     /**
      * <p>The replacement AWS Key Management Service (AWS KMS) customer master key
-     * (CMK) to be used for encrypting the build project's build output artifacts.</p>
-     * <p>You can specify either the CMK's Amazon Resource Name (ARN) or, if available,
-     * the CMK's alias (using the format <code>alias/<i>alias-name</i> </code>).</p>
+     * (CMK) to be used for encrypting the build output artifacts.</p> <p>You can
+     * specify either the CMK's Amazon Resource Name (ARN) or, if available, the CMK's
+     * alias (using the format <code>alias/<i>alias-name</i> </code>).</p>
      */
     inline void SetEncryptionKey(const Aws::String& value) { m_encryptionKeyHasBeenSet = true; m_encryptionKey = value; }
 
     /**
      * <p>The replacement AWS Key Management Service (AWS KMS) customer master key
-     * (CMK) to be used for encrypting the build project's build output artifacts.</p>
-     * <p>You can specify either the CMK's Amazon Resource Name (ARN) or, if available,
-     * the CMK's alias (using the format <code>alias/<i>alias-name</i> </code>).</p>
+     * (CMK) to be used for encrypting the build output artifacts.</p> <p>You can
+     * specify either the CMK's Amazon Resource Name (ARN) or, if available, the CMK's
+     * alias (using the format <code>alias/<i>alias-name</i> </code>).</p>
      */
     inline void SetEncryptionKey(Aws::String&& value) { m_encryptionKeyHasBeenSet = true; m_encryptionKey = value; }
 
     /**
      * <p>The replacement AWS Key Management Service (AWS KMS) customer master key
-     * (CMK) to be used for encrypting the build project's build output artifacts.</p>
-     * <p>You can specify either the CMK's Amazon Resource Name (ARN) or, if available,
-     * the CMK's alias (using the format <code>alias/<i>alias-name</i> </code>).</p>
+     * (CMK) to be used for encrypting the build output artifacts.</p> <p>You can
+     * specify either the CMK's Amazon Resource Name (ARN) or, if available, the CMK's
+     * alias (using the format <code>alias/<i>alias-name</i> </code>).</p>
      */
     inline void SetEncryptionKey(const char* value) { m_encryptionKeyHasBeenSet = true; m_encryptionKey.assign(value); }
 
     /**
      * <p>The replacement AWS Key Management Service (AWS KMS) customer master key
-     * (CMK) to be used for encrypting the build project's build output artifacts.</p>
-     * <p>You can specify either the CMK's Amazon Resource Name (ARN) or, if available,
-     * the CMK's alias (using the format <code>alias/<i>alias-name</i> </code>).</p>
+     * (CMK) to be used for encrypting the build output artifacts.</p> <p>You can
+     * specify either the CMK's Amazon Resource Name (ARN) or, if available, the CMK's
+     * alias (using the format <code>alias/<i>alias-name</i> </code>).</p>
      */
     inline UpdateProjectRequest& WithEncryptionKey(const Aws::String& value) { SetEncryptionKey(value); return *this;}
 
     /**
      * <p>The replacement AWS Key Management Service (AWS KMS) customer master key
-     * (CMK) to be used for encrypting the build project's build output artifacts.</p>
-     * <p>You can specify either the CMK's Amazon Resource Name (ARN) or, if available,
-     * the CMK's alias (using the format <code>alias/<i>alias-name</i> </code>).</p>
+     * (CMK) to be used for encrypting the build output artifacts.</p> <p>You can
+     * specify either the CMK's Amazon Resource Name (ARN) or, if available, the CMK's
+     * alias (using the format <code>alias/<i>alias-name</i> </code>).</p>
      */
     inline UpdateProjectRequest& WithEncryptionKey(Aws::String&& value) { SetEncryptionKey(value); return *this;}
 
     /**
      * <p>The replacement AWS Key Management Service (AWS KMS) customer master key
-     * (CMK) to be used for encrypting the build project's build output artifacts.</p>
-     * <p>You can specify either the CMK's Amazon Resource Name (ARN) or, if available,
-     * the CMK's alias (using the format <code>alias/<i>alias-name</i> </code>).</p>
+     * (CMK) to be used for encrypting the build output artifacts.</p> <p>You can
+     * specify either the CMK's Amazon Resource Name (ARN) or, if available, the CMK's
+     * alias (using the format <code>alias/<i>alias-name</i> </code>).</p>
      */
     inline UpdateProjectRequest& WithEncryptionKey(const char* value) { SetEncryptionKey(value); return *this;}
 

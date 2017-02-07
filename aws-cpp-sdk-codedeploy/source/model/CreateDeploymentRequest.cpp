@@ -29,6 +29,7 @@ CreateDeploymentRequest::CreateDeploymentRequest() :
     m_descriptionHasBeenSet(false),
     m_ignoreApplicationStopFailures(false),
     m_ignoreApplicationStopFailuresHasBeenSet(false),
+    m_targetInstancesHasBeenSet(false),
     m_autoRollbackConfigurationHasBeenSet(false),
     m_updateOutdatedInstancesOnly(false),
     m_updateOutdatedInstancesOnlyHasBeenSet(false)
@@ -72,6 +73,12 @@ Aws::String CreateDeploymentRequest::SerializePayload() const
   if(m_ignoreApplicationStopFailuresHasBeenSet)
   {
    payload.WithBool("ignoreApplicationStopFailures", m_ignoreApplicationStopFailures);
+
+  }
+
+  if(m_targetInstancesHasBeenSet)
+  {
+   payload.WithObject("targetInstances", m_targetInstances.Jsonize());
 
   }
 

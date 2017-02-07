@@ -15,7 +15,6 @@ file(GLOB UTILS_CRYPTO_SRC "${CMAKE_CURRENT_SOURCE_DIR}/utils/crypto/*.cpp")
 file(GLOB UTILS_JSON_SRC "${CMAKE_CURRENT_SOURCE_DIR}/utils/json/*.cpp")
 file(GLOB UTILS_STREAM_SRC "${CMAKE_CURRENT_SOURCE_DIR}/utils/stream/*.cpp")
 file(GLOB UTILS_LOGGING_SRC "${CMAKE_CURRENT_SOURCE_DIR}/utils/logging/*.cpp")
-file(GLOB UTILS_MEMORY_SRC "${CMAKE_CURRENT_SOURCE_DIR}/utils/memory/*.cpp")
 file(GLOB UTILS_RATE_LIMITER_SRC "${CMAKE_CURRENT_SOURCE_DIR}/utils/ratelimiter/*.cpp")
 file(GLOB UTILS_XML_SRC "${CMAKE_CURRENT_SOURCE_DIR}/utils/xml/*.cpp")
 
@@ -32,7 +31,6 @@ file(GLOB AWS_CPP_SDK_CORE_TESTS_SRC
   ${UTILS_STREAM_SRC}
   ${UTILS_XML_SRC}
   ${UTILS_LOGGING_SRC}
-  ${UTILS_MEMORY_SRC}
   ${UTILS_RATE_LIMITER_SRC}
 )
 
@@ -49,7 +47,6 @@ if(PLATFORM_WINDOWS)
     source_group("Source Files\\utils\\stream" FILES ${UTILS_STREAM_SRC})
     source_group("Source Files\\utils\\xml" FILES ${UTILS_XML_SRC})
     source_group("Source Files\\utils\\logging" FILES ${UTILS_LOGGING_SRC})
-    source_group("Source Files\\utils\\memory" FILES ${UTILS_MEMORY_SRC})
     source_group("Source Files\\utils\\ratelimiter" FILES ${UTILS_RATE_LIMITER_SRC})
   endif()
 endif()

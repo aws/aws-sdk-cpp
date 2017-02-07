@@ -23,6 +23,10 @@
 #include <aws/codedeploy/model/DeploymentCreator.h>
 #include <aws/codedeploy/model/AutoRollbackConfiguration.h>
 #include <aws/codedeploy/model/RollbackInfo.h>
+#include <aws/codedeploy/model/DeploymentStyle.h>
+#include <aws/codedeploy/model/TargetInstances.h>
+#include <aws/codedeploy/model/BlueGreenDeploymentConfiguration.h>
+#include <aws/codedeploy/model/LoadBalancerInfo.h>
 
 namespace Aws
 {
@@ -567,6 +571,186 @@ namespace Model
      */
     inline DeploymentInfo& WithRollbackInfo(RollbackInfo&& value) { SetRollbackInfo(value); return *this;}
 
+    /**
+     * <p>Information about the type of deployment, either standard or blue/green, you
+     * want to run and whether to route deployment traffic behind a load balancer.</p>
+     */
+    inline const DeploymentStyle& GetDeploymentStyle() const{ return m_deploymentStyle; }
+
+    /**
+     * <p>Information about the type of deployment, either standard or blue/green, you
+     * want to run and whether to route deployment traffic behind a load balancer.</p>
+     */
+    inline void SetDeploymentStyle(const DeploymentStyle& value) { m_deploymentStyleHasBeenSet = true; m_deploymentStyle = value; }
+
+    /**
+     * <p>Information about the type of deployment, either standard or blue/green, you
+     * want to run and whether to route deployment traffic behind a load balancer.</p>
+     */
+    inline void SetDeploymentStyle(DeploymentStyle&& value) { m_deploymentStyleHasBeenSet = true; m_deploymentStyle = value; }
+
+    /**
+     * <p>Information about the type of deployment, either standard or blue/green, you
+     * want to run and whether to route deployment traffic behind a load balancer.</p>
+     */
+    inline DeploymentInfo& WithDeploymentStyle(const DeploymentStyle& value) { SetDeploymentStyle(value); return *this;}
+
+    /**
+     * <p>Information about the type of deployment, either standard or blue/green, you
+     * want to run and whether to route deployment traffic behind a load balancer.</p>
+     */
+    inline DeploymentInfo& WithDeploymentStyle(DeploymentStyle&& value) { SetDeploymentStyle(value); return *this;}
+
+    /**
+     * <p>Information about the instances that belong to the replacement environment in
+     * a blue/green deployment.</p>
+     */
+    inline const TargetInstances& GetTargetInstances() const{ return m_targetInstances; }
+
+    /**
+     * <p>Information about the instances that belong to the replacement environment in
+     * a blue/green deployment.</p>
+     */
+    inline void SetTargetInstances(const TargetInstances& value) { m_targetInstancesHasBeenSet = true; m_targetInstances = value; }
+
+    /**
+     * <p>Information about the instances that belong to the replacement environment in
+     * a blue/green deployment.</p>
+     */
+    inline void SetTargetInstances(TargetInstances&& value) { m_targetInstancesHasBeenSet = true; m_targetInstances = value; }
+
+    /**
+     * <p>Information about the instances that belong to the replacement environment in
+     * a blue/green deployment.</p>
+     */
+    inline DeploymentInfo& WithTargetInstances(const TargetInstances& value) { SetTargetInstances(value); return *this;}
+
+    /**
+     * <p>Information about the instances that belong to the replacement environment in
+     * a blue/green deployment.</p>
+     */
+    inline DeploymentInfo& WithTargetInstances(TargetInstances&& value) { SetTargetInstances(value); return *this;}
+
+    /**
+     * <p>Indicates whether the wait period set for the termination of instances in the
+     * original environment has started. Status is 'false' if the KEEP_ALIVE option is
+     * specified; otherwise, 'true' as soon as the termination wait period starts.</p>
+     */
+    inline bool GetInstanceTerminationWaitTimeStarted() const{ return m_instanceTerminationWaitTimeStarted; }
+
+    /**
+     * <p>Indicates whether the wait period set for the termination of instances in the
+     * original environment has started. Status is 'false' if the KEEP_ALIVE option is
+     * specified; otherwise, 'true' as soon as the termination wait period starts.</p>
+     */
+    inline void SetInstanceTerminationWaitTimeStarted(bool value) { m_instanceTerminationWaitTimeStartedHasBeenSet = true; m_instanceTerminationWaitTimeStarted = value; }
+
+    /**
+     * <p>Indicates whether the wait period set for the termination of instances in the
+     * original environment has started. Status is 'false' if the KEEP_ALIVE option is
+     * specified; otherwise, 'true' as soon as the termination wait period starts.</p>
+     */
+    inline DeploymentInfo& WithInstanceTerminationWaitTimeStarted(bool value) { SetInstanceTerminationWaitTimeStarted(value); return *this;}
+
+    /**
+     * <p>Information about blue/green deployment options for this deployment.</p>
+     */
+    inline const BlueGreenDeploymentConfiguration& GetBlueGreenDeploymentConfiguration() const{ return m_blueGreenDeploymentConfiguration; }
+
+    /**
+     * <p>Information about blue/green deployment options for this deployment.</p>
+     */
+    inline void SetBlueGreenDeploymentConfiguration(const BlueGreenDeploymentConfiguration& value) { m_blueGreenDeploymentConfigurationHasBeenSet = true; m_blueGreenDeploymentConfiguration = value; }
+
+    /**
+     * <p>Information about blue/green deployment options for this deployment.</p>
+     */
+    inline void SetBlueGreenDeploymentConfiguration(BlueGreenDeploymentConfiguration&& value) { m_blueGreenDeploymentConfigurationHasBeenSet = true; m_blueGreenDeploymentConfiguration = value; }
+
+    /**
+     * <p>Information about blue/green deployment options for this deployment.</p>
+     */
+    inline DeploymentInfo& WithBlueGreenDeploymentConfiguration(const BlueGreenDeploymentConfiguration& value) { SetBlueGreenDeploymentConfiguration(value); return *this;}
+
+    /**
+     * <p>Information about blue/green deployment options for this deployment.</p>
+     */
+    inline DeploymentInfo& WithBlueGreenDeploymentConfiguration(BlueGreenDeploymentConfiguration&& value) { SetBlueGreenDeploymentConfiguration(value); return *this;}
+
+    /**
+     * <p>Information about the load balancer used in this blue/green deployment.</p>
+     */
+    inline const LoadBalancerInfo& GetLoadBalancerInfo() const{ return m_loadBalancerInfo; }
+
+    /**
+     * <p>Information about the load balancer used in this blue/green deployment.</p>
+     */
+    inline void SetLoadBalancerInfo(const LoadBalancerInfo& value) { m_loadBalancerInfoHasBeenSet = true; m_loadBalancerInfo = value; }
+
+    /**
+     * <p>Information about the load balancer used in this blue/green deployment.</p>
+     */
+    inline void SetLoadBalancerInfo(LoadBalancerInfo&& value) { m_loadBalancerInfoHasBeenSet = true; m_loadBalancerInfo = value; }
+
+    /**
+     * <p>Information about the load balancer used in this blue/green deployment.</p>
+     */
+    inline DeploymentInfo& WithLoadBalancerInfo(const LoadBalancerInfo& value) { SetLoadBalancerInfo(value); return *this;}
+
+    /**
+     * <p>Information about the load balancer used in this blue/green deployment.</p>
+     */
+    inline DeploymentInfo& WithLoadBalancerInfo(LoadBalancerInfo&& value) { SetLoadBalancerInfo(value); return *this;}
+
+    /**
+     * <p>Provides information about the results of a deployment, such as whether
+     * instances in the original environment in a blue/green deployment were not
+     * terminated.</p>
+     */
+    inline const Aws::String& GetAdditionalDeploymentStatusInfo() const{ return m_additionalDeploymentStatusInfo; }
+
+    /**
+     * <p>Provides information about the results of a deployment, such as whether
+     * instances in the original environment in a blue/green deployment were not
+     * terminated.</p>
+     */
+    inline void SetAdditionalDeploymentStatusInfo(const Aws::String& value) { m_additionalDeploymentStatusInfoHasBeenSet = true; m_additionalDeploymentStatusInfo = value; }
+
+    /**
+     * <p>Provides information about the results of a deployment, such as whether
+     * instances in the original environment in a blue/green deployment were not
+     * terminated.</p>
+     */
+    inline void SetAdditionalDeploymentStatusInfo(Aws::String&& value) { m_additionalDeploymentStatusInfoHasBeenSet = true; m_additionalDeploymentStatusInfo = value; }
+
+    /**
+     * <p>Provides information about the results of a deployment, such as whether
+     * instances in the original environment in a blue/green deployment were not
+     * terminated.</p>
+     */
+    inline void SetAdditionalDeploymentStatusInfo(const char* value) { m_additionalDeploymentStatusInfoHasBeenSet = true; m_additionalDeploymentStatusInfo.assign(value); }
+
+    /**
+     * <p>Provides information about the results of a deployment, such as whether
+     * instances in the original environment in a blue/green deployment were not
+     * terminated.</p>
+     */
+    inline DeploymentInfo& WithAdditionalDeploymentStatusInfo(const Aws::String& value) { SetAdditionalDeploymentStatusInfo(value); return *this;}
+
+    /**
+     * <p>Provides information about the results of a deployment, such as whether
+     * instances in the original environment in a blue/green deployment were not
+     * terminated.</p>
+     */
+    inline DeploymentInfo& WithAdditionalDeploymentStatusInfo(Aws::String&& value) { SetAdditionalDeploymentStatusInfo(value); return *this;}
+
+    /**
+     * <p>Provides information about the results of a deployment, such as whether
+     * instances in the original environment in a blue/green deployment were not
+     * terminated.</p>
+     */
+    inline DeploymentInfo& WithAdditionalDeploymentStatusInfo(const char* value) { SetAdditionalDeploymentStatusInfo(value); return *this;}
+
   private:
     Aws::String m_applicationName;
     bool m_applicationNameHasBeenSet;
@@ -602,6 +786,18 @@ namespace Model
     bool m_updateOutdatedInstancesOnlyHasBeenSet;
     RollbackInfo m_rollbackInfo;
     bool m_rollbackInfoHasBeenSet;
+    DeploymentStyle m_deploymentStyle;
+    bool m_deploymentStyleHasBeenSet;
+    TargetInstances m_targetInstances;
+    bool m_targetInstancesHasBeenSet;
+    bool m_instanceTerminationWaitTimeStarted;
+    bool m_instanceTerminationWaitTimeStartedHasBeenSet;
+    BlueGreenDeploymentConfiguration m_blueGreenDeploymentConfiguration;
+    bool m_blueGreenDeploymentConfigurationHasBeenSet;
+    LoadBalancerInfo m_loadBalancerInfo;
+    bool m_loadBalancerInfoHasBeenSet;
+    Aws::String m_additionalDeploymentStatusInfo;
+    bool m_additionalDeploymentStatusInfoHasBeenSet;
   };
 
 } // namespace Model

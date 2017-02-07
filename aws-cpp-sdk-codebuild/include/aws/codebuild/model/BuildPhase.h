@@ -48,93 +48,98 @@ namespace Model
     Aws::Utils::Json::JsonValue Jsonize() const;
 
     /**
-     * <p>The build phase's name. Valid values include:</p> <ul> <li> <p>
+     * <p>The name of the build phase. Valid values include:</p> <ul> <li> <p>
      * <code>BUILD</code>: Core build activities typically occur in this build
-     * phase.</p> </li> <li> <p> <code>COMPLETED</code>: The build has completed.</p>
-     * </li> <li> <p> <code>DOWNLOAD_SOURCE</code>: Source code is being downloaded in
-     * this build phase.</p> </li> <li> <p> <code>FINALIZING</code>: The build process
-     * is completing in this build phase.</p> </li> <li> <p> <code>INSTALL</code>:
-     * Installation activities typically occur in this build phase.</p> </li> <li> <p>
-     * <code>POST_BUILD</code>: Post-build activities typically occur in this build
-     * phase.</p> </li> <li> <p> <code>PRE_BUILD</code>: Pre-build activities typically
-     * occur in this build phase.</p> </li> <li> <p> <code>PROVISIONING</code>: The
-     * build environment is being set up.</p> </li> <li> <p> <code>SUBMITTED</code>:
-     * The build has been submitted.</p> </li> <li> <p> <code>UPLOAD_ARTIFACTS</code>:
-     * Build output artifacts are being uploaded to output location.</p> </li> </ul>
+     * phase.</p> </li> <li> <p> <code>COMPLETED</code>: The build has been
+     * completed.</p> </li> <li> <p> <code>DOWNLOAD_SOURCE</code>: Source code is being
+     * downloaded in this build phase.</p> </li> <li> <p> <code>FINALIZING</code>: The
+     * build process is completing in this build phase.</p> </li> <li> <p>
+     * <code>INSTALL</code>: Installation activities typically occur in this build
+     * phase.</p> </li> <li> <p> <code>POST_BUILD</code>: Post-build activities
+     * typically occur in this build phase.</p> </li> <li> <p> <code>PRE_BUILD</code>:
+     * Pre-build activities typically occur in this build phase.</p> </li> <li> <p>
+     * <code>PROVISIONING</code>: The build environment is being set up.</p> </li> <li>
+     * <p> <code>SUBMITTED</code>: The build has been submitted.</p> </li> <li> <p>
+     * <code>UPLOAD_ARTIFACTS</code>: Build output artifacts are being uploaded to the
+     * output location.</p> </li> </ul>
      */
     inline const BuildPhaseType& GetPhaseType() const{ return m_phaseType; }
 
     /**
-     * <p>The build phase's name. Valid values include:</p> <ul> <li> <p>
+     * <p>The name of the build phase. Valid values include:</p> <ul> <li> <p>
      * <code>BUILD</code>: Core build activities typically occur in this build
-     * phase.</p> </li> <li> <p> <code>COMPLETED</code>: The build has completed.</p>
-     * </li> <li> <p> <code>DOWNLOAD_SOURCE</code>: Source code is being downloaded in
-     * this build phase.</p> </li> <li> <p> <code>FINALIZING</code>: The build process
-     * is completing in this build phase.</p> </li> <li> <p> <code>INSTALL</code>:
-     * Installation activities typically occur in this build phase.</p> </li> <li> <p>
-     * <code>POST_BUILD</code>: Post-build activities typically occur in this build
-     * phase.</p> </li> <li> <p> <code>PRE_BUILD</code>: Pre-build activities typically
-     * occur in this build phase.</p> </li> <li> <p> <code>PROVISIONING</code>: The
-     * build environment is being set up.</p> </li> <li> <p> <code>SUBMITTED</code>:
-     * The build has been submitted.</p> </li> <li> <p> <code>UPLOAD_ARTIFACTS</code>:
-     * Build output artifacts are being uploaded to output location.</p> </li> </ul>
+     * phase.</p> </li> <li> <p> <code>COMPLETED</code>: The build has been
+     * completed.</p> </li> <li> <p> <code>DOWNLOAD_SOURCE</code>: Source code is being
+     * downloaded in this build phase.</p> </li> <li> <p> <code>FINALIZING</code>: The
+     * build process is completing in this build phase.</p> </li> <li> <p>
+     * <code>INSTALL</code>: Installation activities typically occur in this build
+     * phase.</p> </li> <li> <p> <code>POST_BUILD</code>: Post-build activities
+     * typically occur in this build phase.</p> </li> <li> <p> <code>PRE_BUILD</code>:
+     * Pre-build activities typically occur in this build phase.</p> </li> <li> <p>
+     * <code>PROVISIONING</code>: The build environment is being set up.</p> </li> <li>
+     * <p> <code>SUBMITTED</code>: The build has been submitted.</p> </li> <li> <p>
+     * <code>UPLOAD_ARTIFACTS</code>: Build output artifacts are being uploaded to the
+     * output location.</p> </li> </ul>
      */
     inline void SetPhaseType(const BuildPhaseType& value) { m_phaseTypeHasBeenSet = true; m_phaseType = value; }
 
     /**
-     * <p>The build phase's name. Valid values include:</p> <ul> <li> <p>
+     * <p>The name of the build phase. Valid values include:</p> <ul> <li> <p>
      * <code>BUILD</code>: Core build activities typically occur in this build
-     * phase.</p> </li> <li> <p> <code>COMPLETED</code>: The build has completed.</p>
-     * </li> <li> <p> <code>DOWNLOAD_SOURCE</code>: Source code is being downloaded in
-     * this build phase.</p> </li> <li> <p> <code>FINALIZING</code>: The build process
-     * is completing in this build phase.</p> </li> <li> <p> <code>INSTALL</code>:
-     * Installation activities typically occur in this build phase.</p> </li> <li> <p>
-     * <code>POST_BUILD</code>: Post-build activities typically occur in this build
-     * phase.</p> </li> <li> <p> <code>PRE_BUILD</code>: Pre-build activities typically
-     * occur in this build phase.</p> </li> <li> <p> <code>PROVISIONING</code>: The
-     * build environment is being set up.</p> </li> <li> <p> <code>SUBMITTED</code>:
-     * The build has been submitted.</p> </li> <li> <p> <code>UPLOAD_ARTIFACTS</code>:
-     * Build output artifacts are being uploaded to output location.</p> </li> </ul>
+     * phase.</p> </li> <li> <p> <code>COMPLETED</code>: The build has been
+     * completed.</p> </li> <li> <p> <code>DOWNLOAD_SOURCE</code>: Source code is being
+     * downloaded in this build phase.</p> </li> <li> <p> <code>FINALIZING</code>: The
+     * build process is completing in this build phase.</p> </li> <li> <p>
+     * <code>INSTALL</code>: Installation activities typically occur in this build
+     * phase.</p> </li> <li> <p> <code>POST_BUILD</code>: Post-build activities
+     * typically occur in this build phase.</p> </li> <li> <p> <code>PRE_BUILD</code>:
+     * Pre-build activities typically occur in this build phase.</p> </li> <li> <p>
+     * <code>PROVISIONING</code>: The build environment is being set up.</p> </li> <li>
+     * <p> <code>SUBMITTED</code>: The build has been submitted.</p> </li> <li> <p>
+     * <code>UPLOAD_ARTIFACTS</code>: Build output artifacts are being uploaded to the
+     * output location.</p> </li> </ul>
      */
     inline void SetPhaseType(BuildPhaseType&& value) { m_phaseTypeHasBeenSet = true; m_phaseType = value; }
 
     /**
-     * <p>The build phase's name. Valid values include:</p> <ul> <li> <p>
+     * <p>The name of the build phase. Valid values include:</p> <ul> <li> <p>
      * <code>BUILD</code>: Core build activities typically occur in this build
-     * phase.</p> </li> <li> <p> <code>COMPLETED</code>: The build has completed.</p>
-     * </li> <li> <p> <code>DOWNLOAD_SOURCE</code>: Source code is being downloaded in
-     * this build phase.</p> </li> <li> <p> <code>FINALIZING</code>: The build process
-     * is completing in this build phase.</p> </li> <li> <p> <code>INSTALL</code>:
-     * Installation activities typically occur in this build phase.</p> </li> <li> <p>
-     * <code>POST_BUILD</code>: Post-build activities typically occur in this build
-     * phase.</p> </li> <li> <p> <code>PRE_BUILD</code>: Pre-build activities typically
-     * occur in this build phase.</p> </li> <li> <p> <code>PROVISIONING</code>: The
-     * build environment is being set up.</p> </li> <li> <p> <code>SUBMITTED</code>:
-     * The build has been submitted.</p> </li> <li> <p> <code>UPLOAD_ARTIFACTS</code>:
-     * Build output artifacts are being uploaded to output location.</p> </li> </ul>
+     * phase.</p> </li> <li> <p> <code>COMPLETED</code>: The build has been
+     * completed.</p> </li> <li> <p> <code>DOWNLOAD_SOURCE</code>: Source code is being
+     * downloaded in this build phase.</p> </li> <li> <p> <code>FINALIZING</code>: The
+     * build process is completing in this build phase.</p> </li> <li> <p>
+     * <code>INSTALL</code>: Installation activities typically occur in this build
+     * phase.</p> </li> <li> <p> <code>POST_BUILD</code>: Post-build activities
+     * typically occur in this build phase.</p> </li> <li> <p> <code>PRE_BUILD</code>:
+     * Pre-build activities typically occur in this build phase.</p> </li> <li> <p>
+     * <code>PROVISIONING</code>: The build environment is being set up.</p> </li> <li>
+     * <p> <code>SUBMITTED</code>: The build has been submitted.</p> </li> <li> <p>
+     * <code>UPLOAD_ARTIFACTS</code>: Build output artifacts are being uploaded to the
+     * output location.</p> </li> </ul>
      */
     inline BuildPhase& WithPhaseType(const BuildPhaseType& value) { SetPhaseType(value); return *this;}
 
     /**
-     * <p>The build phase's name. Valid values include:</p> <ul> <li> <p>
+     * <p>The name of the build phase. Valid values include:</p> <ul> <li> <p>
      * <code>BUILD</code>: Core build activities typically occur in this build
-     * phase.</p> </li> <li> <p> <code>COMPLETED</code>: The build has completed.</p>
-     * </li> <li> <p> <code>DOWNLOAD_SOURCE</code>: Source code is being downloaded in
-     * this build phase.</p> </li> <li> <p> <code>FINALIZING</code>: The build process
-     * is completing in this build phase.</p> </li> <li> <p> <code>INSTALL</code>:
-     * Installation activities typically occur in this build phase.</p> </li> <li> <p>
-     * <code>POST_BUILD</code>: Post-build activities typically occur in this build
-     * phase.</p> </li> <li> <p> <code>PRE_BUILD</code>: Pre-build activities typically
-     * occur in this build phase.</p> </li> <li> <p> <code>PROVISIONING</code>: The
-     * build environment is being set up.</p> </li> <li> <p> <code>SUBMITTED</code>:
-     * The build has been submitted.</p> </li> <li> <p> <code>UPLOAD_ARTIFACTS</code>:
-     * Build output artifacts are being uploaded to output location.</p> </li> </ul>
+     * phase.</p> </li> <li> <p> <code>COMPLETED</code>: The build has been
+     * completed.</p> </li> <li> <p> <code>DOWNLOAD_SOURCE</code>: Source code is being
+     * downloaded in this build phase.</p> </li> <li> <p> <code>FINALIZING</code>: The
+     * build process is completing in this build phase.</p> </li> <li> <p>
+     * <code>INSTALL</code>: Installation activities typically occur in this build
+     * phase.</p> </li> <li> <p> <code>POST_BUILD</code>: Post-build activities
+     * typically occur in this build phase.</p> </li> <li> <p> <code>PRE_BUILD</code>:
+     * Pre-build activities typically occur in this build phase.</p> </li> <li> <p>
+     * <code>PROVISIONING</code>: The build environment is being set up.</p> </li> <li>
+     * <p> <code>SUBMITTED</code>: The build has been submitted.</p> </li> <li> <p>
+     * <code>UPLOAD_ARTIFACTS</code>: Build output artifacts are being uploaded to the
+     * output location.</p> </li> </ul>
      */
     inline BuildPhase& WithPhaseType(BuildPhaseType&& value) { SetPhaseType(value); return *this;}
 
     /**
-     * <p>The build phase's current status. Valid values include:</p> <ul> <li> <p>
-     * <code>FAILED</code>: The build phase failed.</p> </li> <li> <p>
+     * <p>The current status of the build phase. Valid values include:</p> <ul> <li>
+     * <p> <code>FAILED</code>: The build phase failed.</p> </li> <li> <p>
      * <code>FAULT</code>: The build phase faulted.</p> </li> <li> <p>
      * <code>IN_PROGRESS</code>: The build phase is still in progress.</p> </li> <li>
      * <p> <code>STOPPED</code>: The build phase stopped.</p> </li> <li> <p>
@@ -144,8 +149,8 @@ namespace Model
     inline const StatusType& GetPhaseStatus() const{ return m_phaseStatus; }
 
     /**
-     * <p>The build phase's current status. Valid values include:</p> <ul> <li> <p>
-     * <code>FAILED</code>: The build phase failed.</p> </li> <li> <p>
+     * <p>The current status of the build phase. Valid values include:</p> <ul> <li>
+     * <p> <code>FAILED</code>: The build phase failed.</p> </li> <li> <p>
      * <code>FAULT</code>: The build phase faulted.</p> </li> <li> <p>
      * <code>IN_PROGRESS</code>: The build phase is still in progress.</p> </li> <li>
      * <p> <code>STOPPED</code>: The build phase stopped.</p> </li> <li> <p>
@@ -155,8 +160,8 @@ namespace Model
     inline void SetPhaseStatus(const StatusType& value) { m_phaseStatusHasBeenSet = true; m_phaseStatus = value; }
 
     /**
-     * <p>The build phase's current status. Valid values include:</p> <ul> <li> <p>
-     * <code>FAILED</code>: The build phase failed.</p> </li> <li> <p>
+     * <p>The current status of the build phase. Valid values include:</p> <ul> <li>
+     * <p> <code>FAILED</code>: The build phase failed.</p> </li> <li> <p>
      * <code>FAULT</code>: The build phase faulted.</p> </li> <li> <p>
      * <code>IN_PROGRESS</code>: The build phase is still in progress.</p> </li> <li>
      * <p> <code>STOPPED</code>: The build phase stopped.</p> </li> <li> <p>
@@ -166,8 +171,8 @@ namespace Model
     inline void SetPhaseStatus(StatusType&& value) { m_phaseStatusHasBeenSet = true; m_phaseStatus = value; }
 
     /**
-     * <p>The build phase's current status. Valid values include:</p> <ul> <li> <p>
-     * <code>FAILED</code>: The build phase failed.</p> </li> <li> <p>
+     * <p>The current status of the build phase. Valid values include:</p> <ul> <li>
+     * <p> <code>FAILED</code>: The build phase failed.</p> </li> <li> <p>
      * <code>FAULT</code>: The build phase faulted.</p> </li> <li> <p>
      * <code>IN_PROGRESS</code>: The build phase is still in progress.</p> </li> <li>
      * <p> <code>STOPPED</code>: The build phase stopped.</p> </li> <li> <p>
@@ -177,8 +182,8 @@ namespace Model
     inline BuildPhase& WithPhaseStatus(const StatusType& value) { SetPhaseStatus(value); return *this;}
 
     /**
-     * <p>The build phase's current status. Valid values include:</p> <ul> <li> <p>
-     * <code>FAILED</code>: The build phase failed.</p> </li> <li> <p>
+     * <p>The current status of the build phase. Valid values include:</p> <ul> <li>
+     * <p> <code>FAILED</code>: The build phase failed.</p> </li> <li> <p>
      * <code>FAULT</code>: The build phase faulted.</p> </li> <li> <p>
      * <code>IN_PROGRESS</code>: The build phase is still in progress.</p> </li> <li>
      * <p> <code>STOPPED</code>: The build phase stopped.</p> </li> <li> <p>
@@ -238,20 +243,20 @@ namespace Model
     inline BuildPhase& WithEndTime(Aws::Utils::DateTime&& value) { SetEndTime(value); return *this;}
 
     /**
-     * <p>How long, in seconds, between the build's phase starting and ending
-     * times.</p>
+     * <p>How long, in seconds, between the starting and ending times of the build's
+     * phase.</p>
      */
     inline long long GetDurationInSeconds() const{ return m_durationInSeconds; }
 
     /**
-     * <p>How long, in seconds, between the build's phase starting and ending
-     * times.</p>
+     * <p>How long, in seconds, between the starting and ending times of the build's
+     * phase.</p>
      */
     inline void SetDurationInSeconds(long long value) { m_durationInSecondsHasBeenSet = true; m_durationInSeconds = value; }
 
     /**
-     * <p>How long, in seconds, between the build's phase starting and ending
-     * times.</p>
+     * <p>How long, in seconds, between the starting and ending times of the build's
+     * phase.</p>
      */
     inline BuildPhase& WithDurationInSeconds(long long value) { SetDurationInSeconds(value); return *this;}
 

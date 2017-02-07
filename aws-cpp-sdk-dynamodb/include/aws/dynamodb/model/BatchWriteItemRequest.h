@@ -30,8 +30,8 @@ namespace Model
 {
 
   /**
-   * <p>Represents the input of a <i>BatchWriteItem</i> operation.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>Represents the input of a <code>BatchWriteItem</code>
+   * operation.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/BatchWriteItemInput">AWS
    * API Reference</a></p>
    */
@@ -45,275 +45,286 @@ namespace Model
 
     /**
      * <p>A map of one or more table names and, for each table, a list of operations to
-     * be performed (<i>DeleteRequest</i> or <i>PutRequest</i>). Each element in the
-     * map consists of the following:</p> <ul> <li> <p> <i>DeleteRequest</i> - Perform
-     * a <i>DeleteItem</i> operation on the specified item. The item to be deleted is
-     * identified by a <i>Key</i> subelement:</p> <ul> <li> <p> <i>Key</i> - A map of
-     * primary key attribute values that uniquely identify the ! item. Each entry in
-     * this map consists of an attribute name and an attribute value. For each primary
-     * key, you must provide <i>all</i> of the key attributes. For example, with a
-     * simple primary key, you only need to provide a value for the partition key. For
-     * a composite primary key, you must provide values for <i>both</i> the partition
-     * key and the sort key.</p> </li> </ul> </li> <li> <p> <i>PutRequest</i> - Perform
-     * a <i>PutItem</i> operation on the specified item. The item to be put is
-     * identified by an <i>Item</i> subelement:</p> <ul> <li> <p> <i>Item</i> - A map
-     * of attributes and their values. Each entry in this map consists of an attribute
-     * name and an attribute value. Attribute values must not be null; string and
-     * binary type attributes must have lengths greater than zero; and set type
-     * attributes must not be empty. Requests that contain empty values will be
-     * rejected with a <i>ValidationException</i> exception.</p> <p>If you specify any
-     * attributes that are part of an index key, then the data types for those
-     * attributes must match those of the schema in the table's attribute
+     * be performed (<code>DeleteRequest</code> or <code>PutRequest</code>). Each
+     * element in the map consists of the following:</p> <ul> <li> <p>
+     * <code>DeleteRequest</code> - Perform a <code>DeleteItem</code> operation on the
+     * specified item. The item to be deleted is identified by a <code>Key</code>
+     * subelement:</p> <ul> <li> <p> <code>Key</code> - A map of primary key attribute
+     * values that uniquely identify the ! item. Each entry in this map consists of an
+     * attribute name and an attribute value. For each primary key, you must provide
+     * <i>all</i> of the key attributes. For example, with a simple primary key, you
+     * only need to provide a value for the partition key. For a composite primary key,
+     * you must provide values for <i>both</i> the partition key and the sort key.</p>
+     * </li> </ul> </li> <li> <p> <code>PutRequest</code> - Perform a
+     * <code>PutItem</code> operation on the specified item. The item to be put is
+     * identified by an <code>Item</code> subelement:</p> <ul> <li> <p>
+     * <code>Item</code> - A map of attributes and their values. Each entry in this map
+     * consists of an attribute name and an attribute value. Attribute values must not
+     * be null; string and binary type attributes must have lengths greater than zero;
+     * and set type attributes must not be empty. Requests that contain empty values
+     * will be rejected with a <code>ValidationException</code> exception.</p> <p>If
+     * you specify any attributes that are part of an index key, then the data types
+     * for those attributes must match those of the schema in the table's attribute
      * definition.</p> </li> </ul> </li> </ul>
      */
     inline const Aws::Map<Aws::String, Aws::Vector<WriteRequest>>& GetRequestItems() const{ return m_requestItems; }
 
     /**
      * <p>A map of one or more table names and, for each table, a list of operations to
-     * be performed (<i>DeleteRequest</i> or <i>PutRequest</i>). Each element in the
-     * map consists of the following:</p> <ul> <li> <p> <i>DeleteRequest</i> - Perform
-     * a <i>DeleteItem</i> operation on the specified item. The item to be deleted is
-     * identified by a <i>Key</i> subelement:</p> <ul> <li> <p> <i>Key</i> - A map of
-     * primary key attribute values that uniquely identify the ! item. Each entry in
-     * this map consists of an attribute name and an attribute value. For each primary
-     * key, you must provide <i>all</i> of the key attributes. For example, with a
-     * simple primary key, you only need to provide a value for the partition key. For
-     * a composite primary key, you must provide values for <i>both</i> the partition
-     * key and the sort key.</p> </li> </ul> </li> <li> <p> <i>PutRequest</i> - Perform
-     * a <i>PutItem</i> operation on the specified item. The item to be put is
-     * identified by an <i>Item</i> subelement:</p> <ul> <li> <p> <i>Item</i> - A map
-     * of attributes and their values. Each entry in this map consists of an attribute
-     * name and an attribute value. Attribute values must not be null; string and
-     * binary type attributes must have lengths greater than zero; and set type
-     * attributes must not be empty. Requests that contain empty values will be
-     * rejected with a <i>ValidationException</i> exception.</p> <p>If you specify any
-     * attributes that are part of an index key, then the data types for those
-     * attributes must match those of the schema in the table's attribute
+     * be performed (<code>DeleteRequest</code> or <code>PutRequest</code>). Each
+     * element in the map consists of the following:</p> <ul> <li> <p>
+     * <code>DeleteRequest</code> - Perform a <code>DeleteItem</code> operation on the
+     * specified item. The item to be deleted is identified by a <code>Key</code>
+     * subelement:</p> <ul> <li> <p> <code>Key</code> - A map of primary key attribute
+     * values that uniquely identify the ! item. Each entry in this map consists of an
+     * attribute name and an attribute value. For each primary key, you must provide
+     * <i>all</i> of the key attributes. For example, with a simple primary key, you
+     * only need to provide a value for the partition key. For a composite primary key,
+     * you must provide values for <i>both</i> the partition key and the sort key.</p>
+     * </li> </ul> </li> <li> <p> <code>PutRequest</code> - Perform a
+     * <code>PutItem</code> operation on the specified item. The item to be put is
+     * identified by an <code>Item</code> subelement:</p> <ul> <li> <p>
+     * <code>Item</code> - A map of attributes and their values. Each entry in this map
+     * consists of an attribute name and an attribute value. Attribute values must not
+     * be null; string and binary type attributes must have lengths greater than zero;
+     * and set type attributes must not be empty. Requests that contain empty values
+     * will be rejected with a <code>ValidationException</code> exception.</p> <p>If
+     * you specify any attributes that are part of an index key, then the data types
+     * for those attributes must match those of the schema in the table's attribute
      * definition.</p> </li> </ul> </li> </ul>
      */
     inline void SetRequestItems(const Aws::Map<Aws::String, Aws::Vector<WriteRequest>>& value) { m_requestItemsHasBeenSet = true; m_requestItems = value; }
 
     /**
      * <p>A map of one or more table names and, for each table, a list of operations to
-     * be performed (<i>DeleteRequest</i> or <i>PutRequest</i>). Each element in the
-     * map consists of the following:</p> <ul> <li> <p> <i>DeleteRequest</i> - Perform
-     * a <i>DeleteItem</i> operation on the specified item. The item to be deleted is
-     * identified by a <i>Key</i> subelement:</p> <ul> <li> <p> <i>Key</i> - A map of
-     * primary key attribute values that uniquely identify the ! item. Each entry in
-     * this map consists of an attribute name and an attribute value. For each primary
-     * key, you must provide <i>all</i> of the key attributes. For example, with a
-     * simple primary key, you only need to provide a value for the partition key. For
-     * a composite primary key, you must provide values for <i>both</i> the partition
-     * key and the sort key.</p> </li> </ul> </li> <li> <p> <i>PutRequest</i> - Perform
-     * a <i>PutItem</i> operation on the specified item. The item to be put is
-     * identified by an <i>Item</i> subelement:</p> <ul> <li> <p> <i>Item</i> - A map
-     * of attributes and their values. Each entry in this map consists of an attribute
-     * name and an attribute value. Attribute values must not be null; string and
-     * binary type attributes must have lengths greater than zero; and set type
-     * attributes must not be empty. Requests that contain empty values will be
-     * rejected with a <i>ValidationException</i> exception.</p> <p>If you specify any
-     * attributes that are part of an index key, then the data types for those
-     * attributes must match those of the schema in the table's attribute
+     * be performed (<code>DeleteRequest</code> or <code>PutRequest</code>). Each
+     * element in the map consists of the following:</p> <ul> <li> <p>
+     * <code>DeleteRequest</code> - Perform a <code>DeleteItem</code> operation on the
+     * specified item. The item to be deleted is identified by a <code>Key</code>
+     * subelement:</p> <ul> <li> <p> <code>Key</code> - A map of primary key attribute
+     * values that uniquely identify the ! item. Each entry in this map consists of an
+     * attribute name and an attribute value. For each primary key, you must provide
+     * <i>all</i> of the key attributes. For example, with a simple primary key, you
+     * only need to provide a value for the partition key. For a composite primary key,
+     * you must provide values for <i>both</i> the partition key and the sort key.</p>
+     * </li> </ul> </li> <li> <p> <code>PutRequest</code> - Perform a
+     * <code>PutItem</code> operation on the specified item. The item to be put is
+     * identified by an <code>Item</code> subelement:</p> <ul> <li> <p>
+     * <code>Item</code> - A map of attributes and their values. Each entry in this map
+     * consists of an attribute name and an attribute value. Attribute values must not
+     * be null; string and binary type attributes must have lengths greater than zero;
+     * and set type attributes must not be empty. Requests that contain empty values
+     * will be rejected with a <code>ValidationException</code> exception.</p> <p>If
+     * you specify any attributes that are part of an index key, then the data types
+     * for those attributes must match those of the schema in the table's attribute
      * definition.</p> </li> </ul> </li> </ul>
      */
     inline void SetRequestItems(Aws::Map<Aws::String, Aws::Vector<WriteRequest>>&& value) { m_requestItemsHasBeenSet = true; m_requestItems = value; }
 
     /**
      * <p>A map of one or more table names and, for each table, a list of operations to
-     * be performed (<i>DeleteRequest</i> or <i>PutRequest</i>). Each element in the
-     * map consists of the following:</p> <ul> <li> <p> <i>DeleteRequest</i> - Perform
-     * a <i>DeleteItem</i> operation on the specified item. The item to be deleted is
-     * identified by a <i>Key</i> subelement:</p> <ul> <li> <p> <i>Key</i> - A map of
-     * primary key attribute values that uniquely identify the ! item. Each entry in
-     * this map consists of an attribute name and an attribute value. For each primary
-     * key, you must provide <i>all</i> of the key attributes. For example, with a
-     * simple primary key, you only need to provide a value for the partition key. For
-     * a composite primary key, you must provide values for <i>both</i> the partition
-     * key and the sort key.</p> </li> </ul> </li> <li> <p> <i>PutRequest</i> - Perform
-     * a <i>PutItem</i> operation on the specified item. The item to be put is
-     * identified by an <i>Item</i> subelement:</p> <ul> <li> <p> <i>Item</i> - A map
-     * of attributes and their values. Each entry in this map consists of an attribute
-     * name and an attribute value. Attribute values must not be null; string and
-     * binary type attributes must have lengths greater than zero; and set type
-     * attributes must not be empty. Requests that contain empty values will be
-     * rejected with a <i>ValidationException</i> exception.</p> <p>If you specify any
-     * attributes that are part of an index key, then the data types for those
-     * attributes must match those of the schema in the table's attribute
+     * be performed (<code>DeleteRequest</code> or <code>PutRequest</code>). Each
+     * element in the map consists of the following:</p> <ul> <li> <p>
+     * <code>DeleteRequest</code> - Perform a <code>DeleteItem</code> operation on the
+     * specified item. The item to be deleted is identified by a <code>Key</code>
+     * subelement:</p> <ul> <li> <p> <code>Key</code> - A map of primary key attribute
+     * values that uniquely identify the ! item. Each entry in this map consists of an
+     * attribute name and an attribute value. For each primary key, you must provide
+     * <i>all</i> of the key attributes. For example, with a simple primary key, you
+     * only need to provide a value for the partition key. For a composite primary key,
+     * you must provide values for <i>both</i> the partition key and the sort key.</p>
+     * </li> </ul> </li> <li> <p> <code>PutRequest</code> - Perform a
+     * <code>PutItem</code> operation on the specified item. The item to be put is
+     * identified by an <code>Item</code> subelement:</p> <ul> <li> <p>
+     * <code>Item</code> - A map of attributes and their values. Each entry in this map
+     * consists of an attribute name and an attribute value. Attribute values must not
+     * be null; string and binary type attributes must have lengths greater than zero;
+     * and set type attributes must not be empty. Requests that contain empty values
+     * will be rejected with a <code>ValidationException</code> exception.</p> <p>If
+     * you specify any attributes that are part of an index key, then the data types
+     * for those attributes must match those of the schema in the table's attribute
      * definition.</p> </li> </ul> </li> </ul>
      */
     inline BatchWriteItemRequest& WithRequestItems(const Aws::Map<Aws::String, Aws::Vector<WriteRequest>>& value) { SetRequestItems(value); return *this;}
 
     /**
      * <p>A map of one or more table names and, for each table, a list of operations to
-     * be performed (<i>DeleteRequest</i> or <i>PutRequest</i>). Each element in the
-     * map consists of the following:</p> <ul> <li> <p> <i>DeleteRequest</i> - Perform
-     * a <i>DeleteItem</i> operation on the specified item. The item to be deleted is
-     * identified by a <i>Key</i> subelement:</p> <ul> <li> <p> <i>Key</i> - A map of
-     * primary key attribute values that uniquely identify the ! item. Each entry in
-     * this map consists of an attribute name and an attribute value. For each primary
-     * key, you must provide <i>all</i> of the key attributes. For example, with a
-     * simple primary key, you only need to provide a value for the partition key. For
-     * a composite primary key, you must provide values for <i>both</i> the partition
-     * key and the sort key.</p> </li> </ul> </li> <li> <p> <i>PutRequest</i> - Perform
-     * a <i>PutItem</i> operation on the specified item. The item to be put is
-     * identified by an <i>Item</i> subelement:</p> <ul> <li> <p> <i>Item</i> - A map
-     * of attributes and their values. Each entry in this map consists of an attribute
-     * name and an attribute value. Attribute values must not be null; string and
-     * binary type attributes must have lengths greater than zero; and set type
-     * attributes must not be empty. Requests that contain empty values will be
-     * rejected with a <i>ValidationException</i> exception.</p> <p>If you specify any
-     * attributes that are part of an index key, then the data types for those
-     * attributes must match those of the schema in the table's attribute
+     * be performed (<code>DeleteRequest</code> or <code>PutRequest</code>). Each
+     * element in the map consists of the following:</p> <ul> <li> <p>
+     * <code>DeleteRequest</code> - Perform a <code>DeleteItem</code> operation on the
+     * specified item. The item to be deleted is identified by a <code>Key</code>
+     * subelement:</p> <ul> <li> <p> <code>Key</code> - A map of primary key attribute
+     * values that uniquely identify the ! item. Each entry in this map consists of an
+     * attribute name and an attribute value. For each primary key, you must provide
+     * <i>all</i> of the key attributes. For example, with a simple primary key, you
+     * only need to provide a value for the partition key. For a composite primary key,
+     * you must provide values for <i>both</i> the partition key and the sort key.</p>
+     * </li> </ul> </li> <li> <p> <code>PutRequest</code> - Perform a
+     * <code>PutItem</code> operation on the specified item. The item to be put is
+     * identified by an <code>Item</code> subelement:</p> <ul> <li> <p>
+     * <code>Item</code> - A map of attributes and their values. Each entry in this map
+     * consists of an attribute name and an attribute value. Attribute values must not
+     * be null; string and binary type attributes must have lengths greater than zero;
+     * and set type attributes must not be empty. Requests that contain empty values
+     * will be rejected with a <code>ValidationException</code> exception.</p> <p>If
+     * you specify any attributes that are part of an index key, then the data types
+     * for those attributes must match those of the schema in the table's attribute
      * definition.</p> </li> </ul> </li> </ul>
      */
     inline BatchWriteItemRequest& WithRequestItems(Aws::Map<Aws::String, Aws::Vector<WriteRequest>>&& value) { SetRequestItems(value); return *this;}
 
     /**
      * <p>A map of one or more table names and, for each table, a list of operations to
-     * be performed (<i>DeleteRequest</i> or <i>PutRequest</i>). Each element in the
-     * map consists of the following:</p> <ul> <li> <p> <i>DeleteRequest</i> - Perform
-     * a <i>DeleteItem</i> operation on the specified item. The item to be deleted is
-     * identified by a <i>Key</i> subelement:</p> <ul> <li> <p> <i>Key</i> - A map of
-     * primary key attribute values that uniquely identify the ! item. Each entry in
-     * this map consists of an attribute name and an attribute value. For each primary
-     * key, you must provide <i>all</i> of the key attributes. For example, with a
-     * simple primary key, you only need to provide a value for the partition key. For
-     * a composite primary key, you must provide values for <i>both</i> the partition
-     * key and the sort key.</p> </li> </ul> </li> <li> <p> <i>PutRequest</i> - Perform
-     * a <i>PutItem</i> operation on the specified item. The item to be put is
-     * identified by an <i>Item</i> subelement:</p> <ul> <li> <p> <i>Item</i> - A map
-     * of attributes and their values. Each entry in this map consists of an attribute
-     * name and an attribute value. Attribute values must not be null; string and
-     * binary type attributes must have lengths greater than zero; and set type
-     * attributes must not be empty. Requests that contain empty values will be
-     * rejected with a <i>ValidationException</i> exception.</p> <p>If you specify any
-     * attributes that are part of an index key, then the data types for those
-     * attributes must match those of the schema in the table's attribute
+     * be performed (<code>DeleteRequest</code> or <code>PutRequest</code>). Each
+     * element in the map consists of the following:</p> <ul> <li> <p>
+     * <code>DeleteRequest</code> - Perform a <code>DeleteItem</code> operation on the
+     * specified item. The item to be deleted is identified by a <code>Key</code>
+     * subelement:</p> <ul> <li> <p> <code>Key</code> - A map of primary key attribute
+     * values that uniquely identify the ! item. Each entry in this map consists of an
+     * attribute name and an attribute value. For each primary key, you must provide
+     * <i>all</i> of the key attributes. For example, with a simple primary key, you
+     * only need to provide a value for the partition key. For a composite primary key,
+     * you must provide values for <i>both</i> the partition key and the sort key.</p>
+     * </li> </ul> </li> <li> <p> <code>PutRequest</code> - Perform a
+     * <code>PutItem</code> operation on the specified item. The item to be put is
+     * identified by an <code>Item</code> subelement:</p> <ul> <li> <p>
+     * <code>Item</code> - A map of attributes and their values. Each entry in this map
+     * consists of an attribute name and an attribute value. Attribute values must not
+     * be null; string and binary type attributes must have lengths greater than zero;
+     * and set type attributes must not be empty. Requests that contain empty values
+     * will be rejected with a <code>ValidationException</code> exception.</p> <p>If
+     * you specify any attributes that are part of an index key, then the data types
+     * for those attributes must match those of the schema in the table's attribute
      * definition.</p> </li> </ul> </li> </ul>
      */
     inline BatchWriteItemRequest& AddRequestItems(const Aws::String& key, const Aws::Vector<WriteRequest>& value) { m_requestItemsHasBeenSet = true; m_requestItems[key] = value; return *this; }
 
     /**
      * <p>A map of one or more table names and, for each table, a list of operations to
-     * be performed (<i>DeleteRequest</i> or <i>PutRequest</i>). Each element in the
-     * map consists of the following:</p> <ul> <li> <p> <i>DeleteRequest</i> - Perform
-     * a <i>DeleteItem</i> operation on the specified item. The item to be deleted is
-     * identified by a <i>Key</i> subelement:</p> <ul> <li> <p> <i>Key</i> - A map of
-     * primary key attribute values that uniquely identify the ! item. Each entry in
-     * this map consists of an attribute name and an attribute value. For each primary
-     * key, you must provide <i>all</i> of the key attributes. For example, with a
-     * simple primary key, you only need to provide a value for the partition key. For
-     * a composite primary key, you must provide values for <i>both</i> the partition
-     * key and the sort key.</p> </li> </ul> </li> <li> <p> <i>PutRequest</i> - Perform
-     * a <i>PutItem</i> operation on the specified item. The item to be put is
-     * identified by an <i>Item</i> subelement:</p> <ul> <li> <p> <i>Item</i> - A map
-     * of attributes and their values. Each entry in this map consists of an attribute
-     * name and an attribute value. Attribute values must not be null; string and
-     * binary type attributes must have lengths greater than zero; and set type
-     * attributes must not be empty. Requests that contain empty values will be
-     * rejected with a <i>ValidationException</i> exception.</p> <p>If you specify any
-     * attributes that are part of an index key, then the data types for those
-     * attributes must match those of the schema in the table's attribute
+     * be performed (<code>DeleteRequest</code> or <code>PutRequest</code>). Each
+     * element in the map consists of the following:</p> <ul> <li> <p>
+     * <code>DeleteRequest</code> - Perform a <code>DeleteItem</code> operation on the
+     * specified item. The item to be deleted is identified by a <code>Key</code>
+     * subelement:</p> <ul> <li> <p> <code>Key</code> - A map of primary key attribute
+     * values that uniquely identify the ! item. Each entry in this map consists of an
+     * attribute name and an attribute value. For each primary key, you must provide
+     * <i>all</i> of the key attributes. For example, with a simple primary key, you
+     * only need to provide a value for the partition key. For a composite primary key,
+     * you must provide values for <i>both</i> the partition key and the sort key.</p>
+     * </li> </ul> </li> <li> <p> <code>PutRequest</code> - Perform a
+     * <code>PutItem</code> operation on the specified item. The item to be put is
+     * identified by an <code>Item</code> subelement:</p> <ul> <li> <p>
+     * <code>Item</code> - A map of attributes and their values. Each entry in this map
+     * consists of an attribute name and an attribute value. Attribute values must not
+     * be null; string and binary type attributes must have lengths greater than zero;
+     * and set type attributes must not be empty. Requests that contain empty values
+     * will be rejected with a <code>ValidationException</code> exception.</p> <p>If
+     * you specify any attributes that are part of an index key, then the data types
+     * for those attributes must match those of the schema in the table's attribute
      * definition.</p> </li> </ul> </li> </ul>
      */
     inline BatchWriteItemRequest& AddRequestItems(Aws::String&& key, const Aws::Vector<WriteRequest>& value) { m_requestItemsHasBeenSet = true; m_requestItems[key] = value; return *this; }
 
     /**
      * <p>A map of one or more table names and, for each table, a list of operations to
-     * be performed (<i>DeleteRequest</i> or <i>PutRequest</i>). Each element in the
-     * map consists of the following:</p> <ul> <li> <p> <i>DeleteRequest</i> - Perform
-     * a <i>DeleteItem</i> operation on the specified item. The item to be deleted is
-     * identified by a <i>Key</i> subelement:</p> <ul> <li> <p> <i>Key</i> - A map of
-     * primary key attribute values that uniquely identify the ! item. Each entry in
-     * this map consists of an attribute name and an attribute value. For each primary
-     * key, you must provide <i>all</i> of the key attributes. For example, with a
-     * simple primary key, you only need to provide a value for the partition key. For
-     * a composite primary key, you must provide values for <i>both</i> the partition
-     * key and the sort key.</p> </li> </ul> </li> <li> <p> <i>PutRequest</i> - Perform
-     * a <i>PutItem</i> operation on the specified item. The item to be put is
-     * identified by an <i>Item</i> subelement:</p> <ul> <li> <p> <i>Item</i> - A map
-     * of attributes and their values. Each entry in this map consists of an attribute
-     * name and an attribute value. Attribute values must not be null; string and
-     * binary type attributes must have lengths greater than zero; and set type
-     * attributes must not be empty. Requests that contain empty values will be
-     * rejected with a <i>ValidationException</i> exception.</p> <p>If you specify any
-     * attributes that are part of an index key, then the data types for those
-     * attributes must match those of the schema in the table's attribute
+     * be performed (<code>DeleteRequest</code> or <code>PutRequest</code>). Each
+     * element in the map consists of the following:</p> <ul> <li> <p>
+     * <code>DeleteRequest</code> - Perform a <code>DeleteItem</code> operation on the
+     * specified item. The item to be deleted is identified by a <code>Key</code>
+     * subelement:</p> <ul> <li> <p> <code>Key</code> - A map of primary key attribute
+     * values that uniquely identify the ! item. Each entry in this map consists of an
+     * attribute name and an attribute value. For each primary key, you must provide
+     * <i>all</i> of the key attributes. For example, with a simple primary key, you
+     * only need to provide a value for the partition key. For a composite primary key,
+     * you must provide values for <i>both</i> the partition key and the sort key.</p>
+     * </li> </ul> </li> <li> <p> <code>PutRequest</code> - Perform a
+     * <code>PutItem</code> operation on the specified item. The item to be put is
+     * identified by an <code>Item</code> subelement:</p> <ul> <li> <p>
+     * <code>Item</code> - A map of attributes and their values. Each entry in this map
+     * consists of an attribute name and an attribute value. Attribute values must not
+     * be null; string and binary type attributes must have lengths greater than zero;
+     * and set type attributes must not be empty. Requests that contain empty values
+     * will be rejected with a <code>ValidationException</code> exception.</p> <p>If
+     * you specify any attributes that are part of an index key, then the data types
+     * for those attributes must match those of the schema in the table's attribute
      * definition.</p> </li> </ul> </li> </ul>
      */
     inline BatchWriteItemRequest& AddRequestItems(const Aws::String& key, Aws::Vector<WriteRequest>&& value) { m_requestItemsHasBeenSet = true; m_requestItems[key] = value; return *this; }
 
     /**
      * <p>A map of one or more table names and, for each table, a list of operations to
-     * be performed (<i>DeleteRequest</i> or <i>PutRequest</i>). Each element in the
-     * map consists of the following:</p> <ul> <li> <p> <i>DeleteRequest</i> - Perform
-     * a <i>DeleteItem</i> operation on the specified item. The item to be deleted is
-     * identified by a <i>Key</i> subelement:</p> <ul> <li> <p> <i>Key</i> - A map of
-     * primary key attribute values that uniquely identify the ! item. Each entry in
-     * this map consists of an attribute name and an attribute value. For each primary
-     * key, you must provide <i>all</i> of the key attributes. For example, with a
-     * simple primary key, you only need to provide a value for the partition key. For
-     * a composite primary key, you must provide values for <i>both</i> the partition
-     * key and the sort key.</p> </li> </ul> </li> <li> <p> <i>PutRequest</i> - Perform
-     * a <i>PutItem</i> operation on the specified item. The item to be put is
-     * identified by an <i>Item</i> subelement:</p> <ul> <li> <p> <i>Item</i> - A map
-     * of attributes and their values. Each entry in this map consists of an attribute
-     * name and an attribute value. Attribute values must not be null; string and
-     * binary type attributes must have lengths greater than zero; and set type
-     * attributes must not be empty. Requests that contain empty values will be
-     * rejected with a <i>ValidationException</i> exception.</p> <p>If you specify any
-     * attributes that are part of an index key, then the data types for those
-     * attributes must match those of the schema in the table's attribute
+     * be performed (<code>DeleteRequest</code> or <code>PutRequest</code>). Each
+     * element in the map consists of the following:</p> <ul> <li> <p>
+     * <code>DeleteRequest</code> - Perform a <code>DeleteItem</code> operation on the
+     * specified item. The item to be deleted is identified by a <code>Key</code>
+     * subelement:</p> <ul> <li> <p> <code>Key</code> - A map of primary key attribute
+     * values that uniquely identify the ! item. Each entry in this map consists of an
+     * attribute name and an attribute value. For each primary key, you must provide
+     * <i>all</i> of the key attributes. For example, with a simple primary key, you
+     * only need to provide a value for the partition key. For a composite primary key,
+     * you must provide values for <i>both</i> the partition key and the sort key.</p>
+     * </li> </ul> </li> <li> <p> <code>PutRequest</code> - Perform a
+     * <code>PutItem</code> operation on the specified item. The item to be put is
+     * identified by an <code>Item</code> subelement:</p> <ul> <li> <p>
+     * <code>Item</code> - A map of attributes and their values. Each entry in this map
+     * consists of an attribute name and an attribute value. Attribute values must not
+     * be null; string and binary type attributes must have lengths greater than zero;
+     * and set type attributes must not be empty. Requests that contain empty values
+     * will be rejected with a <code>ValidationException</code> exception.</p> <p>If
+     * you specify any attributes that are part of an index key, then the data types
+     * for those attributes must match those of the schema in the table's attribute
      * definition.</p> </li> </ul> </li> </ul>
      */
     inline BatchWriteItemRequest& AddRequestItems(Aws::String&& key, Aws::Vector<WriteRequest>&& value) { m_requestItemsHasBeenSet = true; m_requestItems[key] = value; return *this; }
 
     /**
      * <p>A map of one or more table names and, for each table, a list of operations to
-     * be performed (<i>DeleteRequest</i> or <i>PutRequest</i>). Each element in the
-     * map consists of the following:</p> <ul> <li> <p> <i>DeleteRequest</i> - Perform
-     * a <i>DeleteItem</i> operation on the specified item. The item to be deleted is
-     * identified by a <i>Key</i> subelement:</p> <ul> <li> <p> <i>Key</i> - A map of
-     * primary key attribute values that uniquely identify the ! item. Each entry in
-     * this map consists of an attribute name and an attribute value. For each primary
-     * key, you must provide <i>all</i> of the key attributes. For example, with a
-     * simple primary key, you only need to provide a value for the partition key. For
-     * a composite primary key, you must provide values for <i>both</i> the partition
-     * key and the sort key.</p> </li> </ul> </li> <li> <p> <i>PutRequest</i> - Perform
-     * a <i>PutItem</i> operation on the specified item. The item to be put is
-     * identified by an <i>Item</i> subelement:</p> <ul> <li> <p> <i>Item</i> - A map
-     * of attributes and their values. Each entry in this map consists of an attribute
-     * name and an attribute value. Attribute values must not be null; string and
-     * binary type attributes must have lengths greater than zero; and set type
-     * attributes must not be empty. Requests that contain empty values will be
-     * rejected with a <i>ValidationException</i> exception.</p> <p>If you specify any
-     * attributes that are part of an index key, then the data types for those
-     * attributes must match those of the schema in the table's attribute
+     * be performed (<code>DeleteRequest</code> or <code>PutRequest</code>). Each
+     * element in the map consists of the following:</p> <ul> <li> <p>
+     * <code>DeleteRequest</code> - Perform a <code>DeleteItem</code> operation on the
+     * specified item. The item to be deleted is identified by a <code>Key</code>
+     * subelement:</p> <ul> <li> <p> <code>Key</code> - A map of primary key attribute
+     * values that uniquely identify the ! item. Each entry in this map consists of an
+     * attribute name and an attribute value. For each primary key, you must provide
+     * <i>all</i> of the key attributes. For example, with a simple primary key, you
+     * only need to provide a value for the partition key. For a composite primary key,
+     * you must provide values for <i>both</i> the partition key and the sort key.</p>
+     * </li> </ul> </li> <li> <p> <code>PutRequest</code> - Perform a
+     * <code>PutItem</code> operation on the specified item. The item to be put is
+     * identified by an <code>Item</code> subelement:</p> <ul> <li> <p>
+     * <code>Item</code> - A map of attributes and their values. Each entry in this map
+     * consists of an attribute name and an attribute value. Attribute values must not
+     * be null; string and binary type attributes must have lengths greater than zero;
+     * and set type attributes must not be empty. Requests that contain empty values
+     * will be rejected with a <code>ValidationException</code> exception.</p> <p>If
+     * you specify any attributes that are part of an index key, then the data types
+     * for those attributes must match those of the schema in the table's attribute
      * definition.</p> </li> </ul> </li> </ul>
      */
     inline BatchWriteItemRequest& AddRequestItems(const char* key, Aws::Vector<WriteRequest>&& value) { m_requestItemsHasBeenSet = true; m_requestItems[key] = value; return *this; }
 
     /**
      * <p>A map of one or more table names and, for each table, a list of operations to
-     * be performed (<i>DeleteRequest</i> or <i>PutRequest</i>). Each element in the
-     * map consists of the following:</p> <ul> <li> <p> <i>DeleteRequest</i> - Perform
-     * a <i>DeleteItem</i> operation on the specified item. The item to be deleted is
-     * identified by a <i>Key</i> subelement:</p> <ul> <li> <p> <i>Key</i> - A map of
-     * primary key attribute values that uniquely identify the ! item. Each entry in
-     * this map consists of an attribute name and an attribute value. For each primary
-     * key, you must provide <i>all</i> of the key attributes. For example, with a
-     * simple primary key, you only need to provide a value for the partition key. For
-     * a composite primary key, you must provide values for <i>both</i> the partition
-     * key and the sort key.</p> </li> </ul> </li> <li> <p> <i>PutRequest</i> - Perform
-     * a <i>PutItem</i> operation on the specified item. The item to be put is
-     * identified by an <i>Item</i> subelement:</p> <ul> <li> <p> <i>Item</i> - A map
-     * of attributes and their values. Each entry in this map consists of an attribute
-     * name and an attribute value. Attribute values must not be null; string and
-     * binary type attributes must have lengths greater than zero; and set type
-     * attributes must not be empty. Requests that contain empty values will be
-     * rejected with a <i>ValidationException</i> exception.</p> <p>If you specify any
-     * attributes that are part of an index key, then the data types for those
-     * attributes must match those of the schema in the table's attribute
+     * be performed (<code>DeleteRequest</code> or <code>PutRequest</code>). Each
+     * element in the map consists of the following:</p> <ul> <li> <p>
+     * <code>DeleteRequest</code> - Perform a <code>DeleteItem</code> operation on the
+     * specified item. The item to be deleted is identified by a <code>Key</code>
+     * subelement:</p> <ul> <li> <p> <code>Key</code> - A map of primary key attribute
+     * values that uniquely identify the ! item. Each entry in this map consists of an
+     * attribute name and an attribute value. For each primary key, you must provide
+     * <i>all</i> of the key attributes. For example, with a simple primary key, you
+     * only need to provide a value for the partition key. For a composite primary key,
+     * you must provide values for <i>both</i> the partition key and the sort key.</p>
+     * </li> </ul> </li> <li> <p> <code>PutRequest</code> - Perform a
+     * <code>PutItem</code> operation on the specified item. The item to be put is
+     * identified by an <code>Item</code> subelement:</p> <ul> <li> <p>
+     * <code>Item</code> - A map of attributes and their values. Each entry in this map
+     * consists of an attribute name and an attribute value. Attribute values must not
+     * be null; string and binary type attributes must have lengths greater than zero;
+     * and set type attributes must not be empty. Requests that contain empty values
+     * will be rejected with a <code>ValidationException</code> exception.</p> <p>If
+     * you specify any attributes that are part of an index key, then the data types
+     * for those attributes must match those of the schema in the table's attribute
      * definition.</p> </li> </ul> </li> </ul>
      */
     inline BatchWriteItemRequest& AddRequestItems(const char* key, const Aws::Vector<WriteRequest>& value) { m_requestItemsHasBeenSet = true; m_requestItems[key] = value; return *this; }

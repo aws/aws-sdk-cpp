@@ -33,7 +33,7 @@ namespace Model
 {
 
   /**
-   * <p>Represents a request to perform a <i>DeleteItem</i> operation on an
+   * <p>Represents a request to perform a <code>DeleteItem</code> operation on an
    * item.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DeleteRequest">AWS
    * API Reference</a></p>

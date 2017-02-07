@@ -33,7 +33,9 @@ InstanceSummary::InstanceSummary() :
     m_status(InstanceStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_lastUpdatedAtHasBeenSet(false),
-    m_lifecycleEventsHasBeenSet(false)
+    m_lifecycleEventsHasBeenSet(false),
+    m_instanceType(InstanceType::NOT_SET),
+    m_instanceTypeHasBeenSet(false)
 {
 }
 
@@ -43,7 +45,9 @@ InstanceSummary::InstanceSummary(const JsonValue& jsonValue) :
     m_status(InstanceStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_lastUpdatedAtHasBeenSet(false),
-    m_lifecycleEventsHasBeenSet(false)
+    m_lifecycleEventsHasBeenSet(false),
+    m_instanceType(InstanceType::NOT_SET),
+    m_instanceTypeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -88,6 +92,13 @@ InstanceSummary& InstanceSummary::operator =(const JsonValue& jsonValue)
     m_lifecycleEventsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("instanceType"))
+  {
+    m_instanceType = InstanceTypeMapper::GetInstanceTypeForName(jsonValue.GetString("instanceType"));
+
+    m_instanceTypeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -126,6 +137,11 @@ JsonValue InstanceSummary::Jsonize() const
    }
    payload.WithArray("lifecycleEvents", std::move(lifecycleEventsJsonList));
 
+  }
+
+  if(m_instanceTypeHasBeenSet)
+  {
+   payload.WithString("instanceType", InstanceTypeMapper::GetNameForInstanceType(m_instanceType));
   }
 
   return payload;

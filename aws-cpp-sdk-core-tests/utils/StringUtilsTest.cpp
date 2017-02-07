@@ -15,7 +15,6 @@
 
 
 #include <aws/external/gtest.h>
-#include <aws/testing/MemoryTesting.h>
 
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
@@ -26,8 +25,6 @@ using namespace Aws::Utils;
 
 TEST(StringUtilsTest, TestSplitHappyPath)
 {
-    AWS_BEGIN_MEMORY_TEST(16, 10)
-
     Aws::String toSplit = "test1,test2,test3,test4";
     Aws::Vector<Aws::String> splits = StringUtils::Split(toSplit, ',');
 
@@ -36,14 +33,10 @@ TEST(StringUtilsTest, TestSplitHappyPath)
     EXPECT_STREQ("test2", splits[1].c_str());
     EXPECT_STREQ("test3", splits[2].c_str());
     EXPECT_STREQ("test4", splits[3].c_str());
-
-    AWS_END_MEMORY_TEST
 }
 
 TEST(StringUtilsTest, TestSplitOnLineHappyPath)
 {
-    AWS_BEGIN_MEMORY_TEST(16, 10)
-
     Aws::StringStream ss;
     ss << "test1" << std::endl << "test2" << std::endl << "test3" << std::endl << "test4";
     Aws::String toSplit = ss.str();
@@ -54,15 +47,11 @@ TEST(StringUtilsTest, TestSplitOnLineHappyPath)
     EXPECT_STREQ("test1", splits[0].c_str());
     EXPECT_STREQ("test2", splits[1].c_str());
     EXPECT_STREQ("test3", splits[2].c_str());
-    EXPECT_STREQ("test4", splits[3].c_str());
-
-    AWS_END_MEMORY_TEST
+    EXPECT_STREQ("test4", splits[3].c_str());    
 }
 
 TEST(StringUtilsTest, TestSplitWithDelimiterOnTheFrontAndBack)
 {
-    AWS_BEGIN_MEMORY_TEST(16, 10)
-
     Aws::String toSplit = ",test1,test2,test3,test4,";
 
     Aws::Vector<Aws::String> splits = StringUtils::Split(toSplit, ',');
@@ -71,92 +60,64 @@ TEST(StringUtilsTest, TestSplitWithDelimiterOnTheFrontAndBack)
     EXPECT_STREQ("test1", splits[0].c_str());
     EXPECT_STREQ("test2", splits[1].c_str());
     EXPECT_STREQ("test3", splits[2].c_str());
-    EXPECT_STREQ("test4", splits[3].c_str());
-
-    AWS_END_MEMORY_TEST
+    EXPECT_STREQ("test4", splits[3].c_str());    
 }
 
 TEST(StringUtilsTest, TestSplitWithEmptyString)
 {
-    AWS_BEGIN_MEMORY_TEST(16, 10)
-
     Aws::String toSplit = "";
 
     Aws::Vector<Aws::String> splits = StringUtils::Split(toSplit, ',');
 
     ASSERT_EQ(0uL, splits.size());
-
-    AWS_END_MEMORY_TEST
 }
 
 TEST(StringUtilsTest, TestSplitDelimiterNotFound)
 {
-    AWS_BEGIN_MEMORY_TEST(16, 10)
-
     Aws::String toSplit = "BlahBlahBlah";
 
     Aws::Vector<Aws::String> splits = StringUtils::Split(toSplit, ',');
 
     ASSERT_EQ(1uL, splits.size());
-
-    AWS_END_MEMORY_TEST
 }
 
 TEST(StringUtilsTest, TestToLower)
 {
-    AWS_BEGIN_MEMORY_TEST(16, 10)
-
     Aws::String toMakeLower = "Make Me Lower Case";
     Aws::String lowered = StringUtils::ToLower(toMakeLower.c_str());
 
     EXPECT_STREQ("make me lower case", lowered.c_str());
-
-    AWS_END_MEMORY_TEST
 }
 
 TEST(StringUtilsTest, TestToUpper)
 {
-    AWS_BEGIN_MEMORY_TEST(16, 10)
-
     Aws::String toMakeUpper = "Make Me Upper Case";
     Aws::String uppered = StringUtils::ToUpper(toMakeUpper.c_str());
 
     EXPECT_STREQ("MAKE ME UPPER CASE", uppered.c_str());
-
-    AWS_END_MEMORY_TEST
 }
 
 TEST(StringUtilsTest, TestCaselessComparison)
 {
-    AWS_BEGIN_MEMORY_TEST(16, 10)
-
     static const char* upperCase = "WE ARE the Same";
     static const char* lowerCase = "we are the same";
     static const char* bad = "We Are Not the same";
 
     EXPECT_TRUE(StringUtils::CaselessCompare(upperCase, lowerCase));
-    EXPECT_FALSE(StringUtils::CaselessCompare(lowerCase, bad));
-
-    AWS_END_MEMORY_TEST
+    EXPECT_FALSE(StringUtils::CaselessCompare(lowerCase, bad));    
 }
 
 TEST(StringUtilsTest, TestTrim)
 {
-    AWS_BEGIN_MEMORY_TEST(16, 10)
-
     Aws::String toTrim = " \n\t Trim me\n\t ";
 
     ASSERT_STREQ("Trim me\n\t ", StringUtils::LTrim(toTrim.c_str()).c_str());
     ASSERT_STREQ(" \n\t Trim me", StringUtils::RTrim(toTrim.c_str()).c_str());
     EXPECT_STREQ("Trim me", StringUtils::Trim(toTrim.c_str()).c_str());
-
-    AWS_END_MEMORY_TEST
 }
 
 TEST(StringUtilsTest, TestURLEncodeAndDecode)
 {
-    AWS_BEGIN_MEMORY_TEST(16, 10)
-
     Aws::String toEncode = "/Test Path/value=reserved%!";
 
     //test the encoding happened and was deterministic
@@ -177,8 +138,6 @@ TEST(StringUtilsTest, TestURLEncodeAndDecode)
     //test that a string that doesn't need encoding is not altered.
     Aws::String shouldBeTheSameAsEncoded = StringUtils::URLEncode("IShouldNotChange");
     ASSERT_STREQ("IShouldNotChange", shouldBeTheSameAsEncoded.c_str());
-
-    AWS_END_MEMORY_TEST
 }
 
 TEST(StringUtilsTest, TestInt64Conversion)
@@ -254,34 +213,24 @@ TEST(StringUtilsTest, TestUnicodeURLDecoding)
 
 TEST(StringUtilsTest, TestWCharToString)
 {
-    AWS_BEGIN_MEMORY_TEST(16, 10)
-
     static const wchar_t* wcharString = L"Test this string";
 
     Aws::String outString = StringUtils::FromWString(wcharString);
 
     ASSERT_STREQ("Test this string", outString.c_str());
-
-    AWS_END_MEMORY_TEST
 }
 
 TEST(StringUtilsTest, TestCharToWString)
 {
-    AWS_BEGIN_MEMORY_TEST(16, 10)
-
     static const char* charString = "Test this string";
 
     Aws::WString outString = StringUtils::ToWString(charString);
 
     ASSERT_STREQ(L"Test this string", outString.c_str());
-
-    AWS_END_MEMORY_TEST
 }
 
 TEST(StringUtilsTest, TestWStringNonAsciiToString)
 {
-    AWS_BEGIN_MEMORY_TEST(16, 10)
-
     Aws::WString startString;
 
     // Toss in a couple ascii characters to start, then go over 127
@@ -313,14 +262,10 @@ TEST(StringUtilsTest, TestWStringNonAsciiToString)
     // Verify the length, not the values though
     outString = StringUtils::FromWString(startString.c_str());
     ASSERT_EQ(outString.length(), loopCount * 2);
-
-    AWS_END_MEMORY_TEST
 }
 
 TEST(StringUtilsTest, TestStringNonAsciiToWString)
 {
-    AWS_BEGIN_MEMORY_TEST(16, 10)
-
     Aws::String startString;
 
     const char startVal = 115;
@@ -334,8 +279,6 @@ TEST(StringUtilsTest, TestStringNonAsciiToWString)
 
     Aws::WString outString = StringUtils::ToWString(startString.c_str());
     ASSERT_EQ(outString.length(), loopCount);
-
-    AWS_END_MEMORY_TEST
 }
 
 #endif

@@ -33,6 +33,7 @@
 #include <aws/codedeploy/model/BatchGetDeploymentInstancesRequest.h>
 #include <aws/codedeploy/model/BatchGetDeploymentsRequest.h>
 #include <aws/codedeploy/model/BatchGetOnPremisesInstancesRequest.h>
+#include <aws/codedeploy/model/ContinueDeploymentRequest.h>
 #include <aws/codedeploy/model/CreateApplicationRequest.h>
 #include <aws/codedeploy/model/CreateDeploymentRequest.h>
 #include <aws/codedeploy/model/CreateDeploymentConfigRequest.h>
@@ -58,6 +59,7 @@
 #include <aws/codedeploy/model/RegisterApplicationRevisionRequest.h>
 #include <aws/codedeploy/model/RegisterOnPremisesInstanceRequest.h>
 #include <aws/codedeploy/model/RemoveTagsFromOnPremisesInstancesRequest.h>
+#include <aws/codedeploy/model/SkipWaitTimeForInstanceTerminationRequest.h>
 #include <aws/codedeploy/model/StopDeploymentRequest.h>
 #include <aws/codedeploy/model/UpdateApplicationRequest.h>
 #include <aws/codedeploy/model/UpdateDeploymentGroupRequest.h>
@@ -362,6 +364,40 @@ void CodeDeployClient::BatchGetOnPremisesInstancesAsync(const BatchGetOnPremises
 void CodeDeployClient::BatchGetOnPremisesInstancesAsyncHelper(const BatchGetOnPremisesInstancesRequest& request, const BatchGetOnPremisesInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, BatchGetOnPremisesInstances(request), context);
+}
+
+ContinueDeploymentOutcome CodeDeployClient::ContinueDeployment(const ContinueDeploymentRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return ContinueDeploymentOutcome(NoResult());
+  }
+  else
+  {
+    return ContinueDeploymentOutcome(outcome.GetError());
+  }
+}
+
+ContinueDeploymentOutcomeCallable CodeDeployClient::ContinueDeploymentCallable(const ContinueDeploymentRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ContinueDeploymentOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ContinueDeployment(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CodeDeployClient::ContinueDeploymentAsync(const ContinueDeploymentRequest& request, const ContinueDeploymentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ContinueDeploymentAsyncHelper( request, handler, context ); } );
+}
+
+void CodeDeployClient::ContinueDeploymentAsyncHelper(const ContinueDeploymentRequest& request, const ContinueDeploymentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ContinueDeployment(request), context);
 }
 
 CreateApplicationOutcome CodeDeployClient::CreateApplication(const CreateApplicationRequest& request) const
@@ -1212,6 +1248,40 @@ void CodeDeployClient::RemoveTagsFromOnPremisesInstancesAsync(const RemoveTagsFr
 void CodeDeployClient::RemoveTagsFromOnPremisesInstancesAsyncHelper(const RemoveTagsFromOnPremisesInstancesRequest& request, const RemoveTagsFromOnPremisesInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, RemoveTagsFromOnPremisesInstances(request), context);
+}
+
+SkipWaitTimeForInstanceTerminationOutcome CodeDeployClient::SkipWaitTimeForInstanceTermination(const SkipWaitTimeForInstanceTerminationRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return SkipWaitTimeForInstanceTerminationOutcome(NoResult());
+  }
+  else
+  {
+    return SkipWaitTimeForInstanceTerminationOutcome(outcome.GetError());
+  }
+}
+
+SkipWaitTimeForInstanceTerminationOutcomeCallable CodeDeployClient::SkipWaitTimeForInstanceTerminationCallable(const SkipWaitTimeForInstanceTerminationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< SkipWaitTimeForInstanceTerminationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->SkipWaitTimeForInstanceTermination(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CodeDeployClient::SkipWaitTimeForInstanceTerminationAsync(const SkipWaitTimeForInstanceTerminationRequest& request, const SkipWaitTimeForInstanceTerminationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->SkipWaitTimeForInstanceTerminationAsyncHelper( request, handler, context ); } );
+}
+
+void CodeDeployClient::SkipWaitTimeForInstanceTerminationAsyncHelper(const SkipWaitTimeForInstanceTerminationRequest& request, const SkipWaitTimeForInstanceTerminationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, SkipWaitTimeForInstanceTermination(request), context);
 }
 
 StopDeploymentOutcome CodeDeployClient::StopDeployment(const StopDeploymentRequest& request) const

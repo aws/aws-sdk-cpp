@@ -47,6 +47,7 @@
 #include <aws/elasticloadbalancingv2/model/ModifyTargetGroupAttributesResult.h>
 #include <aws/elasticloadbalancingv2/model/RegisterTargetsResult.h>
 #include <aws/elasticloadbalancingv2/model/RemoveTagsResult.h>
+#include <aws/elasticloadbalancingv2/model/SetIpAddressTypeResult.h>
 #include <aws/elasticloadbalancingv2/model/SetRulePrioritiesResult.h>
 #include <aws/elasticloadbalancingv2/model/SetSecurityGroupsResult.h>
 #include <aws/elasticloadbalancingv2/model/SetSubnetsResult.h>
@@ -121,6 +122,7 @@ namespace Model
         class ModifyTargetGroupAttributesRequest;
         class RegisterTargetsRequest;
         class RemoveTagsRequest;
+        class SetIpAddressTypeRequest;
         class SetRulePrioritiesRequest;
         class SetSecurityGroupsRequest;
         class SetSubnetsRequest;
@@ -151,6 +153,7 @@ namespace Model
         typedef Aws::Utils::Outcome<ModifyTargetGroupAttributesResult, Aws::Client::AWSError<ElasticLoadBalancingv2Errors>> ModifyTargetGroupAttributesOutcome;
         typedef Aws::Utils::Outcome<RegisterTargetsResult, Aws::Client::AWSError<ElasticLoadBalancingv2Errors>> RegisterTargetsOutcome;
         typedef Aws::Utils::Outcome<RemoveTagsResult, Aws::Client::AWSError<ElasticLoadBalancingv2Errors>> RemoveTagsOutcome;
+        typedef Aws::Utils::Outcome<SetIpAddressTypeResult, Aws::Client::AWSError<ElasticLoadBalancingv2Errors>> SetIpAddressTypeOutcome;
         typedef Aws::Utils::Outcome<SetRulePrioritiesResult, Aws::Client::AWSError<ElasticLoadBalancingv2Errors>> SetRulePrioritiesOutcome;
         typedef Aws::Utils::Outcome<SetSecurityGroupsResult, Aws::Client::AWSError<ElasticLoadBalancingv2Errors>> SetSecurityGroupsOutcome;
         typedef Aws::Utils::Outcome<SetSubnetsResult, Aws::Client::AWSError<ElasticLoadBalancingv2Errors>> SetSubnetsOutcome;
@@ -181,6 +184,7 @@ namespace Model
         typedef std::future<ModifyTargetGroupAttributesOutcome> ModifyTargetGroupAttributesOutcomeCallable;
         typedef std::future<RegisterTargetsOutcome> RegisterTargetsOutcomeCallable;
         typedef std::future<RemoveTagsOutcome> RemoveTagsOutcomeCallable;
+        typedef std::future<SetIpAddressTypeOutcome> SetIpAddressTypeOutcomeCallable;
         typedef std::future<SetRulePrioritiesOutcome> SetRulePrioritiesOutcomeCallable;
         typedef std::future<SetSecurityGroupsOutcome> SetSecurityGroupsOutcomeCallable;
         typedef std::future<SetSubnetsOutcome> SetSubnetsOutcomeCallable;
@@ -214,6 +218,7 @@ namespace Model
     typedef std::function<void(const ElasticLoadBalancingv2Client*, const Model::ModifyTargetGroupAttributesRequest&, const Model::ModifyTargetGroupAttributesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyTargetGroupAttributesResponseReceivedHandler;
     typedef std::function<void(const ElasticLoadBalancingv2Client*, const Model::RegisterTargetsRequest&, const Model::RegisterTargetsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RegisterTargetsResponseReceivedHandler;
     typedef std::function<void(const ElasticLoadBalancingv2Client*, const Model::RemoveTagsRequest&, const Model::RemoveTagsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RemoveTagsResponseReceivedHandler;
+    typedef std::function<void(const ElasticLoadBalancingv2Client*, const Model::SetIpAddressTypeRequest&, const Model::SetIpAddressTypeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SetIpAddressTypeResponseReceivedHandler;
     typedef std::function<void(const ElasticLoadBalancingv2Client*, const Model::SetRulePrioritiesRequest&, const Model::SetRulePrioritiesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SetRulePrioritiesResponseReceivedHandler;
     typedef std::function<void(const ElasticLoadBalancingv2Client*, const Model::SetSecurityGroupsRequest&, const Model::SetSecurityGroupsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SetSecurityGroupsResponseReceivedHandler;
     typedef std::function<void(const ElasticLoadBalancingv2Client*, const Model::SetSubnetsRequest&, const Model::SetSubnetsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SetSubnetsResponseReceivedHandler;
@@ -376,15 +381,16 @@ namespace Model
         virtual void CreateListenerAsync(const Model::CreateListenerRequest& request, const CreateListenerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates an Application Load Balancer.</p> <p>To create listeners for your
-         * load balancer, use <a>CreateListener</a>. You can add security groups, subnets,
-         * and tags when you create your load balancer, or you can add them later using
-         * <a>SetSecurityGroups</a>, <a>SetSubnets</a>, and <a>AddTags</a>.</p> <p>To
-         * describe your current load balancers, see <a>DescribeLoadBalancers</a>. When you
-         * are finished with a load balancer, you can delete it using
-         * <a>DeleteLoadBalancer</a>.</p> <p>You can create up to 20 load balancers per
-         * region per account. You can request an increase for the number of load balancers
-         * for your account. For more information, see <a
+         * <p>Creates an Application Load Balancer.</p> <p>When you create a load balancer,
+         * you can specify security groups, subnets, IP address type, and tags. Otherwise,
+         * you could do so later using <a>SetSecurityGroups</a>, <a>SetSubnets</a>,
+         * <a>SetIpAddressType</a>, and <a>AddTags</a>.</p> <p>To create listeners for your
+         * load balancer, use <a>CreateListener</a>. To describe your current load
+         * balancers, see <a>DescribeLoadBalancers</a>. When you are finished with a load
+         * balancer, you can delete it using <a>DeleteLoadBalancer</a>.</p> <p>You can
+         * create up to 20 load balancers per region per account. You can request an
+         * increase for the number of load balancers for your account. For more
+         * information, see <a
          * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-limits.html">Limits
          * for Your Application Load Balancer</a> in the <i>Application Load Balancers
          * Guide</i>.</p> <p>For more information, see <a
@@ -397,15 +403,16 @@ namespace Model
         virtual Model::CreateLoadBalancerOutcome CreateLoadBalancer(const Model::CreateLoadBalancerRequest& request) const;
 
         /**
-         * <p>Creates an Application Load Balancer.</p> <p>To create listeners for your
-         * load balancer, use <a>CreateListener</a>. You can add security groups, subnets,
-         * and tags when you create your load balancer, or you can add them later using
-         * <a>SetSecurityGroups</a>, <a>SetSubnets</a>, and <a>AddTags</a>.</p> <p>To
-         * describe your current load balancers, see <a>DescribeLoadBalancers</a>. When you
-         * are finished with a load balancer, you can delete it using
-         * <a>DeleteLoadBalancer</a>.</p> <p>You can create up to 20 load balancers per
-         * region per account. You can request an increase for the number of load balancers
-         * for your account. For more information, see <a
+         * <p>Creates an Application Load Balancer.</p> <p>When you create a load balancer,
+         * you can specify security groups, subnets, IP address type, and tags. Otherwise,
+         * you could do so later using <a>SetSecurityGroups</a>, <a>SetSubnets</a>,
+         * <a>SetIpAddressType</a>, and <a>AddTags</a>.</p> <p>To create listeners for your
+         * load balancer, use <a>CreateListener</a>. To describe your current load
+         * balancers, see <a>DescribeLoadBalancers</a>. When you are finished with a load
+         * balancer, you can delete it using <a>DeleteLoadBalancer</a>.</p> <p>You can
+         * create up to 20 load balancers per region per account. You can request an
+         * increase for the number of load balancers for your account. For more
+         * information, see <a
          * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-limits.html">Limits
          * for Your Application Load Balancer</a> in the <i>Application Load Balancers
          * Guide</i>.</p> <p>For more information, see <a
@@ -420,15 +427,16 @@ namespace Model
         virtual Model::CreateLoadBalancerOutcomeCallable CreateLoadBalancerCallable(const Model::CreateLoadBalancerRequest& request) const;
 
         /**
-         * <p>Creates an Application Load Balancer.</p> <p>To create listeners for your
-         * load balancer, use <a>CreateListener</a>. You can add security groups, subnets,
-         * and tags when you create your load balancer, or you can add them later using
-         * <a>SetSecurityGroups</a>, <a>SetSubnets</a>, and <a>AddTags</a>.</p> <p>To
-         * describe your current load balancers, see <a>DescribeLoadBalancers</a>. When you
-         * are finished with a load balancer, you can delete it using
-         * <a>DeleteLoadBalancer</a>.</p> <p>You can create up to 20 load balancers per
-         * region per account. You can request an increase for the number of load balancers
-         * for your account. For more information, see <a
+         * <p>Creates an Application Load Balancer.</p> <p>When you create a load balancer,
+         * you can specify security groups, subnets, IP address type, and tags. Otherwise,
+         * you could do so later using <a>SetSecurityGroups</a>, <a>SetSubnets</a>,
+         * <a>SetIpAddressType</a>, and <a>AddTags</a>.</p> <p>To create listeners for your
+         * load balancer, use <a>CreateListener</a>. To describe your current load
+         * balancers, see <a>DescribeLoadBalancers</a>. When you are finished with a load
+         * balancer, you can delete it using <a>DeleteLoadBalancer</a>.</p> <p>You can
+         * create up to 20 load balancers per region per account. You can request an
+         * increase for the number of load balancers for your account. For more
+         * information, see <a
          * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-limits.html">Limits
          * for Your Application Load Balancer</a> in the <i>Application Load Balancers
          * Guide</i>.</p> <p>For more information, see <a
@@ -1156,9 +1164,9 @@ namespace Model
          * protocol and port number for the target group. Alternatively, you can override
          * the port for a target when you register it.</p> <p>The target must be in the
          * virtual private cloud (VPC) that you specified for the target group. If the
-         * target is an EC2 instance, it can't be in the <code>stopped</code> or
-         * <code>running</code> state when you register it.</p> <p>To remove a target from
-         * a target group, use <a>DeregisterTargets</a>.</p><p><h3>See Also:</h3>   <a
+         * target is an EC2 instance, it must be in the <code>running</code> state when you
+         * register it.</p> <p>To remove a target from a target group, use
+         * <a>DeregisterTargets</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/RegisterTargets">AWS
          * API Reference</a></p>
          */
@@ -1170,9 +1178,9 @@ namespace Model
          * protocol and port number for the target group. Alternatively, you can override
          * the port for a target when you register it.</p> <p>The target must be in the
          * virtual private cloud (VPC) that you specified for the target group. If the
-         * target is an EC2 instance, it can't be in the <code>stopped</code> or
-         * <code>running</code> state when you register it.</p> <p>To remove a target from
-         * a target group, use <a>DeregisterTargets</a>.</p><p><h3>See Also:</h3>   <a
+         * target is an EC2 instance, it must be in the <code>running</code> state when you
+         * register it.</p> <p>To remove a target from a target group, use
+         * <a>DeregisterTargets</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/RegisterTargets">AWS
          * API Reference</a></p>
          *
@@ -1186,9 +1194,9 @@ namespace Model
          * protocol and port number for the target group. Alternatively, you can override
          * the port for a target when you register it.</p> <p>The target must be in the
          * virtual private cloud (VPC) that you specified for the target group. If the
-         * target is an EC2 instance, it can't be in the <code>stopped</code> or
-         * <code>running</code> state when you register it.</p> <p>To remove a target from
-         * a target group, use <a>DeregisterTargets</a>.</p><p><h3>See Also:</h3>   <a
+         * target is an EC2 instance, it must be in the <code>running</code> state when you
+         * register it.</p> <p>To remove a target from a target group, use
+         * <a>DeregisterTargets</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/RegisterTargets">AWS
          * API Reference</a></p>
          *
@@ -1226,6 +1234,34 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void RemoveTagsAsync(const Model::RemoveTagsRequest& request, const RemoveTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Sets the type of IP addresses used by the subnets of the specified
+         * Application Load Balancer.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/SetIpAddressType">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::SetIpAddressTypeOutcome SetIpAddressType(const Model::SetIpAddressTypeRequest& request) const;
+
+        /**
+         * <p>Sets the type of IP addresses used by the subnets of the specified
+         * Application Load Balancer.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/SetIpAddressType">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::SetIpAddressTypeOutcomeCallable SetIpAddressTypeCallable(const Model::SetIpAddressTypeRequest& request) const;
+
+        /**
+         * <p>Sets the type of IP addresses used by the subnets of the specified
+         * Application Load Balancer.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/SetIpAddressType">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void SetIpAddressTypeAsync(const Model::SetIpAddressTypeRequest& request, const SetIpAddressTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Sets the priorities of the specified rules.</p> <p>You can reorder the rules
@@ -1354,6 +1390,7 @@ namespace Model
         void ModifyTargetGroupAttributesAsyncHelper(const Model::ModifyTargetGroupAttributesRequest& request, const ModifyTargetGroupAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RegisterTargetsAsyncHelper(const Model::RegisterTargetsRequest& request, const RegisterTargetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RemoveTagsAsyncHelper(const Model::RemoveTagsRequest& request, const RemoveTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void SetIpAddressTypeAsyncHelper(const Model::SetIpAddressTypeRequest& request, const SetIpAddressTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void SetRulePrioritiesAsyncHelper(const Model::SetRulePrioritiesRequest& request, const SetRulePrioritiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void SetSecurityGroupsAsyncHelper(const Model::SetSecurityGroupsRequest& request, const SetSecurityGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void SetSubnetsAsyncHelper(const Model::SetSubnetsRequest& request, const SetSubnetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

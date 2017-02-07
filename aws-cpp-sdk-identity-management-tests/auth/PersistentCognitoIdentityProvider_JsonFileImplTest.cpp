@@ -32,11 +32,11 @@ public:
 
     void SetUp()
     {
-	Aws::String dateTime = DateTime::Now().CalculateGmtTimestampAsString("%H_%M_%S_%Y_%m_%d");
+        Aws::String dateTime = DateTime::Now().CalculateGmtTimestampAsString("%H_%M_%S_%Y_%m_%d");
 #ifdef __ANDROID__
-	tempFile = Aws::Platform::GetCacheDirectory() + dateTime;
+        tempFile = Aws::Platform::GetCacheDirectory() + dateTime;
 #else
-	tempFile = dateTime;
+        tempFile = dateTime;
 #endif // __ANDROID__
     }
 

@@ -273,22 +273,16 @@ namespace Model
         virtual void DeleteCertificateAsync(const Model::DeleteCertificateRequest& request, const DeleteCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns a list of the fields contained in the specified ACM Certificate. For
-         * example, this action returns the certificate status, a flag that indicates
-         * whether the certificate is associated with any other AWS service, and the date
-         * at which the certificate request was created. You specify the ACM Certificate on
-         * input by its Amazon Resource Name (ARN).</p><p><h3>See Also:</h3>   <a
+         * <p>Returns detailed metadata about the specified ACM Certificate.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/DescribeCertificate">AWS
          * API Reference</a></p>
          */
         virtual Model::DescribeCertificateOutcome DescribeCertificate(const Model::DescribeCertificateRequest& request) const;
 
         /**
-         * <p>Returns a list of the fields contained in the specified ACM Certificate. For
-         * example, this action returns the certificate status, a flag that indicates
-         * whether the certificate is associated with any other AWS service, and the date
-         * at which the certificate request was created. You specify the ACM Certificate on
-         * input by its Amazon Resource Name (ARN).</p><p><h3>See Also:</h3>   <a
+         * <p>Returns detailed metadata about the specified ACM Certificate.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/DescribeCertificate">AWS
          * API Reference</a></p>
          *
@@ -297,11 +291,8 @@ namespace Model
         virtual Model::DescribeCertificateOutcomeCallable DescribeCertificateCallable(const Model::DescribeCertificateRequest& request) const;
 
         /**
-         * <p>Returns a list of the fields contained in the specified ACM Certificate. For
-         * example, this action returns the certificate status, a flag that indicates
-         * whether the certificate is associated with any other AWS service, and the date
-         * at which the certificate request was created. You specify the ACM Certificate on
-         * input by its Amazon Resource Name (ARN).</p><p><h3>See Also:</h3>   <a
+         * <p>Returns detailed metadata about the specified ACM Certificate.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/DescribeCertificate">AWS
          * API Reference</a></p>
          *
@@ -482,9 +473,10 @@ namespace Model
 
         /**
          * <p>Lists the tags that have been applied to the ACM Certificate. Use the
-         * certificate ARN to specify the certificate. To add a tag to an ACM Certificate,
-         * use the <a>AddTagsToCertificate</a> action. To delete a tag, use the
-         * <a>RemoveTagsFromCertificate</a> action.</p><p><h3>See Also:</h3>   <a
+         * certificate's Amazon Resource Name (ARN) to specify the certificate. To add a
+         * tag to an ACM Certificate, use the <a>AddTagsToCertificate</a> action. To delete
+         * a tag, use the <a>RemoveTagsFromCertificate</a> action.</p><p><h3>See Also:</h3>
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/ListTagsForCertificate">AWS
          * API Reference</a></p>
          */
@@ -492,9 +484,10 @@ namespace Model
 
         /**
          * <p>Lists the tags that have been applied to the ACM Certificate. Use the
-         * certificate ARN to specify the certificate. To add a tag to an ACM Certificate,
-         * use the <a>AddTagsToCertificate</a> action. To delete a tag, use the
-         * <a>RemoveTagsFromCertificate</a> action.</p><p><h3>See Also:</h3>   <a
+         * certificate's Amazon Resource Name (ARN) to specify the certificate. To add a
+         * tag to an ACM Certificate, use the <a>AddTagsToCertificate</a> action. To delete
+         * a tag, use the <a>RemoveTagsFromCertificate</a> action.</p><p><h3>See Also:</h3>
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/ListTagsForCertificate">AWS
          * API Reference</a></p>
          *
@@ -504,9 +497,10 @@ namespace Model
 
         /**
          * <p>Lists the tags that have been applied to the ACM Certificate. Use the
-         * certificate ARN to specify the certificate. To add a tag to an ACM Certificate,
-         * use the <a>AddTagsToCertificate</a> action. To delete a tag, use the
-         * <a>RemoveTagsFromCertificate</a> action.</p><p><h3>See Also:</h3>   <a
+         * certificate's Amazon Resource Name (ARN) to specify the certificate. To add a
+         * tag to an ACM Certificate, use the <a>AddTagsToCertificate</a> action. To delete
+         * a tag, use the <a>RemoveTagsFromCertificate</a> action.</p><p><h3>See Also:</h3>
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/ListTagsForCertificate">AWS
          * API Reference</a></p>
          *

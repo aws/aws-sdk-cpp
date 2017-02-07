@@ -21,6 +21,7 @@
 #include <aws/elasticloadbalancingv2/model/LoadBalancerState.h>
 #include <aws/elasticloadbalancingv2/model/LoadBalancerTypeEnum.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/elasticloadbalancingv2/model/IpAddressType.h>
 #include <aws/elasticloadbalancingv2/model/AvailabilityZone.h>
 
 namespace Aws
@@ -444,6 +445,41 @@ namespace Model
      */
     inline LoadBalancer& AddSecurityGroups(const char* value) { m_securityGroupsHasBeenSet = true; m_securityGroups.push_back(value); return *this; }
 
+    /**
+     * <p>The type of IP addresses used by the subnets for your load balancer. The
+     * possible values are <code>ipv4</code> (for IPv4 addresses) and
+     * <code>dualstack</code> (for IPv4 and IPv6 addresses).</p>
+     */
+    inline const IpAddressType& GetIpAddressType() const{ return m_ipAddressType; }
+
+    /**
+     * <p>The type of IP addresses used by the subnets for your load balancer. The
+     * possible values are <code>ipv4</code> (for IPv4 addresses) and
+     * <code>dualstack</code> (for IPv4 and IPv6 addresses).</p>
+     */
+    inline void SetIpAddressType(const IpAddressType& value) { m_ipAddressTypeHasBeenSet = true; m_ipAddressType = value; }
+
+    /**
+     * <p>The type of IP addresses used by the subnets for your load balancer. The
+     * possible values are <code>ipv4</code> (for IPv4 addresses) and
+     * <code>dualstack</code> (for IPv4 and IPv6 addresses).</p>
+     */
+    inline void SetIpAddressType(IpAddressType&& value) { m_ipAddressTypeHasBeenSet = true; m_ipAddressType = value; }
+
+    /**
+     * <p>The type of IP addresses used by the subnets for your load balancer. The
+     * possible values are <code>ipv4</code> (for IPv4 addresses) and
+     * <code>dualstack</code> (for IPv4 and IPv6 addresses).</p>
+     */
+    inline LoadBalancer& WithIpAddressType(const IpAddressType& value) { SetIpAddressType(value); return *this;}
+
+    /**
+     * <p>The type of IP addresses used by the subnets for your load balancer. The
+     * possible values are <code>ipv4</code> (for IPv4 addresses) and
+     * <code>dualstack</code> (for IPv4 and IPv6 addresses).</p>
+     */
+    inline LoadBalancer& WithIpAddressType(IpAddressType&& value) { SetIpAddressType(value); return *this;}
+
   private:
     Aws::String m_loadBalancerArn;
     bool m_loadBalancerArnHasBeenSet;
@@ -467,6 +503,8 @@ namespace Model
     bool m_availabilityZonesHasBeenSet;
     Aws::Vector<Aws::String> m_securityGroups;
     bool m_securityGroupsHasBeenSet;
+    IpAddressType m_ipAddressType;
+    bool m_ipAddressTypeHasBeenSet;
   };
 
 } // namespace Model

@@ -45,86 +45,72 @@ namespace Model
     Aws::Utils::Json::JsonValue Jsonize() const;
 
     /**
-     * <p>The name of the Amazon CloudWatch Logs group for the associated build
-     * logs.</p>
+     * <p>The name of the Amazon CloudWatch Logs group for the build logs.</p>
      */
     inline const Aws::String& GetGroupName() const{ return m_groupName; }
 
     /**
-     * <p>The name of the Amazon CloudWatch Logs group for the associated build
-     * logs.</p>
+     * <p>The name of the Amazon CloudWatch Logs group for the build logs.</p>
      */
     inline void SetGroupName(const Aws::String& value) { m_groupNameHasBeenSet = true; m_groupName = value; }
 
     /**
-     * <p>The name of the Amazon CloudWatch Logs group for the associated build
-     * logs.</p>
+     * <p>The name of the Amazon CloudWatch Logs group for the build logs.</p>
      */
     inline void SetGroupName(Aws::String&& value) { m_groupNameHasBeenSet = true; m_groupName = value; }
 
     /**
-     * <p>The name of the Amazon CloudWatch Logs group for the associated build
-     * logs.</p>
+     * <p>The name of the Amazon CloudWatch Logs group for the build logs.</p>
      */
     inline void SetGroupName(const char* value) { m_groupNameHasBeenSet = true; m_groupName.assign(value); }
 
     /**
-     * <p>The name of the Amazon CloudWatch Logs group for the associated build
-     * logs.</p>
+     * <p>The name of the Amazon CloudWatch Logs group for the build logs.</p>
      */
     inline LogsLocation& WithGroupName(const Aws::String& value) { SetGroupName(value); return *this;}
 
     /**
-     * <p>The name of the Amazon CloudWatch Logs group for the associated build
-     * logs.</p>
+     * <p>The name of the Amazon CloudWatch Logs group for the build logs.</p>
      */
     inline LogsLocation& WithGroupName(Aws::String&& value) { SetGroupName(value); return *this;}
 
     /**
-     * <p>The name of the Amazon CloudWatch Logs group for the associated build
-     * logs.</p>
+     * <p>The name of the Amazon CloudWatch Logs group for the build logs.</p>
      */
     inline LogsLocation& WithGroupName(const char* value) { SetGroupName(value); return *this;}
 
     /**
-     * <p>The name of the Amazon CloudWatch Logs stream for the associated build
-     * logs.</p>
+     * <p>The name of the Amazon CloudWatch Logs stream for the build logs.</p>
      */
     inline const Aws::String& GetStreamName() const{ return m_streamName; }
 
     /**
-     * <p>The name of the Amazon CloudWatch Logs stream for the associated build
-     * logs.</p>
+     * <p>The name of the Amazon CloudWatch Logs stream for the build logs.</p>
      */
     inline void SetStreamName(const Aws::String& value) { m_streamNameHasBeenSet = true; m_streamName = value; }
 
     /**
-     * <p>The name of the Amazon CloudWatch Logs stream for the associated build
-     * logs.</p>
+     * <p>The name of the Amazon CloudWatch Logs stream for the build logs.</p>
      */
     inline void SetStreamName(Aws::String&& value) { m_streamNameHasBeenSet = true; m_streamName = value; }
 
     /**
-     * <p>The name of the Amazon CloudWatch Logs stream for the associated build
-     * logs.</p>
+     * <p>The name of the Amazon CloudWatch Logs stream for the build logs.</p>
      */
     inline void SetStreamName(const char* value) { m_streamNameHasBeenSet = true; m_streamName.assign(value); }
 
     /**
-     * <p>The name of the Amazon CloudWatch Logs stream for the associated build
-     * logs.</p>
+     * <p>The name of the Amazon CloudWatch Logs stream for the build logs.</p>
      */
     inline LogsLocation& WithStreamName(const Aws::String& value) { SetStreamName(value); return *this;}
 
     /**
-     * <p>The name of the Amazon CloudWatch Logs stream for the associated build
-     * logs.</p>
+     * <p>The name of the Amazon CloudWatch Logs stream for the build logs.</p>
      */
     inline LogsLocation& WithStreamName(Aws::String&& value) { SetStreamName(value); return *this;}
 
     /**
-     * <p>The name of the Amazon CloudWatch Logs stream for the associated build
-     * logs.</p>
+     * <p>The name of the Amazon CloudWatch Logs stream for the build logs.</p>
      */
     inline LogsLocation& WithStreamName(const char* value) { SetStreamName(value); return *this;}
 

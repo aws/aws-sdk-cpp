@@ -36,6 +36,7 @@
 #include <aws/core/client/CoreErrors.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/Outcome.h>
+#include <aws/testing/TestingEnvironment.h>
 
 using namespace Aws::CognitoIdentity;
 using namespace Aws::CognitoIdentity::Model;
@@ -46,6 +47,11 @@ using namespace Aws::Client;
 namespace
 {
 static const char* ALLOCATION_TAG = "IdentityPoolOperationTest";
+
+Aws::String GetResourcePrefix()
+{
+    return Aws::Testing::GetAwsResourcePrefix() + TEST_POOL_PREFIX;
+}
 
 class IdentityPoolOperationTest : public ::testing::Test
 {
@@ -71,13 +77,15 @@ protected:
 
     void CleanupPreviousFailedTests()
     {
-        size_t prefixLength = strlen(TEST_POOL_PREFIX);
+        Aws::String resourcePrefix = GetResourcePrefix();
+
+        size_t prefixLength = resourcePrefix.length();
 
         Aws::Vector<IdentityPoolShortDescription> pools = GetAllPools();
         for (auto& pool : pools)
         {
             // Only delete integration test pools
-            if (pool.GetIdentityPoolName().compare(0, prefixLength, TEST_POOL_PREFIX) == 0)
+            if (pool.GetIdentityPoolName().compare(0, prefixLength, resourcePrefix) == 0)
             {
                 DeleteIdentityPoolRequest deleteIdentityPoolRequest;
                 deleteIdentityPoolRequest.WithIdentityPoolId(pool.GetIdentityPoolId());
@@ -105,7 +113,7 @@ protected:
 TEST_F(IdentityPoolOperationTest, TestCreateGetUpdateDeleteOperations)
 {
     std::size_t initialPoolCount = GetAllPools().size();
-    Aws::String identityPoolName = TEST_POOL_PREFIX;
+    Aws::String identityPoolName = GetResourcePrefix();
     identityPoolName += "BatCave";
     CreateIdentityPoolRequest createIdentityPoolRequest;
     createIdentityPoolRequest.WithDeveloperProviderName("BruceWayne")
@@ -163,7 +171,7 @@ TEST_F(IdentityPoolOperationTest, TestCreateGetUpdateDeleteOperations)
 
 TEST_F(IdentityPoolOperationTest, TestExceptionProperlyPropgates)
 {
-    Aws::String identityPoolName = TEST_POOL_PREFIX;
+    Aws::String identityPoolName = GetResourcePrefix();
     identityPoolName += "Bat Cave";
 
     CreateIdentityPoolRequest createIdentityPoolRequest;
@@ -180,7 +188,7 @@ TEST_F(IdentityPoolOperationTest, TestExceptionProperlyPropgates)
 
 TEST_F(IdentityPoolOperationTest, TestIdentityActions)
 {
-    Aws::String identityPoolName = TEST_POOL_PREFIX;
+    Aws::String identityPoolName = GetResourcePrefix();
     identityPoolName += "FortressOfSolitude";
     CreateIdentityPoolRequest createIdentityPoolRequest;
     createIdentityPoolRequest.WithDeveloperProviderName("Superman")

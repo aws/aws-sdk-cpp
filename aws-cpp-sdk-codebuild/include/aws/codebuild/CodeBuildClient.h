@@ -128,12 +128,12 @@ namespace Model
     typedef std::function<void(const CodeBuildClient*, const Model::UpdateProjectRequest&, const Model::UpdateProjectOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateProjectResponseReceivedHandler;
 
   /**
-   * <fullname>AWS CodeBuild</fullname> <p>AWS CodeBuild is a fully-managed build
+   * <fullname>AWS CodeBuild</fullname> <p>AWS CodeBuild is a fully managed build
    * service in the cloud. AWS CodeBuild compiles your source code, runs unit tests,
    * and produces artifacts that are ready to deploy. AWS CodeBuild eliminates the
    * need to provision, manage, and scale your own build servers. It provides
    * prepackaged build environments for the most popular programming languages and
-   * build tools such as Apach Maven, Gradle, and more. You can also fully customize
+   * build tools, such as Apach Maven, Gradle, and more. You can also fully customize
    * build environments in AWS CodeBuild to use your own build tools. AWS CodeBuild
    * scales automatically to meet peak build requests, and you pay only for the build
    * time you consume. For more information about AWS CodeBuild, see the <i>AWS
@@ -188,14 +188,14 @@ namespace Model
         virtual ~CodeBuildClient();
 
         /**
-         * <p>Gets information about one or more builds.</p><p><h3>See Also:</h3>   <a
+         * <p>Gets information about builds.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/BatchGetBuilds">AWS
          * API Reference</a></p>
          */
         virtual Model::BatchGetBuildsOutcome BatchGetBuilds(const Model::BatchGetBuildsRequest& request) const;
 
         /**
-         * <p>Gets information about one or more builds.</p><p><h3>See Also:</h3>   <a
+         * <p>Gets information about builds.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/BatchGetBuilds">AWS
          * API Reference</a></p>
          *
@@ -204,7 +204,7 @@ namespace Model
         virtual Model::BatchGetBuildsOutcomeCallable BatchGetBuildsCallable(const Model::BatchGetBuildsRequest& request) const;
 
         /**
-         * <p>Gets information about one or more builds.</p><p><h3>See Also:</h3>   <a
+         * <p>Gets information about builds.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/BatchGetBuilds">AWS
          * API Reference</a></p>
          *
@@ -213,16 +213,14 @@ namespace Model
         virtual void BatchGetBuildsAsync(const Model::BatchGetBuildsRequest& request, const BatchGetBuildsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Gets information about one or more build projects.</p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Gets information about build projects.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/BatchGetProjects">AWS
          * API Reference</a></p>
          */
         virtual Model::BatchGetProjectsOutcome BatchGetProjects(const Model::BatchGetProjectsRequest& request) const;
 
         /**
-         * <p>Gets information about one or more build projects.</p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Gets information about build projects.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/BatchGetProjects">AWS
          * API Reference</a></p>
          *
@@ -231,8 +229,7 @@ namespace Model
         virtual Model::BatchGetProjectsOutcomeCallable BatchGetProjectsCallable(const Model::BatchGetProjectsRequest& request) const;
 
         /**
-         * <p>Gets information about one or more build projects.</p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Gets information about build projects.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/BatchGetProjects">AWS
          * API Reference</a></p>
          *
@@ -428,16 +425,14 @@ namespace Model
         virtual void StartBuildAsync(const Model::StartBuildRequest& request, const StartBuildResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Attempts to stop running a build.</p> <note> <p>Completed builds cannot be
-         * stopped.</p> </note><p><h3>See Also:</h3>   <a
+         * <p>Attempts to stop running a build.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/StopBuild">AWS
          * API Reference</a></p>
          */
         virtual Model::StopBuildOutcome StopBuild(const Model::StopBuildRequest& request) const;
 
         /**
-         * <p>Attempts to stop running a build.</p> <note> <p>Completed builds cannot be
-         * stopped.</p> </note><p><h3>See Also:</h3>   <a
+         * <p>Attempts to stop running a build.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/StopBuild">AWS
          * API Reference</a></p>
          *
@@ -446,8 +441,7 @@ namespace Model
         virtual Model::StopBuildOutcomeCallable StopBuildCallable(const Model::StopBuildRequest& request) const;
 
         /**
-         * <p>Attempts to stop running a build.</p> <note> <p>Completed builds cannot be
-         * stopped.</p> </note><p><h3>See Also:</h3>   <a
+         * <p>Attempts to stop running a build.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/StopBuild">AWS
          * API Reference</a></p>
          *
@@ -456,16 +450,14 @@ namespace Model
         virtual void StopBuildAsync(const Model::StopBuildRequest& request, const StopBuildResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Changes the settings of an existing build project.</p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Changes the settings of a build project.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/UpdateProject">AWS
          * API Reference</a></p>
          */
         virtual Model::UpdateProjectOutcome UpdateProject(const Model::UpdateProjectRequest& request) const;
 
         /**
-         * <p>Changes the settings of an existing build project.</p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Changes the settings of a build project.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/UpdateProject">AWS
          * API Reference</a></p>
          *
@@ -474,8 +466,7 @@ namespace Model
         virtual Model::UpdateProjectOutcomeCallable UpdateProjectCallable(const Model::UpdateProjectRequest& request) const;
 
         /**
-         * <p>Changes the settings of an existing build project.</p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Changes the settings of a build project.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/UpdateProject">AWS
          * API Reference</a></p>
          *

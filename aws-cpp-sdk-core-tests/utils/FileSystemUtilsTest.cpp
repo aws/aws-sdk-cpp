@@ -17,7 +17,6 @@
 #include <aws/core/utils/FileSystemUtils.h>
 #include <aws/core/utils/memory/stl/AWSSet.h>
 #include <aws/external/gtest.h>
-#include <aws/testing/MemoryTesting.h>
 
 #include <fstream>
 
@@ -109,7 +108,7 @@ public:
 
     void TearDown() override
     {
-        Aws::FileSystem::DeepDeleteDirectory(dir1.c_str());
+        EXPECT_TRUE(Aws::FileSystem::DeepDeleteDirectory(dir1.c_str()));
     }
 };
 
@@ -178,6 +177,8 @@ TEST_F(DirectoryTreeTest, TestDirectoryTreeEqualityOperator)
 {
     Aws::FileSystem::DirectoryTree tree(dir1);
 
+	ASSERT_TRUE(tree);
+
     Aws::String comparisonDirectory = Aws::FileSystem::Join(Aws::FileSystem::GetHomeDirectory(), "compDir");
     ASSERT_TRUE(Aws::FileSystem::DeepCopyDirectory(dir1.c_str(), comparisonDirectory.c_str()));
     EXPECT_TRUE(tree == comparisonDirectory);
@@ -221,6 +222,8 @@ TEST_F(DirectoryTreeTest, TestDirectoryTreeDiff)
 TEST_F(DirectoryTreeTest, TestDirectoryTreeBreadthFirstTraversal)
 {
     Aws::FileSystem::DirectoryTree tree(dir1);
+
+	ASSERT_TRUE(tree);
 
     Aws::Set<Aws::String> paths({ dir2, file1, file2 });
 

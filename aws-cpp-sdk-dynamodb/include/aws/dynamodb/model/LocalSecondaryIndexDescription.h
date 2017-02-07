@@ -180,19 +180,39 @@ namespace Model
      */
     inline LocalSecondaryIndexDescription& AddKeySchema(KeySchemaElement&& value) { m_keySchemaHasBeenSet = true; m_keySchema.push_back(value); return *this; }
 
-    
+    /**
+     * <p>Represents attributes that are copied (projected) from the table into the
+     * global secondary index. These are in addition to the primary key attributes and
+     * index key attributes, which are automatically projected. </p>
+     */
     inline const Projection& GetProjection() const{ return m_projection; }
 
-    
+    /**
+     * <p>Represents attributes that are copied (projected) from the table into the
+     * global secondary index. These are in addition to the primary key attributes and
+     * index key attributes, which are automatically projected. </p>
+     */
     inline void SetProjection(const Projection& value) { m_projectionHasBeenSet = true; m_projection = value; }
 
-    
+    /**
+     * <p>Represents attributes that are copied (projected) from the table into the
+     * global secondary index. These are in addition to the primary key attributes and
+     * index key attributes, which are automatically projected. </p>
+     */
     inline void SetProjection(Projection&& value) { m_projectionHasBeenSet = true; m_projection = value; }
 
-    
+    /**
+     * <p>Represents attributes that are copied (projected) from the table into the
+     * global secondary index. These are in addition to the primary key attributes and
+     * index key attributes, which are automatically projected. </p>
+     */
     inline LocalSecondaryIndexDescription& WithProjection(const Projection& value) { SetProjection(value); return *this;}
 
-    
+    /**
+     * <p>Represents attributes that are copied (projected) from the table into the
+     * global secondary index. These are in addition to the primary key attributes and
+     * index key attributes, which are automatically projected. </p>
+     */
     inline LocalSecondaryIndexDescription& WithProjection(Projection&& value) { SetProjection(value); return *this;}
 
     /**

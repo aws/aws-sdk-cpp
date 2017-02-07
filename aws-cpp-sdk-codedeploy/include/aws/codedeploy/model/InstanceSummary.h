@@ -18,6 +18,7 @@
 #include <aws/codedeploy/model/InstanceStatus.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/codedeploy/model/InstanceType.h>
 #include <aws/codedeploy/model/LifecycleEvent.h>
 
 namespace Aws
@@ -232,6 +233,46 @@ namespace Model
      */
     inline InstanceSummary& AddLifecycleEvents(LifecycleEvent&& value) { m_lifecycleEventsHasBeenSet = true; m_lifecycleEvents.push_back(value); return *this; }
 
+    /**
+     * <p>Information about which environment an instance belongs to in a blue/green
+     * deployment.</p> <ul> <li> <p>BLUE: The instance is part of the original
+     * environment.</p> </li> <li> <p>GREEN: The instance is part of the replacement
+     * environment.</p> </li> </ul>
+     */
+    inline const InstanceType& GetInstanceType() const{ return m_instanceType; }
+
+    /**
+     * <p>Information about which environment an instance belongs to in a blue/green
+     * deployment.</p> <ul> <li> <p>BLUE: The instance is part of the original
+     * environment.</p> </li> <li> <p>GREEN: The instance is part of the replacement
+     * environment.</p> </li> </ul>
+     */
+    inline void SetInstanceType(const InstanceType& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
+
+    /**
+     * <p>Information about which environment an instance belongs to in a blue/green
+     * deployment.</p> <ul> <li> <p>BLUE: The instance is part of the original
+     * environment.</p> </li> <li> <p>GREEN: The instance is part of the replacement
+     * environment.</p> </li> </ul>
+     */
+    inline void SetInstanceType(InstanceType&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
+
+    /**
+     * <p>Information about which environment an instance belongs to in a blue/green
+     * deployment.</p> <ul> <li> <p>BLUE: The instance is part of the original
+     * environment.</p> </li> <li> <p>GREEN: The instance is part of the replacement
+     * environment.</p> </li> </ul>
+     */
+    inline InstanceSummary& WithInstanceType(const InstanceType& value) { SetInstanceType(value); return *this;}
+
+    /**
+     * <p>Information about which environment an instance belongs to in a blue/green
+     * deployment.</p> <ul> <li> <p>BLUE: The instance is part of the original
+     * environment.</p> </li> <li> <p>GREEN: The instance is part of the replacement
+     * environment.</p> </li> </ul>
+     */
+    inline InstanceSummary& WithInstanceType(InstanceType&& value) { SetInstanceType(value); return *this;}
+
   private:
     Aws::String m_deploymentId;
     bool m_deploymentIdHasBeenSet;
@@ -243,6 +284,8 @@ namespace Model
     bool m_lastUpdatedAtHasBeenSet;
     Aws::Vector<LifecycleEvent> m_lifecycleEvents;
     bool m_lifecycleEventsHasBeenSet;
+    InstanceType m_instanceType;
+    bool m_instanceTypeHasBeenSet;
   };
 
 } // namespace Model

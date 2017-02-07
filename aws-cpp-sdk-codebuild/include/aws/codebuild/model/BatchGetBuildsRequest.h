@@ -36,42 +36,42 @@ namespace Model
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
     /**
-     * <p>The IDs of the builds to get information about.</p>
+     * <p>The IDs of the builds.</p>
      */
     inline const Aws::Vector<Aws::String>& GetIds() const{ return m_ids; }
 
     /**
-     * <p>The IDs of the builds to get information about.</p>
+     * <p>The IDs of the builds.</p>
      */
     inline void SetIds(const Aws::Vector<Aws::String>& value) { m_idsHasBeenSet = true; m_ids = value; }
 
     /**
-     * <p>The IDs of the builds to get information about.</p>
+     * <p>The IDs of the builds.</p>
      */
     inline void SetIds(Aws::Vector<Aws::String>&& value) { m_idsHasBeenSet = true; m_ids = value; }
 
     /**
-     * <p>The IDs of the builds to get information about.</p>
+     * <p>The IDs of the builds.</p>
      */
     inline BatchGetBuildsRequest& WithIds(const Aws::Vector<Aws::String>& value) { SetIds(value); return *this;}
 
     /**
-     * <p>The IDs of the builds to get information about.</p>
+     * <p>The IDs of the builds.</p>
      */
     inline BatchGetBuildsRequest& WithIds(Aws::Vector<Aws::String>&& value) { SetIds(value); return *this;}
 
     /**
-     * <p>The IDs of the builds to get information about.</p>
+     * <p>The IDs of the builds.</p>
      */
     inline BatchGetBuildsRequest& AddIds(const Aws::String& value) { m_idsHasBeenSet = true; m_ids.push_back(value); return *this; }
 
     /**
-     * <p>The IDs of the builds to get information about.</p>
+     * <p>The IDs of the builds.</p>
      */
     inline BatchGetBuildsRequest& AddIds(Aws::String&& value) { m_idsHasBeenSet = true; m_ids.push_back(value); return *this; }
 
     /**
-     * <p>The IDs of the builds to get information about.</p>
+     * <p>The IDs of the builds.</p>
      */
     inline BatchGetBuildsRequest& AddIds(const char* value) { m_idsHasBeenSet = true; m_ids.push_back(value); return *this; }
 
