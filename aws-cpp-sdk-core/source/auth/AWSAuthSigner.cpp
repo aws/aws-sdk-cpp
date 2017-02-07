@@ -115,7 +115,7 @@ static Http::HeaderValueCollection CanonicalizeHeaders(Http::HeaderValueCollecti
         );
         headerValue.erase(new_end, headerValue.end());
 
-        canonicalHeaders[trimmedHeaderName] = headerValue;       
+        canonicalHeaders[trimmedHeaderName] = headerValue;
     }
 
     return canonicalHeaders;
@@ -139,7 +139,7 @@ AWSAuthV4Signer::AWSAuthV4Signer(const std::shared_ptr<Auth::AWSCredentialsProvi
 
 AWSAuthV4Signer::~AWSAuthV4Signer()
 {
-    // empty destructor in .cpp file to keep from needing the implementation of (AWSCredentialsProvider, Sha256, Sha256HMAC) in the header file 
+    // empty destructor in .cpp file to keep from needing the implementation of (AWSCredentialsProvider, Sha256, Sha256HMAC) in the header file
 }
 
 
@@ -328,7 +328,7 @@ bool AWSAuthV4Signer::PresignRequest(Aws::Http::HttpRequest& request, const char
         return false;
     }
 
-    //add that the signature to the query string    
+    //add that the signature to the query string
     request.AddQueryStringParameter(X_AMZ_SIGNATURE, finalSigningHash);
 
     return true;
@@ -341,7 +341,7 @@ Aws::String AWSAuthV4Signer::GenerateSignature(const AWSCredentials& credentials
     Aws::StringStream ss;
 
     auto& partialSignature = ComputeLongLivedHash(credentials.GetAWSSecretKey(), simpleDate);
-        
+
     auto hashResult = m_HMAC->Calculate(ByteBuffer((unsigned char*)stringToSign.c_str(), stringToSign.length()), partialSignature);
     if (!hashResult.IsSuccess())
     {
@@ -412,7 +412,7 @@ const Aws::Utils::Array<unsigned char>& AWSAuthV4Signer::ComputeLongLivedHash(co
 
             //now we do the complicated part of deriving a signing key.
             Aws::String signingKey(SIGNING_KEY);
-            
+
             signingKey.append(m_currentSecretKey);
 
             //we use digest only for the derivation process.
