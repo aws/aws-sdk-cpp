@@ -108,7 +108,7 @@ std::streampos SimpleStreamBuf::seekpos(std::streampos pos, std::ios_base::openm
 
     if (which == std::ios_base::in)
     {
-        setg(m_buffer, m_buffer + static_cast<size_t>(pos), egptr());                    
+        setg(m_buffer, m_buffer + static_cast<size_t>(pos), pptr());                    
     }
 
     if (which == std::ios_base::out)
@@ -195,6 +195,7 @@ std::streamsize SimpleStreamBuf::xsputn(const char* s, std::streamsize n)
             memcpy(current_pptr, s + writeCount, copySize);
             writeCount += copySize;
             setp(current_pptr + copySize, current_epptr);
+            setg(m_buffer, gptr(), pptr());
         }
         else if (overflow(std::char_traits< char >::to_int_type(*(s + writeCount))) != std::char_traits<char>::eof())
         {
