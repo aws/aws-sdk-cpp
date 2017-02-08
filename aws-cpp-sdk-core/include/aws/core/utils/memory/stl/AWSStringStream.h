@@ -34,6 +34,7 @@ namespace Aws
 
 #if defined(_GLIBCXX_FULLY_DYNAMIC_STRING) && _GLIBCXX_FULLY_DYNAMIC_STRING == 0 && defined(__ANDROID__)
 
+// see the large comment block in AWSString.h  for an explanation
 typedef Aws::SimpleStringStream StringStream;
 typedef Aws::SimpleIStringStream IStringStream;
 typedef Aws::SimpleOStringStream OStringStream;
