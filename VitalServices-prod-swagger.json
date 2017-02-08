@@ -1,7 +1,7 @@
 {
   "swagger" : "2.0",
   "info" : {
-    "version" : "2017-01-19T18:11:01Z",
+    "version" : "2017-02-03T14:38:56Z",
     "title" : "VitalServices"
   },
   "host" : "h6wguq9ghl.execute-api.us-east-1.amazonaws.com",
@@ -417,6 +417,34 @@
             "description" : "200 response",
             "schema" : {
               "$ref" : "#/definitions/SearchForDoctorsResult"
+            }
+          },
+          "400" : {
+            "description" : "400 response"
+          }
+        },
+        "security" : [ {
+          "sigv4" : [ ]
+        } ]
+      }
+    },
+    "/search-for-doctors-by-name" : {
+      "post" : {
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "SearchForDoctorsByNameRequest",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/SearchForDoctorsByNameRequest"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "schema" : {
+              "$ref" : "#/definitions/SearchForDoctorsByNameResult"
             }
           },
           "400" : {
@@ -853,6 +881,21 @@
       },
       "title" : "QueryDoctorScheduleResult"
     },
+    "SearchForDoctorsByNameResult" : {
+      "type" : "object",
+      "properties" : {
+        "searchString" : {
+          "type" : "string"
+        },
+        "doctors" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/ClientDoctor"
+          }
+        }
+      },
+      "title" : "SearchForDoctorsByNameResult"
+    },
     "RegisterDoctorRequest" : {
       "type" : "object",
       "required" : [ "officeNumber", "specialtyId" ],
@@ -1231,6 +1274,16 @@
         }
       },
       "title" : "GetDoctorsRequest"
+    },
+    "SearchForDoctorsByNameRequest" : {
+      "type" : "object",
+      "required" : [ "searchString" ],
+      "properties" : {
+        "searchString" : {
+          "type" : "string"
+        }
+      },
+      "title" : "SearchForDoctorsByNameRequest"
     },
     "ClientDoctorService" : {
       "type" : "object",

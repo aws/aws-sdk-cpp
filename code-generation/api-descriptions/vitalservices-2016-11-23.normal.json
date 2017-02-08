@@ -1,10 +1,11 @@
 {
     "version": "2.0",
     "metadata": {
-        "apiVersion": "2017-01-19",
-        "endpointPrefix": "execute-api",
-        "protocol": "json",
-        "serviceFullName": "VitalServices"
+        "apiVersion": "2017-02-03",
+        "endpointPrefix": "h6wguq9ghl.execute-api",
+        "protocol": "application/json",
+        "serviceFullName": "VitalServices",
+        "signingName": "execute-api"
     },
     "operations": {
         "addCreditCard": {
@@ -215,6 +216,20 @@
             },
             "output": {
                 "shape": "SearchForDoctorsResult"
+            }
+        },
+        "searchForDoctorsByName": {
+            "name": "searchForDoctorsByName",
+            "http": {
+                "method": "POST",
+                "requestUri": "/prod/search-for-doctors-by-name",
+                "responseCode": 200
+            },
+            "input": {
+                "shape": "SearchForDoctorsByNameRequest"
+            },
+            "output": {
+                "shape": "SearchForDoctorsByNameResult"
             }
         },
         "setDefaultPaymentSource": {
@@ -575,6 +590,24 @@
                 }
             }
         },
+        "ClientDoctorList": {
+            "type": "list",
+            "member": {
+                "shape": "ClientDoctor"
+            }
+        },
+        "SearchForDoctorsByNameResult": {
+            "type": "structure",
+            "required": [],
+            "members": {
+                "searchString": {
+                    "shape": "string"
+                },
+                "doctors": {
+                    "shape": "ClientDoctorList"
+                }
+            }
+        },
         "RegisterDoctorRequest": {
             "type": "structure",
             "required": [
@@ -796,12 +829,6 @@
                 }
             }
         },
-        "ClientDoctorList": {
-            "type": "list",
-            "member": {
-                "shape": "ClientDoctor"
-            }
-        },
         "SearchForDoctorsResult": {
             "type": "structure",
             "required": [],
@@ -999,6 +1026,17 @@
             "members": {
                 "doctorIds": {
                     "shape": "stringList"
+                }
+            }
+        },
+        "SearchForDoctorsByNameRequest": {
+            "type": "structure",
+            "required": [
+                "searchString"
+            ],
+            "members": {
+                "searchString": {
+                    "shape": "string"
                 }
             }
         },

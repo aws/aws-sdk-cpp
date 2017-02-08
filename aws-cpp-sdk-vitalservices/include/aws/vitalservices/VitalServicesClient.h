@@ -35,6 +35,7 @@
 #include <aws/vitalservices/model/registerUserResult.h>
 #include <aws/vitalservices/model/scheduleAppointmentResult.h>
 #include <aws/vitalservices/model/searchForDoctorsResult.h>
+#include <aws/vitalservices/model/searchForDoctorsByNameResult.h>
 #include <aws/vitalservices/model/setDefaultPaymentSourceResult.h>
 #include <aws/vitalservices/model/updateDoctorResult.h>
 #include <aws/vitalservices/model/updateUserResult.h>
@@ -99,6 +100,7 @@ namespace Model
         class registerUserRequest;
         class scheduleAppointmentRequest;
         class searchForDoctorsRequest;
+        class searchForDoctorsByNameRequest;
         class setDefaultPaymentSourceRequest;
         class updateDoctorRequest;
         class updateUserRequest;
@@ -119,6 +121,7 @@ namespace Model
         typedef Aws::Utils::Outcome<registerUserResult, Aws::Client::AWSError<VitalServicesErrors>> registerUserOutcome;
         typedef Aws::Utils::Outcome<scheduleAppointmentResult, Aws::Client::AWSError<VitalServicesErrors>> scheduleAppointmentOutcome;
         typedef Aws::Utils::Outcome<searchForDoctorsResult, Aws::Client::AWSError<VitalServicesErrors>> searchForDoctorsOutcome;
+        typedef Aws::Utils::Outcome<searchForDoctorsByNameResult, Aws::Client::AWSError<VitalServicesErrors>> searchForDoctorsByNameOutcome;
         typedef Aws::Utils::Outcome<setDefaultPaymentSourceResult, Aws::Client::AWSError<VitalServicesErrors>> setDefaultPaymentSourceOutcome;
         typedef Aws::Utils::Outcome<updateDoctorResult, Aws::Client::AWSError<VitalServicesErrors>> updateDoctorOutcome;
         typedef Aws::Utils::Outcome<updateUserResult, Aws::Client::AWSError<VitalServicesErrors>> updateUserOutcome;
@@ -139,6 +142,7 @@ namespace Model
         typedef std::future<registerUserOutcome> registerUserOutcomeCallable;
         typedef std::future<scheduleAppointmentOutcome> scheduleAppointmentOutcomeCallable;
         typedef std::future<searchForDoctorsOutcome> searchForDoctorsOutcomeCallable;
+        typedef std::future<searchForDoctorsByNameOutcome> searchForDoctorsByNameOutcomeCallable;
         typedef std::future<setDefaultPaymentSourceOutcome> setDefaultPaymentSourceOutcomeCallable;
         typedef std::future<updateDoctorOutcome> updateDoctorOutcomeCallable;
         typedef std::future<updateUserOutcome> updateUserOutcomeCallable;
@@ -162,6 +166,7 @@ namespace Model
     typedef std::function<void(const VitalServicesClient*, const Model::registerUserRequest&, const Model::registerUserOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > registerUserResponseReceivedHandler;
     typedef std::function<void(const VitalServicesClient*, const Model::scheduleAppointmentRequest&, const Model::scheduleAppointmentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > scheduleAppointmentResponseReceivedHandler;
     typedef std::function<void(const VitalServicesClient*, const Model::searchForDoctorsRequest&, const Model::searchForDoctorsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > searchForDoctorsResponseReceivedHandler;
+    typedef std::function<void(const VitalServicesClient*, const Model::searchForDoctorsByNameRequest&, const Model::searchForDoctorsByNameOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > searchForDoctorsByNameResponseReceivedHandler;
     typedef std::function<void(const VitalServicesClient*, const Model::setDefaultPaymentSourceRequest&, const Model::setDefaultPaymentSourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > setDefaultPaymentSourceResponseReceivedHandler;
     typedef std::function<void(const VitalServicesClient*, const Model::updateDoctorRequest&, const Model::updateDoctorOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > updateDoctorResponseReceivedHandler;
     typedef std::function<void(const VitalServicesClient*, const Model::updateUserRequest&, const Model::updateUserOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > updateUserResponseReceivedHandler;
@@ -481,6 +486,25 @@ namespace Model
         /**
          * 
          */
+        virtual Model::searchForDoctorsByNameOutcome searchForDoctorsByName(const Model::searchForDoctorsByNameRequest& request) const;
+
+        /**
+         * 
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::searchForDoctorsByNameOutcomeCallable searchForDoctorsByNameCallable(const Model::searchForDoctorsByNameRequest& request) const;
+
+        /**
+         * 
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void searchForDoctorsByNameAsync(const Model::searchForDoctorsByNameRequest& request, const searchForDoctorsByNameResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * 
+         */
         virtual Model::setDefaultPaymentSourceOutcome setDefaultPaymentSource(const Model::setDefaultPaymentSourceRequest& request) const;
 
         /**
@@ -555,12 +579,6 @@ namespace Model
         virtual void urlForFileAsync(const Model::urlForFileRequest& request, const urlForFileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
 
-        virtual void BuildHttpRequest(const Aws::AmazonWebServiceRequest& request, const std::shared_ptr<Http::HttpRequest>& httpRequest) const override
-        {
-            BASECLASS::BuildHttpRequest(request, httpRequest);
-            httpRequest->SetContentType("application/json");
-        }
-
     private:
       void init(const Client::ClientConfiguration& clientConfiguration);
 
@@ -580,6 +598,7 @@ namespace Model
         void registerUserAsyncHelper(const Model::registerUserRequest& request, const registerUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void scheduleAppointmentAsyncHelper(const Model::scheduleAppointmentRequest& request, const scheduleAppointmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void searchForDoctorsAsyncHelper(const Model::searchForDoctorsRequest& request, const searchForDoctorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void searchForDoctorsByNameAsyncHelper(const Model::searchForDoctorsByNameRequest& request, const searchForDoctorsByNameResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void setDefaultPaymentSourceAsyncHelper(const Model::setDefaultPaymentSourceRequest& request, const setDefaultPaymentSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void updateDoctorAsyncHelper(const Model::updateDoctorRequest& request, const updateDoctorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void updateUserAsyncHelper(const Model::updateUserRequest& request, const updateUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

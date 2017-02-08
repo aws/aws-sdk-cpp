@@ -41,6 +41,7 @@
 #include <aws/vitalservices/model/registerUserRequest.h>
 #include <aws/vitalservices/model/scheduleAppointmentRequest.h>
 #include <aws/vitalservices/model/searchForDoctorsRequest.h>
+#include <aws/vitalservices/model/searchForDoctorsByNameRequest.h>
 #include <aws/vitalservices/model/setDefaultPaymentSourceRequest.h>
 #include <aws/vitalservices/model/updateDoctorRequest.h>
 #include <aws/vitalservices/model/updateUserRequest.h>
@@ -618,6 +619,40 @@ void VitalServicesClient::searchForDoctorsAsync(const searchForDoctorsRequest& r
 void VitalServicesClient::searchForDoctorsAsyncHelper(const searchForDoctorsRequest& request, const searchForDoctorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, searchForDoctors(request), context);
+}
+
+searchForDoctorsByNameOutcome VitalServicesClient::searchForDoctorsByName(const searchForDoctorsByNameRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/prod/search-for-doctors-by-name";
+
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return searchForDoctorsByNameOutcome(searchForDoctorsByNameResult(outcome.GetResult()));
+  }
+  else
+  {
+    return searchForDoctorsByNameOutcome(outcome.GetError());
+  }
+}
+
+searchForDoctorsByNameOutcomeCallable VitalServicesClient::searchForDoctorsByNameCallable(const searchForDoctorsByNameRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< searchForDoctorsByNameOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->searchForDoctorsByName(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void VitalServicesClient::searchForDoctorsByNameAsync(const searchForDoctorsByNameRequest& request, const searchForDoctorsByNameResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->searchForDoctorsByNameAsyncHelper( request, handler, context ); } );
+}
+
+void VitalServicesClient::searchForDoctorsByNameAsyncHelper(const searchForDoctorsByNameRequest& request, const searchForDoctorsByNameResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, searchForDoctorsByName(request), context);
 }
 
 setDefaultPaymentSourceOutcome VitalServicesClient::setDefaultPaymentSource(const setDefaultPaymentSourceRequest& request) const

@@ -33,7 +33,7 @@ namespace VitalServicesEndpoint
     auto hash = Aws::Utils::HashingUtils::HashString(regionName.c_str());
     
     Aws::StringStream ss;
-    ss << "execute-api" << ".";
+    ss << "h6wguq9ghl.execute-api" << ".";
 
     if(useDualStack)
     {
