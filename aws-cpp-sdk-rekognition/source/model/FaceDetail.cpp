@@ -29,6 +29,7 @@ namespace Model
 
 FaceDetail::FaceDetail() : 
     m_boundingBoxHasBeenSet(false),
+    m_ageRangeHasBeenSet(false),
     m_smileHasBeenSet(false),
     m_eyeglassesHasBeenSet(false),
     m_sunglassesHasBeenSet(false),
@@ -48,6 +49,7 @@ FaceDetail::FaceDetail() :
 
 FaceDetail::FaceDetail(const JsonValue& jsonValue) : 
     m_boundingBoxHasBeenSet(false),
+    m_ageRangeHasBeenSet(false),
     m_smileHasBeenSet(false),
     m_eyeglassesHasBeenSet(false),
     m_sunglassesHasBeenSet(false),
@@ -73,6 +75,13 @@ FaceDetail& FaceDetail::operator =(const JsonValue& jsonValue)
     m_boundingBox = jsonValue.GetObject("BoundingBox");
 
     m_boundingBoxHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("AgeRange"))
+  {
+    m_ageRange = jsonValue.GetObject("AgeRange");
+
+    m_ageRangeHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("Smile"))
@@ -182,6 +191,12 @@ JsonValue FaceDetail::Jsonize() const
   if(m_boundingBoxHasBeenSet)
   {
    payload.WithObject("BoundingBox", m_boundingBox.Jsonize());
+
+  }
+
+  if(m_ageRangeHasBeenSet)
+  {
+   payload.WithObject("AgeRange", m_ageRange.Jsonize());
 
   }
 

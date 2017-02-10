@@ -27,6 +27,7 @@
 #include <aws/ec2/model/AllocateHostsResponse.h>
 #include <aws/ec2/model/AssignIpv6AddressesResponse.h>
 #include <aws/ec2/model/AssociateAddressResponse.h>
+#include <aws/ec2/model/AssociateIamInstanceProfileResponse.h>
 #include <aws/ec2/model/AssociateRouteTableResponse.h>
 #include <aws/ec2/model/AssociateSubnetCidrBlockResponse.h>
 #include <aws/ec2/model/AssociateVpcCidrBlockResponse.h>
@@ -86,6 +87,7 @@
 #include <aws/ec2/model/DescribeHostReservationOfferingsResponse.h>
 #include <aws/ec2/model/DescribeHostReservationsResponse.h>
 #include <aws/ec2/model/DescribeHostsResponse.h>
+#include <aws/ec2/model/DescribeIamInstanceProfileAssociationsResponse.h>
 #include <aws/ec2/model/DescribeIdFormatResponse.h>
 #include <aws/ec2/model/DescribeIdentityIdFormatResponse.h>
 #include <aws/ec2/model/DescribeImageAttributeResponse.h>
@@ -141,6 +143,7 @@
 #include <aws/ec2/model/DetachVolumeResponse.h>
 #include <aws/ec2/model/DisableVpcClassicLinkResponse.h>
 #include <aws/ec2/model/DisableVpcClassicLinkDnsSupportResponse.h>
+#include <aws/ec2/model/DisassociateIamInstanceProfileResponse.h>
 #include <aws/ec2/model/DisassociateSubnetCidrBlockResponse.h>
 #include <aws/ec2/model/DisassociateVpcCidrBlockResponse.h>
 #include <aws/ec2/model/EnableVpcClassicLinkResponse.h>
@@ -169,6 +172,7 @@
 #include <aws/ec2/model/RegisterImageResponse.h>
 #include <aws/ec2/model/RejectVpcPeeringConnectionResponse.h>
 #include <aws/ec2/model/ReleaseHostsResponse.h>
+#include <aws/ec2/model/ReplaceIamInstanceProfileAssociationResponse.h>
 #include <aws/ec2/model/ReplaceNetworkAclAssociationResponse.h>
 #include <aws/ec2/model/ReplaceRouteTableAssociationResponse.h>
 #include <aws/ec2/model/RequestSpotFleetResponse.h>
@@ -235,6 +239,7 @@ namespace Model
         class AssignPrivateIpAddressesRequest;
         class AssociateAddressRequest;
         class AssociateDhcpOptionsRequest;
+        class AssociateIamInstanceProfileRequest;
         class AssociateRouteTableRequest;
         class AssociateSubnetCidrBlockRequest;
         class AssociateVpcCidrBlockRequest;
@@ -324,6 +329,7 @@ namespace Model
         class DescribeHostReservationOfferingsRequest;
         class DescribeHostReservationsRequest;
         class DescribeHostsRequest;
+        class DescribeIamInstanceProfileAssociationsRequest;
         class DescribeIdFormatRequest;
         class DescribeIdentityIdFormatRequest;
         class DescribeImageAttributeRequest;
@@ -384,6 +390,7 @@ namespace Model
         class DisableVpcClassicLinkRequest;
         class DisableVpcClassicLinkDnsSupportRequest;
         class DisassociateAddressRequest;
+        class DisassociateIamInstanceProfileRequest;
         class DisassociateRouteTableRequest;
         class DisassociateSubnetCidrBlockRequest;
         class DisassociateVpcCidrBlockRequest;
@@ -426,6 +433,7 @@ namespace Model
         class RejectVpcPeeringConnectionRequest;
         class ReleaseAddressRequest;
         class ReleaseHostsRequest;
+        class ReplaceIamInstanceProfileAssociationRequest;
         class ReplaceNetworkAclAssociationRequest;
         class ReplaceNetworkAclEntryRequest;
         class ReplaceRouteRequest;
@@ -457,6 +465,7 @@ namespace Model
         typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<EC2Errors>> AssignPrivateIpAddressesOutcome;
         typedef Aws::Utils::Outcome<AssociateAddressResponse, Aws::Client::AWSError<EC2Errors>> AssociateAddressOutcome;
         typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<EC2Errors>> AssociateDhcpOptionsOutcome;
+        typedef Aws::Utils::Outcome<AssociateIamInstanceProfileResponse, Aws::Client::AWSError<EC2Errors>> AssociateIamInstanceProfileOutcome;
         typedef Aws::Utils::Outcome<AssociateRouteTableResponse, Aws::Client::AWSError<EC2Errors>> AssociateRouteTableOutcome;
         typedef Aws::Utils::Outcome<AssociateSubnetCidrBlockResponse, Aws::Client::AWSError<EC2Errors>> AssociateSubnetCidrBlockOutcome;
         typedef Aws::Utils::Outcome<AssociateVpcCidrBlockResponse, Aws::Client::AWSError<EC2Errors>> AssociateVpcCidrBlockOutcome;
@@ -546,6 +555,7 @@ namespace Model
         typedef Aws::Utils::Outcome<DescribeHostReservationOfferingsResponse, Aws::Client::AWSError<EC2Errors>> DescribeHostReservationOfferingsOutcome;
         typedef Aws::Utils::Outcome<DescribeHostReservationsResponse, Aws::Client::AWSError<EC2Errors>> DescribeHostReservationsOutcome;
         typedef Aws::Utils::Outcome<DescribeHostsResponse, Aws::Client::AWSError<EC2Errors>> DescribeHostsOutcome;
+        typedef Aws::Utils::Outcome<DescribeIamInstanceProfileAssociationsResponse, Aws::Client::AWSError<EC2Errors>> DescribeIamInstanceProfileAssociationsOutcome;
         typedef Aws::Utils::Outcome<DescribeIdFormatResponse, Aws::Client::AWSError<EC2Errors>> DescribeIdFormatOutcome;
         typedef Aws::Utils::Outcome<DescribeIdentityIdFormatResponse, Aws::Client::AWSError<EC2Errors>> DescribeIdentityIdFormatOutcome;
         typedef Aws::Utils::Outcome<DescribeImageAttributeResponse, Aws::Client::AWSError<EC2Errors>> DescribeImageAttributeOutcome;
@@ -606,6 +616,7 @@ namespace Model
         typedef Aws::Utils::Outcome<DisableVpcClassicLinkResponse, Aws::Client::AWSError<EC2Errors>> DisableVpcClassicLinkOutcome;
         typedef Aws::Utils::Outcome<DisableVpcClassicLinkDnsSupportResponse, Aws::Client::AWSError<EC2Errors>> DisableVpcClassicLinkDnsSupportOutcome;
         typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<EC2Errors>> DisassociateAddressOutcome;
+        typedef Aws::Utils::Outcome<DisassociateIamInstanceProfileResponse, Aws::Client::AWSError<EC2Errors>> DisassociateIamInstanceProfileOutcome;
         typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<EC2Errors>> DisassociateRouteTableOutcome;
         typedef Aws::Utils::Outcome<DisassociateSubnetCidrBlockResponse, Aws::Client::AWSError<EC2Errors>> DisassociateSubnetCidrBlockOutcome;
         typedef Aws::Utils::Outcome<DisassociateVpcCidrBlockResponse, Aws::Client::AWSError<EC2Errors>> DisassociateVpcCidrBlockOutcome;
@@ -648,6 +659,7 @@ namespace Model
         typedef Aws::Utils::Outcome<RejectVpcPeeringConnectionResponse, Aws::Client::AWSError<EC2Errors>> RejectVpcPeeringConnectionOutcome;
         typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<EC2Errors>> ReleaseAddressOutcome;
         typedef Aws::Utils::Outcome<ReleaseHostsResponse, Aws::Client::AWSError<EC2Errors>> ReleaseHostsOutcome;
+        typedef Aws::Utils::Outcome<ReplaceIamInstanceProfileAssociationResponse, Aws::Client::AWSError<EC2Errors>> ReplaceIamInstanceProfileAssociationOutcome;
         typedef Aws::Utils::Outcome<ReplaceNetworkAclAssociationResponse, Aws::Client::AWSError<EC2Errors>> ReplaceNetworkAclAssociationOutcome;
         typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<EC2Errors>> ReplaceNetworkAclEntryOutcome;
         typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<EC2Errors>> ReplaceRouteOutcome;
@@ -679,6 +691,7 @@ namespace Model
         typedef std::future<AssignPrivateIpAddressesOutcome> AssignPrivateIpAddressesOutcomeCallable;
         typedef std::future<AssociateAddressOutcome> AssociateAddressOutcomeCallable;
         typedef std::future<AssociateDhcpOptionsOutcome> AssociateDhcpOptionsOutcomeCallable;
+        typedef std::future<AssociateIamInstanceProfileOutcome> AssociateIamInstanceProfileOutcomeCallable;
         typedef std::future<AssociateRouteTableOutcome> AssociateRouteTableOutcomeCallable;
         typedef std::future<AssociateSubnetCidrBlockOutcome> AssociateSubnetCidrBlockOutcomeCallable;
         typedef std::future<AssociateVpcCidrBlockOutcome> AssociateVpcCidrBlockOutcomeCallable;
@@ -768,6 +781,7 @@ namespace Model
         typedef std::future<DescribeHostReservationOfferingsOutcome> DescribeHostReservationOfferingsOutcomeCallable;
         typedef std::future<DescribeHostReservationsOutcome> DescribeHostReservationsOutcomeCallable;
         typedef std::future<DescribeHostsOutcome> DescribeHostsOutcomeCallable;
+        typedef std::future<DescribeIamInstanceProfileAssociationsOutcome> DescribeIamInstanceProfileAssociationsOutcomeCallable;
         typedef std::future<DescribeIdFormatOutcome> DescribeIdFormatOutcomeCallable;
         typedef std::future<DescribeIdentityIdFormatOutcome> DescribeIdentityIdFormatOutcomeCallable;
         typedef std::future<DescribeImageAttributeOutcome> DescribeImageAttributeOutcomeCallable;
@@ -828,6 +842,7 @@ namespace Model
         typedef std::future<DisableVpcClassicLinkOutcome> DisableVpcClassicLinkOutcomeCallable;
         typedef std::future<DisableVpcClassicLinkDnsSupportOutcome> DisableVpcClassicLinkDnsSupportOutcomeCallable;
         typedef std::future<DisassociateAddressOutcome> DisassociateAddressOutcomeCallable;
+        typedef std::future<DisassociateIamInstanceProfileOutcome> DisassociateIamInstanceProfileOutcomeCallable;
         typedef std::future<DisassociateRouteTableOutcome> DisassociateRouteTableOutcomeCallable;
         typedef std::future<DisassociateSubnetCidrBlockOutcome> DisassociateSubnetCidrBlockOutcomeCallable;
         typedef std::future<DisassociateVpcCidrBlockOutcome> DisassociateVpcCidrBlockOutcomeCallable;
@@ -870,6 +885,7 @@ namespace Model
         typedef std::future<RejectVpcPeeringConnectionOutcome> RejectVpcPeeringConnectionOutcomeCallable;
         typedef std::future<ReleaseAddressOutcome> ReleaseAddressOutcomeCallable;
         typedef std::future<ReleaseHostsOutcome> ReleaseHostsOutcomeCallable;
+        typedef std::future<ReplaceIamInstanceProfileAssociationOutcome> ReplaceIamInstanceProfileAssociationOutcomeCallable;
         typedef std::future<ReplaceNetworkAclAssociationOutcome> ReplaceNetworkAclAssociationOutcomeCallable;
         typedef std::future<ReplaceNetworkAclEntryOutcome> ReplaceNetworkAclEntryOutcomeCallable;
         typedef std::future<ReplaceRouteOutcome> ReplaceRouteOutcomeCallable;
@@ -904,6 +920,7 @@ namespace Model
     typedef std::function<void(const EC2Client*, const Model::AssignPrivateIpAddressesRequest&, const Model::AssignPrivateIpAddressesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssignPrivateIpAddressesResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::AssociateAddressRequest&, const Model::AssociateAddressOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociateAddressResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::AssociateDhcpOptionsRequest&, const Model::AssociateDhcpOptionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociateDhcpOptionsResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::AssociateIamInstanceProfileRequest&, const Model::AssociateIamInstanceProfileOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociateIamInstanceProfileResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::AssociateRouteTableRequest&, const Model::AssociateRouteTableOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociateRouteTableResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::AssociateSubnetCidrBlockRequest&, const Model::AssociateSubnetCidrBlockOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociateSubnetCidrBlockResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::AssociateVpcCidrBlockRequest&, const Model::AssociateVpcCidrBlockOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociateVpcCidrBlockResponseReceivedHandler;
@@ -993,6 +1010,7 @@ namespace Model
     typedef std::function<void(const EC2Client*, const Model::DescribeHostReservationOfferingsRequest&, const Model::DescribeHostReservationOfferingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeHostReservationOfferingsResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DescribeHostReservationsRequest&, const Model::DescribeHostReservationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeHostReservationsResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DescribeHostsRequest&, const Model::DescribeHostsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeHostsResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::DescribeIamInstanceProfileAssociationsRequest&, const Model::DescribeIamInstanceProfileAssociationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeIamInstanceProfileAssociationsResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DescribeIdFormatRequest&, const Model::DescribeIdFormatOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeIdFormatResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DescribeIdentityIdFormatRequest&, const Model::DescribeIdentityIdFormatOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeIdentityIdFormatResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DescribeImageAttributeRequest&, const Model::DescribeImageAttributeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeImageAttributeResponseReceivedHandler;
@@ -1053,6 +1071,7 @@ namespace Model
     typedef std::function<void(const EC2Client*, const Model::DisableVpcClassicLinkRequest&, const Model::DisableVpcClassicLinkOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisableVpcClassicLinkResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DisableVpcClassicLinkDnsSupportRequest&, const Model::DisableVpcClassicLinkDnsSupportOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisableVpcClassicLinkDnsSupportResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DisassociateAddressRequest&, const Model::DisassociateAddressOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateAddressResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::DisassociateIamInstanceProfileRequest&, const Model::DisassociateIamInstanceProfileOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateIamInstanceProfileResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DisassociateRouteTableRequest&, const Model::DisassociateRouteTableOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateRouteTableResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DisassociateSubnetCidrBlockRequest&, const Model::DisassociateSubnetCidrBlockOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateSubnetCidrBlockResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DisassociateVpcCidrBlockRequest&, const Model::DisassociateVpcCidrBlockOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateVpcCidrBlockResponseReceivedHandler;
@@ -1095,6 +1114,7 @@ namespace Model
     typedef std::function<void(const EC2Client*, const Model::RejectVpcPeeringConnectionRequest&, const Model::RejectVpcPeeringConnectionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RejectVpcPeeringConnectionResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::ReleaseAddressRequest&, const Model::ReleaseAddressOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ReleaseAddressResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::ReleaseHostsRequest&, const Model::ReleaseHostsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ReleaseHostsResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::ReplaceIamInstanceProfileAssociationRequest&, const Model::ReplaceIamInstanceProfileAssociationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ReplaceIamInstanceProfileAssociationResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::ReplaceNetworkAclAssociationRequest&, const Model::ReplaceNetworkAclAssociationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ReplaceNetworkAclAssociationResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::ReplaceNetworkAclEntryRequest&, const Model::ReplaceNetworkAclEntryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ReplaceNetworkAclEntryResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::ReplaceRouteRequest&, const Model::ReplaceRouteOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ReplaceRouteResponseReceivedHandler;
@@ -1520,6 +1540,37 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void AssociateDhcpOptionsAsync(const Model::AssociateDhcpOptionsRequest& request, const AssociateDhcpOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Associates an IAM instance profile with a running or stopped instance. You
+         * cannot associate more than one IAM instance profile with an
+         * instance.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateIamInstanceProfile">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::AssociateIamInstanceProfileOutcome AssociateIamInstanceProfile(const Model::AssociateIamInstanceProfileRequest& request) const;
+
+        /**
+         * <p>Associates an IAM instance profile with a running or stopped instance. You
+         * cannot associate more than one IAM instance profile with an
+         * instance.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateIamInstanceProfile">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::AssociateIamInstanceProfileOutcomeCallable AssociateIamInstanceProfileCallable(const Model::AssociateIamInstanceProfileRequest& request) const;
+
+        /**
+         * <p>Associates an IAM instance profile with a running or stopped instance. You
+         * cannot associate more than one IAM instance profile with an
+         * instance.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateIamInstanceProfile">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void AssociateIamInstanceProfileAsync(const Model::AssociateIamInstanceProfileRequest& request, const AssociateIamInstanceProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Associates a subnet with a route table. The subnet and route table must be in
@@ -5544,6 +5595,34 @@ namespace Model
         virtual void DescribeHostsAsync(const Model::DescribeHostsRequest& request, const DescribeHostsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Describes your IAM instance profile associations.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeIamInstanceProfileAssociations">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeIamInstanceProfileAssociationsOutcome DescribeIamInstanceProfileAssociations(const Model::DescribeIamInstanceProfileAssociationsRequest& request) const;
+
+        /**
+         * <p>Describes your IAM instance profile associations.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeIamInstanceProfileAssociations">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeIamInstanceProfileAssociationsOutcomeCallable DescribeIamInstanceProfileAssociationsCallable(const Model::DescribeIamInstanceProfileAssociationsRequest& request) const;
+
+        /**
+         * <p>Describes your IAM instance profile associations.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeIamInstanceProfileAssociations">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeIamInstanceProfileAssociationsAsync(const Model::DescribeIamInstanceProfileAssociationsRequest& request, const DescribeIamInstanceProfileAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Describes the ID format settings for your resources on a per-region basis,
          * for example, to view which resource types are enabled for longer IDs. This
          * request only returns information about resource types whose ID formats can be
@@ -8046,6 +8125,37 @@ namespace Model
         virtual void DisassociateAddressAsync(const Model::DisassociateAddressRequest& request, const DisassociateAddressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Disassociates an IAM instance profile from a running or stopped instance.</p>
+         * <p>Use <a>DescribeIamInstanceProfileAssociations</a> to get the association
+         * ID.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisassociateIamInstanceProfile">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DisassociateIamInstanceProfileOutcome DisassociateIamInstanceProfile(const Model::DisassociateIamInstanceProfileRequest& request) const;
+
+        /**
+         * <p>Disassociates an IAM instance profile from a running or stopped instance.</p>
+         * <p>Use <a>DescribeIamInstanceProfileAssociations</a> to get the association
+         * ID.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisassociateIamInstanceProfile">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DisassociateIamInstanceProfileOutcomeCallable DisassociateIamInstanceProfileCallable(const Model::DisassociateIamInstanceProfileRequest& request) const;
+
+        /**
+         * <p>Disassociates an IAM instance profile from a running or stopped instance.</p>
+         * <p>Use <a>DescribeIamInstanceProfileAssociations</a> to get the association
+         * ID.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisassociateIamInstanceProfile">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DisassociateIamInstanceProfileAsync(const Model::DisassociateIamInstanceProfileRequest& request, const DisassociateIamInstanceProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Disassociates a subnet from a route table.</p> <p>After you perform this
          * action, the subnet no longer uses the routes in the route table. Instead, it
          * uses the routes in the VPC's main route table. For more information about route
@@ -9966,6 +10076,43 @@ namespace Model
         virtual void ReleaseHostsAsync(const Model::ReleaseHostsRequest& request, const ReleaseHostsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Replaces an IAM instance profile for the specified instance. You can use this
+         * action to change the IAM instance profile that's associated with an instance
+         * without having to disassociate the existing IAM instance profile first.</p>
+         * <p>Use <a>DescribeIamInstanceProfileAssociations</a> to get the association
+         * ID.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ReplaceIamInstanceProfileAssociation">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ReplaceIamInstanceProfileAssociationOutcome ReplaceIamInstanceProfileAssociation(const Model::ReplaceIamInstanceProfileAssociationRequest& request) const;
+
+        /**
+         * <p>Replaces an IAM instance profile for the specified instance. You can use this
+         * action to change the IAM instance profile that's associated with an instance
+         * without having to disassociate the existing IAM instance profile first.</p>
+         * <p>Use <a>DescribeIamInstanceProfileAssociations</a> to get the association
+         * ID.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ReplaceIamInstanceProfileAssociation">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ReplaceIamInstanceProfileAssociationOutcomeCallable ReplaceIamInstanceProfileAssociationCallable(const Model::ReplaceIamInstanceProfileAssociationRequest& request) const;
+
+        /**
+         * <p>Replaces an IAM instance profile for the specified instance. You can use this
+         * action to change the IAM instance profile that's associated with an instance
+         * without having to disassociate the existing IAM instance profile first.</p>
+         * <p>Use <a>DescribeIamInstanceProfileAssociations</a> to get the association
+         * ID.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ReplaceIamInstanceProfileAssociation">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ReplaceIamInstanceProfileAssociationAsync(const Model::ReplaceIamInstanceProfileAssociationRequest& request, const ReplaceIamInstanceProfileAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Changes which network ACL a subnet is associated with. By default when you
          * create a subnet, it's automatically associated with the default network ACL. For
          * more information about network ACLs, see <a
@@ -10576,9 +10723,10 @@ namespace Model
          * have a network interface with a primary private IPv4 address. If you don't
          * specify this address, we choose one from the IPv4 range of your subnet.</p>
          * </li> <li> <p>Not all instance types support IPv6 addresses. For more
-         * information, see <a href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2
-         * Instance Types</a>.</p> </li> <li> <p>If you don't specify a security group ID,
-         * we use the default security group. For more information, see <a
+         * information, see <a
+         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
+         * Types</a>.</p> </li> <li> <p>If you don't specify a security group ID, we use
+         * the default security group. For more information, see <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-network-security.html">Security
          * Groups</a>.</p> </li> <li> <p>If any of the AMIs have a product code attached
          * for which the user has not subscribed, the request fails.</p> </li> </ul> <p>To
@@ -10622,9 +10770,10 @@ namespace Model
          * have a network interface with a primary private IPv4 address. If you don't
          * specify this address, we choose one from the IPv4 range of your subnet.</p>
          * </li> <li> <p>Not all instance types support IPv6 addresses. For more
-         * information, see <a href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2
-         * Instance Types</a>.</p> </li> <li> <p>If you don't specify a security group ID,
-         * we use the default security group. For more information, see <a
+         * information, see <a
+         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
+         * Types</a>.</p> </li> <li> <p>If you don't specify a security group ID, we use
+         * the default security group. For more information, see <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-network-security.html">Security
          * Groups</a>.</p> </li> <li> <p>If any of the AMIs have a product code attached
          * for which the user has not subscribed, the request fails.</p> </li> </ul> <p>To
@@ -10670,9 +10819,10 @@ namespace Model
          * have a network interface with a primary private IPv4 address. If you don't
          * specify this address, we choose one from the IPv4 range of your subnet.</p>
          * </li> <li> <p>Not all instance types support IPv6 addresses. For more
-         * information, see <a href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2
-         * Instance Types</a>.</p> </li> <li> <p>If you don't specify a security group ID,
-         * we use the default security group. For more information, see <a
+         * information, see <a
+         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
+         * Types</a>.</p> </li> <li> <p>If you don't specify a security group ID, we use
+         * the default security group. For more information, see <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-network-security.html">Security
          * Groups</a>.</p> </li> <li> <p>If any of the AMIs have a product code attached
          * for which the user has not subscribed, the request fails.</p> </li> </ul> <p>To
@@ -11110,6 +11260,7 @@ namespace Model
         void AssignPrivateIpAddressesAsyncHelper(const Model::AssignPrivateIpAddressesRequest& request, const AssignPrivateIpAddressesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void AssociateAddressAsyncHelper(const Model::AssociateAddressRequest& request, const AssociateAddressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void AssociateDhcpOptionsAsyncHelper(const Model::AssociateDhcpOptionsRequest& request, const AssociateDhcpOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void AssociateIamInstanceProfileAsyncHelper(const Model::AssociateIamInstanceProfileRequest& request, const AssociateIamInstanceProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void AssociateRouteTableAsyncHelper(const Model::AssociateRouteTableRequest& request, const AssociateRouteTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void AssociateSubnetCidrBlockAsyncHelper(const Model::AssociateSubnetCidrBlockRequest& request, const AssociateSubnetCidrBlockResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void AssociateVpcCidrBlockAsyncHelper(const Model::AssociateVpcCidrBlockRequest& request, const AssociateVpcCidrBlockResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -11199,6 +11350,7 @@ namespace Model
         void DescribeHostReservationOfferingsAsyncHelper(const Model::DescribeHostReservationOfferingsRequest& request, const DescribeHostReservationOfferingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeHostReservationsAsyncHelper(const Model::DescribeHostReservationsRequest& request, const DescribeHostReservationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeHostsAsyncHelper(const Model::DescribeHostsRequest& request, const DescribeHostsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeIamInstanceProfileAssociationsAsyncHelper(const Model::DescribeIamInstanceProfileAssociationsRequest& request, const DescribeIamInstanceProfileAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeIdFormatAsyncHelper(const Model::DescribeIdFormatRequest& request, const DescribeIdFormatResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeIdentityIdFormatAsyncHelper(const Model::DescribeIdentityIdFormatRequest& request, const DescribeIdentityIdFormatResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeImageAttributeAsyncHelper(const Model::DescribeImageAttributeRequest& request, const DescribeImageAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -11259,6 +11411,7 @@ namespace Model
         void DisableVpcClassicLinkAsyncHelper(const Model::DisableVpcClassicLinkRequest& request, const DisableVpcClassicLinkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DisableVpcClassicLinkDnsSupportAsyncHelper(const Model::DisableVpcClassicLinkDnsSupportRequest& request, const DisableVpcClassicLinkDnsSupportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DisassociateAddressAsyncHelper(const Model::DisassociateAddressRequest& request, const DisassociateAddressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DisassociateIamInstanceProfileAsyncHelper(const Model::DisassociateIamInstanceProfileRequest& request, const DisassociateIamInstanceProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DisassociateRouteTableAsyncHelper(const Model::DisassociateRouteTableRequest& request, const DisassociateRouteTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DisassociateSubnetCidrBlockAsyncHelper(const Model::DisassociateSubnetCidrBlockRequest& request, const DisassociateSubnetCidrBlockResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DisassociateVpcCidrBlockAsyncHelper(const Model::DisassociateVpcCidrBlockRequest& request, const DisassociateVpcCidrBlockResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -11301,6 +11454,7 @@ namespace Model
         void RejectVpcPeeringConnectionAsyncHelper(const Model::RejectVpcPeeringConnectionRequest& request, const RejectVpcPeeringConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ReleaseAddressAsyncHelper(const Model::ReleaseAddressRequest& request, const ReleaseAddressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ReleaseHostsAsyncHelper(const Model::ReleaseHostsRequest& request, const ReleaseHostsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ReplaceIamInstanceProfileAssociationAsyncHelper(const Model::ReplaceIamInstanceProfileAssociationRequest& request, const ReplaceIamInstanceProfileAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ReplaceNetworkAclAssociationAsyncHelper(const Model::ReplaceNetworkAclAssociationRequest& request, const ReplaceNetworkAclAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ReplaceNetworkAclEntryAsyncHelper(const Model::ReplaceNetworkAclEntryRequest& request, const ReplaceNetworkAclEntryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ReplaceRouteAsyncHelper(const Model::ReplaceRouteRequest& request, const ReplaceRouteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
