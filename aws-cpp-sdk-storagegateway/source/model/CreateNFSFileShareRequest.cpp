@@ -30,7 +30,8 @@ CreateNFSFileShareRequest::CreateNFSFileShareRequest() :
     m_kMSKeyHasBeenSet(false),
     m_roleHasBeenSet(false),
     m_locationARNHasBeenSet(false),
-    m_defaultStorageClassHasBeenSet(false)
+    m_defaultStorageClassHasBeenSet(false),
+    m_clientListHasBeenSet(false)
 {
 }
 
@@ -83,6 +84,17 @@ Aws::String CreateNFSFileShareRequest::SerializePayload() const
   if(m_defaultStorageClassHasBeenSet)
   {
    payload.WithString("DefaultStorageClass", m_defaultStorageClass);
+
+  }
+
+  if(m_clientListHasBeenSet)
+  {
+   Array<JsonValue> clientListJsonList(m_clientList.size());
+   for(unsigned clientListIndex = 0; clientListIndex < clientListJsonList.GetLength(); ++clientListIndex)
+   {
+     clientListJsonList[clientListIndex].AsString(m_clientList[clientListIndex]);
+   }
+   payload.WithArray("ClientList", std::move(clientListJsonList));
 
   }
 

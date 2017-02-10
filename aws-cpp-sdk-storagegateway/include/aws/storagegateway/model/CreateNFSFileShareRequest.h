@@ -17,6 +17,7 @@
 #include <aws/storagegateway/StorageGatewayRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/storagegateway/model/NFSFileShareDefaults.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 
 namespace Aws
 {
@@ -333,6 +334,54 @@ namespace Model
      */
     inline CreateNFSFileShareRequest& WithDefaultStorageClass(const char* value) { SetDefaultStorageClass(value); return *this;}
 
+    /**
+     * <p>The list of clients that are allowed to access the file gateway. The list
+     * must contain either valid IP addresses or valid CIDR blocks.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetClientList() const{ return m_clientList; }
+
+    /**
+     * <p>The list of clients that are allowed to access the file gateway. The list
+     * must contain either valid IP addresses or valid CIDR blocks.</p>
+     */
+    inline void SetClientList(const Aws::Vector<Aws::String>& value) { m_clientListHasBeenSet = true; m_clientList = value; }
+
+    /**
+     * <p>The list of clients that are allowed to access the file gateway. The list
+     * must contain either valid IP addresses or valid CIDR blocks.</p>
+     */
+    inline void SetClientList(Aws::Vector<Aws::String>&& value) { m_clientListHasBeenSet = true; m_clientList = value; }
+
+    /**
+     * <p>The list of clients that are allowed to access the file gateway. The list
+     * must contain either valid IP addresses or valid CIDR blocks.</p>
+     */
+    inline CreateNFSFileShareRequest& WithClientList(const Aws::Vector<Aws::String>& value) { SetClientList(value); return *this;}
+
+    /**
+     * <p>The list of clients that are allowed to access the file gateway. The list
+     * must contain either valid IP addresses or valid CIDR blocks.</p>
+     */
+    inline CreateNFSFileShareRequest& WithClientList(Aws::Vector<Aws::String>&& value) { SetClientList(value); return *this;}
+
+    /**
+     * <p>The list of clients that are allowed to access the file gateway. The list
+     * must contain either valid IP addresses or valid CIDR blocks.</p>
+     */
+    inline CreateNFSFileShareRequest& AddClientList(const Aws::String& value) { m_clientListHasBeenSet = true; m_clientList.push_back(value); return *this; }
+
+    /**
+     * <p>The list of clients that are allowed to access the file gateway. The list
+     * must contain either valid IP addresses or valid CIDR blocks.</p>
+     */
+    inline CreateNFSFileShareRequest& AddClientList(Aws::String&& value) { m_clientListHasBeenSet = true; m_clientList.push_back(value); return *this; }
+
+    /**
+     * <p>The list of clients that are allowed to access the file gateway. The list
+     * must contain either valid IP addresses or valid CIDR blocks.</p>
+     */
+    inline CreateNFSFileShareRequest& AddClientList(const char* value) { m_clientListHasBeenSet = true; m_clientList.push_back(value); return *this; }
+
   private:
     Aws::String m_clientToken;
     bool m_clientTokenHasBeenSet;
@@ -350,6 +399,8 @@ namespace Model
     bool m_locationARNHasBeenSet;
     Aws::String m_defaultStorageClass;
     bool m_defaultStorageClassHasBeenSet;
+    Aws::Vector<Aws::String> m_clientList;
+    bool m_clientListHasBeenSet;
   };
 
 } // namespace Model

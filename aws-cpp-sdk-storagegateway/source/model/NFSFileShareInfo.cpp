@@ -39,7 +39,8 @@ NFSFileShareInfo::NFSFileShareInfo() :
     m_pathHasBeenSet(false),
     m_roleHasBeenSet(false),
     m_locationARNHasBeenSet(false),
-    m_defaultStorageClassHasBeenSet(false)
+    m_defaultStorageClassHasBeenSet(false),
+    m_clientListHasBeenSet(false)
 {
 }
 
@@ -55,7 +56,8 @@ NFSFileShareInfo::NFSFileShareInfo(const JsonValue& jsonValue) :
     m_pathHasBeenSet(false),
     m_roleHasBeenSet(false),
     m_locationARNHasBeenSet(false),
-    m_defaultStorageClassHasBeenSet(false)
+    m_defaultStorageClassHasBeenSet(false),
+    m_clientListHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -139,6 +141,16 @@ NFSFileShareInfo& NFSFileShareInfo::operator =(const JsonValue& jsonValue)
     m_defaultStorageClassHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ClientList"))
+  {
+    Array<JsonValue> clientListJsonList = jsonValue.GetArray("ClientList");
+    for(unsigned clientListIndex = 0; clientListIndex < clientListJsonList.GetLength(); ++clientListIndex)
+    {
+      m_clientList.push_back(clientListJsonList[clientListIndex].AsString());
+    }
+    m_clientListHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -209,6 +221,17 @@ JsonValue NFSFileShareInfo::Jsonize() const
   if(m_defaultStorageClassHasBeenSet)
   {
    payload.WithString("DefaultStorageClass", m_defaultStorageClass);
+
+  }
+
+  if(m_clientListHasBeenSet)
+  {
+   Array<JsonValue> clientListJsonList(m_clientList.size());
+   for(unsigned clientListIndex = 0; clientListIndex < clientListJsonList.GetLength(); ++clientListIndex)
+   {
+     clientListJsonList[clientListIndex].AsString(m_clientList[clientListIndex]);
+   }
+   payload.WithArray("ClientList", std::move(clientListJsonList));
 
   }
 

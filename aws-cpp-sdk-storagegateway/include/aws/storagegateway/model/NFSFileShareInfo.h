@@ -16,6 +16,7 @@
 #include <aws/storagegateway/StorageGateway_EXPORTS.h>
 #include <aws/storagegateway/model/NFSFileShareDefaults.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 
 namespace Aws
 {
@@ -296,6 +297,30 @@ namespace Model
      */
     inline NFSFileShareInfo& WithDefaultStorageClass(const char* value) { SetDefaultStorageClass(value); return *this;}
 
+    
+    inline const Aws::Vector<Aws::String>& GetClientList() const{ return m_clientList; }
+
+    
+    inline void SetClientList(const Aws::Vector<Aws::String>& value) { m_clientListHasBeenSet = true; m_clientList = value; }
+
+    
+    inline void SetClientList(Aws::Vector<Aws::String>&& value) { m_clientListHasBeenSet = true; m_clientList = value; }
+
+    
+    inline NFSFileShareInfo& WithClientList(const Aws::Vector<Aws::String>& value) { SetClientList(value); return *this;}
+
+    
+    inline NFSFileShareInfo& WithClientList(Aws::Vector<Aws::String>&& value) { SetClientList(value); return *this;}
+
+    
+    inline NFSFileShareInfo& AddClientList(const Aws::String& value) { m_clientListHasBeenSet = true; m_clientList.push_back(value); return *this; }
+
+    
+    inline NFSFileShareInfo& AddClientList(Aws::String&& value) { m_clientListHasBeenSet = true; m_clientList.push_back(value); return *this; }
+
+    
+    inline NFSFileShareInfo& AddClientList(const char* value) { m_clientListHasBeenSet = true; m_clientList.push_back(value); return *this; }
+
   private:
     NFSFileShareDefaults m_nFSFileShareDefaults;
     bool m_nFSFileShareDefaultsHasBeenSet;
@@ -319,6 +344,8 @@ namespace Model
     bool m_locationARNHasBeenSet;
     Aws::String m_defaultStorageClass;
     bool m_defaultStorageClassHasBeenSet;
+    Aws::Vector<Aws::String> m_clientList;
+    bool m_clientListHasBeenSet;
   };
 
 } // namespace Model
