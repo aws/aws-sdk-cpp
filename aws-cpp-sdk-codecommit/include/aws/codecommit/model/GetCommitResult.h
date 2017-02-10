@@ -33,7 +33,10 @@ namespace CodeCommit
 namespace Model
 {
   /**
-   * <p>Represents the output of a get commit operation.</p>
+   * <p>Represents the output of a get commit operation.</p><p><h3>See Also:</h3>  
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/GetCommitOutput">AWS
+   * API Reference</a></p>
    */
   class AWS_CODECOMMIT_API GetCommitResult
   {
@@ -43,27 +46,32 @@ namespace Model
     GetCommitResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
     /**
-     * <p>Information about the specified commit.</p>
+     * <p>A commit data type object that contains information about the specified
+     * commit.</p>
      */
     inline const Commit& GetCommit() const{ return m_commit; }
 
     /**
-     * <p>Information about the specified commit.</p>
+     * <p>A commit data type object that contains information about the specified
+     * commit.</p>
      */
     inline void SetCommit(const Commit& value) { m_commit = value; }
 
     /**
-     * <p>Information about the specified commit.</p>
+     * <p>A commit data type object that contains information about the specified
+     * commit.</p>
      */
     inline void SetCommit(Commit&& value) { m_commit = value; }
 
     /**
-     * <p>Information about the specified commit.</p>
+     * <p>A commit data type object that contains information about the specified
+     * commit.</p>
      */
     inline GetCommitResult& WithCommit(const Commit& value) { SetCommit(value); return *this;}
 
     /**
-     * <p>Information about the specified commit.</p>
+     * <p>A commit data type object that contains information about the specified
+     * commit.</p>
      */
     inline GetCommitResult& WithCommit(Commit&& value) { SetCommit(value); return *this;}
 

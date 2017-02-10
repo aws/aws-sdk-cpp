@@ -35,7 +35,9 @@ namespace Model
 
   /**
    * <p>Represents the custom MAIL FROM domain attributes of a verified identity
-   * (email address or domain).</p>
+   * (email address or domain).</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/IdentityMailFromDomainAttributes">AWS
+   * API Reference</a></p>
    */
   class AWS_SES_API IdentityMailFromDomainAttributes
   {

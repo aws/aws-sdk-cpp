@@ -33,7 +33,10 @@ namespace Model
 
   /**
    * <p>Custom policy for requesting termination protection or termination of
-   * specific instances when shrinking an instance group.</p>
+   * specific instances when shrinking an instance group.</p><p><h3>See Also:</h3>  
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/InstanceResizePolicy">AWS
+   * API Reference</a></p>
    */
   class AWS_EMR_API InstanceResizePolicy
   {

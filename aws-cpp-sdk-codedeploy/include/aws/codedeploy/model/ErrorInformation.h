@@ -32,7 +32,9 @@ namespace Model
 {
 
   /**
-   * <p>Information about a deployment error.</p>
+   * <p>Information about a deployment error.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/ErrorInformation">AWS
+   * API Reference</a></p>
    */
   class AWS_CODEDEPLOY_API ErrorInformation
   {
@@ -43,12 +45,16 @@ namespace Model
     Aws::Utils::Json::JsonValue Jsonize() const;
 
     /**
-     * <p>The error code:</p> <ul> <li> <p>APPLICATION_MISSING: The application was
-     * missing. This error code will most likely be raised if the application is
+     * <p>For information about additional error codes, see <a
+     * href="http://docs.aws.amazon.com/codedeploy/latest/userguide/error-codes.html">Error
+     * Codes for AWS CodeDeploy</a> in the <a
+     * href="http://docs.aws.amazon.com/codedeploy/latest/userguide">AWS CodeDeploy
+     * User Guide</a>.</p> <p>The error code:</p> <ul> <li> <p>APPLICATION_MISSING: The
+     * application was missing. This error code will most likely be raised if the
+     * application is deleted after the deployment is created but before it is
+     * started.</p> </li> <li> <p>DEPLOYMENT_GROUP_MISSING: The deployment group was
+     * missing. This error code will most likely be raised if the deployment group is
      * deleted after the deployment is created but before it is started.</p> </li> <li>
-     * <p>DEPLOYMENT_GROUP_MISSING: The deployment group was missing. This error code
-     * will most likely be raised if the deployment group is deleted after the
-     * deployment is created but before it is started.</p> </li> <li>
      * <p>HEALTH_CONSTRAINTS: The deployment failed on too many instances to be
      * successfully deployed within the instance health constraints specified.</p>
      * </li> <li> <p>HEALTH_CONSTRAINTS_INVALID: The revision cannot be successfully
@@ -69,12 +75,16 @@ namespace Model
     inline const ErrorCode& GetCode() const{ return m_code; }
 
     /**
-     * <p>The error code:</p> <ul> <li> <p>APPLICATION_MISSING: The application was
-     * missing. This error code will most likely be raised if the application is
+     * <p>For information about additional error codes, see <a
+     * href="http://docs.aws.amazon.com/codedeploy/latest/userguide/error-codes.html">Error
+     * Codes for AWS CodeDeploy</a> in the <a
+     * href="http://docs.aws.amazon.com/codedeploy/latest/userguide">AWS CodeDeploy
+     * User Guide</a>.</p> <p>The error code:</p> <ul> <li> <p>APPLICATION_MISSING: The
+     * application was missing. This error code will most likely be raised if the
+     * application is deleted after the deployment is created but before it is
+     * started.</p> </li> <li> <p>DEPLOYMENT_GROUP_MISSING: The deployment group was
+     * missing. This error code will most likely be raised if the deployment group is
      * deleted after the deployment is created but before it is started.</p> </li> <li>
-     * <p>DEPLOYMENT_GROUP_MISSING: The deployment group was missing. This error code
-     * will most likely be raised if the deployment group is deleted after the
-     * deployment is created but before it is started.</p> </li> <li>
      * <p>HEALTH_CONSTRAINTS: The deployment failed on too many instances to be
      * successfully deployed within the instance health constraints specified.</p>
      * </li> <li> <p>HEALTH_CONSTRAINTS_INVALID: The revision cannot be successfully
@@ -95,12 +105,16 @@ namespace Model
     inline void SetCode(const ErrorCode& value) { m_codeHasBeenSet = true; m_code = value; }
 
     /**
-     * <p>The error code:</p> <ul> <li> <p>APPLICATION_MISSING: The application was
-     * missing. This error code will most likely be raised if the application is
+     * <p>For information about additional error codes, see <a
+     * href="http://docs.aws.amazon.com/codedeploy/latest/userguide/error-codes.html">Error
+     * Codes for AWS CodeDeploy</a> in the <a
+     * href="http://docs.aws.amazon.com/codedeploy/latest/userguide">AWS CodeDeploy
+     * User Guide</a>.</p> <p>The error code:</p> <ul> <li> <p>APPLICATION_MISSING: The
+     * application was missing. This error code will most likely be raised if the
+     * application is deleted after the deployment is created but before it is
+     * started.</p> </li> <li> <p>DEPLOYMENT_GROUP_MISSING: The deployment group was
+     * missing. This error code will most likely be raised if the deployment group is
      * deleted after the deployment is created but before it is started.</p> </li> <li>
-     * <p>DEPLOYMENT_GROUP_MISSING: The deployment group was missing. This error code
-     * will most likely be raised if the deployment group is deleted after the
-     * deployment is created but before it is started.</p> </li> <li>
      * <p>HEALTH_CONSTRAINTS: The deployment failed on too many instances to be
      * successfully deployed within the instance health constraints specified.</p>
      * </li> <li> <p>HEALTH_CONSTRAINTS_INVALID: The revision cannot be successfully
@@ -121,12 +135,16 @@ namespace Model
     inline void SetCode(ErrorCode&& value) { m_codeHasBeenSet = true; m_code = value; }
 
     /**
-     * <p>The error code:</p> <ul> <li> <p>APPLICATION_MISSING: The application was
-     * missing. This error code will most likely be raised if the application is
+     * <p>For information about additional error codes, see <a
+     * href="http://docs.aws.amazon.com/codedeploy/latest/userguide/error-codes.html">Error
+     * Codes for AWS CodeDeploy</a> in the <a
+     * href="http://docs.aws.amazon.com/codedeploy/latest/userguide">AWS CodeDeploy
+     * User Guide</a>.</p> <p>The error code:</p> <ul> <li> <p>APPLICATION_MISSING: The
+     * application was missing. This error code will most likely be raised if the
+     * application is deleted after the deployment is created but before it is
+     * started.</p> </li> <li> <p>DEPLOYMENT_GROUP_MISSING: The deployment group was
+     * missing. This error code will most likely be raised if the deployment group is
      * deleted after the deployment is created but before it is started.</p> </li> <li>
-     * <p>DEPLOYMENT_GROUP_MISSING: The deployment group was missing. This error code
-     * will most likely be raised if the deployment group is deleted after the
-     * deployment is created but before it is started.</p> </li> <li>
      * <p>HEALTH_CONSTRAINTS: The deployment failed on too many instances to be
      * successfully deployed within the instance health constraints specified.</p>
      * </li> <li> <p>HEALTH_CONSTRAINTS_INVALID: The revision cannot be successfully
@@ -147,12 +165,16 @@ namespace Model
     inline ErrorInformation& WithCode(const ErrorCode& value) { SetCode(value); return *this;}
 
     /**
-     * <p>The error code:</p> <ul> <li> <p>APPLICATION_MISSING: The application was
-     * missing. This error code will most likely be raised if the application is
+     * <p>For information about additional error codes, see <a
+     * href="http://docs.aws.amazon.com/codedeploy/latest/userguide/error-codes.html">Error
+     * Codes for AWS CodeDeploy</a> in the <a
+     * href="http://docs.aws.amazon.com/codedeploy/latest/userguide">AWS CodeDeploy
+     * User Guide</a>.</p> <p>The error code:</p> <ul> <li> <p>APPLICATION_MISSING: The
+     * application was missing. This error code will most likely be raised if the
+     * application is deleted after the deployment is created but before it is
+     * started.</p> </li> <li> <p>DEPLOYMENT_GROUP_MISSING: The deployment group was
+     * missing. This error code will most likely be raised if the deployment group is
      * deleted after the deployment is created but before it is started.</p> </li> <li>
-     * <p>DEPLOYMENT_GROUP_MISSING: The deployment group was missing. This error code
-     * will most likely be raised if the deployment group is deleted after the
-     * deployment is created but before it is started.</p> </li> <li>
      * <p>HEALTH_CONSTRAINTS: The deployment failed on too many instances to be
      * successfully deployed within the instance health constraints specified.</p>
      * </li> <li> <p>HEALTH_CONSTRAINTS_INVALID: The revision cannot be successfully

@@ -36,7 +36,9 @@ namespace Model
    * connect to server processes on GameLift. Each game session hosted on a fleet is
    * assigned a unique combination of IP address and port number, which must fall
    * into the fleet's allowed ranges. This combination is included in the
-   * <a>GameSession</a> object. </p>
+   * <a>GameSession</a> object. </p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/IpPermission">AWS
+   * API Reference</a></p>
    */
   class AWS_GAMELIFT_API IpPermission
   {

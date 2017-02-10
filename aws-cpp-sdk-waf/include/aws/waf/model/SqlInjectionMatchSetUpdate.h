@@ -35,7 +35,9 @@ namespace Model
    * <p>Specifies the part of a web request that you want to inspect for snippets of
    * malicious SQL code and indicates whether you want to add the specification to a
    * <a>SqlInjectionMatchSet</a> or delete it from a
-   * <code>SqlInjectionMatchSet</code>.</p>
+   * <code>SqlInjectionMatchSet</code>.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/SqlInjectionMatchSetUpdate">AWS
+   * API Reference</a></p>
    */
   class AWS_WAF_API SqlInjectionMatchSetUpdate
   {

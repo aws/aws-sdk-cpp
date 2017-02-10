@@ -28,7 +28,9 @@ namespace Model
 
   /**
    * <p>A BatchMeterUsageRequest contains UsageRecords, which indicate quantities of
-   * usage within your application.</p>
+   * usage within your application.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/meteringmarketplace-2016-01-14/BatchMeterUsageRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_MARKETPLACEMETERING_API BatchMeterUsageRequest : public MarketplaceMeteringRequest
   {

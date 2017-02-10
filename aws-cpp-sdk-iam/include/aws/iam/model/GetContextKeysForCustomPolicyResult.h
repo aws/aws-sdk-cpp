@@ -36,7 +36,9 @@ namespace Model
 {
   /**
    * <p>Contains the response to a successful <a>GetContextKeysForPrincipalPolicy</a>
-   * or <a>GetContextKeysForCustomPolicy</a> request. </p>
+   * or <a>GetContextKeysForCustomPolicy</a> request. </p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetContextKeysForPolicyResponse">AWS
+   * API Reference</a></p>
    */
   class AWS_IAM_API GetContextKeysForCustomPolicyResult
   {

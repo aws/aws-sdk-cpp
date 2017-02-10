@@ -34,7 +34,9 @@ namespace Model
   /**
    * <p>Represents the body of the message. You can specify text, HTML, or both. If
    * you use both, then the message should display correctly in the widest variety of
-   * email clients.</p>
+   * email clients.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/Body">AWS API
+   * Reference</a></p>
    */
   class AWS_SES_API Body
   {

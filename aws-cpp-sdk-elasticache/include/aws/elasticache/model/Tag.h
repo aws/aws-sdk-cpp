@@ -34,7 +34,9 @@ namespace Model
   /**
    * <p>A cost allocation Tag that can be added to an ElastiCache cluster or
    * replication group. Tags are composed of a Key/Value pair. A tag with a null
-   * Value is permitted.</p>
+   * Value is permitted.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/Tag">AWS API
+   * Reference</a></p>
    */
   class AWS_ELASTICACHE_API Tag
   {

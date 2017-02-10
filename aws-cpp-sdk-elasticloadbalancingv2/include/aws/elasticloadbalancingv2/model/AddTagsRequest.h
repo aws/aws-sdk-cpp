@@ -27,7 +27,6 @@ namespace Model
 {
 
   /**
-   * <p>Contains the parameters for AddTags.</p>
    */
   class AWS_ELASTICLOADBALANCINGV2_API AddTagsRequest : public ElasticLoadBalancingv2Request
   {

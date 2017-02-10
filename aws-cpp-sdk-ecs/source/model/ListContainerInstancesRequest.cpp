@@ -23,9 +23,12 @@ using namespace Aws::Utils;
 
 ListContainerInstancesRequest::ListContainerInstancesRequest() : 
     m_clusterHasBeenSet(false),
+    m_filterHasBeenSet(false),
     m_nextTokenHasBeenSet(false),
     m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
+    m_maxResultsHasBeenSet(false),
+    m_status(ContainerInstanceStatus::NOT_SET),
+    m_statusHasBeenSet(false)
 {
 }
 
@@ -39,6 +42,12 @@ Aws::String ListContainerInstancesRequest::SerializePayload() const
 
   }
 
+  if(m_filterHasBeenSet)
+  {
+   payload.WithString("filter", m_filter);
+
+  }
+
   if(m_nextTokenHasBeenSet)
   {
    payload.WithString("nextToken", m_nextToken);
@@ -49,6 +58,11 @@ Aws::String ListContainerInstancesRequest::SerializePayload() const
   {
    payload.WithInteger("maxResults", m_maxResults);
 
+  }
+
+  if(m_statusHasBeenSet)
+  {
+   payload.WithString("status", ContainerInstanceStatusMapper::GetNameForContainerInstanceStatus(m_status));
   }
 
   return payload.WriteReadable();

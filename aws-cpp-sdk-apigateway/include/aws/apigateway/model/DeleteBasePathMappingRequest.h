@@ -25,7 +25,10 @@ namespace Model
 {
 
   /**
-   * <p>A request to delete the <a>BasePathMapping</a> resource.</p>
+   * <p>A request to delete the <a>BasePathMapping</a> resource.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DeleteBasePathMappingRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_APIGATEWAY_API DeleteBasePathMappingRequest : public APIGatewayRequest
   {

@@ -27,7 +27,6 @@ namespace Model
 {
 
   /**
-   * <p>Contains the parameters for CreateTargetGroup.</p>
    */
   class AWS_ELASTICLOADBALANCINGV2_API CreateTargetGroupRequest : public ElasticLoadBalancingv2Request
   {

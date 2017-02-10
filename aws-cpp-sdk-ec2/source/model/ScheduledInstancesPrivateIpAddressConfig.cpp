@@ -76,7 +76,7 @@ void ScheduledInstancesPrivateIpAddressConfig::OutputToStream(Aws::OStream& oStr
 
   if(m_primaryHasBeenSet)
   {
-      oStream << location << index << locationValue << ".Primary=" << m_primary << "&";
+      oStream << location << index << locationValue << ".Primary=" << std::boolalpha << m_primary << "&";
   }
 
 }
@@ -89,7 +89,7 @@ void ScheduledInstancesPrivateIpAddressConfig::OutputToStream(Aws::OStream& oStr
   }
   if(m_primaryHasBeenSet)
   {
-      oStream << location << ".Primary=" << m_primary << "&";
+      oStream << location << ".Primary=" << std::boolalpha << m_primary << "&";
   }
 }
 

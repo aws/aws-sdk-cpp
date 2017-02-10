@@ -36,7 +36,10 @@ namespace CognitoIdentity
 namespace Model
 {
   /**
-   * An object representing a Cognito identity pool.
+   * <p>An object representing an Amazon Cognito identity pool.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/IdentityPool">AWS
+   * API Reference</a></p>
    */
   class AWS_COGNITOIDENTITY_API CreateIdentityPoolResult
   {
@@ -46,37 +49,37 @@ namespace Model
     CreateIdentityPoolResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
     /**
-     * An identity pool ID in the format REGION:GUID.
+     * <p>An identity pool ID in the format REGION:GUID.</p>
      */
     inline const Aws::String& GetIdentityPoolId() const{ return m_identityPoolId; }
 
     /**
-     * An identity pool ID in the format REGION:GUID.
+     * <p>An identity pool ID in the format REGION:GUID.</p>
      */
     inline void SetIdentityPoolId(const Aws::String& value) { m_identityPoolId = value; }
 
     /**
-     * An identity pool ID in the format REGION:GUID.
+     * <p>An identity pool ID in the format REGION:GUID.</p>
      */
     inline void SetIdentityPoolId(Aws::String&& value) { m_identityPoolId = value; }
 
     /**
-     * An identity pool ID in the format REGION:GUID.
+     * <p>An identity pool ID in the format REGION:GUID.</p>
      */
     inline void SetIdentityPoolId(const char* value) { m_identityPoolId.assign(value); }
 
     /**
-     * An identity pool ID in the format REGION:GUID.
+     * <p>An identity pool ID in the format REGION:GUID.</p>
      */
     inline CreateIdentityPoolResult& WithIdentityPoolId(const Aws::String& value) { SetIdentityPoolId(value); return *this;}
 
     /**
-     * An identity pool ID in the format REGION:GUID.
+     * <p>An identity pool ID in the format REGION:GUID.</p>
      */
     inline CreateIdentityPoolResult& WithIdentityPoolId(Aws::String&& value) { SetIdentityPoolId(value); return *this;}
 
     /**
-     * An identity pool ID in the format REGION:GUID.
+     * <p>An identity pool ID in the format REGION:GUID.</p>
      */
     inline CreateIdentityPoolResult& WithIdentityPoolId(const char* value) { SetIdentityPoolId(value); return *this;}
 
@@ -116,17 +119,17 @@ namespace Model
     inline CreateIdentityPoolResult& WithIdentityPoolName(const char* value) { SetIdentityPoolName(value); return *this;}
 
     /**
-     * TRUE if the identity pool supports unauthenticated logins.
+     * <p>TRUE if the identity pool supports unauthenticated logins.</p>
      */
     inline bool GetAllowUnauthenticatedIdentities() const{ return m_allowUnauthenticatedIdentities; }
 
     /**
-     * TRUE if the identity pool supports unauthenticated logins.
+     * <p>TRUE if the identity pool supports unauthenticated logins.</p>
      */
     inline void SetAllowUnauthenticatedIdentities(bool value) { m_allowUnauthenticatedIdentities = value; }
 
     /**
-     * TRUE if the identity pool supports unauthenticated logins.
+     * <p>TRUE if the identity pool supports unauthenticated logins.</p>
      */
     inline CreateIdentityPoolResult& WithAllowUnauthenticatedIdentities(bool value) { SetAllowUnauthenticatedIdentities(value); return *this;}
 

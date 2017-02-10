@@ -26,7 +26,6 @@ namespace Model
 {
 
   /**
-   * <p>Contains the parameters for DescribeSSLPolicies.</p>
    */
   class AWS_ELASTICLOADBALANCINGV2_API DescribeSSLPoliciesRequest : public ElasticLoadBalancingv2Request
   {

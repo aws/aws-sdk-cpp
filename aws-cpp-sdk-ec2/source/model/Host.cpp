@@ -228,7 +228,7 @@ void Host::OutputToStream(Aws::OStream& oStream, const char* location) const
       for(auto& item : m_instances)
       {
         Aws::StringStream instancesSs;
-        instancesSs << location <<  ".item." << instancesIdx++;
+        instancesSs << location <<  ".Item." << instancesIdx++;
         item.OutputToStream(oStream, instancesSs.str().c_str());
       }
   }

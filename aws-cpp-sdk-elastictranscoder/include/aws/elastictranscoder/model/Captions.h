@@ -32,7 +32,9 @@ namespace Model
 {
 
   /**
-   * <p>The captions to be created, if any.</p>
+   * <p>The captions to be created, if any.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/Captions">AWS
+   * API Reference</a></p>
    */
   class AWS_ELASTICTRANSCODER_API Captions
   {

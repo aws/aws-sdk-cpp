@@ -30,7 +30,10 @@ namespace Model
 {
 
   /**
-   * <p>Container for the parameters to the <code>Search</code> request.</p>
+   * <p>Container for the parameters to the <code>Search</code>
+   * request.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearchdomain-2013-01-01/SearchRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_CLOUDSEARCHDOMAIN_API SearchRequest : public CloudSearchDomainRequest
   {

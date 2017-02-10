@@ -26,7 +26,10 @@ namespace Model
 {
 
   /**
-   * <p>Contains the inputs for the <a>DescribeWorkspaceBundles</a> operation.</p>
+   * <p>Contains the inputs for the <a>DescribeWorkspaceBundles</a>
+   * operation.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeWorkspaceBundlesRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_WORKSPACES_API DescribeWorkspaceBundlesRequest : public WorkSpacesRequest
   {

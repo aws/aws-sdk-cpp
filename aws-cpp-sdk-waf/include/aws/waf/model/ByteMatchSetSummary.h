@@ -33,7 +33,9 @@ namespace Model
   /**
    * <p>Returned by <a>ListByteMatchSets</a>. Each <code>ByteMatchSetSummary</code>
    * object includes the <code>Name</code> and <code>ByteMatchSetId</code> for one
-   * <a>ByteMatchSet</a>.</p>
+   * <a>ByteMatchSet</a>.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/ByteMatchSetSummary">AWS
+   * API Reference</a></p>
    */
   class AWS_WAF_API ByteMatchSetSummary
   {

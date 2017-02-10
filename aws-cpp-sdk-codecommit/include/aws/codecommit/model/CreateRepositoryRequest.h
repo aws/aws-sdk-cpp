@@ -25,7 +25,10 @@ namespace Model
 {
 
   /**
-   * <p>Represents the input of a create repository operation.</p>
+   * <p>Represents the input of a create repository operation.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/CreateRepositoryInput">AWS
+   * API Reference</a></p>
    */
   class AWS_CODECOMMIT_API CreateRepositoryRequest : public CodeCommitRequest
   {
@@ -36,149 +39,149 @@ namespace Model
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
     /**
-     * <p>The name of the new repository to be created.</p> <note><p>The repository
+     * <p>The name of the new repository to be created.</p> <note> <p>The repository
      * name must be unique across the calling AWS account. In addition, repository
      * names are limited to 100 alphanumeric, dash, and underscore characters, and
      * cannot include certain characters. For a full description of the limits on
      * repository names, see <a
      * href="http://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">Limits</a>
-     * in the AWS CodeCommit User Guide. The suffix ".git" is prohibited.</p></note>
+     * in the AWS CodeCommit User Guide. The suffix ".git" is prohibited.</p> </note>
      */
     inline const Aws::String& GetRepositoryName() const{ return m_repositoryName; }
 
     /**
-     * <p>The name of the new repository to be created.</p> <note><p>The repository
+     * <p>The name of the new repository to be created.</p> <note> <p>The repository
      * name must be unique across the calling AWS account. In addition, repository
      * names are limited to 100 alphanumeric, dash, and underscore characters, and
      * cannot include certain characters. For a full description of the limits on
      * repository names, see <a
      * href="http://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">Limits</a>
-     * in the AWS CodeCommit User Guide. The suffix ".git" is prohibited.</p></note>
+     * in the AWS CodeCommit User Guide. The suffix ".git" is prohibited.</p> </note>
      */
     inline void SetRepositoryName(const Aws::String& value) { m_repositoryNameHasBeenSet = true; m_repositoryName = value; }
 
     /**
-     * <p>The name of the new repository to be created.</p> <note><p>The repository
+     * <p>The name of the new repository to be created.</p> <note> <p>The repository
      * name must be unique across the calling AWS account. In addition, repository
      * names are limited to 100 alphanumeric, dash, and underscore characters, and
      * cannot include certain characters. For a full description of the limits on
      * repository names, see <a
      * href="http://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">Limits</a>
-     * in the AWS CodeCommit User Guide. The suffix ".git" is prohibited.</p></note>
+     * in the AWS CodeCommit User Guide. The suffix ".git" is prohibited.</p> </note>
      */
     inline void SetRepositoryName(Aws::String&& value) { m_repositoryNameHasBeenSet = true; m_repositoryName = value; }
 
     /**
-     * <p>The name of the new repository to be created.</p> <note><p>The repository
+     * <p>The name of the new repository to be created.</p> <note> <p>The repository
      * name must be unique across the calling AWS account. In addition, repository
      * names are limited to 100 alphanumeric, dash, and underscore characters, and
      * cannot include certain characters. For a full description of the limits on
      * repository names, see <a
      * href="http://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">Limits</a>
-     * in the AWS CodeCommit User Guide. The suffix ".git" is prohibited.</p></note>
+     * in the AWS CodeCommit User Guide. The suffix ".git" is prohibited.</p> </note>
      */
     inline void SetRepositoryName(const char* value) { m_repositoryNameHasBeenSet = true; m_repositoryName.assign(value); }
 
     /**
-     * <p>The name of the new repository to be created.</p> <note><p>The repository
+     * <p>The name of the new repository to be created.</p> <note> <p>The repository
      * name must be unique across the calling AWS account. In addition, repository
      * names are limited to 100 alphanumeric, dash, and underscore characters, and
      * cannot include certain characters. For a full description of the limits on
      * repository names, see <a
      * href="http://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">Limits</a>
-     * in the AWS CodeCommit User Guide. The suffix ".git" is prohibited.</p></note>
+     * in the AWS CodeCommit User Guide. The suffix ".git" is prohibited.</p> </note>
      */
     inline CreateRepositoryRequest& WithRepositoryName(const Aws::String& value) { SetRepositoryName(value); return *this;}
 
     /**
-     * <p>The name of the new repository to be created.</p> <note><p>The repository
+     * <p>The name of the new repository to be created.</p> <note> <p>The repository
      * name must be unique across the calling AWS account. In addition, repository
      * names are limited to 100 alphanumeric, dash, and underscore characters, and
      * cannot include certain characters. For a full description of the limits on
      * repository names, see <a
      * href="http://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">Limits</a>
-     * in the AWS CodeCommit User Guide. The suffix ".git" is prohibited.</p></note>
+     * in the AWS CodeCommit User Guide. The suffix ".git" is prohibited.</p> </note>
      */
     inline CreateRepositoryRequest& WithRepositoryName(Aws::String&& value) { SetRepositoryName(value); return *this;}
 
     /**
-     * <p>The name of the new repository to be created.</p> <note><p>The repository
+     * <p>The name of the new repository to be created.</p> <note> <p>The repository
      * name must be unique across the calling AWS account. In addition, repository
      * names are limited to 100 alphanumeric, dash, and underscore characters, and
      * cannot include certain characters. For a full description of the limits on
      * repository names, see <a
      * href="http://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">Limits</a>
-     * in the AWS CodeCommit User Guide. The suffix ".git" is prohibited.</p></note>
+     * in the AWS CodeCommit User Guide. The suffix ".git" is prohibited.</p> </note>
      */
     inline CreateRepositoryRequest& WithRepositoryName(const char* value) { SetRepositoryName(value); return *this;}
 
     /**
-     * <p>A comment or description about the new repository.</p> <note><p>The
+     * <p>A comment or description about the new repository.</p> <note> <p>The
      * description field for a repository accepts all HTML characters and all valid
      * Unicode characters. Applications that do not HTML-encode the description and
      * display it in a web page could expose users to potentially malicious code. Make
      * sure that you HTML-encode the description field in any application that uses
-     * this API to display the repository description on a web page.</p></note>
+     * this API to display the repository description on a web page.</p> </note>
      */
     inline const Aws::String& GetRepositoryDescription() const{ return m_repositoryDescription; }
 
     /**
-     * <p>A comment or description about the new repository.</p> <note><p>The
+     * <p>A comment or description about the new repository.</p> <note> <p>The
      * description field for a repository accepts all HTML characters and all valid
      * Unicode characters. Applications that do not HTML-encode the description and
      * display it in a web page could expose users to potentially malicious code. Make
      * sure that you HTML-encode the description field in any application that uses
-     * this API to display the repository description on a web page.</p></note>
+     * this API to display the repository description on a web page.</p> </note>
      */
     inline void SetRepositoryDescription(const Aws::String& value) { m_repositoryDescriptionHasBeenSet = true; m_repositoryDescription = value; }
 
     /**
-     * <p>A comment or description about the new repository.</p> <note><p>The
+     * <p>A comment or description about the new repository.</p> <note> <p>The
      * description field for a repository accepts all HTML characters and all valid
      * Unicode characters. Applications that do not HTML-encode the description and
      * display it in a web page could expose users to potentially malicious code. Make
      * sure that you HTML-encode the description field in any application that uses
-     * this API to display the repository description on a web page.</p></note>
+     * this API to display the repository description on a web page.</p> </note>
      */
     inline void SetRepositoryDescription(Aws::String&& value) { m_repositoryDescriptionHasBeenSet = true; m_repositoryDescription = value; }
 
     /**
-     * <p>A comment or description about the new repository.</p> <note><p>The
+     * <p>A comment or description about the new repository.</p> <note> <p>The
      * description field for a repository accepts all HTML characters and all valid
      * Unicode characters. Applications that do not HTML-encode the description and
      * display it in a web page could expose users to potentially malicious code. Make
      * sure that you HTML-encode the description field in any application that uses
-     * this API to display the repository description on a web page.</p></note>
+     * this API to display the repository description on a web page.</p> </note>
      */
     inline void SetRepositoryDescription(const char* value) { m_repositoryDescriptionHasBeenSet = true; m_repositoryDescription.assign(value); }
 
     /**
-     * <p>A comment or description about the new repository.</p> <note><p>The
+     * <p>A comment or description about the new repository.</p> <note> <p>The
      * description field for a repository accepts all HTML characters and all valid
      * Unicode characters. Applications that do not HTML-encode the description and
      * display it in a web page could expose users to potentially malicious code. Make
      * sure that you HTML-encode the description field in any application that uses
-     * this API to display the repository description on a web page.</p></note>
+     * this API to display the repository description on a web page.</p> </note>
      */
     inline CreateRepositoryRequest& WithRepositoryDescription(const Aws::String& value) { SetRepositoryDescription(value); return *this;}
 
     /**
-     * <p>A comment or description about the new repository.</p> <note><p>The
+     * <p>A comment or description about the new repository.</p> <note> <p>The
      * description field for a repository accepts all HTML characters and all valid
      * Unicode characters. Applications that do not HTML-encode the description and
      * display it in a web page could expose users to potentially malicious code. Make
      * sure that you HTML-encode the description field in any application that uses
-     * this API to display the repository description on a web page.</p></note>
+     * this API to display the repository description on a web page.</p> </note>
      */
     inline CreateRepositoryRequest& WithRepositoryDescription(Aws::String&& value) { SetRepositoryDescription(value); return *this;}
 
     /**
-     * <p>A comment or description about the new repository.</p> <note><p>The
+     * <p>A comment or description about the new repository.</p> <note> <p>The
      * description field for a repository accepts all HTML characters and all valid
      * Unicode characters. Applications that do not HTML-encode the description and
      * display it in a web page could expose users to potentially malicious code. Make
      * sure that you HTML-encode the description field in any application that uses
-     * this API to display the repository description on a web page.</p></note>
+     * this API to display the repository description on a web page.</p> </note>
      */
     inline CreateRepositoryRequest& WithRepositoryDescription(const char* value) { SetRepositoryDescription(value); return *this;}
 

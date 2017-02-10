@@ -58,6 +58,7 @@
 #include <aws/elasticbeanstalk/model/SwapEnvironmentCNAMEsRequest.h>
 #include <aws/elasticbeanstalk/model/TerminateEnvironmentRequest.h>
 #include <aws/elasticbeanstalk/model/UpdateApplicationRequest.h>
+#include <aws/elasticbeanstalk/model/UpdateApplicationResourceLifecycleRequest.h>
 #include <aws/elasticbeanstalk/model/UpdateApplicationVersionRequest.h>
 #include <aws/elasticbeanstalk/model/UpdateConfigurationTemplateRequest.h>
 #include <aws/elasticbeanstalk/model/UpdateEnvironmentRequest.h>
@@ -126,6 +127,16 @@ void ElasticBeanstalkClient::init(const ClientConfiguration& config)
   }
 
   m_uri = ss.str();
+}
+
+Aws::String ElasticBeanstalkClient::ConvertRequestToPresignedUrl(const AmazonSerializableWebServiceRequest& requestToConvert, const char* region) const
+{
+  Aws::StringStream ss;
+  ss << "https://" << ElasticBeanstalkEndpoint::ForRegion(region);
+  ss << "?" << requestToConvert.SerializePayload();
+
+  URI uri(ss.str());
+  return GeneratePresignedUrl(uri, HttpMethod::HTTP_GET, region, 3600);
 }
 
 AbortEnvironmentUpdateOutcome ElasticBeanstalkClient::AbortEnvironmentUpdate(const AbortEnvironmentUpdateRequest& request) const
@@ -1184,6 +1195,39 @@ void ElasticBeanstalkClient::UpdateApplicationAsyncHelper(const UpdateApplicatio
   handler(this, request, UpdateApplication(request), context);
 }
 
+UpdateApplicationResourceLifecycleOutcome ElasticBeanstalkClient::UpdateApplicationResourceLifecycle(const UpdateApplicationResourceLifecycleRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return UpdateApplicationResourceLifecycleOutcome(UpdateApplicationResourceLifecycleResult(outcome.GetResult()));
+  }
+  else
+  {
+    return UpdateApplicationResourceLifecycleOutcome(outcome.GetError());
+  }
+}
+
+UpdateApplicationResourceLifecycleOutcomeCallable ElasticBeanstalkClient::UpdateApplicationResourceLifecycleCallable(const UpdateApplicationResourceLifecycleRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateApplicationResourceLifecycleOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateApplicationResourceLifecycle(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ElasticBeanstalkClient::UpdateApplicationResourceLifecycleAsync(const UpdateApplicationResourceLifecycleRequest& request, const UpdateApplicationResourceLifecycleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateApplicationResourceLifecycleAsyncHelper( request, handler, context ); } );
+}
+
+void ElasticBeanstalkClient::UpdateApplicationResourceLifecycleAsyncHelper(const UpdateApplicationResourceLifecycleRequest& request, const UpdateApplicationResourceLifecycleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateApplicationResourceLifecycle(request), context);
+}
+
 UpdateApplicationVersionOutcome ElasticBeanstalkClient::UpdateApplicationVersion(const UpdateApplicationVersionRequest& request) const
 {
   Aws::StringStream ss;
@@ -1315,4 +1359,6 @@ void ElasticBeanstalkClient::ValidateConfigurationSettingsAsyncHelper(const Vali
 {
   handler(this, request, ValidateConfigurationSettings(request), context);
 }
+
+
 

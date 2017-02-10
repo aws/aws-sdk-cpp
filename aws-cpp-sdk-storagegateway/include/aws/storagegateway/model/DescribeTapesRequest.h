@@ -26,7 +26,9 @@ namespace Model
 {
 
   /**
-   * <p>DescribeTapesInput</p>
+   * <p>DescribeTapesInput</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeTapesInput">AWS
+   * API Reference</a></p>
    */
   class AWS_STORAGEGATEWAY_API DescribeTapesRequest : public StorageGatewayRequest
   {
@@ -172,21 +174,21 @@ namespace Model
 
     /**
      * <p>Specifies that the number of virtual tapes described be limited to the
-     * specified number.</p> <note><p>Amazon Web Services may impose its own limit, if
+     * specified number.</p> <note> <p>Amazon Web Services may impose its own limit, if
      * this field is not set.</p> </note>
      */
     inline int GetLimit() const{ return m_limit; }
 
     /**
      * <p>Specifies that the number of virtual tapes described be limited to the
-     * specified number.</p> <note><p>Amazon Web Services may impose its own limit, if
+     * specified number.</p> <note> <p>Amazon Web Services may impose its own limit, if
      * this field is not set.</p> </note>
      */
     inline void SetLimit(int value) { m_limitHasBeenSet = true; m_limit = value; }
 
     /**
      * <p>Specifies that the number of virtual tapes described be limited to the
-     * specified number.</p> <note><p>Amazon Web Services may impose its own limit, if
+     * specified number.</p> <note> <p>Amazon Web Services may impose its own limit, if
      * this field is not set.</p> </note>
      */
     inline DescribeTapesRequest& WithLimit(int value) { SetLimit(value); return *this;}

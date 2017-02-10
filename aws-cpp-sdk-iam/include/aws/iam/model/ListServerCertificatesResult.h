@@ -37,7 +37,9 @@ namespace Model
 {
   /**
    * <p>Contains the response to a successful <a>ListServerCertificates</a> request.
-   * </p>
+   * </p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListServerCertificatesResponse">AWS
+   * API Reference</a></p>
    */
   class AWS_IAM_API ListServerCertificatesResult
   {

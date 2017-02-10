@@ -38,7 +38,7 @@ Aws::String ModifyIdentityIdFormatRequest::SerializePayload() const
 
   if(m_useLongIdsHasBeenSet)
   {
-    ss << "UseLongIds=" << m_useLongIds << "&";
+    ss << "UseLongIds=" << std::boolalpha << m_useLongIds << "&";
   }
 
   if(m_principalArnHasBeenSet)
@@ -46,7 +46,7 @@ Aws::String ModifyIdentityIdFormatRequest::SerializePayload() const
     ss << "PrincipalArn=" << StringUtils::URLEncode(m_principalArn.c_str()) << "&";
   }
 
-  ss << "Version=2016-09-15";
+  ss << "Version=2016-11-15";
   return ss.str();
 }
 

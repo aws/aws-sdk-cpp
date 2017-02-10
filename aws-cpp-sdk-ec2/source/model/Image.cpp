@@ -306,7 +306,7 @@ void Image::OutputToStream(Aws::OStream& oStream, const char* location, unsigned
 
   if(m_publicHasBeenSet)
   {
-      oStream << location << index << locationValue << ".Public=" << m_public << "&";
+      oStream << location << index << locationValue << ".Public=" << std::boolalpha << m_public << "&";
   }
 
   if(m_productCodesHasBeenSet)
@@ -352,7 +352,7 @@ void Image::OutputToStream(Aws::OStream& oStream, const char* location, unsigned
 
   if(m_enaSupportHasBeenSet)
   {
-      oStream << location << index << locationValue << ".EnaSupport=" << m_enaSupport << "&";
+      oStream << location << index << locationValue << ".EnaSupport=" << std::boolalpha << m_enaSupport << "&";
   }
 
   if(m_stateReasonHasBeenSet)
@@ -445,7 +445,7 @@ void Image::OutputToStream(Aws::OStream& oStream, const char* location) const
   }
   if(m_publicHasBeenSet)
   {
-      oStream << location << ".Public=" << m_public << "&";
+      oStream << location << ".Public=" << std::boolalpha << m_public << "&";
   }
   if(m_productCodesHasBeenSet)
   {
@@ -453,7 +453,7 @@ void Image::OutputToStream(Aws::OStream& oStream, const char* location) const
       for(auto& item : m_productCodes)
       {
         Aws::StringStream productCodesSs;
-        productCodesSs << location <<  ".item." << productCodesIdx++;
+        productCodesSs << location <<  ".Item." << productCodesIdx++;
         item.OutputToStream(oStream, productCodesSs.str().c_str());
       }
   }
@@ -483,7 +483,7 @@ void Image::OutputToStream(Aws::OStream& oStream, const char* location) const
   }
   if(m_enaSupportHasBeenSet)
   {
-      oStream << location << ".EnaSupport=" << m_enaSupport << "&";
+      oStream << location << ".EnaSupport=" << std::boolalpha << m_enaSupport << "&";
   }
   if(m_stateReasonHasBeenSet)
   {
@@ -517,7 +517,7 @@ void Image::OutputToStream(Aws::OStream& oStream, const char* location) const
       for(auto& item : m_blockDeviceMappings)
       {
         Aws::StringStream blockDeviceMappingsSs;
-        blockDeviceMappingsSs << location <<  ".item." << blockDeviceMappingsIdx++;
+        blockDeviceMappingsSs << location <<  ".Item." << blockDeviceMappingsIdx++;
         item.OutputToStream(oStream, blockDeviceMappingsSs.str().c_str());
       }
   }
@@ -531,7 +531,7 @@ void Image::OutputToStream(Aws::OStream& oStream, const char* location) const
       for(auto& item : m_tags)
       {
         Aws::StringStream tagsSs;
-        tagsSs << location <<  ".item." << tagsIdx++;
+        tagsSs << location <<  ".Item." << tagsIdx++;
         item.OutputToStream(oStream, tagsSs.str().c_str());
       }
   }

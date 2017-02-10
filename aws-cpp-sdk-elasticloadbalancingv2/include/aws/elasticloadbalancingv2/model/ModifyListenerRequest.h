@@ -29,7 +29,6 @@ namespace Model
 {
 
   /**
-   * <p>Contains the parameters for ModifyListener.</p>
    */
   class AWS_ELASTICLOADBALANCINGV2_API ModifyListenerRequest : public ElasticLoadBalancingv2Request
   {

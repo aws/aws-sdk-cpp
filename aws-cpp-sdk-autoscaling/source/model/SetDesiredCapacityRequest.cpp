@@ -44,7 +44,7 @@ Aws::String SetDesiredCapacityRequest::SerializePayload() const
 
   if(m_honorCooldownHasBeenSet)
   {
-    ss << "HonorCooldown=" << m_honorCooldown << "&";
+    ss << "HonorCooldown=" << std::boolalpha << m_honorCooldown << "&";
   }
 
   ss << "Version=2011-01-01";

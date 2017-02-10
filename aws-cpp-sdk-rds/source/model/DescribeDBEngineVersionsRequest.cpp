@@ -77,17 +77,17 @@ Aws::String DescribeDBEngineVersionsRequest::SerializePayload() const
 
   if(m_defaultOnlyHasBeenSet)
   {
-    ss << "DefaultOnly=" << m_defaultOnly << "&";
+    ss << "DefaultOnly=" << std::boolalpha << m_defaultOnly << "&";
   }
 
   if(m_listSupportedCharacterSetsHasBeenSet)
   {
-    ss << "ListSupportedCharacterSets=" << m_listSupportedCharacterSets << "&";
+    ss << "ListSupportedCharacterSets=" << std::boolalpha << m_listSupportedCharacterSets << "&";
   }
 
   if(m_listSupportedTimezonesHasBeenSet)
   {
-    ss << "ListSupportedTimezones=" << m_listSupportedTimezones << "&";
+    ss << "ListSupportedTimezones=" << std::boolalpha << m_listSupportedTimezones << "&";
   }
 
   ss << "Version=2014-10-31";

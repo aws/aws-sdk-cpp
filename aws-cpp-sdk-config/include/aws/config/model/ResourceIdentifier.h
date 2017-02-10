@@ -35,7 +35,9 @@ namespace Model
   /**
    * <p>The details that identify a resource that is discovered by AWS Config,
    * including the resource type, ID, and (if available) the custom resource
-   * name.</p>
+   * name.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/ResourceIdentifier">AWS
+   * API Reference</a></p>
    */
   class AWS_CONFIGSERVICE_API ResourceIdentifier
   {

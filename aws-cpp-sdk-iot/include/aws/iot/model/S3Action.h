@@ -32,7 +32,10 @@ namespace Model
 {
 
   /**
-   * <p>Describes an action to write data to an Amazon S3 bucket.</p>
+   * <p>Describes an action to write data to an Amazon S3 bucket.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/S3Action">AWS API
+   * Reference</a></p>
    */
   class AWS_IOT_API S3Action
   {

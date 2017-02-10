@@ -25,7 +25,10 @@ namespace Model
 {
 
   /**
-   * <p>The name of a trail about which you want the current status.</p>
+   * <p>The name of a trail about which you want the current status.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/GetTrailStatusRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_CLOUDTRAIL_API GetTrailStatusRequest : public CloudTrailRequest
   {

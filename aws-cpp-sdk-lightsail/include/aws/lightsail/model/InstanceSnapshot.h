@@ -35,7 +35,10 @@ namespace Model
 {
 
   /**
-   * <p>Describes the snapshot of the virtual private server, or <i>instance</i>.</p>
+   * <p>Describes the snapshot of the virtual private server, or
+   * <i>instance</i>.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/InstanceSnapshot">AWS
+   * API Reference</a></p>
    */
   class AWS_LIGHTSAIL_API InstanceSnapshot
   {

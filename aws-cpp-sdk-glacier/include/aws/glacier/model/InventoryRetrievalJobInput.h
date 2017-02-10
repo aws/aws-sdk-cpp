@@ -31,7 +31,10 @@ namespace Model
 {
 
   /**
-   * <p>Provides options for specifying a range inventory retrieval job.</p>
+   * <p>Provides options for specifying a range inventory retrieval
+   * job.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/InventoryRetrievalJobInput">AWS
+   * API Reference</a></p>
    */
   class AWS_GLACIER_API InventoryRetrievalJobInput
   {

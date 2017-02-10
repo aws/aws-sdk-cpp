@@ -33,7 +33,9 @@ namespace Model
 {
 
   /**
-   * <p>A Docker container that is part of a task.</p>
+   * <p>A Docker container that is part of a task.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/Container">AWS API
+   * Reference</a></p>
    */
   class AWS_ECS_API Container
   {
@@ -200,43 +202,43 @@ namespace Model
 
     /**
      * <p>A short (255 max characters) human-readable string to provide additional
-     * detail about a running or stopped container.</p>
+     * details about a running or stopped container.</p>
      */
     inline const Aws::String& GetReason() const{ return m_reason; }
 
     /**
      * <p>A short (255 max characters) human-readable string to provide additional
-     * detail about a running or stopped container.</p>
+     * details about a running or stopped container.</p>
      */
     inline void SetReason(const Aws::String& value) { m_reasonHasBeenSet = true; m_reason = value; }
 
     /**
      * <p>A short (255 max characters) human-readable string to provide additional
-     * detail about a running or stopped container.</p>
+     * details about a running or stopped container.</p>
      */
     inline void SetReason(Aws::String&& value) { m_reasonHasBeenSet = true; m_reason = value; }
 
     /**
      * <p>A short (255 max characters) human-readable string to provide additional
-     * detail about a running or stopped container.</p>
+     * details about a running or stopped container.</p>
      */
     inline void SetReason(const char* value) { m_reasonHasBeenSet = true; m_reason.assign(value); }
 
     /**
      * <p>A short (255 max characters) human-readable string to provide additional
-     * detail about a running or stopped container.</p>
+     * details about a running or stopped container.</p>
      */
     inline Container& WithReason(const Aws::String& value) { SetReason(value); return *this;}
 
     /**
      * <p>A short (255 max characters) human-readable string to provide additional
-     * detail about a running or stopped container.</p>
+     * details about a running or stopped container.</p>
      */
     inline Container& WithReason(Aws::String&& value) { SetReason(value); return *this;}
 
     /**
      * <p>A short (255 max characters) human-readable string to provide additional
-     * detail about a running or stopped container.</p>
+     * details about a running or stopped container.</p>
      */
     inline Container& WithReason(const char* value) { SetReason(value); return *this;}
 

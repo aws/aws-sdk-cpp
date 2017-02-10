@@ -37,6 +37,7 @@ IpPermission::IpPermission() :
     m_toPortHasBeenSet(false),
     m_userIdGroupPairsHasBeenSet(false),
     m_ipRangesHasBeenSet(false),
+    m_ipv6RangesHasBeenSet(false),
     m_prefixListIdsHasBeenSet(false)
 {
 }
@@ -49,6 +50,7 @@ IpPermission::IpPermission(const XmlNode& xmlNode) :
     m_toPortHasBeenSet(false),
     m_userIdGroupPairsHasBeenSet(false),
     m_ipRangesHasBeenSet(false),
+    m_ipv6RangesHasBeenSet(false),
     m_prefixListIdsHasBeenSet(false)
 {
   *this = xmlNode;
@@ -101,6 +103,18 @@ IpPermission& IpPermission::operator =(const XmlNode& xmlNode)
       }
 
       m_ipRangesHasBeenSet = true;
+    }
+    XmlNode ipv6RangesNode = resultNode.FirstChild("ipv6Ranges");
+    if(!ipv6RangesNode.IsNull())
+    {
+      XmlNode ipv6RangesMember = ipv6RangesNode.FirstChild("item");
+      while(!ipv6RangesMember.IsNull())
+      {
+        m_ipv6Ranges.push_back(ipv6RangesMember);
+        ipv6RangesMember = ipv6RangesMember.NextNode("item");
+      }
+
+      m_ipv6RangesHasBeenSet = true;
     }
     XmlNode prefixListIdsNode = resultNode.FirstChild("prefixListIds");
     if(!prefixListIdsNode.IsNull())
@@ -158,6 +172,17 @@ void IpPermission::OutputToStream(Aws::OStream& oStream, const char* location, u
       }
   }
 
+  if(m_ipv6RangesHasBeenSet)
+  {
+      unsigned ipv6RangesIdx = 1;
+      for(auto& item : m_ipv6Ranges)
+      {
+        Aws::StringStream ipv6RangesSs;
+        ipv6RangesSs << location << index << locationValue << ".Ipv6Ranges." << ipv6RangesIdx++;
+        item.OutputToStream(oStream, ipv6RangesSs.str().c_str());
+      }
+  }
+
   if(m_prefixListIdsHasBeenSet)
   {
       unsigned prefixListIdsIdx = 1;
@@ -191,7 +216,7 @@ void IpPermission::OutputToStream(Aws::OStream& oStream, const char* location) c
       for(auto& item : m_userIdGroupPairs)
       {
         Aws::StringStream userIdGroupPairsSs;
-        userIdGroupPairsSs << location <<  ".item." << userIdGroupPairsIdx++;
+        userIdGroupPairsSs << location <<  ".Item." << userIdGroupPairsIdx++;
         item.OutputToStream(oStream, userIdGroupPairsSs.str().c_str());
       }
   }
@@ -201,8 +226,18 @@ void IpPermission::OutputToStream(Aws::OStream& oStream, const char* location) c
       for(auto& item : m_ipRanges)
       {
         Aws::StringStream ipRangesSs;
-        ipRangesSs << location <<  ".item." << ipRangesIdx++;
+        ipRangesSs << location <<  ".Item." << ipRangesIdx++;
         item.OutputToStream(oStream, ipRangesSs.str().c_str());
+      }
+  }
+  if(m_ipv6RangesHasBeenSet)
+  {
+      unsigned ipv6RangesIdx = 1;
+      for(auto& item : m_ipv6Ranges)
+      {
+        Aws::StringStream ipv6RangesSs;
+        ipv6RangesSs << location <<  ".Item." << ipv6RangesIdx++;
+        item.OutputToStream(oStream, ipv6RangesSs.str().c_str());
       }
   }
   if(m_prefixListIdsHasBeenSet)
@@ -211,7 +246,7 @@ void IpPermission::OutputToStream(Aws::OStream& oStream, const char* location) c
       for(auto& item : m_prefixListIds)
       {
         Aws::StringStream prefixListIdsSs;
-        prefixListIdsSs << location <<  ".item." << prefixListIdsIdx++;
+        prefixListIdsSs << location <<  ".Item." << prefixListIdsIdx++;
         item.OutputToStream(oStream, prefixListIdsSs.str().c_str());
       }
   }

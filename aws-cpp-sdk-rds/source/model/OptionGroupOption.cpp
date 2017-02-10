@@ -214,7 +214,7 @@ void OptionGroupOption::OutputToStream(Aws::OStream& oStream, const char* locati
 
   if(m_portRequiredHasBeenSet)
   {
-      oStream << location << index << locationValue << ".PortRequired=" << m_portRequired << "&";
+      oStream << location << index << locationValue << ".PortRequired=" << std::boolalpha << m_portRequired << "&";
   }
 
   if(m_defaultPortHasBeenSet)
@@ -242,12 +242,12 @@ void OptionGroupOption::OutputToStream(Aws::OStream& oStream, const char* locati
 
   if(m_persistentHasBeenSet)
   {
-      oStream << location << index << locationValue << ".Persistent=" << m_persistent << "&";
+      oStream << location << index << locationValue << ".Persistent=" << std::boolalpha << m_persistent << "&";
   }
 
   if(m_permanentHasBeenSet)
   {
-      oStream << location << index << locationValue << ".Permanent=" << m_permanent << "&";
+      oStream << location << index << locationValue << ".Permanent=" << std::boolalpha << m_permanent << "&";
   }
 
   if(m_optionGroupOptionSettingsHasBeenSet)
@@ -298,7 +298,7 @@ void OptionGroupOption::OutputToStream(Aws::OStream& oStream, const char* locati
   }
   if(m_portRequiredHasBeenSet)
   {
-      oStream << location << ".PortRequired=" << m_portRequired << "&";
+      oStream << location << ".PortRequired=" << std::boolalpha << m_portRequired << "&";
   }
   if(m_defaultPortHasBeenSet)
   {
@@ -322,11 +322,11 @@ void OptionGroupOption::OutputToStream(Aws::OStream& oStream, const char* locati
   }
   if(m_persistentHasBeenSet)
   {
-      oStream << location << ".Persistent=" << m_persistent << "&";
+      oStream << location << ".Persistent=" << std::boolalpha << m_persistent << "&";
   }
   if(m_permanentHasBeenSet)
   {
-      oStream << location << ".Permanent=" << m_permanent << "&";
+      oStream << location << ".Permanent=" << std::boolalpha << m_permanent << "&";
   }
   if(m_optionGroupOptionSettingsHasBeenSet)
   {

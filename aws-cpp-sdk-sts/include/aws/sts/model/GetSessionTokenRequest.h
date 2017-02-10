@@ -70,10 +70,10 @@ namespace Model
      * an Amazon Resource Name (ARN) for a virtual device (such as
      * <code>arn:aws:iam::123456789012:mfa/user</code>). You can find the device for an
      * IAM user by going to the AWS Management Console and viewing the user's security
-     * credentials. </p> <p>The format for this parameter, as described by its regex
-     * pattern, is a string of characters consisting of upper- and lower-case
-     * alphanumeric characters with no spaces. You can also include underscores or any
-     * of the following characters: =,.@-</p>
+     * credentials. </p> <p>The regex used to validate this parameter is a string of
+     * characters consisting of upper- and lower-case alphanumeric characters with no
+     * spaces. You can also include underscores or any of the following characters:
+     * =,.@-</p>
      */
     inline const Aws::String& GetSerialNumber() const{ return m_serialNumber; }
 
@@ -85,10 +85,10 @@ namespace Model
      * an Amazon Resource Name (ARN) for a virtual device (such as
      * <code>arn:aws:iam::123456789012:mfa/user</code>). You can find the device for an
      * IAM user by going to the AWS Management Console and viewing the user's security
-     * credentials. </p> <p>The format for this parameter, as described by its regex
-     * pattern, is a string of characters consisting of upper- and lower-case
-     * alphanumeric characters with no spaces. You can also include underscores or any
-     * of the following characters: =,.@-</p>
+     * credentials. </p> <p>The regex used to validate this parameter is a string of
+     * characters consisting of upper- and lower-case alphanumeric characters with no
+     * spaces. You can also include underscores or any of the following characters:
+     * =,.@-</p>
      */
     inline void SetSerialNumber(const Aws::String& value) { m_serialNumberHasBeenSet = true; m_serialNumber = value; }
 
@@ -100,10 +100,10 @@ namespace Model
      * an Amazon Resource Name (ARN) for a virtual device (such as
      * <code>arn:aws:iam::123456789012:mfa/user</code>). You can find the device for an
      * IAM user by going to the AWS Management Console and viewing the user's security
-     * credentials. </p> <p>The format for this parameter, as described by its regex
-     * pattern, is a string of characters consisting of upper- and lower-case
-     * alphanumeric characters with no spaces. You can also include underscores or any
-     * of the following characters: =,.@-</p>
+     * credentials. </p> <p>The regex used to validate this parameter is a string of
+     * characters consisting of upper- and lower-case alphanumeric characters with no
+     * spaces. You can also include underscores or any of the following characters:
+     * =,.@-</p>
      */
     inline void SetSerialNumber(Aws::String&& value) { m_serialNumberHasBeenSet = true; m_serialNumber = value; }
 
@@ -115,10 +115,10 @@ namespace Model
      * an Amazon Resource Name (ARN) for a virtual device (such as
      * <code>arn:aws:iam::123456789012:mfa/user</code>). You can find the device for an
      * IAM user by going to the AWS Management Console and viewing the user's security
-     * credentials. </p> <p>The format for this parameter, as described by its regex
-     * pattern, is a string of characters consisting of upper- and lower-case
-     * alphanumeric characters with no spaces. You can also include underscores or any
-     * of the following characters: =,.@-</p>
+     * credentials. </p> <p>The regex used to validate this parameter is a string of
+     * characters consisting of upper- and lower-case alphanumeric characters with no
+     * spaces. You can also include underscores or any of the following characters:
+     * =,.@-</p>
      */
     inline void SetSerialNumber(const char* value) { m_serialNumberHasBeenSet = true; m_serialNumber.assign(value); }
 
@@ -130,10 +130,10 @@ namespace Model
      * an Amazon Resource Name (ARN) for a virtual device (such as
      * <code>arn:aws:iam::123456789012:mfa/user</code>). You can find the device for an
      * IAM user by going to the AWS Management Console and viewing the user's security
-     * credentials. </p> <p>The format for this parameter, as described by its regex
-     * pattern, is a string of characters consisting of upper- and lower-case
-     * alphanumeric characters with no spaces. You can also include underscores or any
-     * of the following characters: =,.@-</p>
+     * credentials. </p> <p>The regex used to validate this parameter is a string of
+     * characters consisting of upper- and lower-case alphanumeric characters with no
+     * spaces. You can also include underscores or any of the following characters:
+     * =,.@-</p>
      */
     inline GetSessionTokenRequest& WithSerialNumber(const Aws::String& value) { SetSerialNumber(value); return *this;}
 
@@ -145,10 +145,10 @@ namespace Model
      * an Amazon Resource Name (ARN) for a virtual device (such as
      * <code>arn:aws:iam::123456789012:mfa/user</code>). You can find the device for an
      * IAM user by going to the AWS Management Console and viewing the user's security
-     * credentials. </p> <p>The format for this parameter, as described by its regex
-     * pattern, is a string of characters consisting of upper- and lower-case
-     * alphanumeric characters with no spaces. You can also include underscores or any
-     * of the following characters: =,.@-</p>
+     * credentials. </p> <p>The regex used to validate this parameter is a string of
+     * characters consisting of upper- and lower-case alphanumeric characters with no
+     * spaces. You can also include underscores or any of the following characters:
+     * =,.@-</p>
      */
     inline GetSessionTokenRequest& WithSerialNumber(Aws::String&& value) { SetSerialNumber(value); return *this;}
 
@@ -160,10 +160,10 @@ namespace Model
      * an Amazon Resource Name (ARN) for a virtual device (such as
      * <code>arn:aws:iam::123456789012:mfa/user</code>). You can find the device for an
      * IAM user by going to the AWS Management Console and viewing the user's security
-     * credentials. </p> <p>The format for this parameter, as described by its regex
-     * pattern, is a string of characters consisting of upper- and lower-case
-     * alphanumeric characters with no spaces. You can also include underscores or any
-     * of the following characters: =,.@-</p>
+     * credentials. </p> <p>The regex used to validate this parameter is a string of
+     * characters consisting of upper- and lower-case alphanumeric characters with no
+     * spaces. You can also include underscores or any of the following characters:
+     * =,.@-</p>
      */
     inline GetSessionTokenRequest& WithSerialNumber(const char* value) { SetSerialNumber(value); return *this;}
 

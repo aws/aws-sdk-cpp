@@ -26,7 +26,9 @@ namespace Model
 {
 
   /**
-   * <p>Represents the input for a request action.</p>
+   * <p>Represents the input for a request action.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateRuntimeConfigurationInput">AWS
+   * API Reference</a></p>
    */
   class AWS_GAMELIFT_API UpdateRuntimeConfigurationRequest : public GameLiftRequest
   {

@@ -35,7 +35,10 @@ namespace CloudSearch
 namespace Model
 {
   /**
-   * <p>The result of a <code>DescribeSuggesters</code> request.</p>
+   * <p>The result of a <code>DescribeSuggesters</code> request.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/DescribeSuggestersResponse">AWS
+   * API Reference</a></p>
    */
   class AWS_CLOUDSEARCH_API DescribeSuggestersResult
   {

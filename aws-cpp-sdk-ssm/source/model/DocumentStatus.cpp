@@ -31,6 +31,7 @@ namespace Aws
 
         static const int Creating_HASH = HashingUtils::HashString("Creating");
         static const int Active_HASH = HashingUtils::HashString("Active");
+        static const int Updating_HASH = HashingUtils::HashString("Updating");
         static const int Deleting_HASH = HashingUtils::HashString("Deleting");
 
 
@@ -44,6 +45,10 @@ namespace Aws
           else if (hashCode == Active_HASH)
           {
             return DocumentStatus::Active;
+          }
+          else if (hashCode == Updating_HASH)
+          {
+            return DocumentStatus::Updating;
           }
           else if (hashCode == Deleting_HASH)
           {
@@ -67,6 +72,8 @@ namespace Aws
             return "Creating";
           case DocumentStatus::Active:
             return "Active";
+          case DocumentStatus::Updating:
+            return "Updating";
           case DocumentStatus::Deleting:
             return "Deleting";
           default:

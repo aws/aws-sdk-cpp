@@ -32,7 +32,9 @@ namespace Model
 
   /**
    * <p>The input for the DynamoActionVS action that specifies the DynamoDB table to
-   * which the message data will be written.</p>
+   * which the message data will be written.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/PutItemInput">AWS
+   * API Reference</a></p>
    */
   class AWS_IOT_API PutItemInput
   {

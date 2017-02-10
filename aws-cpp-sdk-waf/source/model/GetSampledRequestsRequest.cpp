@@ -64,7 +64,7 @@ Aws::String GetSampledRequestsRequest::SerializePayload() const
 Aws::Http::HeaderValueCollection GetSampledRequestsRequest::GetRequestSpecificHeaders() const
 {
   Aws::Http::HeaderValueCollection headers;
-  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "AWSWAF_20150824.GetSampleds"));
+  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "AWSWAF_20150824.GetSampledRequests"));
   return headers;
 
 }

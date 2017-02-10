@@ -32,7 +32,9 @@ namespace Model
 
   /**
    * <p>A key-value pair that identifies or specifies metadata about an ACM
-   * resource.</p>
+   * resource.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/Tag">AWS API
+   * Reference</a></p>
    */
   class AWS_ACM_API Tag
   {

@@ -27,7 +27,9 @@ namespace Model
 {
 
   /**
-   * <p/>
+   * <p/><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateDBClusterMessage">AWS
+   * API Reference</a></p>
    */
   class AWS_RDS_API CreateDBClusterRequest : public RDSRequest
   {
@@ -886,44 +888,44 @@ namespace Model
     inline CreateDBClusterRequest& WithPreferredMaintenanceWindow(const char* value) { SetPreferredMaintenanceWindow(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the source DB cluster if this DB cluster is
-     * created as a Read Replica.</p>
+     * <p>The Amazon Resource Name (ARN) of the source DB instance or DB cluster if
+     * this DB cluster is created as a Read Replica.</p>
      */
     inline const Aws::String& GetReplicationSourceIdentifier() const{ return m_replicationSourceIdentifier; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the source DB cluster if this DB cluster is
-     * created as a Read Replica.</p>
+     * <p>The Amazon Resource Name (ARN) of the source DB instance or DB cluster if
+     * this DB cluster is created as a Read Replica.</p>
      */
     inline void SetReplicationSourceIdentifier(const Aws::String& value) { m_replicationSourceIdentifierHasBeenSet = true; m_replicationSourceIdentifier = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the source DB cluster if this DB cluster is
-     * created as a Read Replica.</p>
+     * <p>The Amazon Resource Name (ARN) of the source DB instance or DB cluster if
+     * this DB cluster is created as a Read Replica.</p>
      */
     inline void SetReplicationSourceIdentifier(Aws::String&& value) { m_replicationSourceIdentifierHasBeenSet = true; m_replicationSourceIdentifier = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the source DB cluster if this DB cluster is
-     * created as a Read Replica.</p>
+     * <p>The Amazon Resource Name (ARN) of the source DB instance or DB cluster if
+     * this DB cluster is created as a Read Replica.</p>
      */
     inline void SetReplicationSourceIdentifier(const char* value) { m_replicationSourceIdentifierHasBeenSet = true; m_replicationSourceIdentifier.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the source DB cluster if this DB cluster is
-     * created as a Read Replica.</p>
+     * <p>The Amazon Resource Name (ARN) of the source DB instance or DB cluster if
+     * this DB cluster is created as a Read Replica.</p>
      */
     inline CreateDBClusterRequest& WithReplicationSourceIdentifier(const Aws::String& value) { SetReplicationSourceIdentifier(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the source DB cluster if this DB cluster is
-     * created as a Read Replica.</p>
+     * <p>The Amazon Resource Name (ARN) of the source DB instance or DB cluster if
+     * this DB cluster is created as a Read Replica.</p>
      */
     inline CreateDBClusterRequest& WithReplicationSourceIdentifier(Aws::String&& value) { SetReplicationSourceIdentifier(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the source DB cluster if this DB cluster is
-     * created as a Read Replica.</p>
+     * <p>The Amazon Resource Name (ARN) of the source DB instance or DB cluster if
+     * this DB cluster is created as a Read Replica.</p>
      */
     inline CreateDBClusterRequest& WithReplicationSourceIdentifier(const char* value) { SetReplicationSourceIdentifier(value); return *this;}
 

@@ -141,7 +141,7 @@ void AutoScalingInstanceDetails::OutputToStream(Aws::OStream& oStream, const cha
 
   if(m_protectedFromScaleInHasBeenSet)
   {
-      oStream << location << index << locationValue << ".ProtectedFromScaleIn=" << m_protectedFromScaleIn << "&";
+      oStream << location << index << locationValue << ".ProtectedFromScaleIn=" << std::boolalpha << m_protectedFromScaleIn << "&";
   }
 
 }
@@ -174,7 +174,7 @@ void AutoScalingInstanceDetails::OutputToStream(Aws::OStream& oStream, const cha
   }
   if(m_protectedFromScaleInHasBeenSet)
   {
-      oStream << location << ".ProtectedFromScaleIn=" << m_protectedFromScaleIn << "&";
+      oStream << location << ".ProtectedFromScaleIn=" << std::boolalpha << m_protectedFromScaleIn << "&";
   }
 }
 

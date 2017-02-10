@@ -32,7 +32,9 @@ namespace Model
 {
 
   /**
-   * <p>Represents filters for a dimension.</p>
+   * <p>Represents filters for a dimension.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DimensionFilter">AWS
+   * API Reference</a></p>
    */
   class AWS_CLOUDWATCH_API DimensionFilter
   {

@@ -32,7 +32,10 @@ namespace Model
 
   /**
    * <p>Configuration of requested EBS block device associated with the instance
-   * group with count of volumes that will be associated to every instance.</p>
+   * group with count of volumes that will be associated to every
+   * instance.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/EbsBlockDeviceConfig">AWS
+   * API Reference</a></p>
    */
   class AWS_EMR_API EbsBlockDeviceConfig
   {

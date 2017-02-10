@@ -32,7 +32,7 @@ Aws::String DisassociateRouteTableRequest::SerializePayload() const
   ss << "Action=DisassociateRouteTable&";
   if(m_dryRunHasBeenSet)
   {
-    ss << "DryRun=" << m_dryRun << "&";
+    ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
   if(m_associationIdHasBeenSet)
@@ -40,7 +40,7 @@ Aws::String DisassociateRouteTableRequest::SerializePayload() const
     ss << "AssociationId=" << StringUtils::URLEncode(m_associationId.c_str()) << "&";
   }
 
-  ss << "Version=2016-09-15";
+  ss << "Version=2016-11-15";
   return ss.str();
 }
 

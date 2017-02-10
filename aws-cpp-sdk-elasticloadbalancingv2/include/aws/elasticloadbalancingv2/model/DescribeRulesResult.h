@@ -34,9 +34,6 @@ namespace ElasticLoadBalancingv2
 {
 namespace Model
 {
-  /**
-   * <p>Contains the output of DescribeRules.</p>
-   */
   class AWS_ELASTICLOADBALANCINGV2_API DescribeRulesResult
   {
   public:

@@ -32,7 +32,10 @@ namespace Model
 {
 
   /**
-   * <p>Describes the encryption for a destination in Amazon S3.</p>
+   * <p>Describes the encryption for a destination in Amazon S3.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/EncryptionConfiguration">AWS
+   * API Reference</a></p>
    */
   class AWS_FIREHOSE_API EncryptionConfiguration
   {

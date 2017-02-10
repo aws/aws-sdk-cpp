@@ -26,7 +26,10 @@ namespace Model
 {
 
   /**
-   * <p>The RegisterDomain request includes the following elements.</p>
+   * <p>The RegisterDomain request includes the following elements.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/RegisterDomainRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_ROUTE53DOMAINS_API RegisterDomainRequest : public Route53DomainsRequest
   {

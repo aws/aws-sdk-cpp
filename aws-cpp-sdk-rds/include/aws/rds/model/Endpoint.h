@@ -35,7 +35,9 @@ namespace Model
    * <p>This data type is used as a response element in the following actions:</p>
    * <ul> <li> <p> <a>CreateDBInstance</a> </p> </li> <li> <p>
    * <a>DescribeDBInstances</a> </p> </li> <li> <p> <a>DeleteDBInstance</a> </p>
-   * </li> </ul>
+   * </li> </ul><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/Endpoint">AWS API
+   * Reference</a></p>
    */
   class AWS_RDS_API Endpoint
   {

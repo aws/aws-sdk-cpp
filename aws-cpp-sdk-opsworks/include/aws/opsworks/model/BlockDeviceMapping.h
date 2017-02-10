@@ -35,7 +35,9 @@ namespace Model
    * <p>Describes a block device mapping. This data type maps directly to the Amazon
    * EC2 <a
    * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_BlockDeviceMapping.html">BlockDeviceMapping</a>
-   * data type. </p>
+   * data type. </p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/BlockDeviceMapping">AWS
+   * API Reference</a></p>
    */
   class AWS_OPSWORKS_API BlockDeviceMapping
   {

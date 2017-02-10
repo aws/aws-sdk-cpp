@@ -25,7 +25,10 @@ namespace Model
 {
 
   /**
-   * <p>Represents the input of a list branches operation.</p>
+   * <p>Represents the input of a list branches operation.</p><p><h3>See Also:</h3>  
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/ListBranchesInput">AWS
+   * API Reference</a></p>
    */
   class AWS_CODECOMMIT_API ListBranchesRequest : public CodeCommitRequest
   {
@@ -71,37 +74,37 @@ namespace Model
     inline ListBranchesRequest& WithRepositoryName(const char* value) { SetRepositoryName(value); return *this;}
 
     /**
-     * <p>An enumeration token that allows the operation to batch the results. </p>
+     * <p>An enumeration token that allows the operation to batch the results.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * <p>An enumeration token that allows the operation to batch the results. </p>
+     * <p>An enumeration token that allows the operation to batch the results.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
-     * <p>An enumeration token that allows the operation to batch the results. </p>
+     * <p>An enumeration token that allows the operation to batch the results.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
-     * <p>An enumeration token that allows the operation to batch the results. </p>
+     * <p>An enumeration token that allows the operation to batch the results.</p>
      */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
 
     /**
-     * <p>An enumeration token that allows the operation to batch the results. </p>
+     * <p>An enumeration token that allows the operation to batch the results.</p>
      */
     inline ListBranchesRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>An enumeration token that allows the operation to batch the results. </p>
+     * <p>An enumeration token that allows the operation to batch the results.</p>
      */
     inline ListBranchesRequest& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>An enumeration token that allows the operation to batch the results. </p>
+     * <p>An enumeration token that allows the operation to batch the results.</p>
      */
     inline ListBranchesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 

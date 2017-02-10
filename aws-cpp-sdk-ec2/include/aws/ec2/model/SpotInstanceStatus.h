@@ -33,7 +33,10 @@ namespace Model
 {
 
   /**
-   * <p>Describes the status of a Spot instance request.</p>
+   * <p>Describes the status of a Spot instance request.</p><p><h3>See Also:</h3>  
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/SpotInstanceStatus">AWS
+   * API Reference</a></p>
    */
   class AWS_EC2_API SpotInstanceStatus
   {

@@ -35,10 +35,10 @@ DescribeSpotFleetRequestHistoryRequest::DescribeSpotFleetRequestHistoryRequest()
 Aws::String DescribeSpotFleetRequestHistoryRequest::SerializePayload() const
 {
   Aws::StringStream ss;
-  ss << "Action=DescribeSpotFleetHistory&";
+  ss << "Action=DescribeSpotFleetRequestHistory&";
   if(m_dryRunHasBeenSet)
   {
-    ss << "DryRun=" << m_dryRun << "&";
+    ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
   if(m_spotFleetRequestIdHasBeenSet)
@@ -66,7 +66,7 @@ Aws::String DescribeSpotFleetRequestHistoryRequest::SerializePayload() const
     ss << "MaxResults=" << m_maxResults << "&";
   }
 
-  ss << "Version=2016-09-15";
+  ss << "Version=2016-11-15";
   return ss.str();
 }
 

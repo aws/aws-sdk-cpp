@@ -32,7 +32,9 @@ namespace Model
 {
 
   /**
-   * <p>Describes properties of a Dedicated Host.</p>
+   * <p>Describes properties of a Dedicated Host.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/HostProperties">AWS
+   * API Reference</a></p>
    */
   class AWS_EC2_API HostProperties
   {

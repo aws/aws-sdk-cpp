@@ -33,7 +33,9 @@ namespace Model
 {
 
   /**
-   * <p>Describes a volume status event.</p>
+   * <p>Describes a volume status event.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/VolumeStatusEvent">AWS
+   * API Reference</a></p>
    */
   class AWS_EC2_API VolumeStatusEvent
   {

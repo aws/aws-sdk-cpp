@@ -33,7 +33,7 @@ Aws::String DeleteSecurityGroupRequest::SerializePayload() const
   ss << "Action=DeleteSecurityGroup&";
   if(m_dryRunHasBeenSet)
   {
-    ss << "DryRun=" << m_dryRun << "&";
+    ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
   if(m_groupNameHasBeenSet)
@@ -46,7 +46,7 @@ Aws::String DeleteSecurityGroupRequest::SerializePayload() const
     ss << "GroupId=" << StringUtils::URLEncode(m_groupId.c_str()) << "&";
   }
 
-  ss << "Version=2016-09-15";
+  ss << "Version=2016-11-15";
   return ss.str();
 }
 

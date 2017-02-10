@@ -35,7 +35,9 @@ namespace EC2
 namespace Model
 {
   /**
-   * <p>Contains the output of DescribeVpnGateways.</p>
+   * <p>Contains the output of DescribeVpnGateways.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVpnGatewaysResult">AWS
+   * API Reference</a></p>
    */
   class AWS_EC2_API DescribeVpnGatewaysResponse
   {

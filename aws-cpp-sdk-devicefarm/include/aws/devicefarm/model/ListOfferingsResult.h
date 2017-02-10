@@ -35,7 +35,10 @@ namespace DeviceFarm
 namespace Model
 {
   /**
-   * <p>Represents the return values of the list of offerings.</p>
+   * <p>Represents the return values of the list of offerings.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListOfferingsResult">AWS
+   * API Reference</a></p>
    */
   class AWS_DEVICEFARM_API ListOfferingsResult
   {

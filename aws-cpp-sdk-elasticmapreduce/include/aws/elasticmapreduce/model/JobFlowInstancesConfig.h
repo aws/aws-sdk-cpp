@@ -38,7 +38,9 @@ namespace Model
    * JobFlowInstancesConfig must contain at least InstanceGroups, which is the
    * recommended configuration. However, a valid alternative is to have
    * MasterInstanceType, SlaveInstanceType, and InstanceCount (all three must be
-   * present).</p>
+   * present).</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/JobFlowInstancesConfig">AWS
+   * API Reference</a></p>
    */
   class AWS_EMR_API JobFlowInstancesConfig
   {

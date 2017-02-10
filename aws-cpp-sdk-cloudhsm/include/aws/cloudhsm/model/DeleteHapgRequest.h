@@ -25,7 +25,10 @@ namespace Model
 {
 
   /**
-   * <p>Contains the inputs for the <a>DeleteHapg</a> action.</p>
+   * <p>Contains the inputs for the <a>DeleteHapg</a> action.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/DeleteHapgRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_CLOUDHSM_API DeleteHapgRequest : public CloudHSMRequest
   {

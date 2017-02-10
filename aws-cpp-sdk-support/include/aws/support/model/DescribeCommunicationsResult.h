@@ -36,7 +36,9 @@ namespace Model
 {
   /**
    * <p>The communications returned by the <a>DescribeCommunications</a>
-   * operation.</p>
+   * operation.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/DescribeCommunicationsResponse">AWS
+   * API Reference</a></p>
    */
   class AWS_SUPPORT_API DescribeCommunicationsResult
   {

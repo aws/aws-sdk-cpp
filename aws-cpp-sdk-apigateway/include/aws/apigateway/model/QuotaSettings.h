@@ -31,7 +31,9 @@ namespace Model
 {
 
   /**
-   * <p>Quotas configured for a usage plan.</p>
+   * <p>Quotas configured for a usage plan.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/QuotaSettings">AWS
+   * API Reference</a></p>
    */
   class AWS_APIGATEWAY_API QuotaSettings
   {

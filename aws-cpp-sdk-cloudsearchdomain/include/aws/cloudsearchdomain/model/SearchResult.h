@@ -40,7 +40,9 @@ namespace Model
   /**
    * <p>The result of a <code>Search</code> request. Contains the documents that
    * match the specified search criteria and any requested fields, highlights, and
-   * facet information.</p>
+   * facet information.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearchdomain-2013-01-01/SearchResponse">AWS
+   * API Reference</a></p>
    */
   class AWS_CLOUDSEARCHDOMAIN_API SearchResult
   {

@@ -33,58 +33,58 @@ namespace Model
     Aws::String SerializePayload() const override;
 
     /**
-     * <p>The name of the account alias to delete.</p> <p>The <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a
-     * string of characters consisting of lowercase letters, digits, and dashes. You
-     * cannot start or finish with a dash, nor can you have two dashes in a row.</p>
+     * <p>The name of the account alias to delete.</p> <p>This parameter allows (per
+     * its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * characters consisting of lowercase letters, digits, and dashes. You cannot start
+     * or finish with a dash, nor can you have two dashes in a row.</p>
      */
     inline const Aws::String& GetAccountAlias() const{ return m_accountAlias; }
 
     /**
-     * <p>The name of the account alias to delete.</p> <p>The <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a
-     * string of characters consisting of lowercase letters, digits, and dashes. You
-     * cannot start or finish with a dash, nor can you have two dashes in a row.</p>
+     * <p>The name of the account alias to delete.</p> <p>This parameter allows (per
+     * its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * characters consisting of lowercase letters, digits, and dashes. You cannot start
+     * or finish with a dash, nor can you have two dashes in a row.</p>
      */
     inline void SetAccountAlias(const Aws::String& value) { m_accountAliasHasBeenSet = true; m_accountAlias = value; }
 
     /**
-     * <p>The name of the account alias to delete.</p> <p>The <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a
-     * string of characters consisting of lowercase letters, digits, and dashes. You
-     * cannot start or finish with a dash, nor can you have two dashes in a row.</p>
+     * <p>The name of the account alias to delete.</p> <p>This parameter allows (per
+     * its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * characters consisting of lowercase letters, digits, and dashes. You cannot start
+     * or finish with a dash, nor can you have two dashes in a row.</p>
      */
     inline void SetAccountAlias(Aws::String&& value) { m_accountAliasHasBeenSet = true; m_accountAlias = value; }
 
     /**
-     * <p>The name of the account alias to delete.</p> <p>The <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a
-     * string of characters consisting of lowercase letters, digits, and dashes. You
-     * cannot start or finish with a dash, nor can you have two dashes in a row.</p>
+     * <p>The name of the account alias to delete.</p> <p>This parameter allows (per
+     * its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * characters consisting of lowercase letters, digits, and dashes. You cannot start
+     * or finish with a dash, nor can you have two dashes in a row.</p>
      */
     inline void SetAccountAlias(const char* value) { m_accountAliasHasBeenSet = true; m_accountAlias.assign(value); }
 
     /**
-     * <p>The name of the account alias to delete.</p> <p>The <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a
-     * string of characters consisting of lowercase letters, digits, and dashes. You
-     * cannot start or finish with a dash, nor can you have two dashes in a row.</p>
+     * <p>The name of the account alias to delete.</p> <p>This parameter allows (per
+     * its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * characters consisting of lowercase letters, digits, and dashes. You cannot start
+     * or finish with a dash, nor can you have two dashes in a row.</p>
      */
     inline DeleteAccountAliasRequest& WithAccountAlias(const Aws::String& value) { SetAccountAlias(value); return *this;}
 
     /**
-     * <p>The name of the account alias to delete.</p> <p>The <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a
-     * string of characters consisting of lowercase letters, digits, and dashes. You
-     * cannot start or finish with a dash, nor can you have two dashes in a row.</p>
+     * <p>The name of the account alias to delete.</p> <p>This parameter allows (per
+     * its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * characters consisting of lowercase letters, digits, and dashes. You cannot start
+     * or finish with a dash, nor can you have two dashes in a row.</p>
      */
     inline DeleteAccountAliasRequest& WithAccountAlias(Aws::String&& value) { SetAccountAlias(value); return *this;}
 
     /**
-     * <p>The name of the account alias to delete.</p> <p>The <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a
-     * string of characters consisting of lowercase letters, digits, and dashes. You
-     * cannot start or finish with a dash, nor can you have two dashes in a row.</p>
+     * <p>The name of the account alias to delete.</p> <p>This parameter allows (per
+     * its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * characters consisting of lowercase letters, digits, and dashes. You cannot start
+     * or finish with a dash, nor can you have two dashes in a row.</p>
      */
     inline DeleteAccountAliasRequest& WithAccountAlias(const char* value) { SetAccountAlias(value); return *this;}
 

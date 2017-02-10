@@ -33,7 +33,9 @@ namespace Model
 {
 
   /**
-   * <p>Represents an export task.</p>
+   * <p>Represents an export task.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/ExportTask">AWS API
+   * Reference</a></p>
    */
   class AWS_CLOUDWATCHLOGS_API ExportTask
   {
@@ -149,38 +151,38 @@ namespace Model
     inline ExportTask& WithLogGroupName(const char* value) { SetLogGroupName(value); return *this;}
 
     /**
-     * <p>The start time. Events with a timestamp prior to this time are not
-     * exported.</p>
+     * <p>The start time, expressed as the number of milliseconds since Jan 1, 1970
+     * 00:00:00 UTC. Events with a timestamp prior to this time are not exported.</p>
      */
     inline long long GetFrom() const{ return m_from; }
 
     /**
-     * <p>The start time. Events with a timestamp prior to this time are not
-     * exported.</p>
+     * <p>The start time, expressed as the number of milliseconds since Jan 1, 1970
+     * 00:00:00 UTC. Events with a timestamp prior to this time are not exported.</p>
      */
     inline void SetFrom(long long value) { m_fromHasBeenSet = true; m_from = value; }
 
     /**
-     * <p>The start time. Events with a timestamp prior to this time are not
-     * exported.</p>
+     * <p>The start time, expressed as the number of milliseconds since Jan 1, 1970
+     * 00:00:00 UTC. Events with a timestamp prior to this time are not exported.</p>
      */
     inline ExportTask& WithFrom(long long value) { SetFrom(value); return *this;}
 
     /**
-     * <p>The end time. Events with a timestamp later than this time are not
-     * exported.</p>
+     * <p>The end time, expressed as the number of milliseconds since Jan 1, 1970
+     * 00:00:00 UTC. Events with a timestamp later than this time are not exported.</p>
      */
     inline long long GetTo() const{ return m_to; }
 
     /**
-     * <p>The end time. Events with a timestamp later than this time are not
-     * exported.</p>
+     * <p>The end time, expressed as the number of milliseconds since Jan 1, 1970
+     * 00:00:00 UTC. Events with a timestamp later than this time are not exported.</p>
      */
     inline void SetTo(long long value) { m_toHasBeenSet = true; m_to = value; }
 
     /**
-     * <p>The end time. Events with a timestamp later than this time are not
-     * exported.</p>
+     * <p>The end time, expressed as the number of milliseconds since Jan 1, 1970
+     * 00:00:00 UTC. Events with a timestamp later than this time are not exported.</p>
      */
     inline ExportTask& WithTo(long long value) { SetTo(value); return *this;}
 

@@ -25,7 +25,9 @@ namespace Model
 {
 
   /**
-   * <p/>
+   * <p/><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/ListDeadLetterSourceQueuesRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_SQS_API ListDeadLetterSourceQueuesRequest : public SQSRequest
   {
@@ -34,44 +36,37 @@ namespace Model
     Aws::String SerializePayload() const override;
 
     /**
-     * <p>The queue URL of a dead letter queue.</p> <p>Queue URLs are
-     * case-sensitive.</p>
+     * <p>The URL of a dead letter queue.</p> <p>Queue URLs are case-sensitive.</p>
      */
     inline const Aws::String& GetQueueUrl() const{ return m_queueUrl; }
 
     /**
-     * <p>The queue URL of a dead letter queue.</p> <p>Queue URLs are
-     * case-sensitive.</p>
+     * <p>The URL of a dead letter queue.</p> <p>Queue URLs are case-sensitive.</p>
      */
     inline void SetQueueUrl(const Aws::String& value) { m_queueUrlHasBeenSet = true; m_queueUrl = value; }
 
     /**
-     * <p>The queue URL of a dead letter queue.</p> <p>Queue URLs are
-     * case-sensitive.</p>
+     * <p>The URL of a dead letter queue.</p> <p>Queue URLs are case-sensitive.</p>
      */
     inline void SetQueueUrl(Aws::String&& value) { m_queueUrlHasBeenSet = true; m_queueUrl = value; }
 
     /**
-     * <p>The queue URL of a dead letter queue.</p> <p>Queue URLs are
-     * case-sensitive.</p>
+     * <p>The URL of a dead letter queue.</p> <p>Queue URLs are case-sensitive.</p>
      */
     inline void SetQueueUrl(const char* value) { m_queueUrlHasBeenSet = true; m_queueUrl.assign(value); }
 
     /**
-     * <p>The queue URL of a dead letter queue.</p> <p>Queue URLs are
-     * case-sensitive.</p>
+     * <p>The URL of a dead letter queue.</p> <p>Queue URLs are case-sensitive.</p>
      */
     inline ListDeadLetterSourceQueuesRequest& WithQueueUrl(const Aws::String& value) { SetQueueUrl(value); return *this;}
 
     /**
-     * <p>The queue URL of a dead letter queue.</p> <p>Queue URLs are
-     * case-sensitive.</p>
+     * <p>The URL of a dead letter queue.</p> <p>Queue URLs are case-sensitive.</p>
      */
     inline ListDeadLetterSourceQueuesRequest& WithQueueUrl(Aws::String&& value) { SetQueueUrl(value); return *this;}
 
     /**
-     * <p>The queue URL of a dead letter queue.</p> <p>Queue URLs are
-     * case-sensitive.</p>
+     * <p>The URL of a dead letter queue.</p> <p>Queue URLs are case-sensitive.</p>
      */
     inline ListDeadLetterSourceQueuesRequest& WithQueueUrl(const char* value) { SetQueueUrl(value); return *this;}
 

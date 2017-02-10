@@ -25,7 +25,9 @@ namespace Model
 {
 
   /**
-   * <p>Contains the parameters for ListPipelines.</p>
+   * <p>Contains the parameters for ListPipelines.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/ListPipelinesInput">AWS
+   * API Reference</a></p>
    */
   class AWS_DATAPIPELINE_API ListPipelinesRequest : public DataPipelineRequest
   {

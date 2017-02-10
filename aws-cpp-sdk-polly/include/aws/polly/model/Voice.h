@@ -34,7 +34,9 @@ namespace Model
 {
 
   /**
-   * <p>Description of the voice.</p>
+   * <p>Description of the voice.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/Voice">AWS API
+   * Reference</a></p>
    */
   class AWS_POLLY_API Voice
   {

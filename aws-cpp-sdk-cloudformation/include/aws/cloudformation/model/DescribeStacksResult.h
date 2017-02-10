@@ -36,7 +36,9 @@ namespace CloudFormation
 namespace Model
 {
   /**
-   * <p>The output for a <a>DescribeStacks</a> action.</p>
+   * <p>The output for a <a>DescribeStacks</a> action.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeStacksOutput">AWS
+   * API Reference</a></p>
    */
   class AWS_CLOUDFORMATION_API DescribeStacksResult
   {

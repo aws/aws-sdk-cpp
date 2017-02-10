@@ -34,7 +34,9 @@ namespace Model
 
   /**
    * <p>A complex type that describes change information about changes made to your
-   * hosted zone.</p>
+   * hosted zone.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ChangeInfo">AWS
+   * API Reference</a></p>
    */
   class AWS_ROUTE53_API ChangeInfo
   {

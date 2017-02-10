@@ -28,7 +28,10 @@ namespace Model
 {
 
   /**
-   * Container for the parameters to the StartSupportDataExport operation.
+   * Container for the parameters to the StartSupportDataExport operation.<p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/marketplacecommerceanalytics-2015-07-01/StartSupportDataExportRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_MARKETPLACECOMMERCEANALYTICS_API StartSupportDataExportRequest : public MarketplaceCommerceAnalyticsRequest
   {
@@ -41,11 +44,10 @@ namespace Model
     /**
      * <p> Specifies the data set type to be written to the output csv file. The data
      * set types customer_support_contacts_data and test_customer_support_contacts_data
-     * both result in a csv file containing the following fields: Product Id, Customer
-     * Guid, Subscription Guid, Subscription Start Date, Organization, AWS Account Id,
-     * Given Name, Surname, Telephone Number, Email, Title, Country Code, ZIP Code,
-     * Operation Type, and Operation Time. Currently, only the
-     * test_customer_support_contacts_data value is supported </p> <p> <ul>
+     * both result in a csv file containing the following fields: Product Id, Product
+     * Code, Customer Guid, Subscription Guid, Subscription Start Date, Organization,
+     * AWS Account Id, Given Name, Surname, Telephone Number, Email, Title, Country
+     * Code, ZIP Code, Operation Type, and Operation Time. </p> <p> <ul>
      * <li><i>customer_support_contacts_data</i> Customer support contact data. The
      * data set will contain all changes (Creates, Updates, and Deletes) to customer
      * support contact data from the date specified in the from_date parameter.</li>
@@ -58,11 +60,10 @@ namespace Model
     /**
      * <p> Specifies the data set type to be written to the output csv file. The data
      * set types customer_support_contacts_data and test_customer_support_contacts_data
-     * both result in a csv file containing the following fields: Product Id, Customer
-     * Guid, Subscription Guid, Subscription Start Date, Organization, AWS Account Id,
-     * Given Name, Surname, Telephone Number, Email, Title, Country Code, ZIP Code,
-     * Operation Type, and Operation Time. Currently, only the
-     * test_customer_support_contacts_data value is supported </p> <p> <ul>
+     * both result in a csv file containing the following fields: Product Id, Product
+     * Code, Customer Guid, Subscription Guid, Subscription Start Date, Organization,
+     * AWS Account Id, Given Name, Surname, Telephone Number, Email, Title, Country
+     * Code, ZIP Code, Operation Type, and Operation Time. </p> <p> <ul>
      * <li><i>customer_support_contacts_data</i> Customer support contact data. The
      * data set will contain all changes (Creates, Updates, and Deletes) to customer
      * support contact data from the date specified in the from_date parameter.</li>
@@ -75,11 +76,10 @@ namespace Model
     /**
      * <p> Specifies the data set type to be written to the output csv file. The data
      * set types customer_support_contacts_data and test_customer_support_contacts_data
-     * both result in a csv file containing the following fields: Product Id, Customer
-     * Guid, Subscription Guid, Subscription Start Date, Organization, AWS Account Id,
-     * Given Name, Surname, Telephone Number, Email, Title, Country Code, ZIP Code,
-     * Operation Type, and Operation Time. Currently, only the
-     * test_customer_support_contacts_data value is supported </p> <p> <ul>
+     * both result in a csv file containing the following fields: Product Id, Product
+     * Code, Customer Guid, Subscription Guid, Subscription Start Date, Organization,
+     * AWS Account Id, Given Name, Surname, Telephone Number, Email, Title, Country
+     * Code, ZIP Code, Operation Type, and Operation Time. </p> <p> <ul>
      * <li><i>customer_support_contacts_data</i> Customer support contact data. The
      * data set will contain all changes (Creates, Updates, and Deletes) to customer
      * support contact data from the date specified in the from_date parameter.</li>
@@ -92,11 +92,10 @@ namespace Model
     /**
      * <p> Specifies the data set type to be written to the output csv file. The data
      * set types customer_support_contacts_data and test_customer_support_contacts_data
-     * both result in a csv file containing the following fields: Product Id, Customer
-     * Guid, Subscription Guid, Subscription Start Date, Organization, AWS Account Id,
-     * Given Name, Surname, Telephone Number, Email, Title, Country Code, ZIP Code,
-     * Operation Type, and Operation Time. Currently, only the
-     * test_customer_support_contacts_data value is supported </p> <p> <ul>
+     * both result in a csv file containing the following fields: Product Id, Product
+     * Code, Customer Guid, Subscription Guid, Subscription Start Date, Organization,
+     * AWS Account Id, Given Name, Surname, Telephone Number, Email, Title, Country
+     * Code, ZIP Code, Operation Type, and Operation Time. </p> <p> <ul>
      * <li><i>customer_support_contacts_data</i> Customer support contact data. The
      * data set will contain all changes (Creates, Updates, and Deletes) to customer
      * support contact data from the date specified in the from_date parameter.</li>
@@ -109,11 +108,10 @@ namespace Model
     /**
      * <p> Specifies the data set type to be written to the output csv file. The data
      * set types customer_support_contacts_data and test_customer_support_contacts_data
-     * both result in a csv file containing the following fields: Product Id, Customer
-     * Guid, Subscription Guid, Subscription Start Date, Organization, AWS Account Id,
-     * Given Name, Surname, Telephone Number, Email, Title, Country Code, ZIP Code,
-     * Operation Type, and Operation Time. Currently, only the
-     * test_customer_support_contacts_data value is supported </p> <p> <ul>
+     * both result in a csv file containing the following fields: Product Id, Product
+     * Code, Customer Guid, Subscription Guid, Subscription Start Date, Organization,
+     * AWS Account Id, Given Name, Surname, Telephone Number, Email, Title, Country
+     * Code, ZIP Code, Operation Type, and Operation Time. </p> <p> <ul>
      * <li><i>customer_support_contacts_data</i> Customer support contact data. The
      * data set will contain all changes (Creates, Updates, and Deletes) to customer
      * support contact data from the date specified in the from_date parameter.</li>
@@ -124,32 +122,32 @@ namespace Model
     inline StartSupportDataExportRequest& WithDataSetType(SupportDataSetType&& value) { SetDataSetType(value); return *this;}
 
     /**
-     * The start date from which to retrieve the data set. This parameter only affects
-     * the customer_support_contacts_data data set type.
+     * The start date from which to retrieve the data set in UTC. This parameter only
+     * affects the customer_support_contacts_data data set type.
      */
     inline const Aws::Utils::DateTime& GetFromDate() const{ return m_fromDate; }
 
     /**
-     * The start date from which to retrieve the data set. This parameter only affects
-     * the customer_support_contacts_data data set type.
+     * The start date from which to retrieve the data set in UTC. This parameter only
+     * affects the customer_support_contacts_data data set type.
      */
     inline void SetFromDate(const Aws::Utils::DateTime& value) { m_fromDateHasBeenSet = true; m_fromDate = value; }
 
     /**
-     * The start date from which to retrieve the data set. This parameter only affects
-     * the customer_support_contacts_data data set type.
+     * The start date from which to retrieve the data set in UTC. This parameter only
+     * affects the customer_support_contacts_data data set type.
      */
     inline void SetFromDate(Aws::Utils::DateTime&& value) { m_fromDateHasBeenSet = true; m_fromDate = value; }
 
     /**
-     * The start date from which to retrieve the data set. This parameter only affects
-     * the customer_support_contacts_data data set type.
+     * The start date from which to retrieve the data set in UTC. This parameter only
+     * affects the customer_support_contacts_data data set type.
      */
     inline StartSupportDataExportRequest& WithFromDate(const Aws::Utils::DateTime& value) { SetFromDate(value); return *this;}
 
     /**
-     * The start date from which to retrieve the data set. This parameter only affects
-     * the customer_support_contacts_data data set type.
+     * The start date from which to retrieve the data set in UTC. This parameter only
+     * affects the customer_support_contacts_data data set type.
      */
     inline StartSupportDataExportRequest& WithFromDate(Aws::Utils::DateTime&& value) { SetFromDate(value); return *this;}
 

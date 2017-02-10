@@ -35,7 +35,9 @@ namespace Model
 {
   /**
    * <p>The result of a <code>CreateDomainRequest</code>. Contains the status of a
-   * newly created domain.</p>
+   * newly created domain.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/CreateDomainResponse">AWS
+   * API Reference</a></p>
    */
   class AWS_CLOUDSEARCH_API CreateDomainResult
   {

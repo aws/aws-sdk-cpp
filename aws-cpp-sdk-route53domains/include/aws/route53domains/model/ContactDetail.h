@@ -35,7 +35,9 @@ namespace Model
 {
 
   /**
-   * <p>ContactDetail includes the following elements.</p>
+   * <p>ContactDetail includes the following elements.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/ContactDetail">AWS
+   * API Reference</a></p>
    */
   class AWS_ROUTE53DOMAINS_API ContactDetail
   {

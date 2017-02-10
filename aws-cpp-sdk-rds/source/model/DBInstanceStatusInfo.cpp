@@ -92,7 +92,7 @@ void DBInstanceStatusInfo::OutputToStream(Aws::OStream& oStream, const char* loc
 
   if(m_normalHasBeenSet)
   {
-      oStream << location << index << locationValue << ".Normal=" << m_normal << "&";
+      oStream << location << index << locationValue << ".Normal=" << std::boolalpha << m_normal << "&";
   }
 
   if(m_statusHasBeenSet)
@@ -115,7 +115,7 @@ void DBInstanceStatusInfo::OutputToStream(Aws::OStream& oStream, const char* loc
   }
   if(m_normalHasBeenSet)
   {
-      oStream << location << ".Normal=" << m_normal << "&";
+      oStream << location << ".Normal=" << std::boolalpha << m_normal << "&";
   }
   if(m_statusHasBeenSet)
   {

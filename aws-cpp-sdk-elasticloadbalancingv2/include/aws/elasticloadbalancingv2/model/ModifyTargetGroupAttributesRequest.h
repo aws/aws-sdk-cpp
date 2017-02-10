@@ -27,7 +27,6 @@ namespace Model
 {
 
   /**
-   * <p>Contains the parameters for ModifyTargetGroupAttributes.</p>
    */
   class AWS_ELASTICLOADBALANCINGV2_API ModifyTargetGroupAttributesRequest : public ElasticLoadBalancingv2Request
   {

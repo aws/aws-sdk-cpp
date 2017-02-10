@@ -268,7 +268,7 @@ void ReservedInstancesOffering::OutputToStream(Aws::OStream& oStream, const char
 
   if(m_marketplaceHasBeenSet)
   {
-      oStream << location << index << locationValue << ".Marketplace=" << m_marketplace << "&";
+      oStream << location << index << locationValue << ".Marketplace=" << std::boolalpha << m_marketplace << "&";
   }
 
   if(m_pricingDetailsHasBeenSet)
@@ -342,13 +342,13 @@ void ReservedInstancesOffering::OutputToStream(Aws::OStream& oStream, const char
       for(auto& item : m_recurringCharges)
       {
         Aws::StringStream recurringChargesSs;
-        recurringChargesSs << location <<  ".item." << recurringChargesIdx++;
+        recurringChargesSs << location <<  ".Item." << recurringChargesIdx++;
         item.OutputToStream(oStream, recurringChargesSs.str().c_str());
       }
   }
   if(m_marketplaceHasBeenSet)
   {
-      oStream << location << ".Marketplace=" << m_marketplace << "&";
+      oStream << location << ".Marketplace=" << std::boolalpha << m_marketplace << "&";
   }
   if(m_pricingDetailsHasBeenSet)
   {
@@ -356,7 +356,7 @@ void ReservedInstancesOffering::OutputToStream(Aws::OStream& oStream, const char
       for(auto& item : m_pricingDetails)
       {
         Aws::StringStream pricingDetailsSs;
-        pricingDetailsSs << location <<  ".item." << pricingDetailsIdx++;
+        pricingDetailsSs << location <<  ".Item." << pricingDetailsIdx++;
         item.OutputToStream(oStream, pricingDetailsSs.str().c_str());
       }
   }

@@ -29,7 +29,6 @@ namespace ImportExportErrorMapper
 
 static const int UNABLE_TO_CANCEL_JOB_ID_HASH = HashingUtils::HashString("UnableToCancelJobIdException");
 static const int MULTIPLE_REGIONS_HASH = HashingUtils::HashString("MultipleRegionsException");
-static const int INVALID_ACCESS_KEY_ID_HASH = HashingUtils::HashString("InvalidAccessKeyIdException");
 static const int INVALID_JOB_ID_HASH = HashingUtils::HashString("InvalidJobIdException");
 static const int INVALID_MANIFEST_FIELD_HASH = HashingUtils::HashString("InvalidManifestFieldException");
 static const int BUCKET_PERMISSION_HASH = HashingUtils::HashString("BucketPermissionException");
@@ -59,10 +58,6 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == MULTIPLE_REGIONS_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ImportExportErrors::MULTIPLE_REGIONS), false);
-  }
-  else if (hashCode == INVALID_ACCESS_KEY_ID_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ImportExportErrors::INVALID_ACCESS_KEY_ID), false);
   }
   else if (hashCode == INVALID_JOB_ID_HASH)
   {

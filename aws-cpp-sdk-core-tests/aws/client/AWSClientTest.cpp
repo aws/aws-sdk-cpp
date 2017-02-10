@@ -14,7 +14,6 @@
 */
 
 #include <aws/external/gtest.h>
-#include <aws/testing/MemoryTesting.h>
 #include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSError.h>
 #include <aws/core/client/ClientConfiguration.h>
@@ -73,7 +72,6 @@ private:
 
 TEST(AWSClientTest, TestBuildHttpRequestWithHeadersOnly)
 {
-    AWS_BEGIN_MEMORY_TEST(16, 10)
     HeaderValueCollection headerValues;
     headerValues["test1"] = "testValue1";
     headerValues["test2"] = "testValue2";
@@ -121,13 +119,10 @@ TEST(AWSClientTest, TestBuildHttpRequestWithHeadersOnly)
     ASSERT_EQ("testValue2", finalHeaders["test2"]);
     ASSERT_EQ("www.uri.com", finalHeaders[Http::HOST_HEADER]);
     ASSERT_FALSE(finalHeaders[Http::USER_AGENT_HEADER].empty());
-
-    AWS_END_MEMORY_TEST
-}
+	}
 
 TEST(AWSClientTest, TestBuildHttpRequestWithHeadersAndBody)
 {
-    AWS_BEGIN_MEMORY_TEST(16, 10);
     HeaderValueCollection headerValues;
     headerValues["test1"] = "testValue1";
     headerValues["test2"] = "testValue2";
@@ -167,6 +162,4 @@ TEST(AWSClientTest, TestBuildHttpRequestWithHeadersAndBody)
     Aws::StringStream contentLengthExpected;
     contentLengthExpected << ss->str().length();
     ASSERT_EQ(contentLengthExpected.str(), finalHeaders[Http::CONTENT_LENGTH_HEADER]);  
-
-    AWS_END_MEMORY_TEST
 }

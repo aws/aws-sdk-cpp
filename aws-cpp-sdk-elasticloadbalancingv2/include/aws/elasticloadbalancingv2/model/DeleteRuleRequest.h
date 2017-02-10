@@ -25,7 +25,6 @@ namespace Model
 {
 
   /**
-   * <p>Contains the parameters for DeleteRule.</p>
    */
   class AWS_ELASTICLOADBALANCINGV2_API DeleteRuleRequest : public ElasticLoadBalancingv2Request
   {

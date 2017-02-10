@@ -33,7 +33,10 @@ namespace Model
 {
 
   /**
-   * <p>Represents the application metrics for a specified environment.</p>
+   * <p>Application request metrics for an AWS Elastic Beanstalk
+   * environment.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/ApplicationMetrics">AWS
+   * API Reference</a></p>
    */
   class AWS_ELASTICBEANSTALK_API ApplicationMetrics
   {

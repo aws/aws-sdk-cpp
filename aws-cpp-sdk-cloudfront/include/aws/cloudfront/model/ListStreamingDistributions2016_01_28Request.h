@@ -29,7 +29,9 @@ namespace Model
 {
 
   /**
-   * The request to list your streaming distributions.
+   * The request to list your streaming distributions.<p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-01-28/ListStreamingDistributionsRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_CLOUDFRONT_API ListStreamingDistributions2016_01_28Request : public CloudFrontRequest
   {

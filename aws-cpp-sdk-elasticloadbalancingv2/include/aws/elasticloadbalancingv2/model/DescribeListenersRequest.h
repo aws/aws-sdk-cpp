@@ -26,7 +26,6 @@ namespace Model
 {
 
   /**
-   * <p>Contains the parameters for DescribeListeners.</p>
    */
   class AWS_ELASTICLOADBALANCINGV2_API DescribeListenersRequest : public ElasticLoadBalancingv2Request
   {

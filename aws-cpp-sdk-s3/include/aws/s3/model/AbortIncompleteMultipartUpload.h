@@ -31,7 +31,10 @@ namespace Model
 
   /**
    * Specifies the days since the initiation of an Incomplete Multipart Upload that
-   * Lifecycle will wait before permanently removing all parts of the upload.
+   * Lifecycle will wait before permanently removing all parts of the
+   * upload.<p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/AbortIncompleteMultipartUpload">AWS
+   * API Reference</a></p>
    */
   class AWS_S3_API AbortIncompleteMultipartUpload
   {

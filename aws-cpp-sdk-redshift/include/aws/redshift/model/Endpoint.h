@@ -32,7 +32,9 @@ namespace Model
 {
 
   /**
-   * <p>Describes a connection endpoint.</p>
+   * <p>Describes a connection endpoint.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/Endpoint">AWS
+   * API Reference</a></p>
    */
   class AWS_REDSHIFT_API Endpoint
   {

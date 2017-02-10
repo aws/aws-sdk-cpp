@@ -35,7 +35,9 @@ namespace Model
 
   /**
    * <p>Describes the status of a <a>RestoreTableFromClusterSnapshot</a>
-   * operation.</p>
+   * operation.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/TableRestoreStatus">AWS
+   * API Reference</a></p>
    */
   class AWS_REDSHIFT_API TableRestoreStatus
   {

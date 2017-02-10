@@ -27,7 +27,10 @@ namespace Model
 {
 
   /**
-   * <p>Initiates the authorization request, as an administrator.</p>
+   * <p>Initiates the authorization request, as an administrator.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminInitiateAuthRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_COGNITOIDENTITYPROVIDER_API AdminInitiateAuthRequest : public CognitoIdentityProviderRequest
   {

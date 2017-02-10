@@ -103,6 +103,16 @@ void CloudWatchClient::init(const ClientConfiguration& config)
   m_uri = ss.str();
 }
 
+Aws::String CloudWatchClient::ConvertRequestToPresignedUrl(const AmazonSerializableWebServiceRequest& requestToConvert, const char* region) const
+{
+  Aws::StringStream ss;
+  ss << "https://" << CloudWatchEndpoint::ForRegion(region);
+  ss << "?" << requestToConvert.SerializePayload();
+
+  URI uri(ss.str());
+  return GeneratePresignedUrl(uri, HttpMethod::HTTP_GET, region, 3600);
+}
+
 DeleteAlarmsOutcome CloudWatchClient::DeleteAlarms(const DeleteAlarmsRequest& request) const
 {
   Aws::StringStream ss;
@@ -465,4 +475,6 @@ void CloudWatchClient::SetAlarmStateAsyncHelper(const SetAlarmStateRequest& requ
 {
   handler(this, request, SetAlarmState(request), context);
 }
+
+
 

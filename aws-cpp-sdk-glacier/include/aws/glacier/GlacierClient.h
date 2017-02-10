@@ -297,7 +297,10 @@ namespace Model
          * href="http://docs.aws.amazon.com/amazonglacier/latest/dev/working-with-archives.html">Working
          * with Archives in Amazon Glacier</a> and <a
          * href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-multipart-abort-upload.html">Abort
-         * Multipart Upload</a> in the <i>Amazon Glacier Developer Guide</i>. </p>
+         * Multipart Upload</a> in the <i>Amazon Glacier Developer Guide</i>.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/AbortMultipartUpload">AWS
+         * API Reference</a></p>
          */
         virtual Model::AbortMultipartUploadOutcome AbortMultipartUpload(const Model::AbortMultipartUploadRequest& request) const;
 
@@ -319,7 +322,10 @@ namespace Model
          * href="http://docs.aws.amazon.com/amazonglacier/latest/dev/working-with-archives.html">Working
          * with Archives in Amazon Glacier</a> and <a
          * href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-multipart-abort-upload.html">Abort
-         * Multipart Upload</a> in the <i>Amazon Glacier Developer Guide</i>. </p>
+         * Multipart Upload</a> in the <i>Amazon Glacier Developer Guide</i>.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/AbortMultipartUpload">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -343,7 +349,10 @@ namespace Model
          * href="http://docs.aws.amazon.com/amazonglacier/latest/dev/working-with-archives.html">Working
          * with Archives in Amazon Glacier</a> and <a
          * href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-multipart-abort-upload.html">Abort
-         * Multipart Upload</a> in the <i>Amazon Glacier Developer Guide</i>. </p>
+         * Multipart Upload</a> in the <i>Amazon Glacier Developer Guide</i>.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/AbortMultipartUpload">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -366,7 +375,9 @@ namespace Model
          * Glacier Access Control with Vault Lock Policies</a>. </p> <p>This operation is
          * idempotent. You can successfully invoke this operation multiple times, if the
          * vault lock is in the <code>InProgress</code> state or if there is no policy
-         * associated with the vault.</p>
+         * associated with the vault.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/AbortVaultLock">AWS
+         * API Reference</a></p>
          */
         virtual Model::AbortVaultLockOutcome AbortVaultLock(const Model::AbortVaultLockRequest& request) const;
 
@@ -387,7 +398,9 @@ namespace Model
          * Glacier Access Control with Vault Lock Policies</a>. </p> <p>This operation is
          * idempotent. You can successfully invoke this operation multiple times, if the
          * vault lock is in the <code>InProgress</code> state or if there is no policy
-         * associated with the vault.</p>
+         * associated with the vault.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/AbortVaultLock">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -410,7 +423,9 @@ namespace Model
          * Glacier Access Control with Vault Lock Policies</a>. </p> <p>This operation is
          * idempotent. You can successfully invoke this operation multiple times, if the
          * vault lock is in the <code>InProgress</code> state or if there is no policy
-         * associated with the vault.</p>
+         * associated with the vault.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/AbortVaultLock">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -424,7 +439,9 @@ namespace Model
          * under a specified key, the existing key value will be overwritten. For more
          * information about tags, see <a
          * href="http://docs.aws.amazon.com/amazonglacier/latest/dev/tagging.html">Tagging
-         * Amazon Glacier Resources</a>. </p>
+         * Amazon Glacier Resources</a>. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/AddTagsToVault">AWS
+         * API Reference</a></p>
          */
         virtual Model::AddTagsToVaultOutcome AddTagsToVault(const Model::AddTagsToVaultRequest& request) const;
 
@@ -436,7 +453,9 @@ namespace Model
          * under a specified key, the existing key value will be overwritten. For more
          * information about tags, see <a
          * href="http://docs.aws.amazon.com/amazonglacier/latest/dev/tagging.html">Tagging
-         * Amazon Glacier Resources</a>. </p>
+         * Amazon Glacier Resources</a>. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/AddTagsToVault">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -450,7 +469,9 @@ namespace Model
          * under a specified key, the existing key value will be overwritten. For more
          * information about tags, see <a
          * href="http://docs.aws.amazon.com/amazonglacier/latest/dev/tagging.html">Tagging
-         * Amazon Glacier Resources</a>. </p>
+         * Amazon Glacier Resources</a>. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/AddTagsToVault">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -495,7 +516,10 @@ namespace Model
          * href="http://docs.aws.amazon.com/amazonglacier/latest/dev/uploading-archive-mpu.html">Uploading
          * Large Archives in Parts (Multipart Upload)</a> and <a
          * href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-multipart-complete-upload.html">Complete
-         * Multipart Upload</a> in the <i>Amazon Glacier Developer Guide</i>. </p>
+         * Multipart Upload</a> in the <i>Amazon Glacier Developer Guide</i>.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/CompleteMultipartUpload">AWS
+         * API Reference</a></p>
          */
         virtual Model::CompleteMultipartUploadOutcome CompleteMultipartUpload(const Model::CompleteMultipartUploadRequest& request) const;
 
@@ -538,7 +562,10 @@ namespace Model
          * href="http://docs.aws.amazon.com/amazonglacier/latest/dev/uploading-archive-mpu.html">Uploading
          * Large Archives in Parts (Multipart Upload)</a> and <a
          * href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-multipart-complete-upload.html">Complete
-         * Multipart Upload</a> in the <i>Amazon Glacier Developer Guide</i>. </p>
+         * Multipart Upload</a> in the <i>Amazon Glacier Developer Guide</i>.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/CompleteMultipartUpload">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -583,7 +610,10 @@ namespace Model
          * href="http://docs.aws.amazon.com/amazonglacier/latest/dev/uploading-archive-mpu.html">Uploading
          * Large Archives in Parts (Multipart Upload)</a> and <a
          * href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-multipart-complete-upload.html">Complete
-         * Multipart Upload</a> in the <i>Amazon Glacier Developer Guide</i>. </p>
+         * Multipart Upload</a> in the <i>Amazon Glacier Developer Guide</i>.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/CompleteMultipartUpload">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -604,7 +634,10 @@ namespace Model
          * <code>Locked</code> state, the operation returns an
          * <code>AccessDeniedException</code> error. If an invalid lock ID is passed in the
          * request when the vault lock is in the <code>InProgress</code> state, the
-         * operation throws an <code>InvalidParameter</code> error.</p>
+         * operation throws an <code>InvalidParameter</code> error.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/CompleteVaultLock">AWS
+         * API Reference</a></p>
          */
         virtual Model::CompleteVaultLockOutcome CompleteVaultLock(const Model::CompleteVaultLockRequest& request) const;
 
@@ -623,7 +656,10 @@ namespace Model
          * <code>Locked</code> state, the operation returns an
          * <code>AccessDeniedException</code> error. If an invalid lock ID is passed in the
          * request when the vault lock is in the <code>InProgress</code> state, the
-         * operation throws an <code>InvalidParameter</code> error.</p>
+         * operation throws an <code>InvalidParameter</code> error.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/CompleteVaultLock">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -644,7 +680,10 @@ namespace Model
          * <code>Locked</code> state, the operation returns an
          * <code>AccessDeniedException</code> error. If an invalid lock ID is passed in the
          * request when the vault lock is in the <code>InProgress</code> state, the
-         * operation throws an <code>InvalidParameter</code> error.</p>
+         * operation throws an <code>InvalidParameter</code> error.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/CompleteVaultLock">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -668,7 +707,10 @@ namespace Model
          * href="http://docs.aws.amazon.com/amazonglacier/latest/dev/creating-vaults.html">Creating
          * a Vault in Amazon Glacier</a> and <a
          * href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-vault-put.html">Create
-         * Vault </a> in the <i>Amazon Glacier Developer Guide</i>. </p>
+         * Vault </a> in the <i>Amazon Glacier Developer Guide</i>. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/CreateVault">AWS
+         * API Reference</a></p>
          */
         virtual Model::CreateVaultOutcome CreateVault(const Model::CreateVaultRequest& request) const;
 
@@ -690,7 +732,10 @@ namespace Model
          * href="http://docs.aws.amazon.com/amazonglacier/latest/dev/creating-vaults.html">Creating
          * a Vault in Amazon Glacier</a> and <a
          * href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-vault-put.html">Create
-         * Vault </a> in the <i>Amazon Glacier Developer Guide</i>. </p>
+         * Vault </a> in the <i>Amazon Glacier Developer Guide</i>. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/CreateVault">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -714,7 +759,10 @@ namespace Model
          * href="http://docs.aws.amazon.com/amazonglacier/latest/dev/creating-vaults.html">Creating
          * a Vault in Amazon Glacier</a> and <a
          * href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-vault-put.html">Create
-         * Vault </a> in the <i>Amazon Glacier Developer Guide</i>. </p>
+         * Vault </a> in the <i>Amazon Glacier Developer Guide</i>. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/CreateVault">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -741,7 +789,10 @@ namespace Model
          * href="http://docs.aws.amazon.com/amazonglacier/latest/dev/deleting-an-archive.html">Deleting
          * an Archive in Amazon Glacier</a> and <a
          * href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-archive-delete.html">Delete
-         * Archive</a> in the <i>Amazon Glacier Developer Guide</i>. </p>
+         * Archive</a> in the <i>Amazon Glacier Developer Guide</i>. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/DeleteArchive">AWS
+         * API Reference</a></p>
          */
         virtual Model::DeleteArchiveOutcome DeleteArchive(const Model::DeleteArchiveRequest& request) const;
 
@@ -766,7 +817,10 @@ namespace Model
          * href="http://docs.aws.amazon.com/amazonglacier/latest/dev/deleting-an-archive.html">Deleting
          * an Archive in Amazon Glacier</a> and <a
          * href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-archive-delete.html">Delete
-         * Archive</a> in the <i>Amazon Glacier Developer Guide</i>. </p>
+         * Archive</a> in the <i>Amazon Glacier Developer Guide</i>. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/DeleteArchive">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -793,7 +847,10 @@ namespace Model
          * href="http://docs.aws.amazon.com/amazonglacier/latest/dev/deleting-an-archive.html">Deleting
          * an Archive in Amazon Glacier</a> and <a
          * href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-archive-delete.html">Delete
-         * Archive</a> in the <i>Amazon Glacier Developer Guide</i>. </p>
+         * Archive</a> in the <i>Amazon Glacier Developer Guide</i>. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/DeleteArchive">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -821,7 +878,10 @@ namespace Model
          * href="http://docs.aws.amazon.com/amazonglacier/latest/dev/deleting-vaults.html">Deleting
          * a Vault in Amazon Glacier</a> and <a
          * href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-vault-delete.html">Delete
-         * Vault </a> in the <i>Amazon Glacier Developer Guide</i>. </p>
+         * Vault </a> in the <i>Amazon Glacier Developer Guide</i>. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/DeleteVault">AWS
+         * API Reference</a></p>
          */
         virtual Model::DeleteVaultOutcome DeleteVault(const Model::DeleteVaultRequest& request) const;
 
@@ -847,7 +907,10 @@ namespace Model
          * href="http://docs.aws.amazon.com/amazonglacier/latest/dev/deleting-vaults.html">Deleting
          * a Vault in Amazon Glacier</a> and <a
          * href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-vault-delete.html">Delete
-         * Vault </a> in the <i>Amazon Glacier Developer Guide</i>. </p>
+         * Vault </a> in the <i>Amazon Glacier Developer Guide</i>. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/DeleteVault">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -875,7 +938,10 @@ namespace Model
          * href="http://docs.aws.amazon.com/amazonglacier/latest/dev/deleting-vaults.html">Deleting
          * a Vault in Amazon Glacier</a> and <a
          * href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-vault-delete.html">Delete
-         * Vault </a> in the <i>Amazon Glacier Developer Guide</i>. </p>
+         * Vault </a> in the <i>Amazon Glacier Developer Guide</i>. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/DeleteVault">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -890,7 +956,10 @@ namespace Model
          * there is no policy associated with the vault. For more information about vault
          * access policies, see <a
          * href="http://docs.aws.amazon.com/amazonglacier/latest/dev/vault-access-policy.html">Amazon
-         * Glacier Access Control with Vault Access Policies</a>. </p>
+         * Glacier Access Control with Vault Access Policies</a>. </p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/DeleteVaultAccessPolicy">AWS
+         * API Reference</a></p>
          */
         virtual Model::DeleteVaultAccessPolicyOutcome DeleteVaultAccessPolicy(const Model::DeleteVaultAccessPolicyRequest& request) const;
 
@@ -903,7 +972,10 @@ namespace Model
          * there is no policy associated with the vault. For more information about vault
          * access policies, see <a
          * href="http://docs.aws.amazon.com/amazonglacier/latest/dev/vault-access-policy.html">Amazon
-         * Glacier Access Control with Vault Access Policies</a>. </p>
+         * Glacier Access Control with Vault Access Policies</a>. </p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/DeleteVaultAccessPolicy">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -918,7 +990,10 @@ namespace Model
          * there is no policy associated with the vault. For more information about vault
          * access policies, see <a
          * href="http://docs.aws.amazon.com/amazonglacier/latest/dev/vault-access-policy.html">Amazon
-         * Glacier Access Control with Vault Access Policies</a>. </p>
+         * Glacier Access Control with Vault Access Policies</a>. </p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/DeleteVaultAccessPolicy">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -940,7 +1015,9 @@ namespace Model
          * Vault Notifications in Amazon Glacier</a> and <a
          * href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-vault-notifications-delete.html">Delete
          * Vault Notification Configuration </a> in the Amazon Glacier Developer Guide.
-         * </p>
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/DeleteVaultNotifications">AWS
+         * API Reference</a></p>
          */
         virtual Model::DeleteVaultNotificationsOutcome DeleteVaultNotifications(const Model::DeleteVaultNotificationsRequest& request) const;
 
@@ -960,7 +1037,9 @@ namespace Model
          * Vault Notifications in Amazon Glacier</a> and <a
          * href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-vault-notifications-delete.html">Delete
          * Vault Notification Configuration </a> in the Amazon Glacier Developer Guide.
-         * </p>
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/DeleteVaultNotifications">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -982,7 +1061,9 @@ namespace Model
          * Vault Notifications in Amazon Glacier</a> and <a
          * href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-vault-notifications-delete.html">Delete
          * Vault Notification Configuration </a> in the Amazon Glacier Developer Guide.
-         * </p>
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/DeleteVaultNotifications">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1007,7 +1088,9 @@ namespace Model
          * information about the underlying REST API, see <a
          * href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-describe-job-get.html">Working
          * with Archives in Amazon Glacier</a> in the <i>Amazon Glacier Developer
-         * Guide</i>. </p>
+         * Guide</i>. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/DescribeJob">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeJobOutcome DescribeJob(const Model::DescribeJobRequest& request) const;
 
@@ -1030,7 +1113,9 @@ namespace Model
          * information about the underlying REST API, see <a
          * href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-describe-job-get.html">Working
          * with Archives in Amazon Glacier</a> in the <i>Amazon Glacier Developer
-         * Guide</i>. </p>
+         * Guide</i>. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/DescribeJob">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1055,7 +1140,9 @@ namespace Model
          * information about the underlying REST API, see <a
          * href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-describe-job-get.html">Working
          * with Archives in Amazon Glacier</a> in the <i>Amazon Glacier Developer
-         * Guide</i>. </p>
+         * Guide</i>. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/DescribeJob">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1083,7 +1170,10 @@ namespace Model
          * href="http://docs.aws.amazon.com/amazonglacier/latest/dev/retrieving-vault-info.html">Retrieving
          * Vault Metadata in Amazon Glacier</a> and <a
          * href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-vault-get.html">Describe
-         * Vault </a> in the <i>Amazon Glacier Developer Guide</i>. </p>
+         * Vault </a> in the <i>Amazon Glacier Developer Guide</i>. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/DescribeVault">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeVaultOutcome DescribeVault(const Model::DescribeVaultRequest& request) const;
 
@@ -1109,7 +1199,10 @@ namespace Model
          * href="http://docs.aws.amazon.com/amazonglacier/latest/dev/retrieving-vault-info.html">Retrieving
          * Vault Metadata in Amazon Glacier</a> and <a
          * href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-vault-get.html">Describe
-         * Vault </a> in the <i>Amazon Glacier Developer Guide</i>. </p>
+         * Vault </a> in the <i>Amazon Glacier Developer Guide</i>. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/DescribeVault">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1137,7 +1230,10 @@ namespace Model
          * href="http://docs.aws.amazon.com/amazonglacier/latest/dev/retrieving-vault-info.html">Retrieving
          * Vault Metadata in Amazon Glacier</a> and <a
          * href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-vault-get.html">Describe
-         * Vault </a> in the <i>Amazon Glacier Developer Guide</i>. </p>
+         * Vault </a> in the <i>Amazon Glacier Developer Guide</i>. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/DescribeVault">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1148,7 +1244,9 @@ namespace Model
          * region specified in the GET request. For more information about data retrieval
          * policies, see <a
          * href="http://docs.aws.amazon.com/amazonglacier/latest/dev/data-retrieval-policy.html">Amazon
-         * Glacier Data Retrieval Policies</a>.</p>
+         * Glacier Data Retrieval Policies</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/GetDataRetrievalPolicy">AWS
+         * API Reference</a></p>
          */
         virtual Model::GetDataRetrievalPolicyOutcome GetDataRetrievalPolicy(const Model::GetDataRetrievalPolicyRequest& request) const;
 
@@ -1157,7 +1255,9 @@ namespace Model
          * region specified in the GET request. For more information about data retrieval
          * policies, see <a
          * href="http://docs.aws.amazon.com/amazonglacier/latest/dev/data-retrieval-policy.html">Amazon
-         * Glacier Data Retrieval Policies</a>.</p>
+         * Glacier Data Retrieval Policies</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/GetDataRetrievalPolicy">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1168,7 +1268,9 @@ namespace Model
          * region specified in the GET request. For more information about data retrieval
          * policies, see <a
          * href="http://docs.aws.amazon.com/amazonglacier/latest/dev/data-retrieval-policy.html">Amazon
-         * Glacier Data Retrieval Policies</a>.</p>
+         * Glacier Data Retrieval Policies</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/GetDataRetrievalPolicy">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1212,7 +1314,9 @@ namespace Model
          * href="http://docs.aws.amazon.com/amazonglacier/latest/dev/downloading-an-archive.html">Downloading
          * an Archive</a>, and <a
          * href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-job-output-get.html">Get
-         * Job Output </a> </p>
+         * Job Output </a> </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/GetJobOutput">AWS
+         * API Reference</a></p>
          */
         virtual Model::GetJobOutputOutcome GetJobOutput(const Model::GetJobOutputRequest& request) const;
 
@@ -1254,7 +1358,9 @@ namespace Model
          * href="http://docs.aws.amazon.com/amazonglacier/latest/dev/downloading-an-archive.html">Downloading
          * an Archive</a>, and <a
          * href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-job-output-get.html">Get
-         * Job Output </a> </p>
+         * Job Output </a> </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/GetJobOutput">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1298,7 +1404,9 @@ namespace Model
          * href="http://docs.aws.amazon.com/amazonglacier/latest/dev/downloading-an-archive.html">Downloading
          * an Archive</a>, and <a
          * href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-job-output-get.html">Get
-         * Job Output </a> </p>
+         * Job Output </a> </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/GetJobOutput">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1312,7 +1420,10 @@ namespace Model
          * the vault, the operation returns a <code>404 Not found</code> error. For more
          * information about vault access policies, see <a
          * href="http://docs.aws.amazon.com/amazonglacier/latest/dev/vault-access-policy.html">Amazon
-         * Glacier Access Control with Vault Access Policies</a>.</p>
+         * Glacier Access Control with Vault Access Policies</a>.</p><p><h3>See Also:</h3> 
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/GetVaultAccessPolicy">AWS
+         * API Reference</a></p>
          */
         virtual Model::GetVaultAccessPolicyOutcome GetVaultAccessPolicy(const Model::GetVaultAccessPolicyRequest& request) const;
 
@@ -1324,7 +1435,10 @@ namespace Model
          * the vault, the operation returns a <code>404 Not found</code> error. For more
          * information about vault access policies, see <a
          * href="http://docs.aws.amazon.com/amazonglacier/latest/dev/vault-access-policy.html">Amazon
-         * Glacier Access Control with Vault Access Policies</a>.</p>
+         * Glacier Access Control with Vault Access Policies</a>.</p><p><h3>See Also:</h3> 
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/GetVaultAccessPolicy">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1338,7 +1452,10 @@ namespace Model
          * the vault, the operation returns a <code>404 Not found</code> error. For more
          * information about vault access policies, see <a
          * href="http://docs.aws.amazon.com/amazonglacier/latest/dev/vault-access-policy.html">Amazon
-         * Glacier Access Control with Vault Access Policies</a>.</p>
+         * Glacier Access Control with Vault Access Policies</a>.</p><p><h3>See Also:</h3> 
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/GetVaultAccessPolicy">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1361,7 +1478,10 @@ namespace Model
          * vault, the operation returns a <code>404 Not found</code> error. For more
          * information about vault lock policies, <a
          * href="http://docs.aws.amazon.com/amazonglacier/latest/dev/vault-lock-policy.html">Amazon
-         * Glacier Access Control with Vault Lock Policies</a>. </p>
+         * Glacier Access Control with Vault Lock Policies</a>. </p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/GetVaultLock">AWS
+         * API Reference</a></p>
          */
         virtual Model::GetVaultLockOutcome GetVaultLock(const Model::GetVaultLockRequest& request) const;
 
@@ -1382,7 +1502,10 @@ namespace Model
          * vault, the operation returns a <code>404 Not found</code> error. For more
          * information about vault lock policies, <a
          * href="http://docs.aws.amazon.com/amazonglacier/latest/dev/vault-lock-policy.html">Amazon
-         * Glacier Access Control with Vault Lock Policies</a>. </p>
+         * Glacier Access Control with Vault Lock Policies</a>. </p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/GetVaultLock">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1405,7 +1528,10 @@ namespace Model
          * vault, the operation returns a <code>404 Not found</code> error. For more
          * information about vault lock policies, <a
          * href="http://docs.aws.amazon.com/amazonglacier/latest/dev/vault-lock-policy.html">Amazon
-         * Glacier Access Control with Vault Lock Policies</a>. </p>
+         * Glacier Access Control with Vault Lock Policies</a>. </p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/GetVaultLock">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1431,7 +1557,9 @@ namespace Model
          * Vault Notifications in Amazon Glacier</a> and <a
          * href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-vault-notifications-get.html">Get
          * Vault Notification Configuration </a> in the <i>Amazon Glacier Developer
-         * Guide</i>. </p>
+         * Guide</i>. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/GetVaultNotifications">AWS
+         * API Reference</a></p>
          */
         virtual Model::GetVaultNotificationsOutcome GetVaultNotifications(const Model::GetVaultNotificationsRequest& request) const;
 
@@ -1455,7 +1583,9 @@ namespace Model
          * Vault Notifications in Amazon Glacier</a> and <a
          * href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-vault-notifications-get.html">Get
          * Vault Notification Configuration </a> in the <i>Amazon Glacier Developer
-         * Guide</i>. </p>
+         * Guide</i>. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/GetVaultNotifications">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1481,7 +1611,9 @@ namespace Model
          * Vault Notifications in Amazon Glacier</a> and <a
          * href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-vault-notifications-get.html">Get
          * Vault Notification Configuration </a> in the <i>Amazon Glacier Developer
-         * Guide</i>. </p>
+         * Guide</i>. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/GetVaultNotifications">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1595,7 +1727,9 @@ namespace Model
          * become accessible within 1–5 minutes. </p> </li> </ul> <p>For more information
          * about expedited and bulk retrievals, see <a
          * href="http://docs.aws.amazon.com/amazonglacier/latest/dev/downloading-an-archive-two-steps.html">Retrieving
-         * Amazon Glacier Archives</a>.</p>
+         * Amazon Glacier Archives</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/InitiateJob">AWS
+         * API Reference</a></p>
          */
         virtual Model::InitiateJobOutcome InitiateJob(const Model::InitiateJobRequest& request) const;
 
@@ -1707,7 +1841,9 @@ namespace Model
          * become accessible within 1–5 minutes. </p> </li> </ul> <p>For more information
          * about expedited and bulk retrievals, see <a
          * href="http://docs.aws.amazon.com/amazonglacier/latest/dev/downloading-an-archive-two-steps.html">Retrieving
-         * Amazon Glacier Archives</a>.</p>
+         * Amazon Glacier Archives</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/InitiateJob">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1821,7 +1957,9 @@ namespace Model
          * become accessible within 1–5 minutes. </p> </li> </ul> <p>For more information
          * about expedited and bulk retrievals, see <a
          * href="http://docs.aws.amazon.com/amazonglacier/latest/dev/downloading-an-archive-two-steps.html">Retrieving
-         * Amazon Glacier Archives</a>.</p>
+         * Amazon Glacier Archives</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/InitiateJob">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1856,7 +1994,10 @@ namespace Model
          * href="http://docs.aws.amazon.com/amazonglacier/latest/dev/uploading-archive-mpu.html">Uploading
          * Large Archives in Parts (Multipart Upload)</a> and <a
          * href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-multipart-initiate-upload.html">Initiate
-         * Multipart Upload</a> in the <i>Amazon Glacier Developer Guide</i>.</p>
+         * Multipart Upload</a> in the <i>Amazon Glacier Developer Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/InitiateMultipartUpload">AWS
+         * API Reference</a></p>
          */
         virtual Model::InitiateMultipartUploadOutcome InitiateMultipartUpload(const Model::InitiateMultipartUploadRequest& request) const;
 
@@ -1889,7 +2030,10 @@ namespace Model
          * href="http://docs.aws.amazon.com/amazonglacier/latest/dev/uploading-archive-mpu.html">Uploading
          * Large Archives in Parts (Multipart Upload)</a> and <a
          * href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-multipart-initiate-upload.html">Initiate
-         * Multipart Upload</a> in the <i>Amazon Glacier Developer Guide</i>.</p>
+         * Multipart Upload</a> in the <i>Amazon Glacier Developer Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/InitiateMultipartUpload">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1924,7 +2068,10 @@ namespace Model
          * href="http://docs.aws.amazon.com/amazonglacier/latest/dev/uploading-archive-mpu.html">Uploading
          * Large Archives in Parts (Multipart Upload)</a> and <a
          * href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-multipart-initiate-upload.html">Initiate
-         * Multipart Upload</a> in the <i>Amazon Glacier Developer Guide</i>.</p>
+         * Multipart Upload</a> in the <i>Amazon Glacier Developer Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/InitiateMultipartUpload">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1955,7 +2102,9 @@ namespace Model
          * is in the <code>InProgress</code> state, the operation returns an
          * <code>AccessDeniedException</code> error. When the vault lock is in the
          * <code>InProgress</code> state you must call <a>AbortVaultLock</a> before you can
-         * initiate a new vault lock policy. </p>
+         * initiate a new vault lock policy. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/InitiateVaultLock">AWS
+         * API Reference</a></p>
          */
         virtual Model::InitiateVaultLockOutcome InitiateVaultLock(const Model::InitiateVaultLockRequest& request) const;
 
@@ -1984,7 +2133,9 @@ namespace Model
          * is in the <code>InProgress</code> state, the operation returns an
          * <code>AccessDeniedException</code> error. When the vault lock is in the
          * <code>InProgress</code> state you must call <a>AbortVaultLock</a> before you can
-         * initiate a new vault lock policy. </p>
+         * initiate a new vault lock policy. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/InitiateVaultLock">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -2015,7 +2166,9 @@ namespace Model
          * is in the <code>InProgress</code> state, the operation returns an
          * <code>AccessDeniedException</code> error. When the vault lock is in the
          * <code>InProgress</code> state you must call <a>AbortVaultLock</a> before you can
-         * initiate a new vault lock policy. </p>
+         * initiate a new vault lock policy. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/InitiateVaultLock">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -2056,7 +2209,9 @@ namespace Model
          * that were completed (<code>true</code>) or jobs that were not completed
          * (<code>false</code>).</p> <p>For the underlying REST API, see <a
          * href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-jobs-get.html">List
-         * Jobs</a>. </p>
+         * Jobs</a>. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/ListJobs">AWS
+         * API Reference</a></p>
          */
         virtual Model::ListJobsOutcome ListJobs(const Model::ListJobsRequest& request) const;
 
@@ -2095,7 +2250,9 @@ namespace Model
          * that were completed (<code>true</code>) or jobs that were not completed
          * (<code>false</code>).</p> <p>For the underlying REST API, see <a
          * href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-jobs-get.html">List
-         * Jobs</a>. </p>
+         * Jobs</a>. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/ListJobs">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -2136,7 +2293,9 @@ namespace Model
          * that were completed (<code>true</code>) or jobs that were not completed
          * (<code>false</code>).</p> <p>For the underlying REST API, see <a
          * href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-jobs-get.html">List
-         * Jobs</a>. </p>
+         * Jobs</a>. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/ListJobs">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -2169,7 +2328,10 @@ namespace Model
          * href="http://docs.aws.amazon.com/amazonglacier/latest/dev/working-with-archives.html">Working
          * with Archives in Amazon Glacier</a> and <a
          * href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-multipart-list-uploads.html">List
-         * Multipart Uploads </a> in the <i>Amazon Glacier Developer Guide</i>.</p>
+         * Multipart Uploads </a> in the <i>Amazon Glacier Developer
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/ListMultipartUploads">AWS
+         * API Reference</a></p>
          */
         virtual Model::ListMultipartUploadsOutcome ListMultipartUploads(const Model::ListMultipartUploadsRequest& request) const;
 
@@ -2200,7 +2362,10 @@ namespace Model
          * href="http://docs.aws.amazon.com/amazonglacier/latest/dev/working-with-archives.html">Working
          * with Archives in Amazon Glacier</a> and <a
          * href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-multipart-list-uploads.html">List
-         * Multipart Uploads </a> in the <i>Amazon Glacier Developer Guide</i>.</p>
+         * Multipart Uploads </a> in the <i>Amazon Glacier Developer
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/ListMultipartUploads">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -2233,7 +2398,10 @@ namespace Model
          * href="http://docs.aws.amazon.com/amazonglacier/latest/dev/working-with-archives.html">Working
          * with Archives in Amazon Glacier</a> and <a
          * href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-multipart-list-uploads.html">List
-         * Multipart Uploads </a> in the <i>Amazon Glacier Developer Guide</i>.</p>
+         * Multipart Uploads </a> in the <i>Amazon Glacier Developer
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/ListMultipartUploads">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -2263,7 +2431,10 @@ namespace Model
          * href="http://docs.aws.amazon.com/amazonglacier/latest/dev/working-with-archives.html">Working
          * with Archives in Amazon Glacier</a> and <a
          * href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-multipart-list-parts.html">List
-         * Parts</a> in the <i>Amazon Glacier Developer Guide</i>.</p>
+         * Parts</a> in the <i>Amazon Glacier Developer Guide</i>.</p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/ListParts">AWS
+         * API Reference</a></p>
          */
         virtual Model::ListPartsOutcome ListParts(const Model::ListPartsRequest& request) const;
 
@@ -2291,7 +2462,10 @@ namespace Model
          * href="http://docs.aws.amazon.com/amazonglacier/latest/dev/working-with-archives.html">Working
          * with Archives in Amazon Glacier</a> and <a
          * href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-multipart-list-parts.html">List
-         * Parts</a> in the <i>Amazon Glacier Developer Guide</i>.</p>
+         * Parts</a> in the <i>Amazon Glacier Developer Guide</i>.</p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/ListParts">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -2321,7 +2495,10 @@ namespace Model
          * href="http://docs.aws.amazon.com/amazonglacier/latest/dev/working-with-archives.html">Working
          * with Archives in Amazon Glacier</a> and <a
          * href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-multipart-list-parts.html">List
-         * Parts</a> in the <i>Amazon Glacier Developer Guide</i>.</p>
+         * Parts</a> in the <i>Amazon Glacier Developer Guide</i>.</p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/ListParts">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -2329,13 +2506,17 @@ namespace Model
 
         /**
          * <p>This operation lists the provisioned capacity for the specified AWS
-         * account.</p>
+         * account.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/ListProvisionedCapacity">AWS
+         * API Reference</a></p>
          */
         virtual Model::ListProvisionedCapacityOutcome ListProvisionedCapacity(const Model::ListProvisionedCapacityRequest& request) const;
 
         /**
          * <p>This operation lists the provisioned capacity for the specified AWS
-         * account.</p>
+         * account.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/ListProvisionedCapacity">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -2343,7 +2524,9 @@ namespace Model
 
         /**
          * <p>This operation lists the provisioned capacity for the specified AWS
-         * account.</p>
+         * account.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/ListProvisionedCapacity">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -2353,7 +2536,9 @@ namespace Model
          * <p>This operation lists all the tags attached to a vault. The operation returns
          * an empty map if there are no tags. For more information about tags, see <a
          * href="http://docs.aws.amazon.com/amazonglacier/latest/dev/tagging.html">Tagging
-         * Amazon Glacier Resources</a>.</p>
+         * Amazon Glacier Resources</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/ListTagsForVault">AWS
+         * API Reference</a></p>
          */
         virtual Model::ListTagsForVaultOutcome ListTagsForVault(const Model::ListTagsForVaultRequest& request) const;
 
@@ -2361,7 +2546,9 @@ namespace Model
          * <p>This operation lists all the tags attached to a vault. The operation returns
          * an empty map if there are no tags. For more information about tags, see <a
          * href="http://docs.aws.amazon.com/amazonglacier/latest/dev/tagging.html">Tagging
-         * Amazon Glacier Resources</a>.</p>
+         * Amazon Glacier Resources</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/ListTagsForVault">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -2371,7 +2558,9 @@ namespace Model
          * <p>This operation lists all the tags attached to a vault. The operation returns
          * an empty map if there are no tags. For more information about tags, see <a
          * href="http://docs.aws.amazon.com/amazonglacier/latest/dev/tagging.html">Tagging
-         * Amazon Glacier Resources</a>.</p>
+         * Amazon Glacier Resources</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/ListTagsForVault">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -2398,7 +2587,10 @@ namespace Model
          * href="http://docs.aws.amazon.com/amazonglacier/latest/dev/retrieving-vault-info.html">Retrieving
          * Vault Metadata in Amazon Glacier</a> and <a
          * href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-vaults-get.html">List
-         * Vaults </a> in the <i>Amazon Glacier Developer Guide</i>. </p>
+         * Vaults </a> in the <i>Amazon Glacier Developer Guide</i>. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/ListVaults">AWS
+         * API Reference</a></p>
          */
         virtual Model::ListVaultsOutcome ListVaults(const Model::ListVaultsRequest& request) const;
 
@@ -2423,7 +2615,10 @@ namespace Model
          * href="http://docs.aws.amazon.com/amazonglacier/latest/dev/retrieving-vault-info.html">Retrieving
          * Vault Metadata in Amazon Glacier</a> and <a
          * href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-vaults-get.html">List
-         * Vaults </a> in the <i>Amazon Glacier Developer Guide</i>. </p>
+         * Vaults </a> in the <i>Amazon Glacier Developer Guide</i>. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/ListVaults">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -2450,26 +2645,38 @@ namespace Model
          * href="http://docs.aws.amazon.com/amazonglacier/latest/dev/retrieving-vault-info.html">Retrieving
          * Vault Metadata in Amazon Glacier</a> and <a
          * href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-vaults-get.html">List
-         * Vaults </a> in the <i>Amazon Glacier Developer Guide</i>. </p>
+         * Vaults </a> in the <i>Amazon Glacier Developer Guide</i>. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/ListVaults">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListVaultsAsync(const Model::ListVaultsRequest& request, const ListVaultsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>This operation purchases a provisioned capacity unit for an AWS account.</p>
+         * <p>This operation purchases a provisioned capacity unit for an AWS
+         * account.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/PurchaseProvisionedCapacity">AWS
+         * API Reference</a></p>
          */
         virtual Model::PurchaseProvisionedCapacityOutcome PurchaseProvisionedCapacity(const Model::PurchaseProvisionedCapacityRequest& request) const;
 
         /**
-         * <p>This operation purchases a provisioned capacity unit for an AWS account.</p>
+         * <p>This operation purchases a provisioned capacity unit for an AWS
+         * account.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/PurchaseProvisionedCapacity">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::PurchaseProvisionedCapacityOutcomeCallable PurchaseProvisionedCapacityCallable(const Model::PurchaseProvisionedCapacityRequest& request) const;
 
         /**
-         * <p>This operation purchases a provisioned capacity unit for an AWS account.</p>
+         * <p>This operation purchases a provisioned capacity unit for an AWS
+         * account.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/PurchaseProvisionedCapacity">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -2480,7 +2687,10 @@ namespace Model
          * vault. For more information about tags, see <a
          * href="http://docs.aws.amazon.com/amazonglacier/latest/dev/tagging.html">Tagging
          * Amazon Glacier Resources</a>. This operation is idempotent. The operation will
-         * be successful, even if there are no tags attached to the vault. </p>
+         * be successful, even if there are no tags attached to the vault. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/RemoveTagsFromVault">AWS
+         * API Reference</a></p>
          */
         virtual Model::RemoveTagsFromVaultOutcome RemoveTagsFromVault(const Model::RemoveTagsFromVaultRequest& request) const;
 
@@ -2489,7 +2699,10 @@ namespace Model
          * vault. For more information about tags, see <a
          * href="http://docs.aws.amazon.com/amazonglacier/latest/dev/tagging.html">Tagging
          * Amazon Glacier Resources</a>. This operation is idempotent. The operation will
-         * be successful, even if there are no tags attached to the vault. </p>
+         * be successful, even if there are no tags attached to the vault. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/RemoveTagsFromVault">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -2500,7 +2713,10 @@ namespace Model
          * vault. For more information about tags, see <a
          * href="http://docs.aws.amazon.com/amazonglacier/latest/dev/tagging.html">Tagging
          * Amazon Glacier Resources</a>. This operation is idempotent. The operation will
-         * be successful, even if there are no tags attached to the vault. </p>
+         * be successful, even if there are no tags attached to the vault. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/RemoveTagsFromVault">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -2514,7 +2730,9 @@ namespace Model
          * were in progress before the policy was enacted. For more information about data
          * retrieval policies, see <a
          * href="http://docs.aws.amazon.com/amazonglacier/latest/dev/data-retrieval-policy.html">Amazon
-         * Glacier Data Retrieval Policies</a>. </p>
+         * Glacier Data Retrieval Policies</a>. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/SetDataRetrievalPolicy">AWS
+         * API Reference</a></p>
          */
         virtual Model::SetDataRetrievalPolicyOutcome SetDataRetrievalPolicy(const Model::SetDataRetrievalPolicyRequest& request) const;
 
@@ -2526,7 +2744,9 @@ namespace Model
          * were in progress before the policy was enacted. For more information about data
          * retrieval policies, see <a
          * href="http://docs.aws.amazon.com/amazonglacier/latest/dev/data-retrieval-policy.html">Amazon
-         * Glacier Data Retrieval Policies</a>. </p>
+         * Glacier Data Retrieval Policies</a>. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/SetDataRetrievalPolicy">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -2540,7 +2760,9 @@ namespace Model
          * were in progress before the policy was enacted. For more information about data
          * retrieval policies, see <a
          * href="http://docs.aws.amazon.com/amazonglacier/latest/dev/data-retrieval-policy.html">Amazon
-         * Glacier Data Retrieval Policies</a>. </p>
+         * Glacier Data Retrieval Policies</a>. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/SetDataRetrievalPolicy">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -2554,7 +2776,10 @@ namespace Model
          * access policy per vault and the policy can be up to 20 KB in size. For more
          * information about vault access policies, see <a
          * href="http://docs.aws.amazon.com/amazonglacier/latest/dev/vault-access-policy.html">Amazon
-         * Glacier Access Control with Vault Access Policies</a>. </p>
+         * Glacier Access Control with Vault Access Policies</a>. </p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/SetVaultAccessPolicy">AWS
+         * API Reference</a></p>
          */
         virtual Model::SetVaultAccessPolicyOutcome SetVaultAccessPolicy(const Model::SetVaultAccessPolicyRequest& request) const;
 
@@ -2566,7 +2791,10 @@ namespace Model
          * access policy per vault and the policy can be up to 20 KB in size. For more
          * information about vault access policies, see <a
          * href="http://docs.aws.amazon.com/amazonglacier/latest/dev/vault-access-policy.html">Amazon
-         * Glacier Access Control with Vault Access Policies</a>. </p>
+         * Glacier Access Control with Vault Access Policies</a>. </p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/SetVaultAccessPolicy">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -2580,7 +2808,10 @@ namespace Model
          * access policy per vault and the policy can be up to 20 KB in size. For more
          * information about vault access policies, see <a
          * href="http://docs.aws.amazon.com/amazonglacier/latest/dev/vault-access-policy.html">Amazon
-         * Glacier Access Control with Vault Access Policies</a>. </p>
+         * Glacier Access Control with Vault Access Policies</a>. </p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/SetVaultAccessPolicy">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -2615,7 +2846,9 @@ namespace Model
          * Vault Notifications in Amazon Glacier</a> and <a
          * href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-vault-notifications-put.html">Set
          * Vault Notification Configuration </a> in the <i>Amazon Glacier Developer
-         * Guide</i>. </p>
+         * Guide</i>. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/SetVaultNotifications">AWS
+         * API Reference</a></p>
          */
         virtual Model::SetVaultNotificationsOutcome SetVaultNotifications(const Model::SetVaultNotificationsRequest& request) const;
 
@@ -2648,7 +2881,9 @@ namespace Model
          * Vault Notifications in Amazon Glacier</a> and <a
          * href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-vault-notifications-put.html">Set
          * Vault Notification Configuration </a> in the <i>Amazon Glacier Developer
-         * Guide</i>. </p>
+         * Guide</i>. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/SetVaultNotifications">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -2683,7 +2918,9 @@ namespace Model
          * Vault Notifications in Amazon Glacier</a> and <a
          * href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-vault-notifications-put.html">Set
          * Vault Notification Configuration </a> in the <i>Amazon Glacier Developer
-         * Guide</i>. </p>
+         * Guide</i>. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/SetVaultNotifications">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -2721,7 +2958,10 @@ namespace Model
          * href="http://docs.aws.amazon.com/amazonglacier/latest/dev/uploading-an-archive.html">Uploading
          * an Archive in Amazon Glacier</a> and <a
          * href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-archive-post.html">Upload
-         * Archive</a> in the <i>Amazon Glacier Developer Guide</i>. </p>
+         * Archive</a> in the <i>Amazon Glacier Developer Guide</i>. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/UploadArchive">AWS
+         * API Reference</a></p>
          */
         virtual Model::UploadArchiveOutcome UploadArchive(const Model::UploadArchiveRequest& request) const;
 
@@ -2757,7 +2997,10 @@ namespace Model
          * href="http://docs.aws.amazon.com/amazonglacier/latest/dev/uploading-an-archive.html">Uploading
          * an Archive in Amazon Glacier</a> and <a
          * href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-archive-post.html">Upload
-         * Archive</a> in the <i>Amazon Glacier Developer Guide</i>. </p>
+         * Archive</a> in the <i>Amazon Glacier Developer Guide</i>. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/UploadArchive">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -2795,7 +3038,10 @@ namespace Model
          * href="http://docs.aws.amazon.com/amazonglacier/latest/dev/uploading-an-archive.html">Uploading
          * an Archive in Amazon Glacier</a> and <a
          * href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-archive-post.html">Upload
-         * Archive</a> in the <i>Amazon Glacier Developer Guide</i>. </p>
+         * Archive</a> in the <i>Amazon Glacier Developer Guide</i>. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/UploadArchive">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -2837,7 +3083,10 @@ namespace Model
          * href="http://docs.aws.amazon.com/amazonglacier/latest/dev/uploading-archive-mpu.html">Uploading
          * Large Archives in Parts (Multipart Upload)</a> and <a
          * href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-upload-part.html">Upload
-         * Part </a> in the <i>Amazon Glacier Developer Guide</i>.</p>
+         * Part </a> in the <i>Amazon Glacier Developer Guide</i>.</p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/UploadMultipartPart">AWS
+         * API Reference</a></p>
          */
         virtual Model::UploadMultipartPartOutcome UploadMultipartPart(const Model::UploadMultipartPartRequest& request) const;
 
@@ -2877,7 +3126,10 @@ namespace Model
          * href="http://docs.aws.amazon.com/amazonglacier/latest/dev/uploading-archive-mpu.html">Uploading
          * Large Archives in Parts (Multipart Upload)</a> and <a
          * href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-upload-part.html">Upload
-         * Part </a> in the <i>Amazon Glacier Developer Guide</i>.</p>
+         * Part </a> in the <i>Amazon Glacier Developer Guide</i>.</p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/UploadMultipartPart">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -2919,7 +3171,10 @@ namespace Model
          * href="http://docs.aws.amazon.com/amazonglacier/latest/dev/uploading-archive-mpu.html">Uploading
          * Large Archives in Parts (Multipart Upload)</a> and <a
          * href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-upload-part.html">Upload
-         * Part </a> in the <i>Amazon Glacier Developer Guide</i>.</p>
+         * Part </a> in the <i>Amazon Glacier Developer Guide</i>.</p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/UploadMultipartPart">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */

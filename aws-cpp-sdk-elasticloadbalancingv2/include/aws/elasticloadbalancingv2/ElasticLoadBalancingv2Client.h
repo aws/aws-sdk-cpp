@@ -17,6 +17,7 @@
 #include <aws/elasticloadbalancingv2/ElasticLoadBalancingv2Errors.h>
 #include <aws/core/client/AWSError.h>
 #include <aws/core/client/ClientConfiguration.h>
+#include <aws/core/AmazonSerializableWebServiceRequest.h>
 #include <aws/core/client/AWSClient.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
@@ -46,6 +47,7 @@
 #include <aws/elasticloadbalancingv2/model/ModifyTargetGroupAttributesResult.h>
 #include <aws/elasticloadbalancingv2/model/RegisterTargetsResult.h>
 #include <aws/elasticloadbalancingv2/model/RemoveTagsResult.h>
+#include <aws/elasticloadbalancingv2/model/SetIpAddressTypeResult.h>
 #include <aws/elasticloadbalancingv2/model/SetRulePrioritiesResult.h>
 #include <aws/elasticloadbalancingv2/model/SetSecurityGroupsResult.h>
 #include <aws/elasticloadbalancingv2/model/SetSubnetsResult.h>
@@ -120,6 +122,7 @@ namespace Model
         class ModifyTargetGroupAttributesRequest;
         class RegisterTargetsRequest;
         class RemoveTagsRequest;
+        class SetIpAddressTypeRequest;
         class SetRulePrioritiesRequest;
         class SetSecurityGroupsRequest;
         class SetSubnetsRequest;
@@ -150,6 +153,7 @@ namespace Model
         typedef Aws::Utils::Outcome<ModifyTargetGroupAttributesResult, Aws::Client::AWSError<ElasticLoadBalancingv2Errors>> ModifyTargetGroupAttributesOutcome;
         typedef Aws::Utils::Outcome<RegisterTargetsResult, Aws::Client::AWSError<ElasticLoadBalancingv2Errors>> RegisterTargetsOutcome;
         typedef Aws::Utils::Outcome<RemoveTagsResult, Aws::Client::AWSError<ElasticLoadBalancingv2Errors>> RemoveTagsOutcome;
+        typedef Aws::Utils::Outcome<SetIpAddressTypeResult, Aws::Client::AWSError<ElasticLoadBalancingv2Errors>> SetIpAddressTypeOutcome;
         typedef Aws::Utils::Outcome<SetRulePrioritiesResult, Aws::Client::AWSError<ElasticLoadBalancingv2Errors>> SetRulePrioritiesOutcome;
         typedef Aws::Utils::Outcome<SetSecurityGroupsResult, Aws::Client::AWSError<ElasticLoadBalancingv2Errors>> SetSecurityGroupsOutcome;
         typedef Aws::Utils::Outcome<SetSubnetsResult, Aws::Client::AWSError<ElasticLoadBalancingv2Errors>> SetSubnetsOutcome;
@@ -180,6 +184,7 @@ namespace Model
         typedef std::future<ModifyTargetGroupAttributesOutcome> ModifyTargetGroupAttributesOutcomeCallable;
         typedef std::future<RegisterTargetsOutcome> RegisterTargetsOutcomeCallable;
         typedef std::future<RemoveTagsOutcome> RemoveTagsOutcomeCallable;
+        typedef std::future<SetIpAddressTypeOutcome> SetIpAddressTypeOutcomeCallable;
         typedef std::future<SetRulePrioritiesOutcome> SetRulePrioritiesOutcomeCallable;
         typedef std::future<SetSecurityGroupsOutcome> SetSecurityGroupsOutcomeCallable;
         typedef std::future<SetSubnetsOutcome> SetSubnetsOutcomeCallable;
@@ -213,6 +218,7 @@ namespace Model
     typedef std::function<void(const ElasticLoadBalancingv2Client*, const Model::ModifyTargetGroupAttributesRequest&, const Model::ModifyTargetGroupAttributesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyTargetGroupAttributesResponseReceivedHandler;
     typedef std::function<void(const ElasticLoadBalancingv2Client*, const Model::RegisterTargetsRequest&, const Model::RegisterTargetsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RegisterTargetsResponseReceivedHandler;
     typedef std::function<void(const ElasticLoadBalancingv2Client*, const Model::RemoveTagsRequest&, const Model::RemoveTagsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RemoveTagsResponseReceivedHandler;
+    typedef std::function<void(const ElasticLoadBalancingv2Client*, const Model::SetIpAddressTypeRequest&, const Model::SetIpAddressTypeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SetIpAddressTypeResponseReceivedHandler;
     typedef std::function<void(const ElasticLoadBalancingv2Client*, const Model::SetRulePrioritiesRequest&, const Model::SetRulePrioritiesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SetRulePrioritiesResponseReceivedHandler;
     typedef std::function<void(const ElasticLoadBalancingv2Client*, const Model::SetSecurityGroupsRequest&, const Model::SetSecurityGroupsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SetSecurityGroupsResponseReceivedHandler;
     typedef std::function<void(const ElasticLoadBalancingv2Client*, const Model::SetSubnetsRequest&, const Model::SetSubnetsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SetSubnetsResponseReceivedHandler;
@@ -279,13 +285,21 @@ namespace Model
 
         virtual ~ElasticLoadBalancingv2Client();
 
+       /**
+        * Converts any request object to a presigned URL with the GET method, using region for the signer and a timeout of 15 minutes.
+        */
+        Aws::String ConvertRequestToPresignedUrl(const AmazonSerializableWebServiceRequest& requestToConvert, const char* region) const;
+
+
         /**
          * <p>Adds the specified tags to the specified resource. You can tag your
          * Application Load Balancers and your target groups.</p> <p>Each tag consists of a
          * key and an optional value. If a resource already has a tag with the same key,
          * <code>AddTags</code> updates its value.</p> <p>To list the current tags for your
          * resources, use <a>DescribeTags</a>. To remove tags from your resources, use
-         * <a>RemoveTags</a>.</p>
+         * <a>RemoveTags</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/AddTags">AWS
+         * API Reference</a></p>
          */
         virtual Model::AddTagsOutcome AddTags(const Model::AddTagsRequest& request) const;
 
@@ -295,7 +309,9 @@ namespace Model
          * key and an optional value. If a resource already has a tag with the same key,
          * <code>AddTags</code> updates its value.</p> <p>To list the current tags for your
          * resources, use <a>DescribeTags</a>. To remove tags from your resources, use
-         * <a>RemoveTags</a>.</p>
+         * <a>RemoveTags</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/AddTags">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -307,7 +323,9 @@ namespace Model
          * key and an optional value. If a resource already has a tag with the same key,
          * <code>AddTags</code> updates its value.</p> <p>To list the current tags for your
          * resources, use <a>DescribeTags</a>. To remove tags from your resources, use
-         * <a>RemoveTags</a>.</p>
+         * <a>RemoveTags</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/AddTags">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -322,7 +340,9 @@ namespace Model
          * <p>For more information, see <a
          * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-listeners.html">Listeners
          * for Your Application Load Balancers</a> in the <i>Application Load Balancers
-         * Guide</i>.</p>
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/CreateListener">AWS
+         * API Reference</a></p>
          */
         virtual Model::CreateListenerOutcome CreateListener(const Model::CreateListenerRequest& request) const;
 
@@ -335,7 +355,9 @@ namespace Model
          * <p>For more information, see <a
          * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-listeners.html">Listeners
          * for Your Application Load Balancers</a> in the <i>Application Load Balancers
-         * Guide</i>.</p>
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/CreateListener">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -350,65 +372,79 @@ namespace Model
          * <p>For more information, see <a
          * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-listeners.html">Listeners
          * for Your Application Load Balancers</a> in the <i>Application Load Balancers
-         * Guide</i>.</p>
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/CreateListener">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateListenerAsync(const Model::CreateListenerRequest& request, const CreateListenerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates an Application Load Balancer.</p> <p>To create listeners for your
-         * load balancer, use <a>CreateListener</a>. You can add security groups, subnets,
-         * and tags when you create your load balancer, or you can add them later using
-         * <a>SetSecurityGroups</a>, <a>SetSubnets</a>, and <a>AddTags</a>.</p> <p>To
-         * describe your current load balancers, see <a>DescribeLoadBalancers</a>. When you
-         * are finished with a load balancer, you can delete it using
-         * <a>DeleteLoadBalancer</a>.</p> <p>You can create up to 20 load balancers per
-         * region per account. You can request an increase for the number of load balancers
-         * for your account. For more information, see <a
+         * <p>Creates an Application Load Balancer.</p> <p>When you create a load balancer,
+         * you can specify security groups, subnets, IP address type, and tags. Otherwise,
+         * you could do so later using <a>SetSecurityGroups</a>, <a>SetSubnets</a>,
+         * <a>SetIpAddressType</a>, and <a>AddTags</a>.</p> <p>To create listeners for your
+         * load balancer, use <a>CreateListener</a>. To describe your current load
+         * balancers, see <a>DescribeLoadBalancers</a>. When you are finished with a load
+         * balancer, you can delete it using <a>DeleteLoadBalancer</a>.</p> <p>You can
+         * create up to 20 load balancers per region per account. You can request an
+         * increase for the number of load balancers for your account. For more
+         * information, see <a
          * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-limits.html">Limits
          * for Your Application Load Balancer</a> in the <i>Application Load Balancers
          * Guide</i>.</p> <p>For more information, see <a
          * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/application/application-load-balancers.html">Application
-         * Load Balancers</a> in the <i>Application Load Balancers Guide</i>.</p>
+         * Load Balancers</a> in the <i>Application Load Balancers Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/CreateLoadBalancer">AWS
+         * API Reference</a></p>
          */
         virtual Model::CreateLoadBalancerOutcome CreateLoadBalancer(const Model::CreateLoadBalancerRequest& request) const;
 
         /**
-         * <p>Creates an Application Load Balancer.</p> <p>To create listeners for your
-         * load balancer, use <a>CreateListener</a>. You can add security groups, subnets,
-         * and tags when you create your load balancer, or you can add them later using
-         * <a>SetSecurityGroups</a>, <a>SetSubnets</a>, and <a>AddTags</a>.</p> <p>To
-         * describe your current load balancers, see <a>DescribeLoadBalancers</a>. When you
-         * are finished with a load balancer, you can delete it using
-         * <a>DeleteLoadBalancer</a>.</p> <p>You can create up to 20 load balancers per
-         * region per account. You can request an increase for the number of load balancers
-         * for your account. For more information, see <a
+         * <p>Creates an Application Load Balancer.</p> <p>When you create a load balancer,
+         * you can specify security groups, subnets, IP address type, and tags. Otherwise,
+         * you could do so later using <a>SetSecurityGroups</a>, <a>SetSubnets</a>,
+         * <a>SetIpAddressType</a>, and <a>AddTags</a>.</p> <p>To create listeners for your
+         * load balancer, use <a>CreateListener</a>. To describe your current load
+         * balancers, see <a>DescribeLoadBalancers</a>. When you are finished with a load
+         * balancer, you can delete it using <a>DeleteLoadBalancer</a>.</p> <p>You can
+         * create up to 20 load balancers per region per account. You can request an
+         * increase for the number of load balancers for your account. For more
+         * information, see <a
          * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-limits.html">Limits
          * for Your Application Load Balancer</a> in the <i>Application Load Balancers
          * Guide</i>.</p> <p>For more information, see <a
          * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/application/application-load-balancers.html">Application
-         * Load Balancers</a> in the <i>Application Load Balancers Guide</i>.</p>
+         * Load Balancers</a> in the <i>Application Load Balancers Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/CreateLoadBalancer">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::CreateLoadBalancerOutcomeCallable CreateLoadBalancerCallable(const Model::CreateLoadBalancerRequest& request) const;
 
         /**
-         * <p>Creates an Application Load Balancer.</p> <p>To create listeners for your
-         * load balancer, use <a>CreateListener</a>. You can add security groups, subnets,
-         * and tags when you create your load balancer, or you can add them later using
-         * <a>SetSecurityGroups</a>, <a>SetSubnets</a>, and <a>AddTags</a>.</p> <p>To
-         * describe your current load balancers, see <a>DescribeLoadBalancers</a>. When you
-         * are finished with a load balancer, you can delete it using
-         * <a>DeleteLoadBalancer</a>.</p> <p>You can create up to 20 load balancers per
-         * region per account. You can request an increase for the number of load balancers
-         * for your account. For more information, see <a
+         * <p>Creates an Application Load Balancer.</p> <p>When you create a load balancer,
+         * you can specify security groups, subnets, IP address type, and tags. Otherwise,
+         * you could do so later using <a>SetSecurityGroups</a>, <a>SetSubnets</a>,
+         * <a>SetIpAddressType</a>, and <a>AddTags</a>.</p> <p>To create listeners for your
+         * load balancer, use <a>CreateListener</a>. To describe your current load
+         * balancers, see <a>DescribeLoadBalancers</a>. When you are finished with a load
+         * balancer, you can delete it using <a>DeleteLoadBalancer</a>.</p> <p>You can
+         * create up to 20 load balancers per region per account. You can request an
+         * increase for the number of load balancers for your account. For more
+         * information, see <a
          * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-limits.html">Limits
          * for Your Application Load Balancer</a> in the <i>Application Load Balancers
          * Guide</i>.</p> <p>For more information, see <a
          * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/application/application-load-balancers.html">Application
-         * Load Balancers</a> in the <i>Application Load Balancers Guide</i>.</p>
+         * Load Balancers</a> in the <i>Application Load Balancers Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/CreateLoadBalancer">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -424,7 +460,10 @@ namespace Model
          * Rules</a> in the <i>Application Load Balancers Guide</i>.</p> <p>To view your
          * current rules, use <a>DescribeRules</a>. To update a rule, use
          * <a>ModifyRule</a>. To set the priorities of your rules, use
-         * <a>SetRulePriorities</a>. To delete a rule, use <a>DeleteRule</a>.</p>
+         * <a>SetRulePriorities</a>. To delete a rule, use <a>DeleteRule</a>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/CreateRule">AWS
+         * API Reference</a></p>
          */
         virtual Model::CreateRuleOutcome CreateRule(const Model::CreateRuleRequest& request) const;
 
@@ -438,7 +477,10 @@ namespace Model
          * Rules</a> in the <i>Application Load Balancers Guide</i>.</p> <p>To view your
          * current rules, use <a>DescribeRules</a>. To update a rule, use
          * <a>ModifyRule</a>. To set the priorities of your rules, use
-         * <a>SetRulePriorities</a>. To delete a rule, use <a>DeleteRule</a>.</p>
+         * <a>SetRulePriorities</a>. To delete a rule, use <a>DeleteRule</a>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/CreateRule">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -454,7 +496,10 @@ namespace Model
          * Rules</a> in the <i>Application Load Balancers Guide</i>.</p> <p>To view your
          * current rules, use <a>DescribeRules</a>. To update a rule, use
          * <a>ModifyRule</a>. To set the priorities of your rules, use
-         * <a>SetRulePriorities</a>. To delete a rule, use <a>DeleteRule</a>.</p>
+         * <a>SetRulePriorities</a>. To delete a rule, use <a>DeleteRule</a>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/CreateRule">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -470,7 +515,9 @@ namespace Model
          * <a>DeleteTargetGroup</a>.</p> <p>For more information, see <a
          * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-target-groups.html">Target
          * Groups for Your Application Load Balancers</a> in the <i>Application Load
-         * Balancers Guide</i>.</p>
+         * Balancers Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/CreateTargetGroup">AWS
+         * API Reference</a></p>
          */
         virtual Model::CreateTargetGroupOutcome CreateTargetGroup(const Model::CreateTargetGroupRequest& request) const;
 
@@ -484,7 +531,9 @@ namespace Model
          * <a>DeleteTargetGroup</a>.</p> <p>For more information, see <a
          * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-target-groups.html">Target
          * Groups for Your Application Load Balancers</a> in the <i>Application Load
-         * Balancers Guide</i>.</p>
+         * Balancers Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/CreateTargetGroup">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -500,7 +549,9 @@ namespace Model
          * <a>DeleteTargetGroup</a>.</p> <p>For more information, see <a
          * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-target-groups.html">Target
          * Groups for Your Application Load Balancers</a> in the <i>Application Load
-         * Balancers Guide</i>.</p>
+         * Balancers Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/CreateTargetGroup">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -509,14 +560,18 @@ namespace Model
         /**
          * <p>Deletes the specified listener.</p> <p>Alternatively, your listener is
          * deleted when you delete the load balancer it is attached to using
-         * <a>DeleteLoadBalancer</a>.</p>
+         * <a>DeleteLoadBalancer</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DeleteListener">AWS
+         * API Reference</a></p>
          */
         virtual Model::DeleteListenerOutcome DeleteListener(const Model::DeleteListenerRequest& request) const;
 
         /**
          * <p>Deletes the specified listener.</p> <p>Alternatively, your listener is
          * deleted when you delete the load balancer it is attached to using
-         * <a>DeleteLoadBalancer</a>.</p>
+         * <a>DeleteLoadBalancer</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DeleteListener">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -525,7 +580,9 @@ namespace Model
         /**
          * <p>Deletes the specified listener.</p> <p>Alternatively, your listener is
          * deleted when you delete the load balancer it is attached to using
-         * <a>DeleteLoadBalancer</a>.</p>
+         * <a>DeleteLoadBalancer</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DeleteListener">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -538,7 +595,9 @@ namespace Model
          * call succeeds.</p> <p>Deleting a load balancer does not affect its registered
          * targets. For example, your EC2 instances continue to run and are still
          * registered to their target groups. If you no longer need these EC2 instances,
-         * you can stop or terminate them.</p>
+         * you can stop or terminate them.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DeleteLoadBalancer">AWS
+         * API Reference</a></p>
          */
         virtual Model::DeleteLoadBalancerOutcome DeleteLoadBalancer(const Model::DeleteLoadBalancerRequest& request) const;
 
@@ -549,7 +608,9 @@ namespace Model
          * call succeeds.</p> <p>Deleting a load balancer does not affect its registered
          * targets. For example, your EC2 instances continue to run and are still
          * registered to their target groups. If you no longer need these EC2 instances,
-         * you can stop or terminate them.</p>
+         * you can stop or terminate them.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DeleteLoadBalancer">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -562,26 +623,34 @@ namespace Model
          * call succeeds.</p> <p>Deleting a load balancer does not affect its registered
          * targets. For example, your EC2 instances continue to run and are still
          * registered to their target groups. If you no longer need these EC2 instances,
-         * you can stop or terminate them.</p>
+         * you can stop or terminate them.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DeleteLoadBalancer">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteLoadBalancerAsync(const Model::DeleteLoadBalancerRequest& request, const DeleteLoadBalancerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes the specified rule.</p>
+         * <p>Deletes the specified rule.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DeleteRule">AWS
+         * API Reference</a></p>
          */
         virtual Model::DeleteRuleOutcome DeleteRule(const Model::DeleteRuleRequest& request) const;
 
         /**
-         * <p>Deletes the specified rule.</p>
+         * <p>Deletes the specified rule.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DeleteRule">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DeleteRuleOutcomeCallable DeleteRuleCallable(const Model::DeleteRuleRequest& request) const;
 
         /**
-         * <p>Deletes the specified rule.</p>
+         * <p>Deletes the specified rule.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DeleteRule">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -590,14 +659,18 @@ namespace Model
         /**
          * <p>Deletes the specified target group.</p> <p>You can delete a target group if
          * it is not referenced by any actions. Deleting a target group also deletes any
-         * associated health checks.</p>
+         * associated health checks.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DeleteTargetGroup">AWS
+         * API Reference</a></p>
          */
         virtual Model::DeleteTargetGroupOutcome DeleteTargetGroup(const Model::DeleteTargetGroupRequest& request) const;
 
         /**
          * <p>Deletes the specified target group.</p> <p>You can delete a target group if
          * it is not referenced by any actions. Deleting a target group also deletes any
-         * associated health checks.</p>
+         * associated health checks.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DeleteTargetGroup">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -606,7 +679,9 @@ namespace Model
         /**
          * <p>Deletes the specified target group.</p> <p>You can delete a target group if
          * it is not referenced by any actions. Deleting a target group also deletes any
-         * associated health checks.</p>
+         * associated health checks.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DeleteTargetGroup">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -615,14 +690,18 @@ namespace Model
         /**
          * <p>Deregisters the specified targets from the specified target group. After the
          * targets are deregistered, they no longer receive traffic from the load
-         * balancer.</p>
+         * balancer.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DeregisterTargets">AWS
+         * API Reference</a></p>
          */
         virtual Model::DeregisterTargetsOutcome DeregisterTargets(const Model::DeregisterTargetsRequest& request) const;
 
         /**
          * <p>Deregisters the specified targets from the specified target group. After the
          * targets are deregistered, they no longer receive traffic from the load
-         * balancer.</p>
+         * balancer.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DeregisterTargets">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -631,7 +710,9 @@ namespace Model
         /**
          * <p>Deregisters the specified targets from the specified target group. After the
          * targets are deregistered, they no longer receive traffic from the load
-         * balancer.</p>
+         * balancer.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DeregisterTargets">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -640,14 +721,18 @@ namespace Model
         /**
          * <p>Describes the specified listeners or the listeners for the specified
          * Application Load Balancer. You must specify either a load balancer or one or
-         * more listeners.</p>
+         * more listeners.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DescribeListeners">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeListenersOutcome DescribeListeners(const Model::DescribeListenersRequest& request) const;
 
         /**
          * <p>Describes the specified listeners or the listeners for the specified
          * Application Load Balancer. You must specify either a load balancer or one or
-         * more listeners.</p>
+         * more listeners.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DescribeListeners">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -656,26 +741,37 @@ namespace Model
         /**
          * <p>Describes the specified listeners or the listeners for the specified
          * Application Load Balancer. You must specify either a load balancer or one or
-         * more listeners.</p>
+         * more listeners.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DescribeListeners">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeListenersAsync(const Model::DescribeListenersRequest& request, const DescribeListenersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Describes the attributes for the specified Application Load Balancer.</p>
+         * <p>Describes the attributes for the specified Application Load
+         * Balancer.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DescribeLoadBalancerAttributes">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeLoadBalancerAttributesOutcome DescribeLoadBalancerAttributes(const Model::DescribeLoadBalancerAttributesRequest& request) const;
 
         /**
-         * <p>Describes the attributes for the specified Application Load Balancer.</p>
+         * <p>Describes the attributes for the specified Application Load
+         * Balancer.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DescribeLoadBalancerAttributes">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DescribeLoadBalancerAttributesOutcomeCallable DescribeLoadBalancerAttributesCallable(const Model::DescribeLoadBalancerAttributesRequest& request) const;
 
         /**
-         * <p>Describes the attributes for the specified Application Load Balancer.</p>
+         * <p>Describes the attributes for the specified Application Load
+         * Balancer.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DescribeLoadBalancerAttributes">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -685,7 +781,9 @@ namespace Model
          * <p>Describes the specified Application Load Balancers or all of your Application
          * Load Balancers.</p> <p>To describe the listeners for a load balancer, use
          * <a>DescribeListeners</a>. To describe the attributes for a load balancer, use
-         * <a>DescribeLoadBalancerAttributes</a>.</p>
+         * <a>DescribeLoadBalancerAttributes</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DescribeLoadBalancers">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeLoadBalancersOutcome DescribeLoadBalancers(const Model::DescribeLoadBalancersRequest& request) const;
 
@@ -693,7 +791,9 @@ namespace Model
          * <p>Describes the specified Application Load Balancers or all of your Application
          * Load Balancers.</p> <p>To describe the listeners for a load balancer, use
          * <a>DescribeListeners</a>. To describe the attributes for a load balancer, use
-         * <a>DescribeLoadBalancerAttributes</a>.</p>
+         * <a>DescribeLoadBalancerAttributes</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DescribeLoadBalancers">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -703,7 +803,9 @@ namespace Model
          * <p>Describes the specified Application Load Balancers or all of your Application
          * Load Balancers.</p> <p>To describe the listeners for a load balancer, use
          * <a>DescribeListeners</a>. To describe the attributes for a load balancer, use
-         * <a>DescribeLoadBalancerAttributes</a>.</p>
+         * <a>DescribeLoadBalancerAttributes</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DescribeLoadBalancers">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -711,13 +813,19 @@ namespace Model
 
         /**
          * <p>Describes the specified rules or the rules for the specified listener. You
-         * must specify either a listener or one or more rules.</p>
+         * must specify either a listener or one or more rules.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DescribeRules">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeRulesOutcome DescribeRules(const Model::DescribeRulesRequest& request) const;
 
         /**
          * <p>Describes the specified rules or the rules for the specified listener. You
-         * must specify either a listener or one or more rules.</p>
+         * must specify either a listener or one or more rules.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DescribeRules">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -725,7 +833,10 @@ namespace Model
 
         /**
          * <p>Describes the specified rules or the rules for the specified listener. You
-         * must specify either a listener or one or more rules.</p>
+         * must specify either a listener or one or more rules.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DescribeRules">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -734,14 +845,18 @@ namespace Model
         /**
          * <p>Describes the specified policies or all policies used for SSL
          * negotiation.</p> <p>Note that the only supported policy at this time is
-         * ELBSecurityPolicy-2015-05.</p>
+         * ELBSecurityPolicy-2015-05.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DescribeSSLPolicies">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeSSLPoliciesOutcome DescribeSSLPolicies(const Model::DescribeSSLPoliciesRequest& request) const;
 
         /**
          * <p>Describes the specified policies or all policies used for SSL
          * negotiation.</p> <p>Note that the only supported policy at this time is
-         * ELBSecurityPolicy-2015-05.</p>
+         * ELBSecurityPolicy-2015-05.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DescribeSSLPolicies">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -750,45 +865,62 @@ namespace Model
         /**
          * <p>Describes the specified policies or all policies used for SSL
          * negotiation.</p> <p>Note that the only supported policy at this time is
-         * ELBSecurityPolicy-2015-05.</p>
+         * ELBSecurityPolicy-2015-05.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DescribeSSLPolicies">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeSSLPoliciesAsync(const Model::DescribeSSLPoliciesRequest& request, const DescribeSSLPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Describes the tags for the specified resources.</p>
+         * <p>Describes the tags for the specified resources.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DescribeTags">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeTagsOutcome DescribeTags(const Model::DescribeTagsRequest& request) const;
 
         /**
-         * <p>Describes the tags for the specified resources.</p>
+         * <p>Describes the tags for the specified resources.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DescribeTags">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DescribeTagsOutcomeCallable DescribeTagsCallable(const Model::DescribeTagsRequest& request) const;
 
         /**
-         * <p>Describes the tags for the specified resources.</p>
+         * <p>Describes the tags for the specified resources.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DescribeTags">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeTagsAsync(const Model::DescribeTagsRequest& request, const DescribeTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Describes the attributes for the specified target group.</p>
+         * <p>Describes the attributes for the specified target group.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DescribeTargetGroupAttributes">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeTargetGroupAttributesOutcome DescribeTargetGroupAttributes(const Model::DescribeTargetGroupAttributesRequest& request) const;
 
         /**
-         * <p>Describes the attributes for the specified target group.</p>
+         * <p>Describes the attributes for the specified target group.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DescribeTargetGroupAttributes">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DescribeTargetGroupAttributesOutcomeCallable DescribeTargetGroupAttributesCallable(const Model::DescribeTargetGroupAttributesRequest& request) const;
 
         /**
-         * <p>Describes the attributes for the specified target group.</p>
+         * <p>Describes the attributes for the specified target group.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DescribeTargetGroupAttributes">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -801,7 +933,9 @@ namespace Model
          * one or more target groups, or the ARNs of one or more target groups.</p> <p>To
          * describe the targets for a target group, use <a>DescribeTargetHealth</a>. To
          * describe the attributes of a target group, use
-         * <a>DescribeTargetGroupAttributes</a>.</p>
+         * <a>DescribeTargetGroupAttributes</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DescribeTargetGroups">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeTargetGroupsOutcome DescribeTargetGroups(const Model::DescribeTargetGroupsRequest& request) const;
 
@@ -812,7 +946,9 @@ namespace Model
          * one or more target groups, or the ARNs of one or more target groups.</p> <p>To
          * describe the targets for a target group, use <a>DescribeTargetHealth</a>. To
          * describe the attributes of a target group, use
-         * <a>DescribeTargetGroupAttributes</a>.</p>
+         * <a>DescribeTargetGroupAttributes</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DescribeTargetGroups">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -825,26 +961,37 @@ namespace Model
          * one or more target groups, or the ARNs of one or more target groups.</p> <p>To
          * describe the targets for a target group, use <a>DescribeTargetHealth</a>. To
          * describe the attributes of a target group, use
-         * <a>DescribeTargetGroupAttributes</a>.</p>
+         * <a>DescribeTargetGroupAttributes</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DescribeTargetGroups">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeTargetGroupsAsync(const Model::DescribeTargetGroupsRequest& request, const DescribeTargetGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Describes the health of the specified targets or all of your targets.</p>
+         * <p>Describes the health of the specified targets or all of your
+         * targets.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DescribeTargetHealth">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeTargetHealthOutcome DescribeTargetHealth(const Model::DescribeTargetHealthRequest& request) const;
 
         /**
-         * <p>Describes the health of the specified targets or all of your targets.</p>
+         * <p>Describes the health of the specified targets or all of your
+         * targets.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DescribeTargetHealth">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DescribeTargetHealthOutcomeCallable DescribeTargetHealthCallable(const Model::DescribeTargetHealthRequest& request) const;
 
         /**
-         * <p>Describes the health of the specified targets or all of your targets.</p>
+         * <p>Describes the health of the specified targets or all of your
+         * targets.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DescribeTargetHealth">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -855,7 +1002,9 @@ namespace Model
          * properties that you do not specify retain their current values. However,
          * changing the protocol from HTTPS to HTTP removes the security policy and SSL
          * certificate properties. If you change the protocol from HTTP to HTTPS, you must
-         * add the security policy.</p>
+         * add the security policy.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/ModifyListener">AWS
+         * API Reference</a></p>
          */
         virtual Model::ModifyListenerOutcome ModifyListener(const Model::ModifyListenerRequest& request) const;
 
@@ -864,7 +1013,9 @@ namespace Model
          * properties that you do not specify retain their current values. However,
          * changing the protocol from HTTPS to HTTP removes the security policy and SSL
          * certificate properties. If you change the protocol from HTTP to HTTPS, you must
-         * add the security policy.</p>
+         * add the security policy.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/ModifyListener">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -875,7 +1026,9 @@ namespace Model
          * properties that you do not specify retain their current values. However,
          * changing the protocol from HTTPS to HTTP removes the security policy and SSL
          * certificate properties. If you change the protocol from HTTP to HTTPS, you must
-         * add the security policy.</p>
+         * add the security policy.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/ModifyListener">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -885,7 +1038,9 @@ namespace Model
          * <p>Modifies the specified attributes of the specified Application Load
          * Balancer.</p> <p>If any of the specified attributes can't be modified as
          * requested, the call fails. Any existing attributes that you do not modify retain
-         * their current values.</p>
+         * their current values.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/ModifyLoadBalancerAttributes">AWS
+         * API Reference</a></p>
          */
         virtual Model::ModifyLoadBalancerAttributesOutcome ModifyLoadBalancerAttributes(const Model::ModifyLoadBalancerAttributesRequest& request) const;
 
@@ -893,7 +1048,9 @@ namespace Model
          * <p>Modifies the specified attributes of the specified Application Load
          * Balancer.</p> <p>If any of the specified attributes can't be modified as
          * requested, the call fails. Any existing attributes that you do not modify retain
-         * their current values.</p>
+         * their current values.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/ModifyLoadBalancerAttributes">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -903,7 +1060,9 @@ namespace Model
          * <p>Modifies the specified attributes of the specified Application Load
          * Balancer.</p> <p>If any of the specified attributes can't be modified as
          * requested, the call fails. Any existing attributes that you do not modify retain
-         * their current values.</p>
+         * their current values.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/ModifyLoadBalancerAttributes">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -912,14 +1071,18 @@ namespace Model
         /**
          * <p>Modifies the specified rule.</p> <p>Any existing properties that you do not
          * modify retain their current values.</p> <p>To modify the default action, use
-         * <a>ModifyListener</a>.</p>
+         * <a>ModifyListener</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/ModifyRule">AWS
+         * API Reference</a></p>
          */
         virtual Model::ModifyRuleOutcome ModifyRule(const Model::ModifyRuleRequest& request) const;
 
         /**
          * <p>Modifies the specified rule.</p> <p>Any existing properties that you do not
          * modify retain their current values.</p> <p>To modify the default action, use
-         * <a>ModifyListener</a>.</p>
+         * <a>ModifyListener</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/ModifyRule">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -928,7 +1091,9 @@ namespace Model
         /**
          * <p>Modifies the specified rule.</p> <p>Any existing properties that you do not
          * modify retain their current values.</p> <p>To modify the default action, use
-         * <a>ModifyListener</a>.</p>
+         * <a>ModifyListener</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/ModifyRule">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -937,14 +1102,18 @@ namespace Model
         /**
          * <p>Modifies the health checks used when evaluating the health state of the
          * targets in the specified target group.</p> <p>To monitor the health of the
-         * targets, use <a>DescribeTargetHealth</a>.</p>
+         * targets, use <a>DescribeTargetHealth</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/ModifyTargetGroup">AWS
+         * API Reference</a></p>
          */
         virtual Model::ModifyTargetGroupOutcome ModifyTargetGroup(const Model::ModifyTargetGroupRequest& request) const;
 
         /**
          * <p>Modifies the health checks used when evaluating the health state of the
          * targets in the specified target group.</p> <p>To monitor the health of the
-         * targets, use <a>DescribeTargetHealth</a>.</p>
+         * targets, use <a>DescribeTargetHealth</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/ModifyTargetGroup">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -953,26 +1122,37 @@ namespace Model
         /**
          * <p>Modifies the health checks used when evaluating the health state of the
          * targets in the specified target group.</p> <p>To monitor the health of the
-         * targets, use <a>DescribeTargetHealth</a>.</p>
+         * targets, use <a>DescribeTargetHealth</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/ModifyTargetGroup">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ModifyTargetGroupAsync(const Model::ModifyTargetGroupRequest& request, const ModifyTargetGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Modifies the specified attributes of the specified target group.</p>
+         * <p>Modifies the specified attributes of the specified target
+         * group.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/ModifyTargetGroupAttributes">AWS
+         * API Reference</a></p>
          */
         virtual Model::ModifyTargetGroupAttributesOutcome ModifyTargetGroupAttributes(const Model::ModifyTargetGroupAttributesRequest& request) const;
 
         /**
-         * <p>Modifies the specified attributes of the specified target group.</p>
+         * <p>Modifies the specified attributes of the specified target
+         * group.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/ModifyTargetGroupAttributes">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ModifyTargetGroupAttributesOutcomeCallable ModifyTargetGroupAttributesCallable(const Model::ModifyTargetGroupAttributesRequest& request) const;
 
         /**
-         * <p>Modifies the specified attributes of the specified target group.</p>
+         * <p>Modifies the specified attributes of the specified target
+         * group.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/ModifyTargetGroupAttributes">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -984,9 +1164,11 @@ namespace Model
          * protocol and port number for the target group. Alternatively, you can override
          * the port for a target when you register it.</p> <p>The target must be in the
          * virtual private cloud (VPC) that you specified for the target group. If the
-         * target is an EC2 instance, it can't be in the <code>stopped</code> or
-         * <code>running</code> state when you register it.</p> <p>To remove a target from
-         * a target group, use <a>DeregisterTargets</a>.</p>
+         * target is an EC2 instance, it must be in the <code>running</code> state when you
+         * register it.</p> <p>To remove a target from a target group, use
+         * <a>DeregisterTargets</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/RegisterTargets">AWS
+         * API Reference</a></p>
          */
         virtual Model::RegisterTargetsOutcome RegisterTargets(const Model::RegisterTargetsRequest& request) const;
 
@@ -996,9 +1178,11 @@ namespace Model
          * protocol and port number for the target group. Alternatively, you can override
          * the port for a target when you register it.</p> <p>The target must be in the
          * virtual private cloud (VPC) that you specified for the target group. If the
-         * target is an EC2 instance, it can't be in the <code>stopped</code> or
-         * <code>running</code> state when you register it.</p> <p>To remove a target from
-         * a target group, use <a>DeregisterTargets</a>.</p>
+         * target is an EC2 instance, it must be in the <code>running</code> state when you
+         * register it.</p> <p>To remove a target from a target group, use
+         * <a>DeregisterTargets</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/RegisterTargets">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1010,9 +1194,11 @@ namespace Model
          * protocol and port number for the target group. Alternatively, you can override
          * the port for a target when you register it.</p> <p>The target must be in the
          * virtual private cloud (VPC) that you specified for the target group. If the
-         * target is an EC2 instance, it can't be in the <code>stopped</code> or
-         * <code>running</code> state when you register it.</p> <p>To remove a target from
-         * a target group, use <a>DeregisterTargets</a>.</p>
+         * target is an EC2 instance, it must be in the <code>running</code> state when you
+         * register it.</p> <p>To remove a target from a target group, use
+         * <a>DeregisterTargets</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/RegisterTargets">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1020,13 +1206,19 @@ namespace Model
 
         /**
          * <p>Removes the specified tags from the specified resource.</p> <p>To list the
-         * current tags for your resources, use <a>DescribeTags</a>.</p>
+         * current tags for your resources, use <a>DescribeTags</a>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/RemoveTags">AWS
+         * API Reference</a></p>
          */
         virtual Model::RemoveTagsOutcome RemoveTags(const Model::RemoveTagsRequest& request) const;
 
         /**
          * <p>Removes the specified tags from the specified resource.</p> <p>To list the
-         * current tags for your resources, use <a>DescribeTags</a>.</p>
+         * current tags for your resources, use <a>DescribeTags</a>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/RemoveTags">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1034,23 +1226,60 @@ namespace Model
 
         /**
          * <p>Removes the specified tags from the specified resource.</p> <p>To list the
-         * current tags for your resources, use <a>DescribeTags</a>.</p>
+         * current tags for your resources, use <a>DescribeTags</a>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/RemoveTags">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void RemoveTagsAsync(const Model::RemoveTagsRequest& request, const RemoveTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Sets the type of IP addresses used by the subnets of the specified
+         * Application Load Balancer.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/SetIpAddressType">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::SetIpAddressTypeOutcome SetIpAddressType(const Model::SetIpAddressTypeRequest& request) const;
+
+        /**
+         * <p>Sets the type of IP addresses used by the subnets of the specified
+         * Application Load Balancer.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/SetIpAddressType">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::SetIpAddressTypeOutcomeCallable SetIpAddressTypeCallable(const Model::SetIpAddressTypeRequest& request) const;
+
+        /**
+         * <p>Sets the type of IP addresses used by the subnets of the specified
+         * Application Load Balancer.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/SetIpAddressType">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void SetIpAddressTypeAsync(const Model::SetIpAddressTypeRequest& request, const SetIpAddressTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Sets the priorities of the specified rules.</p> <p>You can reorder the rules
          * as long as there are no priority conflicts in the new order. Any existing rules
-         * that you do not specify retain their current priority.</p>
+         * that you do not specify retain their current priority.</p><p><h3>See Also:</h3> 
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/SetRulePriorities">AWS
+         * API Reference</a></p>
          */
         virtual Model::SetRulePrioritiesOutcome SetRulePriorities(const Model::SetRulePrioritiesRequest& request) const;
 
         /**
          * <p>Sets the priorities of the specified rules.</p> <p>You can reorder the rules
          * as long as there are no priority conflicts in the new order. Any existing rules
-         * that you do not specify retain their current priority.</p>
+         * that you do not specify retain their current priority.</p><p><h3>See Also:</h3> 
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/SetRulePriorities">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1059,7 +1288,10 @@ namespace Model
         /**
          * <p>Sets the priorities of the specified rules.</p> <p>You can reorder the rules
          * as long as there are no priority conflicts in the new order. Any existing rules
-         * that you do not specify retain their current priority.</p>
+         * that you do not specify retain their current priority.</p><p><h3>See Also:</h3> 
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/SetRulePriorities">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1068,14 +1300,18 @@ namespace Model
         /**
          * <p>Associates the specified security groups with the specified load balancer.
          * The specified security groups override the previously associated security
-         * groups.</p>
+         * groups.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/SetSecurityGroups">AWS
+         * API Reference</a></p>
          */
         virtual Model::SetSecurityGroupsOutcome SetSecurityGroups(const Model::SetSecurityGroupsRequest& request) const;
 
         /**
          * <p>Associates the specified security groups with the specified load balancer.
          * The specified security groups override the previously associated security
-         * groups.</p>
+         * groups.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/SetSecurityGroups">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1084,7 +1320,9 @@ namespace Model
         /**
          * <p>Associates the specified security groups with the specified load balancer.
          * The specified security groups override the previously associated security
-         * groups.</p>
+         * groups.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/SetSecurityGroups">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1092,13 +1330,19 @@ namespace Model
 
         /**
          * <p>Enables the Availability Zone for the specified subnets for the specified
-         * load balancer. The specified subnets replace the previously enabled subnets.</p>
+         * load balancer. The specified subnets replace the previously enabled
+         * subnets.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/SetSubnets">AWS
+         * API Reference</a></p>
          */
         virtual Model::SetSubnetsOutcome SetSubnets(const Model::SetSubnetsRequest& request) const;
 
         /**
          * <p>Enables the Availability Zone for the specified subnets for the specified
-         * load balancer. The specified subnets replace the previously enabled subnets.</p>
+         * load balancer. The specified subnets replace the previously enabled
+         * subnets.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/SetSubnets">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1106,7 +1350,10 @@ namespace Model
 
         /**
          * <p>Enables the Availability Zone for the specified subnets for the specified
-         * load balancer. The specified subnets replace the previously enabled subnets.</p>
+         * load balancer. The specified subnets replace the previously enabled
+         * subnets.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/SetSubnets">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1143,6 +1390,7 @@ namespace Model
         void ModifyTargetGroupAttributesAsyncHelper(const Model::ModifyTargetGroupAttributesRequest& request, const ModifyTargetGroupAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RegisterTargetsAsyncHelper(const Model::RegisterTargetsRequest& request, const RegisterTargetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RemoveTagsAsyncHelper(const Model::RemoveTagsRequest& request, const RemoveTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void SetIpAddressTypeAsyncHelper(const Model::SetIpAddressTypeRequest& request, const SetIpAddressTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void SetRulePrioritiesAsyncHelper(const Model::SetRulePrioritiesRequest& request, const SetRulePrioritiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void SetSecurityGroupsAsyncHelper(const Model::SetSecurityGroupsRequest& request, const SetSecurityGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void SetSubnetsAsyncHelper(const Model::SetSubnetsRequest& request, const SetSubnetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

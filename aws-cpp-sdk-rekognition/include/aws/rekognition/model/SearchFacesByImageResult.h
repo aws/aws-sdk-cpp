@@ -42,32 +42,32 @@ namespace Model
     SearchFacesByImageResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
     /**
-     * <p>The bounding box around the face in the input image that Rekognition used for
-     * the search.</p>
+     * <p>The bounding box around the face in the input image that Amazon Rekognition
+     * used for the search.</p>
      */
     inline const BoundingBox& GetSearchedFaceBoundingBox() const{ return m_searchedFaceBoundingBox; }
 
     /**
-     * <p>The bounding box around the face in the input image that Rekognition used for
-     * the search.</p>
+     * <p>The bounding box around the face in the input image that Amazon Rekognition
+     * used for the search.</p>
      */
     inline void SetSearchedFaceBoundingBox(const BoundingBox& value) { m_searchedFaceBoundingBox = value; }
 
     /**
-     * <p>The bounding box around the face in the input image that Rekognition used for
-     * the search.</p>
+     * <p>The bounding box around the face in the input image that Amazon Rekognition
+     * used for the search.</p>
      */
     inline void SetSearchedFaceBoundingBox(BoundingBox&& value) { m_searchedFaceBoundingBox = value; }
 
     /**
-     * <p>The bounding box around the face in the input image that Rekognition used for
-     * the search.</p>
+     * <p>The bounding box around the face in the input image that Amazon Rekognition
+     * used for the search.</p>
      */
     inline SearchFacesByImageResult& WithSearchedFaceBoundingBox(const BoundingBox& value) { SetSearchedFaceBoundingBox(value); return *this;}
 
     /**
-     * <p>The bounding box around the face in the input image that Rekognition used for
-     * the search.</p>
+     * <p>The bounding box around the face in the input image that Amazon Rekognition
+     * used for the search.</p>
      */
     inline SearchFacesByImageResult& WithSearchedFaceBoundingBox(BoundingBox&& value) { SetSearchedFaceBoundingBox(value); return *this;}
 

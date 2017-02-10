@@ -38,7 +38,9 @@ namespace Model
 {
   /**
    * <p>A structure that represents a decision task. Decision tasks are sent to
-   * deciders in order for them to make decisions.</p>
+   * deciders in order for them to make decisions.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/DecisionTask">AWS
+   * API Reference</a></p>
    */
   class AWS_SWF_API PollForDecisionTaskResult
   {

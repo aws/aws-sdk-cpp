@@ -34,7 +34,9 @@ namespace Model
    * or be in the process of matching the number of desired instances. Pending and
    * terminating counts are non-zero only if fleet capacity is adjusting to an
    * <a>UpdateFleetCapacity</a> request, or if access to resources is temporarily
-   * affected.</p>
+   * affected.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/EC2InstanceCounts">AWS
+   * API Reference</a></p>
    */
   class AWS_GAMELIFT_API EC2InstanceCounts
   {

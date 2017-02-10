@@ -27,7 +27,10 @@ namespace Model
 {
 
   /**
-   * <p>Contains the parameters for DescribeRouteTables.</p>
+   * <p>Contains the parameters for DescribeRouteTables.</p><p><h3>See Also:</h3>  
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeRouteTablesRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_EC2_API DescribeRouteTablesRequest : public EC2Request
   {
@@ -117,12 +120,17 @@ namespace Model
      * <code>association.main</code> - Indicates whether the route table is the main
      * route table for the VPC (<code>true</code> | <code>false</code>).</p> </li> <li>
      * <p> <code>route-table-id</code> - The ID of the route table.</p> </li> <li> <p>
-     * <code>route.destination-cidr-block</code> - The CIDR range specified in a route
-     * in the table.</p> </li> <li> <p> <code>route.destination-prefix-list-id</code> -
-     * The ID (prefix) of the AWS service specified in a route in the table.</p> </li>
-     * <li> <p> <code>route.gateway-id</code> - The ID of a gateway specified in a
-     * route in the table.</p> </li> <li> <p> <code>route.instance-id</code> - The ID
-     * of an instance specified in a route in the table.</p> </li> <li> <p>
+     * <code>route.destination-cidr-block</code> - The IPv4 CIDR range specified in a
+     * route in the table.</p> </li> <li> <p>
+     * <code>route.destination-ipv6-cidr-block</code> - The IPv6 CIDR range specified
+     * in a route in the route table.</p> </li> <li> <p>
+     * <code>route.destination-prefix-list-id</code> - The ID (prefix) of the AWS
+     * service specified in a route in the table.</p> </li> <li> <p>
+     * <code>route.egress-only-internet-gateway-id</code> - The ID of an egress-only
+     * Internet gateway specified in a route in the route table.</p> </li> <li> <p>
+     * <code>route.gateway-id</code> - The ID of a gateway specified in a route in the
+     * table.</p> </li> <li> <p> <code>route.instance-id</code> - The ID of an instance
+     * specified in a route in the table.</p> </li> <li> <p>
      * <code>route.nat-gateway-id</code> - The ID of a NAT gateway.</p> </li> <li> <p>
      * <code>route.origin</code> - Describes how the route was created.
      * <code>CreateRouteTable</code> indicates that the route was automatically created
@@ -137,8 +145,11 @@ namespace Model
      * <code>route.vpc-peering-connection-id</code> - The ID of a VPC peering
      * connection specified in a route in the table.</p> </li> <li> <p>
      * <code>tag</code>:<i>key</i>=<i>value</i> - The key/value combination of a tag
-     * assigned to the resource.</p> </li> <li> <p> <code>tag-key</code> - The key of a
-     * tag assigned to the resource. This filter is independent of the
+     * assigned to the resource. Specify the key of the tag in the filter name and the
+     * value of the tag in the filter value. For example, for the tag Purpose=X,
+     * specify <code>tag:Purpose</code> for the filter name and <code>X</code> for the
+     * filter value.</p> </li> <li> <p> <code>tag-key</code> - The key of a tag
+     * assigned to the resource. This filter is independent of the
      * <code>tag-value</code> filter. For example, if you use both the filter
      * "tag-key=Purpose" and the filter "tag-value=X", you get any resources assigned
      * both the tag key Purpose (regardless of what the tag's value is), and the tag
@@ -161,12 +172,17 @@ namespace Model
      * <code>association.main</code> - Indicates whether the route table is the main
      * route table for the VPC (<code>true</code> | <code>false</code>).</p> </li> <li>
      * <p> <code>route-table-id</code> - The ID of the route table.</p> </li> <li> <p>
-     * <code>route.destination-cidr-block</code> - The CIDR range specified in a route
-     * in the table.</p> </li> <li> <p> <code>route.destination-prefix-list-id</code> -
-     * The ID (prefix) of the AWS service specified in a route in the table.</p> </li>
-     * <li> <p> <code>route.gateway-id</code> - The ID of a gateway specified in a
-     * route in the table.</p> </li> <li> <p> <code>route.instance-id</code> - The ID
-     * of an instance specified in a route in the table.</p> </li> <li> <p>
+     * <code>route.destination-cidr-block</code> - The IPv4 CIDR range specified in a
+     * route in the table.</p> </li> <li> <p>
+     * <code>route.destination-ipv6-cidr-block</code> - The IPv6 CIDR range specified
+     * in a route in the route table.</p> </li> <li> <p>
+     * <code>route.destination-prefix-list-id</code> - The ID (prefix) of the AWS
+     * service specified in a route in the table.</p> </li> <li> <p>
+     * <code>route.egress-only-internet-gateway-id</code> - The ID of an egress-only
+     * Internet gateway specified in a route in the route table.</p> </li> <li> <p>
+     * <code>route.gateway-id</code> - The ID of a gateway specified in a route in the
+     * table.</p> </li> <li> <p> <code>route.instance-id</code> - The ID of an instance
+     * specified in a route in the table.</p> </li> <li> <p>
      * <code>route.nat-gateway-id</code> - The ID of a NAT gateway.</p> </li> <li> <p>
      * <code>route.origin</code> - Describes how the route was created.
      * <code>CreateRouteTable</code> indicates that the route was automatically created
@@ -181,8 +197,11 @@ namespace Model
      * <code>route.vpc-peering-connection-id</code> - The ID of a VPC peering
      * connection specified in a route in the table.</p> </li> <li> <p>
      * <code>tag</code>:<i>key</i>=<i>value</i> - The key/value combination of a tag
-     * assigned to the resource.</p> </li> <li> <p> <code>tag-key</code> - The key of a
-     * tag assigned to the resource. This filter is independent of the
+     * assigned to the resource. Specify the key of the tag in the filter name and the
+     * value of the tag in the filter value. For example, for the tag Purpose=X,
+     * specify <code>tag:Purpose</code> for the filter name and <code>X</code> for the
+     * filter value.</p> </li> <li> <p> <code>tag-key</code> - The key of a tag
+     * assigned to the resource. This filter is independent of the
      * <code>tag-value</code> filter. For example, if you use both the filter
      * "tag-key=Purpose" and the filter "tag-value=X", you get any resources assigned
      * both the tag key Purpose (regardless of what the tag's value is), and the tag
@@ -205,12 +224,17 @@ namespace Model
      * <code>association.main</code> - Indicates whether the route table is the main
      * route table for the VPC (<code>true</code> | <code>false</code>).</p> </li> <li>
      * <p> <code>route-table-id</code> - The ID of the route table.</p> </li> <li> <p>
-     * <code>route.destination-cidr-block</code> - The CIDR range specified in a route
-     * in the table.</p> </li> <li> <p> <code>route.destination-prefix-list-id</code> -
-     * The ID (prefix) of the AWS service specified in a route in the table.</p> </li>
-     * <li> <p> <code>route.gateway-id</code> - The ID of a gateway specified in a
-     * route in the table.</p> </li> <li> <p> <code>route.instance-id</code> - The ID
-     * of an instance specified in a route in the table.</p> </li> <li> <p>
+     * <code>route.destination-cidr-block</code> - The IPv4 CIDR range specified in a
+     * route in the table.</p> </li> <li> <p>
+     * <code>route.destination-ipv6-cidr-block</code> - The IPv6 CIDR range specified
+     * in a route in the route table.</p> </li> <li> <p>
+     * <code>route.destination-prefix-list-id</code> - The ID (prefix) of the AWS
+     * service specified in a route in the table.</p> </li> <li> <p>
+     * <code>route.egress-only-internet-gateway-id</code> - The ID of an egress-only
+     * Internet gateway specified in a route in the route table.</p> </li> <li> <p>
+     * <code>route.gateway-id</code> - The ID of a gateway specified in a route in the
+     * table.</p> </li> <li> <p> <code>route.instance-id</code> - The ID of an instance
+     * specified in a route in the table.</p> </li> <li> <p>
      * <code>route.nat-gateway-id</code> - The ID of a NAT gateway.</p> </li> <li> <p>
      * <code>route.origin</code> - Describes how the route was created.
      * <code>CreateRouteTable</code> indicates that the route was automatically created
@@ -225,8 +249,11 @@ namespace Model
      * <code>route.vpc-peering-connection-id</code> - The ID of a VPC peering
      * connection specified in a route in the table.</p> </li> <li> <p>
      * <code>tag</code>:<i>key</i>=<i>value</i> - The key/value combination of a tag
-     * assigned to the resource.</p> </li> <li> <p> <code>tag-key</code> - The key of a
-     * tag assigned to the resource. This filter is independent of the
+     * assigned to the resource. Specify the key of the tag in the filter name and the
+     * value of the tag in the filter value. For example, for the tag Purpose=X,
+     * specify <code>tag:Purpose</code> for the filter name and <code>X</code> for the
+     * filter value.</p> </li> <li> <p> <code>tag-key</code> - The key of a tag
+     * assigned to the resource. This filter is independent of the
      * <code>tag-value</code> filter. For example, if you use both the filter
      * "tag-key=Purpose" and the filter "tag-value=X", you get any resources assigned
      * both the tag key Purpose (regardless of what the tag's value is), and the tag
@@ -249,12 +276,17 @@ namespace Model
      * <code>association.main</code> - Indicates whether the route table is the main
      * route table for the VPC (<code>true</code> | <code>false</code>).</p> </li> <li>
      * <p> <code>route-table-id</code> - The ID of the route table.</p> </li> <li> <p>
-     * <code>route.destination-cidr-block</code> - The CIDR range specified in a route
-     * in the table.</p> </li> <li> <p> <code>route.destination-prefix-list-id</code> -
-     * The ID (prefix) of the AWS service specified in a route in the table.</p> </li>
-     * <li> <p> <code>route.gateway-id</code> - The ID of a gateway specified in a
-     * route in the table.</p> </li> <li> <p> <code>route.instance-id</code> - The ID
-     * of an instance specified in a route in the table.</p> </li> <li> <p>
+     * <code>route.destination-cidr-block</code> - The IPv4 CIDR range specified in a
+     * route in the table.</p> </li> <li> <p>
+     * <code>route.destination-ipv6-cidr-block</code> - The IPv6 CIDR range specified
+     * in a route in the route table.</p> </li> <li> <p>
+     * <code>route.destination-prefix-list-id</code> - The ID (prefix) of the AWS
+     * service specified in a route in the table.</p> </li> <li> <p>
+     * <code>route.egress-only-internet-gateway-id</code> - The ID of an egress-only
+     * Internet gateway specified in a route in the route table.</p> </li> <li> <p>
+     * <code>route.gateway-id</code> - The ID of a gateway specified in a route in the
+     * table.</p> </li> <li> <p> <code>route.instance-id</code> - The ID of an instance
+     * specified in a route in the table.</p> </li> <li> <p>
      * <code>route.nat-gateway-id</code> - The ID of a NAT gateway.</p> </li> <li> <p>
      * <code>route.origin</code> - Describes how the route was created.
      * <code>CreateRouteTable</code> indicates that the route was automatically created
@@ -269,8 +301,11 @@ namespace Model
      * <code>route.vpc-peering-connection-id</code> - The ID of a VPC peering
      * connection specified in a route in the table.</p> </li> <li> <p>
      * <code>tag</code>:<i>key</i>=<i>value</i> - The key/value combination of a tag
-     * assigned to the resource.</p> </li> <li> <p> <code>tag-key</code> - The key of a
-     * tag assigned to the resource. This filter is independent of the
+     * assigned to the resource. Specify the key of the tag in the filter name and the
+     * value of the tag in the filter value. For example, for the tag Purpose=X,
+     * specify <code>tag:Purpose</code> for the filter name and <code>X</code> for the
+     * filter value.</p> </li> <li> <p> <code>tag-key</code> - The key of a tag
+     * assigned to the resource. This filter is independent of the
      * <code>tag-value</code> filter. For example, if you use both the filter
      * "tag-key=Purpose" and the filter "tag-value=X", you get any resources assigned
      * both the tag key Purpose (regardless of what the tag's value is), and the tag
@@ -293,12 +328,17 @@ namespace Model
      * <code>association.main</code> - Indicates whether the route table is the main
      * route table for the VPC (<code>true</code> | <code>false</code>).</p> </li> <li>
      * <p> <code>route-table-id</code> - The ID of the route table.</p> </li> <li> <p>
-     * <code>route.destination-cidr-block</code> - The CIDR range specified in a route
-     * in the table.</p> </li> <li> <p> <code>route.destination-prefix-list-id</code> -
-     * The ID (prefix) of the AWS service specified in a route in the table.</p> </li>
-     * <li> <p> <code>route.gateway-id</code> - The ID of a gateway specified in a
-     * route in the table.</p> </li> <li> <p> <code>route.instance-id</code> - The ID
-     * of an instance specified in a route in the table.</p> </li> <li> <p>
+     * <code>route.destination-cidr-block</code> - The IPv4 CIDR range specified in a
+     * route in the table.</p> </li> <li> <p>
+     * <code>route.destination-ipv6-cidr-block</code> - The IPv6 CIDR range specified
+     * in a route in the route table.</p> </li> <li> <p>
+     * <code>route.destination-prefix-list-id</code> - The ID (prefix) of the AWS
+     * service specified in a route in the table.</p> </li> <li> <p>
+     * <code>route.egress-only-internet-gateway-id</code> - The ID of an egress-only
+     * Internet gateway specified in a route in the route table.</p> </li> <li> <p>
+     * <code>route.gateway-id</code> - The ID of a gateway specified in a route in the
+     * table.</p> </li> <li> <p> <code>route.instance-id</code> - The ID of an instance
+     * specified in a route in the table.</p> </li> <li> <p>
      * <code>route.nat-gateway-id</code> - The ID of a NAT gateway.</p> </li> <li> <p>
      * <code>route.origin</code> - Describes how the route was created.
      * <code>CreateRouteTable</code> indicates that the route was automatically created
@@ -313,8 +353,11 @@ namespace Model
      * <code>route.vpc-peering-connection-id</code> - The ID of a VPC peering
      * connection specified in a route in the table.</p> </li> <li> <p>
      * <code>tag</code>:<i>key</i>=<i>value</i> - The key/value combination of a tag
-     * assigned to the resource.</p> </li> <li> <p> <code>tag-key</code> - The key of a
-     * tag assigned to the resource. This filter is independent of the
+     * assigned to the resource. Specify the key of the tag in the filter name and the
+     * value of the tag in the filter value. For example, for the tag Purpose=X,
+     * specify <code>tag:Purpose</code> for the filter name and <code>X</code> for the
+     * filter value.</p> </li> <li> <p> <code>tag-key</code> - The key of a tag
+     * assigned to the resource. This filter is independent of the
      * <code>tag-value</code> filter. For example, if you use both the filter
      * "tag-key=Purpose" and the filter "tag-value=X", you get any resources assigned
      * both the tag key Purpose (regardless of what the tag's value is), and the tag
@@ -337,12 +380,17 @@ namespace Model
      * <code>association.main</code> - Indicates whether the route table is the main
      * route table for the VPC (<code>true</code> | <code>false</code>).</p> </li> <li>
      * <p> <code>route-table-id</code> - The ID of the route table.</p> </li> <li> <p>
-     * <code>route.destination-cidr-block</code> - The CIDR range specified in a route
-     * in the table.</p> </li> <li> <p> <code>route.destination-prefix-list-id</code> -
-     * The ID (prefix) of the AWS service specified in a route in the table.</p> </li>
-     * <li> <p> <code>route.gateway-id</code> - The ID of a gateway specified in a
-     * route in the table.</p> </li> <li> <p> <code>route.instance-id</code> - The ID
-     * of an instance specified in a route in the table.</p> </li> <li> <p>
+     * <code>route.destination-cidr-block</code> - The IPv4 CIDR range specified in a
+     * route in the table.</p> </li> <li> <p>
+     * <code>route.destination-ipv6-cidr-block</code> - The IPv6 CIDR range specified
+     * in a route in the route table.</p> </li> <li> <p>
+     * <code>route.destination-prefix-list-id</code> - The ID (prefix) of the AWS
+     * service specified in a route in the table.</p> </li> <li> <p>
+     * <code>route.egress-only-internet-gateway-id</code> - The ID of an egress-only
+     * Internet gateway specified in a route in the route table.</p> </li> <li> <p>
+     * <code>route.gateway-id</code> - The ID of a gateway specified in a route in the
+     * table.</p> </li> <li> <p> <code>route.instance-id</code> - The ID of an instance
+     * specified in a route in the table.</p> </li> <li> <p>
      * <code>route.nat-gateway-id</code> - The ID of a NAT gateway.</p> </li> <li> <p>
      * <code>route.origin</code> - Describes how the route was created.
      * <code>CreateRouteTable</code> indicates that the route was automatically created
@@ -357,8 +405,11 @@ namespace Model
      * <code>route.vpc-peering-connection-id</code> - The ID of a VPC peering
      * connection specified in a route in the table.</p> </li> <li> <p>
      * <code>tag</code>:<i>key</i>=<i>value</i> - The key/value combination of a tag
-     * assigned to the resource.</p> </li> <li> <p> <code>tag-key</code> - The key of a
-     * tag assigned to the resource. This filter is independent of the
+     * assigned to the resource. Specify the key of the tag in the filter name and the
+     * value of the tag in the filter value. For example, for the tag Purpose=X,
+     * specify <code>tag:Purpose</code> for the filter name and <code>X</code> for the
+     * filter value.</p> </li> <li> <p> <code>tag-key</code> - The key of a tag
+     * assigned to the resource. This filter is independent of the
      * <code>tag-value</code> filter. For example, if you use both the filter
      * "tag-key=Purpose" and the filter "tag-value=X", you get any resources assigned
      * both the tag key Purpose (regardless of what the tag's value is), and the tag
@@ -381,12 +432,17 @@ namespace Model
      * <code>association.main</code> - Indicates whether the route table is the main
      * route table for the VPC (<code>true</code> | <code>false</code>).</p> </li> <li>
      * <p> <code>route-table-id</code> - The ID of the route table.</p> </li> <li> <p>
-     * <code>route.destination-cidr-block</code> - The CIDR range specified in a route
-     * in the table.</p> </li> <li> <p> <code>route.destination-prefix-list-id</code> -
-     * The ID (prefix) of the AWS service specified in a route in the table.</p> </li>
-     * <li> <p> <code>route.gateway-id</code> - The ID of a gateway specified in a
-     * route in the table.</p> </li> <li> <p> <code>route.instance-id</code> - The ID
-     * of an instance specified in a route in the table.</p> </li> <li> <p>
+     * <code>route.destination-cidr-block</code> - The IPv4 CIDR range specified in a
+     * route in the table.</p> </li> <li> <p>
+     * <code>route.destination-ipv6-cidr-block</code> - The IPv6 CIDR range specified
+     * in a route in the route table.</p> </li> <li> <p>
+     * <code>route.destination-prefix-list-id</code> - The ID (prefix) of the AWS
+     * service specified in a route in the table.</p> </li> <li> <p>
+     * <code>route.egress-only-internet-gateway-id</code> - The ID of an egress-only
+     * Internet gateway specified in a route in the route table.</p> </li> <li> <p>
+     * <code>route.gateway-id</code> - The ID of a gateway specified in a route in the
+     * table.</p> </li> <li> <p> <code>route.instance-id</code> - The ID of an instance
+     * specified in a route in the table.</p> </li> <li> <p>
      * <code>route.nat-gateway-id</code> - The ID of a NAT gateway.</p> </li> <li> <p>
      * <code>route.origin</code> - Describes how the route was created.
      * <code>CreateRouteTable</code> indicates that the route was automatically created
@@ -401,8 +457,11 @@ namespace Model
      * <code>route.vpc-peering-connection-id</code> - The ID of a VPC peering
      * connection specified in a route in the table.</p> </li> <li> <p>
      * <code>tag</code>:<i>key</i>=<i>value</i> - The key/value combination of a tag
-     * assigned to the resource.</p> </li> <li> <p> <code>tag-key</code> - The key of a
-     * tag assigned to the resource. This filter is independent of the
+     * assigned to the resource. Specify the key of the tag in the filter name and the
+     * value of the tag in the filter value. For example, for the tag Purpose=X,
+     * specify <code>tag:Purpose</code> for the filter name and <code>X</code> for the
+     * filter value.</p> </li> <li> <p> <code>tag-key</code> - The key of a tag
+     * assigned to the resource. This filter is independent of the
      * <code>tag-value</code> filter. For example, if you use both the filter
      * "tag-key=Purpose" and the filter "tag-value=X", you get any resources assigned
      * both the tag key Purpose (regardless of what the tag's value is), and the tag

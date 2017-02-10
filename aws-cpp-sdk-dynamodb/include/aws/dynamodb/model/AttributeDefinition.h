@@ -33,7 +33,9 @@ namespace Model
 
   /**
    * <p>Represents an attribute for describing the key schema for the table and
-   * indexes.</p>
+   * indexes.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/AttributeDefinition">AWS
+   * API Reference</a></p>
    */
   class AWS_DYNAMODB_API AttributeDefinition
   {
@@ -79,42 +81,42 @@ namespace Model
     inline AttributeDefinition& WithAttributeName(const char* value) { SetAttributeName(value); return *this;}
 
     /**
-     * <p>The data type for the attribute, where:</p> <ul> <li><p> <code>S</code> - the
-     * attribute is of type String</p> </li> <li><p> <code>N</code> - the attribute is
-     * of type Number</p> </li> <li><p> <code>B</code> - the attribute is of type
-     * Binary</p> </li> </ul>
+     * <p>The data type for the attribute, where:</p> <ul> <li> <p> <code>S</code> -
+     * the attribute is of type String</p> </li> <li> <p> <code>N</code> - the
+     * attribute is of type Number</p> </li> <li> <p> <code>B</code> - the attribute is
+     * of type Binary</p> </li> </ul>
      */
     inline const ScalarAttributeType& GetAttributeType() const{ return m_attributeType; }
 
     /**
-     * <p>The data type for the attribute, where:</p> <ul> <li><p> <code>S</code> - the
-     * attribute is of type String</p> </li> <li><p> <code>N</code> - the attribute is
-     * of type Number</p> </li> <li><p> <code>B</code> - the attribute is of type
-     * Binary</p> </li> </ul>
+     * <p>The data type for the attribute, where:</p> <ul> <li> <p> <code>S</code> -
+     * the attribute is of type String</p> </li> <li> <p> <code>N</code> - the
+     * attribute is of type Number</p> </li> <li> <p> <code>B</code> - the attribute is
+     * of type Binary</p> </li> </ul>
      */
     inline void SetAttributeType(const ScalarAttributeType& value) { m_attributeTypeHasBeenSet = true; m_attributeType = value; }
 
     /**
-     * <p>The data type for the attribute, where:</p> <ul> <li><p> <code>S</code> - the
-     * attribute is of type String</p> </li> <li><p> <code>N</code> - the attribute is
-     * of type Number</p> </li> <li><p> <code>B</code> - the attribute is of type
-     * Binary</p> </li> </ul>
+     * <p>The data type for the attribute, where:</p> <ul> <li> <p> <code>S</code> -
+     * the attribute is of type String</p> </li> <li> <p> <code>N</code> - the
+     * attribute is of type Number</p> </li> <li> <p> <code>B</code> - the attribute is
+     * of type Binary</p> </li> </ul>
      */
     inline void SetAttributeType(ScalarAttributeType&& value) { m_attributeTypeHasBeenSet = true; m_attributeType = value; }
 
     /**
-     * <p>The data type for the attribute, where:</p> <ul> <li><p> <code>S</code> - the
-     * attribute is of type String</p> </li> <li><p> <code>N</code> - the attribute is
-     * of type Number</p> </li> <li><p> <code>B</code> - the attribute is of type
-     * Binary</p> </li> </ul>
+     * <p>The data type for the attribute, where:</p> <ul> <li> <p> <code>S</code> -
+     * the attribute is of type String</p> </li> <li> <p> <code>N</code> - the
+     * attribute is of type Number</p> </li> <li> <p> <code>B</code> - the attribute is
+     * of type Binary</p> </li> </ul>
      */
     inline AttributeDefinition& WithAttributeType(const ScalarAttributeType& value) { SetAttributeType(value); return *this;}
 
     /**
-     * <p>The data type for the attribute, where:</p> <ul> <li><p> <code>S</code> - the
-     * attribute is of type String</p> </li> <li><p> <code>N</code> - the attribute is
-     * of type Number</p> </li> <li><p> <code>B</code> - the attribute is of type
-     * Binary</p> </li> </ul>
+     * <p>The data type for the attribute, where:</p> <ul> <li> <p> <code>S</code> -
+     * the attribute is of type String</p> </li> <li> <p> <code>N</code> - the
+     * attribute is of type Number</p> </li> <li> <p> <code>B</code> - the attribute is
+     * of type Binary</p> </li> </ul>
      */
     inline AttributeDefinition& WithAttributeType(ScalarAttributeType&& value) { SetAttributeType(value); return *this;}
 

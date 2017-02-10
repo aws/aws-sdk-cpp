@@ -31,7 +31,9 @@ namespace Model
 {
 
   /**
-   * <p>The object for the Lambda function location.</p>
+   * <p>The object for the Lambda function location.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/FunctionCodeLocation">AWS
+   * API Reference</a></p>
    */
   class AWS_LAMBDA_API FunctionCodeLocation
   {

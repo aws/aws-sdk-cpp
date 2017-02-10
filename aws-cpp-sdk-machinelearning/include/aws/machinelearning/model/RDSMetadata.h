@@ -32,7 +32,10 @@ namespace Model
 {
 
   /**
-   * <p>The datasource details that are specific to Amazon RDS.</p>
+   * <p>The datasource details that are specific to Amazon RDS.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/RDSMetadata">AWS
+   * API Reference</a></p>
    */
   class AWS_MACHINELEARNING_API RDSMetadata
   {

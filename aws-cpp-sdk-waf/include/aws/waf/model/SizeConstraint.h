@@ -38,7 +38,10 @@ namespace Model
    * <code>FieldToMatch</code> to build an expression in the form of
    * "<code>Size</code> <code>ComparisonOperator</code> size in bytes of
    * <code>FieldToMatch</code>". If that expression is true, the
-   * <code>SizeConstraint</code> is considered to match.</p>
+   * <code>SizeConstraint</code> is considered to match.</p><p><h3>See Also:</h3>  
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/SizeConstraint">AWS
+   * API Reference</a></p>
    */
   class AWS_WAF_API SizeConstraint
   {
@@ -48,19 +51,29 @@ namespace Model
     SizeConstraint& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
-    
+    /**
+     * <p>Specifies where in a web request to look for the size constraint.</p>
+     */
     inline const FieldToMatch& GetFieldToMatch() const{ return m_fieldToMatch; }
 
-    
+    /**
+     * <p>Specifies where in a web request to look for the size constraint.</p>
+     */
     inline void SetFieldToMatch(const FieldToMatch& value) { m_fieldToMatchHasBeenSet = true; m_fieldToMatch = value; }
 
-    
+    /**
+     * <p>Specifies where in a web request to look for the size constraint.</p>
+     */
     inline void SetFieldToMatch(FieldToMatch&& value) { m_fieldToMatchHasBeenSet = true; m_fieldToMatch = value; }
 
-    
+    /**
+     * <p>Specifies where in a web request to look for the size constraint.</p>
+     */
     inline SizeConstraint& WithFieldToMatch(const FieldToMatch& value) { SetFieldToMatch(value); return *this;}
 
-    
+    /**
+     * <p>Specifies where in a web request to look for the size constraint.</p>
+     */
     inline SizeConstraint& WithFieldToMatch(FieldToMatch&& value) { SetFieldToMatch(value); return *this;}
 
     /**

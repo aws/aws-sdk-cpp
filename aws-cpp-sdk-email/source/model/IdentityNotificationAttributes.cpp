@@ -132,22 +132,22 @@ void IdentityNotificationAttributes::OutputToStream(Aws::OStream& oStream, const
 
   if(m_forwardingEnabledHasBeenSet)
   {
-      oStream << location << index << locationValue << ".ForwardingEnabled=" << m_forwardingEnabled << "&";
+      oStream << location << index << locationValue << ".ForwardingEnabled=" << std::boolalpha << m_forwardingEnabled << "&";
   }
 
   if(m_headersInBounceNotificationsEnabledHasBeenSet)
   {
-      oStream << location << index << locationValue << ".HeadersInBounceNotificationsEnabled=" << m_headersInBounceNotificationsEnabled << "&";
+      oStream << location << index << locationValue << ".HeadersInBounceNotificationsEnabled=" << std::boolalpha << m_headersInBounceNotificationsEnabled << "&";
   }
 
   if(m_headersInComplaintNotificationsEnabledHasBeenSet)
   {
-      oStream << location << index << locationValue << ".HeadersInComplaintNotificationsEnabled=" << m_headersInComplaintNotificationsEnabled << "&";
+      oStream << location << index << locationValue << ".HeadersInComplaintNotificationsEnabled=" << std::boolalpha << m_headersInComplaintNotificationsEnabled << "&";
   }
 
   if(m_headersInDeliveryNotificationsEnabledHasBeenSet)
   {
-      oStream << location << index << locationValue << ".HeadersInDeliveryNotificationsEnabled=" << m_headersInDeliveryNotificationsEnabled << "&";
+      oStream << location << index << locationValue << ".HeadersInDeliveryNotificationsEnabled=" << std::boolalpha << m_headersInDeliveryNotificationsEnabled << "&";
   }
 
 }
@@ -168,19 +168,19 @@ void IdentityNotificationAttributes::OutputToStream(Aws::OStream& oStream, const
   }
   if(m_forwardingEnabledHasBeenSet)
   {
-      oStream << location << ".ForwardingEnabled=" << m_forwardingEnabled << "&";
+      oStream << location << ".ForwardingEnabled=" << std::boolalpha << m_forwardingEnabled << "&";
   }
   if(m_headersInBounceNotificationsEnabledHasBeenSet)
   {
-      oStream << location << ".HeadersInBounceNotificationsEnabled=" << m_headersInBounceNotificationsEnabled << "&";
+      oStream << location << ".HeadersInBounceNotificationsEnabled=" << std::boolalpha << m_headersInBounceNotificationsEnabled << "&";
   }
   if(m_headersInComplaintNotificationsEnabledHasBeenSet)
   {
-      oStream << location << ".HeadersInComplaintNotificationsEnabled=" << m_headersInComplaintNotificationsEnabled << "&";
+      oStream << location << ".HeadersInComplaintNotificationsEnabled=" << std::boolalpha << m_headersInComplaintNotificationsEnabled << "&";
   }
   if(m_headersInDeliveryNotificationsEnabledHasBeenSet)
   {
-      oStream << location << ".HeadersInDeliveryNotificationsEnabled=" << m_headersInDeliveryNotificationsEnabled << "&";
+      oStream << location << ".HeadersInDeliveryNotificationsEnabled=" << std::boolalpha << m_headersInDeliveryNotificationsEnabled << "&";
   }
 }
 

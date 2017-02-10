@@ -31,9 +31,11 @@ namespace Model
 {
 
   /**
-   * <p>Provide the bounding box, confidence that the bounding box actually contains
-   * a face, and the similarity between the face in the bounding box and the face in
-   * the source image.</p>
+   * <p>For the provided the bounding box, confidence level that the bounding box
+   * actually contains a face, and the similarity between the face in the bounding
+   * box and the face in the source image.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/CompareFacesMatch">AWS
+   * API Reference</a></p>
    */
   class AWS_REKOGNITION_API CompareFacesMatch
   {

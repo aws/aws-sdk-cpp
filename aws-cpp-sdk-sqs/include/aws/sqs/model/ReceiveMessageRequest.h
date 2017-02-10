@@ -27,7 +27,9 @@ namespace Model
 {
 
   /**
-   * <p/>
+   * <p/><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/ReceiveMessageRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_SQS_API ReceiveMessageRequest : public SQSRequest
   {
@@ -36,44 +38,44 @@ namespace Model
     Aws::String SerializePayload() const override;
 
     /**
-     * <p>The URL of the Amazon SQS queue to take action on.</p> <p>Queue URLs are
-     * case-sensitive.</p>
+     * <p>The URL of the Amazon SQS queue from which messages are received.</p>
+     * <p>Queue URLs are case-sensitive.</p>
      */
     inline const Aws::String& GetQueueUrl() const{ return m_queueUrl; }
 
     /**
-     * <p>The URL of the Amazon SQS queue to take action on.</p> <p>Queue URLs are
-     * case-sensitive.</p>
+     * <p>The URL of the Amazon SQS queue from which messages are received.</p>
+     * <p>Queue URLs are case-sensitive.</p>
      */
     inline void SetQueueUrl(const Aws::String& value) { m_queueUrlHasBeenSet = true; m_queueUrl = value; }
 
     /**
-     * <p>The URL of the Amazon SQS queue to take action on.</p> <p>Queue URLs are
-     * case-sensitive.</p>
+     * <p>The URL of the Amazon SQS queue from which messages are received.</p>
+     * <p>Queue URLs are case-sensitive.</p>
      */
     inline void SetQueueUrl(Aws::String&& value) { m_queueUrlHasBeenSet = true; m_queueUrl = value; }
 
     /**
-     * <p>The URL of the Amazon SQS queue to take action on.</p> <p>Queue URLs are
-     * case-sensitive.</p>
+     * <p>The URL of the Amazon SQS queue from which messages are received.</p>
+     * <p>Queue URLs are case-sensitive.</p>
      */
     inline void SetQueueUrl(const char* value) { m_queueUrlHasBeenSet = true; m_queueUrl.assign(value); }
 
     /**
-     * <p>The URL of the Amazon SQS queue to take action on.</p> <p>Queue URLs are
-     * case-sensitive.</p>
+     * <p>The URL of the Amazon SQS queue from which messages are received.</p>
+     * <p>Queue URLs are case-sensitive.</p>
      */
     inline ReceiveMessageRequest& WithQueueUrl(const Aws::String& value) { SetQueueUrl(value); return *this;}
 
     /**
-     * <p>The URL of the Amazon SQS queue to take action on.</p> <p>Queue URLs are
-     * case-sensitive.</p>
+     * <p>The URL of the Amazon SQS queue from which messages are received.</p>
+     * <p>Queue URLs are case-sensitive.</p>
      */
     inline ReceiveMessageRequest& WithQueueUrl(Aws::String&& value) { SetQueueUrl(value); return *this;}
 
     /**
-     * <p>The URL of the Amazon SQS queue to take action on.</p> <p>Queue URLs are
-     * case-sensitive.</p>
+     * <p>The URL of the Amazon SQS queue from which messages are received.</p>
+     * <p>Queue URLs are case-sensitive.</p>
      */
     inline ReceiveMessageRequest& WithQueueUrl(const char* value) { SetQueueUrl(value); return *this;}
 
@@ -81,35 +83,38 @@ namespace Model
      * <p>A list of attributes that need to be returned along with each message. These
      * attributes include:</p> <ul> <li> <p> <code>All</code> - Returns all values.</p>
      * </li> <li> <p> <code>ApproximateFirstReceiveTimestamp</code> - Returns the time
-     * the message was first received from the queue (epoch time in milliseconds).</p>
-     * </li> <li> <p> <code>ApproximateReceiveCount</code> - Returns the number of
-     * times a message has been received from the queue but not deleted.</p> </li> <li>
-     * <p> <code>SenderId</code> </p> <ul> <li> <p>For an IAM user, returns the IAM
-     * user ID, for example <code>ABCDEFGHI1JKLMNOPQ23R</code>.</p> </li> <li> <p>For
-     * an IAM role, returns the IAM role ID, for example
-     * <code>ABCDE1F2GH3I4JK5LMNOP:i-a123b456</code>.</p> </li> </ul> </li> <li> <p>
-     * <code>SentTimestamp</code> - Returns the time the message was sent to the queue
-     * (epoch time in milliseconds).</p> </li> <li> <p>
-     * <code>MessageDeduplicationId</code> - Returns the value provided by the sender
-     * that calls the <code> <a>SendMessage</a> </code> action.</p> </li> <li> <p>
-     * <code>MessageGroupId</code> - Returns the value provided by the sender that
-     * calls the <code> <a>SendMessage</a> </code> action. Messages with the same
-     * <code>MessageGroupId</code> are returned in sequence.</p> </li> <li> <p>
-     * <code>SequenceNumber</code> - Returns the value provided by Amazon SQS.</p>
-     * </li> </ul> <p>Any other valid special request parameters (such as the
-     * following) that are specified are ignored:</p> <ul> <li> <p>
+     * the message was first received from the queue (<a
+     * href="http://en.wikipedia.org/wiki/Unix_time">epoch time</a> in
+     * milliseconds).</p> </li> <li> <p> <code>ApproximateReceiveCount</code> - Returns
+     * the number of times a message has been received from the queue but not
+     * deleted.</p> </li> <li> <p> <code>SenderId</code> </p> <ul> <li> <p>For an IAM
+     * user, returns the IAM user ID, for example
+     * <code>ABCDEFGHI1JKLMNOPQ23R</code>.</p> </li> <li> <p>For an IAM role, returns
+     * the IAM role ID, for example <code>ABCDE1F2GH3I4JK5LMNOP:i-a123b456</code>.</p>
+     * </li> </ul> </li> <li> <p> <code>SentTimestamp</code> - Returns the time the
+     * message was sent to the queue (<a
+     * href="http://en.wikipedia.org/wiki/Unix_time">epoch time</a> in
+     * milliseconds).</p> </li> <li> <p> <code>MessageDeduplicationId</code> - Returns
+     * the value provided by the sender that calls the <code> <a>SendMessage</a>
+     * </code> action.</p> </li> <li> <p> <code>MessageGroupId</code> - Returns the
+     * value provided by the sender that calls the <code> <a>SendMessage</a> </code>
+     * action. Messages with the same <code>MessageGroupId</code> are returned in
+     * sequence.</p> </li> <li> <p> <code>SequenceNumber</code> - Returns the value
+     * provided by Amazon SQS.</p> </li> </ul> <p>Any other valid special request
+     * parameters (such as the following) are ignored:</p> <ul> <li> <p>
      * <code>ApproximateNumberOfMessages</code> </p> </li> <li> <p>
      * <code>ApproximateNumberOfMessagesDelayed</code> </p> </li> <li> <p>
      * <code>ApproximateNumberOfMessagesNotVisible</code> </p> </li> <li> <p>
      * <code>CreatedTimestamp</code> </p> </li> <li> <p>
      * <code>ContentBasedDeduplication</code> </p> </li> <li> <p>
-     * <code>DelaySeconds</code> </p> </li> <li> <p> <code>LastModifiedTimestamp</code>
-     * </p> </li> <li> <p> <code>MaximumMessageSize</code> </p> </li> <li> <p>
+     * <code>DelaySeconds</code> </p> </li> <li> <p> <code>FifoQueue</code> </p> </li>
+     * <li> <p> <code>LastModifiedTimestamp</code> </p> </li> <li> <p>
+     * <code>MaximumMessageSize</code> </p> </li> <li> <p>
      * <code>MessageRetentionPeriod</code> </p> </li> <li> <p> <code>Policy</code> </p>
      * </li> <li> <p> <code>QueueArn</code>, </p> </li> <li> <p>
      * <code>ReceiveMessageWaitTimeSeconds</code> </p> </li> <li> <p>
-     * <code>RedrivePolicy</code> </p> </li> <li> <p> <code>FifoQueue</code> </p> </li>
-     * <li> <p> <code>VisibilityTimeout</code> </p> </li> </ul>
+     * <code>RedrivePolicy</code> </p> </li> <li> <p> <code>VisibilityTimeout</code>
+     * </p> </li> </ul>
      */
     inline const Aws::Vector<QueueAttributeName>& GetAttributeNames() const{ return m_attributeNames; }
 
@@ -117,35 +122,38 @@ namespace Model
      * <p>A list of attributes that need to be returned along with each message. These
      * attributes include:</p> <ul> <li> <p> <code>All</code> - Returns all values.</p>
      * </li> <li> <p> <code>ApproximateFirstReceiveTimestamp</code> - Returns the time
-     * the message was first received from the queue (epoch time in milliseconds).</p>
-     * </li> <li> <p> <code>ApproximateReceiveCount</code> - Returns the number of
-     * times a message has been received from the queue but not deleted.</p> </li> <li>
-     * <p> <code>SenderId</code> </p> <ul> <li> <p>For an IAM user, returns the IAM
-     * user ID, for example <code>ABCDEFGHI1JKLMNOPQ23R</code>.</p> </li> <li> <p>For
-     * an IAM role, returns the IAM role ID, for example
-     * <code>ABCDE1F2GH3I4JK5LMNOP:i-a123b456</code>.</p> </li> </ul> </li> <li> <p>
-     * <code>SentTimestamp</code> - Returns the time the message was sent to the queue
-     * (epoch time in milliseconds).</p> </li> <li> <p>
-     * <code>MessageDeduplicationId</code> - Returns the value provided by the sender
-     * that calls the <code> <a>SendMessage</a> </code> action.</p> </li> <li> <p>
-     * <code>MessageGroupId</code> - Returns the value provided by the sender that
-     * calls the <code> <a>SendMessage</a> </code> action. Messages with the same
-     * <code>MessageGroupId</code> are returned in sequence.</p> </li> <li> <p>
-     * <code>SequenceNumber</code> - Returns the value provided by Amazon SQS.</p>
-     * </li> </ul> <p>Any other valid special request parameters (such as the
-     * following) that are specified are ignored:</p> <ul> <li> <p>
+     * the message was first received from the queue (<a
+     * href="http://en.wikipedia.org/wiki/Unix_time">epoch time</a> in
+     * milliseconds).</p> </li> <li> <p> <code>ApproximateReceiveCount</code> - Returns
+     * the number of times a message has been received from the queue but not
+     * deleted.</p> </li> <li> <p> <code>SenderId</code> </p> <ul> <li> <p>For an IAM
+     * user, returns the IAM user ID, for example
+     * <code>ABCDEFGHI1JKLMNOPQ23R</code>.</p> </li> <li> <p>For an IAM role, returns
+     * the IAM role ID, for example <code>ABCDE1F2GH3I4JK5LMNOP:i-a123b456</code>.</p>
+     * </li> </ul> </li> <li> <p> <code>SentTimestamp</code> - Returns the time the
+     * message was sent to the queue (<a
+     * href="http://en.wikipedia.org/wiki/Unix_time">epoch time</a> in
+     * milliseconds).</p> </li> <li> <p> <code>MessageDeduplicationId</code> - Returns
+     * the value provided by the sender that calls the <code> <a>SendMessage</a>
+     * </code> action.</p> </li> <li> <p> <code>MessageGroupId</code> - Returns the
+     * value provided by the sender that calls the <code> <a>SendMessage</a> </code>
+     * action. Messages with the same <code>MessageGroupId</code> are returned in
+     * sequence.</p> </li> <li> <p> <code>SequenceNumber</code> - Returns the value
+     * provided by Amazon SQS.</p> </li> </ul> <p>Any other valid special request
+     * parameters (such as the following) are ignored:</p> <ul> <li> <p>
      * <code>ApproximateNumberOfMessages</code> </p> </li> <li> <p>
      * <code>ApproximateNumberOfMessagesDelayed</code> </p> </li> <li> <p>
      * <code>ApproximateNumberOfMessagesNotVisible</code> </p> </li> <li> <p>
      * <code>CreatedTimestamp</code> </p> </li> <li> <p>
      * <code>ContentBasedDeduplication</code> </p> </li> <li> <p>
-     * <code>DelaySeconds</code> </p> </li> <li> <p> <code>LastModifiedTimestamp</code>
-     * </p> </li> <li> <p> <code>MaximumMessageSize</code> </p> </li> <li> <p>
+     * <code>DelaySeconds</code> </p> </li> <li> <p> <code>FifoQueue</code> </p> </li>
+     * <li> <p> <code>LastModifiedTimestamp</code> </p> </li> <li> <p>
+     * <code>MaximumMessageSize</code> </p> </li> <li> <p>
      * <code>MessageRetentionPeriod</code> </p> </li> <li> <p> <code>Policy</code> </p>
      * </li> <li> <p> <code>QueueArn</code>, </p> </li> <li> <p>
      * <code>ReceiveMessageWaitTimeSeconds</code> </p> </li> <li> <p>
-     * <code>RedrivePolicy</code> </p> </li> <li> <p> <code>FifoQueue</code> </p> </li>
-     * <li> <p> <code>VisibilityTimeout</code> </p> </li> </ul>
+     * <code>RedrivePolicy</code> </p> </li> <li> <p> <code>VisibilityTimeout</code>
+     * </p> </li> </ul>
      */
     inline void SetAttributeNames(const Aws::Vector<QueueAttributeName>& value) { m_attributeNamesHasBeenSet = true; m_attributeNames = value; }
 
@@ -153,35 +161,38 @@ namespace Model
      * <p>A list of attributes that need to be returned along with each message. These
      * attributes include:</p> <ul> <li> <p> <code>All</code> - Returns all values.</p>
      * </li> <li> <p> <code>ApproximateFirstReceiveTimestamp</code> - Returns the time
-     * the message was first received from the queue (epoch time in milliseconds).</p>
-     * </li> <li> <p> <code>ApproximateReceiveCount</code> - Returns the number of
-     * times a message has been received from the queue but not deleted.</p> </li> <li>
-     * <p> <code>SenderId</code> </p> <ul> <li> <p>For an IAM user, returns the IAM
-     * user ID, for example <code>ABCDEFGHI1JKLMNOPQ23R</code>.</p> </li> <li> <p>For
-     * an IAM role, returns the IAM role ID, for example
-     * <code>ABCDE1F2GH3I4JK5LMNOP:i-a123b456</code>.</p> </li> </ul> </li> <li> <p>
-     * <code>SentTimestamp</code> - Returns the time the message was sent to the queue
-     * (epoch time in milliseconds).</p> </li> <li> <p>
-     * <code>MessageDeduplicationId</code> - Returns the value provided by the sender
-     * that calls the <code> <a>SendMessage</a> </code> action.</p> </li> <li> <p>
-     * <code>MessageGroupId</code> - Returns the value provided by the sender that
-     * calls the <code> <a>SendMessage</a> </code> action. Messages with the same
-     * <code>MessageGroupId</code> are returned in sequence.</p> </li> <li> <p>
-     * <code>SequenceNumber</code> - Returns the value provided by Amazon SQS.</p>
-     * </li> </ul> <p>Any other valid special request parameters (such as the
-     * following) that are specified are ignored:</p> <ul> <li> <p>
+     * the message was first received from the queue (<a
+     * href="http://en.wikipedia.org/wiki/Unix_time">epoch time</a> in
+     * milliseconds).</p> </li> <li> <p> <code>ApproximateReceiveCount</code> - Returns
+     * the number of times a message has been received from the queue but not
+     * deleted.</p> </li> <li> <p> <code>SenderId</code> </p> <ul> <li> <p>For an IAM
+     * user, returns the IAM user ID, for example
+     * <code>ABCDEFGHI1JKLMNOPQ23R</code>.</p> </li> <li> <p>For an IAM role, returns
+     * the IAM role ID, for example <code>ABCDE1F2GH3I4JK5LMNOP:i-a123b456</code>.</p>
+     * </li> </ul> </li> <li> <p> <code>SentTimestamp</code> - Returns the time the
+     * message was sent to the queue (<a
+     * href="http://en.wikipedia.org/wiki/Unix_time">epoch time</a> in
+     * milliseconds).</p> </li> <li> <p> <code>MessageDeduplicationId</code> - Returns
+     * the value provided by the sender that calls the <code> <a>SendMessage</a>
+     * </code> action.</p> </li> <li> <p> <code>MessageGroupId</code> - Returns the
+     * value provided by the sender that calls the <code> <a>SendMessage</a> </code>
+     * action. Messages with the same <code>MessageGroupId</code> are returned in
+     * sequence.</p> </li> <li> <p> <code>SequenceNumber</code> - Returns the value
+     * provided by Amazon SQS.</p> </li> </ul> <p>Any other valid special request
+     * parameters (such as the following) are ignored:</p> <ul> <li> <p>
      * <code>ApproximateNumberOfMessages</code> </p> </li> <li> <p>
      * <code>ApproximateNumberOfMessagesDelayed</code> </p> </li> <li> <p>
      * <code>ApproximateNumberOfMessagesNotVisible</code> </p> </li> <li> <p>
      * <code>CreatedTimestamp</code> </p> </li> <li> <p>
      * <code>ContentBasedDeduplication</code> </p> </li> <li> <p>
-     * <code>DelaySeconds</code> </p> </li> <li> <p> <code>LastModifiedTimestamp</code>
-     * </p> </li> <li> <p> <code>MaximumMessageSize</code> </p> </li> <li> <p>
+     * <code>DelaySeconds</code> </p> </li> <li> <p> <code>FifoQueue</code> </p> </li>
+     * <li> <p> <code>LastModifiedTimestamp</code> </p> </li> <li> <p>
+     * <code>MaximumMessageSize</code> </p> </li> <li> <p>
      * <code>MessageRetentionPeriod</code> </p> </li> <li> <p> <code>Policy</code> </p>
      * </li> <li> <p> <code>QueueArn</code>, </p> </li> <li> <p>
      * <code>ReceiveMessageWaitTimeSeconds</code> </p> </li> <li> <p>
-     * <code>RedrivePolicy</code> </p> </li> <li> <p> <code>FifoQueue</code> </p> </li>
-     * <li> <p> <code>VisibilityTimeout</code> </p> </li> </ul>
+     * <code>RedrivePolicy</code> </p> </li> <li> <p> <code>VisibilityTimeout</code>
+     * </p> </li> </ul>
      */
     inline void SetAttributeNames(Aws::Vector<QueueAttributeName>&& value) { m_attributeNamesHasBeenSet = true; m_attributeNames = value; }
 
@@ -189,35 +200,38 @@ namespace Model
      * <p>A list of attributes that need to be returned along with each message. These
      * attributes include:</p> <ul> <li> <p> <code>All</code> - Returns all values.</p>
      * </li> <li> <p> <code>ApproximateFirstReceiveTimestamp</code> - Returns the time
-     * the message was first received from the queue (epoch time in milliseconds).</p>
-     * </li> <li> <p> <code>ApproximateReceiveCount</code> - Returns the number of
-     * times a message has been received from the queue but not deleted.</p> </li> <li>
-     * <p> <code>SenderId</code> </p> <ul> <li> <p>For an IAM user, returns the IAM
-     * user ID, for example <code>ABCDEFGHI1JKLMNOPQ23R</code>.</p> </li> <li> <p>For
-     * an IAM role, returns the IAM role ID, for example
-     * <code>ABCDE1F2GH3I4JK5LMNOP:i-a123b456</code>.</p> </li> </ul> </li> <li> <p>
-     * <code>SentTimestamp</code> - Returns the time the message was sent to the queue
-     * (epoch time in milliseconds).</p> </li> <li> <p>
-     * <code>MessageDeduplicationId</code> - Returns the value provided by the sender
-     * that calls the <code> <a>SendMessage</a> </code> action.</p> </li> <li> <p>
-     * <code>MessageGroupId</code> - Returns the value provided by the sender that
-     * calls the <code> <a>SendMessage</a> </code> action. Messages with the same
-     * <code>MessageGroupId</code> are returned in sequence.</p> </li> <li> <p>
-     * <code>SequenceNumber</code> - Returns the value provided by Amazon SQS.</p>
-     * </li> </ul> <p>Any other valid special request parameters (such as the
-     * following) that are specified are ignored:</p> <ul> <li> <p>
+     * the message was first received from the queue (<a
+     * href="http://en.wikipedia.org/wiki/Unix_time">epoch time</a> in
+     * milliseconds).</p> </li> <li> <p> <code>ApproximateReceiveCount</code> - Returns
+     * the number of times a message has been received from the queue but not
+     * deleted.</p> </li> <li> <p> <code>SenderId</code> </p> <ul> <li> <p>For an IAM
+     * user, returns the IAM user ID, for example
+     * <code>ABCDEFGHI1JKLMNOPQ23R</code>.</p> </li> <li> <p>For an IAM role, returns
+     * the IAM role ID, for example <code>ABCDE1F2GH3I4JK5LMNOP:i-a123b456</code>.</p>
+     * </li> </ul> </li> <li> <p> <code>SentTimestamp</code> - Returns the time the
+     * message was sent to the queue (<a
+     * href="http://en.wikipedia.org/wiki/Unix_time">epoch time</a> in
+     * milliseconds).</p> </li> <li> <p> <code>MessageDeduplicationId</code> - Returns
+     * the value provided by the sender that calls the <code> <a>SendMessage</a>
+     * </code> action.</p> </li> <li> <p> <code>MessageGroupId</code> - Returns the
+     * value provided by the sender that calls the <code> <a>SendMessage</a> </code>
+     * action. Messages with the same <code>MessageGroupId</code> are returned in
+     * sequence.</p> </li> <li> <p> <code>SequenceNumber</code> - Returns the value
+     * provided by Amazon SQS.</p> </li> </ul> <p>Any other valid special request
+     * parameters (such as the following) are ignored:</p> <ul> <li> <p>
      * <code>ApproximateNumberOfMessages</code> </p> </li> <li> <p>
      * <code>ApproximateNumberOfMessagesDelayed</code> </p> </li> <li> <p>
      * <code>ApproximateNumberOfMessagesNotVisible</code> </p> </li> <li> <p>
      * <code>CreatedTimestamp</code> </p> </li> <li> <p>
      * <code>ContentBasedDeduplication</code> </p> </li> <li> <p>
-     * <code>DelaySeconds</code> </p> </li> <li> <p> <code>LastModifiedTimestamp</code>
-     * </p> </li> <li> <p> <code>MaximumMessageSize</code> </p> </li> <li> <p>
+     * <code>DelaySeconds</code> </p> </li> <li> <p> <code>FifoQueue</code> </p> </li>
+     * <li> <p> <code>LastModifiedTimestamp</code> </p> </li> <li> <p>
+     * <code>MaximumMessageSize</code> </p> </li> <li> <p>
      * <code>MessageRetentionPeriod</code> </p> </li> <li> <p> <code>Policy</code> </p>
      * </li> <li> <p> <code>QueueArn</code>, </p> </li> <li> <p>
      * <code>ReceiveMessageWaitTimeSeconds</code> </p> </li> <li> <p>
-     * <code>RedrivePolicy</code> </p> </li> <li> <p> <code>FifoQueue</code> </p> </li>
-     * <li> <p> <code>VisibilityTimeout</code> </p> </li> </ul>
+     * <code>RedrivePolicy</code> </p> </li> <li> <p> <code>VisibilityTimeout</code>
+     * </p> </li> </ul>
      */
     inline ReceiveMessageRequest& WithAttributeNames(const Aws::Vector<QueueAttributeName>& value) { SetAttributeNames(value); return *this;}
 
@@ -225,35 +239,38 @@ namespace Model
      * <p>A list of attributes that need to be returned along with each message. These
      * attributes include:</p> <ul> <li> <p> <code>All</code> - Returns all values.</p>
      * </li> <li> <p> <code>ApproximateFirstReceiveTimestamp</code> - Returns the time
-     * the message was first received from the queue (epoch time in milliseconds).</p>
-     * </li> <li> <p> <code>ApproximateReceiveCount</code> - Returns the number of
-     * times a message has been received from the queue but not deleted.</p> </li> <li>
-     * <p> <code>SenderId</code> </p> <ul> <li> <p>For an IAM user, returns the IAM
-     * user ID, for example <code>ABCDEFGHI1JKLMNOPQ23R</code>.</p> </li> <li> <p>For
-     * an IAM role, returns the IAM role ID, for example
-     * <code>ABCDE1F2GH3I4JK5LMNOP:i-a123b456</code>.</p> </li> </ul> </li> <li> <p>
-     * <code>SentTimestamp</code> - Returns the time the message was sent to the queue
-     * (epoch time in milliseconds).</p> </li> <li> <p>
-     * <code>MessageDeduplicationId</code> - Returns the value provided by the sender
-     * that calls the <code> <a>SendMessage</a> </code> action.</p> </li> <li> <p>
-     * <code>MessageGroupId</code> - Returns the value provided by the sender that
-     * calls the <code> <a>SendMessage</a> </code> action. Messages with the same
-     * <code>MessageGroupId</code> are returned in sequence.</p> </li> <li> <p>
-     * <code>SequenceNumber</code> - Returns the value provided by Amazon SQS.</p>
-     * </li> </ul> <p>Any other valid special request parameters (such as the
-     * following) that are specified are ignored:</p> <ul> <li> <p>
+     * the message was first received from the queue (<a
+     * href="http://en.wikipedia.org/wiki/Unix_time">epoch time</a> in
+     * milliseconds).</p> </li> <li> <p> <code>ApproximateReceiveCount</code> - Returns
+     * the number of times a message has been received from the queue but not
+     * deleted.</p> </li> <li> <p> <code>SenderId</code> </p> <ul> <li> <p>For an IAM
+     * user, returns the IAM user ID, for example
+     * <code>ABCDEFGHI1JKLMNOPQ23R</code>.</p> </li> <li> <p>For an IAM role, returns
+     * the IAM role ID, for example <code>ABCDE1F2GH3I4JK5LMNOP:i-a123b456</code>.</p>
+     * </li> </ul> </li> <li> <p> <code>SentTimestamp</code> - Returns the time the
+     * message was sent to the queue (<a
+     * href="http://en.wikipedia.org/wiki/Unix_time">epoch time</a> in
+     * milliseconds).</p> </li> <li> <p> <code>MessageDeduplicationId</code> - Returns
+     * the value provided by the sender that calls the <code> <a>SendMessage</a>
+     * </code> action.</p> </li> <li> <p> <code>MessageGroupId</code> - Returns the
+     * value provided by the sender that calls the <code> <a>SendMessage</a> </code>
+     * action. Messages with the same <code>MessageGroupId</code> are returned in
+     * sequence.</p> </li> <li> <p> <code>SequenceNumber</code> - Returns the value
+     * provided by Amazon SQS.</p> </li> </ul> <p>Any other valid special request
+     * parameters (such as the following) are ignored:</p> <ul> <li> <p>
      * <code>ApproximateNumberOfMessages</code> </p> </li> <li> <p>
      * <code>ApproximateNumberOfMessagesDelayed</code> </p> </li> <li> <p>
      * <code>ApproximateNumberOfMessagesNotVisible</code> </p> </li> <li> <p>
      * <code>CreatedTimestamp</code> </p> </li> <li> <p>
      * <code>ContentBasedDeduplication</code> </p> </li> <li> <p>
-     * <code>DelaySeconds</code> </p> </li> <li> <p> <code>LastModifiedTimestamp</code>
-     * </p> </li> <li> <p> <code>MaximumMessageSize</code> </p> </li> <li> <p>
+     * <code>DelaySeconds</code> </p> </li> <li> <p> <code>FifoQueue</code> </p> </li>
+     * <li> <p> <code>LastModifiedTimestamp</code> </p> </li> <li> <p>
+     * <code>MaximumMessageSize</code> </p> </li> <li> <p>
      * <code>MessageRetentionPeriod</code> </p> </li> <li> <p> <code>Policy</code> </p>
      * </li> <li> <p> <code>QueueArn</code>, </p> </li> <li> <p>
      * <code>ReceiveMessageWaitTimeSeconds</code> </p> </li> <li> <p>
-     * <code>RedrivePolicy</code> </p> </li> <li> <p> <code>FifoQueue</code> </p> </li>
-     * <li> <p> <code>VisibilityTimeout</code> </p> </li> </ul>
+     * <code>RedrivePolicy</code> </p> </li> <li> <p> <code>VisibilityTimeout</code>
+     * </p> </li> </ul>
      */
     inline ReceiveMessageRequest& WithAttributeNames(Aws::Vector<QueueAttributeName>&& value) { SetAttributeNames(value); return *this;}
 
@@ -261,35 +278,38 @@ namespace Model
      * <p>A list of attributes that need to be returned along with each message. These
      * attributes include:</p> <ul> <li> <p> <code>All</code> - Returns all values.</p>
      * </li> <li> <p> <code>ApproximateFirstReceiveTimestamp</code> - Returns the time
-     * the message was first received from the queue (epoch time in milliseconds).</p>
-     * </li> <li> <p> <code>ApproximateReceiveCount</code> - Returns the number of
-     * times a message has been received from the queue but not deleted.</p> </li> <li>
-     * <p> <code>SenderId</code> </p> <ul> <li> <p>For an IAM user, returns the IAM
-     * user ID, for example <code>ABCDEFGHI1JKLMNOPQ23R</code>.</p> </li> <li> <p>For
-     * an IAM role, returns the IAM role ID, for example
-     * <code>ABCDE1F2GH3I4JK5LMNOP:i-a123b456</code>.</p> </li> </ul> </li> <li> <p>
-     * <code>SentTimestamp</code> - Returns the time the message was sent to the queue
-     * (epoch time in milliseconds).</p> </li> <li> <p>
-     * <code>MessageDeduplicationId</code> - Returns the value provided by the sender
-     * that calls the <code> <a>SendMessage</a> </code> action.</p> </li> <li> <p>
-     * <code>MessageGroupId</code> - Returns the value provided by the sender that
-     * calls the <code> <a>SendMessage</a> </code> action. Messages with the same
-     * <code>MessageGroupId</code> are returned in sequence.</p> </li> <li> <p>
-     * <code>SequenceNumber</code> - Returns the value provided by Amazon SQS.</p>
-     * </li> </ul> <p>Any other valid special request parameters (such as the
-     * following) that are specified are ignored:</p> <ul> <li> <p>
+     * the message was first received from the queue (<a
+     * href="http://en.wikipedia.org/wiki/Unix_time">epoch time</a> in
+     * milliseconds).</p> </li> <li> <p> <code>ApproximateReceiveCount</code> - Returns
+     * the number of times a message has been received from the queue but not
+     * deleted.</p> </li> <li> <p> <code>SenderId</code> </p> <ul> <li> <p>For an IAM
+     * user, returns the IAM user ID, for example
+     * <code>ABCDEFGHI1JKLMNOPQ23R</code>.</p> </li> <li> <p>For an IAM role, returns
+     * the IAM role ID, for example <code>ABCDE1F2GH3I4JK5LMNOP:i-a123b456</code>.</p>
+     * </li> </ul> </li> <li> <p> <code>SentTimestamp</code> - Returns the time the
+     * message was sent to the queue (<a
+     * href="http://en.wikipedia.org/wiki/Unix_time">epoch time</a> in
+     * milliseconds).</p> </li> <li> <p> <code>MessageDeduplicationId</code> - Returns
+     * the value provided by the sender that calls the <code> <a>SendMessage</a>
+     * </code> action.</p> </li> <li> <p> <code>MessageGroupId</code> - Returns the
+     * value provided by the sender that calls the <code> <a>SendMessage</a> </code>
+     * action. Messages with the same <code>MessageGroupId</code> are returned in
+     * sequence.</p> </li> <li> <p> <code>SequenceNumber</code> - Returns the value
+     * provided by Amazon SQS.</p> </li> </ul> <p>Any other valid special request
+     * parameters (such as the following) are ignored:</p> <ul> <li> <p>
      * <code>ApproximateNumberOfMessages</code> </p> </li> <li> <p>
      * <code>ApproximateNumberOfMessagesDelayed</code> </p> </li> <li> <p>
      * <code>ApproximateNumberOfMessagesNotVisible</code> </p> </li> <li> <p>
      * <code>CreatedTimestamp</code> </p> </li> <li> <p>
      * <code>ContentBasedDeduplication</code> </p> </li> <li> <p>
-     * <code>DelaySeconds</code> </p> </li> <li> <p> <code>LastModifiedTimestamp</code>
-     * </p> </li> <li> <p> <code>MaximumMessageSize</code> </p> </li> <li> <p>
+     * <code>DelaySeconds</code> </p> </li> <li> <p> <code>FifoQueue</code> </p> </li>
+     * <li> <p> <code>LastModifiedTimestamp</code> </p> </li> <li> <p>
+     * <code>MaximumMessageSize</code> </p> </li> <li> <p>
      * <code>MessageRetentionPeriod</code> </p> </li> <li> <p> <code>Policy</code> </p>
      * </li> <li> <p> <code>QueueArn</code>, </p> </li> <li> <p>
      * <code>ReceiveMessageWaitTimeSeconds</code> </p> </li> <li> <p>
-     * <code>RedrivePolicy</code> </p> </li> <li> <p> <code>FifoQueue</code> </p> </li>
-     * <li> <p> <code>VisibilityTimeout</code> </p> </li> </ul>
+     * <code>RedrivePolicy</code> </p> </li> <li> <p> <code>VisibilityTimeout</code>
+     * </p> </li> </ul>
      */
     inline ReceiveMessageRequest& AddAttributeNames(const QueueAttributeName& value) { m_attributeNamesHasBeenSet = true; m_attributeNames.push_back(value); return *this; }
 
@@ -297,176 +317,203 @@ namespace Model
      * <p>A list of attributes that need to be returned along with each message. These
      * attributes include:</p> <ul> <li> <p> <code>All</code> - Returns all values.</p>
      * </li> <li> <p> <code>ApproximateFirstReceiveTimestamp</code> - Returns the time
-     * the message was first received from the queue (epoch time in milliseconds).</p>
-     * </li> <li> <p> <code>ApproximateReceiveCount</code> - Returns the number of
-     * times a message has been received from the queue but not deleted.</p> </li> <li>
-     * <p> <code>SenderId</code> </p> <ul> <li> <p>For an IAM user, returns the IAM
-     * user ID, for example <code>ABCDEFGHI1JKLMNOPQ23R</code>.</p> </li> <li> <p>For
-     * an IAM role, returns the IAM role ID, for example
-     * <code>ABCDE1F2GH3I4JK5LMNOP:i-a123b456</code>.</p> </li> </ul> </li> <li> <p>
-     * <code>SentTimestamp</code> - Returns the time the message was sent to the queue
-     * (epoch time in milliseconds).</p> </li> <li> <p>
-     * <code>MessageDeduplicationId</code> - Returns the value provided by the sender
-     * that calls the <code> <a>SendMessage</a> </code> action.</p> </li> <li> <p>
-     * <code>MessageGroupId</code> - Returns the value provided by the sender that
-     * calls the <code> <a>SendMessage</a> </code> action. Messages with the same
-     * <code>MessageGroupId</code> are returned in sequence.</p> </li> <li> <p>
-     * <code>SequenceNumber</code> - Returns the value provided by Amazon SQS.</p>
-     * </li> </ul> <p>Any other valid special request parameters (such as the
-     * following) that are specified are ignored:</p> <ul> <li> <p>
+     * the message was first received from the queue (<a
+     * href="http://en.wikipedia.org/wiki/Unix_time">epoch time</a> in
+     * milliseconds).</p> </li> <li> <p> <code>ApproximateReceiveCount</code> - Returns
+     * the number of times a message has been received from the queue but not
+     * deleted.</p> </li> <li> <p> <code>SenderId</code> </p> <ul> <li> <p>For an IAM
+     * user, returns the IAM user ID, for example
+     * <code>ABCDEFGHI1JKLMNOPQ23R</code>.</p> </li> <li> <p>For an IAM role, returns
+     * the IAM role ID, for example <code>ABCDE1F2GH3I4JK5LMNOP:i-a123b456</code>.</p>
+     * </li> </ul> </li> <li> <p> <code>SentTimestamp</code> - Returns the time the
+     * message was sent to the queue (<a
+     * href="http://en.wikipedia.org/wiki/Unix_time">epoch time</a> in
+     * milliseconds).</p> </li> <li> <p> <code>MessageDeduplicationId</code> - Returns
+     * the value provided by the sender that calls the <code> <a>SendMessage</a>
+     * </code> action.</p> </li> <li> <p> <code>MessageGroupId</code> - Returns the
+     * value provided by the sender that calls the <code> <a>SendMessage</a> </code>
+     * action. Messages with the same <code>MessageGroupId</code> are returned in
+     * sequence.</p> </li> <li> <p> <code>SequenceNumber</code> - Returns the value
+     * provided by Amazon SQS.</p> </li> </ul> <p>Any other valid special request
+     * parameters (such as the following) are ignored:</p> <ul> <li> <p>
      * <code>ApproximateNumberOfMessages</code> </p> </li> <li> <p>
      * <code>ApproximateNumberOfMessagesDelayed</code> </p> </li> <li> <p>
      * <code>ApproximateNumberOfMessagesNotVisible</code> </p> </li> <li> <p>
      * <code>CreatedTimestamp</code> </p> </li> <li> <p>
      * <code>ContentBasedDeduplication</code> </p> </li> <li> <p>
-     * <code>DelaySeconds</code> </p> </li> <li> <p> <code>LastModifiedTimestamp</code>
-     * </p> </li> <li> <p> <code>MaximumMessageSize</code> </p> </li> <li> <p>
+     * <code>DelaySeconds</code> </p> </li> <li> <p> <code>FifoQueue</code> </p> </li>
+     * <li> <p> <code>LastModifiedTimestamp</code> </p> </li> <li> <p>
+     * <code>MaximumMessageSize</code> </p> </li> <li> <p>
      * <code>MessageRetentionPeriod</code> </p> </li> <li> <p> <code>Policy</code> </p>
      * </li> <li> <p> <code>QueueArn</code>, </p> </li> <li> <p>
      * <code>ReceiveMessageWaitTimeSeconds</code> </p> </li> <li> <p>
-     * <code>RedrivePolicy</code> </p> </li> <li> <p> <code>FifoQueue</code> </p> </li>
-     * <li> <p> <code>VisibilityTimeout</code> </p> </li> </ul>
+     * <code>RedrivePolicy</code> </p> </li> <li> <p> <code>VisibilityTimeout</code>
+     * </p> </li> </ul>
      */
     inline ReceiveMessageRequest& AddAttributeNames(QueueAttributeName&& value) { m_attributeNamesHasBeenSet = true; m_attributeNames.push_back(value); return *this; }
 
     /**
-     * <p>The name of the message attribute, where <i>N</i> is the index. The message
-     * attribute name can contain the following characters: A-Z, a-z, 0-9, underscore
-     * (_), hyphen (-), and period (.). The name must not start or end with a period,
-     * and it should not have successive periods. The name is case sensitive and must
-     * be unique among all attribute names for the message. The name can be up to 256
-     * characters long. The name can't start with "AWS." or "Amazon." (or any
-     * variations in casing), because these prefixes are reserved for use by Amazon Web
-     * Services.</p> <p>When using <code>ReceiveMessage</code>, you can send a list of
-     * attribute names to receive, or you can return all of the attributes by
-     * specifying "All" or ".*" in your request. You can also use "bar.*" to return all
-     * message attributes starting with the "bar" prefix.</p>
+     * <p>The name of the message attribute, where <i>N</i> is the index.</p> <ul> <li>
+     * <p>The name can contain alphanumeric characters and the underscore
+     * (<code>_</code>), hyphen (<code>-</code>), and period (<code>.</code>).</p>
+     * </li> <li> <p>The name is case-sensitive and must be unique among all attribute
+     * names for the message.</p> </li> <li> <p>The name must not start with
+     * AWS-reserved prefixes such as <code>AWS.</code> or <code>Amazon.</code> (or any
+     * casing variants).</p> </li> <li> <p>The name must not start or end with a period
+     * (<code>.</code>), and it should not have periods in succession
+     * (<code>..</code>).</p> </li> <li> <p>The name can be up to 256 characters
+     * long.</p> </li> </ul> <p>When using <code>ReceiveMessage</code>, you can send a
+     * list of attribute names to receive, or you can return all of the attributes by
+     * specifying <code>All</code> or <code>.*</code> in your request. You can also use
+     * all message attributes starting with a prefix, for example
+     * <code>bar.*</code>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetMessageAttributeNames() const{ return m_messageAttributeNames; }
 
     /**
-     * <p>The name of the message attribute, where <i>N</i> is the index. The message
-     * attribute name can contain the following characters: A-Z, a-z, 0-9, underscore
-     * (_), hyphen (-), and period (.). The name must not start or end with a period,
-     * and it should not have successive periods. The name is case sensitive and must
-     * be unique among all attribute names for the message. The name can be up to 256
-     * characters long. The name can't start with "AWS." or "Amazon." (or any
-     * variations in casing), because these prefixes are reserved for use by Amazon Web
-     * Services.</p> <p>When using <code>ReceiveMessage</code>, you can send a list of
-     * attribute names to receive, or you can return all of the attributes by
-     * specifying "All" or ".*" in your request. You can also use "bar.*" to return all
-     * message attributes starting with the "bar" prefix.</p>
+     * <p>The name of the message attribute, where <i>N</i> is the index.</p> <ul> <li>
+     * <p>The name can contain alphanumeric characters and the underscore
+     * (<code>_</code>), hyphen (<code>-</code>), and period (<code>.</code>).</p>
+     * </li> <li> <p>The name is case-sensitive and must be unique among all attribute
+     * names for the message.</p> </li> <li> <p>The name must not start with
+     * AWS-reserved prefixes such as <code>AWS.</code> or <code>Amazon.</code> (or any
+     * casing variants).</p> </li> <li> <p>The name must not start or end with a period
+     * (<code>.</code>), and it should not have periods in succession
+     * (<code>..</code>).</p> </li> <li> <p>The name can be up to 256 characters
+     * long.</p> </li> </ul> <p>When using <code>ReceiveMessage</code>, you can send a
+     * list of attribute names to receive, or you can return all of the attributes by
+     * specifying <code>All</code> or <code>.*</code> in your request. You can also use
+     * all message attributes starting with a prefix, for example
+     * <code>bar.*</code>.</p>
      */
     inline void SetMessageAttributeNames(const Aws::Vector<Aws::String>& value) { m_messageAttributeNamesHasBeenSet = true; m_messageAttributeNames = value; }
 
     /**
-     * <p>The name of the message attribute, where <i>N</i> is the index. The message
-     * attribute name can contain the following characters: A-Z, a-z, 0-9, underscore
-     * (_), hyphen (-), and period (.). The name must not start or end with a period,
-     * and it should not have successive periods. The name is case sensitive and must
-     * be unique among all attribute names for the message. The name can be up to 256
-     * characters long. The name can't start with "AWS." or "Amazon." (or any
-     * variations in casing), because these prefixes are reserved for use by Amazon Web
-     * Services.</p> <p>When using <code>ReceiveMessage</code>, you can send a list of
-     * attribute names to receive, or you can return all of the attributes by
-     * specifying "All" or ".*" in your request. You can also use "bar.*" to return all
-     * message attributes starting with the "bar" prefix.</p>
+     * <p>The name of the message attribute, where <i>N</i> is the index.</p> <ul> <li>
+     * <p>The name can contain alphanumeric characters and the underscore
+     * (<code>_</code>), hyphen (<code>-</code>), and period (<code>.</code>).</p>
+     * </li> <li> <p>The name is case-sensitive and must be unique among all attribute
+     * names for the message.</p> </li> <li> <p>The name must not start with
+     * AWS-reserved prefixes such as <code>AWS.</code> or <code>Amazon.</code> (or any
+     * casing variants).</p> </li> <li> <p>The name must not start or end with a period
+     * (<code>.</code>), and it should not have periods in succession
+     * (<code>..</code>).</p> </li> <li> <p>The name can be up to 256 characters
+     * long.</p> </li> </ul> <p>When using <code>ReceiveMessage</code>, you can send a
+     * list of attribute names to receive, or you can return all of the attributes by
+     * specifying <code>All</code> or <code>.*</code> in your request. You can also use
+     * all message attributes starting with a prefix, for example
+     * <code>bar.*</code>.</p>
      */
     inline void SetMessageAttributeNames(Aws::Vector<Aws::String>&& value) { m_messageAttributeNamesHasBeenSet = true; m_messageAttributeNames = value; }
 
     /**
-     * <p>The name of the message attribute, where <i>N</i> is the index. The message
-     * attribute name can contain the following characters: A-Z, a-z, 0-9, underscore
-     * (_), hyphen (-), and period (.). The name must not start or end with a period,
-     * and it should not have successive periods. The name is case sensitive and must
-     * be unique among all attribute names for the message. The name can be up to 256
-     * characters long. The name can't start with "AWS." or "Amazon." (or any
-     * variations in casing), because these prefixes are reserved for use by Amazon Web
-     * Services.</p> <p>When using <code>ReceiveMessage</code>, you can send a list of
-     * attribute names to receive, or you can return all of the attributes by
-     * specifying "All" or ".*" in your request. You can also use "bar.*" to return all
-     * message attributes starting with the "bar" prefix.</p>
+     * <p>The name of the message attribute, where <i>N</i> is the index.</p> <ul> <li>
+     * <p>The name can contain alphanumeric characters and the underscore
+     * (<code>_</code>), hyphen (<code>-</code>), and period (<code>.</code>).</p>
+     * </li> <li> <p>The name is case-sensitive and must be unique among all attribute
+     * names for the message.</p> </li> <li> <p>The name must not start with
+     * AWS-reserved prefixes such as <code>AWS.</code> or <code>Amazon.</code> (or any
+     * casing variants).</p> </li> <li> <p>The name must not start or end with a period
+     * (<code>.</code>), and it should not have periods in succession
+     * (<code>..</code>).</p> </li> <li> <p>The name can be up to 256 characters
+     * long.</p> </li> </ul> <p>When using <code>ReceiveMessage</code>, you can send a
+     * list of attribute names to receive, or you can return all of the attributes by
+     * specifying <code>All</code> or <code>.*</code> in your request. You can also use
+     * all message attributes starting with a prefix, for example
+     * <code>bar.*</code>.</p>
      */
     inline ReceiveMessageRequest& WithMessageAttributeNames(const Aws::Vector<Aws::String>& value) { SetMessageAttributeNames(value); return *this;}
 
     /**
-     * <p>The name of the message attribute, where <i>N</i> is the index. The message
-     * attribute name can contain the following characters: A-Z, a-z, 0-9, underscore
-     * (_), hyphen (-), and period (.). The name must not start or end with a period,
-     * and it should not have successive periods. The name is case sensitive and must
-     * be unique among all attribute names for the message. The name can be up to 256
-     * characters long. The name can't start with "AWS." or "Amazon." (or any
-     * variations in casing), because these prefixes are reserved for use by Amazon Web
-     * Services.</p> <p>When using <code>ReceiveMessage</code>, you can send a list of
-     * attribute names to receive, or you can return all of the attributes by
-     * specifying "All" or ".*" in your request. You can also use "bar.*" to return all
-     * message attributes starting with the "bar" prefix.</p>
+     * <p>The name of the message attribute, where <i>N</i> is the index.</p> <ul> <li>
+     * <p>The name can contain alphanumeric characters and the underscore
+     * (<code>_</code>), hyphen (<code>-</code>), and period (<code>.</code>).</p>
+     * </li> <li> <p>The name is case-sensitive and must be unique among all attribute
+     * names for the message.</p> </li> <li> <p>The name must not start with
+     * AWS-reserved prefixes such as <code>AWS.</code> or <code>Amazon.</code> (or any
+     * casing variants).</p> </li> <li> <p>The name must not start or end with a period
+     * (<code>.</code>), and it should not have periods in succession
+     * (<code>..</code>).</p> </li> <li> <p>The name can be up to 256 characters
+     * long.</p> </li> </ul> <p>When using <code>ReceiveMessage</code>, you can send a
+     * list of attribute names to receive, or you can return all of the attributes by
+     * specifying <code>All</code> or <code>.*</code> in your request. You can also use
+     * all message attributes starting with a prefix, for example
+     * <code>bar.*</code>.</p>
      */
     inline ReceiveMessageRequest& WithMessageAttributeNames(Aws::Vector<Aws::String>&& value) { SetMessageAttributeNames(value); return *this;}
 
     /**
-     * <p>The name of the message attribute, where <i>N</i> is the index. The message
-     * attribute name can contain the following characters: A-Z, a-z, 0-9, underscore
-     * (_), hyphen (-), and period (.). The name must not start or end with a period,
-     * and it should not have successive periods. The name is case sensitive and must
-     * be unique among all attribute names for the message. The name can be up to 256
-     * characters long. The name can't start with "AWS." or "Amazon." (or any
-     * variations in casing), because these prefixes are reserved for use by Amazon Web
-     * Services.</p> <p>When using <code>ReceiveMessage</code>, you can send a list of
-     * attribute names to receive, or you can return all of the attributes by
-     * specifying "All" or ".*" in your request. You can also use "bar.*" to return all
-     * message attributes starting with the "bar" prefix.</p>
+     * <p>The name of the message attribute, where <i>N</i> is the index.</p> <ul> <li>
+     * <p>The name can contain alphanumeric characters and the underscore
+     * (<code>_</code>), hyphen (<code>-</code>), and period (<code>.</code>).</p>
+     * </li> <li> <p>The name is case-sensitive and must be unique among all attribute
+     * names for the message.</p> </li> <li> <p>The name must not start with
+     * AWS-reserved prefixes such as <code>AWS.</code> or <code>Amazon.</code> (or any
+     * casing variants).</p> </li> <li> <p>The name must not start or end with a period
+     * (<code>.</code>), and it should not have periods in succession
+     * (<code>..</code>).</p> </li> <li> <p>The name can be up to 256 characters
+     * long.</p> </li> </ul> <p>When using <code>ReceiveMessage</code>, you can send a
+     * list of attribute names to receive, or you can return all of the attributes by
+     * specifying <code>All</code> or <code>.*</code> in your request. You can also use
+     * all message attributes starting with a prefix, for example
+     * <code>bar.*</code>.</p>
      */
     inline ReceiveMessageRequest& AddMessageAttributeNames(const Aws::String& value) { m_messageAttributeNamesHasBeenSet = true; m_messageAttributeNames.push_back(value); return *this; }
 
     /**
-     * <p>The name of the message attribute, where <i>N</i> is the index. The message
-     * attribute name can contain the following characters: A-Z, a-z, 0-9, underscore
-     * (_), hyphen (-), and period (.). The name must not start or end with a period,
-     * and it should not have successive periods. The name is case sensitive and must
-     * be unique among all attribute names for the message. The name can be up to 256
-     * characters long. The name can't start with "AWS." or "Amazon." (or any
-     * variations in casing), because these prefixes are reserved for use by Amazon Web
-     * Services.</p> <p>When using <code>ReceiveMessage</code>, you can send a list of
-     * attribute names to receive, or you can return all of the attributes by
-     * specifying "All" or ".*" in your request. You can also use "bar.*" to return all
-     * message attributes starting with the "bar" prefix.</p>
+     * <p>The name of the message attribute, where <i>N</i> is the index.</p> <ul> <li>
+     * <p>The name can contain alphanumeric characters and the underscore
+     * (<code>_</code>), hyphen (<code>-</code>), and period (<code>.</code>).</p>
+     * </li> <li> <p>The name is case-sensitive and must be unique among all attribute
+     * names for the message.</p> </li> <li> <p>The name must not start with
+     * AWS-reserved prefixes such as <code>AWS.</code> or <code>Amazon.</code> (or any
+     * casing variants).</p> </li> <li> <p>The name must not start or end with a period
+     * (<code>.</code>), and it should not have periods in succession
+     * (<code>..</code>).</p> </li> <li> <p>The name can be up to 256 characters
+     * long.</p> </li> </ul> <p>When using <code>ReceiveMessage</code>, you can send a
+     * list of attribute names to receive, or you can return all of the attributes by
+     * specifying <code>All</code> or <code>.*</code> in your request. You can also use
+     * all message attributes starting with a prefix, for example
+     * <code>bar.*</code>.</p>
      */
     inline ReceiveMessageRequest& AddMessageAttributeNames(Aws::String&& value) { m_messageAttributeNamesHasBeenSet = true; m_messageAttributeNames.push_back(value); return *this; }
 
     /**
-     * <p>The name of the message attribute, where <i>N</i> is the index. The message
-     * attribute name can contain the following characters: A-Z, a-z, 0-9, underscore
-     * (_), hyphen (-), and period (.). The name must not start or end with a period,
-     * and it should not have successive periods. The name is case sensitive and must
-     * be unique among all attribute names for the message. The name can be up to 256
-     * characters long. The name can't start with "AWS." or "Amazon." (or any
-     * variations in casing), because these prefixes are reserved for use by Amazon Web
-     * Services.</p> <p>When using <code>ReceiveMessage</code>, you can send a list of
-     * attribute names to receive, or you can return all of the attributes by
-     * specifying "All" or ".*" in your request. You can also use "bar.*" to return all
-     * message attributes starting with the "bar" prefix.</p>
+     * <p>The name of the message attribute, where <i>N</i> is the index.</p> <ul> <li>
+     * <p>The name can contain alphanumeric characters and the underscore
+     * (<code>_</code>), hyphen (<code>-</code>), and period (<code>.</code>).</p>
+     * </li> <li> <p>The name is case-sensitive and must be unique among all attribute
+     * names for the message.</p> </li> <li> <p>The name must not start with
+     * AWS-reserved prefixes such as <code>AWS.</code> or <code>Amazon.</code> (or any
+     * casing variants).</p> </li> <li> <p>The name must not start or end with a period
+     * (<code>.</code>), and it should not have periods in succession
+     * (<code>..</code>).</p> </li> <li> <p>The name can be up to 256 characters
+     * long.</p> </li> </ul> <p>When using <code>ReceiveMessage</code>, you can send a
+     * list of attribute names to receive, or you can return all of the attributes by
+     * specifying <code>All</code> or <code>.*</code> in your request. You can also use
+     * all message attributes starting with a prefix, for example
+     * <code>bar.*</code>.</p>
      */
     inline ReceiveMessageRequest& AddMessageAttributeNames(const char* value) { m_messageAttributeNamesHasBeenSet = true; m_messageAttributeNames.push_back(value); return *this; }
 
     /**
      * <p>The maximum number of messages to return. Amazon SQS never returns more
-     * messages than this value but might return fewer. Values can be from 1 to 10.
-     * Default is 1.</p> <p>All of the messages are not necessarily returned.</p>
+     * messages than this value (however, fewer messages might be returned). Valid
+     * values are 1 to 10. Default is 1.</p>
      */
     inline int GetMaxNumberOfMessages() const{ return m_maxNumberOfMessages; }
 
     /**
      * <p>The maximum number of messages to return. Amazon SQS never returns more
-     * messages than this value but might return fewer. Values can be from 1 to 10.
-     * Default is 1.</p> <p>All of the messages are not necessarily returned.</p>
+     * messages than this value (however, fewer messages might be returned). Valid
+     * values are 1 to 10. Default is 1.</p>
      */
     inline void SetMaxNumberOfMessages(int value) { m_maxNumberOfMessagesHasBeenSet = true; m_maxNumberOfMessages = value; }
 
     /**
      * <p>The maximum number of messages to return. Amazon SQS never returns more
-     * messages than this value but might return fewer. Values can be from 1 to 10.
-     * Default is 1.</p> <p>All of the messages are not necessarily returned.</p>
+     * messages than this value (however, fewer messages might be returned). Valid
+     * values are 1 to 10. Default is 1.</p>
      */
     inline ReceiveMessageRequest& WithMaxNumberOfMessages(int value) { SetMaxNumberOfMessages(value); return *this;}
 
@@ -492,23 +539,23 @@ namespace Model
     inline ReceiveMessageRequest& WithVisibilityTimeout(int value) { SetVisibilityTimeout(value); return *this;}
 
     /**
-     * <p>The duration (in seconds) for which the call will wait for a message to
-     * arrive in the queue before returning. If a message is available, the call will
-     * return sooner than WaitTimeSeconds.</p>
+     * <p>The duration (in seconds) for which the call waits for a message to arrive in
+     * the queue before returning. If a message is available, the call returns sooner
+     * than <code>WaitTimeSeconds</code>.</p>
      */
     inline int GetWaitTimeSeconds() const{ return m_waitTimeSeconds; }
 
     /**
-     * <p>The duration (in seconds) for which the call will wait for a message to
-     * arrive in the queue before returning. If a message is available, the call will
-     * return sooner than WaitTimeSeconds.</p>
+     * <p>The duration (in seconds) for which the call waits for a message to arrive in
+     * the queue before returning. If a message is available, the call returns sooner
+     * than <code>WaitTimeSeconds</code>.</p>
      */
     inline void SetWaitTimeSeconds(int value) { m_waitTimeSecondsHasBeenSet = true; m_waitTimeSeconds = value; }
 
     /**
-     * <p>The duration (in seconds) for which the call will wait for a message to
-     * arrive in the queue before returning. If a message is available, the call will
-     * return sooner than WaitTimeSeconds.</p>
+     * <p>The duration (in seconds) for which the call waits for a message to arrive in
+     * the queue before returning. If a message is available, the call returns sooner
+     * than <code>WaitTimeSeconds</code>.</p>
      */
     inline ReceiveMessageRequest& WithWaitTimeSeconds(int value) { SetWaitTimeSeconds(value); return *this;}
 
@@ -533,7 +580,7 @@ namespace Model
      * return the same messages and receipt handles. If a retry occurs within the
      * deduplication interval, it resets the visibility timeout. For more information,
      * see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/AboutVT.html">Visibility
+     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility
      * Timeout</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.</p>
      * <important> <p>If a caller of the <code>ReceiveMessage</code> action is still
      * processing messages when the visibility timeout expires and messages become
@@ -549,9 +596,9 @@ namespace Model
      * expires. You can still receive messages with another <code>MessageGroupId</code>
      * as long as it is also visible.</p> </li> <li> <p>If a caller of
      * <code>ReceiveMessage</code> can't track the
-     * <code>ReceiveRequestAttemptId</code>, no retries will work until the original
+     * <code>ReceiveRequestAttemptId</code>, no retries work until the original
      * visibility timeout expires. As a result, delays might occur but the messages in
-     * the queue will remain in a strict order.</p> </li> </ul> <p>The length of
+     * the queue remain in a strict order.</p> </li> </ul> <p>The length of
      * <code>ReceiveRequestAttemptId</code> is 128 characters.
      * <code>ReceiveRequestAttemptId</code> can contain alphanumeric characters
      * (<code>a-z</code>, <code>A-Z</code>, <code>0-9</code>) and punctuation
@@ -584,7 +631,7 @@ namespace Model
      * return the same messages and receipt handles. If a retry occurs within the
      * deduplication interval, it resets the visibility timeout. For more information,
      * see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/AboutVT.html">Visibility
+     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility
      * Timeout</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.</p>
      * <important> <p>If a caller of the <code>ReceiveMessage</code> action is still
      * processing messages when the visibility timeout expires and messages become
@@ -600,9 +647,9 @@ namespace Model
      * expires. You can still receive messages with another <code>MessageGroupId</code>
      * as long as it is also visible.</p> </li> <li> <p>If a caller of
      * <code>ReceiveMessage</code> can't track the
-     * <code>ReceiveRequestAttemptId</code>, no retries will work until the original
+     * <code>ReceiveRequestAttemptId</code>, no retries work until the original
      * visibility timeout expires. As a result, delays might occur but the messages in
-     * the queue will remain in a strict order.</p> </li> </ul> <p>The length of
+     * the queue remain in a strict order.</p> </li> </ul> <p>The length of
      * <code>ReceiveRequestAttemptId</code> is 128 characters.
      * <code>ReceiveRequestAttemptId</code> can contain alphanumeric characters
      * (<code>a-z</code>, <code>A-Z</code>, <code>0-9</code>) and punctuation
@@ -635,7 +682,7 @@ namespace Model
      * return the same messages and receipt handles. If a retry occurs within the
      * deduplication interval, it resets the visibility timeout. For more information,
      * see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/AboutVT.html">Visibility
+     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility
      * Timeout</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.</p>
      * <important> <p>If a caller of the <code>ReceiveMessage</code> action is still
      * processing messages when the visibility timeout expires and messages become
@@ -651,9 +698,9 @@ namespace Model
      * expires. You can still receive messages with another <code>MessageGroupId</code>
      * as long as it is also visible.</p> </li> <li> <p>If a caller of
      * <code>ReceiveMessage</code> can't track the
-     * <code>ReceiveRequestAttemptId</code>, no retries will work until the original
+     * <code>ReceiveRequestAttemptId</code>, no retries work until the original
      * visibility timeout expires. As a result, delays might occur but the messages in
-     * the queue will remain in a strict order.</p> </li> </ul> <p>The length of
+     * the queue remain in a strict order.</p> </li> </ul> <p>The length of
      * <code>ReceiveRequestAttemptId</code> is 128 characters.
      * <code>ReceiveRequestAttemptId</code> can contain alphanumeric characters
      * (<code>a-z</code>, <code>A-Z</code>, <code>0-9</code>) and punctuation
@@ -686,7 +733,7 @@ namespace Model
      * return the same messages and receipt handles. If a retry occurs within the
      * deduplication interval, it resets the visibility timeout. For more information,
      * see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/AboutVT.html">Visibility
+     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility
      * Timeout</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.</p>
      * <important> <p>If a caller of the <code>ReceiveMessage</code> action is still
      * processing messages when the visibility timeout expires and messages become
@@ -702,9 +749,9 @@ namespace Model
      * expires. You can still receive messages with another <code>MessageGroupId</code>
      * as long as it is also visible.</p> </li> <li> <p>If a caller of
      * <code>ReceiveMessage</code> can't track the
-     * <code>ReceiveRequestAttemptId</code>, no retries will work until the original
+     * <code>ReceiveRequestAttemptId</code>, no retries work until the original
      * visibility timeout expires. As a result, delays might occur but the messages in
-     * the queue will remain in a strict order.</p> </li> </ul> <p>The length of
+     * the queue remain in a strict order.</p> </li> </ul> <p>The length of
      * <code>ReceiveRequestAttemptId</code> is 128 characters.
      * <code>ReceiveRequestAttemptId</code> can contain alphanumeric characters
      * (<code>a-z</code>, <code>A-Z</code>, <code>0-9</code>) and punctuation
@@ -737,7 +784,7 @@ namespace Model
      * return the same messages and receipt handles. If a retry occurs within the
      * deduplication interval, it resets the visibility timeout. For more information,
      * see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/AboutVT.html">Visibility
+     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility
      * Timeout</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.</p>
      * <important> <p>If a caller of the <code>ReceiveMessage</code> action is still
      * processing messages when the visibility timeout expires and messages become
@@ -753,9 +800,9 @@ namespace Model
      * expires. You can still receive messages with another <code>MessageGroupId</code>
      * as long as it is also visible.</p> </li> <li> <p>If a caller of
      * <code>ReceiveMessage</code> can't track the
-     * <code>ReceiveRequestAttemptId</code>, no retries will work until the original
+     * <code>ReceiveRequestAttemptId</code>, no retries work until the original
      * visibility timeout expires. As a result, delays might occur but the messages in
-     * the queue will remain in a strict order.</p> </li> </ul> <p>The length of
+     * the queue remain in a strict order.</p> </li> </ul> <p>The length of
      * <code>ReceiveRequestAttemptId</code> is 128 characters.
      * <code>ReceiveRequestAttemptId</code> can contain alphanumeric characters
      * (<code>a-z</code>, <code>A-Z</code>, <code>0-9</code>) and punctuation
@@ -788,7 +835,7 @@ namespace Model
      * return the same messages and receipt handles. If a retry occurs within the
      * deduplication interval, it resets the visibility timeout. For more information,
      * see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/AboutVT.html">Visibility
+     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility
      * Timeout</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.</p>
      * <important> <p>If a caller of the <code>ReceiveMessage</code> action is still
      * processing messages when the visibility timeout expires and messages become
@@ -804,9 +851,9 @@ namespace Model
      * expires. You can still receive messages with another <code>MessageGroupId</code>
      * as long as it is also visible.</p> </li> <li> <p>If a caller of
      * <code>ReceiveMessage</code> can't track the
-     * <code>ReceiveRequestAttemptId</code>, no retries will work until the original
+     * <code>ReceiveRequestAttemptId</code>, no retries work until the original
      * visibility timeout expires. As a result, delays might occur but the messages in
-     * the queue will remain in a strict order.</p> </li> </ul> <p>The length of
+     * the queue remain in a strict order.</p> </li> </ul> <p>The length of
      * <code>ReceiveRequestAttemptId</code> is 128 characters.
      * <code>ReceiveRequestAttemptId</code> can contain alphanumeric characters
      * (<code>a-z</code>, <code>A-Z</code>, <code>0-9</code>) and punctuation
@@ -839,7 +886,7 @@ namespace Model
      * return the same messages and receipt handles. If a retry occurs within the
      * deduplication interval, it resets the visibility timeout. For more information,
      * see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/AboutVT.html">Visibility
+     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility
      * Timeout</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.</p>
      * <important> <p>If a caller of the <code>ReceiveMessage</code> action is still
      * processing messages when the visibility timeout expires and messages become
@@ -855,9 +902,9 @@ namespace Model
      * expires. You can still receive messages with another <code>MessageGroupId</code>
      * as long as it is also visible.</p> </li> <li> <p>If a caller of
      * <code>ReceiveMessage</code> can't track the
-     * <code>ReceiveRequestAttemptId</code>, no retries will work until the original
+     * <code>ReceiveRequestAttemptId</code>, no retries work until the original
      * visibility timeout expires. As a result, delays might occur but the messages in
-     * the queue will remain in a strict order.</p> </li> </ul> <p>The length of
+     * the queue remain in a strict order.</p> </li> </ul> <p>The length of
      * <code>ReceiveRequestAttemptId</code> is 128 characters.
      * <code>ReceiveRequestAttemptId</code> can contain alphanumeric characters
      * (<code>a-z</code>, <code>A-Z</code>, <code>0-9</code>) and punctuation

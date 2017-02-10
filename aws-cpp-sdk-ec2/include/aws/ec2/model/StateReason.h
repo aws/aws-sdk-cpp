@@ -32,7 +32,9 @@ namespace Model
 {
 
   /**
-   * <p>Describes a state change.</p>
+   * <p>Describes a state change.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/StateReason">AWS API
+   * Reference</a></p>
    */
   class AWS_EC2_API StateReason
   {
@@ -81,14 +83,15 @@ namespace Model
 
     /**
      * <p>The message for the state change.</p> <ul> <li> <p>
-     * <code>Server.SpotInstanceTermination</code>: A Spot instance was terminated due
-     * to an increase in the market price.</p> </li> <li> <p>
-     * <code>Server.InternalError</code>: An internal error occurred during instance
-     * launch, resulting in termination.</p> </li> <li> <p>
      * <code>Server.InsufficientInstanceCapacity</code>: There was insufficient
      * instance capacity to satisfy the launch request.</p> </li> <li> <p>
-     * <code>Client.InternalError</code>: A client error caused the instance to
-     * terminate on launch.</p> </li> <li> <p>
+     * <code>Server.InternalError</code>: An internal error occurred during instance
+     * launch, resulting in termination.</p> </li> <li> <p>
+     * <code>Server.ScheduledStop</code>: The instance was stopped due to a scheduled
+     * retirement.</p> </li> <li> <p> <code>Server.SpotInstanceTermination</code>: A
+     * Spot instance was terminated due to an increase in the market price.</p> </li>
+     * <li> <p> <code>Client.InternalError</code>: A client error caused the instance
+     * to terminate on launch.</p> </li> <li> <p>
      * <code>Client.InstanceInitiatedShutdown</code>: The instance was shut down using
      * the <code>shutdown -h</code> command from the instance.</p> </li> <li> <p>
      * <code>Client.UserInitiatedShutdown</code>: The instance was shut down using the
@@ -102,14 +105,15 @@ namespace Model
 
     /**
      * <p>The message for the state change.</p> <ul> <li> <p>
-     * <code>Server.SpotInstanceTermination</code>: A Spot instance was terminated due
-     * to an increase in the market price.</p> </li> <li> <p>
-     * <code>Server.InternalError</code>: An internal error occurred during instance
-     * launch, resulting in termination.</p> </li> <li> <p>
      * <code>Server.InsufficientInstanceCapacity</code>: There was insufficient
      * instance capacity to satisfy the launch request.</p> </li> <li> <p>
-     * <code>Client.InternalError</code>: A client error caused the instance to
-     * terminate on launch.</p> </li> <li> <p>
+     * <code>Server.InternalError</code>: An internal error occurred during instance
+     * launch, resulting in termination.</p> </li> <li> <p>
+     * <code>Server.ScheduledStop</code>: The instance was stopped due to a scheduled
+     * retirement.</p> </li> <li> <p> <code>Server.SpotInstanceTermination</code>: A
+     * Spot instance was terminated due to an increase in the market price.</p> </li>
+     * <li> <p> <code>Client.InternalError</code>: A client error caused the instance
+     * to terminate on launch.</p> </li> <li> <p>
      * <code>Client.InstanceInitiatedShutdown</code>: The instance was shut down using
      * the <code>shutdown -h</code> command from the instance.</p> </li> <li> <p>
      * <code>Client.UserInitiatedShutdown</code>: The instance was shut down using the
@@ -123,14 +127,15 @@ namespace Model
 
     /**
      * <p>The message for the state change.</p> <ul> <li> <p>
-     * <code>Server.SpotInstanceTermination</code>: A Spot instance was terminated due
-     * to an increase in the market price.</p> </li> <li> <p>
-     * <code>Server.InternalError</code>: An internal error occurred during instance
-     * launch, resulting in termination.</p> </li> <li> <p>
      * <code>Server.InsufficientInstanceCapacity</code>: There was insufficient
      * instance capacity to satisfy the launch request.</p> </li> <li> <p>
-     * <code>Client.InternalError</code>: A client error caused the instance to
-     * terminate on launch.</p> </li> <li> <p>
+     * <code>Server.InternalError</code>: An internal error occurred during instance
+     * launch, resulting in termination.</p> </li> <li> <p>
+     * <code>Server.ScheduledStop</code>: The instance was stopped due to a scheduled
+     * retirement.</p> </li> <li> <p> <code>Server.SpotInstanceTermination</code>: A
+     * Spot instance was terminated due to an increase in the market price.</p> </li>
+     * <li> <p> <code>Client.InternalError</code>: A client error caused the instance
+     * to terminate on launch.</p> </li> <li> <p>
      * <code>Client.InstanceInitiatedShutdown</code>: The instance was shut down using
      * the <code>shutdown -h</code> command from the instance.</p> </li> <li> <p>
      * <code>Client.UserInitiatedShutdown</code>: The instance was shut down using the
@@ -144,14 +149,15 @@ namespace Model
 
     /**
      * <p>The message for the state change.</p> <ul> <li> <p>
-     * <code>Server.SpotInstanceTermination</code>: A Spot instance was terminated due
-     * to an increase in the market price.</p> </li> <li> <p>
-     * <code>Server.InternalError</code>: An internal error occurred during instance
-     * launch, resulting in termination.</p> </li> <li> <p>
      * <code>Server.InsufficientInstanceCapacity</code>: There was insufficient
      * instance capacity to satisfy the launch request.</p> </li> <li> <p>
-     * <code>Client.InternalError</code>: A client error caused the instance to
-     * terminate on launch.</p> </li> <li> <p>
+     * <code>Server.InternalError</code>: An internal error occurred during instance
+     * launch, resulting in termination.</p> </li> <li> <p>
+     * <code>Server.ScheduledStop</code>: The instance was stopped due to a scheduled
+     * retirement.</p> </li> <li> <p> <code>Server.SpotInstanceTermination</code>: A
+     * Spot instance was terminated due to an increase in the market price.</p> </li>
+     * <li> <p> <code>Client.InternalError</code>: A client error caused the instance
+     * to terminate on launch.</p> </li> <li> <p>
      * <code>Client.InstanceInitiatedShutdown</code>: The instance was shut down using
      * the <code>shutdown -h</code> command from the instance.</p> </li> <li> <p>
      * <code>Client.UserInitiatedShutdown</code>: The instance was shut down using the
@@ -165,14 +171,15 @@ namespace Model
 
     /**
      * <p>The message for the state change.</p> <ul> <li> <p>
-     * <code>Server.SpotInstanceTermination</code>: A Spot instance was terminated due
-     * to an increase in the market price.</p> </li> <li> <p>
-     * <code>Server.InternalError</code>: An internal error occurred during instance
-     * launch, resulting in termination.</p> </li> <li> <p>
      * <code>Server.InsufficientInstanceCapacity</code>: There was insufficient
      * instance capacity to satisfy the launch request.</p> </li> <li> <p>
-     * <code>Client.InternalError</code>: A client error caused the instance to
-     * terminate on launch.</p> </li> <li> <p>
+     * <code>Server.InternalError</code>: An internal error occurred during instance
+     * launch, resulting in termination.</p> </li> <li> <p>
+     * <code>Server.ScheduledStop</code>: The instance was stopped due to a scheduled
+     * retirement.</p> </li> <li> <p> <code>Server.SpotInstanceTermination</code>: A
+     * Spot instance was terminated due to an increase in the market price.</p> </li>
+     * <li> <p> <code>Client.InternalError</code>: A client error caused the instance
+     * to terminate on launch.</p> </li> <li> <p>
      * <code>Client.InstanceInitiatedShutdown</code>: The instance was shut down using
      * the <code>shutdown -h</code> command from the instance.</p> </li> <li> <p>
      * <code>Client.UserInitiatedShutdown</code>: The instance was shut down using the
@@ -186,14 +193,15 @@ namespace Model
 
     /**
      * <p>The message for the state change.</p> <ul> <li> <p>
-     * <code>Server.SpotInstanceTermination</code>: A Spot instance was terminated due
-     * to an increase in the market price.</p> </li> <li> <p>
-     * <code>Server.InternalError</code>: An internal error occurred during instance
-     * launch, resulting in termination.</p> </li> <li> <p>
      * <code>Server.InsufficientInstanceCapacity</code>: There was insufficient
      * instance capacity to satisfy the launch request.</p> </li> <li> <p>
-     * <code>Client.InternalError</code>: A client error caused the instance to
-     * terminate on launch.</p> </li> <li> <p>
+     * <code>Server.InternalError</code>: An internal error occurred during instance
+     * launch, resulting in termination.</p> </li> <li> <p>
+     * <code>Server.ScheduledStop</code>: The instance was stopped due to a scheduled
+     * retirement.</p> </li> <li> <p> <code>Server.SpotInstanceTermination</code>: A
+     * Spot instance was terminated due to an increase in the market price.</p> </li>
+     * <li> <p> <code>Client.InternalError</code>: A client error caused the instance
+     * to terminate on launch.</p> </li> <li> <p>
      * <code>Client.InstanceInitiatedShutdown</code>: The instance was shut down using
      * the <code>shutdown -h</code> command from the instance.</p> </li> <li> <p>
      * <code>Client.UserInitiatedShutdown</code>: The instance was shut down using the
@@ -207,14 +215,15 @@ namespace Model
 
     /**
      * <p>The message for the state change.</p> <ul> <li> <p>
-     * <code>Server.SpotInstanceTermination</code>: A Spot instance was terminated due
-     * to an increase in the market price.</p> </li> <li> <p>
-     * <code>Server.InternalError</code>: An internal error occurred during instance
-     * launch, resulting in termination.</p> </li> <li> <p>
      * <code>Server.InsufficientInstanceCapacity</code>: There was insufficient
      * instance capacity to satisfy the launch request.</p> </li> <li> <p>
-     * <code>Client.InternalError</code>: A client error caused the instance to
-     * terminate on launch.</p> </li> <li> <p>
+     * <code>Server.InternalError</code>: An internal error occurred during instance
+     * launch, resulting in termination.</p> </li> <li> <p>
+     * <code>Server.ScheduledStop</code>: The instance was stopped due to a scheduled
+     * retirement.</p> </li> <li> <p> <code>Server.SpotInstanceTermination</code>: A
+     * Spot instance was terminated due to an increase in the market price.</p> </li>
+     * <li> <p> <code>Client.InternalError</code>: A client error caused the instance
+     * to terminate on launch.</p> </li> <li> <p>
      * <code>Client.InstanceInitiatedShutdown</code>: The instance was shut down using
      * the <code>shutdown -h</code> command from the instance.</p> </li> <li> <p>
      * <code>Client.UserInitiatedShutdown</code>: The instance was shut down using the

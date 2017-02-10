@@ -32,7 +32,9 @@ namespace Budgets
 namespace Model
 {
   /**
-   * Response of CreateBudget
+   * Response of CreateBudget<p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/CreateBudgetResponse">AWS
+   * API Reference</a></p>
    */
   class AWS_BUDGETS_API CreateBudgetResult
   {

@@ -117,17 +117,17 @@ void TextOptions::OutputToStream(Aws::OStream& oStream, const char* location, un
 
   if(m_returnEnabledHasBeenSet)
   {
-      oStream << location << index << locationValue << ".ReturnEnabled=" << m_returnEnabled << "&";
+      oStream << location << index << locationValue << ".ReturnEnabled=" << std::boolalpha << m_returnEnabled << "&";
   }
 
   if(m_sortEnabledHasBeenSet)
   {
-      oStream << location << index << locationValue << ".SortEnabled=" << m_sortEnabled << "&";
+      oStream << location << index << locationValue << ".SortEnabled=" << std::boolalpha << m_sortEnabled << "&";
   }
 
   if(m_highlightEnabledHasBeenSet)
   {
-      oStream << location << index << locationValue << ".HighlightEnabled=" << m_highlightEnabled << "&";
+      oStream << location << index << locationValue << ".HighlightEnabled=" << std::boolalpha << m_highlightEnabled << "&";
   }
 
   if(m_analysisSchemeHasBeenSet)
@@ -149,15 +149,15 @@ void TextOptions::OutputToStream(Aws::OStream& oStream, const char* location) co
   }
   if(m_returnEnabledHasBeenSet)
   {
-      oStream << location << ".ReturnEnabled=" << m_returnEnabled << "&";
+      oStream << location << ".ReturnEnabled=" << std::boolalpha << m_returnEnabled << "&";
   }
   if(m_sortEnabledHasBeenSet)
   {
-      oStream << location << ".SortEnabled=" << m_sortEnabled << "&";
+      oStream << location << ".SortEnabled=" << std::boolalpha << m_sortEnabled << "&";
   }
   if(m_highlightEnabledHasBeenSet)
   {
-      oStream << location << ".HighlightEnabled=" << m_highlightEnabled << "&";
+      oStream << location << ".HighlightEnabled=" << std::boolalpha << m_highlightEnabled << "&";
   }
   if(m_analysisSchemeHasBeenSet)
   {

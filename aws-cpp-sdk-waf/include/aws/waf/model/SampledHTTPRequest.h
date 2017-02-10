@@ -38,7 +38,9 @@ namespace Model
    * <code>SampledRequests</code> in the response syntax.
    * <code>SampledHTTPRequests</code> contains one <code>SampledHTTPRequest</code>
    * object for each web request that is returned by
-   * <code>GetSampledRequests</code>.</p>
+   * <code>GetSampledRequests</code>.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/SampledHTTPRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_WAF_API SampledHTTPRequest
   {

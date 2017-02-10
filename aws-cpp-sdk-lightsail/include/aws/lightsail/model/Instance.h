@@ -37,7 +37,10 @@ namespace Model
 {
 
   /**
-   * <p>Describes an instance (a virtual private server).</p>
+   * <p>Describes an instance (a virtual private server).</p><p><h3>See Also:</h3>  
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/Instance">AWS
+   * API Reference</a></p>
    */
   class AWS_LIGHTSAIL_API Instance
   {

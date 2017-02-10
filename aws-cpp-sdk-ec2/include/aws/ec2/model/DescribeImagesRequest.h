@@ -27,7 +27,9 @@ namespace Model
 {
 
   /**
-   * <p>Contains the parameters for DescribeImages.</p>
+   * <p>Contains the parameters for DescribeImages.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeImagesRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_EC2_API DescribeImagesRequest : public EC2Request
   {
@@ -249,13 +251,15 @@ namespace Model
      * volume (<code>gp2</code> | <code>io1</code> | <code>st1 </code>|
      * <code>sc1</code> | <code>standard</code>).</p> </li> <li> <p>
      * <code>description</code> - The description of the image (provided during image
-     * creation).</p> </li> <li> <p> <code>hypervisor</code> - The hypervisor type
-     * (<code>ovm</code> | <code>xen</code>).</p> </li> <li> <p> <code>image-id</code>
-     * - The ID of the image.</p> </li> <li> <p> <code>image-type</code> - The image
-     * type (<code>machine</code> | <code>kernel</code> | <code>ramdisk</code>).</p>
-     * </li> <li> <p> <code>is-public</code> - A Boolean that indicates whether the
-     * image is public.</p> </li> <li> <p> <code>kernel-id</code> - The kernel ID.</p>
-     * </li> <li> <p> <code>manifest-location</code> - The location of the image
+     * creation).</p> </li> <li> <p> <code>ena-support</code> - A Boolean that
+     * indicates whether enhanced networking with ENA is enabled.</p> </li> <li> <p>
+     * <code>hypervisor</code> - The hypervisor type (<code>ovm</code> |
+     * <code>xen</code>).</p> </li> <li> <p> <code>image-id</code> - The ID of the
+     * image.</p> </li> <li> <p> <code>image-type</code> - The image type
+     * (<code>machine</code> | <code>kernel</code> | <code>ramdisk</code>).</p> </li>
+     * <li> <p> <code>is-public</code> - A Boolean that indicates whether the image is
+     * public.</p> </li> <li> <p> <code>kernel-id</code> - The kernel ID.</p> </li>
+     * <li> <p> <code>manifest-location</code> - The location of the image
      * manifest.</p> </li> <li> <p> <code>name</code> - The name of the AMI (provided
      * during image creation).</p> </li> <li> <p> <code>owner-alias</code> - String
      * value from an Amazon-maintained list (<code>amazon</code> |
@@ -277,8 +281,11 @@ namespace Model
      * reason code for the state change.</p> </li> <li> <p>
      * <code>state-reason-message</code> - The message for the state change.</p> </li>
      * <li> <p> <code>tag</code>:<i>key</i>=<i>value</i> - The key/value combination of
-     * a tag assigned to the resource.</p> </li> <li> <p> <code>tag-key</code> - The
-     * key of a tag assigned to the resource. This filter is independent of the
+     * a tag assigned to the resource. Specify the key of the tag in the filter name
+     * and the value of the tag in the filter value. For example, for the tag
+     * Purpose=X, specify <code>tag:Purpose</code> for the filter name and
+     * <code>X</code> for the filter value.</p> </li> <li> <p> <code>tag-key</code> -
+     * The key of a tag assigned to the resource. This filter is independent of the
      * tag-value filter. For example, if you use both the filter "tag-key=Purpose" and
      * the filter "tag-value=X", you get any resources assigned both the tag key
      * Purpose (regardless of what the tag's value is), and the tag value X (regardless
@@ -305,13 +312,15 @@ namespace Model
      * volume (<code>gp2</code> | <code>io1</code> | <code>st1 </code>|
      * <code>sc1</code> | <code>standard</code>).</p> </li> <li> <p>
      * <code>description</code> - The description of the image (provided during image
-     * creation).</p> </li> <li> <p> <code>hypervisor</code> - The hypervisor type
-     * (<code>ovm</code> | <code>xen</code>).</p> </li> <li> <p> <code>image-id</code>
-     * - The ID of the image.</p> </li> <li> <p> <code>image-type</code> - The image
-     * type (<code>machine</code> | <code>kernel</code> | <code>ramdisk</code>).</p>
-     * </li> <li> <p> <code>is-public</code> - A Boolean that indicates whether the
-     * image is public.</p> </li> <li> <p> <code>kernel-id</code> - The kernel ID.</p>
-     * </li> <li> <p> <code>manifest-location</code> - The location of the image
+     * creation).</p> </li> <li> <p> <code>ena-support</code> - A Boolean that
+     * indicates whether enhanced networking with ENA is enabled.</p> </li> <li> <p>
+     * <code>hypervisor</code> - The hypervisor type (<code>ovm</code> |
+     * <code>xen</code>).</p> </li> <li> <p> <code>image-id</code> - The ID of the
+     * image.</p> </li> <li> <p> <code>image-type</code> - The image type
+     * (<code>machine</code> | <code>kernel</code> | <code>ramdisk</code>).</p> </li>
+     * <li> <p> <code>is-public</code> - A Boolean that indicates whether the image is
+     * public.</p> </li> <li> <p> <code>kernel-id</code> - The kernel ID.</p> </li>
+     * <li> <p> <code>manifest-location</code> - The location of the image
      * manifest.</p> </li> <li> <p> <code>name</code> - The name of the AMI (provided
      * during image creation).</p> </li> <li> <p> <code>owner-alias</code> - String
      * value from an Amazon-maintained list (<code>amazon</code> |
@@ -333,8 +342,11 @@ namespace Model
      * reason code for the state change.</p> </li> <li> <p>
      * <code>state-reason-message</code> - The message for the state change.</p> </li>
      * <li> <p> <code>tag</code>:<i>key</i>=<i>value</i> - The key/value combination of
-     * a tag assigned to the resource.</p> </li> <li> <p> <code>tag-key</code> - The
-     * key of a tag assigned to the resource. This filter is independent of the
+     * a tag assigned to the resource. Specify the key of the tag in the filter name
+     * and the value of the tag in the filter value. For example, for the tag
+     * Purpose=X, specify <code>tag:Purpose</code> for the filter name and
+     * <code>X</code> for the filter value.</p> </li> <li> <p> <code>tag-key</code> -
+     * The key of a tag assigned to the resource. This filter is independent of the
      * tag-value filter. For example, if you use both the filter "tag-key=Purpose" and
      * the filter "tag-value=X", you get any resources assigned both the tag key
      * Purpose (regardless of what the tag's value is), and the tag value X (regardless
@@ -361,13 +373,15 @@ namespace Model
      * volume (<code>gp2</code> | <code>io1</code> | <code>st1 </code>|
      * <code>sc1</code> | <code>standard</code>).</p> </li> <li> <p>
      * <code>description</code> - The description of the image (provided during image
-     * creation).</p> </li> <li> <p> <code>hypervisor</code> - The hypervisor type
-     * (<code>ovm</code> | <code>xen</code>).</p> </li> <li> <p> <code>image-id</code>
-     * - The ID of the image.</p> </li> <li> <p> <code>image-type</code> - The image
-     * type (<code>machine</code> | <code>kernel</code> | <code>ramdisk</code>).</p>
-     * </li> <li> <p> <code>is-public</code> - A Boolean that indicates whether the
-     * image is public.</p> </li> <li> <p> <code>kernel-id</code> - The kernel ID.</p>
-     * </li> <li> <p> <code>manifest-location</code> - The location of the image
+     * creation).</p> </li> <li> <p> <code>ena-support</code> - A Boolean that
+     * indicates whether enhanced networking with ENA is enabled.</p> </li> <li> <p>
+     * <code>hypervisor</code> - The hypervisor type (<code>ovm</code> |
+     * <code>xen</code>).</p> </li> <li> <p> <code>image-id</code> - The ID of the
+     * image.</p> </li> <li> <p> <code>image-type</code> - The image type
+     * (<code>machine</code> | <code>kernel</code> | <code>ramdisk</code>).</p> </li>
+     * <li> <p> <code>is-public</code> - A Boolean that indicates whether the image is
+     * public.</p> </li> <li> <p> <code>kernel-id</code> - The kernel ID.</p> </li>
+     * <li> <p> <code>manifest-location</code> - The location of the image
      * manifest.</p> </li> <li> <p> <code>name</code> - The name of the AMI (provided
      * during image creation).</p> </li> <li> <p> <code>owner-alias</code> - String
      * value from an Amazon-maintained list (<code>amazon</code> |
@@ -389,8 +403,11 @@ namespace Model
      * reason code for the state change.</p> </li> <li> <p>
      * <code>state-reason-message</code> - The message for the state change.</p> </li>
      * <li> <p> <code>tag</code>:<i>key</i>=<i>value</i> - The key/value combination of
-     * a tag assigned to the resource.</p> </li> <li> <p> <code>tag-key</code> - The
-     * key of a tag assigned to the resource. This filter is independent of the
+     * a tag assigned to the resource. Specify the key of the tag in the filter name
+     * and the value of the tag in the filter value. For example, for the tag
+     * Purpose=X, specify <code>tag:Purpose</code> for the filter name and
+     * <code>X</code> for the filter value.</p> </li> <li> <p> <code>tag-key</code> -
+     * The key of a tag assigned to the resource. This filter is independent of the
      * tag-value filter. For example, if you use both the filter "tag-key=Purpose" and
      * the filter "tag-value=X", you get any resources assigned both the tag key
      * Purpose (regardless of what the tag's value is), and the tag value X (regardless
@@ -417,13 +434,15 @@ namespace Model
      * volume (<code>gp2</code> | <code>io1</code> | <code>st1 </code>|
      * <code>sc1</code> | <code>standard</code>).</p> </li> <li> <p>
      * <code>description</code> - The description of the image (provided during image
-     * creation).</p> </li> <li> <p> <code>hypervisor</code> - The hypervisor type
-     * (<code>ovm</code> | <code>xen</code>).</p> </li> <li> <p> <code>image-id</code>
-     * - The ID of the image.</p> </li> <li> <p> <code>image-type</code> - The image
-     * type (<code>machine</code> | <code>kernel</code> | <code>ramdisk</code>).</p>
-     * </li> <li> <p> <code>is-public</code> - A Boolean that indicates whether the
-     * image is public.</p> </li> <li> <p> <code>kernel-id</code> - The kernel ID.</p>
-     * </li> <li> <p> <code>manifest-location</code> - The location of the image
+     * creation).</p> </li> <li> <p> <code>ena-support</code> - A Boolean that
+     * indicates whether enhanced networking with ENA is enabled.</p> </li> <li> <p>
+     * <code>hypervisor</code> - The hypervisor type (<code>ovm</code> |
+     * <code>xen</code>).</p> </li> <li> <p> <code>image-id</code> - The ID of the
+     * image.</p> </li> <li> <p> <code>image-type</code> - The image type
+     * (<code>machine</code> | <code>kernel</code> | <code>ramdisk</code>).</p> </li>
+     * <li> <p> <code>is-public</code> - A Boolean that indicates whether the image is
+     * public.</p> </li> <li> <p> <code>kernel-id</code> - The kernel ID.</p> </li>
+     * <li> <p> <code>manifest-location</code> - The location of the image
      * manifest.</p> </li> <li> <p> <code>name</code> - The name of the AMI (provided
      * during image creation).</p> </li> <li> <p> <code>owner-alias</code> - String
      * value from an Amazon-maintained list (<code>amazon</code> |
@@ -445,8 +464,11 @@ namespace Model
      * reason code for the state change.</p> </li> <li> <p>
      * <code>state-reason-message</code> - The message for the state change.</p> </li>
      * <li> <p> <code>tag</code>:<i>key</i>=<i>value</i> - The key/value combination of
-     * a tag assigned to the resource.</p> </li> <li> <p> <code>tag-key</code> - The
-     * key of a tag assigned to the resource. This filter is independent of the
+     * a tag assigned to the resource. Specify the key of the tag in the filter name
+     * and the value of the tag in the filter value. For example, for the tag
+     * Purpose=X, specify <code>tag:Purpose</code> for the filter name and
+     * <code>X</code> for the filter value.</p> </li> <li> <p> <code>tag-key</code> -
+     * The key of a tag assigned to the resource. This filter is independent of the
      * tag-value filter. For example, if you use both the filter "tag-key=Purpose" and
      * the filter "tag-value=X", you get any resources assigned both the tag key
      * Purpose (regardless of what the tag's value is), and the tag value X (regardless
@@ -473,13 +495,15 @@ namespace Model
      * volume (<code>gp2</code> | <code>io1</code> | <code>st1 </code>|
      * <code>sc1</code> | <code>standard</code>).</p> </li> <li> <p>
      * <code>description</code> - The description of the image (provided during image
-     * creation).</p> </li> <li> <p> <code>hypervisor</code> - The hypervisor type
-     * (<code>ovm</code> | <code>xen</code>).</p> </li> <li> <p> <code>image-id</code>
-     * - The ID of the image.</p> </li> <li> <p> <code>image-type</code> - The image
-     * type (<code>machine</code> | <code>kernel</code> | <code>ramdisk</code>).</p>
-     * </li> <li> <p> <code>is-public</code> - A Boolean that indicates whether the
-     * image is public.</p> </li> <li> <p> <code>kernel-id</code> - The kernel ID.</p>
-     * </li> <li> <p> <code>manifest-location</code> - The location of the image
+     * creation).</p> </li> <li> <p> <code>ena-support</code> - A Boolean that
+     * indicates whether enhanced networking with ENA is enabled.</p> </li> <li> <p>
+     * <code>hypervisor</code> - The hypervisor type (<code>ovm</code> |
+     * <code>xen</code>).</p> </li> <li> <p> <code>image-id</code> - The ID of the
+     * image.</p> </li> <li> <p> <code>image-type</code> - The image type
+     * (<code>machine</code> | <code>kernel</code> | <code>ramdisk</code>).</p> </li>
+     * <li> <p> <code>is-public</code> - A Boolean that indicates whether the image is
+     * public.</p> </li> <li> <p> <code>kernel-id</code> - The kernel ID.</p> </li>
+     * <li> <p> <code>manifest-location</code> - The location of the image
      * manifest.</p> </li> <li> <p> <code>name</code> - The name of the AMI (provided
      * during image creation).</p> </li> <li> <p> <code>owner-alias</code> - String
      * value from an Amazon-maintained list (<code>amazon</code> |
@@ -501,8 +525,11 @@ namespace Model
      * reason code for the state change.</p> </li> <li> <p>
      * <code>state-reason-message</code> - The message for the state change.</p> </li>
      * <li> <p> <code>tag</code>:<i>key</i>=<i>value</i> - The key/value combination of
-     * a tag assigned to the resource.</p> </li> <li> <p> <code>tag-key</code> - The
-     * key of a tag assigned to the resource. This filter is independent of the
+     * a tag assigned to the resource. Specify the key of the tag in the filter name
+     * and the value of the tag in the filter value. For example, for the tag
+     * Purpose=X, specify <code>tag:Purpose</code> for the filter name and
+     * <code>X</code> for the filter value.</p> </li> <li> <p> <code>tag-key</code> -
+     * The key of a tag assigned to the resource. This filter is independent of the
      * tag-value filter. For example, if you use both the filter "tag-key=Purpose" and
      * the filter "tag-value=X", you get any resources assigned both the tag key
      * Purpose (regardless of what the tag's value is), and the tag value X (regardless
@@ -529,13 +556,15 @@ namespace Model
      * volume (<code>gp2</code> | <code>io1</code> | <code>st1 </code>|
      * <code>sc1</code> | <code>standard</code>).</p> </li> <li> <p>
      * <code>description</code> - The description of the image (provided during image
-     * creation).</p> </li> <li> <p> <code>hypervisor</code> - The hypervisor type
-     * (<code>ovm</code> | <code>xen</code>).</p> </li> <li> <p> <code>image-id</code>
-     * - The ID of the image.</p> </li> <li> <p> <code>image-type</code> - The image
-     * type (<code>machine</code> | <code>kernel</code> | <code>ramdisk</code>).</p>
-     * </li> <li> <p> <code>is-public</code> - A Boolean that indicates whether the
-     * image is public.</p> </li> <li> <p> <code>kernel-id</code> - The kernel ID.</p>
-     * </li> <li> <p> <code>manifest-location</code> - The location of the image
+     * creation).</p> </li> <li> <p> <code>ena-support</code> - A Boolean that
+     * indicates whether enhanced networking with ENA is enabled.</p> </li> <li> <p>
+     * <code>hypervisor</code> - The hypervisor type (<code>ovm</code> |
+     * <code>xen</code>).</p> </li> <li> <p> <code>image-id</code> - The ID of the
+     * image.</p> </li> <li> <p> <code>image-type</code> - The image type
+     * (<code>machine</code> | <code>kernel</code> | <code>ramdisk</code>).</p> </li>
+     * <li> <p> <code>is-public</code> - A Boolean that indicates whether the image is
+     * public.</p> </li> <li> <p> <code>kernel-id</code> - The kernel ID.</p> </li>
+     * <li> <p> <code>manifest-location</code> - The location of the image
      * manifest.</p> </li> <li> <p> <code>name</code> - The name of the AMI (provided
      * during image creation).</p> </li> <li> <p> <code>owner-alias</code> - String
      * value from an Amazon-maintained list (<code>amazon</code> |
@@ -557,8 +586,11 @@ namespace Model
      * reason code for the state change.</p> </li> <li> <p>
      * <code>state-reason-message</code> - The message for the state change.</p> </li>
      * <li> <p> <code>tag</code>:<i>key</i>=<i>value</i> - The key/value combination of
-     * a tag assigned to the resource.</p> </li> <li> <p> <code>tag-key</code> - The
-     * key of a tag assigned to the resource. This filter is independent of the
+     * a tag assigned to the resource. Specify the key of the tag in the filter name
+     * and the value of the tag in the filter value. For example, for the tag
+     * Purpose=X, specify <code>tag:Purpose</code> for the filter name and
+     * <code>X</code> for the filter value.</p> </li> <li> <p> <code>tag-key</code> -
+     * The key of a tag assigned to the resource. This filter is independent of the
      * tag-value filter. For example, if you use both the filter "tag-key=Purpose" and
      * the filter "tag-value=X", you get any resources assigned both the tag key
      * Purpose (regardless of what the tag's value is), and the tag value X (regardless
@@ -585,13 +617,15 @@ namespace Model
      * volume (<code>gp2</code> | <code>io1</code> | <code>st1 </code>|
      * <code>sc1</code> | <code>standard</code>).</p> </li> <li> <p>
      * <code>description</code> - The description of the image (provided during image
-     * creation).</p> </li> <li> <p> <code>hypervisor</code> - The hypervisor type
-     * (<code>ovm</code> | <code>xen</code>).</p> </li> <li> <p> <code>image-id</code>
-     * - The ID of the image.</p> </li> <li> <p> <code>image-type</code> - The image
-     * type (<code>machine</code> | <code>kernel</code> | <code>ramdisk</code>).</p>
-     * </li> <li> <p> <code>is-public</code> - A Boolean that indicates whether the
-     * image is public.</p> </li> <li> <p> <code>kernel-id</code> - The kernel ID.</p>
-     * </li> <li> <p> <code>manifest-location</code> - The location of the image
+     * creation).</p> </li> <li> <p> <code>ena-support</code> - A Boolean that
+     * indicates whether enhanced networking with ENA is enabled.</p> </li> <li> <p>
+     * <code>hypervisor</code> - The hypervisor type (<code>ovm</code> |
+     * <code>xen</code>).</p> </li> <li> <p> <code>image-id</code> - The ID of the
+     * image.</p> </li> <li> <p> <code>image-type</code> - The image type
+     * (<code>machine</code> | <code>kernel</code> | <code>ramdisk</code>).</p> </li>
+     * <li> <p> <code>is-public</code> - A Boolean that indicates whether the image is
+     * public.</p> </li> <li> <p> <code>kernel-id</code> - The kernel ID.</p> </li>
+     * <li> <p> <code>manifest-location</code> - The location of the image
      * manifest.</p> </li> <li> <p> <code>name</code> - The name of the AMI (provided
      * during image creation).</p> </li> <li> <p> <code>owner-alias</code> - String
      * value from an Amazon-maintained list (<code>amazon</code> |
@@ -613,8 +647,11 @@ namespace Model
      * reason code for the state change.</p> </li> <li> <p>
      * <code>state-reason-message</code> - The message for the state change.</p> </li>
      * <li> <p> <code>tag</code>:<i>key</i>=<i>value</i> - The key/value combination of
-     * a tag assigned to the resource.</p> </li> <li> <p> <code>tag-key</code> - The
-     * key of a tag assigned to the resource. This filter is independent of the
+     * a tag assigned to the resource. Specify the key of the tag in the filter name
+     * and the value of the tag in the filter value. For example, for the tag
+     * Purpose=X, specify <code>tag:Purpose</code> for the filter name and
+     * <code>X</code> for the filter value.</p> </li> <li> <p> <code>tag-key</code> -
+     * The key of a tag assigned to the resource. This filter is independent of the
      * tag-value filter. For example, if you use both the filter "tag-key=Purpose" and
      * the filter "tag-value=X", you get any resources assigned both the tag key
      * Purpose (regardless of what the tag's value is), and the tag value X (regardless

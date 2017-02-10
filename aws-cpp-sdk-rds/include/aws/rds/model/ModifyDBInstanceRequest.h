@@ -26,7 +26,9 @@ namespace Model
 {
 
   /**
-   * <p/>
+   * <p/><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyDBInstanceMessage">AWS
+   * API Reference</a></p>
    */
   class AWS_RDS_API ModifyDBInstanceRequest : public RDSRequest
   {
@@ -211,112 +213,119 @@ namespace Model
     /**
      * <p> The new compute and memory capacity of the DB instance. To determine the
      * instance classes that are available for a particular DB engine, use the
-     * <a>DescribeOrderableDBInstanceOptions</a> action. </p> <p> Passing a value for
-     * this setting causes an outage during the change and is applied during the next
-     * maintenance window, unless <code>ApplyImmediately</code> is specified as
-     * <code>true</code> for this request. </p> <p>Default: Uses existing setting</p>
-     * <p>Valid Values: <code>db.t1.micro | db.m1.small | db.m1.medium | db.m1.large |
-     * db.m1.xlarge | db.m2.xlarge | db.m2.2xlarge | db.m2.4xlarge | db.m3.medium |
-     * db.m3.large | db.m3.xlarge | db.m3.2xlarge | db.m4.large | db.m4.xlarge |
-     * db.m4.2xlarge | db.m4.4xlarge | db.m4.10xlarge | db.r3.large | db.r3.xlarge |
-     * db.r3.2xlarge | db.r3.4xlarge | db.r3.8xlarge | db.t2.micro | db.t2.small |
-     * db.t2.medium | db.t2.large</code> </p>
+     * <a>DescribeOrderableDBInstanceOptions</a> action. Note that not all instance
+     * classes are available in all regions for all DB engines. </p> <p> Passing a
+     * value for this setting causes an outage during the change and is applied during
+     * the next maintenance window, unless <code>ApplyImmediately</code> is specified
+     * as <code>true</code> for this request. </p> <p>Default: Uses existing
+     * setting</p> <p>Valid Values: <code>db.t1.micro | db.m1.small | db.m1.medium |
+     * db.m1.large | db.m1.xlarge | db.m2.xlarge | db.m2.2xlarge | db.m2.4xlarge |
+     * db.m3.medium | db.m3.large | db.m3.xlarge | db.m3.2xlarge | db.m4.large |
+     * db.m4.xlarge | db.m4.2xlarge | db.m4.4xlarge | db.m4.10xlarge | db.r3.large |
+     * db.r3.xlarge | db.r3.2xlarge | db.r3.4xlarge | db.r3.8xlarge | db.t2.micro |
+     * db.t2.small | db.t2.medium | db.t2.large</code> </p>
      */
     inline const Aws::String& GetDBInstanceClass() const{ return m_dBInstanceClass; }
 
     /**
      * <p> The new compute and memory capacity of the DB instance. To determine the
      * instance classes that are available for a particular DB engine, use the
-     * <a>DescribeOrderableDBInstanceOptions</a> action. </p> <p> Passing a value for
-     * this setting causes an outage during the change and is applied during the next
-     * maintenance window, unless <code>ApplyImmediately</code> is specified as
-     * <code>true</code> for this request. </p> <p>Default: Uses existing setting</p>
-     * <p>Valid Values: <code>db.t1.micro | db.m1.small | db.m1.medium | db.m1.large |
-     * db.m1.xlarge | db.m2.xlarge | db.m2.2xlarge | db.m2.4xlarge | db.m3.medium |
-     * db.m3.large | db.m3.xlarge | db.m3.2xlarge | db.m4.large | db.m4.xlarge |
-     * db.m4.2xlarge | db.m4.4xlarge | db.m4.10xlarge | db.r3.large | db.r3.xlarge |
-     * db.r3.2xlarge | db.r3.4xlarge | db.r3.8xlarge | db.t2.micro | db.t2.small |
-     * db.t2.medium | db.t2.large</code> </p>
+     * <a>DescribeOrderableDBInstanceOptions</a> action. Note that not all instance
+     * classes are available in all regions for all DB engines. </p> <p> Passing a
+     * value for this setting causes an outage during the change and is applied during
+     * the next maintenance window, unless <code>ApplyImmediately</code> is specified
+     * as <code>true</code> for this request. </p> <p>Default: Uses existing
+     * setting</p> <p>Valid Values: <code>db.t1.micro | db.m1.small | db.m1.medium |
+     * db.m1.large | db.m1.xlarge | db.m2.xlarge | db.m2.2xlarge | db.m2.4xlarge |
+     * db.m3.medium | db.m3.large | db.m3.xlarge | db.m3.2xlarge | db.m4.large |
+     * db.m4.xlarge | db.m4.2xlarge | db.m4.4xlarge | db.m4.10xlarge | db.r3.large |
+     * db.r3.xlarge | db.r3.2xlarge | db.r3.4xlarge | db.r3.8xlarge | db.t2.micro |
+     * db.t2.small | db.t2.medium | db.t2.large</code> </p>
      */
     inline void SetDBInstanceClass(const Aws::String& value) { m_dBInstanceClassHasBeenSet = true; m_dBInstanceClass = value; }
 
     /**
      * <p> The new compute and memory capacity of the DB instance. To determine the
      * instance classes that are available for a particular DB engine, use the
-     * <a>DescribeOrderableDBInstanceOptions</a> action. </p> <p> Passing a value for
-     * this setting causes an outage during the change and is applied during the next
-     * maintenance window, unless <code>ApplyImmediately</code> is specified as
-     * <code>true</code> for this request. </p> <p>Default: Uses existing setting</p>
-     * <p>Valid Values: <code>db.t1.micro | db.m1.small | db.m1.medium | db.m1.large |
-     * db.m1.xlarge | db.m2.xlarge | db.m2.2xlarge | db.m2.4xlarge | db.m3.medium |
-     * db.m3.large | db.m3.xlarge | db.m3.2xlarge | db.m4.large | db.m4.xlarge |
-     * db.m4.2xlarge | db.m4.4xlarge | db.m4.10xlarge | db.r3.large | db.r3.xlarge |
-     * db.r3.2xlarge | db.r3.4xlarge | db.r3.8xlarge | db.t2.micro | db.t2.small |
-     * db.t2.medium | db.t2.large</code> </p>
+     * <a>DescribeOrderableDBInstanceOptions</a> action. Note that not all instance
+     * classes are available in all regions for all DB engines. </p> <p> Passing a
+     * value for this setting causes an outage during the change and is applied during
+     * the next maintenance window, unless <code>ApplyImmediately</code> is specified
+     * as <code>true</code> for this request. </p> <p>Default: Uses existing
+     * setting</p> <p>Valid Values: <code>db.t1.micro | db.m1.small | db.m1.medium |
+     * db.m1.large | db.m1.xlarge | db.m2.xlarge | db.m2.2xlarge | db.m2.4xlarge |
+     * db.m3.medium | db.m3.large | db.m3.xlarge | db.m3.2xlarge | db.m4.large |
+     * db.m4.xlarge | db.m4.2xlarge | db.m4.4xlarge | db.m4.10xlarge | db.r3.large |
+     * db.r3.xlarge | db.r3.2xlarge | db.r3.4xlarge | db.r3.8xlarge | db.t2.micro |
+     * db.t2.small | db.t2.medium | db.t2.large</code> </p>
      */
     inline void SetDBInstanceClass(Aws::String&& value) { m_dBInstanceClassHasBeenSet = true; m_dBInstanceClass = value; }
 
     /**
      * <p> The new compute and memory capacity of the DB instance. To determine the
      * instance classes that are available for a particular DB engine, use the
-     * <a>DescribeOrderableDBInstanceOptions</a> action. </p> <p> Passing a value for
-     * this setting causes an outage during the change and is applied during the next
-     * maintenance window, unless <code>ApplyImmediately</code> is specified as
-     * <code>true</code> for this request. </p> <p>Default: Uses existing setting</p>
-     * <p>Valid Values: <code>db.t1.micro | db.m1.small | db.m1.medium | db.m1.large |
-     * db.m1.xlarge | db.m2.xlarge | db.m2.2xlarge | db.m2.4xlarge | db.m3.medium |
-     * db.m3.large | db.m3.xlarge | db.m3.2xlarge | db.m4.large | db.m4.xlarge |
-     * db.m4.2xlarge | db.m4.4xlarge | db.m4.10xlarge | db.r3.large | db.r3.xlarge |
-     * db.r3.2xlarge | db.r3.4xlarge | db.r3.8xlarge | db.t2.micro | db.t2.small |
-     * db.t2.medium | db.t2.large</code> </p>
+     * <a>DescribeOrderableDBInstanceOptions</a> action. Note that not all instance
+     * classes are available in all regions for all DB engines. </p> <p> Passing a
+     * value for this setting causes an outage during the change and is applied during
+     * the next maintenance window, unless <code>ApplyImmediately</code> is specified
+     * as <code>true</code> for this request. </p> <p>Default: Uses existing
+     * setting</p> <p>Valid Values: <code>db.t1.micro | db.m1.small | db.m1.medium |
+     * db.m1.large | db.m1.xlarge | db.m2.xlarge | db.m2.2xlarge | db.m2.4xlarge |
+     * db.m3.medium | db.m3.large | db.m3.xlarge | db.m3.2xlarge | db.m4.large |
+     * db.m4.xlarge | db.m4.2xlarge | db.m4.4xlarge | db.m4.10xlarge | db.r3.large |
+     * db.r3.xlarge | db.r3.2xlarge | db.r3.4xlarge | db.r3.8xlarge | db.t2.micro |
+     * db.t2.small | db.t2.medium | db.t2.large</code> </p>
      */
     inline void SetDBInstanceClass(const char* value) { m_dBInstanceClassHasBeenSet = true; m_dBInstanceClass.assign(value); }
 
     /**
      * <p> The new compute and memory capacity of the DB instance. To determine the
      * instance classes that are available for a particular DB engine, use the
-     * <a>DescribeOrderableDBInstanceOptions</a> action. </p> <p> Passing a value for
-     * this setting causes an outage during the change and is applied during the next
-     * maintenance window, unless <code>ApplyImmediately</code> is specified as
-     * <code>true</code> for this request. </p> <p>Default: Uses existing setting</p>
-     * <p>Valid Values: <code>db.t1.micro | db.m1.small | db.m1.medium | db.m1.large |
-     * db.m1.xlarge | db.m2.xlarge | db.m2.2xlarge | db.m2.4xlarge | db.m3.medium |
-     * db.m3.large | db.m3.xlarge | db.m3.2xlarge | db.m4.large | db.m4.xlarge |
-     * db.m4.2xlarge | db.m4.4xlarge | db.m4.10xlarge | db.r3.large | db.r3.xlarge |
-     * db.r3.2xlarge | db.r3.4xlarge | db.r3.8xlarge | db.t2.micro | db.t2.small |
-     * db.t2.medium | db.t2.large</code> </p>
+     * <a>DescribeOrderableDBInstanceOptions</a> action. Note that not all instance
+     * classes are available in all regions for all DB engines. </p> <p> Passing a
+     * value for this setting causes an outage during the change and is applied during
+     * the next maintenance window, unless <code>ApplyImmediately</code> is specified
+     * as <code>true</code> for this request. </p> <p>Default: Uses existing
+     * setting</p> <p>Valid Values: <code>db.t1.micro | db.m1.small | db.m1.medium |
+     * db.m1.large | db.m1.xlarge | db.m2.xlarge | db.m2.2xlarge | db.m2.4xlarge |
+     * db.m3.medium | db.m3.large | db.m3.xlarge | db.m3.2xlarge | db.m4.large |
+     * db.m4.xlarge | db.m4.2xlarge | db.m4.4xlarge | db.m4.10xlarge | db.r3.large |
+     * db.r3.xlarge | db.r3.2xlarge | db.r3.4xlarge | db.r3.8xlarge | db.t2.micro |
+     * db.t2.small | db.t2.medium | db.t2.large</code> </p>
      */
     inline ModifyDBInstanceRequest& WithDBInstanceClass(const Aws::String& value) { SetDBInstanceClass(value); return *this;}
 
     /**
      * <p> The new compute and memory capacity of the DB instance. To determine the
      * instance classes that are available for a particular DB engine, use the
-     * <a>DescribeOrderableDBInstanceOptions</a> action. </p> <p> Passing a value for
-     * this setting causes an outage during the change and is applied during the next
-     * maintenance window, unless <code>ApplyImmediately</code> is specified as
-     * <code>true</code> for this request. </p> <p>Default: Uses existing setting</p>
-     * <p>Valid Values: <code>db.t1.micro | db.m1.small | db.m1.medium | db.m1.large |
-     * db.m1.xlarge | db.m2.xlarge | db.m2.2xlarge | db.m2.4xlarge | db.m3.medium |
-     * db.m3.large | db.m3.xlarge | db.m3.2xlarge | db.m4.large | db.m4.xlarge |
-     * db.m4.2xlarge | db.m4.4xlarge | db.m4.10xlarge | db.r3.large | db.r3.xlarge |
-     * db.r3.2xlarge | db.r3.4xlarge | db.r3.8xlarge | db.t2.micro | db.t2.small |
-     * db.t2.medium | db.t2.large</code> </p>
+     * <a>DescribeOrderableDBInstanceOptions</a> action. Note that not all instance
+     * classes are available in all regions for all DB engines. </p> <p> Passing a
+     * value for this setting causes an outage during the change and is applied during
+     * the next maintenance window, unless <code>ApplyImmediately</code> is specified
+     * as <code>true</code> for this request. </p> <p>Default: Uses existing
+     * setting</p> <p>Valid Values: <code>db.t1.micro | db.m1.small | db.m1.medium |
+     * db.m1.large | db.m1.xlarge | db.m2.xlarge | db.m2.2xlarge | db.m2.4xlarge |
+     * db.m3.medium | db.m3.large | db.m3.xlarge | db.m3.2xlarge | db.m4.large |
+     * db.m4.xlarge | db.m4.2xlarge | db.m4.4xlarge | db.m4.10xlarge | db.r3.large |
+     * db.r3.xlarge | db.r3.2xlarge | db.r3.4xlarge | db.r3.8xlarge | db.t2.micro |
+     * db.t2.small | db.t2.medium | db.t2.large</code> </p>
      */
     inline ModifyDBInstanceRequest& WithDBInstanceClass(Aws::String&& value) { SetDBInstanceClass(value); return *this;}
 
     /**
      * <p> The new compute and memory capacity of the DB instance. To determine the
      * instance classes that are available for a particular DB engine, use the
-     * <a>DescribeOrderableDBInstanceOptions</a> action. </p> <p> Passing a value for
-     * this setting causes an outage during the change and is applied during the next
-     * maintenance window, unless <code>ApplyImmediately</code> is specified as
-     * <code>true</code> for this request. </p> <p>Default: Uses existing setting</p>
-     * <p>Valid Values: <code>db.t1.micro | db.m1.small | db.m1.medium | db.m1.large |
-     * db.m1.xlarge | db.m2.xlarge | db.m2.2xlarge | db.m2.4xlarge | db.m3.medium |
-     * db.m3.large | db.m3.xlarge | db.m3.2xlarge | db.m4.large | db.m4.xlarge |
-     * db.m4.2xlarge | db.m4.4xlarge | db.m4.10xlarge | db.r3.large | db.r3.xlarge |
-     * db.r3.2xlarge | db.r3.4xlarge | db.r3.8xlarge | db.t2.micro | db.t2.small |
-     * db.t2.medium | db.t2.large</code> </p>
+     * <a>DescribeOrderableDBInstanceOptions</a> action. Note that not all instance
+     * classes are available in all regions for all DB engines. </p> <p> Passing a
+     * value for this setting causes an outage during the change and is applied during
+     * the next maintenance window, unless <code>ApplyImmediately</code> is specified
+     * as <code>true</code> for this request. </p> <p>Default: Uses existing
+     * setting</p> <p>Valid Values: <code>db.t1.micro | db.m1.small | db.m1.medium |
+     * db.m1.large | db.m1.xlarge | db.m2.xlarge | db.m2.2xlarge | db.m2.4xlarge |
+     * db.m3.medium | db.m3.large | db.m3.xlarge | db.m3.2xlarge | db.m4.large |
+     * db.m4.xlarge | db.m4.2xlarge | db.m4.4xlarge | db.m4.10xlarge | db.r3.large |
+     * db.r3.xlarge | db.r3.2xlarge | db.r3.4xlarge | db.r3.8xlarge | db.t2.micro |
+     * db.t2.small | db.t2.medium | db.t2.large</code> </p>
      */
     inline ModifyDBInstanceRequest& WithDBInstanceClass(const char* value) { SetDBInstanceClass(value); return *this;}
 

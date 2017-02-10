@@ -319,76 +319,100 @@ namespace Model
         virtual ~DeviceFarmClient();
 
         /**
-         * <p>Creates a device pool.</p>
+         * <p>Creates a device pool.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/CreateDevicePool">AWS
+         * API Reference</a></p>
          */
         virtual Model::CreateDevicePoolOutcome CreateDevicePool(const Model::CreateDevicePoolRequest& request) const;
 
         /**
-         * <p>Creates a device pool.</p>
+         * <p>Creates a device pool.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/CreateDevicePool">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::CreateDevicePoolOutcomeCallable CreateDevicePoolCallable(const Model::CreateDevicePoolRequest& request) const;
 
         /**
-         * <p>Creates a device pool.</p>
+         * <p>Creates a device pool.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/CreateDevicePool">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateDevicePoolAsync(const Model::CreateDevicePoolRequest& request, const CreateDevicePoolResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a new project.</p>
+         * <p>Creates a new project.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/CreateProject">AWS
+         * API Reference</a></p>
          */
         virtual Model::CreateProjectOutcome CreateProject(const Model::CreateProjectRequest& request) const;
 
         /**
-         * <p>Creates a new project.</p>
+         * <p>Creates a new project.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/CreateProject">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::CreateProjectOutcomeCallable CreateProjectCallable(const Model::CreateProjectRequest& request) const;
 
         /**
-         * <p>Creates a new project.</p>
+         * <p>Creates a new project.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/CreateProject">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateProjectAsync(const Model::CreateProjectRequest& request, const CreateProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Specifies and starts a remote access session.</p>
+         * <p>Specifies and starts a remote access session.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/CreateRemoteAccessSession">AWS
+         * API Reference</a></p>
          */
         virtual Model::CreateRemoteAccessSessionOutcome CreateRemoteAccessSession(const Model::CreateRemoteAccessSessionRequest& request) const;
 
         /**
-         * <p>Specifies and starts a remote access session.</p>
+         * <p>Specifies and starts a remote access session.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/CreateRemoteAccessSession">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::CreateRemoteAccessSessionOutcomeCallable CreateRemoteAccessSessionCallable(const Model::CreateRemoteAccessSessionRequest& request) const;
 
         /**
-         * <p>Specifies and starts a remote access session.</p>
+         * <p>Specifies and starts a remote access session.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/CreateRemoteAccessSession">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateRemoteAccessSessionAsync(const Model::CreateRemoteAccessSessionRequest& request, const CreateRemoteAccessSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Uploads an app or test scripts.</p>
+         * <p>Uploads an app or test scripts.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/CreateUpload">AWS
+         * API Reference</a></p>
          */
         virtual Model::CreateUploadOutcome CreateUpload(const Model::CreateUploadRequest& request) const;
 
         /**
-         * <p>Uploads an app or test scripts.</p>
+         * <p>Uploads an app or test scripts.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/CreateUpload">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::CreateUploadOutcomeCallable CreateUploadCallable(const Model::CreateUploadRequest& request) const;
 
         /**
-         * <p>Uploads an app or test scripts.</p>
+         * <p>Uploads an app or test scripts.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/CreateUpload">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -396,13 +420,17 @@ namespace Model
 
         /**
          * <p>Deletes a device pool given the pool ARN. Does not allow deletion of curated
-         * pools owned by the system.</p>
+         * pools owned by the system.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/DeleteDevicePool">AWS
+         * API Reference</a></p>
          */
         virtual Model::DeleteDevicePoolOutcome DeleteDevicePool(const Model::DeleteDevicePoolRequest& request) const;
 
         /**
          * <p>Deletes a device pool given the pool ARN. Does not allow deletion of curated
-         * pools owned by the system.</p>
+         * pools owned by the system.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/DeleteDevicePool">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -410,7 +438,9 @@ namespace Model
 
         /**
          * <p>Deletes a device pool given the pool ARN. Does not allow deletion of curated
-         * pools owned by the system.</p>
+         * pools owned by the system.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/DeleteDevicePool">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -418,13 +448,19 @@ namespace Model
 
         /**
          * <p>Deletes an AWS Device Farm project, given the project ARN.</p> <p>
-         * <b>Note</b> Deleting this resource does not stop an in-progress run.</p>
+         * <b>Note</b> Deleting this resource does not stop an in-progress
+         * run.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/DeleteProject">AWS
+         * API Reference</a></p>
          */
         virtual Model::DeleteProjectOutcome DeleteProject(const Model::DeleteProjectRequest& request) const;
 
         /**
          * <p>Deletes an AWS Device Farm project, given the project ARN.</p> <p>
-         * <b>Note</b> Deleting this resource does not stop an in-progress run.</p>
+         * <b>Note</b> Deleting this resource does not stop an in-progress
+         * run.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/DeleteProject">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -432,26 +468,38 @@ namespace Model
 
         /**
          * <p>Deletes an AWS Device Farm project, given the project ARN.</p> <p>
-         * <b>Note</b> Deleting this resource does not stop an in-progress run.</p>
+         * <b>Note</b> Deleting this resource does not stop an in-progress
+         * run.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/DeleteProject">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteProjectAsync(const Model::DeleteProjectRequest& request, const DeleteProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes a completed remote access session and its results.</p>
+         * <p>Deletes a completed remote access session and its results.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/DeleteRemoteAccessSession">AWS
+         * API Reference</a></p>
          */
         virtual Model::DeleteRemoteAccessSessionOutcome DeleteRemoteAccessSession(const Model::DeleteRemoteAccessSessionRequest& request) const;
 
         /**
-         * <p>Deletes a completed remote access session and its results.</p>
+         * <p>Deletes a completed remote access session and its results.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/DeleteRemoteAccessSession">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DeleteRemoteAccessSessionOutcomeCallable DeleteRemoteAccessSessionCallable(const Model::DeleteRemoteAccessSessionRequest& request) const;
 
         /**
-         * <p>Deletes a completed remote access session and its results.</p>
+         * <p>Deletes a completed remote access session and its results.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/DeleteRemoteAccessSession">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -459,13 +507,17 @@ namespace Model
 
         /**
          * <p>Deletes the run, given the run ARN.</p> <p> <b>Note</b> Deleting this
-         * resource does not stop an in-progress run.</p>
+         * resource does not stop an in-progress run.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/DeleteRun">AWS
+         * API Reference</a></p>
          */
         virtual Model::DeleteRunOutcome DeleteRun(const Model::DeleteRunRequest& request) const;
 
         /**
          * <p>Deletes the run, given the run ARN.</p> <p> <b>Note</b> Deleting this
-         * resource does not stop an in-progress run.</p>
+         * resource does not stop an in-progress run.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/DeleteRun">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -473,26 +525,34 @@ namespace Model
 
         /**
          * <p>Deletes the run, given the run ARN.</p> <p> <b>Note</b> Deleting this
-         * resource does not stop an in-progress run.</p>
+         * resource does not stop an in-progress run.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/DeleteRun">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteRunAsync(const Model::DeleteRunRequest& request, const DeleteRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes an upload given the upload ARN.</p>
+         * <p>Deletes an upload given the upload ARN.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/DeleteUpload">AWS
+         * API Reference</a></p>
          */
         virtual Model::DeleteUploadOutcome DeleteUpload(const Model::DeleteUploadRequest& request) const;
 
         /**
-         * <p>Deletes an upload given the upload ARN.</p>
+         * <p>Deletes an upload given the upload ARN.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/DeleteUpload">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DeleteUploadOutcomeCallable DeleteUploadCallable(const Model::DeleteUploadRequest& request) const;
 
         /**
-         * <p>Deletes an upload given the upload ARN.</p>
+         * <p>Deletes an upload given the upload ARN.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/DeleteUpload">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -500,13 +560,17 @@ namespace Model
 
         /**
          * <p>Returns the number of unmetered iOS and/or unmetered Android devices that
-         * have been purchased by the account.</p>
+         * have been purchased by the account.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetAccountSettings">AWS
+         * API Reference</a></p>
          */
         virtual Model::GetAccountSettingsOutcome GetAccountSettings(const Model::GetAccountSettingsRequest& request) const;
 
         /**
          * <p>Returns the number of unmetered iOS and/or unmetered Android devices that
-         * have been purchased by the account.</p>
+         * have been purchased by the account.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetAccountSettings">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -514,83 +578,112 @@ namespace Model
 
         /**
          * <p>Returns the number of unmetered iOS and/or unmetered Android devices that
-         * have been purchased by the account.</p>
+         * have been purchased by the account.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetAccountSettings">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetAccountSettingsAsync(const Model::GetAccountSettingsRequest& request, const GetAccountSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Gets information about a unique device type.</p>
+         * <p>Gets information about a unique device type.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetDevice">AWS
+         * API Reference</a></p>
          */
         virtual Model::GetDeviceOutcome GetDevice(const Model::GetDeviceRequest& request) const;
 
         /**
-         * <p>Gets information about a unique device type.</p>
+         * <p>Gets information about a unique device type.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetDevice">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::GetDeviceOutcomeCallable GetDeviceCallable(const Model::GetDeviceRequest& request) const;
 
         /**
-         * <p>Gets information about a unique device type.</p>
+         * <p>Gets information about a unique device type.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetDevice">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetDeviceAsync(const Model::GetDeviceRequest& request, const GetDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Gets information about a device pool.</p>
+         * <p>Gets information about a device pool.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetDevicePool">AWS
+         * API Reference</a></p>
          */
         virtual Model::GetDevicePoolOutcome GetDevicePool(const Model::GetDevicePoolRequest& request) const;
 
         /**
-         * <p>Gets information about a device pool.</p>
+         * <p>Gets information about a device pool.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetDevicePool">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::GetDevicePoolOutcomeCallable GetDevicePoolCallable(const Model::GetDevicePoolRequest& request) const;
 
         /**
-         * <p>Gets information about a device pool.</p>
+         * <p>Gets information about a device pool.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetDevicePool">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetDevicePoolAsync(const Model::GetDevicePoolRequest& request, const GetDevicePoolResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Gets information about compatibility with a device pool.</p>
+         * <p>Gets information about compatibility with a device pool.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetDevicePoolCompatibility">AWS
+         * API Reference</a></p>
          */
         virtual Model::GetDevicePoolCompatibilityOutcome GetDevicePoolCompatibility(const Model::GetDevicePoolCompatibilityRequest& request) const;
 
         /**
-         * <p>Gets information about compatibility with a device pool.</p>
+         * <p>Gets information about compatibility with a device pool.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetDevicePoolCompatibility">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::GetDevicePoolCompatibilityOutcomeCallable GetDevicePoolCompatibilityCallable(const Model::GetDevicePoolCompatibilityRequest& request) const;
 
         /**
-         * <p>Gets information about compatibility with a device pool.</p>
+         * <p>Gets information about compatibility with a device pool.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetDevicePoolCompatibility">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetDevicePoolCompatibilityAsync(const Model::GetDevicePoolCompatibilityRequest& request, const GetDevicePoolCompatibilityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Gets information about a job.</p>
+         * <p>Gets information about a job.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetJob">AWS
+         * API Reference</a></p>
          */
         virtual Model::GetJobOutcome GetJob(const Model::GetJobRequest& request) const;
 
         /**
-         * <p>Gets information about a job.</p>
+         * <p>Gets information about a job.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetJob">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::GetJobOutcomeCallable GetJobCallable(const Model::GetJobRequest& request) const;
 
         /**
-         * <p>Gets information about a job.</p>
+         * <p>Gets information about a job.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetJob">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -603,7 +696,10 @@ namespace Model
          * <code>NotEligible</code> error if the user is not permitted to invoke the
          * operation. Please contact <a
          * href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a>
-         * if you believe that you should be able to invoke this operation.</p>
+         * if you believe that you should be able to invoke this operation.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetOfferingStatus">AWS
+         * API Reference</a></p>
          */
         virtual Model::GetOfferingStatusOutcome GetOfferingStatus(const Model::GetOfferingStatusRequest& request) const;
 
@@ -614,7 +710,10 @@ namespace Model
          * <code>NotEligible</code> error if the user is not permitted to invoke the
          * operation. Please contact <a
          * href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a>
-         * if you believe that you should be able to invoke this operation.</p>
+         * if you believe that you should be able to invoke this operation.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetOfferingStatus">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -627,121 +726,163 @@ namespace Model
          * <code>NotEligible</code> error if the user is not permitted to invoke the
          * operation. Please contact <a
          * href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a>
-         * if you believe that you should be able to invoke this operation.</p>
+         * if you believe that you should be able to invoke this operation.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetOfferingStatus">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetOfferingStatusAsync(const Model::GetOfferingStatusRequest& request, const GetOfferingStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Gets information about a project.</p>
+         * <p>Gets information about a project.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetProject">AWS
+         * API Reference</a></p>
          */
         virtual Model::GetProjectOutcome GetProject(const Model::GetProjectRequest& request) const;
 
         /**
-         * <p>Gets information about a project.</p>
+         * <p>Gets information about a project.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetProject">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::GetProjectOutcomeCallable GetProjectCallable(const Model::GetProjectRequest& request) const;
 
         /**
-         * <p>Gets information about a project.</p>
+         * <p>Gets information about a project.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetProject">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetProjectAsync(const Model::GetProjectRequest& request, const GetProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns a link to a currently running remote access session.</p>
+         * <p>Returns a link to a currently running remote access session.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetRemoteAccessSession">AWS
+         * API Reference</a></p>
          */
         virtual Model::GetRemoteAccessSessionOutcome GetRemoteAccessSession(const Model::GetRemoteAccessSessionRequest& request) const;
 
         /**
-         * <p>Returns a link to a currently running remote access session.</p>
+         * <p>Returns a link to a currently running remote access session.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetRemoteAccessSession">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::GetRemoteAccessSessionOutcomeCallable GetRemoteAccessSessionCallable(const Model::GetRemoteAccessSessionRequest& request) const;
 
         /**
-         * <p>Returns a link to a currently running remote access session.</p>
+         * <p>Returns a link to a currently running remote access session.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetRemoteAccessSession">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetRemoteAccessSessionAsync(const Model::GetRemoteAccessSessionRequest& request, const GetRemoteAccessSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Gets information about a run.</p>
+         * <p>Gets information about a run.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetRun">AWS
+         * API Reference</a></p>
          */
         virtual Model::GetRunOutcome GetRun(const Model::GetRunRequest& request) const;
 
         /**
-         * <p>Gets information about a run.</p>
+         * <p>Gets information about a run.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetRun">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::GetRunOutcomeCallable GetRunCallable(const Model::GetRunRequest& request) const;
 
         /**
-         * <p>Gets information about a run.</p>
+         * <p>Gets information about a run.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetRun">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetRunAsync(const Model::GetRunRequest& request, const GetRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Gets information about a suite.</p>
+         * <p>Gets information about a suite.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetSuite">AWS
+         * API Reference</a></p>
          */
         virtual Model::GetSuiteOutcome GetSuite(const Model::GetSuiteRequest& request) const;
 
         /**
-         * <p>Gets information about a suite.</p>
+         * <p>Gets information about a suite.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetSuite">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::GetSuiteOutcomeCallable GetSuiteCallable(const Model::GetSuiteRequest& request) const;
 
         /**
-         * <p>Gets information about a suite.</p>
+         * <p>Gets information about a suite.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetSuite">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetSuiteAsync(const Model::GetSuiteRequest& request, const GetSuiteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Gets information about a test.</p>
+         * <p>Gets information about a test.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetTest">AWS
+         * API Reference</a></p>
          */
         virtual Model::GetTestOutcome GetTest(const Model::GetTestRequest& request) const;
 
         /**
-         * <p>Gets information about a test.</p>
+         * <p>Gets information about a test.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetTest">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::GetTestOutcomeCallable GetTestCallable(const Model::GetTestRequest& request) const;
 
         /**
-         * <p>Gets information about a test.</p>
+         * <p>Gets information about a test.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetTest">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetTestAsync(const Model::GetTestRequest& request, const GetTestResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Gets information about an upload.</p>
+         * <p>Gets information about an upload.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetUpload">AWS
+         * API Reference</a></p>
          */
         virtual Model::GetUploadOutcome GetUpload(const Model::GetUploadRequest& request) const;
 
         /**
-         * <p>Gets information about an upload.</p>
+         * <p>Gets information about an upload.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetUpload">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::GetUploadOutcomeCallable GetUploadCallable(const Model::GetUploadRequest& request) const;
 
         /**
-         * <p>Gets information about an upload.</p>
+         * <p>Gets information about an upload.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetUpload">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -750,14 +891,18 @@ namespace Model
         /**
          * <p>Installs an application to the device in a remote access session. For Android
          * applications, the file must be in .apk format. For iOS applications, the file
-         * must be in .ipa format.</p>
+         * must be in .ipa format.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/InstallToRemoteAccessSession">AWS
+         * API Reference</a></p>
          */
         virtual Model::InstallToRemoteAccessSessionOutcome InstallToRemoteAccessSession(const Model::InstallToRemoteAccessSessionRequest& request) const;
 
         /**
          * <p>Installs an application to the device in a remote access session. For Android
          * applications, the file must be in .apk format. For iOS applications, the file
-         * must be in .ipa format.</p>
+         * must be in .ipa format.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/InstallToRemoteAccessSession">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -766,83 +911,109 @@ namespace Model
         /**
          * <p>Installs an application to the device in a remote access session. For Android
          * applications, the file must be in .apk format. For iOS applications, the file
-         * must be in .ipa format.</p>
+         * must be in .ipa format.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/InstallToRemoteAccessSession">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void InstallToRemoteAccessSessionAsync(const Model::InstallToRemoteAccessSessionRequest& request, const InstallToRemoteAccessSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Gets information about artifacts.</p>
+         * <p>Gets information about artifacts.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListArtifacts">AWS
+         * API Reference</a></p>
          */
         virtual Model::ListArtifactsOutcome ListArtifacts(const Model::ListArtifactsRequest& request) const;
 
         /**
-         * <p>Gets information about artifacts.</p>
+         * <p>Gets information about artifacts.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListArtifacts">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListArtifactsOutcomeCallable ListArtifactsCallable(const Model::ListArtifactsRequest& request) const;
 
         /**
-         * <p>Gets information about artifacts.</p>
+         * <p>Gets information about artifacts.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListArtifacts">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListArtifactsAsync(const Model::ListArtifactsRequest& request, const ListArtifactsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Gets information about device pools.</p>
+         * <p>Gets information about device pools.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListDevicePools">AWS
+         * API Reference</a></p>
          */
         virtual Model::ListDevicePoolsOutcome ListDevicePools(const Model::ListDevicePoolsRequest& request) const;
 
         /**
-         * <p>Gets information about device pools.</p>
+         * <p>Gets information about device pools.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListDevicePools">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListDevicePoolsOutcomeCallable ListDevicePoolsCallable(const Model::ListDevicePoolsRequest& request) const;
 
         /**
-         * <p>Gets information about device pools.</p>
+         * <p>Gets information about device pools.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListDevicePools">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListDevicePoolsAsync(const Model::ListDevicePoolsRequest& request, const ListDevicePoolsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Gets information about unique device types.</p>
+         * <p>Gets information about unique device types.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListDevices">AWS
+         * API Reference</a></p>
          */
         virtual Model::ListDevicesOutcome ListDevices(const Model::ListDevicesRequest& request) const;
 
         /**
-         * <p>Gets information about unique device types.</p>
+         * <p>Gets information about unique device types.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListDevices">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListDevicesOutcomeCallable ListDevicesCallable(const Model::ListDevicesRequest& request) const;
 
         /**
-         * <p>Gets information about unique device types.</p>
+         * <p>Gets information about unique device types.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListDevices">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListDevicesAsync(const Model::ListDevicesRequest& request, const ListDevicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Gets information about jobs.</p>
+         * <p>Gets information about jobs.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListJobs">AWS
+         * API Reference</a></p>
          */
         virtual Model::ListJobsOutcome ListJobs(const Model::ListJobsRequest& request) const;
 
         /**
-         * <p>Gets information about jobs.</p>
+         * <p>Gets information about jobs.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListJobs">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListJobsOutcomeCallable ListJobsCallable(const Model::ListJobsRequest& request) const;
 
         /**
-         * <p>Gets information about jobs.</p>
+         * <p>Gets information about jobs.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListJobs">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -855,7 +1026,10 @@ namespace Model
          * <code>NotEligible</code> error if the user is not permitted to invoke the
          * operation. Please contact <a
          * href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a>
-         * if you believe that you should be able to invoke this operation.</p>
+         * if you believe that you should be able to invoke this operation.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListOfferingTransactions">AWS
+         * API Reference</a></p>
          */
         virtual Model::ListOfferingTransactionsOutcome ListOfferingTransactions(const Model::ListOfferingTransactionsRequest& request) const;
 
@@ -866,7 +1040,10 @@ namespace Model
          * <code>NotEligible</code> error if the user is not permitted to invoke the
          * operation. Please contact <a
          * href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a>
-         * if you believe that you should be able to invoke this operation.</p>
+         * if you believe that you should be able to invoke this operation.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListOfferingTransactions">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -879,7 +1056,10 @@ namespace Model
          * <code>NotEligible</code> error if the user is not permitted to invoke the
          * operation. Please contact <a
          * href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a>
-         * if you believe that you should be able to invoke this operation.</p>
+         * if you believe that you should be able to invoke this operation.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListOfferingTransactions">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -891,7 +1071,10 @@ namespace Model
          * frequency for that offering. The API returns a <code>NotEligible</code> error if
          * the user is not permitted to invoke the operation. Please contact <a
          * href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a>
-         * if you believe that you should be able to invoke this operation.</p>
+         * if you believe that you should be able to invoke this operation.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListOfferings">AWS
+         * API Reference</a></p>
          */
         virtual Model::ListOfferingsOutcome ListOfferings(const Model::ListOfferingsRequest& request) const;
 
@@ -901,7 +1084,10 @@ namespace Model
          * frequency for that offering. The API returns a <code>NotEligible</code> error if
          * the user is not permitted to invoke the operation. Please contact <a
          * href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a>
-         * if you believe that you should be able to invoke this operation.</p>
+         * if you believe that you should be able to invoke this operation.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListOfferings">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -913,159 +1099,222 @@ namespace Model
          * frequency for that offering. The API returns a <code>NotEligible</code> error if
          * the user is not permitted to invoke the operation. Please contact <a
          * href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a>
-         * if you believe that you should be able to invoke this operation.</p>
+         * if you believe that you should be able to invoke this operation.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListOfferings">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListOfferingsAsync(const Model::ListOfferingsRequest& request, const ListOfferingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Gets information about projects.</p>
+         * <p>Gets information about projects.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListProjects">AWS
+         * API Reference</a></p>
          */
         virtual Model::ListProjectsOutcome ListProjects(const Model::ListProjectsRequest& request) const;
 
         /**
-         * <p>Gets information about projects.</p>
+         * <p>Gets information about projects.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListProjects">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListProjectsOutcomeCallable ListProjectsCallable(const Model::ListProjectsRequest& request) const;
 
         /**
-         * <p>Gets information about projects.</p>
+         * <p>Gets information about projects.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListProjects">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListProjectsAsync(const Model::ListProjectsRequest& request, const ListProjectsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns a list of all currently running remote access sessions.</p>
+         * <p>Returns a list of all currently running remote access sessions.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListRemoteAccessSessions">AWS
+         * API Reference</a></p>
          */
         virtual Model::ListRemoteAccessSessionsOutcome ListRemoteAccessSessions(const Model::ListRemoteAccessSessionsRequest& request) const;
 
         /**
-         * <p>Returns a list of all currently running remote access sessions.</p>
+         * <p>Returns a list of all currently running remote access sessions.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListRemoteAccessSessions">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListRemoteAccessSessionsOutcomeCallable ListRemoteAccessSessionsCallable(const Model::ListRemoteAccessSessionsRequest& request) const;
 
         /**
-         * <p>Returns a list of all currently running remote access sessions.</p>
+         * <p>Returns a list of all currently running remote access sessions.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListRemoteAccessSessions">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListRemoteAccessSessionsAsync(const Model::ListRemoteAccessSessionsRequest& request, const ListRemoteAccessSessionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Gets information about runs, given an AWS Device Farm project ARN.</p>
+         * <p>Gets information about runs, given an AWS Device Farm project
+         * ARN.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListRuns">AWS
+         * API Reference</a></p>
          */
         virtual Model::ListRunsOutcome ListRuns(const Model::ListRunsRequest& request) const;
 
         /**
-         * <p>Gets information about runs, given an AWS Device Farm project ARN.</p>
+         * <p>Gets information about runs, given an AWS Device Farm project
+         * ARN.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListRuns">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListRunsOutcomeCallable ListRunsCallable(const Model::ListRunsRequest& request) const;
 
         /**
-         * <p>Gets information about runs, given an AWS Device Farm project ARN.</p>
+         * <p>Gets information about runs, given an AWS Device Farm project
+         * ARN.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListRuns">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListRunsAsync(const Model::ListRunsRequest& request, const ListRunsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Gets information about samples, given an AWS Device Farm project ARN</p>
+         * <p>Gets information about samples, given an AWS Device Farm project
+         * ARN</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListSamples">AWS
+         * API Reference</a></p>
          */
         virtual Model::ListSamplesOutcome ListSamples(const Model::ListSamplesRequest& request) const;
 
         /**
-         * <p>Gets information about samples, given an AWS Device Farm project ARN</p>
+         * <p>Gets information about samples, given an AWS Device Farm project
+         * ARN</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListSamples">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListSamplesOutcomeCallable ListSamplesCallable(const Model::ListSamplesRequest& request) const;
 
         /**
-         * <p>Gets information about samples, given an AWS Device Farm project ARN</p>
+         * <p>Gets information about samples, given an AWS Device Farm project
+         * ARN</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListSamples">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListSamplesAsync(const Model::ListSamplesRequest& request, const ListSamplesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Gets information about suites.</p>
+         * <p>Gets information about suites.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListSuites">AWS
+         * API Reference</a></p>
          */
         virtual Model::ListSuitesOutcome ListSuites(const Model::ListSuitesRequest& request) const;
 
         /**
-         * <p>Gets information about suites.</p>
+         * <p>Gets information about suites.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListSuites">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListSuitesOutcomeCallable ListSuitesCallable(const Model::ListSuitesRequest& request) const;
 
         /**
-         * <p>Gets information about suites.</p>
+         * <p>Gets information about suites.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListSuites">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListSuitesAsync(const Model::ListSuitesRequest& request, const ListSuitesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Gets information about tests.</p>
+         * <p>Gets information about tests.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListTests">AWS
+         * API Reference</a></p>
          */
         virtual Model::ListTestsOutcome ListTests(const Model::ListTestsRequest& request) const;
 
         /**
-         * <p>Gets information about tests.</p>
+         * <p>Gets information about tests.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListTests">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListTestsOutcomeCallable ListTestsCallable(const Model::ListTestsRequest& request) const;
 
         /**
-         * <p>Gets information about tests.</p>
+         * <p>Gets information about tests.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListTests">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListTestsAsync(const Model::ListTestsRequest& request, const ListTestsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Gets information about unique problems.</p>
+         * <p>Gets information about unique problems.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListUniqueProblems">AWS
+         * API Reference</a></p>
          */
         virtual Model::ListUniqueProblemsOutcome ListUniqueProblems(const Model::ListUniqueProblemsRequest& request) const;
 
         /**
-         * <p>Gets information about unique problems.</p>
+         * <p>Gets information about unique problems.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListUniqueProblems">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListUniqueProblemsOutcomeCallable ListUniqueProblemsCallable(const Model::ListUniqueProblemsRequest& request) const;
 
         /**
-         * <p>Gets information about unique problems.</p>
+         * <p>Gets information about unique problems.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListUniqueProblems">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListUniqueProblemsAsync(const Model::ListUniqueProblemsRequest& request, const ListUniqueProblemsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Gets information about uploads, given an AWS Device Farm project ARN.</p>
+         * <p>Gets information about uploads, given an AWS Device Farm project
+         * ARN.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListUploads">AWS
+         * API Reference</a></p>
          */
         virtual Model::ListUploadsOutcome ListUploads(const Model::ListUploadsRequest& request) const;
 
         /**
-         * <p>Gets information about uploads, given an AWS Device Farm project ARN.</p>
+         * <p>Gets information about uploads, given an AWS Device Farm project
+         * ARN.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListUploads">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListUploadsOutcomeCallable ListUploadsCallable(const Model::ListUploadsRequest& request) const;
 
         /**
-         * <p>Gets information about uploads, given an AWS Device Farm project ARN.</p>
+         * <p>Gets information about uploads, given an AWS Device Farm project
+         * ARN.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListUploads">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1077,7 +1326,10 @@ namespace Model
          * overridden. The API returns a <code>NotEligible</code> error if the user is not
          * permitted to invoke the operation. Please contact <a
          * href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a>
-         * if you believe that you should be able to invoke this operation.</p>
+         * if you believe that you should be able to invoke this operation.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/PurchaseOffering">AWS
+         * API Reference</a></p>
          */
         virtual Model::PurchaseOfferingOutcome PurchaseOffering(const Model::PurchaseOfferingRequest& request) const;
 
@@ -1087,7 +1339,10 @@ namespace Model
          * overridden. The API returns a <code>NotEligible</code> error if the user is not
          * permitted to invoke the operation. Please contact <a
          * href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a>
-         * if you believe that you should be able to invoke this operation.</p>
+         * if you believe that you should be able to invoke this operation.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/PurchaseOffering">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1099,7 +1354,10 @@ namespace Model
          * overridden. The API returns a <code>NotEligible</code> error if the user is not
          * permitted to invoke the operation. Please contact <a
          * href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a>
-         * if you believe that you should be able to invoke this operation.</p>
+         * if you believe that you should be able to invoke this operation.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/PurchaseOffering">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1111,7 +1369,10 @@ namespace Model
          * <code>NotEligible</code> error if the user is not permitted to invoke the
          * operation. Please contact <a
          * href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a>
-         * if you believe that you should be able to invoke this operation.</p>
+         * if you believe that you should be able to invoke this operation.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/RenewOffering">AWS
+         * API Reference</a></p>
          */
         virtual Model::RenewOfferingOutcome RenewOffering(const Model::RenewOfferingRequest& request) const;
 
@@ -1121,7 +1382,10 @@ namespace Model
          * <code>NotEligible</code> error if the user is not permitted to invoke the
          * operation. Please contact <a
          * href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a>
-         * if you believe that you should be able to invoke this operation.</p>
+         * if you believe that you should be able to invoke this operation.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/RenewOffering">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1133,45 +1397,60 @@ namespace Model
          * <code>NotEligible</code> error if the user is not permitted to invoke the
          * operation. Please contact <a
          * href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a>
-         * if you believe that you should be able to invoke this operation.</p>
+         * if you believe that you should be able to invoke this operation.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/RenewOffering">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void RenewOfferingAsync(const Model::RenewOfferingRequest& request, const RenewOfferingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Schedules a run.</p>
+         * <p>Schedules a run.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ScheduleRun">AWS
+         * API Reference</a></p>
          */
         virtual Model::ScheduleRunOutcome ScheduleRun(const Model::ScheduleRunRequest& request) const;
 
         /**
-         * <p>Schedules a run.</p>
+         * <p>Schedules a run.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ScheduleRun">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ScheduleRunOutcomeCallable ScheduleRunCallable(const Model::ScheduleRunRequest& request) const;
 
         /**
-         * <p>Schedules a run.</p>
+         * <p>Schedules a run.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ScheduleRun">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ScheduleRunAsync(const Model::ScheduleRunRequest& request, const ScheduleRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Ends a specified remote access session.</p>
+         * <p>Ends a specified remote access session.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/StopRemoteAccessSession">AWS
+         * API Reference</a></p>
          */
         virtual Model::StopRemoteAccessSessionOutcome StopRemoteAccessSession(const Model::StopRemoteAccessSessionRequest& request) const;
 
         /**
-         * <p>Ends a specified remote access session.</p>
+         * <p>Ends a specified remote access session.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/StopRemoteAccessSession">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::StopRemoteAccessSessionOutcomeCallable StopRemoteAccessSessionCallable(const Model::StopRemoteAccessSessionRequest& request) const;
 
         /**
-         * <p>Ends a specified remote access session.</p>
+         * <p>Ends a specified remote access session.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/StopRemoteAccessSession">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1183,7 +1462,10 @@ namespace Model
          * you will not be billed for these devices. On devices where tests have started
          * executing, Setup Suite and Teardown Suite tests will run to completion before
          * stopping execution on those devices. You will be billed for Setup, Teardown, and
-         * any tests that were in progress or already completed.</p>
+         * any tests that were in progress or already completed.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/StopRun">AWS
+         * API Reference</a></p>
          */
         virtual Model::StopRunOutcome StopRun(const Model::StopRunRequest& request) const;
 
@@ -1193,7 +1475,10 @@ namespace Model
          * you will not be billed for these devices. On devices where tests have started
          * executing, Setup Suite and Teardown Suite tests will run to completion before
          * stopping execution on those devices. You will be billed for Setup, Teardown, and
-         * any tests that were in progress or already completed.</p>
+         * any tests that were in progress or already completed.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/StopRun">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1205,7 +1490,10 @@ namespace Model
          * you will not be billed for these devices. On devices where tests have started
          * executing, Setup Suite and Teardown Suite tests will run to completion before
          * stopping execution on those devices. You will be billed for Setup, Teardown, and
-         * any tests that were in progress or already completed.</p>
+         * any tests that were in progress or already completed.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/StopRun">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1214,14 +1502,18 @@ namespace Model
         /**
          * <p>Modifies the name, description, and rules in a device pool given the
          * attributes and the pool ARN. Rule updates are all-or-nothing, meaning they can
-         * only be updated as a whole (or not at all).</p>
+         * only be updated as a whole (or not at all).</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/UpdateDevicePool">AWS
+         * API Reference</a></p>
          */
         virtual Model::UpdateDevicePoolOutcome UpdateDevicePool(const Model::UpdateDevicePoolRequest& request) const;
 
         /**
          * <p>Modifies the name, description, and rules in a device pool given the
          * attributes and the pool ARN. Rule updates are all-or-nothing, meaning they can
-         * only be updated as a whole (or not at all).</p>
+         * only be updated as a whole (or not at all).</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/UpdateDevicePool">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1230,7 +1522,9 @@ namespace Model
         /**
          * <p>Modifies the name, description, and rules in a device pool given the
          * attributes and the pool ARN. Rule updates are all-or-nothing, meaning they can
-         * only be updated as a whole (or not at all).</p>
+         * only be updated as a whole (or not at all).</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/UpdateDevicePool">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1238,13 +1532,17 @@ namespace Model
 
         /**
          * <p>Modifies the specified project name, given the project ARN and a new
-         * name.</p>
+         * name.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/UpdateProject">AWS
+         * API Reference</a></p>
          */
         virtual Model::UpdateProjectOutcome UpdateProject(const Model::UpdateProjectRequest& request) const;
 
         /**
          * <p>Modifies the specified project name, given the project ARN and a new
-         * name.</p>
+         * name.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/UpdateProject">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1252,7 +1550,9 @@ namespace Model
 
         /**
          * <p>Modifies the specified project name, given the project ARN and a new
-         * name.</p>
+         * name.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/UpdateProject">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */

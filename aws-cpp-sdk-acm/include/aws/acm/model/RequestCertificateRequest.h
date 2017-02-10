@@ -37,64 +37,64 @@ namespace Model
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
     /**
-     * <p>Fully qualified domain name (FQDN), such as www.example.com, of the site you
-     * want to secure with an ACM Certificate. Use an asterisk (*) to create a wildcard
-     * certificate that protects several sites in the same domain. For example,
-     * *.example.com protects www.example.com, site.example.com, and
+     * <p>Fully qualified domain name (FQDN), such as www.example.com, of the site that
+     * you want to secure with an ACM Certificate. Use an asterisk (*) to create a
+     * wildcard certificate that protects several sites in the same domain. For
+     * example, *.example.com protects www.example.com, site.example.com, and
      * images.example.com.</p>
      */
     inline const Aws::String& GetDomainName() const{ return m_domainName; }
 
     /**
-     * <p>Fully qualified domain name (FQDN), such as www.example.com, of the site you
-     * want to secure with an ACM Certificate. Use an asterisk (*) to create a wildcard
-     * certificate that protects several sites in the same domain. For example,
-     * *.example.com protects www.example.com, site.example.com, and
+     * <p>Fully qualified domain name (FQDN), such as www.example.com, of the site that
+     * you want to secure with an ACM Certificate. Use an asterisk (*) to create a
+     * wildcard certificate that protects several sites in the same domain. For
+     * example, *.example.com protects www.example.com, site.example.com, and
      * images.example.com.</p>
      */
     inline void SetDomainName(const Aws::String& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
 
     /**
-     * <p>Fully qualified domain name (FQDN), such as www.example.com, of the site you
-     * want to secure with an ACM Certificate. Use an asterisk (*) to create a wildcard
-     * certificate that protects several sites in the same domain. For example,
-     * *.example.com protects www.example.com, site.example.com, and
+     * <p>Fully qualified domain name (FQDN), such as www.example.com, of the site that
+     * you want to secure with an ACM Certificate. Use an asterisk (*) to create a
+     * wildcard certificate that protects several sites in the same domain. For
+     * example, *.example.com protects www.example.com, site.example.com, and
      * images.example.com.</p>
      */
     inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
 
     /**
-     * <p>Fully qualified domain name (FQDN), such as www.example.com, of the site you
-     * want to secure with an ACM Certificate. Use an asterisk (*) to create a wildcard
-     * certificate that protects several sites in the same domain. For example,
-     * *.example.com protects www.example.com, site.example.com, and
+     * <p>Fully qualified domain name (FQDN), such as www.example.com, of the site that
+     * you want to secure with an ACM Certificate. Use an asterisk (*) to create a
+     * wildcard certificate that protects several sites in the same domain. For
+     * example, *.example.com protects www.example.com, site.example.com, and
      * images.example.com.</p>
      */
     inline void SetDomainName(const char* value) { m_domainNameHasBeenSet = true; m_domainName.assign(value); }
 
     /**
-     * <p>Fully qualified domain name (FQDN), such as www.example.com, of the site you
-     * want to secure with an ACM Certificate. Use an asterisk (*) to create a wildcard
-     * certificate that protects several sites in the same domain. For example,
-     * *.example.com protects www.example.com, site.example.com, and
+     * <p>Fully qualified domain name (FQDN), such as www.example.com, of the site that
+     * you want to secure with an ACM Certificate. Use an asterisk (*) to create a
+     * wildcard certificate that protects several sites in the same domain. For
+     * example, *.example.com protects www.example.com, site.example.com, and
      * images.example.com.</p>
      */
     inline RequestCertificateRequest& WithDomainName(const Aws::String& value) { SetDomainName(value); return *this;}
 
     /**
-     * <p>Fully qualified domain name (FQDN), such as www.example.com, of the site you
-     * want to secure with an ACM Certificate. Use an asterisk (*) to create a wildcard
-     * certificate that protects several sites in the same domain. For example,
-     * *.example.com protects www.example.com, site.example.com, and
+     * <p>Fully qualified domain name (FQDN), such as www.example.com, of the site that
+     * you want to secure with an ACM Certificate. Use an asterisk (*) to create a
+     * wildcard certificate that protects several sites in the same domain. For
+     * example, *.example.com protects www.example.com, site.example.com, and
      * images.example.com.</p>
      */
     inline RequestCertificateRequest& WithDomainName(Aws::String&& value) { SetDomainName(value); return *this;}
 
     /**
-     * <p>Fully qualified domain name (FQDN), such as www.example.com, of the site you
-     * want to secure with an ACM Certificate. Use an asterisk (*) to create a wildcard
-     * certificate that protects several sites in the same domain. For example,
-     * *.example.com protects www.example.com, site.example.com, and
+     * <p>Fully qualified domain name (FQDN), such as www.example.com, of the site that
+     * you want to secure with an ACM Certificate. Use an asterisk (*) to create a
+     * wildcard certificate that protects several sites in the same domain. For
+     * example, *.example.com protects www.example.com, site.example.com, and
      * images.example.com.</p>
      */
     inline RequestCertificateRequest& WithDomainName(const char* value) { SetDomainName(value); return *this;}
@@ -241,100 +241,44 @@ namespace Model
     inline RequestCertificateRequest& WithIdempotencyToken(const char* value) { SetIdempotencyToken(value); return *this;}
 
     /**
-     * <p>The base validation domain that will act as the suffix of the email addresses
-     * that are used to send the emails. This must be the same as the
-     * <code>Domain</code> value or a superdomain of the <code>Domain</code> value. For
-     * example, if you requested a certificate for <code>test.example.com</code> and
-     * specify <b>DomainValidationOptions</b> of <code>example.com</code>, ACM sends
-     * email to the domain registrant, technical contact, and administrative contact in
-     * WHOIS and the following five addresses:</p> <ul> <li> <p>admin@example.com</p>
-     * </li> <li> <p>administrator@example.com</p> </li> <li>
-     * <p>hostmaster@example.com</p> </li> <li> <p>postmaster@example.com</p> </li>
-     * <li> <p>webmaster@example.com</p> </li> </ul>
+     * <p>The domain name that you want ACM to use to send you emails to validate your
+     * ownership of the domain.</p>
      */
     inline const Aws::Vector<DomainValidationOption>& GetDomainValidationOptions() const{ return m_domainValidationOptions; }
 
     /**
-     * <p>The base validation domain that will act as the suffix of the email addresses
-     * that are used to send the emails. This must be the same as the
-     * <code>Domain</code> value or a superdomain of the <code>Domain</code> value. For
-     * example, if you requested a certificate for <code>test.example.com</code> and
-     * specify <b>DomainValidationOptions</b> of <code>example.com</code>, ACM sends
-     * email to the domain registrant, technical contact, and administrative contact in
-     * WHOIS and the following five addresses:</p> <ul> <li> <p>admin@example.com</p>
-     * </li> <li> <p>administrator@example.com</p> </li> <li>
-     * <p>hostmaster@example.com</p> </li> <li> <p>postmaster@example.com</p> </li>
-     * <li> <p>webmaster@example.com</p> </li> </ul>
+     * <p>The domain name that you want ACM to use to send you emails to validate your
+     * ownership of the domain.</p>
      */
     inline void SetDomainValidationOptions(const Aws::Vector<DomainValidationOption>& value) { m_domainValidationOptionsHasBeenSet = true; m_domainValidationOptions = value; }
 
     /**
-     * <p>The base validation domain that will act as the suffix of the email addresses
-     * that are used to send the emails. This must be the same as the
-     * <code>Domain</code> value or a superdomain of the <code>Domain</code> value. For
-     * example, if you requested a certificate for <code>test.example.com</code> and
-     * specify <b>DomainValidationOptions</b> of <code>example.com</code>, ACM sends
-     * email to the domain registrant, technical contact, and administrative contact in
-     * WHOIS and the following five addresses:</p> <ul> <li> <p>admin@example.com</p>
-     * </li> <li> <p>administrator@example.com</p> </li> <li>
-     * <p>hostmaster@example.com</p> </li> <li> <p>postmaster@example.com</p> </li>
-     * <li> <p>webmaster@example.com</p> </li> </ul>
+     * <p>The domain name that you want ACM to use to send you emails to validate your
+     * ownership of the domain.</p>
      */
     inline void SetDomainValidationOptions(Aws::Vector<DomainValidationOption>&& value) { m_domainValidationOptionsHasBeenSet = true; m_domainValidationOptions = value; }
 
     /**
-     * <p>The base validation domain that will act as the suffix of the email addresses
-     * that are used to send the emails. This must be the same as the
-     * <code>Domain</code> value or a superdomain of the <code>Domain</code> value. For
-     * example, if you requested a certificate for <code>test.example.com</code> and
-     * specify <b>DomainValidationOptions</b> of <code>example.com</code>, ACM sends
-     * email to the domain registrant, technical contact, and administrative contact in
-     * WHOIS and the following five addresses:</p> <ul> <li> <p>admin@example.com</p>
-     * </li> <li> <p>administrator@example.com</p> </li> <li>
-     * <p>hostmaster@example.com</p> </li> <li> <p>postmaster@example.com</p> </li>
-     * <li> <p>webmaster@example.com</p> </li> </ul>
+     * <p>The domain name that you want ACM to use to send you emails to validate your
+     * ownership of the domain.</p>
      */
     inline RequestCertificateRequest& WithDomainValidationOptions(const Aws::Vector<DomainValidationOption>& value) { SetDomainValidationOptions(value); return *this;}
 
     /**
-     * <p>The base validation domain that will act as the suffix of the email addresses
-     * that are used to send the emails. This must be the same as the
-     * <code>Domain</code> value or a superdomain of the <code>Domain</code> value. For
-     * example, if you requested a certificate for <code>test.example.com</code> and
-     * specify <b>DomainValidationOptions</b> of <code>example.com</code>, ACM sends
-     * email to the domain registrant, technical contact, and administrative contact in
-     * WHOIS and the following five addresses:</p> <ul> <li> <p>admin@example.com</p>
-     * </li> <li> <p>administrator@example.com</p> </li> <li>
-     * <p>hostmaster@example.com</p> </li> <li> <p>postmaster@example.com</p> </li>
-     * <li> <p>webmaster@example.com</p> </li> </ul>
+     * <p>The domain name that you want ACM to use to send you emails to validate your
+     * ownership of the domain.</p>
      */
     inline RequestCertificateRequest& WithDomainValidationOptions(Aws::Vector<DomainValidationOption>&& value) { SetDomainValidationOptions(value); return *this;}
 
     /**
-     * <p>The base validation domain that will act as the suffix of the email addresses
-     * that are used to send the emails. This must be the same as the
-     * <code>Domain</code> value or a superdomain of the <code>Domain</code> value. For
-     * example, if you requested a certificate for <code>test.example.com</code> and
-     * specify <b>DomainValidationOptions</b> of <code>example.com</code>, ACM sends
-     * email to the domain registrant, technical contact, and administrative contact in
-     * WHOIS and the following five addresses:</p> <ul> <li> <p>admin@example.com</p>
-     * </li> <li> <p>administrator@example.com</p> </li> <li>
-     * <p>hostmaster@example.com</p> </li> <li> <p>postmaster@example.com</p> </li>
-     * <li> <p>webmaster@example.com</p> </li> </ul>
+     * <p>The domain name that you want ACM to use to send you emails to validate your
+     * ownership of the domain.</p>
      */
     inline RequestCertificateRequest& AddDomainValidationOptions(const DomainValidationOption& value) { m_domainValidationOptionsHasBeenSet = true; m_domainValidationOptions.push_back(value); return *this; }
 
     /**
-     * <p>The base validation domain that will act as the suffix of the email addresses
-     * that are used to send the emails. This must be the same as the
-     * <code>Domain</code> value or a superdomain of the <code>Domain</code> value. For
-     * example, if you requested a certificate for <code>test.example.com</code> and
-     * specify <b>DomainValidationOptions</b> of <code>example.com</code>, ACM sends
-     * email to the domain registrant, technical contact, and administrative contact in
-     * WHOIS and the following five addresses:</p> <ul> <li> <p>admin@example.com</p>
-     * </li> <li> <p>administrator@example.com</p> </li> <li>
-     * <p>hostmaster@example.com</p> </li> <li> <p>postmaster@example.com</p> </li>
-     * <li> <p>webmaster@example.com</p> </li> </ul>
+     * <p>The domain name that you want ACM to use to send you emails to validate your
+     * ownership of the domain.</p>
      */
     inline RequestCertificateRequest& AddDomainValidationOptions(DomainValidationOption&& value) { m_domainValidationOptionsHasBeenSet = true; m_domainValidationOptions.push_back(value); return *this; }
 

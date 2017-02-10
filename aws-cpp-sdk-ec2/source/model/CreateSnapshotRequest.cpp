@@ -33,7 +33,7 @@ Aws::String CreateSnapshotRequest::SerializePayload() const
   ss << "Action=CreateSnapshot&";
   if(m_dryRunHasBeenSet)
   {
-    ss << "DryRun=" << m_dryRun << "&";
+    ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
   if(m_volumeIdHasBeenSet)
@@ -46,7 +46,7 @@ Aws::String CreateSnapshotRequest::SerializePayload() const
     ss << "Description=" << StringUtils::URLEncode(m_description.c_str()) << "&";
   }
 
-  ss << "Version=2016-09-15";
+  ss << "Version=2016-11-15";
   return ss.str();
 }
 

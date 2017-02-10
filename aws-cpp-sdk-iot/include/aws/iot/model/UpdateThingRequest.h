@@ -26,7 +26,9 @@ namespace Model
 {
 
   /**
-   * <p>The input for the UpdateThing operation.</p>
+   * <p>The input for the UpdateThing operation.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/UpdateThingRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_IOT_API UpdateThingRequest : public IoTRequest
   {

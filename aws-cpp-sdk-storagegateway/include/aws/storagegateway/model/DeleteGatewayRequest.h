@@ -25,7 +25,10 @@ namespace Model
 {
 
   /**
-   * <p>A JSON object containing the id of the gateway to delete.</p>
+   * <p>A JSON object containing the id of the gateway to delete.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DeleteGatewayInput">AWS
+   * API Reference</a></p>
    */
   class AWS_STORAGEGATEWAY_API DeleteGatewayRequest : public StorageGatewayRequest
   {

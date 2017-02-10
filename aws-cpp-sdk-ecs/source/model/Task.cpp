@@ -42,7 +42,8 @@ Task::Task() :
     m_stoppedReasonHasBeenSet(false),
     m_createdAtHasBeenSet(false),
     m_startedAtHasBeenSet(false),
-    m_stoppedAtHasBeenSet(false)
+    m_stoppedAtHasBeenSet(false),
+    m_groupHasBeenSet(false)
 {
 }
 
@@ -61,7 +62,8 @@ Task::Task(const JsonValue& jsonValue) :
     m_stoppedReasonHasBeenSet(false),
     m_createdAtHasBeenSet(false),
     m_startedAtHasBeenSet(false),
-    m_stoppedAtHasBeenSet(false)
+    m_stoppedAtHasBeenSet(false),
+    m_groupHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -169,6 +171,13 @@ Task& Task::operator =(const JsonValue& jsonValue)
     m_stoppedAtHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("group"))
+  {
+    m_group = jsonValue.GetString("group");
+
+    m_groupHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -260,6 +269,12 @@ JsonValue Task::Jsonize() const
   if(m_stoppedAtHasBeenSet)
   {
    payload.WithDouble("stoppedAt", m_stoppedAt.SecondsWithMSPrecision());
+  }
+
+  if(m_groupHasBeenSet)
+  {
+   payload.WithString("group", m_group);
+
   }
 
   return payload;

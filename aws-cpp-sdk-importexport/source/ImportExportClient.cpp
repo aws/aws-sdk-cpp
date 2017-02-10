@@ -98,6 +98,16 @@ void ImportExportClient::init(const ClientConfiguration& config)
   m_uri = ss.str();
 }
 
+Aws::String ImportExportClient::ConvertRequestToPresignedUrl(const AmazonSerializableWebServiceRequest& requestToConvert, const char* region) const
+{
+  Aws::StringStream ss;
+  ss << "https://" << ImportExportEndpoint::ForRegion(region);
+  ss << "?" << requestToConvert.SerializePayload();
+
+  URI uri(ss.str());
+  return GeneratePresignedUrl(uri, HttpMethod::HTTP_GET, region, 3600);
+}
+
 CancelJobOutcome ImportExportClient::CancelJob(const CancelJobRequest& request) const
 {
   Aws::StringStream ss;
@@ -295,4 +305,6 @@ void ImportExportClient::UpdateJobAsyncHelper(const UpdateJobRequest& request, c
 {
   handler(this, request, UpdateJob(request), context);
 }
+
+
 

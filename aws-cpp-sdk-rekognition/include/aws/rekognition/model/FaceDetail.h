@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/rekognition/Rekognition_EXPORTS.h>
 #include <aws/rekognition/model/BoundingBox.h>
+#include <aws/rekognition/model/AgeRange.h>
 #include <aws/rekognition/model/Smile.h>
 #include <aws/rekognition/model/Eyeglasses.h>
 #include <aws/rekognition/model/Sunglasses.h>
@@ -44,7 +45,10 @@ namespace Model
 {
 
   /**
-   * <p>Structure containing attributes of the face that the algorithm detected.</p>
+   * <p>Structure containing attributes of the face that the algorithm
+   * detected.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/FaceDetail">AWS
+   * API Reference</a></p>
    */
   class AWS_REKOGNITION_API FaceDetail
   {
@@ -78,6 +82,36 @@ namespace Model
      * <p>Bounding box of the face.</p>
      */
     inline FaceDetail& WithBoundingBox(BoundingBox&& value) { SetBoundingBox(value); return *this;}
+
+    /**
+     * <p>The estimated age range, in years, for the face. Low represents the lowest
+     * estimated age and High represents the highest estimated age.</p>
+     */
+    inline const AgeRange& GetAgeRange() const{ return m_ageRange; }
+
+    /**
+     * <p>The estimated age range, in years, for the face. Low represents the lowest
+     * estimated age and High represents the highest estimated age.</p>
+     */
+    inline void SetAgeRange(const AgeRange& value) { m_ageRangeHasBeenSet = true; m_ageRange = value; }
+
+    /**
+     * <p>The estimated age range, in years, for the face. Low represents the lowest
+     * estimated age and High represents the highest estimated age.</p>
+     */
+    inline void SetAgeRange(AgeRange&& value) { m_ageRangeHasBeenSet = true; m_ageRange = value; }
+
+    /**
+     * <p>The estimated age range, in years, for the face. Low represents the lowest
+     * estimated age and High represents the highest estimated age.</p>
+     */
+    inline FaceDetail& WithAgeRange(const AgeRange& value) { SetAgeRange(value); return *this;}
+
+    /**
+     * <p>The estimated age range, in years, for the face. Low represents the lowest
+     * estimated age and High represents the highest estimated age.</p>
+     */
+    inline FaceDetail& WithAgeRange(AgeRange&& value) { SetAgeRange(value); return *this;}
 
     /**
      * <p>Indicates whether or not the face is smiling, and the confidence level in the
@@ -462,6 +496,8 @@ namespace Model
   private:
     BoundingBox m_boundingBox;
     bool m_boundingBoxHasBeenSet;
+    AgeRange m_ageRange;
+    bool m_ageRangeHasBeenSet;
     Smile m_smile;
     bool m_smileHasBeenSet;
     Eyeglasses m_eyeglasses;

@@ -34,7 +34,7 @@ Aws::String CreatePlacementGroupRequest::SerializePayload() const
   ss << "Action=CreatePlacementGroup&";
   if(m_dryRunHasBeenSet)
   {
-    ss << "DryRun=" << m_dryRun << "&";
+    ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
   if(m_groupNameHasBeenSet)
@@ -47,7 +47,7 @@ Aws::String CreatePlacementGroupRequest::SerializePayload() const
     ss << "Strategy=" << PlacementStrategyMapper::GetNameForPlacementStrategy(m_strategy) << "&";
   }
 
-  ss << "Version=2016-09-15";
+  ss << "Version=2016-11-15";
   return ss.str();
 }
 

@@ -25,7 +25,6 @@ namespace Model
 {
 
   /**
-   * <p>Contains the parameters for DeleteListener.</p>
    */
   class AWS_ELASTICLOADBALANCINGV2_API DeleteListenerRequest : public ElasticLoadBalancingv2Request
   {

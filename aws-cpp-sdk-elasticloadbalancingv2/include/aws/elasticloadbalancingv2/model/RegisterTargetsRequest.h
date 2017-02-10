@@ -27,7 +27,6 @@ namespace Model
 {
 
   /**
-   * <p>Contains the parameters for RegisterTargets.</p>
    */
   class AWS_ELASTICLOADBALANCINGV2_API RegisterTargetsRequest : public ElasticLoadBalancingv2Request
   {

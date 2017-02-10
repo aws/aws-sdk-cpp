@@ -30,6 +30,7 @@ namespace Model
 DestinationDescription::DestinationDescription() : 
     m_destinationIdHasBeenSet(false),
     m_s3DestinationDescriptionHasBeenSet(false),
+    m_extendedS3DestinationDescriptionHasBeenSet(false),
     m_redshiftDestinationDescriptionHasBeenSet(false),
     m_elasticsearchDestinationDescriptionHasBeenSet(false)
 {
@@ -38,6 +39,7 @@ DestinationDescription::DestinationDescription() :
 DestinationDescription::DestinationDescription(const JsonValue& jsonValue) : 
     m_destinationIdHasBeenSet(false),
     m_s3DestinationDescriptionHasBeenSet(false),
+    m_extendedS3DestinationDescriptionHasBeenSet(false),
     m_redshiftDestinationDescriptionHasBeenSet(false),
     m_elasticsearchDestinationDescriptionHasBeenSet(false)
 {
@@ -58,6 +60,13 @@ DestinationDescription& DestinationDescription::operator =(const JsonValue& json
     m_s3DestinationDescription = jsonValue.GetObject("S3DestinationDescription");
 
     m_s3DestinationDescriptionHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ExtendedS3DestinationDescription"))
+  {
+    m_extendedS3DestinationDescription = jsonValue.GetObject("ExtendedS3DestinationDescription");
+
+    m_extendedS3DestinationDescriptionHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("RedshiftDestinationDescription"))
@@ -90,6 +99,12 @@ JsonValue DestinationDescription::Jsonize() const
   if(m_s3DestinationDescriptionHasBeenSet)
   {
    payload.WithObject("S3DestinationDescription", m_s3DestinationDescription.Jsonize());
+
+  }
+
+  if(m_extendedS3DestinationDescriptionHasBeenSet)
+  {
+   payload.WithObject("ExtendedS3DestinationDescription", m_extendedS3DestinationDescription.Jsonize());
 
   }
 

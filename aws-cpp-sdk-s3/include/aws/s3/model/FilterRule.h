@@ -32,7 +32,10 @@ namespace Model
 {
 
   /**
-   * Container for key value pair that defines the criteria for the filter rule.
+   * Container for key value pair that defines the criteria for the filter
+   * rule.<p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/FilterRule">AWS API
+   * Reference</a></p>
    */
   class AWS_S3_API FilterRule
   {

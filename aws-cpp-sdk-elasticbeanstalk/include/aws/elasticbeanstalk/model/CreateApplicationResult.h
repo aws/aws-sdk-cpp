@@ -34,7 +34,10 @@ namespace ElasticBeanstalk
 namespace Model
 {
   /**
-   * <p>Result message containing a single description of an application.</p>
+   * <p>Result message containing a single description of an
+   * application.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/ApplicationDescriptionMessage">AWS
+   * API Reference</a></p>
    */
   class AWS_ELASTICBEANSTALK_API CreateApplicationResult
   {

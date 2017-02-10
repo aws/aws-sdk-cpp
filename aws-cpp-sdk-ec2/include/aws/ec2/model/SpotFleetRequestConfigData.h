@@ -38,7 +38,10 @@ namespace Model
 {
 
   /**
-   * <p>Describes the configuration of a Spot fleet request.</p>
+   * <p>Describes the configuration of a Spot fleet request.</p><p><h3>See Also:</h3>
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/SpotFleetRequestConfigData">AWS
+   * API Reference</a></p>
    */
   class AWS_EC2_API SpotFleetRequestConfigData
   {
@@ -489,6 +492,21 @@ namespace Model
      */
     inline SpotFleetRequestConfigData& WithType(FleetType&& value) { SetType(value); return *this;}
 
+    /**
+     * <p>Indicates whether Spot fleet should replace unhealthy instances.</p>
+     */
+    inline bool GetReplaceUnhealthyInstances() const{ return m_replaceUnhealthyInstances; }
+
+    /**
+     * <p>Indicates whether Spot fleet should replace unhealthy instances.</p>
+     */
+    inline void SetReplaceUnhealthyInstances(bool value) { m_replaceUnhealthyInstancesHasBeenSet = true; m_replaceUnhealthyInstances = value; }
+
+    /**
+     * <p>Indicates whether Spot fleet should replace unhealthy instances.</p>
+     */
+    inline SpotFleetRequestConfigData& WithReplaceUnhealthyInstances(bool value) { SetReplaceUnhealthyInstances(value); return *this;}
+
   private:
     Aws::String m_clientToken;
     bool m_clientTokenHasBeenSet;
@@ -514,6 +532,8 @@ namespace Model
     bool m_fulfilledCapacityHasBeenSet;
     FleetType m_type;
     bool m_typeHasBeenSet;
+    bool m_replaceUnhealthyInstances;
+    bool m_replaceUnhealthyInstancesHasBeenSet;
   };
 
 } // namespace Model

@@ -26,7 +26,9 @@ namespace Model
 {
 
   /**
-   * <p/>
+   * <p/><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeConfigRuleEvaluationStatusRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_CONFIGSERVICE_API DescribeConfigRuleEvaluationStatusRequest : public ConfigServiceRequest
   {
@@ -92,9 +94,85 @@ namespace Model
      */
     inline DescribeConfigRuleEvaluationStatusRequest& AddConfigRuleNames(const char* value) { m_configRuleNamesHasBeenSet = true; m_configRuleNames.push_back(value); return *this; }
 
+    /**
+     * <p>The <code>NextToken</code> string returned on a previous page that you use to
+     * get the next page of results in a paginated response.</p>
+     */
+    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * <p>The <code>NextToken</code> string returned on a previous page that you use to
+     * get the next page of results in a paginated response.</p>
+     */
+    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
+
+    /**
+     * <p>The <code>NextToken</code> string returned on a previous page that you use to
+     * get the next page of results in a paginated response.</p>
+     */
+    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
+
+    /**
+     * <p>The <code>NextToken</code> string returned on a previous page that you use to
+     * get the next page of results in a paginated response.</p>
+     */
+    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
+
+    /**
+     * <p>The <code>NextToken</code> string returned on a previous page that you use to
+     * get the next page of results in a paginated response.</p>
+     */
+    inline DescribeConfigRuleEvaluationStatusRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
+
+    /**
+     * <p>The <code>NextToken</code> string returned on a previous page that you use to
+     * get the next page of results in a paginated response.</p>
+     */
+    inline DescribeConfigRuleEvaluationStatusRequest& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+
+    /**
+     * <p>The <code>NextToken</code> string returned on a previous page that you use to
+     * get the next page of results in a paginated response.</p>
+     */
+    inline DescribeConfigRuleEvaluationStatusRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+
+    /**
+     * <p>The number of rule evaluation results that you want returned.</p> <p>This
+     * parameter is required if the rule limit for your account is more than the
+     * default of 50 rules.</p> <p>For more information about requesting a rule limit
+     * increase, see <a
+     * href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_config">AWS
+     * Config Limits</a> in the <i>AWS General Reference Guide</i>.</p>
+     */
+    inline int GetLimit() const{ return m_limit; }
+
+    /**
+     * <p>The number of rule evaluation results that you want returned.</p> <p>This
+     * parameter is required if the rule limit for your account is more than the
+     * default of 50 rules.</p> <p>For more information about requesting a rule limit
+     * increase, see <a
+     * href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_config">AWS
+     * Config Limits</a> in the <i>AWS General Reference Guide</i>.</p>
+     */
+    inline void SetLimit(int value) { m_limitHasBeenSet = true; m_limit = value; }
+
+    /**
+     * <p>The number of rule evaluation results that you want returned.</p> <p>This
+     * parameter is required if the rule limit for your account is more than the
+     * default of 50 rules.</p> <p>For more information about requesting a rule limit
+     * increase, see <a
+     * href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_config">AWS
+     * Config Limits</a> in the <i>AWS General Reference Guide</i>.</p>
+     */
+    inline DescribeConfigRuleEvaluationStatusRequest& WithLimit(int value) { SetLimit(value); return *this;}
+
   private:
     Aws::Vector<Aws::String> m_configRuleNames;
     bool m_configRuleNamesHasBeenSet;
+    Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet;
+    int m_limit;
+    bool m_limitHasBeenSet;
   };
 
 } // namespace Model

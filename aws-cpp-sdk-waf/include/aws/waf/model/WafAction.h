@@ -36,7 +36,9 @@ namespace Model
    * all of the conditions in a rule. For the default action in a
    * <code>WebACL</code>, specifies the action that you want AWS WAF to take when a
    * web request doesn't match all of the conditions in any of the rules in a
-   * <code>WebACL</code>. </p>
+   * <code>WebACL</code>. </p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/WafAction">AWS API
+   * Reference</a></p>
    */
   class AWS_WAF_API WafAction
   {

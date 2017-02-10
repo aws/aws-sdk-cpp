@@ -36,7 +36,10 @@ namespace ElastiCache
 namespace Model
 {
   /**
-   * <p>Represents the output of a <code>DescribeEvents</code> operation.</p>
+   * <p>Represents the output of a <code>DescribeEvents</code>
+   * operation.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/EventsMessage">AWS
+   * API Reference</a></p>
    */
   class AWS_ELASTICACHE_API DescribeEventsResult
   {

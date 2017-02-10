@@ -28,7 +28,9 @@ namespace Model
     nodejs,
     nodejs4_3,
     java8,
-    python2_7
+    python2_7,
+    dotnetcore1_0,
+    nodejs4_3_edge
   };
 
 namespace RuntimeMapper

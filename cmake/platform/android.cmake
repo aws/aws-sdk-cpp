@@ -10,13 +10,6 @@ macro(verify_tools)
     if(NOT GIT_FOUND)
         message(FATAL_ERROR "Unable to find git; git is required in order to build for Android")
     endif()
-
-    if(BUILD_CURL OR BUILD_ZLIB)
-        find_program(PATCH_FOUND patch)
-        if(NOT PATCH_FOUND)
-            message(FATAL_ERROR "Unable to find patch; patch is required in order to build Curl or Zlib for Android")
-        endif()
-    endif()
 endmacro()
 
 macro(determine_stdlib_and_api)
@@ -139,22 +132,25 @@ macro(initialize_toolchain)
             message(FATAL_ERROR "NDK versions less than 10 currently not supported")
         endif()
 
-        set(STANDALONE_TOOLCHAIN_DIR "${CMAKE_CURRENT_SOURCE_DIR}/toolchains/android/${ANDROID_ABI}-${ANDROID_TOOLCHAIN_NAME}-${ANDROID_NATIVE_API_LEVEL}-${ANDROID_STL}-${NDK_RELEASE_NUMBER}")
+        set(TOOLCHAIN_ROOT "${CMAKE_CURRENT_BINARY_DIR}/toolchains/android")
+
+        if( NOT EXISTS ${TOOLCHAIN_ROOT})
+            file(MAKE_DIRECTORY ${TOOLCHAIN_ROOT})
+        endif()
+
+        set(STANDALONE_TOOLCHAIN_DIR "${TOOLCHAIN_ROOT}/${ANDROID_ABI}-${ANDROID_TOOLCHAIN_NAME}-${ANDROID_NATIVE_API_LEVEL}-${ANDROID_STL}-${NDK_RELEASE_NUMBER}")
         if( NOT EXISTS ${STANDALONE_TOOLCHAIN_DIR} )
             message(STATUS "Could not find an appropriate standalone toolchain.  Generating one into ${STANDALONE_TOOLCHAIN_DIR}")
-
-            if(CMAKE_HOST_WIN32)
-                find_program(SH_FOUND sh)
-                if(NOT SH_FOUND)
-                    message(FATAL_ERROR "Unable to find sh; sh is required to construct standalone toolchains when building for Android on Windows")
-                endif()
-            endif()
 
             set(__MAKE_TOOLCHAIN_OPTIONS "--stl=${STANDALONE_TOOLCHAIN_STL} --install-dir=${STANDALONE_TOOLCHAIN_DIR}")
 
             if(NDK_RELEASE_NUMBER LESS "12000")
                 # Releases prior to 12 use a shell script to make standalone toolchains
                 if(CMAKE_HOST_WIN32)
+                    find_program(SH_FOUND sh)
+                    if(NOT SH_FOUND)
+                        message(FATAL_ERROR "Unable to find sh; sh is required to generate a standalone toolchain for NDK r11 and lower")
+                    endif()
                     set(TOOLCHAIN_SCRIPT_HOST "sh")
                 endif()
 
@@ -174,6 +170,11 @@ macro(initialize_toolchain)
                     --platform=${ANDROID_NATIVE_API_LEVEL} --stl=${STANDALONE_TOOLCHAIN_STL} --install-dir=${STANDALONE_TOOLCHAIN_DIR} WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
                 )
             else()
+                find_program(PYTHON_FOUND python)
+                if(NOT PYTHON_FOUND)
+                    message(FATAL_ERROR "Unable to find python; python is required to generate a standalone toolchain for NDK r12 and higher")
+                endif()
+
                 # new releases use a python script with (naturally) different argument names
                 get_android_arch_name(${ANDROID_ABI} __ARCH)
 
@@ -230,5 +231,13 @@ macro(apply_post_project_platform_settings)
     set(SDK_INSTALL_BINARY_PREFIX "${SDK_INSTALL_BINARY_PREFIX}/${ANDROID_ABI}")
 
     set(PLATFORM_DEP_LIBS log atomic)
+
+    # Workaround for problem when ndk 13, gcc, and libc++ are used together.
+    # See https://www.bountysource.com/issues/38341727-stddef-h-no-such-file-or-directory
+    if(NOT NDK_RELEASE_NUMBER LESS "13000")
+        if(ANDROID_TOOLCHAIN_NAME STREQUAL "standalone" AND ANDROID_STL MATCHES "libc" AND ANDROID_STANDALONE_TOOLCHAIN)
+            set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -isystem ${ANDROID_STANDALONE_TOOLCHAIN}/include/c++/4.9.x")
+        endif()
+    endif()
 endmacro()
 

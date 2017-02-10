@@ -34,7 +34,10 @@ namespace Model
 {
 
   /**
-   * <p>Represents an individual cache node in a snapshot of a cache cluster.</p>
+   * <p>Represents an individual cache node in a snapshot of a cache
+   * cluster.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/NodeSnapshot">AWS
+   * API Reference</a></p>
    */
   class AWS_ELASTICACHE_API NodeSnapshot
   {

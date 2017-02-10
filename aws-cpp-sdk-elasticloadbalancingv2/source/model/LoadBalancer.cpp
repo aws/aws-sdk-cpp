@@ -42,7 +42,9 @@ LoadBalancer::LoadBalancer() :
     m_type(LoadBalancerTypeEnum::NOT_SET),
     m_typeHasBeenSet(false),
     m_availabilityZonesHasBeenSet(false),
-    m_securityGroupsHasBeenSet(false)
+    m_securityGroupsHasBeenSet(false),
+    m_ipAddressType(IpAddressType::NOT_SET),
+    m_ipAddressTypeHasBeenSet(false)
 {
 }
 
@@ -59,7 +61,9 @@ LoadBalancer::LoadBalancer(const XmlNode& xmlNode) :
     m_type(LoadBalancerTypeEnum::NOT_SET),
     m_typeHasBeenSet(false),
     m_availabilityZonesHasBeenSet(false),
-    m_securityGroupsHasBeenSet(false)
+    m_securityGroupsHasBeenSet(false),
+    m_ipAddressType(IpAddressType::NOT_SET),
+    m_ipAddressTypeHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -148,6 +152,12 @@ LoadBalancer& LoadBalancer::operator =(const XmlNode& xmlNode)
 
       m_securityGroupsHasBeenSet = true;
     }
+    XmlNode ipAddressTypeNode = resultNode.FirstChild("IpAddressType");
+    if(!ipAddressTypeNode.IsNull())
+    {
+      m_ipAddressType = IpAddressTypeMapper::GetIpAddressTypeForName(StringUtils::Trim(ipAddressTypeNode.GetText().c_str()).c_str());
+      m_ipAddressTypeHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -222,6 +232,11 @@ void LoadBalancer::OutputToStream(Aws::OStream& oStream, const char* location, u
       }
   }
 
+  if(m_ipAddressTypeHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".IpAddressType=" << IpAddressTypeMapper::GetNameForIpAddressType(m_ipAddressType) << "&";
+  }
+
 }
 
 void LoadBalancer::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -281,6 +296,10 @@ void LoadBalancer::OutputToStream(Aws::OStream& oStream, const char* location) c
       {
         oStream << location << ".SecurityGroups.member." << securityGroupsIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
+  }
+  if(m_ipAddressTypeHasBeenSet)
+  {
+      oStream << location << ".IpAddressType=" << IpAddressTypeMapper::GetNameForIpAddressType(m_ipAddressType) << "&";
   }
 }
 

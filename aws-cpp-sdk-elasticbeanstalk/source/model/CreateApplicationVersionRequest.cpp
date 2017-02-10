@@ -25,6 +25,7 @@ CreateApplicationVersionRequest::CreateApplicationVersionRequest() :
     m_descriptionHasBeenSet(false),
     m_sourceBuildInformationHasBeenSet(false),
     m_sourceBundleHasBeenSet(false),
+    m_buildConfigurationHasBeenSet(false),
     m_autoCreateApplication(false),
     m_autoCreateApplicationHasBeenSet(false),
     m_process(false),
@@ -61,14 +62,19 @@ Aws::String CreateApplicationVersionRequest::SerializePayload() const
     m_sourceBundle.OutputToStream(ss, "SourceBundle");
   }
 
+  if(m_buildConfigurationHasBeenSet)
+  {
+    m_buildConfiguration.OutputToStream(ss, "BuildConfiguration");
+  }
+
   if(m_autoCreateApplicationHasBeenSet)
   {
-    ss << "AutoCreateApplication=" << m_autoCreateApplication << "&";
+    ss << "AutoCreateApplication=" << std::boolalpha << m_autoCreateApplication << "&";
   }
 
   if(m_processHasBeenSet)
   {
-    ss << "Process=" << m_process << "&";
+    ss << "Process=" << std::boolalpha << m_process << "&";
   }
 
   ss << "Version=2010-12-01";

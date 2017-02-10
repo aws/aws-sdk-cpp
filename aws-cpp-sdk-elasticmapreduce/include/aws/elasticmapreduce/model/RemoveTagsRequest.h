@@ -26,7 +26,10 @@ namespace Model
 {
 
   /**
-   * <p>This input identifies a cluster and a list of tags to remove.</p>
+   * <p>This input identifies a cluster and a list of tags to remove.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/RemoveTagsInput">AWS
+   * API Reference</a></p>
    */
   class AWS_EMR_API RemoveTagsRequest : public EMRRequest
   {

@@ -36,7 +36,10 @@ namespace ElasticBeanstalk
 namespace Model
 {
   /**
-   * <p>Result message wrapping a list of application version descriptions.</p>
+   * <p>Result message wrapping a list of application version
+   * descriptions.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/ApplicationVersionDescriptionsMessage">AWS
+   * API Reference</a></p>
    */
   class AWS_ELASTICBEANSTALK_API DescribeApplicationVersionsResult
   {
@@ -46,43 +49,43 @@ namespace Model
     DescribeApplicationVersionsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
     /**
-     * <p>List of <code>ApplicationVersionDescription</code> objects sorted by order of
+     * <p>List of <code>ApplicationVersionDescription</code> objects sorted in order of
      * creation.</p>
      */
     inline const Aws::Vector<ApplicationVersionDescription>& GetApplicationVersions() const{ return m_applicationVersions; }
 
     /**
-     * <p>List of <code>ApplicationVersionDescription</code> objects sorted by order of
+     * <p>List of <code>ApplicationVersionDescription</code> objects sorted in order of
      * creation.</p>
      */
     inline void SetApplicationVersions(const Aws::Vector<ApplicationVersionDescription>& value) { m_applicationVersions = value; }
 
     /**
-     * <p>List of <code>ApplicationVersionDescription</code> objects sorted by order of
+     * <p>List of <code>ApplicationVersionDescription</code> objects sorted in order of
      * creation.</p>
      */
     inline void SetApplicationVersions(Aws::Vector<ApplicationVersionDescription>&& value) { m_applicationVersions = value; }
 
     /**
-     * <p>List of <code>ApplicationVersionDescription</code> objects sorted by order of
+     * <p>List of <code>ApplicationVersionDescription</code> objects sorted in order of
      * creation.</p>
      */
     inline DescribeApplicationVersionsResult& WithApplicationVersions(const Aws::Vector<ApplicationVersionDescription>& value) { SetApplicationVersions(value); return *this;}
 
     /**
-     * <p>List of <code>ApplicationVersionDescription</code> objects sorted by order of
+     * <p>List of <code>ApplicationVersionDescription</code> objects sorted in order of
      * creation.</p>
      */
     inline DescribeApplicationVersionsResult& WithApplicationVersions(Aws::Vector<ApplicationVersionDescription>&& value) { SetApplicationVersions(value); return *this;}
 
     /**
-     * <p>List of <code>ApplicationVersionDescription</code> objects sorted by order of
+     * <p>List of <code>ApplicationVersionDescription</code> objects sorted in order of
      * creation.</p>
      */
     inline DescribeApplicationVersionsResult& AddApplicationVersions(const ApplicationVersionDescription& value) { m_applicationVersions.push_back(value); return *this; }
 
     /**
-     * <p>List of <code>ApplicationVersionDescription</code> objects sorted by order of
+     * <p>List of <code>ApplicationVersionDescription</code> objects sorted in order of
      * creation.</p>
      */
     inline DescribeApplicationVersionsResult& AddApplicationVersions(ApplicationVersionDescription&& value) { m_applicationVersions.push_back(value); return *this; }

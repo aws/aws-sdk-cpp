@@ -15,6 +15,10 @@
 #pragma once
 #include <aws/ssm/SSM_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/core/utils/DateTime.h>
+#include <aws/ssm/model/AssociationOverview.h>
+#include <aws/ssm/model/Target.h>
 
 namespace Aws
 {
@@ -31,7 +35,10 @@ namespace Model
 {
 
   /**
-   * <p>Describes an association of an SSM document and an instance.</p>
+   * <p>Describes an association of an SSM document and an instance.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/Association">AWS API
+   * Reference</a></p>
    */
   class AWS_SSM_API Association
   {
@@ -111,11 +118,220 @@ namespace Model
      */
     inline Association& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
 
+    /**
+     * <p>The ID created by the system when you create an association. An association
+     * is a binding between a document and a set of targets with a schedule.</p>
+     */
+    inline const Aws::String& GetAssociationId() const{ return m_associationId; }
+
+    /**
+     * <p>The ID created by the system when you create an association. An association
+     * is a binding between a document and a set of targets with a schedule.</p>
+     */
+    inline void SetAssociationId(const Aws::String& value) { m_associationIdHasBeenSet = true; m_associationId = value; }
+
+    /**
+     * <p>The ID created by the system when you create an association. An association
+     * is a binding between a document and a set of targets with a schedule.</p>
+     */
+    inline void SetAssociationId(Aws::String&& value) { m_associationIdHasBeenSet = true; m_associationId = value; }
+
+    /**
+     * <p>The ID created by the system when you create an association. An association
+     * is a binding between a document and a set of targets with a schedule.</p>
+     */
+    inline void SetAssociationId(const char* value) { m_associationIdHasBeenSet = true; m_associationId.assign(value); }
+
+    /**
+     * <p>The ID created by the system when you create an association. An association
+     * is a binding between a document and a set of targets with a schedule.</p>
+     */
+    inline Association& WithAssociationId(const Aws::String& value) { SetAssociationId(value); return *this;}
+
+    /**
+     * <p>The ID created by the system when you create an association. An association
+     * is a binding between a document and a set of targets with a schedule.</p>
+     */
+    inline Association& WithAssociationId(Aws::String&& value) { SetAssociationId(value); return *this;}
+
+    /**
+     * <p>The ID created by the system when you create an association. An association
+     * is a binding between a document and a set of targets with a schedule.</p>
+     */
+    inline Association& WithAssociationId(const char* value) { SetAssociationId(value); return *this;}
+
+    /**
+     * <p>The version of the document used in the association.</p>
+     */
+    inline const Aws::String& GetDocumentVersion() const{ return m_documentVersion; }
+
+    /**
+     * <p>The version of the document used in the association.</p>
+     */
+    inline void SetDocumentVersion(const Aws::String& value) { m_documentVersionHasBeenSet = true; m_documentVersion = value; }
+
+    /**
+     * <p>The version of the document used in the association.</p>
+     */
+    inline void SetDocumentVersion(Aws::String&& value) { m_documentVersionHasBeenSet = true; m_documentVersion = value; }
+
+    /**
+     * <p>The version of the document used in the association.</p>
+     */
+    inline void SetDocumentVersion(const char* value) { m_documentVersionHasBeenSet = true; m_documentVersion.assign(value); }
+
+    /**
+     * <p>The version of the document used in the association.</p>
+     */
+    inline Association& WithDocumentVersion(const Aws::String& value) { SetDocumentVersion(value); return *this;}
+
+    /**
+     * <p>The version of the document used in the association.</p>
+     */
+    inline Association& WithDocumentVersion(Aws::String&& value) { SetDocumentVersion(value); return *this;}
+
+    /**
+     * <p>The version of the document used in the association.</p>
+     */
+    inline Association& WithDocumentVersion(const char* value) { SetDocumentVersion(value); return *this;}
+
+    /**
+     * <p>The instances targeted by the request to create an association. </p>
+     */
+    inline const Aws::Vector<Target>& GetTargets() const{ return m_targets; }
+
+    /**
+     * <p>The instances targeted by the request to create an association. </p>
+     */
+    inline void SetTargets(const Aws::Vector<Target>& value) { m_targetsHasBeenSet = true; m_targets = value; }
+
+    /**
+     * <p>The instances targeted by the request to create an association. </p>
+     */
+    inline void SetTargets(Aws::Vector<Target>&& value) { m_targetsHasBeenSet = true; m_targets = value; }
+
+    /**
+     * <p>The instances targeted by the request to create an association. </p>
+     */
+    inline Association& WithTargets(const Aws::Vector<Target>& value) { SetTargets(value); return *this;}
+
+    /**
+     * <p>The instances targeted by the request to create an association. </p>
+     */
+    inline Association& WithTargets(Aws::Vector<Target>&& value) { SetTargets(value); return *this;}
+
+    /**
+     * <p>The instances targeted by the request to create an association. </p>
+     */
+    inline Association& AddTargets(const Target& value) { m_targetsHasBeenSet = true; m_targets.push_back(value); return *this; }
+
+    /**
+     * <p>The instances targeted by the request to create an association. </p>
+     */
+    inline Association& AddTargets(Target&& value) { m_targetsHasBeenSet = true; m_targets.push_back(value); return *this; }
+
+    /**
+     * <p>The date on which the association was last run.</p>
+     */
+    inline const Aws::Utils::DateTime& GetLastExecutionDate() const{ return m_lastExecutionDate; }
+
+    /**
+     * <p>The date on which the association was last run.</p>
+     */
+    inline void SetLastExecutionDate(const Aws::Utils::DateTime& value) { m_lastExecutionDateHasBeenSet = true; m_lastExecutionDate = value; }
+
+    /**
+     * <p>The date on which the association was last run.</p>
+     */
+    inline void SetLastExecutionDate(Aws::Utils::DateTime&& value) { m_lastExecutionDateHasBeenSet = true; m_lastExecutionDate = value; }
+
+    /**
+     * <p>The date on which the association was last run.</p>
+     */
+    inline Association& WithLastExecutionDate(const Aws::Utils::DateTime& value) { SetLastExecutionDate(value); return *this;}
+
+    /**
+     * <p>The date on which the association was last run.</p>
+     */
+    inline Association& WithLastExecutionDate(Aws::Utils::DateTime&& value) { SetLastExecutionDate(value); return *this;}
+
+    /**
+     * <p>Information about the association.</p>
+     */
+    inline const AssociationOverview& GetOverview() const{ return m_overview; }
+
+    /**
+     * <p>Information about the association.</p>
+     */
+    inline void SetOverview(const AssociationOverview& value) { m_overviewHasBeenSet = true; m_overview = value; }
+
+    /**
+     * <p>Information about the association.</p>
+     */
+    inline void SetOverview(AssociationOverview&& value) { m_overviewHasBeenSet = true; m_overview = value; }
+
+    /**
+     * <p>Information about the association.</p>
+     */
+    inline Association& WithOverview(const AssociationOverview& value) { SetOverview(value); return *this;}
+
+    /**
+     * <p>Information about the association.</p>
+     */
+    inline Association& WithOverview(AssociationOverview&& value) { SetOverview(value); return *this;}
+
+    /**
+     * <p>A cron expression that specifies a schedule when the association runs.</p>
+     */
+    inline const Aws::String& GetScheduleExpression() const{ return m_scheduleExpression; }
+
+    /**
+     * <p>A cron expression that specifies a schedule when the association runs.</p>
+     */
+    inline void SetScheduleExpression(const Aws::String& value) { m_scheduleExpressionHasBeenSet = true; m_scheduleExpression = value; }
+
+    /**
+     * <p>A cron expression that specifies a schedule when the association runs.</p>
+     */
+    inline void SetScheduleExpression(Aws::String&& value) { m_scheduleExpressionHasBeenSet = true; m_scheduleExpression = value; }
+
+    /**
+     * <p>A cron expression that specifies a schedule when the association runs.</p>
+     */
+    inline void SetScheduleExpression(const char* value) { m_scheduleExpressionHasBeenSet = true; m_scheduleExpression.assign(value); }
+
+    /**
+     * <p>A cron expression that specifies a schedule when the association runs.</p>
+     */
+    inline Association& WithScheduleExpression(const Aws::String& value) { SetScheduleExpression(value); return *this;}
+
+    /**
+     * <p>A cron expression that specifies a schedule when the association runs.</p>
+     */
+    inline Association& WithScheduleExpression(Aws::String&& value) { SetScheduleExpression(value); return *this;}
+
+    /**
+     * <p>A cron expression that specifies a schedule when the association runs.</p>
+     */
+    inline Association& WithScheduleExpression(const char* value) { SetScheduleExpression(value); return *this;}
+
   private:
     Aws::String m_name;
     bool m_nameHasBeenSet;
     Aws::String m_instanceId;
     bool m_instanceIdHasBeenSet;
+    Aws::String m_associationId;
+    bool m_associationIdHasBeenSet;
+    Aws::String m_documentVersion;
+    bool m_documentVersionHasBeenSet;
+    Aws::Vector<Target> m_targets;
+    bool m_targetsHasBeenSet;
+    Aws::Utils::DateTime m_lastExecutionDate;
+    bool m_lastExecutionDateHasBeenSet;
+    AssociationOverview m_overview;
+    bool m_overviewHasBeenSet;
+    Aws::String m_scheduleExpression;
+    bool m_scheduleExpressionHasBeenSet;
   };
 
 } // namespace Model

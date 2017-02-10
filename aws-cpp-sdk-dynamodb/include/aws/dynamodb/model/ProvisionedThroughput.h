@@ -31,10 +31,13 @@ namespace Model
 
   /**
    * <p>Represents the provisioned throughput settings for a specified table or
-   * index. The settings can be modified using the <i>UpdateTable</i> operation.</p>
-   * <p>For current minimum and maximum provisioned throughput values, see <a
+   * index. The settings can be modified using the <code>UpdateTable</code>
+   * operation.</p> <p>For current minimum and maximum provisioned throughput values,
+   * see <a
    * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a>
-   * in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+   * in the <i>Amazon DynamoDB Developer Guide</i>.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ProvisionedThroughput">AWS
+   * API Reference</a></p>
    */
   class AWS_DYNAMODB_API ProvisionedThroughput
   {
@@ -46,7 +49,8 @@ namespace Model
 
     /**
      * <p>The maximum number of strongly consistent reads consumed per second before
-     * DynamoDB returns a <i>ThrottlingException</i>. For more information, see <a
+     * DynamoDB returns a <code>ThrottlingException</code>. For more information, see
+     * <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#ProvisionedThroughput">Specifying
      * Read and Write Requirements</a> in the <i>Amazon DynamoDB Developer
      * Guide</i>.</p>
@@ -55,7 +59,8 @@ namespace Model
 
     /**
      * <p>The maximum number of strongly consistent reads consumed per second before
-     * DynamoDB returns a <i>ThrottlingException</i>. For more information, see <a
+     * DynamoDB returns a <code>ThrottlingException</code>. For more information, see
+     * <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#ProvisionedThroughput">Specifying
      * Read and Write Requirements</a> in the <i>Amazon DynamoDB Developer
      * Guide</i>.</p>
@@ -64,7 +69,8 @@ namespace Model
 
     /**
      * <p>The maximum number of strongly consistent reads consumed per second before
-     * DynamoDB returns a <i>ThrottlingException</i>. For more information, see <a
+     * DynamoDB returns a <code>ThrottlingException</code>. For more information, see
+     * <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#ProvisionedThroughput">Specifying
      * Read and Write Requirements</a> in the <i>Amazon DynamoDB Developer
      * Guide</i>.</p>
@@ -73,7 +79,7 @@ namespace Model
 
     /**
      * <p>The maximum number of writes consumed per second before DynamoDB returns a
-     * <i>ThrottlingException</i>. For more information, see <a
+     * <code>ThrottlingException</code>. For more information, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#ProvisionedThroughput">Specifying
      * Read and Write Requirements</a> in the <i>Amazon DynamoDB Developer
      * Guide</i>.</p>
@@ -82,7 +88,7 @@ namespace Model
 
     /**
      * <p>The maximum number of writes consumed per second before DynamoDB returns a
-     * <i>ThrottlingException</i>. For more information, see <a
+     * <code>ThrottlingException</code>. For more information, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#ProvisionedThroughput">Specifying
      * Read and Write Requirements</a> in the <i>Amazon DynamoDB Developer
      * Guide</i>.</p>
@@ -91,7 +97,7 @@ namespace Model
 
     /**
      * <p>The maximum number of writes consumed per second before DynamoDB returns a
-     * <i>ThrottlingException</i>. For more information, see <a
+     * <code>ThrottlingException</code>. For more information, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#ProvisionedThroughput">Specifying
      * Read and Write Requirements</a> in the <i>Amazon DynamoDB Developer
      * Guide</i>.</p>

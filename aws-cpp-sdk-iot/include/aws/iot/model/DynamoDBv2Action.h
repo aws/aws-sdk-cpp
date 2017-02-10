@@ -34,7 +34,9 @@ namespace Model
   /**
    * <p>Describes an action to write to a DynamoDB table.</p> <p>This DynamoDB action
    * writes each attribute in the message payload into it's own column in the
-   * DynamoDB table.</p>
+   * DynamoDB table.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DynamoDBv2Action">AWS
+   * API Reference</a></p>
    */
   class AWS_IOT_API DynamoDBv2Action
   {

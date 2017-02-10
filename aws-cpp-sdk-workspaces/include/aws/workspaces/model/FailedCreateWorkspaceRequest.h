@@ -32,7 +32,10 @@ namespace Model
 {
 
   /**
-   * <p>Contains information about a WorkSpace that could not be created.</p>
+   * <p>Contains information about a WorkSpace that could not be
+   * created.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/FailedCreateWorkspaceRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_WORKSPACES_API FailedCreateWorkspaceRequest
   {

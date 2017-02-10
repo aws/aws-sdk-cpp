@@ -29,7 +29,10 @@ namespace Model
 {
 
   /**
-   * <p>Contains the parameters for DescribeSpotPriceHistory.</p>
+   * <p>Contains the parameters for DescribeSpotPriceHistory.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeSpotPriceHistoryRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_EC2_API DescribeSpotPriceHistoryRequest : public EC2Request
   {
@@ -132,37 +135,44 @@ namespace Model
     inline DescribeSpotPriceHistoryRequest& WithEndTime(Aws::Utils::DateTime&& value) { SetEndTime(value); return *this;}
 
     /**
-     * <p>Filters the results by the specified instance types.</p>
+     * <p>Filters the results by the specified instance types. Note that T2 and HS1
+     * instance types are not supported.</p>
      */
     inline const Aws::Vector<InstanceType>& GetInstanceTypes() const{ return m_instanceTypes; }
 
     /**
-     * <p>Filters the results by the specified instance types.</p>
+     * <p>Filters the results by the specified instance types. Note that T2 and HS1
+     * instance types are not supported.</p>
      */
     inline void SetInstanceTypes(const Aws::Vector<InstanceType>& value) { m_instanceTypesHasBeenSet = true; m_instanceTypes = value; }
 
     /**
-     * <p>Filters the results by the specified instance types.</p>
+     * <p>Filters the results by the specified instance types. Note that T2 and HS1
+     * instance types are not supported.</p>
      */
     inline void SetInstanceTypes(Aws::Vector<InstanceType>&& value) { m_instanceTypesHasBeenSet = true; m_instanceTypes = value; }
 
     /**
-     * <p>Filters the results by the specified instance types.</p>
+     * <p>Filters the results by the specified instance types. Note that T2 and HS1
+     * instance types are not supported.</p>
      */
     inline DescribeSpotPriceHistoryRequest& WithInstanceTypes(const Aws::Vector<InstanceType>& value) { SetInstanceTypes(value); return *this;}
 
     /**
-     * <p>Filters the results by the specified instance types.</p>
+     * <p>Filters the results by the specified instance types. Note that T2 and HS1
+     * instance types are not supported.</p>
      */
     inline DescribeSpotPriceHistoryRequest& WithInstanceTypes(Aws::Vector<InstanceType>&& value) { SetInstanceTypes(value); return *this;}
 
     /**
-     * <p>Filters the results by the specified instance types.</p>
+     * <p>Filters the results by the specified instance types. Note that T2 and HS1
+     * instance types are not supported.</p>
      */
     inline DescribeSpotPriceHistoryRequest& AddInstanceTypes(const InstanceType& value) { m_instanceTypesHasBeenSet = true; m_instanceTypes.push_back(value); return *this; }
 
     /**
-     * <p>Filters the results by the specified instance types.</p>
+     * <p>Filters the results by the specified instance types. Note that T2 and HS1
+     * instance types are not supported.</p>
      */
     inline DescribeSpotPriceHistoryRequest& AddInstanceTypes(InstanceType&& value) { m_instanceTypesHasBeenSet = true; m_instanceTypes.push_back(value); return *this; }
 

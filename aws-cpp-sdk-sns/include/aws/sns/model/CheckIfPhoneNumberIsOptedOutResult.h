@@ -33,7 +33,10 @@ namespace SNS
 namespace Model
 {
   /**
-   * <p>The response from the <code>CheckIfPhoneNumberIsOptedOut</code> action.</p>
+   * <p>The response from the <code>CheckIfPhoneNumberIsOptedOut</code>
+   * action.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/CheckIfPhoneNumberIsOptedOutResponse">AWS
+   * API Reference</a></p>
    */
   class AWS_SNS_API CheckIfPhoneNumberIsOptedOutResult
   {

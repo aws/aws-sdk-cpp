@@ -34,7 +34,9 @@ namespace Model
 
   /**
    * <p>Contains a cluster's state, a cluster's ID, and other important
-   * information.</p>
+   * information.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/ClusterListEntry">AWS
+   * API Reference</a></p>
    */
   class AWS_SNOWBALL_API ClusterListEntry
   {

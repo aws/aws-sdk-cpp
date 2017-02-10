@@ -26,7 +26,6 @@ namespace Model
 {
 
   /**
-   * <p>Contains the parameters for DescribeTargetGroups.</p>
    */
   class AWS_ELASTICLOADBALANCINGV2_API DescribeTargetGroupsRequest : public ElasticLoadBalancingv2Request
   {

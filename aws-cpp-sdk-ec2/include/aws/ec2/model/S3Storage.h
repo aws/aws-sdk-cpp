@@ -34,7 +34,9 @@ namespace Model
 
   /**
    * <p>Describes the storage parameters for S3 and S3 buckets for an instance
-   * store-backed AMI.</p>
+   * store-backed AMI.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/S3Storage">AWS API
+   * Reference</a></p>
    */
   class AWS_EC2_API S3Storage
   {

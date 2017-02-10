@@ -49,7 +49,9 @@ namespace Model
    * configuration and include only an empty CacheBehaviors element. To add, change,
    * or remove one or more cache behaviors, update the distribution configuration and
    * specify all of the cache behaviors that you want to include in the updated
-   * distribution.
+   * distribution.<p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-01-28/CacheBehavior">AWS
+   * API Reference</a></p>
    */
   class AWS_CLOUDFRONT_API CacheBehavior
   {

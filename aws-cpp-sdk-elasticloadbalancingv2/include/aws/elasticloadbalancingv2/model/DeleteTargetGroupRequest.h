@@ -25,7 +25,6 @@ namespace Model
 {
 
   /**
-   * <p>Contains the parameters for DeleteTargetGroup.</p>
    */
   class AWS_ELASTICLOADBALANCINGV2_API DeleteTargetGroupRequest : public ElasticLoadBalancingv2Request
   {

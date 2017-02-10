@@ -32,7 +32,9 @@ namespace Model
 {
 
   /**
-   * <p>Details about the target configuration.</p>
+   * <p>Details about the target configuration.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/TargetConfigurationRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_EC2_API TargetConfigurationRequest
   {
@@ -45,51 +47,37 @@ namespace Model
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
     /**
-     * <p>The Convertible Reserved Instance offering ID. If this isn't included in the
-     * request, the response lists your current Convertible Reserved Instance/s and
-     * their value/s.</p>
+     * <p>The Convertible Reserved Instance offering ID.</p>
      */
     inline const Aws::String& GetOfferingId() const{ return m_offeringId; }
 
     /**
-     * <p>The Convertible Reserved Instance offering ID. If this isn't included in the
-     * request, the response lists your current Convertible Reserved Instance/s and
-     * their value/s.</p>
+     * <p>The Convertible Reserved Instance offering ID.</p>
      */
     inline void SetOfferingId(const Aws::String& value) { m_offeringIdHasBeenSet = true; m_offeringId = value; }
 
     /**
-     * <p>The Convertible Reserved Instance offering ID. If this isn't included in the
-     * request, the response lists your current Convertible Reserved Instance/s and
-     * their value/s.</p>
+     * <p>The Convertible Reserved Instance offering ID.</p>
      */
     inline void SetOfferingId(Aws::String&& value) { m_offeringIdHasBeenSet = true; m_offeringId = value; }
 
     /**
-     * <p>The Convertible Reserved Instance offering ID. If this isn't included in the
-     * request, the response lists your current Convertible Reserved Instance/s and
-     * their value/s.</p>
+     * <p>The Convertible Reserved Instance offering ID.</p>
      */
     inline void SetOfferingId(const char* value) { m_offeringIdHasBeenSet = true; m_offeringId.assign(value); }
 
     /**
-     * <p>The Convertible Reserved Instance offering ID. If this isn't included in the
-     * request, the response lists your current Convertible Reserved Instance/s and
-     * their value/s.</p>
+     * <p>The Convertible Reserved Instance offering ID.</p>
      */
     inline TargetConfigurationRequest& WithOfferingId(const Aws::String& value) { SetOfferingId(value); return *this;}
 
     /**
-     * <p>The Convertible Reserved Instance offering ID. If this isn't included in the
-     * request, the response lists your current Convertible Reserved Instance/s and
-     * their value/s.</p>
+     * <p>The Convertible Reserved Instance offering ID.</p>
      */
     inline TargetConfigurationRequest& WithOfferingId(Aws::String&& value) { SetOfferingId(value); return *this;}
 
     /**
-     * <p>The Convertible Reserved Instance offering ID. If this isn't included in the
-     * request, the response lists your current Convertible Reserved Instance/s and
-     * their value/s.</p>
+     * <p>The Convertible Reserved Instance offering ID.</p>
      */
     inline TargetConfigurationRequest& WithOfferingId(const char* value) { SetOfferingId(value); return *this;}
 

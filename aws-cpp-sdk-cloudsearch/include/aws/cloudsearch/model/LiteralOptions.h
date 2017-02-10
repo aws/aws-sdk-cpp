@@ -34,7 +34,9 @@ namespace Model
   /**
    * <p>Options for literal field. Present if <code>IndexFieldType</code> specifies
    * the field is of type <code>literal</code>. All options are enabled by
-   * default.</p>
+   * default.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/LiteralOptions">AWS
+   * API Reference</a></p>
    */
   class AWS_CLOUDSEARCH_API LiteralOptions
   {

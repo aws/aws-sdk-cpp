@@ -25,7 +25,9 @@ namespace Model
 {
 
   /**
-   * <p>DeleteVaultAccessPolicy input.</p>
+   * <p>DeleteVaultAccessPolicy input.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/DeleteVaultAccessPolicyInput">AWS
+   * API Reference</a></p>
    */
   class AWS_GLACIER_API DeleteVaultAccessPolicyRequest : public GlacierRequest
   {

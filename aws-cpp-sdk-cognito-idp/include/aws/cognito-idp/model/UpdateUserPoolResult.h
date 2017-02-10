@@ -33,7 +33,9 @@ namespace Model
 {
   /**
    * <p>Represents the response from the server when you make a request to update the
-   * user pool.</p>
+   * user pool.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/UpdateUserPoolResponse">AWS
+   * API Reference</a></p>
    */
   class AWS_COGNITOIDENTITYPROVIDER_API UpdateUserPoolResult
   {

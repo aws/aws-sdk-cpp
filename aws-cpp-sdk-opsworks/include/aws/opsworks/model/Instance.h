@@ -38,7 +38,9 @@ namespace Model
 {
 
   /**
-   * <p>Describes an instance.</p>
+   * <p>Describes an instance.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/Instance">AWS
+   * API Reference</a></p>
    */
   class AWS_OPSWORKS_API Instance
   {

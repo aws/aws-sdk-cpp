@@ -25,7 +25,9 @@ namespace Model
 {
 
   /**
-   * <p>A request to delete the <a>ApiKey</a> resource.</p>
+   * <p>A request to delete the <a>ApiKey</a> resource.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DeleteApiKeyRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_APIGATEWAY_API DeleteApiKeyRequest : public APIGatewayRequest
   {

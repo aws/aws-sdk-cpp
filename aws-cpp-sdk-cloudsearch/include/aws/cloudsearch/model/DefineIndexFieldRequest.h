@@ -28,7 +28,9 @@ namespace Model
   /**
    * <p>Container for the parameters to the <code><a>DefineIndexField</a></code>
    * operation. Specifies the name of the domain you want to update and the index
-   * field configuration.</p>
+   * field configuration.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/DefineIndexFieldRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_CLOUDSEARCH_API DefineIndexFieldRequest : public CloudSearchRequest
   {

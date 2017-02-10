@@ -29,7 +29,9 @@ namespace Model
 {
 
   /**
-   * <p/>
+   * <p/><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/CreateReplicationTaskMessage">AWS
+   * API Reference</a></p>
    */
   class AWS_DATABASEMIGRATIONSERVICE_API CreateReplicationTaskRequest : public DatabaseMigrationServiceRequest
   {
@@ -282,37 +284,58 @@ namespace Model
     inline CreateReplicationTaskRequest& WithTableMappings(const char* value) { SetTableMappings(value); return *this;}
 
     /**
-     * <p>Settings for the task, such as target metadata settings.</p>
+     * <p>Settings for the task, such as target metadata settings. For a complete list
+     * of task settings, see <a
+     * href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TaskSettings.html">Task
+     * Settings for AWS Database Migration Service Tasks</a>.</p>
      */
     inline const Aws::String& GetReplicationTaskSettings() const{ return m_replicationTaskSettings; }
 
     /**
-     * <p>Settings for the task, such as target metadata settings.</p>
+     * <p>Settings for the task, such as target metadata settings. For a complete list
+     * of task settings, see <a
+     * href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TaskSettings.html">Task
+     * Settings for AWS Database Migration Service Tasks</a>.</p>
      */
     inline void SetReplicationTaskSettings(const Aws::String& value) { m_replicationTaskSettingsHasBeenSet = true; m_replicationTaskSettings = value; }
 
     /**
-     * <p>Settings for the task, such as target metadata settings.</p>
+     * <p>Settings for the task, such as target metadata settings. For a complete list
+     * of task settings, see <a
+     * href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TaskSettings.html">Task
+     * Settings for AWS Database Migration Service Tasks</a>.</p>
      */
     inline void SetReplicationTaskSettings(Aws::String&& value) { m_replicationTaskSettingsHasBeenSet = true; m_replicationTaskSettings = value; }
 
     /**
-     * <p>Settings for the task, such as target metadata settings.</p>
+     * <p>Settings for the task, such as target metadata settings. For a complete list
+     * of task settings, see <a
+     * href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TaskSettings.html">Task
+     * Settings for AWS Database Migration Service Tasks</a>.</p>
      */
     inline void SetReplicationTaskSettings(const char* value) { m_replicationTaskSettingsHasBeenSet = true; m_replicationTaskSettings.assign(value); }
 
     /**
-     * <p>Settings for the task, such as target metadata settings.</p>
+     * <p>Settings for the task, such as target metadata settings. For a complete list
+     * of task settings, see <a
+     * href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TaskSettings.html">Task
+     * Settings for AWS Database Migration Service Tasks</a>.</p>
      */
     inline CreateReplicationTaskRequest& WithReplicationTaskSettings(const Aws::String& value) { SetReplicationTaskSettings(value); return *this;}
 
     /**
-     * <p>Settings for the task, such as target metadata settings.</p>
+     * <p>Settings for the task, such as target metadata settings. For a complete list
+     * of task settings, see <a
+     * href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TaskSettings.html">Task
+     * Settings for AWS Database Migration Service Tasks</a>.</p>
      */
     inline CreateReplicationTaskRequest& WithReplicationTaskSettings(Aws::String&& value) { SetReplicationTaskSettings(value); return *this;}
 
     /**
-     * <p>Settings for the task, such as target metadata settings.</p>
+     * <p>Settings for the task, such as target metadata settings. For a complete list
+     * of task settings, see <a
+     * href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TaskSettings.html">Task
+     * Settings for AWS Database Migration Service Tasks</a>.</p>
      */
     inline CreateReplicationTaskRequest& WithReplicationTaskSettings(const char* value) { SetReplicationTaskSettings(value); return *this;}
 

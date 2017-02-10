@@ -32,7 +32,10 @@ namespace Model
 {
 
   /**
-   * <p>Represents information about the run of a stage.</p>
+   * <p>Represents information about the run of a stage.</p><p><h3>See Also:</h3>  
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/StageExecution">AWS
+   * API Reference</a></p>
    */
   class AWS_CODEPIPELINE_API StageExecution
   {

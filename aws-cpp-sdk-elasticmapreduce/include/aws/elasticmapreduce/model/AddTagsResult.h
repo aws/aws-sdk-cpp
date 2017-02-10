@@ -32,7 +32,10 @@ namespace EMR
 namespace Model
 {
   /**
-   * <p>This output indicates the result of adding tags to a resource.</p>
+   * <p>This output indicates the result of adding tags to a resource.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/AddTagsOutput">AWS
+   * API Reference</a></p>
    */
   class AWS_EMR_API AddTagsResult
   {

@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ec2/model/ScheduledInstancesPrivateIpAddressConfig.h>
+#include <aws/ec2/model/ScheduledInstancesIpv6Address.h>
 
 namespace Aws
 {
@@ -34,7 +35,10 @@ namespace Model
 {
 
   /**
-   * <p>Describes a network interface for a Scheduled Instance.</p>
+   * <p>Describes a network interface for a Scheduled Instance.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ScheduledInstancesNetworkInterface">AWS
+   * API Reference</a></p>
    */
   class AWS_EC2_API ScheduledInstancesNetworkInterface
   {
@@ -167,114 +171,114 @@ namespace Model
     inline ScheduledInstancesNetworkInterface& WithDescription(const char* value) { SetDescription(value); return *this;}
 
     /**
-     * <p>The IP address of the network interface within the subnet.</p>
+     * <p>The IPv4 address of the network interface within the subnet.</p>
      */
     inline const Aws::String& GetPrivateIpAddress() const{ return m_privateIpAddress; }
 
     /**
-     * <p>The IP address of the network interface within the subnet.</p>
+     * <p>The IPv4 address of the network interface within the subnet.</p>
      */
     inline void SetPrivateIpAddress(const Aws::String& value) { m_privateIpAddressHasBeenSet = true; m_privateIpAddress = value; }
 
     /**
-     * <p>The IP address of the network interface within the subnet.</p>
+     * <p>The IPv4 address of the network interface within the subnet.</p>
      */
     inline void SetPrivateIpAddress(Aws::String&& value) { m_privateIpAddressHasBeenSet = true; m_privateIpAddress = value; }
 
     /**
-     * <p>The IP address of the network interface within the subnet.</p>
+     * <p>The IPv4 address of the network interface within the subnet.</p>
      */
     inline void SetPrivateIpAddress(const char* value) { m_privateIpAddressHasBeenSet = true; m_privateIpAddress.assign(value); }
 
     /**
-     * <p>The IP address of the network interface within the subnet.</p>
+     * <p>The IPv4 address of the network interface within the subnet.</p>
      */
     inline ScheduledInstancesNetworkInterface& WithPrivateIpAddress(const Aws::String& value) { SetPrivateIpAddress(value); return *this;}
 
     /**
-     * <p>The IP address of the network interface within the subnet.</p>
+     * <p>The IPv4 address of the network interface within the subnet.</p>
      */
     inline ScheduledInstancesNetworkInterface& WithPrivateIpAddress(Aws::String&& value) { SetPrivateIpAddress(value); return *this;}
 
     /**
-     * <p>The IP address of the network interface within the subnet.</p>
+     * <p>The IPv4 address of the network interface within the subnet.</p>
      */
     inline ScheduledInstancesNetworkInterface& WithPrivateIpAddress(const char* value) { SetPrivateIpAddress(value); return *this;}
 
     /**
-     * <p>The private IP addresses.</p>
+     * <p>The private IPv4 addresses.</p>
      */
     inline const Aws::Vector<ScheduledInstancesPrivateIpAddressConfig>& GetPrivateIpAddressConfigs() const{ return m_privateIpAddressConfigs; }
 
     /**
-     * <p>The private IP addresses.</p>
+     * <p>The private IPv4 addresses.</p>
      */
     inline void SetPrivateIpAddressConfigs(const Aws::Vector<ScheduledInstancesPrivateIpAddressConfig>& value) { m_privateIpAddressConfigsHasBeenSet = true; m_privateIpAddressConfigs = value; }
 
     /**
-     * <p>The private IP addresses.</p>
+     * <p>The private IPv4 addresses.</p>
      */
     inline void SetPrivateIpAddressConfigs(Aws::Vector<ScheduledInstancesPrivateIpAddressConfig>&& value) { m_privateIpAddressConfigsHasBeenSet = true; m_privateIpAddressConfigs = value; }
 
     /**
-     * <p>The private IP addresses.</p>
+     * <p>The private IPv4 addresses.</p>
      */
     inline ScheduledInstancesNetworkInterface& WithPrivateIpAddressConfigs(const Aws::Vector<ScheduledInstancesPrivateIpAddressConfig>& value) { SetPrivateIpAddressConfigs(value); return *this;}
 
     /**
-     * <p>The private IP addresses.</p>
+     * <p>The private IPv4 addresses.</p>
      */
     inline ScheduledInstancesNetworkInterface& WithPrivateIpAddressConfigs(Aws::Vector<ScheduledInstancesPrivateIpAddressConfig>&& value) { SetPrivateIpAddressConfigs(value); return *this;}
 
     /**
-     * <p>The private IP addresses.</p>
+     * <p>The private IPv4 addresses.</p>
      */
     inline ScheduledInstancesNetworkInterface& AddPrivateIpAddressConfigs(const ScheduledInstancesPrivateIpAddressConfig& value) { m_privateIpAddressConfigsHasBeenSet = true; m_privateIpAddressConfigs.push_back(value); return *this; }
 
     /**
-     * <p>The private IP addresses.</p>
+     * <p>The private IPv4 addresses.</p>
      */
     inline ScheduledInstancesNetworkInterface& AddPrivateIpAddressConfigs(ScheduledInstancesPrivateIpAddressConfig&& value) { m_privateIpAddressConfigsHasBeenSet = true; m_privateIpAddressConfigs.push_back(value); return *this; }
 
     /**
-     * <p>The number of secondary private IP addresses.</p>
+     * <p>The number of secondary private IPv4 addresses.</p>
      */
     inline int GetSecondaryPrivateIpAddressCount() const{ return m_secondaryPrivateIpAddressCount; }
 
     /**
-     * <p>The number of secondary private IP addresses.</p>
+     * <p>The number of secondary private IPv4 addresses.</p>
      */
     inline void SetSecondaryPrivateIpAddressCount(int value) { m_secondaryPrivateIpAddressCountHasBeenSet = true; m_secondaryPrivateIpAddressCount = value; }
 
     /**
-     * <p>The number of secondary private IP addresses.</p>
+     * <p>The number of secondary private IPv4 addresses.</p>
      */
     inline ScheduledInstancesNetworkInterface& WithSecondaryPrivateIpAddressCount(int value) { SetSecondaryPrivateIpAddressCount(value); return *this;}
 
     /**
-     * <p>Indicates whether to assign a public IP address to instances launched in a
-     * VPC. The public IP address can only be assigned to a network interface for eth0,
-     * and can only be assigned to a new network interface, not an existing one. You
-     * cannot specify more than one network interface in the request. If launching into
-     * a default subnet, the default value is <code>true</code>.</p>
+     * <p>Indicates whether to assign a public IPv4 address to instances launched in a
+     * VPC. The public IPv4 address can only be assigned to a network interface for
+     * eth0, and can only be assigned to a new network interface, not an existing one.
+     * You cannot specify more than one network interface in the request. If launching
+     * into a default subnet, the default value is <code>true</code>.</p>
      */
     inline bool GetAssociatePublicIpAddress() const{ return m_associatePublicIpAddress; }
 
     /**
-     * <p>Indicates whether to assign a public IP address to instances launched in a
-     * VPC. The public IP address can only be assigned to a network interface for eth0,
-     * and can only be assigned to a new network interface, not an existing one. You
-     * cannot specify more than one network interface in the request. If launching into
-     * a default subnet, the default value is <code>true</code>.</p>
+     * <p>Indicates whether to assign a public IPv4 address to instances launched in a
+     * VPC. The public IPv4 address can only be assigned to a network interface for
+     * eth0, and can only be assigned to a new network interface, not an existing one.
+     * You cannot specify more than one network interface in the request. If launching
+     * into a default subnet, the default value is <code>true</code>.</p>
      */
     inline void SetAssociatePublicIpAddress(bool value) { m_associatePublicIpAddressHasBeenSet = true; m_associatePublicIpAddress = value; }
 
     /**
-     * <p>Indicates whether to assign a public IP address to instances launched in a
-     * VPC. The public IP address can only be assigned to a network interface for eth0,
-     * and can only be assigned to a new network interface, not an existing one. You
-     * cannot specify more than one network interface in the request. If launching into
-     * a default subnet, the default value is <code>true</code>.</p>
+     * <p>Indicates whether to assign a public IPv4 address to instances launched in a
+     * VPC. The public IPv4 address can only be assigned to a network interface for
+     * eth0, and can only be assigned to a new network interface, not an existing one.
+     * You cannot specify more than one network interface in the request. If launching
+     * into a default subnet, the default value is <code>true</code>.</p>
      */
     inline ScheduledInstancesNetworkInterface& WithAssociatePublicIpAddress(bool value) { SetAssociatePublicIpAddress(value); return *this;}
 
@@ -336,6 +340,59 @@ namespace Model
      */
     inline ScheduledInstancesNetworkInterface& WithDeleteOnTermination(bool value) { SetDeleteOnTermination(value); return *this;}
 
+    /**
+     * <p>One or more specific IPv6 addresses from the subnet range.</p>
+     */
+    inline const Aws::Vector<ScheduledInstancesIpv6Address>& GetIpv6Addresses() const{ return m_ipv6Addresses; }
+
+    /**
+     * <p>One or more specific IPv6 addresses from the subnet range.</p>
+     */
+    inline void SetIpv6Addresses(const Aws::Vector<ScheduledInstancesIpv6Address>& value) { m_ipv6AddressesHasBeenSet = true; m_ipv6Addresses = value; }
+
+    /**
+     * <p>One or more specific IPv6 addresses from the subnet range.</p>
+     */
+    inline void SetIpv6Addresses(Aws::Vector<ScheduledInstancesIpv6Address>&& value) { m_ipv6AddressesHasBeenSet = true; m_ipv6Addresses = value; }
+
+    /**
+     * <p>One or more specific IPv6 addresses from the subnet range.</p>
+     */
+    inline ScheduledInstancesNetworkInterface& WithIpv6Addresses(const Aws::Vector<ScheduledInstancesIpv6Address>& value) { SetIpv6Addresses(value); return *this;}
+
+    /**
+     * <p>One or more specific IPv6 addresses from the subnet range.</p>
+     */
+    inline ScheduledInstancesNetworkInterface& WithIpv6Addresses(Aws::Vector<ScheduledInstancesIpv6Address>&& value) { SetIpv6Addresses(value); return *this;}
+
+    /**
+     * <p>One or more specific IPv6 addresses from the subnet range.</p>
+     */
+    inline ScheduledInstancesNetworkInterface& AddIpv6Addresses(const ScheduledInstancesIpv6Address& value) { m_ipv6AddressesHasBeenSet = true; m_ipv6Addresses.push_back(value); return *this; }
+
+    /**
+     * <p>One or more specific IPv6 addresses from the subnet range.</p>
+     */
+    inline ScheduledInstancesNetworkInterface& AddIpv6Addresses(ScheduledInstancesIpv6Address&& value) { m_ipv6AddressesHasBeenSet = true; m_ipv6Addresses.push_back(value); return *this; }
+
+    /**
+     * <p>The number of IPv6 addresses to assign to the network interface. The IPv6
+     * addresses are automatically selected from the subnet range.</p>
+     */
+    inline int GetIpv6AddressCount() const{ return m_ipv6AddressCount; }
+
+    /**
+     * <p>The number of IPv6 addresses to assign to the network interface. The IPv6
+     * addresses are automatically selected from the subnet range.</p>
+     */
+    inline void SetIpv6AddressCount(int value) { m_ipv6AddressCountHasBeenSet = true; m_ipv6AddressCount = value; }
+
+    /**
+     * <p>The number of IPv6 addresses to assign to the network interface. The IPv6
+     * addresses are automatically selected from the subnet range.</p>
+     */
+    inline ScheduledInstancesNetworkInterface& WithIpv6AddressCount(int value) { SetIpv6AddressCount(value); return *this;}
+
   private:
     Aws::String m_networkInterfaceId;
     bool m_networkInterfaceIdHasBeenSet;
@@ -357,6 +414,10 @@ namespace Model
     bool m_groupsHasBeenSet;
     bool m_deleteOnTermination;
     bool m_deleteOnTerminationHasBeenSet;
+    Aws::Vector<ScheduledInstancesIpv6Address> m_ipv6Addresses;
+    bool m_ipv6AddressesHasBeenSet;
+    int m_ipv6AddressCount;
+    bool m_ipv6AddressCountHasBeenSet;
   };
 
 } // namespace Model

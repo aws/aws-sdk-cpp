@@ -41,7 +41,9 @@ namespace Model
    * then only the part of the event specified in the path is passed to the target
    * (e.g. only the detail part of the event is passed). </li> <li> <b>Input</b> is
    * specified in the form of a valid JSON, then the matched event is overridden with
-   * this constant.</li> </ul>
+   * this constant.</li> </ul><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/Target">AWS API
+   * Reference</a></p>
    */
   class AWS_CLOUDWATCHEVENTS_API Target
   {

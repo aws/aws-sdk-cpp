@@ -29,7 +29,9 @@ namespace Model
 
   /**
    * <p>This input determines how the ListClusters action filters the list of
-   * clusters that it returns.</p>
+   * clusters that it returns.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/ListClustersInput">AWS
+   * API Reference</a></p>
    */
   class AWS_EMR_API ListClustersRequest : public EMRRequest
   {

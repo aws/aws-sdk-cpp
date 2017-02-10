@@ -29,7 +29,9 @@ namespace Model
 {
 
   /**
-   * <p>The input for the DeleteThing operation.</p>
+   * <p>The input for the DeleteThing operation.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteThingRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_IOT_API DeleteThingRequest : public IoTRequest
   {

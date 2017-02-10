@@ -35,7 +35,10 @@ namespace Model
   /**
    * <p>Contains an array of <code>S3Resource</code> objects. Each
    * <code>S3Resource</code> object represents an Amazon S3 bucket that your
-   * transferred data will be exported from or imported into.</p>
+   * transferred data will be exported from or imported into.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/JobResource">AWS
+   * API Reference</a></p>
    */
   class AWS_SNOWBALL_API JobResource
   {

@@ -29,7 +29,6 @@ namespace Model
 {
 
   /**
-   * <p>Contains the parameters for CreateListener.</p>
    */
   class AWS_ELASTICLOADBALANCINGV2_API CreateListenerRequest : public ElasticLoadBalancingv2Request
   {

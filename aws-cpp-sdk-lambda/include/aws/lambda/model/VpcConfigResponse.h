@@ -32,7 +32,10 @@ namespace Model
 {
 
   /**
-   * <p>VPC configuration associated with your Lambda function.</p>
+   * <p>VPC configuration associated with your Lambda function.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/VpcConfigResponse">AWS
+   * API Reference</a></p>
    */
   class AWS_LAMBDA_API VpcConfigResponse
   {

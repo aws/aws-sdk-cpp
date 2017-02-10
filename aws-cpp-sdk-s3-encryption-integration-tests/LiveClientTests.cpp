@@ -28,6 +28,7 @@
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/crypto/CryptoStream.h>
 #include <aws/testing/ProxyConfig.h>
+#include <aws/testing/TestingEnvironment.h>
 #include <aws/core/utils/memory/AWSMemory.h>
 
 using namespace Aws::S3;
@@ -81,7 +82,7 @@ public:
         Aws::String uniqueBucketName(bucketName);
         uniqueBucketName.append(TimeStamp);
 
-        return uniqueBucketName;
+        return Aws::Testing::GetAwsResourcePrefix() + uniqueBucketName;
     }
 };
 

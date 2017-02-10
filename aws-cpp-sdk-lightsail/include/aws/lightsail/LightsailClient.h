@@ -349,76 +349,109 @@ namespace Model
         virtual ~LightsailClient();
 
         /**
-         * <p>Allocates a static IP address.</p>
+         * <p>Allocates a static IP address.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/AllocateStaticIp">AWS
+         * API Reference</a></p>
          */
         virtual Model::AllocateStaticIpOutcome AllocateStaticIp(const Model::AllocateStaticIpRequest& request) const;
 
         /**
-         * <p>Allocates a static IP address.</p>
+         * <p>Allocates a static IP address.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/AllocateStaticIp">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::AllocateStaticIpOutcomeCallable AllocateStaticIpCallable(const Model::AllocateStaticIpRequest& request) const;
 
         /**
-         * <p>Allocates a static IP address.</p>
+         * <p>Allocates a static IP address.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/AllocateStaticIp">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void AllocateStaticIpAsync(const Model::AllocateStaticIpRequest& request, const AllocateStaticIpResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Attaches a static IP address to a specific Amazon Lightsail instance.</p>
+         * <p>Attaches a static IP address to a specific Amazon Lightsail
+         * instance.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/AttachStaticIp">AWS
+         * API Reference</a></p>
          */
         virtual Model::AttachStaticIpOutcome AttachStaticIp(const Model::AttachStaticIpRequest& request) const;
 
         /**
-         * <p>Attaches a static IP address to a specific Amazon Lightsail instance.</p>
+         * <p>Attaches a static IP address to a specific Amazon Lightsail
+         * instance.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/AttachStaticIp">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::AttachStaticIpOutcomeCallable AttachStaticIpCallable(const Model::AttachStaticIpRequest& request) const;
 
         /**
-         * <p>Attaches a static IP address to a specific Amazon Lightsail instance.</p>
+         * <p>Attaches a static IP address to a specific Amazon Lightsail
+         * instance.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/AttachStaticIp">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void AttachStaticIpAsync(const Model::AttachStaticIpRequest& request, const AttachStaticIpResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Closes the public ports on a specific Amazon Lightsail instance.</p>
+         * <p>Closes the public ports on a specific Amazon Lightsail
+         * instance.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CloseInstancePublicPorts">AWS
+         * API Reference</a></p>
          */
         virtual Model::CloseInstancePublicPortsOutcome CloseInstancePublicPorts(const Model::CloseInstancePublicPortsRequest& request) const;
 
         /**
-         * <p>Closes the public ports on a specific Amazon Lightsail instance.</p>
+         * <p>Closes the public ports on a specific Amazon Lightsail
+         * instance.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CloseInstancePublicPorts">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::CloseInstancePublicPortsOutcomeCallable CloseInstancePublicPortsCallable(const Model::CloseInstancePublicPortsRequest& request) const;
 
         /**
-         * <p>Closes the public ports on a specific Amazon Lightsail instance.</p>
+         * <p>Closes the public ports on a specific Amazon Lightsail
+         * instance.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CloseInstancePublicPorts">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CloseInstancePublicPortsAsync(const Model::CloseInstancePublicPortsRequest& request, const CloseInstancePublicPortsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a domain resource for the specified domain (e.g., example.com).</p>
+         * <p>Creates a domain resource for the specified domain (e.g.,
+         * example.com).</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateDomain">AWS
+         * API Reference</a></p>
          */
         virtual Model::CreateDomainOutcome CreateDomain(const Model::CreateDomainRequest& request) const;
 
         /**
-         * <p>Creates a domain resource for the specified domain (e.g., example.com).</p>
+         * <p>Creates a domain resource for the specified domain (e.g.,
+         * example.com).</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateDomain">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::CreateDomainOutcomeCallable CreateDomainCallable(const Model::CreateDomainRequest& request) const;
 
         /**
-         * <p>Creates a domain resource for the specified domain (e.g., example.com).</p>
+         * <p>Creates a domain resource for the specified domain (e.g.,
+         * example.com).</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateDomain">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -426,13 +459,17 @@ namespace Model
 
         /**
          * <p>Creates one of the following entry records associated with the domain: A
-         * record, CNAME record, TXT record, or MX record.</p>
+         * record, CNAME record, TXT record, or MX record.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateDomainEntry">AWS
+         * API Reference</a></p>
          */
         virtual Model::CreateDomainEntryOutcome CreateDomainEntry(const Model::CreateDomainEntryRequest& request) const;
 
         /**
          * <p>Creates one of the following entry records associated with the domain: A
-         * record, CNAME record, TXT record, or MX record.</p>
+         * record, CNAME record, TXT record, or MX record.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateDomainEntry">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -440,7 +477,9 @@ namespace Model
 
         /**
          * <p>Creates one of the following entry records associated with the domain: A
-         * record, CNAME record, TXT record, or MX record.</p>
+         * record, CNAME record, TXT record, or MX record.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateDomainEntry">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -449,14 +488,18 @@ namespace Model
         /**
          * <p>Creates a snapshot of a specific virtual private server, or <i>instance</i>.
          * You can use a snapshot to create a new instance that is based on that
-         * snapshot.</p>
+         * snapshot.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateInstanceSnapshot">AWS
+         * API Reference</a></p>
          */
         virtual Model::CreateInstanceSnapshotOutcome CreateInstanceSnapshot(const Model::CreateInstanceSnapshotRequest& request) const;
 
         /**
          * <p>Creates a snapshot of a specific virtual private server, or <i>instance</i>.
          * You can use a snapshot to create a new instance that is based on that
-         * snapshot.</p>
+         * snapshot.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateInstanceSnapshot">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -465,7 +508,9 @@ namespace Model
         /**
          * <p>Creates a snapshot of a specific virtual private server, or <i>instance</i>.
          * You can use a snapshot to create a new instance that is based on that
-         * snapshot.</p>
+         * snapshot.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateInstanceSnapshot">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -473,13 +518,17 @@ namespace Model
 
         /**
          * <p>Creates one or more Amazon Lightsail virtual private servers, or
-         * <i>instances</i>.</p>
+         * <i>instances</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateInstances">AWS
+         * API Reference</a></p>
          */
         virtual Model::CreateInstancesOutcome CreateInstances(const Model::CreateInstancesRequest& request) const;
 
         /**
          * <p>Creates one or more Amazon Lightsail virtual private servers, or
-         * <i>instances</i>.</p>
+         * <i>instances</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateInstances">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -487,7 +536,9 @@ namespace Model
 
         /**
          * <p>Creates one or more Amazon Lightsail virtual private servers, or
-         * <i>instances</i>.</p>
+         * <i>instances</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateInstances">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -495,13 +546,19 @@ namespace Model
 
         /**
          * <p>Uses a specific snapshot as a blueprint for creating one or more new
-         * instances that are based on that identical configuration.</p>
+         * instances that are based on that identical configuration.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateInstancesFromSnapshot">AWS
+         * API Reference</a></p>
          */
         virtual Model::CreateInstancesFromSnapshotOutcome CreateInstancesFromSnapshot(const Model::CreateInstancesFromSnapshotRequest& request) const;
 
         /**
          * <p>Uses a specific snapshot as a blueprint for creating one or more new
-         * instances that are based on that identical configuration.</p>
+         * instances that are based on that identical configuration.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateInstancesFromSnapshot">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -509,64 +566,88 @@ namespace Model
 
         /**
          * <p>Uses a specific snapshot as a blueprint for creating one or more new
-         * instances that are based on that identical configuration.</p>
+         * instances that are based on that identical configuration.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateInstancesFromSnapshot">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateInstancesFromSnapshotAsync(const Model::CreateInstancesFromSnapshotRequest& request, const CreateInstancesFromSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates sn SSH key pair.</p>
+         * <p>Creates sn SSH key pair.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateKeyPair">AWS
+         * API Reference</a></p>
          */
         virtual Model::CreateKeyPairOutcome CreateKeyPair(const Model::CreateKeyPairRequest& request) const;
 
         /**
-         * <p>Creates sn SSH key pair.</p>
+         * <p>Creates sn SSH key pair.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateKeyPair">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::CreateKeyPairOutcomeCallable CreateKeyPairCallable(const Model::CreateKeyPairRequest& request) const;
 
         /**
-         * <p>Creates sn SSH key pair.</p>
+         * <p>Creates sn SSH key pair.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateKeyPair">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateKeyPairAsync(const Model::CreateKeyPairRequest& request, const CreateKeyPairResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes the specified domain recordset and all of its domain records.</p>
+         * <p>Deletes the specified domain recordset and all of its domain
+         * records.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteDomain">AWS
+         * API Reference</a></p>
          */
         virtual Model::DeleteDomainOutcome DeleteDomain(const Model::DeleteDomainRequest& request) const;
 
         /**
-         * <p>Deletes the specified domain recordset and all of its domain records.</p>
+         * <p>Deletes the specified domain recordset and all of its domain
+         * records.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteDomain">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DeleteDomainOutcomeCallable DeleteDomainCallable(const Model::DeleteDomainRequest& request) const;
 
         /**
-         * <p>Deletes the specified domain recordset and all of its domain records.</p>
+         * <p>Deletes the specified domain recordset and all of its domain
+         * records.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteDomain">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteDomainAsync(const Model::DeleteDomainRequest& request, const DeleteDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes a specific domain entry.</p>
+         * <p>Deletes a specific domain entry.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteDomainEntry">AWS
+         * API Reference</a></p>
          */
         virtual Model::DeleteDomainEntryOutcome DeleteDomainEntry(const Model::DeleteDomainEntryRequest& request) const;
 
         /**
-         * <p>Deletes a specific domain entry.</p>
+         * <p>Deletes a specific domain entry.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteDomainEntry">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DeleteDomainEntryOutcomeCallable DeleteDomainEntryCallable(const Model::DeleteDomainEntryRequest& request) const;
 
         /**
-         * <p>Deletes a specific domain entry.</p>
+         * <p>Deletes a specific domain entry.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteDomainEntry">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -574,13 +655,17 @@ namespace Model
 
         /**
          * <p>Deletes a specific Amazon Lightsail virtual private server, or
-         * <i>instance</i>.</p>
+         * <i>instance</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteInstance">AWS
+         * API Reference</a></p>
          */
         virtual Model::DeleteInstanceOutcome DeleteInstance(const Model::DeleteInstanceRequest& request) const;
 
         /**
          * <p>Deletes a specific Amazon Lightsail virtual private server, or
-         * <i>instance</i>.</p>
+         * <i>instance</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteInstance">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -588,7 +673,9 @@ namespace Model
 
         /**
          * <p>Deletes a specific Amazon Lightsail virtual private server, or
-         * <i>instance</i>.</p>
+         * <i>instance</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteInstance">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -596,13 +683,17 @@ namespace Model
 
         /**
          * <p>Deletes a specific snapshot of a virtual private server (or
-         * <i>instance</i>).</p>
+         * <i>instance</i>).</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteInstanceSnapshot">AWS
+         * API Reference</a></p>
          */
         virtual Model::DeleteInstanceSnapshotOutcome DeleteInstanceSnapshot(const Model::DeleteInstanceSnapshotRequest& request) const;
 
         /**
          * <p>Deletes a specific snapshot of a virtual private server (or
-         * <i>instance</i>).</p>
+         * <i>instance</i>).</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteInstanceSnapshot">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -610,26 +701,34 @@ namespace Model
 
         /**
          * <p>Deletes a specific snapshot of a virtual private server (or
-         * <i>instance</i>).</p>
+         * <i>instance</i>).</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteInstanceSnapshot">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteInstanceSnapshotAsync(const Model::DeleteInstanceSnapshotRequest& request, const DeleteInstanceSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes a specific SSH key pair.</p>
+         * <p>Deletes a specific SSH key pair.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteKeyPair">AWS
+         * API Reference</a></p>
          */
         virtual Model::DeleteKeyPairOutcome DeleteKeyPair(const Model::DeleteKeyPairRequest& request) const;
 
         /**
-         * <p>Deletes a specific SSH key pair.</p>
+         * <p>Deletes a specific SSH key pair.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteKeyPair">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DeleteKeyPairOutcomeCallable DeleteKeyPairCallable(const Model::DeleteKeyPairRequest& request) const;
 
         /**
-         * <p>Deletes a specific SSH key pair.</p>
+         * <p>Deletes a specific SSH key pair.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteKeyPair">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -637,13 +736,17 @@ namespace Model
 
         /**
          * <p>Detaches a static IP from the Amazon Lightsail instance to which it is
-         * attached.</p>
+         * attached.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DetachStaticIp">AWS
+         * API Reference</a></p>
          */
         virtual Model::DetachStaticIpOutcome DetachStaticIp(const Model::DetachStaticIpRequest& request) const;
 
         /**
          * <p>Detaches a static IP from the Amazon Lightsail instance to which it is
-         * attached.</p>
+         * attached.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DetachStaticIp">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -651,45 +754,65 @@ namespace Model
 
         /**
          * <p>Detaches a static IP from the Amazon Lightsail instance to which it is
-         * attached.</p>
+         * attached.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DetachStaticIp">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DetachStaticIpAsync(const Model::DetachStaticIpRequest& request, const DetachStaticIpResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Downloads the default SSH key pair from the user's account.</p>
+         * <p>Downloads the default SSH key pair from the user's account.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DownloadDefaultKeyPair">AWS
+         * API Reference</a></p>
          */
         virtual Model::DownloadDefaultKeyPairOutcome DownloadDefaultKeyPair(const Model::DownloadDefaultKeyPairRequest& request) const;
 
         /**
-         * <p>Downloads the default SSH key pair from the user's account.</p>
+         * <p>Downloads the default SSH key pair from the user's account.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DownloadDefaultKeyPair">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DownloadDefaultKeyPairOutcomeCallable DownloadDefaultKeyPairCallable(const Model::DownloadDefaultKeyPairRequest& request) const;
 
         /**
-         * <p>Downloads the default SSH key pair from the user's account.</p>
+         * <p>Downloads the default SSH key pair from the user's account.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DownloadDefaultKeyPair">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DownloadDefaultKeyPairAsync(const Model::DownloadDefaultKeyPairRequest& request, const DownloadDefaultKeyPairResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns the names of all active (not deleted) resources.</p>
+         * <p>Returns the names of all active (not deleted) resources.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetActiveNames">AWS
+         * API Reference</a></p>
          */
         virtual Model::GetActiveNamesOutcome GetActiveNames(const Model::GetActiveNamesRequest& request) const;
 
         /**
-         * <p>Returns the names of all active (not deleted) resources.</p>
+         * <p>Returns the names of all active (not deleted) resources.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetActiveNames">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::GetActiveNamesOutcomeCallable GetActiveNamesCallable(const Model::GetActiveNamesRequest& request) const;
 
         /**
-         * <p>Returns the names of all active (not deleted) resources.</p>
+         * <p>Returns the names of all active (not deleted) resources.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetActiveNames">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -700,7 +823,9 @@ namespace Model
          * use a blueprint to create a new virtual private server already running a
          * specific operating system, as well as a preinstalled app or development stack.
          * The software each instance is running depends on the blueprint image you
-         * choose.</p>
+         * choose.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetBlueprints">AWS
+         * API Reference</a></p>
          */
         virtual Model::GetBlueprintsOutcome GetBlueprints(const Model::GetBlueprintsRequest& request) const;
 
@@ -709,7 +834,9 @@ namespace Model
          * use a blueprint to create a new virtual private server already running a
          * specific operating system, as well as a preinstalled app or development stack.
          * The software each instance is running depends on the blueprint image you
-         * choose.</p>
+         * choose.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetBlueprints">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -720,7 +847,9 @@ namespace Model
          * use a blueprint to create a new virtual private server already running a
          * specific operating system, as well as a preinstalled app or development stack.
          * The software each instance is running depends on the blueprint image you
-         * choose.</p>
+         * choose.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetBlueprints">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -728,13 +857,19 @@ namespace Model
 
         /**
          * <p>Returns the list of bundles that are available for purchase. A bundle
-         * describes the specs for your virtual private server (or <i>instance</i>).</p>
+         * describes the specs for your virtual private server (or
+         * <i>instance</i>).</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetBundles">AWS
+         * API Reference</a></p>
          */
         virtual Model::GetBundlesOutcome GetBundles(const Model::GetBundlesRequest& request) const;
 
         /**
          * <p>Returns the list of bundles that are available for purchase. A bundle
-         * describes the specs for your virtual private server (or <i>instance</i>).</p>
+         * describes the specs for your virtual private server (or
+         * <i>instance</i>).</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetBundles">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -742,45 +877,66 @@ namespace Model
 
         /**
          * <p>Returns the list of bundles that are available for purchase. A bundle
-         * describes the specs for your virtual private server (or <i>instance</i>).</p>
+         * describes the specs for your virtual private server (or
+         * <i>instance</i>).</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetBundles">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetBundlesAsync(const Model::GetBundlesRequest& request, const GetBundlesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns information about a specific domain recordset.</p>
+         * <p>Returns information about a specific domain recordset.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetDomain">AWS
+         * API Reference</a></p>
          */
         virtual Model::GetDomainOutcome GetDomain(const Model::GetDomainRequest& request) const;
 
         /**
-         * <p>Returns information about a specific domain recordset.</p>
+         * <p>Returns information about a specific domain recordset.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetDomain">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::GetDomainOutcomeCallable GetDomainCallable(const Model::GetDomainRequest& request) const;
 
         /**
-         * <p>Returns information about a specific domain recordset.</p>
+         * <p>Returns information about a specific domain recordset.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetDomain">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetDomainAsync(const Model::GetDomainRequest& request, const GetDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns a list of all domains in the user's account.</p>
+         * <p>Returns a list of all domains in the user's account.</p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetDomains">AWS
+         * API Reference</a></p>
          */
         virtual Model::GetDomainsOutcome GetDomains(const Model::GetDomainsRequest& request) const;
 
         /**
-         * <p>Returns a list of all domains in the user's account.</p>
+         * <p>Returns a list of all domains in the user's account.</p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetDomains">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::GetDomainsOutcomeCallable GetDomainsCallable(const Model::GetDomainsRequest& request) const;
 
         /**
-         * <p>Returns a list of all domains in the user's account.</p>
+         * <p>Returns a list of all domains in the user's account.</p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetDomains">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -788,13 +944,17 @@ namespace Model
 
         /**
          * <p>Returns information about a specific Amazon Lightsail instance, which is a
-         * virtual private server.</p>
+         * virtual private server.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetInstance">AWS
+         * API Reference</a></p>
          */
         virtual Model::GetInstanceOutcome GetInstance(const Model::GetInstanceRequest& request) const;
 
         /**
          * <p>Returns information about a specific Amazon Lightsail instance, which is a
-         * virtual private server.</p>
+         * virtual private server.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetInstance">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -802,7 +962,9 @@ namespace Model
 
         /**
          * <p>Returns information about a specific Amazon Lightsail instance, which is a
-         * virtual private server.</p>
+         * virtual private server.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetInstance">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -810,13 +972,17 @@ namespace Model
 
         /**
          * <p>Returns temporary SSH keys you can use to connect to a specific virtual
-         * private server, or <i>instance</i>.</p>
+         * private server, or <i>instance</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetInstanceAccessDetails">AWS
+         * API Reference</a></p>
          */
         virtual Model::GetInstanceAccessDetailsOutcome GetInstanceAccessDetails(const Model::GetInstanceAccessDetailsRequest& request) const;
 
         /**
          * <p>Returns temporary SSH keys you can use to connect to a specific virtual
-         * private server, or <i>instance</i>.</p>
+         * private server, or <i>instance</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetInstanceAccessDetails">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -824,7 +990,9 @@ namespace Model
 
         /**
          * <p>Returns temporary SSH keys you can use to connect to a specific virtual
-         * private server, or <i>instance</i>.</p>
+         * private server, or <i>instance</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetInstanceAccessDetails">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -832,13 +1000,17 @@ namespace Model
 
         /**
          * <p>Returns the data points for the specified Amazon Lightsail instance metric,
-         * given an instance name.</p>
+         * given an instance name.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetInstanceMetricData">AWS
+         * API Reference</a></p>
          */
         virtual Model::GetInstanceMetricDataOutcome GetInstanceMetricData(const Model::GetInstanceMetricDataRequest& request) const;
 
         /**
          * <p>Returns the data points for the specified Amazon Lightsail instance metric,
-         * given an instance name.</p>
+         * given an instance name.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetInstanceMetricData">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -846,7 +1018,9 @@ namespace Model
 
         /**
          * <p>Returns the data points for the specified Amazon Lightsail instance metric,
-         * given an instance name.</p>
+         * given an instance name.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetInstanceMetricData">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -854,13 +1028,17 @@ namespace Model
 
         /**
          * <p>Returns the port states for a specific virtual private server, or
-         * <i>instance</i>.</p>
+         * <i>instance</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetInstancePortStates">AWS
+         * API Reference</a></p>
          */
         virtual Model::GetInstancePortStatesOutcome GetInstancePortStates(const Model::GetInstancePortStatesRequest& request) const;
 
         /**
          * <p>Returns the port states for a specific virtual private server, or
-         * <i>instance</i>.</p>
+         * <i>instance</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetInstancePortStates">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -868,45 +1046,65 @@ namespace Model
 
         /**
          * <p>Returns the port states for a specific virtual private server, or
-         * <i>instance</i>.</p>
+         * <i>instance</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetInstancePortStates">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetInstancePortStatesAsync(const Model::GetInstancePortStatesRequest& request, const GetInstancePortStatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns information about a specific instance snapshot.</p>
+         * <p>Returns information about a specific instance snapshot.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetInstanceSnapshot">AWS
+         * API Reference</a></p>
          */
         virtual Model::GetInstanceSnapshotOutcome GetInstanceSnapshot(const Model::GetInstanceSnapshotRequest& request) const;
 
         /**
-         * <p>Returns information about a specific instance snapshot.</p>
+         * <p>Returns information about a specific instance snapshot.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetInstanceSnapshot">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::GetInstanceSnapshotOutcomeCallable GetInstanceSnapshotCallable(const Model::GetInstanceSnapshotRequest& request) const;
 
         /**
-         * <p>Returns information about a specific instance snapshot.</p>
+         * <p>Returns information about a specific instance snapshot.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetInstanceSnapshot">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetInstanceSnapshotAsync(const Model::GetInstanceSnapshotRequest& request, const GetInstanceSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns all instance snapshots for the user's account.</p>
+         * <p>Returns all instance snapshots for the user's account.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetInstanceSnapshots">AWS
+         * API Reference</a></p>
          */
         virtual Model::GetInstanceSnapshotsOutcome GetInstanceSnapshots(const Model::GetInstanceSnapshotsRequest& request) const;
 
         /**
-         * <p>Returns all instance snapshots for the user's account.</p>
+         * <p>Returns all instance snapshots for the user's account.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetInstanceSnapshots">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::GetInstanceSnapshotsOutcomeCallable GetInstanceSnapshotsCallable(const Model::GetInstanceSnapshotsRequest& request) const;
 
         /**
-         * <p>Returns all instance snapshots for the user's account.</p>
+         * <p>Returns all instance snapshots for the user's account.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetInstanceSnapshots">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -914,13 +1112,17 @@ namespace Model
 
         /**
          * <p>Returns the state of a specific instance. Works on one instance at a
-         * time.</p>
+         * time.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetInstanceState">AWS
+         * API Reference</a></p>
          */
         virtual Model::GetInstanceStateOutcome GetInstanceState(const Model::GetInstanceStateRequest& request) const;
 
         /**
          * <p>Returns the state of a specific instance. Works on one instance at a
-         * time.</p>
+         * time.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetInstanceState">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -928,7 +1130,9 @@ namespace Model
 
         /**
          * <p>Returns the state of a specific instance. Works on one instance at a
-         * time.</p>
+         * time.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetInstanceState">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -936,13 +1140,17 @@ namespace Model
 
         /**
          * <p>Returns information about all Amazon Lightsail virtual private servers, or
-         * <i>instances</i>.</p>
+         * <i>instances</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetInstances">AWS
+         * API Reference</a></p>
          */
         virtual Model::GetInstancesOutcome GetInstances(const Model::GetInstancesRequest& request) const;
 
         /**
          * <p>Returns information about all Amazon Lightsail virtual private servers, or
-         * <i>instances</i>.</p>
+         * <i>instances</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetInstances">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -950,45 +1158,62 @@ namespace Model
 
         /**
          * <p>Returns information about all Amazon Lightsail virtual private servers, or
-         * <i>instances</i>.</p>
+         * <i>instances</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetInstances">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetInstancesAsync(const Model::GetInstancesRequest& request, const GetInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns information about a specific key pair.</p>
+         * <p>Returns information about a specific key pair.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetKeyPair">AWS
+         * API Reference</a></p>
          */
         virtual Model::GetKeyPairOutcome GetKeyPair(const Model::GetKeyPairRequest& request) const;
 
         /**
-         * <p>Returns information about a specific key pair.</p>
+         * <p>Returns information about a specific key pair.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetKeyPair">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::GetKeyPairOutcomeCallable GetKeyPairCallable(const Model::GetKeyPairRequest& request) const;
 
         /**
-         * <p>Returns information about a specific key pair.</p>
+         * <p>Returns information about a specific key pair.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetKeyPair">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetKeyPairAsync(const Model::GetKeyPairRequest& request, const GetKeyPairResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns information about all key pairs in the user's account.</p>
+         * <p>Returns information about all key pairs in the user's account.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetKeyPairs">AWS
+         * API Reference</a></p>
          */
         virtual Model::GetKeyPairsOutcome GetKeyPairs(const Model::GetKeyPairsRequest& request) const;
 
         /**
-         * <p>Returns information about all key pairs in the user's account.</p>
+         * <p>Returns information about all key pairs in the user's account.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetKeyPairs">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::GetKeyPairsOutcomeCallable GetKeyPairsCallable(const Model::GetKeyPairsRequest& request) const;
 
         /**
-         * <p>Returns information about all key pairs in the user's account.</p>
+         * <p>Returns information about all key pairs in the user's account.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetKeyPairs">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -997,14 +1222,18 @@ namespace Model
         /**
          * <p>Returns information about a specific operation. Operations include events
          * such as when you create an instance, allocate a static IP, attach a static IP,
-         * and so on.</p>
+         * and so on.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetOperation">AWS
+         * API Reference</a></p>
          */
         virtual Model::GetOperationOutcome GetOperation(const Model::GetOperationRequest& request) const;
 
         /**
          * <p>Returns information about a specific operation. Operations include events
          * such as when you create an instance, allocate a static IP, attach a static IP,
-         * and so on.</p>
+         * and so on.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetOperation">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1013,7 +1242,9 @@ namespace Model
         /**
          * <p>Returns information about a specific operation. Operations include events
          * such as when you create an instance, allocate a static IP, attach a static IP,
-         * and so on.</p>
+         * and so on.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetOperation">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1023,7 +1254,10 @@ namespace Model
          * <p>Returns information about all operations.</p> <p>Results are returned from
          * oldest to newest, up to a maximum of 200. Results can be paged by making each
          * subsequent call to <code>GetOperations</code> use the maximum (last)
-         * <code>statusChangedAt</code> value from the previous request.</p>
+         * <code>statusChangedAt</code> value from the previous request.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetOperations">AWS
+         * API Reference</a></p>
          */
         virtual Model::GetOperationsOutcome GetOperations(const Model::GetOperationsRequest& request) const;
 
@@ -1031,7 +1265,10 @@ namespace Model
          * <p>Returns information about all operations.</p> <p>Results are returned from
          * oldest to newest, up to a maximum of 200. Results can be paged by making each
          * subsequent call to <code>GetOperations</code> use the maximum (last)
-         * <code>statusChangedAt</code> value from the previous request.</p>
+         * <code>statusChangedAt</code> value from the previous request.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetOperations">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1041,7 +1278,10 @@ namespace Model
          * <p>Returns information about all operations.</p> <p>Results are returned from
          * oldest to newest, up to a maximum of 200. Results can be paged by making each
          * subsequent call to <code>GetOperations</code> use the maximum (last)
-         * <code>statusChangedAt</code> value from the previous request.</p>
+         * <code>statusChangedAt</code> value from the previous request.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetOperations">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1049,13 +1289,17 @@ namespace Model
 
         /**
          * <p>Gets operations for a specific resource (e.g., an instance or a static
-         * IP).</p>
+         * IP).</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetOperationsForResource">AWS
+         * API Reference</a></p>
          */
         virtual Model::GetOperationsForResourceOutcome GetOperationsForResource(const Model::GetOperationsForResourceRequest& request) const;
 
         /**
          * <p>Gets operations for a specific resource (e.g., an instance or a static
-         * IP).</p>
+         * IP).</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetOperationsForResource">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1063,140 +1307,202 @@ namespace Model
 
         /**
          * <p>Gets operations for a specific resource (e.g., an instance or a static
-         * IP).</p>
+         * IP).</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetOperationsForResource">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetOperationsForResourceAsync(const Model::GetOperationsForResourceRequest& request, const GetOperationsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns a list of all valid regions for Amazon Lightsail.</p>
+         * <p>Returns a list of all valid regions for Amazon Lightsail.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetRegions">AWS
+         * API Reference</a></p>
          */
         virtual Model::GetRegionsOutcome GetRegions(const Model::GetRegionsRequest& request) const;
 
         /**
-         * <p>Returns a list of all valid regions for Amazon Lightsail.</p>
+         * <p>Returns a list of all valid regions for Amazon Lightsail.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetRegions">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::GetRegionsOutcomeCallable GetRegionsCallable(const Model::GetRegionsRequest& request) const;
 
         /**
-         * <p>Returns a list of all valid regions for Amazon Lightsail.</p>
+         * <p>Returns a list of all valid regions for Amazon Lightsail.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetRegions">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetRegionsAsync(const Model::GetRegionsRequest& request, const GetRegionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns information about a specific static IP.</p>
+         * <p>Returns information about a specific static IP.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetStaticIp">AWS
+         * API Reference</a></p>
          */
         virtual Model::GetStaticIpOutcome GetStaticIp(const Model::GetStaticIpRequest& request) const;
 
         /**
-         * <p>Returns information about a specific static IP.</p>
+         * <p>Returns information about a specific static IP.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetStaticIp">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::GetStaticIpOutcomeCallable GetStaticIpCallable(const Model::GetStaticIpRequest& request) const;
 
         /**
-         * <p>Returns information about a specific static IP.</p>
+         * <p>Returns information about a specific static IP.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetStaticIp">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetStaticIpAsync(const Model::GetStaticIpRequest& request, const GetStaticIpResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns information about all static IPs in the user's account.</p>
+         * <p>Returns information about all static IPs in the user's account.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetStaticIps">AWS
+         * API Reference</a></p>
          */
         virtual Model::GetStaticIpsOutcome GetStaticIps(const Model::GetStaticIpsRequest& request) const;
 
         /**
-         * <p>Returns information about all static IPs in the user's account.</p>
+         * <p>Returns information about all static IPs in the user's account.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetStaticIps">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::GetStaticIpsOutcomeCallable GetStaticIpsCallable(const Model::GetStaticIpsRequest& request) const;
 
         /**
-         * <p>Returns information about all static IPs in the user's account.</p>
+         * <p>Returns information about all static IPs in the user's account.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetStaticIps">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetStaticIpsAsync(const Model::GetStaticIpsRequest& request, const GetStaticIpsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Imports a public SSH key from a specific key pair.</p>
+         * <p>Imports a public SSH key from a specific key pair.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/ImportKeyPair">AWS
+         * API Reference</a></p>
          */
         virtual Model::ImportKeyPairOutcome ImportKeyPair(const Model::ImportKeyPairRequest& request) const;
 
         /**
-         * <p>Imports a public SSH key from a specific key pair.</p>
+         * <p>Imports a public SSH key from a specific key pair.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/ImportKeyPair">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ImportKeyPairOutcomeCallable ImportKeyPairCallable(const Model::ImportKeyPairRequest& request) const;
 
         /**
-         * <p>Imports a public SSH key from a specific key pair.</p>
+         * <p>Imports a public SSH key from a specific key pair.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/ImportKeyPair">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ImportKeyPairAsync(const Model::ImportKeyPairRequest& request, const ImportKeyPairResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns a Boolean value indicating whether your Lightsail VPC is peered.</p>
+         * <p>Returns a Boolean value indicating whether your Lightsail VPC is
+         * peered.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/IsVpcPeered">AWS
+         * API Reference</a></p>
          */
         virtual Model::IsVpcPeeredOutcome IsVpcPeered(const Model::IsVpcPeeredRequest& request) const;
 
         /**
-         * <p>Returns a Boolean value indicating whether your Lightsail VPC is peered.</p>
+         * <p>Returns a Boolean value indicating whether your Lightsail VPC is
+         * peered.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/IsVpcPeered">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::IsVpcPeeredOutcomeCallable IsVpcPeeredCallable(const Model::IsVpcPeeredRequest& request) const;
 
         /**
-         * <p>Returns a Boolean value indicating whether your Lightsail VPC is peered.</p>
+         * <p>Returns a Boolean value indicating whether your Lightsail VPC is
+         * peered.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/IsVpcPeered">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void IsVpcPeeredAsync(const Model::IsVpcPeeredRequest& request, const IsVpcPeeredResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Adds public ports to an Amazon Lightsail instance.</p>
+         * <p>Adds public ports to an Amazon Lightsail instance.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/OpenInstancePublicPorts">AWS
+         * API Reference</a></p>
          */
         virtual Model::OpenInstancePublicPortsOutcome OpenInstancePublicPorts(const Model::OpenInstancePublicPortsRequest& request) const;
 
         /**
-         * <p>Adds public ports to an Amazon Lightsail instance.</p>
+         * <p>Adds public ports to an Amazon Lightsail instance.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/OpenInstancePublicPorts">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::OpenInstancePublicPortsOutcomeCallable OpenInstancePublicPortsCallable(const Model::OpenInstancePublicPortsRequest& request) const;
 
         /**
-         * <p>Adds public ports to an Amazon Lightsail instance.</p>
+         * <p>Adds public ports to an Amazon Lightsail instance.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/OpenInstancePublicPorts">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void OpenInstancePublicPortsAsync(const Model::OpenInstancePublicPortsRequest& request, const OpenInstancePublicPortsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Tries to peer the Lightsail VPC with the user's default VPC.</p>
+         * <p>Tries to peer the Lightsail VPC with the user's default VPC.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/PeerVpc">AWS
+         * API Reference</a></p>
          */
         virtual Model::PeerVpcOutcome PeerVpc(const Model::PeerVpcRequest& request) const;
 
         /**
-         * <p>Tries to peer the Lightsail VPC with the user's default VPC.</p>
+         * <p>Tries to peer the Lightsail VPC with the user's default VPC.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/PeerVpc">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::PeerVpcOutcomeCallable PeerVpcCallable(const Model::PeerVpcRequest& request) const;
 
         /**
-         * <p>Tries to peer the Lightsail VPC with the user's default VPC.</p>
+         * <p>Tries to peer the Lightsail VPC with the user's default VPC.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/PeerVpc">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1205,14 +1511,20 @@ namespace Model
         /**
          * <p>Restarts a specific instance. When your Amazon Lightsail instance is finished
          * rebooting, Lightsail assigns a new public IP address. To use the same IP address
-         * after restarting, create a static IP address and attach it to the instance.</p>
+         * after restarting, create a static IP address and attach it to the
+         * instance.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/RebootInstance">AWS
+         * API Reference</a></p>
          */
         virtual Model::RebootInstanceOutcome RebootInstance(const Model::RebootInstanceRequest& request) const;
 
         /**
          * <p>Restarts a specific instance. When your Amazon Lightsail instance is finished
          * rebooting, Lightsail assigns a new public IP address. To use the same IP address
-         * after restarting, create a static IP address and attach it to the instance.</p>
+         * after restarting, create a static IP address and attach it to the
+         * instance.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/RebootInstance">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1221,26 +1533,35 @@ namespace Model
         /**
          * <p>Restarts a specific instance. When your Amazon Lightsail instance is finished
          * rebooting, Lightsail assigns a new public IP address. To use the same IP address
-         * after restarting, create a static IP address and attach it to the instance.</p>
+         * after restarting, create a static IP address and attach it to the
+         * instance.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/RebootInstance">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void RebootInstanceAsync(const Model::RebootInstanceRequest& request, const RebootInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes a specific static IP from your account.</p>
+         * <p>Deletes a specific static IP from your account.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/ReleaseStaticIp">AWS
+         * API Reference</a></p>
          */
         virtual Model::ReleaseStaticIpOutcome ReleaseStaticIp(const Model::ReleaseStaticIpRequest& request) const;
 
         /**
-         * <p>Deletes a specific static IP from your account.</p>
+         * <p>Deletes a specific static IP from your account.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/ReleaseStaticIp">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ReleaseStaticIpOutcomeCallable ReleaseStaticIpCallable(const Model::ReleaseStaticIpRequest& request) const;
 
         /**
-         * <p>Deletes a specific static IP from your account.</p>
+         * <p>Deletes a specific static IP from your account.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/ReleaseStaticIp">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1248,13 +1569,17 @@ namespace Model
 
         /**
          * <p>Starts a specific Amazon Lightsail instance from a stopped state. To restart
-         * an instance, use the reboot instance operation.</p>
+         * an instance, use the reboot instance operation.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/StartInstance">AWS
+         * API Reference</a></p>
          */
         virtual Model::StartInstanceOutcome StartInstance(const Model::StartInstanceRequest& request) const;
 
         /**
          * <p>Starts a specific Amazon Lightsail instance from a stopped state. To restart
-         * an instance, use the reboot instance operation.</p>
+         * an instance, use the reboot instance operation.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/StartInstance">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1262,64 +1587,90 @@ namespace Model
 
         /**
          * <p>Starts a specific Amazon Lightsail instance from a stopped state. To restart
-         * an instance, use the reboot instance operation.</p>
+         * an instance, use the reboot instance operation.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/StartInstance">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void StartInstanceAsync(const Model::StartInstanceRequest& request, const StartInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Stops a specific Amazon Lightsail instance that is currently running.</p>
+         * <p>Stops a specific Amazon Lightsail instance that is currently
+         * running.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/StopInstance">AWS
+         * API Reference</a></p>
          */
         virtual Model::StopInstanceOutcome StopInstance(const Model::StopInstanceRequest& request) const;
 
         /**
-         * <p>Stops a specific Amazon Lightsail instance that is currently running.</p>
+         * <p>Stops a specific Amazon Lightsail instance that is currently
+         * running.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/StopInstance">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::StopInstanceOutcomeCallable StopInstanceCallable(const Model::StopInstanceRequest& request) const;
 
         /**
-         * <p>Stops a specific Amazon Lightsail instance that is currently running.</p>
+         * <p>Stops a specific Amazon Lightsail instance that is currently
+         * running.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/StopInstance">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void StopInstanceAsync(const Model::StopInstanceRequest& request, const StopInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Attempts to unpeer the Lightsail VPC from the user's default VPC.</p>
+         * <p>Attempts to unpeer the Lightsail VPC from the user's default
+         * VPC.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/UnpeerVpc">AWS
+         * API Reference</a></p>
          */
         virtual Model::UnpeerVpcOutcome UnpeerVpc(const Model::UnpeerVpcRequest& request) const;
 
         /**
-         * <p>Attempts to unpeer the Lightsail VPC from the user's default VPC.</p>
+         * <p>Attempts to unpeer the Lightsail VPC from the user's default
+         * VPC.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/UnpeerVpc">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::UnpeerVpcOutcomeCallable UnpeerVpcCallable(const Model::UnpeerVpcRequest& request) const;
 
         /**
-         * <p>Attempts to unpeer the Lightsail VPC from the user's default VPC.</p>
+         * <p>Attempts to unpeer the Lightsail VPC from the user's default
+         * VPC.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/UnpeerVpc">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void UnpeerVpcAsync(const Model::UnpeerVpcRequest& request, const UnpeerVpcResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Updates a domain recordset after it is created.</p>
+         * <p>Updates a domain recordset after it is created.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/UpdateDomainEntry">AWS
+         * API Reference</a></p>
          */
         virtual Model::UpdateDomainEntryOutcome UpdateDomainEntry(const Model::UpdateDomainEntryRequest& request) const;
 
         /**
-         * <p>Updates a domain recordset after it is created.</p>
+         * <p>Updates a domain recordset after it is created.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/UpdateDomainEntry">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::UpdateDomainEntryOutcomeCallable UpdateDomainEntryCallable(const Model::UpdateDomainEntryRequest& request) const;
 
         /**
-         * <p>Updates a domain recordset after it is created.</p>
+         * <p>Updates a domain recordset after it is created.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/UpdateDomainEntry">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */

@@ -26,7 +26,9 @@ namespace Model
 {
 
   /**
-   * <p>Contains the parameters for CreateVolume.</p>
+   * <p>Contains the parameters for CreateVolume.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVolumeRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_EC2_API CreateVolumeRequest : public EC2Request
   {
@@ -214,7 +216,7 @@ namespace Model
 
     /**
      * <p>Only valid for Provisioned IOPS SSD volumes. The number of I/O operations per
-     * second (IOPS) to provision for the volume, with a maximum ratio of 30
+     * second (IOPS) to provision for the volume, with a maximum ratio of 50
      * IOPS/GiB.</p> <p>Constraint: Range is 100 to 20000 for Provisioned IOPS SSD
      * volumes </p>
      */
@@ -222,7 +224,7 @@ namespace Model
 
     /**
      * <p>Only valid for Provisioned IOPS SSD volumes. The number of I/O operations per
-     * second (IOPS) to provision for the volume, with a maximum ratio of 30
+     * second (IOPS) to provision for the volume, with a maximum ratio of 50
      * IOPS/GiB.</p> <p>Constraint: Range is 100 to 20000 for Provisioned IOPS SSD
      * volumes </p>
      */
@@ -230,7 +232,7 @@ namespace Model
 
     /**
      * <p>Only valid for Provisioned IOPS SSD volumes. The number of I/O operations per
-     * second (IOPS) to provision for the volume, with a maximum ratio of 30
+     * second (IOPS) to provision for the volume, with a maximum ratio of 50
      * IOPS/GiB.</p> <p>Constraint: Range is 100 to 20000 for Provisioned IOPS SSD
      * volumes </p>
      */

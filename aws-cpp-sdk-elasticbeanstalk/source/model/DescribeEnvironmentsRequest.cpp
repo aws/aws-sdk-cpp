@@ -68,7 +68,7 @@ Aws::String DescribeEnvironmentsRequest::SerializePayload() const
 
   if(m_includeDeletedHasBeenSet)
   {
-    ss << "IncludeDeleted=" << m_includeDeleted << "&";
+    ss << "IncludeDeleted=" << std::boolalpha << m_includeDeleted << "&";
   }
 
   if(m_includedDeletedBackToHasBeenSet)

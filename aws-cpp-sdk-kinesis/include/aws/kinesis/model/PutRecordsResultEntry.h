@@ -35,7 +35,9 @@ namespace Model
    * request. A record that is successfully added to a stream includes
    * <code>SequenceNumber</code> and <code>ShardId</code> in the result. A record
    * that fails to be added to the stream includes <code>ErrorCode</code> and
-   * <code>ErrorMessage</code> in the result.</p>
+   * <code>ErrorMessage</code> in the result.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/PutRecordsResultEntry">AWS
+   * API Reference</a></p>
    */
   class AWS_KINESIS_API PutRecordsResultEntry
   {

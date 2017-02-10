@@ -26,7 +26,6 @@ namespace Model
 {
 
   /**
-   * <p>Contains the parameters for SetSecurityGroups.</p>
    */
   class AWS_ELASTICLOADBALANCINGV2_API SetSecurityGroupsRequest : public ElasticLoadBalancingv2Request
   {

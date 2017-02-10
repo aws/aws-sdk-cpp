@@ -33,7 +33,10 @@ namespace Model
 
   /**
    * <p>Provides information about the EC2 instances in a cluster grouped by
-   * category. For example, key name, subnet ID, IAM instance profile, and so on.</p>
+   * category. For example, key name, subnet ID, IAM instance profile, and so
+   * on.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/Ec2InstanceAttributes">AWS
+   * API Reference</a></p>
    */
   class AWS_EMR_API Ec2InstanceAttributes
   {

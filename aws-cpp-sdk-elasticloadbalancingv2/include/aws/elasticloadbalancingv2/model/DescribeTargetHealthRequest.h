@@ -27,7 +27,6 @@ namespace Model
 {
 
   /**
-   * <p>Contains the parameters for DescribeTargetHealth.</p>
    */
   class AWS_ELASTICLOADBALANCINGV2_API DescribeTargetHealthRequest : public ElasticLoadBalancingv2Request
   {

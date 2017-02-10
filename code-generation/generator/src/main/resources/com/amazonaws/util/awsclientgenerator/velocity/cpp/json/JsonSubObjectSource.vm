@@ -32,6 +32,9 @@ ${typeInfo.className}::${typeInfo.className}(const JsonValue& jsonValue)$initial
 
 ${typeInfo.className}& ${typeInfo.className}::operator =(const JsonValue& jsonValue)
 {
+#if($shape.members.size() == 0)
+  AWS_UNREFERENCED_PARAM(jsonValue);
+#end
 #set($useRequiredField = true)
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/json/ModelClassMembersDeserializeJson.vm")
   return *this;

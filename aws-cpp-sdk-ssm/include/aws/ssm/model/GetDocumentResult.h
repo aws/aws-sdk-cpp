@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/ssm/SSM_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ssm/model/DocumentType.h>
 
 namespace Aws
 {
@@ -75,6 +76,41 @@ namespace Model
     inline GetDocumentResult& WithName(const char* value) { SetName(value); return *this;}
 
     /**
+     * <p>The document version.</p>
+     */
+    inline const Aws::String& GetDocumentVersion() const{ return m_documentVersion; }
+
+    /**
+     * <p>The document version.</p>
+     */
+    inline void SetDocumentVersion(const Aws::String& value) { m_documentVersion = value; }
+
+    /**
+     * <p>The document version.</p>
+     */
+    inline void SetDocumentVersion(Aws::String&& value) { m_documentVersion = value; }
+
+    /**
+     * <p>The document version.</p>
+     */
+    inline void SetDocumentVersion(const char* value) { m_documentVersion.assign(value); }
+
+    /**
+     * <p>The document version.</p>
+     */
+    inline GetDocumentResult& WithDocumentVersion(const Aws::String& value) { SetDocumentVersion(value); return *this;}
+
+    /**
+     * <p>The document version.</p>
+     */
+    inline GetDocumentResult& WithDocumentVersion(Aws::String&& value) { SetDocumentVersion(value); return *this;}
+
+    /**
+     * <p>The document version.</p>
+     */
+    inline GetDocumentResult& WithDocumentVersion(const char* value) { SetDocumentVersion(value); return *this;}
+
+    /**
      * <p>The contents of the SSM document.</p>
      */
     inline const Aws::String& GetContent() const{ return m_content; }
@@ -109,9 +145,36 @@ namespace Model
      */
     inline GetDocumentResult& WithContent(const char* value) { SetContent(value); return *this;}
 
+    /**
+     * <p>The document type.</p>
+     */
+    inline const DocumentType& GetDocumentType() const{ return m_documentType; }
+
+    /**
+     * <p>The document type.</p>
+     */
+    inline void SetDocumentType(const DocumentType& value) { m_documentType = value; }
+
+    /**
+     * <p>The document type.</p>
+     */
+    inline void SetDocumentType(DocumentType&& value) { m_documentType = value; }
+
+    /**
+     * <p>The document type.</p>
+     */
+    inline GetDocumentResult& WithDocumentType(const DocumentType& value) { SetDocumentType(value); return *this;}
+
+    /**
+     * <p>The document type.</p>
+     */
+    inline GetDocumentResult& WithDocumentType(DocumentType&& value) { SetDocumentType(value); return *this;}
+
   private:
     Aws::String m_name;
+    Aws::String m_documentVersion;
     Aws::String m_content;
+    DocumentType m_documentType;
   };
 
 } // namespace Model

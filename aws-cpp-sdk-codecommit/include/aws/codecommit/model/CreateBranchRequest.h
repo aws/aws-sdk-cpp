@@ -25,7 +25,10 @@ namespace Model
 {
 
   /**
-   * <p>Represents the input of a create branch operation.</p>
+   * <p>Represents the input of a create branch operation.</p><p><h3>See Also:</h3>  
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/CreateBranchInput">AWS
+   * API Reference</a></p>
    */
   class AWS_CODECOMMIT_API CreateBranchRequest : public CodeCommitRequest
   {

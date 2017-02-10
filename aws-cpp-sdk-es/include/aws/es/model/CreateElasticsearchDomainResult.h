@@ -34,7 +34,10 @@ namespace Model
 {
   /**
    * <p>The result of a <code>CreateElasticsearchDomain</code> operation. Contains
-   * the status of the newly created Elasticsearch domain.</p>
+   * the status of the newly created Elasticsearch domain.</p><p><h3>See Also:</h3>  
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/CreateElasticsearchDomainResponse">AWS
+   * API Reference</a></p>
    */
   class AWS_ELASTICSEARCHSERVICE_API CreateElasticsearchDomainResult
   {

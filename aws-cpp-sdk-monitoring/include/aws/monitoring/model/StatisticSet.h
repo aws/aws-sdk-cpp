@@ -31,7 +31,10 @@ namespace Model
 {
 
   /**
-   * <p>Represents a set of statistics that describes a specific metric. </p>
+   * <p>Represents a set of statistics that describes a specific metric.
+   * </p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/StatisticSet">AWS
+   * API Reference</a></p>
    */
   class AWS_CLOUDWATCH_API StatisticSet
   {

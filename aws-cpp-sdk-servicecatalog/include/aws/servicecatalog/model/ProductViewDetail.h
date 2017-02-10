@@ -34,7 +34,9 @@ namespace Model
 {
 
   /**
-   * <p>Detailed product view information.</p>
+   * <p>Detailed product view information.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ProductViewDetail">AWS
+   * API Reference</a></p>
    */
   class AWS_SERVICECATALOG_API ProductViewDetail
   {

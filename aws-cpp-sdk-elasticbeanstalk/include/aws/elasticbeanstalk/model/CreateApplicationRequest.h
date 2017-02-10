@@ -16,6 +16,7 @@
 #include <aws/elasticbeanstalk/ElasticBeanstalk_EXPORTS.h>
 #include <aws/elasticbeanstalk/ElasticBeanstalkRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/elasticbeanstalk/model/ApplicationResourceLifecycleConfig.h>
 
 namespace Aws
 {
@@ -25,7 +26,9 @@ namespace Model
 {
 
   /**
-   * <p>Request to create an application.</p>
+   * <p>Request to create an application.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/CreateApplicationMessage">AWS
+   * API Reference</a></p>
    */
   class AWS_ELASTICBEANSTALK_API CreateApplicationRequest : public ElasticBeanstalkRequest
   {
@@ -117,11 +120,43 @@ namespace Model
      */
     inline CreateApplicationRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
 
+    /**
+     * <p>Specify an application resource lifecycle configuration to prevent your
+     * application from accumulating too many versions.</p>
+     */
+    inline const ApplicationResourceLifecycleConfig& GetResourceLifecycleConfig() const{ return m_resourceLifecycleConfig; }
+
+    /**
+     * <p>Specify an application resource lifecycle configuration to prevent your
+     * application from accumulating too many versions.</p>
+     */
+    inline void SetResourceLifecycleConfig(const ApplicationResourceLifecycleConfig& value) { m_resourceLifecycleConfigHasBeenSet = true; m_resourceLifecycleConfig = value; }
+
+    /**
+     * <p>Specify an application resource lifecycle configuration to prevent your
+     * application from accumulating too many versions.</p>
+     */
+    inline void SetResourceLifecycleConfig(ApplicationResourceLifecycleConfig&& value) { m_resourceLifecycleConfigHasBeenSet = true; m_resourceLifecycleConfig = value; }
+
+    /**
+     * <p>Specify an application resource lifecycle configuration to prevent your
+     * application from accumulating too many versions.</p>
+     */
+    inline CreateApplicationRequest& WithResourceLifecycleConfig(const ApplicationResourceLifecycleConfig& value) { SetResourceLifecycleConfig(value); return *this;}
+
+    /**
+     * <p>Specify an application resource lifecycle configuration to prevent your
+     * application from accumulating too many versions.</p>
+     */
+    inline CreateApplicationRequest& WithResourceLifecycleConfig(ApplicationResourceLifecycleConfig&& value) { SetResourceLifecycleConfig(value); return *this;}
+
   private:
     Aws::String m_applicationName;
     bool m_applicationNameHasBeenSet;
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+    ApplicationResourceLifecycleConfig m_resourceLifecycleConfig;
+    bool m_resourceLifecycleConfigHasBeenSet;
   };
 
 } // namespace Model

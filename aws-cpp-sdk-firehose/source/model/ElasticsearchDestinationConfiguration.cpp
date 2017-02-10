@@ -39,6 +39,7 @@ ElasticsearchDestinationConfiguration::ElasticsearchDestinationConfiguration() :
     m_s3BackupMode(ElasticsearchS3BackupMode::NOT_SET),
     m_s3BackupModeHasBeenSet(false),
     m_s3ConfigurationHasBeenSet(false),
+    m_processingConfigurationHasBeenSet(false),
     m_cloudWatchLoggingOptionsHasBeenSet(false)
 {
 }
@@ -55,6 +56,7 @@ ElasticsearchDestinationConfiguration::ElasticsearchDestinationConfiguration(con
     m_s3BackupMode(ElasticsearchS3BackupMode::NOT_SET),
     m_s3BackupModeHasBeenSet(false),
     m_s3ConfigurationHasBeenSet(false),
+    m_processingConfigurationHasBeenSet(false),
     m_cloudWatchLoggingOptionsHasBeenSet(false)
 {
   *this = jsonValue;
@@ -125,6 +127,13 @@ ElasticsearchDestinationConfiguration& ElasticsearchDestinationConfiguration::op
     m_s3ConfigurationHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ProcessingConfiguration"))
+  {
+    m_processingConfiguration = jsonValue.GetObject("ProcessingConfiguration");
+
+    m_processingConfigurationHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("CloudWatchLoggingOptions"))
   {
     m_cloudWatchLoggingOptions = jsonValue.GetObject("CloudWatchLoggingOptions");
@@ -188,6 +197,12 @@ JsonValue ElasticsearchDestinationConfiguration::Jsonize() const
   if(m_s3ConfigurationHasBeenSet)
   {
    payload.WithObject("S3Configuration", m_s3Configuration.Jsonize());
+
+  }
+
+  if(m_processingConfigurationHasBeenSet)
+  {
+   payload.WithObject("ProcessingConfiguration", m_processingConfiguration.Jsonize());
 
   }
 

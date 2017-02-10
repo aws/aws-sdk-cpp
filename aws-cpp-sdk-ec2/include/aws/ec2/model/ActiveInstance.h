@@ -16,6 +16,7 @@
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ec2/model/InstanceHealthStatus.h>
 
 namespace Aws
 {
@@ -32,7 +33,9 @@ namespace Model
 {
 
   /**
-   * <p>Describes a running instance in a Spot fleet.</p>
+   * <p>Describes a running instance in a Spot fleet.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ActiveInstance">AWS
+   * API Reference</a></p>
    */
   class AWS_EC2_API ActiveInstance
   {
@@ -149,6 +152,46 @@ namespace Model
      */
     inline ActiveInstance& WithSpotInstanceRequestId(const char* value) { SetSpotInstanceRequestId(value); return *this;}
 
+    /**
+     * <p>The health status of the instance. If the status of both the instance status
+     * check and the system status check is <code>impaired</code>, the health status of
+     * the instance is <code>unhealthy</code>. Otherwise, the health status is
+     * <code>healthy</code>.</p>
+     */
+    inline const InstanceHealthStatus& GetInstanceHealth() const{ return m_instanceHealth; }
+
+    /**
+     * <p>The health status of the instance. If the status of both the instance status
+     * check and the system status check is <code>impaired</code>, the health status of
+     * the instance is <code>unhealthy</code>. Otherwise, the health status is
+     * <code>healthy</code>.</p>
+     */
+    inline void SetInstanceHealth(const InstanceHealthStatus& value) { m_instanceHealthHasBeenSet = true; m_instanceHealth = value; }
+
+    /**
+     * <p>The health status of the instance. If the status of both the instance status
+     * check and the system status check is <code>impaired</code>, the health status of
+     * the instance is <code>unhealthy</code>. Otherwise, the health status is
+     * <code>healthy</code>.</p>
+     */
+    inline void SetInstanceHealth(InstanceHealthStatus&& value) { m_instanceHealthHasBeenSet = true; m_instanceHealth = value; }
+
+    /**
+     * <p>The health status of the instance. If the status of both the instance status
+     * check and the system status check is <code>impaired</code>, the health status of
+     * the instance is <code>unhealthy</code>. Otherwise, the health status is
+     * <code>healthy</code>.</p>
+     */
+    inline ActiveInstance& WithInstanceHealth(const InstanceHealthStatus& value) { SetInstanceHealth(value); return *this;}
+
+    /**
+     * <p>The health status of the instance. If the status of both the instance status
+     * check and the system status check is <code>impaired</code>, the health status of
+     * the instance is <code>unhealthy</code>. Otherwise, the health status is
+     * <code>healthy</code>.</p>
+     */
+    inline ActiveInstance& WithInstanceHealth(InstanceHealthStatus&& value) { SetInstanceHealth(value); return *this;}
+
   private:
     Aws::String m_instanceType;
     bool m_instanceTypeHasBeenSet;
@@ -156,6 +199,8 @@ namespace Model
     bool m_instanceIdHasBeenSet;
     Aws::String m_spotInstanceRequestId;
     bool m_spotInstanceRequestIdHasBeenSet;
+    InstanceHealthStatus m_instanceHealth;
+    bool m_instanceHealthHasBeenSet;
   };
 
 } // namespace Model

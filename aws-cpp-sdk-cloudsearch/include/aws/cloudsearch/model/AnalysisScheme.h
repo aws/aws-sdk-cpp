@@ -39,7 +39,9 @@ namespace Model
    * following options can be configured for an analysis scheme:
    * <code>Synonyms</code>, <code>Stopwords</code>, <code>StemmingDictionary</code>,
    * <code>JapaneseTokenizationDictionary</code> and
-   * <code>AlgorithmicStemming</code>.</p>
+   * <code>AlgorithmicStemming</code>.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/AnalysisScheme">AWS
+   * API Reference</a></p>
    */
   class AWS_CLOUDSEARCH_API AnalysisScheme
   {

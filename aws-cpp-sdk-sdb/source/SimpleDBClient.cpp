@@ -102,6 +102,16 @@ void SimpleDBClient::init(const ClientConfiguration& config)
   m_uri = ss.str();
 }
 
+Aws::String SimpleDBClient::ConvertRequestToPresignedUrl(const AmazonSerializableWebServiceRequest& requestToConvert, const char* region) const
+{
+  Aws::StringStream ss;
+  ss << "https://" << SimpleDBEndpoint::ForRegion(region);
+  ss << "?" << requestToConvert.SerializePayload();
+
+  URI uri(ss.str());
+  return GeneratePresignedUrl(uri, HttpMethod::HTTP_GET, region, 3600);
+}
+
 BatchDeleteAttributesOutcome SimpleDBClient::BatchDeleteAttributes(const BatchDeleteAttributesRequest& request) const
 {
   Aws::StringStream ss;
@@ -431,4 +441,6 @@ void SimpleDBClient::SelectAsyncHelper(const SelectRequest& request, const Selec
 {
   handler(this, request, Select(request), context);
 }
+
+
 

@@ -26,7 +26,6 @@ namespace Model
 {
 
   /**
-   * <p>Contains the parameters for DescribeTags.</p>
    */
   class AWS_ELASTICLOADBALANCINGV2_API DescribeTagsRequest : public ElasticLoadBalancingv2Request
   {

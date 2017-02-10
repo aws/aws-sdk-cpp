@@ -33,7 +33,9 @@ namespace Model
 {
 
   /**
-   * A distribution list.
+   * A distribution list.<p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-01-28/DistributionList">AWS
+   * API Reference</a></p>
    */
   class AWS_CLOUDFRONT_API DistributionList
   {

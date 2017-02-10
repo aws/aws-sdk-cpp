@@ -13,7 +13,7 @@ nuget {
         id = AWSSDKCPP-IoT;
 
         // Version number. Follows NuGet standards. (currently SemVer 1.0)
-        version : 1.0.20150528.36;
+        version : 1.0.20150528.65;
 
         // Display name for package.
         title: AWS SDK for C++ (AWS IoT);

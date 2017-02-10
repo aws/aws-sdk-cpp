@@ -33,205 +33,212 @@ namespace Model
     Aws::String SerializePayload() const override;
 
     /**
-     * <p>The name of the server certificate that you want to update.</p> <p>The <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a
-     * string of characters consisting of upper and lowercase alphanumeric characters
-     * with no spaces. You can also include any of the following characters: =,.@-</p>
+     * <p>The name of the server certificate that you want to update.</p> <p>This
+     * parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex
+     * pattern</a>) a string of characters consisting of upper and lowercase
+     * alphanumeric characters with no spaces. You can also include any of the
+     * following characters: =,.@-</p>
      */
     inline const Aws::String& GetServerCertificateName() const{ return m_serverCertificateName; }
 
     /**
-     * <p>The name of the server certificate that you want to update.</p> <p>The <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a
-     * string of characters consisting of upper and lowercase alphanumeric characters
-     * with no spaces. You can also include any of the following characters: =,.@-</p>
+     * <p>The name of the server certificate that you want to update.</p> <p>This
+     * parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex
+     * pattern</a>) a string of characters consisting of upper and lowercase
+     * alphanumeric characters with no spaces. You can also include any of the
+     * following characters: =,.@-</p>
      */
     inline void SetServerCertificateName(const Aws::String& value) { m_serverCertificateNameHasBeenSet = true; m_serverCertificateName = value; }
 
     /**
-     * <p>The name of the server certificate that you want to update.</p> <p>The <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a
-     * string of characters consisting of upper and lowercase alphanumeric characters
-     * with no spaces. You can also include any of the following characters: =,.@-</p>
+     * <p>The name of the server certificate that you want to update.</p> <p>This
+     * parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex
+     * pattern</a>) a string of characters consisting of upper and lowercase
+     * alphanumeric characters with no spaces. You can also include any of the
+     * following characters: =,.@-</p>
      */
     inline void SetServerCertificateName(Aws::String&& value) { m_serverCertificateNameHasBeenSet = true; m_serverCertificateName = value; }
 
     /**
-     * <p>The name of the server certificate that you want to update.</p> <p>The <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a
-     * string of characters consisting of upper and lowercase alphanumeric characters
-     * with no spaces. You can also include any of the following characters: =,.@-</p>
+     * <p>The name of the server certificate that you want to update.</p> <p>This
+     * parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex
+     * pattern</a>) a string of characters consisting of upper and lowercase
+     * alphanumeric characters with no spaces. You can also include any of the
+     * following characters: =,.@-</p>
      */
     inline void SetServerCertificateName(const char* value) { m_serverCertificateNameHasBeenSet = true; m_serverCertificateName.assign(value); }
 
     /**
-     * <p>The name of the server certificate that you want to update.</p> <p>The <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a
-     * string of characters consisting of upper and lowercase alphanumeric characters
-     * with no spaces. You can also include any of the following characters: =,.@-</p>
+     * <p>The name of the server certificate that you want to update.</p> <p>This
+     * parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex
+     * pattern</a>) a string of characters consisting of upper and lowercase
+     * alphanumeric characters with no spaces. You can also include any of the
+     * following characters: =,.@-</p>
      */
     inline UpdateServerCertificateRequest& WithServerCertificateName(const Aws::String& value) { SetServerCertificateName(value); return *this;}
 
     /**
-     * <p>The name of the server certificate that you want to update.</p> <p>The <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a
-     * string of characters consisting of upper and lowercase alphanumeric characters
-     * with no spaces. You can also include any of the following characters: =,.@-</p>
+     * <p>The name of the server certificate that you want to update.</p> <p>This
+     * parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex
+     * pattern</a>) a string of characters consisting of upper and lowercase
+     * alphanumeric characters with no spaces. You can also include any of the
+     * following characters: =,.@-</p>
      */
     inline UpdateServerCertificateRequest& WithServerCertificateName(Aws::String&& value) { SetServerCertificateName(value); return *this;}
 
     /**
-     * <p>The name of the server certificate that you want to update.</p> <p>The <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a
-     * string of characters consisting of upper and lowercase alphanumeric characters
-     * with no spaces. You can also include any of the following characters: =,.@-</p>
+     * <p>The name of the server certificate that you want to update.</p> <p>This
+     * parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex
+     * pattern</a>) a string of characters consisting of upper and lowercase
+     * alphanumeric characters with no spaces. You can also include any of the
+     * following characters: =,.@-</p>
      */
     inline UpdateServerCertificateRequest& WithServerCertificateName(const char* value) { SetServerCertificateName(value); return *this;}
 
     /**
      * <p>The new path for the server certificate. Include this only if you are
-     * updating the server certificate's path.</p> <p>The <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a
-     * string of characters consisting of either a forward slash (/) by itself or a
-     * string that must begin and end with forward slashes, containing any ASCII
-     * character from the ! (\u0021) thru the DEL character (\u007F), including most
-     * punctuation characters, digits, and upper and lowercased letters.</p>
+     * updating the server certificate's path.</p> <p>This paramater allows (per its <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
+     * consisting of either a forward slash (/) by itself or a string that must begin
+     * and end with forward slashes, containing any ASCII character from the ! (\u0021)
+     * thru the DEL character (\u007F), including most punctuation characters, digits,
+     * and upper and lowercased letters.</p>
      */
     inline const Aws::String& GetNewPath() const{ return m_newPath; }
 
     /**
      * <p>The new path for the server certificate. Include this only if you are
-     * updating the server certificate's path.</p> <p>The <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a
-     * string of characters consisting of either a forward slash (/) by itself or a
-     * string that must begin and end with forward slashes, containing any ASCII
-     * character from the ! (\u0021) thru the DEL character (\u007F), including most
-     * punctuation characters, digits, and upper and lowercased letters.</p>
+     * updating the server certificate's path.</p> <p>This paramater allows (per its <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
+     * consisting of either a forward slash (/) by itself or a string that must begin
+     * and end with forward slashes, containing any ASCII character from the ! (\u0021)
+     * thru the DEL character (\u007F), including most punctuation characters, digits,
+     * and upper and lowercased letters.</p>
      */
     inline void SetNewPath(const Aws::String& value) { m_newPathHasBeenSet = true; m_newPath = value; }
 
     /**
      * <p>The new path for the server certificate. Include this only if you are
-     * updating the server certificate's path.</p> <p>The <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a
-     * string of characters consisting of either a forward slash (/) by itself or a
-     * string that must begin and end with forward slashes, containing any ASCII
-     * character from the ! (\u0021) thru the DEL character (\u007F), including most
-     * punctuation characters, digits, and upper and lowercased letters.</p>
+     * updating the server certificate's path.</p> <p>This paramater allows (per its <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
+     * consisting of either a forward slash (/) by itself or a string that must begin
+     * and end with forward slashes, containing any ASCII character from the ! (\u0021)
+     * thru the DEL character (\u007F), including most punctuation characters, digits,
+     * and upper and lowercased letters.</p>
      */
     inline void SetNewPath(Aws::String&& value) { m_newPathHasBeenSet = true; m_newPath = value; }
 
     /**
      * <p>The new path for the server certificate. Include this only if you are
-     * updating the server certificate's path.</p> <p>The <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a
-     * string of characters consisting of either a forward slash (/) by itself or a
-     * string that must begin and end with forward slashes, containing any ASCII
-     * character from the ! (\u0021) thru the DEL character (\u007F), including most
-     * punctuation characters, digits, and upper and lowercased letters.</p>
+     * updating the server certificate's path.</p> <p>This paramater allows (per its <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
+     * consisting of either a forward slash (/) by itself or a string that must begin
+     * and end with forward slashes, containing any ASCII character from the ! (\u0021)
+     * thru the DEL character (\u007F), including most punctuation characters, digits,
+     * and upper and lowercased letters.</p>
      */
     inline void SetNewPath(const char* value) { m_newPathHasBeenSet = true; m_newPath.assign(value); }
 
     /**
      * <p>The new path for the server certificate. Include this only if you are
-     * updating the server certificate's path.</p> <p>The <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a
-     * string of characters consisting of either a forward slash (/) by itself or a
-     * string that must begin and end with forward slashes, containing any ASCII
-     * character from the ! (\u0021) thru the DEL character (\u007F), including most
-     * punctuation characters, digits, and upper and lowercased letters.</p>
+     * updating the server certificate's path.</p> <p>This paramater allows (per its <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
+     * consisting of either a forward slash (/) by itself or a string that must begin
+     * and end with forward slashes, containing any ASCII character from the ! (\u0021)
+     * thru the DEL character (\u007F), including most punctuation characters, digits,
+     * and upper and lowercased letters.</p>
      */
     inline UpdateServerCertificateRequest& WithNewPath(const Aws::String& value) { SetNewPath(value); return *this;}
 
     /**
      * <p>The new path for the server certificate. Include this only if you are
-     * updating the server certificate's path.</p> <p>The <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a
-     * string of characters consisting of either a forward slash (/) by itself or a
-     * string that must begin and end with forward slashes, containing any ASCII
-     * character from the ! (\u0021) thru the DEL character (\u007F), including most
-     * punctuation characters, digits, and upper and lowercased letters.</p>
+     * updating the server certificate's path.</p> <p>This paramater allows (per its <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
+     * consisting of either a forward slash (/) by itself or a string that must begin
+     * and end with forward slashes, containing any ASCII character from the ! (\u0021)
+     * thru the DEL character (\u007F), including most punctuation characters, digits,
+     * and upper and lowercased letters.</p>
      */
     inline UpdateServerCertificateRequest& WithNewPath(Aws::String&& value) { SetNewPath(value); return *this;}
 
     /**
      * <p>The new path for the server certificate. Include this only if you are
-     * updating the server certificate's path.</p> <p>The <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a
-     * string of characters consisting of either a forward slash (/) by itself or a
-     * string that must begin and end with forward slashes, containing any ASCII
-     * character from the ! (\u0021) thru the DEL character (\u007F), including most
-     * punctuation characters, digits, and upper and lowercased letters.</p>
+     * updating the server certificate's path.</p> <p>This paramater allows (per its <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
+     * consisting of either a forward slash (/) by itself or a string that must begin
+     * and end with forward slashes, containing any ASCII character from the ! (\u0021)
+     * thru the DEL character (\u007F), including most punctuation characters, digits,
+     * and upper and lowercased letters.</p>
      */
     inline UpdateServerCertificateRequest& WithNewPath(const char* value) { SetNewPath(value); return *this;}
 
     /**
      * <p>The new name for the server certificate. Include this only if you are
      * updating the server certificate's name. The name of the certificate cannot
-     * contain any spaces.</p> <p>The <a href="http://wikipedia.org/wiki/regex">regex
-     * pattern</a> for this parameter is a string of characters consisting of upper and
-     * lowercase alphanumeric characters with no spaces. You can also include any of
-     * the following characters: =,.@-</p>
+     * contain any spaces.</p> <p>This parameter allows (per its <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
+     * consisting of upper and lowercase alphanumeric characters with no spaces. You
+     * can also include any of the following characters: =,.@-</p>
      */
     inline const Aws::String& GetNewServerCertificateName() const{ return m_newServerCertificateName; }
 
     /**
      * <p>The new name for the server certificate. Include this only if you are
      * updating the server certificate's name. The name of the certificate cannot
-     * contain any spaces.</p> <p>The <a href="http://wikipedia.org/wiki/regex">regex
-     * pattern</a> for this parameter is a string of characters consisting of upper and
-     * lowercase alphanumeric characters with no spaces. You can also include any of
-     * the following characters: =,.@-</p>
+     * contain any spaces.</p> <p>This parameter allows (per its <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
+     * consisting of upper and lowercase alphanumeric characters with no spaces. You
+     * can also include any of the following characters: =,.@-</p>
      */
     inline void SetNewServerCertificateName(const Aws::String& value) { m_newServerCertificateNameHasBeenSet = true; m_newServerCertificateName = value; }
 
     /**
      * <p>The new name for the server certificate. Include this only if you are
      * updating the server certificate's name. The name of the certificate cannot
-     * contain any spaces.</p> <p>The <a href="http://wikipedia.org/wiki/regex">regex
-     * pattern</a> for this parameter is a string of characters consisting of upper and
-     * lowercase alphanumeric characters with no spaces. You can also include any of
-     * the following characters: =,.@-</p>
+     * contain any spaces.</p> <p>This parameter allows (per its <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
+     * consisting of upper and lowercase alphanumeric characters with no spaces. You
+     * can also include any of the following characters: =,.@-</p>
      */
     inline void SetNewServerCertificateName(Aws::String&& value) { m_newServerCertificateNameHasBeenSet = true; m_newServerCertificateName = value; }
 
     /**
      * <p>The new name for the server certificate. Include this only if you are
      * updating the server certificate's name. The name of the certificate cannot
-     * contain any spaces.</p> <p>The <a href="http://wikipedia.org/wiki/regex">regex
-     * pattern</a> for this parameter is a string of characters consisting of upper and
-     * lowercase alphanumeric characters with no spaces. You can also include any of
-     * the following characters: =,.@-</p>
+     * contain any spaces.</p> <p>This parameter allows (per its <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
+     * consisting of upper and lowercase alphanumeric characters with no spaces. You
+     * can also include any of the following characters: =,.@-</p>
      */
     inline void SetNewServerCertificateName(const char* value) { m_newServerCertificateNameHasBeenSet = true; m_newServerCertificateName.assign(value); }
 
     /**
      * <p>The new name for the server certificate. Include this only if you are
      * updating the server certificate's name. The name of the certificate cannot
-     * contain any spaces.</p> <p>The <a href="http://wikipedia.org/wiki/regex">regex
-     * pattern</a> for this parameter is a string of characters consisting of upper and
-     * lowercase alphanumeric characters with no spaces. You can also include any of
-     * the following characters: =,.@-</p>
+     * contain any spaces.</p> <p>This parameter allows (per its <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
+     * consisting of upper and lowercase alphanumeric characters with no spaces. You
+     * can also include any of the following characters: =,.@-</p>
      */
     inline UpdateServerCertificateRequest& WithNewServerCertificateName(const Aws::String& value) { SetNewServerCertificateName(value); return *this;}
 
     /**
      * <p>The new name for the server certificate. Include this only if you are
      * updating the server certificate's name. The name of the certificate cannot
-     * contain any spaces.</p> <p>The <a href="http://wikipedia.org/wiki/regex">regex
-     * pattern</a> for this parameter is a string of characters consisting of upper and
-     * lowercase alphanumeric characters with no spaces. You can also include any of
-     * the following characters: =,.@-</p>
+     * contain any spaces.</p> <p>This parameter allows (per its <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
+     * consisting of upper and lowercase alphanumeric characters with no spaces. You
+     * can also include any of the following characters: =,.@-</p>
      */
     inline UpdateServerCertificateRequest& WithNewServerCertificateName(Aws::String&& value) { SetNewServerCertificateName(value); return *this;}
 
     /**
      * <p>The new name for the server certificate. Include this only if you are
      * updating the server certificate's name. The name of the certificate cannot
-     * contain any spaces.</p> <p>The <a href="http://wikipedia.org/wiki/regex">regex
-     * pattern</a> for this parameter is a string of characters consisting of upper and
-     * lowercase alphanumeric characters with no spaces. You can also include any of
-     * the following characters: =,.@-</p>
+     * contain any spaces.</p> <p>This parameter allows (per its <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
+     * consisting of upper and lowercase alphanumeric characters with no spaces. You
+     * can also include any of the following characters: =,.@-</p>
      */
     inline UpdateServerCertificateRequest& WithNewServerCertificateName(const char* value) { SetNewServerCertificateName(value); return *this;}
 

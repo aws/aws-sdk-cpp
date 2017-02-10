@@ -71,8 +71,8 @@ namespace Model
      * API returns subset of facial attributes. </p> <p>For example, you can specify
      * the value as, ["ALL"] or ["DEFAULT"]. If you provide both, ["ALL", "DEFAULT"],
      * the service uses a logical AND operator to determine which attributes to return
-     * (in this case, it is all attributes). If you specify all attributes, Rekognition
-     * performs additional detection. </p>
+     * (in this case, it is all attributes). If you specify all attributes, Amazon
+     * Rekognition performs additional detection. </p>
      */
     inline const Aws::Vector<Attribute>& GetAttributes() const{ return m_attributes; }
 
@@ -81,8 +81,8 @@ namespace Model
      * API returns subset of facial attributes. </p> <p>For example, you can specify
      * the value as, ["ALL"] or ["DEFAULT"]. If you provide both, ["ALL", "DEFAULT"],
      * the service uses a logical AND operator to determine which attributes to return
-     * (in this case, it is all attributes). If you specify all attributes, Rekognition
-     * performs additional detection. </p>
+     * (in this case, it is all attributes). If you specify all attributes, Amazon
+     * Rekognition performs additional detection. </p>
      */
     inline void SetAttributes(const Aws::Vector<Attribute>& value) { m_attributesHasBeenSet = true; m_attributes = value; }
 
@@ -91,8 +91,8 @@ namespace Model
      * API returns subset of facial attributes. </p> <p>For example, you can specify
      * the value as, ["ALL"] or ["DEFAULT"]. If you provide both, ["ALL", "DEFAULT"],
      * the service uses a logical AND operator to determine which attributes to return
-     * (in this case, it is all attributes). If you specify all attributes, Rekognition
-     * performs additional detection. </p>
+     * (in this case, it is all attributes). If you specify all attributes, Amazon
+     * Rekognition performs additional detection. </p>
      */
     inline void SetAttributes(Aws::Vector<Attribute>&& value) { m_attributesHasBeenSet = true; m_attributes = value; }
 
@@ -101,8 +101,8 @@ namespace Model
      * API returns subset of facial attributes. </p> <p>For example, you can specify
      * the value as, ["ALL"] or ["DEFAULT"]. If you provide both, ["ALL", "DEFAULT"],
      * the service uses a logical AND operator to determine which attributes to return
-     * (in this case, it is all attributes). If you specify all attributes, Rekognition
-     * performs additional detection. </p>
+     * (in this case, it is all attributes). If you specify all attributes, Amazon
+     * Rekognition performs additional detection. </p>
      */
     inline DetectFacesRequest& WithAttributes(const Aws::Vector<Attribute>& value) { SetAttributes(value); return *this;}
 
@@ -111,8 +111,8 @@ namespace Model
      * API returns subset of facial attributes. </p> <p>For example, you can specify
      * the value as, ["ALL"] or ["DEFAULT"]. If you provide both, ["ALL", "DEFAULT"],
      * the service uses a logical AND operator to determine which attributes to return
-     * (in this case, it is all attributes). If you specify all attributes, Rekognition
-     * performs additional detection. </p>
+     * (in this case, it is all attributes). If you specify all attributes, Amazon
+     * Rekognition performs additional detection. </p>
      */
     inline DetectFacesRequest& WithAttributes(Aws::Vector<Attribute>&& value) { SetAttributes(value); return *this;}
 
@@ -121,8 +121,8 @@ namespace Model
      * API returns subset of facial attributes. </p> <p>For example, you can specify
      * the value as, ["ALL"] or ["DEFAULT"]. If you provide both, ["ALL", "DEFAULT"],
      * the service uses a logical AND operator to determine which attributes to return
-     * (in this case, it is all attributes). If you specify all attributes, Rekognition
-     * performs additional detection. </p>
+     * (in this case, it is all attributes). If you specify all attributes, Amazon
+     * Rekognition performs additional detection. </p>
      */
     inline DetectFacesRequest& AddAttributes(const Attribute& value) { m_attributesHasBeenSet = true; m_attributes.push_back(value); return *this; }
 
@@ -131,8 +131,8 @@ namespace Model
      * API returns subset of facial attributes. </p> <p>For example, you can specify
      * the value as, ["ALL"] or ["DEFAULT"]. If you provide both, ["ALL", "DEFAULT"],
      * the service uses a logical AND operator to determine which attributes to return
-     * (in this case, it is all attributes). If you specify all attributes, Rekognition
-     * performs additional detection. </p>
+     * (in this case, it is all attributes). If you specify all attributes, Amazon
+     * Rekognition performs additional detection. </p>
      */
     inline DetectFacesRequest& AddAttributes(Attribute&& value) { m_attributesHasBeenSet = true; m_attributes.push_back(value); return *this; }
 

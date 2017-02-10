@@ -76,7 +76,7 @@ void OptionVersion::OutputToStream(Aws::OStream& oStream, const char* location, 
 
   if(m_isDefaultHasBeenSet)
   {
-      oStream << location << index << locationValue << ".IsDefault=" << m_isDefault << "&";
+      oStream << location << index << locationValue << ".IsDefault=" << std::boolalpha << m_isDefault << "&";
   }
 
 }
@@ -89,7 +89,7 @@ void OptionVersion::OutputToStream(Aws::OStream& oStream, const char* location) 
   }
   if(m_isDefaultHasBeenSet)
   {
-      oStream << location << ".IsDefault=" << m_isDefault << "&";
+      oStream << location << ".IsDefault=" << std::boolalpha << m_isDefault << "&";
   }
 }
 

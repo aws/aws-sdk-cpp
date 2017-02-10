@@ -32,7 +32,9 @@ namespace Model
 {
 
   /**
-   * <p>Describes the content of the lexicon.</p>
+   * <p>Describes the content of the lexicon.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/LexiconDescription">AWS
+   * API Reference</a></p>
    */
   class AWS_POLLY_API LexiconDescription
   {

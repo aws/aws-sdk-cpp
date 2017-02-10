@@ -25,7 +25,9 @@ namespace Model
 {
 
   /**
-   * Request of DescribeBudget
+   * Request of DescribeBudget<p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/DescribeBudgetRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_BUDGETS_API DescribeBudgetRequest : public BudgetsRequest
   {

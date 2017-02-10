@@ -56,7 +56,7 @@ Aws::String DescribeHostReservationOfferingsRequest::SerializePayload() const
     unsigned filterCount = 1;
     for(auto& item : m_filter)
     {
-      item.OutputToStream(ss, "Filter.member.", filterCount, "");
+      item.OutputToStream(ss, "Filter.", filterCount, "");
       filterCount++;
     }
   }
@@ -71,7 +71,7 @@ Aws::String DescribeHostReservationOfferingsRequest::SerializePayload() const
     ss << "NextToken=" << StringUtils::URLEncode(m_nextToken.c_str()) << "&";
   }
 
-  ss << "Version=2016-09-15";
+  ss << "Version=2016-11-15";
   return ss.str();
 }
 

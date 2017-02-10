@@ -52,6 +52,7 @@
 #include <aws/elasticloadbalancingv2/model/ModifyTargetGroupAttributesRequest.h>
 #include <aws/elasticloadbalancingv2/model/RegisterTargetsRequest.h>
 #include <aws/elasticloadbalancingv2/model/RemoveTagsRequest.h>
+#include <aws/elasticloadbalancingv2/model/SetIpAddressTypeRequest.h>
 #include <aws/elasticloadbalancingv2/model/SetRulePrioritiesRequest.h>
 #include <aws/elasticloadbalancingv2/model/SetSecurityGroupsRequest.h>
 #include <aws/elasticloadbalancingv2/model/SetSubnetsRequest.h>
@@ -119,6 +120,16 @@ void ElasticLoadBalancingv2Client::init(const ClientConfiguration& config)
   }
 
   m_uri = ss.str();
+}
+
+Aws::String ElasticLoadBalancingv2Client::ConvertRequestToPresignedUrl(const AmazonSerializableWebServiceRequest& requestToConvert, const char* region) const
+{
+  Aws::StringStream ss;
+  ss << "https://" << ElasticLoadBalancingv2Endpoint::ForRegion(region);
+  ss << "?" << requestToConvert.SerializePayload();
+
+  URI uri(ss.str());
+  return GeneratePresignedUrl(uri, HttpMethod::HTTP_GET, region, 3600);
 }
 
 AddTagsOutcome ElasticLoadBalancingv2Client::AddTags(const AddTagsRequest& request) const
@@ -979,6 +990,39 @@ void ElasticLoadBalancingv2Client::RemoveTagsAsyncHelper(const RemoveTagsRequest
   handler(this, request, RemoveTags(request), context);
 }
 
+SetIpAddressTypeOutcome ElasticLoadBalancingv2Client::SetIpAddressType(const SetIpAddressTypeRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return SetIpAddressTypeOutcome(SetIpAddressTypeResult(outcome.GetResult()));
+  }
+  else
+  {
+    return SetIpAddressTypeOutcome(outcome.GetError());
+  }
+}
+
+SetIpAddressTypeOutcomeCallable ElasticLoadBalancingv2Client::SetIpAddressTypeCallable(const SetIpAddressTypeRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< SetIpAddressTypeOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->SetIpAddressType(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ElasticLoadBalancingv2Client::SetIpAddressTypeAsync(const SetIpAddressTypeRequest& request, const SetIpAddressTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->SetIpAddressTypeAsyncHelper( request, handler, context ); } );
+}
+
+void ElasticLoadBalancingv2Client::SetIpAddressTypeAsyncHelper(const SetIpAddressTypeRequest& request, const SetIpAddressTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, SetIpAddressType(request), context);
+}
+
 SetRulePrioritiesOutcome ElasticLoadBalancingv2Client::SetRulePriorities(const SetRulePrioritiesRequest& request) const
 {
   Aws::StringStream ss;
@@ -1077,4 +1121,6 @@ void ElasticLoadBalancingv2Client::SetSubnetsAsyncHelper(const SetSubnetsRequest
 {
   handler(this, request, SetSubnets(request), context);
 }
+
+
 

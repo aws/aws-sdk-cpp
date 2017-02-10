@@ -26,7 +26,9 @@ namespace Model
 
   /**
    * <p>The input parameters for the <code>ListAllowedNodeTypeModifications</code>
-   * operation.</p>
+   * operation.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/ListAllowedNodeTypeModificationsMessage">AWS
+   * API Reference</a></p>
    */
   class AWS_ELASTICACHE_API ListAllowedNodeTypeModificationsRequest : public ElastiCacheRequest
   {

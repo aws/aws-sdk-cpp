@@ -31,7 +31,9 @@ namespace Model
 
   /**
    * <p>Indicates whether or not the face is wearing eye glasses, and the confidence
-   * level in the determination.</p>
+   * level in the determination.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/Eyeglasses">AWS
+   * API Reference</a></p>
    */
   class AWS_REKOGNITION_API Eyeglasses
   {

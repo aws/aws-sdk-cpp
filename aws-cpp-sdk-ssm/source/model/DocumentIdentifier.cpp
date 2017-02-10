@@ -30,14 +30,22 @@ namespace Model
 DocumentIdentifier::DocumentIdentifier() : 
     m_nameHasBeenSet(false),
     m_ownerHasBeenSet(false),
-    m_platformTypesHasBeenSet(false)
+    m_platformTypesHasBeenSet(false),
+    m_documentVersionHasBeenSet(false),
+    m_documentType(DocumentType::NOT_SET),
+    m_documentTypeHasBeenSet(false),
+    m_schemaVersionHasBeenSet(false)
 {
 }
 
 DocumentIdentifier::DocumentIdentifier(const JsonValue& jsonValue) : 
     m_nameHasBeenSet(false),
     m_ownerHasBeenSet(false),
-    m_platformTypesHasBeenSet(false)
+    m_platformTypesHasBeenSet(false),
+    m_documentVersionHasBeenSet(false),
+    m_documentType(DocumentType::NOT_SET),
+    m_documentTypeHasBeenSet(false),
+    m_schemaVersionHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -68,6 +76,27 @@ DocumentIdentifier& DocumentIdentifier::operator =(const JsonValue& jsonValue)
     m_platformTypesHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("DocumentVersion"))
+  {
+    m_documentVersion = jsonValue.GetString("DocumentVersion");
+
+    m_documentVersionHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("DocumentType"))
+  {
+    m_documentType = DocumentTypeMapper::GetDocumentTypeForName(jsonValue.GetString("DocumentType"));
+
+    m_documentTypeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("SchemaVersion"))
+  {
+    m_schemaVersion = jsonValue.GetString("SchemaVersion");
+
+    m_schemaVersionHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -95,6 +124,23 @@ JsonValue DocumentIdentifier::Jsonize() const
      platformTypesJsonList[platformTypesIndex].AsString(PlatformTypeMapper::GetNameForPlatformType(m_platformTypes[platformTypesIndex]));
    }
    payload.WithArray("PlatformTypes", std::move(platformTypesJsonList));
+
+  }
+
+  if(m_documentVersionHasBeenSet)
+  {
+   payload.WithString("DocumentVersion", m_documentVersion);
+
+  }
+
+  if(m_documentTypeHasBeenSet)
+  {
+   payload.WithString("DocumentType", DocumentTypeMapper::GetNameForDocumentType(m_documentType));
+  }
+
+  if(m_schemaVersionHasBeenSet)
+  {
+   payload.WithString("SchemaVersion", m_schemaVersion);
 
   }
 

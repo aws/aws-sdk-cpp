@@ -33,7 +33,10 @@ namespace Model
 {
 
   /**
-   * <p>Describes a filter for a specific list of instances. </p>
+   * <p>Describes a filter for a specific list of instances. </p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/InstanceInformationFilter">AWS
+   * API Reference</a></p>
    */
   class AWS_SSM_API InstanceInformationFilter
   {
@@ -69,42 +72,42 @@ namespace Model
     inline InstanceInformationFilter& WithKey(InstanceInformationFilterKey&& value) { SetKey(value); return *this;}
 
     /**
-     * <p>The filter values. </p>
+     * <p>The filter values.</p>
      */
     inline const Aws::Vector<Aws::String>& GetValueSet() const{ return m_valueSet; }
 
     /**
-     * <p>The filter values. </p>
+     * <p>The filter values.</p>
      */
     inline void SetValueSet(const Aws::Vector<Aws::String>& value) { m_valueSetHasBeenSet = true; m_valueSet = value; }
 
     /**
-     * <p>The filter values. </p>
+     * <p>The filter values.</p>
      */
     inline void SetValueSet(Aws::Vector<Aws::String>&& value) { m_valueSetHasBeenSet = true; m_valueSet = value; }
 
     /**
-     * <p>The filter values. </p>
+     * <p>The filter values.</p>
      */
     inline InstanceInformationFilter& WithValueSet(const Aws::Vector<Aws::String>& value) { SetValueSet(value); return *this;}
 
     /**
-     * <p>The filter values. </p>
+     * <p>The filter values.</p>
      */
     inline InstanceInformationFilter& WithValueSet(Aws::Vector<Aws::String>&& value) { SetValueSet(value); return *this;}
 
     /**
-     * <p>The filter values. </p>
+     * <p>The filter values.</p>
      */
     inline InstanceInformationFilter& AddValueSet(const Aws::String& value) { m_valueSetHasBeenSet = true; m_valueSet.push_back(value); return *this; }
 
     /**
-     * <p>The filter values. </p>
+     * <p>The filter values.</p>
      */
     inline InstanceInformationFilter& AddValueSet(Aws::String&& value) { m_valueSetHasBeenSet = true; m_valueSet.push_back(value); return *this; }
 
     /**
-     * <p>The filter values. </p>
+     * <p>The filter values.</p>
      */
     inline InstanceInformationFilter& AddValueSet(const char* value) { m_valueSetHasBeenSet = true; m_valueSet.push_back(value); return *this; }
 

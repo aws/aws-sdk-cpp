@@ -28,7 +28,9 @@ namespace Model
 
   /**
    * A request to post updates to records or add and delete records for a dataset and
-   * user.
+   * user.<p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-sync-2014-06-30/UpdateRecordsRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_COGNITOSYNC_API UpdateRecordsRequest : public CognitoSyncRequest
   {

@@ -33,7 +33,10 @@ TEST(UUIDTest, TestPlatformGeneratesUUID)
         ASSERT_EQ(0x40u, 0x40u & rawUUID[6]);
         ASSERT_EQ(0x80u, 0x80u & rawUUID[8]);
 
-        ASSERT_EQ(generatedUUids.end(), generatedUUids.find(uuidStr));
+	auto iter = generatedUUids.find(uuidStr);
+	auto endIter = generatedUUids.end();
+	ASSERT_TRUE( iter == endIter );
+
         generatedUUids.insert(uuidStr);
     }    
 }

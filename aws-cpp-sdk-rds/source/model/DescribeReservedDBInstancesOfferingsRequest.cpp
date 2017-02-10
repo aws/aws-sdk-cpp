@@ -65,7 +65,7 @@ Aws::String DescribeReservedDBInstancesOfferingsRequest::SerializePayload() cons
 
   if(m_multiAZHasBeenSet)
   {
-    ss << "MultiAZ=" << m_multiAZ << "&";
+    ss << "MultiAZ=" << std::boolalpha << m_multiAZ << "&";
   }
 
   if(m_filtersHasBeenSet)

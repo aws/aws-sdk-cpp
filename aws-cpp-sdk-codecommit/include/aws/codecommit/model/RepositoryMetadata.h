@@ -32,7 +32,9 @@ namespace Model
 {
 
   /**
-   * <p>Information about a repository.</p>
+   * <p>Information about a repository.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/RepositoryMetadata">AWS
+   * API Reference</a></p>
    */
   class AWS_CODECOMMIT_API RepositoryMetadata
   {

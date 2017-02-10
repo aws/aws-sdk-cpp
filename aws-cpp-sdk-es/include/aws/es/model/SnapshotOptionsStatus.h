@@ -32,7 +32,9 @@ namespace Model
 {
 
   /**
-   * <p>Status of a daily automated snapshot.</p>
+   * <p>Status of a daily automated snapshot.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/SnapshotOptionsStatus">AWS
+   * API Reference</a></p>
    */
   class AWS_ELASTICSEARCHSERVICE_API SnapshotOptionsStatus
   {

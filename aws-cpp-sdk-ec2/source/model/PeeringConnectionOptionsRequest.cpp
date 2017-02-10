@@ -83,17 +83,17 @@ void PeeringConnectionOptionsRequest::OutputToStream(Aws::OStream& oStream, cons
 {
   if(m_allowEgressFromLocalClassicLinkToRemoteVpcHasBeenSet)
   {
-      oStream << location << index << locationValue << ".AllowEgressFromLocalClassicLinkToRemoteVpc=" << m_allowEgressFromLocalClassicLinkToRemoteVpc << "&";
+      oStream << location << index << locationValue << ".AllowEgressFromLocalClassicLinkToRemoteVpc=" << std::boolalpha << m_allowEgressFromLocalClassicLinkToRemoteVpc << "&";
   }
 
   if(m_allowEgressFromLocalVpcToRemoteClassicLinkHasBeenSet)
   {
-      oStream << location << index << locationValue << ".AllowEgressFromLocalVpcToRemoteClassicLink=" << m_allowEgressFromLocalVpcToRemoteClassicLink << "&";
+      oStream << location << index << locationValue << ".AllowEgressFromLocalVpcToRemoteClassicLink=" << std::boolalpha << m_allowEgressFromLocalVpcToRemoteClassicLink << "&";
   }
 
   if(m_allowDnsResolutionFromRemoteVpcHasBeenSet)
   {
-      oStream << location << index << locationValue << ".AllowDnsResolutionFromRemoteVpc=" << m_allowDnsResolutionFromRemoteVpc << "&";
+      oStream << location << index << locationValue << ".AllowDnsResolutionFromRemoteVpc=" << std::boolalpha << m_allowDnsResolutionFromRemoteVpc << "&";
   }
 
 }
@@ -102,15 +102,15 @@ void PeeringConnectionOptionsRequest::OutputToStream(Aws::OStream& oStream, cons
 {
   if(m_allowEgressFromLocalClassicLinkToRemoteVpcHasBeenSet)
   {
-      oStream << location << ".AllowEgressFromLocalClassicLinkToRemoteVpc=" << m_allowEgressFromLocalClassicLinkToRemoteVpc << "&";
+      oStream << location << ".AllowEgressFromLocalClassicLinkToRemoteVpc=" << std::boolalpha << m_allowEgressFromLocalClassicLinkToRemoteVpc << "&";
   }
   if(m_allowEgressFromLocalVpcToRemoteClassicLinkHasBeenSet)
   {
-      oStream << location << ".AllowEgressFromLocalVpcToRemoteClassicLink=" << m_allowEgressFromLocalVpcToRemoteClassicLink << "&";
+      oStream << location << ".AllowEgressFromLocalVpcToRemoteClassicLink=" << std::boolalpha << m_allowEgressFromLocalVpcToRemoteClassicLink << "&";
   }
   if(m_allowDnsResolutionFromRemoteVpcHasBeenSet)
   {
-      oStream << location << ".AllowDnsResolutionFromRemoteVpc=" << m_allowDnsResolutionFromRemoteVpc << "&";
+      oStream << location << ".AllowDnsResolutionFromRemoteVpc=" << std::boolalpha << m_allowDnsResolutionFromRemoteVpc << "&";
   }
 }
 

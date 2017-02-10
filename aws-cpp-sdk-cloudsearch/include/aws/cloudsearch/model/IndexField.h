@@ -46,7 +46,9 @@ namespace Model
   /**
    * <p>Configuration information for a field in the index, including its name, type,
    * and options. The supported options depend on the
-   * <code><a>IndexFieldType</a></code>.</p>
+   * <code><a>IndexFieldType</a></code>.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/IndexField">AWS
+   * API Reference</a></p>
    */
   class AWS_CLOUDSEARCH_API IndexField
   {

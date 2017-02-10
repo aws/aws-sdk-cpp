@@ -36,7 +36,9 @@ namespace Model
    * <p>node group (shard) configuration options. Each node group (shard)
    * configuration has the following: <code>Slots</code>,
    * <code>PrimaryAvailabilityZone</code>, <code>ReplicaAvailabilityZones</code>,
-   * <code>ReplicaCount</code>.</p>
+   * <code>ReplicaCount</code>.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/NodeGroupConfiguration">AWS
+   * API Reference</a></p>
    */
   class AWS_ELASTICACHE_API NodeGroupConfiguration
   {

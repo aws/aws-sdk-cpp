@@ -36,7 +36,9 @@ namespace Model
   /**
    * <p>For more information, see <a
    * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/UnderstandingResponses.html">Responses</a>
-   * in the <i>Amazon SQS Developer Guide</i>.</p>
+   * in the <i>Amazon SQS Developer Guide</i>.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/GetQueueUrlResult">AWS
+   * API Reference</a></p>
    */
   class AWS_SQS_API GetQueueUrlResult
   {
@@ -46,37 +48,37 @@ namespace Model
     GetQueueUrlResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
     /**
-     * <p>The URL for the queue.</p>
+     * <p>The URL of the queue.</p>
      */
     inline const Aws::String& GetQueueUrl() const{ return m_queueUrl; }
 
     /**
-     * <p>The URL for the queue.</p>
+     * <p>The URL of the queue.</p>
      */
     inline void SetQueueUrl(const Aws::String& value) { m_queueUrl = value; }
 
     /**
-     * <p>The URL for the queue.</p>
+     * <p>The URL of the queue.</p>
      */
     inline void SetQueueUrl(Aws::String&& value) { m_queueUrl = value; }
 
     /**
-     * <p>The URL for the queue.</p>
+     * <p>The URL of the queue.</p>
      */
     inline void SetQueueUrl(const char* value) { m_queueUrl.assign(value); }
 
     /**
-     * <p>The URL for the queue.</p>
+     * <p>The URL of the queue.</p>
      */
     inline GetQueueUrlResult& WithQueueUrl(const Aws::String& value) { SetQueueUrl(value); return *this;}
 
     /**
-     * <p>The URL for the queue.</p>
+     * <p>The URL of the queue.</p>
      */
     inline GetQueueUrlResult& WithQueueUrl(Aws::String&& value) { SetQueueUrl(value); return *this;}
 
     /**
-     * <p>The URL for the queue.</p>
+     * <p>The URL of the queue.</p>
      */
     inline GetQueueUrlResult& WithQueueUrl(const char* value) { SetQueueUrl(value); return *this;}
 

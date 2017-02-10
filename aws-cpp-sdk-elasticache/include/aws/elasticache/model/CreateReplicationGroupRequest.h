@@ -28,7 +28,10 @@ namespace Model
 {
 
   /**
-   * <p>Represents the input of a <code>CreateReplicationGroup</code> operation.</p>
+   * <p>Represents the input of a <code>CreateReplicationGroup</code>
+   * operation.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/CreateReplicationGroupMessage">AWS
+   * API Reference</a></p>
    */
   class AWS_ELASTICACHE_API CreateReplicationGroupRequest : public ElastiCacheRequest
   {
@@ -1627,72 +1630,79 @@ namespace Model
     inline CreateReplicationGroupRequest& WithSnapshotWindow(const char* value) { SetSnapshotWindow(value); return *this;}
 
     /**
-     * <p>The password used to access a password protected server.</p> <p>Password
-     * constraints:</p> <ul> <li> <p>Must be only printable ASCII characters.</p> </li>
-     * <li> <p>Must be at least 16 characters and no more than 128 characters in
-     * length.</p> </li> <li> <p>Cannot contain any of the following characters: '/',
-     * '"', or "@". </p> </li> </ul> <p>For more information, see <a
-     * href="http://redis.io/commands/AUTH">AUTH password</a> at Redis.</p>
+     * <p> <b>Reserved parameter.</b> The password used to access a password protected
+     * server.</p> <p>Password constraints:</p> <ul> <li> <p>Must be only printable
+     * ASCII characters.</p> </li> <li> <p>Must be at least 16 characters and no more
+     * than 128 characters in length.</p> </li> <li> <p>Cannot contain any of the
+     * following characters: '/', '"', or "@". </p> </li> </ul> <p>For more
+     * information, see <a href="http://redis.io/commands/AUTH">AUTH password</a> at
+     * Redis.</p>
      */
     inline const Aws::String& GetAuthToken() const{ return m_authToken; }
 
     /**
-     * <p>The password used to access a password protected server.</p> <p>Password
-     * constraints:</p> <ul> <li> <p>Must be only printable ASCII characters.</p> </li>
-     * <li> <p>Must be at least 16 characters and no more than 128 characters in
-     * length.</p> </li> <li> <p>Cannot contain any of the following characters: '/',
-     * '"', or "@". </p> </li> </ul> <p>For more information, see <a
-     * href="http://redis.io/commands/AUTH">AUTH password</a> at Redis.</p>
+     * <p> <b>Reserved parameter.</b> The password used to access a password protected
+     * server.</p> <p>Password constraints:</p> <ul> <li> <p>Must be only printable
+     * ASCII characters.</p> </li> <li> <p>Must be at least 16 characters and no more
+     * than 128 characters in length.</p> </li> <li> <p>Cannot contain any of the
+     * following characters: '/', '"', or "@". </p> </li> </ul> <p>For more
+     * information, see <a href="http://redis.io/commands/AUTH">AUTH password</a> at
+     * Redis.</p>
      */
     inline void SetAuthToken(const Aws::String& value) { m_authTokenHasBeenSet = true; m_authToken = value; }
 
     /**
-     * <p>The password used to access a password protected server.</p> <p>Password
-     * constraints:</p> <ul> <li> <p>Must be only printable ASCII characters.</p> </li>
-     * <li> <p>Must be at least 16 characters and no more than 128 characters in
-     * length.</p> </li> <li> <p>Cannot contain any of the following characters: '/',
-     * '"', or "@". </p> </li> </ul> <p>For more information, see <a
-     * href="http://redis.io/commands/AUTH">AUTH password</a> at Redis.</p>
+     * <p> <b>Reserved parameter.</b> The password used to access a password protected
+     * server.</p> <p>Password constraints:</p> <ul> <li> <p>Must be only printable
+     * ASCII characters.</p> </li> <li> <p>Must be at least 16 characters and no more
+     * than 128 characters in length.</p> </li> <li> <p>Cannot contain any of the
+     * following characters: '/', '"', or "@". </p> </li> </ul> <p>For more
+     * information, see <a href="http://redis.io/commands/AUTH">AUTH password</a> at
+     * Redis.</p>
      */
     inline void SetAuthToken(Aws::String&& value) { m_authTokenHasBeenSet = true; m_authToken = value; }
 
     /**
-     * <p>The password used to access a password protected server.</p> <p>Password
-     * constraints:</p> <ul> <li> <p>Must be only printable ASCII characters.</p> </li>
-     * <li> <p>Must be at least 16 characters and no more than 128 characters in
-     * length.</p> </li> <li> <p>Cannot contain any of the following characters: '/',
-     * '"', or "@". </p> </li> </ul> <p>For more information, see <a
-     * href="http://redis.io/commands/AUTH">AUTH password</a> at Redis.</p>
+     * <p> <b>Reserved parameter.</b> The password used to access a password protected
+     * server.</p> <p>Password constraints:</p> <ul> <li> <p>Must be only printable
+     * ASCII characters.</p> </li> <li> <p>Must be at least 16 characters and no more
+     * than 128 characters in length.</p> </li> <li> <p>Cannot contain any of the
+     * following characters: '/', '"', or "@". </p> </li> </ul> <p>For more
+     * information, see <a href="http://redis.io/commands/AUTH">AUTH password</a> at
+     * Redis.</p>
      */
     inline void SetAuthToken(const char* value) { m_authTokenHasBeenSet = true; m_authToken.assign(value); }
 
     /**
-     * <p>The password used to access a password protected server.</p> <p>Password
-     * constraints:</p> <ul> <li> <p>Must be only printable ASCII characters.</p> </li>
-     * <li> <p>Must be at least 16 characters and no more than 128 characters in
-     * length.</p> </li> <li> <p>Cannot contain any of the following characters: '/',
-     * '"', or "@". </p> </li> </ul> <p>For more information, see <a
-     * href="http://redis.io/commands/AUTH">AUTH password</a> at Redis.</p>
+     * <p> <b>Reserved parameter.</b> The password used to access a password protected
+     * server.</p> <p>Password constraints:</p> <ul> <li> <p>Must be only printable
+     * ASCII characters.</p> </li> <li> <p>Must be at least 16 characters and no more
+     * than 128 characters in length.</p> </li> <li> <p>Cannot contain any of the
+     * following characters: '/', '"', or "@". </p> </li> </ul> <p>For more
+     * information, see <a href="http://redis.io/commands/AUTH">AUTH password</a> at
+     * Redis.</p>
      */
     inline CreateReplicationGroupRequest& WithAuthToken(const Aws::String& value) { SetAuthToken(value); return *this;}
 
     /**
-     * <p>The password used to access a password protected server.</p> <p>Password
-     * constraints:</p> <ul> <li> <p>Must be only printable ASCII characters.</p> </li>
-     * <li> <p>Must be at least 16 characters and no more than 128 characters in
-     * length.</p> </li> <li> <p>Cannot contain any of the following characters: '/',
-     * '"', or "@". </p> </li> </ul> <p>For more information, see <a
-     * href="http://redis.io/commands/AUTH">AUTH password</a> at Redis.</p>
+     * <p> <b>Reserved parameter.</b> The password used to access a password protected
+     * server.</p> <p>Password constraints:</p> <ul> <li> <p>Must be only printable
+     * ASCII characters.</p> </li> <li> <p>Must be at least 16 characters and no more
+     * than 128 characters in length.</p> </li> <li> <p>Cannot contain any of the
+     * following characters: '/', '"', or "@". </p> </li> </ul> <p>For more
+     * information, see <a href="http://redis.io/commands/AUTH">AUTH password</a> at
+     * Redis.</p>
      */
     inline CreateReplicationGroupRequest& WithAuthToken(Aws::String&& value) { SetAuthToken(value); return *this;}
 
     /**
-     * <p>The password used to access a password protected server.</p> <p>Password
-     * constraints:</p> <ul> <li> <p>Must be only printable ASCII characters.</p> </li>
-     * <li> <p>Must be at least 16 characters and no more than 128 characters in
-     * length.</p> </li> <li> <p>Cannot contain any of the following characters: '/',
-     * '"', or "@". </p> </li> </ul> <p>For more information, see <a
-     * href="http://redis.io/commands/AUTH">AUTH password</a> at Redis.</p>
+     * <p> <b>Reserved parameter.</b> The password used to access a password protected
+     * server.</p> <p>Password constraints:</p> <ul> <li> <p>Must be only printable
+     * ASCII characters.</p> </li> <li> <p>Must be at least 16 characters and no more
+     * than 128 characters in length.</p> </li> <li> <p>Cannot contain any of the
+     * following characters: '/', '"', or "@". </p> </li> </ul> <p>For more
+     * information, see <a href="http://redis.io/commands/AUTH">AUTH password</a> at
+     * Redis.</p>
      */
     inline CreateReplicationGroupRequest& WithAuthToken(const char* value) { SetAuthToken(value); return *this;}
 

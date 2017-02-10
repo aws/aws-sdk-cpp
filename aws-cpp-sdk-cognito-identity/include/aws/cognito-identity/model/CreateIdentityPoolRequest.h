@@ -28,7 +28,9 @@ namespace Model
 {
 
   /**
-   * <p>Input to the CreateIdentityPool action.</p>
+   * <p>Input to the CreateIdentityPool action.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/CreateIdentityPoolInput">AWS
+   * API Reference</a></p>
    */
   class AWS_COGNITOIDENTITY_API CreateIdentityPoolRequest : public CognitoIdentityRequest
   {
@@ -259,37 +261,37 @@ namespace Model
     inline CreateIdentityPoolRequest& AddOpenIdConnectProviderARNs(const char* value) { m_openIdConnectProviderARNsHasBeenSet = true; m_openIdConnectProviderARNs.push_back(value); return *this; }
 
     /**
-     * <p>An array of Amazon Cognito Identity user pools.</p>
+     * <p>An array of Amazon Cognito Identity user pools and their client IDs.</p>
      */
     inline const Aws::Vector<CognitoIdentityProvider>& GetCognitoIdentityProviders() const{ return m_cognitoIdentityProviders; }
 
     /**
-     * <p>An array of Amazon Cognito Identity user pools.</p>
+     * <p>An array of Amazon Cognito Identity user pools and their client IDs.</p>
      */
     inline void SetCognitoIdentityProviders(const Aws::Vector<CognitoIdentityProvider>& value) { m_cognitoIdentityProvidersHasBeenSet = true; m_cognitoIdentityProviders = value; }
 
     /**
-     * <p>An array of Amazon Cognito Identity user pools.</p>
+     * <p>An array of Amazon Cognito Identity user pools and their client IDs.</p>
      */
     inline void SetCognitoIdentityProviders(Aws::Vector<CognitoIdentityProvider>&& value) { m_cognitoIdentityProvidersHasBeenSet = true; m_cognitoIdentityProviders = value; }
 
     /**
-     * <p>An array of Amazon Cognito Identity user pools.</p>
+     * <p>An array of Amazon Cognito Identity user pools and their client IDs.</p>
      */
     inline CreateIdentityPoolRequest& WithCognitoIdentityProviders(const Aws::Vector<CognitoIdentityProvider>& value) { SetCognitoIdentityProviders(value); return *this;}
 
     /**
-     * <p>An array of Amazon Cognito Identity user pools.</p>
+     * <p>An array of Amazon Cognito Identity user pools and their client IDs.</p>
      */
     inline CreateIdentityPoolRequest& WithCognitoIdentityProviders(Aws::Vector<CognitoIdentityProvider>&& value) { SetCognitoIdentityProviders(value); return *this;}
 
     /**
-     * <p>An array of Amazon Cognito Identity user pools.</p>
+     * <p>An array of Amazon Cognito Identity user pools and their client IDs.</p>
      */
     inline CreateIdentityPoolRequest& AddCognitoIdentityProviders(const CognitoIdentityProvider& value) { m_cognitoIdentityProvidersHasBeenSet = true; m_cognitoIdentityProviders.push_back(value); return *this; }
 
     /**
-     * <p>An array of Amazon Cognito Identity user pools.</p>
+     * <p>An array of Amazon Cognito Identity user pools and their client IDs.</p>
      */
     inline CreateIdentityPoolRequest& AddCognitoIdentityProviders(CognitoIdentityProvider&& value) { m_cognitoIdentityProvidersHasBeenSet = true; m_cognitoIdentityProviders.push_back(value); return *this; }
 

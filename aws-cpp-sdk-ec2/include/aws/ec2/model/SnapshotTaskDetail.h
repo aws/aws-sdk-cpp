@@ -33,7 +33,9 @@ namespace Model
 {
 
   /**
-   * <p>Details about the import snapshot task.</p>
+   * <p>Details about the import snapshot task.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/SnapshotTaskDetail">AWS
+   * API Reference</a></p>
    */
   class AWS_EC2_API SnapshotTaskDetail
   {

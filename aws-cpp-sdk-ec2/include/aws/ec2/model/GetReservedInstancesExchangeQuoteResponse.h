@@ -39,7 +39,10 @@ namespace EC2
 namespace Model
 {
   /**
-   * <p>Contains the output of GetReservedInstancesExchangeQuote.</p>
+   * <p>Contains the output of GetReservedInstancesExchangeQuote.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetReservedInstancesExchangeQuoteResult">AWS
+   * API Reference</a></p>
    */
   class AWS_EC2_API GetReservedInstancesExchangeQuoteResponse
   {
@@ -245,54 +248,54 @@ namespace Model
 
     /**
      * <p>If <code>true</code>, the exchange is valid. If <code>false</code>, the
-     * exchange cannot be performed.</p>
+     * exchange cannot be completed.</p>
      */
     inline bool GetIsValidExchange() const{ return m_isValidExchange; }
 
     /**
      * <p>If <code>true</code>, the exchange is valid. If <code>false</code>, the
-     * exchange cannot be performed.</p>
+     * exchange cannot be completed.</p>
      */
     inline void SetIsValidExchange(bool value) { m_isValidExchange = value; }
 
     /**
      * <p>If <code>true</code>, the exchange is valid. If <code>false</code>, the
-     * exchange cannot be performed.</p>
+     * exchange cannot be completed.</p>
      */
     inline GetReservedInstancesExchangeQuoteResponse& WithIsValidExchange(bool value) { SetIsValidExchange(value); return *this;}
 
     /**
-     * <p>Describes the reason why the exchange can not be completed.</p>
+     * <p>Describes the reason why the exchange cannot be completed.</p>
      */
     inline const Aws::String& GetValidationFailureReason() const{ return m_validationFailureReason; }
 
     /**
-     * <p>Describes the reason why the exchange can not be completed.</p>
+     * <p>Describes the reason why the exchange cannot be completed.</p>
      */
     inline void SetValidationFailureReason(const Aws::String& value) { m_validationFailureReason = value; }
 
     /**
-     * <p>Describes the reason why the exchange can not be completed.</p>
+     * <p>Describes the reason why the exchange cannot be completed.</p>
      */
     inline void SetValidationFailureReason(Aws::String&& value) { m_validationFailureReason = value; }
 
     /**
-     * <p>Describes the reason why the exchange can not be completed.</p>
+     * <p>Describes the reason why the exchange cannot be completed.</p>
      */
     inline void SetValidationFailureReason(const char* value) { m_validationFailureReason.assign(value); }
 
     /**
-     * <p>Describes the reason why the exchange can not be completed.</p>
+     * <p>Describes the reason why the exchange cannot be completed.</p>
      */
     inline GetReservedInstancesExchangeQuoteResponse& WithValidationFailureReason(const Aws::String& value) { SetValidationFailureReason(value); return *this;}
 
     /**
-     * <p>Describes the reason why the exchange can not be completed.</p>
+     * <p>Describes the reason why the exchange cannot be completed.</p>
      */
     inline GetReservedInstancesExchangeQuoteResponse& WithValidationFailureReason(Aws::String&& value) { SetValidationFailureReason(value); return *this;}
 
     /**
-     * <p>Describes the reason why the exchange can not be completed.</p>
+     * <p>Describes the reason why the exchange cannot be completed.</p>
      */
     inline GetReservedInstancesExchangeQuoteResponse& WithValidationFailureReason(const char* value) { SetValidationFailureReason(value); return *this;}
 

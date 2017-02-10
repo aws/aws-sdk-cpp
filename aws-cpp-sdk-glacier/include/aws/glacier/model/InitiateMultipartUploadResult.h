@@ -33,7 +33,9 @@ namespace Glacier
 namespace Model
 {
   /**
-   * <p>The Amazon Glacier response to your request.</p>
+   * <p>The Amazon Glacier response to your request.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/InitiateMultipartUploadOutput">AWS
+   * API Reference</a></p>
    */
   class AWS_GLACIER_API InitiateMultipartUploadResult
   {

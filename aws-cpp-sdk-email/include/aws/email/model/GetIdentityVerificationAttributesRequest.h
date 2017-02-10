@@ -30,7 +30,9 @@ namespace Model
    * of identities. For domain identities, this request also returns the verification
    * token. For information about verifying identities with Amazon SES, see the <a
    * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-addresses-and-domains.html">Amazon
-   * SES Developer Guide</a>.</p>
+   * SES Developer Guide</a>.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/GetIdentityVerificationAttributesRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_SES_API GetIdentityVerificationAttributesRequest : public SESRequest
   {

@@ -30,7 +30,9 @@ namespace Model
 {
 
   /**
-   * <p>The input for a ListResourceRecordSets request.</p>
+   * <p>The input for a ListResourceRecordSets request.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListResourceRecordSetsRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_ROUTE53_API ListResourceRecordSetsRequest : public Route53Request
   {

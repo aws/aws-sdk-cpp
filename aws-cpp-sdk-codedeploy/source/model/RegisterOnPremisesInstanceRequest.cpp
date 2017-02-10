@@ -23,6 +23,7 @@ using namespace Aws::Utils;
 
 RegisterOnPremisesInstanceRequest::RegisterOnPremisesInstanceRequest() : 
     m_instanceNameHasBeenSet(false),
+    m_iamSessionArnHasBeenSet(false),
     m_iamUserArnHasBeenSet(false)
 {
 }
@@ -34,6 +35,12 @@ Aws::String RegisterOnPremisesInstanceRequest::SerializePayload() const
   if(m_instanceNameHasBeenSet)
   {
    payload.WithString("instanceName", m_instanceName);
+
+  }
+
+  if(m_iamSessionArnHasBeenSet)
+  {
+   payload.WithString("iamSessionArn", m_iamSessionArn);
 
   }
 

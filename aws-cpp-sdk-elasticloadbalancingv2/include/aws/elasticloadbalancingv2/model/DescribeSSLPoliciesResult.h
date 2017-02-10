@@ -35,9 +35,6 @@ namespace ElasticLoadBalancingv2
 {
 namespace Model
 {
-  /**
-   * <p>Contains the output of DescribeSSLPolicies.</p>
-   */
   class AWS_ELASTICLOADBALANCINGV2_API DescribeSSLPoliciesResult
   {
   public:

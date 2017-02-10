@@ -34,7 +34,10 @@ namespace Model
 {
 
   /**
-   * <p>The execution status details of the cluster step.</p>
+   * <p>The execution status details of the cluster step.</p><p><h3>See Also:</h3>  
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/StepStatus">AWS
+   * API Reference</a></p>
    */
   class AWS_EMR_API StepStatus
   {

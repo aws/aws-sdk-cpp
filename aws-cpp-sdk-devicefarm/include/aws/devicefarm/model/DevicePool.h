@@ -34,7 +34,9 @@ namespace Model
 {
 
   /**
-   * <p>Represents a collection of device types.</p>
+   * <p>Represents a collection of device types.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/DevicePool">AWS
+   * API Reference</a></p>
    */
   class AWS_DEVICEFARM_API DevicePool
   {

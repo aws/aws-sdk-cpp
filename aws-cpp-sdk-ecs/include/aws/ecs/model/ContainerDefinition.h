@@ -41,7 +41,9 @@ namespace Model
 
   /**
    * <p>Container definitions are used in task definitions to describe the different
-   * containers that are launched as part of a task.</p>
+   * containers that are launched as part of a task.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ContainerDefinition">AWS
+   * API Reference</a></p>
    */
   class AWS_ECS_API ContainerDefinition
   {
@@ -161,13 +163,18 @@ namespace Model
      * a container</a> section of the <a
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker
      * Remote API</a> and the <code>IMAGE</code> parameter of <a
-     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <ul>
-     * <li> <p>Images in official repositories on Docker Hub use a single name (for
-     * example, <code>ubuntu</code> or <code>mongo</code>).</p> </li> <li> <p>Images in
-     * other repositories on Docker Hub are qualified with an organization name (for
-     * example, <code>amazon/amazon-ecs-agent</code>).</p> </li> <li> <p>Images in
-     * other online repositories are qualified further by a domain name (for example,
-     * <code>quay.io/assemblyline/ubuntu</code>).</p> </li> </ul>
+     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <note>
+     * <p>Amazon ECS task definitions currently only support tags as image identifiers
+     * within a specified repository (and not <code>sha256</code> digests).</p> </note>
+     * <ul> <li> <p>Images in Amazon ECR repositories use the full registry and
+     * repository URI (for example,
+     * <code>012345678910.dkr.ecr.&lt;region-name&gt;.amazonaws.com/&lt;repository-name&gt;</code>).
+     * </p> </li> <li> <p>Images in official repositories on Docker Hub use a single
+     * name (for example, <code>ubuntu</code> or <code>mongo</code>).</p> </li> <li>
+     * <p>Images in other repositories on Docker Hub are qualified with an organization
+     * name (for example, <code>amazon/amazon-ecs-agent</code>).</p> </li> <li>
+     * <p>Images in other online repositories are qualified further by a domain name
+     * (for example, <code>quay.io/assemblyline/ubuntu</code>).</p> </li> </ul>
      */
     inline const Aws::String& GetImage() const{ return m_image; }
 
@@ -183,13 +190,18 @@ namespace Model
      * a container</a> section of the <a
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker
      * Remote API</a> and the <code>IMAGE</code> parameter of <a
-     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <ul>
-     * <li> <p>Images in official repositories on Docker Hub use a single name (for
-     * example, <code>ubuntu</code> or <code>mongo</code>).</p> </li> <li> <p>Images in
-     * other repositories on Docker Hub are qualified with an organization name (for
-     * example, <code>amazon/amazon-ecs-agent</code>).</p> </li> <li> <p>Images in
-     * other online repositories are qualified further by a domain name (for example,
-     * <code>quay.io/assemblyline/ubuntu</code>).</p> </li> </ul>
+     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <note>
+     * <p>Amazon ECS task definitions currently only support tags as image identifiers
+     * within a specified repository (and not <code>sha256</code> digests).</p> </note>
+     * <ul> <li> <p>Images in Amazon ECR repositories use the full registry and
+     * repository URI (for example,
+     * <code>012345678910.dkr.ecr.&lt;region-name&gt;.amazonaws.com/&lt;repository-name&gt;</code>).
+     * </p> </li> <li> <p>Images in official repositories on Docker Hub use a single
+     * name (for example, <code>ubuntu</code> or <code>mongo</code>).</p> </li> <li>
+     * <p>Images in other repositories on Docker Hub are qualified with an organization
+     * name (for example, <code>amazon/amazon-ecs-agent</code>).</p> </li> <li>
+     * <p>Images in other online repositories are qualified further by a domain name
+     * (for example, <code>quay.io/assemblyline/ubuntu</code>).</p> </li> </ul>
      */
     inline void SetImage(const Aws::String& value) { m_imageHasBeenSet = true; m_image = value; }
 
@@ -205,13 +217,18 @@ namespace Model
      * a container</a> section of the <a
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker
      * Remote API</a> and the <code>IMAGE</code> parameter of <a
-     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <ul>
-     * <li> <p>Images in official repositories on Docker Hub use a single name (for
-     * example, <code>ubuntu</code> or <code>mongo</code>).</p> </li> <li> <p>Images in
-     * other repositories on Docker Hub are qualified with an organization name (for
-     * example, <code>amazon/amazon-ecs-agent</code>).</p> </li> <li> <p>Images in
-     * other online repositories are qualified further by a domain name (for example,
-     * <code>quay.io/assemblyline/ubuntu</code>).</p> </li> </ul>
+     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <note>
+     * <p>Amazon ECS task definitions currently only support tags as image identifiers
+     * within a specified repository (and not <code>sha256</code> digests).</p> </note>
+     * <ul> <li> <p>Images in Amazon ECR repositories use the full registry and
+     * repository URI (for example,
+     * <code>012345678910.dkr.ecr.&lt;region-name&gt;.amazonaws.com/&lt;repository-name&gt;</code>).
+     * </p> </li> <li> <p>Images in official repositories on Docker Hub use a single
+     * name (for example, <code>ubuntu</code> or <code>mongo</code>).</p> </li> <li>
+     * <p>Images in other repositories on Docker Hub are qualified with an organization
+     * name (for example, <code>amazon/amazon-ecs-agent</code>).</p> </li> <li>
+     * <p>Images in other online repositories are qualified further by a domain name
+     * (for example, <code>quay.io/assemblyline/ubuntu</code>).</p> </li> </ul>
      */
     inline void SetImage(Aws::String&& value) { m_imageHasBeenSet = true; m_image = value; }
 
@@ -227,13 +244,18 @@ namespace Model
      * a container</a> section of the <a
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker
      * Remote API</a> and the <code>IMAGE</code> parameter of <a
-     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <ul>
-     * <li> <p>Images in official repositories on Docker Hub use a single name (for
-     * example, <code>ubuntu</code> or <code>mongo</code>).</p> </li> <li> <p>Images in
-     * other repositories on Docker Hub are qualified with an organization name (for
-     * example, <code>amazon/amazon-ecs-agent</code>).</p> </li> <li> <p>Images in
-     * other online repositories are qualified further by a domain name (for example,
-     * <code>quay.io/assemblyline/ubuntu</code>).</p> </li> </ul>
+     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <note>
+     * <p>Amazon ECS task definitions currently only support tags as image identifiers
+     * within a specified repository (and not <code>sha256</code> digests).</p> </note>
+     * <ul> <li> <p>Images in Amazon ECR repositories use the full registry and
+     * repository URI (for example,
+     * <code>012345678910.dkr.ecr.&lt;region-name&gt;.amazonaws.com/&lt;repository-name&gt;</code>).
+     * </p> </li> <li> <p>Images in official repositories on Docker Hub use a single
+     * name (for example, <code>ubuntu</code> or <code>mongo</code>).</p> </li> <li>
+     * <p>Images in other repositories on Docker Hub are qualified with an organization
+     * name (for example, <code>amazon/amazon-ecs-agent</code>).</p> </li> <li>
+     * <p>Images in other online repositories are qualified further by a domain name
+     * (for example, <code>quay.io/assemblyline/ubuntu</code>).</p> </li> </ul>
      */
     inline void SetImage(const char* value) { m_imageHasBeenSet = true; m_image.assign(value); }
 
@@ -249,13 +271,18 @@ namespace Model
      * a container</a> section of the <a
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker
      * Remote API</a> and the <code>IMAGE</code> parameter of <a
-     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <ul>
-     * <li> <p>Images in official repositories on Docker Hub use a single name (for
-     * example, <code>ubuntu</code> or <code>mongo</code>).</p> </li> <li> <p>Images in
-     * other repositories on Docker Hub are qualified with an organization name (for
-     * example, <code>amazon/amazon-ecs-agent</code>).</p> </li> <li> <p>Images in
-     * other online repositories are qualified further by a domain name (for example,
-     * <code>quay.io/assemblyline/ubuntu</code>).</p> </li> </ul>
+     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <note>
+     * <p>Amazon ECS task definitions currently only support tags as image identifiers
+     * within a specified repository (and not <code>sha256</code> digests).</p> </note>
+     * <ul> <li> <p>Images in Amazon ECR repositories use the full registry and
+     * repository URI (for example,
+     * <code>012345678910.dkr.ecr.&lt;region-name&gt;.amazonaws.com/&lt;repository-name&gt;</code>).
+     * </p> </li> <li> <p>Images in official repositories on Docker Hub use a single
+     * name (for example, <code>ubuntu</code> or <code>mongo</code>).</p> </li> <li>
+     * <p>Images in other repositories on Docker Hub are qualified with an organization
+     * name (for example, <code>amazon/amazon-ecs-agent</code>).</p> </li> <li>
+     * <p>Images in other online repositories are qualified further by a domain name
+     * (for example, <code>quay.io/assemblyline/ubuntu</code>).</p> </li> </ul>
      */
     inline ContainerDefinition& WithImage(const Aws::String& value) { SetImage(value); return *this;}
 
@@ -271,13 +298,18 @@ namespace Model
      * a container</a> section of the <a
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker
      * Remote API</a> and the <code>IMAGE</code> parameter of <a
-     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <ul>
-     * <li> <p>Images in official repositories on Docker Hub use a single name (for
-     * example, <code>ubuntu</code> or <code>mongo</code>).</p> </li> <li> <p>Images in
-     * other repositories on Docker Hub are qualified with an organization name (for
-     * example, <code>amazon/amazon-ecs-agent</code>).</p> </li> <li> <p>Images in
-     * other online repositories are qualified further by a domain name (for example,
-     * <code>quay.io/assemblyline/ubuntu</code>).</p> </li> </ul>
+     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <note>
+     * <p>Amazon ECS task definitions currently only support tags as image identifiers
+     * within a specified repository (and not <code>sha256</code> digests).</p> </note>
+     * <ul> <li> <p>Images in Amazon ECR repositories use the full registry and
+     * repository URI (for example,
+     * <code>012345678910.dkr.ecr.&lt;region-name&gt;.amazonaws.com/&lt;repository-name&gt;</code>).
+     * </p> </li> <li> <p>Images in official repositories on Docker Hub use a single
+     * name (for example, <code>ubuntu</code> or <code>mongo</code>).</p> </li> <li>
+     * <p>Images in other repositories on Docker Hub are qualified with an organization
+     * name (for example, <code>amazon/amazon-ecs-agent</code>).</p> </li> <li>
+     * <p>Images in other online repositories are qualified further by a domain name
+     * (for example, <code>quay.io/assemblyline/ubuntu</code>).</p> </li> </ul>
      */
     inline ContainerDefinition& WithImage(Aws::String&& value) { SetImage(value); return *this;}
 
@@ -293,13 +325,18 @@ namespace Model
      * a container</a> section of the <a
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker
      * Remote API</a> and the <code>IMAGE</code> parameter of <a
-     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <ul>
-     * <li> <p>Images in official repositories on Docker Hub use a single name (for
-     * example, <code>ubuntu</code> or <code>mongo</code>).</p> </li> <li> <p>Images in
-     * other repositories on Docker Hub are qualified with an organization name (for
-     * example, <code>amazon/amazon-ecs-agent</code>).</p> </li> <li> <p>Images in
-     * other online repositories are qualified further by a domain name (for example,
-     * <code>quay.io/assemblyline/ubuntu</code>).</p> </li> </ul>
+     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <note>
+     * <p>Amazon ECS task definitions currently only support tags as image identifiers
+     * within a specified repository (and not <code>sha256</code> digests).</p> </note>
+     * <ul> <li> <p>Images in Amazon ECR repositories use the full registry and
+     * repository URI (for example,
+     * <code>012345678910.dkr.ecr.&lt;region-name&gt;.amazonaws.com/&lt;repository-name&gt;</code>).
+     * </p> </li> <li> <p>Images in official repositories on Docker Hub use a single
+     * name (for example, <code>ubuntu</code> or <code>mongo</code>).</p> </li> <li>
+     * <p>Images in other repositories on Docker Hub are qualified with an organization
+     * name (for example, <code>amazon/amazon-ecs-agent</code>).</p> </li> <li>
+     * <p>Images in other online repositories are qualified further by a domain name
+     * (for example, <code>quay.io/assemblyline/ubuntu</code>).</p> </li> </ul>
      */
     inline ContainerDefinition& WithImage(const char* value) { SetImage(value); return *this;}
 
@@ -2476,8 +2513,8 @@ namespace Model
      * href="https://docs.docker.com/engine/admin/logging/overview/">Configure logging
      * drivers</a> in the Docker documentation.</p> <note> <p>Amazon ECS currently
      * supports a subset of the logging drivers available to the Docker daemon (shown
-     * in the <a>LogConfiguration</a> data type). Currently unsupported log drivers may
-     * be available in future releases of the Amazon ECS container agent.</p> </note>
+     * in the <a>LogConfiguration</a> data type). Additional log drivers may be
+     * available in future releases of the Amazon ECS container agent.</p> </note>
      * <p>This parameter requires version 1.18 of the Docker Remote API or greater on
      * your container instance. To check the Docker Remote API version on your
      * container instance, log into your container instance and run the following
@@ -2511,8 +2548,8 @@ namespace Model
      * href="https://docs.docker.com/engine/admin/logging/overview/">Configure logging
      * drivers</a> in the Docker documentation.</p> <note> <p>Amazon ECS currently
      * supports a subset of the logging drivers available to the Docker daemon (shown
-     * in the <a>LogConfiguration</a> data type). Currently unsupported log drivers may
-     * be available in future releases of the Amazon ECS container agent.</p> </note>
+     * in the <a>LogConfiguration</a> data type). Additional log drivers may be
+     * available in future releases of the Amazon ECS container agent.</p> </note>
      * <p>This parameter requires version 1.18 of the Docker Remote API or greater on
      * your container instance. To check the Docker Remote API version on your
      * container instance, log into your container instance and run the following
@@ -2546,8 +2583,8 @@ namespace Model
      * href="https://docs.docker.com/engine/admin/logging/overview/">Configure logging
      * drivers</a> in the Docker documentation.</p> <note> <p>Amazon ECS currently
      * supports a subset of the logging drivers available to the Docker daemon (shown
-     * in the <a>LogConfiguration</a> data type). Currently unsupported log drivers may
-     * be available in future releases of the Amazon ECS container agent.</p> </note>
+     * in the <a>LogConfiguration</a> data type). Additional log drivers may be
+     * available in future releases of the Amazon ECS container agent.</p> </note>
      * <p>This parameter requires version 1.18 of the Docker Remote API or greater on
      * your container instance. To check the Docker Remote API version on your
      * container instance, log into your container instance and run the following
@@ -2581,8 +2618,8 @@ namespace Model
      * href="https://docs.docker.com/engine/admin/logging/overview/">Configure logging
      * drivers</a> in the Docker documentation.</p> <note> <p>Amazon ECS currently
      * supports a subset of the logging drivers available to the Docker daemon (shown
-     * in the <a>LogConfiguration</a> data type). Currently unsupported log drivers may
-     * be available in future releases of the Amazon ECS container agent.</p> </note>
+     * in the <a>LogConfiguration</a> data type). Additional log drivers may be
+     * available in future releases of the Amazon ECS container agent.</p> </note>
      * <p>This parameter requires version 1.18 of the Docker Remote API or greater on
      * your container instance. To check the Docker Remote API version on your
      * container instance, log into your container instance and run the following
@@ -2616,8 +2653,8 @@ namespace Model
      * href="https://docs.docker.com/engine/admin/logging/overview/">Configure logging
      * drivers</a> in the Docker documentation.</p> <note> <p>Amazon ECS currently
      * supports a subset of the logging drivers available to the Docker daemon (shown
-     * in the <a>LogConfiguration</a> data type). Currently unsupported log drivers may
-     * be available in future releases of the Amazon ECS container agent.</p> </note>
+     * in the <a>LogConfiguration</a> data type). Additional log drivers may be
+     * available in future releases of the Amazon ECS container agent.</p> </note>
      * <p>This parameter requires version 1.18 of the Docker Remote API or greater on
      * your container instance. To check the Docker Remote API version on your
      * container instance, log into your container instance and run the following

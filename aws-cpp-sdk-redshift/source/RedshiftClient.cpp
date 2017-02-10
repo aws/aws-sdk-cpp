@@ -154,6 +154,16 @@ void RedshiftClient::init(const ClientConfiguration& config)
   m_uri = ss.str();
 }
 
+Aws::String RedshiftClient::ConvertRequestToPresignedUrl(const AmazonSerializableWebServiceRequest& requestToConvert, const char* region) const
+{
+  Aws::StringStream ss;
+  ss << "https://" << RedshiftEndpoint::ForRegion(region);
+  ss << "?" << requestToConvert.SerializePayload();
+
+  URI uri(ss.str());
+  return GeneratePresignedUrl(uri, HttpMethod::HTTP_GET, region, 3600);
+}
+
 AuthorizeClusterSecurityGroupIngressOutcome RedshiftClient::AuthorizeClusterSecurityGroupIngress(const AuthorizeClusterSecurityGroupIngressRequest& request) const
 {
   Aws::StringStream ss;
@@ -2199,4 +2209,6 @@ void RedshiftClient::RotateEncryptionKeyAsyncHelper(const RotateEncryptionKeyReq
 {
   handler(this, request, RotateEncryptionKey(request), context);
 }
+
+
 

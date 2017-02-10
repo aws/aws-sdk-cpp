@@ -104,11 +104,48 @@ namespace Model
      */
     inline DeleteAssociationRequest& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
 
+    /**
+     * <p>The association ID that you want to delete.</p>
+     */
+    inline const Aws::String& GetAssociationId() const{ return m_associationId; }
+
+    /**
+     * <p>The association ID that you want to delete.</p>
+     */
+    inline void SetAssociationId(const Aws::String& value) { m_associationIdHasBeenSet = true; m_associationId = value; }
+
+    /**
+     * <p>The association ID that you want to delete.</p>
+     */
+    inline void SetAssociationId(Aws::String&& value) { m_associationIdHasBeenSet = true; m_associationId = value; }
+
+    /**
+     * <p>The association ID that you want to delete.</p>
+     */
+    inline void SetAssociationId(const char* value) { m_associationIdHasBeenSet = true; m_associationId.assign(value); }
+
+    /**
+     * <p>The association ID that you want to delete.</p>
+     */
+    inline DeleteAssociationRequest& WithAssociationId(const Aws::String& value) { SetAssociationId(value); return *this;}
+
+    /**
+     * <p>The association ID that you want to delete.</p>
+     */
+    inline DeleteAssociationRequest& WithAssociationId(Aws::String&& value) { SetAssociationId(value); return *this;}
+
+    /**
+     * <p>The association ID that you want to delete.</p>
+     */
+    inline DeleteAssociationRequest& WithAssociationId(const char* value) { SetAssociationId(value); return *this;}
+
   private:
     Aws::String m_name;
     bool m_nameHasBeenSet;
     Aws::String m_instanceId;
     bool m_instanceIdHasBeenSet;
+    Aws::String m_associationId;
+    bool m_associationIdHasBeenSet;
   };
 
 } // namespace Model

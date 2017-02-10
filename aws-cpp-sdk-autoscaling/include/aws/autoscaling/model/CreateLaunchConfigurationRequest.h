@@ -28,7 +28,10 @@ namespace Model
 {
 
   /**
-   * <p>Contains the parameters for CreateLaunchConfiguration.</p>
+   * <p>Contains the parameters for CreateLaunchConfiguration.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/CreateLaunchConfigurationType">AWS
+   * API Reference</a></p>
    */
   class AWS_AUTOSCALING_API CreateLaunchConfigurationRequest : public AutoScalingRequest
   {

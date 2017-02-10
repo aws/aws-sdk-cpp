@@ -31,8 +31,10 @@ namespace Model
 {
 
   /**
-   * <p>Structure containing details about the detected label, including bounding
-   * box, name, and level of confidence.</p>
+   * <p>Structure containing details about the detected label, including name, and
+   * level of confidence.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/Label">AWS
+   * API Reference</a></p>
    */
   class AWS_REKOGNITION_API Label
   {

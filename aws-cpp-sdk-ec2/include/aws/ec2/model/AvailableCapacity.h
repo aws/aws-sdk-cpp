@@ -33,7 +33,10 @@ namespace Model
 {
 
   /**
-   * <p>The capacity information for instances launched onto the Dedicated Host.</p>
+   * <p>The capacity information for instances launched onto the Dedicated
+   * Host.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AvailableCapacity">AWS
+   * API Reference</a></p>
    */
   class AWS_EC2_API AvailableCapacity
   {

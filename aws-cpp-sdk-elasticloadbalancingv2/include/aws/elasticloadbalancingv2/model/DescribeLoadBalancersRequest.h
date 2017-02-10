@@ -26,7 +26,6 @@ namespace Model
 {
 
   /**
-   * <p>Contains the parameters for DescribeLoadBalancers.</p>
    */
   class AWS_ELASTICLOADBALANCINGV2_API DescribeLoadBalancersRequest : public ElasticLoadBalancingv2Request
   {

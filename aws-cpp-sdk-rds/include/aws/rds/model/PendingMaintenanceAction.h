@@ -33,7 +33,10 @@ namespace Model
 {
 
   /**
-   * <p>Provides information about a pending maintenance action for a resource.</p>
+   * <p>Provides information about a pending maintenance action for a
+   * resource.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/PendingMaintenanceAction">AWS
+   * API Reference</a></p>
    */
   class AWS_RDS_API PendingMaintenanceAction
   {

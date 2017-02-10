@@ -36,7 +36,10 @@ namespace ElasticBeanstalk
 namespace Model
 {
   /**
-   * <p>Result message wrapping a list of event descriptions.</p>
+   * <p>Result message wrapping a list of event descriptions.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/EventDescriptionsMessage">AWS
+   * API Reference</a></p>
    */
   class AWS_ELASTICBEANSTALK_API DescribeEventsResult
   {

@@ -35,7 +35,9 @@ namespace Model
   /**
    * <p>Represents the output of an <code>UpdateBatchPrediction</code> operation.</p>
    * <p>You can see the updated content by using the <code>GetBatchPrediction</code>
-   * operation.</p>
+   * operation.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/UpdateBatchPredictionOutput">AWS
+   * API Reference</a></p>
    */
   class AWS_MACHINELEARNING_API UpdateBatchPredictionResult
   {

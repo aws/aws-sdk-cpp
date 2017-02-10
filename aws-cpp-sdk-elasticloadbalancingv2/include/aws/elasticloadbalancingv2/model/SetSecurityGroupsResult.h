@@ -34,9 +34,6 @@ namespace ElasticLoadBalancingv2
 {
 namespace Model
 {
-  /**
-   * <p>Contains the output of SetSecurityGroups.</p>
-   */
   class AWS_ELASTICLOADBALANCINGV2_API SetSecurityGroupsResult
   {
   public:

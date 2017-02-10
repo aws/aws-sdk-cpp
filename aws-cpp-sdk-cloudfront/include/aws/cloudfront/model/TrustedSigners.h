@@ -42,7 +42,9 @@ namespace Model
    * false for Enabled and 0 for Quantity. Omit Items. To add, change, or remove one
    * or more trusted signers, change Enabled to true (if it's currently false),
    * change Quantity as applicable, and specify all of the trusted signers that you
-   * want to include in the updated distribution.
+   * want to include in the updated distribution.<p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-01-28/TrustedSigners">AWS
+   * API Reference</a></p>
    */
   class AWS_CLOUDFRONT_API TrustedSigners
   {

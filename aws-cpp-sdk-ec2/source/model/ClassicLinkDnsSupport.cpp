@@ -76,7 +76,7 @@ void ClassicLinkDnsSupport::OutputToStream(Aws::OStream& oStream, const char* lo
 
   if(m_classicLinkDnsSupportedHasBeenSet)
   {
-      oStream << location << index << locationValue << ".ClassicLinkDnsSupported=" << m_classicLinkDnsSupported << "&";
+      oStream << location << index << locationValue << ".ClassicLinkDnsSupported=" << std::boolalpha << m_classicLinkDnsSupported << "&";
   }
 
 }
@@ -89,7 +89,7 @@ void ClassicLinkDnsSupport::OutputToStream(Aws::OStream& oStream, const char* lo
   }
   if(m_classicLinkDnsSupportedHasBeenSet)
   {
-      oStream << location << ".ClassicLinkDnsSupported=" << m_classicLinkDnsSupported << "&";
+      oStream << location << ".ClassicLinkDnsSupported=" << std::boolalpha << m_classicLinkDnsSupported << "&";
   }
 }
 

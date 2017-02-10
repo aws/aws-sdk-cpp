@@ -35,7 +35,7 @@ Aws::String DescribeTagsRequest::SerializePayload() const
   ss << "Action=DescribeTags&";
   if(m_dryRunHasBeenSet)
   {
-    ss << "DryRun=" << m_dryRun << "&";
+    ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
   if(m_filtersHasBeenSet)
@@ -58,7 +58,7 @@ Aws::String DescribeTagsRequest::SerializePayload() const
     ss << "NextToken=" << StringUtils::URLEncode(m_nextToken.c_str()) << "&";
   }
 
-  ss << "Version=2016-09-15";
+  ss << "Version=2016-11-15";
   return ss.str();
 }
 

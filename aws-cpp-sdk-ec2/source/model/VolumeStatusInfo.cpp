@@ -105,7 +105,7 @@ void VolumeStatusInfo::OutputToStream(Aws::OStream& oStream, const char* locatio
       for(auto& item : m_details)
       {
         Aws::StringStream detailsSs;
-        detailsSs << location <<  ".item." << detailsIdx++;
+        detailsSs << location <<  ".Item." << detailsIdx++;
         item.OutputToStream(oStream, detailsSs.str().c_str());
       }
   }

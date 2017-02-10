@@ -34,114 +34,114 @@ namespace Model
     Aws::String SerializePayload() const override;
 
     /**
-     * <p>The name of the user whose key you want to update.</p> <p>The <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a
+     * <p>The name of the user whose key you want to update.</p> <p>This parameter
+     * allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
      * string of characters consisting of upper and lowercase alphanumeric characters
      * with no spaces. You can also include any of the following characters: =,.@-</p>
      */
     inline const Aws::String& GetUserName() const{ return m_userName; }
 
     /**
-     * <p>The name of the user whose key you want to update.</p> <p>The <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a
+     * <p>The name of the user whose key you want to update.</p> <p>This parameter
+     * allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
      * string of characters consisting of upper and lowercase alphanumeric characters
      * with no spaces. You can also include any of the following characters: =,.@-</p>
      */
     inline void SetUserName(const Aws::String& value) { m_userNameHasBeenSet = true; m_userName = value; }
 
     /**
-     * <p>The name of the user whose key you want to update.</p> <p>The <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a
+     * <p>The name of the user whose key you want to update.</p> <p>This parameter
+     * allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
      * string of characters consisting of upper and lowercase alphanumeric characters
      * with no spaces. You can also include any of the following characters: =,.@-</p>
      */
     inline void SetUserName(Aws::String&& value) { m_userNameHasBeenSet = true; m_userName = value; }
 
     /**
-     * <p>The name of the user whose key you want to update.</p> <p>The <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a
+     * <p>The name of the user whose key you want to update.</p> <p>This parameter
+     * allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
      * string of characters consisting of upper and lowercase alphanumeric characters
      * with no spaces. You can also include any of the following characters: =,.@-</p>
      */
     inline void SetUserName(const char* value) { m_userNameHasBeenSet = true; m_userName.assign(value); }
 
     /**
-     * <p>The name of the user whose key you want to update.</p> <p>The <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a
+     * <p>The name of the user whose key you want to update.</p> <p>This parameter
+     * allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
      * string of characters consisting of upper and lowercase alphanumeric characters
      * with no spaces. You can also include any of the following characters: =,.@-</p>
      */
     inline UpdateAccessKeyRequest& WithUserName(const Aws::String& value) { SetUserName(value); return *this;}
 
     /**
-     * <p>The name of the user whose key you want to update.</p> <p>The <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a
+     * <p>The name of the user whose key you want to update.</p> <p>This parameter
+     * allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
      * string of characters consisting of upper and lowercase alphanumeric characters
      * with no spaces. You can also include any of the following characters: =,.@-</p>
      */
     inline UpdateAccessKeyRequest& WithUserName(Aws::String&& value) { SetUserName(value); return *this;}
 
     /**
-     * <p>The name of the user whose key you want to update.</p> <p>The <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a
+     * <p>The name of the user whose key you want to update.</p> <p>This parameter
+     * allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
      * string of characters consisting of upper and lowercase alphanumeric characters
      * with no spaces. You can also include any of the following characters: =,.@-</p>
      */
     inline UpdateAccessKeyRequest& WithUserName(const char* value) { SetUserName(value); return *this;}
 
     /**
-     * <p>The access key ID of the secret access key you want to update.</p> <p>The <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a
-     * string of characters that can consist of any upper or lowercased letter or
-     * digit.</p>
+     * <p>The access key ID of the secret access key you want to update.</p> <p>This
+     * parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex
+     * pattern</a>) a string of characters that can consist of any upper or lowercased
+     * letter or digit.</p>
      */
     inline const Aws::String& GetAccessKeyId() const{ return m_accessKeyId; }
 
     /**
-     * <p>The access key ID of the secret access key you want to update.</p> <p>The <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a
-     * string of characters that can consist of any upper or lowercased letter or
-     * digit.</p>
+     * <p>The access key ID of the secret access key you want to update.</p> <p>This
+     * parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex
+     * pattern</a>) a string of characters that can consist of any upper or lowercased
+     * letter or digit.</p>
      */
     inline void SetAccessKeyId(const Aws::String& value) { m_accessKeyIdHasBeenSet = true; m_accessKeyId = value; }
 
     /**
-     * <p>The access key ID of the secret access key you want to update.</p> <p>The <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a
-     * string of characters that can consist of any upper or lowercased letter or
-     * digit.</p>
+     * <p>The access key ID of the secret access key you want to update.</p> <p>This
+     * parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex
+     * pattern</a>) a string of characters that can consist of any upper or lowercased
+     * letter or digit.</p>
      */
     inline void SetAccessKeyId(Aws::String&& value) { m_accessKeyIdHasBeenSet = true; m_accessKeyId = value; }
 
     /**
-     * <p>The access key ID of the secret access key you want to update.</p> <p>The <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a
-     * string of characters that can consist of any upper or lowercased letter or
-     * digit.</p>
+     * <p>The access key ID of the secret access key you want to update.</p> <p>This
+     * parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex
+     * pattern</a>) a string of characters that can consist of any upper or lowercased
+     * letter or digit.</p>
      */
     inline void SetAccessKeyId(const char* value) { m_accessKeyIdHasBeenSet = true; m_accessKeyId.assign(value); }
 
     /**
-     * <p>The access key ID of the secret access key you want to update.</p> <p>The <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a
-     * string of characters that can consist of any upper or lowercased letter or
-     * digit.</p>
+     * <p>The access key ID of the secret access key you want to update.</p> <p>This
+     * parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex
+     * pattern</a>) a string of characters that can consist of any upper or lowercased
+     * letter or digit.</p>
      */
     inline UpdateAccessKeyRequest& WithAccessKeyId(const Aws::String& value) { SetAccessKeyId(value); return *this;}
 
     /**
-     * <p>The access key ID of the secret access key you want to update.</p> <p>The <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a
-     * string of characters that can consist of any upper or lowercased letter or
-     * digit.</p>
+     * <p>The access key ID of the secret access key you want to update.</p> <p>This
+     * parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex
+     * pattern</a>) a string of characters that can consist of any upper or lowercased
+     * letter or digit.</p>
      */
     inline UpdateAccessKeyRequest& WithAccessKeyId(Aws::String&& value) { SetAccessKeyId(value); return *this;}
 
     /**
-     * <p>The access key ID of the secret access key you want to update.</p> <p>The <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a
-     * string of characters that can consist of any upper or lowercased letter or
-     * digit.</p>
+     * <p>The access key ID of the secret access key you want to update.</p> <p>This
+     * parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex
+     * pattern</a>) a string of characters that can consist of any upper or lowercased
+     * letter or digit.</p>
      */
     inline UpdateAccessKeyRequest& WithAccessKeyId(const char* value) { SetAccessKeyId(value); return *this;}
 

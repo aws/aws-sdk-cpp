@@ -32,7 +32,7 @@ Aws::String DisableVpcClassicLinkRequest::SerializePayload() const
   ss << "Action=DisableVpcClassicLink&";
   if(m_dryRunHasBeenSet)
   {
-    ss << "DryRun=" << m_dryRun << "&";
+    ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
   if(m_vpcIdHasBeenSet)
@@ -40,7 +40,7 @@ Aws::String DisableVpcClassicLinkRequest::SerializePayload() const
     ss << "VpcId=" << StringUtils::URLEncode(m_vpcId.c_str()) << "&";
   }
 
-  ss << "Version=2016-09-15";
+  ss << "Version=2016-11-15";
   return ss.str();
 }
 

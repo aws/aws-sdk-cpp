@@ -27,7 +27,10 @@ namespace Model
 {
 
   /**
-   * <p>This input identifies a cluster and a list of tags to attach.</p>
+   * <p>This input identifies a cluster and a list of tags to attach.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/AddTagsInput">AWS
+   * API Reference</a></p>
    */
   class AWS_EMR_API AddTagsRequest : public EMRRequest
   {

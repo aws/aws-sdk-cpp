@@ -26,7 +26,9 @@ namespace Model
 {
 
   /**
-   * <p>The request of the <a>DeleteTags</a> operation.</p>
+   * <p>The request of the <a>DeleteTags</a> operation.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DeleteTagsRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_WORKSPACES_API DeleteTagsRequest : public WorkSpacesRequest
   {

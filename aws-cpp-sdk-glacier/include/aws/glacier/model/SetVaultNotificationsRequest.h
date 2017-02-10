@@ -27,7 +27,9 @@ namespace Model
 
   /**
    * <p>Provides options to configure notifications that will be sent when specific
-   * events happen to a vault.</p>
+   * events happen to a vault.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/SetVaultNotificationsInput">AWS
+   * API Reference</a></p>
    */
   class AWS_GLACIER_API SetVaultNotificationsRequest : public GlacierRequest
   {

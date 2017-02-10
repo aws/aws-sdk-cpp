@@ -128,7 +128,7 @@ namespace Model
     typedef std::function<void(const RekognitionClient*, const Model::SearchFacesByImageRequest&, const Model::SearchFacesByImageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SearchFacesByImageResponseReceivedHandler;
 
   /**
-   * <p>This is Amazon Rekognition API guide.</p>
+   * <p>This is the Amazon Rekognition API reference.</p>
    */
   class AWS_REKOGNITION_API RekognitionClient : public Aws::Client::AWSJsonClient
   {
@@ -173,7 +173,10 @@ namespace Model
          * confidence value.</p> <note> <p> This is a stateless API operation. That is, the
          * operation does not persist any data.</p> </note> <p>For an example, see
          * <a>get-started-exercise-compare-faces</a> </p> <p>This operation requires
-         * permissions to perform the <code>rekognition:CompareFaces</code> action.</p>
+         * permissions to perform the <code>rekognition:CompareFaces</code>
+         * action.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/CompareFaces">AWS
+         * API Reference</a></p>
          */
         virtual Model::CompareFacesOutcome CompareFaces(const Model::CompareFacesRequest& request) const;
 
@@ -194,7 +197,10 @@ namespace Model
          * confidence value.</p> <note> <p> This is a stateless API operation. That is, the
          * operation does not persist any data.</p> </note> <p>For an example, see
          * <a>get-started-exercise-compare-faces</a> </p> <p>This operation requires
-         * permissions to perform the <code>rekognition:CompareFaces</code> action.</p>
+         * permissions to perform the <code>rekognition:CompareFaces</code>
+         * action.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/CompareFaces">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -217,44 +223,56 @@ namespace Model
          * confidence value.</p> <note> <p> This is a stateless API operation. That is, the
          * operation does not persist any data.</p> </note> <p>For an example, see
          * <a>get-started-exercise-compare-faces</a> </p> <p>This operation requires
-         * permissions to perform the <code>rekognition:CompareFaces</code> action.</p>
+         * permissions to perform the <code>rekognition:CompareFaces</code>
+         * action.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/CompareFaces">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CompareFacesAsync(const Model::CompareFacesRequest& request, const CompareFacesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a collection in an AWS region. You can add faces to the collection
+         * <p>Creates a collection in an AWS Region. You can add faces to the collection
          * using the operation. </p> <p>For example, you might create collections, one for
          * each of your application users. A user can then index faces using the
          * <code>IndexFaces</code> operation and persist results in a specific collection.
          * Then, a user can search the collection for faces in the user-specific container.
          * </p> <p>For an example, see <a>example1</a>. </p> <p>This operation requires
-         * permissions to perform the <code>rekognition:CreateCollection</code> action.</p>
+         * permissions to perform the <code>rekognition:CreateCollection</code>
+         * action.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/CreateCollection">AWS
+         * API Reference</a></p>
          */
         virtual Model::CreateCollectionOutcome CreateCollection(const Model::CreateCollectionRequest& request) const;
 
         /**
-         * <p>Creates a collection in an AWS region. You can add faces to the collection
+         * <p>Creates a collection in an AWS Region. You can add faces to the collection
          * using the operation. </p> <p>For example, you might create collections, one for
          * each of your application users. A user can then index faces using the
          * <code>IndexFaces</code> operation and persist results in a specific collection.
          * Then, a user can search the collection for faces in the user-specific container.
          * </p> <p>For an example, see <a>example1</a>. </p> <p>This operation requires
-         * permissions to perform the <code>rekognition:CreateCollection</code> action.</p>
+         * permissions to perform the <code>rekognition:CreateCollection</code>
+         * action.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/CreateCollection">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::CreateCollectionOutcomeCallable CreateCollectionCallable(const Model::CreateCollectionRequest& request) const;
 
         /**
-         * <p>Creates a collection in an AWS region. You can add faces to the collection
+         * <p>Creates a collection in an AWS Region. You can add faces to the collection
          * using the operation. </p> <p>For example, you might create collections, one for
          * each of your application users. A user can then index faces using the
          * <code>IndexFaces</code> operation and persist results in a specific collection.
          * Then, a user can search the collection for faces in the user-specific container.
          * </p> <p>For an example, see <a>example1</a>. </p> <p>This operation requires
-         * permissions to perform the <code>rekognition:CreateCollection</code> action.</p>
+         * permissions to perform the <code>rekognition:CreateCollection</code>
+         * action.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/CreateCollection">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -264,7 +282,9 @@ namespace Model
          * <p>Deletes the specified collection. Note that this operation removes all faces
          * in the collection. For an example, see <a>example1</a>.</p> <p>This operation
          * requires permissions to perform the <code>rekognition:DeleteCollection</code>
-         * action.</p>
+         * action.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DeleteCollection">AWS
+         * API Reference</a></p>
          */
         virtual Model::DeleteCollectionOutcome DeleteCollection(const Model::DeleteCollectionRequest& request) const;
 
@@ -272,7 +292,9 @@ namespace Model
          * <p>Deletes the specified collection. Note that this operation removes all faces
          * in the collection. For an example, see <a>example1</a>.</p> <p>This operation
          * requires permissions to perform the <code>rekognition:DeleteCollection</code>
-         * action.</p>
+         * action.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DeleteCollection">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -282,7 +304,9 @@ namespace Model
          * <p>Deletes the specified collection. Note that this operation removes all faces
          * in the collection. For an example, see <a>example1</a>.</p> <p>This operation
          * requires permissions to perform the <code>rekognition:DeleteCollection</code>
-         * action.</p>
+         * action.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DeleteCollection">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -291,14 +315,20 @@ namespace Model
         /**
          * <p>Deletes faces from a collection. You specify a collection ID and an array of
          * face IDs to remove from the collection.</p> <p>This operation requires
-         * permissions to perform the <code>rekognition:DeleteFaces</code> action.</p>
+         * permissions to perform the <code>rekognition:DeleteFaces</code>
+         * action.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DeleteFaces">AWS
+         * API Reference</a></p>
          */
         virtual Model::DeleteFacesOutcome DeleteFaces(const Model::DeleteFacesRequest& request) const;
 
         /**
          * <p>Deletes faces from a collection. You specify a collection ID and an array of
          * face IDs to remove from the collection.</p> <p>This operation requires
-         * permissions to perform the <code>rekognition:DeleteFaces</code> action.</p>
+         * permissions to perform the <code>rekognition:DeleteFaces</code>
+         * action.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DeleteFaces">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -307,7 +337,10 @@ namespace Model
         /**
          * <p>Deletes faces from a collection. You specify a collection ID and an array of
          * face IDs to remove from the collection.</p> <p>This operation requires
-         * permissions to perform the <code>rekognition:DeleteFaces</code> action.</p>
+         * permissions to perform the <code>rekognition:DeleteFaces</code>
+         * action.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DeleteFaces">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -325,7 +358,9 @@ namespace Model
          * operation. That is, the operation does not persist any data.</p> </note> <p>For
          * an example, see <a>get-started-exercise-detect-faces</a>.</p> <p>This operation
          * requires permissions to perform the <code>rekognition:DetectFaces</code> action.
-         * </p>
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DetectFaces">AWS
+         * API Reference</a></p>
          */
         virtual Model::DetectFacesOutcome DetectFaces(const Model::DetectFacesRequest& request) const;
 
@@ -341,7 +376,9 @@ namespace Model
          * operation. That is, the operation does not persist any data.</p> </note> <p>For
          * an example, see <a>get-started-exercise-detect-faces</a>.</p> <p>This operation
          * requires permissions to perform the <code>rekognition:DetectFaces</code> action.
-         * </p>
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DetectFaces">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -359,7 +396,9 @@ namespace Model
          * operation. That is, the operation does not persist any data.</p> </note> <p>For
          * an example, see <a>get-started-exercise-detect-faces</a>.</p> <p>This operation
          * requires permissions to perform the <code>rekognition:DetectFaces</code> action.
-         * </p>
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DetectFaces">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -383,7 +422,7 @@ namespace Model
          * following three labels. </p> <p> <code>{Name: flower,Confidence: 99.0562}</code>
          * </p> <p> <code>{Name: plant,Confidence: 99.0562}</code> </p> <p> <code>{Name:
          * tulip,Confidence: 99.0562}</code> </p> <p>In this example, the detection
-         * algorithm more precisely identifies the flower as a tulip.</p> <p> You can
+         * algorithm more precisely identifies the flower as a tulip.</p> <p>You can
          * provide the input image as an S3 object or as base64-encoded bytes. In response,
          * the API returns an array of labels. In addition, the response also includes the
          * orientation correction. Optionally, you can specify <code>MinConfidence</code>
@@ -393,7 +432,10 @@ namespace Model
          * operation doesn't provide the same facial details that the <a>DetectFaces</a>
          * operation provides.</p> </note> <p>This is a stateless API operation. That is,
          * the operation does not persist any data.</p> <p>This operation requires
-         * permissions to perform the <code>rekognition:DetectLabels</code> action. </p>
+         * permissions to perform the <code>rekognition:DetectLabels</code> action.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DetectLabels">AWS
+         * API Reference</a></p>
          */
         virtual Model::DetectLabelsOutcome DetectLabels(const Model::DetectLabelsRequest& request) const;
 
@@ -415,7 +457,7 @@ namespace Model
          * following three labels. </p> <p> <code>{Name: flower,Confidence: 99.0562}</code>
          * </p> <p> <code>{Name: plant,Confidence: 99.0562}</code> </p> <p> <code>{Name:
          * tulip,Confidence: 99.0562}</code> </p> <p>In this example, the detection
-         * algorithm more precisely identifies the flower as a tulip.</p> <p> You can
+         * algorithm more precisely identifies the flower as a tulip.</p> <p>You can
          * provide the input image as an S3 object or as base64-encoded bytes. In response,
          * the API returns an array of labels. In addition, the response also includes the
          * orientation correction. Optionally, you can specify <code>MinConfidence</code>
@@ -425,7 +467,10 @@ namespace Model
          * operation doesn't provide the same facial details that the <a>DetectFaces</a>
          * operation provides.</p> </note> <p>This is a stateless API operation. That is,
          * the operation does not persist any data.</p> <p>This operation requires
-         * permissions to perform the <code>rekognition:DetectLabels</code> action. </p>
+         * permissions to perform the <code>rekognition:DetectLabels</code> action.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DetectLabels">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -449,7 +494,7 @@ namespace Model
          * following three labels. </p> <p> <code>{Name: flower,Confidence: 99.0562}</code>
          * </p> <p> <code>{Name: plant,Confidence: 99.0562}</code> </p> <p> <code>{Name:
          * tulip,Confidence: 99.0562}</code> </p> <p>In this example, the detection
-         * algorithm more precisely identifies the flower as a tulip.</p> <p> You can
+         * algorithm more precisely identifies the flower as a tulip.</p> <p>You can
          * provide the input image as an S3 object or as base64-encoded bytes. In response,
          * the API returns an array of labels. In addition, the response also includes the
          * orientation correction. Optionally, you can specify <code>MinConfidence</code>
@@ -459,7 +504,10 @@ namespace Model
          * operation doesn't provide the same facial details that the <a>DetectFaces</a>
          * operation provides.</p> </note> <p>This is a stateless API operation. That is,
          * the operation does not persist any data.</p> <p>This operation requires
-         * permissions to perform the <code>rekognition:DetectLabels</code> action. </p>
+         * permissions to perform the <code>rekognition:DetectLabels</code> action.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DetectLabels">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -482,13 +530,16 @@ namespace Model
          * (indicating the bounding box contains a face), a face ID assigned by the service
          * for each face that is detected and stored, and an image ID assigned by the
          * service for the input image If you request all facial attributes (using the
-         * <code>detectionAttributes</code> parameter, Rekognition returns detailed facial
-         * attributes such as facial landmarks (for example, location of eye and mount) and
-         * other facial attributes such gender. If you provide the same image, specify the
-         * same collection, and use the same external ID in the <code>IndexFaces</code>
-         * operation, Rekognition doesn't save duplicate face metadata. </p> <p>For an
-         * example, see <a>example2</a>.</p> <p>This operation requires permissions to
-         * perform the <code>rekognition:IndexFaces</code> action.</p>
+         * <code>detectionAttributes</code> parameter, Amazon Rekognition returns detailed
+         * facial attributes such as facial landmarks (for example, location of eye and
+         * mount) and other facial attributes such gender. If you provide the same image,
+         * specify the same collection, and use the same external ID in the
+         * <code>IndexFaces</code> operation, Amazon Rekognition doesn't save duplicate
+         * face metadata. </p> <p>For an example, see <a>example2</a>.</p> <p>This
+         * operation requires permissions to perform the
+         * <code>rekognition:IndexFaces</code> action.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/IndexFaces">AWS
+         * API Reference</a></p>
          */
         virtual Model::IndexFacesOutcome IndexFaces(const Model::IndexFacesRequest& request) const;
 
@@ -509,13 +560,16 @@ namespace Model
          * (indicating the bounding box contains a face), a face ID assigned by the service
          * for each face that is detected and stored, and an image ID assigned by the
          * service for the input image If you request all facial attributes (using the
-         * <code>detectionAttributes</code> parameter, Rekognition returns detailed facial
-         * attributes such as facial landmarks (for example, location of eye and mount) and
-         * other facial attributes such gender. If you provide the same image, specify the
-         * same collection, and use the same external ID in the <code>IndexFaces</code>
-         * operation, Rekognition doesn't save duplicate face metadata. </p> <p>For an
-         * example, see <a>example2</a>.</p> <p>This operation requires permissions to
-         * perform the <code>rekognition:IndexFaces</code> action.</p>
+         * <code>detectionAttributes</code> parameter, Amazon Rekognition returns detailed
+         * facial attributes such as facial landmarks (for example, location of eye and
+         * mount) and other facial attributes such gender. If you provide the same image,
+         * specify the same collection, and use the same external ID in the
+         * <code>IndexFaces</code> operation, Amazon Rekognition doesn't save duplicate
+         * face metadata. </p> <p>For an example, see <a>example2</a>.</p> <p>This
+         * operation requires permissions to perform the
+         * <code>rekognition:IndexFaces</code> action.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/IndexFaces">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -538,13 +592,16 @@ namespace Model
          * (indicating the bounding box contains a face), a face ID assigned by the service
          * for each face that is detected and stored, and an image ID assigned by the
          * service for the input image If you request all facial attributes (using the
-         * <code>detectionAttributes</code> parameter, Rekognition returns detailed facial
-         * attributes such as facial landmarks (for example, location of eye and mount) and
-         * other facial attributes such gender. If you provide the same image, specify the
-         * same collection, and use the same external ID in the <code>IndexFaces</code>
-         * operation, Rekognition doesn't save duplicate face metadata. </p> <p>For an
-         * example, see <a>example2</a>.</p> <p>This operation requires permissions to
-         * perform the <code>rekognition:IndexFaces</code> action.</p>
+         * <code>detectionAttributes</code> parameter, Amazon Rekognition returns detailed
+         * facial attributes such as facial landmarks (for example, location of eye and
+         * mount) and other facial attributes such gender. If you provide the same image,
+         * specify the same collection, and use the same external ID in the
+         * <code>IndexFaces</code> operation, Amazon Rekognition doesn't save duplicate
+         * face metadata. </p> <p>For an example, see <a>example2</a>.</p> <p>This
+         * operation requires permissions to perform the
+         * <code>rekognition:IndexFaces</code> action.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/IndexFaces">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -555,7 +612,10 @@ namespace Model
          * the response also provides a <code>NextToken</code> that you can use in the
          * subsequent request to fetch the next set of collection IDs.</p> <p>For an
          * example, see <a>example1</a>.</p> <p>This operation requires permissions to
-         * perform the <code>rekognition:ListCollections</code> action.</p>
+         * perform the <code>rekognition:ListCollections</code> action.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/ListCollections">AWS
+         * API Reference</a></p>
          */
         virtual Model::ListCollectionsOutcome ListCollections(const Model::ListCollectionsRequest& request) const;
 
@@ -564,7 +624,10 @@ namespace Model
          * the response also provides a <code>NextToken</code> that you can use in the
          * subsequent request to fetch the next set of collection IDs.</p> <p>For an
          * example, see <a>example1</a>.</p> <p>This operation requires permissions to
-         * perform the <code>rekognition:ListCollections</code> action.</p>
+         * perform the <code>rekognition:ListCollections</code> action.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/ListCollections">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -575,7 +638,10 @@ namespace Model
          * the response also provides a <code>NextToken</code> that you can use in the
          * subsequent request to fetch the next set of collection IDs.</p> <p>For an
          * example, see <a>example1</a>.</p> <p>This operation requires permissions to
-         * perform the <code>rekognition:ListCollections</code> action.</p>
+         * perform the <code>rekognition:ListCollections</code> action.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/ListCollections">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -586,7 +652,9 @@ namespace Model
          * includes information such as the bounding box coordinates, the confidence (that
          * the bounding box contains a face), and face ID. For an example, see
          * <a>example3</a>. </p> <p>This operation requires permissions to perform the
-         * <code>rekognition:ListFaces</code> action.</p>
+         * <code>rekognition:ListFaces</code> action.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/ListFaces">AWS
+         * API Reference</a></p>
          */
         virtual Model::ListFacesOutcome ListFaces(const Model::ListFacesRequest& request) const;
 
@@ -595,7 +663,9 @@ namespace Model
          * includes information such as the bounding box coordinates, the confidence (that
          * the bounding box contains a face), and face ID. For an example, see
          * <a>example3</a>. </p> <p>This operation requires permissions to perform the
-         * <code>rekognition:ListFaces</code> action.</p>
+         * <code>rekognition:ListFaces</code> action.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/ListFaces">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -606,18 +676,20 @@ namespace Model
          * includes information such as the bounding box coordinates, the confidence (that
          * the bounding box contains a face), and face ID. For an example, see
          * <a>example3</a>. </p> <p>This operation requires permissions to perform the
-         * <code>rekognition:ListFaces</code> action.</p>
+         * <code>rekognition:ListFaces</code> action.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/ListFaces">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListFacesAsync(const Model::ListFacesRequest& request, const ListFacesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>For a given input face ID, searches the specified collection for matching
-         * faces. You get a face ID when you add a face to the collection using the
-         * <a>IndexFaces</a> operation. The operation compares the features of the input
-         * face with faces in the specified collection. </p> <note> <p>You can also search
-         * faces without indexing faces by using the <code>SearchFacesByImage</code>
+         * <p>For a given input face ID, searches for matching faces in the collection the
+         * face belongs to. You get a face ID when you add a face to the collection using
+         * the <a>IndexFaces</a> operation. The operation compares the features of the
+         * input face with faces in the specified collection. </p> <note> <p>You can also
+         * search faces without indexing faces by using the <code>SearchFacesByImage</code>
          * operation.</p> </note> <p> The operation response returns an array of faces that
          * match, ordered by similarity score with the highest similarity first. More
          * specifically, it is an array of metadata for each face match that is found.
@@ -625,16 +697,18 @@ namespace Model
          * value for each face match, indicating the confidence that the specific face
          * matches the input face. </p> <p>For an example, see <a>example3</a>.</p> <p>This
          * operation requires permissions to perform the
-         * <code>rekognition:SearchFaces</code> action.</p>
+         * <code>rekognition:SearchFaces</code> action.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/SearchFaces">AWS
+         * API Reference</a></p>
          */
         virtual Model::SearchFacesOutcome SearchFaces(const Model::SearchFacesRequest& request) const;
 
         /**
-         * <p>For a given input face ID, searches the specified collection for matching
-         * faces. You get a face ID when you add a face to the collection using the
-         * <a>IndexFaces</a> operation. The operation compares the features of the input
-         * face with faces in the specified collection. </p> <note> <p>You can also search
-         * faces without indexing faces by using the <code>SearchFacesByImage</code>
+         * <p>For a given input face ID, searches for matching faces in the collection the
+         * face belongs to. You get a face ID when you add a face to the collection using
+         * the <a>IndexFaces</a> operation. The operation compares the features of the
+         * input face with faces in the specified collection. </p> <note> <p>You can also
+         * search faces without indexing faces by using the <code>SearchFacesByImage</code>
          * operation.</p> </note> <p> The operation response returns an array of faces that
          * match, ordered by similarity score with the highest similarity first. More
          * specifically, it is an array of metadata for each face match that is found.
@@ -642,18 +716,20 @@ namespace Model
          * value for each face match, indicating the confidence that the specific face
          * matches the input face. </p> <p>For an example, see <a>example3</a>.</p> <p>This
          * operation requires permissions to perform the
-         * <code>rekognition:SearchFaces</code> action.</p>
+         * <code>rekognition:SearchFaces</code> action.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/SearchFaces">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::SearchFacesOutcomeCallable SearchFacesCallable(const Model::SearchFacesRequest& request) const;
 
         /**
-         * <p>For a given input face ID, searches the specified collection for matching
-         * faces. You get a face ID when you add a face to the collection using the
-         * <a>IndexFaces</a> operation. The operation compares the features of the input
-         * face with faces in the specified collection. </p> <note> <p>You can also search
-         * faces without indexing faces by using the <code>SearchFacesByImage</code>
+         * <p>For a given input face ID, searches for matching faces in the collection the
+         * face belongs to. You get a face ID when you add a face to the collection using
+         * the <a>IndexFaces</a> operation. The operation compares the features of the
+         * input face with faces in the specified collection. </p> <note> <p>You can also
+         * search faces without indexing faces by using the <code>SearchFacesByImage</code>
          * operation.</p> </note> <p> The operation response returns an array of faces that
          * match, ordered by similarity score with the highest similarity first. More
          * specifically, it is an array of metadata for each face match that is found.
@@ -661,7 +737,9 @@ namespace Model
          * value for each face match, indicating the confidence that the specific face
          * matches the input face. </p> <p>For an example, see <a>example3</a>.</p> <p>This
          * operation requires permissions to perform the
-         * <code>rekognition:SearchFaces</code> action.</p>
+         * <code>rekognition:SearchFaces</code> action.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/SearchFaces">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -672,19 +750,22 @@ namespace Model
          * then searches the specified collection for matching faces. The operation
          * compares the features of the input face with faces in the specified collection.
          * </p> <note> <p> To search for all faces in an input image, you might first call
-         * the API, and then use the face IDs returned in subsequent calls to the API. </p>
-         * <p> You can also call the <code>DetectFaces</code> API and use the bounding
-         * boxes in the response to make face crops, which then you can pass in to the
-         * <code>SearchFacesByImage</code> API. </p> </note> <p> The response returns an
-         * array of faces that match, ordered by similarity score with the highest
-         * similarity first. More specifically, it is an array of metadata for each face
-         * match found. Along with the metadata, the response also includes a
+         * the operation, and then use the face IDs returned in subsequent calls to the
+         * operation. </p> <p> You can also call the <code>DetectFaces</code> operation and
+         * use the bounding boxes in the response to make face crops, which then you can
+         * pass in to the <code>SearchFacesByImage</code> operation. </p> </note> <p> The
+         * response returns an array of faces that match, ordered by similarity score with
+         * the highest similarity first. More specifically, it is an array of metadata for
+         * each face match found. Along with the metadata, the response also includes a
          * <code>similarity</code> indicating how similar the face is to the input face. In
-         * the response, the API also returns the bounding box (and a confidence level that
-         * the bounding box contains a face) of the face that Rekognition used for the
-         * input image. </p> <p>For an example, see <a>example3</a>.</p> <p>This operation
-         * requires permissions to perform the <code>rekognition:SearchFacesByImage</code>
-         * action.</p>
+         * the response, the operation also returns the bounding box (and a confidence
+         * level that the bounding box contains a face) of the face that Amazon Rekognition
+         * used for the input image. </p> <p>For an example, see <a>example3</a>.</p>
+         * <p>This operation requires permissions to perform the
+         * <code>rekognition:SearchFacesByImage</code> action.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/SearchFacesByImage">AWS
+         * API Reference</a></p>
          */
         virtual Model::SearchFacesByImageOutcome SearchFacesByImage(const Model::SearchFacesByImageRequest& request) const;
 
@@ -693,19 +774,22 @@ namespace Model
          * then searches the specified collection for matching faces. The operation
          * compares the features of the input face with faces in the specified collection.
          * </p> <note> <p> To search for all faces in an input image, you might first call
-         * the API, and then use the face IDs returned in subsequent calls to the API. </p>
-         * <p> You can also call the <code>DetectFaces</code> API and use the bounding
-         * boxes in the response to make face crops, which then you can pass in to the
-         * <code>SearchFacesByImage</code> API. </p> </note> <p> The response returns an
-         * array of faces that match, ordered by similarity score with the highest
-         * similarity first. More specifically, it is an array of metadata for each face
-         * match found. Along with the metadata, the response also includes a
+         * the operation, and then use the face IDs returned in subsequent calls to the
+         * operation. </p> <p> You can also call the <code>DetectFaces</code> operation and
+         * use the bounding boxes in the response to make face crops, which then you can
+         * pass in to the <code>SearchFacesByImage</code> operation. </p> </note> <p> The
+         * response returns an array of faces that match, ordered by similarity score with
+         * the highest similarity first. More specifically, it is an array of metadata for
+         * each face match found. Along with the metadata, the response also includes a
          * <code>similarity</code> indicating how similar the face is to the input face. In
-         * the response, the API also returns the bounding box (and a confidence level that
-         * the bounding box contains a face) of the face that Rekognition used for the
-         * input image. </p> <p>For an example, see <a>example3</a>.</p> <p>This operation
-         * requires permissions to perform the <code>rekognition:SearchFacesByImage</code>
-         * action.</p>
+         * the response, the operation also returns the bounding box (and a confidence
+         * level that the bounding box contains a face) of the face that Amazon Rekognition
+         * used for the input image. </p> <p>For an example, see <a>example3</a>.</p>
+         * <p>This operation requires permissions to perform the
+         * <code>rekognition:SearchFacesByImage</code> action.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/SearchFacesByImage">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -716,19 +800,22 @@ namespace Model
          * then searches the specified collection for matching faces. The operation
          * compares the features of the input face with faces in the specified collection.
          * </p> <note> <p> To search for all faces in an input image, you might first call
-         * the API, and then use the face IDs returned in subsequent calls to the API. </p>
-         * <p> You can also call the <code>DetectFaces</code> API and use the bounding
-         * boxes in the response to make face crops, which then you can pass in to the
-         * <code>SearchFacesByImage</code> API. </p> </note> <p> The response returns an
-         * array of faces that match, ordered by similarity score with the highest
-         * similarity first. More specifically, it is an array of metadata for each face
-         * match found. Along with the metadata, the response also includes a
+         * the operation, and then use the face IDs returned in subsequent calls to the
+         * operation. </p> <p> You can also call the <code>DetectFaces</code> operation and
+         * use the bounding boxes in the response to make face crops, which then you can
+         * pass in to the <code>SearchFacesByImage</code> operation. </p> </note> <p> The
+         * response returns an array of faces that match, ordered by similarity score with
+         * the highest similarity first. More specifically, it is an array of metadata for
+         * each face match found. Along with the metadata, the response also includes a
          * <code>similarity</code> indicating how similar the face is to the input face. In
-         * the response, the API also returns the bounding box (and a confidence level that
-         * the bounding box contains a face) of the face that Rekognition used for the
-         * input image. </p> <p>For an example, see <a>example3</a>.</p> <p>This operation
-         * requires permissions to perform the <code>rekognition:SearchFacesByImage</code>
-         * action.</p>
+         * the response, the operation also returns the bounding box (and a confidence
+         * level that the bounding box contains a face) of the face that Amazon Rekognition
+         * used for the input image. </p> <p>For an example, see <a>example3</a>.</p>
+         * <p>This operation requires permissions to perform the
+         * <code>rekognition:SearchFacesByImage</code> action.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/SearchFacesByImage">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */

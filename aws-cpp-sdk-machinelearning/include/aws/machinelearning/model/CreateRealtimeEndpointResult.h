@@ -39,7 +39,9 @@ namespace Model
    * endpoint information for the <code>MLModel</code>.</p> <note> <p>The endpoint
    * information includes the URI of the <code>MLModel</code>; that is, the location
    * to send online prediction requests for the specified <code>MLModel</code>.</p>
-   * </note>
+   * </note><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/CreateRealtimeEndpointOutput">AWS
+   * API Reference</a></p>
    */
   class AWS_MACHINELEARNING_API CreateRealtimeEndpointResult
   {

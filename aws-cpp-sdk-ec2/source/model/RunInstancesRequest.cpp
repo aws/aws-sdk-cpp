@@ -44,6 +44,9 @@ RunInstancesRequest::RunInstancesRequest() :
     m_instanceInitiatedShutdownBehavior(ShutdownBehavior::NOT_SET),
     m_instanceInitiatedShutdownBehaviorHasBeenSet(false),
     m_privateIpAddressHasBeenSet(false),
+    m_ipv6AddressesHasBeenSet(false),
+    m_ipv6AddressCount(0),
+    m_ipv6AddressCountHasBeenSet(false),
     m_clientTokenHasBeenSet(false),
     m_additionalInfoHasBeenSet(false),
     m_networkInterfacesHasBeenSet(false),
@@ -59,7 +62,7 @@ Aws::String RunInstancesRequest::SerializePayload() const
   ss << "Action=RunInstances&";
   if(m_dryRunHasBeenSet)
   {
-    ss << "DryRun=" << m_dryRun << "&";
+    ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
   if(m_imageIdHasBeenSet)
@@ -151,7 +154,7 @@ Aws::String RunInstancesRequest::SerializePayload() const
 
   if(m_disableApiTerminationHasBeenSet)
   {
-    ss << "DisableApiTermination=" << m_disableApiTermination << "&";
+    ss << "DisableApiTermination=" << std::boolalpha << m_disableApiTermination << "&";
   }
 
   if(m_instanceInitiatedShutdownBehaviorHasBeenSet)
@@ -162,6 +165,21 @@ Aws::String RunInstancesRequest::SerializePayload() const
   if(m_privateIpAddressHasBeenSet)
   {
     ss << "PrivateIpAddress=" << StringUtils::URLEncode(m_privateIpAddress.c_str()) << "&";
+  }
+
+  if(m_ipv6AddressesHasBeenSet)
+  {
+    unsigned ipv6AddressesCount = 1;
+    for(auto& item : m_ipv6Addresses)
+    {
+      item.OutputToStream(ss, "Ipv6Address.", ipv6AddressesCount, "");
+      ipv6AddressesCount++;
+    }
+  }
+
+  if(m_ipv6AddressCountHasBeenSet)
+  {
+    ss << "Ipv6AddressCount=" << m_ipv6AddressCount << "&";
   }
 
   if(m_clientTokenHasBeenSet)
@@ -191,10 +209,10 @@ Aws::String RunInstancesRequest::SerializePayload() const
 
   if(m_ebsOptimizedHasBeenSet)
   {
-    ss << "EbsOptimized=" << m_ebsOptimized << "&";
+    ss << "EbsOptimized=" << std::boolalpha << m_ebsOptimized << "&";
   }
 
-  ss << "Version=2016-09-15";
+  ss << "Version=2016-11-15";
   return ss.str();
 }
 

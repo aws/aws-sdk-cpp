@@ -34,7 +34,10 @@ namespace Model
 {
 
   /**
-   * <p>Describes whether a VPC is enabled for ClassicLink.</p>
+   * <p>Describes whether a VPC is enabled for ClassicLink.</p><p><h3>See Also:</h3> 
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/VpcClassicLink">AWS
+   * API Reference</a></p>
    */
   class AWS_EC2_API VpcClassicLink
   {

@@ -32,7 +32,9 @@ namespace Model
    * health check using the Amazon Route 53 console, see <a
    * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/health-checks-monitor-view-status.html">Viewing
    * Health Check Status and the Reason for Health Check Failures</a> in the
-   * <i>Amazon Route 53 Developer Guide</i>.</p>
+   * <i>Amazon Route 53 Developer Guide</i>.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetHealthCheckLastFailureReasonRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_ROUTE53_API GetHealthCheckLastFailureReasonRequest : public Route53Request
   {

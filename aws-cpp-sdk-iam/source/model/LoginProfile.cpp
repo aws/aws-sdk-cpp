@@ -89,7 +89,7 @@ void LoginProfile::OutputToStream(Aws::OStream& oStream, const char* location, u
 
   if(m_passwordResetRequiredHasBeenSet)
   {
-      oStream << location << index << locationValue << ".PasswordResetRequired=" << m_passwordResetRequired << "&";
+      oStream << location << index << locationValue << ".PasswordResetRequired=" << std::boolalpha << m_passwordResetRequired << "&";
   }
 
 }
@@ -106,7 +106,7 @@ void LoginProfile::OutputToStream(Aws::OStream& oStream, const char* location) c
   }
   if(m_passwordResetRequiredHasBeenSet)
   {
-      oStream << location << ".PasswordResetRequired=" << m_passwordResetRequired << "&";
+      oStream << location << ".PasswordResetRequired=" << std::boolalpha << m_passwordResetRequired << "&";
   }
 }
 

@@ -6,6 +6,7 @@
 \#include <aws/$metadata.projectName/${metadata.classNamePrefix}Errors.h>
 \#include <aws/core/client/AWSError.h>
 \#include <aws/core/client/ClientConfiguration.h>
+\#include <aws/core/AmazonSerializableWebServiceRequest.h>
 \#include <aws/core/client/AWSClient.h>
 \#include <aws/core/utils/memory/stl/AWSString.h>
 \#include <aws/core/utils/xml/XmlSerializer.h>
@@ -75,6 +76,14 @@ namespace Model
 
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/ServiceClientHeaderConstructors.vm")
 
+#if($metadata.protocol == "query")
+
+       /**
+        * Converts any request object to a presigned URL with the GET method, using region for the signer and a timeout of 15 minutes.
+        */
+        Aws::String ConvertRequestToPresignedUrl(const AmazonSerializableWebServiceRequest& requestToConvert, const char* region) const;
+
+#end
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/ServiceClientHeaderOperations.vm")
 
   private:

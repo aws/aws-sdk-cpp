@@ -32,7 +32,9 @@ namespace Model
 
   /**
    * <p>Describes a bundle, which is a set of specs describing your virtual private
-   * server (or <i>instance</i>).</p>
+   * server (or <i>instance</i>).</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/Bundle">AWS
+   * API Reference</a></p>
    */
   class AWS_LIGHTSAIL_API Bundle
   {

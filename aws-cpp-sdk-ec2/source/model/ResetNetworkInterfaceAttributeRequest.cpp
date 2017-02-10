@@ -33,7 +33,7 @@ Aws::String ResetNetworkInterfaceAttributeRequest::SerializePayload() const
   ss << "Action=ResetNetworkInterfaceAttribute&";
   if(m_dryRunHasBeenSet)
   {
-    ss << "DryRun=" << m_dryRun << "&";
+    ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
   if(m_networkInterfaceIdHasBeenSet)
@@ -46,7 +46,7 @@ Aws::String ResetNetworkInterfaceAttributeRequest::SerializePayload() const
     ss << "SourceDestCheck=" << StringUtils::URLEncode(m_sourceDestCheck.c_str()) << "&";
   }
 
-  ss << "Version=2016-09-15";
+  ss << "Version=2016-11-15";
   return ss.str();
 }
 

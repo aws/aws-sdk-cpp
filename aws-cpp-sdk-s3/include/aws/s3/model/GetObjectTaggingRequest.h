@@ -19,6 +19,10 @@
 
 namespace Aws
 {
+namespace Http
+{
+    class URI;
+} //namespace Http
 namespace S3
 {
 namespace Model
@@ -31,6 +35,8 @@ namespace Model
   public:
     GetObjectTaggingRequest();
     Aws::String SerializePayload() const override;
+
+    void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
     
     inline const Aws::String& GetBucket() const{ return m_bucket; }

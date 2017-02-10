@@ -44,7 +44,7 @@ Aws::String SetIdentityHeadersInNotificationsEnabledRequest::SerializePayload() 
 
   if(m_enabledHasBeenSet)
   {
-    ss << "Enabled=" << m_enabled << "&";
+    ss << "Enabled=" << std::boolalpha << m_enabled << "&";
   }
 
   ss << "Version=2010-12-01";

@@ -40,7 +40,9 @@ namespace EC2
 namespace Model
 {
   /**
-   * <p>Describes an instance attribute.</p>
+   * <p>Describes an instance attribute.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/InstanceAttribute">AWS
+   * API Reference</a></p>
    */
   class AWS_EC2_API DescribeInstanceAttributeResponse
   {

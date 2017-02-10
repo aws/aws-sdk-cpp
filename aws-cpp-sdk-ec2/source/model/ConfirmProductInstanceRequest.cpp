@@ -33,7 +33,7 @@ Aws::String ConfirmProductInstanceRequest::SerializePayload() const
   ss << "Action=ConfirmProductInstance&";
   if(m_dryRunHasBeenSet)
   {
-    ss << "DryRun=" << m_dryRun << "&";
+    ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
   if(m_productCodeHasBeenSet)
@@ -46,7 +46,7 @@ Aws::String ConfirmProductInstanceRequest::SerializePayload() const
     ss << "InstanceId=" << StringUtils::URLEncode(m_instanceId.c_str()) << "&";
   }
 
-  ss << "Version=2016-09-15";
+  ss << "Version=2016-11-15";
   return ss.str();
 }
 

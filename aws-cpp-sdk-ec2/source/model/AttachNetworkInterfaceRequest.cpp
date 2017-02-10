@@ -35,7 +35,7 @@ Aws::String AttachNetworkInterfaceRequest::SerializePayload() const
   ss << "Action=AttachNetworkInterface&";
   if(m_dryRunHasBeenSet)
   {
-    ss << "DryRun=" << m_dryRun << "&";
+    ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
   if(m_networkInterfaceIdHasBeenSet)
@@ -53,7 +53,7 @@ Aws::String AttachNetworkInterfaceRequest::SerializePayload() const
     ss << "DeviceIndex=" << m_deviceIndex << "&";
   }
 
-  ss << "Version=2016-09-15";
+  ss << "Version=2016-11-15";
   return ss.str();
 }
 

@@ -32,7 +32,10 @@ namespace Model
 {
 
   /**
-   * <p>The summary metadata about the specified product.</p>
+   * <p>The summary metadata about the specified product.</p><p><h3>See Also:</h3>  
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ProductViewSummary">AWS
+   * API Reference</a></p>
    */
   class AWS_SERVICECATALOG_API ProductViewSummary
   {

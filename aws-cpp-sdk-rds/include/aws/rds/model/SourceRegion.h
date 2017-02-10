@@ -33,7 +33,9 @@ namespace Model
 
   /**
    * <p>Contains an AWS Region name as the result of a successful call to the
-   * <a>DescribeSourceRegions</a> action.</p>
+   * <a>DescribeSourceRegions</a> action.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/SourceRegion">AWS
+   * API Reference</a></p>
    */
   class AWS_RDS_API SourceRegion
   {

@@ -57,7 +57,8 @@ DeploymentCommand& DeploymentCommand::operator =(const JsonValue& jsonValue)
     for(auto& argsItem : argsJsonMap)
     {
       Array<JsonValue> stringsJsonList = argsItem.second.AsArray();
-      Aws::Vector<Aws::String> stringsList((size_t)stringsJsonList.GetLength());
+      Aws::Vector<Aws::String> stringsList;
+      stringsList.reserve((size_t)stringsJsonList.GetLength());
       for(unsigned stringsIndex = 0; stringsIndex < stringsJsonList.GetLength(); ++stringsIndex)
       {
         stringsList.push_back(stringsJsonList[stringsIndex].AsString());

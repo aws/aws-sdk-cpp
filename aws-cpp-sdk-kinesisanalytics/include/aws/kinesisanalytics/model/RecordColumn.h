@@ -33,7 +33,9 @@ namespace Model
   /**
    * <p>Describes the mapping of each data element in the streaming source to the
    * corresponding column in the in-application stream.</p> <p>Also used to describe
-   * the format of the reference data source.</p>
+   * the format of the reference data source.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/RecordColumn">AWS
+   * API Reference</a></p>
    */
   class AWS_KINESISANALYTICS_API RecordColumn
   {

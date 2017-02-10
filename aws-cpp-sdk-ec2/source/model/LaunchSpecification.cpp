@@ -282,7 +282,7 @@ void LaunchSpecification::OutputToStream(Aws::OStream& oStream, const char* loca
 
   if(m_ebsOptimizedHasBeenSet)
   {
-      oStream << location << index << locationValue << ".EbsOptimized=" << m_ebsOptimized << "&";
+      oStream << location << index << locationValue << ".EbsOptimized=" << std::boolalpha << m_ebsOptimized << "&";
   }
 
   if(m_monitoringHasBeenSet)
@@ -310,7 +310,7 @@ void LaunchSpecification::OutputToStream(Aws::OStream& oStream, const char* loca
       for(auto& item : m_securityGroups)
       {
         Aws::StringStream securityGroupsSs;
-        securityGroupsSs << location <<  ".item." << securityGroupsIdx++;
+        securityGroupsSs << location <<  ".Item." << securityGroupsIdx++;
         item.OutputToStream(oStream, securityGroupsSs.str().c_str());
       }
   }
@@ -346,7 +346,7 @@ void LaunchSpecification::OutputToStream(Aws::OStream& oStream, const char* loca
       for(auto& item : m_blockDeviceMappings)
       {
         Aws::StringStream blockDeviceMappingsSs;
-        blockDeviceMappingsSs << location <<  ".item." << blockDeviceMappingsIdx++;
+        blockDeviceMappingsSs << location <<  ".Item." << blockDeviceMappingsIdx++;
         item.OutputToStream(oStream, blockDeviceMappingsSs.str().c_str());
       }
   }
@@ -360,7 +360,7 @@ void LaunchSpecification::OutputToStream(Aws::OStream& oStream, const char* loca
       for(auto& item : m_networkInterfaces)
       {
         Aws::StringStream networkInterfacesSs;
-        networkInterfacesSs << location <<  ".item." << networkInterfacesIdx++;
+        networkInterfacesSs << location <<  ".Item." << networkInterfacesIdx++;
         item.OutputToStream(oStream, networkInterfacesSs.str().c_str());
       }
   }
@@ -372,7 +372,7 @@ void LaunchSpecification::OutputToStream(Aws::OStream& oStream, const char* loca
   }
   if(m_ebsOptimizedHasBeenSet)
   {
-      oStream << location << ".EbsOptimized=" << m_ebsOptimized << "&";
+      oStream << location << ".EbsOptimized=" << std::boolalpha << m_ebsOptimized << "&";
   }
   if(m_monitoringHasBeenSet)
   {

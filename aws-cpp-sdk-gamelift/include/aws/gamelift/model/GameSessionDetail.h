@@ -32,7 +32,10 @@ namespace Model
 {
 
   /**
-   * <p>A game session's properties and the protection policy currently in force.</p>
+   * <p>A game session's properties and the protection policy currently in
+   * force.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/GameSessionDetail">AWS
+   * API Reference</a></p>
    */
   class AWS_GAMELIFT_API GameSessionDetail
   {

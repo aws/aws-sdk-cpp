@@ -26,7 +26,6 @@ namespace Model
 {
 
   /**
-   * <p>Contains the parameters for SetRulePriorities.</p>
    */
   class AWS_ELASTICLOADBALANCINGV2_API SetRulePrioritiesRequest : public ElasticLoadBalancingv2Request
   {

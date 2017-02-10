@@ -41,7 +41,9 @@ namespace Model
    * <code>Status</code> shows up as <code>FAILED</code>. You can also check the
    * progress of the copy operation by going to the <code>DataPipeline</code> console
    * and looking up the pipeline using the <code>pipelineId </code> from the describe
-   * call.</p>
+   * call.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/CreateDataSourceFromRDSOutput">AWS
+   * API Reference</a></p>
    */
   class AWS_MACHINELEARNING_API CreateDataSourceFromRDSResult
   {

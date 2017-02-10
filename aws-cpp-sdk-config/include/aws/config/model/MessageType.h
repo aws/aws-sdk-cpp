@@ -27,7 +27,8 @@ namespace Model
     NOT_SET,
     ConfigurationItemChangeNotification,
     ConfigurationSnapshotDeliveryCompleted,
-    ScheduledNotification
+    ScheduledNotification,
+    OversizedConfigurationItemChangeNotification
   };
 
 namespace MessageTypeMapper

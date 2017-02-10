@@ -37,7 +37,9 @@ namespace Model
    * <p>Represents the response of the test invoke request in the HTTP method.</p>
    * <div class="seeAlso"> <a
    * href="http://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-test-method.html#how-to-test-method-console">Test
-   * API using the API Gateway console</a> </div>
+   * API using the API Gateway console</a> </div><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/TestInvokeMethodResponse">AWS
+   * API Reference</a></p>
    */
   class AWS_APIGATEWAY_API TestInvokeMethodResult
   {

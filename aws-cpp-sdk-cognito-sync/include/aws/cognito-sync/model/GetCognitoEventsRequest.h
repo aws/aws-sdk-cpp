@@ -25,7 +25,10 @@ namespace Model
 {
 
   /**
-   * <p>A request for a list of the configured Cognito Events</p>
+   * <p>A request for a list of the configured Cognito Events</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-sync-2014-06-30/GetCognitoEventsRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_COGNITOSYNC_API GetCognitoEventsRequest : public CognitoSyncRequest
   {

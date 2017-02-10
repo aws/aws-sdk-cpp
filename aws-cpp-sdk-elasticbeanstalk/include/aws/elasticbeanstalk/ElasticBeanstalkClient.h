@@ -17,6 +17,7 @@
 #include <aws/elasticbeanstalk/ElasticBeanstalkErrors.h>
 #include <aws/core/client/AWSError.h>
 #include <aws/core/client/ClientConfiguration.h>
+#include <aws/core/AmazonSerializableWebServiceRequest.h>
 #include <aws/core/client/AWSClient.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
@@ -43,6 +44,7 @@
 #include <aws/elasticbeanstalk/model/RetrieveEnvironmentInfoResult.h>
 #include <aws/elasticbeanstalk/model/TerminateEnvironmentResult.h>
 #include <aws/elasticbeanstalk/model/UpdateApplicationResult.h>
+#include <aws/elasticbeanstalk/model/UpdateApplicationResourceLifecycleResult.h>
 #include <aws/elasticbeanstalk/model/UpdateApplicationVersionResult.h>
 #include <aws/elasticbeanstalk/model/UpdateConfigurationTemplateResult.h>
 #include <aws/elasticbeanstalk/model/UpdateEnvironmentResult.h>
@@ -125,6 +127,7 @@ namespace Model
         class SwapEnvironmentCNAMEsRequest;
         class TerminateEnvironmentRequest;
         class UpdateApplicationRequest;
+        class UpdateApplicationResourceLifecycleRequest;
         class UpdateApplicationVersionRequest;
         class UpdateConfigurationTemplateRequest;
         class UpdateEnvironmentRequest;
@@ -162,6 +165,7 @@ namespace Model
         typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<ElasticBeanstalkErrors>> SwapEnvironmentCNAMEsOutcome;
         typedef Aws::Utils::Outcome<TerminateEnvironmentResult, Aws::Client::AWSError<ElasticBeanstalkErrors>> TerminateEnvironmentOutcome;
         typedef Aws::Utils::Outcome<UpdateApplicationResult, Aws::Client::AWSError<ElasticBeanstalkErrors>> UpdateApplicationOutcome;
+        typedef Aws::Utils::Outcome<UpdateApplicationResourceLifecycleResult, Aws::Client::AWSError<ElasticBeanstalkErrors>> UpdateApplicationResourceLifecycleOutcome;
         typedef Aws::Utils::Outcome<UpdateApplicationVersionResult, Aws::Client::AWSError<ElasticBeanstalkErrors>> UpdateApplicationVersionOutcome;
         typedef Aws::Utils::Outcome<UpdateConfigurationTemplateResult, Aws::Client::AWSError<ElasticBeanstalkErrors>> UpdateConfigurationTemplateOutcome;
         typedef Aws::Utils::Outcome<UpdateEnvironmentResult, Aws::Client::AWSError<ElasticBeanstalkErrors>> UpdateEnvironmentOutcome;
@@ -199,6 +203,7 @@ namespace Model
         typedef std::future<SwapEnvironmentCNAMEsOutcome> SwapEnvironmentCNAMEsOutcomeCallable;
         typedef std::future<TerminateEnvironmentOutcome> TerminateEnvironmentOutcomeCallable;
         typedef std::future<UpdateApplicationOutcome> UpdateApplicationOutcomeCallable;
+        typedef std::future<UpdateApplicationResourceLifecycleOutcome> UpdateApplicationResourceLifecycleOutcomeCallable;
         typedef std::future<UpdateApplicationVersionOutcome> UpdateApplicationVersionOutcomeCallable;
         typedef std::future<UpdateConfigurationTemplateOutcome> UpdateConfigurationTemplateOutcomeCallable;
         typedef std::future<UpdateEnvironmentOutcome> UpdateEnvironmentOutcomeCallable;
@@ -239,6 +244,7 @@ namespace Model
     typedef std::function<void(const ElasticBeanstalkClient*, const Model::SwapEnvironmentCNAMEsRequest&, const Model::SwapEnvironmentCNAMEsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SwapEnvironmentCNAMEsResponseReceivedHandler;
     typedef std::function<void(const ElasticBeanstalkClient*, const Model::TerminateEnvironmentRequest&, const Model::TerminateEnvironmentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TerminateEnvironmentResponseReceivedHandler;
     typedef std::function<void(const ElasticBeanstalkClient*, const Model::UpdateApplicationRequest&, const Model::UpdateApplicationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateApplicationResponseReceivedHandler;
+    typedef std::function<void(const ElasticBeanstalkClient*, const Model::UpdateApplicationResourceLifecycleRequest&, const Model::UpdateApplicationResourceLifecycleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateApplicationResourceLifecycleResponseReceivedHandler;
     typedef std::function<void(const ElasticBeanstalkClient*, const Model::UpdateApplicationVersionRequest&, const Model::UpdateApplicationVersionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateApplicationVersionResponseReceivedHandler;
     typedef std::function<void(const ElasticBeanstalkClient*, const Model::UpdateConfigurationTemplateRequest&, const Model::UpdateConfigurationTemplateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateConfigurationTemplateResponseReceivedHandler;
     typedef std::function<void(const ElasticBeanstalkClient*, const Model::UpdateEnvironmentRequest&, const Model::UpdateEnvironmentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateEnvironmentResponseReceivedHandler;
@@ -286,15 +292,25 @@ namespace Model
 
         virtual ~ElasticBeanstalkClient();
 
+       /**
+        * Converts any request object to a presigned URL with the GET method, using region for the signer and a timeout of 15 minutes.
+        */
+        Aws::String ConvertRequestToPresignedUrl(const AmazonSerializableWebServiceRequest& requestToConvert, const char* region) const;
+
+
         /**
          * <p>Cancels in-progress environment configuration update or application version
-         * deployment.</p>
+         * deployment.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/AbortEnvironmentUpdate">AWS
+         * API Reference</a></p>
          */
         virtual Model::AbortEnvironmentUpdateOutcome AbortEnvironmentUpdate(const Model::AbortEnvironmentUpdateRequest& request) const;
 
         /**
          * <p>Cancels in-progress environment configuration update or application version
-         * deployment.</p>
+         * deployment.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/AbortEnvironmentUpdate">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -302,7 +318,9 @@ namespace Model
 
         /**
          * <p>Cancels in-progress environment configuration update or application version
-         * deployment.</p>
+         * deployment.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/AbortEnvironmentUpdate">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -311,14 +329,20 @@ namespace Model
         /**
          * <p>Applies a scheduled managed action immediately. A managed action can be
          * applied only if its status is <code>Scheduled</code>. Get the status and action
-         * ID of a managed action with <a>DescribeEnvironmentManagedActions</a>.</p>
+         * ID of a managed action with
+         * <a>DescribeEnvironmentManagedActions</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/ApplyEnvironmentManagedAction">AWS
+         * API Reference</a></p>
          */
         virtual Model::ApplyEnvironmentManagedActionOutcome ApplyEnvironmentManagedAction(const Model::ApplyEnvironmentManagedActionRequest& request) const;
 
         /**
          * <p>Applies a scheduled managed action immediately. A managed action can be
          * applied only if its status is <code>Scheduled</code>. Get the status and action
-         * ID of a managed action with <a>DescribeEnvironmentManagedActions</a>.</p>
+         * ID of a managed action with
+         * <a>DescribeEnvironmentManagedActions</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/ApplyEnvironmentManagedAction">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -327,26 +351,35 @@ namespace Model
         /**
          * <p>Applies a scheduled managed action immediately. A managed action can be
          * applied only if its status is <code>Scheduled</code>. Get the status and action
-         * ID of a managed action with <a>DescribeEnvironmentManagedActions</a>.</p>
+         * ID of a managed action with
+         * <a>DescribeEnvironmentManagedActions</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/ApplyEnvironmentManagedAction">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ApplyEnvironmentManagedActionAsync(const Model::ApplyEnvironmentManagedActionRequest& request, const ApplyEnvironmentManagedActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Checks if the specified CNAME is available.</p>
+         * <p>Checks if the specified CNAME is available.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/CheckDNSAvailability">AWS
+         * API Reference</a></p>
          */
         virtual Model::CheckDNSAvailabilityOutcome CheckDNSAvailability(const Model::CheckDNSAvailabilityRequest& request) const;
 
         /**
-         * <p>Checks if the specified CNAME is available.</p>
+         * <p>Checks if the specified CNAME is available.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/CheckDNSAvailability">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::CheckDNSAvailabilityOutcomeCallable CheckDNSAvailabilityCallable(const Model::CheckDNSAvailabilityRequest& request) const;
 
         /**
-         * <p>Checks if the specified CNAME is available.</p>
+         * <p>Checks if the specified CNAME is available.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/CheckDNSAvailability">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -359,7 +392,9 @@ namespace Model
          * each environment and other required information must be included in the source
          * bundles in an environment manifest named <code>env.yaml</code>. See <a
          * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-mgmt-compose.html">Compose
-         * Environments</a> for details.</p>
+         * Environments</a> for details.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/ComposeEnvironments">AWS
+         * API Reference</a></p>
          */
         virtual Model::ComposeEnvironmentsOutcome ComposeEnvironments(const Model::ComposeEnvironmentsRequest& request) const;
 
@@ -370,7 +405,9 @@ namespace Model
          * each environment and other required information must be included in the source
          * bundles in an environment manifest named <code>env.yaml</code>. See <a
          * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-mgmt-compose.html">Compose
-         * Environments</a> for details.</p>
+         * Environments</a> for details.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/ComposeEnvironments">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -383,7 +420,9 @@ namespace Model
          * each environment and other required information must be included in the source
          * bundles in an environment manifest named <code>env.yaml</code>. See <a
          * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-mgmt-compose.html">Compose
-         * Environments</a> for details.</p>
+         * Environments</a> for details.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/ComposeEnvironments">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -391,13 +430,17 @@ namespace Model
 
         /**
          * <p> Creates an application that has one configuration template named
-         * <code>default</code> and no application versions. </p>
+         * <code>default</code> and no application versions. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/CreateApplication">AWS
+         * API Reference</a></p>
          */
         virtual Model::CreateApplicationOutcome CreateApplication(const Model::CreateApplicationRequest& request) const;
 
         /**
          * <p> Creates an application that has one configuration template named
-         * <code>default</code> and no application versions. </p>
+         * <code>default</code> and no application versions. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/CreateApplication">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -405,38 +448,70 @@ namespace Model
 
         /**
          * <p> Creates an application that has one configuration template named
-         * <code>default</code> and no application versions. </p>
+         * <code>default</code> and no application versions. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/CreateApplication">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateApplicationAsync(const Model::CreateApplicationRequest& request, const CreateApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates an application version for the specified application.</p> <note>
+         * <p>Creates an application version for the specified application. You can create
+         * an application version from a source bundle in Amazon S3, a commit in AWS
+         * CodeCommit, or the output of an AWS CodeBuild build as follows:</p> <p>Specify a
+         * commit in an AWS CodeCommit repository with
+         * <code>SourceBuildInformation</code>.</p> <p>Specify a build in an AWS CodeBuild
+         * with <code>SourceBuildInformation</code> and
+         * <code>BuildConfiguration</code>.</p> <p>Specify a source bundle in S3 with
+         * <code>SourceBundle</code> </p> <p>Omit both <code>SourceBuildInformation</code>
+         * and <code>SourceBundle</code> to use the default sample application.</p> <note>
          * <p>Once you create an application version with a specified Amazon S3 bucket and
          * key location, you cannot change that Amazon S3 location. If you change the
          * Amazon S3 location, you receive an exception when you attempt to launch an
-         * environment from the application version.</p> </note>
+         * environment from the application version.</p> </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/CreateApplicationVersion">AWS
+         * API Reference</a></p>
          */
         virtual Model::CreateApplicationVersionOutcome CreateApplicationVersion(const Model::CreateApplicationVersionRequest& request) const;
 
         /**
-         * <p>Creates an application version for the specified application.</p> <note>
+         * <p>Creates an application version for the specified application. You can create
+         * an application version from a source bundle in Amazon S3, a commit in AWS
+         * CodeCommit, or the output of an AWS CodeBuild build as follows:</p> <p>Specify a
+         * commit in an AWS CodeCommit repository with
+         * <code>SourceBuildInformation</code>.</p> <p>Specify a build in an AWS CodeBuild
+         * with <code>SourceBuildInformation</code> and
+         * <code>BuildConfiguration</code>.</p> <p>Specify a source bundle in S3 with
+         * <code>SourceBundle</code> </p> <p>Omit both <code>SourceBuildInformation</code>
+         * and <code>SourceBundle</code> to use the default sample application.</p> <note>
          * <p>Once you create an application version with a specified Amazon S3 bucket and
          * key location, you cannot change that Amazon S3 location. If you change the
          * Amazon S3 location, you receive an exception when you attempt to launch an
-         * environment from the application version.</p> </note>
+         * environment from the application version.</p> </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/CreateApplicationVersion">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::CreateApplicationVersionOutcomeCallable CreateApplicationVersionCallable(const Model::CreateApplicationVersionRequest& request) const;
 
         /**
-         * <p>Creates an application version for the specified application.</p> <note>
+         * <p>Creates an application version for the specified application. You can create
+         * an application version from a source bundle in Amazon S3, a commit in AWS
+         * CodeCommit, or the output of an AWS CodeBuild build as follows:</p> <p>Specify a
+         * commit in an AWS CodeCommit repository with
+         * <code>SourceBuildInformation</code>.</p> <p>Specify a build in an AWS CodeBuild
+         * with <code>SourceBuildInformation</code> and
+         * <code>BuildConfiguration</code>.</p> <p>Specify a source bundle in S3 with
+         * <code>SourceBundle</code> </p> <p>Omit both <code>SourceBuildInformation</code>
+         * and <code>SourceBundle</code> to use the default sample application.</p> <note>
          * <p>Once you create an application version with a specified Amazon S3 bucket and
          * key location, you cannot change that Amazon S3 location. If you change the
          * Amazon S3 location, you receive an exception when you attempt to launch an
-         * environment from the application version.</p> </note>
+         * environment from the application version.</p> </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/CreateApplicationVersion">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -448,7 +523,9 @@ namespace Model
          * the same configuration settings.</p> <p>Related Topics</p> <ul> <li> <p>
          * <a>DescribeConfigurationOptions</a> </p> </li> <li> <p>
          * <a>DescribeConfigurationSettings</a> </p> </li> <li> <p>
-         * <a>ListAvailableSolutionStacks</a> </p> </li> </ul>
+         * <a>ListAvailableSolutionStacks</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/CreateConfigurationTemplate">AWS
+         * API Reference</a></p>
          */
         virtual Model::CreateConfigurationTemplateOutcome CreateConfigurationTemplate(const Model::CreateConfigurationTemplateRequest& request) const;
 
@@ -458,7 +535,9 @@ namespace Model
          * the same configuration settings.</p> <p>Related Topics</p> <ul> <li> <p>
          * <a>DescribeConfigurationOptions</a> </p> </li> <li> <p>
          * <a>DescribeConfigurationSettings</a> </p> </li> <li> <p>
-         * <a>ListAvailableSolutionStacks</a> </p> </li> </ul>
+         * <a>ListAvailableSolutionStacks</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/CreateConfigurationTemplate">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -470,7 +549,9 @@ namespace Model
          * the same configuration settings.</p> <p>Related Topics</p> <ul> <li> <p>
          * <a>DescribeConfigurationOptions</a> </p> </li> <li> <p>
          * <a>DescribeConfigurationSettings</a> </p> </li> <li> <p>
-         * <a>ListAvailableSolutionStacks</a> </p> </li> </ul>
+         * <a>ListAvailableSolutionStacks</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/CreateConfigurationTemplate">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -478,13 +559,17 @@ namespace Model
 
         /**
          * <p>Launches an environment for the specified application using the specified
-         * configuration.</p>
+         * configuration.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/CreateEnvironment">AWS
+         * API Reference</a></p>
          */
         virtual Model::CreateEnvironmentOutcome CreateEnvironment(const Model::CreateEnvironmentRequest& request) const;
 
         /**
          * <p>Launches an environment for the specified application using the specified
-         * configuration.</p>
+         * configuration.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/CreateEnvironment">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -492,7 +577,9 @@ namespace Model
 
         /**
          * <p>Launches an environment for the specified application using the specified
-         * configuration.</p>
+         * configuration.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/CreateEnvironment">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -500,13 +587,17 @@ namespace Model
 
         /**
          * <p>Creates the Amazon S3 storage location for the account.</p> <p>This location
-         * is used to store user log files.</p>
+         * is used to store user log files.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/CreateStorageLocation">AWS
+         * API Reference</a></p>
          */
         virtual Model::CreateStorageLocationOutcome CreateStorageLocation(const Model::CreateStorageLocationRequest& request) const;
 
         /**
          * <p>Creates the Amazon S3 storage location for the account.</p> <p>This location
-         * is used to store user log files.</p>
+         * is used to store user log files.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/CreateStorageLocation">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -514,7 +605,9 @@ namespace Model
 
         /**
          * <p>Creates the Amazon S3 storage location for the account.</p> <p>This location
-         * is used to store user log files.</p>
+         * is used to store user log files.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/CreateStorageLocation">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -524,7 +617,9 @@ namespace Model
          * <p>Deletes the specified application along with all associated versions and
          * configurations. The application versions will not be deleted from your Amazon S3
          * bucket.</p> <note> <p>You cannot delete an application that has a running
-         * environment.</p> </note>
+         * environment.</p> </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DeleteApplication">AWS
+         * API Reference</a></p>
          */
         virtual Model::DeleteApplicationOutcome DeleteApplication(const Model::DeleteApplicationRequest& request) const;
 
@@ -532,7 +627,9 @@ namespace Model
          * <p>Deletes the specified application along with all associated versions and
          * configurations. The application versions will not be deleted from your Amazon S3
          * bucket.</p> <note> <p>You cannot delete an application that has a running
-         * environment.</p> </note>
+         * environment.</p> </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DeleteApplication">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -542,7 +639,9 @@ namespace Model
          * <p>Deletes the specified application along with all associated versions and
          * configurations. The application versions will not be deleted from your Amazon S3
          * bucket.</p> <note> <p>You cannot delete an application that has a running
-         * environment.</p> </note>
+         * environment.</p> </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DeleteApplication">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -551,14 +650,18 @@ namespace Model
         /**
          * <p>Deletes the specified version from the specified application.</p> <note>
          * <p>You cannot delete an application version that is associated with a running
-         * environment.</p> </note>
+         * environment.</p> </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DeleteApplicationVersion">AWS
+         * API Reference</a></p>
          */
         virtual Model::DeleteApplicationVersionOutcome DeleteApplicationVersion(const Model::DeleteApplicationVersionRequest& request) const;
 
         /**
          * <p>Deletes the specified version from the specified application.</p> <note>
          * <p>You cannot delete an application version that is associated with a running
-         * environment.</p> </note>
+         * environment.</p> </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DeleteApplicationVersion">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -567,7 +670,9 @@ namespace Model
         /**
          * <p>Deletes the specified version from the specified application.</p> <note>
          * <p>You cannot delete an application version that is associated with a running
-         * environment.</p> </note>
+         * environment.</p> </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DeleteApplicationVersion">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -577,7 +682,9 @@ namespace Model
          * <p>Deletes the specified configuration template.</p> <note> <p>When you launch
          * an environment using a configuration template, the environment gets a copy of
          * the template. You can delete or modify the environment's copy of the template
-         * without affecting the running environment.</p> </note>
+         * without affecting the running environment.</p> </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DeleteConfigurationTemplate">AWS
+         * API Reference</a></p>
          */
         virtual Model::DeleteConfigurationTemplateOutcome DeleteConfigurationTemplate(const Model::DeleteConfigurationTemplateRequest& request) const;
 
@@ -585,7 +692,9 @@ namespace Model
          * <p>Deletes the specified configuration template.</p> <note> <p>When you launch
          * an environment using a configuration template, the environment gets a copy of
          * the template. You can delete or modify the environment's copy of the template
-         * without affecting the running environment.</p> </note>
+         * without affecting the running environment.</p> </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DeleteConfigurationTemplate">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -595,7 +704,9 @@ namespace Model
          * <p>Deletes the specified configuration template.</p> <note> <p>When you launch
          * an environment using a configuration template, the environment gets a copy of
          * the template. You can delete or modify the environment's copy of the template
-         * without affecting the running environment.</p> </note>
+         * without affecting the running environment.</p> </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DeleteConfigurationTemplate">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -608,7 +719,10 @@ namespace Model
          * <a>DescribeConfigurationSettings</a> while the update is in progress or if the
          * update fails. The <code>DeploymentStatus</code> for the draft configuration
          * indicates whether the deployment is in process or has failed. The draft
-         * configuration remains in existence until it is deleted with this action.</p>
+         * configuration remains in existence until it is deleted with this
+         * action.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DeleteEnvironmentConfiguration">AWS
+         * API Reference</a></p>
          */
         virtual Model::DeleteEnvironmentConfigurationOutcome DeleteEnvironmentConfiguration(const Model::DeleteEnvironmentConfigurationRequest& request) const;
 
@@ -619,7 +733,10 @@ namespace Model
          * <a>DescribeConfigurationSettings</a> while the update is in progress or if the
          * update fails. The <code>DeploymentStatus</code> for the draft configuration
          * indicates whether the deployment is in process or has failed. The draft
-         * configuration remains in existence until it is deleted with this action.</p>
+         * configuration remains in existence until it is deleted with this
+         * action.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DeleteEnvironmentConfiguration">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -632,48 +749,63 @@ namespace Model
          * <a>DescribeConfigurationSettings</a> while the update is in progress or if the
          * update fails. The <code>DeploymentStatus</code> for the draft configuration
          * indicates whether the deployment is in process or has failed. The draft
-         * configuration remains in existence until it is deleted with this action.</p>
+         * configuration remains in existence until it is deleted with this
+         * action.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DeleteEnvironmentConfiguration">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteEnvironmentConfigurationAsync(const Model::DeleteEnvironmentConfigurationRequest& request, const DeleteEnvironmentConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Retrieve a list of application versions stored in your AWS Elastic Beanstalk
-         * storage bucket.</p>
+         * <p>Retrieve a list of application versions.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeApplicationVersions">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeApplicationVersionsOutcome DescribeApplicationVersions(const Model::DescribeApplicationVersionsRequest& request) const;
 
         /**
-         * <p>Retrieve a list of application versions stored in your AWS Elastic Beanstalk
-         * storage bucket.</p>
+         * <p>Retrieve a list of application versions.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeApplicationVersions">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DescribeApplicationVersionsOutcomeCallable DescribeApplicationVersionsCallable(const Model::DescribeApplicationVersionsRequest& request) const;
 
         /**
-         * <p>Retrieve a list of application versions stored in your AWS Elastic Beanstalk
-         * storage bucket.</p>
+         * <p>Retrieve a list of application versions.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeApplicationVersions">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeApplicationVersionsAsync(const Model::DescribeApplicationVersionsRequest& request, const DescribeApplicationVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns the descriptions of existing applications.</p>
+         * <p>Returns the descriptions of existing applications.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeApplications">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeApplicationsOutcome DescribeApplications(const Model::DescribeApplicationsRequest& request) const;
 
         /**
-         * <p>Returns the descriptions of existing applications.</p>
+         * <p>Returns the descriptions of existing applications.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeApplications">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DescribeApplicationsOutcomeCallable DescribeApplicationsCallable(const Model::DescribeApplicationsRequest& request) const;
 
         /**
-         * <p>Returns the descriptions of existing applications.</p>
+         * <p>Returns the descriptions of existing applications.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeApplications">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -684,7 +816,9 @@ namespace Model
          * configuration template or environment, or that a specified solution stack
          * defines. The description includes the values the options, their default values,
          * and an indication of the required action on a running environment if an option
-         * value is changed.</p>
+         * value is changed.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeConfigurationOptions">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeConfigurationOptionsOutcome DescribeConfigurationOptions(const Model::DescribeConfigurationOptionsRequest& request) const;
 
@@ -693,7 +827,9 @@ namespace Model
          * configuration template or environment, or that a specified solution stack
          * defines. The description includes the values the options, their default values,
          * and an indication of the required action on a running environment if an option
-         * value is changed.</p>
+         * value is changed.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeConfigurationOptions">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -704,7 +840,9 @@ namespace Model
          * configuration template or environment, or that a specified solution stack
          * defines. The description includes the values the options, their default values,
          * and an indication of the required action on a running environment if an option
-         * value is changed.</p>
+         * value is changed.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeConfigurationOptions">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -718,7 +856,10 @@ namespace Model
          * receive two sets of setting descriptions. One is the deployed configuration set,
          * and the other is a draft configuration of an environment that is either in the
          * process of deployment or that failed to deploy.</p> <p>Related Topics</p> <ul>
-         * <li> <p> <a>DeleteEnvironmentConfiguration</a> </p> </li> </ul>
+         * <li> <p> <a>DeleteEnvironmentConfiguration</a> </p> </li> </ul><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeConfigurationSettings">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeConfigurationSettingsOutcome DescribeConfigurationSettings(const Model::DescribeConfigurationSettingsRequest& request) const;
 
@@ -730,7 +871,10 @@ namespace Model
          * receive two sets of setting descriptions. One is the deployed configuration set,
          * and the other is a draft configuration of an environment that is either in the
          * process of deployment or that failed to deploy.</p> <p>Related Topics</p> <ul>
-         * <li> <p> <a>DeleteEnvironmentConfiguration</a> </p> </li> </ul>
+         * <li> <p> <a>DeleteEnvironmentConfiguration</a> </p> </li> </ul><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeConfigurationSettings">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -744,7 +888,10 @@ namespace Model
          * receive two sets of setting descriptions. One is the deployed configuration set,
          * and the other is a draft configuration of an environment that is either in the
          * process of deployment or that failed to deploy.</p> <p>Related Topics</p> <ul>
-         * <li> <p> <a>DeleteEnvironmentConfiguration</a> </p> </li> </ul>
+         * <li> <p> <a>DeleteEnvironmentConfiguration</a> </p> </li> </ul><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeConfigurationSettings">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -753,14 +900,18 @@ namespace Model
         /**
          * <p>Returns information about the overall health of the specified environment.
          * The <b>DescribeEnvironmentHealth</b> operation is only available with AWS
-         * Elastic Beanstalk Enhanced Health.</p>
+         * Elastic Beanstalk Enhanced Health.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeEnvironmentHealth">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeEnvironmentHealthOutcome DescribeEnvironmentHealth(const Model::DescribeEnvironmentHealthRequest& request) const;
 
         /**
          * <p>Returns information about the overall health of the specified environment.
          * The <b>DescribeEnvironmentHealth</b> operation is only available with AWS
-         * Elastic Beanstalk Enhanced Health.</p>
+         * Elastic Beanstalk Enhanced Health.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeEnvironmentHealth">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -769,83 +920,115 @@ namespace Model
         /**
          * <p>Returns information about the overall health of the specified environment.
          * The <b>DescribeEnvironmentHealth</b> operation is only available with AWS
-         * Elastic Beanstalk Enhanced Health.</p>
+         * Elastic Beanstalk Enhanced Health.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeEnvironmentHealth">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeEnvironmentHealthAsync(const Model::DescribeEnvironmentHealthRequest& request, const DescribeEnvironmentHealthResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists an environment's completed and failed managed actions.</p>
+         * <p>Lists an environment's completed and failed managed actions.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeEnvironmentManagedActionHistory">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeEnvironmentManagedActionHistoryOutcome DescribeEnvironmentManagedActionHistory(const Model::DescribeEnvironmentManagedActionHistoryRequest& request) const;
 
         /**
-         * <p>Lists an environment's completed and failed managed actions.</p>
+         * <p>Lists an environment's completed and failed managed actions.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeEnvironmentManagedActionHistory">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DescribeEnvironmentManagedActionHistoryOutcomeCallable DescribeEnvironmentManagedActionHistoryCallable(const Model::DescribeEnvironmentManagedActionHistoryRequest& request) const;
 
         /**
-         * <p>Lists an environment's completed and failed managed actions.</p>
+         * <p>Lists an environment's completed and failed managed actions.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeEnvironmentManagedActionHistory">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeEnvironmentManagedActionHistoryAsync(const Model::DescribeEnvironmentManagedActionHistoryRequest& request, const DescribeEnvironmentManagedActionHistoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists an environment's upcoming and in-progress managed actions.</p>
+         * <p>Lists an environment's upcoming and in-progress managed
+         * actions.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeEnvironmentManagedActions">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeEnvironmentManagedActionsOutcome DescribeEnvironmentManagedActions(const Model::DescribeEnvironmentManagedActionsRequest& request) const;
 
         /**
-         * <p>Lists an environment's upcoming and in-progress managed actions.</p>
+         * <p>Lists an environment's upcoming and in-progress managed
+         * actions.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeEnvironmentManagedActions">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DescribeEnvironmentManagedActionsOutcomeCallable DescribeEnvironmentManagedActionsCallable(const Model::DescribeEnvironmentManagedActionsRequest& request) const;
 
         /**
-         * <p>Lists an environment's upcoming and in-progress managed actions.</p>
+         * <p>Lists an environment's upcoming and in-progress managed
+         * actions.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeEnvironmentManagedActions">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeEnvironmentManagedActionsAsync(const Model::DescribeEnvironmentManagedActionsRequest& request, const DescribeEnvironmentManagedActionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns AWS resources for this environment.</p>
+         * <p>Returns AWS resources for this environment.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeEnvironmentResources">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeEnvironmentResourcesOutcome DescribeEnvironmentResources(const Model::DescribeEnvironmentResourcesRequest& request) const;
 
         /**
-         * <p>Returns AWS resources for this environment.</p>
+         * <p>Returns AWS resources for this environment.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeEnvironmentResources">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DescribeEnvironmentResourcesOutcomeCallable DescribeEnvironmentResourcesCallable(const Model::DescribeEnvironmentResourcesRequest& request) const;
 
         /**
-         * <p>Returns AWS resources for this environment.</p>
+         * <p>Returns AWS resources for this environment.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeEnvironmentResources">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeEnvironmentResourcesAsync(const Model::DescribeEnvironmentResourcesRequest& request, const DescribeEnvironmentResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns descriptions for existing environments.</p>
+         * <p>Returns descriptions for existing environments.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeEnvironments">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeEnvironmentsOutcome DescribeEnvironments(const Model::DescribeEnvironmentsRequest& request) const;
 
         /**
-         * <p>Returns descriptions for existing environments.</p>
+         * <p>Returns descriptions for existing environments.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeEnvironments">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DescribeEnvironmentsOutcomeCallable DescribeEnvironmentsCallable(const Model::DescribeEnvironmentsRequest& request) const;
 
         /**
-         * <p>Returns descriptions for existing environments.</p>
+         * <p>Returns descriptions for existing environments.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeEnvironments">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -854,14 +1037,18 @@ namespace Model
         /**
          * <p>Returns list of event descriptions matching criteria up to the last 6
          * weeks.</p> <note> <p>This action returns the most recent 1,000 events from the
-         * specified <code>NextToken</code>.</p> </note>
+         * specified <code>NextToken</code>.</p> </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeEvents">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeEventsOutcome DescribeEvents(const Model::DescribeEventsRequest& request) const;
 
         /**
          * <p>Returns list of event descriptions matching criteria up to the last 6
          * weeks.</p> <note> <p>This action returns the most recent 1,000 events from the
-         * specified <code>NextToken</code>.</p> </note>
+         * specified <code>NextToken</code>.</p> </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeEvents">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -870,54 +1057,71 @@ namespace Model
         /**
          * <p>Returns list of event descriptions matching criteria up to the last 6
          * weeks.</p> <note> <p>This action returns the most recent 1,000 events from the
-         * specified <code>NextToken</code>.</p> </note>
+         * specified <code>NextToken</code>.</p> </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeEvents">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeEventsAsync(const Model::DescribeEventsRequest& request, const DescribeEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns more detailed information about the health of the specified instances
-         * (for example, CPU utilization, load average, and causes). The
-         * <b>DescribeInstancesHealth</b> operation is only available with AWS Elastic
-         * Beanstalk Enhanced Health.</p>
+         * <p>Retrives detailed information about the health of instances in your AWS
+         * Elastic Beanstalk. This operation requires <a
+         * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced.html">enhanced
+         * health reporting</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeInstancesHealth">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeInstancesHealthOutcome DescribeInstancesHealth(const Model::DescribeInstancesHealthRequest& request) const;
 
         /**
-         * <p>Returns more detailed information about the health of the specified instances
-         * (for example, CPU utilization, load average, and causes). The
-         * <b>DescribeInstancesHealth</b> operation is only available with AWS Elastic
-         * Beanstalk Enhanced Health.</p>
+         * <p>Retrives detailed information about the health of instances in your AWS
+         * Elastic Beanstalk. This operation requires <a
+         * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced.html">enhanced
+         * health reporting</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeInstancesHealth">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DescribeInstancesHealthOutcomeCallable DescribeInstancesHealthCallable(const Model::DescribeInstancesHealthRequest& request) const;
 
         /**
-         * <p>Returns more detailed information about the health of the specified instances
-         * (for example, CPU utilization, load average, and causes). The
-         * <b>DescribeInstancesHealth</b> operation is only available with AWS Elastic
-         * Beanstalk Enhanced Health.</p>
+         * <p>Retrives detailed information about the health of instances in your AWS
+         * Elastic Beanstalk. This operation requires <a
+         * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced.html">enhanced
+         * health reporting</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeInstancesHealth">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeInstancesHealthAsync(const Model::DescribeInstancesHealthRequest& request, const DescribeInstancesHealthResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns a list of the available solution stack names.</p>
+         * <p>Returns a list of the available solution stack names.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/ListAvailableSolutionStacks">AWS
+         * API Reference</a></p>
          */
         virtual Model::ListAvailableSolutionStacksOutcome ListAvailableSolutionStacks(const Model::ListAvailableSolutionStacksRequest& request) const;
 
         /**
-         * <p>Returns a list of the available solution stack names.</p>
+         * <p>Returns a list of the available solution stack names.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/ListAvailableSolutionStacks">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListAvailableSolutionStacksOutcomeCallable ListAvailableSolutionStacksCallable(const Model::ListAvailableSolutionStacksRequest& request) const;
 
         /**
-         * <p>Returns a list of the available solution stack names.</p>
+         * <p>Returns a list of the available solution stack names.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/ListAvailableSolutionStacks">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -926,14 +1130,18 @@ namespace Model
         /**
          * <p>Deletes and recreates all of the AWS resources (for example: the Auto Scaling
          * group, load balancer, etc.) for a specified environment and forces a
-         * restart.</p>
+         * restart.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/RebuildEnvironment">AWS
+         * API Reference</a></p>
          */
         virtual Model::RebuildEnvironmentOutcome RebuildEnvironment(const Model::RebuildEnvironmentRequest& request) const;
 
         /**
          * <p>Deletes and recreates all of the AWS resources (for example: the Auto Scaling
          * group, load balancer, etc.) for a specified environment and forces a
-         * restart.</p>
+         * restart.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/RebuildEnvironment">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -942,7 +1150,9 @@ namespace Model
         /**
          * <p>Deletes and recreates all of the AWS resources (for example: the Auto Scaling
          * group, load balancer, etc.) for a specified environment and forces a
-         * restart.</p>
+         * restart.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/RebuildEnvironment">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -957,7 +1167,10 @@ namespace Model
          * log files for every Amazon EC2 instance into a <code>.zip</code> file. Legacy
          * and .NET containers do not support bundle logs. </p> <p> Use
          * <a>RetrieveEnvironmentInfo</a> to obtain the set of logs. </p> <p>Related
-         * Topics</p> <ul> <li> <p> <a>RetrieveEnvironmentInfo</a> </p> </li> </ul>
+         * Topics</p> <ul> <li> <p> <a>RetrieveEnvironmentInfo</a> </p> </li>
+         * </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/RequestEnvironmentInfo">AWS
+         * API Reference</a></p>
          */
         virtual Model::RequestEnvironmentInfoOutcome RequestEnvironmentInfo(const Model::RequestEnvironmentInfoRequest& request) const;
 
@@ -970,7 +1183,10 @@ namespace Model
          * log files for every Amazon EC2 instance into a <code>.zip</code> file. Legacy
          * and .NET containers do not support bundle logs. </p> <p> Use
          * <a>RetrieveEnvironmentInfo</a> to obtain the set of logs. </p> <p>Related
-         * Topics</p> <ul> <li> <p> <a>RetrieveEnvironmentInfo</a> </p> </li> </ul>
+         * Topics</p> <ul> <li> <p> <a>RetrieveEnvironmentInfo</a> </p> </li>
+         * </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/RequestEnvironmentInfo">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -985,7 +1201,10 @@ namespace Model
          * log files for every Amazon EC2 instance into a <code>.zip</code> file. Legacy
          * and .NET containers do not support bundle logs. </p> <p> Use
          * <a>RetrieveEnvironmentInfo</a> to obtain the set of logs. </p> <p>Related
-         * Topics</p> <ul> <li> <p> <a>RetrieveEnvironmentInfo</a> </p> </li> </ul>
+         * Topics</p> <ul> <li> <p> <a>RetrieveEnvironmentInfo</a> </p> </li>
+         * </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/RequestEnvironmentInfo">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -993,13 +1212,17 @@ namespace Model
 
         /**
          * <p>Causes the environment to restart the application container server running on
-         * each Amazon EC2 instance.</p>
+         * each Amazon EC2 instance.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/RestartAppServer">AWS
+         * API Reference</a></p>
          */
         virtual Model::RestartAppServerOutcome RestartAppServer(const Model::RestartAppServerRequest& request) const;
 
         /**
          * <p>Causes the environment to restart the application container server running on
-         * each Amazon EC2 instance.</p>
+         * each Amazon EC2 instance.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/RestartAppServer">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1007,7 +1230,9 @@ namespace Model
 
         /**
          * <p>Causes the environment to restart the application container server running on
-         * each Amazon EC2 instance.</p>
+         * each Amazon EC2 instance.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/RestartAppServer">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1016,14 +1241,18 @@ namespace Model
         /**
          * <p>Retrieves the compiled information from a <a>RequestEnvironmentInfo</a>
          * request.</p> <p>Related Topics</p> <ul> <li> <p> <a>RequestEnvironmentInfo</a>
-         * </p> </li> </ul>
+         * </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/RetrieveEnvironmentInfo">AWS
+         * API Reference</a></p>
          */
         virtual Model::RetrieveEnvironmentInfoOutcome RetrieveEnvironmentInfo(const Model::RetrieveEnvironmentInfoRequest& request) const;
 
         /**
          * <p>Retrieves the compiled information from a <a>RequestEnvironmentInfo</a>
          * request.</p> <p>Related Topics</p> <ul> <li> <p> <a>RequestEnvironmentInfo</a>
-         * </p> </li> </ul>
+         * </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/RetrieveEnvironmentInfo">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1032,45 +1261,59 @@ namespace Model
         /**
          * <p>Retrieves the compiled information from a <a>RequestEnvironmentInfo</a>
          * request.</p> <p>Related Topics</p> <ul> <li> <p> <a>RequestEnvironmentInfo</a>
-         * </p> </li> </ul>
+         * </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/RetrieveEnvironmentInfo">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void RetrieveEnvironmentInfoAsync(const Model::RetrieveEnvironmentInfoRequest& request, const RetrieveEnvironmentInfoResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Swaps the CNAMEs of two environments.</p>
+         * <p>Swaps the CNAMEs of two environments.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/SwapEnvironmentCNAMEs">AWS
+         * API Reference</a></p>
          */
         virtual Model::SwapEnvironmentCNAMEsOutcome SwapEnvironmentCNAMEs(const Model::SwapEnvironmentCNAMEsRequest& request) const;
 
         /**
-         * <p>Swaps the CNAMEs of two environments.</p>
+         * <p>Swaps the CNAMEs of two environments.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/SwapEnvironmentCNAMEs">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::SwapEnvironmentCNAMEsOutcomeCallable SwapEnvironmentCNAMEsCallable(const Model::SwapEnvironmentCNAMEsRequest& request) const;
 
         /**
-         * <p>Swaps the CNAMEs of two environments.</p>
+         * <p>Swaps the CNAMEs of two environments.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/SwapEnvironmentCNAMEs">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void SwapEnvironmentCNAMEsAsync(const Model::SwapEnvironmentCNAMEsRequest& request, const SwapEnvironmentCNAMEsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Terminates the specified environment.</p>
+         * <p>Terminates the specified environment.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/TerminateEnvironment">AWS
+         * API Reference</a></p>
          */
         virtual Model::TerminateEnvironmentOutcome TerminateEnvironment(const Model::TerminateEnvironmentRequest& request) const;
 
         /**
-         * <p>Terminates the specified environment.</p>
+         * <p>Terminates the specified environment.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/TerminateEnvironment">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::TerminateEnvironmentOutcomeCallable TerminateEnvironmentCallable(const Model::TerminateEnvironmentRequest& request) const;
 
         /**
-         * <p>Terminates the specified environment.</p>
+         * <p>Terminates the specified environment.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/TerminateEnvironment">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1080,7 +1323,9 @@ namespace Model
          * <p>Updates the specified application to have the specified properties.</p>
          * <note> <p>If a property (for example, <code>description</code>) is not provided,
          * the value remains unchanged. To clear these properties, specify an empty
-         * string.</p> </note>
+         * string.</p> </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/UpdateApplication">AWS
+         * API Reference</a></p>
          */
         virtual Model::UpdateApplicationOutcome UpdateApplication(const Model::UpdateApplicationRequest& request) const;
 
@@ -1088,7 +1333,9 @@ namespace Model
          * <p>Updates the specified application to have the specified properties.</p>
          * <note> <p>If a property (for example, <code>description</code>) is not provided,
          * the value remains unchanged. To clear these properties, specify an empty
-         * string.</p> </note>
+         * string.</p> </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/UpdateApplication">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1098,17 +1345,46 @@ namespace Model
          * <p>Updates the specified application to have the specified properties.</p>
          * <note> <p>If a property (for example, <code>description</code>) is not provided,
          * the value remains unchanged. To clear these properties, specify an empty
-         * string.</p> </note>
+         * string.</p> </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/UpdateApplication">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void UpdateApplicationAsync(const Model::UpdateApplicationRequest& request, const UpdateApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Modifies lifecycle settings for an application.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/UpdateApplicationResourceLifecycle">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateApplicationResourceLifecycleOutcome UpdateApplicationResourceLifecycle(const Model::UpdateApplicationResourceLifecycleRequest& request) const;
+
+        /**
+         * <p>Modifies lifecycle settings for an application.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/UpdateApplicationResourceLifecycle">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateApplicationResourceLifecycleOutcomeCallable UpdateApplicationResourceLifecycleCallable(const Model::UpdateApplicationResourceLifecycleRequest& request) const;
+
+        /**
+         * <p>Modifies lifecycle settings for an application.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/UpdateApplicationResourceLifecycle">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateApplicationResourceLifecycleAsync(const Model::UpdateApplicationResourceLifecycleRequest& request, const UpdateApplicationResourceLifecycleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Updates the specified application version to have the specified
          * properties.</p> <note> <p>If a property (for example, <code>description</code>)
          * is not provided, the value remains unchanged. To clear properties, specify an
-         * empty string.</p> </note>
+         * empty string.</p> </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/UpdateApplicationVersion">AWS
+         * API Reference</a></p>
          */
         virtual Model::UpdateApplicationVersionOutcome UpdateApplicationVersion(const Model::UpdateApplicationVersionRequest& request) const;
 
@@ -1116,7 +1392,9 @@ namespace Model
          * <p>Updates the specified application version to have the specified
          * properties.</p> <note> <p>If a property (for example, <code>description</code>)
          * is not provided, the value remains unchanged. To clear properties, specify an
-         * empty string.</p> </note>
+         * empty string.</p> </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/UpdateApplicationVersion">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1126,7 +1404,9 @@ namespace Model
          * <p>Updates the specified application version to have the specified
          * properties.</p> <note> <p>If a property (for example, <code>description</code>)
          * is not provided, the value remains unchanged. To clear properties, specify an
-         * empty string.</p> </note>
+         * empty string.</p> </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/UpdateApplicationVersion">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1137,7 +1417,10 @@ namespace Model
          * or configuration option values.</p> <note> <p>If a property (for example,
          * <code>ApplicationName</code>) is not provided, its value remains unchanged. To
          * clear such properties, specify an empty string.</p> </note> <p>Related
-         * Topics</p> <ul> <li> <p> <a>DescribeConfigurationOptions</a> </p> </li> </ul>
+         * Topics</p> <ul> <li> <p> <a>DescribeConfigurationOptions</a> </p> </li>
+         * </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/UpdateConfigurationTemplate">AWS
+         * API Reference</a></p>
          */
         virtual Model::UpdateConfigurationTemplateOutcome UpdateConfigurationTemplate(const Model::UpdateConfigurationTemplateRequest& request) const;
 
@@ -1146,7 +1429,10 @@ namespace Model
          * or configuration option values.</p> <note> <p>If a property (for example,
          * <code>ApplicationName</code>) is not provided, its value remains unchanged. To
          * clear such properties, specify an empty string.</p> </note> <p>Related
-         * Topics</p> <ul> <li> <p> <a>DescribeConfigurationOptions</a> </p> </li> </ul>
+         * Topics</p> <ul> <li> <p> <a>DescribeConfigurationOptions</a> </p> </li>
+         * </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/UpdateConfigurationTemplate">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1157,7 +1443,10 @@ namespace Model
          * or configuration option values.</p> <note> <p>If a property (for example,
          * <code>ApplicationName</code>) is not provided, its value remains unchanged. To
          * clear such properties, specify an empty string.</p> </note> <p>Related
-         * Topics</p> <ul> <li> <p> <a>DescribeConfigurationOptions</a> </p> </li> </ul>
+         * Topics</p> <ul> <li> <p> <a>DescribeConfigurationOptions</a> </p> </li>
+         * </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/UpdateConfigurationTemplate">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1172,7 +1461,10 @@ namespace Model
          * </p> <p> When updating the configuration settings to a new template or
          * individual settings, a draft configuration is created and
          * <a>DescribeConfigurationSettings</a> for this environment returns two setting
-         * descriptions with different <code>DeploymentStatus</code> values. </p>
+         * descriptions with different <code>DeploymentStatus</code> values. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/UpdateEnvironment">AWS
+         * API Reference</a></p>
          */
         virtual Model::UpdateEnvironmentOutcome UpdateEnvironment(const Model::UpdateEnvironmentRequest& request) const;
 
@@ -1185,7 +1477,10 @@ namespace Model
          * </p> <p> When updating the configuration settings to a new template or
          * individual settings, a draft configuration is created and
          * <a>DescribeConfigurationSettings</a> for this environment returns two setting
-         * descriptions with different <code>DeploymentStatus</code> values. </p>
+         * descriptions with different <code>DeploymentStatus</code> values. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/UpdateEnvironment">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1200,7 +1495,10 @@ namespace Model
          * </p> <p> When updating the configuration settings to a new template or
          * individual settings, a draft configuration is created and
          * <a>DescribeConfigurationSettings</a> for this environment returns two setting
-         * descriptions with different <code>DeploymentStatus</code> values. </p>
+         * descriptions with different <code>DeploymentStatus</code> values. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/UpdateEnvironment">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1210,7 +1508,9 @@ namespace Model
          * <p>Takes a set of configuration settings and either a configuration template or
          * environment, and determines whether those values are valid.</p> <p>This action
          * returns a list of messages indicating any errors or warnings associated with the
-         * selection of option values.</p>
+         * selection of option values.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/ValidateConfigurationSettings">AWS
+         * API Reference</a></p>
          */
         virtual Model::ValidateConfigurationSettingsOutcome ValidateConfigurationSettings(const Model::ValidateConfigurationSettingsRequest& request) const;
 
@@ -1218,7 +1518,9 @@ namespace Model
          * <p>Takes a set of configuration settings and either a configuration template or
          * environment, and determines whether those values are valid.</p> <p>This action
          * returns a list of messages indicating any errors or warnings associated with the
-         * selection of option values.</p>
+         * selection of option values.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/ValidateConfigurationSettings">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1228,7 +1530,9 @@ namespace Model
          * <p>Takes a set of configuration settings and either a configuration template or
          * environment, and determines whether those values are valid.</p> <p>This action
          * returns a list of messages indicating any errors or warnings associated with the
-         * selection of option values.</p>
+         * selection of option values.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/ValidateConfigurationSettings">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1271,6 +1575,7 @@ namespace Model
         void SwapEnvironmentCNAMEsAsyncHelper(const Model::SwapEnvironmentCNAMEsRequest& request, const SwapEnvironmentCNAMEsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void TerminateEnvironmentAsyncHelper(const Model::TerminateEnvironmentRequest& request, const TerminateEnvironmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateApplicationAsyncHelper(const Model::UpdateApplicationRequest& request, const UpdateApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdateApplicationResourceLifecycleAsyncHelper(const Model::UpdateApplicationResourceLifecycleRequest& request, const UpdateApplicationResourceLifecycleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateApplicationVersionAsyncHelper(const Model::UpdateApplicationVersionRequest& request, const UpdateApplicationVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateConfigurationTemplateAsyncHelper(const Model::UpdateConfigurationTemplateRequest& request, const UpdateConfigurationTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateEnvironmentAsyncHelper(const Model::UpdateEnvironmentRequest& request, const UpdateEnvironmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

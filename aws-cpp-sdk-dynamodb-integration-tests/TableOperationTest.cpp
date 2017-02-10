@@ -40,6 +40,7 @@
 #include <aws/dynamodb/model/ScanRequest.h>
 #include <aws/dynamodb/model/UpdateItemRequest.h>
 #include <aws/dynamodb/model/DeleteItemRequest.h>
+#include <aws/testing/TestingEnvironment.h>
 
 #include <algorithm>
 
@@ -54,16 +55,27 @@ using namespace Aws::DynamoDB::Model;
 //fill these in before running the test.
 static const char* HASH_KEY_NAME = "HashKey";
 static const char* ENDPOINT_OVERRIDE = ""; // Use localhost:8000 for DynamoDb Local
-static const char* SIMPLE_TABLE = TEST_TABLE_PREFIX "Simple";
-static const char* CRUD_TEST_TABLE = TEST_TABLE_PREFIX "Crud";
-static const char* CRUD_CALLBACKS_TEST_TABLE = TEST_TABLE_PREFIX "Crud_WithCallbacks";
-static const char* THROTTLED_TEST_TABLE = TEST_TABLE_PREFIX "Throttled";
-static const char* LIMITER_TEST_TABLE = TEST_TABLE_PREFIX "Limiter";
-static const char* ATTRIBUTEVALUE_TEST_TABLE = TEST_TABLE_PREFIX "AttributeValue";
+
+static const char* BASE_SIMPLE_TABLE = TEST_TABLE_PREFIX "Simple";
+static const char* BASE_CRUD_TEST_TABLE = TEST_TABLE_PREFIX "Crud";
+static const char* BASE_CRUD_CALLBACKS_TEST_TABLE = TEST_TABLE_PREFIX "Crud_WithCallbacks";
+static const char* BASE_THROTTLED_TEST_TABLE = TEST_TABLE_PREFIX "Throttled";
+static const char* BASE_LIMITER_TEST_TABLE = TEST_TABLE_PREFIX "Limiter";
+static const char* BASE_ATTRIBUTEVALUE_TEST_TABLE = TEST_TABLE_PREFIX "AttributeValue";
 
 static const char* ALLOCATION_TAG = "TableOperationTest";
 
 namespace {
+
+Aws::String BuildTableName(const char* baseName)
+{
+    return Aws::Testing::GetAwsResourcePrefix() + baseName;
+}
+
+Aws::String GetTablePrefix()
+{
+    return Aws::Testing::GetAwsResourcePrefix() + TEST_TABLE_PREFIX;
+}
 
 class TableOperationTest : public ::testing::Test {
 
@@ -191,12 +203,12 @@ protected:
 
     static void DeleteAllTables()
     {
-        DeleteTable(SIMPLE_TABLE);
-        DeleteTable(CRUD_TEST_TABLE);
-        DeleteTable(CRUD_CALLBACKS_TEST_TABLE);
-        DeleteTable(THROTTLED_TEST_TABLE);
-        DeleteTable(LIMITER_TEST_TABLE);
-        DeleteTable(ATTRIBUTEVALUE_TEST_TABLE);
+        DeleteTable(BuildTableName(BASE_SIMPLE_TABLE));
+        DeleteTable(BuildTableName(BASE_CRUD_TEST_TABLE));
+        DeleteTable(BuildTableName(BASE_CRUD_CALLBACKS_TEST_TABLE));
+        DeleteTable(BuildTableName(BASE_THROTTLED_TEST_TABLE));
+        DeleteTable(BuildTableName(BASE_LIMITER_TEST_TABLE));
+        DeleteTable(BuildTableName(BASE_ATTRIBUTEVALUE_TEST_TABLE));
     }
 
     void CreateTable(Aws::String tableName, long readCap, long writeCap)
@@ -297,7 +309,8 @@ TEST_F(TableOperationTest, TestListTable)
     AWS_LOGSTREAM_TRACE(ALLOCATION_TAG, "TestListTable")
 
     DeleteAllTables();
-    CreateTable(SIMPLE_TABLE, 10, 10);
+    Aws::String simpleTableName = BuildTableName(BASE_SIMPLE_TABLE);
+    CreateTable(simpleTableName, 10, 10);
 
     Aws::Vector<Aws::String> filteredTableNames;
 
@@ -314,7 +327,7 @@ TEST_F(TableOperationTest, TestListTable)
         std::copy_if(tableNames.cbegin(),
                      tableNames.cend(),
                      std::back_inserter(filteredTableNames),
-                     [](const Aws::String& tableName) { return tableName.find(TEST_TABLE_PREFIX) == 0; });
+                     [](const Aws::String& tableName) { return tableName.find(GetTablePrefix()) == 0; });
 
         listTablesRequest.SetExclusiveStartTableName(listTablesOutcome.GetResult().GetLastEvaluatedTableName());
         done = listTablesRequest.GetExclusiveStartTableName().empty();
@@ -323,7 +336,7 @@ TEST_F(TableOperationTest, TestListTable)
     EXPECT_EQ(1uL, filteredTableNames.size());
     if(filteredTableNames.size() > 0)
     {
-        EXPECT_EQ(SIMPLE_TABLE, filteredTableNames[0]);
+        EXPECT_EQ(simpleTableName, filteredTableNames[0]);
     }
 }
 
@@ -331,12 +344,13 @@ TEST_F(TableOperationTest, TestUpdateThroughput)
 {
     AWS_LOGSTREAM_TRACE(ALLOCATION_TAG, "TestUpdateThroughput")
 
-    CreateTable(SIMPLE_TABLE, 10, 10);
+    Aws::String simpleTableName = BuildTableName(BASE_SIMPLE_TABLE);
+    CreateTable(simpleTableName, 10, 10);
 
     // Update the table and make sure it works.
     long newReadCapacity = 15;
     UpdateTableRequest updateTableRequest;
-    updateTableRequest.SetTableName(SIMPLE_TABLE);
+    updateTableRequest.SetTableName(simpleTableName);
     ProvisionedThroughput provisionedThroughput;
     provisionedThroughput.SetReadCapacityUnits(newReadCapacity);
     provisionedThroughput.SetWriteCapacityUnits(10); // TODO: Do we need this??
@@ -344,7 +358,7 @@ TEST_F(TableOperationTest, TestUpdateThroughput)
 
     UpdateTableOutcome updateTableOutcome = m_client->UpdateTable(updateTableRequest);
 
-    DescribeTableResult describeTableResult = WaitUntilActive(SIMPLE_TABLE);
+    DescribeTableResult describeTableResult = WaitUntilActive(simpleTableName);
 
     //make sure update worked.
     EXPECT_EQ(newReadCapacity, describeTableResult.GetTable().GetProvisionedThroughput().GetReadCapacityUnits());
@@ -354,7 +368,8 @@ TEST_F(TableOperationTest, TestConditionalCheckFailure)
 {
     AWS_LOGSTREAM_TRACE(ALLOCATION_TAG, "TestConditionalCheckFailure")
 
-    CreateTable(SIMPLE_TABLE, 10, 10);
+    Aws::String simpleTableName = BuildTableName(BASE_SIMPLE_TABLE);
+    CreateTable(simpleTableName, 10, 10);
 
     AttributeValue homer;
     homer.SetS("Homer");
@@ -369,13 +384,13 @@ TEST_F(TableOperationTest, TestConditionalCheckFailure)
     hashKeyAttribute.SetS("TestItem");
 
     PutItemRequest putRequest;
-    putRequest.SetTableName(SIMPLE_TABLE);
+    putRequest.SetTableName(simpleTableName);
     putRequest.AddItem(HASH_KEY_NAME, hashKeyAttribute);
     putRequest.AddItem("Simpson", homer);
     m_client->PutItem(putRequest);
 
     PutItemRequest badRequest;
-    badRequest.SetTableName(SIMPLE_TABLE);
+    badRequest.SetTableName(simpleTableName);
     badRequest.AddItem(HASH_KEY_NAME, hashKeyAttribute);
     badRequest.AddItem("Simpson", bart);
 
@@ -392,13 +407,14 @@ TEST_F(TableOperationTest, TestValidationError)
 {
     AWS_LOGSTREAM_TRACE(ALLOCATION_TAG, "TestValidationError")
 
-    CreateTable(SIMPLE_TABLE, 10, 10);
+    Aws::String simpleTableName = BuildTableName(BASE_SIMPLE_TABLE);
+    CreateTable(simpleTableName, 10, 10);
 
     AttributeValue hashKeyAttribute;
     hashKeyAttribute.SetS("someValue");
 
     PutItemRequest request;
-    request.SetTableName(SIMPLE_TABLE);
+    request.SetTableName(simpleTableName);
     request.AddItem("TotallyNotTheHashKey", hashKeyAttribute);
 
     PutItemOutcome result = m_client->PutItem(request);
@@ -411,7 +427,8 @@ TEST_F(TableOperationTest, TestThrottling)
 {
     AWS_LOGSTREAM_TRACE(ALLOCATION_TAG, "TestThrottling")
 
-    CreateTable(THROTTLED_TEST_TABLE, 1, 1);
+    Aws::String throttledTestTableName = BuildTableName(BASE_THROTTLED_TEST_TABLE);
+    CreateTable(throttledTestTableName, 1, 1);
 
     // Blast the table until it throttles
     Aws::String testValueColumnName = "TestValue";
@@ -423,7 +440,7 @@ TEST_F(TableOperationTest, TestThrottling)
     {
         ss << HASH_KEY_NAME << i;
         PutItemRequest putItemRequest;
-        putItemRequest.SetTableName(THROTTLED_TEST_TABLE);
+        putItemRequest.SetTableName(throttledTestTableName);
         AttributeValue hashKeyAttribute;
         hashKeyAttribute.SetS(ss.str());
         ss.str("");
@@ -465,7 +482,8 @@ TEST_F(TableOperationTest, TestCrudOperations)
 {
     AWS_LOGSTREAM_TRACE(ALLOCATION_TAG, "TestCrudOperations")
 
-    CreateTable(CRUD_TEST_TABLE, 50, 50);
+    Aws::String crudTestTableName = BuildTableName(BASE_CRUD_TEST_TABLE);
+    CreateTable(crudTestTableName, 50, 50);
 
     //now put 50 items in the table asynchronously
     Aws::String testValueColumnName = "TestValue";
@@ -475,7 +493,7 @@ TEST_F(TableOperationTest, TestCrudOperations)
     {
         ss << HASH_KEY_NAME << i;
         PutItemRequest putItemRequest;
-        putItemRequest.SetTableName(CRUD_TEST_TABLE);
+        putItemRequest.SetTableName(crudTestTableName);
         AttributeValue hashKeyAttribute;
         hashKeyAttribute.SetS(ss.str());
         ss.str("");
@@ -506,7 +524,7 @@ TEST_F(TableOperationTest, TestCrudOperations)
         AttributeValue hashKey;
         hashKey.SetS(ss.str());
         getItemRequest.AddKey(HASH_KEY_NAME, hashKey);
-        getItemRequest.SetTableName(CRUD_TEST_TABLE);
+        getItemRequest.SetTableName(crudTestTableName);
 
         Aws::Vector<Aws::String> attributesToGet;
         attributesToGet.push_back(HASH_KEY_NAME);
@@ -531,7 +549,7 @@ TEST_F(TableOperationTest, TestCrudOperations)
     }
 
     ScanRequest scanRequest;
-    scanRequest.WithTableName(CRUD_TEST_TABLE);
+    scanRequest.WithTableName(crudTestTableName);
 
     ScanOutcome scanOutcome = m_client->Scan(scanRequest);
     EXPECT_TRUE(scanOutcome.IsSuccess());
@@ -545,7 +563,7 @@ TEST_F(TableOperationTest, TestCrudOperations)
         AttributeValue hashKeyAttribute;
         hashKeyAttribute.SetS(ss.str());
         UpdateItemRequest updateItemRequest;
-        updateItemRequest.SetTableName(CRUD_TEST_TABLE);
+        updateItemRequest.SetTableName(crudTestTableName);
         updateItemRequest.AddKey(HASH_KEY_NAME, AttributeValue(ss.str()));
         ss.str("");
         AttributeValueUpdate testValueAttribute;
@@ -576,7 +594,7 @@ TEST_F(TableOperationTest, TestCrudOperations)
         AttributeValue hashKey;
         hashKey.SetS(ss.str());
         getItemRequest.AddKey(HASH_KEY_NAME, hashKey);
-        getItemRequest.SetTableName(CRUD_TEST_TABLE);
+        getItemRequest.SetTableName(crudTestTableName);
 
         Aws::Vector<Aws::String> attributesToGet;
         attributesToGet.push_back(HASH_KEY_NAME);
@@ -609,7 +627,7 @@ TEST_F(TableOperationTest, TestCrudOperations)
         AttributeValue hashKey;
         hashKey.SetS(ss.str());
         deleteItemRequest.AddKey(HASH_KEY_NAME, hashKey);
-        deleteItemRequest.SetTableName(CRUD_TEST_TABLE);
+        deleteItemRequest.SetTableName(crudTestTableName);
         deleteItemRequest.SetReturnValues(ReturnValue::ALL_OLD);
         ss.str("");
 
@@ -634,7 +652,8 @@ TEST_F(TableOperationTest, TestCrudOperationsWithCallbacks)
 {
     AWS_LOGSTREAM_TRACE(ALLOCATION_TAG, "TestCrudOperationsWithCallbacks")
 
-    CreateTable(CRUD_CALLBACKS_TEST_TABLE, 50, 50);
+    Aws::String crudCallbacksTestTableName = BuildTableName(BASE_CRUD_CALLBACKS_TEST_TABLE);
+    CreateTable(crudCallbacksTestTableName, 50, 50);
 
     //registering a member function is ugly business even in modern c++
     auto putItemHandler = std::bind(&TableOperationTest::PutItemOutcomeReceived, this, std::placeholders::_1, std::placeholders::_2,
@@ -655,7 +674,7 @@ TEST_F(TableOperationTest, TestCrudOperationsWithCallbacks)
     {
         ss << HASH_KEY_NAME << i;
         PutItemRequest putItemRequest;
-        putItemRequest.SetTableName(CRUD_CALLBACKS_TEST_TABLE);
+        putItemRequest.SetTableName(crudCallbacksTestTableName);
         AttributeValue hashKeyAttribute;
         hashKeyAttribute.SetS(ss.str());
         ss.str("");
@@ -681,7 +700,7 @@ TEST_F(TableOperationTest, TestCrudOperationsWithCallbacks)
         AttributeValue hashKey;
         hashKey.SetS(ss.str());
         getItemRequest.AddKey(HASH_KEY_NAME, hashKey);
-        getItemRequest.SetTableName(CRUD_CALLBACKS_TEST_TABLE);
+        getItemRequest.SetTableName(crudCallbacksTestTableName);
 
         Aws::Vector<Aws::String> attributesToGet;
         attributesToGet.push_back(HASH_KEY_NAME);
@@ -716,7 +735,7 @@ TEST_F(TableOperationTest, TestCrudOperationsWithCallbacks)
     }
 
     ScanRequest scanRequest;
-    scanRequest.WithTableName(CRUD_CALLBACKS_TEST_TABLE);
+    scanRequest.WithTableName(crudCallbacksTestTableName);
 
     ScanOutcome scanOutcome = m_client->Scan(scanRequest);
     EXPECT_TRUE(scanOutcome.IsSuccess());
@@ -729,7 +748,7 @@ TEST_F(TableOperationTest, TestCrudOperationsWithCallbacks)
         AttributeValue hashKeyAttribute;
         hashKeyAttribute.SetS(ss.str());
         UpdateItemRequest updateItemRequest;
-        updateItemRequest.SetTableName(CRUD_CALLBACKS_TEST_TABLE);
+        updateItemRequest.SetTableName(crudCallbacksTestTableName);
         updateItemRequest.AddKey(HASH_KEY_NAME, AttributeValue(ss.str()));
         ss.str("");
         AttributeValueUpdate testValueAttribute;
@@ -759,7 +778,7 @@ TEST_F(TableOperationTest, TestCrudOperationsWithCallbacks)
         AttributeValue hashKey;
         hashKey.SetS(ss.str());
         getItemRequest.AddKey(HASH_KEY_NAME, hashKey);
-        getItemRequest.SetTableName(CRUD_CALLBACKS_TEST_TABLE);
+        getItemRequest.SetTableName(crudCallbacksTestTableName);
 
 
         Aws::Vector<Aws::String> attributesToGet;
@@ -800,7 +819,7 @@ TEST_F(TableOperationTest, TestCrudOperationsWithCallbacks)
         AttributeValue hashKey;
         hashKey.SetS(ss.str());
         deleteItemRequest.AddKey(HASH_KEY_NAME, hashKey);
-        deleteItemRequest.SetTableName(CRUD_CALLBACKS_TEST_TABLE);
+        deleteItemRequest.SetTableName(crudCallbacksTestTableName);
         deleteItemRequest.SetReturnValues(ReturnValue::ALL_OLD);
         ss.str("");
         m_client->DeleteItemAsync(deleteItemRequest, deleteItemHandler);
@@ -834,10 +853,12 @@ void PutBlobs(DynamoDBClient* client, uint32_t blobRowStartIndex)
     Aws::Vector<PutItemOutcomeCallable> putItemResults;
     Aws::StringStream ss;
 
+    Aws::String limiterTestTableName = BuildTableName(BASE_LIMITER_TEST_TABLE);
+
     for (unsigned i = blobRowStartIndex; i < blobRowStartIndex + 20; ++i)
     {
         PutItemRequest putItemRequest;
-        putItemRequest.SetTableName(LIMITER_TEST_TABLE);
+        putItemRequest.SetTableName(limiterTestTableName);
 
         ss.str("");
         ss << HASH_KEY_NAME << i;
@@ -868,7 +889,8 @@ TEST_F(TableOperationTest, TestLimiter)
 
     using CLOCK = std::chrono::high_resolution_clock;
 
-    CreateTable(LIMITER_TEST_TABLE, 100, 100);
+    Aws::String limiterTestTableName = BuildTableName(BASE_LIMITER_TEST_TABLE);
+    CreateTable(limiterTestTableName, 100, 100);
 
     // set limiter to 1k/sec
     // each request is a Put of 1k of data + >600 from headers/misc and response data
@@ -904,7 +926,8 @@ TEST_F(TableOperationTest, TestAttributeValues)
 {
     AWS_LOGSTREAM_TRACE(ALLOCATION_TAG, "TestAttributeValues")
 
-    CreateTable(ATTRIBUTEVALUE_TEST_TABLE, 50, 50);
+    Aws::String attributeValueTestTableName = BuildTableName(BASE_ATTRIBUTEVALUE_TEST_TABLE);
+    CreateTable(attributeValueTestTableName, 50, 50);
 
     unsigned char buffer1[6] = { 20, 34, 54, 67, 10, 5 };
     const Aws::Utils::ByteBuffer byteBuffer1(buffer1, 6);
@@ -918,7 +941,7 @@ TEST_F(TableOperationTest, TestAttributeValues)
     {
         // Put
         PutItemRequest putItemRequest;
-        putItemRequest.SetTableName(ATTRIBUTEVALUE_TEST_TABLE);
+        putItemRequest.SetTableName(attributeValueTestTableName);
         putItemRequest.AddItem(HASH_KEY_NAME, hashKey);
 
         AttributeValue value;
@@ -931,7 +954,7 @@ TEST_F(TableOperationTest, TestAttributeValues)
         // Get
         GetItemRequest getItemRequest;
         getItemRequest.AddKey(HASH_KEY_NAME, hashKey);
-        getItemRequest.SetTableName(ATTRIBUTEVALUE_TEST_TABLE);
+        getItemRequest.SetTableName(attributeValueTestTableName);
 
         Aws::Vector<Aws::String> attributesToGet;
         attributesToGet.push_back(HASH_KEY_NAME);
@@ -955,7 +978,7 @@ TEST_F(TableOperationTest, TestAttributeValues)
     {
         // Update
         UpdateItemRequest updateItemRequest;
-        updateItemRequest.SetTableName(ATTRIBUTEVALUE_TEST_TABLE);
+        updateItemRequest.SetTableName(attributeValueTestTableName);
         updateItemRequest.AddKey(HASH_KEY_NAME, hashKey);
 
         AttributeValue valueAttribute;
@@ -972,7 +995,7 @@ TEST_F(TableOperationTest, TestAttributeValues)
         // Get
         GetItemRequest getItemRequest;
         getItemRequest.AddKey(HASH_KEY_NAME, hashKey);
-        getItemRequest.SetTableName(ATTRIBUTEVALUE_TEST_TABLE);
+        getItemRequest.SetTableName(attributeValueTestTableName);
 
         Aws::Vector<Aws::String> attributesToGet;
         attributesToGet.push_back(HASH_KEY_NAME);
@@ -991,7 +1014,7 @@ TEST_F(TableOperationTest, TestAttributeValues)
     {
         // Update
         UpdateItemRequest updateItemRequest;
-        updateItemRequest.SetTableName(ATTRIBUTEVALUE_TEST_TABLE);
+        updateItemRequest.SetTableName(attributeValueTestTableName);
         updateItemRequest.AddKey(HASH_KEY_NAME, hashKey);
 
         AttributeValue valueAttribute;
@@ -1008,7 +1031,7 @@ TEST_F(TableOperationTest, TestAttributeValues)
         // Get
         GetItemRequest getItemRequest;
         getItemRequest.AddKey(HASH_KEY_NAME, hashKey);
-        getItemRequest.SetTableName(ATTRIBUTEVALUE_TEST_TABLE);
+        getItemRequest.SetTableName(attributeValueTestTableName);
 
         Aws::Vector<Aws::String> attributesToGet;
         attributesToGet.push_back(HASH_KEY_NAME);
@@ -1028,7 +1051,7 @@ TEST_F(TableOperationTest, TestAttributeValues)
     {
         // Update
         UpdateItemRequest updateItemRequest;
-        updateItemRequest.SetTableName(ATTRIBUTEVALUE_TEST_TABLE);
+        updateItemRequest.SetTableName(attributeValueTestTableName);
         updateItemRequest.AddKey(HASH_KEY_NAME, hashKey);
 
         const Aws::Vector<Aws::String> testStrings = { "test1", "test2" };
@@ -1046,7 +1069,7 @@ TEST_F(TableOperationTest, TestAttributeValues)
         // Get
         GetItemRequest getItemRequest;
         getItemRequest.AddKey(HASH_KEY_NAME, hashKey);
-        getItemRequest.SetTableName(ATTRIBUTEVALUE_TEST_TABLE);
+        getItemRequest.SetTableName(attributeValueTestTableName);
 
         Aws::Vector<Aws::String> attributesToGet;
         attributesToGet.push_back(HASH_KEY_NAME);
@@ -1070,7 +1093,7 @@ TEST_F(TableOperationTest, TestAttributeValues)
     {
         // Update
         UpdateItemRequest updateItemRequest;
-        updateItemRequest.SetTableName(ATTRIBUTEVALUE_TEST_TABLE);
+        updateItemRequest.SetTableName(attributeValueTestTableName);
         updateItemRequest.AddKey(HASH_KEY_NAME, hashKey);
 
         const Aws::Vector<Aws::String> testStrings = { "10", "20" };
@@ -1088,7 +1111,7 @@ TEST_F(TableOperationTest, TestAttributeValues)
         // Get
         GetItemRequest getItemRequest;
         getItemRequest.AddKey(HASH_KEY_NAME, hashKey);
-        getItemRequest.SetTableName(ATTRIBUTEVALUE_TEST_TABLE);
+        getItemRequest.SetTableName(attributeValueTestTableName);
 
         Aws::Vector<Aws::String> attributesToGet;
         attributesToGet.push_back(HASH_KEY_NAME);
@@ -1116,7 +1139,7 @@ TEST_F(TableOperationTest, TestAttributeValues)
     {
         // Update
         UpdateItemRequest updateItemRequest;
-        updateItemRequest.SetTableName(ATTRIBUTEVALUE_TEST_TABLE);
+        updateItemRequest.SetTableName(attributeValueTestTableName);
         updateItemRequest.AddKey(HASH_KEY_NAME, hashKey);
 
         Aws::Vector<Aws::Utils::ByteBuffer> testBuffers = { byteBuffer1, byteBuffer2 };
@@ -1134,7 +1157,7 @@ TEST_F(TableOperationTest, TestAttributeValues)
         // Get
         GetItemRequest getItemRequest;
         getItemRequest.AddKey(HASH_KEY_NAME, hashKey);
-        getItemRequest.SetTableName(ATTRIBUTEVALUE_TEST_TABLE);
+        getItemRequest.SetTableName(attributeValueTestTableName);
 
         Aws::Vector<Aws::String> attributesToGet;
         attributesToGet.push_back(HASH_KEY_NAME);
@@ -1166,7 +1189,7 @@ TEST_F(TableOperationTest, TestAttributeValues)
     {
         // Update
         UpdateItemRequest updateItemRequest;
-        updateItemRequest.SetTableName(ATTRIBUTEVALUE_TEST_TABLE);
+        updateItemRequest.SetTableName(attributeValueTestTableName);
         updateItemRequest.AddKey(HASH_KEY_NAME, hashKey);
 
         AttributeValue valueAttribute;
@@ -1186,7 +1209,7 @@ TEST_F(TableOperationTest, TestAttributeValues)
         // Get
         GetItemRequest getItemRequest;
         getItemRequest.AddKey(HASH_KEY_NAME, hashKey);
-        getItemRequest.SetTableName(ATTRIBUTEVALUE_TEST_TABLE);
+        getItemRequest.SetTableName(attributeValueTestTableName);
 
         Aws::Vector<Aws::String> attributesToGet;
         attributesToGet.push_back(HASH_KEY_NAME);
@@ -1224,7 +1247,7 @@ TEST_F(TableOperationTest, TestAttributeValues)
     {
         // Update
         UpdateItemRequest updateItemRequest;
-        updateItemRequest.SetTableName(ATTRIBUTEVALUE_TEST_TABLE);
+        updateItemRequest.SetTableName(attributeValueTestTableName);
         updateItemRequest.AddKey(HASH_KEY_NAME, hashKey);
 
         AttributeValue valueAttribute;
@@ -1242,7 +1265,7 @@ TEST_F(TableOperationTest, TestAttributeValues)
         // Get
         GetItemRequest getItemRequest;
         getItemRequest.AddKey(HASH_KEY_NAME, hashKey);
-        getItemRequest.SetTableName(ATTRIBUTEVALUE_TEST_TABLE);
+        getItemRequest.SetTableName(attributeValueTestTableName);
 
         Aws::Vector<Aws::String> attributesToGet;
         attributesToGet.push_back(HASH_KEY_NAME);
@@ -1285,7 +1308,7 @@ TEST_F(TableOperationTest, TestAttributeValues)
     {
         // Update
         UpdateItemRequest updateItemRequest;
-        updateItemRequest.SetTableName(ATTRIBUTEVALUE_TEST_TABLE);
+        updateItemRequest.SetTableName(attributeValueTestTableName);
         updateItemRequest.AddKey(HASH_KEY_NAME, hashKey);
 
         AttributeValue valueAttribute;
@@ -1302,7 +1325,7 @@ TEST_F(TableOperationTest, TestAttributeValues)
         // Get
         GetItemRequest getItemRequest;
         getItemRequest.AddKey(HASH_KEY_NAME, hashKey);
-        getItemRequest.SetTableName(ATTRIBUTEVALUE_TEST_TABLE);
+        getItemRequest.SetTableName(attributeValueTestTableName);
 
         Aws::Vector<Aws::String> attributesToGet;
         attributesToGet.push_back(HASH_KEY_NAME);
@@ -1319,7 +1342,7 @@ TEST_F(TableOperationTest, TestAttributeValues)
     {
         // Update
         UpdateItemRequest updateItemRequest;
-        updateItemRequest.SetTableName(ATTRIBUTEVALUE_TEST_TABLE);
+        updateItemRequest.SetTableName(attributeValueTestTableName);
         updateItemRequest.AddKey(HASH_KEY_NAME, hashKey);
 
         AttributeValue valueAttribute;
@@ -1336,7 +1359,7 @@ TEST_F(TableOperationTest, TestAttributeValues)
         // Get
         GetItemRequest getItemRequest;
         getItemRequest.AddKey(HASH_KEY_NAME, hashKey);
-        getItemRequest.SetTableName(ATTRIBUTEVALUE_TEST_TABLE);
+        getItemRequest.SetTableName(attributeValueTestTableName);
 
         Aws::Vector<Aws::String> attributesToGet;
         attributesToGet.push_back(HASH_KEY_NAME);

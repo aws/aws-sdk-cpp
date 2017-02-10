@@ -28,7 +28,9 @@ namespace Model
    * <p>Represents a request to create an empty receipt rule set. You use receipt
    * rule sets to receive email with Amazon SES. For more information, see the <a
    * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-concepts.html">Amazon
-   * SES Developer Guide</a>.</p>
+   * SES Developer Guide</a>.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/CreateReceiptRuleSetRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_SES_API CreateReceiptRuleSetRequest : public SESRequest
   {

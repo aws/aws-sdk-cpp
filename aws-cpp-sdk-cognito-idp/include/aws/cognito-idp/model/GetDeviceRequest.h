@@ -25,7 +25,9 @@ namespace Model
 {
 
   /**
-   * <p>Represents the request to get the device.</p>
+   * <p>Represents the request to get the device.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/GetDeviceRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_COGNITOIDENTITYPROVIDER_API GetDeviceRequest : public CognitoIdentityProviderRequest
   {

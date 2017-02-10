@@ -33,7 +33,10 @@ namespace Model
 {
 
   /**
-   * <p>The disk container object for the import snapshot request.</p>
+   * <p>The disk container object for the import snapshot request.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/SnapshotDiskContainer">AWS
+   * API Reference</a></p>
    */
   class AWS_EC2_API SnapshotDiskContainer
   {

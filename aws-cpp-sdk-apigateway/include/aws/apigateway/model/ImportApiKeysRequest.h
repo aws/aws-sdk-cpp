@@ -31,7 +31,9 @@ namespace Model
 
   /**
    * <p>The POST request to import API keys from an external source, such as a
-   * CSV-formatted file.</p>
+   * CSV-formatted file.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/ImportApiKeysRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_APIGATEWAY_API ImportApiKeysRequest : public StreamingAPIGatewayRequest
   {

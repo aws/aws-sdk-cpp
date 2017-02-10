@@ -112,43 +112,43 @@ namespace Model
     inline ResendValidationEmailRequest& WithCertificateArn(const char* value) { SetCertificateArn(value); return *this;}
 
     /**
-     * <p>The Fully Qualified Domain Name (FQDN) of the certificate that needs to be
+     * <p>The fully qualified domain name (FQDN) of the certificate that needs to be
      * validated.</p>
      */
     inline const Aws::String& GetDomain() const{ return m_domain; }
 
     /**
-     * <p>The Fully Qualified Domain Name (FQDN) of the certificate that needs to be
+     * <p>The fully qualified domain name (FQDN) of the certificate that needs to be
      * validated.</p>
      */
     inline void SetDomain(const Aws::String& value) { m_domainHasBeenSet = true; m_domain = value; }
 
     /**
-     * <p>The Fully Qualified Domain Name (FQDN) of the certificate that needs to be
+     * <p>The fully qualified domain name (FQDN) of the certificate that needs to be
      * validated.</p>
      */
     inline void SetDomain(Aws::String&& value) { m_domainHasBeenSet = true; m_domain = value; }
 
     /**
-     * <p>The Fully Qualified Domain Name (FQDN) of the certificate that needs to be
+     * <p>The fully qualified domain name (FQDN) of the certificate that needs to be
      * validated.</p>
      */
     inline void SetDomain(const char* value) { m_domainHasBeenSet = true; m_domain.assign(value); }
 
     /**
-     * <p>The Fully Qualified Domain Name (FQDN) of the certificate that needs to be
+     * <p>The fully qualified domain name (FQDN) of the certificate that needs to be
      * validated.</p>
      */
     inline ResendValidationEmailRequest& WithDomain(const Aws::String& value) { SetDomain(value); return *this;}
 
     /**
-     * <p>The Fully Qualified Domain Name (FQDN) of the certificate that needs to be
+     * <p>The fully qualified domain name (FQDN) of the certificate that needs to be
      * validated.</p>
      */
     inline ResendValidationEmailRequest& WithDomain(Aws::String&& value) { SetDomain(value); return *this;}
 
     /**
-     * <p>The Fully Qualified Domain Name (FQDN) of the certificate that needs to be
+     * <p>The fully qualified domain name (FQDN) of the certificate that needs to be
      * validated.</p>
      */
     inline ResendValidationEmailRequest& WithDomain(const char* value) { SetDomain(value); return *this;}

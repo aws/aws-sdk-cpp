@@ -34,7 +34,7 @@ Aws::String DescribeInstanceAttributeRequest::SerializePayload() const
   ss << "Action=DescribeInstanceAttribute&";
   if(m_dryRunHasBeenSet)
   {
-    ss << "DryRun=" << m_dryRun << "&";
+    ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
   if(m_instanceIdHasBeenSet)
@@ -47,7 +47,7 @@ Aws::String DescribeInstanceAttributeRequest::SerializePayload() const
     ss << "Attribute=" << InstanceAttributeNameMapper::GetNameForInstanceAttributeName(m_attribute) << "&";
   }
 
-  ss << "Version=2016-09-15";
+  ss << "Version=2016-11-15";
   return ss.str();
 }
 

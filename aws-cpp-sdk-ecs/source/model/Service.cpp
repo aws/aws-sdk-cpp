@@ -44,7 +44,9 @@ Service::Service() :
     m_deploymentsHasBeenSet(false),
     m_roleArnHasBeenSet(false),
     m_eventsHasBeenSet(false),
-    m_createdAtHasBeenSet(false)
+    m_createdAtHasBeenSet(false),
+    m_placementConstraintsHasBeenSet(false),
+    m_placementStrategyHasBeenSet(false)
 {
 }
 
@@ -65,7 +67,9 @@ Service::Service(const JsonValue& jsonValue) :
     m_deploymentsHasBeenSet(false),
     m_roleArnHasBeenSet(false),
     m_eventsHasBeenSet(false),
-    m_createdAtHasBeenSet(false)
+    m_createdAtHasBeenSet(false),
+    m_placementConstraintsHasBeenSet(false),
+    m_placementStrategyHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -179,6 +183,26 @@ Service& Service::operator =(const JsonValue& jsonValue)
     m_createdAtHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("placementConstraints"))
+  {
+    Array<JsonValue> placementConstraintsJsonList = jsonValue.GetArray("placementConstraints");
+    for(unsigned placementConstraintsIndex = 0; placementConstraintsIndex < placementConstraintsJsonList.GetLength(); ++placementConstraintsIndex)
+    {
+      m_placementConstraints.push_back(placementConstraintsJsonList[placementConstraintsIndex].AsObject());
+    }
+    m_placementConstraintsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("placementStrategy"))
+  {
+    Array<JsonValue> placementStrategyJsonList = jsonValue.GetArray("placementStrategy");
+    for(unsigned placementStrategyIndex = 0; placementStrategyIndex < placementStrategyJsonList.GetLength(); ++placementStrategyIndex)
+    {
+      m_placementStrategy.push_back(placementStrategyJsonList[placementStrategyIndex].AsObject());
+    }
+    m_placementStrategyHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -282,6 +306,28 @@ JsonValue Service::Jsonize() const
   if(m_createdAtHasBeenSet)
   {
    payload.WithDouble("createdAt", m_createdAt.SecondsWithMSPrecision());
+  }
+
+  if(m_placementConstraintsHasBeenSet)
+  {
+   Array<JsonValue> placementConstraintsJsonList(m_placementConstraints.size());
+   for(unsigned placementConstraintsIndex = 0; placementConstraintsIndex < placementConstraintsJsonList.GetLength(); ++placementConstraintsIndex)
+   {
+     placementConstraintsJsonList[placementConstraintsIndex].AsObject(m_placementConstraints[placementConstraintsIndex].Jsonize());
+   }
+   payload.WithArray("placementConstraints", std::move(placementConstraintsJsonList));
+
+  }
+
+  if(m_placementStrategyHasBeenSet)
+  {
+   Array<JsonValue> placementStrategyJsonList(m_placementStrategy.size());
+   for(unsigned placementStrategyIndex = 0; placementStrategyIndex < placementStrategyJsonList.GetLength(); ++placementStrategyIndex)
+   {
+     placementStrategyJsonList[placementStrategyIndex].AsObject(m_placementStrategy[placementStrategyIndex].Jsonize());
+   }
+   payload.WithArray("placementStrategy", std::move(placementStrategyJsonList));
+
   }
 
   return payload;

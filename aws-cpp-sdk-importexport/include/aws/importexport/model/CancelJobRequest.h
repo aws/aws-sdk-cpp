@@ -25,7 +25,9 @@ namespace Model
 {
 
   /**
-   * Input structure for the CancelJob operation.
+   * Input structure for the CancelJob operation.<p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/importexport-2010-06-01/CancelJobInput">AWS
+   * API Reference</a></p>
    */
   class AWS_IMPORTEXPORT_API CancelJobRequest : public ImportExportRequest
   {

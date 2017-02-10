@@ -32,7 +32,7 @@ Aws::String DeleteNetworkAclRequest::SerializePayload() const
   ss << "Action=DeleteNetworkAcl&";
   if(m_dryRunHasBeenSet)
   {
-    ss << "DryRun=" << m_dryRun << "&";
+    ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
   if(m_networkAclIdHasBeenSet)
@@ -40,7 +40,7 @@ Aws::String DeleteNetworkAclRequest::SerializePayload() const
     ss << "NetworkAclId=" << StringUtils::URLEncode(m_networkAclId.c_str()) << "&";
   }
 
-  ss << "Version=2016-09-15";
+  ss << "Version=2016-11-15";
   return ss.str();
 }
 

@@ -38,7 +38,9 @@ namespace Model
 
   /**
    * <p>A section of the response body that provides information about the job that
-   * is created.</p>
+   * is created.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/Job">AWS
+   * API Reference</a></p>
    */
   class AWS_ELASTICTRANSCODER_API Job
   {

@@ -14,7 +14,6 @@
   */
 
 #include <aws/external/gtest.h>
-#include <aws/testing/MemoryTesting.h>
 
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
@@ -26,8 +25,6 @@ const Aws::String simpleValue = "{\"testStringKey\":\"testStringValue\"}";
 
 TEST(JsonSerializerTest, TestParseSimpleJsonString)
 {
-    AWS_BEGIN_MEMORY_TEST(1, 10)
-
     JsonValue value(simpleValue);
     if (value.WasParseSuccessful())
     {
@@ -38,16 +35,12 @@ TEST(JsonSerializerTest, TestParseSimpleJsonString)
     {
         GTEST_NONFATAL_FAILURE_(value.GetErrorMessage().c_str());
     }
-
-    AWS_END_MEMORY_TEST
 }
 
 const Aws::String simpleValue2 = "{\"testIntKey\":10}";
 
 TEST(JsonSerializerTest, TestParseSimpleJsonString2)
 {
-    AWS_BEGIN_MEMORY_TEST(1, 10)
-
     JsonValue value(simpleValue2);
     if (value.WasParseSuccessful())
     {
@@ -58,16 +51,12 @@ TEST(JsonSerializerTest, TestParseSimpleJsonString2)
     {
         GTEST_NONFATAL_FAILURE_(value.GetErrorMessage().c_str());
     }
-
-    AWS_END_MEMORY_TEST
 }
 
 const Aws::String simpleValue3 = "{\"testBoolKey\":false}";
 
 TEST(JsonSerializerTest, TestParseSimpleJsonString3)
 {
-    AWS_BEGIN_MEMORY_TEST(1, 10)
-
     JsonValue value(simpleValue3);
     if (value.WasParseSuccessful())
     {
@@ -78,8 +67,6 @@ TEST(JsonSerializerTest, TestParseSimpleJsonString3)
     {
         GTEST_NONFATAL_FAILURE_(value.GetErrorMessage().c_str());
     }
-
-    AWS_END_MEMORY_TEST
 }
 
 const Aws::String jsonArrayValue =
@@ -87,8 +74,6 @@ const Aws::String jsonArrayValue =
 
 TEST(JsonSerializerTest, TestParseJsonArrayString)
 {
-    AWS_BEGIN_MEMORY_TEST(16, 10)
-
     JsonValue value(jsonArrayValue);
     if (value.WasParseSuccessful())
     {
@@ -100,8 +85,6 @@ TEST(JsonSerializerTest, TestParseJsonArrayString)
     {
         GTEST_NONFATAL_FAILURE_(value.GetErrorMessage().c_str());
     }
-
-    AWS_END_MEMORY_TEST
 }
 
 const Aws::String jsonValue =
@@ -111,8 +94,6 @@ const Aws::String jsonValue =
 
 TEST(JsonSerializerTest, TestParseJsonString)
 {
-    AWS_BEGIN_MEMORY_TEST(16, 10)
-
     JsonValue value(jsonValue);
     if (value.WasParseSuccessful())
     {
@@ -128,14 +109,10 @@ TEST(JsonSerializerTest, TestParseJsonString)
     {
         GTEST_NONFATAL_FAILURE_(value.GetErrorMessage().c_str());
     }
-
-    AWS_END_MEMORY_TEST
 }
 
 TEST(JsonSerializerTest, TestParseJsonStream)
 {
-    AWS_BEGIN_MEMORY_TEST(16, 10)
-
     Aws::StringStream inputAsStream(jsonValue);
     JsonValue value(inputAsStream);
 
@@ -153,80 +130,56 @@ TEST(JsonSerializerTest, TestParseJsonStream)
     {
         GTEST_NONFATAL_FAILURE_(value.GetErrorMessage().c_str());
     }
-
-    AWS_END_MEMORY_TEST
 }
 
 TEST(JsonSerializerTest, TestParseJsonStringFailed)
 {
-    AWS_BEGIN_MEMORY_TEST(16, 10)
-
-    JsonValue value(Aws::String("blah blah blah"));
-    ASSERT_FALSE(value.WasParseSuccessful());
-    ASSERT_FALSE(value.GetErrorMessage().empty());
-
-    AWS_END_MEMORY_TEST
+	JsonValue value(Aws::String("blah blah blah"));
+	ASSERT_FALSE(value.WasParseSuccessful());
+	ASSERT_FALSE(value.GetErrorMessage().empty());
 }
 
 TEST(JsonSerializerTest, TestParseJsonStreamFailed)
 {
-    AWS_BEGIN_MEMORY_TEST(16, 10)
-
     Aws::StringStream ss;
     ss << "blah blah blah";
     JsonValue value(ss);
     ASSERT_FALSE(value.WasParseSuccessful());
     ASSERT_FALSE(value.GetErrorMessage().empty());
-
-    AWS_END_MEMORY_TEST
 }
 
 TEST(JsonSerializerTest, TestJsonStringValue)
 {
-    AWS_BEGIN_MEMORY_TEST(16, 10)
-
     JsonValue value;
     value.WithString("testKey", "testValue");
     ASSERT_STREQ("testValue", value.GetString("testKey").c_str());
 
     value.AsString("anotherTestValue");
     ASSERT_STREQ("anotherTestValue", value.AsString().c_str());
-
-    AWS_END_MEMORY_TEST
 }
 
 TEST(JsonSerializerTest, TestJsonIntegerValue)
 {
-    AWS_BEGIN_MEMORY_TEST(16, 10)
-
     JsonValue value;
     value.WithInteger("testKey", 10);
     ASSERT_EQ(10, value.GetInteger("testKey"));
 
     value.AsInteger(15);
     ASSERT_EQ(15, value.AsInteger());
-
-    AWS_END_MEMORY_TEST
 }
 
 TEST(JsonSerializerTest, TestJsonBoolValue)
 {
-    AWS_BEGIN_MEMORY_TEST(16, 10)
-
     JsonValue value;
     value.WithBool("testKey", false);
     ASSERT_FALSE(value.GetBool("testKey"));
 
     value.AsBool(true);
     ASSERT_TRUE(value.AsBool());
-
-    AWS_END_MEMORY_TEST
 }
 
 TEST(JsonSerializerTest, TestJsonArrayValue)
 {
-    AWS_BEGIN_MEMORY_TEST(16, 10)
-
     JsonValue value;
     Array<JsonValue> arrayValue(2);
     JsonValue value1;
@@ -250,14 +203,10 @@ TEST(JsonSerializerTest, TestJsonArrayValue)
     ASSERT_EQ(2uL, returnedValues.GetLength());
     ASSERT_EQ("testValue3", returnedValues[0].AsString());
     ASSERT_EQ("testValue4", returnedValues[1].AsString());
-
-    AWS_END_MEMORY_TEST
 }
 
 TEST(JsonSerializerTest, TestJsonObjectValue)
 {
-    AWS_BEGIN_MEMORY_TEST(16, 10)
-
     JsonValue value;
     Array<JsonValue> arrayValue(2);
     JsonValue value1;
@@ -284,15 +233,11 @@ TEST(JsonSerializerTest, TestJsonObjectValue)
     ASSERT_EQ("testValue1", object.AsObject().GetArray("testArray")[0].AsString());
     ASSERT_EQ("testValue2", object.AsObject().GetArray("testArray")[1].AsString());
     ASSERT_EQ(10, object.AsObject().GetInteger("testIntegerKey"));
-    ASSERT_FALSE(object.AsObject().GetBool("testBoolKey"));
-
-    AWS_END_MEMORY_TEST
+    ASSERT_FALSE(object.AsObject().GetBool("testBoolKey"));    
 }
 
 TEST(JsonSerializerTest, TestJsonCompactSerializeObject)
 {
-    AWS_BEGIN_MEMORY_TEST(16, 10)
-
     JsonValue value(jsonValue);
 
     Aws::String outputString = value.WriteCompact();
@@ -311,15 +256,11 @@ TEST(JsonSerializerTest, TestJsonCompactSerializeObject)
     else
     {
         GTEST_NONFATAL_FAILURE_(reparsedValue.GetErrorMessage().c_str());
-    }
-
-    AWS_END_MEMORY_TEST
+    }    
 }
 
 TEST(JsonSerializerTest, TestJsonStyledSerializeObject)
 {
-    AWS_BEGIN_MEMORY_TEST(16, 10)
-
     JsonValue value(jsonValue);
 
     Aws::String outputString = value.WriteReadable();
@@ -339,14 +280,10 @@ TEST(JsonSerializerTest, TestJsonStyledSerializeObject)
     {
         GTEST_NONFATAL_FAILURE_(reparsedValue.GetErrorMessage().c_str());
     }
-
-    AWS_END_MEMORY_TEST
 }
 
 TEST(JsonSerializerTest, TestNullSanity)
 {
-    AWS_BEGIN_MEMORY_TEST(16, 10)
-
     JsonValue value;
     Aws::String nullStrValue = value.WriteReadable(false);
     ASSERT_EQ("null\n", nullStrValue);
@@ -355,7 +292,5 @@ TEST(JsonSerializerTest, TestNullSanity)
     ASSERT_EQ(0uL, value.AsArray().GetLength());
     Aws::String emptyObjValue = value.AsObject().WriteReadable();
     ASSERT_EQ("{\n}\n", emptyObjValue);
-
-    AWS_END_MEMORY_TEST
 }
 

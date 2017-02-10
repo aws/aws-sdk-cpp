@@ -34,7 +34,9 @@ namespace Model
 
   /**
    * <p>A list that contains the status of the delivery of the configuration stream
-   * notification to the Amazon SNS topic.</p>
+   * notification to the Amazon SNS topic.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/ConfigStreamDeliveryInfo">AWS
+   * API Reference</a></p>
    */
   class AWS_CONFIGSERVICE_API ConfigStreamDeliveryInfo
   {

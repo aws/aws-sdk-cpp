@@ -27,7 +27,10 @@ namespace Model
 {
 
   /**
-   * <p>Represents the input ofa put repository triggers operation. </p>
+   * <p>Represents the input ofa put repository triggers operation.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/PutRepositoryTriggersInput">AWS
+   * API Reference</a></p>
    */
   class AWS_CODECOMMIT_API PutRepositoryTriggersRequest : public CodeCommitRequest
   {
@@ -38,79 +41,79 @@ namespace Model
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
     /**
-     * <p>The name of the repository where you want to create or update the trigger.
-     * </p>
+     * <p>The name of the repository where you want to create or update the
+     * trigger.</p>
      */
     inline const Aws::String& GetRepositoryName() const{ return m_repositoryName; }
 
     /**
-     * <p>The name of the repository where you want to create or update the trigger.
-     * </p>
+     * <p>The name of the repository where you want to create or update the
+     * trigger.</p>
      */
     inline void SetRepositoryName(const Aws::String& value) { m_repositoryNameHasBeenSet = true; m_repositoryName = value; }
 
     /**
-     * <p>The name of the repository where you want to create or update the trigger.
-     * </p>
+     * <p>The name of the repository where you want to create or update the
+     * trigger.</p>
      */
     inline void SetRepositoryName(Aws::String&& value) { m_repositoryNameHasBeenSet = true; m_repositoryName = value; }
 
     /**
-     * <p>The name of the repository where you want to create or update the trigger.
-     * </p>
+     * <p>The name of the repository where you want to create or update the
+     * trigger.</p>
      */
     inline void SetRepositoryName(const char* value) { m_repositoryNameHasBeenSet = true; m_repositoryName.assign(value); }
 
     /**
-     * <p>The name of the repository where you want to create or update the trigger.
-     * </p>
+     * <p>The name of the repository where you want to create or update the
+     * trigger.</p>
      */
     inline PutRepositoryTriggersRequest& WithRepositoryName(const Aws::String& value) { SetRepositoryName(value); return *this;}
 
     /**
-     * <p>The name of the repository where you want to create or update the trigger.
-     * </p>
+     * <p>The name of the repository where you want to create or update the
+     * trigger.</p>
      */
     inline PutRepositoryTriggersRequest& WithRepositoryName(Aws::String&& value) { SetRepositoryName(value); return *this;}
 
     /**
-     * <p>The name of the repository where you want to create or update the trigger.
-     * </p>
+     * <p>The name of the repository where you want to create or update the
+     * trigger.</p>
      */
     inline PutRepositoryTriggersRequest& WithRepositoryName(const char* value) { SetRepositoryName(value); return *this;}
 
     /**
-     * <p>The JSON block of configuration information for each trigger. </p>
+     * <p>The JSON block of configuration information for each trigger.</p>
      */
     inline const Aws::Vector<RepositoryTrigger>& GetTriggers() const{ return m_triggers; }
 
     /**
-     * <p>The JSON block of configuration information for each trigger. </p>
+     * <p>The JSON block of configuration information for each trigger.</p>
      */
     inline void SetTriggers(const Aws::Vector<RepositoryTrigger>& value) { m_triggersHasBeenSet = true; m_triggers = value; }
 
     /**
-     * <p>The JSON block of configuration information for each trigger. </p>
+     * <p>The JSON block of configuration information for each trigger.</p>
      */
     inline void SetTriggers(Aws::Vector<RepositoryTrigger>&& value) { m_triggersHasBeenSet = true; m_triggers = value; }
 
     /**
-     * <p>The JSON block of configuration information for each trigger. </p>
+     * <p>The JSON block of configuration information for each trigger.</p>
      */
     inline PutRepositoryTriggersRequest& WithTriggers(const Aws::Vector<RepositoryTrigger>& value) { SetTriggers(value); return *this;}
 
     /**
-     * <p>The JSON block of configuration information for each trigger. </p>
+     * <p>The JSON block of configuration information for each trigger.</p>
      */
     inline PutRepositoryTriggersRequest& WithTriggers(Aws::Vector<RepositoryTrigger>&& value) { SetTriggers(value); return *this;}
 
     /**
-     * <p>The JSON block of configuration information for each trigger. </p>
+     * <p>The JSON block of configuration information for each trigger.</p>
      */
     inline PutRepositoryTriggersRequest& AddTriggers(const RepositoryTrigger& value) { m_triggersHasBeenSet = true; m_triggers.push_back(value); return *this; }
 
     /**
-     * <p>The JSON block of configuration information for each trigger. </p>
+     * <p>The JSON block of configuration information for each trigger.</p>
      */
     inline PutRepositoryTriggersRequest& AddTriggers(RepositoryTrigger&& value) { m_triggersHasBeenSet = true; m_triggers.push_back(value); return *this; }
 

@@ -55,7 +55,7 @@ Aws::String DescribeReservedInstancesOfferingsRequest::SerializePayload() const
   ss << "Action=DescribeReservedInstancesOfferings&";
   if(m_dryRunHasBeenSet)
   {
-    ss << "DryRun=" << m_dryRun << "&";
+    ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
   if(m_reservedInstancesOfferingIdsHasBeenSet)
@@ -116,7 +116,7 @@ Aws::String DescribeReservedInstancesOfferingsRequest::SerializePayload() const
 
   if(m_includeMarketplaceHasBeenSet)
   {
-    ss << "IncludeMarketplace=" << m_includeMarketplace << "&";
+    ss << "IncludeMarketplace=" << std::boolalpha << m_includeMarketplace << "&";
   }
 
   if(m_minDurationHasBeenSet)
@@ -139,7 +139,7 @@ Aws::String DescribeReservedInstancesOfferingsRequest::SerializePayload() const
     ss << "OfferingClass=" << OfferingClassTypeMapper::GetNameForOfferingClassType(m_offeringClass) << "&";
   }
 
-  ss << "Version=2016-09-15";
+  ss << "Version=2016-11-15";
   return ss.str();
 }
 

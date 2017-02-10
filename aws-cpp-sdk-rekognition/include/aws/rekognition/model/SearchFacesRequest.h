@@ -35,37 +35,37 @@ namespace Model
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
     /**
-     * <p>ID of the collection to search.</p>
+     * <p>ID of the collection the face belongs to.</p>
      */
     inline const Aws::String& GetCollectionId() const{ return m_collectionId; }
 
     /**
-     * <p>ID of the collection to search.</p>
+     * <p>ID of the collection the face belongs to.</p>
      */
     inline void SetCollectionId(const Aws::String& value) { m_collectionIdHasBeenSet = true; m_collectionId = value; }
 
     /**
-     * <p>ID of the collection to search.</p>
+     * <p>ID of the collection the face belongs to.</p>
      */
     inline void SetCollectionId(Aws::String&& value) { m_collectionIdHasBeenSet = true; m_collectionId = value; }
 
     /**
-     * <p>ID of the collection to search.</p>
+     * <p>ID of the collection the face belongs to.</p>
      */
     inline void SetCollectionId(const char* value) { m_collectionIdHasBeenSet = true; m_collectionId.assign(value); }
 
     /**
-     * <p>ID of the collection to search.</p>
+     * <p>ID of the collection the face belongs to.</p>
      */
     inline SearchFacesRequest& WithCollectionId(const Aws::String& value) { SetCollectionId(value); return *this;}
 
     /**
-     * <p>ID of the collection to search.</p>
+     * <p>ID of the collection the face belongs to.</p>
      */
     inline SearchFacesRequest& WithCollectionId(Aws::String&& value) { SetCollectionId(value); return *this;}
 
     /**
-     * <p>ID of the collection to search.</p>
+     * <p>ID of the collection the face belongs to.</p>
      */
     inline SearchFacesRequest& WithCollectionId(const char* value) { SetCollectionId(value); return *this;}
 
@@ -105,20 +105,20 @@ namespace Model
     inline SearchFacesRequest& WithFaceId(const char* value) { SetFaceId(value); return *this;}
 
     /**
-     * <p>Maximum number of faces to return. The API will return the maximum number of
-     * faces with the highest confidence in the match.</p>
+     * <p>Maximum number of faces to return. The operation returns the maximum number
+     * of faces with the highest confidence in the match.</p>
      */
     inline int GetMaxFaces() const{ return m_maxFaces; }
 
     /**
-     * <p>Maximum number of faces to return. The API will return the maximum number of
-     * faces with the highest confidence in the match.</p>
+     * <p>Maximum number of faces to return. The operation returns the maximum number
+     * of faces with the highest confidence in the match.</p>
      */
     inline void SetMaxFaces(int value) { m_maxFacesHasBeenSet = true; m_maxFaces = value; }
 
     /**
-     * <p>Maximum number of faces to return. The API will return the maximum number of
-     * faces with the highest confidence in the match.</p>
+     * <p>Maximum number of faces to return. The operation returns the maximum number
+     * of faces with the highest confidence in the match.</p>
      */
     inline SearchFacesRequest& WithMaxFaces(int value) { SetMaxFaces(value); return *this;}
 

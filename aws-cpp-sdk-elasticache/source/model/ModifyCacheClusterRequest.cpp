@@ -130,7 +130,7 @@ Aws::String ModifyCacheClusterRequest::SerializePayload() const
 
   if(m_applyImmediatelyHasBeenSet)
   {
-    ss << "ApplyImmediately=" << m_applyImmediately << "&";
+    ss << "ApplyImmediately=" << std::boolalpha << m_applyImmediately << "&";
   }
 
   if(m_engineVersionHasBeenSet)
@@ -140,7 +140,7 @@ Aws::String ModifyCacheClusterRequest::SerializePayload() const
 
   if(m_autoMinorVersionUpgradeHasBeenSet)
   {
-    ss << "AutoMinorVersionUpgrade=" << m_autoMinorVersionUpgrade << "&";
+    ss << "AutoMinorVersionUpgrade=" << std::boolalpha << m_autoMinorVersionUpgrade << "&";
   }
 
   if(m_snapshotRetentionLimitHasBeenSet)

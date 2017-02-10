@@ -19,6 +19,7 @@
 #include <aws/lambda/model/Runtime.h>
 #include <aws/lambda/model/FunctionCode.h>
 #include <aws/lambda/model/VpcConfig.h>
+#include <aws/lambda/model/DeadLetterConfig.h>
 #include <aws/lambda/model/Environment.h>
 
 namespace Aws
@@ -29,7 +30,9 @@ namespace Model
 {
 
   /**
-   * <p/>
+   * <p/><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/CreateFunctionRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_LAMBDA_API CreateFunctionRequest : public LambdaRequest
   {
@@ -40,91 +43,106 @@ namespace Model
     /**
      * <p>The name you want to assign to the function you are uploading. The function
      * names appear in the console and are returned in the <a>ListFunctions</a> API.
-     * Function names are used to specify functions to other AWS Lambda APIs, such as
-     * <a>Invoke</a>. </p>
+     * Function names are used to specify functions to other AWS Lambda API operations,
+     * such as <a>Invoke</a>. </p>
      */
     inline const Aws::String& GetFunctionName() const{ return m_functionName; }
 
     /**
      * <p>The name you want to assign to the function you are uploading. The function
      * names appear in the console and are returned in the <a>ListFunctions</a> API.
-     * Function names are used to specify functions to other AWS Lambda APIs, such as
-     * <a>Invoke</a>. </p>
+     * Function names are used to specify functions to other AWS Lambda API operations,
+     * such as <a>Invoke</a>. </p>
      */
     inline void SetFunctionName(const Aws::String& value) { m_functionNameHasBeenSet = true; m_functionName = value; }
 
     /**
      * <p>The name you want to assign to the function you are uploading. The function
      * names appear in the console and are returned in the <a>ListFunctions</a> API.
-     * Function names are used to specify functions to other AWS Lambda APIs, such as
-     * <a>Invoke</a>. </p>
+     * Function names are used to specify functions to other AWS Lambda API operations,
+     * such as <a>Invoke</a>. </p>
      */
     inline void SetFunctionName(Aws::String&& value) { m_functionNameHasBeenSet = true; m_functionName = value; }
 
     /**
      * <p>The name you want to assign to the function you are uploading. The function
      * names appear in the console and are returned in the <a>ListFunctions</a> API.
-     * Function names are used to specify functions to other AWS Lambda APIs, such as
-     * <a>Invoke</a>. </p>
+     * Function names are used to specify functions to other AWS Lambda API operations,
+     * such as <a>Invoke</a>. </p>
      */
     inline void SetFunctionName(const char* value) { m_functionNameHasBeenSet = true; m_functionName.assign(value); }
 
     /**
      * <p>The name you want to assign to the function you are uploading. The function
      * names appear in the console and are returned in the <a>ListFunctions</a> API.
-     * Function names are used to specify functions to other AWS Lambda APIs, such as
-     * <a>Invoke</a>. </p>
+     * Function names are used to specify functions to other AWS Lambda API operations,
+     * such as <a>Invoke</a>. </p>
      */
     inline CreateFunctionRequest& WithFunctionName(const Aws::String& value) { SetFunctionName(value); return *this;}
 
     /**
      * <p>The name you want to assign to the function you are uploading. The function
      * names appear in the console and are returned in the <a>ListFunctions</a> API.
-     * Function names are used to specify functions to other AWS Lambda APIs, such as
-     * <a>Invoke</a>. </p>
+     * Function names are used to specify functions to other AWS Lambda API operations,
+     * such as <a>Invoke</a>. </p>
      */
     inline CreateFunctionRequest& WithFunctionName(Aws::String&& value) { SetFunctionName(value); return *this;}
 
     /**
      * <p>The name you want to assign to the function you are uploading. The function
      * names appear in the console and are returned in the <a>ListFunctions</a> API.
-     * Function names are used to specify functions to other AWS Lambda APIs, such as
-     * <a>Invoke</a>. </p>
+     * Function names are used to specify functions to other AWS Lambda API operations,
+     * such as <a>Invoke</a>. </p>
      */
     inline CreateFunctionRequest& WithFunctionName(const char* value) { SetFunctionName(value); return *this;}
 
     /**
      * <p>The runtime environment for the Lambda function you are uploading.</p> <p>To
      * use the Node.js runtime v4.3, set the value to "nodejs4.3". To use earlier
-     * runtime (v0.10.42), set the value to "nodejs".</p>
+     * runtime (v0.10.42), set the value to "nodejs".</p> <note> <p>You can no longer
+     * create functions using the v0.10.42 runtime version as of November, 2016.
+     * Existing functions will be supported until early 2017, but we recommend you
+     * migrate them to nodejs4.3 runtime version as soon as possible.</p> </note>
      */
     inline const Runtime& GetRuntime() const{ return m_runtime; }
 
     /**
      * <p>The runtime environment for the Lambda function you are uploading.</p> <p>To
      * use the Node.js runtime v4.3, set the value to "nodejs4.3". To use earlier
-     * runtime (v0.10.42), set the value to "nodejs".</p>
+     * runtime (v0.10.42), set the value to "nodejs".</p> <note> <p>You can no longer
+     * create functions using the v0.10.42 runtime version as of November, 2016.
+     * Existing functions will be supported until early 2017, but we recommend you
+     * migrate them to nodejs4.3 runtime version as soon as possible.</p> </note>
      */
     inline void SetRuntime(const Runtime& value) { m_runtimeHasBeenSet = true; m_runtime = value; }
 
     /**
      * <p>The runtime environment for the Lambda function you are uploading.</p> <p>To
      * use the Node.js runtime v4.3, set the value to "nodejs4.3". To use earlier
-     * runtime (v0.10.42), set the value to "nodejs".</p>
+     * runtime (v0.10.42), set the value to "nodejs".</p> <note> <p>You can no longer
+     * create functions using the v0.10.42 runtime version as of November, 2016.
+     * Existing functions will be supported until early 2017, but we recommend you
+     * migrate them to nodejs4.3 runtime version as soon as possible.</p> </note>
      */
     inline void SetRuntime(Runtime&& value) { m_runtimeHasBeenSet = true; m_runtime = value; }
 
     /**
      * <p>The runtime environment for the Lambda function you are uploading.</p> <p>To
      * use the Node.js runtime v4.3, set the value to "nodejs4.3". To use earlier
-     * runtime (v0.10.42), set the value to "nodejs".</p>
+     * runtime (v0.10.42), set the value to "nodejs".</p> <note> <p>You can no longer
+     * create functions using the v0.10.42 runtime version as of November, 2016.
+     * Existing functions will be supported until early 2017, but we recommend you
+     * migrate them to nodejs4.3 runtime version as soon as possible.</p> </note>
      */
     inline CreateFunctionRequest& WithRuntime(const Runtime& value) { SetRuntime(value); return *this;}
 
     /**
      * <p>The runtime environment for the Lambda function you are uploading.</p> <p>To
      * use the Node.js runtime v4.3, set the value to "nodejs4.3". To use earlier
-     * runtime (v0.10.42), set the value to "nodejs".</p>
+     * runtime (v0.10.42), set the value to "nodejs".</p> <note> <p>You can no longer
+     * create functions using the v0.10.42 runtime version as of November, 2016.
+     * Existing functions will be supported until early 2017, but we recommend you
+     * migrate them to nodejs4.3 runtime version as soon as possible.</p> </note>
      */
     inline CreateFunctionRequest& WithRuntime(Runtime&& value) { SetRuntime(value); return *this;}
 
@@ -437,6 +455,36 @@ namespace Model
      */
     inline CreateFunctionRequest& WithVpcConfig(VpcConfig&& value) { SetVpcConfig(value); return *this;}
 
+    /**
+     * <p>The parent object that contains the target Amazon Resource Name (ARN) of an
+     * Amazon SQS queue or Amazon SNS topic. </p>
+     */
+    inline const DeadLetterConfig& GetDeadLetterConfig() const{ return m_deadLetterConfig; }
+
+    /**
+     * <p>The parent object that contains the target Amazon Resource Name (ARN) of an
+     * Amazon SQS queue or Amazon SNS topic. </p>
+     */
+    inline void SetDeadLetterConfig(const DeadLetterConfig& value) { m_deadLetterConfigHasBeenSet = true; m_deadLetterConfig = value; }
+
+    /**
+     * <p>The parent object that contains the target Amazon Resource Name (ARN) of an
+     * Amazon SQS queue or Amazon SNS topic. </p>
+     */
+    inline void SetDeadLetterConfig(DeadLetterConfig&& value) { m_deadLetterConfigHasBeenSet = true; m_deadLetterConfig = value; }
+
+    /**
+     * <p>The parent object that contains the target Amazon Resource Name (ARN) of an
+     * Amazon SQS queue or Amazon SNS topic. </p>
+     */
+    inline CreateFunctionRequest& WithDeadLetterConfig(const DeadLetterConfig& value) { SetDeadLetterConfig(value); return *this;}
+
+    /**
+     * <p>The parent object that contains the target Amazon Resource Name (ARN) of an
+     * Amazon SQS queue or Amazon SNS topic. </p>
+     */
+    inline CreateFunctionRequest& WithDeadLetterConfig(DeadLetterConfig&& value) { SetDeadLetterConfig(value); return *this;}
+
     
     inline const Environment& GetEnvironment() const{ return m_environment; }
 
@@ -522,6 +570,8 @@ namespace Model
     bool m_publishHasBeenSet;
     VpcConfig m_vpcConfig;
     bool m_vpcConfigHasBeenSet;
+    DeadLetterConfig m_deadLetterConfig;
+    bool m_deadLetterConfigHasBeenSet;
     Environment m_environment;
     bool m_environmentHasBeenSet;
     Aws::String m_kMSKeyArn;

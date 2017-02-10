@@ -116,6 +116,16 @@ void CloudSearchClient::init(const ClientConfiguration& config)
   m_uri = ss.str();
 }
 
+Aws::String CloudSearchClient::ConvertRequestToPresignedUrl(const AmazonSerializableWebServiceRequest& requestToConvert, const char* region) const
+{
+  Aws::StringStream ss;
+  ss << "https://" << CloudSearchEndpoint::ForRegion(region);
+  ss << "?" << requestToConvert.SerializePayload();
+
+  URI uri(ss.str());
+  return GeneratePresignedUrl(uri, HttpMethod::HTTP_GET, region, 3600);
+}
+
 BuildSuggestersOutcome CloudSearchClient::BuildSuggesters(const BuildSuggestersRequest& request) const
 {
   Aws::StringStream ss;
@@ -907,4 +917,6 @@ void CloudSearchClient::UpdateServiceAccessPoliciesAsyncHelper(const UpdateServi
 {
   handler(this, request, UpdateServiceAccessPolicies(request), context);
 }
+
+
 

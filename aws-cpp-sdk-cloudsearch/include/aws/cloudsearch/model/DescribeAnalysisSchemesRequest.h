@@ -31,7 +31,10 @@ namespace Model
    * domain you want to describe. To limit the response to particular analysis
    * schemes, specify the names of the analysis schemes you want to describe. To show
    * the active configuration and exclude any pending changes, set the
-   * <code>Deployed</code> option to <code>true</code>. </p>
+   * <code>Deployed</code> option to <code>true</code>. </p><p><h3>See Also:</h3>  
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/DescribeAnalysisSchemesRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_CLOUDSEARCH_API DescribeAnalysisSchemesRequest : public CloudSearchRequest
   {

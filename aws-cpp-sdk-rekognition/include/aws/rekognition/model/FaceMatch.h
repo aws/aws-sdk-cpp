@@ -32,7 +32,9 @@ namespace Model
 
   /**
    * <p>Provides face metadata. In addition, it also provides the confidence in the
-   * match of this face with the input face.</p>
+   * match of this face with the input face.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/FaceMatch">AWS
+   * API Reference</a></p>
    */
   class AWS_REKOGNITION_API FaceMatch
   {

@@ -41,7 +41,7 @@ Aws::String AuthorizeSecurityGroupEgressRequest::SerializePayload() const
   ss << "Action=AuthorizeSecurityGroupEgress&";
   if(m_dryRunHasBeenSet)
   {
-    ss << "DryRun=" << m_dryRun << "&";
+    ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
   if(m_groupIdHasBeenSet)
@@ -89,7 +89,7 @@ Aws::String AuthorizeSecurityGroupEgressRequest::SerializePayload() const
     }
   }
 
-  ss << "Version=2016-09-15";
+  ss << "Version=2016-11-15";
   return ss.str();
 }
 

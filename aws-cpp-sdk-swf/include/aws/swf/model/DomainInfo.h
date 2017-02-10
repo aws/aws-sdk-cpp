@@ -32,7 +32,9 @@ namespace Model
 {
 
   /**
-   * <p>Contains general information about a domain.</p>
+   * <p>Contains general information about a domain.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/DomainInfo">AWS API
+   * Reference</a></p>
    */
   class AWS_SWF_API DomainInfo
   {

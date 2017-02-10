@@ -102,7 +102,7 @@ void RouteTableAssociation::OutputToStream(Aws::OStream& oStream, const char* lo
 
   if(m_mainHasBeenSet)
   {
-      oStream << location << index << locationValue << ".Main=" << m_main << "&";
+      oStream << location << index << locationValue << ".Main=" << std::boolalpha << m_main << "&";
   }
 
 }
@@ -123,7 +123,7 @@ void RouteTableAssociation::OutputToStream(Aws::OStream& oStream, const char* lo
   }
   if(m_mainHasBeenSet)
   {
-      oStream << location << ".Main=" << m_main << "&";
+      oStream << location << ".Main=" << std::boolalpha << m_main << "&";
   }
 }
 

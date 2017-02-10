@@ -31,7 +31,9 @@ namespace Model
 {
 
   /**
-   * <p>Options associated with your audio codec.</p>
+   * <p>Options associated with your audio codec.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/AudioCodecOptions">AWS
+   * API Reference</a></p>
    */
   class AWS_ELASTICTRANSCODER_API AudioCodecOptions
   {

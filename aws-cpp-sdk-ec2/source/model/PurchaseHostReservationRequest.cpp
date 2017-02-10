@@ -43,7 +43,7 @@ Aws::String PurchaseHostReservationRequest::SerializePayload() const
     unsigned hostIdSetCount = 1;
     for(auto& item : m_hostIdSet)
     {
-      ss << "HostIdSet.member." << hostIdSetCount << "="
+      ss << "HostIdSet." << hostIdSetCount << "="
           << StringUtils::URLEncode(item.c_str()) << "&";
       hostIdSetCount++;
     }
@@ -64,7 +64,7 @@ Aws::String PurchaseHostReservationRequest::SerializePayload() const
     ss << "ClientToken=" << StringUtils::URLEncode(m_clientToken.c_str()) << "&";
   }
 
-  ss << "Version=2016-09-15";
+  ss << "Version=2016-11-15";
   return ss.str();
 }
 

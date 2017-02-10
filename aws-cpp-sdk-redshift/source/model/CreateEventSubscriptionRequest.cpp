@@ -80,7 +80,7 @@ Aws::String CreateEventSubscriptionRequest::SerializePayload() const
 
   if(m_enabledHasBeenSet)
   {
-    ss << "Enabled=" << m_enabled << "&";
+    ss << "Enabled=" << std::boolalpha << m_enabled << "&";
   }
 
   if(m_tagsHasBeenSet)

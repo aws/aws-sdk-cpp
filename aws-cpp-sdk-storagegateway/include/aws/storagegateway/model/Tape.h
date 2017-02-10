@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/storagegateway/StorageGateway_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/DateTime.h>
 
 namespace Aws
 {
@@ -31,7 +32,9 @@ namespace Model
 {
 
   /**
-   * <p>Describes a virtual tape object.</p>
+   * <p>Describes a virtual tape object.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/Tape">AWS
+   * API Reference</a></p>
    */
   class AWS_STORAGEGATEWAY_API Tape
   {
@@ -110,6 +113,21 @@ namespace Model
      * <p>The barcode that identifies a specific virtual tape.</p>
      */
     inline Tape& WithTapeBarcode(const char* value) { SetTapeBarcode(value); return *this;}
+
+    
+    inline const Aws::Utils::DateTime& GetTapeCreatedDate() const{ return m_tapeCreatedDate; }
+
+    
+    inline void SetTapeCreatedDate(const Aws::Utils::DateTime& value) { m_tapeCreatedDateHasBeenSet = true; m_tapeCreatedDate = value; }
+
+    
+    inline void SetTapeCreatedDate(Aws::Utils::DateTime&& value) { m_tapeCreatedDateHasBeenSet = true; m_tapeCreatedDate = value; }
+
+    
+    inline Tape& WithTapeCreatedDate(const Aws::Utils::DateTime& value) { SetTapeCreatedDate(value); return *this;}
+
+    
+    inline Tape& WithTapeCreatedDate(Aws::Utils::DateTime&& value) { SetTapeCreatedDate(value); return *this;}
 
     /**
      * <p>The size, in bytes, of the virtual tape.</p>
@@ -229,6 +247,8 @@ namespace Model
     bool m_tapeARNHasBeenSet;
     Aws::String m_tapeBarcode;
     bool m_tapeBarcodeHasBeenSet;
+    Aws::Utils::DateTime m_tapeCreatedDate;
+    bool m_tapeCreatedDateHasBeenSet;
     long long m_tapeSizeInBytes;
     bool m_tapeSizeInBytesHasBeenSet;
     Aws::String m_tapeStatus;

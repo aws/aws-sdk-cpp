@@ -34,7 +34,9 @@ namespace Model
   /**
    * <p>Indicates whether an AWS Config rule is compliant. A rule is compliant if all
    * of the resources that the rule evaluated comply with it, and it is noncompliant
-   * if any of these resources do not comply.</p>
+   * if any of these resources do not comply.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/ComplianceByConfigRule">AWS
+   * API Reference</a></p>
    */
   class AWS_CONFIGSERVICE_API ComplianceByConfigRule
   {

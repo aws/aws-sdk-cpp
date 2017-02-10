@@ -25,7 +25,9 @@ namespace Model
 {
 
   /**
-   * <p>Represents the request to sign out all devices.</p>
+   * <p>Represents the request to sign out all devices.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/GlobalSignOutRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_COGNITOIDENTITYPROVIDER_API GlobalSignOutRequest : public CognitoIdentityProviderRequest
   {

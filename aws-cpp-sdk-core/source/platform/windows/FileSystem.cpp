@@ -17,7 +17,8 @@
 #include <aws/core/platform/Environment.h>
 #include <aws/core/utils/logging/LogMacros.h>
 #include <aws/core/utils/StringUtils.h>
-
+#include <cassert>
+#include <iostream>
 #include <Userenv.h>
 
 #pragma warning( disable : 4996)
@@ -28,6 +29,110 @@ namespace FileSystem
 {
 
 static const char* FILE_SYSTEM_UTILS_LOG_TAG = "FileSystem";
+
+class User32Directory : public Directory
+{
+public:
+    User32Directory(const Aws::String& path, const Aws::String& relativePath) : Directory(path, relativePath), m_find(INVALID_HANDLE_VALUE), m_lastError(0)
+    {
+        WIN32_FIND_DATAA ffd;
+        AWS_LOGSTREAM_TRACE(FILE_SYSTEM_UTILS_LOG_TAG, "Entering directory " << m_directoryEntry.path);
+
+        m_find = FindFirstFileA(m_directoryEntry.path.c_str(), &ffd);
+        if (m_find != INVALID_HANDLE_VALUE)
+        {
+            m_directoryEntry = ParseFileInfo(ffd, false);
+            FindClose(m_find);
+            auto seachPath = Join(m_directoryEntry.path, "*");
+            m_find = FindFirstFileA(seachPath.c_str(), &m_ffd);
+        }
+        else
+        {
+            AWS_LOGSTREAM_ERROR(FILE_SYSTEM_UTILS_LOG_TAG, "Could not load directory " << m_directoryEntry.path << " with error code " << GetLastError());
+        }
+    }
+
+    ~User32Directory()
+    {
+        if (m_find != INVALID_HANDLE_VALUE)
+        {
+            FindClose(m_find);
+        }
+    }
+
+	operator bool() const override { return m_directoryEntry.operator bool() && m_find != INVALID_HANDLE_VALUE; }
+
+    DirectoryEntry Next() override
+    {
+        assert(m_find != INVALID_HANDLE_VALUE);
+        DirectoryEntry entry;
+        bool invalidEntry = true;
+
+        while(invalidEntry && !m_lastError)
+        {
+            //due to the way the FindFirstFile api works, 
+            //the first entry will already be loaded by the time we get here.
+            entry = ParseFileInfo(m_ffd, true);
+
+            Aws::String fileName = m_ffd.cFileName;
+            if (fileName != ".." && fileName != ".")
+            {
+                AWS_LOGSTREAM_TRACE(FILE_SYSTEM_UTILS_LOG_TAG, "Found entry " << entry.path);
+                invalidEntry = false;
+            }
+            else
+            {
+                entry.fileType = FileType::None;
+                AWS_LOGSTREAM_TRACE(FILE_SYSTEM_UTILS_LOG_TAG, "Skipping . or .. entries.");
+            }
+
+            if(!FindNextFileA(m_find, &m_ffd))
+            {
+                m_lastError = GetLastError();
+                AWS_LOGSTREAM_ERROR(FILE_SYSTEM_UTILS_LOG_TAG, "Could not fetch next entry from " << m_directoryEntry.path << " with error code " << m_lastError);
+                break;
+            }            
+        }
+       
+        return entry;
+    }
+
+private:
+    DirectoryEntry ParseFileInfo(WIN32_FIND_DATAA& ffd, bool computePath)
+    {
+        DirectoryEntry entry;
+        LARGE_INTEGER fileSize;
+        fileSize.HighPart = ffd.nFileSizeHigh;
+        fileSize.LowPart = ffd.nFileSizeLow;
+        entry.fileSize = static_cast<int64_t>(fileSize.QuadPart);
+
+        if (ffd.dwFileAttributes & FILE_ATTRIBUTE_DIRECTORY)
+        {
+            entry.fileType = FileType::Directory;
+        }
+        else
+        {
+            entry.fileType = FileType::File;
+        }
+
+        if(computePath)
+        {
+            entry.path = Join(m_directoryEntry.path, ffd.cFileName);
+            entry.relativePath = m_directoryEntry.relativePath.empty() ? ffd.cFileName : Join(m_directoryEntry.relativePath, ffd.cFileName);
+        }
+        else
+        {
+            entry.path = m_directoryEntry.path;
+            entry.relativePath = m_directoryEntry.relativePath;
+        }
+
+        return entry;
+    }
+
+    HANDLE m_find;
+    WIN32_FIND_DATAA m_ffd;
+    DWORD m_lastError;
+};
 
 Aws::String GetHomeDirectory()
 {
@@ -66,6 +171,28 @@ Aws::String GetHomeDirectory()
     }
     
     return retVal;
+}
+
+Aws::String GetExecutableDirectory()
+{
+    static const unsigned long long bufferSize = 256;
+    char buffer[bufferSize];
+
+    memset(buffer, 0, bufferSize);
+
+    if (GetModuleFileNameA(nullptr, buffer, static_cast<DWORD>(bufferSize)))
+    {
+        Aws::String bufferStr(buffer);
+        auto fileNameStart = bufferStr.find_last_of(PATH_DELIM);
+        if (fileNameStart != std::string::npos)
+        {
+            bufferStr = bufferStr.substr(0, fileNameStart);
+        }
+
+        return bufferStr;
+    }
+
+    return "";
 }
 
 bool CreateDirectoryIfNotExists(const char* path)
@@ -119,6 +246,35 @@ bool RelocateFileOrDirectory(const char* from, const char* to)
     }
 }
 
+bool RemoveDirectoryIfExists(const char* path)
+{
+    AWS_LOGSTREAM_INFO(FILE_SYSTEM_UTILS_LOG_TAG, "Removing directory at " << path);
+
+    if(RemoveDirectoryA(path))
+    {
+        AWS_LOGSTREAM_DEBUG(FILE_SYSTEM_UTILS_LOG_TAG,  "The remove operation of file at " << path << " Succeeded.");
+        return true;
+    }
+    else
+    {
+        int errorCode = GetLastError();
+        if (errorCode == ERROR_DIR_NOT_EMPTY)
+        {
+            AWS_LOGSTREAM_ERROR(FILE_SYSTEM_UTILS_LOG_TAG, "The remove operation of file at " << path << " failed. with error code because it was not empty.");
+        }
+
+        else if(errorCode == ERROR_DIRECTORY)
+        {
+            AWS_LOGSTREAM_DEBUG(FILE_SYSTEM_UTILS_LOG_TAG, "The deletion of directory at " << path << " failed because it doesn't exist.");
+            return true;
+
+        }
+
+        AWS_LOGSTREAM_DEBUG(FILE_SYSTEM_UTILS_LOG_TAG,  "The remove operation of file at " << path << " failed. with error code " << errorCode);
+        return false;
+    }
+}
+
 Aws::String CreateTempFilePath()
 {
 #ifdef _MSC_VER
@@ -144,6 +300,11 @@ Aws::String CreateTempFilePath()
 
 
     return s_tempName;
+}
+
+std::shared_ptr<Directory> OpenDirectory(const Aws::String& path, const Aws::String& relativePath)
+{
+    return Aws::MakeShared<User32Directory>(FILE_SYSTEM_UTILS_LOG_TAG, path, relativePath);
 }
 
 } // namespace FileSystem

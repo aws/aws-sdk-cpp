@@ -35,7 +35,9 @@ namespace Model
 
   /**
    * <p>Describes a parameter used to set up an EBS volume in a block device
-   * mapping.</p>
+   * mapping.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EbsInstanceBlockDevice">AWS
+   * API Reference</a></p>
    */
   class AWS_EC2_API EbsInstanceBlockDevice
   {

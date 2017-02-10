@@ -33,7 +33,9 @@ namespace Model
 {
 
   /**
-   * <p>Describes a subnet.</p>
+   * <p>Describes a subnet.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/Subnet">AWS API
+   * Reference</a></p>
    */
   class AWS_REDSHIFT_API Subnet
   {
