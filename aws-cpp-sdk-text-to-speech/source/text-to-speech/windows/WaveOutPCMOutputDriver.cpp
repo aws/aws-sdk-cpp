@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -58,8 +58,7 @@ namespace Aws
         }
 
         bool WaveOutPCMOutputDriver::WriteBufferToDevice(const unsigned char* buffer, size_t size)
-        {
-            std::lock_guard<std::mutex> m(m_driverLock);
+        {            
             InitDevice();
 
             WAVEHDR* waveHdr = Aws::New<WAVEHDR>(CLASS_TAG);
@@ -71,19 +70,23 @@ namespace Aws
             waveHdr->dwLoops = 0;
             waveHdr->dwUser = NULL;
 
-            auto res = waveOutPrepareHeader(m_waveOut, waveHdr, sizeof(WAVEHDR));
-            if (res != MMSYSERR_NOERROR)
-            {
-                AWS_LOGSTREAM_ERROR(CLASS_TAG, "Error code " << res << " returned from waveOutPrepareHeader");
-                return false;
-            }
+			std::lock_guard<std::recursive_mutex> m(m_driverLock);
+			if (m_waveOut)
+			{
+				auto res = waveOutPrepareHeader(m_waveOut, waveHdr, sizeof(WAVEHDR));
+				if (res != MMSYSERR_NOERROR)
+				{
+					AWS_LOGSTREAM_ERROR(CLASS_TAG, "Error code " << res << " returned from waveOutPrepareHeader");
+					return false;
+				}
 
-            res = waveOutWrite(m_waveOut, waveHdr, sizeof(WAVEHDR));
-            if (res != MMSYSERR_NOERROR)
-            {
-                AWS_LOGSTREAM_ERROR(CLASS_TAG, "Error code " << res << " returned from waveOutWrite");
-                return false;
-            }
+				res = waveOutWrite(m_waveOut, waveHdr, sizeof(WAVEHDR));
+				if (res != MMSYSERR_NOERROR)
+				{
+					AWS_LOGSTREAM_ERROR(CLASS_TAG, "Error code " << res << " returned from waveOutWrite");
+					return false;
+				}
+			}
 
             return true;
         }
@@ -98,7 +101,7 @@ namespace Aws
             if (!m_isInit)
             {
                 AWS_LOGSTREAM_INFO(CLASS_TAG, "Initializing device " << m_activeDevice.deviceName);
-
+				std::lock_guard<std::recursive_mutex> m(m_driverLock);
                 if (m_waveOut)
                 {
                     AWS_LOGSTREAM_TRACE(CLASS_TAG, "Cleaning up current device ");
@@ -140,7 +143,7 @@ namespace Aws
 
         void WaveOutPCMOutputDriver::SetActiveDevice(const DeviceInfo& device, const CapabilityInfo& caps)
         { 
-            std::lock_guard<std::mutex> m(m_driverLock);
+            std::lock_guard<std::recursive_mutex> m(m_driverLock);
             m_activeDevice = device; 
             m_selectedCaps = caps; 
             m_isInit = false; 
@@ -167,15 +170,15 @@ namespace Aws
                     if ((waveoutCaps.dwFormats & WAVE_FORMAT_1M16) == WAVE_FORMAT_1M16)
                     {
                         CapabilityInfo capsInfo;                        
-                        capsInfo.channels = 1;
-                        capsInfo.sampleRate = 8000;
-                        capsInfo.sampleWidthBits = 16;
+                        capsInfo.channels = MONO;
+                        capsInfo.sampleRate = KHZ_8;
+                        capsInfo.sampleWidthBits = BIT_WIDTH_16;
 
                         devInfo.capabilities.push_back(capsInfo);
 
-                        capsInfo.channels = 1;
-                        capsInfo.sampleRate = 16000;
-                        capsInfo.sampleWidthBits = 16;
+                        capsInfo.channels = MONO;
+                        capsInfo.sampleRate = KHZ_16;
+                        capsInfo.sampleWidthBits = BIT_WIDTH_16;
 
                         devInfo.capabilities.push_back(capsInfo);
                     }
@@ -183,9 +186,9 @@ namespace Aws
                     if ((waveoutCaps.dwFormats & WAVE_FORMAT_2M16) == WAVE_FORMAT_2M16)
                     {
                         CapabilityInfo capsInfo;
-                        capsInfo.channels = 1;
-                        capsInfo.sampleRate = 22050;
-                        capsInfo.sampleWidthBits = 16;
+                        capsInfo.channels = MONO;
+                        capsInfo.sampleRate = KHZ_22_5;
+                        capsInfo.sampleWidthBits = KHZ_16;
 
                         devInfo.capabilities.push_back(capsInfo);
                     }

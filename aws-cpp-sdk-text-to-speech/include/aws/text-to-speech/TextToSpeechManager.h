@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -33,6 +33,9 @@ namespace Aws
          * @arg3 whether or not the audio stream was successfully sent to the audio driver. 
          */
         typedef std::function<void(const char*, const Polly::Model::SynthesizeSpeechOutcome&, bool)> SendTextCompletedHandler;
+
+		typedef std::pair<DeviceInfo, std::shared_ptr<PCMOutputDriver>> OutputDevicePair;
+		typedef Aws::Vector<OutputDevicePair> OutputDeviceList;
 
         /**
          * Manager for rendering text to the Polly service and then sending directly to an audio driver.
@@ -69,7 +72,7 @@ namespace Aws
              * the ability to choose devices is limited. On windows, this will be more detailed. Call this function
              * to determine what to pass to SetActiveDevice().
              */
-            Aws::Vector<std::pair<DeviceInfo, std::shared_ptr<PCMOutputDriver>>> EnumerateDevices() const;
+			OutputDeviceList EnumerateDevices() const;
 
             /**
              * Sets the active driver (if there are multiple possbilities), the device to use for that driver, and the 
@@ -95,7 +98,7 @@ namespace Aws
             std::shared_ptr<Polly::PollyClient> m_pollyClient;
             std::shared_ptr<PCMOutputDriver> m_activeDriver;
             Aws::Vector<std::shared_ptr<PCMOutputDriver>> m_drivers;
-            Polly::Model::VoiceId m_activeVoice;
+            std::atomic<Polly::Model::VoiceId> m_activeVoice;
             CapabilityInfo m_selectedCaps;
             mutable std::mutex m_driverLock;
         };

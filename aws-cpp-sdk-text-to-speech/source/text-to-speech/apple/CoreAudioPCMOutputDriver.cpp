@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -21,7 +21,7 @@ namespace Aws
 {
     namespace TextToSpeech
     {
-        static const char* CLASS_TAG = "CoreAudioPCMOutputDriver";
+        static const char* CLASS_TAG = "CoreAudioPCMOutputDriver";		
 
         CoreAudioPCMOutputDriver::CoreAudioPCMOutputDriver() : m_audioQueue(nullptr), m_maxBufferSize(4096), m_bufferCount(3)
         {
@@ -48,6 +48,12 @@ namespace Aws
                         m_queueReadySemaphore.wait(m, [this](){ return m_bufferQueue.size() > 0;});
                         AWS_LOGSTREAM_TRACE(CLASS_NAME, " an audio buffer has been released, waking up.");
                     }
+
+					if (!m_audioQueue)
+					{
+						AWS_LOGSTREAM_ERROR(CLASS_NAME, " audio queue has been cleaned up.");
+						return false;
+					}
 
                     if(m_bufferQueue.size() > 0)
                     {
@@ -84,12 +90,12 @@ namespace Aws
             devInfo.deviceName = "Default Audio Output Queue";
 
             CapabilityInfo caps;
-            caps.sampleWidthBits = 16;
-            caps.channels = 1;
-            caps.sampleRate = 16000;
+            caps.sampleWidthBits = BIT_WIDTH_16;
+            caps.channels = MONO;
+            caps.sampleRate = KHZ_16;
 
             devInfo.capabilities.push_back(caps);
-            caps.sampleRate = 8000;
+            caps.sampleRate = KHZ_8;
             devInfo.capabilities.push_back(caps);
 
 
@@ -163,7 +169,8 @@ namespace Aws
                     m_bufferQueue.pop();
                 }
 
-                AudioQueueDispose(m_audioQueue, false);
+				//force The audio queue to cleanup the buffers.
+                AudioQueueDispose(m_audioQueue, true);
                 m_audioQueue = nullptr;
             }
         }

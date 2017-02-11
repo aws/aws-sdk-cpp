@@ -1,5 +1,5 @@
 /*
-  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+  * Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
   * 
   * Licensed under the Apache License, Version 2.0 (the "License").
   * You may not use this file except in compliance with the License.
@@ -235,9 +235,9 @@ TEST(TextToSpeechManagerTests, TestDeviceListAndSelection)
     devInfo1.deviceName ="deviceName1";
        
     CapabilityInfo capability;
-    capability.sampleRate = 8000;
+    capability.sampleRate = KHZ_8;
     devInfo1.capabilities.push_back(capability);
-    capability.sampleRate = 16000;
+    capability.sampleRate = KHZ_16;
     devInfo1.capabilities.push_back(capability);
     driver1->AddDevice(devInfo1);
 
@@ -254,19 +254,19 @@ TEST(TextToSpeechManagerTests, TestDeviceListAndSelection)
     ASSERT_STREQ(devInfo1.deviceId.c_str(), devices[0].first.deviceId.c_str());
     ASSERT_STREQ(devInfo1.deviceName.c_str(), devices[0].first.deviceName.c_str());
     ASSERT_EQ(2u, devices[0].first.capabilities.size());
-    ASSERT_EQ(8000u, devices[0].first.capabilities[0].sampleRate);
-    ASSERT_EQ(16000u, devices[0].first.capabilities[1].sampleRate);
+    ASSERT_EQ(KHZ_8, devices[0].first.capabilities[0].sampleRate);
+    ASSERT_EQ(KHZ_16, devices[0].first.capabilities[1].sampleRate);
     ASSERT_EQ(devices[0].second, driver1);
 
     ASSERT_STREQ(devInfo2.deviceId.c_str(), devices[1].first.deviceId.c_str());
     ASSERT_STREQ(devInfo2.deviceName.c_str(), devices[1].first.deviceName.c_str());
     ASSERT_EQ(1u, devices[1].first.capabilities.size());
-    ASSERT_EQ(22050u, devices[1].first.capabilities[0].sampleRate);
+    ASSERT_EQ(KHZ_22_5, devices[1].first.capabilities[0].sampleRate);
     ASSERT_EQ(devices[1].second, driver2);
 
     manager.SetActiveDevice(driver2, devInfo2, devInfo2.capabilities[0]);
     ASSERT_STREQ(devInfo2.deviceId.c_str(), driver2->GetActiveDevice().deviceId.c_str());
-    ASSERT_EQ(22050u, driver2->GetActiveCaps().sampleRate);
+    ASSERT_EQ(KHZ_22_5, driver2->GetActiveCaps().sampleRate);
 }
 
 TEST(TextToSpeechManagerTests, TestDeviceListEmpty)
@@ -308,7 +308,7 @@ TEST(TextToSpeechManagerTests, TestSynthResponseAndOutput)
     devInfo1.deviceName = "deviceName1";
 
     CapabilityInfo capability;
-    capability.sampleRate = 8000;
+    capability.sampleRate = KHZ_8;
     devInfo1.capabilities.push_back(capability);  
     driver1->AddDevice(devInfo1);
 
@@ -368,7 +368,7 @@ TEST(TextToSpeechManagerTests, TestSynthRequestFailedAndNoOutput)
     devInfo1.deviceName = "deviceName1";
 
     CapabilityInfo capability;
-    capability.sampleRate = 8000;
+    capability.sampleRate = KHZ_8;
     devInfo1.capabilities.push_back(capability);
 
     manager.SetActiveDevice(driver1, devInfo1, capability);

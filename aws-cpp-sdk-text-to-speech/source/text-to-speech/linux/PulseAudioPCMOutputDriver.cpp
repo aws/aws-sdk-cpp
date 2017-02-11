@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -65,13 +65,13 @@ namespace Aws
             deviceInfo.deviceName = "default audio output device";
 
             CapabilityInfo capabilityInfo;
-            capabilityInfo.channels = 1;
-            capabilityInfo.sampleRate = 16000;
-            capabilityInfo.sampleWidthBits = 16;
+            capabilityInfo.channels = MONO;
+            capabilityInfo.sampleRate = KHZ_16;
+            capabilityInfo.sampleWidthBits = BIT_WIDTH_16;
 
             deviceInfo.capabilities.push_back(capabilityInfo);
 
-            capabilityInfo.sampleRate = 8000;
+            capabilityInfo.sampleRate = KHZ_8;
             deviceInfo.capabilities.push_back(capabilityInfo);
 
             devices.push_back(deviceInfo);

@@ -24,9 +24,15 @@ namespace Aws
 {
     namespace TextToSpeech
     {
+		static const unsigned BIT_WIDTH_16 = 16;
+		static const unsigned MONO = 1;
+		static const size_t KHZ_22_5 = 22050;
+		static const size_t KHZ_16 = 16000;
+		static const size_t KHZ_8 = 8000;
+
         struct CapabilityInfo
         {
-            CapabilityInfo() : channels(1), sampleRate(16000), sampleWidthBits(16) {}
+            CapabilityInfo() : channels(MONO), sampleRate(KHZ_16), sampleWidthBits(BIT_WIDTH_16) {}
 
             unsigned channels;
             size_t sampleRate;

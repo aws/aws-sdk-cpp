@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -72,16 +72,17 @@ namespace Aws
             {OnPollySynthSpeechOutcomeRecieved(client, request, speechOutcome, context);}, context);
         }
 
-        Aws::Vector<std::pair<DeviceInfo, std::shared_ptr<PCMOutputDriver>>> TextToSpeechManager::EnumerateDevices() const
+		OutputDeviceList TextToSpeechManager::EnumerateDevices() const
         {
-            Aws::Vector<std::pair<DeviceInfo, std::shared_ptr<PCMOutputDriver>>> deviceDriverList;
+			OutputDeviceList deviceDriverList;
 
             for (auto& driver : m_drivers)
             {
+				std::lock_guard<std::mutex> m(m_driverLock);
                 for (auto& deviceInfo : driver->EnumerateDevices())
                 {
                     AWS_LOGSTREAM_DEBUG(CLASS_TAG, "Adding device " << deviceInfo.deviceName << " for driver " << driver->GetName());
-                    std::pair<DeviceInfo, std::shared_ptr<PCMOutputDriver>> device(deviceInfo, driver);
+					OutputDevicePair device(deviceInfo, driver);
                     deviceDriverList.push_back(device);
                 }
             }

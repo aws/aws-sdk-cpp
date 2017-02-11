@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -36,9 +36,9 @@ namespace Aws
             PulseAudioPCMOutputDriver(PulseAudioPCMOutputDriver&&) = delete;
             PulseAudioPCMOutputDriver& operator=(PulseAudioPCMOutputDriver&&) = delete;
 
-            bool WriteBufferToDevice(const unsigned char*, size_t) override;
+            bool WriteBufferToDevice(const unsigned char* buffer, size_t bufferSize) override;
             Aws::Vector<DeviceInfo> EnumerateDevices() const override;
-            void SetActiveDevice(const DeviceInfo&, const CapabilityInfo&) override;
+            void SetActiveDevice(const DeviceInfo& device, const CapabilityInfo& capabilities) override;
             const char* GetName() const override;
 
         private:
