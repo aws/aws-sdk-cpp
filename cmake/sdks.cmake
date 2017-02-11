@@ -133,6 +133,7 @@ list(APPEND TEST_DEPENDENCY_LIST "lambda:access-management,cognito-identity,iam,
 list(APPEND TEST_DEPENDENCY_LIST "sqs:access-management,cognito-identity,iam,core")
 list(APPEND TEST_DEPENDENCY_LIST "transfer:s3,core")
 list(APPEND TEST_DEPENDENCY_LIST "s3-encryption:s3,kms,core")
+list(APPEND TEST_DEPENDENCY_LIST "text-to-speech:polly,core")
 
 # make a list of the generated clients
 set(GENERATED_SERVICE_LIST "")
@@ -234,6 +235,7 @@ else()
     list(APPEND TEMP_SDK_BUILD_LIST "transfer")
     list(APPEND TEMP_SDK_BUILD_LIST "s3-encryption")
     list(APPEND TEMP_SDK_BUILD_LIST "core")
+    list(APPEND TEMP_SDK_BUILD_LIST "text-to-speech")
 
     set(SDK_BUILD_LIST ${TEMP_SDK_BUILD_LIST})
 
