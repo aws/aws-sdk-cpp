@@ -1,7 +1,7 @@
 {
   "swagger" : "2.0",
   "info" : {
-    "version" : "2017-02-03T14:38:56Z",
+    "version" : "2017-02-11T04:33:00Z",
     "title" : "VitalServices"
   },
   "host" : "h6wguq9ghl.execute-api.us-east-1.amazonaws.com",
@@ -136,7 +136,7 @@
           "200" : {
             "description" : "200 response",
             "schema" : {
-              "$ref" : "#/definitions/StripeObject"
+              "$ref" : "#/definitions/ClientStripeObject"
             }
           },
           "400" : {
@@ -276,7 +276,7 @@
           "200" : {
             "description" : "200 response",
             "schema" : {
-              "$ref" : "#/definitions/StripeObject"
+              "$ref" : "#/definitions/ClientStripeObject"
             }
           },
           "400" : {
@@ -909,6 +909,15 @@
       },
       "title" : "RegisterDoctorRequest"
     },
+    "ClientStripeObject" : {
+      "type" : "object",
+      "properties" : {
+        "jsonString" : {
+          "type" : "string"
+        }
+      },
+      "title" : "ClientStripeObject"
+    },
     "Empty" : {
       "type" : "object",
       "title" : "Empty"
@@ -1244,15 +1253,6 @@
         }
       },
       "title" : "GetDoctorSpecialtiesResult"
-    },
-    "StripeObject" : {
-      "type" : "object",
-      "properties" : {
-        "jsonString" : {
-          "type" : "string"
-        }
-      },
-      "title" : "StripeObject"
     },
     "GetDoctorSpecialtiesRequest" : {
       "type" : "object",

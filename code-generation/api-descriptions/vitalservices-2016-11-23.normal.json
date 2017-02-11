@@ -1,7 +1,7 @@
 {
     "version": "2.0",
     "metadata": {
-        "apiVersion": "2017-02-03",
+        "apiVersion": "2017-02-11",
         "endpointPrefix": "h6wguq9ghl.execute-api",
         "protocol": "application/json",
         "serviceFullName": "VitalServices",
@@ -75,7 +75,7 @@
                 "shape": "GetAppointmentPaymentMethodRequest"
             },
             "output": {
-                "shape": "StripeObject"
+                "shape": "ClientStripeObject"
             }
         },
         "getAppointmentsWithUser": {
@@ -145,7 +145,7 @@
                 "shape": "GetStripeCustomerRequest"
             },
             "output": {
-                "shape": "StripeObject"
+                "shape": "ClientStripeObject"
             }
         },
         "queryDoctorSchedule": {
@@ -623,6 +623,15 @@
                 }
             }
         },
+        "ClientStripeObject": {
+            "type": "structure",
+            "required": [],
+            "members": {
+                "jsonString": {
+                    "shape": "string"
+                }
+            }
+        },
         "Empty": {
             "type": "structure",
             "required": [],
@@ -999,15 +1008,6 @@
             "members": {
                 "specialties": {
                     "shape": "ClientDoctorSpecialtyList"
-                }
-            }
-        },
-        "StripeObject": {
-            "type": "structure",
-            "required": [],
-            "members": {
-                "jsonString": {
-                    "shape": "string"
                 }
             }
         },
