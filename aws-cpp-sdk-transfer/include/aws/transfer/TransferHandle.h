@@ -85,8 +85,8 @@ namespace Aws
                 std::atomic<bool> m_canAppendProceed;
                 std::atomic<bool> m_appendValid;
 
-                Aws::IOStream *m_downloadPartStream;
-                Aws::Utils::Array<unsigned char> *m_downloadBuffer;
+                std::atomic<Aws::IOStream *> m_downloadPartStream;
+                std::atomic<Aws::Utils::Array<unsigned char> *> m_downloadBuffer;
         };
 
         using PartPointer = std::shared_ptr< PartState >;
@@ -346,7 +346,7 @@ namespace Aws
             std::atomic<bool> m_cancel;
 
             CreateDownloadStreamCallback m_createDownloadStreamFn;
-            Aws::IOStream* m_downloadStream;
+            std::atomic<Aws::IOStream*> m_downloadStream;
 
             mutable std::mutex m_partsLock;
             mutable std::mutex m_statusLock;
