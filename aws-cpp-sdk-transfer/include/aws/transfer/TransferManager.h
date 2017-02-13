@@ -155,7 +155,12 @@ namespace Aws
              * Downloads the contents of bucketName/keyName in S3 and writes it to writeToStream. This will perform a GetObject operation.
              */
             std::shared_ptr<TransferHandle> DownloadFile(const Aws::String& bucketName, const Aws::String& keyName, CreateDownloadStreamCallback writeToStreamfn);
-            
+
+            /**
+             * Retry an download that failed from a previous DownloadFile operation. If a multi-part download was used, only the failed parts will be re-fetched.
+             */
+            std::shared_ptr<TransferHandle> RetryDownload(const std::shared_ptr<TransferHandle>& retryHandle);
+
             /**
              * Retry an upload that failed from a previous UploadFile operation. If a multi-part upload was used, only the failed parts will be re-sent.
              */
@@ -194,20 +199,12 @@ namespace Aws
             */
             void DownloadToDirectory(const Aws::String& directory, const Aws::String& bucketName, const Aws::String& prefix = Aws::String());
 
-
-
-            std::shared_ptr<TransferHandle> DownloadFile2(const Aws::String& bucketName,
-                                                          const Aws::String& keyName,
-                                                          CreateDownloadStreamCallback createDownloadStreamfn);
-
-            std::shared_ptr<TransferHandle> RetryDownload2(const std::shared_ptr<TransferHandle>& retryHandle);
-
         private:
             void DoMultipartUpload(const std::shared_ptr<Aws::IOStream>& streamToPut, const std::shared_ptr<TransferHandle>& handle);
             void DoSinglePartUpload(const std::shared_ptr<Aws::IOStream>& streamToPut, const std::shared_ptr<TransferHandle>& handle);
-            void DoDownload(CreateDownloadStreamCallback writeToStreamfn, const std::shared_ptr<TransferHandle>& handle);
 
-            void DoDownload2(const std::shared_ptr<TransferHandle>& handle);
+            void DoDownload(const std::shared_ptr<TransferHandle>& handle);
+            void DoSinglePartDownload(const std::shared_ptr<TransferHandle>& handle);
 
             void HandleGetObjectResponse(const Aws::S3::S3Client* client, 
                                          const Aws::S3::Model::GetObjectRequest& request,

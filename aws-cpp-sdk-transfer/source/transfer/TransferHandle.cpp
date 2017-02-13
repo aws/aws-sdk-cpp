@@ -152,7 +152,6 @@ namespace Aws
         void TransferHandle::AddPendingPart(const PartPointer& partState)
         {            
             std::lock_guard<std::mutex> locker(m_partsLock);
-            partState->Reset();
             m_queuedParts.erase(partState->GetPartId());           
             m_pendingParts[partState->GetPartId()] = partState;
         }
