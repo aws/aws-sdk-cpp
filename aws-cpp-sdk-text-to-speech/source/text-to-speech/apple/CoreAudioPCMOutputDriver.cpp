@@ -44,14 +44,14 @@ namespace Aws
                     std::unique_lock<std::mutex> m(m_queueBufferLock);
                     while(m_bufferQueue.size() == 0)
                     {
-                        AWS_LOGSTREAM_DEBUG(CLASS_NAME, " waiting on audio buffers to become available.");
+                        AWS_LOGSTREAM_DEBUG(CLASS_TAG, " waiting on audio buffers to become available.");
                         m_queueReadySemaphore.wait(m, [this](){ return m_bufferQueue.size() > 0;});
-                        AWS_LOGSTREAM_TRACE(CLASS_NAME, " an audio buffer has been released, waking up.");
+                        AWS_LOGSTREAM_TRACE(CLASS_TAG, " an audio buffer has been released, waking up.");
                     }
 
 					if (!m_audioQueue)
 					{
-						AWS_LOGSTREAM_ERROR(CLASS_NAME, " audio queue has been cleaned up.");
+						AWS_LOGSTREAM_ERROR(CLASS_TAG, " audio queue has been cleaned up.");
 						return false;
 					}
 
@@ -61,7 +61,7 @@ namespace Aws
                         m_bufferQueue.pop();
 
                         auto toCpy = std::min(m_maxBufferSize, size - i);
-                        AWS_LOGSTREAM_TRACE(CLASS_NAME, " Writing " << toCpy << " bytes to audio device.");
+                        AWS_LOGSTREAM_TRACE(CLASS_TAG, " Writing " << toCpy << " bytes to audio device.");
                         memcpy(audioBuffer->mAudioData, buffer + i, toCpy);
                         audioBuffer->mAudioDataByteSize = static_cast<UInt32>(toCpy);
                         auto errorCode = AudioQueueEnqueueBuffer(m_audioQueue, audioBuffer, 0, nullptr);
@@ -69,14 +69,14 @@ namespace Aws
 
                         if(!success)
                         {
-                            AWS_LOGSTREAM_ERROR(CLASS_NAME, " error while queueing audio output. error code " << errorCode);
+                            AWS_LOGSTREAM_ERROR(CLASS_TAG, " error while queueing audio output. error code " << errorCode);
                         }
                     }
                 }
             }
             else
             {
-                AWS_LOGSTREAM_ERROR(CLASS_NAME, " audio queue has not been initialized.");
+                AWS_LOGSTREAM_ERROR(CLASS_TAG, " audio queue has not been initialized.");
                 return false;
             }
 
@@ -139,13 +139,13 @@ namespace Aws
         {
             if(!m_audioQueue)
             {
-                AWS_LOGSTREAM_INFO(CLASS_NAME, " Initializing audio queue for sample rate: " << m_selectedCaps.mSampleRate);
+                AWS_LOGSTREAM_INFO(CLASS_TAG, " Initializing audio queue for sample rate: " << m_selectedCaps.mSampleRate);
 
                 AudioQueueNewOutput(&m_selectedCaps, &OnBufferReady, this, nullptr, kCFRunLoopCommonModes, 0, &m_audioQueue);
 
                 for (size_t i = 0; i < m_bufferCount; i++)
                 {
-                    AWS_LOGSTREAM_TRACE(CLASS_NAME, " Allocating buffer of size: " << m_maxBufferSize);
+                    AWS_LOGSTREAM_TRACE(CLASS_TAG, " Allocating buffer of size: " << m_maxBufferSize);
                     AudioQueueBufferRef buf;
                     AudioQueueAllocateBuffer(m_audioQueue, static_cast<UInt32>(m_maxBufferSize), &buf);
                     m_bufferQueue.push(buf);
@@ -157,14 +157,14 @@ namespace Aws
         {
             if(m_audioQueue)
             {
-                AWS_LOGSTREAM_INFO(CLASS_NAME, " Cleaning up audio queue");
+                AWS_LOGSTREAM_INFO(CLASS_TAG, " Cleaning up audio queue");
                 //make sure all buffers finish processing so we can delete them.
                 AudioQueueStop(m_audioQueue, false);
 
                 std::lock_guard<std::mutex> m(m_queueBufferLock);
                 while(m_bufferQueue.size() > 0)
                 {
-                    AWS_LOGSTREAM_DEBUG(CLASS_NAME, " Cleaning up audio buffer");
+                    AWS_LOGSTREAM_DEBUG(CLASS_TAG, " Cleaning up audio buffer");
                     AudioQueueFreeBuffer(m_audioQueue, m_bufferQueue.front());
                     m_bufferQueue.pop();
                 }
@@ -183,7 +183,7 @@ namespace Aws
                 std::unique_lock<std::mutex> m(driver->m_queueBufferLock);
                 driver->m_bufferQueue.push(buffer);
             }
-            AWS_LOGSTREAM_DEBUG(CLASS_NAME, "Buffer free, notifying waiting threads.");
+            AWS_LOGSTREAM_DEBUG(CLASS_TAG, "Buffer free, notifying waiting threads.");
             driver->m_queueReadySemaphore.notify_one();
         }
     }
