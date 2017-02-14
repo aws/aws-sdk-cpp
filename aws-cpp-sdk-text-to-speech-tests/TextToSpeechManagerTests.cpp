@@ -320,14 +320,15 @@ TEST(TextToSpeechManagerTests, TestSynthResponseAndOutput)
     const char* REQUEST_TEXT = "Blah blah blah";
 
     SendTextCompletedHandler handler = [&](const char* text, const SynthesizeSpeechOutcome&, bool sent) 
-        {  
-           EXPECT_STREQ(REQUEST_TEXT, text);
-           EXPECT_TRUE(sent);
-           semaphore.notify_all();
+        {
+            std::lock_guard<std::mutex> lockGuard(lock);
+            EXPECT_STREQ(REQUEST_TEXT, text);
+            EXPECT_TRUE(sent);
+            semaphore.notify_all();
         };
 
-    manager.SendTextToOutputDevice(REQUEST_TEXT, handler);
     std::unique_lock<std::mutex> locker(lock);
+    manager.SendTextToOutputDevice(REQUEST_TEXT, handler);
     semaphore.wait(locker);
 
     auto capturedRequest = pollyClient->GetCapturedSynthesizeSpeech();
@@ -381,13 +382,14 @@ TEST(TextToSpeechManagerTests, TestSynthRequestFailedAndNoOutput)
 
     SendTextCompletedHandler handler = [&](const char* text, const SynthesizeSpeechOutcome&, bool sent)
     {
+        std::lock_guard<std::mutex> lockGuard(lock);
         EXPECT_STREQ(REQUEST_TEXT, text);
         EXPECT_FALSE(sent);
         semaphore.notify_all();
     };
 
-    manager.SendTextToOutputDevice(REQUEST_TEXT, handler);
     std::unique_lock<std::mutex> locker(lock);
+    manager.SendTextToOutputDevice(REQUEST_TEXT, handler);
     semaphore.wait(locker);
 
     auto capturedRequest = pollyClient->GetCapturedSynthesizeSpeech();
