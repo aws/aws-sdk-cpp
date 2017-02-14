@@ -18,7 +18,6 @@
 #include <aws/text-to-speech/PCMOutputDriver.h>
 #include <aws/core/utils/memory/stl/AWSQueue.h>
 #include <aws/core/utils/Array.h>
-#include <CoreAudio.h>
 #include <AudioQueue.h>
 
 #include <mutex>
