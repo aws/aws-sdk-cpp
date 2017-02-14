@@ -13,7 +13,7 @@ nuget {
         id = AWSSDKCPP-OpsWorksCM;
 
         // Version number. Follows NuGet standards. (currently SemVer 1.0)
-        version : 1.0.20161101.66;
+        version : 1.0.20161101.67;
 
         // Display name for package.
         title: AWS SDK for C++ (AWS OpsWorks for Chef Automate);
