@@ -43,6 +43,7 @@ def ParseArguments():
     parser.add_argument("--credentials", action="store")
     parser.add_argument("--build", action="store")
     parser.add_argument("--so", action="store_true")
+    parser.add_argument("--stl", action="store")
 
     args = vars( parser.parse_args() )
 
@@ -57,6 +58,7 @@ def ParseArguments():
     argMap[ "buildType" ] = args[ "build" ] or "Release"
     argMap[ "runTest" ] = args[ "runtest" ]
     argMap[ "so" ] = args[ "so" ]
+    argMap[ "stl" ] = args[ "stl" ] or "libc++_shared"
 
     return argMap
 
@@ -169,16 +171,19 @@ def SetupJniDirectory(abi, clean):
     return path
 
 
-def CopyNativeLibraries(buildSharedObjects, jniDir, buildDir, abi):
-    # TODO: fix hardcoded 13b version
-    toolchainName = abi + "-standalone-clang-android-21-libc++_shared-13002"
-    toolchainDir = os.path.join('toolchains', 'android', toolchainName)
+def CopyNativeLibraries(buildSharedObjects, jniDir, buildDir, abi, stl):
+    baseToolchainDir = os.path.join(buildDir, 'toolchains', 'android')
+    toolchainDirList = os.listdir(baseToolchainDir) # should only be one entry
+    toolchainDir = os.path.join(baseToolchainDir, toolchainDirList[0])
 
     platformLibDir = os.path.join(toolchainDir, "sysroot", "usr", "lib")
     shutil.copy(os.path.join(platformLibDir, "liblog.so"), jniDir)
 
     stdLibDir = os.path.join(toolchainDir, 'arm-linux-androideabi', 'lib')
-    shutil.copy(os.path.join(stdLibDir, "libc++_shared.so"), jniDir)
+    if stl == 'libc++_shared':
+        shutil.copy(os.path.join(stdLibDir, "libc++_shared.so"), jniDir)
+    elif stl == 'gnustl_shared':
+        shutil.copy(os.path.join(stdLibDir, "armv7-a", "libgnustl_shared.so"), jniDir)  # TODO: remove armv7-a hardcoded path
 
     if buildSharedObjects:
 
@@ -199,7 +204,7 @@ def RemoveTree(dir):
         shutil.rmtree( dir )
 
 
-def BuildNative(abi, clean, buildDir, jniDir, installDir, buildType, buildSharedObjects):
+def BuildNative(abi, clean, buildDir, jniDir, installDir, buildType, buildSharedObjects, stl):
     if clean:
         RemoveTree(installDir)
         RemoveTree(buildDir)
@@ -221,6 +226,7 @@ def BuildNative(abi, clean, buildDir, jniDir, installDir, buildType, buildShared
                                  "-DCUSTOM_MEMORY_MANAGEMENT=1",
                                  "-DTARGET_ARCH=ANDROID", 
                                  "-DANDROID_ABI=" + abi, 
+                                 "-DANDROID_STL=" + stl,
                                  "-DCMAKE_BUILD_TYPE=" + buildType,
                                  "-DENABLE_UNITY_BUILD=ON",
                                  '-DTEST_CERT_PATH="/data/data/aws.' + TestLowerName + '/certs"',
@@ -235,7 +241,7 @@ def BuildNative(abi, clean, buildDir, jniDir, installDir, buildType, buildShared
         subprocess.check_call( [ "make", "-j12", "android-unified-tests" ] )
 
     os.chdir( ".." )
-    CopyNativeLibraries(buildSharedObjects, jniDir, buildDir, abi)
+    CopyNativeLibraries(buildSharedObjects, jniDir, buildDir, abi, stl)
 
 
 def BuildJava(clean):
@@ -400,6 +406,7 @@ def Main():
     noInstall = args[ "noInstall" ]
     buildSharedObjects = args[ "so" ]
     runTest = args[ "runTest" ]
+    stl = args[ "stl" ]
 
     buildDir = "_build" + buildType
     installDir = os.path.join( "external", abi );
@@ -410,7 +417,7 @@ def Main():
     jniDir = SetupJniDirectory(abi, clean)
 
     if not skipBuild:
-        BuildNative(abi, clean, buildDir, jniDir, installDir, buildType, buildSharedObjects)
+        BuildNative(abi, clean, buildDir, jniDir, installDir, buildType, buildSharedObjects, stl)
         BuildJava(clean)
 
     if not runTest:
