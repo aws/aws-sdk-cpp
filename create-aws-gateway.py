@@ -4,17 +4,18 @@ import boto3
 import sys
 import os
 import time
+import json
+import re
 
 
 api_name = 'VitalServices'
 AWS_REGION = 'us-east-1'
 gateway_id_file = os.path.expanduser('~/.my-gateway-id')
+models_json_file = "VitalServices-prod-models.json"
 
-if len(sys.argv) > 1:
-	stage_name = sys.argv[1]
-else:
-	print("No stage provided")
-	sys.exit(1)
+# Default stage "test"
+stage_name = sys.argv[1] if len(sys.argv) > 1 else 'test'
+
 
 aws_lambda = boto3.client('lambda')
 iam = boto3.resource('iam')
@@ -161,4 +162,36 @@ for r in resources:
 		    stageName=stage_name,
 		)
 
+# Add models to API gateway
+with open(models_json_file) as f:
+	models_json = json.load(f)
+
+# Creating models in order
+sorted_models = []
+models_json = {x['name']:x['schema'] for x  in models_json}
+
+def check_parent(m):
+	match = re.match(r'.*models/(.+?)"', str(models_json[m]))
+	if match:
+		sorted_models.append(m)
+		sorted_models.insert(0, match.group(1))
+		check_parent(match.group(1))
+	else:
+		sorted_models.append(m)
+
+for m in models_json:
+	check_parent(m)
+
+for m in sorted_models:
+	# TODO: can be simplified 
+	print("Creating models: %s" % m)
+	new_schema = re.sub(r'restapis/(.+?)/models', 'restapis/' + new_api_id + '/models', str(models_json[m]))
+	run_with_exceptions(apiclient.create_model,
+		restApiId=new_api_id,
+		name=m,
+		schema=new_schema,
+		contentType='application/json',
+		)
+
 sys.exit(0)
+
