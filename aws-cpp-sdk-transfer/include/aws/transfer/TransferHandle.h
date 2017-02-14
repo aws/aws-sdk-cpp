@@ -60,15 +60,14 @@ namespace Aws
                 void SetETag(const Aws::String& eTag) { m_eTag = eTag; }
                 const Aws::String& GetETag() const { return m_eTag; }
 
-                void SetNextAppendChain(PartState* partState) { m_nextAppendChain = partState; }
-                void SignalNextPartForAppend(bool appendValid);
-                bool WaitOnAppendSignal();
-
                 Aws::IOStream *GetDownloadPartStream() const { return m_downloadPartStream; }
                 void SetDownloadPartStream(Aws::IOStream *downloadPartStream) { m_downloadPartStream = downloadPartStream; }
 
                 Aws::Utils::Array<unsigned char> *GetDownloadBuffer() const { return m_downloadBuffer; }
                 void SetDownloadBuffer(Aws::Utils::Array<unsigned char> *downloadBuffer) { m_downloadBuffer = downloadBuffer; }
+
+                void SetRangeBegin(size_t rangeBegin) { m_rangeBegin = rangeBegin; }
+                size_t GetRangeBegin() const { return m_rangeBegin; }
 
             private:
 
@@ -78,12 +77,7 @@ namespace Aws
                 size_t m_currentProgressInBytes;
                 size_t m_bestProgressInBytes;
                 size_t m_sizeInBytes;
-
-                PartState* m_nextAppendChain;
-                std::mutex m_appendLock;
-                std::condition_variable m_appendSignal;
-                std::atomic<bool> m_canAppendProceed;
-                std::atomic<bool> m_appendValid;
+                size_t m_rangeBegin;
 
                 std::atomic<Aws::IOStream *> m_downloadPartStream;
                 std::atomic<Aws::Utils::Array<unsigned char> *> m_downloadBuffer;
@@ -322,8 +316,7 @@ namespace Aws
 
             const CreateDownloadStreamCallback& GetCreateDownloadStreamFunction() const { return m_createDownloadStreamFn; }
 
-            void SetDownloadStream(Aws::IOStream* downloadStream) { m_downloadStream = downloadStream; }
-            Aws::IOStream* GetDownloadStream() const { return m_downloadStream; }
+            void WritePartToDownloadStream(Aws::IOStream* partStream, std::size_t writeOffset);
 
         private:
 
@@ -346,8 +339,9 @@ namespace Aws
             std::atomic<bool> m_cancel;
 
             CreateDownloadStreamCallback m_createDownloadStreamFn;
-            std::atomic<Aws::IOStream*> m_downloadStream;
+            Aws::IOStream* m_downloadStream;
 
+            std::mutex m_downloadStreamLock;
             mutable std::mutex m_partsLock;
             mutable std::mutex m_statusLock;
             mutable std::condition_variable m_waitUntilFinishedSignal;

@@ -28,11 +28,7 @@ namespace Aws
             m_currentProgressInBytes(0),
             m_bestProgressInBytes(0),
             m_sizeInBytes(0),
-            m_nextAppendChain(nullptr),
-            m_appendLock(),
-            m_appendSignal(),
-            m_canAppendProceed(false),
-            m_appendValid(false),
+            m_rangeBegin(0),
             m_downloadPartStream(nullptr),
             m_downloadBuffer(nullptr)
         {}
@@ -43,11 +39,7 @@ namespace Aws
             m_currentProgressInBytes(0),
             m_bestProgressInBytes(bestProgressInBytes),
             m_sizeInBytes(sizeInBytes),
-            m_nextAppendChain(nullptr),
-            m_appendLock(),
-            m_appendSignal(),
-            m_canAppendProceed(false),
-            m_appendValid(false),
+            m_rangeBegin(0),
             m_downloadPartStream(nullptr),
             m_downloadBuffer(nullptr)
         {}
@@ -56,8 +48,6 @@ namespace Aws
         void PartState::Reset()
         {
             m_currentProgressInBytes = 0;
-            m_canAppendProceed = false;
-            m_appendValid = false;
         }
 
         void PartState::OnDataTransferred(long long amount, const std::shared_ptr<TransferHandle> &transferHandle)
@@ -68,35 +58,6 @@ namespace Aws
                 transferHandle->UpdateBytesTransferred(m_currentProgressInBytes - m_bestProgressInBytes);
                 m_bestProgressInBytes = m_currentProgressInBytes;
             }
-        }
-
-        void PartState::SignalNextPartForAppend(bool appendValid)
-        {
-            if(m_nextAppendChain)
-            {
-                {
-                    std::lock_guard<std::mutex> locker(m_nextAppendChain->m_appendLock);
-                    m_nextAppendChain->m_appendValid = appendValid;
-                    m_nextAppendChain->m_canAppendProceed = true;
-                }
-                m_nextAppendChain->m_appendSignal.notify_one();
-            }
-        }
-
-        bool PartState::WaitOnAppendSignal()
-        {
-            if (m_partId == 1)
-            {
-                return true;
-            }
-
-            std::unique_lock<std::mutex> locker(m_appendLock);
-            while(!m_canAppendProceed)
-            {
-                m_appendSignal.wait(locker, [this](){ return m_canAppendProceed.load(); });
-            }
-
-            return m_appendValid;
         }
 
         PartStateMap TransferHandle::GetCompletedParts() const
@@ -252,6 +213,22 @@ namespace Aws
         bool TransferHandle::ShouldContinue() const
         {
             return !m_cancel.load();
+        }
+
+        void TransferHandle::WritePartToDownloadStream(Aws::IOStream* partStream, std::size_t writeOffset)
+        {
+            std::lock_guard<std::mutex> lock(m_downloadStreamLock);
+
+            if(m_downloadStream == nullptr)
+            {
+                m_downloadStream = m_createDownloadStreamFn();
+                assert(m_downloadStream->good());
+            }
+
+            partStream->seekg(0);
+            m_downloadStream->seekp(writeOffset);
+            (*m_downloadStream) << partStream->rdbuf();
+            m_downloadStream->flush();
         }
     }
 }

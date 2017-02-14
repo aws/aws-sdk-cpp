@@ -606,18 +606,11 @@ namespace Aws
                 isMultipart = partCount > 1;
                 handle->SetIsMultipart(isMultipart);    // doesn't make a difference but let's be accurate
 
-                std::shared_ptr<PartState> previousPart(nullptr);
                 for(int i = 0; i < partCount; ++i)
                 {
                     std::size_t partSize = (i + 1 < partCount ) ? bufferSize : (downloadSize - bufferSize * (partCount - 1));
                     auto partState = Aws::MakeShared<PartState>(CLASS_TAG, i + 1, 0, partSize);
-                    // for append signals, we chain forward to the next part state
-                    if (previousPart)
-                    {
-                        previousPart->SetNextAppendChain(partState.get());
-                    }
-
-                    previousPart = partState;
+                    partState->SetRangeBegin(i * bufferSize);
                     handle->AddQueuedPart(partState);
                 }
             }
@@ -626,27 +619,6 @@ namespace Aws
                 for (auto failedPart : handle->GetFailedParts())
                 {
                     handle->AddQueuedPart(failedPart.second);
-                }
-
-                auto queuedParts = handle->GetQueuedParts();
-
-                auto lowestPartStateIter = std::min_element(queuedParts.begin(), queuedParts.end(), [](const PartStateMap::value_type& lhs, const PartStateMap::value_type& rhs)
-                    {
-                        return lhs.second->GetPartId() < rhs.second->GetPartId();
-                    });
-
-                // the cancel operation probably failed the next part signal for anything in-progress; since the lowest failed part is now first, we need to let it know
-                // it can append to the file as soon as it finishes
-                if(lowestPartStateIter != queuedParts.end())
-                {
-                    int partId = lowestPartStateIter->second->GetPartId();
-                    if(partId != 1)
-                    {
-                        auto completedParts = handle->GetCompletedParts();
-                        auto lastCompletedIter = completedParts.find(partId - 1);
-                        assert(lastCompletedIter != completedParts.end());
-                        lastCompletedIter->second->SignalNextPartForAppend(true);
-                    }
                 }
             }
 
@@ -740,7 +712,6 @@ namespace Aws
             std::shared_ptr<TransferHandleAsyncContext> transferContext =
                 std::const_pointer_cast<TransferHandleAsyncContext>(std::static_pointer_cast<const TransferHandleAsyncContext>(context));
 
-            bool keepAppending = false;
             if (!outcome.IsSuccess())
             {
                 transferContext->handle->ChangePartToFailed(transferContext->partState);
@@ -749,33 +720,17 @@ namespace Aws
             }
             else
             {
-                bool shouldAppend = transferContext->partState->WaitOnAppendSignal();
-                if(shouldAppend)
+                if(transferContext->handle->ShouldContinue())
                 {
-                    if(transferContext->handle->GetDownloadStream() == nullptr)
-                    { 
-                        auto downloadStream = transferContext->handle->GetCreateDownloadStreamFunction()();
-                        assert(downloadStream->good());
-                        transferContext->handle->SetDownloadStream(downloadStream); 
-                    }
-
-                    Aws::IOStream* destStream = transferContext->handle->GetDownloadStream();
                     Aws::IOStream* bufferStream = transferContext->partState->GetDownloadPartStream();
-                    bufferStream->seekg(0);
-                    (*destStream) << bufferStream->rdbuf();
-                    destStream->flush();
-
+                    transferContext->handle->WritePartToDownloadStream(bufferStream, transferContext->partState->GetRangeBegin());
                     transferContext->handle->ChangePartToCompleted(transferContext->partState, outcome.GetResult().GetETag());
-                    keepAppending = true;
                 }
                 else
                 {
                     transferContext->handle->ChangePartToFailed(transferContext->partState);
                 }
             }
-
-            // succeed or fail, we still need to unblock any successors
-            transferContext->partState->SignalNextPartForAppend(keepAppending);
 
             // buffer cleanup
             if(transferContext->partState->GetDownloadBuffer())

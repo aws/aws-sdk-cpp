@@ -215,34 +215,36 @@ protected:
     {
         Aws::String downloadFileName = MakeDownloadFileName(sourceFileName);
 
-        std::shared_ptr<TransferHandle> downloadPtr = transferManager.DownloadFile(bucket, key, [=](){ 
-            return Aws::New<Aws::FStream>(ALLOCATION_TAG, downloadFileName.c_str(), std::ios_base::out | std::ios_base::in | std::ios_base::binary | std::ios_base::trunc);
-        });
+        {
+            std::shared_ptr<TransferHandle> downloadPtr = transferManager.DownloadFile(bucket, key, [=](){ 
+                return Aws::New<Aws::FStream>(ALLOCATION_TAG, downloadFileName.c_str(), std::ios_base::out | std::ios_base::in | std::ios_base::binary | std::ios_base::trunc);
+            });
 
-        ASSERT_EQ(true, downloadPtr->ShouldContinue());
-        ASSERT_EQ(TransferDirection::DOWNLOAD, downloadPtr->GetTransferDirection());
-        downloadPtr->WaitUntilFinished();
+            ASSERT_EQ(true, downloadPtr->ShouldContinue());
+            ASSERT_EQ(TransferDirection::DOWNLOAD, downloadPtr->GetTransferDirection());
+            downloadPtr->WaitUntilFinished();
 
-        ASSERT_EQ(TransferStatus::COMPLETED, downloadPtr->GetStatus());
-        ASSERT_EQ(0u, downloadPtr->GetFailedParts().size());
-        ASSERT_EQ(0u, downloadPtr->GetPendingParts().size());
+            ASSERT_EQ(TransferStatus::COMPLETED, downloadPtr->GetStatus());
+            ASSERT_EQ(0u, downloadPtr->GetFailedParts().size());
+            ASSERT_EQ(0u, downloadPtr->GetPendingParts().size());
 
-        auto fileStream = Aws::MakeShared<Aws::FStream>(ALLOCATION_TAG, sourceFileName.c_str(), std::ios_base::in | std::ios_base::binary);
-        ASSERT_TRUE(fileStream->good());
+            auto fileStream = Aws::MakeShared<Aws::FStream>(ALLOCATION_TAG, sourceFileName.c_str(), std::ios_base::in | std::ios_base::binary);
+            ASSERT_TRUE(fileStream->good());
 
-        fileStream->seekg(0, std::ios_base::end);
-        size_t sourceLength = static_cast<size_t>(fileStream->tellg());
-        fileStream->close();
-        fileStream = nullptr;
+            fileStream->seekg(0, std::ios_base::end);
+            size_t sourceLength = static_cast<size_t>(fileStream->tellg());
+            fileStream->close();
+            fileStream = nullptr;
 
-        ASSERT_EQ(downloadPtr->GetBytesTotalSize(), sourceLength);
-        ASSERT_EQ(downloadPtr->GetBytesTransferred(), sourceLength);
+            ASSERT_EQ(downloadPtr->GetBytesTotalSize(), sourceLength);
+            ASSERT_EQ(downloadPtr->GetBytesTransferred(), sourceLength);
 
-        ASSERT_STREQ(contentType.c_str(), downloadPtr->GetContentType().c_str());
+            ASSERT_STREQ(contentType.c_str(), downloadPtr->GetContentType().c_str());
 
-        ASSERT_TRUE(AreFilesSame(downloadFileName, sourceFileName));
+            ASSERT_TRUE(AreFilesSame(downloadFileName, sourceFileName));
 
-        ASSERT_TRUE(metadata == downloadPtr->GetMetadata());
+            ASSERT_TRUE(metadata == downloadPtr->GetMetadata());
+        }
 
         Aws::FileSystem::RemoveFileIfExists(downloadFileName.c_str());
     }
@@ -386,7 +388,6 @@ Aws::String TransferTests::m_contentTestFileName;
 Aws::String TransferTests::m_cancelTestFileName;
 Aws::String TransferTests::m_multiPartContentFileName;
 Aws::String TransferTests::m_nonsenseFileName;
-
 
 TEST_F(TransferTests, TransferManager_SinglePartUploadTest)
 {
