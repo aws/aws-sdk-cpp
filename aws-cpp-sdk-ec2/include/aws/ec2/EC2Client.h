@@ -130,6 +130,7 @@
 #include <aws/ec2/model/DescribeVolumeAttributeResponse.h>
 #include <aws/ec2/model/DescribeVolumeStatusResponse.h>
 #include <aws/ec2/model/DescribeVolumesResponse.h>
+#include <aws/ec2/model/DescribeVolumesModificationsResponse.h>
 #include <aws/ec2/model/DescribeVpcAttributeResponse.h>
 #include <aws/ec2/model/DescribeVpcClassicLinkResponse.h>
 #include <aws/ec2/model/DescribeVpcClassicLinkDnsSupportResponse.h>
@@ -162,6 +163,7 @@
 #include <aws/ec2/model/ModifyInstancePlacementResponse.h>
 #include <aws/ec2/model/ModifyReservedInstancesResponse.h>
 #include <aws/ec2/model/ModifySpotFleetRequestResponse.h>
+#include <aws/ec2/model/ModifyVolumeResponse.h>
 #include <aws/ec2/model/ModifyVpcEndpointResponse.h>
 #include <aws/ec2/model/ModifyVpcPeeringConnectionOptionsResponse.h>
 #include <aws/ec2/model/MonitorInstancesResponse.h>
@@ -372,6 +374,7 @@ namespace Model
         class DescribeVolumeAttributeRequest;
         class DescribeVolumeStatusRequest;
         class DescribeVolumesRequest;
+        class DescribeVolumesModificationsRequest;
         class DescribeVpcAttributeRequest;
         class DescribeVpcClassicLinkRequest;
         class DescribeVpcClassicLinkDnsSupportRequest;
@@ -419,6 +422,7 @@ namespace Model
         class ModifySnapshotAttributeRequest;
         class ModifySpotFleetRequestRequest;
         class ModifySubnetAttributeRequest;
+        class ModifyVolumeRequest;
         class ModifyVolumeAttributeRequest;
         class ModifyVpcAttributeRequest;
         class ModifyVpcEndpointRequest;
@@ -598,6 +602,7 @@ namespace Model
         typedef Aws::Utils::Outcome<DescribeVolumeAttributeResponse, Aws::Client::AWSError<EC2Errors>> DescribeVolumeAttributeOutcome;
         typedef Aws::Utils::Outcome<DescribeVolumeStatusResponse, Aws::Client::AWSError<EC2Errors>> DescribeVolumeStatusOutcome;
         typedef Aws::Utils::Outcome<DescribeVolumesResponse, Aws::Client::AWSError<EC2Errors>> DescribeVolumesOutcome;
+        typedef Aws::Utils::Outcome<DescribeVolumesModificationsResponse, Aws::Client::AWSError<EC2Errors>> DescribeVolumesModificationsOutcome;
         typedef Aws::Utils::Outcome<DescribeVpcAttributeResponse, Aws::Client::AWSError<EC2Errors>> DescribeVpcAttributeOutcome;
         typedef Aws::Utils::Outcome<DescribeVpcClassicLinkResponse, Aws::Client::AWSError<EC2Errors>> DescribeVpcClassicLinkOutcome;
         typedef Aws::Utils::Outcome<DescribeVpcClassicLinkDnsSupportResponse, Aws::Client::AWSError<EC2Errors>> DescribeVpcClassicLinkDnsSupportOutcome;
@@ -645,6 +650,7 @@ namespace Model
         typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<EC2Errors>> ModifySnapshotAttributeOutcome;
         typedef Aws::Utils::Outcome<ModifySpotFleetRequestResponse, Aws::Client::AWSError<EC2Errors>> ModifySpotFleetRequestOutcome;
         typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<EC2Errors>> ModifySubnetAttributeOutcome;
+        typedef Aws::Utils::Outcome<ModifyVolumeResponse, Aws::Client::AWSError<EC2Errors>> ModifyVolumeOutcome;
         typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<EC2Errors>> ModifyVolumeAttributeOutcome;
         typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<EC2Errors>> ModifyVpcAttributeOutcome;
         typedef Aws::Utils::Outcome<ModifyVpcEndpointResponse, Aws::Client::AWSError<EC2Errors>> ModifyVpcEndpointOutcome;
@@ -824,6 +830,7 @@ namespace Model
         typedef std::future<DescribeVolumeAttributeOutcome> DescribeVolumeAttributeOutcomeCallable;
         typedef std::future<DescribeVolumeStatusOutcome> DescribeVolumeStatusOutcomeCallable;
         typedef std::future<DescribeVolumesOutcome> DescribeVolumesOutcomeCallable;
+        typedef std::future<DescribeVolumesModificationsOutcome> DescribeVolumesModificationsOutcomeCallable;
         typedef std::future<DescribeVpcAttributeOutcome> DescribeVpcAttributeOutcomeCallable;
         typedef std::future<DescribeVpcClassicLinkOutcome> DescribeVpcClassicLinkOutcomeCallable;
         typedef std::future<DescribeVpcClassicLinkDnsSupportOutcome> DescribeVpcClassicLinkDnsSupportOutcomeCallable;
@@ -871,6 +878,7 @@ namespace Model
         typedef std::future<ModifySnapshotAttributeOutcome> ModifySnapshotAttributeOutcomeCallable;
         typedef std::future<ModifySpotFleetRequestOutcome> ModifySpotFleetRequestOutcomeCallable;
         typedef std::future<ModifySubnetAttributeOutcome> ModifySubnetAttributeOutcomeCallable;
+        typedef std::future<ModifyVolumeOutcome> ModifyVolumeOutcomeCallable;
         typedef std::future<ModifyVolumeAttributeOutcome> ModifyVolumeAttributeOutcomeCallable;
         typedef std::future<ModifyVpcAttributeOutcome> ModifyVpcAttributeOutcomeCallable;
         typedef std::future<ModifyVpcEndpointOutcome> ModifyVpcEndpointOutcomeCallable;
@@ -1053,6 +1061,7 @@ namespace Model
     typedef std::function<void(const EC2Client*, const Model::DescribeVolumeAttributeRequest&, const Model::DescribeVolumeAttributeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeVolumeAttributeResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DescribeVolumeStatusRequest&, const Model::DescribeVolumeStatusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeVolumeStatusResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DescribeVolumesRequest&, const Model::DescribeVolumesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeVolumesResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::DescribeVolumesModificationsRequest&, const Model::DescribeVolumesModificationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeVolumesModificationsResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DescribeVpcAttributeRequest&, const Model::DescribeVpcAttributeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeVpcAttributeResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DescribeVpcClassicLinkRequest&, const Model::DescribeVpcClassicLinkOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeVpcClassicLinkResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DescribeVpcClassicLinkDnsSupportRequest&, const Model::DescribeVpcClassicLinkDnsSupportOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeVpcClassicLinkDnsSupportResponseReceivedHandler;
@@ -1100,6 +1109,7 @@ namespace Model
     typedef std::function<void(const EC2Client*, const Model::ModifySnapshotAttributeRequest&, const Model::ModifySnapshotAttributeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifySnapshotAttributeResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::ModifySpotFleetRequestRequest&, const Model::ModifySpotFleetRequestOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifySpotFleetRequestResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::ModifySubnetAttributeRequest&, const Model::ModifySubnetAttributeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifySubnetAttributeResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::ModifyVolumeRequest&, const Model::ModifyVolumeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyVolumeResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::ModifyVolumeAttributeRequest&, const Model::ModifyVolumeAttributeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyVolumeAttributeResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::ModifyVpcAttributeRequest&, const Model::ModifyVpcAttributeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyVpcAttributeResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::ModifyVpcEndpointRequest&, const Model::ModifyVpcEndpointOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyVpcEndpointResponseReceivedHandler;
@@ -7510,6 +7520,70 @@ namespace Model
         virtual void DescribeVolumesAsync(const Model::DescribeVolumesRequest& request, const DescribeVolumesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Reports the current modification status of EBS volumes.</p>
+         * <p>Current-generation EBS volumes support modification of attributes including
+         * type, size, and (for <code>io1</code> volumes) IOPS provisioning while either
+         * attached to or detached from an instance. Following an action from the API or
+         * the console to modify a volume, the status of the modification may be
+         * <code>modifying</code>, <code>optimizing</code>, <code>completed</code>, or
+         * <code>failed</code>. If a volume has never been modified, then certain elements
+         * of the returned <code>VolumeModification</code> objects are null. </p> <p> You
+         * can also use CloudWatch Events to check the status of a modification to an EBS
+         * volume. For information about CloudWatch Events, see the <a
+         * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.com/AmazonCloudWatch/latest/events/WhatIsCloudWatchEvents.html">Amazon
+         * CloudWatch Events User Guide</a>. For more information, see <a
+         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-expand-volume.html#monitoring_mods">Monitoring
+         * Volume Modifications"</a>. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVolumesModifications">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeVolumesModificationsOutcome DescribeVolumesModifications(const Model::DescribeVolumesModificationsRequest& request) const;
+
+        /**
+         * <p>Reports the current modification status of EBS volumes.</p>
+         * <p>Current-generation EBS volumes support modification of attributes including
+         * type, size, and (for <code>io1</code> volumes) IOPS provisioning while either
+         * attached to or detached from an instance. Following an action from the API or
+         * the console to modify a volume, the status of the modification may be
+         * <code>modifying</code>, <code>optimizing</code>, <code>completed</code>, or
+         * <code>failed</code>. If a volume has never been modified, then certain elements
+         * of the returned <code>VolumeModification</code> objects are null. </p> <p> You
+         * can also use CloudWatch Events to check the status of a modification to an EBS
+         * volume. For information about CloudWatch Events, see the <a
+         * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.com/AmazonCloudWatch/latest/events/WhatIsCloudWatchEvents.html">Amazon
+         * CloudWatch Events User Guide</a>. For more information, see <a
+         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-expand-volume.html#monitoring_mods">Monitoring
+         * Volume Modifications"</a>. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVolumesModifications">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeVolumesModificationsOutcomeCallable DescribeVolumesModificationsCallable(const Model::DescribeVolumesModificationsRequest& request) const;
+
+        /**
+         * <p>Reports the current modification status of EBS volumes.</p>
+         * <p>Current-generation EBS volumes support modification of attributes including
+         * type, size, and (for <code>io1</code> volumes) IOPS provisioning while either
+         * attached to or detached from an instance. Following an action from the API or
+         * the console to modify a volume, the status of the modification may be
+         * <code>modifying</code>, <code>optimizing</code>, <code>completed</code>, or
+         * <code>failed</code>. If a volume has never been modified, then certain elements
+         * of the returned <code>VolumeModification</code> objects are null. </p> <p> You
+         * can also use CloudWatch Events to check the status of a modification to an EBS
+         * volume. For information about CloudWatch Events, see the <a
+         * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.com/AmazonCloudWatch/latest/events/WhatIsCloudWatchEvents.html">Amazon
+         * CloudWatch Events User Guide</a>. For more information, see <a
+         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-expand-volume.html#monitoring_mods">Monitoring
+         * Volume Modifications"</a>. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVolumesModifications">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeVolumesModificationsAsync(const Model::DescribeVolumesModificationsRequest& request, const DescribeVolumesModificationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Describes the specified attribute of the specified VPC. You can specify only
          * one attribute at a time.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVpcAttribute">AWS
@@ -9387,6 +9461,145 @@ namespace Model
         virtual void ModifySubnetAttributeAsync(const Model::ModifySubnetAttributeRequest& request, const ModifySubnetAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>You can modify several parameters of an existing EBS volume, including volume
+         * size, volume type, and IOPS capacity. If your EBS volume is attached to a
+         * current-generation EC2 instance type, you may be able to apply these changes
+         * without stopping the instance or detaching the volume from it. For more
+         * information about modifying an EBS volume running Linux, see <a
+         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-expand-volume.html">Modifying
+         * the Size, IOPS, or Type of an EBS Volume on Linux</a>. For more information
+         * about modifying an EBS volume running Windows, see <a
+         * href="http://docs.aws.amazon.com/docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ebs-expand-volume.html">Expanding
+         * the Storage Space of an EBS Volume on Windows</a>. </p> <p> When you complete a
+         * resize operation on your volume, you need to extend the volume's file-system
+         * size to take advantage of the new storage capacity. For information about
+         * extending a Linux file system, see <a
+         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-expand-volume.html#recognize-expanded-volume-linux">Extending
+         * a Linux File System</a>. For information about extending a Windows file system,
+         * see <a
+         * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ebs-expand-volume.html#recognize-expanded-volume-windows">Extending
+         * a Windows File System</a>. </p> <p> You can use CloudWatch Events to check the
+         * status of a modification to an EBS volume. For information about CloudWatch
+         * Events, see the <a
+         * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.com/AmazonCloudWatch/latest/events/WhatIsCloudWatchEvents.html">Amazon
+         * CloudWatch Events User Guide</a>. You can also track the status of a
+         * modification using the <a
+         * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeVolumesModifications.html">
+         * <code>DescribeVolumesModifications</code> API</a>. For information about
+         * tracking status changes using either method, see <a
+         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-expand-volume.html#monitoring_mods">Monitoring
+         * Volume Modifications"</a>. </p> <note> <p>With previous-generation volumes and
+         * instance types, resizing an EBS volume may require detaching and reattaching the
+         * volume or stopping and restarting the instance. For more information about
+         * modifying an EBS volume running Linux, see <a
+         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-expand-volume.html">Modifying
+         * the Size, IOPS, or Type of an EBS Volume on Linux</a>. For more information
+         * about modifying an EBS volume running Windows, see <a
+         * href="http://docs.aws.amazon.com/docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ebs-expand-volume.html">Modifying
+         * the Size, IOPS, or Type of an EBS Volume on Windows</a>.</p> </note> <note>
+         * <p>If you reach the maximum volume modification rate per volume limit, you will
+         * need to wait at least six hours before applying further modifications to the
+         * affected EBS volume.</p> </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVolume">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ModifyVolumeOutcome ModifyVolume(const Model::ModifyVolumeRequest& request) const;
+
+        /**
+         * <p>You can modify several parameters of an existing EBS volume, including volume
+         * size, volume type, and IOPS capacity. If your EBS volume is attached to a
+         * current-generation EC2 instance type, you may be able to apply these changes
+         * without stopping the instance or detaching the volume from it. For more
+         * information about modifying an EBS volume running Linux, see <a
+         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-expand-volume.html">Modifying
+         * the Size, IOPS, or Type of an EBS Volume on Linux</a>. For more information
+         * about modifying an EBS volume running Windows, see <a
+         * href="http://docs.aws.amazon.com/docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ebs-expand-volume.html">Expanding
+         * the Storage Space of an EBS Volume on Windows</a>. </p> <p> When you complete a
+         * resize operation on your volume, you need to extend the volume's file-system
+         * size to take advantage of the new storage capacity. For information about
+         * extending a Linux file system, see <a
+         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-expand-volume.html#recognize-expanded-volume-linux">Extending
+         * a Linux File System</a>. For information about extending a Windows file system,
+         * see <a
+         * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ebs-expand-volume.html#recognize-expanded-volume-windows">Extending
+         * a Windows File System</a>. </p> <p> You can use CloudWatch Events to check the
+         * status of a modification to an EBS volume. For information about CloudWatch
+         * Events, see the <a
+         * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.com/AmazonCloudWatch/latest/events/WhatIsCloudWatchEvents.html">Amazon
+         * CloudWatch Events User Guide</a>. You can also track the status of a
+         * modification using the <a
+         * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeVolumesModifications.html">
+         * <code>DescribeVolumesModifications</code> API</a>. For information about
+         * tracking status changes using either method, see <a
+         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-expand-volume.html#monitoring_mods">Monitoring
+         * Volume Modifications"</a>. </p> <note> <p>With previous-generation volumes and
+         * instance types, resizing an EBS volume may require detaching and reattaching the
+         * volume or stopping and restarting the instance. For more information about
+         * modifying an EBS volume running Linux, see <a
+         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-expand-volume.html">Modifying
+         * the Size, IOPS, or Type of an EBS Volume on Linux</a>. For more information
+         * about modifying an EBS volume running Windows, see <a
+         * href="http://docs.aws.amazon.com/docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ebs-expand-volume.html">Modifying
+         * the Size, IOPS, or Type of an EBS Volume on Windows</a>.</p> </note> <note>
+         * <p>If you reach the maximum volume modification rate per volume limit, you will
+         * need to wait at least six hours before applying further modifications to the
+         * affected EBS volume.</p> </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVolume">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ModifyVolumeOutcomeCallable ModifyVolumeCallable(const Model::ModifyVolumeRequest& request) const;
+
+        /**
+         * <p>You can modify several parameters of an existing EBS volume, including volume
+         * size, volume type, and IOPS capacity. If your EBS volume is attached to a
+         * current-generation EC2 instance type, you may be able to apply these changes
+         * without stopping the instance or detaching the volume from it. For more
+         * information about modifying an EBS volume running Linux, see <a
+         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-expand-volume.html">Modifying
+         * the Size, IOPS, or Type of an EBS Volume on Linux</a>. For more information
+         * about modifying an EBS volume running Windows, see <a
+         * href="http://docs.aws.amazon.com/docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ebs-expand-volume.html">Expanding
+         * the Storage Space of an EBS Volume on Windows</a>. </p> <p> When you complete a
+         * resize operation on your volume, you need to extend the volume's file-system
+         * size to take advantage of the new storage capacity. For information about
+         * extending a Linux file system, see <a
+         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-expand-volume.html#recognize-expanded-volume-linux">Extending
+         * a Linux File System</a>. For information about extending a Windows file system,
+         * see <a
+         * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ebs-expand-volume.html#recognize-expanded-volume-windows">Extending
+         * a Windows File System</a>. </p> <p> You can use CloudWatch Events to check the
+         * status of a modification to an EBS volume. For information about CloudWatch
+         * Events, see the <a
+         * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.com/AmazonCloudWatch/latest/events/WhatIsCloudWatchEvents.html">Amazon
+         * CloudWatch Events User Guide</a>. You can also track the status of a
+         * modification using the <a
+         * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeVolumesModifications.html">
+         * <code>DescribeVolumesModifications</code> API</a>. For information about
+         * tracking status changes using either method, see <a
+         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-expand-volume.html#monitoring_mods">Monitoring
+         * Volume Modifications"</a>. </p> <note> <p>With previous-generation volumes and
+         * instance types, resizing an EBS volume may require detaching and reattaching the
+         * volume or stopping and restarting the instance. For more information about
+         * modifying an EBS volume running Linux, see <a
+         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-expand-volume.html">Modifying
+         * the Size, IOPS, or Type of an EBS Volume on Linux</a>. For more information
+         * about modifying an EBS volume running Windows, see <a
+         * href="http://docs.aws.amazon.com/docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ebs-expand-volume.html">Modifying
+         * the Size, IOPS, or Type of an EBS Volume on Windows</a>.</p> </note> <note>
+         * <p>If you reach the maximum volume modification rate per volume limit, you will
+         * need to wait at least six hours before applying further modifications to the
+         * affected EBS volume.</p> </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVolume">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ModifyVolumeAsync(const Model::ModifyVolumeRequest& request, const ModifyVolumeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Modifies a volume attribute.</p> <p>By default, all I/O operations for the
          * volume are suspended when the data on the volume is determined to be potentially
          * inconsistent, to prevent undetectable, latent data corruption. The I/O access to
@@ -10076,22 +10289,22 @@ namespace Model
         virtual void ReleaseHostsAsync(const Model::ReleaseHostsRequest& request, const ReleaseHostsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Replaces an IAM instance profile for the specified instance. You can use this
-         * action to change the IAM instance profile that's associated with an instance
-         * without having to disassociate the existing IAM instance profile first.</p>
-         * <p>Use <a>DescribeIamInstanceProfileAssociations</a> to get the association
-         * ID.</p><p><h3>See Also:</h3>   <a
+         * <p>Replaces an IAM instance profile for the specified running instance. You can
+         * use this action to change the IAM instance profile that's associated with an
+         * instance without having to disassociate the existing IAM instance profile
+         * first.</p> <p>Use <a>DescribeIamInstanceProfileAssociations</a> to get the
+         * association ID.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ReplaceIamInstanceProfileAssociation">AWS
          * API Reference</a></p>
          */
         virtual Model::ReplaceIamInstanceProfileAssociationOutcome ReplaceIamInstanceProfileAssociation(const Model::ReplaceIamInstanceProfileAssociationRequest& request) const;
 
         /**
-         * <p>Replaces an IAM instance profile for the specified instance. You can use this
-         * action to change the IAM instance profile that's associated with an instance
-         * without having to disassociate the existing IAM instance profile first.</p>
-         * <p>Use <a>DescribeIamInstanceProfileAssociations</a> to get the association
-         * ID.</p><p><h3>See Also:</h3>   <a
+         * <p>Replaces an IAM instance profile for the specified running instance. You can
+         * use this action to change the IAM instance profile that's associated with an
+         * instance without having to disassociate the existing IAM instance profile
+         * first.</p> <p>Use <a>DescribeIamInstanceProfileAssociations</a> to get the
+         * association ID.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ReplaceIamInstanceProfileAssociation">AWS
          * API Reference</a></p>
          *
@@ -10100,11 +10313,11 @@ namespace Model
         virtual Model::ReplaceIamInstanceProfileAssociationOutcomeCallable ReplaceIamInstanceProfileAssociationCallable(const Model::ReplaceIamInstanceProfileAssociationRequest& request) const;
 
         /**
-         * <p>Replaces an IAM instance profile for the specified instance. You can use this
-         * action to change the IAM instance profile that's associated with an instance
-         * without having to disassociate the existing IAM instance profile first.</p>
-         * <p>Use <a>DescribeIamInstanceProfileAssociations</a> to get the association
-         * ID.</p><p><h3>See Also:</h3>   <a
+         * <p>Replaces an IAM instance profile for the specified running instance. You can
+         * use this action to change the IAM instance profile that's associated with an
+         * instance without having to disassociate the existing IAM instance profile
+         * first.</p> <p>Use <a>DescribeIamInstanceProfileAssociations</a> to get the
+         * association ID.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ReplaceIamInstanceProfileAssociation">AWS
          * API Reference</a></p>
          *
@@ -11393,6 +11606,7 @@ namespace Model
         void DescribeVolumeAttributeAsyncHelper(const Model::DescribeVolumeAttributeRequest& request, const DescribeVolumeAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeVolumeStatusAsyncHelper(const Model::DescribeVolumeStatusRequest& request, const DescribeVolumeStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeVolumesAsyncHelper(const Model::DescribeVolumesRequest& request, const DescribeVolumesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeVolumesModificationsAsyncHelper(const Model::DescribeVolumesModificationsRequest& request, const DescribeVolumesModificationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeVpcAttributeAsyncHelper(const Model::DescribeVpcAttributeRequest& request, const DescribeVpcAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeVpcClassicLinkAsyncHelper(const Model::DescribeVpcClassicLinkRequest& request, const DescribeVpcClassicLinkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeVpcClassicLinkDnsSupportAsyncHelper(const Model::DescribeVpcClassicLinkDnsSupportRequest& request, const DescribeVpcClassicLinkDnsSupportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -11440,6 +11654,7 @@ namespace Model
         void ModifySnapshotAttributeAsyncHelper(const Model::ModifySnapshotAttributeRequest& request, const ModifySnapshotAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ModifySpotFleetRequestAsyncHelper(const Model::ModifySpotFleetRequestRequest& request, const ModifySpotFleetRequestResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ModifySubnetAttributeAsyncHelper(const Model::ModifySubnetAttributeRequest& request, const ModifySubnetAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ModifyVolumeAsyncHelper(const Model::ModifyVolumeRequest& request, const ModifyVolumeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ModifyVolumeAttributeAsyncHelper(const Model::ModifyVolumeAttributeRequest& request, const ModifyVolumeAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ModifyVpcAttributeAsyncHelper(const Model::ModifyVpcAttributeRequest& request, const ModifyVpcAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ModifyVpcEndpointAsyncHelper(const Model::ModifyVpcEndpointRequest& request, const ModifyVpcEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

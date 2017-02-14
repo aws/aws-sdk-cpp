@@ -167,6 +167,7 @@
 #include <aws/ec2/model/DescribeVolumeAttributeRequest.h>
 #include <aws/ec2/model/DescribeVolumeStatusRequest.h>
 #include <aws/ec2/model/DescribeVolumesRequest.h>
+#include <aws/ec2/model/DescribeVolumesModificationsRequest.h>
 #include <aws/ec2/model/DescribeVpcAttributeRequest.h>
 #include <aws/ec2/model/DescribeVpcClassicLinkRequest.h>
 #include <aws/ec2/model/DescribeVpcClassicLinkDnsSupportRequest.h>
@@ -214,6 +215,7 @@
 #include <aws/ec2/model/ModifySnapshotAttributeRequest.h>
 #include <aws/ec2/model/ModifySpotFleetRequestRequest.h>
 #include <aws/ec2/model/ModifySubnetAttributeRequest.h>
+#include <aws/ec2/model/ModifyVolumeRequest.h>
 #include <aws/ec2/model/ModifyVolumeAttributeRequest.h>
 #include <aws/ec2/model/ModifyVpcAttributeRequest.h>
 #include <aws/ec2/model/ModifyVpcEndpointRequest.h>
@@ -4970,6 +4972,39 @@ void EC2Client::DescribeVolumesAsyncHelper(const DescribeVolumesRequest& request
   handler(this, request, DescribeVolumes(request), context);
 }
 
+DescribeVolumesModificationsOutcome EC2Client::DescribeVolumesModifications(const DescribeVolumesModificationsRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return DescribeVolumesModificationsOutcome(DescribeVolumesModificationsResponse(outcome.GetResult()));
+  }
+  else
+  {
+    return DescribeVolumesModificationsOutcome(outcome.GetError());
+  }
+}
+
+DescribeVolumesModificationsOutcomeCallable EC2Client::DescribeVolumesModificationsCallable(const DescribeVolumesModificationsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeVolumesModificationsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeVolumesModifications(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void EC2Client::DescribeVolumesModificationsAsync(const DescribeVolumesModificationsRequest& request, const DescribeVolumesModificationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeVolumesModificationsAsyncHelper( request, handler, context ); } );
+}
+
+void EC2Client::DescribeVolumesModificationsAsyncHelper(const DescribeVolumesModificationsRequest& request, const DescribeVolumesModificationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeVolumesModifications(request), context);
+}
+
 DescribeVpcAttributeOutcome EC2Client::DescribeVpcAttribute(const DescribeVpcAttributeRequest& request) const
 {
   Aws::StringStream ss;
@@ -6519,6 +6554,39 @@ void EC2Client::ModifySubnetAttributeAsync(const ModifySubnetAttributeRequest& r
 void EC2Client::ModifySubnetAttributeAsyncHelper(const ModifySubnetAttributeRequest& request, const ModifySubnetAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ModifySubnetAttribute(request), context);
+}
+
+ModifyVolumeOutcome EC2Client::ModifyVolume(const ModifyVolumeRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return ModifyVolumeOutcome(ModifyVolumeResponse(outcome.GetResult()));
+  }
+  else
+  {
+    return ModifyVolumeOutcome(outcome.GetError());
+  }
+}
+
+ModifyVolumeOutcomeCallable EC2Client::ModifyVolumeCallable(const ModifyVolumeRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ModifyVolumeOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ModifyVolume(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void EC2Client::ModifyVolumeAsync(const ModifyVolumeRequest& request, const ModifyVolumeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ModifyVolumeAsyncHelper( request, handler, context ); } );
+}
+
+void EC2Client::ModifyVolumeAsyncHelper(const ModifyVolumeRequest& request, const ModifyVolumeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ModifyVolume(request), context);
 }
 
 ModifyVolumeAttributeOutcome EC2Client::ModifyVolumeAttribute(const ModifyVolumeAttributeRequest& request) const
