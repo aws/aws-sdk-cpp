@@ -18,6 +18,7 @@
 
 #include <algorithm>
 #include <cassert>
+#include <cstring>
 
 namespace Aws
 {
@@ -52,7 +53,7 @@ SimpleStreamBuf::SimpleStreamBuf(const Aws::String& value) :
     m_buffer = Aws::NewArray<char>(baseSize, SIMPLE_STREAMBUF_ALLOCATION_TAG);
     m_bufferSize = baseSize;
 
-    memcpy(m_buffer, value.c_str(), value.size());
+    std::memcpy(m_buffer, value.c_str(), value.size());
 
     char* begin = m_buffer;
     char* end = begin + m_bufferSize;
@@ -132,7 +133,7 @@ bool SimpleStreamBuf::GrowBuffer()
 
     if(currentSize > 0)
     {
-        memcpy(newBuffer, m_buffer, currentSize);
+        std::memcpy(newBuffer, m_buffer, currentSize);
     }
 
     if(m_buffer)
@@ -192,7 +193,7 @@ std::streamsize SimpleStreamBuf::xsputn(const char* s, std::streamsize n)
             std::size_t copySize = std::min(static_cast< std::size_t >(n - writeCount),
                                             static_cast< std::size_t >(current_epptr - current_pptr));
 
-            memcpy(current_pptr, s + writeCount, copySize);
+            std::memcpy(current_pptr, s + writeCount, copySize);
             writeCount += copySize;
             setp(current_pptr + copySize, current_epptr);
             setg(m_buffer, gptr(), pptr());
