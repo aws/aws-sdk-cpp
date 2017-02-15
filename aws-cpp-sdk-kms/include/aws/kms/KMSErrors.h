@@ -73,6 +73,7 @@ enum class KMSErrors
   LIMIT_EXCEEDED,
   MALFORMED_POLICY_DOCUMENT,
   NOT_FOUND,
+  TAG,
   UNSUPPORTED_OPERATION
 };
 namespace KMSErrorMapper

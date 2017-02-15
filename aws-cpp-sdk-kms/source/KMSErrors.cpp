@@ -39,6 +39,7 @@ static const int DISABLED_HASH = HashingUtils::HashString("DisabledException");
 static const int INVALID_CIPHERTEXT_HASH = HashingUtils::HashString("InvalidCiphertextException");
 static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceededException");
 static const int INVALID_GRANT_TOKEN_HASH = HashingUtils::HashString("InvalidGrantTokenException");
+static const int TAG_HASH = HashingUtils::HashString("TagException");
 static const int K_M_S_INVALID_STATE_HASH = HashingUtils::HashString("KMSInvalidStateException");
 static const int DEPENDENCY_TIMEOUT_HASH = HashingUtils::HashString("DependencyTimeoutException");
 static const int INVALID_ARN_HASH = HashingUtils::HashString("InvalidArnException");
@@ -100,6 +101,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == INVALID_GRANT_TOKEN_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(KMSErrors::INVALID_GRANT_TOKEN), false);
+  }
+  else if (hashCode == TAG_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(KMSErrors::TAG), false);
   }
   else if (hashCode == K_M_S_INVALID_STATE_HASH)
   {

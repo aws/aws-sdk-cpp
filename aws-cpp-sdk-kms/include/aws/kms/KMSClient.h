@@ -37,6 +37,7 @@
 #include <aws/kms/model/ListGrantsResult.h>
 #include <aws/kms/model/ListKeyPoliciesResult.h>
 #include <aws/kms/model/ListKeysResult.h>
+#include <aws/kms/model/ListResourceTagsResult.h>
 #include <aws/kms/model/ListRetirableGrantsResult.h>
 #include <aws/kms/model/ReEncryptResult.h>
 #include <aws/kms/model/ScheduleKeyDeletionResult.h>
@@ -110,12 +111,15 @@ namespace Model
         class ListGrantsRequest;
         class ListKeyPoliciesRequest;
         class ListKeysRequest;
+        class ListResourceTagsRequest;
         class ListRetirableGrantsRequest;
         class PutKeyPolicyRequest;
         class ReEncryptRequest;
         class RetireGrantRequest;
         class RevokeGrantRequest;
         class ScheduleKeyDeletionRequest;
+        class TagResourceRequest;
+        class UntagResourceRequest;
         class UpdateAliasRequest;
         class UpdateKeyDescriptionRequest;
 
@@ -143,12 +147,15 @@ namespace Model
         typedef Aws::Utils::Outcome<ListGrantsResult, Aws::Client::AWSError<KMSErrors>> ListGrantsOutcome;
         typedef Aws::Utils::Outcome<ListKeyPoliciesResult, Aws::Client::AWSError<KMSErrors>> ListKeyPoliciesOutcome;
         typedef Aws::Utils::Outcome<ListKeysResult, Aws::Client::AWSError<KMSErrors>> ListKeysOutcome;
+        typedef Aws::Utils::Outcome<ListResourceTagsResult, Aws::Client::AWSError<KMSErrors>> ListResourceTagsOutcome;
         typedef Aws::Utils::Outcome<ListRetirableGrantsResult, Aws::Client::AWSError<KMSErrors>> ListRetirableGrantsOutcome;
         typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<KMSErrors>> PutKeyPolicyOutcome;
         typedef Aws::Utils::Outcome<ReEncryptResult, Aws::Client::AWSError<KMSErrors>> ReEncryptOutcome;
         typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<KMSErrors>> RetireGrantOutcome;
         typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<KMSErrors>> RevokeGrantOutcome;
         typedef Aws::Utils::Outcome<ScheduleKeyDeletionResult, Aws::Client::AWSError<KMSErrors>> ScheduleKeyDeletionOutcome;
+        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<KMSErrors>> TagResourceOutcome;
+        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<KMSErrors>> UntagResourceOutcome;
         typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<KMSErrors>> UpdateAliasOutcome;
         typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<KMSErrors>> UpdateKeyDescriptionOutcome;
 
@@ -176,12 +183,15 @@ namespace Model
         typedef std::future<ListGrantsOutcome> ListGrantsOutcomeCallable;
         typedef std::future<ListKeyPoliciesOutcome> ListKeyPoliciesOutcomeCallable;
         typedef std::future<ListKeysOutcome> ListKeysOutcomeCallable;
+        typedef std::future<ListResourceTagsOutcome> ListResourceTagsOutcomeCallable;
         typedef std::future<ListRetirableGrantsOutcome> ListRetirableGrantsOutcomeCallable;
         typedef std::future<PutKeyPolicyOutcome> PutKeyPolicyOutcomeCallable;
         typedef std::future<ReEncryptOutcome> ReEncryptOutcomeCallable;
         typedef std::future<RetireGrantOutcome> RetireGrantOutcomeCallable;
         typedef std::future<RevokeGrantOutcome> RevokeGrantOutcomeCallable;
         typedef std::future<ScheduleKeyDeletionOutcome> ScheduleKeyDeletionOutcomeCallable;
+        typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
+        typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
         typedef std::future<UpdateAliasOutcome> UpdateAliasOutcomeCallable;
         typedef std::future<UpdateKeyDescriptionOutcome> UpdateKeyDescriptionOutcomeCallable;
 } // namespace Model
@@ -212,12 +222,15 @@ namespace Model
     typedef std::function<void(const KMSClient*, const Model::ListGrantsRequest&, const Model::ListGrantsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListGrantsResponseReceivedHandler;
     typedef std::function<void(const KMSClient*, const Model::ListKeyPoliciesRequest&, const Model::ListKeyPoliciesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListKeyPoliciesResponseReceivedHandler;
     typedef std::function<void(const KMSClient*, const Model::ListKeysRequest&, const Model::ListKeysOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListKeysResponseReceivedHandler;
+    typedef std::function<void(const KMSClient*, const Model::ListResourceTagsRequest&, const Model::ListResourceTagsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListResourceTagsResponseReceivedHandler;
     typedef std::function<void(const KMSClient*, const Model::ListRetirableGrantsRequest&, const Model::ListRetirableGrantsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListRetirableGrantsResponseReceivedHandler;
     typedef std::function<void(const KMSClient*, const Model::PutKeyPolicyRequest&, const Model::PutKeyPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutKeyPolicyResponseReceivedHandler;
     typedef std::function<void(const KMSClient*, const Model::ReEncryptRequest&, const Model::ReEncryptOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ReEncryptResponseReceivedHandler;
     typedef std::function<void(const KMSClient*, const Model::RetireGrantRequest&, const Model::RetireGrantOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RetireGrantResponseReceivedHandler;
     typedef std::function<void(const KMSClient*, const Model::RevokeGrantRequest&, const Model::RevokeGrantOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RevokeGrantResponseReceivedHandler;
     typedef std::function<void(const KMSClient*, const Model::ScheduleKeyDeletionRequest&, const Model::ScheduleKeyDeletionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ScheduleKeyDeletionResponseReceivedHandler;
+    typedef std::function<void(const KMSClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
+    typedef std::function<void(const KMSClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
     typedef std::function<void(const KMSClient*, const Model::UpdateAliasRequest&, const Model::UpdateAliasOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateAliasResponseReceivedHandler;
     typedef std::function<void(const KMSClient*, const Model::UpdateKeyDescriptionRequest&, const Model::UpdateKeyDescriptionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateKeyDescriptionResponseReceivedHandler;
 
@@ -1354,6 +1367,34 @@ namespace Model
         virtual void ListKeysAsync(const Model::ListKeysRequest& request, const ListKeysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Returns a list of all tags for the specified customer master key
+         * (CMK).</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/ListResourceTags">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListResourceTagsOutcome ListResourceTags(const Model::ListResourceTagsRequest& request) const;
+
+        /**
+         * <p>Returns a list of all tags for the specified customer master key
+         * (CMK).</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/ListResourceTags">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListResourceTagsOutcomeCallable ListResourceTagsCallable(const Model::ListResourceTagsRequest& request) const;
+
+        /**
+         * <p>Returns a list of all tags for the specified customer master key
+         * (CMK).</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/ListResourceTags">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListResourceTagsAsync(const Model::ListResourceTagsRequest& request, const ListResourceTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Returns a list of all grants for which the grant's
          * <code>RetiringPrincipal</code> matches the one specified.</p> <p>A typical use
          * is to list all grants that you are able to retire. To retire a grant, use
@@ -1642,6 +1683,89 @@ namespace Model
         virtual void ScheduleKeyDeletionAsync(const Model::ScheduleKeyDeletionRequest& request, const ScheduleKeyDeletionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Adds or overwrites one or more tags for the specified customer master key
+         * (CMK). </p> <p>Each tag consists of a tag key and a tag value. Tag keys and tag
+         * values are both required, but tag values can be empty (null) strings.</p> <p>You
+         * cannot use the same tag key more than once per CMK. For example, consider a CMK
+         * with one tag whose tag key is <code>Purpose</code> and tag value is
+         * <code>Test</code>. If you send a <code>TagResource</code> request for this CMK
+         * with a tag key of <code>Purpose</code> and a tag value of <code>Prod</code>, it
+         * does not create a second tag. Instead, the original tag is overwritten with the
+         * new tag value.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/TagResource">AWS API
+         * Reference</a></p>
+         */
+        virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
+
+        /**
+         * <p>Adds or overwrites one or more tags for the specified customer master key
+         * (CMK). </p> <p>Each tag consists of a tag key and a tag value. Tag keys and tag
+         * values are both required, but tag values can be empty (null) strings.</p> <p>You
+         * cannot use the same tag key more than once per CMK. For example, consider a CMK
+         * with one tag whose tag key is <code>Purpose</code> and tag value is
+         * <code>Test</code>. If you send a <code>TagResource</code> request for this CMK
+         * with a tag key of <code>Purpose</code> and a tag value of <code>Prod</code>, it
+         * does not create a second tag. Instead, the original tag is overwritten with the
+         * new tag value.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/TagResource">AWS API
+         * Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::TagResourceOutcomeCallable TagResourceCallable(const Model::TagResourceRequest& request) const;
+
+        /**
+         * <p>Adds or overwrites one or more tags for the specified customer master key
+         * (CMK). </p> <p>Each tag consists of a tag key and a tag value. Tag keys and tag
+         * values are both required, but tag values can be empty (null) strings.</p> <p>You
+         * cannot use the same tag key more than once per CMK. For example, consider a CMK
+         * with one tag whose tag key is <code>Purpose</code> and tag value is
+         * <code>Test</code>. If you send a <code>TagResource</code> request for this CMK
+         * with a tag key of <code>Purpose</code> and a tag value of <code>Prod</code>, it
+         * does not create a second tag. Instead, the original tag is overwritten with the
+         * new tag value.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/TagResource">AWS API
+         * Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void TagResourceAsync(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Removes the specified tag or tags from the specified customer master key
+         * (CMK). </p> <p>To remove a tag, you specify the tag key for each tag to remove.
+         * You do not specify the tag value. To overwrite the tag value for an existing
+         * tag, use <a>TagResource</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/UntagResource">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
+
+        /**
+         * <p>Removes the specified tag or tags from the specified customer master key
+         * (CMK). </p> <p>To remove a tag, you specify the tag key for each tag to remove.
+         * You do not specify the tag value. To overwrite the tag value for an existing
+         * tag, use <a>TagResource</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/UntagResource">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UntagResourceOutcomeCallable UntagResourceCallable(const Model::UntagResourceRequest& request) const;
+
+        /**
+         * <p>Removes the specified tag or tags from the specified customer master key
+         * (CMK). </p> <p>To remove a tag, you specify the tag key for each tag to remove.
+         * You do not specify the tag value. To overwrite the tag value for an existing
+         * tag, use <a>TagResource</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/UntagResource">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Updates an alias to map it to a different key.</p> <p>An alias is not a
          * property of a key. Therefore, an alias can be mapped to and unmapped from an
          * existing key without changing the properties of the key.</p> <p>An alias name
@@ -1747,12 +1871,15 @@ namespace Model
         void ListGrantsAsyncHelper(const Model::ListGrantsRequest& request, const ListGrantsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListKeyPoliciesAsyncHelper(const Model::ListKeyPoliciesRequest& request, const ListKeyPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListKeysAsyncHelper(const Model::ListKeysRequest& request, const ListKeysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListResourceTagsAsyncHelper(const Model::ListResourceTagsRequest& request, const ListResourceTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListRetirableGrantsAsyncHelper(const Model::ListRetirableGrantsRequest& request, const ListRetirableGrantsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutKeyPolicyAsyncHelper(const Model::PutKeyPolicyRequest& request, const PutKeyPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ReEncryptAsyncHelper(const Model::ReEncryptRequest& request, const ReEncryptResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RetireGrantAsyncHelper(const Model::RetireGrantRequest& request, const RetireGrantResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RevokeGrantAsyncHelper(const Model::RevokeGrantRequest& request, const RevokeGrantResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ScheduleKeyDeletionAsyncHelper(const Model::ScheduleKeyDeletionRequest& request, const ScheduleKeyDeletionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateAliasAsyncHelper(const Model::UpdateAliasRequest& request, const UpdateAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateKeyDescriptionAsyncHelper(const Model::UpdateKeyDescriptionRequest& request, const UpdateKeyDescriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 

@@ -29,7 +29,8 @@ CreateKeyRequest::CreateKeyRequest() :
     m_origin(OriginType::NOT_SET),
     m_originHasBeenSet(false),
     m_bypassPolicyLockoutSafetyCheck(false),
-    m_bypassPolicyLockoutSafetyCheckHasBeenSet(false)
+    m_bypassPolicyLockoutSafetyCheckHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -62,6 +63,17 @@ Aws::String CreateKeyRequest::SerializePayload() const
   if(m_bypassPolicyLockoutSafetyCheckHasBeenSet)
   {
    payload.WithBool("BypassPolicyLockoutSafetyCheck", m_bypassPolicyLockoutSafetyCheck);
+
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   Array<JsonValue> tagsJsonList(m_tags.size());
+   for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
+   {
+     tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
+   }
+   payload.WithArray("Tags", std::move(tagsJsonList));
 
   }
 

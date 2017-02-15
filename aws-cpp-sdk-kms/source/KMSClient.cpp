@@ -50,12 +50,15 @@
 #include <aws/kms/model/ListGrantsRequest.h>
 #include <aws/kms/model/ListKeyPoliciesRequest.h>
 #include <aws/kms/model/ListKeysRequest.h>
+#include <aws/kms/model/ListResourceTagsRequest.h>
 #include <aws/kms/model/ListRetirableGrantsRequest.h>
 #include <aws/kms/model/PutKeyPolicyRequest.h>
 #include <aws/kms/model/ReEncryptRequest.h>
 #include <aws/kms/model/RetireGrantRequest.h>
 #include <aws/kms/model/RevokeGrantRequest.h>
 #include <aws/kms/model/ScheduleKeyDeletionRequest.h>
+#include <aws/kms/model/TagResourceRequest.h>
+#include <aws/kms/model/UntagResourceRequest.h>
 #include <aws/kms/model/UpdateAliasRequest.h>
 #include <aws/kms/model/UpdateKeyDescriptionRequest.h>
 
@@ -939,6 +942,40 @@ void KMSClient::ListKeysAsyncHelper(const ListKeysRequest& request, const ListKe
   handler(this, request, ListKeys(request), context);
 }
 
+ListResourceTagsOutcome KMSClient::ListResourceTags(const ListResourceTagsRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return ListResourceTagsOutcome(ListResourceTagsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ListResourceTagsOutcome(outcome.GetError());
+  }
+}
+
+ListResourceTagsOutcomeCallable KMSClient::ListResourceTagsCallable(const ListResourceTagsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListResourceTagsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListResourceTags(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void KMSClient::ListResourceTagsAsync(const ListResourceTagsRequest& request, const ListResourceTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListResourceTagsAsyncHelper( request, handler, context ); } );
+}
+
+void KMSClient::ListResourceTagsAsyncHelper(const ListResourceTagsRequest& request, const ListResourceTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListResourceTags(request), context);
+}
+
 ListRetirableGrantsOutcome KMSClient::ListRetirableGrants(const ListRetirableGrantsRequest& request) const
 {
   Aws::StringStream ss;
@@ -1141,6 +1178,74 @@ void KMSClient::ScheduleKeyDeletionAsync(const ScheduleKeyDeletionRequest& reque
 void KMSClient::ScheduleKeyDeletionAsyncHelper(const ScheduleKeyDeletionRequest& request, const ScheduleKeyDeletionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ScheduleKeyDeletion(request), context);
+}
+
+TagResourceOutcome KMSClient::TagResource(const TagResourceRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return TagResourceOutcome(NoResult());
+  }
+  else
+  {
+    return TagResourceOutcome(outcome.GetError());
+  }
+}
+
+TagResourceOutcomeCallable KMSClient::TagResourceCallable(const TagResourceRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< TagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->TagResource(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void KMSClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->TagResourceAsyncHelper( request, handler, context ); } );
+}
+
+void KMSClient::TagResourceAsyncHelper(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, TagResource(request), context);
+}
+
+UntagResourceOutcome KMSClient::UntagResource(const UntagResourceRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return UntagResourceOutcome(NoResult());
+  }
+  else
+  {
+    return UntagResourceOutcome(outcome.GetError());
+  }
+}
+
+UntagResourceOutcomeCallable KMSClient::UntagResourceCallable(const UntagResourceRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UntagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UntagResource(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void KMSClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UntagResourceAsyncHelper( request, handler, context ); } );
+}
+
+void KMSClient::UntagResourceAsyncHelper(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UntagResource(request), context);
 }
 
 UpdateAliasOutcome KMSClient::UpdateAlias(const UpdateAliasRequest& request) const

@@ -105,81 +105,81 @@ namespace Model
     inline ListKeyPoliciesRequest& WithKeyId(const char* value) { SetKeyId(value); return *this;}
 
     /**
-     * <p>When paginating results, specify the maximum number of items to return in the
-     * response. If additional items exist beyond the number you specify, the
-     * <code>Truncated</code> element in the response is set to true.</p> <p>This value
-     * is optional. If you include a value, it must be between 1 and 1000, inclusive.
-     * If you do not include a value, it defaults to 100.</p> <p>Currently only 1
-     * policy can be attached to a key.</p>
+     * <p>Use this parameter to specify the maximum number of items to return. When
+     * this value is present, AWS KMS does not return more than the specified number of
+     * items, but it might return fewer.</p> <p>This value is optional. If you include
+     * a value, it must be between 1 and 1000, inclusive. If you do not include a
+     * value, it defaults to 100.</p> <p>Currently only 1 policy can be attached to a
+     * key.</p>
      */
     inline int GetLimit() const{ return m_limit; }
 
     /**
-     * <p>When paginating results, specify the maximum number of items to return in the
-     * response. If additional items exist beyond the number you specify, the
-     * <code>Truncated</code> element in the response is set to true.</p> <p>This value
-     * is optional. If you include a value, it must be between 1 and 1000, inclusive.
-     * If you do not include a value, it defaults to 100.</p> <p>Currently only 1
-     * policy can be attached to a key.</p>
+     * <p>Use this parameter to specify the maximum number of items to return. When
+     * this value is present, AWS KMS does not return more than the specified number of
+     * items, but it might return fewer.</p> <p>This value is optional. If you include
+     * a value, it must be between 1 and 1000, inclusive. If you do not include a
+     * value, it defaults to 100.</p> <p>Currently only 1 policy can be attached to a
+     * key.</p>
      */
     inline void SetLimit(int value) { m_limitHasBeenSet = true; m_limit = value; }
 
     /**
-     * <p>When paginating results, specify the maximum number of items to return in the
-     * response. If additional items exist beyond the number you specify, the
-     * <code>Truncated</code> element in the response is set to true.</p> <p>This value
-     * is optional. If you include a value, it must be between 1 and 1000, inclusive.
-     * If you do not include a value, it defaults to 100.</p> <p>Currently only 1
-     * policy can be attached to a key.</p>
+     * <p>Use this parameter to specify the maximum number of items to return. When
+     * this value is present, AWS KMS does not return more than the specified number of
+     * items, but it might return fewer.</p> <p>This value is optional. If you include
+     * a value, it must be between 1 and 1000, inclusive. If you do not include a
+     * value, it defaults to 100.</p> <p>Currently only 1 policy can be attached to a
+     * key.</p>
      */
     inline ListKeyPoliciesRequest& WithLimit(int value) { SetLimit(value); return *this;}
 
     /**
-     * <p>Use this parameter only when paginating results and only in a subsequent
-     * request after you receive a response with truncated results. Set it to the value
-     * of <code>NextMarker</code> from the response you just received.</p>
+     * <p>Use this parameter in a subsequent request after you receive a response with
+     * truncated results. Set it to the value of <code>NextMarker</code> from the
+     * truncated response you just received.</p>
      */
     inline const Aws::String& GetMarker() const{ return m_marker; }
 
     /**
-     * <p>Use this parameter only when paginating results and only in a subsequent
-     * request after you receive a response with truncated results. Set it to the value
-     * of <code>NextMarker</code> from the response you just received.</p>
+     * <p>Use this parameter in a subsequent request after you receive a response with
+     * truncated results. Set it to the value of <code>NextMarker</code> from the
+     * truncated response you just received.</p>
      */
     inline void SetMarker(const Aws::String& value) { m_markerHasBeenSet = true; m_marker = value; }
 
     /**
-     * <p>Use this parameter only when paginating results and only in a subsequent
-     * request after you receive a response with truncated results. Set it to the value
-     * of <code>NextMarker</code> from the response you just received.</p>
+     * <p>Use this parameter in a subsequent request after you receive a response with
+     * truncated results. Set it to the value of <code>NextMarker</code> from the
+     * truncated response you just received.</p>
      */
     inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = value; }
 
     /**
-     * <p>Use this parameter only when paginating results and only in a subsequent
-     * request after you receive a response with truncated results. Set it to the value
-     * of <code>NextMarker</code> from the response you just received.</p>
+     * <p>Use this parameter in a subsequent request after you receive a response with
+     * truncated results. Set it to the value of <code>NextMarker</code> from the
+     * truncated response you just received.</p>
      */
     inline void SetMarker(const char* value) { m_markerHasBeenSet = true; m_marker.assign(value); }
 
     /**
-     * <p>Use this parameter only when paginating results and only in a subsequent
-     * request after you receive a response with truncated results. Set it to the value
-     * of <code>NextMarker</code> from the response you just received.</p>
+     * <p>Use this parameter in a subsequent request after you receive a response with
+     * truncated results. Set it to the value of <code>NextMarker</code> from the
+     * truncated response you just received.</p>
      */
     inline ListKeyPoliciesRequest& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
 
     /**
-     * <p>Use this parameter only when paginating results and only in a subsequent
-     * request after you receive a response with truncated results. Set it to the value
-     * of <code>NextMarker</code> from the response you just received.</p>
+     * <p>Use this parameter in a subsequent request after you receive a response with
+     * truncated results. Set it to the value of <code>NextMarker</code> from the
+     * truncated response you just received.</p>
      */
     inline ListKeyPoliciesRequest& WithMarker(Aws::String&& value) { SetMarker(value); return *this;}
 
     /**
-     * <p>Use this parameter only when paginating results and only in a subsequent
-     * request after you receive a response with truncated results. Set it to the value
-     * of <code>NextMarker</code> from the response you just received.</p>
+     * <p>Use this parameter in a subsequent request after you receive a response with
+     * truncated results. Set it to the value of <code>NextMarker</code> from the
+     * truncated response you just received.</p>
      */
     inline ListKeyPoliciesRequest& WithMarker(const char* value) { SetMarker(value); return *this;}
 
