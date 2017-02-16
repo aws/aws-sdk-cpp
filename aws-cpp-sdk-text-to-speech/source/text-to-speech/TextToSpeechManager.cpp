@@ -153,7 +153,7 @@ namespace Aws
                     auto read = stream.gcount();
                     AWS_LOGSTREAM_TRACE(CLASS_TAG, "Writing " << read << " bytes to device.");
 
-                    successfullyPlayed = m_activeDriver->WriteBufferToDevice(buffer, read);
+                    successfullyPlayed = m_activeDriver->WriteBufferToDevice(buffer, (std::size_t)read);
                     amountRead += read;
                     played = successfullyPlayed;
                 }
