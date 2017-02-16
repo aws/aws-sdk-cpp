@@ -5,11 +5,9 @@ set -e
 ABIS=("x86")
 BASE_DIR=$(git rev-parse --show-toplevel)
 BUILD_DIR=$BASE_DIR/build/GenerateVitalClient
-STAGE_NAME="test"
+STAGE_NAME="prod"
 SWAGGER_FILE_PATH=$BASE_DIR/VitalServices-prod-swagger.json
 AWS_CPP_SOURCE_DIR=$BASE_DIR
-
-${BASE_DIR}/create-aws-gateway.py ${STAGE_NAME}
 REST_API_ID=`cat ~/.my-gateway-id`
 
 rm -rf $BASE_DIR/aws-cpp-sdk-vitalservices
