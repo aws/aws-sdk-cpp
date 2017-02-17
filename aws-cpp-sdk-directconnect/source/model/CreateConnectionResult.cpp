@@ -100,6 +100,18 @@ CreateConnectionResult& CreateConnectionResult::operator =(const AmazonWebServic
 
   }
 
+  if(jsonValue.ValueExists("lagId"))
+  {
+    m_lagId = jsonValue.GetString("lagId");
+
+  }
+
+  if(jsonValue.ValueExists("awsDevice"))
+  {
+    m_awsDevice = jsonValue.GetString("awsDevice");
+
+  }
+
 
 
   return *this;

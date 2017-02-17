@@ -101,6 +101,27 @@ namespace Model
     
     inline CreateConnectionRequest& WithConnectionName(const char* value) { SetConnectionName(value); return *this;}
 
+    
+    inline const Aws::String& GetLagId() const{ return m_lagId; }
+
+    
+    inline void SetLagId(const Aws::String& value) { m_lagIdHasBeenSet = true; m_lagId = value; }
+
+    
+    inline void SetLagId(Aws::String&& value) { m_lagIdHasBeenSet = true; m_lagId = value; }
+
+    
+    inline void SetLagId(const char* value) { m_lagIdHasBeenSet = true; m_lagId.assign(value); }
+
+    
+    inline CreateConnectionRequest& WithLagId(const Aws::String& value) { SetLagId(value); return *this;}
+
+    
+    inline CreateConnectionRequest& WithLagId(Aws::String&& value) { SetLagId(value); return *this;}
+
+    
+    inline CreateConnectionRequest& WithLagId(const char* value) { SetLagId(value); return *this;}
+
   private:
     Aws::String m_location;
     bool m_locationHasBeenSet;
@@ -108,6 +129,8 @@ namespace Model
     bool m_bandwidthHasBeenSet;
     Aws::String m_connectionName;
     bool m_connectionNameHasBeenSet;
+    Aws::String m_lagId;
+    bool m_lagIdHasBeenSet;
   };
 
 } // namespace Model

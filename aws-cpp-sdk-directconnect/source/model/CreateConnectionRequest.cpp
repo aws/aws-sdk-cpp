@@ -24,7 +24,8 @@ using namespace Aws::Utils;
 CreateConnectionRequest::CreateConnectionRequest() : 
     m_locationHasBeenSet(false),
     m_bandwidthHasBeenSet(false),
-    m_connectionNameHasBeenSet(false)
+    m_connectionNameHasBeenSet(false),
+    m_lagIdHasBeenSet(false)
 {
 }
 
@@ -47,6 +48,12 @@ Aws::String CreateConnectionRequest::SerializePayload() const
   if(m_connectionNameHasBeenSet)
   {
    payload.WithString("connectionName", m_connectionName);
+
+  }
+
+  if(m_lagIdHasBeenSet)
+  {
+   payload.WithString("lagId", m_lagId);
 
   }
 

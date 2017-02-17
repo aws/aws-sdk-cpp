@@ -39,7 +39,9 @@ Connection::Connection() :
     m_vlan(0),
     m_vlanHasBeenSet(false),
     m_partnerNameHasBeenSet(false),
-    m_loaIssueTimeHasBeenSet(false)
+    m_loaIssueTimeHasBeenSet(false),
+    m_lagIdHasBeenSet(false),
+    m_awsDeviceHasBeenSet(false)
 {
 }
 
@@ -55,7 +57,9 @@ Connection::Connection(const JsonValue& jsonValue) :
     m_vlan(0),
     m_vlanHasBeenSet(false),
     m_partnerNameHasBeenSet(false),
-    m_loaIssueTimeHasBeenSet(false)
+    m_loaIssueTimeHasBeenSet(false),
+    m_lagIdHasBeenSet(false),
+    m_awsDeviceHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -132,6 +136,20 @@ Connection& Connection::operator =(const JsonValue& jsonValue)
     m_loaIssueTimeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("lagId"))
+  {
+    m_lagId = jsonValue.GetString("lagId");
+
+    m_lagIdHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("awsDevice"))
+  {
+    m_awsDevice = jsonValue.GetString("awsDevice");
+
+    m_awsDeviceHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -195,6 +213,18 @@ JsonValue Connection::Jsonize() const
   if(m_loaIssueTimeHasBeenSet)
   {
    payload.WithDouble("loaIssueTime", m_loaIssueTime.SecondsWithMSPrecision());
+  }
+
+  if(m_lagIdHasBeenSet)
+  {
+   payload.WithString("lagId", m_lagId);
+
+  }
+
+  if(m_awsDeviceHasBeenSet)
+  {
+   payload.WithString("awsDevice", m_awsDevice);
+
   }
 
   return payload;

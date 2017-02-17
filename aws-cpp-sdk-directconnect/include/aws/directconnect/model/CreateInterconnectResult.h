@@ -205,6 +205,69 @@ namespace Model
      */
     inline CreateInterconnectResult& WithLoaIssueTime(Aws::Utils::DateTime&& value) { SetLoaIssueTime(value); return *this;}
 
+    
+    inline const Aws::String& GetLagId() const{ return m_lagId; }
+
+    
+    inline void SetLagId(const Aws::String& value) { m_lagId = value; }
+
+    
+    inline void SetLagId(Aws::String&& value) { m_lagId = value; }
+
+    
+    inline void SetLagId(const char* value) { m_lagId.assign(value); }
+
+    
+    inline CreateInterconnectResult& WithLagId(const Aws::String& value) { SetLagId(value); return *this;}
+
+    
+    inline CreateInterconnectResult& WithLagId(Aws::String&& value) { SetLagId(value); return *this;}
+
+    
+    inline CreateInterconnectResult& WithLagId(const char* value) { SetLagId(value); return *this;}
+
+    /**
+     * <p>The Direct Connection endpoint which the physical connection terminates
+     * on.</p>
+     */
+    inline const Aws::String& GetAwsDevice() const{ return m_awsDevice; }
+
+    /**
+     * <p>The Direct Connection endpoint which the physical connection terminates
+     * on.</p>
+     */
+    inline void SetAwsDevice(const Aws::String& value) { m_awsDevice = value; }
+
+    /**
+     * <p>The Direct Connection endpoint which the physical connection terminates
+     * on.</p>
+     */
+    inline void SetAwsDevice(Aws::String&& value) { m_awsDevice = value; }
+
+    /**
+     * <p>The Direct Connection endpoint which the physical connection terminates
+     * on.</p>
+     */
+    inline void SetAwsDevice(const char* value) { m_awsDevice.assign(value); }
+
+    /**
+     * <p>The Direct Connection endpoint which the physical connection terminates
+     * on.</p>
+     */
+    inline CreateInterconnectResult& WithAwsDevice(const Aws::String& value) { SetAwsDevice(value); return *this;}
+
+    /**
+     * <p>The Direct Connection endpoint which the physical connection terminates
+     * on.</p>
+     */
+    inline CreateInterconnectResult& WithAwsDevice(Aws::String&& value) { SetAwsDevice(value); return *this;}
+
+    /**
+     * <p>The Direct Connection endpoint which the physical connection terminates
+     * on.</p>
+     */
+    inline CreateInterconnectResult& WithAwsDevice(const char* value) { SetAwsDevice(value); return *this;}
+
   private:
     Aws::String m_interconnectId;
     Aws::String m_interconnectName;
@@ -213,6 +276,8 @@ namespace Model
     Aws::String m_location;
     Aws::String m_bandwidth;
     Aws::Utils::DateTime m_loaIssueTime;
+    Aws::String m_lagId;
+    Aws::String m_awsDevice;
   };
 
 } // namespace Model

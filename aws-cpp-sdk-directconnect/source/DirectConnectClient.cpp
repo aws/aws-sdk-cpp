@@ -27,29 +27,40 @@
 #include <aws/directconnect/DirectConnectEndpoint.h>
 #include <aws/directconnect/DirectConnectErrorMarshaller.h>
 #include <aws/directconnect/model/AllocateConnectionOnInterconnectRequest.h>
+#include <aws/directconnect/model/AllocateHostedConnectionRequest.h>
 #include <aws/directconnect/model/AllocatePrivateVirtualInterfaceRequest.h>
 #include <aws/directconnect/model/AllocatePublicVirtualInterfaceRequest.h>
+#include <aws/directconnect/model/AssociateConnectionWithLagRequest.h>
+#include <aws/directconnect/model/AssociateHostedConnectionRequest.h>
+#include <aws/directconnect/model/AssociateVirtualInterfaceRequest.h>
 #include <aws/directconnect/model/ConfirmConnectionRequest.h>
 #include <aws/directconnect/model/ConfirmPrivateVirtualInterfaceRequest.h>
 #include <aws/directconnect/model/ConfirmPublicVirtualInterfaceRequest.h>
 #include <aws/directconnect/model/CreateBGPPeerRequest.h>
 #include <aws/directconnect/model/CreateConnectionRequest.h>
 #include <aws/directconnect/model/CreateInterconnectRequest.h>
+#include <aws/directconnect/model/CreateLagRequest.h>
 #include <aws/directconnect/model/CreatePrivateVirtualInterfaceRequest.h>
 #include <aws/directconnect/model/CreatePublicVirtualInterfaceRequest.h>
 #include <aws/directconnect/model/DeleteBGPPeerRequest.h>
 #include <aws/directconnect/model/DeleteConnectionRequest.h>
 #include <aws/directconnect/model/DeleteInterconnectRequest.h>
+#include <aws/directconnect/model/DeleteLagRequest.h>
 #include <aws/directconnect/model/DeleteVirtualInterfaceRequest.h>
 #include <aws/directconnect/model/DescribeConnectionLoaRequest.h>
 #include <aws/directconnect/model/DescribeConnectionsRequest.h>
 #include <aws/directconnect/model/DescribeConnectionsOnInterconnectRequest.h>
+#include <aws/directconnect/model/DescribeHostedConnectionsRequest.h>
 #include <aws/directconnect/model/DescribeInterconnectLoaRequest.h>
 #include <aws/directconnect/model/DescribeInterconnectsRequest.h>
+#include <aws/directconnect/model/DescribeLagsRequest.h>
+#include <aws/directconnect/model/DescribeLoaRequest.h>
 #include <aws/directconnect/model/DescribeTagsRequest.h>
 #include <aws/directconnect/model/DescribeVirtualInterfacesRequest.h>
+#include <aws/directconnect/model/DisassociateConnectionFromLagRequest.h>
 #include <aws/directconnect/model/TagResourceRequest.h>
 #include <aws/directconnect/model/UntagResourceRequest.h>
+#include <aws/directconnect/model/UpdateLagRequest.h>
 
 using namespace Aws;
 using namespace Aws::Auth;
@@ -149,6 +160,40 @@ void DirectConnectClient::AllocateConnectionOnInterconnectAsyncHelper(const Allo
   handler(this, request, AllocateConnectionOnInterconnect(request), context);
 }
 
+AllocateHostedConnectionOutcome DirectConnectClient::AllocateHostedConnection(const AllocateHostedConnectionRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return AllocateHostedConnectionOutcome(AllocateHostedConnectionResult(outcome.GetResult()));
+  }
+  else
+  {
+    return AllocateHostedConnectionOutcome(outcome.GetError());
+  }
+}
+
+AllocateHostedConnectionOutcomeCallable DirectConnectClient::AllocateHostedConnectionCallable(const AllocateHostedConnectionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< AllocateHostedConnectionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->AllocateHostedConnection(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void DirectConnectClient::AllocateHostedConnectionAsync(const AllocateHostedConnectionRequest& request, const AllocateHostedConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->AllocateHostedConnectionAsyncHelper( request, handler, context ); } );
+}
+
+void DirectConnectClient::AllocateHostedConnectionAsyncHelper(const AllocateHostedConnectionRequest& request, const AllocateHostedConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, AllocateHostedConnection(request), context);
+}
+
 AllocatePrivateVirtualInterfaceOutcome DirectConnectClient::AllocatePrivateVirtualInterface(const AllocatePrivateVirtualInterfaceRequest& request) const
 {
   Aws::StringStream ss;
@@ -215,6 +260,108 @@ void DirectConnectClient::AllocatePublicVirtualInterfaceAsync(const AllocatePubl
 void DirectConnectClient::AllocatePublicVirtualInterfaceAsyncHelper(const AllocatePublicVirtualInterfaceRequest& request, const AllocatePublicVirtualInterfaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, AllocatePublicVirtualInterface(request), context);
+}
+
+AssociateConnectionWithLagOutcome DirectConnectClient::AssociateConnectionWithLag(const AssociateConnectionWithLagRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return AssociateConnectionWithLagOutcome(AssociateConnectionWithLagResult(outcome.GetResult()));
+  }
+  else
+  {
+    return AssociateConnectionWithLagOutcome(outcome.GetError());
+  }
+}
+
+AssociateConnectionWithLagOutcomeCallable DirectConnectClient::AssociateConnectionWithLagCallable(const AssociateConnectionWithLagRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< AssociateConnectionWithLagOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->AssociateConnectionWithLag(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void DirectConnectClient::AssociateConnectionWithLagAsync(const AssociateConnectionWithLagRequest& request, const AssociateConnectionWithLagResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->AssociateConnectionWithLagAsyncHelper( request, handler, context ); } );
+}
+
+void DirectConnectClient::AssociateConnectionWithLagAsyncHelper(const AssociateConnectionWithLagRequest& request, const AssociateConnectionWithLagResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, AssociateConnectionWithLag(request), context);
+}
+
+AssociateHostedConnectionOutcome DirectConnectClient::AssociateHostedConnection(const AssociateHostedConnectionRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return AssociateHostedConnectionOutcome(AssociateHostedConnectionResult(outcome.GetResult()));
+  }
+  else
+  {
+    return AssociateHostedConnectionOutcome(outcome.GetError());
+  }
+}
+
+AssociateHostedConnectionOutcomeCallable DirectConnectClient::AssociateHostedConnectionCallable(const AssociateHostedConnectionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< AssociateHostedConnectionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->AssociateHostedConnection(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void DirectConnectClient::AssociateHostedConnectionAsync(const AssociateHostedConnectionRequest& request, const AssociateHostedConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->AssociateHostedConnectionAsyncHelper( request, handler, context ); } );
+}
+
+void DirectConnectClient::AssociateHostedConnectionAsyncHelper(const AssociateHostedConnectionRequest& request, const AssociateHostedConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, AssociateHostedConnection(request), context);
+}
+
+AssociateVirtualInterfaceOutcome DirectConnectClient::AssociateVirtualInterface(const AssociateVirtualInterfaceRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return AssociateVirtualInterfaceOutcome(AssociateVirtualInterfaceResult(outcome.GetResult()));
+  }
+  else
+  {
+    return AssociateVirtualInterfaceOutcome(outcome.GetError());
+  }
+}
+
+AssociateVirtualInterfaceOutcomeCallable DirectConnectClient::AssociateVirtualInterfaceCallable(const AssociateVirtualInterfaceRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< AssociateVirtualInterfaceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->AssociateVirtualInterface(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void DirectConnectClient::AssociateVirtualInterfaceAsync(const AssociateVirtualInterfaceRequest& request, const AssociateVirtualInterfaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->AssociateVirtualInterfaceAsyncHelper( request, handler, context ); } );
+}
+
+void DirectConnectClient::AssociateVirtualInterfaceAsyncHelper(const AssociateVirtualInterfaceRequest& request, const AssociateVirtualInterfaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, AssociateVirtualInterface(request), context);
 }
 
 ConfirmConnectionOutcome DirectConnectClient::ConfirmConnection(const ConfirmConnectionRequest& request) const
@@ -421,6 +568,40 @@ void DirectConnectClient::CreateInterconnectAsyncHelper(const CreateInterconnect
   handler(this, request, CreateInterconnect(request), context);
 }
 
+CreateLagOutcome DirectConnectClient::CreateLag(const CreateLagRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return CreateLagOutcome(CreateLagResult(outcome.GetResult()));
+  }
+  else
+  {
+    return CreateLagOutcome(outcome.GetError());
+  }
+}
+
+CreateLagOutcomeCallable DirectConnectClient::CreateLagCallable(const CreateLagRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateLagOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateLag(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void DirectConnectClient::CreateLagAsync(const CreateLagRequest& request, const CreateLagResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateLagAsyncHelper( request, handler, context ); } );
+}
+
+void DirectConnectClient::CreateLagAsyncHelper(const CreateLagRequest& request, const CreateLagResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateLag(request), context);
+}
+
 CreatePrivateVirtualInterfaceOutcome DirectConnectClient::CreatePrivateVirtualInterface(const CreatePrivateVirtualInterfaceRequest& request) const
 {
   Aws::StringStream ss;
@@ -591,6 +772,40 @@ void DirectConnectClient::DeleteInterconnectAsyncHelper(const DeleteInterconnect
   handler(this, request, DeleteInterconnect(request), context);
 }
 
+DeleteLagOutcome DirectConnectClient::DeleteLag(const DeleteLagRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return DeleteLagOutcome(DeleteLagResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DeleteLagOutcome(outcome.GetError());
+  }
+}
+
+DeleteLagOutcomeCallable DirectConnectClient::DeleteLagCallable(const DeleteLagRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteLagOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteLag(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void DirectConnectClient::DeleteLagAsync(const DeleteLagRequest& request, const DeleteLagResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteLagAsyncHelper( request, handler, context ); } );
+}
+
+void DirectConnectClient::DeleteLagAsyncHelper(const DeleteLagRequest& request, const DeleteLagResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteLag(request), context);
+}
+
 DeleteVirtualInterfaceOutcome DirectConnectClient::DeleteVirtualInterface(const DeleteVirtualInterfaceRequest& request) const
 {
   Aws::StringStream ss;
@@ -727,6 +942,40 @@ void DirectConnectClient::DescribeConnectionsOnInterconnectAsyncHelper(const Des
   handler(this, request, DescribeConnectionsOnInterconnect(request), context);
 }
 
+DescribeHostedConnectionsOutcome DirectConnectClient::DescribeHostedConnections(const DescribeHostedConnectionsRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return DescribeHostedConnectionsOutcome(DescribeHostedConnectionsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DescribeHostedConnectionsOutcome(outcome.GetError());
+  }
+}
+
+DescribeHostedConnectionsOutcomeCallable DirectConnectClient::DescribeHostedConnectionsCallable(const DescribeHostedConnectionsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeHostedConnectionsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeHostedConnections(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void DirectConnectClient::DescribeHostedConnectionsAsync(const DescribeHostedConnectionsRequest& request, const DescribeHostedConnectionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeHostedConnectionsAsyncHelper( request, handler, context ); } );
+}
+
+void DirectConnectClient::DescribeHostedConnectionsAsyncHelper(const DescribeHostedConnectionsRequest& request, const DescribeHostedConnectionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeHostedConnections(request), context);
+}
+
 DescribeInterconnectLoaOutcome DirectConnectClient::DescribeInterconnectLoa(const DescribeInterconnectLoaRequest& request) const
 {
   Aws::StringStream ss;
@@ -793,6 +1042,74 @@ void DirectConnectClient::DescribeInterconnectsAsync(const DescribeInterconnects
 void DirectConnectClient::DescribeInterconnectsAsyncHelper(const DescribeInterconnectsRequest& request, const DescribeInterconnectsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DescribeInterconnects(request), context);
+}
+
+DescribeLagsOutcome DirectConnectClient::DescribeLags(const DescribeLagsRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return DescribeLagsOutcome(DescribeLagsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DescribeLagsOutcome(outcome.GetError());
+  }
+}
+
+DescribeLagsOutcomeCallable DirectConnectClient::DescribeLagsCallable(const DescribeLagsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeLagsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeLags(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void DirectConnectClient::DescribeLagsAsync(const DescribeLagsRequest& request, const DescribeLagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeLagsAsyncHelper( request, handler, context ); } );
+}
+
+void DirectConnectClient::DescribeLagsAsyncHelper(const DescribeLagsRequest& request, const DescribeLagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeLags(request), context);
+}
+
+DescribeLoaOutcome DirectConnectClient::DescribeLoa(const DescribeLoaRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return DescribeLoaOutcome(DescribeLoaResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DescribeLoaOutcome(outcome.GetError());
+  }
+}
+
+DescribeLoaOutcomeCallable DirectConnectClient::DescribeLoaCallable(const DescribeLoaRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeLoaOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeLoa(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void DirectConnectClient::DescribeLoaAsync(const DescribeLoaRequest& request, const DescribeLoaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeLoaAsyncHelper( request, handler, context ); } );
+}
+
+void DirectConnectClient::DescribeLoaAsyncHelper(const DescribeLoaRequest& request, const DescribeLoaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeLoa(request), context);
 }
 
 DescribeLocationsOutcome DirectConnectClient::DescribeLocations() const
@@ -931,6 +1248,40 @@ void DirectConnectClient::DescribeVirtualInterfacesAsyncHelper(const DescribeVir
   handler(this, request, DescribeVirtualInterfaces(request), context);
 }
 
+DisassociateConnectionFromLagOutcome DirectConnectClient::DisassociateConnectionFromLag(const DisassociateConnectionFromLagRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return DisassociateConnectionFromLagOutcome(DisassociateConnectionFromLagResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DisassociateConnectionFromLagOutcome(outcome.GetError());
+  }
+}
+
+DisassociateConnectionFromLagOutcomeCallable DirectConnectClient::DisassociateConnectionFromLagCallable(const DisassociateConnectionFromLagRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DisassociateConnectionFromLagOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DisassociateConnectionFromLag(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void DirectConnectClient::DisassociateConnectionFromLagAsync(const DisassociateConnectionFromLagRequest& request, const DisassociateConnectionFromLagResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DisassociateConnectionFromLagAsyncHelper( request, handler, context ); } );
+}
+
+void DirectConnectClient::DisassociateConnectionFromLagAsyncHelper(const DisassociateConnectionFromLagRequest& request, const DisassociateConnectionFromLagResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DisassociateConnectionFromLag(request), context);
+}
+
 TagResourceOutcome DirectConnectClient::TagResource(const TagResourceRequest& request) const
 {
   Aws::StringStream ss;
@@ -997,5 +1348,39 @@ void DirectConnectClient::UntagResourceAsync(const UntagResourceRequest& request
 void DirectConnectClient::UntagResourceAsyncHelper(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, UntagResource(request), context);
+}
+
+UpdateLagOutcome DirectConnectClient::UpdateLag(const UpdateLagRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return UpdateLagOutcome(UpdateLagResult(outcome.GetResult()));
+  }
+  else
+  {
+    return UpdateLagOutcome(outcome.GetError());
+  }
+}
+
+UpdateLagOutcomeCallable DirectConnectClient::UpdateLagCallable(const UpdateLagRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateLagOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateLag(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void DirectConnectClient::UpdateLagAsync(const UpdateLagRequest& request, const UpdateLagResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateLagAsyncHelper( request, handler, context ); } );
+}
+
+void DirectConnectClient::UpdateLagAsyncHelper(const UpdateLagRequest& request, const UpdateLagResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateLag(request), context);
 }
 

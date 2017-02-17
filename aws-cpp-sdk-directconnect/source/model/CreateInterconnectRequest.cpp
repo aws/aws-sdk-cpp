@@ -24,7 +24,8 @@ using namespace Aws::Utils;
 CreateInterconnectRequest::CreateInterconnectRequest() : 
     m_interconnectNameHasBeenSet(false),
     m_bandwidthHasBeenSet(false),
-    m_locationHasBeenSet(false)
+    m_locationHasBeenSet(false),
+    m_lagIdHasBeenSet(false)
 {
 }
 
@@ -47,6 +48,12 @@ Aws::String CreateInterconnectRequest::SerializePayload() const
   if(m_locationHasBeenSet)
   {
    payload.WithString("location", m_location);
+
+  }
+
+  if(m_lagIdHasBeenSet)
+  {
+   payload.WithString("lagId", m_lagId);
 
   }
 

@@ -275,34 +275,97 @@ namespace Model
     inline DeleteConnectionResult& WithPartnerName(const char* value) { SetPartnerName(value); return *this;}
 
     /**
-     * <p>The time of the most recent call to DescribeConnectionLoa for this
-     * Connection.</p>
+     * <p>The time of the most recent call to <a>DescribeLoa</a> for this
+     * connection.</p>
      */
     inline const Aws::Utils::DateTime& GetLoaIssueTime() const{ return m_loaIssueTime; }
 
     /**
-     * <p>The time of the most recent call to DescribeConnectionLoa for this
-     * Connection.</p>
+     * <p>The time of the most recent call to <a>DescribeLoa</a> for this
+     * connection.</p>
      */
     inline void SetLoaIssueTime(const Aws::Utils::DateTime& value) { m_loaIssueTime = value; }
 
     /**
-     * <p>The time of the most recent call to DescribeConnectionLoa for this
-     * Connection.</p>
+     * <p>The time of the most recent call to <a>DescribeLoa</a> for this
+     * connection.</p>
      */
     inline void SetLoaIssueTime(Aws::Utils::DateTime&& value) { m_loaIssueTime = value; }
 
     /**
-     * <p>The time of the most recent call to DescribeConnectionLoa for this
-     * Connection.</p>
+     * <p>The time of the most recent call to <a>DescribeLoa</a> for this
+     * connection.</p>
      */
     inline DeleteConnectionResult& WithLoaIssueTime(const Aws::Utils::DateTime& value) { SetLoaIssueTime(value); return *this;}
 
     /**
-     * <p>The time of the most recent call to DescribeConnectionLoa for this
-     * Connection.</p>
+     * <p>The time of the most recent call to <a>DescribeLoa</a> for this
+     * connection.</p>
      */
     inline DeleteConnectionResult& WithLoaIssueTime(Aws::Utils::DateTime&& value) { SetLoaIssueTime(value); return *this;}
+
+    
+    inline const Aws::String& GetLagId() const{ return m_lagId; }
+
+    
+    inline void SetLagId(const Aws::String& value) { m_lagId = value; }
+
+    
+    inline void SetLagId(Aws::String&& value) { m_lagId = value; }
+
+    
+    inline void SetLagId(const char* value) { m_lagId.assign(value); }
+
+    
+    inline DeleteConnectionResult& WithLagId(const Aws::String& value) { SetLagId(value); return *this;}
+
+    
+    inline DeleteConnectionResult& WithLagId(Aws::String&& value) { SetLagId(value); return *this;}
+
+    
+    inline DeleteConnectionResult& WithLagId(const char* value) { SetLagId(value); return *this;}
+
+    /**
+     * <p>The Direct Connection endpoint which the physical connection terminates
+     * on.</p>
+     */
+    inline const Aws::String& GetAwsDevice() const{ return m_awsDevice; }
+
+    /**
+     * <p>The Direct Connection endpoint which the physical connection terminates
+     * on.</p>
+     */
+    inline void SetAwsDevice(const Aws::String& value) { m_awsDevice = value; }
+
+    /**
+     * <p>The Direct Connection endpoint which the physical connection terminates
+     * on.</p>
+     */
+    inline void SetAwsDevice(Aws::String&& value) { m_awsDevice = value; }
+
+    /**
+     * <p>The Direct Connection endpoint which the physical connection terminates
+     * on.</p>
+     */
+    inline void SetAwsDevice(const char* value) { m_awsDevice.assign(value); }
+
+    /**
+     * <p>The Direct Connection endpoint which the physical connection terminates
+     * on.</p>
+     */
+    inline DeleteConnectionResult& WithAwsDevice(const Aws::String& value) { SetAwsDevice(value); return *this;}
+
+    /**
+     * <p>The Direct Connection endpoint which the physical connection terminates
+     * on.</p>
+     */
+    inline DeleteConnectionResult& WithAwsDevice(Aws::String&& value) { SetAwsDevice(value); return *this;}
+
+    /**
+     * <p>The Direct Connection endpoint which the physical connection terminates
+     * on.</p>
+     */
+    inline DeleteConnectionResult& WithAwsDevice(const char* value) { SetAwsDevice(value); return *this;}
 
   private:
     Aws::String m_ownerAccount;
@@ -315,6 +378,8 @@ namespace Model
     int m_vlan;
     Aws::String m_partnerName;
     Aws::Utils::DateTime m_loaIssueTime;
+    Aws::String m_lagId;
+    Aws::String m_awsDevice;
   };
 
 } // namespace Model

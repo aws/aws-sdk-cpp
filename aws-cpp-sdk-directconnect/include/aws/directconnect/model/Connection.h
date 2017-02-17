@@ -274,34 +274,97 @@ namespace Model
     inline Connection& WithPartnerName(const char* value) { SetPartnerName(value); return *this;}
 
     /**
-     * <p>The time of the most recent call to DescribeConnectionLoa for this
-     * Connection.</p>
+     * <p>The time of the most recent call to <a>DescribeLoa</a> for this
+     * connection.</p>
      */
     inline const Aws::Utils::DateTime& GetLoaIssueTime() const{ return m_loaIssueTime; }
 
     /**
-     * <p>The time of the most recent call to DescribeConnectionLoa for this
-     * Connection.</p>
+     * <p>The time of the most recent call to <a>DescribeLoa</a> for this
+     * connection.</p>
      */
     inline void SetLoaIssueTime(const Aws::Utils::DateTime& value) { m_loaIssueTimeHasBeenSet = true; m_loaIssueTime = value; }
 
     /**
-     * <p>The time of the most recent call to DescribeConnectionLoa for this
-     * Connection.</p>
+     * <p>The time of the most recent call to <a>DescribeLoa</a> for this
+     * connection.</p>
      */
     inline void SetLoaIssueTime(Aws::Utils::DateTime&& value) { m_loaIssueTimeHasBeenSet = true; m_loaIssueTime = value; }
 
     /**
-     * <p>The time of the most recent call to DescribeConnectionLoa for this
-     * Connection.</p>
+     * <p>The time of the most recent call to <a>DescribeLoa</a> for this
+     * connection.</p>
      */
     inline Connection& WithLoaIssueTime(const Aws::Utils::DateTime& value) { SetLoaIssueTime(value); return *this;}
 
     /**
-     * <p>The time of the most recent call to DescribeConnectionLoa for this
-     * Connection.</p>
+     * <p>The time of the most recent call to <a>DescribeLoa</a> for this
+     * connection.</p>
      */
     inline Connection& WithLoaIssueTime(Aws::Utils::DateTime&& value) { SetLoaIssueTime(value); return *this;}
+
+    
+    inline const Aws::String& GetLagId() const{ return m_lagId; }
+
+    
+    inline void SetLagId(const Aws::String& value) { m_lagIdHasBeenSet = true; m_lagId = value; }
+
+    
+    inline void SetLagId(Aws::String&& value) { m_lagIdHasBeenSet = true; m_lagId = value; }
+
+    
+    inline void SetLagId(const char* value) { m_lagIdHasBeenSet = true; m_lagId.assign(value); }
+
+    
+    inline Connection& WithLagId(const Aws::String& value) { SetLagId(value); return *this;}
+
+    
+    inline Connection& WithLagId(Aws::String&& value) { SetLagId(value); return *this;}
+
+    
+    inline Connection& WithLagId(const char* value) { SetLagId(value); return *this;}
+
+    /**
+     * <p>The Direct Connection endpoint which the physical connection terminates
+     * on.</p>
+     */
+    inline const Aws::String& GetAwsDevice() const{ return m_awsDevice; }
+
+    /**
+     * <p>The Direct Connection endpoint which the physical connection terminates
+     * on.</p>
+     */
+    inline void SetAwsDevice(const Aws::String& value) { m_awsDeviceHasBeenSet = true; m_awsDevice = value; }
+
+    /**
+     * <p>The Direct Connection endpoint which the physical connection terminates
+     * on.</p>
+     */
+    inline void SetAwsDevice(Aws::String&& value) { m_awsDeviceHasBeenSet = true; m_awsDevice = value; }
+
+    /**
+     * <p>The Direct Connection endpoint which the physical connection terminates
+     * on.</p>
+     */
+    inline void SetAwsDevice(const char* value) { m_awsDeviceHasBeenSet = true; m_awsDevice.assign(value); }
+
+    /**
+     * <p>The Direct Connection endpoint which the physical connection terminates
+     * on.</p>
+     */
+    inline Connection& WithAwsDevice(const Aws::String& value) { SetAwsDevice(value); return *this;}
+
+    /**
+     * <p>The Direct Connection endpoint which the physical connection terminates
+     * on.</p>
+     */
+    inline Connection& WithAwsDevice(Aws::String&& value) { SetAwsDevice(value); return *this;}
+
+    /**
+     * <p>The Direct Connection endpoint which the physical connection terminates
+     * on.</p>
+     */
+    inline Connection& WithAwsDevice(const char* value) { SetAwsDevice(value); return *this;}
 
   private:
     Aws::String m_ownerAccount;
@@ -324,6 +387,10 @@ namespace Model
     bool m_partnerNameHasBeenSet;
     Aws::Utils::DateTime m_loaIssueTime;
     bool m_loaIssueTimeHasBeenSet;
+    Aws::String m_lagId;
+    bool m_lagIdHasBeenSet;
+    Aws::String m_awsDevice;
+    bool m_awsDeviceHasBeenSet;
   };
 
 } // namespace Model

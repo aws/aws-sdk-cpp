@@ -40,43 +40,43 @@ namespace Model
 
     /**
      * <p>Bandwidth of the connection.</p> <p>Example: "<i>500Mbps</i>"</p> <p>Default:
-     * None</p> <p>Values: 50M, 100M, 200M, 300M, 400M, or 500M</p>
+     * None</p> <p>Values: 50Mbps, 100Mbps, 200Mbps, 300Mbps, 400Mbps, or 500Mbps</p>
      */
     inline const Aws::String& GetBandwidth() const{ return m_bandwidth; }
 
     /**
      * <p>Bandwidth of the connection.</p> <p>Example: "<i>500Mbps</i>"</p> <p>Default:
-     * None</p> <p>Values: 50M, 100M, 200M, 300M, 400M, or 500M</p>
+     * None</p> <p>Values: 50Mbps, 100Mbps, 200Mbps, 300Mbps, 400Mbps, or 500Mbps</p>
      */
     inline void SetBandwidth(const Aws::String& value) { m_bandwidthHasBeenSet = true; m_bandwidth = value; }
 
     /**
      * <p>Bandwidth of the connection.</p> <p>Example: "<i>500Mbps</i>"</p> <p>Default:
-     * None</p> <p>Values: 50M, 100M, 200M, 300M, 400M, or 500M</p>
+     * None</p> <p>Values: 50Mbps, 100Mbps, 200Mbps, 300Mbps, 400Mbps, or 500Mbps</p>
      */
     inline void SetBandwidth(Aws::String&& value) { m_bandwidthHasBeenSet = true; m_bandwidth = value; }
 
     /**
      * <p>Bandwidth of the connection.</p> <p>Example: "<i>500Mbps</i>"</p> <p>Default:
-     * None</p> <p>Values: 50M, 100M, 200M, 300M, 400M, or 500M</p>
+     * None</p> <p>Values: 50Mbps, 100Mbps, 200Mbps, 300Mbps, 400Mbps, or 500Mbps</p>
      */
     inline void SetBandwidth(const char* value) { m_bandwidthHasBeenSet = true; m_bandwidth.assign(value); }
 
     /**
      * <p>Bandwidth of the connection.</p> <p>Example: "<i>500Mbps</i>"</p> <p>Default:
-     * None</p> <p>Values: 50M, 100M, 200M, 300M, 400M, or 500M</p>
+     * None</p> <p>Values: 50Mbps, 100Mbps, 200Mbps, 300Mbps, 400Mbps, or 500Mbps</p>
      */
     inline AllocateConnectionOnInterconnectRequest& WithBandwidth(const Aws::String& value) { SetBandwidth(value); return *this;}
 
     /**
      * <p>Bandwidth of the connection.</p> <p>Example: "<i>500Mbps</i>"</p> <p>Default:
-     * None</p> <p>Values: 50M, 100M, 200M, 300M, 400M, or 500M</p>
+     * None</p> <p>Values: 50Mbps, 100Mbps, 200Mbps, 300Mbps, 400Mbps, or 500Mbps</p>
      */
     inline AllocateConnectionOnInterconnectRequest& WithBandwidth(Aws::String&& value) { SetBandwidth(value); return *this;}
 
     /**
      * <p>Bandwidth of the connection.</p> <p>Example: "<i>500Mbps</i>"</p> <p>Default:
-     * None</p> <p>Values: 50M, 100M, 200M, 300M, 400M, or 500M</p>
+     * None</p> <p>Values: 50Mbps, 100Mbps, 200Mbps, 300Mbps, 400Mbps, or 500Mbps</p>
      */
     inline AllocateConnectionOnInterconnectRequest& WithBandwidth(const char* value) { SetBandwidth(value); return *this;}
 
