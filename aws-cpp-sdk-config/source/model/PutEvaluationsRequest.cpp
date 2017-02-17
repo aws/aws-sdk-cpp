@@ -23,7 +23,9 @@ using namespace Aws::Utils;
 
 PutEvaluationsRequest::PutEvaluationsRequest() : 
     m_evaluationsHasBeenSet(false),
-    m_resultTokenHasBeenSet(false)
+    m_resultTokenHasBeenSet(false),
+    m_testMode(false),
+    m_testModeHasBeenSet(false)
 {
 }
 
@@ -45,6 +47,12 @@ Aws::String PutEvaluationsRequest::SerializePayload() const
   if(m_resultTokenHasBeenSet)
   {
    payload.WithString("ResultToken", m_resultToken);
+
+  }
+
+  if(m_testModeHasBeenSet)
+  {
+   payload.WithBool("TestMode", m_testMode);
 
   }
 

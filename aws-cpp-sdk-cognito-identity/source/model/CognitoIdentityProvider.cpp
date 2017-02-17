@@ -29,13 +29,17 @@ namespace Model
 
 CognitoIdentityProvider::CognitoIdentityProvider() : 
     m_providerNameHasBeenSet(false),
-    m_clientIdHasBeenSet(false)
+    m_clientIdHasBeenSet(false),
+    m_serverSideTokenCheck(false),
+    m_serverSideTokenCheckHasBeenSet(false)
 {
 }
 
 CognitoIdentityProvider::CognitoIdentityProvider(const JsonValue& jsonValue) : 
     m_providerNameHasBeenSet(false),
-    m_clientIdHasBeenSet(false)
+    m_clientIdHasBeenSet(false),
+    m_serverSideTokenCheck(false),
+    m_serverSideTokenCheckHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -56,6 +60,13 @@ CognitoIdentityProvider& CognitoIdentityProvider::operator =(const JsonValue& js
     m_clientIdHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ServerSideTokenCheck"))
+  {
+    m_serverSideTokenCheck = jsonValue.GetBool("ServerSideTokenCheck");
+
+    m_serverSideTokenCheckHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -72,6 +83,12 @@ JsonValue CognitoIdentityProvider::Jsonize() const
   if(m_clientIdHasBeenSet)
   {
    payload.WithString("ClientId", m_clientId);
+
+  }
+
+  if(m_serverSideTokenCheckHasBeenSet)
+  {
+   payload.WithBool("ServerSideTokenCheck", m_serverSideTokenCheck);
 
   }
 

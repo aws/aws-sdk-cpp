@@ -121,11 +121,31 @@ namespace Model
      */
     inline CognitoIdentityProvider& WithClientId(const char* value) { SetClientId(value); return *this;}
 
+    /**
+     * <p>TRUE if server-side token validation is enabled for the identity provider’s
+     * token.</p>
+     */
+    inline bool GetServerSideTokenCheck() const{ return m_serverSideTokenCheck; }
+
+    /**
+     * <p>TRUE if server-side token validation is enabled for the identity provider’s
+     * token.</p>
+     */
+    inline void SetServerSideTokenCheck(bool value) { m_serverSideTokenCheckHasBeenSet = true; m_serverSideTokenCheck = value; }
+
+    /**
+     * <p>TRUE if server-side token validation is enabled for the identity provider’s
+     * token.</p>
+     */
+    inline CognitoIdentityProvider& WithServerSideTokenCheck(bool value) { SetServerSideTokenCheck(value); return *this;}
+
   private:
     Aws::String m_providerName;
     bool m_providerNameHasBeenSet;
     Aws::String m_clientId;
     bool m_clientIdHasBeenSet;
+    bool m_serverSideTokenCheck;
+    bool m_serverSideTokenCheckHasBeenSet;
   };
 
 } // namespace Model
