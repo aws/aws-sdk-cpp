@@ -87,37 +87,32 @@ namespace Model
     inline VolumeModification& WithVolumeId(const char* value) { SetVolumeId(value); return *this;}
 
     /**
-     * <p>Current state of modification. Possible values are <code>modifying</code> |
-     * <code>optimizing</code> | <code>complete</code> | <code>failed</code>.
-     * Modification state is null for unmodified volumes. </p>
+     * <p>Current state of modification. Modification state is null for unmodified
+     * volumes. </p>
      */
     inline const VolumeModificationState& GetModificationState() const{ return m_modificationState; }
 
     /**
-     * <p>Current state of modification. Possible values are <code>modifying</code> |
-     * <code>optimizing</code> | <code>complete</code> | <code>failed</code>.
-     * Modification state is null for unmodified volumes. </p>
+     * <p>Current state of modification. Modification state is null for unmodified
+     * volumes. </p>
      */
     inline void SetModificationState(const VolumeModificationState& value) { m_modificationStateHasBeenSet = true; m_modificationState = value; }
 
     /**
-     * <p>Current state of modification. Possible values are <code>modifying</code> |
-     * <code>optimizing</code> | <code>complete</code> | <code>failed</code>.
-     * Modification state is null for unmodified volumes. </p>
+     * <p>Current state of modification. Modification state is null for unmodified
+     * volumes. </p>
      */
     inline void SetModificationState(VolumeModificationState&& value) { m_modificationStateHasBeenSet = true; m_modificationState = value; }
 
     /**
-     * <p>Current state of modification. Possible values are <code>modifying</code> |
-     * <code>optimizing</code> | <code>complete</code> | <code>failed</code>.
-     * Modification state is null for unmodified volumes. </p>
+     * <p>Current state of modification. Modification state is null for unmodified
+     * volumes. </p>
      */
     inline VolumeModification& WithModificationState(const VolumeModificationState& value) { SetModificationState(value); return *this;}
 
     /**
-     * <p>Current state of modification. Possible values are <code>modifying</code> |
-     * <code>optimizing</code> | <code>complete</code> | <code>failed</code>.
-     * Modification state is null for unmodified volumes. </p>
+     * <p>Current state of modification. Modification state is null for unmodified
+     * volumes. </p>
      */
     inline VolumeModification& WithModificationState(VolumeModificationState&& value) { SetModificationState(value); return *this;}
 

@@ -106,47 +106,42 @@ namespace Model
     inline ModifyVolumeRequest& WithSize(int value) { SetSize(value); return *this;}
 
     /**
-     * <p>Target EBS volume type of the volume to be modified</p> <p>Valid values are
-     * <code>io1</code> | <code>gp2</code> | <code>sc1</code> | <code>st1</code> </p>
-     * <p> The API does not support modifications for volume type
-     * <code>standard</code>. You also cannot change the type of a volume to
-     * <code>standard</code>. </p>
+     * <p>Target EBS volume type of the volume to be modified</p> <p> The API does not
+     * support modifications for volume type <code>standard</code>. You also cannot
+     * change the type of a volume to <code>standard</code>. </p> <p>Default: If no
+     * type is specified, the existing type is retained. </p>
      */
     inline const VolumeType& GetVolumeType() const{ return m_volumeType; }
 
     /**
-     * <p>Target EBS volume type of the volume to be modified</p> <p>Valid values are
-     * <code>io1</code> | <code>gp2</code> | <code>sc1</code> | <code>st1</code> </p>
-     * <p> The API does not support modifications for volume type
-     * <code>standard</code>. You also cannot change the type of a volume to
-     * <code>standard</code>. </p>
+     * <p>Target EBS volume type of the volume to be modified</p> <p> The API does not
+     * support modifications for volume type <code>standard</code>. You also cannot
+     * change the type of a volume to <code>standard</code>. </p> <p>Default: If no
+     * type is specified, the existing type is retained. </p>
      */
     inline void SetVolumeType(const VolumeType& value) { m_volumeTypeHasBeenSet = true; m_volumeType = value; }
 
     /**
-     * <p>Target EBS volume type of the volume to be modified</p> <p>Valid values are
-     * <code>io1</code> | <code>gp2</code> | <code>sc1</code> | <code>st1</code> </p>
-     * <p> The API does not support modifications for volume type
-     * <code>standard</code>. You also cannot change the type of a volume to
-     * <code>standard</code>. </p>
+     * <p>Target EBS volume type of the volume to be modified</p> <p> The API does not
+     * support modifications for volume type <code>standard</code>. You also cannot
+     * change the type of a volume to <code>standard</code>. </p> <p>Default: If no
+     * type is specified, the existing type is retained. </p>
      */
     inline void SetVolumeType(VolumeType&& value) { m_volumeTypeHasBeenSet = true; m_volumeType = value; }
 
     /**
-     * <p>Target EBS volume type of the volume to be modified</p> <p>Valid values are
-     * <code>io1</code> | <code>gp2</code> | <code>sc1</code> | <code>st1</code> </p>
-     * <p> The API does not support modifications for volume type
-     * <code>standard</code>. You also cannot change the type of a volume to
-     * <code>standard</code>. </p>
+     * <p>Target EBS volume type of the volume to be modified</p> <p> The API does not
+     * support modifications for volume type <code>standard</code>. You also cannot
+     * change the type of a volume to <code>standard</code>. </p> <p>Default: If no
+     * type is specified, the existing type is retained. </p>
      */
     inline ModifyVolumeRequest& WithVolumeType(const VolumeType& value) { SetVolumeType(value); return *this;}
 
     /**
-     * <p>Target EBS volume type of the volume to be modified</p> <p>Valid values are
-     * <code>io1</code> | <code>gp2</code> | <code>sc1</code> | <code>st1</code> </p>
-     * <p> The API does not support modifications for volume type
-     * <code>standard</code>. You also cannot change the type of a volume to
-     * <code>standard</code>. </p>
+     * <p>Target EBS volume type of the volume to be modified</p> <p> The API does not
+     * support modifications for volume type <code>standard</code>. You also cannot
+     * change the type of a volume to <code>standard</code>. </p> <p>Default: If no
+     * type is specified, the existing type is retained. </p>
      */
     inline ModifyVolumeRequest& WithVolumeType(VolumeType&& value) { SetVolumeType(value); return *this;}
 
@@ -155,6 +150,7 @@ namespace Model
      * Provisioned IOPS SSD (<code>io1</code>) volumes. For more information about
      * <code>io1</code> IOPS configuration, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html#EBSVolumeTypes_piops">http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html#EBSVolumeTypes_piops</a>.</p>
+     * <p>Default: If no IOPS value is specified, the existing value is retained. </p>
      */
     inline int GetIops() const{ return m_iops; }
 
@@ -163,6 +159,7 @@ namespace Model
      * Provisioned IOPS SSD (<code>io1</code>) volumes. For more information about
      * <code>io1</code> IOPS configuration, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html#EBSVolumeTypes_piops">http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html#EBSVolumeTypes_piops</a>.</p>
+     * <p>Default: If no IOPS value is specified, the existing value is retained. </p>
      */
     inline void SetIops(int value) { m_iopsHasBeenSet = true; m_iops = value; }
 
@@ -171,6 +168,7 @@ namespace Model
      * Provisioned IOPS SSD (<code>io1</code>) volumes. For more information about
      * <code>io1</code> IOPS configuration, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html#EBSVolumeTypes_piops">http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html#EBSVolumeTypes_piops</a>.</p>
+     * <p>Default: If no IOPS value is specified, the existing value is retained. </p>
      */
     inline ModifyVolumeRequest& WithIops(int value) { SetIops(value); return *this;}
 

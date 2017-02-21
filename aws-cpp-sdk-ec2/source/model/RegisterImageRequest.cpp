@@ -29,6 +29,7 @@ RegisterImageRequest::RegisterImageRequest() :
     m_architectureHasBeenSet(false),
     m_kernelIdHasBeenSet(false),
     m_ramdiskIdHasBeenSet(false),
+    m_billingProductsHasBeenSet(false),
     m_rootDeviceNameHasBeenSet(false),
     m_blockDeviceMappingsHasBeenSet(false),
     m_virtualizationTypeHasBeenSet(false),
@@ -75,6 +76,17 @@ Aws::String RegisterImageRequest::SerializePayload() const
   if(m_ramdiskIdHasBeenSet)
   {
     ss << "RamdiskId=" << StringUtils::URLEncode(m_ramdiskId.c_str()) << "&";
+  }
+
+  if(m_billingProductsHasBeenSet)
+  {
+    unsigned billingProductsCount = 1;
+    for(auto& item : m_billingProducts)
+    {
+      ss << "BillingProduct." << billingProductsCount << "="
+          << StringUtils::URLEncode(item.c_str()) << "&";
+      billingProductsCount++;
+    }
   }
 
   if(m_rootDeviceNameHasBeenSet)

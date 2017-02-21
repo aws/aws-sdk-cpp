@@ -86,19 +86,29 @@ namespace Model
      */
     inline GetReservedInstancesExchangeQuoteResponse& AddReservedInstanceValueSet(ReservedInstanceReservationValue&& value) { m_reservedInstanceValueSet.push_back(value); return *this; }
 
-    
+    /**
+     * <p>The cost associated with the Reserved Instance.</p>
+     */
     inline const ReservationValue& GetReservedInstanceValueRollup() const{ return m_reservedInstanceValueRollup; }
 
-    
+    /**
+     * <p>The cost associated with the Reserved Instance.</p>
+     */
     inline void SetReservedInstanceValueRollup(const ReservationValue& value) { m_reservedInstanceValueRollup = value; }
 
-    
+    /**
+     * <p>The cost associated with the Reserved Instance.</p>
+     */
     inline void SetReservedInstanceValueRollup(ReservationValue&& value) { m_reservedInstanceValueRollup = value; }
 
-    
+    /**
+     * <p>The cost associated with the Reserved Instance.</p>
+     */
     inline GetReservedInstancesExchangeQuoteResponse& WithReservedInstanceValueRollup(const ReservationValue& value) { SetReservedInstanceValueRollup(value); return *this;}
 
-    
+    /**
+     * <p>The cost associated with the Reserved Instance.</p>
+     */
     inline GetReservedInstancesExchangeQuoteResponse& WithReservedInstanceValueRollup(ReservationValue&& value) { SetReservedInstanceValueRollup(value); return *this;}
 
     /**
@@ -136,19 +146,29 @@ namespace Model
      */
     inline GetReservedInstancesExchangeQuoteResponse& AddTargetConfigurationValueSet(TargetReservationValue&& value) { m_targetConfigurationValueSet.push_back(value); return *this; }
 
-    
+    /**
+     * <p>The cost associated with the Reserved Instance.</p>
+     */
     inline const ReservationValue& GetTargetConfigurationValueRollup() const{ return m_targetConfigurationValueRollup; }
 
-    
+    /**
+     * <p>The cost associated with the Reserved Instance.</p>
+     */
     inline void SetTargetConfigurationValueRollup(const ReservationValue& value) { m_targetConfigurationValueRollup = value; }
 
-    
+    /**
+     * <p>The cost associated with the Reserved Instance.</p>
+     */
     inline void SetTargetConfigurationValueRollup(ReservationValue&& value) { m_targetConfigurationValueRollup = value; }
 
-    
+    /**
+     * <p>The cost associated with the Reserved Instance.</p>
+     */
     inline GetReservedInstancesExchangeQuoteResponse& WithTargetConfigurationValueRollup(const ReservationValue& value) { SetTargetConfigurationValueRollup(value); return *this;}
 
-    
+    /**
+     * <p>The cost associated with the Reserved Instance.</p>
+     */
     inline GetReservedInstancesExchangeQuoteResponse& WithTargetConfigurationValueRollup(ReservationValue&& value) { SetTargetConfigurationValueRollup(value); return *this;}
 
     /**
