@@ -466,6 +466,14 @@ const char* MESSAGE_CAMEL_CASE = "Message";
 const char* ERROR_TYPE_HEADER = "x-amzn-ErrorType";
 const char* TYPE = "__type";
 
+static bool isRetryableHttpResponseCode(HttpResponseCode responseCode)
+{
+    return
+        responseCode == HttpResponseCode::INTERNAL_SERVER_ERROR ||
+        responseCode == HttpResponseCode::SERVICE_UNAVAILABLE ||
+        responseCode == HttpResponseCode::GATEWAY_TIMEOUT;
+}
+
 AWSError<CoreErrors> AWSJsonClient::BuildAWSError(
     const std::shared_ptr<Aws::Http::HttpResponse>& httpResponse) const
 {
@@ -478,10 +486,12 @@ AWSError<CoreErrors> AWSJsonClient::BuildAWSError(
     
     else if (!httpResponse->GetResponseBody() || httpResponse->GetResponseBody().tellp() < 1)
     {
+        auto responseCode = httpResponse->GetResponseCode();
         Aws::StringStream ss;
-        ss << "No response body.  Response code: " << static_cast< uint32_t >( httpResponse->GetResponseCode() );
+        ss << "No response body. Response code: " << static_cast< uint32_t >(responseCode);
         AWS_LOG_ERROR(AWS_CLIENT_LOG_TAG, ss.str().c_str());
-        error = AWSError<CoreErrors>(CoreErrors::UNKNOWN, "", ss.str(), false);        
+        error = AWSError<CoreErrors>(CoreErrors::UNKNOWN, "", ss.str(),
+            isRetryableHttpResponseCode(responseCode));
     }
     else
     {
@@ -579,10 +589,12 @@ AWSError<CoreErrors> AWSXMLClient::BuildAWSError(const std::shared_ptr<Http::Htt
 
     if (httpResponse->GetResponseBody().tellp() < 1)
     {
+        auto responseCode = httpResponse->GetResponseCode();
         Aws::StringStream ss;
-        ss << "No response body.  Response code: " << static_cast< uint32_t >( httpResponse->GetResponseCode() );
+        ss << "No response body. Response code: " << static_cast< uint32_t >(responseCode);
         AWS_LOG_ERROR(AWS_CLIENT_LOG_TAG, ss.str().c_str());
-        error = AWSError<CoreErrors>(CoreErrors::UNKNOWN, "", ss.str(), false);
+        error = AWSError<CoreErrors>(CoreErrors::UNKNOWN, "", ss.str(),
+            isRetryableHttpResponseCode(responseCode));
     }
     else
     {
