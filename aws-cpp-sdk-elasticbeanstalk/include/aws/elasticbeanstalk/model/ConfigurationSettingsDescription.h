@@ -87,6 +87,41 @@ namespace Model
     inline ConfigurationSettingsDescription& WithSolutionStackName(const char* value) { SetSolutionStackName(value); return *this;}
 
     /**
+     * <p>The ARN of the custom platform.</p>
+     */
+    inline const Aws::String& GetPlatformArn() const{ return m_platformArn; }
+
+    /**
+     * <p>The ARN of the custom platform.</p>
+     */
+    inline void SetPlatformArn(const Aws::String& value) { m_platformArnHasBeenSet = true; m_platformArn = value; }
+
+    /**
+     * <p>The ARN of the custom platform.</p>
+     */
+    inline void SetPlatformArn(Aws::String&& value) { m_platformArnHasBeenSet = true; m_platformArn = value; }
+
+    /**
+     * <p>The ARN of the custom platform.</p>
+     */
+    inline void SetPlatformArn(const char* value) { m_platformArnHasBeenSet = true; m_platformArn.assign(value); }
+
+    /**
+     * <p>The ARN of the custom platform.</p>
+     */
+    inline ConfigurationSettingsDescription& WithPlatformArn(const Aws::String& value) { SetPlatformArn(value); return *this;}
+
+    /**
+     * <p>The ARN of the custom platform.</p>
+     */
+    inline ConfigurationSettingsDescription& WithPlatformArn(Aws::String&& value) { SetPlatformArn(value); return *this;}
+
+    /**
+     * <p>The ARN of the custom platform.</p>
+     */
+    inline ConfigurationSettingsDescription& WithPlatformArn(const char* value) { SetPlatformArn(value); return *this;}
+
+    /**
      * <p>The name of the application associated with this configuration set.</p>
      */
     inline const Aws::String& GetApplicationName() const{ return m_applicationName; }
@@ -415,6 +450,8 @@ namespace Model
   private:
     Aws::String m_solutionStackName;
     bool m_solutionStackNameHasBeenSet;
+    Aws::String m_platformArn;
+    bool m_platformArnHasBeenSet;
     Aws::String m_applicationName;
     bool m_applicationNameHasBeenSet;
     Aws::String m_templateName;

@@ -119,31 +119,31 @@ namespace Model
 
     /**
      * <p>Represents the average latency for the slowest X percent of requests over the
-     * last 10 seconds. Latencies are in seconds with one milisecond resolution.</p>
+     * last 10 seconds. Latencies are in seconds with one millisecond resolution.</p>
      */
     inline const Latency& GetLatency() const{ return m_latency; }
 
     /**
      * <p>Represents the average latency for the slowest X percent of requests over the
-     * last 10 seconds. Latencies are in seconds with one milisecond resolution.</p>
+     * last 10 seconds. Latencies are in seconds with one millisecond resolution.</p>
      */
     inline void SetLatency(const Latency& value) { m_latencyHasBeenSet = true; m_latency = value; }
 
     /**
      * <p>Represents the average latency for the slowest X percent of requests over the
-     * last 10 seconds. Latencies are in seconds with one milisecond resolution.</p>
+     * last 10 seconds. Latencies are in seconds with one millisecond resolution.</p>
      */
     inline void SetLatency(Latency&& value) { m_latencyHasBeenSet = true; m_latency = value; }
 
     /**
      * <p>Represents the average latency for the slowest X percent of requests over the
-     * last 10 seconds. Latencies are in seconds with one milisecond resolution.</p>
+     * last 10 seconds. Latencies are in seconds with one millisecond resolution.</p>
      */
     inline ApplicationMetrics& WithLatency(const Latency& value) { SetLatency(value); return *this;}
 
     /**
      * <p>Represents the average latency for the slowest X percent of requests over the
-     * last 10 seconds. Latencies are in seconds with one milisecond resolution.</p>
+     * last 10 seconds. Latencies are in seconds with one millisecond resolution.</p>
      */
     inline ApplicationMetrics& WithLatency(Latency&& value) { SetLatency(value); return *this;}
 

@@ -33,7 +33,14 @@ namespace Model
 {
 
   /**
-   * <p>Properties describing a player session.</p><p><h3>See Also:</h3>   <a
+   * <p>Properties describing a player session. A player session represents either a
+   * player reservation for a game session or actual player activity in a game
+   * session. A player session object (including player data) is automatically passed
+   * to a game session when the player connects to the game session and is
+   * validated.</p> <p>Player session-related operations include:</p> <ul> <li> <p>
+   * <a>CreatePlayerSession</a> </p> </li> <li> <p> <a>CreatePlayerSessions</a> </p>
+   * </li> <li> <p> <a>DescribePlayerSessions</a> </p> </li> </ul><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/PlayerSession">AWS
    * API Reference</a></p>
    */
@@ -81,37 +88,44 @@ namespace Model
     inline PlayerSession& WithPlayerSessionId(const char* value) { SetPlayerSessionId(value); return *this;}
 
     /**
-     * <p>Unique identifier for a player.</p>
+     * <p>Unique identifier for a player that is associated with this player
+     * session.</p>
      */
     inline const Aws::String& GetPlayerId() const{ return m_playerId; }
 
     /**
-     * <p>Unique identifier for a player.</p>
+     * <p>Unique identifier for a player that is associated with this player
+     * session.</p>
      */
     inline void SetPlayerId(const Aws::String& value) { m_playerIdHasBeenSet = true; m_playerId = value; }
 
     /**
-     * <p>Unique identifier for a player.</p>
+     * <p>Unique identifier for a player that is associated with this player
+     * session.</p>
      */
     inline void SetPlayerId(Aws::String&& value) { m_playerIdHasBeenSet = true; m_playerId = value; }
 
     /**
-     * <p>Unique identifier for a player.</p>
+     * <p>Unique identifier for a player that is associated with this player
+     * session.</p>
      */
     inline void SetPlayerId(const char* value) { m_playerIdHasBeenSet = true; m_playerId.assign(value); }
 
     /**
-     * <p>Unique identifier for a player.</p>
+     * <p>Unique identifier for a player that is associated with this player
+     * session.</p>
      */
     inline PlayerSession& WithPlayerId(const Aws::String& value) { SetPlayerId(value); return *this;}
 
     /**
-     * <p>Unique identifier for a player.</p>
+     * <p>Unique identifier for a player that is associated with this player
+     * session.</p>
      */
     inline PlayerSession& WithPlayerId(Aws::String&& value) { SetPlayerId(value); return *this;}
 
     /**
-     * <p>Unique identifier for a player.</p>
+     * <p>Unique identifier for a player that is associated with this player
+     * session.</p>
      */
     inline PlayerSession& WithPlayerId(const char* value) { SetPlayerId(value); return *this;}
 
@@ -158,97 +172,109 @@ namespace Model
     inline PlayerSession& WithGameSessionId(const char* value) { SetGameSessionId(value); return *this;}
 
     /**
-     * <p>Unique identifier for a fleet.</p>
+     * <p>Unique identifier for a fleet that the player's game session is running
+     * on.</p>
      */
     inline const Aws::String& GetFleetId() const{ return m_fleetId; }
 
     /**
-     * <p>Unique identifier for a fleet.</p>
+     * <p>Unique identifier for a fleet that the player's game session is running
+     * on.</p>
      */
     inline void SetFleetId(const Aws::String& value) { m_fleetIdHasBeenSet = true; m_fleetId = value; }
 
     /**
-     * <p>Unique identifier for a fleet.</p>
+     * <p>Unique identifier for a fleet that the player's game session is running
+     * on.</p>
      */
     inline void SetFleetId(Aws::String&& value) { m_fleetIdHasBeenSet = true; m_fleetId = value; }
 
     /**
-     * <p>Unique identifier for a fleet.</p>
+     * <p>Unique identifier for a fleet that the player's game session is running
+     * on.</p>
      */
     inline void SetFleetId(const char* value) { m_fleetIdHasBeenSet = true; m_fleetId.assign(value); }
 
     /**
-     * <p>Unique identifier for a fleet.</p>
+     * <p>Unique identifier for a fleet that the player's game session is running
+     * on.</p>
      */
     inline PlayerSession& WithFleetId(const Aws::String& value) { SetFleetId(value); return *this;}
 
     /**
-     * <p>Unique identifier for a fleet.</p>
+     * <p>Unique identifier for a fleet that the player's game session is running
+     * on.</p>
      */
     inline PlayerSession& WithFleetId(Aws::String&& value) { SetFleetId(value); return *this;}
 
     /**
-     * <p>Unique identifier for a fleet.</p>
+     * <p>Unique identifier for a fleet that the player's game session is running
+     * on.</p>
      */
     inline PlayerSession& WithFleetId(const char* value) { SetFleetId(value); return *this;}
 
     /**
      * <p>Time stamp indicating when this data object was created. Format is a number
-     * expressed in Unix time as milliseconds (ex: "1469498468.057").</p>
+     * expressed in Unix time as milliseconds (for example "1469498468.057").</p>
      */
     inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
 
     /**
      * <p>Time stamp indicating when this data object was created. Format is a number
-     * expressed in Unix time as milliseconds (ex: "1469498468.057").</p>
+     * expressed in Unix time as milliseconds (for example "1469498468.057").</p>
      */
     inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
 
     /**
      * <p>Time stamp indicating when this data object was created. Format is a number
-     * expressed in Unix time as milliseconds (ex: "1469498468.057").</p>
+     * expressed in Unix time as milliseconds (for example "1469498468.057").</p>
      */
     inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
 
     /**
      * <p>Time stamp indicating when this data object was created. Format is a number
-     * expressed in Unix time as milliseconds (ex: "1469498468.057").</p>
+     * expressed in Unix time as milliseconds (for example "1469498468.057").</p>
      */
     inline PlayerSession& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
 
     /**
      * <p>Time stamp indicating when this data object was created. Format is a number
-     * expressed in Unix time as milliseconds (ex: "1469498468.057").</p>
+     * expressed in Unix time as milliseconds (for example "1469498468.057").</p>
      */
     inline PlayerSession& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(value); return *this;}
 
     /**
      * <p>Time stamp indicating when this data object was terminated. Format is a
-     * number expressed in Unix time as milliseconds (ex: "1469498468.057").</p>
+     * number expressed in Unix time as milliseconds (for example
+     * "1469498468.057").</p>
      */
     inline const Aws::Utils::DateTime& GetTerminationTime() const{ return m_terminationTime; }
 
     /**
      * <p>Time stamp indicating when this data object was terminated. Format is a
-     * number expressed in Unix time as milliseconds (ex: "1469498468.057").</p>
+     * number expressed in Unix time as milliseconds (for example
+     * "1469498468.057").</p>
      */
     inline void SetTerminationTime(const Aws::Utils::DateTime& value) { m_terminationTimeHasBeenSet = true; m_terminationTime = value; }
 
     /**
      * <p>Time stamp indicating when this data object was terminated. Format is a
-     * number expressed in Unix time as milliseconds (ex: "1469498468.057").</p>
+     * number expressed in Unix time as milliseconds (for example
+     * "1469498468.057").</p>
      */
     inline void SetTerminationTime(Aws::Utils::DateTime&& value) { m_terminationTimeHasBeenSet = true; m_terminationTime = value; }
 
     /**
      * <p>Time stamp indicating when this data object was terminated. Format is a
-     * number expressed in Unix time as milliseconds (ex: "1469498468.057").</p>
+     * number expressed in Unix time as milliseconds (for example
+     * "1469498468.057").</p>
      */
     inline PlayerSession& WithTerminationTime(const Aws::Utils::DateTime& value) { SetTerminationTime(value); return *this;}
 
     /**
      * <p>Time stamp indicating when this data object was terminated. Format is a
-     * number expressed in Unix time as milliseconds (ex: "1469498468.057").</p>
+     * number expressed in Unix time as milliseconds (for example
+     * "1469498468.057").</p>
      */
     inline PlayerSession& WithTerminationTime(Aws::Utils::DateTime&& value) { SetTerminationTime(value); return *this;}
 
@@ -360,22 +386,64 @@ namespace Model
     inline PlayerSession& WithIpAddress(const char* value) { SetIpAddress(value); return *this;}
 
     /**
-     * <p>Port number for the game session. To connect to a GameLift server process, an
-     * app needs both the IP address and port number.</p>
+     * <p>Port number for the game session. To connect to a Amazon GameLift server
+     * process, an app needs both the IP address and port number.</p>
      */
     inline int GetPort() const{ return m_port; }
 
     /**
-     * <p>Port number for the game session. To connect to a GameLift server process, an
-     * app needs both the IP address and port number.</p>
+     * <p>Port number for the game session. To connect to a Amazon GameLift server
+     * process, an app needs both the IP address and port number.</p>
      */
     inline void SetPort(int value) { m_portHasBeenSet = true; m_port = value; }
 
     /**
-     * <p>Port number for the game session. To connect to a GameLift server process, an
-     * app needs both the IP address and port number.</p>
+     * <p>Port number for the game session. To connect to a Amazon GameLift server
+     * process, an app needs both the IP address and port number.</p>
      */
     inline PlayerSession& WithPort(int value) { SetPort(value); return *this;}
+
+    /**
+     * <p>Developer-defined information related to a player. Amazon GameLift does not
+     * use this data, so it can be formatted as needed for use in the game. </p>
+     */
+    inline const Aws::String& GetPlayerData() const{ return m_playerData; }
+
+    /**
+     * <p>Developer-defined information related to a player. Amazon GameLift does not
+     * use this data, so it can be formatted as needed for use in the game. </p>
+     */
+    inline void SetPlayerData(const Aws::String& value) { m_playerDataHasBeenSet = true; m_playerData = value; }
+
+    /**
+     * <p>Developer-defined information related to a player. Amazon GameLift does not
+     * use this data, so it can be formatted as needed for use in the game. </p>
+     */
+    inline void SetPlayerData(Aws::String&& value) { m_playerDataHasBeenSet = true; m_playerData = value; }
+
+    /**
+     * <p>Developer-defined information related to a player. Amazon GameLift does not
+     * use this data, so it can be formatted as needed for use in the game. </p>
+     */
+    inline void SetPlayerData(const char* value) { m_playerDataHasBeenSet = true; m_playerData.assign(value); }
+
+    /**
+     * <p>Developer-defined information related to a player. Amazon GameLift does not
+     * use this data, so it can be formatted as needed for use in the game. </p>
+     */
+    inline PlayerSession& WithPlayerData(const Aws::String& value) { SetPlayerData(value); return *this;}
+
+    /**
+     * <p>Developer-defined information related to a player. Amazon GameLift does not
+     * use this data, so it can be formatted as needed for use in the game. </p>
+     */
+    inline PlayerSession& WithPlayerData(Aws::String&& value) { SetPlayerData(value); return *this;}
+
+    /**
+     * <p>Developer-defined information related to a player. Amazon GameLift does not
+     * use this data, so it can be formatted as needed for use in the game. </p>
+     */
+    inline PlayerSession& WithPlayerData(const char* value) { SetPlayerData(value); return *this;}
 
   private:
     Aws::String m_playerSessionId;
@@ -396,6 +464,8 @@ namespace Model
     bool m_ipAddressHasBeenSet;
     int m_port;
     bool m_portHasBeenSet;
+    Aws::String m_playerData;
+    bool m_playerDataHasBeenSet;
   };
 
 } // namespace Model

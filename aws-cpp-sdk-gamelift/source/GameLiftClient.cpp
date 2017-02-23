@@ -30,11 +30,13 @@
 #include <aws/gamelift/model/CreateBuildRequest.h>
 #include <aws/gamelift/model/CreateFleetRequest.h>
 #include <aws/gamelift/model/CreateGameSessionRequest.h>
+#include <aws/gamelift/model/CreateGameSessionQueueRequest.h>
 #include <aws/gamelift/model/CreatePlayerSessionRequest.h>
 #include <aws/gamelift/model/CreatePlayerSessionsRequest.h>
 #include <aws/gamelift/model/DeleteAliasRequest.h>
 #include <aws/gamelift/model/DeleteBuildRequest.h>
 #include <aws/gamelift/model/DeleteFleetRequest.h>
+#include <aws/gamelift/model/DeleteGameSessionQueueRequest.h>
 #include <aws/gamelift/model/DeleteScalingPolicyRequest.h>
 #include <aws/gamelift/model/DescribeAliasRequest.h>
 #include <aws/gamelift/model/DescribeBuildRequest.h>
@@ -45,6 +47,8 @@
 #include <aws/gamelift/model/DescribeFleetPortSettingsRequest.h>
 #include <aws/gamelift/model/DescribeFleetUtilizationRequest.h>
 #include <aws/gamelift/model/DescribeGameSessionDetailsRequest.h>
+#include <aws/gamelift/model/DescribeGameSessionPlacementRequest.h>
+#include <aws/gamelift/model/DescribeGameSessionQueuesRequest.h>
 #include <aws/gamelift/model/DescribeGameSessionsRequest.h>
 #include <aws/gamelift/model/DescribeInstancesRequest.h>
 #include <aws/gamelift/model/DescribePlayerSessionsRequest.h>
@@ -59,12 +63,15 @@
 #include <aws/gamelift/model/RequestUploadCredentialsRequest.h>
 #include <aws/gamelift/model/ResolveAliasRequest.h>
 #include <aws/gamelift/model/SearchGameSessionsRequest.h>
+#include <aws/gamelift/model/StartGameSessionPlacementRequest.h>
+#include <aws/gamelift/model/StopGameSessionPlacementRequest.h>
 #include <aws/gamelift/model/UpdateAliasRequest.h>
 #include <aws/gamelift/model/UpdateBuildRequest.h>
 #include <aws/gamelift/model/UpdateFleetAttributesRequest.h>
 #include <aws/gamelift/model/UpdateFleetCapacityRequest.h>
 #include <aws/gamelift/model/UpdateFleetPortSettingsRequest.h>
 #include <aws/gamelift/model/UpdateGameSessionRequest.h>
+#include <aws/gamelift/model/UpdateGameSessionQueueRequest.h>
 #include <aws/gamelift/model/UpdateRuntimeConfigurationRequest.h>
 
 using namespace Aws;
@@ -267,6 +274,40 @@ void GameLiftClient::CreateGameSessionAsyncHelper(const CreateGameSessionRequest
   handler(this, request, CreateGameSession(request), context);
 }
 
+CreateGameSessionQueueOutcome GameLiftClient::CreateGameSessionQueue(const CreateGameSessionQueueRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return CreateGameSessionQueueOutcome(CreateGameSessionQueueResult(outcome.GetResult()));
+  }
+  else
+  {
+    return CreateGameSessionQueueOutcome(outcome.GetError());
+  }
+}
+
+CreateGameSessionQueueOutcomeCallable GameLiftClient::CreateGameSessionQueueCallable(const CreateGameSessionQueueRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateGameSessionQueueOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateGameSessionQueue(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void GameLiftClient::CreateGameSessionQueueAsync(const CreateGameSessionQueueRequest& request, const CreateGameSessionQueueResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateGameSessionQueueAsyncHelper( request, handler, context ); } );
+}
+
+void GameLiftClient::CreateGameSessionQueueAsyncHelper(const CreateGameSessionQueueRequest& request, const CreateGameSessionQueueResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateGameSessionQueue(request), context);
+}
+
 CreatePlayerSessionOutcome GameLiftClient::CreatePlayerSession(const CreatePlayerSessionRequest& request) const
 {
   Aws::StringStream ss;
@@ -435,6 +476,40 @@ void GameLiftClient::DeleteFleetAsync(const DeleteFleetRequest& request, const D
 void GameLiftClient::DeleteFleetAsyncHelper(const DeleteFleetRequest& request, const DeleteFleetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DeleteFleet(request), context);
+}
+
+DeleteGameSessionQueueOutcome GameLiftClient::DeleteGameSessionQueue(const DeleteGameSessionQueueRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return DeleteGameSessionQueueOutcome(DeleteGameSessionQueueResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DeleteGameSessionQueueOutcome(outcome.GetError());
+  }
+}
+
+DeleteGameSessionQueueOutcomeCallable GameLiftClient::DeleteGameSessionQueueCallable(const DeleteGameSessionQueueRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteGameSessionQueueOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteGameSessionQueue(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void GameLiftClient::DeleteGameSessionQueueAsync(const DeleteGameSessionQueueRequest& request, const DeleteGameSessionQueueResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteGameSessionQueueAsyncHelper( request, handler, context ); } );
+}
+
+void GameLiftClient::DeleteGameSessionQueueAsyncHelper(const DeleteGameSessionQueueRequest& request, const DeleteGameSessionQueueResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteGameSessionQueue(request), context);
 }
 
 DeleteScalingPolicyOutcome GameLiftClient::DeleteScalingPolicy(const DeleteScalingPolicyRequest& request) const
@@ -775,6 +850,74 @@ void GameLiftClient::DescribeGameSessionDetailsAsync(const DescribeGameSessionDe
 void GameLiftClient::DescribeGameSessionDetailsAsyncHelper(const DescribeGameSessionDetailsRequest& request, const DescribeGameSessionDetailsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DescribeGameSessionDetails(request), context);
+}
+
+DescribeGameSessionPlacementOutcome GameLiftClient::DescribeGameSessionPlacement(const DescribeGameSessionPlacementRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return DescribeGameSessionPlacementOutcome(DescribeGameSessionPlacementResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DescribeGameSessionPlacementOutcome(outcome.GetError());
+  }
+}
+
+DescribeGameSessionPlacementOutcomeCallable GameLiftClient::DescribeGameSessionPlacementCallable(const DescribeGameSessionPlacementRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeGameSessionPlacementOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeGameSessionPlacement(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void GameLiftClient::DescribeGameSessionPlacementAsync(const DescribeGameSessionPlacementRequest& request, const DescribeGameSessionPlacementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeGameSessionPlacementAsyncHelper( request, handler, context ); } );
+}
+
+void GameLiftClient::DescribeGameSessionPlacementAsyncHelper(const DescribeGameSessionPlacementRequest& request, const DescribeGameSessionPlacementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeGameSessionPlacement(request), context);
+}
+
+DescribeGameSessionQueuesOutcome GameLiftClient::DescribeGameSessionQueues(const DescribeGameSessionQueuesRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return DescribeGameSessionQueuesOutcome(DescribeGameSessionQueuesResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DescribeGameSessionQueuesOutcome(outcome.GetError());
+  }
+}
+
+DescribeGameSessionQueuesOutcomeCallable GameLiftClient::DescribeGameSessionQueuesCallable(const DescribeGameSessionQueuesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeGameSessionQueuesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeGameSessionQueues(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void GameLiftClient::DescribeGameSessionQueuesAsync(const DescribeGameSessionQueuesRequest& request, const DescribeGameSessionQueuesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeGameSessionQueuesAsyncHelper( request, handler, context ); } );
+}
+
+void GameLiftClient::DescribeGameSessionQueuesAsyncHelper(const DescribeGameSessionQueuesRequest& request, const DescribeGameSessionQueuesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeGameSessionQueues(request), context);
 }
 
 DescribeGameSessionsOutcome GameLiftClient::DescribeGameSessions(const DescribeGameSessionsRequest& request) const
@@ -1253,6 +1396,74 @@ void GameLiftClient::SearchGameSessionsAsyncHelper(const SearchGameSessionsReque
   handler(this, request, SearchGameSessions(request), context);
 }
 
+StartGameSessionPlacementOutcome GameLiftClient::StartGameSessionPlacement(const StartGameSessionPlacementRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return StartGameSessionPlacementOutcome(StartGameSessionPlacementResult(outcome.GetResult()));
+  }
+  else
+  {
+    return StartGameSessionPlacementOutcome(outcome.GetError());
+  }
+}
+
+StartGameSessionPlacementOutcomeCallable GameLiftClient::StartGameSessionPlacementCallable(const StartGameSessionPlacementRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< StartGameSessionPlacementOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StartGameSessionPlacement(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void GameLiftClient::StartGameSessionPlacementAsync(const StartGameSessionPlacementRequest& request, const StartGameSessionPlacementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->StartGameSessionPlacementAsyncHelper( request, handler, context ); } );
+}
+
+void GameLiftClient::StartGameSessionPlacementAsyncHelper(const StartGameSessionPlacementRequest& request, const StartGameSessionPlacementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, StartGameSessionPlacement(request), context);
+}
+
+StopGameSessionPlacementOutcome GameLiftClient::StopGameSessionPlacement(const StopGameSessionPlacementRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return StopGameSessionPlacementOutcome(StopGameSessionPlacementResult(outcome.GetResult()));
+  }
+  else
+  {
+    return StopGameSessionPlacementOutcome(outcome.GetError());
+  }
+}
+
+StopGameSessionPlacementOutcomeCallable GameLiftClient::StopGameSessionPlacementCallable(const StopGameSessionPlacementRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< StopGameSessionPlacementOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StopGameSessionPlacement(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void GameLiftClient::StopGameSessionPlacementAsync(const StopGameSessionPlacementRequest& request, const StopGameSessionPlacementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->StopGameSessionPlacementAsyncHelper( request, handler, context ); } );
+}
+
+void GameLiftClient::StopGameSessionPlacementAsyncHelper(const StopGameSessionPlacementRequest& request, const StopGameSessionPlacementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, StopGameSessionPlacement(request), context);
+}
+
 UpdateAliasOutcome GameLiftClient::UpdateAlias(const UpdateAliasRequest& request) const
 {
   Aws::StringStream ss;
@@ -1455,6 +1666,40 @@ void GameLiftClient::UpdateGameSessionAsync(const UpdateGameSessionRequest& requ
 void GameLiftClient::UpdateGameSessionAsyncHelper(const UpdateGameSessionRequest& request, const UpdateGameSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, UpdateGameSession(request), context);
+}
+
+UpdateGameSessionQueueOutcome GameLiftClient::UpdateGameSessionQueue(const UpdateGameSessionQueueRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return UpdateGameSessionQueueOutcome(UpdateGameSessionQueueResult(outcome.GetResult()));
+  }
+  else
+  {
+    return UpdateGameSessionQueueOutcome(outcome.GetError());
+  }
+}
+
+UpdateGameSessionQueueOutcomeCallable GameLiftClient::UpdateGameSessionQueueCallable(const UpdateGameSessionQueueRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateGameSessionQueueOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateGameSessionQueue(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void GameLiftClient::UpdateGameSessionQueueAsync(const UpdateGameSessionQueueRequest& request, const UpdateGameSessionQueueResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateGameSessionQueueAsyncHelper( request, handler, context ); } );
+}
+
+void GameLiftClient::UpdateGameSessionQueueAsyncHelper(const UpdateGameSessionQueueRequest& request, const UpdateGameSessionQueueResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateGameSessionQueue(request), context);
 }
 
 UpdateRuntimeConfigurationOutcome GameLiftClient::UpdateRuntimeConfiguration(const UpdateRuntimeConfigurationRequest& request) const

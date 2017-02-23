@@ -49,7 +49,7 @@ namespace Model
     /**
      * <p>Set of fleet IDs matching the list request. You can retrieve additional
      * information about all returned fleets by passing this result set to a call to
-     * <a>DescribeFleetAttributes</a>, <a>DescribeFleetCapacity</a>, and
+     * <a>DescribeFleetAttributes</a>, <a>DescribeFleetCapacity</a>, or
      * <a>DescribeFleetUtilization</a>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetFleetIds() const{ return m_fleetIds; }
@@ -57,7 +57,7 @@ namespace Model
     /**
      * <p>Set of fleet IDs matching the list request. You can retrieve additional
      * information about all returned fleets by passing this result set to a call to
-     * <a>DescribeFleetAttributes</a>, <a>DescribeFleetCapacity</a>, and
+     * <a>DescribeFleetAttributes</a>, <a>DescribeFleetCapacity</a>, or
      * <a>DescribeFleetUtilization</a>.</p>
      */
     inline void SetFleetIds(const Aws::Vector<Aws::String>& value) { m_fleetIds = value; }
@@ -65,7 +65,7 @@ namespace Model
     /**
      * <p>Set of fleet IDs matching the list request. You can retrieve additional
      * information about all returned fleets by passing this result set to a call to
-     * <a>DescribeFleetAttributes</a>, <a>DescribeFleetCapacity</a>, and
+     * <a>DescribeFleetAttributes</a>, <a>DescribeFleetCapacity</a>, or
      * <a>DescribeFleetUtilization</a>.</p>
      */
     inline void SetFleetIds(Aws::Vector<Aws::String>&& value) { m_fleetIds = value; }
@@ -73,7 +73,7 @@ namespace Model
     /**
      * <p>Set of fleet IDs matching the list request. You can retrieve additional
      * information about all returned fleets by passing this result set to a call to
-     * <a>DescribeFleetAttributes</a>, <a>DescribeFleetCapacity</a>, and
+     * <a>DescribeFleetAttributes</a>, <a>DescribeFleetCapacity</a>, or
      * <a>DescribeFleetUtilization</a>.</p>
      */
     inline ListFleetsResult& WithFleetIds(const Aws::Vector<Aws::String>& value) { SetFleetIds(value); return *this;}
@@ -81,7 +81,7 @@ namespace Model
     /**
      * <p>Set of fleet IDs matching the list request. You can retrieve additional
      * information about all returned fleets by passing this result set to a call to
-     * <a>DescribeFleetAttributes</a>, <a>DescribeFleetCapacity</a>, and
+     * <a>DescribeFleetAttributes</a>, <a>DescribeFleetCapacity</a>, or
      * <a>DescribeFleetUtilization</a>.</p>
      */
     inline ListFleetsResult& WithFleetIds(Aws::Vector<Aws::String>&& value) { SetFleetIds(value); return *this;}
@@ -89,7 +89,7 @@ namespace Model
     /**
      * <p>Set of fleet IDs matching the list request. You can retrieve additional
      * information about all returned fleets by passing this result set to a call to
-     * <a>DescribeFleetAttributes</a>, <a>DescribeFleetCapacity</a>, and
+     * <a>DescribeFleetAttributes</a>, <a>DescribeFleetCapacity</a>, or
      * <a>DescribeFleetUtilization</a>.</p>
      */
     inline ListFleetsResult& AddFleetIds(const Aws::String& value) { m_fleetIds.push_back(value); return *this; }
@@ -97,7 +97,7 @@ namespace Model
     /**
      * <p>Set of fleet IDs matching the list request. You can retrieve additional
      * information about all returned fleets by passing this result set to a call to
-     * <a>DescribeFleetAttributes</a>, <a>DescribeFleetCapacity</a>, and
+     * <a>DescribeFleetAttributes</a>, <a>DescribeFleetCapacity</a>, or
      * <a>DescribeFleetUtilization</a>.</p>
      */
     inline ListFleetsResult& AddFleetIds(Aws::String&& value) { m_fleetIds.push_back(value); return *this; }
@@ -105,56 +105,56 @@ namespace Model
     /**
      * <p>Set of fleet IDs matching the list request. You can retrieve additional
      * information about all returned fleets by passing this result set to a call to
-     * <a>DescribeFleetAttributes</a>, <a>DescribeFleetCapacity</a>, and
+     * <a>DescribeFleetAttributes</a>, <a>DescribeFleetCapacity</a>, or
      * <a>DescribeFleetUtilization</a>.</p>
      */
     inline ListFleetsResult& AddFleetIds(const char* value) { m_fleetIds.push_back(value); return *this; }
 
     /**
-     * <p>Token indicating where to resume retrieving results on the next call to this
-     * action. If no token is returned, these results represent the end of the
+     * <p>Token that indicates where to resume retrieving results on the next call to
+     * this action. If no token is returned, these results represent the end of the
      * list.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * <p>Token indicating where to resume retrieving results on the next call to this
-     * action. If no token is returned, these results represent the end of the
+     * <p>Token that indicates where to resume retrieving results on the next call to
+     * this action. If no token is returned, these results represent the end of the
      * list.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
 
     /**
-     * <p>Token indicating where to resume retrieving results on the next call to this
-     * action. If no token is returned, these results represent the end of the
+     * <p>Token that indicates where to resume retrieving results on the next call to
+     * this action. If no token is returned, these results represent the end of the
      * list.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = value; }
 
     /**
-     * <p>Token indicating where to resume retrieving results on the next call to this
-     * action. If no token is returned, these results represent the end of the
+     * <p>Token that indicates where to resume retrieving results on the next call to
+     * this action. If no token is returned, these results represent the end of the
      * list.</p>
      */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
 
     /**
-     * <p>Token indicating where to resume retrieving results on the next call to this
-     * action. If no token is returned, these results represent the end of the
+     * <p>Token that indicates where to resume retrieving results on the next call to
+     * this action. If no token is returned, these results represent the end of the
      * list.</p>
      */
     inline ListFleetsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>Token indicating where to resume retrieving results on the next call to this
-     * action. If no token is returned, these results represent the end of the
+     * <p>Token that indicates where to resume retrieving results on the next call to
+     * this action. If no token is returned, these results represent the end of the
      * list.</p>
      */
     inline ListFleetsResult& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>Token indicating where to resume retrieving results on the next call to this
-     * action. If no token is returned, these results represent the end of the
+     * <p>Token that indicates where to resume retrieving results on the next call to
+     * this action. If no token is returned, these results represent the end of the
      * list.</p>
      */
     inline ListFleetsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}

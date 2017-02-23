@@ -40,150 +40,181 @@ namespace Model
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
     /**
-     * <p>Descriptive label associated with a build. Build names do not need to be
-     * unique. A build name can be changed later using<code> <a>UpdateBuild</a>
-     * </code>.</p>
+     * <p>Descriptive label that is associated with a build. Build names do not need to
+     * be unique. You can use <a>UpdateBuild</a> to change this value later. </p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>Descriptive label associated with a build. Build names do not need to be
-     * unique. A build name can be changed later using<code> <a>UpdateBuild</a>
-     * </code>.</p>
+     * <p>Descriptive label that is associated with a build. Build names do not need to
+     * be unique. You can use <a>UpdateBuild</a> to change this value later. </p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>Descriptive label associated with a build. Build names do not need to be
-     * unique. A build name can be changed later using<code> <a>UpdateBuild</a>
-     * </code>.</p>
+     * <p>Descriptive label that is associated with a build. Build names do not need to
+     * be unique. You can use <a>UpdateBuild</a> to change this value later. </p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>Descriptive label associated with a build. Build names do not need to be
-     * unique. A build name can be changed later using<code> <a>UpdateBuild</a>
-     * </code>.</p>
+     * <p>Descriptive label that is associated with a build. Build names do not need to
+     * be unique. You can use <a>UpdateBuild</a> to change this value later. </p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>Descriptive label associated with a build. Build names do not need to be
-     * unique. A build name can be changed later using<code> <a>UpdateBuild</a>
-     * </code>.</p>
+     * <p>Descriptive label that is associated with a build. Build names do not need to
+     * be unique. You can use <a>UpdateBuild</a> to change this value later. </p>
      */
     inline CreateBuildRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>Descriptive label associated with a build. Build names do not need to be
-     * unique. A build name can be changed later using<code> <a>UpdateBuild</a>
-     * </code>.</p>
+     * <p>Descriptive label that is associated with a build. Build names do not need to
+     * be unique. You can use <a>UpdateBuild</a> to change this value later. </p>
      */
     inline CreateBuildRequest& WithName(Aws::String&& value) { SetName(value); return *this;}
 
     /**
-     * <p>Descriptive label associated with a build. Build names do not need to be
-     * unique. A build name can be changed later using<code> <a>UpdateBuild</a>
-     * </code>.</p>
+     * <p>Descriptive label that is associated with a build. Build names do not need to
+     * be unique. You can use <a>UpdateBuild</a> to change this value later. </p>
      */
     inline CreateBuildRequest& WithName(const char* value) { SetName(value); return *this;}
 
     /**
-     * <p>Version associated with this build. Version strings do not need to be unique
-     * to a build. A build version can be changed later using<code> <a>UpdateBuild</a>
-     * </code>.</p>
+     * <p>Version that is associated with this build. Version strings do not need to be
+     * unique. You can use <a>UpdateBuild</a> to change this value later. </p>
      */
     inline const Aws::String& GetVersion() const{ return m_version; }
 
     /**
-     * <p>Version associated with this build. Version strings do not need to be unique
-     * to a build. A build version can be changed later using<code> <a>UpdateBuild</a>
-     * </code>.</p>
+     * <p>Version that is associated with this build. Version strings do not need to be
+     * unique. You can use <a>UpdateBuild</a> to change this value later. </p>
      */
     inline void SetVersion(const Aws::String& value) { m_versionHasBeenSet = true; m_version = value; }
 
     /**
-     * <p>Version associated with this build. Version strings do not need to be unique
-     * to a build. A build version can be changed later using<code> <a>UpdateBuild</a>
-     * </code>.</p>
+     * <p>Version that is associated with this build. Version strings do not need to be
+     * unique. You can use <a>UpdateBuild</a> to change this value later. </p>
      */
     inline void SetVersion(Aws::String&& value) { m_versionHasBeenSet = true; m_version = value; }
 
     /**
-     * <p>Version associated with this build. Version strings do not need to be unique
-     * to a build. A build version can be changed later using<code> <a>UpdateBuild</a>
-     * </code>.</p>
+     * <p>Version that is associated with this build. Version strings do not need to be
+     * unique. You can use <a>UpdateBuild</a> to change this value later. </p>
      */
     inline void SetVersion(const char* value) { m_versionHasBeenSet = true; m_version.assign(value); }
 
     /**
-     * <p>Version associated with this build. Version strings do not need to be unique
-     * to a build. A build version can be changed later using<code> <a>UpdateBuild</a>
-     * </code>.</p>
+     * <p>Version that is associated with this build. Version strings do not need to be
+     * unique. You can use <a>UpdateBuild</a> to change this value later. </p>
      */
     inline CreateBuildRequest& WithVersion(const Aws::String& value) { SetVersion(value); return *this;}
 
     /**
-     * <p>Version associated with this build. Version strings do not need to be unique
-     * to a build. A build version can be changed later using<code> <a>UpdateBuild</a>
-     * </code>.</p>
+     * <p>Version that is associated with this build. Version strings do not need to be
+     * unique. You can use <a>UpdateBuild</a> to change this value later. </p>
      */
     inline CreateBuildRequest& WithVersion(Aws::String&& value) { SetVersion(value); return *this;}
 
     /**
-     * <p>Version associated with this build. Version strings do not need to be unique
-     * to a build. A build version can be changed later using<code> <a>UpdateBuild</a>
-     * </code>.</p>
+     * <p>Version that is associated with this build. Version strings do not need to be
+     * unique. You can use <a>UpdateBuild</a> to change this value later. </p>
      */
     inline CreateBuildRequest& WithVersion(const char* value) { SetVersion(value); return *this;}
 
-    
+    /**
+     * <p>Amazon S3 location of the game build files to be uploaded. The S3 bucket must
+     * be owned by the same AWS account that you're using to manage Amazon GameLift. It
+     * also must in the same region that you want to create a new build in. Before
+     * calling <code>CreateBuild</code> with this location, you must allow Amazon
+     * GameLift to access your Amazon S3 bucket (see <a
+     * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-build-cli-uploading.html#gamelift-build-cli-uploading-create-build">Create
+     * a Build with Files in Amazon S3</a>).</p>
+     */
     inline const S3Location& GetStorageLocation() const{ return m_storageLocation; }
 
-    
+    /**
+     * <p>Amazon S3 location of the game build files to be uploaded. The S3 bucket must
+     * be owned by the same AWS account that you're using to manage Amazon GameLift. It
+     * also must in the same region that you want to create a new build in. Before
+     * calling <code>CreateBuild</code> with this location, you must allow Amazon
+     * GameLift to access your Amazon S3 bucket (see <a
+     * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-build-cli-uploading.html#gamelift-build-cli-uploading-create-build">Create
+     * a Build with Files in Amazon S3</a>).</p>
+     */
     inline void SetStorageLocation(const S3Location& value) { m_storageLocationHasBeenSet = true; m_storageLocation = value; }
 
-    
+    /**
+     * <p>Amazon S3 location of the game build files to be uploaded. The S3 bucket must
+     * be owned by the same AWS account that you're using to manage Amazon GameLift. It
+     * also must in the same region that you want to create a new build in. Before
+     * calling <code>CreateBuild</code> with this location, you must allow Amazon
+     * GameLift to access your Amazon S3 bucket (see <a
+     * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-build-cli-uploading.html#gamelift-build-cli-uploading-create-build">Create
+     * a Build with Files in Amazon S3</a>).</p>
+     */
     inline void SetStorageLocation(S3Location&& value) { m_storageLocationHasBeenSet = true; m_storageLocation = value; }
 
-    
+    /**
+     * <p>Amazon S3 location of the game build files to be uploaded. The S3 bucket must
+     * be owned by the same AWS account that you're using to manage Amazon GameLift. It
+     * also must in the same region that you want to create a new build in. Before
+     * calling <code>CreateBuild</code> with this location, you must allow Amazon
+     * GameLift to access your Amazon S3 bucket (see <a
+     * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-build-cli-uploading.html#gamelift-build-cli-uploading-create-build">Create
+     * a Build with Files in Amazon S3</a>).</p>
+     */
     inline CreateBuildRequest& WithStorageLocation(const S3Location& value) { SetStorageLocation(value); return *this;}
 
-    
+    /**
+     * <p>Amazon S3 location of the game build files to be uploaded. The S3 bucket must
+     * be owned by the same AWS account that you're using to manage Amazon GameLift. It
+     * also must in the same region that you want to create a new build in. Before
+     * calling <code>CreateBuild</code> with this location, you must allow Amazon
+     * GameLift to access your Amazon S3 bucket (see <a
+     * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-build-cli-uploading.html#gamelift-build-cli-uploading-create-build">Create
+     * a Build with Files in Amazon S3</a>).</p>
+     */
     inline CreateBuildRequest& WithStorageLocation(S3Location&& value) { SetStorageLocation(value); return *this;}
 
     /**
      * <p>Operating system that the game server binaries are built to run on. This
-     * value determines the type of fleet resources that you can use for this
-     * build.</p>
+     * value determines the type of fleet resources that you can use for this build. If
+     * your game build contains multiple executables, they all must run on the same
+     * operating system.</p>
      */
     inline const OperatingSystem& GetOperatingSystem() const{ return m_operatingSystem; }
 
     /**
      * <p>Operating system that the game server binaries are built to run on. This
-     * value determines the type of fleet resources that you can use for this
-     * build.</p>
+     * value determines the type of fleet resources that you can use for this build. If
+     * your game build contains multiple executables, they all must run on the same
+     * operating system.</p>
      */
     inline void SetOperatingSystem(const OperatingSystem& value) { m_operatingSystemHasBeenSet = true; m_operatingSystem = value; }
 
     /**
      * <p>Operating system that the game server binaries are built to run on. This
-     * value determines the type of fleet resources that you can use for this
-     * build.</p>
+     * value determines the type of fleet resources that you can use for this build. If
+     * your game build contains multiple executables, they all must run on the same
+     * operating system.</p>
      */
     inline void SetOperatingSystem(OperatingSystem&& value) { m_operatingSystemHasBeenSet = true; m_operatingSystem = value; }
 
     /**
      * <p>Operating system that the game server binaries are built to run on. This
-     * value determines the type of fleet resources that you can use for this
-     * build.</p>
+     * value determines the type of fleet resources that you can use for this build. If
+     * your game build contains multiple executables, they all must run on the same
+     * operating system.</p>
      */
     inline CreateBuildRequest& WithOperatingSystem(const OperatingSystem& value) { SetOperatingSystem(value); return *this;}
 
     /**
      * <p>Operating system that the game server binaries are built to run on. This
-     * value determines the type of fleet resources that you can use for this
-     * build.</p>
+     * value determines the type of fleet resources that you can use for this build. If
+     * your game build contains multiple executables, they all must run on the same
+     * operating system.</p>
      */
     inline CreateBuildRequest& WithOperatingSystem(OperatingSystem&& value) { SetOperatingSystem(value); return *this;}
 

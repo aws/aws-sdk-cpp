@@ -33,9 +33,9 @@ namespace Model
 
   /**
    * <p>A range of IP addresses and port settings that allow inbound traffic to
-   * connect to server processes on GameLift. Each game session hosted on a fleet is
-   * assigned a unique combination of IP address and port number, which must fall
-   * into the fleet's allowed ranges. This combination is included in the
+   * connect to server processes on Amazon GameLift. Each game session hosted on a
+   * fleet is assigned a unique combination of IP address and port number, which must
+   * fall into the fleet's allowed ranges. This combination is included in the
    * <a>GameSession</a> object. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/IpPermission">AWS
    * API Reference</a></p>
@@ -82,58 +82,51 @@ namespace Model
     inline IpPermission& WithToPort(int value) { SetToPort(value); return *this;}
 
     /**
-     * <p>Range of allowed IP addresses. This value must be expressed in <a
-     * href="https://tools.ietf.org/id/cidr">CIDR notation</a>. Example:
-     * "<code>000.000.000.000/[subnet mask]</code>" or optionally the shortened version
-     * "<code>0.0.0.0/[subnet mask]</code>".</p>
+     * <p>Range of allowed IP addresses. This value must be expressed in CIDR notation.
+     * Example: "<code>000.000.000.000/[subnet mask]</code>" or optionally the
+     * shortened version "<code>0.0.0.0/[subnet mask]</code>".</p>
      */
     inline const Aws::String& GetIpRange() const{ return m_ipRange; }
 
     /**
-     * <p>Range of allowed IP addresses. This value must be expressed in <a
-     * href="https://tools.ietf.org/id/cidr">CIDR notation</a>. Example:
-     * "<code>000.000.000.000/[subnet mask]</code>" or optionally the shortened version
-     * "<code>0.0.0.0/[subnet mask]</code>".</p>
+     * <p>Range of allowed IP addresses. This value must be expressed in CIDR notation.
+     * Example: "<code>000.000.000.000/[subnet mask]</code>" or optionally the
+     * shortened version "<code>0.0.0.0/[subnet mask]</code>".</p>
      */
     inline void SetIpRange(const Aws::String& value) { m_ipRangeHasBeenSet = true; m_ipRange = value; }
 
     /**
-     * <p>Range of allowed IP addresses. This value must be expressed in <a
-     * href="https://tools.ietf.org/id/cidr">CIDR notation</a>. Example:
-     * "<code>000.000.000.000/[subnet mask]</code>" or optionally the shortened version
-     * "<code>0.0.0.0/[subnet mask]</code>".</p>
+     * <p>Range of allowed IP addresses. This value must be expressed in CIDR notation.
+     * Example: "<code>000.000.000.000/[subnet mask]</code>" or optionally the
+     * shortened version "<code>0.0.0.0/[subnet mask]</code>".</p>
      */
     inline void SetIpRange(Aws::String&& value) { m_ipRangeHasBeenSet = true; m_ipRange = value; }
 
     /**
-     * <p>Range of allowed IP addresses. This value must be expressed in <a
-     * href="https://tools.ietf.org/id/cidr">CIDR notation</a>. Example:
-     * "<code>000.000.000.000/[subnet mask]</code>" or optionally the shortened version
-     * "<code>0.0.0.0/[subnet mask]</code>".</p>
+     * <p>Range of allowed IP addresses. This value must be expressed in CIDR notation.
+     * Example: "<code>000.000.000.000/[subnet mask]</code>" or optionally the
+     * shortened version "<code>0.0.0.0/[subnet mask]</code>".</p>
      */
     inline void SetIpRange(const char* value) { m_ipRangeHasBeenSet = true; m_ipRange.assign(value); }
 
     /**
-     * <p>Range of allowed IP addresses. This value must be expressed in <a
-     * href="https://tools.ietf.org/id/cidr">CIDR notation</a>. Example:
-     * "<code>000.000.000.000/[subnet mask]</code>" or optionally the shortened version
-     * "<code>0.0.0.0/[subnet mask]</code>".</p>
+     * <p>Range of allowed IP addresses. This value must be expressed in CIDR notation.
+     * Example: "<code>000.000.000.000/[subnet mask]</code>" or optionally the
+     * shortened version "<code>0.0.0.0/[subnet mask]</code>".</p>
      */
     inline IpPermission& WithIpRange(const Aws::String& value) { SetIpRange(value); return *this;}
 
     /**
-     * <p>Range of allowed IP addresses. This value must be expressed in <a
-     * href="https://tools.ietf.org/id/cidr">CIDR notation</a>. Example:
-     * "<code>000.000.000.000/[subnet mask]</code>" or optionally the shortened version
-     * "<code>0.0.0.0/[subnet mask]</code>".</p>
+     * <p>Range of allowed IP addresses. This value must be expressed in CIDR notation.
+     * Example: "<code>000.000.000.000/[subnet mask]</code>" or optionally the
+     * shortened version "<code>0.0.0.0/[subnet mask]</code>".</p>
      */
     inline IpPermission& WithIpRange(Aws::String&& value) { SetIpRange(value); return *this;}
 
     /**
-     * <p>Range of allowed IP addresses. This value must be expressed in <a
-     * href="https://tools.ietf.org/id/cidr">CIDR notation</a>. Example:
-     * "<code>000.000.000.000/[subnet mask]</code>" or optionally the shortened version
-     * "<code>0.0.0.0/[subnet mask]</code>".</p>
+     * <p>Range of allowed IP addresses. This value must be expressed in CIDR notation.
+     * Example: "<code>000.000.000.000/[subnet mask]</code>" or optionally the
+     * shortened version "<code>0.0.0.0/[subnet mask]</code>".</p>
      */
     inline IpPermission& WithIpRange(const char* value) { SetIpRange(value); return *this;}
 

@@ -46,27 +46,27 @@ namespace Model
     UpdateAliasResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
     /**
-     * <p>Object containing the updated alias configuration.</p>
+     * <p>Object that contains the updated alias configuration.</p>
      */
     inline const Alias& GetAlias() const{ return m_alias; }
 
     /**
-     * <p>Object containing the updated alias configuration.</p>
+     * <p>Object that contains the updated alias configuration.</p>
      */
     inline void SetAlias(const Alias& value) { m_alias = value; }
 
     /**
-     * <p>Object containing the updated alias configuration.</p>
+     * <p>Object that contains the updated alias configuration.</p>
      */
     inline void SetAlias(Alias&& value) { m_alias = value; }
 
     /**
-     * <p>Object containing the updated alias configuration.</p>
+     * <p>Object that contains the updated alias configuration.</p>
      */
     inline UpdateAliasResult& WithAlias(const Alias& value) { SetAlias(value); return *this;}
 
     /**
-     * <p>Object containing the updated alias configuration.</p>
+     * <p>Object that contains the updated alias configuration.</p>
      */
     inline UpdateAliasResult& WithAlias(Alias&& value) { SetAlias(value); return *this;}
 

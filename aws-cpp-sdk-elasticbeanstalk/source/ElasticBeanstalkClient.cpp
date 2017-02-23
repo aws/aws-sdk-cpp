@@ -34,11 +34,13 @@
 #include <aws/elasticbeanstalk/model/CreateApplicationVersionRequest.h>
 #include <aws/elasticbeanstalk/model/CreateConfigurationTemplateRequest.h>
 #include <aws/elasticbeanstalk/model/CreateEnvironmentRequest.h>
+#include <aws/elasticbeanstalk/model/CreatePlatformVersionRequest.h>
 #include <aws/elasticbeanstalk/model/CreateStorageLocationRequest.h>
 #include <aws/elasticbeanstalk/model/DeleteApplicationRequest.h>
 #include <aws/elasticbeanstalk/model/DeleteApplicationVersionRequest.h>
 #include <aws/elasticbeanstalk/model/DeleteConfigurationTemplateRequest.h>
 #include <aws/elasticbeanstalk/model/DeleteEnvironmentConfigurationRequest.h>
+#include <aws/elasticbeanstalk/model/DeletePlatformVersionRequest.h>
 #include <aws/elasticbeanstalk/model/DescribeApplicationVersionsRequest.h>
 #include <aws/elasticbeanstalk/model/DescribeApplicationsRequest.h>
 #include <aws/elasticbeanstalk/model/DescribeConfigurationOptionsRequest.h>
@@ -50,7 +52,9 @@
 #include <aws/elasticbeanstalk/model/DescribeEnvironmentsRequest.h>
 #include <aws/elasticbeanstalk/model/DescribeEventsRequest.h>
 #include <aws/elasticbeanstalk/model/DescribeInstancesHealthRequest.h>
+#include <aws/elasticbeanstalk/model/DescribePlatformVersionRequest.h>
 #include <aws/elasticbeanstalk/model/ListAvailableSolutionStacksRequest.h>
+#include <aws/elasticbeanstalk/model/ListPlatformVersionsRequest.h>
 #include <aws/elasticbeanstalk/model/RebuildEnvironmentRequest.h>
 #include <aws/elasticbeanstalk/model/RequestEnvironmentInfoRequest.h>
 #include <aws/elasticbeanstalk/model/RestartAppServerRequest.h>
@@ -403,6 +407,39 @@ void ElasticBeanstalkClient::CreateEnvironmentAsyncHelper(const CreateEnvironmen
   handler(this, request, CreateEnvironment(request), context);
 }
 
+CreatePlatformVersionOutcome ElasticBeanstalkClient::CreatePlatformVersion(const CreatePlatformVersionRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return CreatePlatformVersionOutcome(CreatePlatformVersionResult(outcome.GetResult()));
+  }
+  else
+  {
+    return CreatePlatformVersionOutcome(outcome.GetError());
+  }
+}
+
+CreatePlatformVersionOutcomeCallable ElasticBeanstalkClient::CreatePlatformVersionCallable(const CreatePlatformVersionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreatePlatformVersionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreatePlatformVersion(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ElasticBeanstalkClient::CreatePlatformVersionAsync(const CreatePlatformVersionRequest& request, const CreatePlatformVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreatePlatformVersionAsyncHelper( request, handler, context ); } );
+}
+
+void ElasticBeanstalkClient::CreatePlatformVersionAsyncHelper(const CreatePlatformVersionRequest& request, const CreatePlatformVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreatePlatformVersion(request), context);
+}
+
 CreateStorageLocationOutcome ElasticBeanstalkClient::CreateStorageLocation(const CreateStorageLocationRequest& request) const
 {
   Aws::StringStream ss;
@@ -566,6 +603,39 @@ void ElasticBeanstalkClient::DeleteEnvironmentConfigurationAsync(const DeleteEnv
 void ElasticBeanstalkClient::DeleteEnvironmentConfigurationAsyncHelper(const DeleteEnvironmentConfigurationRequest& request, const DeleteEnvironmentConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DeleteEnvironmentConfiguration(request), context);
+}
+
+DeletePlatformVersionOutcome ElasticBeanstalkClient::DeletePlatformVersion(const DeletePlatformVersionRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return DeletePlatformVersionOutcome(DeletePlatformVersionResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DeletePlatformVersionOutcome(outcome.GetError());
+  }
+}
+
+DeletePlatformVersionOutcomeCallable ElasticBeanstalkClient::DeletePlatformVersionCallable(const DeletePlatformVersionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeletePlatformVersionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeletePlatformVersion(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ElasticBeanstalkClient::DeletePlatformVersionAsync(const DeletePlatformVersionRequest& request, const DeletePlatformVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeletePlatformVersionAsyncHelper( request, handler, context ); } );
+}
+
+void ElasticBeanstalkClient::DeletePlatformVersionAsyncHelper(const DeletePlatformVersionRequest& request, const DeletePlatformVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeletePlatformVersion(request), context);
 }
 
 DescribeApplicationVersionsOutcome ElasticBeanstalkClient::DescribeApplicationVersions(const DescribeApplicationVersionsRequest& request) const
@@ -931,6 +1001,39 @@ void ElasticBeanstalkClient::DescribeInstancesHealthAsyncHelper(const DescribeIn
   handler(this, request, DescribeInstancesHealth(request), context);
 }
 
+DescribePlatformVersionOutcome ElasticBeanstalkClient::DescribePlatformVersion(const DescribePlatformVersionRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return DescribePlatformVersionOutcome(DescribePlatformVersionResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DescribePlatformVersionOutcome(outcome.GetError());
+  }
+}
+
+DescribePlatformVersionOutcomeCallable ElasticBeanstalkClient::DescribePlatformVersionCallable(const DescribePlatformVersionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribePlatformVersionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribePlatformVersion(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ElasticBeanstalkClient::DescribePlatformVersionAsync(const DescribePlatformVersionRequest& request, const DescribePlatformVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribePlatformVersionAsyncHelper( request, handler, context ); } );
+}
+
+void ElasticBeanstalkClient::DescribePlatformVersionAsyncHelper(const DescribePlatformVersionRequest& request, const DescribePlatformVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribePlatformVersion(request), context);
+}
+
 ListAvailableSolutionStacksOutcome ElasticBeanstalkClient::ListAvailableSolutionStacks(const ListAvailableSolutionStacksRequest& request) const
 {
   Aws::StringStream ss;
@@ -962,6 +1065,39 @@ void ElasticBeanstalkClient::ListAvailableSolutionStacksAsync(const ListAvailabl
 void ElasticBeanstalkClient::ListAvailableSolutionStacksAsyncHelper(const ListAvailableSolutionStacksRequest& request, const ListAvailableSolutionStacksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ListAvailableSolutionStacks(request), context);
+}
+
+ListPlatformVersionsOutcome ElasticBeanstalkClient::ListPlatformVersions(const ListPlatformVersionsRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return ListPlatformVersionsOutcome(ListPlatformVersionsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ListPlatformVersionsOutcome(outcome.GetError());
+  }
+}
+
+ListPlatformVersionsOutcomeCallable ElasticBeanstalkClient::ListPlatformVersionsCallable(const ListPlatformVersionsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListPlatformVersionsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListPlatformVersions(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ElasticBeanstalkClient::ListPlatformVersionsAsync(const ListPlatformVersionsRequest& request, const ListPlatformVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListPlatformVersionsAsyncHelper( request, handler, context ); } );
+}
+
+void ElasticBeanstalkClient::ListPlatformVersionsAsyncHelper(const ListPlatformVersionsRequest& request, const ListPlatformVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListPlatformVersions(request), context);
 }
 
 RebuildEnvironmentOutcome ElasticBeanstalkClient::RebuildEnvironment(const RebuildEnvironmentRequest& request) const

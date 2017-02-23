@@ -50,72 +50,72 @@ namespace Model
     Aws::Utils::Json::JsonValue Jsonize() const;
 
     /**
-     * <p>Unique identifier for the fleet that the instance belongs to.</p>
+     * <p>Unique identifier for a fleet that the instance is in.</p>
      */
     inline const Aws::String& GetFleetId() const{ return m_fleetId; }
 
     /**
-     * <p>Unique identifier for the fleet that the instance belongs to.</p>
+     * <p>Unique identifier for a fleet that the instance is in.</p>
      */
     inline void SetFleetId(const Aws::String& value) { m_fleetIdHasBeenSet = true; m_fleetId = value; }
 
     /**
-     * <p>Unique identifier for the fleet that the instance belongs to.</p>
+     * <p>Unique identifier for a fleet that the instance is in.</p>
      */
     inline void SetFleetId(Aws::String&& value) { m_fleetIdHasBeenSet = true; m_fleetId = value; }
 
     /**
-     * <p>Unique identifier for the fleet that the instance belongs to.</p>
+     * <p>Unique identifier for a fleet that the instance is in.</p>
      */
     inline void SetFleetId(const char* value) { m_fleetIdHasBeenSet = true; m_fleetId.assign(value); }
 
     /**
-     * <p>Unique identifier for the fleet that the instance belongs to.</p>
+     * <p>Unique identifier for a fleet that the instance is in.</p>
      */
     inline Instance& WithFleetId(const Aws::String& value) { SetFleetId(value); return *this;}
 
     /**
-     * <p>Unique identifier for the fleet that the instance belongs to.</p>
+     * <p>Unique identifier for a fleet that the instance is in.</p>
      */
     inline Instance& WithFleetId(Aws::String&& value) { SetFleetId(value); return *this;}
 
     /**
-     * <p>Unique identifier for the fleet that the instance belongs to.</p>
+     * <p>Unique identifier for a fleet that the instance is in.</p>
      */
     inline Instance& WithFleetId(const char* value) { SetFleetId(value); return *this;}
 
     /**
-     * <p>Unique identifier for the instance.</p>
+     * <p>Unique identifier for an instance.</p>
      */
     inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
 
     /**
-     * <p>Unique identifier for the instance.</p>
+     * <p>Unique identifier for an instance.</p>
      */
     inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
 
     /**
-     * <p>Unique identifier for the instance.</p>
+     * <p>Unique identifier for an instance.</p>
      */
     inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
 
     /**
-     * <p>Unique identifier for the instance.</p>
+     * <p>Unique identifier for an instance.</p>
      */
     inline void SetInstanceId(const char* value) { m_instanceIdHasBeenSet = true; m_instanceId.assign(value); }
 
     /**
-     * <p>Unique identifier for the instance.</p>
+     * <p>Unique identifier for an instance.</p>
      */
     inline Instance& WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
 
     /**
-     * <p>Unique identifier for the instance.</p>
+     * <p>Unique identifier for an instance.</p>
      */
     inline Instance& WithInstanceId(Aws::String&& value) { SetInstanceId(value); return *this;}
 
     /**
-     * <p>Unique identifier for the instance.</p>
+     * <p>Unique identifier for an instance.</p>
      */
     inline Instance& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
 
@@ -210,10 +210,10 @@ namespace Model
      * and launching server processes as defined in the fleet's runtime configuration.
      * </p> </li> <li> <p> <b>ACTIVE</b> – The instance has been successfully created
      * and at least one server process has successfully launched and reported back to
-     * GameLift that it is ready to host a game session. The instance is now considered
-     * ready to host game sessions. </p> </li> <li> <p> <b>TERMINATING</b> – The
-     * instance is in the process of shutting down. This may happen to reduce capacity
-     * during a scaling down event or to recycle resources in the event of a
+     * Amazon GameLift that it is ready to host a game session. The instance is now
+     * considered ready to host game sessions. </p> </li> <li> <p> <b>TERMINATING</b> –
+     * The instance is in the process of shutting down. This may happen to reduce
+     * capacity during a scaling down event or to recycle resources in the event of a
      * problem.</p> </li> </ul>
      */
     inline const InstanceStatus& GetStatus() const{ return m_status; }
@@ -224,10 +224,10 @@ namespace Model
      * and launching server processes as defined in the fleet's runtime configuration.
      * </p> </li> <li> <p> <b>ACTIVE</b> – The instance has been successfully created
      * and at least one server process has successfully launched and reported back to
-     * GameLift that it is ready to host a game session. The instance is now considered
-     * ready to host game sessions. </p> </li> <li> <p> <b>TERMINATING</b> – The
-     * instance is in the process of shutting down. This may happen to reduce capacity
-     * during a scaling down event or to recycle resources in the event of a
+     * Amazon GameLift that it is ready to host a game session. The instance is now
+     * considered ready to host game sessions. </p> </li> <li> <p> <b>TERMINATING</b> –
+     * The instance is in the process of shutting down. This may happen to reduce
+     * capacity during a scaling down event or to recycle resources in the event of a
      * problem.</p> </li> </ul>
      */
     inline void SetStatus(const InstanceStatus& value) { m_statusHasBeenSet = true; m_status = value; }
@@ -238,10 +238,10 @@ namespace Model
      * and launching server processes as defined in the fleet's runtime configuration.
      * </p> </li> <li> <p> <b>ACTIVE</b> – The instance has been successfully created
      * and at least one server process has successfully launched and reported back to
-     * GameLift that it is ready to host a game session. The instance is now considered
-     * ready to host game sessions. </p> </li> <li> <p> <b>TERMINATING</b> – The
-     * instance is in the process of shutting down. This may happen to reduce capacity
-     * during a scaling down event or to recycle resources in the event of a
+     * Amazon GameLift that it is ready to host a game session. The instance is now
+     * considered ready to host game sessions. </p> </li> <li> <p> <b>TERMINATING</b> –
+     * The instance is in the process of shutting down. This may happen to reduce
+     * capacity during a scaling down event or to recycle resources in the event of a
      * problem.</p> </li> </ul>
      */
     inline void SetStatus(InstanceStatus&& value) { m_statusHasBeenSet = true; m_status = value; }
@@ -252,10 +252,10 @@ namespace Model
      * and launching server processes as defined in the fleet's runtime configuration.
      * </p> </li> <li> <p> <b>ACTIVE</b> – The instance has been successfully created
      * and at least one server process has successfully launched and reported back to
-     * GameLift that it is ready to host a game session. The instance is now considered
-     * ready to host game sessions. </p> </li> <li> <p> <b>TERMINATING</b> – The
-     * instance is in the process of shutting down. This may happen to reduce capacity
-     * during a scaling down event or to recycle resources in the event of a
+     * Amazon GameLift that it is ready to host a game session. The instance is now
+     * considered ready to host game sessions. </p> </li> <li> <p> <b>TERMINATING</b> –
+     * The instance is in the process of shutting down. This may happen to reduce
+     * capacity during a scaling down event or to recycle resources in the event of a
      * problem.</p> </li> </ul>
      */
     inline Instance& WithStatus(const InstanceStatus& value) { SetStatus(value); return *this;}
@@ -266,41 +266,41 @@ namespace Model
      * and launching server processes as defined in the fleet's runtime configuration.
      * </p> </li> <li> <p> <b>ACTIVE</b> – The instance has been successfully created
      * and at least one server process has successfully launched and reported back to
-     * GameLift that it is ready to host a game session. The instance is now considered
-     * ready to host game sessions. </p> </li> <li> <p> <b>TERMINATING</b> – The
-     * instance is in the process of shutting down. This may happen to reduce capacity
-     * during a scaling down event or to recycle resources in the event of a
+     * Amazon GameLift that it is ready to host a game session. The instance is now
+     * considered ready to host game sessions. </p> </li> <li> <p> <b>TERMINATING</b> –
+     * The instance is in the process of shutting down. This may happen to reduce
+     * capacity during a scaling down event or to recycle resources in the event of a
      * problem.</p> </li> </ul>
      */
     inline Instance& WithStatus(InstanceStatus&& value) { SetStatus(value); return *this;}
 
     /**
      * <p>Time stamp indicating when this data object was created. Format is a number
-     * expressed in Unix time as milliseconds (ex: "1469498468.057").</p>
+     * expressed in Unix time as milliseconds (for example "1469498468.057").</p>
      */
     inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
 
     /**
      * <p>Time stamp indicating when this data object was created. Format is a number
-     * expressed in Unix time as milliseconds (ex: "1469498468.057").</p>
+     * expressed in Unix time as milliseconds (for example "1469498468.057").</p>
      */
     inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
 
     /**
      * <p>Time stamp indicating when this data object was created. Format is a number
-     * expressed in Unix time as milliseconds (ex: "1469498468.057").</p>
+     * expressed in Unix time as milliseconds (for example "1469498468.057").</p>
      */
     inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
 
     /**
      * <p>Time stamp indicating when this data object was created. Format is a number
-     * expressed in Unix time as milliseconds (ex: "1469498468.057").</p>
+     * expressed in Unix time as milliseconds (for example "1469498468.057").</p>
      */
     inline Instance& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
 
     /**
      * <p>Time stamp indicating when this data object was created. Format is a number
-     * expressed in Unix time as milliseconds (ex: "1469498468.057").</p>
+     * expressed in Unix time as milliseconds (for example "1469498468.057").</p>
      */
     inline Instance& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(value); return *this;}
 

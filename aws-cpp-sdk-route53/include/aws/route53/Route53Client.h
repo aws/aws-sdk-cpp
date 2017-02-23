@@ -412,7 +412,8 @@ namespace Model
          * <p>Create, change, update, or delete authoritative DNS information on all Amazon
          * Route 53 servers. Send a <code>POST</code> request to: </p> <p>
          * <code>/2013-04-01/hostedzone/<i>Amazon Route 53 hosted Zone ID</i>/rrset</code>
-         * resource. </p> <p>The request body must include a document with a
+         * resource. </p> <p> <b>Change Batches and Transactional Changes</b> </p> <p>The
+         * request body must include a document with a
          * <code>ChangeResourceRecordSetsRequest</code> element. The request body contains
          * a list of change items, known as a change batch. Change batches are considered
          * transactional changes. When using the Amazon Route 53 API to change resource
@@ -428,39 +429,34 @@ namespace Model
          * exist.</p> <important> <p>Due to the nature of transactional changes, you can't
          * delete the same resource record set more than once in a single change batch. If
          * you attempt to delete the same change batch more than once, Amazon Route 53
-         * returns an <code>InvalidChangeBatch</code> error.</p> </important> <note> <p>To
-         * create resource record sets for complex routing configurations, use either the
-         * traffic flow visual editor in the Amazon Route 53 console or the API actions for
-         * traffic policies and traffic policy instances. Save the configuration as a
-         * traffic policy, then associate the traffic policy with one or more domain names
-         * (such as example.com) or subdomain names (such as www.example.com), in the same
-         * hosted zone or in multiple hosted zones. You can roll back the updates if the
-         * new configuration isn't performing as expected. For more information, see <a
+         * returns an <code>InvalidChangeBatch</code> error.</p> </important> <p>
+         * <b>Traffic Flow</b> </p> <p>To create resource record sets for complex routing
+         * configurations, use either the traffic flow visual editor in the Amazon Route 53
+         * console or the API actions for traffic policies and traffic policy instances.
+         * Save the configuration as a traffic policy, then associate the traffic policy
+         * with one or more domain names (such as example.com) or subdomain names (such as
+         * www.example.com), in the same hosted zone or in multiple hosted zones. You can
+         * roll back the updates if the new configuration isn't performing as expected. For
+         * more information, see <a
          * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/traffic-flow.html">Using
          * Traffic Flow to Route DNS Traffic</a> in the <i>Amazon Route 53 Developer
-         * Guide</i>.</p> </note> <p>Use <code>ChangeResourceRecordsSetsRequest</code> to
-         * perform the following actions:</p> <ul> <li> <p> <code>CREATE</code>: Creates a
-         * resource record set that has the specified values.</p> </li> <li> <p>
-         * <code>DELETE</code>: Deletes an existing resource record set that has the
-         * specified values.</p> </li> <li> <p> <code>UPSERT</code>: If a resource record
-         * set does not already exist, AWS creates it. If a resource set does exist, Amazon
-         * Route 53 updates it with the values in the request. </p> </li> </ul> <p>The
-         * values that you need to include in the request depend on the type of resource
-         * record set that you're creating, deleting, or updating:</p> <p> <b>Basic
-         * resource record sets (excluding alias, failover, geolocation, latency, and
-         * weighted resource record sets)</b> </p> <ul> <li> <p> <code>Name</code> </p>
-         * </li> <li> <p> <code>Type</code> </p> </li> <li> <p> <code>TTL</code> </p> </li>
-         * </ul> <p> <b>Failover, geolocation, latency, or weighted resource record sets
-         * (excluding alias resource record sets)</b> </p> <ul> <li> <p> <code>Name</code>
-         * </p> </li> <li> <p> <code>Type</code> </p> </li> <li> <p> <code>TTL</code> </p>
-         * </li> <li> <p> <code>SetIdentifier</code> </p> </li> </ul> <p> <b>Alias resource
-         * record sets (including failover alias, geolocation alias, latency alias, and
-         * weighted alias resource record sets)</b> </p> <ul> <li> <p> <code>Name</code>
-         * </p> </li> <li> <p> <code>Type</code> </p> </li> <li> <p>
-         * <code>AliasTarget</code> (includes <code>DNSName</code>,
-         * <code>EvaluateTargetHealth</code>, and <code>HostedZoneId</code>)</p> </li> <li>
-         * <p> <code>SetIdentifier</code> (for failover, geolocation, latency, and weighted
-         * resource record sets)</p> </li> </ul> <p>When you submit a
+         * Guide</i>.</p> <p> <b>Create, Delete, and Upsert</b> </p> <p>Use
+         * <code>ChangeResourceRecordsSetsRequest</code> to perform the following
+         * actions:</p> <ul> <li> <p> <code>CREATE</code>: Creates a resource record set
+         * that has the specified values.</p> </li> <li> <p> <code>DELETE</code>: Deletes
+         * an existing resource record set that has the specified values.</p> </li> <li>
+         * <p> <code>UPSERT</code>: If a resource record set does not already exist, AWS
+         * creates it. If a resource set does exist, Amazon Route 53 updates it with the
+         * values in the request. </p> </li> </ul> <p> <b>Syntaxes for Creating, Updating,
+         * and Deleting Resource Record Sets</b> </p> <p>The syntax for a request depends
+         * on the type of resource record set that you want to create, delete, or update,
+         * such as weighted, alias, or failover. The XML elements in your request must
+         * appear in the order listed in the syntax. </p> <p>For an example for each type
+         * of resource record set, see "Examples."</p> <p>Don't refer to the syntax in the
+         * "Parameter Syntax" section, which includes all of the elements for every kind of
+         * resource record set that you can create, delete, or update by using
+         * <code>ChangeResourceRecordSets</code>. </p> <p> <b>Change Propagation to Amazon
+         * Route 53 DNS Servers</b> </p> <p>When you submit a
          * <code>ChangeResourceRecordSets</code> request, Amazon Route 53 propagates your
          * changes to all of the Amazon Route 53 authoritative DNS servers. While your
          * changes are propagating, <code>GetChange</code> returns a status of
@@ -468,7 +464,8 @@ namespace Model
          * returns a status of <code>INSYNC</code>. Changes generally propagate to all
          * Amazon Route 53 name servers in a few minutes. In rare circumstances,
          * propagation can take up to 30 minutes. For more information, see
-         * <a>GetChange</a> </p> <p>For information about the limits on a
+         * <a>GetChange</a>.</p> <p> <b>Limits on ChangeResourceRecordSets Requests</b>
+         * </p> <p>For information about the limits on a
          * <code>ChangeResourceRecordSets</code> request, see <a
          * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DNSLimitations.html">Limits</a>
          * in the <i>Amazon Route 53 Developer Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -481,7 +478,8 @@ namespace Model
          * <p>Create, change, update, or delete authoritative DNS information on all Amazon
          * Route 53 servers. Send a <code>POST</code> request to: </p> <p>
          * <code>/2013-04-01/hostedzone/<i>Amazon Route 53 hosted Zone ID</i>/rrset</code>
-         * resource. </p> <p>The request body must include a document with a
+         * resource. </p> <p> <b>Change Batches and Transactional Changes</b> </p> <p>The
+         * request body must include a document with a
          * <code>ChangeResourceRecordSetsRequest</code> element. The request body contains
          * a list of change items, known as a change batch. Change batches are considered
          * transactional changes. When using the Amazon Route 53 API to change resource
@@ -497,39 +495,34 @@ namespace Model
          * exist.</p> <important> <p>Due to the nature of transactional changes, you can't
          * delete the same resource record set more than once in a single change batch. If
          * you attempt to delete the same change batch more than once, Amazon Route 53
-         * returns an <code>InvalidChangeBatch</code> error.</p> </important> <note> <p>To
-         * create resource record sets for complex routing configurations, use either the
-         * traffic flow visual editor in the Amazon Route 53 console or the API actions for
-         * traffic policies and traffic policy instances. Save the configuration as a
-         * traffic policy, then associate the traffic policy with one or more domain names
-         * (such as example.com) or subdomain names (such as www.example.com), in the same
-         * hosted zone or in multiple hosted zones. You can roll back the updates if the
-         * new configuration isn't performing as expected. For more information, see <a
+         * returns an <code>InvalidChangeBatch</code> error.</p> </important> <p>
+         * <b>Traffic Flow</b> </p> <p>To create resource record sets for complex routing
+         * configurations, use either the traffic flow visual editor in the Amazon Route 53
+         * console or the API actions for traffic policies and traffic policy instances.
+         * Save the configuration as a traffic policy, then associate the traffic policy
+         * with one or more domain names (such as example.com) or subdomain names (such as
+         * www.example.com), in the same hosted zone or in multiple hosted zones. You can
+         * roll back the updates if the new configuration isn't performing as expected. For
+         * more information, see <a
          * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/traffic-flow.html">Using
          * Traffic Flow to Route DNS Traffic</a> in the <i>Amazon Route 53 Developer
-         * Guide</i>.</p> </note> <p>Use <code>ChangeResourceRecordsSetsRequest</code> to
-         * perform the following actions:</p> <ul> <li> <p> <code>CREATE</code>: Creates a
-         * resource record set that has the specified values.</p> </li> <li> <p>
-         * <code>DELETE</code>: Deletes an existing resource record set that has the
-         * specified values.</p> </li> <li> <p> <code>UPSERT</code>: If a resource record
-         * set does not already exist, AWS creates it. If a resource set does exist, Amazon
-         * Route 53 updates it with the values in the request. </p> </li> </ul> <p>The
-         * values that you need to include in the request depend on the type of resource
-         * record set that you're creating, deleting, or updating:</p> <p> <b>Basic
-         * resource record sets (excluding alias, failover, geolocation, latency, and
-         * weighted resource record sets)</b> </p> <ul> <li> <p> <code>Name</code> </p>
-         * </li> <li> <p> <code>Type</code> </p> </li> <li> <p> <code>TTL</code> </p> </li>
-         * </ul> <p> <b>Failover, geolocation, latency, or weighted resource record sets
-         * (excluding alias resource record sets)</b> </p> <ul> <li> <p> <code>Name</code>
-         * </p> </li> <li> <p> <code>Type</code> </p> </li> <li> <p> <code>TTL</code> </p>
-         * </li> <li> <p> <code>SetIdentifier</code> </p> </li> </ul> <p> <b>Alias resource
-         * record sets (including failover alias, geolocation alias, latency alias, and
-         * weighted alias resource record sets)</b> </p> <ul> <li> <p> <code>Name</code>
-         * </p> </li> <li> <p> <code>Type</code> </p> </li> <li> <p>
-         * <code>AliasTarget</code> (includes <code>DNSName</code>,
-         * <code>EvaluateTargetHealth</code>, and <code>HostedZoneId</code>)</p> </li> <li>
-         * <p> <code>SetIdentifier</code> (for failover, geolocation, latency, and weighted
-         * resource record sets)</p> </li> </ul> <p>When you submit a
+         * Guide</i>.</p> <p> <b>Create, Delete, and Upsert</b> </p> <p>Use
+         * <code>ChangeResourceRecordsSetsRequest</code> to perform the following
+         * actions:</p> <ul> <li> <p> <code>CREATE</code>: Creates a resource record set
+         * that has the specified values.</p> </li> <li> <p> <code>DELETE</code>: Deletes
+         * an existing resource record set that has the specified values.</p> </li> <li>
+         * <p> <code>UPSERT</code>: If a resource record set does not already exist, AWS
+         * creates it. If a resource set does exist, Amazon Route 53 updates it with the
+         * values in the request. </p> </li> </ul> <p> <b>Syntaxes for Creating, Updating,
+         * and Deleting Resource Record Sets</b> </p> <p>The syntax for a request depends
+         * on the type of resource record set that you want to create, delete, or update,
+         * such as weighted, alias, or failover. The XML elements in your request must
+         * appear in the order listed in the syntax. </p> <p>For an example for each type
+         * of resource record set, see "Examples."</p> <p>Don't refer to the syntax in the
+         * "Parameter Syntax" section, which includes all of the elements for every kind of
+         * resource record set that you can create, delete, or update by using
+         * <code>ChangeResourceRecordSets</code>. </p> <p> <b>Change Propagation to Amazon
+         * Route 53 DNS Servers</b> </p> <p>When you submit a
          * <code>ChangeResourceRecordSets</code> request, Amazon Route 53 propagates your
          * changes to all of the Amazon Route 53 authoritative DNS servers. While your
          * changes are propagating, <code>GetChange</code> returns a status of
@@ -537,7 +530,8 @@ namespace Model
          * returns a status of <code>INSYNC</code>. Changes generally propagate to all
          * Amazon Route 53 name servers in a few minutes. In rare circumstances,
          * propagation can take up to 30 minutes. For more information, see
-         * <a>GetChange</a> </p> <p>For information about the limits on a
+         * <a>GetChange</a>.</p> <p> <b>Limits on ChangeResourceRecordSets Requests</b>
+         * </p> <p>For information about the limits on a
          * <code>ChangeResourceRecordSets</code> request, see <a
          * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DNSLimitations.html">Limits</a>
          * in the <i>Amazon Route 53 Developer Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -552,7 +546,8 @@ namespace Model
          * <p>Create, change, update, or delete authoritative DNS information on all Amazon
          * Route 53 servers. Send a <code>POST</code> request to: </p> <p>
          * <code>/2013-04-01/hostedzone/<i>Amazon Route 53 hosted Zone ID</i>/rrset</code>
-         * resource. </p> <p>The request body must include a document with a
+         * resource. </p> <p> <b>Change Batches and Transactional Changes</b> </p> <p>The
+         * request body must include a document with a
          * <code>ChangeResourceRecordSetsRequest</code> element. The request body contains
          * a list of change items, known as a change batch. Change batches are considered
          * transactional changes. When using the Amazon Route 53 API to change resource
@@ -568,39 +563,34 @@ namespace Model
          * exist.</p> <important> <p>Due to the nature of transactional changes, you can't
          * delete the same resource record set more than once in a single change batch. If
          * you attempt to delete the same change batch more than once, Amazon Route 53
-         * returns an <code>InvalidChangeBatch</code> error.</p> </important> <note> <p>To
-         * create resource record sets for complex routing configurations, use either the
-         * traffic flow visual editor in the Amazon Route 53 console or the API actions for
-         * traffic policies and traffic policy instances. Save the configuration as a
-         * traffic policy, then associate the traffic policy with one or more domain names
-         * (such as example.com) or subdomain names (such as www.example.com), in the same
-         * hosted zone or in multiple hosted zones. You can roll back the updates if the
-         * new configuration isn't performing as expected. For more information, see <a
+         * returns an <code>InvalidChangeBatch</code> error.</p> </important> <p>
+         * <b>Traffic Flow</b> </p> <p>To create resource record sets for complex routing
+         * configurations, use either the traffic flow visual editor in the Amazon Route 53
+         * console or the API actions for traffic policies and traffic policy instances.
+         * Save the configuration as a traffic policy, then associate the traffic policy
+         * with one or more domain names (such as example.com) or subdomain names (such as
+         * www.example.com), in the same hosted zone or in multiple hosted zones. You can
+         * roll back the updates if the new configuration isn't performing as expected. For
+         * more information, see <a
          * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/traffic-flow.html">Using
          * Traffic Flow to Route DNS Traffic</a> in the <i>Amazon Route 53 Developer
-         * Guide</i>.</p> </note> <p>Use <code>ChangeResourceRecordsSetsRequest</code> to
-         * perform the following actions:</p> <ul> <li> <p> <code>CREATE</code>: Creates a
-         * resource record set that has the specified values.</p> </li> <li> <p>
-         * <code>DELETE</code>: Deletes an existing resource record set that has the
-         * specified values.</p> </li> <li> <p> <code>UPSERT</code>: If a resource record
-         * set does not already exist, AWS creates it. If a resource set does exist, Amazon
-         * Route 53 updates it with the values in the request. </p> </li> </ul> <p>The
-         * values that you need to include in the request depend on the type of resource
-         * record set that you're creating, deleting, or updating:</p> <p> <b>Basic
-         * resource record sets (excluding alias, failover, geolocation, latency, and
-         * weighted resource record sets)</b> </p> <ul> <li> <p> <code>Name</code> </p>
-         * </li> <li> <p> <code>Type</code> </p> </li> <li> <p> <code>TTL</code> </p> </li>
-         * </ul> <p> <b>Failover, geolocation, latency, or weighted resource record sets
-         * (excluding alias resource record sets)</b> </p> <ul> <li> <p> <code>Name</code>
-         * </p> </li> <li> <p> <code>Type</code> </p> </li> <li> <p> <code>TTL</code> </p>
-         * </li> <li> <p> <code>SetIdentifier</code> </p> </li> </ul> <p> <b>Alias resource
-         * record sets (including failover alias, geolocation alias, latency alias, and
-         * weighted alias resource record sets)</b> </p> <ul> <li> <p> <code>Name</code>
-         * </p> </li> <li> <p> <code>Type</code> </p> </li> <li> <p>
-         * <code>AliasTarget</code> (includes <code>DNSName</code>,
-         * <code>EvaluateTargetHealth</code>, and <code>HostedZoneId</code>)</p> </li> <li>
-         * <p> <code>SetIdentifier</code> (for failover, geolocation, latency, and weighted
-         * resource record sets)</p> </li> </ul> <p>When you submit a
+         * Guide</i>.</p> <p> <b>Create, Delete, and Upsert</b> </p> <p>Use
+         * <code>ChangeResourceRecordsSetsRequest</code> to perform the following
+         * actions:</p> <ul> <li> <p> <code>CREATE</code>: Creates a resource record set
+         * that has the specified values.</p> </li> <li> <p> <code>DELETE</code>: Deletes
+         * an existing resource record set that has the specified values.</p> </li> <li>
+         * <p> <code>UPSERT</code>: If a resource record set does not already exist, AWS
+         * creates it. If a resource set does exist, Amazon Route 53 updates it with the
+         * values in the request. </p> </li> </ul> <p> <b>Syntaxes for Creating, Updating,
+         * and Deleting Resource Record Sets</b> </p> <p>The syntax for a request depends
+         * on the type of resource record set that you want to create, delete, or update,
+         * such as weighted, alias, or failover. The XML elements in your request must
+         * appear in the order listed in the syntax. </p> <p>For an example for each type
+         * of resource record set, see "Examples."</p> <p>Don't refer to the syntax in the
+         * "Parameter Syntax" section, which includes all of the elements for every kind of
+         * resource record set that you can create, delete, or update by using
+         * <code>ChangeResourceRecordSets</code>. </p> <p> <b>Change Propagation to Amazon
+         * Route 53 DNS Servers</b> </p> <p>When you submit a
          * <code>ChangeResourceRecordSets</code> request, Amazon Route 53 propagates your
          * changes to all of the Amazon Route 53 authoritative DNS servers. While your
          * changes are propagating, <code>GetChange</code> returns a status of
@@ -608,7 +598,8 @@ namespace Model
          * returns a status of <code>INSYNC</code>. Changes generally propagate to all
          * Amazon Route 53 name servers in a few minutes. In rare circumstances,
          * propagation can take up to 30 minutes. For more information, see
-         * <a>GetChange</a> </p> <p>For information about the limits on a
+         * <a>GetChange</a>.</p> <p> <b>Limits on ChangeResourceRecordSets Requests</b>
+         * </p> <p>For information about the limits on a
          * <code>ChangeResourceRecordSets</code> request, see <a
          * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DNSLimitations.html">Limits</a>
          * in the <i>Amazon Route 53 Developer Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -665,12 +656,12 @@ namespace Model
          * specified when adding health check to a resource record set. For information
          * about adding health checks to resource record sets, see
          * <a>ResourceRecordSet$HealthCheckId</a> in <a>ChangeResourceRecordSets</a>. </p>
-         * <p>If you are registering EC2 instances with an Elastic Load Balancing (ELB)
-         * load balancer, do not create Amazon Route 53 health checks for the EC2
-         * instances. When you register an EC2 instance with a load balancer, you configure
-         * settings for an ELB health check, which performs a similar function to an Amazon
-         * Route 53 health check.</p> <p>You can associate health checks with failover
-         * resource record sets in a private hosted zone. Note the following:</p> <ul> <li>
+         * <p>If you're registering EC2 instances with an Elastic Load Balancing (ELB) load
+         * balancer, do not create Amazon Route 53 health checks for the EC2 instances.
+         * When you register an EC2 instance with a load balancer, you configure settings
+         * for an ELB health check, which performs a similar function to an Amazon Route 53
+         * health check.</p> <p>You can associate health checks with failover resource
+         * record sets in a private hosted zone. Note the following:</p> <ul> <li>
          * <p>Amazon Route 53 health checkers are outside the VPC. To check the health of
          * an endpoint within a VPC by IP address, you must assign a public IP address to
          * the instance in the VPC.</p> </li> <li> <p>You can configure a health checker to
@@ -698,12 +689,12 @@ namespace Model
          * specified when adding health check to a resource record set. For information
          * about adding health checks to resource record sets, see
          * <a>ResourceRecordSet$HealthCheckId</a> in <a>ChangeResourceRecordSets</a>. </p>
-         * <p>If you are registering EC2 instances with an Elastic Load Balancing (ELB)
-         * load balancer, do not create Amazon Route 53 health checks for the EC2
-         * instances. When you register an EC2 instance with a load balancer, you configure
-         * settings for an ELB health check, which performs a similar function to an Amazon
-         * Route 53 health check.</p> <p>You can associate health checks with failover
-         * resource record sets in a private hosted zone. Note the following:</p> <ul> <li>
+         * <p>If you're registering EC2 instances with an Elastic Load Balancing (ELB) load
+         * balancer, do not create Amazon Route 53 health checks for the EC2 instances.
+         * When you register an EC2 instance with a load balancer, you configure settings
+         * for an ELB health check, which performs a similar function to an Amazon Route 53
+         * health check.</p> <p>You can associate health checks with failover resource
+         * record sets in a private hosted zone. Note the following:</p> <ul> <li>
          * <p>Amazon Route 53 health checkers are outside the VPC. To check the health of
          * an endpoint within a VPC by IP address, you must assign a public IP address to
          * the instance in the VPC.</p> </li> <li> <p>You can configure a health checker to
@@ -733,12 +724,12 @@ namespace Model
          * specified when adding health check to a resource record set. For information
          * about adding health checks to resource record sets, see
          * <a>ResourceRecordSet$HealthCheckId</a> in <a>ChangeResourceRecordSets</a>. </p>
-         * <p>If you are registering EC2 instances with an Elastic Load Balancing (ELB)
-         * load balancer, do not create Amazon Route 53 health checks for the EC2
-         * instances. When you register an EC2 instance with a load balancer, you configure
-         * settings for an ELB health check, which performs a similar function to an Amazon
-         * Route 53 health check.</p> <p>You can associate health checks with failover
-         * resource record sets in a private hosted zone. Note the following:</p> <ul> <li>
+         * <p>If you're registering EC2 instances with an Elastic Load Balancing (ELB) load
+         * balancer, do not create Amazon Route 53 health checks for the EC2 instances.
+         * When you register an EC2 instance with a load balancer, you configure settings
+         * for an ELB health check, which performs a similar function to an Amazon Route 53
+         * health check.</p> <p>You can associate health checks with failover resource
+         * record sets in a private hosted zone. Note the following:</p> <ul> <li>
          * <p>Amazon Route 53 health checkers are outside the VPC. To check the health of
          * an endpoint within a VPC by IP address, you must assign a public IP address to
          * the instance in the VPC.</p> </li> <li> <p>You can configure a health checker to
@@ -1536,22 +1527,24 @@ namespace Model
         virtual void GetChangeAsync(const Model::GetChangeRequest& request, const GetChangeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Retrieves a list of the IP ranges used by Amazon Route 53 health checkers to
-         * check the health of your resources. Send a <code>GET</code> request to the
-         * <code>/<i>Amazon Route 53 API version</i>/checkeripranges</code> resource. Use
-         * these IP addresses to configure router and firewall rules to allow health
-         * checkers to check the health of your resources.</p><p><h3>See Also:</h3>   <a
+         * <p> <code>GetCheckerIpRanges</code> still works, but we recommend that you
+         * download ip-ranges.json, which includes IP address ranges for all AWS services.
+         * For more information, see <a
+         * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/route-53-ip-addresses.html">IP
+         * Address Ranges of Amazon Route 53 Servers</a> in the <i>Amazon Route 53
+         * Developer Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetCheckerIpRanges">AWS
          * API Reference</a></p>
          */
         virtual Model::GetCheckerIpRangesOutcome GetCheckerIpRanges(const Model::GetCheckerIpRangesRequest& request) const;
 
         /**
-         * <p>Retrieves a list of the IP ranges used by Amazon Route 53 health checkers to
-         * check the health of your resources. Send a <code>GET</code> request to the
-         * <code>/<i>Amazon Route 53 API version</i>/checkeripranges</code> resource. Use
-         * these IP addresses to configure router and firewall rules to allow health
-         * checkers to check the health of your resources.</p><p><h3>See Also:</h3>   <a
+         * <p> <code>GetCheckerIpRanges</code> still works, but we recommend that you
+         * download ip-ranges.json, which includes IP address ranges for all AWS services.
+         * For more information, see <a
+         * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/route-53-ip-addresses.html">IP
+         * Address Ranges of Amazon Route 53 Servers</a> in the <i>Amazon Route 53
+         * Developer Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetCheckerIpRanges">AWS
          * API Reference</a></p>
          *
@@ -1560,11 +1553,12 @@ namespace Model
         virtual Model::GetCheckerIpRangesOutcomeCallable GetCheckerIpRangesCallable(const Model::GetCheckerIpRangesRequest& request) const;
 
         /**
-         * <p>Retrieves a list of the IP ranges used by Amazon Route 53 health checkers to
-         * check the health of your resources. Send a <code>GET</code> request to the
-         * <code>/<i>Amazon Route 53 API version</i>/checkeripranges</code> resource. Use
-         * these IP addresses to configure router and firewall rules to allow health
-         * checkers to check the health of your resources.</p><p><h3>See Also:</h3>   <a
+         * <p> <code>GetCheckerIpRanges</code> still works, but we recommend that you
+         * download ip-ranges.json, which includes IP address ranges for all AWS services.
+         * For more information, see <a
+         * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/route-53-ip-addresses.html">IP
+         * Address Ranges of Amazon Route 53 Servers</a> in the <i>Amazon Route 53
+         * Developer Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetCheckerIpRanges">AWS
          * API Reference</a></p>
          *

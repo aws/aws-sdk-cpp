@@ -46,37 +46,37 @@ namespace Model
     ResolveAliasResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
     /**
-     * <p>Fleet ID associated with the requested alias.</p>
+     * <p>Fleet identifier that is associated with the requested alias.</p>
      */
     inline const Aws::String& GetFleetId() const{ return m_fleetId; }
 
     /**
-     * <p>Fleet ID associated with the requested alias.</p>
+     * <p>Fleet identifier that is associated with the requested alias.</p>
      */
     inline void SetFleetId(const Aws::String& value) { m_fleetId = value; }
 
     /**
-     * <p>Fleet ID associated with the requested alias.</p>
+     * <p>Fleet identifier that is associated with the requested alias.</p>
      */
     inline void SetFleetId(Aws::String&& value) { m_fleetId = value; }
 
     /**
-     * <p>Fleet ID associated with the requested alias.</p>
+     * <p>Fleet identifier that is associated with the requested alias.</p>
      */
     inline void SetFleetId(const char* value) { m_fleetId.assign(value); }
 
     /**
-     * <p>Fleet ID associated with the requested alias.</p>
+     * <p>Fleet identifier that is associated with the requested alias.</p>
      */
     inline ResolveAliasResult& WithFleetId(const Aws::String& value) { SetFleetId(value); return *this;}
 
     /**
-     * <p>Fleet ID associated with the requested alias.</p>
+     * <p>Fleet identifier that is associated with the requested alias.</p>
      */
     inline ResolveAliasResult& WithFleetId(Aws::String&& value) { SetFleetId(value); return *this;}
 
     /**
-     * <p>Fleet ID associated with the requested alias.</p>
+     * <p>Fleet identifier that is associated with the requested alias.</p>
      */
     inline ResolveAliasResult& WithFleetId(const char* value) { SetFleetId(value); return *this;}
 

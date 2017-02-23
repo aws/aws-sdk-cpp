@@ -39,37 +39,37 @@ namespace Model
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
     /**
-     * <p>Unique identifier for the fleet to get event logs for.</p>
+     * <p>Unique identifier for a fleet to get event logs for.</p>
      */
     inline const Aws::String& GetFleetId() const{ return m_fleetId; }
 
     /**
-     * <p>Unique identifier for the fleet to get event logs for.</p>
+     * <p>Unique identifier for a fleet to get event logs for.</p>
      */
     inline void SetFleetId(const Aws::String& value) { m_fleetIdHasBeenSet = true; m_fleetId = value; }
 
     /**
-     * <p>Unique identifier for the fleet to get event logs for.</p>
+     * <p>Unique identifier for a fleet to get event logs for.</p>
      */
     inline void SetFleetId(Aws::String&& value) { m_fleetIdHasBeenSet = true; m_fleetId = value; }
 
     /**
-     * <p>Unique identifier for the fleet to get event logs for.</p>
+     * <p>Unique identifier for a fleet to get event logs for.</p>
      */
     inline void SetFleetId(const char* value) { m_fleetIdHasBeenSet = true; m_fleetId.assign(value); }
 
     /**
-     * <p>Unique identifier for the fleet to get event logs for.</p>
+     * <p>Unique identifier for a fleet to get event logs for.</p>
      */
     inline DescribeFleetEventsRequest& WithFleetId(const Aws::String& value) { SetFleetId(value); return *this;}
 
     /**
-     * <p>Unique identifier for the fleet to get event logs for.</p>
+     * <p>Unique identifier for a fleet to get event logs for.</p>
      */
     inline DescribeFleetEventsRequest& WithFleetId(Aws::String&& value) { SetFleetId(value); return *this;}
 
     /**
-     * <p>Unique identifier for the fleet to get event logs for.</p>
+     * <p>Unique identifier for a fleet to get event logs for.</p>
      */
     inline DescribeFleetEventsRequest& WithFleetId(const char* value) { SetFleetId(value); return *this;}
 
@@ -172,51 +172,51 @@ namespace Model
     inline DescribeFleetEventsRequest& WithLimit(int value) { SetLimit(value); return *this;}
 
     /**
-     * <p>Token indicating the start of the next sequential page of results. Use the
-     * token that is returned with a previous call to this action. To specify the start
-     * of the result set, do not specify a value.</p>
+     * <p>Token that indicates the start of the next sequential page of results. Use
+     * the token that is returned with a previous call to this action. To specify the
+     * start of the result set, do not specify a value.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * <p>Token indicating the start of the next sequential page of results. Use the
-     * token that is returned with a previous call to this action. To specify the start
-     * of the result set, do not specify a value.</p>
+     * <p>Token that indicates the start of the next sequential page of results. Use
+     * the token that is returned with a previous call to this action. To specify the
+     * start of the result set, do not specify a value.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
-     * <p>Token indicating the start of the next sequential page of results. Use the
-     * token that is returned with a previous call to this action. To specify the start
-     * of the result set, do not specify a value.</p>
+     * <p>Token that indicates the start of the next sequential page of results. Use
+     * the token that is returned with a previous call to this action. To specify the
+     * start of the result set, do not specify a value.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
-     * <p>Token indicating the start of the next sequential page of results. Use the
-     * token that is returned with a previous call to this action. To specify the start
-     * of the result set, do not specify a value.</p>
+     * <p>Token that indicates the start of the next sequential page of results. Use
+     * the token that is returned with a previous call to this action. To specify the
+     * start of the result set, do not specify a value.</p>
      */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
 
     /**
-     * <p>Token indicating the start of the next sequential page of results. Use the
-     * token that is returned with a previous call to this action. To specify the start
-     * of the result set, do not specify a value.</p>
+     * <p>Token that indicates the start of the next sequential page of results. Use
+     * the token that is returned with a previous call to this action. To specify the
+     * start of the result set, do not specify a value.</p>
      */
     inline DescribeFleetEventsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>Token indicating the start of the next sequential page of results. Use the
-     * token that is returned with a previous call to this action. To specify the start
-     * of the result set, do not specify a value.</p>
+     * <p>Token that indicates the start of the next sequential page of results. Use
+     * the token that is returned with a previous call to this action. To specify the
+     * start of the result set, do not specify a value.</p>
      */
     inline DescribeFleetEventsRequest& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>Token indicating the start of the next sequential page of results. Use the
-     * token that is returned with a previous call to this action. To specify the start
-     * of the result set, do not specify a value.</p>
+     * <p>Token that indicates the start of the next sequential page of results. Use
+     * the token that is returned with a previous call to this action. To specify the
+     * start of the result set, do not specify a value.</p>
      */
     inline DescribeFleetEventsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 

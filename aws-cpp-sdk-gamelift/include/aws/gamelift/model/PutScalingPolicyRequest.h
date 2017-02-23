@@ -41,79 +41,86 @@ namespace Model
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
     /**
-     * <p>Descriptive label associated with a scaling policy. Policy names do not need
-     * to be unique. A fleet can have only one scaling policy with the same name.</p>
+     * <p>Descriptive label that is associated with a scaling policy. Policy names do
+     * not need to be unique. A fleet can have only one scaling policy with the same
+     * name.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>Descriptive label associated with a scaling policy. Policy names do not need
-     * to be unique. A fleet can have only one scaling policy with the same name.</p>
+     * <p>Descriptive label that is associated with a scaling policy. Policy names do
+     * not need to be unique. A fleet can have only one scaling policy with the same
+     * name.</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>Descriptive label associated with a scaling policy. Policy names do not need
-     * to be unique. A fleet can have only one scaling policy with the same name.</p>
+     * <p>Descriptive label that is associated with a scaling policy. Policy names do
+     * not need to be unique. A fleet can have only one scaling policy with the same
+     * name.</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>Descriptive label associated with a scaling policy. Policy names do not need
-     * to be unique. A fleet can have only one scaling policy with the same name.</p>
+     * <p>Descriptive label that is associated with a scaling policy. Policy names do
+     * not need to be unique. A fleet can have only one scaling policy with the same
+     * name.</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>Descriptive label associated with a scaling policy. Policy names do not need
-     * to be unique. A fleet can have only one scaling policy with the same name.</p>
+     * <p>Descriptive label that is associated with a scaling policy. Policy names do
+     * not need to be unique. A fleet can have only one scaling policy with the same
+     * name.</p>
      */
     inline PutScalingPolicyRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>Descriptive label associated with a scaling policy. Policy names do not need
-     * to be unique. A fleet can have only one scaling policy with the same name.</p>
+     * <p>Descriptive label that is associated with a scaling policy. Policy names do
+     * not need to be unique. A fleet can have only one scaling policy with the same
+     * name.</p>
      */
     inline PutScalingPolicyRequest& WithName(Aws::String&& value) { SetName(value); return *this;}
 
     /**
-     * <p>Descriptive label associated with a scaling policy. Policy names do not need
-     * to be unique. A fleet can have only one scaling policy with the same name.</p>
+     * <p>Descriptive label that is associated with a scaling policy. Policy names do
+     * not need to be unique. A fleet can have only one scaling policy with the same
+     * name.</p>
      */
     inline PutScalingPolicyRequest& WithName(const char* value) { SetName(value); return *this;}
 
     /**
-     * <p>Unique identity for the fleet to scale with this policy.</p>
+     * <p>Unique identifier for a fleet to apply this policy to.</p>
      */
     inline const Aws::String& GetFleetId() const{ return m_fleetId; }
 
     /**
-     * <p>Unique identity for the fleet to scale with this policy.</p>
+     * <p>Unique identifier for a fleet to apply this policy to.</p>
      */
     inline void SetFleetId(const Aws::String& value) { m_fleetIdHasBeenSet = true; m_fleetId = value; }
 
     /**
-     * <p>Unique identity for the fleet to scale with this policy.</p>
+     * <p>Unique identifier for a fleet to apply this policy to.</p>
      */
     inline void SetFleetId(Aws::String&& value) { m_fleetIdHasBeenSet = true; m_fleetId = value; }
 
     /**
-     * <p>Unique identity for the fleet to scale with this policy.</p>
+     * <p>Unique identifier for a fleet to apply this policy to.</p>
      */
     inline void SetFleetId(const char* value) { m_fleetIdHasBeenSet = true; m_fleetId.assign(value); }
 
     /**
-     * <p>Unique identity for the fleet to scale with this policy.</p>
+     * <p>Unique identifier for a fleet to apply this policy to.</p>
      */
     inline PutScalingPolicyRequest& WithFleetId(const Aws::String& value) { SetFleetId(value); return *this;}
 
     /**
-     * <p>Unique identity for the fleet to scale with this policy.</p>
+     * <p>Unique identifier for a fleet to apply this policy to.</p>
      */
     inline PutScalingPolicyRequest& WithFleetId(Aws::String&& value) { SetFleetId(value); return *this;}
 
     /**
-     * <p>Unique identity for the fleet to scale with this policy.</p>
+     * <p>Unique identifier for a fleet to apply this policy to.</p>
      */
     inline PutScalingPolicyRequest& WithFleetId(const char* value) { SetFleetId(value); return *this;}
 

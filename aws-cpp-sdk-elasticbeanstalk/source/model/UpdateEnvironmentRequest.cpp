@@ -29,6 +29,7 @@ UpdateEnvironmentRequest::UpdateEnvironmentRequest() :
     m_versionLabelHasBeenSet(false),
     m_templateNameHasBeenSet(false),
     m_solutionStackNameHasBeenSet(false),
+    m_platformArnHasBeenSet(false),
     m_optionSettingsHasBeenSet(false),
     m_optionsToRemoveHasBeenSet(false)
 {
@@ -81,6 +82,11 @@ Aws::String UpdateEnvironmentRequest::SerializePayload() const
   if(m_solutionStackNameHasBeenSet)
   {
     ss << "SolutionStackName=" << StringUtils::URLEncode(m_solutionStackName.c_str()) << "&";
+  }
+
+  if(m_platformArnHasBeenSet)
+  {
+    ss << "PlatformArn=" << StringUtils::URLEncode(m_platformArn.c_str()) << "&";
   }
 
   if(m_optionSettingsHasBeenSet)

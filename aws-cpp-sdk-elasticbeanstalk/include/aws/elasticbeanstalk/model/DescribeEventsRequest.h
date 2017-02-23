@@ -249,6 +249,41 @@ namespace Model
     inline DescribeEventsRequest& WithEnvironmentName(const char* value) { SetEnvironmentName(value); return *this;}
 
     /**
+     * <p>The ARN of the version of the custom platform.</p>
+     */
+    inline const Aws::String& GetPlatformArn() const{ return m_platformArn; }
+
+    /**
+     * <p>The ARN of the version of the custom platform.</p>
+     */
+    inline void SetPlatformArn(const Aws::String& value) { m_platformArnHasBeenSet = true; m_platformArn = value; }
+
+    /**
+     * <p>The ARN of the version of the custom platform.</p>
+     */
+    inline void SetPlatformArn(Aws::String&& value) { m_platformArnHasBeenSet = true; m_platformArn = value; }
+
+    /**
+     * <p>The ARN of the version of the custom platform.</p>
+     */
+    inline void SetPlatformArn(const char* value) { m_platformArnHasBeenSet = true; m_platformArn.assign(value); }
+
+    /**
+     * <p>The ARN of the version of the custom platform.</p>
+     */
+    inline DescribeEventsRequest& WithPlatformArn(const Aws::String& value) { SetPlatformArn(value); return *this;}
+
+    /**
+     * <p>The ARN of the version of the custom platform.</p>
+     */
+    inline DescribeEventsRequest& WithPlatformArn(Aws::String&& value) { SetPlatformArn(value); return *this;}
+
+    /**
+     * <p>The ARN of the version of the custom platform.</p>
+     */
+    inline DescribeEventsRequest& WithPlatformArn(const char* value) { SetPlatformArn(value); return *this;}
+
+    /**
      * <p>If specified, AWS Elastic Beanstalk restricts the described events to include
      * only those associated with this request ID.</p>
      */
@@ -451,6 +486,8 @@ namespace Model
     bool m_environmentIdHasBeenSet;
     Aws::String m_environmentName;
     bool m_environmentNameHasBeenSet;
+    Aws::String m_platformArn;
+    bool m_platformArnHasBeenSet;
     Aws::String m_requestId;
     bool m_requestIdHasBeenSet;
     EventSeverity m_severity;

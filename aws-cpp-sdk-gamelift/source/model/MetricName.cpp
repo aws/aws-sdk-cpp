@@ -35,6 +35,8 @@ namespace Aws
         static const int AvailablePlayerSessions_HASH = HashingUtils::HashString("AvailablePlayerSessions");
         static const int CurrentPlayerSessions_HASH = HashingUtils::HashString("CurrentPlayerSessions");
         static const int IdleInstances_HASH = HashingUtils::HashString("IdleInstances");
+        static const int QueueDepth_HASH = HashingUtils::HashString("QueueDepth");
+        static const int WaitTime_HASH = HashingUtils::HashString("WaitTime");
 
 
         MetricName GetMetricNameForName(const Aws::String& name)
@@ -64,6 +66,14 @@ namespace Aws
           {
             return MetricName::IdleInstances;
           }
+          else if (hashCode == QueueDepth_HASH)
+          {
+            return MetricName::QueueDepth;
+          }
+          else if (hashCode == WaitTime_HASH)
+          {
+            return MetricName::WaitTime;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -90,6 +100,10 @@ namespace Aws
             return "CurrentPlayerSessions";
           case MetricName::IdleInstances:
             return "IdleInstances";
+          case MetricName::QueueDepth:
+            return "QueueDepth";
+          case MetricName::WaitTime:
+            return "WaitTime";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

@@ -46,27 +46,27 @@ namespace Model
     UpdateGameSessionResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
     /**
-     * <p>Object containing the updated game session metadata.</p>
+     * <p>Object that contains the updated game session metadata.</p>
      */
     inline const GameSession& GetGameSession() const{ return m_gameSession; }
 
     /**
-     * <p>Object containing the updated game session metadata.</p>
+     * <p>Object that contains the updated game session metadata.</p>
      */
     inline void SetGameSession(const GameSession& value) { m_gameSession = value; }
 
     /**
-     * <p>Object containing the updated game session metadata.</p>
+     * <p>Object that contains the updated game session metadata.</p>
      */
     inline void SetGameSession(GameSession&& value) { m_gameSession = value; }
 
     /**
-     * <p>Object containing the updated game session metadata.</p>
+     * <p>Object that contains the updated game session metadata.</p>
      */
     inline UpdateGameSessionResult& WithGameSession(const GameSession& value) { SetGameSession(value); return *this;}
 
     /**
-     * <p>Object containing the updated game session metadata.</p>
+     * <p>Object that contains the updated game session metadata.</p>
      */
     inline UpdateGameSessionResult& WithGameSession(GameSession&& value) { SetGameSession(value); return *this;}
 

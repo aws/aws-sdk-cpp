@@ -34,7 +34,11 @@ namespace Model
 {
 
   /**
-   * <p>Properties describing a game build.</p><p><h3>See Also:</h3>   <a
+   * <p>Properties describing a game build.</p> <p>Build-related operations
+   * include:</p> <ul> <li> <p> <a>CreateBuild</a> </p> </li> <li> <p>
+   * <a>ListBuilds</a> </p> </li> <li> <p> <a>DescribeBuild</a> </p> </li> <li> <p>
+   * <a>UpdateBuild</a> </p> </li> <li> <p> <a>DeleteBuild</a> </p> </li>
+   * </ul><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/Build">AWS API
    * Reference</a></p>
    */
@@ -82,92 +86,92 @@ namespace Model
     inline Build& WithBuildId(const char* value) { SetBuildId(value); return *this;}
 
     /**
-     * <p>Descriptive label associated with a build. Build names do not need to be
-     * unique. It can be set using <a>CreateBuild</a> or <a>UpdateBuild</a>.</p>
+     * <p>Descriptive label that is associated with a build. Build names do not need to
+     * be unique. It can be set using <a>CreateBuild</a> or <a>UpdateBuild</a>.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>Descriptive label associated with a build. Build names do not need to be
-     * unique. It can be set using <a>CreateBuild</a> or <a>UpdateBuild</a>.</p>
+     * <p>Descriptive label that is associated with a build. Build names do not need to
+     * be unique. It can be set using <a>CreateBuild</a> or <a>UpdateBuild</a>.</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>Descriptive label associated with a build. Build names do not need to be
-     * unique. It can be set using <a>CreateBuild</a> or <a>UpdateBuild</a>.</p>
+     * <p>Descriptive label that is associated with a build. Build names do not need to
+     * be unique. It can be set using <a>CreateBuild</a> or <a>UpdateBuild</a>.</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>Descriptive label associated with a build. Build names do not need to be
-     * unique. It can be set using <a>CreateBuild</a> or <a>UpdateBuild</a>.</p>
+     * <p>Descriptive label that is associated with a build. Build names do not need to
+     * be unique. It can be set using <a>CreateBuild</a> or <a>UpdateBuild</a>.</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>Descriptive label associated with a build. Build names do not need to be
-     * unique. It can be set using <a>CreateBuild</a> or <a>UpdateBuild</a>.</p>
+     * <p>Descriptive label that is associated with a build. Build names do not need to
+     * be unique. It can be set using <a>CreateBuild</a> or <a>UpdateBuild</a>.</p>
      */
     inline Build& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>Descriptive label associated with a build. Build names do not need to be
-     * unique. It can be set using <a>CreateBuild</a> or <a>UpdateBuild</a>.</p>
+     * <p>Descriptive label that is associated with a build. Build names do not need to
+     * be unique. It can be set using <a>CreateBuild</a> or <a>UpdateBuild</a>.</p>
      */
     inline Build& WithName(Aws::String&& value) { SetName(value); return *this;}
 
     /**
-     * <p>Descriptive label associated with a build. Build names do not need to be
-     * unique. It can be set using <a>CreateBuild</a> or <a>UpdateBuild</a>.</p>
+     * <p>Descriptive label that is associated with a build. Build names do not need to
+     * be unique. It can be set using <a>CreateBuild</a> or <a>UpdateBuild</a>.</p>
      */
     inline Build& WithName(const char* value) { SetName(value); return *this;}
 
     /**
-     * <p>Version associated with this build. Version strings do not need to be unique
-     * to a build. This value can be set using <a>CreateBuild</a> or
+     * <p>Version that is associated with this build. Version strings do not need to be
+     * unique. This value can be set using <a>CreateBuild</a> or
      * <a>UpdateBuild</a>.</p>
      */
     inline const Aws::String& GetVersion() const{ return m_version; }
 
     /**
-     * <p>Version associated with this build. Version strings do not need to be unique
-     * to a build. This value can be set using <a>CreateBuild</a> or
+     * <p>Version that is associated with this build. Version strings do not need to be
+     * unique. This value can be set using <a>CreateBuild</a> or
      * <a>UpdateBuild</a>.</p>
      */
     inline void SetVersion(const Aws::String& value) { m_versionHasBeenSet = true; m_version = value; }
 
     /**
-     * <p>Version associated with this build. Version strings do not need to be unique
-     * to a build. This value can be set using <a>CreateBuild</a> or
+     * <p>Version that is associated with this build. Version strings do not need to be
+     * unique. This value can be set using <a>CreateBuild</a> or
      * <a>UpdateBuild</a>.</p>
      */
     inline void SetVersion(Aws::String&& value) { m_versionHasBeenSet = true; m_version = value; }
 
     /**
-     * <p>Version associated with this build. Version strings do not need to be unique
-     * to a build. This value can be set using <a>CreateBuild</a> or
+     * <p>Version that is associated with this build. Version strings do not need to be
+     * unique. This value can be set using <a>CreateBuild</a> or
      * <a>UpdateBuild</a>.</p>
      */
     inline void SetVersion(const char* value) { m_versionHasBeenSet = true; m_version.assign(value); }
 
     /**
-     * <p>Version associated with this build. Version strings do not need to be unique
-     * to a build. This value can be set using <a>CreateBuild</a> or
+     * <p>Version that is associated with this build. Version strings do not need to be
+     * unique. This value can be set using <a>CreateBuild</a> or
      * <a>UpdateBuild</a>.</p>
      */
     inline Build& WithVersion(const Aws::String& value) { SetVersion(value); return *this;}
 
     /**
-     * <p>Version associated with this build. Version strings do not need to be unique
-     * to a build. This value can be set using <a>CreateBuild</a> or
+     * <p>Version that is associated with this build. Version strings do not need to be
+     * unique. This value can be set using <a>CreateBuild</a> or
      * <a>UpdateBuild</a>.</p>
      */
     inline Build& WithVersion(Aws::String&& value) { SetVersion(value); return *this;}
 
     /**
-     * <p>Version associated with this build. Version strings do not need to be unique
-     * to a build. This value can be set using <a>CreateBuild</a> or
+     * <p>Version that is associated with this build. Version strings do not need to be
+     * unique. This value can be set using <a>CreateBuild</a> or
      * <a>UpdateBuild</a>.</p>
      */
     inline Build& WithVersion(const char* value) { SetVersion(value); return *this;}
@@ -287,31 +291,31 @@ namespace Model
 
     /**
      * <p>Time stamp indicating when this data object was created. Format is a number
-     * expressed in Unix time as milliseconds (ex: "1469498468.057").</p>
+     * expressed in Unix time as milliseconds (for example "1469498468.057").</p>
      */
     inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
 
     /**
      * <p>Time stamp indicating when this data object was created. Format is a number
-     * expressed in Unix time as milliseconds (ex: "1469498468.057").</p>
+     * expressed in Unix time as milliseconds (for example "1469498468.057").</p>
      */
     inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
 
     /**
      * <p>Time stamp indicating when this data object was created. Format is a number
-     * expressed in Unix time as milliseconds (ex: "1469498468.057").</p>
+     * expressed in Unix time as milliseconds (for example "1469498468.057").</p>
      */
     inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
 
     /**
      * <p>Time stamp indicating when this data object was created. Format is a number
-     * expressed in Unix time as milliseconds (ex: "1469498468.057").</p>
+     * expressed in Unix time as milliseconds (for example "1469498468.057").</p>
      */
     inline Build& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
 
     /**
      * <p>Time stamp indicating when this data object was created. Format is a number
-     * expressed in Unix time as milliseconds (ex: "1469498468.057").</p>
+     * expressed in Unix time as milliseconds (for example "1469498468.057").</p>
      */
     inline Build& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(value); return *this;}
 

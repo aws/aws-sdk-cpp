@@ -1280,10 +1280,7 @@ namespace Model
         virtual void ListIndexAsync(const Model::ListIndexRequest& request, const ListIndexResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists all attributes associated with an object. This also supports common
-         * namespace prefix (key) listing. For example, if you want to retrieve all
-         * attributes associated with facet1, key can be <code>facet1</code>. If key is
-         * empty, all attributes are returned in a paginated list.</p><p><h3>See Also:</h3>
+         * <p>Lists all attributes associated with an object. </p><p><h3>See Also:</h3>  
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListObjectAttributes">AWS
          * API Reference</a></p>
@@ -1291,10 +1288,7 @@ namespace Model
         virtual Model::ListObjectAttributesOutcome ListObjectAttributes(const Model::ListObjectAttributesRequest& request) const;
 
         /**
-         * <p>Lists all attributes associated with an object. This also supports common
-         * namespace prefix (key) listing. For example, if you want to retrieve all
-         * attributes associated with facet1, key can be <code>facet1</code>. If key is
-         * empty, all attributes are returned in a paginated list.</p><p><h3>See Also:</h3>
+         * <p>Lists all attributes associated with an object. </p><p><h3>See Also:</h3>  
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListObjectAttributes">AWS
          * API Reference</a></p>
@@ -1304,10 +1298,7 @@ namespace Model
         virtual Model::ListObjectAttributesOutcomeCallable ListObjectAttributesCallable(const Model::ListObjectAttributesRequest& request) const;
 
         /**
-         * <p>Lists all attributes associated with an object. This also supports common
-         * namespace prefix (key) listing. For example, if you want to retrieve all
-         * attributes associated with facet1, key can be <code>facet1</code>. If key is
-         * empty, all attributes are returned in a paginated list.</p><p><h3>See Also:</h3>
+         * <p>Lists all attributes associated with an object. </p><p><h3>See Also:</h3>  
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListObjectAttributes">AWS
          * API Reference</a></p>

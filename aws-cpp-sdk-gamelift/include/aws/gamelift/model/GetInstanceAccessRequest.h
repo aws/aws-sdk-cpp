@@ -35,100 +35,100 @@ namespace Model
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
     /**
-     * <p>Unique identifier for a fleet. Specify the fleet that contain the instance
-     * you want access to. The fleet can be in any of the following statuses:
-     * ACTIVATING, ACTIVE, or ERROR. Fleets with an ERROR status can be accessed for a
-     * few hours before being deleted.</p>
+     * <p>Unique identifier for a fleet that contains the instance you want access to.
+     * The fleet can be in any of the following statuses: <code>ACTIVATING</code>,
+     * <code>ACTIVE</code>, or <code>ERROR</code>. Fleets with an <code>ERROR</code>
+     * status may be accessible for a short time before they are deleted.</p>
      */
     inline const Aws::String& GetFleetId() const{ return m_fleetId; }
 
     /**
-     * <p>Unique identifier for a fleet. Specify the fleet that contain the instance
-     * you want access to. The fleet can be in any of the following statuses:
-     * ACTIVATING, ACTIVE, or ERROR. Fleets with an ERROR status can be accessed for a
-     * few hours before being deleted.</p>
+     * <p>Unique identifier for a fleet that contains the instance you want access to.
+     * The fleet can be in any of the following statuses: <code>ACTIVATING</code>,
+     * <code>ACTIVE</code>, or <code>ERROR</code>. Fleets with an <code>ERROR</code>
+     * status may be accessible for a short time before they are deleted.</p>
      */
     inline void SetFleetId(const Aws::String& value) { m_fleetIdHasBeenSet = true; m_fleetId = value; }
 
     /**
-     * <p>Unique identifier for a fleet. Specify the fleet that contain the instance
-     * you want access to. The fleet can be in any of the following statuses:
-     * ACTIVATING, ACTIVE, or ERROR. Fleets with an ERROR status can be accessed for a
-     * few hours before being deleted.</p>
+     * <p>Unique identifier for a fleet that contains the instance you want access to.
+     * The fleet can be in any of the following statuses: <code>ACTIVATING</code>,
+     * <code>ACTIVE</code>, or <code>ERROR</code>. Fleets with an <code>ERROR</code>
+     * status may be accessible for a short time before they are deleted.</p>
      */
     inline void SetFleetId(Aws::String&& value) { m_fleetIdHasBeenSet = true; m_fleetId = value; }
 
     /**
-     * <p>Unique identifier for a fleet. Specify the fleet that contain the instance
-     * you want access to. The fleet can be in any of the following statuses:
-     * ACTIVATING, ACTIVE, or ERROR. Fleets with an ERROR status can be accessed for a
-     * few hours before being deleted.</p>
+     * <p>Unique identifier for a fleet that contains the instance you want access to.
+     * The fleet can be in any of the following statuses: <code>ACTIVATING</code>,
+     * <code>ACTIVE</code>, or <code>ERROR</code>. Fleets with an <code>ERROR</code>
+     * status may be accessible for a short time before they are deleted.</p>
      */
     inline void SetFleetId(const char* value) { m_fleetIdHasBeenSet = true; m_fleetId.assign(value); }
 
     /**
-     * <p>Unique identifier for a fleet. Specify the fleet that contain the instance
-     * you want access to. The fleet can be in any of the following statuses:
-     * ACTIVATING, ACTIVE, or ERROR. Fleets with an ERROR status can be accessed for a
-     * few hours before being deleted.</p>
+     * <p>Unique identifier for a fleet that contains the instance you want access to.
+     * The fleet can be in any of the following statuses: <code>ACTIVATING</code>,
+     * <code>ACTIVE</code>, or <code>ERROR</code>. Fleets with an <code>ERROR</code>
+     * status may be accessible for a short time before they are deleted.</p>
      */
     inline GetInstanceAccessRequest& WithFleetId(const Aws::String& value) { SetFleetId(value); return *this;}
 
     /**
-     * <p>Unique identifier for a fleet. Specify the fleet that contain the instance
-     * you want access to. The fleet can be in any of the following statuses:
-     * ACTIVATING, ACTIVE, or ERROR. Fleets with an ERROR status can be accessed for a
-     * few hours before being deleted.</p>
+     * <p>Unique identifier for a fleet that contains the instance you want access to.
+     * The fleet can be in any of the following statuses: <code>ACTIVATING</code>,
+     * <code>ACTIVE</code>, or <code>ERROR</code>. Fleets with an <code>ERROR</code>
+     * status may be accessible for a short time before they are deleted.</p>
      */
     inline GetInstanceAccessRequest& WithFleetId(Aws::String&& value) { SetFleetId(value); return *this;}
 
     /**
-     * <p>Unique identifier for a fleet. Specify the fleet that contain the instance
-     * you want access to. The fleet can be in any of the following statuses:
-     * ACTIVATING, ACTIVE, or ERROR. Fleets with an ERROR status can be accessed for a
-     * few hours before being deleted.</p>
+     * <p>Unique identifier for a fleet that contains the instance you want access to.
+     * The fleet can be in any of the following statuses: <code>ACTIVATING</code>,
+     * <code>ACTIVE</code>, or <code>ERROR</code>. Fleets with an <code>ERROR</code>
+     * status may be accessible for a short time before they are deleted.</p>
      */
     inline GetInstanceAccessRequest& WithFleetId(const char* value) { SetFleetId(value); return *this;}
 
     /**
-     * <p>Unique identifier for an instance. Specify the instance you want to get
-     * access to. You can access an instance in any status.</p>
+     * <p>Unique identifier for an instance you want to get access to. You can access
+     * an instance in any status.</p>
      */
     inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
 
     /**
-     * <p>Unique identifier for an instance. Specify the instance you want to get
-     * access to. You can access an instance in any status.</p>
+     * <p>Unique identifier for an instance you want to get access to. You can access
+     * an instance in any status.</p>
      */
     inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
 
     /**
-     * <p>Unique identifier for an instance. Specify the instance you want to get
-     * access to. You can access an instance in any status.</p>
+     * <p>Unique identifier for an instance you want to get access to. You can access
+     * an instance in any status.</p>
      */
     inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
 
     /**
-     * <p>Unique identifier for an instance. Specify the instance you want to get
-     * access to. You can access an instance in any status.</p>
+     * <p>Unique identifier for an instance you want to get access to. You can access
+     * an instance in any status.</p>
      */
     inline void SetInstanceId(const char* value) { m_instanceIdHasBeenSet = true; m_instanceId.assign(value); }
 
     /**
-     * <p>Unique identifier for an instance. Specify the instance you want to get
-     * access to. You can access an instance in any status.</p>
+     * <p>Unique identifier for an instance you want to get access to. You can access
+     * an instance in any status.</p>
      */
     inline GetInstanceAccessRequest& WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
 
     /**
-     * <p>Unique identifier for an instance. Specify the instance you want to get
-     * access to. You can access an instance in any status.</p>
+     * <p>Unique identifier for an instance you want to get access to. You can access
+     * an instance in any status.</p>
      */
     inline GetInstanceAccessRequest& WithInstanceId(Aws::String&& value) { SetInstanceId(value); return *this;}
 
     /**
-     * <p>Unique identifier for an instance. Specify the instance you want to get
-     * access to. You can access an instance in any status.</p>
+     * <p>Unique identifier for an instance you want to get access to. You can access
+     * an instance in any status.</p>
      */
     inline GetInstanceAccessRequest& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
 

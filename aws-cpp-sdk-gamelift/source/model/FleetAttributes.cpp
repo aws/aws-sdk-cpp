@@ -29,6 +29,7 @@ namespace Model
 
 FleetAttributes::FleetAttributes() : 
     m_fleetIdHasBeenSet(false),
+    m_fleetArnHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_creationTimeHasBeenSet(false),
@@ -49,6 +50,7 @@ FleetAttributes::FleetAttributes() :
 
 FleetAttributes::FleetAttributes(const JsonValue& jsonValue) : 
     m_fleetIdHasBeenSet(false),
+    m_fleetArnHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_creationTimeHasBeenSet(false),
@@ -75,6 +77,13 @@ FleetAttributes& FleetAttributes::operator =(const JsonValue& jsonValue)
     m_fleetId = jsonValue.GetString("FleetId");
 
     m_fleetIdHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("FleetArn"))
+  {
+    m_fleetArn = jsonValue.GetString("FleetArn");
+
+    m_fleetArnHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("Description"))
@@ -174,6 +183,12 @@ JsonValue FleetAttributes::Jsonize() const
   if(m_fleetIdHasBeenSet)
   {
    payload.WithString("FleetId", m_fleetId);
+
+  }
+
+  if(m_fleetArnHasBeenSet)
+  {
+   payload.WithString("FleetArn", m_fleetArn);
 
   }
 

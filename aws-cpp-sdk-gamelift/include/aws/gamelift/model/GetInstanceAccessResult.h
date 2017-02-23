@@ -40,32 +40,32 @@ namespace Model
     GetInstanceAccessResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
     /**
-     * <p>Object containing connection information for a fleet instance, including IP
-     * address and access credentials.</p>
+     * <p>Object that contains connection information for a fleet instance, including
+     * IP address and access credentials.</p>
      */
     inline const InstanceAccess& GetInstanceAccess() const{ return m_instanceAccess; }
 
     /**
-     * <p>Object containing connection information for a fleet instance, including IP
-     * address and access credentials.</p>
+     * <p>Object that contains connection information for a fleet instance, including
+     * IP address and access credentials.</p>
      */
     inline void SetInstanceAccess(const InstanceAccess& value) { m_instanceAccess = value; }
 
     /**
-     * <p>Object containing connection information for a fleet instance, including IP
-     * address and access credentials.</p>
+     * <p>Object that contains connection information for a fleet instance, including
+     * IP address and access credentials.</p>
      */
     inline void SetInstanceAccess(InstanceAccess&& value) { m_instanceAccess = value; }
 
     /**
-     * <p>Object containing connection information for a fleet instance, including IP
-     * address and access credentials.</p>
+     * <p>Object that contains connection information for a fleet instance, including
+     * IP address and access credentials.</p>
      */
     inline GetInstanceAccessResult& WithInstanceAccess(const InstanceAccess& value) { SetInstanceAccess(value); return *this;}
 
     /**
-     * <p>Object containing connection information for a fleet instance, including IP
-     * address and access credentials.</p>
+     * <p>Object that contains connection information for a fleet instance, including
+     * IP address and access credentials.</p>
      */
     inline GetInstanceAccessResult& WithInstanceAccess(InstanceAccess&& value) { SetInstanceAccess(value); return *this;}
 

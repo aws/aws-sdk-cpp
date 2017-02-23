@@ -25,6 +25,7 @@ DescribeEventsRequest::DescribeEventsRequest() :
     m_templateNameHasBeenSet(false),
     m_environmentIdHasBeenSet(false),
     m_environmentNameHasBeenSet(false),
+    m_platformArnHasBeenSet(false),
     m_requestIdHasBeenSet(false),
     m_severity(EventSeverity::NOT_SET),
     m_severityHasBeenSet(false),
@@ -63,6 +64,11 @@ Aws::String DescribeEventsRequest::SerializePayload() const
   if(m_environmentNameHasBeenSet)
   {
     ss << "EnvironmentName=" << StringUtils::URLEncode(m_environmentName.c_str()) << "&";
+  }
+
+  if(m_platformArnHasBeenSet)
+  {
+    ss << "PlatformArn=" << StringUtils::URLEncode(m_platformArn.c_str()) << "&";
   }
 
   if(m_requestIdHasBeenSet)

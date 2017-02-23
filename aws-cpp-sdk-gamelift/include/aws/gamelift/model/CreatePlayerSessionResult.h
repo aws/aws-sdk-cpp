@@ -46,27 +46,27 @@ namespace Model
     CreatePlayerSessionResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
     /**
-     * <p>Object containing the newly created player session record.</p>
+     * <p>Object that describes the newly created player session record.</p>
      */
     inline const PlayerSession& GetPlayerSession() const{ return m_playerSession; }
 
     /**
-     * <p>Object containing the newly created player session record.</p>
+     * <p>Object that describes the newly created player session record.</p>
      */
     inline void SetPlayerSession(const PlayerSession& value) { m_playerSession = value; }
 
     /**
-     * <p>Object containing the newly created player session record.</p>
+     * <p>Object that describes the newly created player session record.</p>
      */
     inline void SetPlayerSession(PlayerSession&& value) { m_playerSession = value; }
 
     /**
-     * <p>Object containing the newly created player session record.</p>
+     * <p>Object that describes the newly created player session record.</p>
      */
     inline CreatePlayerSessionResult& WithPlayerSession(const PlayerSession& value) { SetPlayerSession(value); return *this;}
 
     /**
-     * <p>Object containing the newly created player session record.</p>
+     * <p>Object that describes the newly created player session record.</p>
      */
     inline CreatePlayerSessionResult& WithPlayerSession(PlayerSession&& value) { SetPlayerSession(value); return *this;}
 

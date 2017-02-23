@@ -30,7 +30,9 @@ namespace Model
     ActiveInstances,
     AvailablePlayerSessions,
     CurrentPlayerSessions,
-    IdleInstances
+    IdleInstances,
+    QueueDepth,
+    WaitTime
   };
 
 namespace MetricNameMapper

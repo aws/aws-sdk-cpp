@@ -46,27 +46,27 @@ namespace Model
     UpdateBuildResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
     /**
-     * <p>Object containing the updated build record.</p>
+     * <p>Object that contains the updated build record.</p>
      */
     inline const Build& GetBuild() const{ return m_build; }
 
     /**
-     * <p>Object containing the updated build record.</p>
+     * <p>Object that contains the updated build record.</p>
      */
     inline void SetBuild(const Build& value) { m_build = value; }
 
     /**
-     * <p>Object containing the updated build record.</p>
+     * <p>Object that contains the updated build record.</p>
      */
     inline void SetBuild(Build&& value) { m_build = value; }
 
     /**
-     * <p>Object containing the updated build record.</p>
+     * <p>Object that contains the updated build record.</p>
      */
     inline UpdateBuildResult& WithBuild(const Build& value) { SetBuild(value); return *this;}
 
     /**
-     * <p>Object containing the updated build record.</p>
+     * <p>Object that contains the updated build record.</p>
      */
     inline UpdateBuildResult& WithBuild(Build&& value) { SetBuild(value); return *this;}
 

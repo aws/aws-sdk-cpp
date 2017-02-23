@@ -50,79 +50,86 @@ namespace Model
     Aws::Utils::Json::JsonValue Jsonize() const;
 
     /**
-     * <p>Unique identity for the fleet associated with this scaling policy.</p>
+     * <p>Unique identifier for a fleet that is associated with this scaling
+     * policy.</p>
      */
     inline const Aws::String& GetFleetId() const{ return m_fleetId; }
 
     /**
-     * <p>Unique identity for the fleet associated with this scaling policy.</p>
+     * <p>Unique identifier for a fleet that is associated with this scaling
+     * policy.</p>
      */
     inline void SetFleetId(const Aws::String& value) { m_fleetIdHasBeenSet = true; m_fleetId = value; }
 
     /**
-     * <p>Unique identity for the fleet associated with this scaling policy.</p>
+     * <p>Unique identifier for a fleet that is associated with this scaling
+     * policy.</p>
      */
     inline void SetFleetId(Aws::String&& value) { m_fleetIdHasBeenSet = true; m_fleetId = value; }
 
     /**
-     * <p>Unique identity for the fleet associated with this scaling policy.</p>
+     * <p>Unique identifier for a fleet that is associated with this scaling
+     * policy.</p>
      */
     inline void SetFleetId(const char* value) { m_fleetIdHasBeenSet = true; m_fleetId.assign(value); }
 
     /**
-     * <p>Unique identity for the fleet associated with this scaling policy.</p>
+     * <p>Unique identifier for a fleet that is associated with this scaling
+     * policy.</p>
      */
     inline ScalingPolicy& WithFleetId(const Aws::String& value) { SetFleetId(value); return *this;}
 
     /**
-     * <p>Unique identity for the fleet associated with this scaling policy.</p>
+     * <p>Unique identifier for a fleet that is associated with this scaling
+     * policy.</p>
      */
     inline ScalingPolicy& WithFleetId(Aws::String&& value) { SetFleetId(value); return *this;}
 
     /**
-     * <p>Unique identity for the fleet associated with this scaling policy.</p>
+     * <p>Unique identifier for a fleet that is associated with this scaling
+     * policy.</p>
      */
     inline ScalingPolicy& WithFleetId(const char* value) { SetFleetId(value); return *this;}
 
     /**
-     * <p>Descriptive label associated with a scaling policy. Policy names do not need
-     * to be unique.</p>
+     * <p>Descriptive label that is associated with a scaling policy. Policy names do
+     * not need to be unique.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>Descriptive label associated with a scaling policy. Policy names do not need
-     * to be unique.</p>
+     * <p>Descriptive label that is associated with a scaling policy. Policy names do
+     * not need to be unique.</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>Descriptive label associated with a scaling policy. Policy names do not need
-     * to be unique.</p>
+     * <p>Descriptive label that is associated with a scaling policy. Policy names do
+     * not need to be unique.</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>Descriptive label associated with a scaling policy. Policy names do not need
-     * to be unique.</p>
+     * <p>Descriptive label that is associated with a scaling policy. Policy names do
+     * not need to be unique.</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>Descriptive label associated with a scaling policy. Policy names do not need
-     * to be unique.</p>
+     * <p>Descriptive label that is associated with a scaling policy. Policy names do
+     * not need to be unique.</p>
      */
     inline ScalingPolicy& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>Descriptive label associated with a scaling policy. Policy names do not need
-     * to be unique.</p>
+     * <p>Descriptive label that is associated with a scaling policy. Policy names do
+     * not need to be unique.</p>
      */
     inline ScalingPolicy& WithName(Aws::String&& value) { SetName(value); return *this;}
 
     /**
-     * <p>Descriptive label associated with a scaling policy. Policy names do not need
-     * to be unique.</p>
+     * <p>Descriptive label that is associated with a scaling policy. Policy names do
+     * not need to be unique.</p>
      */
     inline ScalingPolicy& WithName(const char* value) { SetName(value); return *this;}
 
@@ -335,7 +342,7 @@ namespace Model
     inline ScalingPolicy& WithEvaluationPeriods(int value) { SetEvaluationPeriods(value); return *this;}
 
     /**
-     * <p>Name of the GameLift-defined metric that is used to trigger an
+     * <p>Name of the Amazon GameLift-defined metric that is used to trigger an
      * adjustment.</p> <ul> <li> <p> <b>ActivatingGameSessions</b> – number of game
      * sessions in the process of being created (game session status =
      * <code>ACTIVATING</code>).</p> </li> <li> <p> <b>ActiveGameSessions</b> – number
@@ -356,7 +363,7 @@ namespace Model
     inline const MetricName& GetMetricName() const{ return m_metricName; }
 
     /**
-     * <p>Name of the GameLift-defined metric that is used to trigger an
+     * <p>Name of the Amazon GameLift-defined metric that is used to trigger an
      * adjustment.</p> <ul> <li> <p> <b>ActivatingGameSessions</b> – number of game
      * sessions in the process of being created (game session status =
      * <code>ACTIVATING</code>).</p> </li> <li> <p> <b>ActiveGameSessions</b> – number
@@ -377,7 +384,7 @@ namespace Model
     inline void SetMetricName(const MetricName& value) { m_metricNameHasBeenSet = true; m_metricName = value; }
 
     /**
-     * <p>Name of the GameLift-defined metric that is used to trigger an
+     * <p>Name of the Amazon GameLift-defined metric that is used to trigger an
      * adjustment.</p> <ul> <li> <p> <b>ActivatingGameSessions</b> – number of game
      * sessions in the process of being created (game session status =
      * <code>ACTIVATING</code>).</p> </li> <li> <p> <b>ActiveGameSessions</b> – number
@@ -398,7 +405,7 @@ namespace Model
     inline void SetMetricName(MetricName&& value) { m_metricNameHasBeenSet = true; m_metricName = value; }
 
     /**
-     * <p>Name of the GameLift-defined metric that is used to trigger an
+     * <p>Name of the Amazon GameLift-defined metric that is used to trigger an
      * adjustment.</p> <ul> <li> <p> <b>ActivatingGameSessions</b> – number of game
      * sessions in the process of being created (game session status =
      * <code>ACTIVATING</code>).</p> </li> <li> <p> <b>ActiveGameSessions</b> – number
@@ -419,7 +426,7 @@ namespace Model
     inline ScalingPolicy& WithMetricName(const MetricName& value) { SetMetricName(value); return *this;}
 
     /**
-     * <p>Name of the GameLift-defined metric that is used to trigger an
+     * <p>Name of the Amazon GameLift-defined metric that is used to trigger an
      * adjustment.</p> <ul> <li> <p> <b>ActivatingGameSessions</b> – number of game
      * sessions in the process of being created (game session status =
      * <code>ACTIVATING</code>).</p> </li> <li> <p> <b>ActiveGameSessions</b> – number

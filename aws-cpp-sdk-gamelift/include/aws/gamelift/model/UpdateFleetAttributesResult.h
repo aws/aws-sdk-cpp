@@ -46,37 +46,37 @@ namespace Model
     UpdateFleetAttributesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
     /**
-     * <p>Unique identifier for the updated fleet.</p>
+     * <p>Unique identifier for a fleet that was updated.</p>
      */
     inline const Aws::String& GetFleetId() const{ return m_fleetId; }
 
     /**
-     * <p>Unique identifier for the updated fleet.</p>
+     * <p>Unique identifier for a fleet that was updated.</p>
      */
     inline void SetFleetId(const Aws::String& value) { m_fleetId = value; }
 
     /**
-     * <p>Unique identifier for the updated fleet.</p>
+     * <p>Unique identifier for a fleet that was updated.</p>
      */
     inline void SetFleetId(Aws::String&& value) { m_fleetId = value; }
 
     /**
-     * <p>Unique identifier for the updated fleet.</p>
+     * <p>Unique identifier for a fleet that was updated.</p>
      */
     inline void SetFleetId(const char* value) { m_fleetId.assign(value); }
 
     /**
-     * <p>Unique identifier for the updated fleet.</p>
+     * <p>Unique identifier for a fleet that was updated.</p>
      */
     inline UpdateFleetAttributesResult& WithFleetId(const Aws::String& value) { SetFleetId(value); return *this;}
 
     /**
-     * <p>Unique identifier for the updated fleet.</p>
+     * <p>Unique identifier for a fleet that was updated.</p>
      */
     inline UpdateFleetAttributesResult& WithFleetId(Aws::String&& value) { SetFleetId(value); return *this;}
 
     /**
-     * <p>Unique identifier for the updated fleet.</p>
+     * <p>Unique identifier for a fleet that was updated.</p>
      */
     inline UpdateFleetAttributesResult& WithFleetId(const char* value) { SetFleetId(value); return *this;}
 

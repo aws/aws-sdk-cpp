@@ -28,10 +28,12 @@ namespace ElasticBeanstalkErrorMapper
 {
 
 static const int TOO_MANY_APPLICATION_VERSIONS_HASH = HashingUtils::HashString("TooManyApplicationVersionsException");
+static const int PLATFORM_VERSION_STILL_REFERENCED_HASH = HashingUtils::HashString("PlatformVersionStillReferencedException");
 static const int TOO_MANY_APPLICATIONS_HASH = HashingUtils::HashString("TooManyApplicationsException");
 static const int TOO_MANY_BUCKETS_HASH = HashingUtils::HashString("TooManyBucketsException");
 static const int ELASTIC_BEANSTALK_SERVICE_HASH = HashingUtils::HashString("ElasticBeanstalkServiceException");
 static const int TOO_MANY_ENVIRONMENTS_HASH = HashingUtils::HashString("TooManyEnvironmentsException");
+static const int TOO_MANY_PLATFORMS_HASH = HashingUtils::HashString("TooManyPlatformsException");
 static const int MANAGED_ACTION_INVALID_STATE_HASH = HashingUtils::HashString("ManagedActionInvalidStateException");
 static const int SOURCE_BUNDLE_DELETION_HASH = HashingUtils::HashString("SourceBundleDeletionFailure");
 static const int INSUFFICIENT_PRIVILEGES_HASH = HashingUtils::HashString("InsufficientPrivilegesException");
@@ -51,6 +53,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ElasticBeanstalkErrors::TOO_MANY_APPLICATION_VERSIONS), false);
   }
+  else if (hashCode == PLATFORM_VERSION_STILL_REFERENCED_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ElasticBeanstalkErrors::PLATFORM_VERSION_STILL_REFERENCED), false);
+  }
   else if (hashCode == TOO_MANY_APPLICATIONS_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ElasticBeanstalkErrors::TOO_MANY_APPLICATIONS), false);
@@ -66,6 +72,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == TOO_MANY_ENVIRONMENTS_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ElasticBeanstalkErrors::TOO_MANY_ENVIRONMENTS), false);
+  }
+  else if (hashCode == TOO_MANY_PLATFORMS_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ElasticBeanstalkErrors::TOO_MANY_PLATFORMS), false);
   }
   else if (hashCode == MANAGED_ACTION_INVALID_STATE_HASH)
   {

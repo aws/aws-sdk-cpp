@@ -614,7 +614,7 @@ namespace Model
      * with the selected resource record set.</p> <p>Note the following:</p> <ul> <li>
      * <p>You can only specify one <code>ResourceRecord</code> per latency resource
      * record set.</p> </li> <li> <p>You can only create one latency resource record
-     * set for each Amazon EC2 Region.</p> </li> <li> <p>You are not required to create
+     * set for each Amazon EC2 Region.</p> </li> <li> <p>You aren't required to create
      * latency resource record sets for all Amazon EC2 Regions. Amazon Route 53 will
      * choose the region with the best latency from among the regions for which you
      * create latency resource record sets.</p> </li> <li> <p>You can't create
@@ -638,7 +638,7 @@ namespace Model
      * with the selected resource record set.</p> <p>Note the following:</p> <ul> <li>
      * <p>You can only specify one <code>ResourceRecord</code> per latency resource
      * record set.</p> </li> <li> <p>You can only create one latency resource record
-     * set for each Amazon EC2 Region.</p> </li> <li> <p>You are not required to create
+     * set for each Amazon EC2 Region.</p> </li> <li> <p>You aren't required to create
      * latency resource record sets for all Amazon EC2 Regions. Amazon Route 53 will
      * choose the region with the best latency from among the regions for which you
      * create latency resource record sets.</p> </li> <li> <p>You can't create
@@ -662,7 +662,7 @@ namespace Model
      * with the selected resource record set.</p> <p>Note the following:</p> <ul> <li>
      * <p>You can only specify one <code>ResourceRecord</code> per latency resource
      * record set.</p> </li> <li> <p>You can only create one latency resource record
-     * set for each Amazon EC2 Region.</p> </li> <li> <p>You are not required to create
+     * set for each Amazon EC2 Region.</p> </li> <li> <p>You aren't required to create
      * latency resource record sets for all Amazon EC2 Regions. Amazon Route 53 will
      * choose the region with the best latency from among the regions for which you
      * create latency resource record sets.</p> </li> <li> <p>You can't create
@@ -686,7 +686,7 @@ namespace Model
      * with the selected resource record set.</p> <p>Note the following:</p> <ul> <li>
      * <p>You can only specify one <code>ResourceRecord</code> per latency resource
      * record set.</p> </li> <li> <p>You can only create one latency resource record
-     * set for each Amazon EC2 Region.</p> </li> <li> <p>You are not required to create
+     * set for each Amazon EC2 Region.</p> </li> <li> <p>You aren't required to create
      * latency resource record sets for all Amazon EC2 Regions. Amazon Route 53 will
      * choose the region with the best latency from among the regions for which you
      * create latency resource record sets.</p> </li> <li> <p>You can't create
@@ -710,7 +710,7 @@ namespace Model
      * with the selected resource record set.</p> <p>Note the following:</p> <ul> <li>
      * <p>You can only specify one <code>ResourceRecord</code> per latency resource
      * record set.</p> </li> <li> <p>You can only create one latency resource record
-     * set for each Amazon EC2 Region.</p> </li> <li> <p>You are not required to create
+     * set for each Amazon EC2 Region.</p> </li> <li> <p>You aren't required to create
      * latency resource record sets for all Amazon EC2 Regions. Amazon Route 53 will
      * choose the region with the best latency from among the regions for which you
      * create latency resource record sets.</p> </li> <li> <p>You can't create
@@ -1138,49 +1138,49 @@ namespace Model
     inline ResourceRecordSet& WithTTL(long long value) { SetTTL(value); return *this;}
 
     /**
-     * <p>Information about the resource records to act upon.</p> <note> <p>If you are
+     * <p>Information about the resource records to act upon.</p> <note> <p>If you're
      * creating an alias resource record set, omit <code>ResourceRecords</code>.</p>
      * </note>
      */
     inline const Aws::Vector<ResourceRecord>& GetResourceRecords() const{ return m_resourceRecords; }
 
     /**
-     * <p>Information about the resource records to act upon.</p> <note> <p>If you are
+     * <p>Information about the resource records to act upon.</p> <note> <p>If you're
      * creating an alias resource record set, omit <code>ResourceRecords</code>.</p>
      * </note>
      */
     inline void SetResourceRecords(const Aws::Vector<ResourceRecord>& value) { m_resourceRecordsHasBeenSet = true; m_resourceRecords = value; }
 
     /**
-     * <p>Information about the resource records to act upon.</p> <note> <p>If you are
+     * <p>Information about the resource records to act upon.</p> <note> <p>If you're
      * creating an alias resource record set, omit <code>ResourceRecords</code>.</p>
      * </note>
      */
     inline void SetResourceRecords(Aws::Vector<ResourceRecord>&& value) { m_resourceRecordsHasBeenSet = true; m_resourceRecords = value; }
 
     /**
-     * <p>Information about the resource records to act upon.</p> <note> <p>If you are
+     * <p>Information about the resource records to act upon.</p> <note> <p>If you're
      * creating an alias resource record set, omit <code>ResourceRecords</code>.</p>
      * </note>
      */
     inline ResourceRecordSet& WithResourceRecords(const Aws::Vector<ResourceRecord>& value) { SetResourceRecords(value); return *this;}
 
     /**
-     * <p>Information about the resource records to act upon.</p> <note> <p>If you are
+     * <p>Information about the resource records to act upon.</p> <note> <p>If you're
      * creating an alias resource record set, omit <code>ResourceRecords</code>.</p>
      * </note>
      */
     inline ResourceRecordSet& WithResourceRecords(Aws::Vector<ResourceRecord>&& value) { SetResourceRecords(value); return *this;}
 
     /**
-     * <p>Information about the resource records to act upon.</p> <note> <p>If you are
+     * <p>Information about the resource records to act upon.</p> <note> <p>If you're
      * creating an alias resource record set, omit <code>ResourceRecords</code>.</p>
      * </note>
      */
     inline ResourceRecordSet& AddResourceRecords(const ResourceRecord& value) { m_resourceRecordsHasBeenSet = true; m_resourceRecords.push_back(value); return *this; }
 
     /**
-     * <p>Information about the resource records to act upon.</p> <note> <p>If you are
+     * <p>Information about the resource records to act upon.</p> <note> <p>If you're
      * creating an alias resource record set, omit <code>ResourceRecords</code>.</p>
      * </note>
      */
@@ -1189,7 +1189,7 @@ namespace Model
     /**
      * <p> <i>Alias resource record sets only:</i> Information about the CloudFront
      * distribution, AWS Elastic Beanstalk environment, ELB load balancer, Amazon S3
-     * bucket, or Amazon Route 53 resource record set to which you are redirecting
+     * bucket, or Amazon Route 53 resource record set to which you're redirecting
      * queries. The AWS Elastic Beanstalk environment must have a regionalized
      * subdomain.</p> <p>If you're creating resource records sets for a private hosted
      * zone, note the following:</p> <ul> <li> <p>You can't create alias resource
@@ -1207,7 +1207,7 @@ namespace Model
     /**
      * <p> <i>Alias resource record sets only:</i> Information about the CloudFront
      * distribution, AWS Elastic Beanstalk environment, ELB load balancer, Amazon S3
-     * bucket, or Amazon Route 53 resource record set to which you are redirecting
+     * bucket, or Amazon Route 53 resource record set to which you're redirecting
      * queries. The AWS Elastic Beanstalk environment must have a regionalized
      * subdomain.</p> <p>If you're creating resource records sets for a private hosted
      * zone, note the following:</p> <ul> <li> <p>You can't create alias resource
@@ -1225,7 +1225,7 @@ namespace Model
     /**
      * <p> <i>Alias resource record sets only:</i> Information about the CloudFront
      * distribution, AWS Elastic Beanstalk environment, ELB load balancer, Amazon S3
-     * bucket, or Amazon Route 53 resource record set to which you are redirecting
+     * bucket, or Amazon Route 53 resource record set to which you're redirecting
      * queries. The AWS Elastic Beanstalk environment must have a regionalized
      * subdomain.</p> <p>If you're creating resource records sets for a private hosted
      * zone, note the following:</p> <ul> <li> <p>You can't create alias resource
@@ -1243,7 +1243,7 @@ namespace Model
     /**
      * <p> <i>Alias resource record sets only:</i> Information about the CloudFront
      * distribution, AWS Elastic Beanstalk environment, ELB load balancer, Amazon S3
-     * bucket, or Amazon Route 53 resource record set to which you are redirecting
+     * bucket, or Amazon Route 53 resource record set to which you're redirecting
      * queries. The AWS Elastic Beanstalk environment must have a regionalized
      * subdomain.</p> <p>If you're creating resource records sets for a private hosted
      * zone, note the following:</p> <ul> <li> <p>You can't create alias resource
@@ -1261,7 +1261,7 @@ namespace Model
     /**
      * <p> <i>Alias resource record sets only:</i> Information about the CloudFront
      * distribution, AWS Elastic Beanstalk environment, ELB load balancer, Amazon S3
-     * bucket, or Amazon Route 53 resource record set to which you are redirecting
+     * bucket, or Amazon Route 53 resource record set to which you're redirecting
      * queries. The AWS Elastic Beanstalk environment must have a regionalized
      * subdomain.</p> <p>If you're creating resource records sets for a private hosted
      * zone, note the following:</p> <ul> <li> <p>You can't create alias resource
@@ -1285,25 +1285,27 @@ namespace Model
      * a request to the endpoint that is specified in the health check</p> </li> <li>
      * <p>By aggregating the status of a specified group of health checks (calculated
      * health checks)</p> </li> <li> <p>By determining the current state of a
-     * CloudWatch alarm (CloudWatch metric health checks)</p> </li> </ul> <p>For
-     * information about how Amazon Route 53 determines whether a health check is
-     * healthy, see <a>CreateHealthCheck</a>.</p> <p>The <code>HealthCheckId</code>
-     * element is only useful when Amazon Route 53 is choosing between two or more
-     * resource record sets to respond to a DNS query, and you want Amazon Route 53 to
-     * base the choice in part on the status of a health check. Configuring health
-     * checks only makes sense in the following configurations:</p> <ul> <li> <p>You're
-     * checking the health of the resource record sets in a weighted, latency,
-     * geolocation, or failover resource record set, and you specify health check IDs
-     * for all of the resource record sets. If the health check for one resource record
-     * set specifies an endpoint that is not healthy, Amazon Route 53 stops responding
-     * to queries using the value for that resource record set.</p> </li> <li> <p>You
-     * set <code>EvaluateTargetHealth</code> to true for the resource record sets in an
-     * alias, weighted alias, latency alias, geolocation alias, or failover alias
-     * resource record set, and you specify health check IDs for all of the resource
-     * record sets that are referenced by the alias resource record sets.</p> </li>
-     * </ul> <important> <p>Amazon Route 53 doesn't check the health of the endpoint
-     * specified in the resource record set, for example, the endpoint specified by the
-     * IP address in the <code>Value</code> element. When you add a
+     * CloudWatch alarm (CloudWatch metric health checks)</p> </li> </ul> <p>For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html">How
+     * Amazon Route 53 Determines Whether an Endpoint Is Healthy</a>.</p> <p>The
+     * <code>HealthCheckId</code> element is only useful when Amazon Route 53 is
+     * choosing between two or more resource record sets to respond to a DNS query, and
+     * you want Amazon Route 53 to base the choice in part on the status of a health
+     * check. Configuring health checks only makes sense in the following
+     * configurations:</p> <ul> <li> <p>You're checking the health of the resource
+     * record sets in a group of weighted, latency, geolocation, or failover resource
+     * record sets, and you specify health check IDs for all of the resource record
+     * sets. If the health check for one resource record set specifies an endpoint that
+     * is not healthy, Amazon Route 53 stops responding to queries using the value for
+     * that resource record set.</p> </li> <li> <p>You set
+     * <code>EvaluateTargetHealth</code> to true for the resource record sets in a
+     * group of alias, weighted alias, latency alias, geolocation alias, or failover
+     * alias resource record sets, and you specify health check IDs for all of the
+     * resource record sets that are referenced by the alias resource record sets.</p>
+     * </li> </ul> <important> <p>Amazon Route 53 doesn't check the health of the
+     * endpoint specified in the resource record set, for example, the endpoint
+     * specified by the IP address in the <code>Value</code> element. When you add a
      * <code>HealthCheckId</code> element to a resource record set, Amazon Route 53
      * checks the health of the endpoint that you specified in the health check. </p>
      * </important> <p>For geolocation resource record sets, if an endpoint is
@@ -1320,7 +1322,7 @@ namespace Model
      * health check for each <code>HTTP</code> server that is serving content for
      * <code>www.example.com</code>. For the value of
      * <code>FullyQualifiedDomainName</code>, specify the domain name of the server
-     * (such as <code>us-east-1-www.example.com</code>), not the name of the resource
+     * (such as <code>us-east-2-www.example.com</code>), not the name of the resource
      * record sets (example.com).</p> <important> <p>n this configuration, if you
      * create a health check for which the value of
      * <code>FullyQualifiedDomainName</code> matches the name of the resource record
@@ -1344,25 +1346,27 @@ namespace Model
      * a request to the endpoint that is specified in the health check</p> </li> <li>
      * <p>By aggregating the status of a specified group of health checks (calculated
      * health checks)</p> </li> <li> <p>By determining the current state of a
-     * CloudWatch alarm (CloudWatch metric health checks)</p> </li> </ul> <p>For
-     * information about how Amazon Route 53 determines whether a health check is
-     * healthy, see <a>CreateHealthCheck</a>.</p> <p>The <code>HealthCheckId</code>
-     * element is only useful when Amazon Route 53 is choosing between two or more
-     * resource record sets to respond to a DNS query, and you want Amazon Route 53 to
-     * base the choice in part on the status of a health check. Configuring health
-     * checks only makes sense in the following configurations:</p> <ul> <li> <p>You're
-     * checking the health of the resource record sets in a weighted, latency,
-     * geolocation, or failover resource record set, and you specify health check IDs
-     * for all of the resource record sets. If the health check for one resource record
-     * set specifies an endpoint that is not healthy, Amazon Route 53 stops responding
-     * to queries using the value for that resource record set.</p> </li> <li> <p>You
-     * set <code>EvaluateTargetHealth</code> to true for the resource record sets in an
-     * alias, weighted alias, latency alias, geolocation alias, or failover alias
-     * resource record set, and you specify health check IDs for all of the resource
-     * record sets that are referenced by the alias resource record sets.</p> </li>
-     * </ul> <important> <p>Amazon Route 53 doesn't check the health of the endpoint
-     * specified in the resource record set, for example, the endpoint specified by the
-     * IP address in the <code>Value</code> element. When you add a
+     * CloudWatch alarm (CloudWatch metric health checks)</p> </li> </ul> <p>For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html">How
+     * Amazon Route 53 Determines Whether an Endpoint Is Healthy</a>.</p> <p>The
+     * <code>HealthCheckId</code> element is only useful when Amazon Route 53 is
+     * choosing between two or more resource record sets to respond to a DNS query, and
+     * you want Amazon Route 53 to base the choice in part on the status of a health
+     * check. Configuring health checks only makes sense in the following
+     * configurations:</p> <ul> <li> <p>You're checking the health of the resource
+     * record sets in a group of weighted, latency, geolocation, or failover resource
+     * record sets, and you specify health check IDs for all of the resource record
+     * sets. If the health check for one resource record set specifies an endpoint that
+     * is not healthy, Amazon Route 53 stops responding to queries using the value for
+     * that resource record set.</p> </li> <li> <p>You set
+     * <code>EvaluateTargetHealth</code> to true for the resource record sets in a
+     * group of alias, weighted alias, latency alias, geolocation alias, or failover
+     * alias resource record sets, and you specify health check IDs for all of the
+     * resource record sets that are referenced by the alias resource record sets.</p>
+     * </li> </ul> <important> <p>Amazon Route 53 doesn't check the health of the
+     * endpoint specified in the resource record set, for example, the endpoint
+     * specified by the IP address in the <code>Value</code> element. When you add a
      * <code>HealthCheckId</code> element to a resource record set, Amazon Route 53
      * checks the health of the endpoint that you specified in the health check. </p>
      * </important> <p>For geolocation resource record sets, if an endpoint is
@@ -1379,7 +1383,7 @@ namespace Model
      * health check for each <code>HTTP</code> server that is serving content for
      * <code>www.example.com</code>. For the value of
      * <code>FullyQualifiedDomainName</code>, specify the domain name of the server
-     * (such as <code>us-east-1-www.example.com</code>), not the name of the resource
+     * (such as <code>us-east-2-www.example.com</code>), not the name of the resource
      * record sets (example.com).</p> <important> <p>n this configuration, if you
      * create a health check for which the value of
      * <code>FullyQualifiedDomainName</code> matches the name of the resource record
@@ -1403,25 +1407,27 @@ namespace Model
      * a request to the endpoint that is specified in the health check</p> </li> <li>
      * <p>By aggregating the status of a specified group of health checks (calculated
      * health checks)</p> </li> <li> <p>By determining the current state of a
-     * CloudWatch alarm (CloudWatch metric health checks)</p> </li> </ul> <p>For
-     * information about how Amazon Route 53 determines whether a health check is
-     * healthy, see <a>CreateHealthCheck</a>.</p> <p>The <code>HealthCheckId</code>
-     * element is only useful when Amazon Route 53 is choosing between two or more
-     * resource record sets to respond to a DNS query, and you want Amazon Route 53 to
-     * base the choice in part on the status of a health check. Configuring health
-     * checks only makes sense in the following configurations:</p> <ul> <li> <p>You're
-     * checking the health of the resource record sets in a weighted, latency,
-     * geolocation, or failover resource record set, and you specify health check IDs
-     * for all of the resource record sets. If the health check for one resource record
-     * set specifies an endpoint that is not healthy, Amazon Route 53 stops responding
-     * to queries using the value for that resource record set.</p> </li> <li> <p>You
-     * set <code>EvaluateTargetHealth</code> to true for the resource record sets in an
-     * alias, weighted alias, latency alias, geolocation alias, or failover alias
-     * resource record set, and you specify health check IDs for all of the resource
-     * record sets that are referenced by the alias resource record sets.</p> </li>
-     * </ul> <important> <p>Amazon Route 53 doesn't check the health of the endpoint
-     * specified in the resource record set, for example, the endpoint specified by the
-     * IP address in the <code>Value</code> element. When you add a
+     * CloudWatch alarm (CloudWatch metric health checks)</p> </li> </ul> <p>For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html">How
+     * Amazon Route 53 Determines Whether an Endpoint Is Healthy</a>.</p> <p>The
+     * <code>HealthCheckId</code> element is only useful when Amazon Route 53 is
+     * choosing between two or more resource record sets to respond to a DNS query, and
+     * you want Amazon Route 53 to base the choice in part on the status of a health
+     * check. Configuring health checks only makes sense in the following
+     * configurations:</p> <ul> <li> <p>You're checking the health of the resource
+     * record sets in a group of weighted, latency, geolocation, or failover resource
+     * record sets, and you specify health check IDs for all of the resource record
+     * sets. If the health check for one resource record set specifies an endpoint that
+     * is not healthy, Amazon Route 53 stops responding to queries using the value for
+     * that resource record set.</p> </li> <li> <p>You set
+     * <code>EvaluateTargetHealth</code> to true for the resource record sets in a
+     * group of alias, weighted alias, latency alias, geolocation alias, or failover
+     * alias resource record sets, and you specify health check IDs for all of the
+     * resource record sets that are referenced by the alias resource record sets.</p>
+     * </li> </ul> <important> <p>Amazon Route 53 doesn't check the health of the
+     * endpoint specified in the resource record set, for example, the endpoint
+     * specified by the IP address in the <code>Value</code> element. When you add a
      * <code>HealthCheckId</code> element to a resource record set, Amazon Route 53
      * checks the health of the endpoint that you specified in the health check. </p>
      * </important> <p>For geolocation resource record sets, if an endpoint is
@@ -1438,7 +1444,7 @@ namespace Model
      * health check for each <code>HTTP</code> server that is serving content for
      * <code>www.example.com</code>. For the value of
      * <code>FullyQualifiedDomainName</code>, specify the domain name of the server
-     * (such as <code>us-east-1-www.example.com</code>), not the name of the resource
+     * (such as <code>us-east-2-www.example.com</code>), not the name of the resource
      * record sets (example.com).</p> <important> <p>n this configuration, if you
      * create a health check for which the value of
      * <code>FullyQualifiedDomainName</code> matches the name of the resource record
@@ -1462,25 +1468,27 @@ namespace Model
      * a request to the endpoint that is specified in the health check</p> </li> <li>
      * <p>By aggregating the status of a specified group of health checks (calculated
      * health checks)</p> </li> <li> <p>By determining the current state of a
-     * CloudWatch alarm (CloudWatch metric health checks)</p> </li> </ul> <p>For
-     * information about how Amazon Route 53 determines whether a health check is
-     * healthy, see <a>CreateHealthCheck</a>.</p> <p>The <code>HealthCheckId</code>
-     * element is only useful when Amazon Route 53 is choosing between two or more
-     * resource record sets to respond to a DNS query, and you want Amazon Route 53 to
-     * base the choice in part on the status of a health check. Configuring health
-     * checks only makes sense in the following configurations:</p> <ul> <li> <p>You're
-     * checking the health of the resource record sets in a weighted, latency,
-     * geolocation, or failover resource record set, and you specify health check IDs
-     * for all of the resource record sets. If the health check for one resource record
-     * set specifies an endpoint that is not healthy, Amazon Route 53 stops responding
-     * to queries using the value for that resource record set.</p> </li> <li> <p>You
-     * set <code>EvaluateTargetHealth</code> to true for the resource record sets in an
-     * alias, weighted alias, latency alias, geolocation alias, or failover alias
-     * resource record set, and you specify health check IDs for all of the resource
-     * record sets that are referenced by the alias resource record sets.</p> </li>
-     * </ul> <important> <p>Amazon Route 53 doesn't check the health of the endpoint
-     * specified in the resource record set, for example, the endpoint specified by the
-     * IP address in the <code>Value</code> element. When you add a
+     * CloudWatch alarm (CloudWatch metric health checks)</p> </li> </ul> <p>For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html">How
+     * Amazon Route 53 Determines Whether an Endpoint Is Healthy</a>.</p> <p>The
+     * <code>HealthCheckId</code> element is only useful when Amazon Route 53 is
+     * choosing between two or more resource record sets to respond to a DNS query, and
+     * you want Amazon Route 53 to base the choice in part on the status of a health
+     * check. Configuring health checks only makes sense in the following
+     * configurations:</p> <ul> <li> <p>You're checking the health of the resource
+     * record sets in a group of weighted, latency, geolocation, or failover resource
+     * record sets, and you specify health check IDs for all of the resource record
+     * sets. If the health check for one resource record set specifies an endpoint that
+     * is not healthy, Amazon Route 53 stops responding to queries using the value for
+     * that resource record set.</p> </li> <li> <p>You set
+     * <code>EvaluateTargetHealth</code> to true for the resource record sets in a
+     * group of alias, weighted alias, latency alias, geolocation alias, or failover
+     * alias resource record sets, and you specify health check IDs for all of the
+     * resource record sets that are referenced by the alias resource record sets.</p>
+     * </li> </ul> <important> <p>Amazon Route 53 doesn't check the health of the
+     * endpoint specified in the resource record set, for example, the endpoint
+     * specified by the IP address in the <code>Value</code> element. When you add a
      * <code>HealthCheckId</code> element to a resource record set, Amazon Route 53
      * checks the health of the endpoint that you specified in the health check. </p>
      * </important> <p>For geolocation resource record sets, if an endpoint is
@@ -1497,7 +1505,7 @@ namespace Model
      * health check for each <code>HTTP</code> server that is serving content for
      * <code>www.example.com</code>. For the value of
      * <code>FullyQualifiedDomainName</code>, specify the domain name of the server
-     * (such as <code>us-east-1-www.example.com</code>), not the name of the resource
+     * (such as <code>us-east-2-www.example.com</code>), not the name of the resource
      * record sets (example.com).</p> <important> <p>n this configuration, if you
      * create a health check for which the value of
      * <code>FullyQualifiedDomainName</code> matches the name of the resource record
@@ -1521,25 +1529,27 @@ namespace Model
      * a request to the endpoint that is specified in the health check</p> </li> <li>
      * <p>By aggregating the status of a specified group of health checks (calculated
      * health checks)</p> </li> <li> <p>By determining the current state of a
-     * CloudWatch alarm (CloudWatch metric health checks)</p> </li> </ul> <p>For
-     * information about how Amazon Route 53 determines whether a health check is
-     * healthy, see <a>CreateHealthCheck</a>.</p> <p>The <code>HealthCheckId</code>
-     * element is only useful when Amazon Route 53 is choosing between two or more
-     * resource record sets to respond to a DNS query, and you want Amazon Route 53 to
-     * base the choice in part on the status of a health check. Configuring health
-     * checks only makes sense in the following configurations:</p> <ul> <li> <p>You're
-     * checking the health of the resource record sets in a weighted, latency,
-     * geolocation, or failover resource record set, and you specify health check IDs
-     * for all of the resource record sets. If the health check for one resource record
-     * set specifies an endpoint that is not healthy, Amazon Route 53 stops responding
-     * to queries using the value for that resource record set.</p> </li> <li> <p>You
-     * set <code>EvaluateTargetHealth</code> to true for the resource record sets in an
-     * alias, weighted alias, latency alias, geolocation alias, or failover alias
-     * resource record set, and you specify health check IDs for all of the resource
-     * record sets that are referenced by the alias resource record sets.</p> </li>
-     * </ul> <important> <p>Amazon Route 53 doesn't check the health of the endpoint
-     * specified in the resource record set, for example, the endpoint specified by the
-     * IP address in the <code>Value</code> element. When you add a
+     * CloudWatch alarm (CloudWatch metric health checks)</p> </li> </ul> <p>For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html">How
+     * Amazon Route 53 Determines Whether an Endpoint Is Healthy</a>.</p> <p>The
+     * <code>HealthCheckId</code> element is only useful when Amazon Route 53 is
+     * choosing between two or more resource record sets to respond to a DNS query, and
+     * you want Amazon Route 53 to base the choice in part on the status of a health
+     * check. Configuring health checks only makes sense in the following
+     * configurations:</p> <ul> <li> <p>You're checking the health of the resource
+     * record sets in a group of weighted, latency, geolocation, or failover resource
+     * record sets, and you specify health check IDs for all of the resource record
+     * sets. If the health check for one resource record set specifies an endpoint that
+     * is not healthy, Amazon Route 53 stops responding to queries using the value for
+     * that resource record set.</p> </li> <li> <p>You set
+     * <code>EvaluateTargetHealth</code> to true for the resource record sets in a
+     * group of alias, weighted alias, latency alias, geolocation alias, or failover
+     * alias resource record sets, and you specify health check IDs for all of the
+     * resource record sets that are referenced by the alias resource record sets.</p>
+     * </li> </ul> <important> <p>Amazon Route 53 doesn't check the health of the
+     * endpoint specified in the resource record set, for example, the endpoint
+     * specified by the IP address in the <code>Value</code> element. When you add a
      * <code>HealthCheckId</code> element to a resource record set, Amazon Route 53
      * checks the health of the endpoint that you specified in the health check. </p>
      * </important> <p>For geolocation resource record sets, if an endpoint is
@@ -1556,7 +1566,7 @@ namespace Model
      * health check for each <code>HTTP</code> server that is serving content for
      * <code>www.example.com</code>. For the value of
      * <code>FullyQualifiedDomainName</code>, specify the domain name of the server
-     * (such as <code>us-east-1-www.example.com</code>), not the name of the resource
+     * (such as <code>us-east-2-www.example.com</code>), not the name of the resource
      * record sets (example.com).</p> <important> <p>n this configuration, if you
      * create a health check for which the value of
      * <code>FullyQualifiedDomainName</code> matches the name of the resource record
@@ -1580,25 +1590,27 @@ namespace Model
      * a request to the endpoint that is specified in the health check</p> </li> <li>
      * <p>By aggregating the status of a specified group of health checks (calculated
      * health checks)</p> </li> <li> <p>By determining the current state of a
-     * CloudWatch alarm (CloudWatch metric health checks)</p> </li> </ul> <p>For
-     * information about how Amazon Route 53 determines whether a health check is
-     * healthy, see <a>CreateHealthCheck</a>.</p> <p>The <code>HealthCheckId</code>
-     * element is only useful when Amazon Route 53 is choosing between two or more
-     * resource record sets to respond to a DNS query, and you want Amazon Route 53 to
-     * base the choice in part on the status of a health check. Configuring health
-     * checks only makes sense in the following configurations:</p> <ul> <li> <p>You're
-     * checking the health of the resource record sets in a weighted, latency,
-     * geolocation, or failover resource record set, and you specify health check IDs
-     * for all of the resource record sets. If the health check for one resource record
-     * set specifies an endpoint that is not healthy, Amazon Route 53 stops responding
-     * to queries using the value for that resource record set.</p> </li> <li> <p>You
-     * set <code>EvaluateTargetHealth</code> to true for the resource record sets in an
-     * alias, weighted alias, latency alias, geolocation alias, or failover alias
-     * resource record set, and you specify health check IDs for all of the resource
-     * record sets that are referenced by the alias resource record sets.</p> </li>
-     * </ul> <important> <p>Amazon Route 53 doesn't check the health of the endpoint
-     * specified in the resource record set, for example, the endpoint specified by the
-     * IP address in the <code>Value</code> element. When you add a
+     * CloudWatch alarm (CloudWatch metric health checks)</p> </li> </ul> <p>For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html">How
+     * Amazon Route 53 Determines Whether an Endpoint Is Healthy</a>.</p> <p>The
+     * <code>HealthCheckId</code> element is only useful when Amazon Route 53 is
+     * choosing between two or more resource record sets to respond to a DNS query, and
+     * you want Amazon Route 53 to base the choice in part on the status of a health
+     * check. Configuring health checks only makes sense in the following
+     * configurations:</p> <ul> <li> <p>You're checking the health of the resource
+     * record sets in a group of weighted, latency, geolocation, or failover resource
+     * record sets, and you specify health check IDs for all of the resource record
+     * sets. If the health check for one resource record set specifies an endpoint that
+     * is not healthy, Amazon Route 53 stops responding to queries using the value for
+     * that resource record set.</p> </li> <li> <p>You set
+     * <code>EvaluateTargetHealth</code> to true for the resource record sets in a
+     * group of alias, weighted alias, latency alias, geolocation alias, or failover
+     * alias resource record sets, and you specify health check IDs for all of the
+     * resource record sets that are referenced by the alias resource record sets.</p>
+     * </li> </ul> <important> <p>Amazon Route 53 doesn't check the health of the
+     * endpoint specified in the resource record set, for example, the endpoint
+     * specified by the IP address in the <code>Value</code> element. When you add a
      * <code>HealthCheckId</code> element to a resource record set, Amazon Route 53
      * checks the health of the endpoint that you specified in the health check. </p>
      * </important> <p>For geolocation resource record sets, if an endpoint is
@@ -1615,7 +1627,7 @@ namespace Model
      * health check for each <code>HTTP</code> server that is serving content for
      * <code>www.example.com</code>. For the value of
      * <code>FullyQualifiedDomainName</code>, specify the domain name of the server
-     * (such as <code>us-east-1-www.example.com</code>), not the name of the resource
+     * (such as <code>us-east-2-www.example.com</code>), not the name of the resource
      * record sets (example.com).</p> <important> <p>n this configuration, if you
      * create a health check for which the value of
      * <code>FullyQualifiedDomainName</code> matches the name of the resource record
@@ -1639,25 +1651,27 @@ namespace Model
      * a request to the endpoint that is specified in the health check</p> </li> <li>
      * <p>By aggregating the status of a specified group of health checks (calculated
      * health checks)</p> </li> <li> <p>By determining the current state of a
-     * CloudWatch alarm (CloudWatch metric health checks)</p> </li> </ul> <p>For
-     * information about how Amazon Route 53 determines whether a health check is
-     * healthy, see <a>CreateHealthCheck</a>.</p> <p>The <code>HealthCheckId</code>
-     * element is only useful when Amazon Route 53 is choosing between two or more
-     * resource record sets to respond to a DNS query, and you want Amazon Route 53 to
-     * base the choice in part on the status of a health check. Configuring health
-     * checks only makes sense in the following configurations:</p> <ul> <li> <p>You're
-     * checking the health of the resource record sets in a weighted, latency,
-     * geolocation, or failover resource record set, and you specify health check IDs
-     * for all of the resource record sets. If the health check for one resource record
-     * set specifies an endpoint that is not healthy, Amazon Route 53 stops responding
-     * to queries using the value for that resource record set.</p> </li> <li> <p>You
-     * set <code>EvaluateTargetHealth</code> to true for the resource record sets in an
-     * alias, weighted alias, latency alias, geolocation alias, or failover alias
-     * resource record set, and you specify health check IDs for all of the resource
-     * record sets that are referenced by the alias resource record sets.</p> </li>
-     * </ul> <important> <p>Amazon Route 53 doesn't check the health of the endpoint
-     * specified in the resource record set, for example, the endpoint specified by the
-     * IP address in the <code>Value</code> element. When you add a
+     * CloudWatch alarm (CloudWatch metric health checks)</p> </li> </ul> <p>For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html">How
+     * Amazon Route 53 Determines Whether an Endpoint Is Healthy</a>.</p> <p>The
+     * <code>HealthCheckId</code> element is only useful when Amazon Route 53 is
+     * choosing between two or more resource record sets to respond to a DNS query, and
+     * you want Amazon Route 53 to base the choice in part on the status of a health
+     * check. Configuring health checks only makes sense in the following
+     * configurations:</p> <ul> <li> <p>You're checking the health of the resource
+     * record sets in a group of weighted, latency, geolocation, or failover resource
+     * record sets, and you specify health check IDs for all of the resource record
+     * sets. If the health check for one resource record set specifies an endpoint that
+     * is not healthy, Amazon Route 53 stops responding to queries using the value for
+     * that resource record set.</p> </li> <li> <p>You set
+     * <code>EvaluateTargetHealth</code> to true for the resource record sets in a
+     * group of alias, weighted alias, latency alias, geolocation alias, or failover
+     * alias resource record sets, and you specify health check IDs for all of the
+     * resource record sets that are referenced by the alias resource record sets.</p>
+     * </li> </ul> <important> <p>Amazon Route 53 doesn't check the health of the
+     * endpoint specified in the resource record set, for example, the endpoint
+     * specified by the IP address in the <code>Value</code> element. When you add a
      * <code>HealthCheckId</code> element to a resource record set, Amazon Route 53
      * checks the health of the endpoint that you specified in the health check. </p>
      * </important> <p>For geolocation resource record sets, if an endpoint is
@@ -1674,7 +1688,7 @@ namespace Model
      * health check for each <code>HTTP</code> server that is serving content for
      * <code>www.example.com</code>. For the value of
      * <code>FullyQualifiedDomainName</code>, specify the domain name of the server
-     * (such as <code>us-east-1-www.example.com</code>), not the name of the resource
+     * (such as <code>us-east-2-www.example.com</code>), not the name of the resource
      * record sets (example.com).</p> <important> <p>n this configuration, if you
      * create a health check for which the value of
      * <code>FullyQualifiedDomainName</code> matches the name of the resource record

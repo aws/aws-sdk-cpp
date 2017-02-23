@@ -84,37 +84,37 @@ namespace Model
     inline Event& WithEventId(const char* value) { SetEventId(value); return *this;}
 
     /**
-     * <p>Unique identifier for the resource, such as a fleet ID.</p>
+     * <p>Unique identifier for an event resource, such as a fleet ID.</p>
      */
     inline const Aws::String& GetResourceId() const{ return m_resourceId; }
 
     /**
-     * <p>Unique identifier for the resource, such as a fleet ID.</p>
+     * <p>Unique identifier for an event resource, such as a fleet ID.</p>
      */
     inline void SetResourceId(const Aws::String& value) { m_resourceIdHasBeenSet = true; m_resourceId = value; }
 
     /**
-     * <p>Unique identifier for the resource, such as a fleet ID.</p>
+     * <p>Unique identifier for an event resource, such as a fleet ID.</p>
      */
     inline void SetResourceId(Aws::String&& value) { m_resourceIdHasBeenSet = true; m_resourceId = value; }
 
     /**
-     * <p>Unique identifier for the resource, such as a fleet ID.</p>
+     * <p>Unique identifier for an event resource, such as a fleet ID.</p>
      */
     inline void SetResourceId(const char* value) { m_resourceIdHasBeenSet = true; m_resourceId.assign(value); }
 
     /**
-     * <p>Unique identifier for the resource, such as a fleet ID.</p>
+     * <p>Unique identifier for an event resource, such as a fleet ID.</p>
      */
     inline Event& WithResourceId(const Aws::String& value) { SetResourceId(value); return *this;}
 
     /**
-     * <p>Unique identifier for the resource, such as a fleet ID.</p>
+     * <p>Unique identifier for an event resource, such as a fleet ID.</p>
      */
     inline Event& WithResourceId(Aws::String&& value) { SetResourceId(value); return *this;}
 
     /**
-     * <p>Unique identifier for the resource, such as a fleet ID.</p>
+     * <p>Unique identifier for an event resource, such as a fleet ID.</p>
      */
     inline Event& WithResourceId(const char* value) { SetResourceId(value); return *this;}
 
@@ -180,31 +180,31 @@ namespace Model
 
     /**
      * <p>Time stamp indicating when this event occurred. Format is a number expressed
-     * in Unix time as milliseconds (ex: "1469498468.057").</p>
+     * in Unix time as milliseconds (for example "1469498468.057").</p>
      */
     inline const Aws::Utils::DateTime& GetEventTime() const{ return m_eventTime; }
 
     /**
      * <p>Time stamp indicating when this event occurred. Format is a number expressed
-     * in Unix time as milliseconds (ex: "1469498468.057").</p>
+     * in Unix time as milliseconds (for example "1469498468.057").</p>
      */
     inline void SetEventTime(const Aws::Utils::DateTime& value) { m_eventTimeHasBeenSet = true; m_eventTime = value; }
 
     /**
      * <p>Time stamp indicating when this event occurred. Format is a number expressed
-     * in Unix time as milliseconds (ex: "1469498468.057").</p>
+     * in Unix time as milliseconds (for example "1469498468.057").</p>
      */
     inline void SetEventTime(Aws::Utils::DateTime&& value) { m_eventTimeHasBeenSet = true; m_eventTime = value; }
 
     /**
      * <p>Time stamp indicating when this event occurred. Format is a number expressed
-     * in Unix time as milliseconds (ex: "1469498468.057").</p>
+     * in Unix time as milliseconds (for example "1469498468.057").</p>
      */
     inline Event& WithEventTime(const Aws::Utils::DateTime& value) { SetEventTime(value); return *this;}
 
     /**
      * <p>Time stamp indicating when this event occurred. Format is a number expressed
-     * in Unix time as milliseconds (ex: "1469498468.057").</p>
+     * in Unix time as milliseconds (for example "1469498468.057").</p>
      */
     inline Event& WithEventTime(Aws::Utils::DateTime&& value) { SetEventTime(value); return *this;}
 

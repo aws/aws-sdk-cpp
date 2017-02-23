@@ -81,44 +81,44 @@ namespace Model
     inline UpdateAliasRequest& WithAliasId(const char* value) { SetAliasId(value); return *this;}
 
     /**
-     * <p>Descriptive label associated with an alias. Alias names do not need to be
-     * unique.</p>
+     * <p>Descriptive label that is associated with an alias. Alias names do not need
+     * to be unique.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>Descriptive label associated with an alias. Alias names do not need to be
-     * unique.</p>
+     * <p>Descriptive label that is associated with an alias. Alias names do not need
+     * to be unique.</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>Descriptive label associated with an alias. Alias names do not need to be
-     * unique.</p>
+     * <p>Descriptive label that is associated with an alias. Alias names do not need
+     * to be unique.</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>Descriptive label associated with an alias. Alias names do not need to be
-     * unique.</p>
+     * <p>Descriptive label that is associated with an alias. Alias names do not need
+     * to be unique.</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>Descriptive label associated with an alias. Alias names do not need to be
-     * unique.</p>
+     * <p>Descriptive label that is associated with an alias. Alias names do not need
+     * to be unique.</p>
      */
     inline UpdateAliasRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>Descriptive label associated with an alias. Alias names do not need to be
-     * unique.</p>
+     * <p>Descriptive label that is associated with an alias. Alias names do not need
+     * to be unique.</p>
      */
     inline UpdateAliasRequest& WithName(Aws::String&& value) { SetName(value); return *this;}
 
     /**
-     * <p>Descriptive label associated with an alias. Alias names do not need to be
-     * unique.</p>
+     * <p>Descriptive label that is associated with an alias. Alias names do not need
+     * to be unique.</p>
      */
     inline UpdateAliasRequest& WithName(const char* value) { SetName(value); return *this;}
 
@@ -158,27 +158,27 @@ namespace Model
     inline UpdateAliasRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
 
     /**
-     * <p>Object specifying the fleet and routing type to use for the alias.</p>
+     * <p>Object that specifies the fleet and routing type to use for the alias.</p>
      */
     inline const RoutingStrategy& GetRoutingStrategy() const{ return m_routingStrategy; }
 
     /**
-     * <p>Object specifying the fleet and routing type to use for the alias.</p>
+     * <p>Object that specifies the fleet and routing type to use for the alias.</p>
      */
     inline void SetRoutingStrategy(const RoutingStrategy& value) { m_routingStrategyHasBeenSet = true; m_routingStrategy = value; }
 
     /**
-     * <p>Object specifying the fleet and routing type to use for the alias.</p>
+     * <p>Object that specifies the fleet and routing type to use for the alias.</p>
      */
     inline void SetRoutingStrategy(RoutingStrategy&& value) { m_routingStrategyHasBeenSet = true; m_routingStrategy = value; }
 
     /**
-     * <p>Object specifying the fleet and routing type to use for the alias.</p>
+     * <p>Object that specifies the fleet and routing type to use for the alias.</p>
      */
     inline UpdateAliasRequest& WithRoutingStrategy(const RoutingStrategy& value) { SetRoutingStrategy(value); return *this;}
 
     /**
-     * <p>Object specifying the fleet and routing type to use for the alias.</p>
+     * <p>Object that specifies the fleet and routing type to use for the alias.</p>
      */
     inline UpdateAliasRequest& WithRoutingStrategy(RoutingStrategy&& value) { SetRoutingStrategy(value); return *this;}
 

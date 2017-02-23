@@ -43,7 +43,7 @@ namespace Model
    * the same instance. This option might be useful, for example, to run more than
    * one version of your game server on the same fleet. Another option is to specify
    * configurations for the same server executable but with different launch
-   * parameters.</p> <p>A GameLift instance is limited to 50 processes running
+   * parameters.</p> <p>A Amazon GameLift instance is limited to 50 processes running
    * simultaneously. To calculate the total number of processes specified in a
    * runtime configuration, add the values of the <code>ConcurrentExecutions</code>
    * parameter for each <code> <a>ServerProcess</a> </code> object in the runtime

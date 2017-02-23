@@ -24,6 +24,7 @@ DescribeConfigurationOptionsRequest::DescribeConfigurationOptionsRequest() :
     m_templateNameHasBeenSet(false),
     m_environmentNameHasBeenSet(false),
     m_solutionStackNameHasBeenSet(false),
+    m_platformArnHasBeenSet(false),
     m_optionsHasBeenSet(false)
 {
 }
@@ -50,6 +51,11 @@ Aws::String DescribeConfigurationOptionsRequest::SerializePayload() const
   if(m_solutionStackNameHasBeenSet)
   {
     ss << "SolutionStackName=" << StringUtils::URLEncode(m_solutionStackName.c_str()) << "&";
+  }
+
+  if(m_platformArnHasBeenSet)
+  {
+    ss << "PlatformArn=" << StringUtils::URLEncode(m_platformArn.c_str()) << "&";
   }
 
   if(m_optionsHasBeenSet)

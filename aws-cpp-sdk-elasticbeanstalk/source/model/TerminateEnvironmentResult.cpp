@@ -80,6 +80,11 @@ TerminateEnvironmentResult& TerminateEnvironmentResult::operator =(const AmazonW
     {
       m_solutionStackName = StringUtils::Trim(solutionStackNameNode.GetText().c_str());
     }
+    XmlNode platformArnNode = resultNode.FirstChild("PlatformArn");
+    if(!platformArnNode.IsNull())
+    {
+      m_platformArn = StringUtils::Trim(platformArnNode.GetText().c_str());
+    }
     XmlNode templateNameNode = resultNode.FirstChild("TemplateName");
     if(!templateNameNode.IsNull())
     {

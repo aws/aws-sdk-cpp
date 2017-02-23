@@ -31,6 +31,7 @@ namespace Model
 
 ConfigurationSettingsDescription::ConfigurationSettingsDescription() : 
     m_solutionStackNameHasBeenSet(false),
+    m_platformArnHasBeenSet(false),
     m_applicationNameHasBeenSet(false),
     m_templateNameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
@@ -46,6 +47,7 @@ ConfigurationSettingsDescription::ConfigurationSettingsDescription() :
 
 ConfigurationSettingsDescription::ConfigurationSettingsDescription(const XmlNode& xmlNode) : 
     m_solutionStackNameHasBeenSet(false),
+    m_platformArnHasBeenSet(false),
     m_applicationNameHasBeenSet(false),
     m_templateNameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
@@ -71,6 +73,12 @@ ConfigurationSettingsDescription& ConfigurationSettingsDescription::operator =(c
     {
       m_solutionStackName = StringUtils::Trim(solutionStackNameNode.GetText().c_str());
       m_solutionStackNameHasBeenSet = true;
+    }
+    XmlNode platformArnNode = resultNode.FirstChild("PlatformArn");
+    if(!platformArnNode.IsNull())
+    {
+      m_platformArn = StringUtils::Trim(platformArnNode.GetText().c_str());
+      m_platformArnHasBeenSet = true;
     }
     XmlNode applicationNameNode = resultNode.FirstChild("ApplicationName");
     if(!applicationNameNode.IsNull())
@@ -138,6 +146,11 @@ void ConfigurationSettingsDescription::OutputToStream(Aws::OStream& oStream, con
       oStream << location << index << locationValue << ".SolutionStackName=" << StringUtils::URLEncode(m_solutionStackName.c_str()) << "&";
   }
 
+  if(m_platformArnHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".PlatformArn=" << StringUtils::URLEncode(m_platformArn.c_str()) << "&";
+  }
+
   if(m_applicationNameHasBeenSet)
   {
       oStream << location << index << locationValue << ".ApplicationName=" << StringUtils::URLEncode(m_applicationName.c_str()) << "&";
@@ -198,6 +211,10 @@ void ConfigurationSettingsDescription::OutputToStream(Aws::OStream& oStream, con
   if(m_solutionStackNameHasBeenSet)
   {
       oStream << location << ".SolutionStackName=" << StringUtils::URLEncode(m_solutionStackName.c_str()) << "&";
+  }
+  if(m_platformArnHasBeenSet)
+  {
+      oStream << location << ".PlatformArn=" << StringUtils::URLEncode(m_platformArn.c_str()) << "&";
   }
   if(m_applicationNameHasBeenSet)
   {

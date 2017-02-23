@@ -446,163 +446,135 @@ namespace Model
     /**
      * <p> The name of the configuration template to use in deployment. If no
      * configuration template is found with this name, AWS Elastic Beanstalk returns an
-     * <code>InvalidParameterValue</code> error. </p> <p> Condition: You must specify
-     * either this parameter or a <code>SolutionStackName</code>, but not both. If you
-     * specify both, AWS Elastic Beanstalk returns an
-     * <code>InvalidParameterCombination</code> error. If you do not specify either,
-     * AWS Elastic Beanstalk returns a <code>MissingRequiredParameter</code> error.
-     * </p>
+     * <code>InvalidParameterValue</code> error. </p>
      */
     inline const Aws::String& GetTemplateName() const{ return m_templateName; }
 
     /**
      * <p> The name of the configuration template to use in deployment. If no
      * configuration template is found with this name, AWS Elastic Beanstalk returns an
-     * <code>InvalidParameterValue</code> error. </p> <p> Condition: You must specify
-     * either this parameter or a <code>SolutionStackName</code>, but not both. If you
-     * specify both, AWS Elastic Beanstalk returns an
-     * <code>InvalidParameterCombination</code> error. If you do not specify either,
-     * AWS Elastic Beanstalk returns a <code>MissingRequiredParameter</code> error.
-     * </p>
+     * <code>InvalidParameterValue</code> error. </p>
      */
     inline void SetTemplateName(const Aws::String& value) { m_templateNameHasBeenSet = true; m_templateName = value; }
 
     /**
      * <p> The name of the configuration template to use in deployment. If no
      * configuration template is found with this name, AWS Elastic Beanstalk returns an
-     * <code>InvalidParameterValue</code> error. </p> <p> Condition: You must specify
-     * either this parameter or a <code>SolutionStackName</code>, but not both. If you
-     * specify both, AWS Elastic Beanstalk returns an
-     * <code>InvalidParameterCombination</code> error. If you do not specify either,
-     * AWS Elastic Beanstalk returns a <code>MissingRequiredParameter</code> error.
-     * </p>
+     * <code>InvalidParameterValue</code> error. </p>
      */
     inline void SetTemplateName(Aws::String&& value) { m_templateNameHasBeenSet = true; m_templateName = value; }
 
     /**
      * <p> The name of the configuration template to use in deployment. If no
      * configuration template is found with this name, AWS Elastic Beanstalk returns an
-     * <code>InvalidParameterValue</code> error. </p> <p> Condition: You must specify
-     * either this parameter or a <code>SolutionStackName</code>, but not both. If you
-     * specify both, AWS Elastic Beanstalk returns an
-     * <code>InvalidParameterCombination</code> error. If you do not specify either,
-     * AWS Elastic Beanstalk returns a <code>MissingRequiredParameter</code> error.
-     * </p>
+     * <code>InvalidParameterValue</code> error. </p>
      */
     inline void SetTemplateName(const char* value) { m_templateNameHasBeenSet = true; m_templateName.assign(value); }
 
     /**
      * <p> The name of the configuration template to use in deployment. If no
      * configuration template is found with this name, AWS Elastic Beanstalk returns an
-     * <code>InvalidParameterValue</code> error. </p> <p> Condition: You must specify
-     * either this parameter or a <code>SolutionStackName</code>, but not both. If you
-     * specify both, AWS Elastic Beanstalk returns an
-     * <code>InvalidParameterCombination</code> error. If you do not specify either,
-     * AWS Elastic Beanstalk returns a <code>MissingRequiredParameter</code> error.
-     * </p>
+     * <code>InvalidParameterValue</code> error. </p>
      */
     inline CreateEnvironmentRequest& WithTemplateName(const Aws::String& value) { SetTemplateName(value); return *this;}
 
     /**
      * <p> The name of the configuration template to use in deployment. If no
      * configuration template is found with this name, AWS Elastic Beanstalk returns an
-     * <code>InvalidParameterValue</code> error. </p> <p> Condition: You must specify
-     * either this parameter or a <code>SolutionStackName</code>, but not both. If you
-     * specify both, AWS Elastic Beanstalk returns an
-     * <code>InvalidParameterCombination</code> error. If you do not specify either,
-     * AWS Elastic Beanstalk returns a <code>MissingRequiredParameter</code> error.
-     * </p>
+     * <code>InvalidParameterValue</code> error. </p>
      */
     inline CreateEnvironmentRequest& WithTemplateName(Aws::String&& value) { SetTemplateName(value); return *this;}
 
     /**
      * <p> The name of the configuration template to use in deployment. If no
      * configuration template is found with this name, AWS Elastic Beanstalk returns an
-     * <code>InvalidParameterValue</code> error. </p> <p> Condition: You must specify
-     * either this parameter or a <code>SolutionStackName</code>, but not both. If you
-     * specify both, AWS Elastic Beanstalk returns an
-     * <code>InvalidParameterCombination</code> error. If you do not specify either,
-     * AWS Elastic Beanstalk returns a <code>MissingRequiredParameter</code> error.
-     * </p>
+     * <code>InvalidParameterValue</code> error. </p>
      */
     inline CreateEnvironmentRequest& WithTemplateName(const char* value) { SetTemplateName(value); return *this;}
 
     /**
      * <p>This is an alternative to specifying a template name. If specified, AWS
      * Elastic Beanstalk sets the configuration values to the default values associated
-     * with the specified solution stack.</p> <p> Condition: You must specify either
-     * this or a <code>TemplateName</code>, but not both. If you specify both, AWS
-     * Elastic Beanstalk returns an <code>InvalidParameterCombination</code> error. If
-     * you do not specify either, AWS Elastic Beanstalk returns a
-     * <code>MissingRequiredParameter</code> error. </p>
+     * with the specified solution stack.</p>
      */
     inline const Aws::String& GetSolutionStackName() const{ return m_solutionStackName; }
 
     /**
      * <p>This is an alternative to specifying a template name. If specified, AWS
      * Elastic Beanstalk sets the configuration values to the default values associated
-     * with the specified solution stack.</p> <p> Condition: You must specify either
-     * this or a <code>TemplateName</code>, but not both. If you specify both, AWS
-     * Elastic Beanstalk returns an <code>InvalidParameterCombination</code> error. If
-     * you do not specify either, AWS Elastic Beanstalk returns a
-     * <code>MissingRequiredParameter</code> error. </p>
+     * with the specified solution stack.</p>
      */
     inline void SetSolutionStackName(const Aws::String& value) { m_solutionStackNameHasBeenSet = true; m_solutionStackName = value; }
 
     /**
      * <p>This is an alternative to specifying a template name. If specified, AWS
      * Elastic Beanstalk sets the configuration values to the default values associated
-     * with the specified solution stack.</p> <p> Condition: You must specify either
-     * this or a <code>TemplateName</code>, but not both. If you specify both, AWS
-     * Elastic Beanstalk returns an <code>InvalidParameterCombination</code> error. If
-     * you do not specify either, AWS Elastic Beanstalk returns a
-     * <code>MissingRequiredParameter</code> error. </p>
+     * with the specified solution stack.</p>
      */
     inline void SetSolutionStackName(Aws::String&& value) { m_solutionStackNameHasBeenSet = true; m_solutionStackName = value; }
 
     /**
      * <p>This is an alternative to specifying a template name. If specified, AWS
      * Elastic Beanstalk sets the configuration values to the default values associated
-     * with the specified solution stack.</p> <p> Condition: You must specify either
-     * this or a <code>TemplateName</code>, but not both. If you specify both, AWS
-     * Elastic Beanstalk returns an <code>InvalidParameterCombination</code> error. If
-     * you do not specify either, AWS Elastic Beanstalk returns a
-     * <code>MissingRequiredParameter</code> error. </p>
+     * with the specified solution stack.</p>
      */
     inline void SetSolutionStackName(const char* value) { m_solutionStackNameHasBeenSet = true; m_solutionStackName.assign(value); }
 
     /**
      * <p>This is an alternative to specifying a template name. If specified, AWS
      * Elastic Beanstalk sets the configuration values to the default values associated
-     * with the specified solution stack.</p> <p> Condition: You must specify either
-     * this or a <code>TemplateName</code>, but not both. If you specify both, AWS
-     * Elastic Beanstalk returns an <code>InvalidParameterCombination</code> error. If
-     * you do not specify either, AWS Elastic Beanstalk returns a
-     * <code>MissingRequiredParameter</code> error. </p>
+     * with the specified solution stack.</p>
      */
     inline CreateEnvironmentRequest& WithSolutionStackName(const Aws::String& value) { SetSolutionStackName(value); return *this;}
 
     /**
      * <p>This is an alternative to specifying a template name. If specified, AWS
      * Elastic Beanstalk sets the configuration values to the default values associated
-     * with the specified solution stack.</p> <p> Condition: You must specify either
-     * this or a <code>TemplateName</code>, but not both. If you specify both, AWS
-     * Elastic Beanstalk returns an <code>InvalidParameterCombination</code> error. If
-     * you do not specify either, AWS Elastic Beanstalk returns a
-     * <code>MissingRequiredParameter</code> error. </p>
+     * with the specified solution stack.</p>
      */
     inline CreateEnvironmentRequest& WithSolutionStackName(Aws::String&& value) { SetSolutionStackName(value); return *this;}
 
     /**
      * <p>This is an alternative to specifying a template name. If specified, AWS
      * Elastic Beanstalk sets the configuration values to the default values associated
-     * with the specified solution stack.</p> <p> Condition: You must specify either
-     * this or a <code>TemplateName</code>, but not both. If you specify both, AWS
-     * Elastic Beanstalk returns an <code>InvalidParameterCombination</code> error. If
-     * you do not specify either, AWS Elastic Beanstalk returns a
-     * <code>MissingRequiredParameter</code> error. </p>
+     * with the specified solution stack.</p>
      */
     inline CreateEnvironmentRequest& WithSolutionStackName(const char* value) { SetSolutionStackName(value); return *this;}
+
+    /**
+     * <p>The ARN of the custom platform.</p>
+     */
+    inline const Aws::String& GetPlatformArn() const{ return m_platformArn; }
+
+    /**
+     * <p>The ARN of the custom platform.</p>
+     */
+    inline void SetPlatformArn(const Aws::String& value) { m_platformArnHasBeenSet = true; m_platformArn = value; }
+
+    /**
+     * <p>The ARN of the custom platform.</p>
+     */
+    inline void SetPlatformArn(Aws::String&& value) { m_platformArnHasBeenSet = true; m_platformArn = value; }
+
+    /**
+     * <p>The ARN of the custom platform.</p>
+     */
+    inline void SetPlatformArn(const char* value) { m_platformArnHasBeenSet = true; m_platformArn.assign(value); }
+
+    /**
+     * <p>The ARN of the custom platform.</p>
+     */
+    inline CreateEnvironmentRequest& WithPlatformArn(const Aws::String& value) { SetPlatformArn(value); return *this;}
+
+    /**
+     * <p>The ARN of the custom platform.</p>
+     */
+    inline CreateEnvironmentRequest& WithPlatformArn(Aws::String&& value) { SetPlatformArn(value); return *this;}
+
+    /**
+     * <p>The ARN of the custom platform.</p>
+     */
+    inline CreateEnvironmentRequest& WithPlatformArn(const char* value) { SetPlatformArn(value); return *this;}
 
     /**
      * <p>If specified, AWS Elastic Beanstalk sets the specified configuration options
@@ -723,6 +695,8 @@ namespace Model
     bool m_templateNameHasBeenSet;
     Aws::String m_solutionStackName;
     bool m_solutionStackNameHasBeenSet;
+    Aws::String m_platformArn;
+    bool m_platformArnHasBeenSet;
     Aws::Vector<ConfigurationOptionSetting> m_optionSettings;
     bool m_optionSettingsHasBeenSet;
     Aws::Vector<OptionSpecification> m_optionsToRemove;

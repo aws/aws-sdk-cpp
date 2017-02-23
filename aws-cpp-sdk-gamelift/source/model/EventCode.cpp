@@ -54,6 +54,7 @@ namespace Aws
         static const int SERVER_PROCESS_TERMINATED_UNHEALTHY_HASH = HashingUtils::HashString("SERVER_PROCESS_TERMINATED_UNHEALTHY");
         static const int SERVER_PROCESS_FORCE_TERMINATED_HASH = HashingUtils::HashString("SERVER_PROCESS_FORCE_TERMINATED");
         static const int SERVER_PROCESS_PROCESS_EXIT_TIMEOUT_HASH = HashingUtils::HashString("SERVER_PROCESS_PROCESS_EXIT_TIMEOUT");
+        static const int GAME_SESSION_ACTIVATION_TIMEOUT_HASH = HashingUtils::HashString("GAME_SESSION_ACTIVATION_TIMEOUT");
 
 
         EventCode GetEventCodeForName(const Aws::String& name)
@@ -159,6 +160,10 @@ namespace Aws
           {
             return EventCode::SERVER_PROCESS_PROCESS_EXIT_TIMEOUT;
           }
+          else if (hashCode == GAME_SESSION_ACTIVATION_TIMEOUT_HASH)
+          {
+            return EventCode::GAME_SESSION_ACTIVATION_TIMEOUT;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -223,6 +228,8 @@ namespace Aws
             return "SERVER_PROCESS_FORCE_TERMINATED";
           case EventCode::SERVER_PROCESS_PROCESS_EXIT_TIMEOUT:
             return "SERVER_PROCESS_PROCESS_EXIT_TIMEOUT";
+          case EventCode::GAME_SESSION_ACTIVATION_TIMEOUT:
+            return "GAME_SESSION_ACTIVATION_TIMEOUT";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

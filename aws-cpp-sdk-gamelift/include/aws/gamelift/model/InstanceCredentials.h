@@ -81,44 +81,51 @@ namespace Model
     inline InstanceCredentials& WithUserName(const char* value) { SetUserName(value); return *this;}
 
     /**
-     * <p>Secret string. For Windows instances, the secret is a password. For Linux
-     * instances, it is a private key.</p>
+     * <p>Secret string. For Windows instances, the secret is a password for use with
+     * Windows Remote Desktop. For Linux instances, it is a private key (which must be
+     * saved as a <code>.pem</code> file) for use with SSH.</p>
      */
     inline const Aws::String& GetSecret() const{ return m_secret; }
 
     /**
-     * <p>Secret string. For Windows instances, the secret is a password. For Linux
-     * instances, it is a private key.</p>
+     * <p>Secret string. For Windows instances, the secret is a password for use with
+     * Windows Remote Desktop. For Linux instances, it is a private key (which must be
+     * saved as a <code>.pem</code> file) for use with SSH.</p>
      */
     inline void SetSecret(const Aws::String& value) { m_secretHasBeenSet = true; m_secret = value; }
 
     /**
-     * <p>Secret string. For Windows instances, the secret is a password. For Linux
-     * instances, it is a private key.</p>
+     * <p>Secret string. For Windows instances, the secret is a password for use with
+     * Windows Remote Desktop. For Linux instances, it is a private key (which must be
+     * saved as a <code>.pem</code> file) for use with SSH.</p>
      */
     inline void SetSecret(Aws::String&& value) { m_secretHasBeenSet = true; m_secret = value; }
 
     /**
-     * <p>Secret string. For Windows instances, the secret is a password. For Linux
-     * instances, it is a private key.</p>
+     * <p>Secret string. For Windows instances, the secret is a password for use with
+     * Windows Remote Desktop. For Linux instances, it is a private key (which must be
+     * saved as a <code>.pem</code> file) for use with SSH.</p>
      */
     inline void SetSecret(const char* value) { m_secretHasBeenSet = true; m_secret.assign(value); }
 
     /**
-     * <p>Secret string. For Windows instances, the secret is a password. For Linux
-     * instances, it is a private key.</p>
+     * <p>Secret string. For Windows instances, the secret is a password for use with
+     * Windows Remote Desktop. For Linux instances, it is a private key (which must be
+     * saved as a <code>.pem</code> file) for use with SSH.</p>
      */
     inline InstanceCredentials& WithSecret(const Aws::String& value) { SetSecret(value); return *this;}
 
     /**
-     * <p>Secret string. For Windows instances, the secret is a password. For Linux
-     * instances, it is a private key.</p>
+     * <p>Secret string. For Windows instances, the secret is a password for use with
+     * Windows Remote Desktop. For Linux instances, it is a private key (which must be
+     * saved as a <code>.pem</code> file) for use with SSH.</p>
      */
     inline InstanceCredentials& WithSecret(Aws::String&& value) { SetSecret(value); return *this;}
 
     /**
-     * <p>Secret string. For Windows instances, the secret is a password. For Linux
-     * instances, it is a private key.</p>
+     * <p>Secret string. For Windows instances, the secret is a password for use with
+     * Windows Remote Desktop. For Linux instances, it is a private key (which must be
+     * saved as a <code>.pem</code> file) for use with SSH.</p>
      */
     inline InstanceCredentials& WithSecret(const char* value) { SetSecret(value); return *this;}
 

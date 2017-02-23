@@ -30,6 +30,7 @@ namespace Model
 Alias::Alias() : 
     m_aliasIdHasBeenSet(false),
     m_nameHasBeenSet(false),
+    m_aliasArnHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_routingStrategyHasBeenSet(false),
     m_creationTimeHasBeenSet(false),
@@ -40,6 +41,7 @@ Alias::Alias() :
 Alias::Alias(const JsonValue& jsonValue) : 
     m_aliasIdHasBeenSet(false),
     m_nameHasBeenSet(false),
+    m_aliasArnHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_routingStrategyHasBeenSet(false),
     m_creationTimeHasBeenSet(false),
@@ -62,6 +64,13 @@ Alias& Alias::operator =(const JsonValue& jsonValue)
     m_name = jsonValue.GetString("Name");
 
     m_nameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("AliasArn"))
+  {
+    m_aliasArn = jsonValue.GetString("AliasArn");
+
+    m_aliasArnHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("Description"))
@@ -108,6 +117,12 @@ JsonValue Alias::Jsonize() const
   if(m_nameHasBeenSet)
   {
    payload.WithString("Name", m_name);
+
+  }
+
+  if(m_aliasArnHasBeenSet)
+  {
+   payload.WithString("AliasArn", m_aliasArn);
 
   }
 

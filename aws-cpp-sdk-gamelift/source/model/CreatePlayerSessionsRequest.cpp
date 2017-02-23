@@ -23,7 +23,8 @@ using namespace Aws::Utils;
 
 CreatePlayerSessionsRequest::CreatePlayerSessionsRequest() : 
     m_gameSessionIdHasBeenSet(false),
-    m_playerIdsHasBeenSet(false)
+    m_playerIdsHasBeenSet(false),
+    m_playerDataMapHasBeenSet(false)
 {
 }
 
@@ -45,6 +46,17 @@ Aws::String CreatePlayerSessionsRequest::SerializePayload() const
      playerIdsJsonList[playerIdsIndex].AsString(m_playerIds[playerIdsIndex]);
    }
    payload.WithArray("PlayerIds", std::move(playerIdsJsonList));
+
+  }
+
+  if(m_playerDataMapHasBeenSet)
+  {
+   JsonValue playerDataMapJsonMap;
+   for(auto& playerDataMapItem : m_playerDataMap)
+   {
+     playerDataMapJsonMap.WithString(playerDataMapItem.first, playerDataMapItem.second);
+   }
+   payload.WithObject("PlayerDataMap", std::move(playerDataMapJsonMap));
 
   }
 

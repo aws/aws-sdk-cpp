@@ -249,6 +249,41 @@ namespace Model
     inline EventDescription& WithEnvironmentName(const char* value) { SetEnvironmentName(value); return *this;}
 
     /**
+     * <p>The ARN of the custom platform.</p>
+     */
+    inline const Aws::String& GetPlatformArn() const{ return m_platformArn; }
+
+    /**
+     * <p>The ARN of the custom platform.</p>
+     */
+    inline void SetPlatformArn(const Aws::String& value) { m_platformArnHasBeenSet = true; m_platformArn = value; }
+
+    /**
+     * <p>The ARN of the custom platform.</p>
+     */
+    inline void SetPlatformArn(Aws::String&& value) { m_platformArnHasBeenSet = true; m_platformArn = value; }
+
+    /**
+     * <p>The ARN of the custom platform.</p>
+     */
+    inline void SetPlatformArn(const char* value) { m_platformArnHasBeenSet = true; m_platformArn.assign(value); }
+
+    /**
+     * <p>The ARN of the custom platform.</p>
+     */
+    inline EventDescription& WithPlatformArn(const Aws::String& value) { SetPlatformArn(value); return *this;}
+
+    /**
+     * <p>The ARN of the custom platform.</p>
+     */
+    inline EventDescription& WithPlatformArn(Aws::String&& value) { SetPlatformArn(value); return *this;}
+
+    /**
+     * <p>The ARN of the custom platform.</p>
+     */
+    inline EventDescription& WithPlatformArn(const char* value) { SetPlatformArn(value); return *this;}
+
+    /**
      * <p>The web service request ID for the activity of this event.</p>
      */
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
@@ -321,6 +356,8 @@ namespace Model
     bool m_templateNameHasBeenSet;
     Aws::String m_environmentName;
     bool m_environmentNameHasBeenSet;
+    Aws::String m_platformArn;
+    bool m_platformArnHasBeenSet;
     Aws::String m_requestId;
     bool m_requestIdHasBeenSet;
     EventSeverity m_severity;

@@ -33,7 +33,11 @@ namespace Model
 {
 
   /**
-   * <p>Properties describing a fleet alias.</p><p><h3>See Also:</h3>   <a
+   * <p>Properties describing a fleet alias.</p> <p>Alias-related operations
+   * include:</p> <ul> <li> <p> <a>CreateAlias</a> </p> </li> <li> <p>
+   * <a>ListAliases</a> </p> </li> <li> <p> <a>DescribeAlias</a> </p> </li> <li> <p>
+   * <a>UpdateAlias</a> </p> </li> <li> <p> <a>DeleteAlias</a> </p> </li>
+   * </ul><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/Alias">AWS API
    * Reference</a></p>
    */
@@ -46,81 +50,116 @@ namespace Model
     Aws::Utils::Json::JsonValue Jsonize() const;
 
     /**
-     * <p>Unique identifier for a fleet alias.</p>
+     * <p>Unique identifier for an alias; alias IDs are unique within a region.</p>
      */
     inline const Aws::String& GetAliasId() const{ return m_aliasId; }
 
     /**
-     * <p>Unique identifier for a fleet alias.</p>
+     * <p>Unique identifier for an alias; alias IDs are unique within a region.</p>
      */
     inline void SetAliasId(const Aws::String& value) { m_aliasIdHasBeenSet = true; m_aliasId = value; }
 
     /**
-     * <p>Unique identifier for a fleet alias.</p>
+     * <p>Unique identifier for an alias; alias IDs are unique within a region.</p>
      */
     inline void SetAliasId(Aws::String&& value) { m_aliasIdHasBeenSet = true; m_aliasId = value; }
 
     /**
-     * <p>Unique identifier for a fleet alias.</p>
+     * <p>Unique identifier for an alias; alias IDs are unique within a region.</p>
      */
     inline void SetAliasId(const char* value) { m_aliasIdHasBeenSet = true; m_aliasId.assign(value); }
 
     /**
-     * <p>Unique identifier for a fleet alias.</p>
+     * <p>Unique identifier for an alias; alias IDs are unique within a region.</p>
      */
     inline Alias& WithAliasId(const Aws::String& value) { SetAliasId(value); return *this;}
 
     /**
-     * <p>Unique identifier for a fleet alias.</p>
+     * <p>Unique identifier for an alias; alias IDs are unique within a region.</p>
      */
     inline Alias& WithAliasId(Aws::String&& value) { SetAliasId(value); return *this;}
 
     /**
-     * <p>Unique identifier for a fleet alias.</p>
+     * <p>Unique identifier for an alias; alias IDs are unique within a region.</p>
      */
     inline Alias& WithAliasId(const char* value) { SetAliasId(value); return *this;}
 
     /**
-     * <p>Descriptive label associated with an alias. Alias names do not need to be
-     * unique.</p>
+     * <p>Descriptive label that is associated with an alias. Alias names do not need
+     * to be unique.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>Descriptive label associated with an alias. Alias names do not need to be
-     * unique.</p>
+     * <p>Descriptive label that is associated with an alias. Alias names do not need
+     * to be unique.</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>Descriptive label associated with an alias. Alias names do not need to be
-     * unique.</p>
+     * <p>Descriptive label that is associated with an alias. Alias names do not need
+     * to be unique.</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>Descriptive label associated with an alias. Alias names do not need to be
-     * unique.</p>
+     * <p>Descriptive label that is associated with an alias. Alias names do not need
+     * to be unique.</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>Descriptive label associated with an alias. Alias names do not need to be
-     * unique.</p>
+     * <p>Descriptive label that is associated with an alias. Alias names do not need
+     * to be unique.</p>
      */
     inline Alias& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>Descriptive label associated with an alias. Alias names do not need to be
-     * unique.</p>
+     * <p>Descriptive label that is associated with an alias. Alias names do not need
+     * to be unique.</p>
      */
     inline Alias& WithName(Aws::String&& value) { SetName(value); return *this;}
 
     /**
-     * <p>Descriptive label associated with an alias. Alias names do not need to be
-     * unique.</p>
+     * <p>Descriptive label that is associated with an alias. Alias names do not need
+     * to be unique.</p>
      */
     inline Alias& WithName(const char* value) { SetName(value); return *this;}
+
+    /**
+     * <p>Unique identifier for an alias; alias ARNs are unique across all regions.</p>
+     */
+    inline const Aws::String& GetAliasArn() const{ return m_aliasArn; }
+
+    /**
+     * <p>Unique identifier for an alias; alias ARNs are unique across all regions.</p>
+     */
+    inline void SetAliasArn(const Aws::String& value) { m_aliasArnHasBeenSet = true; m_aliasArn = value; }
+
+    /**
+     * <p>Unique identifier for an alias; alias ARNs are unique across all regions.</p>
+     */
+    inline void SetAliasArn(Aws::String&& value) { m_aliasArnHasBeenSet = true; m_aliasArn = value; }
+
+    /**
+     * <p>Unique identifier for an alias; alias ARNs are unique across all regions.</p>
+     */
+    inline void SetAliasArn(const char* value) { m_aliasArnHasBeenSet = true; m_aliasArn.assign(value); }
+
+    /**
+     * <p>Unique identifier for an alias; alias ARNs are unique across all regions.</p>
+     */
+    inline Alias& WithAliasArn(const Aws::String& value) { SetAliasArn(value); return *this;}
+
+    /**
+     * <p>Unique identifier for an alias; alias ARNs are unique across all regions.</p>
+     */
+    inline Alias& WithAliasArn(Aws::String&& value) { SetAliasArn(value); return *this;}
+
+    /**
+     * <p>Unique identifier for an alias; alias ARNs are unique across all regions.</p>
+     */
+    inline Alias& WithAliasArn(const char* value) { SetAliasArn(value); return *this;}
 
     /**
      * <p>Human-readable description of an alias.</p>
@@ -157,78 +196,93 @@ namespace Model
      */
     inline Alias& WithDescription(const char* value) { SetDescription(value); return *this;}
 
-    
+    /**
+     * <p>Alias configuration for the alias, including routing type and settings.</p>
+     */
     inline const RoutingStrategy& GetRoutingStrategy() const{ return m_routingStrategy; }
 
-    
+    /**
+     * <p>Alias configuration for the alias, including routing type and settings.</p>
+     */
     inline void SetRoutingStrategy(const RoutingStrategy& value) { m_routingStrategyHasBeenSet = true; m_routingStrategy = value; }
 
-    
+    /**
+     * <p>Alias configuration for the alias, including routing type and settings.</p>
+     */
     inline void SetRoutingStrategy(RoutingStrategy&& value) { m_routingStrategyHasBeenSet = true; m_routingStrategy = value; }
 
-    
+    /**
+     * <p>Alias configuration for the alias, including routing type and settings.</p>
+     */
     inline Alias& WithRoutingStrategy(const RoutingStrategy& value) { SetRoutingStrategy(value); return *this;}
 
-    
+    /**
+     * <p>Alias configuration for the alias, including routing type and settings.</p>
+     */
     inline Alias& WithRoutingStrategy(RoutingStrategy&& value) { SetRoutingStrategy(value); return *this;}
 
     /**
      * <p>Time stamp indicating when this data object was created. Format is a number
-     * expressed in Unix time as milliseconds (ex: "1469498468.057").</p>
+     * expressed in Unix time as milliseconds (for example "1469498468.057").</p>
      */
     inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
 
     /**
      * <p>Time stamp indicating when this data object was created. Format is a number
-     * expressed in Unix time as milliseconds (ex: "1469498468.057").</p>
+     * expressed in Unix time as milliseconds (for example "1469498468.057").</p>
      */
     inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
 
     /**
      * <p>Time stamp indicating when this data object was created. Format is a number
-     * expressed in Unix time as milliseconds (ex: "1469498468.057").</p>
+     * expressed in Unix time as milliseconds (for example "1469498468.057").</p>
      */
     inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
 
     /**
      * <p>Time stamp indicating when this data object was created. Format is a number
-     * expressed in Unix time as milliseconds (ex: "1469498468.057").</p>
+     * expressed in Unix time as milliseconds (for example "1469498468.057").</p>
      */
     inline Alias& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
 
     /**
      * <p>Time stamp indicating when this data object was created. Format is a number
-     * expressed in Unix time as milliseconds (ex: "1469498468.057").</p>
+     * expressed in Unix time as milliseconds (for example "1469498468.057").</p>
      */
     inline Alias& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(value); return *this;}
 
     /**
      * <p>Time stamp indicating when this data object was last modified. Format is a
-     * number expressed in Unix time as milliseconds (ex: "1469498468.057").</p>
+     * number expressed in Unix time as milliseconds (for example
+     * "1469498468.057").</p>
      */
     inline const Aws::Utils::DateTime& GetLastUpdatedTime() const{ return m_lastUpdatedTime; }
 
     /**
      * <p>Time stamp indicating when this data object was last modified. Format is a
-     * number expressed in Unix time as milliseconds (ex: "1469498468.057").</p>
+     * number expressed in Unix time as milliseconds (for example
+     * "1469498468.057").</p>
      */
     inline void SetLastUpdatedTime(const Aws::Utils::DateTime& value) { m_lastUpdatedTimeHasBeenSet = true; m_lastUpdatedTime = value; }
 
     /**
      * <p>Time stamp indicating when this data object was last modified. Format is a
-     * number expressed in Unix time as milliseconds (ex: "1469498468.057").</p>
+     * number expressed in Unix time as milliseconds (for example
+     * "1469498468.057").</p>
      */
     inline void SetLastUpdatedTime(Aws::Utils::DateTime&& value) { m_lastUpdatedTimeHasBeenSet = true; m_lastUpdatedTime = value; }
 
     /**
      * <p>Time stamp indicating when this data object was last modified. Format is a
-     * number expressed in Unix time as milliseconds (ex: "1469498468.057").</p>
+     * number expressed in Unix time as milliseconds (for example
+     * "1469498468.057").</p>
      */
     inline Alias& WithLastUpdatedTime(const Aws::Utils::DateTime& value) { SetLastUpdatedTime(value); return *this;}
 
     /**
      * <p>Time stamp indicating when this data object was last modified. Format is a
-     * number expressed in Unix time as milliseconds (ex: "1469498468.057").</p>
+     * number expressed in Unix time as milliseconds (for example
+     * "1469498468.057").</p>
      */
     inline Alias& WithLastUpdatedTime(Aws::Utils::DateTime&& value) { SetLastUpdatedTime(value); return *this;}
 
@@ -237,6 +291,8 @@ namespace Model
     bool m_aliasIdHasBeenSet;
     Aws::String m_name;
     bool m_nameHasBeenSet;
+    Aws::String m_aliasArn;
+    bool m_aliasArnHasBeenSet;
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
     RoutingStrategy m_routingStrategy;

@@ -44,44 +44,44 @@ namespace Model
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
     /**
-     * <p>Descriptive label associated with a fleet. Fleet names do not need to be
-     * unique.</p>
+     * <p>Descriptive label that is associated with a fleet. Fleet names do not need to
+     * be unique.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>Descriptive label associated with a fleet. Fleet names do not need to be
-     * unique.</p>
+     * <p>Descriptive label that is associated with a fleet. Fleet names do not need to
+     * be unique.</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>Descriptive label associated with a fleet. Fleet names do not need to be
-     * unique.</p>
+     * <p>Descriptive label that is associated with a fleet. Fleet names do not need to
+     * be unique.</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>Descriptive label associated with a fleet. Fleet names do not need to be
-     * unique.</p>
+     * <p>Descriptive label that is associated with a fleet. Fleet names do not need to
+     * be unique.</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>Descriptive label associated with a fleet. Fleet names do not need to be
-     * unique.</p>
+     * <p>Descriptive label that is associated with a fleet. Fleet names do not need to
+     * be unique.</p>
      */
     inline CreateFleetRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>Descriptive label associated with a fleet. Fleet names do not need to be
-     * unique.</p>
+     * <p>Descriptive label that is associated with a fleet. Fleet names do not need to
+     * be unique.</p>
      */
     inline CreateFleetRequest& WithName(Aws::String&& value) { SetName(value); return *this;}
 
     /**
-     * <p>Descriptive label associated with a fleet. Fleet names do not need to be
-     * unique.</p>
+     * <p>Descriptive label that is associated with a fleet. Fleet names do not need to
+     * be unique.</p>
      */
     inline CreateFleetRequest& WithName(const char* value) { SetName(value); return *this;}
 
@@ -121,51 +121,58 @@ namespace Model
     inline CreateFleetRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
 
     /**
-     * <p>Unique identifier of the build to be deployed on the new fleet. The build
-     * must have been successfully uploaded to GameLift and be in a <code>READY</code>
-     * status. This fleet setting cannot be changed once the fleet is created.</p>
+     * <p>Unique identifier for a build to be deployed on the new fleet. The build must
+     * have been successfully uploaded to Amazon GameLift and be in a
+     * <code>READY</code> status. This fleet setting cannot be changed once the fleet
+     * is created.</p>
      */
     inline const Aws::String& GetBuildId() const{ return m_buildId; }
 
     /**
-     * <p>Unique identifier of the build to be deployed on the new fleet. The build
-     * must have been successfully uploaded to GameLift and be in a <code>READY</code>
-     * status. This fleet setting cannot be changed once the fleet is created.</p>
+     * <p>Unique identifier for a build to be deployed on the new fleet. The build must
+     * have been successfully uploaded to Amazon GameLift and be in a
+     * <code>READY</code> status. This fleet setting cannot be changed once the fleet
+     * is created.</p>
      */
     inline void SetBuildId(const Aws::String& value) { m_buildIdHasBeenSet = true; m_buildId = value; }
 
     /**
-     * <p>Unique identifier of the build to be deployed on the new fleet. The build
-     * must have been successfully uploaded to GameLift and be in a <code>READY</code>
-     * status. This fleet setting cannot be changed once the fleet is created.</p>
+     * <p>Unique identifier for a build to be deployed on the new fleet. The build must
+     * have been successfully uploaded to Amazon GameLift and be in a
+     * <code>READY</code> status. This fleet setting cannot be changed once the fleet
+     * is created.</p>
      */
     inline void SetBuildId(Aws::String&& value) { m_buildIdHasBeenSet = true; m_buildId = value; }
 
     /**
-     * <p>Unique identifier of the build to be deployed on the new fleet. The build
-     * must have been successfully uploaded to GameLift and be in a <code>READY</code>
-     * status. This fleet setting cannot be changed once the fleet is created.</p>
+     * <p>Unique identifier for a build to be deployed on the new fleet. The build must
+     * have been successfully uploaded to Amazon GameLift and be in a
+     * <code>READY</code> status. This fleet setting cannot be changed once the fleet
+     * is created.</p>
      */
     inline void SetBuildId(const char* value) { m_buildIdHasBeenSet = true; m_buildId.assign(value); }
 
     /**
-     * <p>Unique identifier of the build to be deployed on the new fleet. The build
-     * must have been successfully uploaded to GameLift and be in a <code>READY</code>
-     * status. This fleet setting cannot be changed once the fleet is created.</p>
+     * <p>Unique identifier for a build to be deployed on the new fleet. The build must
+     * have been successfully uploaded to Amazon GameLift and be in a
+     * <code>READY</code> status. This fleet setting cannot be changed once the fleet
+     * is created.</p>
      */
     inline CreateFleetRequest& WithBuildId(const Aws::String& value) { SetBuildId(value); return *this;}
 
     /**
-     * <p>Unique identifier of the build to be deployed on the new fleet. The build
-     * must have been successfully uploaded to GameLift and be in a <code>READY</code>
-     * status. This fleet setting cannot be changed once the fleet is created.</p>
+     * <p>Unique identifier for a build to be deployed on the new fleet. The build must
+     * have been successfully uploaded to Amazon GameLift and be in a
+     * <code>READY</code> status. This fleet setting cannot be changed once the fleet
+     * is created.</p>
      */
     inline CreateFleetRequest& WithBuildId(Aws::String&& value) { SetBuildId(value); return *this;}
 
     /**
-     * <p>Unique identifier of the build to be deployed on the new fleet. The build
-     * must have been successfully uploaded to GameLift and be in a <code>READY</code>
-     * status. This fleet setting cannot be changed once the fleet is created.</p>
+     * <p>Unique identifier for a build to be deployed on the new fleet. The build must
+     * have been successfully uploaded to Amazon GameLift and be in a
+     * <code>READY</code> status. This fleet setting cannot be changed once the fleet
+     * is created.</p>
      */
     inline CreateFleetRequest& WithBuildId(const char* value) { SetBuildId(value); return *this;}
 
@@ -282,106 +289,90 @@ namespace Model
     inline CreateFleetRequest& WithServerLaunchParameters(const char* value) { SetServerLaunchParameters(value); return *this;}
 
     /**
-     * <p>Location of default log files. When a server process is shut down, Amazon
-     * GameLift captures and stores any log files in this location. These logs are in
-     * addition to game session logs; see more on game session logs in the <a
-     * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-api-server-code">Amazon
-     * GameLift Developer Guide</a>. If no default log path for a fleet is specified,
-     * GameLift will automatically upload logs stored on each instance at
-     * <code>C:\game\logs</code> (for Windows) or <code>/local/game/logs</code> (for
-     * Linux). Use the GameLift console to access stored logs. </p>
+     * <p>This parameter is no longer used. Instead, to specify where Amazon GameLift
+     * should store log files once a server process shuts down, use the Amazon GameLift
+     * server API <code>ProcessReady()</code> and specify one or more directory paths
+     * in <code>logParameters</code>. See more information in the <a
+     * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api-ref.html#gamelift-sdk-server-api-ref-dataypes-process">Server
+     * API Reference</a>. </p>
      */
     inline const Aws::Vector<Aws::String>& GetLogPaths() const{ return m_logPaths; }
 
     /**
-     * <p>Location of default log files. When a server process is shut down, Amazon
-     * GameLift captures and stores any log files in this location. These logs are in
-     * addition to game session logs; see more on game session logs in the <a
-     * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-api-server-code">Amazon
-     * GameLift Developer Guide</a>. If no default log path for a fleet is specified,
-     * GameLift will automatically upload logs stored on each instance at
-     * <code>C:\game\logs</code> (for Windows) or <code>/local/game/logs</code> (for
-     * Linux). Use the GameLift console to access stored logs. </p>
+     * <p>This parameter is no longer used. Instead, to specify where Amazon GameLift
+     * should store log files once a server process shuts down, use the Amazon GameLift
+     * server API <code>ProcessReady()</code> and specify one or more directory paths
+     * in <code>logParameters</code>. See more information in the <a
+     * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api-ref.html#gamelift-sdk-server-api-ref-dataypes-process">Server
+     * API Reference</a>. </p>
      */
     inline void SetLogPaths(const Aws::Vector<Aws::String>& value) { m_logPathsHasBeenSet = true; m_logPaths = value; }
 
     /**
-     * <p>Location of default log files. When a server process is shut down, Amazon
-     * GameLift captures and stores any log files in this location. These logs are in
-     * addition to game session logs; see more on game session logs in the <a
-     * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-api-server-code">Amazon
-     * GameLift Developer Guide</a>. If no default log path for a fleet is specified,
-     * GameLift will automatically upload logs stored on each instance at
-     * <code>C:\game\logs</code> (for Windows) or <code>/local/game/logs</code> (for
-     * Linux). Use the GameLift console to access stored logs. </p>
+     * <p>This parameter is no longer used. Instead, to specify where Amazon GameLift
+     * should store log files once a server process shuts down, use the Amazon GameLift
+     * server API <code>ProcessReady()</code> and specify one or more directory paths
+     * in <code>logParameters</code>. See more information in the <a
+     * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api-ref.html#gamelift-sdk-server-api-ref-dataypes-process">Server
+     * API Reference</a>. </p>
      */
     inline void SetLogPaths(Aws::Vector<Aws::String>&& value) { m_logPathsHasBeenSet = true; m_logPaths = value; }
 
     /**
-     * <p>Location of default log files. When a server process is shut down, Amazon
-     * GameLift captures and stores any log files in this location. These logs are in
-     * addition to game session logs; see more on game session logs in the <a
-     * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-api-server-code">Amazon
-     * GameLift Developer Guide</a>. If no default log path for a fleet is specified,
-     * GameLift will automatically upload logs stored on each instance at
-     * <code>C:\game\logs</code> (for Windows) or <code>/local/game/logs</code> (for
-     * Linux). Use the GameLift console to access stored logs. </p>
+     * <p>This parameter is no longer used. Instead, to specify where Amazon GameLift
+     * should store log files once a server process shuts down, use the Amazon GameLift
+     * server API <code>ProcessReady()</code> and specify one or more directory paths
+     * in <code>logParameters</code>. See more information in the <a
+     * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api-ref.html#gamelift-sdk-server-api-ref-dataypes-process">Server
+     * API Reference</a>. </p>
      */
     inline CreateFleetRequest& WithLogPaths(const Aws::Vector<Aws::String>& value) { SetLogPaths(value); return *this;}
 
     /**
-     * <p>Location of default log files. When a server process is shut down, Amazon
-     * GameLift captures and stores any log files in this location. These logs are in
-     * addition to game session logs; see more on game session logs in the <a
-     * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-api-server-code">Amazon
-     * GameLift Developer Guide</a>. If no default log path for a fleet is specified,
-     * GameLift will automatically upload logs stored on each instance at
-     * <code>C:\game\logs</code> (for Windows) or <code>/local/game/logs</code> (for
-     * Linux). Use the GameLift console to access stored logs. </p>
+     * <p>This parameter is no longer used. Instead, to specify where Amazon GameLift
+     * should store log files once a server process shuts down, use the Amazon GameLift
+     * server API <code>ProcessReady()</code> and specify one or more directory paths
+     * in <code>logParameters</code>. See more information in the <a
+     * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api-ref.html#gamelift-sdk-server-api-ref-dataypes-process">Server
+     * API Reference</a>. </p>
      */
     inline CreateFleetRequest& WithLogPaths(Aws::Vector<Aws::String>&& value) { SetLogPaths(value); return *this;}
 
     /**
-     * <p>Location of default log files. When a server process is shut down, Amazon
-     * GameLift captures and stores any log files in this location. These logs are in
-     * addition to game session logs; see more on game session logs in the <a
-     * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-api-server-code">Amazon
-     * GameLift Developer Guide</a>. If no default log path for a fleet is specified,
-     * GameLift will automatically upload logs stored on each instance at
-     * <code>C:\game\logs</code> (for Windows) or <code>/local/game/logs</code> (for
-     * Linux). Use the GameLift console to access stored logs. </p>
+     * <p>This parameter is no longer used. Instead, to specify where Amazon GameLift
+     * should store log files once a server process shuts down, use the Amazon GameLift
+     * server API <code>ProcessReady()</code> and specify one or more directory paths
+     * in <code>logParameters</code>. See more information in the <a
+     * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api-ref.html#gamelift-sdk-server-api-ref-dataypes-process">Server
+     * API Reference</a>. </p>
      */
     inline CreateFleetRequest& AddLogPaths(const Aws::String& value) { m_logPathsHasBeenSet = true; m_logPaths.push_back(value); return *this; }
 
     /**
-     * <p>Location of default log files. When a server process is shut down, Amazon
-     * GameLift captures and stores any log files in this location. These logs are in
-     * addition to game session logs; see more on game session logs in the <a
-     * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-api-server-code">Amazon
-     * GameLift Developer Guide</a>. If no default log path for a fleet is specified,
-     * GameLift will automatically upload logs stored on each instance at
-     * <code>C:\game\logs</code> (for Windows) or <code>/local/game/logs</code> (for
-     * Linux). Use the GameLift console to access stored logs. </p>
+     * <p>This parameter is no longer used. Instead, to specify where Amazon GameLift
+     * should store log files once a server process shuts down, use the Amazon GameLift
+     * server API <code>ProcessReady()</code> and specify one or more directory paths
+     * in <code>logParameters</code>. See more information in the <a
+     * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api-ref.html#gamelift-sdk-server-api-ref-dataypes-process">Server
+     * API Reference</a>. </p>
      */
     inline CreateFleetRequest& AddLogPaths(Aws::String&& value) { m_logPathsHasBeenSet = true; m_logPaths.push_back(value); return *this; }
 
     /**
-     * <p>Location of default log files. When a server process is shut down, Amazon
-     * GameLift captures and stores any log files in this location. These logs are in
-     * addition to game session logs; see more on game session logs in the <a
-     * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-api-server-code">Amazon
-     * GameLift Developer Guide</a>. If no default log path for a fleet is specified,
-     * GameLift will automatically upload logs stored on each instance at
-     * <code>C:\game\logs</code> (for Windows) or <code>/local/game/logs</code> (for
-     * Linux). Use the GameLift console to access stored logs. </p>
+     * <p>This parameter is no longer used. Instead, to specify where Amazon GameLift
+     * should store log files once a server process shuts down, use the Amazon GameLift
+     * server API <code>ProcessReady()</code> and specify one or more directory paths
+     * in <code>logParameters</code>. See more information in the <a
+     * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api-ref.html#gamelift-sdk-server-api-ref-dataypes-process">Server
+     * API Reference</a>. </p>
      */
     inline CreateFleetRequest& AddLogPaths(const char* value) { m_logPathsHasBeenSet = true; m_logPaths.push_back(value); return *this; }
 
     /**
      * <p>Name of an EC2 instance type that is supported in Amazon GameLift. A fleet
      * instance type determines the computing resources of each instance in the fleet,
-     * including CPU, memory, storage, and networking capacity. GameLift supports the
-     * following EC2 instance types. See <a
+     * including CPU, memory, storage, and networking capacity. Amazon GameLift
+     * supports the following EC2 instance types. See <a
      * href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance Types</a>
      * for detailed descriptions.</p>
      */
@@ -390,8 +381,8 @@ namespace Model
     /**
      * <p>Name of an EC2 instance type that is supported in Amazon GameLift. A fleet
      * instance type determines the computing resources of each instance in the fleet,
-     * including CPU, memory, storage, and networking capacity. GameLift supports the
-     * following EC2 instance types. See <a
+     * including CPU, memory, storage, and networking capacity. Amazon GameLift
+     * supports the following EC2 instance types. See <a
      * href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance Types</a>
      * for detailed descriptions.</p>
      */
@@ -400,8 +391,8 @@ namespace Model
     /**
      * <p>Name of an EC2 instance type that is supported in Amazon GameLift. A fleet
      * instance type determines the computing resources of each instance in the fleet,
-     * including CPU, memory, storage, and networking capacity. GameLift supports the
-     * following EC2 instance types. See <a
+     * including CPU, memory, storage, and networking capacity. Amazon GameLift
+     * supports the following EC2 instance types. See <a
      * href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance Types</a>
      * for detailed descriptions.</p>
      */
@@ -410,8 +401,8 @@ namespace Model
     /**
      * <p>Name of an EC2 instance type that is supported in Amazon GameLift. A fleet
      * instance type determines the computing resources of each instance in the fleet,
-     * including CPU, memory, storage, and networking capacity. GameLift supports the
-     * following EC2 instance types. See <a
+     * including CPU, memory, storage, and networking capacity. Amazon GameLift
+     * supports the following EC2 instance types. See <a
      * href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance Types</a>
      * for detailed descriptions.</p>
      */
@@ -420,8 +411,8 @@ namespace Model
     /**
      * <p>Name of an EC2 instance type that is supported in Amazon GameLift. A fleet
      * instance type determines the computing resources of each instance in the fleet,
-     * including CPU, memory, storage, and networking capacity. GameLift supports the
-     * following EC2 instance types. See <a
+     * including CPU, memory, storage, and networking capacity. Amazon GameLift
+     * supports the following EC2 instance types. See <a
      * href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance Types</a>
      * for detailed descriptions.</p>
      */
@@ -561,11 +552,11 @@ namespace Model
      * configurations, one for each type of server process to run on an instance. A
      * server process configuration specifies the location of the server executable,
      * launch parameters, and the number of concurrent processes with that
-     * configuration to maintain on each instance. A <code>CreateFleet</code> request
-     * must include a runtime configuration with at least one server process
-     * configuration; otherwise the request will fail with an invalid request
-     * exception. (This parameter replaces the parameters <code>ServerLaunchPath</code>
-     * and <code>ServerLaunchParameters</code>; requests that contain values for these
+     * configuration to maintain on each instance. A CreateFleet request must include a
+     * runtime configuration with at least one server process configuration; otherwise
+     * the request will fail with an invalid request exception. (This parameter
+     * replaces the parameters <code>ServerLaunchPath</code> and
+     * <code>ServerLaunchParameters</code>; requests that contain values for these
      * parameters instead of a runtime configuration will continue to work.) </p>
      */
     inline const RuntimeConfiguration& GetRuntimeConfiguration() const{ return m_runtimeConfiguration; }
@@ -576,11 +567,11 @@ namespace Model
      * configurations, one for each type of server process to run on an instance. A
      * server process configuration specifies the location of the server executable,
      * launch parameters, and the number of concurrent processes with that
-     * configuration to maintain on each instance. A <code>CreateFleet</code> request
-     * must include a runtime configuration with at least one server process
-     * configuration; otherwise the request will fail with an invalid request
-     * exception. (This parameter replaces the parameters <code>ServerLaunchPath</code>
-     * and <code>ServerLaunchParameters</code>; requests that contain values for these
+     * configuration to maintain on each instance. A CreateFleet request must include a
+     * runtime configuration with at least one server process configuration; otherwise
+     * the request will fail with an invalid request exception. (This parameter
+     * replaces the parameters <code>ServerLaunchPath</code> and
+     * <code>ServerLaunchParameters</code>; requests that contain values for these
      * parameters instead of a runtime configuration will continue to work.) </p>
      */
     inline void SetRuntimeConfiguration(const RuntimeConfiguration& value) { m_runtimeConfigurationHasBeenSet = true; m_runtimeConfiguration = value; }
@@ -591,11 +582,11 @@ namespace Model
      * configurations, one for each type of server process to run on an instance. A
      * server process configuration specifies the location of the server executable,
      * launch parameters, and the number of concurrent processes with that
-     * configuration to maintain on each instance. A <code>CreateFleet</code> request
-     * must include a runtime configuration with at least one server process
-     * configuration; otherwise the request will fail with an invalid request
-     * exception. (This parameter replaces the parameters <code>ServerLaunchPath</code>
-     * and <code>ServerLaunchParameters</code>; requests that contain values for these
+     * configuration to maintain on each instance. A CreateFleet request must include a
+     * runtime configuration with at least one server process configuration; otherwise
+     * the request will fail with an invalid request exception. (This parameter
+     * replaces the parameters <code>ServerLaunchPath</code> and
+     * <code>ServerLaunchParameters</code>; requests that contain values for these
      * parameters instead of a runtime configuration will continue to work.) </p>
      */
     inline void SetRuntimeConfiguration(RuntimeConfiguration&& value) { m_runtimeConfigurationHasBeenSet = true; m_runtimeConfiguration = value; }
@@ -606,11 +597,11 @@ namespace Model
      * configurations, one for each type of server process to run on an instance. A
      * server process configuration specifies the location of the server executable,
      * launch parameters, and the number of concurrent processes with that
-     * configuration to maintain on each instance. A <code>CreateFleet</code> request
-     * must include a runtime configuration with at least one server process
-     * configuration; otherwise the request will fail with an invalid request
-     * exception. (This parameter replaces the parameters <code>ServerLaunchPath</code>
-     * and <code>ServerLaunchParameters</code>; requests that contain values for these
+     * configuration to maintain on each instance. A CreateFleet request must include a
+     * runtime configuration with at least one server process configuration; otherwise
+     * the request will fail with an invalid request exception. (This parameter
+     * replaces the parameters <code>ServerLaunchPath</code> and
+     * <code>ServerLaunchParameters</code>; requests that contain values for these
      * parameters instead of a runtime configuration will continue to work.) </p>
      */
     inline CreateFleetRequest& WithRuntimeConfiguration(const RuntimeConfiguration& value) { SetRuntimeConfiguration(value); return *this;}
@@ -621,11 +612,11 @@ namespace Model
      * configurations, one for each type of server process to run on an instance. A
      * server process configuration specifies the location of the server executable,
      * launch parameters, and the number of concurrent processes with that
-     * configuration to maintain on each instance. A <code>CreateFleet</code> request
-     * must include a runtime configuration with at least one server process
-     * configuration; otherwise the request will fail with an invalid request
-     * exception. (This parameter replaces the parameters <code>ServerLaunchPath</code>
-     * and <code>ServerLaunchParameters</code>; requests that contain values for these
+     * configuration to maintain on each instance. A CreateFleet request must include a
+     * runtime configuration with at least one server process configuration; otherwise
+     * the request will fail with an invalid request exception. (This parameter
+     * replaces the parameters <code>ServerLaunchPath</code> and
+     * <code>ServerLaunchParameters</code>; requests that contain values for these
      * parameters instead of a runtime configuration will continue to work.) </p>
      */
     inline CreateFleetRequest& WithRuntimeConfiguration(RuntimeConfiguration&& value) { SetRuntimeConfiguration(value); return *this;}

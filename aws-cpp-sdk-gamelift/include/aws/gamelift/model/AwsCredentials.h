@@ -31,10 +31,10 @@ namespace Model
 {
 
   /**
-   * <p>AWS access credentials required to upload game build files to Amazon
-   * GameLift. These credentials are generated with <a>CreateBuild</a>, and are valid
-   * for a limited time. If they expire before you upload your game build, get a new
-   * set by calling <a>RequestUploadCredentials</a>.</p><p><h3>See Also:</h3>   <a
+   * <p>AWS access credentials sometimes used for uploading game build files to
+   * Amazon GameLift. They are valid for a limited time. If they expire before you
+   * upload your game build, get a new set by calling
+   * <a>RequestUploadCredentials</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/AwsCredentials">AWS
    * API Reference</a></p>
    */

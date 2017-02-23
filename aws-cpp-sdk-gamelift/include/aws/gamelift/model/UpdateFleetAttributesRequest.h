@@ -40,86 +40,79 @@ namespace Model
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
     /**
-     * <p>Unique identifier for the fleet you want to update attribute metadata
-     * for.</p>
+     * <p>Unique identifier for a fleet to update attribute metadata for.</p>
      */
     inline const Aws::String& GetFleetId() const{ return m_fleetId; }
 
     /**
-     * <p>Unique identifier for the fleet you want to update attribute metadata
-     * for.</p>
+     * <p>Unique identifier for a fleet to update attribute metadata for.</p>
      */
     inline void SetFleetId(const Aws::String& value) { m_fleetIdHasBeenSet = true; m_fleetId = value; }
 
     /**
-     * <p>Unique identifier for the fleet you want to update attribute metadata
-     * for.</p>
+     * <p>Unique identifier for a fleet to update attribute metadata for.</p>
      */
     inline void SetFleetId(Aws::String&& value) { m_fleetIdHasBeenSet = true; m_fleetId = value; }
 
     /**
-     * <p>Unique identifier for the fleet you want to update attribute metadata
-     * for.</p>
+     * <p>Unique identifier for a fleet to update attribute metadata for.</p>
      */
     inline void SetFleetId(const char* value) { m_fleetIdHasBeenSet = true; m_fleetId.assign(value); }
 
     /**
-     * <p>Unique identifier for the fleet you want to update attribute metadata
-     * for.</p>
+     * <p>Unique identifier for a fleet to update attribute metadata for.</p>
      */
     inline UpdateFleetAttributesRequest& WithFleetId(const Aws::String& value) { SetFleetId(value); return *this;}
 
     /**
-     * <p>Unique identifier for the fleet you want to update attribute metadata
-     * for.</p>
+     * <p>Unique identifier for a fleet to update attribute metadata for.</p>
      */
     inline UpdateFleetAttributesRequest& WithFleetId(Aws::String&& value) { SetFleetId(value); return *this;}
 
     /**
-     * <p>Unique identifier for the fleet you want to update attribute metadata
-     * for.</p>
+     * <p>Unique identifier for a fleet to update attribute metadata for.</p>
      */
     inline UpdateFleetAttributesRequest& WithFleetId(const char* value) { SetFleetId(value); return *this;}
 
     /**
-     * <p>Descriptive label associated with a fleet. Fleet names do not need to be
-     * unique.</p>
+     * <p>Descriptive label that is associated with a fleet. Fleet names do not need to
+     * be unique.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>Descriptive label associated with a fleet. Fleet names do not need to be
-     * unique.</p>
+     * <p>Descriptive label that is associated with a fleet. Fleet names do not need to
+     * be unique.</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>Descriptive label associated with a fleet. Fleet names do not need to be
-     * unique.</p>
+     * <p>Descriptive label that is associated with a fleet. Fleet names do not need to
+     * be unique.</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>Descriptive label associated with a fleet. Fleet names do not need to be
-     * unique.</p>
+     * <p>Descriptive label that is associated with a fleet. Fleet names do not need to
+     * be unique.</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>Descriptive label associated with a fleet. Fleet names do not need to be
-     * unique.</p>
+     * <p>Descriptive label that is associated with a fleet. Fleet names do not need to
+     * be unique.</p>
      */
     inline UpdateFleetAttributesRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>Descriptive label associated with a fleet. Fleet names do not need to be
-     * unique.</p>
+     * <p>Descriptive label that is associated with a fleet. Fleet names do not need to
+     * be unique.</p>
      */
     inline UpdateFleetAttributesRequest& WithName(Aws::String&& value) { SetName(value); return *this;}
 
     /**
-     * <p>Descriptive label associated with a fleet. Fleet names do not need to be
-     * unique.</p>
+     * <p>Descriptive label that is associated with a fleet. Fleet names do not need to
+     * be unique.</p>
      */
     inline UpdateFleetAttributesRequest& WithName(const char* value) { SetName(value); return *this;}
 

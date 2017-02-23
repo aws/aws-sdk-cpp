@@ -84,6 +84,41 @@ namespace Model
     inline DescribeConfigurationOptionsResult& WithSolutionStackName(const char* value) { SetSolutionStackName(value); return *this;}
 
     /**
+     * <p>The ARN of the custom platform.</p>
+     */
+    inline const Aws::String& GetPlatformArn() const{ return m_platformArn; }
+
+    /**
+     * <p>The ARN of the custom platform.</p>
+     */
+    inline void SetPlatformArn(const Aws::String& value) { m_platformArn = value; }
+
+    /**
+     * <p>The ARN of the custom platform.</p>
+     */
+    inline void SetPlatformArn(Aws::String&& value) { m_platformArn = value; }
+
+    /**
+     * <p>The ARN of the custom platform.</p>
+     */
+    inline void SetPlatformArn(const char* value) { m_platformArn.assign(value); }
+
+    /**
+     * <p>The ARN of the custom platform.</p>
+     */
+    inline DescribeConfigurationOptionsResult& WithPlatformArn(const Aws::String& value) { SetPlatformArn(value); return *this;}
+
+    /**
+     * <p>The ARN of the custom platform.</p>
+     */
+    inline DescribeConfigurationOptionsResult& WithPlatformArn(Aws::String&& value) { SetPlatformArn(value); return *this;}
+
+    /**
+     * <p>The ARN of the custom platform.</p>
+     */
+    inline DescribeConfigurationOptionsResult& WithPlatformArn(const char* value) { SetPlatformArn(value); return *this;}
+
+    /**
      * <p> A list of <a>ConfigurationOptionDescription</a>. </p>
      */
     inline const Aws::Vector<ConfigurationOptionDescription>& GetOptions() const{ return m_options; }
@@ -135,6 +170,7 @@ namespace Model
 
   private:
     Aws::String m_solutionStackName;
+    Aws::String m_platformArn;
     Aws::Vector<ConfigurationOptionDescription> m_options;
     ResponseMetadata m_responseMetadata;
   };

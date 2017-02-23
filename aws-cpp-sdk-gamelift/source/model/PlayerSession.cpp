@@ -38,7 +38,8 @@ PlayerSession::PlayerSession() :
     m_statusHasBeenSet(false),
     m_ipAddressHasBeenSet(false),
     m_port(0),
-    m_portHasBeenSet(false)
+    m_portHasBeenSet(false),
+    m_playerDataHasBeenSet(false)
 {
 }
 
@@ -53,7 +54,8 @@ PlayerSession::PlayerSession(const JsonValue& jsonValue) :
     m_statusHasBeenSet(false),
     m_ipAddressHasBeenSet(false),
     m_port(0),
-    m_portHasBeenSet(false)
+    m_portHasBeenSet(false),
+    m_playerDataHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -123,6 +125,13 @@ PlayerSession& PlayerSession::operator =(const JsonValue& jsonValue)
     m_portHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("PlayerData"))
+  {
+    m_playerData = jsonValue.GetString("PlayerData");
+
+    m_playerDataHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -178,6 +187,12 @@ JsonValue PlayerSession::Jsonize() const
   if(m_portHasBeenSet)
   {
    payload.WithInteger("Port", m_port);
+
+  }
+
+  if(m_playerDataHasBeenSet)
+  {
+   payload.WithString("PlayerData", m_playerData);
 
   }
 

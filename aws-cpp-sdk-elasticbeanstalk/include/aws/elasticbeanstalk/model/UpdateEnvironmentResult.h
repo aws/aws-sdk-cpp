@@ -236,6 +236,41 @@ namespace Model
     inline UpdateEnvironmentResult& WithSolutionStackName(const char* value) { SetSolutionStackName(value); return *this;}
 
     /**
+     * <p>The ARN of the custom platform.</p>
+     */
+    inline const Aws::String& GetPlatformArn() const{ return m_platformArn; }
+
+    /**
+     * <p>The ARN of the custom platform.</p>
+     */
+    inline void SetPlatformArn(const Aws::String& value) { m_platformArn = value; }
+
+    /**
+     * <p>The ARN of the custom platform.</p>
+     */
+    inline void SetPlatformArn(Aws::String&& value) { m_platformArn = value; }
+
+    /**
+     * <p>The ARN of the custom platform.</p>
+     */
+    inline void SetPlatformArn(const char* value) { m_platformArn.assign(value); }
+
+    /**
+     * <p>The ARN of the custom platform.</p>
+     */
+    inline UpdateEnvironmentResult& WithPlatformArn(const Aws::String& value) { SetPlatformArn(value); return *this;}
+
+    /**
+     * <p>The ARN of the custom platform.</p>
+     */
+    inline UpdateEnvironmentResult& WithPlatformArn(Aws::String&& value) { SetPlatformArn(value); return *this;}
+
+    /**
+     * <p>The ARN of the custom platform.</p>
+     */
+    inline UpdateEnvironmentResult& WithPlatformArn(const char* value) { SetPlatformArn(value); return *this;}
+
+    /**
      * <p>The name of the configuration template used to originally launch this
      * environment.</p>
      */
@@ -749,6 +784,7 @@ namespace Model
     Aws::String m_applicationName;
     Aws::String m_versionLabel;
     Aws::String m_solutionStackName;
+    Aws::String m_platformArn;
     Aws::String m_templateName;
     Aws::String m_description;
     Aws::String m_endpointURL;

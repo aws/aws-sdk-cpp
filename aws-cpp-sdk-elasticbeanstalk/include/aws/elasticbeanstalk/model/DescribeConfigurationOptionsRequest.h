@@ -27,7 +27,7 @@ namespace Model
 {
 
   /**
-   * <p>Result message containig a list of application version
+   * <p>Result message containing a list of application version
    * descriptions.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeConfigurationOptionsMessage">AWS
    * API Reference</a></p>
@@ -214,6 +214,41 @@ namespace Model
     inline DescribeConfigurationOptionsRequest& WithSolutionStackName(const char* value) { SetSolutionStackName(value); return *this;}
 
     /**
+     * <p>The ARN of the custom platform.</p>
+     */
+    inline const Aws::String& GetPlatformArn() const{ return m_platformArn; }
+
+    /**
+     * <p>The ARN of the custom platform.</p>
+     */
+    inline void SetPlatformArn(const Aws::String& value) { m_platformArnHasBeenSet = true; m_platformArn = value; }
+
+    /**
+     * <p>The ARN of the custom platform.</p>
+     */
+    inline void SetPlatformArn(Aws::String&& value) { m_platformArnHasBeenSet = true; m_platformArn = value; }
+
+    /**
+     * <p>The ARN of the custom platform.</p>
+     */
+    inline void SetPlatformArn(const char* value) { m_platformArnHasBeenSet = true; m_platformArn.assign(value); }
+
+    /**
+     * <p>The ARN of the custom platform.</p>
+     */
+    inline DescribeConfigurationOptionsRequest& WithPlatformArn(const Aws::String& value) { SetPlatformArn(value); return *this;}
+
+    /**
+     * <p>The ARN of the custom platform.</p>
+     */
+    inline DescribeConfigurationOptionsRequest& WithPlatformArn(Aws::String&& value) { SetPlatformArn(value); return *this;}
+
+    /**
+     * <p>The ARN of the custom platform.</p>
+     */
+    inline DescribeConfigurationOptionsRequest& WithPlatformArn(const char* value) { SetPlatformArn(value); return *this;}
+
+    /**
      * <p>If specified, restricts the descriptions to only the specified options.</p>
      */
     inline const Aws::Vector<OptionSpecification>& GetOptions() const{ return m_options; }
@@ -257,6 +292,8 @@ namespace Model
     bool m_environmentNameHasBeenSet;
     Aws::String m_solutionStackName;
     bool m_solutionStackNameHasBeenSet;
+    Aws::String m_platformArn;
+    bool m_platformArnHasBeenSet;
     Aws::Vector<OptionSpecification> m_options;
     bool m_optionsHasBeenSet;
   };

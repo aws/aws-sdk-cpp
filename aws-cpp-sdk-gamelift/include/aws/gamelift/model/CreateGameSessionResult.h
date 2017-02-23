@@ -46,27 +46,27 @@ namespace Model
     CreateGameSessionResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
     /**
-     * <p>Object containing the newly created game session record.</p>
+     * <p>Object that describes the newly created game session record.</p>
      */
     inline const GameSession& GetGameSession() const{ return m_gameSession; }
 
     /**
-     * <p>Object containing the newly created game session record.</p>
+     * <p>Object that describes the newly created game session record.</p>
      */
     inline void SetGameSession(const GameSession& value) { m_gameSession = value; }
 
     /**
-     * <p>Object containing the newly created game session record.</p>
+     * <p>Object that describes the newly created game session record.</p>
      */
     inline void SetGameSession(GameSession&& value) { m_gameSession = value; }
 
     /**
-     * <p>Object containing the newly created game session record.</p>
+     * <p>Object that describes the newly created game session record.</p>
      */
     inline CreateGameSessionResult& WithGameSession(const GameSession& value) { SetGameSession(value); return *this;}
 
     /**
-     * <p>Object containing the newly created game session record.</p>
+     * <p>Object that describes the newly created game session record.</p>
      */
     inline CreateGameSessionResult& WithGameSession(GameSession&& value) { SetGameSession(value); return *this;}
 

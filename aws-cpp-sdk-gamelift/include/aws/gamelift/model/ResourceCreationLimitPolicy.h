@@ -37,7 +37,7 @@ namespace Model
    * game sessions within a specified time period".</p> <p>The policy is evaluated
    * when a player tries to create a new game session. For example, with a policy of
    * 10 new game sessions and a time period of 60 minutes, on receiving a
-   * <code>CreateGameSession</code> request, GameLift checks that the player
+   * <code>CreateGameSession</code> request, Amazon GameLift checks that the player
    * (identified by <code>CreatorId</code>) has created fewer than 10 game sessions
    * in the past 60 minutes.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/ResourceCreationLimitPolicy">AWS

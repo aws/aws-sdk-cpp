@@ -47,44 +47,44 @@ namespace Model
     DescribeEC2InstanceLimitsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
     /**
-     * <p>Object containing the maximum number of instances for the specified instance
-     * type.</p>
+     * <p>Object that contains the maximum number of instances for the specified
+     * instance type.</p>
      */
     inline const Aws::Vector<EC2InstanceLimit>& GetEC2InstanceLimits() const{ return m_eC2InstanceLimits; }
 
     /**
-     * <p>Object containing the maximum number of instances for the specified instance
-     * type.</p>
+     * <p>Object that contains the maximum number of instances for the specified
+     * instance type.</p>
      */
     inline void SetEC2InstanceLimits(const Aws::Vector<EC2InstanceLimit>& value) { m_eC2InstanceLimits = value; }
 
     /**
-     * <p>Object containing the maximum number of instances for the specified instance
-     * type.</p>
+     * <p>Object that contains the maximum number of instances for the specified
+     * instance type.</p>
      */
     inline void SetEC2InstanceLimits(Aws::Vector<EC2InstanceLimit>&& value) { m_eC2InstanceLimits = value; }
 
     /**
-     * <p>Object containing the maximum number of instances for the specified instance
-     * type.</p>
+     * <p>Object that contains the maximum number of instances for the specified
+     * instance type.</p>
      */
     inline DescribeEC2InstanceLimitsResult& WithEC2InstanceLimits(const Aws::Vector<EC2InstanceLimit>& value) { SetEC2InstanceLimits(value); return *this;}
 
     /**
-     * <p>Object containing the maximum number of instances for the specified instance
-     * type.</p>
+     * <p>Object that contains the maximum number of instances for the specified
+     * instance type.</p>
      */
     inline DescribeEC2InstanceLimitsResult& WithEC2InstanceLimits(Aws::Vector<EC2InstanceLimit>&& value) { SetEC2InstanceLimits(value); return *this;}
 
     /**
-     * <p>Object containing the maximum number of instances for the specified instance
-     * type.</p>
+     * <p>Object that contains the maximum number of instances for the specified
+     * instance type.</p>
      */
     inline DescribeEC2InstanceLimitsResult& AddEC2InstanceLimits(const EC2InstanceLimit& value) { m_eC2InstanceLimits.push_back(value); return *this; }
 
     /**
-     * <p>Object containing the maximum number of instances for the specified instance
-     * type.</p>
+     * <p>Object that contains the maximum number of instances for the specified
+     * instance type.</p>
      */
     inline DescribeEC2InstanceLimitsResult& AddEC2InstanceLimits(EC2InstanceLimit&& value) { m_eC2InstanceLimits.push_back(value); return *this; }
 

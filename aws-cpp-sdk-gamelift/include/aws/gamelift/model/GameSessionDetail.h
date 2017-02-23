@@ -32,7 +32,7 @@ namespace Model
 {
 
   /**
-   * <p>A game session's properties and the protection policy currently in
+   * <p>A game session's properties plus the protection policy currently in
    * force.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/GameSessionDetail">AWS
    * API Reference</a></p>
@@ -45,19 +45,29 @@ namespace Model
     GameSessionDetail& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
-    
+    /**
+     * <p>Object that describes a game session.</p>
+     */
     inline const GameSession& GetGameSession() const{ return m_gameSession; }
 
-    
+    /**
+     * <p>Object that describes a game session.</p>
+     */
     inline void SetGameSession(const GameSession& value) { m_gameSessionHasBeenSet = true; m_gameSession = value; }
 
-    
+    /**
+     * <p>Object that describes a game session.</p>
+     */
     inline void SetGameSession(GameSession&& value) { m_gameSessionHasBeenSet = true; m_gameSession = value; }
 
-    
+    /**
+     * <p>Object that describes a game session.</p>
+     */
     inline GameSessionDetail& WithGameSession(const GameSession& value) { SetGameSession(value); return *this;}
 
-    
+    /**
+     * <p>Object that describes a game session.</p>
+     */
     inline GameSessionDetail& WithGameSession(GameSession&& value) { SetGameSession(value); return *this;}
 
     /**
