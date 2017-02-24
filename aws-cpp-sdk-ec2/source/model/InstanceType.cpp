@@ -72,6 +72,12 @@ namespace Aws
         static const int i2_2xlarge_HASH = HashingUtils::HashString("i2.2xlarge");
         static const int i2_4xlarge_HASH = HashingUtils::HashString("i2.4xlarge");
         static const int i2_8xlarge_HASH = HashingUtils::HashString("i2.8xlarge");
+        static const int i3_large_HASH = HashingUtils::HashString("i3.large");
+        static const int i3_xlarge_HASH = HashingUtils::HashString("i3.xlarge");
+        static const int i3_2xlarge_HASH = HashingUtils::HashString("i3.2xlarge");
+        static const int i3_4xlarge_HASH = HashingUtils::HashString("i3.4xlarge");
+        static const int i3_8xlarge_HASH = HashingUtils::HashString("i3.8xlarge");
+        static const int i3_16xlarge_HASH = HashingUtils::HashString("i3.16xlarge");
         static const int hi1_4xlarge_HASH = HashingUtils::HashString("hi1.4xlarge");
         static const int hs1_8xlarge_HASH = HashingUtils::HashString("hs1.8xlarge");
         static const int c1_medium_HASH = HashingUtils::HashString("c1.medium");
@@ -276,6 +282,30 @@ namespace Aws
           else if (hashCode == i2_8xlarge_HASH)
           {
             return InstanceType::i2_8xlarge;
+          }
+          else if (hashCode == i3_large_HASH)
+          {
+            return InstanceType::i3_large;
+          }
+          else if (hashCode == i3_xlarge_HASH)
+          {
+            return InstanceType::i3_xlarge;
+          }
+          else if (hashCode == i3_2xlarge_HASH)
+          {
+            return InstanceType::i3_2xlarge;
+          }
+          else if (hashCode == i3_4xlarge_HASH)
+          {
+            return InstanceType::i3_4xlarge;
+          }
+          else if (hashCode == i3_8xlarge_HASH)
+          {
+            return InstanceType::i3_8xlarge;
+          }
+          else if (hashCode == i3_16xlarge_HASH)
+          {
+            return InstanceType::i3_16xlarge;
           }
           else if (hashCode == hi1_4xlarge_HASH)
           {
@@ -489,6 +519,18 @@ namespace Aws
             return "i2.4xlarge";
           case InstanceType::i2_8xlarge:
             return "i2.8xlarge";
+          case InstanceType::i3_large:
+            return "i3.large";
+          case InstanceType::i3_xlarge:
+            return "i3.xlarge";
+          case InstanceType::i3_2xlarge:
+            return "i3.2xlarge";
+          case InstanceType::i3_4xlarge:
+            return "i3.4xlarge";
+          case InstanceType::i3_8xlarge:
+            return "i3.8xlarge";
+          case InstanceType::i3_16xlarge:
+            return "i3.16xlarge";
           case InstanceType::hi1_4xlarge:
             return "hi1.4xlarge";
           case InstanceType::hs1_8xlarge:
