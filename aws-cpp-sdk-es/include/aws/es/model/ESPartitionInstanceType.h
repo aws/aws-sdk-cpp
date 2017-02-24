@@ -43,7 +43,22 @@ namespace Model
     r3_4xlarge_elasticsearch,
     r3_8xlarge_elasticsearch,
     i2_xlarge_elasticsearch,
-    i2_2xlarge_elasticsearch
+    i2_2xlarge_elasticsearch,
+    d2_xlarge_elasticsearch,
+    d2_2xlarge_elasticsearch,
+    d2_4xlarge_elasticsearch,
+    d2_8xlarge_elasticsearch,
+    c4_large_elasticsearch,
+    c4_xlarge_elasticsearch,
+    c4_2xlarge_elasticsearch,
+    c4_4xlarge_elasticsearch,
+    c4_8xlarge_elasticsearch,
+    r4_large_elasticsearch,
+    r4_xlarge_elasticsearch,
+    r4_2xlarge_elasticsearch,
+    r4_4xlarge_elasticsearch,
+    r4_8xlarge_elasticsearch,
+    r4_16xlarge_elasticsearch
   };
 
 namespace ESPartitionInstanceTypeMapper
