@@ -6085,9 +6085,16 @@ namespace Model
         /**
          * <p>Uploads a server certificate entity for the AWS account. The server
          * certificate entity includes a public key certificate, a private key, and an
-         * optional certificate chain, which should all be PEM-encoded.</p> <p>For more
-         * information about working with server certificates, including a list of AWS
-         * services that can use the server certificates that you manage with IAM, go to <a
+         * optional certificate chain, which should all be PEM-encoded.</p> <p>We recommend
+         * that you use <a href="https://aws.amazon.com/certificate-manager/">AWS
+         * Certificate Manager</a> to provision, manage, and deploy your server
+         * certificates. With ACM you can request a certificate, deploy it to AWS
+         * resources, and let ACM handle certificate renewals for you. Certificates
+         * provided by ACM are free. For more information about using ACM, see the <a
+         * href="http://docs.aws.amazon.com/acm/latest/userguide/">AWS Certificate Manager
+         * User Guide</a>.</p> <p>For more information about working with server
+         * certificates, including a list of AWS services that can use the server
+         * certificates that you manage with IAM, go to <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_server-certs.html">Working
          * with Server Certificates</a> in the <i>IAM User Guide</i>.</p> <p>For
          * information about the number of server certificates you can upload, see <a
@@ -6111,9 +6118,16 @@ namespace Model
         /**
          * <p>Uploads a server certificate entity for the AWS account. The server
          * certificate entity includes a public key certificate, a private key, and an
-         * optional certificate chain, which should all be PEM-encoded.</p> <p>For more
-         * information about working with server certificates, including a list of AWS
-         * services that can use the server certificates that you manage with IAM, go to <a
+         * optional certificate chain, which should all be PEM-encoded.</p> <p>We recommend
+         * that you use <a href="https://aws.amazon.com/certificate-manager/">AWS
+         * Certificate Manager</a> to provision, manage, and deploy your server
+         * certificates. With ACM you can request a certificate, deploy it to AWS
+         * resources, and let ACM handle certificate renewals for you. Certificates
+         * provided by ACM are free. For more information about using ACM, see the <a
+         * href="http://docs.aws.amazon.com/acm/latest/userguide/">AWS Certificate Manager
+         * User Guide</a>.</p> <p>For more information about working with server
+         * certificates, including a list of AWS services that can use the server
+         * certificates that you manage with IAM, go to <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_server-certs.html">Working
          * with Server Certificates</a> in the <i>IAM User Guide</i>.</p> <p>For
          * information about the number of server certificates you can upload, see <a
@@ -6139,9 +6153,16 @@ namespace Model
         /**
          * <p>Uploads a server certificate entity for the AWS account. The server
          * certificate entity includes a public key certificate, a private key, and an
-         * optional certificate chain, which should all be PEM-encoded.</p> <p>For more
-         * information about working with server certificates, including a list of AWS
-         * services that can use the server certificates that you manage with IAM, go to <a
+         * optional certificate chain, which should all be PEM-encoded.</p> <p>We recommend
+         * that you use <a href="https://aws.amazon.com/certificate-manager/">AWS
+         * Certificate Manager</a> to provision, manage, and deploy your server
+         * certificates. With ACM you can request a certificate, deploy it to AWS
+         * resources, and let ACM handle certificate renewals for you. Certificates
+         * provided by ACM are free. For more information about using ACM, see the <a
+         * href="http://docs.aws.amazon.com/acm/latest/userguide/">AWS Certificate Manager
+         * User Guide</a>.</p> <p>For more information about working with server
+         * certificates, including a list of AWS services that can use the server
+         * certificates that you manage with IAM, go to <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_server-certs.html">Working
          * with Server Certificates</a> in the <i>IAM User Guide</i>.</p> <p>For
          * information about the number of server certificates you can upload, see <a

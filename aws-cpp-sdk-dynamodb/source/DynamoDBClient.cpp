@@ -33,6 +33,7 @@
 #include <aws/dynamodb/model/DeleteTableRequest.h>
 #include <aws/dynamodb/model/DescribeLimitsRequest.h>
 #include <aws/dynamodb/model/DescribeTableRequest.h>
+#include <aws/dynamodb/model/DescribeTimeToLiveRequest.h>
 #include <aws/dynamodb/model/GetItemRequest.h>
 #include <aws/dynamodb/model/ListTablesRequest.h>
 #include <aws/dynamodb/model/ListTagsOfResourceRequest.h>
@@ -43,6 +44,7 @@
 #include <aws/dynamodb/model/UntagResourceRequest.h>
 #include <aws/dynamodb/model/UpdateItemRequest.h>
 #include <aws/dynamodb/model/UpdateTableRequest.h>
+#include <aws/dynamodb/model/UpdateTimeToLiveRequest.h>
 
 using namespace Aws;
 using namespace Aws::Auth;
@@ -344,6 +346,40 @@ void DynamoDBClient::DescribeTableAsync(const DescribeTableRequest& request, con
 void DynamoDBClient::DescribeTableAsyncHelper(const DescribeTableRequest& request, const DescribeTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DescribeTable(request), context);
+}
+
+DescribeTimeToLiveOutcome DynamoDBClient::DescribeTimeToLive(const DescribeTimeToLiveRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return DescribeTimeToLiveOutcome(DescribeTimeToLiveResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DescribeTimeToLiveOutcome(outcome.GetError());
+  }
+}
+
+DescribeTimeToLiveOutcomeCallable DynamoDBClient::DescribeTimeToLiveCallable(const DescribeTimeToLiveRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeTimeToLiveOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeTimeToLive(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void DynamoDBClient::DescribeTimeToLiveAsync(const DescribeTimeToLiveRequest& request, const DescribeTimeToLiveResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeTimeToLiveAsyncHelper( request, handler, context ); } );
+}
+
+void DynamoDBClient::DescribeTimeToLiveAsyncHelper(const DescribeTimeToLiveRequest& request, const DescribeTimeToLiveResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeTimeToLive(request), context);
 }
 
 GetItemOutcome DynamoDBClient::GetItem(const GetItemRequest& request) const
@@ -684,5 +720,39 @@ void DynamoDBClient::UpdateTableAsync(const UpdateTableRequest& request, const U
 void DynamoDBClient::UpdateTableAsyncHelper(const UpdateTableRequest& request, const UpdateTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, UpdateTable(request), context);
+}
+
+UpdateTimeToLiveOutcome DynamoDBClient::UpdateTimeToLive(const UpdateTimeToLiveRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return UpdateTimeToLiveOutcome(UpdateTimeToLiveResult(outcome.GetResult()));
+  }
+  else
+  {
+    return UpdateTimeToLiveOutcome(outcome.GetError());
+  }
+}
+
+UpdateTimeToLiveOutcomeCallable DynamoDBClient::UpdateTimeToLiveCallable(const UpdateTimeToLiveRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateTimeToLiveOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateTimeToLive(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void DynamoDBClient::UpdateTimeToLiveAsync(const UpdateTimeToLiveRequest& request, const UpdateTimeToLiveResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateTimeToLiveAsyncHelper( request, handler, context ); } );
+}
+
+void DynamoDBClient::UpdateTimeToLiveAsyncHelper(const UpdateTimeToLiveRequest& request, const UpdateTimeToLiveResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateTimeToLive(request), context);
 }
 

@@ -36,6 +36,7 @@ EvaluationResult::EvaluationResult() :
     m_evalDecisionHasBeenSet(false),
     m_matchedStatementsHasBeenSet(false),
     m_missingContextValuesHasBeenSet(false),
+    m_organizationsDecisionDetailHasBeenSet(false),
     m_evalDecisionDetailsHasBeenSet(false),
     m_resourceSpecificResultsHasBeenSet(false)
 {
@@ -48,6 +49,7 @@ EvaluationResult::EvaluationResult(const XmlNode& xmlNode) :
     m_evalDecisionHasBeenSet(false),
     m_matchedStatementsHasBeenSet(false),
     m_missingContextValuesHasBeenSet(false),
+    m_organizationsDecisionDetailHasBeenSet(false),
     m_evalDecisionDetailsHasBeenSet(false),
     m_resourceSpecificResultsHasBeenSet(false)
 {
@@ -101,6 +103,12 @@ EvaluationResult& EvaluationResult::operator =(const XmlNode& xmlNode)
       }
 
       m_missingContextValuesHasBeenSet = true;
+    }
+    XmlNode organizationsDecisionDetailNode = resultNode.FirstChild("OrganizationsDecisionDetail");
+    if(!organizationsDecisionDetailNode.IsNull())
+    {
+      m_organizationsDecisionDetail = organizationsDecisionDetailNode;
+      m_organizationsDecisionDetailHasBeenSet = true;
     }
     XmlNode evalDecisionDetailsNode = resultNode.FirstChild("EvalDecisionDetails");
 
@@ -172,6 +180,13 @@ void EvaluationResult::OutputToStream(Aws::OStream& oStream, const char* locatio
       }
   }
 
+  if(m_organizationsDecisionDetailHasBeenSet)
+  {
+      Aws::StringStream organizationsDecisionDetailLocationAndMemberSs;
+      organizationsDecisionDetailLocationAndMemberSs << location << index << locationValue << ".OrganizationsDecisionDetail";
+      m_organizationsDecisionDetail.OutputToStream(oStream, organizationsDecisionDetailLocationAndMemberSs.str().c_str());
+  }
+
   if(m_evalDecisionDetailsHasBeenSet)
   {
       unsigned evalDecisionDetailsIdx = 1;
@@ -229,6 +244,12 @@ void EvaluationResult::OutputToStream(Aws::OStream& oStream, const char* locatio
       {
         oStream << location << ".MissingContextValues.member." << missingContextValuesIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
+  }
+  if(m_organizationsDecisionDetailHasBeenSet)
+  {
+      Aws::String organizationsDecisionDetailLocationAndMember(location);
+      organizationsDecisionDetailLocationAndMember += ".OrganizationsDecisionDetail";
+      m_organizationsDecisionDetail.OutputToStream(oStream, organizationsDecisionDetailLocationAndMember.c_str());
   }
   if(m_evalDecisionDetailsHasBeenSet)
   {

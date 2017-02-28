@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/iam/model/PolicyEvaluationDecisionType.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/iam/model/OrganizationsDecisionDetail.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/iam/model/Statement.h>
 #include <aws/iam/model/ResourceSpecificResult.h>
@@ -308,6 +309,41 @@ namespace Model
     inline EvaluationResult& AddMissingContextValues(const char* value) { m_missingContextValuesHasBeenSet = true; m_missingContextValues.push_back(value); return *this; }
 
     /**
+     * <p>A structure that details how AWS Organizations and its service control
+     * policies affect the results of the simulation. Only applies if the simulated
+     * user's account is part of an organization.</p>
+     */
+    inline const OrganizationsDecisionDetail& GetOrganizationsDecisionDetail() const{ return m_organizationsDecisionDetail; }
+
+    /**
+     * <p>A structure that details how AWS Organizations and its service control
+     * policies affect the results of the simulation. Only applies if the simulated
+     * user's account is part of an organization.</p>
+     */
+    inline void SetOrganizationsDecisionDetail(const OrganizationsDecisionDetail& value) { m_organizationsDecisionDetailHasBeenSet = true; m_organizationsDecisionDetail = value; }
+
+    /**
+     * <p>A structure that details how AWS Organizations and its service control
+     * policies affect the results of the simulation. Only applies if the simulated
+     * user's account is part of an organization.</p>
+     */
+    inline void SetOrganizationsDecisionDetail(OrganizationsDecisionDetail&& value) { m_organizationsDecisionDetailHasBeenSet = true; m_organizationsDecisionDetail = value; }
+
+    /**
+     * <p>A structure that details how AWS Organizations and its service control
+     * policies affect the results of the simulation. Only applies if the simulated
+     * user's account is part of an organization.</p>
+     */
+    inline EvaluationResult& WithOrganizationsDecisionDetail(const OrganizationsDecisionDetail& value) { SetOrganizationsDecisionDetail(value); return *this;}
+
+    /**
+     * <p>A structure that details how AWS Organizations and its service control
+     * policies affect the results of the simulation. Only applies if the simulated
+     * user's account is part of an organization.</p>
+     */
+    inline EvaluationResult& WithOrganizationsDecisionDetail(OrganizationsDecisionDetail&& value) { SetOrganizationsDecisionDetail(value); return *this;}
+
+    /**
      * <p>Additional details about the results of the evaluation decision. When there
      * are both IAM policies and resource policies, this parameter explains how each
      * set of policies contributes to the final evaluation decision. When simulating
@@ -481,6 +517,8 @@ namespace Model
     bool m_matchedStatementsHasBeenSet;
     Aws::Vector<Aws::String> m_missingContextValues;
     bool m_missingContextValuesHasBeenSet;
+    OrganizationsDecisionDetail m_organizationsDecisionDetail;
+    bool m_organizationsDecisionDetailHasBeenSet;
     Aws::Map<Aws::String, PolicyEvaluationDecisionType> m_evalDecisionDetails;
     bool m_evalDecisionDetailsHasBeenSet;
     Aws::Vector<ResourceSpecificResult> m_resourceSpecificResults;

@@ -27,6 +27,7 @@
 #include <aws/dynamodb/model/DeleteTableResult.h>
 #include <aws/dynamodb/model/DescribeLimitsResult.h>
 #include <aws/dynamodb/model/DescribeTableResult.h>
+#include <aws/dynamodb/model/DescribeTimeToLiveResult.h>
 #include <aws/dynamodb/model/GetItemResult.h>
 #include <aws/dynamodb/model/ListTablesResult.h>
 #include <aws/dynamodb/model/ListTagsOfResourceResult.h>
@@ -35,6 +36,7 @@
 #include <aws/dynamodb/model/ScanResult.h>
 #include <aws/dynamodb/model/UpdateItemResult.h>
 #include <aws/dynamodb/model/UpdateTableResult.h>
+#include <aws/dynamodb/model/UpdateTimeToLiveResult.h>
 #include <aws/core/NoResult.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
@@ -88,6 +90,7 @@ namespace Model
         class DeleteTableRequest;
         class DescribeLimitsRequest;
         class DescribeTableRequest;
+        class DescribeTimeToLiveRequest;
         class GetItemRequest;
         class ListTablesRequest;
         class ListTagsOfResourceRequest;
@@ -98,6 +101,7 @@ namespace Model
         class UntagResourceRequest;
         class UpdateItemRequest;
         class UpdateTableRequest;
+        class UpdateTimeToLiveRequest;
 
         typedef Aws::Utils::Outcome<BatchGetItemResult, Aws::Client::AWSError<DynamoDBErrors>> BatchGetItemOutcome;
         typedef Aws::Utils::Outcome<BatchWriteItemResult, Aws::Client::AWSError<DynamoDBErrors>> BatchWriteItemOutcome;
@@ -106,6 +110,7 @@ namespace Model
         typedef Aws::Utils::Outcome<DeleteTableResult, Aws::Client::AWSError<DynamoDBErrors>> DeleteTableOutcome;
         typedef Aws::Utils::Outcome<DescribeLimitsResult, Aws::Client::AWSError<DynamoDBErrors>> DescribeLimitsOutcome;
         typedef Aws::Utils::Outcome<DescribeTableResult, Aws::Client::AWSError<DynamoDBErrors>> DescribeTableOutcome;
+        typedef Aws::Utils::Outcome<DescribeTimeToLiveResult, Aws::Client::AWSError<DynamoDBErrors>> DescribeTimeToLiveOutcome;
         typedef Aws::Utils::Outcome<GetItemResult, Aws::Client::AWSError<DynamoDBErrors>> GetItemOutcome;
         typedef Aws::Utils::Outcome<ListTablesResult, Aws::Client::AWSError<DynamoDBErrors>> ListTablesOutcome;
         typedef Aws::Utils::Outcome<ListTagsOfResourceResult, Aws::Client::AWSError<DynamoDBErrors>> ListTagsOfResourceOutcome;
@@ -116,6 +121,7 @@ namespace Model
         typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<DynamoDBErrors>> UntagResourceOutcome;
         typedef Aws::Utils::Outcome<UpdateItemResult, Aws::Client::AWSError<DynamoDBErrors>> UpdateItemOutcome;
         typedef Aws::Utils::Outcome<UpdateTableResult, Aws::Client::AWSError<DynamoDBErrors>> UpdateTableOutcome;
+        typedef Aws::Utils::Outcome<UpdateTimeToLiveResult, Aws::Client::AWSError<DynamoDBErrors>> UpdateTimeToLiveOutcome;
 
         typedef std::future<BatchGetItemOutcome> BatchGetItemOutcomeCallable;
         typedef std::future<BatchWriteItemOutcome> BatchWriteItemOutcomeCallable;
@@ -124,6 +130,7 @@ namespace Model
         typedef std::future<DeleteTableOutcome> DeleteTableOutcomeCallable;
         typedef std::future<DescribeLimitsOutcome> DescribeLimitsOutcomeCallable;
         typedef std::future<DescribeTableOutcome> DescribeTableOutcomeCallable;
+        typedef std::future<DescribeTimeToLiveOutcome> DescribeTimeToLiveOutcomeCallable;
         typedef std::future<GetItemOutcome> GetItemOutcomeCallable;
         typedef std::future<ListTablesOutcome> ListTablesOutcomeCallable;
         typedef std::future<ListTagsOfResourceOutcome> ListTagsOfResourceOutcomeCallable;
@@ -134,6 +141,7 @@ namespace Model
         typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
         typedef std::future<UpdateItemOutcome> UpdateItemOutcomeCallable;
         typedef std::future<UpdateTableOutcome> UpdateTableOutcomeCallable;
+        typedef std::future<UpdateTimeToLiveOutcome> UpdateTimeToLiveOutcomeCallable;
 } // namespace Model
 
   class DynamoDBClient;
@@ -145,6 +153,7 @@ namespace Model
     typedef std::function<void(const DynamoDBClient*, const Model::DeleteTableRequest&, const Model::DeleteTableOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteTableResponseReceivedHandler;
     typedef std::function<void(const DynamoDBClient*, const Model::DescribeLimitsRequest&, const Model::DescribeLimitsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeLimitsResponseReceivedHandler;
     typedef std::function<void(const DynamoDBClient*, const Model::DescribeTableRequest&, const Model::DescribeTableOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeTableResponseReceivedHandler;
+    typedef std::function<void(const DynamoDBClient*, const Model::DescribeTimeToLiveRequest&, const Model::DescribeTimeToLiveOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeTimeToLiveResponseReceivedHandler;
     typedef std::function<void(const DynamoDBClient*, const Model::GetItemRequest&, const Model::GetItemOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetItemResponseReceivedHandler;
     typedef std::function<void(const DynamoDBClient*, const Model::ListTablesRequest&, const Model::ListTablesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTablesResponseReceivedHandler;
     typedef std::function<void(const DynamoDBClient*, const Model::ListTagsOfResourceRequest&, const Model::ListTagsOfResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsOfResourceResponseReceivedHandler;
@@ -155,6 +164,7 @@ namespace Model
     typedef std::function<void(const DynamoDBClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
     typedef std::function<void(const DynamoDBClient*, const Model::UpdateItemRequest&, const Model::UpdateItemOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateItemResponseReceivedHandler;
     typedef std::function<void(const DynamoDBClient*, const Model::UpdateTableRequest&, const Model::UpdateTableOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateTableResponseReceivedHandler;
+    typedef std::function<void(const DynamoDBClient*, const Model::UpdateTimeToLiveRequest&, const Model::UpdateTimeToLiveOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateTimeToLiveResponseReceivedHandler;
 
   /**
    * <fullname>Amazon DynamoDB</fullname> <p>Amazon DynamoDB is a fully managed NoSQL
@@ -934,6 +944,34 @@ namespace Model
         virtual void DescribeTableAsync(const Model::DescribeTableRequest& request, const DescribeTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Gives a description of the Time to Live (TTL) status on the specified table.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeTimeToLive">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeTimeToLiveOutcome DescribeTimeToLive(const Model::DescribeTimeToLiveRequest& request) const;
+
+        /**
+         * <p>Gives a description of the Time to Live (TTL) status on the specified table.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeTimeToLive">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeTimeToLiveOutcomeCallable DescribeTimeToLiveCallable(const Model::DescribeTimeToLiveRequest& request) const;
+
+        /**
+         * <p>Gives a description of the Time to Live (TTL) status on the specified table.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeTimeToLive">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeTimeToLiveAsync(const Model::DescribeTimeToLiveRequest& request, const DescribeTimeToLiveResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>The <code>GetItem</code> operation returns a set of attributes for the item
          * with the given primary key. If there is no matching item, <code>GetItem</code>
          * does not return any data and there will be no <code>Item</code> element in the
@@ -1498,6 +1536,94 @@ namespace Model
          */
         virtual void UpdateTableAsync(const Model::UpdateTableRequest& request, const UpdateTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
+        /**
+         * <p>Specify the lifetime of individual table items. The database automatically
+         * removes the item at the expiration of the item. The UpdateTimeToLive method will
+         * enable or disable TTL for the specified table. A successful
+         * <code>UpdateTimeToLive</code> call returns the current
+         * <code>TimeToLiveSpecification</code>; it may take up to one hour for the change
+         * to fully process. </p> <p>TTL compares the current time in epoch time format to
+         * the time stored in the TTL attribute of an item. If the epoch time value stored
+         * in the attribute is less than the current time, the item is marked as expired
+         * and subsequently deleted.</p> <note> <p> The epoch time format is the number of
+         * seconds elapsed since 12:00:00 AM January 1st, 1970 UTC. </p> </note>
+         * <p>DynamoDB deletes expired items on a best-effort basis to ensure availability
+         * of throughput for other data operations. </p> <important> <p>DynamoDB typically
+         * deletes expired items within two days of expiration. The exact duration within
+         * which an item gets deleted after expiration is specific to the nature of the
+         * workload. Items that have expired and not been deleted will still show up in
+         * reads, queries, and scans.</p> </important> <p>As items are deleted, they are
+         * removed from any Local Secondary Index and Global Secondary Index immediately in
+         * the same eventually consistent way as a standard delete operation.</p> <p>For
+         * more information, see <a
+         * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/TTL.html">Time
+         * To Live</a> in the Amazon DynamoDB Developer Guide. </p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/UpdateTimeToLive">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateTimeToLiveOutcome UpdateTimeToLive(const Model::UpdateTimeToLiveRequest& request) const;
+
+        /**
+         * <p>Specify the lifetime of individual table items. The database automatically
+         * removes the item at the expiration of the item. The UpdateTimeToLive method will
+         * enable or disable TTL for the specified table. A successful
+         * <code>UpdateTimeToLive</code> call returns the current
+         * <code>TimeToLiveSpecification</code>; it may take up to one hour for the change
+         * to fully process. </p> <p>TTL compares the current time in epoch time format to
+         * the time stored in the TTL attribute of an item. If the epoch time value stored
+         * in the attribute is less than the current time, the item is marked as expired
+         * and subsequently deleted.</p> <note> <p> The epoch time format is the number of
+         * seconds elapsed since 12:00:00 AM January 1st, 1970 UTC. </p> </note>
+         * <p>DynamoDB deletes expired items on a best-effort basis to ensure availability
+         * of throughput for other data operations. </p> <important> <p>DynamoDB typically
+         * deletes expired items within two days of expiration. The exact duration within
+         * which an item gets deleted after expiration is specific to the nature of the
+         * workload. Items that have expired and not been deleted will still show up in
+         * reads, queries, and scans.</p> </important> <p>As items are deleted, they are
+         * removed from any Local Secondary Index and Global Secondary Index immediately in
+         * the same eventually consistent way as a standard delete operation.</p> <p>For
+         * more information, see <a
+         * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/TTL.html">Time
+         * To Live</a> in the Amazon DynamoDB Developer Guide. </p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/UpdateTimeToLive">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateTimeToLiveOutcomeCallable UpdateTimeToLiveCallable(const Model::UpdateTimeToLiveRequest& request) const;
+
+        /**
+         * <p>Specify the lifetime of individual table items. The database automatically
+         * removes the item at the expiration of the item. The UpdateTimeToLive method will
+         * enable or disable TTL for the specified table. A successful
+         * <code>UpdateTimeToLive</code> call returns the current
+         * <code>TimeToLiveSpecification</code>; it may take up to one hour for the change
+         * to fully process. </p> <p>TTL compares the current time in epoch time format to
+         * the time stored in the TTL attribute of an item. If the epoch time value stored
+         * in the attribute is less than the current time, the item is marked as expired
+         * and subsequently deleted.</p> <note> <p> The epoch time format is the number of
+         * seconds elapsed since 12:00:00 AM January 1st, 1970 UTC. </p> </note>
+         * <p>DynamoDB deletes expired items on a best-effort basis to ensure availability
+         * of throughput for other data operations. </p> <important> <p>DynamoDB typically
+         * deletes expired items within two days of expiration. The exact duration within
+         * which an item gets deleted after expiration is specific to the nature of the
+         * workload. Items that have expired and not been deleted will still show up in
+         * reads, queries, and scans.</p> </important> <p>As items are deleted, they are
+         * removed from any Local Secondary Index and Global Secondary Index immediately in
+         * the same eventually consistent way as a standard delete operation.</p> <p>For
+         * more information, see <a
+         * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/TTL.html">Time
+         * To Live</a> in the Amazon DynamoDB Developer Guide. </p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/UpdateTimeToLive">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateTimeToLiveAsync(const Model::UpdateTimeToLiveRequest& request, const UpdateTimeToLiveResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
 
     private:
       void init(const Client::ClientConfiguration& clientConfiguration);
@@ -1510,6 +1636,7 @@ namespace Model
         void DeleteTableAsyncHelper(const Model::DeleteTableRequest& request, const DeleteTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeLimitsAsyncHelper(const Model::DescribeLimitsRequest& request, const DescribeLimitsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeTableAsyncHelper(const Model::DescribeTableRequest& request, const DescribeTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeTimeToLiveAsyncHelper(const Model::DescribeTimeToLiveRequest& request, const DescribeTimeToLiveResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetItemAsyncHelper(const Model::GetItemRequest& request, const GetItemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListTablesAsyncHelper(const Model::ListTablesRequest& request, const ListTablesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListTagsOfResourceAsyncHelper(const Model::ListTagsOfResourceRequest& request, const ListTagsOfResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -1520,6 +1647,7 @@ namespace Model
         void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateItemAsyncHelper(const Model::UpdateItemRequest& request, const UpdateItemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateTableAsyncHelper(const Model::UpdateTableRequest& request, const UpdateTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdateTimeToLiveAsyncHelper(const Model::UpdateTimeToLiveRequest& request, const UpdateTimeToLiveResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 
       Aws::String m_uri;
       std::shared_ptr<Utils::Threading::Executor> m_executor;
