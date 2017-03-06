@@ -110,6 +110,8 @@ public class S3RestXmlCppClientGenerator  extends RestXmlCppClientGenerator {
         endpoints.put("ap-southeast-2", "s3-ap-southeast-2.amazonaws.com");
         endpoints.put("ap-northeast-1", "s3-ap-northeast-1.amazonaws.com");
         endpoints.put("sa-east-1", "s3-sa-east-1.amazonaws.com");
+        endpoints.put("us-gov-west-1", "s3-us-gov-west-1.amazonaws.com");
+        endpoints.put("fips-us-gov-west-1", "s3-fips-us-gov-west-1.amazonaws.com");
 
         return endpoints;
     }
