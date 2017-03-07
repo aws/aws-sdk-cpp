@@ -39,6 +39,7 @@ namespace Aws
     {
         namespace Crypto
         {
+            class Sha1HMAC;
             class Sha256;
             class Sha256HMAC;
         } // namespace Crypto
@@ -171,6 +172,29 @@ namespace Aws
             bool m_urlEscapePath;
         };
 
+        class AWS_CORE_API AWSAuthV2Signer : public AWSAuthSigner
+        {
+        public:
+            AWSAuthV2Signer(const std::shared_ptr<Auth::AWSCredentialsProvider>& credentialsProvider);
+
+            AWSAuthV2Signer(const Aws::String& awsAccessKeyId, const Aws::String& awsSecretAccessKey);
+
+            virtual ~AWSAuthV2Signer();
+
+            virtual bool SignRequest(Aws::Http::HttpRequest& request) const override;
+
+            // Not Implemented
+            virtual bool PresignRequest(Aws::Http::HttpRequest& request, long long expirationInSeconds) const override;
+
+            // Not Implemented
+            virtual bool PresignRequest(Aws::Http::HttpRequest& request, const char* region, long long expirationInSeconds = 0) const override;
+
+        private:
+            AWSAuthV2Signer &operator=(const AWSAuthV2Signer& rhs);
+
+            std::shared_ptr<Auth::AWSCredentialsProvider> m_credentialsProvider;
+            Aws::UniquePtr<Aws::Utils::Crypto::Sha1HMAC>  m_HMAC;
+        };
     } // namespace Client
 } // namespace Aws
 

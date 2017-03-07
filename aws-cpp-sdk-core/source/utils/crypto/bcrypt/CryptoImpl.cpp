@@ -330,6 +330,16 @@ namespace Aws
             {
             }
 
+            Sha1HMACBcryptImpl::Sha1HMACBcryptImpl() :
+                m_impl(BCRYPT_SHA1_ALGORITHM, true)
+            {
+            }
+
+            HashResult Sha1HMACBcryptImpl::Calculate(const ByteBuffer& toSign, const ByteBuffer& secret)
+            {
+                return m_impl.Calculate(toSign, secret);
+            }
+
             HashResult Sha256BcryptImpl::Calculate(const Aws::String& str)
             {
                 return m_impl.Calculate(str);

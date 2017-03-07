@@ -40,6 +40,7 @@ using namespace Aws::Utils::Crypto;
 static const char *s_allocationTag = "CryptoFactory";
 
 static std::shared_ptr<HashFactory> s_MD5Factory(nullptr);
+static std::shared_ptr<HMACFactory> s_Sha1HMACFactory(nullptr);
 static std::shared_ptr<HashFactory> s_Sha256Factory(nullptr);
 static std::shared_ptr<HMACFactory> s_Sha256HMACFactory(nullptr);
 
@@ -64,6 +65,51 @@ public:
         return Aws::MakeShared<MD5OpenSSLImpl>(s_allocationTag);
 #elif ENABLE_COMMONCRYPTO_ENCRYPTION
         return Aws::MakeShared<MD5CommonCryptoImpl>(s_allocationTag);
+#else
+    return nullptr;
+#endif
+    }
+
+    /**
+     * Opportunity to make any static initialization calls you need to make.
+     * Will only be called once.
+     */
+    void InitStaticState() override
+    {
+#if ENABLE_OPENSSL_ENCRYPTION
+        if(s_InitCleanupOpenSSLFlag)
+        {
+            OpenSSL::getTheLights.EnterRoom(&OpenSSL::init_static_state);
+        }
+#endif
+    }
+
+    /**
+     * Opportunity to make any static cleanup calls you need to make.
+     * will only be called at the end of the application.
+     */
+    void CleanupStaticState() override
+    {
+#if ENABLE_OPENSSL_ENCRYPTION
+        if(s_InitCleanupOpenSSLFlag)
+        {
+            OpenSSL::getTheLights.LeaveRoom(&OpenSSL::cleanup_static_state);
+        }
+#endif
+    }
+};
+
+class DefaultSHA1HmacFactory : public HMACFactory
+{
+public:
+    std::shared_ptr<HMAC> CreateImplementation() const override
+    {
+#if ENABLE_BCRYPT_ENCRYPTION
+        return Aws::MakeShared<Sha1HMACBcryptImpl>(s_allocationTag);
+#elif ENABLE_OPENSSL_ENCRYPTION
+        return Aws::MakeShared<Sha1HMACOpenSSLImpl>(s_allocationTag);
+#elif ENABLE_COMMONCRYPTO_ENCRYPTION
+        return Aws::MakeShared<Sha1HMACCommonCryptoImpl>(s_allocationTag);
 #else
     return nullptr;
 #endif
@@ -579,6 +625,16 @@ void Aws::Utils::Crypto::InitCrypto()
         s_MD5Factory->InitStaticState();
     }
 
+    if(s_Sha1HMACFactory)
+    {
+        s_Sha1HMACFactory->InitStaticState();
+    }
+    else
+    {
+        s_Sha1HMACFactory = Aws::MakeShared<DefaultSHA1HmacFactory>(s_allocationTag);
+        s_Sha1HMACFactory->InitStaticState();
+    }
+
     if(s_Sha256Factory)
     {
         s_Sha256Factory->InitStaticState();
@@ -743,6 +799,11 @@ void Aws::Utils::Crypto::SetSecureRandomFactory(const std::shared_ptr<SecureRand
 std::shared_ptr<Hash> Aws::Utils::Crypto::CreateMD5Implementation()
 {
     return s_MD5Factory->CreateImplementation();
+}
+
+std::shared_ptr<HMAC> Aws::Utils::Crypto::CreateSha1HMACImplementation()
+{
+    return s_Sha1HMACFactory->CreateImplementation();
 }
 
 std::shared_ptr<Hash> Aws::Utils::Crypto::CreateSha256Implementation()

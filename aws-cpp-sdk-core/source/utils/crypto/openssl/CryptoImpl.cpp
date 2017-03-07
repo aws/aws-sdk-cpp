@@ -151,6 +151,24 @@ namespace Aws
                 return HashResult(std::move(hash));
             }
 
+            HashResult Sha1HMACOpenSSLImpl::Calculate(const ByteBuffer& toSign, const ByteBuffer& secret)
+            {
+                unsigned int length = SHA_DIGEST_LENGTH;
+                ByteBuffer digest(length);
+                memset(digest.GetUnderlyingData(), 0, length);
+
+                HMAC_CTX ctx;
+                HMAC_CTX_init(&ctx);
+
+                HMAC_Init_ex(&ctx, secret.GetUnderlyingData(), static_cast<int>(secret.GetLength()), EVP_sha1(),
+                             NULL);
+                HMAC_Update(&ctx, toSign.GetUnderlyingData(), toSign.GetLength());
+                HMAC_Final(&ctx, digest.GetUnderlyingData(), &length);
+                HMAC_CTX_cleanup(&ctx);
+
+                return HashResult(std::move(digest));
+            }
+
             HashResult Sha256OpenSSLImpl::Calculate(const Aws::String& str)
             {
                 SHA256_CTX sha256;
