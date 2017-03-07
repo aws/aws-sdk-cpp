@@ -66,6 +66,51 @@ namespace Aws
             return m_completedParts;
         }
 
+        TransferHandle::TransferHandle(const Aws::String& bucketName, const Aws::String& keyName, uint64_t totalSize, const Aws::String& targetFilePath) : 
+            m_isMultipart(false), 
+            m_direction(TransferDirection::UPLOAD), 
+            m_bytesTransferred(0), 
+            m_bytesTotalSize(totalSize),
+            m_bucket(bucketName), 
+            m_key(keyName), 
+            m_fileName(targetFilePath),
+            m_versionId(""),
+            m_status(static_cast<long>(TransferStatus::NOT_STARTED)), 
+            m_cancel(false),
+            m_createDownloadStreamFn(), 
+            m_downloadStream(nullptr)
+        {}
+
+        TransferHandle::TransferHandle(const Aws::String& bucketName, const Aws::String& keyName, const Aws::String& targetFilePath) :
+            m_isMultipart(false), 
+            m_direction(TransferDirection::DOWNLOAD), 
+            m_bytesTransferred(0), 
+            m_bytesTotalSize(0),
+            m_bucket(bucketName), 
+            m_key(keyName), 
+            m_fileName(targetFilePath),
+            m_versionId(""),
+            m_status(static_cast<long>(TransferStatus::NOT_STARTED)), 
+            m_cancel(false),
+            m_createDownloadStreamFn(), 
+            m_downloadStream(nullptr)
+        {}
+
+        TransferHandle::TransferHandle(const Aws::String& bucketName, const Aws::String& keyName, CreateDownloadStreamCallback createDownloadStreamFn) :
+            m_isMultipart(false), 
+            m_direction(TransferDirection::DOWNLOAD), 
+            m_bytesTransferred(0), 
+            m_bytesTotalSize(0),
+            m_bucket(bucketName), 
+            m_key(keyName), 
+            m_fileName(""), 
+            m_versionId(""),
+            m_status(static_cast<long>(TransferStatus::NOT_STARTED)), 
+            m_cancel(false),
+            m_createDownloadStreamFn(createDownloadStreamFn), 
+            m_downloadStream(nullptr)
+        {}
+
         void TransferHandle::ChangePartToCompleted(const PartPointer& partState, const Aws::String &eTag)
         {
             std::lock_guard<std::mutex> locker(m_partsLock);
@@ -229,6 +274,11 @@ namespace Aws
             m_downloadStream->seekp(writeOffset);
             (*m_downloadStream) << partStream->rdbuf();
             m_downloadStream->flush();
+        }
+
+        void TransferHandle::ApplyDownloadConfiguration(const DownloadConfiguration& downloadConfig)
+        {
+            SetVersionId(downloadConfig.versionId);
         }
     }
 }

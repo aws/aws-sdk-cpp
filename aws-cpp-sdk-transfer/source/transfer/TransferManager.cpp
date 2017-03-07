@@ -132,21 +132,30 @@ namespace Aws
             return handle;
         }
 
-        std::shared_ptr<TransferHandle> TransferManager::DownloadFile(const Aws::String& bucketName, const Aws::String& keyName, CreateDownloadStreamCallback writeToStreamfn)
+        std::shared_ptr<TransferHandle> TransferManager::DownloadFile(const Aws::String& bucketName, 
+                                                                      const Aws::String& keyName, 
+                                                                      CreateDownloadStreamCallback writeToStreamfn, 
+                                                                      const DownloadConfiguration& downloadConfig)
         {
             auto handle = Aws::MakeShared<TransferHandle>(CLASS_TAG, bucketName, keyName, writeToStreamfn);
+            handle->ApplyDownloadConfiguration(downloadConfig);
 
             m_transferConfig.transferExecutor->Submit([this, writeToStreamfn, handle] { DoDownload(handle); });
             return handle;
         }
 
-        std::shared_ptr<TransferHandle> TransferManager::DownloadFile(const Aws::String& bucketName, const Aws::String& keyName, const Aws::String& writeToFile)
+        std::shared_ptr<TransferHandle> TransferManager::DownloadFile(const Aws::String& bucketName, 
+                                                                      const Aws::String& keyName, 
+                                                                      const Aws::String& writeToFile, 
+                                                                      const DownloadConfiguration& downloadConfig)
         {
 
             auto createFileFn = [=]() { return Aws::New<Aws::FStream>(CLASS_TAG, writeToFile.c_str(),
                                                                      std::ios_base::out | std::ios_base::in | std::ios_base::binary | std::ios_base::trunc);};
 
             auto handle = Aws::MakeShared<TransferHandle>(CLASS_TAG, bucketName, keyName, createFileFn);
+            handle->ApplyDownloadConfiguration(downloadConfig);
+
             m_transferConfig.transferExecutor->Submit([this, createFileFn, handle] { DoDownload(handle); });
             return handle;
         }
@@ -572,18 +581,20 @@ namespace Aws
             return rangeStream.str();
         }
 
-        void TransferManager::DoDownload(const std::shared_ptr<TransferHandle>& handle)
+        bool TransferManager::InitializePartsForDownload(const std::shared_ptr<TransferHandle>& handle)
         {
-            handle->UpdateStatus(TransferStatus::IN_PROGRESS);
-
             bool isRetry = handle->HasParts();
-            bool isMultipart = handle->IsMultipart();
             size_t bufferSize = m_transferConfig.bufferSize;
             if (!isRetry)
             {
                 Aws::S3::Model::HeadObjectRequest headObjectRequest;
                 headObjectRequest.WithBucket(handle->GetBucketName())
                                  .WithKey(handle->GetKey());
+
+                if(!handle->GetVersionId().empty())
+                {
+                    headObjectRequest.SetVersionId(handle->GetVersionId());
+                }
             
                 auto headObjectOutcome = m_transferConfig.s3Client->HeadObject(headObjectRequest);
 
@@ -593,7 +604,7 @@ namespace Aws
                     handle->SetError(headObjectOutcome.GetError());
                     TriggerErrorCallback(*handle, headObjectOutcome.GetError());
                     TriggerTransferStatusUpdatedCallback(*handle);
-                    return;
+                    return false;
                 }
 
                 TriggerTransferStatusUpdatedCallback(*handle);
@@ -602,9 +613,12 @@ namespace Aws
                 handle->SetBytesTotalSize(downloadSize);
                 handle->SetContentType(headObjectOutcome.GetResult().GetContentType());
                 handle->SetMetadata(headObjectOutcome.GetResult().GetMetadata());
+                if(handle->GetVersionId().empty())
+                {
+                    handle->SetVersionId(headObjectOutcome.GetResult().GetVersionId());
+                }
                 std::size_t partCount = ( downloadSize + bufferSize - 1 ) / bufferSize;
-                isMultipart = partCount > 1;
-                handle->SetIsMultipart(isMultipart);    // doesn't make a difference but let's be accurate
+                handle->SetIsMultipart(partCount > 1);    // doesn't make a difference but let's be accurate
 
                 for(int i = 0; i < partCount; ++i)
                 {
@@ -621,6 +635,20 @@ namespace Aws
                     handle->AddQueuedPart(failedPart.second);
                 }
             }
+
+            return true;
+        }
+
+        void TransferManager::DoDownload(const std::shared_ptr<TransferHandle>& handle)
+        {
+            handle->UpdateStatus(TransferStatus::IN_PROGRESS);
+            if (!InitializePartsForDownload(handle))
+            {
+                return;
+            }
+
+            bool isMultipart = handle->IsMultipart();
+            size_t bufferSize = m_transferConfig.bufferSize;
 
             if(!isMultipart)
             {
@@ -657,6 +685,7 @@ namespace Aws
                     getObjectRangeRequest.WithKey(handle->GetKey());
                     getObjectRangeRequest.SetRange(FormatRangeSpecifier(rangeStart, rangeEnd));
                     getObjectRangeRequest.SetResponseStreamFactory(responseStreamFunction);
+                    getObjectRangeRequest.SetVersionId(handle->GetVersionId());
 
                     getObjectRangeRequest.SetDataReceivedEventHandler([this, partState, handle](const Aws::Http::HttpRequest*, Aws::Http::HttpResponse*, long long progress)
                     {

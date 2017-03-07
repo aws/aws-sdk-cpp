@@ -39,6 +39,17 @@ namespace Aws
 
         typedef std::function<Aws::IOStream*(void)> CreateDownloadStreamCallback;
 
+        struct DownloadConfiguration
+        {
+            DownloadConfiguration() :
+                versionId("")
+            {}
+
+            Aws::String versionId;
+
+            // TBI: controls for in-memory parts vs. resumable file-based parts with state serialization to/from file
+        };
+
         class PartState
         {
             public:
@@ -123,29 +134,17 @@ namespace Aws
             /**
              * Initialize with required information for an UPLOAD
              */
-            TransferHandle(const Aws::String& bucketName, const Aws::String& keyName, uint64_t totalSize, const Aws::String& targetFilePath = "") : 
-                m_isMultipart(false), m_direction(TransferDirection::UPLOAD), m_bytesTransferred(0), m_bytesTotalSize(totalSize),
-                m_bucket(bucketName), m_key(keyName), m_fileName(targetFilePath),  m_status(static_cast<long>(TransferStatus::NOT_STARTED)), m_cancel(false),
-                m_createDownloadStreamFn(), m_downloadStream(nullptr)
-            {}
+            TransferHandle(const Aws::String& bucketName, const Aws::String& keyName, uint64_t totalSize, const Aws::String& targetFilePath = "");
 
             /**
              * Initialize with required information for a DOWNLOAD
              */
-            TransferHandle(const Aws::String& bucketName, const Aws::String& keyName, const Aws::String& targetFilePath = "") :
-                m_isMultipart(false), m_direction(TransferDirection::DOWNLOAD), m_bytesTransferred(0), m_bytesTotalSize(0),
-                m_bucket(bucketName), m_key(keyName), m_fileName(targetFilePath), m_status(static_cast<long>(TransferStatus::NOT_STARTED)), m_cancel(false),
-                m_createDownloadStreamFn(), m_downloadStream(nullptr)
-            {}
+            TransferHandle(const Aws::String& bucketName, const Aws::String& keyName, const Aws::String& targetFilePath = "");
 
             /**
              * Alternate DOWNLOAD constructor
              */
-            TransferHandle(const Aws::String& bucketName, const Aws::String& keyName, CreateDownloadStreamCallback createDownloadStreamFn) :
-                m_isMultipart(false), m_direction(TransferDirection::DOWNLOAD), m_bytesTransferred(0), m_bytesTotalSize(0),
-                m_bucket(bucketName), m_key(keyName), m_fileName(""), m_status(static_cast<long>(TransferStatus::NOT_STARTED)), m_cancel(false),
-                m_createDownloadStreamFn(createDownloadStreamFn), m_downloadStream(nullptr)
-            {}
+            TransferHandle(const Aws::String& bucketName, const Aws::String& keyName, CreateDownloadStreamCallback createDownloadStreamFn);
 
             /**
              * Whether or not this transfer is being performed using parallel parts via a multi-part s3 api.
@@ -267,6 +266,13 @@ namespace Aws
              * always be blank.
              */
             inline const Aws::String& GetTargetFilePath() const { return m_fileName; }
+
+            /**
+             * (Download only) version id of the object to retrieve; if not specified in constructor, then latest is used
+            */
+            const Aws::String& GetVersionId() const { return m_versionId; }
+            void SetVersionId(const Aws::String& versionId) { m_versionId = versionId; }
+
             /**
              * Upload or Download?
              */
@@ -318,6 +324,8 @@ namespace Aws
 
             void WritePartToDownloadStream(Aws::IOStream* partStream, std::size_t writeOffset);
 
+            void ApplyDownloadConfiguration(const DownloadConfiguration& downloadConfig);
+
         private:
 
             bool m_isMultipart;
@@ -333,6 +341,7 @@ namespace Aws
             Aws::String m_key;
             Aws::String m_fileName;
             Aws::String m_contentType;
+            Aws::String m_versionId;
             Aws::Map<Aws::String, Aws::String> m_metadata;
             std::atomic<long> m_status;
             Aws::Client::AWSError<Aws::S3::S3Errors> m_lastError;
