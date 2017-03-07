@@ -5,10 +5,14 @@ import json
 import zipfile
 import boto3
 import os
+import re
 import sys
 import argparse
 from botocore.exceptions import ClientError
 import requests
+
+import requests.packages.urllib3
+requests.packages.urllib3.disable_warnings()
 
 temp_archive_file = 'models.zip'
 
@@ -49,12 +53,20 @@ def main():
             
 def copy_model_files(models_dir):
     archive = zipfile.ZipFile(temp_archive_file, 'r')
-    with archive.open(artifact) as artifactFile:
-        for info in zip.infolist():
-            if re.match(r'output/*.normal.json', info.filename):
-                print("copying {0} to {1}", info.filename, models_dir) 
-                zip.extract(info, os.path.join(models_dir))
-                
+    archive.debug = 3
+    for info in archive.infolist():
+        print(info.filename)
+        if re.match(r'output/.*\.normal\.json', info.filename):
+            outputPath = os.path.join(models_dir, os.path.basename(info.filename))
+            print("copying {0} to {1}".format(info.filename, outputPath))
+            fileHandle = archive.open(info.filename, 'r')
+            fileOutput = fileHandle.read()
+            
+            with open(outputPath, 'wb') as destination:
+               destination.write(fileOutput)
+           
+            fileHandle.close()
+    
 def body_stream_to_file(body):
     with open(temp_archive_file, 'w') as archiveFile:
         archiveFile.write(body)
