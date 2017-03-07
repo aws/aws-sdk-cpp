@@ -55,25 +55,39 @@ namespace Model
     
     inline DescribeNodeAssociationStatusRequest& WithNodeAssociationStatusToken(const char* value) { SetNodeAssociationStatusToken(value); return *this;}
 
-    
+    /**
+     * <p>The name of the server from which to disassociate the node. </p>
+     */
     inline const Aws::String& GetServerName() const{ return m_serverName; }
 
-    
+    /**
+     * <p>The name of the server from which to disassociate the node. </p>
+     */
     inline void SetServerName(const Aws::String& value) { m_serverNameHasBeenSet = true; m_serverName = value; }
 
-    
+    /**
+     * <p>The name of the server from which to disassociate the node. </p>
+     */
     inline void SetServerName(Aws::String&& value) { m_serverNameHasBeenSet = true; m_serverName = value; }
 
-    
+    /**
+     * <p>The name of the server from which to disassociate the node. </p>
+     */
     inline void SetServerName(const char* value) { m_serverNameHasBeenSet = true; m_serverName.assign(value); }
 
-    
+    /**
+     * <p>The name of the server from which to disassociate the node. </p>
+     */
     inline DescribeNodeAssociationStatusRequest& WithServerName(const Aws::String& value) { SetServerName(value); return *this;}
 
-    
+    /**
+     * <p>The name of the server from which to disassociate the node. </p>
+     */
     inline DescribeNodeAssociationStatusRequest& WithServerName(Aws::String&& value) { SetServerName(value); return *this;}
 
-    
+    /**
+     * <p>The name of the server from which to disassociate the node. </p>
+     */
     inline DescribeNodeAssociationStatusRequest& WithServerName(const char* value) { SetServerName(value); return *this;}
 
   private:

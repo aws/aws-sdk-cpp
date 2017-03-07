@@ -33,11 +33,11 @@ namespace Model
 
   /**
    * <p>The Amazon S3 objects that you specify in your event selectors for your trail
-   * to log data events. Data events are object level API operations that access S3
+   * to log data events. Data events are object-level API operations that access S3
    * objects, such as <code>GetObject</code>, <code>DeleteObject</code>, and
-   * <code>PutObject</code>. You can specify up to 50 S3 buckets and object prefixes
-   * for an event selector. </p> <p>Example</p> <ol> <li> <p>You create an event
-   * selector for a trail and specify an S3 bucket and an empty prefix, such as
+   * <code>PutObject</code>. You can specify up to 250 S3 buckets and object prefixes
+   * for a trail. </p> <p>Example</p> <ol> <li> <p>You create an event selector for a
+   * trail and specify an S3 bucket and an empty prefix, such as
    * <code>arn:aws:s3:::bucket-1/</code>.</p> </li> <li> <p>You upload an image file
    * to <code>bucket-1</code>.</p> </li> <li> <p>The <code>PutObject</code> API
    * operation occurs on an object in the S3 bucket that you specified in the event

@@ -33,12 +33,12 @@ namespace Model
 {
 
   /**
-   * <p>Use event selectors to specify the types of events that you want your trail
-   * to log. When an event occurs in your account, CloudTrail evaluates the event
-   * selector for all trails. For each trail, if the event matches any event
-   * selector, the trail processes and logs the event. If the event doesn't match any
-   * event selector, the trail doesn't log the event.</p> <p>You can configure up to
-   * five event selectors for a trail.</p><p><h3>See Also:</h3>   <a
+   * <p>Use event selectors to specify whether you want your trail to log management
+   * and/or data events. When an event occurs in your account, CloudTrail evaluates
+   * the event selector for all trails. For each trail, if the event matches any
+   * event selector, the trail processes and logs the event. If the event doesn't
+   * match any event selector, the trail doesn't log the event.</p> <p>You can
+   * configure up to five event selectors for a trail.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/EventSelector">AWS
    * API Reference</a></p>
    */
@@ -93,7 +93,7 @@ namespace Model
     /**
      * <p>Specify if you want your event selector to include management events for your
      * trail.</p> <p> For more information, see <a
-     * href="http://docs.aws.amazon.com/awscloudtrail/latest/userguide/create-event-selectors-for-a-trail.html#event-selector-for-management-events">Management
+     * href="http://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html#logging-management-events">Management
      * Events</a> in the <i>AWS CloudTrail User Guide</i>.</p> <p>By default, the value
      * is <code>true</code>.</p>
      */
@@ -102,7 +102,7 @@ namespace Model
     /**
      * <p>Specify if you want your event selector to include management events for your
      * trail.</p> <p> For more information, see <a
-     * href="http://docs.aws.amazon.com/awscloudtrail/latest/userguide/create-event-selectors-for-a-trail.html#event-selector-for-management-events">Management
+     * href="http://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html#logging-management-events">Management
      * Events</a> in the <i>AWS CloudTrail User Guide</i>.</p> <p>By default, the value
      * is <code>true</code>.</p>
      */
@@ -111,7 +111,7 @@ namespace Model
     /**
      * <p>Specify if you want your event selector to include management events for your
      * trail.</p> <p> For more information, see <a
-     * href="http://docs.aws.amazon.com/awscloudtrail/latest/userguide/create-event-selectors-for-a-trail.html#event-selector-for-management-events">Management
+     * href="http://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html#logging-management-events">Management
      * Events</a> in the <i>AWS CloudTrail User Guide</i>.</p> <p>By default, the value
      * is <code>true</code>.</p>
      */
@@ -119,63 +119,63 @@ namespace Model
 
     /**
      * <p>CloudTrail supports logging only data events for S3 objects. You can specify
-     * up to 50 S3 buckets and object prefixes for an event selector.</p> <p>For more
+     * up to 250 S3 buckets and object prefixes for a trail.</p> <p>For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/awscloudtrail/latest/userguide/create-event-selectors-for-a-trail.html#data-events-resources">Data
+     * href="http://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html#logging-data-events">Data
      * Events</a> in the <i>AWS CloudTrail User Guide</i>.</p>
      */
     inline const Aws::Vector<DataResource>& GetDataResources() const{ return m_dataResources; }
 
     /**
      * <p>CloudTrail supports logging only data events for S3 objects. You can specify
-     * up to 50 S3 buckets and object prefixes for an event selector.</p> <p>For more
+     * up to 250 S3 buckets and object prefixes for a trail.</p> <p>For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/awscloudtrail/latest/userguide/create-event-selectors-for-a-trail.html#data-events-resources">Data
+     * href="http://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html#logging-data-events">Data
      * Events</a> in the <i>AWS CloudTrail User Guide</i>.</p>
      */
     inline void SetDataResources(const Aws::Vector<DataResource>& value) { m_dataResourcesHasBeenSet = true; m_dataResources = value; }
 
     /**
      * <p>CloudTrail supports logging only data events for S3 objects. You can specify
-     * up to 50 S3 buckets and object prefixes for an event selector.</p> <p>For more
+     * up to 250 S3 buckets and object prefixes for a trail.</p> <p>For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/awscloudtrail/latest/userguide/create-event-selectors-for-a-trail.html#data-events-resources">Data
+     * href="http://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html#logging-data-events">Data
      * Events</a> in the <i>AWS CloudTrail User Guide</i>.</p>
      */
     inline void SetDataResources(Aws::Vector<DataResource>&& value) { m_dataResourcesHasBeenSet = true; m_dataResources = value; }
 
     /**
      * <p>CloudTrail supports logging only data events for S3 objects. You can specify
-     * up to 50 S3 buckets and object prefixes for an event selector.</p> <p>For more
+     * up to 250 S3 buckets and object prefixes for a trail.</p> <p>For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/awscloudtrail/latest/userguide/create-event-selectors-for-a-trail.html#data-events-resources">Data
+     * href="http://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html#logging-data-events">Data
      * Events</a> in the <i>AWS CloudTrail User Guide</i>.</p>
      */
     inline EventSelector& WithDataResources(const Aws::Vector<DataResource>& value) { SetDataResources(value); return *this;}
 
     /**
      * <p>CloudTrail supports logging only data events for S3 objects. You can specify
-     * up to 50 S3 buckets and object prefixes for an event selector.</p> <p>For more
+     * up to 250 S3 buckets and object prefixes for a trail.</p> <p>For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/awscloudtrail/latest/userguide/create-event-selectors-for-a-trail.html#data-events-resources">Data
+     * href="http://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html#logging-data-events">Data
      * Events</a> in the <i>AWS CloudTrail User Guide</i>.</p>
      */
     inline EventSelector& WithDataResources(Aws::Vector<DataResource>&& value) { SetDataResources(value); return *this;}
 
     /**
      * <p>CloudTrail supports logging only data events for S3 objects. You can specify
-     * up to 50 S3 buckets and object prefixes for an event selector.</p> <p>For more
+     * up to 250 S3 buckets and object prefixes for a trail.</p> <p>For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/awscloudtrail/latest/userguide/create-event-selectors-for-a-trail.html#data-events-resources">Data
+     * href="http://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html#logging-data-events">Data
      * Events</a> in the <i>AWS CloudTrail User Guide</i>.</p>
      */
     inline EventSelector& AddDataResources(const DataResource& value) { m_dataResourcesHasBeenSet = true; m_dataResources.push_back(value); return *this; }
 
     /**
      * <p>CloudTrail supports logging only data events for S3 objects. You can specify
-     * up to 50 S3 buckets and object prefixes for an event selector.</p> <p>For more
+     * up to 250 S3 buckets and object prefixes for a trail.</p> <p>For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/awscloudtrail/latest/userguide/create-event-selectors-for-a-trail.html#data-events-resources">Data
+     * href="http://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html#logging-data-events">Data
      * Events</a> in the <i>AWS CloudTrail User Guide</i>.</p>
      */
     inline EventSelector& AddDataResources(DataResource&& value) { m_dataResourcesHasBeenSet = true; m_dataResources.push_back(value); return *this; }

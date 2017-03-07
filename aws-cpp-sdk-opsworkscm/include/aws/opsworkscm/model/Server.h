@@ -49,6 +49,21 @@ namespace Model
     Aws::Utils::Json::JsonValue Jsonize() const;
 
     /**
+     * <p>Associate a public IP address with a server that you are launching. </p>
+     */
+    inline bool GetAssociatePublicIpAddress() const{ return m_associatePublicIpAddress; }
+
+    /**
+     * <p>Associate a public IP address with a server that you are launching. </p>
+     */
+    inline void SetAssociatePublicIpAddress(bool value) { m_associatePublicIpAddressHasBeenSet = true; m_associatePublicIpAddress = value; }
+
+    /**
+     * <p>Associate a public IP address with a server that you are launching. </p>
+     */
+    inline Server& WithAssociatePublicIpAddress(bool value) { SetAssociatePublicIpAddress(value); return *this;}
+
+    /**
      * <p>The number of automated backups to keep. </p>
      */
     inline int GetBackupRetentionCount() const{ return m_backupRetentionCount; }
@@ -127,6 +142,41 @@ namespace Model
      * </p>
      */
     inline Server& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(value); return *this;}
+
+    /**
+     * <p>The ARN of the CloudFormation stack that was used to create the server. </p>
+     */
+    inline const Aws::String& GetCloudFormationStackArn() const{ return m_cloudFormationStackArn; }
+
+    /**
+     * <p>The ARN of the CloudFormation stack that was used to create the server. </p>
+     */
+    inline void SetCloudFormationStackArn(const Aws::String& value) { m_cloudFormationStackArnHasBeenSet = true; m_cloudFormationStackArn = value; }
+
+    /**
+     * <p>The ARN of the CloudFormation stack that was used to create the server. </p>
+     */
+    inline void SetCloudFormationStackArn(Aws::String&& value) { m_cloudFormationStackArnHasBeenSet = true; m_cloudFormationStackArn = value; }
+
+    /**
+     * <p>The ARN of the CloudFormation stack that was used to create the server. </p>
+     */
+    inline void SetCloudFormationStackArn(const char* value) { m_cloudFormationStackArnHasBeenSet = true; m_cloudFormationStackArn.assign(value); }
+
+    /**
+     * <p>The ARN of the CloudFormation stack that was used to create the server. </p>
+     */
+    inline Server& WithCloudFormationStackArn(const Aws::String& value) { SetCloudFormationStackArn(value); return *this;}
+
+    /**
+     * <p>The ARN of the CloudFormation stack that was used to create the server. </p>
+     */
+    inline Server& WithCloudFormationStackArn(Aws::String&& value) { SetCloudFormationStackArn(value); return *this;}
+
+    /**
+     * <p>The ARN of the CloudFormation stack that was used to create the server. </p>
+     */
+    inline Server& WithCloudFormationStackArn(const char* value) { SetCloudFormationStackArn(value); return *this;}
 
     /**
      * <p>Disables automated backups. The number of stored backups is dependent on the
@@ -731,36 +781,36 @@ namespace Model
 
     /**
      * <p> The server's status. This field displays the states of actions in progress,
-     * such as creating, running, or backing up the server, as well as server health.
-     * </p>
+     * such as creating, running, or backing up the server, as well as the server's
+     * health state. </p>
      */
     inline const ServerStatus& GetStatus() const{ return m_status; }
 
     /**
      * <p> The server's status. This field displays the states of actions in progress,
-     * such as creating, running, or backing up the server, as well as server health.
-     * </p>
+     * such as creating, running, or backing up the server, as well as the server's
+     * health state. </p>
      */
     inline void SetStatus(const ServerStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
      * <p> The server's status. This field displays the states of actions in progress,
-     * such as creating, running, or backing up the server, as well as server health.
-     * </p>
+     * such as creating, running, or backing up the server, as well as the server's
+     * health state. </p>
      */
     inline void SetStatus(ServerStatus&& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
      * <p> The server's status. This field displays the states of actions in progress,
-     * such as creating, running, or backing up the server, as well as server health.
-     * </p>
+     * such as creating, running, or backing up the server, as well as the server's
+     * health state. </p>
      */
     inline Server& WithStatus(const ServerStatus& value) { SetStatus(value); return *this;}
 
     /**
      * <p> The server's status. This field displays the states of actions in progress,
-     * such as creating, running, or backing up the server, as well as server health.
-     * </p>
+     * such as creating, running, or backing up the server, as well as the server's
+     * health state. </p>
      */
     inline Server& WithStatus(ServerStatus&& value) { SetStatus(value); return *this;}
 
@@ -889,12 +939,16 @@ namespace Model
     inline Server& WithServerArn(const char* value) { SetServerArn(value); return *this;}
 
   private:
+    bool m_associatePublicIpAddress;
+    bool m_associatePublicIpAddressHasBeenSet;
     int m_backupRetentionCount;
     bool m_backupRetentionCountHasBeenSet;
     Aws::String m_serverName;
     bool m_serverNameHasBeenSet;
     Aws::Utils::DateTime m_createdAt;
     bool m_createdAtHasBeenSet;
+    Aws::String m_cloudFormationStackArn;
+    bool m_cloudFormationStackArnHasBeenSet;
     bool m_disableAutomatedBackup;
     bool m_disableAutomatedBackupHasBeenSet;
     Aws::String m_endpoint;

@@ -570,59 +570,6 @@ namespace Model
     inline Backup& WithPreferredMaintenanceWindow(const char* value) { SetPreferredMaintenanceWindow(value); return *this;}
 
     /**
-     * <p> The size of the backup, in bytes. The size is returned by the instance in
-     * the command results. </p>
-     */
-    inline int GetS3DataSize() const{ return m_s3DataSize; }
-
-    /**
-     * <p> The size of the backup, in bytes. The size is returned by the instance in
-     * the command results. </p>
-     */
-    inline void SetS3DataSize(int value) { m_s3DataSizeHasBeenSet = true; m_s3DataSize = value; }
-
-    /**
-     * <p> The size of the backup, in bytes. The size is returned by the instance in
-     * the command results. </p>
-     */
-    inline Backup& WithS3DataSize(int value) { SetS3DataSize(value); return *this;}
-
-    /**
-     * <p> The Amazon S3 URL of the backup's tar.gz file. </p>
-     */
-    inline const Aws::String& GetS3DataUrl() const{ return m_s3DataUrl; }
-
-    /**
-     * <p> The Amazon S3 URL of the backup's tar.gz file. </p>
-     */
-    inline void SetS3DataUrl(const Aws::String& value) { m_s3DataUrlHasBeenSet = true; m_s3DataUrl = value; }
-
-    /**
-     * <p> The Amazon S3 URL of the backup's tar.gz file. </p>
-     */
-    inline void SetS3DataUrl(Aws::String&& value) { m_s3DataUrlHasBeenSet = true; m_s3DataUrl = value; }
-
-    /**
-     * <p> The Amazon S3 URL of the backup's tar.gz file. </p>
-     */
-    inline void SetS3DataUrl(const char* value) { m_s3DataUrlHasBeenSet = true; m_s3DataUrl.assign(value); }
-
-    /**
-     * <p> The Amazon S3 URL of the backup's tar.gz file. </p>
-     */
-    inline Backup& WithS3DataUrl(const Aws::String& value) { SetS3DataUrl(value); return *this;}
-
-    /**
-     * <p> The Amazon S3 URL of the backup's tar.gz file. </p>
-     */
-    inline Backup& WithS3DataUrl(Aws::String&& value) { SetS3DataUrl(value); return *this;}
-
-    /**
-     * <p> The Amazon S3 URL of the backup's tar.gz file. </p>
-     */
-    inline Backup& WithS3DataUrl(const char* value) { SetS3DataUrl(value); return *this;}
-
-    /**
      * <p> The Amazon S3 URL of the backup's log file. </p>
      */
     inline const Aws::String& GetS3LogUrl() const{ return m_s3LogUrl; }
@@ -1001,10 +948,6 @@ namespace Model
     bool m_preferredBackupWindowHasBeenSet;
     Aws::String m_preferredMaintenanceWindow;
     bool m_preferredMaintenanceWindowHasBeenSet;
-    int m_s3DataSize;
-    bool m_s3DataSizeHasBeenSet;
-    Aws::String m_s3DataUrl;
-    bool m_s3DataUrlHasBeenSet;
     Aws::String m_s3LogUrl;
     bool m_s3LogUrlHasBeenSet;
     Aws::Vector<Aws::String> m_securityGroupIds;

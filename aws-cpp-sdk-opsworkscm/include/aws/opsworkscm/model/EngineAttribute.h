@@ -31,7 +31,7 @@ namespace Model
 {
 
   /**
-   * <p>A name/value pair that is specific to the engine of the server.
+   * <p>A name and value pair that is specific to the engine of the server.
    * </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/opsworkscm-2016-11-01/EngineAttribute">AWS
    * API Reference</a></p>

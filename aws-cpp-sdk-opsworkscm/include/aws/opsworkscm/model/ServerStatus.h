@@ -33,9 +33,11 @@ namespace Model
     FAILED,
     HEALTHY,
     RUNNING,
+    RESTORING,
     SETUP,
     UNDER_MAINTENANCE,
-    UNHEALTHY
+    UNHEALTHY,
+    TERMINATED
   };
 
 namespace ServerStatusMapper

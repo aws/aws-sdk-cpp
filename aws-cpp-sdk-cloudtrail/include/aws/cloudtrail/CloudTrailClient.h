@@ -328,8 +328,8 @@ namespace Model
          * events.</p> </li> <li> <p>If your event selector includes management events.</p>
          * </li> <li> <p>If your event selector includes read-only events, write-only
          * events, or all. </p> </li> </ul> <p>For more information, see <a
-         * href="http://docs.aws.amazon.com/awscloudtrail/latest/userguide/create-event-selectors-for-a-trail.html">Configuring
-         * Event Selectors for Trails</a> in the <i>AWS CloudTrail User
+         * href="http://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html">Logging
+         * Data and Management Events for Trails </a> in the <i>AWS CloudTrail User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/GetEventSelectors">AWS
          * API Reference</a></p>
@@ -343,8 +343,8 @@ namespace Model
          * events.</p> </li> <li> <p>If your event selector includes management events.</p>
          * </li> <li> <p>If your event selector includes read-only events, write-only
          * events, or all. </p> </li> </ul> <p>For more information, see <a
-         * href="http://docs.aws.amazon.com/awscloudtrail/latest/userguide/create-event-selectors-for-a-trail.html">Configuring
-         * Event Selectors for Trails</a> in the <i>AWS CloudTrail User
+         * href="http://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html">Logging
+         * Data and Management Events for Trails </a> in the <i>AWS CloudTrail User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/GetEventSelectors">AWS
          * API Reference</a></p>
@@ -360,8 +360,8 @@ namespace Model
          * events.</p> </li> <li> <p>If your event selector includes management events.</p>
          * </li> <li> <p>If your event selector includes read-only events, write-only
          * events, or all. </p> </li> </ul> <p>For more information, see <a
-         * href="http://docs.aws.amazon.com/awscloudtrail/latest/userguide/create-event-selectors-for-a-trail.html">Configuring
-         * Event Selectors for Trails</a> in the <i>AWS CloudTrail User
+         * href="http://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html">Logging
+         * Data and Management Events for Trails </a> in the <i>AWS CloudTrail User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/GetEventSelectors">AWS
          * API Reference</a></p>
@@ -483,15 +483,16 @@ namespace Model
          * delete resources in your account. Events for a region can be looked up for the
          * times in which you had CloudTrail turned on in that region during the last seven
          * days. Lookup supports the following attributes:</p> <ul> <li> <p>Event ID</p>
-         * </li> <li> <p>Event name</p> </li> <li> <p>Resource name</p> </li> <li>
-         * <p>Resource type</p> </li> <li> <p>User name</p> </li> </ul> <p>All attributes
-         * are optional. The default number of results returned is 10, with a maximum of 50
-         * possible. The response includes a token that you can use to get the next page of
-         * results.</p> <important> <p>The rate of lookup requests is limited to one per
-         * second per account. If this limit is exceeded, a throttling error occurs.</p>
-         * </important> <important> <p>Events that occurred during the selected time range
-         * will not be available for lookup if CloudTrail logging was not enabled when the
-         * events occurred.</p> </important><p><h3>See Also:</h3>   <a
+         * </li> <li> <p>Event name</p> </li> <li> <p>Event source</p> </li> <li>
+         * <p>Resource name</p> </li> <li> <p>Resource type</p> </li> <li> <p>User name</p>
+         * </li> </ul> <p>All attributes are optional. The default number of results
+         * returned is 10, with a maximum of 50 possible. The response includes a token
+         * that you can use to get the next page of results.</p> <important> <p>The rate of
+         * lookup requests is limited to one per second per account. If this limit is
+         * exceeded, a throttling error occurs.</p> </important> <important> <p>Events that
+         * occurred during the selected time range will not be available for lookup if
+         * CloudTrail logging was not enabled when the events occurred.</p>
+         * </important><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/LookupEvents">AWS
          * API Reference</a></p>
          */
@@ -502,15 +503,16 @@ namespace Model
          * delete resources in your account. Events for a region can be looked up for the
          * times in which you had CloudTrail turned on in that region during the last seven
          * days. Lookup supports the following attributes:</p> <ul> <li> <p>Event ID</p>
-         * </li> <li> <p>Event name</p> </li> <li> <p>Resource name</p> </li> <li>
-         * <p>Resource type</p> </li> <li> <p>User name</p> </li> </ul> <p>All attributes
-         * are optional. The default number of results returned is 10, with a maximum of 50
-         * possible. The response includes a token that you can use to get the next page of
-         * results.</p> <important> <p>The rate of lookup requests is limited to one per
-         * second per account. If this limit is exceeded, a throttling error occurs.</p>
-         * </important> <important> <p>Events that occurred during the selected time range
-         * will not be available for lookup if CloudTrail logging was not enabled when the
-         * events occurred.</p> </important><p><h3>See Also:</h3>   <a
+         * </li> <li> <p>Event name</p> </li> <li> <p>Event source</p> </li> <li>
+         * <p>Resource name</p> </li> <li> <p>Resource type</p> </li> <li> <p>User name</p>
+         * </li> </ul> <p>All attributes are optional. The default number of results
+         * returned is 10, with a maximum of 50 possible. The response includes a token
+         * that you can use to get the next page of results.</p> <important> <p>The rate of
+         * lookup requests is limited to one per second per account. If this limit is
+         * exceeded, a throttling error occurs.</p> </important> <important> <p>Events that
+         * occurred during the selected time range will not be available for lookup if
+         * CloudTrail logging was not enabled when the events occurred.</p>
+         * </important><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/LookupEvents">AWS
          * API Reference</a></p>
          *
@@ -523,15 +525,16 @@ namespace Model
          * delete resources in your account. Events for a region can be looked up for the
          * times in which you had CloudTrail turned on in that region during the last seven
          * days. Lookup supports the following attributes:</p> <ul> <li> <p>Event ID</p>
-         * </li> <li> <p>Event name</p> </li> <li> <p>Resource name</p> </li> <li>
-         * <p>Resource type</p> </li> <li> <p>User name</p> </li> </ul> <p>All attributes
-         * are optional. The default number of results returned is 10, with a maximum of 50
-         * possible. The response includes a token that you can use to get the next page of
-         * results.</p> <important> <p>The rate of lookup requests is limited to one per
-         * second per account. If this limit is exceeded, a throttling error occurs.</p>
-         * </important> <important> <p>Events that occurred during the selected time range
-         * will not be available for lookup if CloudTrail logging was not enabled when the
-         * events occurred.</p> </important><p><h3>See Also:</h3>   <a
+         * </li> <li> <p>Event name</p> </li> <li> <p>Event source</p> </li> <li>
+         * <p>Resource name</p> </li> <li> <p>Resource type</p> </li> <li> <p>User name</p>
+         * </li> </ul> <p>All attributes are optional. The default number of results
+         * returned is 10, with a maximum of 50 possible. The response includes a token
+         * that you can use to get the next page of results.</p> <important> <p>The rate of
+         * lookup requests is limited to one per second per account. If this limit is
+         * exceeded, a throttling error occurs.</p> </important> <important> <p>Events that
+         * occurred during the selected time range will not be available for lookup if
+         * CloudTrail logging was not enabled when the events occurred.</p>
+         * </important><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/LookupEvents">AWS
          * API Reference</a></p>
          *
@@ -541,12 +544,12 @@ namespace Model
 
         /**
          * <p>Configures an event selector for your trail. Use event selectors to specify
-         * the type of events that you want your trail to log. When an event occurs in your
-         * account, CloudTrail evaluates the event selectors in all trails. For each trail,
-         * if the event matches any event selector, the trail processes and logs the event.
-         * If the event doesn't match any event selector, the trail doesn't log the event.
-         * </p> <p>Example</p> <ol> <li> <p>You create an event selector for a trail and
-         * specify that you want write-only events.</p> </li> <li> <p>The EC2
+         * whether you want your trail to log management and/or data events. When an event
+         * occurs in your account, CloudTrail evaluates the event selectors in all trails.
+         * For each trail, if the event matches any event selector, the trail processes and
+         * logs the event. If the event doesn't match any event selector, the trail doesn't
+         * log the event. </p> <p>Example</p> <ol> <li> <p>You create an event selector for
+         * a trail and specify that you want write-only events.</p> </li> <li> <p>The EC2
          * <code>GetConsoleOutput</code> and <code>RunInstances</code> API operations occur
          * in your account.</p> </li> <li> <p>CloudTrail evaluates whether the events match
          * your event selectors.</p> </li> <li> <p>The <code>RunInstances</code> is a
@@ -557,8 +560,8 @@ namespace Model
          * the region in which the trail was created; otherwise, an
          * <code>InvalidHomeRegionException</code> is thrown.</p> <p>You can configure up
          * to five event selectors for each trail. For more information, see <a
-         * href="http://docs.aws.amazon.com/awscloudtrail/latest/userguide/create-event-selectors-for-a-trail.html">Configuring
-         * Event Selectors for Trails</a> in the <i>AWS CloudTrail User
+         * href="http://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html">Logging
+         * Data and Management Events for Trails </a> in the <i>AWS CloudTrail User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/PutEventSelectors">AWS
          * API Reference</a></p>
@@ -567,12 +570,12 @@ namespace Model
 
         /**
          * <p>Configures an event selector for your trail. Use event selectors to specify
-         * the type of events that you want your trail to log. When an event occurs in your
-         * account, CloudTrail evaluates the event selectors in all trails. For each trail,
-         * if the event matches any event selector, the trail processes and logs the event.
-         * If the event doesn't match any event selector, the trail doesn't log the event.
-         * </p> <p>Example</p> <ol> <li> <p>You create an event selector for a trail and
-         * specify that you want write-only events.</p> </li> <li> <p>The EC2
+         * whether you want your trail to log management and/or data events. When an event
+         * occurs in your account, CloudTrail evaluates the event selectors in all trails.
+         * For each trail, if the event matches any event selector, the trail processes and
+         * logs the event. If the event doesn't match any event selector, the trail doesn't
+         * log the event. </p> <p>Example</p> <ol> <li> <p>You create an event selector for
+         * a trail and specify that you want write-only events.</p> </li> <li> <p>The EC2
          * <code>GetConsoleOutput</code> and <code>RunInstances</code> API operations occur
          * in your account.</p> </li> <li> <p>CloudTrail evaluates whether the events match
          * your event selectors.</p> </li> <li> <p>The <code>RunInstances</code> is a
@@ -583,8 +586,8 @@ namespace Model
          * the region in which the trail was created; otherwise, an
          * <code>InvalidHomeRegionException</code> is thrown.</p> <p>You can configure up
          * to five event selectors for each trail. For more information, see <a
-         * href="http://docs.aws.amazon.com/awscloudtrail/latest/userguide/create-event-selectors-for-a-trail.html">Configuring
-         * Event Selectors for Trails</a> in the <i>AWS CloudTrail User
+         * href="http://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html">Logging
+         * Data and Management Events for Trails </a> in the <i>AWS CloudTrail User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/PutEventSelectors">AWS
          * API Reference</a></p>
@@ -595,12 +598,12 @@ namespace Model
 
         /**
          * <p>Configures an event selector for your trail. Use event selectors to specify
-         * the type of events that you want your trail to log. When an event occurs in your
-         * account, CloudTrail evaluates the event selectors in all trails. For each trail,
-         * if the event matches any event selector, the trail processes and logs the event.
-         * If the event doesn't match any event selector, the trail doesn't log the event.
-         * </p> <p>Example</p> <ol> <li> <p>You create an event selector for a trail and
-         * specify that you want write-only events.</p> </li> <li> <p>The EC2
+         * whether you want your trail to log management and/or data events. When an event
+         * occurs in your account, CloudTrail evaluates the event selectors in all trails.
+         * For each trail, if the event matches any event selector, the trail processes and
+         * logs the event. If the event doesn't match any event selector, the trail doesn't
+         * log the event. </p> <p>Example</p> <ol> <li> <p>You create an event selector for
+         * a trail and specify that you want write-only events.</p> </li> <li> <p>The EC2
          * <code>GetConsoleOutput</code> and <code>RunInstances</code> API operations occur
          * in your account.</p> </li> <li> <p>CloudTrail evaluates whether the events match
          * your event selectors.</p> </li> <li> <p>The <code>RunInstances</code> is a
@@ -611,8 +614,8 @@ namespace Model
          * the region in which the trail was created; otherwise, an
          * <code>InvalidHomeRegionException</code> is thrown.</p> <p>You can configure up
          * to five event selectors for each trail. For more information, see <a
-         * href="http://docs.aws.amazon.com/awscloudtrail/latest/userguide/create-event-selectors-for-a-trail.html">Configuring
-         * Event Selectors for Trails</a> in the <i>AWS CloudTrail User
+         * href="http://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html">Logging
+         * Data and Management Events for Trails </a> in the <i>AWS CloudTrail User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/PutEventSelectors">AWS
          * API Reference</a></p>

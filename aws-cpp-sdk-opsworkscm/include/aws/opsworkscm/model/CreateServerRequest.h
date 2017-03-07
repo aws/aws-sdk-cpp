@@ -37,6 +37,27 @@ namespace Model
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
     /**
+     * <p> Associate a public IP address with a server that you are launching. Valid
+     * values are <code>true</code> or <code>false</code>. The default value is
+     * <code>true</code>. </p>
+     */
+    inline bool GetAssociatePublicIpAddress() const{ return m_associatePublicIpAddress; }
+
+    /**
+     * <p> Associate a public IP address with a server that you are launching. Valid
+     * values are <code>true</code> or <code>false</code>. The default value is
+     * <code>true</code>. </p>
+     */
+    inline void SetAssociatePublicIpAddress(bool value) { m_associatePublicIpAddressHasBeenSet = true; m_associatePublicIpAddress = value; }
+
+    /**
+     * <p> Associate a public IP address with a server that you are launching. Valid
+     * values are <code>true</code> or <code>false</code>. The default value is
+     * <code>true</code>. </p>
+     */
+    inline CreateServerRequest& WithAssociatePublicIpAddress(bool value) { SetAssociatePublicIpAddress(value); return *this;}
+
+    /**
      * <p> Enable or disable scheduled backups. Valid values are <code>true</code> or
      * <code>false</code>. The default value is <code>true</code>. </p>
      */
@@ -174,65 +195,114 @@ namespace Model
     inline CreateServerRequest& WithEngineVersion(const char* value) { SetEngineVersion(value); return *this;}
 
     /**
-     * <p>Engine attributes on a specified server. </p> <p class="title"> <b>Attributes
-     * accepted in a createServer request:</b> </p> <ul> <li> <p>
+     * <p>Optional engine attributes on a specified server. </p> <p class="title">
+     * <b>Attributes accepted in a createServer request:</b> </p> <ul> <li> <p>
      * <code>CHEF_PIVOTAL_KEY</code>: A base64-encoded RSA private key that is not
-     * stored by AWS OpsWorks for Chef Automate. This private key is required to access
-     * the Chef API.</p> </li> </ul>
+     * stored by AWS OpsWorks for Chef. This private key is required to access the Chef
+     * API. When no CHEF_PIVOTAL_KEY is set, one is generated and returned in the
+     * response. </p> </li> <li> <p> <code>CHEF_DELIVERY_ADMIN_PASSWORD</code>: The
+     * password for the administrative user in the Chef Automate GUI. The password
+     * length is a minimum of eight characters, and a maximum of 32. The password can
+     * contain letters, numbers, and special characters (!/@#$%^&amp;+=_). The password
+     * must contain at least one lower case letter, one upper case letter, one number,
+     * and one special character. When no CHEF_DELIVERY_ADMIN_PASSWORD is set, one is
+     * generated and returned in the response.</p> </li> </ul>
      */
     inline const Aws::Vector<EngineAttribute>& GetEngineAttributes() const{ return m_engineAttributes; }
 
     /**
-     * <p>Engine attributes on a specified server. </p> <p class="title"> <b>Attributes
-     * accepted in a createServer request:</b> </p> <ul> <li> <p>
+     * <p>Optional engine attributes on a specified server. </p> <p class="title">
+     * <b>Attributes accepted in a createServer request:</b> </p> <ul> <li> <p>
      * <code>CHEF_PIVOTAL_KEY</code>: A base64-encoded RSA private key that is not
-     * stored by AWS OpsWorks for Chef Automate. This private key is required to access
-     * the Chef API.</p> </li> </ul>
+     * stored by AWS OpsWorks for Chef. This private key is required to access the Chef
+     * API. When no CHEF_PIVOTAL_KEY is set, one is generated and returned in the
+     * response. </p> </li> <li> <p> <code>CHEF_DELIVERY_ADMIN_PASSWORD</code>: The
+     * password for the administrative user in the Chef Automate GUI. The password
+     * length is a minimum of eight characters, and a maximum of 32. The password can
+     * contain letters, numbers, and special characters (!/@#$%^&amp;+=_). The password
+     * must contain at least one lower case letter, one upper case letter, one number,
+     * and one special character. When no CHEF_DELIVERY_ADMIN_PASSWORD is set, one is
+     * generated and returned in the response.</p> </li> </ul>
      */
     inline void SetEngineAttributes(const Aws::Vector<EngineAttribute>& value) { m_engineAttributesHasBeenSet = true; m_engineAttributes = value; }
 
     /**
-     * <p>Engine attributes on a specified server. </p> <p class="title"> <b>Attributes
-     * accepted in a createServer request:</b> </p> <ul> <li> <p>
+     * <p>Optional engine attributes on a specified server. </p> <p class="title">
+     * <b>Attributes accepted in a createServer request:</b> </p> <ul> <li> <p>
      * <code>CHEF_PIVOTAL_KEY</code>: A base64-encoded RSA private key that is not
-     * stored by AWS OpsWorks for Chef Automate. This private key is required to access
-     * the Chef API.</p> </li> </ul>
+     * stored by AWS OpsWorks for Chef. This private key is required to access the Chef
+     * API. When no CHEF_PIVOTAL_KEY is set, one is generated and returned in the
+     * response. </p> </li> <li> <p> <code>CHEF_DELIVERY_ADMIN_PASSWORD</code>: The
+     * password for the administrative user in the Chef Automate GUI. The password
+     * length is a minimum of eight characters, and a maximum of 32. The password can
+     * contain letters, numbers, and special characters (!/@#$%^&amp;+=_). The password
+     * must contain at least one lower case letter, one upper case letter, one number,
+     * and one special character. When no CHEF_DELIVERY_ADMIN_PASSWORD is set, one is
+     * generated and returned in the response.</p> </li> </ul>
      */
     inline void SetEngineAttributes(Aws::Vector<EngineAttribute>&& value) { m_engineAttributesHasBeenSet = true; m_engineAttributes = value; }
 
     /**
-     * <p>Engine attributes on a specified server. </p> <p class="title"> <b>Attributes
-     * accepted in a createServer request:</b> </p> <ul> <li> <p>
+     * <p>Optional engine attributes on a specified server. </p> <p class="title">
+     * <b>Attributes accepted in a createServer request:</b> </p> <ul> <li> <p>
      * <code>CHEF_PIVOTAL_KEY</code>: A base64-encoded RSA private key that is not
-     * stored by AWS OpsWorks for Chef Automate. This private key is required to access
-     * the Chef API.</p> </li> </ul>
+     * stored by AWS OpsWorks for Chef. This private key is required to access the Chef
+     * API. When no CHEF_PIVOTAL_KEY is set, one is generated and returned in the
+     * response. </p> </li> <li> <p> <code>CHEF_DELIVERY_ADMIN_PASSWORD</code>: The
+     * password for the administrative user in the Chef Automate GUI. The password
+     * length is a minimum of eight characters, and a maximum of 32. The password can
+     * contain letters, numbers, and special characters (!/@#$%^&amp;+=_). The password
+     * must contain at least one lower case letter, one upper case letter, one number,
+     * and one special character. When no CHEF_DELIVERY_ADMIN_PASSWORD is set, one is
+     * generated and returned in the response.</p> </li> </ul>
      */
     inline CreateServerRequest& WithEngineAttributes(const Aws::Vector<EngineAttribute>& value) { SetEngineAttributes(value); return *this;}
 
     /**
-     * <p>Engine attributes on a specified server. </p> <p class="title"> <b>Attributes
-     * accepted in a createServer request:</b> </p> <ul> <li> <p>
+     * <p>Optional engine attributes on a specified server. </p> <p class="title">
+     * <b>Attributes accepted in a createServer request:</b> </p> <ul> <li> <p>
      * <code>CHEF_PIVOTAL_KEY</code>: A base64-encoded RSA private key that is not
-     * stored by AWS OpsWorks for Chef Automate. This private key is required to access
-     * the Chef API.</p> </li> </ul>
+     * stored by AWS OpsWorks for Chef. This private key is required to access the Chef
+     * API. When no CHEF_PIVOTAL_KEY is set, one is generated and returned in the
+     * response. </p> </li> <li> <p> <code>CHEF_DELIVERY_ADMIN_PASSWORD</code>: The
+     * password for the administrative user in the Chef Automate GUI. The password
+     * length is a minimum of eight characters, and a maximum of 32. The password can
+     * contain letters, numbers, and special characters (!/@#$%^&amp;+=_). The password
+     * must contain at least one lower case letter, one upper case letter, one number,
+     * and one special character. When no CHEF_DELIVERY_ADMIN_PASSWORD is set, one is
+     * generated and returned in the response.</p> </li> </ul>
      */
     inline CreateServerRequest& WithEngineAttributes(Aws::Vector<EngineAttribute>&& value) { SetEngineAttributes(value); return *this;}
 
     /**
-     * <p>Engine attributes on a specified server. </p> <p class="title"> <b>Attributes
-     * accepted in a createServer request:</b> </p> <ul> <li> <p>
+     * <p>Optional engine attributes on a specified server. </p> <p class="title">
+     * <b>Attributes accepted in a createServer request:</b> </p> <ul> <li> <p>
      * <code>CHEF_PIVOTAL_KEY</code>: A base64-encoded RSA private key that is not
-     * stored by AWS OpsWorks for Chef Automate. This private key is required to access
-     * the Chef API.</p> </li> </ul>
+     * stored by AWS OpsWorks for Chef. This private key is required to access the Chef
+     * API. When no CHEF_PIVOTAL_KEY is set, one is generated and returned in the
+     * response. </p> </li> <li> <p> <code>CHEF_DELIVERY_ADMIN_PASSWORD</code>: The
+     * password for the administrative user in the Chef Automate GUI. The password
+     * length is a minimum of eight characters, and a maximum of 32. The password can
+     * contain letters, numbers, and special characters (!/@#$%^&amp;+=_). The password
+     * must contain at least one lower case letter, one upper case letter, one number,
+     * and one special character. When no CHEF_DELIVERY_ADMIN_PASSWORD is set, one is
+     * generated and returned in the response.</p> </li> </ul>
      */
     inline CreateServerRequest& AddEngineAttributes(const EngineAttribute& value) { m_engineAttributesHasBeenSet = true; m_engineAttributes.push_back(value); return *this; }
 
     /**
-     * <p>Engine attributes on a specified server. </p> <p class="title"> <b>Attributes
-     * accepted in a createServer request:</b> </p> <ul> <li> <p>
+     * <p>Optional engine attributes on a specified server. </p> <p class="title">
+     * <b>Attributes accepted in a createServer request:</b> </p> <ul> <li> <p>
      * <code>CHEF_PIVOTAL_KEY</code>: A base64-encoded RSA private key that is not
-     * stored by AWS OpsWorks for Chef Automate. This private key is required to access
-     * the Chef API.</p> </li> </ul>
+     * stored by AWS OpsWorks for Chef. This private key is required to access the Chef
+     * API. When no CHEF_PIVOTAL_KEY is set, one is generated and returned in the
+     * response. </p> </li> <li> <p> <code>CHEF_DELIVERY_ADMIN_PASSWORD</code>: The
+     * password for the administrative user in the Chef Automate GUI. The password
+     * length is a minimum of eight characters, and a maximum of 32. The password can
+     * contain letters, numbers, and special characters (!/@#$%^&amp;+=_). The password
+     * must contain at least one lower case letter, one upper case letter, one number,
+     * and one special character. When no CHEF_DELIVERY_ADMIN_PASSWORD is set, one is
+     * generated and returned in the response.</p> </li> </ul>
      */
     inline CreateServerRequest& AddEngineAttributes(EngineAttribute&& value) { m_engineAttributesHasBeenSet = true; m_engineAttributes.push_back(value); return *this; }
 
@@ -260,7 +330,7 @@ namespace Model
     /**
      * <p> The name of the server. The server name must be unique within your AWS
      * account, within each region. Server names must start with a letter; then
-     * letters, numbers, or hyphens (-) are allowed, up to a maximum of 32 characters.
+     * letters, numbers, or hyphens (-) are allowed, up to a maximum of 40 characters.
      * </p>
      */
     inline const Aws::String& GetServerName() const{ return m_serverName; }
@@ -268,7 +338,7 @@ namespace Model
     /**
      * <p> The name of the server. The server name must be unique within your AWS
      * account, within each region. Server names must start with a letter; then
-     * letters, numbers, or hyphens (-) are allowed, up to a maximum of 32 characters.
+     * letters, numbers, or hyphens (-) are allowed, up to a maximum of 40 characters.
      * </p>
      */
     inline void SetServerName(const Aws::String& value) { m_serverNameHasBeenSet = true; m_serverName = value; }
@@ -276,7 +346,7 @@ namespace Model
     /**
      * <p> The name of the server. The server name must be unique within your AWS
      * account, within each region. Server names must start with a letter; then
-     * letters, numbers, or hyphens (-) are allowed, up to a maximum of 32 characters.
+     * letters, numbers, or hyphens (-) are allowed, up to a maximum of 40 characters.
      * </p>
      */
     inline void SetServerName(Aws::String&& value) { m_serverNameHasBeenSet = true; m_serverName = value; }
@@ -284,7 +354,7 @@ namespace Model
     /**
      * <p> The name of the server. The server name must be unique within your AWS
      * account, within each region. Server names must start with a letter; then
-     * letters, numbers, or hyphens (-) are allowed, up to a maximum of 32 characters.
+     * letters, numbers, or hyphens (-) are allowed, up to a maximum of 40 characters.
      * </p>
      */
     inline void SetServerName(const char* value) { m_serverNameHasBeenSet = true; m_serverName.assign(value); }
@@ -292,7 +362,7 @@ namespace Model
     /**
      * <p> The name of the server. The server name must be unique within your AWS
      * account, within each region. Server names must start with a letter; then
-     * letters, numbers, or hyphens (-) are allowed, up to a maximum of 32 characters.
+     * letters, numbers, or hyphens (-) are allowed, up to a maximum of 40 characters.
      * </p>
      */
     inline CreateServerRequest& WithServerName(const Aws::String& value) { SetServerName(value); return *this;}
@@ -300,7 +370,7 @@ namespace Model
     /**
      * <p> The name of the server. The server name must be unique within your AWS
      * account, within each region. Server names must start with a letter; then
-     * letters, numbers, or hyphens (-) are allowed, up to a maximum of 32 characters.
+     * letters, numbers, or hyphens (-) are allowed, up to a maximum of 40 characters.
      * </p>
      */
     inline CreateServerRequest& WithServerName(Aws::String&& value) { SetServerName(value); return *this;}
@@ -308,169 +378,190 @@ namespace Model
     /**
      * <p> The name of the server. The server name must be unique within your AWS
      * account, within each region. Server names must start with a letter; then
-     * letters, numbers, or hyphens (-) are allowed, up to a maximum of 32 characters.
+     * letters, numbers, or hyphens (-) are allowed, up to a maximum of 40 characters.
      * </p>
      */
     inline CreateServerRequest& WithServerName(const char* value) { SetServerName(value); return *this;}
 
     /**
      * <p> The ARN of the instance profile that your Amazon EC2 instances use. Although
-     * the AWS OpsWorks console typically creates the instance profile for you, in this
-     * release of AWS OpsWorks for Chef Automate, run the service-role-creation.yaml
-     * AWS CloudFormation template, located at
-     * https://s3.amazonaws.com/opsworks-stuff/latest/service-role-creation.yaml. This
-     * template creates a stack that includes the instance profile you need. </p>
+     * the AWS OpsWorks console typically creates the instance profile for you, if you
+     * are using API commands instead, run the service-role-creation.yaml AWS
+     * CloudFormation template, located at
+     * https://s3.amazonaws.com/opsworks-cm-us-east-1-prod-default-assets/misc/opsworks-cm-roles.yaml.
+     * This template creates a CloudFormation stack that includes the instance profile
+     * you need. </p>
      */
     inline const Aws::String& GetInstanceProfileArn() const{ return m_instanceProfileArn; }
 
     /**
      * <p> The ARN of the instance profile that your Amazon EC2 instances use. Although
-     * the AWS OpsWorks console typically creates the instance profile for you, in this
-     * release of AWS OpsWorks for Chef Automate, run the service-role-creation.yaml
-     * AWS CloudFormation template, located at
-     * https://s3.amazonaws.com/opsworks-stuff/latest/service-role-creation.yaml. This
-     * template creates a stack that includes the instance profile you need. </p>
+     * the AWS OpsWorks console typically creates the instance profile for you, if you
+     * are using API commands instead, run the service-role-creation.yaml AWS
+     * CloudFormation template, located at
+     * https://s3.amazonaws.com/opsworks-cm-us-east-1-prod-default-assets/misc/opsworks-cm-roles.yaml.
+     * This template creates a CloudFormation stack that includes the instance profile
+     * you need. </p>
      */
     inline void SetInstanceProfileArn(const Aws::String& value) { m_instanceProfileArnHasBeenSet = true; m_instanceProfileArn = value; }
 
     /**
      * <p> The ARN of the instance profile that your Amazon EC2 instances use. Although
-     * the AWS OpsWorks console typically creates the instance profile for you, in this
-     * release of AWS OpsWorks for Chef Automate, run the service-role-creation.yaml
-     * AWS CloudFormation template, located at
-     * https://s3.amazonaws.com/opsworks-stuff/latest/service-role-creation.yaml. This
-     * template creates a stack that includes the instance profile you need. </p>
+     * the AWS OpsWorks console typically creates the instance profile for you, if you
+     * are using API commands instead, run the service-role-creation.yaml AWS
+     * CloudFormation template, located at
+     * https://s3.amazonaws.com/opsworks-cm-us-east-1-prod-default-assets/misc/opsworks-cm-roles.yaml.
+     * This template creates a CloudFormation stack that includes the instance profile
+     * you need. </p>
      */
     inline void SetInstanceProfileArn(Aws::String&& value) { m_instanceProfileArnHasBeenSet = true; m_instanceProfileArn = value; }
 
     /**
      * <p> The ARN of the instance profile that your Amazon EC2 instances use. Although
-     * the AWS OpsWorks console typically creates the instance profile for you, in this
-     * release of AWS OpsWorks for Chef Automate, run the service-role-creation.yaml
-     * AWS CloudFormation template, located at
-     * https://s3.amazonaws.com/opsworks-stuff/latest/service-role-creation.yaml. This
-     * template creates a stack that includes the instance profile you need. </p>
+     * the AWS OpsWorks console typically creates the instance profile for you, if you
+     * are using API commands instead, run the service-role-creation.yaml AWS
+     * CloudFormation template, located at
+     * https://s3.amazonaws.com/opsworks-cm-us-east-1-prod-default-assets/misc/opsworks-cm-roles.yaml.
+     * This template creates a CloudFormation stack that includes the instance profile
+     * you need. </p>
      */
     inline void SetInstanceProfileArn(const char* value) { m_instanceProfileArnHasBeenSet = true; m_instanceProfileArn.assign(value); }
 
     /**
      * <p> The ARN of the instance profile that your Amazon EC2 instances use. Although
-     * the AWS OpsWorks console typically creates the instance profile for you, in this
-     * release of AWS OpsWorks for Chef Automate, run the service-role-creation.yaml
-     * AWS CloudFormation template, located at
-     * https://s3.amazonaws.com/opsworks-stuff/latest/service-role-creation.yaml. This
-     * template creates a stack that includes the instance profile you need. </p>
+     * the AWS OpsWorks console typically creates the instance profile for you, if you
+     * are using API commands instead, run the service-role-creation.yaml AWS
+     * CloudFormation template, located at
+     * https://s3.amazonaws.com/opsworks-cm-us-east-1-prod-default-assets/misc/opsworks-cm-roles.yaml.
+     * This template creates a CloudFormation stack that includes the instance profile
+     * you need. </p>
      */
     inline CreateServerRequest& WithInstanceProfileArn(const Aws::String& value) { SetInstanceProfileArn(value); return *this;}
 
     /**
      * <p> The ARN of the instance profile that your Amazon EC2 instances use. Although
-     * the AWS OpsWorks console typically creates the instance profile for you, in this
-     * release of AWS OpsWorks for Chef Automate, run the service-role-creation.yaml
-     * AWS CloudFormation template, located at
-     * https://s3.amazonaws.com/opsworks-stuff/latest/service-role-creation.yaml. This
-     * template creates a stack that includes the instance profile you need. </p>
+     * the AWS OpsWorks console typically creates the instance profile for you, if you
+     * are using API commands instead, run the service-role-creation.yaml AWS
+     * CloudFormation template, located at
+     * https://s3.amazonaws.com/opsworks-cm-us-east-1-prod-default-assets/misc/opsworks-cm-roles.yaml.
+     * This template creates a CloudFormation stack that includes the instance profile
+     * you need. </p>
      */
     inline CreateServerRequest& WithInstanceProfileArn(Aws::String&& value) { SetInstanceProfileArn(value); return *this;}
 
     /**
      * <p> The ARN of the instance profile that your Amazon EC2 instances use. Although
-     * the AWS OpsWorks console typically creates the instance profile for you, in this
-     * release of AWS OpsWorks for Chef Automate, run the service-role-creation.yaml
-     * AWS CloudFormation template, located at
-     * https://s3.amazonaws.com/opsworks-stuff/latest/service-role-creation.yaml. This
-     * template creates a stack that includes the instance profile you need. </p>
+     * the AWS OpsWorks console typically creates the instance profile for you, if you
+     * are using API commands instead, run the service-role-creation.yaml AWS
+     * CloudFormation template, located at
+     * https://s3.amazonaws.com/opsworks-cm-us-east-1-prod-default-assets/misc/opsworks-cm-roles.yaml.
+     * This template creates a CloudFormation stack that includes the instance profile
+     * you need. </p>
      */
     inline CreateServerRequest& WithInstanceProfileArn(const char* value) { SetInstanceProfileArn(value); return *this;}
 
     /**
      * <p> The Amazon EC2 instance type to use. Valid values must be specified in the
      * following format: <code>^([cm][34]|t2).*</code> For example,
-     * <code>c3.large</code>. </p>
+     * <code>m4.large</code>. Valid values are <code>t2.medium</code>,
+     * <code>m4.large</code>, or <code>m4.2xlarge</code>. </p>
      */
     inline const Aws::String& GetInstanceType() const{ return m_instanceType; }
 
     /**
      * <p> The Amazon EC2 instance type to use. Valid values must be specified in the
      * following format: <code>^([cm][34]|t2).*</code> For example,
-     * <code>c3.large</code>. </p>
+     * <code>m4.large</code>. Valid values are <code>t2.medium</code>,
+     * <code>m4.large</code>, or <code>m4.2xlarge</code>. </p>
      */
     inline void SetInstanceType(const Aws::String& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
 
     /**
      * <p> The Amazon EC2 instance type to use. Valid values must be specified in the
      * following format: <code>^([cm][34]|t2).*</code> For example,
-     * <code>c3.large</code>. </p>
+     * <code>m4.large</code>. Valid values are <code>t2.medium</code>,
+     * <code>m4.large</code>, or <code>m4.2xlarge</code>. </p>
      */
     inline void SetInstanceType(Aws::String&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
 
     /**
      * <p> The Amazon EC2 instance type to use. Valid values must be specified in the
      * following format: <code>^([cm][34]|t2).*</code> For example,
-     * <code>c3.large</code>. </p>
+     * <code>m4.large</code>. Valid values are <code>t2.medium</code>,
+     * <code>m4.large</code>, or <code>m4.2xlarge</code>. </p>
      */
     inline void SetInstanceType(const char* value) { m_instanceTypeHasBeenSet = true; m_instanceType.assign(value); }
 
     /**
      * <p> The Amazon EC2 instance type to use. Valid values must be specified in the
      * following format: <code>^([cm][34]|t2).*</code> For example,
-     * <code>c3.large</code>. </p>
+     * <code>m4.large</code>. Valid values are <code>t2.medium</code>,
+     * <code>m4.large</code>, or <code>m4.2xlarge</code>. </p>
      */
     inline CreateServerRequest& WithInstanceType(const Aws::String& value) { SetInstanceType(value); return *this;}
 
     /**
      * <p> The Amazon EC2 instance type to use. Valid values must be specified in the
      * following format: <code>^([cm][34]|t2).*</code> For example,
-     * <code>c3.large</code>. </p>
+     * <code>m4.large</code>. Valid values are <code>t2.medium</code>,
+     * <code>m4.large</code>, or <code>m4.2xlarge</code>. </p>
      */
     inline CreateServerRequest& WithInstanceType(Aws::String&& value) { SetInstanceType(value); return *this;}
 
     /**
      * <p> The Amazon EC2 instance type to use. Valid values must be specified in the
      * following format: <code>^([cm][34]|t2).*</code> For example,
-     * <code>c3.large</code>. </p>
+     * <code>m4.large</code>. Valid values are <code>t2.medium</code>,
+     * <code>m4.large</code>, or <code>m4.2xlarge</code>. </p>
      */
     inline CreateServerRequest& WithInstanceType(const char* value) { SetInstanceType(value); return *this;}
 
     /**
-     * <p> The Amazon EC2 key pair to set for the instance. You may specify this
-     * parameter to connect to your instances by using SSH. </p>
+     * <p> The Amazon EC2 key pair to set for the instance. This parameter is optional;
+     * if desired, you may specify this parameter to connect to your instances by using
+     * SSH. </p>
      */
     inline const Aws::String& GetKeyPair() const{ return m_keyPair; }
 
     /**
-     * <p> The Amazon EC2 key pair to set for the instance. You may specify this
-     * parameter to connect to your instances by using SSH. </p>
+     * <p> The Amazon EC2 key pair to set for the instance. This parameter is optional;
+     * if desired, you may specify this parameter to connect to your instances by using
+     * SSH. </p>
      */
     inline void SetKeyPair(const Aws::String& value) { m_keyPairHasBeenSet = true; m_keyPair = value; }
 
     /**
-     * <p> The Amazon EC2 key pair to set for the instance. You may specify this
-     * parameter to connect to your instances by using SSH. </p>
+     * <p> The Amazon EC2 key pair to set for the instance. This parameter is optional;
+     * if desired, you may specify this parameter to connect to your instances by using
+     * SSH. </p>
      */
     inline void SetKeyPair(Aws::String&& value) { m_keyPairHasBeenSet = true; m_keyPair = value; }
 
     /**
-     * <p> The Amazon EC2 key pair to set for the instance. You may specify this
-     * parameter to connect to your instances by using SSH. </p>
+     * <p> The Amazon EC2 key pair to set for the instance. This parameter is optional;
+     * if desired, you may specify this parameter to connect to your instances by using
+     * SSH. </p>
      */
     inline void SetKeyPair(const char* value) { m_keyPairHasBeenSet = true; m_keyPair.assign(value); }
 
     /**
-     * <p> The Amazon EC2 key pair to set for the instance. You may specify this
-     * parameter to connect to your instances by using SSH. </p>
+     * <p> The Amazon EC2 key pair to set for the instance. This parameter is optional;
+     * if desired, you may specify this parameter to connect to your instances by using
+     * SSH. </p>
      */
     inline CreateServerRequest& WithKeyPair(const Aws::String& value) { SetKeyPair(value); return *this;}
 
     /**
-     * <p> The Amazon EC2 key pair to set for the instance. You may specify this
-     * parameter to connect to your instances by using SSH. </p>
+     * <p> The Amazon EC2 key pair to set for the instance. This parameter is optional;
+     * if desired, you may specify this parameter to connect to your instances by using
+     * SSH. </p>
      */
     inline CreateServerRequest& WithKeyPair(Aws::String&& value) { SetKeyPair(value); return *this;}
 
     /**
-     * <p> The Amazon EC2 key pair to set for the instance. You may specify this
-     * parameter to connect to your instances by using SSH. </p>
+     * <p> The Amazon EC2 key pair to set for the instance. This parameter is optional;
+     * if desired, you may specify this parameter to connect to your instances by using
+     * SSH. </p>
      */
     inline CreateServerRequest& WithKeyPair(const char* value) { SetKeyPair(value); return *this;}
 
@@ -553,9 +644,9 @@ namespace Model
 
     /**
      * <p> The start time for a one-hour period during which AWS OpsWorks for Chef
-     * Automate backs up application-level data on your server if backups are enabled.
-     * Valid values must be specified in one of the following formats: </p> <ul> <li>
-     * <p> <code>HH:MM</code> for daily backups</p> </li> <li> <p>
+     * Automate backs up application-level data on your server if automated backups are
+     * enabled. Valid values must be specified in one of the following formats: </p>
+     * <ul> <li> <p> <code>HH:MM</code> for daily backups</p> </li> <li> <p>
      * <code>DDD:HH:MM</code> for weekly backups</p> </li> </ul> <p>The specified time
      * is in coordinated universal time (UTC). The default value is a random, daily
      * start time.</p> <p> <b>Example:</b> <code>08:00</code>, which represents a daily
@@ -566,9 +657,9 @@ namespace Model
 
     /**
      * <p> The start time for a one-hour period during which AWS OpsWorks for Chef
-     * Automate backs up application-level data on your server if backups are enabled.
-     * Valid values must be specified in one of the following formats: </p> <ul> <li>
-     * <p> <code>HH:MM</code> for daily backups</p> </li> <li> <p>
+     * Automate backs up application-level data on your server if automated backups are
+     * enabled. Valid values must be specified in one of the following formats: </p>
+     * <ul> <li> <p> <code>HH:MM</code> for daily backups</p> </li> <li> <p>
      * <code>DDD:HH:MM</code> for weekly backups</p> </li> </ul> <p>The specified time
      * is in coordinated universal time (UTC). The default value is a random, daily
      * start time.</p> <p> <b>Example:</b> <code>08:00</code>, which represents a daily
@@ -579,9 +670,9 @@ namespace Model
 
     /**
      * <p> The start time for a one-hour period during which AWS OpsWorks for Chef
-     * Automate backs up application-level data on your server if backups are enabled.
-     * Valid values must be specified in one of the following formats: </p> <ul> <li>
-     * <p> <code>HH:MM</code> for daily backups</p> </li> <li> <p>
+     * Automate backs up application-level data on your server if automated backups are
+     * enabled. Valid values must be specified in one of the following formats: </p>
+     * <ul> <li> <p> <code>HH:MM</code> for daily backups</p> </li> <li> <p>
      * <code>DDD:HH:MM</code> for weekly backups</p> </li> </ul> <p>The specified time
      * is in coordinated universal time (UTC). The default value is a random, daily
      * start time.</p> <p> <b>Example:</b> <code>08:00</code>, which represents a daily
@@ -592,9 +683,9 @@ namespace Model
 
     /**
      * <p> The start time for a one-hour period during which AWS OpsWorks for Chef
-     * Automate backs up application-level data on your server if backups are enabled.
-     * Valid values must be specified in one of the following formats: </p> <ul> <li>
-     * <p> <code>HH:MM</code> for daily backups</p> </li> <li> <p>
+     * Automate backs up application-level data on your server if automated backups are
+     * enabled. Valid values must be specified in one of the following formats: </p>
+     * <ul> <li> <p> <code>HH:MM</code> for daily backups</p> </li> <li> <p>
      * <code>DDD:HH:MM</code> for weekly backups</p> </li> </ul> <p>The specified time
      * is in coordinated universal time (UTC). The default value is a random, daily
      * start time.</p> <p> <b>Example:</b> <code>08:00</code>, which represents a daily
@@ -605,9 +696,9 @@ namespace Model
 
     /**
      * <p> The start time for a one-hour period during which AWS OpsWorks for Chef
-     * Automate backs up application-level data on your server if backups are enabled.
-     * Valid values must be specified in one of the following formats: </p> <ul> <li>
-     * <p> <code>HH:MM</code> for daily backups</p> </li> <li> <p>
+     * Automate backs up application-level data on your server if automated backups are
+     * enabled. Valid values must be specified in one of the following formats: </p>
+     * <ul> <li> <p> <code>HH:MM</code> for daily backups</p> </li> <li> <p>
      * <code>DDD:HH:MM</code> for weekly backups</p> </li> </ul> <p>The specified time
      * is in coordinated universal time (UTC). The default value is a random, daily
      * start time.</p> <p> <b>Example:</b> <code>08:00</code>, which represents a daily
@@ -618,9 +709,9 @@ namespace Model
 
     /**
      * <p> The start time for a one-hour period during which AWS OpsWorks for Chef
-     * Automate backs up application-level data on your server if backups are enabled.
-     * Valid values must be specified in one of the following formats: </p> <ul> <li>
-     * <p> <code>HH:MM</code> for daily backups</p> </li> <li> <p>
+     * Automate backs up application-level data on your server if automated backups are
+     * enabled. Valid values must be specified in one of the following formats: </p>
+     * <ul> <li> <p> <code>HH:MM</code> for daily backups</p> </li> <li> <p>
      * <code>DDD:HH:MM</code> for weekly backups</p> </li> </ul> <p>The specified time
      * is in coordinated universal time (UTC). The default value is a random, daily
      * start time.</p> <p> <b>Example:</b> <code>08:00</code>, which represents a daily
@@ -631,9 +722,9 @@ namespace Model
 
     /**
      * <p> The start time for a one-hour period during which AWS OpsWorks for Chef
-     * Automate backs up application-level data on your server if backups are enabled.
-     * Valid values must be specified in one of the following formats: </p> <ul> <li>
-     * <p> <code>HH:MM</code> for daily backups</p> </li> <li> <p>
+     * Automate backs up application-level data on your server if automated backups are
+     * enabled. Valid values must be specified in one of the following formats: </p>
+     * <ul> <li> <p> <code>HH:MM</code> for daily backups</p> </li> <li> <p>
      * <code>DDD:HH:MM</code> for weekly backups</p> </li> </ul> <p>The specified time
      * is in coordinated universal time (UTC). The default value is a random, daily
      * start time.</p> <p> <b>Example:</b> <code>08:00</code>, which represents a daily
@@ -716,78 +807,85 @@ namespace Model
 
     /**
      * <p> The service role that the AWS OpsWorks for Chef Automate service backend
-     * uses to work with your account. Although the AWS OpsWorks console typically
-     * creates the service role for you, in this release of AWS OpsWorks for Chef
-     * Automate, run the service-role-creation.yaml AWS CloudFormation template,
+     * uses to work with your account. Although the AWS OpsWorks management console
+     * typically creates the service role for you, if you are using the AWS CLI or API
+     * commands, run the service-role-creation.yaml AWS CloudFormation template,
      * located at
      * https://s3.amazonaws.com/opsworks-stuff/latest/service-role-creation.yaml. This
-     * template creates a stack that includes the service role that you need. </p>
+     * template creates a CloudFormation stack that includes the service role that you
+     * need. </p>
      */
     inline const Aws::String& GetServiceRoleArn() const{ return m_serviceRoleArn; }
 
     /**
      * <p> The service role that the AWS OpsWorks for Chef Automate service backend
-     * uses to work with your account. Although the AWS OpsWorks console typically
-     * creates the service role for you, in this release of AWS OpsWorks for Chef
-     * Automate, run the service-role-creation.yaml AWS CloudFormation template,
+     * uses to work with your account. Although the AWS OpsWorks management console
+     * typically creates the service role for you, if you are using the AWS CLI or API
+     * commands, run the service-role-creation.yaml AWS CloudFormation template,
      * located at
      * https://s3.amazonaws.com/opsworks-stuff/latest/service-role-creation.yaml. This
-     * template creates a stack that includes the service role that you need. </p>
+     * template creates a CloudFormation stack that includes the service role that you
+     * need. </p>
      */
     inline void SetServiceRoleArn(const Aws::String& value) { m_serviceRoleArnHasBeenSet = true; m_serviceRoleArn = value; }
 
     /**
      * <p> The service role that the AWS OpsWorks for Chef Automate service backend
-     * uses to work with your account. Although the AWS OpsWorks console typically
-     * creates the service role for you, in this release of AWS OpsWorks for Chef
-     * Automate, run the service-role-creation.yaml AWS CloudFormation template,
+     * uses to work with your account. Although the AWS OpsWorks management console
+     * typically creates the service role for you, if you are using the AWS CLI or API
+     * commands, run the service-role-creation.yaml AWS CloudFormation template,
      * located at
      * https://s3.amazonaws.com/opsworks-stuff/latest/service-role-creation.yaml. This
-     * template creates a stack that includes the service role that you need. </p>
+     * template creates a CloudFormation stack that includes the service role that you
+     * need. </p>
      */
     inline void SetServiceRoleArn(Aws::String&& value) { m_serviceRoleArnHasBeenSet = true; m_serviceRoleArn = value; }
 
     /**
      * <p> The service role that the AWS OpsWorks for Chef Automate service backend
-     * uses to work with your account. Although the AWS OpsWorks console typically
-     * creates the service role for you, in this release of AWS OpsWorks for Chef
-     * Automate, run the service-role-creation.yaml AWS CloudFormation template,
+     * uses to work with your account. Although the AWS OpsWorks management console
+     * typically creates the service role for you, if you are using the AWS CLI or API
+     * commands, run the service-role-creation.yaml AWS CloudFormation template,
      * located at
      * https://s3.amazonaws.com/opsworks-stuff/latest/service-role-creation.yaml. This
-     * template creates a stack that includes the service role that you need. </p>
+     * template creates a CloudFormation stack that includes the service role that you
+     * need. </p>
      */
     inline void SetServiceRoleArn(const char* value) { m_serviceRoleArnHasBeenSet = true; m_serviceRoleArn.assign(value); }
 
     /**
      * <p> The service role that the AWS OpsWorks for Chef Automate service backend
-     * uses to work with your account. Although the AWS OpsWorks console typically
-     * creates the service role for you, in this release of AWS OpsWorks for Chef
-     * Automate, run the service-role-creation.yaml AWS CloudFormation template,
+     * uses to work with your account. Although the AWS OpsWorks management console
+     * typically creates the service role for you, if you are using the AWS CLI or API
+     * commands, run the service-role-creation.yaml AWS CloudFormation template,
      * located at
      * https://s3.amazonaws.com/opsworks-stuff/latest/service-role-creation.yaml. This
-     * template creates a stack that includes the service role that you need. </p>
+     * template creates a CloudFormation stack that includes the service role that you
+     * need. </p>
      */
     inline CreateServerRequest& WithServiceRoleArn(const Aws::String& value) { SetServiceRoleArn(value); return *this;}
 
     /**
      * <p> The service role that the AWS OpsWorks for Chef Automate service backend
-     * uses to work with your account. Although the AWS OpsWorks console typically
-     * creates the service role for you, in this release of AWS OpsWorks for Chef
-     * Automate, run the service-role-creation.yaml AWS CloudFormation template,
+     * uses to work with your account. Although the AWS OpsWorks management console
+     * typically creates the service role for you, if you are using the AWS CLI or API
+     * commands, run the service-role-creation.yaml AWS CloudFormation template,
      * located at
      * https://s3.amazonaws.com/opsworks-stuff/latest/service-role-creation.yaml. This
-     * template creates a stack that includes the service role that you need. </p>
+     * template creates a CloudFormation stack that includes the service role that you
+     * need. </p>
      */
     inline CreateServerRequest& WithServiceRoleArn(Aws::String&& value) { SetServiceRoleArn(value); return *this;}
 
     /**
      * <p> The service role that the AWS OpsWorks for Chef Automate service backend
-     * uses to work with your account. Although the AWS OpsWorks console typically
-     * creates the service role for you, in this release of AWS OpsWorks for Chef
-     * Automate, run the service-role-creation.yaml AWS CloudFormation template,
+     * uses to work with your account. Although the AWS OpsWorks management console
+     * typically creates the service role for you, if you are using the AWS CLI or API
+     * commands, run the service-role-creation.yaml AWS CloudFormation template,
      * located at
      * https://s3.amazonaws.com/opsworks-stuff/latest/service-role-creation.yaml. This
-     * template creates a stack that includes the service role that you need. </p>
+     * template creates a CloudFormation stack that includes the service role that you
+     * need. </p>
      */
     inline CreateServerRequest& WithServiceRoleArn(const char* value) { SetServiceRoleArn(value); return *this;}
 
@@ -946,6 +1044,8 @@ namespace Model
     inline CreateServerRequest& WithBackupId(const char* value) { SetBackupId(value); return *this;}
 
   private:
+    bool m_associatePublicIpAddress;
+    bool m_associatePublicIpAddressHasBeenSet;
     bool m_disableAutomatedBackup;
     bool m_disableAutomatedBackupHasBeenSet;
     Aws::String m_engine;

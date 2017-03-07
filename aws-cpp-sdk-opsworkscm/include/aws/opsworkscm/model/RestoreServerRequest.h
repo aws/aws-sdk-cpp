@@ -107,105 +107,105 @@ namespace Model
     /**
      * <p> The type of the instance to create. Valid values must be specified in the
      * following format: <code>^([cm][34]|t2).*</code> For example,
-     * <code>c3.large</code>. If you do not specify this parameter, RestoreServer uses
-     * the instance type from the specified backup. </p>
+     * <code>m4.large</code>. Valid values are <code>t2.medium</code>,
+     * <code>m4.large</code>, and <code>m4.2xlarge</code>. If you do not specify this
+     * parameter, RestoreServer uses the instance type from the specified backup. </p>
      */
     inline const Aws::String& GetInstanceType() const{ return m_instanceType; }
 
     /**
      * <p> The type of the instance to create. Valid values must be specified in the
      * following format: <code>^([cm][34]|t2).*</code> For example,
-     * <code>c3.large</code>. If you do not specify this parameter, RestoreServer uses
-     * the instance type from the specified backup. </p>
+     * <code>m4.large</code>. Valid values are <code>t2.medium</code>,
+     * <code>m4.large</code>, and <code>m4.2xlarge</code>. If you do not specify this
+     * parameter, RestoreServer uses the instance type from the specified backup. </p>
      */
     inline void SetInstanceType(const Aws::String& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
 
     /**
      * <p> The type of the instance to create. Valid values must be specified in the
      * following format: <code>^([cm][34]|t2).*</code> For example,
-     * <code>c3.large</code>. If you do not specify this parameter, RestoreServer uses
-     * the instance type from the specified backup. </p>
+     * <code>m4.large</code>. Valid values are <code>t2.medium</code>,
+     * <code>m4.large</code>, and <code>m4.2xlarge</code>. If you do not specify this
+     * parameter, RestoreServer uses the instance type from the specified backup. </p>
      */
     inline void SetInstanceType(Aws::String&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
 
     /**
      * <p> The type of the instance to create. Valid values must be specified in the
      * following format: <code>^([cm][34]|t2).*</code> For example,
-     * <code>c3.large</code>. If you do not specify this parameter, RestoreServer uses
-     * the instance type from the specified backup. </p>
+     * <code>m4.large</code>. Valid values are <code>t2.medium</code>,
+     * <code>m4.large</code>, and <code>m4.2xlarge</code>. If you do not specify this
+     * parameter, RestoreServer uses the instance type from the specified backup. </p>
      */
     inline void SetInstanceType(const char* value) { m_instanceTypeHasBeenSet = true; m_instanceType.assign(value); }
 
     /**
      * <p> The type of the instance to create. Valid values must be specified in the
      * following format: <code>^([cm][34]|t2).*</code> For example,
-     * <code>c3.large</code>. If you do not specify this parameter, RestoreServer uses
-     * the instance type from the specified backup. </p>
+     * <code>m4.large</code>. Valid values are <code>t2.medium</code>,
+     * <code>m4.large</code>, and <code>m4.2xlarge</code>. If you do not specify this
+     * parameter, RestoreServer uses the instance type from the specified backup. </p>
      */
     inline RestoreServerRequest& WithInstanceType(const Aws::String& value) { SetInstanceType(value); return *this;}
 
     /**
      * <p> The type of the instance to create. Valid values must be specified in the
      * following format: <code>^([cm][34]|t2).*</code> For example,
-     * <code>c3.large</code>. If you do not specify this parameter, RestoreServer uses
-     * the instance type from the specified backup. </p>
+     * <code>m4.large</code>. Valid values are <code>t2.medium</code>,
+     * <code>m4.large</code>, and <code>m4.2xlarge</code>. If you do not specify this
+     * parameter, RestoreServer uses the instance type from the specified backup. </p>
      */
     inline RestoreServerRequest& WithInstanceType(Aws::String&& value) { SetInstanceType(value); return *this;}
 
     /**
      * <p> The type of the instance to create. Valid values must be specified in the
      * following format: <code>^([cm][34]|t2).*</code> For example,
-     * <code>c3.large</code>. If you do not specify this parameter, RestoreServer uses
-     * the instance type from the specified backup. </p>
+     * <code>m4.large</code>. Valid values are <code>t2.medium</code>,
+     * <code>m4.large</code>, and <code>m4.2xlarge</code>. If you do not specify this
+     * parameter, RestoreServer uses the instance type from the specified backup. </p>
      */
     inline RestoreServerRequest& WithInstanceType(const char* value) { SetInstanceType(value); return *this;}
 
     /**
      * <p> The name of the key pair to set on the new EC2 instance. This can be helpful
-     * if any of the administrators who manage the server no longer have the SSH key.
-     * </p>
+     * if the administrator no longer has the SSH key. </p>
      */
     inline const Aws::String& GetKeyPair() const{ return m_keyPair; }
 
     /**
      * <p> The name of the key pair to set on the new EC2 instance. This can be helpful
-     * if any of the administrators who manage the server no longer have the SSH key.
-     * </p>
+     * if the administrator no longer has the SSH key. </p>
      */
     inline void SetKeyPair(const Aws::String& value) { m_keyPairHasBeenSet = true; m_keyPair = value; }
 
     /**
      * <p> The name of the key pair to set on the new EC2 instance. This can be helpful
-     * if any of the administrators who manage the server no longer have the SSH key.
-     * </p>
+     * if the administrator no longer has the SSH key. </p>
      */
     inline void SetKeyPair(Aws::String&& value) { m_keyPairHasBeenSet = true; m_keyPair = value; }
 
     /**
      * <p> The name of the key pair to set on the new EC2 instance. This can be helpful
-     * if any of the administrators who manage the server no longer have the SSH key.
-     * </p>
+     * if the administrator no longer has the SSH key. </p>
      */
     inline void SetKeyPair(const char* value) { m_keyPairHasBeenSet = true; m_keyPair.assign(value); }
 
     /**
      * <p> The name of the key pair to set on the new EC2 instance. This can be helpful
-     * if any of the administrators who manage the server no longer have the SSH key.
-     * </p>
+     * if the administrator no longer has the SSH key. </p>
      */
     inline RestoreServerRequest& WithKeyPair(const Aws::String& value) { SetKeyPair(value); return *this;}
 
     /**
      * <p> The name of the key pair to set on the new EC2 instance. This can be helpful
-     * if any of the administrators who manage the server no longer have the SSH key.
-     * </p>
+     * if the administrator no longer has the SSH key. </p>
      */
     inline RestoreServerRequest& WithKeyPair(Aws::String&& value) { SetKeyPair(value); return *this;}
 
     /**
      * <p> The name of the key pair to set on the new EC2 instance. This can be helpful
-     * if any of the administrators who manage the server no longer have the SSH key.
-     * </p>
+     * if the administrator no longer has the SSH key. </p>
      */
     inline RestoreServerRequest& WithKeyPair(const char* value) { SetKeyPair(value); return *this;}
 

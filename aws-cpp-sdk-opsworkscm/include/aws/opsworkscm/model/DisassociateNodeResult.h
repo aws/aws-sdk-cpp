@@ -39,25 +39,53 @@ namespace Model
     DisassociateNodeResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     DisassociateNodeResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
-    
+    /**
+     * <p>Contains a token which can be passed to the
+     * <code>DescribeNodeAssociationStatus</code> API call to get the status of the
+     * disassociation request. </p>
+     */
     inline const Aws::String& GetNodeAssociationStatusToken() const{ return m_nodeAssociationStatusToken; }
 
-    
+    /**
+     * <p>Contains a token which can be passed to the
+     * <code>DescribeNodeAssociationStatus</code> API call to get the status of the
+     * disassociation request. </p>
+     */
     inline void SetNodeAssociationStatusToken(const Aws::String& value) { m_nodeAssociationStatusToken = value; }
 
-    
+    /**
+     * <p>Contains a token which can be passed to the
+     * <code>DescribeNodeAssociationStatus</code> API call to get the status of the
+     * disassociation request. </p>
+     */
     inline void SetNodeAssociationStatusToken(Aws::String&& value) { m_nodeAssociationStatusToken = value; }
 
-    
+    /**
+     * <p>Contains a token which can be passed to the
+     * <code>DescribeNodeAssociationStatus</code> API call to get the status of the
+     * disassociation request. </p>
+     */
     inline void SetNodeAssociationStatusToken(const char* value) { m_nodeAssociationStatusToken.assign(value); }
 
-    
+    /**
+     * <p>Contains a token which can be passed to the
+     * <code>DescribeNodeAssociationStatus</code> API call to get the status of the
+     * disassociation request. </p>
+     */
     inline DisassociateNodeResult& WithNodeAssociationStatusToken(const Aws::String& value) { SetNodeAssociationStatusToken(value); return *this;}
 
-    
+    /**
+     * <p>Contains a token which can be passed to the
+     * <code>DescribeNodeAssociationStatus</code> API call to get the status of the
+     * disassociation request. </p>
+     */
     inline DisassociateNodeResult& WithNodeAssociationStatusToken(Aws::String&& value) { SetNodeAssociationStatusToken(value); return *this;}
 
-    
+    /**
+     * <p>Contains a token which can be passed to the
+     * <code>DescribeNodeAssociationStatus</code> API call to get the status of the
+     * disassociation request. </p>
+     */
     inline DisassociateNodeResult& WithNodeAssociationStatusToken(const char* value) { SetNodeAssociationStatusToken(value); return *this;}
 
   private:

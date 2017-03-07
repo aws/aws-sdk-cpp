@@ -45,71 +45,71 @@ namespace Model
 
     /**
      * <p> The attribute name. The following are supported attribute names. </p> <ul>
-     * <li> <p> <i>ServerLimit:</i> The number of servers that currently existing /
-     * maximal allowed. By default 10 servers can be created. </p> </li> <li> <p>
-     * <i>ManualBackupLimit:</i> The number of manual backups that currently exist /
-     * are maximal allowed. By default 50 manual backups can be created. </p> </li>
-     * </ul>
+     * <li> <p> <i>ServerLimit:</i> The number of current servers/maximum number of
+     * servers allowed. By default, you can have a maximum of 10 servers. </p> </li>
+     * <li> <p> <i>ManualBackupLimit:</i> The number of current manual backups/maximum
+     * number of backups allowed. By default, you can have a maximum of 50 manual
+     * backups saved. </p> </li> </ul>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
      * <p> The attribute name. The following are supported attribute names. </p> <ul>
-     * <li> <p> <i>ServerLimit:</i> The number of servers that currently existing /
-     * maximal allowed. By default 10 servers can be created. </p> </li> <li> <p>
-     * <i>ManualBackupLimit:</i> The number of manual backups that currently exist /
-     * are maximal allowed. By default 50 manual backups can be created. </p> </li>
-     * </ul>
+     * <li> <p> <i>ServerLimit:</i> The number of current servers/maximum number of
+     * servers allowed. By default, you can have a maximum of 10 servers. </p> </li>
+     * <li> <p> <i>ManualBackupLimit:</i> The number of current manual backups/maximum
+     * number of backups allowed. By default, you can have a maximum of 50 manual
+     * backups saved. </p> </li> </ul>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
      * <p> The attribute name. The following are supported attribute names. </p> <ul>
-     * <li> <p> <i>ServerLimit:</i> The number of servers that currently existing /
-     * maximal allowed. By default 10 servers can be created. </p> </li> <li> <p>
-     * <i>ManualBackupLimit:</i> The number of manual backups that currently exist /
-     * are maximal allowed. By default 50 manual backups can be created. </p> </li>
-     * </ul>
+     * <li> <p> <i>ServerLimit:</i> The number of current servers/maximum number of
+     * servers allowed. By default, you can have a maximum of 10 servers. </p> </li>
+     * <li> <p> <i>ManualBackupLimit:</i> The number of current manual backups/maximum
+     * number of backups allowed. By default, you can have a maximum of 50 manual
+     * backups saved. </p> </li> </ul>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
      * <p> The attribute name. The following are supported attribute names. </p> <ul>
-     * <li> <p> <i>ServerLimit:</i> The number of servers that currently existing /
-     * maximal allowed. By default 10 servers can be created. </p> </li> <li> <p>
-     * <i>ManualBackupLimit:</i> The number of manual backups that currently exist /
-     * are maximal allowed. By default 50 manual backups can be created. </p> </li>
-     * </ul>
+     * <li> <p> <i>ServerLimit:</i> The number of current servers/maximum number of
+     * servers allowed. By default, you can have a maximum of 10 servers. </p> </li>
+     * <li> <p> <i>ManualBackupLimit:</i> The number of current manual backups/maximum
+     * number of backups allowed. By default, you can have a maximum of 50 manual
+     * backups saved. </p> </li> </ul>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
      * <p> The attribute name. The following are supported attribute names. </p> <ul>
-     * <li> <p> <i>ServerLimit:</i> The number of servers that currently existing /
-     * maximal allowed. By default 10 servers can be created. </p> </li> <li> <p>
-     * <i>ManualBackupLimit:</i> The number of manual backups that currently exist /
-     * are maximal allowed. By default 50 manual backups can be created. </p> </li>
-     * </ul>
+     * <li> <p> <i>ServerLimit:</i> The number of current servers/maximum number of
+     * servers allowed. By default, you can have a maximum of 10 servers. </p> </li>
+     * <li> <p> <i>ManualBackupLimit:</i> The number of current manual backups/maximum
+     * number of backups allowed. By default, you can have a maximum of 50 manual
+     * backups saved. </p> </li> </ul>
      */
     inline AccountAttribute& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
      * <p> The attribute name. The following are supported attribute names. </p> <ul>
-     * <li> <p> <i>ServerLimit:</i> The number of servers that currently existing /
-     * maximal allowed. By default 10 servers can be created. </p> </li> <li> <p>
-     * <i>ManualBackupLimit:</i> The number of manual backups that currently exist /
-     * are maximal allowed. By default 50 manual backups can be created. </p> </li>
-     * </ul>
+     * <li> <p> <i>ServerLimit:</i> The number of current servers/maximum number of
+     * servers allowed. By default, you can have a maximum of 10 servers. </p> </li>
+     * <li> <p> <i>ManualBackupLimit:</i> The number of current manual backups/maximum
+     * number of backups allowed. By default, you can have a maximum of 50 manual
+     * backups saved. </p> </li> </ul>
      */
     inline AccountAttribute& WithName(Aws::String&& value) { SetName(value); return *this;}
 
     /**
      * <p> The attribute name. The following are supported attribute names. </p> <ul>
-     * <li> <p> <i>ServerLimit:</i> The number of servers that currently existing /
-     * maximal allowed. By default 10 servers can be created. </p> </li> <li> <p>
-     * <i>ManualBackupLimit:</i> The number of manual backups that currently exist /
-     * are maximal allowed. By default 50 manual backups can be created. </p> </li>
-     * </ul>
+     * <li> <p> <i>ServerLimit:</i> The number of current servers/maximum number of
+     * servers allowed. By default, you can have a maximum of 10 servers. </p> </li>
+     * <li> <p> <i>ManualBackupLimit:</i> The number of current manual backups/maximum
+     * number of backups allowed. By default, you can have a maximum of 50 manual
+     * backups saved. </p> </li> </ul>
      */
     inline AccountAttribute& WithName(const char* value) { SetName(value); return *this;}
 
@@ -129,20 +129,20 @@ namespace Model
     inline AccountAttribute& WithMaximum(int value) { SetMaximum(value); return *this;}
 
     /**
-     * <p> The current usage, such as the current number of servers associated with the
-     * account. </p>
+     * <p> The current usage, such as the current number of servers that are associated
+     * with the account. </p>
      */
     inline int GetUsed() const{ return m_used; }
 
     /**
-     * <p> The current usage, such as the current number of servers associated with the
-     * account. </p>
+     * <p> The current usage, such as the current number of servers that are associated
+     * with the account. </p>
      */
     inline void SetUsed(int value) { m_usedHasBeenSet = true; m_used = value; }
 
     /**
-     * <p> The current usage, such as the current number of servers associated with the
-     * account. </p>
+     * <p> The current usage, such as the current number of servers that are associated
+     * with the account. </p>
      */
     inline AccountAttribute& WithUsed(int value) { SetUsed(value); return *this;}
 

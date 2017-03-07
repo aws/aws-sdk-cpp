@@ -36,67 +36,151 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
-    
+    /**
+     * <p>The name of the server with which to associate the node. </p>
+     */
     inline const Aws::String& GetServerName() const{ return m_serverName; }
 
-    
+    /**
+     * <p>The name of the server with which to associate the node. </p>
+     */
     inline void SetServerName(const Aws::String& value) { m_serverNameHasBeenSet = true; m_serverName = value; }
 
-    
+    /**
+     * <p>The name of the server with which to associate the node. </p>
+     */
     inline void SetServerName(Aws::String&& value) { m_serverNameHasBeenSet = true; m_serverName = value; }
 
-    
+    /**
+     * <p>The name of the server with which to associate the node. </p>
+     */
     inline void SetServerName(const char* value) { m_serverNameHasBeenSet = true; m_serverName.assign(value); }
 
-    
+    /**
+     * <p>The name of the server with which to associate the node. </p>
+     */
     inline AssociateNodeRequest& WithServerName(const Aws::String& value) { SetServerName(value); return *this;}
 
-    
+    /**
+     * <p>The name of the server with which to associate the node. </p>
+     */
     inline AssociateNodeRequest& WithServerName(Aws::String&& value) { SetServerName(value); return *this;}
 
-    
+    /**
+     * <p>The name of the server with which to associate the node. </p>
+     */
     inline AssociateNodeRequest& WithServerName(const char* value) { SetServerName(value); return *this;}
 
-    
+    /**
+     * <p>The name of the Chef client node. </p>
+     */
     inline const Aws::String& GetNodeName() const{ return m_nodeName; }
 
-    
+    /**
+     * <p>The name of the Chef client node. </p>
+     */
     inline void SetNodeName(const Aws::String& value) { m_nodeNameHasBeenSet = true; m_nodeName = value; }
 
-    
+    /**
+     * <p>The name of the Chef client node. </p>
+     */
     inline void SetNodeName(Aws::String&& value) { m_nodeNameHasBeenSet = true; m_nodeName = value; }
 
-    
+    /**
+     * <p>The name of the Chef client node. </p>
+     */
     inline void SetNodeName(const char* value) { m_nodeNameHasBeenSet = true; m_nodeName.assign(value); }
 
-    
+    /**
+     * <p>The name of the Chef client node. </p>
+     */
     inline AssociateNodeRequest& WithNodeName(const Aws::String& value) { SetNodeName(value); return *this;}
 
-    
+    /**
+     * <p>The name of the Chef client node. </p>
+     */
     inline AssociateNodeRequest& WithNodeName(Aws::String&& value) { SetNodeName(value); return *this;}
 
-    
+    /**
+     * <p>The name of the Chef client node. </p>
+     */
     inline AssociateNodeRequest& WithNodeName(const char* value) { SetNodeName(value); return *this;}
 
-    
+    /**
+     * <p>Engine attributes used for associating the node. </p> <p class="title">
+     * <b>Attributes accepted in a AssociateNode request:</b> </p> <ul> <li> <p>
+     * <code>CHEF_ORGANIZATION</code>: The Chef organization with which the node is
+     * associated. By default only one organization named <code>default</code> can
+     * exist. </p> </li> <li> <p> <code>CHEF_NODE_PUBLIC_KEY</code>: A PEM-formatted
+     * public key. This key is required for the <code>chef-client</code> agent to
+     * access the Chef API. </p> </li> </ul>
+     */
     inline const Aws::Vector<EngineAttribute>& GetEngineAttributes() const{ return m_engineAttributes; }
 
-    
+    /**
+     * <p>Engine attributes used for associating the node. </p> <p class="title">
+     * <b>Attributes accepted in a AssociateNode request:</b> </p> <ul> <li> <p>
+     * <code>CHEF_ORGANIZATION</code>: The Chef organization with which the node is
+     * associated. By default only one organization named <code>default</code> can
+     * exist. </p> </li> <li> <p> <code>CHEF_NODE_PUBLIC_KEY</code>: A PEM-formatted
+     * public key. This key is required for the <code>chef-client</code> agent to
+     * access the Chef API. </p> </li> </ul>
+     */
     inline void SetEngineAttributes(const Aws::Vector<EngineAttribute>& value) { m_engineAttributesHasBeenSet = true; m_engineAttributes = value; }
 
-    
+    /**
+     * <p>Engine attributes used for associating the node. </p> <p class="title">
+     * <b>Attributes accepted in a AssociateNode request:</b> </p> <ul> <li> <p>
+     * <code>CHEF_ORGANIZATION</code>: The Chef organization with which the node is
+     * associated. By default only one organization named <code>default</code> can
+     * exist. </p> </li> <li> <p> <code>CHEF_NODE_PUBLIC_KEY</code>: A PEM-formatted
+     * public key. This key is required for the <code>chef-client</code> agent to
+     * access the Chef API. </p> </li> </ul>
+     */
     inline void SetEngineAttributes(Aws::Vector<EngineAttribute>&& value) { m_engineAttributesHasBeenSet = true; m_engineAttributes = value; }
 
-    
+    /**
+     * <p>Engine attributes used for associating the node. </p> <p class="title">
+     * <b>Attributes accepted in a AssociateNode request:</b> </p> <ul> <li> <p>
+     * <code>CHEF_ORGANIZATION</code>: The Chef organization with which the node is
+     * associated. By default only one organization named <code>default</code> can
+     * exist. </p> </li> <li> <p> <code>CHEF_NODE_PUBLIC_KEY</code>: A PEM-formatted
+     * public key. This key is required for the <code>chef-client</code> agent to
+     * access the Chef API. </p> </li> </ul>
+     */
     inline AssociateNodeRequest& WithEngineAttributes(const Aws::Vector<EngineAttribute>& value) { SetEngineAttributes(value); return *this;}
 
-    
+    /**
+     * <p>Engine attributes used for associating the node. </p> <p class="title">
+     * <b>Attributes accepted in a AssociateNode request:</b> </p> <ul> <li> <p>
+     * <code>CHEF_ORGANIZATION</code>: The Chef organization with which the node is
+     * associated. By default only one organization named <code>default</code> can
+     * exist. </p> </li> <li> <p> <code>CHEF_NODE_PUBLIC_KEY</code>: A PEM-formatted
+     * public key. This key is required for the <code>chef-client</code> agent to
+     * access the Chef API. </p> </li> </ul>
+     */
     inline AssociateNodeRequest& WithEngineAttributes(Aws::Vector<EngineAttribute>&& value) { SetEngineAttributes(value); return *this;}
 
-    
+    /**
+     * <p>Engine attributes used for associating the node. </p> <p class="title">
+     * <b>Attributes accepted in a AssociateNode request:</b> </p> <ul> <li> <p>
+     * <code>CHEF_ORGANIZATION</code>: The Chef organization with which the node is
+     * associated. By default only one organization named <code>default</code> can
+     * exist. </p> </li> <li> <p> <code>CHEF_NODE_PUBLIC_KEY</code>: A PEM-formatted
+     * public key. This key is required for the <code>chef-client</code> agent to
+     * access the Chef API. </p> </li> </ul>
+     */
     inline AssociateNodeRequest& AddEngineAttributes(const EngineAttribute& value) { m_engineAttributesHasBeenSet = true; m_engineAttributes.push_back(value); return *this; }
 
-    
+    /**
+     * <p>Engine attributes used for associating the node. </p> <p class="title">
+     * <b>Attributes accepted in a AssociateNode request:</b> </p> <ul> <li> <p>
+     * <code>CHEF_ORGANIZATION</code>: The Chef organization with which the node is
+     * associated. By default only one organization named <code>default</code> can
+     * exist. </p> </li> <li> <p> <code>CHEF_NODE_PUBLIC_KEY</code>: A PEM-formatted
+     * public key. This key is required for the <code>chef-client</code> agent to
+     * access the Chef API. </p> </li> </ul>
+     */
     inline AssociateNodeRequest& AddEngineAttributes(EngineAttribute&& value) { m_engineAttributesHasBeenSet = true; m_engineAttributes.push_back(value); return *this; }
 
   private:

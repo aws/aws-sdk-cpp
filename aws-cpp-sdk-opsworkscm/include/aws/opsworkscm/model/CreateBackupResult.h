@@ -40,27 +40,27 @@ namespace Model
     CreateBackupResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
     /**
-     * <p>Backup created by request. </p>
+     * <p>Backup created by request.</p>
      */
     inline const Backup& GetBackup() const{ return m_backup; }
 
     /**
-     * <p>Backup created by request. </p>
+     * <p>Backup created by request.</p>
      */
     inline void SetBackup(const Backup& value) { m_backup = value; }
 
     /**
-     * <p>Backup created by request. </p>
+     * <p>Backup created by request.</p>
      */
     inline void SetBackup(Backup&& value) { m_backup = value; }
 
     /**
-     * <p>Backup created by request. </p>
+     * <p>Backup created by request.</p>
      */
     inline CreateBackupResult& WithBackup(const Backup& value) { SetBackup(value); return *this;}
 
     /**
-     * <p>Backup created by request. </p>
+     * <p>Backup created by request.</p>
      */
     inline CreateBackupResult& WithBackup(Backup&& value) { SetBackup(value); return *this;}
 

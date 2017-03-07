@@ -35,37 +35,37 @@ namespace Model
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
     /**
-     * <p>Describes the server with the specified ServerName. </p>
+     * <p>Describes the server with the specified ServerName.</p>
      */
     inline const Aws::String& GetServerName() const{ return m_serverName; }
 
     /**
-     * <p>Describes the server with the specified ServerName. </p>
+     * <p>Describes the server with the specified ServerName.</p>
      */
     inline void SetServerName(const Aws::String& value) { m_serverNameHasBeenSet = true; m_serverName = value; }
 
     /**
-     * <p>Describes the server with the specified ServerName. </p>
+     * <p>Describes the server with the specified ServerName.</p>
      */
     inline void SetServerName(Aws::String&& value) { m_serverNameHasBeenSet = true; m_serverName = value; }
 
     /**
-     * <p>Describes the server with the specified ServerName. </p>
+     * <p>Describes the server with the specified ServerName.</p>
      */
     inline void SetServerName(const char* value) { m_serverNameHasBeenSet = true; m_serverName.assign(value); }
 
     /**
-     * <p>Describes the server with the specified ServerName. </p>
+     * <p>Describes the server with the specified ServerName.</p>
      */
     inline DescribeServersRequest& WithServerName(const Aws::String& value) { SetServerName(value); return *this;}
 
     /**
-     * <p>Describes the server with the specified ServerName. </p>
+     * <p>Describes the server with the specified ServerName.</p>
      */
     inline DescribeServersRequest& WithServerName(Aws::String&& value) { SetServerName(value); return *this;}
 
     /**
-     * <p>Describes the server with the specified ServerName. </p>
+     * <p>Describes the server with the specified ServerName.</p>
      */
     inline DescribeServersRequest& WithServerName(const char* value) { SetServerName(value); return *this;}
 

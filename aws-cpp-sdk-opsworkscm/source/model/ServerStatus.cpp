@@ -37,9 +37,11 @@ namespace Aws
         static const int FAILED_HASH = HashingUtils::HashString("FAILED");
         static const int HEALTHY_HASH = HashingUtils::HashString("HEALTHY");
         static const int RUNNING_HASH = HashingUtils::HashString("RUNNING");
+        static const int RESTORING_HASH = HashingUtils::HashString("RESTORING");
         static const int SETUP_HASH = HashingUtils::HashString("SETUP");
         static const int UNDER_MAINTENANCE_HASH = HashingUtils::HashString("UNDER_MAINTENANCE");
         static const int UNHEALTHY_HASH = HashingUtils::HashString("UNHEALTHY");
+        static const int TERMINATED_HASH = HashingUtils::HashString("TERMINATED");
 
 
         ServerStatus GetServerStatusForName(const Aws::String& name)
@@ -77,6 +79,10 @@ namespace Aws
           {
             return ServerStatus::RUNNING;
           }
+          else if (hashCode == RESTORING_HASH)
+          {
+            return ServerStatus::RESTORING;
+          }
           else if (hashCode == SETUP_HASH)
           {
             return ServerStatus::SETUP;
@@ -88,6 +94,10 @@ namespace Aws
           else if (hashCode == UNHEALTHY_HASH)
           {
             return ServerStatus::UNHEALTHY;
+          }
+          else if (hashCode == TERMINATED_HASH)
+          {
+            return ServerStatus::TERMINATED;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -119,12 +129,16 @@ namespace Aws
             return "HEALTHY";
           case ServerStatus::RUNNING:
             return "RUNNING";
+          case ServerStatus::RESTORING:
+            return "RESTORING";
           case ServerStatus::SETUP:
             return "SETUP";
           case ServerStatus::UNDER_MAINTENANCE:
             return "UNDER_MAINTENANCE";
           case ServerStatus::UNHEALTHY:
             return "UNHEALTHY";
+          case ServerStatus::TERMINATED:
+            return "TERMINATED";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

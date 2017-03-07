@@ -22,6 +22,8 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 CreateServerRequest::CreateServerRequest() : 
+    m_associatePublicIpAddress(false),
+    m_associatePublicIpAddressHasBeenSet(false),
     m_disableAutomatedBackup(false),
     m_disableAutomatedBackupHasBeenSet(false),
     m_engineHasBeenSet(false),
@@ -46,6 +48,12 @@ CreateServerRequest::CreateServerRequest() :
 Aws::String CreateServerRequest::SerializePayload() const
 {
   JsonValue payload;
+
+  if(m_associatePublicIpAddressHasBeenSet)
+  {
+   payload.WithBool("AssociatePublicIpAddress", m_associatePublicIpAddress);
+
+  }
 
   if(m_disableAutomatedBackupHasBeenSet)
   {
