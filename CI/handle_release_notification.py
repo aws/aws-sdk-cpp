@@ -30,7 +30,7 @@ def lambda_handler(event, context):
     except ClientError as e:
         print("Couldn't pull doc, assuming it is empty. exception " + e.message)
 
-    releasesDoc['releases'].append(message)
+    releasesDoc['releases'].append(json.loads(message)["release"])
     write_zipped_release_doc(releasesDoc)
     with open(temp_archive_file) as archive:
         s3.put_object(Bucket=bucket_name, Key=key, Body=archive.read())
