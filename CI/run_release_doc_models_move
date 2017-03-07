@@ -6,4 +6,4 @@ rm models.zip
 python $DIR/move_release_doc_to_models.py --modelsDir="./models" --releaseDoc="$1"
 rm models.zip
 zip -r modelsSnapshot.zip ./models
-aws s3 cp modelsSnapshot.zip s3://aws-sdk-cpp-pipeline-sdks-team/modelsSnapshotCpy.zip --region us-east-1
+aws s3 cp modelsSnapshot.zip s3://aws-sdk-cpp-pipeline-sdks-team/modelsSnapshot.zip --region us-east-1
