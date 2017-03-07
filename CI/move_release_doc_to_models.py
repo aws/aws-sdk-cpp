@@ -50,6 +50,11 @@ def main():
             cat_release_notes(feature["releaseNotes"], modelsDir)
            
         cat_pending_releases(release["id"], modelsDir)
+
+    emptyReleaseDoc = "{ \"releases\": []}"
+
+    with open(releaseDocPath, "w") as emptyReleaseFile:
+        emptyReleaseFile.write(emptyReleaseDoc)
             
 def copy_model_files(models_dir):
     archive = zipfile.ZipFile(temp_archive_file, 'r')
