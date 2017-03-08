@@ -970,11 +970,15 @@ namespace Model
      * identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you
      * are creating a DB cluster with the same AWS account that owns the KMS encryption
      * key used to encrypt the new DB cluster, then you can use the KMS key alias
-     * instead of the ARN for the KM encryption key.</p> <p>If the
+     * instead of the ARN for the KMS encryption key.</p> <p>If the
      * <code>StorageEncrypted</code> parameter is true, and you do not specify a value
      * for the <code>KmsKeyId</code> parameter, then Amazon RDS will use your default
      * encryption key. AWS KMS creates the default encryption key for your AWS account.
      * Your AWS account has a different default encryption key for each AWS region.</p>
+     * <p>If you create a Read Replica of an encrypted DB cluster in another region,
+     * you must set <code>KmsKeyId</code> to a KMS key ID that is valid in the
+     * destination region. This key is used to encrypt the Read Replica in that
+     * region.</p>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
 
@@ -983,11 +987,15 @@ namespace Model
      * identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you
      * are creating a DB cluster with the same AWS account that owns the KMS encryption
      * key used to encrypt the new DB cluster, then you can use the KMS key alias
-     * instead of the ARN for the KM encryption key.</p> <p>If the
+     * instead of the ARN for the KMS encryption key.</p> <p>If the
      * <code>StorageEncrypted</code> parameter is true, and you do not specify a value
      * for the <code>KmsKeyId</code> parameter, then Amazon RDS will use your default
      * encryption key. AWS KMS creates the default encryption key for your AWS account.
      * Your AWS account has a different default encryption key for each AWS region.</p>
+     * <p>If you create a Read Replica of an encrypted DB cluster in another region,
+     * you must set <code>KmsKeyId</code> to a KMS key ID that is valid in the
+     * destination region. This key is used to encrypt the Read Replica in that
+     * region.</p>
      */
     inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
 
@@ -996,11 +1004,15 @@ namespace Model
      * identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you
      * are creating a DB cluster with the same AWS account that owns the KMS encryption
      * key used to encrypt the new DB cluster, then you can use the KMS key alias
-     * instead of the ARN for the KM encryption key.</p> <p>If the
+     * instead of the ARN for the KMS encryption key.</p> <p>If the
      * <code>StorageEncrypted</code> parameter is true, and you do not specify a value
      * for the <code>KmsKeyId</code> parameter, then Amazon RDS will use your default
      * encryption key. AWS KMS creates the default encryption key for your AWS account.
      * Your AWS account has a different default encryption key for each AWS region.</p>
+     * <p>If you create a Read Replica of an encrypted DB cluster in another region,
+     * you must set <code>KmsKeyId</code> to a KMS key ID that is valid in the
+     * destination region. This key is used to encrypt the Read Replica in that
+     * region.</p>
      */
     inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
 
@@ -1009,11 +1021,15 @@ namespace Model
      * identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you
      * are creating a DB cluster with the same AWS account that owns the KMS encryption
      * key used to encrypt the new DB cluster, then you can use the KMS key alias
-     * instead of the ARN for the KM encryption key.</p> <p>If the
+     * instead of the ARN for the KMS encryption key.</p> <p>If the
      * <code>StorageEncrypted</code> parameter is true, and you do not specify a value
      * for the <code>KmsKeyId</code> parameter, then Amazon RDS will use your default
      * encryption key. AWS KMS creates the default encryption key for your AWS account.
      * Your AWS account has a different default encryption key for each AWS region.</p>
+     * <p>If you create a Read Replica of an encrypted DB cluster in another region,
+     * you must set <code>KmsKeyId</code> to a KMS key ID that is valid in the
+     * destination region. This key is used to encrypt the Read Replica in that
+     * region.</p>
      */
     inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
 
@@ -1022,11 +1038,15 @@ namespace Model
      * identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you
      * are creating a DB cluster with the same AWS account that owns the KMS encryption
      * key used to encrypt the new DB cluster, then you can use the KMS key alias
-     * instead of the ARN for the KM encryption key.</p> <p>If the
+     * instead of the ARN for the KMS encryption key.</p> <p>If the
      * <code>StorageEncrypted</code> parameter is true, and you do not specify a value
      * for the <code>KmsKeyId</code> parameter, then Amazon RDS will use your default
      * encryption key. AWS KMS creates the default encryption key for your AWS account.
      * Your AWS account has a different default encryption key for each AWS region.</p>
+     * <p>If you create a Read Replica of an encrypted DB cluster in another region,
+     * you must set <code>KmsKeyId</code> to a KMS key ID that is valid in the
+     * destination region. This key is used to encrypt the Read Replica in that
+     * region.</p>
      */
     inline CreateDBClusterRequest& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
 
@@ -1035,11 +1055,15 @@ namespace Model
      * identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you
      * are creating a DB cluster with the same AWS account that owns the KMS encryption
      * key used to encrypt the new DB cluster, then you can use the KMS key alias
-     * instead of the ARN for the KM encryption key.</p> <p>If the
+     * instead of the ARN for the KMS encryption key.</p> <p>If the
      * <code>StorageEncrypted</code> parameter is true, and you do not specify a value
      * for the <code>KmsKeyId</code> parameter, then Amazon RDS will use your default
      * encryption key. AWS KMS creates the default encryption key for your AWS account.
      * Your AWS account has a different default encryption key for each AWS region.</p>
+     * <p>If you create a Read Replica of an encrypted DB cluster in another region,
+     * you must set <code>KmsKeyId</code> to a KMS key ID that is valid in the
+     * destination region. This key is used to encrypt the Read Replica in that
+     * region.</p>
      */
     inline CreateDBClusterRequest& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(value); return *this;}
 
@@ -1048,13 +1072,234 @@ namespace Model
      * identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you
      * are creating a DB cluster with the same AWS account that owns the KMS encryption
      * key used to encrypt the new DB cluster, then you can use the KMS key alias
-     * instead of the ARN for the KM encryption key.</p> <p>If the
+     * instead of the ARN for the KMS encryption key.</p> <p>If the
      * <code>StorageEncrypted</code> parameter is true, and you do not specify a value
      * for the <code>KmsKeyId</code> parameter, then Amazon RDS will use your default
      * encryption key. AWS KMS creates the default encryption key for your AWS account.
      * Your AWS account has a different default encryption key for each AWS region.</p>
+     * <p>If you create a Read Replica of an encrypted DB cluster in another region,
+     * you must set <code>KmsKeyId</code> to a KMS key ID that is valid in the
+     * destination region. This key is used to encrypt the Read Replica in that
+     * region.</p>
      */
     inline CreateDBClusterRequest& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
+
+    /**
+     * <p>A URL that contains a Signature Version 4 signed request for the
+     * <code>CreateDBCluster</code> action to be called in the source region where the
+     * DB cluster will be replicated from. You only need to specify
+     * <code>PreSignedUrl</code> when you are performing cross-region replication from
+     * an encrypted DB cluster.</p> <p>The pre-signed URL must be a valid request for
+     * the <code>CreateDBCluster</code> API action that can be executed in the source
+     * region that contains the encrypted DB cluster to be copied.</p> <p>The
+     * pre-signed URL request must contain the following parameter values:</p> <ul>
+     * <li> <p> <code>KmsKeyId</code> - The KMS key identifier for the key to use to
+     * encrypt the copy of the DB cluster in the destination region. This should refer
+     * to the same KMS key for both the <code>CreateDBCluster</code> action that is
+     * called in the destination region, and the action contained in the pre-signed
+     * URL.</p> </li> <li> <p> <code>DestinationRegion</code> - The name of the region
+     * that Aurora Read Replica will be created in.</p> </li> <li> <p>
+     * <code>ReplicationSourceIdentifier</code> - The DB cluster identifier for the
+     * encrypted DB cluster to be copied. This identifier must be in the Amazon
+     * Resource Name (ARN) format for the source region. For example, if you are
+     * copying an encrypted DB cluster from the us-west-2 region, then your
+     * <code>ReplicationSourceIdentifier</code> would look like Example:
+     * <code>arn:aws:rds:us-west-2:123456789012:cluster:aurora-cluster1</code>.</p>
+     * </li> </ul> <p>To learn how to generate a Signature Version 4 signed request,
+     * see <a
+     * href="http://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html">
+     * Authenticating Requests: Using Query Parameters (AWS Signature Version 4)</a>
+     * and <a
+     * href="http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">
+     * Signature Version 4 Signing Process</a>.</p>
+     */
+    inline const Aws::String& GetPreSignedUrl() const{ return m_preSignedUrl; }
+
+    /**
+     * <p>A URL that contains a Signature Version 4 signed request for the
+     * <code>CreateDBCluster</code> action to be called in the source region where the
+     * DB cluster will be replicated from. You only need to specify
+     * <code>PreSignedUrl</code> when you are performing cross-region replication from
+     * an encrypted DB cluster.</p> <p>The pre-signed URL must be a valid request for
+     * the <code>CreateDBCluster</code> API action that can be executed in the source
+     * region that contains the encrypted DB cluster to be copied.</p> <p>The
+     * pre-signed URL request must contain the following parameter values:</p> <ul>
+     * <li> <p> <code>KmsKeyId</code> - The KMS key identifier for the key to use to
+     * encrypt the copy of the DB cluster in the destination region. This should refer
+     * to the same KMS key for both the <code>CreateDBCluster</code> action that is
+     * called in the destination region, and the action contained in the pre-signed
+     * URL.</p> </li> <li> <p> <code>DestinationRegion</code> - The name of the region
+     * that Aurora Read Replica will be created in.</p> </li> <li> <p>
+     * <code>ReplicationSourceIdentifier</code> - The DB cluster identifier for the
+     * encrypted DB cluster to be copied. This identifier must be in the Amazon
+     * Resource Name (ARN) format for the source region. For example, if you are
+     * copying an encrypted DB cluster from the us-west-2 region, then your
+     * <code>ReplicationSourceIdentifier</code> would look like Example:
+     * <code>arn:aws:rds:us-west-2:123456789012:cluster:aurora-cluster1</code>.</p>
+     * </li> </ul> <p>To learn how to generate a Signature Version 4 signed request,
+     * see <a
+     * href="http://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html">
+     * Authenticating Requests: Using Query Parameters (AWS Signature Version 4)</a>
+     * and <a
+     * href="http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">
+     * Signature Version 4 Signing Process</a>.</p>
+     */
+    inline void SetPreSignedUrl(const Aws::String& value) { m_preSignedUrlHasBeenSet = true; m_preSignedUrl = value; }
+
+    /**
+     * <p>A URL that contains a Signature Version 4 signed request for the
+     * <code>CreateDBCluster</code> action to be called in the source region where the
+     * DB cluster will be replicated from. You only need to specify
+     * <code>PreSignedUrl</code> when you are performing cross-region replication from
+     * an encrypted DB cluster.</p> <p>The pre-signed URL must be a valid request for
+     * the <code>CreateDBCluster</code> API action that can be executed in the source
+     * region that contains the encrypted DB cluster to be copied.</p> <p>The
+     * pre-signed URL request must contain the following parameter values:</p> <ul>
+     * <li> <p> <code>KmsKeyId</code> - The KMS key identifier for the key to use to
+     * encrypt the copy of the DB cluster in the destination region. This should refer
+     * to the same KMS key for both the <code>CreateDBCluster</code> action that is
+     * called in the destination region, and the action contained in the pre-signed
+     * URL.</p> </li> <li> <p> <code>DestinationRegion</code> - The name of the region
+     * that Aurora Read Replica will be created in.</p> </li> <li> <p>
+     * <code>ReplicationSourceIdentifier</code> - The DB cluster identifier for the
+     * encrypted DB cluster to be copied. This identifier must be in the Amazon
+     * Resource Name (ARN) format for the source region. For example, if you are
+     * copying an encrypted DB cluster from the us-west-2 region, then your
+     * <code>ReplicationSourceIdentifier</code> would look like Example:
+     * <code>arn:aws:rds:us-west-2:123456789012:cluster:aurora-cluster1</code>.</p>
+     * </li> </ul> <p>To learn how to generate a Signature Version 4 signed request,
+     * see <a
+     * href="http://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html">
+     * Authenticating Requests: Using Query Parameters (AWS Signature Version 4)</a>
+     * and <a
+     * href="http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">
+     * Signature Version 4 Signing Process</a>.</p>
+     */
+    inline void SetPreSignedUrl(Aws::String&& value) { m_preSignedUrlHasBeenSet = true; m_preSignedUrl = value; }
+
+    /**
+     * <p>A URL that contains a Signature Version 4 signed request for the
+     * <code>CreateDBCluster</code> action to be called in the source region where the
+     * DB cluster will be replicated from. You only need to specify
+     * <code>PreSignedUrl</code> when you are performing cross-region replication from
+     * an encrypted DB cluster.</p> <p>The pre-signed URL must be a valid request for
+     * the <code>CreateDBCluster</code> API action that can be executed in the source
+     * region that contains the encrypted DB cluster to be copied.</p> <p>The
+     * pre-signed URL request must contain the following parameter values:</p> <ul>
+     * <li> <p> <code>KmsKeyId</code> - The KMS key identifier for the key to use to
+     * encrypt the copy of the DB cluster in the destination region. This should refer
+     * to the same KMS key for both the <code>CreateDBCluster</code> action that is
+     * called in the destination region, and the action contained in the pre-signed
+     * URL.</p> </li> <li> <p> <code>DestinationRegion</code> - The name of the region
+     * that Aurora Read Replica will be created in.</p> </li> <li> <p>
+     * <code>ReplicationSourceIdentifier</code> - The DB cluster identifier for the
+     * encrypted DB cluster to be copied. This identifier must be in the Amazon
+     * Resource Name (ARN) format for the source region. For example, if you are
+     * copying an encrypted DB cluster from the us-west-2 region, then your
+     * <code>ReplicationSourceIdentifier</code> would look like Example:
+     * <code>arn:aws:rds:us-west-2:123456789012:cluster:aurora-cluster1</code>.</p>
+     * </li> </ul> <p>To learn how to generate a Signature Version 4 signed request,
+     * see <a
+     * href="http://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html">
+     * Authenticating Requests: Using Query Parameters (AWS Signature Version 4)</a>
+     * and <a
+     * href="http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">
+     * Signature Version 4 Signing Process</a>.</p>
+     */
+    inline void SetPreSignedUrl(const char* value) { m_preSignedUrlHasBeenSet = true; m_preSignedUrl.assign(value); }
+
+    /**
+     * <p>A URL that contains a Signature Version 4 signed request for the
+     * <code>CreateDBCluster</code> action to be called in the source region where the
+     * DB cluster will be replicated from. You only need to specify
+     * <code>PreSignedUrl</code> when you are performing cross-region replication from
+     * an encrypted DB cluster.</p> <p>The pre-signed URL must be a valid request for
+     * the <code>CreateDBCluster</code> API action that can be executed in the source
+     * region that contains the encrypted DB cluster to be copied.</p> <p>The
+     * pre-signed URL request must contain the following parameter values:</p> <ul>
+     * <li> <p> <code>KmsKeyId</code> - The KMS key identifier for the key to use to
+     * encrypt the copy of the DB cluster in the destination region. This should refer
+     * to the same KMS key for both the <code>CreateDBCluster</code> action that is
+     * called in the destination region, and the action contained in the pre-signed
+     * URL.</p> </li> <li> <p> <code>DestinationRegion</code> - The name of the region
+     * that Aurora Read Replica will be created in.</p> </li> <li> <p>
+     * <code>ReplicationSourceIdentifier</code> - The DB cluster identifier for the
+     * encrypted DB cluster to be copied. This identifier must be in the Amazon
+     * Resource Name (ARN) format for the source region. For example, if you are
+     * copying an encrypted DB cluster from the us-west-2 region, then your
+     * <code>ReplicationSourceIdentifier</code> would look like Example:
+     * <code>arn:aws:rds:us-west-2:123456789012:cluster:aurora-cluster1</code>.</p>
+     * </li> </ul> <p>To learn how to generate a Signature Version 4 signed request,
+     * see <a
+     * href="http://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html">
+     * Authenticating Requests: Using Query Parameters (AWS Signature Version 4)</a>
+     * and <a
+     * href="http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">
+     * Signature Version 4 Signing Process</a>.</p>
+     */
+    inline CreateDBClusterRequest& WithPreSignedUrl(const Aws::String& value) { SetPreSignedUrl(value); return *this;}
+
+    /**
+     * <p>A URL that contains a Signature Version 4 signed request for the
+     * <code>CreateDBCluster</code> action to be called in the source region where the
+     * DB cluster will be replicated from. You only need to specify
+     * <code>PreSignedUrl</code> when you are performing cross-region replication from
+     * an encrypted DB cluster.</p> <p>The pre-signed URL must be a valid request for
+     * the <code>CreateDBCluster</code> API action that can be executed in the source
+     * region that contains the encrypted DB cluster to be copied.</p> <p>The
+     * pre-signed URL request must contain the following parameter values:</p> <ul>
+     * <li> <p> <code>KmsKeyId</code> - The KMS key identifier for the key to use to
+     * encrypt the copy of the DB cluster in the destination region. This should refer
+     * to the same KMS key for both the <code>CreateDBCluster</code> action that is
+     * called in the destination region, and the action contained in the pre-signed
+     * URL.</p> </li> <li> <p> <code>DestinationRegion</code> - The name of the region
+     * that Aurora Read Replica will be created in.</p> </li> <li> <p>
+     * <code>ReplicationSourceIdentifier</code> - The DB cluster identifier for the
+     * encrypted DB cluster to be copied. This identifier must be in the Amazon
+     * Resource Name (ARN) format for the source region. For example, if you are
+     * copying an encrypted DB cluster from the us-west-2 region, then your
+     * <code>ReplicationSourceIdentifier</code> would look like Example:
+     * <code>arn:aws:rds:us-west-2:123456789012:cluster:aurora-cluster1</code>.</p>
+     * </li> </ul> <p>To learn how to generate a Signature Version 4 signed request,
+     * see <a
+     * href="http://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html">
+     * Authenticating Requests: Using Query Parameters (AWS Signature Version 4)</a>
+     * and <a
+     * href="http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">
+     * Signature Version 4 Signing Process</a>.</p>
+     */
+    inline CreateDBClusterRequest& WithPreSignedUrl(Aws::String&& value) { SetPreSignedUrl(value); return *this;}
+
+    /**
+     * <p>A URL that contains a Signature Version 4 signed request for the
+     * <code>CreateDBCluster</code> action to be called in the source region where the
+     * DB cluster will be replicated from. You only need to specify
+     * <code>PreSignedUrl</code> when you are performing cross-region replication from
+     * an encrypted DB cluster.</p> <p>The pre-signed URL must be a valid request for
+     * the <code>CreateDBCluster</code> API action that can be executed in the source
+     * region that contains the encrypted DB cluster to be copied.</p> <p>The
+     * pre-signed URL request must contain the following parameter values:</p> <ul>
+     * <li> <p> <code>KmsKeyId</code> - The KMS key identifier for the key to use to
+     * encrypt the copy of the DB cluster in the destination region. This should refer
+     * to the same KMS key for both the <code>CreateDBCluster</code> action that is
+     * called in the destination region, and the action contained in the pre-signed
+     * URL.</p> </li> <li> <p> <code>DestinationRegion</code> - The name of the region
+     * that Aurora Read Replica will be created in.</p> </li> <li> <p>
+     * <code>ReplicationSourceIdentifier</code> - The DB cluster identifier for the
+     * encrypted DB cluster to be copied. This identifier must be in the Amazon
+     * Resource Name (ARN) format for the source region. For example, if you are
+     * copying an encrypted DB cluster from the us-west-2 region, then your
+     * <code>ReplicationSourceIdentifier</code> would look like Example:
+     * <code>arn:aws:rds:us-west-2:123456789012:cluster:aurora-cluster1</code>.</p>
+     * </li> </ul> <p>To learn how to generate a Signature Version 4 signed request,
+     * see <a
+     * href="http://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html">
+     * Authenticating Requests: Using Query Parameters (AWS Signature Version 4)</a>
+     * and <a
+     * href="http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">
+     * Signature Version 4 Signing Process</a>.</p>
+     */
+    inline CreateDBClusterRequest& WithPreSignedUrl(const char* value) { SetPreSignedUrl(value); return *this;}
 
   private:
     Aws::Vector<Aws::String> m_availabilityZones;
@@ -1097,6 +1342,8 @@ namespace Model
     bool m_storageEncryptedHasBeenSet;
     Aws::String m_kmsKeyId;
     bool m_kmsKeyIdHasBeenSet;
+    Aws::String m_preSignedUrl;
+    bool m_preSignedUrlHasBeenSet;
   };
 
 } // namespace Model
