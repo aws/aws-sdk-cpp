@@ -3,6 +3,6 @@
 IFS=$'\n' read -d '' -r -a releases < $0/pending_releases
 for i in "${releases[@]}"
 do
-    aws sqs send-message --queue-url  "$4"  --message "{ \"release-Id\": \"$1\", \"language: CPP\", \"releaseState\":\"$2\", \"statusMessage\":\"$3\" }" 
+    aws sqs send-message --queue-url  "$3"  --message "{ \"release-Id\": \"$i\", \"language: CPP\", \"releaseState\":\"$1\", \"statusMessage\":\"$2\" }" 
 done
 
