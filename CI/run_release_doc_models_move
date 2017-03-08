@@ -1,4 +1,5 @@
 #!/bin/bash
+set -e
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 aws s3 cp s3://aws-sdk-cpp-pipeline-sdks-team/modelsSnapshot.zip models.zip --region us-east-1
 unzip models.zip
