@@ -84,37 +84,37 @@ namespace Model
     inline ListObjectAttributesResult& AddAttributes(AttributeKeyAndValue&& value) { m_attributes.push_back(value); return *this; }
 
     /**
-     * <p>Token used for pagination.</p>
+     * <p>The pagination token.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * <p>Token used for pagination.</p>
+     * <p>The pagination token.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
 
     /**
-     * <p>Token used for pagination.</p>
+     * <p>The pagination token.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = value; }
 
     /**
-     * <p>Token used for pagination.</p>
+     * <p>The pagination token.</p>
      */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
 
     /**
-     * <p>Token used for pagination.</p>
+     * <p>The pagination token.</p>
      */
     inline ListObjectAttributesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>Token used for pagination.</p>
+     * <p>The pagination token.</p>
      */
     inline ListObjectAttributesResult& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>Token used for pagination.</p>
+     * <p>The pagination token.</p>
      */
     inline ListObjectAttributesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 

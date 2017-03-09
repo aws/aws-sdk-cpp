@@ -157,27 +157,27 @@ namespace Model
     inline FacetAttribute& WithAttributeReference(FacetAttributeReference&& value) { SetAttributeReference(value); return *this;}
 
     /**
-     * <p>The required behavior of the FacetAttribute.</p>
+     * <p>The required behavior of the <code>FacetAttribute</code>.</p>
      */
     inline const RequiredAttributeBehavior& GetRequiredBehavior() const{ return m_requiredBehavior; }
 
     /**
-     * <p>The required behavior of the FacetAttribute.</p>
+     * <p>The required behavior of the <code>FacetAttribute</code>.</p>
      */
     inline void SetRequiredBehavior(const RequiredAttributeBehavior& value) { m_requiredBehaviorHasBeenSet = true; m_requiredBehavior = value; }
 
     /**
-     * <p>The required behavior of the FacetAttribute.</p>
+     * <p>The required behavior of the <code>FacetAttribute</code>.</p>
      */
     inline void SetRequiredBehavior(RequiredAttributeBehavior&& value) { m_requiredBehaviorHasBeenSet = true; m_requiredBehavior = value; }
 
     /**
-     * <p>The required behavior of the FacetAttribute.</p>
+     * <p>The required behavior of the <code>FacetAttribute</code>.</p>
      */
     inline FacetAttribute& WithRequiredBehavior(const RequiredAttributeBehavior& value) { SetRequiredBehavior(value); return *this;}
 
     /**
-     * <p>The required behavior of the FacetAttribute.</p>
+     * <p>The required behavior of the <code>FacetAttribute</code>.</p>
      */
     inline FacetAttribute& WithRequiredBehavior(RequiredAttributeBehavior&& value) { SetRequiredBehavior(value); return *this;}
 

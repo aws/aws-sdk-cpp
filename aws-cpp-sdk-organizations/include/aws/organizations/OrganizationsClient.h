@@ -304,7 +304,7 @@ namespace Model
    * can have only one root. In a future release, a single organization will support
    * multiple roots.</p> <p> <b>Support and Feedback for AWS Organizations</b> </p>
    * <p>We welcome your feedback. Send your comments to <a
-   * href="mailto:aws-organizations-feedback@amazon.com">aws-organizations-feedback@amazon.com</a>
+   * href="mailto:feedback-awsorganizations@amazon.com">feedback-awsorganizations@amazon.com</a>
    * or post your feedback and questions in our private <a
    * href="http://forums.aws.amazon.com/forum.jspa?forumID=219">AWS Organizations
    * support forum</a>. If you don't have access to the forum, send a request for

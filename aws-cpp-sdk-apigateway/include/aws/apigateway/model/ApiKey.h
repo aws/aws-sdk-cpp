@@ -248,62 +248,52 @@ namespace Model
     inline ApiKey& WithEnabled(bool value) { SetEnabled(value); return *this;}
 
     /**
-     * <p>The date when the API Key was created, in <a
-     * href="http://www.iso.org/iso/home/standards/iso8601.htm" target="_blank">ISO
-     * 8601 format</a>.</p>
+     * <p>The timestamp when the API Key was created.</p>
      */
     inline const Aws::Utils::DateTime& GetCreatedDate() const{ return m_createdDate; }
 
     /**
-     * <p>The date when the API Key was created, in <a
-     * href="http://www.iso.org/iso/home/standards/iso8601.htm" target="_blank">ISO
-     * 8601 format</a>.</p>
+     * <p>The timestamp when the API Key was created.</p>
      */
     inline void SetCreatedDate(const Aws::Utils::DateTime& value) { m_createdDateHasBeenSet = true; m_createdDate = value; }
 
     /**
-     * <p>The date when the API Key was created, in <a
-     * href="http://www.iso.org/iso/home/standards/iso8601.htm" target="_blank">ISO
-     * 8601 format</a>.</p>
+     * <p>The timestamp when the API Key was created.</p>
      */
     inline void SetCreatedDate(Aws::Utils::DateTime&& value) { m_createdDateHasBeenSet = true; m_createdDate = value; }
 
     /**
-     * <p>The date when the API Key was created, in <a
-     * href="http://www.iso.org/iso/home/standards/iso8601.htm" target="_blank">ISO
-     * 8601 format</a>.</p>
+     * <p>The timestamp when the API Key was created.</p>
      */
     inline ApiKey& WithCreatedDate(const Aws::Utils::DateTime& value) { SetCreatedDate(value); return *this;}
 
     /**
-     * <p>The date when the API Key was created, in <a
-     * href="http://www.iso.org/iso/home/standards/iso8601.htm" target="_blank">ISO
-     * 8601 format</a>.</p>
+     * <p>The timestamp when the API Key was created.</p>
      */
     inline ApiKey& WithCreatedDate(Aws::Utils::DateTime&& value) { SetCreatedDate(value); return *this;}
 
     /**
-     * <p>When the API Key was last updated, in ISO 8601 format.</p>
+     * <p>The timestamp when the API Key was last updated.</p>
      */
     inline const Aws::Utils::DateTime& GetLastUpdatedDate() const{ return m_lastUpdatedDate; }
 
     /**
-     * <p>When the API Key was last updated, in ISO 8601 format.</p>
+     * <p>The timestamp when the API Key was last updated.</p>
      */
     inline void SetLastUpdatedDate(const Aws::Utils::DateTime& value) { m_lastUpdatedDateHasBeenSet = true; m_lastUpdatedDate = value; }
 
     /**
-     * <p>When the API Key was last updated, in ISO 8601 format.</p>
+     * <p>The timestamp when the API Key was last updated.</p>
      */
     inline void SetLastUpdatedDate(Aws::Utils::DateTime&& value) { m_lastUpdatedDateHasBeenSet = true; m_lastUpdatedDate = value; }
 
     /**
-     * <p>When the API Key was last updated, in ISO 8601 format.</p>
+     * <p>The timestamp when the API Key was last updated.</p>
      */
     inline ApiKey& WithLastUpdatedDate(const Aws::Utils::DateTime& value) { SetLastUpdatedDate(value); return *this;}
 
     /**
-     * <p>When the API Key was last updated, in ISO 8601 format.</p>
+     * <p>The timestamp when the API Key was last updated.</p>
      */
     inline ApiKey& WithLastUpdatedDate(Aws::Utils::DateTime&& value) { SetLastUpdatedDate(value); return *this;}
 

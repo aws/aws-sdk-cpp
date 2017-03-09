@@ -68,44 +68,44 @@ namespace Model
     inline ListTagsForResourceRequest& WithResourceArn(const char* value) { SetResourceArn(value); return *this;}
 
     /**
-     * <p>Next token used for pagination. This is for future use. Currently pagination
-     * is not supported for tagging.</p>
+     * <p>The pagination token. This is for future use. Currently pagination is not
+     * supported for tagging.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * <p>Next token used for pagination. This is for future use. Currently pagination
-     * is not supported for tagging.</p>
+     * <p>The pagination token. This is for future use. Currently pagination is not
+     * supported for tagging.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
-     * <p>Next token used for pagination. This is for future use. Currently pagination
-     * is not supported for tagging.</p>
+     * <p>The pagination token. This is for future use. Currently pagination is not
+     * supported for tagging.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
-     * <p>Next token used for pagination. This is for future use. Currently pagination
-     * is not supported for tagging.</p>
+     * <p>The pagination token. This is for future use. Currently pagination is not
+     * supported for tagging.</p>
      */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
 
     /**
-     * <p>Next token used for pagination. This is for future use. Currently pagination
-     * is not supported for tagging.</p>
+     * <p>The pagination token. This is for future use. Currently pagination is not
+     * supported for tagging.</p>
      */
     inline ListTagsForResourceRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>Next token used for pagination. This is for future use. Currently pagination
-     * is not supported for tagging.</p>
+     * <p>The pagination token. This is for future use. Currently pagination is not
+     * supported for tagging.</p>
      */
     inline ListTagsForResourceRequest& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>Next token used for pagination. This is for future use. Currently pagination
-     * is not supported for tagging.</p>
+     * <p>The pagination token. This is for future use. Currently pagination is not
+     * supported for tagging.</p>
      */
     inline ListTagsForResourceRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 

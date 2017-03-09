@@ -32,8 +32,8 @@ namespace Model
 {
 
   /**
-   * <p>Represents the output of a ListObjectChildren operation.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>Represents the output of a <code>ListObjectChildren</code>
+   * operation.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/BatchListObjectChildren">AWS
    * API Reference</a></p>
    */
@@ -71,37 +71,37 @@ namespace Model
     inline BatchListObjectChildren& WithObjectReference(ObjectReference&& value) { SetObjectReference(value); return *this;}
 
     /**
-     * <p>Token used for pagination.</p>
+     * <p>The pagination token.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * <p>Token used for pagination.</p>
+     * <p>The pagination token.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
-     * <p>Token used for pagination.</p>
+     * <p>The pagination token.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
-     * <p>Token used for pagination.</p>
+     * <p>The pagination token.</p>
      */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
 
     /**
-     * <p>Token used for pagination.</p>
+     * <p>The pagination token.</p>
      */
     inline BatchListObjectChildren& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>Token used for pagination.</p>
+     * <p>The pagination token.</p>
      */
     inline BatchListObjectChildren& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>Token used for pagination.</p>
+     * <p>The pagination token.</p>
      */
     inline BatchListObjectChildren& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 

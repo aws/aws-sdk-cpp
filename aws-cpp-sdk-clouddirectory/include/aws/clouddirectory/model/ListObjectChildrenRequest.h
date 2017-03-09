@@ -109,37 +109,37 @@ namespace Model
     inline ListObjectChildrenRequest& WithObjectReference(ObjectReference&& value) { SetObjectReference(value); return *this;}
 
     /**
-     * <p>Token used for pagination.</p>
+     * <p>The pagination token.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * <p>Token used for pagination.</p>
+     * <p>The pagination token.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
-     * <p>Token used for pagination.</p>
+     * <p>The pagination token.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
-     * <p>Token used for pagination.</p>
+     * <p>The pagination token.</p>
      */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
 
     /**
-     * <p>Token used for pagination.</p>
+     * <p>The pagination token.</p>
      */
     inline ListObjectChildrenRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>Token used for pagination.</p>
+     * <p>The pagination token.</p>
      */
     inline ListObjectChildrenRequest& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>Token used for pagination.</p>
+     * <p>The pagination token.</p>
      */
     inline ListObjectChildrenRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 

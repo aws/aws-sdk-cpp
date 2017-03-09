@@ -31,8 +31,8 @@ namespace Model
 {
 
   /**
-   * <p>Represents the output of a DetachObject response operation.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>Represents the output of a <code>DetachObject</code> response
+   * operation.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/BatchDetachObjectResponse">AWS
    * API Reference</a></p>
    */
@@ -45,37 +45,37 @@ namespace Model
     Aws::Utils::Json::JsonValue Jsonize() const;
 
     /**
-     * <p>The ObjectIdentifier of the detached object.</p>
+     * <p>The <code>ObjectIdentifier</code> of the detached object.</p>
      */
     inline const Aws::String& GetDetachedObjectIdentifier() const{ return m_detachedObjectIdentifier; }
 
     /**
-     * <p>The ObjectIdentifier of the detached object.</p>
+     * <p>The <code>ObjectIdentifier</code> of the detached object.</p>
      */
     inline void SetDetachedObjectIdentifier(const Aws::String& value) { m_detachedObjectIdentifierHasBeenSet = true; m_detachedObjectIdentifier = value; }
 
     /**
-     * <p>The ObjectIdentifier of the detached object.</p>
+     * <p>The <code>ObjectIdentifier</code> of the detached object.</p>
      */
     inline void SetDetachedObjectIdentifier(Aws::String&& value) { m_detachedObjectIdentifierHasBeenSet = true; m_detachedObjectIdentifier = value; }
 
     /**
-     * <p>The ObjectIdentifier of the detached object.</p>
+     * <p>The <code>ObjectIdentifier</code> of the detached object.</p>
      */
     inline void SetDetachedObjectIdentifier(const char* value) { m_detachedObjectIdentifierHasBeenSet = true; m_detachedObjectIdentifier.assign(value); }
 
     /**
-     * <p>The ObjectIdentifier of the detached object.</p>
+     * <p>The <code>ObjectIdentifier</code> of the detached object.</p>
      */
     inline BatchDetachObjectResponse& WithDetachedObjectIdentifier(const Aws::String& value) { SetDetachedObjectIdentifier(value); return *this;}
 
     /**
-     * <p>The ObjectIdentifier of the detached object.</p>
+     * <p>The <code>ObjectIdentifier</code> of the detached object.</p>
      */
     inline BatchDetachObjectResponse& WithDetachedObjectIdentifier(Aws::String&& value) { SetDetachedObjectIdentifier(value); return *this;}
 
     /**
-     * <p>The ObjectIdentifier of the detached object.</p>
+     * <p>The <code>ObjectIdentifier</code> of the detached object.</p>
      */
     inline BatchDetachObjectResponse& WithDetachedObjectIdentifier(const char* value) { SetDetachedObjectIdentifier(value); return *this;}
 

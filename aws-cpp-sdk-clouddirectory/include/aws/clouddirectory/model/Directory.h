@@ -117,27 +117,32 @@ namespace Model
     inline Directory& WithDirectoryArn(const char* value) { SetDirectoryArn(value); return *this;}
 
     /**
-     * <p>The state of the directory. Can be either Enabled, Disabled, or Deleted.</p>
+     * <p>The state of the directory. Can be either <code>Enabled</code>,
+     * <code>Disabled</code>, or <code>Deleted</code>.</p>
      */
     inline const DirectoryState& GetState() const{ return m_state; }
 
     /**
-     * <p>The state of the directory. Can be either Enabled, Disabled, or Deleted.</p>
+     * <p>The state of the directory. Can be either <code>Enabled</code>,
+     * <code>Disabled</code>, or <code>Deleted</code>.</p>
      */
     inline void SetState(const DirectoryState& value) { m_stateHasBeenSet = true; m_state = value; }
 
     /**
-     * <p>The state of the directory. Can be either Enabled, Disabled, or Deleted.</p>
+     * <p>The state of the directory. Can be either <code>Enabled</code>,
+     * <code>Disabled</code>, or <code>Deleted</code>.</p>
      */
     inline void SetState(DirectoryState&& value) { m_stateHasBeenSet = true; m_state = value; }
 
     /**
-     * <p>The state of the directory. Can be either Enabled, Disabled, or Deleted.</p>
+     * <p>The state of the directory. Can be either <code>Enabled</code>,
+     * <code>Disabled</code>, or <code>Deleted</code>.</p>
      */
     inline Directory& WithState(const DirectoryState& value) { SetState(value); return *this;}
 
     /**
-     * <p>The state of the directory. Can be either Enabled, Disabled, or Deleted.</p>
+     * <p>The state of the directory. Can be either <code>Enabled</code>,
+     * <code>Disabled</code>, or <code>Deleted</code>.</p>
      */
     inline Directory& WithState(DirectoryState&& value) { SetState(value); return *this;}
 

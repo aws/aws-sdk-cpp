@@ -60,6 +60,7 @@
 #include <aws/clouddirectory/model/ListIndexRequest.h>
 #include <aws/clouddirectory/model/ListObjectAttributesRequest.h>
 #include <aws/clouddirectory/model/ListObjectChildrenRequest.h>
+#include <aws/clouddirectory/model/ListObjectParentPathsRequest.h>
 #include <aws/clouddirectory/model/ListObjectParentsRequest.h>
 #include <aws/clouddirectory/model/ListObjectPoliciesRequest.h>
 #include <aws/clouddirectory/model/ListPolicyAttachmentsRequest.h>
@@ -1293,6 +1294,40 @@ void CloudDirectoryClient::ListObjectChildrenAsync(const ListObjectChildrenReque
 void CloudDirectoryClient::ListObjectChildrenAsyncHelper(const ListObjectChildrenRequest& request, const ListObjectChildrenResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ListObjectChildren(request), context);
+}
+
+ListObjectParentPathsOutcome CloudDirectoryClient::ListObjectParentPaths(const ListObjectParentPathsRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/amazonclouddirectory/2017-01-11/object/parentpaths";
+
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return ListObjectParentPathsOutcome(ListObjectParentPathsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ListObjectParentPathsOutcome(outcome.GetError());
+  }
+}
+
+ListObjectParentPathsOutcomeCallable CloudDirectoryClient::ListObjectParentPathsCallable(const ListObjectParentPathsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListObjectParentPathsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListObjectParentPaths(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CloudDirectoryClient::ListObjectParentPathsAsync(const ListObjectParentPathsRequest& request, const ListObjectParentPathsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListObjectParentPathsAsyncHelper( request, handler, context ); } );
+}
+
+void CloudDirectoryClient::ListObjectParentPathsAsyncHelper(const ListObjectParentPathsRequest& request, const ListObjectParentPathsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListObjectParentPaths(request), context);
 }
 
 ListObjectParentsOutcome CloudDirectoryClient::ListObjectParents(const ListObjectParentsRequest& request) const

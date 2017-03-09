@@ -33,7 +33,7 @@ namespace Model
 {
 
   /**
-   * <p>Represents the output of a ListObjectAttributes response
+   * <p>Represents the output of a <code>ListObjectAttributes</code> response
    * operation.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/BatchListObjectAttributesResponse">AWS
    * API Reference</a></p>
@@ -47,79 +47,79 @@ namespace Model
     Aws::Utils::Json::JsonValue Jsonize() const;
 
     /**
-     * <p>Attributes map associated with the object. AttributeArn is the key; attribute
-     * value is the value.</p>
+     * <p>Attributes map associated with the object. <code>AttributeArn</code> is the
+     * key; attribute value is the value.</p>
      */
     inline const Aws::Vector<AttributeKeyAndValue>& GetAttributes() const{ return m_attributes; }
 
     /**
-     * <p>Attributes map associated with the object. AttributeArn is the key; attribute
-     * value is the value.</p>
+     * <p>Attributes map associated with the object. <code>AttributeArn</code> is the
+     * key; attribute value is the value.</p>
      */
     inline void SetAttributes(const Aws::Vector<AttributeKeyAndValue>& value) { m_attributesHasBeenSet = true; m_attributes = value; }
 
     /**
-     * <p>Attributes map associated with the object. AttributeArn is the key; attribute
-     * value is the value.</p>
+     * <p>Attributes map associated with the object. <code>AttributeArn</code> is the
+     * key; attribute value is the value.</p>
      */
     inline void SetAttributes(Aws::Vector<AttributeKeyAndValue>&& value) { m_attributesHasBeenSet = true; m_attributes = value; }
 
     /**
-     * <p>Attributes map associated with the object. AttributeArn is the key; attribute
-     * value is the value.</p>
+     * <p>Attributes map associated with the object. <code>AttributeArn</code> is the
+     * key; attribute value is the value.</p>
      */
     inline BatchListObjectAttributesResponse& WithAttributes(const Aws::Vector<AttributeKeyAndValue>& value) { SetAttributes(value); return *this;}
 
     /**
-     * <p>Attributes map associated with the object. AttributeArn is the key; attribute
-     * value is the value.</p>
+     * <p>Attributes map associated with the object. <code>AttributeArn</code> is the
+     * key; attribute value is the value.</p>
      */
     inline BatchListObjectAttributesResponse& WithAttributes(Aws::Vector<AttributeKeyAndValue>&& value) { SetAttributes(value); return *this;}
 
     /**
-     * <p>Attributes map associated with the object. AttributeArn is the key; attribute
-     * value is the value.</p>
+     * <p>Attributes map associated with the object. <code>AttributeArn</code> is the
+     * key; attribute value is the value.</p>
      */
     inline BatchListObjectAttributesResponse& AddAttributes(const AttributeKeyAndValue& value) { m_attributesHasBeenSet = true; m_attributes.push_back(value); return *this; }
 
     /**
-     * <p>Attributes map associated with the object. AttributeArn is the key; attribute
-     * value is the value.</p>
+     * <p>Attributes map associated with the object. <code>AttributeArn</code> is the
+     * key; attribute value is the value.</p>
      */
     inline BatchListObjectAttributesResponse& AddAttributes(AttributeKeyAndValue&& value) { m_attributesHasBeenSet = true; m_attributes.push_back(value); return *this; }
 
     /**
-     * <p>Token used for pagination.</p>
+     * <p>The pagination token.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * <p>Token used for pagination.</p>
+     * <p>The pagination token.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
-     * <p>Token used for pagination.</p>
+     * <p>The pagination token.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
-     * <p>Token used for pagination.</p>
+     * <p>The pagination token.</p>
      */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
 
     /**
-     * <p>Token used for pagination.</p>
+     * <p>The pagination token.</p>
      */
     inline BatchListObjectAttributesResponse& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>Token used for pagination.</p>
+     * <p>The pagination token.</p>
      */
     inline BatchListObjectAttributesResponse& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>Token used for pagination.</p>
+     * <p>The pagination token.</p>
      */
     inline BatchListObjectAttributesResponse& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 

@@ -46,63 +46,70 @@ namespace Model
     /**
      * <p>Allows you to specify an object. You can identify an object in one of the
      * following ways:</p> <ul> <li> <p> <i>$ObjectIdentifier</i> - Identifies the
-     * object by ObjectIdentifier</p> </li> <li> <p> <i>/some/path</i> - Identifies the
-     * object based on path</p> </li> <li> <p> <i>#SomeBatchReference</i> - Identifies
-     * the object in a batch call</p> </li> </ul>
+     * object by <code>ObjectIdentifier</code> </p> </li> <li> <p> <i>/some/path</i> -
+     * Identifies the object based on path</p> </li> <li> <p>
+     * <i>#SomeBatchReference</i> - Identifies the object in a batch call</p> </li>
+     * </ul>
      */
     inline const Aws::String& GetSelector() const{ return m_selector; }
 
     /**
      * <p>Allows you to specify an object. You can identify an object in one of the
      * following ways:</p> <ul> <li> <p> <i>$ObjectIdentifier</i> - Identifies the
-     * object by ObjectIdentifier</p> </li> <li> <p> <i>/some/path</i> - Identifies the
-     * object based on path</p> </li> <li> <p> <i>#SomeBatchReference</i> - Identifies
-     * the object in a batch call</p> </li> </ul>
+     * object by <code>ObjectIdentifier</code> </p> </li> <li> <p> <i>/some/path</i> -
+     * Identifies the object based on path</p> </li> <li> <p>
+     * <i>#SomeBatchReference</i> - Identifies the object in a batch call</p> </li>
+     * </ul>
      */
     inline void SetSelector(const Aws::String& value) { m_selectorHasBeenSet = true; m_selector = value; }
 
     /**
      * <p>Allows you to specify an object. You can identify an object in one of the
      * following ways:</p> <ul> <li> <p> <i>$ObjectIdentifier</i> - Identifies the
-     * object by ObjectIdentifier</p> </li> <li> <p> <i>/some/path</i> - Identifies the
-     * object based on path</p> </li> <li> <p> <i>#SomeBatchReference</i> - Identifies
-     * the object in a batch call</p> </li> </ul>
+     * object by <code>ObjectIdentifier</code> </p> </li> <li> <p> <i>/some/path</i> -
+     * Identifies the object based on path</p> </li> <li> <p>
+     * <i>#SomeBatchReference</i> - Identifies the object in a batch call</p> </li>
+     * </ul>
      */
     inline void SetSelector(Aws::String&& value) { m_selectorHasBeenSet = true; m_selector = value; }
 
     /**
      * <p>Allows you to specify an object. You can identify an object in one of the
      * following ways:</p> <ul> <li> <p> <i>$ObjectIdentifier</i> - Identifies the
-     * object by ObjectIdentifier</p> </li> <li> <p> <i>/some/path</i> - Identifies the
-     * object based on path</p> </li> <li> <p> <i>#SomeBatchReference</i> - Identifies
-     * the object in a batch call</p> </li> </ul>
+     * object by <code>ObjectIdentifier</code> </p> </li> <li> <p> <i>/some/path</i> -
+     * Identifies the object based on path</p> </li> <li> <p>
+     * <i>#SomeBatchReference</i> - Identifies the object in a batch call</p> </li>
+     * </ul>
      */
     inline void SetSelector(const char* value) { m_selectorHasBeenSet = true; m_selector.assign(value); }
 
     /**
      * <p>Allows you to specify an object. You can identify an object in one of the
      * following ways:</p> <ul> <li> <p> <i>$ObjectIdentifier</i> - Identifies the
-     * object by ObjectIdentifier</p> </li> <li> <p> <i>/some/path</i> - Identifies the
-     * object based on path</p> </li> <li> <p> <i>#SomeBatchReference</i> - Identifies
-     * the object in a batch call</p> </li> </ul>
+     * object by <code>ObjectIdentifier</code> </p> </li> <li> <p> <i>/some/path</i> -
+     * Identifies the object based on path</p> </li> <li> <p>
+     * <i>#SomeBatchReference</i> - Identifies the object in a batch call</p> </li>
+     * </ul>
      */
     inline ObjectReference& WithSelector(const Aws::String& value) { SetSelector(value); return *this;}
 
     /**
      * <p>Allows you to specify an object. You can identify an object in one of the
      * following ways:</p> <ul> <li> <p> <i>$ObjectIdentifier</i> - Identifies the
-     * object by ObjectIdentifier</p> </li> <li> <p> <i>/some/path</i> - Identifies the
-     * object based on path</p> </li> <li> <p> <i>#SomeBatchReference</i> - Identifies
-     * the object in a batch call</p> </li> </ul>
+     * object by <code>ObjectIdentifier</code> </p> </li> <li> <p> <i>/some/path</i> -
+     * Identifies the object based on path</p> </li> <li> <p>
+     * <i>#SomeBatchReference</i> - Identifies the object in a batch call</p> </li>
+     * </ul>
      */
     inline ObjectReference& WithSelector(Aws::String&& value) { SetSelector(value); return *this;}
 
     /**
      * <p>Allows you to specify an object. You can identify an object in one of the
      * following ways:</p> <ul> <li> <p> <i>$ObjectIdentifier</i> - Identifies the
-     * object by ObjectIdentifier</p> </li> <li> <p> <i>/some/path</i> - Identifies the
-     * object based on path</p> </li> <li> <p> <i>#SomeBatchReference</i> - Identifies
-     * the object in a batch call</p> </li> </ul>
+     * object by <code>ObjectIdentifier</code> </p> </li> <li> <p> <i>/some/path</i> -
+     * Identifies the object based on path</p> </li> <li> <p>
+     * <i>#SomeBatchReference</i> - Identifies the object in a batch call</p> </li>
+     * </ul>
      */
     inline ObjectReference& WithSelector(const char* value) { SetSelector(value); return *this;}
 

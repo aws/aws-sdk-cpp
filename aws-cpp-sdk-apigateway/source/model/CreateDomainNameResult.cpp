@@ -48,6 +48,12 @@ CreateDomainNameResult& CreateDomainNameResult::operator =(const AmazonWebServic
 
   }
 
+  if(jsonValue.ValueExists("certificateArn"))
+  {
+    m_certificateArn = jsonValue.GetString("certificateArn");
+
+  }
+
   if(jsonValue.ValueExists("certificateUploadDate"))
   {
     m_certificateUploadDate = jsonValue.GetDouble("certificateUploadDate");

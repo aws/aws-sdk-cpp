@@ -41,109 +41,109 @@ namespace Model
     ListObjectParentsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
     /**
-     * <p>Parent structure, which is a map with key as the ObjectIdentifier and
-     * LinkName as the value.</p>
+     * <p>Parent structure, which is a map with key as the
+     * <code>ObjectIdentifier</code> and LinkName as the value.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetParents() const{ return m_parents; }
 
     /**
-     * <p>Parent structure, which is a map with key as the ObjectIdentifier and
-     * LinkName as the value.</p>
+     * <p>Parent structure, which is a map with key as the
+     * <code>ObjectIdentifier</code> and LinkName as the value.</p>
      */
     inline void SetParents(const Aws::Map<Aws::String, Aws::String>& value) { m_parents = value; }
 
     /**
-     * <p>Parent structure, which is a map with key as the ObjectIdentifier and
-     * LinkName as the value.</p>
+     * <p>Parent structure, which is a map with key as the
+     * <code>ObjectIdentifier</code> and LinkName as the value.</p>
      */
     inline void SetParents(Aws::Map<Aws::String, Aws::String>&& value) { m_parents = value; }
 
     /**
-     * <p>Parent structure, which is a map with key as the ObjectIdentifier and
-     * LinkName as the value.</p>
+     * <p>Parent structure, which is a map with key as the
+     * <code>ObjectIdentifier</code> and LinkName as the value.</p>
      */
     inline ListObjectParentsResult& WithParents(const Aws::Map<Aws::String, Aws::String>& value) { SetParents(value); return *this;}
 
     /**
-     * <p>Parent structure, which is a map with key as the ObjectIdentifier and
-     * LinkName as the value.</p>
+     * <p>Parent structure, which is a map with key as the
+     * <code>ObjectIdentifier</code> and LinkName as the value.</p>
      */
     inline ListObjectParentsResult& WithParents(Aws::Map<Aws::String, Aws::String>&& value) { SetParents(value); return *this;}
 
     /**
-     * <p>Parent structure, which is a map with key as the ObjectIdentifier and
-     * LinkName as the value.</p>
+     * <p>Parent structure, which is a map with key as the
+     * <code>ObjectIdentifier</code> and LinkName as the value.</p>
      */
     inline ListObjectParentsResult& AddParents(const Aws::String& key, const Aws::String& value) { m_parents[key] = value; return *this; }
 
     /**
-     * <p>Parent structure, which is a map with key as the ObjectIdentifier and
-     * LinkName as the value.</p>
+     * <p>Parent structure, which is a map with key as the
+     * <code>ObjectIdentifier</code> and LinkName as the value.</p>
      */
     inline ListObjectParentsResult& AddParents(Aws::String&& key, const Aws::String& value) { m_parents[key] = value; return *this; }
 
     /**
-     * <p>Parent structure, which is a map with key as the ObjectIdentifier and
-     * LinkName as the value.</p>
+     * <p>Parent structure, which is a map with key as the
+     * <code>ObjectIdentifier</code> and LinkName as the value.</p>
      */
     inline ListObjectParentsResult& AddParents(const Aws::String& key, Aws::String&& value) { m_parents[key] = value; return *this; }
 
     /**
-     * <p>Parent structure, which is a map with key as the ObjectIdentifier and
-     * LinkName as the value.</p>
+     * <p>Parent structure, which is a map with key as the
+     * <code>ObjectIdentifier</code> and LinkName as the value.</p>
      */
     inline ListObjectParentsResult& AddParents(Aws::String&& key, Aws::String&& value) { m_parents[key] = value; return *this; }
 
     /**
-     * <p>Parent structure, which is a map with key as the ObjectIdentifier and
-     * LinkName as the value.</p>
+     * <p>Parent structure, which is a map with key as the
+     * <code>ObjectIdentifier</code> and LinkName as the value.</p>
      */
     inline ListObjectParentsResult& AddParents(const char* key, Aws::String&& value) { m_parents[key] = value; return *this; }
 
     /**
-     * <p>Parent structure, which is a map with key as the ObjectIdentifier and
-     * LinkName as the value.</p>
+     * <p>Parent structure, which is a map with key as the
+     * <code>ObjectIdentifier</code> and LinkName as the value.</p>
      */
     inline ListObjectParentsResult& AddParents(Aws::String&& key, const char* value) { m_parents[key] = value; return *this; }
 
     /**
-     * <p>Parent structure, which is a map with key as the ObjectIdentifier and
-     * LinkName as the value.</p>
+     * <p>Parent structure, which is a map with key as the
+     * <code>ObjectIdentifier</code> and LinkName as the value.</p>
      */
     inline ListObjectParentsResult& AddParents(const char* key, const char* value) { m_parents[key] = value; return *this; }
 
     /**
-     * <p>Token used for pagination.</p>
+     * <p>The pagination token.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * <p>Token used for pagination.</p>
+     * <p>The pagination token.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
 
     /**
-     * <p>Token used for pagination.</p>
+     * <p>The pagination token.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = value; }
 
     /**
-     * <p>Token used for pagination.</p>
+     * <p>The pagination token.</p>
      */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
 
     /**
-     * <p>Token used for pagination.</p>
+     * <p>The pagination token.</p>
      */
     inline ListObjectParentsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>Token used for pagination.</p>
+     * <p>The pagination token.</p>
      */
     inline ListObjectParentsResult& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>Token used for pagination.</p>
+     * <p>The pagination token.</p>
      */
     inline ListObjectParentsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 

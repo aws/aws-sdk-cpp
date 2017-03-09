@@ -81,37 +81,37 @@ namespace Model
     inline IndexAttachment& AddIndexedAttributes(AttributeKeyAndValue&& value) { m_indexedAttributesHasBeenSet = true; m_indexedAttributes.push_back(value); return *this; }
 
     /**
-     * <p>The ObjectIdentifier of the object attached to the index.</p>
+     * <p>The <code>ObjectIdentifier</code> of the object attached to the index.</p>
      */
     inline const Aws::String& GetObjectIdentifier() const{ return m_objectIdentifier; }
 
     /**
-     * <p>The ObjectIdentifier of the object attached to the index.</p>
+     * <p>The <code>ObjectIdentifier</code> of the object attached to the index.</p>
      */
     inline void SetObjectIdentifier(const Aws::String& value) { m_objectIdentifierHasBeenSet = true; m_objectIdentifier = value; }
 
     /**
-     * <p>The ObjectIdentifier of the object attached to the index.</p>
+     * <p>The <code>ObjectIdentifier</code> of the object attached to the index.</p>
      */
     inline void SetObjectIdentifier(Aws::String&& value) { m_objectIdentifierHasBeenSet = true; m_objectIdentifier = value; }
 
     /**
-     * <p>The ObjectIdentifier of the object attached to the index.</p>
+     * <p>The <code>ObjectIdentifier</code> of the object attached to the index.</p>
      */
     inline void SetObjectIdentifier(const char* value) { m_objectIdentifierHasBeenSet = true; m_objectIdentifier.assign(value); }
 
     /**
-     * <p>The ObjectIdentifier of the object attached to the index.</p>
+     * <p>The <code>ObjectIdentifier</code> of the object attached to the index.</p>
      */
     inline IndexAttachment& WithObjectIdentifier(const Aws::String& value) { SetObjectIdentifier(value); return *this;}
 
     /**
-     * <p>The ObjectIdentifier of the object attached to the index.</p>
+     * <p>The <code>ObjectIdentifier</code> of the object attached to the index.</p>
      */
     inline IndexAttachment& WithObjectIdentifier(Aws::String&& value) { SetObjectIdentifier(value); return *this;}
 
     /**
-     * <p>The ObjectIdentifier of the object attached to the index.</p>
+     * <p>The <code>ObjectIdentifier</code> of the object attached to the index.</p>
      */
     inline IndexAttachment& WithObjectIdentifier(const char* value) { SetObjectIdentifier(value); return *this;}
 

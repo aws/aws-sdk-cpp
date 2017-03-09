@@ -41,77 +41,85 @@ namespace Model
     ListObjectPoliciesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
     /**
-     * <p>List of policy ObjectIdentifiers, that are attached to the object.</p>
+     * <p>List of policy <code>ObjectIdentifiers</code>, that are attached to the
+     * object.</p>
      */
     inline const Aws::Vector<Aws::String>& GetAttachedPolicyIds() const{ return m_attachedPolicyIds; }
 
     /**
-     * <p>List of policy ObjectIdentifiers, that are attached to the object.</p>
+     * <p>List of policy <code>ObjectIdentifiers</code>, that are attached to the
+     * object.</p>
      */
     inline void SetAttachedPolicyIds(const Aws::Vector<Aws::String>& value) { m_attachedPolicyIds = value; }
 
     /**
-     * <p>List of policy ObjectIdentifiers, that are attached to the object.</p>
+     * <p>List of policy <code>ObjectIdentifiers</code>, that are attached to the
+     * object.</p>
      */
     inline void SetAttachedPolicyIds(Aws::Vector<Aws::String>&& value) { m_attachedPolicyIds = value; }
 
     /**
-     * <p>List of policy ObjectIdentifiers, that are attached to the object.</p>
+     * <p>List of policy <code>ObjectIdentifiers</code>, that are attached to the
+     * object.</p>
      */
     inline ListObjectPoliciesResult& WithAttachedPolicyIds(const Aws::Vector<Aws::String>& value) { SetAttachedPolicyIds(value); return *this;}
 
     /**
-     * <p>List of policy ObjectIdentifiers, that are attached to the object.</p>
+     * <p>List of policy <code>ObjectIdentifiers</code>, that are attached to the
+     * object.</p>
      */
     inline ListObjectPoliciesResult& WithAttachedPolicyIds(Aws::Vector<Aws::String>&& value) { SetAttachedPolicyIds(value); return *this;}
 
     /**
-     * <p>List of policy ObjectIdentifiers, that are attached to the object.</p>
+     * <p>List of policy <code>ObjectIdentifiers</code>, that are attached to the
+     * object.</p>
      */
     inline ListObjectPoliciesResult& AddAttachedPolicyIds(const Aws::String& value) { m_attachedPolicyIds.push_back(value); return *this; }
 
     /**
-     * <p>List of policy ObjectIdentifiers, that are attached to the object.</p>
+     * <p>List of policy <code>ObjectIdentifiers</code>, that are attached to the
+     * object.</p>
      */
     inline ListObjectPoliciesResult& AddAttachedPolicyIds(Aws::String&& value) { m_attachedPolicyIds.push_back(value); return *this; }
 
     /**
-     * <p>List of policy ObjectIdentifiers, that are attached to the object.</p>
+     * <p>List of policy <code>ObjectIdentifiers</code>, that are attached to the
+     * object.</p>
      */
     inline ListObjectPoliciesResult& AddAttachedPolicyIds(const char* value) { m_attachedPolicyIds.push_back(value); return *this; }
 
     /**
-     * <p>Token used for pagination.</p>
+     * <p>The pagination token.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * <p>Token used for pagination.</p>
+     * <p>The pagination token.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
 
     /**
-     * <p>Token used for pagination.</p>
+     * <p>The pagination token.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = value; }
 
     /**
-     * <p>Token used for pagination.</p>
+     * <p>The pagination token.</p>
      */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
 
     /**
-     * <p>Token used for pagination.</p>
+     * <p>The pagination token.</p>
      */
     inline ListObjectPoliciesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>Token used for pagination.</p>
+     * <p>The pagination token.</p>
      */
     inline ListObjectPoliciesResult& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>Token used for pagination.</p>
+     * <p>The pagination token.</p>
      */
     inline ListObjectPoliciesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 

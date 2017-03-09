@@ -45,37 +45,37 @@ namespace Model
     Aws::Utils::Json::JsonValue Jsonize() const;
 
     /**
-     * <p>The ObjectIdentifier of the object that has been attached.</p>
+     * <p>The <code>ObjectIdentifier</code> of the object that has been attached.</p>
      */
     inline const Aws::String& GetAttachedObjectIdentifier() const{ return m_attachedObjectIdentifier; }
 
     /**
-     * <p>The ObjectIdentifier of the object that has been attached.</p>
+     * <p>The <code>ObjectIdentifier</code> of the object that has been attached.</p>
      */
     inline void SetAttachedObjectIdentifier(const Aws::String& value) { m_attachedObjectIdentifierHasBeenSet = true; m_attachedObjectIdentifier = value; }
 
     /**
-     * <p>The ObjectIdentifier of the object that has been attached.</p>
+     * <p>The <code>ObjectIdentifier</code> of the object that has been attached.</p>
      */
     inline void SetAttachedObjectIdentifier(Aws::String&& value) { m_attachedObjectIdentifierHasBeenSet = true; m_attachedObjectIdentifier = value; }
 
     /**
-     * <p>The ObjectIdentifier of the object that has been attached.</p>
+     * <p>The <code>ObjectIdentifier</code> of the object that has been attached.</p>
      */
     inline void SetAttachedObjectIdentifier(const char* value) { m_attachedObjectIdentifierHasBeenSet = true; m_attachedObjectIdentifier.assign(value); }
 
     /**
-     * <p>The ObjectIdentifier of the object that has been attached.</p>
+     * <p>The <code>ObjectIdentifier</code> of the object that has been attached.</p>
      */
     inline BatchAttachObjectResponse& WithAttachedObjectIdentifier(const Aws::String& value) { SetAttachedObjectIdentifier(value); return *this;}
 
     /**
-     * <p>The ObjectIdentifier of the object that has been attached.</p>
+     * <p>The <code>ObjectIdentifier</code> of the object that has been attached.</p>
      */
     inline BatchAttachObjectResponse& WithAttachedObjectIdentifier(Aws::String&& value) { SetAttachedObjectIdentifier(value); return *this;}
 
     /**
-     * <p>The ObjectIdentifier of the object that has been attached.</p>
+     * <p>The <code>ObjectIdentifier</code> of the object that has been attached.</p>
      */
     inline BatchAttachObjectResponse& WithAttachedObjectIdentifier(const char* value) { SetAttachedObjectIdentifier(value); return *this;}
 

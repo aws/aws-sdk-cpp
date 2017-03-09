@@ -31,8 +31,9 @@ namespace Model
 {
 
   /**
-   * <p>Contains the PolicyType, PolicyId, and the ObjectIdentifier to which it is
-   * attached.</p><p><h3>See Also:</h3>   <a
+   * <p>Contains the <code>PolicyType</code>, <code>PolicyId</code>, and the
+   * <code>ObjectIdentifier</code> to which it is attached.</p><p><h3>See Also:</h3> 
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/PolicyAttachment">AWS
    * API Reference</a></p>
    */
@@ -45,107 +46,121 @@ namespace Model
     Aws::Utils::Json::JsonValue Jsonize() const;
 
     /**
-     * <p>The ID of PolicyAttachment.</p>
+     * <p>The ID of <code>PolicyAttachment</code>.</p>
      */
     inline const Aws::String& GetPolicyId() const{ return m_policyId; }
 
     /**
-     * <p>The ID of PolicyAttachment.</p>
+     * <p>The ID of <code>PolicyAttachment</code>.</p>
      */
     inline void SetPolicyId(const Aws::String& value) { m_policyIdHasBeenSet = true; m_policyId = value; }
 
     /**
-     * <p>The ID of PolicyAttachment.</p>
+     * <p>The ID of <code>PolicyAttachment</code>.</p>
      */
     inline void SetPolicyId(Aws::String&& value) { m_policyIdHasBeenSet = true; m_policyId = value; }
 
     /**
-     * <p>The ID of PolicyAttachment.</p>
+     * <p>The ID of <code>PolicyAttachment</code>.</p>
      */
     inline void SetPolicyId(const char* value) { m_policyIdHasBeenSet = true; m_policyId.assign(value); }
 
     /**
-     * <p>The ID of PolicyAttachment.</p>
+     * <p>The ID of <code>PolicyAttachment</code>.</p>
      */
     inline PolicyAttachment& WithPolicyId(const Aws::String& value) { SetPolicyId(value); return *this;}
 
     /**
-     * <p>The ID of PolicyAttachment.</p>
+     * <p>The ID of <code>PolicyAttachment</code>.</p>
      */
     inline PolicyAttachment& WithPolicyId(Aws::String&& value) { SetPolicyId(value); return *this;}
 
     /**
-     * <p>The ID of PolicyAttachment.</p>
+     * <p>The ID of <code>PolicyAttachment</code>.</p>
      */
     inline PolicyAttachment& WithPolicyId(const char* value) { SetPolicyId(value); return *this;}
 
     /**
-     * <p>The ObjectIdentifier associated with PolicyAttachment.</p>
+     * <p>The <code>ObjectIdentifier</code> associated with
+     * <code>PolicyAttachment</code>.</p>
      */
     inline const Aws::String& GetObjectIdentifier() const{ return m_objectIdentifier; }
 
     /**
-     * <p>The ObjectIdentifier associated with PolicyAttachment.</p>
+     * <p>The <code>ObjectIdentifier</code> associated with
+     * <code>PolicyAttachment</code>.</p>
      */
     inline void SetObjectIdentifier(const Aws::String& value) { m_objectIdentifierHasBeenSet = true; m_objectIdentifier = value; }
 
     /**
-     * <p>The ObjectIdentifier associated with PolicyAttachment.</p>
+     * <p>The <code>ObjectIdentifier</code> associated with
+     * <code>PolicyAttachment</code>.</p>
      */
     inline void SetObjectIdentifier(Aws::String&& value) { m_objectIdentifierHasBeenSet = true; m_objectIdentifier = value; }
 
     /**
-     * <p>The ObjectIdentifier associated with PolicyAttachment.</p>
+     * <p>The <code>ObjectIdentifier</code> associated with
+     * <code>PolicyAttachment</code>.</p>
      */
     inline void SetObjectIdentifier(const char* value) { m_objectIdentifierHasBeenSet = true; m_objectIdentifier.assign(value); }
 
     /**
-     * <p>The ObjectIdentifier associated with PolicyAttachment.</p>
+     * <p>The <code>ObjectIdentifier</code> associated with
+     * <code>PolicyAttachment</code>.</p>
      */
     inline PolicyAttachment& WithObjectIdentifier(const Aws::String& value) { SetObjectIdentifier(value); return *this;}
 
     /**
-     * <p>The ObjectIdentifier associated with PolicyAttachment.</p>
+     * <p>The <code>ObjectIdentifier</code> associated with
+     * <code>PolicyAttachment</code>.</p>
      */
     inline PolicyAttachment& WithObjectIdentifier(Aws::String&& value) { SetObjectIdentifier(value); return *this;}
 
     /**
-     * <p>The ObjectIdentifier associated with PolicyAttachment.</p>
+     * <p>The <code>ObjectIdentifier</code> associated with
+     * <code>PolicyAttachment</code>.</p>
      */
     inline PolicyAttachment& WithObjectIdentifier(const char* value) { SetObjectIdentifier(value); return *this;}
 
     /**
-     * <p>The type of policy that can be associated with PolicyAttachment.</p>
+     * <p>The type of policy that can be associated with
+     * <code>PolicyAttachment</code>.</p>
      */
     inline const Aws::String& GetPolicyType() const{ return m_policyType; }
 
     /**
-     * <p>The type of policy that can be associated with PolicyAttachment.</p>
+     * <p>The type of policy that can be associated with
+     * <code>PolicyAttachment</code>.</p>
      */
     inline void SetPolicyType(const Aws::String& value) { m_policyTypeHasBeenSet = true; m_policyType = value; }
 
     /**
-     * <p>The type of policy that can be associated with PolicyAttachment.</p>
+     * <p>The type of policy that can be associated with
+     * <code>PolicyAttachment</code>.</p>
      */
     inline void SetPolicyType(Aws::String&& value) { m_policyTypeHasBeenSet = true; m_policyType = value; }
 
     /**
-     * <p>The type of policy that can be associated with PolicyAttachment.</p>
+     * <p>The type of policy that can be associated with
+     * <code>PolicyAttachment</code>.</p>
      */
     inline void SetPolicyType(const char* value) { m_policyTypeHasBeenSet = true; m_policyType.assign(value); }
 
     /**
-     * <p>The type of policy that can be associated with PolicyAttachment.</p>
+     * <p>The type of policy that can be associated with
+     * <code>PolicyAttachment</code>.</p>
      */
     inline PolicyAttachment& WithPolicyType(const Aws::String& value) { SetPolicyType(value); return *this;}
 
     /**
-     * <p>The type of policy that can be associated with PolicyAttachment.</p>
+     * <p>The type of policy that can be associated with
+     * <code>PolicyAttachment</code>.</p>
      */
     inline PolicyAttachment& WithPolicyType(Aws::String&& value) { SetPolicyType(value); return *this;}
 
     /**
-     * <p>The type of policy that can be associated with PolicyAttachment.</p>
+     * <p>The type of policy that can be associated with
+     * <code>PolicyAttachment</code>.</p>
      */
     inline PolicyAttachment& WithPolicyType(const char* value) { SetPolicyType(value); return *this;}
 

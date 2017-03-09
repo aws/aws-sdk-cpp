@@ -119,37 +119,69 @@ namespace Model
     inline CreateDomainNameResult& WithCertificateName(const char* value) { SetCertificateName(value); return *this;}
 
     /**
-     * <p>The date when the certificate was uploaded, in <a
-     * href="http://www.iso.org/iso/home/standards/iso8601.htm" target="_blank">ISO
-     * 8601 format</a>.</p>
+     * <p>The reference to an AWS-managed certificate. AWS Certificate Manager is the
+     * only supported source.</p>
+     */
+    inline const Aws::String& GetCertificateArn() const{ return m_certificateArn; }
+
+    /**
+     * <p>The reference to an AWS-managed certificate. AWS Certificate Manager is the
+     * only supported source.</p>
+     */
+    inline void SetCertificateArn(const Aws::String& value) { m_certificateArn = value; }
+
+    /**
+     * <p>The reference to an AWS-managed certificate. AWS Certificate Manager is the
+     * only supported source.</p>
+     */
+    inline void SetCertificateArn(Aws::String&& value) { m_certificateArn = value; }
+
+    /**
+     * <p>The reference to an AWS-managed certificate. AWS Certificate Manager is the
+     * only supported source.</p>
+     */
+    inline void SetCertificateArn(const char* value) { m_certificateArn.assign(value); }
+
+    /**
+     * <p>The reference to an AWS-managed certificate. AWS Certificate Manager is the
+     * only supported source.</p>
+     */
+    inline CreateDomainNameResult& WithCertificateArn(const Aws::String& value) { SetCertificateArn(value); return *this;}
+
+    /**
+     * <p>The reference to an AWS-managed certificate. AWS Certificate Manager is the
+     * only supported source.</p>
+     */
+    inline CreateDomainNameResult& WithCertificateArn(Aws::String&& value) { SetCertificateArn(value); return *this;}
+
+    /**
+     * <p>The reference to an AWS-managed certificate. AWS Certificate Manager is the
+     * only supported source.</p>
+     */
+    inline CreateDomainNameResult& WithCertificateArn(const char* value) { SetCertificateArn(value); return *this;}
+
+    /**
+     * <p>The timestamp when the certificate was uploaded.</p>
      */
     inline const Aws::Utils::DateTime& GetCertificateUploadDate() const{ return m_certificateUploadDate; }
 
     /**
-     * <p>The date when the certificate was uploaded, in <a
-     * href="http://www.iso.org/iso/home/standards/iso8601.htm" target="_blank">ISO
-     * 8601 format</a>.</p>
+     * <p>The timestamp when the certificate was uploaded.</p>
      */
     inline void SetCertificateUploadDate(const Aws::Utils::DateTime& value) { m_certificateUploadDate = value; }
 
     /**
-     * <p>The date when the certificate was uploaded, in <a
-     * href="http://www.iso.org/iso/home/standards/iso8601.htm" target="_blank">ISO
-     * 8601 format</a>.</p>
+     * <p>The timestamp when the certificate was uploaded.</p>
      */
     inline void SetCertificateUploadDate(Aws::Utils::DateTime&& value) { m_certificateUploadDate = value; }
 
     /**
-     * <p>The date when the certificate was uploaded, in <a
-     * href="http://www.iso.org/iso/home/standards/iso8601.htm" target="_blank">ISO
-     * 8601 format</a>.</p>
+     * <p>The timestamp when the certificate was uploaded.</p>
      */
     inline CreateDomainNameResult& WithCertificateUploadDate(const Aws::Utils::DateTime& value) { SetCertificateUploadDate(value); return *this;}
 
     /**
-     * <p>The date when the certificate was uploaded, in <a
-     * href="http://www.iso.org/iso/home/standards/iso8601.htm" target="_blank">ISO
-     * 8601 format</a>.</p>
+     * <p>The timestamp when the certificate was uploaded.</p>
      */
     inline CreateDomainNameResult& WithCertificateUploadDate(Aws::Utils::DateTime&& value) { SetCertificateUploadDate(value); return *this;}
 
@@ -205,6 +237,7 @@ namespace Model
   private:
     Aws::String m_domainName;
     Aws::String m_certificateName;
+    Aws::String m_certificateArn;
     Aws::Utils::DateTime m_certificateUploadDate;
     Aws::String m_distributionDomainName;
   };

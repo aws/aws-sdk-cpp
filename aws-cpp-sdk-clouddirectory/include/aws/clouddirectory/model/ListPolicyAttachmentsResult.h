@@ -41,77 +41,77 @@ namespace Model
     ListPolicyAttachmentsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
     /**
-     * <p>List of ObjectIdentifiers to which the policy is attached.</p>
+     * <p>List of <code>ObjectIdentifiers</code> to which the policy is attached.</p>
      */
     inline const Aws::Vector<Aws::String>& GetObjectIdentifiers() const{ return m_objectIdentifiers; }
 
     /**
-     * <p>List of ObjectIdentifiers to which the policy is attached.</p>
+     * <p>List of <code>ObjectIdentifiers</code> to which the policy is attached.</p>
      */
     inline void SetObjectIdentifiers(const Aws::Vector<Aws::String>& value) { m_objectIdentifiers = value; }
 
     /**
-     * <p>List of ObjectIdentifiers to which the policy is attached.</p>
+     * <p>List of <code>ObjectIdentifiers</code> to which the policy is attached.</p>
      */
     inline void SetObjectIdentifiers(Aws::Vector<Aws::String>&& value) { m_objectIdentifiers = value; }
 
     /**
-     * <p>List of ObjectIdentifiers to which the policy is attached.</p>
+     * <p>List of <code>ObjectIdentifiers</code> to which the policy is attached.</p>
      */
     inline ListPolicyAttachmentsResult& WithObjectIdentifiers(const Aws::Vector<Aws::String>& value) { SetObjectIdentifiers(value); return *this;}
 
     /**
-     * <p>List of ObjectIdentifiers to which the policy is attached.</p>
+     * <p>List of <code>ObjectIdentifiers</code> to which the policy is attached.</p>
      */
     inline ListPolicyAttachmentsResult& WithObjectIdentifiers(Aws::Vector<Aws::String>&& value) { SetObjectIdentifiers(value); return *this;}
 
     /**
-     * <p>List of ObjectIdentifiers to which the policy is attached.</p>
+     * <p>List of <code>ObjectIdentifiers</code> to which the policy is attached.</p>
      */
     inline ListPolicyAttachmentsResult& AddObjectIdentifiers(const Aws::String& value) { m_objectIdentifiers.push_back(value); return *this; }
 
     /**
-     * <p>List of ObjectIdentifiers to which the policy is attached.</p>
+     * <p>List of <code>ObjectIdentifiers</code> to which the policy is attached.</p>
      */
     inline ListPolicyAttachmentsResult& AddObjectIdentifiers(Aws::String&& value) { m_objectIdentifiers.push_back(value); return *this; }
 
     /**
-     * <p>List of ObjectIdentifiers to which the policy is attached.</p>
+     * <p>List of <code>ObjectIdentifiers</code> to which the policy is attached.</p>
      */
     inline ListPolicyAttachmentsResult& AddObjectIdentifiers(const char* value) { m_objectIdentifiers.push_back(value); return *this; }
 
     /**
-     * <p>Token used for pagination.</p>
+     * <p>The pagination token.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * <p>Token used for pagination.</p>
+     * <p>The pagination token.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
 
     /**
-     * <p>Token used for pagination.</p>
+     * <p>The pagination token.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = value; }
 
     /**
-     * <p>Token used for pagination.</p>
+     * <p>The pagination token.</p>
      */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
 
     /**
-     * <p>Token used for pagination.</p>
+     * <p>The pagination token.</p>
      */
     inline ListPolicyAttachmentsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>Token used for pagination.</p>
+     * <p>The pagination token.</p>
      */
     inline ListPolicyAttachmentsResult& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>Token used for pagination.</p>
+     * <p>The pagination token.</p>
      */
     inline ListPolicyAttachmentsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 

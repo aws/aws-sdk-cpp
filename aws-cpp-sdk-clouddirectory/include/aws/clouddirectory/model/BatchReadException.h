@@ -46,27 +46,27 @@ namespace Model
     Aws::Utils::Json::JsonValue Jsonize() const;
 
     /**
-     * <p>Type of exception, such as InvalidArnException.</p>
+     * <p>Type of exception, such as <code>InvalidArnException</code>.</p>
      */
     inline const BatchReadExceptionType& GetType() const{ return m_type; }
 
     /**
-     * <p>Type of exception, such as InvalidArnException.</p>
+     * <p>Type of exception, such as <code>InvalidArnException</code>.</p>
      */
     inline void SetType(const BatchReadExceptionType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
-     * <p>Type of exception, such as InvalidArnException.</p>
+     * <p>Type of exception, such as <code>InvalidArnException</code>.</p>
      */
     inline void SetType(BatchReadExceptionType&& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
-     * <p>Type of exception, such as InvalidArnException.</p>
+     * <p>Type of exception, such as <code>InvalidArnException</code>.</p>
      */
     inline BatchReadException& WithType(const BatchReadExceptionType& value) { SetType(value); return *this;}
 
     /**
-     * <p>Type of exception, such as InvalidArnException.</p>
+     * <p>Type of exception, such as <code>InvalidArnException</code>.</p>
      */
     inline BatchReadException& WithType(BatchReadExceptionType&& value) { SetType(value); return *this;}
 

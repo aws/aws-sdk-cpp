@@ -32,8 +32,8 @@ namespace Model
 {
 
   /**
-   * <p>Represents the output of a DetachObject operation.</p><p><h3>See Also:</h3>  
-   * <a
+   * <p>Represents the output of a <code>DetachObject</code> operation.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/BatchDetachObject">AWS
    * API Reference</a></p>
    */

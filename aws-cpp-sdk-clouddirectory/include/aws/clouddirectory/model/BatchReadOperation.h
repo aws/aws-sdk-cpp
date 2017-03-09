@@ -32,7 +32,8 @@ namespace Model
 {
 
   /**
-   * <p>Represents the output of a BatchRead operation.</p><p><h3>See Also:</h3>   <a
+   * <p>Represents the output of a <code>BatchRead</code> operation.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/BatchReadOperation">AWS
    * API Reference</a></p>
    */

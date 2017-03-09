@@ -77,37 +77,37 @@ namespace Model
     inline GetObjectInformationResult& AddSchemaFacets(SchemaFacet&& value) { m_schemaFacets.push_back(value); return *this; }
 
     /**
-     * <p>The ObjectIdentifier of the specified object.</p>
+     * <p>The <code>ObjectIdentifier</code> of the specified object.</p>
      */
     inline const Aws::String& GetObjectIdentifier() const{ return m_objectIdentifier; }
 
     /**
-     * <p>The ObjectIdentifier of the specified object.</p>
+     * <p>The <code>ObjectIdentifier</code> of the specified object.</p>
      */
     inline void SetObjectIdentifier(const Aws::String& value) { m_objectIdentifier = value; }
 
     /**
-     * <p>The ObjectIdentifier of the specified object.</p>
+     * <p>The <code>ObjectIdentifier</code> of the specified object.</p>
      */
     inline void SetObjectIdentifier(Aws::String&& value) { m_objectIdentifier = value; }
 
     /**
-     * <p>The ObjectIdentifier of the specified object.</p>
+     * <p>The <code>ObjectIdentifier</code> of the specified object.</p>
      */
     inline void SetObjectIdentifier(const char* value) { m_objectIdentifier.assign(value); }
 
     /**
-     * <p>The ObjectIdentifier of the specified object.</p>
+     * <p>The <code>ObjectIdentifier</code> of the specified object.</p>
      */
     inline GetObjectInformationResult& WithObjectIdentifier(const Aws::String& value) { SetObjectIdentifier(value); return *this;}
 
     /**
-     * <p>The ObjectIdentifier of the specified object.</p>
+     * <p>The <code>ObjectIdentifier</code> of the specified object.</p>
      */
     inline GetObjectInformationResult& WithObjectIdentifier(Aws::String&& value) { SetObjectIdentifier(value); return *this;}
 
     /**
-     * <p>The ObjectIdentifier of the specified object.</p>
+     * <p>The <code>ObjectIdentifier</code> of the specified object.</p>
      */
     inline GetObjectInformationResult& WithObjectIdentifier(const char* value) { SetObjectIdentifier(value); return *this;}
 

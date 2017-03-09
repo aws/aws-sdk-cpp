@@ -54,6 +54,7 @@
 #include <aws/clouddirectory/model/ListIndexResult.h>
 #include <aws/clouddirectory/model/ListObjectAttributesResult.h>
 #include <aws/clouddirectory/model/ListObjectChildrenResult.h>
+#include <aws/clouddirectory/model/ListObjectParentPathsResult.h>
 #include <aws/clouddirectory/model/ListObjectParentsResult.h>
 #include <aws/clouddirectory/model/ListObjectPoliciesResult.h>
 #include <aws/clouddirectory/model/ListPolicyAttachmentsResult.h>
@@ -147,6 +148,7 @@ namespace Model
         class ListIndexRequest;
         class ListObjectAttributesRequest;
         class ListObjectChildrenRequest;
+        class ListObjectParentPathsRequest;
         class ListObjectParentsRequest;
         class ListObjectPoliciesRequest;
         class ListPolicyAttachmentsRequest;
@@ -196,6 +198,7 @@ namespace Model
         typedef Aws::Utils::Outcome<ListIndexResult, Aws::Client::AWSError<CloudDirectoryErrors>> ListIndexOutcome;
         typedef Aws::Utils::Outcome<ListObjectAttributesResult, Aws::Client::AWSError<CloudDirectoryErrors>> ListObjectAttributesOutcome;
         typedef Aws::Utils::Outcome<ListObjectChildrenResult, Aws::Client::AWSError<CloudDirectoryErrors>> ListObjectChildrenOutcome;
+        typedef Aws::Utils::Outcome<ListObjectParentPathsResult, Aws::Client::AWSError<CloudDirectoryErrors>> ListObjectParentPathsOutcome;
         typedef Aws::Utils::Outcome<ListObjectParentsResult, Aws::Client::AWSError<CloudDirectoryErrors>> ListObjectParentsOutcome;
         typedef Aws::Utils::Outcome<ListObjectPoliciesResult, Aws::Client::AWSError<CloudDirectoryErrors>> ListObjectPoliciesOutcome;
         typedef Aws::Utils::Outcome<ListPolicyAttachmentsResult, Aws::Client::AWSError<CloudDirectoryErrors>> ListPolicyAttachmentsOutcome;
@@ -245,6 +248,7 @@ namespace Model
         typedef std::future<ListIndexOutcome> ListIndexOutcomeCallable;
         typedef std::future<ListObjectAttributesOutcome> ListObjectAttributesOutcomeCallable;
         typedef std::future<ListObjectChildrenOutcome> ListObjectChildrenOutcomeCallable;
+        typedef std::future<ListObjectParentPathsOutcome> ListObjectParentPathsOutcomeCallable;
         typedef std::future<ListObjectParentsOutcome> ListObjectParentsOutcomeCallable;
         typedef std::future<ListObjectPoliciesOutcome> ListObjectPoliciesOutcomeCallable;
         typedef std::future<ListPolicyAttachmentsOutcome> ListPolicyAttachmentsOutcomeCallable;
@@ -297,6 +301,7 @@ namespace Model
     typedef std::function<void(const CloudDirectoryClient*, const Model::ListIndexRequest&, const Model::ListIndexOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListIndexResponseReceivedHandler;
     typedef std::function<void(const CloudDirectoryClient*, const Model::ListObjectAttributesRequest&, const Model::ListObjectAttributesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListObjectAttributesResponseReceivedHandler;
     typedef std::function<void(const CloudDirectoryClient*, const Model::ListObjectChildrenRequest&, const Model::ListObjectChildrenOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListObjectChildrenResponseReceivedHandler;
+    typedef std::function<void(const CloudDirectoryClient*, const Model::ListObjectParentPathsRequest&, const Model::ListObjectParentPathsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListObjectParentPathsResponseReceivedHandler;
     typedef std::function<void(const CloudDirectoryClient*, const Model::ListObjectParentsRequest&, const Model::ListObjectParentsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListObjectParentsResponseReceivedHandler;
     typedef std::function<void(const CloudDirectoryClient*, const Model::ListObjectPoliciesRequest&, const Model::ListObjectPoliciesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListObjectPoliciesResponseReceivedHandler;
     typedef std::function<void(const CloudDirectoryClient*, const Model::ListPolicyAttachmentsRequest&, const Model::ListPolicyAttachmentsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListPolicyAttachmentsResponseReceivedHandler;
@@ -406,7 +411,7 @@ namespace Model
         /**
          * <p>Attaches an existing object to another object. An object can be accessed in
          * two ways:</p> <ol> <li> <p>Using the path</p> </li> <li> <p>Using
-         * ObjectIdentifier</p> </li> </ol><p><h3>See Also:</h3>   <a
+         * <code>ObjectIdentifier</code> </p> </li> </ol><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/AttachObject">AWS
          * API Reference</a></p>
          */
@@ -415,7 +420,7 @@ namespace Model
         /**
          * <p>Attaches an existing object to another object. An object can be accessed in
          * two ways:</p> <ol> <li> <p>Using the path</p> </li> <li> <p>Using
-         * ObjectIdentifier</p> </li> </ol><p><h3>See Also:</h3>   <a
+         * <code>ObjectIdentifier</code> </p> </li> </ol><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/AttachObject">AWS
          * API Reference</a></p>
          *
@@ -426,7 +431,7 @@ namespace Model
         /**
          * <p>Attaches an existing object to another object. An object can be accessed in
          * two ways:</p> <ol> <li> <p>Using the path</p> </li> <li> <p>Using
-         * ObjectIdentifier</p> </li> </ol><p><h3>See Also:</h3>   <a
+         * <code>ObjectIdentifier</code> </p> </li> </ol><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/AttachObject">AWS
          * API Reference</a></p>
          *
@@ -1336,6 +1341,61 @@ namespace Model
         virtual void ListObjectChildrenAsync(const Model::ListObjectChildrenRequest& request, const ListObjectChildrenResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Retrieves all available parent paths for any object type such as node, leaf
+         * node, policy node, and index node objects. For more information about objects,
+         * see <a
+         * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_key_concepts.html#dirstructure">Directory
+         * Structure</a>.</p> <p>Use this API to evaluate all parents for an object. The
+         * call returns all objects from the root of the directory up to the requested
+         * object. The API returns the number of paths based on user-defined
+         * <code>MaxResults</code>, in case there are multiple paths to the parent. The
+         * order of the paths and nodes returned is consistent among multiple API calls
+         * unless the objects are deleted or moved. Paths not leading to directory root are
+         * ignored from the target object.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListObjectParentPaths">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListObjectParentPathsOutcome ListObjectParentPaths(const Model::ListObjectParentPathsRequest& request) const;
+
+        /**
+         * <p>Retrieves all available parent paths for any object type such as node, leaf
+         * node, policy node, and index node objects. For more information about objects,
+         * see <a
+         * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_key_concepts.html#dirstructure">Directory
+         * Structure</a>.</p> <p>Use this API to evaluate all parents for an object. The
+         * call returns all objects from the root of the directory up to the requested
+         * object. The API returns the number of paths based on user-defined
+         * <code>MaxResults</code>, in case there are multiple paths to the parent. The
+         * order of the paths and nodes returned is consistent among multiple API calls
+         * unless the objects are deleted or moved. Paths not leading to directory root are
+         * ignored from the target object.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListObjectParentPaths">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListObjectParentPathsOutcomeCallable ListObjectParentPathsCallable(const Model::ListObjectParentPathsRequest& request) const;
+
+        /**
+         * <p>Retrieves all available parent paths for any object type such as node, leaf
+         * node, policy node, and index node objects. For more information about objects,
+         * see <a
+         * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_key_concepts.html#dirstructure">Directory
+         * Structure</a>.</p> <p>Use this API to evaluate all parents for an object. The
+         * call returns all objects from the root of the directory up to the requested
+         * object. The API returns the number of paths based on user-defined
+         * <code>MaxResults</code>, in case there are multiple paths to the parent. The
+         * order of the paths and nodes returned is consistent among multiple API calls
+         * unless the objects are deleted or moved. Paths not leading to directory root are
+         * ignored from the target object.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListObjectParentPaths">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListObjectParentPathsAsync(const Model::ListObjectParentPathsRequest& request, const ListObjectParentPathsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Lists parent objects associated with a given object in pagination
          * fashion.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListObjectParents">AWS
@@ -1392,7 +1452,7 @@ namespace Model
         virtual void ListObjectPoliciesAsync(const Model::ListObjectPoliciesRequest& request, const ListObjectPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns all of the ObjectIdentifiers to which a given policy is
+         * <p>Returns all of the <code>ObjectIdentifiers</code> to which a given policy is
          * attached.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListPolicyAttachments">AWS
          * API Reference</a></p>
@@ -1400,7 +1460,7 @@ namespace Model
         virtual Model::ListPolicyAttachmentsOutcome ListPolicyAttachments(const Model::ListPolicyAttachmentsRequest& request) const;
 
         /**
-         * <p>Returns all of the ObjectIdentifiers to which a given policy is
+         * <p>Returns all of the <code>ObjectIdentifiers</code> to which a given policy is
          * attached.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListPolicyAttachments">AWS
          * API Reference</a></p>
@@ -1410,7 +1470,7 @@ namespace Model
         virtual Model::ListPolicyAttachmentsOutcomeCallable ListPolicyAttachmentsCallable(const Model::ListPolicyAttachmentsRequest& request) const;
 
         /**
-         * <p>Returns all of the ObjectIdentifiers to which a given policy is
+         * <p>Returns all of the <code>ObjectIdentifiers</code> to which a given policy is
          * attached.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListPolicyAttachments">AWS
          * API Reference</a></p>
@@ -1479,9 +1539,10 @@ namespace Model
          * <p>Lists all policies from the root of the <a>Directory</a> to the object
          * specified. If there are no policies present, an empty list is returned. If
          * policies are present, and if some objects don't have the policies attached, it
-         * returns the objectIdentifier for such objects. If policies are present, it
-         * returns objectIdentifier, policyId, and policyType. Paths that don't lead to the
-         * root from the target object are ignored.</p><p><h3>See Also:</h3>   <a
+         * returns the <code>ObjectIdentifier</code> for such objects. If policies are
+         * present, it returns <code>ObjectIdentifier</code>, <code>policyId</code>, and
+         * <code>policyType</code>. Paths that don't lead to the root from the target
+         * object are ignored.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/LookupPolicy">AWS
          * API Reference</a></p>
          */
@@ -1491,9 +1552,10 @@ namespace Model
          * <p>Lists all policies from the root of the <a>Directory</a> to the object
          * specified. If there are no policies present, an empty list is returned. If
          * policies are present, and if some objects don't have the policies attached, it
-         * returns the objectIdentifier for such objects. If policies are present, it
-         * returns objectIdentifier, policyId, and policyType. Paths that don't lead to the
-         * root from the target object are ignored.</p><p><h3>See Also:</h3>   <a
+         * returns the <code>ObjectIdentifier</code> for such objects. If policies are
+         * present, it returns <code>ObjectIdentifier</code>, <code>policyId</code>, and
+         * <code>policyType</code>. Paths that don't lead to the root from the target
+         * object are ignored.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/LookupPolicy">AWS
          * API Reference</a></p>
          *
@@ -1505,9 +1567,10 @@ namespace Model
          * <p>Lists all policies from the root of the <a>Directory</a> to the object
          * specified. If there are no policies present, an empty list is returned. If
          * policies are present, and if some objects don't have the policies attached, it
-         * returns the objectIdentifier for such objects. If policies are present, it
-         * returns objectIdentifier, policyId, and policyType. Paths that don't lead to the
-         * root from the target object are ignored.</p><p><h3>See Also:</h3>   <a
+         * returns the <code>ObjectIdentifier</code> for such objects. If policies are
+         * present, it returns <code>ObjectIdentifier</code>, <code>policyId</code>, and
+         * <code>policyType</code>. Paths that don't lead to the root from the target
+         * object are ignored.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/LookupPolicy">AWS
          * API Reference</a></p>
          *
@@ -1662,20 +1725,24 @@ namespace Model
         virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Does the following:</p> <ol> <li> <p>Adds new Attributes, Rules, or
-         * ObjectTypes.</p> </li> <li> <p>Updates existing Attributes, Rules, or
-         * ObjectTypes.</p> </li> <li> <p>Deletes existing Attributes, Rules, or
-         * ObjectTypes.</p> </li> </ol><p><h3>See Also:</h3>   <a
+         * <p>Does the following:</p> <ol> <li> <p>Adds new <code>Attributes</code>,
+         * <code>Rules</code>, or <code>ObjectTypes</code>.</p> </li> <li> <p>Updates
+         * existing <code>Attributes</code>, <code>Rules</code>, or
+         * <code>ObjectTypes</code>.</p> </li> <li> <p>Deletes existing
+         * <code>Attributes</code>, <code>Rules</code>, or <code>ObjectTypes</code>.</p>
+         * </li> </ol><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/UpdateFacet">AWS
          * API Reference</a></p>
          */
         virtual Model::UpdateFacetOutcome UpdateFacet(const Model::UpdateFacetRequest& request) const;
 
         /**
-         * <p>Does the following:</p> <ol> <li> <p>Adds new Attributes, Rules, or
-         * ObjectTypes.</p> </li> <li> <p>Updates existing Attributes, Rules, or
-         * ObjectTypes.</p> </li> <li> <p>Deletes existing Attributes, Rules, or
-         * ObjectTypes.</p> </li> </ol><p><h3>See Also:</h3>   <a
+         * <p>Does the following:</p> <ol> <li> <p>Adds new <code>Attributes</code>,
+         * <code>Rules</code>, or <code>ObjectTypes</code>.</p> </li> <li> <p>Updates
+         * existing <code>Attributes</code>, <code>Rules</code>, or
+         * <code>ObjectTypes</code>.</p> </li> <li> <p>Deletes existing
+         * <code>Attributes</code>, <code>Rules</code>, or <code>ObjectTypes</code>.</p>
+         * </li> </ol><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/UpdateFacet">AWS
          * API Reference</a></p>
          *
@@ -1684,10 +1751,12 @@ namespace Model
         virtual Model::UpdateFacetOutcomeCallable UpdateFacetCallable(const Model::UpdateFacetRequest& request) const;
 
         /**
-         * <p>Does the following:</p> <ol> <li> <p>Adds new Attributes, Rules, or
-         * ObjectTypes.</p> </li> <li> <p>Updates existing Attributes, Rules, or
-         * ObjectTypes.</p> </li> <li> <p>Deletes existing Attributes, Rules, or
-         * ObjectTypes.</p> </li> </ol><p><h3>See Also:</h3>   <a
+         * <p>Does the following:</p> <ol> <li> <p>Adds new <code>Attributes</code>,
+         * <code>Rules</code>, or <code>ObjectTypes</code>.</p> </li> <li> <p>Updates
+         * existing <code>Attributes</code>, <code>Rules</code>, or
+         * <code>ObjectTypes</code>.</p> </li> <li> <p>Deletes existing
+         * <code>Attributes</code>, <code>Rules</code>, or <code>ObjectTypes</code>.</p>
+         * </li> </ol><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/UpdateFacet">AWS
          * API Reference</a></p>
          *
@@ -1787,6 +1856,7 @@ namespace Model
         void ListIndexAsyncHelper(const Model::ListIndexRequest& request, const ListIndexResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListObjectAttributesAsyncHelper(const Model::ListObjectAttributesRequest& request, const ListObjectAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListObjectChildrenAsyncHelper(const Model::ListObjectChildrenRequest& request, const ListObjectChildrenResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListObjectParentPathsAsyncHelper(const Model::ListObjectParentPathsRequest& request, const ListObjectParentPathsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListObjectParentsAsyncHelper(const Model::ListObjectParentsRequest& request, const ListObjectParentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListObjectPoliciesAsyncHelper(const Model::ListObjectPoliciesRequest& request, const ListObjectPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListPolicyAttachmentsAsyncHelper(const Model::ListPolicyAttachmentsRequest& request, const ListPolicyAttachmentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

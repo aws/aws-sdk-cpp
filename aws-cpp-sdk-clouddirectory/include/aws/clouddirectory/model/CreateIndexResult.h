@@ -40,37 +40,37 @@ namespace Model
     CreateIndexResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
     /**
-     * <p>The ObjectIdentifier of the index created by this operation.</p>
+     * <p>The <code>ObjectIdentifier</code> of the index created by this operation.</p>
      */
     inline const Aws::String& GetObjectIdentifier() const{ return m_objectIdentifier; }
 
     /**
-     * <p>The ObjectIdentifier of the index created by this operation.</p>
+     * <p>The <code>ObjectIdentifier</code> of the index created by this operation.</p>
      */
     inline void SetObjectIdentifier(const Aws::String& value) { m_objectIdentifier = value; }
 
     /**
-     * <p>The ObjectIdentifier of the index created by this operation.</p>
+     * <p>The <code>ObjectIdentifier</code> of the index created by this operation.</p>
      */
     inline void SetObjectIdentifier(Aws::String&& value) { m_objectIdentifier = value; }
 
     /**
-     * <p>The ObjectIdentifier of the index created by this operation.</p>
+     * <p>The <code>ObjectIdentifier</code> of the index created by this operation.</p>
      */
     inline void SetObjectIdentifier(const char* value) { m_objectIdentifier.assign(value); }
 
     /**
-     * <p>The ObjectIdentifier of the index created by this operation.</p>
+     * <p>The <code>ObjectIdentifier</code> of the index created by this operation.</p>
      */
     inline CreateIndexResult& WithObjectIdentifier(const Aws::String& value) { SetObjectIdentifier(value); return *this;}
 
     /**
-     * <p>The ObjectIdentifier of the index created by this operation.</p>
+     * <p>The <code>ObjectIdentifier</code> of the index created by this operation.</p>
      */
     inline CreateIndexResult& WithObjectIdentifier(Aws::String&& value) { SetObjectIdentifier(value); return *this;}
 
     /**
-     * <p>The ObjectIdentifier of the index created by this operation.</p>
+     * <p>The <code>ObjectIdentifier</code> of the index created by this operation.</p>
      */
     inline CreateIndexResult& WithObjectIdentifier(const char* value) { SetObjectIdentifier(value); return *this;}
 

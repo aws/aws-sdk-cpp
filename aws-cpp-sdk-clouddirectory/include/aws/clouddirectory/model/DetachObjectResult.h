@@ -40,37 +40,37 @@ namespace Model
     DetachObjectResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
     /**
-     * <p>The ObjectIdentifier that was detached from the object.</p>
+     * <p>The <code>ObjectIdentifier</code> that was detached from the object.</p>
      */
     inline const Aws::String& GetDetachedObjectIdentifier() const{ return m_detachedObjectIdentifier; }
 
     /**
-     * <p>The ObjectIdentifier that was detached from the object.</p>
+     * <p>The <code>ObjectIdentifier</code> that was detached from the object.</p>
      */
     inline void SetDetachedObjectIdentifier(const Aws::String& value) { m_detachedObjectIdentifier = value; }
 
     /**
-     * <p>The ObjectIdentifier that was detached from the object.</p>
+     * <p>The <code>ObjectIdentifier</code> that was detached from the object.</p>
      */
     inline void SetDetachedObjectIdentifier(Aws::String&& value) { m_detachedObjectIdentifier = value; }
 
     /**
-     * <p>The ObjectIdentifier that was detached from the object.</p>
+     * <p>The <code>ObjectIdentifier</code> that was detached from the object.</p>
      */
     inline void SetDetachedObjectIdentifier(const char* value) { m_detachedObjectIdentifier.assign(value); }
 
     /**
-     * <p>The ObjectIdentifier that was detached from the object.</p>
+     * <p>The <code>ObjectIdentifier</code> that was detached from the object.</p>
      */
     inline DetachObjectResult& WithDetachedObjectIdentifier(const Aws::String& value) { SetDetachedObjectIdentifier(value); return *this;}
 
     /**
-     * <p>The ObjectIdentifier that was detached from the object.</p>
+     * <p>The <code>ObjectIdentifier</code> that was detached from the object.</p>
      */
     inline DetachObjectResult& WithDetachedObjectIdentifier(Aws::String&& value) { SetDetachedObjectIdentifier(value); return *this;}
 
     /**
-     * <p>The ObjectIdentifier that was detached from the object.</p>
+     * <p>The <code>ObjectIdentifier</code> that was detached from the object.</p>
      */
     inline DetachObjectResult& WithDetachedObjectIdentifier(const char* value) { SetDetachedObjectIdentifier(value); return *this;}
 

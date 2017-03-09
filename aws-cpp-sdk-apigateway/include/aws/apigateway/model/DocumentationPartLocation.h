@@ -53,7 +53,8 @@ namespace Model
      * <code>REQUEST_HEADER</code>, <code>REQUEST_BODY</code>, <code>RESPONSE</code>,
      * <code>RESPONSE_HEADER</code>, and <code>RESPONSE_BODY</code>. Content
      * inheritance does not apply to any entity of the <code>API</code>,
-     * <code>AUTHROZER</code>, <code>MODEL</code>, or <code>RESOURCE</code> type.</p>
+     * <code>AUTHROZER</code>, <code>METHOD</code>, <code>MODEL</code>,
+     * <code>REQUEST_BODY</code>, or <code>RESOURCE</code> type.</p>
      */
     inline const DocumentationPartType& GetType() const{ return m_type; }
 
@@ -65,7 +66,8 @@ namespace Model
      * <code>REQUEST_HEADER</code>, <code>REQUEST_BODY</code>, <code>RESPONSE</code>,
      * <code>RESPONSE_HEADER</code>, and <code>RESPONSE_BODY</code>. Content
      * inheritance does not apply to any entity of the <code>API</code>,
-     * <code>AUTHROZER</code>, <code>MODEL</code>, or <code>RESOURCE</code> type.</p>
+     * <code>AUTHROZER</code>, <code>METHOD</code>, <code>MODEL</code>,
+     * <code>REQUEST_BODY</code>, or <code>RESOURCE</code> type.</p>
      */
     inline void SetType(const DocumentationPartType& value) { m_typeHasBeenSet = true; m_type = value; }
 
@@ -77,7 +79,8 @@ namespace Model
      * <code>REQUEST_HEADER</code>, <code>REQUEST_BODY</code>, <code>RESPONSE</code>,
      * <code>RESPONSE_HEADER</code>, and <code>RESPONSE_BODY</code>. Content
      * inheritance does not apply to any entity of the <code>API</code>,
-     * <code>AUTHROZER</code>, <code>MODEL</code>, or <code>RESOURCE</code> type.</p>
+     * <code>AUTHROZER</code>, <code>METHOD</code>, <code>MODEL</code>,
+     * <code>REQUEST_BODY</code>, or <code>RESOURCE</code> type.</p>
      */
     inline void SetType(DocumentationPartType&& value) { m_typeHasBeenSet = true; m_type = value; }
 
@@ -89,7 +92,8 @@ namespace Model
      * <code>REQUEST_HEADER</code>, <code>REQUEST_BODY</code>, <code>RESPONSE</code>,
      * <code>RESPONSE_HEADER</code>, and <code>RESPONSE_BODY</code>. Content
      * inheritance does not apply to any entity of the <code>API</code>,
-     * <code>AUTHROZER</code>, <code>MODEL</code>, or <code>RESOURCE</code> type.</p>
+     * <code>AUTHROZER</code>, <code>METHOD</code>, <code>MODEL</code>,
+     * <code>REQUEST_BODY</code>, or <code>RESOURCE</code> type.</p>
      */
     inline DocumentationPartLocation& WithType(const DocumentationPartType& value) { SetType(value); return *this;}
 
@@ -101,7 +105,8 @@ namespace Model
      * <code>REQUEST_HEADER</code>, <code>REQUEST_BODY</code>, <code>RESPONSE</code>,
      * <code>RESPONSE_HEADER</code>, and <code>RESPONSE_BODY</code>. Content
      * inheritance does not apply to any entity of the <code>API</code>,
-     * <code>AUTHROZER</code>, <code>MODEL</code>, or <code>RESOURCE</code> type.</p>
+     * <code>AUTHROZER</code>, <code>METHOD</code>, <code>MODEL</code>,
+     * <code>REQUEST_BODY</code>, or <code>RESOURCE</code> type.</p>
      */
     inline DocumentationPartLocation& WithType(DocumentationPartType&& value) { SetType(value); return *this;}
 

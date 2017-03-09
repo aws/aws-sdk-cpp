@@ -40,37 +40,44 @@ namespace Model
     AttachToIndexResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
     /**
-     * <p>The ObjectIdentifier of the object that was attached to the index.</p>
+     * <p>The <code>ObjectIdentifier</code> of the object that was attached to the
+     * index.</p>
      */
     inline const Aws::String& GetAttachedObjectIdentifier() const{ return m_attachedObjectIdentifier; }
 
     /**
-     * <p>The ObjectIdentifier of the object that was attached to the index.</p>
+     * <p>The <code>ObjectIdentifier</code> of the object that was attached to the
+     * index.</p>
      */
     inline void SetAttachedObjectIdentifier(const Aws::String& value) { m_attachedObjectIdentifier = value; }
 
     /**
-     * <p>The ObjectIdentifier of the object that was attached to the index.</p>
+     * <p>The <code>ObjectIdentifier</code> of the object that was attached to the
+     * index.</p>
      */
     inline void SetAttachedObjectIdentifier(Aws::String&& value) { m_attachedObjectIdentifier = value; }
 
     /**
-     * <p>The ObjectIdentifier of the object that was attached to the index.</p>
+     * <p>The <code>ObjectIdentifier</code> of the object that was attached to the
+     * index.</p>
      */
     inline void SetAttachedObjectIdentifier(const char* value) { m_attachedObjectIdentifier.assign(value); }
 
     /**
-     * <p>The ObjectIdentifier of the object that was attached to the index.</p>
+     * <p>The <code>ObjectIdentifier</code> of the object that was attached to the
+     * index.</p>
      */
     inline AttachToIndexResult& WithAttachedObjectIdentifier(const Aws::String& value) { SetAttachedObjectIdentifier(value); return *this;}
 
     /**
-     * <p>The ObjectIdentifier of the object that was attached to the index.</p>
+     * <p>The <code>ObjectIdentifier</code> of the object that was attached to the
+     * index.</p>
      */
     inline AttachToIndexResult& WithAttachedObjectIdentifier(Aws::String&& value) { SetAttachedObjectIdentifier(value); return *this;}
 
     /**
-     * <p>The ObjectIdentifier of the object that was attached to the index.</p>
+     * <p>The <code>ObjectIdentifier</code> of the object that was attached to the
+     * index.</p>
      */
     inline AttachToIndexResult& WithAttachedObjectIdentifier(const char* value) { SetAttachedObjectIdentifier(value); return *this;}
 

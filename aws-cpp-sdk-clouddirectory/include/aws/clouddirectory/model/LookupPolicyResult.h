@@ -42,79 +42,79 @@ namespace Model
     LookupPolicyResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
     /**
-     * <p>Provides list of path to policies. Policies contain PolicyId,
-     * ObjectIdentifier, and PolicyType.</p>
+     * <p>Provides list of path to policies. Policies contain <code>PolicyId</code>,
+     * <code>ObjectIdentifier</code>, and <code>PolicyType</code>.</p>
      */
     inline const Aws::Vector<PolicyToPath>& GetPolicyToPathList() const{ return m_policyToPathList; }
 
     /**
-     * <p>Provides list of path to policies. Policies contain PolicyId,
-     * ObjectIdentifier, and PolicyType.</p>
+     * <p>Provides list of path to policies. Policies contain <code>PolicyId</code>,
+     * <code>ObjectIdentifier</code>, and <code>PolicyType</code>.</p>
      */
     inline void SetPolicyToPathList(const Aws::Vector<PolicyToPath>& value) { m_policyToPathList = value; }
 
     /**
-     * <p>Provides list of path to policies. Policies contain PolicyId,
-     * ObjectIdentifier, and PolicyType.</p>
+     * <p>Provides list of path to policies. Policies contain <code>PolicyId</code>,
+     * <code>ObjectIdentifier</code>, and <code>PolicyType</code>.</p>
      */
     inline void SetPolicyToPathList(Aws::Vector<PolicyToPath>&& value) { m_policyToPathList = value; }
 
     /**
-     * <p>Provides list of path to policies. Policies contain PolicyId,
-     * ObjectIdentifier, and PolicyType.</p>
+     * <p>Provides list of path to policies. Policies contain <code>PolicyId</code>,
+     * <code>ObjectIdentifier</code>, and <code>PolicyType</code>.</p>
      */
     inline LookupPolicyResult& WithPolicyToPathList(const Aws::Vector<PolicyToPath>& value) { SetPolicyToPathList(value); return *this;}
 
     /**
-     * <p>Provides list of path to policies. Policies contain PolicyId,
-     * ObjectIdentifier, and PolicyType.</p>
+     * <p>Provides list of path to policies. Policies contain <code>PolicyId</code>,
+     * <code>ObjectIdentifier</code>, and <code>PolicyType</code>.</p>
      */
     inline LookupPolicyResult& WithPolicyToPathList(Aws::Vector<PolicyToPath>&& value) { SetPolicyToPathList(value); return *this;}
 
     /**
-     * <p>Provides list of path to policies. Policies contain PolicyId,
-     * ObjectIdentifier, and PolicyType.</p>
+     * <p>Provides list of path to policies. Policies contain <code>PolicyId</code>,
+     * <code>ObjectIdentifier</code>, and <code>PolicyType</code>.</p>
      */
     inline LookupPolicyResult& AddPolicyToPathList(const PolicyToPath& value) { m_policyToPathList.push_back(value); return *this; }
 
     /**
-     * <p>Provides list of path to policies. Policies contain PolicyId,
-     * ObjectIdentifier, and PolicyType.</p>
+     * <p>Provides list of path to policies. Policies contain <code>PolicyId</code>,
+     * <code>ObjectIdentifier</code>, and <code>PolicyType</code>.</p>
      */
     inline LookupPolicyResult& AddPolicyToPathList(PolicyToPath&& value) { m_policyToPathList.push_back(value); return *this; }
 
     /**
-     * <p>Token used for pagination.</p>
+     * <p>The pagination token.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * <p>Token used for pagination.</p>
+     * <p>The pagination token.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
 
     /**
-     * <p>Token used for pagination.</p>
+     * <p>The pagination token.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = value; }
 
     /**
-     * <p>Token used for pagination.</p>
+     * <p>The pagination token.</p>
      */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
 
     /**
-     * <p>Token used for pagination.</p>
+     * <p>The pagination token.</p>
      */
     inline LookupPolicyResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>Token used for pagination.</p>
+     * <p>The pagination token.</p>
      */
     inline LookupPolicyResult& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>Token used for pagination.</p>
+     * <p>The pagination token.</p>
      */
     inline LookupPolicyResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
