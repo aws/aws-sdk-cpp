@@ -28,6 +28,7 @@
 #include <aws/s3/model/HeadBucketRequest.h>
 #include <aws/s3/model/DeleteBucketRequest.h>
 #include <aws/s3/model/CreateBucketRequest.h>
+#include <aws/s3/model/PutBucketVersioningRequest.h>
 #include <aws/core/platform/FileSystem.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/core/utils/StringUtils.h>
@@ -1275,6 +1276,99 @@ TEST_F(TransferTests, TransferManager_CancelAndRetryDownloadTest)
     }
 }
 
+TEST_F(TransferTests, TransferManager_MediumVersionedTest)
+{
+    {
+        VersioningConfiguration versionConfig;
+        versionConfig.SetStatus(Aws::S3::Model::BucketVersioningStatus::Enabled);
 
+        PutBucketVersioningRequest versionBucketRequest;
+        versionBucketRequest.SetBucket(GetTestBucketName());
+        versionBucketRequest.SetVersioningConfiguration(versionConfig);
+
+        auto setVersioningOutcome = m_s3Client->PutBucketVersioning(versionBucketRequest);
+        EXPECT_TRUE(setVersioningOutcome.IsSuccess());
+    }
+
+    ScopedTestFile testFile(m_mediumTestFileName, MEDIUM_TEST_SIZE, testString);
+
+    if (EmptyBucket(GetTestBucketName()))
+    {
+        WaitForBucketToEmpty(GetTestBucketName());
+    }
+
+    GetObjectRequest getObjectRequest;
+    getObjectRequest.SetBucket(GetTestBucketName());
+    getObjectRequest.SetKey(MEDIUM_FILE_KEY);
+
+    GetObjectOutcome getObjectOutcome = m_s3Client->GetObject(getObjectRequest);
+    EXPECT_FALSE(getObjectOutcome.IsSuccess());
+
+    TransferManagerConfiguration transferManagerConfig;
+    transferManagerConfig.s3Client = m_s3Client;
+
+    TransferManager transferManager(transferManagerConfig);
+
+    uint32_t uploadCount = 0;
+    while(uploadCount < 3)
+    {
+        std::shared_ptr<TransferHandle> requestPtr = transferManager.UploadFile(m_mediumTestFileName, GetTestBucketName(), MEDIUM_FILE_KEY, "text/plain", Aws::Map<Aws::String, Aws::String>());
+
+        ASSERT_EQ(true, requestPtr->ShouldContinue());
+        ASSERT_EQ(TransferDirection::UPLOAD, requestPtr->GetTransferDirection());
+        ASSERT_STREQ(m_mediumTestFileName.c_str(), requestPtr->GetTargetFilePath().c_str());    
+        requestPtr->WaitUntilFinished();
+
+        size_t retries = 0;
+        //just make sure we don't fail because a the put object failed. (e.g. network problems or interuptions)
+        while (requestPtr->GetStatus() == TransferStatus::FAILED && retries++ < 5)
+        {
+            transferManager.RetryUpload(m_mediumTestFileName, requestPtr);
+            requestPtr->WaitUntilFinished();
+        }
+
+        ASSERT_TRUE(requestPtr->IsMultipart());
+        ASSERT_FALSE(requestPtr->GetMultiPartId().empty());
+        ASSERT_EQ(TransferStatus::COMPLETED, requestPtr->GetStatus());
+        ASSERT_EQ(PARTS_IN_MEDIUM_TEST, requestPtr->GetCompletedParts().size()); // Should be 2
+        ASSERT_EQ(0u, requestPtr->GetFailedParts().size());
+        ASSERT_EQ(0u, requestPtr->GetPendingParts().size());
+        ASSERT_EQ(0u, requestPtr->GetQueuedParts().size());
+        ASSERT_STREQ("text/plain", requestPtr->GetContentType().c_str());
+
+        uint64_t fileSize = requestPtr->GetBytesTotalSize();
+        ASSERT_TRUE(fileSize == MEDIUM_TEST_SIZE / testStrLen * testStrLen);
+        ASSERT_TRUE(fileSize == requestPtr->GetBytesTransferred());
+
+        HeadObjectRequest headObjectRequest;
+        headObjectRequest.WithBucket(GetTestBucketName())
+            .WithKey(MEDIUM_FILE_KEY);
+
+        auto outcome = m_s3Client->HeadObject(headObjectRequest);
+        ASSERT_TRUE(outcome.IsSuccess());
+        ASSERT_STREQ(requestPtr->GetContentType().c_str(), outcome.GetResult().GetContentType().c_str());
+
+        uploadCount++;
+    }
+
+    VerifyUploadedFile(transferManager,
+                       m_mediumTestFileName,
+                       GetTestBucketName(),
+                       MEDIUM_FILE_KEY,
+                       "text/plain",
+                       Aws::Map<Aws::String, Aws::String>());
+
+    {
+        VersioningConfiguration versionConfig;
+        versionConfig.SetStatus(Aws::S3::Model::BucketVersioningStatus::Suspended);
+
+        PutBucketVersioningRequest versionBucketRequest;
+        versionBucketRequest.SetBucket(GetTestBucketName());
+        versionBucketRequest.SetVersioningConfiguration(versionConfig);
+
+        auto setVersioningOutcome = m_s3Client->PutBucketVersioning(versionBucketRequest);
+        EXPECT_TRUE(setVersioningOutcome.IsSuccess());
+    }
+}
 
 }

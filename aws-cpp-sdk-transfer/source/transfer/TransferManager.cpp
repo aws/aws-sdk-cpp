@@ -539,7 +539,13 @@ namespace Aws
             Aws::S3::Model::GetObjectRequest request;
             request.SetContinueRequestHandler([handle](const Aws::Http::HttpRequest*) { return handle->ShouldContinue(); });
             request.WithBucket(handle->GetBucketName())
-                .WithKey(handle->GetKey());
+                   .WithKey(handle->GetKey());
+
+            if (handle->GetVersionId().size() > 0)
+            {
+                request.SetVersionId(handle->GetVersionId());
+            }
+
             request.SetResponseStreamFactory(handle->GetCreateDownloadStreamFunction());
 
             request.SetDataReceivedEventHandler([this, handle, partState](const Aws::Http::HttpRequest*, Aws::Http::HttpResponse*, long long progress)
@@ -617,6 +623,7 @@ namespace Aws
                 {
                     handle->SetVersionId(headObjectOutcome.GetResult().GetVersionId());
                 }
+
                 std::size_t partCount = ( downloadSize + bufferSize - 1 ) / bufferSize;
                 handle->SetIsMultipart(partCount > 1);    // doesn't make a difference but let's be accurate
 
@@ -685,7 +692,10 @@ namespace Aws
                     getObjectRangeRequest.WithKey(handle->GetKey());
                     getObjectRangeRequest.SetRange(FormatRangeSpecifier(rangeStart, rangeEnd));
                     getObjectRangeRequest.SetResponseStreamFactory(responseStreamFunction);
-                    getObjectRangeRequest.SetVersionId(handle->GetVersionId());
+                    if(handle->GetVersionId().size() > 0)
+                    {
+                        getObjectRangeRequest.SetVersionId(handle->GetVersionId());
+                    }
 
                     getObjectRangeRequest.SetDataReceivedEventHandler([this, partState, handle](const Aws::Http::HttpRequest*, Aws::Http::HttpResponse*, long long progress)
                     {
