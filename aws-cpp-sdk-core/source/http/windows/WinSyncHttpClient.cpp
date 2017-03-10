@@ -301,13 +301,14 @@ std::shared_ptr<HttpResponse> WinSyncHttpClient::MakeRequest(HttpRequest& reques
     {
         response = BuildSuccessResponse(request, hHttpRequest, readLimiter);
     }
-    else if (!IsRequestProcessingEnabled() || !ContinueRequest(request))
+    
+    if ((!success || response == nullptr) && !IsRequestProcessingEnabled() || !ContinueRequest(request))
     {
         AWS_LOGSTREAM_INFO(GetLogTag(), "Request cancelled by client controller");
         response = Aws::MakeShared<Aws::Http::Standard::StandardHttpResponse>(GetLogTag(), request);
         response->SetResponseCode(Http::HttpResponseCode::NO_RESPONSE);
     }
-    else
+    else if(!success)
     {
         LogRequestInternalFailure();
     }

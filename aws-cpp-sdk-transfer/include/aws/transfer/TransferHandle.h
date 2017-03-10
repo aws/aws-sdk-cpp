@@ -28,8 +28,75 @@
 
 namespace Aws
 {
+    namespace Utils
+    {
+        template < typename T > class Array;
+    }
+
     namespace Transfer
     {
+        class TransferHandle;
+
+        typedef std::function<Aws::IOStream*(void)> CreateDownloadStreamCallback;
+
+        struct DownloadConfiguration
+        {
+            DownloadConfiguration() :
+                versionId("")
+            {}
+
+            Aws::String versionId;
+
+            // TBI: controls for in-memory parts vs. resumable file-based parts with state serialization to/from file
+        };
+
+        class PartState
+        {
+            public:
+                PartState();
+                PartState(int partId, size_t bestProgressInBytes, size_t sizeInBytes);
+
+                int GetPartId() const { return m_partId; }
+
+                size_t GetBestProgressInBytes() const { return m_bestProgressInBytes; }
+                void SetBestProgressInBytes(size_t progressInBytes) { m_bestProgressInBytes = progressInBytes; }
+
+                size_t GetSizeInBytes() const { return m_sizeInBytes; }
+                void SetSizeInBytes(size_t sizeInBytes) { m_sizeInBytes = sizeInBytes; }
+
+                void Reset();
+
+                void OnDataTransferred(long long amount, const std::shared_ptr<TransferHandle> &transferHandle);
+
+                void SetETag(const Aws::String& eTag) { m_eTag = eTag; }
+                const Aws::String& GetETag() const { return m_eTag; }
+
+                Aws::IOStream *GetDownloadPartStream() const { return m_downloadPartStream; }
+                void SetDownloadPartStream(Aws::IOStream *downloadPartStream) { m_downloadPartStream = downloadPartStream; }
+
+                Aws::Utils::Array<unsigned char> *GetDownloadBuffer() const { return m_downloadBuffer; }
+                void SetDownloadBuffer(Aws::Utils::Array<unsigned char> *downloadBuffer) { m_downloadBuffer = downloadBuffer; }
+
+                void SetRangeBegin(size_t rangeBegin) { m_rangeBegin = rangeBegin; }
+                size_t GetRangeBegin() const { return m_rangeBegin; }
+
+            private:
+
+                int m_partId;
+
+                Aws::String m_eTag;
+                size_t m_currentProgressInBytes;
+                size_t m_bestProgressInBytes;
+                size_t m_sizeInBytes;
+                size_t m_rangeBegin;
+
+                std::atomic<Aws::IOStream *> m_downloadPartStream;
+                std::atomic<Aws::Utils::Array<unsigned char> *> m_downloadBuffer;
+        };
+
+        using PartPointer = std::shared_ptr< PartState >;
+        using PartStateMap = Aws::Map< int, PartPointer >;
+
         enum class TransferStatus
         {
             //this value is only used for directory synchronization
@@ -67,18 +134,17 @@ namespace Aws
             /**
              * Initialize with required information for an UPLOAD
              */
-            TransferHandle(const Aws::String& bucketName, const Aws::String& keyName, uint64_t totalSize, const Aws::String& targetFilePath = "") : 
-                m_isMultipart(false), m_direction(TransferDirection::UPLOAD), m_bytesTransferred(0), m_bytesTotalSize(totalSize),
-                m_bucket(bucketName), m_key(keyName), m_fileName(targetFilePath),  m_status(static_cast<long>(TransferStatus::NOT_STARTED)), m_cancel(false)
-            {}
+            TransferHandle(const Aws::String& bucketName, const Aws::String& keyName, uint64_t totalSize, const Aws::String& targetFilePath = "");
 
             /**
              * Initialize with required information for a DOWNLOAD
              */
-            TransferHandle(const Aws::String& bucketName, const Aws::String& keyName, const Aws::String& targetFilePath = "") :
-                m_isMultipart(false), m_direction(TransferDirection::DOWNLOAD), m_bytesTransferred(0), m_bytesTotalSize(0),
-                m_bucket(bucketName), m_key(keyName), m_fileName(targetFilePath), m_status(static_cast<long>(TransferStatus::NOT_STARTED)), m_cancel(false)
-            {}
+            TransferHandle(const Aws::String& bucketName, const Aws::String& keyName, const Aws::String& targetFilePath = "");
+
+            /**
+             * Alternate DOWNLOAD constructor
+             */
+            TransferHandle(const Aws::String& bucketName, const Aws::String& keyName, CreateDownloadStreamCallback createDownloadStreamFn);
 
             /**
              * Whether or not this transfer is being performed using parallel parts via a multi-part s3 api.
@@ -99,40 +165,56 @@ namespace Aws
             /**
              * Returns a copy of the completed parts, in the structure of <partId, ETag>. Used for all transfers.
              */
-            Aws::Set<std::pair<int, Aws::String>> GetCompletedParts() const;
+            PartStateMap GetCompletedParts() const;
             /**
              * Set a pending part to completed along with its etag. Used fore all transfers.
              */
-            void ChangePartToCompleted(int, const Aws::String&);
+            void ChangePartToCompleted(const PartPointer& partState, const Aws::String &eTag);
             /**
              * Returns a copy of the pending parts. Used for all transfers.
              */
-            Aws::Set<int> GetPendingParts() const;
+            PartStateMap GetPendingParts() const;
+            /**
+            * Returns true or false if there are currently any pending parts.
+            */
+            bool HasPendingParts() const;
             /**
              * Set a part to pending. Used for all transfers.
              */
-            void AddPendingPart(int);
+            void AddPendingPart(const PartPointer& partState);
             /**
              * Returns a copy of the queued parts. Used for all transfers.
              */
-            Aws::Set<int> GetQueuedParts() const;
+            PartStateMap GetQueuedParts() const;
+            /**
+            * Returns true or false if there are currently any queued parts.
+            */
+            bool HasQueuedParts() const;
             /**
              * Set a part to queued. Used for all transfers.
              */
-            void AddQueuedPart(int);
+            void AddQueuedPart(const PartPointer& partState);
             /**
              * Returns a copy of the failed parts. Used for all transfers.
              */
-            Aws::Set<int> GetFailedParts() const;
+            PartStateMap GetFailedParts() const;
+            /**
+            * Returns true or false if there are currently any failed parts.
+            */
+            bool HasFailedParts() const;
             /**
              * Set a pending part to failed. Used for all transfers.
              */
-            void ChangePartToFailed(int);
+            void ChangePartToFailed(const PartPointer& partState);
             /**
              * Get the parts transactionally, mostly for internal purposes.
              */
-             void GetAllPartsTransactional(Aws::Set<int>& queuedParts, Aws::Set<int>& pendingParts,
-                 Aws::Set<int>& failedParts, Aws::Set<std::pair<int, Aws::String>>& completedParts);
+             void GetAllPartsTransactional(PartStateMap& queuedParts, PartStateMap& pendingParts,
+                 PartStateMap& failedParts, PartStateMap& completedParts);
+             /**
+              * Returns true or false if any parts have been created for this transfer
+              */
+             bool HasParts() const;
             /**
              * Returns false if Cancel has been called. Largely for internal use.
              */
@@ -149,16 +231,18 @@ namespace Aws
             void Restart();
             /**
              * Total bytes transferred successfully on this transfer operation.
+             * We implement transfer progress with two invariants:
+             *  (1) Never lock; given a callback that can happen hundreds of times a second or more on a solid connection, it isn't acceptable to lock each time
+             *  (2) Never go backwards, in spite of part upload/download failures.  Negative progress (canceling a highly concurrent transfer can
+             *      lead to an enormous step backwards if many parts are aborted at once) is a confusing and undesirable user experience.
+             * In this sense, progress represents a high-water mark, and in the presence of heavy failures or cancellation, it may appear to pause until the 
+             * necessary retries exceed the previous high-water mark.
              */
             inline uint64_t GetBytesTransferred() const { return m_bytesTransferred.load(); }
             /**
-             * Atomically add bytes to the total bytes transferred
-             */
-            inline void AddTransferredBytes(uint64_t bytes) { m_bytesTransferred += bytes; }
-            /**
-             * Atomically set the total bytes transfered
-             */
-            inline void SetTransferredBytes(uint64_t bytes) { m_bytesTransferred = bytes; }
+            * Total bytes transferred successfully on this transfer operation.
+            */
+            void UpdateBytesTransferred(uint64_t amount) { m_bytesTransferred += amount; }
 
             /**
              * The calculated total size of the object being transferred.
@@ -182,6 +266,13 @@ namespace Aws
              * always be blank.
              */
             inline const Aws::String& GetTargetFilePath() const { return m_fileName; }
+
+            /**
+             * (Download only) version id of the object to retrieve; if not specified in constructor, then latest is used
+            */
+            const Aws::String& GetVersionId() const { return m_versionId; }
+            void SetVersionId(const Aws::String& versionId) { m_versionId = versionId; }
+
             /**
              * Upload or Download?
              */
@@ -229,25 +320,37 @@ namespace Aws
              */
             void WaitUntilFinished() const;      
 
+            const CreateDownloadStreamCallback& GetCreateDownloadStreamFunction() const { return m_createDownloadStreamFn; }
+
+            void WritePartToDownloadStream(Aws::IOStream* partStream, std::size_t writeOffset);
+
+            void ApplyDownloadConfiguration(const DownloadConfiguration& downloadConfig);
+
         private:
+
             bool m_isMultipart;
             Aws::String m_multipartId;
             TransferDirection m_direction;
-            Aws::Set<std::pair<int, Aws::String>> m_completedParts;
-            Aws::Set<int> m_pendingParts;
-            Aws::Set<int> m_queuedParts;
-            Aws::Set<int> m_failedParts;
+            PartStateMap m_completedParts;
+            PartStateMap m_pendingParts;
+            PartStateMap m_queuedParts;
+            PartStateMap m_failedParts;
             std::atomic<uint64_t> m_bytesTransferred;
             uint64_t m_bytesTotalSize;
             Aws::String m_bucket;
             Aws::String m_key;
             Aws::String m_fileName;
             Aws::String m_contentType;
+            Aws::String m_versionId;
             Aws::Map<Aws::String, Aws::String> m_metadata;
             std::atomic<long> m_status;
             Aws::Client::AWSError<Aws::S3::S3Errors> m_lastError;
             std::atomic<bool> m_cancel;
 
+            CreateDownloadStreamCallback m_createDownloadStreamFn;
+            Aws::IOStream* m_downloadStream;
+
+            std::mutex m_downloadStreamLock;
             mutable std::mutex m_partsLock;
             mutable std::mutex m_statusLock;
             mutable std::condition_variable m_waitUntilFinishedSignal;

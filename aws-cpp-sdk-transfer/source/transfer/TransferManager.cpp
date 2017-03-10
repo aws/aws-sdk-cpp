@@ -39,6 +39,7 @@ namespace Aws
         struct TransferHandleAsyncContext : public Aws::Client::AsyncCallerContext
         {
             std::shared_ptr<TransferHandle> handle;
+            PartPointer partState;
         };
 
         struct DownloadDirectoryContext : public Aws::Client::AsyncCallerContext
@@ -131,21 +132,31 @@ namespace Aws
             return handle;
         }
 
-        std::shared_ptr<TransferHandle> TransferManager::DownloadFile(const Aws::String& bucketName, const Aws::String& keyName, CreateDownloadStreamCallback writeToStreamfn)
+        std::shared_ptr<TransferHandle> TransferManager::DownloadFile(const Aws::String& bucketName, 
+                                                                      const Aws::String& keyName, 
+                                                                      CreateDownloadStreamCallback writeToStreamfn, 
+                                                                      const DownloadConfiguration& downloadConfig)
         {
-            auto handle = Aws::MakeShared<TransferHandle>(CLASS_TAG, bucketName, keyName);
+            auto handle = Aws::MakeShared<TransferHandle>(CLASS_TAG, bucketName, keyName, writeToStreamfn);
+            handle->ApplyDownloadConfiguration(downloadConfig);
 
-            m_transferConfig.transferExecutor->Submit([this, writeToStreamfn, handle] { DoDownload(writeToStreamfn, handle); });
+            m_transferConfig.transferExecutor->Submit([this, writeToStreamfn, handle] { DoDownload(handle); });
             return handle;
         }
 
-        std::shared_ptr<TransferHandle> TransferManager::DownloadFile(const Aws::String& bucketName, const Aws::String& keyName, const Aws::String& writeToFile)
+        std::shared_ptr<TransferHandle> TransferManager::DownloadFile(const Aws::String& bucketName, 
+                                                                      const Aws::String& keyName, 
+                                                                      const Aws::String& writeToFile, 
+                                                                      const DownloadConfiguration& downloadConfig)
         {
-            auto handle = Aws::MakeShared<TransferHandle>(CLASS_TAG, bucketName, keyName, writeToFile);
+
             auto createFileFn = [=]() { return Aws::New<Aws::FStream>(CLASS_TAG, writeToFile.c_str(),
                                                                      std::ios_base::out | std::ios_base::in | std::ios_base::binary | std::ios_base::trunc);};
 
-            m_transferConfig.transferExecutor->Submit([this, createFileFn, handle] { DoDownload(createFileFn, handle); });
+            auto handle = Aws::MakeShared<TransferHandle>(CLASS_TAG, bucketName, keyName, createFileFn);
+            handle->ApplyDownloadConfiguration(downloadConfig);
+
+            m_transferConfig.transferExecutor->Submit([this, createFileFn, handle] { DoDownload(handle); });
             return handle;
         }
 
@@ -255,10 +266,13 @@ namespace Aws
                 if (createMultipartResponse.IsSuccess())
                 {
                     handle->SetMultipartId(createMultipartResponse.GetResult().GetUploadId());
-                    int partNumber = 1;
-                    for (uint64_t i = 1; i < handle->GetBytesTotalSize(); i += m_transferConfig.bufferSize)
+                    uint64_t totalSize = handle->GetBytesTotalSize();
+                    uint64_t partCount = ( totalSize + m_transferConfig.bufferSize - 1 ) / m_transferConfig.bufferSize;
+
+                    for (uint64_t i = 0; i < partCount; ++i)
                     {
-                        handle->AddQueuedPart(partNumber++);
+                        uint64_t partSize = std::min(totalSize - i * m_transferConfig.bufferSize, m_transferConfig.bufferSize);
+                        handle->AddQueuedPart(Aws::MakeShared<PartState>(CLASS_TAG, static_cast<int>(i + 1), 0, static_cast<size_t>(partSize)));
                     }                    
                 }
                 else
@@ -273,16 +287,18 @@ namespace Aws
             else
             {
                 int partsToRetry = 0;
+                sentBytes = handle->GetBytesTotalSize();
                 //at this point we've been going synchronously so this is consistent
                 for (auto failedParts : handle->GetFailedParts())
                 {
                     partsToRetry++;
-                    handle->AddQueuedPart(failedParts);
+                    sentBytes -= failedParts.second->GetSizeInBytes();
+                    handle->AddQueuedPart(failedParts.second);
                 }
-                sentBytes = handle->GetBytesTotalSize() - (partsToRetry * m_transferConfig.bufferSize);
             }
+
             //still consistent
-            Set<int> queuedParts = handle->GetQueuedParts();
+            PartStateMap queuedParts = handle->GetQueuedParts();
             auto partsIter = queuedParts.begin();
 
             TriggerTransferStatusUpdatedCallback(*handle);
@@ -292,27 +308,31 @@ namespace Aws
                 auto buffer = m_bufferManager.Acquire();
                 if(handle->ShouldContinue())
                 {
-                    auto lengthToWrite = std::min(static_cast<uint64_t>(buffer->GetLength()), handle->GetBytesTotalSize() - sentBytes);
-                    streamToPut->seekg((*partsIter - 1) * m_transferConfig.bufferSize);
+                    auto lengthToWrite = partsIter->second->GetSizeInBytes();
+                    streamToPut->seekg((partsIter->first - 1) * m_transferConfig.bufferSize);
                     streamToPut->read((char*)buffer->GetUnderlyingData(), lengthToWrite);
 
                     auto streamBuf = Aws::New<Aws::Utils::Stream::PreallocatedStreamBuf>(CLASS_TAG, buffer, static_cast<size_t>(lengthToWrite));
                     auto preallocatedStreamReader = Aws::MakeShared<Aws::IOStream>(CLASS_TAG, streamBuf);
 
+                    PartPointer partPtr = partsIter->second;
                     Aws::S3::Model::UploadPartRequest uploadPartRequest = m_transferConfig.uploadPartTemplate;
                     uploadPartRequest.SetContinueRequestHandler([handle](const Aws::Http::HttpRequest*) { return handle->ShouldContinue(); });
+                    uploadPartRequest.SetDataSentEventHandler([handle, partPtr](const Aws::Http::HttpRequest*, long long amount){ partPtr->OnDataTransferred(amount, handle); });
+                    uploadPartRequest.SetRequestRetryHandler([partPtr](const AmazonWebServiceRequest&){ partPtr->Reset(); });
                     uploadPartRequest.WithBucket(handle->GetBucketName())
                         .WithContentLength(static_cast<long long>(lengthToWrite))
                         .WithKey(handle->GetKey())
-                        .WithPartNumber(*partsIter)
+                        .WithPartNumber(partsIter->first)
                         .WithUploadId(handle->GetMultiPartId());
 
-                    handle->AddPendingPart(*partsIter);
+                    handle->AddPendingPart(partsIter->second);
 
                     uploadPartRequest.SetBody(preallocatedStreamReader);
                     uploadPartRequest.SetContentType(handle->GetContentType());
                     auto asyncContext = Aws::MakeShared<TransferHandleAsyncContext>(CLASS_TAG);
                     asyncContext->handle = handle;
+                    asyncContext->partState = partsIter->second;
 
                     auto callback = [this](const Aws::S3::S3Client* client, const Aws::S3::Model::UploadPartRequest& request,
                         const Aws::S3::Model::UploadPartOutcome& outcome, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
@@ -334,16 +354,18 @@ namespace Aws
             //still consistent.
             for (; partsIter != queuedParts.end(); ++partsIter)
             {
-                handle->ChangePartToFailed(*partsIter);
+                handle->ChangePartToFailed(partsIter->second);
             }
            
         }
 
         void TransferManager::DoSinglePartUpload(const std::shared_ptr<Aws::IOStream>& streamToPut, const std::shared_ptr<TransferHandle>& handle)
         {
+            auto partState = Aws::MakeShared<PartState>(CLASS_TAG, 1, 0, handle->GetBytesTotalSize());
+
             handle->UpdateStatus(TransferStatus::IN_PROGRESS);
             handle->SetIsMultipart(false);
-            handle->AddPendingPart(1);
+            handle->AddPendingPart(partState);
 
             auto putObjectRequest = m_transferConfig.putObjectTemplate;
             putObjectRequest.SetContinueRequestHandler([handle](const Aws::Http::HttpRequest*) { return handle->ShouldContinue(); });
@@ -364,15 +386,15 @@ namespace Aws
 
             putObjectRequest.SetBody(preallocatedStreamReader);
 
-            auto uploadProgressCallback = [this, handle](const Aws::Http::HttpRequest*, long long progress)
+            auto uploadProgressCallback = [this, partState, handle](const Aws::Http::HttpRequest*, long long progress)
             {
-                handle->AddTransferredBytes(static_cast<uint64_t>(progress));
+                partState->OnDataTransferred(progress, handle);
                 TriggerUploadProgressCallback(*handle);
             };
 
-            auto retryHandlerCallback = [this, handle](const Aws::AmazonWebServiceRequest&)
+            auto retryHandlerCallback = [this, partState, handle](const Aws::AmazonWebServiceRequest&)
             {
-                handle->SetTransferredBytes(0);
+                partState->Reset();
                 TriggerUploadProgressCallback(*handle);
             };
 
@@ -381,6 +403,7 @@ namespace Aws
 
             auto asyncContext = Aws::MakeShared<TransferHandleAsyncContext>(CLASS_TAG);
             asyncContext->handle = handle;
+            asyncContext->partState = partState;
 
             auto callback = [this](const Aws::S3::S3Client* client, const Aws::S3::Model::PutObjectRequest& request,
                 const Aws::S3::Model::PutObjectOutcome& outcome, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
@@ -404,21 +427,19 @@ namespace Aws
 
             if (outcome.IsSuccess())
             {
-                transferContext->handle->AddTransferredBytes(static_cast<uint64_t>(request.GetContentLength()));
                 TriggerUploadProgressCallback(*transferContext->handle);
-                transferContext->handle->ChangePartToCompleted(request.GetPartNumber(), outcome.GetResult().GetETag());
+                transferContext->handle->ChangePartToCompleted(transferContext->partState, outcome.GetResult().GetETag());
             }
             else
             {
-                transferContext->handle->ChangePartToFailed(request.GetPartNumber());
+                transferContext->handle->ChangePartToFailed(transferContext->partState);
                 transferContext->handle->SetError(outcome.GetError());
                 TriggerErrorCallback(*transferContext->handle, outcome.GetError());
             }
 
             TriggerTransferStatusUpdatedCallback(*transferContext->handle);
 
-            Aws::Set<int> pendingParts, queuedParts, failedParts;
-            Aws::Set<std::pair<int, Aws::String>> completedParts;
+            PartStateMap pendingParts, queuedParts, failedParts, completedParts;
             transferContext->handle->GetAllPartsTransactional(queuedParts, pendingParts, failedParts, completedParts);
 
             if (pendingParts.size() == 0 && queuedParts.size() == 0)
@@ -431,7 +452,7 @@ namespace Aws
                     {
                         Aws::S3::Model::CompletedPart completedPart;
                         completedPart.WithPartNumber(part.first)
-                            .WithETag(part.second);
+                            .WithETag(part.second->GetETag());
                         completedUpload.AddParts(completedPart);
                     }
 
@@ -475,13 +496,13 @@ namespace Aws
 
             if (outcome.IsSuccess())
             {
-                transferContext->handle->ChangePartToCompleted(1, outcome.GetResult().GetETag());
+                transferContext->handle->ChangePartToCompleted(transferContext->partState, outcome.GetResult().GetETag());
                 transferContext->handle->UpdateStatus(TransferStatus::COMPLETED);
             }
             else
             {
                 transferContext->handle->UpdateStatus(DetermineIfFailedOrCanceled(*transferContext->handle));
-                transferContext->handle->ChangePartToFailed(1);
+                transferContext->handle->ChangePartToFailed(transferContext->partState);
                 transferContext->handle->SetError(outcome.GetError());
                 TriggerErrorCallback(*transferContext->handle, outcome.GetError());
             }
@@ -489,52 +510,53 @@ namespace Aws
             TriggerTransferStatusUpdatedCallback(*transferContext->handle);
         }
 
-        void TransferManager::DoDownload(CreateDownloadStreamCallback writeToStreamfn, const std::shared_ptr<TransferHandle>& handle)
+        std::shared_ptr<TransferHandle> TransferManager::RetryDownload(const std::shared_ptr<TransferHandle>& retryHandle)
         {
-            handle->SetIsMultipart(false);
-            handle->UpdateStatus(TransferStatus::IN_PROGRESS);
-            handle->AddPendingPart(1);
+            assert(retryHandle->GetStatus() != TransferStatus::IN_PROGRESS);
+            assert(retryHandle->GetStatus() != TransferStatus::COMPLETED);
+            assert(retryHandle->GetStatus() != TransferStatus::NOT_STARTED);           
 
-            TriggerTransferStatusUpdatedCallback(*handle);
+            if (retryHandle->GetStatus() == TransferStatus::ABORTED)
+            {
+                return DownloadFile(retryHandle->GetBucketName(), retryHandle->GetKey(), retryHandle->GetCreateDownloadStreamFunction());
+            }
 
-            Aws::S3::Model::HeadObjectRequest headObjectRequest;
-            headObjectRequest.WithBucket(handle->GetBucketName())
-                .WithKey(handle->GetKey());
+            retryHandle->UpdateStatus(TransferStatus::NOT_STARTED);
+            retryHandle->Restart();
             
-            auto headObjectOutcome = m_transferConfig.s3Client->HeadObject(headObjectRequest);
+            m_transferConfig.transferExecutor->Submit([this, retryHandle] 
+                                                      { DoDownload(retryHandle); });
 
-            if (headObjectOutcome.IsSuccess())
-            {
-                handle->SetBytesTotalSize(static_cast<uint64_t>(headObjectOutcome.GetResult().GetContentLength()));
-                handle->SetContentType(headObjectOutcome.GetResult().GetContentType());
-                handle->SetMetadata(headObjectOutcome.GetResult().GetMetadata());
-                TriggerTransferStatusUpdatedCallback(*handle);
-            }
-            else
-            {
-                handle->ChangePartToFailed(1);
-                handle->UpdateStatus(TransferStatus::FAILED);
-                handle->SetError(headObjectOutcome.GetError());
-                TriggerErrorCallback(*handle, headObjectOutcome.GetError());
-                TriggerTransferStatusUpdatedCallback(*handle);
-                return;
-            }
+            return retryHandle;
+        }
 
+        void TransferManager::DoSinglePartDownload(const std::shared_ptr<TransferHandle>& handle)
+        {
+            auto queuedParts = handle->GetQueuedParts();
+            assert(queuedParts.size() == 1);
+
+            auto partState = queuedParts.begin()->second;
             Aws::S3::Model::GetObjectRequest request;
             request.SetContinueRequestHandler([handle](const Aws::Http::HttpRequest*) { return handle->ShouldContinue(); });
             request.WithBucket(handle->GetBucketName())
-                .WithKey(handle->GetKey());
-            request.SetResponseStreamFactory(writeToStreamfn);
+                   .WithKey(handle->GetKey());
 
-            request.SetDataReceivedEventHandler([this, handle](const Aws::Http::HttpRequest*, Aws::Http::HttpResponse*, long long progress)
+            if (handle->GetVersionId().size() > 0)
             {
-                handle->AddTransferredBytes(static_cast<uint64_t>(progress));
+                request.SetVersionId(handle->GetVersionId());
+            }
+
+            request.SetResponseStreamFactory(handle->GetCreateDownloadStreamFunction());
+
+            request.SetDataReceivedEventHandler([this, handle, partState](const Aws::Http::HttpRequest*, Aws::Http::HttpResponse*, long long progress)
+            {
+                partState->OnDataTransferred(progress, handle);
                 TriggerDownloadProgressCallback(*handle);
             });
 
-            request.SetRequestRetryHandler([this, handle](const Aws::AmazonWebServiceRequest&)
+            request.SetRequestRetryHandler([this, handle, partState](const Aws::AmazonWebServiceRequest&)
             {
-                handle->SetTransferredBytes(0);
+                partState->Reset();
                 TriggerDownloadProgressCallback(*handle);
             });
 
@@ -543,12 +565,12 @@ namespace Aws
             {
                 handle->SetMetadata(getObjectOutcome.GetResult().GetMetadata());
                 handle->SetContentType(getObjectOutcome.GetResult().GetContentType());
-                handle->ChangePartToCompleted(1, getObjectOutcome.GetResult().GetETag());
+                handle->ChangePartToCompleted(partState, getObjectOutcome.GetResult().GetETag());
                 handle->UpdateStatus(TransferStatus::COMPLETED);
             }
             else
             {
-                handle->ChangePartToFailed(1);
+                handle->ChangePartToFailed(partState);
                 handle->UpdateStatus(DetermineIfFailedOrCanceled(*handle));
                 handle->SetError(getObjectOutcome.GetError());
 
@@ -556,6 +578,224 @@ namespace Aws
             }
 
             TriggerTransferStatusUpdatedCallback(*handle);
+        }
+
+        static Aws::String FormatRangeSpecifier(std::size_t rangeStart, std::size_t rangeEnd)
+        {
+            Aws::StringStream rangeStream;
+            rangeStream << "bytes=" << rangeStart << "-" << rangeEnd;
+            return rangeStream.str();
+        }
+
+        bool TransferManager::InitializePartsForDownload(const std::shared_ptr<TransferHandle>& handle)
+        {
+            bool isRetry = handle->HasParts();
+            size_t bufferSize = m_transferConfig.bufferSize;
+            if (!isRetry)
+            {
+                Aws::S3::Model::HeadObjectRequest headObjectRequest;
+                headObjectRequest.WithBucket(handle->GetBucketName())
+                                 .WithKey(handle->GetKey());
+
+                if(!handle->GetVersionId().empty())
+                {
+                    headObjectRequest.SetVersionId(handle->GetVersionId());
+                }
+            
+                auto headObjectOutcome = m_transferConfig.s3Client->HeadObject(headObjectRequest);
+
+                if (!headObjectOutcome.IsSuccess())
+                {
+                    handle->UpdateStatus(TransferStatus::FAILED);
+                    handle->SetError(headObjectOutcome.GetError());
+                    TriggerErrorCallback(*handle, headObjectOutcome.GetError());
+                    TriggerTransferStatusUpdatedCallback(*handle);
+                    return false;
+                }
+
+                TriggerTransferStatusUpdatedCallback(*handle);
+
+                std::size_t downloadSize = static_cast<size_t>(headObjectOutcome.GetResult().GetContentLength());
+                handle->SetBytesTotalSize(downloadSize);
+                handle->SetContentType(headObjectOutcome.GetResult().GetContentType());
+                handle->SetMetadata(headObjectOutcome.GetResult().GetMetadata());
+                if(handle->GetVersionId().empty())
+                {
+                    handle->SetVersionId(headObjectOutcome.GetResult().GetVersionId());
+                }
+
+                std::size_t partCount = ( downloadSize + bufferSize - 1 ) / bufferSize;
+                handle->SetIsMultipart(partCount > 1);    // doesn't make a difference but let's be accurate
+
+                for(int i = 0; i < partCount; ++i)
+                {
+                    std::size_t partSize = (i + 1 < partCount ) ? bufferSize : (downloadSize - bufferSize * (partCount - 1));
+                    auto partState = Aws::MakeShared<PartState>(CLASS_TAG, i + 1, 0, partSize);
+                    partState->SetRangeBegin(i * bufferSize);
+                    handle->AddQueuedPart(partState);
+                }
+            }
+            else
+            {
+                for (auto failedPart : handle->GetFailedParts())
+                {
+                    handle->AddQueuedPart(failedPart.second);
+                }
+            }
+
+            return true;
+        }
+
+        void TransferManager::DoDownload(const std::shared_ptr<TransferHandle>& handle)
+        {
+            handle->UpdateStatus(TransferStatus::IN_PROGRESS);
+            if (!InitializePartsForDownload(handle))
+            {
+                return;
+            }
+
+            bool isMultipart = handle->IsMultipart();
+            size_t bufferSize = m_transferConfig.bufferSize;
+
+            if(!isMultipart)
+            {
+                // Special case this for performance (avoid the intermediate buffer write)
+                DoSinglePartDownload(handle);
+                return;
+            }
+
+            auto queuedParts = handle->GetQueuedParts();
+            auto queuedPartIter = queuedParts.begin();
+            while(queuedPartIter != queuedParts.end() && handle->ShouldContinue())
+            {
+                const auto& partState = queuedPartIter->second;
+                std::size_t rangeStart = ( partState->GetPartId() - 1 ) * bufferSize;
+                std::size_t rangeEnd = rangeStart + partState->GetSizeInBytes() - 1;
+                auto buffer = m_bufferManager.Acquire();
+                partState->SetDownloadBuffer(buffer);
+
+                CreateDownloadStreamCallback responseStreamFunction = [partState, buffer, rangeEnd, rangeStart]() 
+                {                    
+                    auto streamBuf = Aws::New<Aws::Utils::Stream::PreallocatedStreamBuf>(CLASS_TAG, buffer, rangeEnd - rangeStart + 1);
+                    auto bufferStream = Aws::New<Aws::IOStream>(CLASS_TAG, streamBuf);
+                    partState->SetDownloadPartStream(bufferStream);
+                    return bufferStream;
+                };
+
+                if(handle->ShouldContinue())
+                {
+                    partState->SetDownloadBuffer(buffer);
+
+                    Aws::S3::Model::GetObjectRequest getObjectRangeRequest;
+                    getObjectRangeRequest.SetContinueRequestHandler([handle](const Aws::Http::HttpRequest*) { return handle->ShouldContinue(); });
+                    getObjectRangeRequest.SetBucket(handle->GetBucketName());
+                    getObjectRangeRequest.WithKey(handle->GetKey());
+                    getObjectRangeRequest.SetRange(FormatRangeSpecifier(rangeStart, rangeEnd));
+                    getObjectRangeRequest.SetResponseStreamFactory(responseStreamFunction);
+                    if(handle->GetVersionId().size() > 0)
+                    {
+                        getObjectRangeRequest.SetVersionId(handle->GetVersionId());
+                    }
+
+                    getObjectRangeRequest.SetDataReceivedEventHandler([this, partState, handle](const Aws::Http::HttpRequest*, Aws::Http::HttpResponse*, long long progress)
+                    {
+                        partState->OnDataTransferred(progress, handle);
+                        TriggerDownloadProgressCallback(*handle);
+                    });
+
+                    getObjectRangeRequest.SetRequestRetryHandler([this, partState, handle](const Aws::AmazonWebServiceRequest&)
+                    {
+                        partState->Reset();
+                        TriggerDownloadProgressCallback(*handle);
+                    });
+
+                    auto asyncContext = Aws::MakeShared<TransferHandleAsyncContext>(CLASS_TAG);
+                    asyncContext->handle = handle;
+                    asyncContext->partState = partState;
+
+                    auto callback = [this](const Aws::S3::S3Client* client, const Aws::S3::Model::GetObjectRequest& request,
+                        const Aws::S3::Model::GetObjectOutcome& outcome, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
+                    {
+                        HandleGetObjectResponse(client, request, outcome, context);
+                    };
+
+                    handle->AddPendingPart(partState);
+
+                    m_transferConfig.s3Client->GetObjectAsync(getObjectRangeRequest, callback, asyncContext);
+                    ++queuedPartIter;
+                }
+                else if(buffer)
+                {
+                    m_bufferManager.Release(buffer);
+                    break;
+                }
+            }
+
+            //parts get moved from queued to pending on this thread.
+            //still consistent.
+            while(queuedPartIter != queuedParts.end())
+            {
+                handle->ChangePartToFailed(queuedPartIter->second);
+                ++queuedPartIter;
+            }
+        }
+
+        void TransferManager::HandleGetObjectResponse(const Aws::S3::S3Client* client, 
+                                                      const Aws::S3::Model::GetObjectRequest& request,
+                                                      const Aws::S3::Model::GetObjectOutcome& outcome, 
+                                                      const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
+        {
+            AWS_UNREFERENCED_PARAM(client);
+            AWS_UNREFERENCED_PARAM(request);
+
+            std::shared_ptr<TransferHandleAsyncContext> transferContext =
+                std::const_pointer_cast<TransferHandleAsyncContext>(std::static_pointer_cast<const TransferHandleAsyncContext>(context));
+
+            if (!outcome.IsSuccess())
+            {
+                transferContext->handle->ChangePartToFailed(transferContext->partState);
+                transferContext->handle->SetError(outcome.GetError());
+                TriggerErrorCallback(*transferContext->handle, outcome.GetError());
+            }
+            else
+            {
+                if(transferContext->handle->ShouldContinue())
+                {
+                    Aws::IOStream* bufferStream = transferContext->partState->GetDownloadPartStream();
+                    transferContext->handle->WritePartToDownloadStream(bufferStream, transferContext->partState->GetRangeBegin());
+                    transferContext->handle->ChangePartToCompleted(transferContext->partState, outcome.GetResult().GetETag());
+                }
+                else
+                {
+                    transferContext->handle->ChangePartToFailed(transferContext->partState);
+                }
+            }
+
+            // buffer cleanup
+            if(transferContext->partState->GetDownloadBuffer())
+            {
+                m_bufferManager.Release(transferContext->partState->GetDownloadBuffer());
+                transferContext->partState->SetDownloadBuffer(nullptr);
+            }
+
+            TriggerTransferStatusUpdatedCallback(*transferContext->handle);
+
+            PartStateMap pendingParts, queuedParts, failedParts, completedParts;
+            transferContext->handle->GetAllPartsTransactional(queuedParts, pendingParts, failedParts, completedParts);
+
+            if (pendingParts.size() == 0 && queuedParts.size() == 0)
+            {               
+                if (failedParts.size() == 0 && transferContext->handle->GetBytesTransferred() == transferContext->handle->GetBytesTotalSize())
+                {
+                    transferContext->handle->UpdateStatus(TransferStatus::COMPLETED);
+                }
+                else
+                {
+                    transferContext->handle->UpdateStatus(DetermineIfFailedOrCanceled(*transferContext->handle));
+                }
+            }
+
+            TriggerTransferStatusUpdatedCallback(*transferContext->handle);
         }
 
         void TransferManager::WaitForCancellationAndAbortUpload(const std::shared_ptr<TransferHandle>& canceledHandle)
