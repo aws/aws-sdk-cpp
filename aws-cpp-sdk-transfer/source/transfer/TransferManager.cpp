@@ -627,7 +627,7 @@ namespace Aws
                 std::size_t partCount = ( downloadSize + bufferSize - 1 ) / bufferSize;
                 handle->SetIsMultipart(partCount > 1);    // doesn't make a difference but let's be accurate
 
-                for(int i = 0; i < partCount; ++i)
+                for(std::size_t i = 0; i < partCount; ++i)
                 {
                     std::size_t partSize = (i + 1 < partCount ) ? bufferSize : (downloadSize - bufferSize * (partCount - 1));
                     auto partState = Aws::MakeShared<PartState>(CLASS_TAG, i + 1, 0, partSize);
