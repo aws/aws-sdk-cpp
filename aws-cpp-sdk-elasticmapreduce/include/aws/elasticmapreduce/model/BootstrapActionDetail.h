@@ -31,8 +31,8 @@ namespace Model
 {
 
   /**
-   * <p>Reports the configuration of a bootstrap action in a job flow.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>Reports the configuration of a bootstrap action in a cluster (job
+   * flow).</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/BootstrapActionDetail">AWS
    * API Reference</a></p>
    */

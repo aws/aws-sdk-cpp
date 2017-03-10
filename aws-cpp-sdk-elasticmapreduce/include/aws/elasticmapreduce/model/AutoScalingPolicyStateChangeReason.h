@@ -50,7 +50,7 @@ namespace Model
      * status.<code>USER_REQUEST</code> indicates that the scaling policy status was
      * changed by a user. <code>PROVISION_FAILURE</code> indicates that the status
      * change was because the policy failed to provision. <code>CLEANUP_FAILURE</code>
-     * indicates something unclean happened.--&gt;</p>
+     * indicates an error.</p>
      */
     inline const AutoScalingPolicyStateChangeReasonCode& GetCode() const{ return m_code; }
 
@@ -59,7 +59,7 @@ namespace Model
      * status.<code>USER_REQUEST</code> indicates that the scaling policy status was
      * changed by a user. <code>PROVISION_FAILURE</code> indicates that the status
      * change was because the policy failed to provision. <code>CLEANUP_FAILURE</code>
-     * indicates something unclean happened.--&gt;</p>
+     * indicates an error.</p>
      */
     inline void SetCode(const AutoScalingPolicyStateChangeReasonCode& value) { m_codeHasBeenSet = true; m_code = value; }
 
@@ -68,7 +68,7 @@ namespace Model
      * status.<code>USER_REQUEST</code> indicates that the scaling policy status was
      * changed by a user. <code>PROVISION_FAILURE</code> indicates that the status
      * change was because the policy failed to provision. <code>CLEANUP_FAILURE</code>
-     * indicates something unclean happened.--&gt;</p>
+     * indicates an error.</p>
      */
     inline void SetCode(AutoScalingPolicyStateChangeReasonCode&& value) { m_codeHasBeenSet = true; m_code = value; }
 
@@ -77,7 +77,7 @@ namespace Model
      * status.<code>USER_REQUEST</code> indicates that the scaling policy status was
      * changed by a user. <code>PROVISION_FAILURE</code> indicates that the status
      * change was because the policy failed to provision. <code>CLEANUP_FAILURE</code>
-     * indicates something unclean happened.--&gt;</p>
+     * indicates an error.</p>
      */
     inline AutoScalingPolicyStateChangeReason& WithCode(const AutoScalingPolicyStateChangeReasonCode& value) { SetCode(value); return *this;}
 
@@ -86,7 +86,7 @@ namespace Model
      * status.<code>USER_REQUEST</code> indicates that the scaling policy status was
      * changed by a user. <code>PROVISION_FAILURE</code> indicates that the status
      * change was because the policy failed to provision. <code>CLEANUP_FAILURE</code>
-     * indicates something unclean happened.--&gt;</p>
+     * indicates an error.</p>
      */
     inline AutoScalingPolicyStateChangeReason& WithCode(AutoScalingPolicyStateChangeReasonCode&& value) { SetCode(value); return *this;}
 

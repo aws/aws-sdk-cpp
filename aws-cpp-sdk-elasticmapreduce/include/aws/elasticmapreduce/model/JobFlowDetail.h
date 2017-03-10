@@ -37,7 +37,7 @@ namespace Model
 {
 
   /**
-   * <p>A description of a job flow.</p><p><h3>See Also:</h3>   <a
+   * <p>A description of a cluster (job flow).</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/JobFlowDetail">AWS
    * API Reference</a></p>
    */
@@ -387,31 +387,31 @@ namespace Model
     inline JobFlowDetail& AddSupportedProducts(const char* value) { m_supportedProductsHasBeenSet = true; m_supportedProducts.push_back(value); return *this; }
 
     /**
-     * <p>Specifies whether the job flow is visible to all IAM users of the AWS account
-     * associated with the job flow. If this value is set to <code>true</code>, all IAM
+     * <p>Specifies whether the cluster is visible to all IAM users of the AWS account
+     * associated with the cluster. If this value is set to <code>true</code>, all IAM
      * users of that AWS account can view and (if they have the proper policy
-     * permissions set) manage the job flow. If it is set to <code>false</code>, only
-     * the IAM user that created the job flow can view and manage it. This value can be
+     * permissions set) manage the cluster. If it is set to <code>false</code>, only
+     * the IAM user that created the cluster can view and manage it. This value can be
      * changed using the <a>SetVisibleToAllUsers</a> action.</p>
      */
     inline bool GetVisibleToAllUsers() const{ return m_visibleToAllUsers; }
 
     /**
-     * <p>Specifies whether the job flow is visible to all IAM users of the AWS account
-     * associated with the job flow. If this value is set to <code>true</code>, all IAM
+     * <p>Specifies whether the cluster is visible to all IAM users of the AWS account
+     * associated with the cluster. If this value is set to <code>true</code>, all IAM
      * users of that AWS account can view and (if they have the proper policy
-     * permissions set) manage the job flow. If it is set to <code>false</code>, only
-     * the IAM user that created the job flow can view and manage it. This value can be
+     * permissions set) manage the cluster. If it is set to <code>false</code>, only
+     * the IAM user that created the cluster can view and manage it. This value can be
      * changed using the <a>SetVisibleToAllUsers</a> action.</p>
      */
     inline void SetVisibleToAllUsers(bool value) { m_visibleToAllUsersHasBeenSet = true; m_visibleToAllUsers = value; }
 
     /**
-     * <p>Specifies whether the job flow is visible to all IAM users of the AWS account
-     * associated with the job flow. If this value is set to <code>true</code>, all IAM
+     * <p>Specifies whether the cluster is visible to all IAM users of the AWS account
+     * associated with the cluster. If this value is set to <code>true</code>, all IAM
      * users of that AWS account can view and (if they have the proper policy
-     * permissions set) manage the job flow. If it is set to <code>false</code>, only
-     * the IAM user that created the job flow can view and manage it. This value can be
+     * permissions set) manage the cluster. If it is set to <code>false</code>, only
+     * the IAM user that created the cluster can view and manage it. This value can be
      * changed using the <a>SetVisibleToAllUsers</a> action.</p>
      */
     inline JobFlowDetail& WithVisibleToAllUsers(bool value) { SetVisibleToAllUsers(value); return *this;}

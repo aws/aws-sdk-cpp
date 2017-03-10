@@ -55,7 +55,7 @@ namespace Model
      * <code>ScalingAdjustment</code>, which should be expressed as an integer.
      * <code>PERCENT_CHANGE_IN_CAPACITY</code> indicates the instance count increments
      * or decrements by the percentage specified by <code>ScalingAdjustment</code>,
-     * which should be expressed as a decimal, for example, 0.20 indicates an increase
+     * which should be expressed as a decimal. For example, 0.20 indicates an increase
      * in 20% increments of cluster capacity. <code>EXACT_CAPACITY</code> indicates the
      * scaling activity results in an instance group with the number of EC2 instances
      * specified by <code>ScalingAdjustment</code>, which should be expressed as a
@@ -72,7 +72,7 @@ namespace Model
      * <code>ScalingAdjustment</code>, which should be expressed as an integer.
      * <code>PERCENT_CHANGE_IN_CAPACITY</code> indicates the instance count increments
      * or decrements by the percentage specified by <code>ScalingAdjustment</code>,
-     * which should be expressed as a decimal, for example, 0.20 indicates an increase
+     * which should be expressed as a decimal. For example, 0.20 indicates an increase
      * in 20% increments of cluster capacity. <code>EXACT_CAPACITY</code> indicates the
      * scaling activity results in an instance group with the number of EC2 instances
      * specified by <code>ScalingAdjustment</code>, which should be expressed as a
@@ -89,7 +89,7 @@ namespace Model
      * <code>ScalingAdjustment</code>, which should be expressed as an integer.
      * <code>PERCENT_CHANGE_IN_CAPACITY</code> indicates the instance count increments
      * or decrements by the percentage specified by <code>ScalingAdjustment</code>,
-     * which should be expressed as a decimal, for example, 0.20 indicates an increase
+     * which should be expressed as a decimal. For example, 0.20 indicates an increase
      * in 20% increments of cluster capacity. <code>EXACT_CAPACITY</code> indicates the
      * scaling activity results in an instance group with the number of EC2 instances
      * specified by <code>ScalingAdjustment</code>, which should be expressed as a
@@ -106,7 +106,7 @@ namespace Model
      * <code>ScalingAdjustment</code>, which should be expressed as an integer.
      * <code>PERCENT_CHANGE_IN_CAPACITY</code> indicates the instance count increments
      * or decrements by the percentage specified by <code>ScalingAdjustment</code>,
-     * which should be expressed as a decimal, for example, 0.20 indicates an increase
+     * which should be expressed as a decimal. For example, 0.20 indicates an increase
      * in 20% increments of cluster capacity. <code>EXACT_CAPACITY</code> indicates the
      * scaling activity results in an instance group with the number of EC2 instances
      * specified by <code>ScalingAdjustment</code>, which should be expressed as a
@@ -123,7 +123,7 @@ namespace Model
      * <code>ScalingAdjustment</code>, which should be expressed as an integer.
      * <code>PERCENT_CHANGE_IN_CAPACITY</code> indicates the instance count increments
      * or decrements by the percentage specified by <code>ScalingAdjustment</code>,
-     * which should be expressed as a decimal, for example, 0.20 indicates an increase
+     * which should be expressed as a decimal. For example, 0.20 indicates an increase
      * in 20% increments of cluster capacity. <code>EXACT_CAPACITY</code> indicates the
      * scaling activity results in an instance group with the number of EC2 instances
      * specified by <code>ScalingAdjustment</code>, which should be expressed as a

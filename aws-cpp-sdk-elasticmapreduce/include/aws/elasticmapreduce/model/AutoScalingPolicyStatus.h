@@ -45,27 +45,27 @@ namespace Model
     Aws::Utils::Json::JsonValue Jsonize() const;
 
     /**
-     * <p></p>
+     * <p>Indicates the status of the automatic scaling policy.</p>
      */
     inline const AutoScalingPolicyState& GetState() const{ return m_state; }
 
     /**
-     * <p></p>
+     * <p>Indicates the status of the automatic scaling policy.</p>
      */
     inline void SetState(const AutoScalingPolicyState& value) { m_stateHasBeenSet = true; m_state = value; }
 
     /**
-     * <p></p>
+     * <p>Indicates the status of the automatic scaling policy.</p>
      */
     inline void SetState(AutoScalingPolicyState&& value) { m_stateHasBeenSet = true; m_state = value; }
 
     /**
-     * <p></p>
+     * <p>Indicates the status of the automatic scaling policy.</p>
      */
     inline AutoScalingPolicyStatus& WithState(const AutoScalingPolicyState& value) { SetState(value); return *this;}
 
     /**
-     * <p></p>
+     * <p>Indicates the status of the automatic scaling policy.</p>
      */
     inline AutoScalingPolicyStatus& WithState(AutoScalingPolicyState&& value) { SetState(value); return *this;}
 

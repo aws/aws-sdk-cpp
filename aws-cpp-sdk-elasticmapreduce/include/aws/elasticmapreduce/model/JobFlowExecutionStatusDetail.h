@@ -33,7 +33,7 @@ namespace Model
 {
 
   /**
-   * <p>Describes the status of the job flow.</p><p><h3>See Also:</h3>   <a
+   * <p>Describes the status of the cluster (job flow).</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/JobFlowExecutionStatusDetail">AWS
    * API Reference</a></p>
    */

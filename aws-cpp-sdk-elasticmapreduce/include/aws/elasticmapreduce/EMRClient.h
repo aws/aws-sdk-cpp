@@ -20,6 +20,7 @@
 #include <aws/core/client/AWSClient.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/elasticmapreduce/model/AddInstanceFleetResult.h>
 #include <aws/elasticmapreduce/model/AddInstanceGroupsResult.h>
 #include <aws/elasticmapreduce/model/AddJobFlowStepsResult.h>
 #include <aws/elasticmapreduce/model/AddTagsResult.h>
@@ -31,6 +32,7 @@
 #include <aws/elasticmapreduce/model/DescribeStepResult.h>
 #include <aws/elasticmapreduce/model/ListBootstrapActionsResult.h>
 #include <aws/elasticmapreduce/model/ListClustersResult.h>
+#include <aws/elasticmapreduce/model/ListInstanceFleetsResult.h>
 #include <aws/elasticmapreduce/model/ListInstanceGroupsResult.h>
 #include <aws/elasticmapreduce/model/ListInstancesResult.h>
 #include <aws/elasticmapreduce/model/ListSecurityConfigurationsResult.h>
@@ -85,6 +87,7 @@ namespace EMR
 
 namespace Model
 {
+        class AddInstanceFleetRequest;
         class AddInstanceGroupsRequest;
         class AddJobFlowStepsRequest;
         class AddTagsRequest;
@@ -96,10 +99,12 @@ namespace Model
         class DescribeStepRequest;
         class ListBootstrapActionsRequest;
         class ListClustersRequest;
+        class ListInstanceFleetsRequest;
         class ListInstanceGroupsRequest;
         class ListInstancesRequest;
         class ListSecurityConfigurationsRequest;
         class ListStepsRequest;
+        class ModifyInstanceFleetRequest;
         class ModifyInstanceGroupsRequest;
         class PutAutoScalingPolicyRequest;
         class RemoveAutoScalingPolicyRequest;
@@ -109,6 +114,7 @@ namespace Model
         class SetVisibleToAllUsersRequest;
         class TerminateJobFlowsRequest;
 
+        typedef Aws::Utils::Outcome<AddInstanceFleetResult, Aws::Client::AWSError<EMRErrors>> AddInstanceFleetOutcome;
         typedef Aws::Utils::Outcome<AddInstanceGroupsResult, Aws::Client::AWSError<EMRErrors>> AddInstanceGroupsOutcome;
         typedef Aws::Utils::Outcome<AddJobFlowStepsResult, Aws::Client::AWSError<EMRErrors>> AddJobFlowStepsOutcome;
         typedef Aws::Utils::Outcome<AddTagsResult, Aws::Client::AWSError<EMRErrors>> AddTagsOutcome;
@@ -120,10 +126,12 @@ namespace Model
         typedef Aws::Utils::Outcome<DescribeStepResult, Aws::Client::AWSError<EMRErrors>> DescribeStepOutcome;
         typedef Aws::Utils::Outcome<ListBootstrapActionsResult, Aws::Client::AWSError<EMRErrors>> ListBootstrapActionsOutcome;
         typedef Aws::Utils::Outcome<ListClustersResult, Aws::Client::AWSError<EMRErrors>> ListClustersOutcome;
+        typedef Aws::Utils::Outcome<ListInstanceFleetsResult, Aws::Client::AWSError<EMRErrors>> ListInstanceFleetsOutcome;
         typedef Aws::Utils::Outcome<ListInstanceGroupsResult, Aws::Client::AWSError<EMRErrors>> ListInstanceGroupsOutcome;
         typedef Aws::Utils::Outcome<ListInstancesResult, Aws::Client::AWSError<EMRErrors>> ListInstancesOutcome;
         typedef Aws::Utils::Outcome<ListSecurityConfigurationsResult, Aws::Client::AWSError<EMRErrors>> ListSecurityConfigurationsOutcome;
         typedef Aws::Utils::Outcome<ListStepsResult, Aws::Client::AWSError<EMRErrors>> ListStepsOutcome;
+        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<EMRErrors>> ModifyInstanceFleetOutcome;
         typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<EMRErrors>> ModifyInstanceGroupsOutcome;
         typedef Aws::Utils::Outcome<PutAutoScalingPolicyResult, Aws::Client::AWSError<EMRErrors>> PutAutoScalingPolicyOutcome;
         typedef Aws::Utils::Outcome<RemoveAutoScalingPolicyResult, Aws::Client::AWSError<EMRErrors>> RemoveAutoScalingPolicyOutcome;
@@ -133,6 +141,7 @@ namespace Model
         typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<EMRErrors>> SetVisibleToAllUsersOutcome;
         typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<EMRErrors>> TerminateJobFlowsOutcome;
 
+        typedef std::future<AddInstanceFleetOutcome> AddInstanceFleetOutcomeCallable;
         typedef std::future<AddInstanceGroupsOutcome> AddInstanceGroupsOutcomeCallable;
         typedef std::future<AddJobFlowStepsOutcome> AddJobFlowStepsOutcomeCallable;
         typedef std::future<AddTagsOutcome> AddTagsOutcomeCallable;
@@ -144,10 +153,12 @@ namespace Model
         typedef std::future<DescribeStepOutcome> DescribeStepOutcomeCallable;
         typedef std::future<ListBootstrapActionsOutcome> ListBootstrapActionsOutcomeCallable;
         typedef std::future<ListClustersOutcome> ListClustersOutcomeCallable;
+        typedef std::future<ListInstanceFleetsOutcome> ListInstanceFleetsOutcomeCallable;
         typedef std::future<ListInstanceGroupsOutcome> ListInstanceGroupsOutcomeCallable;
         typedef std::future<ListInstancesOutcome> ListInstancesOutcomeCallable;
         typedef std::future<ListSecurityConfigurationsOutcome> ListSecurityConfigurationsOutcomeCallable;
         typedef std::future<ListStepsOutcome> ListStepsOutcomeCallable;
+        typedef std::future<ModifyInstanceFleetOutcome> ModifyInstanceFleetOutcomeCallable;
         typedef std::future<ModifyInstanceGroupsOutcome> ModifyInstanceGroupsOutcomeCallable;
         typedef std::future<PutAutoScalingPolicyOutcome> PutAutoScalingPolicyOutcomeCallable;
         typedef std::future<RemoveAutoScalingPolicyOutcome> RemoveAutoScalingPolicyOutcomeCallable;
@@ -160,6 +171,7 @@ namespace Model
 
   class EMRClient;
 
+    typedef std::function<void(const EMRClient*, const Model::AddInstanceFleetRequest&, const Model::AddInstanceFleetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AddInstanceFleetResponseReceivedHandler;
     typedef std::function<void(const EMRClient*, const Model::AddInstanceGroupsRequest&, const Model::AddInstanceGroupsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AddInstanceGroupsResponseReceivedHandler;
     typedef std::function<void(const EMRClient*, const Model::AddJobFlowStepsRequest&, const Model::AddJobFlowStepsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AddJobFlowStepsResponseReceivedHandler;
     typedef std::function<void(const EMRClient*, const Model::AddTagsRequest&, const Model::AddTagsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AddTagsResponseReceivedHandler;
@@ -171,10 +183,12 @@ namespace Model
     typedef std::function<void(const EMRClient*, const Model::DescribeStepRequest&, const Model::DescribeStepOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeStepResponseReceivedHandler;
     typedef std::function<void(const EMRClient*, const Model::ListBootstrapActionsRequest&, const Model::ListBootstrapActionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListBootstrapActionsResponseReceivedHandler;
     typedef std::function<void(const EMRClient*, const Model::ListClustersRequest&, const Model::ListClustersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListClustersResponseReceivedHandler;
+    typedef std::function<void(const EMRClient*, const Model::ListInstanceFleetsRequest&, const Model::ListInstanceFleetsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListInstanceFleetsResponseReceivedHandler;
     typedef std::function<void(const EMRClient*, const Model::ListInstanceGroupsRequest&, const Model::ListInstanceGroupsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListInstanceGroupsResponseReceivedHandler;
     typedef std::function<void(const EMRClient*, const Model::ListInstancesRequest&, const Model::ListInstancesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListInstancesResponseReceivedHandler;
     typedef std::function<void(const EMRClient*, const Model::ListSecurityConfigurationsRequest&, const Model::ListSecurityConfigurationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListSecurityConfigurationsResponseReceivedHandler;
     typedef std::function<void(const EMRClient*, const Model::ListStepsRequest&, const Model::ListStepsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListStepsResponseReceivedHandler;
+    typedef std::function<void(const EMRClient*, const Model::ModifyInstanceFleetRequest&, const Model::ModifyInstanceFleetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyInstanceFleetResponseReceivedHandler;
     typedef std::function<void(const EMRClient*, const Model::ModifyInstanceGroupsRequest&, const Model::ModifyInstanceGroupsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyInstanceGroupsResponseReceivedHandler;
     typedef std::function<void(const EMRClient*, const Model::PutAutoScalingPolicyRequest&, const Model::PutAutoScalingPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutAutoScalingPolicyResponseReceivedHandler;
     typedef std::function<void(const EMRClient*, const Model::RemoveAutoScalingPolicyRequest&, const Model::RemoveAutoScalingPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RemoveAutoScalingPolicyResponseReceivedHandler;
@@ -217,6 +231,37 @@ namespace Model
         virtual ~EMRClient();
 
         /**
+         * <p>Adds an instance fleet to a running cluster.</p> <note> <p>The instance fleet
+         * configuration is available only in Amazon EMR versions 4.8.0 and later,
+         * excluding 5.0.x.</p> </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/AddInstanceFleet">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::AddInstanceFleetOutcome AddInstanceFleet(const Model::AddInstanceFleetRequest& request) const;
+
+        /**
+         * <p>Adds an instance fleet to a running cluster.</p> <note> <p>The instance fleet
+         * configuration is available only in Amazon EMR versions 4.8.0 and later,
+         * excluding 5.0.x.</p> </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/AddInstanceFleet">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::AddInstanceFleetOutcomeCallable AddInstanceFleetCallable(const Model::AddInstanceFleetRequest& request) const;
+
+        /**
+         * <p>Adds an instance fleet to a running cluster.</p> <note> <p>The instance fleet
+         * configuration is available only in Amazon EMR versions 4.8.0 and later,
+         * excluding 5.0.x.</p> </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/AddInstanceFleet">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void AddInstanceFleetAsync(const Model::AddInstanceFleetRequest& request, const AddInstanceFleetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Adds one or more instance groups to a running cluster.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/AddInstanceGroups">AWS
@@ -245,23 +290,23 @@ namespace Model
         virtual void AddInstanceGroupsAsync(const Model::AddInstanceGroupsRequest& request, const AddInstanceGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>AddJobFlowSteps adds new steps to a running job flow. A maximum of 256 steps
-         * are allowed in each job flow.</p> <p>If your job flow is long-running (such as a
+         * <p>AddJobFlowSteps adds new steps to a running cluster. A maximum of 256 steps
+         * are allowed in each job flow.</p> <p>If your cluster is long-running (such as a
          * Hive data warehouse) or complex, you may require more than 256 steps to process
          * your data. You can bypass the 256-step limitation in various ways, including
-         * using the SSH shell to connect to the master node and submitting queries
-         * directly to the software running on the master node, such as Hive and Hadoop.
-         * For more information on how to do this, see <a
-         * href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/AddMoreThan256Steps.html">Add
-         * More than 256 Steps to a Job Flow</a> in the <i>Amazon EMR Developer's
+         * using SSH to connect to the master node and submitting queries directly to the
+         * software running on the master node, such as Hive and Hadoop. For more
+         * information on how to do this, see <a
+         * href="http://docs.aws.amazon.com/ElasticMapReduce/latest/ManagementGuide/AddMoreThan256Steps.html">Add
+         * More than 256 Steps to a Cluster</a> in the <i>Amazon EMR Management
          * Guide</i>.</p> <p>A step specifies the location of a JAR file stored either on
-         * the master node of the job flow or in Amazon S3. Each step is performed by the
+         * the master node of the cluster or in Amazon S3. Each step is performed by the
          * main function of the main class of the JAR file. The main class can be specified
          * either in the manifest of the JAR or by using the MainFunction parameter of the
          * step.</p> <p>Amazon EMR executes each step in the order listed. For a step to be
          * considered complete, the main function must exit with a zero exit code and all
          * Hadoop jobs started while the step was running must have completed and run
-         * successfully.</p> <p>You can only add steps to a job flow that is in one of the
+         * successfully.</p> <p>You can only add steps to a cluster that is in one of the
          * following states: STARTING, BOOTSTRAPPING, RUNNING, or WAITING.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/AddJobFlowSteps">AWS
@@ -270,23 +315,23 @@ namespace Model
         virtual Model::AddJobFlowStepsOutcome AddJobFlowSteps(const Model::AddJobFlowStepsRequest& request) const;
 
         /**
-         * <p>AddJobFlowSteps adds new steps to a running job flow. A maximum of 256 steps
-         * are allowed in each job flow.</p> <p>If your job flow is long-running (such as a
+         * <p>AddJobFlowSteps adds new steps to a running cluster. A maximum of 256 steps
+         * are allowed in each job flow.</p> <p>If your cluster is long-running (such as a
          * Hive data warehouse) or complex, you may require more than 256 steps to process
          * your data. You can bypass the 256-step limitation in various ways, including
-         * using the SSH shell to connect to the master node and submitting queries
-         * directly to the software running on the master node, such as Hive and Hadoop.
-         * For more information on how to do this, see <a
-         * href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/AddMoreThan256Steps.html">Add
-         * More than 256 Steps to a Job Flow</a> in the <i>Amazon EMR Developer's
+         * using SSH to connect to the master node and submitting queries directly to the
+         * software running on the master node, such as Hive and Hadoop. For more
+         * information on how to do this, see <a
+         * href="http://docs.aws.amazon.com/ElasticMapReduce/latest/ManagementGuide/AddMoreThan256Steps.html">Add
+         * More than 256 Steps to a Cluster</a> in the <i>Amazon EMR Management
          * Guide</i>.</p> <p>A step specifies the location of a JAR file stored either on
-         * the master node of the job flow or in Amazon S3. Each step is performed by the
+         * the master node of the cluster or in Amazon S3. Each step is performed by the
          * main function of the main class of the JAR file. The main class can be specified
          * either in the manifest of the JAR or by using the MainFunction parameter of the
          * step.</p> <p>Amazon EMR executes each step in the order listed. For a step to be
          * considered complete, the main function must exit with a zero exit code and all
          * Hadoop jobs started while the step was running must have completed and run
-         * successfully.</p> <p>You can only add steps to a job flow that is in one of the
+         * successfully.</p> <p>You can only add steps to a cluster that is in one of the
          * following states: STARTING, BOOTSTRAPPING, RUNNING, or WAITING.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/AddJobFlowSteps">AWS
@@ -297,23 +342,23 @@ namespace Model
         virtual Model::AddJobFlowStepsOutcomeCallable AddJobFlowStepsCallable(const Model::AddJobFlowStepsRequest& request) const;
 
         /**
-         * <p>AddJobFlowSteps adds new steps to a running job flow. A maximum of 256 steps
-         * are allowed in each job flow.</p> <p>If your job flow is long-running (such as a
+         * <p>AddJobFlowSteps adds new steps to a running cluster. A maximum of 256 steps
+         * are allowed in each job flow.</p> <p>If your cluster is long-running (such as a
          * Hive data warehouse) or complex, you may require more than 256 steps to process
          * your data. You can bypass the 256-step limitation in various ways, including
-         * using the SSH shell to connect to the master node and submitting queries
-         * directly to the software running on the master node, such as Hive and Hadoop.
-         * For more information on how to do this, see <a
-         * href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/AddMoreThan256Steps.html">Add
-         * More than 256 Steps to a Job Flow</a> in the <i>Amazon EMR Developer's
+         * using SSH to connect to the master node and submitting queries directly to the
+         * software running on the master node, such as Hive and Hadoop. For more
+         * information on how to do this, see <a
+         * href="http://docs.aws.amazon.com/ElasticMapReduce/latest/ManagementGuide/AddMoreThan256Steps.html">Add
+         * More than 256 Steps to a Cluster</a> in the <i>Amazon EMR Management
          * Guide</i>.</p> <p>A step specifies the location of a JAR file stored either on
-         * the master node of the job flow or in Amazon S3. Each step is performed by the
+         * the master node of the cluster or in Amazon S3. Each step is performed by the
          * main function of the main class of the JAR file. The main class can be specified
          * either in the manifest of the JAR or by using the MainFunction parameter of the
          * step.</p> <p>Amazon EMR executes each step in the order listed. For a step to be
          * considered complete, the main function must exit with a zero exit code and all
          * Hadoop jobs started while the step was running must have completed and run
-         * successfully.</p> <p>You can only add steps to a job flow that is in one of the
+         * successfully.</p> <p>You can only add steps to a cluster that is in one of the
          * following states: STARTING, BOOTSTRAPPING, RUNNING, or WAITING.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/AddJobFlowSteps">AWS
@@ -603,6 +648,40 @@ namespace Model
         virtual void ListClustersAsync(const Model::ListClustersRequest& request, const ListClustersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Lists all available details about the instance fleets in a cluster.</p>
+         * <note> <p>The instance fleet configuration is available only in Amazon EMR
+         * versions 4.8.0 and later, excluding 5.0.x versions.</p> </note><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/ListInstanceFleets">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListInstanceFleetsOutcome ListInstanceFleets(const Model::ListInstanceFleetsRequest& request) const;
+
+        /**
+         * <p>Lists all available details about the instance fleets in a cluster.</p>
+         * <note> <p>The instance fleet configuration is available only in Amazon EMR
+         * versions 4.8.0 and later, excluding 5.0.x versions.</p> </note><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/ListInstanceFleets">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListInstanceFleetsOutcomeCallable ListInstanceFleetsCallable(const Model::ListInstanceFleetsRequest& request) const;
+
+        /**
+         * <p>Lists all available details about the instance fleets in a cluster.</p>
+         * <note> <p>The instance fleet configuration is available only in Amazon EMR
+         * versions 4.8.0 and later, excluding 5.0.x versions.</p> </note><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/ListInstanceFleets">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListInstanceFleetsAsync(const Model::ListInstanceFleetsRequest& request, const ListInstanceFleetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Provides all available details about the instance groups in a
          * cluster.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/ListInstanceGroups">AWS
@@ -731,6 +810,43 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListStepsAsync(const Model::ListStepsRequest& request, const ListStepsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Modifies the target On-Demand and target Spot capacities for the instance
+         * fleet with the specified InstanceFleetID within the cluster specified using
+         * ClusterID. The call either succeeds or fails atomically.</p> <note> <p>The
+         * instance fleet configuration is available only in Amazon EMR versions 4.8.0 and
+         * later, excluding 5.0.x versions.</p> </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/ModifyInstanceFleet">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ModifyInstanceFleetOutcome ModifyInstanceFleet(const Model::ModifyInstanceFleetRequest& request) const;
+
+        /**
+         * <p>Modifies the target On-Demand and target Spot capacities for the instance
+         * fleet with the specified InstanceFleetID within the cluster specified using
+         * ClusterID. The call either succeeds or fails atomically.</p> <note> <p>The
+         * instance fleet configuration is available only in Amazon EMR versions 4.8.0 and
+         * later, excluding 5.0.x versions.</p> </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/ModifyInstanceFleet">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ModifyInstanceFleetOutcomeCallable ModifyInstanceFleetCallable(const Model::ModifyInstanceFleetRequest& request) const;
+
+        /**
+         * <p>Modifies the target On-Demand and target Spot capacities for the instance
+         * fleet with the specified InstanceFleetID within the cluster specified using
+         * ClusterID. The call either succeeds or fails atomically.</p> <note> <p>The
+         * instance fleet configuration is available only in Amazon EMR versions 4.8.0 and
+         * later, excluding 5.0.x versions.</p> </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/ModifyInstanceFleet">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ModifyInstanceFleetAsync(const Model::ModifyInstanceFleetRequest& request, const ModifyInstanceFleetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>ModifyInstanceGroups modifies the number of nodes and configuration settings
@@ -869,52 +985,58 @@ namespace Model
         virtual void RemoveTagsAsync(const Model::RemoveTagsRequest& request, const RemoveTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>RunJobFlow creates and starts running a new job flow. The job flow will run
-         * the steps specified. After the job flow completes, the cluster is stopped and
-         * the HDFS partition is lost. To prevent loss of data, configure the last step of
-         * the job flow to store results in Amazon S3. If the <a>JobFlowInstancesConfig</a>
+         * <p>RunJobFlow creates and starts running a new cluster (job flow). The cluster
+         * runs the steps specified. After the steps complete, the cluster stops and the
+         * HDFS partition is lost. To prevent loss of data, configure the last step of the
+         * job flow to store results in Amazon S3. If the <a>JobFlowInstancesConfig</a>
          * <code>KeepJobFlowAliveWhenNoSteps</code> parameter is set to <code>TRUE</code>,
-         * the job flow will transition to the WAITING state rather than shutting down
-         * after the steps have completed. </p> <p>For additional protection, you can set
-         * the <a>JobFlowInstancesConfig</a> <code>TerminationProtected</code> parameter to
-         * <code>TRUE</code> to lock the job flow and prevent it from being terminated by
+         * the cluster transitions to the WAITING state rather than shutting down after the
+         * steps have completed. </p> <p>For additional protection, you can set the
+         * <a>JobFlowInstancesConfig</a> <code>TerminationProtected</code> parameter to
+         * <code>TRUE</code> to lock the cluster and prevent it from being terminated by
          * API call, user intervention, or in the event of a job flow error.</p> <p>A
-         * maximum of 256 steps are allowed in each job flow.</p> <p>If your job flow is
+         * maximum of 256 steps are allowed in each job flow.</p> <p>If your cluster is
          * long-running (such as a Hive data warehouse) or complex, you may require more
          * than 256 steps to process your data. You can bypass the 256-step limitation in
          * various ways, including using the SSH shell to connect to the master node and
          * submitting queries directly to the software running on the master node, such as
          * Hive and Hadoop. For more information on how to do this, see <a
          * href="http://docs.aws.amazon.com/ElasticMapReduce/latest/Management/Guide/AddMoreThan256Steps.html">Add
-         * More than 256 Steps to a Job Flow</a> in the <i>Amazon EMR Management
-         * Guide</i>.</p> <p>For long running job flows, we recommend that you periodically
-         * store your results.</p><p><h3>See Also:</h3>   <a
+         * More than 256 Steps to a Cluster</a> in the <i>Amazon EMR Management
+         * Guide</i>.</p> <p>For long running clusters, we recommend that you periodically
+         * store your results.</p> <note> <p>The instance fleets configuration is available
+         * only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x versions. The
+         * RunJobFlow request can contain InstanceFleets parameters or InstanceGroups
+         * parameters, but not both.</p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/RunJobFlow">AWS
          * API Reference</a></p>
          */
         virtual Model::RunJobFlowOutcome RunJobFlow(const Model::RunJobFlowRequest& request) const;
 
         /**
-         * <p>RunJobFlow creates and starts running a new job flow. The job flow will run
-         * the steps specified. After the job flow completes, the cluster is stopped and
-         * the HDFS partition is lost. To prevent loss of data, configure the last step of
-         * the job flow to store results in Amazon S3. If the <a>JobFlowInstancesConfig</a>
+         * <p>RunJobFlow creates and starts running a new cluster (job flow). The cluster
+         * runs the steps specified. After the steps complete, the cluster stops and the
+         * HDFS partition is lost. To prevent loss of data, configure the last step of the
+         * job flow to store results in Amazon S3. If the <a>JobFlowInstancesConfig</a>
          * <code>KeepJobFlowAliveWhenNoSteps</code> parameter is set to <code>TRUE</code>,
-         * the job flow will transition to the WAITING state rather than shutting down
-         * after the steps have completed. </p> <p>For additional protection, you can set
-         * the <a>JobFlowInstancesConfig</a> <code>TerminationProtected</code> parameter to
-         * <code>TRUE</code> to lock the job flow and prevent it from being terminated by
+         * the cluster transitions to the WAITING state rather than shutting down after the
+         * steps have completed. </p> <p>For additional protection, you can set the
+         * <a>JobFlowInstancesConfig</a> <code>TerminationProtected</code> parameter to
+         * <code>TRUE</code> to lock the cluster and prevent it from being terminated by
          * API call, user intervention, or in the event of a job flow error.</p> <p>A
-         * maximum of 256 steps are allowed in each job flow.</p> <p>If your job flow is
+         * maximum of 256 steps are allowed in each job flow.</p> <p>If your cluster is
          * long-running (such as a Hive data warehouse) or complex, you may require more
          * than 256 steps to process your data. You can bypass the 256-step limitation in
          * various ways, including using the SSH shell to connect to the master node and
          * submitting queries directly to the software running on the master node, such as
          * Hive and Hadoop. For more information on how to do this, see <a
          * href="http://docs.aws.amazon.com/ElasticMapReduce/latest/Management/Guide/AddMoreThan256Steps.html">Add
-         * More than 256 Steps to a Job Flow</a> in the <i>Amazon EMR Management
-         * Guide</i>.</p> <p>For long running job flows, we recommend that you periodically
-         * store your results.</p><p><h3>See Also:</h3>   <a
+         * More than 256 Steps to a Cluster</a> in the <i>Amazon EMR Management
+         * Guide</i>.</p> <p>For long running clusters, we recommend that you periodically
+         * store your results.</p> <note> <p>The instance fleets configuration is available
+         * only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x versions. The
+         * RunJobFlow request can contain InstanceFleets parameters or InstanceGroups
+         * parameters, but not both.</p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/RunJobFlow">AWS
          * API Reference</a></p>
          *
@@ -923,26 +1045,29 @@ namespace Model
         virtual Model::RunJobFlowOutcomeCallable RunJobFlowCallable(const Model::RunJobFlowRequest& request) const;
 
         /**
-         * <p>RunJobFlow creates and starts running a new job flow. The job flow will run
-         * the steps specified. After the job flow completes, the cluster is stopped and
-         * the HDFS partition is lost. To prevent loss of data, configure the last step of
-         * the job flow to store results in Amazon S3. If the <a>JobFlowInstancesConfig</a>
+         * <p>RunJobFlow creates and starts running a new cluster (job flow). The cluster
+         * runs the steps specified. After the steps complete, the cluster stops and the
+         * HDFS partition is lost. To prevent loss of data, configure the last step of the
+         * job flow to store results in Amazon S3. If the <a>JobFlowInstancesConfig</a>
          * <code>KeepJobFlowAliveWhenNoSteps</code> parameter is set to <code>TRUE</code>,
-         * the job flow will transition to the WAITING state rather than shutting down
-         * after the steps have completed. </p> <p>For additional protection, you can set
-         * the <a>JobFlowInstancesConfig</a> <code>TerminationProtected</code> parameter to
-         * <code>TRUE</code> to lock the job flow and prevent it from being terminated by
+         * the cluster transitions to the WAITING state rather than shutting down after the
+         * steps have completed. </p> <p>For additional protection, you can set the
+         * <a>JobFlowInstancesConfig</a> <code>TerminationProtected</code> parameter to
+         * <code>TRUE</code> to lock the cluster and prevent it from being terminated by
          * API call, user intervention, or in the event of a job flow error.</p> <p>A
-         * maximum of 256 steps are allowed in each job flow.</p> <p>If your job flow is
+         * maximum of 256 steps are allowed in each job flow.</p> <p>If your cluster is
          * long-running (such as a Hive data warehouse) or complex, you may require more
          * than 256 steps to process your data. You can bypass the 256-step limitation in
          * various ways, including using the SSH shell to connect to the master node and
          * submitting queries directly to the software running on the master node, such as
          * Hive and Hadoop. For more information on how to do this, see <a
          * href="http://docs.aws.amazon.com/ElasticMapReduce/latest/Management/Guide/AddMoreThan256Steps.html">Add
-         * More than 256 Steps to a Job Flow</a> in the <i>Amazon EMR Management
-         * Guide</i>.</p> <p>For long running job flows, we recommend that you periodically
-         * store your results.</p><p><h3>See Also:</h3>   <a
+         * More than 256 Steps to a Cluster</a> in the <i>Amazon EMR Management
+         * Guide</i>.</p> <p>For long running clusters, we recommend that you periodically
+         * store your results.</p> <note> <p>The instance fleets configuration is available
+         * only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x versions. The
+         * RunJobFlow request can contain InstanceFleets parameters or InstanceGroups
+         * parameters, but not both.</p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/RunJobFlow">AWS
          * API Reference</a></p>
          *
@@ -951,42 +1076,46 @@ namespace Model
         virtual void RunJobFlowAsync(const Model::RunJobFlowRequest& request, const RunJobFlowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>SetTerminationProtection locks a job flow so the EC2 instances in the cluster
-         * cannot be terminated by user intervention, an API call, or in the event of a
-         * job-flow error. The cluster still terminates upon successful completion of the
-         * job flow. Calling SetTerminationProtection on a job flow is analogous to calling
-         * the Amazon EC2 DisableAPITermination API on all of the EC2 instances in a
-         * cluster.</p> <p>SetTerminationProtection is used to prevent accidental
-         * termination of a job flow and to ensure that in the event of an error, the
-         * instances will persist so you can recover any data stored in their ephemeral
-         * instance storage.</p> <p> To terminate a job flow that has been locked by
-         * setting SetTerminationProtection to <code>true</code>, you must first unlock the
-         * job flow by a subsequent call to SetTerminationProtection in which you set the
-         * value to <code>false</code>. </p> <p> For more information, see<a
-         * href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/UsingEMR_TerminationProtection.html">Protecting
-         * a Job Flow from Termination</a> in the <i>Amazon EMR Guide.</i> </p><p><h3>See
-         * Also:</h3>   <a
+         * <p>SetTerminationProtection locks a cluster (job flow) so the EC2 instances in
+         * the cluster cannot be terminated by user intervention, an API call, or in the
+         * event of a job-flow error. The cluster still terminates upon successful
+         * completion of the job flow. Calling <code>SetTerminationProtection</code> on a
+         * cluster is similar to calling the Amazon EC2 <code>DisableAPITermination</code>
+         * API on all EC2 instances in a cluster.</p> <p>
+         * <code>SetTerminationProtection</code> is used to prevent accidental termination
+         * of a cluster and to ensure that in the event of an error, the instances persist
+         * so that you can recover any data stored in their ephemeral instance storage.</p>
+         * <p> To terminate a cluster that has been locked by setting
+         * <code>SetTerminationProtection</code> to <code>true</code>, you must first
+         * unlock the job flow by a subsequent call to
+         * <code>SetTerminationProtection</code> in which you set the value to
+         * <code>false</code>. </p> <p> For more information, see<a
+         * href="http://docs.aws.amazon.com/emr/latest/ManagementGuide/UsingEMR_TerminationProtection.html">Managing
+         * Cluster Termination</a> in the <i>Amazon EMR Management Guide</i>.
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/SetTerminationProtection">AWS
          * API Reference</a></p>
          */
         virtual Model::SetTerminationProtectionOutcome SetTerminationProtection(const Model::SetTerminationProtectionRequest& request) const;
 
         /**
-         * <p>SetTerminationProtection locks a job flow so the EC2 instances in the cluster
-         * cannot be terminated by user intervention, an API call, or in the event of a
-         * job-flow error. The cluster still terminates upon successful completion of the
-         * job flow. Calling SetTerminationProtection on a job flow is analogous to calling
-         * the Amazon EC2 DisableAPITermination API on all of the EC2 instances in a
-         * cluster.</p> <p>SetTerminationProtection is used to prevent accidental
-         * termination of a job flow and to ensure that in the event of an error, the
-         * instances will persist so you can recover any data stored in their ephemeral
-         * instance storage.</p> <p> To terminate a job flow that has been locked by
-         * setting SetTerminationProtection to <code>true</code>, you must first unlock the
-         * job flow by a subsequent call to SetTerminationProtection in which you set the
-         * value to <code>false</code>. </p> <p> For more information, see<a
-         * href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/UsingEMR_TerminationProtection.html">Protecting
-         * a Job Flow from Termination</a> in the <i>Amazon EMR Guide.</i> </p><p><h3>See
-         * Also:</h3>   <a
+         * <p>SetTerminationProtection locks a cluster (job flow) so the EC2 instances in
+         * the cluster cannot be terminated by user intervention, an API call, or in the
+         * event of a job-flow error. The cluster still terminates upon successful
+         * completion of the job flow. Calling <code>SetTerminationProtection</code> on a
+         * cluster is similar to calling the Amazon EC2 <code>DisableAPITermination</code>
+         * API on all EC2 instances in a cluster.</p> <p>
+         * <code>SetTerminationProtection</code> is used to prevent accidental termination
+         * of a cluster and to ensure that in the event of an error, the instances persist
+         * so that you can recover any data stored in their ephemeral instance storage.</p>
+         * <p> To terminate a cluster that has been locked by setting
+         * <code>SetTerminationProtection</code> to <code>true</code>, you must first
+         * unlock the job flow by a subsequent call to
+         * <code>SetTerminationProtection</code> in which you set the value to
+         * <code>false</code>. </p> <p> For more information, see<a
+         * href="http://docs.aws.amazon.com/emr/latest/ManagementGuide/UsingEMR_TerminationProtection.html">Managing
+         * Cluster Termination</a> in the <i>Amazon EMR Management Guide</i>.
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/SetTerminationProtection">AWS
          * API Reference</a></p>
          *
@@ -995,21 +1124,23 @@ namespace Model
         virtual Model::SetTerminationProtectionOutcomeCallable SetTerminationProtectionCallable(const Model::SetTerminationProtectionRequest& request) const;
 
         /**
-         * <p>SetTerminationProtection locks a job flow so the EC2 instances in the cluster
-         * cannot be terminated by user intervention, an API call, or in the event of a
-         * job-flow error. The cluster still terminates upon successful completion of the
-         * job flow. Calling SetTerminationProtection on a job flow is analogous to calling
-         * the Amazon EC2 DisableAPITermination API on all of the EC2 instances in a
-         * cluster.</p> <p>SetTerminationProtection is used to prevent accidental
-         * termination of a job flow and to ensure that in the event of an error, the
-         * instances will persist so you can recover any data stored in their ephemeral
-         * instance storage.</p> <p> To terminate a job flow that has been locked by
-         * setting SetTerminationProtection to <code>true</code>, you must first unlock the
-         * job flow by a subsequent call to SetTerminationProtection in which you set the
-         * value to <code>false</code>. </p> <p> For more information, see<a
-         * href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/UsingEMR_TerminationProtection.html">Protecting
-         * a Job Flow from Termination</a> in the <i>Amazon EMR Guide.</i> </p><p><h3>See
-         * Also:</h3>   <a
+         * <p>SetTerminationProtection locks a cluster (job flow) so the EC2 instances in
+         * the cluster cannot be terminated by user intervention, an API call, or in the
+         * event of a job-flow error. The cluster still terminates upon successful
+         * completion of the job flow. Calling <code>SetTerminationProtection</code> on a
+         * cluster is similar to calling the Amazon EC2 <code>DisableAPITermination</code>
+         * API on all EC2 instances in a cluster.</p> <p>
+         * <code>SetTerminationProtection</code> is used to prevent accidental termination
+         * of a cluster and to ensure that in the event of an error, the instances persist
+         * so that you can recover any data stored in their ephemeral instance storage.</p>
+         * <p> To terminate a cluster that has been locked by setting
+         * <code>SetTerminationProtection</code> to <code>true</code>, you must first
+         * unlock the job flow by a subsequent call to
+         * <code>SetTerminationProtection</code> in which you set the value to
+         * <code>false</code>. </p> <p> For more information, see<a
+         * href="http://docs.aws.amazon.com/emr/latest/ManagementGuide/UsingEMR_TerminationProtection.html">Managing
+         * Cluster Termination</a> in the <i>Amazon EMR Management Guide</i>.
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/SetTerminationProtection">AWS
          * API Reference</a></p>
          *
@@ -1019,12 +1150,11 @@ namespace Model
 
         /**
          * <p>Sets whether all AWS Identity and Access Management (IAM) users under your
-         * account can access the specified job flows. This action works on running job
-         * flows. You can also set the visibility of a job flow when you launch it using
-         * the <code>VisibleToAllUsers</code> parameter of <a>RunJobFlow</a>. The
+         * account can access the specified clusters (job flows). This action works on
+         * running clusters. You can also set the visibility of a cluster when you launch
+         * it using the <code>VisibleToAllUsers</code> parameter of <a>RunJobFlow</a>. The
          * SetVisibleToAllUsers action can be called only by an IAM user who created the
-         * job flow or the AWS account that owns the job flow.</p><p><h3>See Also:</h3>  
-         * <a
+         * cluster or the AWS account that owns the cluster.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/SetVisibleToAllUsers">AWS
          * API Reference</a></p>
          */
@@ -1032,12 +1162,11 @@ namespace Model
 
         /**
          * <p>Sets whether all AWS Identity and Access Management (IAM) users under your
-         * account can access the specified job flows. This action works on running job
-         * flows. You can also set the visibility of a job flow when you launch it using
-         * the <code>VisibleToAllUsers</code> parameter of <a>RunJobFlow</a>. The
+         * account can access the specified clusters (job flows). This action works on
+         * running clusters. You can also set the visibility of a cluster when you launch
+         * it using the <code>VisibleToAllUsers</code> parameter of <a>RunJobFlow</a>. The
          * SetVisibleToAllUsers action can be called only by an IAM user who created the
-         * job flow or the AWS account that owns the job flow.</p><p><h3>See Also:</h3>  
-         * <a
+         * cluster or the AWS account that owns the cluster.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/SetVisibleToAllUsers">AWS
          * API Reference</a></p>
          *
@@ -1047,12 +1176,11 @@ namespace Model
 
         /**
          * <p>Sets whether all AWS Identity and Access Management (IAM) users under your
-         * account can access the specified job flows. This action works on running job
-         * flows. You can also set the visibility of a job flow when you launch it using
-         * the <code>VisibleToAllUsers</code> parameter of <a>RunJobFlow</a>. The
+         * account can access the specified clusters (job flows). This action works on
+         * running clusters. You can also set the visibility of a cluster when you launch
+         * it using the <code>VisibleToAllUsers</code> parameter of <a>RunJobFlow</a>. The
          * SetVisibleToAllUsers action can be called only by an IAM user who created the
-         * job flow or the AWS account that owns the job flow.</p><p><h3>See Also:</h3>  
-         * <a
+         * cluster or the AWS account that owns the cluster.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/SetVisibleToAllUsers">AWS
          * API Reference</a></p>
          *
@@ -1061,28 +1189,30 @@ namespace Model
         virtual void SetVisibleToAllUsersAsync(const Model::SetVisibleToAllUsersRequest& request, const SetVisibleToAllUsersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>TerminateJobFlows shuts a list of job flows down. When a job flow is shut
-         * down, any step not yet completed is canceled and the EC2 instances on which the
-         * job flow is running are stopped. Any log files not already saved are uploaded to
-         * Amazon S3 if a LogUri was specified when the job flow was created.</p> <p>The
-         * maximum number of JobFlows allowed is 10. The call to TerminateJobFlows is
-         * asynchronous. Depending on the configuration of the job flow, it may take up to
-         * 1-5 minutes for the job flow to completely terminate and release allocated
-         * resources, such as Amazon EC2 instances.</p><p><h3>See Also:</h3>   <a
+         * <p>TerminateJobFlows shuts a list of clusters (job flows) down. When a job flow
+         * is shut down, any step not yet completed is canceled and the EC2 instances on
+         * which the cluster is running are stopped. Any log files not already saved are
+         * uploaded to Amazon S3 if a LogUri was specified when the cluster was
+         * created.</p> <p>The maximum number of clusters allowed is 10. The call to
+         * <code>TerminateJobFlows</code> is asynchronous. Depending on the configuration
+         * of the cluster, it may take up to 1-5 minutes for the cluster to completely
+         * terminate and release allocated resources, such as Amazon EC2
+         * instances.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/TerminateJobFlows">AWS
          * API Reference</a></p>
          */
         virtual Model::TerminateJobFlowsOutcome TerminateJobFlows(const Model::TerminateJobFlowsRequest& request) const;
 
         /**
-         * <p>TerminateJobFlows shuts a list of job flows down. When a job flow is shut
-         * down, any step not yet completed is canceled and the EC2 instances on which the
-         * job flow is running are stopped. Any log files not already saved are uploaded to
-         * Amazon S3 if a LogUri was specified when the job flow was created.</p> <p>The
-         * maximum number of JobFlows allowed is 10. The call to TerminateJobFlows is
-         * asynchronous. Depending on the configuration of the job flow, it may take up to
-         * 1-5 minutes for the job flow to completely terminate and release allocated
-         * resources, such as Amazon EC2 instances.</p><p><h3>See Also:</h3>   <a
+         * <p>TerminateJobFlows shuts a list of clusters (job flows) down. When a job flow
+         * is shut down, any step not yet completed is canceled and the EC2 instances on
+         * which the cluster is running are stopped. Any log files not already saved are
+         * uploaded to Amazon S3 if a LogUri was specified when the cluster was
+         * created.</p> <p>The maximum number of clusters allowed is 10. The call to
+         * <code>TerminateJobFlows</code> is asynchronous. Depending on the configuration
+         * of the cluster, it may take up to 1-5 minutes for the cluster to completely
+         * terminate and release allocated resources, such as Amazon EC2
+         * instances.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/TerminateJobFlows">AWS
          * API Reference</a></p>
          *
@@ -1091,14 +1221,15 @@ namespace Model
         virtual Model::TerminateJobFlowsOutcomeCallable TerminateJobFlowsCallable(const Model::TerminateJobFlowsRequest& request) const;
 
         /**
-         * <p>TerminateJobFlows shuts a list of job flows down. When a job flow is shut
-         * down, any step not yet completed is canceled and the EC2 instances on which the
-         * job flow is running are stopped. Any log files not already saved are uploaded to
-         * Amazon S3 if a LogUri was specified when the job flow was created.</p> <p>The
-         * maximum number of JobFlows allowed is 10. The call to TerminateJobFlows is
-         * asynchronous. Depending on the configuration of the job flow, it may take up to
-         * 1-5 minutes for the job flow to completely terminate and release allocated
-         * resources, such as Amazon EC2 instances.</p><p><h3>See Also:</h3>   <a
+         * <p>TerminateJobFlows shuts a list of clusters (job flows) down. When a job flow
+         * is shut down, any step not yet completed is canceled and the EC2 instances on
+         * which the cluster is running are stopped. Any log files not already saved are
+         * uploaded to Amazon S3 if a LogUri was specified when the cluster was
+         * created.</p> <p>The maximum number of clusters allowed is 10. The call to
+         * <code>TerminateJobFlows</code> is asynchronous. Depending on the configuration
+         * of the cluster, it may take up to 1-5 minutes for the cluster to completely
+         * terminate and release allocated resources, such as Amazon EC2
+         * instances.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/TerminateJobFlows">AWS
          * API Reference</a></p>
          *
@@ -1111,6 +1242,7 @@ namespace Model
       void init(const Client::ClientConfiguration& clientConfiguration);
 
         /**Async helpers**/
+        void AddInstanceFleetAsyncHelper(const Model::AddInstanceFleetRequest& request, const AddInstanceFleetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void AddInstanceGroupsAsyncHelper(const Model::AddInstanceGroupsRequest& request, const AddInstanceGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void AddJobFlowStepsAsyncHelper(const Model::AddJobFlowStepsRequest& request, const AddJobFlowStepsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void AddTagsAsyncHelper(const Model::AddTagsRequest& request, const AddTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -1122,10 +1254,12 @@ namespace Model
         void DescribeStepAsyncHelper(const Model::DescribeStepRequest& request, const DescribeStepResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListBootstrapActionsAsyncHelper(const Model::ListBootstrapActionsRequest& request, const ListBootstrapActionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListClustersAsyncHelper(const Model::ListClustersRequest& request, const ListClustersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListInstanceFleetsAsyncHelper(const Model::ListInstanceFleetsRequest& request, const ListInstanceFleetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListInstanceGroupsAsyncHelper(const Model::ListInstanceGroupsRequest& request, const ListInstanceGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListInstancesAsyncHelper(const Model::ListInstancesRequest& request, const ListInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListSecurityConfigurationsAsyncHelper(const Model::ListSecurityConfigurationsRequest& request, const ListSecurityConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListStepsAsyncHelper(const Model::ListStepsRequest& request, const ListStepsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ModifyInstanceFleetAsyncHelper(const Model::ModifyInstanceFleetRequest& request, const ModifyInstanceFleetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ModifyInstanceGroupsAsyncHelper(const Model::ModifyInstanceGroupsRequest& request, const ModifyInstanceGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutAutoScalingPolicyAsyncHelper(const Model::PutAutoScalingPolicyRequest& request, const PutAutoScalingPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RemoveAutoScalingPolicyAsyncHelper(const Model::RemoveAutoScalingPolicyRequest& request, const RemoveAutoScalingPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

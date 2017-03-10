@@ -33,6 +33,7 @@ JobFlowInstancesConfig::JobFlowInstancesConfig() :
     m_instanceCount(0),
     m_instanceCountHasBeenSet(false),
     m_instanceGroupsHasBeenSet(false),
+    m_instanceFleetsHasBeenSet(false),
     m_ec2KeyNameHasBeenSet(false),
     m_placementHasBeenSet(false),
     m_keepJobFlowAliveWhenNoSteps(false),
@@ -41,6 +42,7 @@ JobFlowInstancesConfig::JobFlowInstancesConfig() :
     m_terminationProtectedHasBeenSet(false),
     m_hadoopVersionHasBeenSet(false),
     m_ec2SubnetIdHasBeenSet(false),
+    m_ec2SubnetIdsHasBeenSet(false),
     m_emrManagedMasterSecurityGroupHasBeenSet(false),
     m_emrManagedSlaveSecurityGroupHasBeenSet(false),
     m_serviceAccessSecurityGroupHasBeenSet(false),
@@ -55,6 +57,7 @@ JobFlowInstancesConfig::JobFlowInstancesConfig(const JsonValue& jsonValue) :
     m_instanceCount(0),
     m_instanceCountHasBeenSet(false),
     m_instanceGroupsHasBeenSet(false),
+    m_instanceFleetsHasBeenSet(false),
     m_ec2KeyNameHasBeenSet(false),
     m_placementHasBeenSet(false),
     m_keepJobFlowAliveWhenNoSteps(false),
@@ -63,6 +66,7 @@ JobFlowInstancesConfig::JobFlowInstancesConfig(const JsonValue& jsonValue) :
     m_terminationProtectedHasBeenSet(false),
     m_hadoopVersionHasBeenSet(false),
     m_ec2SubnetIdHasBeenSet(false),
+    m_ec2SubnetIdsHasBeenSet(false),
     m_emrManagedMasterSecurityGroupHasBeenSet(false),
     m_emrManagedSlaveSecurityGroupHasBeenSet(false),
     m_serviceAccessSecurityGroupHasBeenSet(false),
@@ -105,6 +109,16 @@ JobFlowInstancesConfig& JobFlowInstancesConfig::operator =(const JsonValue& json
     m_instanceGroupsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("InstanceFleets"))
+  {
+    Array<JsonValue> instanceFleetsJsonList = jsonValue.GetArray("InstanceFleets");
+    for(unsigned instanceFleetsIndex = 0; instanceFleetsIndex < instanceFleetsJsonList.GetLength(); ++instanceFleetsIndex)
+    {
+      m_instanceFleets.push_back(instanceFleetsJsonList[instanceFleetsIndex].AsObject());
+    }
+    m_instanceFleetsHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("Ec2KeyName"))
   {
     m_ec2KeyName = jsonValue.GetString("Ec2KeyName");
@@ -145,6 +159,16 @@ JobFlowInstancesConfig& JobFlowInstancesConfig::operator =(const JsonValue& json
     m_ec2SubnetId = jsonValue.GetString("Ec2SubnetId");
 
     m_ec2SubnetIdHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Ec2SubnetIds"))
+  {
+    Array<JsonValue> ec2SubnetIdsJsonList = jsonValue.GetArray("Ec2SubnetIds");
+    for(unsigned ec2SubnetIdsIndex = 0; ec2SubnetIdsIndex < ec2SubnetIdsJsonList.GetLength(); ++ec2SubnetIdsIndex)
+    {
+      m_ec2SubnetIds.push_back(ec2SubnetIdsJsonList[ec2SubnetIdsIndex].AsString());
+    }
+    m_ec2SubnetIdsHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("EmrManagedMasterSecurityGroup"))
@@ -224,6 +248,17 @@ JsonValue JobFlowInstancesConfig::Jsonize() const
 
   }
 
+  if(m_instanceFleetsHasBeenSet)
+  {
+   Array<JsonValue> instanceFleetsJsonList(m_instanceFleets.size());
+   for(unsigned instanceFleetsIndex = 0; instanceFleetsIndex < instanceFleetsJsonList.GetLength(); ++instanceFleetsIndex)
+   {
+     instanceFleetsJsonList[instanceFleetsIndex].AsObject(m_instanceFleets[instanceFleetsIndex].Jsonize());
+   }
+   payload.WithArray("InstanceFleets", std::move(instanceFleetsJsonList));
+
+  }
+
   if(m_ec2KeyNameHasBeenSet)
   {
    payload.WithString("Ec2KeyName", m_ec2KeyName);
@@ -257,6 +292,17 @@ JsonValue JobFlowInstancesConfig::Jsonize() const
   if(m_ec2SubnetIdHasBeenSet)
   {
    payload.WithString("Ec2SubnetId", m_ec2SubnetId);
+
+  }
+
+  if(m_ec2SubnetIdsHasBeenSet)
+  {
+   Array<JsonValue> ec2SubnetIdsJsonList(m_ec2SubnetIds.size());
+   for(unsigned ec2SubnetIdsIndex = 0; ec2SubnetIdsIndex < ec2SubnetIdsJsonList.GetLength(); ++ec2SubnetIdsIndex)
+   {
+     ec2SubnetIdsJsonList[ec2SubnetIdsIndex].AsString(m_ec2SubnetIds[ec2SubnetIdsIndex]);
+   }
+   payload.WithArray("Ec2SubnetIds", std::move(ec2SubnetIdsJsonList));
 
   }
 

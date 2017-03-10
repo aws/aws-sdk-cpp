@@ -30,7 +30,9 @@ namespace Model
 Ec2InstanceAttributes::Ec2InstanceAttributes() : 
     m_ec2KeyNameHasBeenSet(false),
     m_ec2SubnetIdHasBeenSet(false),
+    m_requestedEc2SubnetIdsHasBeenSet(false),
     m_ec2AvailabilityZoneHasBeenSet(false),
+    m_requestedEc2AvailabilityZonesHasBeenSet(false),
     m_iamInstanceProfileHasBeenSet(false),
     m_emrManagedMasterSecurityGroupHasBeenSet(false),
     m_emrManagedSlaveSecurityGroupHasBeenSet(false),
@@ -43,7 +45,9 @@ Ec2InstanceAttributes::Ec2InstanceAttributes() :
 Ec2InstanceAttributes::Ec2InstanceAttributes(const JsonValue& jsonValue) : 
     m_ec2KeyNameHasBeenSet(false),
     m_ec2SubnetIdHasBeenSet(false),
+    m_requestedEc2SubnetIdsHasBeenSet(false),
     m_ec2AvailabilityZoneHasBeenSet(false),
+    m_requestedEc2AvailabilityZonesHasBeenSet(false),
     m_iamInstanceProfileHasBeenSet(false),
     m_emrManagedMasterSecurityGroupHasBeenSet(false),
     m_emrManagedSlaveSecurityGroupHasBeenSet(false),
@@ -70,11 +74,31 @@ Ec2InstanceAttributes& Ec2InstanceAttributes::operator =(const JsonValue& jsonVa
     m_ec2SubnetIdHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("RequestedEc2SubnetIds"))
+  {
+    Array<JsonValue> requestedEc2SubnetIdsJsonList = jsonValue.GetArray("RequestedEc2SubnetIds");
+    for(unsigned requestedEc2SubnetIdsIndex = 0; requestedEc2SubnetIdsIndex < requestedEc2SubnetIdsJsonList.GetLength(); ++requestedEc2SubnetIdsIndex)
+    {
+      m_requestedEc2SubnetIds.push_back(requestedEc2SubnetIdsJsonList[requestedEc2SubnetIdsIndex].AsString());
+    }
+    m_requestedEc2SubnetIdsHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("Ec2AvailabilityZone"))
   {
     m_ec2AvailabilityZone = jsonValue.GetString("Ec2AvailabilityZone");
 
     m_ec2AvailabilityZoneHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("RequestedEc2AvailabilityZones"))
+  {
+    Array<JsonValue> requestedEc2AvailabilityZonesJsonList = jsonValue.GetArray("RequestedEc2AvailabilityZones");
+    for(unsigned requestedEc2AvailabilityZonesIndex = 0; requestedEc2AvailabilityZonesIndex < requestedEc2AvailabilityZonesJsonList.GetLength(); ++requestedEc2AvailabilityZonesIndex)
+    {
+      m_requestedEc2AvailabilityZones.push_back(requestedEc2AvailabilityZonesJsonList[requestedEc2AvailabilityZonesIndex].AsString());
+    }
+    m_requestedEc2AvailabilityZonesHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("IamInstanceProfile"))
@@ -144,9 +168,31 @@ JsonValue Ec2InstanceAttributes::Jsonize() const
 
   }
 
+  if(m_requestedEc2SubnetIdsHasBeenSet)
+  {
+   Array<JsonValue> requestedEc2SubnetIdsJsonList(m_requestedEc2SubnetIds.size());
+   for(unsigned requestedEc2SubnetIdsIndex = 0; requestedEc2SubnetIdsIndex < requestedEc2SubnetIdsJsonList.GetLength(); ++requestedEc2SubnetIdsIndex)
+   {
+     requestedEc2SubnetIdsJsonList[requestedEc2SubnetIdsIndex].AsString(m_requestedEc2SubnetIds[requestedEc2SubnetIdsIndex]);
+   }
+   payload.WithArray("RequestedEc2SubnetIds", std::move(requestedEc2SubnetIdsJsonList));
+
+  }
+
   if(m_ec2AvailabilityZoneHasBeenSet)
   {
    payload.WithString("Ec2AvailabilityZone", m_ec2AvailabilityZone);
+
+  }
+
+  if(m_requestedEc2AvailabilityZonesHasBeenSet)
+  {
+   Array<JsonValue> requestedEc2AvailabilityZonesJsonList(m_requestedEc2AvailabilityZones.size());
+   for(unsigned requestedEc2AvailabilityZonesIndex = 0; requestedEc2AvailabilityZonesIndex < requestedEc2AvailabilityZonesJsonList.GetLength(); ++requestedEc2AvailabilityZonesIndex)
+   {
+     requestedEc2AvailabilityZonesJsonList[requestedEc2AvailabilityZonesIndex].AsString(m_requestedEc2AvailabilityZones[requestedEc2AvailabilityZonesIndex]);
+   }
+   payload.WithArray("RequestedEc2AvailabilityZones", std::move(requestedEc2AvailabilityZonesJsonList));
 
   }
 

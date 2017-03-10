@@ -17,6 +17,7 @@
 #include <aws/elasticmapreduce/EMRRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/elasticmapreduce/model/InstanceFleetType.h>
 #include <aws/elasticmapreduce/model/InstanceGroupType.h>
 #include <aws/elasticmapreduce/model/InstanceState.h>
 
@@ -146,6 +147,66 @@ namespace Model
     inline ListInstancesRequest& AddInstanceGroupTypes(InstanceGroupType&& value) { m_instanceGroupTypesHasBeenSet = true; m_instanceGroupTypes.push_back(value); return *this; }
 
     /**
+     * <p>The unique identifier of the instance fleet.</p>
+     */
+    inline const Aws::String& GetInstanceFleetId() const{ return m_instanceFleetId; }
+
+    /**
+     * <p>The unique identifier of the instance fleet.</p>
+     */
+    inline void SetInstanceFleetId(const Aws::String& value) { m_instanceFleetIdHasBeenSet = true; m_instanceFleetId = value; }
+
+    /**
+     * <p>The unique identifier of the instance fleet.</p>
+     */
+    inline void SetInstanceFleetId(Aws::String&& value) { m_instanceFleetIdHasBeenSet = true; m_instanceFleetId = value; }
+
+    /**
+     * <p>The unique identifier of the instance fleet.</p>
+     */
+    inline void SetInstanceFleetId(const char* value) { m_instanceFleetIdHasBeenSet = true; m_instanceFleetId.assign(value); }
+
+    /**
+     * <p>The unique identifier of the instance fleet.</p>
+     */
+    inline ListInstancesRequest& WithInstanceFleetId(const Aws::String& value) { SetInstanceFleetId(value); return *this;}
+
+    /**
+     * <p>The unique identifier of the instance fleet.</p>
+     */
+    inline ListInstancesRequest& WithInstanceFleetId(Aws::String&& value) { SetInstanceFleetId(value); return *this;}
+
+    /**
+     * <p>The unique identifier of the instance fleet.</p>
+     */
+    inline ListInstancesRequest& WithInstanceFleetId(const char* value) { SetInstanceFleetId(value); return *this;}
+
+    /**
+     * <p>The node type of the instance fleet. For example MASTER, CORE, or TASK.</p>
+     */
+    inline const InstanceFleetType& GetInstanceFleetType() const{ return m_instanceFleetType; }
+
+    /**
+     * <p>The node type of the instance fleet. For example MASTER, CORE, or TASK.</p>
+     */
+    inline void SetInstanceFleetType(const InstanceFleetType& value) { m_instanceFleetTypeHasBeenSet = true; m_instanceFleetType = value; }
+
+    /**
+     * <p>The node type of the instance fleet. For example MASTER, CORE, or TASK.</p>
+     */
+    inline void SetInstanceFleetType(InstanceFleetType&& value) { m_instanceFleetTypeHasBeenSet = true; m_instanceFleetType = value; }
+
+    /**
+     * <p>The node type of the instance fleet. For example MASTER, CORE, or TASK.</p>
+     */
+    inline ListInstancesRequest& WithInstanceFleetType(const InstanceFleetType& value) { SetInstanceFleetType(value); return *this;}
+
+    /**
+     * <p>The node type of the instance fleet. For example MASTER, CORE, or TASK.</p>
+     */
+    inline ListInstancesRequest& WithInstanceFleetType(InstanceFleetType&& value) { SetInstanceFleetType(value); return *this;}
+
+    /**
      * <p>A list of instance states that will filter the instances returned with this
      * request.</p>
      */
@@ -229,6 +290,10 @@ namespace Model
     bool m_instanceGroupIdHasBeenSet;
     Aws::Vector<InstanceGroupType> m_instanceGroupTypes;
     bool m_instanceGroupTypesHasBeenSet;
+    Aws::String m_instanceFleetId;
+    bool m_instanceFleetIdHasBeenSet;
+    InstanceFleetType m_instanceFleetType;
+    bool m_instanceFleetTypeHasBeenSet;
     Aws::Vector<InstanceState> m_instanceStates;
     bool m_instanceStatesHasBeenSet;
     Aws::String m_marker;

@@ -355,116 +355,111 @@ namespace Model
     inline RunJobFlowRequest& WithReleaseLabel(const char* value) { SetReleaseLabel(value); return *this;}
 
     /**
-     * <p>A specification of the number and type of Amazon EC2 instances on which to
-     * run the job flow.</p>
+     * <p>A specification of the number and type of Amazon EC2 instances.</p>
      */
     inline const JobFlowInstancesConfig& GetInstances() const{ return m_instances; }
 
     /**
-     * <p>A specification of the number and type of Amazon EC2 instances on which to
-     * run the job flow.</p>
+     * <p>A specification of the number and type of Amazon EC2 instances.</p>
      */
     inline void SetInstances(const JobFlowInstancesConfig& value) { m_instancesHasBeenSet = true; m_instances = value; }
 
     /**
-     * <p>A specification of the number and type of Amazon EC2 instances on which to
-     * run the job flow.</p>
+     * <p>A specification of the number and type of Amazon EC2 instances.</p>
      */
     inline void SetInstances(JobFlowInstancesConfig&& value) { m_instancesHasBeenSet = true; m_instances = value; }
 
     /**
-     * <p>A specification of the number and type of Amazon EC2 instances on which to
-     * run the job flow.</p>
+     * <p>A specification of the number and type of Amazon EC2 instances.</p>
      */
     inline RunJobFlowRequest& WithInstances(const JobFlowInstancesConfig& value) { SetInstances(value); return *this;}
 
     /**
-     * <p>A specification of the number and type of Amazon EC2 instances on which to
-     * run the job flow.</p>
+     * <p>A specification of the number and type of Amazon EC2 instances.</p>
      */
     inline RunJobFlowRequest& WithInstances(JobFlowInstancesConfig&& value) { SetInstances(value); return *this;}
 
     /**
-     * <p>A list of steps to be executed by the job flow.</p>
+     * <p>A list of steps to run.</p>
      */
     inline const Aws::Vector<StepConfig>& GetSteps() const{ return m_steps; }
 
     /**
-     * <p>A list of steps to be executed by the job flow.</p>
+     * <p>A list of steps to run.</p>
      */
     inline void SetSteps(const Aws::Vector<StepConfig>& value) { m_stepsHasBeenSet = true; m_steps = value; }
 
     /**
-     * <p>A list of steps to be executed by the job flow.</p>
+     * <p>A list of steps to run.</p>
      */
     inline void SetSteps(Aws::Vector<StepConfig>&& value) { m_stepsHasBeenSet = true; m_steps = value; }
 
     /**
-     * <p>A list of steps to be executed by the job flow.</p>
+     * <p>A list of steps to run.</p>
      */
     inline RunJobFlowRequest& WithSteps(const Aws::Vector<StepConfig>& value) { SetSteps(value); return *this;}
 
     /**
-     * <p>A list of steps to be executed by the job flow.</p>
+     * <p>A list of steps to run.</p>
      */
     inline RunJobFlowRequest& WithSteps(Aws::Vector<StepConfig>&& value) { SetSteps(value); return *this;}
 
     /**
-     * <p>A list of steps to be executed by the job flow.</p>
+     * <p>A list of steps to run.</p>
      */
     inline RunJobFlowRequest& AddSteps(const StepConfig& value) { m_stepsHasBeenSet = true; m_steps.push_back(value); return *this; }
 
     /**
-     * <p>A list of steps to be executed by the job flow.</p>
+     * <p>A list of steps to run.</p>
      */
     inline RunJobFlowRequest& AddSteps(StepConfig&& value) { m_stepsHasBeenSet = true; m_steps.push_back(value); return *this; }
 
     /**
-     * <p>A list of bootstrap actions that will be run before Hadoop is started on the
-     * cluster nodes.</p>
+     * <p>A list of bootstrap actions to run before Hadoop starts on the cluster
+     * nodes.</p>
      */
     inline const Aws::Vector<BootstrapActionConfig>& GetBootstrapActions() const{ return m_bootstrapActions; }
 
     /**
-     * <p>A list of bootstrap actions that will be run before Hadoop is started on the
-     * cluster nodes.</p>
+     * <p>A list of bootstrap actions to run before Hadoop starts on the cluster
+     * nodes.</p>
      */
     inline void SetBootstrapActions(const Aws::Vector<BootstrapActionConfig>& value) { m_bootstrapActionsHasBeenSet = true; m_bootstrapActions = value; }
 
     /**
-     * <p>A list of bootstrap actions that will be run before Hadoop is started on the
-     * cluster nodes.</p>
+     * <p>A list of bootstrap actions to run before Hadoop starts on the cluster
+     * nodes.</p>
      */
     inline void SetBootstrapActions(Aws::Vector<BootstrapActionConfig>&& value) { m_bootstrapActionsHasBeenSet = true; m_bootstrapActions = value; }
 
     /**
-     * <p>A list of bootstrap actions that will be run before Hadoop is started on the
-     * cluster nodes.</p>
+     * <p>A list of bootstrap actions to run before Hadoop starts on the cluster
+     * nodes.</p>
      */
     inline RunJobFlowRequest& WithBootstrapActions(const Aws::Vector<BootstrapActionConfig>& value) { SetBootstrapActions(value); return *this;}
 
     /**
-     * <p>A list of bootstrap actions that will be run before Hadoop is started on the
-     * cluster nodes.</p>
+     * <p>A list of bootstrap actions to run before Hadoop starts on the cluster
+     * nodes.</p>
      */
     inline RunJobFlowRequest& WithBootstrapActions(Aws::Vector<BootstrapActionConfig>&& value) { SetBootstrapActions(value); return *this;}
 
     /**
-     * <p>A list of bootstrap actions that will be run before Hadoop is started on the
-     * cluster nodes.</p>
+     * <p>A list of bootstrap actions to run before Hadoop starts on the cluster
+     * nodes.</p>
      */
     inline RunJobFlowRequest& AddBootstrapActions(const BootstrapActionConfig& value) { m_bootstrapActionsHasBeenSet = true; m_bootstrapActions.push_back(value); return *this; }
 
     /**
-     * <p>A list of bootstrap actions that will be run before Hadoop is started on the
-     * cluster nodes.</p>
+     * <p>A list of bootstrap actions to run before Hadoop starts on the cluster
+     * nodes.</p>
      */
     inline RunJobFlowRequest& AddBootstrapActions(BootstrapActionConfig&& value) { m_bootstrapActionsHasBeenSet = true; m_bootstrapActions.push_back(value); return *this; }
 
     /**
      * <note> <p>For Amazon EMR releases 3.x and 2.x. For Amazon EMR releases 4.x and
      * greater, use Applications.</p> </note> <p>A list of strings that indicates
-     * third-party software to use with the job flow. For more information, see <a
+     * third-party software to use. For more information, see <a
      * href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-supported-products.html">Use
      * Third Party Applications with Amazon EMR</a>. Currently supported values
      * are:</p> <ul> <li> <p>"mapr-m3" - launch the job flow using MapR M3 Edition.</p>
@@ -476,7 +471,7 @@ namespace Model
     /**
      * <note> <p>For Amazon EMR releases 3.x and 2.x. For Amazon EMR releases 4.x and
      * greater, use Applications.</p> </note> <p>A list of strings that indicates
-     * third-party software to use with the job flow. For more information, see <a
+     * third-party software to use. For more information, see <a
      * href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-supported-products.html">Use
      * Third Party Applications with Amazon EMR</a>. Currently supported values
      * are:</p> <ul> <li> <p>"mapr-m3" - launch the job flow using MapR M3 Edition.</p>
@@ -488,7 +483,7 @@ namespace Model
     /**
      * <note> <p>For Amazon EMR releases 3.x and 2.x. For Amazon EMR releases 4.x and
      * greater, use Applications.</p> </note> <p>A list of strings that indicates
-     * third-party software to use with the job flow. For more information, see <a
+     * third-party software to use. For more information, see <a
      * href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-supported-products.html">Use
      * Third Party Applications with Amazon EMR</a>. Currently supported values
      * are:</p> <ul> <li> <p>"mapr-m3" - launch the job flow using MapR M3 Edition.</p>
@@ -500,7 +495,7 @@ namespace Model
     /**
      * <note> <p>For Amazon EMR releases 3.x and 2.x. For Amazon EMR releases 4.x and
      * greater, use Applications.</p> </note> <p>A list of strings that indicates
-     * third-party software to use with the job flow. For more information, see <a
+     * third-party software to use. For more information, see <a
      * href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-supported-products.html">Use
      * Third Party Applications with Amazon EMR</a>. Currently supported values
      * are:</p> <ul> <li> <p>"mapr-m3" - launch the job flow using MapR M3 Edition.</p>
@@ -512,7 +507,7 @@ namespace Model
     /**
      * <note> <p>For Amazon EMR releases 3.x and 2.x. For Amazon EMR releases 4.x and
      * greater, use Applications.</p> </note> <p>A list of strings that indicates
-     * third-party software to use with the job flow. For more information, see <a
+     * third-party software to use. For more information, see <a
      * href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-supported-products.html">Use
      * Third Party Applications with Amazon EMR</a>. Currently supported values
      * are:</p> <ul> <li> <p>"mapr-m3" - launch the job flow using MapR M3 Edition.</p>
@@ -524,7 +519,7 @@ namespace Model
     /**
      * <note> <p>For Amazon EMR releases 3.x and 2.x. For Amazon EMR releases 4.x and
      * greater, use Applications.</p> </note> <p>A list of strings that indicates
-     * third-party software to use with the job flow. For more information, see <a
+     * third-party software to use. For more information, see <a
      * href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-supported-products.html">Use
      * Third Party Applications with Amazon EMR</a>. Currently supported values
      * are:</p> <ul> <li> <p>"mapr-m3" - launch the job flow using MapR M3 Edition.</p>
@@ -536,7 +531,7 @@ namespace Model
     /**
      * <note> <p>For Amazon EMR releases 3.x and 2.x. For Amazon EMR releases 4.x and
      * greater, use Applications.</p> </note> <p>A list of strings that indicates
-     * third-party software to use with the job flow. For more information, see <a
+     * third-party software to use. For more information, see <a
      * href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-supported-products.html">Use
      * Third Party Applications with Amazon EMR</a>. Currently supported values
      * are:</p> <ul> <li> <p>"mapr-m3" - launch the job flow using MapR M3 Edition.</p>
@@ -548,7 +543,7 @@ namespace Model
     /**
      * <note> <p>For Amazon EMR releases 3.x and 2.x. For Amazon EMR releases 4.x and
      * greater, use Applications.</p> </note> <p>A list of strings that indicates
-     * third-party software to use with the job flow. For more information, see <a
+     * third-party software to use. For more information, see <a
      * href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-supported-products.html">Use
      * Third Party Applications with Amazon EMR</a>. Currently supported values
      * are:</p> <ul> <li> <p>"mapr-m3" - launch the job flow using MapR M3 Edition.</p>
@@ -562,19 +557,19 @@ namespace Model
      * greater, use Applications.</p> </note> <p>A list of strings that indicates
      * third-party software to use with the job flow that accepts a user argument list.
      * EMR accepts and forwards the argument list to the corresponding installation
-     * script as bootstrap action arguments. For more information, see <a
-     * href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-mapr.html">Launch
-     * a Job Flow on the MapR Distribution for Hadoop</a>. Currently supported values
-     * are:</p> <ul> <li> <p>"mapr-m3" - launch the cluster using MapR M3 Edition.</p>
-     * </li> <li> <p>"mapr-m5" - launch the cluster using MapR M5 Edition.</p> </li>
-     * <li> <p>"mapr" with the user arguments specifying "--edition,m3" or
-     * "--edition,m5" - launch the job flow using MapR M3 or M5 Edition
-     * respectively.</p> </li> <li> <p>"mapr-m7" - launch the cluster using MapR M7
-     * Edition.</p> </li> <li> <p>"hunk" - launch the cluster with the Hunk Big Data
-     * Analtics Platform.</p> </li> <li> <p>"hue"- launch the cluster with Hue
-     * installed.</p> </li> <li> <p>"spark" - launch the cluster with Apache Spark
-     * installed.</p> </li> <li> <p>"ganglia" - launch the cluster with the Ganglia
-     * Monitoring System installed.</p> </li> </ul>
+     * script as bootstrap action arguments. For more information, see "Launch a Job
+     * Flow on the MapR Distribution for Hadoop" in the <a
+     * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.com/emr/latest/DeveloperGuide/emr-dg.pdf">Amazon
+     * EMR Developer Guide</a>. Supported values are:</p> <ul> <li> <p>"mapr-m3" -
+     * launch the cluster using MapR M3 Edition.</p> </li> <li> <p>"mapr-m5" - launch
+     * the cluster using MapR M5 Edition.</p> </li> <li> <p>"mapr" with the user
+     * arguments specifying "--edition,m3" or "--edition,m5" - launch the job flow
+     * using MapR M3 or M5 Edition respectively.</p> </li> <li> <p>"mapr-m7" - launch
+     * the cluster using MapR M7 Edition.</p> </li> <li> <p>"hunk" - launch the cluster
+     * with the Hunk Big Data Analtics Platform.</p> </li> <li> <p>"hue"- launch the
+     * cluster with Hue installed.</p> </li> <li> <p>"spark" - launch the cluster with
+     * Apache Spark installed.</p> </li> <li> <p>"ganglia" - launch the cluster with
+     * the Ganglia Monitoring System installed.</p> </li> </ul>
      */
     inline const Aws::Vector<SupportedProductConfig>& GetNewSupportedProducts() const{ return m_newSupportedProducts; }
 
@@ -583,19 +578,19 @@ namespace Model
      * greater, use Applications.</p> </note> <p>A list of strings that indicates
      * third-party software to use with the job flow that accepts a user argument list.
      * EMR accepts and forwards the argument list to the corresponding installation
-     * script as bootstrap action arguments. For more information, see <a
-     * href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-mapr.html">Launch
-     * a Job Flow on the MapR Distribution for Hadoop</a>. Currently supported values
-     * are:</p> <ul> <li> <p>"mapr-m3" - launch the cluster using MapR M3 Edition.</p>
-     * </li> <li> <p>"mapr-m5" - launch the cluster using MapR M5 Edition.</p> </li>
-     * <li> <p>"mapr" with the user arguments specifying "--edition,m3" or
-     * "--edition,m5" - launch the job flow using MapR M3 or M5 Edition
-     * respectively.</p> </li> <li> <p>"mapr-m7" - launch the cluster using MapR M7
-     * Edition.</p> </li> <li> <p>"hunk" - launch the cluster with the Hunk Big Data
-     * Analtics Platform.</p> </li> <li> <p>"hue"- launch the cluster with Hue
-     * installed.</p> </li> <li> <p>"spark" - launch the cluster with Apache Spark
-     * installed.</p> </li> <li> <p>"ganglia" - launch the cluster with the Ganglia
-     * Monitoring System installed.</p> </li> </ul>
+     * script as bootstrap action arguments. For more information, see "Launch a Job
+     * Flow on the MapR Distribution for Hadoop" in the <a
+     * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.com/emr/latest/DeveloperGuide/emr-dg.pdf">Amazon
+     * EMR Developer Guide</a>. Supported values are:</p> <ul> <li> <p>"mapr-m3" -
+     * launch the cluster using MapR M3 Edition.</p> </li> <li> <p>"mapr-m5" - launch
+     * the cluster using MapR M5 Edition.</p> </li> <li> <p>"mapr" with the user
+     * arguments specifying "--edition,m3" or "--edition,m5" - launch the job flow
+     * using MapR M3 or M5 Edition respectively.</p> </li> <li> <p>"mapr-m7" - launch
+     * the cluster using MapR M7 Edition.</p> </li> <li> <p>"hunk" - launch the cluster
+     * with the Hunk Big Data Analtics Platform.</p> </li> <li> <p>"hue"- launch the
+     * cluster with Hue installed.</p> </li> <li> <p>"spark" - launch the cluster with
+     * Apache Spark installed.</p> </li> <li> <p>"ganglia" - launch the cluster with
+     * the Ganglia Monitoring System installed.</p> </li> </ul>
      */
     inline void SetNewSupportedProducts(const Aws::Vector<SupportedProductConfig>& value) { m_newSupportedProductsHasBeenSet = true; m_newSupportedProducts = value; }
 
@@ -604,19 +599,19 @@ namespace Model
      * greater, use Applications.</p> </note> <p>A list of strings that indicates
      * third-party software to use with the job flow that accepts a user argument list.
      * EMR accepts and forwards the argument list to the corresponding installation
-     * script as bootstrap action arguments. For more information, see <a
-     * href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-mapr.html">Launch
-     * a Job Flow on the MapR Distribution for Hadoop</a>. Currently supported values
-     * are:</p> <ul> <li> <p>"mapr-m3" - launch the cluster using MapR M3 Edition.</p>
-     * </li> <li> <p>"mapr-m5" - launch the cluster using MapR M5 Edition.</p> </li>
-     * <li> <p>"mapr" with the user arguments specifying "--edition,m3" or
-     * "--edition,m5" - launch the job flow using MapR M3 or M5 Edition
-     * respectively.</p> </li> <li> <p>"mapr-m7" - launch the cluster using MapR M7
-     * Edition.</p> </li> <li> <p>"hunk" - launch the cluster with the Hunk Big Data
-     * Analtics Platform.</p> </li> <li> <p>"hue"- launch the cluster with Hue
-     * installed.</p> </li> <li> <p>"spark" - launch the cluster with Apache Spark
-     * installed.</p> </li> <li> <p>"ganglia" - launch the cluster with the Ganglia
-     * Monitoring System installed.</p> </li> </ul>
+     * script as bootstrap action arguments. For more information, see "Launch a Job
+     * Flow on the MapR Distribution for Hadoop" in the <a
+     * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.com/emr/latest/DeveloperGuide/emr-dg.pdf">Amazon
+     * EMR Developer Guide</a>. Supported values are:</p> <ul> <li> <p>"mapr-m3" -
+     * launch the cluster using MapR M3 Edition.</p> </li> <li> <p>"mapr-m5" - launch
+     * the cluster using MapR M5 Edition.</p> </li> <li> <p>"mapr" with the user
+     * arguments specifying "--edition,m3" or "--edition,m5" - launch the job flow
+     * using MapR M3 or M5 Edition respectively.</p> </li> <li> <p>"mapr-m7" - launch
+     * the cluster using MapR M7 Edition.</p> </li> <li> <p>"hunk" - launch the cluster
+     * with the Hunk Big Data Analtics Platform.</p> </li> <li> <p>"hue"- launch the
+     * cluster with Hue installed.</p> </li> <li> <p>"spark" - launch the cluster with
+     * Apache Spark installed.</p> </li> <li> <p>"ganglia" - launch the cluster with
+     * the Ganglia Monitoring System installed.</p> </li> </ul>
      */
     inline void SetNewSupportedProducts(Aws::Vector<SupportedProductConfig>&& value) { m_newSupportedProductsHasBeenSet = true; m_newSupportedProducts = value; }
 
@@ -625,19 +620,19 @@ namespace Model
      * greater, use Applications.</p> </note> <p>A list of strings that indicates
      * third-party software to use with the job flow that accepts a user argument list.
      * EMR accepts and forwards the argument list to the corresponding installation
-     * script as bootstrap action arguments. For more information, see <a
-     * href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-mapr.html">Launch
-     * a Job Flow on the MapR Distribution for Hadoop</a>. Currently supported values
-     * are:</p> <ul> <li> <p>"mapr-m3" - launch the cluster using MapR M3 Edition.</p>
-     * </li> <li> <p>"mapr-m5" - launch the cluster using MapR M5 Edition.</p> </li>
-     * <li> <p>"mapr" with the user arguments specifying "--edition,m3" or
-     * "--edition,m5" - launch the job flow using MapR M3 or M5 Edition
-     * respectively.</p> </li> <li> <p>"mapr-m7" - launch the cluster using MapR M7
-     * Edition.</p> </li> <li> <p>"hunk" - launch the cluster with the Hunk Big Data
-     * Analtics Platform.</p> </li> <li> <p>"hue"- launch the cluster with Hue
-     * installed.</p> </li> <li> <p>"spark" - launch the cluster with Apache Spark
-     * installed.</p> </li> <li> <p>"ganglia" - launch the cluster with the Ganglia
-     * Monitoring System installed.</p> </li> </ul>
+     * script as bootstrap action arguments. For more information, see "Launch a Job
+     * Flow on the MapR Distribution for Hadoop" in the <a
+     * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.com/emr/latest/DeveloperGuide/emr-dg.pdf">Amazon
+     * EMR Developer Guide</a>. Supported values are:</p> <ul> <li> <p>"mapr-m3" -
+     * launch the cluster using MapR M3 Edition.</p> </li> <li> <p>"mapr-m5" - launch
+     * the cluster using MapR M5 Edition.</p> </li> <li> <p>"mapr" with the user
+     * arguments specifying "--edition,m3" or "--edition,m5" - launch the job flow
+     * using MapR M3 or M5 Edition respectively.</p> </li> <li> <p>"mapr-m7" - launch
+     * the cluster using MapR M7 Edition.</p> </li> <li> <p>"hunk" - launch the cluster
+     * with the Hunk Big Data Analtics Platform.</p> </li> <li> <p>"hue"- launch the
+     * cluster with Hue installed.</p> </li> <li> <p>"spark" - launch the cluster with
+     * Apache Spark installed.</p> </li> <li> <p>"ganglia" - launch the cluster with
+     * the Ganglia Monitoring System installed.</p> </li> </ul>
      */
     inline RunJobFlowRequest& WithNewSupportedProducts(const Aws::Vector<SupportedProductConfig>& value) { SetNewSupportedProducts(value); return *this;}
 
@@ -646,19 +641,19 @@ namespace Model
      * greater, use Applications.</p> </note> <p>A list of strings that indicates
      * third-party software to use with the job flow that accepts a user argument list.
      * EMR accepts and forwards the argument list to the corresponding installation
-     * script as bootstrap action arguments. For more information, see <a
-     * href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-mapr.html">Launch
-     * a Job Flow on the MapR Distribution for Hadoop</a>. Currently supported values
-     * are:</p> <ul> <li> <p>"mapr-m3" - launch the cluster using MapR M3 Edition.</p>
-     * </li> <li> <p>"mapr-m5" - launch the cluster using MapR M5 Edition.</p> </li>
-     * <li> <p>"mapr" with the user arguments specifying "--edition,m3" or
-     * "--edition,m5" - launch the job flow using MapR M3 or M5 Edition
-     * respectively.</p> </li> <li> <p>"mapr-m7" - launch the cluster using MapR M7
-     * Edition.</p> </li> <li> <p>"hunk" - launch the cluster with the Hunk Big Data
-     * Analtics Platform.</p> </li> <li> <p>"hue"- launch the cluster with Hue
-     * installed.</p> </li> <li> <p>"spark" - launch the cluster with Apache Spark
-     * installed.</p> </li> <li> <p>"ganglia" - launch the cluster with the Ganglia
-     * Monitoring System installed.</p> </li> </ul>
+     * script as bootstrap action arguments. For more information, see "Launch a Job
+     * Flow on the MapR Distribution for Hadoop" in the <a
+     * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.com/emr/latest/DeveloperGuide/emr-dg.pdf">Amazon
+     * EMR Developer Guide</a>. Supported values are:</p> <ul> <li> <p>"mapr-m3" -
+     * launch the cluster using MapR M3 Edition.</p> </li> <li> <p>"mapr-m5" - launch
+     * the cluster using MapR M5 Edition.</p> </li> <li> <p>"mapr" with the user
+     * arguments specifying "--edition,m3" or "--edition,m5" - launch the job flow
+     * using MapR M3 or M5 Edition respectively.</p> </li> <li> <p>"mapr-m7" - launch
+     * the cluster using MapR M7 Edition.</p> </li> <li> <p>"hunk" - launch the cluster
+     * with the Hunk Big Data Analtics Platform.</p> </li> <li> <p>"hue"- launch the
+     * cluster with Hue installed.</p> </li> <li> <p>"spark" - launch the cluster with
+     * Apache Spark installed.</p> </li> <li> <p>"ganglia" - launch the cluster with
+     * the Ganglia Monitoring System installed.</p> </li> </ul>
      */
     inline RunJobFlowRequest& WithNewSupportedProducts(Aws::Vector<SupportedProductConfig>&& value) { SetNewSupportedProducts(value); return *this;}
 
@@ -667,19 +662,19 @@ namespace Model
      * greater, use Applications.</p> </note> <p>A list of strings that indicates
      * third-party software to use with the job flow that accepts a user argument list.
      * EMR accepts and forwards the argument list to the corresponding installation
-     * script as bootstrap action arguments. For more information, see <a
-     * href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-mapr.html">Launch
-     * a Job Flow on the MapR Distribution for Hadoop</a>. Currently supported values
-     * are:</p> <ul> <li> <p>"mapr-m3" - launch the cluster using MapR M3 Edition.</p>
-     * </li> <li> <p>"mapr-m5" - launch the cluster using MapR M5 Edition.</p> </li>
-     * <li> <p>"mapr" with the user arguments specifying "--edition,m3" or
-     * "--edition,m5" - launch the job flow using MapR M3 or M5 Edition
-     * respectively.</p> </li> <li> <p>"mapr-m7" - launch the cluster using MapR M7
-     * Edition.</p> </li> <li> <p>"hunk" - launch the cluster with the Hunk Big Data
-     * Analtics Platform.</p> </li> <li> <p>"hue"- launch the cluster with Hue
-     * installed.</p> </li> <li> <p>"spark" - launch the cluster with Apache Spark
-     * installed.</p> </li> <li> <p>"ganglia" - launch the cluster with the Ganglia
-     * Monitoring System installed.</p> </li> </ul>
+     * script as bootstrap action arguments. For more information, see "Launch a Job
+     * Flow on the MapR Distribution for Hadoop" in the <a
+     * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.com/emr/latest/DeveloperGuide/emr-dg.pdf">Amazon
+     * EMR Developer Guide</a>. Supported values are:</p> <ul> <li> <p>"mapr-m3" -
+     * launch the cluster using MapR M3 Edition.</p> </li> <li> <p>"mapr-m5" - launch
+     * the cluster using MapR M5 Edition.</p> </li> <li> <p>"mapr" with the user
+     * arguments specifying "--edition,m3" or "--edition,m5" - launch the job flow
+     * using MapR M3 or M5 Edition respectively.</p> </li> <li> <p>"mapr-m7" - launch
+     * the cluster using MapR M7 Edition.</p> </li> <li> <p>"hunk" - launch the cluster
+     * with the Hunk Big Data Analtics Platform.</p> </li> <li> <p>"hue"- launch the
+     * cluster with Hue installed.</p> </li> <li> <p>"spark" - launch the cluster with
+     * Apache Spark installed.</p> </li> <li> <p>"ganglia" - launch the cluster with
+     * the Ganglia Monitoring System installed.</p> </li> </ul>
      */
     inline RunJobFlowRequest& AddNewSupportedProducts(const SupportedProductConfig& value) { m_newSupportedProductsHasBeenSet = true; m_newSupportedProducts.push_back(value); return *this; }
 
@@ -688,19 +683,19 @@ namespace Model
      * greater, use Applications.</p> </note> <p>A list of strings that indicates
      * third-party software to use with the job flow that accepts a user argument list.
      * EMR accepts and forwards the argument list to the corresponding installation
-     * script as bootstrap action arguments. For more information, see <a
-     * href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-mapr.html">Launch
-     * a Job Flow on the MapR Distribution for Hadoop</a>. Currently supported values
-     * are:</p> <ul> <li> <p>"mapr-m3" - launch the cluster using MapR M3 Edition.</p>
-     * </li> <li> <p>"mapr-m5" - launch the cluster using MapR M5 Edition.</p> </li>
-     * <li> <p>"mapr" with the user arguments specifying "--edition,m3" or
-     * "--edition,m5" - launch the job flow using MapR M3 or M5 Edition
-     * respectively.</p> </li> <li> <p>"mapr-m7" - launch the cluster using MapR M7
-     * Edition.</p> </li> <li> <p>"hunk" - launch the cluster with the Hunk Big Data
-     * Analtics Platform.</p> </li> <li> <p>"hue"- launch the cluster with Hue
-     * installed.</p> </li> <li> <p>"spark" - launch the cluster with Apache Spark
-     * installed.</p> </li> <li> <p>"ganglia" - launch the cluster with the Ganglia
-     * Monitoring System installed.</p> </li> </ul>
+     * script as bootstrap action arguments. For more information, see "Launch a Job
+     * Flow on the MapR Distribution for Hadoop" in the <a
+     * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.com/emr/latest/DeveloperGuide/emr-dg.pdf">Amazon
+     * EMR Developer Guide</a>. Supported values are:</p> <ul> <li> <p>"mapr-m3" -
+     * launch the cluster using MapR M3 Edition.</p> </li> <li> <p>"mapr-m5" - launch
+     * the cluster using MapR M5 Edition.</p> </li> <li> <p>"mapr" with the user
+     * arguments specifying "--edition,m3" or "--edition,m5" - launch the job flow
+     * using MapR M3 or M5 Edition respectively.</p> </li> <li> <p>"mapr-m7" - launch
+     * the cluster using MapR M7 Edition.</p> </li> <li> <p>"hunk" - launch the cluster
+     * with the Hunk Big Data Analtics Platform.</p> </li> <li> <p>"hue"- launch the
+     * cluster with Hue installed.</p> </li> <li> <p>"spark" - launch the cluster with
+     * Apache Spark installed.</p> </li> <li> <p>"ganglia" - launch the cluster with
+     * the Ganglia Monitoring System installed.</p> </li> </ul>
      */
     inline RunJobFlowRequest& AddNewSupportedProducts(SupportedProductConfig&& value) { m_newSupportedProductsHasBeenSet = true; m_newSupportedProducts.push_back(value); return *this; }
 
@@ -796,29 +791,29 @@ namespace Model
     inline RunJobFlowRequest& AddConfigurations(Configuration&& value) { m_configurationsHasBeenSet = true; m_configurations.push_back(value); return *this; }
 
     /**
-     * <p>Whether the job flow is visible to all IAM users of the AWS account
-     * associated with the job flow. If this value is set to <code>true</code>, all IAM
-     * users of that AWS account can view and (if they have the proper policy
-     * permissions set) manage the job flow. If it is set to <code>false</code>, only
-     * the IAM user that created the job flow can view and manage it.</p>
+     * <p>Whether the cluster is visible to all IAM users of the AWS account associated
+     * with the cluster. If this value is set to <code>true</code>, all IAM users of
+     * that AWS account can view and (if they have the proper policy permissions set)
+     * manage the cluster. If it is set to <code>false</code>, only the IAM user that
+     * created the cluster can view and manage it.</p>
      */
     inline bool GetVisibleToAllUsers() const{ return m_visibleToAllUsers; }
 
     /**
-     * <p>Whether the job flow is visible to all IAM users of the AWS account
-     * associated with the job flow. If this value is set to <code>true</code>, all IAM
-     * users of that AWS account can view and (if they have the proper policy
-     * permissions set) manage the job flow. If it is set to <code>false</code>, only
-     * the IAM user that created the job flow can view and manage it.</p>
+     * <p>Whether the cluster is visible to all IAM users of the AWS account associated
+     * with the cluster. If this value is set to <code>true</code>, all IAM users of
+     * that AWS account can view and (if they have the proper policy permissions set)
+     * manage the cluster. If it is set to <code>false</code>, only the IAM user that
+     * created the cluster can view and manage it.</p>
      */
     inline void SetVisibleToAllUsers(bool value) { m_visibleToAllUsersHasBeenSet = true; m_visibleToAllUsers = value; }
 
     /**
-     * <p>Whether the job flow is visible to all IAM users of the AWS account
-     * associated with the job flow. If this value is set to <code>true</code>, all IAM
-     * users of that AWS account can view and (if they have the proper policy
-     * permissions set) manage the job flow. If it is set to <code>false</code>, only
-     * the IAM user that created the job flow can view and manage it.</p>
+     * <p>Whether the cluster is visible to all IAM users of the AWS account associated
+     * with the cluster. If this value is set to <code>true</code>, all IAM users of
+     * that AWS account can view and (if they have the proper policy permissions set)
+     * manage the cluster. If it is set to <code>false</code>, only the IAM user that
+     * created the cluster can view and manage it.</p>
      */
     inline RunJobFlowRequest& WithVisibleToAllUsers(bool value) { SetVisibleToAllUsers(value); return *this;}
 

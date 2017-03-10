@@ -33,7 +33,7 @@ namespace Model
 {
 
   /**
-   * <p>Specification of a job flow step.</p><p><h3>See Also:</h3>   <a
+   * <p>Specification of a cluster (job flow) step.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/StepConfig">AWS
    * API Reference</a></p>
    */
@@ -46,87 +46,87 @@ namespace Model
     Aws::Utils::Json::JsonValue Jsonize() const;
 
     /**
-     * <p>The name of the job flow step.</p>
+     * <p>The name of the step.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>The name of the job flow step.</p>
+     * <p>The name of the step.</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>The name of the job flow step.</p>
+     * <p>The name of the step.</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>The name of the job flow step.</p>
+     * <p>The name of the step.</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>The name of the job flow step.</p>
+     * <p>The name of the step.</p>
      */
     inline StepConfig& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>The name of the job flow step.</p>
+     * <p>The name of the step.</p>
      */
     inline StepConfig& WithName(Aws::String&& value) { SetName(value); return *this;}
 
     /**
-     * <p>The name of the job flow step.</p>
+     * <p>The name of the step.</p>
      */
     inline StepConfig& WithName(const char* value) { SetName(value); return *this;}
 
     /**
-     * <p>The action to take if the job flow step fails.</p>
+     * <p>The action to take if the step fails.</p>
      */
     inline const ActionOnFailure& GetActionOnFailure() const{ return m_actionOnFailure; }
 
     /**
-     * <p>The action to take if the job flow step fails.</p>
+     * <p>The action to take if the step fails.</p>
      */
     inline void SetActionOnFailure(const ActionOnFailure& value) { m_actionOnFailureHasBeenSet = true; m_actionOnFailure = value; }
 
     /**
-     * <p>The action to take if the job flow step fails.</p>
+     * <p>The action to take if the step fails.</p>
      */
     inline void SetActionOnFailure(ActionOnFailure&& value) { m_actionOnFailureHasBeenSet = true; m_actionOnFailure = value; }
 
     /**
-     * <p>The action to take if the job flow step fails.</p>
+     * <p>The action to take if the step fails.</p>
      */
     inline StepConfig& WithActionOnFailure(const ActionOnFailure& value) { SetActionOnFailure(value); return *this;}
 
     /**
-     * <p>The action to take if the job flow step fails.</p>
+     * <p>The action to take if the step fails.</p>
      */
     inline StepConfig& WithActionOnFailure(ActionOnFailure&& value) { SetActionOnFailure(value); return *this;}
 
     /**
-     * <p>The JAR file used for the job flow step.</p>
+     * <p>The JAR file used for the step.</p>
      */
     inline const HadoopJarStepConfig& GetHadoopJarStep() const{ return m_hadoopJarStep; }
 
     /**
-     * <p>The JAR file used for the job flow step.</p>
+     * <p>The JAR file used for the step.</p>
      */
     inline void SetHadoopJarStep(const HadoopJarStepConfig& value) { m_hadoopJarStepHasBeenSet = true; m_hadoopJarStep = value; }
 
     /**
-     * <p>The JAR file used for the job flow step.</p>
+     * <p>The JAR file used for the step.</p>
      */
     inline void SetHadoopJarStep(HadoopJarStepConfig&& value) { m_hadoopJarStepHasBeenSet = true; m_hadoopJarStep = value; }
 
     /**
-     * <p>The JAR file used for the job flow step.</p>
+     * <p>The JAR file used for the step.</p>
      */
     inline StepConfig& WithHadoopJarStep(const HadoopJarStepConfig& value) { SetHadoopJarStep(value); return *this;}
 
     /**
-     * <p>The JAR file used for the job flow step.</p>
+     * <p>The JAR file used for the step.</p>
      */
     inline StepConfig& WithHadoopJarStep(HadoopJarStepConfig&& value) { SetHadoopJarStep(value); return *this;}
 

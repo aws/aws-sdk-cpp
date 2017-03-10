@@ -140,7 +140,7 @@ namespace Model
     inline ClusterSummary& WithStatus(ClusterStatus&& value) { SetStatus(value); return *this;}
 
     /**
-     * <p>An approximation of the cost of the job flow, represented in m1.small/hours.
+     * <p>An approximation of the cost of the cluster, represented in m1.small/hours.
      * This value is incremented one time for every hour an m1.small instance runs.
      * Larger instances are weighted more, so an EC2 instance that is roughly four
      * times more expensive would result in the normalized instance hours being
@@ -150,7 +150,7 @@ namespace Model
     inline int GetNormalizedInstanceHours() const{ return m_normalizedInstanceHours; }
 
     /**
-     * <p>An approximation of the cost of the job flow, represented in m1.small/hours.
+     * <p>An approximation of the cost of the cluster, represented in m1.small/hours.
      * This value is incremented one time for every hour an m1.small instance runs.
      * Larger instances are weighted more, so an EC2 instance that is roughly four
      * times more expensive would result in the normalized instance hours being
@@ -160,7 +160,7 @@ namespace Model
     inline void SetNormalizedInstanceHours(int value) { m_normalizedInstanceHoursHasBeenSet = true; m_normalizedInstanceHours = value; }
 
     /**
-     * <p>An approximation of the cost of the job flow, represented in m1.small/hours.
+     * <p>An approximation of the cost of the cluster, represented in m1.small/hours.
      * This value is incremented one time for every hour an m1.small instance runs.
      * Larger instances are weighted more, so an EC2 instance that is roughly four
      * times more expensive would result in the normalized instance hours being

@@ -26,6 +26,7 @@
 #include <aws/elasticmapreduce/EMRClient.h>
 #include <aws/elasticmapreduce/EMREndpoint.h>
 #include <aws/elasticmapreduce/EMRErrorMarshaller.h>
+#include <aws/elasticmapreduce/model/AddInstanceFleetRequest.h>
 #include <aws/elasticmapreduce/model/AddInstanceGroupsRequest.h>
 #include <aws/elasticmapreduce/model/AddJobFlowStepsRequest.h>
 #include <aws/elasticmapreduce/model/AddTagsRequest.h>
@@ -37,10 +38,12 @@
 #include <aws/elasticmapreduce/model/DescribeStepRequest.h>
 #include <aws/elasticmapreduce/model/ListBootstrapActionsRequest.h>
 #include <aws/elasticmapreduce/model/ListClustersRequest.h>
+#include <aws/elasticmapreduce/model/ListInstanceFleetsRequest.h>
 #include <aws/elasticmapreduce/model/ListInstanceGroupsRequest.h>
 #include <aws/elasticmapreduce/model/ListInstancesRequest.h>
 #include <aws/elasticmapreduce/model/ListSecurityConfigurationsRequest.h>
 #include <aws/elasticmapreduce/model/ListStepsRequest.h>
+#include <aws/elasticmapreduce/model/ModifyInstanceFleetRequest.h>
 #include <aws/elasticmapreduce/model/ModifyInstanceGroupsRequest.h>
 #include <aws/elasticmapreduce/model/PutAutoScalingPolicyRequest.h>
 #include <aws/elasticmapreduce/model/RemoveAutoScalingPolicyRequest.h>
@@ -112,6 +115,40 @@ void EMRClient::init(const ClientConfiguration& config)
   }
 
   m_uri = ss.str();
+}
+
+AddInstanceFleetOutcome EMRClient::AddInstanceFleet(const AddInstanceFleetRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return AddInstanceFleetOutcome(AddInstanceFleetResult(outcome.GetResult()));
+  }
+  else
+  {
+    return AddInstanceFleetOutcome(outcome.GetError());
+  }
+}
+
+AddInstanceFleetOutcomeCallable EMRClient::AddInstanceFleetCallable(const AddInstanceFleetRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< AddInstanceFleetOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->AddInstanceFleet(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void EMRClient::AddInstanceFleetAsync(const AddInstanceFleetRequest& request, const AddInstanceFleetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->AddInstanceFleetAsyncHelper( request, handler, context ); } );
+}
+
+void EMRClient::AddInstanceFleetAsyncHelper(const AddInstanceFleetRequest& request, const AddInstanceFleetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, AddInstanceFleet(request), context);
 }
 
 AddInstanceGroupsOutcome EMRClient::AddInstanceGroups(const AddInstanceGroupsRequest& request) const
@@ -488,6 +525,40 @@ void EMRClient::ListClustersAsyncHelper(const ListClustersRequest& request, cons
   handler(this, request, ListClusters(request), context);
 }
 
+ListInstanceFleetsOutcome EMRClient::ListInstanceFleets(const ListInstanceFleetsRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return ListInstanceFleetsOutcome(ListInstanceFleetsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ListInstanceFleetsOutcome(outcome.GetError());
+  }
+}
+
+ListInstanceFleetsOutcomeCallable EMRClient::ListInstanceFleetsCallable(const ListInstanceFleetsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListInstanceFleetsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListInstanceFleets(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void EMRClient::ListInstanceFleetsAsync(const ListInstanceFleetsRequest& request, const ListInstanceFleetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListInstanceFleetsAsyncHelper( request, handler, context ); } );
+}
+
+void EMRClient::ListInstanceFleetsAsyncHelper(const ListInstanceFleetsRequest& request, const ListInstanceFleetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListInstanceFleets(request), context);
+}
+
 ListInstanceGroupsOutcome EMRClient::ListInstanceGroups(const ListInstanceGroupsRequest& request) const
 {
   Aws::StringStream ss;
@@ -622,6 +693,40 @@ void EMRClient::ListStepsAsync(const ListStepsRequest& request, const ListStepsR
 void EMRClient::ListStepsAsyncHelper(const ListStepsRequest& request, const ListStepsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ListSteps(request), context);
+}
+
+ModifyInstanceFleetOutcome EMRClient::ModifyInstanceFleet(const ModifyInstanceFleetRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return ModifyInstanceFleetOutcome(NoResult());
+  }
+  else
+  {
+    return ModifyInstanceFleetOutcome(outcome.GetError());
+  }
+}
+
+ModifyInstanceFleetOutcomeCallable EMRClient::ModifyInstanceFleetCallable(const ModifyInstanceFleetRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ModifyInstanceFleetOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ModifyInstanceFleet(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void EMRClient::ModifyInstanceFleetAsync(const ModifyInstanceFleetRequest& request, const ModifyInstanceFleetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ModifyInstanceFleetAsyncHelper( request, handler, context ); } );
+}
+
+void EMRClient::ModifyInstanceFleetAsyncHelper(const ModifyInstanceFleetRequest& request, const ModifyInstanceFleetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ModifyInstanceFleet(request), context);
 }
 
 ModifyInstanceGroupsOutcome EMRClient::ModifyInstanceGroups(const ModifyInstanceGroupsRequest& request) const
