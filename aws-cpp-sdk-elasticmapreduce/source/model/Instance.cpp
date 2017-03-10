@@ -36,6 +36,10 @@ Instance::Instance() :
     m_privateIpAddressHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_instanceGroupIdHasBeenSet(false),
+    m_instanceFleetIdHasBeenSet(false),
+    m_market(MarketType::NOT_SET),
+    m_marketHasBeenSet(false),
+    m_instanceTypeHasBeenSet(false),
     m_ebsVolumesHasBeenSet(false)
 {
 }
@@ -49,6 +53,10 @@ Instance::Instance(const JsonValue& jsonValue) :
     m_privateIpAddressHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_instanceGroupIdHasBeenSet(false),
+    m_instanceFleetIdHasBeenSet(false),
+    m_market(MarketType::NOT_SET),
+    m_marketHasBeenSet(false),
+    m_instanceTypeHasBeenSet(false),
     m_ebsVolumesHasBeenSet(false)
 {
   *this = jsonValue;
@@ -110,6 +118,27 @@ Instance& Instance::operator =(const JsonValue& jsonValue)
     m_instanceGroupId = jsonValue.GetString("InstanceGroupId");
 
     m_instanceGroupIdHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("InstanceFleetId"))
+  {
+    m_instanceFleetId = jsonValue.GetString("InstanceFleetId");
+
+    m_instanceFleetIdHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Market"))
+  {
+    m_market = MarketTypeMapper::GetMarketTypeForName(jsonValue.GetString("Market"));
+
+    m_marketHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("InstanceType"))
+  {
+    m_instanceType = jsonValue.GetString("InstanceType");
+
+    m_instanceTypeHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("EbsVolumes"))
@@ -174,6 +203,23 @@ JsonValue Instance::Jsonize() const
   if(m_instanceGroupIdHasBeenSet)
   {
    payload.WithString("InstanceGroupId", m_instanceGroupId);
+
+  }
+
+  if(m_instanceFleetIdHasBeenSet)
+  {
+   payload.WithString("InstanceFleetId", m_instanceFleetId);
+
+  }
+
+  if(m_marketHasBeenSet)
+  {
+   payload.WithString("Market", MarketTypeMapper::GetNameForMarketType(m_market));
+  }
+
+  if(m_instanceTypeHasBeenSet)
+  {
+   payload.WithString("InstanceType", m_instanceType);
 
   }
 

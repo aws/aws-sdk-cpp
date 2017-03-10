@@ -32,6 +32,8 @@ Cluster::Cluster() :
     m_nameHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_ec2InstanceAttributesHasBeenSet(false),
+    m_instanceCollectionType(InstanceCollectionType::NOT_SET),
+    m_instanceCollectionTypeHasBeenSet(false),
     m_logUriHasBeenSet(false),
     m_requestedAmiVersionHasBeenSet(false),
     m_runningAmiVersionHasBeenSet(false),
@@ -61,6 +63,8 @@ Cluster::Cluster(const JsonValue& jsonValue) :
     m_nameHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_ec2InstanceAttributesHasBeenSet(false),
+    m_instanceCollectionType(InstanceCollectionType::NOT_SET),
+    m_instanceCollectionTypeHasBeenSet(false),
     m_logUriHasBeenSet(false),
     m_requestedAmiVersionHasBeenSet(false),
     m_runningAmiVersionHasBeenSet(false),
@@ -114,6 +118,13 @@ Cluster& Cluster::operator =(const JsonValue& jsonValue)
     m_ec2InstanceAttributes = jsonValue.GetObject("Ec2InstanceAttributes");
 
     m_ec2InstanceAttributesHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("InstanceCollectionType"))
+  {
+    m_instanceCollectionType = InstanceCollectionTypeMapper::GetInstanceCollectionTypeForName(jsonValue.GetString("InstanceCollectionType"));
+
+    m_instanceCollectionTypeHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("LogUri"))
@@ -266,6 +277,11 @@ JsonValue Cluster::Jsonize() const
   {
    payload.WithObject("Ec2InstanceAttributes", m_ec2InstanceAttributes.Jsonize());
 
+  }
+
+  if(m_instanceCollectionTypeHasBeenSet)
+  {
+   payload.WithString("InstanceCollectionType", InstanceCollectionTypeMapper::GetNameForInstanceCollectionType(m_instanceCollectionType));
   }
 
   if(m_logUriHasBeenSet)

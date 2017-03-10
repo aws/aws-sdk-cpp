@@ -28,12 +28,14 @@ namespace Model
 {
 
 PlacementType::PlacementType() : 
-    m_availabilityZoneHasBeenSet(false)
+    m_availabilityZoneHasBeenSet(false),
+    m_availabilityZonesHasBeenSet(false)
 {
 }
 
 PlacementType::PlacementType(const JsonValue& jsonValue) : 
-    m_availabilityZoneHasBeenSet(false)
+    m_availabilityZoneHasBeenSet(false),
+    m_availabilityZonesHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -47,6 +49,16 @@ PlacementType& PlacementType::operator =(const JsonValue& jsonValue)
     m_availabilityZoneHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("AvailabilityZones"))
+  {
+    Array<JsonValue> availabilityZonesJsonList = jsonValue.GetArray("AvailabilityZones");
+    for(unsigned availabilityZonesIndex = 0; availabilityZonesIndex < availabilityZonesJsonList.GetLength(); ++availabilityZonesIndex)
+    {
+      m_availabilityZones.push_back(availabilityZonesJsonList[availabilityZonesIndex].AsString());
+    }
+    m_availabilityZonesHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -57,6 +69,17 @@ JsonValue PlacementType::Jsonize() const
   if(m_availabilityZoneHasBeenSet)
   {
    payload.WithString("AvailabilityZone", m_availabilityZone);
+
+  }
+
+  if(m_availabilityZonesHasBeenSet)
+  {
+   Array<JsonValue> availabilityZonesJsonList(m_availabilityZones.size());
+   for(unsigned availabilityZonesIndex = 0; availabilityZonesIndex < availabilityZonesJsonList.GetLength(); ++availabilityZonesIndex)
+   {
+     availabilityZonesJsonList[availabilityZonesIndex].AsString(m_availabilityZones[availabilityZonesIndex]);
+   }
+   payload.WithArray("AvailabilityZones", std::move(availabilityZonesJsonList));
 
   }
 

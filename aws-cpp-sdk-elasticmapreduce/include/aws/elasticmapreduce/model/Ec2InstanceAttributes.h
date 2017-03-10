@@ -89,149 +89,309 @@ namespace Model
     inline Ec2InstanceAttributes& WithEc2KeyName(const char* value) { SetEc2KeyName(value); return *this;}
 
     /**
-     * <p>To launch the job flow in Amazon VPC, set this parameter to the identifier of
-     * the Amazon VPC subnet where you want the job flow to launch. If you do not
-     * specify this value, the job flow is launched in the normal AWS cloud, outside of
+     * <p>To launch the cluster in Amazon VPC, set this parameter to the identifier of
+     * the Amazon VPC subnet where you want the cluster to launch. If you do not
+     * specify this value, the cluster is launched in the normal AWS cloud, outside of
      * a VPC.</p> <p>Amazon VPC currently does not support cluster compute quadruple
      * extra large (cc1.4xlarge) instances. Thus, you cannot specify the cc1.4xlarge
-     * instance type for nodes of a job flow launched in a VPC.</p>
+     * instance type for nodes of a cluster launched in a VPC.</p>
      */
     inline const Aws::String& GetEc2SubnetId() const{ return m_ec2SubnetId; }
 
     /**
-     * <p>To launch the job flow in Amazon VPC, set this parameter to the identifier of
-     * the Amazon VPC subnet where you want the job flow to launch. If you do not
-     * specify this value, the job flow is launched in the normal AWS cloud, outside of
+     * <p>To launch the cluster in Amazon VPC, set this parameter to the identifier of
+     * the Amazon VPC subnet where you want the cluster to launch. If you do not
+     * specify this value, the cluster is launched in the normal AWS cloud, outside of
      * a VPC.</p> <p>Amazon VPC currently does not support cluster compute quadruple
      * extra large (cc1.4xlarge) instances. Thus, you cannot specify the cc1.4xlarge
-     * instance type for nodes of a job flow launched in a VPC.</p>
+     * instance type for nodes of a cluster launched in a VPC.</p>
      */
     inline void SetEc2SubnetId(const Aws::String& value) { m_ec2SubnetIdHasBeenSet = true; m_ec2SubnetId = value; }
 
     /**
-     * <p>To launch the job flow in Amazon VPC, set this parameter to the identifier of
-     * the Amazon VPC subnet where you want the job flow to launch. If you do not
-     * specify this value, the job flow is launched in the normal AWS cloud, outside of
+     * <p>To launch the cluster in Amazon VPC, set this parameter to the identifier of
+     * the Amazon VPC subnet where you want the cluster to launch. If you do not
+     * specify this value, the cluster is launched in the normal AWS cloud, outside of
      * a VPC.</p> <p>Amazon VPC currently does not support cluster compute quadruple
      * extra large (cc1.4xlarge) instances. Thus, you cannot specify the cc1.4xlarge
-     * instance type for nodes of a job flow launched in a VPC.</p>
+     * instance type for nodes of a cluster launched in a VPC.</p>
      */
     inline void SetEc2SubnetId(Aws::String&& value) { m_ec2SubnetIdHasBeenSet = true; m_ec2SubnetId = value; }
 
     /**
-     * <p>To launch the job flow in Amazon VPC, set this parameter to the identifier of
-     * the Amazon VPC subnet where you want the job flow to launch. If you do not
-     * specify this value, the job flow is launched in the normal AWS cloud, outside of
+     * <p>To launch the cluster in Amazon VPC, set this parameter to the identifier of
+     * the Amazon VPC subnet where you want the cluster to launch. If you do not
+     * specify this value, the cluster is launched in the normal AWS cloud, outside of
      * a VPC.</p> <p>Amazon VPC currently does not support cluster compute quadruple
      * extra large (cc1.4xlarge) instances. Thus, you cannot specify the cc1.4xlarge
-     * instance type for nodes of a job flow launched in a VPC.</p>
+     * instance type for nodes of a cluster launched in a VPC.</p>
      */
     inline void SetEc2SubnetId(const char* value) { m_ec2SubnetIdHasBeenSet = true; m_ec2SubnetId.assign(value); }
 
     /**
-     * <p>To launch the job flow in Amazon VPC, set this parameter to the identifier of
-     * the Amazon VPC subnet where you want the job flow to launch. If you do not
-     * specify this value, the job flow is launched in the normal AWS cloud, outside of
+     * <p>To launch the cluster in Amazon VPC, set this parameter to the identifier of
+     * the Amazon VPC subnet where you want the cluster to launch. If you do not
+     * specify this value, the cluster is launched in the normal AWS cloud, outside of
      * a VPC.</p> <p>Amazon VPC currently does not support cluster compute quadruple
      * extra large (cc1.4xlarge) instances. Thus, you cannot specify the cc1.4xlarge
-     * instance type for nodes of a job flow launched in a VPC.</p>
+     * instance type for nodes of a cluster launched in a VPC.</p>
      */
     inline Ec2InstanceAttributes& WithEc2SubnetId(const Aws::String& value) { SetEc2SubnetId(value); return *this;}
 
     /**
-     * <p>To launch the job flow in Amazon VPC, set this parameter to the identifier of
-     * the Amazon VPC subnet where you want the job flow to launch. If you do not
-     * specify this value, the job flow is launched in the normal AWS cloud, outside of
+     * <p>To launch the cluster in Amazon VPC, set this parameter to the identifier of
+     * the Amazon VPC subnet where you want the cluster to launch. If you do not
+     * specify this value, the cluster is launched in the normal AWS cloud, outside of
      * a VPC.</p> <p>Amazon VPC currently does not support cluster compute quadruple
      * extra large (cc1.4xlarge) instances. Thus, you cannot specify the cc1.4xlarge
-     * instance type for nodes of a job flow launched in a VPC.</p>
+     * instance type for nodes of a cluster launched in a VPC.</p>
      */
     inline Ec2InstanceAttributes& WithEc2SubnetId(Aws::String&& value) { SetEc2SubnetId(value); return *this;}
 
     /**
-     * <p>To launch the job flow in Amazon VPC, set this parameter to the identifier of
-     * the Amazon VPC subnet where you want the job flow to launch. If you do not
-     * specify this value, the job flow is launched in the normal AWS cloud, outside of
+     * <p>To launch the cluster in Amazon VPC, set this parameter to the identifier of
+     * the Amazon VPC subnet where you want the cluster to launch. If you do not
+     * specify this value, the cluster is launched in the normal AWS cloud, outside of
      * a VPC.</p> <p>Amazon VPC currently does not support cluster compute quadruple
      * extra large (cc1.4xlarge) instances. Thus, you cannot specify the cc1.4xlarge
-     * instance type for nodes of a job flow launched in a VPC.</p>
+     * instance type for nodes of a cluster launched in a VPC.</p>
      */
     inline Ec2InstanceAttributes& WithEc2SubnetId(const char* value) { SetEc2SubnetId(value); return *this;}
 
     /**
-     * <p>The Availability Zone in which the cluster will run.</p>
+     * <p>Applies to clusters configured with the instance fleets option. Specifies the
+     * unique identifier of one or more Amazon EC2 subnets in which to launch EC2
+     * cluster instances. Amazon EMR chooses the EC2 subnet with the best performance
+     * and cost characteristics from among the list of RequestedEc2SubnetIds and
+     * launches all cluster instances within that subnet. If this value is not
+     * specified, and the account supports EC2-Classic networks, the cluster launches
+     * instances in the EC2-Classic network and uses Requested</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetRequestedEc2SubnetIds() const{ return m_requestedEc2SubnetIds; }
+
+    /**
+     * <p>Applies to clusters configured with the instance fleets option. Specifies the
+     * unique identifier of one or more Amazon EC2 subnets in which to launch EC2
+     * cluster instances. Amazon EMR chooses the EC2 subnet with the best performance
+     * and cost characteristics from among the list of RequestedEc2SubnetIds and
+     * launches all cluster instances within that subnet. If this value is not
+     * specified, and the account supports EC2-Classic networks, the cluster launches
+     * instances in the EC2-Classic network and uses Requested</p>
+     */
+    inline void SetRequestedEc2SubnetIds(const Aws::Vector<Aws::String>& value) { m_requestedEc2SubnetIdsHasBeenSet = true; m_requestedEc2SubnetIds = value; }
+
+    /**
+     * <p>Applies to clusters configured with the instance fleets option. Specifies the
+     * unique identifier of one or more Amazon EC2 subnets in which to launch EC2
+     * cluster instances. Amazon EMR chooses the EC2 subnet with the best performance
+     * and cost characteristics from among the list of RequestedEc2SubnetIds and
+     * launches all cluster instances within that subnet. If this value is not
+     * specified, and the account supports EC2-Classic networks, the cluster launches
+     * instances in the EC2-Classic network and uses Requested</p>
+     */
+    inline void SetRequestedEc2SubnetIds(Aws::Vector<Aws::String>&& value) { m_requestedEc2SubnetIdsHasBeenSet = true; m_requestedEc2SubnetIds = value; }
+
+    /**
+     * <p>Applies to clusters configured with the instance fleets option. Specifies the
+     * unique identifier of one or more Amazon EC2 subnets in which to launch EC2
+     * cluster instances. Amazon EMR chooses the EC2 subnet with the best performance
+     * and cost characteristics from among the list of RequestedEc2SubnetIds and
+     * launches all cluster instances within that subnet. If this value is not
+     * specified, and the account supports EC2-Classic networks, the cluster launches
+     * instances in the EC2-Classic network and uses Requested</p>
+     */
+    inline Ec2InstanceAttributes& WithRequestedEc2SubnetIds(const Aws::Vector<Aws::String>& value) { SetRequestedEc2SubnetIds(value); return *this;}
+
+    /**
+     * <p>Applies to clusters configured with the instance fleets option. Specifies the
+     * unique identifier of one or more Amazon EC2 subnets in which to launch EC2
+     * cluster instances. Amazon EMR chooses the EC2 subnet with the best performance
+     * and cost characteristics from among the list of RequestedEc2SubnetIds and
+     * launches all cluster instances within that subnet. If this value is not
+     * specified, and the account supports EC2-Classic networks, the cluster launches
+     * instances in the EC2-Classic network and uses Requested</p>
+     */
+    inline Ec2InstanceAttributes& WithRequestedEc2SubnetIds(Aws::Vector<Aws::String>&& value) { SetRequestedEc2SubnetIds(value); return *this;}
+
+    /**
+     * <p>Applies to clusters configured with the instance fleets option. Specifies the
+     * unique identifier of one or more Amazon EC2 subnets in which to launch EC2
+     * cluster instances. Amazon EMR chooses the EC2 subnet with the best performance
+     * and cost characteristics from among the list of RequestedEc2SubnetIds and
+     * launches all cluster instances within that subnet. If this value is not
+     * specified, and the account supports EC2-Classic networks, the cluster launches
+     * instances in the EC2-Classic network and uses Requested</p>
+     */
+    inline Ec2InstanceAttributes& AddRequestedEc2SubnetIds(const Aws::String& value) { m_requestedEc2SubnetIdsHasBeenSet = true; m_requestedEc2SubnetIds.push_back(value); return *this; }
+
+    /**
+     * <p>Applies to clusters configured with the instance fleets option. Specifies the
+     * unique identifier of one or more Amazon EC2 subnets in which to launch EC2
+     * cluster instances. Amazon EMR chooses the EC2 subnet with the best performance
+     * and cost characteristics from among the list of RequestedEc2SubnetIds and
+     * launches all cluster instances within that subnet. If this value is not
+     * specified, and the account supports EC2-Classic networks, the cluster launches
+     * instances in the EC2-Classic network and uses Requested</p>
+     */
+    inline Ec2InstanceAttributes& AddRequestedEc2SubnetIds(Aws::String&& value) { m_requestedEc2SubnetIdsHasBeenSet = true; m_requestedEc2SubnetIds.push_back(value); return *this; }
+
+    /**
+     * <p>Applies to clusters configured with the instance fleets option. Specifies the
+     * unique identifier of one or more Amazon EC2 subnets in which to launch EC2
+     * cluster instances. Amazon EMR chooses the EC2 subnet with the best performance
+     * and cost characteristics from among the list of RequestedEc2SubnetIds and
+     * launches all cluster instances within that subnet. If this value is not
+     * specified, and the account supports EC2-Classic networks, the cluster launches
+     * instances in the EC2-Classic network and uses Requested</p>
+     */
+    inline Ec2InstanceAttributes& AddRequestedEc2SubnetIds(const char* value) { m_requestedEc2SubnetIdsHasBeenSet = true; m_requestedEc2SubnetIds.push_back(value); return *this; }
+
+    /**
+     * <p>The Availability Zone in which the cluster will run. </p>
      */
     inline const Aws::String& GetEc2AvailabilityZone() const{ return m_ec2AvailabilityZone; }
 
     /**
-     * <p>The Availability Zone in which the cluster will run.</p>
+     * <p>The Availability Zone in which the cluster will run. </p>
      */
     inline void SetEc2AvailabilityZone(const Aws::String& value) { m_ec2AvailabilityZoneHasBeenSet = true; m_ec2AvailabilityZone = value; }
 
     /**
-     * <p>The Availability Zone in which the cluster will run.</p>
+     * <p>The Availability Zone in which the cluster will run. </p>
      */
     inline void SetEc2AvailabilityZone(Aws::String&& value) { m_ec2AvailabilityZoneHasBeenSet = true; m_ec2AvailabilityZone = value; }
 
     /**
-     * <p>The Availability Zone in which the cluster will run.</p>
+     * <p>The Availability Zone in which the cluster will run. </p>
      */
     inline void SetEc2AvailabilityZone(const char* value) { m_ec2AvailabilityZoneHasBeenSet = true; m_ec2AvailabilityZone.assign(value); }
 
     /**
-     * <p>The Availability Zone in which the cluster will run.</p>
+     * <p>The Availability Zone in which the cluster will run. </p>
      */
     inline Ec2InstanceAttributes& WithEc2AvailabilityZone(const Aws::String& value) { SetEc2AvailabilityZone(value); return *this;}
 
     /**
-     * <p>The Availability Zone in which the cluster will run.</p>
+     * <p>The Availability Zone in which the cluster will run. </p>
      */
     inline Ec2InstanceAttributes& WithEc2AvailabilityZone(Aws::String&& value) { SetEc2AvailabilityZone(value); return *this;}
 
     /**
-     * <p>The Availability Zone in which the cluster will run.</p>
+     * <p>The Availability Zone in which the cluster will run. </p>
      */
     inline Ec2InstanceAttributes& WithEc2AvailabilityZone(const char* value) { SetEc2AvailabilityZone(value); return *this;}
 
     /**
-     * <p>The IAM role that was specified when the job flow was launched. The EC2
-     * instances of the job flow assume this role.</p>
+     * <p>Applies to clusters configured with the The list of availability zones to
+     * choose from. The service will choose the availability zone with the best mix of
+     * available capacity and lowest cost to launch the cluster. If you do not specify
+     * this value, the cluster is launched in any availability zone that the customer
+     * account has access to.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetRequestedEc2AvailabilityZones() const{ return m_requestedEc2AvailabilityZones; }
+
+    /**
+     * <p>Applies to clusters configured with the The list of availability zones to
+     * choose from. The service will choose the availability zone with the best mix of
+     * available capacity and lowest cost to launch the cluster. If you do not specify
+     * this value, the cluster is launched in any availability zone that the customer
+     * account has access to.</p>
+     */
+    inline void SetRequestedEc2AvailabilityZones(const Aws::Vector<Aws::String>& value) { m_requestedEc2AvailabilityZonesHasBeenSet = true; m_requestedEc2AvailabilityZones = value; }
+
+    /**
+     * <p>Applies to clusters configured with the The list of availability zones to
+     * choose from. The service will choose the availability zone with the best mix of
+     * available capacity and lowest cost to launch the cluster. If you do not specify
+     * this value, the cluster is launched in any availability zone that the customer
+     * account has access to.</p>
+     */
+    inline void SetRequestedEc2AvailabilityZones(Aws::Vector<Aws::String>&& value) { m_requestedEc2AvailabilityZonesHasBeenSet = true; m_requestedEc2AvailabilityZones = value; }
+
+    /**
+     * <p>Applies to clusters configured with the The list of availability zones to
+     * choose from. The service will choose the availability zone with the best mix of
+     * available capacity and lowest cost to launch the cluster. If you do not specify
+     * this value, the cluster is launched in any availability zone that the customer
+     * account has access to.</p>
+     */
+    inline Ec2InstanceAttributes& WithRequestedEc2AvailabilityZones(const Aws::Vector<Aws::String>& value) { SetRequestedEc2AvailabilityZones(value); return *this;}
+
+    /**
+     * <p>Applies to clusters configured with the The list of availability zones to
+     * choose from. The service will choose the availability zone with the best mix of
+     * available capacity and lowest cost to launch the cluster. If you do not specify
+     * this value, the cluster is launched in any availability zone that the customer
+     * account has access to.</p>
+     */
+    inline Ec2InstanceAttributes& WithRequestedEc2AvailabilityZones(Aws::Vector<Aws::String>&& value) { SetRequestedEc2AvailabilityZones(value); return *this;}
+
+    /**
+     * <p>Applies to clusters configured with the The list of availability zones to
+     * choose from. The service will choose the availability zone with the best mix of
+     * available capacity and lowest cost to launch the cluster. If you do not specify
+     * this value, the cluster is launched in any availability zone that the customer
+     * account has access to.</p>
+     */
+    inline Ec2InstanceAttributes& AddRequestedEc2AvailabilityZones(const Aws::String& value) { m_requestedEc2AvailabilityZonesHasBeenSet = true; m_requestedEc2AvailabilityZones.push_back(value); return *this; }
+
+    /**
+     * <p>Applies to clusters configured with the The list of availability zones to
+     * choose from. The service will choose the availability zone with the best mix of
+     * available capacity and lowest cost to launch the cluster. If you do not specify
+     * this value, the cluster is launched in any availability zone that the customer
+     * account has access to.</p>
+     */
+    inline Ec2InstanceAttributes& AddRequestedEc2AvailabilityZones(Aws::String&& value) { m_requestedEc2AvailabilityZonesHasBeenSet = true; m_requestedEc2AvailabilityZones.push_back(value); return *this; }
+
+    /**
+     * <p>Applies to clusters configured with the The list of availability zones to
+     * choose from. The service will choose the availability zone with the best mix of
+     * available capacity and lowest cost to launch the cluster. If you do not specify
+     * this value, the cluster is launched in any availability zone that the customer
+     * account has access to.</p>
+     */
+    inline Ec2InstanceAttributes& AddRequestedEc2AvailabilityZones(const char* value) { m_requestedEc2AvailabilityZonesHasBeenSet = true; m_requestedEc2AvailabilityZones.push_back(value); return *this; }
+
+    /**
+     * <p>The IAM role that was specified when the cluster was launched. The EC2
+     * instances of the cluster assume this role.</p>
      */
     inline const Aws::String& GetIamInstanceProfile() const{ return m_iamInstanceProfile; }
 
     /**
-     * <p>The IAM role that was specified when the job flow was launched. The EC2
-     * instances of the job flow assume this role.</p>
+     * <p>The IAM role that was specified when the cluster was launched. The EC2
+     * instances of the cluster assume this role.</p>
      */
     inline void SetIamInstanceProfile(const Aws::String& value) { m_iamInstanceProfileHasBeenSet = true; m_iamInstanceProfile = value; }
 
     /**
-     * <p>The IAM role that was specified when the job flow was launched. The EC2
-     * instances of the job flow assume this role.</p>
+     * <p>The IAM role that was specified when the cluster was launched. The EC2
+     * instances of the cluster assume this role.</p>
      */
     inline void SetIamInstanceProfile(Aws::String&& value) { m_iamInstanceProfileHasBeenSet = true; m_iamInstanceProfile = value; }
 
     /**
-     * <p>The IAM role that was specified when the job flow was launched. The EC2
-     * instances of the job flow assume this role.</p>
+     * <p>The IAM role that was specified when the cluster was launched. The EC2
+     * instances of the cluster assume this role.</p>
      */
     inline void SetIamInstanceProfile(const char* value) { m_iamInstanceProfileHasBeenSet = true; m_iamInstanceProfile.assign(value); }
 
     /**
-     * <p>The IAM role that was specified when the job flow was launched. The EC2
-     * instances of the job flow assume this role.</p>
+     * <p>The IAM role that was specified when the cluster was launched. The EC2
+     * instances of the cluster assume this role.</p>
      */
     inline Ec2InstanceAttributes& WithIamInstanceProfile(const Aws::String& value) { SetIamInstanceProfile(value); return *this;}
 
     /**
-     * <p>The IAM role that was specified when the job flow was launched. The EC2
-     * instances of the job flow assume this role.</p>
+     * <p>The IAM role that was specified when the cluster was launched. The EC2
+     * instances of the cluster assume this role.</p>
      */
     inline Ec2InstanceAttributes& WithIamInstanceProfile(Aws::String&& value) { SetIamInstanceProfile(value); return *this;}
 
     /**
-     * <p>The IAM role that was specified when the job flow was launched. The EC2
-     * instances of the job flow assume this role.</p>
+     * <p>The IAM role that was specified when the cluster was launched. The EC2
+     * instances of the cluster assume this role.</p>
      */
     inline Ec2InstanceAttributes& WithIamInstanceProfile(const char* value) { SetIamInstanceProfile(value); return *this;}
 
@@ -432,8 +592,12 @@ namespace Model
     bool m_ec2KeyNameHasBeenSet;
     Aws::String m_ec2SubnetId;
     bool m_ec2SubnetIdHasBeenSet;
+    Aws::Vector<Aws::String> m_requestedEc2SubnetIds;
+    bool m_requestedEc2SubnetIdsHasBeenSet;
     Aws::String m_ec2AvailabilityZone;
     bool m_ec2AvailabilityZoneHasBeenSet;
+    Aws::Vector<Aws::String> m_requestedEc2AvailabilityZones;
+    bool m_requestedEc2AvailabilityZonesHasBeenSet;
     Aws::String m_iamInstanceProfile;
     bool m_iamInstanceProfileHasBeenSet;
     Aws::String m_emrManagedMasterSecurityGroup;

@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/elasticmapreduce/model/ClusterStatus.h>
 #include <aws/elasticmapreduce/model/Ec2InstanceAttributes.h>
+#include <aws/elasticmapreduce/model/InstanceCollectionType.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/elasticmapreduce/model/ScaleDownBehavior.h>
 #include <aws/elasticmapreduce/model/Application.h>
@@ -174,6 +175,51 @@ namespace Model
      * category. For example, key name, subnet ID, IAM instance profile, and so on.</p>
      */
     inline Cluster& WithEc2InstanceAttributes(Ec2InstanceAttributes&& value) { SetEc2InstanceAttributes(value); return *this;}
+
+    /**
+     * <note> <p>The instance fleet configuration is available only in Amazon EMR
+     * versions 4.8.0 and later, excluding 5.0.x versions.</p> </note> <p>The instance
+     * group configuration of the cluster. A value of <code>INSTANCE_GROUP</code>
+     * indicates a uniform instance group configuration. A value of
+     * <code>INSTANCE_FLEET</code> indicates an instance fleets configuration.</p>
+     */
+    inline const InstanceCollectionType& GetInstanceCollectionType() const{ return m_instanceCollectionType; }
+
+    /**
+     * <note> <p>The instance fleet configuration is available only in Amazon EMR
+     * versions 4.8.0 and later, excluding 5.0.x versions.</p> </note> <p>The instance
+     * group configuration of the cluster. A value of <code>INSTANCE_GROUP</code>
+     * indicates a uniform instance group configuration. A value of
+     * <code>INSTANCE_FLEET</code> indicates an instance fleets configuration.</p>
+     */
+    inline void SetInstanceCollectionType(const InstanceCollectionType& value) { m_instanceCollectionTypeHasBeenSet = true; m_instanceCollectionType = value; }
+
+    /**
+     * <note> <p>The instance fleet configuration is available only in Amazon EMR
+     * versions 4.8.0 and later, excluding 5.0.x versions.</p> </note> <p>The instance
+     * group configuration of the cluster. A value of <code>INSTANCE_GROUP</code>
+     * indicates a uniform instance group configuration. A value of
+     * <code>INSTANCE_FLEET</code> indicates an instance fleets configuration.</p>
+     */
+    inline void SetInstanceCollectionType(InstanceCollectionType&& value) { m_instanceCollectionTypeHasBeenSet = true; m_instanceCollectionType = value; }
+
+    /**
+     * <note> <p>The instance fleet configuration is available only in Amazon EMR
+     * versions 4.8.0 and later, excluding 5.0.x versions.</p> </note> <p>The instance
+     * group configuration of the cluster. A value of <code>INSTANCE_GROUP</code>
+     * indicates a uniform instance group configuration. A value of
+     * <code>INSTANCE_FLEET</code> indicates an instance fleets configuration.</p>
+     */
+    inline Cluster& WithInstanceCollectionType(const InstanceCollectionType& value) { SetInstanceCollectionType(value); return *this;}
+
+    /**
+     * <note> <p>The instance fleet configuration is available only in Amazon EMR
+     * versions 4.8.0 and later, excluding 5.0.x versions.</p> </note> <p>The instance
+     * group configuration of the cluster. A value of <code>INSTANCE_GROUP</code>
+     * indicates a uniform instance group configuration. A value of
+     * <code>INSTANCE_FLEET</code> indicates an instance fleets configuration.</p>
+     */
+    inline Cluster& WithInstanceCollectionType(InstanceCollectionType&& value) { SetInstanceCollectionType(value); return *this;}
 
     /**
      * <p>The path to the Amazon S3 location where logs for this cluster are
@@ -369,9 +415,9 @@ namespace Model
     inline Cluster& WithTerminationProtected(bool value) { SetTerminationProtected(value); return *this;}
 
     /**
-     * <p>Indicates whether the job flow is visible to all IAM users of the AWS account
-     * associated with the job flow. If this value is set to <code>true</code>, all IAM
-     * users of that AWS account can view and manage the job flow if they have the
+     * <p>Indicates whether the cluster is visible to all IAM users of the AWS account
+     * associated with the cluster. If this value is set to <code>true</code>, all IAM
+     * users of that AWS account can view and manage the cluster if they have the
      * proper policy permissions set. If this value is <code>false</code>, only the IAM
      * user that created the cluster can view and manage it. This value can be changed
      * using the <a>SetVisibleToAllUsers</a> action.</p>
@@ -379,9 +425,9 @@ namespace Model
     inline bool GetVisibleToAllUsers() const{ return m_visibleToAllUsers; }
 
     /**
-     * <p>Indicates whether the job flow is visible to all IAM users of the AWS account
-     * associated with the job flow. If this value is set to <code>true</code>, all IAM
-     * users of that AWS account can view and manage the job flow if they have the
+     * <p>Indicates whether the cluster is visible to all IAM users of the AWS account
+     * associated with the cluster. If this value is set to <code>true</code>, all IAM
+     * users of that AWS account can view and manage the cluster if they have the
      * proper policy permissions set. If this value is <code>false</code>, only the IAM
      * user that created the cluster can view and manage it. This value can be changed
      * using the <a>SetVisibleToAllUsers</a> action.</p>
@@ -389,9 +435,9 @@ namespace Model
     inline void SetVisibleToAllUsers(bool value) { m_visibleToAllUsersHasBeenSet = true; m_visibleToAllUsers = value; }
 
     /**
-     * <p>Indicates whether the job flow is visible to all IAM users of the AWS account
-     * associated with the job flow. If this value is set to <code>true</code>, all IAM
-     * users of that AWS account can view and manage the job flow if they have the
+     * <p>Indicates whether the cluster is visible to all IAM users of the AWS account
+     * associated with the cluster. If this value is set to <code>true</code>, all IAM
+     * users of that AWS account can view and manage the cluster if they have the
      * proper policy permissions set. If this value is <code>false</code>, only the IAM
      * user that created the cluster can view and manage it. This value can be changed
      * using the <a>SetVisibleToAllUsers</a> action.</p>
@@ -511,7 +557,7 @@ namespace Model
     inline Cluster& WithServiceRole(const char* value) { SetServiceRole(value); return *this;}
 
     /**
-     * <p>An approximation of the cost of the job flow, represented in m1.small/hours.
+     * <p>An approximation of the cost of the cluster, represented in m1.small/hours.
      * This value is incremented one time for every hour an m1.small instance runs.
      * Larger instances are weighted more, so an EC2 instance that is roughly four
      * times more expensive would result in the normalized instance hours being
@@ -521,7 +567,7 @@ namespace Model
     inline int GetNormalizedInstanceHours() const{ return m_normalizedInstanceHours; }
 
     /**
-     * <p>An approximation of the cost of the job flow, represented in m1.small/hours.
+     * <p>An approximation of the cost of the cluster, represented in m1.small/hours.
      * This value is incremented one time for every hour an m1.small instance runs.
      * Larger instances are weighted more, so an EC2 instance that is roughly four
      * times more expensive would result in the normalized instance hours being
@@ -531,7 +577,7 @@ namespace Model
     inline void SetNormalizedInstanceHours(int value) { m_normalizedInstanceHoursHasBeenSet = true; m_normalizedInstanceHours = value; }
 
     /**
-     * <p>An approximation of the cost of the job flow, represented in m1.small/hours.
+     * <p>An approximation of the cost of the cluster, represented in m1.small/hours.
      * This value is incremented one time for every hour an m1.small instance runs.
      * Larger instances are weighted more, so an EC2 instance that is roughly four
      * times more expensive would result in the normalized instance hours being
@@ -802,6 +848,8 @@ namespace Model
     bool m_statusHasBeenSet;
     Ec2InstanceAttributes m_ec2InstanceAttributes;
     bool m_ec2InstanceAttributesHasBeenSet;
+    InstanceCollectionType m_instanceCollectionType;
+    bool m_instanceCollectionTypeHasBeenSet;
     Aws::String m_logUri;
     bool m_logUriHasBeenSet;
     Aws::String m_requestedAmiVersion;

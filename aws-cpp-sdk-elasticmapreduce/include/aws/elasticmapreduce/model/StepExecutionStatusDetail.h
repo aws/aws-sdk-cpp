@@ -46,27 +46,27 @@ namespace Model
     Aws::Utils::Json::JsonValue Jsonize() const;
 
     /**
-     * <p>The state of the job flow step.</p>
+     * <p>The state of the step.</p>
      */
     inline const StepExecutionState& GetState() const{ return m_state; }
 
     /**
-     * <p>The state of the job flow step.</p>
+     * <p>The state of the step.</p>
      */
     inline void SetState(const StepExecutionState& value) { m_stateHasBeenSet = true; m_state = value; }
 
     /**
-     * <p>The state of the job flow step.</p>
+     * <p>The state of the step.</p>
      */
     inline void SetState(StepExecutionState&& value) { m_stateHasBeenSet = true; m_state = value; }
 
     /**
-     * <p>The state of the job flow step.</p>
+     * <p>The state of the step.</p>
      */
     inline StepExecutionStatusDetail& WithState(const StepExecutionState& value) { SetState(value); return *this;}
 
     /**
-     * <p>The state of the job flow step.</p>
+     * <p>The state of the step.</p>
      */
     inline StepExecutionStatusDetail& WithState(StepExecutionState&& value) { SetState(value); return *this;}
 

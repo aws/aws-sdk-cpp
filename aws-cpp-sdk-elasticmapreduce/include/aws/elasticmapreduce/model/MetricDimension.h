@@ -32,13 +32,11 @@ namespace Model
 
   /**
    * <p>A CloudWatch dimension, which is specified using a <code>Key</code> (known as
-   * a <code>Name</code> in CloudWatch), Value pair. By default, Amazon EMR uses one
-   * dimension whose <code>Key</code> is <code>JobFlowID</code> and
+   * a <code>Name</code> in CloudWatch), <code>Value</code> pair. By default, Amazon
+   * EMR uses one dimension whose <code>Key</code> is <code>JobFlowID</code> and
    * <code>Value</code> is a variable representing the cluster ID, which is
-   * <code>${emr:cluster_id}</code>. This enables the rule to bootstrap when the
-   * cluster ID becomes available, and also enables a single automatic scaling policy
-   * to be reused for multiple clusters and instance groups.</p><p><h3>See Also:</h3>
-   * <a
+   * <code>${emr.clusterId}</code>. This enables the rule to bootstrap when the
+   * cluster ID becomes available.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/MetricDimension">AWS
    * API Reference</a></p>
    */

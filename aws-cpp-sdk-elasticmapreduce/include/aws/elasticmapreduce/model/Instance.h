@@ -16,6 +16,7 @@
 #include <aws/elasticmapreduce/EMR_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/elasticmapreduce/model/InstanceStatus.h>
+#include <aws/elasticmapreduce/model/MarketType.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/elasticmapreduce/model/EbsVolume.h>
 
@@ -318,6 +319,113 @@ namespace Model
     inline Instance& WithInstanceGroupId(const char* value) { SetInstanceGroupId(value); return *this;}
 
     /**
+     * <p>The unique identifier of the instance fleet to which an EC2 instance
+     * belongs.</p>
+     */
+    inline const Aws::String& GetInstanceFleetId() const{ return m_instanceFleetId; }
+
+    /**
+     * <p>The unique identifier of the instance fleet to which an EC2 instance
+     * belongs.</p>
+     */
+    inline void SetInstanceFleetId(const Aws::String& value) { m_instanceFleetIdHasBeenSet = true; m_instanceFleetId = value; }
+
+    /**
+     * <p>The unique identifier of the instance fleet to which an EC2 instance
+     * belongs.</p>
+     */
+    inline void SetInstanceFleetId(Aws::String&& value) { m_instanceFleetIdHasBeenSet = true; m_instanceFleetId = value; }
+
+    /**
+     * <p>The unique identifier of the instance fleet to which an EC2 instance
+     * belongs.</p>
+     */
+    inline void SetInstanceFleetId(const char* value) { m_instanceFleetIdHasBeenSet = true; m_instanceFleetId.assign(value); }
+
+    /**
+     * <p>The unique identifier of the instance fleet to which an EC2 instance
+     * belongs.</p>
+     */
+    inline Instance& WithInstanceFleetId(const Aws::String& value) { SetInstanceFleetId(value); return *this;}
+
+    /**
+     * <p>The unique identifier of the instance fleet to which an EC2 instance
+     * belongs.</p>
+     */
+    inline Instance& WithInstanceFleetId(Aws::String&& value) { SetInstanceFleetId(value); return *this;}
+
+    /**
+     * <p>The unique identifier of the instance fleet to which an EC2 instance
+     * belongs.</p>
+     */
+    inline Instance& WithInstanceFleetId(const char* value) { SetInstanceFleetId(value); return *this;}
+
+    /**
+     * <p>The instance purchasing option. Valid values are <code>ON_DEMAND</code> or
+     * <code>SPOT</code>. </p>
+     */
+    inline const MarketType& GetMarket() const{ return m_market; }
+
+    /**
+     * <p>The instance purchasing option. Valid values are <code>ON_DEMAND</code> or
+     * <code>SPOT</code>. </p>
+     */
+    inline void SetMarket(const MarketType& value) { m_marketHasBeenSet = true; m_market = value; }
+
+    /**
+     * <p>The instance purchasing option. Valid values are <code>ON_DEMAND</code> or
+     * <code>SPOT</code>. </p>
+     */
+    inline void SetMarket(MarketType&& value) { m_marketHasBeenSet = true; m_market = value; }
+
+    /**
+     * <p>The instance purchasing option. Valid values are <code>ON_DEMAND</code> or
+     * <code>SPOT</code>. </p>
+     */
+    inline Instance& WithMarket(const MarketType& value) { SetMarket(value); return *this;}
+
+    /**
+     * <p>The instance purchasing option. Valid values are <code>ON_DEMAND</code> or
+     * <code>SPOT</code>. </p>
+     */
+    inline Instance& WithMarket(MarketType&& value) { SetMarket(value); return *this;}
+
+    /**
+     * <p>The EC2 instance type, for example <code>m3.xlarge</code>.</p>
+     */
+    inline const Aws::String& GetInstanceType() const{ return m_instanceType; }
+
+    /**
+     * <p>The EC2 instance type, for example <code>m3.xlarge</code>.</p>
+     */
+    inline void SetInstanceType(const Aws::String& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
+
+    /**
+     * <p>The EC2 instance type, for example <code>m3.xlarge</code>.</p>
+     */
+    inline void SetInstanceType(Aws::String&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
+
+    /**
+     * <p>The EC2 instance type, for example <code>m3.xlarge</code>.</p>
+     */
+    inline void SetInstanceType(const char* value) { m_instanceTypeHasBeenSet = true; m_instanceType.assign(value); }
+
+    /**
+     * <p>The EC2 instance type, for example <code>m3.xlarge</code>.</p>
+     */
+    inline Instance& WithInstanceType(const Aws::String& value) { SetInstanceType(value); return *this;}
+
+    /**
+     * <p>The EC2 instance type, for example <code>m3.xlarge</code>.</p>
+     */
+    inline Instance& WithInstanceType(Aws::String&& value) { SetInstanceType(value); return *this;}
+
+    /**
+     * <p>The EC2 instance type, for example <code>m3.xlarge</code>.</p>
+     */
+    inline Instance& WithInstanceType(const char* value) { SetInstanceType(value); return *this;}
+
+    /**
      * <p>The list of EBS volumes that are attached to this instance.</p>
      */
     inline const Aws::Vector<EbsVolume>& GetEbsVolumes() const{ return m_ebsVolumes; }
@@ -369,6 +477,12 @@ namespace Model
     bool m_statusHasBeenSet;
     Aws::String m_instanceGroupId;
     bool m_instanceGroupIdHasBeenSet;
+    Aws::String m_instanceFleetId;
+    bool m_instanceFleetIdHasBeenSet;
+    MarketType m_market;
+    bool m_marketHasBeenSet;
+    Aws::String m_instanceType;
+    bool m_instanceTypeHasBeenSet;
     Aws::Vector<EbsVolume> m_ebsVolumes;
     bool m_ebsVolumesHasBeenSet;
   };

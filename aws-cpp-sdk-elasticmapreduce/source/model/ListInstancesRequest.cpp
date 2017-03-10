@@ -25,6 +25,9 @@ ListInstancesRequest::ListInstancesRequest() :
     m_clusterIdHasBeenSet(false),
     m_instanceGroupIdHasBeenSet(false),
     m_instanceGroupTypesHasBeenSet(false),
+    m_instanceFleetIdHasBeenSet(false),
+    m_instanceFleetType(InstanceFleetType::NOT_SET),
+    m_instanceFleetTypeHasBeenSet(false),
     m_instanceStatesHasBeenSet(false),
     m_markerHasBeenSet(false)
 {
@@ -55,6 +58,17 @@ Aws::String ListInstancesRequest::SerializePayload() const
    }
    payload.WithArray("InstanceGroupTypes", std::move(instanceGroupTypesJsonList));
 
+  }
+
+  if(m_instanceFleetIdHasBeenSet)
+  {
+   payload.WithString("InstanceFleetId", m_instanceFleetId);
+
+  }
+
+  if(m_instanceFleetTypeHasBeenSet)
+  {
+   payload.WithString("InstanceFleetType", InstanceFleetTypeMapper::GetNameForInstanceFleetType(m_instanceFleetType));
   }
 
   if(m_instanceStatesHasBeenSet)
