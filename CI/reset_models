@@ -9,7 +9,7 @@ grep -vf ./models/pending_releases ./modelsLatest/pending_releases | tee ./model
 grep -vf ./models/release_notes ./modelsLatest/release_notes | tee ./modelsLatest/release_notes
 touch ./not_a_release
 aws s3 cp not_a_release s3://aws-sdk-cpp-pipeline-sdks-team/not_a_release --region us-east-1
-rm -r ./models 
-cp -r ./modelsLatest ./models
+rm -rf ./models 
+mv ./modelsLatest ./models
 zip -r modelsSnapshot.zip ./models
 aws s3 cp modelsSnapshot.zip s3://aws-sdk-cpp-pipeline-sdks-team/modelsSnapshot.zip --region us-east-1
