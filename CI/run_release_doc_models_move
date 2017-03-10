@@ -7,7 +7,6 @@ rm models.zip
 cp $1 $1_cpy
 python $DIR/move_release_doc_to_models.py --modelsDir="./models" --releaseDoc="$1"
 rm models.zip
-rm -f ./models/not_a_release
 zip -r modelsSnapshot.zip ./models
 aws s3 cp modelsSnapshot.zip s3://aws-sdk-cpp-pipeline-sdks-team/modelsSnapshot.zip --region us-east-1
 zip -r pending-releases.zip -j $1
