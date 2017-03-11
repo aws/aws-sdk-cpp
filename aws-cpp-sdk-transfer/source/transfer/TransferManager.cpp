@@ -630,7 +630,7 @@ namespace Aws
                 for(std::size_t i = 0; i < partCount; ++i)
                 {
                     std::size_t partSize = (i + 1 < partCount ) ? bufferSize : (downloadSize - bufferSize * (partCount - 1));
-                    auto partState = Aws::MakeShared<PartState>(CLASS_TAG, i + 1, 0, partSize);
+                    auto partState = Aws::MakeShared<PartState>(CLASS_TAG, static_cast<int>(i + 1), 0, partSize);
                     partState->SetRangeBegin(i * bufferSize);
                     handle->AddQueuedPart(partState);
                 }
