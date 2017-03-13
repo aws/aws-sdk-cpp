@@ -418,10 +418,14 @@ TEST_F(TransferTests, TransferManager_SinglePartUploadTest)
 {
     ScopedTestFile testFile(m_testFileName, MB5, testString);
 
+    AWS_LOG_DEBUG("Transfer::SinglePartUpload", "Starting");
+
     if (EmptyBucket(GetTestBucketName()))
     {
         WaitForBucketToEmpty(GetTestBucketName());
     }
+
+    AWS_LOG_DEBUG("Transfer::SinglePartUpload", "Bucket empty");
     
     GetObjectRequest getObjectRequest;
     getObjectRequest.SetBucket(GetTestBucketName());
@@ -429,6 +433,8 @@ TEST_F(TransferTests, TransferManager_SinglePartUploadTest)
 
     GetObjectOutcome getObjectOutcome = m_s3Client->GetObject(getObjectRequest);
     EXPECT_FALSE(getObjectOutcome.IsSuccess());
+
+    AWS_LOG_DEBUG("Transfer::SinglePartUpload", "Get done");
 
     TransferManagerConfiguration transferManagerConfig;
     transferManagerConfig.s3Client = m_s3Client;
