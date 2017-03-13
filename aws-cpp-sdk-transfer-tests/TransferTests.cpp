@@ -29,6 +29,7 @@
 #include <aws/s3/model/DeleteBucketRequest.h>
 #include <aws/s3/model/CreateBucketRequest.h>
 #include <aws/s3/model/PutBucketVersioningRequest.h>
+#include <aws/s3/model/ListObjectVersionsRequest.h>
 #include <aws/core/platform/FileSystem.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/core/utils/StringUtils.h>
@@ -287,21 +288,44 @@ protected:
 
     static bool EmptyBucket(const Aws::String& bucketName)
     {
-        ListObjectsRequest listObjectsRequest;
-        listObjectsRequest.SetBucket(bucketName);
+        bool done = false;
+        ListObjectVersionsRequest listObjectVersionsRequest;
+        listObjectVersionsRequest.SetBucket(bucketName);
 
-        ListObjectsOutcome listObjectsOutcome = m_s3Client->ListObjects(listObjectsRequest);
+        Aws::Vector<Aws::S3::Model::ObjectVersion> versions;
+        while(!done)
+        {
+            ListObjectVersionsOutcome listObjectVersionsOutcome = m_s3Client->ListObjectVersions(listObjectVersionsRequest);
 
-        if (!listObjectsOutcome.IsSuccess())
-            return false;
+            if (!listObjectVersionsOutcome.IsSuccess())
+                return false;
 
-        for (const auto& object : listObjectsOutcome.GetResult().GetContents())
+            const auto& versionSet = listObjectVersionsOutcome.GetResult().GetVersions();
+            std::copy(versionSet.cbegin(), versionSet.cend(), std::back_inserter(versions));
+
+            const auto& nextMarker = listObjectVersionsOutcome.GetResult().GetNextKeyMarker();
+            if(nextMarker.size() > 0)
+            {
+                listObjectVersionsRequest.SetKeyMarker(nextMarker);
+            }
+            else
+            {
+                done = true;
+            }
+        }
+
+        for (const auto& objectVersion : versions)
         {
             DeleteObjectRequest deleteObjectRequest;
             deleteObjectRequest.SetBucket(bucketName);
-            deleteObjectRequest.SetKey(object.GetKey());
+            deleteObjectRequest.SetKey(objectVersion.GetKey());
+            if(objectVersion.GetVersionId().size() > 0)
+            {
+                deleteObjectRequest.SetVersionId(objectVersion.GetVersionId());
+            }
             m_s3Client->DeleteObject(deleteObjectRequest);
         }
+
         return true;
     }
 
