@@ -86,15 +86,18 @@ namespace Aws
             {
                 if (length > m_transferConfig.bufferSize)
                 {
+                    AWS_LOGSTREAM_DEBUG("TransferManager::UploadFile", "performing multi-part upload");
                     m_transferConfig.transferExecutor->Submit([this, fileStream, handle] { DoMultipartUpload(fileStream, handle); });
                 }
                 else
                 {
+                    AWS_LOGSTREAM_DEBUG("TransferManager::UploadFile", "performing single part upload");
                     m_transferConfig.transferExecutor->Submit([this, fileStream, handle] { DoSinglePartUpload(fileStream, handle); });
                 }
             }
             else
             {
+                AWS_LOGSTREAM_DEBUG("TransferManager::UploadFile", "filename did not lead to a valid stream");
                 handle->SetError(Aws::Client::AWSError<Aws::Client::CoreErrors>(static_cast<Aws::Client::CoreErrors>(Aws::S3::S3Errors::NO_SUCH_UPLOAD), "NoSuchUpload", "The requested file could not be opened.", false));
                 handle->UpdateStatus(Aws::Transfer::TransferStatus::FAILED);
             }
