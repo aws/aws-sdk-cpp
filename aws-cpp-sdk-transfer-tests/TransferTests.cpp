@@ -1269,7 +1269,7 @@ TEST_F(TransferTests, TransferManager_CancelAndRetryDownloadTest)
         ASSERT_TRUE(AreFilesSame(MakeDownloadFileName(cancelTestFileName), cancelTestFileName));
     }
 }
-
+/*
 TEST_F(TransferTests, TransferManager_MediumVersionedTest)
 {
     {
@@ -1365,5 +1365,5 @@ TEST_F(TransferTests, TransferManager_MediumVersionedTest)
         EXPECT_TRUE(setVersioningOutcome.IsSuccess());
     }
 }
-
+*/
 }
