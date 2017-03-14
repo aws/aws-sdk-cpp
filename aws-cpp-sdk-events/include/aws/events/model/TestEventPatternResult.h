@@ -31,12 +31,6 @@ namespace CloudWatchEvents
 {
 namespace Model
 {
-  /**
-   * <p>The result of the <a>TestEventPattern</a> operation.</p><p><h3>See Also:</h3>
-   * <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/TestEventPatternResponse">AWS
-   * API Reference</a></p>
-   */
   class AWS_CLOUDWATCHEVENTS_API TestEventPatternResult
   {
   public:
@@ -45,17 +39,23 @@ namespace Model
     TestEventPatternResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
     /**
-     * <p>Indicates whether the event matches the event pattern.</p>
+     * <zonbook> <simpara>Indicates whether the event matches the event
+     * pattern.</simpara> </zonbook> <xhtml> <p>Indicates whether the event matches the
+     * event pattern.</p> </xhtml>
      */
     inline bool GetResult() const{ return m_result; }
 
     /**
-     * <p>Indicates whether the event matches the event pattern.</p>
+     * <zonbook> <simpara>Indicates whether the event matches the event
+     * pattern.</simpara> </zonbook> <xhtml> <p>Indicates whether the event matches the
+     * event pattern.</p> </xhtml>
      */
     inline void SetResult(bool value) { m_result = value; }
 
     /**
-     * <p>Indicates whether the event matches the event pattern.</p>
+     * <zonbook> <simpara>Indicates whether the event matches the event
+     * pattern.</simpara> </zonbook> <xhtml> <p>Indicates whether the event matches the
+     * event pattern.</p> </xhtml>
      */
     inline TestEventPatternResult& WithResult(bool value) { SetResult(value); return *this;}
 

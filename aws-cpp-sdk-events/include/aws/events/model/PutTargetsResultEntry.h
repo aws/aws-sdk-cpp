@@ -31,10 +31,9 @@ namespace Model
 {
 
   /**
-   * <p>A PutTargetsResult contains a list of PutTargetsResultEntry.</p><p><h3>See
-   * Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/PutTargetsResultEntry">AWS
-   * API Reference</a></p>
+   * <zonbook> <simpara>Represents a target that failed to be added to a
+   * rule.</simpara> </zonbook> <xhtml> <p>Represents a target that failed to be
+   * added to a rule.</p> </xhtml>
    */
   class AWS_CLOUDWATCHEVENTS_API PutTargetsResultEntry
   {
@@ -45,121 +44,142 @@ namespace Model
     Aws::Utils::Json::JsonValue Jsonize() const;
 
     /**
-     * <p>The ID of the target submitted to Amazon CloudWatch Events.</p>
+     * <zonbook> <simpara>The ID of the target.</simpara> </zonbook> <xhtml> <p>The ID
+     * of the target.</p> </xhtml>
      */
     inline const Aws::String& GetTargetId() const{ return m_targetId; }
 
     /**
-     * <p>The ID of the target submitted to Amazon CloudWatch Events.</p>
+     * <zonbook> <simpara>The ID of the target.</simpara> </zonbook> <xhtml> <p>The ID
+     * of the target.</p> </xhtml>
      */
     inline void SetTargetId(const Aws::String& value) { m_targetIdHasBeenSet = true; m_targetId = value; }
 
     /**
-     * <p>The ID of the target submitted to Amazon CloudWatch Events.</p>
+     * <zonbook> <simpara>The ID of the target.</simpara> </zonbook> <xhtml> <p>The ID
+     * of the target.</p> </xhtml>
      */
     inline void SetTargetId(Aws::String&& value) { m_targetIdHasBeenSet = true; m_targetId = value; }
 
     /**
-     * <p>The ID of the target submitted to Amazon CloudWatch Events.</p>
+     * <zonbook> <simpara>The ID of the target.</simpara> </zonbook> <xhtml> <p>The ID
+     * of the target.</p> </xhtml>
      */
     inline void SetTargetId(const char* value) { m_targetIdHasBeenSet = true; m_targetId.assign(value); }
 
     /**
-     * <p>The ID of the target submitted to Amazon CloudWatch Events.</p>
+     * <zonbook> <simpara>The ID of the target.</simpara> </zonbook> <xhtml> <p>The ID
+     * of the target.</p> </xhtml>
      */
     inline PutTargetsResultEntry& WithTargetId(const Aws::String& value) { SetTargetId(value); return *this;}
 
     /**
-     * <p>The ID of the target submitted to Amazon CloudWatch Events.</p>
+     * <zonbook> <simpara>The ID of the target.</simpara> </zonbook> <xhtml> <p>The ID
+     * of the target.</p> </xhtml>
      */
     inline PutTargetsResultEntry& WithTargetId(Aws::String&& value) { SetTargetId(value); return *this;}
 
     /**
-     * <p>The ID of the target submitted to Amazon CloudWatch Events.</p>
+     * <zonbook> <simpara>The ID of the target.</simpara> </zonbook> <xhtml> <p>The ID
+     * of the target.</p> </xhtml>
      */
     inline PutTargetsResultEntry& WithTargetId(const char* value) { SetTargetId(value); return *this;}
 
     /**
-     * <p>The error code representing why the target submission failed on this
-     * entry.</p>
+     * <zonbook> <simpara>The error code that indicates why the target addition
+     * failed.</simpara> </zonbook> <xhtml> <p>The error code that indicates why the
+     * target addition failed.</p> </xhtml>
      */
     inline const Aws::String& GetErrorCode() const{ return m_errorCode; }
 
     /**
-     * <p>The error code representing why the target submission failed on this
-     * entry.</p>
+     * <zonbook> <simpara>The error code that indicates why the target addition
+     * failed.</simpara> </zonbook> <xhtml> <p>The error code that indicates why the
+     * target addition failed.</p> </xhtml>
      */
     inline void SetErrorCode(const Aws::String& value) { m_errorCodeHasBeenSet = true; m_errorCode = value; }
 
     /**
-     * <p>The error code representing why the target submission failed on this
-     * entry.</p>
+     * <zonbook> <simpara>The error code that indicates why the target addition
+     * failed.</simpara> </zonbook> <xhtml> <p>The error code that indicates why the
+     * target addition failed.</p> </xhtml>
      */
     inline void SetErrorCode(Aws::String&& value) { m_errorCodeHasBeenSet = true; m_errorCode = value; }
 
     /**
-     * <p>The error code representing why the target submission failed on this
-     * entry.</p>
+     * <zonbook> <simpara>The error code that indicates why the target addition
+     * failed.</simpara> </zonbook> <xhtml> <p>The error code that indicates why the
+     * target addition failed.</p> </xhtml>
      */
     inline void SetErrorCode(const char* value) { m_errorCodeHasBeenSet = true; m_errorCode.assign(value); }
 
     /**
-     * <p>The error code representing why the target submission failed on this
-     * entry.</p>
+     * <zonbook> <simpara>The error code that indicates why the target addition
+     * failed.</simpara> </zonbook> <xhtml> <p>The error code that indicates why the
+     * target addition failed.</p> </xhtml>
      */
     inline PutTargetsResultEntry& WithErrorCode(const Aws::String& value) { SetErrorCode(value); return *this;}
 
     /**
-     * <p>The error code representing why the target submission failed on this
-     * entry.</p>
+     * <zonbook> <simpara>The error code that indicates why the target addition
+     * failed.</simpara> </zonbook> <xhtml> <p>The error code that indicates why the
+     * target addition failed.</p> </xhtml>
      */
     inline PutTargetsResultEntry& WithErrorCode(Aws::String&& value) { SetErrorCode(value); return *this;}
 
     /**
-     * <p>The error code representing why the target submission failed on this
-     * entry.</p>
+     * <zonbook> <simpara>The error code that indicates why the target addition
+     * failed.</simpara> </zonbook> <xhtml> <p>The error code that indicates why the
+     * target addition failed.</p> </xhtml>
      */
     inline PutTargetsResultEntry& WithErrorCode(const char* value) { SetErrorCode(value); return *this;}
 
     /**
-     * <p>The error message explaining why the target submission failed on this
-     * entry.</p>
+     * <zonbook> <simpara>The error message that explains why the target addition
+     * failed.</simpara> </zonbook> <xhtml> <p>The error message that explains why the
+     * target addition failed.</p> </xhtml>
      */
     inline const Aws::String& GetErrorMessage() const{ return m_errorMessage; }
 
     /**
-     * <p>The error message explaining why the target submission failed on this
-     * entry.</p>
+     * <zonbook> <simpara>The error message that explains why the target addition
+     * failed.</simpara> </zonbook> <xhtml> <p>The error message that explains why the
+     * target addition failed.</p> </xhtml>
      */
     inline void SetErrorMessage(const Aws::String& value) { m_errorMessageHasBeenSet = true; m_errorMessage = value; }
 
     /**
-     * <p>The error message explaining why the target submission failed on this
-     * entry.</p>
+     * <zonbook> <simpara>The error message that explains why the target addition
+     * failed.</simpara> </zonbook> <xhtml> <p>The error message that explains why the
+     * target addition failed.</p> </xhtml>
      */
     inline void SetErrorMessage(Aws::String&& value) { m_errorMessageHasBeenSet = true; m_errorMessage = value; }
 
     /**
-     * <p>The error message explaining why the target submission failed on this
-     * entry.</p>
+     * <zonbook> <simpara>The error message that explains why the target addition
+     * failed.</simpara> </zonbook> <xhtml> <p>The error message that explains why the
+     * target addition failed.</p> </xhtml>
      */
     inline void SetErrorMessage(const char* value) { m_errorMessageHasBeenSet = true; m_errorMessage.assign(value); }
 
     /**
-     * <p>The error message explaining why the target submission failed on this
-     * entry.</p>
+     * <zonbook> <simpara>The error message that explains why the target addition
+     * failed.</simpara> </zonbook> <xhtml> <p>The error message that explains why the
+     * target addition failed.</p> </xhtml>
      */
     inline PutTargetsResultEntry& WithErrorMessage(const Aws::String& value) { SetErrorMessage(value); return *this;}
 
     /**
-     * <p>The error message explaining why the target submission failed on this
-     * entry.</p>
+     * <zonbook> <simpara>The error message that explains why the target addition
+     * failed.</simpara> </zonbook> <xhtml> <p>The error message that explains why the
+     * target addition failed.</p> </xhtml>
      */
     inline PutTargetsResultEntry& WithErrorMessage(Aws::String&& value) { SetErrorMessage(value); return *this;}
 
     /**
-     * <p>The error message explaining why the target submission failed on this
-     * entry.</p>
+     * <zonbook> <simpara>The error message that explains why the target addition
+     * failed.</simpara> </zonbook> <xhtml> <p>The error message that explains why the
+     * target addition failed.</p> </xhtml>
      */
     inline PutTargetsResultEntry& WithErrorMessage(const char* value) { SetErrorMessage(value); return *this;}
 

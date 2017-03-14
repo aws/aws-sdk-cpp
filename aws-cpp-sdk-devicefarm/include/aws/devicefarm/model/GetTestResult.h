@@ -44,19 +44,29 @@ namespace Model
     GetTestResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     GetTestResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
-    
+    /**
+     * <p>A test condition that is evaluated.</p>
+     */
     inline const Test& GetTest() const{ return m_test; }
 
-    
+    /**
+     * <p>A test condition that is evaluated.</p>
+     */
     inline void SetTest(const Test& value) { m_test = value; }
 
-    
+    /**
+     * <p>A test condition that is evaluated.</p>
+     */
     inline void SetTest(Test&& value) { m_test = value; }
 
-    
+    /**
+     * <p>A test condition that is evaluated.</p>
+     */
     inline GetTestResult& WithTest(const Test& value) { SetTest(value); return *this;}
 
-    
+    /**
+     * <p>A test condition that is evaluated.</p>
+     */
     inline GetTestResult& WithTest(Test&& value) { SetTest(value); return *this;}
 
   private:

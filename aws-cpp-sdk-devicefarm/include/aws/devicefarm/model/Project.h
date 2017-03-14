@@ -116,6 +116,24 @@ namespace Model
     inline Project& WithName(const char* value) { SetName(value); return *this;}
 
     /**
+     * <p>The default number of minutes (at the project level) a test run will execute
+     * before it times out. Default value is 60 minutes.</p>
+     */
+    inline int GetDefaultJobTimeoutMinutes() const{ return m_defaultJobTimeoutMinutes; }
+
+    /**
+     * <p>The default number of minutes (at the project level) a test run will execute
+     * before it times out. Default value is 60 minutes.</p>
+     */
+    inline void SetDefaultJobTimeoutMinutes(int value) { m_defaultJobTimeoutMinutesHasBeenSet = true; m_defaultJobTimeoutMinutes = value; }
+
+    /**
+     * <p>The default number of minutes (at the project level) a test run will execute
+     * before it times out. Default value is 60 minutes.</p>
+     */
+    inline Project& WithDefaultJobTimeoutMinutes(int value) { SetDefaultJobTimeoutMinutes(value); return *this;}
+
+    /**
      * <p>When the project was created.</p>
      */
     inline const Aws::Utils::DateTime& GetCreated() const{ return m_created; }
@@ -145,6 +163,8 @@ namespace Model
     bool m_arnHasBeenSet;
     Aws::String m_name;
     bool m_nameHasBeenSet;
+    int m_defaultJobTimeoutMinutes;
+    bool m_defaultJobTimeoutMinutesHasBeenSet;
     Aws::Utils::DateTime m_created;
     bool m_createdHasBeenSet;
   };

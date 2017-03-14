@@ -44,19 +44,29 @@ namespace Model
     GetRunResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     GetRunResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
-    
+    /**
+     * <p>The run you wish to get results from.</p>
+     */
     inline const Run& GetRun() const{ return m_run; }
 
-    
+    /**
+     * <p>The run you wish to get results from.</p>
+     */
     inline void SetRun(const Run& value) { m_run = value; }
 
-    
+    /**
+     * <p>The run you wish to get results from.</p>
+     */
     inline void SetRun(Run&& value) { m_run = value; }
 
-    
+    /**
+     * <p>The run you wish to get results from.</p>
+     */
     inline GetRunResult& WithRun(const Run& value) { SetRun(value); return *this;}
 
-    
+    /**
+     * <p>The run you wish to get results from.</p>
+     */
     inline GetRunResult& WithRun(Run&& value) { SetRun(value); return *this;}
 
   private:

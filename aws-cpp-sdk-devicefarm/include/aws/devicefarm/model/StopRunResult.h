@@ -45,19 +45,29 @@ namespace Model
     StopRunResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     StopRunResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
-    
+    /**
+     * <p>The run that was stopped.</p>
+     */
     inline const Run& GetRun() const{ return m_run; }
 
-    
+    /**
+     * <p>The run that was stopped.</p>
+     */
     inline void SetRun(const Run& value) { m_run = value; }
 
-    
+    /**
+     * <p>The run that was stopped.</p>
+     */
     inline void SetRun(Run&& value) { m_run = value; }
 
-    
+    /**
+     * <p>The run that was stopped.</p>
+     */
     inline StopRunResult& WithRun(const Run& value) { SetRun(value); return *this;}
 
-    
+    /**
+     * <p>The run that was stopped.</p>
+     */
     inline StopRunResult& WithRun(Run&& value) { SetRun(value); return *this;}
 
   private:

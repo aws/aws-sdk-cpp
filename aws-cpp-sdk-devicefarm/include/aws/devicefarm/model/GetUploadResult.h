@@ -44,19 +44,34 @@ namespace Model
     GetUploadResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     GetUploadResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
-    
+    /**
+     * <p>An app or a set of one or more tests to upload or that have been
+     * uploaded.</p>
+     */
     inline const Upload& GetUpload() const{ return m_upload; }
 
-    
+    /**
+     * <p>An app or a set of one or more tests to upload or that have been
+     * uploaded.</p>
+     */
     inline void SetUpload(const Upload& value) { m_upload = value; }
 
-    
+    /**
+     * <p>An app or a set of one or more tests to upload or that have been
+     * uploaded.</p>
+     */
     inline void SetUpload(Upload&& value) { m_upload = value; }
 
-    
+    /**
+     * <p>An app or a set of one or more tests to upload or that have been
+     * uploaded.</p>
+     */
     inline GetUploadResult& WithUpload(const Upload& value) { SetUpload(value); return *this;}
 
-    
+    /**
+     * <p>An app or a set of one or more tests to upload or that have been
+     * uploaded.</p>
+     */
     inline GetUploadResult& WithUpload(Upload&& value) { SetUpload(value); return *this;}
 
   private:

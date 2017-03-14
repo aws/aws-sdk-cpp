@@ -27,7 +27,8 @@ ScheduleRunRequest::ScheduleRunRequest() :
     m_devicePoolArnHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_testHasBeenSet(false),
-    m_configurationHasBeenSet(false)
+    m_configurationHasBeenSet(false),
+    m_executionConfigurationHasBeenSet(false)
 {
 }
 
@@ -68,6 +69,12 @@ Aws::String ScheduleRunRequest::SerializePayload() const
   if(m_configurationHasBeenSet)
   {
    payload.WithObject("configuration", m_configuration.Jsonize());
+
+  }
+
+  if(m_executionConfigurationHasBeenSet)
+  {
+   payload.WithObject("executionConfiguration", m_executionConfiguration.Jsonize());
 
   }
 

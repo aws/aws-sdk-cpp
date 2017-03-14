@@ -30,16 +30,26 @@ namespace Model
 Target::Target() : 
     m_idHasBeenSet(false),
     m_arnHasBeenSet(false),
+    m_roleArnHasBeenSet(false),
     m_inputHasBeenSet(false),
-    m_inputPathHasBeenSet(false)
+    m_inputPathHasBeenSet(false),
+    m_inputTransformerHasBeenSet(false),
+    m_kinesisParametersHasBeenSet(false),
+    m_runCommandParametersHasBeenSet(false),
+    m_ecsParametersHasBeenSet(false)
 {
 }
 
 Target::Target(const JsonValue& jsonValue) : 
     m_idHasBeenSet(false),
     m_arnHasBeenSet(false),
+    m_roleArnHasBeenSet(false),
     m_inputHasBeenSet(false),
-    m_inputPathHasBeenSet(false)
+    m_inputPathHasBeenSet(false),
+    m_inputTransformerHasBeenSet(false),
+    m_kinesisParametersHasBeenSet(false),
+    m_runCommandParametersHasBeenSet(false),
+    m_ecsParametersHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -60,6 +70,13 @@ Target& Target::operator =(const JsonValue& jsonValue)
     m_arnHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("RoleArn"))
+  {
+    m_roleArn = jsonValue.GetString("RoleArn");
+
+    m_roleArnHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("Input"))
   {
     m_input = jsonValue.GetString("Input");
@@ -72,6 +89,34 @@ Target& Target::operator =(const JsonValue& jsonValue)
     m_inputPath = jsonValue.GetString("InputPath");
 
     m_inputPathHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("InputTransformer"))
+  {
+    m_inputTransformer = jsonValue.GetObject("InputTransformer");
+
+    m_inputTransformerHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("KinesisParameters"))
+  {
+    m_kinesisParameters = jsonValue.GetObject("KinesisParameters");
+
+    m_kinesisParametersHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("RunCommandParameters"))
+  {
+    m_runCommandParameters = jsonValue.GetObject("RunCommandParameters");
+
+    m_runCommandParametersHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("EcsParameters"))
+  {
+    m_ecsParameters = jsonValue.GetObject("EcsParameters");
+
+    m_ecsParametersHasBeenSet = true;
   }
 
   return *this;
@@ -93,6 +138,12 @@ JsonValue Target::Jsonize() const
 
   }
 
+  if(m_roleArnHasBeenSet)
+  {
+   payload.WithString("RoleArn", m_roleArn);
+
+  }
+
   if(m_inputHasBeenSet)
   {
    payload.WithString("Input", m_input);
@@ -102,6 +153,30 @@ JsonValue Target::Jsonize() const
   if(m_inputPathHasBeenSet)
   {
    payload.WithString("InputPath", m_inputPath);
+
+  }
+
+  if(m_inputTransformerHasBeenSet)
+  {
+   payload.WithObject("InputTransformer", m_inputTransformer.Jsonize());
+
+  }
+
+  if(m_kinesisParametersHasBeenSet)
+  {
+   payload.WithObject("KinesisParameters", m_kinesisParameters.Jsonize());
+
+  }
+
+  if(m_runCommandParametersHasBeenSet)
+  {
+   payload.WithObject("RunCommandParameters", m_runCommandParameters.Jsonize());
+
+  }
+
+  if(m_ecsParametersHasBeenSet)
+  {
+   payload.WithObject("EcsParameters", m_ecsParameters.Jsonize());
 
   }
 

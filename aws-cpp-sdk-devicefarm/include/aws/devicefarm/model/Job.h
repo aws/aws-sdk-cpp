@@ -450,19 +450,29 @@ namespace Model
      */
     inline Job& WithMessage(const char* value) { SetMessage(value); return *this;}
 
-    
+    /**
+     * <p>The device (phone or tablet).</p>
+     */
     inline const Device& GetDevice() const{ return m_device; }
 
-    
+    /**
+     * <p>The device (phone or tablet).</p>
+     */
     inline void SetDevice(const Device& value) { m_deviceHasBeenSet = true; m_device = value; }
 
-    
+    /**
+     * <p>The device (phone or tablet).</p>
+     */
     inline void SetDevice(Device&& value) { m_deviceHasBeenSet = true; m_device = value; }
 
-    
+    /**
+     * <p>The device (phone or tablet).</p>
+     */
     inline Job& WithDevice(const Device& value) { SetDevice(value); return *this;}
 
-    
+    /**
+     * <p>The device (phone or tablet).</p>
+     */
     inline Job& WithDevice(Device&& value) { SetDevice(value); return *this;}
 
     /**

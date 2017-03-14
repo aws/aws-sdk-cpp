@@ -33,12 +33,6 @@ namespace CloudWatchEvents
 {
 namespace Model
 {
-  /**
-   * <p>The result of the <a>RemoveTargets</a> operation.</p><p><h3>See Also:</h3>  
-   * <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/RemoveTargetsResponse">AWS
-   * API Reference</a></p>
-   */
   class AWS_CLOUDWATCHEVENTS_API RemoveTargetsResult
   {
   public:
@@ -47,52 +41,62 @@ namespace Model
     RemoveTargetsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
     /**
-     * <p>The number of failed entries.</p>
+     * <zonbook> <simpara>The number of failed entries.</simpara> </zonbook> <xhtml>
+     * <p>The number of failed entries.</p> </xhtml>
      */
     inline int GetFailedEntryCount() const{ return m_failedEntryCount; }
 
     /**
-     * <p>The number of failed entries.</p>
+     * <zonbook> <simpara>The number of failed entries.</simpara> </zonbook> <xhtml>
+     * <p>The number of failed entries.</p> </xhtml>
      */
     inline void SetFailedEntryCount(int value) { m_failedEntryCount = value; }
 
     /**
-     * <p>The number of failed entries.</p>
+     * <zonbook> <simpara>The number of failed entries.</simpara> </zonbook> <xhtml>
+     * <p>The number of failed entries.</p> </xhtml>
      */
     inline RemoveTargetsResult& WithFailedEntryCount(int value) { SetFailedEntryCount(value); return *this;}
 
     /**
-     * <p>An array of failed target entries.</p>
+     * <zonbook> <simpara>The failed target entries.</simpara> </zonbook> <xhtml>
+     * <p>The failed target entries.</p> </xhtml>
      */
     inline const Aws::Vector<RemoveTargetsResultEntry>& GetFailedEntries() const{ return m_failedEntries; }
 
     /**
-     * <p>An array of failed target entries.</p>
+     * <zonbook> <simpara>The failed target entries.</simpara> </zonbook> <xhtml>
+     * <p>The failed target entries.</p> </xhtml>
      */
     inline void SetFailedEntries(const Aws::Vector<RemoveTargetsResultEntry>& value) { m_failedEntries = value; }
 
     /**
-     * <p>An array of failed target entries.</p>
+     * <zonbook> <simpara>The failed target entries.</simpara> </zonbook> <xhtml>
+     * <p>The failed target entries.</p> </xhtml>
      */
     inline void SetFailedEntries(Aws::Vector<RemoveTargetsResultEntry>&& value) { m_failedEntries = value; }
 
     /**
-     * <p>An array of failed target entries.</p>
+     * <zonbook> <simpara>The failed target entries.</simpara> </zonbook> <xhtml>
+     * <p>The failed target entries.</p> </xhtml>
      */
     inline RemoveTargetsResult& WithFailedEntries(const Aws::Vector<RemoveTargetsResultEntry>& value) { SetFailedEntries(value); return *this;}
 
     /**
-     * <p>An array of failed target entries.</p>
+     * <zonbook> <simpara>The failed target entries.</simpara> </zonbook> <xhtml>
+     * <p>The failed target entries.</p> </xhtml>
      */
     inline RemoveTargetsResult& WithFailedEntries(Aws::Vector<RemoveTargetsResultEntry>&& value) { SetFailedEntries(value); return *this;}
 
     /**
-     * <p>An array of failed target entries.</p>
+     * <zonbook> <simpara>The failed target entries.</simpara> </zonbook> <xhtml>
+     * <p>The failed target entries.</p> </xhtml>
      */
     inline RemoveTargetsResult& AddFailedEntries(const RemoveTargetsResultEntry& value) { m_failedEntries.push_back(value); return *this; }
 
     /**
-     * <p>An array of failed target entries.</p>
+     * <zonbook> <simpara>The failed target entries.</simpara> </zonbook> <xhtml>
+     * <p>The failed target entries.</p> </xhtml>
      */
     inline RemoveTargetsResult& AddFailedEntries(RemoveTargetsResultEntry&& value) { m_failedEntries.push_back(value); return *this; }
 

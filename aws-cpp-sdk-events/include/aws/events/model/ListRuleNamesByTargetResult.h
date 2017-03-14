@@ -33,12 +33,6 @@ namespace CloudWatchEvents
 {
 namespace Model
 {
-  /**
-   * <p>The result of the <a>ListRuleNamesByTarget</a> operation.</p><p><h3>See
-   * Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/ListRuleNamesByTargetResponse">AWS
-   * API Reference</a></p>
-   */
   class AWS_CLOUDWATCHEVENTS_API ListRuleNamesByTargetResult
   {
   public:
@@ -47,77 +41,114 @@ namespace Model
     ListRuleNamesByTargetResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
     /**
-     * <p>List of rules names that can invoke the given target.</p>
+     * <zonbook> <simpara>The names of the rules that can invoke the given
+     * target.</simpara> </zonbook> <xhtml> <p>The names of the rules that can invoke
+     * the given target.</p> </xhtml>
      */
     inline const Aws::Vector<Aws::String>& GetRuleNames() const{ return m_ruleNames; }
 
     /**
-     * <p>List of rules names that can invoke the given target.</p>
+     * <zonbook> <simpara>The names of the rules that can invoke the given
+     * target.</simpara> </zonbook> <xhtml> <p>The names of the rules that can invoke
+     * the given target.</p> </xhtml>
      */
     inline void SetRuleNames(const Aws::Vector<Aws::String>& value) { m_ruleNames = value; }
 
     /**
-     * <p>List of rules names that can invoke the given target.</p>
+     * <zonbook> <simpara>The names of the rules that can invoke the given
+     * target.</simpara> </zonbook> <xhtml> <p>The names of the rules that can invoke
+     * the given target.</p> </xhtml>
      */
     inline void SetRuleNames(Aws::Vector<Aws::String>&& value) { m_ruleNames = value; }
 
     /**
-     * <p>List of rules names that can invoke the given target.</p>
+     * <zonbook> <simpara>The names of the rules that can invoke the given
+     * target.</simpara> </zonbook> <xhtml> <p>The names of the rules that can invoke
+     * the given target.</p> </xhtml>
      */
     inline ListRuleNamesByTargetResult& WithRuleNames(const Aws::Vector<Aws::String>& value) { SetRuleNames(value); return *this;}
 
     /**
-     * <p>List of rules names that can invoke the given target.</p>
+     * <zonbook> <simpara>The names of the rules that can invoke the given
+     * target.</simpara> </zonbook> <xhtml> <p>The names of the rules that can invoke
+     * the given target.</p> </xhtml>
      */
     inline ListRuleNamesByTargetResult& WithRuleNames(Aws::Vector<Aws::String>&& value) { SetRuleNames(value); return *this;}
 
     /**
-     * <p>List of rules names that can invoke the given target.</p>
+     * <zonbook> <simpara>The names of the rules that can invoke the given
+     * target.</simpara> </zonbook> <xhtml> <p>The names of the rules that can invoke
+     * the given target.</p> </xhtml>
      */
     inline ListRuleNamesByTargetResult& AddRuleNames(const Aws::String& value) { m_ruleNames.push_back(value); return *this; }
 
     /**
-     * <p>List of rules names that can invoke the given target.</p>
+     * <zonbook> <simpara>The names of the rules that can invoke the given
+     * target.</simpara> </zonbook> <xhtml> <p>The names of the rules that can invoke
+     * the given target.</p> </xhtml>
      */
     inline ListRuleNamesByTargetResult& AddRuleNames(Aws::String&& value) { m_ruleNames.push_back(value); return *this; }
 
     /**
-     * <p>List of rules names that can invoke the given target.</p>
+     * <zonbook> <simpara>The names of the rules that can invoke the given
+     * target.</simpara> </zonbook> <xhtml> <p>The names of the rules that can invoke
+     * the given target.</p> </xhtml>
      */
     inline ListRuleNamesByTargetResult& AddRuleNames(const char* value) { m_ruleNames.push_back(value); return *this; }
 
     /**
-     * <p>Indicates that there are additional results to retrieve.</p>
+     * <zonbook> <simpara>Indicates whether there are additional results to retrieve.
+     * If there are no more results, the value is null.</simpara> </zonbook> <xhtml>
+     * <p>Indicates whether there are additional results to retrieve. If there are no
+     * more results, the value is null.</p> </xhtml>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * <p>Indicates that there are additional results to retrieve.</p>
+     * <zonbook> <simpara>Indicates whether there are additional results to retrieve.
+     * If there are no more results, the value is null.</simpara> </zonbook> <xhtml>
+     * <p>Indicates whether there are additional results to retrieve. If there are no
+     * more results, the value is null.</p> </xhtml>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
 
     /**
-     * <p>Indicates that there are additional results to retrieve.</p>
+     * <zonbook> <simpara>Indicates whether there are additional results to retrieve.
+     * If there are no more results, the value is null.</simpara> </zonbook> <xhtml>
+     * <p>Indicates whether there are additional results to retrieve. If there are no
+     * more results, the value is null.</p> </xhtml>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = value; }
 
     /**
-     * <p>Indicates that there are additional results to retrieve.</p>
+     * <zonbook> <simpara>Indicates whether there are additional results to retrieve.
+     * If there are no more results, the value is null.</simpara> </zonbook> <xhtml>
+     * <p>Indicates whether there are additional results to retrieve. If there are no
+     * more results, the value is null.</p> </xhtml>
      */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
 
     /**
-     * <p>Indicates that there are additional results to retrieve.</p>
+     * <zonbook> <simpara>Indicates whether there are additional results to retrieve.
+     * If there are no more results, the value is null.</simpara> </zonbook> <xhtml>
+     * <p>Indicates whether there are additional results to retrieve. If there are no
+     * more results, the value is null.</p> </xhtml>
      */
     inline ListRuleNamesByTargetResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>Indicates that there are additional results to retrieve.</p>
+     * <zonbook> <simpara>Indicates whether there are additional results to retrieve.
+     * If there are no more results, the value is null.</simpara> </zonbook> <xhtml>
+     * <p>Indicates whether there are additional results to retrieve. If there are no
+     * more results, the value is null.</p> </xhtml>
      */
     inline ListRuleNamesByTargetResult& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>Indicates that there are additional results to retrieve.</p>
+     * <zonbook> <simpara>Indicates whether there are additional results to retrieve.
+     * If there are no more results, the value is null.</simpara> </zonbook> <xhtml>
+     * <p>Indicates whether there are additional results to retrieve. If there are no
+     * more results, the value is null.</p> </xhtml>
      */
     inline ListRuleNamesByTargetResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 

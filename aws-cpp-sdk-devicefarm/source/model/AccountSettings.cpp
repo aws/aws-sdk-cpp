@@ -30,14 +30,22 @@ namespace Model
 AccountSettings::AccountSettings() : 
     m_awsAccountNumberHasBeenSet(false),
     m_unmeteredDevicesHasBeenSet(false),
-    m_unmeteredRemoteAccessDevicesHasBeenSet(false)
+    m_unmeteredRemoteAccessDevicesHasBeenSet(false),
+    m_maxJobTimeoutMinutes(0),
+    m_maxJobTimeoutMinutesHasBeenSet(false),
+    m_defaultJobTimeoutMinutes(0),
+    m_defaultJobTimeoutMinutesHasBeenSet(false)
 {
 }
 
 AccountSettings::AccountSettings(const JsonValue& jsonValue) : 
     m_awsAccountNumberHasBeenSet(false),
     m_unmeteredDevicesHasBeenSet(false),
-    m_unmeteredRemoteAccessDevicesHasBeenSet(false)
+    m_unmeteredRemoteAccessDevicesHasBeenSet(false),
+    m_maxJobTimeoutMinutes(0),
+    m_maxJobTimeoutMinutesHasBeenSet(false),
+    m_defaultJobTimeoutMinutes(0),
+    m_defaultJobTimeoutMinutesHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -69,6 +77,20 @@ AccountSettings& AccountSettings::operator =(const JsonValue& jsonValue)
       m_unmeteredRemoteAccessDevices[DevicePlatformMapper::GetDevicePlatformForName(unmeteredRemoteAccessDevicesItem.first)] = unmeteredRemoteAccessDevicesItem.second.AsInteger();
     }
     m_unmeteredRemoteAccessDevicesHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("maxJobTimeoutMinutes"))
+  {
+    m_maxJobTimeoutMinutes = jsonValue.GetInteger("maxJobTimeoutMinutes");
+
+    m_maxJobTimeoutMinutesHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("defaultJobTimeoutMinutes"))
+  {
+    m_defaultJobTimeoutMinutes = jsonValue.GetInteger("defaultJobTimeoutMinutes");
+
+    m_defaultJobTimeoutMinutesHasBeenSet = true;
   }
 
   return *this;
@@ -103,6 +125,18 @@ JsonValue AccountSettings::Jsonize() const
      unmeteredRemoteAccessDevicesJsonMap.WithInteger(DevicePlatformMapper::GetNameForDevicePlatform(unmeteredRemoteAccessDevicesItem.first), unmeteredRemoteAccessDevicesItem.second);
    }
    payload.WithObject("unmeteredRemoteAccessDevices", std::move(unmeteredRemoteAccessDevicesJsonMap));
+
+  }
+
+  if(m_maxJobTimeoutMinutesHasBeenSet)
+  {
+   payload.WithInteger("maxJobTimeoutMinutes", m_maxJobTimeoutMinutes);
+
+  }
+
+  if(m_defaultJobTimeoutMinutesHasBeenSet)
+  {
+   payload.WithInteger("defaultJobTimeoutMinutes", m_defaultJobTimeoutMinutes);
 
   }
 

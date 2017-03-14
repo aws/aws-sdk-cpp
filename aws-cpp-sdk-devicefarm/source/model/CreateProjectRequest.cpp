@@ -22,7 +22,9 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 CreateProjectRequest::CreateProjectRequest() : 
-    m_nameHasBeenSet(false)
+    m_nameHasBeenSet(false),
+    m_defaultJobTimeoutMinutes(0),
+    m_defaultJobTimeoutMinutesHasBeenSet(false)
 {
 }
 
@@ -33,6 +35,12 @@ Aws::String CreateProjectRequest::SerializePayload() const
   if(m_nameHasBeenSet)
   {
    payload.WithString("name", m_name);
+
+  }
+
+  if(m_defaultJobTimeoutMinutesHasBeenSet)
+  {
+   payload.WithInteger("defaultJobTimeoutMinutes", m_defaultJobTimeoutMinutes);
 
   }
 

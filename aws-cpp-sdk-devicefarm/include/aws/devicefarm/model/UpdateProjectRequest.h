@@ -115,11 +115,31 @@ namespace Model
      */
     inline UpdateProjectRequest& WithName(const char* value) { SetName(value); return *this;}
 
+    /**
+     * <p>The number of minutes a test run in the project will execute before it times
+     * out.</p>
+     */
+    inline int GetDefaultJobTimeoutMinutes() const{ return m_defaultJobTimeoutMinutes; }
+
+    /**
+     * <p>The number of minutes a test run in the project will execute before it times
+     * out.</p>
+     */
+    inline void SetDefaultJobTimeoutMinutes(int value) { m_defaultJobTimeoutMinutesHasBeenSet = true; m_defaultJobTimeoutMinutes = value; }
+
+    /**
+     * <p>The number of minutes a test run in the project will execute before it times
+     * out.</p>
+     */
+    inline UpdateProjectRequest& WithDefaultJobTimeoutMinutes(int value) { SetDefaultJobTimeoutMinutes(value); return *this;}
+
   private:
     Aws::String m_arn;
     bool m_arnHasBeenSet;
     Aws::String m_name;
     bool m_nameHasBeenSet;
+    int m_defaultJobTimeoutMinutes;
+    bool m_defaultJobTimeoutMinutesHasBeenSet;
   };
 
 } // namespace Model

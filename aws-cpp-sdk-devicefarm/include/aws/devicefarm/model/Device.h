@@ -318,19 +318,29 @@ namespace Model
      */
     inline Device& WithCpu(CPU&& value) { SetCpu(value); return *this;}
 
-    
+    /**
+     * <p>The resolution of the device.</p>
+     */
     inline const Resolution& GetResolution() const{ return m_resolution; }
 
-    
+    /**
+     * <p>The resolution of the device.</p>
+     */
     inline void SetResolution(const Resolution& value) { m_resolutionHasBeenSet = true; m_resolution = value; }
 
-    
+    /**
+     * <p>The resolution of the device.</p>
+     */
     inline void SetResolution(Resolution&& value) { m_resolutionHasBeenSet = true; m_resolution = value; }
 
-    
+    /**
+     * <p>The resolution of the device.</p>
+     */
     inline Device& WithResolution(const Resolution& value) { SetResolution(value); return *this;}
 
-    
+    /**
+     * <p>The resolution of the device.</p>
+     */
     inline Device& WithResolution(Resolution&& value) { SetResolution(value); return *this;}
 
     /**

@@ -45,19 +45,29 @@ namespace Model
     GetAccountSettingsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     GetAccountSettingsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
-    
+    /**
+     * <p>The account settings.</p>
+     */
     inline const AccountSettings& GetAccountSettings() const{ return m_accountSettings; }
 
-    
+    /**
+     * <p>The account settings.</p>
+     */
     inline void SetAccountSettings(const AccountSettings& value) { m_accountSettings = value; }
 
-    
+    /**
+     * <p>The account settings.</p>
+     */
     inline void SetAccountSettings(AccountSettings&& value) { m_accountSettings = value; }
 
-    
+    /**
+     * <p>The account settings.</p>
+     */
     inline GetAccountSettingsResult& WithAccountSettings(const AccountSettings& value) { SetAccountSettings(value); return *this;}
 
-    
+    /**
+     * <p>The account settings.</p>
+     */
     inline GetAccountSettingsResult& WithAccountSettings(AccountSettings&& value) { SetAccountSettings(value); return *this;}
 
   private:

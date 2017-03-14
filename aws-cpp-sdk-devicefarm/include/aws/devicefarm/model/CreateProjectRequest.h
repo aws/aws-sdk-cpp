@@ -73,9 +73,32 @@ namespace Model
      */
     inline CreateProjectRequest& WithName(const char* value) { SetName(value); return *this;}
 
+    /**
+     * <p>Sets the execution timeout value (in minutes) for a project. All test runs in
+     * this project will use the specified execution timeout value unless overridden
+     * when scheduling a run.</p>
+     */
+    inline int GetDefaultJobTimeoutMinutes() const{ return m_defaultJobTimeoutMinutes; }
+
+    /**
+     * <p>Sets the execution timeout value (in minutes) for a project. All test runs in
+     * this project will use the specified execution timeout value unless overridden
+     * when scheduling a run.</p>
+     */
+    inline void SetDefaultJobTimeoutMinutes(int value) { m_defaultJobTimeoutMinutesHasBeenSet = true; m_defaultJobTimeoutMinutes = value; }
+
+    /**
+     * <p>Sets the execution timeout value (in minutes) for a project. All test runs in
+     * this project will use the specified execution timeout value unless overridden
+     * when scheduling a run.</p>
+     */
+    inline CreateProjectRequest& WithDefaultJobTimeoutMinutes(int value) { SetDefaultJobTimeoutMinutes(value); return *this;}
+
   private:
     Aws::String m_name;
     bool m_nameHasBeenSet;
+    int m_defaultJobTimeoutMinutes;
+    bool m_defaultJobTimeoutMinutesHasBeenSet;
   };
 
 } // namespace Model

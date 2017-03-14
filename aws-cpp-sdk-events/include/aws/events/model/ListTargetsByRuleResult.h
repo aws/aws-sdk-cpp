@@ -34,12 +34,6 @@ namespace CloudWatchEvents
 {
 namespace Model
 {
-  /**
-   * <p>The result of the <a>ListTargetsByRule</a> operation.</p><p><h3>See
-   * Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/ListTargetsByRuleResponse">AWS
-   * API Reference</a></p>
-   */
   class AWS_CLOUDWATCHEVENTS_API ListTargetsByRuleResult
   {
   public:
@@ -48,72 +42,100 @@ namespace Model
     ListTargetsByRuleResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
     /**
-     * <p>Lists the targets assigned to the rule.</p>
+     * <zonbook> <simpara>The targets assigned to the rule.</simpara> </zonbook>
+     * <xhtml> <p>The targets assigned to the rule.</p> </xhtml>
      */
     inline const Aws::Vector<Target>& GetTargets() const{ return m_targets; }
 
     /**
-     * <p>Lists the targets assigned to the rule.</p>
+     * <zonbook> <simpara>The targets assigned to the rule.</simpara> </zonbook>
+     * <xhtml> <p>The targets assigned to the rule.</p> </xhtml>
      */
     inline void SetTargets(const Aws::Vector<Target>& value) { m_targets = value; }
 
     /**
-     * <p>Lists the targets assigned to the rule.</p>
+     * <zonbook> <simpara>The targets assigned to the rule.</simpara> </zonbook>
+     * <xhtml> <p>The targets assigned to the rule.</p> </xhtml>
      */
     inline void SetTargets(Aws::Vector<Target>&& value) { m_targets = value; }
 
     /**
-     * <p>Lists the targets assigned to the rule.</p>
+     * <zonbook> <simpara>The targets assigned to the rule.</simpara> </zonbook>
+     * <xhtml> <p>The targets assigned to the rule.</p> </xhtml>
      */
     inline ListTargetsByRuleResult& WithTargets(const Aws::Vector<Target>& value) { SetTargets(value); return *this;}
 
     /**
-     * <p>Lists the targets assigned to the rule.</p>
+     * <zonbook> <simpara>The targets assigned to the rule.</simpara> </zonbook>
+     * <xhtml> <p>The targets assigned to the rule.</p> </xhtml>
      */
     inline ListTargetsByRuleResult& WithTargets(Aws::Vector<Target>&& value) { SetTargets(value); return *this;}
 
     /**
-     * <p>Lists the targets assigned to the rule.</p>
+     * <zonbook> <simpara>The targets assigned to the rule.</simpara> </zonbook>
+     * <xhtml> <p>The targets assigned to the rule.</p> </xhtml>
      */
     inline ListTargetsByRuleResult& AddTargets(const Target& value) { m_targets.push_back(value); return *this; }
 
     /**
-     * <p>Lists the targets assigned to the rule.</p>
+     * <zonbook> <simpara>The targets assigned to the rule.</simpara> </zonbook>
+     * <xhtml> <p>The targets assigned to the rule.</p> </xhtml>
      */
     inline ListTargetsByRuleResult& AddTargets(Target&& value) { m_targets.push_back(value); return *this; }
 
     /**
-     * <p>Indicates that there are additional results to retrieve.</p>
+     * <zonbook> <simpara>Indicates whether there are additional results to retrieve.
+     * If there are no more results, the value is null.</simpara> </zonbook> <xhtml>
+     * <p>Indicates whether there are additional results to retrieve. If there are no
+     * more results, the value is null.</p> </xhtml>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * <p>Indicates that there are additional results to retrieve.</p>
+     * <zonbook> <simpara>Indicates whether there are additional results to retrieve.
+     * If there are no more results, the value is null.</simpara> </zonbook> <xhtml>
+     * <p>Indicates whether there are additional results to retrieve. If there are no
+     * more results, the value is null.</p> </xhtml>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
 
     /**
-     * <p>Indicates that there are additional results to retrieve.</p>
+     * <zonbook> <simpara>Indicates whether there are additional results to retrieve.
+     * If there are no more results, the value is null.</simpara> </zonbook> <xhtml>
+     * <p>Indicates whether there are additional results to retrieve. If there are no
+     * more results, the value is null.</p> </xhtml>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = value; }
 
     /**
-     * <p>Indicates that there are additional results to retrieve.</p>
+     * <zonbook> <simpara>Indicates whether there are additional results to retrieve.
+     * If there are no more results, the value is null.</simpara> </zonbook> <xhtml>
+     * <p>Indicates whether there are additional results to retrieve. If there are no
+     * more results, the value is null.</p> </xhtml>
      */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
 
     /**
-     * <p>Indicates that there are additional results to retrieve.</p>
+     * <zonbook> <simpara>Indicates whether there are additional results to retrieve.
+     * If there are no more results, the value is null.</simpara> </zonbook> <xhtml>
+     * <p>Indicates whether there are additional results to retrieve. If there are no
+     * more results, the value is null.</p> </xhtml>
      */
     inline ListTargetsByRuleResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>Indicates that there are additional results to retrieve.</p>
+     * <zonbook> <simpara>Indicates whether there are additional results to retrieve.
+     * If there are no more results, the value is null.</simpara> </zonbook> <xhtml>
+     * <p>Indicates whether there are additional results to retrieve. If there are no
+     * more results, the value is null.</p> </xhtml>
      */
     inline ListTargetsByRuleResult& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>Indicates that there are additional results to retrieve.</p>
+     * <zonbook> <simpara>Indicates whether there are additional results to retrieve.
+     * If there are no more results, the value is null.</simpara> </zonbook> <xhtml>
+     * <p>Indicates whether there are additional results to retrieve. If there are no
+     * more results, the value is null.</p> </xhtml>
      */
     inline ListTargetsByRuleResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 

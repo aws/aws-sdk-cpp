@@ -49,7 +49,8 @@ Run::Run() :
     m_completedJobsHasBeenSet(false),
     m_billingMethod(BillingMethod::NOT_SET),
     m_billingMethodHasBeenSet(false),
-    m_deviceMinutesHasBeenSet(false)
+    m_deviceMinutesHasBeenSet(false),
+    m_networkProfileHasBeenSet(false)
 {
 }
 
@@ -75,7 +76,8 @@ Run::Run(const JsonValue& jsonValue) :
     m_completedJobsHasBeenSet(false),
     m_billingMethod(BillingMethod::NOT_SET),
     m_billingMethodHasBeenSet(false),
-    m_deviceMinutesHasBeenSet(false)
+    m_deviceMinutesHasBeenSet(false),
+    m_networkProfileHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -187,6 +189,13 @@ Run& Run::operator =(const JsonValue& jsonValue)
     m_deviceMinutesHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("networkProfile"))
+  {
+    m_networkProfile = jsonValue.GetObject("networkProfile");
+
+    m_networkProfileHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -273,6 +282,12 @@ JsonValue Run::Jsonize() const
   if(m_deviceMinutesHasBeenSet)
   {
    payload.WithObject("deviceMinutes", m_deviceMinutes.Jsonize());
+
+  }
+
+  if(m_networkProfileHasBeenSet)
+  {
+   payload.WithObject("networkProfile", m_networkProfile.Jsonize());
 
   }
 

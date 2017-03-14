@@ -45,19 +45,29 @@ namespace Model
     DevicePoolCompatibilityResult& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
-    
+    /**
+     * <p>The device (phone or tablet) that you wish to return information about.</p>
+     */
     inline const Device& GetDevice() const{ return m_device; }
 
-    
+    /**
+     * <p>The device (phone or tablet) that you wish to return information about.</p>
+     */
     inline void SetDevice(const Device& value) { m_deviceHasBeenSet = true; m_device = value; }
 
-    
+    /**
+     * <p>The device (phone or tablet) that you wish to return information about.</p>
+     */
     inline void SetDevice(Device&& value) { m_deviceHasBeenSet = true; m_device = value; }
 
-    
+    /**
+     * <p>The device (phone or tablet) that you wish to return information about.</p>
+     */
     inline DevicePoolCompatibilityResult& WithDevice(const Device& value) { SetDevice(value); return *this;}
 
-    
+    /**
+     * <p>The device (phone or tablet) that you wish to return information about.</p>
+     */
     inline DevicePoolCompatibilityResult& WithDevice(Device&& value) { SetDevice(value); return *this;}
 
     /**

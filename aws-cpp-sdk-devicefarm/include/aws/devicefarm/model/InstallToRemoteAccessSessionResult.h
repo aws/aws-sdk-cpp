@@ -45,19 +45,29 @@ namespace Model
     InstallToRemoteAccessSessionResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     InstallToRemoteAccessSessionResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
-    
+    /**
+     * <p>An app to upload or that has been uploaded.</p>
+     */
     inline const Upload& GetAppUpload() const{ return m_appUpload; }
 
-    
+    /**
+     * <p>An app to upload or that has been uploaded.</p>
+     */
     inline void SetAppUpload(const Upload& value) { m_appUpload = value; }
 
-    
+    /**
+     * <p>An app to upload or that has been uploaded.</p>
+     */
     inline void SetAppUpload(Upload&& value) { m_appUpload = value; }
 
-    
+    /**
+     * <p>An app to upload or that has been uploaded.</p>
+     */
     inline InstallToRemoteAccessSessionResult& WithAppUpload(const Upload& value) { SetAppUpload(value); return *this;}
 
-    
+    /**
+     * <p>An app to upload or that has been uploaded.</p>
+     */
     inline InstallToRemoteAccessSessionResult& WithAppUpload(Upload&& value) { SetAppUpload(value); return *this;}
 
   private:

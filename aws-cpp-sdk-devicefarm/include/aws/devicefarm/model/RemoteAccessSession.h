@@ -340,19 +340,29 @@ namespace Model
      */
     inline RemoteAccessSession& WithStopped(Aws::Utils::DateTime&& value) { SetStopped(value); return *this;}
 
-    
+    /**
+     * <p>The device (phone or tablet) used in the remote access session.</p>
+     */
     inline const Device& GetDevice() const{ return m_device; }
 
-    
+    /**
+     * <p>The device (phone or tablet) used in the remote access session.</p>
+     */
     inline void SetDevice(const Device& value) { m_deviceHasBeenSet = true; m_device = value; }
 
-    
+    /**
+     * <p>The device (phone or tablet) used in the remote access session.</p>
+     */
     inline void SetDevice(Device&& value) { m_deviceHasBeenSet = true; m_device = value; }
 
-    
+    /**
+     * <p>The device (phone or tablet) used in the remote access session.</p>
+     */
     inline RemoteAccessSession& WithDevice(const Device& value) { SetDevice(value); return *this;}
 
-    
+    /**
+     * <p>The device (phone or tablet) used in the remote access session.</p>
+     */
     inline RemoteAccessSession& WithDevice(Device&& value) { SetDevice(value); return *this;}
 
     /**
@@ -400,19 +410,34 @@ namespace Model
      */
     inline RemoteAccessSession& WithBillingMethod(BillingMethod&& value) { SetBillingMethod(value); return *this;}
 
-    
+    /**
+     * <p>The number of minutes a device is used in a remote access sesssion (including
+     * setup and teardown minutes).</p>
+     */
     inline const DeviceMinutes& GetDeviceMinutes() const{ return m_deviceMinutes; }
 
-    
+    /**
+     * <p>The number of minutes a device is used in a remote access sesssion (including
+     * setup and teardown minutes).</p>
+     */
     inline void SetDeviceMinutes(const DeviceMinutes& value) { m_deviceMinutesHasBeenSet = true; m_deviceMinutes = value; }
 
-    
+    /**
+     * <p>The number of minutes a device is used in a remote access sesssion (including
+     * setup and teardown minutes).</p>
+     */
     inline void SetDeviceMinutes(DeviceMinutes&& value) { m_deviceMinutesHasBeenSet = true; m_deviceMinutes = value; }
 
-    
+    /**
+     * <p>The number of minutes a device is used in a remote access sesssion (including
+     * setup and teardown minutes).</p>
+     */
     inline RemoteAccessSession& WithDeviceMinutes(const DeviceMinutes& value) { SetDeviceMinutes(value); return *this;}
 
-    
+    /**
+     * <p>The number of minutes a device is used in a remote access sesssion (including
+     * setup and teardown minutes).</p>
+     */
     inline RemoteAccessSession& WithDeviceMinutes(DeviceMinutes&& value) { SetDeviceMinutes(value); return *this;}
 
     /**

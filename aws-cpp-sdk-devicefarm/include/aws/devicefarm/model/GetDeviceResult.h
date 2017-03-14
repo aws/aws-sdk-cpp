@@ -44,19 +44,29 @@ namespace Model
     GetDeviceResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     GetDeviceResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
-    
+    /**
+     * <p>An object containing information about the requested device.</p>
+     */
     inline const Device& GetDevice() const{ return m_device; }
 
-    
+    /**
+     * <p>An object containing information about the requested device.</p>
+     */
     inline void SetDevice(const Device& value) { m_device = value; }
 
-    
+    /**
+     * <p>An object containing information about the requested device.</p>
+     */
     inline void SetDevice(Device&& value) { m_device = value; }
 
-    
+    /**
+     * <p>An object containing information about the requested device.</p>
+     */
     inline GetDeviceResult& WithDevice(const Device& value) { SetDevice(value); return *this;}
 
-    
+    /**
+     * <p>An object containing information about the requested device.</p>
+     */
     inline GetDeviceResult& WithDevice(Device&& value) { SetDevice(value); return *this;}
 
   private:

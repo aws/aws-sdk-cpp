@@ -1,0 +1,78 @@
+﻿/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+*
+* Licensed under the Apache License, Version 2.0 (the "License").
+* You may not use this file except in compliance with the License.
+* A copy of the License is located at
+*
+*  http://aws.amazon.com/apache2.0
+*
+* or in the "license" file accompanying this file. This file is distributed
+* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+* express or implied. See the License for the specific language governing
+* permissions and limitations under the License.
+*/
+#pragma once
+#include <aws/devicefarm/DeviceFarm_EXPORTS.h>
+#include <aws/devicefarm/model/NetworkProfile.h>
+
+namespace Aws
+{
+template<typename RESULT_TYPE>
+class AmazonWebServiceResult;
+
+namespace Utils
+{
+namespace Json
+{
+  class JsonValue;
+} // namespace Json
+} // namespace Utils
+namespace DeviceFarm
+{
+namespace Model
+{
+  class AWS_DEVICEFARM_API CreateNetworkProfileResult
+  {
+  public:
+    CreateNetworkProfileResult();
+    CreateNetworkProfileResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateNetworkProfileResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
+    /**
+     * <p>The network profile that is returned by the create network profile
+     * request.</p>
+     */
+    inline const NetworkProfile& GetNetworkProfile() const{ return m_networkProfile; }
+
+    /**
+     * <p>The network profile that is returned by the create network profile
+     * request.</p>
+     */
+    inline void SetNetworkProfile(const NetworkProfile& value) { m_networkProfile = value; }
+
+    /**
+     * <p>The network profile that is returned by the create network profile
+     * request.</p>
+     */
+    inline void SetNetworkProfile(NetworkProfile&& value) { m_networkProfile = value; }
+
+    /**
+     * <p>The network profile that is returned by the create network profile
+     * request.</p>
+     */
+    inline CreateNetworkProfileResult& WithNetworkProfile(const NetworkProfile& value) { SetNetworkProfile(value); return *this;}
+
+    /**
+     * <p>The network profile that is returned by the create network profile
+     * request.</p>
+     */
+    inline CreateNetworkProfileResult& WithNetworkProfile(NetworkProfile&& value) { SetNetworkProfile(value); return *this;}
+
+  private:
+    NetworkProfile m_networkProfile;
+  };
+
+} // namespace Model
+} // namespace DeviceFarm
+} // namespace Aws

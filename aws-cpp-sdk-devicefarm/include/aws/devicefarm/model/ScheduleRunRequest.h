@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/devicefarm/model/ScheduleRunTest.h>
 #include <aws/devicefarm/model/ScheduleRunConfiguration.h>
+#include <aws/devicefarm/model/ExecutionConfiguration.h>
 
 namespace Aws
 {
@@ -230,6 +231,36 @@ namespace Model
      */
     inline ScheduleRunRequest& WithConfiguration(ScheduleRunConfiguration&& value) { SetConfiguration(value); return *this;}
 
+    /**
+     * <p>Specifies configuration information about a test run, such as the execution
+     * timeout (in minutes).</p>
+     */
+    inline const ExecutionConfiguration& GetExecutionConfiguration() const{ return m_executionConfiguration; }
+
+    /**
+     * <p>Specifies configuration information about a test run, such as the execution
+     * timeout (in minutes).</p>
+     */
+    inline void SetExecutionConfiguration(const ExecutionConfiguration& value) { m_executionConfigurationHasBeenSet = true; m_executionConfiguration = value; }
+
+    /**
+     * <p>Specifies configuration information about a test run, such as the execution
+     * timeout (in minutes).</p>
+     */
+    inline void SetExecutionConfiguration(ExecutionConfiguration&& value) { m_executionConfigurationHasBeenSet = true; m_executionConfiguration = value; }
+
+    /**
+     * <p>Specifies configuration information about a test run, such as the execution
+     * timeout (in minutes).</p>
+     */
+    inline ScheduleRunRequest& WithExecutionConfiguration(const ExecutionConfiguration& value) { SetExecutionConfiguration(value); return *this;}
+
+    /**
+     * <p>Specifies configuration information about a test run, such as the execution
+     * timeout (in minutes).</p>
+     */
+    inline ScheduleRunRequest& WithExecutionConfiguration(ExecutionConfiguration&& value) { SetExecutionConfiguration(value); return *this;}
+
   private:
     Aws::String m_projectArn;
     bool m_projectArnHasBeenSet;
@@ -243,6 +274,8 @@ namespace Model
     bool m_testHasBeenSet;
     ScheduleRunConfiguration m_configuration;
     bool m_configurationHasBeenSet;
+    ExecutionConfiguration m_executionConfiguration;
+    bool m_executionConfigurationHasBeenSet;
   };
 
 } // namespace Model

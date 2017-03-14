@@ -25,10 +25,6 @@ namespace Model
 {
 
   /**
-   * <p>Container for the parameters to the <a>DescribeRule</a>
-   * operation.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/DescribeRuleRequest">AWS
-   * API Reference</a></p>
    */
   class AWS_CLOUDWATCHEVENTS_API DescribeRuleRequest : public CloudWatchEventsRequest
   {
@@ -39,37 +35,44 @@ namespace Model
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
     /**
-     * <p>The name of the rule you want to describe details for.</p>
+     * <zonbook> <simpara>The name of the rule.</simpara> </zonbook> <xhtml> <p>The
+     * name of the rule.</p> </xhtml>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>The name of the rule you want to describe details for.</p>
+     * <zonbook> <simpara>The name of the rule.</simpara> </zonbook> <xhtml> <p>The
+     * name of the rule.</p> </xhtml>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>The name of the rule you want to describe details for.</p>
+     * <zonbook> <simpara>The name of the rule.</simpara> </zonbook> <xhtml> <p>The
+     * name of the rule.</p> </xhtml>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>The name of the rule you want to describe details for.</p>
+     * <zonbook> <simpara>The name of the rule.</simpara> </zonbook> <xhtml> <p>The
+     * name of the rule.</p> </xhtml>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>The name of the rule you want to describe details for.</p>
+     * <zonbook> <simpara>The name of the rule.</simpara> </zonbook> <xhtml> <p>The
+     * name of the rule.</p> </xhtml>
      */
     inline DescribeRuleRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>The name of the rule you want to describe details for.</p>
+     * <zonbook> <simpara>The name of the rule.</simpara> </zonbook> <xhtml> <p>The
+     * name of the rule.</p> </xhtml>
      */
     inline DescribeRuleRequest& WithName(Aws::String&& value) { SetName(value); return *this;}
 
     /**
-     * <p>The name of the rule you want to describe details for.</p>
+     * <zonbook> <simpara>The name of the rule.</simpara> </zonbook> <xhtml> <p>The
+     * name of the rule.</p> </xhtml>
      */
     inline DescribeRuleRequest& WithName(const char* value) { SetName(value); return *this;}
 

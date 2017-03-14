@@ -45,19 +45,29 @@ namespace Model
     UpdateProjectResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     UpdateProjectResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
-    
+    /**
+     * <p>The project you wish to update.</p>
+     */
     inline const Project& GetProject() const{ return m_project; }
 
-    
+    /**
+     * <p>The project you wish to update.</p>
+     */
     inline void SetProject(const Project& value) { m_project = value; }
 
-    
+    /**
+     * <p>The project you wish to update.</p>
+     */
     inline void SetProject(Project&& value) { m_project = value; }
 
-    
+    /**
+     * <p>The project you wish to update.</p>
+     */
     inline UpdateProjectResult& WithProject(const Project& value) { SetProject(value); return *this;}
 
-    
+    /**
+     * <p>The project you wish to update.</p>
+     */
     inline UpdateProjectResult& WithProject(Project&& value) { SetProject(value); return *this;}
 
   private:

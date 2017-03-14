@@ -165,6 +165,42 @@ namespace Model
      */
     inline AccountSettings& AddUnmeteredRemoteAccessDevices(DevicePlatform&& key, int value) { m_unmeteredRemoteAccessDevicesHasBeenSet = true; m_unmeteredRemoteAccessDevices[key] = value; return *this; }
 
+    /**
+     * <p>The maximum number of minutes a test run will execute before it times
+     * out.</p>
+     */
+    inline int GetMaxJobTimeoutMinutes() const{ return m_maxJobTimeoutMinutes; }
+
+    /**
+     * <p>The maximum number of minutes a test run will execute before it times
+     * out.</p>
+     */
+    inline void SetMaxJobTimeoutMinutes(int value) { m_maxJobTimeoutMinutesHasBeenSet = true; m_maxJobTimeoutMinutes = value; }
+
+    /**
+     * <p>The maximum number of minutes a test run will execute before it times
+     * out.</p>
+     */
+    inline AccountSettings& WithMaxJobTimeoutMinutes(int value) { SetMaxJobTimeoutMinutes(value); return *this;}
+
+    /**
+     * <p>The default number of minutes (at the account level) a test run will execute
+     * before it times out. Default value is 60 minutes.</p>
+     */
+    inline int GetDefaultJobTimeoutMinutes() const{ return m_defaultJobTimeoutMinutes; }
+
+    /**
+     * <p>The default number of minutes (at the account level) a test run will execute
+     * before it times out. Default value is 60 minutes.</p>
+     */
+    inline void SetDefaultJobTimeoutMinutes(int value) { m_defaultJobTimeoutMinutesHasBeenSet = true; m_defaultJobTimeoutMinutes = value; }
+
+    /**
+     * <p>The default number of minutes (at the account level) a test run will execute
+     * before it times out. Default value is 60 minutes.</p>
+     */
+    inline AccountSettings& WithDefaultJobTimeoutMinutes(int value) { SetDefaultJobTimeoutMinutes(value); return *this;}
+
   private:
     Aws::String m_awsAccountNumber;
     bool m_awsAccountNumberHasBeenSet;
@@ -172,6 +208,10 @@ namespace Model
     bool m_unmeteredDevicesHasBeenSet;
     Aws::Map<DevicePlatform, int> m_unmeteredRemoteAccessDevices;
     bool m_unmeteredRemoteAccessDevicesHasBeenSet;
+    int m_maxJobTimeoutMinutes;
+    bool m_maxJobTimeoutMinutesHasBeenSet;
+    int m_defaultJobTimeoutMinutes;
+    bool m_defaultJobTimeoutMinutesHasBeenSet;
   };
 
 } // namespace Model

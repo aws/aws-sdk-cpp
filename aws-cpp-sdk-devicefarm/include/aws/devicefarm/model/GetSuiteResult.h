@@ -44,19 +44,29 @@ namespace Model
     GetSuiteResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     GetSuiteResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
-    
+    /**
+     * <p>A collection of one or more tests.</p>
+     */
     inline const Suite& GetSuite() const{ return m_suite; }
 
-    
+    /**
+     * <p>A collection of one or more tests.</p>
+     */
     inline void SetSuite(const Suite& value) { m_suite = value; }
 
-    
+    /**
+     * <p>A collection of one or more tests.</p>
+     */
     inline void SetSuite(Suite&& value) { m_suite = value; }
 
-    
+    /**
+     * <p>A collection of one or more tests.</p>
+     */
     inline GetSuiteResult& WithSuite(const Suite& value) { SetSuite(value); return *this;}
 
-    
+    /**
+     * <p>A collection of one or more tests.</p>
+     */
     inline GetSuiteResult& WithSuite(Suite&& value) { SetSuite(value); return *this;}
 
   private:

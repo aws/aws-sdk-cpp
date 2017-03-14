@@ -25,10 +25,6 @@ namespace Model
 {
 
   /**
-   * <p>Container for the parameters to the <a>ListRules</a> operation.</p><p><h3>See
-   * Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/ListRulesRequest">AWS
-   * API Reference</a></p>
    */
   class AWS_CLOUDWATCHEVENTS_API ListRulesRequest : public CloudWatchEventsRequest
   {
@@ -39,94 +35,111 @@ namespace Model
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
     /**
-     * <p>The prefix matching the rule name.</p>
+     * <zonbook> <simpara>The prefix matching the rule name.</simpara> </zonbook>
+     * <xhtml> <p>The prefix matching the rule name.</p> </xhtml>
      */
     inline const Aws::String& GetNamePrefix() const{ return m_namePrefix; }
 
     /**
-     * <p>The prefix matching the rule name.</p>
+     * <zonbook> <simpara>The prefix matching the rule name.</simpara> </zonbook>
+     * <xhtml> <p>The prefix matching the rule name.</p> </xhtml>
      */
     inline void SetNamePrefix(const Aws::String& value) { m_namePrefixHasBeenSet = true; m_namePrefix = value; }
 
     /**
-     * <p>The prefix matching the rule name.</p>
+     * <zonbook> <simpara>The prefix matching the rule name.</simpara> </zonbook>
+     * <xhtml> <p>The prefix matching the rule name.</p> </xhtml>
      */
     inline void SetNamePrefix(Aws::String&& value) { m_namePrefixHasBeenSet = true; m_namePrefix = value; }
 
     /**
-     * <p>The prefix matching the rule name.</p>
+     * <zonbook> <simpara>The prefix matching the rule name.</simpara> </zonbook>
+     * <xhtml> <p>The prefix matching the rule name.</p> </xhtml>
      */
     inline void SetNamePrefix(const char* value) { m_namePrefixHasBeenSet = true; m_namePrefix.assign(value); }
 
     /**
-     * <p>The prefix matching the rule name.</p>
+     * <zonbook> <simpara>The prefix matching the rule name.</simpara> </zonbook>
+     * <xhtml> <p>The prefix matching the rule name.</p> </xhtml>
      */
     inline ListRulesRequest& WithNamePrefix(const Aws::String& value) { SetNamePrefix(value); return *this;}
 
     /**
-     * <p>The prefix matching the rule name.</p>
+     * <zonbook> <simpara>The prefix matching the rule name.</simpara> </zonbook>
+     * <xhtml> <p>The prefix matching the rule name.</p> </xhtml>
      */
     inline ListRulesRequest& WithNamePrefix(Aws::String&& value) { SetNamePrefix(value); return *this;}
 
     /**
-     * <p>The prefix matching the rule name.</p>
+     * <zonbook> <simpara>The prefix matching the rule name.</simpara> </zonbook>
+     * <xhtml> <p>The prefix matching the rule name.</p> </xhtml>
      */
     inline ListRulesRequest& WithNamePrefix(const char* value) { SetNamePrefix(value); return *this;}
 
     /**
-     * <p>The token returned by a previous call to indicate that there is more data
-     * available.</p>
+     * <zonbook> <simpara>The token returned by a previous call to retrieve the next
+     * set of results.</simpara> </zonbook> <xhtml> <p>The token returned by a previous
+     * call to retrieve the next set of results.</p> </xhtml>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * <p>The token returned by a previous call to indicate that there is more data
-     * available.</p>
+     * <zonbook> <simpara>The token returned by a previous call to retrieve the next
+     * set of results.</simpara> </zonbook> <xhtml> <p>The token returned by a previous
+     * call to retrieve the next set of results.</p> </xhtml>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
-     * <p>The token returned by a previous call to indicate that there is more data
-     * available.</p>
+     * <zonbook> <simpara>The token returned by a previous call to retrieve the next
+     * set of results.</simpara> </zonbook> <xhtml> <p>The token returned by a previous
+     * call to retrieve the next set of results.</p> </xhtml>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
-     * <p>The token returned by a previous call to indicate that there is more data
-     * available.</p>
+     * <zonbook> <simpara>The token returned by a previous call to retrieve the next
+     * set of results.</simpara> </zonbook> <xhtml> <p>The token returned by a previous
+     * call to retrieve the next set of results.</p> </xhtml>
      */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
 
     /**
-     * <p>The token returned by a previous call to indicate that there is more data
-     * available.</p>
+     * <zonbook> <simpara>The token returned by a previous call to retrieve the next
+     * set of results.</simpara> </zonbook> <xhtml> <p>The token returned by a previous
+     * call to retrieve the next set of results.</p> </xhtml>
      */
     inline ListRulesRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>The token returned by a previous call to indicate that there is more data
-     * available.</p>
+     * <zonbook> <simpara>The token returned by a previous call to retrieve the next
+     * set of results.</simpara> </zonbook> <xhtml> <p>The token returned by a previous
+     * call to retrieve the next set of results.</p> </xhtml>
      */
     inline ListRulesRequest& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>The token returned by a previous call to indicate that there is more data
-     * available.</p>
+     * <zonbook> <simpara>The token returned by a previous call to retrieve the next
+     * set of results.</simpara> </zonbook> <xhtml> <p>The token returned by a previous
+     * call to retrieve the next set of results.</p> </xhtml>
      */
     inline ListRulesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>The maximum number of results to return.</p>
+     * <zonbook> <simpara>The maximum number of results to return.</simpara> </zonbook>
+     * <xhtml> <p>The maximum number of results to return.</p> </xhtml>
      */
     inline int GetLimit() const{ return m_limit; }
 
     /**
-     * <p>The maximum number of results to return.</p>
+     * <zonbook> <simpara>The maximum number of results to return.</simpara> </zonbook>
+     * <xhtml> <p>The maximum number of results to return.</p> </xhtml>
      */
     inline void SetLimit(int value) { m_limitHasBeenSet = true; m_limit = value; }
 
     /**
-     * <p>The maximum number of results to return.</p>
+     * <zonbook> <simpara>The maximum number of results to return.</simpara> </zonbook>
+     * <xhtml> <p>The maximum number of results to return.</p> </xhtml>
      */
     inline ListRulesRequest& WithLimit(int value) { SetLimit(value); return *this;}
 

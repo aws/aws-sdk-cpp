@@ -23,6 +23,7 @@
 #include <aws/devicefarm/model/Counters.h>
 #include <aws/devicefarm/model/BillingMethod.h>
 #include <aws/devicefarm/model/DeviceMinutes.h>
+#include <aws/devicefarm/model/NetworkProfile.h>
 
 namespace Aws
 {
@@ -572,6 +573,31 @@ namespace Model
      */
     inline Run& WithDeviceMinutes(DeviceMinutes&& value) { SetDeviceMinutes(value); return *this;}
 
+    /**
+     * <p>The network profile being used for a test run.</p>
+     */
+    inline const NetworkProfile& GetNetworkProfile() const{ return m_networkProfile; }
+
+    /**
+     * <p>The network profile being used for a test run.</p>
+     */
+    inline void SetNetworkProfile(const NetworkProfile& value) { m_networkProfileHasBeenSet = true; m_networkProfile = value; }
+
+    /**
+     * <p>The network profile being used for a test run.</p>
+     */
+    inline void SetNetworkProfile(NetworkProfile&& value) { m_networkProfileHasBeenSet = true; m_networkProfile = value; }
+
+    /**
+     * <p>The network profile being used for a test run.</p>
+     */
+    inline Run& WithNetworkProfile(const NetworkProfile& value) { SetNetworkProfile(value); return *this;}
+
+    /**
+     * <p>The network profile being used for a test run.</p>
+     */
+    inline Run& WithNetworkProfile(NetworkProfile&& value) { SetNetworkProfile(value); return *this;}
+
   private:
     Aws::String m_arn;
     bool m_arnHasBeenSet;
@@ -603,6 +629,8 @@ namespace Model
     bool m_billingMethodHasBeenSet;
     DeviceMinutes m_deviceMinutes;
     bool m_deviceMinutesHasBeenSet;
+    NetworkProfile m_networkProfile;
+    bool m_networkProfileHasBeenSet;
   };
 
 } // namespace Model

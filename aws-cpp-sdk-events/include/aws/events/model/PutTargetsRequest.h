@@ -27,10 +27,6 @@ namespace Model
 {
 
   /**
-   * <p>Container for the parameters to the <a>PutTargets</a>
-   * operation.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/PutTargetsRequest">AWS
-   * API Reference</a></p>
    */
   class AWS_CLOUDWATCHEVENTS_API PutTargetsRequest : public CloudWatchEventsRequest
   {
@@ -41,72 +37,86 @@ namespace Model
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
     /**
-     * <p>The name of the rule you want to add targets to.</p>
+     * <zonbook> <simpara>The name of the rule.</simpara> </zonbook> <xhtml> <p>The
+     * name of the rule.</p> </xhtml>
      */
     inline const Aws::String& GetRule() const{ return m_rule; }
 
     /**
-     * <p>The name of the rule you want to add targets to.</p>
+     * <zonbook> <simpara>The name of the rule.</simpara> </zonbook> <xhtml> <p>The
+     * name of the rule.</p> </xhtml>
      */
     inline void SetRule(const Aws::String& value) { m_ruleHasBeenSet = true; m_rule = value; }
 
     /**
-     * <p>The name of the rule you want to add targets to.</p>
+     * <zonbook> <simpara>The name of the rule.</simpara> </zonbook> <xhtml> <p>The
+     * name of the rule.</p> </xhtml>
      */
     inline void SetRule(Aws::String&& value) { m_ruleHasBeenSet = true; m_rule = value; }
 
     /**
-     * <p>The name of the rule you want to add targets to.</p>
+     * <zonbook> <simpara>The name of the rule.</simpara> </zonbook> <xhtml> <p>The
+     * name of the rule.</p> </xhtml>
      */
     inline void SetRule(const char* value) { m_ruleHasBeenSet = true; m_rule.assign(value); }
 
     /**
-     * <p>The name of the rule you want to add targets to.</p>
+     * <zonbook> <simpara>The name of the rule.</simpara> </zonbook> <xhtml> <p>The
+     * name of the rule.</p> </xhtml>
      */
     inline PutTargetsRequest& WithRule(const Aws::String& value) { SetRule(value); return *this;}
 
     /**
-     * <p>The name of the rule you want to add targets to.</p>
+     * <zonbook> <simpara>The name of the rule.</simpara> </zonbook> <xhtml> <p>The
+     * name of the rule.</p> </xhtml>
      */
     inline PutTargetsRequest& WithRule(Aws::String&& value) { SetRule(value); return *this;}
 
     /**
-     * <p>The name of the rule you want to add targets to.</p>
+     * <zonbook> <simpara>The name of the rule.</simpara> </zonbook> <xhtml> <p>The
+     * name of the rule.</p> </xhtml>
      */
     inline PutTargetsRequest& WithRule(const char* value) { SetRule(value); return *this;}
 
     /**
-     * <p>List of targets you want to update or add to the rule.</p>
+     * <zonbook> <simpara>The targets to update or add to the rule.</simpara>
+     * </zonbook> <xhtml> <p>The targets to update or add to the rule.</p> </xhtml>
      */
     inline const Aws::Vector<Target>& GetTargets() const{ return m_targets; }
 
     /**
-     * <p>List of targets you want to update or add to the rule.</p>
+     * <zonbook> <simpara>The targets to update or add to the rule.</simpara>
+     * </zonbook> <xhtml> <p>The targets to update or add to the rule.</p> </xhtml>
      */
     inline void SetTargets(const Aws::Vector<Target>& value) { m_targetsHasBeenSet = true; m_targets = value; }
 
     /**
-     * <p>List of targets you want to update or add to the rule.</p>
+     * <zonbook> <simpara>The targets to update or add to the rule.</simpara>
+     * </zonbook> <xhtml> <p>The targets to update or add to the rule.</p> </xhtml>
      */
     inline void SetTargets(Aws::Vector<Target>&& value) { m_targetsHasBeenSet = true; m_targets = value; }
 
     /**
-     * <p>List of targets you want to update or add to the rule.</p>
+     * <zonbook> <simpara>The targets to update or add to the rule.</simpara>
+     * </zonbook> <xhtml> <p>The targets to update or add to the rule.</p> </xhtml>
      */
     inline PutTargetsRequest& WithTargets(const Aws::Vector<Target>& value) { SetTargets(value); return *this;}
 
     /**
-     * <p>List of targets you want to update or add to the rule.</p>
+     * <zonbook> <simpara>The targets to update or add to the rule.</simpara>
+     * </zonbook> <xhtml> <p>The targets to update or add to the rule.</p> </xhtml>
      */
     inline PutTargetsRequest& WithTargets(Aws::Vector<Target>&& value) { SetTargets(value); return *this;}
 
     /**
-     * <p>List of targets you want to update or add to the rule.</p>
+     * <zonbook> <simpara>The targets to update or add to the rule.</simpara>
+     * </zonbook> <xhtml> <p>The targets to update or add to the rule.</p> </xhtml>
      */
     inline PutTargetsRequest& AddTargets(const Target& value) { m_targetsHasBeenSet = true; m_targets.push_back(value); return *this; }
 
     /**
-     * <p>List of targets you want to update or add to the rule.</p>
+     * <zonbook> <simpara>The targets to update or add to the rule.</simpara>
+     * </zonbook> <xhtml> <p>The targets to update or add to the rule.</p> </xhtml>
      */
     inline PutTargetsRequest& AddTargets(Target&& value) { m_targetsHasBeenSet = true; m_targets.push_back(value); return *this; }
 
