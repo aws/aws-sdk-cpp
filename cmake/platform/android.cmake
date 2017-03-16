@@ -21,7 +21,7 @@ macro(determine_stdlib_and_api)
         endif()
 
         if(NOT ANDROID_NATIVE_API_LEVEL)
-            set(ANDROID_NATIVE_API_LEVEL "android-19")
+            set(ANDROID_NATIVE_API_LEVEL "android-21")
         endif()
 
         # API levels below 9 will not build with libc++
