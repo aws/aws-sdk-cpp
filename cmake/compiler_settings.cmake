@@ -72,8 +72,20 @@ elseif(USE_GCC_FLAGS)
 
     if(COMPILER_CLANG)
         set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-unused-private-field")
-        if(PLATFORM_ANDROID AND ANDROID_ABI MATCHES "mips*")
-            string(REGEX REPLACE "-finline-functions" "" CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS}")
+        if(PLATFORM_ANDROID)
+            if(ANDROID_ABI MATCHES "mips*")
+                string(REGEX REPLACE "-finline-functions" "" CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS}")
+            endif()
+
+            # when using clang with libc and API lower than 21 we need to include Android support headers and ignore the gnu-include-next warning.
+            if(ANDROID_STL MATCHES "libc" AND ANDROID_NATIVE_API_LEVEL_NUM LESS "21")
+                # NDK lower than 12 doesn't support ignoring the gnu-include-next warning so we need to disable pedantic mode.
+                if(NDK_RELEASE_NUMBER LESS "12000")
+                    string(REGEX REPLACE "-pedantic" "" CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS}")
+                else()
+                    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-gnu-include-next")
+                endif()
+            endif()
         endif()
     endif()
 endif()
