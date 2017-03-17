@@ -64,7 +64,7 @@ namespace Aws
                 {
                     if (CRYPTO_get_locking_callback() == &locking_fn)
                     {
-                        CRYPTO_set_id_callback(nullptr);
+                        CRYPTO_set_locking_callback(nullptr);
                         assert(locks);
                         Aws::DeleteArray(locks);
                         locks = nullptr;
@@ -72,7 +72,7 @@ namespace Aws
 
                     if (CRYPTO_get_id_callback() == &id_fn)
                     {
-                        CRYPTO_set_locking_callback(nullptr);
+                        CRYPTO_set_id_callback(nullptr);
                     }
                 }
 
