@@ -13,7 +13,7 @@ then
     aws s3 cp not_a_release s3://aws-sdk-cpp-pipeline-sdks-team/not_a_release --region us-east-1
     rm -rf ./models 
     mkdir ./models
-    cp ./modelsLatest/* ./models/
-    zip -r modelsSnapshot.zip ./models
+    cp ./modelsLatest/* ./models
+    zip -r modelsSnapshot.zip ./models/*
     aws s3 cp modelsSnapshot.zip s3://aws-sdk-cpp-pipeline-sdks-team/modelsSnapshot.zip --region us-east-1
 fi
