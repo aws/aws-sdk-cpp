@@ -13,7 +13,7 @@ nuget {
         id = AWSSDKCPP-OpsWorks;
 
         // Version number. Follows NuGet standards. (currently SemVer 1.0)
-        version : 1.0.20130218.83;
+        version : 1.0.20130218.84;
 
         // Display name for package.
         title: AWS SDK for C++ (AWS OpsWorks);
