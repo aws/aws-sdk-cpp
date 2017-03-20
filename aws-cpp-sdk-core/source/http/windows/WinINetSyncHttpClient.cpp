@@ -41,9 +41,8 @@ static const uint32_t HTTP_REQUEST_WRITE_BUFFER_LENGTH = 8192;
 WinINetSyncHttpClient::WinINetSyncHttpClient(const ClientConfiguration& config) :
     Base()
 {
-    AWS_LOG_INFO(GetLogTag(), "Creating http client with user agent %s with max connections %d, request timeout %d, "
-        "and connect timeout %d",
-        config.userAgent.c_str(), config.maxConnections, config.requestTimeoutMs, config.connectTimeoutMs);
+    AWS_LOGSTREAM_INFO(GetLogTag(), "Creating http client with user agent " << config.userAgent << " with max connections " <<
+         config.maxConnections << ", request timeout " << config.requestTimeoutMs << ",and connect timeout " << config.connectTimeoutMs);       
 
     m_allowRedirects = config.followRedirects;
 
@@ -55,8 +54,8 @@ WinINetSyncHttpClient::WinINetSyncHttpClient(const ClientConfiguration& config) 
     //setup initial proxy config.
     if (isUsingProxy)
     {
-        AWS_LOG_INFO(GetLogTag(), "Http Client is using a proxy. Setting up proxy with settings host %s, port %d, username %s.",
-            config.proxyHost, config.proxyPort, config.proxyUserName);
+        AWS_LOGSTREAM_INFO(GetLogTag(), "Http Client is using a proxy. Setting up proxy with settings host " << config.proxyHost << ", port " 
+            << config.proxyPort << ", username " << config.proxyUserName << ".");
 
         inetFlags = INTERNET_OPEN_TYPE_PROXY;
         Aws::StringStream ss;
@@ -65,7 +64,7 @@ WinINetSyncHttpClient::WinINetSyncHttpClient(const ClientConfiguration& config) 
         strProxyHosts.assign(ss.str());
         proxyHosts = strProxyHosts.c_str();
 
-        AWS_LOG_DEBUG("Adding proxy host string to wininet %s", proxyHosts);
+        AWS_LOGSTREAM_DEBUG(GetLogTag(), "Adding proxy host string to wininet " << proxyHosts);
     }
 
     SetOpenHandle(InternetOpenA(config.userAgent.c_str(), inetFlags, proxyHosts, nullptr, 0));
@@ -76,21 +75,21 @@ WinINetSyncHttpClient::WinINetSyncHttpClient(const ClientConfiguration& config) 
     if (isUsingProxy)
     {
         if (!config.proxyUserName.empty() && !InternetSetOptionA(GetOpenHandle(), INTERNET_OPTION_PROXY_USERNAME, (LPVOID)config.proxyUserName.c_str(), (DWORD)config.proxyUserName.length()))
-            AWS_LOG_FATAL(GetLogTag(), "Failed setting username for proxy with error code: %d", GetLastError());
+            AWS_LOGSTREAM_FATAL(GetLogTag(), "Failed setting username for proxy with error code: " << GetLastError());
         if (!config.proxyPassword.empty() && !InternetSetOptionA(GetOpenHandle(), INTERNET_OPTION_PROXY_PASSWORD, (LPVOID)config.proxyPassword.c_str(), (DWORD)config.proxyPassword.length()))
-            AWS_LOG_FATAL(GetLogTag(), "Failed setting password for proxy with error code: %d", GetLastError());
+            AWS_LOGSTREAM_FATAL(GetLogTag(), "Failed setting password for proxy with error code: " << GetLastError());
     }
 
     if (!config.verifySSL)
     {
-        AWS_LOG_WARN(GetLogTag(), "Turning ssl unknown ca verification off.");
+        AWS_LOGSTREAM_WARN(GetLogTag(), "Turning ssl unknown ca verification off.");
         DWORD flags = SECURITY_FLAG_IGNORE_UNKNOWN_CA | INTERNET_FLAG_IGNORE_CERT_CN_INVALID;
 
         if (!InternetSetOptionA(GetOpenHandle(), INTERNET_OPTION_SECURITY_FLAGS, &flags, sizeof(flags)))
-            AWS_LOG_FATAL(GetLogTag(), "Failed to turn ssl cert ca verification off.");
+            AWS_LOGSTREAM_FATAL(GetLogTag(), "Failed to turn ssl cert ca verification off.");
     }
 
-    AWS_LOG_DEBUG(GetLogTag(), "API handle %p.", GetOpenHandle());
+    AWS_LOGSTREAM_DEBUG(GetLogTag(), "API handle " << GetOpenHandle());
     SetConnectionPoolManager(Aws::New<WinINetConnectionPoolMgr>(GetLogTag(),
         GetOpenHandle(), config.maxConnections, config.requestTimeoutMs, config.connectTimeoutMs));
 }
@@ -114,7 +113,7 @@ void* WinINetSyncHttpClient::OpenRequest(const Aws::Http::HttpRequest& request, 
     static LPCSTR accept[2] = { "*/*", nullptr };
     HINTERNET hHttpRequest = HttpOpenRequestA(connection, HttpMethodMapper::GetNameForHttpMethod(request.GetMethod()),
         ss.str().c_str(), nullptr, nullptr, accept, requestFlags, 0);
-    AWS_LOG_DEBUG(GetLogTag(), "HttpOpenRequestA returned handle %p", hHttpRequest);
+    AWS_LOGSTREAM_DEBUG(GetLogTag(), "HttpOpenRequestA returned handle " << hHttpRequest);
 
     return hHttpRequest;
 }
@@ -148,7 +147,7 @@ bool WinINetSyncHttpClient::DoQueryHeaders(void* hHttpRequest, std::shared_ptr<S
 
     HttpQueryInfoA(hHttpRequest, HTTP_QUERY_STATUS_CODE, &dwStatusCode, &dwSize, 0);
     response->SetResponseCode((HttpResponseCode)atoi(dwStatusCode));
-    AWS_LOG_DEBUG(GetLogTag(), "Received response code %s.", dwStatusCode);
+    AWS_LOGSTREAM_DEBUG(GetLogTag(), "Received response code " << dwStatusCode);
 
     char contentTypeStr[1024];
     dwSize = sizeof(contentTypeStr);
@@ -161,7 +160,7 @@ bool WinINetSyncHttpClient::DoQueryHeaders(void* hHttpRequest, std::shared_ptr<S
 
     char headerStr[1024];
     dwSize = sizeof(headerStr);
-    AWS_LOG_DEBUG(GetLogTag(), "Received headers:");
+    AWS_LOGSTREAM_DEBUG(GetLogTag(), "Received headers:");
     while (HttpQueryInfoA(hHttpRequest, HTTP_QUERY_RAW_HEADERS_CRLF, headerStr, &dwSize, (LPDWORD)&read) && dwSize > 0)
     {
         AWS_LOGSTREAM_DEBUG(GetLogTag(), headerStr);
