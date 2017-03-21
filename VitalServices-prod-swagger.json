@@ -1,0 +1,1436 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "version" : "2017-02-11T04:33:00Z",
+    "title" : "VitalServices"
+  },
+  "host" : "h6wguq9ghl.execute-api.us-east-1.amazonaws.com",
+  "basePath" : "/prod",
+  "schemes" : [ "https" ],
+  "paths" : {
+    "/add-credit-card" : {
+      "post" : {
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "AddCreditCardRequest",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/AddCreditCardRequest"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "schema" : {
+              "$ref" : "#/definitions/Empty"
+            }
+          },
+          "400" : {
+            "description" : "400 response"
+          }
+        },
+        "security" : [ {
+          "sigv4" : [ ]
+        } ]
+      }
+    },
+    "/cancel-appointment" : {
+      "post" : {
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "CancelAppointmentRequest",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/CancelAppointmentRequest"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "schema" : {
+              "$ref" : "#/definitions/CancelAppointmentResult"
+            }
+          },
+          "400" : {
+            "description" : "400 response"
+          }
+        },
+        "security" : [ {
+          "sigv4" : [ ]
+        } ]
+      }
+    },
+    "/get-all-doctor-services" : {
+      "post" : {
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "GetAllDoctorServicesRequest",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/GetAllDoctorServicesRequest"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "schema" : {
+              "$ref" : "#/definitions/GetAllDoctorServicesResult"
+            }
+          },
+          "400" : {
+            "description" : "400 response"
+          }
+        },
+        "security" : [ {
+          "sigv4" : [ ]
+        } ]
+      }
+    },
+    "/get-appointment-bill" : {
+      "post" : {
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "ScheduleAppointmentRequest",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/ScheduleAppointmentRequest"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "schema" : {
+              "$ref" : "#/definitions/ClientAppointmentBill"
+            }
+          },
+          "400" : {
+            "description" : "400 response"
+          }
+        },
+        "security" : [ {
+          "sigv4" : [ ]
+        } ]
+      }
+    },
+    "/get-appointment-payment-method" : {
+      "post" : {
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "GetAppointmentPaymentMethodRequest",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/GetAppointmentPaymentMethodRequest"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "schema" : {
+              "$ref" : "#/definitions/ClientStripeObject"
+            }
+          },
+          "400" : {
+            "description" : "400 response"
+          }
+        },
+        "security" : [ {
+          "sigv4" : [ ]
+        } ]
+      }
+    },
+    "/get-appointments-with-user" : {
+      "post" : {
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "GetAppointmentsWithUserRequest",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/GetAppointmentsWithUserRequest"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "schema" : {
+              "$ref" : "#/definitions/GetAppointmentsResult"
+            }
+          },
+          "400" : {
+            "description" : "400 response"
+          }
+        },
+        "security" : [ {
+          "sigv4" : [ ]
+        } ]
+      }
+    },
+    "/get-doctor-specialties" : {
+      "post" : {
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "GetDoctorSpecialtiesRequest",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/GetDoctorSpecialtiesRequest"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "schema" : {
+              "$ref" : "#/definitions/GetDoctorSpecialtiesResult"
+            }
+          },
+          "400" : {
+            "description" : "400 response"
+          }
+        },
+        "security" : [ {
+          "sigv4" : [ ]
+        } ]
+      }
+    },
+    "/get-doctors" : {
+      "post" : {
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "GetDoctorsRequest",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/GetDoctorsRequest"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "schema" : {
+              "$ref" : "#/definitions/GetDoctorsResult"
+            }
+          },
+          "400" : {
+            "description" : "400 response"
+          }
+        },
+        "security" : [ {
+          "sigv4" : [ ]
+        } ]
+      }
+    },
+    "/get-logged-in-user" : {
+      "post" : {
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "VitalServicesRequest",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/VitalServicesRequest"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "schema" : {
+              "$ref" : "#/definitions/GetLoggedInUserResult"
+            }
+          },
+          "400" : {
+            "description" : "400 response"
+          }
+        },
+        "security" : [ {
+          "sigv4" : [ ]
+        } ]
+      }
+    },
+    "/get-stripe-customer" : {
+      "post" : {
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "GetStripeCustomerRequest",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/GetStripeCustomerRequest"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "schema" : {
+              "$ref" : "#/definitions/ClientStripeObject"
+            }
+          },
+          "400" : {
+            "description" : "400 response"
+          }
+        },
+        "security" : [ {
+          "sigv4" : [ ]
+        } ]
+      }
+    },
+    "/query-doctor-schedule" : {
+      "post" : {
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "QueryDoctorScheduleRequest",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/QueryDoctorScheduleRequest"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "schema" : {
+              "$ref" : "#/definitions/QueryDoctorScheduleResult"
+            }
+          },
+          "400" : {
+            "description" : "400 response"
+          }
+        },
+        "security" : [ {
+          "sigv4" : [ ]
+        } ]
+      }
+    },
+    "/register-doctor" : {
+      "post" : {
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "RegisterDoctorRequest",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/RegisterDoctorRequest"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "schema" : {
+              "$ref" : "#/definitions/ClientDoctor"
+            }
+          },
+          "400" : {
+            "description" : "400 response"
+          }
+        },
+        "security" : [ {
+          "sigv4" : [ ]
+        } ]
+      }
+    },
+    "/register-user" : {
+      "post" : {
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "RegisterUserRequest",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/RegisterUserRequest"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "schema" : {
+              "$ref" : "#/definitions/ClientUser"
+            }
+          },
+          "400" : {
+            "description" : "400 response"
+          }
+        },
+        "security" : [ {
+          "sigv4" : [ ]
+        } ]
+      }
+    },
+    "/schedule-appointment" : {
+      "post" : {
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "ScheduleAppointmentRequest",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/ScheduleAppointmentRequest"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "schema" : {
+              "$ref" : "#/definitions/Empty"
+            }
+          },
+          "400" : {
+            "description" : "400 response"
+          }
+        },
+        "security" : [ {
+          "sigv4" : [ ]
+        } ]
+      }
+    },
+    "/search-for-doctors" : {
+      "post" : {
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "SearchForDoctorsRequest",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/SearchForDoctorsRequest"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "schema" : {
+              "$ref" : "#/definitions/SearchForDoctorsResult"
+            }
+          },
+          "400" : {
+            "description" : "400 response"
+          }
+        },
+        "security" : [ {
+          "sigv4" : [ ]
+        } ]
+      }
+    },
+    "/search-for-doctors-by-name" : {
+      "post" : {
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "SearchForDoctorsByNameRequest",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/SearchForDoctorsByNameRequest"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "schema" : {
+              "$ref" : "#/definitions/SearchForDoctorsByNameResult"
+            }
+          },
+          "400" : {
+            "description" : "400 response"
+          }
+        },
+        "security" : [ {
+          "sigv4" : [ ]
+        } ]
+      }
+    },
+    "/set-default-payment-source" : {
+      "post" : {
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "SetDefaultPaymentSourceRequest",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/SetDefaultPaymentSourceRequest"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "schema" : {
+              "$ref" : "#/definitions/Empty"
+            }
+          },
+          "400" : {
+            "description" : "400 response"
+          }
+        },
+        "security" : [ {
+          "sigv4" : [ ]
+        } ]
+      }
+    },
+    "/update-doctor" : {
+      "post" : {
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "UpdateDoctorRequest",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/UpdateDoctorRequest"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "schema" : {
+              "$ref" : "#/definitions/ClientDoctor"
+            }
+          },
+          "400" : {
+            "description" : "400 response"
+          }
+        },
+        "security" : [ {
+          "sigv4" : [ ]
+        } ]
+      }
+    },
+    "/update-user" : {
+      "post" : {
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "UpdateUserRequest",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/UpdateUserRequest"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "schema" : {
+              "$ref" : "#/definitions/ClientUser"
+            }
+          },
+          "400" : {
+            "description" : "400 response"
+          }
+        },
+        "security" : [ {
+          "sigv4" : [ ]
+        } ]
+      }
+    },
+    "/url-for-file" : {
+      "post" : {
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "UrlForFileRequest",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/UrlForFileRequest"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "schema" : {
+              "$ref" : "#/definitions/UrlForFileResult"
+            }
+          },
+          "400" : {
+            "description" : "400 response"
+          }
+        },
+        "security" : [ {
+          "sigv4" : [ ]
+        } ]
+      }
+    },
+    "/vital-services" : {
+      "post" : {
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "VitalServicesRequest",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/VitalServicesRequest"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response"
+          },
+          "400" : {
+            "description" : "400 response"
+          }
+        },
+        "security" : [ {
+          "sigv4" : [ ]
+        } ]
+      }
+    }
+  },
+  "securityDefinitions" : {
+    "sigv4" : {
+      "type" : "apiKey",
+      "name" : "Authorization",
+      "in" : "header",
+      "x-amazon-apigateway-authtype" : "awsSigv4"
+    }
+  },
+  "definitions" : {
+    "AddCreditCardRequest" : {
+      "type" : "object",
+      "required" : [ "cardToken" ],
+      "properties" : {
+        "cardToken" : {
+          "type" : "string"
+        }
+      },
+      "title" : "AddCreditCardRequest"
+    },
+    "CancelAppointmentRequest" : {
+      "type" : "object",
+      "required" : [ "appointmentId", "lateCancellation" ],
+      "properties" : {
+        "appointmentId" : {
+          "type" : "string"
+        },
+        "lateCancellation" : {
+          "type" : "boolean"
+        }
+      },
+      "title" : "CancelAppointmentRequest"
+    },
+    "SearchForDoctorsRequest" : {
+      "type" : "object",
+      "required" : [ "firstTime", "lastTime", "latitude", "longitude", "serviceId", "specialtyId" ],
+      "properties" : {
+        "latitude" : {
+          "type" : "number"
+        },
+        "longitude" : {
+          "type" : "number"
+        },
+        "firstTime" : {
+          "type" : "string"
+        },
+        "lastTime" : {
+          "type" : "string"
+        },
+        "specialtyId" : {
+          "type" : "string"
+        },
+        "serviceId" : {
+          "type" : "string"
+        }
+      },
+      "title" : "SearchForDoctorsRequest"
+    },
+    "UrlForFileResult" : {
+      "type" : "object",
+      "properties" : {
+        "url" : {
+          "type" : "string"
+        }
+      },
+      "title" : "UrlForFileResult"
+    },
+    "VitalServicesRequest" : {
+      "type" : "object",
+      "properties" : {
+        "operation" : {
+          "type" : "string"
+        },
+        "appointmentIds" : {
+          "type" : "array",
+          "items" : {
+            "type" : "string"
+          }
+        },
+        "appointmentId" : {
+          "type" : "string"
+        },
+        "availableTimeSlots" : {
+          "type" : "array",
+          "items" : {
+            "type" : "string"
+          }
+        },
+        "bankAccountToken" : {
+          "type" : "string"
+        },
+        "billVersion" : {
+          "type" : "string"
+        },
+        "birthdateDay" : {
+          "type" : "string"
+        },
+        "birthdateMonth" : {
+          "type" : "string"
+        },
+        "birthdateYear" : {
+          "type" : "string"
+        },
+        "businessName" : {
+          "type" : "string"
+        },
+        "cardToken" : {
+          "type" : "string"
+        },
+        "city" : {
+          "type" : "string"
+        },
+        "doctorId" : {
+          "type" : "string"
+        },
+        "doctorIds" : {
+          "type" : "array",
+          "items" : {
+            "type" : "string"
+          }
+        },
+        "durationMinutes" : {
+          "type" : "string"
+        },
+        "email" : {
+          "type" : "string"
+        },
+        "employerIdentificationNumber" : {
+          "type" : "string"
+        },
+        "file" : {
+          "type" : "string"
+        },
+        "firstName" : {
+          "type" : "string"
+        },
+        "firstTime" : {
+          "type" : "string"
+        },
+        "getDoctors" : {
+          "type" : "boolean"
+        },
+        "getPatients" : {
+          "type" : "boolean"
+        },
+        "httpMethod" : {
+          "type" : "string"
+        },
+        "lastName" : {
+          "type" : "string"
+        },
+        "lastTime" : {
+          "type" : "string"
+        },
+        "lateCancellation" : {
+          "type" : "boolean"
+        },
+        "latitude" : {
+          "type" : "number"
+        },
+        "longitude" : {
+          "type" : "number"
+        },
+        "mobileNumber" : {
+          "type" : "string"
+        },
+        "officeNumber" : {
+          "type" : "string"
+        },
+        "patientId" : {
+          "type" : "string"
+        },
+        "patientIds" : {
+          "type" : "array",
+          "items" : {
+            "type" : "string"
+          }
+        },
+        "pictureUrl" : {
+          "type" : "string"
+        },
+        "postalCode" : {
+          "type" : "string"
+        },
+        "priceDollars" : {
+          "type" : "string"
+        },
+        "serviceId" : {
+          "type" : "string"
+        },
+        "serviceIds" : {
+          "type" : "array",
+          "items" : {
+            "type" : "string"
+          }
+        },
+        "specialtyId" : {
+          "type" : "string"
+        },
+        "startTime" : {
+          "type" : "string"
+        },
+        "state" : {
+          "type" : "string"
+        },
+        "streetNumberAndName" : {
+          "type" : "string"
+        },
+        "string1" : {
+          "type" : "string"
+        },
+        "string2" : {
+          "type" : "string"
+        },
+        "string3" : {
+          "type" : "string"
+        },
+        "string4" : {
+          "type" : "string"
+        },
+        "sourceId" : {
+          "type" : "string"
+        },
+        "ssnLast4" : {
+          "type" : "string"
+        },
+        "suite" : {
+          "type" : "string"
+        },
+        "unavailableTimeSlots" : {
+          "type" : "array",
+          "items" : {
+            "type" : "string"
+          }
+        }
+      },
+      "title" : "VitalServicesRequest"
+    },
+    "ClientDoctorScheduleTimeSlot" : {
+      "type" : "object",
+      "required" : [ "timeSlot" ],
+      "properties" : {
+        "timeSlot" : {
+          "type" : "string"
+        },
+        "appointmentId" : {
+          "type" : "string"
+        }
+      },
+      "title" : "ClientDoctorScheduleTimeSlot"
+    },
+    "ClientDoctorSpecialty" : {
+      "type" : "object",
+      "required" : [ "id", "isCommon", "name" ],
+      "properties" : {
+        "id" : {
+          "type" : "string"
+        },
+        "isCommon" : {
+          "type" : "boolean"
+        },
+        "name" : {
+          "type" : "string"
+        }
+      },
+      "title" : "ClientDoctorSpecialty"
+    },
+    "SetDefaultPaymentSourceRequest" : {
+      "type" : "object",
+      "properties" : {
+        "paymentMethodId" : {
+          "type" : "string"
+        }
+      },
+      "title" : "SetDefaultPaymentMethodSourceRequest"
+    },
+    "QueryDoctorScheduleResult" : {
+      "type" : "object",
+      "properties" : {
+        "timeSlots" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/ClientDoctorScheduleTimeSlot"
+          }
+        }
+      },
+      "title" : "QueryDoctorScheduleResult"
+    },
+    "SearchForDoctorsByNameResult" : {
+      "type" : "object",
+      "properties" : {
+        "searchString" : {
+          "type" : "string"
+        },
+        "doctors" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/ClientDoctor"
+          }
+        }
+      },
+      "title" : "SearchForDoctorsByNameResult"
+    },
+    "RegisterDoctorRequest" : {
+      "type" : "object",
+      "required" : [ "officeNumber", "specialtyId" ],
+      "properties" : {
+        "specialtyId" : {
+          "type" : "string"
+        },
+        "officeNumber" : {
+          "type" : "string"
+        }
+      },
+      "title" : "RegisterDoctorRequest"
+    },
+    "ClientStripeObject" : {
+      "type" : "object",
+      "properties" : {
+        "jsonString" : {
+          "type" : "string"
+        }
+      },
+      "title" : "ClientStripeObject"
+    },
+    "Empty" : {
+      "type" : "object",
+      "title" : "Empty"
+    },
+    "QueryDoctorScheduleRequest" : {
+      "type" : "object",
+      "required" : [ "doctorId", "firstTimeInclusive", "lastTimeExclusive" ],
+      "properties" : {
+        "doctorId" : {
+          "type" : "string"
+        },
+        "firstTimeInclusive" : {
+          "type" : "string"
+        },
+        "lastTimeExclusive" : {
+          "type" : "string"
+        }
+      },
+      "title" : "QueryDoctorScheduleRequest"
+    },
+    "GetAppointmentPaymentMethodRequest" : {
+      "type" : "object",
+      "properties" : {
+        "appointmentId" : {
+          "type" : "string"
+        }
+      },
+      "title" : "GetAppointmentPaymentMethodRequest"
+    },
+    "GetStripeCustomerRequest" : {
+      "type" : "object",
+      "required" : [ "userId" ],
+      "properties" : {
+        "userId" : {
+          "type" : "string"
+        }
+      },
+      "title" : "GetStripeCustomerRequest"
+    },
+    "ClientDoctorServiceDetails" : {
+      "type" : "object",
+      "required" : [ "doctorId", "durationSeconds", "priceDollars", "serviceId" ],
+      "properties" : {
+        "doctorId" : {
+          "type" : "string"
+        },
+        "serviceId" : {
+          "type" : "string"
+        },
+        "priceDollars" : {
+          "type" : "string"
+        },
+        "durationSeconds" : {
+          "type" : "number"
+        }
+      },
+      "title" : "ClientDoctorServiceDetails"
+    },
+    "ScheduleAppointmentRequest" : {
+      "type" : "object",
+      "required" : [ "billFingerprint", "doctorId", "serviceId", "startTime", "totalPriceCents" ],
+      "properties" : {
+        "doctorId" : {
+          "type" : "string"
+        },
+        "startTime" : {
+          "type" : "string"
+        },
+        "serviceId" : {
+          "type" : "string"
+        },
+        "totalPriceCents" : {
+          "type" : "string"
+        },
+        "billFingerprint" : {
+          "type" : "string"
+        }
+      },
+      "title" : "ScheduleAppointmentRequest"
+    },
+    "ClientUser" : {
+      "type" : "object",
+      "required" : [ "email", "firstName", "id", "lastName" ],
+      "properties" : {
+        "id" : {
+          "type" : "string"
+        },
+        "doctorId" : {
+          "type" : "string"
+        },
+        "firstName" : {
+          "type" : "string"
+        },
+        "lastName" : {
+          "type" : "string"
+        },
+        "email" : {
+          "type" : "string"
+        },
+        "mobileNumber" : {
+          "type" : "string"
+        },
+        "profilePhotoUrl" : {
+          "type" : "string"
+        },
+        "stripeCustomerId" : {
+          "type" : "string"
+        }
+      },
+      "title" : "ClientUser"
+    },
+    "RegisterUserRequest" : {
+      "type" : "object",
+      "required" : [ "email", "firstName", "lastName", "mobileNumber" ],
+      "properties" : {
+        "firstName" : {
+          "type" : "string"
+        },
+        "lastName" : {
+          "type" : "string"
+        },
+        "email" : {
+          "type" : "string"
+        },
+        "mobileNumber" : {
+          "type" : "string"
+        }
+      },
+      "title" : "RegisterUserRequest"
+    },
+    "GetAllDoctorServicesRequest" : {
+      "type" : "object",
+      "properties" : {
+        "dummy" : {
+          "type" : "string"
+        }
+      },
+      "title" : "GetAllDoctorServicesRequest"
+    },
+    "ClientPatient" : {
+      "type" : "object",
+      "required" : [ "firstName", "id", "lastName", "mobileNumber" ],
+      "properties" : {
+        "id" : {
+          "type" : "string"
+        },
+        "firstName" : {
+          "type" : "string"
+        },
+        "lastName" : {
+          "type" : "string"
+        },
+        "mobileNumber" : {
+          "type" : "string"
+        },
+        "profilePhotoUrl" : {
+          "type" : "string"
+        }
+      },
+      "title" : "ClientPatient"
+    },
+    "GetAppointmentsWithUserRequest" : {
+      "type" : "object",
+      "required" : [ "getDoctors", "getPatients", "userId" ],
+      "properties" : {
+        "userId" : {
+          "type" : "string"
+        },
+        "getDoctors" : {
+          "type" : "boolean"
+        },
+        "getPatients" : {
+          "type" : "boolean"
+        }
+      },
+      "title" : "GetAppointmentsWithUserRequest"
+    },
+    "SearchForDoctorsResult" : {
+      "type" : "object",
+      "properties" : {
+        "doctors" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/ClientDoctor"
+          }
+        }
+      },
+      "title" : "SearchForDoctorsResult"
+    },
+    "ClientDoctor" : {
+      "type" : "object",
+      "required" : [ "firstName", "id", "lastName", "payoutInfoIsSet", "servicesOffered", "specialtyId" ],
+      "properties" : {
+        "id" : {
+          "type" : "string"
+        },
+        "firstName" : {
+          "type" : "string"
+        },
+        "lastName" : {
+          "type" : "string"
+        },
+        "specialtyId" : {
+          "type" : "string"
+        },
+        "officeNumber" : {
+          "type" : "string"
+        },
+        "administrativeAreaL1" : {
+          "type" : "string"
+        },
+        "city" : {
+          "type" : "string"
+        },
+        "postalCode" : {
+          "type" : "string"
+        },
+        "streetNumberAndName" : {
+          "type" : "string"
+        },
+        "suite" : {
+          "type" : "string"
+        },
+        "latitude" : {
+          "type" : "number"
+        },
+        "longitude" : {
+          "type" : "number"
+        },
+        "servicesOffered" : {
+          "type" : "array",
+          "items" : {
+            "type" : "string"
+          }
+        },
+        "payoutInfoIsSet" : {
+          "type" : "boolean"
+        },
+        "coverPhotoUrl" : {
+          "type" : "string"
+        },
+        "profilePhotoUrl" : {
+          "type" : "string"
+        },
+        "serviceDetailsList" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/ClientDoctorServiceDetails"
+          }
+        }
+      },
+      "title" : "ClientDoctor"
+    },
+    "ClientAppointmentBill" : {
+      "type" : "object",
+      "required" : [ "fingerprint" ],
+      "properties" : {
+        "basePriceCents" : {
+          "type" : "string"
+        },
+        "doctorServiceFeeCents" : {
+          "type" : "string"
+        },
+        "patientServiceFeeCents" : {
+          "type" : "string"
+        },
+        "totalPriceCents" : {
+          "type" : "string"
+        },
+        "fingerprint" : {
+          "type" : "string"
+        }
+      },
+      "title" : "ClientAppointmentBill"
+    },
+    "GetAllDoctorServicesResult" : {
+      "type" : "object",
+      "properties" : {
+        "services" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/ClientDoctorService"
+          }
+        }
+      },
+      "title" : "GetAllDoctorServicesResult"
+    },
+    "GetAppointmentsResult" : {
+      "type" : "object",
+      "required" : [ "appointments" ],
+      "properties" : {
+        "appointments" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/ClientAppointment"
+          }
+        },
+        "doctors" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/ClientDoctor"
+          }
+        },
+        "patients" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/ClientPatient"
+          }
+        }
+      },
+      "title" : "GetAppointmentsResult"
+    },
+    "GetLoggedInUserResult" : {
+      "type" : "object",
+      "properties" : {
+        "userExists" : {
+          "type" : "boolean"
+        },
+        "user" : {
+          "$ref" : "#/definitions/ClientUser"
+        }
+      },
+      "title" : "GetLoggedInUserResult"
+    },
+    "GetDoctorSpecialtiesResult" : {
+      "type" : "object",
+      "properties" : {
+        "specialties" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/ClientDoctorSpecialty"
+          }
+        }
+      },
+      "title" : "GetDoctorSpecialtiesResult"
+    },
+    "GetDoctorSpecialtiesRequest" : {
+      "type" : "object",
+      "properties" : {
+        "dummy" : {
+          "type" : "string"
+        }
+      },
+      "title" : "GetDoctorSpecialtiesRequest"
+    },
+    "GetDoctorsRequest" : {
+      "type" : "object",
+      "properties" : {
+        "doctorIds" : {
+          "type" : "array",
+          "items" : {
+            "type" : "string"
+          }
+        }
+      },
+      "title" : "GetDoctorsRequest"
+    },
+    "SearchForDoctorsByNameRequest" : {
+      "type" : "object",
+      "required" : [ "searchString" ],
+      "properties" : {
+        "searchString" : {
+          "type" : "string"
+        }
+      },
+      "title" : "SearchForDoctorsByNameRequest"
+    },
+    "ClientDoctorService" : {
+      "type" : "object",
+      "required" : [ "additionalDescription", "id", "indefiniteArticle", "name" ],
+      "properties" : {
+        "id" : {
+          "type" : "string"
+        },
+        "additionalDescription" : {
+          "type" : "string"
+        },
+        "indefiniteArticle" : {
+          "type" : "string"
+        },
+        "name" : {
+          "type" : "string"
+        }
+      },
+      "title" : "ClientDoctorService"
+    },
+    "CancelAppointmentResult" : {
+      "type" : "object",
+      "properties" : {
+        "appointment" : {
+          "$ref" : "#/definitions/ClientAppointment"
+        },
+        "errorCode" : {
+          "type" : "string"
+        }
+      },
+      "title" : "CancelAppointmentResult"
+    },
+    "GetDoctorsResult" : {
+      "type" : "object",
+      "properties" : {
+        "doctors" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/ClientDoctor"
+          }
+        }
+      },
+      "title" : "GetDoctorsResult"
+    },
+    "UrlForFileRequest" : {
+      "type" : "object",
+      "required" : [ "fileName", "httpMethod" ],
+      "properties" : {
+        "patientId" : {
+          "type" : "string"
+        },
+        "doctorId" : {
+          "type" : "string"
+        },
+        "fileName" : {
+          "type" : "string"
+        },
+        "httpMethod" : {
+          "type" : "string"
+        }
+      },
+      "title" : "UrlForFileRequest"
+    },
+    "ClientAppointment" : {
+      "type" : "object",
+      "required" : [ "appointmentState", "chargeId", "dateBooked", "doctorId", "durationSeconds", "id", "patientId", "serviceId", "startTime" ],
+      "properties" : {
+        "id" : {
+          "type" : "string",
+          "description" : "A unique ID."
+        },
+        "appointmentState" : {
+          "type" : "string"
+        },
+        "basePriceCents" : {
+          "type" : "string"
+        },
+        "chargeId" : {
+          "type" : "string"
+        },
+        "dateBooked" : {
+          "type" : "string"
+        },
+        "doctorEarningsCents" : {
+          "type" : "string"
+        },
+        "doctorId" : {
+          "type" : "string"
+        },
+        "doctorServiceFeeCents" : {
+          "type" : "string"
+        },
+        "durationSeconds" : {
+          "type" : "string"
+        },
+        "patientId" : {
+          "type" : "string"
+        },
+        "patientServiceFeeCents" : {
+          "type" : "string"
+        },
+        "serviceId" : {
+          "type" : "string"
+        },
+        "startTime" : {
+          "type" : "string"
+        },
+        "totalPriceCents" : {
+          "type" : "string"
+        },
+        "amountRefundedCents" : {
+          "type" : "string"
+        },
+        "cancellationDate" : {
+          "type" : "string"
+        },
+        "reimbursementDate" : {
+          "type" : "string"
+        }
+      },
+      "title" : "ClientAppointment",
+      "description" : "An appointment between a doctor and a patient."
+    },
+    "UpdateUserRequest" : {
+      "type" : "object",
+      "properties" : {
+        "email" : {
+          "type" : "string"
+        },
+        "mobileNumber" : {
+          "type" : "string"
+        }
+      },
+      "title" : "UpdateUserRequest"
+    },
+    "UpdateDoctorRequest" : {
+      "type" : "object",
+      "required" : [ "doctorId" ],
+      "properties" : {
+        "doctorId" : {
+          "type" : "string"
+        },
+        "officeNumber" : {
+          "type" : "string"
+        }
+      },
+      "title" : "UpdateDoctorRequest"
+    }
+  }
+}
