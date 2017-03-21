@@ -67,72 +67,100 @@ namespace Model
     inline DetectFacesRequest& WithImage(Image&& value) { SetImage(value); return *this;}
 
     /**
-     * <p>A list of facial attributes you would like to be returned. By default, the
-     * API returns subset of facial attributes. </p> <p>For example, you can specify
-     * the value as, ["ALL"] or ["DEFAULT"]. If you provide both, ["ALL", "DEFAULT"],
-     * the service uses a logical AND operator to determine which attributes to return
-     * (in this case, it is all attributes). If you specify all attributes, Amazon
-     * Rekognition performs additional detection. </p>
+     * <p>A list of facial attributes you want to be returned. This can be the default
+     * list of attributes or all attributes. If you don't specify a value for
+     * <code>Attributes</code> or if you specify <code>["DEFAULT"]</code>, the API
+     * returns the following subset of facial attributes: <code>BoundingBox</code>,
+     * <code>Confidence</code>, <code>Pose</code>, <code>Quality</code> and
+     * <code>Landmarks</code>. If you provide <code>["ALL"]</code>, all facial
+     * attributes are returned but the operation will take longer to complete.</p>
+     * <p>If you provide both, <code>["ALL", "DEFAULT"]</code>, the service uses a
+     * logical AND operator to determine which attributes to return (in this case, all
+     * attributes). </p>
      */
     inline const Aws::Vector<Attribute>& GetAttributes() const{ return m_attributes; }
 
     /**
-     * <p>A list of facial attributes you would like to be returned. By default, the
-     * API returns subset of facial attributes. </p> <p>For example, you can specify
-     * the value as, ["ALL"] or ["DEFAULT"]. If you provide both, ["ALL", "DEFAULT"],
-     * the service uses a logical AND operator to determine which attributes to return
-     * (in this case, it is all attributes). If you specify all attributes, Amazon
-     * Rekognition performs additional detection. </p>
+     * <p>A list of facial attributes you want to be returned. This can be the default
+     * list of attributes or all attributes. If you don't specify a value for
+     * <code>Attributes</code> or if you specify <code>["DEFAULT"]</code>, the API
+     * returns the following subset of facial attributes: <code>BoundingBox</code>,
+     * <code>Confidence</code>, <code>Pose</code>, <code>Quality</code> and
+     * <code>Landmarks</code>. If you provide <code>["ALL"]</code>, all facial
+     * attributes are returned but the operation will take longer to complete.</p>
+     * <p>If you provide both, <code>["ALL", "DEFAULT"]</code>, the service uses a
+     * logical AND operator to determine which attributes to return (in this case, all
+     * attributes). </p>
      */
     inline void SetAttributes(const Aws::Vector<Attribute>& value) { m_attributesHasBeenSet = true; m_attributes = value; }
 
     /**
-     * <p>A list of facial attributes you would like to be returned. By default, the
-     * API returns subset of facial attributes. </p> <p>For example, you can specify
-     * the value as, ["ALL"] or ["DEFAULT"]. If you provide both, ["ALL", "DEFAULT"],
-     * the service uses a logical AND operator to determine which attributes to return
-     * (in this case, it is all attributes). If you specify all attributes, Amazon
-     * Rekognition performs additional detection. </p>
+     * <p>A list of facial attributes you want to be returned. This can be the default
+     * list of attributes or all attributes. If you don't specify a value for
+     * <code>Attributes</code> or if you specify <code>["DEFAULT"]</code>, the API
+     * returns the following subset of facial attributes: <code>BoundingBox</code>,
+     * <code>Confidence</code>, <code>Pose</code>, <code>Quality</code> and
+     * <code>Landmarks</code>. If you provide <code>["ALL"]</code>, all facial
+     * attributes are returned but the operation will take longer to complete.</p>
+     * <p>If you provide both, <code>["ALL", "DEFAULT"]</code>, the service uses a
+     * logical AND operator to determine which attributes to return (in this case, all
+     * attributes). </p>
      */
     inline void SetAttributes(Aws::Vector<Attribute>&& value) { m_attributesHasBeenSet = true; m_attributes = value; }
 
     /**
-     * <p>A list of facial attributes you would like to be returned. By default, the
-     * API returns subset of facial attributes. </p> <p>For example, you can specify
-     * the value as, ["ALL"] or ["DEFAULT"]. If you provide both, ["ALL", "DEFAULT"],
-     * the service uses a logical AND operator to determine which attributes to return
-     * (in this case, it is all attributes). If you specify all attributes, Amazon
-     * Rekognition performs additional detection. </p>
+     * <p>A list of facial attributes you want to be returned. This can be the default
+     * list of attributes or all attributes. If you don't specify a value for
+     * <code>Attributes</code> or if you specify <code>["DEFAULT"]</code>, the API
+     * returns the following subset of facial attributes: <code>BoundingBox</code>,
+     * <code>Confidence</code>, <code>Pose</code>, <code>Quality</code> and
+     * <code>Landmarks</code>. If you provide <code>["ALL"]</code>, all facial
+     * attributes are returned but the operation will take longer to complete.</p>
+     * <p>If you provide both, <code>["ALL", "DEFAULT"]</code>, the service uses a
+     * logical AND operator to determine which attributes to return (in this case, all
+     * attributes). </p>
      */
     inline DetectFacesRequest& WithAttributes(const Aws::Vector<Attribute>& value) { SetAttributes(value); return *this;}
 
     /**
-     * <p>A list of facial attributes you would like to be returned. By default, the
-     * API returns subset of facial attributes. </p> <p>For example, you can specify
-     * the value as, ["ALL"] or ["DEFAULT"]. If you provide both, ["ALL", "DEFAULT"],
-     * the service uses a logical AND operator to determine which attributes to return
-     * (in this case, it is all attributes). If you specify all attributes, Amazon
-     * Rekognition performs additional detection. </p>
+     * <p>A list of facial attributes you want to be returned. This can be the default
+     * list of attributes or all attributes. If you don't specify a value for
+     * <code>Attributes</code> or if you specify <code>["DEFAULT"]</code>, the API
+     * returns the following subset of facial attributes: <code>BoundingBox</code>,
+     * <code>Confidence</code>, <code>Pose</code>, <code>Quality</code> and
+     * <code>Landmarks</code>. If you provide <code>["ALL"]</code>, all facial
+     * attributes are returned but the operation will take longer to complete.</p>
+     * <p>If you provide both, <code>["ALL", "DEFAULT"]</code>, the service uses a
+     * logical AND operator to determine which attributes to return (in this case, all
+     * attributes). </p>
      */
     inline DetectFacesRequest& WithAttributes(Aws::Vector<Attribute>&& value) { SetAttributes(value); return *this;}
 
     /**
-     * <p>A list of facial attributes you would like to be returned. By default, the
-     * API returns subset of facial attributes. </p> <p>For example, you can specify
-     * the value as, ["ALL"] or ["DEFAULT"]. If you provide both, ["ALL", "DEFAULT"],
-     * the service uses a logical AND operator to determine which attributes to return
-     * (in this case, it is all attributes). If you specify all attributes, Amazon
-     * Rekognition performs additional detection. </p>
+     * <p>A list of facial attributes you want to be returned. This can be the default
+     * list of attributes or all attributes. If you don't specify a value for
+     * <code>Attributes</code> or if you specify <code>["DEFAULT"]</code>, the API
+     * returns the following subset of facial attributes: <code>BoundingBox</code>,
+     * <code>Confidence</code>, <code>Pose</code>, <code>Quality</code> and
+     * <code>Landmarks</code>. If you provide <code>["ALL"]</code>, all facial
+     * attributes are returned but the operation will take longer to complete.</p>
+     * <p>If you provide both, <code>["ALL", "DEFAULT"]</code>, the service uses a
+     * logical AND operator to determine which attributes to return (in this case, all
+     * attributes). </p>
      */
     inline DetectFacesRequest& AddAttributes(const Attribute& value) { m_attributesHasBeenSet = true; m_attributes.push_back(value); return *this; }
 
     /**
-     * <p>A list of facial attributes you would like to be returned. By default, the
-     * API returns subset of facial attributes. </p> <p>For example, you can specify
-     * the value as, ["ALL"] or ["DEFAULT"]. If you provide both, ["ALL", "DEFAULT"],
-     * the service uses a logical AND operator to determine which attributes to return
-     * (in this case, it is all attributes). If you specify all attributes, Amazon
-     * Rekognition performs additional detection. </p>
+     * <p>A list of facial attributes you want to be returned. This can be the default
+     * list of attributes or all attributes. If you don't specify a value for
+     * <code>Attributes</code> or if you specify <code>["DEFAULT"]</code>, the API
+     * returns the following subset of facial attributes: <code>BoundingBox</code>,
+     * <code>Confidence</code>, <code>Pose</code>, <code>Quality</code> and
+     * <code>Landmarks</code>. If you provide <code>["ALL"]</code>, all facial
+     * attributes are returned but the operation will take longer to complete.</p>
+     * <p>If you provide both, <code>["ALL", "DEFAULT"]</code>, the service uses a
+     * logical AND operator to determine which attributes to return (in this case, all
+     * attributes). </p>
      */
     inline DetectFacesRequest& AddAttributes(Attribute&& value) { m_attributesHasBeenSet = true; m_attributes.push_back(value); return *this; }
 
