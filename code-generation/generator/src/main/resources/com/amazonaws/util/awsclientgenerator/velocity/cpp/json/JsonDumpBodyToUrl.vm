@@ -19,8 +19,10 @@
     }
 #elseif($member.shape.blob)
     uri.AddQueryStringParameter("${memberName}", HashingUtils::Base64Encode($memberVarName)));
-#else()$member.shape.timeStamp)
+#elseif($member.shape.timeStamp)
     uri.AddQueryStringParameter("${memberName}", StringUtils::to_string($memberVarName.SecondsWithMSPrecision()));
+#else
+    uri.AddQueryStringParameter("${memberName}", StringUtils::to_string($memberVarName));
 #end
 #if(!$member.required && $useRequiredField)
   }
