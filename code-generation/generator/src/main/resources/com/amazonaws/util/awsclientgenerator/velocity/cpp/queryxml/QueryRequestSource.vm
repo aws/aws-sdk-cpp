@@ -184,3 +184,10 @@ Aws::String ${typeInfo.className}::SerializePayload() const
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/AddQueryStringParametersToRequest.vm")
 
 #end
+
+#if($shape.supportsPresigning)
+void  ${typeInfo.className}::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}
+#end

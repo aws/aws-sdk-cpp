@@ -27,4 +27,5 @@ public class Operation {
     private ShapeMember result;
     private List<Error> errors;
     private String documentation;
+    private boolean supportsPresigning;
 }

@@ -72,12 +72,17 @@ public class QueryCppClientGenerator extends CppClientGenerator {
             requestShape.setRequest(true);
             requestShape.setType("structure");
             requestShape.setMembers(new HashMap<>());
+            requestShape.setSupportsPresigning(true);
 
             serviceModel.getShapes().put(requestShape.getName(), requestShape);
             ShapeMember shapeMemberForRequest = new ShapeMember();
             shapeMemberForRequest.setDocumentation("");
             shapeMemberForRequest.setShape(requestShape);
             operation.setRequest(shapeMemberForRequest);
+        });
+
+        serviceModel.getOperations().values().stream().forEach(operation -> {
+            operation.getRequest().getShape().setSupportsPresigning(true);
         });
 
         return super.generateSourceFiles(serviceModel);

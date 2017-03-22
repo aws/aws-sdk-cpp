@@ -36,6 +36,11 @@ namespace Model
     SynthesizeSpeechRequest();
     Aws::String SerializePayload() const override;
 
+
+  protected:
+    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+
+  public:
     /**
      * <p>List of one or more pronunciation lexicon names you want the service to apply
      * during synthesis. Lexicons are applied only if the language of the lexicon is

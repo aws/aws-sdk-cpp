@@ -1,5 +1,5 @@
 /*
-  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+  * Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
   * 
   * Licensed under the Apache License, Version 2.0 (the "License").
   * You may not use this file except in compliance with the License.
@@ -73,21 +73,31 @@ TEST(URITest, TestAddQueryStringParameters)
 
     uri.AddQueryStringParameter("test1", "value1");
     uri.AddQueryStringParameter("test needs escaping", "value needs escaping");
+    //per https://tools.ietf.org/html/rfc3986#section-3.4 there is nothing preventing servers from allowing
+    //multiple values for the same key. Verify that behavior here.
+    uri.AddQueryStringParameter("test2", "value2");
+    uri.AddQueryStringParameter("test2", "value3");
 
     //parameter collection shouldn't  be encoded when accessed
     QueryStringParameterCollection queryStringParams = uri.GetQueryStringParameters();
     EXPECT_STREQ("test needs escaping", queryStringParams.begin()->first.c_str());
     EXPECT_STREQ("value needs escaping", queryStringParams.begin()->second.c_str());
-    QueryStringParameterCollection::iterator secondEntry = queryStringParams.begin();
-    secondEntry++;
-    EXPECT_STREQ("test1", secondEntry->first.c_str());
-    EXPECT_STREQ("value1", secondEntry->second.c_str());
+    QueryStringParameterCollection::iterator nextEntry = queryStringParams.begin();
+    nextEntry++;
+    EXPECT_STREQ("test1", nextEntry->first.c_str());
+    EXPECT_STREQ("value1", nextEntry->second.c_str());
+    nextEntry++;
+    EXPECT_STREQ("test2", nextEntry->first.c_str());
+    EXPECT_STREQ("value2", nextEntry->second.c_str());
+    nextEntry++;
+    EXPECT_STREQ("test2", nextEntry->first.c_str());
+    EXPECT_STREQ("value3", nextEntry->second.c_str());
 
     //it should be encoded in the actual query string.
-    EXPECT_STREQ("?test1=value1&test%20needs%20escaping=value%20needs%20escaping", uri.GetQueryString().c_str());
+    EXPECT_STREQ("?test1=value1&test%20needs%20escaping=value%20needs%20escaping&test2=value2&test2=value3", uri.GetQueryString().c_str());
 
     //let's go ahead and make sure the url is constructed properly.
-    EXPECT_STREQ("http://www.test.com/path/to/resource?test1=value1&test%20needs%20escaping=value%20needs%20escaping",
+    EXPECT_STREQ("http://www.test.com/path/to/resource?test1=value1&test%20needs%20escaping=value%20needs%20escaping&test2=value2&test2=value3",
         uri.GetURIString().c_str());
 }
 
@@ -101,16 +111,17 @@ TEST(URITest, TestCanonicalizeQueryStringParameters)
     uri.AddQueryStringParameter("b", "c");
     uri.AddQueryStringParameter("a", "b");
     uri.AddQueryStringParameter("c", "a");
+    uri.AddQueryStringParameter("c", "b");
+    uri.AddQueryStringParameter("d", "d");
 
     uri.CanonicalizeQueryString();
 
     //it should be sorted and canonical
-    EXPECT_EQ("?a=b&b=c&c=a", uri.GetQueryString());
+    EXPECT_EQ("?a=b&b=c&c=a&c=b&d=d", uri.GetQueryString());
     
     URI nonStandardUri("www.test.com/path/to/resource?nonStandard");
     nonStandardUri.CanonicalizeQueryString();
     EXPECT_EQ("?nonStandard", nonStandardUri.GetQueryString());
-
 }
 
 TEST(URITest, TestPort)
@@ -127,14 +138,14 @@ TEST(URITest, TestPort)
 TEST(URITest, TestParse)
 {
 
-    const char* strUri = "https://www.test.com:8443/path/to/resource?test1=value1&test%20space=value%20space";
+    const char* strUri = "https://www.test.com:8443/path/to/resource?test1=value1&test%20space=value%20space&test2=value2&test2=value3";
     URI uri(strUri);
 
     EXPECT_EQ(Scheme::HTTPS, uri.GetScheme());
     EXPECT_STREQ("www.test.com", uri.GetAuthority().c_str());
     EXPECT_EQ(8443, uri.GetPort());
     EXPECT_STREQ("/path/to/resource", uri.GetPath().c_str());
-    EXPECT_STREQ("?test1=value1&test%20space=value%20space", uri.GetQueryString().c_str());
+    EXPECT_STREQ("?test1=value1&test%20space=value%20space&test2=value2&test2=value3", uri.GetQueryString().c_str());
     EXPECT_STREQ(strUri, uri.GetURIString().c_str());
 
     const char* strUriNoPort = "https://www.test.com/path/to/resource.htm?test1=value1&test%20space=value%20space";
@@ -174,7 +185,6 @@ TEST(URITest, TestParseWithColon)
     EXPECT_EQ(8080, uriWithPort.GetPort());
     EXPECT_STREQ("/path/1234:_Some_Path", uriWithPort.GetPath().c_str());
     EXPECT_STREQ(strUriWithPort, uriWithPort.GetURIString().c_str());
-
 
     const char* strComplexUri = "http://s3.us-east-1.amazonaws.com/awsnativesdkputobjectstestbucket20150702T200059Z/TestObject:1234/awsnativesdkputobjectstestbucket20150702T200059Z/TestObject:Key";
     URI complexUri(strComplexUri);

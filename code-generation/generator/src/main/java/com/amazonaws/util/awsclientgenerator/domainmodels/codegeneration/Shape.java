@@ -42,6 +42,7 @@ public class Shape {
     private boolean isReferenced;
     private boolean flattened;
     private boolean computeContentMd5;
+    private boolean supportsPresigning;
 
     public boolean isMap() {
         return "map".equals(type.toLowerCase());

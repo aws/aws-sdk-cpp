@@ -169,11 +169,11 @@ QueryStringParameterCollection URI::GetQueryStringParameters(bool decode) const
 
             if(decode)
             {
-                parameterCollection[StringUtils::URLDecode(key.c_str())] = StringUtils::URLDecode(value.c_str());
+                parameterCollection.insert(std::make_pair<Aws::String, Aws::String>(StringUtils::URLDecode(key.c_str()), StringUtils::URLDecode(value.c_str())));
             }
             else
             {
-                parameterCollection[key] = value;
+                parameterCollection.insert(std::make_pair<Aws::String, Aws::String>(std::move(key), std::move(value)));
             }
             currentPos += keyValuePair.size() + 1;
         }
@@ -224,6 +224,23 @@ void URI::AddQueryStringParameter(const char* key, const Aws::String& value)
     }
 
     m_queryString.append(StringUtils::URLEncode(key) + "=" + StringUtils::URLEncode(value.c_str()));
+}
+
+void URI::SetQueryString(const Aws::String& str)
+{
+    m_queryString = "";
+
+    if (!str.empty())
+    {
+        if (str.front() != '?')
+        {
+            m_queryString.append("?").append(str);
+        }
+        else
+        {
+            m_queryString = str;
+        }
+    }
 }
 
 Aws::String URI::GetURIString(bool includeQueryString) const

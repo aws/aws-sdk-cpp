@@ -6,6 +6,9 @@
 #if($shape.hasQueryStringMembers())
 \#include <aws/core/http/URI.h>
 #end
+#if($shape.supportsPresigning)
+\#include <aws/core/utils/StringUtils.h>
+#end
 #foreach($header in $typeInfo.sourceIncludes)
 \#include $header
 #end
@@ -54,6 +57,14 @@ Aws::Http::HeaderValueCollection ${typeInfo.className}::GetRequestSpecificHeader
 #end
 #if($shape.hasQueryStringMembers())
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/AddQueryStringParametersToRequest.vm")
+
+#end
+
+#if($shape.supportsPresigning)
+void  ${typeInfo.className}::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+#parse($presignerTemplate)
+}
 
 #end
 
