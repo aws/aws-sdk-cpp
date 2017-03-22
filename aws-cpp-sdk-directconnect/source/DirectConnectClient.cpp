@@ -26,7 +26,6 @@
 #include <aws/directconnect/DirectConnectClient.h>
 #include <aws/directconnect/DirectConnectEndpoint.h>
 #include <aws/directconnect/DirectConnectErrorMarshaller.h>
-#include <aws/directconnect/model/AllocateConnectionOnInterconnectRequest.h>
 #include <aws/directconnect/model/AllocateHostedConnectionRequest.h>
 #include <aws/directconnect/model/AllocatePrivateVirtualInterfaceRequest.h>
 #include <aws/directconnect/model/AllocatePublicVirtualInterfaceRequest.h>
@@ -47,11 +46,8 @@
 #include <aws/directconnect/model/DeleteInterconnectRequest.h>
 #include <aws/directconnect/model/DeleteLagRequest.h>
 #include <aws/directconnect/model/DeleteVirtualInterfaceRequest.h>
-#include <aws/directconnect/model/DescribeConnectionLoaRequest.h>
 #include <aws/directconnect/model/DescribeConnectionsRequest.h>
-#include <aws/directconnect/model/DescribeConnectionsOnInterconnectRequest.h>
 #include <aws/directconnect/model/DescribeHostedConnectionsRequest.h>
-#include <aws/directconnect/model/DescribeInterconnectLoaRequest.h>
 #include <aws/directconnect/model/DescribeInterconnectsRequest.h>
 #include <aws/directconnect/model/DescribeLagsRequest.h>
 #include <aws/directconnect/model/DescribeLoaRequest.h>
@@ -124,40 +120,6 @@ void DirectConnectClient::init(const ClientConfiguration& config)
   }
 
   m_uri = ss.str();
-}
-
-AllocateConnectionOnInterconnectOutcome DirectConnectClient::AllocateConnectionOnInterconnect(const AllocateConnectionOnInterconnectRequest& request) const
-{
-  Aws::StringStream ss;
-  ss << m_uri << "/";
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
-  if(outcome.IsSuccess())
-  {
-    return AllocateConnectionOnInterconnectOutcome(AllocateConnectionOnInterconnectResult(outcome.GetResult()));
-  }
-  else
-  {
-    return AllocateConnectionOnInterconnectOutcome(outcome.GetError());
-  }
-}
-
-AllocateConnectionOnInterconnectOutcomeCallable DirectConnectClient::AllocateConnectionOnInterconnectCallable(const AllocateConnectionOnInterconnectRequest& request) const
-{
-  auto task = Aws::MakeShared< std::packaged_task< AllocateConnectionOnInterconnectOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->AllocateConnectionOnInterconnect(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
-}
-
-void DirectConnectClient::AllocateConnectionOnInterconnectAsync(const AllocateConnectionOnInterconnectRequest& request, const AllocateConnectionOnInterconnectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  m_executor->Submit( [this, request, handler, context](){ this->AllocateConnectionOnInterconnectAsyncHelper( request, handler, context ); } );
-}
-
-void DirectConnectClient::AllocateConnectionOnInterconnectAsyncHelper(const AllocateConnectionOnInterconnectRequest& request, const AllocateConnectionOnInterconnectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, AllocateConnectionOnInterconnect(request), context);
 }
 
 AllocateHostedConnectionOutcome DirectConnectClient::AllocateHostedConnection(const AllocateHostedConnectionRequest& request) const
@@ -840,40 +802,6 @@ void DirectConnectClient::DeleteVirtualInterfaceAsyncHelper(const DeleteVirtualI
   handler(this, request, DeleteVirtualInterface(request), context);
 }
 
-DescribeConnectionLoaOutcome DirectConnectClient::DescribeConnectionLoa(const DescribeConnectionLoaRequest& request) const
-{
-  Aws::StringStream ss;
-  ss << m_uri << "/";
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
-  if(outcome.IsSuccess())
-  {
-    return DescribeConnectionLoaOutcome(DescribeConnectionLoaResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribeConnectionLoaOutcome(outcome.GetError());
-  }
-}
-
-DescribeConnectionLoaOutcomeCallable DirectConnectClient::DescribeConnectionLoaCallable(const DescribeConnectionLoaRequest& request) const
-{
-  auto task = Aws::MakeShared< std::packaged_task< DescribeConnectionLoaOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeConnectionLoa(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
-}
-
-void DirectConnectClient::DescribeConnectionLoaAsync(const DescribeConnectionLoaRequest& request, const DescribeConnectionLoaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeConnectionLoaAsyncHelper( request, handler, context ); } );
-}
-
-void DirectConnectClient::DescribeConnectionLoaAsyncHelper(const DescribeConnectionLoaRequest& request, const DescribeConnectionLoaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeConnectionLoa(request), context);
-}
-
 DescribeConnectionsOutcome DirectConnectClient::DescribeConnections(const DescribeConnectionsRequest& request) const
 {
   Aws::StringStream ss;
@@ -908,40 +836,6 @@ void DirectConnectClient::DescribeConnectionsAsyncHelper(const DescribeConnectio
   handler(this, request, DescribeConnections(request), context);
 }
 
-DescribeConnectionsOnInterconnectOutcome DirectConnectClient::DescribeConnectionsOnInterconnect(const DescribeConnectionsOnInterconnectRequest& request) const
-{
-  Aws::StringStream ss;
-  ss << m_uri << "/";
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
-  if(outcome.IsSuccess())
-  {
-    return DescribeConnectionsOnInterconnectOutcome(DescribeConnectionsOnInterconnectResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribeConnectionsOnInterconnectOutcome(outcome.GetError());
-  }
-}
-
-DescribeConnectionsOnInterconnectOutcomeCallable DirectConnectClient::DescribeConnectionsOnInterconnectCallable(const DescribeConnectionsOnInterconnectRequest& request) const
-{
-  auto task = Aws::MakeShared< std::packaged_task< DescribeConnectionsOnInterconnectOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeConnectionsOnInterconnect(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
-}
-
-void DirectConnectClient::DescribeConnectionsOnInterconnectAsync(const DescribeConnectionsOnInterconnectRequest& request, const DescribeConnectionsOnInterconnectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeConnectionsOnInterconnectAsyncHelper( request, handler, context ); } );
-}
-
-void DirectConnectClient::DescribeConnectionsOnInterconnectAsyncHelper(const DescribeConnectionsOnInterconnectRequest& request, const DescribeConnectionsOnInterconnectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeConnectionsOnInterconnect(request), context);
-}
-
 DescribeHostedConnectionsOutcome DirectConnectClient::DescribeHostedConnections(const DescribeHostedConnectionsRequest& request) const
 {
   Aws::StringStream ss;
@@ -974,40 +868,6 @@ void DirectConnectClient::DescribeHostedConnectionsAsync(const DescribeHostedCon
 void DirectConnectClient::DescribeHostedConnectionsAsyncHelper(const DescribeHostedConnectionsRequest& request, const DescribeHostedConnectionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DescribeHostedConnections(request), context);
-}
-
-DescribeInterconnectLoaOutcome DirectConnectClient::DescribeInterconnectLoa(const DescribeInterconnectLoaRequest& request) const
-{
-  Aws::StringStream ss;
-  ss << m_uri << "/";
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
-  if(outcome.IsSuccess())
-  {
-    return DescribeInterconnectLoaOutcome(DescribeInterconnectLoaResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribeInterconnectLoaOutcome(outcome.GetError());
-  }
-}
-
-DescribeInterconnectLoaOutcomeCallable DirectConnectClient::DescribeInterconnectLoaCallable(const DescribeInterconnectLoaRequest& request) const
-{
-  auto task = Aws::MakeShared< std::packaged_task< DescribeInterconnectLoaOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeInterconnectLoa(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
-}
-
-void DirectConnectClient::DescribeInterconnectLoaAsync(const DescribeInterconnectLoaRequest& request, const DescribeInterconnectLoaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeInterconnectLoaAsyncHelper( request, handler, context ); } );
-}
-
-void DirectConnectClient::DescribeInterconnectLoaAsyncHelper(const DescribeInterconnectLoaRequest& request, const DescribeInterconnectLoaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeInterconnectLoa(request), context);
 }
 
 DescribeInterconnectsOutcome DirectConnectClient::DescribeInterconnects(const DescribeInterconnectsRequest& request) const

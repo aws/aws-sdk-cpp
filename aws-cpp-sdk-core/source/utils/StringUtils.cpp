@@ -51,7 +51,8 @@ Aws::String StringUtils::ToLower(const char* source)
     Aws::String copy;
     size_t sourceLength = strlen(source);
     copy.resize(sourceLength);
-    std::transform(source, source + sourceLength, copy.begin(), ::tolower);
+    //appease the latest whims of the VC++ 2017 gods 
+    std::transform(source, source + sourceLength, copy.begin(), [](unsigned char c) { return (char)::tolower(c); });
 
     return copy;
 }
@@ -62,7 +63,8 @@ Aws::String StringUtils::ToUpper(const char* source)
     Aws::String copy;
     size_t sourceLength = strlen(source);
     copy.resize(sourceLength);
-    std::transform(source, source + sourceLength, copy.begin(), ::toupper);
+    //appease the latest whims of the VC++ 2017 gods 
+    std::transform(source, source + sourceLength, copy.begin(), [](unsigned char c) { return (char)::toupper(c); });
 
     return copy;
 }

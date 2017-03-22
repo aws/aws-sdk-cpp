@@ -13,12 +13,9 @@
   * permissions and limitations under the License.
   */
 
-
 #pragma once
 
-
 #include <aws/core/Core_EXPORTS.h>
-
 
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
