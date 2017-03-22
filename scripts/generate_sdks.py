@@ -85,7 +85,7 @@ def GenerateSdk(generatorPath, sdk, outputDir):
        with codecs.open(sdk['filePath'], 'rb', 'utf-8') as api_definition:
             api_content = api_definition.read()
             jar_path = join(generatorPath, 'target/aws-client-generator-1.0-SNAPSHOT-jar-with-dependencies.jar')
-            process = Popen(['java', '-jar', jar_path, '--service', sdk['serviceName'], '--version', sdk['apiVersion'], '--language-binding', 'cpp', '--arbitrary'],stdout=PIPE,  stdin=PIPE, stderr=STDOUT )
+            process = Popen(['java', '-jar', jar_path, '--service', sdk['serviceName'], '--version', sdk['apiVersion'], '--language-binding', 'cpp', '--arbitrary'],stdout=PIPE,  stdin=PIPE)
             writer = codecs.getwriter('utf-8')
             stdInWriter = writer(process.stdin)
             stdInWriter.write(api_content)
@@ -104,7 +104,7 @@ def Main():
         PrepareGenerator(arguments['pathToGenerator'])
 
     sdks = DiscoverAllAvailableSDKs(arguments['pathToApiDefinitions'])
-    
+
     if arguments['listAll']:
         for key, value in sdks.iteritems():
             print(value)
