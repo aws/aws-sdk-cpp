@@ -21,6 +21,9 @@
 #include <aws/core/http/HttpClientFactory.h>
 #include <aws/core/Core_EXPORTS.h>
 
+#include <atomic>
+#include <mutex>
+
 namespace Aws
 {
     static const char* DEFAULT_LOG_PREFIX = "aws_sdk_";
@@ -238,5 +241,35 @@ namespace Aws
      * Do not call any other SDK methods after calling ShutdownAPI.
      */
     AWS_CORE_API void ShutdownAPI(const SDKOptions& options);
+
+    /**
+     * Ref counted RAII wrapper around SDK Init and Shutdown. The first one created will call InitAPI() and the last one to go out of scope
+     * will call ShutdownAPI(). This is intended for use cases, such as plugin frameworks where multiple modules depending on the SDK may be loaded
+     * without being aware of one another. This allows each module to safely init/shutdown the SDK as long as each module uses this wrapper.
+     *
+     * Note: whichever instance of SDKOptions is used to init the API, will be used for Shutdown(), and InitAPI will only be called with the first
+     * call to the Constructor. All other values will be ignored.
+     */
+    class AWS_CORE_API APIWrapper
+    {
+    public:
+        /**
+         * Initialize the SDK if it hasn't been already. Otherwise just increase the ref count.
+         */
+        APIWrapper(const SDKOptions& options);       
+        /**
+         * Shutsdown the SDK if no other instances of this class exist. Otherwise just decreases the ref count.
+         */
+        ~APIWrapper();
+
+        APIWrapper(const APIWrapper&) = delete;
+        APIWrapper& operator=(const APIWrapper) = delete;
+
+    private:
+        static std::atomic<unsigned> RefCount;
+        static std::mutex InitGuard;
+
+        SDKOptions m_sdkOptions;
+    };
 }
 

@@ -33,14 +33,15 @@ int main(int argc, char** argv)
     Aws::Testing::InitPlatformTest(options);
 
 	options.loggingOptions.logLevel = Aws::Utils::Logging::LogLevel::Trace;
-
-    Aws::InitAPI(options);
-    ::testing::InitGoogleTest(&argc, argv);
-    int retVal = RUN_ALL_TESTS();
-    Aws::ShutdownAPI(options);
-	EXPECT_EQ(memorySystem.GetCurrentOutstandingAllocations(), 0ULL);
-	EXPECT_EQ(memorySystem.GetCurrentBytesAllocated(), 0ULL);
-	EXPECT_TRUE(memorySystem.IsClean());
+    int retVal = 0;
+    {
+        Aws::APIWrapper wrapper(options);       
+        ::testing::InitGoogleTest(&argc, argv);
+        retVal = RUN_ALL_TESTS();        
+    }
+    EXPECT_EQ(memorySystem.GetCurrentOutstandingAllocations(), 0ULL);
+    EXPECT_EQ(memorySystem.GetCurrentBytesAllocated(), 0ULL);
+    EXPECT_TRUE(memorySystem.IsClean());
 
     Aws::Testing::ShutdownPlatformTest(options);
 

@@ -29,10 +29,9 @@ int main(int argc, char** argv)
     }
 
     options.loggingOptions.logLevel = Aws::Utils::Logging::LogLevel::Trace;
-    Aws::InitAPI(options);
+    Aws::APIWrapper api(options);
     ::testing::InitGoogleTest(&argc, argv);
     int exitCode = RUN_ALL_TESTS();
-    Aws::ShutdownAPI(options);
 
     Aws::Testing::ShutdownPlatformTest(options);
     return exitCode;

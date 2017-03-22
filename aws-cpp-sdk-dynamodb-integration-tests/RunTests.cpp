@@ -32,10 +32,10 @@ int main(int argc, char** argv)
         Aws::Testing::SetAwsResourcePrefix(argv[1]);
     }
 
-    Aws::InitAPI(options);
+    Aws::APIWrapper api(options);
+
     ::testing::InitGoogleTest(&argc, argv);
     int exitCode = RUN_ALL_TESTS(); 
-    Aws::ShutdownAPI(options);
 
     Aws::Testing::ShutdownPlatformTest(options);
     return exitCode;

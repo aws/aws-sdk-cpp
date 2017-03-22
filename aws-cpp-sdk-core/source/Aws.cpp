@@ -111,4 +111,45 @@ namespace Aws
         }
 #endif // USE_AWS_MEMORY_MANAGEMENT
     }
+
+    std::atomic<unsigned> APIWrapper::RefCount = 0;
+    std::mutex APIWrapper::InitGuard;
+
+    APIWrapper::APIWrapper(const SDKOptions& options)
+    {
+        if (RefCount.load() == 0u)
+        {
+            std::lock_guard<std::mutex> locker(InitGuard);
+
+            if (RefCount.load() == 0u)
+            {
+                m_sdkOptions = options;
+                Aws::InitAPI(m_sdkOptions);
+            }
+
+            RefCount++;
+        }
+        else
+        {
+            RefCount++;
+        }
+    }
+
+    APIWrapper::~APIWrapper()
+    {
+        if (RefCount.load() == 1u)
+        {
+            std::lock_guard<std::mutex> locker(InitGuard);
+
+            if (RefCount.load() == 1u)
+            {
+                Aws::ShutdownAPI(m_sdkOptions);
+            }
+            RefCount--;
+        }
+        else
+        {
+            RefCount--;
+        }
+    }
 }
