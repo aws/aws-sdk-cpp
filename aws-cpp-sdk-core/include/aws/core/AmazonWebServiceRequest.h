@@ -65,7 +65,8 @@ namespace Aws
         virtual void AddQueryStringParameters(Aws::Http::URI& uri) const { AWS_UNREFERENCED_PARAM(uri); }
 
         /**
-         * Call to convert the request to a presigned url. This will add the query strings and then push the body to the url.
+         * Put the request to a url for later presigning. This will push the body to the url and 
+         * then adds the existing query string parameters as normal.
          */
         virtual void PutToPresignedUrl(Aws::Http::URI& uri) const { DumpBodyToUrl(uri); AddQueryStringParameters(uri); }
 
