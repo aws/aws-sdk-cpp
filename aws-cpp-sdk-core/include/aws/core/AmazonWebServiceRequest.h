@@ -63,6 +63,13 @@ namespace Aws
          * Do nothing virtual, override this to add query strings to the request
          */
         virtual void AddQueryStringParameters(Aws::Http::URI& uri) const { AWS_UNREFERENCED_PARAM(uri); }
+
+        /**
+         * Put the request to a url for later presigning. This will push the body to the url and 
+         * then adds the existing query string parameters as normal.
+         */
+        virtual void PutToPresignedUrl(Aws::Http::URI& uri) const { DumpBodyToUrl(uri); AddQueryStringParameters(uri); }
+
         /**
          * Retrieves the factory for creating response streams.
          */
@@ -123,6 +130,13 @@ namespace Aws
          * If this is set to true, content-md5 needs to be computed and set on the request
          */
         inline virtual bool ShouldComputeContentMd5() const { return false; }
+
+    protected:
+        /**
+         * Default does nothing. Override this to convert what would otherwise be the payload of the 
+         *  request to a query string format.
+         */
+        virtual void DumpBodyToUrl(Aws::Http::URI& uri) const { AWS_UNREFERENCED_PARAM(uri); }
 
     private:
         Aws::IOStreamFactory m_responseStreamFactory;

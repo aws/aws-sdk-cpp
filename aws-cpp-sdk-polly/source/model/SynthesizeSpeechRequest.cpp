@@ -14,6 +14,7 @@
 */
 #include <aws/polly/model/SynthesizeSpeechRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/StringUtils.h>
 
 #include <utility>
 
@@ -77,6 +78,44 @@ Aws::String SynthesizeSpeechRequest::SerializePayload() const
   }
 
   return payload.WriteReadable();
+}
+
+
+void  SynthesizeSpeechRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  if(m_lexiconNamesHasBeenSet)
+  {
+    for(auto& item : m_lexiconNames)
+    {
+      uri.AddQueryStringParameter("LexiconNames", StringUtils::to_string(item));
+    }
+  }
+
+  if(m_outputFormatHasBeenSet)
+  {
+    uri.AddQueryStringParameter("OutputFormat", OutputFormatMapper::GetNameForOutputFormat(m_outputFormat));
+  }
+
+  if(m_sampleRateHasBeenSet)
+  {
+    uri.AddQueryStringParameter("SampleRate", m_sampleRate);
+  }
+
+  if(m_textHasBeenSet)
+  {
+    uri.AddQueryStringParameter("Text", m_text);
+  }
+
+  if(m_textTypeHasBeenSet)
+  {
+    uri.AddQueryStringParameter("TextType", TextTypeMapper::GetNameForTextType(m_textType));
+  }
+
+  if(m_voiceIdHasBeenSet)
+  {
+    uri.AddQueryStringParameter("VoiceId", VoiceIdMapper::GetNameForVoiceId(m_voiceId));
+  }
+
 }
 
 

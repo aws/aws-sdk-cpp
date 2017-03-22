@@ -94,6 +94,7 @@ public class JsonCppClientGenerator extends CppClientGenerator {
             context.put("shape", shape);
             context.put("typeInfo", new CppShapeInformation(shape, serviceModel));
             context.put("CppViewHelper", CppViewHelper.class);
+            context.put("presignerTemplate", "/com/amazonaws/util/awsclientgenerator/velocity/cpp/json/JsonDumpBodyToUrl.vm");
 
             String fileName = String.format("source/model/%s.cpp", shapeEntry.getKey());
 

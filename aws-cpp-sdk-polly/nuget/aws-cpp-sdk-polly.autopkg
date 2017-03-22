@@ -15,6 +15,7 @@ nuget {
         // Version number. Follows NuGet standards. (currently SemVer 1.0)
         version : 1.0.20160610.85;
 
+
         // Display name for package.
         title: AWS SDK for C++ (Amazon Polly);
 
@@ -48,7 +49,7 @@ nuget {
 
     dependencies {
        packages: {
-            AWSSDKCPP-Core/1.0.1
+            AWSSDKCPP-Core/@RUNTIME_MAJOR_VERSION@.1
        }
     }
 

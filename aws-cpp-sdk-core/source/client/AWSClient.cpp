@@ -407,6 +407,47 @@ Aws::String AWSClient::GeneratePresignedUrl(URI& uri, HttpMethod method, const c
     return "";
 }
 
+Aws::String AWSClient::GeneratePresignedUrl(const Aws::AmazonWebServiceRequest& request, Aws::Http::URI& uri, Aws::Http::HttpMethod method, const char* region,
+    const Aws::Http::QueryStringParameterCollection& extraParams, long long expirationInSeconds) const
+{
+    std::shared_ptr<HttpRequest> httpRequest =
+        ConvertToRequestForPresigning(request, uri, method, extraParams);
+    if (m_signer->PresignRequest(*httpRequest, region, expirationInSeconds))
+    {
+        return httpRequest->GetURIString();
+    }
+
+    return "";
+}
+
+Aws::String AWSClient::GeneratePresignedUrl(const Aws::AmazonWebServiceRequest& request, Aws::Http::URI& uri, Aws::Http::HttpMethod method,
+    const Aws::Http::QueryStringParameterCollection& extraParams, long long expirationInSeconds) const
+{
+    std::shared_ptr<HttpRequest> httpRequest =
+        ConvertToRequestForPresigning(request, uri, method, extraParams);
+    if (m_signer->PresignRequest(*httpRequest, expirationInSeconds))
+    {
+        return httpRequest->GetURIString();
+    }
+
+    return "";
+}
+
+std::shared_ptr<Aws::Http::HttpRequest> AWSClient::ConvertToRequestForPresigning(const Aws::AmazonWebServiceRequest& request, Aws::Http::URI& uri,
+    Aws::Http::HttpMethod method, const Aws::Http::QueryStringParameterCollection& extraParams) const
+{
+    request.PutToPresignedUrl(uri);
+    std::shared_ptr<HttpRequest> httpRequest = CreateHttpRequest(uri, method, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
+    
+    for (auto& param : extraParams)
+    {
+        httpRequest->AddQueryStringParameter(param.first.c_str(), param.second);
+    }
+
+    return httpRequest;
+}
+
+
 ////////////////////////////////////////////////////////////////////////////
 AWSJsonClient::AWSJsonClient(const Aws::Client::ClientConfiguration& configuration,
     const std::shared_ptr<Aws::Client::AWSAuthSigner>& signer,
