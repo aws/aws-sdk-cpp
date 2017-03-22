@@ -56,3 +56,8 @@ Aws::String ListAttachedUserPoliciesRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  ListAttachedUserPoliciesRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

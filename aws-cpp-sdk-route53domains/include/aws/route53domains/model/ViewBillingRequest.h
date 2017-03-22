@@ -39,6 +39,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The beginning date and time for the time period for which you want a list of
      * billing records. Specify the date in Unix time format.</p> <p>Type: Double</p>

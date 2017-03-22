@@ -43,3 +43,8 @@ Aws::String DetachGroupPolicyRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  DetachGroupPolicyRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

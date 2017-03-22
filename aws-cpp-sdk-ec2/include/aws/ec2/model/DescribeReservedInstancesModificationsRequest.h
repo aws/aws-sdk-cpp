@@ -38,6 +38,11 @@ namespace Model
     DescribeReservedInstancesModificationsRequest();
     Aws::String SerializePayload() const override;
 
+
+  protected:
+    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+
+  public:
     /**
      * <p>IDs for the submitted modification request.</p>
      */

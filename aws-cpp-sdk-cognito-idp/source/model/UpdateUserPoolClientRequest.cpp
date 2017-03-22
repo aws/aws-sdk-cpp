@@ -107,3 +107,4 @@ Aws::Http::HeaderValueCollection UpdateUserPoolClientRequest::GetRequestSpecific
 
 
 
+

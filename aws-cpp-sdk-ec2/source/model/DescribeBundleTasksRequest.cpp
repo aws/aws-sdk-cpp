@@ -61,3 +61,8 @@ Aws::String DescribeBundleTasksRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  DescribeBundleTasksRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

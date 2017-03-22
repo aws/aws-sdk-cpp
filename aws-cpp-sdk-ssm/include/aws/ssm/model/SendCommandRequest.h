@@ -39,6 +39,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>Required. The instance IDs where the command should execute. You can specify
      * a maximum of 50 IDs.</p>

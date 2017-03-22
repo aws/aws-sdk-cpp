@@ -41,6 +41,7 @@ namespace Model
 
     void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
+
     /**
      * <p>Function name whose resource policy you want to retrieve.</p> <p> You can
      * specify the function name (for example, <code>Thumbnail</code>) or you can

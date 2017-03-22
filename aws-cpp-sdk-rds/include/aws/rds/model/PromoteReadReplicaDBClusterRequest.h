@@ -35,6 +35,11 @@ namespace Model
     PromoteReadReplicaDBClusterRequest();
     Aws::String SerializePayload() const override;
 
+
+  protected:
+    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+
+  public:
     /**
      * <p>The identifier of the DB cluster Read Replica to promote. This parameter is
      * not case-sensitive. </p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to

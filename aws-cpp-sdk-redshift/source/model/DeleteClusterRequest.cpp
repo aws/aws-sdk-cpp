@@ -50,3 +50,8 @@ Aws::String DeleteClusterRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  DeleteClusterRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

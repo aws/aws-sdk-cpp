@@ -44,3 +44,8 @@ Aws::String GetConsoleOutputRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  GetConsoleOutputRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

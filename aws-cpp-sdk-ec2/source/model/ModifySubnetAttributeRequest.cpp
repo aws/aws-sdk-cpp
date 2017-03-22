@@ -49,3 +49,8 @@ Aws::String ModifySubnetAttributeRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  ModifySubnetAttributeRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

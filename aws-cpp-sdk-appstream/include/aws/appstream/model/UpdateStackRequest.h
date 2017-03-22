@@ -34,6 +34,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The name displayed to end users on the AppStream 2.0 portal.</p>
      */

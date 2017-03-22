@@ -43,3 +43,8 @@ Aws::String RemoveRoleFromInstanceProfileRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  RemoveRoleFromInstanceProfileRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

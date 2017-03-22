@@ -37,3 +37,8 @@ Aws::String DeleteDBClusterSnapshotRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  DeleteDBClusterSnapshotRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

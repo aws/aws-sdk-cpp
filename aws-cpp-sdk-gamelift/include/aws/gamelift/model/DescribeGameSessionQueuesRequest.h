@@ -35,6 +35,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>List of queue names to retrieve information for. To request settings for all
      * queues, leave this parameter empty.</p>

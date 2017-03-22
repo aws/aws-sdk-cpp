@@ -37,6 +37,11 @@ namespace Model
     RebootCacheClusterRequest();
     Aws::String SerializePayload() const override;
 
+
+  protected:
+    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+
+  public:
     /**
      * <p>The cache cluster identifier. This parameter is stored as a lowercase
      * string.</p>

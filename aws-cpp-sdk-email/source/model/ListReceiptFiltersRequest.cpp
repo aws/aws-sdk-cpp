@@ -31,3 +31,8 @@ Aws::String ListReceiptFiltersRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  ListReceiptFiltersRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

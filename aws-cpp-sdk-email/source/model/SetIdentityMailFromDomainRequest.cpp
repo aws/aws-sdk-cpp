@@ -50,3 +50,8 @@ Aws::String SetIdentityMailFromDomainRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  SetIdentityMailFromDomainRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

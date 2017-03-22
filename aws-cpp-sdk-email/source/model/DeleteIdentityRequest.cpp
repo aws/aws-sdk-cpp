@@ -37,3 +37,8 @@ Aws::String DeleteIdentityRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  DeleteIdentityRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

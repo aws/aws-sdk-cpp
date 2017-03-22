@@ -37,3 +37,8 @@ Aws::String GetOpenIDConnectProviderRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  GetOpenIDConnectProviderRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

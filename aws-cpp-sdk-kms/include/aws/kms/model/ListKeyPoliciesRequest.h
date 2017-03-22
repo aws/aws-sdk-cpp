@@ -34,6 +34,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>A unique identifier for the customer master key (CMK). You can use the unique
      * key ID or the Amazon Resource Name (ARN) of the CMK. Examples:</p> <ul> <li>

@@ -75,3 +75,8 @@ Aws::String DescribeHostReservationOfferingsRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  DescribeHostReservationOfferingsRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

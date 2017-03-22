@@ -33,6 +33,11 @@ namespace Model
     UnassignIpv6AddressesRequest();
     Aws::String SerializePayload() const override;
 
+
+  protected:
+    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+
+  public:
     /**
      * <p>The ID of the network interface.</p>
      */

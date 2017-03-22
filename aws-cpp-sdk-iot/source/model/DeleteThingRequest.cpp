@@ -49,3 +49,4 @@ void DeleteThingRequest::AddQueryStringParameters(URI& uri) const
 }
 
 
+

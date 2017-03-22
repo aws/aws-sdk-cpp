@@ -37,6 +37,11 @@ namespace Model
     CreateDBInstanceRequest();
     Aws::String SerializePayload() const override;
 
+
+  protected:
+    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+
+  public:
     /**
      * <p>The meaning of this parameter differs according to the database engine you
      * use.</p> <p>Type: String</p> <p> <b>MySQL</b> </p> <p>The name of the database

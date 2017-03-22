@@ -35,6 +35,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The fleet names to describe. Use null to describe all the fleets for the AWS
      * account.</p>

@@ -287,3 +287,8 @@ Aws::String CreateDBInstanceRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  CreateDBInstanceRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

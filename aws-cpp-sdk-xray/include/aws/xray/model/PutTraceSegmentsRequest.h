@@ -33,6 +33,7 @@ namespace Model
     PutTraceSegmentsRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p>A JSON document defining one or more segments or subsegments. Segments must
      * include the following fields.</p> <p class="title"> <b>Required Segment Document

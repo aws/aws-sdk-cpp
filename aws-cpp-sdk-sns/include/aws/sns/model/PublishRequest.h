@@ -37,6 +37,11 @@ namespace Model
     PublishRequest();
     Aws::String SerializePayload() const override;
 
+
+  protected:
+    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+
+  public:
     /**
      * <p>The topic you want to publish to.</p> <p>If you don't specify a value for the
      * <code>TopicArn</code> parameter, you must specify a value for the

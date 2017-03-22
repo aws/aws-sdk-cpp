@@ -51,3 +51,8 @@ Aws::String ListVirtualMFADevicesRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  ListVirtualMFADevicesRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

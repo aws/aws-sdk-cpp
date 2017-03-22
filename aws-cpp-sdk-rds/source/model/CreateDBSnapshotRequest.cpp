@@ -54,3 +54,8 @@ Aws::String CreateDBSnapshotRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  CreateDBSnapshotRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

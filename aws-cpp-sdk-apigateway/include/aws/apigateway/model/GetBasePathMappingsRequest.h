@@ -42,6 +42,7 @@ namespace Model
 
     void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
+
     /**
      * <p>The domain name of a <a>BasePathMapping</a> resource.</p>
      */

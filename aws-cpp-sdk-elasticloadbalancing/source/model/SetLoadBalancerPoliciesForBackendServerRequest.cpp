@@ -56,3 +56,8 @@ Aws::String SetLoadBalancerPoliciesForBackendServerRequest::SerializePayload() c
   return ss.str();
 }
 
+
+void  SetLoadBalancerPoliciesForBackendServerRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

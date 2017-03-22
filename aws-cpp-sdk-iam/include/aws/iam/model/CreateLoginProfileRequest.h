@@ -32,6 +32,11 @@ namespace Model
     CreateLoginProfileRequest();
     Aws::String SerializePayload() const override;
 
+
+  protected:
+    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+
+  public:
     /**
      * <p>The name of the IAM user to create a password for. The user must already
      * exist.</p> <p>This parameter allows (per its <a

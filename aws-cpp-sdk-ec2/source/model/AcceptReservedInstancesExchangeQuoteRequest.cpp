@@ -61,3 +61,8 @@ Aws::String AcceptReservedInstancesExchangeQuoteRequest::SerializePayload() cons
   return ss.str();
 }
 
+
+void  AcceptReservedInstancesExchangeQuoteRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

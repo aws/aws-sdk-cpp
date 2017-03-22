@@ -55,3 +55,8 @@ Aws::String RevokeClusterSecurityGroupIngressRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  RevokeClusterSecurityGroupIngressRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

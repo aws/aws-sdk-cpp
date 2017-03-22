@@ -35,6 +35,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p> The notification specification to test. This value is identical to the value
      * you would provide to the UpdateNotificationSettings operation when you establish

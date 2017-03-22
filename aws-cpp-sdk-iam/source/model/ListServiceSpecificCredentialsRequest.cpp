@@ -43,3 +43,8 @@ Aws::String ListServiceSpecificCredentialsRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  ListServiceSpecificCredentialsRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

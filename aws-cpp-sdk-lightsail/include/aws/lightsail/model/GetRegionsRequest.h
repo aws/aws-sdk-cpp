@@ -33,6 +33,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>A Boolean value indicating whether to also include Availability Zones in your
      * get regions request. Availability Zones are indicated with a letter: e.g.,

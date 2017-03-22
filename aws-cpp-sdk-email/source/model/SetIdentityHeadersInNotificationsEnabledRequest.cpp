@@ -51,3 +51,8 @@ Aws::String SetIdentityHeadersInNotificationsEnabledRequest::SerializePayload() 
   return ss.str();
 }
 
+
+void  SetIdentityHeadersInNotificationsEnabledRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

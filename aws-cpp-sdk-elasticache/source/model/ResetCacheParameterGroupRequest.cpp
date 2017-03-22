@@ -55,3 +55,8 @@ Aws::String ResetCacheParameterGroupRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  ResetCacheParameterGroupRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

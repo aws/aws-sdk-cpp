@@ -62,3 +62,8 @@ Aws::String AttachClassicLinkVpcRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  AttachClassicLinkVpcRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

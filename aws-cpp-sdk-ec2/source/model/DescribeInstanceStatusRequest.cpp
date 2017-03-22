@@ -81,3 +81,8 @@ Aws::String DescribeInstanceStatusRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  DescribeInstanceStatusRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

@@ -38,6 +38,7 @@ namespace Model
     UpdateAuthorizerRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p>The <a>RestApi</a> identifier for the <a>Authorizer</a> resource.</p>
      */

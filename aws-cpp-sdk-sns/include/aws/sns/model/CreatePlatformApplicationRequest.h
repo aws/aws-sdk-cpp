@@ -36,6 +36,11 @@ namespace Model
     CreatePlatformApplicationRequest();
     Aws::String SerializePayload() const override;
 
+
+  protected:
+    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+
+  public:
     /**
      * <p>Application names must be made up of only uppercase and lowercase ASCII
      * letters, numbers, underscores, hyphens, and periods, and must be between 1 and

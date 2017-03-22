@@ -35,6 +35,7 @@ namespace Model
     CreateCloudFrontOriginAccessIdentity2016_01_28Request();
     Aws::String SerializePayload() const override;
 
+
     /**
      * The origin access identity's configuration information.
      */

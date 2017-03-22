@@ -38,6 +38,11 @@ namespace Model
     VerifyEmailAddressRequest();
     Aws::String SerializePayload() const override;
 
+
+  protected:
+    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+
+  public:
     /**
      * <p>The email address to be verified.</p>
      */

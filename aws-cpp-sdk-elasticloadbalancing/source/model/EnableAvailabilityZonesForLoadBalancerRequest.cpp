@@ -49,3 +49,8 @@ Aws::String EnableAvailabilityZonesForLoadBalancerRequest::SerializePayload() co
   return ss.str();
 }
 
+
+void  EnableAvailabilityZonesForLoadBalancerRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

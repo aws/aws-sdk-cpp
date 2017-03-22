@@ -75,3 +75,8 @@ Aws::String SendMessageRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  SendMessageRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

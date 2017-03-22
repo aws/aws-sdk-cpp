@@ -67,3 +67,8 @@ Aws::String DescribeNatGatewaysRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  DescribeNatGatewaysRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

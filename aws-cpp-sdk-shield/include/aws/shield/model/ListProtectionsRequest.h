@@ -34,6 +34,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The <code>ListProtectionsRequest.NextToken</code> value from a previous call
      * to <code>ListProtections</code>. Pass null if this is the first call.</p>

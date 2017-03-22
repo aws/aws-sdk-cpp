@@ -35,6 +35,11 @@ namespace Model
     RevokeClusterSecurityGroupIngressRequest();
     Aws::String SerializePayload() const override;
 
+
+  protected:
+    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+
+  public:
     /**
      * <p>The name of the security Group from which to revoke the ingress rule.</p>
      */

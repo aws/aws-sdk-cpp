@@ -37,3 +37,8 @@ Aws::String DescribeTargetGroupAttributesRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  DescribeTargetGroupAttributesRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

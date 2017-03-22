@@ -38,6 +38,7 @@ namespace Model
     UpdateBasePathMappingRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p>The domain name of the <a>BasePathMapping</a> resource to change.</p>
      */

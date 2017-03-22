@@ -36,6 +36,11 @@ namespace Model
     DeleteIdentityRequest();
     Aws::String SerializePayload() const override;
 
+
+  protected:
+    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+
+  public:
     /**
      * <p>The identity to be removed from the list of identities for the AWS
      * Account.</p>

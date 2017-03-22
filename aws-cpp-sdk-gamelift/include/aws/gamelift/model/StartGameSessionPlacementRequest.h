@@ -38,6 +38,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>Unique identifier to assign to the new game session placement. This value is
      * developer-defined. The value must be unique across all regions and cannot be

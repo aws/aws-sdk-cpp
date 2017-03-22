@@ -35,6 +35,11 @@ namespace Model
     SetStackPolicyRequest();
     Aws::String SerializePayload() const override;
 
+
+  protected:
+    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+
+  public:
     /**
      * <p>The name or unique stack ID that you want to associate a policy with.</p>
      */

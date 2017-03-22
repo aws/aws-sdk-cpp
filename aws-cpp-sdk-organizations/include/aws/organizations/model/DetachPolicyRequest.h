@@ -34,6 +34,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The unique identifier (ID) of the policy you want to detach. You can get the
      * ID from the <a>ListPolicies</a> or <a>ListPoliciesForTarget</a> operations.</p>

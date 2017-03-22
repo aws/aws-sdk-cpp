@@ -60,3 +60,8 @@ Aws::String CreateDBParameterGroupRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  CreateDBParameterGroupRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

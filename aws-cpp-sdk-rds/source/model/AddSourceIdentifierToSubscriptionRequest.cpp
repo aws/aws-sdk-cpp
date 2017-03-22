@@ -43,3 +43,8 @@ Aws::String AddSourceIdentifierToSubscriptionRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  AddSourceIdentifierToSubscriptionRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

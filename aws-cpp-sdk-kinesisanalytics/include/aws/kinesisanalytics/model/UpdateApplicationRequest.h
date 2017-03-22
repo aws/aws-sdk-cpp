@@ -35,6 +35,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>Name of the Kinesis Analytics application to update.</p>
      */

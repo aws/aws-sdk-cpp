@@ -33,6 +33,7 @@ namespace Model
     BatchGetTracesRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p>Specify the trace IDs of requests for which to retrieve segments.</p>
      */

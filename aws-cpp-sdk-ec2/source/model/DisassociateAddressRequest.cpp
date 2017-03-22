@@ -50,3 +50,8 @@ Aws::String DisassociateAddressRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  DisassociateAddressRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

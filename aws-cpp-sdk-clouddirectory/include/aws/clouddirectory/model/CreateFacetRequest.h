@@ -37,6 +37,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>Schema ARN in which the new <a>Facet</a> will be created. For more
      * information, see <a>arns</a>.</p>

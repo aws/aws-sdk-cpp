@@ -50,3 +50,8 @@ Aws::String SelectRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  SelectRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

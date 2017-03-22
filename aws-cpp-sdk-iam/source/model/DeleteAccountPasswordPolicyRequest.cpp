@@ -31,3 +31,8 @@ Aws::String DeleteAccountPasswordPolicyRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  DeleteAccountPasswordPolicyRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

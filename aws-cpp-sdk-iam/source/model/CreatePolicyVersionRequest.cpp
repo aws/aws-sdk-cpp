@@ -50,3 +50,8 @@ Aws::String CreatePolicyVersionRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  CreatePolicyVersionRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

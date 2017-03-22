@@ -37,6 +37,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The name of the delivery stream. This name must be unique per AWS account in
      * the same region. You can have multiple delivery streams with the same name if

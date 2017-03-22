@@ -49,3 +49,8 @@ Aws::String RebootCacheClusterRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  RebootCacheClusterRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

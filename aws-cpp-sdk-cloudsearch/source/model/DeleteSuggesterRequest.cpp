@@ -43,3 +43,8 @@ Aws::String DeleteSuggesterRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  DeleteSuggesterRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

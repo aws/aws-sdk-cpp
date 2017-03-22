@@ -41,6 +41,7 @@ namespace Model
 
     void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
+
     /**
      * <p>The token for the next set of results, or <b>null</b> if there are no
      * additional results.</p>

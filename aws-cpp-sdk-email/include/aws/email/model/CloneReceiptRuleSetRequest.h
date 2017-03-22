@@ -39,6 +39,11 @@ namespace Model
     CloneReceiptRuleSetRequest();
     Aws::String SerializePayload() const override;
 
+
+  protected:
+    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+
+  public:
     /**
      * <p>The name of the rule set to create. The name must:</p> <ul> <li> <p>Contain
      * only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or

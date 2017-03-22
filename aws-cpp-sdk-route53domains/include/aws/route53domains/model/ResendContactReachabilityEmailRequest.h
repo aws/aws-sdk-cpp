@@ -34,6 +34,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The name of the domain for which you want Amazon Route 53 to resend a
      * confirmation email to the registrant contact.</p> <p>Type: String</p>

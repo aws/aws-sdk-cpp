@@ -37,3 +37,8 @@ Aws::String CreateReceiptRuleSetRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  CreateReceiptRuleSetRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

@@ -37,6 +37,11 @@ namespace Model
     ModifyReplicationGroupRequest();
     Aws::String SerializePayload() const override;
 
+
+  protected:
+    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+
+  public:
     /**
      * <p>The identifier of the replication group to modify.</p>
      */

@@ -81,3 +81,8 @@ Aws::String DescribeDBLogFilesRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  DescribeDBLogFilesRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

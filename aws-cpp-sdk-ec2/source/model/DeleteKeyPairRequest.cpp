@@ -44,3 +44,8 @@ Aws::String DeleteKeyPairRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  DeleteKeyPairRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

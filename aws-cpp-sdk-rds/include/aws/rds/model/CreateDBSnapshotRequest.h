@@ -37,6 +37,11 @@ namespace Model
     CreateDBSnapshotRequest();
     Aws::String SerializePayload() const override;
 
+
+  protected:
+    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+
+  public:
     /**
      * <p>The identifier for the DB snapshot.</p> <p>Constraints:</p> <ul> <li>
      * <p>Cannot be null, empty, or blank</p> </li> <li> <p>Must contain from 1 to 255

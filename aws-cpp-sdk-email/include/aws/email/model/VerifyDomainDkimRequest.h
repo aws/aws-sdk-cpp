@@ -38,6 +38,11 @@ namespace Model
     VerifyDomainDkimRequest();
     Aws::String SerializePayload() const override;
 
+
+  protected:
+    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+
+  public:
     /**
      * <p>The name of the domain to be verified for Easy DKIM signing.</p>
      */

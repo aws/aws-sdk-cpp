@@ -55,3 +55,8 @@ Aws::String SwapEnvironmentCNAMEsRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  SwapEnvironmentCNAMEsRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

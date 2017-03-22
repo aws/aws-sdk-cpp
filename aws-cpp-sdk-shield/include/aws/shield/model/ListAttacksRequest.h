@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The ARN (Amazon Resource Name) of the resource that was attacked. If this is
      * left blank, all applicable resources for this account will be included.</p>

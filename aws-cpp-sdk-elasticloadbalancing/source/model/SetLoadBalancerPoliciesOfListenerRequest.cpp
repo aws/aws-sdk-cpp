@@ -56,3 +56,8 @@ Aws::String SetLoadBalancerPoliciesOfListenerRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  SetLoadBalancerPoliciesOfListenerRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

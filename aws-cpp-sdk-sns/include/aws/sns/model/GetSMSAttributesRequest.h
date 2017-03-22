@@ -37,6 +37,11 @@ namespace Model
     GetSMSAttributesRequest();
     Aws::String SerializePayload() const override;
 
+
+  protected:
+    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+
+  public:
     /**
      * <p>A list of the individual attribute names, such as
      * <code>MonthlySpendLimit</code>, for which you want values.</p> <p>For all

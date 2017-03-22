@@ -37,6 +37,11 @@ namespace Model
     GetQueueAttributesRequest();
     Aws::String SerializePayload() const override;
 
+
+  protected:
+    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+
+  public:
     /**
      * <p>The URL of the Amazon SQS queue whose attribute information is retrieved.</p>
      * <p>Queue URLs are case-sensitive.</p>

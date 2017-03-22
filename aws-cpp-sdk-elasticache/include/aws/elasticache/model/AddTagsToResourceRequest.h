@@ -38,6 +38,11 @@ namespace Model
     AddTagsToResourceRequest();
     Aws::String SerializePayload() const override;
 
+
+  protected:
+    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+
+  public:
     /**
      * <p>The Amazon Resource Name (ARN) of the resource to which the tags are to be
      * added, for example

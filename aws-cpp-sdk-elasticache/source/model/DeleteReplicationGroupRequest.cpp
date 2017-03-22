@@ -50,3 +50,8 @@ Aws::String DeleteReplicationGroupRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  DeleteReplicationGroupRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

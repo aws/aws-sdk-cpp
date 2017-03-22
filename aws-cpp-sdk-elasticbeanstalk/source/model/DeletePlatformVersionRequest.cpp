@@ -37,3 +37,8 @@ Aws::String DeletePlatformVersionRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  DeletePlatformVersionRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

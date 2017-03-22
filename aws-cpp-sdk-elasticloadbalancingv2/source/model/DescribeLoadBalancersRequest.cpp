@@ -68,3 +68,8 @@ Aws::String DescribeLoadBalancersRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  DescribeLoadBalancersRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

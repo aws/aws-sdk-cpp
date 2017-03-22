@@ -32,6 +32,11 @@ namespace Model
     ListUsersRequest();
     Aws::String SerializePayload() const override;
 
+
+  protected:
+    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+
+  public:
     /**
      * <p> The path prefix for filtering the results. For example:
      * <code>/division_abc/subdivision_xyz/</code>, which would get all user names

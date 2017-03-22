@@ -81,3 +81,8 @@ Aws::String CreateApplicationVersionRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  CreateApplicationVersionRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

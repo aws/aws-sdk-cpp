@@ -58,3 +58,8 @@ Aws::String DeleteNetworkAclEntryRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  DeleteNetworkAclEntryRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

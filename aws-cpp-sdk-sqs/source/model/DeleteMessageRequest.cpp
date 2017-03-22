@@ -43,3 +43,8 @@ Aws::String DeleteMessageRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  DeleteMessageRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

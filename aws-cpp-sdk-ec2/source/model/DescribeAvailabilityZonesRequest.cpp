@@ -61,3 +61,8 @@ Aws::String DescribeAvailabilityZonesRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  DescribeAvailabilityZonesRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

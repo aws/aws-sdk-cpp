@@ -36,6 +36,7 @@ namespace Model
     GetDocumentationPartRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p>[Required] The identifier of an API of the to-be-retrieved documentation
      * part.</p>

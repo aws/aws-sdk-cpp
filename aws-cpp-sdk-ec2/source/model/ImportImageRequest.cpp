@@ -97,3 +97,8 @@ Aws::String ImportImageRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  ImportImageRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

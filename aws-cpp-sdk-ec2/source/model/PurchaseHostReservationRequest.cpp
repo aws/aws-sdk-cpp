@@ -68,3 +68,8 @@ Aws::String PurchaseHostReservationRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  PurchaseHostReservationRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

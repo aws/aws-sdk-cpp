@@ -38,6 +38,11 @@ namespace Model
     ModifyReservedInstancesRequest();
     Aws::String SerializePayload() const override;
 
+
+  protected:
+    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+
+  public:
     /**
      * <p>A unique, case-sensitive token you provide to ensure idempotency of your
      * modification request. For more information, see <a

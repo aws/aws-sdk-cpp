@@ -36,6 +36,11 @@ namespace Model
     CancelReservedInstancesListingRequest();
     Aws::String SerializePayload() const override;
 
+
+  protected:
+    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+
+  public:
     /**
      * <p>The ID of the Reserved Instance listing.</p>
      */

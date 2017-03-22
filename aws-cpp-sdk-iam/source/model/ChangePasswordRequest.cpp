@@ -43,3 +43,8 @@ Aws::String ChangePasswordRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  ChangePasswordRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

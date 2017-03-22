@@ -177,3 +177,8 @@ Aws::String CreateDBClusterRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  CreateDBClusterRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

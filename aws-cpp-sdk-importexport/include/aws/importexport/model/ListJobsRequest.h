@@ -35,6 +35,11 @@ namespace Model
     ListJobsRequest();
     Aws::String SerializePayload() const override;
 
+
+  protected:
+    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+
+  public:
     
     inline int GetMaxJobs() const{ return m_maxJobs; }
 

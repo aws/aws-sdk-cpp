@@ -61,3 +61,8 @@ Aws::String DescribeEngineDefaultClusterParametersRequest::SerializePayload() co
   return ss.str();
 }
 
+
+void  DescribeEngineDefaultClusterParametersRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

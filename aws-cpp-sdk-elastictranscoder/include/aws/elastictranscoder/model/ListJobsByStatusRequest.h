@@ -42,6 +42,7 @@ namespace Model
 
     void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
+
     /**
      * <p>To get information about all of the jobs associated with the current AWS
      * account that have a given status, specify the following status:

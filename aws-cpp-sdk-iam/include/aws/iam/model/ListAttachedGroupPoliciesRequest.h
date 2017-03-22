@@ -32,6 +32,11 @@ namespace Model
     ListAttachedGroupPoliciesRequest();
     Aws::String SerializePayload() const override;
 
+
+  protected:
+    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+
+  public:
     /**
      * <p>The name (friendly name, not ARN) of the group to list attached policies
      * for.</p> <p>This parameter allows (per its <a

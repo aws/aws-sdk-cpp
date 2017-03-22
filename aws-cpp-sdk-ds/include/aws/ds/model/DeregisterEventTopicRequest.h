@@ -38,6 +38,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The Directory ID to remove as a publisher. This directory will no longer send
      * messages to the specified SNS topic.</p>

@@ -51,3 +51,8 @@ Aws::String ImportKeyPairRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  ImportKeyPairRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

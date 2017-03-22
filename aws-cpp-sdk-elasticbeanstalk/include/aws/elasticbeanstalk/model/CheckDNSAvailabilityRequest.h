@@ -36,6 +36,11 @@ namespace Model
     CheckDNSAvailabilityRequest();
     Aws::String SerializePayload() const override;
 
+
+  protected:
+    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+
+  public:
     /**
      * <p>The prefix used when this CNAME is reserved.</p>
      */

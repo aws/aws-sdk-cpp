@@ -64,3 +64,8 @@ Aws::String RunScheduledInstancesRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  RunScheduledInstancesRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

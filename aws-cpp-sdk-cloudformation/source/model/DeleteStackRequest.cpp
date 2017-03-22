@@ -55,3 +55,8 @@ Aws::String DeleteStackRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  DeleteStackRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

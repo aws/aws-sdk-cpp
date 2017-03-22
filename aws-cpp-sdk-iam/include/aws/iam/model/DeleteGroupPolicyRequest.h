@@ -32,6 +32,11 @@ namespace Model
     DeleteGroupPolicyRequest();
     Aws::String SerializePayload() const override;
 
+
+  protected:
+    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+
+  public:
     /**
      * <p>The name (friendly name, not ARN) identifying the group that the policy is
      * embedded in.</p> <p>This parameter allows (per its <a

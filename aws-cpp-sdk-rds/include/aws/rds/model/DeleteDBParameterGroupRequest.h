@@ -35,6 +35,11 @@ namespace Model
     DeleteDBParameterGroupRequest();
     Aws::String SerializePayload() const override;
 
+
+  protected:
+    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+
+  public:
     /**
      * <p>The name of the DB parameter group.</p> <p>Constraints:</p> <ul> <li> <p>Must
      * be the name of an existing DB parameter group</p> </li> <li> <p>You cannot

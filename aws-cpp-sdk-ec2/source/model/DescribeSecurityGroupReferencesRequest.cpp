@@ -50,3 +50,8 @@ Aws::String DescribeSecurityGroupReferencesRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  DescribeSecurityGroupReferencesRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

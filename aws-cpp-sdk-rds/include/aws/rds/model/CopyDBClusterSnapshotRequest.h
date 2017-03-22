@@ -37,6 +37,11 @@ namespace Model
     CopyDBClusterSnapshotRequest();
     Aws::String SerializePayload() const override;
 
+
+  protected:
+    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+
+  public:
     /**
      * <p>The identifier of the DB cluster snapshot to copy. This parameter is not
      * case-sensitive.</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63

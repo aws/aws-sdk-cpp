@@ -104,3 +104,8 @@ Aws::String GetMetricStatisticsRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  GetMetricStatisticsRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

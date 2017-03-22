@@ -38,6 +38,7 @@ namespace Model
     CreateStageRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p>The identifier of the <a>RestApi</a> resource for the <a>Stage</a> resource
      * to create.</p>

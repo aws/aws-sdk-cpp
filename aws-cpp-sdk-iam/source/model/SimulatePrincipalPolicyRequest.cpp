@@ -121,3 +121,8 @@ Aws::String SimulatePrincipalPolicyRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  SimulatePrincipalPolicyRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

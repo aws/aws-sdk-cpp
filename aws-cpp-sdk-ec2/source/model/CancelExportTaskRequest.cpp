@@ -37,3 +37,8 @@ Aws::String CancelExportTaskRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  CancelExportTaskRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

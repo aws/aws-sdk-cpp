@@ -181,3 +181,8 @@ Aws::String RestoreDBInstanceToPointInTimeRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  RestoreDBInstanceToPointInTimeRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

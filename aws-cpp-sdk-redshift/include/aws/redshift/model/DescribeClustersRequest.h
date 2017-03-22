@@ -36,6 +36,11 @@ namespace Model
     DescribeClustersRequest();
     Aws::String SerializePayload() const override;
 
+
+  protected:
+    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+
+  public:
     /**
      * <p>The unique identifier of a cluster whose properties you are requesting. This
      * parameter is case sensitive.</p> <p>The default is that all clusters defined for

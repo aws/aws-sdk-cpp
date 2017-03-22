@@ -158,3 +158,8 @@ Aws::String CreateLaunchConfigurationRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  CreateLaunchConfigurationRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

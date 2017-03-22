@@ -44,3 +44,8 @@ Aws::String DeleteSubnetRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  DeleteSubnetRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

@@ -35,6 +35,11 @@ namespace Model
     GetQueueUrlRequest();
     Aws::String SerializePayload() const override;
 
+
+  protected:
+    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+
+  public:
     /**
      * <p>The name of the queue whose URL must be fetched. Maximum 80 characters. Valid
      * values: alphanumeric characters, hyphens (<code>-</code>), and underscores

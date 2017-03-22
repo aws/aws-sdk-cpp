@@ -35,6 +35,11 @@ namespace Model
     RevokeSnapshotAccessRequest();
     Aws::String SerializePayload() const override;
 
+
+  protected:
+    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+
+  public:
     /**
      * <p>The identifier of the snapshot that the account can no longer access.</p>
      */

@@ -37,6 +37,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The identifier of the CMK under which to generate and encrypt the data
      * encryption key.</p> <p>A valid identifier is the unique key ID or the Amazon

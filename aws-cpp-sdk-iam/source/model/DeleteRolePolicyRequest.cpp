@@ -43,3 +43,8 @@ Aws::String DeleteRolePolicyRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  DeleteRolePolicyRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

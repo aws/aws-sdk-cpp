@@ -32,6 +32,11 @@ namespace Model
     ListExportsRequest();
     Aws::String SerializePayload() const override;
 
+
+  protected:
+    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+
+  public:
     /**
      * <p>A string (provided by the <a>ListExports</a> response output) that identifies
      * the next page of exported output values that you asked to retrieve.</p>

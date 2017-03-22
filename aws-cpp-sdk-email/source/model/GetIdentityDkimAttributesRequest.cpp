@@ -43,3 +43,8 @@ Aws::String GetIdentityDkimAttributesRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  GetIdentityDkimAttributesRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

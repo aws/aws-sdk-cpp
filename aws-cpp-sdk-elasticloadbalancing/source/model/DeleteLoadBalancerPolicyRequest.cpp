@@ -43,3 +43,8 @@ Aws::String DeleteLoadBalancerPolicyRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  DeleteLoadBalancerPolicyRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

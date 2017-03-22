@@ -38,6 +38,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The name of a domain.</p> <p>Type: String</p> <p>Default: None</p>
      * <p>Constraints: The domain name can contain only the letters a through z, the

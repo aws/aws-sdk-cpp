@@ -162,3 +162,8 @@ Aws::String ModifyCacheClusterRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  ModifyCacheClusterRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

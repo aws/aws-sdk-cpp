@@ -31,3 +31,8 @@ Aws::String DescribeMetricCollectionTypesRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  DescribeMetricCollectionTypesRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

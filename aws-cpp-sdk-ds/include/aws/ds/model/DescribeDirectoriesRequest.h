@@ -39,6 +39,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>A list of identifiers of the directories for which to obtain the information.
      * If this member is null, all directories that belong to the current account are

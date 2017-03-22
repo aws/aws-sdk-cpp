@@ -49,3 +49,8 @@ Aws::String CreateNatGatewayRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  CreateNatGatewayRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

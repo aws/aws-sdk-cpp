@@ -31,3 +31,8 @@ Aws::String GetSendQuotaRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  GetSendQuotaRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

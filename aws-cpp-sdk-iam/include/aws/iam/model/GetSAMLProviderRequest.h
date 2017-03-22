@@ -32,6 +32,11 @@ namespace Model
     GetSAMLProviderRequest();
     Aws::String SerializePayload() const override;
 
+
+  protected:
+    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+
+  public:
     /**
      * <p>The Amazon Resource Name (ARN) of the SAML provider resource object in IAM to
      * get information about.</p> <p>For more information about ARNs, see <a

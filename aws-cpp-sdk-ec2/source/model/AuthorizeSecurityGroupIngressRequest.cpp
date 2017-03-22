@@ -99,3 +99,8 @@ Aws::String AuthorizeSecurityGroupIngressRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  AuthorizeSecurityGroupIngressRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

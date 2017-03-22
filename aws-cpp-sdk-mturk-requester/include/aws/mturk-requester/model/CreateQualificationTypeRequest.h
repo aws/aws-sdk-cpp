@@ -35,6 +35,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p> The name you give to the Qualification type. The type name is used to
      * represent the Qualification to Workers, and to find the type using a

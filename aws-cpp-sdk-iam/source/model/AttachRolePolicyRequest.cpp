@@ -43,3 +43,8 @@ Aws::String AttachRolePolicyRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  AttachRolePolicyRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

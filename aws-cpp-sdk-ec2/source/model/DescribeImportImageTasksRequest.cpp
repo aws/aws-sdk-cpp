@@ -74,3 +74,8 @@ Aws::String DescribeImportImageTasksRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  DescribeImportImageTasksRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

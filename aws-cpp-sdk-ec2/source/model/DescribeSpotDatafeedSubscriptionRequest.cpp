@@ -38,3 +38,8 @@ Aws::String DescribeSpotDatafeedSubscriptionRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  DescribeSpotDatafeedSubscriptionRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

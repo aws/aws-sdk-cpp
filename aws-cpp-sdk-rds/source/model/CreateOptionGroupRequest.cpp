@@ -66,3 +66,8 @@ Aws::String CreateOptionGroupRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  CreateOptionGroupRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

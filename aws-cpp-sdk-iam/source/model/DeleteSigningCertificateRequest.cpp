@@ -43,3 +43,8 @@ Aws::String DeleteSigningCertificateRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  DeleteSigningCertificateRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

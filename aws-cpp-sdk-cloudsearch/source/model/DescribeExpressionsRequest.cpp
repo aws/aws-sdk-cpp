@@ -56,3 +56,8 @@ Aws::String DescribeExpressionsRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  DescribeExpressionsRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

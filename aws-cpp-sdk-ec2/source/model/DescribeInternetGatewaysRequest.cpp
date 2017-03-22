@@ -61,3 +61,8 @@ Aws::String DescribeInternetGatewaysRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  DescribeInternetGatewaysRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

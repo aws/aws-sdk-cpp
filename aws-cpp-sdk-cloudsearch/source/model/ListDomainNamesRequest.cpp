@@ -31,3 +31,8 @@ Aws::String ListDomainNamesRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  ListDomainNamesRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

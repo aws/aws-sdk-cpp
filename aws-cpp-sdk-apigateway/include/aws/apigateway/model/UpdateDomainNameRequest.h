@@ -38,6 +38,7 @@ namespace Model
     UpdateDomainNameRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p>The name of the <a>DomainName</a> resource to be changed.</p>
      */

@@ -32,6 +32,7 @@ namespace Model
     GetBucketAccelerateConfigurationRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * Name of the bucket for which the accelerate configuration is retrieved.
      */

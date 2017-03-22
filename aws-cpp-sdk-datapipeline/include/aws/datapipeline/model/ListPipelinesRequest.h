@@ -37,6 +37,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The starting point for the results to be returned. For the first call, this
      * value should be empty. As long as there are more results, continue to call

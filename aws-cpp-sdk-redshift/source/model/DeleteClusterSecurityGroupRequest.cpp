@@ -37,3 +37,8 @@ Aws::String DeleteClusterSecurityGroupRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  DeleteClusterSecurityGroupRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

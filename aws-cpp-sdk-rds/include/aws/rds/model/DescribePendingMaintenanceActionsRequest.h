@@ -37,6 +37,11 @@ namespace Model
     DescribePendingMaintenanceActionsRequest();
     Aws::String SerializePayload() const override;
 
+
+  protected:
+    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+
+  public:
     /**
      * <p>The ARN of a resource to return pending maintenance actions for.</p>
      */

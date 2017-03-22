@@ -61,3 +61,8 @@ Aws::String DescribeRouteTablesRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  DescribeRouteTablesRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

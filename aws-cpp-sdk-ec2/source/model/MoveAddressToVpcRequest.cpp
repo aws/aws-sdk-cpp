@@ -44,3 +44,8 @@ Aws::String MoveAddressToVpcRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  MoveAddressToVpcRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

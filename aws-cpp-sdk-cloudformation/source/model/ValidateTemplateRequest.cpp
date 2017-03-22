@@ -43,3 +43,8 @@ Aws::String ValidateTemplateRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  ValidateTemplateRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

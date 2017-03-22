@@ -33,6 +33,11 @@ namespace Model
     ListPoliciesRequest();
     Aws::String SerializePayload() const override;
 
+
+  protected:
+    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+
+  public:
     /**
      * <p>The scope to use for filtering the results.</p> <p>To list only AWS managed
      * policies, set <code>Scope</code> to <code>AWS</code>. To list only the customer

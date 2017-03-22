@@ -36,6 +36,11 @@ namespace Model
     DescribeClusterSecurityGroupsRequest();
     Aws::String SerializePayload() const override;
 
+
+  protected:
+    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+
+  public:
     /**
      * <p>The name of a cluster security group for which you are requesting details.
      * You can specify either the <b>Marker</b> parameter or a

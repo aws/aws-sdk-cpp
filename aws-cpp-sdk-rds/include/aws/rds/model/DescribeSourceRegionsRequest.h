@@ -37,6 +37,11 @@ namespace Model
     DescribeSourceRegionsRequest();
     Aws::String SerializePayload() const override;
 
+
+  protected:
+    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+
+  public:
     /**
      * <p>The source region name. For example, <code>us-east-1</code>.</p>
      * <p>Constraints:</p> <ul> <li> <p>Must specify a valid AWS Region name.</p> </li>

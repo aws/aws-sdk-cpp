@@ -32,6 +32,11 @@ namespace Model
     ListServiceSpecificCredentialsRequest();
     Aws::String SerializePayload() const override;
 
+
+  protected:
+    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+
+  public:
     /**
      * <p>The name of the user whose service-specific credentials you want information
      * about. If this value is not specified then the operation assumes the user whose

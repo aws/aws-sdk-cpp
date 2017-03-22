@@ -75,3 +75,8 @@ Aws::String DescribeAlarmsRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  DescribeAlarmsRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

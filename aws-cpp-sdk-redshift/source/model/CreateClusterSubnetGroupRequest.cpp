@@ -66,3 +66,8 @@ Aws::String CreateClusterSubnetGroupRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  CreateClusterSubnetGroupRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

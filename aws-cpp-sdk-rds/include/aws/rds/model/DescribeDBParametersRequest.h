@@ -34,6 +34,11 @@ namespace Model
     DescribeDBParametersRequest();
     Aws::String SerializePayload() const override;
 
+
+  protected:
+    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+
+  public:
     /**
      * <p>The name of a specific DB parameter group to return details for.</p>
      * <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 alphanumeric characters</p>

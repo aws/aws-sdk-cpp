@@ -36,6 +36,11 @@ namespace Model
     EnterStandbyRequest();
     Aws::String SerializePayload() const override;
 
+
+  protected:
+    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+
+  public:
     /**
      * <p>One or more instances to move into <code>Standby</code> mode. You must
      * specify at least one instance ID.</p>

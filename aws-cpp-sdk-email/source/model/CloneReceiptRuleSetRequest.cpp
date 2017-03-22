@@ -43,3 +43,8 @@ Aws::String CloneReceiptRuleSetRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  CloneReceiptRuleSetRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

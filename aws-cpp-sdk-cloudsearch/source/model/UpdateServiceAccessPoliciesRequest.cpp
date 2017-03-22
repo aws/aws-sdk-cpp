@@ -43,3 +43,8 @@ Aws::String UpdateServiceAccessPoliciesRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  UpdateServiceAccessPoliciesRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

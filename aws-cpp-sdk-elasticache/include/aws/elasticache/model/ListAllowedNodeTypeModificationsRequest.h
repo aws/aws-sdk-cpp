@@ -36,6 +36,11 @@ namespace Model
     ListAllowedNodeTypeModificationsRequest();
     Aws::String SerializePayload() const override;
 
+
+  protected:
+    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+
+  public:
     /**
      * <p>The name of the cache cluster you want to scale up to a larger node instanced
      * type. ElastiCache uses the cluster id to identify the current node type of this

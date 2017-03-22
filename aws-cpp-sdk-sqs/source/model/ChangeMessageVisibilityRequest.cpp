@@ -50,3 +50,8 @@ Aws::String ChangeMessageVisibilityRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  ChangeMessageVisibilityRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

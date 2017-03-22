@@ -37,3 +37,8 @@ Aws::String CreateTopicRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  CreateTopicRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

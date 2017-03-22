@@ -38,6 +38,11 @@ namespace Model
     RestoreDBInstanceToPointInTimeRequest();
     Aws::String SerializePayload() const override;
 
+
+  protected:
+    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+
+  public:
     /**
      * <p>The identifier of the source DB instance from which to restore.</p>
      * <p>Constraints:</p> <ul> <li> <p>Must be the identifier of an existing database

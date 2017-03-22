@@ -49,3 +49,8 @@ Aws::String PutGroupPolicyRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  PutGroupPolicyRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

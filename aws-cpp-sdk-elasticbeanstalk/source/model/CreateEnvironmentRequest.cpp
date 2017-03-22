@@ -124,3 +124,8 @@ Aws::String CreateEnvironmentRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  CreateEnvironmentRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

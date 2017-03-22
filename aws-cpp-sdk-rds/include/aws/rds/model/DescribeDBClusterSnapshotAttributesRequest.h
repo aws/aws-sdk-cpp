@@ -35,6 +35,11 @@ namespace Model
     DescribeDBClusterSnapshotAttributesRequest();
     Aws::String SerializePayload() const override;
 
+
+  protected:
+    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+
+  public:
     /**
      * <p>The identifier for the DB cluster snapshot to describe the attributes
      * for.</p>

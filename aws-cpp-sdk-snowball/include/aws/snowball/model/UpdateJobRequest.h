@@ -38,6 +38,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The job ID of the job that you want to update, for example
      * <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>

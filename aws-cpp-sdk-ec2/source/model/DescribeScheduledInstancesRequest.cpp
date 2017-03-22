@@ -80,3 +80,8 @@ Aws::String DescribeScheduledInstancesRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  DescribeScheduledInstancesRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

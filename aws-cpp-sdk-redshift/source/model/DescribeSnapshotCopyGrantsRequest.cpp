@@ -74,3 +74,8 @@ Aws::String DescribeSnapshotCopyGrantsRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  DescribeSnapshotCopyGrantsRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

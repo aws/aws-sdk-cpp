@@ -101,3 +101,8 @@ Aws::String RequestSpotInstancesRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  RequestSpotInstancesRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

@@ -41,6 +41,7 @@ namespace Model
 
     void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
+
     /**
      * <p>Function name whose versions to list. You can specify a function name (for
      * example, <code>Thumbnail</code>) or you can specify Amazon Resource Name (ARN)

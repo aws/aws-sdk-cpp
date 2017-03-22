@@ -37,3 +37,8 @@ Aws::String DescribeDBSnapshotAttributesRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  DescribeDBSnapshotAttributesRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

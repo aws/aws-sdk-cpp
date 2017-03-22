@@ -31,3 +31,8 @@ Aws::String DescribeAdjustmentTypesRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  DescribeAdjustmentTypesRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

@@ -49,3 +49,8 @@ Aws::String SubscribeRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  SubscribeRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

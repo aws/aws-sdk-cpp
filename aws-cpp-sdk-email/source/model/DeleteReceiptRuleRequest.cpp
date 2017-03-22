@@ -43,3 +43,8 @@ Aws::String DeleteReceiptRuleRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  DeleteReceiptRuleRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

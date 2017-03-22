@@ -43,3 +43,8 @@ Aws::String RemoveRoleFromDBClusterRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  RemoveRoleFromDBClusterRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

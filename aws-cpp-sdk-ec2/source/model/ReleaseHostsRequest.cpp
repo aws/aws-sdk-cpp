@@ -43,3 +43,8 @@ Aws::String ReleaseHostsRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  ReleaseHostsRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

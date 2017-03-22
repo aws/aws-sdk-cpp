@@ -50,3 +50,8 @@ Aws::String DeleteDBInstanceRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  DeleteDBInstanceRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

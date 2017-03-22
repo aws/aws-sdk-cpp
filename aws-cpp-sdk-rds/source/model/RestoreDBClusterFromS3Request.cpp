@@ -195,3 +195,8 @@ Aws::String RestoreDBClusterFromS3Request::SerializePayload() const
   return ss.str();
 }
 
+
+void  RestoreDBClusterFromS3Request::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

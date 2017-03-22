@@ -35,6 +35,11 @@ namespace Model
     DeleteDBClusterParameterGroupRequest();
     Aws::String SerializePayload() const override;
 
+
+  protected:
+    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+
+  public:
     /**
      * <p>The name of the DB cluster parameter group.</p> <p>Constraints:</p> <ul> <li>
      * <p>Must be the name of an existing DB cluster parameter group.</p> </li> <li>

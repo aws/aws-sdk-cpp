@@ -43,3 +43,8 @@ Aws::String DeactivateMFADeviceRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  DeactivateMFADeviceRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

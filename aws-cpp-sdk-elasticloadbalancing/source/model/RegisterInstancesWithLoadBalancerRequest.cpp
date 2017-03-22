@@ -48,3 +48,8 @@ Aws::String RegisterInstancesWithLoadBalancerRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  RegisterInstancesWithLoadBalancerRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

@@ -43,3 +43,8 @@ Aws::String AbortEnvironmentUpdateRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  AbortEnvironmentUpdateRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

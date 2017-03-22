@@ -49,3 +49,8 @@ Aws::String RevokeCacheSecurityGroupIngressRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  RevokeCacheSecurityGroupIngressRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

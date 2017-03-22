@@ -38,6 +38,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The ID of the virtual interface.</p> <p>Example: dxvif-123dfg56</p>
      * <p>Default: None</p>

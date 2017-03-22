@@ -45,6 +45,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The name of the table containing the requested items; or, if you provide
      * <code>IndexName</code>, the name of the table to which that index belongs.</p>

@@ -86,3 +86,8 @@ Aws::String CreateLoadBalancerRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  CreateLoadBalancerRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

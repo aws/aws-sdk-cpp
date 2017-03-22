@@ -36,6 +36,11 @@ namespace Model
     ExitStandbyRequest();
     Aws::String SerializePayload() const override;
 
+
+  protected:
+    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+
+  public:
     /**
      * <p>One or more instance IDs. You must specify at least one instance ID.</p>
      */

@@ -37,6 +37,11 @@ namespace Model
     DescribeOrderableDBInstanceOptionsRequest();
     Aws::String SerializePayload() const override;
 
+
+  protected:
+    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+
+  public:
     /**
      * <p>The name of the engine to retrieve DB instance options for.</p>
      */

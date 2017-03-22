@@ -37,3 +37,8 @@ Aws::String RotateEncryptionKeyRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  RotateEncryptionKeyRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

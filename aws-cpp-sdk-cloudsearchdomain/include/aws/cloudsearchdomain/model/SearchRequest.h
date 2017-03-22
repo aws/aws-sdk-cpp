@@ -43,6 +43,7 @@ namespace Model
 
     void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
+
     /**
      * <p>Retrieves a cursor value you can use to page through large result sets. Use
      * the <code>size</code> parameter to control the number of hits to include in each

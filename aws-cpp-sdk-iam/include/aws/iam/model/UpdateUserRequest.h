@@ -32,6 +32,11 @@ namespace Model
     UpdateUserRequest();
     Aws::String SerializePayload() const override;
 
+
+  protected:
+    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+
+  public:
     /**
      * <p>Name of the user to update. If you're changing the name of the user, this is
      * the original user name.</p> <p>This parameter allows (per its <a

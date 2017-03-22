@@ -49,3 +49,8 @@ Aws::String GetHostReservationPurchasePreviewRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  GetHostReservationPurchasePreviewRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

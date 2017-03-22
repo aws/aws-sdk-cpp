@@ -38,6 +38,11 @@ namespace Model
     DescribeEventsRequest();
     Aws::String SerializePayload() const override;
 
+
+  protected:
+    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+
+  public:
     /**
      * <p>The identifier of the event source for which events are returned. If not
      * specified, all sources are included in the response.</p>

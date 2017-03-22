@@ -35,6 +35,11 @@ namespace Model
     GetTopicAttributesRequest();
     Aws::String SerializePayload() const override;
 
+
+  protected:
+    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+
+  public:
     /**
      * <p>The ARN of the topic whose properties you want to get.</p>
      */

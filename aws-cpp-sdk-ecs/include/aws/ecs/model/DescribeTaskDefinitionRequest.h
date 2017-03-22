@@ -34,6 +34,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The <code>family</code> for the latest <code>ACTIVE</code> revision,
      * <code>family</code> and <code>revision</code> (<code>family:revision</code>) for

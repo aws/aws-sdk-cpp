@@ -35,6 +35,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>Filters the handshakes that you want included in the response. The default is
      * all types. Use the <code>ActionType</code> element to limit the output to only a

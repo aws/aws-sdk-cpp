@@ -38,6 +38,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>Specify one or more resource types to get the number of resources that are
      * compliant and the number that are noncompliant for each resource type.</p>

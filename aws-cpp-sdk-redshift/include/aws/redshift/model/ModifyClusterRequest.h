@@ -36,6 +36,11 @@ namespace Model
     ModifyClusterRequest();
     Aws::String SerializePayload() const override;
 
+
+  protected:
+    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+
+  public:
     /**
      * <p>The unique identifier of the cluster to be modified.</p> <p>Example:
      * <code>examplecluster</code> </p>

@@ -56,3 +56,8 @@ Aws::String EnableSnapshotCopyRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  EnableSnapshotCopyRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

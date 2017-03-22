@@ -38,6 +38,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The fully qualified domain name for the directory, such as
      * <code>corp.example.com</code>. This name will resolve inside your VPC only. It

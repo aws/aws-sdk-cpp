@@ -35,6 +35,7 @@ namespace Model
     SetLoggingOptionsRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p>The logging options payload.</p>
      */

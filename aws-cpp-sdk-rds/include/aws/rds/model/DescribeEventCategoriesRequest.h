@@ -37,6 +37,11 @@ namespace Model
     DescribeEventCategoriesRequest();
     Aws::String SerializePayload() const override;
 
+
+  protected:
+    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+
+  public:
     /**
      * <p>The type of source that will be generating the events.</p> <p>Valid values:
      * db-instance | db-parameter-group | db-security-group | db-snapshot</p>

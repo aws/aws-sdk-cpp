@@ -44,3 +44,8 @@ Aws::String SetIpAddressTypeRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  SetIpAddressTypeRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

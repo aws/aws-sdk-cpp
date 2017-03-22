@@ -35,6 +35,11 @@ namespace Model
     DeleteClusterRequest();
     Aws::String SerializePayload() const override;
 
+
+  protected:
+    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+
+  public:
     /**
      * <p>The identifier of the cluster to be deleted.</p> <p>Constraints:</p> <ul>
      * <li> <p>Must contain lowercase characters.</p> </li> <li> <p>Must contain from 1

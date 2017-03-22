@@ -37,3 +37,8 @@ Aws::String GetSAMLProviderRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  GetSAMLProviderRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

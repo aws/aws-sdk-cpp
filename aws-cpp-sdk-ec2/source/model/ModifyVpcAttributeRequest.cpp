@@ -49,3 +49,8 @@ Aws::String ModifyVpcAttributeRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  ModifyVpcAttributeRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

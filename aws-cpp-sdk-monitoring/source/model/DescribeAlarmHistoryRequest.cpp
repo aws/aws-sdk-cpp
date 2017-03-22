@@ -69,3 +69,8 @@ Aws::String DescribeAlarmHistoryRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  DescribeAlarmHistoryRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

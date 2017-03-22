@@ -62,3 +62,8 @@ Aws::String DescribeTagsRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  DescribeTagsRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

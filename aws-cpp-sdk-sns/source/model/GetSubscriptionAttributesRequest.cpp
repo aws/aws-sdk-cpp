@@ -37,3 +37,8 @@ Aws::String GetSubscriptionAttributesRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  GetSubscriptionAttributesRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

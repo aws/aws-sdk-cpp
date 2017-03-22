@@ -32,6 +32,7 @@ namespace Model
     ListAppliedSchemaArnsRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p>The ARN of the directory you are listing.</p>
      */

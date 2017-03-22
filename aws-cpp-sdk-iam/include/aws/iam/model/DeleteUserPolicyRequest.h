@@ -32,6 +32,11 @@ namespace Model
     DeleteUserPolicyRequest();
     Aws::String SerializePayload() const override;
 
+
+  protected:
+    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+
+  public:
     /**
      * <p>The name (friendly name, not ARN) identifying the user that the policy is
      * embedded in.</p> <p>This parameter allows (per its <a

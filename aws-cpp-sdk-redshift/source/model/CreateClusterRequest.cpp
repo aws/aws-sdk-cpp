@@ -223,3 +223,8 @@ Aws::String CreateClusterRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  CreateClusterRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

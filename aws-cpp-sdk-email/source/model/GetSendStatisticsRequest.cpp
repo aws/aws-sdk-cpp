@@ -31,3 +31,8 @@ Aws::String GetSendStatisticsRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  GetSendStatisticsRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

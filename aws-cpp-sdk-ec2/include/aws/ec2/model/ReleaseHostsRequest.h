@@ -36,6 +36,11 @@ namespace Model
     ReleaseHostsRequest();
     Aws::String SerializePayload() const override;
 
+
+  protected:
+    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+
+  public:
     /**
      * <p>The IDs of the Dedicated Hosts you want to release.</p>
      */

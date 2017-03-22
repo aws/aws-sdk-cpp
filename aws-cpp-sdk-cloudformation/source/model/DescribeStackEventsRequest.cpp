@@ -43,3 +43,8 @@ Aws::String DescribeStackEventsRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  DescribeStackEventsRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

@@ -48,3 +48,8 @@ Aws::String RegisterTargetsRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  RegisterTargetsRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

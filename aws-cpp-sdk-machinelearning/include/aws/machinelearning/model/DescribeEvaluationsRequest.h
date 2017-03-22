@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>Use one of the following variable to filter a list of <code>Evaluation</code>
      * objects:</p> <ul> <li> <code>CreatedAt</code> - Sets the search criteria to the

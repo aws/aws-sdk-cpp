@@ -49,3 +49,8 @@ Aws::String EnableLoggingRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  EnableLoggingRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

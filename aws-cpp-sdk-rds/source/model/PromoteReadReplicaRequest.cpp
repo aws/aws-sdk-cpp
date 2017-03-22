@@ -50,3 +50,8 @@ Aws::String PromoteReadReplicaRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  PromoteReadReplicaRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

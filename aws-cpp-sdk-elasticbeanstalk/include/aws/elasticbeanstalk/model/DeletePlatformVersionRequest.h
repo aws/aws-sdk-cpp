@@ -32,6 +32,11 @@ namespace Model
     DeletePlatformVersionRequest();
     Aws::String SerializePayload() const override;
 
+
+  protected:
+    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+
+  public:
     /**
      * <p>The ARN of the version of the custom platform.</p>
      */

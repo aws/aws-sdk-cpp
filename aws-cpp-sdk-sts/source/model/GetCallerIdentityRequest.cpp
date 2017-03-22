@@ -31,3 +31,8 @@ Aws::String GetCallerIdentityRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  GetCallerIdentityRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

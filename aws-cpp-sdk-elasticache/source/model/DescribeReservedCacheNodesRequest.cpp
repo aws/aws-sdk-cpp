@@ -80,3 +80,8 @@ Aws::String DescribeReservedCacheNodesRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  DescribeReservedCacheNodesRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

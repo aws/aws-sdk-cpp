@@ -33,6 +33,7 @@ namespace Model
     PutBucketAccelerateConfigurationRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * Name of the bucket for which the accelerate configuration is set.
      */

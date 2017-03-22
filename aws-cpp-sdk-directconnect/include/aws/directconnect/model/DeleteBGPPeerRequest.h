@@ -38,6 +38,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The ID of the virtual interface from which the BGP peer will be deleted.</p>
      * <p>Example: dxvif-456abc78</p> <p>Default: None</p>

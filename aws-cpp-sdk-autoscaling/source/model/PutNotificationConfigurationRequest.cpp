@@ -55,3 +55,8 @@ Aws::String PutNotificationConfigurationRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  PutNotificationConfigurationRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

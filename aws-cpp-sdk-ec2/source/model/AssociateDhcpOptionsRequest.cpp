@@ -50,3 +50,8 @@ Aws::String AssociateDhcpOptionsRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  AssociateDhcpOptionsRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

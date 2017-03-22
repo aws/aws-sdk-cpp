@@ -35,6 +35,11 @@ namespace Model
     DescribeLoggingStatusRequest();
     Aws::String SerializePayload() const override;
 
+
+  protected:
+    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+
+  public:
     /**
      * <p>The identifier of the cluster from which to get the logging status.</p>
      * <p>Example: <code>examplecluster</code> </p>

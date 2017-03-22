@@ -56,3 +56,8 @@ Aws::String DescribeOrderableClusterOptionsRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  DescribeOrderableClusterOptionsRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

@@ -37,3 +37,8 @@ Aws::String CancelReservedInstancesListingRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  CancelReservedInstancesListingRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

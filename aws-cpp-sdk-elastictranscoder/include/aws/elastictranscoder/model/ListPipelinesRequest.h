@@ -41,6 +41,7 @@ namespace Model
 
     void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
+
     /**
      * <p>To list pipelines in chronological order by the date and time that they were
      * created, enter <code>true</code>. To list pipelines in reverse chronological

@@ -36,6 +36,7 @@ namespace Model
     GetDomainNameRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p>The name of the <a>DomainName</a> resource.</p>
      */

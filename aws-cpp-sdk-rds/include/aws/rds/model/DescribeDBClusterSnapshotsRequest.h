@@ -37,6 +37,11 @@ namespace Model
     DescribeDBClusterSnapshotsRequest();
     Aws::String SerializePayload() const override;
 
+
+  protected:
+    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+
+  public:
     /**
      * <p>The ID of the DB cluster to retrieve the list of DB cluster snapshots for.
      * This parameter cannot be used in conjunction with the

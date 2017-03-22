@@ -104,3 +104,8 @@ Aws::String DescribeSpotPriceHistoryRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  DescribeSpotPriceHistoryRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

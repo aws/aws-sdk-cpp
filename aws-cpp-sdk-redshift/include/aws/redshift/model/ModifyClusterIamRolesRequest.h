@@ -36,6 +36,11 @@ namespace Model
     ModifyClusterIamRolesRequest();
     Aws::String SerializePayload() const override;
 
+
+  protected:
+    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+
+  public:
     /**
      * <p>The unique identifier of the cluster for which you want to associate or
      * disassociate IAM roles.</p>

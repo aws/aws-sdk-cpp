@@ -36,6 +36,11 @@ namespace Model
     DescribeCacheEngineVersionsRequest();
     Aws::String SerializePayload() const override;
 
+
+  protected:
+    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+
+  public:
     /**
      * <p>The cache engine to return. Valid values: <code>memcached</code> |
      * <code>redis</code> </p>

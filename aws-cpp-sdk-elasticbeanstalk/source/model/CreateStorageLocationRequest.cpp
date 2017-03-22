@@ -31,3 +31,8 @@ Aws::String CreateStorageLocationRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  CreateStorageLocationRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

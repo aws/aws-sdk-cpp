@@ -50,3 +50,8 @@ Aws::String DescribeCacheSecurityGroupsRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  DescribeCacheSecurityGroupsRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

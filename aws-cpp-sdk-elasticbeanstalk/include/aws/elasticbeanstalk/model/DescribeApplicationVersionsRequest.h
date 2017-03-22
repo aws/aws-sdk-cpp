@@ -36,6 +36,11 @@ namespace Model
     DescribeApplicationVersionsRequest();
     Aws::String SerializePayload() const override;
 
+
+  protected:
+    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+
+  public:
     /**
      * <p>Specify an application name to show only application versions for that
      * application.</p>

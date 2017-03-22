@@ -37,3 +37,8 @@ Aws::String DeletePlatformApplicationRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  DeletePlatformApplicationRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

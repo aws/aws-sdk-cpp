@@ -41,6 +41,11 @@ namespace Model
     CreateChangeSetRequest();
     Aws::String SerializePayload() const override;
 
+
+  protected:
+    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+
+  public:
     /**
      * <p>The name or the unique ID of the stack for which you are creating a change
      * set. AWS CloudFormation generates the change set by comparing this stack's

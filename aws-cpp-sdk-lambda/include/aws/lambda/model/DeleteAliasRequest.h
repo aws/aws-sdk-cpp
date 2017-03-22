@@ -32,6 +32,7 @@ namespace Model
     DeleteAliasRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p>The Lambda function name for which the alias is created. Deleting an alias
      * does not delete the function version to which it is pointing.</p>

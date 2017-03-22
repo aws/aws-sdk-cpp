@@ -38,6 +38,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>Unique identifier for a fleet(s) to retrieve capacity information for. To
      * request capacity information for all fleets, leave this parameter empty.</p>

@@ -50,3 +50,8 @@ Aws::String DescribeReservedNodesRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  DescribeReservedNodesRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

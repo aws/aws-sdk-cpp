@@ -38,6 +38,7 @@ namespace Model
     GetTrafficPolicyRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p>The ID of the traffic policy that you want to get information about.</p>
      */

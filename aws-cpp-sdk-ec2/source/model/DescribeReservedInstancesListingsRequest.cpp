@@ -54,3 +54,8 @@ Aws::String DescribeReservedInstancesListingsRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  DescribeReservedInstancesListingsRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

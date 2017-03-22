@@ -34,6 +34,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The AWS OpsWorks volume ID, which is the GUID that AWS OpsWorks assigned to
      * the instance when you registered the volume with the stack, not the Amazon EC2

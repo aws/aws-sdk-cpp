@@ -63,3 +63,8 @@ Aws::String DescribeEgressOnlyInternetGatewaysRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  DescribeEgressOnlyInternetGatewaysRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

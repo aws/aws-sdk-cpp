@@ -32,6 +32,11 @@ namespace Model
     ListGroupPoliciesRequest();
     Aws::String SerializePayload() const override;
 
+
+  protected:
+    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+
+  public:
     /**
      * <p>The name of the group to list policies for.</p> <p>This parameter allows (per
      * its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of

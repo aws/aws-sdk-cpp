@@ -61,3 +61,8 @@ Aws::String DescribeEventSubscriptionsRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  DescribeEventSubscriptionsRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

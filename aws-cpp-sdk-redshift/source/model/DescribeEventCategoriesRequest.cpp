@@ -37,3 +37,8 @@ Aws::String DescribeEventCategoriesRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  DescribeEventCategoriesRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

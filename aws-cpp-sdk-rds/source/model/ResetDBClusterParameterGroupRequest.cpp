@@ -55,3 +55,8 @@ Aws::String ResetDBClusterParameterGroupRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  ResetDBClusterParameterGroupRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

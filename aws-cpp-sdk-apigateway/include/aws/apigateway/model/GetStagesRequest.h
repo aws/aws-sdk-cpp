@@ -42,6 +42,7 @@ namespace Model
 
     void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
+
     /**
      * <p>The stages' API identifiers.</p>
      */

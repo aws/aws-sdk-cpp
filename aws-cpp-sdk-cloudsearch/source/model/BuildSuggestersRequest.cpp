@@ -37,3 +37,8 @@ Aws::String BuildSuggestersRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  BuildSuggestersRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

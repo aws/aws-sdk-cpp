@@ -61,3 +61,8 @@ Aws::String DescribeKeyPairsRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  DescribeKeyPairsRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

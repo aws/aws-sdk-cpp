@@ -37,3 +37,8 @@ Aws::String ListTagsForResourceRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  ListTagsForResourceRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

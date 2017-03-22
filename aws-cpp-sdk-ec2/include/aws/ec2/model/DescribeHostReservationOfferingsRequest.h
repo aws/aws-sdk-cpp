@@ -34,6 +34,11 @@ namespace Model
     DescribeHostReservationOfferingsRequest();
     Aws::String SerializePayload() const override;
 
+
+  protected:
+    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+
+  public:
     /**
      * <p>The ID of the reservation offering.</p>
      */

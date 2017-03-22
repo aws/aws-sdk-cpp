@@ -50,3 +50,8 @@ Aws::String DescribeConversionTasksRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  DescribeConversionTasksRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

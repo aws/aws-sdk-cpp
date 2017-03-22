@@ -38,6 +38,7 @@ namespace Model
     DescribeElasticsearchDomainsRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p>The Elasticsearch domains for which you want information.</p>
      */

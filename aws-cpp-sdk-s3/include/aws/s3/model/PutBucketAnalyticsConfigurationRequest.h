@@ -39,6 +39,7 @@ namespace Model
 
     void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
+
     /**
      * The name of the bucket to which an analytics configuration is stored.
      */

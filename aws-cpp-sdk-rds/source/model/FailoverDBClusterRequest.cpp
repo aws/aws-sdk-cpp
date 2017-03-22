@@ -43,3 +43,8 @@ Aws::String FailoverDBClusterRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  FailoverDBClusterRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

@@ -33,6 +33,7 @@ namespace Model
     GetTraceSummariesRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p>The start of the time frame for which to retrieve traces.</p>
      */

@@ -49,3 +49,8 @@ Aws::String AttachLoadBalancerToSubnetsRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  AttachLoadBalancerToSubnetsRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

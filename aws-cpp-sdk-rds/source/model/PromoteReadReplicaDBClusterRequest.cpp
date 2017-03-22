@@ -37,3 +37,8 @@ Aws::String PromoteReadReplicaDBClusterRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  PromoteReadReplicaDBClusterRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

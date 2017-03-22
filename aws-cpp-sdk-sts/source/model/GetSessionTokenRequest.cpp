@@ -50,3 +50,8 @@ Aws::String GetSessionTokenRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  GetSessionTokenRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

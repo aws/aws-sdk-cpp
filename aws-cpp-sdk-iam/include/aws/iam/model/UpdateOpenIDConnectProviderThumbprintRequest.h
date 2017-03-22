@@ -33,6 +33,11 @@ namespace Model
     UpdateOpenIDConnectProviderThumbprintRequest();
     Aws::String SerializePayload() const override;
 
+
+  protected:
+    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+
+  public:
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM OIDC provider resource object for
      * which you want to update the thumbprint. You can get a list of OIDC provider

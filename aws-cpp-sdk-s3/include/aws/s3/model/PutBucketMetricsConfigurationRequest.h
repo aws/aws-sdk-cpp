@@ -39,6 +39,7 @@ namespace Model
 
     void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
+
     /**
      * The name of the bucket for which the metrics configuration is set.
      */

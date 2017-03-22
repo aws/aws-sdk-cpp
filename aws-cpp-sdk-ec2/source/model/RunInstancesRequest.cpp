@@ -216,3 +216,8 @@ Aws::String RunInstancesRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  RunInstancesRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

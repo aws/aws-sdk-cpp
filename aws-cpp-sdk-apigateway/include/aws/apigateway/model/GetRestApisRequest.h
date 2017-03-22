@@ -42,6 +42,7 @@ namespace Model
 
     void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
+
     /**
      * <p>The position of the current <a>RestApis</a> resource in the collection to get
      * information about.</p>

@@ -37,6 +37,11 @@ namespace Model
     AddTagsToResourceRequest();
     Aws::String SerializePayload() const override;
 
+
+  protected:
+    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+
+  public:
     /**
      * <p>The Amazon RDS resource the tags will be added to. This value is an Amazon
      * Resource Name (ARN). For information about creating an ARN, see <a

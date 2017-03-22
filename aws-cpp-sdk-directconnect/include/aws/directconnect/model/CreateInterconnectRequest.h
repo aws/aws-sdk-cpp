@@ -38,6 +38,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The name of the interconnect.</p> <p>Example: "<i>1G Interconnect to
      * AWS</i>"</p> <p>Default: None</p>

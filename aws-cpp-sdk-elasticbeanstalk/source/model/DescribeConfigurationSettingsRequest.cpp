@@ -49,3 +49,8 @@ Aws::String DescribeConfigurationSettingsRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  DescribeConfigurationSettingsRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

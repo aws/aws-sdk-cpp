@@ -38,6 +38,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>A friendly name or description for the <a>SqlInjectionMatchSet</a> that
      * you're creating. You can't change <code>Name</code> after you create the

@@ -35,6 +35,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>You can use this parameter to specify a subset of data to be included in the
      * action's response.</p> <p>For a record to match a filter, all specified filter

@@ -50,3 +50,8 @@ Aws::String PurchaseReservedCacheNodesOfferingRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  PurchaseReservedCacheNodesOfferingRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

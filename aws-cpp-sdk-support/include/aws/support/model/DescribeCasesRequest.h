@@ -38,6 +38,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>A list of ID numbers of the support cases you want returned. The maximum
      * number of cases is 100.</p>

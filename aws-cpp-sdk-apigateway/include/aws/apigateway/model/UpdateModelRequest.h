@@ -38,6 +38,7 @@ namespace Model
     UpdateModelRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p>The <a>RestApi</a> identifier under which the model exists.</p>
      */

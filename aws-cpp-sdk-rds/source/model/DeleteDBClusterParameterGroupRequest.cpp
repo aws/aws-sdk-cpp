@@ -37,3 +37,8 @@ Aws::String DeleteDBClusterParameterGroupRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  DeleteDBClusterParameterGroupRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

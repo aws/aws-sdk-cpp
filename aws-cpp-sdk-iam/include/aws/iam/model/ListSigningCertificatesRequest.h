@@ -32,6 +32,11 @@ namespace Model
     ListSigningCertificatesRequest();
     Aws::String SerializePayload() const override;
 
+
+  protected:
+    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+
+  public:
     /**
      * <p>The name of the IAM user whose signing certificates you want to examine.</p>
      * <p>This parameter allows (per its <a

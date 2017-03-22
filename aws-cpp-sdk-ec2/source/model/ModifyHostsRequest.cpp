@@ -50,3 +50,8 @@ Aws::String ModifyHostsRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  ModifyHostsRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

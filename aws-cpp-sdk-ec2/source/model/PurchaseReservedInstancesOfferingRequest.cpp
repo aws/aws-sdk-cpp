@@ -57,3 +57,8 @@ Aws::String PurchaseReservedInstancesOfferingRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  PurchaseReservedInstancesOfferingRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

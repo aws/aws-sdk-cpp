@@ -35,6 +35,11 @@ namespace Model
     DeleteHsmClientCertificateRequest();
     Aws::String SerializePayload() const override;
 
+
+  protected:
+    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+
+  public:
     /**
      * <p>The identifier of the HSM client certificate to be deleted.</p>
      */

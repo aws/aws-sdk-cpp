@@ -38,6 +38,11 @@ namespace Model
     CreateConfigurationTemplateRequest();
     Aws::String SerializePayload() const override;
 
+
+  protected:
+    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+
+  public:
     /**
      * <p>The name of the application to associate with this configuration template. If
      * no application is found with this name, AWS Elastic Beanstalk returns an

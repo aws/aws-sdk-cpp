@@ -35,6 +35,11 @@ namespace Model
     AuthorizeClusterSecurityGroupIngressRequest();
     Aws::String SerializePayload() const override;
 
+
+  protected:
+    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+
+  public:
     /**
      * <p>The name of the security group to which the ingress rule is added.</p>
      */

@@ -73,3 +73,8 @@ Aws::String CopyDBClusterSnapshotRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  CopyDBClusterSnapshotRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

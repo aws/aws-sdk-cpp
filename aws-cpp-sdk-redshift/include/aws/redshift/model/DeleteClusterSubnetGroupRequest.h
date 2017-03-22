@@ -35,6 +35,11 @@ namespace Model
     DeleteClusterSubnetGroupRequest();
     Aws::String SerializePayload() const override;
 
+
+  protected:
+    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+
+  public:
     /**
      * <p>The name of the cluster subnet group name to be deleted.</p>
      */

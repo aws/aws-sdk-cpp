@@ -50,3 +50,8 @@ Aws::String ModifyIdentityIdFormatRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  ModifyIdentityIdFormatRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

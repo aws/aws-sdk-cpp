@@ -35,6 +35,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The customer-assigned name of the certificate. Valid characters are A-z and
      * 0-9.</p>

@@ -43,3 +43,8 @@ Aws::String ConfigureHealthCheckRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  ConfigureHealthCheckRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

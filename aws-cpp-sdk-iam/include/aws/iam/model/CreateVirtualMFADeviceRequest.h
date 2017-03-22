@@ -32,6 +32,11 @@ namespace Model
     CreateVirtualMFADeviceRequest();
     Aws::String SerializePayload() const override;
 
+
+  protected:
+    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+
+  public:
     /**
      * <p> The path for the virtual MFA device. For more information about paths, see
      * <a

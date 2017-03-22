@@ -61,3 +61,8 @@ Aws::String CreateReservedInstancesListingRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  CreateReservedInstancesListingRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

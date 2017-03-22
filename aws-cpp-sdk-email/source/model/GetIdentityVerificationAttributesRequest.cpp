@@ -43,3 +43,8 @@ Aws::String GetIdentityVerificationAttributesRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  GetIdentityVerificationAttributesRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

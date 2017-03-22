@@ -49,3 +49,8 @@ Aws::String ExitStandbyRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  ExitStandbyRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

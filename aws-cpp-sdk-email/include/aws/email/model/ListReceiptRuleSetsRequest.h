@@ -39,6 +39,11 @@ namespace Model
     ListReceiptRuleSetsRequest();
     Aws::String SerializePayload() const override;
 
+
+  protected:
+    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+
+  public:
     /**
      * <p>A token returned from a previous call to <code>ListReceiptRuleSets</code> to
      * indicate the position in the receipt rule set list.</p>

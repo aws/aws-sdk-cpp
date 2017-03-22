@@ -37,6 +37,11 @@ namespace Model
     DescribeEnvironmentsRequest();
     Aws::String SerializePayload() const override;
 
+
+  protected:
+    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+
+  public:
     /**
      * <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to
      * include only those that are associated with this application.</p>

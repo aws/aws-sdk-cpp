@@ -37,3 +37,8 @@ Aws::String DeleteNatGatewayRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  DeleteNatGatewayRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

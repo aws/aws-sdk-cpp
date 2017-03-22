@@ -34,6 +34,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>You can use this parameter when paginating results. Set the value of this
      * parameter to 'null' on your first call to the <b>ListRulesPackages</b> action.

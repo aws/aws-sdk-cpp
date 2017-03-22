@@ -34,6 +34,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>String that contains the ARN of the requested certificate. The certificate
      * ARN is generated and returned by the <a>RequestCertificate</a> action as soon as

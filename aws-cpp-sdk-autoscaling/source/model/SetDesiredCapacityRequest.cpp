@@ -51,3 +51,8 @@ Aws::String SetDesiredCapacityRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  SetDesiredCapacityRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

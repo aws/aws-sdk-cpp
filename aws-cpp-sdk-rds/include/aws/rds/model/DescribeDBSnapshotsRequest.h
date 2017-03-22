@@ -37,6 +37,11 @@ namespace Model
     DescribeDBSnapshotsRequest();
     Aws::String SerializePayload() const override;
 
+
+  protected:
+    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+
+  public:
     /**
      * <p>The ID of the DB instance to retrieve the list of DB snapshots for. This
      * parameter cannot be used in conjunction with <code>DBSnapshotIdentifier</code>.

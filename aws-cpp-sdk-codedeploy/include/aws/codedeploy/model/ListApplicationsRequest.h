@@ -38,6 +38,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>An identifier returned from the previous list applications call. It can be
      * used to return the next set of applications in the list.</p>

@@ -57,3 +57,4 @@ void GetResourcesRequest::AddQueryStringParameters(URI& uri) const
 }
 
 
+

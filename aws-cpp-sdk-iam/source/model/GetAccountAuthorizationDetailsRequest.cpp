@@ -56,3 +56,8 @@ Aws::String GetAccountAuthorizationDetailsRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  GetAccountAuthorizationDetailsRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

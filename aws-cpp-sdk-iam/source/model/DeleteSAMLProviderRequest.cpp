@@ -37,3 +37,8 @@ Aws::String DeleteSAMLProviderRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  DeleteSAMLProviderRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

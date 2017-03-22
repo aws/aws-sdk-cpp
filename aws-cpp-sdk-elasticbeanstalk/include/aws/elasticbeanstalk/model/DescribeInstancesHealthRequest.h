@@ -38,6 +38,11 @@ namespace Model
     DescribeInstancesHealthRequest();
     Aws::String SerializePayload() const override;
 
+
+  protected:
+    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+
+  public:
     /**
      * <p>Specify the AWS Elastic Beanstalk environment by name.</p>
      */

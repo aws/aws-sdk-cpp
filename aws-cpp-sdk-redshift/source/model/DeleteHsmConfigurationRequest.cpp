@@ -37,3 +37,8 @@ Aws::String DeleteHsmConfigurationRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  DeleteHsmConfigurationRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

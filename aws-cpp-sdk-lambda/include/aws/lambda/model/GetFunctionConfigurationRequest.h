@@ -41,6 +41,7 @@ namespace Model
 
     void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
+
     /**
      * <p>The name of the Lambda function for which you want to retrieve the
      * configuration information.</p> <p> You can specify a function name (for example,

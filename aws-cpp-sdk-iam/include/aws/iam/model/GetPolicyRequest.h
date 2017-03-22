@@ -32,6 +32,11 @@ namespace Model
     GetPolicyRequest();
     Aws::String SerializePayload() const override;
 
+
+  protected:
+    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+
+  public:
     /**
      * <p>The Amazon Resource Name (ARN) of the managed policy that you want
      * information about.</p> <p>For more information about ARNs, see <a

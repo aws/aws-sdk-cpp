@@ -37,3 +37,8 @@ Aws::String CreateReceiptFilterRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  CreateReceiptFilterRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

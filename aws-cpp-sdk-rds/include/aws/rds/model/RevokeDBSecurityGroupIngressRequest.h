@@ -35,6 +35,11 @@ namespace Model
     RevokeDBSecurityGroupIngressRequest();
     Aws::String SerializePayload() const override;
 
+
+  protected:
+    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+
+  public:
     /**
      * <p>The name of the DB security group to revoke ingress from.</p>
      */

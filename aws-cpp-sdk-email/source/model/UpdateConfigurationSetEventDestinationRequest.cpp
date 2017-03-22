@@ -43,3 +43,8 @@ Aws::String UpdateConfigurationSetEventDestinationRequest::SerializePayload() co
   return ss.str();
 }
 
+
+void  UpdateConfigurationSetEventDestinationRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

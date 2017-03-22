@@ -49,3 +49,8 @@ Aws::String PutIdentityPolicyRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  PutIdentityPolicyRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

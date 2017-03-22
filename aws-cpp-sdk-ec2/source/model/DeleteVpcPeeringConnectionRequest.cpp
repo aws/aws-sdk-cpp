@@ -44,3 +44,8 @@ Aws::String DeleteVpcPeeringConnectionRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  DeleteVpcPeeringConnectionRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

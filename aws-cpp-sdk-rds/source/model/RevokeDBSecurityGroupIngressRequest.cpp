@@ -61,3 +61,8 @@ Aws::String RevokeDBSecurityGroupIngressRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  RevokeDBSecurityGroupIngressRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

@@ -43,3 +43,8 @@ Aws::String CreateVpnConnectionRouteRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  CreateVpnConnectionRouteRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

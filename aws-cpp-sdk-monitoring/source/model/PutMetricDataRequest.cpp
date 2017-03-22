@@ -48,3 +48,8 @@ Aws::String PutMetricDataRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  PutMetricDataRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

@@ -43,3 +43,8 @@ Aws::String DeleteConfigurationSetEventDestinationRequest::SerializePayload() co
   return ss.str();
 }
 
+
+void  DeleteConfigurationSetEventDestinationRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

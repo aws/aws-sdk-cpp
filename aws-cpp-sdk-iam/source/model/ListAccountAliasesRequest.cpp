@@ -44,3 +44,8 @@ Aws::String ListAccountAliasesRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  ListAccountAliasesRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

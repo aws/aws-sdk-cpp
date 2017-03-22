@@ -43,3 +43,8 @@ Aws::String DefineAnalysisSchemeRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  DefineAnalysisSchemeRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

@@ -50,3 +50,8 @@ Aws::String CreateSpotDatafeedSubscriptionRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  CreateSpotDatafeedSubscriptionRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

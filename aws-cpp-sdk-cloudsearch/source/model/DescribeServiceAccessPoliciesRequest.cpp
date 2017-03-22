@@ -44,3 +44,8 @@ Aws::String DescribeServiceAccessPoliciesRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  DescribeServiceAccessPoliciesRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

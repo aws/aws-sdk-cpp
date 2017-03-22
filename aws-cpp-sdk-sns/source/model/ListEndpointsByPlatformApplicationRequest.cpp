@@ -43,3 +43,8 @@ Aws::String ListEndpointsByPlatformApplicationRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  ListEndpointsByPlatformApplicationRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

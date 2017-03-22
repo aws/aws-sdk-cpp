@@ -88,3 +88,8 @@ Aws::String ModifySnapshotAttributeRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  ModifySnapshotAttributeRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

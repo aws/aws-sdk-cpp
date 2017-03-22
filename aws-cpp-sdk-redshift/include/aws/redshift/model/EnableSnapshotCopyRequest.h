@@ -35,6 +35,11 @@ namespace Model
     EnableSnapshotCopyRequest();
     Aws::String SerializePayload() const override;
 
+
+  protected:
+    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+
+  public:
     /**
      * <p>The unique identifier of the source cluster to copy snapshots from.</p>
      * <p>Constraints: Must be the valid name of an existing cluster that does not

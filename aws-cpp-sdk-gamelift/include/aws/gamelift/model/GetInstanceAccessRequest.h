@@ -34,6 +34,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>Unique identifier for a fleet that contains the instance you want access to.
      * The fleet can be in any of the following statuses: <code>ACTIVATING</code>,

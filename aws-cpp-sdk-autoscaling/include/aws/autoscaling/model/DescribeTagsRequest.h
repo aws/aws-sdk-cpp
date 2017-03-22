@@ -37,6 +37,11 @@ namespace Model
     DescribeTagsRequest();
     Aws::String SerializePayload() const override;
 
+
+  protected:
+    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+
+  public:
     /**
      * <p>A filter used to scope the tags to return.</p>
      */

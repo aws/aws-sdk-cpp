@@ -41,6 +41,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The directory ID of the AWS directory for which you are creating the
      * conditional forwarder.</p>

@@ -68,3 +68,8 @@ Aws::String ImportInstanceRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  ImportInstanceRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

@@ -34,6 +34,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * The ARN of the IAM role that Inspector uses to list your EC2 instances during
      * the assessment.

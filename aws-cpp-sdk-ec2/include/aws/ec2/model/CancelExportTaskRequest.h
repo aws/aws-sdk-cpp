@@ -35,6 +35,11 @@ namespace Model
     CancelExportTaskRequest();
     Aws::String SerializePayload() const override;
 
+
+  protected:
+    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+
+  public:
     /**
      * <p>The ID of the export task. This is the ID returned by
      * <code>CreateInstanceExportTask</code>.</p>

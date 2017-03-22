@@ -35,6 +35,11 @@ namespace Model
     DownloadDBLogFilePortionRequest();
     Aws::String SerializePayload() const override;
 
+
+  protected:
+    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+
+  public:
     /**
      * <p>The customer-assigned name of the DB instance that contains the log files you
      * want to list.</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63

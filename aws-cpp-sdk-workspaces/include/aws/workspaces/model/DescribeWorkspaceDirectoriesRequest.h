@@ -39,6 +39,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>An array of strings that contains the directory identifiers to retrieve
      * information for. If this member is null, all directories are retrieved.</p>

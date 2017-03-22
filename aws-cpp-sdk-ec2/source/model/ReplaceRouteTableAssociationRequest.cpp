@@ -50,3 +50,8 @@ Aws::String ReplaceRouteTableAssociationRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  ReplaceRouteTableAssociationRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

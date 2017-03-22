@@ -37,3 +37,8 @@ Aws::String PurgeQueueRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  PurgeQueueRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

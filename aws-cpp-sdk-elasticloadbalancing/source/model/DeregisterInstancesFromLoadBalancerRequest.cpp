@@ -48,3 +48,8 @@ Aws::String DeregisterInstancesFromLoadBalancerRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  DeregisterInstancesFromLoadBalancerRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

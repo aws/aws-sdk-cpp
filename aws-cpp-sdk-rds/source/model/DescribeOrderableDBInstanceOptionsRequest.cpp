@@ -86,3 +86,8 @@ Aws::String DescribeOrderableDBInstanceOptionsRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  DescribeOrderableDBInstanceOptionsRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

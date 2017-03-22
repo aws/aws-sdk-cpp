@@ -55,3 +55,8 @@ Aws::String CreateCacheSubnetGroupRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  CreateCacheSubnetGroupRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

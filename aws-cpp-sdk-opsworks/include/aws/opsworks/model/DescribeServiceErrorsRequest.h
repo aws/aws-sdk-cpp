@@ -35,6 +35,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The stack ID. If you use this parameter, <code>DescribeServiceErrors</code>
      * returns descriptions of the errors associated with the specified stack.</p>

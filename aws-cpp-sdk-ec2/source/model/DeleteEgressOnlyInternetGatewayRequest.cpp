@@ -44,3 +44,8 @@ Aws::String DeleteEgressOnlyInternetGatewayRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  DeleteEgressOnlyInternetGatewayRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

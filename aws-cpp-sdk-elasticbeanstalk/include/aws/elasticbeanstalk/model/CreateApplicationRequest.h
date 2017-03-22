@@ -36,6 +36,11 @@ namespace Model
     CreateApplicationRequest();
     Aws::String SerializePayload() const override;
 
+
+  protected:
+    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+
+  public:
     /**
      * <p>The name of the application.</p> <p>Constraint: This name must be unique
      * within your account. If the specified name already exists, the action returns an

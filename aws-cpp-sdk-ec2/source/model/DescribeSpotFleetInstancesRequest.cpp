@@ -57,3 +57,8 @@ Aws::String DescribeSpotFleetInstancesRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  DescribeSpotFleetInstancesRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

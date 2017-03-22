@@ -43,3 +43,8 @@ Aws::String RemovePermissionRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  RemovePermissionRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

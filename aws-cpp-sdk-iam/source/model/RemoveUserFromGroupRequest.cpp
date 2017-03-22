@@ -43,3 +43,8 @@ Aws::String RemoveUserFromGroupRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  RemoveUserFromGroupRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

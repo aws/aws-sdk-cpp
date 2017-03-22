@@ -43,3 +43,8 @@ Aws::String AddClientIDToOpenIDConnectProviderRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  AddClientIDToOpenIDConnectProviderRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

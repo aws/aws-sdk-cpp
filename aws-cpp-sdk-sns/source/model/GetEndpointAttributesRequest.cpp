@@ -37,3 +37,8 @@ Aws::String GetEndpointAttributesRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  GetEndpointAttributesRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

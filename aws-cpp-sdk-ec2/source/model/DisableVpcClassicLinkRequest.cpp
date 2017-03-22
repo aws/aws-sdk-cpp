@@ -44,3 +44,8 @@ Aws::String DisableVpcClassicLinkRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  DisableVpcClassicLinkRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

@@ -50,3 +50,8 @@ Aws::String ListGroupsRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  ListGroupsRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

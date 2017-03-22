@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The <code>RuleId</code> of the <code>Rule</code> that you want to update.
      * <code>RuleId</code> is returned by <code>CreateRule</code> and by

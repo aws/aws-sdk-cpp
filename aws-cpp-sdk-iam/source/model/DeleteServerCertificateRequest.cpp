@@ -37,3 +37,8 @@ Aws::String DeleteServerCertificateRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  DeleteServerCertificateRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

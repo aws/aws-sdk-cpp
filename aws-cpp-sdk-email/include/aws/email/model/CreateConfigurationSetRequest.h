@@ -39,6 +39,11 @@ namespace Model
     CreateConfigurationSetRequest();
     Aws::String SerializePayload() const override;
 
+
+  protected:
+    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+
+  public:
     /**
      * <p>A data structure that contains the name of the configuration set.</p>
      */

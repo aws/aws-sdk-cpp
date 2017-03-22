@@ -34,6 +34,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <zonbook> <simpara>The event pattern.</simpara> </zonbook> <xhtml> <p>The event
      * pattern.</p> </xhtml>

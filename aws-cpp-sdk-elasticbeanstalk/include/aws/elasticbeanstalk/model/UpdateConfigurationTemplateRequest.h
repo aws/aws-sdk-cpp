@@ -39,6 +39,11 @@ namespace Model
     UpdateConfigurationTemplateRequest();
     Aws::String SerializePayload() const override;
 
+
+  protected:
+    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+
+  public:
     /**
      * <p>The name of the application associated with the configuration template to
      * update.</p> <p> If no application is found with this name,

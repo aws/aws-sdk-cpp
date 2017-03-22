@@ -36,6 +36,11 @@ namespace Model
     CopySnapshotRequest();
     Aws::String SerializePayload() const override;
 
+
+  protected:
+    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+
+  public:
     /**
      * <p>The name of an existing snapshot from which to make a copy.</p>
      */

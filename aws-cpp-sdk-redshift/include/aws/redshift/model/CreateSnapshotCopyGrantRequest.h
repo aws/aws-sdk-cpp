@@ -38,6 +38,11 @@ namespace Model
     CreateSnapshotCopyGrantRequest();
     Aws::String SerializePayload() const override;
 
+
+  protected:
+    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+
+  public:
     /**
      * <p>The name of the snapshot copy grant. This name must be unique in the region
      * for the AWS account.</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to

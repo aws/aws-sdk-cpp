@@ -39,6 +39,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The name for the replication subnet group. This value is stored as a
      * lowercase string.</p> <p>Constraints: Must contain no more than 255 alphanumeric

@@ -35,6 +35,11 @@ namespace Model
     DescribeTableRestoreStatusRequest();
     Aws::String SerializePayload() const override;
 
+
+  protected:
+    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+
+  public:
     /**
      * <p>The Amazon Redshift cluster that the table is being restored to.</p>
      */

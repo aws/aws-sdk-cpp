@@ -38,6 +38,11 @@ namespace Model
     ModifyInstancePlacementRequest();
     Aws::String SerializePayload() const override;
 
+
+  protected:
+    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+
+  public:
     /**
      * <p>The ID of the instance that you are modifying.</p>
      */

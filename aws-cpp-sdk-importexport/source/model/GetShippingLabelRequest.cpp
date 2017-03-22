@@ -109,3 +109,8 @@ Aws::String GetShippingLabelRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  GetShippingLabelRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

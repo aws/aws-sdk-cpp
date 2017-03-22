@@ -43,3 +43,8 @@ Aws::String DeleteIndexFieldRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  DeleteIndexFieldRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

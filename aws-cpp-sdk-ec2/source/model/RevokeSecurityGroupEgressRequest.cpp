@@ -93,3 +93,8 @@ Aws::String RevokeSecurityGroupEgressRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  RevokeSecurityGroupEgressRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

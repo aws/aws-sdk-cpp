@@ -75,3 +75,8 @@ Aws::String AssociateAddressRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  AssociateAddressRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

@@ -36,6 +36,11 @@ namespace Model
     DeleteCacheClusterRequest();
     Aws::String SerializePayload() const override;
 
+
+  protected:
+    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+
+  public:
     /**
      * <p>The cache cluster identifier for the cluster to be deleted. This parameter is
      * not case sensitive.</p>

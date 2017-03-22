@@ -43,3 +43,8 @@ Aws::String DescribeIdentityIdFormatRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  DescribeIdentityIdFormatRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

@@ -35,6 +35,11 @@ namespace Model
     CreateNatGatewayRequest();
     Aws::String SerializePayload() const override;
 
+
+  protected:
+    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+
+  public:
     /**
      * <p>The subnet in which to create the NAT gateway.</p>
      */

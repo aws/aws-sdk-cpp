@@ -36,6 +36,7 @@ namespace Model
     GetHealthCheckCountRequest();
     Aws::String SerializePayload() const override;
 
+
   };
 
 } // namespace Model

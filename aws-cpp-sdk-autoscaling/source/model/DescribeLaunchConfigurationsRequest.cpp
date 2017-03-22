@@ -56,3 +56,8 @@ Aws::String DescribeLaunchConfigurationsRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  DescribeLaunchConfigurationsRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

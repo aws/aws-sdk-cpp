@@ -56,3 +56,8 @@ Aws::String CreateInstanceExportTaskRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  CreateInstanceExportTaskRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

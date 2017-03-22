@@ -38,6 +38,7 @@ namespace Model
     UpdateDocumentationVersionRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p>[Required] The identifier of an API of the to-be-updated documentation
      * version.</p>

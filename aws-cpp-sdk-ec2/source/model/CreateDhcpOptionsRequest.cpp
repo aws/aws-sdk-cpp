@@ -49,3 +49,8 @@ Aws::String CreateDhcpOptionsRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  CreateDhcpOptionsRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

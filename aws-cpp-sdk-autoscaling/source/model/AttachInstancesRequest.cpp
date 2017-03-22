@@ -49,3 +49,8 @@ Aws::String AttachInstancesRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  AttachInstancesRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

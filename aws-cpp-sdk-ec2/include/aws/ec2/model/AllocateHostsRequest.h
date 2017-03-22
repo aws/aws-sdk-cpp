@@ -36,6 +36,11 @@ namespace Model
     AllocateHostsRequest();
     Aws::String SerializePayload() const override;
 
+
+  protected:
+    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+
+  public:
     /**
      * <p>This is enabled by default. This property allows instances to be
      * automatically placed onto available Dedicated Hosts, when you are launching

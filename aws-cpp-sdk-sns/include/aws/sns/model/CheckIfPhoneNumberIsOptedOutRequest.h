@@ -36,6 +36,11 @@ namespace Model
     CheckIfPhoneNumberIsOptedOutRequest();
     Aws::String SerializePayload() const override;
 
+
+  protected:
+    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+
+  public:
     /**
      * <p>The phone number for which you want to check the opt out status.</p>
      */

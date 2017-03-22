@@ -35,6 +35,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>A stack ID. If you use this parameter, <code>DescribeInstances</code> returns
      * descriptions of the instances associated with the specified stack.</p>

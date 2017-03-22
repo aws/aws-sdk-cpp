@@ -35,6 +35,11 @@ namespace Model
     UpdateApplicationVersionRequest();
     Aws::String SerializePayload() const override;
 
+
+  protected:
+    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+
+  public:
     /**
      * <p>The name of the application associated with this version.</p> <p> If no
      * application is found with this name, <code>UpdateApplication</code> returns an

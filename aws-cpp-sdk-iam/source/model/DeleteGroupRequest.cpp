@@ -37,3 +37,8 @@ Aws::String DeleteGroupRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  DeleteGroupRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

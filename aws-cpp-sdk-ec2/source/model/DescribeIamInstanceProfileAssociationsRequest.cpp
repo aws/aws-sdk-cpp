@@ -67,3 +67,8 @@ Aws::String DescribeIamInstanceProfileAssociationsRequest::SerializePayload() co
   return ss.str();
 }
 
+
+void  DescribeIamInstanceProfileAssociationsRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

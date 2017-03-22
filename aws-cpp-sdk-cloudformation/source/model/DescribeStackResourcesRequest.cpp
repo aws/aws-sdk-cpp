@@ -49,3 +49,8 @@ Aws::String DescribeStackResourcesRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  DescribeStackResourcesRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

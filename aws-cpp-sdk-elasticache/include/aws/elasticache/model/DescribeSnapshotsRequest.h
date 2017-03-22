@@ -36,6 +36,11 @@ namespace Model
     DescribeSnapshotsRequest();
     Aws::String SerializePayload() const override;
 
+
+  protected:
+    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+
+  public:
     /**
      * <p>A user-supplied replication group identifier. If this parameter is specified,
      * only snapshots associated with that specific replication group are

@@ -36,6 +36,7 @@ namespace Model
     DisableTopicRuleRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p>The name of the rule to disable.</p>
      */

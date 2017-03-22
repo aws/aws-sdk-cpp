@@ -36,6 +36,11 @@ namespace Model
     DescribeReservedCacheNodesOfferingsRequest();
     Aws::String SerializePayload() const override;
 
+
+  protected:
+    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+
+  public:
     /**
      * <p>The offering identifier filter value. Use this parameter to show only the
      * available offering that matches the specified reservation identifier.</p>

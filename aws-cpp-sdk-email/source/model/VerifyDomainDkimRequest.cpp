@@ -37,3 +37,8 @@ Aws::String VerifyDomainDkimRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  VerifyDomainDkimRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

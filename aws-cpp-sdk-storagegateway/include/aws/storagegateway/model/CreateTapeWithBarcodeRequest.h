@@ -37,6 +37,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The unique Amazon Resource Name (ARN) that represents the gateway to
      * associate the virtual tape with. Use the <a>ListGateways</a> operation to return

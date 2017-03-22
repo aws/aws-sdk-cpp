@@ -37,6 +37,11 @@ namespace Model
     DescribeAutoScalingGroupsRequest();
     Aws::String SerializePayload() const override;
 
+
+  protected:
+    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+
+  public:
     /**
      * <p>The group names. If you omit this parameter, all Auto Scaling groups are
      * described.</p>

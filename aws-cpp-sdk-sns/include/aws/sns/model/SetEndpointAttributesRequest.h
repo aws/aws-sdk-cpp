@@ -36,6 +36,11 @@ namespace Model
     SetEndpointAttributesRequest();
     Aws::String SerializePayload() const override;
 
+
+  protected:
+    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+
+  public:
     /**
      * <p>EndpointArn used for SetEndpointAttributes action.</p>
      */

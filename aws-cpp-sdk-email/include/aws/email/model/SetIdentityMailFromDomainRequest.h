@@ -40,6 +40,11 @@ namespace Model
     SetIdentityMailFromDomainRequest();
     Aws::String SerializePayload() const override;
 
+
+  protected:
+    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+
+  public:
     /**
      * <p>The verified identity for which you want to enable or disable the specified
      * custom MAIL FROM domain.</p>

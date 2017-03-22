@@ -37,6 +37,11 @@ namespace Model
     DescribeOptionGroupsRequest();
     Aws::String SerializePayload() const override;
 
+
+  protected:
+    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+
+  public:
     /**
      * <p>The name of the option group to describe. Cannot be supplied together with
      * EngineName or MajorEngineVersion.</p>

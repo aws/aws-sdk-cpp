@@ -39,6 +39,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The name for the pipeline. You can use the same name for multiple pipelines
      * associated with your AWS account, because AWS Data Pipeline assigns each

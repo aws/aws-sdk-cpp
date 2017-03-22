@@ -34,6 +34,11 @@ namespace Model
     RestoreDBClusterFromS3Request();
     Aws::String SerializePayload() const override;
 
+
+  protected:
+    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+
+  public:
     /**
      * <p>A list of EC2 Availability Zones that instances in the restored DB cluster
      * can be created in.</p>

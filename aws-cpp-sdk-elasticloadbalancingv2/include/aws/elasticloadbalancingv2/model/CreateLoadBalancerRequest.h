@@ -36,6 +36,11 @@ namespace Model
     CreateLoadBalancerRequest();
     Aws::String SerializePayload() const override;
 
+
+  protected:
+    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+
+  public:
     /**
      * <p>The name of the load balancer.</p> <p>This name must be unique within your
      * AWS account, can have a maximum of 32 characters, must contain only alphanumeric

@@ -50,3 +50,8 @@ Aws::String ConfirmProductInstanceRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  ConfirmProductInstanceRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

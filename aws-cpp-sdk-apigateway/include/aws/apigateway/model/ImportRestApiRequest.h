@@ -42,6 +42,7 @@ namespace Model
     ImportRestApiRequest();
     void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
+
     /**
      * <p>A query parameter to indicate whether to rollback the API creation
      * (<code>true</code>) or not (<code>false</code>) when a warning is encountered.

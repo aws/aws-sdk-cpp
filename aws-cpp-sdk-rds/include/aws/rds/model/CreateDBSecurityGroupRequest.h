@@ -37,6 +37,11 @@ namespace Model
     CreateDBSecurityGroupRequest();
     Aws::String SerializePayload() const override;
 
+
+  protected:
+    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+
+  public:
     /**
      * <p>The name for the DB security group. This value is stored as a lowercase
      * string.</p> <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 alphanumeric

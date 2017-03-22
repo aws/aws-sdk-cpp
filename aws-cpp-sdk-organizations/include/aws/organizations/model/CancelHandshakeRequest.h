@@ -34,6 +34,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The unique identifier (ID) of the handshake that you want to cancel. You can
      * get the ID from the <a>ListHandshakesForOrganization</a> operation.</p> <p>The

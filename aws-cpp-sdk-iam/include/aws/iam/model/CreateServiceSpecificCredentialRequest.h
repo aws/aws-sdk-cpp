@@ -32,6 +32,11 @@ namespace Model
     CreateServiceSpecificCredentialRequest();
     Aws::String SerializePayload() const override;
 
+
+  protected:
+    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+
+  public:
     /**
      * <p>The name of the IAM user that is to be associated with the credentials. The
      * new service-specific credentials have the same permissions as the associated

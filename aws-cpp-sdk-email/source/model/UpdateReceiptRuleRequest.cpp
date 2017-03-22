@@ -43,3 +43,8 @@ Aws::String UpdateReceiptRuleRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  UpdateReceiptRuleRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

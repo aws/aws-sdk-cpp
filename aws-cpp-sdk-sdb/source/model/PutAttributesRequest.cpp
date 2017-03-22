@@ -60,3 +60,8 @@ Aws::String PutAttributesRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  PutAttributesRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

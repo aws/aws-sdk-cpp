@@ -43,3 +43,8 @@ Aws::String CreateUserRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  CreateUserRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

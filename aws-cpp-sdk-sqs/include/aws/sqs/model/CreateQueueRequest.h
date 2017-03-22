@@ -37,6 +37,11 @@ namespace Model
     CreateQueueRequest();
     Aws::String SerializePayload() const override;
 
+
+  protected:
+    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+
+  public:
     /**
      * <p>The name of the new queue. The following limits apply to this name:</p> <ul>
      * <li> <p>A queue name can have up to 80 characters.</p> </li> <li> <p>Valid

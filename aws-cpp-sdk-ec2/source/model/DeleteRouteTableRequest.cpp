@@ -44,3 +44,8 @@ Aws::String DeleteRouteTableRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  DeleteRouteTableRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

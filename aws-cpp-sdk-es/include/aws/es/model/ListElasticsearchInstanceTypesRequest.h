@@ -43,6 +43,7 @@ namespace Model
 
     void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
+
     /**
      * <p>Version of Elasticsearch for which list of supported elasticsearch instance
      * types are needed. </p>

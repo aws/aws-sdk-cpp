@@ -48,3 +48,8 @@ Aws::String BatchDeleteAttributesRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  BatchDeleteAttributesRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

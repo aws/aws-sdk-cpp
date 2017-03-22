@@ -33,6 +33,11 @@ namespace Model
     GetContextKeysForCustomPolicyRequest();
     Aws::String SerializePayload() const override;
 
+
+  protected:
+    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+
+  public:
     /**
      * <p>A list of policies for which you want the list of context keys referenced in
      * those policies. Each document is specified as a string containing the complete,

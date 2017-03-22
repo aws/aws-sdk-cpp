@@ -44,3 +44,8 @@ Aws::String DeleteAutoScalingGroupRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  DeleteAutoScalingGroupRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

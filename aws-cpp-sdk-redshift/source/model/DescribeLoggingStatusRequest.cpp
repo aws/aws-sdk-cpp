@@ -37,3 +37,8 @@ Aws::String DescribeLoggingStatusRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  DescribeLoggingStatusRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

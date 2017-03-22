@@ -37,6 +37,11 @@ namespace Model
     ComposeEnvironmentsRequest();
     Aws::String SerializePayload() const override;
 
+
+  protected:
+    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+
+  public:
     /**
      * <p>The name of the application to which the specified source bundles belong.</p>
      */

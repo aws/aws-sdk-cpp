@@ -43,3 +43,8 @@ Aws::String DeleteAlarmsRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  DeleteAlarmsRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

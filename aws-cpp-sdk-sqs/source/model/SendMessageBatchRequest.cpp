@@ -48,3 +48,8 @@ Aws::String SendMessageBatchRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  SendMessageBatchRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

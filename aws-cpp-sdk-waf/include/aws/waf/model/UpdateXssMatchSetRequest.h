@@ -39,6 +39,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The <code>XssMatchSetId</code> of the <code>XssMatchSet</code> that you want
      * to update. <code>XssMatchSetId</code> is returned by <a>CreateXssMatchSet</a>

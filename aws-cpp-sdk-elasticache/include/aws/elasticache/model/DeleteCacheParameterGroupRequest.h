@@ -36,6 +36,11 @@ namespace Model
     DeleteCacheParameterGroupRequest();
     Aws::String SerializePayload() const override;
 
+
+  protected:
+    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+
+  public:
     /**
      * <p>The name of the cache parameter group to delete.</p> <note> <p>The specified
      * cache security group must not be associated with any cache clusters.</p> </note>

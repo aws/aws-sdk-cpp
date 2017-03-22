@@ -38,6 +38,11 @@ namespace Model
     CreateFlowLogsRequest();
     Aws::String SerializePayload() const override;
 
+
+  protected:
+    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+
+  public:
     /**
      * <p>One or more subnet, network interface, or VPC IDs.</p> <p>Constraints:
      * Maximum of 1000 resources</p>

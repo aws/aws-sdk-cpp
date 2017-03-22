@@ -57,3 +57,8 @@ Aws::String ModifyInstancePlacementRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  ModifyInstancePlacementRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

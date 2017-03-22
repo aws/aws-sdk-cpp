@@ -34,6 +34,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The unique identifier (ID) of the member account that you want to remove from
      * the organization.</p> <p>The <a href="http://wikipedia.org/wiki/regex">regex

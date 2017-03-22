@@ -35,6 +35,7 @@ namespace Model
     UnsubscribeFromDatasetRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p>A name-spaced GUID (for example,
      * us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. The

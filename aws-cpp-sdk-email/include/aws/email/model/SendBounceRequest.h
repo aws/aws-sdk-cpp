@@ -39,6 +39,11 @@ namespace Model
     SendBounceRequest();
     Aws::String SerializePayload() const override;
 
+
+  protected:
+    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+
+  public:
     /**
      * <p>The message ID of the message to be bounced.</p>
      */

@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>Optional filters used to narrow down the scope of the returned Maintenance
      * Windows. Supported filter keys are <code>Name</code> and

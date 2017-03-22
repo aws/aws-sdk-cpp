@@ -39,6 +39,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>A unique string value that you supply that is used by file gateway to ensure
      * idempotent file share creation.</p>

@@ -94,3 +94,8 @@ Aws::String UpdateAccountPasswordPolicyRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  UpdateAccountPasswordPolicyRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

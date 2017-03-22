@@ -45,3 +45,8 @@ Aws::String AllocateAddressRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  AllocateAddressRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

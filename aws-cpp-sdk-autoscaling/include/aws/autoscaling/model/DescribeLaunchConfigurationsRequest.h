@@ -37,6 +37,11 @@ namespace Model
     DescribeLaunchConfigurationsRequest();
     Aws::String SerializePayload() const override;
 
+
+  protected:
+    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+
+  public:
     /**
      * <p>The launch configuration names. If you omit this parameter, all launch
      * configurations are described.</p>

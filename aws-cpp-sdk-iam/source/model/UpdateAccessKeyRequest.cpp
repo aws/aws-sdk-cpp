@@ -50,3 +50,8 @@ Aws::String UpdateAccessKeyRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  UpdateAccessKeyRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

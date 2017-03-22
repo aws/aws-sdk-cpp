@@ -43,3 +43,8 @@ Aws::String DeleteEnvironmentConfigurationRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  DeleteEnvironmentConfigurationRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

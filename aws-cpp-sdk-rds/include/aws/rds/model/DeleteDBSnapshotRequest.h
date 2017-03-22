@@ -35,6 +35,11 @@ namespace Model
     DeleteDBSnapshotRequest();
     Aws::String SerializePayload() const override;
 
+
+  protected:
+    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+
+  public:
     /**
      * <p>The DBSnapshot identifier.</p> <p>Constraints: Must be the name of an
      * existing DB snapshot in the <code>available</code> state.</p>

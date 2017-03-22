@@ -37,3 +37,8 @@ Aws::String UnsubscribeRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  UnsubscribeRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

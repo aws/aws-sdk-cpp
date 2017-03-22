@@ -33,6 +33,11 @@ namespace Model
     ReplaceIamInstanceProfileAssociationRequest();
     Aws::String SerializePayload() const override;
 
+
+  protected:
+    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+
+  public:
     /**
      * <p>The IAM instance profile.</p>
      */

@@ -39,6 +39,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>Specifies the ARN of the trail from which tags should be removed. The format
      * of a trail ARN is:</p> <p>

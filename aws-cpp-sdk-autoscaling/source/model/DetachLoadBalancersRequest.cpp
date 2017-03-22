@@ -49,3 +49,8 @@ Aws::String DetachLoadBalancersRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  DetachLoadBalancersRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

@@ -43,3 +43,8 @@ Aws::String GetIdentityMailFromDomainAttributesRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  GetIdentityMailFromDomainAttributesRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

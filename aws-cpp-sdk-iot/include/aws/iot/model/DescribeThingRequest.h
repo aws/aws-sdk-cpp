@@ -35,6 +35,7 @@ namespace Model
     DescribeThingRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p>The name of the thing.</p>
      */

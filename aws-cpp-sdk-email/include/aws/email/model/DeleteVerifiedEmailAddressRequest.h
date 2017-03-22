@@ -37,6 +37,11 @@ namespace Model
     DeleteVerifiedEmailAddressRequest();
     Aws::String SerializePayload() const override;
 
+
+  protected:
+    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+
+  public:
     /**
      * <p>An email address to be removed from the list of verified addresses.</p>
      */

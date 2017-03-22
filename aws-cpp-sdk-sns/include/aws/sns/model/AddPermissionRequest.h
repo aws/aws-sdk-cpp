@@ -33,6 +33,11 @@ namespace Model
     AddPermissionRequest();
     Aws::String SerializePayload() const override;
 
+
+  protected:
+    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+
+  public:
     /**
      * <p>The ARN of the topic whose access control policy you wish to modify.</p>
      */

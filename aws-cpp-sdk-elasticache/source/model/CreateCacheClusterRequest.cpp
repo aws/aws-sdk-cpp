@@ -203,3 +203,8 @@ Aws::String CreateCacheClusterRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  CreateCacheClusterRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

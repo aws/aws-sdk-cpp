@@ -35,6 +35,7 @@ namespace Model
     CreateJobQueueRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p>The name of the job queue.</p>
      */

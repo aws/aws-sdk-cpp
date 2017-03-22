@@ -44,3 +44,8 @@ Aws::String RestoreAddressToClassicRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  RestoreAddressToClassicRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

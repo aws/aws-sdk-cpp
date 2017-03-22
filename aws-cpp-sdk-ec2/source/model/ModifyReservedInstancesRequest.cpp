@@ -60,3 +60,8 @@ Aws::String ModifyReservedInstancesRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  ModifyReservedInstancesRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

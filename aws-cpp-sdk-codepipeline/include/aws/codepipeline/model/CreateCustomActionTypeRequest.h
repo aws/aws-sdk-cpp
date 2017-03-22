@@ -43,6 +43,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The category of the custom action, such as a build action or a test
      * action.</p> <note> <p>Although Source and Approval are listed as valid values,

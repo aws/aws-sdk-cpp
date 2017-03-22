@@ -38,6 +38,7 @@ namespace Model
     UpdatePipelineRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p>The ID of the pipeline that you want to update.</p>
      */

@@ -56,3 +56,8 @@ Aws::String DescribeTableRestoreStatusRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  DescribeTableRestoreStatusRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

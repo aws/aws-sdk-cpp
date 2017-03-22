@@ -37,6 +37,11 @@ namespace Model
     DescribeCertificatesRequest();
     Aws::String SerializePayload() const override;
 
+
+  protected:
+    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+
+  public:
     /**
      * <p>The user-supplied certificate identifier. If this parameter is specified,
      * information for only the identified certificate is returned. This parameter

@@ -50,3 +50,8 @@ Aws::String UpdateSSHPublicKeyRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  UpdateSSHPublicKeyRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

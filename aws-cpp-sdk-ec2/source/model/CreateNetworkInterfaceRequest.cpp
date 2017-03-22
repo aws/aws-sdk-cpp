@@ -104,3 +104,8 @@ Aws::String CreateNetworkInterfaceRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  CreateNetworkInterfaceRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

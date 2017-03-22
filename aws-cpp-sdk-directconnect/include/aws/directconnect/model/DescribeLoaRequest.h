@@ -39,6 +39,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The ID of a connection, LAG, or interconnect for which to get the LOA-CFA
      * information.</p> <p>Example: dxcon-abc123 or dxlag-abc123</p> <p>Default:

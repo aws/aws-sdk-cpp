@@ -35,6 +35,11 @@ namespace Model
     PurchaseReservedNodeOfferingRequest();
     Aws::String SerializePayload() const override;
 
+
+  protected:
+    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+
+  public:
     /**
      * <p>The unique identifier of the reserved node offering you want to purchase.</p>
      */

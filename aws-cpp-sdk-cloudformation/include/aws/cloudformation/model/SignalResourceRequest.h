@@ -36,6 +36,11 @@ namespace Model
     SignalResourceRequest();
     Aws::String SerializePayload() const override;
 
+
+  protected:
+    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+
+  public:
     /**
      * <p>The stack name or unique stack ID that includes the resource that you want to
      * signal.</p>

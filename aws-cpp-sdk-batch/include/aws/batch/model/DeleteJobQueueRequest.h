@@ -32,6 +32,7 @@ namespace Model
     DeleteJobQueueRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p>The short name or full Amazon Resource Name (ARN) of the queue to delete.
      * </p>

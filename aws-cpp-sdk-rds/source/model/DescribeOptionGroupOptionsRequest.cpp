@@ -67,3 +67,8 @@ Aws::String DescribeOptionGroupOptionsRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  DescribeOptionGroupOptionsRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

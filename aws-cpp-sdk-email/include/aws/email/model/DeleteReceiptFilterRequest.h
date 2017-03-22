@@ -38,6 +38,11 @@ namespace Model
     DeleteReceiptFilterRequest();
     Aws::String SerializePayload() const override;
 
+
+  protected:
+    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+
+  public:
     /**
      * <p>The name of the IP address filter to delete.</p>
      */

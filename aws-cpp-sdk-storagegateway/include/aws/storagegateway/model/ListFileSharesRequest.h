@@ -37,6 +37,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The Amazon resource Name (ARN) of the gateway whose file shares you want to
      * list. If this field is not present, all file shares under your account are

@@ -39,6 +39,7 @@ namespace Model
     ChangeTagsForResourceRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p>The type of the resource.</p> <ul> <li> <p>The resource type for health
      * checks is <code>healthcheck</code>.</p> </li> <li> <p>The resource type for

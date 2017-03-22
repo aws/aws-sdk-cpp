@@ -48,3 +48,8 @@ Aws::String DeregisterTargetsRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  DeregisterTargetsRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

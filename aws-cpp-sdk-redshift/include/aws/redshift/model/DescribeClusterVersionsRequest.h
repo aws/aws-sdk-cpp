@@ -35,6 +35,11 @@ namespace Model
     DescribeClusterVersionsRequest();
     Aws::String SerializePayload() const override;
 
+
+  protected:
+    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+
+  public:
     /**
      * <p>The specific cluster version to return.</p> <p>Example: <code>1.0</code> </p>
      */

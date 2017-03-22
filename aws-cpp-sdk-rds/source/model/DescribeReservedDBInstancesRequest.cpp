@@ -98,3 +98,8 @@ Aws::String DescribeReservedDBInstancesRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  DescribeReservedDBInstancesRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

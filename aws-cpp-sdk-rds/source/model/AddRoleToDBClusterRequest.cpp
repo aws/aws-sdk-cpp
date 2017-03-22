@@ -43,3 +43,8 @@ Aws::String AddRoleToDBClusterRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  AddRoleToDBClusterRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

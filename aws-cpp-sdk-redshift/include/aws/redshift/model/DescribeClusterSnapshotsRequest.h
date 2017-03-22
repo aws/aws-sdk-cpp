@@ -37,6 +37,11 @@ namespace Model
     DescribeClusterSnapshotsRequest();
     Aws::String SerializePayload() const override;
 
+
+  protected:
+    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+
+  public:
     /**
      * <p>The identifier of the cluster for which information about snapshots is
      * requested.</p>

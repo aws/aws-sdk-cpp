@@ -90,3 +90,8 @@ Aws::String SendRawEmailRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  SendRawEmailRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

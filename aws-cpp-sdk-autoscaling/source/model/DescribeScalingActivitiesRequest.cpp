@@ -62,3 +62,8 @@ Aws::String DescribeScalingActivitiesRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  DescribeScalingActivitiesRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

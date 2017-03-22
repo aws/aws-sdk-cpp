@@ -61,3 +61,8 @@ Aws::String DescribeRegionsRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  DescribeRegionsRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

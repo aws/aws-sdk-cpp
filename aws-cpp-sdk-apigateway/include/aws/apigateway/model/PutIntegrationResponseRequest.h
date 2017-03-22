@@ -37,6 +37,7 @@ namespace Model
     PutIntegrationResponseRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p>Specifies a put integration response request's API identifier.</p>
      */

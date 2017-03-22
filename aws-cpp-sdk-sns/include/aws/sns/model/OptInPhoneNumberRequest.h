@@ -35,6 +35,11 @@ namespace Model
     OptInPhoneNumberRequest();
     Aws::String SerializePayload() const override;
 
+
+  protected:
+    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+
+  public:
     /**
      * <p>The phone number to opt in.</p>
      */

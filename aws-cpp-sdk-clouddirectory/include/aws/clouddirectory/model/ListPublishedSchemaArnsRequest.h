@@ -32,6 +32,7 @@ namespace Model
     ListPublishedSchemaArnsRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p>The pagination token.</p>
      */

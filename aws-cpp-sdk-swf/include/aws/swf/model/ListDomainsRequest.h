@@ -35,6 +35,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>If a <code>NextPageToken</code> was returned by a previous call, there are
      * more results available. To retrieve the next page of results, make the call

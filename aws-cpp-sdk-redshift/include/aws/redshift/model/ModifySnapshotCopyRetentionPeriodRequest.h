@@ -35,6 +35,11 @@ namespace Model
     ModifySnapshotCopyRetentionPeriodRequest();
     Aws::String SerializePayload() const override;
 
+
+  protected:
+    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+
+  public:
     /**
      * <p>The unique identifier of the cluster for which you want to change the
      * retention period for automated snapshots that are copied to a destination

@@ -48,3 +48,8 @@ Aws::String BatchPutAttributesRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  BatchPutAttributesRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

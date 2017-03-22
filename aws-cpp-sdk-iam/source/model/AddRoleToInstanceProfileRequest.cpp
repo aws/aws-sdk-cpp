@@ -43,3 +43,8 @@ Aws::String AddRoleToInstanceProfileRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  AddRoleToInstanceProfileRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

@@ -35,6 +35,11 @@ namespace Model
     ListChangeSetsRequest();
     Aws::String SerializePayload() const override;
 
+
+  protected:
+    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+
+  public:
     /**
      * <p>The name or the Amazon Resource Name (ARN) of the stack for which you want to
      * list change sets.</p>

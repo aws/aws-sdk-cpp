@@ -43,3 +43,8 @@ Aws::String DisableAlarmActionsRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  DisableAlarmActionsRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

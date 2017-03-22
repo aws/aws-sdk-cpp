@@ -81,3 +81,8 @@ Aws::String DescribeAlarmsForMetricRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  DescribeAlarmsForMetricRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

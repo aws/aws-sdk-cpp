@@ -31,6 +31,11 @@ namespace Model
     UpdateAccountPasswordPolicyRequest();
     Aws::String SerializePayload() const override;
 
+
+  protected:
+    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+
+  public:
     /**
      * <p>The minimum number of characters allowed in an IAM user password.</p>
      * <p>Default value: 6</p>

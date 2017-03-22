@@ -39,6 +39,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>Filters applied to the describe action.</p> <p>Valid filter names:
      * replication-instance-arn | replication-instance-id | replication-instance-class

@@ -61,3 +61,8 @@ Aws::String ModifyClusterIamRolesRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  ModifyClusterIamRolesRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

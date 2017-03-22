@@ -32,6 +32,11 @@ namespace Model
     DeleteOpenIDConnectProviderRequest();
     Aws::String SerializePayload() const override;
 
+
+  protected:
+    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+
+  public:
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM OpenID Connect provider resource
      * object to delete. You can get a list of OpenID Connect provider resource ARNs by

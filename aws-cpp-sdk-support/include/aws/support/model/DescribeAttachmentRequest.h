@@ -34,6 +34,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The ID of the attachment to return. Attachment IDs are returned by the
      * <a>DescribeCommunications</a> operation.</p>

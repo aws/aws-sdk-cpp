@@ -34,6 +34,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>Use this parameter if you receive a <code>NextToken</code> response in a
      * previous request that indicates that there is more output available. Set it to

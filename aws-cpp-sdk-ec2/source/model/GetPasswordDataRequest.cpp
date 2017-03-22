@@ -44,3 +44,8 @@ Aws::String GetPasswordDataRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  GetPasswordDataRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

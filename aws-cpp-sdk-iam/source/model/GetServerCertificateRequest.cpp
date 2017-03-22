@@ -37,3 +37,8 @@ Aws::String GetServerCertificateRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  GetServerCertificateRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

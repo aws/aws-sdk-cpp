@@ -48,3 +48,8 @@ Aws::String DescribeInstanceHealthRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  DescribeInstanceHealthRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

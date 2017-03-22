@@ -144,3 +144,8 @@ Aws::String UpdateStackRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  UpdateStackRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

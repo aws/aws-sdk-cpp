@@ -35,6 +35,11 @@ namespace Model
     ListPlatformApplicationsRequest();
     Aws::String SerializePayload() const override;
 
+
+  protected:
+    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+
+  public:
     /**
      * <p>NextToken string is used when calling ListPlatformApplications action to
      * retrieve additional records that are available after the first page results.</p>

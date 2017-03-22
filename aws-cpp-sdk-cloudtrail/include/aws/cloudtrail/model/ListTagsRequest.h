@@ -38,6 +38,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>Specifies a list of trail ARNs whose tags will be listed. The list has a
      * limit of 20 ARNs. The format of a trail ARN is:</p> <p>

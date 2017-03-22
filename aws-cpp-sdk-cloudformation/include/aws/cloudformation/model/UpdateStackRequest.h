@@ -39,6 +39,11 @@ namespace Model
     UpdateStackRequest();
     Aws::String SerializePayload() const override;
 
+
+  protected:
+    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+
+  public:
     /**
      * <p>The name or unique stack ID of the stack to update.</p>
      */

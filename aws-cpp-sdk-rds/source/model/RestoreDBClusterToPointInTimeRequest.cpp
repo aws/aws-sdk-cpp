@@ -104,3 +104,8 @@ Aws::String RestoreDBClusterToPointInTimeRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  RestoreDBClusterToPointInTimeRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

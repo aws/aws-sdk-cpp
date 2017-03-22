@@ -36,6 +36,11 @@ namespace Model
     DescribeTagsRequest();
     Aws::String SerializePayload() const override;
 
+
+  protected:
+    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+
+  public:
     /**
      * <p>The Amazon Resource Name (ARN) for which you want to describe the tag or
      * tags. For example, <code>arn:aws:redshift:us-east-1:123456789:cluster:t1</code>.

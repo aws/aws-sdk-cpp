@@ -35,6 +35,7 @@ namespace Model
     CreateComputeEnvironmentRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p>The name for your compute environment. Up to 128 letters (uppercase and
      * lowercase), numbers, and underscores are allowed.</p>

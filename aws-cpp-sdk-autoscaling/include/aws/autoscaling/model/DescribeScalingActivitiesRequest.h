@@ -37,6 +37,11 @@ namespace Model
     DescribeScalingActivitiesRequest();
     Aws::String SerializePayload() const override;
 
+
+  protected:
+    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+
+  public:
     /**
      * <p>The activity IDs of the desired scaling activities. If you omit this
      * parameter, all activities for the past six weeks are described. If you specify

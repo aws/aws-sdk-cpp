@@ -34,6 +34,7 @@ namespace Model
     DescribeEndpointRequest();
     Aws::String SerializePayload() const override;
 
+
   };
 
 } // namespace Model

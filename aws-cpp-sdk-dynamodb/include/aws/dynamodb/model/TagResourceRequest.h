@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>Identifies the Amazon DynamoDB resource to which tags should be added. This
      * value is an Amazon Resource Name (ARN).</p>

@@ -43,3 +43,8 @@ Aws::String DescribeDomainsRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  DescribeDomainsRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

@@ -35,6 +35,11 @@ namespace Model
     DeleteDBSubnetGroupRequest();
     Aws::String SerializePayload() const override;
 
+
+  protected:
+    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+
+  public:
     /**
      * <p>The name of the database subnet group to delete.</p> <note> <p>You cannot
      * delete the default subnet group.</p> </note> <p>Constraints:</p> <p>Constraints:

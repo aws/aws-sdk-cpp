@@ -41,6 +41,7 @@ namespace Model
 
     void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
+
     /**
      * <p>The position of the last fetched element in the <a>SdkTypes</a>
      * collection.</p>

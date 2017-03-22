@@ -73,3 +73,8 @@ Aws::String DescribeAddressesRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  DescribeAddressesRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

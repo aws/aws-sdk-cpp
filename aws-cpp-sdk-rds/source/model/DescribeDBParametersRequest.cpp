@@ -67,3 +67,8 @@ Aws::String DescribeDBParametersRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  DescribeDBParametersRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

@@ -42,3 +42,8 @@ Aws::String CreateOrUpdateTagsRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  CreateOrUpdateTagsRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

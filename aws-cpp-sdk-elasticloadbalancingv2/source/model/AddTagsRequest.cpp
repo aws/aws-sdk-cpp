@@ -54,3 +54,8 @@ Aws::String AddTagsRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  AddTagsRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

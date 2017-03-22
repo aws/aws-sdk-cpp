@@ -37,6 +37,7 @@ namespace Model
     CreateEventSourceMappingRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon Kinesis or the Amazon DynamoDB
      * stream that is the event source. Any record added to this stream could cause AWS

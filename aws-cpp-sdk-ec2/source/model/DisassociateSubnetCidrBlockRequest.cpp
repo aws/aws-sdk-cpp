@@ -37,3 +37,8 @@ Aws::String DisassociateSubnetCidrBlockRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  DisassociateSubnetCidrBlockRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

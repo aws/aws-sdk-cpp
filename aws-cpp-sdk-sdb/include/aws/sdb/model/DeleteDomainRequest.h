@@ -32,6 +32,11 @@ namespace Model
     DeleteDomainRequest();
     Aws::String SerializePayload() const override;
 
+
+  protected:
+    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+
+  public:
     /**
      * The name of the domain to delete.
      */

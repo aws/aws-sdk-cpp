@@ -43,3 +43,8 @@ Aws::String UpdateApplicationResourceLifecycleRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  UpdateApplicationResourceLifecycleRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

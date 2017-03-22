@@ -32,6 +32,11 @@ namespace Model
     AssumeRoleWithWebIdentityRequest();
     Aws::String SerializePayload() const override;
 
+
+  protected:
+    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+
+  public:
     /**
      * <p>The Amazon Resource Name (ARN) of the role that the caller is assuming.</p>
      */

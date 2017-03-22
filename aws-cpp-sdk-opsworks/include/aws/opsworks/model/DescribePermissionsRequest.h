@@ -34,6 +34,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The user's IAM ARN. This can also be a federated user's ARN. For more
      * information about IAM ARNs, see <a

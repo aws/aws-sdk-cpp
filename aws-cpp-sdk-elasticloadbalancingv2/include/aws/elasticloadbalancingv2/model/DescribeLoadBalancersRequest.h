@@ -33,6 +33,11 @@ namespace Model
     DescribeLoadBalancersRequest();
     Aws::String SerializePayload() const override;
 
+
+  protected:
+    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+
+  public:
     /**
      * <p>The Amazon Resource Names (ARN) of the load balancers.</p>
      */

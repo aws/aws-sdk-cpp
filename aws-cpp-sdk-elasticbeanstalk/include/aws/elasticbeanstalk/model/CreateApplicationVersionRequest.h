@@ -38,6 +38,11 @@ namespace Model
     CreateApplicationVersionRequest();
     Aws::String SerializePayload() const override;
 
+
+  protected:
+    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+
+  public:
     /**
      * <p> The name of the application. If no application is found with this name, and
      * <code>AutoCreateApplication</code> is <code>false</code>, returns an

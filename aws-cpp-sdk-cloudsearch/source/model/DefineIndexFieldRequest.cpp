@@ -43,3 +43,8 @@ Aws::String DefineIndexFieldRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  DefineIndexFieldRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

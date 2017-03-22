@@ -39,6 +39,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>An array of strings where each string represents the Amazon Resource Name
      * (ARN) of a stored volume. All of the specified stored volumes must from the same

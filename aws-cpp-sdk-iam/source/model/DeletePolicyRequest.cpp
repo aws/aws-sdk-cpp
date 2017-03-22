@@ -37,3 +37,8 @@ Aws::String DeletePolicyRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  DeletePolicyRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

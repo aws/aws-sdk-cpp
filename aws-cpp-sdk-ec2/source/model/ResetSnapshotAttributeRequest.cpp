@@ -51,3 +51,8 @@ Aws::String ResetSnapshotAttributeRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  ResetSnapshotAttributeRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

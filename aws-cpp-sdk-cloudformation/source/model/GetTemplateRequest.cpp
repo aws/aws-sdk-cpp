@@ -50,3 +50,8 @@ Aws::String GetTemplateRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  GetTemplateRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

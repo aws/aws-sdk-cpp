@@ -38,6 +38,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The name of the AWS managed Config rules for which you want status
      * information. If you do not specify any names, AWS Config returns status

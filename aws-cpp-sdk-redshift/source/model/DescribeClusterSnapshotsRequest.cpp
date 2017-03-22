@@ -104,3 +104,8 @@ Aws::String DescribeClusterSnapshotsRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  DescribeClusterSnapshotsRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

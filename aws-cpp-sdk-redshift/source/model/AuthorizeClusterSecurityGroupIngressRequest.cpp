@@ -55,3 +55,8 @@ Aws::String AuthorizeClusterSecurityGroupIngressRequest::SerializePayload() cons
   return ss.str();
 }
 
+
+void  AuthorizeClusterSecurityGroupIngressRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

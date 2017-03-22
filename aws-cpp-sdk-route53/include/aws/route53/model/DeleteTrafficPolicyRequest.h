@@ -36,6 +36,7 @@ namespace Model
     DeleteTrafficPolicyRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p>The ID of the traffic policy that you want to delete.</p>
      */

@@ -36,6 +36,7 @@ namespace Model
     GetStreamingDistributionConfig2016_01_28Request();
     Aws::String SerializePayload() const override;
 
+
     /**
      * The streaming distribution's id.
      */

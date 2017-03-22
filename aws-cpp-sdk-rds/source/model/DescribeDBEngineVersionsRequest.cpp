@@ -94,3 +94,8 @@ Aws::String DescribeDBEngineVersionsRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  DescribeDBEngineVersionsRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

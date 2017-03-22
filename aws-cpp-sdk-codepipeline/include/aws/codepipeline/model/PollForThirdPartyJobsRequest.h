@@ -38,6 +38,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     
     inline const ActionTypeId& GetActionTypeId() const{ return m_actionTypeId; }
 

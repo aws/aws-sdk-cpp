@@ -50,3 +50,8 @@ Aws::String RebootInstancesRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  RebootInstancesRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

@@ -36,6 +36,7 @@ namespace Model
     GetModelTemplateRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p>The ID of the <a>RestApi</a> under which the model exists.</p>
      */

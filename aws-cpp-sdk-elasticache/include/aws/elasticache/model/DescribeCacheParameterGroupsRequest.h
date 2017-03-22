@@ -36,6 +36,11 @@ namespace Model
     DescribeCacheParameterGroupsRequest();
     Aws::String SerializePayload() const override;
 
+
+  protected:
+    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+
+  public:
     /**
      * <p>The name of a specific cache parameter group to return details for.</p>
      */

@@ -37,6 +37,11 @@ namespace Model
     CreateHsmClientCertificateRequest();
     Aws::String SerializePayload() const override;
 
+
+  protected:
+    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+
+  public:
     /**
      * <p>The identifier to be assigned to the new HSM client certificate that the
      * cluster will use to connect to the HSM to use the database encryption keys.</p>

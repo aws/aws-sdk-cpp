@@ -107,3 +107,8 @@ Aws::String PutScalingPolicyRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  PutScalingPolicyRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

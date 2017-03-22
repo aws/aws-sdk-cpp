@@ -43,3 +43,8 @@ Aws::String ListAllowedNodeTypeModificationsRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  ListAllowedNodeTypeModificationsRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

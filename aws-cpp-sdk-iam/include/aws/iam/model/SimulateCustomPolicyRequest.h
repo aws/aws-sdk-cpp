@@ -34,6 +34,11 @@ namespace Model
     SimulateCustomPolicyRequest();
     Aws::String SerializePayload() const override;
 
+
+  protected:
+    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+
+  public:
     /**
      * <p>A list of policy documents to include in the simulation. Each document is
      * specified as a string containing the complete, valid JSON text of an IAM policy.

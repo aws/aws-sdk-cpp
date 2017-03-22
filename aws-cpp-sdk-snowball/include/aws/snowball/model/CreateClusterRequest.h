@@ -39,6 +39,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The type of job for this cluster. Currently, the only job type supported for
      * clusters is <code>LOCAL_USE</code>.</p>

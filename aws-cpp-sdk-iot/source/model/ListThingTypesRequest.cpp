@@ -64,3 +64,4 @@ void ListThingTypesRequest::AddQueryStringParameters(URI& uri) const
 }
 
 
+

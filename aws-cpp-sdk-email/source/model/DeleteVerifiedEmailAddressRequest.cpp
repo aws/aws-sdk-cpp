@@ -37,3 +37,8 @@ Aws::String DeleteVerifiedEmailAddressRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  DeleteVerifiedEmailAddressRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

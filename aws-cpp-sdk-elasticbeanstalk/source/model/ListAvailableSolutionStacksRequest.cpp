@@ -31,3 +31,8 @@ Aws::String ListAvailableSolutionStacksRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  ListAvailableSolutionStacksRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

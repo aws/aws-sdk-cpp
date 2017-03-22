@@ -34,6 +34,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The ID of the HIT associated with the bonus payments to retrieve. If not
      * specified, all bonus payments for all assignments for the given HIT are

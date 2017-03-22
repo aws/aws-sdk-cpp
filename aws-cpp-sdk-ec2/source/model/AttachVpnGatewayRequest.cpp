@@ -50,3 +50,8 @@ Aws::String AttachVpnGatewayRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  AttachVpnGatewayRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

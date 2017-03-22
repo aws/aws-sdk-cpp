@@ -38,6 +38,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>Specifies one or more unique Amazon Resource Names (ARNs) that represent the
      * virtual tapes you want to describe.</p>

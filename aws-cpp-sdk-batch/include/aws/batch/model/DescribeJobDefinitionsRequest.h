@@ -33,6 +33,7 @@ namespace Model
     DescribeJobDefinitionsRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p>A space-separated list of up to 100 job definition names or full Amazon
      * Resource Name (ARN) entries.</p>

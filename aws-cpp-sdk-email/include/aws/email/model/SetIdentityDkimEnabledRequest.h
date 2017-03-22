@@ -38,6 +38,11 @@ namespace Model
     SetIdentityDkimEnabledRequest();
     Aws::String SerializePayload() const override;
 
+
+  protected:
+    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+
+  public:
     /**
      * <p>The identity for which DKIM signing should be enabled or disabled.</p>
      */

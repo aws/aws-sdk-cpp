@@ -41,6 +41,7 @@ namespace Model
     UpdateElasticsearchDomainConfigRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p>The name of the Elasticsearch domain that you are updating. </p>
      */

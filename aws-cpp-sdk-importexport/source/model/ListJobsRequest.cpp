@@ -50,3 +50,8 @@ Aws::String ListJobsRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  ListJobsRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

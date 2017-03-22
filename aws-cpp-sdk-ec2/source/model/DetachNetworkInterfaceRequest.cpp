@@ -51,3 +51,8 @@ Aws::String DetachNetworkInterfaceRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  DetachNetworkInterfaceRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

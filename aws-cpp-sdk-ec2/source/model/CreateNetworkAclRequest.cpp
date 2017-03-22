@@ -44,3 +44,8 @@ Aws::String CreateNetworkAclRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  CreateNetworkAclRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

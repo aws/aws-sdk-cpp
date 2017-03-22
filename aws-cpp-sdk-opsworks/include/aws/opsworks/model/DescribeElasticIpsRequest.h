@@ -35,6 +35,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The instance ID. If you include this parameter,
      * <code>DescribeElasticIps</code> returns a description of the Elastic IP

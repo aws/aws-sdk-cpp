@@ -38,6 +38,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The Directory ID for which to get the list of associated SNS topics. If this
      * member is null, associations for all Directory IDs are returned.</p>

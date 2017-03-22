@@ -50,3 +50,8 @@ Aws::String ResetNetworkInterfaceAttributeRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  ResetNetworkInterfaceAttributeRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

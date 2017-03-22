@@ -35,6 +35,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>Specifies the ID of a cluster. The instance group to which the automatic
      * scaling policy is applied is within this cluster.</p>

@@ -39,6 +39,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The types of AWS resources for which you want compliance information; for
      * example, <code>AWS::EC2::Instance</code>. For this action, you can specify that

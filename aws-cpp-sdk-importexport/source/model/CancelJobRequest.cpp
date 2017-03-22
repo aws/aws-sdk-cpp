@@ -43,3 +43,8 @@ Aws::String CancelJobRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  CancelJobRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

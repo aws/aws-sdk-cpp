@@ -50,3 +50,8 @@ Aws::String BundleInstanceRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  BundleInstanceRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

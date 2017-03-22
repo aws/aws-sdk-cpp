@@ -44,3 +44,8 @@ Aws::String DeleteCustomerGatewayRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  DeleteCustomerGatewayRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

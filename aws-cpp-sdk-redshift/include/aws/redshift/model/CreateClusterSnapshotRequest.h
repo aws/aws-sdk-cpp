@@ -37,6 +37,11 @@ namespace Model
     CreateClusterSnapshotRequest();
     Aws::String SerializePayload() const override;
 
+
+  protected:
+    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+
+  public:
     /**
      * <p>A unique identifier for the snapshot that you are requesting. This identifier
      * must be unique for all snapshots within the AWS account.</p> <p>Constraints:</p>

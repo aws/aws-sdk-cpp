@@ -37,6 +37,7 @@ namespace Model
     CreateTrafficPolicyInstanceRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p>The ID of the hosted zone in which you want Amazon Route 53 to create
      * resource record sets by using the configuration in a traffic policy.</p>

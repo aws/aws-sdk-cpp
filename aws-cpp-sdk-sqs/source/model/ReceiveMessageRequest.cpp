@@ -88,3 +88,8 @@ Aws::String ReceiveMessageRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  ReceiveMessageRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

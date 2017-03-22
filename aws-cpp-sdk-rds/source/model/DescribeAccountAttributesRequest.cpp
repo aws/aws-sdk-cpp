@@ -31,3 +31,8 @@ Aws::String DescribeAccountAttributesRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  DescribeAccountAttributesRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

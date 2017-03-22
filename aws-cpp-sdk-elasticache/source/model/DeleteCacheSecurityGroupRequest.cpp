@@ -37,3 +37,8 @@ Aws::String DeleteCacheSecurityGroupRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  DeleteCacheSecurityGroupRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

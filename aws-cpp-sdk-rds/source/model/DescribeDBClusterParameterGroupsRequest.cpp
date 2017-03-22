@@ -61,3 +61,8 @@ Aws::String DescribeDBClusterParameterGroupsRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  DescribeDBClusterParameterGroupsRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

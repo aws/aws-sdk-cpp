@@ -35,6 +35,11 @@ namespace Model
     CreateTopicRequest();
     Aws::String SerializePayload() const override;
 
+
+  protected:
+    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+
+  public:
     /**
      * <p>The name of the topic you want to create.</p> <p>Constraints: Topic names
      * must be made up of only uppercase and lowercase ASCII letters, numbers,

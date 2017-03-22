@@ -49,6 +49,7 @@ namespace Model
 
     void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
+
     /**
      * <p>The code for the continent with which you want to start listing locations
      * that Amazon Route 53 supports for geolocation. If Amazon Route 53 has already

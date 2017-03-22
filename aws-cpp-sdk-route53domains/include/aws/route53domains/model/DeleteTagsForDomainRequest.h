@@ -39,6 +39,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The domain for which you want to delete one or more tags.</p> <p>The name of
      * a domain.</p> <p>Type: String</p> <p>Default: None</p> <p>Constraints: The

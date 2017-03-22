@@ -31,3 +31,8 @@ Aws::String GetAccountSummaryRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  GetAccountSummaryRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

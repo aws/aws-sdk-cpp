@@ -168,3 +168,8 @@ Aws::String RestoreDBInstanceFromDBSnapshotRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  RestoreDBInstanceFromDBSnapshotRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

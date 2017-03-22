@@ -37,6 +37,11 @@ namespace Model
     RetrieveEnvironmentInfoRequest();
     Aws::String SerializePayload() const override;
 
+
+  protected:
+    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+
+  public:
     /**
      * <p>The ID of the data's environment.</p> <p>If no such environment is found,
      * returns an <code>InvalidParameterValue</code> error.</p> <p>Condition: You must

@@ -43,3 +43,8 @@ Aws::String GetIdentityNotificationAttributesRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  GetIdentityNotificationAttributesRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

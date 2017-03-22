@@ -49,3 +49,8 @@ Aws::String UpdateOpenIDConnectProviderThumbprintRequest::SerializePayload() con
   return ss.str();
 }
 
+
+void  UpdateOpenIDConnectProviderThumbprintRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

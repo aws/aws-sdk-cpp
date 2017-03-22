@@ -43,3 +43,8 @@ Aws::String AddUserToGroupRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  AddUserToGroupRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

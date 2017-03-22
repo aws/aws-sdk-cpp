@@ -37,6 +37,11 @@ namespace Model
     AddTagsRequest();
     Aws::String SerializePayload() const override;
 
+
+  protected:
+    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+
+  public:
     /**
      * <p>The name of the load balancer. You can specify one load balancer only.</p>
      */

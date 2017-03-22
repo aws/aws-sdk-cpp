@@ -92,3 +92,8 @@ Aws::String ReplaceRouteRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  ReplaceRouteRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

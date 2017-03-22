@@ -32,6 +32,11 @@ namespace Model
     ListRolesRequest();
     Aws::String SerializePayload() const override;
 
+
+  protected:
+    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+
+  public:
     /**
      * <p> The path prefix for filtering the results. For example, the prefix
      * <code>/application_abc/component_xyz/</code> gets all roles whose path starts

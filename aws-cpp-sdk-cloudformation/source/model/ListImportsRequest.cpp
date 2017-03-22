@@ -43,3 +43,8 @@ Aws::String ListImportsRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  ListImportsRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

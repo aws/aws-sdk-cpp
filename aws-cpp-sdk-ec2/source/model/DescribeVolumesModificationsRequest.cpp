@@ -74,3 +74,8 @@ Aws::String DescribeVolumesModificationsRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  DescribeVolumesModificationsRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

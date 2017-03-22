@@ -44,3 +44,8 @@ Aws::String AssociateVpcCidrBlockRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  AssociateVpcCidrBlockRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

@@ -38,6 +38,7 @@ namespace Model
     RemoveTagsRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p>Specifies the <code>ARN</code> for the Elasticsearch domain from which you
      * want to delete the specified tags.</p>

@@ -37,3 +37,8 @@ Aws::String ListDeadLetterSourceQueuesRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  ListDeadLetterSourceQueuesRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

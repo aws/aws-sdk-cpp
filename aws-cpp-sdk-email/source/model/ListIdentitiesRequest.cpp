@@ -51,3 +51,8 @@ Aws::String ListIdentitiesRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  ListIdentitiesRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

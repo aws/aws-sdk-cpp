@@ -45,6 +45,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>Your gateway activation key. You can obtain the activation key by sending an
      * HTTP GET request with redirects enabled to the gateway IP address (port 80). The

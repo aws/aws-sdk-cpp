@@ -37,3 +37,8 @@ Aws::String DomainMetadataRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  DomainMetadataRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

@@ -43,3 +43,8 @@ Aws::String ListSubscriptionsByTopicRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  ListSubscriptionsByTopicRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

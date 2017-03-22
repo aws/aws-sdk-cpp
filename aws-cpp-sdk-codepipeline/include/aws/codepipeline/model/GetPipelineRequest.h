@@ -37,6 +37,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The name of the pipeline for which you want to get information. Pipeline
      * names must be unique under an Amazon Web Services (AWS) user account.</p>

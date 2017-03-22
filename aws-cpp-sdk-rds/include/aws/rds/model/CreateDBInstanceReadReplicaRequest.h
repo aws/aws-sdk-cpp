@@ -34,6 +34,11 @@ namespace Model
     CreateDBInstanceReadReplicaRequest();
     Aws::String SerializePayload() const override;
 
+
+  protected:
+    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+
+  public:
     /**
      * <p>The DB instance identifier of the Read Replica. This identifier is the unique
      * key that identifies a DB instance. This parameter is stored as a lowercase

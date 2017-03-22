@@ -36,6 +36,11 @@ namespace Model
     ListTagsForResourceRequest();
     Aws::String SerializePayload() const override;
 
+
+  protected:
+    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+
+  public:
     /**
      * <p>The Amazon Resource Name (ARN) of the resource for which you want the list of
      * tags, for example

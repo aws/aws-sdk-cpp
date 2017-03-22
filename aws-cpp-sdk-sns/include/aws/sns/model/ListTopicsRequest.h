@@ -32,6 +32,11 @@ namespace Model
     ListTopicsRequest();
     Aws::String SerializePayload() const override;
 
+
+  protected:
+    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+
+  public:
     /**
      * <p>Token returned by the previous <code>ListTopics</code> request.</p>
      */

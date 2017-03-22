@@ -37,3 +37,8 @@ Aws::String CheckDNSAvailabilityRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  CheckDNSAvailabilityRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

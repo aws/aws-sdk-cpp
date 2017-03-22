@@ -50,3 +50,8 @@ Aws::String CancelSpotInstanceRequestsRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  CancelSpotInstanceRequestsRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

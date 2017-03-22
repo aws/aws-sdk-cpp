@@ -80,3 +80,8 @@ Aws::String PublishRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  PublishRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

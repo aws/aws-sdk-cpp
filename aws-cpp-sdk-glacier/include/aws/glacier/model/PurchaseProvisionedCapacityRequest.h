@@ -32,6 +32,7 @@ namespace Model
     PurchaseProvisionedCapacityRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p>The AWS account ID of the account that owns the vault. You can either specify
      * an AWS account ID or optionally a single '-' (hyphen), in which case Amazon

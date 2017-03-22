@@ -37,6 +37,11 @@ namespace Model
     CopyDBSnapshotRequest();
     Aws::String SerializePayload() const override;
 
+
+  protected:
+    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+
+  public:
     /**
      * <p>The identifier for the source DB snapshot.</p> <p>If you are copying from a
      * shared manual DB snapshot, this must be the ARN of the shared DB snapshot.</p>

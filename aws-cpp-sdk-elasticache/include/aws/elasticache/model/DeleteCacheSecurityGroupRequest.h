@@ -36,6 +36,11 @@ namespace Model
     DeleteCacheSecurityGroupRequest();
     Aws::String SerializePayload() const override;
 
+
+  protected:
+    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+
+  public:
     /**
      * <p>The name of the cache security group to delete.</p> <note> <p>You cannot
      * delete the default security group.</p> </note>

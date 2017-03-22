@@ -34,6 +34,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>A friendly name or description of the <a>ByteMatchSet</a>. You can't change
      * <code>Name</code> after you create a <code>ByteMatchSet</code>.</p>

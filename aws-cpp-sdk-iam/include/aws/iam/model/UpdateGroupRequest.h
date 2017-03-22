@@ -32,6 +32,11 @@ namespace Model
     UpdateGroupRequest();
     Aws::String SerializePayload() const override;
 
+
+  protected:
+    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+
+  public:
     /**
      * <p>Name of the IAM group to update. If you're changing the name of the group,
      * this is the original name.</p> <p>This parameter allows (per its <a

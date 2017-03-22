@@ -38,6 +38,7 @@ namespace Model
 
     void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
+
     /**
      * <p>Lambda function name for which the alias is created.</p>
      */

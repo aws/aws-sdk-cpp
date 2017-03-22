@@ -75,3 +75,8 @@ Aws::String CreateFlowLogsRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  CreateFlowLogsRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

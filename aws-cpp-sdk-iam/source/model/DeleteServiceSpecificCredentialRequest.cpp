@@ -43,3 +43,8 @@ Aws::String DeleteServiceSpecificCredentialRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  DeleteServiceSpecificCredentialRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

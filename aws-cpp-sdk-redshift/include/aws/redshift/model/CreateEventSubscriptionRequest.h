@@ -37,6 +37,11 @@ namespace Model
     CreateEventSubscriptionRequest();
     Aws::String SerializePayload() const override;
 
+
+  protected:
+    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+
+  public:
     /**
      * <p>The name of the event subscription to be created.</p> <p>Constraints:</p>
      * <ul> <li> <p>Cannot be null, empty, or blank.</p> </li> <li> <p>Must contain

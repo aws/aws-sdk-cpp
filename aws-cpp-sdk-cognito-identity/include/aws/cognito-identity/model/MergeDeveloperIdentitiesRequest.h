@@ -38,6 +38,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>User identifier for the source user. The value should be a
      * <code>DeveloperUserIdentifier</code>.</p>

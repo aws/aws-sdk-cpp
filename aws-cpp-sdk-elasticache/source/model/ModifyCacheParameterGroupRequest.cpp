@@ -48,3 +48,8 @@ Aws::String ModifyCacheParameterGroupRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  ModifyCacheParameterGroupRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

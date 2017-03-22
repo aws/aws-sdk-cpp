@@ -37,6 +37,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The unique Amazon Resource Name (ARN) of the gateway that the virtual tape to
      * delete is associated with. Use the <a>ListGateways</a> operation to return a

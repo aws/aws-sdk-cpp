@@ -34,6 +34,11 @@ namespace Model
     ListPlatformVersionsRequest();
     Aws::String SerializePayload() const override;
 
+
+  protected:
+    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+
+  public:
     /**
      * <p>List only the platforms where the platform member value relates to one of the
      * supplied values.</p>

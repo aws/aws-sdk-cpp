@@ -43,3 +43,8 @@ Aws::String ResetServiceSpecificCredentialRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  ResetServiceSpecificCredentialRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

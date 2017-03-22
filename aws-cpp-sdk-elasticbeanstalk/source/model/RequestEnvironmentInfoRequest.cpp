@@ -50,3 +50,8 @@ Aws::String RequestEnvironmentInfoRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  RequestEnvironmentInfoRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

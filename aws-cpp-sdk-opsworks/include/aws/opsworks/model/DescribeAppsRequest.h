@@ -35,6 +35,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The app stack ID. If you use this parameter, <code>DescribeApps</code>
      * returns a description of the apps in the specified stack.</p>

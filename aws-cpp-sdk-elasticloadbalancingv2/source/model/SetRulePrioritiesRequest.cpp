@@ -42,3 +42,8 @@ Aws::String SetRulePrioritiesRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  SetRulePrioritiesRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

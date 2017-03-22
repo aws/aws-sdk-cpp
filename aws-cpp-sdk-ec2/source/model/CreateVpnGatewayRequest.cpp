@@ -51,3 +51,8 @@ Aws::String CreateVpnGatewayRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  CreateVpnGatewayRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

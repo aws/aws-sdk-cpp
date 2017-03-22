@@ -37,6 +37,11 @@ namespace Model
     SetPlatformApplicationAttributesRequest();
     Aws::String SerializePayload() const override;
 
+
+  protected:
+    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+
+  public:
     /**
      * <p>PlatformApplicationArn for SetPlatformApplicationAttributes action.</p>
      */

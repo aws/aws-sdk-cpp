@@ -34,6 +34,11 @@ namespace Model
     GetAccountAuthorizationDetailsRequest();
     Aws::String SerializePayload() const override;
 
+
+  protected:
+    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+
+  public:
     /**
      * <p>A list of entity types used to filter the results. Only the entities that
      * match the types you specify are included in the output. Use the value

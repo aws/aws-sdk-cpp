@@ -37,6 +37,11 @@ namespace Model
     ContinueUpdateRollbackRequest();
     Aws::String SerializePayload() const override;
 
+
+  protected:
+    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+
+  public:
     /**
      * <p>The name or the unique ID of the stack that you want to continue rolling
      * back.</p> <note> <p>Don't specify the name of a nested stack (a stack that was

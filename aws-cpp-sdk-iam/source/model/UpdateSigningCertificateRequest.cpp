@@ -50,3 +50,8 @@ Aws::String UpdateSigningCertificateRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  UpdateSigningCertificateRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

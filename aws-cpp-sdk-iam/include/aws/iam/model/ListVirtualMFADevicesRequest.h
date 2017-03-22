@@ -33,6 +33,11 @@ namespace Model
     ListVirtualMFADevicesRequest();
     Aws::String SerializePayload() const override;
 
+
+  protected:
+    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+
+  public:
     /**
      * <p> The status (<code>Unassigned</code> or <code>Assigned</code>) of the devices
      * to list. If you do not specify an <code>AssignmentStatus</code>, the action

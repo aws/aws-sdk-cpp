@@ -36,6 +36,7 @@ namespace Model
     DescribeCACertificateRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p>The CA certificate identifier.</p>
      */

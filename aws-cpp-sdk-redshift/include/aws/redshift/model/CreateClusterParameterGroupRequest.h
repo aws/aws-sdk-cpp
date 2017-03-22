@@ -37,6 +37,11 @@ namespace Model
     CreateClusterParameterGroupRequest();
     Aws::String SerializePayload() const override;
 
+
+  protected:
+    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+
+  public:
     /**
      * <p>The name of the cluster parameter group.</p> <p>Constraints:</p> <ul> <li>
      * <p>Must be 1 to 255 alphanumeric characters or hyphens</p> </li> <li> <p>First

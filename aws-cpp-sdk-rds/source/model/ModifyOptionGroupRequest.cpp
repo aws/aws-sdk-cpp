@@ -67,3 +67,8 @@ Aws::String ModifyOptionGroupRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  ModifyOptionGroupRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

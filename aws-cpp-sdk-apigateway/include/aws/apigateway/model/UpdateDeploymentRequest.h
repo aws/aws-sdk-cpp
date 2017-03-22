@@ -38,6 +38,7 @@ namespace Model
     UpdateDeploymentRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p>The replacement identifier of the <a>RestApi</a> resource for the
      * <a>Deployment</a> resource to change information about.</p>

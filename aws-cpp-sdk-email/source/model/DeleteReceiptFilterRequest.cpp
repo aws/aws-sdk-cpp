@@ -37,3 +37,8 @@ Aws::String DeleteReceiptFilterRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  DeleteReceiptFilterRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

@@ -86,3 +86,8 @@ Aws::String ModifyEventSubscriptionRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  ModifyEventSubscriptionRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

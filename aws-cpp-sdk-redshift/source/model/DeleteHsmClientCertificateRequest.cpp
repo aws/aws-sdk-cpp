@@ -37,3 +37,8 @@ Aws::String DeleteHsmClientCertificateRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  DeleteHsmClientCertificateRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

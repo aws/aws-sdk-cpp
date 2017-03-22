@@ -37,3 +37,8 @@ Aws::String DeleteDBSubnetGroupRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  DeleteDBSubnetGroupRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

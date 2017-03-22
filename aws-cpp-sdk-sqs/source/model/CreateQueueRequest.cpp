@@ -51,3 +51,8 @@ Aws::String CreateQueueRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  CreateQueueRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

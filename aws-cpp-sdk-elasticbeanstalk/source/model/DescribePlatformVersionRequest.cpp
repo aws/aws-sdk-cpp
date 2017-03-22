@@ -37,3 +37,8 @@ Aws::String DescribePlatformVersionRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  DescribePlatformVersionRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

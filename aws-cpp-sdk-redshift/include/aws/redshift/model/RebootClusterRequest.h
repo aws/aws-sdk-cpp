@@ -35,6 +35,11 @@ namespace Model
     RebootClusterRequest();
     Aws::String SerializePayload() const override;
 
+
+  protected:
+    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+
+  public:
     /**
      * <p>The cluster identifier.</p>
      */

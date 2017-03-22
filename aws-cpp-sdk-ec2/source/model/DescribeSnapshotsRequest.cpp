@@ -98,3 +98,8 @@ Aws::String DescribeSnapshotsRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  DescribeSnapshotsRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

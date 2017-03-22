@@ -57,3 +57,8 @@ Aws::String TerminateEnvironmentRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  TerminateEnvironmentRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

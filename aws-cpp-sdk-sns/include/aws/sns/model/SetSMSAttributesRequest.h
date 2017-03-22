@@ -36,6 +36,11 @@ namespace Model
     SetSMSAttributesRequest();
     Aws::String SerializePayload() const override;
 
+
+  protected:
+    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+
+  public:
     /**
      * <p>The default settings for sending SMS messages from your account. You can set
      * values for the following attribute names:</p> <p> <code>MonthlySpendLimit</code>

@@ -56,3 +56,8 @@ Aws::String DownloadDBLogFilePortionRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  DownloadDBLogFilePortionRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

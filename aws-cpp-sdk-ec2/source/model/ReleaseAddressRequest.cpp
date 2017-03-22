@@ -50,3 +50,8 @@ Aws::String ReleaseAddressRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  ReleaseAddressRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

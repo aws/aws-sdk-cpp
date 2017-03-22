@@ -47,6 +47,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The application name corresponding to the deployment group to update.</p>
      */

@@ -36,6 +36,7 @@ namespace Model
     UpdateThingRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p>The name of the thing to update.</p>
      */

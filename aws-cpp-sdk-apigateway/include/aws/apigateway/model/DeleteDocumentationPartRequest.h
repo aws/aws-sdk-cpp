@@ -36,6 +36,7 @@ namespace Model
     DeleteDocumentationPartRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p>[Required] Specifies the identifier of an API of the to-be-deleted
      * documentation part.</p>

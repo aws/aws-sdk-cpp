@@ -44,3 +44,8 @@ Aws::String DeregisterImageRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  DeregisterImageRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

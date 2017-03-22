@@ -149,3 +149,8 @@ Aws::String ModifyReplicationGroupRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  ModifyReplicationGroupRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

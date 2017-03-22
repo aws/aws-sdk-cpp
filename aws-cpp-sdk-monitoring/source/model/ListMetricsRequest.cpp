@@ -60,3 +60,8 @@ Aws::String ListMetricsRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  ListMetricsRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

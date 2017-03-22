@@ -35,6 +35,11 @@ namespace Model
     UpdateApplicationRequest();
     Aws::String SerializePayload() const override;
 
+
+  protected:
+    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+
+  public:
     /**
      * <p>The name of the application to update. If no such application is found,
      * <code>UpdateApplication</code> returns an <code>InvalidParameterValue</code>

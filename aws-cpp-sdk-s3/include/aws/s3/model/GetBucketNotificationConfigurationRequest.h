@@ -32,6 +32,7 @@ namespace Model
     GetBucketNotificationConfigurationRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * Name of the bucket to get the notification configuration for.
      */

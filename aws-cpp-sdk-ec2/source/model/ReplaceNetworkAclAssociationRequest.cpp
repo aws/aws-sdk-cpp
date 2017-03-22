@@ -50,3 +50,8 @@ Aws::String ReplaceNetworkAclAssociationRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  ReplaceNetworkAclAssociationRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

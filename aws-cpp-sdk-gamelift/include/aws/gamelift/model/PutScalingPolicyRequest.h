@@ -40,6 +40,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>Descriptive label that is associated with a scaling policy. Policy names do
      * not need to be unique. A fleet can have only one scaling policy with the same

@@ -36,6 +36,11 @@ namespace Model
     CreateJobRequest();
     Aws::String SerializePayload() const override;
 
+
+  protected:
+    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+
+  public:
     
     inline const JobType& GetJobType() const{ return m_jobType; }
 

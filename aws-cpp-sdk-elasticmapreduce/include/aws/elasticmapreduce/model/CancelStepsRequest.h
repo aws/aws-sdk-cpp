@@ -39,6 +39,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The <code>ClusterID</code> for which specified steps will be canceled. Use
      * <a>RunJobFlow</a> and <a>ListClusters</a> to get ClusterIDs. </p>

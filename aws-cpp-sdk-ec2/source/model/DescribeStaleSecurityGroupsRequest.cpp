@@ -57,3 +57,8 @@ Aws::String DescribeStaleSecurityGroupsRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  DescribeStaleSecurityGroupsRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

@@ -61,3 +61,8 @@ Aws::String DescribeDBSubnetGroupsRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  DescribeDBSubnetGroupsRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

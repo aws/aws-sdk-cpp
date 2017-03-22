@@ -55,3 +55,8 @@ Aws::String EnableMetricsCollectionRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  EnableMetricsCollectionRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

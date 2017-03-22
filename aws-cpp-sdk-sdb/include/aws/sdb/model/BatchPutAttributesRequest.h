@@ -34,6 +34,11 @@ namespace Model
     BatchPutAttributesRequest();
     Aws::String SerializePayload() const override;
 
+
+  protected:
+    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+
+  public:
     /**
      * The name of the domain in which the attributes are being stored.
      */

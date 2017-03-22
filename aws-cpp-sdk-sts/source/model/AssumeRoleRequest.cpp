@@ -74,3 +74,8 @@ Aws::String AssumeRoleRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  AssumeRoleRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

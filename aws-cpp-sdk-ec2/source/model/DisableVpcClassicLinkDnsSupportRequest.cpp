@@ -37,3 +37,8 @@ Aws::String DisableVpcClassicLinkDnsSupportRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  DisableVpcClassicLinkDnsSupportRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

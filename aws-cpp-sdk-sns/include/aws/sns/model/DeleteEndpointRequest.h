@@ -35,6 +35,11 @@ namespace Model
     DeleteEndpointRequest();
     Aws::String SerializePayload() const override;
 
+
+  protected:
+    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+
+  public:
     /**
      * <p>EndpointArn of endpoint to delete.</p>
      */

@@ -63,3 +63,8 @@ Aws::String AssignPrivateIpAddressesRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  AssignPrivateIpAddressesRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

@@ -32,6 +32,11 @@ namespace Model
     GetServerCertificateRequest();
     Aws::String SerializePayload() const override;
 
+
+  protected:
+    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+
+  public:
     /**
      * <p>The name of the server certificate you want to retrieve information
      * about.</p> <p>This parameter allows (per its <a

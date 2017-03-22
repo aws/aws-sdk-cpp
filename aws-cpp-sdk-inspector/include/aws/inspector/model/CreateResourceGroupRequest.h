@@ -34,6 +34,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>A collection of keys and an array of possible values in JSON format.</p>
      * <p>For example, [{ "key1" : ["Value1","Value2"]},{"Key2": ["Value3"]}]</p>

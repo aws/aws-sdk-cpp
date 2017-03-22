@@ -36,6 +36,11 @@ namespace Model
     PurchaseReservedCacheNodesOfferingRequest();
     Aws::String SerializePayload() const override;
 
+
+  protected:
+    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+
+  public:
     /**
      * <p>The ID of the reserved cache node offering to purchase.</p> <p>Example:
      * <code>438012d3-4052-4cc7-b2e3-8d3372e0e706</code> </p>

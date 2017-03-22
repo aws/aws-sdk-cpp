@@ -37,3 +37,8 @@ Aws::String VerifyEmailIdentityRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  VerifyEmailIdentityRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

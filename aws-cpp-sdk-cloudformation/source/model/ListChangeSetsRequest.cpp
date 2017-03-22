@@ -43,3 +43,8 @@ Aws::String ListChangeSetsRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  ListChangeSetsRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

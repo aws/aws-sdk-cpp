@@ -39,6 +39,7 @@ namespace Model
 
     void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
+
     /**
      * The name of the bucket where the inventory configuration will be stored.
      */

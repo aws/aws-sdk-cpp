@@ -39,6 +39,11 @@ namespace Model
     ListConfigurationSetsRequest();
     Aws::String SerializePayload() const override;
 
+
+  protected:
+    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+
+  public:
     /**
      * <p>A token returned from a previous call to <code>ListConfigurationSets</code>
      * to indicate the position of the configuration set in the configuration set

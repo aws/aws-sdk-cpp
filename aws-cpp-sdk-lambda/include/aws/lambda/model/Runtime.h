@@ -27,6 +27,7 @@ namespace Model
     NOT_SET,
     nodejs,
     nodejs4_3,
+    nodejs6_10,
     java8,
     python2_7,
     dotnetcore1_0,

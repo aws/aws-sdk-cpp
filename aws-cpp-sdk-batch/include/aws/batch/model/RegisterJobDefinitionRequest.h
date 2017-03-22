@@ -35,6 +35,7 @@ namespace Model
     RegisterJobDefinitionRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p>The name of the job definition to register. </p>
      */

@@ -40,6 +40,11 @@ namespace Model
     DeleteConfigurationSetEventDestinationRequest();
     Aws::String SerializePayload() const override;
 
+
+  protected:
+    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+
+  public:
     /**
      * <p>The name of the configuration set from which to delete the event
      * destination.</p>

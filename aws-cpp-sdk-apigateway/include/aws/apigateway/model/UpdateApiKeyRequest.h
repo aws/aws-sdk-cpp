@@ -38,6 +38,7 @@ namespace Model
     UpdateApiKeyRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p>The identifier of the <a>ApiKey</a> resource to be updated.</p>
      */

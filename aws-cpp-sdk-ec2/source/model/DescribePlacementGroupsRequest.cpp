@@ -61,3 +61,8 @@ Aws::String DescribePlacementGroupsRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  DescribePlacementGroupsRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

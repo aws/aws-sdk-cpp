@@ -39,6 +39,7 @@ namespace Model
     PutObjectRequest();
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * The canned ACL to apply to the object.
      */

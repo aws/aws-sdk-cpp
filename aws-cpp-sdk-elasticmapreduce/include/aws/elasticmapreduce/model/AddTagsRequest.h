@@ -40,6 +40,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The Amazon EMR resource identifier to which tags will be added. This value
      * must be a cluster identifier.</p>

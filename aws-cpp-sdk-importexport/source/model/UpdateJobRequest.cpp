@@ -63,3 +63,8 @@ Aws::String UpdateJobRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  UpdateJobRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

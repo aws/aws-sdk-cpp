@@ -32,6 +32,7 @@ namespace Model
     ListTagsForResourceRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p>ARN of the resource. Tagging is only supported for directories.</p>
      */

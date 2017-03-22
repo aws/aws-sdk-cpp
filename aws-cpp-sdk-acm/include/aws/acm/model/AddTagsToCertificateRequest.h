@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>String that contains the ARN of the ACM Certificate to which the tag is to be
      * applied. This must be of the form:</p> <p>

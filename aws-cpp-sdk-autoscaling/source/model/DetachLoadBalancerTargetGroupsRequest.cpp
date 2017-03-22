@@ -49,3 +49,8 @@ Aws::String DetachLoadBalancerTargetGroupsRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  DetachLoadBalancerTargetGroupsRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

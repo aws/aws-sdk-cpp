@@ -123,3 +123,8 @@ Aws::String RegisterImageRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  RegisterImageRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

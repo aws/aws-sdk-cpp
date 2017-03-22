@@ -32,6 +32,11 @@ namespace Model
     DetachUserPolicyRequest();
     Aws::String SerializePayload() const override;
 
+
+  protected:
+    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+
+  public:
     /**
      * <p>The name (friendly name, not ARN) of the IAM user to detach the policy
      * from.</p> <p>This parameter allows (per its <a

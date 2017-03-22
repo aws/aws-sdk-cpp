@@ -32,6 +32,11 @@ namespace Model
     DisassociateVpcCidrBlockRequest();
     Aws::String SerializePayload() const override;
 
+
+  protected:
+    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+
+  public:
     /**
      * <p>The association ID for the CIDR block.</p>
      */

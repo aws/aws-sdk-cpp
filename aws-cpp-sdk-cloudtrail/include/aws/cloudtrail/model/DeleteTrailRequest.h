@@ -38,6 +38,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>Specifies the name or the CloudTrail ARN of the trail to be deleted. The
      * format of a trail ARN is:

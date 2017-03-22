@@ -33,6 +33,11 @@ namespace Model
     CreateOpenIDConnectProviderRequest();
     Aws::String SerializePayload() const override;
 
+
+  protected:
+    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+
+  public:
     /**
      * <p>The URL of the identity provider. The URL must begin with "https://" and
      * should correspond to the <code>iss</code> claim in the provider's OpenID Connect

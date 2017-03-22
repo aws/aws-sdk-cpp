@@ -44,3 +44,8 @@ Aws::String DeleteVpnConnectionRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  DeleteVpnConnectionRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

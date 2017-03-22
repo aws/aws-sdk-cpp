@@ -38,6 +38,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>Specifies the name or the CloudTrail ARN of the trail for which you are
      * requesting status. To get the status of a shadow trail (a replication of the

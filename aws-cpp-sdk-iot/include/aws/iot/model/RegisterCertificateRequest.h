@@ -36,6 +36,7 @@ namespace Model
     RegisterCertificateRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p>The certificate data, in PEM format.</p>
      */

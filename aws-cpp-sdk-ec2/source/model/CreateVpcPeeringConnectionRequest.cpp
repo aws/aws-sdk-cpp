@@ -56,3 +56,8 @@ Aws::String CreateVpcPeeringConnectionRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  CreateVpcPeeringConnectionRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

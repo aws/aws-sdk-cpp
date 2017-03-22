@@ -50,3 +50,8 @@ Aws::String UpdateLoginProfileRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  UpdateLoginProfileRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

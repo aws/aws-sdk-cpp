@@ -35,6 +35,11 @@ namespace Model
     AbortEnvironmentUpdateRequest();
     Aws::String SerializePayload() const override;
 
+
+  protected:
+    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+
+  public:
     /**
      * <p>This specifies the ID of the environment with the in-progress update that you
      * want to cancel.</p>

@@ -34,6 +34,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>Specifies the <code>operationId</code> that uniquely identifies the request.
      * You can get the ID from the response to an earlier <a>CreateAccount</a> request,

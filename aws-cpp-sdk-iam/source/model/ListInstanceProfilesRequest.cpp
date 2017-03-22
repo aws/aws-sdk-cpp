@@ -50,3 +50,8 @@ Aws::String ListInstanceProfilesRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  ListInstanceProfilesRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

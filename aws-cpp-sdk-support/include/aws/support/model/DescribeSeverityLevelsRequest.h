@@ -37,6 +37,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The ISO 639-1 code for the language in which AWS provides support. AWS
      * Support currently supports English ("en") and Japanese ("ja"). Language

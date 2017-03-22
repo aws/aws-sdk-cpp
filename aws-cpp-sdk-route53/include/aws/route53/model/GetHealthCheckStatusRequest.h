@@ -36,6 +36,7 @@ namespace Model
     GetHealthCheckStatusRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p>The ID for the health check for which you want the current status. When you
      * created the health check, <code>CreateHealthCheck</code> returned the ID in the

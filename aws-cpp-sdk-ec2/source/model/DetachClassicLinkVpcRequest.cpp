@@ -50,3 +50,8 @@ Aws::String DetachClassicLinkVpcRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  DetachClassicLinkVpcRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

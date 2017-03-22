@@ -44,3 +44,8 @@ Aws::String RebootDBInstanceRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  RebootDBInstanceRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

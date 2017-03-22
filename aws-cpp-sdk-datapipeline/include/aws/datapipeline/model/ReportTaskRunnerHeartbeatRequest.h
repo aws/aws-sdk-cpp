@@ -38,6 +38,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The ID of the task runner. This value should be unique across your AWS
      * account. In the case of AWS Data Pipeline Task Runner launched on a resource

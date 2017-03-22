@@ -48,3 +48,8 @@ Aws::String ModifyClusterParameterGroupRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  ModifyClusterParameterGroupRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

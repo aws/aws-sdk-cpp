@@ -50,3 +50,8 @@ Aws::String SetLoadBalancerListenerSSLCertificateRequest::SerializePayload() con
   return ss.str();
 }
 
+
+void  SetLoadBalancerListenerSSLCertificateRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

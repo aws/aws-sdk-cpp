@@ -40,6 +40,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>Name of your Amazon Kinesis Analytics application (for example,
      * <code>sample-app</code>).</p>

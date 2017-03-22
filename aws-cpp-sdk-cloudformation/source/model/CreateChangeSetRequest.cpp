@@ -145,3 +145,8 @@ Aws::String CreateChangeSetRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  CreateChangeSetRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

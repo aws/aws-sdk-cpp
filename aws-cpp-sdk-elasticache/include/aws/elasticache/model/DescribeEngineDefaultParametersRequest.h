@@ -36,6 +36,11 @@ namespace Model
     DescribeEngineDefaultParametersRequest();
     Aws::String SerializePayload() const override;
 
+
+  protected:
+    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+
+  public:
     /**
      * <p>The name of the cache parameter group family.</p> <p>Valid values are:
      * <code>memcached1.4</code> | <code>redis2.6</code> | <code>redis2.8</code> |

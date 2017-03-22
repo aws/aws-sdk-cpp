@@ -41,6 +41,7 @@ namespace Model
 
     void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
+
     /**
      * Use this when paginating results to indicate where to begin in your list of
      * origin access identities. The results include identities in the list that occur

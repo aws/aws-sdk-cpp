@@ -41,6 +41,7 @@ namespace Model
 
     void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
+
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon Kinesis stream. (This parameter
      * is optional.)</p>

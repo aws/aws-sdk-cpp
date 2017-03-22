@@ -40,6 +40,11 @@ namespace Model
     CreateStackRequest();
     Aws::String SerializePayload() const override;
 
+
+  protected:
+    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+
+  public:
     /**
      * <p>The name that is associated with the stack. The name must be unique in the
      * region in which you are creating the stack.</p> <note> <p>A stack name can

@@ -36,6 +36,7 @@ namespace Model
     CreateElasticsearchDomainRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p>The name of the Elasticsearch domain that you are creating. Domain names are
      * unique across the domains owned by an account within an AWS region. Domain names

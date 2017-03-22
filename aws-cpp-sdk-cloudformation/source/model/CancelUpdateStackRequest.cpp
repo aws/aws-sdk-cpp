@@ -37,3 +37,8 @@ Aws::String CancelUpdateStackRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  CancelUpdateStackRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

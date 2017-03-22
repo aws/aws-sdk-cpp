@@ -37,3 +37,8 @@ Aws::String DescribeResizeRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  DescribeResizeRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

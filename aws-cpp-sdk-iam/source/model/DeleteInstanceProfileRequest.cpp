@@ -37,3 +37,8 @@ Aws::String DeleteInstanceProfileRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  DeleteInstanceProfileRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

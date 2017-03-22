@@ -61,3 +61,8 @@ Aws::String DescribePendingMaintenanceActionsRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  DescribePendingMaintenanceActionsRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

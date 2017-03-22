@@ -37,3 +37,8 @@ Aws::String ListPlatformApplicationsRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  ListPlatformApplicationsRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

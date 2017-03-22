@@ -43,3 +43,8 @@ Aws::String DeleteCacheClusterRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  DeleteCacheClusterRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

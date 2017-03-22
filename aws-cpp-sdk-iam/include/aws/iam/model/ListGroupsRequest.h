@@ -32,6 +32,11 @@ namespace Model
     ListGroupsRequest();
     Aws::String SerializePayload() const override;
 
+
+  protected:
+    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+
+  public:
     /**
      * <p> The path prefix for filtering the results. For example, the prefix
      * <code>/division_abc/subdivision_xyz/</code> gets all groups whose path starts

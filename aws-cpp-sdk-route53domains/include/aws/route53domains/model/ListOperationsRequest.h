@@ -38,6 +38,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>For an initial request for a list of operations, omit this element. If the
      * number of operations that are not yet complete is greater than the value that

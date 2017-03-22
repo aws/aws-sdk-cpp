@@ -39,6 +39,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>You must specify a <code>family</code> for a task definition, which allows
      * you to track multiple versions of the same task definition. The

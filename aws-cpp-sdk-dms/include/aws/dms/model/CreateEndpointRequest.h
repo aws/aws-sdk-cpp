@@ -41,6 +41,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The database endpoint identifier. Identifiers must begin with a letter; must
      * contain only ASCII letters, digits, and hyphens; and must not end with a hyphen

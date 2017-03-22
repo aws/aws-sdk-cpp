@@ -37,6 +37,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The <code>WebACLId</code> of the <a>WebACL</a> that you want to update.
      * <code>WebACLId</code> is returned by <a>CreateWebACL</a> and by

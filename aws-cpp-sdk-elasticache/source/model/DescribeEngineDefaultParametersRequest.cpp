@@ -50,3 +50,8 @@ Aws::String DescribeEngineDefaultParametersRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  DescribeEngineDefaultParametersRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

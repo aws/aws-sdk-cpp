@@ -39,6 +39,7 @@ namespace Model
     DeleteVPCAssociationAuthorizationRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p>When removing authorization to associate a VPC that was created by one AWS
      * account with a hosted zone that was created with a different AWS account, the ID

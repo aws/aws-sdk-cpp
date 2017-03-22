@@ -35,6 +35,7 @@ namespace Model
     ReadPipelineRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p>The identifier of the pipeline to read.</p>
      */

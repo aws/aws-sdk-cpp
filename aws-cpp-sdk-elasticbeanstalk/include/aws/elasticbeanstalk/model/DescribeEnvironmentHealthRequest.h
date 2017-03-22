@@ -38,6 +38,11 @@ namespace Model
     DescribeEnvironmentHealthRequest();
     Aws::String SerializePayload() const override;
 
+
+  protected:
+    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+
+  public:
     /**
      * <p>Specify the environment by name.</p> <p>You must specify either this or an
      * EnvironmentName, or both.</p>

@@ -38,6 +38,11 @@ namespace Model
     CreateReceiptFilterRequest();
     Aws::String SerializePayload() const override;
 
+
+  protected:
+    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+
+  public:
     /**
      * <p>A data structure that describes the IP address filter to create, which
      * consists of a name, an IP address range, and whether to allow or block mail from

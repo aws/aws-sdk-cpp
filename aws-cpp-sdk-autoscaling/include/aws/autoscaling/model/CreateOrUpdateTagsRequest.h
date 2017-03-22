@@ -36,6 +36,11 @@ namespace Model
     CreateOrUpdateTagsRequest();
     Aws::String SerializePayload() const override;
 
+
+  protected:
+    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+
+  public:
     /**
      * <p>One or more tags.</p>
      */

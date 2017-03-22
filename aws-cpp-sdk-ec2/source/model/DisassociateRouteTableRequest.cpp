@@ -44,3 +44,8 @@ Aws::String DisassociateRouteTableRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  DisassociateRouteTableRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

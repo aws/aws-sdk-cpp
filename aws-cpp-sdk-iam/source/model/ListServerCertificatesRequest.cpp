@@ -50,3 +50,8 @@ Aws::String ListServerCertificatesRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  ListServerCertificatesRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

@@ -55,3 +55,8 @@ Aws::String ResetDBParameterGroupRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  ResetDBParameterGroupRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

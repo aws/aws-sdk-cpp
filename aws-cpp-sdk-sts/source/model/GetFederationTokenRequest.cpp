@@ -50,3 +50,8 @@ Aws::String GetFederationTokenRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  GetFederationTokenRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

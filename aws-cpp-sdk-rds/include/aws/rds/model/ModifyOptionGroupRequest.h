@@ -37,6 +37,11 @@ namespace Model
     ModifyOptionGroupRequest();
     Aws::String SerializePayload() const override;
 
+
+  protected:
+    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+
+  public:
     /**
      * <p>The name of the option group to be modified.</p> <p>Permanent options, such
      * as the TDE option for Oracle Advanced Security TDE, cannot be removed from an

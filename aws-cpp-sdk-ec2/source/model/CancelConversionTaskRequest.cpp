@@ -50,3 +50,8 @@ Aws::String CancelConversionTaskRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  CancelConversionTaskRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

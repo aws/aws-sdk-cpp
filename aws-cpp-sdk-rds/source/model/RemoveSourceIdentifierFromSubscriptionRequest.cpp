@@ -43,3 +43,8 @@ Aws::String RemoveSourceIdentifierFromSubscriptionRequest::SerializePayload() co
   return ss.str();
 }
 
+
+void  RemoveSourceIdentifierFromSubscriptionRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

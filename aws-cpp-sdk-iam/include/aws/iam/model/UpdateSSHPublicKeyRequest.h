@@ -33,6 +33,11 @@ namespace Model
     UpdateSSHPublicKeyRequest();
     Aws::String SerializePayload() const override;
 
+
+  protected:
+    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+
+  public:
     /**
      * <p>The name of the IAM user associated with the SSH public key.</p> <p>This
      * parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex

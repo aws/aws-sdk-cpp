@@ -31,3 +31,8 @@ Aws::String DescribeTerminationPolicyTypesRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  DescribeTerminationPolicyTypesRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

@@ -50,3 +50,8 @@ Aws::String ListMFADevicesRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  ListMFADevicesRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

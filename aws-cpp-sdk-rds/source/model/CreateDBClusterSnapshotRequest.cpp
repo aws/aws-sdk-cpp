@@ -54,3 +54,8 @@ Aws::String CreateDBClusterSnapshotRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  CreateDBClusterSnapshotRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

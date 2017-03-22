@@ -37,6 +37,11 @@ namespace Model
     CreateClusterRequest();
     Aws::String SerializePayload() const override;
 
+
+  protected:
+    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+
+  public:
     /**
      * <p>The name of the first database to be created when the cluster is created.</p>
      * <p>To create additional databases after the cluster is created, connect to the

@@ -39,6 +39,7 @@ namespace Model
     UpdateFunctionConfigurationRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p>The name of the Lambda function.</p> <p> You can specify a function name (for
      * example, <code>Thumbnail</code>) or you can specify Amazon Resource Name (ARN)

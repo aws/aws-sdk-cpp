@@ -36,6 +36,11 @@ namespace Model
     ListPhoneNumbersOptedOutRequest();
     Aws::String SerializePayload() const override;
 
+
+  protected:
+    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+
+  public:
     /**
      * <p>A <code>NextToken</code> string is used when you call the
      * <code>ListPhoneNumbersOptedOut</code> action to retrieve additional records that

@@ -35,6 +35,11 @@ namespace Model
     DescribeClusterParametersRequest();
     Aws::String SerializePayload() const override;
 
+
+  protected:
+    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+
+  public:
     /**
      * <p>The name of a cluster parameter group for which to return details.</p>
      */

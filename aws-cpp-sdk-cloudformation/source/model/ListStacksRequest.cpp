@@ -49,3 +49,8 @@ Aws::String ListStacksRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  ListStacksRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

@@ -43,3 +43,8 @@ Aws::String UpdateScalingParametersRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  UpdateScalingParametersRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

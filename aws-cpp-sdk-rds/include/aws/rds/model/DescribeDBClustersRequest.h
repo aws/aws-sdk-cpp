@@ -37,6 +37,11 @@ namespace Model
     DescribeDBClustersRequest();
     Aws::String SerializePayload() const override;
 
+
+  protected:
+    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+
+  public:
     /**
      * <p>The user-supplied DB cluster identifier. If this parameter is specified,
      * information from only the specific DB cluster is returned. This parameter isn't

@@ -37,3 +37,8 @@ Aws::String DeleteLoginProfileRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  DeleteLoginProfileRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

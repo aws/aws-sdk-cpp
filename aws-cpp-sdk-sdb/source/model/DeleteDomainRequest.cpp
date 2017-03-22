@@ -37,3 +37,8 @@ Aws::String DeleteDomainRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  DeleteDomainRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

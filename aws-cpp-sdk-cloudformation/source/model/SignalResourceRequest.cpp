@@ -56,3 +56,8 @@ Aws::String SignalResourceRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  SignalResourceRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

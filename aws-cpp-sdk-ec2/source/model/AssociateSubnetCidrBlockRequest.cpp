@@ -43,3 +43,8 @@ Aws::String AssociateSubnetCidrBlockRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  AssociateSubnetCidrBlockRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

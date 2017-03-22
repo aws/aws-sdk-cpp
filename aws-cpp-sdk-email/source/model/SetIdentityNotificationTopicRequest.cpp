@@ -50,3 +50,8 @@ Aws::String SetIdentityNotificationTopicRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  SetIdentityNotificationTopicRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

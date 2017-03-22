@@ -44,3 +44,8 @@ Aws::String SetIdentityFeedbackForwardingEnabledRequest::SerializePayload() cons
   return ss.str();
 }
 
+
+void  SetIdentityFeedbackForwardingEnabledRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

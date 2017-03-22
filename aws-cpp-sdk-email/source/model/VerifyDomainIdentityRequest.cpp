@@ -37,3 +37,8 @@ Aws::String VerifyDomainIdentityRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  VerifyDomainIdentityRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

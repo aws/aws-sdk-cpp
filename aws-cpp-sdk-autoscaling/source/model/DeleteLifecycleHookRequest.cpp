@@ -43,3 +43,8 @@ Aws::String DeleteLifecycleHookRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  DeleteLifecycleHookRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

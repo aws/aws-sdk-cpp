@@ -50,3 +50,8 @@ Aws::String ModifyVolumeAttributeRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  ModifyVolumeAttributeRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

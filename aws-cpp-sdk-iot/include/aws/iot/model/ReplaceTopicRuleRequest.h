@@ -36,6 +36,7 @@ namespace Model
     ReplaceTopicRuleRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p>The name of the rule.</p>
      */

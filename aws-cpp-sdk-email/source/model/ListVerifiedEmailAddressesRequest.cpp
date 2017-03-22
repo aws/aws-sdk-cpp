@@ -31,3 +31,8 @@ Aws::String ListVerifiedEmailAddressesRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  ListVerifiedEmailAddressesRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

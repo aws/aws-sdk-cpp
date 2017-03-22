@@ -39,6 +39,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>Filters applied to the describe action.</p> <p>Valid filter names:
      * endpoint-arn | endpoint-type | endpoint-id | engine-name</p>

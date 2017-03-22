@@ -61,3 +61,8 @@ Aws::String AuthorizeDBSecurityGroupIngressRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  AuthorizeDBSecurityGroupIngressRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

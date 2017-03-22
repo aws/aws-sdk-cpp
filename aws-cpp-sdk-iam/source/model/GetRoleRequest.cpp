@@ -37,3 +37,8 @@ Aws::String GetRoleRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  GetRoleRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

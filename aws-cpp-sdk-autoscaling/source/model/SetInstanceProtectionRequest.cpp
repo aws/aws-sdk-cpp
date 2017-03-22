@@ -56,3 +56,8 @@ Aws::String SetInstanceProtectionRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  SetInstanceProtectionRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

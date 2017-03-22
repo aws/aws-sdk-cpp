@@ -95,3 +95,8 @@ Aws::String CreateNetworkAclEntryRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  CreateNetworkAclEntryRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

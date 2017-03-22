@@ -36,6 +36,7 @@ namespace Model
     GetCloudFrontOriginAccessIdentity2016_01_28Request();
     Aws::String SerializePayload() const override;
 
+
     /**
      * The identity's id.
      */

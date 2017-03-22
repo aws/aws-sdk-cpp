@@ -43,3 +43,8 @@ Aws::String UploadSigningCertificateRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  UploadSigningCertificateRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

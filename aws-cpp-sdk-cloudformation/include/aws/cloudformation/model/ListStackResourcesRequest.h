@@ -36,6 +36,11 @@ namespace Model
     ListStackResourcesRequest();
     Aws::String SerializePayload() const override;
 
+
+  protected:
+    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+
+  public:
     /**
      * <p>The name or the unique stack ID that is associated with the stack, which are
      * not always interchangeable:</p> <ul> <li> <p>Running stacks: You can specify

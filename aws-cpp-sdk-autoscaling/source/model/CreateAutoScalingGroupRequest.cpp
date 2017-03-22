@@ -168,3 +168,8 @@ Aws::String CreateAutoScalingGroupRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  CreateAutoScalingGroupRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

@@ -35,6 +35,11 @@ namespace Model
     DisableLoggingRequest();
     Aws::String SerializePayload() const override;
 
+
+  protected:
+    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+
+  public:
     /**
      * <p>The identifier of the cluster on which logging is to be stopped.</p>
      * <p>Example: <code>examplecluster</code> </p>

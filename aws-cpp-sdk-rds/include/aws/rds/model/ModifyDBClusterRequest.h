@@ -36,6 +36,11 @@ namespace Model
     ModifyDBClusterRequest();
     Aws::String SerializePayload() const override;
 
+
+  protected:
+    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+
+  public:
     /**
      * <p>The DB cluster identifier for the cluster being modified. This parameter is
      * not case-sensitive.</p> <p>Constraints:</p> <ul> <li> <p>Must be the identifier

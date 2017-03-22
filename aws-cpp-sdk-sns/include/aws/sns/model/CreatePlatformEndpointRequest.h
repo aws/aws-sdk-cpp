@@ -36,6 +36,11 @@ namespace Model
     CreatePlatformEndpointRequest();
     Aws::String SerializePayload() const override;
 
+
+  protected:
+    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+
+  public:
     /**
      * <p>PlatformApplicationArn returned from CreatePlatformApplication is used to
      * create a an endpoint.</p>

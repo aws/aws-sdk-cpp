@@ -56,3 +56,8 @@ Aws::String DescribeAutoScalingInstancesRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  DescribeAutoScalingInstancesRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

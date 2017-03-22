@@ -35,6 +35,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The <code>WebACLId</code> of the <code>WebACL</code> for which you want
      * <code>GetSampledRequests</code> to return a sample of requests.</p>

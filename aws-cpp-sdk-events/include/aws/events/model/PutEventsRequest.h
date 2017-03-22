@@ -35,6 +35,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <zonbook> <simpara>The entry that defines an event in your system. You can
      * specify several parameters for the entry such as the source and type of the

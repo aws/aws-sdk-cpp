@@ -38,6 +38,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The number of physical connections initially provisioned and bundled by the
      * LAG.</p> <p>Default: None</p>

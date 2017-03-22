@@ -34,6 +34,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>Setting DisableAutomatedBackup to <code>true</code> disables automated or
      * scheduled backups. Automated backups are enabled by default. </p>

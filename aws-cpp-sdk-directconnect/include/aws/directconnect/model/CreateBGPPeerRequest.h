@@ -39,6 +39,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The ID of the virtual interface on which the BGP peer will be
      * provisioned.</p> <p>Example: dxvif-456abc78</p> <p>Default: None</p>

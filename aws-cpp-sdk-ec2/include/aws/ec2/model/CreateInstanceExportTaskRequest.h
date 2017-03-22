@@ -38,6 +38,11 @@ namespace Model
     CreateInstanceExportTaskRequest();
     Aws::String SerializePayload() const override;
 
+
+  protected:
+    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+
+  public:
     /**
      * <p>A description for the conversion task or the resource being exported. The
      * maximum length is 255 bytes.</p>

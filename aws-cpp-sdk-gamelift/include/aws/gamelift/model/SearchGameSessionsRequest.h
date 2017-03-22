@@ -37,6 +37,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>Unique identifier for a fleet to search for active game sessions. Each
      * request must reference either a fleet ID or alias ID, but not both.</p>

@@ -39,6 +39,11 @@ namespace Model
     CreateLaunchConfigurationRequest();
     Aws::String SerializePayload() const override;
 
+
+  protected:
+    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+
+  public:
     /**
      * <p>The name of the launch configuration. This name must be unique within the
      * scope of your AWS account.</p>

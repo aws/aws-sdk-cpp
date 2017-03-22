@@ -50,3 +50,8 @@ Aws::String TerminateInstancesRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  TerminateInstancesRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

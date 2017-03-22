@@ -40,6 +40,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The <code>SqlInjectionMatchSetId</code> of the
      * <code>SqlInjectionMatchSet</code> that you want to update.

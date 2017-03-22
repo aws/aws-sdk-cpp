@@ -50,3 +50,8 @@ Aws::String ListRolesRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  ListRolesRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

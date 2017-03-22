@@ -37,6 +37,11 @@ namespace Model
     CreateOptionGroupRequest();
     Aws::String SerializePayload() const override;
 
+
+  protected:
+    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+
+  public:
     /**
      * <p>Specifies the name of the option group to be created.</p> <p>Constraints:</p>
      * <ul> <li> <p>Must be 1 to 255 alphanumeric characters or hyphens</p> </li> <li>

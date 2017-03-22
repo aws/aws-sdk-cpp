@@ -49,3 +49,8 @@ Aws::String AuthorizeSnapshotAccessRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  AuthorizeSnapshotAccessRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

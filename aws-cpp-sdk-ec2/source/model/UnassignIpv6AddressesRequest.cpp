@@ -49,3 +49,8 @@ Aws::String UnassignIpv6AddressesRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  UnassignIpv6AddressesRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

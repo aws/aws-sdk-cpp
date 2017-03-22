@@ -56,3 +56,8 @@ Aws::String DescribeClusterVersionsRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  DescribeClusterVersionsRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

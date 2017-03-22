@@ -74,3 +74,8 @@ Aws::String DescribeMovingAddressesRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  DescribeMovingAddressesRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

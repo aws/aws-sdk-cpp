@@ -35,6 +35,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The domain name (e.g., <code>example.com</code>) for which you want to create
      * the domain entry.</p>

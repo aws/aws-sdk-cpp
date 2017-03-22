@@ -39,6 +39,11 @@ namespace Model
     CreateNetworkInterfaceRequest();
     Aws::String SerializePayload() const override;
 
+
+  protected:
+    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+
+  public:
     /**
      * <p>The ID of the subnet to associate with the network interface.</p>
      */

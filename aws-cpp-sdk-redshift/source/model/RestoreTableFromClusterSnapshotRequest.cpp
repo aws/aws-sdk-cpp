@@ -79,3 +79,8 @@ Aws::String RestoreTableFromClusterSnapshotRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  RestoreTableFromClusterSnapshotRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

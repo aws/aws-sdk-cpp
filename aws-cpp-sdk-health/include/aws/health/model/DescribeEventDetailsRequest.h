@@ -35,6 +35,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>A list of event ARNs (unique identifiers). For example:
      * <code>"arn:aws:health:us-east-1::event/AWS_EC2_MAINTENANCE_5331",

@@ -38,6 +38,11 @@ namespace Model
     ListIdentitiesRequest();
     Aws::String SerializePayload() const override;
 
+
+  protected:
+    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+
+  public:
     /**
      * <p>The type of the identities to list. Possible values are "EmailAddress" and
      * "Domain". If this parameter is omitted, then all identities will be listed.</p>

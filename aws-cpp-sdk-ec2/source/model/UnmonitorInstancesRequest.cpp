@@ -50,3 +50,8 @@ Aws::String UnmonitorInstancesRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  UnmonitorInstancesRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

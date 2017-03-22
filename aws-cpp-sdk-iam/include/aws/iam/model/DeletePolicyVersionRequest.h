@@ -32,6 +32,11 @@ namespace Model
     DeletePolicyVersionRequest();
     Aws::String SerializePayload() const override;
 
+
+  protected:
+    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+
+  public:
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM policy from which you want to
      * delete a version.</p> <p>For more information about ARNs, see <a

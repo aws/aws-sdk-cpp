@@ -127,3 +127,8 @@ Aws::String UpdateAutoScalingGroupRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  UpdateAutoScalingGroupRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

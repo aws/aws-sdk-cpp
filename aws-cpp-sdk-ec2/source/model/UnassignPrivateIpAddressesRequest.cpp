@@ -49,3 +49,8 @@ Aws::String UnassignPrivateIpAddressesRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  UnassignPrivateIpAddressesRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

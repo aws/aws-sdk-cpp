@@ -32,6 +32,11 @@ namespace Model
     GetLoginProfileRequest();
     Aws::String SerializePayload() const override;
 
+
+  protected:
+    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+
+  public:
     /**
      * <p>The name of the user whose login profile you want to retrieve.</p> <p>This
      * parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex

@@ -34,6 +34,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>A unique identifier for the CMK. This value can be a globally unique
      * identifier or the fully specified ARN to a key.</p> <ul> <li> <p>Key ARN Example

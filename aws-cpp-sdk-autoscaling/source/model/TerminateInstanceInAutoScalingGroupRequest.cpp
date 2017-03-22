@@ -44,3 +44,8 @@ Aws::String TerminateInstanceInAutoScalingGroupRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  TerminateInstanceInAutoScalingGroupRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

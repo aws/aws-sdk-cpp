@@ -37,3 +37,8 @@ Aws::String DeleteListenerRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  DeleteListenerRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

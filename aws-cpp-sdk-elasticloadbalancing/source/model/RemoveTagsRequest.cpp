@@ -54,3 +54,8 @@ Aws::String RemoveTagsRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  RemoveTagsRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

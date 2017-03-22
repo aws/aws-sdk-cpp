@@ -37,6 +37,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>Represents the Amazon Resource Name (ARN) of the Device Farm run you wish to
      * stop.</p>

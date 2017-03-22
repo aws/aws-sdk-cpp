@@ -46,6 +46,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The Directory ID of the Microsoft AD in the AWS cloud for which to establish
      * the trust relationship.</p>

@@ -90,3 +90,8 @@ Aws::String ModifyTargetGroupRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  ModifyTargetGroupRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

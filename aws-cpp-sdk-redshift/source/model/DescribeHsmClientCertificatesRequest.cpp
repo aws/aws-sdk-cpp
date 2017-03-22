@@ -74,3 +74,8 @@ Aws::String DescribeHsmClientCertificatesRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  DescribeHsmClientCertificatesRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

@@ -35,6 +35,11 @@ namespace Model
     DescribeEventCategoriesRequest();
     Aws::String SerializePayload() const override;
 
+
+  protected:
+    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+
+  public:
     /**
      * <p>The source type, such as cluster or parameter group, to which the described
      * event categories apply.</p> <p>Valid values: cluster, cluster-snapshot,

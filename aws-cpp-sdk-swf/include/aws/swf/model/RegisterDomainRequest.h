@@ -34,6 +34,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>Name of the domain to register. The name must be unique in the region that
      * the domain is registered in.</p> <p>The specified string must not start or end

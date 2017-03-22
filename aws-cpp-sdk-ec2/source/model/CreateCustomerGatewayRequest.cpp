@@ -58,3 +58,8 @@ Aws::String CreateCustomerGatewayRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  CreateCustomerGatewayRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

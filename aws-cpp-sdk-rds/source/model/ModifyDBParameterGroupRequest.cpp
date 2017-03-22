@@ -48,3 +48,8 @@ Aws::String ModifyDBParameterGroupRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  ModifyDBParameterGroupRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

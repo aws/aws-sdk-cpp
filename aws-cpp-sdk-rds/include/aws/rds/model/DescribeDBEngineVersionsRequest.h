@@ -34,6 +34,11 @@ namespace Model
     DescribeDBEngineVersionsRequest();
     Aws::String SerializePayload() const override;
 
+
+  protected:
+    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+
+  public:
     /**
      * <p>The database engine to return.</p>
      */

@@ -49,3 +49,8 @@ Aws::String GetContextKeysForPrincipalPolicyRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  GetContextKeysForPrincipalPolicyRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

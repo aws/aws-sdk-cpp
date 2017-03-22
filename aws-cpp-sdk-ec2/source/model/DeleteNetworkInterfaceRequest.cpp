@@ -44,3 +44,8 @@ Aws::String DeleteNetworkInterfaceRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  DeleteNetworkInterfaceRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

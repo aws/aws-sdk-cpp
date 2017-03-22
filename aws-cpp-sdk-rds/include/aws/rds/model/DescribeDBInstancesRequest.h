@@ -37,6 +37,11 @@ namespace Model
     DescribeDBInstancesRequest();
     Aws::String SerializePayload() const override;
 
+
+  protected:
+    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+
+  public:
     /**
      * <p>The user-supplied instance identifier. If this parameter is specified,
      * information from only the specific DB instance is returned. This parameter isn't

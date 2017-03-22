@@ -38,6 +38,7 @@ namespace Model
 
     inline bool ShouldComputeContentMd5() const override { return true; }
 
+
     
     inline const Aws::String& GetBucket() const{ return m_bucket; }
 

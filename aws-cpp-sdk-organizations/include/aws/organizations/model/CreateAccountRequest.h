@@ -35,6 +35,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The email address of the owner to assign to the new member account. This
      * email address must not already be associated with another AWS account.</p>

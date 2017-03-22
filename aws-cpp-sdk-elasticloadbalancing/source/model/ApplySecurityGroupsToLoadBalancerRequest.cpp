@@ -49,3 +49,8 @@ Aws::String ApplySecurityGroupsToLoadBalancerRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  ApplySecurityGroupsToLoadBalancerRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

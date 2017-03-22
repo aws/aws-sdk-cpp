@@ -44,3 +44,8 @@ Aws::String UpdateAvailabilityOptionsRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  UpdateAvailabilityOptionsRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

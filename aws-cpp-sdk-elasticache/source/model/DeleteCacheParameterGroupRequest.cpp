@@ -37,3 +37,8 @@ Aws::String DeleteCacheParameterGroupRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  DeleteCacheParameterGroupRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

@@ -64,3 +64,8 @@ Aws::String ExecutePolicyRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  ExecutePolicyRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

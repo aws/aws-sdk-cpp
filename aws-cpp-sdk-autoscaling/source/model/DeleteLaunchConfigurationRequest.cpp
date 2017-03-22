@@ -37,3 +37,8 @@ Aws::String DeleteLaunchConfigurationRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  DeleteLaunchConfigurationRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

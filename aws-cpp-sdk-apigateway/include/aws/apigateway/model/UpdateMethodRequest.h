@@ -38,6 +38,7 @@ namespace Model
     UpdateMethodRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p>The <a>RestApi</a> identifier for the <a>Method</a> resource.</p>
      */

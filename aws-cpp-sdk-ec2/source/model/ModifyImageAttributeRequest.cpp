@@ -111,3 +111,8 @@ Aws::String ModifyImageAttributeRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  ModifyImageAttributeRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

@@ -43,3 +43,8 @@ Aws::String EnableVgwRoutePropagationRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  EnableVgwRoutePropagationRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

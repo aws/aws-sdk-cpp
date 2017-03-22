@@ -79,3 +79,8 @@ Aws::String CreateListenerRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  CreateListenerRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

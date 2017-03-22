@@ -79,3 +79,8 @@ Aws::String ModifyListenerRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  ModifyListenerRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

@@ -71,3 +71,8 @@ Aws::String UpdateConfigurationTemplateRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  UpdateConfigurationTemplateRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

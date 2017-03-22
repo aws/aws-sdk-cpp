@@ -49,3 +49,8 @@ Aws::String CreateAppCookieStickinessPolicyRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  CreateAppCookieStickinessPolicyRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

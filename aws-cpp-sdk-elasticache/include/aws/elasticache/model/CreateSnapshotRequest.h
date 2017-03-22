@@ -36,6 +36,11 @@ namespace Model
     CreateSnapshotRequest();
     Aws::String SerializePayload() const override;
 
+
+  protected:
+    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+
+  public:
     /**
      * <p>The identifier of an existing replication group. The snapshot is created from
      * this replication group.</p>

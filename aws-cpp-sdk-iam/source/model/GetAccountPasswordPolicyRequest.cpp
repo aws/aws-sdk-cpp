@@ -31,3 +31,8 @@ Aws::String GetAccountPasswordPolicyRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  GetAccountPasswordPolicyRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

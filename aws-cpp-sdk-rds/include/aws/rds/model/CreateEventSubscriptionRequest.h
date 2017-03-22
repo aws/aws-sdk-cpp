@@ -37,6 +37,11 @@ namespace Model
     CreateEventSubscriptionRequest();
     Aws::String SerializePayload() const override;
 
+
+  protected:
+    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+
+  public:
     /**
      * <p>The name of the subscription.</p> <p>Constraints: The name must be less than
      * 255 characters.</p>

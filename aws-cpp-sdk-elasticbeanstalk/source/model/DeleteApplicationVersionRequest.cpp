@@ -50,3 +50,8 @@ Aws::String DeleteApplicationVersionRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  DeleteApplicationVersionRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

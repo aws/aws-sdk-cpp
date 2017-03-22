@@ -38,6 +38,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The ID of the connection.</p> <p>Example: dxcon-abc123</p> <p>Default:
      * None</p>

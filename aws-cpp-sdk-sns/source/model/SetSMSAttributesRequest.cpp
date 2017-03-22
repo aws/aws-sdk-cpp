@@ -45,3 +45,8 @@ Aws::String SetSMSAttributesRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  SetSMSAttributesRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

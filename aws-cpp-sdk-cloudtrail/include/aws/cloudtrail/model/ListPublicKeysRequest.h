@@ -39,6 +39,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>Optionally specifies, in UTC, the start of the time range to look up public
      * keys for CloudTrail digest files. If not specified, the current time is used,

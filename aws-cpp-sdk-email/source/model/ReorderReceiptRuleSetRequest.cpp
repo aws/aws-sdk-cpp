@@ -49,3 +49,8 @@ Aws::String ReorderReceiptRuleSetRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  ReorderReceiptRuleSetRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

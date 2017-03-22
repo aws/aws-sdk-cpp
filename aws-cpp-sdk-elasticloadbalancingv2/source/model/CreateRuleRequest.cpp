@@ -66,3 +66,8 @@ Aws::String CreateRuleRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  CreateRuleRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

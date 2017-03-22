@@ -50,3 +50,8 @@ Aws::String ListAccessKeysRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  ListAccessKeysRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

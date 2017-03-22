@@ -38,6 +38,11 @@ namespace Model
     DeleteReceiptRuleRequest();
     Aws::String SerializePayload() const override;
 
+
+  protected:
+    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+
+  public:
     /**
      * <p>The name of the receipt rule set that contains the receipt rule to
      * delete.</p>

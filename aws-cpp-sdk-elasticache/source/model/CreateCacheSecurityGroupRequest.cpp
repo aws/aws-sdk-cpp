@@ -43,3 +43,8 @@ Aws::String CreateCacheSecurityGroupRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  CreateCacheSecurityGroupRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

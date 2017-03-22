@@ -41,6 +41,7 @@ namespace Model
 
     void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
+
     /**
      * <p>[Required] The identifier of an API of the to-be-retrieved documentation
      * versions.</p>

@@ -49,3 +49,8 @@ Aws::String SetReceiptRulePositionRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  SetReceiptRulePositionRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

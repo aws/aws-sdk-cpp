@@ -37,6 +37,11 @@ namespace Model
     RequestEnvironmentInfoRequest();
     Aws::String SerializePayload() const override;
 
+
+  protected:
+    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+
+  public:
     /**
      * <p>The ID of the environment of the requested data.</p> <p>If no such
      * environment is found, <code>RequestEnvironmentInfo</code> returns an

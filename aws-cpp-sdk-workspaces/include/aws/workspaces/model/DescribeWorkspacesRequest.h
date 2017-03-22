@@ -39,6 +39,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>An array of strings that contain the identifiers of the WorkSpaces for which
      * to retrieve information. This parameter cannot be combined with any other filter

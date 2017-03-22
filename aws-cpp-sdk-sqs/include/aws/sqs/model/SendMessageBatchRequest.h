@@ -37,6 +37,11 @@ namespace Model
     SendMessageBatchRequest();
     Aws::String SerializePayload() const override;
 
+
+  protected:
+    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+
+  public:
     /**
      * <p>The URL of the Amazon SQS queue to which batched messages are sent.</p>
      * <p>Queue URLs are case-sensitive.</p>

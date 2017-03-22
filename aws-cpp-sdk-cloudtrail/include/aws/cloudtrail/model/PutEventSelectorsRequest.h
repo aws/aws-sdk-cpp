@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>Specifies the name of the trail or trail ARN. If you specify a trail name,
      * the string must meet the following requirements:</p> <ul> <li> <p>Contain only

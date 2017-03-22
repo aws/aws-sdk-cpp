@@ -37,6 +37,11 @@ namespace Model
     DescribeOptionGroupOptionsRequest();
     Aws::String SerializePayload() const override;
 
+
+  protected:
+    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+
+  public:
     /**
      * <p>A required parameter. Options available for the given engine name will be
      * described.</p>

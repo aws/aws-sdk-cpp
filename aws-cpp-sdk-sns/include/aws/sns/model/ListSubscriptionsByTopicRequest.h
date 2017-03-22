@@ -35,6 +35,11 @@ namespace Model
     ListSubscriptionsByTopicRequest();
     Aws::String SerializePayload() const override;
 
+
+  protected:
+    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+
+  public:
     /**
      * <p>The ARN of the topic for which you wish to find subscriptions.</p>
      */

@@ -32,6 +32,11 @@ namespace Model
     DecodeAuthorizationMessageRequest();
     Aws::String SerializePayload() const override;
 
+
+  protected:
+    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+
+  public:
     /**
      * <p>The encoded message that was returned with the response.</p>
      */

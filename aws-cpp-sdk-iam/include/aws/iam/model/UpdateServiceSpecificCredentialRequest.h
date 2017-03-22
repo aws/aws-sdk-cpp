@@ -33,6 +33,11 @@ namespace Model
     UpdateServiceSpecificCredentialRequest();
     Aws::String SerializePayload() const override;
 
+
+  protected:
+    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+
+  public:
     /**
      * <p>The name of the IAM user associated with the service-specific credential. If
      * you do not specify this value, then the operation assumes the user whose

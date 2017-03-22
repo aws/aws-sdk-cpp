@@ -50,6 +50,7 @@ namespace Model
 
     void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
+
     /**
      * <p>If you're making the second or subsequent call to
      * <code>ListReusableDelegationSets</code>, the <code>Marker</code> element matches

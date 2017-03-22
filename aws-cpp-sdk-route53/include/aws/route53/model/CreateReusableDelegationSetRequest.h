@@ -32,6 +32,7 @@ namespace Model
     CreateReusableDelegationSetRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p>A unique string that identifies the request, and that allows you to retry
      * failed <code>CreateReusableDelegationSet</code> requests without the risk of

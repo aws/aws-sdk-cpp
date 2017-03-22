@@ -112,3 +112,4 @@ Aws::Http::HeaderValueCollection RegisterActivityTypeRequest::GetRequestSpecific
 
 
 
+

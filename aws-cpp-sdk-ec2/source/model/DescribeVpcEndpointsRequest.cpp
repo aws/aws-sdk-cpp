@@ -74,3 +74,8 @@ Aws::String DescribeVpcEndpointsRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  DescribeVpcEndpointsRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

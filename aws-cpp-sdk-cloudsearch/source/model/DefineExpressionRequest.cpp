@@ -43,3 +43,8 @@ Aws::String DefineExpressionRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  DefineExpressionRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

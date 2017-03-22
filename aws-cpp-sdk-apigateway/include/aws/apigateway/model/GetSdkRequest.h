@@ -43,6 +43,7 @@ namespace Model
 
     void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
+
     /**
      * <p>The identifier of the <a>RestApi</a> that the SDK will use.</p>
      */

@@ -39,6 +39,11 @@ namespace Model
     CreateCacheClusterRequest();
     Aws::String SerializePayload() const override;
 
+
+  protected:
+    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+
+  public:
     /**
      * <p>The node group (shard) identifier. This parameter is stored as a lowercase
      * string.</p> <p> <b>Constraints:</b> </p> <ul> <li> <p>A name must contain from 1

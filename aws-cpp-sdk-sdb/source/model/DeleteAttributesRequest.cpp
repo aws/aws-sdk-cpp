@@ -60,3 +60,8 @@ Aws::String DeleteAttributesRequest::SerializePayload() const
   return ss.str();
 }
 
+
+void  DeleteAttributesRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+{
+  uri.SetQueryString(SerializePayload());
+}

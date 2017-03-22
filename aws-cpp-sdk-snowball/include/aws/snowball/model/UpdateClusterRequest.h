@@ -37,6 +37,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The cluster ID of the cluster that you want to update, for example
      * <code>CID123e4567-e89b-12d3-a456-426655440000</code>.</p>

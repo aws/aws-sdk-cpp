@@ -37,6 +37,11 @@ namespace Model
     CopyDBParameterGroupRequest();
     Aws::String SerializePayload() const override;
 
+
+  protected:
+    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+
+  public:
     /**
      * <p> The identifier or ARN for the source DB parameter group. For information
      * about creating an ARN, see <a
