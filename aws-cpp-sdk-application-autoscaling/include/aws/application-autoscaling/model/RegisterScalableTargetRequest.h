@@ -83,7 +83,10 @@ namespace Model
      * <code>spot-fleet-request/sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE</code>.</p>
      * </li> <li> <p>EMR cluster - The resource type is <code>instancegroup</code> and
      * the unique identifier is the cluster ID and instance group ID. Example:
-     * <code>instancegroup/j-2EEZNYKUA1NTV/ig-1791Y4E1L8YI0</code>.</p> </li> </ul>
+     * <code>instancegroup/j-2EEZNYKUA1NTV/ig-1791Y4E1L8YI0</code>.</p> </li> <li>
+     * <p>AppStream 2.0 fleet - The resource type is <code>fleet</code> and the unique
+     * identifier is the fleet name. Example: <code>fleet/sample-fleet</code>.</p>
+     * </li> </ul>
      */
     inline const Aws::String& GetResourceId() const{ return m_resourceId; }
 
@@ -98,7 +101,10 @@ namespace Model
      * <code>spot-fleet-request/sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE</code>.</p>
      * </li> <li> <p>EMR cluster - The resource type is <code>instancegroup</code> and
      * the unique identifier is the cluster ID and instance group ID. Example:
-     * <code>instancegroup/j-2EEZNYKUA1NTV/ig-1791Y4E1L8YI0</code>.</p> </li> </ul>
+     * <code>instancegroup/j-2EEZNYKUA1NTV/ig-1791Y4E1L8YI0</code>.</p> </li> <li>
+     * <p>AppStream 2.0 fleet - The resource type is <code>fleet</code> and the unique
+     * identifier is the fleet name. Example: <code>fleet/sample-fleet</code>.</p>
+     * </li> </ul>
      */
     inline void SetResourceId(const Aws::String& value) { m_resourceIdHasBeenSet = true; m_resourceId = value; }
 
@@ -113,7 +119,10 @@ namespace Model
      * <code>spot-fleet-request/sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE</code>.</p>
      * </li> <li> <p>EMR cluster - The resource type is <code>instancegroup</code> and
      * the unique identifier is the cluster ID and instance group ID. Example:
-     * <code>instancegroup/j-2EEZNYKUA1NTV/ig-1791Y4E1L8YI0</code>.</p> </li> </ul>
+     * <code>instancegroup/j-2EEZNYKUA1NTV/ig-1791Y4E1L8YI0</code>.</p> </li> <li>
+     * <p>AppStream 2.0 fleet - The resource type is <code>fleet</code> and the unique
+     * identifier is the fleet name. Example: <code>fleet/sample-fleet</code>.</p>
+     * </li> </ul>
      */
     inline void SetResourceId(Aws::String&& value) { m_resourceIdHasBeenSet = true; m_resourceId = value; }
 
@@ -128,7 +137,10 @@ namespace Model
      * <code>spot-fleet-request/sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE</code>.</p>
      * </li> <li> <p>EMR cluster - The resource type is <code>instancegroup</code> and
      * the unique identifier is the cluster ID and instance group ID. Example:
-     * <code>instancegroup/j-2EEZNYKUA1NTV/ig-1791Y4E1L8YI0</code>.</p> </li> </ul>
+     * <code>instancegroup/j-2EEZNYKUA1NTV/ig-1791Y4E1L8YI0</code>.</p> </li> <li>
+     * <p>AppStream 2.0 fleet - The resource type is <code>fleet</code> and the unique
+     * identifier is the fleet name. Example: <code>fleet/sample-fleet</code>.</p>
+     * </li> </ul>
      */
     inline void SetResourceId(const char* value) { m_resourceIdHasBeenSet = true; m_resourceId.assign(value); }
 
@@ -143,7 +155,10 @@ namespace Model
      * <code>spot-fleet-request/sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE</code>.</p>
      * </li> <li> <p>EMR cluster - The resource type is <code>instancegroup</code> and
      * the unique identifier is the cluster ID and instance group ID. Example:
-     * <code>instancegroup/j-2EEZNYKUA1NTV/ig-1791Y4E1L8YI0</code>.</p> </li> </ul>
+     * <code>instancegroup/j-2EEZNYKUA1NTV/ig-1791Y4E1L8YI0</code>.</p> </li> <li>
+     * <p>AppStream 2.0 fleet - The resource type is <code>fleet</code> and the unique
+     * identifier is the fleet name. Example: <code>fleet/sample-fleet</code>.</p>
+     * </li> </ul>
      */
     inline RegisterScalableTargetRequest& WithResourceId(const Aws::String& value) { SetResourceId(value); return *this;}
 
@@ -158,7 +173,10 @@ namespace Model
      * <code>spot-fleet-request/sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE</code>.</p>
      * </li> <li> <p>EMR cluster - The resource type is <code>instancegroup</code> and
      * the unique identifier is the cluster ID and instance group ID. Example:
-     * <code>instancegroup/j-2EEZNYKUA1NTV/ig-1791Y4E1L8YI0</code>.</p> </li> </ul>
+     * <code>instancegroup/j-2EEZNYKUA1NTV/ig-1791Y4E1L8YI0</code>.</p> </li> <li>
+     * <p>AppStream 2.0 fleet - The resource type is <code>fleet</code> and the unique
+     * identifier is the fleet name. Example: <code>fleet/sample-fleet</code>.</p>
+     * </li> </ul>
      */
     inline RegisterScalableTargetRequest& WithResourceId(Aws::String&& value) { SetResourceId(value); return *this;}
 
@@ -173,7 +191,10 @@ namespace Model
      * <code>spot-fleet-request/sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE</code>.</p>
      * </li> <li> <p>EMR cluster - The resource type is <code>instancegroup</code> and
      * the unique identifier is the cluster ID and instance group ID. Example:
-     * <code>instancegroup/j-2EEZNYKUA1NTV/ig-1791Y4E1L8YI0</code>.</p> </li> </ul>
+     * <code>instancegroup/j-2EEZNYKUA1NTV/ig-1791Y4E1L8YI0</code>.</p> </li> <li>
+     * <p>AppStream 2.0 fleet - The resource type is <code>fleet</code> and the unique
+     * identifier is the fleet name. Example: <code>fleet/sample-fleet</code>.</p>
+     * </li> </ul>
      */
     inline RegisterScalableTargetRequest& WithResourceId(const char* value) { SetResourceId(value); return *this;}
 
@@ -185,7 +206,9 @@ namespace Model
      * <code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a
      * Spot fleet request.</p> </li> <li> <p>
      * <code>elasticmapreduce:instancegroup:InstanceCount</code> - The instance count
-     * of an EMR Instance Group.</p> </li> </ul>
+     * of an EMR Instance Group.</p> </li> <li> <p>
+     * <code>appstream:fleet:DesiredCapacity</code> - The desired capacity of an
+     * AppStream 2.0 fleet.</p> </li> </ul>
      */
     inline const ScalableDimension& GetScalableDimension() const{ return m_scalableDimension; }
 
@@ -197,7 +220,9 @@ namespace Model
      * <code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a
      * Spot fleet request.</p> </li> <li> <p>
      * <code>elasticmapreduce:instancegroup:InstanceCount</code> - The instance count
-     * of an EMR Instance Group.</p> </li> </ul>
+     * of an EMR Instance Group.</p> </li> <li> <p>
+     * <code>appstream:fleet:DesiredCapacity</code> - The desired capacity of an
+     * AppStream 2.0 fleet.</p> </li> </ul>
      */
     inline void SetScalableDimension(const ScalableDimension& value) { m_scalableDimensionHasBeenSet = true; m_scalableDimension = value; }
 
@@ -209,7 +234,9 @@ namespace Model
      * <code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a
      * Spot fleet request.</p> </li> <li> <p>
      * <code>elasticmapreduce:instancegroup:InstanceCount</code> - The instance count
-     * of an EMR Instance Group.</p> </li> </ul>
+     * of an EMR Instance Group.</p> </li> <li> <p>
+     * <code>appstream:fleet:DesiredCapacity</code> - The desired capacity of an
+     * AppStream 2.0 fleet.</p> </li> </ul>
      */
     inline void SetScalableDimension(ScalableDimension&& value) { m_scalableDimensionHasBeenSet = true; m_scalableDimension = value; }
 
@@ -221,7 +248,9 @@ namespace Model
      * <code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a
      * Spot fleet request.</p> </li> <li> <p>
      * <code>elasticmapreduce:instancegroup:InstanceCount</code> - The instance count
-     * of an EMR Instance Group.</p> </li> </ul>
+     * of an EMR Instance Group.</p> </li> <li> <p>
+     * <code>appstream:fleet:DesiredCapacity</code> - The desired capacity of an
+     * AppStream 2.0 fleet.</p> </li> </ul>
      */
     inline RegisterScalableTargetRequest& WithScalableDimension(const ScalableDimension& value) { SetScalableDimension(value); return *this;}
 
@@ -233,7 +262,9 @@ namespace Model
      * <code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a
      * Spot fleet request.</p> </li> <li> <p>
      * <code>elasticmapreduce:instancegroup:InstanceCount</code> - The instance count
-     * of an EMR Instance Group.</p> </li> </ul>
+     * of an EMR Instance Group.</p> </li> <li> <p>
+     * <code>appstream:fleet:DesiredCapacity</code> - The desired capacity of an
+     * AppStream 2.0 fleet.</p> </li> </ul>
      */
     inline RegisterScalableTargetRequest& WithScalableDimension(ScalableDimension&& value) { SetScalableDimension(value); return *this;}
 

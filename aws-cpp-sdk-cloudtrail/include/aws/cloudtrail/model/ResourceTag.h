@@ -80,25 +80,39 @@ namespace Model
      */
     inline ResourceTag& WithResourceId(const char* value) { SetResourceId(value); return *this;}
 
-    
+    /**
+     * <p>A list of tags.</p>
+     */
     inline const Aws::Vector<Tag>& GetTagsList() const{ return m_tagsList; }
 
-    
+    /**
+     * <p>A list of tags.</p>
+     */
     inline void SetTagsList(const Aws::Vector<Tag>& value) { m_tagsListHasBeenSet = true; m_tagsList = value; }
 
-    
+    /**
+     * <p>A list of tags.</p>
+     */
     inline void SetTagsList(Aws::Vector<Tag>&& value) { m_tagsListHasBeenSet = true; m_tagsList = value; }
 
-    
+    /**
+     * <p>A list of tags.</p>
+     */
     inline ResourceTag& WithTagsList(const Aws::Vector<Tag>& value) { SetTagsList(value); return *this;}
 
-    
+    /**
+     * <p>A list of tags.</p>
+     */
     inline ResourceTag& WithTagsList(Aws::Vector<Tag>&& value) { SetTagsList(value); return *this;}
 
-    
+    /**
+     * <p>A list of tags.</p>
+     */
     inline ResourceTag& AddTagsList(const Tag& value) { m_tagsListHasBeenSet = true; m_tagsList.push_back(value); return *this; }
 
-    
+    /**
+     * <p>A list of tags.</p>
+     */
     inline ResourceTag& AddTagsList(Tag&& value) { m_tagsListHasBeenSet = true; m_tagsList.push_back(value); return *this; }
 
   private:

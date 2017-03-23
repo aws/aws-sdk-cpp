@@ -27,7 +27,8 @@ namespace Model
     NOT_SET,
     ecs_service_DesiredCount,
     ec2_spot_fleet_request_TargetCapacity,
-    elasticmapreduce_instancegroup_InstanceCount
+    elasticmapreduce_instancegroup_InstanceCount,
+    appstream_fleet_DesiredCapacity
   };
 
 namespace ScalableDimensionMapper

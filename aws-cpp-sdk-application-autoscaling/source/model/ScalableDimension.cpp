@@ -32,6 +32,7 @@ namespace Aws
         static const int ecs_service_DesiredCount_HASH = HashingUtils::HashString("ecs:service:DesiredCount");
         static const int ec2_spot_fleet_request_TargetCapacity_HASH = HashingUtils::HashString("ec2:spot-fleet-request:TargetCapacity");
         static const int elasticmapreduce_instancegroup_InstanceCount_HASH = HashingUtils::HashString("elasticmapreduce:instancegroup:InstanceCount");
+        static const int appstream_fleet_DesiredCapacity_HASH = HashingUtils::HashString("appstream:fleet:DesiredCapacity");
 
 
         ScalableDimension GetScalableDimensionForName(const Aws::String& name)
@@ -48,6 +49,10 @@ namespace Aws
           else if (hashCode == elasticmapreduce_instancegroup_InstanceCount_HASH)
           {
             return ScalableDimension::elasticmapreduce_instancegroup_InstanceCount;
+          }
+          else if (hashCode == appstream_fleet_DesiredCapacity_HASH)
+          {
+            return ScalableDimension::appstream_fleet_DesiredCapacity;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -69,6 +74,8 @@ namespace Aws
             return "ec2:spot-fleet-request:TargetCapacity";
           case ScalableDimension::elasticmapreduce_instancegroup_InstanceCount:
             return "elasticmapreduce:instancegroup:InstanceCount";
+          case ScalableDimension::appstream_fleet_DesiredCapacity:
+            return "appstream:fleet:DesiredCapacity";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

@@ -47,25 +47,39 @@ namespace Model
     ListTagsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     ListTagsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
-    
+    /**
+     * <p>A list of resource tags.</p>
+     */
     inline const Aws::Vector<ResourceTag>& GetResourceTagList() const{ return m_resourceTagList; }
 
-    
+    /**
+     * <p>A list of resource tags.</p>
+     */
     inline void SetResourceTagList(const Aws::Vector<ResourceTag>& value) { m_resourceTagList = value; }
 
-    
+    /**
+     * <p>A list of resource tags.</p>
+     */
     inline void SetResourceTagList(Aws::Vector<ResourceTag>&& value) { m_resourceTagList = value; }
 
-    
+    /**
+     * <p>A list of resource tags.</p>
+     */
     inline ListTagsResult& WithResourceTagList(const Aws::Vector<ResourceTag>& value) { SetResourceTagList(value); return *this;}
 
-    
+    /**
+     * <p>A list of resource tags.</p>
+     */
     inline ListTagsResult& WithResourceTagList(Aws::Vector<ResourceTag>&& value) { SetResourceTagList(value); return *this;}
 
-    
+    /**
+     * <p>A list of resource tags.</p>
+     */
     inline ListTagsResult& AddResourceTagList(const ResourceTag& value) { m_resourceTagList.push_back(value); return *this; }
 
-    
+    /**
+     * <p>A list of resource tags.</p>
+     */
     inline ListTagsResult& AddResourceTagList(ResourceTag&& value) { m_resourceTagList.push_back(value); return *this; }
 
     /**

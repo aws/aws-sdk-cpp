@@ -27,7 +27,8 @@ namespace Model
     NOT_SET,
     ecs,
     elasticmapreduce,
-    ec2
+    ec2,
+    appstream
   };
 
 namespace ServiceNamespaceMapper
