@@ -57,6 +57,13 @@ static const std::chrono::milliseconds TIME_DIF_MIN = std::chrono::milliseconds(
 
 std::atomic<int> AWSClient::s_refCount(0);
 
+static CoreErrors GuessBodylessErrorType(Aws::Http::HttpResponseCode responseCode)
+{
+    return responseCode == Http::HttpResponseCode::FORBIDDEN || responseCode == Http::HttpResponseCode::UNAUTHORIZED ?
+        CoreErrors::ACCESS_DENIED : responseCode == Http::HttpResponseCode::NOT_FOUND ? 
+        CoreErrors::RESOURCE_NOT_FOUND : CoreErrors::UNKNOWN;
+}
+
 void AWSClient::InitializeGlobalStatics()
 {
     int currentRefCount = s_refCount.load();
@@ -527,10 +534,12 @@ AWSError<CoreErrors> AWSJsonClient::BuildAWSError(
     else if (!httpResponse->GetResponseBody() || httpResponse->GetResponseBody().tellp() < 1)
     {
         auto responseCode = httpResponse->GetResponseCode();
+        auto errorCode = GuessBodylessErrorType(responseCode);
+
         Aws::StringStream ss;
         ss << "No response body. Response code: " << static_cast< uint32_t >(responseCode);
         AWS_LOG_ERROR(AWS_CLIENT_LOG_TAG, ss.str().c_str());
-        error = AWSError<CoreErrors>(CoreErrors::UNKNOWN, "", ss.str(),
+        error = AWSError<CoreErrors>(errorCode, "", ss.str(),
             isRetryableHttpResponseCode(responseCode));
     }
     else
@@ -630,10 +639,12 @@ AWSError<CoreErrors> AWSXMLClient::BuildAWSError(const std::shared_ptr<Http::Htt
     if (httpResponse->GetResponseBody().tellp() < 1)
     {
         auto responseCode = httpResponse->GetResponseCode();
+        auto errorCode = GuessBodylessErrorType(responseCode);
+
         Aws::StringStream ss;
         ss << "No response body. Response code: " << static_cast< uint32_t >(responseCode);
         AWS_LOG_ERROR(AWS_CLIENT_LOG_TAG, ss.str().c_str());
-        error = AWSError<CoreErrors>(CoreErrors::UNKNOWN, "", ss.str(),
+        error = AWSError<CoreErrors>(errorCode, "", ss.str(),
             isRetryableHttpResponseCode(responseCode));
     }
     else
