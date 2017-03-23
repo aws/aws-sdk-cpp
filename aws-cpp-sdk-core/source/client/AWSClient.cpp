@@ -59,9 +59,16 @@ std::atomic<int> AWSClient::s_refCount(0);
 
 static CoreErrors GuessBodylessErrorType(Aws::Http::HttpResponseCode responseCode)
 {
-    return responseCode == Http::HttpResponseCode::FORBIDDEN || responseCode == Http::HttpResponseCode::UNAUTHORIZED ?
-        CoreErrors::ACCESS_DENIED : responseCode == Http::HttpResponseCode::NOT_FOUND ? 
-        CoreErrors::RESOURCE_NOT_FOUND : CoreErrors::UNKNOWN;
+    switch (responseCode)
+    {
+    case HttpResponseCode::FORBIDDEN:
+    case HttpResponseCode::UNAUTHORIZED:
+        return CoreErrors::ACCESS_DENIED;
+    case HttpResponseCode::NOT_FOUND:
+        return CoreErrors::RESOURCE_NOT_FOUND;
+    default:
+        return CoreErrors::UNKNOWN;
+    }    
 }
 
 void AWSClient::InitializeGlobalStatics()
