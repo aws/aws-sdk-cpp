@@ -52,7 +52,7 @@ namespace Aws
 
         void PartState::OnDataTransferred(long long amount, const std::shared_ptr<TransferHandle> &transferHandle)
         {
-            m_currentProgressInBytes += amount;
+            m_currentProgressInBytes += static_cast<size_t>(amount);
             if (m_currentProgressInBytes > m_bestProgressInBytes)
             {
                 transferHandle->UpdateBytesTransferred(m_currentProgressInBytes - m_bestProgressInBytes);

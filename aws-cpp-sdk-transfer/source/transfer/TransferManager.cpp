@@ -590,7 +590,7 @@ namespace Aws
         bool TransferManager::InitializePartsForDownload(const std::shared_ptr<TransferHandle>& handle)
         {
             bool isRetry = handle->HasParts();
-            size_t bufferSize = m_transferConfig.bufferSize;
+            size_t bufferSize = static_cast<size_t>(m_transferConfig.bufferSize);
             if (!isRetry)
             {
                 Aws::S3::Model::HeadObjectRequest headObjectRequest;
@@ -655,7 +655,7 @@ namespace Aws
             }
 
             bool isMultipart = handle->IsMultipart();
-            size_t bufferSize = m_transferConfig.bufferSize;
+            size_t bufferSize = static_cast<size_t>(m_transferConfig.bufferSize);
 
             if(!isMultipart)
             {
