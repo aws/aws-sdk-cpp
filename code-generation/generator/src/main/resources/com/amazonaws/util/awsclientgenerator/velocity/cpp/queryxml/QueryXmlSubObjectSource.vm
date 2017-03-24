@@ -217,7 +217,11 @@ void ${typeInfo.className}::OutputToStream(Aws::OStream& oStream, const char* lo
   ${spaces}unsigned ${lowerCaseVarName}Idx = 1;
   ${spaces}for(auto& item : ${memberVarName})
   ${spaces}{
-#if($member.shape.listMember.queryName)
+#if($member.queryName)
+#set($location = $member.queryName)
+#elseif($member.locationName)
+#set($location = $CppViewHelper.capitalizeFirstChar($member.locationName))
+#elseif($member.shape.listMember.queryName)
 #set($location = $member.shape.listMember.queryName)
 #elseif($member.shape.listMember.locationName)
 #set($location = $member.shape.listMember.locationName)
