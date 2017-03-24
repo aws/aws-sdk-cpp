@@ -361,7 +361,7 @@ namespace Aws
 
         void TransferManager::DoSinglePartUpload(const std::shared_ptr<Aws::IOStream>& streamToPut, const std::shared_ptr<TransferHandle>& handle)
         {
-            auto partState = Aws::MakeShared<PartState>(CLASS_TAG, 1, 0, handle->GetBytesTotalSize());
+            auto partState = Aws::MakeShared<PartState>(CLASS_TAG, 1, 0, static_cast<size_t>(handle->GetBytesTotalSize()));
 
             handle->UpdateStatus(TransferStatus::IN_PROGRESS);
             handle->SetIsMultipart(false);
