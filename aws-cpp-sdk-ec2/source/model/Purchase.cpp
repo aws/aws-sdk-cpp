@@ -184,7 +184,7 @@ void Purchase::OutputToStream(Aws::OStream& oStream, const char* location) const
       unsigned hostIdSetIdx = 1;
       for(auto& item : m_hostIdSet)
       {
-        oStream << location << ".Item." << hostIdSetIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
+        oStream << location << ".HostIdSet." << hostIdSetIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
   }
   if(m_instanceFamilyHasBeenSet)

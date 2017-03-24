@@ -211,7 +211,7 @@ void Vpc::OutputToStream(Aws::OStream& oStream, const char* location) const
       for(auto& item : m_tags)
       {
         Aws::StringStream tagsSs;
-        tagsSs << location <<  ".Item." << tagsIdx++;
+        tagsSs << location <<  ".TagSet." << tagsIdx++;
         item.OutputToStream(oStream, tagsSs.str().c_str());
       }
   }
@@ -229,7 +229,7 @@ void Vpc::OutputToStream(Aws::OStream& oStream, const char* location) const
       for(auto& item : m_ipv6CidrBlockAssociationSet)
       {
         Aws::StringStream ipv6CidrBlockAssociationSetSs;
-        ipv6CidrBlockAssociationSetSs << location <<  ".Item." << ipv6CidrBlockAssociationSetIdx++;
+        ipv6CidrBlockAssociationSetSs << location <<  ".Ipv6CidrBlockAssociationSet." << ipv6CidrBlockAssociationSetIdx++;
         item.OutputToStream(oStream, ipv6CidrBlockAssociationSetSs.str().c_str());
       }
   }

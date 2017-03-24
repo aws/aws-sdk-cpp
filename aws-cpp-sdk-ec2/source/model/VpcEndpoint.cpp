@@ -183,7 +183,7 @@ void VpcEndpoint::OutputToStream(Aws::OStream& oStream, const char* location) co
       unsigned routeTableIdsIdx = 1;
       for(auto& item : m_routeTableIds)
       {
-        oStream << location << ".Item." << routeTableIdsIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
+        oStream << location << ".RouteTableIdSet." << routeTableIdsIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
   }
   if(m_creationTimestampHasBeenSet)

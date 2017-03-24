@@ -183,7 +183,7 @@ void VpnGateway::OutputToStream(Aws::OStream& oStream, const char* location) con
       for(auto& item : m_vpcAttachments)
       {
         Aws::StringStream vpcAttachmentsSs;
-        vpcAttachmentsSs << location <<  ".Item." << vpcAttachmentsIdx++;
+        vpcAttachmentsSs << location <<  ".Attachments." << vpcAttachmentsIdx++;
         item.OutputToStream(oStream, vpcAttachmentsSs.str().c_str());
       }
   }
@@ -193,7 +193,7 @@ void VpnGateway::OutputToStream(Aws::OStream& oStream, const char* location) con
       for(auto& item : m_tags)
       {
         Aws::StringStream tagsSs;
-        tagsSs << location <<  ".Item." << tagsIdx++;
+        tagsSs << location <<  ".TagSet." << tagsIdx++;
         item.OutputToStream(oStream, tagsSs.str().c_str());
       }
   }

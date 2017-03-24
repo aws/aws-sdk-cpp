@@ -293,7 +293,7 @@ void InstanceNetworkInterfaceSpecification::OutputToStream(Aws::OStream& oStream
       for(auto& item : m_privateIpAddresses)
       {
         Aws::StringStream privateIpAddressesSs;
-        privateIpAddressesSs << location <<  ".Item." << privateIpAddressesIdx++;
+        privateIpAddressesSs << location <<  ".PrivateIpAddresses." << privateIpAddressesIdx++;
         item.OutputToStream(oStream, privateIpAddressesSs.str().c_str());
       }
   }
@@ -311,7 +311,7 @@ void InstanceNetworkInterfaceSpecification::OutputToStream(Aws::OStream& oStream
       for(auto& item : m_ipv6Addresses)
       {
         Aws::StringStream ipv6AddressesSs;
-        ipv6AddressesSs << location <<  ".Item." << ipv6AddressesIdx++;
+        ipv6AddressesSs << location <<  ".Ipv6Addresses." << ipv6AddressesIdx++;
         item.OutputToStream(oStream, ipv6AddressesSs.str().c_str());
       }
   }

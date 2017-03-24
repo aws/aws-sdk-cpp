@@ -206,7 +206,7 @@ void ReservedInstancesModification::OutputToStream(Aws::OStream& oStream, const 
       for(auto& item : m_reservedInstancesIds)
       {
         Aws::StringStream reservedInstancesIdsSs;
-        reservedInstancesIdsSs << location <<  ".Item." << reservedInstancesIdsIdx++;
+        reservedInstancesIdsSs << location <<  ".ReservedInstancesSet." << reservedInstancesIdsIdx++;
         item.OutputToStream(oStream, reservedInstancesIdsSs.str().c_str());
       }
   }
@@ -216,7 +216,7 @@ void ReservedInstancesModification::OutputToStream(Aws::OStream& oStream, const 
       for(auto& item : m_modificationResults)
       {
         Aws::StringStream modificationResultsSs;
-        modificationResultsSs << location <<  ".Item." << modificationResultsIdx++;
+        modificationResultsSs << location <<  ".ModificationResultSet." << modificationResultsIdx++;
         item.OutputToStream(oStream, modificationResultsSs.str().c_str());
       }
   }

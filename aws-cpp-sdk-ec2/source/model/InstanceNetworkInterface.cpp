@@ -340,7 +340,7 @@ void InstanceNetworkInterface::OutputToStream(Aws::OStream& oStream, const char*
       for(auto& item : m_groups)
       {
         Aws::StringStream groupsSs;
-        groupsSs << location <<  ".Item." << groupsIdx++;
+        groupsSs << location <<  ".GroupSet." << groupsIdx++;
         item.OutputToStream(oStream, groupsSs.str().c_str());
       }
   }
@@ -362,7 +362,7 @@ void InstanceNetworkInterface::OutputToStream(Aws::OStream& oStream, const char*
       for(auto& item : m_privateIpAddresses)
       {
         Aws::StringStream privateIpAddressesSs;
-        privateIpAddressesSs << location <<  ".Item." << privateIpAddressesIdx++;
+        privateIpAddressesSs << location <<  ".PrivateIpAddressesSet." << privateIpAddressesIdx++;
         item.OutputToStream(oStream, privateIpAddressesSs.str().c_str());
       }
   }
@@ -372,7 +372,7 @@ void InstanceNetworkInterface::OutputToStream(Aws::OStream& oStream, const char*
       for(auto& item : m_ipv6Addresses)
       {
         Aws::StringStream ipv6AddressesSs;
-        ipv6AddressesSs << location <<  ".Item." << ipv6AddressesIdx++;
+        ipv6AddressesSs << location <<  ".Ipv6AddressesSet." << ipv6AddressesIdx++;
         item.OutputToStream(oStream, ipv6AddressesSs.str().c_str());
       }
   }

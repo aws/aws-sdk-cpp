@@ -171,7 +171,7 @@ void Reservation::OutputToStream(Aws::OStream& oStream, const char* location) co
       for(auto& item : m_groups)
       {
         Aws::StringStream groupsSs;
-        groupsSs << location <<  ".Item." << groupsIdx++;
+        groupsSs << location <<  ".GroupSet." << groupsIdx++;
         item.OutputToStream(oStream, groupsSs.str().c_str());
       }
   }
@@ -181,7 +181,7 @@ void Reservation::OutputToStream(Aws::OStream& oStream, const char* location) co
       for(auto& item : m_instances)
       {
         Aws::StringStream instancesSs;
-        instancesSs << location <<  ".Item." << instancesIdx++;
+        instancesSs << location <<  ".InstancesSet." << instancesIdx++;
         item.OutputToStream(oStream, instancesSs.str().c_str());
       }
   }

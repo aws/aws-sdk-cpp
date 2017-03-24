@@ -284,7 +284,7 @@ void SpotFleetRequestConfigData::OutputToStream(Aws::OStream& oStream, const cha
       for(auto& item : m_launchSpecifications)
       {
         Aws::StringStream launchSpecificationsSs;
-        launchSpecificationsSs << location <<  ".Item." << launchSpecificationsIdx++;
+        launchSpecificationsSs << location <<  ".LaunchSpecifications." << launchSpecificationsIdx++;
         item.OutputToStream(oStream, launchSpecificationsSs.str().c_str());
       }
   }

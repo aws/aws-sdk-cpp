@@ -128,7 +128,7 @@ void InternetGateway::OutputToStream(Aws::OStream& oStream, const char* location
       for(auto& item : m_attachments)
       {
         Aws::StringStream attachmentsSs;
-        attachmentsSs << location <<  ".Item." << attachmentsIdx++;
+        attachmentsSs << location <<  ".AttachmentSet." << attachmentsIdx++;
         item.OutputToStream(oStream, attachmentsSs.str().c_str());
       }
   }
@@ -138,7 +138,7 @@ void InternetGateway::OutputToStream(Aws::OStream& oStream, const char* location
       for(auto& item : m_tags)
       {
         Aws::StringStream tagsSs;
-        tagsSs << location <<  ".Item." << tagsIdx++;
+        tagsSs << location <<  ".TagSet." << tagsIdx++;
         item.OutputToStream(oStream, tagsSs.str().c_str());
       }
   }

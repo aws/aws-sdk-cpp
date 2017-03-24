@@ -433,7 +433,7 @@ void NetworkInterface::OutputToStream(Aws::OStream& oStream, const char* locatio
       for(auto& item : m_groups)
       {
         Aws::StringStream groupsSs;
-        groupsSs << location <<  ".Item." << groupsIdx++;
+        groupsSs << location <<  ".GroupSet." << groupsIdx++;
         item.OutputToStream(oStream, groupsSs.str().c_str());
       }
   }
@@ -455,7 +455,7 @@ void NetworkInterface::OutputToStream(Aws::OStream& oStream, const char* locatio
       for(auto& item : m_tagSet)
       {
         Aws::StringStream tagSetSs;
-        tagSetSs << location <<  ".Item." << tagSetIdx++;
+        tagSetSs << location <<  ".TagSet." << tagSetIdx++;
         item.OutputToStream(oStream, tagSetSs.str().c_str());
       }
   }
@@ -465,7 +465,7 @@ void NetworkInterface::OutputToStream(Aws::OStream& oStream, const char* locatio
       for(auto& item : m_privateIpAddresses)
       {
         Aws::StringStream privateIpAddressesSs;
-        privateIpAddressesSs << location <<  ".Item." << privateIpAddressesIdx++;
+        privateIpAddressesSs << location <<  ".PrivateIpAddressesSet." << privateIpAddressesIdx++;
         item.OutputToStream(oStream, privateIpAddressesSs.str().c_str());
       }
   }
@@ -475,7 +475,7 @@ void NetworkInterface::OutputToStream(Aws::OStream& oStream, const char* locatio
       for(auto& item : m_ipv6Addresses)
       {
         Aws::StringStream ipv6AddressesSs;
-        ipv6AddressesSs << location <<  ".Item." << ipv6AddressesIdx++;
+        ipv6AddressesSs << location <<  ".Ipv6AddressesSet." << ipv6AddressesIdx++;
         item.OutputToStream(oStream, ipv6AddressesSs.str().c_str());
       }
   }

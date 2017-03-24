@@ -29,7 +29,8 @@ namespace Model
     active,
     closed,
     cancelled,
-    failed
+    failed,
+    disabled
   };
 
 namespace SpotInstanceStateMapper

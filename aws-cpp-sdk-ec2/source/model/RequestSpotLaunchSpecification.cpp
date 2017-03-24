@@ -330,7 +330,7 @@ void RequestSpotLaunchSpecification::OutputToStream(Aws::OStream& oStream, const
       unsigned securityGroupsIdx = 1;
       for(auto& item : m_securityGroups)
       {
-        oStream << location << ".Item." << securityGroupsIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
+        oStream << location << ".SecurityGroup." << securityGroupsIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
   }
   if(m_userDataHasBeenSet)
@@ -365,7 +365,7 @@ void RequestSpotLaunchSpecification::OutputToStream(Aws::OStream& oStream, const
       for(auto& item : m_blockDeviceMappings)
       {
         Aws::StringStream blockDeviceMappingsSs;
-        blockDeviceMappingsSs << location <<  ".Item." << blockDeviceMappingsIdx++;
+        blockDeviceMappingsSs << location <<  ".BlockDeviceMapping." << blockDeviceMappingsIdx++;
         item.OutputToStream(oStream, blockDeviceMappingsSs.str().c_str());
       }
   }
@@ -379,7 +379,7 @@ void RequestSpotLaunchSpecification::OutputToStream(Aws::OStream& oStream, const
       for(auto& item : m_networkInterfaces)
       {
         Aws::StringStream networkInterfacesSs;
-        networkInterfacesSs << location <<  ".Item." << networkInterfacesIdx++;
+        networkInterfacesSs << location <<  ".NetworkInterface." << networkInterfacesIdx++;
         item.OutputToStream(oStream, networkInterfacesSs.str().c_str());
       }
   }
@@ -404,7 +404,7 @@ void RequestSpotLaunchSpecification::OutputToStream(Aws::OStream& oStream, const
       unsigned securityGroupIdsIdx = 1;
       for(auto& item : m_securityGroupIds)
       {
-        oStream << location << ".Item." << securityGroupIdsIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
+        oStream << location << ".SecurityGroupId." << securityGroupIdsIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
   }
 }

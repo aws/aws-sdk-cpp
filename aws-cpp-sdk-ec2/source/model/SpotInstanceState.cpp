@@ -34,6 +34,7 @@ namespace Aws
         static const int closed_HASH = HashingUtils::HashString("closed");
         static const int cancelled_HASH = HashingUtils::HashString("cancelled");
         static const int failed_HASH = HashingUtils::HashString("failed");
+        static const int disabled_HASH = HashingUtils::HashString("disabled");
 
 
         SpotInstanceState GetSpotInstanceStateForName(const Aws::String& name)
@@ -59,6 +60,10 @@ namespace Aws
           {
             return SpotInstanceState::failed;
           }
+          else if (hashCode == disabled_HASH)
+          {
+            return SpotInstanceState::disabled;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -83,6 +88,8 @@ namespace Aws
             return "cancelled";
           case SpotInstanceState::failed:
             return "failed";
+          case SpotInstanceState::disabled:
+            return "disabled";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

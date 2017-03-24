@@ -182,7 +182,7 @@ void StaleIpPermission::OutputToStream(Aws::OStream& oStream, const char* locati
       unsigned ipRangesIdx = 1;
       for(auto& item : m_ipRanges)
       {
-        oStream << location << ".Item." << ipRangesIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
+        oStream << location << ".IpRanges." << ipRangesIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
   }
   if(m_prefixListIdsHasBeenSet)
@@ -190,7 +190,7 @@ void StaleIpPermission::OutputToStream(Aws::OStream& oStream, const char* locati
       unsigned prefixListIdsIdx = 1;
       for(auto& item : m_prefixListIds)
       {
-        oStream << location << ".Item." << prefixListIdsIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
+        oStream << location << ".PrefixListIds." << prefixListIdsIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
   }
   if(m_toPortHasBeenSet)
@@ -203,7 +203,7 @@ void StaleIpPermission::OutputToStream(Aws::OStream& oStream, const char* locati
       for(auto& item : m_userIdGroupPairs)
       {
         Aws::StringStream userIdGroupPairsSs;
-        userIdGroupPairsSs << location <<  ".Item." << userIdGroupPairsIdx++;
+        userIdGroupPairsSs << location <<  ".Groups." << userIdGroupPairsIdx++;
         item.OutputToStream(oStream, userIdGroupPairsSs.str().c_str());
       }
   }

@@ -239,7 +239,7 @@ void ImportInstanceLaunchSpecification::OutputToStream(Aws::OStream& oStream, co
       unsigned groupNamesIdx = 1;
       for(auto& item : m_groupNames)
       {
-        oStream << location << ".SecurityGroup." << groupNamesIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
+        oStream << location << ".GroupName." << groupNamesIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
   }
   if(m_groupIdsHasBeenSet)
@@ -247,7 +247,7 @@ void ImportInstanceLaunchSpecification::OutputToStream(Aws::OStream& oStream, co
       unsigned groupIdsIdx = 1;
       for(auto& item : m_groupIds)
       {
-        oStream << location << ".SecurityGroupId." << groupIdsIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
+        oStream << location << ".GroupId." << groupIdsIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
   }
   if(m_additionalInfoHasBeenSet)

@@ -103,7 +103,7 @@ void DhcpConfiguration::OutputToStream(Aws::OStream& oStream, const char* locati
       for(auto& item : m_values)
       {
         Aws::StringStream valuesSs;
-        valuesSs << location <<  ".Item." << valuesIdx++;
+        valuesSs << location <<  ".ValueSet." << valuesIdx++;
         item.OutputToStream(oStream, valuesSs.str().c_str());
       }
   }

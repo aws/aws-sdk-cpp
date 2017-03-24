@@ -128,7 +128,7 @@ void DhcpOptions::OutputToStream(Aws::OStream& oStream, const char* location) co
       for(auto& item : m_dhcpConfigurations)
       {
         Aws::StringStream dhcpConfigurationsSs;
-        dhcpConfigurationsSs << location <<  ".Item." << dhcpConfigurationsIdx++;
+        dhcpConfigurationsSs << location <<  ".DhcpConfigurationSet." << dhcpConfigurationsIdx++;
         item.OutputToStream(oStream, dhcpConfigurationsSs.str().c_str());
       }
   }
@@ -138,7 +138,7 @@ void DhcpOptions::OutputToStream(Aws::OStream& oStream, const char* location) co
       for(auto& item : m_tags)
       {
         Aws::StringStream tagsSs;
-        tagsSs << location <<  ".Item." << tagsIdx++;
+        tagsSs << location <<  ".TagSet." << tagsIdx++;
         item.OutputToStream(oStream, tagsSs.str().c_str());
       }
   }

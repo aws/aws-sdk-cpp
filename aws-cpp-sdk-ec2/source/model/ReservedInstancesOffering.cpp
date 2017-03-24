@@ -342,7 +342,7 @@ void ReservedInstancesOffering::OutputToStream(Aws::OStream& oStream, const char
       for(auto& item : m_recurringCharges)
       {
         Aws::StringStream recurringChargesSs;
-        recurringChargesSs << location <<  ".Item." << recurringChargesIdx++;
+        recurringChargesSs << location <<  ".RecurringCharges." << recurringChargesIdx++;
         item.OutputToStream(oStream, recurringChargesSs.str().c_str());
       }
   }
@@ -356,7 +356,7 @@ void ReservedInstancesOffering::OutputToStream(Aws::OStream& oStream, const char
       for(auto& item : m_pricingDetails)
       {
         Aws::StringStream pricingDetailsSs;
-        pricingDetailsSs << location <<  ".Item." << pricingDetailsIdx++;
+        pricingDetailsSs << location <<  ".PricingDetailsSet." << pricingDetailsIdx++;
         item.OutputToStream(oStream, pricingDetailsSs.str().c_str());
       }
   }

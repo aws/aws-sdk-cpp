@@ -281,7 +281,7 @@ void ScheduledInstancesNetworkInterface::OutputToStream(Aws::OStream& oStream, c
       for(auto& item : m_privateIpAddressConfigs)
       {
         Aws::StringStream privateIpAddressConfigsSs;
-        privateIpAddressConfigsSs << location <<  ".PrivateIpAddressConfigSet." << privateIpAddressConfigsIdx++;
+        privateIpAddressConfigsSs << location <<  ".PrivateIpAddressConfig." << privateIpAddressConfigsIdx++;
         item.OutputToStream(oStream, privateIpAddressConfigsSs.str().c_str());
       }
   }
@@ -298,7 +298,7 @@ void ScheduledInstancesNetworkInterface::OutputToStream(Aws::OStream& oStream, c
       unsigned groupsIdx = 1;
       for(auto& item : m_groups)
       {
-        oStream << location << ".SecurityGroupId." << groupsIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
+        oStream << location << ".Group." << groupsIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
   }
   if(m_deleteOnTerminationHasBeenSet)

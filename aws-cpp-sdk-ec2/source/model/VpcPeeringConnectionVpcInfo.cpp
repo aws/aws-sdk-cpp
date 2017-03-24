@@ -152,7 +152,7 @@ void VpcPeeringConnectionVpcInfo::OutputToStream(Aws::OStream& oStream, const ch
       for(auto& item : m_ipv6CidrBlockSet)
       {
         Aws::StringStream ipv6CidrBlockSetSs;
-        ipv6CidrBlockSetSs << location <<  ".Item." << ipv6CidrBlockSetIdx++;
+        ipv6CidrBlockSetSs << location <<  ".Ipv6CidrBlockSet." << ipv6CidrBlockSetIdx++;
         item.OutputToStream(oStream, ipv6CidrBlockSetSs.str().c_str());
       }
   }

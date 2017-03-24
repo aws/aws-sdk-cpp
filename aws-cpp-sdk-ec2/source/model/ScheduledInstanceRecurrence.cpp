@@ -147,7 +147,7 @@ void ScheduledInstanceRecurrence::OutputToStream(Aws::OStream& oStream, const ch
       unsigned occurrenceDaySetIdx = 1;
       for(auto& item : m_occurrenceDaySet)
       {
-        oStream << location << ".Item." << occurrenceDaySetIdx++ << "=" << item << "&";
+        oStream << location << ".OccurrenceDaySet." << occurrenceDaySetIdx++ << "=" << item << "&";
       }
   }
   if(m_occurrenceRelativeToEndHasBeenSet)

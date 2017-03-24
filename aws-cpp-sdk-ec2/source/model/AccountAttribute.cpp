@@ -103,7 +103,7 @@ void AccountAttribute::OutputToStream(Aws::OStream& oStream, const char* locatio
       for(auto& item : m_attributeValues)
       {
         Aws::StringStream attributeValuesSs;
-        attributeValuesSs << location <<  ".Item." << attributeValuesIdx++;
+        attributeValuesSs << location <<  ".AttributeValueSet." << attributeValuesIdx++;
         item.OutputToStream(oStream, attributeValuesSs.str().c_str());
       }
   }

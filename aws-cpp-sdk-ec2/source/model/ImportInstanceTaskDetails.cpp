@@ -127,7 +127,7 @@ void ImportInstanceTaskDetails::OutputToStream(Aws::OStream& oStream, const char
       for(auto& item : m_volumes)
       {
         Aws::StringStream volumesSs;
-        volumesSs << location <<  ".Item." << volumesIdx++;
+        volumesSs << location <<  ".Volumes." << volumesIdx++;
         item.OutputToStream(oStream, volumesSs.str().c_str());
       }
   }

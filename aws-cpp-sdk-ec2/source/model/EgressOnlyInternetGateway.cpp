@@ -103,7 +103,7 @@ void EgressOnlyInternetGateway::OutputToStream(Aws::OStream& oStream, const char
       for(auto& item : m_attachments)
       {
         Aws::StringStream attachmentsSs;
-        attachmentsSs << location <<  ".Item." << attachmentsIdx++;
+        attachmentsSs << location <<  ".AttachmentSet." << attachmentsIdx++;
         item.OutputToStream(oStream, attachmentsSs.str().c_str());
       }
   }
