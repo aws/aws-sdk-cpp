@@ -82,49 +82,49 @@ namespace Model
     /**
      * <p>Each entry in the array is a structure containing:</p> <p>Key (string 1 ≤
      * length ≤ 200)</p> <p> Values (array containing a single string)</p> <p> Type
-     * (string “Equal��, “NotEqual”, “LessThan”, “GreaterThan”)</p>
+     * (string “Equal”, “NotEqual”, “LessThan”, “GreaterThan”)</p>
      */
     inline const Aws::Vector<InstancePatchStateFilter>& GetFilters() const{ return m_filters; }
 
     /**
      * <p>Each entry in the array is a structure containing:</p> <p>Key (string 1 ≤
      * length ≤ 200)</p> <p> Values (array containing a single string)</p> <p> Type
-     * (string “Equal��, “NotEqual”, “LessThan”, “GreaterThan”)</p>
+     * (string “Equal”, “NotEqual”, “LessThan”, “GreaterThan”)</p>
      */
     inline void SetFilters(const Aws::Vector<InstancePatchStateFilter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
     /**
      * <p>Each entry in the array is a structure containing:</p> <p>Key (string 1 ≤
      * length ≤ 200)</p> <p> Values (array containing a single string)</p> <p> Type
-     * (string “Equal��, “NotEqual”, “LessThan”, “GreaterThan”)</p>
+     * (string “Equal”, “NotEqual”, “LessThan”, “GreaterThan”)</p>
      */
     inline void SetFilters(Aws::Vector<InstancePatchStateFilter>&& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
     /**
      * <p>Each entry in the array is a structure containing:</p> <p>Key (string 1 ≤
      * length ≤ 200)</p> <p> Values (array containing a single string)</p> <p> Type
-     * (string “Equal��, “NotEqual”, “LessThan”, “GreaterThan”)</p>
+     * (string “Equal”, “NotEqual”, “LessThan”, “GreaterThan”)</p>
      */
     inline DescribeInstancePatchStatesForPatchGroupRequest& WithFilters(const Aws::Vector<InstancePatchStateFilter>& value) { SetFilters(value); return *this;}
 
     /**
      * <p>Each entry in the array is a structure containing:</p> <p>Key (string 1 ≤
      * length ≤ 200)</p> <p> Values (array containing a single string)</p> <p> Type
-     * (string “Equal��, “NotEqual”, “LessThan”, “GreaterThan”)</p>
+     * (string “Equal”, “NotEqual”, “LessThan”, “GreaterThan”)</p>
      */
     inline DescribeInstancePatchStatesForPatchGroupRequest& WithFilters(Aws::Vector<InstancePatchStateFilter>&& value) { SetFilters(value); return *this;}
 
     /**
      * <p>Each entry in the array is a structure containing:</p> <p>Key (string 1 ≤
      * length ≤ 200)</p> <p> Values (array containing a single string)</p> <p> Type
-     * (string “Equal��, “NotEqual”, “LessThan”, “GreaterThan”)</p>
+     * (string “Equal”, “NotEqual”, “LessThan”, “GreaterThan”)</p>
      */
     inline DescribeInstancePatchStatesForPatchGroupRequest& AddFilters(const InstancePatchStateFilter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
 
     /**
      * <p>Each entry in the array is a structure containing:</p> <p>Key (string 1 ≤
      * length ≤ 200)</p> <p> Values (array containing a single string)</p> <p> Type
-     * (string “Equal��, “NotEqual”, “LessThan”, “GreaterThan”)</p>
+     * (string “Equal”, “NotEqual”, “LessThan”, “GreaterThan”)</p>
      */
     inline DescribeInstancePatchStatesForPatchGroupRequest& AddFilters(InstancePatchStateFilter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
 

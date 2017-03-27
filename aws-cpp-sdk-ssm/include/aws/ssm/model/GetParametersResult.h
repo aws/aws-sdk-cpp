@@ -42,37 +42,37 @@ namespace Model
     GetParametersResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
     /**
-     * <p>A list of parameters used by the AWS account.</p>
+     * <p>A list of details for a parameter.</p>
      */
     inline const Aws::Vector<Parameter>& GetParameters() const{ return m_parameters; }
 
     /**
-     * <p>A list of parameters used by the AWS account.</p>
+     * <p>A list of details for a parameter.</p>
      */
     inline void SetParameters(const Aws::Vector<Parameter>& value) { m_parameters = value; }
 
     /**
-     * <p>A list of parameters used by the AWS account.</p>
+     * <p>A list of details for a parameter.</p>
      */
     inline void SetParameters(Aws::Vector<Parameter>&& value) { m_parameters = value; }
 
     /**
-     * <p>A list of parameters used by the AWS account.</p>
+     * <p>A list of details for a parameter.</p>
      */
     inline GetParametersResult& WithParameters(const Aws::Vector<Parameter>& value) { SetParameters(value); return *this;}
 
     /**
-     * <p>A list of parameters used by the AWS account.</p>
+     * <p>A list of details for a parameter.</p>
      */
     inline GetParametersResult& WithParameters(Aws::Vector<Parameter>&& value) { SetParameters(value); return *this;}
 
     /**
-     * <p>A list of parameters used by the AWS account.</p>
+     * <p>A list of details for a parameter.</p>
      */
     inline GetParametersResult& AddParameters(const Parameter& value) { m_parameters.push_back(value); return *this; }
 
     /**
-     * <p>A list of parameters used by the AWS account.</p>
+     * <p>A list of details for a parameter.</p>
      */
     inline GetParametersResult& AddParameters(Parameter&& value) { m_parameters.push_back(value); return *this; }
 

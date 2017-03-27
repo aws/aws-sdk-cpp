@@ -35,8 +35,8 @@ namespace Model
 {
 
   /**
-   * <p> Describes the association of an SSM document and an instance. </p><p><h3>See
-   * Also:</h3>   <a
+   * <p> Describes the association of a Systems Manager document and an
+   * instance.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateAssociationBatchRequestEntry">AWS
    * API Reference</a></p>
    */

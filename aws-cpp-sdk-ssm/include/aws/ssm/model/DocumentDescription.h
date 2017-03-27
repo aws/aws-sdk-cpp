@@ -230,27 +230,27 @@ namespace Model
     inline DocumentDescription& WithOwner(const char* value) { SetOwner(value); return *this;}
 
     /**
-     * <p> The date when the SSM document was created. </p>
+     * <p> The date when the document was created.</p>
      */
     inline const Aws::Utils::DateTime& GetCreatedDate() const{ return m_createdDate; }
 
     /**
-     * <p> The date when the SSM document was created. </p>
+     * <p> The date when the document was created.</p>
      */
     inline void SetCreatedDate(const Aws::Utils::DateTime& value) { m_createdDateHasBeenSet = true; m_createdDate = value; }
 
     /**
-     * <p> The date when the SSM document was created. </p>
+     * <p> The date when the document was created.</p>
      */
     inline void SetCreatedDate(Aws::Utils::DateTime&& value) { m_createdDateHasBeenSet = true; m_createdDate = value; }
 
     /**
-     * <p> The date when the SSM document was created. </p>
+     * <p> The date when the document was created.</p>
      */
     inline DocumentDescription& WithCreatedDate(const Aws::Utils::DateTime& value) { SetCreatedDate(value); return *this;}
 
     /**
-     * <p> The date when the SSM document was created. </p>
+     * <p> The date when the document was created.</p>
      */
     inline DocumentDescription& WithCreatedDate(Aws::Utils::DateTime&& value) { SetCreatedDate(value); return *this;}
 

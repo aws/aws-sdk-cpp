@@ -202,17 +202,20 @@ namespace Model
     inline PutParameterRequest& WithKeyId(const char* value) { SetKeyId(value); return *this;}
 
     /**
-     * <p>Overwrite an existing parameter.</p>
+     * <p>Overwrite an existing parameter. If not specified, will default to
+     * "false".</p>
      */
     inline bool GetOverwrite() const{ return m_overwrite; }
 
     /**
-     * <p>Overwrite an existing parameter.</p>
+     * <p>Overwrite an existing parameter. If not specified, will default to
+     * "false".</p>
      */
     inline void SetOverwrite(bool value) { m_overwriteHasBeenSet = true; m_overwrite = value; }
 
     /**
-     * <p>Overwrite an existing parameter.</p>
+     * <p>Overwrite an existing parameter. If not specified, will default to
+     * "false".</p>
      */
     inline PutParameterRequest& WithOverwrite(bool value) { SetOverwrite(value); return *this;}
 

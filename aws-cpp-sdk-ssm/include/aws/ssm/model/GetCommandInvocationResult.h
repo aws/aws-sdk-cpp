@@ -160,44 +160,44 @@ namespace Model
     inline GetCommandInvocationResult& WithComment(const char* value) { SetComment(value); return *this;}
 
     /**
-     * <p>The name of the SSM document that was executed. For example,
-     * AWS-RunShellScript is an SSM document.</p>
+     * <p>The name of the document that was executed. For example,
+     * AWS-RunShellScript.</p>
      */
     inline const Aws::String& GetDocumentName() const{ return m_documentName; }
 
     /**
-     * <p>The name of the SSM document that was executed. For example,
-     * AWS-RunShellScript is an SSM document.</p>
+     * <p>The name of the document that was executed. For example,
+     * AWS-RunShellScript.</p>
      */
     inline void SetDocumentName(const Aws::String& value) { m_documentName = value; }
 
     /**
-     * <p>The name of the SSM document that was executed. For example,
-     * AWS-RunShellScript is an SSM document.</p>
+     * <p>The name of the document that was executed. For example,
+     * AWS-RunShellScript.</p>
      */
     inline void SetDocumentName(Aws::String&& value) { m_documentName = value; }
 
     /**
-     * <p>The name of the SSM document that was executed. For example,
-     * AWS-RunShellScript is an SSM document.</p>
+     * <p>The name of the document that was executed. For example,
+     * AWS-RunShellScript.</p>
      */
     inline void SetDocumentName(const char* value) { m_documentName.assign(value); }
 
     /**
-     * <p>The name of the SSM document that was executed. For example,
-     * AWS-RunShellScript is an SSM document.</p>
+     * <p>The name of the document that was executed. For example,
+     * AWS-RunShellScript.</p>
      */
     inline GetCommandInvocationResult& WithDocumentName(const Aws::String& value) { SetDocumentName(value); return *this;}
 
     /**
-     * <p>The name of the SSM document that was executed. For example,
-     * AWS-RunShellScript is an SSM document.</p>
+     * <p>The name of the document that was executed. For example,
+     * AWS-RunShellScript.</p>
      */
     inline GetCommandInvocationResult& WithDocumentName(Aws::String&& value) { SetDocumentName(value); return *this;}
 
     /**
-     * <p>The name of the SSM document that was executed. For example,
-     * AWS-RunShellScript is an SSM document.</p>
+     * <p>The name of the document that was executed. For example,
+     * AWS-RunShellScript.</p>
      */
     inline GetCommandInvocationResult& WithDocumentName(const char* value) { SetDocumentName(value); return *this;}
 
@@ -433,11 +433,9 @@ namespace Model
      * because it includes states resulting from error and concurrency control
      * parameters. <code>StatusDetails</code> can show different results than
      * <code>Status</code>. For more information about these statuses, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitor-commands.html">Monitor
-     * Commands</a> (Linux) or <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/monitor-commands.html">Monitor
-     * Commands</a> (Windows). <code>StatusDetails</code> can be one of the following
-     * values: </p> <ul> <li> <p>Pending – The command has not been sent to the
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-about-status.html">Run
+     * Command Status</a>. <code>StatusDetails</code> can be one of the following
+     * values:</p> <ul> <li> <p>Pending – The command has not been sent to the
      * instance.</p> </li> <li> <p>In Progress – The command has been sent to the
      * instance but has not reached a terminal state.</p> </li> <li> <p>Delayed – The
      * system attempted to send the command to the target, but the target was not
@@ -475,11 +473,9 @@ namespace Model
      * because it includes states resulting from error and concurrency control
      * parameters. <code>StatusDetails</code> can show different results than
      * <code>Status</code>. For more information about these statuses, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitor-commands.html">Monitor
-     * Commands</a> (Linux) or <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/monitor-commands.html">Monitor
-     * Commands</a> (Windows). <code>StatusDetails</code> can be one of the following
-     * values: </p> <ul> <li> <p>Pending – The command has not been sent to the
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-about-status.html">Run
+     * Command Status</a>. <code>StatusDetails</code> can be one of the following
+     * values:</p> <ul> <li> <p>Pending – The command has not been sent to the
      * instance.</p> </li> <li> <p>In Progress – The command has been sent to the
      * instance but has not reached a terminal state.</p> </li> <li> <p>Delayed – The
      * system attempted to send the command to the target, but the target was not
@@ -517,11 +513,9 @@ namespace Model
      * because it includes states resulting from error and concurrency control
      * parameters. <code>StatusDetails</code> can show different results than
      * <code>Status</code>. For more information about these statuses, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitor-commands.html">Monitor
-     * Commands</a> (Linux) or <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/monitor-commands.html">Monitor
-     * Commands</a> (Windows). <code>StatusDetails</code> can be one of the following
-     * values: </p> <ul> <li> <p>Pending – The command has not been sent to the
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-about-status.html">Run
+     * Command Status</a>. <code>StatusDetails</code> can be one of the following
+     * values:</p> <ul> <li> <p>Pending – The command has not been sent to the
      * instance.</p> </li> <li> <p>In Progress – The command has been sent to the
      * instance but has not reached a terminal state.</p> </li> <li> <p>Delayed – The
      * system attempted to send the command to the target, but the target was not
@@ -559,11 +553,9 @@ namespace Model
      * because it includes states resulting from error and concurrency control
      * parameters. <code>StatusDetails</code> can show different results than
      * <code>Status</code>. For more information about these statuses, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitor-commands.html">Monitor
-     * Commands</a> (Linux) or <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/monitor-commands.html">Monitor
-     * Commands</a> (Windows). <code>StatusDetails</code> can be one of the following
-     * values: </p> <ul> <li> <p>Pending – The command has not been sent to the
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-about-status.html">Run
+     * Command Status</a>. <code>StatusDetails</code> can be one of the following
+     * values:</p> <ul> <li> <p>Pending – The command has not been sent to the
      * instance.</p> </li> <li> <p>In Progress – The command has been sent to the
      * instance but has not reached a terminal state.</p> </li> <li> <p>Delayed – The
      * system attempted to send the command to the target, but the target was not
@@ -601,11 +593,9 @@ namespace Model
      * because it includes states resulting from error and concurrency control
      * parameters. <code>StatusDetails</code> can show different results than
      * <code>Status</code>. For more information about these statuses, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitor-commands.html">Monitor
-     * Commands</a> (Linux) or <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/monitor-commands.html">Monitor
-     * Commands</a> (Windows). <code>StatusDetails</code> can be one of the following
-     * values: </p> <ul> <li> <p>Pending – The command has not been sent to the
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-about-status.html">Run
+     * Command Status</a>. <code>StatusDetails</code> can be one of the following
+     * values:</p> <ul> <li> <p>Pending – The command has not been sent to the
      * instance.</p> </li> <li> <p>In Progress – The command has been sent to the
      * instance but has not reached a terminal state.</p> </li> <li> <p>Delayed – The
      * system attempted to send the command to the target, but the target was not
@@ -643,11 +633,9 @@ namespace Model
      * because it includes states resulting from error and concurrency control
      * parameters. <code>StatusDetails</code> can show different results than
      * <code>Status</code>. For more information about these statuses, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitor-commands.html">Monitor
-     * Commands</a> (Linux) or <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/monitor-commands.html">Monitor
-     * Commands</a> (Windows). <code>StatusDetails</code> can be one of the following
-     * values: </p> <ul> <li> <p>Pending – The command has not been sent to the
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-about-status.html">Run
+     * Command Status</a>. <code>StatusDetails</code> can be one of the following
+     * values:</p> <ul> <li> <p>Pending – The command has not been sent to the
      * instance.</p> </li> <li> <p>In Progress – The command has been sent to the
      * instance but has not reached a terminal state.</p> </li> <li> <p>Delayed – The
      * system attempted to send the command to the target, but the target was not
@@ -685,11 +673,9 @@ namespace Model
      * because it includes states resulting from error and concurrency control
      * parameters. <code>StatusDetails</code> can show different results than
      * <code>Status</code>. For more information about these statuses, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitor-commands.html">Monitor
-     * Commands</a> (Linux) or <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/monitor-commands.html">Monitor
-     * Commands</a> (Windows). <code>StatusDetails</code> can be one of the following
-     * values: </p> <ul> <li> <p>Pending – The command has not been sent to the
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-about-status.html">Run
+     * Command Status</a>. <code>StatusDetails</code> can be one of the following
+     * values:</p> <ul> <li> <p>Pending – The command has not been sent to the
      * instance.</p> </li> <li> <p>In Progress – The command has been sent to the
      * instance but has not reached a terminal state.</p> </li> <li> <p>Delayed – The
      * system attempted to send the command to the target, but the target was not

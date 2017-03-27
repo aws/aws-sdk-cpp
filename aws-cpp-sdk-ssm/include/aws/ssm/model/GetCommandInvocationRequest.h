@@ -121,50 +121,50 @@ namespace Model
 
     /**
      * <p>(Optional) The name of the plugin for which you want detailed results. If the
-     * SSM document contains only one plugin, the name can be omitted and the details
-     * will be returned.</p>
+     * document contains only one plugin, the name can be omitted and the details will
+     * be returned.</p>
      */
     inline const Aws::String& GetPluginName() const{ return m_pluginName; }
 
     /**
      * <p>(Optional) The name of the plugin for which you want detailed results. If the
-     * SSM document contains only one plugin, the name can be omitted and the details
-     * will be returned.</p>
+     * document contains only one plugin, the name can be omitted and the details will
+     * be returned.</p>
      */
     inline void SetPluginName(const Aws::String& value) { m_pluginNameHasBeenSet = true; m_pluginName = value; }
 
     /**
      * <p>(Optional) The name of the plugin for which you want detailed results. If the
-     * SSM document contains only one plugin, the name can be omitted and the details
-     * will be returned.</p>
+     * document contains only one plugin, the name can be omitted and the details will
+     * be returned.</p>
      */
     inline void SetPluginName(Aws::String&& value) { m_pluginNameHasBeenSet = true; m_pluginName = value; }
 
     /**
      * <p>(Optional) The name of the plugin for which you want detailed results. If the
-     * SSM document contains only one plugin, the name can be omitted and the details
-     * will be returned.</p>
+     * document contains only one plugin, the name can be omitted and the details will
+     * be returned.</p>
      */
     inline void SetPluginName(const char* value) { m_pluginNameHasBeenSet = true; m_pluginName.assign(value); }
 
     /**
      * <p>(Optional) The name of the plugin for which you want detailed results. If the
-     * SSM document contains only one plugin, the name can be omitted and the details
-     * will be returned.</p>
+     * document contains only one plugin, the name can be omitted and the details will
+     * be returned.</p>
      */
     inline GetCommandInvocationRequest& WithPluginName(const Aws::String& value) { SetPluginName(value); return *this;}
 
     /**
      * <p>(Optional) The name of the plugin for which you want detailed results. If the
-     * SSM document contains only one plugin, the name can be omitted and the details
-     * will be returned.</p>
+     * document contains only one plugin, the name can be omitted and the details will
+     * be returned.</p>
      */
     inline GetCommandInvocationRequest& WithPluginName(Aws::String&& value) { SetPluginName(value); return *this;}
 
     /**
      * <p>(Optional) The name of the plugin for which you want detailed results. If the
-     * SSM document contains only one plugin, the name can be omitted and the details
-     * will be returned.</p>
+     * document contains only one plugin, the name can be omitted and the details will
+     * be returned.</p>
      */
     inline GetCommandInvocationRequest& WithPluginName(const char* value) { SetPluginName(value); return *this;}
 

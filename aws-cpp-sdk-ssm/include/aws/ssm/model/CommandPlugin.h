@@ -130,10 +130,8 @@ namespace Model
      * resulting from error and concurrency control parameters.
      * <code>StatusDetails</code> can show different results than <code>Status</code>.
      * For more information about these statuses, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitor-commands.html">Monitor
-     * Commands</a> (Linux) or <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/monitor-commands.html">Monitor
-     * Commands</a> (Windows). <code>StatusDetails</code> can be one of the following
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-about-status.html">Run
+     * Command Status</a>. <code>StatusDetails</code> can be one of the following
      * values:</p> <ul> <li> <p>Pending – The command has not been sent to the
      * instance.</p> </li> <li> <p>In Progress – The command has been sent to the
      * instance but has not reached a terminal state.</p> </li> <li> <p>Success – The
@@ -169,10 +167,8 @@ namespace Model
      * resulting from error and concurrency control parameters.
      * <code>StatusDetails</code> can show different results than <code>Status</code>.
      * For more information about these statuses, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitor-commands.html">Monitor
-     * Commands</a> (Linux) or <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/monitor-commands.html">Monitor
-     * Commands</a> (Windows). <code>StatusDetails</code> can be one of the following
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-about-status.html">Run
+     * Command Status</a>. <code>StatusDetails</code> can be one of the following
      * values:</p> <ul> <li> <p>Pending – The command has not been sent to the
      * instance.</p> </li> <li> <p>In Progress – The command has been sent to the
      * instance but has not reached a terminal state.</p> </li> <li> <p>Success – The
@@ -208,10 +204,8 @@ namespace Model
      * resulting from error and concurrency control parameters.
      * <code>StatusDetails</code> can show different results than <code>Status</code>.
      * For more information about these statuses, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitor-commands.html">Monitor
-     * Commands</a> (Linux) or <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/monitor-commands.html">Monitor
-     * Commands</a> (Windows). <code>StatusDetails</code> can be one of the following
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-about-status.html">Run
+     * Command Status</a>. <code>StatusDetails</code> can be one of the following
      * values:</p> <ul> <li> <p>Pending – The command has not been sent to the
      * instance.</p> </li> <li> <p>In Progress – The command has been sent to the
      * instance but has not reached a terminal state.</p> </li> <li> <p>Success – The
@@ -247,10 +241,8 @@ namespace Model
      * resulting from error and concurrency control parameters.
      * <code>StatusDetails</code> can show different results than <code>Status</code>.
      * For more information about these statuses, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitor-commands.html">Monitor
-     * Commands</a> (Linux) or <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/monitor-commands.html">Monitor
-     * Commands</a> (Windows). <code>StatusDetails</code> can be one of the following
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-about-status.html">Run
+     * Command Status</a>. <code>StatusDetails</code> can be one of the following
      * values:</p> <ul> <li> <p>Pending – The command has not been sent to the
      * instance.</p> </li> <li> <p>In Progress – The command has been sent to the
      * instance but has not reached a terminal state.</p> </li> <li> <p>Success – The
@@ -286,10 +278,8 @@ namespace Model
      * resulting from error and concurrency control parameters.
      * <code>StatusDetails</code> can show different results than <code>Status</code>.
      * For more information about these statuses, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitor-commands.html">Monitor
-     * Commands</a> (Linux) or <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/monitor-commands.html">Monitor
-     * Commands</a> (Windows). <code>StatusDetails</code> can be one of the following
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-about-status.html">Run
+     * Command Status</a>. <code>StatusDetails</code> can be one of the following
      * values:</p> <ul> <li> <p>Pending – The command has not been sent to the
      * instance.</p> </li> <li> <p>In Progress – The command has been sent to the
      * instance but has not reached a terminal state.</p> </li> <li> <p>Success – The
@@ -325,10 +315,8 @@ namespace Model
      * resulting from error and concurrency control parameters.
      * <code>StatusDetails</code> can show different results than <code>Status</code>.
      * For more information about these statuses, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitor-commands.html">Monitor
-     * Commands</a> (Linux) or <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/monitor-commands.html">Monitor
-     * Commands</a> (Windows). <code>StatusDetails</code> can be one of the following
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-about-status.html">Run
+     * Command Status</a>. <code>StatusDetails</code> can be one of the following
      * values:</p> <ul> <li> <p>Pending – The command has not been sent to the
      * instance.</p> </li> <li> <p>In Progress – The command has been sent to the
      * instance but has not reached a terminal state.</p> </li> <li> <p>Success – The
@@ -364,10 +352,8 @@ namespace Model
      * resulting from error and concurrency control parameters.
      * <code>StatusDetails</code> can show different results than <code>Status</code>.
      * For more information about these statuses, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitor-commands.html">Monitor
-     * Commands</a> (Linux) or <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/monitor-commands.html">Monitor
-     * Commands</a> (Windows). <code>StatusDetails</code> can be one of the following
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-about-status.html">Run
+     * Command Status</a>. <code>StatusDetails</code> can be one of the following
      * values:</p> <ul> <li> <p>Pending – The command has not been sent to the
      * instance.</p> </li> <li> <p>In Progress – The command has been sent to the
      * instance but has not reached a terminal state.</p> </li> <li> <p>Success – The

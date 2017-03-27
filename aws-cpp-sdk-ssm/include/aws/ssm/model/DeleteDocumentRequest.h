@@ -36,37 +36,37 @@ namespace Model
 
 
     /**
-     * <p>The name of the SSM document.</p>
+     * <p>The name of the document.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>The name of the SSM document.</p>
+     * <p>The name of the document.</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>The name of the SSM document.</p>
+     * <p>The name of the document.</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>The name of the SSM document.</p>
+     * <p>The name of the document.</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>The name of the SSM document.</p>
+     * <p>The name of the document.</p>
      */
     inline DeleteDocumentRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>The name of the SSM document.</p>
+     * <p>The name of the document.</p>
      */
     inline DeleteDocumentRequest& WithName(Aws::String&& value) { SetName(value); return *this;}
 
     /**
-     * <p>The name of the SSM document.</p>
+     * <p>The name of the document.</p>
      */
     inline DeleteDocumentRequest& WithName(const char* value) { SetName(value); return *this;}
 

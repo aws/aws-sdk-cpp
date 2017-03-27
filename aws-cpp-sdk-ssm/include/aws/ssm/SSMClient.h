@@ -473,21 +473,20 @@ namespace Model
     typedef std::function<void(const SSMClient*, const Model::UpdatePatchBaselineRequest&, const Model::UpdatePatchBaselineOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdatePatchBaselineResponseReceivedHandler;
 
   /**
-   * <p>Amazon EC2 Systems Manager is a collection of capabilities that helps you
-   * automate management tasks such as collecting system inventory, applying
-   * operating system (OS) patches, automating the creation of Amazon Machine Images
-   * (AMIs), and configuring operating systems (OSs) and applications at scale.
-   * Systems Manager works with managed instances: Amazon EC2 instances and servers
-   * or virtual machines (VMs) in your on-premises environment that are configured
-   * for Systems Manager. </p> <p>This references is intended to be used with the EC2
-   * Systems Manager User Guide (<a
-   * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/systems-manager.html">Linux</a>)
-   * (<a
-   * href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/systems-manager.html">Windows</a>).</p>
-   * <p>To get started, verify prerequisites and configure managed instances (<a
-   * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/systems-manager-prereqs.html">Linux</a>)
-   * (<a
-   * href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/systems-manager-prereqs.html">Windows</a>).</p>
+   * <fullname>Amazon EC2 Systems Manager</fullname> <p>Amazon EC2 Systems Manager is
+   * a collection of capabilities that helps you automate management tasks such as
+   * collecting system inventory, applying operating system (OS) patches, automating
+   * the creation of Amazon Machine Images (AMIs), and configuring operating systems
+   * (OSs) and applications at scale. Systems Manager lets you remotely and securely
+   * manage the configuration of your managed instances. A <i>managed instance</i> is
+   * any Amazon EC2 instance or on-premises machine in your hybrid environment that
+   * has been configured for Systems Manager.</p> <p>This reference is intended to be
+   * used with the <a
+   * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/">Amazon EC2
+   * Systems Manager User Guide</a>.</p> <p>To get started, verify prerequisites and
+   * configure managed instances. For more information, see <a
+   * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-prereqs.html">Systems
+   * Manager Prerequisites</a>.</p>
    */
   class AWS_SSM_API SSMClient : public Aws::Client::AWSJsonClient
   {
@@ -531,7 +530,7 @@ namespace Model
          * interpreted strictly as a string of characters. </p> <p>For more information
          * about tags, see <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging
-         * Your Amazon EC2 Resources</a> in the Amazon EC2 User Guide. </p><p><h3>See
+         * Your Amazon EC2 Resources</a> in the <i>Amazon EC2 User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/AddTagsToResource">AWS
          * API Reference</a></p>
@@ -554,7 +553,7 @@ namespace Model
          * interpreted strictly as a string of characters. </p> <p>For more information
          * about tags, see <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging
-         * Your Amazon EC2 Resources</a> in the Amazon EC2 User Guide. </p><p><h3>See
+         * Your Amazon EC2 Resources</a> in the <i>Amazon EC2 User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/AddTagsToResource">AWS
          * API Reference</a></p>
@@ -579,7 +578,7 @@ namespace Model
          * interpreted strictly as a string of characters. </p> <p>For more information
          * about tags, see <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging
-         * Your Amazon EC2 Resources</a> in the Amazon EC2 User Guide. </p><p><h3>See
+         * Your Amazon EC2 Resources</a> in the <i>Amazon EC2 User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/AddTagsToResource">AWS
          * API Reference</a></p>
@@ -624,11 +623,8 @@ namespace Model
          * you can manage these resources using Run Command. An on-premises server or
          * virtual machine that has been registered with EC2 is called a managed instance.
          * For more information about activations, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/managed-instances.html">Setting
-         * Up Managed Instances (Linux)</a> or <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/managed-instances.html">Setting
-         * Up Managed Instances (Windows)</a> in the Amazon EC2 User Guide. </p><p><h3>See
-         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-managedinstances.html">Setting
+         * Up Systems Manager in Hybrid Environments</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateActivation">AWS
          * API Reference</a></p>
          */
@@ -639,11 +635,8 @@ namespace Model
          * you can manage these resources using Run Command. An on-premises server or
          * virtual machine that has been registered with EC2 is called a managed instance.
          * For more information about activations, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/managed-instances.html">Setting
-         * Up Managed Instances (Linux)</a> or <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/managed-instances.html">Setting
-         * Up Managed Instances (Windows)</a> in the Amazon EC2 User Guide. </p><p><h3>See
-         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-managedinstances.html">Setting
+         * Up Systems Manager in Hybrid Environments</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateActivation">AWS
          * API Reference</a></p>
          *
@@ -656,11 +649,8 @@ namespace Model
          * you can manage these resources using Run Command. An on-premises server or
          * virtual machine that has been registered with EC2 is called a managed instance.
          * For more information about activations, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/managed-instances.html">Setting
-         * Up Managed Instances (Linux)</a> or <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/managed-instances.html">Setting
-         * Up Managed Instances (Windows)</a> in the Amazon EC2 User Guide. </p><p><h3>See
-         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-managedinstances.html">Setting
+         * Up Systems Manager in Hybrid Environments</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateActivation">AWS
          * API Reference</a></p>
          *
@@ -669,24 +659,26 @@ namespace Model
         virtual void CreateActivationAsync(const Model::CreateActivationRequest& request, const CreateActivationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Associates the specified SSM document with the specified instances or
-         * targets.</p> <p>When you associate an SSM document with one or more instances
-         * using instance IDs or tags, the SSM agent running on the instance processes the
-         * document and configures the instance as specified.</p> <p>If you associate a
-         * document with an instance that already has an associated document, the system
-         * throws the AssociationAlreadyExists exception.</p><p><h3>See Also:</h3>   <a
+         * <p>Associates the specified Systems Manager document with the specified
+         * instances or targets.</p> <p>When you associate a document with one or more
+         * instances using instance IDs or tags, the SSM Agent running on the instance
+         * processes the document and configures the instance as specified.</p> <p>If you
+         * associate a document with an instance that already has an associated document,
+         * the system throws the AssociationAlreadyExists exception.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateAssociation">AWS
          * API Reference</a></p>
          */
         virtual Model::CreateAssociationOutcome CreateAssociation(const Model::CreateAssociationRequest& request) const;
 
         /**
-         * <p>Associates the specified SSM document with the specified instances or
-         * targets.</p> <p>When you associate an SSM document with one or more instances
-         * using instance IDs or tags, the SSM agent running on the instance processes the
-         * document and configures the instance as specified.</p> <p>If you associate a
-         * document with an instance that already has an associated document, the system
-         * throws the AssociationAlreadyExists exception.</p><p><h3>See Also:</h3>   <a
+         * <p>Associates the specified Systems Manager document with the specified
+         * instances or targets.</p> <p>When you associate a document with one or more
+         * instances using instance IDs or tags, the SSM Agent running on the instance
+         * processes the document and configures the instance as specified.</p> <p>If you
+         * associate a document with an instance that already has an associated document,
+         * the system throws the AssociationAlreadyExists exception.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateAssociation">AWS
          * API Reference</a></p>
          *
@@ -695,12 +687,13 @@ namespace Model
         virtual Model::CreateAssociationOutcomeCallable CreateAssociationCallable(const Model::CreateAssociationRequest& request) const;
 
         /**
-         * <p>Associates the specified SSM document with the specified instances or
-         * targets.</p> <p>When you associate an SSM document with one or more instances
-         * using instance IDs or tags, the SSM agent running on the instance processes the
-         * document and configures the instance as specified.</p> <p>If you associate a
-         * document with an instance that already has an associated document, the system
-         * throws the AssociationAlreadyExists exception.</p><p><h3>See Also:</h3>   <a
+         * <p>Associates the specified Systems Manager document with the specified
+         * instances or targets.</p> <p>When you associate a document with one or more
+         * instances using instance IDs or tags, the SSM Agent running on the instance
+         * processes the document and configures the instance as specified.</p> <p>If you
+         * associate a document with an instance that already has an associated document,
+         * the system throws the AssociationAlreadyExists exception.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateAssociation">AWS
          * API Reference</a></p>
          *
@@ -709,24 +702,26 @@ namespace Model
         virtual void CreateAssociationAsync(const Model::CreateAssociationRequest& request, const CreateAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Associates the specified SSM document with the specified instances or
-         * targets.</p> <p>When you associate an SSM document with one or more instances
-         * using instance IDs or tags, the SSM agent running on the instance processes the
-         * document and configures the instance as specified.</p> <p>If you associate a
-         * document with an instance that already has an associated document, the system
-         * throws the AssociationAlreadyExists exception.</p><p><h3>See Also:</h3>   <a
+         * <p>Associates the specified Systems Manager document with the specified
+         * instances or targets.</p> <p>When you associate a document with one or more
+         * instances using instance IDs or tags, the SSM Agent running on the instance
+         * processes the document and configures the instance as specified.</p> <p>If you
+         * associate a document with an instance that already has an associated document,
+         * the system throws the AssociationAlreadyExists exception.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateAssociationBatch">AWS
          * API Reference</a></p>
          */
         virtual Model::CreateAssociationBatchOutcome CreateAssociationBatch(const Model::CreateAssociationBatchRequest& request) const;
 
         /**
-         * <p>Associates the specified SSM document with the specified instances or
-         * targets.</p> <p>When you associate an SSM document with one or more instances
-         * using instance IDs or tags, the SSM agent running on the instance processes the
-         * document and configures the instance as specified.</p> <p>If you associate a
-         * document with an instance that already has an associated document, the system
-         * throws the AssociationAlreadyExists exception.</p><p><h3>See Also:</h3>   <a
+         * <p>Associates the specified Systems Manager document with the specified
+         * instances or targets.</p> <p>When you associate a document with one or more
+         * instances using instance IDs or tags, the SSM Agent running on the instance
+         * processes the document and configures the instance as specified.</p> <p>If you
+         * associate a document with an instance that already has an associated document,
+         * the system throws the AssociationAlreadyExists exception.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateAssociationBatch">AWS
          * API Reference</a></p>
          *
@@ -735,12 +730,13 @@ namespace Model
         virtual Model::CreateAssociationBatchOutcomeCallable CreateAssociationBatchCallable(const Model::CreateAssociationBatchRequest& request) const;
 
         /**
-         * <p>Associates the specified SSM document with the specified instances or
-         * targets.</p> <p>When you associate an SSM document with one or more instances
-         * using instance IDs or tags, the SSM agent running on the instance processes the
-         * document and configures the instance as specified.</p> <p>If you associate a
-         * document with an instance that already has an associated document, the system
-         * throws the AssociationAlreadyExists exception.</p><p><h3>See Also:</h3>   <a
+         * <p>Associates the specified Systems Manager document with the specified
+         * instances or targets.</p> <p>When you associate a document with one or more
+         * instances using instance IDs or tags, the SSM Agent running on the instance
+         * processes the document and configures the instance as specified.</p> <p>If you
+         * associate a document with an instance that already has an associated document,
+         * the system throws the AssociationAlreadyExists exception.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateAssociationBatch">AWS
          * API Reference</a></p>
          *
@@ -749,8 +745,8 @@ namespace Model
         virtual void CreateAssociationBatchAsync(const Model::CreateAssociationBatchRequest& request, const CreateAssociationBatchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates an SSM document.</p> <p>After you create an SSM document, you can use
-         * CreateAssociation to associate it with one or more running
+         * <p>Creates a Systems Manager document.</p> <p>After you create a document, you
+         * can use CreateAssociation to associate it with one or more running
          * instances.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateDocument">AWS
          * API Reference</a></p>
@@ -758,8 +754,8 @@ namespace Model
         virtual Model::CreateDocumentOutcome CreateDocument(const Model::CreateDocumentRequest& request) const;
 
         /**
-         * <p>Creates an SSM document.</p> <p>After you create an SSM document, you can use
-         * CreateAssociation to associate it with one or more running
+         * <p>Creates a Systems Manager document.</p> <p>After you create a document, you
+         * can use CreateAssociation to associate it with one or more running
          * instances.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateDocument">AWS
          * API Reference</a></p>
@@ -769,8 +765,8 @@ namespace Model
         virtual Model::CreateDocumentOutcomeCallable CreateDocumentCallable(const Model::CreateDocumentRequest& request) const;
 
         /**
-         * <p>Creates an SSM document.</p> <p>After you create an SSM document, you can use
-         * CreateAssociation to associate it with one or more running
+         * <p>Creates a Systems Manager document.</p> <p>After you create a document, you
+         * can use CreateAssociation to associate it with one or more running
          * instances.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateDocument">AWS
          * API Reference</a></p>
@@ -864,11 +860,11 @@ namespace Model
         virtual void DeleteActivationAsync(const Model::DeleteActivationRequest& request, const DeleteActivationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Disassociates the specified SSM document from the specified instance.</p>
-         * <p>When you disassociate an SSM document from an instance, it does not change
-         * the configuration of the instance. To change the configuration state of an
-         * instance after you disassociate a document, you must create a new document with
-         * the desired configuration and associate it with the instance.</p><p><h3>See
+         * <p>Disassociates the specified Systems Manager document from the specified
+         * instance.</p> <p>When you disassociate a document from an instance, it does not
+         * change the configuration of the instance. To change the configuration state of
+         * an instance after you disassociate a document, you must create a new document
+         * with the desired configuration and associate it with the instance.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeleteAssociation">AWS
          * API Reference</a></p>
@@ -876,11 +872,11 @@ namespace Model
         virtual Model::DeleteAssociationOutcome DeleteAssociation(const Model::DeleteAssociationRequest& request) const;
 
         /**
-         * <p>Disassociates the specified SSM document from the specified instance.</p>
-         * <p>When you disassociate an SSM document from an instance, it does not change
-         * the configuration of the instance. To change the configuration state of an
-         * instance after you disassociate a document, you must create a new document with
-         * the desired configuration and associate it with the instance.</p><p><h3>See
+         * <p>Disassociates the specified Systems Manager document from the specified
+         * instance.</p> <p>When you disassociate a document from an instance, it does not
+         * change the configuration of the instance. To change the configuration state of
+         * an instance after you disassociate a document, you must create a new document
+         * with the desired configuration and associate it with the instance.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeleteAssociation">AWS
          * API Reference</a></p>
@@ -890,11 +886,11 @@ namespace Model
         virtual Model::DeleteAssociationOutcomeCallable DeleteAssociationCallable(const Model::DeleteAssociationRequest& request) const;
 
         /**
-         * <p>Disassociates the specified SSM document from the specified instance.</p>
-         * <p>When you disassociate an SSM document from an instance, it does not change
-         * the configuration of the instance. To change the configuration state of an
-         * instance after you disassociate a document, you must create a new document with
-         * the desired configuration and associate it with the instance.</p><p><h3>See
+         * <p>Disassociates the specified Systems Manager document from the specified
+         * instance.</p> <p>When you disassociate a document from an instance, it does not
+         * change the configuration of the instance. To change the configuration state of
+         * an instance after you disassociate a document, you must create a new document
+         * with the desired configuration and associate it with the instance.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeleteAssociation">AWS
          * API Reference</a></p>
@@ -904,20 +900,20 @@ namespace Model
         virtual void DeleteAssociationAsync(const Model::DeleteAssociationRequest& request, const DeleteAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes the SSM document and all instance associations to the document.</p>
-         * <p>Before you delete the SSM document, we recommend that you use
-         * DeleteAssociation to disassociate all instances that are associated with the
-         * document.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes the Systems Manager document and all instance associations to the
+         * document.</p> <p>Before you delete the document, we recommend that you use
+         * <a>DeleteAssociation</a> to disassociate all instances that are associated with
+         * the document.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeleteDocument">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteDocumentOutcome DeleteDocument(const Model::DeleteDocumentRequest& request) const;
 
         /**
-         * <p>Deletes the SSM document and all instance associations to the document.</p>
-         * <p>Before you delete the SSM document, we recommend that you use
-         * DeleteAssociation to disassociate all instances that are associated with the
-         * document.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes the Systems Manager document and all instance associations to the
+         * document.</p> <p>Before you delete the document, we recommend that you use
+         * <a>DeleteAssociation</a> to disassociate all instances that are associated with
+         * the document.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeleteDocument">AWS
          * API Reference</a></p>
          *
@@ -926,10 +922,10 @@ namespace Model
         virtual Model::DeleteDocumentOutcomeCallable DeleteDocumentCallable(const Model::DeleteDocumentRequest& request) const;
 
         /**
-         * <p>Deletes the SSM document and all instance associations to the document.</p>
-         * <p>Before you delete the SSM document, we recommend that you use
-         * DeleteAssociation to disassociate all instances that are associated with the
-         * document.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes the Systems Manager document and all instance associations to the
+         * document.</p> <p>Before you delete the document, we recommend that you use
+         * <a>DeleteAssociation</a> to disassociate all instances that are associated with
+         * the document.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeleteDocument">AWS
          * API Reference</a></p>
          *
@@ -1015,7 +1011,7 @@ namespace Model
         /**
          * <p>Removes the server or virtual machine from the list of registered servers.
          * You can reregister the instance again at any time. If you don’t plan to use Run
-         * Command on the server, we suggest uninstalling the SSM agent
+         * Command on the server, we suggest uninstalling the SSM Agent
          * first.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeregisterManagedInstance">AWS
          * API Reference</a></p>
@@ -1025,7 +1021,7 @@ namespace Model
         /**
          * <p>Removes the server or virtual machine from the list of registered servers.
          * You can reregister the instance again at any time. If you don’t plan to use Run
-         * Command on the server, we suggest uninstalling the SSM agent
+         * Command on the server, we suggest uninstalling the SSM Agent
          * first.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeregisterManagedInstance">AWS
          * API Reference</a></p>
@@ -1037,7 +1033,7 @@ namespace Model
         /**
          * <p>Removes the server or virtual machine from the list of registered servers.
          * You can reregister the instance again at any time. If you don’t plan to use Run
-         * Command on the server, we suggest uninstalling the SSM agent
+         * Command on the server, we suggest uninstalling the SSM Agent
          * first.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeregisterManagedInstance">AWS
          * API Reference</a></p>
@@ -1156,7 +1152,7 @@ namespace Model
         virtual void DescribeActivationsAsync(const Model::DescribeActivationsRequest& request, const DescribeActivationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Describes the associations for the specified SSM document or
+         * <p>Describes the associations for the specified Systems Manager document or
          * instance.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeAssociation">AWS
          * API Reference</a></p>
@@ -1164,7 +1160,7 @@ namespace Model
         virtual Model::DescribeAssociationOutcome DescribeAssociation(const Model::DescribeAssociationRequest& request) const;
 
         /**
-         * <p>Describes the associations for the specified SSM document or
+         * <p>Describes the associations for the specified Systems Manager document or
          * instance.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeAssociation">AWS
          * API Reference</a></p>
@@ -1174,7 +1170,7 @@ namespace Model
         virtual Model::DescribeAssociationOutcomeCallable DescribeAssociationCallable(const Model::DescribeAssociationRequest& request) const;
 
         /**
-         * <p>Describes the associations for the specified SSM document or
+         * <p>Describes the associations for the specified Systems Manager document or
          * instance.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeAssociation">AWS
          * API Reference</a></p>
@@ -1265,20 +1261,20 @@ namespace Model
         virtual void DescribeDocumentAsync(const Model::DescribeDocumentRequest& request, const DescribeDocumentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Describes the permissions for an SSM document. If you created the document,
-         * you are the owner. If a document is shared, it can either be shared privately
-         * (by specifying a user’s AWS account ID) or publicly (<i>All</i>). </p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Describes the permissions for a Systems Manager document. If you created the
+         * document, you are the owner. If a document is shared, it can either be shared
+         * privately (by specifying a user’s AWS account ID) or publicly (<i>All</i>).
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeDocumentPermission">AWS
          * API Reference</a></p>
          */
         virtual Model::DescribeDocumentPermissionOutcome DescribeDocumentPermission(const Model::DescribeDocumentPermissionRequest& request) const;
 
         /**
-         * <p>Describes the permissions for an SSM document. If you created the document,
-         * you are the owner. If a document is shared, it can either be shared privately
-         * (by specifying a user’s AWS account ID) or publicly (<i>All</i>). </p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Describes the permissions for a Systems Manager document. If you created the
+         * document, you are the owner. If a document is shared, it can either be shared
+         * privately (by specifying a user’s AWS account ID) or publicly (<i>All</i>).
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeDocumentPermission">AWS
          * API Reference</a></p>
          *
@@ -1287,10 +1283,10 @@ namespace Model
         virtual Model::DescribeDocumentPermissionOutcomeCallable DescribeDocumentPermissionCallable(const Model::DescribeDocumentPermissionRequest& request) const;
 
         /**
-         * <p>Describes the permissions for an SSM document. If you created the document,
-         * you are the owner. If a document is shared, it can either be shared privately
-         * (by specifying a user’s AWS account ID) or publicly (<i>All</i>). </p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Describes the permissions for a Systems Manager document. If you created the
+         * document, you are the owner. If a document is shared, it can either be shared
+         * privately (by specifying a user’s AWS account ID) or publicly (<i>All</i>).
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeDocumentPermission">AWS
          * API Reference</a></p>
          *
@@ -1381,7 +1377,7 @@ namespace Model
 
         /**
          * <p>Describes one or more of your instances. You can use this to get information
-         * about instances like the operating system platform, the SSM agent version
+         * about instances like the operating system platform, the SSM Agent version
          * (Linux), status etc. If you specify one or more instance IDs, it returns
          * information for those instances. If you do not specify instance IDs, it returns
          * information for all your instances. If you specify an instance ID that is not
@@ -1394,7 +1390,7 @@ namespace Model
 
         /**
          * <p>Describes one or more of your instances. You can use this to get information
-         * about instances like the operating system platform, the SSM agent version
+         * about instances like the operating system platform, the SSM Agent version
          * (Linux), status etc. If you specify one or more instance IDs, it returns
          * information for those instances. If you do not specify instance IDs, it returns
          * information for all your instances. If you specify an instance ID that is not
@@ -1409,7 +1405,7 @@ namespace Model
 
         /**
          * <p>Describes one or more of your instances. You can use this to get information
-         * about instances like the operating system platform, the SSM agent version
+         * about instances like the operating system platform, the SSM Agent version
          * (Linux), status etc. If you specify one or more instance IDs, it returns
          * information for those instances. If you do not specify instance IDs, it returns
          * information for all your instances. If you specify an instance ID that is not
@@ -2089,16 +2085,14 @@ namespace Model
         virtual void GetParameterHistoryAsync(const Model::GetParameterHistoryRequest& request, const GetParameterHistoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Get a list of parameters used by the AWS account.&gt;</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Get details of a parameter.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetParameters">AWS
          * API Reference</a></p>
          */
         virtual Model::GetParametersOutcome GetParameters(const Model::GetParametersRequest& request) const;
 
         /**
-         * <p>Get a list of parameters used by the AWS account.&gt;</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Get details of a parameter.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetParameters">AWS
          * API Reference</a></p>
          *
@@ -2107,8 +2101,7 @@ namespace Model
         virtual Model::GetParametersOutcomeCallable GetParametersCallable(const Model::GetParametersRequest& request) const;
 
         /**
-         * <p>Get a list of parameters used by the AWS account.&gt;</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Get details of a parameter.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetParameters">AWS
          * API Reference</a></p>
          *
@@ -2170,7 +2163,7 @@ namespace Model
         virtual void GetPatchBaselineForPatchGroupAsync(const Model::GetPatchBaselineForPatchGroupRequest& request, const GetPatchBaselineForPatchGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists the associations for the specified SSM document or
+         * <p>Lists the associations for the specified Systems Manager document or
          * instance.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListAssociations">AWS
          * API Reference</a></p>
@@ -2178,7 +2171,7 @@ namespace Model
         virtual Model::ListAssociationsOutcome ListAssociations(const Model::ListAssociationsRequest& request) const;
 
         /**
-         * <p>Lists the associations for the specified SSM document or
+         * <p>Lists the associations for the specified Systems Manager document or
          * instance.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListAssociations">AWS
          * API Reference</a></p>
@@ -2188,7 +2181,7 @@ namespace Model
         virtual Model::ListAssociationsOutcomeCallable ListAssociationsCallable(const Model::ListAssociationsRequest& request) const;
 
         /**
-         * <p>Lists the associations for the specified SSM document or
+         * <p>Lists the associations for the specified Systems Manager document or
          * instance.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListAssociations">AWS
          * API Reference</a></p>
@@ -2372,20 +2365,20 @@ namespace Model
         virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Share a document publicly or privately. If you share a document privately,
-         * you must specify the AWS user account IDs for those people who can use the
-         * document. If you share a document publicly, you must specify <i>All</i> as the
-         * account ID.</p><p><h3>See Also:</h3>   <a
+         * <p>Shares a Systems Manager document publicly or privately. If you share a
+         * document privately, you must specify the AWS user account IDs for those people
+         * who can use the document. If you share a document publicly, you must specify
+         * <i>All</i> as the account ID.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ModifyDocumentPermission">AWS
          * API Reference</a></p>
          */
         virtual Model::ModifyDocumentPermissionOutcome ModifyDocumentPermission(const Model::ModifyDocumentPermissionRequest& request) const;
 
         /**
-         * <p>Share a document publicly or privately. If you share a document privately,
-         * you must specify the AWS user account IDs for those people who can use the
-         * document. If you share a document publicly, you must specify <i>All</i> as the
-         * account ID.</p><p><h3>See Also:</h3>   <a
+         * <p>Shares a Systems Manager document publicly or privately. If you share a
+         * document privately, you must specify the AWS user account IDs for those people
+         * who can use the document. If you share a document publicly, you must specify
+         * <i>All</i> as the account ID.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ModifyDocumentPermission">AWS
          * API Reference</a></p>
          *
@@ -2394,10 +2387,10 @@ namespace Model
         virtual Model::ModifyDocumentPermissionOutcomeCallable ModifyDocumentPermissionCallable(const Model::ModifyDocumentPermissionRequest& request) const;
 
         /**
-         * <p>Share a document publicly or privately. If you share a document privately,
-         * you must specify the AWS user account IDs for those people who can use the
-         * document. If you share a document publicly, you must specify <i>All</i> as the
-         * account ID.</p><p><h3>See Also:</h3>   <a
+         * <p>Shares a Systems Manager document publicly or privately. If you share a
+         * document privately, you must specify the AWS user account IDs for those people
+         * who can use the document. If you share a document publicly, you must specify
+         * <i>All</i> as the account ID.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ModifyDocumentPermission">AWS
          * API Reference</a></p>
          *
@@ -2693,16 +2686,16 @@ namespace Model
         virtual void UpdateAssociationAsync(const Model::UpdateAssociationRequest& request, const UpdateAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Updates the status of the SSM document associated with the specified
-         * instance.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates the status of the Systems Manager document associated with the
+         * specified instance.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateAssociationStatus">AWS
          * API Reference</a></p>
          */
         virtual Model::UpdateAssociationStatusOutcome UpdateAssociationStatus(const Model::UpdateAssociationStatusRequest& request) const;
 
         /**
-         * <p>Updates the status of the SSM document associated with the specified
-         * instance.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates the status of the Systems Manager document associated with the
+         * specified instance.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateAssociationStatus">AWS
          * API Reference</a></p>
          *
@@ -2711,8 +2704,8 @@ namespace Model
         virtual Model::UpdateAssociationStatusOutcomeCallable UpdateAssociationStatusCallable(const Model::UpdateAssociationStatusRequest& request) const;
 
         /**
-         * <p>Updates the status of the SSM document associated with the specified
-         * instance.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates the status of the Systems Manager document associated with the
+         * specified instance.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateAssociationStatus">AWS
          * API Reference</a></p>
          *

@@ -85,37 +85,37 @@ namespace Model
     inline Command& WithCommandId(const char* value) { SetCommandId(value); return *this;}
 
     /**
-     * <p>The name of the SSM document requested for execution.</p>
+     * <p>The name of the document requested for execution.</p>
      */
     inline const Aws::String& GetDocumentName() const{ return m_documentName; }
 
     /**
-     * <p>The name of the SSM document requested for execution.</p>
+     * <p>The name of the document requested for execution.</p>
      */
     inline void SetDocumentName(const Aws::String& value) { m_documentNameHasBeenSet = true; m_documentName = value; }
 
     /**
-     * <p>The name of the SSM document requested for execution.</p>
+     * <p>The name of the document requested for execution.</p>
      */
     inline void SetDocumentName(Aws::String&& value) { m_documentNameHasBeenSet = true; m_documentName = value; }
 
     /**
-     * <p>The name of the SSM document requested for execution.</p>
+     * <p>The name of the document requested for execution.</p>
      */
     inline void SetDocumentName(const char* value) { m_documentNameHasBeenSet = true; m_documentName.assign(value); }
 
     /**
-     * <p>The name of the SSM document requested for execution.</p>
+     * <p>The name of the document requested for execution.</p>
      */
     inline Command& WithDocumentName(const Aws::String& value) { SetDocumentName(value); return *this;}
 
     /**
-     * <p>The name of the SSM document requested for execution.</p>
+     * <p>The name of the document requested for execution.</p>
      */
     inline Command& WithDocumentName(Aws::String&& value) { SetDocumentName(value); return *this;}
 
     /**
-     * <p>The name of the SSM document requested for execution.</p>
+     * <p>The name of the document requested for execution.</p>
      */
     inline Command& WithDocumentName(const char* value) { SetDocumentName(value); return *this;}
 
@@ -197,67 +197,67 @@ namespace Model
     inline Command& WithExpiresAfter(Aws::Utils::DateTime&& value) { SetExpiresAfter(value); return *this;}
 
     /**
-     * <p>The parameter values to be inserted in the SSM document when executing the
+     * <p>The parameter values to be inserted in the document when executing the
      * command.</p>
      */
     inline const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& GetParameters() const{ return m_parameters; }
 
     /**
-     * <p>The parameter values to be inserted in the SSM document when executing the
+     * <p>The parameter values to be inserted in the document when executing the
      * command.</p>
      */
     inline void SetParameters(const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& value) { m_parametersHasBeenSet = true; m_parameters = value; }
 
     /**
-     * <p>The parameter values to be inserted in the SSM document when executing the
+     * <p>The parameter values to be inserted in the document when executing the
      * command.</p>
      */
     inline void SetParameters(Aws::Map<Aws::String, Aws::Vector<Aws::String>>&& value) { m_parametersHasBeenSet = true; m_parameters = value; }
 
     /**
-     * <p>The parameter values to be inserted in the SSM document when executing the
+     * <p>The parameter values to be inserted in the document when executing the
      * command.</p>
      */
     inline Command& WithParameters(const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& value) { SetParameters(value); return *this;}
 
     /**
-     * <p>The parameter values to be inserted in the SSM document when executing the
+     * <p>The parameter values to be inserted in the document when executing the
      * command.</p>
      */
     inline Command& WithParameters(Aws::Map<Aws::String, Aws::Vector<Aws::String>>&& value) { SetParameters(value); return *this;}
 
     /**
-     * <p>The parameter values to be inserted in the SSM document when executing the
+     * <p>The parameter values to be inserted in the document when executing the
      * command.</p>
      */
     inline Command& AddParameters(const Aws::String& key, const Aws::Vector<Aws::String>& value) { m_parametersHasBeenSet = true; m_parameters[key] = value; return *this; }
 
     /**
-     * <p>The parameter values to be inserted in the SSM document when executing the
+     * <p>The parameter values to be inserted in the document when executing the
      * command.</p>
      */
     inline Command& AddParameters(Aws::String&& key, const Aws::Vector<Aws::String>& value) { m_parametersHasBeenSet = true; m_parameters[key] = value; return *this; }
 
     /**
-     * <p>The parameter values to be inserted in the SSM document when executing the
+     * <p>The parameter values to be inserted in the document when executing the
      * command.</p>
      */
     inline Command& AddParameters(const Aws::String& key, Aws::Vector<Aws::String>&& value) { m_parametersHasBeenSet = true; m_parameters[key] = value; return *this; }
 
     /**
-     * <p>The parameter values to be inserted in the SSM document when executing the
+     * <p>The parameter values to be inserted in the document when executing the
      * command.</p>
      */
     inline Command& AddParameters(Aws::String&& key, Aws::Vector<Aws::String>&& value) { m_parametersHasBeenSet = true; m_parameters[key] = value; return *this; }
 
     /**
-     * <p>The parameter values to be inserted in the SSM document when executing the
+     * <p>The parameter values to be inserted in the document when executing the
      * command.</p>
      */
     inline Command& AddParameters(const char* key, Aws::Vector<Aws::String>&& value) { m_parametersHasBeenSet = true; m_parameters[key] = value; return *this; }
 
     /**
-     * <p>The parameter values to be inserted in the SSM document when executing the
+     * <p>The parameter values to be inserted in the document when executing the
      * command.</p>
      */
     inline Command& AddParameters(const char* key, const Aws::Vector<Aws::String>& value) { m_parametersHasBeenSet = true; m_parameters[key] = value; return *this; }
@@ -304,7 +304,7 @@ namespace Model
 
     /**
      * <p>An array of search criteria that targets instances using a
-     * <code>Key</code>;<code>Value</code> combination that you specify.
+     * <code>Key</code>,<code>Value</code> combination that you specify.
      * <code>Targets</code> is required if you don't provide one or more instance IDs
      * in the call.</p>
      */
@@ -312,7 +312,7 @@ namespace Model
 
     /**
      * <p>An array of search criteria that targets instances using a
-     * <code>Key</code>;<code>Value</code> combination that you specify.
+     * <code>Key</code>,<code>Value</code> combination that you specify.
      * <code>Targets</code> is required if you don't provide one or more instance IDs
      * in the call.</p>
      */
@@ -320,7 +320,7 @@ namespace Model
 
     /**
      * <p>An array of search criteria that targets instances using a
-     * <code>Key</code>;<code>Value</code> combination that you specify.
+     * <code>Key</code>,<code>Value</code> combination that you specify.
      * <code>Targets</code> is required if you don't provide one or more instance IDs
      * in the call.</p>
      */
@@ -328,7 +328,7 @@ namespace Model
 
     /**
      * <p>An array of search criteria that targets instances using a
-     * <code>Key</code>;<code>Value</code> combination that you specify.
+     * <code>Key</code>,<code>Value</code> combination that you specify.
      * <code>Targets</code> is required if you don't provide one or more instance IDs
      * in the call.</p>
      */
@@ -336,7 +336,7 @@ namespace Model
 
     /**
      * <p>An array of search criteria that targets instances using a
-     * <code>Key</code>;<code>Value</code> combination that you specify.
+     * <code>Key</code>,<code>Value</code> combination that you specify.
      * <code>Targets</code> is required if you don't provide one or more instance IDs
      * in the call.</p>
      */
@@ -344,7 +344,7 @@ namespace Model
 
     /**
      * <p>An array of search criteria that targets instances using a
-     * <code>Key</code>;<code>Value</code> combination that you specify.
+     * <code>Key</code>,<code>Value</code> combination that you specify.
      * <code>Targets</code> is required if you don't provide one or more instance IDs
      * in the call.</p>
      */
@@ -352,7 +352,7 @@ namespace Model
 
     /**
      * <p>An array of search criteria that targets instances using a
-     * <code>Key</code>;<code>Value</code> combination that you specify.
+     * <code>Key</code>,<code>Value</code> combination that you specify.
      * <code>Targets</code> is required if you don't provide one or more instance IDs
      * in the call.</p>
      */
@@ -414,10 +414,8 @@ namespace Model
      * resulting from error and concurrency control parameters.
      * <code>StatusDetails</code> can show different results than <code>Status</code>.
      * For more information about these statuses, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitor-commands.html">Monitor
-     * Commands</a> (Linux) or <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/monitor-commands.html">Monitor
-     * Commands</a> (Windows). <code>StatusDetails</code> can be one of the following
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-about-status.html">Run
+     * Command Status</a>. <code>StatusDetails</code> can be one of the following
      * values:</p> <ul> <li> <p>Pending – The command has not been sent to any
      * instances.</p> </li> <li> <p>In Progress – The command has been sent to at least
      * one instance but has not reached a final state on all instances.</p> </li> <li>
@@ -447,10 +445,8 @@ namespace Model
      * resulting from error and concurrency control parameters.
      * <code>StatusDetails</code> can show different results than <code>Status</code>.
      * For more information about these statuses, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitor-commands.html">Monitor
-     * Commands</a> (Linux) or <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/monitor-commands.html">Monitor
-     * Commands</a> (Windows). <code>StatusDetails</code> can be one of the following
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-about-status.html">Run
+     * Command Status</a>. <code>StatusDetails</code> can be one of the following
      * values:</p> <ul> <li> <p>Pending – The command has not been sent to any
      * instances.</p> </li> <li> <p>In Progress – The command has been sent to at least
      * one instance but has not reached a final state on all instances.</p> </li> <li>
@@ -480,10 +476,8 @@ namespace Model
      * resulting from error and concurrency control parameters.
      * <code>StatusDetails</code> can show different results than <code>Status</code>.
      * For more information about these statuses, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitor-commands.html">Monitor
-     * Commands</a> (Linux) or <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/monitor-commands.html">Monitor
-     * Commands</a> (Windows). <code>StatusDetails</code> can be one of the following
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-about-status.html">Run
+     * Command Status</a>. <code>StatusDetails</code> can be one of the following
      * values:</p> <ul> <li> <p>Pending – The command has not been sent to any
      * instances.</p> </li> <li> <p>In Progress – The command has been sent to at least
      * one instance but has not reached a final state on all instances.</p> </li> <li>
@@ -513,10 +507,8 @@ namespace Model
      * resulting from error and concurrency control parameters.
      * <code>StatusDetails</code> can show different results than <code>Status</code>.
      * For more information about these statuses, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitor-commands.html">Monitor
-     * Commands</a> (Linux) or <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/monitor-commands.html">Monitor
-     * Commands</a> (Windows). <code>StatusDetails</code> can be one of the following
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-about-status.html">Run
+     * Command Status</a>. <code>StatusDetails</code> can be one of the following
      * values:</p> <ul> <li> <p>Pending – The command has not been sent to any
      * instances.</p> </li> <li> <p>In Progress – The command has been sent to at least
      * one instance but has not reached a final state on all instances.</p> </li> <li>
@@ -546,10 +538,8 @@ namespace Model
      * resulting from error and concurrency control parameters.
      * <code>StatusDetails</code> can show different results than <code>Status</code>.
      * For more information about these statuses, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitor-commands.html">Monitor
-     * Commands</a> (Linux) or <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/monitor-commands.html">Monitor
-     * Commands</a> (Windows). <code>StatusDetails</code> can be one of the following
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-about-status.html">Run
+     * Command Status</a>. <code>StatusDetails</code> can be one of the following
      * values:</p> <ul> <li> <p>Pending – The command has not been sent to any
      * instances.</p> </li> <li> <p>In Progress – The command has been sent to at least
      * one instance but has not reached a final state on all instances.</p> </li> <li>
@@ -579,10 +569,8 @@ namespace Model
      * resulting from error and concurrency control parameters.
      * <code>StatusDetails</code> can show different results than <code>Status</code>.
      * For more information about these statuses, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitor-commands.html">Monitor
-     * Commands</a> (Linux) or <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/monitor-commands.html">Monitor
-     * Commands</a> (Windows). <code>StatusDetails</code> can be one of the following
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-about-status.html">Run
+     * Command Status</a>. <code>StatusDetails</code> can be one of the following
      * values:</p> <ul> <li> <p>Pending – The command has not been sent to any
      * instances.</p> </li> <li> <p>In Progress – The command has been sent to at least
      * one instance but has not reached a final state on all instances.</p> </li> <li>
@@ -612,10 +600,8 @@ namespace Model
      * resulting from error and concurrency control parameters.
      * <code>StatusDetails</code> can show different results than <code>Status</code>.
      * For more information about these statuses, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitor-commands.html">Monitor
-     * Commands</a> (Linux) or <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/monitor-commands.html">Monitor
-     * Commands</a> (Windows). <code>StatusDetails</code> can be one of the following
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-about-status.html">Run
+     * Command Status</a>. <code>StatusDetails</code> can be one of the following
      * values:</p> <ul> <li> <p>Pending – The command has not been sent to any
      * instances.</p> </li> <li> <p>In Progress – The command has been sent to at least
      * one instance but has not reached a final state on all instances.</p> </li> <li>
@@ -777,10 +763,8 @@ namespace Model
      * the same time. You can specify a number of instances, such as 10, or a
      * percentage of instances, such as 10%. The default value is 50. For more
      * information about how to use <code>MaxConcurrency</code>, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/run-command.html">Executing
-     * a Command Using Amazon EC2 Run Command</a> (Linux) or <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/run-command.html">Executing
-     * a Command Using Amazon EC2 Run Command</a> (Windows). </p>
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Executing
+     * a Command Using Systems Manager Run Command</a>.</p>
      */
     inline const Aws::String& GetMaxConcurrency() const{ return m_maxConcurrency; }
 
@@ -789,10 +773,8 @@ namespace Model
      * the same time. You can specify a number of instances, such as 10, or a
      * percentage of instances, such as 10%. The default value is 50. For more
      * information about how to use <code>MaxConcurrency</code>, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/run-command.html">Executing
-     * a Command Using Amazon EC2 Run Command</a> (Linux) or <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/run-command.html">Executing
-     * a Command Using Amazon EC2 Run Command</a> (Windows). </p>
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Executing
+     * a Command Using Systems Manager Run Command</a>.</p>
      */
     inline void SetMaxConcurrency(const Aws::String& value) { m_maxConcurrencyHasBeenSet = true; m_maxConcurrency = value; }
 
@@ -801,10 +783,8 @@ namespace Model
      * the same time. You can specify a number of instances, such as 10, or a
      * percentage of instances, such as 10%. The default value is 50. For more
      * information about how to use <code>MaxConcurrency</code>, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/run-command.html">Executing
-     * a Command Using Amazon EC2 Run Command</a> (Linux) or <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/run-command.html">Executing
-     * a Command Using Amazon EC2 Run Command</a> (Windows). </p>
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Executing
+     * a Command Using Systems Manager Run Command</a>.</p>
      */
     inline void SetMaxConcurrency(Aws::String&& value) { m_maxConcurrencyHasBeenSet = true; m_maxConcurrency = value; }
 
@@ -813,10 +793,8 @@ namespace Model
      * the same time. You can specify a number of instances, such as 10, or a
      * percentage of instances, such as 10%. The default value is 50. For more
      * information about how to use <code>MaxConcurrency</code>, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/run-command.html">Executing
-     * a Command Using Amazon EC2 Run Command</a> (Linux) or <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/run-command.html">Executing
-     * a Command Using Amazon EC2 Run Command</a> (Windows). </p>
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Executing
+     * a Command Using Systems Manager Run Command</a>.</p>
      */
     inline void SetMaxConcurrency(const char* value) { m_maxConcurrencyHasBeenSet = true; m_maxConcurrency.assign(value); }
 
@@ -825,10 +803,8 @@ namespace Model
      * the same time. You can specify a number of instances, such as 10, or a
      * percentage of instances, such as 10%. The default value is 50. For more
      * information about how to use <code>MaxConcurrency</code>, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/run-command.html">Executing
-     * a Command Using Amazon EC2 Run Command</a> (Linux) or <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/run-command.html">Executing
-     * a Command Using Amazon EC2 Run Command</a> (Windows). </p>
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Executing
+     * a Command Using Systems Manager Run Command</a>.</p>
      */
     inline Command& WithMaxConcurrency(const Aws::String& value) { SetMaxConcurrency(value); return *this;}
 
@@ -837,10 +813,8 @@ namespace Model
      * the same time. You can specify a number of instances, such as 10, or a
      * percentage of instances, such as 10%. The default value is 50. For more
      * information about how to use <code>MaxConcurrency</code>, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/run-command.html">Executing
-     * a Command Using Amazon EC2 Run Command</a> (Linux) or <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/run-command.html">Executing
-     * a Command Using Amazon EC2 Run Command</a> (Windows). </p>
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Executing
+     * a Command Using Systems Manager Run Command</a>.</p>
      */
     inline Command& WithMaxConcurrency(Aws::String&& value) { SetMaxConcurrency(value); return *this;}
 
@@ -849,10 +823,8 @@ namespace Model
      * the same time. You can specify a number of instances, such as 10, or a
      * percentage of instances, such as 10%. The default value is 50. For more
      * information about how to use <code>MaxConcurrency</code>, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/run-command.html">Executing
-     * a Command Using Amazon EC2 Run Command</a> (Linux) or <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/run-command.html">Executing
-     * a Command Using Amazon EC2 Run Command</a> (Windows). </p>
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Executing
+     * a Command Using Systems Manager Run Command</a>.</p>
      */
     inline Command& WithMaxConcurrency(const char* value) { SetMaxConcurrency(value); return *this;}
 
@@ -861,10 +833,8 @@ namespace Model
      * command to additional targets. You can specify a number of errors, such as 10,
      * or a percentage or errors, such as 10%. The default value is 50. For more
      * information about how to use <code>MaxErrors</code>, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/run-command.html">Executing
-     * a Command Using Amazon EC2 Run Command</a> (Linux) or <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/run-command.html">Executing
-     * a Command Using Amazon EC2 Run Command</a> (Windows).</p>
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Executing
+     * a Command Using Systems Manager Run Command</a>.</p>
      */
     inline const Aws::String& GetMaxErrors() const{ return m_maxErrors; }
 
@@ -873,10 +843,8 @@ namespace Model
      * command to additional targets. You can specify a number of errors, such as 10,
      * or a percentage or errors, such as 10%. The default value is 50. For more
      * information about how to use <code>MaxErrors</code>, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/run-command.html">Executing
-     * a Command Using Amazon EC2 Run Command</a> (Linux) or <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/run-command.html">Executing
-     * a Command Using Amazon EC2 Run Command</a> (Windows).</p>
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Executing
+     * a Command Using Systems Manager Run Command</a>.</p>
      */
     inline void SetMaxErrors(const Aws::String& value) { m_maxErrorsHasBeenSet = true; m_maxErrors = value; }
 
@@ -885,10 +853,8 @@ namespace Model
      * command to additional targets. You can specify a number of errors, such as 10,
      * or a percentage or errors, such as 10%. The default value is 50. For more
      * information about how to use <code>MaxErrors</code>, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/run-command.html">Executing
-     * a Command Using Amazon EC2 Run Command</a> (Linux) or <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/run-command.html">Executing
-     * a Command Using Amazon EC2 Run Command</a> (Windows).</p>
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Executing
+     * a Command Using Systems Manager Run Command</a>.</p>
      */
     inline void SetMaxErrors(Aws::String&& value) { m_maxErrorsHasBeenSet = true; m_maxErrors = value; }
 
@@ -897,10 +863,8 @@ namespace Model
      * command to additional targets. You can specify a number of errors, such as 10,
      * or a percentage or errors, such as 10%. The default value is 50. For more
      * information about how to use <code>MaxErrors</code>, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/run-command.html">Executing
-     * a Command Using Amazon EC2 Run Command</a> (Linux) or <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/run-command.html">Executing
-     * a Command Using Amazon EC2 Run Command</a> (Windows).</p>
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Executing
+     * a Command Using Systems Manager Run Command</a>.</p>
      */
     inline void SetMaxErrors(const char* value) { m_maxErrorsHasBeenSet = true; m_maxErrors.assign(value); }
 
@@ -909,10 +873,8 @@ namespace Model
      * command to additional targets. You can specify a number of errors, such as 10,
      * or a percentage or errors, such as 10%. The default value is 50. For more
      * information about how to use <code>MaxErrors</code>, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/run-command.html">Executing
-     * a Command Using Amazon EC2 Run Command</a> (Linux) or <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/run-command.html">Executing
-     * a Command Using Amazon EC2 Run Command</a> (Windows).</p>
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Executing
+     * a Command Using Systems Manager Run Command</a>.</p>
      */
     inline Command& WithMaxErrors(const Aws::String& value) { SetMaxErrors(value); return *this;}
 
@@ -921,10 +883,8 @@ namespace Model
      * command to additional targets. You can specify a number of errors, such as 10,
      * or a percentage or errors, such as 10%. The default value is 50. For more
      * information about how to use <code>MaxErrors</code>, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/run-command.html">Executing
-     * a Command Using Amazon EC2 Run Command</a> (Linux) or <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/run-command.html">Executing
-     * a Command Using Amazon EC2 Run Command</a> (Windows).</p>
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Executing
+     * a Command Using Systems Manager Run Command</a>.</p>
      */
     inline Command& WithMaxErrors(Aws::String&& value) { SetMaxErrors(value); return *this;}
 
@@ -933,10 +893,8 @@ namespace Model
      * command to additional targets. You can specify a number of errors, such as 10,
      * or a percentage or errors, such as 10%. The default value is 50. For more
      * information about how to use <code>MaxErrors</code>, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/run-command.html">Executing
-     * a Command Using Amazon EC2 Run Command</a> (Linux) or <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/run-command.html">Executing
-     * a Command Using Amazon EC2 Run Command</a> (Windows).</p>
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Executing
+     * a Command Using Systems Manager Run Command</a>.</p>
      */
     inline Command& WithMaxErrors(const char* value) { SetMaxErrors(value); return *this;}
 

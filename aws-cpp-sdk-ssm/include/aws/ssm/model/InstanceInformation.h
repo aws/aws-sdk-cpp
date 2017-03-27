@@ -85,27 +85,27 @@ namespace Model
     inline InstanceInformation& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
 
     /**
-     * <p>Connection status of the SSM agent. </p>
+     * <p>Connection status of the SSM Agent. </p>
      */
     inline const PingStatus& GetPingStatus() const{ return m_pingStatus; }
 
     /**
-     * <p>Connection status of the SSM agent. </p>
+     * <p>Connection status of the SSM Agent. </p>
      */
     inline void SetPingStatus(const PingStatus& value) { m_pingStatusHasBeenSet = true; m_pingStatus = value; }
 
     /**
-     * <p>Connection status of the SSM agent. </p>
+     * <p>Connection status of the SSM Agent. </p>
      */
     inline void SetPingStatus(PingStatus&& value) { m_pingStatusHasBeenSet = true; m_pingStatus = value; }
 
     /**
-     * <p>Connection status of the SSM agent. </p>
+     * <p>Connection status of the SSM Agent. </p>
      */
     inline InstanceInformation& WithPingStatus(const PingStatus& value) { SetPingStatus(value); return *this;}
 
     /**
-     * <p>Connection status of the SSM agent. </p>
+     * <p>Connection status of the SSM Agent. </p>
      */
     inline InstanceInformation& WithPingStatus(PingStatus&& value) { SetPingStatus(value); return *this;}
 
@@ -135,54 +135,54 @@ namespace Model
     inline InstanceInformation& WithLastPingDateTime(Aws::Utils::DateTime&& value) { SetLastPingDateTime(value); return *this;}
 
     /**
-     * <p>The version of the SSM agent running on your Linux instance. </p>
+     * <p>The version of the SSM Agent running on your Linux instance. </p>
      */
     inline const Aws::String& GetAgentVersion() const{ return m_agentVersion; }
 
     /**
-     * <p>The version of the SSM agent running on your Linux instance. </p>
+     * <p>The version of the SSM Agent running on your Linux instance. </p>
      */
     inline void SetAgentVersion(const Aws::String& value) { m_agentVersionHasBeenSet = true; m_agentVersion = value; }
 
     /**
-     * <p>The version of the SSM agent running on your Linux instance. </p>
+     * <p>The version of the SSM Agent running on your Linux instance. </p>
      */
     inline void SetAgentVersion(Aws::String&& value) { m_agentVersionHasBeenSet = true; m_agentVersion = value; }
 
     /**
-     * <p>The version of the SSM agent running on your Linux instance. </p>
+     * <p>The version of the SSM Agent running on your Linux instance. </p>
      */
     inline void SetAgentVersion(const char* value) { m_agentVersionHasBeenSet = true; m_agentVersion.assign(value); }
 
     /**
-     * <p>The version of the SSM agent running on your Linux instance. </p>
+     * <p>The version of the SSM Agent running on your Linux instance. </p>
      */
     inline InstanceInformation& WithAgentVersion(const Aws::String& value) { SetAgentVersion(value); return *this;}
 
     /**
-     * <p>The version of the SSM agent running on your Linux instance. </p>
+     * <p>The version of the SSM Agent running on your Linux instance. </p>
      */
     inline InstanceInformation& WithAgentVersion(Aws::String&& value) { SetAgentVersion(value); return *this;}
 
     /**
-     * <p>The version of the SSM agent running on your Linux instance. </p>
+     * <p>The version of the SSM Agent running on your Linux instance. </p>
      */
     inline InstanceInformation& WithAgentVersion(const char* value) { SetAgentVersion(value); return *this;}
 
     /**
-     * <p>Indicates whether latest version of the SSM agent is running on your
+     * <p>Indicates whether latest version of the SSM Agent is running on your
      * instance. </p>
      */
     inline bool GetIsLatestVersion() const{ return m_isLatestVersion; }
 
     /**
-     * <p>Indicates whether latest version of the SSM agent is running on your
+     * <p>Indicates whether latest version of the SSM Agent is running on your
      * instance. </p>
      */
     inline void SetIsLatestVersion(bool value) { m_isLatestVersionHasBeenSet = true; m_isLatestVersion = value; }
 
     /**
-     * <p>Indicates whether latest version of the SSM agent is running on your
+     * <p>Indicates whether latest version of the SSM Agent is running on your
      * instance. </p>
      */
     inline InstanceInformation& WithIsLatestVersion(bool value) { SetIsLatestVersion(value); return *this;}

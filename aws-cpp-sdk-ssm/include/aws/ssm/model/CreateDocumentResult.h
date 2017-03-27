@@ -40,27 +40,27 @@ namespace Model
     CreateDocumentResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
     /**
-     * <p>Information about the SSM document.</p>
+     * <p>Information about the Systems Manager document.</p>
      */
     inline const DocumentDescription& GetDocumentDescription() const{ return m_documentDescription; }
 
     /**
-     * <p>Information about the SSM document.</p>
+     * <p>Information about the Systems Manager document.</p>
      */
     inline void SetDocumentDescription(const DocumentDescription& value) { m_documentDescription = value; }
 
     /**
-     * <p>Information about the SSM document.</p>
+     * <p>Information about the Systems Manager document.</p>
      */
     inline void SetDocumentDescription(DocumentDescription&& value) { m_documentDescription = value; }
 
     /**
-     * <p>Information about the SSM document.</p>
+     * <p>Information about the Systems Manager document.</p>
      */
     inline CreateDocumentResult& WithDocumentDescription(const DocumentDescription& value) { SetDocumentDescription(value); return *this;}
 
     /**
-     * <p>Information about the SSM document.</p>
+     * <p>Information about the Systems Manager document.</p>
      */
     inline CreateDocumentResult& WithDocumentDescription(DocumentDescription&& value) { SetDocumentDescription(value); return *this;}
 
