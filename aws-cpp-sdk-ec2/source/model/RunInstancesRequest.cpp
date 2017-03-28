@@ -52,7 +52,8 @@ RunInstancesRequest::RunInstancesRequest() :
     m_networkInterfacesHasBeenSet(false),
     m_iamInstanceProfileHasBeenSet(false),
     m_ebsOptimized(false),
-    m_ebsOptimizedHasBeenSet(false)
+    m_ebsOptimizedHasBeenSet(false),
+    m_tagSpecificationsHasBeenSet(false)
 {
 }
 
@@ -210,6 +211,16 @@ Aws::String RunInstancesRequest::SerializePayload() const
   if(m_ebsOptimizedHasBeenSet)
   {
     ss << "EbsOptimized=" << std::boolalpha << m_ebsOptimized << "&";
+  }
+
+  if(m_tagSpecificationsHasBeenSet)
+  {
+    unsigned tagSpecificationsCount = 1;
+    for(auto& item : m_tagSpecifications)
+    {
+      item.OutputToStream(ss, "TagSpecification.", tagSpecificationsCount, "");
+      tagSpecificationsCount++;
+    }
   }
 
   ss << "Version=2016-11-15";

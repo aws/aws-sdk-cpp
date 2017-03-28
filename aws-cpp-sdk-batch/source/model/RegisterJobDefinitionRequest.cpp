@@ -26,7 +26,8 @@ RegisterJobDefinitionRequest::RegisterJobDefinitionRequest() :
     m_type(JobDefinitionType::NOT_SET),
     m_typeHasBeenSet(false),
     m_parametersHasBeenSet(false),
-    m_containerPropertiesHasBeenSet(false)
+    m_containerPropertiesHasBeenSet(false),
+    m_retryStrategyHasBeenSet(false)
 {
 }
 
@@ -59,6 +60,12 @@ Aws::String RegisterJobDefinitionRequest::SerializePayload() const
   if(m_containerPropertiesHasBeenSet)
   {
    payload.WithObject("containerProperties", m_containerProperties.Jsonize());
+
+  }
+
+  if(m_retryStrategyHasBeenSet)
+  {
+   payload.WithObject("retryStrategy", m_retryStrategy.Jsonize());
 
   }
 

@@ -17,8 +17,10 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/batch/model/JobStatus.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/batch/model/RetryStrategy.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/batch/model/ContainerDetail.h>
+#include <aws/batch/model/AttemptDetail.h>
 #include <aws/batch/model/JobDependency.h>
 
 namespace Aws
@@ -186,6 +188,41 @@ namespace Model
     inline JobDetail& WithStatus(JobStatus&& value) { SetStatus(value); return *this;}
 
     /**
+     * <p>A list of job attempts associated with this job.</p>
+     */
+    inline const Aws::Vector<AttemptDetail>& GetAttempts() const{ return m_attempts; }
+
+    /**
+     * <p>A list of job attempts associated with this job.</p>
+     */
+    inline void SetAttempts(const Aws::Vector<AttemptDetail>& value) { m_attemptsHasBeenSet = true; m_attempts = value; }
+
+    /**
+     * <p>A list of job attempts associated with this job.</p>
+     */
+    inline void SetAttempts(Aws::Vector<AttemptDetail>&& value) { m_attemptsHasBeenSet = true; m_attempts = value; }
+
+    /**
+     * <p>A list of job attempts associated with this job.</p>
+     */
+    inline JobDetail& WithAttempts(const Aws::Vector<AttemptDetail>& value) { SetAttempts(value); return *this;}
+
+    /**
+     * <p>A list of job attempts associated with this job.</p>
+     */
+    inline JobDetail& WithAttempts(Aws::Vector<AttemptDetail>&& value) { SetAttempts(value); return *this;}
+
+    /**
+     * <p>A list of job attempts associated with this job.</p>
+     */
+    inline JobDetail& AddAttempts(const AttemptDetail& value) { m_attemptsHasBeenSet = true; m_attempts.push_back(value); return *this; }
+
+    /**
+     * <p>A list of job attempts associated with this job.</p>
+     */
+    inline JobDetail& AddAttempts(AttemptDetail&& value) { m_attemptsHasBeenSet = true; m_attempts.push_back(value); return *this; }
+
+    /**
      * <p>A short, human-readable string to provide additional details about the
      * current status of the job. </p>
      */
@@ -244,6 +281,31 @@ namespace Model
      * <code>PENDING</code> state). </p>
      */
     inline JobDetail& WithCreatedAt(long long value) { SetCreatedAt(value); return *this;}
+
+    /**
+     * <p>The retry strategy to use for this job if an attempt fails.</p>
+     */
+    inline const RetryStrategy& GetRetryStrategy() const{ return m_retryStrategy; }
+
+    /**
+     * <p>The retry strategy to use for this job if an attempt fails.</p>
+     */
+    inline void SetRetryStrategy(const RetryStrategy& value) { m_retryStrategyHasBeenSet = true; m_retryStrategy = value; }
+
+    /**
+     * <p>The retry strategy to use for this job if an attempt fails.</p>
+     */
+    inline void SetRetryStrategy(RetryStrategy&& value) { m_retryStrategyHasBeenSet = true; m_retryStrategy = value; }
+
+    /**
+     * <p>The retry strategy to use for this job if an attempt fails.</p>
+     */
+    inline JobDetail& WithRetryStrategy(const RetryStrategy& value) { SetRetryStrategy(value); return *this;}
+
+    /**
+     * <p>The retry strategy to use for this job if an attempt fails.</p>
+     */
+    inline JobDetail& WithRetryStrategy(RetryStrategy&& value) { SetRetryStrategy(value); return *this;}
 
     /**
      * <p>The Unix timestamp for when the job was started (when the task transitioned
@@ -474,10 +536,14 @@ namespace Model
     bool m_jobQueueHasBeenSet;
     JobStatus m_status;
     bool m_statusHasBeenSet;
+    Aws::Vector<AttemptDetail> m_attempts;
+    bool m_attemptsHasBeenSet;
     Aws::String m_statusReason;
     bool m_statusReasonHasBeenSet;
     long long m_createdAt;
     bool m_createdAtHasBeenSet;
+    RetryStrategy m_retryStrategy;
+    bool m_retryStrategyHasBeenSet;
     long long m_startedAt;
     bool m_startedAtHasBeenSet;
     long long m_stoppedAt;

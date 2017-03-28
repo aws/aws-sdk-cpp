@@ -292,42 +292,58 @@ namespace Model
     inline RegisterImageRequest& WithRamdiskId(const char* value) { SetRamdiskId(value); return *this;}
 
     /**
-     * <p>The billing product codes.</p>
+     * <p>The billing product codes. Your account must be authorized to specify billing
+     * product codes. Otherwise, you can use the AWS Marketplace to bill for the use of
+     * an AMI.</p>
      */
     inline const Aws::Vector<Aws::String>& GetBillingProducts() const{ return m_billingProducts; }
 
     /**
-     * <p>The billing product codes.</p>
+     * <p>The billing product codes. Your account must be authorized to specify billing
+     * product codes. Otherwise, you can use the AWS Marketplace to bill for the use of
+     * an AMI.</p>
      */
     inline void SetBillingProducts(const Aws::Vector<Aws::String>& value) { m_billingProductsHasBeenSet = true; m_billingProducts = value; }
 
     /**
-     * <p>The billing product codes.</p>
+     * <p>The billing product codes. Your account must be authorized to specify billing
+     * product codes. Otherwise, you can use the AWS Marketplace to bill for the use of
+     * an AMI.</p>
      */
     inline void SetBillingProducts(Aws::Vector<Aws::String>&& value) { m_billingProductsHasBeenSet = true; m_billingProducts = value; }
 
     /**
-     * <p>The billing product codes.</p>
+     * <p>The billing product codes. Your account must be authorized to specify billing
+     * product codes. Otherwise, you can use the AWS Marketplace to bill for the use of
+     * an AMI.</p>
      */
     inline RegisterImageRequest& WithBillingProducts(const Aws::Vector<Aws::String>& value) { SetBillingProducts(value); return *this;}
 
     /**
-     * <p>The billing product codes.</p>
+     * <p>The billing product codes. Your account must be authorized to specify billing
+     * product codes. Otherwise, you can use the AWS Marketplace to bill for the use of
+     * an AMI.</p>
      */
     inline RegisterImageRequest& WithBillingProducts(Aws::Vector<Aws::String>&& value) { SetBillingProducts(value); return *this;}
 
     /**
-     * <p>The billing product codes.</p>
+     * <p>The billing product codes. Your account must be authorized to specify billing
+     * product codes. Otherwise, you can use the AWS Marketplace to bill for the use of
+     * an AMI.</p>
      */
     inline RegisterImageRequest& AddBillingProducts(const Aws::String& value) { m_billingProductsHasBeenSet = true; m_billingProducts.push_back(value); return *this; }
 
     /**
-     * <p>The billing product codes.</p>
+     * <p>The billing product codes. Your account must be authorized to specify billing
+     * product codes. Otherwise, you can use the AWS Marketplace to bill for the use of
+     * an AMI.</p>
      */
     inline RegisterImageRequest& AddBillingProducts(Aws::String&& value) { m_billingProductsHasBeenSet = true; m_billingProducts.push_back(value); return *this; }
 
     /**
-     * <p>The billing product codes.</p>
+     * <p>The billing product codes. Your account must be authorized to specify billing
+     * product codes. Otherwise, you can use the AWS Marketplace to bill for the use of
+     * an AMI.</p>
      */
     inline RegisterImageRequest& AddBillingProducts(const char* value) { m_billingProductsHasBeenSet = true; m_billingProducts.push_back(value); return *this; }
 

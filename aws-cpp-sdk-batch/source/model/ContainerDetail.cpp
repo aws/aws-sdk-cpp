@@ -47,7 +47,8 @@ ContainerDetail::ContainerDetail() :
     m_exitCode(0),
     m_exitCodeHasBeenSet(false),
     m_reasonHasBeenSet(false),
-    m_containerInstanceArnHasBeenSet(false)
+    m_containerInstanceArnHasBeenSet(false),
+    m_taskArnHasBeenSet(false)
 {
 }
 
@@ -71,7 +72,8 @@ ContainerDetail::ContainerDetail(const JsonValue& jsonValue) :
     m_exitCode(0),
     m_exitCodeHasBeenSet(false),
     m_reasonHasBeenSet(false),
-    m_containerInstanceArnHasBeenSet(false)
+    m_containerInstanceArnHasBeenSet(false),
+    m_taskArnHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -198,6 +200,13 @@ ContainerDetail& ContainerDetail::operator =(const JsonValue& jsonValue)
     m_containerInstanceArnHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("taskArn"))
+  {
+    m_taskArn = jsonValue.GetString("taskArn");
+
+    m_taskArnHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -317,6 +326,12 @@ JsonValue ContainerDetail::Jsonize() const
   if(m_containerInstanceArnHasBeenSet)
   {
    payload.WithString("containerInstanceArn", m_containerInstanceArn);
+
+  }
+
+  if(m_taskArnHasBeenSet)
+  {
+   payload.WithString("taskArn", m_taskArn);
 
   }
 

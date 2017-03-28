@@ -19,6 +19,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/batch/model/ContainerOverrides.h>
+#include <aws/batch/model/RetryStrategy.h>
 #include <aws/batch/model/JobDependency.h>
 
 namespace Aws
@@ -38,37 +39,44 @@ namespace Model
 
 
     /**
-     * <p>The name of the job.</p>
+     * <p>The name of the job. A name must be 1 to 128 characters in length.</p>
+     * <p>Pattern: ^[a-zA-Z0-9_]+$</p>
      */
     inline const Aws::String& GetJobName() const{ return m_jobName; }
 
     /**
-     * <p>The name of the job.</p>
+     * <p>The name of the job. A name must be 1 to 128 characters in length.</p>
+     * <p>Pattern: ^[a-zA-Z0-9_]+$</p>
      */
     inline void SetJobName(const Aws::String& value) { m_jobNameHasBeenSet = true; m_jobName = value; }
 
     /**
-     * <p>The name of the job.</p>
+     * <p>The name of the job. A name must be 1 to 128 characters in length.</p>
+     * <p>Pattern: ^[a-zA-Z0-9_]+$</p>
      */
     inline void SetJobName(Aws::String&& value) { m_jobNameHasBeenSet = true; m_jobName = value; }
 
     /**
-     * <p>The name of the job.</p>
+     * <p>The name of the job. A name must be 1 to 128 characters in length.</p>
+     * <p>Pattern: ^[a-zA-Z0-9_]+$</p>
      */
     inline void SetJobName(const char* value) { m_jobNameHasBeenSet = true; m_jobName.assign(value); }
 
     /**
-     * <p>The name of the job.</p>
+     * <p>The name of the job. A name must be 1 to 128 characters in length.</p>
+     * <p>Pattern: ^[a-zA-Z0-9_]+$</p>
      */
     inline SubmitJobRequest& WithJobName(const Aws::String& value) { SetJobName(value); return *this;}
 
     /**
-     * <p>The name of the job.</p>
+     * <p>The name of the job. A name must be 1 to 128 characters in length.</p>
+     * <p>Pattern: ^[a-zA-Z0-9_]+$</p>
      */
     inline SubmitJobRequest& WithJobName(Aws::String&& value) { SetJobName(value); return *this;}
 
     /**
-     * <p>The name of the job.</p>
+     * <p>The name of the job. A name must be 1 to 128 characters in length.</p>
+     * <p>Pattern: ^[a-zA-Z0-9_]+$</p>
      */
     inline SubmitJobRequest& WithJobName(const char* value) { SetJobName(value); return *this;}
 
@@ -115,44 +123,44 @@ namespace Model
     inline SubmitJobRequest& WithJobQueue(const char* value) { SetJobQueue(value); return *this;}
 
     /**
-     * <p>A list of job names or IDs on which this job depends. A job can depend upon a
-     * maximum of 100 jobs. </p>
+     * <p>A list of job IDs on which this job depends. A job can depend upon a maximum
+     * of 100 jobs. </p>
      */
     inline const Aws::Vector<JobDependency>& GetDependsOn() const{ return m_dependsOn; }
 
     /**
-     * <p>A list of job names or IDs on which this job depends. A job can depend upon a
-     * maximum of 100 jobs. </p>
+     * <p>A list of job IDs on which this job depends. A job can depend upon a maximum
+     * of 100 jobs. </p>
      */
     inline void SetDependsOn(const Aws::Vector<JobDependency>& value) { m_dependsOnHasBeenSet = true; m_dependsOn = value; }
 
     /**
-     * <p>A list of job names or IDs on which this job depends. A job can depend upon a
-     * maximum of 100 jobs. </p>
+     * <p>A list of job IDs on which this job depends. A job can depend upon a maximum
+     * of 100 jobs. </p>
      */
     inline void SetDependsOn(Aws::Vector<JobDependency>&& value) { m_dependsOnHasBeenSet = true; m_dependsOn = value; }
 
     /**
-     * <p>A list of job names or IDs on which this job depends. A job can depend upon a
-     * maximum of 100 jobs. </p>
+     * <p>A list of job IDs on which this job depends. A job can depend upon a maximum
+     * of 100 jobs. </p>
      */
     inline SubmitJobRequest& WithDependsOn(const Aws::Vector<JobDependency>& value) { SetDependsOn(value); return *this;}
 
     /**
-     * <p>A list of job names or IDs on which this job depends. A job can depend upon a
-     * maximum of 100 jobs. </p>
+     * <p>A list of job IDs on which this job depends. A job can depend upon a maximum
+     * of 100 jobs. </p>
      */
     inline SubmitJobRequest& WithDependsOn(Aws::Vector<JobDependency>&& value) { SetDependsOn(value); return *this;}
 
     /**
-     * <p>A list of job names or IDs on which this job depends. A job can depend upon a
-     * maximum of 100 jobs. </p>
+     * <p>A list of job IDs on which this job depends. A job can depend upon a maximum
+     * of 100 jobs. </p>
      */
     inline SubmitJobRequest& AddDependsOn(const JobDependency& value) { m_dependsOnHasBeenSet = true; m_dependsOn.push_back(value); return *this; }
 
     /**
-     * <p>A list of job names or IDs on which this job depends. A job can depend upon a
-     * maximum of 100 jobs. </p>
+     * <p>A list of job IDs on which this job depends. A job can depend upon a maximum
+     * of 100 jobs. </p>
      */
     inline SubmitJobRequest& AddDependsOn(JobDependency&& value) { m_dependsOnHasBeenSet = true; m_dependsOn.push_back(value); return *this; }
 
@@ -356,6 +364,41 @@ namespace Model
      */
     inline SubmitJobRequest& WithContainerOverrides(ContainerOverrides&& value) { SetContainerOverrides(value); return *this;}
 
+    /**
+     * <p>The retry strategy to use for failed jobs from this <a>SubmitJob</a>
+     * operation. When a retry strategy is specified here, it overrides the retry
+     * strategy defined in the job definition.</p>
+     */
+    inline const RetryStrategy& GetRetryStrategy() const{ return m_retryStrategy; }
+
+    /**
+     * <p>The retry strategy to use for failed jobs from this <a>SubmitJob</a>
+     * operation. When a retry strategy is specified here, it overrides the retry
+     * strategy defined in the job definition.</p>
+     */
+    inline void SetRetryStrategy(const RetryStrategy& value) { m_retryStrategyHasBeenSet = true; m_retryStrategy = value; }
+
+    /**
+     * <p>The retry strategy to use for failed jobs from this <a>SubmitJob</a>
+     * operation. When a retry strategy is specified here, it overrides the retry
+     * strategy defined in the job definition.</p>
+     */
+    inline void SetRetryStrategy(RetryStrategy&& value) { m_retryStrategyHasBeenSet = true; m_retryStrategy = value; }
+
+    /**
+     * <p>The retry strategy to use for failed jobs from this <a>SubmitJob</a>
+     * operation. When a retry strategy is specified here, it overrides the retry
+     * strategy defined in the job definition.</p>
+     */
+    inline SubmitJobRequest& WithRetryStrategy(const RetryStrategy& value) { SetRetryStrategy(value); return *this;}
+
+    /**
+     * <p>The retry strategy to use for failed jobs from this <a>SubmitJob</a>
+     * operation. When a retry strategy is specified here, it overrides the retry
+     * strategy defined in the job definition.</p>
+     */
+    inline SubmitJobRequest& WithRetryStrategy(RetryStrategy&& value) { SetRetryStrategy(value); return *this;}
+
   private:
     Aws::String m_jobName;
     bool m_jobNameHasBeenSet;
@@ -369,6 +412,8 @@ namespace Model
     bool m_parametersHasBeenSet;
     ContainerOverrides m_containerOverrides;
     bool m_containerOverridesHasBeenSet;
+    RetryStrategy m_retryStrategy;
+    bool m_retryStrategyHasBeenSet;
   };
 
 } // namespace Model

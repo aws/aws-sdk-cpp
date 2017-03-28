@@ -35,6 +35,7 @@ JobDefinition::JobDefinition() :
     m_statusHasBeenSet(false),
     m_typeHasBeenSet(false),
     m_parametersHasBeenSet(false),
+    m_retryStrategyHasBeenSet(false),
     m_containerPropertiesHasBeenSet(false)
 {
 }
@@ -47,6 +48,7 @@ JobDefinition::JobDefinition(const JsonValue& jsonValue) :
     m_statusHasBeenSet(false),
     m_typeHasBeenSet(false),
     m_parametersHasBeenSet(false),
+    m_retryStrategyHasBeenSet(false),
     m_containerPropertiesHasBeenSet(false)
 {
   *this = jsonValue;
@@ -97,6 +99,13 @@ JobDefinition& JobDefinition::operator =(const JsonValue& jsonValue)
       m_parameters[parametersItem.first] = parametersItem.second.AsString();
     }
     m_parametersHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("retryStrategy"))
+  {
+    m_retryStrategy = jsonValue.GetObject("retryStrategy");
+
+    m_retryStrategyHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("containerProperties"))
@@ -151,6 +160,12 @@ JsonValue JobDefinition::Jsonize() const
      parametersJsonMap.WithString(parametersItem.first, parametersItem.second);
    }
    payload.WithObject("parameters", std::move(parametersJsonMap));
+
+  }
+
+  if(m_retryStrategyHasBeenSet)
+  {
+   payload.WithObject("retryStrategy", m_retryStrategy.Jsonize());
 
   }
 

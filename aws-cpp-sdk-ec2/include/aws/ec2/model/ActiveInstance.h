@@ -153,42 +153,42 @@ namespace Model
     inline ActiveInstance& WithSpotInstanceRequestId(const char* value) { SetSpotInstanceRequestId(value); return *this;}
 
     /**
-     * <p>The health status of the instance. If the status of both the instance status
-     * check and the system status check is <code>impaired</code>, the health status of
-     * the instance is <code>unhealthy</code>. Otherwise, the health status is
-     * <code>healthy</code>.</p>
+     * <p>The health status of the instance. If the status of either the instance
+     * status check or the system status check is <code>impaired</code>, the health
+     * status of the instance is <code>unhealthy</code>. Otherwise, the health status
+     * is <code>healthy</code>.</p>
      */
     inline const InstanceHealthStatus& GetInstanceHealth() const{ return m_instanceHealth; }
 
     /**
-     * <p>The health status of the instance. If the status of both the instance status
-     * check and the system status check is <code>impaired</code>, the health status of
-     * the instance is <code>unhealthy</code>. Otherwise, the health status is
-     * <code>healthy</code>.</p>
+     * <p>The health status of the instance. If the status of either the instance
+     * status check or the system status check is <code>impaired</code>, the health
+     * status of the instance is <code>unhealthy</code>. Otherwise, the health status
+     * is <code>healthy</code>.</p>
      */
     inline void SetInstanceHealth(const InstanceHealthStatus& value) { m_instanceHealthHasBeenSet = true; m_instanceHealth = value; }
 
     /**
-     * <p>The health status of the instance. If the status of both the instance status
-     * check and the system status check is <code>impaired</code>, the health status of
-     * the instance is <code>unhealthy</code>. Otherwise, the health status is
-     * <code>healthy</code>.</p>
+     * <p>The health status of the instance. If the status of either the instance
+     * status check or the system status check is <code>impaired</code>, the health
+     * status of the instance is <code>unhealthy</code>. Otherwise, the health status
+     * is <code>healthy</code>.</p>
      */
     inline void SetInstanceHealth(InstanceHealthStatus&& value) { m_instanceHealthHasBeenSet = true; m_instanceHealth = value; }
 
     /**
-     * <p>The health status of the instance. If the status of both the instance status
-     * check and the system status check is <code>impaired</code>, the health status of
-     * the instance is <code>unhealthy</code>. Otherwise, the health status is
-     * <code>healthy</code>.</p>
+     * <p>The health status of the instance. If the status of either the instance
+     * status check or the system status check is <code>impaired</code>, the health
+     * status of the instance is <code>unhealthy</code>. Otherwise, the health status
+     * is <code>healthy</code>.</p>
      */
     inline ActiveInstance& WithInstanceHealth(const InstanceHealthStatus& value) { SetInstanceHealth(value); return *this;}
 
     /**
-     * <p>The health status of the instance. If the status of both the instance status
-     * check and the system status check is <code>impaired</code>, the health status of
-     * the instance is <code>unhealthy</code>. Otherwise, the health status is
-     * <code>healthy</code>.</p>
+     * <p>The health status of the instance. If the status of either the instance
+     * status check or the system status check is <code>impaired</code>, the health
+     * status of the instance is <code>unhealthy</code>. Otherwise, the health status
+     * is <code>healthy</code>.</p>
      */
     inline ActiveInstance& WithInstanceHealth(InstanceHealthStatus&& value) { SetInstanceHealth(value); return *this;}
 

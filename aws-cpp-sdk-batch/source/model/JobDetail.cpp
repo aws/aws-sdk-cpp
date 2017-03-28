@@ -33,9 +33,11 @@ JobDetail::JobDetail() :
     m_jobQueueHasBeenSet(false),
     m_status(JobStatus::NOT_SET),
     m_statusHasBeenSet(false),
+    m_attemptsHasBeenSet(false),
     m_statusReasonHasBeenSet(false),
     m_createdAt(0),
     m_createdAtHasBeenSet(false),
+    m_retryStrategyHasBeenSet(false),
     m_startedAt(0),
     m_startedAtHasBeenSet(false),
     m_stoppedAt(0),
@@ -53,9 +55,11 @@ JobDetail::JobDetail(const JsonValue& jsonValue) :
     m_jobQueueHasBeenSet(false),
     m_status(JobStatus::NOT_SET),
     m_statusHasBeenSet(false),
+    m_attemptsHasBeenSet(false),
     m_statusReasonHasBeenSet(false),
     m_createdAt(0),
     m_createdAtHasBeenSet(false),
+    m_retryStrategyHasBeenSet(false),
     m_startedAt(0),
     m_startedAtHasBeenSet(false),
     m_stoppedAt(0),
@@ -98,6 +102,16 @@ JobDetail& JobDetail::operator =(const JsonValue& jsonValue)
     m_statusHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("attempts"))
+  {
+    Array<JsonValue> attemptsJsonList = jsonValue.GetArray("attempts");
+    for(unsigned attemptsIndex = 0; attemptsIndex < attemptsJsonList.GetLength(); ++attemptsIndex)
+    {
+      m_attempts.push_back(attemptsJsonList[attemptsIndex].AsObject());
+    }
+    m_attemptsHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("statusReason"))
   {
     m_statusReason = jsonValue.GetString("statusReason");
@@ -110,6 +124,13 @@ JobDetail& JobDetail::operator =(const JsonValue& jsonValue)
     m_createdAt = jsonValue.GetInt64("createdAt");
 
     m_createdAtHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("retryStrategy"))
+  {
+    m_retryStrategy = jsonValue.GetObject("retryStrategy");
+
+    m_retryStrategyHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("startedAt"))
@@ -190,6 +211,17 @@ JsonValue JobDetail::Jsonize() const
    payload.WithString("status", JobStatusMapper::GetNameForJobStatus(m_status));
   }
 
+  if(m_attemptsHasBeenSet)
+  {
+   Array<JsonValue> attemptsJsonList(m_attempts.size());
+   for(unsigned attemptsIndex = 0; attemptsIndex < attemptsJsonList.GetLength(); ++attemptsIndex)
+   {
+     attemptsJsonList[attemptsIndex].AsObject(m_attempts[attemptsIndex].Jsonize());
+   }
+   payload.WithArray("attempts", std::move(attemptsJsonList));
+
+  }
+
   if(m_statusReasonHasBeenSet)
   {
    payload.WithString("statusReason", m_statusReason);
@@ -199,6 +231,12 @@ JsonValue JobDetail::Jsonize() const
   if(m_createdAtHasBeenSet)
   {
    payload.WithInt64("createdAt", m_createdAt);
+
+  }
+
+  if(m_retryStrategyHasBeenSet)
+  {
+   payload.WithObject("retryStrategy", m_retryStrategy.Jsonize());
 
   }
 

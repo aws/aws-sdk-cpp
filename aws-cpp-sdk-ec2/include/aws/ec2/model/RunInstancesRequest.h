@@ -25,6 +25,7 @@
 #include <aws/ec2/model/BlockDeviceMapping.h>
 #include <aws/ec2/model/InstanceIpv6Address.h>
 #include <aws/ec2/model/InstanceNetworkInterfaceSpecification.h>
+#include <aws/ec2/model/TagSpecification.h>
 
 namespace Aws
 {
@@ -1149,6 +1150,55 @@ namespace Model
      */
     inline RunInstancesRequest& WithEbsOptimized(bool value) { SetEbsOptimized(value); return *this;}
 
+    /**
+     * <p>The tags to apply to the resources during launch. You can tag instances and
+     * volumes. The specified tags are applied to all instances or volumes that are
+     * created during launch.</p>
+     */
+    inline const Aws::Vector<TagSpecification>& GetTagSpecifications() const{ return m_tagSpecifications; }
+
+    /**
+     * <p>The tags to apply to the resources during launch. You can tag instances and
+     * volumes. The specified tags are applied to all instances or volumes that are
+     * created during launch.</p>
+     */
+    inline void SetTagSpecifications(const Aws::Vector<TagSpecification>& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications = value; }
+
+    /**
+     * <p>The tags to apply to the resources during launch. You can tag instances and
+     * volumes. The specified tags are applied to all instances or volumes that are
+     * created during launch.</p>
+     */
+    inline void SetTagSpecifications(Aws::Vector<TagSpecification>&& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications = value; }
+
+    /**
+     * <p>The tags to apply to the resources during launch. You can tag instances and
+     * volumes. The specified tags are applied to all instances or volumes that are
+     * created during launch.</p>
+     */
+    inline RunInstancesRequest& WithTagSpecifications(const Aws::Vector<TagSpecification>& value) { SetTagSpecifications(value); return *this;}
+
+    /**
+     * <p>The tags to apply to the resources during launch. You can tag instances and
+     * volumes. The specified tags are applied to all instances or volumes that are
+     * created during launch.</p>
+     */
+    inline RunInstancesRequest& WithTagSpecifications(Aws::Vector<TagSpecification>&& value) { SetTagSpecifications(value); return *this;}
+
+    /**
+     * <p>The tags to apply to the resources during launch. You can tag instances and
+     * volumes. The specified tags are applied to all instances or volumes that are
+     * created during launch.</p>
+     */
+    inline RunInstancesRequest& AddTagSpecifications(const TagSpecification& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications.push_back(value); return *this; }
+
+    /**
+     * <p>The tags to apply to the resources during launch. You can tag instances and
+     * volumes. The specified tags are applied to all instances or volumes that are
+     * created during launch.</p>
+     */
+    inline RunInstancesRequest& AddTagSpecifications(TagSpecification&& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications.push_back(value); return *this; }
+
   private:
     bool m_dryRun;
     bool m_dryRunHasBeenSet;
@@ -1200,6 +1250,8 @@ namespace Model
     bool m_iamInstanceProfileHasBeenSet;
     bool m_ebsOptimized;
     bool m_ebsOptimizedHasBeenSet;
+    Aws::Vector<TagSpecification> m_tagSpecifications;
+    bool m_tagSpecificationsHasBeenSet;
   };
 
 } // namespace Model

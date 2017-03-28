@@ -499,6 +499,48 @@ namespace Model
      */
     inline ContainerDetail& WithContainerInstanceArn(const char* value) { SetContainerInstanceArn(value); return *this;}
 
+    /**
+     * <p>The Amazon Resource Name (ARN) of the Amazon ECS task that is associated with
+     * the container job.</p>
+     */
+    inline const Aws::String& GetTaskArn() const{ return m_taskArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the Amazon ECS task that is associated with
+     * the container job.</p>
+     */
+    inline void SetTaskArn(const Aws::String& value) { m_taskArnHasBeenSet = true; m_taskArn = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the Amazon ECS task that is associated with
+     * the container job.</p>
+     */
+    inline void SetTaskArn(Aws::String&& value) { m_taskArnHasBeenSet = true; m_taskArn = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the Amazon ECS task that is associated with
+     * the container job.</p>
+     */
+    inline void SetTaskArn(const char* value) { m_taskArnHasBeenSet = true; m_taskArn.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the Amazon ECS task that is associated with
+     * the container job.</p>
+     */
+    inline ContainerDetail& WithTaskArn(const Aws::String& value) { SetTaskArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the Amazon ECS task that is associated with
+     * the container job.</p>
+     */
+    inline ContainerDetail& WithTaskArn(Aws::String&& value) { SetTaskArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the Amazon ECS task that is associated with
+     * the container job.</p>
+     */
+    inline ContainerDetail& WithTaskArn(const char* value) { SetTaskArn(value); return *this;}
+
   private:
     Aws::String m_image;
     bool m_imageHasBeenSet;
@@ -530,6 +572,8 @@ namespace Model
     bool m_reasonHasBeenSet;
     Aws::String m_containerInstanceArn;
     bool m_containerInstanceArnHasBeenSet;
+    Aws::String m_taskArn;
+    bool m_taskArnHasBeenSet;
   };
 
 } // namespace Model

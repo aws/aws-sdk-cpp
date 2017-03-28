@@ -16,6 +16,7 @@
 #include <aws/batch/Batch_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/batch/model/RetryStrategy.h>
 #include <aws/batch/model/ContainerProperties.h>
 
 namespace Aws
@@ -298,6 +299,36 @@ namespace Model
     inline JobDefinition& AddParameters(const char* key, const char* value) { m_parametersHasBeenSet = true; m_parameters[key] = value; return *this; }
 
     /**
+     * <p>The retry strategy to use for failed jobs that are submitted with this job
+     * definition.</p>
+     */
+    inline const RetryStrategy& GetRetryStrategy() const{ return m_retryStrategy; }
+
+    /**
+     * <p>The retry strategy to use for failed jobs that are submitted with this job
+     * definition.</p>
+     */
+    inline void SetRetryStrategy(const RetryStrategy& value) { m_retryStrategyHasBeenSet = true; m_retryStrategy = value; }
+
+    /**
+     * <p>The retry strategy to use for failed jobs that are submitted with this job
+     * definition.</p>
+     */
+    inline void SetRetryStrategy(RetryStrategy&& value) { m_retryStrategyHasBeenSet = true; m_retryStrategy = value; }
+
+    /**
+     * <p>The retry strategy to use for failed jobs that are submitted with this job
+     * definition.</p>
+     */
+    inline JobDefinition& WithRetryStrategy(const RetryStrategy& value) { SetRetryStrategy(value); return *this;}
+
+    /**
+     * <p>The retry strategy to use for failed jobs that are submitted with this job
+     * definition.</p>
+     */
+    inline JobDefinition& WithRetryStrategy(RetryStrategy&& value) { SetRetryStrategy(value); return *this;}
+
+    /**
      * <p>An object with various properties specific to container-based jobs. </p>
      */
     inline const ContainerProperties& GetContainerProperties() const{ return m_containerProperties; }
@@ -335,6 +366,8 @@ namespace Model
     bool m_typeHasBeenSet;
     Aws::Map<Aws::String, Aws::String> m_parameters;
     bool m_parametersHasBeenSet;
+    RetryStrategy m_retryStrategy;
+    bool m_retryStrategyHasBeenSet;
     ContainerProperties m_containerProperties;
     bool m_containerPropertiesHasBeenSet;
   };

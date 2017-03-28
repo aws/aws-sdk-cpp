@@ -27,7 +27,8 @@ SubmitJobRequest::SubmitJobRequest() :
     m_dependsOnHasBeenSet(false),
     m_jobDefinitionHasBeenSet(false),
     m_parametersHasBeenSet(false),
-    m_containerOverridesHasBeenSet(false)
+    m_containerOverridesHasBeenSet(false),
+    m_retryStrategyHasBeenSet(false)
 {
 }
 
@@ -78,6 +79,12 @@ Aws::String SubmitJobRequest::SerializePayload() const
   if(m_containerOverridesHasBeenSet)
   {
    payload.WithObject("containerOverrides", m_containerOverrides.Jsonize());
+
+  }
+
+  if(m_retryStrategyHasBeenSet)
+  {
+   payload.WithObject("retryStrategy", m_retryStrategy.Jsonize());
 
   }
 

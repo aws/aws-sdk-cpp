@@ -19,6 +19,7 @@
 #include <aws/batch/model/JobDefinitionType.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/batch/model/ContainerProperties.h>
+#include <aws/batch/model/RetryStrategy.h>
 
 namespace Aws
 {
@@ -227,6 +228,41 @@ namespace Model
      */
     inline RegisterJobDefinitionRequest& WithContainerProperties(ContainerProperties&& value) { SetContainerProperties(value); return *this;}
 
+    /**
+     * <p>The retry strategy to use for failed jobs that are submitted with this job
+     * definition. Any retry strategy that is specified during a <a>SubmitJob</a>
+     * operation overrides the retry strategy defined here.</p>
+     */
+    inline const RetryStrategy& GetRetryStrategy() const{ return m_retryStrategy; }
+
+    /**
+     * <p>The retry strategy to use for failed jobs that are submitted with this job
+     * definition. Any retry strategy that is specified during a <a>SubmitJob</a>
+     * operation overrides the retry strategy defined here.</p>
+     */
+    inline void SetRetryStrategy(const RetryStrategy& value) { m_retryStrategyHasBeenSet = true; m_retryStrategy = value; }
+
+    /**
+     * <p>The retry strategy to use for failed jobs that are submitted with this job
+     * definition. Any retry strategy that is specified during a <a>SubmitJob</a>
+     * operation overrides the retry strategy defined here.</p>
+     */
+    inline void SetRetryStrategy(RetryStrategy&& value) { m_retryStrategyHasBeenSet = true; m_retryStrategy = value; }
+
+    /**
+     * <p>The retry strategy to use for failed jobs that are submitted with this job
+     * definition. Any retry strategy that is specified during a <a>SubmitJob</a>
+     * operation overrides the retry strategy defined here.</p>
+     */
+    inline RegisterJobDefinitionRequest& WithRetryStrategy(const RetryStrategy& value) { SetRetryStrategy(value); return *this;}
+
+    /**
+     * <p>The retry strategy to use for failed jobs that are submitted with this job
+     * definition. Any retry strategy that is specified during a <a>SubmitJob</a>
+     * operation overrides the retry strategy defined here.</p>
+     */
+    inline RegisterJobDefinitionRequest& WithRetryStrategy(RetryStrategy&& value) { SetRetryStrategy(value); return *this;}
+
   private:
     Aws::String m_jobDefinitionName;
     bool m_jobDefinitionNameHasBeenSet;
@@ -236,6 +272,8 @@ namespace Model
     bool m_parametersHasBeenSet;
     ContainerProperties m_containerProperties;
     bool m_containerPropertiesHasBeenSet;
+    RetryStrategy m_retryStrategy;
+    bool m_retryStrategyHasBeenSet;
   };
 
 } // namespace Model

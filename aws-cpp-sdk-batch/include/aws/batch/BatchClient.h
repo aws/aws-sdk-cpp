@@ -238,7 +238,7 @@ namespace Model
 
         /**
          * <p>Creates an AWS Batch compute environment. You can create <code>MANAGED</code>
-         * or <code>UNMANAGED</code>compute environments.</p> <p>In a managed compute
+         * or <code>UNMANAGED</code> compute environments.</p> <p>In a managed compute
          * environment, AWS Batch manages the compute resources within the environment,
          * based on the compute resources that you specify. Instances launched into a
          * managed compute environment use the latest Amazon ECS-optimized AMI. You can
@@ -265,7 +265,7 @@ namespace Model
 
         /**
          * <p>Creates an AWS Batch compute environment. You can create <code>MANAGED</code>
-         * or <code>UNMANAGED</code>compute environments.</p> <p>In a managed compute
+         * or <code>UNMANAGED</code> compute environments.</p> <p>In a managed compute
          * environment, AWS Batch manages the compute resources within the environment,
          * based on the compute resources that you specify. Instances launched into a
          * managed compute environment use the latest Amazon ECS-optimized AMI. You can
@@ -294,7 +294,7 @@ namespace Model
 
         /**
          * <p>Creates an AWS Batch compute environment. You can create <code>MANAGED</code>
-         * or <code>UNMANAGED</code>compute environments.</p> <p>In a managed compute
+         * or <code>UNMANAGED</code> compute environments.</p> <p>In a managed compute
          * environment, AWS Batch manages the compute resources within the environment,
          * based on the compute resources that you specify. Instances launched into a
          * managed compute environment use the latest Amazon ECS-optimized AMI. You can

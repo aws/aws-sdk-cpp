@@ -31,7 +31,7 @@ namespace Model
 {
 
   /**
-   * <p>Details on a volume mount point that is used in a job's container
+   * <p>Details on a Docker volume mount point that is used in a job's container
    * properties.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/MountPoint">AWS
    * API Reference</a></p>
