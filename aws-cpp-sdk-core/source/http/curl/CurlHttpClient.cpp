@@ -194,7 +194,16 @@ void SetOptCodeForHttpMethod(CURL* requestHandle, const HttpRequest& request)
             curl_easy_setopt(requestHandle, CURLOPT_NOBODY, 1L);
             break;
         case HttpMethod::HTTP_PATCH:
-            curl_easy_setopt(requestHandle, CURLOPT_CUSTOMREQUEST, "PATCH");
+            if (!request.HasHeader(Aws::Http::CONTENT_LENGTH_HEADER)|| request.GetHeaderValue(Aws::Http::CONTENT_LENGTH_HEADER) == "0")
+            {
+                curl_easy_setopt(requestHandle, CURLOPT_CUSTOMREQUEST, "PATCH");
+            }
+            else
+            {
+                curl_easy_setopt(requestHandle, CURLOPT_POST, 1L);
+                curl_easy_setopt(requestHandle, CURLOPT_CUSTOMREQUEST, "PATCH");
+            }
+
             break;
         case HttpMethod::HTTP_DELETE:
             curl_easy_setopt(requestHandle, CURLOPT_CUSTOMREQUEST, "DELETE");
