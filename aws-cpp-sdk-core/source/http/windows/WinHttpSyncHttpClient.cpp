@@ -150,7 +150,7 @@ void WinHttpSyncHttpClient::DoAddHeaders(void* hHttpRequest, Aws::String& header
     Aws::WString wHeaderString = StringUtils::ToWString(headerStr.c_str());
 
     if (!WinHttpAddRequestHeaders(hHttpRequest, wHeaderString.c_str(), (DWORD)wHeaderString.length(), WINHTTP_ADDREQ_FLAG_REPLACE | WINHTTP_ADDREQ_FLAG_ADD))
-        AWS_LOG_FATAL(GetLogTag(), "Failed to add HTTP request headers!");
+        AWS_LOGSTREAM_ERROR(GetLogTag(), "Failed to add HTTP request headers with error code: " << GetLastError());
 }
 
 uint64_t WinHttpSyncHttpClient::DoWriteData(void* hHttpRequest, char* streamBuffer, uint64_t bytesRead) const
