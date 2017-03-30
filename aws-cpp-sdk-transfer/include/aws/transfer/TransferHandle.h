@@ -330,6 +330,8 @@ namespace Aws
 
         private:
 
+            void CleanupDownloadStream();
+
             bool m_isMultipart;
             Aws::String m_multipartId;
             TransferDirection m_direction;
