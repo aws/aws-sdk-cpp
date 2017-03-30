@@ -146,6 +146,8 @@ namespace Aws
              */
             TransferHandle(const Aws::String& bucketName, const Aws::String& keyName, CreateDownloadStreamCallback createDownloadStreamFn);
 
+            ~TransferHandle();
+
             /**
              * Whether or not this transfer is being performed using parallel parts via a multi-part s3 api.
              */
