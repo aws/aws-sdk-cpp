@@ -936,7 +936,7 @@ namespace Model
         void UpdateServerEngineAttributesAsyncHelper(const Model::UpdateServerEngineAttributesRequest& request, const UpdateServerEngineAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 
       Aws::String m_uri;
-      std::shared_ptr<Utils::Threading::Executor> m_executor;
+      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
   };
 
 } // namespace OpsWorksCM

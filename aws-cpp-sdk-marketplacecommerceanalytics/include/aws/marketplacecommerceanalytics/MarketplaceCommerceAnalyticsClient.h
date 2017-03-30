@@ -230,7 +230,7 @@ namespace Model
         void StartSupportDataExportAsyncHelper(const Model::StartSupportDataExportRequest& request, const StartSupportDataExportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 
       Aws::String m_uri;
-      std::shared_ptr<Utils::Threading::Executor> m_executor;
+      std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
   };
 
 } // namespace MarketplaceCommerceAnalytics
