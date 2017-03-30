@@ -17,6 +17,7 @@
 #include <aws/external/gtest.h>
 
 #include <aws/testing/mocks/aws/auth/MockEC2MetadataClient.h>
+#include <aws/testing/mocks/aws/auth/MockECSCredentialsClient.h>
 #include <aws/testing/platform/PlatformTesting.h>
 #include <aws/core/auth/AWSCredentialsProvider.h>
 #include <aws/core/platform/Environment.h>
@@ -287,3 +288,61 @@ TEST(InstanceProfileCredentialsProviderTest, TestEC2MetadataClientReturnsBadData
 }
 
 
+TEST(TaskRoleCredentialsProviderTest, TestECSCredentialsClientReturnsGoodData)
+{
+    auto mockClient = Aws::MakeShared<MockECSCredentialsClient>(AllocationTag);
+
+    const char* validCredentials = "{ \"AccessKeyId\": \"goodAccessKey\", \"SecretAccessKey\": \"goodSecretKey\", \"Token\": \"goodToken\", \"Expiration\": \"2020-02-25T06:03:31Z\" }";
+    mockClient->SetMockedCredentialsValue(validCredentials);
+
+    TaskRoleCredentialsProvider provider(Aws::MakeShared<Aws::Config::ECSTaskRoleProfileConfigLoader>(AllocationTag, "/path/to/res", mockClient), 1000 * 60 * 15);
+    ASSERT_EQ("goodAccessKey", provider.GetAWSCredentials().GetAWSAccessKeyId());
+    ASSERT_EQ("goodSecretKey", provider.GetAWSCredentials().GetAWSSecretKey());    
+}
+
+
+TEST(TaskRoleCredentialsProviderTest, TestThatProviderRefreshes)
+{
+    auto mockClient = Aws::MakeShared<MockECSCredentialsClient>(AllocationTag);
+
+    const char* validCredentials = "{ \"AccessKeyId\": \"goodAccessKey\", \"SecretAccessKey\": \"goodSecretKey\", \"Token\": \"goodToken\" }";
+    mockClient->SetMockedCredentialsValue(validCredentials);
+
+    TaskRoleCredentialsProvider provider(Aws::MakeShared<Aws::Config::ECSTaskRoleProfileConfigLoader>(AllocationTag, "/path/to/res", mockClient), 10);
+    ASSERT_EQ("goodAccessKey", provider.GetAWSCredentials().GetAWSAccessKeyId());
+    ASSERT_EQ("goodSecretKey", provider.GetAWSCredentials().GetAWSSecretKey());
+
+    const char* nextSetOfCredentials = "{ \"AccessKeyId\": \"betterAccessKey\", \"SecretAccessKey\": \"betterSecretKey\", \"Token\": \"betterToken\" }";
+    mockClient->SetMockedCredentialsValue(nextSetOfCredentials);
+
+    std::this_thread::sleep_for(std::chrono::milliseconds(100));
+    ASSERT_EQ("betterAccessKey", provider.GetAWSCredentials().GetAWSAccessKeyId());
+    ASSERT_EQ("betterSecretKey", provider.GetAWSCredentials().GetAWSSecretKey());    
+}
+
+TEST(TaskRoleCredentialsProviderTest, TestECSCrendentialsClientCouldntFindCredentials)
+{
+    auto mockClient = Aws::MakeShared<MockECSCredentialsClient>(AllocationTag);
+    const char* emptyCredentials = "";
+    mockClient->SetMockedCredentialsValue(emptyCredentials);
+
+    TaskRoleCredentialsProvider provider(Aws::MakeShared<Aws::Config::ECSTaskRoleProfileConfigLoader>(AllocationTag, "/path/to/res", mockClient), 1000 * 60 * 15);
+    ASSERT_EQ("", provider.GetAWSCredentials().GetAWSAccessKeyId());
+    ASSERT_EQ("", provider.GetAWSCredentials().GetAWSSecretKey());
+
+    const char* missingInfo = "{ }";
+    mockClient->SetMockedCredentialsValue(missingInfo);
+    ASSERT_EQ("", provider.GetAWSCredentials().GetAWSAccessKeyId());
+    ASSERT_EQ("", provider.GetAWSCredentials().GetAWSSecretKey());    
+}
+
+TEST(TaskRoleCredentialsProviderTest, TestECSCredentialsClientReturnsBadData)
+{
+    auto mockClient = Aws::MakeShared<MockECSCredentialsClient>(AllocationTag);
+    const char* badData = "blah blah blah, I'm bad";
+    mockClient->SetMockedCredentialsValue(badData);
+
+    TaskRoleCredentialsProvider provider(Aws::MakeShared<Aws::Config::ECSTaskRoleProfileConfigLoader>(AllocationTag, "/path/to/res", mockClient), 1000 * 60 * 15);
+    ASSERT_EQ("", provider.GetAWSCredentials().GetAWSAccessKeyId());
+    ASSERT_EQ("", provider.GetAWSCredentials().GetAWSSecretKey());
+}

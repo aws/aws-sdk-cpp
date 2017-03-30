@@ -17,6 +17,7 @@
 #include <aws/core/utils/FileSystemUtils.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/testing/mocks/aws/auth/MockEC2MetadataClient.h>
+#include <aws/testing/mocks/aws/auth/MockECSCredentialsClient.h>
 #include <fstream>
 
 using namespace Aws::Utils;
@@ -176,6 +177,44 @@ TEST(EC2InstanceProfileConfigLoaderTest, TestBadJsonInResponse)
     mockClient->SetMockedCredentialsValue("{ \"AccessKeyId\": \"goodAccessKey\",");
 
     EC2InstanceProfileConfigLoader loader(mockClient);
+    ASSERT_FALSE(loader.Load());
+    ASSERT_EQ(0u, loader.GetProfiles().size());
+}
+
+static const char* const ECS_ALLOCATION_TAG = "ECSTaskRoleProfileConfigLoaderTest";
+
+TEST(ECSTaskRoleProfileConfigLoaderTest, TestSuccesfullyHitsService)
+{
+    std::shared_ptr<MockECSCredentialsClient> mockClient = Aws::MakeShared<MockECSCredentialsClient>(ECS_ALLOCATION_TAG);
+    mockClient->SetMockedCredentialsValue("{ \"AccessKeyId\": \"goodAccessKey\", \"Expiration\": \"2020-02-25T06:03:31Z\", \"SecretAccessKey\": \"goodSecretKey\", \"Token\": \"goodToken\" }");
+
+    ECSTaskRoleProfileConfigLoader loader("/path/to/res", mockClient);
+    ASSERT_TRUE(loader.Load());
+    ASSERT_EQ(1u, loader.GetProfiles().size());
+    auto profiles = loader.GetProfiles();
+    ASSERT_NE(profiles.end(), profiles.find(Aws::Config::TASKROLE_PROFILE_KEY));
+    auto creds = profiles[Aws::Config::TASKROLE_PROFILE_KEY].GetCredentials();
+    ASSERT_STREQ("goodAccessKey", creds.GetAWSAccessKeyId().c_str());
+    ASSERT_STREQ("goodSecretKey", creds.GetAWSSecretKey().c_str());
+    ASSERT_STREQ("goodToken", creds.GetSessionToken().c_str());
+    ASSERT_STREQ("2020-02-25T06:03:31Z", profiles[Aws::Config::TASKROLE_PROFILE_KEY].GetExpirationDate().c_str());
+}
+
+TEST(ECSTaskRoleProfileConfigLoaderTest, TestFailsToHitService)
+{
+    std::shared_ptr<MockECSCredentialsClient> mockClient = Aws::MakeShared<MockECSCredentialsClient>(ECS_ALLOCATION_TAG);
+
+    ECSTaskRoleProfileConfigLoader loader("/path/to/res", mockClient);
+    ASSERT_FALSE(loader.Load());
+    ASSERT_EQ(0u, loader.GetProfiles().size());
+}
+
+TEST(ECSTaskRoleProfileConfigLoaderTest, TestBadJsonInResponse)
+{
+    std::shared_ptr<MockECSCredentialsClient> mockClient = Aws::MakeShared<MockECSCredentialsClient>(ECS_ALLOCATION_TAG);
+    mockClient->SetMockedCredentialsValue("{ \"AccessKeyId\": \"goodAccessKey\",");
+
+    ECSTaskRoleProfileConfigLoader loader("/path/to/res", mockClient);
     ASSERT_FALSE(loader.Load());
     ASSERT_EQ(0u, loader.GetProfiles().size());
 }
