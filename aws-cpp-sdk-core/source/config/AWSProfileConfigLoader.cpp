@@ -15,6 +15,7 @@
 
 #include <aws/core/config/AWSProfileConfigLoader.h>
 #include <aws/core/internal/EC2MetadataClient.h>
+#include <aws/core/internal/ECSCredentialsClient.h>
 #include <aws/core/utils/memory/stl/AWSList.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/StringUtils.h>
@@ -338,5 +339,41 @@ namespace Aws
 
             return false;
         }
-    }
-}
+
+        static const char* const ECS_TASKROLE_PROFILE_LOG_TAG = "Aws::Config::ECSTaskRoleProfileConfigLoader";
+
+        ECSTaskRoleProfileConfigLoader::ECSTaskRoleProfileConfigLoader(const char *URI, const std::shared_ptr<Aws::Internal::ECSCredentialsClient>& client)
+            : m_URI(URI), m_ecsCredentialsClient(client == nullptr ? Aws::MakeShared<Aws::Internal::ECSCredentialsClient>(ECS_TASKROLE_PROFILE_LOG_TAG) : client)
+        { }
+
+        bool ECSTaskRoleProfileConfigLoader::LoadInternal()
+        {
+            auto credentialsStr = m_ecsCredentialsClient->GetECSCredentials(m_URI.c_str());
+            if (credentialsStr.length() <= 0) return false;
+
+            Json::JsonValue credentialsDoc(credentialsStr);
+            if (!credentialsDoc.WasParseSuccessful()) 
+            {
+                AWS_LOGSTREAM_ERROR(ECS_TASKROLE_PROFILE_LOG_TAG, "Failed to parse output from ECSCredentialService with error " << credentialsDoc.GetErrorMessage());
+                return false;
+            }
+
+            Aws::String accessKey, secretKey, token;
+            accessKey = credentialsDoc.GetString("AccessKeyId");
+            secretKey = credentialsDoc.GetString("SecretAccessKey");
+            token = credentialsDoc.GetString("Token");
+            AWS_LOGSTREAM_INFO(EC2_INSTANCE_PROFILE_LOG_TAG, "Successfully pulled credentials from metadata service with access key " << accessKey);
+            
+            Profile profile;
+            profile.SetCredentials(AWSCredentials(accessKey, secretKey, token));
+            profile.SetName(TASKROLE_PROFILE_KEY);
+            profile.SetRoleArn(credentialsDoc.GetString("RoleArn"));
+            profile.SetExpirationDate(credentialsDoc.GetString("Expiration"));
+            
+            m_profiles[TASKROLE_PROFILE_KEY] = profile;
+
+            return true;
+        }
+
+    } // Config namespace
+} // Aws namespace

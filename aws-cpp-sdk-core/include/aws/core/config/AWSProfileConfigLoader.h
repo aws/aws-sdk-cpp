@@ -24,6 +24,7 @@ namespace Aws
     namespace Internal
     {
         class EC2MetadataClient;
+        class ECSCredentialsClient;
     }
 
     namespace Config
@@ -44,6 +45,8 @@ namespace Aws
             inline void SetRoleArn(const Aws::String& value) { m_roleArn = value; }
             inline const Aws::String& GetSourceProfile() const { return m_sourceProfile; }
             inline void SetSourceProfile(const Aws::String& value ) { m_sourceProfile = value; }
+            inline const Aws::String& GetExpirationDate() const { return m_expirationDate; }
+            inline void SetExpirationDate(const Aws::String& value) { m_expirationDate = value; }
 
         private:
             Aws::String m_name;
@@ -51,6 +54,7 @@ namespace Aws
             Aws::Auth::AWSCredentials m_credentials;
             Aws::String m_roleArn;
             Aws::String m_sourceProfile;
+            Aws::String m_expirationDate;
         };
 
         /**
@@ -146,5 +150,29 @@ namespace Aws
         private:
             std::shared_ptr<Aws::Internal::EC2MetadataClient> m_metadataClient;
         };
+
+        static const char* const TASKROLE_PROFILE_KEY = "TaskRoleProfile";
+
+        /**
+         * Loads configuration from the ECS Credentials Service
+         */
+        class AWS_CORE_API ECSTaskRoleProfileConfigLoader : public AWSProfileConfigLoader
+        {
+        public:
+            /**
+             * If client is nullptr, the default ECSCredentialsClient will be created.
+             */
+            ECSTaskRoleProfileConfigLoader(const char* URI, const std::shared_ptr<Aws::Internal::ECSCredentialsClient>& = nullptr);
+
+            virtual ~ECSTaskRoleProfileConfigLoader() = default;
+
+        protected:
+            virtual bool LoadInternal() override;
+
+        private:
+            Aws::String m_URI;
+            std::shared_ptr<Aws::Internal::ECSCredentialsClient> m_ecsCredentialsClient;
+        };
+
     }
 }

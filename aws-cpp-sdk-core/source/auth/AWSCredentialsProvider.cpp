@@ -27,6 +27,7 @@
 #include <cstdlib>
 #include <fstream>
 #include <string.h>
+#include <climits>
 
 
 using namespace Aws::Utils;
@@ -45,6 +46,8 @@ static const char* AWS_CREDENTIAL_PROFILES_FILE = "AWS_SHARED_CREDENTIALS_FILE";
 
 static const char* PROFILE_DEFAULT_FILENAME = "credentials";
 static const char* CONFIG_FILENAME = "config";
+
+static const int NETWORK_MAX_RETRY = 3;
 
 #ifndef _WIN32
 static const char* PROFILE_DIRECTORY = "/.aws";
@@ -252,4 +255,63 @@ void InstanceProfileCredentialsProvider::RefreshIfExpired()
     }
 }
 
+static const char* taskRoleLogTag = "TaskRoleCredentialsProvider";
 
+TaskRoleCredentialsProvider::TaskRoleCredentialsProvider(const char* relativeURI, long refreshRateMs) :
+        m_ecsCredentialsConfigLoader(Aws::MakeShared<Aws::Config::ECSTaskRoleProfileConfigLoader>(relativeURI, taskRoleLogTag)),
+        m_loadFrequencyMs(refreshRateMs),
+        m_millToExpire(LONG_MAX)
+{
+    AWS_LOGSTREAM_INFO(taskRoleLogTag, "Creating TaskRole with default ECSCredentialsClient and refresh rate " << refreshRateMs);
+}
+
+
+TaskRoleCredentialsProvider::TaskRoleCredentialsProvider(const std::shared_ptr<Aws::Config::ECSTaskRoleProfileConfigLoader>& loader,
+                                                                       long refreshRateMs) :
+        m_ecsCredentialsConfigLoader(loader),
+        m_loadFrequencyMs(refreshRateMs),
+        m_millToExpire(LONG_MAX)
+{
+    AWS_LOGSTREAM_INFO(taskRoleLogTag, "Creating TaskRole with default ECSCredentialsClient and refresh rate " << refreshRateMs);
+}
+
+
+AWSCredentials TaskRoleCredentialsProvider::GetAWSCredentials()
+{
+    RefreshIfExpired();
+    auto profileIter = m_ecsCredentialsConfigLoader->GetProfiles().find(Aws::Config::TASKROLE_PROFILE_KEY);
+
+    if(profileIter != m_ecsCredentialsConfigLoader->GetProfiles().end())
+    {
+        return profileIter->second.GetCredentials();
+    }
+
+    return AWSCredentials();
+}
+
+
+void TaskRoleCredentialsProvider::RefreshIfExpired()
+{
+    AWS_LOG_DEBUG(taskRoleLogTag, "Checking if latest credential pull has expired.");
+
+    std::lock_guard<std::mutex> locker(m_reloadMutex);
+    if (!IsTimeToRefresh(m_loadFrequencyMs) && !ExpireSoon()) return;
+    
+    AWS_LOG_INFO(taskRoleLogTag, "Credentials have expired or will expire, attempting to repull from ECS IAM Service.");
+
+    bool succ = false;
+    for (int i = 0; i < NETWORK_MAX_RETRY; i++) {
+        if (m_ecsCredentialsConfigLoader->Load()) {
+            succ = true;
+            break;
+        }
+        AWS_LOG_WARN(taskRoleLogTag, "Pulling credentials failed");
+    }
+    if (!succ) return;
+
+    auto profileIter = m_ecsCredentialsConfigLoader->GetProfiles().find(Aws::Config::TASKROLE_PROFILE_KEY);
+    if (profileIter == m_ecsCredentialsConfigLoader->GetProfiles().end()) return;
+
+    auto dt = DateTime(profileIter->second.GetExpirationDate(), DateFormat::ISO_8601);
+    m_millToExpire = dt.Millis();
+}

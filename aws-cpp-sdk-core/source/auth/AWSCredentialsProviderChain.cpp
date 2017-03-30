@@ -14,10 +14,12 @@
   */
 
 #include <aws/core/auth/AWSCredentialsProviderChain.h>
-
+#include <aws/core/platform/Environment.h>
 #include <aws/core/utils/memory/AWSMemory.h>
 
 using namespace Aws::Auth;
+
+static const char* AWS_ECS_CREDENTIALS_ENVIRONMENT_VARIABLE = "AWS_CONTAINER_CREDENTIALS_RELATIVE_URI";
 
 AWSCredentials AWSCredentialsProviderChain::GetAWSCredentials()
 {
@@ -40,4 +42,11 @@ DefaultAWSCredentialsProviderChain::DefaultAWSCredentialsProviderChain() : AWSCr
     AddProvider(Aws::MakeShared<EnvironmentAWSCredentialsProvider>(DefaultCredentialsProviderChainTag));
     AddProvider(Aws::MakeShared<ProfileConfigFileAWSCredentialsProvider>(DefaultCredentialsProviderChainTag));
     AddProvider(Aws::MakeShared<InstanceProfileCredentialsProvider>(DefaultCredentialsProviderChainTag));
+
+    //ECS TaskRole Credentials only available when ENVIRONMENT VARIABLE is set
+    auto relativeURIFromVar = Aws::Environment::GetEnv(AWS_ECS_CREDENTIALS_ENVIRONMENT_VARIABLE);
+    if (!relativeURIFromVar.empty()) {
+        AddProvider(Aws::MakeShared<TaskRoleCredentialsProvider>(DefaultCredentialsProviderChainTag, relativeURIFromVar.c_str()));
+    }
+
 }
