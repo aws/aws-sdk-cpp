@@ -31,7 +31,8 @@ BatchListObjectAttributes::BatchListObjectAttributes() :
     m_objectReferenceHasBeenSet(false),
     m_nextTokenHasBeenSet(false),
     m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
+    m_maxResultsHasBeenSet(false),
+    m_facetFilterHasBeenSet(false)
 {
 }
 
@@ -39,7 +40,8 @@ BatchListObjectAttributes::BatchListObjectAttributes(const JsonValue& jsonValue)
     m_objectReferenceHasBeenSet(false),
     m_nextTokenHasBeenSet(false),
     m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
+    m_maxResultsHasBeenSet(false),
+    m_facetFilterHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -67,6 +69,13 @@ BatchListObjectAttributes& BatchListObjectAttributes::operator =(const JsonValue
     m_maxResultsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("FacetFilter"))
+  {
+    m_facetFilter = jsonValue.GetObject("FacetFilter");
+
+    m_facetFilterHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -89,6 +98,12 @@ JsonValue BatchListObjectAttributes::Jsonize() const
   if(m_maxResultsHasBeenSet)
   {
    payload.WithInteger("MaxResults", m_maxResults);
+
+  }
+
+  if(m_facetFilterHasBeenSet)
+  {
+   payload.WithObject("FacetFilter", m_facetFilter.Jsonize());
 
   }
 
