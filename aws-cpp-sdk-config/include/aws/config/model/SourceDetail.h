@@ -175,42 +175,57 @@ namespace Model
     inline SourceDetail& WithMessageType(MessageType&& value) { SetMessageType(value); return *this;}
 
     /**
-     * <p>The frequency that you want AWS Config to run evaluations for a rule that is
-     * triggered periodically. If you specify a value for
+     * <p>The frequency that you want AWS Config to run evaluations for a custom rule
+     * with a periodic trigger. If you specify a value for
      * <code>MaximumExecutionFrequency</code>, then <code>MessageType</code> must use
-     * the <code>ScheduledNotification</code> value.</p>
+     * the <code>ScheduledNotification</code> value.</p> <note> <p>By default, rules
+     * with a periodic trigger are evaluated every 24 hours. To change the frequency,
+     * specify a valid value for the <code>MaximumExecutionFrequency</code>
+     * parameter.</p> </note>
      */
     inline const MaximumExecutionFrequency& GetMaximumExecutionFrequency() const{ return m_maximumExecutionFrequency; }
 
     /**
-     * <p>The frequency that you want AWS Config to run evaluations for a rule that is
-     * triggered periodically. If you specify a value for
+     * <p>The frequency that you want AWS Config to run evaluations for a custom rule
+     * with a periodic trigger. If you specify a value for
      * <code>MaximumExecutionFrequency</code>, then <code>MessageType</code> must use
-     * the <code>ScheduledNotification</code> value.</p>
+     * the <code>ScheduledNotification</code> value.</p> <note> <p>By default, rules
+     * with a periodic trigger are evaluated every 24 hours. To change the frequency,
+     * specify a valid value for the <code>MaximumExecutionFrequency</code>
+     * parameter.</p> </note>
      */
     inline void SetMaximumExecutionFrequency(const MaximumExecutionFrequency& value) { m_maximumExecutionFrequencyHasBeenSet = true; m_maximumExecutionFrequency = value; }
 
     /**
-     * <p>The frequency that you want AWS Config to run evaluations for a rule that is
-     * triggered periodically. If you specify a value for
+     * <p>The frequency that you want AWS Config to run evaluations for a custom rule
+     * with a periodic trigger. If you specify a value for
      * <code>MaximumExecutionFrequency</code>, then <code>MessageType</code> must use
-     * the <code>ScheduledNotification</code> value.</p>
+     * the <code>ScheduledNotification</code> value.</p> <note> <p>By default, rules
+     * with a periodic trigger are evaluated every 24 hours. To change the frequency,
+     * specify a valid value for the <code>MaximumExecutionFrequency</code>
+     * parameter.</p> </note>
      */
     inline void SetMaximumExecutionFrequency(MaximumExecutionFrequency&& value) { m_maximumExecutionFrequencyHasBeenSet = true; m_maximumExecutionFrequency = value; }
 
     /**
-     * <p>The frequency that you want AWS Config to run evaluations for a rule that is
-     * triggered periodically. If you specify a value for
+     * <p>The frequency that you want AWS Config to run evaluations for a custom rule
+     * with a periodic trigger. If you specify a value for
      * <code>MaximumExecutionFrequency</code>, then <code>MessageType</code> must use
-     * the <code>ScheduledNotification</code> value.</p>
+     * the <code>ScheduledNotification</code> value.</p> <note> <p>By default, rules
+     * with a periodic trigger are evaluated every 24 hours. To change the frequency,
+     * specify a valid value for the <code>MaximumExecutionFrequency</code>
+     * parameter.</p> </note>
      */
     inline SourceDetail& WithMaximumExecutionFrequency(const MaximumExecutionFrequency& value) { SetMaximumExecutionFrequency(value); return *this;}
 
     /**
-     * <p>The frequency that you want AWS Config to run evaluations for a rule that is
-     * triggered periodically. If you specify a value for
+     * <p>The frequency that you want AWS Config to run evaluations for a custom rule
+     * with a periodic trigger. If you specify a value for
      * <code>MaximumExecutionFrequency</code>, then <code>MessageType</code> must use
-     * the <code>ScheduledNotification</code> value.</p>
+     * the <code>ScheduledNotification</code> value.</p> <note> <p>By default, rules
+     * with a periodic trigger are evaluated every 24 hours. To change the frequency,
+     * specify a valid value for the <code>MaximumExecutionFrequency</code>
+     * parameter.</p> </note>
      */
     inline SourceDetail& WithMaximumExecutionFrequency(MaximumExecutionFrequency&& value) { SetMaximumExecutionFrequency(value); return *this;}
 

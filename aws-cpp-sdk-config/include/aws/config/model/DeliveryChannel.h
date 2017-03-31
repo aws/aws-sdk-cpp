@@ -283,19 +283,34 @@ namespace Model
      */
     inline DeliveryChannel& WithSnsTopicARN(const char* value) { SetSnsTopicARN(value); return *this;}
 
-    
+    /**
+     * <p>The options for how often AWS Config delivers configuration snapshots to the
+     * Amazon S3 bucket.</p>
+     */
     inline const ConfigSnapshotDeliveryProperties& GetConfigSnapshotDeliveryProperties() const{ return m_configSnapshotDeliveryProperties; }
 
-    
+    /**
+     * <p>The options for how often AWS Config delivers configuration snapshots to the
+     * Amazon S3 bucket.</p>
+     */
     inline void SetConfigSnapshotDeliveryProperties(const ConfigSnapshotDeliveryProperties& value) { m_configSnapshotDeliveryPropertiesHasBeenSet = true; m_configSnapshotDeliveryProperties = value; }
 
-    
+    /**
+     * <p>The options for how often AWS Config delivers configuration snapshots to the
+     * Amazon S3 bucket.</p>
+     */
     inline void SetConfigSnapshotDeliveryProperties(ConfigSnapshotDeliveryProperties&& value) { m_configSnapshotDeliveryPropertiesHasBeenSet = true; m_configSnapshotDeliveryProperties = value; }
 
-    
+    /**
+     * <p>The options for how often AWS Config delivers configuration snapshots to the
+     * Amazon S3 bucket.</p>
+     */
     inline DeliveryChannel& WithConfigSnapshotDeliveryProperties(const ConfigSnapshotDeliveryProperties& value) { SetConfigSnapshotDeliveryProperties(value); return *this;}
 
-    
+    /**
+     * <p>The options for how often AWS Config delivers configuration snapshots to the
+     * Amazon S3 bucket.</p>
+     */
     inline DeliveryChannel& WithConfigSnapshotDeliveryProperties(ConfigSnapshotDeliveryProperties&& value) { SetConfigSnapshotDeliveryProperties(value); return *this;}
 
   private:

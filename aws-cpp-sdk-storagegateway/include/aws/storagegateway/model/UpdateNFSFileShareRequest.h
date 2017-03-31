@@ -257,6 +257,73 @@ namespace Model
      */
     inline UpdateNFSFileShareRequest& AddClientList(const char* value) { m_clientListHasBeenSet = true; m_clientList.push_back(value); return *this; }
 
+    /**
+     * <p>Indicates the user mapped to anonymous user. Valid options: "RootSquash" -
+     * Only root is mapped to anonymous user, "NoSquash" - No one is mapped to
+     * anonymous user or "AllSquash" - Everyone is mapped to anonymous user.</p>
+     */
+    inline const Aws::String& GetSquash() const{ return m_squash; }
+
+    /**
+     * <p>Indicates the user mapped to anonymous user. Valid options: "RootSquash" -
+     * Only root is mapped to anonymous user, "NoSquash" - No one is mapped to
+     * anonymous user or "AllSquash" - Everyone is mapped to anonymous user.</p>
+     */
+    inline void SetSquash(const Aws::String& value) { m_squashHasBeenSet = true; m_squash = value; }
+
+    /**
+     * <p>Indicates the user mapped to anonymous user. Valid options: "RootSquash" -
+     * Only root is mapped to anonymous user, "NoSquash" - No one is mapped to
+     * anonymous user or "AllSquash" - Everyone is mapped to anonymous user.</p>
+     */
+    inline void SetSquash(Aws::String&& value) { m_squashHasBeenSet = true; m_squash = value; }
+
+    /**
+     * <p>Indicates the user mapped to anonymous user. Valid options: "RootSquash" -
+     * Only root is mapped to anonymous user, "NoSquash" - No one is mapped to
+     * anonymous user or "AllSquash" - Everyone is mapped to anonymous user.</p>
+     */
+    inline void SetSquash(const char* value) { m_squashHasBeenSet = true; m_squash.assign(value); }
+
+    /**
+     * <p>Indicates the user mapped to anonymous user. Valid options: "RootSquash" -
+     * Only root is mapped to anonymous user, "NoSquash" - No one is mapped to
+     * anonymous user or "AllSquash" - Everyone is mapped to anonymous user.</p>
+     */
+    inline UpdateNFSFileShareRequest& WithSquash(const Aws::String& value) { SetSquash(value); return *this;}
+
+    /**
+     * <p>Indicates the user mapped to anonymous user. Valid options: "RootSquash" -
+     * Only root is mapped to anonymous user, "NoSquash" - No one is mapped to
+     * anonymous user or "AllSquash" - Everyone is mapped to anonymous user.</p>
+     */
+    inline UpdateNFSFileShareRequest& WithSquash(Aws::String&& value) { SetSquash(value); return *this;}
+
+    /**
+     * <p>Indicates the user mapped to anonymous user. Valid options: "RootSquash" -
+     * Only root is mapped to anonymous user, "NoSquash" - No one is mapped to
+     * anonymous user or "AllSquash" - Everyone is mapped to anonymous user.</p>
+     */
+    inline UpdateNFSFileShareRequest& WithSquash(const char* value) { SetSquash(value); return *this;}
+
+    /**
+     * <p>Sets the write status of a file share. "true", if the write status is
+     * read-only; otherwise "false.</p>
+     */
+    inline bool GetReadOnly() const{ return m_readOnly; }
+
+    /**
+     * <p>Sets the write status of a file share. "true", if the write status is
+     * read-only; otherwise "false.</p>
+     */
+    inline void SetReadOnly(bool value) { m_readOnlyHasBeenSet = true; m_readOnly = value; }
+
+    /**
+     * <p>Sets the write status of a file share. "true", if the write status is
+     * read-only; otherwise "false.</p>
+     */
+    inline UpdateNFSFileShareRequest& WithReadOnly(bool value) { SetReadOnly(value); return *this;}
+
   private:
     Aws::String m_fileShareARN;
     bool m_fileShareARNHasBeenSet;
@@ -270,6 +337,10 @@ namespace Model
     bool m_defaultStorageClassHasBeenSet;
     Aws::Vector<Aws::String> m_clientList;
     bool m_clientListHasBeenSet;
+    Aws::String m_squash;
+    bool m_squashHasBeenSet;
+    bool m_readOnly;
+    bool m_readOnlyHasBeenSet;
   };
 
 } // namespace Model

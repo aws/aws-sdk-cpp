@@ -72,6 +72,7 @@
 #include <aws/storagegateway/model/ListVolumeInitiatorsRequest.h>
 #include <aws/storagegateway/model/ListVolumeRecoveryPointsRequest.h>
 #include <aws/storagegateway/model/ListVolumesRequest.h>
+#include <aws/storagegateway/model/RefreshCacheRequest.h>
 #include <aws/storagegateway/model/RemoveTagsFromResourceRequest.h>
 #include <aws/storagegateway/model/ResetCacheRequest.h>
 #include <aws/storagegateway/model/RetrieveTapeArchiveRequest.h>
@@ -1714,6 +1715,40 @@ void StorageGatewayClient::ListVolumesAsync(const ListVolumesRequest& request, c
 void StorageGatewayClient::ListVolumesAsyncHelper(const ListVolumesRequest& request, const ListVolumesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ListVolumes(request), context);
+}
+
+RefreshCacheOutcome StorageGatewayClient::RefreshCache(const RefreshCacheRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return RefreshCacheOutcome(RefreshCacheResult(outcome.GetResult()));
+  }
+  else
+  {
+    return RefreshCacheOutcome(outcome.GetError());
+  }
+}
+
+RefreshCacheOutcomeCallable StorageGatewayClient::RefreshCacheCallable(const RefreshCacheRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< RefreshCacheOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->RefreshCache(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void StorageGatewayClient::RefreshCacheAsync(const RefreshCacheRequest& request, const RefreshCacheResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->RefreshCacheAsyncHelper( request, handler, context ); } );
+}
+
+void StorageGatewayClient::RefreshCacheAsyncHelper(const RefreshCacheRequest& request, const RefreshCacheResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, RefreshCache(request), context);
 }
 
 RemoveTagsFromResourceOutcome StorageGatewayClient::RemoveTagsFromResource(const RemoveTagsFromResourceRequest& request) const
