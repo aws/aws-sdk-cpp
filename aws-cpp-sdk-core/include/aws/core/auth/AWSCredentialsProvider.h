@@ -21,7 +21,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-
+#include <aws/core/internal/AWSHttpResourceClient.h>
 #include <memory>
 #include <mutex>
 
@@ -31,7 +31,6 @@ namespace Aws
     {
         class AWSProfileConfigLoader;
         class EC2InstanceProfileConfigLoader;
-        class ECSTaskRoleProfileConfigLoader;
     }
 
     namespace Auth
@@ -327,17 +326,19 @@ namespace Aws
         {
         public:
             /**
-             * Initializes the provider to refresh credentials form the ECS IAM ROLE service every 15 minutes.
-             * Constructs an ECSCredentialsClient using the default http stack (most likely what you want).
+             * Initializes the provider to refresh credentials form the ECS IAM ROLE service every 15 minutes,
+             * or before it expires
+             * Constructs an AWSHttpResourceClient using the default http stack (most likely what you want).
              */
-            TaskRoleCredentialsProvider(const char* relativeURI, long refreshRateMs = REFRESH_THRESHOLD);
+            TaskRoleCredentialsProvider(const char* URI, long refreshRateMs = REFRESH_THRESHOLD);
 
             /**
              * Initializes the provider to refresh credentials form the ECS IAM ROLE service every 15 minutes,
-             * uses a supplied ECSCredentialsClient.
+             * or before it expires
+             * Constructs an AWSHttpResourceClient using the given client
              */
-            TaskRoleCredentialsProvider(const std::shared_ptr<Aws::Config::ECSTaskRoleProfileConfigLoader>&, long refreshRateMs = REFRESH_THRESHOLD);
-
+            TaskRoleCredentialsProvider(const std::shared_ptr<Aws::Internal::AWSHttpResourceClient>& client,
+                    const char* URI, long refreshRateMs = REFRESH_THRESHOLD);
             /**
             * Retrieves the credentials if found, otherwise returns empty credential set.
             */
@@ -346,18 +347,23 @@ namespace Aws
             /**
              * See if the Credential will expire soon, 5 seconds before expiration, refresh it.
              */
-            inline bool ExpireSoon() 
+            inline bool ExpiresSoon() 
             {
-                return (m_millToExpire - Aws::Utils::DateTime::Now().Millis() < 5000);
+                return (m_expirationDate.Millis() - Aws::Utils::DateTime::Now().Millis() < 5000);
             }
 
+            inline const Aws::Utils::DateTime &GetExpirationDate() const {
+                return m_expirationDate;
+            }
         private:
             void RefreshIfExpired();
 
-            std::shared_ptr<Aws::Config::AWSProfileConfigLoader> m_ecsCredentialsConfigLoader;
+            std::shared_ptr<Aws::Internal::AWSHttpResourceClient> m_ecsCredentialsClient;
             long m_loadFrequencyMs;
             mutable std::mutex m_reloadMutex;
-            int64_t m_millToExpire;
+            Aws::Utils::DateTime m_expirationDate;
+            Aws::Auth::AWSCredentials m_credentials;
+            Aws::String m_URI;
         };
 
     } // namespace Auth

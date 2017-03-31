@@ -13,13 +13,22 @@
   * permissions and limitations under the License.
   */
 
-#include <aws/core/internal/EC2MetadataClient.h>
+#include <aws/core/internal/AWSHttpResourceClient.h>
 
-class MockEC2MetadataClient : public Aws::Internal::EC2MetadataClient
+class MockAWSHttpResourceClient : public Aws::Internal::AWSHttpResourceClient
 {
 public:
-    inline Aws::String GetDefaultCredentials() const override
+
+    inline Aws::String GetECSCredentials(const char* endpoint, const char* relativeURI) const override
     {
+        Aws::String uri(endpoint);
+        uri += Aws::String(relativeURI);
+        return m_mockedValue;
+    }
+
+    inline Aws::String GetEC2DefaultCredentials(const char* endpoint) const override
+    {
+        Aws::String dummy(endpoint);
         return m_mockedValue;
     }
 
@@ -28,8 +37,9 @@ public:
         m_mockedValue = mockValue;
     }
 
-    inline Aws::String GetCurrentRegion() const override
+    inline Aws::String GetEC2CurrentRegion(const char* endpoint) const override
     {
+        Aws::String dummy(endpoint);
         return m_region;
     }
 
