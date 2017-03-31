@@ -111,6 +111,11 @@ namespace Aws
             m_downloadStream(nullptr)
         {}
 
+        TransferHandle::~TransferHandle()
+        {
+            CleanupDownloadStream();
+        }
+
         void TransferHandle::ChangePartToCompleted(const PartPointer& partState, const Aws::String &eTag)
         {
             std::lock_guard<std::mutex> locker(m_partsLock);
@@ -228,6 +233,11 @@ namespace Aws
 
                 if (IsFinishedStatus(value))
                 {
+                    if(value == TransferStatus::COMPLETED)
+                    {
+                        CleanupDownloadStream();
+                    }
+
                     std::unique_lock<std::mutex> semaphoreLock(m_statusLock);
                     m_waitUntilFinishedSignal.notify_all();
                 }
@@ -279,6 +289,16 @@ namespace Aws
         void TransferHandle::ApplyDownloadConfiguration(const DownloadConfiguration& downloadConfig)
         {
             SetVersionId(downloadConfig.versionId);
+        }
+
+        void TransferHandle::CleanupDownloadStream()
+        {
+            if(m_downloadStream)
+            {
+                m_downloadStream->flush();
+                Aws::Delete(m_downloadStream);
+                m_downloadStream = nullptr;
+            }
         }
     }
 }
