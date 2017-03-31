@@ -333,8 +333,11 @@ namespace Model
      * can specify a value for <code>MaximumExecutionFrequency</code> when:</p> <ul>
      * <li> <p>You are using an AWS managed rule that is triggered at a periodic
      * frequency.</p> </li> <li> <p>Your custom rule is triggered when AWS Config
-     * delivers the configuration snapshot.</p> </li> </ul> <p>For more information,
-     * see <a>ConfigSnapshotDeliveryProperties</a>.</p>
+     * delivers the configuration snapshot. For more information, see
+     * <a>ConfigSnapshotDeliveryProperties</a>.</p> </li> </ul> <note> <p>By default,
+     * rules with a periodic trigger are evaluated every 24 hours. To change the
+     * frequency, specify a valid value for the <code>MaximumExecutionFrequency</code>
+     * parameter.</p> </note>
      */
     inline const MaximumExecutionFrequency& GetMaximumExecutionFrequency() const{ return m_maximumExecutionFrequency; }
 
@@ -343,8 +346,11 @@ namespace Model
      * can specify a value for <code>MaximumExecutionFrequency</code> when:</p> <ul>
      * <li> <p>You are using an AWS managed rule that is triggered at a periodic
      * frequency.</p> </li> <li> <p>Your custom rule is triggered when AWS Config
-     * delivers the configuration snapshot.</p> </li> </ul> <p>For more information,
-     * see <a>ConfigSnapshotDeliveryProperties</a>.</p>
+     * delivers the configuration snapshot. For more information, see
+     * <a>ConfigSnapshotDeliveryProperties</a>.</p> </li> </ul> <note> <p>By default,
+     * rules with a periodic trigger are evaluated every 24 hours. To change the
+     * frequency, specify a valid value for the <code>MaximumExecutionFrequency</code>
+     * parameter.</p> </note>
      */
     inline void SetMaximumExecutionFrequency(const MaximumExecutionFrequency& value) { m_maximumExecutionFrequencyHasBeenSet = true; m_maximumExecutionFrequency = value; }
 
@@ -353,8 +359,11 @@ namespace Model
      * can specify a value for <code>MaximumExecutionFrequency</code> when:</p> <ul>
      * <li> <p>You are using an AWS managed rule that is triggered at a periodic
      * frequency.</p> </li> <li> <p>Your custom rule is triggered when AWS Config
-     * delivers the configuration snapshot.</p> </li> </ul> <p>For more information,
-     * see <a>ConfigSnapshotDeliveryProperties</a>.</p>
+     * delivers the configuration snapshot. For more information, see
+     * <a>ConfigSnapshotDeliveryProperties</a>.</p> </li> </ul> <note> <p>By default,
+     * rules with a periodic trigger are evaluated every 24 hours. To change the
+     * frequency, specify a valid value for the <code>MaximumExecutionFrequency</code>
+     * parameter.</p> </note>
      */
     inline void SetMaximumExecutionFrequency(MaximumExecutionFrequency&& value) { m_maximumExecutionFrequencyHasBeenSet = true; m_maximumExecutionFrequency = value; }
 
@@ -363,8 +372,11 @@ namespace Model
      * can specify a value for <code>MaximumExecutionFrequency</code> when:</p> <ul>
      * <li> <p>You are using an AWS managed rule that is triggered at a periodic
      * frequency.</p> </li> <li> <p>Your custom rule is triggered when AWS Config
-     * delivers the configuration snapshot.</p> </li> </ul> <p>For more information,
-     * see <a>ConfigSnapshotDeliveryProperties</a>.</p>
+     * delivers the configuration snapshot. For more information, see
+     * <a>ConfigSnapshotDeliveryProperties</a>.</p> </li> </ul> <note> <p>By default,
+     * rules with a periodic trigger are evaluated every 24 hours. To change the
+     * frequency, specify a valid value for the <code>MaximumExecutionFrequency</code>
+     * parameter.</p> </note>
      */
     inline ConfigRule& WithMaximumExecutionFrequency(const MaximumExecutionFrequency& value) { SetMaximumExecutionFrequency(value); return *this;}
 
@@ -373,8 +385,11 @@ namespace Model
      * can specify a value for <code>MaximumExecutionFrequency</code> when:</p> <ul>
      * <li> <p>You are using an AWS managed rule that is triggered at a periodic
      * frequency.</p> </li> <li> <p>Your custom rule is triggered when AWS Config
-     * delivers the configuration snapshot.</p> </li> </ul> <p>For more information,
-     * see <a>ConfigSnapshotDeliveryProperties</a>.</p>
+     * delivers the configuration snapshot. For more information, see
+     * <a>ConfigSnapshotDeliveryProperties</a>.</p> </li> </ul> <note> <p>By default,
+     * rules with a periodic trigger are evaluated every 24 hours. To change the
+     * frequency, specify a valid value for the <code>MaximumExecutionFrequency</code>
+     * parameter.</p> </note>
      */
     inline ConfigRule& WithMaximumExecutionFrequency(MaximumExecutionFrequency&& value) { SetMaximumExecutionFrequency(value); return *this;}
 

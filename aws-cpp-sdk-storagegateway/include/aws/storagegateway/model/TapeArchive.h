@@ -181,49 +181,49 @@ namespace Model
     inline TapeArchive& WithCompletionTime(Aws::Utils::DateTime&& value) { SetCompletionTime(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the gateway-VTL that the virtual tape is
+     * <p>The Amazon Resource Name (ARN) of the tape gateway that the virtual tape is
      * being retrieved to.</p> <p>The virtual tape is retrieved from the virtual tape
      * shelf (VTS).</p>
      */
     inline const Aws::String& GetRetrievedTo() const{ return m_retrievedTo; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the gateway-VTL that the virtual tape is
+     * <p>The Amazon Resource Name (ARN) of the tape gateway that the virtual tape is
      * being retrieved to.</p> <p>The virtual tape is retrieved from the virtual tape
      * shelf (VTS).</p>
      */
     inline void SetRetrievedTo(const Aws::String& value) { m_retrievedToHasBeenSet = true; m_retrievedTo = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the gateway-VTL that the virtual tape is
+     * <p>The Amazon Resource Name (ARN) of the tape gateway that the virtual tape is
      * being retrieved to.</p> <p>The virtual tape is retrieved from the virtual tape
      * shelf (VTS).</p>
      */
     inline void SetRetrievedTo(Aws::String&& value) { m_retrievedToHasBeenSet = true; m_retrievedTo = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the gateway-VTL that the virtual tape is
+     * <p>The Amazon Resource Name (ARN) of the tape gateway that the virtual tape is
      * being retrieved to.</p> <p>The virtual tape is retrieved from the virtual tape
      * shelf (VTS).</p>
      */
     inline void SetRetrievedTo(const char* value) { m_retrievedToHasBeenSet = true; m_retrievedTo.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the gateway-VTL that the virtual tape is
+     * <p>The Amazon Resource Name (ARN) of the tape gateway that the virtual tape is
      * being retrieved to.</p> <p>The virtual tape is retrieved from the virtual tape
      * shelf (VTS).</p>
      */
     inline TapeArchive& WithRetrievedTo(const Aws::String& value) { SetRetrievedTo(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the gateway-VTL that the virtual tape is
+     * <p>The Amazon Resource Name (ARN) of the tape gateway that the virtual tape is
      * being retrieved to.</p> <p>The virtual tape is retrieved from the virtual tape
      * shelf (VTS).</p>
      */
     inline TapeArchive& WithRetrievedTo(Aws::String&& value) { SetRetrievedTo(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the gateway-VTL that the virtual tape is
+     * <p>The Amazon Resource Name (ARN) of the tape gateway that the virtual tape is
      * being retrieved to.</p> <p>The virtual tape is retrieved from the virtual tape
      * shelf (VTS).</p>
      */

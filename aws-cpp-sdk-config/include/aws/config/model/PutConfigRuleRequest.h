@@ -25,9 +25,6 @@ namespace Model
 {
 
   /**
-   * <p/><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutConfigRuleRequest">AWS
-   * API Reference</a></p>
    */
   class AWS_CONFIGSERVICE_API PutConfigRuleRequest : public ConfigServiceRequest
   {
@@ -38,19 +35,29 @@ namespace Model
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
-    
+    /**
+     * <p>The rule that you want to add to your account.</p>
+     */
     inline const ConfigRule& GetConfigRule() const{ return m_configRule; }
 
-    
+    /**
+     * <p>The rule that you want to add to your account.</p>
+     */
     inline void SetConfigRule(const ConfigRule& value) { m_configRuleHasBeenSet = true; m_configRule = value; }
 
-    
+    /**
+     * <p>The rule that you want to add to your account.</p>
+     */
     inline void SetConfigRule(ConfigRule&& value) { m_configRuleHasBeenSet = true; m_configRule = value; }
 
-    
+    /**
+     * <p>The rule that you want to add to your account.</p>
+     */
     inline PutConfigRuleRequest& WithConfigRule(const ConfigRule& value) { SetConfigRule(value); return *this;}
 
-    
+    /**
+     * <p>The rule that you want to add to your account.</p>
+     */
     inline PutConfigRuleRequest& WithConfigRule(ConfigRule&& value) { SetConfigRule(value); return *this;}
 
   private:

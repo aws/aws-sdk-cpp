@@ -40,7 +40,10 @@ NFSFileShareInfo::NFSFileShareInfo() :
     m_roleHasBeenSet(false),
     m_locationARNHasBeenSet(false),
     m_defaultStorageClassHasBeenSet(false),
-    m_clientListHasBeenSet(false)
+    m_clientListHasBeenSet(false),
+    m_squashHasBeenSet(false),
+    m_readOnly(false),
+    m_readOnlyHasBeenSet(false)
 {
 }
 
@@ -57,7 +60,10 @@ NFSFileShareInfo::NFSFileShareInfo(const JsonValue& jsonValue) :
     m_roleHasBeenSet(false),
     m_locationARNHasBeenSet(false),
     m_defaultStorageClassHasBeenSet(false),
-    m_clientListHasBeenSet(false)
+    m_clientListHasBeenSet(false),
+    m_squashHasBeenSet(false),
+    m_readOnly(false),
+    m_readOnlyHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -151,6 +157,20 @@ NFSFileShareInfo& NFSFileShareInfo::operator =(const JsonValue& jsonValue)
     m_clientListHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Squash"))
+  {
+    m_squash = jsonValue.GetString("Squash");
+
+    m_squashHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ReadOnly"))
+  {
+    m_readOnly = jsonValue.GetBool("ReadOnly");
+
+    m_readOnlyHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -232,6 +252,18 @@ JsonValue NFSFileShareInfo::Jsonize() const
      clientListJsonList[clientListIndex].AsString(m_clientList[clientListIndex]);
    }
    payload.WithArray("ClientList", std::move(clientListJsonList));
+
+  }
+
+  if(m_squashHasBeenSet)
+  {
+   payload.WithString("Squash", m_squash);
+
+  }
+
+  if(m_readOnlyHasBeenSet)
+  {
+   payload.WithBool("ReadOnly", m_readOnly);
 
   }
 

@@ -337,51 +337,118 @@ namespace Model
 
     /**
      * <p>The list of clients that are allowed to access the file gateway. The list
-     * must contain either valid IP addresses or valid CIDR blocks.</p>
+     * must contain either valid IP addresses or valid CIDR blocks. </p>
      */
     inline const Aws::Vector<Aws::String>& GetClientList() const{ return m_clientList; }
 
     /**
      * <p>The list of clients that are allowed to access the file gateway. The list
-     * must contain either valid IP addresses or valid CIDR blocks.</p>
+     * must contain either valid IP addresses or valid CIDR blocks. </p>
      */
     inline void SetClientList(const Aws::Vector<Aws::String>& value) { m_clientListHasBeenSet = true; m_clientList = value; }
 
     /**
      * <p>The list of clients that are allowed to access the file gateway. The list
-     * must contain either valid IP addresses or valid CIDR blocks.</p>
+     * must contain either valid IP addresses or valid CIDR blocks. </p>
      */
     inline void SetClientList(Aws::Vector<Aws::String>&& value) { m_clientListHasBeenSet = true; m_clientList = value; }
 
     /**
      * <p>The list of clients that are allowed to access the file gateway. The list
-     * must contain either valid IP addresses or valid CIDR blocks.</p>
+     * must contain either valid IP addresses or valid CIDR blocks. </p>
      */
     inline CreateNFSFileShareRequest& WithClientList(const Aws::Vector<Aws::String>& value) { SetClientList(value); return *this;}
 
     /**
      * <p>The list of clients that are allowed to access the file gateway. The list
-     * must contain either valid IP addresses or valid CIDR blocks.</p>
+     * must contain either valid IP addresses or valid CIDR blocks. </p>
      */
     inline CreateNFSFileShareRequest& WithClientList(Aws::Vector<Aws::String>&& value) { SetClientList(value); return *this;}
 
     /**
      * <p>The list of clients that are allowed to access the file gateway. The list
-     * must contain either valid IP addresses or valid CIDR blocks.</p>
+     * must contain either valid IP addresses or valid CIDR blocks. </p>
      */
     inline CreateNFSFileShareRequest& AddClientList(const Aws::String& value) { m_clientListHasBeenSet = true; m_clientList.push_back(value); return *this; }
 
     /**
      * <p>The list of clients that are allowed to access the file gateway. The list
-     * must contain either valid IP addresses or valid CIDR blocks.</p>
+     * must contain either valid IP addresses or valid CIDR blocks. </p>
      */
     inline CreateNFSFileShareRequest& AddClientList(Aws::String&& value) { m_clientListHasBeenSet = true; m_clientList.push_back(value); return *this; }
 
     /**
      * <p>The list of clients that are allowed to access the file gateway. The list
-     * must contain either valid IP addresses or valid CIDR blocks.</p>
+     * must contain either valid IP addresses or valid CIDR blocks. </p>
      */
     inline CreateNFSFileShareRequest& AddClientList(const char* value) { m_clientListHasBeenSet = true; m_clientList.push_back(value); return *this; }
+
+    /**
+     * <p>Maps a user to anonymous user. Valid options: "RootSquash" - Only root is
+     * mapped to anonymous user, "NoSquash" - No one is mapped to anonymous user or
+     * "AllSquash" - Everyone is mapped to anonymous user. </p>
+     */
+    inline const Aws::String& GetSquash() const{ return m_squash; }
+
+    /**
+     * <p>Maps a user to anonymous user. Valid options: "RootSquash" - Only root is
+     * mapped to anonymous user, "NoSquash" - No one is mapped to anonymous user or
+     * "AllSquash" - Everyone is mapped to anonymous user. </p>
+     */
+    inline void SetSquash(const Aws::String& value) { m_squashHasBeenSet = true; m_squash = value; }
+
+    /**
+     * <p>Maps a user to anonymous user. Valid options: "RootSquash" - Only root is
+     * mapped to anonymous user, "NoSquash" - No one is mapped to anonymous user or
+     * "AllSquash" - Everyone is mapped to anonymous user. </p>
+     */
+    inline void SetSquash(Aws::String&& value) { m_squashHasBeenSet = true; m_squash = value; }
+
+    /**
+     * <p>Maps a user to anonymous user. Valid options: "RootSquash" - Only root is
+     * mapped to anonymous user, "NoSquash" - No one is mapped to anonymous user or
+     * "AllSquash" - Everyone is mapped to anonymous user. </p>
+     */
+    inline void SetSquash(const char* value) { m_squashHasBeenSet = true; m_squash.assign(value); }
+
+    /**
+     * <p>Maps a user to anonymous user. Valid options: "RootSquash" - Only root is
+     * mapped to anonymous user, "NoSquash" - No one is mapped to anonymous user or
+     * "AllSquash" - Everyone is mapped to anonymous user. </p>
+     */
+    inline CreateNFSFileShareRequest& WithSquash(const Aws::String& value) { SetSquash(value); return *this;}
+
+    /**
+     * <p>Maps a user to anonymous user. Valid options: "RootSquash" - Only root is
+     * mapped to anonymous user, "NoSquash" - No one is mapped to anonymous user or
+     * "AllSquash" - Everyone is mapped to anonymous user. </p>
+     */
+    inline CreateNFSFileShareRequest& WithSquash(Aws::String&& value) { SetSquash(value); return *this;}
+
+    /**
+     * <p>Maps a user to anonymous user. Valid options: "RootSquash" - Only root is
+     * mapped to anonymous user, "NoSquash" - No one is mapped to anonymous user or
+     * "AllSquash" - Everyone is mapped to anonymous user. </p>
+     */
+    inline CreateNFSFileShareRequest& WithSquash(const char* value) { SetSquash(value); return *this;}
+
+    /**
+     * <p>Sets the write status of a file share. "true", if the write status is
+     * read-only; otherwise "false.</p>
+     */
+    inline bool GetReadOnly() const{ return m_readOnly; }
+
+    /**
+     * <p>Sets the write status of a file share. "true", if the write status is
+     * read-only; otherwise "false.</p>
+     */
+    inline void SetReadOnly(bool value) { m_readOnlyHasBeenSet = true; m_readOnly = value; }
+
+    /**
+     * <p>Sets the write status of a file share. "true", if the write status is
+     * read-only; otherwise "false.</p>
+     */
+    inline CreateNFSFileShareRequest& WithReadOnly(bool value) { SetReadOnly(value); return *this;}
 
   private:
     Aws::String m_clientToken;
@@ -402,6 +469,10 @@ namespace Model
     bool m_defaultStorageClassHasBeenSet;
     Aws::Vector<Aws::String> m_clientList;
     bool m_clientListHasBeenSet;
+    Aws::String m_squash;
+    bool m_squashHasBeenSet;
+    bool m_readOnly;
+    bool m_readOnlyHasBeenSet;
   };
 
 } // namespace Model

@@ -28,7 +28,10 @@ UpdateNFSFileShareRequest::UpdateNFSFileShareRequest() :
     m_kMSKeyHasBeenSet(false),
     m_nFSFileShareDefaultsHasBeenSet(false),
     m_defaultStorageClassHasBeenSet(false),
-    m_clientListHasBeenSet(false)
+    m_clientListHasBeenSet(false),
+    m_squashHasBeenSet(false),
+    m_readOnly(false),
+    m_readOnlyHasBeenSet(false)
 {
 }
 
@@ -74,6 +77,18 @@ Aws::String UpdateNFSFileShareRequest::SerializePayload() const
      clientListJsonList[clientListIndex].AsString(m_clientList[clientListIndex]);
    }
    payload.WithArray("ClientList", std::move(clientListJsonList));
+
+  }
+
+  if(m_squashHasBeenSet)
+  {
+   payload.WithString("Squash", m_squash);
+
+  }
+
+  if(m_readOnlyHasBeenSet)
+  {
+   payload.WithBool("ReadOnly", m_readOnly);
 
   }
 

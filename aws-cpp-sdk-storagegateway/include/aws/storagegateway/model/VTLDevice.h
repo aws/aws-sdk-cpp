@@ -32,7 +32,7 @@ namespace Model
 {
 
   /**
-   * <p>Represents a device object associated with a gateway-VTL.</p><p><h3>See
+   * <p>Represents a device object associated with a tape gateway.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/VTLDevice">AWS
    * API Reference</a></p>
