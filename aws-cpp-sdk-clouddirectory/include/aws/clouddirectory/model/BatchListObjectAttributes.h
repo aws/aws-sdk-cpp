@@ -16,6 +16,7 @@
 #include <aws/clouddirectory/CloudDirectory_EXPORTS.h>
 #include <aws/clouddirectory/model/ObjectReference.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/clouddirectory/model/SchemaFacet.h>
 
 namespace Aws
 {
@@ -123,6 +124,36 @@ namespace Model
      */
     inline BatchListObjectAttributes& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
+    /**
+     * <p>Used to filter the list of object attributes associated with a certain
+     * facet.</p>
+     */
+    inline const SchemaFacet& GetFacetFilter() const{ return m_facetFilter; }
+
+    /**
+     * <p>Used to filter the list of object attributes associated with a certain
+     * facet.</p>
+     */
+    inline void SetFacetFilter(const SchemaFacet& value) { m_facetFilterHasBeenSet = true; m_facetFilter = value; }
+
+    /**
+     * <p>Used to filter the list of object attributes associated with a certain
+     * facet.</p>
+     */
+    inline void SetFacetFilter(SchemaFacet&& value) { m_facetFilterHasBeenSet = true; m_facetFilter = value; }
+
+    /**
+     * <p>Used to filter the list of object attributes associated with a certain
+     * facet.</p>
+     */
+    inline BatchListObjectAttributes& WithFacetFilter(const SchemaFacet& value) { SetFacetFilter(value); return *this;}
+
+    /**
+     * <p>Used to filter the list of object attributes associated with a certain
+     * facet.</p>
+     */
+    inline BatchListObjectAttributes& WithFacetFilter(SchemaFacet&& value) { SetFacetFilter(value); return *this;}
+
   private:
     ObjectReference m_objectReference;
     bool m_objectReferenceHasBeenSet;
@@ -130,6 +161,8 @@ namespace Model
     bool m_nextTokenHasBeenSet;
     int m_maxResults;
     bool m_maxResultsHasBeenSet;
+    SchemaFacet m_facetFilter;
+    bool m_facetFilterHasBeenSet;
   };
 
 } // namespace Model

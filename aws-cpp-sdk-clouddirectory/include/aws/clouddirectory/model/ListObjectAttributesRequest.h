@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/clouddirectory/model/ObjectReference.h>
 #include <aws/clouddirectory/model/ConsistencyLevel.h>
+#include <aws/clouddirectory/model/SchemaFacet.h>
 
 namespace Aws
 {
@@ -187,6 +188,36 @@ namespace Model
      */
     inline ListObjectAttributesRequest& WithConsistencyLevel(ConsistencyLevel&& value) { SetConsistencyLevel(value); return *this;}
 
+    /**
+     * <p>Used to filter the list of object attributes associated with a certain
+     * facet.</p>
+     */
+    inline const SchemaFacet& GetFacetFilter() const{ return m_facetFilter; }
+
+    /**
+     * <p>Used to filter the list of object attributes associated with a certain
+     * facet.</p>
+     */
+    inline void SetFacetFilter(const SchemaFacet& value) { m_facetFilterHasBeenSet = true; m_facetFilter = value; }
+
+    /**
+     * <p>Used to filter the list of object attributes associated with a certain
+     * facet.</p>
+     */
+    inline void SetFacetFilter(SchemaFacet&& value) { m_facetFilterHasBeenSet = true; m_facetFilter = value; }
+
+    /**
+     * <p>Used to filter the list of object attributes associated with a certain
+     * facet.</p>
+     */
+    inline ListObjectAttributesRequest& WithFacetFilter(const SchemaFacet& value) { SetFacetFilter(value); return *this;}
+
+    /**
+     * <p>Used to filter the list of object attributes associated with a certain
+     * facet.</p>
+     */
+    inline ListObjectAttributesRequest& WithFacetFilter(SchemaFacet&& value) { SetFacetFilter(value); return *this;}
+
   private:
     Aws::String m_directoryArn;
     bool m_directoryArnHasBeenSet;
@@ -198,6 +229,8 @@ namespace Model
     bool m_maxResultsHasBeenSet;
     ConsistencyLevel m_consistencyLevel;
     bool m_consistencyLevelHasBeenSet;
+    SchemaFacet m_facetFilter;
+    bool m_facetFilterHasBeenSet;
   };
 
 } // namespace Model

@@ -146,6 +146,8 @@ namespace Aws
              */
             TransferHandle(const Aws::String& bucketName, const Aws::String& keyName, CreateDownloadStreamCallback createDownloadStreamFn);
 
+            ~TransferHandle();
+
             /**
              * Whether or not this transfer is being performed using parallel parts via a multi-part s3 api.
              */
@@ -327,6 +329,8 @@ namespace Aws
             void ApplyDownloadConfiguration(const DownloadConfiguration& downloadConfig);
 
         private:
+
+            void CleanupDownloadStream();
 
             bool m_isMultipart;
             Aws::String m_multipartId;
