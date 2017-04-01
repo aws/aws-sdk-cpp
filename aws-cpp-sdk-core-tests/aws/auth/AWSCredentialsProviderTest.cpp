@@ -298,7 +298,7 @@ TEST(TaskRoleCredentialsProviderTest, TestECSCredentialsClientReturnsGoodData)
     ASSERT_EQ("goodAccessKey", provider.GetAWSCredentials().GetAWSAccessKeyId());
     ASSERT_EQ("goodSecretKey", provider.GetAWSCredentials().GetAWSSecretKey());
     ASSERT_EQ("goodToken", provider.GetAWSCredentials().GetSessionToken());
-    //ASSERT_EQ("2020-02-25T06:03:31Z", provider.GetExpirationDate().ToGMTString(Aws::Utils::ISO_8601));
+    ASSERT_EQ("2020-02-25T06:03:31Z", provider.GetExpirationDate().ToGmtString(DateFormat::ISO_8601));
 }
 
 
@@ -312,7 +312,7 @@ TEST(TaskRoleCredentialsProviderTest, TestThatProviderRefreshes)
     TaskRoleCredentialsProvider provider(mockClient, "/path/to/res", 10);
     ASSERT_EQ("goodAccessKey", provider.GetAWSCredentials().GetAWSAccessKeyId());
     ASSERT_EQ("goodSecretKey", provider.GetAWSCredentials().GetAWSSecretKey());
-    //ASSERT_EQ("2016-02-25T06:03:31Z", provider.GetExpirationDate().ToGMTString(Aws::Utils::ISO_8601));
+    ASSERT_EQ("2016-02-25T06:03:31Z", provider.GetExpirationDate().ToGmtString(DateFormat::ISO_8601));
     
     const char* nextSetOfCredentials = "{ \"AccessKeyId\": \"betterAccessKey\", \"SecretAccessKey\": \"betterSecretKey\", \"Token\": \"betterToken\", \"Expiration\": \"2020-02-25T06:03:31Z\" }";
     mockClient->SetMockedCredentialsValue(nextSetOfCredentials);
@@ -320,7 +320,7 @@ TEST(TaskRoleCredentialsProviderTest, TestThatProviderRefreshes)
     std::this_thread::sleep_for(std::chrono::milliseconds(100));
     ASSERT_EQ("betterAccessKey", provider.GetAWSCredentials().GetAWSAccessKeyId());
     ASSERT_EQ("betterSecretKey", provider.GetAWSCredentials().GetAWSSecretKey());
-    //ASSERT_EQ("2020-02-25T06:03:31Z", provider.GetExpirationDate().ToGMTString(Aws::Utils::ISO_8601));
+    ASSERT_EQ("2020-02-25T06:03:31Z", provider.GetExpirationDate().ToGmtString(DateFormat::ISO_8601));
 }
 
 TEST(TaskRoleCredentialsProviderTest, TestThatProviderDontRefreshe)
@@ -333,12 +333,12 @@ TEST(TaskRoleCredentialsProviderTest, TestThatProviderDontRefreshe)
     TaskRoleCredentialsProvider provider(mockClient, "/path/to/res", 1000 * 60 * 15);
     ASSERT_EQ("goodAccessKey", provider.GetAWSCredentials().GetAWSAccessKeyId());
     ASSERT_EQ("goodSecretKey", provider.GetAWSCredentials().GetAWSSecretKey());
-    //ASSERT_EQ("2016-02-25T06:03:31Z", provider.GetExpirationDate().ToGMTString(Aws::Utils::ISO_8601));
+    ASSERT_EQ("2016-02-25T06:03:31Z", provider.GetExpirationDate().ToGmtString(DateFormat::ISO_8601));
     
     std::this_thread::sleep_for(std::chrono::milliseconds(5 * 1000));
     ASSERT_EQ("goodAccessKey", provider.GetAWSCredentials().GetAWSAccessKeyId());
     ASSERT_EQ("goodSecretKey", provider.GetAWSCredentials().GetAWSSecretKey());
-    //ASSERT_EQ("2020-02-25T06:03:31Z", provider.GetExpirationDate().ToGMTString(Aws::Utils::ISO_8601));
+    ASSERT_EQ("2016-02-25T06:03:31Z", provider.GetExpirationDate().ToGmtString(DateFormat::ISO_8601));
 }
 
 TEST(TaskRoleCredentialsProviderTest, TestECSCrendentialsClientCouldntFindCredentials)
