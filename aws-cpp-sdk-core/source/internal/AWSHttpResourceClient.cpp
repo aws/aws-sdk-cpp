@@ -33,12 +33,13 @@ using namespace Aws::Internal;
 static const char* EC2_SECURITY_CREDENTIALS_RESOURCE = "/latest/meta-data/iam/security-credentials";
 static const char* EC2_REGION_RESOURCE = "/latest/meta-data/placement/availability-zone";
 
-static const char* AWS_HTTP_RESOURCE_CLIENT_LOG_TAG = "AWSHttpResourceClient";
+static const char* EC2_METADATA_CLIENT_LOG_TAG = "EC2MetadataClient";
+static const char* ECS_CREDENTIALS_CLIENT_LOG_TAG = "ECSCredentialsClient";
 
-AWSHttpResourceClient::AWSHttpResourceClient() 
-    : m_httpClient(nullptr)
+AWSHttpResourceClient::AWSHttpResourceClient(const char* logtag) 
+    : m_logtag(logtag), m_httpClient(nullptr)
 {
-    AWS_LOGSTREAM_INFO(AWS_HTTP_RESOURCE_CLIENT_LOG_TAG, 
+    AWS_LOGSTREAM_INFO(m_logtag.c_str(), 
             "Creating HttpClient with max connections" << 2 << " and scheme " << "http");
     ClientConfiguration clientConfiguration;
     clientConfiguration.maxConnections = 2;
@@ -51,49 +52,91 @@ AWSHttpResourceClient::~AWSHttpResourceClient()
 {
 }
 
-Aws::String AWSHttpResourceClient::GetEC2DefaultCredentials(const char* endpoint) const
+Aws::String AWSHttpResourceClient::GetResource(const char* endpoint, const char* resource) const
 {
-    AWS_LOGSTREAM_TRACE(AWS_HTTP_RESOURCE_CLIENT_LOG_TAG, 
+    Aws::StringStream ss;
+    ss << endpoint << resource;
+    AWS_LOGSTREAM_TRACE(m_logtag.c_str(), 
+            "Calling Ec2MetadataService at " << ss.str().c_str());
+
+    std::shared_ptr<HttpRequest> request(
+            CreateHttpRequest(ss.str(), HttpMethod::HTTP_GET, 
+                Aws::Utils::Stream::DefaultResponseStreamFactoryMethod));
+
+    std::shared_ptr<HttpResponse> response(m_httpClient->MakeRequest(*request));
+
+    if (response == nullptr)
+    {
+        AWS_LOGSTREAM_ERROR(m_logtag.c_str(), "Http request to Ec2MetadataService failed.");
+    }
+    else if (response->GetResponseCode() != HttpResponseCode::OK)
+    {
+        AWS_LOGSTREAM_ERROR(m_logtag.c_str(), "Http request failed with error code " <<
+                      (int) response->GetResponseCode());
+    }
+    else
+    {
+        Aws::IStreamBufIterator eos;
+        return Aws::String(Aws::IStreamBufIterator(response->GetResponseBody()), eos);
+    }
+
+    return "";
+}
+
+EC2MetadataClient::EC2MetadataClient(const char* endpoint)
+    : AWSHttpResourceClient(EC2_METADATA_CLIENT_LOG_TAG), m_endpoint(endpoint)
+{
+
+}
+
+EC2MetadataClient::~EC2MetadataClient()
+{
+
+}
+
+Aws::String EC2MetadataClient::GetDefaultCredentials() const
+{
+    AWS_LOGSTREAM_TRACE(m_logtag.c_str(), 
             "Getting default credentials for ec2 instance");
-    Aws::String credentialsString = GetResource(endpoint, EC2_SECURITY_CREDENTIALS_RESOURCE);
+    Aws::String credentialsString = GetResource(m_endpoint.c_str(), EC2_SECURITY_CREDENTIALS_RESOURCE);
 
     if (credentialsString.empty()) return "";
     
     Aws::String trimmedCredentialsString = StringUtils::Trim(credentialsString.c_str());
     Aws::Vector<Aws::String> securityCredentials = StringUtils::Split(trimmedCredentialsString, '\n');
 
-    AWS_LOGSTREAM_DEBUG(AWS_HTTP_RESOURCE_CLIENT_LOG_TAG,
+    AWS_LOGSTREAM_DEBUG(m_logtag.c_str(),
             "Calling EC2MetatadaService resource, " << EC2_SECURITY_CREDENTIALS_RESOURCE
             << " returned credential string " << trimmedCredentialsString);
 
     if (securityCredentials.size() == 0)
     {
-        AWS_LOGSTREAM_WARN(AWS_HTTP_RESOURCE_CLIENT_LOG_TAG, 
+        AWS_LOGSTREAM_WARN(m_logtag.c_str(), 
                 "Initial call to ec2Metadataservice to get credentials failed");
         return "";
     }
 
     Aws::StringStream ss;
     ss << EC2_SECURITY_CREDENTIALS_RESOURCE << "/" << securityCredentials[0];
-    AWS_LOGSTREAM_DEBUG(AWS_HTTP_RESOURCE_CLIENT_LOG_TAG, 
+    AWS_LOGSTREAM_DEBUG(m_logtag.c_str(), 
             "Calling EC2MetatadaService resource " << ss.str());
-    return GetResource(endpoint, ss.str().c_str());
+    return GetResource(m_endpoint.c_str(), ss.str().c_str());
 }
 
-Aws::String AWSHttpResourceClient::GetEC2CurrentRegion(const char* endpoint) const
+Aws::String EC2MetadataClient::GetCurrentRegion() const
 {
-    AWS_LOGSTREAM_TRACE(AWS_HTTP_RESOURCE_CLIENT_LOG_TAG, "Getting current region for ec2 instance");
-    Aws::String azString = GetResource(endpoint, EC2_REGION_RESOURCE);
+    AWS_LOGSTREAM_TRACE(m_logtag.c_str(), "Getting current region for ec2 instance");
+    Aws::String azString = GetResource(m_endpoint.c_str(), EC2_REGION_RESOURCE);
 
     if (azString.empty())
     {
-        AWS_LOGSTREAM_INFO(AWS_HTTP_RESOURCE_CLIENT_LOG_TAG, 
+        AWS_LOGSTREAM_INFO(m_logtag.c_str() ,
                 "Unable to pull region from instance metadata service ");
         return "";
     }
     
     Aws::String trimmedAZString = StringUtils::Trim(azString.c_str());
-    AWS_LOGSTREAM_DEBUG(AWS_HTTP_RESOURCE_CLIENT_LOG_TAG, "Calling EC2MetatadaService resource " 
+    AWS_LOGSTREAM_DEBUG(m_logtag.c_str(), "Calling EC2MetatadaService resource " 
             << EC2_REGION_RESOURCE << " , returned credential string " << trimmedAZString);
 
     Aws::String region;
@@ -114,37 +157,19 @@ Aws::String AWSHttpResourceClient::GetEC2CurrentRegion(const char* endpoint) con
         region.append(1, character);
     }
 
-    AWS_LOGSTREAM_INFO(AWS_HTTP_RESOURCE_CLIENT_LOG_TAG, "Detected current region as " << region);
+    AWS_LOGSTREAM_INFO(m_logtag.c_str(), "Detected current region as " << region);
     return region;
 }
 
-Aws::String AWSHttpResourceClient::GetResource(const char* endpoint, const char* resource) const
+ECSCredentialsClient::ECSCredentialsClient(const char* resourcePath, const char* endpoint)
+    : AWSHttpResourceClient(ECS_CREDENTIALS_CLIENT_LOG_TAG), 
+    m_resourcePath(resourcePath), m_endpoint(endpoint)
 {
-    Aws::StringStream ss;
-    ss << endpoint << resource;
-    AWS_LOGSTREAM_TRACE(AWS_HTTP_RESOURCE_CLIENT_LOG_TAG, 
-            "Calling Ec2MetadataService at " << ss.str().c_str());
 
-    std::shared_ptr<HttpRequest> request(
-            CreateHttpRequest(ss.str(), HttpMethod::HTTP_GET, 
-                Aws::Utils::Stream::DefaultResponseStreamFactoryMethod));
-
-    std::shared_ptr<HttpResponse> response(m_httpClient->MakeRequest(*request));
-
-    if (response == nullptr)
-    {
-        AWS_LOGSTREAM_ERROR(AWS_HTTP_RESOURCE_CLIENT_LOG_TAG, "Http request to Ec2MetadataService failed.");
-    }
-    else if (response->GetResponseCode() != HttpResponseCode::OK)
-    {
-        AWS_LOGSTREAM_ERROR(AWS_HTTP_RESOURCE_CLIENT_LOG_TAG, "Http request failed with error code " <<
-                      (int) response->GetResponseCode());
-    }
-    else
-    {
-        Aws::IStreamBufIterator eos;
-        return Aws::String(Aws::IStreamBufIterator(response->GetResponseBody()), eos);
-    }
-
-    return "";
 }
+
+ECSCredentialsClient::~ECSCredentialsClient()
+{
+
+}
+

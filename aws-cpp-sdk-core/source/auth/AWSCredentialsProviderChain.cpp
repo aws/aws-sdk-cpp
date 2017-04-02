@@ -44,7 +44,8 @@ DefaultAWSCredentialsProviderChain::DefaultAWSCredentialsProviderChain() : AWSCr
  
     //ECS TaskRole Credentials only available when ENVIRONMENT VARIABLE is set
     auto relativeURIFromVar = Aws::Environment::GetEnv(AWS_ECS_CREDENTIALS_ENVIRONMENT_VARIABLE);
-    if (!relativeURIFromVar.empty()) {
+    if (!relativeURIFromVar.empty()) 
+    {
         AddProvider(Aws::MakeShared<TaskRoleCredentialsProvider>(DefaultCredentialsProviderChainTag, relativeURIFromVar.c_str()));
     } 
     else

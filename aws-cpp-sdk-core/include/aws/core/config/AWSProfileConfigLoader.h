@@ -23,7 +23,7 @@ namespace Aws
 {
     namespace Internal
     {
-        class AWSHttpResourceClient;
+        class EC2MetadataClient;
     }
 
     namespace Config
@@ -134,9 +134,9 @@ namespace Aws
         {
         public:
             /**
-             * If client is nullptr, the default AWSHttpResourceClient will be created.
+             * If client is nullptr, the default EC2MetadataClient will be created.
              */
-            EC2InstanceProfileConfigLoader(const std::shared_ptr<Aws::Internal::AWSHttpResourceClient>& = nullptr);
+            EC2InstanceProfileConfigLoader(const std::shared_ptr<Aws::Internal::EC2MetadataClient>& = nullptr);
 
             virtual ~EC2InstanceProfileConfigLoader() = default;
 
@@ -144,7 +144,7 @@ namespace Aws
             virtual bool LoadInternal() override;
 
         private:
-            std::shared_ptr<Aws::Internal::AWSHttpResourceClient> m_httpResourceClient;
+            std::shared_ptr<Aws::Internal::EC2MetadataClient> m_ec2metadataClient;
         };
     }
 }

@@ -30,9 +30,6 @@ namespace Aws
 
     namespace Internal
     {
-        static const char* EC2MetadataClientDefaultEndpoint = "http://169.254.169.254";
-        static const char* ECSCredentialsDefaultEndpoint = "http://169.254.170.2";
-
         /**
          * Simple client for accessing the AWS remote data by Http.
          * Currently we use it to access EC2 Metadata and ECS Credential.
@@ -41,10 +38,10 @@ namespace Aws
         {
         public:
             /**
-             * Builds an instance using EC2MetadataClientDefaultEndpoint if not specified otherwise
-             * and the default http stack if httpClientFactory is not specified.
+             * Builds an AWSHttpResourceClient instance.
+             * The default http stack if httpClientFactory is not specified.
              */
-            AWSHttpResourceClient();
+            AWSHttpResourceClient(const char* logtag = "AWSHttpResourceClient");
 
             virtual ~AWSHttpResourceClient();
 
@@ -55,32 +52,74 @@ namespace Aws
              */
             virtual Aws::String GetResource(const char* endpoint, const char* resourcePath) const;
 
-        public: // For EC2
+         private:
+            AWSHttpResourceClient &operator =(const AWSHttpResourceClient &rhs);
+        
+        protected:
+            Aws::String m_logtag;
+
+        private:         
+            std::shared_ptr<Http::HttpClient> m_httpClient;
+            std::shared_ptr<Http::HttpClientFactory const> m_httpClientFactory;
+        };
+        
+        /**
+         * Derived class to support retrieving of EC2 Metadata
+         */
+        class AWS_CORE_API EC2MetadataClient : public AWSHttpResourceClient
+        {
+        public:
+            /**
+             * Build an instance with default EC2 Metadata service endpoint
+             */
+            EC2MetadataClient(const char* endpoint = "http://169.254.169.254");
+
+            virtual ~EC2MetadataClient();
+
             /**
              * Connects to the Amazon EC2 Instance Metadata Service to retrieve the
              * default credential information (if any).
              */
-            virtual Aws::String GetEC2DefaultCredentials(const char* endpoint = EC2MetadataClientDefaultEndpoint) const;
+            virtual Aws::String GetDefaultCredentials() const;
 
             /**
              * connects to the Amazon EC2 Instance metadata Service to retrieve the region
              * the current EC2 instance is running in.
              */
-            virtual Aws::String GetEC2CurrentRegion(const char* endpoint = ECSCredentialsDefaultEndpoint) const;
+            virtual Aws::String GetCurrentRegion() const;
 
-        public: // For ECS
+        private:
+            EC2MetadataClient &operator =(const EC2MetadataClient &rhs);
+
+            Aws::String m_endpoint;
+        };
+
+        /**
+         * Derievd class to support retrieving of ECS Credentials
+         */
+        class AWS_CORE_API ECSCredentialsClient : public AWSHttpResourceClient
+        {
+        public:
+            /**
+             * Build an instance with default ECS service endpoint
+             */
+            ECSCredentialsClient(const char* resourcePath, const char* endpoint = "http://169.254.170.2");
+
+            virtual ~ECSCredentialsClient();
+            
             /**
              * Connects to the Amazon ECS service to retrieve the credential
              */
-            virtual Aws::String GetECSCredentials(const char* endpoint, const char *resourcePath) const {
-                return this->GetResource(endpoint, resourcePath);
+            virtual Aws::String GetECSCredentials() const 
+            {
+                return this->GetResource(m_endpoint.c_str(), m_resourcePath.c_str());
             }
 
         private:
-            AWSHttpResourceClient &operator =(const AWSHttpResourceClient &rhs);
+            ECSCredentialsClient &operator =(ECSCredentialsClient &rhs);
 
-            std::shared_ptr<Http::HttpClient> m_httpClient;
-            std::shared_ptr<Http::HttpClientFactory const> m_httpClientFactory;
+            Aws::String m_resourcePath;
+            Aws::String m_endpoint;
         };
 
     } // namespace Internal

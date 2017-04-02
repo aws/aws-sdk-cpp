@@ -15,20 +15,15 @@
 
 #include <aws/core/internal/AWSHttpResourceClient.h>
 
-class MockAWSHttpResourceClient : public Aws::Internal::AWSHttpResourceClient
+class MockEC2MetadataClient : public Aws::Internal::EC2MetadataClient
 {
 public:
+    MockEC2MetadataClient()
+        :EC2MetadataClient()
+    { }
 
-    inline Aws::String GetECSCredentials(const char* endpoint, const char* relativeURI) const override
+    inline Aws::String GetDefaultCredentials() const override
     {
-        Aws::String uri(endpoint);
-        uri += Aws::String(relativeURI);
-        return m_mockedValue;
-    }
-
-    inline Aws::String GetEC2DefaultCredentials(const char* endpoint) const override
-    {
-        Aws::String dummy(endpoint);
         return m_mockedValue;
     }
 
@@ -37,9 +32,8 @@ public:
         m_mockedValue = mockValue;
     }
 
-    inline Aws::String GetEC2CurrentRegion(const char* endpoint) const override
+    inline Aws::String GetCurrentRegion() const override
     {
-        Aws::String dummy(endpoint);
         return m_region;
     }
 
@@ -51,4 +45,26 @@ public:
 private:
     Aws::String m_mockedValue;
     Aws::String m_region;
+};
+
+
+class MockECSCredentialsClient : public Aws::Internal::ECSCredentialsClient
+{
+public:
+    MockECSCredentialsClient(const char* resourcePath)
+        :ECSCredentialsClient(resourcePath)
+    { }
+
+    inline Aws::String GetECSCredentials() const override
+    {
+        return m_mockedValue;
+    }
+
+    inline void SetMockedCredentialsValue(const Aws::String& mockValue)
+    {
+        m_mockedValue = mockValue;
+    }
+
+private:
+    Aws::String m_mockedValue;
 };

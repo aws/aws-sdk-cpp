@@ -256,23 +256,20 @@ void InstanceProfileCredentialsProvider::RefreshIfExpired()
 static const char* taskRoleLogTag = "TaskRoleCredentialsProvider";
 
 TaskRoleCredentialsProvider::TaskRoleCredentialsProvider(const char* URI, long refreshRateMs) :
-    m_ecsCredentialsClient(Aws::MakeShared<Aws::Internal::AWSHttpResourceClient>(taskRoleLogTag)),
+    m_ecsCredentialsClient(Aws::MakeShared<Aws::Internal::ECSCredentialsClient>(taskRoleLogTag, URI)),
     m_loadFrequencyMs(refreshRateMs),
     m_expirationDate(LONG_MAX),
-    m_credentials(Aws::Auth::AWSCredentials()),
-    m_URI(URI)
+    m_credentials(Aws::Auth::AWSCredentials())
 {
     AWS_LOGSTREAM_INFO(taskRoleLogTag, "Creating TaskRole with default ECSCredentialsClient and refresh rate " << refreshRateMs);
 }
 
 TaskRoleCredentialsProvider::TaskRoleCredentialsProvider(
-        const std::shared_ptr<Aws::Internal::AWSHttpResourceClient>& client,
-        const char* URI, long refreshRateMs) :
+        const std::shared_ptr<Aws::Internal::ECSCredentialsClient>& client, long refreshRateMs) :
     m_ecsCredentialsClient(client),
     m_loadFrequencyMs(refreshRateMs),
     m_expirationDate(LONG_MAX),
-    m_credentials(Aws::Auth::AWSCredentials()),
-    m_URI(URI)
+    m_credentials(Aws::Auth::AWSCredentials())
 {
     AWS_LOGSTREAM_INFO(taskRoleLogTag, "Creating TaskRole with default ECSCredentialsClient and refresh rate " << refreshRateMs);
 }
@@ -293,8 +290,7 @@ void TaskRoleCredentialsProvider::RefreshIfExpired()
     
     AWS_LOGSTREAM_INFO(taskRoleLogTag, "Credentials have expired or will expire, attempting to repull from ECS IAM Service.");
 
-    auto credentialsStr = m_ecsCredentialsClient->GetECSCredentials(Aws::Internal::ECSCredentialsDefaultEndpoint,
-            m_URI.c_str());
+    auto credentialsStr = m_ecsCredentialsClient->GetECSCredentials();
     if (credentialsStr.length() <= 0) return;
 
     Json::JsonValue credentialsDoc(credentialsStr);
@@ -313,7 +309,5 @@ void TaskRoleCredentialsProvider::RefreshIfExpired()
     m_credentials.SetAWSAccessKeyId(accessKey);
     m_credentials.SetAWSSecretKey(secretKey);
     m_credentials.SetSessionToken(token);
-    //TODO credentialsDoc.GetString("RoleArn");
     m_expirationDate = Aws::Utils::DateTime(credentialsDoc.GetString("Expiration"), DateFormat::ISO_8601);
 }
-

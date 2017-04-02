@@ -297,18 +297,19 @@ namespace Aws
 
         static const char* const EC2_INSTANCE_PROFILE_LOG_TAG = "Aws::Config::EC2InstanceProfileConfigLoader";
 
-        EC2InstanceProfileConfigLoader::EC2InstanceProfileConfigLoader(const std::shared_ptr<Aws::Internal::AWSHttpResourceClient>& client)
-            : m_httpResourceClient(client == nullptr ? Aws::MakeShared<Aws::Internal::AWSHttpResourceClient>(EC2_INSTANCE_PROFILE_LOG_TAG) : client)
+        EC2InstanceProfileConfigLoader::EC2InstanceProfileConfigLoader(const std::shared_ptr<Aws::Internal::EC2MetadataClient>& client)
+            : m_ec2metadataClient(client == nullptr ? Aws::MakeShared<Aws::Internal::EC2MetadataClient>(EC2_INSTANCE_PROFILE_LOG_TAG) : client)
         {
         }
 
         bool EC2InstanceProfileConfigLoader::LoadInternal()
         {
-            auto credentialsStr = m_httpResourceClient->GetEC2DefaultCredentials();
+            auto credentialsStr = m_ec2metadataClient->GetDefaultCredentials();
             if(credentialsStr.length() <= 0) return false;
 
             Json::JsonValue credentialsDoc(credentialsStr);
-            if (!credentialsDoc.WasParseSuccessful()) {
+            if (!credentialsDoc.WasParseSuccessful()) 
+            {
                 AWS_LOGSTREAM_ERROR(EC2_INSTANCE_PROFILE_LOG_TAG, 
                         "Failed to parse output from EC2MetadataService with error " << credentialsDoc.GetErrorMessage());
                 return false;
@@ -324,7 +325,7 @@ namespace Aws
             secretKey = credentialsDoc.GetString(secretAccessKey);
             token = credentialsDoc.GetString("Token");
 
-            auto region = m_httpResourceClient->GetEC2CurrentRegion();
+            auto region = m_ec2metadataClient->GetCurrentRegion();
 
             Profile profile;
             profile.SetCredentials(AWSCredentials(accessKey, secretKey, token));
