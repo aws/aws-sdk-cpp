@@ -315,7 +315,6 @@ TEST(TaskRoleCredentialsProviderTest, TestThatProviderRefreshes)
     const char* nextSetOfCredentials = "{ \"AccessKeyId\": \"betterAccessKey\", \"SecretAccessKey\": \"betterSecretKey\", \"Token\": \"betterToken\", \"Expiration\": \"2020-02-25T06:03:31Z\" }";
     mockClient->SetMockedCredentialsValue(nextSetOfCredentials);
 
-    std::this_thread::sleep_for(std::chrono::milliseconds(100));
     ASSERT_EQ("betterAccessKey", provider.GetAWSCredentials().GetAWSAccessKeyId());
     ASSERT_EQ("betterSecretKey", provider.GetAWSCredentials().GetAWSSecretKey());
 }
@@ -324,7 +323,7 @@ TEST(TaskRoleCredentialsProviderTest, TestThatProviderDontRefreshe)
 {
     auto mockClient = Aws::MakeShared<MockECSCredentialsClient>(AllocationTag, "/path/to/res");
 
-    const char* validCredentials = "{ \"AccessKeyId\": \"goodAccessKey\", \"SecretAccessKey\": \"goodSecretKey\", \"Token\": \"goodToken\", \"Expiration\": \"2016-02-25T06:03:31Z\" }";
+    const char* validCredentials = "{ \"AccessKeyId\": \"goodAccessKey\", \"SecretAccessKey\": \"goodSecretKey\", \"Token\": \"goodToken\", \"Expiration\": \"2030-02-25T06:03:31Z\" }";
     mockClient->SetMockedCredentialsValue(validCredentials);
 
     TaskRoleCredentialsProvider provider(mockClient, 1000 * 60 * 15);

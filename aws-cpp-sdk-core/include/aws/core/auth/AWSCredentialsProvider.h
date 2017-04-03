@@ -354,11 +354,6 @@ namespace Aws
                 return (m_expirationDate.Millis() - Aws::Utils::DateTime::Now().Millis() < EXPIRATION_GRACE_PERIOD);
             }
 
-            inline const Aws::Utils::DateTime &GetExpirationDate() const 
-            {
-                return m_expirationDate;
-            }
-
             void RefreshIfExpired();
 
         private:

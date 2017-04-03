@@ -42,9 +42,9 @@ namespace Aws
              */
             AWSHttpResourceClient(const char* logtag = "AWSHttpResourceClient");
 
-            AWSHttpResourceClient &operator =(const AWSHttpResourceClient& rhs) = delete;
+            AWSHttpResourceClient& operator =(const AWSHttpResourceClient& rhs) = delete;
             AWSHttpResourceClient(const AWSHttpResourceClient& rhs) = delete;
-            AWSHttpResourceClient &operator =(const AWSHttpResourceClient&& rhs) = delete;
+            AWSHttpResourceClient& operator =(const AWSHttpResourceClient&& rhs) = delete;
             AWSHttpResourceClient(const AWSHttpResourceClient&& rhs) = delete;
 
             virtual ~AWSHttpResourceClient();
@@ -54,7 +54,7 @@ namespace Aws
              * returns the text contents. The resource URI = endpoint + resourcePath. 
              * (e.g:http://domain/path/to/res)
              */
-            virtual Aws::String GetResource(const char* endpoint, const char* resourcePath) const;
+            Aws::String GetResource(const char* endpoint, const char* resourcePath) const;
 
         protected:
             Aws::String m_logtag;
@@ -74,9 +74,9 @@ namespace Aws
              */
             EC2MetadataClient(const char* endpoint = "http://169.254.169.254");
 
-            EC2MetadataClient &operator =(const EC2MetadataClient& rhs) = delete;
+            EC2MetadataClient& operator =(const EC2MetadataClient& rhs) = delete;
             EC2MetadataClient(const EC2MetadataClient& rhs) = delete;
-            EC2MetadataClient &operator =(const EC2MetadataClient&& rhs) = delete;
+            EC2MetadataClient& operator =(const EC2MetadataClient&& rhs) = delete;
             EC2MetadataClient(const EC2MetadataClient&& rhs) = delete;
 
             virtual ~EC2MetadataClient();
@@ -107,9 +107,9 @@ namespace Aws
              * Build an instance with default ECS service endpoint
              */
             ECSCredentialsClient(const char* resourcePath, const char* endpoint = "http://169.254.170.2");
-            ECSCredentialsClient &operator =(ECSCredentialsClient& rhs) = delete;
+            ECSCredentialsClient& operator =(ECSCredentialsClient& rhs) = delete;
             ECSCredentialsClient(const ECSCredentialsClient& rhs) = delete;
-            ECSCredentialsClient &operator =(ECSCredentialsClient&& rhs) = delete;
+            ECSCredentialsClient& operator =(ECSCredentialsClient&& rhs) = delete;
             ECSCredentialsClient(const ECSCredentialsClient&& rhs) = delete;
 
             virtual ~ECSCredentialsClient();
