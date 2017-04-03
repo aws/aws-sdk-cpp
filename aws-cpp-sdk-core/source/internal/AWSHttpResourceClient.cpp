@@ -14,7 +14,6 @@
   */
 
 #include <aws/core/internal/AWSHttpResourceClient.h>
-
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/http/HttpClient.h>
 #include <aws/core/http/HttpClientFactory.h>

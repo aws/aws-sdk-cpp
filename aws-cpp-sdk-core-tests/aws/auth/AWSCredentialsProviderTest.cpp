@@ -229,7 +229,7 @@ TEST_F(EnvironmentModifyingTest, TestEnvironmentVariablesDoNotExist)
 
 TEST(InstanceProfileCredentialsProviderTest, TestEC2MetadataClientReturnsGoodData)
 {
-    auto mockClient = Aws::MakeShared<MockAWSHttpResourceClient>(AllocationTag);
+    auto mockClient = Aws::MakeShared<MockEC2MetadataClient>(AllocationTag);
 
     const char* validCredentials = "{ \"AccessKeyId\": \"goodAccessKey\", \"SecretAccessKey\": \"goodSecretKey\", \"Token\": \"goodToken\" }";
     mockClient->SetMockedCredentialsValue(validCredentials);
@@ -242,7 +242,7 @@ TEST(InstanceProfileCredentialsProviderTest, TestEC2MetadataClientReturnsGoodDat
 
 TEST(InstanceProfileCredentialsProviderTest, TestThatProviderRefreshes)
 {
-    auto mockClient = Aws::MakeShared<MockAWSHttpResourceClient>(AllocationTag);
+    auto mockClient = Aws::MakeShared<MockEC2MetadataClient>(AllocationTag);
 
     const char* validCredentials = "{ \"AccessKeyId\": \"goodAccessKey\", \"SecretAccessKey\": \"goodSecretKey\", \"Token\": \"goodToken\" }";
     mockClient->SetMockedCredentialsValue(validCredentials);
@@ -261,7 +261,7 @@ TEST(InstanceProfileCredentialsProviderTest, TestThatProviderRefreshes)
 
 TEST(InstanceProfileCredentialsProviderTest, TestEC2MetadataClientCouldntFindCredentials)
 {
-    auto mockClient = Aws::MakeShared<MockAWSHttpResourceClient>(AllocationTag);
+    auto mockClient = Aws::MakeShared<MockEC2MetadataClient>(AllocationTag);
     const char* emptyCredentials = "";
     mockClient->SetMockedCredentialsValue(emptyCredentials);
 
@@ -277,7 +277,7 @@ TEST(InstanceProfileCredentialsProviderTest, TestEC2MetadataClientCouldntFindCre
 
 TEST(InstanceProfileCredentialsProviderTest, TestEC2MetadataClientReturnsBadData)
 {
-    auto mockClient = Aws::MakeShared<MockAWSHttpResourceClient>(AllocationTag);
+    auto mockClient = Aws::MakeShared<MockEC2MetadataClient>(AllocationTag);
     const char* badData = "blah blah blah, I'm bad";
     mockClient->SetMockedCredentialsValue(badData);
 
@@ -289,30 +289,28 @@ TEST(InstanceProfileCredentialsProviderTest, TestEC2MetadataClientReturnsBadData
 
 TEST(TaskRoleCredentialsProviderTest, TestECSCredentialsClientReturnsGoodData)
 {
-    auto mockClient = Aws::MakeShared<MockAWSHttpResourceClient>(AllocationTag);
+    auto mockClient = Aws::MakeShared<MockECSCredentialsClient>(AllocationTag, "/path/to/res");
 
     const char* validCredentials = "{ \"AccessKeyId\": \"goodAccessKey\", \"SecretAccessKey\": \"goodSecretKey\", \"Token\": \"goodToken\", \"Expiration\": \"2020-02-25T06:03:31Z\" }";
     mockClient->SetMockedCredentialsValue(validCredentials);
 
-    TaskRoleCredentialsProvider provider(mockClient, "/path/to/res", 1000 * 60 * 15);
+    TaskRoleCredentialsProvider provider(mockClient, 1000 * 60 * 15);
     ASSERT_EQ("goodAccessKey", provider.GetAWSCredentials().GetAWSAccessKeyId());
     ASSERT_EQ("goodSecretKey", provider.GetAWSCredentials().GetAWSSecretKey());
     ASSERT_EQ("goodToken", provider.GetAWSCredentials().GetSessionToken());
-    ASSERT_EQ("2020-02-25T06:03:31Z", provider.GetExpirationDate().ToGmtString(DateFormat::ISO_8601));
 }
 
 
 TEST(TaskRoleCredentialsProviderTest, TestThatProviderRefreshes)
 {
-    auto mockClient = Aws::MakeShared<MockAWSHttpResourceClient>(AllocationTag);
+    auto mockClient = Aws::MakeShared<MockECSCredentialsClient>(AllocationTag, "/path/to/res");
 
     const char* validCredentials = "{ \"AccessKeyId\": \"goodAccessKey\", \"SecretAccessKey\": \"goodSecretKey\", \"Token\": \"goodToken\", \"Expiration\": \"2016-02-25T06:03:31Z\" }";
     mockClient->SetMockedCredentialsValue(validCredentials);
 
-    TaskRoleCredentialsProvider provider(mockClient, "/path/to/res", 10);
+    TaskRoleCredentialsProvider provider(mockClient, 10);
     ASSERT_EQ("goodAccessKey", provider.GetAWSCredentials().GetAWSAccessKeyId());
     ASSERT_EQ("goodSecretKey", provider.GetAWSCredentials().GetAWSSecretKey());
-    ASSERT_EQ("2016-02-25T06:03:31Z", provider.GetExpirationDate().ToGmtString(DateFormat::ISO_8601));
     
     const char* nextSetOfCredentials = "{ \"AccessKeyId\": \"betterAccessKey\", \"SecretAccessKey\": \"betterSecretKey\", \"Token\": \"betterToken\", \"Expiration\": \"2020-02-25T06:03:31Z\" }";
     mockClient->SetMockedCredentialsValue(nextSetOfCredentials);
@@ -320,34 +318,31 @@ TEST(TaskRoleCredentialsProviderTest, TestThatProviderRefreshes)
     std::this_thread::sleep_for(std::chrono::milliseconds(100));
     ASSERT_EQ("betterAccessKey", provider.GetAWSCredentials().GetAWSAccessKeyId());
     ASSERT_EQ("betterSecretKey", provider.GetAWSCredentials().GetAWSSecretKey());
-    ASSERT_EQ("2020-02-25T06:03:31Z", provider.GetExpirationDate().ToGmtString(DateFormat::ISO_8601));
 }
 
 TEST(TaskRoleCredentialsProviderTest, TestThatProviderDontRefreshe)
 {
-    auto mockClient = Aws::MakeShared<MockAWSHttpResourceClient>(AllocationTag);
+    auto mockClient = Aws::MakeShared<MockECSCredentialsClient>(AllocationTag, "/path/to/res");
 
     const char* validCredentials = "{ \"AccessKeyId\": \"goodAccessKey\", \"SecretAccessKey\": \"goodSecretKey\", \"Token\": \"goodToken\", \"Expiration\": \"2016-02-25T06:03:31Z\" }";
     mockClient->SetMockedCredentialsValue(validCredentials);
 
-    TaskRoleCredentialsProvider provider(mockClient, "/path/to/res", 1000 * 60 * 15);
+    TaskRoleCredentialsProvider provider(mockClient, 1000 * 60 * 15);
     ASSERT_EQ("goodAccessKey", provider.GetAWSCredentials().GetAWSAccessKeyId());
     ASSERT_EQ("goodSecretKey", provider.GetAWSCredentials().GetAWSSecretKey());
-    ASSERT_EQ("2016-02-25T06:03:31Z", provider.GetExpirationDate().ToGmtString(DateFormat::ISO_8601));
     
     std::this_thread::sleep_for(std::chrono::milliseconds(5 * 1000));
     ASSERT_EQ("goodAccessKey", provider.GetAWSCredentials().GetAWSAccessKeyId());
     ASSERT_EQ("goodSecretKey", provider.GetAWSCredentials().GetAWSSecretKey());
-    ASSERT_EQ("2016-02-25T06:03:31Z", provider.GetExpirationDate().ToGmtString(DateFormat::ISO_8601));
 }
 
 TEST(TaskRoleCredentialsProviderTest, TestECSCrendentialsClientCouldntFindCredentials)
 {
-    auto mockClient = Aws::MakeShared<MockAWSHttpResourceClient>(AllocationTag);
+    auto mockClient = Aws::MakeShared<MockECSCredentialsClient>(AllocationTag, "/path/to/res");
     const char* emptyCredentials = "";
     mockClient->SetMockedCredentialsValue(emptyCredentials);
 
-    TaskRoleCredentialsProvider provider("/path/to/res", 1000 * 60 * 15);
+    TaskRoleCredentialsProvider provider(mockClient, 1000 * 60 * 15);
     ASSERT_EQ("", provider.GetAWSCredentials().GetAWSAccessKeyId());
     ASSERT_EQ("", provider.GetAWSCredentials().GetAWSSecretKey());
 
@@ -359,11 +354,11 @@ TEST(TaskRoleCredentialsProviderTest, TestECSCrendentialsClientCouldntFindCreden
 
 TEST(TaskRoleCredentialsProviderTest, TestECSCredentialsClientReturnsBadData)
 {
-    auto mockClient = Aws::MakeShared<MockAWSHttpResourceClient>(AllocationTag);
+    auto mockClient = Aws::MakeShared<MockECSCredentialsClient>(AllocationTag, "/path/to/res");
     const char* badData = "blah blah blah, I'm bad";
     mockClient->SetMockedCredentialsValue(badData);
 
-    TaskRoleCredentialsProvider provider("/path/to/res", 1000 * 60 * 15);
+    TaskRoleCredentialsProvider provider(mockClient, 1000 * 60 * 15);
     ASSERT_EQ("", provider.GetAWSCredentials().GetAWSAccessKeyId());
     ASSERT_EQ("", provider.GetAWSCredentials().GetAWSSecretKey());
 }

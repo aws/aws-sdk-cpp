@@ -345,11 +345,6 @@ namespace Aws
             */
             AWSCredentials GetAWSCredentials() override;
 
-            inline const Aws::Utils::DateTime &GetExpirationDate() const 
-            {
-                return m_expirationDate;
-            }
-
         private:
             /**
              * See if the Credentials will expire soon, EXPIRATION_GRACE_PERIOD millseconds before expiration, refresh it.
@@ -357,6 +352,11 @@ namespace Aws
             inline bool ExpiresSoon() 
             {
                 return (m_expirationDate.Millis() - Aws::Utils::DateTime::Now().Millis() < EXPIRATION_GRACE_PERIOD);
+            }
+
+            inline const Aws::Utils::DateTime &GetExpirationDate() const 
+            {
+                return m_expirationDate;
             }
 
             void RefreshIfExpired();

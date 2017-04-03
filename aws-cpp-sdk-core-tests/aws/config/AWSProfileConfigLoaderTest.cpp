@@ -142,7 +142,7 @@ static const char* const ALLOCATION_TAG = "EC2InstanceProfileConfigLoaderTest";
 
 TEST(EC2InstanceProfileConfigLoaderTest, TestSuccesfullyHitsService)
 {
-    std::shared_ptr<MockAWSHttpResourceClient> mockClient = Aws::MakeShared<MockAWSHttpResourceClient>(ALLOCATION_TAG);
+    std::shared_ptr<MockEC2MetadataClient> mockClient = Aws::MakeShared<MockEC2MetadataClient>(ALLOCATION_TAG);
     mockClient->SetCurrentRegionValue("us-east-1");
     mockClient->SetMockedCredentialsValue("{ \"AccessKeyId\": \"goodAccessKey\", \"SecretAccessKey\": \"goodSecretKey\", \"Token\": \"goodToken\" }");
 
@@ -160,7 +160,7 @@ TEST(EC2InstanceProfileConfigLoaderTest, TestSuccesfullyHitsService)
 
 TEST(EC2InstanceProfileConfigLoaderTest, TestFailsToHitService)
 {
-    std::shared_ptr<MockAWSHttpResourceClient> mockClient = Aws::MakeShared<MockAWSHttpResourceClient>(ALLOCATION_TAG);
+    std::shared_ptr<MockEC2MetadataClient> mockClient = Aws::MakeShared<MockEC2MetadataClient>(ALLOCATION_TAG);
     mockClient->SetCurrentRegionValue("");
     mockClient->SetMockedCredentialsValue("");
 
@@ -171,7 +171,7 @@ TEST(EC2InstanceProfileConfigLoaderTest, TestFailsToHitService)
 
 TEST(EC2InstanceProfileConfigLoaderTest, TestBadJsonInResponse)
 {
-    std::shared_ptr<MockAWSHttpResourceClient> mockClient = Aws::MakeShared<MockAWSHttpResourceClient>(ALLOCATION_TAG);
+    std::shared_ptr<MockEC2MetadataClient> mockClient = Aws::MakeShared<MockEC2MetadataClient>(ALLOCATION_TAG);
     mockClient->SetCurrentRegionValue("us-east-1");
     mockClient->SetMockedCredentialsValue("{ \"AccessKeyId\": \"goodAccessKey\",");
 

@@ -25,7 +25,6 @@ namespace Aws
     namespace Http
     {
         class HttpClient;
-        class HttpClientFactory;
     } // namespace Http
 
     namespace Internal
@@ -43,6 +42,11 @@ namespace Aws
              */
             AWSHttpResourceClient(const char* logtag = "AWSHttpResourceClient");
 
+            AWSHttpResourceClient &operator =(const AWSHttpResourceClient& rhs) = delete;
+            AWSHttpResourceClient(const AWSHttpResourceClient& rhs) = delete;
+            AWSHttpResourceClient &operator =(const AWSHttpResourceClient&& rhs) = delete;
+            AWSHttpResourceClient(const AWSHttpResourceClient&& rhs) = delete;
+
             virtual ~AWSHttpResourceClient();
 
             /**
@@ -52,15 +56,11 @@ namespace Aws
              */
             virtual Aws::String GetResource(const char* endpoint, const char* resourcePath) const;
 
-         private:
-            AWSHttpResourceClient &operator =(const AWSHttpResourceClient &rhs);
-        
         protected:
             Aws::String m_logtag;
 
         private:         
             std::shared_ptr<Http::HttpClient> m_httpClient;
-            std::shared_ptr<Http::HttpClientFactory const> m_httpClientFactory;
         };
         
         /**
@@ -73,6 +73,11 @@ namespace Aws
              * Build an instance with default EC2 Metadata service endpoint
              */
             EC2MetadataClient(const char* endpoint = "http://169.254.169.254");
+
+            EC2MetadataClient &operator =(const EC2MetadataClient& rhs) = delete;
+            EC2MetadataClient(const EC2MetadataClient& rhs) = delete;
+            EC2MetadataClient &operator =(const EC2MetadataClient&& rhs) = delete;
+            EC2MetadataClient(const EC2MetadataClient&& rhs) = delete;
 
             virtual ~EC2MetadataClient();
 
@@ -89,8 +94,6 @@ namespace Aws
             virtual Aws::String GetCurrentRegion() const;
 
         private:
-            EC2MetadataClient &operator =(const EC2MetadataClient &rhs);
-
             Aws::String m_endpoint;
         };
 
@@ -104,6 +107,10 @@ namespace Aws
              * Build an instance with default ECS service endpoint
              */
             ECSCredentialsClient(const char* resourcePath, const char* endpoint = "http://169.254.170.2");
+            ECSCredentialsClient &operator =(ECSCredentialsClient& rhs) = delete;
+            ECSCredentialsClient(const ECSCredentialsClient& rhs) = delete;
+            ECSCredentialsClient &operator =(ECSCredentialsClient&& rhs) = delete;
+            ECSCredentialsClient(const ECSCredentialsClient&& rhs) = delete;
 
             virtual ~ECSCredentialsClient();
             
@@ -116,8 +123,6 @@ namespace Aws
             }
 
         private:
-            ECSCredentialsClient &operator =(ECSCredentialsClient &rhs);
-
             Aws::String m_resourcePath;
             Aws::String m_endpoint;
         };
