@@ -60,7 +60,10 @@ enum class LexRuntimeServiceErrors
   DEPENDENCY_FAILED,
   LIMIT_EXCEEDED,
   LOOP_DETECTED,
-  NOT_FOUND
+  NOT_ACCEPTABLE,
+  NOT_FOUND,
+  REQUEST_TIMEOUT,
+  UNSUPPORTED_MEDIA_TYPE
 };
 namespace LexRuntimeServiceErrorMapper
 {
