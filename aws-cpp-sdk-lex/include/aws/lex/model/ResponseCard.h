@@ -35,8 +35,8 @@ namespace Model
 
   /**
    * <p>If you configure a response card when creating your bots, Amazon Lex
-   * substitutes the session attributes and slot values available, and then returns
-   * it. The response card can also come from a Lambda function (
+   * substitutes the session attributes and slot values that are available, and then
+   * returns it. The response card can also come from a Lambda function (
    * <code>dialogCodeHook</code> and <code>fulfillmentActivity</code> on an
    * intent).</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/runtime.lex-2016-11-28/ResponseCard">AWS
@@ -51,62 +51,62 @@ namespace Model
     Aws::Utils::Json::JsonValue Jsonize() const;
 
     /**
-     * <p>Version of response card format.</p>
+     * <p>The version of the response card format.</p>
      */
     inline const Aws::String& GetVersion() const{ return m_version; }
 
     /**
-     * <p>Version of response card format.</p>
+     * <p>The version of the response card format.</p>
      */
     inline void SetVersion(const Aws::String& value) { m_versionHasBeenSet = true; m_version = value; }
 
     /**
-     * <p>Version of response card format.</p>
+     * <p>The version of the response card format.</p>
      */
     inline void SetVersion(Aws::String&& value) { m_versionHasBeenSet = true; m_version = value; }
 
     /**
-     * <p>Version of response card format.</p>
+     * <p>The version of the response card format.</p>
      */
     inline void SetVersion(const char* value) { m_versionHasBeenSet = true; m_version.assign(value); }
 
     /**
-     * <p>Version of response card format.</p>
+     * <p>The version of the response card format.</p>
      */
     inline ResponseCard& WithVersion(const Aws::String& value) { SetVersion(value); return *this;}
 
     /**
-     * <p>Version of response card format.</p>
+     * <p>The version of the response card format.</p>
      */
     inline ResponseCard& WithVersion(Aws::String&& value) { SetVersion(value); return *this;}
 
     /**
-     * <p>Version of response card format.</p>
+     * <p>The version of the response card format.</p>
      */
     inline ResponseCard& WithVersion(const char* value) { SetVersion(value); return *this;}
 
     /**
-     * <p>Content type of the response.</p>
+     * <p>The content type of the response.</p>
      */
     inline const ContentType& GetContentType() const{ return m_contentType; }
 
     /**
-     * <p>Content type of the response.</p>
+     * <p>The content type of the response.</p>
      */
     inline void SetContentType(const ContentType& value) { m_contentTypeHasBeenSet = true; m_contentType = value; }
 
     /**
-     * <p>Content type of the response.</p>
+     * <p>The content type of the response.</p>
      */
     inline void SetContentType(ContentType&& value) { m_contentTypeHasBeenSet = true; m_contentType = value; }
 
     /**
-     * <p>Content type of the response.</p>
+     * <p>The content type of the response.</p>
      */
     inline ResponseCard& WithContentType(const ContentType& value) { SetContentType(value); return *this;}
 
     /**
-     * <p>Content type of the response.</p>
+     * <p>The content type of the response.</p>
      */
     inline ResponseCard& WithContentType(ContentType&& value) { SetContentType(value); return *this;}
 

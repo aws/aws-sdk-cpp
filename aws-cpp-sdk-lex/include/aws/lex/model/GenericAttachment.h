@@ -47,163 +47,177 @@ namespace Model
     Aws::Utils::Json::JsonValue Jsonize() const;
 
     /**
-     * <p>Title of the option.</p>
+     * <p>The title of the option.</p>
      */
     inline const Aws::String& GetTitle() const{ return m_title; }
 
     /**
-     * <p>Title of the option.</p>
+     * <p>The title of the option.</p>
      */
     inline void SetTitle(const Aws::String& value) { m_titleHasBeenSet = true; m_title = value; }
 
     /**
-     * <p>Title of the option.</p>
+     * <p>The title of the option.</p>
      */
     inline void SetTitle(Aws::String&& value) { m_titleHasBeenSet = true; m_title = value; }
 
     /**
-     * <p>Title of the option.</p>
+     * <p>The title of the option.</p>
      */
     inline void SetTitle(const char* value) { m_titleHasBeenSet = true; m_title.assign(value); }
 
     /**
-     * <p>Title of the option.</p>
+     * <p>The title of the option.</p>
      */
     inline GenericAttachment& WithTitle(const Aws::String& value) { SetTitle(value); return *this;}
 
     /**
-     * <p>Title of the option.</p>
+     * <p>The title of the option.</p>
      */
     inline GenericAttachment& WithTitle(Aws::String&& value) { SetTitle(value); return *this;}
 
     /**
-     * <p>Title of the option.</p>
+     * <p>The title of the option.</p>
      */
     inline GenericAttachment& WithTitle(const char* value) { SetTitle(value); return *this;}
 
     /**
-     * <p>Subtitle shown below the title.</p>
+     * <p>The subtitle shown below the title.</p>
      */
     inline const Aws::String& GetSubTitle() const{ return m_subTitle; }
 
     /**
-     * <p>Subtitle shown below the title.</p>
+     * <p>The subtitle shown below the title.</p>
      */
     inline void SetSubTitle(const Aws::String& value) { m_subTitleHasBeenSet = true; m_subTitle = value; }
 
     /**
-     * <p>Subtitle shown below the title.</p>
+     * <p>The subtitle shown below the title.</p>
      */
     inline void SetSubTitle(Aws::String&& value) { m_subTitleHasBeenSet = true; m_subTitle = value; }
 
     /**
-     * <p>Subtitle shown below the title.</p>
+     * <p>The subtitle shown below the title.</p>
      */
     inline void SetSubTitle(const char* value) { m_subTitleHasBeenSet = true; m_subTitle.assign(value); }
 
     /**
-     * <p>Subtitle shown below the title.</p>
+     * <p>The subtitle shown below the title.</p>
      */
     inline GenericAttachment& WithSubTitle(const Aws::String& value) { SetSubTitle(value); return *this;}
 
     /**
-     * <p>Subtitle shown below the title.</p>
+     * <p>The subtitle shown below the title.</p>
      */
     inline GenericAttachment& WithSubTitle(Aws::String&& value) { SetSubTitle(value); return *this;}
 
     /**
-     * <p>Subtitle shown below the title.</p>
+     * <p>The subtitle shown below the title.</p>
      */
     inline GenericAttachment& WithSubTitle(const char* value) { SetSubTitle(value); return *this;}
 
-    
+    /**
+     * <p>The URL of an attachment to the response card.</p>
+     */
     inline const Aws::String& GetAttachmentLinkUrl() const{ return m_attachmentLinkUrl; }
 
-    
+    /**
+     * <p>The URL of an attachment to the response card.</p>
+     */
     inline void SetAttachmentLinkUrl(const Aws::String& value) { m_attachmentLinkUrlHasBeenSet = true; m_attachmentLinkUrl = value; }
 
-    
+    /**
+     * <p>The URL of an attachment to the response card.</p>
+     */
     inline void SetAttachmentLinkUrl(Aws::String&& value) { m_attachmentLinkUrlHasBeenSet = true; m_attachmentLinkUrl = value; }
 
-    
+    /**
+     * <p>The URL of an attachment to the response card.</p>
+     */
     inline void SetAttachmentLinkUrl(const char* value) { m_attachmentLinkUrlHasBeenSet = true; m_attachmentLinkUrl.assign(value); }
 
-    
+    /**
+     * <p>The URL of an attachment to the response card.</p>
+     */
     inline GenericAttachment& WithAttachmentLinkUrl(const Aws::String& value) { SetAttachmentLinkUrl(value); return *this;}
 
-    
+    /**
+     * <p>The URL of an attachment to the response card.</p>
+     */
     inline GenericAttachment& WithAttachmentLinkUrl(Aws::String&& value) { SetAttachmentLinkUrl(value); return *this;}
 
-    
+    /**
+     * <p>The URL of an attachment to the response card.</p>
+     */
     inline GenericAttachment& WithAttachmentLinkUrl(const char* value) { SetAttachmentLinkUrl(value); return *this;}
 
     /**
-     * <p>URL of an image that is displayed to the user.</p>
+     * <p>The URL of an image that is displayed to the user.</p>
      */
     inline const Aws::String& GetImageUrl() const{ return m_imageUrl; }
 
     /**
-     * <p>URL of an image that is displayed to the user.</p>
+     * <p>The URL of an image that is displayed to the user.</p>
      */
     inline void SetImageUrl(const Aws::String& value) { m_imageUrlHasBeenSet = true; m_imageUrl = value; }
 
     /**
-     * <p>URL of an image that is displayed to the user.</p>
+     * <p>The URL of an image that is displayed to the user.</p>
      */
     inline void SetImageUrl(Aws::String&& value) { m_imageUrlHasBeenSet = true; m_imageUrl = value; }
 
     /**
-     * <p>URL of an image that is displayed to the user.</p>
+     * <p>The URL of an image that is displayed to the user.</p>
      */
     inline void SetImageUrl(const char* value) { m_imageUrlHasBeenSet = true; m_imageUrl.assign(value); }
 
     /**
-     * <p>URL of an image that is displayed to the user.</p>
+     * <p>The URL of an image that is displayed to the user.</p>
      */
     inline GenericAttachment& WithImageUrl(const Aws::String& value) { SetImageUrl(value); return *this;}
 
     /**
-     * <p>URL of an image that is displayed to the user.</p>
+     * <p>The URL of an image that is displayed to the user.</p>
      */
     inline GenericAttachment& WithImageUrl(Aws::String&& value) { SetImageUrl(value); return *this;}
 
     /**
-     * <p>URL of an image that is displayed to the user.</p>
+     * <p>The URL of an image that is displayed to the user.</p>
      */
     inline GenericAttachment& WithImageUrl(const char* value) { SetImageUrl(value); return *this;}
 
     /**
-     * <p>List of options to show to the user.</p>
+     * <p>The list of options to show to the user.</p>
      */
     inline const Aws::Vector<Button>& GetButtons() const{ return m_buttons; }
 
     /**
-     * <p>List of options to show to the user.</p>
+     * <p>The list of options to show to the user.</p>
      */
     inline void SetButtons(const Aws::Vector<Button>& value) { m_buttonsHasBeenSet = true; m_buttons = value; }
 
     /**
-     * <p>List of options to show to the user.</p>
+     * <p>The list of options to show to the user.</p>
      */
     inline void SetButtons(Aws::Vector<Button>&& value) { m_buttonsHasBeenSet = true; m_buttons = value; }
 
     /**
-     * <p>List of options to show to the user.</p>
+     * <p>The list of options to show to the user.</p>
      */
     inline GenericAttachment& WithButtons(const Aws::Vector<Button>& value) { SetButtons(value); return *this;}
 
     /**
-     * <p>List of options to show to the user.</p>
+     * <p>The list of options to show to the user.</p>
      */
     inline GenericAttachment& WithButtons(Aws::Vector<Button>&& value) { SetButtons(value); return *this;}
 
     /**
-     * <p>List of options to show to the user.</p>
+     * <p>The list of options to show to the user.</p>
      */
     inline GenericAttachment& AddButtons(const Button& value) { m_buttonsHasBeenSet = true; m_buttons.push_back(value); return *this; }
 
     /**
-     * <p>List of options to show to the user.</p>
+     * <p>The list of options to show to the user.</p>
      */
     inline GenericAttachment& AddButtons(Button&& value) { m_buttonsHasBeenSet = true; m_buttons.push_back(value); return *this; }
 

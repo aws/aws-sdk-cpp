@@ -26,6 +26,7 @@
 #include <aws/lex/LexRuntimeServiceClient.h>
 #include <aws/lex/LexRuntimeServiceEndpoint.h>
 #include <aws/lex/LexRuntimeServiceErrorMarshaller.h>
+#include <aws/lex/model/PostContentRequest.h>
 #include <aws/lex/model/PostTextRequest.h>
 
 using namespace Aws;
@@ -90,6 +91,46 @@ void LexRuntimeServiceClient::init(const ClientConfiguration& config)
   }
 
   m_uri = ss.str();
+}
+
+PostContentOutcome LexRuntimeServiceClient::PostContent(const PostContentRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/bot/";
+  ss << request.GetBotName();
+  ss << "/alias/";
+  ss << request.GetBotAlias();
+  ss << "/user/";
+  ss << request.GetUserId();
+  ss << "/content";
+
+  StreamOutcome outcome = MakeRequestWithUnparsedResponse(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return PostContentOutcome(PostContentResult(outcome.GetResultWithOwnership()));
+  }
+  else
+  {
+    return PostContentOutcome(outcome.GetError());
+  }
+}
+
+PostContentOutcomeCallable LexRuntimeServiceClient::PostContentCallable(const PostContentRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< PostContentOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PostContent(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void LexRuntimeServiceClient::PostContentAsync(const PostContentRequest& request, const PostContentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->PostContentAsyncHelper( request, handler, context ); } );
+}
+
+void LexRuntimeServiceClient::PostContentAsyncHelper(const PostContentRequest& request, const PostContentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, PostContent(request), context);
 }
 
 PostTextOutcome LexRuntimeServiceClient::PostText(const PostTextRequest& request) const

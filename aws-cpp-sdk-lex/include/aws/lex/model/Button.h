@@ -45,86 +45,86 @@ namespace Model
     Aws::Utils::Json::JsonValue Jsonize() const;
 
     /**
-     * <p>Text visible to the user on the button.</p>
+     * <p>Text that is visible to the user on the button.</p>
      */
     inline const Aws::String& GetText() const{ return m_text; }
 
     /**
-     * <p>Text visible to the user on the button.</p>
+     * <p>Text that is visible to the user on the button.</p>
      */
     inline void SetText(const Aws::String& value) { m_textHasBeenSet = true; m_text = value; }
 
     /**
-     * <p>Text visible to the user on the button.</p>
+     * <p>Text that is visible to the user on the button.</p>
      */
     inline void SetText(Aws::String&& value) { m_textHasBeenSet = true; m_text = value; }
 
     /**
-     * <p>Text visible to the user on the button.</p>
+     * <p>Text that is visible to the user on the button.</p>
      */
     inline void SetText(const char* value) { m_textHasBeenSet = true; m_text.assign(value); }
 
     /**
-     * <p>Text visible to the user on the button.</p>
+     * <p>Text that is visible to the user on the button.</p>
      */
     inline Button& WithText(const Aws::String& value) { SetText(value); return *this;}
 
     /**
-     * <p>Text visible to the user on the button.</p>
+     * <p>Text that is visible to the user on the button.</p>
      */
     inline Button& WithText(Aws::String&& value) { SetText(value); return *this;}
 
     /**
-     * <p>Text visible to the user on the button.</p>
+     * <p>Text that is visible to the user on the button.</p>
      */
     inline Button& WithText(const char* value) { SetText(value); return *this;}
 
     /**
-     * <p>Value sent to Amazon Lex when user clicks the button. For example, consider
-     * button text "NYC". When the user clicks the button, the value sent can be "New
-     * York City".</p>
+     * <p>The value sent to Amazon Lex when a user chooses the button. For example,
+     * consider button text "NYC." When the user chooses the button, the value sent can
+     * be "New York City."</p>
      */
     inline const Aws::String& GetValue() const{ return m_value; }
 
     /**
-     * <p>Value sent to Amazon Lex when user clicks the button. For example, consider
-     * button text "NYC". When the user clicks the button, the value sent can be "New
-     * York City".</p>
+     * <p>The value sent to Amazon Lex when a user chooses the button. For example,
+     * consider button text "NYC." When the user chooses the button, the value sent can
+     * be "New York City."</p>
      */
     inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
 
     /**
-     * <p>Value sent to Amazon Lex when user clicks the button. For example, consider
-     * button text "NYC". When the user clicks the button, the value sent can be "New
-     * York City".</p>
+     * <p>The value sent to Amazon Lex when a user chooses the button. For example,
+     * consider button text "NYC." When the user chooses the button, the value sent can
+     * be "New York City."</p>
      */
     inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = value; }
 
     /**
-     * <p>Value sent to Amazon Lex when user clicks the button. For example, consider
-     * button text "NYC". When the user clicks the button, the value sent can be "New
-     * York City".</p>
+     * <p>The value sent to Amazon Lex when a user chooses the button. For example,
+     * consider button text "NYC." When the user chooses the button, the value sent can
+     * be "New York City."</p>
      */
     inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
 
     /**
-     * <p>Value sent to Amazon Lex when user clicks the button. For example, consider
-     * button text "NYC". When the user clicks the button, the value sent can be "New
-     * York City".</p>
+     * <p>The value sent to Amazon Lex when a user chooses the button. For example,
+     * consider button text "NYC." When the user chooses the button, the value sent can
+     * be "New York City."</p>
      */
     inline Button& WithValue(const Aws::String& value) { SetValue(value); return *this;}
 
     /**
-     * <p>Value sent to Amazon Lex when user clicks the button. For example, consider
-     * button text "NYC". When the user clicks the button, the value sent can be "New
-     * York City".</p>
+     * <p>The value sent to Amazon Lex when a user chooses the button. For example,
+     * consider button text "NYC." When the user chooses the button, the value sent can
+     * be "New York City."</p>
      */
     inline Button& WithValue(Aws::String&& value) { SetValue(value); return *this;}
 
     /**
-     * <p>Value sent to Amazon Lex when user clicks the button. For example, consider
-     * button text "NYC". When the user clicks the button, the value sent can be "New
-     * York City".</p>
+     * <p>The value sent to Amazon Lex when a user chooses the button. For example,
+     * consider button text "NYC." When the user chooses the button, the value sent can
+     * be "New York City."</p>
      */
     inline Button& WithValue(const char* value) { SetValue(value); return *this;}
 
