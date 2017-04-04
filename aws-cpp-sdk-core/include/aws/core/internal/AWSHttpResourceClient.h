@@ -37,8 +37,7 @@ namespace Aws
         {
         public:
             /**
-             * Builds an AWSHttpResourceClient instance.
-             * The default http stack if httpClientFactory is not specified.
+             * Builds an AWSHttpResourceClient instance by using default http stack.
              */
             AWSHttpResourceClient(const char* logtag = "AWSHttpResourceClient");
 

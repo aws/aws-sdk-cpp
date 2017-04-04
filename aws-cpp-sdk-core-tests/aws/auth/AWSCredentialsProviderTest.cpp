@@ -305,15 +305,28 @@ TEST(TaskRoleCredentialsProviderTest, TestThatProviderRefreshes)
 {
     auto mockClient = Aws::MakeShared<MockECSCredentialsClient>(AllocationTag, "/path/to/res");
 
-    const char* validCredentials = "{ \"AccessKeyId\": \"goodAccessKey\", \"SecretAccessKey\": \"goodSecretKey\", \"Token\": \"goodToken\", \"Expiration\": \"2016-02-25T06:03:31Z\" }";
-    mockClient->SetMockedCredentialsValue(validCredentials);
+    Aws::String goodCredentialsPrefix("{ \"AccessKeyId\": \"goodAccessKey\", \"SecretAccessKey\": \"goodSecretKey\", \"Token\": \"goodToken\", \"Expiration\": ");
+    Aws::String betterCredentialsPrefix("{ \"AccessKeyId\": \"betterAccessKey\", \"SecretAccessKey\": \"betterSecretKey\", \"Token\": \"betterToken\", \"Expiration\": ");
+    DateTime now = DateTime::Now();
+    Aws::String dateStringNow = now.ToGmtString(DateFormat::ISO_8601);
+
+    DateTime after = now.Millis() + 1000;
+    Aws::String dateStringAfter = after.ToGmtString(DateFormat::ISO_8601);
+
+    // Set the current credentials expiration date to now, which expires immediately.
+    // Next time when calling GetAWSCredentials, the credentials will be refreshed.
+    Aws::StringStream validCredentials;
+    validCredentials << goodCredentialsPrefix << "\"" << dateStringNow << "\" }";
+
+    mockClient->SetMockedCredentialsValue(validCredentials.str());
 
     TaskRoleCredentialsProvider provider(mockClient, 10);
     ASSERT_EQ("goodAccessKey", provider.GetAWSCredentials().GetAWSAccessKeyId());
     ASSERT_EQ("goodSecretKey", provider.GetAWSCredentials().GetAWSSecretKey());
     
-    const char* nextSetOfCredentials = "{ \"AccessKeyId\": \"betterAccessKey\", \"SecretAccessKey\": \"betterSecretKey\", \"Token\": \"betterToken\", \"Expiration\": \"2020-02-25T06:03:31Z\" }";
-    mockClient->SetMockedCredentialsValue(nextSetOfCredentials);
+    Aws::StringStream nextSetOfCredentials;
+    nextSetOfCredentials << betterCredentialsPrefix << "\"" << dateStringAfter << "\" }";
+    mockClient->SetMockedCredentialsValue(nextSetOfCredentials.str());
 
     ASSERT_EQ("betterAccessKey", provider.GetAWSCredentials().GetAWSAccessKeyId());
     ASSERT_EQ("betterSecretKey", provider.GetAWSCredentials().GetAWSSecretKey());
@@ -323,14 +336,24 @@ TEST(TaskRoleCredentialsProviderTest, TestThatProviderDontRefreshe)
 {
     auto mockClient = Aws::MakeShared<MockECSCredentialsClient>(AllocationTag, "/path/to/res");
 
-    const char* validCredentials = "{ \"AccessKeyId\": \"goodAccessKey\", \"SecretAccessKey\": \"goodSecretKey\", \"Token\": \"goodToken\", \"Expiration\": \"2030-02-25T06:03:31Z\" }";
-    mockClient->SetMockedCredentialsValue(validCredentials);
+    Aws::String goodCredentialsPrefix("{ \"AccessKeyId\": \"goodAccessKey\", \"SecretAccessKey\": \"goodSecretKey\", \"Token\": \"goodToken\", \"Expiration\": ");
+    DateTime after = DateTime::Now().Millis() + 60 * 1000;
+    Aws::String dateStringAfter = after.ToGmtString(DateFormat::ISO_8601);
 
-    TaskRoleCredentialsProvider provider(mockClient, 1000 * 60 * 15);
+    // Set the credentials expiration date to 60 seconds from now on.
+    Aws::StringStream validCredentials;
+    validCredentials << goodCredentialsPrefix << "\"" << dateStringAfter << "\" }";
+
+    mockClient->SetMockedCredentialsValue(validCredentials.str());
+
+    // Set the refresh frequency to 15 seconds
+    TaskRoleCredentialsProvider provider(mockClient, 15 * 1000);
     ASSERT_EQ("goodAccessKey", provider.GetAWSCredentials().GetAWSAccessKeyId());
     ASSERT_EQ("goodSecretKey", provider.GetAWSCredentials().GetAWSSecretKey());
     
-    std::this_thread::sleep_for(std::chrono::milliseconds(5 * 1000));
+    std::this_thread::sleep_for(std::chrono::milliseconds(3 * 1000));
+
+    // After sleeping for 3 seconds, the credentials will not be refreshed.
     ASSERT_EQ("goodAccessKey", provider.GetAWSCredentials().GetAWSAccessKeyId());
     ASSERT_EQ("goodSecretKey", provider.GetAWSCredentials().GetAWSSecretKey());
 }
