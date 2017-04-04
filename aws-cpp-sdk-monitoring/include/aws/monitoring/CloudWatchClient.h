@@ -365,8 +365,13 @@ namespace Model
          * statistics with a one-hour period, Amazon CloudWatch aggregates all data points
          * with time stamps that fall within each one-hour period. Therefore, the number of
          * values aggregated by CloudWatch is larger than the number of data points
-         * returned.</p> <p>For a list of metrics and dimensions supported by AWS services,
-         * see the <a
+         * returned.</p> <p>CloudWatch needs raw data points to calculate percentile
+         * statistics. If you publish data using a statistic set instead, you cannot
+         * retrieve percentile statistics for this data unless one of the following
+         * conditions is true:</p> <ul> <li> <p>The SampleCount of the statistic set is
+         * 1</p> </li> <li> <p>The Min and the Max of the statistic set are equal</p> </li>
+         * </ul> <p>For a list of metrics and dimensions supported by AWS services, see the
+         * <a
          * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CW_Support_For_AWS.html">Amazon
          * CloudWatch Metrics and Dimensions Reference</a> in the <i>Amazon CloudWatch User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -393,8 +398,13 @@ namespace Model
          * statistics with a one-hour period, Amazon CloudWatch aggregates all data points
          * with time stamps that fall within each one-hour period. Therefore, the number of
          * values aggregated by CloudWatch is larger than the number of data points
-         * returned.</p> <p>For a list of metrics and dimensions supported by AWS services,
-         * see the <a
+         * returned.</p> <p>CloudWatch needs raw data points to calculate percentile
+         * statistics. If you publish data using a statistic set instead, you cannot
+         * retrieve percentile statistics for this data unless one of the following
+         * conditions is true:</p> <ul> <li> <p>The SampleCount of the statistic set is
+         * 1</p> </li> <li> <p>The Min and the Max of the statistic set are equal</p> </li>
+         * </ul> <p>For a list of metrics and dimensions supported by AWS services, see the
+         * <a
          * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CW_Support_For_AWS.html">Amazon
          * CloudWatch Metrics and Dimensions Reference</a> in the <i>Amazon CloudWatch User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -423,8 +433,13 @@ namespace Model
          * statistics with a one-hour period, Amazon CloudWatch aggregates all data points
          * with time stamps that fall within each one-hour period. Therefore, the number of
          * values aggregated by CloudWatch is larger than the number of data points
-         * returned.</p> <p>For a list of metrics and dimensions supported by AWS services,
-         * see the <a
+         * returned.</p> <p>CloudWatch needs raw data points to calculate percentile
+         * statistics. If you publish data using a statistic set instead, you cannot
+         * retrieve percentile statistics for this data unless one of the following
+         * conditions is true:</p> <ul> <li> <p>The SampleCount of the statistic set is
+         * 1</p> </li> <li> <p>The Min and the Max of the statistic set are equal</p> </li>
+         * </ul> <p>For a list of metrics and dimensions supported by AWS services, see the
+         * <a
          * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CW_Support_For_AWS.html">Amazon
          * CloudWatch Metrics and Dimensions Reference</a> in the <i>Amazon CloudWatch User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -593,15 +608,24 @@ namespace Model
          * does not exist, Amazon CloudWatch creates the metric. When Amazon CloudWatch
          * creates a metric, it can take up to fifteen minutes for the metric to appear in
          * calls to <a>ListMetrics</a>.</p> <p>Each <code>PutMetricData</code> request is
-         * limited to 8 KB in size for HTTP GET requests and is limited to 40 KB in size
-         * for HTTP POST requests.</p> <p>Although the <code>Value</code> parameter accepts
-         * numbers of type <code>Double</code>, Amazon CloudWatch rejects values that are
-         * either too small or too large. Values must be in the range of 8.515920e-109 to
-         * 1.174271e+108 (Base 10) or 2e-360 to 2e360 (Base 2). In addition, special values
-         * (e.g., NaN, +Infinity, -Infinity) are not supported.</p> <p>Data points with
+         * limited to 40 KB in size for HTTP POST requests.</p> <p>Although the
+         * <code>Value</code> parameter accepts numbers of type <code>Double</code>, Amazon
+         * CloudWatch rejects values that are either too small or too large. Values must be
+         * in the range of 8.515920e-109 to 1.174271e+108 (Base 10) or 2e-360 to 2e360
+         * (Base 2). In addition, special values (e.g., NaN, +Infinity, -Infinity) are not
+         * supported.</p> <p>You can use up to 10 dimensions per metric to further clarify
+         * what data the metric collects. For more information on specifying dimensions,
+         * see <a
+         * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/publishingMetrics.html">Publishing
+         * Metrics</a> in the <i>Amazon CloudWatch User Guide</i>.</p> <p>Data points with
          * time stamps from 24 hours ago or longer can take at least 48 hours to become
-         * available for <a>GetMetricStatistics</a> from the time they are
-         * submitted.</p><p><h3>See Also:</h3>   <a
+         * available for <a>GetMetricStatistics</a> from the time they are submitted.</p>
+         * <p>CloudWatch needs raw data points to calculate percentile statistics. If you
+         * publish data using a statistic set instead, you cannot retrieve percentile
+         * statistics for this data unless one of the following conditions is true:</p>
+         * <ul> <li> <p>The SampleCount of the statistic set is 1</p> </li> <li> <p>The Min
+         * and the Max of the statistic set are equal</p> </li> </ul><p><h3>See Also:</h3> 
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/PutMetricData">AWS
          * API Reference</a></p>
          */
@@ -613,15 +637,24 @@ namespace Model
          * does not exist, Amazon CloudWatch creates the metric. When Amazon CloudWatch
          * creates a metric, it can take up to fifteen minutes for the metric to appear in
          * calls to <a>ListMetrics</a>.</p> <p>Each <code>PutMetricData</code> request is
-         * limited to 8 KB in size for HTTP GET requests and is limited to 40 KB in size
-         * for HTTP POST requests.</p> <p>Although the <code>Value</code> parameter accepts
-         * numbers of type <code>Double</code>, Amazon CloudWatch rejects values that are
-         * either too small or too large. Values must be in the range of 8.515920e-109 to
-         * 1.174271e+108 (Base 10) or 2e-360 to 2e360 (Base 2). In addition, special values
-         * (e.g., NaN, +Infinity, -Infinity) are not supported.</p> <p>Data points with
+         * limited to 40 KB in size for HTTP POST requests.</p> <p>Although the
+         * <code>Value</code> parameter accepts numbers of type <code>Double</code>, Amazon
+         * CloudWatch rejects values that are either too small or too large. Values must be
+         * in the range of 8.515920e-109 to 1.174271e+108 (Base 10) or 2e-360 to 2e360
+         * (Base 2). In addition, special values (e.g., NaN, +Infinity, -Infinity) are not
+         * supported.</p> <p>You can use up to 10 dimensions per metric to further clarify
+         * what data the metric collects. For more information on specifying dimensions,
+         * see <a
+         * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/publishingMetrics.html">Publishing
+         * Metrics</a> in the <i>Amazon CloudWatch User Guide</i>.</p> <p>Data points with
          * time stamps from 24 hours ago or longer can take at least 48 hours to become
-         * available for <a>GetMetricStatistics</a> from the time they are
-         * submitted.</p><p><h3>See Also:</h3>   <a
+         * available for <a>GetMetricStatistics</a> from the time they are submitted.</p>
+         * <p>CloudWatch needs raw data points to calculate percentile statistics. If you
+         * publish data using a statistic set instead, you cannot retrieve percentile
+         * statistics for this data unless one of the following conditions is true:</p>
+         * <ul> <li> <p>The SampleCount of the statistic set is 1</p> </li> <li> <p>The Min
+         * and the Max of the statistic set are equal</p> </li> </ul><p><h3>See Also:</h3> 
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/PutMetricData">AWS
          * API Reference</a></p>
          *
@@ -635,15 +668,24 @@ namespace Model
          * does not exist, Amazon CloudWatch creates the metric. When Amazon CloudWatch
          * creates a metric, it can take up to fifteen minutes for the metric to appear in
          * calls to <a>ListMetrics</a>.</p> <p>Each <code>PutMetricData</code> request is
-         * limited to 8 KB in size for HTTP GET requests and is limited to 40 KB in size
-         * for HTTP POST requests.</p> <p>Although the <code>Value</code> parameter accepts
-         * numbers of type <code>Double</code>, Amazon CloudWatch rejects values that are
-         * either too small or too large. Values must be in the range of 8.515920e-109 to
-         * 1.174271e+108 (Base 10) or 2e-360 to 2e360 (Base 2). In addition, special values
-         * (e.g., NaN, +Infinity, -Infinity) are not supported.</p> <p>Data points with
+         * limited to 40 KB in size for HTTP POST requests.</p> <p>Although the
+         * <code>Value</code> parameter accepts numbers of type <code>Double</code>, Amazon
+         * CloudWatch rejects values that are either too small or too large. Values must be
+         * in the range of 8.515920e-109 to 1.174271e+108 (Base 10) or 2e-360 to 2e360
+         * (Base 2). In addition, special values (e.g., NaN, +Infinity, -Infinity) are not
+         * supported.</p> <p>You can use up to 10 dimensions per metric to further clarify
+         * what data the metric collects. For more information on specifying dimensions,
+         * see <a
+         * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/publishingMetrics.html">Publishing
+         * Metrics</a> in the <i>Amazon CloudWatch User Guide</i>.</p> <p>Data points with
          * time stamps from 24 hours ago or longer can take at least 48 hours to become
-         * available for <a>GetMetricStatistics</a> from the time they are
-         * submitted.</p><p><h3>See Also:</h3>   <a
+         * available for <a>GetMetricStatistics</a> from the time they are submitted.</p>
+         * <p>CloudWatch needs raw data points to calculate percentile statistics. If you
+         * publish data using a statistic set instead, you cannot retrieve percentile
+         * statistics for this data unless one of the following conditions is true:</p>
+         * <ul> <li> <p>The SampleCount of the statistic set is 1</p> </li> <li> <p>The Min
+         * and the Max of the statistic set are equal</p> </li> </ul><p><h3>See Also:</h3> 
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/PutMetricData">AWS
          * API Reference</a></p>
          *

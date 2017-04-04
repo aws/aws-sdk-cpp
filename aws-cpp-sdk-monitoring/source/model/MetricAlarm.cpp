@@ -59,7 +59,9 @@ MetricAlarm::MetricAlarm() :
     m_threshold(0.0),
     m_thresholdHasBeenSet(false),
     m_comparisonOperator(ComparisonOperator::NOT_SET),
-    m_comparisonOperatorHasBeenSet(false)
+    m_comparisonOperatorHasBeenSet(false),
+    m_treatMissingDataHasBeenSet(false),
+    m_evaluateLowSampleCountPercentileHasBeenSet(false)
 {
 }
 
@@ -93,7 +95,9 @@ MetricAlarm::MetricAlarm(const XmlNode& xmlNode) :
     m_threshold(0.0),
     m_thresholdHasBeenSet(false),
     m_comparisonOperator(ComparisonOperator::NOT_SET),
-    m_comparisonOperatorHasBeenSet(false)
+    m_comparisonOperatorHasBeenSet(false),
+    m_treatMissingDataHasBeenSet(false),
+    m_evaluateLowSampleCountPercentileHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -260,6 +264,18 @@ MetricAlarm& MetricAlarm::operator =(const XmlNode& xmlNode)
       m_comparisonOperator = ComparisonOperatorMapper::GetComparisonOperatorForName(StringUtils::Trim(comparisonOperatorNode.GetText().c_str()).c_str());
       m_comparisonOperatorHasBeenSet = true;
     }
+    XmlNode treatMissingDataNode = resultNode.FirstChild("TreatMissingData");
+    if(!treatMissingDataNode.IsNull())
+    {
+      m_treatMissingData = StringUtils::Trim(treatMissingDataNode.GetText().c_str());
+      m_treatMissingDataHasBeenSet = true;
+    }
+    XmlNode evaluateLowSampleCountPercentileNode = resultNode.FirstChild("EvaluateLowSampleCountPercentile");
+    if(!evaluateLowSampleCountPercentileNode.IsNull())
+    {
+      m_evaluateLowSampleCountPercentile = StringUtils::Trim(evaluateLowSampleCountPercentileNode.GetText().c_str());
+      m_evaluateLowSampleCountPercentileHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -395,6 +411,16 @@ void MetricAlarm::OutputToStream(Aws::OStream& oStream, const char* location, un
       oStream << location << index << locationValue << ".ComparisonOperator=" << ComparisonOperatorMapper::GetNameForComparisonOperator(m_comparisonOperator) << "&";
   }
 
+  if(m_treatMissingDataHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".TreatMissingData=" << StringUtils::URLEncode(m_treatMissingData.c_str()) << "&";
+  }
+
+  if(m_evaluateLowSampleCountPercentileHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".EvaluateLowSampleCountPercentile=" << StringUtils::URLEncode(m_evaluateLowSampleCountPercentile.c_str()) << "&";
+  }
+
 }
 
 void MetricAlarm::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -504,6 +530,14 @@ void MetricAlarm::OutputToStream(Aws::OStream& oStream, const char* location) co
   if(m_comparisonOperatorHasBeenSet)
   {
       oStream << location << ".ComparisonOperator=" << ComparisonOperatorMapper::GetNameForComparisonOperator(m_comparisonOperator) << "&";
+  }
+  if(m_treatMissingDataHasBeenSet)
+  {
+      oStream << location << ".TreatMissingData=" << StringUtils::URLEncode(m_treatMissingData.c_str()) << "&";
+  }
+  if(m_evaluateLowSampleCountPercentileHasBeenSet)
+  {
+      oStream << location << ".EvaluateLowSampleCountPercentile=" << StringUtils::URLEncode(m_evaluateLowSampleCountPercentile.c_str()) << "&";
   }
 }
 
