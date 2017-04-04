@@ -813,6 +813,167 @@ namespace Model
      */
     inline PutMetricAlarmRequest& WithComparisonOperator(ComparisonOperator&& value) { SetComparisonOperator(value); return *this;}
 
+    /**
+     * <p> Sets how this alarm is to handle missing data points. If
+     * <code>TreatMissingData</code> is omitted, the default behavior of
+     * <code>missing</code> is used. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/AlarmThatSendsEmail.html#alarms-and-missing-data">Configuring
+     * How CloudWatch Alarms Treats Missing Data</a>.</p> <p>Valid Values:
+     * <code>breaching | notBreaching | ignore | missing</code> </p>
+     */
+    inline const Aws::String& GetTreatMissingData() const{ return m_treatMissingData; }
+
+    /**
+     * <p> Sets how this alarm is to handle missing data points. If
+     * <code>TreatMissingData</code> is omitted, the default behavior of
+     * <code>missing</code> is used. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/AlarmThatSendsEmail.html#alarms-and-missing-data">Configuring
+     * How CloudWatch Alarms Treats Missing Data</a>.</p> <p>Valid Values:
+     * <code>breaching | notBreaching | ignore | missing</code> </p>
+     */
+    inline void SetTreatMissingData(const Aws::String& value) { m_treatMissingDataHasBeenSet = true; m_treatMissingData = value; }
+
+    /**
+     * <p> Sets how this alarm is to handle missing data points. If
+     * <code>TreatMissingData</code> is omitted, the default behavior of
+     * <code>missing</code> is used. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/AlarmThatSendsEmail.html#alarms-and-missing-data">Configuring
+     * How CloudWatch Alarms Treats Missing Data</a>.</p> <p>Valid Values:
+     * <code>breaching | notBreaching | ignore | missing</code> </p>
+     */
+    inline void SetTreatMissingData(Aws::String&& value) { m_treatMissingDataHasBeenSet = true; m_treatMissingData = value; }
+
+    /**
+     * <p> Sets how this alarm is to handle missing data points. If
+     * <code>TreatMissingData</code> is omitted, the default behavior of
+     * <code>missing</code> is used. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/AlarmThatSendsEmail.html#alarms-and-missing-data">Configuring
+     * How CloudWatch Alarms Treats Missing Data</a>.</p> <p>Valid Values:
+     * <code>breaching | notBreaching | ignore | missing</code> </p>
+     */
+    inline void SetTreatMissingData(const char* value) { m_treatMissingDataHasBeenSet = true; m_treatMissingData.assign(value); }
+
+    /**
+     * <p> Sets how this alarm is to handle missing data points. If
+     * <code>TreatMissingData</code> is omitted, the default behavior of
+     * <code>missing</code> is used. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/AlarmThatSendsEmail.html#alarms-and-missing-data">Configuring
+     * How CloudWatch Alarms Treats Missing Data</a>.</p> <p>Valid Values:
+     * <code>breaching | notBreaching | ignore | missing</code> </p>
+     */
+    inline PutMetricAlarmRequest& WithTreatMissingData(const Aws::String& value) { SetTreatMissingData(value); return *this;}
+
+    /**
+     * <p> Sets how this alarm is to handle missing data points. If
+     * <code>TreatMissingData</code> is omitted, the default behavior of
+     * <code>missing</code> is used. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/AlarmThatSendsEmail.html#alarms-and-missing-data">Configuring
+     * How CloudWatch Alarms Treats Missing Data</a>.</p> <p>Valid Values:
+     * <code>breaching | notBreaching | ignore | missing</code> </p>
+     */
+    inline PutMetricAlarmRequest& WithTreatMissingData(Aws::String&& value) { SetTreatMissingData(value); return *this;}
+
+    /**
+     * <p> Sets how this alarm is to handle missing data points. If
+     * <code>TreatMissingData</code> is omitted, the default behavior of
+     * <code>missing</code> is used. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/AlarmThatSendsEmail.html#alarms-and-missing-data">Configuring
+     * How CloudWatch Alarms Treats Missing Data</a>.</p> <p>Valid Values:
+     * <code>breaching | notBreaching | ignore | missing</code> </p>
+     */
+    inline PutMetricAlarmRequest& WithTreatMissingData(const char* value) { SetTreatMissingData(value); return *this;}
+
+    /**
+     * <p> Used only for alarms based on percentiles. If you specify
+     * <code>ignore</code>, the alarm state will not change during periods with too few
+     * data points to be statistically significant. If you specify
+     * <code>evaluate</code> or omit this parameter, the alarm will always be evaluated
+     * and possibly change state no matter how many data points are available. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/AlarmThatSendsEmail.html#percentiles-with-low-samples">Percentile-Based
+     * CloudWatch Alarms and Low Data Samples</a>.</p> <p>Valid Values: <code>evaluate
+     * | ignore</code> </p>
+     */
+    inline const Aws::String& GetEvaluateLowSampleCountPercentile() const{ return m_evaluateLowSampleCountPercentile; }
+
+    /**
+     * <p> Used only for alarms based on percentiles. If you specify
+     * <code>ignore</code>, the alarm state will not change during periods with too few
+     * data points to be statistically significant. If you specify
+     * <code>evaluate</code> or omit this parameter, the alarm will always be evaluated
+     * and possibly change state no matter how many data points are available. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/AlarmThatSendsEmail.html#percentiles-with-low-samples">Percentile-Based
+     * CloudWatch Alarms and Low Data Samples</a>.</p> <p>Valid Values: <code>evaluate
+     * | ignore</code> </p>
+     */
+    inline void SetEvaluateLowSampleCountPercentile(const Aws::String& value) { m_evaluateLowSampleCountPercentileHasBeenSet = true; m_evaluateLowSampleCountPercentile = value; }
+
+    /**
+     * <p> Used only for alarms based on percentiles. If you specify
+     * <code>ignore</code>, the alarm state will not change during periods with too few
+     * data points to be statistically significant. If you specify
+     * <code>evaluate</code> or omit this parameter, the alarm will always be evaluated
+     * and possibly change state no matter how many data points are available. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/AlarmThatSendsEmail.html#percentiles-with-low-samples">Percentile-Based
+     * CloudWatch Alarms and Low Data Samples</a>.</p> <p>Valid Values: <code>evaluate
+     * | ignore</code> </p>
+     */
+    inline void SetEvaluateLowSampleCountPercentile(Aws::String&& value) { m_evaluateLowSampleCountPercentileHasBeenSet = true; m_evaluateLowSampleCountPercentile = value; }
+
+    /**
+     * <p> Used only for alarms based on percentiles. If you specify
+     * <code>ignore</code>, the alarm state will not change during periods with too few
+     * data points to be statistically significant. If you specify
+     * <code>evaluate</code> or omit this parameter, the alarm will always be evaluated
+     * and possibly change state no matter how many data points are available. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/AlarmThatSendsEmail.html#percentiles-with-low-samples">Percentile-Based
+     * CloudWatch Alarms and Low Data Samples</a>.</p> <p>Valid Values: <code>evaluate
+     * | ignore</code> </p>
+     */
+    inline void SetEvaluateLowSampleCountPercentile(const char* value) { m_evaluateLowSampleCountPercentileHasBeenSet = true; m_evaluateLowSampleCountPercentile.assign(value); }
+
+    /**
+     * <p> Used only for alarms based on percentiles. If you specify
+     * <code>ignore</code>, the alarm state will not change during periods with too few
+     * data points to be statistically significant. If you specify
+     * <code>evaluate</code> or omit this parameter, the alarm will always be evaluated
+     * and possibly change state no matter how many data points are available. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/AlarmThatSendsEmail.html#percentiles-with-low-samples">Percentile-Based
+     * CloudWatch Alarms and Low Data Samples</a>.</p> <p>Valid Values: <code>evaluate
+     * | ignore</code> </p>
+     */
+    inline PutMetricAlarmRequest& WithEvaluateLowSampleCountPercentile(const Aws::String& value) { SetEvaluateLowSampleCountPercentile(value); return *this;}
+
+    /**
+     * <p> Used only for alarms based on percentiles. If you specify
+     * <code>ignore</code>, the alarm state will not change during periods with too few
+     * data points to be statistically significant. If you specify
+     * <code>evaluate</code> or omit this parameter, the alarm will always be evaluated
+     * and possibly change state no matter how many data points are available. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/AlarmThatSendsEmail.html#percentiles-with-low-samples">Percentile-Based
+     * CloudWatch Alarms and Low Data Samples</a>.</p> <p>Valid Values: <code>evaluate
+     * | ignore</code> </p>
+     */
+    inline PutMetricAlarmRequest& WithEvaluateLowSampleCountPercentile(Aws::String&& value) { SetEvaluateLowSampleCountPercentile(value); return *this;}
+
+    /**
+     * <p> Used only for alarms based on percentiles. If you specify
+     * <code>ignore</code>, the alarm state will not change during periods with too few
+     * data points to be statistically significant. If you specify
+     * <code>evaluate</code> or omit this parameter, the alarm will always be evaluated
+     * and possibly change state no matter how many data points are available. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/AlarmThatSendsEmail.html#percentiles-with-low-samples">Percentile-Based
+     * CloudWatch Alarms and Low Data Samples</a>.</p> <p>Valid Values: <code>evaluate
+     * | ignore</code> </p>
+     */
+    inline PutMetricAlarmRequest& WithEvaluateLowSampleCountPercentile(const char* value) { SetEvaluateLowSampleCountPercentile(value); return *this;}
+
   private:
     Aws::String m_alarmName;
     bool m_alarmNameHasBeenSet;
@@ -846,6 +1007,10 @@ namespace Model
     bool m_thresholdHasBeenSet;
     ComparisonOperator m_comparisonOperator;
     bool m_comparisonOperatorHasBeenSet;
+    Aws::String m_treatMissingData;
+    bool m_treatMissingDataHasBeenSet;
+    Aws::String m_evaluateLowSampleCountPercentile;
+    bool m_evaluateLowSampleCountPercentileHasBeenSet;
   };
 
 } // namespace Model

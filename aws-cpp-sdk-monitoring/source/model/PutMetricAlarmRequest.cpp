@@ -42,7 +42,9 @@ PutMetricAlarmRequest::PutMetricAlarmRequest() :
     m_threshold(0.0),
     m_thresholdHasBeenSet(false),
     m_comparisonOperator(ComparisonOperator::NOT_SET),
-    m_comparisonOperatorHasBeenSet(false)
+    m_comparisonOperatorHasBeenSet(false),
+    m_treatMissingDataHasBeenSet(false),
+    m_evaluateLowSampleCountPercentileHasBeenSet(false)
 {
 }
 
@@ -151,6 +153,16 @@ Aws::String PutMetricAlarmRequest::SerializePayload() const
   if(m_comparisonOperatorHasBeenSet)
   {
     ss << "ComparisonOperator=" << ComparisonOperatorMapper::GetNameForComparisonOperator(m_comparisonOperator) << "&";
+  }
+
+  if(m_treatMissingDataHasBeenSet)
+  {
+    ss << "TreatMissingData=" << StringUtils::URLEncode(m_treatMissingData.c_str()) << "&";
+  }
+
+  if(m_evaluateLowSampleCountPercentileHasBeenSet)
+  {
+    ss << "EvaluateLowSampleCountPercentile=" << StringUtils::URLEncode(m_evaluateLowSampleCountPercentile.c_str()) << "&";
   }
 
   ss << "Version=2010-08-01";

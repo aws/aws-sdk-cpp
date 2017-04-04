@@ -769,6 +769,48 @@ namespace Model
      */
     inline MetricAlarm& WithComparisonOperator(ComparisonOperator&& value) { SetComparisonOperator(value); return *this;}
 
+    
+    inline const Aws::String& GetTreatMissingData() const{ return m_treatMissingData; }
+
+    
+    inline void SetTreatMissingData(const Aws::String& value) { m_treatMissingDataHasBeenSet = true; m_treatMissingData = value; }
+
+    
+    inline void SetTreatMissingData(Aws::String&& value) { m_treatMissingDataHasBeenSet = true; m_treatMissingData = value; }
+
+    
+    inline void SetTreatMissingData(const char* value) { m_treatMissingDataHasBeenSet = true; m_treatMissingData.assign(value); }
+
+    
+    inline MetricAlarm& WithTreatMissingData(const Aws::String& value) { SetTreatMissingData(value); return *this;}
+
+    
+    inline MetricAlarm& WithTreatMissingData(Aws::String&& value) { SetTreatMissingData(value); return *this;}
+
+    
+    inline MetricAlarm& WithTreatMissingData(const char* value) { SetTreatMissingData(value); return *this;}
+
+    
+    inline const Aws::String& GetEvaluateLowSampleCountPercentile() const{ return m_evaluateLowSampleCountPercentile; }
+
+    
+    inline void SetEvaluateLowSampleCountPercentile(const Aws::String& value) { m_evaluateLowSampleCountPercentileHasBeenSet = true; m_evaluateLowSampleCountPercentile = value; }
+
+    
+    inline void SetEvaluateLowSampleCountPercentile(Aws::String&& value) { m_evaluateLowSampleCountPercentileHasBeenSet = true; m_evaluateLowSampleCountPercentile = value; }
+
+    
+    inline void SetEvaluateLowSampleCountPercentile(const char* value) { m_evaluateLowSampleCountPercentileHasBeenSet = true; m_evaluateLowSampleCountPercentile.assign(value); }
+
+    
+    inline MetricAlarm& WithEvaluateLowSampleCountPercentile(const Aws::String& value) { SetEvaluateLowSampleCountPercentile(value); return *this;}
+
+    
+    inline MetricAlarm& WithEvaluateLowSampleCountPercentile(Aws::String&& value) { SetEvaluateLowSampleCountPercentile(value); return *this;}
+
+    
+    inline MetricAlarm& WithEvaluateLowSampleCountPercentile(const char* value) { SetEvaluateLowSampleCountPercentile(value); return *this;}
+
   private:
     Aws::String m_alarmName;
     bool m_alarmNameHasBeenSet;
@@ -814,6 +856,10 @@ namespace Model
     bool m_thresholdHasBeenSet;
     ComparisonOperator m_comparisonOperator;
     bool m_comparisonOperatorHasBeenSet;
+    Aws::String m_treatMissingData;
+    bool m_treatMissingDataHasBeenSet;
+    Aws::String m_evaluateLowSampleCountPercentile;
+    bool m_evaluateLowSampleCountPercentileHasBeenSet;
   };
 
 } // namespace Model
