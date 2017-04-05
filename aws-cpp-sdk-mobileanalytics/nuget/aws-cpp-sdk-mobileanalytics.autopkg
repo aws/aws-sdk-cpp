@@ -13,7 +13,7 @@ nuget {
         id = AWSSDKCPP-MobileAnalytics;
 
         // Version number. Follows NuGet standards. (currently SemVer 1.0)
-        version : 1.0.20140605.96;
+        version : 1.0.20140605.97;
 
         // Display name for package.
         title: AWS SDK for C++ (Amazon Mobile Analytics);
