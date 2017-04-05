@@ -61,6 +61,20 @@ namespace
         }
     };
 
+    TEST_F(AWSHttpResourceClientTest, TestAWSHttpResourceClientWithNullResponse)
+    {
+        auto awsHttpResourceClient = Aws::MakeShared<Aws::Internal::AWSHttpResourceClient>(ALLOCATION_TAG, ALLOCATION_TAG);
+        Aws::String result = awsHttpResourceClient->GetResource("http://www.uri.com", "/path/to/res");
+        
+        auto mockRequest = mockHttpClient->GetMostRecentHttpRequest();
+        ASSERT_EQ("http://www.uri.com/path/to/res", mockRequest.GetURIString());
+        ASSERT_EQ(Aws::Http::Scheme::HTTP, mockRequest.GetUri().GetScheme());
+        ASSERT_EQ("www.uri.com", mockRequest.GetUri().GetAuthority());
+        ASSERT_EQ("/path/to/res", mockRequest.GetUri().GetPath());
+        ASSERT_EQ(Aws::Http::HttpMethod::HTTP_GET, mockRequest.GetMethod());
+        ASSERT_EQ("", result);
+    }
+
     TEST_F(AWSHttpResourceClientTest, TestAWSHttpResourceClientWithEmptyResponse)
     {
         // This mocked URI is used to initiate http response and has nothing to do with the requested URI actually sent out.
@@ -79,6 +93,7 @@ namespace
         ASSERT_EQ(Aws::Http::Scheme::HTTP, mockRequest.GetUri().GetScheme());
         ASSERT_EQ("www.uri.com", mockRequest.GetUri().GetAuthority());
         ASSERT_EQ("/path/to/res", mockRequest.GetUri().GetPath());
+        ASSERT_EQ(Aws::Http::HttpMethod::HTTP_GET, mockRequest.GetMethod());
         ASSERT_EQ("", result);
     }
 
@@ -100,7 +115,7 @@ namespace
         ASSERT_EQ(Aws::Http::Scheme::HTTP, mockRequest.GetUri().GetScheme());
         ASSERT_EQ("www.uri.com", mockRequest.GetUri().GetAuthority());
         ASSERT_EQ("/path/to/res", mockRequest.GetUri().GetPath());
-
+        ASSERT_EQ(Aws::Http::HttpMethod::HTTP_GET, mockRequest.GetMethod());
         ASSERT_EQ("", result);       
     }
 
@@ -122,7 +137,24 @@ namespace
         ASSERT_EQ(Aws::Http::Scheme::HTTP, mockRequest.GetUri().GetScheme());
         ASSERT_EQ("www.uri.com", mockRequest.GetUri().GetAuthority());
         ASSERT_EQ("/path/to/res", mockRequest.GetUri().GetPath());
+        ASSERT_EQ(Aws::Http::HttpMethod::HTTP_GET, mockRequest.GetMethod());
         ASSERT_EQ("{ \"Resource\": \"TestResource\" }", result);
+    }
+
+    TEST_F(AWSHttpResourceClientTest, TestEC2MetadataClientWithNullSecurityCredentialsStringResponse)
+    {
+        // Create EC2MetadataClient with default endpoint http://169.254.169.254
+        auto ec2MetadataClient = Aws::MakeShared<Aws::Internal::EC2MetadataClient>(ALLOCATION_TAG);
+
+        auto cred = ec2MetadataClient->GetDefaultCredentials();
+        auto mockRequest = mockHttpClient->GetMostRecentHttpRequest();
+
+        ASSERT_EQ("http://169.254.169.254/latest/meta-data/iam/security-credentials", mockRequest.GetURIString());
+        ASSERT_EQ(Aws::Http::Scheme::HTTP, mockRequest.GetUri().GetScheme());
+        ASSERT_EQ("169.254.169.254", mockRequest.GetUri().GetAuthority());
+        ASSERT_EQ("/latest/meta-data/iam/security-credentials", mockRequest.GetUri().GetPath());
+        ASSERT_EQ(Aws::Http::HttpMethod::HTTP_GET, mockRequest.GetMethod());       
+        ASSERT_EQ("", cred);
     }
 
     TEST_F(AWSHttpResourceClientTest, TestEC2MetadataClientWithEmptySecurityCredentialsStringResponse)
@@ -145,7 +177,7 @@ namespace
         ASSERT_EQ(Aws::Http::Scheme::HTTP, mockRequest.GetUri().GetScheme());
         ASSERT_EQ("169.254.169.254", mockRequest.GetUri().GetAuthority());
         ASSERT_EQ("/latest/meta-data/iam/security-credentials", mockRequest.GetUri().GetPath());
-        
+        ASSERT_EQ(Aws::Http::HttpMethod::HTTP_GET, mockRequest.GetMethod());       
         ASSERT_EQ("", cred);
     }
 
@@ -169,7 +201,7 @@ namespace
         ASSERT_EQ(Aws::Http::Scheme::HTTP, mockRequest.GetUri().GetScheme());
         ASSERT_EQ("169.254.169.254", mockRequest.GetUri().GetAuthority());
         ASSERT_EQ("/latest/meta-data/iam/security-credentials", mockRequest.GetUri().GetPath());
-        
+        ASSERT_EQ(Aws::Http::HttpMethod::HTTP_GET, mockRequest.GetMethod());       
         ASSERT_EQ("", cred);
     }
 
@@ -193,7 +225,7 @@ namespace
         ASSERT_EQ(Aws::Http::Scheme::HTTP, mockRequest.GetUri().GetScheme());
         ASSERT_EQ("169.254.169.254", mockRequest.GetUri().GetAuthority());
         ASSERT_EQ("/latest/meta-data/iam/security-credentials", mockRequest.GetUri().GetPath());
-        
+        ASSERT_EQ(Aws::Http::HttpMethod::HTTP_GET, mockRequest.GetMethod());       
         ASSERT_EQ("", cred);
     }
 
@@ -225,8 +257,24 @@ namespace
         ASSERT_EQ(Aws::Http::Scheme::HTTP, mockRequest.GetUri().GetScheme());
         ASSERT_EQ("169.254.169.254", mockRequest.GetUri().GetAuthority());
         ASSERT_EQ("/latest/meta-data/iam/security-credentials/credentials", mockRequest.GetUri().GetPath());
-
+        ASSERT_EQ(Aws::Http::HttpMethod::HTTP_GET, mockRequest.GetMethod());
         ASSERT_EQ(cred, "{ \"AccessKeyId\": \"goodAccessKey\", \"SecretAccessKey\": \"goodSecretKey\", \"Token\": \"goodToken\" }");
+    }
+
+    TEST_F(AWSHttpResourceClientTest, TestEC2MetadataClientGetRegionWithNullResponse)
+    {
+        // Create EC2MetadataClient with default endpoint http://169.254.169.254
+        auto ec2MetadataClient = Aws::MakeShared<Aws::Internal::EC2MetadataClient>(ALLOCATION_TAG);
+
+        auto region = ec2MetadataClient->GetCurrentRegion();
+        auto mockRequest = mockHttpClient->GetMostRecentHttpRequest();
+
+        ASSERT_EQ("http://169.254.169.254/latest/meta-data/placement/availability-zone", mockRequest.GetURIString());
+        ASSERT_EQ(Aws::Http::Scheme::HTTP, mockRequest.GetUri().GetScheme());
+        ASSERT_EQ("169.254.169.254", mockRequest.GetUri().GetAuthority());
+        ASSERT_EQ("/latest/meta-data/placement/availability-zone", mockRequest.GetUri().GetPath());
+        ASSERT_EQ(Aws::Http::HttpMethod::HTTP_GET, mockRequest.GetMethod());
+        ASSERT_EQ("", region);
     }
 
     TEST_F(AWSHttpResourceClientTest, TestEC2MetadataClientGetRegionWithEmptyResponse)
@@ -249,6 +297,7 @@ namespace
         ASSERT_EQ(Aws::Http::Scheme::HTTP, mockRequest.GetUri().GetScheme());
         ASSERT_EQ("169.254.169.254", mockRequest.GetUri().GetAuthority());
         ASSERT_EQ("/latest/meta-data/placement/availability-zone", mockRequest.GetUri().GetPath());
+        ASSERT_EQ(Aws::Http::HttpMethod::HTTP_GET, mockRequest.GetMethod());
         ASSERT_EQ("", region);
     }
 
@@ -272,10 +321,11 @@ namespace
         ASSERT_EQ(Aws::Http::Scheme::HTTP, mockRequest.GetUri().GetScheme());
         ASSERT_EQ("169.254.169.254", mockRequest.GetUri().GetAuthority());
         ASSERT_EQ("/latest/meta-data/placement/availability-zone", mockRequest.GetUri().GetPath());
+        ASSERT_EQ(Aws::Http::HttpMethod::HTTP_GET, mockRequest.GetMethod());
         ASSERT_EQ("", region);
     }
 
-    TEST_F(AWSHttpResourceClientTest, TestEC2MetadataClientGetRegionWithResponseHasDigits)
+    TEST_F(AWSHttpResourceClientTest, TestEC2MetadataClientGetRegionWithResponseHasSingleDigitSubStringInsideString)
     {
         // Create EC2MetadataClient with default endpoint http://169.254.169.254
         auto ec2MetadataClient = Aws::MakeShared<Aws::Internal::EC2MetadataClient>(ALLOCATION_TAG);
@@ -294,10 +344,57 @@ namespace
         ASSERT_EQ(Aws::Http::Scheme::HTTP, mockRequest.GetUri().GetScheme());
         ASSERT_EQ("169.254.169.254", mockRequest.GetUri().GetAuthority());
         ASSERT_EQ("/latest/meta-data/placement/availability-zone", mockRequest.GetUri().GetPath());
+        ASSERT_EQ(Aws::Http::HttpMethod::HTTP_GET, mockRequest.GetMethod());
         ASSERT_EQ("us-west-123", region);
     }
 
-    TEST_F(AWSHttpResourceClientTest, TestEC2MetadataClientGetRegionWithResponseHasNoDigit)
+    TEST_F(AWSHttpResourceClientTest, TestEC2MetadataClientGetRegionWithResponseHasMultipleDigitSubStrings)
+    {
+        // Create EC2MetadataClient with default endpoint http://169.254.169.254
+        auto ec2MetadataClient = Aws::MakeShared<Aws::Internal::EC2MetadataClient>(ALLOCATION_TAG);
+
+        // This mocked URI is used to initiate http response and has nothing to do with the requested URI actually sent out.
+        std::shared_ptr<HttpRequest> secureRequest = CreateHttpRequest(URI("http://169.254.169.254/latest/meta-data/placement/availability-zone"), 
+                HttpMethod::HTTP_GET, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
+        std::shared_ptr<StandardHttpResponse> secureResponse = Aws::MakeShared<StandardHttpResponse>(ALLOCATION_TAG, (*secureRequest));
+        secureResponse->SetResponseCode(HttpResponseCode::OK);
+        secureResponse->GetResponseBody() << "us-west-123abc321def";
+        mockHttpClient->AddResponseToReturn(secureResponse);
+
+        auto region = ec2MetadataClient->GetCurrentRegion();
+        auto mockRequest = mockHttpClient->GetMostRecentHttpRequest();
+        ASSERT_EQ("http://169.254.169.254/latest/meta-data/placement/availability-zone", mockRequest.GetURIString());
+        ASSERT_EQ(Aws::Http::Scheme::HTTP, mockRequest.GetUri().GetScheme());
+        ASSERT_EQ("169.254.169.254", mockRequest.GetUri().GetAuthority());
+        ASSERT_EQ("/latest/meta-data/placement/availability-zone", mockRequest.GetUri().GetPath());
+        ASSERT_EQ(Aws::Http::HttpMethod::HTTP_GET, mockRequest.GetMethod());
+        ASSERT_EQ("us-west-123", region);
+    }
+
+    TEST_F(AWSHttpResourceClientTest, TestEC2MetadataClientGetRegionWithResponseStartWithDigitSubString)
+    {
+        // Create EC2MetadataClient with default endpoint http://169.254.169.254
+        auto ec2MetadataClient = Aws::MakeShared<Aws::Internal::EC2MetadataClient>(ALLOCATION_TAG);
+
+        // This mocked URI is used to initiate http response and has nothing to do with the requested URI actually sent out.
+        std::shared_ptr<HttpRequest> secureRequest = CreateHttpRequest(URI("http://169.254.169.254/latest/meta-data/placement/availability-zone"), 
+                HttpMethod::HTTP_GET, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
+        std::shared_ptr<StandardHttpResponse> secureResponse = Aws::MakeShared<StandardHttpResponse>(ALLOCATION_TAG, (*secureRequest));
+        secureResponse->SetResponseCode(HttpResponseCode::OK);
+        secureResponse->GetResponseBody() << "123456-us-west-123abc321def";
+        mockHttpClient->AddResponseToReturn(secureResponse);
+
+        auto region = ec2MetadataClient->GetCurrentRegion();
+        auto mockRequest = mockHttpClient->GetMostRecentHttpRequest();
+        ASSERT_EQ("http://169.254.169.254/latest/meta-data/placement/availability-zone", mockRequest.GetURIString());
+        ASSERT_EQ(Aws::Http::Scheme::HTTP, mockRequest.GetUri().GetScheme());
+        ASSERT_EQ("169.254.169.254", mockRequest.GetUri().GetAuthority());
+        ASSERT_EQ("/latest/meta-data/placement/availability-zone", mockRequest.GetUri().GetPath());
+        ASSERT_EQ(Aws::Http::HttpMethod::HTTP_GET, mockRequest.GetMethod());
+        ASSERT_EQ("123456", region);
+    }
+
+    TEST_F(AWSHttpResourceClientTest, TestEC2MetadataClientGetRegionWithResponseHasSingleDigitSubstringAtEnd)
     {
         // Create EC2MetadataClient with default endpoint http://169.254.169.254
         auto ec2MetadataClient = Aws::MakeShared<Aws::Internal::EC2MetadataClient>(ALLOCATION_TAG);
@@ -316,7 +413,46 @@ namespace
         ASSERT_EQ(Aws::Http::Scheme::HTTP, mockRequest.GetUri().GetScheme());
         ASSERT_EQ("169.254.169.254", mockRequest.GetUri().GetAuthority());
         ASSERT_EQ("/latest/meta-data/placement/availability-zone", mockRequest.GetUri().GetPath());
+        ASSERT_EQ(Aws::Http::HttpMethod::HTTP_GET, mockRequest.GetMethod());
         ASSERT_EQ("us-west-123321", region);
+    }
+
+    TEST_F(AWSHttpResourceClientTest, TestEC2MetadataClientGetRegionWithResponseHasNoDigit)
+    {
+        // Create EC2MetadataClient with default endpoint http://169.254.169.254
+        auto ec2MetadataClient = Aws::MakeShared<Aws::Internal::EC2MetadataClient>(ALLOCATION_TAG);
+
+        // This mocked URI is used to initiate http response and has nothing to do with the requested URI actually sent out.
+        std::shared_ptr<HttpRequest> secureRequest = CreateHttpRequest(URI("http://169.254.169.254/latest/meta-data/placement/availability-zone"), 
+                HttpMethod::HTTP_GET, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
+        std::shared_ptr<StandardHttpResponse> secureResponse = Aws::MakeShared<StandardHttpResponse>(ALLOCATION_TAG, (*secureRequest));
+        secureResponse->SetResponseCode(HttpResponseCode::OK);
+        secureResponse->GetResponseBody() << "us-west-abccba";
+        mockHttpClient->AddResponseToReturn(secureResponse);
+
+        auto region = ec2MetadataClient->GetCurrentRegion();
+        auto mockRequest = mockHttpClient->GetMostRecentHttpRequest();
+        ASSERT_EQ("http://169.254.169.254/latest/meta-data/placement/availability-zone", mockRequest.GetURIString());
+        ASSERT_EQ(Aws::Http::Scheme::HTTP, mockRequest.GetUri().GetScheme());
+        ASSERT_EQ("169.254.169.254", mockRequest.GetUri().GetAuthority());
+        ASSERT_EQ("/latest/meta-data/placement/availability-zone", mockRequest.GetUri().GetPath());
+        ASSERT_EQ(Aws::Http::HttpMethod::HTTP_GET, mockRequest.GetMethod());
+        ASSERT_EQ("us-west-abccba", region);
+    }
+
+    TEST_F(AWSHttpResourceClientTest, TestECSCredentialsClientWithNullResponse)
+    {
+        // Create EC2CredentialsClient with default endpoint http://169.254.170.2
+        auto ecsCredentialsClient = Aws::MakeShared<Aws::Internal::ECSCredentialsClient>(ALLOCATION_TAG, "/path/to/res");
+
+        auto cred = ecsCredentialsClient->GetECSCredentials();
+        auto mockRequest = mockHttpClient->GetMostRecentHttpRequest();
+        ASSERT_EQ("http://169.254.170.2/path/to/res", mockRequest.GetURIString());
+        ASSERT_EQ(Aws::Http::Scheme::HTTP, mockRequest.GetUri().GetScheme());
+        ASSERT_EQ("169.254.170.2", mockRequest.GetUri().GetAuthority());
+        ASSERT_EQ("/path/to/res", mockRequest.GetUri().GetPath());
+        ASSERT_EQ(Aws::Http::HttpMethod::HTTP_GET, mockRequest.GetMethod());
+        ASSERT_EQ("", cred);
     }
 
     TEST_F(AWSHttpResourceClientTest, TestECSCredentialsClientWithEmptyResponse)
@@ -338,6 +474,7 @@ namespace
         ASSERT_EQ(Aws::Http::Scheme::HTTP, mockRequest.GetUri().GetScheme());
         ASSERT_EQ("169.254.170.2", mockRequest.GetUri().GetAuthority());
         ASSERT_EQ("/path/to/res", mockRequest.GetUri().GetPath());
+        ASSERT_EQ(Aws::Http::HttpMethod::HTTP_GET, mockRequest.GetMethod());
         ASSERT_EQ("", cred);
     }
 
@@ -360,6 +497,7 @@ namespace
         ASSERT_EQ(Aws::Http::Scheme::HTTP, mockRequest.GetUri().GetScheme());
         ASSERT_EQ("169.254.170.2", mockRequest.GetUri().GetAuthority());
         ASSERT_EQ("/path/to/res", mockRequest.GetUri().GetPath());
+        ASSERT_EQ(Aws::Http::HttpMethod::HTTP_GET, mockRequest.GetMethod());
         ASSERT_EQ("", cred);
     }
 
@@ -382,6 +520,7 @@ namespace
         ASSERT_EQ(Aws::Http::Scheme::HTTP, mockRequest.GetUri().GetScheme());
         ASSERT_EQ("169.254.170.2", mockRequest.GetUri().GetAuthority());
         ASSERT_EQ("/path/to/res", mockRequest.GetUri().GetPath());
+        ASSERT_EQ(Aws::Http::HttpMethod::HTTP_GET, mockRequest.GetMethod());
         ASSERT_EQ(cred, "{ \"AccessKeyId\": \"betterAccessKey\", \"SecretAccessKey\": \"betterSecretKey\", \"Token\": \"betterToken\", \"Expiration\": \"2020-02-25T06:03:31Z\" }");
     }
 }
