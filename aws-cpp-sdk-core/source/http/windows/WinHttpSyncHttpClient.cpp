@@ -40,7 +40,7 @@ using namespace Aws::Utils::Logging;
 static const uint32_t HTTP_REQUEST_WRITE_BUFFER_LENGTH = 8192;
 
 WinHttpSyncHttpClient::WinHttpSyncHttpClient(const ClientConfiguration& config) :
-    Base()
+    Base(), m_verifySSL(config.verifySSL)
 {
     AWS_LOGSTREAM_INFO(GetLogTag(), "Creating http client with user agent " << config.userAgent << " with max connections " << config.maxConnections 
         << " request timeout " << config.requestTimeoutMs << ",and connect timeout " << config.connectTimeoutMs);
@@ -91,15 +91,7 @@ WinHttpSyncHttpClient::WinHttpSyncHttpClient(const ClientConfiguration& config) 
             AWS_LOGSTREAM_FATAL(GetLogTag(), "Failed setting password for proxy with error code: " << GetLastError());
     }
 
-    if (!config.verifySSL)
-    {
-        AWS_LOG_WARN(GetLogTag(), "Turning ssl unknown ca verification off.");
-        DWORD flags = SECURITY_FLAG_IGNORE_UNKNOWN_CA | SECURITY_FLAG_IGNORE_CERT_CN_INVALID;
-
-        if (!WinHttpSetOption(GetOpenHandle(), WINHTTP_OPTION_SECURITY_FLAGS, &flags, sizeof(flags)))
-            AWS_LOG_FATAL(GetLogTag(), "Failed to turn ssl cert ca verification off.");
-    }
-    else
+    if (m_verifySSL)
     {
         //disable insecure tls protocols, otherwise you might as well turn ssl verification off.
         DWORD flags = WINHTTP_FLAG_SECURE_PROTOCOL_TLS1 | WINHTTP_FLAG_SECURE_PROTOCOL_TLS1_1 | WINHTTP_FLAG_SECURE_PROTOCOL_TLS1_2;
@@ -132,6 +124,15 @@ void* WinHttpSyncHttpClient::OpenRequest(const Aws::Http::HttpRequest& request, 
 
     HINTERNET hHttpRequest = WinHttpOpenRequest(connection, StringUtils::ToWString(HttpMethodMapper::GetNameForHttpMethod(request.GetMethod())).c_str(),
         wss.c_str(), nullptr, nullptr, accept, requestFlags);
+
+    if (!m_verifySSL)
+    {
+        AWS_LOG_WARN(GetLogTag(), "Turning ssl unknown ca verification off.");
+        DWORD flags = SECURITY_FLAG_IGNORE_UNKNOWN_CA | SECURITY_FLAG_IGNORE_CERT_CN_INVALID;
+
+        if (!WinHttpSetOption(hHttpRequest, WINHTTP_OPTION_SECURITY_FLAGS, &flags, sizeof(flags)))
+            AWS_LOG_FATAL(GetLogTag(), "Failed to turn ssl cert ca verification off.");
+    }
 
     //DISABLE_FEATURE settings need to be made after OpenRequest but before SendRequest
     if (!m_allowRedirects)
