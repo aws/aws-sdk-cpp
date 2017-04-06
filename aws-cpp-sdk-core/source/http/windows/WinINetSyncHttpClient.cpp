@@ -39,7 +39,7 @@ using namespace Aws::Utils::Logging;
 static const uint32_t HTTP_REQUEST_WRITE_BUFFER_LENGTH = 8192;
 
 WinINetSyncHttpClient::WinINetSyncHttpClient(const ClientConfiguration& config) :
-    Base()
+    Base(), m_verifySSL(config.verifySSL)
 {
     AWS_LOGSTREAM_INFO(GetLogTag(), "Creating http client with user agent " << config.userAgent << " with max connections " <<
          config.maxConnections << ", request timeout " << config.requestTimeoutMs << ",and connect timeout " << config.connectTimeoutMs);       
@@ -80,15 +80,6 @@ WinINetSyncHttpClient::WinINetSyncHttpClient(const ClientConfiguration& config) 
             AWS_LOGSTREAM_FATAL(GetLogTag(), "Failed setting password for proxy with error code: " << GetLastError());
     }
 
-    if (!config.verifySSL)
-    {
-        AWS_LOGSTREAM_WARN(GetLogTag(), "Turning ssl unknown ca verification off.");
-        DWORD flags = SECURITY_FLAG_IGNORE_UNKNOWN_CA | INTERNET_FLAG_IGNORE_CERT_CN_INVALID;
-
-        if (!InternetSetOptionA(GetOpenHandle(), INTERNET_OPTION_SECURITY_FLAGS, &flags, sizeof(flags)))
-            AWS_LOGSTREAM_FATAL(GetLogTag(), "Failed to turn ssl cert ca verification off.");
-    }
-
     AWS_LOGSTREAM_DEBUG(GetLogTag(), "API handle " << GetOpenHandle());
     SetConnectionPoolManager(Aws::New<WinINetConnectionPoolMgr>(GetLogTag(),
         GetOpenHandle(), config.maxConnections, config.requestTimeoutMs, config.connectTimeoutMs));
@@ -114,6 +105,15 @@ void* WinINetSyncHttpClient::OpenRequest(const Aws::Http::HttpRequest& request, 
     HINTERNET hHttpRequest = HttpOpenRequestA(connection, HttpMethodMapper::GetNameForHttpMethod(request.GetMethod()),
         ss.str().c_str(), nullptr, nullptr, accept, requestFlags, 0);
     AWS_LOGSTREAM_DEBUG(GetLogTag(), "HttpOpenRequestA returned handle " << hHttpRequest);
+
+    if (!m_verifySSL)
+    {
+        AWS_LOG_WARN(GetLogTag(), "Turning ssl unknown ca verification off.");
+        DWORD flags = SECURITY_FLAG_IGNORE_UNKNOWN_CA | INTERNET_FLAG_IGNORE_CERT_CN_INVALID;
+
+        if (!InternetSetOptionA(hHttpRequest, INTERNET_OPTION_SECURITY_FLAGS, &flags, sizeof(flags)))
+            AWS_LOG_FATAL(GetLogTag(), "Failed to turn ssl cert ca verification off.");
+    }
 
     return hHttpRequest;
 }
