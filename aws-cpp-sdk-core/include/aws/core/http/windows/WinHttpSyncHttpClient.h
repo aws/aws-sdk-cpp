@@ -52,6 +52,8 @@ namespace Aws
             const char* GetLogTag() const override { return "WinHttpSyncHttpClient"; }
 
         private:
+            bool m_verifySSL;
+
             // WinHttp specific implementations
             void* OpenRequest(const Aws::Http::HttpRequest& request, void* connection, const Aws::StringStream& ss) const override;
             void DoAddHeaders(void* httpRequest, Aws::String& headerStr) const override;
