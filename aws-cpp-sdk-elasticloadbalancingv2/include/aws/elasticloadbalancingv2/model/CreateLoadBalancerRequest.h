@@ -42,50 +42,50 @@ namespace Model
 
   public:
     /**
-     * <p>The name of the load balancer.</p> <p>This name must be unique within your
-     * AWS account, can have a maximum of 32 characters, must contain only alphanumeric
+     * <p>The name of the load balancer.</p> <p>This name must be unique per region per
+     * account, can have a maximum of 32 characters, must contain only alphanumeric
      * characters or hyphens, and must not begin or end with a hyphen.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>The name of the load balancer.</p> <p>This name must be unique within your
-     * AWS account, can have a maximum of 32 characters, must contain only alphanumeric
+     * <p>The name of the load balancer.</p> <p>This name must be unique per region per
+     * account, can have a maximum of 32 characters, must contain only alphanumeric
      * characters or hyphens, and must not begin or end with a hyphen.</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>The name of the load balancer.</p> <p>This name must be unique within your
-     * AWS account, can have a maximum of 32 characters, must contain only alphanumeric
+     * <p>The name of the load balancer.</p> <p>This name must be unique per region per
+     * account, can have a maximum of 32 characters, must contain only alphanumeric
      * characters or hyphens, and must not begin or end with a hyphen.</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>The name of the load balancer.</p> <p>This name must be unique within your
-     * AWS account, can have a maximum of 32 characters, must contain only alphanumeric
+     * <p>The name of the load balancer.</p> <p>This name must be unique per region per
+     * account, can have a maximum of 32 characters, must contain only alphanumeric
      * characters or hyphens, and must not begin or end with a hyphen.</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>The name of the load balancer.</p> <p>This name must be unique within your
-     * AWS account, can have a maximum of 32 characters, must contain only alphanumeric
+     * <p>The name of the load balancer.</p> <p>This name must be unique per region per
+     * account, can have a maximum of 32 characters, must contain only alphanumeric
      * characters or hyphens, and must not begin or end with a hyphen.</p>
      */
     inline CreateLoadBalancerRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>The name of the load balancer.</p> <p>This name must be unique within your
-     * AWS account, can have a maximum of 32 characters, must contain only alphanumeric
+     * <p>The name of the load balancer.</p> <p>This name must be unique per region per
+     * account, can have a maximum of 32 characters, must contain only alphanumeric
      * characters or hyphens, and must not begin or end with a hyphen.</p>
      */
     inline CreateLoadBalancerRequest& WithName(Aws::String&& value) { SetName(value); return *this;}
 
     /**
-     * <p>The name of the load balancer.</p> <p>This name must be unique within your
-     * AWS account, can have a maximum of 32 characters, must contain only alphanumeric
+     * <p>The name of the load balancer.</p> <p>This name must be unique per region per
+     * account, can have a maximum of 32 characters, must contain only alphanumeric
      * characters or hyphens, and must not begin or end with a hyphen.</p>
      */
     inline CreateLoadBalancerRequest& WithName(const char* value) { SetName(value); return *this;}

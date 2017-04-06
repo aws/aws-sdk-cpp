@@ -501,6 +501,69 @@ namespace Model
      */
     inline ReplicationGroup& WithSnapshotWindow(const char* value) { SetSnapshotWindow(value); return *this;}
 
+    /**
+     * <p>A flag indicating whether or not this replication group is cluster enabled;
+     * i.e., whether its data can be partitioned across multiple shards (API/CLI: node
+     * groups).</p> <p>Valid values: <code>true</code> | <code>false</code> </p>
+     */
+    inline bool GetClusterEnabled() const{ return m_clusterEnabled; }
+
+    /**
+     * <p>A flag indicating whether or not this replication group is cluster enabled;
+     * i.e., whether its data can be partitioned across multiple shards (API/CLI: node
+     * groups).</p> <p>Valid values: <code>true</code> | <code>false</code> </p>
+     */
+    inline void SetClusterEnabled(bool value) { m_clusterEnabledHasBeenSet = true; m_clusterEnabled = value; }
+
+    /**
+     * <p>A flag indicating whether or not this replication group is cluster enabled;
+     * i.e., whether its data can be partitioned across multiple shards (API/CLI: node
+     * groups).</p> <p>Valid values: <code>true</code> | <code>false</code> </p>
+     */
+    inline ReplicationGroup& WithClusterEnabled(bool value) { SetClusterEnabled(value); return *this;}
+
+    /**
+     * <p>The name of the compute and memory capacity node type for each node in the
+     * replication group.</p>
+     */
+    inline const Aws::String& GetCacheNodeType() const{ return m_cacheNodeType; }
+
+    /**
+     * <p>The name of the compute and memory capacity node type for each node in the
+     * replication group.</p>
+     */
+    inline void SetCacheNodeType(const Aws::String& value) { m_cacheNodeTypeHasBeenSet = true; m_cacheNodeType = value; }
+
+    /**
+     * <p>The name of the compute and memory capacity node type for each node in the
+     * replication group.</p>
+     */
+    inline void SetCacheNodeType(Aws::String&& value) { m_cacheNodeTypeHasBeenSet = true; m_cacheNodeType = value; }
+
+    /**
+     * <p>The name of the compute and memory capacity node type for each node in the
+     * replication group.</p>
+     */
+    inline void SetCacheNodeType(const char* value) { m_cacheNodeTypeHasBeenSet = true; m_cacheNodeType.assign(value); }
+
+    /**
+     * <p>The name of the compute and memory capacity node type for each node in the
+     * replication group.</p>
+     */
+    inline ReplicationGroup& WithCacheNodeType(const Aws::String& value) { SetCacheNodeType(value); return *this;}
+
+    /**
+     * <p>The name of the compute and memory capacity node type for each node in the
+     * replication group.</p>
+     */
+    inline ReplicationGroup& WithCacheNodeType(Aws::String&& value) { SetCacheNodeType(value); return *this;}
+
+    /**
+     * <p>The name of the compute and memory capacity node type for each node in the
+     * replication group.</p>
+     */
+    inline ReplicationGroup& WithCacheNodeType(const char* value) { SetCacheNodeType(value); return *this;}
+
   private:
     Aws::String m_replicationGroupId;
     bool m_replicationGroupIdHasBeenSet;
@@ -524,6 +587,10 @@ namespace Model
     bool m_snapshotRetentionLimitHasBeenSet;
     Aws::String m_snapshotWindow;
     bool m_snapshotWindowHasBeenSet;
+    bool m_clusterEnabled;
+    bool m_clusterEnabledHasBeenSet;
+    Aws::String m_cacheNodeType;
+    bool m_cacheNodeTypeHasBeenSet;
   };
 
 } // namespace Model

@@ -42,7 +42,10 @@ ReplicationGroup::ReplicationGroup() :
     m_configurationEndpointHasBeenSet(false),
     m_snapshotRetentionLimit(0),
     m_snapshotRetentionLimitHasBeenSet(false),
-    m_snapshotWindowHasBeenSet(false)
+    m_snapshotWindowHasBeenSet(false),
+    m_clusterEnabled(false),
+    m_clusterEnabledHasBeenSet(false),
+    m_cacheNodeTypeHasBeenSet(false)
 {
 }
 
@@ -59,7 +62,10 @@ ReplicationGroup::ReplicationGroup(const XmlNode& xmlNode) :
     m_configurationEndpointHasBeenSet(false),
     m_snapshotRetentionLimit(0),
     m_snapshotRetentionLimitHasBeenSet(false),
-    m_snapshotWindowHasBeenSet(false)
+    m_snapshotWindowHasBeenSet(false),
+    m_clusterEnabled(false),
+    m_clusterEnabledHasBeenSet(false),
+    m_cacheNodeTypeHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -148,6 +154,18 @@ ReplicationGroup& ReplicationGroup::operator =(const XmlNode& xmlNode)
       m_snapshotWindow = StringUtils::Trim(snapshotWindowNode.GetText().c_str());
       m_snapshotWindowHasBeenSet = true;
     }
+    XmlNode clusterEnabledNode = resultNode.FirstChild("ClusterEnabled");
+    if(!clusterEnabledNode.IsNull())
+    {
+      m_clusterEnabled = StringUtils::ConvertToBool(StringUtils::Trim(clusterEnabledNode.GetText().c_str()).c_str());
+      m_clusterEnabledHasBeenSet = true;
+    }
+    XmlNode cacheNodeTypeNode = resultNode.FirstChild("CacheNodeType");
+    if(!cacheNodeTypeNode.IsNull())
+    {
+      m_cacheNodeType = StringUtils::Trim(cacheNodeTypeNode.GetText().c_str());
+      m_cacheNodeTypeHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -224,6 +242,16 @@ void ReplicationGroup::OutputToStream(Aws::OStream& oStream, const char* locatio
       oStream << location << index << locationValue << ".SnapshotWindow=" << StringUtils::URLEncode(m_snapshotWindow.c_str()) << "&";
   }
 
+  if(m_clusterEnabledHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".ClusterEnabled=" << std::boolalpha << m_clusterEnabled << "&";
+  }
+
+  if(m_cacheNodeTypeHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".CacheNodeType=" << StringUtils::URLEncode(m_cacheNodeType.c_str()) << "&";
+  }
+
 }
 
 void ReplicationGroup::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -285,6 +313,14 @@ void ReplicationGroup::OutputToStream(Aws::OStream& oStream, const char* locatio
   if(m_snapshotWindowHasBeenSet)
   {
       oStream << location << ".SnapshotWindow=" << StringUtils::URLEncode(m_snapshotWindow.c_str()) << "&";
+  }
+  if(m_clusterEnabledHasBeenSet)
+  {
+      oStream << location << ".ClusterEnabled=" << std::boolalpha << m_clusterEnabled << "&";
+  }
+  if(m_cacheNodeTypeHasBeenSet)
+  {
+      oStream << location << ".CacheNodeType=" << StringUtils::URLEncode(m_cacheNodeType.c_str()) << "&";
   }
 }
 

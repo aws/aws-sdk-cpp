@@ -247,30 +247,36 @@ namespace Model
     /**
      * <p>The number of clusters this replication group initially has.</p> <p>This
      * parameter is not used if there is more than one node group (shard). You should
-     * use <code>ReplicasPerNodeGroup</code> instead.</p> <p>If <code>Multi-AZ</code>
-     * is <code>enabled</code>, the value of this parameter must be at least 2.</p>
-     * <p>The maximum permitted value for <code>NumCacheClusters</code> is 6 (primary
-     * plus 5 replicas).</p>
+     * use <code>ReplicasPerNodeGroup</code> instead.</p> <p>If
+     * <code>AutomaticFailoverEnabled</code> is <code>true</code>, the value of this
+     * parameter must be at least 2. If <code>AutomaticFailoverEnabled</code> is
+     * <code>false</code> you can omit this parameter (it will default to 1), or you
+     * can explicitly set it to a value between 2 and 6.</p> <p>The maximum permitted
+     * value for <code>NumCacheClusters</code> is 6 (primary plus 5 replicas).</p>
      */
     inline int GetNumCacheClusters() const{ return m_numCacheClusters; }
 
     /**
      * <p>The number of clusters this replication group initially has.</p> <p>This
      * parameter is not used if there is more than one node group (shard). You should
-     * use <code>ReplicasPerNodeGroup</code> instead.</p> <p>If <code>Multi-AZ</code>
-     * is <code>enabled</code>, the value of this parameter must be at least 2.</p>
-     * <p>The maximum permitted value for <code>NumCacheClusters</code> is 6 (primary
-     * plus 5 replicas).</p>
+     * use <code>ReplicasPerNodeGroup</code> instead.</p> <p>If
+     * <code>AutomaticFailoverEnabled</code> is <code>true</code>, the value of this
+     * parameter must be at least 2. If <code>AutomaticFailoverEnabled</code> is
+     * <code>false</code> you can omit this parameter (it will default to 1), or you
+     * can explicitly set it to a value between 2 and 6.</p> <p>The maximum permitted
+     * value for <code>NumCacheClusters</code> is 6 (primary plus 5 replicas).</p>
      */
     inline void SetNumCacheClusters(int value) { m_numCacheClustersHasBeenSet = true; m_numCacheClusters = value; }
 
     /**
      * <p>The number of clusters this replication group initially has.</p> <p>This
      * parameter is not used if there is more than one node group (shard). You should
-     * use <code>ReplicasPerNodeGroup</code> instead.</p> <p>If <code>Multi-AZ</code>
-     * is <code>enabled</code>, the value of this parameter must be at least 2.</p>
-     * <p>The maximum permitted value for <code>NumCacheClusters</code> is 6 (primary
-     * plus 5 replicas).</p>
+     * use <code>ReplicasPerNodeGroup</code> instead.</p> <p>If
+     * <code>AutomaticFailoverEnabled</code> is <code>true</code>, the value of this
+     * parameter must be at least 2. If <code>AutomaticFailoverEnabled</code> is
+     * <code>false</code> you can omit this parameter (it will default to 1), or you
+     * can explicitly set it to a value between 2 and 6.</p> <p>The maximum permitted
+     * value for <code>NumCacheClusters</code> is 6 (primary plus 5 replicas).</p>
      */
     inline CreateReplicationGroupRequest& WithNumCacheClusters(int value) { SetNumCacheClusters(value); return *this;}
 
@@ -438,8 +444,8 @@ namespace Model
      * configuration has the following: Slots, PrimaryAvailabilityZone,
      * ReplicaAvailabilityZones, ReplicaCount.</p> <p>If you're creating a Redis
      * (cluster mode disabled) or a Redis (cluster mode enabled) replication group, you
-     * can use this parameter to configure one node group (shard) or you can omit this
-     * parameter.</p>
+     * can use this parameter to individually configure each node group (shard), or you
+     * can omit this parameter.</p>
      */
     inline const Aws::Vector<NodeGroupConfiguration>& GetNodeGroupConfiguration() const{ return m_nodeGroupConfiguration; }
 
@@ -448,8 +454,8 @@ namespace Model
      * configuration has the following: Slots, PrimaryAvailabilityZone,
      * ReplicaAvailabilityZones, ReplicaCount.</p> <p>If you're creating a Redis
      * (cluster mode disabled) or a Redis (cluster mode enabled) replication group, you
-     * can use this parameter to configure one node group (shard) or you can omit this
-     * parameter.</p>
+     * can use this parameter to individually configure each node group (shard), or you
+     * can omit this parameter.</p>
      */
     inline void SetNodeGroupConfiguration(const Aws::Vector<NodeGroupConfiguration>& value) { m_nodeGroupConfigurationHasBeenSet = true; m_nodeGroupConfiguration = value; }
 
@@ -458,8 +464,8 @@ namespace Model
      * configuration has the following: Slots, PrimaryAvailabilityZone,
      * ReplicaAvailabilityZones, ReplicaCount.</p> <p>If you're creating a Redis
      * (cluster mode disabled) or a Redis (cluster mode enabled) replication group, you
-     * can use this parameter to configure one node group (shard) or you can omit this
-     * parameter.</p>
+     * can use this parameter to individually configure each node group (shard), or you
+     * can omit this parameter.</p>
      */
     inline void SetNodeGroupConfiguration(Aws::Vector<NodeGroupConfiguration>&& value) { m_nodeGroupConfigurationHasBeenSet = true; m_nodeGroupConfiguration = value; }
 
@@ -468,8 +474,8 @@ namespace Model
      * configuration has the following: Slots, PrimaryAvailabilityZone,
      * ReplicaAvailabilityZones, ReplicaCount.</p> <p>If you're creating a Redis
      * (cluster mode disabled) or a Redis (cluster mode enabled) replication group, you
-     * can use this parameter to configure one node group (shard) or you can omit this
-     * parameter.</p>
+     * can use this parameter to individually configure each node group (shard), or you
+     * can omit this parameter.</p>
      */
     inline CreateReplicationGroupRequest& WithNodeGroupConfiguration(const Aws::Vector<NodeGroupConfiguration>& value) { SetNodeGroupConfiguration(value); return *this;}
 
@@ -478,8 +484,8 @@ namespace Model
      * configuration has the following: Slots, PrimaryAvailabilityZone,
      * ReplicaAvailabilityZones, ReplicaCount.</p> <p>If you're creating a Redis
      * (cluster mode disabled) or a Redis (cluster mode enabled) replication group, you
-     * can use this parameter to configure one node group (shard) or you can omit this
-     * parameter.</p>
+     * can use this parameter to individually configure each node group (shard), or you
+     * can omit this parameter.</p>
      */
     inline CreateReplicationGroupRequest& WithNodeGroupConfiguration(Aws::Vector<NodeGroupConfiguration>&& value) { SetNodeGroupConfiguration(value); return *this;}
 
@@ -488,8 +494,8 @@ namespace Model
      * configuration has the following: Slots, PrimaryAvailabilityZone,
      * ReplicaAvailabilityZones, ReplicaCount.</p> <p>If you're creating a Redis
      * (cluster mode disabled) or a Redis (cluster mode enabled) replication group, you
-     * can use this parameter to configure one node group (shard) or you can omit this
-     * parameter.</p>
+     * can use this parameter to individually configure each node group (shard), or you
+     * can omit this parameter.</p>
      */
     inline CreateReplicationGroupRequest& AddNodeGroupConfiguration(const NodeGroupConfiguration& value) { m_nodeGroupConfigurationHasBeenSet = true; m_nodeGroupConfiguration.push_back(value); return *this; }
 
@@ -498,8 +504,8 @@ namespace Model
      * configuration has the following: Slots, PrimaryAvailabilityZone,
      * ReplicaAvailabilityZones, ReplicaCount.</p> <p>If you're creating a Redis
      * (cluster mode disabled) or a Redis (cluster mode enabled) replication group, you
-     * can use this parameter to configure one node group (shard) or you can omit this
-     * parameter.</p>
+     * can use this parameter to individually configure each node group (shard), or you
+     * can omit this parameter.</p>
      */
     inline CreateReplicationGroupRequest& AddNodeGroupConfiguration(NodeGroupConfiguration&& value) { m_nodeGroupConfigurationHasBeenSet = true; m_nodeGroupConfiguration.push_back(value); return *this; }
 
@@ -1198,96 +1204,104 @@ namespace Model
     /**
      * <p>A list of Amazon Resource Names (ARN) that uniquely identify the Redis RDB
      * snapshot files stored in Amazon S3. The snapshot files are used to populate the
-     * replication group. The Amazon S3 object name in the ARN cannot contain any
-     * commas. The list must match the number of node groups (shards) in the
-     * replication group, which means you cannot repartition.</p> <note> <p>This
-     * parameter is only valid if the <code>Engine</code> parameter is
-     * <code>redis</code>.</p> </note> <p>Example of an Amazon S3 ARN:
-     * <code>arn:aws:s3:::my_bucket/snapshot1.rdb</code> </p>
+     * new replication group. The Amazon S3 object name in the ARN cannot contain any
+     * commas. The new replication group will have the number of node groups (console:
+     * shards) specified by the parameter <i>NumNodeGroups</i> or the number of node
+     * groups configured by <i>NodeGroupConfiguration</i> regardless of the number of
+     * ARNs specified here.</p> <note> <p>This parameter is only valid if the
+     * <code>Engine</code> parameter is <code>redis</code>.</p> </note> <p>Example of
+     * an Amazon S3 ARN: <code>arn:aws:s3:::my_bucket/snapshot1.rdb</code> </p>
      */
     inline const Aws::Vector<Aws::String>& GetSnapshotArns() const{ return m_snapshotArns; }
 
     /**
      * <p>A list of Amazon Resource Names (ARN) that uniquely identify the Redis RDB
      * snapshot files stored in Amazon S3. The snapshot files are used to populate the
-     * replication group. The Amazon S3 object name in the ARN cannot contain any
-     * commas. The list must match the number of node groups (shards) in the
-     * replication group, which means you cannot repartition.</p> <note> <p>This
-     * parameter is only valid if the <code>Engine</code> parameter is
-     * <code>redis</code>.</p> </note> <p>Example of an Amazon S3 ARN:
-     * <code>arn:aws:s3:::my_bucket/snapshot1.rdb</code> </p>
+     * new replication group. The Amazon S3 object name in the ARN cannot contain any
+     * commas. The new replication group will have the number of node groups (console:
+     * shards) specified by the parameter <i>NumNodeGroups</i> or the number of node
+     * groups configured by <i>NodeGroupConfiguration</i> regardless of the number of
+     * ARNs specified here.</p> <note> <p>This parameter is only valid if the
+     * <code>Engine</code> parameter is <code>redis</code>.</p> </note> <p>Example of
+     * an Amazon S3 ARN: <code>arn:aws:s3:::my_bucket/snapshot1.rdb</code> </p>
      */
     inline void SetSnapshotArns(const Aws::Vector<Aws::String>& value) { m_snapshotArnsHasBeenSet = true; m_snapshotArns = value; }
 
     /**
      * <p>A list of Amazon Resource Names (ARN) that uniquely identify the Redis RDB
      * snapshot files stored in Amazon S3. The snapshot files are used to populate the
-     * replication group. The Amazon S3 object name in the ARN cannot contain any
-     * commas. The list must match the number of node groups (shards) in the
-     * replication group, which means you cannot repartition.</p> <note> <p>This
-     * parameter is only valid if the <code>Engine</code> parameter is
-     * <code>redis</code>.</p> </note> <p>Example of an Amazon S3 ARN:
-     * <code>arn:aws:s3:::my_bucket/snapshot1.rdb</code> </p>
+     * new replication group. The Amazon S3 object name in the ARN cannot contain any
+     * commas. The new replication group will have the number of node groups (console:
+     * shards) specified by the parameter <i>NumNodeGroups</i> or the number of node
+     * groups configured by <i>NodeGroupConfiguration</i> regardless of the number of
+     * ARNs specified here.</p> <note> <p>This parameter is only valid if the
+     * <code>Engine</code> parameter is <code>redis</code>.</p> </note> <p>Example of
+     * an Amazon S3 ARN: <code>arn:aws:s3:::my_bucket/snapshot1.rdb</code> </p>
      */
     inline void SetSnapshotArns(Aws::Vector<Aws::String>&& value) { m_snapshotArnsHasBeenSet = true; m_snapshotArns = value; }
 
     /**
      * <p>A list of Amazon Resource Names (ARN) that uniquely identify the Redis RDB
      * snapshot files stored in Amazon S3. The snapshot files are used to populate the
-     * replication group. The Amazon S3 object name in the ARN cannot contain any
-     * commas. The list must match the number of node groups (shards) in the
-     * replication group, which means you cannot repartition.</p> <note> <p>This
-     * parameter is only valid if the <code>Engine</code> parameter is
-     * <code>redis</code>.</p> </note> <p>Example of an Amazon S3 ARN:
-     * <code>arn:aws:s3:::my_bucket/snapshot1.rdb</code> </p>
+     * new replication group. The Amazon S3 object name in the ARN cannot contain any
+     * commas. The new replication group will have the number of node groups (console:
+     * shards) specified by the parameter <i>NumNodeGroups</i> or the number of node
+     * groups configured by <i>NodeGroupConfiguration</i> regardless of the number of
+     * ARNs specified here.</p> <note> <p>This parameter is only valid if the
+     * <code>Engine</code> parameter is <code>redis</code>.</p> </note> <p>Example of
+     * an Amazon S3 ARN: <code>arn:aws:s3:::my_bucket/snapshot1.rdb</code> </p>
      */
     inline CreateReplicationGroupRequest& WithSnapshotArns(const Aws::Vector<Aws::String>& value) { SetSnapshotArns(value); return *this;}
 
     /**
      * <p>A list of Amazon Resource Names (ARN) that uniquely identify the Redis RDB
      * snapshot files stored in Amazon S3. The snapshot files are used to populate the
-     * replication group. The Amazon S3 object name in the ARN cannot contain any
-     * commas. The list must match the number of node groups (shards) in the
-     * replication group, which means you cannot repartition.</p> <note> <p>This
-     * parameter is only valid if the <code>Engine</code> parameter is
-     * <code>redis</code>.</p> </note> <p>Example of an Amazon S3 ARN:
-     * <code>arn:aws:s3:::my_bucket/snapshot1.rdb</code> </p>
+     * new replication group. The Amazon S3 object name in the ARN cannot contain any
+     * commas. The new replication group will have the number of node groups (console:
+     * shards) specified by the parameter <i>NumNodeGroups</i> or the number of node
+     * groups configured by <i>NodeGroupConfiguration</i> regardless of the number of
+     * ARNs specified here.</p> <note> <p>This parameter is only valid if the
+     * <code>Engine</code> parameter is <code>redis</code>.</p> </note> <p>Example of
+     * an Amazon S3 ARN: <code>arn:aws:s3:::my_bucket/snapshot1.rdb</code> </p>
      */
     inline CreateReplicationGroupRequest& WithSnapshotArns(Aws::Vector<Aws::String>&& value) { SetSnapshotArns(value); return *this;}
 
     /**
      * <p>A list of Amazon Resource Names (ARN) that uniquely identify the Redis RDB
      * snapshot files stored in Amazon S3. The snapshot files are used to populate the
-     * replication group. The Amazon S3 object name in the ARN cannot contain any
-     * commas. The list must match the number of node groups (shards) in the
-     * replication group, which means you cannot repartition.</p> <note> <p>This
-     * parameter is only valid if the <code>Engine</code> parameter is
-     * <code>redis</code>.</p> </note> <p>Example of an Amazon S3 ARN:
-     * <code>arn:aws:s3:::my_bucket/snapshot1.rdb</code> </p>
+     * new replication group. The Amazon S3 object name in the ARN cannot contain any
+     * commas. The new replication group will have the number of node groups (console:
+     * shards) specified by the parameter <i>NumNodeGroups</i> or the number of node
+     * groups configured by <i>NodeGroupConfiguration</i> regardless of the number of
+     * ARNs specified here.</p> <note> <p>This parameter is only valid if the
+     * <code>Engine</code> parameter is <code>redis</code>.</p> </note> <p>Example of
+     * an Amazon S3 ARN: <code>arn:aws:s3:::my_bucket/snapshot1.rdb</code> </p>
      */
     inline CreateReplicationGroupRequest& AddSnapshotArns(const Aws::String& value) { m_snapshotArnsHasBeenSet = true; m_snapshotArns.push_back(value); return *this; }
 
     /**
      * <p>A list of Amazon Resource Names (ARN) that uniquely identify the Redis RDB
      * snapshot files stored in Amazon S3. The snapshot files are used to populate the
-     * replication group. The Amazon S3 object name in the ARN cannot contain any
-     * commas. The list must match the number of node groups (shards) in the
-     * replication group, which means you cannot repartition.</p> <note> <p>This
-     * parameter is only valid if the <code>Engine</code> parameter is
-     * <code>redis</code>.</p> </note> <p>Example of an Amazon S3 ARN:
-     * <code>arn:aws:s3:::my_bucket/snapshot1.rdb</code> </p>
+     * new replication group. The Amazon S3 object name in the ARN cannot contain any
+     * commas. The new replication group will have the number of node groups (console:
+     * shards) specified by the parameter <i>NumNodeGroups</i> or the number of node
+     * groups configured by <i>NodeGroupConfiguration</i> regardless of the number of
+     * ARNs specified here.</p> <note> <p>This parameter is only valid if the
+     * <code>Engine</code> parameter is <code>redis</code>.</p> </note> <p>Example of
+     * an Amazon S3 ARN: <code>arn:aws:s3:::my_bucket/snapshot1.rdb</code> </p>
      */
     inline CreateReplicationGroupRequest& AddSnapshotArns(Aws::String&& value) { m_snapshotArnsHasBeenSet = true; m_snapshotArns.push_back(value); return *this; }
 
     /**
      * <p>A list of Amazon Resource Names (ARN) that uniquely identify the Redis RDB
      * snapshot files stored in Amazon S3. The snapshot files are used to populate the
-     * replication group. The Amazon S3 object name in the ARN cannot contain any
-     * commas. The list must match the number of node groups (shards) in the
-     * replication group, which means you cannot repartition.</p> <note> <p>This
-     * parameter is only valid if the <code>Engine</code> parameter is
-     * <code>redis</code>.</p> </note> <p>Example of an Amazon S3 ARN:
-     * <code>arn:aws:s3:::my_bucket/snapshot1.rdb</code> </p>
+     * new replication group. The Amazon S3 object name in the ARN cannot contain any
+     * commas. The new replication group will have the number of node groups (console:
+     * shards) specified by the parameter <i>NumNodeGroups</i> or the number of node
+     * groups configured by <i>NodeGroupConfiguration</i> regardless of the number of
+     * ARNs specified here.</p> <note> <p>This parameter is only valid if the
+     * <code>Engine</code> parameter is <code>redis</code>.</p> </note> <p>Example of
+     * an Amazon S3 ARN: <code>arn:aws:s3:::my_bucket/snapshot1.rdb</code> </p>
      */
     inline CreateReplicationGroupRequest& AddSnapshotArns(const char* value) { m_snapshotArnsHasBeenSet = true; m_snapshotArns.push_back(value); return *this; }
 

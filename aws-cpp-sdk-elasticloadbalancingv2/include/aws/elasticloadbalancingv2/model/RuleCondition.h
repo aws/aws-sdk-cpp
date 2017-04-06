@@ -48,125 +48,188 @@ namespace Model
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
     /**
-     * <p>The only possible value is <code>path-pattern</code>.</p>
+     * <p>The name of the field. The possible values are <code>host-header</code> and
+     * <code>path-pattern</code>.</p>
      */
     inline const Aws::String& GetField() const{ return m_field; }
 
     /**
-     * <p>The only possible value is <code>path-pattern</code>.</p>
+     * <p>The name of the field. The possible values are <code>host-header</code> and
+     * <code>path-pattern</code>.</p>
      */
     inline void SetField(const Aws::String& value) { m_fieldHasBeenSet = true; m_field = value; }
 
     /**
-     * <p>The only possible value is <code>path-pattern</code>.</p>
+     * <p>The name of the field. The possible values are <code>host-header</code> and
+     * <code>path-pattern</code>.</p>
      */
     inline void SetField(Aws::String&& value) { m_fieldHasBeenSet = true; m_field = value; }
 
     /**
-     * <p>The only possible value is <code>path-pattern</code>.</p>
+     * <p>The name of the field. The possible values are <code>host-header</code> and
+     * <code>path-pattern</code>.</p>
      */
     inline void SetField(const char* value) { m_fieldHasBeenSet = true; m_field.assign(value); }
 
     /**
-     * <p>The only possible value is <code>path-pattern</code>.</p>
+     * <p>The name of the field. The possible values are <code>host-header</code> and
+     * <code>path-pattern</code>.</p>
      */
     inline RuleCondition& WithField(const Aws::String& value) { SetField(value); return *this;}
 
     /**
-     * <p>The only possible value is <code>path-pattern</code>.</p>
+     * <p>The name of the field. The possible values are <code>host-header</code> and
+     * <code>path-pattern</code>.</p>
      */
     inline RuleCondition& WithField(Aws::String&& value) { SetField(value); return *this;}
 
     /**
-     * <p>The only possible value is <code>path-pattern</code>.</p>
+     * <p>The name of the field. The possible values are <code>host-header</code> and
+     * <code>path-pattern</code>.</p>
      */
     inline RuleCondition& WithField(const char* value) { SetField(value); return *this;}
 
     /**
-     * <p>The path pattern. You can specify a single path pattern.</p> <p>A path
-     * pattern is case sensitive, can be up to 128 characters in length, and can
-     * contain any of the following characters. Note that you can include up to three
-     * wildcard characters in a path pattern.</p> <ul> <li> <p>A-Z, a-z, 0-9</p> </li>
-     * <li> <p>_ - . $ / ~ " ' @ : +</p> </li> <li> <p>&amp; (using &amp;amp;)</p>
-     * </li> <li> <p>* (matches 0 or more characters)</p> </li> <li> <p>? (matches
-     * exactly 1 character)</p> </li> </ul>
+     * <p>The condition value.</p> <p>If the field name is <code>host-header</code>,
+     * you can specify a single host name (for example, my.example.com). A host name is
+     * case insensitive, can be up to 128 characters in length, and can contain any of
+     * the following characters. Note that you can include up to three wildcard
+     * characters.</p> <ul> <li> <p>A-Z, a-z, 0-9</p> </li> <li> <p>- .</p> </li> <li>
+     * <p>* (matches 0 or more characters)</p> </li> <li> <p>? (matches exactly 1
+     * character)</p> </li> </ul> <p>If the field name is <code>path-pattern</code>,
+     * you can specify a single path pattern (for example, /img/ *). A path pattern is
+     * case sensitive, can be up to 128 characters in length, and can contain any of
+     * the following characters. Note that you can include up to three wildcard
+     * characters.</p> <ul> <li> <p>A-Z, a-z, 0-9</p> </li> <li> <p>_ - . $ / ~ " ' @ :
+     * +</p> </li> <li> <p>&amp; (using &amp;amp;)</p> </li> <li> <p>* (matches 0 or
+     * more characters)</p> </li> <li> <p>? (matches exactly 1 character)</p> </li>
+     * </ul>
      */
     inline const Aws::Vector<Aws::String>& GetValues() const{ return m_values; }
 
     /**
-     * <p>The path pattern. You can specify a single path pattern.</p> <p>A path
-     * pattern is case sensitive, can be up to 128 characters in length, and can
-     * contain any of the following characters. Note that you can include up to three
-     * wildcard characters in a path pattern.</p> <ul> <li> <p>A-Z, a-z, 0-9</p> </li>
-     * <li> <p>_ - . $ / ~ " ' @ : +</p> </li> <li> <p>&amp; (using &amp;amp;)</p>
-     * </li> <li> <p>* (matches 0 or more characters)</p> </li> <li> <p>? (matches
-     * exactly 1 character)</p> </li> </ul>
+     * <p>The condition value.</p> <p>If the field name is <code>host-header</code>,
+     * you can specify a single host name (for example, my.example.com). A host name is
+     * case insensitive, can be up to 128 characters in length, and can contain any of
+     * the following characters. Note that you can include up to three wildcard
+     * characters.</p> <ul> <li> <p>A-Z, a-z, 0-9</p> </li> <li> <p>- .</p> </li> <li>
+     * <p>* (matches 0 or more characters)</p> </li> <li> <p>? (matches exactly 1
+     * character)</p> </li> </ul> <p>If the field name is <code>path-pattern</code>,
+     * you can specify a single path pattern (for example, /img/ *). A path pattern is
+     * case sensitive, can be up to 128 characters in length, and can contain any of
+     * the following characters. Note that you can include up to three wildcard
+     * characters.</p> <ul> <li> <p>A-Z, a-z, 0-9</p> </li> <li> <p>_ - . $ / ~ " ' @ :
+     * +</p> </li> <li> <p>&amp; (using &amp;amp;)</p> </li> <li> <p>* (matches 0 or
+     * more characters)</p> </li> <li> <p>? (matches exactly 1 character)</p> </li>
+     * </ul>
      */
     inline void SetValues(const Aws::Vector<Aws::String>& value) { m_valuesHasBeenSet = true; m_values = value; }
 
     /**
-     * <p>The path pattern. You can specify a single path pattern.</p> <p>A path
-     * pattern is case sensitive, can be up to 128 characters in length, and can
-     * contain any of the following characters. Note that you can include up to three
-     * wildcard characters in a path pattern.</p> <ul> <li> <p>A-Z, a-z, 0-9</p> </li>
-     * <li> <p>_ - . $ / ~ " ' @ : +</p> </li> <li> <p>&amp; (using &amp;amp;)</p>
-     * </li> <li> <p>* (matches 0 or more characters)</p> </li> <li> <p>? (matches
-     * exactly 1 character)</p> </li> </ul>
+     * <p>The condition value.</p> <p>If the field name is <code>host-header</code>,
+     * you can specify a single host name (for example, my.example.com). A host name is
+     * case insensitive, can be up to 128 characters in length, and can contain any of
+     * the following characters. Note that you can include up to three wildcard
+     * characters.</p> <ul> <li> <p>A-Z, a-z, 0-9</p> </li> <li> <p>- .</p> </li> <li>
+     * <p>* (matches 0 or more characters)</p> </li> <li> <p>? (matches exactly 1
+     * character)</p> </li> </ul> <p>If the field name is <code>path-pattern</code>,
+     * you can specify a single path pattern (for example, /img/ *). A path pattern is
+     * case sensitive, can be up to 128 characters in length, and can contain any of
+     * the following characters. Note that you can include up to three wildcard
+     * characters.</p> <ul> <li> <p>A-Z, a-z, 0-9</p> </li> <li> <p>_ - . $ / ~ " ' @ :
+     * +</p> </li> <li> <p>&amp; (using &amp;amp;)</p> </li> <li> <p>* (matches 0 or
+     * more characters)</p> </li> <li> <p>? (matches exactly 1 character)</p> </li>
+     * </ul>
      */
     inline void SetValues(Aws::Vector<Aws::String>&& value) { m_valuesHasBeenSet = true; m_values = value; }
 
     /**
-     * <p>The path pattern. You can specify a single path pattern.</p> <p>A path
-     * pattern is case sensitive, can be up to 128 characters in length, and can
-     * contain any of the following characters. Note that you can include up to three
-     * wildcard characters in a path pattern.</p> <ul> <li> <p>A-Z, a-z, 0-9</p> </li>
-     * <li> <p>_ - . $ / ~ " ' @ : +</p> </li> <li> <p>&amp; (using &amp;amp;)</p>
-     * </li> <li> <p>* (matches 0 or more characters)</p> </li> <li> <p>? (matches
-     * exactly 1 character)</p> </li> </ul>
+     * <p>The condition value.</p> <p>If the field name is <code>host-header</code>,
+     * you can specify a single host name (for example, my.example.com). A host name is
+     * case insensitive, can be up to 128 characters in length, and can contain any of
+     * the following characters. Note that you can include up to three wildcard
+     * characters.</p> <ul> <li> <p>A-Z, a-z, 0-9</p> </li> <li> <p>- .</p> </li> <li>
+     * <p>* (matches 0 or more characters)</p> </li> <li> <p>? (matches exactly 1
+     * character)</p> </li> </ul> <p>If the field name is <code>path-pattern</code>,
+     * you can specify a single path pattern (for example, /img/ *). A path pattern is
+     * case sensitive, can be up to 128 characters in length, and can contain any of
+     * the following characters. Note that you can include up to three wildcard
+     * characters.</p> <ul> <li> <p>A-Z, a-z, 0-9</p> </li> <li> <p>_ - . $ / ~ " ' @ :
+     * +</p> </li> <li> <p>&amp; (using &amp;amp;)</p> </li> <li> <p>* (matches 0 or
+     * more characters)</p> </li> <li> <p>? (matches exactly 1 character)</p> </li>
+     * </ul>
      */
     inline RuleCondition& WithValues(const Aws::Vector<Aws::String>& value) { SetValues(value); return *this;}
 
     /**
-     * <p>The path pattern. You can specify a single path pattern.</p> <p>A path
-     * pattern is case sensitive, can be up to 128 characters in length, and can
-     * contain any of the following characters. Note that you can include up to three
-     * wildcard characters in a path pattern.</p> <ul> <li> <p>A-Z, a-z, 0-9</p> </li>
-     * <li> <p>_ - . $ / ~ " ' @ : +</p> </li> <li> <p>&amp; (using &amp;amp;)</p>
-     * </li> <li> <p>* (matches 0 or more characters)</p> </li> <li> <p>? (matches
-     * exactly 1 character)</p> </li> </ul>
+     * <p>The condition value.</p> <p>If the field name is <code>host-header</code>,
+     * you can specify a single host name (for example, my.example.com). A host name is
+     * case insensitive, can be up to 128 characters in length, and can contain any of
+     * the following characters. Note that you can include up to three wildcard
+     * characters.</p> <ul> <li> <p>A-Z, a-z, 0-9</p> </li> <li> <p>- .</p> </li> <li>
+     * <p>* (matches 0 or more characters)</p> </li> <li> <p>? (matches exactly 1
+     * character)</p> </li> </ul> <p>If the field name is <code>path-pattern</code>,
+     * you can specify a single path pattern (for example, /img/ *). A path pattern is
+     * case sensitive, can be up to 128 characters in length, and can contain any of
+     * the following characters. Note that you can include up to three wildcard
+     * characters.</p> <ul> <li> <p>A-Z, a-z, 0-9</p> </li> <li> <p>_ - . $ / ~ " ' @ :
+     * +</p> </li> <li> <p>&amp; (using &amp;amp;)</p> </li> <li> <p>* (matches 0 or
+     * more characters)</p> </li> <li> <p>? (matches exactly 1 character)</p> </li>
+     * </ul>
      */
     inline RuleCondition& WithValues(Aws::Vector<Aws::String>&& value) { SetValues(value); return *this;}
 
     /**
-     * <p>The path pattern. You can specify a single path pattern.</p> <p>A path
-     * pattern is case sensitive, can be up to 128 characters in length, and can
-     * contain any of the following characters. Note that you can include up to three
-     * wildcard characters in a path pattern.</p> <ul> <li> <p>A-Z, a-z, 0-9</p> </li>
-     * <li> <p>_ - . $ / ~ " ' @ : +</p> </li> <li> <p>&amp; (using &amp;amp;)</p>
-     * </li> <li> <p>* (matches 0 or more characters)</p> </li> <li> <p>? (matches
-     * exactly 1 character)</p> </li> </ul>
+     * <p>The condition value.</p> <p>If the field name is <code>host-header</code>,
+     * you can specify a single host name (for example, my.example.com). A host name is
+     * case insensitive, can be up to 128 characters in length, and can contain any of
+     * the following characters. Note that you can include up to three wildcard
+     * characters.</p> <ul> <li> <p>A-Z, a-z, 0-9</p> </li> <li> <p>- .</p> </li> <li>
+     * <p>* (matches 0 or more characters)</p> </li> <li> <p>? (matches exactly 1
+     * character)</p> </li> </ul> <p>If the field name is <code>path-pattern</code>,
+     * you can specify a single path pattern (for example, /img/ *). A path pattern is
+     * case sensitive, can be up to 128 characters in length, and can contain any of
+     * the following characters. Note that you can include up to three wildcard
+     * characters.</p> <ul> <li> <p>A-Z, a-z, 0-9</p> </li> <li> <p>_ - . $ / ~ " ' @ :
+     * +</p> </li> <li> <p>&amp; (using &amp;amp;)</p> </li> <li> <p>* (matches 0 or
+     * more characters)</p> </li> <li> <p>? (matches exactly 1 character)</p> </li>
+     * </ul>
      */
     inline RuleCondition& AddValues(const Aws::String& value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
 
     /**
-     * <p>The path pattern. You can specify a single path pattern.</p> <p>A path
-     * pattern is case sensitive, can be up to 128 characters in length, and can
-     * contain any of the following characters. Note that you can include up to three
-     * wildcard characters in a path pattern.</p> <ul> <li> <p>A-Z, a-z, 0-9</p> </li>
-     * <li> <p>_ - . $ / ~ " ' @ : +</p> </li> <li> <p>&amp; (using &amp;amp;)</p>
-     * </li> <li> <p>* (matches 0 or more characters)</p> </li> <li> <p>? (matches
-     * exactly 1 character)</p> </li> </ul>
+     * <p>The condition value.</p> <p>If the field name is <code>host-header</code>,
+     * you can specify a single host name (for example, my.example.com). A host name is
+     * case insensitive, can be up to 128 characters in length, and can contain any of
+     * the following characters. Note that you can include up to three wildcard
+     * characters.</p> <ul> <li> <p>A-Z, a-z, 0-9</p> </li> <li> <p>- .</p> </li> <li>
+     * <p>* (matches 0 or more characters)</p> </li> <li> <p>? (matches exactly 1
+     * character)</p> </li> </ul> <p>If the field name is <code>path-pattern</code>,
+     * you can specify a single path pattern (for example, /img/ *). A path pattern is
+     * case sensitive, can be up to 128 characters in length, and can contain any of
+     * the following characters. Note that you can include up to three wildcard
+     * characters.</p> <ul> <li> <p>A-Z, a-z, 0-9</p> </li> <li> <p>_ - . $ / ~ " ' @ :
+     * +</p> </li> <li> <p>&amp; (using &amp;amp;)</p> </li> <li> <p>* (matches 0 or
+     * more characters)</p> </li> <li> <p>? (matches exactly 1 character)</p> </li>
+     * </ul>
      */
     inline RuleCondition& AddValues(Aws::String&& value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
 
     /**
-     * <p>The path pattern. You can specify a single path pattern.</p> <p>A path
-     * pattern is case sensitive, can be up to 128 characters in length, and can
-     * contain any of the following characters. Note that you can include up to three
-     * wildcard characters in a path pattern.</p> <ul> <li> <p>A-Z, a-z, 0-9</p> </li>
-     * <li> <p>_ - . $ / ~ " ' @ : +</p> </li> <li> <p>&amp; (using &amp;amp;)</p>
-     * </li> <li> <p>* (matches 0 or more characters)</p> </li> <li> <p>? (matches
-     * exactly 1 character)</p> </li> </ul>
+     * <p>The condition value.</p> <p>If the field name is <code>host-header</code>,
+     * you can specify a single host name (for example, my.example.com). A host name is
+     * case insensitive, can be up to 128 characters in length, and can contain any of
+     * the following characters. Note that you can include up to three wildcard
+     * characters.</p> <ul> <li> <p>A-Z, a-z, 0-9</p> </li> <li> <p>- .</p> </li> <li>
+     * <p>* (matches 0 or more characters)</p> </li> <li> <p>? (matches exactly 1
+     * character)</p> </li> </ul> <p>If the field name is <code>path-pattern</code>,
+     * you can specify a single path pattern (for example, /img/ *). A path pattern is
+     * case sensitive, can be up to 128 characters in length, and can contain any of
+     * the following characters. Note that you can include up to three wildcard
+     * characters.</p> <ul> <li> <p>A-Z, a-z, 0-9</p> </li> <li> <p>_ - . $ / ~ " ' @ :
+     * +</p> </li> <li> <p>&amp; (using &amp;amp;)</p> </li> <li> <p>* (matches 0 or
+     * more characters)</p> </li> <li> <p>? (matches exactly 1 character)</p> </li>
+     * </ul>
      */
     inline RuleCondition& AddValues(const char* value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
 

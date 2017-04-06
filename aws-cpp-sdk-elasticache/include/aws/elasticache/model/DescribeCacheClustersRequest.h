@@ -171,22 +171,49 @@ namespace Model
     inline DescribeCacheClustersRequest& WithMarker(const char* value) { SetMarker(value); return *this;}
 
     /**
-     * <p>An optional flag that can be included in the DescribeCacheCluster request to
-     * retrieve information about the individual cache nodes.</p>
+     * <p>An optional flag that can be included in the
+     * <code>DescribeCacheCluster</code> request to retrieve information about the
+     * individual cache nodes.</p>
      */
     inline bool GetShowCacheNodeInfo() const{ return m_showCacheNodeInfo; }
 
     /**
-     * <p>An optional flag that can be included in the DescribeCacheCluster request to
-     * retrieve information about the individual cache nodes.</p>
+     * <p>An optional flag that can be included in the
+     * <code>DescribeCacheCluster</code> request to retrieve information about the
+     * individual cache nodes.</p>
      */
     inline void SetShowCacheNodeInfo(bool value) { m_showCacheNodeInfoHasBeenSet = true; m_showCacheNodeInfo = value; }
 
     /**
-     * <p>An optional flag that can be included in the DescribeCacheCluster request to
-     * retrieve information about the individual cache nodes.</p>
+     * <p>An optional flag that can be included in the
+     * <code>DescribeCacheCluster</code> request to retrieve information about the
+     * individual cache nodes.</p>
      */
     inline DescribeCacheClustersRequest& WithShowCacheNodeInfo(bool value) { SetShowCacheNodeInfo(value); return *this;}
+
+    /**
+     * <p>An optional flag that can be included in the
+     * <code>DescribeCacheCluster</code> request to show only nodes (API/CLI: clusters)
+     * that are not members of a replication group. In practice, this mean Memcached
+     * and single node Redis clusters.</p>
+     */
+    inline bool GetShowCacheClustersNotInReplicationGroups() const{ return m_showCacheClustersNotInReplicationGroups; }
+
+    /**
+     * <p>An optional flag that can be included in the
+     * <code>DescribeCacheCluster</code> request to show only nodes (API/CLI: clusters)
+     * that are not members of a replication group. In practice, this mean Memcached
+     * and single node Redis clusters.</p>
+     */
+    inline void SetShowCacheClustersNotInReplicationGroups(bool value) { m_showCacheClustersNotInReplicationGroupsHasBeenSet = true; m_showCacheClustersNotInReplicationGroups = value; }
+
+    /**
+     * <p>An optional flag that can be included in the
+     * <code>DescribeCacheCluster</code> request to show only nodes (API/CLI: clusters)
+     * that are not members of a replication group. In practice, this mean Memcached
+     * and single node Redis clusters.</p>
+     */
+    inline DescribeCacheClustersRequest& WithShowCacheClustersNotInReplicationGroups(bool value) { SetShowCacheClustersNotInReplicationGroups(value); return *this;}
 
   private:
     Aws::String m_cacheClusterId;
@@ -197,6 +224,8 @@ namespace Model
     bool m_markerHasBeenSet;
     bool m_showCacheNodeInfo;
     bool m_showCacheNodeInfoHasBeenSet;
+    bool m_showCacheClustersNotInReplicationGroups;
+    bool m_showCacheClustersNotInReplicationGroupsHasBeenSet;
   };
 
 } // namespace Model

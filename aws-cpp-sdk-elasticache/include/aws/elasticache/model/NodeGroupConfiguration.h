@@ -51,50 +51,50 @@ namespace Model
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
     /**
-     * <p>A string that specifies the keyspaces as a series of comma separated values.
-     * Keyspaces are 0 to 16,383. The string is in the format
+     * <p>A string that specifies the keyspace for a particular node group. Keyspaces
+     * range from 0 to 16,383. The string is in the format
      * <code>startkey-endkey</code>.</p> <p>Example: <code>"0-3999"</code> </p>
      */
     inline const Aws::String& GetSlots() const{ return m_slots; }
 
     /**
-     * <p>A string that specifies the keyspaces as a series of comma separated values.
-     * Keyspaces are 0 to 16,383. The string is in the format
+     * <p>A string that specifies the keyspace for a particular node group. Keyspaces
+     * range from 0 to 16,383. The string is in the format
      * <code>startkey-endkey</code>.</p> <p>Example: <code>"0-3999"</code> </p>
      */
     inline void SetSlots(const Aws::String& value) { m_slotsHasBeenSet = true; m_slots = value; }
 
     /**
-     * <p>A string that specifies the keyspaces as a series of comma separated values.
-     * Keyspaces are 0 to 16,383. The string is in the format
+     * <p>A string that specifies the keyspace for a particular node group. Keyspaces
+     * range from 0 to 16,383. The string is in the format
      * <code>startkey-endkey</code>.</p> <p>Example: <code>"0-3999"</code> </p>
      */
     inline void SetSlots(Aws::String&& value) { m_slotsHasBeenSet = true; m_slots = value; }
 
     /**
-     * <p>A string that specifies the keyspaces as a series of comma separated values.
-     * Keyspaces are 0 to 16,383. The string is in the format
+     * <p>A string that specifies the keyspace for a particular node group. Keyspaces
+     * range from 0 to 16,383. The string is in the format
      * <code>startkey-endkey</code>.</p> <p>Example: <code>"0-3999"</code> </p>
      */
     inline void SetSlots(const char* value) { m_slotsHasBeenSet = true; m_slots.assign(value); }
 
     /**
-     * <p>A string that specifies the keyspaces as a series of comma separated values.
-     * Keyspaces are 0 to 16,383. The string is in the format
+     * <p>A string that specifies the keyspace for a particular node group. Keyspaces
+     * range from 0 to 16,383. The string is in the format
      * <code>startkey-endkey</code>.</p> <p>Example: <code>"0-3999"</code> </p>
      */
     inline NodeGroupConfiguration& WithSlots(const Aws::String& value) { SetSlots(value); return *this;}
 
     /**
-     * <p>A string that specifies the keyspaces as a series of comma separated values.
-     * Keyspaces are 0 to 16,383. The string is in the format
+     * <p>A string that specifies the keyspace for a particular node group. Keyspaces
+     * range from 0 to 16,383. The string is in the format
      * <code>startkey-endkey</code>.</p> <p>Example: <code>"0-3999"</code> </p>
      */
     inline NodeGroupConfiguration& WithSlots(Aws::String&& value) { SetSlots(value); return *this;}
 
     /**
-     * <p>A string that specifies the keyspaces as a series of comma separated values.
-     * Keyspaces are 0 to 16,383. The string is in the format
+     * <p>A string that specifies the keyspace for a particular node group. Keyspaces
+     * range from 0 to 16,383. The string is in the format
      * <code>startkey-endkey</code>.</p> <p>Example: <code>"0-3999"</code> </p>
      */
     inline NodeGroupConfiguration& WithSlots(const char* value) { SetSlots(value); return *this;}

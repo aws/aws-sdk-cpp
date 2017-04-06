@@ -117,76 +117,76 @@ namespace Model
 
     /**
      * <p>The beginning of the time interval to retrieve events for, specified in ISO
-     * 8601 format.</p>
+     * 8601 format.</p> <p> <b>Example:</b> 2017-03-30T07:03:49.555Z</p>
      */
     inline const Aws::Utils::DateTime& GetStartTime() const{ return m_startTime; }
 
     /**
      * <p>The beginning of the time interval to retrieve events for, specified in ISO
-     * 8601 format.</p>
+     * 8601 format.</p> <p> <b>Example:</b> 2017-03-30T07:03:49.555Z</p>
      */
     inline void SetStartTime(const Aws::Utils::DateTime& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
 
     /**
      * <p>The beginning of the time interval to retrieve events for, specified in ISO
-     * 8601 format.</p>
+     * 8601 format.</p> <p> <b>Example:</b> 2017-03-30T07:03:49.555Z</p>
      */
     inline void SetStartTime(Aws::Utils::DateTime&& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
 
     /**
      * <p>The beginning of the time interval to retrieve events for, specified in ISO
-     * 8601 format.</p>
+     * 8601 format.</p> <p> <b>Example:</b> 2017-03-30T07:03:49.555Z</p>
      */
     inline DescribeEventsRequest& WithStartTime(const Aws::Utils::DateTime& value) { SetStartTime(value); return *this;}
 
     /**
      * <p>The beginning of the time interval to retrieve events for, specified in ISO
-     * 8601 format.</p>
+     * 8601 format.</p> <p> <b>Example:</b> 2017-03-30T07:03:49.555Z</p>
      */
     inline DescribeEventsRequest& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(value); return *this;}
 
     /**
      * <p>The end of the time interval for which to retrieve events, specified in ISO
-     * 8601 format.</p>
+     * 8601 format.</p> <p> <b>Example:</b> 2017-03-30T07:03:49.555Z</p>
      */
     inline const Aws::Utils::DateTime& GetEndTime() const{ return m_endTime; }
 
     /**
      * <p>The end of the time interval for which to retrieve events, specified in ISO
-     * 8601 format.</p>
+     * 8601 format.</p> <p> <b>Example:</b> 2017-03-30T07:03:49.555Z</p>
      */
     inline void SetEndTime(const Aws::Utils::DateTime& value) { m_endTimeHasBeenSet = true; m_endTime = value; }
 
     /**
      * <p>The end of the time interval for which to retrieve events, specified in ISO
-     * 8601 format.</p>
+     * 8601 format.</p> <p> <b>Example:</b> 2017-03-30T07:03:49.555Z</p>
      */
     inline void SetEndTime(Aws::Utils::DateTime&& value) { m_endTimeHasBeenSet = true; m_endTime = value; }
 
     /**
      * <p>The end of the time interval for which to retrieve events, specified in ISO
-     * 8601 format.</p>
+     * 8601 format.</p> <p> <b>Example:</b> 2017-03-30T07:03:49.555Z</p>
      */
     inline DescribeEventsRequest& WithEndTime(const Aws::Utils::DateTime& value) { SetEndTime(value); return *this;}
 
     /**
      * <p>The end of the time interval for which to retrieve events, specified in ISO
-     * 8601 format.</p>
+     * 8601 format.</p> <p> <b>Example:</b> 2017-03-30T07:03:49.555Z</p>
      */
     inline DescribeEventsRequest& WithEndTime(Aws::Utils::DateTime&& value) { SetEndTime(value); return *this;}
 
     /**
-     * <p>The number of minutes' worth of events to retrieve.</p>
+     * <p>The number of minutes worth of events to retrieve.</p>
      */
     inline int GetDuration() const{ return m_duration; }
 
     /**
-     * <p>The number of minutes' worth of events to retrieve.</p>
+     * <p>The number of minutes worth of events to retrieve.</p>
      */
     inline void SetDuration(int value) { m_durationHasBeenSet = true; m_duration = value; }
 
     /**
-     * <p>The number of minutes' worth of events to retrieve.</p>
+     * <p>The number of minutes worth of events to retrieve.</p>
      */
     inline DescribeEventsRequest& WithDuration(int value) { SetDuration(value); return *this;}
 

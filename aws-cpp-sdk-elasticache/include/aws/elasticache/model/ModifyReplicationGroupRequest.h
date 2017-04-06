@@ -896,6 +896,41 @@ namespace Model
      */
     inline ModifyReplicationGroupRequest& WithCacheNodeType(const char* value) { SetCacheNodeType(value); return *this;}
 
+    /**
+     * <p>The name of the Node Group (called shard in the console).</p>
+     */
+    inline const Aws::String& GetNodeGroupId() const{ return m_nodeGroupId; }
+
+    /**
+     * <p>The name of the Node Group (called shard in the console).</p>
+     */
+    inline void SetNodeGroupId(const Aws::String& value) { m_nodeGroupIdHasBeenSet = true; m_nodeGroupId = value; }
+
+    /**
+     * <p>The name of the Node Group (called shard in the console).</p>
+     */
+    inline void SetNodeGroupId(Aws::String&& value) { m_nodeGroupIdHasBeenSet = true; m_nodeGroupId = value; }
+
+    /**
+     * <p>The name of the Node Group (called shard in the console).</p>
+     */
+    inline void SetNodeGroupId(const char* value) { m_nodeGroupIdHasBeenSet = true; m_nodeGroupId.assign(value); }
+
+    /**
+     * <p>The name of the Node Group (called shard in the console).</p>
+     */
+    inline ModifyReplicationGroupRequest& WithNodeGroupId(const Aws::String& value) { SetNodeGroupId(value); return *this;}
+
+    /**
+     * <p>The name of the Node Group (called shard in the console).</p>
+     */
+    inline ModifyReplicationGroupRequest& WithNodeGroupId(Aws::String&& value) { SetNodeGroupId(value); return *this;}
+
+    /**
+     * <p>The name of the Node Group (called shard in the console).</p>
+     */
+    inline ModifyReplicationGroupRequest& WithNodeGroupId(const char* value) { SetNodeGroupId(value); return *this;}
+
   private:
     Aws::String m_replicationGroupId;
     bool m_replicationGroupIdHasBeenSet;
@@ -931,6 +966,8 @@ namespace Model
     bool m_snapshotWindowHasBeenSet;
     Aws::String m_cacheNodeType;
     bool m_cacheNodeTypeHasBeenSet;
+    Aws::String m_nodeGroupId;
+    bool m_nodeGroupIdHasBeenSet;
   };
 
 } // namespace Model

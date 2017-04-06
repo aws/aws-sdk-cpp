@@ -64,6 +64,7 @@
 #include <aws/elasticache/model/RemoveTagsFromResourceRequest.h>
 #include <aws/elasticache/model/ResetCacheParameterGroupRequest.h>
 #include <aws/elasticache/model/RevokeCacheSecurityGroupIngressRequest.h>
+#include <aws/elasticache/model/TestFailoverRequest.h>
 
 using namespace Aws;
 using namespace Aws::Auth;
@@ -1392,6 +1393,39 @@ void ElastiCacheClient::RevokeCacheSecurityGroupIngressAsync(const RevokeCacheSe
 void ElastiCacheClient::RevokeCacheSecurityGroupIngressAsyncHelper(const RevokeCacheSecurityGroupIngressRequest& request, const RevokeCacheSecurityGroupIngressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, RevokeCacheSecurityGroupIngress(request), context);
+}
+
+TestFailoverOutcome ElastiCacheClient::TestFailover(const TestFailoverRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return TestFailoverOutcome(TestFailoverResult(outcome.GetResult()));
+  }
+  else
+  {
+    return TestFailoverOutcome(outcome.GetError());
+  }
+}
+
+TestFailoverOutcomeCallable ElastiCacheClient::TestFailoverCallable(const TestFailoverRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< TestFailoverOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->TestFailover(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ElastiCacheClient::TestFailoverAsync(const TestFailoverRequest& request, const TestFailoverResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->TestFailoverAsyncHelper( request, handler, context ); } );
+}
+
+void ElastiCacheClient::TestFailoverAsyncHelper(const TestFailoverRequest& request, const TestFailoverResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, TestFailover(request), context);
 }
 
 

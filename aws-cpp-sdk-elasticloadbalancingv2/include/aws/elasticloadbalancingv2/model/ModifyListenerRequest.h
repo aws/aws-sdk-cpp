@@ -117,44 +117,58 @@ namespace Model
     inline ModifyListenerRequest& WithProtocol(ProtocolEnum&& value) { SetProtocol(value); return *this;}
 
     /**
-     * <p>The security policy that defines which ciphers and protocols are
-     * supported.</p>
+     * <p>The security policy that defines which protocols and ciphers are supported.
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-https-listener.html#describe-ssl-policies">Security
+     * Policies</a> in the <i>Application Load Balancers Guide</i>.</p>
      */
     inline const Aws::String& GetSslPolicy() const{ return m_sslPolicy; }
 
     /**
-     * <p>The security policy that defines which ciphers and protocols are
-     * supported.</p>
+     * <p>The security policy that defines which protocols and ciphers are supported.
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-https-listener.html#describe-ssl-policies">Security
+     * Policies</a> in the <i>Application Load Balancers Guide</i>.</p>
      */
     inline void SetSslPolicy(const Aws::String& value) { m_sslPolicyHasBeenSet = true; m_sslPolicy = value; }
 
     /**
-     * <p>The security policy that defines which ciphers and protocols are
-     * supported.</p>
+     * <p>The security policy that defines which protocols and ciphers are supported.
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-https-listener.html#describe-ssl-policies">Security
+     * Policies</a> in the <i>Application Load Balancers Guide</i>.</p>
      */
     inline void SetSslPolicy(Aws::String&& value) { m_sslPolicyHasBeenSet = true; m_sslPolicy = value; }
 
     /**
-     * <p>The security policy that defines which ciphers and protocols are
-     * supported.</p>
+     * <p>The security policy that defines which protocols and ciphers are supported.
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-https-listener.html#describe-ssl-policies">Security
+     * Policies</a> in the <i>Application Load Balancers Guide</i>.</p>
      */
     inline void SetSslPolicy(const char* value) { m_sslPolicyHasBeenSet = true; m_sslPolicy.assign(value); }
 
     /**
-     * <p>The security policy that defines which ciphers and protocols are
-     * supported.</p>
+     * <p>The security policy that defines which protocols and ciphers are supported.
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-https-listener.html#describe-ssl-policies">Security
+     * Policies</a> in the <i>Application Load Balancers Guide</i>.</p>
      */
     inline ModifyListenerRequest& WithSslPolicy(const Aws::String& value) { SetSslPolicy(value); return *this;}
 
     /**
-     * <p>The security policy that defines which ciphers and protocols are
-     * supported.</p>
+     * <p>The security policy that defines which protocols and ciphers are supported.
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-https-listener.html#describe-ssl-policies">Security
+     * Policies</a> in the <i>Application Load Balancers Guide</i>.</p>
      */
     inline ModifyListenerRequest& WithSslPolicy(Aws::String&& value) { SetSslPolicy(value); return *this;}
 
     /**
-     * <p>The security policy that defines which ciphers and protocols are
-     * supported.</p>
+     * <p>The security policy that defines which protocols and ciphers are supported.
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-https-listener.html#describe-ssl-policies">Security
+     * Policies</a> in the <i>Application Load Balancers Guide</i>.</p>
      */
     inline ModifyListenerRequest& WithSslPolicy(const char* value) { SetSslPolicy(value); return *this;}
 

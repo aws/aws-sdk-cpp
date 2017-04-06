@@ -844,8 +844,10 @@ namespace Model
 
         /**
          * <p>Describes the specified policies or all policies used for SSL
-         * negotiation.</p> <p>Note that the only supported policy at this time is
-         * ELBSecurityPolicy-2015-05.</p><p><h3>See Also:</h3>   <a
+         * negotiation.</p> <p>For more information, see <a
+         * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-https-listener.html#describe-ssl-policies">Security
+         * Policies</a> in the <i>Application Load Balancers Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DescribeSSLPolicies">AWS
          * API Reference</a></p>
          */
@@ -853,8 +855,10 @@ namespace Model
 
         /**
          * <p>Describes the specified policies or all policies used for SSL
-         * negotiation.</p> <p>Note that the only supported policy at this time is
-         * ELBSecurityPolicy-2015-05.</p><p><h3>See Also:</h3>   <a
+         * negotiation.</p> <p>For more information, see <a
+         * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-https-listener.html#describe-ssl-policies">Security
+         * Policies</a> in the <i>Application Load Balancers Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DescribeSSLPolicies">AWS
          * API Reference</a></p>
          *
@@ -864,8 +868,10 @@ namespace Model
 
         /**
          * <p>Describes the specified policies or all policies used for SSL
-         * negotiation.</p> <p>Note that the only supported policy at this time is
-         * ELBSecurityPolicy-2015-05.</p><p><h3>See Also:</h3>   <a
+         * negotiation.</p> <p>For more information, see <a
+         * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-https-listener.html#describe-ssl-policies">Security
+         * Policies</a> in the <i>Application Load Balancers Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DescribeSSLPolicies">AWS
          * API Reference</a></p>
          *
@@ -874,14 +880,18 @@ namespace Model
         virtual void DescribeSSLPoliciesAsync(const Model::DescribeSSLPoliciesRequest& request, const DescribeSSLPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Describes the tags for the specified resources.</p><p><h3>See Also:</h3>   <a
+         * <p>Describes the tags for the specified resources. You can describe the tags for
+         * one or more Application Load Balancers and target groups.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DescribeTags">AWS
          * API Reference</a></p>
          */
         virtual Model::DescribeTagsOutcome DescribeTags(const Model::DescribeTagsRequest& request) const;
 
         /**
-         * <p>Describes the tags for the specified resources.</p><p><h3>See Also:</h3>   <a
+         * <p>Describes the tags for the specified resources. You can describe the tags for
+         * one or more Application Load Balancers and target groups.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DescribeTags">AWS
          * API Reference</a></p>
          *
@@ -890,7 +900,9 @@ namespace Model
         virtual Model::DescribeTagsOutcomeCallable DescribeTagsCallable(const Model::DescribeTagsRequest& request) const;
 
         /**
-         * <p>Describes the tags for the specified resources.</p><p><h3>See Also:</h3>   <a
+         * <p>Describes the tags for the specified resources. You can describe the tags for
+         * one or more Application Load Balancers and target groups.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DescribeTags">AWS
          * API Reference</a></p>
          *
@@ -1002,7 +1014,7 @@ namespace Model
          * properties that you do not specify retain their current values. However,
          * changing the protocol from HTTPS to HTTP removes the security policy and SSL
          * certificate properties. If you change the protocol from HTTP to HTTPS, you must
-         * add the security policy.</p><p><h3>See Also:</h3>   <a
+         * add the security policy and server certificate.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/ModifyListener">AWS
          * API Reference</a></p>
          */
@@ -1013,7 +1025,7 @@ namespace Model
          * properties that you do not specify retain their current values. However,
          * changing the protocol from HTTPS to HTTP removes the security policy and SSL
          * certificate properties. If you change the protocol from HTTP to HTTPS, you must
-         * add the security policy.</p><p><h3>See Also:</h3>   <a
+         * add the security policy and server certificate.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/ModifyListener">AWS
          * API Reference</a></p>
          *
@@ -1026,7 +1038,7 @@ namespace Model
          * properties that you do not specify retain their current values. However,
          * changing the protocol from HTTPS to HTTP removes the security policy and SSL
          * certificate properties. If you change the protocol from HTTP to HTTPS, you must
-         * add the security policy.</p><p><h3>See Also:</h3>   <a
+         * add the security policy and server certificate.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/ModifyListener">AWS
          * API Reference</a></p>
          *
