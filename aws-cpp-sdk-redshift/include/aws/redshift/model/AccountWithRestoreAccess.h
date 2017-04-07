@@ -89,9 +89,53 @@ namespace Model
      */
     inline AccountWithRestoreAccess& WithAccountId(const char* value) { SetAccountId(value); return *this;}
 
+    /**
+     * <p>The identifier of an AWS support account authorized to restore a snapshot.
+     * For AWS support, the identifier is <code>amazon-redshift-support</code>. </p>
+     */
+    inline const Aws::String& GetAccountAlias() const{ return m_accountAlias; }
+
+    /**
+     * <p>The identifier of an AWS support account authorized to restore a snapshot.
+     * For AWS support, the identifier is <code>amazon-redshift-support</code>. </p>
+     */
+    inline void SetAccountAlias(const Aws::String& value) { m_accountAliasHasBeenSet = true; m_accountAlias = value; }
+
+    /**
+     * <p>The identifier of an AWS support account authorized to restore a snapshot.
+     * For AWS support, the identifier is <code>amazon-redshift-support</code>. </p>
+     */
+    inline void SetAccountAlias(Aws::String&& value) { m_accountAliasHasBeenSet = true; m_accountAlias = value; }
+
+    /**
+     * <p>The identifier of an AWS support account authorized to restore a snapshot.
+     * For AWS support, the identifier is <code>amazon-redshift-support</code>. </p>
+     */
+    inline void SetAccountAlias(const char* value) { m_accountAliasHasBeenSet = true; m_accountAlias.assign(value); }
+
+    /**
+     * <p>The identifier of an AWS support account authorized to restore a snapshot.
+     * For AWS support, the identifier is <code>amazon-redshift-support</code>. </p>
+     */
+    inline AccountWithRestoreAccess& WithAccountAlias(const Aws::String& value) { SetAccountAlias(value); return *this;}
+
+    /**
+     * <p>The identifier of an AWS support account authorized to restore a snapshot.
+     * For AWS support, the identifier is <code>amazon-redshift-support</code>. </p>
+     */
+    inline AccountWithRestoreAccess& WithAccountAlias(Aws::String&& value) { SetAccountAlias(value); return *this;}
+
+    /**
+     * <p>The identifier of an AWS support account authorized to restore a snapshot.
+     * For AWS support, the identifier is <code>amazon-redshift-support</code>. </p>
+     */
+    inline AccountWithRestoreAccess& WithAccountAlias(const char* value) { SetAccountAlias(value); return *this;}
+
   private:
     Aws::String m_accountId;
     bool m_accountIdHasBeenSet;
+    Aws::String m_accountAlias;
+    bool m_accountAliasHasBeenSet;
   };
 
 } // namespace Model

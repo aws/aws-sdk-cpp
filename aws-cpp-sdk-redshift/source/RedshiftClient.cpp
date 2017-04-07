@@ -74,6 +74,7 @@
 #include <aws/redshift/model/DisableSnapshotCopyRequest.h>
 #include <aws/redshift/model/EnableLoggingRequest.h>
 #include <aws/redshift/model/EnableSnapshotCopyRequest.h>
+#include <aws/redshift/model/GetClusterCredentialsRequest.h>
 #include <aws/redshift/model/ModifyClusterRequest.h>
 #include <aws/redshift/model/ModifyClusterIamRolesRequest.h>
 #include <aws/redshift/model/ModifyClusterParameterGroupRequest.h>
@@ -1746,6 +1747,39 @@ void RedshiftClient::EnableSnapshotCopyAsync(const EnableSnapshotCopyRequest& re
 void RedshiftClient::EnableSnapshotCopyAsyncHelper(const EnableSnapshotCopyRequest& request, const EnableSnapshotCopyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, EnableSnapshotCopy(request), context);
+}
+
+GetClusterCredentialsOutcome RedshiftClient::GetClusterCredentials(const GetClusterCredentialsRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return GetClusterCredentialsOutcome(GetClusterCredentialsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetClusterCredentialsOutcome(outcome.GetError());
+  }
+}
+
+GetClusterCredentialsOutcomeCallable RedshiftClient::GetClusterCredentialsCallable(const GetClusterCredentialsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetClusterCredentialsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetClusterCredentials(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void RedshiftClient::GetClusterCredentialsAsync(const GetClusterCredentialsRequest& request, const GetClusterCredentialsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetClusterCredentialsAsyncHelper( request, handler, context ); } );
+}
+
+void RedshiftClient::GetClusterCredentialsAsyncHelper(const GetClusterCredentialsRequest& request, const GetClusterCredentialsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetClusterCredentials(request), context);
 }
 
 ModifyClusterOutcome RedshiftClient::ModifyCluster(const ModifyClusterRequest& request) const

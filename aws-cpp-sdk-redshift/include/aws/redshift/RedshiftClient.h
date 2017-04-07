@@ -60,6 +60,7 @@
 #include <aws/redshift/model/DisableSnapshotCopyResult.h>
 #include <aws/redshift/model/EnableLoggingResult.h>
 #include <aws/redshift/model/EnableSnapshotCopyResult.h>
+#include <aws/redshift/model/GetClusterCredentialsResult.h>
 #include <aws/redshift/model/ModifyClusterResult.h>
 #include <aws/redshift/model/ModifyClusterIamRolesResult.h>
 #include <aws/redshift/model/ModifyClusterParameterGroupResult.h>
@@ -168,6 +169,7 @@ namespace Model
         class DisableSnapshotCopyRequest;
         class EnableLoggingRequest;
         class EnableSnapshotCopyRequest;
+        class GetClusterCredentialsRequest;
         class ModifyClusterRequest;
         class ModifyClusterIamRolesRequest;
         class ModifyClusterParameterGroupRequest;
@@ -231,6 +233,7 @@ namespace Model
         typedef Aws::Utils::Outcome<DisableSnapshotCopyResult, Aws::Client::AWSError<RedshiftErrors>> DisableSnapshotCopyOutcome;
         typedef Aws::Utils::Outcome<EnableLoggingResult, Aws::Client::AWSError<RedshiftErrors>> EnableLoggingOutcome;
         typedef Aws::Utils::Outcome<EnableSnapshotCopyResult, Aws::Client::AWSError<RedshiftErrors>> EnableSnapshotCopyOutcome;
+        typedef Aws::Utils::Outcome<GetClusterCredentialsResult, Aws::Client::AWSError<RedshiftErrors>> GetClusterCredentialsOutcome;
         typedef Aws::Utils::Outcome<ModifyClusterResult, Aws::Client::AWSError<RedshiftErrors>> ModifyClusterOutcome;
         typedef Aws::Utils::Outcome<ModifyClusterIamRolesResult, Aws::Client::AWSError<RedshiftErrors>> ModifyClusterIamRolesOutcome;
         typedef Aws::Utils::Outcome<ModifyClusterParameterGroupResult, Aws::Client::AWSError<RedshiftErrors>> ModifyClusterParameterGroupOutcome;
@@ -294,6 +297,7 @@ namespace Model
         typedef std::future<DisableSnapshotCopyOutcome> DisableSnapshotCopyOutcomeCallable;
         typedef std::future<EnableLoggingOutcome> EnableLoggingOutcomeCallable;
         typedef std::future<EnableSnapshotCopyOutcome> EnableSnapshotCopyOutcomeCallable;
+        typedef std::future<GetClusterCredentialsOutcome> GetClusterCredentialsOutcomeCallable;
         typedef std::future<ModifyClusterOutcome> ModifyClusterOutcomeCallable;
         typedef std::future<ModifyClusterIamRolesOutcome> ModifyClusterIamRolesOutcomeCallable;
         typedef std::future<ModifyClusterParameterGroupOutcome> ModifyClusterParameterGroupOutcomeCallable;
@@ -360,6 +364,7 @@ namespace Model
     typedef std::function<void(const RedshiftClient*, const Model::DisableSnapshotCopyRequest&, const Model::DisableSnapshotCopyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisableSnapshotCopyResponseReceivedHandler;
     typedef std::function<void(const RedshiftClient*, const Model::EnableLoggingRequest&, const Model::EnableLoggingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > EnableLoggingResponseReceivedHandler;
     typedef std::function<void(const RedshiftClient*, const Model::EnableSnapshotCopyRequest&, const Model::EnableSnapshotCopyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > EnableSnapshotCopyResponseReceivedHandler;
+    typedef std::function<void(const RedshiftClient*, const Model::GetClusterCredentialsRequest&, const Model::GetClusterCredentialsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetClusterCredentialsResponseReceivedHandler;
     typedef std::function<void(const RedshiftClient*, const Model::ModifyClusterRequest&, const Model::ModifyClusterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyClusterResponseReceivedHandler;
     typedef std::function<void(const RedshiftClient*, const Model::ModifyClusterIamRolesRequest&, const Model::ModifyClusterIamRolesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyClusterIamRolesResponseReceivedHandler;
     typedef std::function<void(const RedshiftClient*, const Model::ModifyClusterParameterGroupRequest&, const Model::ModifyClusterParameterGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyClusterParameterGroupResponseReceivedHandler;
@@ -2598,6 +2603,94 @@ namespace Model
         virtual void EnableSnapshotCopyAsync(const Model::EnableSnapshotCopyRequest& request, const EnableSnapshotCopyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Returns a database user name and temporary password with temporary
+         * authorization to log in to an Amazon Redshift database. The action returns the
+         * database user name prefixed with <code>IAM:</code> if <code>AutoCreate</code> is
+         * <code>False</code> or <code>IAMA:</code> if <code>AutoCreate</code> is
+         * <code>True</code>. You can optionally specify one or more database user groups
+         * that the user will join at log in. By default, the temporary credentials expire
+         * in 900 seconds. You can optionally specify a duration between 900 seconds (15
+         * minutes) and 3600 seconds (60 minutes). For more information, see Generating IAM
+         * Database User Credentials in the Amazon Redshift Cluster Management Guide.</p>
+         * <p>The IAM user or role that executes GetClusterCredentials must have an IAM
+         * policy attached that allows the <code>redshift:GetClusterCredentials</code>
+         * action with access to the <code>dbuser</code> resource on the cluster. The user
+         * name specified for <code>dbuser</code> in the IAM policy and the user name
+         * specified for the <code>DbUser</code> parameter must match.</p> <p>If the
+         * <code>DbGroups</code> parameter is specified, the IAM policy must allow the
+         * <code>redshift:JoinGroup</code> action with access to the listed
+         * <code>dbgroups</code>. </p> <p>In addition, if the <code>AutoCreate</code>
+         * parameter is set to <code>True</code>, then the policy must include the
+         * <code>redshift:CreateClusterUser</code> privilege.</p> <p>If the
+         * <code>DbName</code> parameter is specified, the IAM policy must allow access to
+         * the resource <code>dbname</code> for the specified database name. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/GetClusterCredentials">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetClusterCredentialsOutcome GetClusterCredentials(const Model::GetClusterCredentialsRequest& request) const;
+
+        /**
+         * <p>Returns a database user name and temporary password with temporary
+         * authorization to log in to an Amazon Redshift database. The action returns the
+         * database user name prefixed with <code>IAM:</code> if <code>AutoCreate</code> is
+         * <code>False</code> or <code>IAMA:</code> if <code>AutoCreate</code> is
+         * <code>True</code>. You can optionally specify one or more database user groups
+         * that the user will join at log in. By default, the temporary credentials expire
+         * in 900 seconds. You can optionally specify a duration between 900 seconds (15
+         * minutes) and 3600 seconds (60 minutes). For more information, see Generating IAM
+         * Database User Credentials in the Amazon Redshift Cluster Management Guide.</p>
+         * <p>The IAM user or role that executes GetClusterCredentials must have an IAM
+         * policy attached that allows the <code>redshift:GetClusterCredentials</code>
+         * action with access to the <code>dbuser</code> resource on the cluster. The user
+         * name specified for <code>dbuser</code> in the IAM policy and the user name
+         * specified for the <code>DbUser</code> parameter must match.</p> <p>If the
+         * <code>DbGroups</code> parameter is specified, the IAM policy must allow the
+         * <code>redshift:JoinGroup</code> action with access to the listed
+         * <code>dbgroups</code>. </p> <p>In addition, if the <code>AutoCreate</code>
+         * parameter is set to <code>True</code>, then the policy must include the
+         * <code>redshift:CreateClusterUser</code> privilege.</p> <p>If the
+         * <code>DbName</code> parameter is specified, the IAM policy must allow access to
+         * the resource <code>dbname</code> for the specified database name. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/GetClusterCredentials">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetClusterCredentialsOutcomeCallable GetClusterCredentialsCallable(const Model::GetClusterCredentialsRequest& request) const;
+
+        /**
+         * <p>Returns a database user name and temporary password with temporary
+         * authorization to log in to an Amazon Redshift database. The action returns the
+         * database user name prefixed with <code>IAM:</code> if <code>AutoCreate</code> is
+         * <code>False</code> or <code>IAMA:</code> if <code>AutoCreate</code> is
+         * <code>True</code>. You can optionally specify one or more database user groups
+         * that the user will join at log in. By default, the temporary credentials expire
+         * in 900 seconds. You can optionally specify a duration between 900 seconds (15
+         * minutes) and 3600 seconds (60 minutes). For more information, see Generating IAM
+         * Database User Credentials in the Amazon Redshift Cluster Management Guide.</p>
+         * <p>The IAM user or role that executes GetClusterCredentials must have an IAM
+         * policy attached that allows the <code>redshift:GetClusterCredentials</code>
+         * action with access to the <code>dbuser</code> resource on the cluster. The user
+         * name specified for <code>dbuser</code> in the IAM policy and the user name
+         * specified for the <code>DbUser</code> parameter must match.</p> <p>If the
+         * <code>DbGroups</code> parameter is specified, the IAM policy must allow the
+         * <code>redshift:JoinGroup</code> action with access to the listed
+         * <code>dbgroups</code>. </p> <p>In addition, if the <code>AutoCreate</code>
+         * parameter is set to <code>True</code>, then the policy must include the
+         * <code>redshift:CreateClusterUser</code> privilege.</p> <p>If the
+         * <code>DbName</code> parameter is specified, the IAM policy must allow access to
+         * the resource <code>dbname</code> for the specified database name. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/GetClusterCredentials">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetClusterCredentialsAsync(const Model::GetClusterCredentialsRequest& request, const GetClusterCredentialsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Modifies the settings for a cluster. For example, you can add another
          * security or parameter group, update the preferred maintenance window, or change
          * the master user password. Resetting a cluster password or modifying the security
@@ -3231,6 +3324,7 @@ namespace Model
         void DisableSnapshotCopyAsyncHelper(const Model::DisableSnapshotCopyRequest& request, const DisableSnapshotCopyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void EnableLoggingAsyncHelper(const Model::EnableLoggingRequest& request, const EnableLoggingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void EnableSnapshotCopyAsyncHelper(const Model::EnableSnapshotCopyRequest& request, const EnableSnapshotCopyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetClusterCredentialsAsyncHelper(const Model::GetClusterCredentialsRequest& request, const GetClusterCredentialsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ModifyClusterAsyncHelper(const Model::ModifyClusterRequest& request, const ModifyClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ModifyClusterIamRolesAsyncHelper(const Model::ModifyClusterIamRolesRequest& request, const ModifyClusterIamRolesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ModifyClusterParameterGroupAsyncHelper(const Model::ModifyClusterParameterGroupRequest& request, const ModifyClusterParameterGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
