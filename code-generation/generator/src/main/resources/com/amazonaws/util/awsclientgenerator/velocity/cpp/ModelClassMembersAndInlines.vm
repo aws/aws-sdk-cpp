@@ -49,7 +49,7 @@
 
 #if(!$subShape.primitive)
     $memberDocumentation
-    inline void Set${memberKeyWithFirstLetterCapitalized}(${moveType} value) { ${required}${memberVariableName} = value; }
+    inline void Set${memberKeyWithFirstLetterCapitalized}(${moveType} value) { ${required}${memberVariableName} = std::move(value); }
 
 #end
 #if($member.value.shape.string)
@@ -62,7 +62,7 @@
 
 #if(!$subShape.primitive)
     $memberDocumentation
-    inline ${classNameRef} With${memberKeyWithFirstLetterCapitalized}(${moveType} value) { Set${memberKeyWithFirstLetterCapitalized}(value); return *this;}
+    inline ${classNameRef} With${memberKeyWithFirstLetterCapitalized}(${moveType} value) { Set${memberKeyWithFirstLetterCapitalized}(std::move(value)); return *this;}
 
 #end
 #if($member.value.shape.string)
@@ -86,21 +86,21 @@
 #set($valueMoveType = "${rawValueType}&&")
 #end
     $memberDocumentation
-    inline ${classNameRef} Add${memberKeyWithFirstLetterCapitalized}(${keyType} key, ${valueType} value) { ${required}${memberVariableName}[key] = value; return *this; }
+    inline ${classNameRef} Add${memberKeyWithFirstLetterCapitalized}(${keyType} key, ${valueType} value) { ${required}${memberVariableName}.emplace(key, value); return *this; }
 
 #if(!$mapMember.mapKey.shape.primitive)
     $memberDocumentation
-    inline ${classNameRef} Add${memberKeyWithFirstLetterCapitalized}(${keyMoveType} key, ${valueType} value) { ${required}${memberVariableName}[key] = value; return *this; }
+    inline ${classNameRef} Add${memberKeyWithFirstLetterCapitalized}(${keyMoveType} key, ${valueType} value) { ${required}${memberVariableName}.emplace(std::move(key), value); return *this; }
 
 #end
 #if(!$mapMember.mapValue.shape.primitive)
     $memberDocumentation
-    inline ${classNameRef} Add${memberKeyWithFirstLetterCapitalized}(${keyType} key, ${valueMoveType} value) { ${required}${memberVariableName}[key] = value; return *this; }
+    inline ${classNameRef} Add${memberKeyWithFirstLetterCapitalized}(${keyType} key, ${valueMoveType} value) { ${required}${memberVariableName}.emplace(key, std::move(value)); return *this; }
 
 #end
 #if(!$mapMember.mapKey.shape.primitive && !$mapMember.mapValue.shape.primitive)
     $memberDocumentation
-    inline ${classNameRef} Add${memberKeyWithFirstLetterCapitalized}(${keyMoveType} key, ${valueMoveType} value) { ${required}${memberVariableName}[key] = value; return *this; }
+    inline ${classNameRef} Add${memberKeyWithFirstLetterCapitalized}(${keyMoveType} key, ${valueMoveType} value) { ${required}${memberVariableName}.emplace(std::move(key), std::move(value)); return *this; }
 
 #end
 #if($mapMember.mapKey.shape.string || $mapMember.mapValue.shape.string)
@@ -108,7 +108,7 @@
 #set($keyType = 'const char*')
 #if(!$mapMember.mapValue.shape.primitive)
     $memberDocumentation
-    inline ${classNameRef} Add${memberKeyWithFirstLetterCapitalized}(${keyType} key, ${valueMoveType} value) { ${required}${memberVariableName}[key] = value; return *this; }
+    inline ${classNameRef} Add${memberKeyWithFirstLetterCapitalized}(${keyType} key, ${valueMoveType} value) { ${required}${memberVariableName}.emplace(key, std::move(value)); return *this; }
 
 #end
 #end
@@ -116,12 +116,12 @@
 #set($valueType = 'const char*')
 #if(!$mapMember.mapKey.shape.primitive)
     $memberDocumentation
-    inline ${classNameRef} Add${memberKeyWithFirstLetterCapitalized}(${keyMoveType} key, ${valueType} value) { ${required}${memberVariableName}[key] = value; return *this; }
+    inline ${classNameRef} Add${memberKeyWithFirstLetterCapitalized}(${keyMoveType} key, ${valueType} value) { ${required}${memberVariableName}.emplace(std::move(key), value); return *this; }
 
 #end
 #end
     $memberDocumentation
-    inline ${classNameRef} Add${memberKeyWithFirstLetterCapitalized}(${keyType} key, ${valueType} value) { ${required}${memberVariableName}[key] = value; return *this; }
+    inline ${classNameRef} Add${memberKeyWithFirstLetterCapitalized}(${keyType} key, ${valueType} value) { ${required}${memberVariableName}.emplace(key, value); return *this; }
 
 #end
 #end
@@ -138,7 +138,7 @@
 
 #if(!$listMember.listMember.shape.primitive)
     $memberDocumentation
-    inline ${classNameRef} Add${memberKeyWithFirstLetterCapitalized}(${moveValueType} value) { ${required}${memberVariableName}.push_back(value); return *this; }
+    inline ${classNameRef} Add${memberKeyWithFirstLetterCapitalized}(${moveValueType} value) { ${required}${memberVariableName}.push_back(std::move(value)); return *this; }
 
 #end
 #if($listMember.listMember.shape.string)

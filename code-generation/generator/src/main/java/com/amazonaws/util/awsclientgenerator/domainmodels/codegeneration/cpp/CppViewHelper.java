@@ -172,6 +172,7 @@ public class CppViewHelper {
         Set<String> headers = new LinkedHashSet<>();
         Set<String> visited = new LinkedHashSet<>();
         Queue<Shape> toVisit = shape.getMembers().values().stream().map(ShapeMember::getShape).collect(Collectors.toCollection(() -> new LinkedList<>()));
+        boolean includeUtilityHeader = false;
 
         while(!toVisit.isEmpty()) {
             Shape next = toVisit.remove();
@@ -193,7 +194,12 @@ public class CppViewHelper {
             }
             if(!next.isPrimitive()) {
                 headers.add(formatModelIncludeName(projectName, next));
+                includeUtilityHeader = true;
             }
+        }
+
+        if(includeUtilityHeader) {
+            headers.add("<utility>");
         }
 
         headers.addAll(shape.getMembers().values().stream().filter(member -> member.isIdempotencyToken()).map(member -> "<aws/core/utils/UUID.h>").collect(Collectors.toList()));
