@@ -16,6 +16,7 @@
 #include <aws/gamelift/GameLift_EXPORTS.h>
 #include <aws/gamelift/GameLiftRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -51,7 +52,7 @@ namespace Model
     /**
      * <p>Unique identifier for a build to update.</p>
      */
-    inline void SetBuildId(Aws::String&& value) { m_buildIdHasBeenSet = true; m_buildId = value; }
+    inline void SetBuildId(Aws::String&& value) { m_buildIdHasBeenSet = true; m_buildId = std::move(value); }
 
     /**
      * <p>Unique identifier for a build to update.</p>
@@ -66,7 +67,7 @@ namespace Model
     /**
      * <p>Unique identifier for a build to update.</p>
      */
-    inline UpdateBuildRequest& WithBuildId(Aws::String&& value) { SetBuildId(value); return *this;}
+    inline UpdateBuildRequest& WithBuildId(Aws::String&& value) { SetBuildId(std::move(value)); return *this;}
 
     /**
      * <p>Unique identifier for a build to update.</p>
@@ -89,7 +90,7 @@ namespace Model
      * <p>Descriptive label that is associated with a build. Build names do not need to
      * be unique. </p>
      */
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p>Descriptive label that is associated with a build. Build names do not need to
@@ -107,7 +108,7 @@ namespace Model
      * <p>Descriptive label that is associated with a build. Build names do not need to
      * be unique. </p>
      */
-    inline UpdateBuildRequest& WithName(Aws::String&& value) { SetName(value); return *this;}
+    inline UpdateBuildRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>Descriptive label that is associated with a build. Build names do not need to
@@ -131,7 +132,7 @@ namespace Model
      * <p>Version that is associated with this build. Version strings do not need to be
      * unique.</p>
      */
-    inline void SetVersion(Aws::String&& value) { m_versionHasBeenSet = true; m_version = value; }
+    inline void SetVersion(Aws::String&& value) { m_versionHasBeenSet = true; m_version = std::move(value); }
 
     /**
      * <p>Version that is associated with this build. Version strings do not need to be
@@ -149,7 +150,7 @@ namespace Model
      * <p>Version that is associated with this build. Version strings do not need to be
      * unique.</p>
      */
-    inline UpdateBuildRequest& WithVersion(Aws::String&& value) { SetVersion(value); return *this;}
+    inline UpdateBuildRequest& WithVersion(Aws::String&& value) { SetVersion(std::move(value)); return *this;}
 
     /**
      * <p>Version that is associated with this build. Version strings do not need to be

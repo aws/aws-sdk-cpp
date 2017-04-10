@@ -19,6 +19,7 @@
 #include <aws/firehose/model/ExtendedS3DestinationUpdate.h>
 #include <aws/firehose/model/RedshiftDestinationUpdate.h>
 #include <aws/firehose/model/ElasticsearchDestinationUpdate.h>
+#include <utility>
 
 namespace Aws
 {
@@ -51,7 +52,7 @@ namespace Model
     /**
      * <p>The name of the delivery stream.</p>
      */
-    inline void SetDeliveryStreamName(Aws::String&& value) { m_deliveryStreamNameHasBeenSet = true; m_deliveryStreamName = value; }
+    inline void SetDeliveryStreamName(Aws::String&& value) { m_deliveryStreamNameHasBeenSet = true; m_deliveryStreamName = std::move(value); }
 
     /**
      * <p>The name of the delivery stream.</p>
@@ -66,7 +67,7 @@ namespace Model
     /**
      * <p>The name of the delivery stream.</p>
      */
-    inline UpdateDestinationRequest& WithDeliveryStreamName(Aws::String&& value) { SetDeliveryStreamName(value); return *this;}
+    inline UpdateDestinationRequest& WithDeliveryStreamName(Aws::String&& value) { SetDeliveryStreamName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the delivery stream.</p>
@@ -101,7 +102,7 @@ namespace Model
      * update is successful, the <b>VersionId</b> value is updated. The service then
      * performs a merge of the old configuration with the new configuration.</p>
      */
-    inline void SetCurrentDeliveryStreamVersionId(Aws::String&& value) { m_currentDeliveryStreamVersionIdHasBeenSet = true; m_currentDeliveryStreamVersionId = value; }
+    inline void SetCurrentDeliveryStreamVersionId(Aws::String&& value) { m_currentDeliveryStreamVersionIdHasBeenSet = true; m_currentDeliveryStreamVersionId = std::move(value); }
 
     /**
      * <p>Obtain this value from the <b>VersionId</b> result of
@@ -131,7 +132,7 @@ namespace Model
      * update is successful, the <b>VersionId</b> value is updated. The service then
      * performs a merge of the old configuration with the new configuration.</p>
      */
-    inline UpdateDestinationRequest& WithCurrentDeliveryStreamVersionId(Aws::String&& value) { SetCurrentDeliveryStreamVersionId(value); return *this;}
+    inline UpdateDestinationRequest& WithCurrentDeliveryStreamVersionId(Aws::String&& value) { SetCurrentDeliveryStreamVersionId(std::move(value)); return *this;}
 
     /**
      * <p>Obtain this value from the <b>VersionId</b> result of
@@ -156,7 +157,7 @@ namespace Model
     /**
      * <p>The ID of the destination.</p>
      */
-    inline void SetDestinationId(Aws::String&& value) { m_destinationIdHasBeenSet = true; m_destinationId = value; }
+    inline void SetDestinationId(Aws::String&& value) { m_destinationIdHasBeenSet = true; m_destinationId = std::move(value); }
 
     /**
      * <p>The ID of the destination.</p>
@@ -171,7 +172,7 @@ namespace Model
     /**
      * <p>The ID of the destination.</p>
      */
-    inline UpdateDestinationRequest& WithDestinationId(Aws::String&& value) { SetDestinationId(value); return *this;}
+    inline UpdateDestinationRequest& WithDestinationId(Aws::String&& value) { SetDestinationId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the destination.</p>
@@ -191,7 +192,7 @@ namespace Model
     /**
      * <p>Describes an update for a destination in Amazon S3.</p>
      */
-    inline void SetExtendedS3DestinationUpdate(ExtendedS3DestinationUpdate&& value) { m_extendedS3DestinationUpdateHasBeenSet = true; m_extendedS3DestinationUpdate = value; }
+    inline void SetExtendedS3DestinationUpdate(ExtendedS3DestinationUpdate&& value) { m_extendedS3DestinationUpdateHasBeenSet = true; m_extendedS3DestinationUpdate = std::move(value); }
 
     /**
      * <p>Describes an update for a destination in Amazon S3.</p>
@@ -201,7 +202,7 @@ namespace Model
     /**
      * <p>Describes an update for a destination in Amazon S3.</p>
      */
-    inline UpdateDestinationRequest& WithExtendedS3DestinationUpdate(ExtendedS3DestinationUpdate&& value) { SetExtendedS3DestinationUpdate(value); return *this;}
+    inline UpdateDestinationRequest& WithExtendedS3DestinationUpdate(ExtendedS3DestinationUpdate&& value) { SetExtendedS3DestinationUpdate(std::move(value)); return *this;}
 
     /**
      * <p>Describes an update for a destination in Amazon Redshift.</p>
@@ -216,7 +217,7 @@ namespace Model
     /**
      * <p>Describes an update for a destination in Amazon Redshift.</p>
      */
-    inline void SetRedshiftDestinationUpdate(RedshiftDestinationUpdate&& value) { m_redshiftDestinationUpdateHasBeenSet = true; m_redshiftDestinationUpdate = value; }
+    inline void SetRedshiftDestinationUpdate(RedshiftDestinationUpdate&& value) { m_redshiftDestinationUpdateHasBeenSet = true; m_redshiftDestinationUpdate = std::move(value); }
 
     /**
      * <p>Describes an update for a destination in Amazon Redshift.</p>
@@ -226,7 +227,7 @@ namespace Model
     /**
      * <p>Describes an update for a destination in Amazon Redshift.</p>
      */
-    inline UpdateDestinationRequest& WithRedshiftDestinationUpdate(RedshiftDestinationUpdate&& value) { SetRedshiftDestinationUpdate(value); return *this;}
+    inline UpdateDestinationRequest& WithRedshiftDestinationUpdate(RedshiftDestinationUpdate&& value) { SetRedshiftDestinationUpdate(std::move(value)); return *this;}
 
     /**
      * <p>Describes an update for a destination in Amazon ES.</p>
@@ -241,7 +242,7 @@ namespace Model
     /**
      * <p>Describes an update for a destination in Amazon ES.</p>
      */
-    inline void SetElasticsearchDestinationUpdate(ElasticsearchDestinationUpdate&& value) { m_elasticsearchDestinationUpdateHasBeenSet = true; m_elasticsearchDestinationUpdate = value; }
+    inline void SetElasticsearchDestinationUpdate(ElasticsearchDestinationUpdate&& value) { m_elasticsearchDestinationUpdateHasBeenSet = true; m_elasticsearchDestinationUpdate = std::move(value); }
 
     /**
      * <p>Describes an update for a destination in Amazon ES.</p>
@@ -251,7 +252,7 @@ namespace Model
     /**
      * <p>Describes an update for a destination in Amazon ES.</p>
      */
-    inline UpdateDestinationRequest& WithElasticsearchDestinationUpdate(ElasticsearchDestinationUpdate&& value) { SetElasticsearchDestinationUpdate(value); return *this;}
+    inline UpdateDestinationRequest& WithElasticsearchDestinationUpdate(ElasticsearchDestinationUpdate&& value) { SetElasticsearchDestinationUpdate(std::move(value)); return *this;}
 
   private:
     Aws::String m_deliveryStreamName;

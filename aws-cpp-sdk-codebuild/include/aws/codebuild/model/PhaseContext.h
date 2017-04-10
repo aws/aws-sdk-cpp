@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/codebuild/CodeBuild_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -58,7 +59,7 @@ namespace Model
     /**
      * <p>The status code for the context of the build phase.</p>
      */
-    inline void SetStatusCode(Aws::String&& value) { m_statusCodeHasBeenSet = true; m_statusCode = value; }
+    inline void SetStatusCode(Aws::String&& value) { m_statusCodeHasBeenSet = true; m_statusCode = std::move(value); }
 
     /**
      * <p>The status code for the context of the build phase.</p>
@@ -73,7 +74,7 @@ namespace Model
     /**
      * <p>The status code for the context of the build phase.</p>
      */
-    inline PhaseContext& WithStatusCode(Aws::String&& value) { SetStatusCode(value); return *this;}
+    inline PhaseContext& WithStatusCode(Aws::String&& value) { SetStatusCode(std::move(value)); return *this;}
 
     /**
      * <p>The status code for the context of the build phase.</p>
@@ -96,7 +97,7 @@ namespace Model
      * <p>An explanation of the build phase's context. This explanation might include a
      * command ID and an exit code.</p>
      */
-    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = value; }
+    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
 
     /**
      * <p>An explanation of the build phase's context. This explanation might include a
@@ -114,7 +115,7 @@ namespace Model
      * <p>An explanation of the build phase's context. This explanation might include a
      * command ID and an exit code.</p>
      */
-    inline PhaseContext& WithMessage(Aws::String&& value) { SetMessage(value); return *this;}
+    inline PhaseContext& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
 
     /**
      * <p>An explanation of the build phase's context. This explanation might include a

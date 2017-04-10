@@ -19,6 +19,7 @@
 #include <aws/health/model/DateTimeRange.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/health/model/EntityStatusCode.h>
+#include <utility>
 
 namespace Aws
 {
@@ -67,7 +68,7 @@ namespace Model
      * <code>"arn:aws:health:us-east-1::event/AWS_EC2_MAINTENANCE_5331",
      * "arn:aws:health:us-west-1::event/AWS_EBS_LOST_VOLUME_xyz"</code> </p>
      */
-    inline void SetEventArns(Aws::Vector<Aws::String>&& value) { m_eventArnsHasBeenSet = true; m_eventArns = value; }
+    inline void SetEventArns(Aws::Vector<Aws::String>&& value) { m_eventArnsHasBeenSet = true; m_eventArns = std::move(value); }
 
     /**
      * <p>A list of event ARNs (unique identifiers). For example:
@@ -81,7 +82,7 @@ namespace Model
      * <code>"arn:aws:health:us-east-1::event/AWS_EC2_MAINTENANCE_5331",
      * "arn:aws:health:us-west-1::event/AWS_EBS_LOST_VOLUME_xyz"</code> </p>
      */
-    inline EntityFilter& WithEventArns(Aws::Vector<Aws::String>&& value) { SetEventArns(value); return *this;}
+    inline EntityFilter& WithEventArns(Aws::Vector<Aws::String>&& value) { SetEventArns(std::move(value)); return *this;}
 
     /**
      * <p>A list of event ARNs (unique identifiers). For example:
@@ -95,7 +96,7 @@ namespace Model
      * <code>"arn:aws:health:us-east-1::event/AWS_EC2_MAINTENANCE_5331",
      * "arn:aws:health:us-west-1::event/AWS_EBS_LOST_VOLUME_xyz"</code> </p>
      */
-    inline EntityFilter& AddEventArns(Aws::String&& value) { m_eventArnsHasBeenSet = true; m_eventArns.push_back(value); return *this; }
+    inline EntityFilter& AddEventArns(Aws::String&& value) { m_eventArnsHasBeenSet = true; m_eventArns.push_back(std::move(value)); return *this; }
 
     /**
      * <p>A list of event ARNs (unique identifiers). For example:
@@ -117,7 +118,7 @@ namespace Model
     /**
      * <p>A list of entity ARNs (unique identifiers).</p>
      */
-    inline void SetEntityArns(Aws::Vector<Aws::String>&& value) { m_entityArnsHasBeenSet = true; m_entityArns = value; }
+    inline void SetEntityArns(Aws::Vector<Aws::String>&& value) { m_entityArnsHasBeenSet = true; m_entityArns = std::move(value); }
 
     /**
      * <p>A list of entity ARNs (unique identifiers).</p>
@@ -127,7 +128,7 @@ namespace Model
     /**
      * <p>A list of entity ARNs (unique identifiers).</p>
      */
-    inline EntityFilter& WithEntityArns(Aws::Vector<Aws::String>&& value) { SetEntityArns(value); return *this;}
+    inline EntityFilter& WithEntityArns(Aws::Vector<Aws::String>&& value) { SetEntityArns(std::move(value)); return *this;}
 
     /**
      * <p>A list of entity ARNs (unique identifiers).</p>
@@ -137,7 +138,7 @@ namespace Model
     /**
      * <p>A list of entity ARNs (unique identifiers).</p>
      */
-    inline EntityFilter& AddEntityArns(Aws::String&& value) { m_entityArnsHasBeenSet = true; m_entityArns.push_back(value); return *this; }
+    inline EntityFilter& AddEntityArns(Aws::String&& value) { m_entityArnsHasBeenSet = true; m_entityArns.push_back(std::move(value)); return *this; }
 
     /**
      * <p>A list of entity ARNs (unique identifiers).</p>
@@ -157,7 +158,7 @@ namespace Model
     /**
      * <p>A list of IDs for affected entities.</p>
      */
-    inline void SetEntityValues(Aws::Vector<Aws::String>&& value) { m_entityValuesHasBeenSet = true; m_entityValues = value; }
+    inline void SetEntityValues(Aws::Vector<Aws::String>&& value) { m_entityValuesHasBeenSet = true; m_entityValues = std::move(value); }
 
     /**
      * <p>A list of IDs for affected entities.</p>
@@ -167,7 +168,7 @@ namespace Model
     /**
      * <p>A list of IDs for affected entities.</p>
      */
-    inline EntityFilter& WithEntityValues(Aws::Vector<Aws::String>&& value) { SetEntityValues(value); return *this;}
+    inline EntityFilter& WithEntityValues(Aws::Vector<Aws::String>&& value) { SetEntityValues(std::move(value)); return *this;}
 
     /**
      * <p>A list of IDs for affected entities.</p>
@@ -177,7 +178,7 @@ namespace Model
     /**
      * <p>A list of IDs for affected entities.</p>
      */
-    inline EntityFilter& AddEntityValues(Aws::String&& value) { m_entityValuesHasBeenSet = true; m_entityValues.push_back(value); return *this; }
+    inline EntityFilter& AddEntityValues(Aws::String&& value) { m_entityValuesHasBeenSet = true; m_entityValues.push_back(std::move(value)); return *this; }
 
     /**
      * <p>A list of IDs for affected entities.</p>
@@ -197,7 +198,7 @@ namespace Model
     /**
      * <p>A list of the most recent dates and times that the entity was updated.</p>
      */
-    inline void SetLastUpdatedTimes(Aws::Vector<DateTimeRange>&& value) { m_lastUpdatedTimesHasBeenSet = true; m_lastUpdatedTimes = value; }
+    inline void SetLastUpdatedTimes(Aws::Vector<DateTimeRange>&& value) { m_lastUpdatedTimesHasBeenSet = true; m_lastUpdatedTimes = std::move(value); }
 
     /**
      * <p>A list of the most recent dates and times that the entity was updated.</p>
@@ -207,7 +208,7 @@ namespace Model
     /**
      * <p>A list of the most recent dates and times that the entity was updated.</p>
      */
-    inline EntityFilter& WithLastUpdatedTimes(Aws::Vector<DateTimeRange>&& value) { SetLastUpdatedTimes(value); return *this;}
+    inline EntityFilter& WithLastUpdatedTimes(Aws::Vector<DateTimeRange>&& value) { SetLastUpdatedTimes(std::move(value)); return *this;}
 
     /**
      * <p>A list of the most recent dates and times that the entity was updated.</p>
@@ -217,7 +218,7 @@ namespace Model
     /**
      * <p>A list of the most recent dates and times that the entity was updated.</p>
      */
-    inline EntityFilter& AddLastUpdatedTimes(DateTimeRange&& value) { m_lastUpdatedTimesHasBeenSet = true; m_lastUpdatedTimes.push_back(value); return *this; }
+    inline EntityFilter& AddLastUpdatedTimes(DateTimeRange&& value) { m_lastUpdatedTimesHasBeenSet = true; m_lastUpdatedTimes.push_back(std::move(value)); return *this; }
 
     /**
      * <p>A map of entity tags attached to the affected entity.</p>
@@ -232,7 +233,7 @@ namespace Model
     /**
      * <p>A map of entity tags attached to the affected entity.</p>
      */
-    inline void SetTags(Aws::Vector<Aws::Map<Aws::String, Aws::String>>&& value) { m_tagsHasBeenSet = true; m_tags = value; }
+    inline void SetTags(Aws::Vector<Aws::Map<Aws::String, Aws::String>>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
      * <p>A map of entity tags attached to the affected entity.</p>
@@ -242,7 +243,7 @@ namespace Model
     /**
      * <p>A map of entity tags attached to the affected entity.</p>
      */
-    inline EntityFilter& WithTags(Aws::Vector<Aws::Map<Aws::String, Aws::String>>&& value) { SetTags(value); return *this;}
+    inline EntityFilter& WithTags(Aws::Vector<Aws::Map<Aws::String, Aws::String>>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
      * <p>A map of entity tags attached to the affected entity.</p>
@@ -252,7 +253,7 @@ namespace Model
     /**
      * <p>A map of entity tags attached to the affected entity.</p>
      */
-    inline EntityFilter& AddTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
+    inline EntityFilter& AddTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
     /**
      * <p>A list of entity status codes (<code>IMPAIRED</code>,
@@ -270,7 +271,7 @@ namespace Model
      * <p>A list of entity status codes (<code>IMPAIRED</code>,
      * <code>UNIMPAIRED</code>, or <code>UNKNOWN</code>).</p>
      */
-    inline void SetStatusCodes(Aws::Vector<EntityStatusCode>&& value) { m_statusCodesHasBeenSet = true; m_statusCodes = value; }
+    inline void SetStatusCodes(Aws::Vector<EntityStatusCode>&& value) { m_statusCodesHasBeenSet = true; m_statusCodes = std::move(value); }
 
     /**
      * <p>A list of entity status codes (<code>IMPAIRED</code>,
@@ -282,7 +283,7 @@ namespace Model
      * <p>A list of entity status codes (<code>IMPAIRED</code>,
      * <code>UNIMPAIRED</code>, or <code>UNKNOWN</code>).</p>
      */
-    inline EntityFilter& WithStatusCodes(Aws::Vector<EntityStatusCode>&& value) { SetStatusCodes(value); return *this;}
+    inline EntityFilter& WithStatusCodes(Aws::Vector<EntityStatusCode>&& value) { SetStatusCodes(std::move(value)); return *this;}
 
     /**
      * <p>A list of entity status codes (<code>IMPAIRED</code>,
@@ -294,7 +295,7 @@ namespace Model
      * <p>A list of entity status codes (<code>IMPAIRED</code>,
      * <code>UNIMPAIRED</code>, or <code>UNKNOWN</code>).</p>
      */
-    inline EntityFilter& AddStatusCodes(EntityStatusCode&& value) { m_statusCodesHasBeenSet = true; m_statusCodes.push_back(value); return *this; }
+    inline EntityFilter& AddStatusCodes(EntityStatusCode&& value) { m_statusCodesHasBeenSet = true; m_statusCodes.push_back(std::move(value)); return *this; }
 
   private:
     Aws::Vector<Aws::String> m_eventArns;

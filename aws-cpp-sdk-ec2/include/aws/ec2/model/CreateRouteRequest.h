@@ -16,6 +16,7 @@
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/ec2/EC2Request.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -77,7 +78,7 @@ namespace Model
     /**
      * <p>The ID of the route table for the route.</p>
      */
-    inline void SetRouteTableId(Aws::String&& value) { m_routeTableIdHasBeenSet = true; m_routeTableId = value; }
+    inline void SetRouteTableId(Aws::String&& value) { m_routeTableIdHasBeenSet = true; m_routeTableId = std::move(value); }
 
     /**
      * <p>The ID of the route table for the route.</p>
@@ -92,7 +93,7 @@ namespace Model
     /**
      * <p>The ID of the route table for the route.</p>
      */
-    inline CreateRouteRequest& WithRouteTableId(Aws::String&& value) { SetRouteTableId(value); return *this;}
+    inline CreateRouteRequest& WithRouteTableId(Aws::String&& value) { SetRouteTableId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the route table for the route.</p>
@@ -115,7 +116,7 @@ namespace Model
      * <p>The IPv4 CIDR address block used for the destination match. Routing decisions
      * are based on the most specific match.</p>
      */
-    inline void SetDestinationCidrBlock(Aws::String&& value) { m_destinationCidrBlockHasBeenSet = true; m_destinationCidrBlock = value; }
+    inline void SetDestinationCidrBlock(Aws::String&& value) { m_destinationCidrBlockHasBeenSet = true; m_destinationCidrBlock = std::move(value); }
 
     /**
      * <p>The IPv4 CIDR address block used for the destination match. Routing decisions
@@ -133,7 +134,7 @@ namespace Model
      * <p>The IPv4 CIDR address block used for the destination match. Routing decisions
      * are based on the most specific match.</p>
      */
-    inline CreateRouteRequest& WithDestinationCidrBlock(Aws::String&& value) { SetDestinationCidrBlock(value); return *this;}
+    inline CreateRouteRequest& WithDestinationCidrBlock(Aws::String&& value) { SetDestinationCidrBlock(std::move(value)); return *this;}
 
     /**
      * <p>The IPv4 CIDR address block used for the destination match. Routing decisions
@@ -157,7 +158,7 @@ namespace Model
      * <p>The ID of an Internet gateway or virtual private gateway attached to your
      * VPC.</p>
      */
-    inline void SetGatewayId(Aws::String&& value) { m_gatewayIdHasBeenSet = true; m_gatewayId = value; }
+    inline void SetGatewayId(Aws::String&& value) { m_gatewayIdHasBeenSet = true; m_gatewayId = std::move(value); }
 
     /**
      * <p>The ID of an Internet gateway or virtual private gateway attached to your
@@ -175,7 +176,7 @@ namespace Model
      * <p>The ID of an Internet gateway or virtual private gateway attached to your
      * VPC.</p>
      */
-    inline CreateRouteRequest& WithGatewayId(Aws::String&& value) { SetGatewayId(value); return *this;}
+    inline CreateRouteRequest& WithGatewayId(Aws::String&& value) { SetGatewayId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of an Internet gateway or virtual private gateway attached to your
@@ -199,7 +200,7 @@ namespace Model
      * <p>The IPv6 CIDR block used for the destination match. Routing decisions are
      * based on the most specific match.</p>
      */
-    inline void SetDestinationIpv6CidrBlock(Aws::String&& value) { m_destinationIpv6CidrBlockHasBeenSet = true; m_destinationIpv6CidrBlock = value; }
+    inline void SetDestinationIpv6CidrBlock(Aws::String&& value) { m_destinationIpv6CidrBlockHasBeenSet = true; m_destinationIpv6CidrBlock = std::move(value); }
 
     /**
      * <p>The IPv6 CIDR block used for the destination match. Routing decisions are
@@ -217,7 +218,7 @@ namespace Model
      * <p>The IPv6 CIDR block used for the destination match. Routing decisions are
      * based on the most specific match.</p>
      */
-    inline CreateRouteRequest& WithDestinationIpv6CidrBlock(Aws::String&& value) { SetDestinationIpv6CidrBlock(value); return *this;}
+    inline CreateRouteRequest& WithDestinationIpv6CidrBlock(Aws::String&& value) { SetDestinationIpv6CidrBlock(std::move(value)); return *this;}
 
     /**
      * <p>The IPv6 CIDR block used for the destination match. Routing decisions are
@@ -238,7 +239,7 @@ namespace Model
     /**
      * <p>[IPv6 traffic only] The ID of an egress-only Internet gateway.</p>
      */
-    inline void SetEgressOnlyInternetGatewayId(Aws::String&& value) { m_egressOnlyInternetGatewayIdHasBeenSet = true; m_egressOnlyInternetGatewayId = value; }
+    inline void SetEgressOnlyInternetGatewayId(Aws::String&& value) { m_egressOnlyInternetGatewayIdHasBeenSet = true; m_egressOnlyInternetGatewayId = std::move(value); }
 
     /**
      * <p>[IPv6 traffic only] The ID of an egress-only Internet gateway.</p>
@@ -253,7 +254,7 @@ namespace Model
     /**
      * <p>[IPv6 traffic only] The ID of an egress-only Internet gateway.</p>
      */
-    inline CreateRouteRequest& WithEgressOnlyInternetGatewayId(Aws::String&& value) { SetEgressOnlyInternetGatewayId(value); return *this;}
+    inline CreateRouteRequest& WithEgressOnlyInternetGatewayId(Aws::String&& value) { SetEgressOnlyInternetGatewayId(std::move(value)); return *this;}
 
     /**
      * <p>[IPv6 traffic only] The ID of an egress-only Internet gateway.</p>
@@ -276,7 +277,7 @@ namespace Model
      * <p>The ID of a NAT instance in your VPC. The operation fails if you specify an
      * instance ID unless exactly one network interface is attached.</p>
      */
-    inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
+    inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::move(value); }
 
     /**
      * <p>The ID of a NAT instance in your VPC. The operation fails if you specify an
@@ -294,7 +295,7 @@ namespace Model
      * <p>The ID of a NAT instance in your VPC. The operation fails if you specify an
      * instance ID unless exactly one network interface is attached.</p>
      */
-    inline CreateRouteRequest& WithInstanceId(Aws::String&& value) { SetInstanceId(value); return *this;}
+    inline CreateRouteRequest& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of a NAT instance in your VPC. The operation fails if you specify an
@@ -315,7 +316,7 @@ namespace Model
     /**
      * <p>The ID of a network interface.</p>
      */
-    inline void SetNetworkInterfaceId(Aws::String&& value) { m_networkInterfaceIdHasBeenSet = true; m_networkInterfaceId = value; }
+    inline void SetNetworkInterfaceId(Aws::String&& value) { m_networkInterfaceIdHasBeenSet = true; m_networkInterfaceId = std::move(value); }
 
     /**
      * <p>The ID of a network interface.</p>
@@ -330,7 +331,7 @@ namespace Model
     /**
      * <p>The ID of a network interface.</p>
      */
-    inline CreateRouteRequest& WithNetworkInterfaceId(Aws::String&& value) { SetNetworkInterfaceId(value); return *this;}
+    inline CreateRouteRequest& WithNetworkInterfaceId(Aws::String&& value) { SetNetworkInterfaceId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of a network interface.</p>
@@ -350,7 +351,7 @@ namespace Model
     /**
      * <p>The ID of a VPC peering connection.</p>
      */
-    inline void SetVpcPeeringConnectionId(Aws::String&& value) { m_vpcPeeringConnectionIdHasBeenSet = true; m_vpcPeeringConnectionId = value; }
+    inline void SetVpcPeeringConnectionId(Aws::String&& value) { m_vpcPeeringConnectionIdHasBeenSet = true; m_vpcPeeringConnectionId = std::move(value); }
 
     /**
      * <p>The ID of a VPC peering connection.</p>
@@ -365,7 +366,7 @@ namespace Model
     /**
      * <p>The ID of a VPC peering connection.</p>
      */
-    inline CreateRouteRequest& WithVpcPeeringConnectionId(Aws::String&& value) { SetVpcPeeringConnectionId(value); return *this;}
+    inline CreateRouteRequest& WithVpcPeeringConnectionId(Aws::String&& value) { SetVpcPeeringConnectionId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of a VPC peering connection.</p>
@@ -385,7 +386,7 @@ namespace Model
     /**
      * <p>[IPv4 traffic only] The ID of a NAT gateway.</p>
      */
-    inline void SetNatGatewayId(Aws::String&& value) { m_natGatewayIdHasBeenSet = true; m_natGatewayId = value; }
+    inline void SetNatGatewayId(Aws::String&& value) { m_natGatewayIdHasBeenSet = true; m_natGatewayId = std::move(value); }
 
     /**
      * <p>[IPv4 traffic only] The ID of a NAT gateway.</p>
@@ -400,7 +401,7 @@ namespace Model
     /**
      * <p>[IPv4 traffic only] The ID of a NAT gateway.</p>
      */
-    inline CreateRouteRequest& WithNatGatewayId(Aws::String&& value) { SetNatGatewayId(value); return *this;}
+    inline CreateRouteRequest& WithNatGatewayId(Aws::String&& value) { SetNatGatewayId(std::move(value)); return *this;}
 
     /**
      * <p>[IPv4 traffic only] The ID of a NAT gateway.</p>

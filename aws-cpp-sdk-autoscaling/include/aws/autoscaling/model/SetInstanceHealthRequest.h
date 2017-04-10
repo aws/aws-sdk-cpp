@@ -16,6 +16,7 @@
 #include <aws/autoscaling/AutoScaling_EXPORTS.h>
 #include <aws/autoscaling/AutoScalingRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -53,7 +54,7 @@ namespace Model
     /**
      * <p>The ID of the instance.</p>
      */
-    inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
+    inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::move(value); }
 
     /**
      * <p>The ID of the instance.</p>
@@ -68,7 +69,7 @@ namespace Model
     /**
      * <p>The ID of the instance.</p>
      */
-    inline SetInstanceHealthRequest& WithInstanceId(Aws::String&& value) { SetInstanceId(value); return *this;}
+    inline SetInstanceHealthRequest& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the instance.</p>
@@ -97,7 +98,7 @@ namespace Model
      * instance to be out of service. Auto Scaling will terminate and replace the
      * unhealthy instance.</p>
      */
-    inline void SetHealthStatus(Aws::String&& value) { m_healthStatusHasBeenSet = true; m_healthStatus = value; }
+    inline void SetHealthStatus(Aws::String&& value) { m_healthStatusHasBeenSet = true; m_healthStatus = std::move(value); }
 
     /**
      * <p>The health status of the instance. Set to <code>Healthy</code> if you want
@@ -121,7 +122,7 @@ namespace Model
      * instance to be out of service. Auto Scaling will terminate and replace the
      * unhealthy instance.</p>
      */
-    inline SetInstanceHealthRequest& WithHealthStatus(Aws::String&& value) { SetHealthStatus(value); return *this;}
+    inline SetInstanceHealthRequest& WithHealthStatus(Aws::String&& value) { SetHealthStatus(std::move(value)); return *this;}
 
     /**
      * <p>The health status of the instance. Set to <code>Healthy</code> if you want

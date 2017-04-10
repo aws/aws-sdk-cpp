@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
+#include <utility>
 
 namespace Aws
 {
@@ -66,7 +67,7 @@ namespace Model
     /**
      * <p>The friendly name (not ARN) identifying the policy.</p>
      */
-    inline void SetPolicyName(Aws::String&& value) { m_policyNameHasBeenSet = true; m_policyName = value; }
+    inline void SetPolicyName(Aws::String&& value) { m_policyNameHasBeenSet = true; m_policyName = std::move(value); }
 
     /**
      * <p>The friendly name (not ARN) identifying the policy.</p>
@@ -81,7 +82,7 @@ namespace Model
     /**
      * <p>The friendly name (not ARN) identifying the policy.</p>
      */
-    inline Policy& WithPolicyName(Aws::String&& value) { SetPolicyName(value); return *this;}
+    inline Policy& WithPolicyName(Aws::String&& value) { SetPolicyName(std::move(value)); return *this;}
 
     /**
      * <p>The friendly name (not ARN) identifying the policy.</p>
@@ -110,7 +111,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
      * Identifiers</a> in the <i>Using IAM</i> guide.</p>
      */
-    inline void SetPolicyId(Aws::String&& value) { m_policyIdHasBeenSet = true; m_policyId = value; }
+    inline void SetPolicyId(Aws::String&& value) { m_policyIdHasBeenSet = true; m_policyId = std::move(value); }
 
     /**
      * <p>The stable and unique string identifying the policy.</p> <p>For more
@@ -134,7 +135,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
      * Identifiers</a> in the <i>Using IAM</i> guide.</p>
      */
-    inline Policy& WithPolicyId(Aws::String&& value) { SetPolicyId(value); return *this;}
+    inline Policy& WithPolicyId(Aws::String&& value) { SetPolicyId(std::move(value)); return *this;}
 
     /**
      * <p>The stable and unique string identifying the policy.</p> <p>For more
@@ -151,7 +152,7 @@ namespace Model
     inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
 
     
-    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = value; }
+    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
 
     
     inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
@@ -160,7 +161,7 @@ namespace Model
     inline Policy& WithArn(const Aws::String& value) { SetArn(value); return *this;}
 
     
-    inline Policy& WithArn(Aws::String&& value) { SetArn(value); return *this;}
+    inline Policy& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
 
     
     inline Policy& WithArn(const char* value) { SetArn(value); return *this;}
@@ -184,7 +185,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
      * Identifiers</a> in the <i>Using IAM</i> guide.</p>
      */
-    inline void SetPath(Aws::String&& value) { m_pathHasBeenSet = true; m_path = value; }
+    inline void SetPath(Aws::String&& value) { m_pathHasBeenSet = true; m_path = std::move(value); }
 
     /**
      * <p>The path to the policy.</p> <p>For more information about paths, see <a
@@ -205,7 +206,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
      * Identifiers</a> in the <i>Using IAM</i> guide.</p>
      */
-    inline Policy& WithPath(Aws::String&& value) { SetPath(value); return *this;}
+    inline Policy& WithPath(Aws::String&& value) { SetPath(std::move(value)); return *this;}
 
     /**
      * <p>The path to the policy.</p> <p>For more information about paths, see <a
@@ -230,7 +231,7 @@ namespace Model
      * <p>The identifier for the version of the policy that is set as the default
      * version.</p>
      */
-    inline void SetDefaultVersionId(Aws::String&& value) { m_defaultVersionIdHasBeenSet = true; m_defaultVersionId = value; }
+    inline void SetDefaultVersionId(Aws::String&& value) { m_defaultVersionIdHasBeenSet = true; m_defaultVersionId = std::move(value); }
 
     /**
      * <p>The identifier for the version of the policy that is set as the default
@@ -248,7 +249,7 @@ namespace Model
      * <p>The identifier for the version of the policy that is set as the default
      * version.</p>
      */
-    inline Policy& WithDefaultVersionId(Aws::String&& value) { SetDefaultVersionId(value); return *this;}
+    inline Policy& WithDefaultVersionId(Aws::String&& value) { SetDefaultVersionId(std::move(value)); return *this;}
 
     /**
      * <p>The identifier for the version of the policy that is set as the default
@@ -311,7 +312,7 @@ namespace Model
      * response to the <a>GetPolicy</a> operation. It is not included in the response
      * to the <a>ListPolicies</a> operation. </p>
      */
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = value; }
+    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
      * <p>A friendly description of the policy.</p> <p>This element is included in the
@@ -332,7 +333,7 @@ namespace Model
      * response to the <a>GetPolicy</a> operation. It is not included in the response
      * to the <a>ListPolicies</a> operation. </p>
      */
-    inline Policy& WithDescription(Aws::String&& value) { SetDescription(value); return *this;}
+    inline Policy& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
      * <p>A friendly description of the policy.</p> <p>This element is included in the
@@ -357,7 +358,7 @@ namespace Model
      * <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601
      * date-time format</a>, when the policy was created.</p>
      */
-    inline void SetCreateDate(Aws::Utils::DateTime&& value) { m_createDateHasBeenSet = true; m_createDate = value; }
+    inline void SetCreateDate(Aws::Utils::DateTime&& value) { m_createDateHasBeenSet = true; m_createDate = std::move(value); }
 
     /**
      * <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601
@@ -369,7 +370,7 @@ namespace Model
      * <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601
      * date-time format</a>, when the policy was created.</p>
      */
-    inline Policy& WithCreateDate(Aws::Utils::DateTime&& value) { SetCreateDate(value); return *this;}
+    inline Policy& WithCreateDate(Aws::Utils::DateTime&& value) { SetCreateDate(std::move(value)); return *this;}
 
     /**
      * <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601
@@ -396,7 +397,7 @@ namespace Model
      * created. When a policy has more than one version, this field contains the date
      * and time when the most recent policy version was created.</p>
      */
-    inline void SetUpdateDate(Aws::Utils::DateTime&& value) { m_updateDateHasBeenSet = true; m_updateDate = value; }
+    inline void SetUpdateDate(Aws::Utils::DateTime&& value) { m_updateDateHasBeenSet = true; m_updateDate = std::move(value); }
 
     /**
      * <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601
@@ -414,7 +415,7 @@ namespace Model
      * created. When a policy has more than one version, this field contains the date
      * and time when the most recent policy version was created.</p>
      */
-    inline Policy& WithUpdateDate(Aws::Utils::DateTime&& value) { SetUpdateDate(value); return *this;}
+    inline Policy& WithUpdateDate(Aws::Utils::DateTime&& value) { SetUpdateDate(std::move(value)); return *this;}
 
   private:
     Aws::String m_policyName;

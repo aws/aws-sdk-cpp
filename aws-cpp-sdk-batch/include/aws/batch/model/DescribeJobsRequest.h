@@ -17,6 +17,7 @@
 #include <aws/batch/BatchRequest.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -47,7 +48,7 @@ namespace Model
     /**
      * <p>A space-separated list of up to 100 job IDs.</p>
      */
-    inline void SetJobs(Aws::Vector<Aws::String>&& value) { m_jobsHasBeenSet = true; m_jobs = value; }
+    inline void SetJobs(Aws::Vector<Aws::String>&& value) { m_jobsHasBeenSet = true; m_jobs = std::move(value); }
 
     /**
      * <p>A space-separated list of up to 100 job IDs.</p>
@@ -57,7 +58,7 @@ namespace Model
     /**
      * <p>A space-separated list of up to 100 job IDs.</p>
      */
-    inline DescribeJobsRequest& WithJobs(Aws::Vector<Aws::String>&& value) { SetJobs(value); return *this;}
+    inline DescribeJobsRequest& WithJobs(Aws::Vector<Aws::String>&& value) { SetJobs(std::move(value)); return *this;}
 
     /**
      * <p>A space-separated list of up to 100 job IDs.</p>
@@ -67,7 +68,7 @@ namespace Model
     /**
      * <p>A space-separated list of up to 100 job IDs.</p>
      */
-    inline DescribeJobsRequest& AddJobs(Aws::String&& value) { m_jobsHasBeenSet = true; m_jobs.push_back(value); return *this; }
+    inline DescribeJobsRequest& AddJobs(Aws::String&& value) { m_jobsHasBeenSet = true; m_jobs.push_back(std::move(value)); return *this; }
 
     /**
      * <p>A space-separated list of up to 100 job IDs.</p>

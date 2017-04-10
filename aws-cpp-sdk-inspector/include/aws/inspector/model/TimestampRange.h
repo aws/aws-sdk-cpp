@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/inspector/Inspector_EXPORTS.h>
 #include <aws/core/utils/DateTime.h>
+#include <utility>
 
 namespace Aws
 {
@@ -55,7 +56,7 @@ namespace Model
     /**
      * <p>The minimum value of the timestamp range.</p>
      */
-    inline void SetMinimum(Aws::Utils::DateTime&& value) { m_minimumHasBeenSet = true; m_minimum = value; }
+    inline void SetMinimum(Aws::Utils::DateTime&& value) { m_minimumHasBeenSet = true; m_minimum = std::move(value); }
 
     /**
      * <p>The minimum value of the timestamp range.</p>
@@ -65,7 +66,7 @@ namespace Model
     /**
      * <p>The minimum value of the timestamp range.</p>
      */
-    inline TimestampRange& WithMinimum(Aws::Utils::DateTime&& value) { SetMinimum(value); return *this;}
+    inline TimestampRange& WithMinimum(Aws::Utils::DateTime&& value) { SetMinimum(std::move(value)); return *this;}
 
     /**
      * <p>The maximum value of the timestamp range.</p>
@@ -80,7 +81,7 @@ namespace Model
     /**
      * <p>The maximum value of the timestamp range.</p>
      */
-    inline void SetMaximum(Aws::Utils::DateTime&& value) { m_maximumHasBeenSet = true; m_maximum = value; }
+    inline void SetMaximum(Aws::Utils::DateTime&& value) { m_maximumHasBeenSet = true; m_maximum = std::move(value); }
 
     /**
      * <p>The maximum value of the timestamp range.</p>
@@ -90,7 +91,7 @@ namespace Model
     /**
      * <p>The maximum value of the timestamp range.</p>
      */
-    inline TimestampRange& WithMaximum(Aws::Utils::DateTime&& value) { SetMaximum(value); return *this;}
+    inline TimestampRange& WithMaximum(Aws::Utils::DateTime&& value) { SetMaximum(std::move(value)); return *this;}
 
   private:
     Aws::Utils::DateTime m_minimum;

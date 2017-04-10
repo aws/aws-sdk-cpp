@@ -18,6 +18,7 @@
 #include <aws/ec2/model/DiskImageFormat.h>
 #include <aws/ec2/model/ContainerFormat.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -62,7 +63,7 @@ namespace Model
     /**
      * <p>The format for the exported image.</p>
      */
-    inline void SetDiskImageFormat(DiskImageFormat&& value) { m_diskImageFormatHasBeenSet = true; m_diskImageFormat = value; }
+    inline void SetDiskImageFormat(DiskImageFormat&& value) { m_diskImageFormatHasBeenSet = true; m_diskImageFormat = std::move(value); }
 
     /**
      * <p>The format for the exported image.</p>
@@ -72,7 +73,7 @@ namespace Model
     /**
      * <p>The format for the exported image.</p>
      */
-    inline ExportToS3Task& WithDiskImageFormat(DiskImageFormat&& value) { SetDiskImageFormat(value); return *this;}
+    inline ExportToS3Task& WithDiskImageFormat(DiskImageFormat&& value) { SetDiskImageFormat(std::move(value)); return *this;}
 
     /**
      * <p>The container format used to combine disk images with metadata (such as OVF).
@@ -90,7 +91,7 @@ namespace Model
      * <p>The container format used to combine disk images with metadata (such as OVF).
      * If absent, only the disk image is exported.</p>
      */
-    inline void SetContainerFormat(ContainerFormat&& value) { m_containerFormatHasBeenSet = true; m_containerFormat = value; }
+    inline void SetContainerFormat(ContainerFormat&& value) { m_containerFormatHasBeenSet = true; m_containerFormat = std::move(value); }
 
     /**
      * <p>The container format used to combine disk images with metadata (such as OVF).
@@ -102,7 +103,7 @@ namespace Model
      * <p>The container format used to combine disk images with metadata (such as OVF).
      * If absent, only the disk image is exported.</p>
      */
-    inline ExportToS3Task& WithContainerFormat(ContainerFormat&& value) { SetContainerFormat(value); return *this;}
+    inline ExportToS3Task& WithContainerFormat(ContainerFormat&& value) { SetContainerFormat(std::move(value)); return *this;}
 
     /**
      * <p>The S3 bucket for the destination image. The destination bucket must exist
@@ -123,7 +124,7 @@ namespace Model
      * and grant WRITE and READ_ACP permissions to the AWS account
      * <code>vm-import-export@amazon.com</code>.</p>
      */
-    inline void SetS3Bucket(Aws::String&& value) { m_s3BucketHasBeenSet = true; m_s3Bucket = value; }
+    inline void SetS3Bucket(Aws::String&& value) { m_s3BucketHasBeenSet = true; m_s3Bucket = std::move(value); }
 
     /**
      * <p>The S3 bucket for the destination image. The destination bucket must exist
@@ -144,7 +145,7 @@ namespace Model
      * and grant WRITE and READ_ACP permissions to the AWS account
      * <code>vm-import-export@amazon.com</code>.</p>
      */
-    inline ExportToS3Task& WithS3Bucket(Aws::String&& value) { SetS3Bucket(value); return *this;}
+    inline ExportToS3Task& WithS3Bucket(Aws::String&& value) { SetS3Bucket(std::move(value)); return *this;}
 
     /**
      * <p>The S3 bucket for the destination image. The destination bucket must exist
@@ -166,7 +167,7 @@ namespace Model
     /**
      * <p>The encryption key for your S3 bucket.</p>
      */
-    inline void SetS3Key(Aws::String&& value) { m_s3KeyHasBeenSet = true; m_s3Key = value; }
+    inline void SetS3Key(Aws::String&& value) { m_s3KeyHasBeenSet = true; m_s3Key = std::move(value); }
 
     /**
      * <p>The encryption key for your S3 bucket.</p>
@@ -181,7 +182,7 @@ namespace Model
     /**
      * <p>The encryption key for your S3 bucket.</p>
      */
-    inline ExportToS3Task& WithS3Key(Aws::String&& value) { SetS3Key(value); return *this;}
+    inline ExportToS3Task& WithS3Key(Aws::String&& value) { SetS3Key(std::move(value)); return *this;}
 
     /**
      * <p>The encryption key for your S3 bucket.</p>

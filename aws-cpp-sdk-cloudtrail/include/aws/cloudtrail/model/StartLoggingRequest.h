@@ -16,6 +16,7 @@
 #include <aws/cloudtrail/CloudTrail_EXPORTS.h>
 #include <aws/cloudtrail/CloudTrailRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -58,7 +59,7 @@ namespace Model
      * logs AWS API calls. The format of a trail ARN is:</p> <p>
      * <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code> </p>
      */
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p>Specifies the name or the CloudTrail ARN of the trail for which CloudTrail
@@ -79,7 +80,7 @@ namespace Model
      * logs AWS API calls. The format of a trail ARN is:</p> <p>
      * <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code> </p>
      */
-    inline StartLoggingRequest& WithName(Aws::String&& value) { SetName(value); return *this;}
+    inline StartLoggingRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>Specifies the name or the CloudTrail ARN of the trail for which CloudTrail

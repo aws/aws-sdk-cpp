@@ -17,6 +17,7 @@
 #include <aws/opsworks/OpsWorksRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <utility>
 
 namespace Aws
 {
@@ -52,7 +53,7 @@ namespace Model
      * <p>The app stack ID. If you use this parameter, <code>DescribeApps</code>
      * returns a description of the apps in the specified stack.</p>
      */
-    inline void SetStackId(Aws::String&& value) { m_stackIdHasBeenSet = true; m_stackId = value; }
+    inline void SetStackId(Aws::String&& value) { m_stackIdHasBeenSet = true; m_stackId = std::move(value); }
 
     /**
      * <p>The app stack ID. If you use this parameter, <code>DescribeApps</code>
@@ -70,7 +71,7 @@ namespace Model
      * <p>The app stack ID. If you use this parameter, <code>DescribeApps</code>
      * returns a description of the apps in the specified stack.</p>
      */
-    inline DescribeAppsRequest& WithStackId(Aws::String&& value) { SetStackId(value); return *this;}
+    inline DescribeAppsRequest& WithStackId(Aws::String&& value) { SetStackId(std::move(value)); return *this;}
 
     /**
      * <p>The app stack ID. If you use this parameter, <code>DescribeApps</code>
@@ -97,7 +98,7 @@ namespace Model
      * <code>DescribeApps</code> returns a description of the specified apps.
      * Otherwise, it returns a description of every app.</p>
      */
-    inline void SetAppIds(Aws::Vector<Aws::String>&& value) { m_appIdsHasBeenSet = true; m_appIds = value; }
+    inline void SetAppIds(Aws::Vector<Aws::String>&& value) { m_appIdsHasBeenSet = true; m_appIds = std::move(value); }
 
     /**
      * <p>An array of app IDs for the apps to be described. If you use this parameter,
@@ -111,7 +112,7 @@ namespace Model
      * <code>DescribeApps</code> returns a description of the specified apps.
      * Otherwise, it returns a description of every app.</p>
      */
-    inline DescribeAppsRequest& WithAppIds(Aws::Vector<Aws::String>&& value) { SetAppIds(value); return *this;}
+    inline DescribeAppsRequest& WithAppIds(Aws::Vector<Aws::String>&& value) { SetAppIds(std::move(value)); return *this;}
 
     /**
      * <p>An array of app IDs for the apps to be described. If you use this parameter,
@@ -125,7 +126,7 @@ namespace Model
      * <code>DescribeApps</code> returns a description of the specified apps.
      * Otherwise, it returns a description of every app.</p>
      */
-    inline DescribeAppsRequest& AddAppIds(Aws::String&& value) { m_appIdsHasBeenSet = true; m_appIds.push_back(value); return *this; }
+    inline DescribeAppsRequest& AddAppIds(Aws::String&& value) { m_appIdsHasBeenSet = true; m_appIds.push_back(std::move(value)); return *this; }
 
     /**
      * <p>An array of app IDs for the apps to be described. If you use this parameter,

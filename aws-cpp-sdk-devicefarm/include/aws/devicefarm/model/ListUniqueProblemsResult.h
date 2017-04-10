@@ -19,6 +19,7 @@
 #include <aws/devicefarm/model/ExecutionResult.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/devicefarm/model/UniqueProblem.h>
+#include <utility>
 
 namespace Aws
 {
@@ -77,7 +78,7 @@ namespace Model
      * condition.</p> </li> <li> <p>ERRORED: An error condition.</p> </li> <li>
      * <p>STOPPED: A stopped condition.</p> </li> </ul>
      */
-    inline void SetUniqueProblems(Aws::Map<ExecutionResult, Aws::Vector<UniqueProblem>>&& value) { m_uniqueProblems = value; }
+    inline void SetUniqueProblems(Aws::Map<ExecutionResult, Aws::Vector<UniqueProblem>>&& value) { m_uniqueProblems = std::move(value); }
 
     /**
      * <p>Information about the unique problems.</p> <p>Allowed values include:</p>
@@ -97,7 +98,7 @@ namespace Model
      * condition.</p> </li> <li> <p>ERRORED: An error condition.</p> </li> <li>
      * <p>STOPPED: A stopped condition.</p> </li> </ul>
      */
-    inline ListUniqueProblemsResult& WithUniqueProblems(Aws::Map<ExecutionResult, Aws::Vector<UniqueProblem>>&& value) { SetUniqueProblems(value); return *this;}
+    inline ListUniqueProblemsResult& WithUniqueProblems(Aws::Map<ExecutionResult, Aws::Vector<UniqueProblem>>&& value) { SetUniqueProblems(std::move(value)); return *this;}
 
     /**
      * <p>Information about the unique problems.</p> <p>Allowed values include:</p>
@@ -107,7 +108,7 @@ namespace Model
      * condition.</p> </li> <li> <p>ERRORED: An error condition.</p> </li> <li>
      * <p>STOPPED: A stopped condition.</p> </li> </ul>
      */
-    inline ListUniqueProblemsResult& AddUniqueProblems(const ExecutionResult& key, const Aws::Vector<UniqueProblem>& value) { m_uniqueProblems[key] = value; return *this; }
+    inline ListUniqueProblemsResult& AddUniqueProblems(const ExecutionResult& key, const Aws::Vector<UniqueProblem>& value) { m_uniqueProblems.emplace(key, value); return *this; }
 
     /**
      * <p>Information about the unique problems.</p> <p>Allowed values include:</p>
@@ -117,7 +118,7 @@ namespace Model
      * condition.</p> </li> <li> <p>ERRORED: An error condition.</p> </li> <li>
      * <p>STOPPED: A stopped condition.</p> </li> </ul>
      */
-    inline ListUniqueProblemsResult& AddUniqueProblems(ExecutionResult&& key, const Aws::Vector<UniqueProblem>& value) { m_uniqueProblems[key] = value; return *this; }
+    inline ListUniqueProblemsResult& AddUniqueProblems(ExecutionResult&& key, const Aws::Vector<UniqueProblem>& value) { m_uniqueProblems.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>Information about the unique problems.</p> <p>Allowed values include:</p>
@@ -127,7 +128,7 @@ namespace Model
      * condition.</p> </li> <li> <p>ERRORED: An error condition.</p> </li> <li>
      * <p>STOPPED: A stopped condition.</p> </li> </ul>
      */
-    inline ListUniqueProblemsResult& AddUniqueProblems(const ExecutionResult& key, Aws::Vector<UniqueProblem>&& value) { m_uniqueProblems[key] = value; return *this; }
+    inline ListUniqueProblemsResult& AddUniqueProblems(const ExecutionResult& key, Aws::Vector<UniqueProblem>&& value) { m_uniqueProblems.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>Information about the unique problems.</p> <p>Allowed values include:</p>
@@ -137,7 +138,7 @@ namespace Model
      * condition.</p> </li> <li> <p>ERRORED: An error condition.</p> </li> <li>
      * <p>STOPPED: A stopped condition.</p> </li> </ul>
      */
-    inline ListUniqueProblemsResult& AddUniqueProblems(ExecutionResult&& key, Aws::Vector<UniqueProblem>&& value) { m_uniqueProblems[key] = value; return *this; }
+    inline ListUniqueProblemsResult& AddUniqueProblems(ExecutionResult&& key, Aws::Vector<UniqueProblem>&& value) { m_uniqueProblems.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
      * <p>If the number of items that are returned is significantly large, this is an
@@ -158,7 +159,7 @@ namespace Model
      * identifier that is also returned, which can be used in a subsequent call to this
      * operation to return the next set of items in the list.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
      * <p>If the number of items that are returned is significantly large, this is an
@@ -179,7 +180,7 @@ namespace Model
      * identifier that is also returned, which can be used in a subsequent call to this
      * operation to return the next set of items in the list.</p>
      */
-    inline ListUniqueProblemsResult& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline ListUniqueProblemsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>If the number of items that are returned is significantly large, this is an

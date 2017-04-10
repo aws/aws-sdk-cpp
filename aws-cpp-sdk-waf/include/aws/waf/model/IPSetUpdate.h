@@ -16,6 +16,7 @@
 #include <aws/waf/WAF_EXPORTS.h>
 #include <aws/waf/model/ChangeAction.h>
 #include <aws/waf/model/IPSetDescriptor.h>
+#include <utility>
 
 namespace Aws
 {
@@ -61,7 +62,7 @@ namespace Model
      * <p>Specifies whether to insert or delete an IP address with
      * <a>UpdateIPSet</a>.</p>
      */
-    inline void SetAction(ChangeAction&& value) { m_actionHasBeenSet = true; m_action = value; }
+    inline void SetAction(ChangeAction&& value) { m_actionHasBeenSet = true; m_action = std::move(value); }
 
     /**
      * <p>Specifies whether to insert or delete an IP address with
@@ -73,7 +74,7 @@ namespace Model
      * <p>Specifies whether to insert or delete an IP address with
      * <a>UpdateIPSet</a>.</p>
      */
-    inline IPSetUpdate& WithAction(ChangeAction&& value) { SetAction(value); return *this;}
+    inline IPSetUpdate& WithAction(ChangeAction&& value) { SetAction(std::move(value)); return *this;}
 
     /**
      * <p>The IP address type (<code>IPV4</code> or <code>IPV6</code>) and the IP
@@ -91,7 +92,7 @@ namespace Model
      * <p>The IP address type (<code>IPV4</code> or <code>IPV6</code>) and the IP
      * address range (in CIDR notation) that web requests originate from.</p>
      */
-    inline void SetIPSetDescriptor(IPSetDescriptor&& value) { m_iPSetDescriptorHasBeenSet = true; m_iPSetDescriptor = value; }
+    inline void SetIPSetDescriptor(IPSetDescriptor&& value) { m_iPSetDescriptorHasBeenSet = true; m_iPSetDescriptor = std::move(value); }
 
     /**
      * <p>The IP address type (<code>IPV4</code> or <code>IPV6</code>) and the IP
@@ -103,7 +104,7 @@ namespace Model
      * <p>The IP address type (<code>IPV4</code> or <code>IPV6</code>) and the IP
      * address range (in CIDR notation) that web requests originate from.</p>
      */
-    inline IPSetUpdate& WithIPSetDescriptor(IPSetDescriptor&& value) { SetIPSetDescriptor(value); return *this;}
+    inline IPSetUpdate& WithIPSetDescriptor(IPSetDescriptor&& value) { SetIPSetDescriptor(std::move(value)); return *this;}
 
   private:
     ChangeAction m_action;

@@ -16,6 +16,7 @@
 #include <aws/iam/IAM_EXPORTS.h>
 #include <aws/iam/IAMRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -74,7 +75,7 @@ namespace Model
      * from the ! (\u0021) thru the DEL character (\u007F), including most punctuation
      * characters, digits, and upper and lowercased letters.</p>
      */
-    inline void SetPath(Aws::String&& value) { m_pathHasBeenSet = true; m_path = value; }
+    inline void SetPath(Aws::String&& value) { m_pathHasBeenSet = true; m_path = std::move(value); }
 
     /**
      * <p> The path to the role. For more information about paths, see <a
@@ -113,7 +114,7 @@ namespace Model
      * from the ! (\u0021) thru the DEL character (\u007F), including most punctuation
      * characters, digits, and upper and lowercased letters.</p>
      */
-    inline CreateRoleRequest& WithPath(Aws::String&& value) { SetPath(value); return *this;}
+    inline CreateRoleRequest& WithPath(Aws::String&& value) { SetPath(std::move(value)); return *this;}
 
     /**
      * <p> The path to the role. For more information about paths, see <a
@@ -156,7 +157,7 @@ namespace Model
      * distinguished by case. For example, you cannot create roles named both
      * "PRODROLE" and "prodrole".</p>
      */
-    inline void SetRoleName(Aws::String&& value) { m_roleNameHasBeenSet = true; m_roleName = value; }
+    inline void SetRoleName(Aws::String&& value) { m_roleNameHasBeenSet = true; m_roleName = std::move(value); }
 
     /**
      * <p>The name of the role to create.</p> <p>This parameter allows (per its <a
@@ -186,7 +187,7 @@ namespace Model
      * distinguished by case. For example, you cannot create roles named both
      * "PRODROLE" and "prodrole".</p>
      */
-    inline CreateRoleRequest& WithRoleName(Aws::String&& value) { SetRoleName(value); return *this;}
+    inline CreateRoleRequest& WithRoleName(Aws::String&& value) { SetRoleName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the role to create.</p> <p>This parameter allows (per its <a
@@ -232,7 +233,7 @@ namespace Model
      * includes the special characters tab (\u0009), line feed (\u000A), and carriage
      * return (\u000D).</p>
      */
-    inline void SetAssumeRolePolicyDocument(Aws::String&& value) { m_assumeRolePolicyDocumentHasBeenSet = true; m_assumeRolePolicyDocument = value; }
+    inline void SetAssumeRolePolicyDocument(Aws::String&& value) { m_assumeRolePolicyDocumentHasBeenSet = true; m_assumeRolePolicyDocument = std::move(value); }
 
     /**
      * <p>The trust relationship policy document that grants an entity permission to
@@ -268,7 +269,7 @@ namespace Model
      * includes the special characters tab (\u0009), line feed (\u000A), and carriage
      * return (\u000D).</p>
      */
-    inline CreateRoleRequest& WithAssumeRolePolicyDocument(Aws::String&& value) { SetAssumeRolePolicyDocument(value); return *this;}
+    inline CreateRoleRequest& WithAssumeRolePolicyDocument(Aws::String&& value) { SetAssumeRolePolicyDocument(std::move(value)); return *this;}
 
     /**
      * <p>The trust relationship policy document that grants an entity permission to

@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/support/Support_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -67,7 +68,7 @@ namespace Model
      * the response. If an <code>attachmentSetId</code> was specified, the attachments
      * are added to the specified set, if it exists.</p>
      */
-    inline void SetAttachmentSetId(Aws::String&& value) { m_attachmentSetId = value; }
+    inline void SetAttachmentSetId(Aws::String&& value) { m_attachmentSetId = std::move(value); }
 
     /**
      * <p>The ID of the attachment set. If an <code>attachmentSetId</code> was not
@@ -91,7 +92,7 @@ namespace Model
      * the response. If an <code>attachmentSetId</code> was specified, the attachments
      * are added to the specified set, if it exists.</p>
      */
-    inline AddAttachmentsToSetResult& WithAttachmentSetId(Aws::String&& value) { SetAttachmentSetId(value); return *this;}
+    inline AddAttachmentsToSetResult& WithAttachmentSetId(Aws::String&& value) { SetAttachmentSetId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the attachment set. If an <code>attachmentSetId</code> was not
@@ -114,7 +115,7 @@ namespace Model
     /**
      * <p>The time and date when the attachment set expires.</p>
      */
-    inline void SetExpiryTime(Aws::String&& value) { m_expiryTime = value; }
+    inline void SetExpiryTime(Aws::String&& value) { m_expiryTime = std::move(value); }
 
     /**
      * <p>The time and date when the attachment set expires.</p>
@@ -129,7 +130,7 @@ namespace Model
     /**
      * <p>The time and date when the attachment set expires.</p>
      */
-    inline AddAttachmentsToSetResult& WithExpiryTime(Aws::String&& value) { SetExpiryTime(value); return *this;}
+    inline AddAttachmentsToSetResult& WithExpiryTime(Aws::String&& value) { SetExpiryTime(std::move(value)); return *this;}
 
     /**
      * <p>The time and date when the attachment set expires.</p>

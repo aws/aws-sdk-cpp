@@ -16,6 +16,7 @@
 #include <aws/codedeploy/CodeDeploy_EXPORTS.h>
 #include <aws/codedeploy/model/StopStatus.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -65,7 +66,7 @@ namespace Model
      * stop operation is pending.</p> </li> <li> <p>Succeeded: The stop operation was
      * successful.</p> </li> </ul>
      */
-    inline void SetStatus(StopStatus&& value) { m_status = value; }
+    inline void SetStatus(StopStatus&& value) { m_status = std::move(value); }
 
     /**
      * <p>The status of the stop deployment operation:</p> <ul> <li> <p>Pending: The
@@ -79,7 +80,7 @@ namespace Model
      * stop operation is pending.</p> </li> <li> <p>Succeeded: The stop operation was
      * successful.</p> </li> </ul>
      */
-    inline StopDeploymentResult& WithStatus(StopStatus&& value) { SetStatus(value); return *this;}
+    inline StopDeploymentResult& WithStatus(StopStatus&& value) { SetStatus(std::move(value)); return *this;}
 
     /**
      * <p>An accompanying status message.</p>
@@ -94,7 +95,7 @@ namespace Model
     /**
      * <p>An accompanying status message.</p>
      */
-    inline void SetStatusMessage(Aws::String&& value) { m_statusMessage = value; }
+    inline void SetStatusMessage(Aws::String&& value) { m_statusMessage = std::move(value); }
 
     /**
      * <p>An accompanying status message.</p>
@@ -109,7 +110,7 @@ namespace Model
     /**
      * <p>An accompanying status message.</p>
      */
-    inline StopDeploymentResult& WithStatusMessage(Aws::String&& value) { SetStatusMessage(value); return *this;}
+    inline StopDeploymentResult& WithStatusMessage(Aws::String&& value) { SetStatusMessage(std::move(value)); return *this;}
 
     /**
      * <p>An accompanying status message.</p>

@@ -16,6 +16,7 @@
 #include <aws/swf/SWF_EXPORTS.h>
 #include <aws/swf/model/WorkflowExecution.h>
 #include <aws/swf/model/WorkflowType.h>
+#include <utility>
 
 namespace Aws
 {
@@ -58,7 +59,7 @@ namespace Model
     /**
      * <p>The child workflow execution that was terminated.</p>
      */
-    inline void SetWorkflowExecution(WorkflowExecution&& value) { m_workflowExecutionHasBeenSet = true; m_workflowExecution = value; }
+    inline void SetWorkflowExecution(WorkflowExecution&& value) { m_workflowExecutionHasBeenSet = true; m_workflowExecution = std::move(value); }
 
     /**
      * <p>The child workflow execution that was terminated.</p>
@@ -68,7 +69,7 @@ namespace Model
     /**
      * <p>The child workflow execution that was terminated.</p>
      */
-    inline ChildWorkflowExecutionTerminatedEventAttributes& WithWorkflowExecution(WorkflowExecution&& value) { SetWorkflowExecution(value); return *this;}
+    inline ChildWorkflowExecutionTerminatedEventAttributes& WithWorkflowExecution(WorkflowExecution&& value) { SetWorkflowExecution(std::move(value)); return *this;}
 
     /**
      * <p>The type of the child workflow execution.</p>
@@ -83,7 +84,7 @@ namespace Model
     /**
      * <p>The type of the child workflow execution.</p>
      */
-    inline void SetWorkflowType(WorkflowType&& value) { m_workflowTypeHasBeenSet = true; m_workflowType = value; }
+    inline void SetWorkflowType(WorkflowType&& value) { m_workflowTypeHasBeenSet = true; m_workflowType = std::move(value); }
 
     /**
      * <p>The type of the child workflow execution.</p>
@@ -93,7 +94,7 @@ namespace Model
     /**
      * <p>The type of the child workflow execution.</p>
      */
-    inline ChildWorkflowExecutionTerminatedEventAttributes& WithWorkflowType(WorkflowType&& value) { SetWorkflowType(value); return *this;}
+    inline ChildWorkflowExecutionTerminatedEventAttributes& WithWorkflowType(WorkflowType&& value) { SetWorkflowType(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the <code>StartChildWorkflowExecutionInitiated</code> event

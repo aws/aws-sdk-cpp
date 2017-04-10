@@ -17,6 +17,7 @@
 #include <aws/apigateway/APIGatewayRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <utility>
 
 namespace Aws
 {
@@ -59,7 +60,7 @@ namespace Model
     /**
      * <p>The identifier of the <a>RestApi</a> to be exported.</p>
      */
-    inline void SetRestApiId(Aws::String&& value) { m_restApiIdHasBeenSet = true; m_restApiId = value; }
+    inline void SetRestApiId(Aws::String&& value) { m_restApiIdHasBeenSet = true; m_restApiId = std::move(value); }
 
     /**
      * <p>The identifier of the <a>RestApi</a> to be exported.</p>
@@ -74,7 +75,7 @@ namespace Model
     /**
      * <p>The identifier of the <a>RestApi</a> to be exported.</p>
      */
-    inline GetExportRequest& WithRestApiId(Aws::String&& value) { SetRestApiId(value); return *this;}
+    inline GetExportRequest& WithRestApiId(Aws::String&& value) { SetRestApiId(std::move(value)); return *this;}
 
     /**
      * <p>The identifier of the <a>RestApi</a> to be exported.</p>
@@ -94,7 +95,7 @@ namespace Model
     /**
      * <p>The name of the <a>Stage</a> that will be exported.</p>
      */
-    inline void SetStageName(Aws::String&& value) { m_stageNameHasBeenSet = true; m_stageName = value; }
+    inline void SetStageName(Aws::String&& value) { m_stageNameHasBeenSet = true; m_stageName = std::move(value); }
 
     /**
      * <p>The name of the <a>Stage</a> that will be exported.</p>
@@ -109,7 +110,7 @@ namespace Model
     /**
      * <p>The name of the <a>Stage</a> that will be exported.</p>
      */
-    inline GetExportRequest& WithStageName(Aws::String&& value) { SetStageName(value); return *this;}
+    inline GetExportRequest& WithStageName(Aws::String&& value) { SetStageName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the <a>Stage</a> that will be exported.</p>
@@ -129,7 +130,7 @@ namespace Model
     /**
      * <p>The type of export. Currently only 'swagger' is supported.</p>
      */
-    inline void SetExportType(Aws::String&& value) { m_exportTypeHasBeenSet = true; m_exportType = value; }
+    inline void SetExportType(Aws::String&& value) { m_exportTypeHasBeenSet = true; m_exportType = std::move(value); }
 
     /**
      * <p>The type of export. Currently only 'swagger' is supported.</p>
@@ -144,7 +145,7 @@ namespace Model
     /**
      * <p>The type of export. Currently only 'swagger' is supported.</p>
      */
-    inline GetExportRequest& WithExportType(Aws::String&& value) { SetExportType(value); return *this;}
+    inline GetExportRequest& WithExportType(Aws::String&& value) { SetExportType(std::move(value)); return *this;}
 
     /**
      * <p>The type of export. Currently only 'swagger' is supported.</p>
@@ -185,7 +186,7 @@ namespace Model
      * will export the API with Postman extensions, allowing for import to the Postman
      * tool</p>
      */
-    inline void SetParameters(Aws::Map<Aws::String, Aws::String>&& value) { m_parametersHasBeenSet = true; m_parameters = value; }
+    inline void SetParameters(Aws::Map<Aws::String, Aws::String>&& value) { m_parametersHasBeenSet = true; m_parameters = std::move(value); }
 
     /**
      * <p>A key-value map of query string parameters that specify properties of the
@@ -209,7 +210,7 @@ namespace Model
      * will export the API with Postman extensions, allowing for import to the Postman
      * tool</p>
      */
-    inline GetExportRequest& WithParameters(Aws::Map<Aws::String, Aws::String>&& value) { SetParameters(value); return *this;}
+    inline GetExportRequest& WithParameters(Aws::Map<Aws::String, Aws::String>&& value) { SetParameters(std::move(value)); return *this;}
 
     /**
      * <p>A key-value map of query string parameters that specify properties of the
@@ -221,7 +222,7 @@ namespace Model
      * will export the API with Postman extensions, allowing for import to the Postman
      * tool</p>
      */
-    inline GetExportRequest& AddParameters(const Aws::String& key, const Aws::String& value) { m_parametersHasBeenSet = true; m_parameters[key] = value; return *this; }
+    inline GetExportRequest& AddParameters(const Aws::String& key, const Aws::String& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, value); return *this; }
 
     /**
      * <p>A key-value map of query string parameters that specify properties of the
@@ -233,7 +234,7 @@ namespace Model
      * will export the API with Postman extensions, allowing for import to the Postman
      * tool</p>
      */
-    inline GetExportRequest& AddParameters(Aws::String&& key, const Aws::String& value) { m_parametersHasBeenSet = true; m_parameters[key] = value; return *this; }
+    inline GetExportRequest& AddParameters(Aws::String&& key, const Aws::String& value) { m_parametersHasBeenSet = true; m_parameters.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>A key-value map of query string parameters that specify properties of the
@@ -245,7 +246,7 @@ namespace Model
      * will export the API with Postman extensions, allowing for import to the Postman
      * tool</p>
      */
-    inline GetExportRequest& AddParameters(const Aws::String& key, Aws::String&& value) { m_parametersHasBeenSet = true; m_parameters[key] = value; return *this; }
+    inline GetExportRequest& AddParameters(const Aws::String& key, Aws::String&& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>A key-value map of query string parameters that specify properties of the
@@ -257,7 +258,7 @@ namespace Model
      * will export the API with Postman extensions, allowing for import to the Postman
      * tool</p>
      */
-    inline GetExportRequest& AddParameters(Aws::String&& key, Aws::String&& value) { m_parametersHasBeenSet = true; m_parameters[key] = value; return *this; }
+    inline GetExportRequest& AddParameters(Aws::String&& key, Aws::String&& value) { m_parametersHasBeenSet = true; m_parameters.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
      * <p>A key-value map of query string parameters that specify properties of the
@@ -269,7 +270,7 @@ namespace Model
      * will export the API with Postman extensions, allowing for import to the Postman
      * tool</p>
      */
-    inline GetExportRequest& AddParameters(const char* key, Aws::String&& value) { m_parametersHasBeenSet = true; m_parameters[key] = value; return *this; }
+    inline GetExportRequest& AddParameters(const char* key, Aws::String&& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>A key-value map of query string parameters that specify properties of the
@@ -281,7 +282,7 @@ namespace Model
      * will export the API with Postman extensions, allowing for import to the Postman
      * tool</p>
      */
-    inline GetExportRequest& AddParameters(Aws::String&& key, const char* value) { m_parametersHasBeenSet = true; m_parameters[key] = value; return *this; }
+    inline GetExportRequest& AddParameters(Aws::String&& key, const char* value) { m_parametersHasBeenSet = true; m_parameters.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>A key-value map of query string parameters that specify properties of the
@@ -293,7 +294,7 @@ namespace Model
      * will export the API with Postman extensions, allowing for import to the Postman
      * tool</p>
      */
-    inline GetExportRequest& AddParameters(const char* key, const char* value) { m_parametersHasBeenSet = true; m_parameters[key] = value; return *this; }
+    inline GetExportRequest& AddParameters(const char* key, const char* value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, value); return *this; }
 
     /**
      * <p>The content-type of the export, for example <code>application/json</code>.
@@ -317,7 +318,7 @@ namespace Model
      * supported for <code>exportType</code> of <code>swagger</code>. This should be
      * specified in the <code>Accept</code> header for direct API requests.</p>
      */
-    inline void SetAccepts(Aws::String&& value) { m_acceptsHasBeenSet = true; m_accepts = value; }
+    inline void SetAccepts(Aws::String&& value) { m_acceptsHasBeenSet = true; m_accepts = std::move(value); }
 
     /**
      * <p>The content-type of the export, for example <code>application/json</code>.
@@ -341,7 +342,7 @@ namespace Model
      * supported for <code>exportType</code> of <code>swagger</code>. This should be
      * specified in the <code>Accept</code> header for direct API requests.</p>
      */
-    inline GetExportRequest& WithAccepts(Aws::String&& value) { SetAccepts(value); return *this;}
+    inline GetExportRequest& WithAccepts(Aws::String&& value) { SetAccepts(std::move(value)); return *this;}
 
     /**
      * <p>The content-type of the export, for example <code>application/json</code>.

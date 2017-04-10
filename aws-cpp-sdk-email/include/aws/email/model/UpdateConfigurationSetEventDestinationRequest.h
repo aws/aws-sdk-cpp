@@ -17,6 +17,7 @@
 #include <aws/email/SESRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/email/model/EventDestination.h>
+#include <utility>
 
 namespace Aws
 {
@@ -58,7 +59,7 @@ namespace Model
     /**
      * <p>The name of the configuration set that you want to update.</p>
      */
-    inline void SetConfigurationSetName(Aws::String&& value) { m_configurationSetNameHasBeenSet = true; m_configurationSetName = value; }
+    inline void SetConfigurationSetName(Aws::String&& value) { m_configurationSetNameHasBeenSet = true; m_configurationSetName = std::move(value); }
 
     /**
      * <p>The name of the configuration set that you want to update.</p>
@@ -73,7 +74,7 @@ namespace Model
     /**
      * <p>The name of the configuration set that you want to update.</p>
      */
-    inline UpdateConfigurationSetEventDestinationRequest& WithConfigurationSetName(Aws::String&& value) { SetConfigurationSetName(value); return *this;}
+    inline UpdateConfigurationSetEventDestinationRequest& WithConfigurationSetName(Aws::String&& value) { SetConfigurationSetName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the configuration set that you want to update.</p>
@@ -96,7 +97,7 @@ namespace Model
      * <p>The event destination object that you want to apply to the specified
      * configuration set.</p>
      */
-    inline void SetEventDestination(EventDestination&& value) { m_eventDestinationHasBeenSet = true; m_eventDestination = value; }
+    inline void SetEventDestination(EventDestination&& value) { m_eventDestinationHasBeenSet = true; m_eventDestination = std::move(value); }
 
     /**
      * <p>The event destination object that you want to apply to the specified
@@ -108,7 +109,7 @@ namespace Model
      * <p>The event destination object that you want to apply to the specified
      * configuration set.</p>
      */
-    inline UpdateConfigurationSetEventDestinationRequest& WithEventDestination(EventDestination&& value) { SetEventDestination(value); return *this;}
+    inline UpdateConfigurationSetEventDestinationRequest& WithEventDestination(EventDestination&& value) { SetEventDestination(std::move(value)); return *this;}
 
   private:
     Aws::String m_configurationSetName;

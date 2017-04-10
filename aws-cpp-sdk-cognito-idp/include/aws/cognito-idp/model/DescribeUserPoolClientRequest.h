@@ -16,6 +16,7 @@
 #include <aws/cognito-idp/CognitoIdentityProvider_EXPORTS.h>
 #include <aws/cognito-idp/CognitoIdentityProviderRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -52,7 +53,7 @@ namespace Model
     /**
      * <p>The user pool ID for the user pool you want to describe.</p>
      */
-    inline void SetUserPoolId(Aws::String&& value) { m_userPoolIdHasBeenSet = true; m_userPoolId = value; }
+    inline void SetUserPoolId(Aws::String&& value) { m_userPoolIdHasBeenSet = true; m_userPoolId = std::move(value); }
 
     /**
      * <p>The user pool ID for the user pool you want to describe.</p>
@@ -67,7 +68,7 @@ namespace Model
     /**
      * <p>The user pool ID for the user pool you want to describe.</p>
      */
-    inline DescribeUserPoolClientRequest& WithUserPoolId(Aws::String&& value) { SetUserPoolId(value); return *this;}
+    inline DescribeUserPoolClientRequest& WithUserPoolId(Aws::String&& value) { SetUserPoolId(std::move(value)); return *this;}
 
     /**
      * <p>The user pool ID for the user pool you want to describe.</p>
@@ -87,7 +88,7 @@ namespace Model
     /**
      * <p>The ID of the client associated with the user pool.</p>
      */
-    inline void SetClientId(Aws::String&& value) { m_clientIdHasBeenSet = true; m_clientId = value; }
+    inline void SetClientId(Aws::String&& value) { m_clientIdHasBeenSet = true; m_clientId = std::move(value); }
 
     /**
      * <p>The ID of the client associated with the user pool.</p>
@@ -102,7 +103,7 @@ namespace Model
     /**
      * <p>The ID of the client associated with the user pool.</p>
      */
-    inline DescribeUserPoolClientRequest& WithClientId(Aws::String&& value) { SetClientId(value); return *this;}
+    inline DescribeUserPoolClientRequest& WithClientId(Aws::String&& value) { SetClientId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the client associated with the user pool.</p>

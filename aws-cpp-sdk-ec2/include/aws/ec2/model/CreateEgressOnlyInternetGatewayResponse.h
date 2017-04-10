@@ -17,6 +17,7 @@
 #include <aws/ec2/model/EgressOnlyInternetGateway.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/ResponseMetadata.h>
+#include <utility>
 
 namespace Aws
 {
@@ -54,7 +55,7 @@ namespace Model
     /**
      * <p>Information about the egress-only Internet gateway.</p>
      */
-    inline void SetEgressOnlyInternetGateway(EgressOnlyInternetGateway&& value) { m_egressOnlyInternetGateway = value; }
+    inline void SetEgressOnlyInternetGateway(EgressOnlyInternetGateway&& value) { m_egressOnlyInternetGateway = std::move(value); }
 
     /**
      * <p>Information about the egress-only Internet gateway.</p>
@@ -64,7 +65,7 @@ namespace Model
     /**
      * <p>Information about the egress-only Internet gateway.</p>
      */
-    inline CreateEgressOnlyInternetGatewayResponse& WithEgressOnlyInternetGateway(EgressOnlyInternetGateway&& value) { SetEgressOnlyInternetGateway(value); return *this;}
+    inline CreateEgressOnlyInternetGatewayResponse& WithEgressOnlyInternetGateway(EgressOnlyInternetGateway&& value) { SetEgressOnlyInternetGateway(std::move(value)); return *this;}
 
     /**
      * <p>Unique, case-sensitive identifier you provide to ensure the idempotency of
@@ -82,7 +83,7 @@ namespace Model
      * <p>Unique, case-sensitive identifier you provide to ensure the idempotency of
      * the request.</p>
      */
-    inline void SetClientToken(Aws::String&& value) { m_clientToken = value; }
+    inline void SetClientToken(Aws::String&& value) { m_clientToken = std::move(value); }
 
     /**
      * <p>Unique, case-sensitive identifier you provide to ensure the idempotency of
@@ -100,7 +101,7 @@ namespace Model
      * <p>Unique, case-sensitive identifier you provide to ensure the idempotency of
      * the request.</p>
      */
-    inline CreateEgressOnlyInternetGatewayResponse& WithClientToken(Aws::String&& value) { SetClientToken(value); return *this;}
+    inline CreateEgressOnlyInternetGatewayResponse& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
 
     /**
      * <p>Unique, case-sensitive identifier you provide to ensure the idempotency of
@@ -115,13 +116,13 @@ namespace Model
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
 
     
     inline CreateEgressOnlyInternetGatewayResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
 
     
-    inline CreateEgressOnlyInternetGatewayResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
+    inline CreateEgressOnlyInternetGatewayResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
     EgressOnlyInternetGateway m_egressOnlyInternetGateway;

@@ -16,6 +16,7 @@
 #include <aws/directconnect/DirectConnect_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/directconnect/model/Interconnect.h>
+#include <utility>
 
 namespace Aws
 {
@@ -58,7 +59,7 @@ namespace Model
     /**
      * <p>A list of interconnects.</p>
      */
-    inline void SetInterconnects(Aws::Vector<Interconnect>&& value) { m_interconnects = value; }
+    inline void SetInterconnects(Aws::Vector<Interconnect>&& value) { m_interconnects = std::move(value); }
 
     /**
      * <p>A list of interconnects.</p>
@@ -68,7 +69,7 @@ namespace Model
     /**
      * <p>A list of interconnects.</p>
      */
-    inline DescribeInterconnectsResult& WithInterconnects(Aws::Vector<Interconnect>&& value) { SetInterconnects(value); return *this;}
+    inline DescribeInterconnectsResult& WithInterconnects(Aws::Vector<Interconnect>&& value) { SetInterconnects(std::move(value)); return *this;}
 
     /**
      * <p>A list of interconnects.</p>
@@ -78,7 +79,7 @@ namespace Model
     /**
      * <p>A list of interconnects.</p>
      */
-    inline DescribeInterconnectsResult& AddInterconnects(Interconnect&& value) { m_interconnects.push_back(value); return *this; }
+    inline DescribeInterconnectsResult& AddInterconnects(Interconnect&& value) { m_interconnects.push_back(std::move(value)); return *this; }
 
   private:
     Aws::Vector<Interconnect> m_interconnects;

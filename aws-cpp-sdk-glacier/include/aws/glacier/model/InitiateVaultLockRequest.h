@@ -17,6 +17,7 @@
 #include <aws/glacier/GlacierRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/glacier/model/VaultLockPolicy.h>
+#include <utility>
 
 namespace Aws
 {
@@ -66,7 +67,7 @@ namespace Model
      * the credentials used to sign the request. If you specify your account ID, do not
      * include any hyphens ('-') in the ID.</p>
      */
-    inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
+    inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
 
     /**
      * <p>The <code>AccountId</code> value is the AWS account ID. This value must match
@@ -96,7 +97,7 @@ namespace Model
      * the credentials used to sign the request. If you specify your account ID, do not
      * include any hyphens ('-') in the ID.</p>
      */
-    inline InitiateVaultLockRequest& WithAccountId(Aws::String&& value) { SetAccountId(value); return *this;}
+    inline InitiateVaultLockRequest& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
 
     /**
      * <p>The <code>AccountId</code> value is the AWS account ID. This value must match
@@ -121,7 +122,7 @@ namespace Model
     /**
      * <p>The name of the vault.</p>
      */
-    inline void SetVaultName(Aws::String&& value) { m_vaultNameHasBeenSet = true; m_vaultName = value; }
+    inline void SetVaultName(Aws::String&& value) { m_vaultNameHasBeenSet = true; m_vaultName = std::move(value); }
 
     /**
      * <p>The name of the vault.</p>
@@ -136,7 +137,7 @@ namespace Model
     /**
      * <p>The name of the vault.</p>
      */
-    inline InitiateVaultLockRequest& WithVaultName(Aws::String&& value) { SetVaultName(value); return *this;}
+    inline InitiateVaultLockRequest& WithVaultName(Aws::String&& value) { SetVaultName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the vault.</p>
@@ -159,7 +160,7 @@ namespace Model
      * <p>The vault lock policy as a JSON string, which uses "\" as an escape
      * character.</p>
      */
-    inline void SetPolicy(VaultLockPolicy&& value) { m_policyHasBeenSet = true; m_policy = value; }
+    inline void SetPolicy(VaultLockPolicy&& value) { m_policyHasBeenSet = true; m_policy = std::move(value); }
 
     /**
      * <p>The vault lock policy as a JSON string, which uses "\" as an escape
@@ -171,7 +172,7 @@ namespace Model
      * <p>The vault lock policy as a JSON string, which uses "\" as an escape
      * character.</p>
      */
-    inline InitiateVaultLockRequest& WithPolicy(VaultLockPolicy&& value) { SetPolicy(value); return *this;}
+    inline InitiateVaultLockRequest& WithPolicy(VaultLockPolicy&& value) { SetPolicy(std::move(value)); return *this;}
 
   private:
     Aws::String m_accountId;

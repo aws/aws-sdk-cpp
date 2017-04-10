@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/cloudsearch/model/ScalingParameters.h>
 #include <aws/cloudsearch/model/OptionStatus.h>
+#include <utility>
 
 namespace Aws
 {
@@ -55,13 +56,13 @@ namespace Model
     inline void SetOptions(const ScalingParameters& value) { m_optionsHasBeenSet = true; m_options = value; }
 
     
-    inline void SetOptions(ScalingParameters&& value) { m_optionsHasBeenSet = true; m_options = value; }
+    inline void SetOptions(ScalingParameters&& value) { m_optionsHasBeenSet = true; m_options = std::move(value); }
 
     
     inline ScalingParametersStatus& WithOptions(const ScalingParameters& value) { SetOptions(value); return *this;}
 
     
-    inline ScalingParametersStatus& WithOptions(ScalingParameters&& value) { SetOptions(value); return *this;}
+    inline ScalingParametersStatus& WithOptions(ScalingParameters&& value) { SetOptions(std::move(value)); return *this;}
 
     
     inline const OptionStatus& GetStatus() const{ return m_status; }
@@ -70,13 +71,13 @@ namespace Model
     inline void SetStatus(const OptionStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     
-    inline void SetStatus(OptionStatus&& value) { m_statusHasBeenSet = true; m_status = value; }
+    inline void SetStatus(OptionStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     
     inline ScalingParametersStatus& WithStatus(const OptionStatus& value) { SetStatus(value); return *this;}
 
     
-    inline ScalingParametersStatus& WithStatus(OptionStatus&& value) { SetStatus(value); return *this;}
+    inline ScalingParametersStatus& WithStatus(OptionStatus&& value) { SetStatus(std::move(value)); return *this;}
 
   private:
     ScalingParameters m_options;

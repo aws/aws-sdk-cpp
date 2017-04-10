@@ -16,6 +16,7 @@
 #include <aws/kms/KMS_EXPORTS.h>
 #include <aws/kms/KMSRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -66,7 +67,7 @@ namespace Model
      * </li> </ul> <p>To obtain the unique key ID and key ARN for a given CMK, use
      * <a>ListKeys</a> or <a>DescribeKey</a>.</p>
      */
-    inline void SetKeyId(Aws::String&& value) { m_keyIdHasBeenSet = true; m_keyId = value; }
+    inline void SetKeyId(Aws::String&& value) { m_keyIdHasBeenSet = true; m_keyId = std::move(value); }
 
     /**
      * <p>The unique identifier for the customer master key (CMK) for which to cancel
@@ -99,7 +100,7 @@ namespace Model
      * </li> </ul> <p>To obtain the unique key ID and key ARN for a given CMK, use
      * <a>ListKeys</a> or <a>DescribeKey</a>.</p>
      */
-    inline CancelKeyDeletionRequest& WithKeyId(Aws::String&& value) { SetKeyId(value); return *this;}
+    inline CancelKeyDeletionRequest& WithKeyId(Aws::String&& value) { SetKeyId(std::move(value)); return *this;}
 
     /**
      * <p>The unique identifier for the customer master key (CMK) for which to cancel

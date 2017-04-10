@@ -16,6 +16,7 @@
 #include <aws/email/SES_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -80,7 +81,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon SNS
      * Developer Guide</a>.</p>
      */
-    inline void SetTopicArn(Aws::String&& value) { m_topicArnHasBeenSet = true; m_topicArn = value; }
+    inline void SetTopicArn(Aws::String&& value) { m_topicArnHasBeenSet = true; m_topicArn = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon SNS topic to notify when the
@@ -110,7 +111,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon SNS
      * Developer Guide</a>.</p>
      */
-    inline WorkmailAction& WithTopicArn(Aws::String&& value) { SetTopicArn(value); return *this;}
+    inline WorkmailAction& WithTopicArn(Aws::String&& value) { SetTopicArn(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon SNS topic to notify when the
@@ -150,7 +151,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/workmail/latest/adminguide/organizations_overview.html">Amazon
      * WorkMail Administrator Guide</a>.</p>
      */
-    inline void SetOrganizationArn(Aws::String&& value) { m_organizationArnHasBeenSet = true; m_organizationArn = value; }
+    inline void SetOrganizationArn(Aws::String&& value) { m_organizationArnHasBeenSet = true; m_organizationArn = std::move(value); }
 
     /**
      * <p>The ARN of the Amazon WorkMail organization. An example of an Amazon WorkMail
@@ -180,7 +181,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/workmail/latest/adminguide/organizations_overview.html">Amazon
      * WorkMail Administrator Guide</a>.</p>
      */
-    inline WorkmailAction& WithOrganizationArn(Aws::String&& value) { SetOrganizationArn(value); return *this;}
+    inline WorkmailAction& WithOrganizationArn(Aws::String&& value) { SetOrganizationArn(std::move(value)); return *this;}
 
     /**
      * <p>The ARN of the Amazon WorkMail organization. An example of an Amazon WorkMail

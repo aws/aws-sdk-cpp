@@ -16,6 +16,7 @@
 #include <aws/waf/WAF_EXPORTS.h>
 #include <aws/waf/WAFRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -54,7 +55,7 @@ namespace Model
      * <code>IPSetId</code> is returned by <a>CreateIPSet</a> and by
      * <a>ListIPSets</a>.</p>
      */
-    inline void SetIPSetId(Aws::String&& value) { m_iPSetIdHasBeenSet = true; m_iPSetId = value; }
+    inline void SetIPSetId(Aws::String&& value) { m_iPSetIdHasBeenSet = true; m_iPSetId = std::move(value); }
 
     /**
      * <p>The <code>IPSetId</code> of the <a>IPSet</a> that you want to get.
@@ -75,7 +76,7 @@ namespace Model
      * <code>IPSetId</code> is returned by <a>CreateIPSet</a> and by
      * <a>ListIPSets</a>.</p>
      */
-    inline GetIPSetRequest& WithIPSetId(Aws::String&& value) { SetIPSetId(value); return *this;}
+    inline GetIPSetRequest& WithIPSetId(Aws::String&& value) { SetIPSetId(std::move(value)); return *this;}
 
     /**
      * <p>The <code>IPSetId</code> of the <a>IPSet</a> that you want to get.

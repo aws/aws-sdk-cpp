@@ -16,6 +16,7 @@
 #include <aws/redshift/Redshift_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -60,7 +61,7 @@ namespace Model
     /**
      * <p>The version number used by the cluster.</p>
      */
-    inline void SetClusterVersion(Aws::String&& value) { m_clusterVersionHasBeenSet = true; m_clusterVersion = value; }
+    inline void SetClusterVersion(Aws::String&& value) { m_clusterVersionHasBeenSet = true; m_clusterVersion = std::move(value); }
 
     /**
      * <p>The version number used by the cluster.</p>
@@ -75,7 +76,7 @@ namespace Model
     /**
      * <p>The version number used by the cluster.</p>
      */
-    inline ClusterVersion& WithClusterVersion(Aws::String&& value) { SetClusterVersion(value); return *this;}
+    inline ClusterVersion& WithClusterVersion(Aws::String&& value) { SetClusterVersion(std::move(value)); return *this;}
 
     /**
      * <p>The version number used by the cluster.</p>
@@ -95,7 +96,7 @@ namespace Model
     /**
      * <p>The name of the cluster parameter group family for the cluster.</p>
      */
-    inline void SetClusterParameterGroupFamily(Aws::String&& value) { m_clusterParameterGroupFamilyHasBeenSet = true; m_clusterParameterGroupFamily = value; }
+    inline void SetClusterParameterGroupFamily(Aws::String&& value) { m_clusterParameterGroupFamilyHasBeenSet = true; m_clusterParameterGroupFamily = std::move(value); }
 
     /**
      * <p>The name of the cluster parameter group family for the cluster.</p>
@@ -110,7 +111,7 @@ namespace Model
     /**
      * <p>The name of the cluster parameter group family for the cluster.</p>
      */
-    inline ClusterVersion& WithClusterParameterGroupFamily(Aws::String&& value) { SetClusterParameterGroupFamily(value); return *this;}
+    inline ClusterVersion& WithClusterParameterGroupFamily(Aws::String&& value) { SetClusterParameterGroupFamily(std::move(value)); return *this;}
 
     /**
      * <p>The name of the cluster parameter group family for the cluster.</p>
@@ -130,7 +131,7 @@ namespace Model
     /**
      * <p>The description of the cluster version.</p>
      */
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = value; }
+    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
      * <p>The description of the cluster version.</p>
@@ -145,7 +146,7 @@ namespace Model
     /**
      * <p>The description of the cluster version.</p>
      */
-    inline ClusterVersion& WithDescription(Aws::String&& value) { SetDescription(value); return *this;}
+    inline ClusterVersion& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
      * <p>The description of the cluster version.</p>

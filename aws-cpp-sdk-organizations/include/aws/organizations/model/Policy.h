@@ -16,6 +16,7 @@
 #include <aws/organizations/Organizations_EXPORTS.h>
 #include <aws/organizations/model/PolicySummary.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -59,7 +60,7 @@ namespace Model
     /**
      * <p>A structure that contains additional details about the policy.</p>
      */
-    inline void SetPolicySummary(PolicySummary&& value) { m_policySummaryHasBeenSet = true; m_policySummary = value; }
+    inline void SetPolicySummary(PolicySummary&& value) { m_policySummaryHasBeenSet = true; m_policySummary = std::move(value); }
 
     /**
      * <p>A structure that contains additional details about the policy.</p>
@@ -69,7 +70,7 @@ namespace Model
     /**
      * <p>A structure that contains additional details about the policy.</p>
      */
-    inline Policy& WithPolicySummary(PolicySummary&& value) { SetPolicySummary(value); return *this;}
+    inline Policy& WithPolicySummary(PolicySummary&& value) { SetPolicySummary(std::move(value)); return *this;}
 
     /**
      * <p>The text content of the policy.</p>
@@ -84,7 +85,7 @@ namespace Model
     /**
      * <p>The text content of the policy.</p>
      */
-    inline void SetContent(Aws::String&& value) { m_contentHasBeenSet = true; m_content = value; }
+    inline void SetContent(Aws::String&& value) { m_contentHasBeenSet = true; m_content = std::move(value); }
 
     /**
      * <p>The text content of the policy.</p>
@@ -99,7 +100,7 @@ namespace Model
     /**
      * <p>The text content of the policy.</p>
      */
-    inline Policy& WithContent(Aws::String&& value) { SetContent(value); return *this;}
+    inline Policy& WithContent(Aws::String&& value) { SetContent(std::move(value)); return *this;}
 
     /**
      * <p>The text content of the policy.</p>

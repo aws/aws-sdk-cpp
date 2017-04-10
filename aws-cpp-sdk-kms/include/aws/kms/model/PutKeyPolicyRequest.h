@@ -16,6 +16,7 @@
 #include <aws/kms/KMS_EXPORTS.h>
 #include <aws/kms/KMSRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -60,7 +61,7 @@ namespace Model
      * arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</p>
      * </li> </ul>
      */
-    inline void SetKeyId(Aws::String&& value) { m_keyIdHasBeenSet = true; m_keyId = value; }
+    inline void SetKeyId(Aws::String&& value) { m_keyIdHasBeenSet = true; m_keyId = std::move(value); }
 
     /**
      * <p>A unique identifier for the CMK.</p> <p>Use the CMK's unique identifier or
@@ -87,7 +88,7 @@ namespace Model
      * arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</p>
      * </li> </ul>
      */
-    inline PutKeyPolicyRequest& WithKeyId(Aws::String&& value) { SetKeyId(value); return *this;}
+    inline PutKeyPolicyRequest& WithKeyId(Aws::String&& value) { SetKeyId(std::move(value)); return *this;}
 
     /**
      * <p>A unique identifier for the CMK.</p> <p>Use the CMK's unique identifier or
@@ -114,7 +115,7 @@ namespace Model
      * <p>The name of the key policy.</p> <p>This value must be
      * <code>default</code>.</p>
      */
-    inline void SetPolicyName(Aws::String&& value) { m_policyNameHasBeenSet = true; m_policyName = value; }
+    inline void SetPolicyName(Aws::String&& value) { m_policyNameHasBeenSet = true; m_policyName = std::move(value); }
 
     /**
      * <p>The name of the key policy.</p> <p>This value must be
@@ -132,7 +133,7 @@ namespace Model
      * <p>The name of the key policy.</p> <p>This value must be
      * <code>default</code>.</p>
      */
-    inline PutKeyPolicyRequest& WithPolicyName(Aws::String&& value) { SetPolicyName(value); return *this;}
+    inline PutKeyPolicyRequest& WithPolicyName(Aws::String&& value) { SetPolicyName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the key policy.</p> <p>This value must be
@@ -201,7 +202,7 @@ namespace Model
      * that I make are not always immediately visible</a> in the <i>IAM User
      * Guide</i>.</p> </li> </ul> <p>The policy size limit is 32 KiB (32768 bytes).</p>
      */
-    inline void SetPolicy(Aws::String&& value) { m_policyHasBeenSet = true; m_policy = value; }
+    inline void SetPolicy(Aws::String&& value) { m_policyHasBeenSet = true; m_policy = std::move(value); }
 
     /**
      * <p>The key policy to attach to the CMK.</p> <p>If you do not set
@@ -264,7 +265,7 @@ namespace Model
      * that I make are not always immediately visible</a> in the <i>IAM User
      * Guide</i>.</p> </li> </ul> <p>The policy size limit is 32 KiB (32768 bytes).</p>
      */
-    inline PutKeyPolicyRequest& WithPolicy(Aws::String&& value) { SetPolicy(value); return *this;}
+    inline PutKeyPolicyRequest& WithPolicy(Aws::String&& value) { SetPolicy(std::move(value)); return *this;}
 
     /**
      * <p>The key policy to attach to the CMK.</p> <p>If you do not set

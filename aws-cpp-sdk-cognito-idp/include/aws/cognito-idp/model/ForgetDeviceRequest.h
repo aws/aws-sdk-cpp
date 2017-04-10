@@ -16,6 +16,7 @@
 #include <aws/cognito-idp/CognitoIdentityProvider_EXPORTS.h>
 #include <aws/cognito-idp/CognitoIdentityProviderRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -51,7 +52,7 @@ namespace Model
     /**
      * <p>The access token for the forgotten device request.</p>
      */
-    inline void SetAccessToken(Aws::String&& value) { m_accessTokenHasBeenSet = true; m_accessToken = value; }
+    inline void SetAccessToken(Aws::String&& value) { m_accessTokenHasBeenSet = true; m_accessToken = std::move(value); }
 
     /**
      * <p>The access token for the forgotten device request.</p>
@@ -66,7 +67,7 @@ namespace Model
     /**
      * <p>The access token for the forgotten device request.</p>
      */
-    inline ForgetDeviceRequest& WithAccessToken(Aws::String&& value) { SetAccessToken(value); return *this;}
+    inline ForgetDeviceRequest& WithAccessToken(Aws::String&& value) { SetAccessToken(std::move(value)); return *this;}
 
     /**
      * <p>The access token for the forgotten device request.</p>
@@ -86,7 +87,7 @@ namespace Model
     /**
      * <p>The device key.</p>
      */
-    inline void SetDeviceKey(Aws::String&& value) { m_deviceKeyHasBeenSet = true; m_deviceKey = value; }
+    inline void SetDeviceKey(Aws::String&& value) { m_deviceKeyHasBeenSet = true; m_deviceKey = std::move(value); }
 
     /**
      * <p>The device key.</p>
@@ -101,7 +102,7 @@ namespace Model
     /**
      * <p>The device key.</p>
      */
-    inline ForgetDeviceRequest& WithDeviceKey(Aws::String&& value) { SetDeviceKey(value); return *this;}
+    inline ForgetDeviceRequest& WithDeviceKey(Aws::String&& value) { SetDeviceKey(std::move(value)); return *this;}
 
     /**
      * <p>The device key.</p>

@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/codepipeline/CodePipeline_EXPORTS.h>
 #include <aws/codepipeline/model/JobStatus.h>
+#include <utility>
 
 namespace Aws
 {
@@ -58,7 +59,7 @@ namespace Model
     /**
      * <p>Whether the job worker has received the specified job.</p>
      */
-    inline void SetStatus(JobStatus&& value) { m_status = value; }
+    inline void SetStatus(JobStatus&& value) { m_status = std::move(value); }
 
     /**
      * <p>Whether the job worker has received the specified job.</p>
@@ -68,7 +69,7 @@ namespace Model
     /**
      * <p>Whether the job worker has received the specified job.</p>
      */
-    inline AcknowledgeJobResult& WithStatus(JobStatus&& value) { SetStatus(value); return *this;}
+    inline AcknowledgeJobResult& WithStatus(JobStatus&& value) { SetStatus(std::move(value)); return *this;}
 
   private:
     JobStatus m_status;

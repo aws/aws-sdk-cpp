@@ -16,6 +16,7 @@
 #include <aws/opsworks/OpsWorks_EXPORTS.h>
 #include <aws/opsworks/OpsWorksRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -48,7 +49,7 @@ namespace Model
     /**
      * <p>The instance's AWS OpsWorks ID.</p>
      */
-    inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
+    inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::move(value); }
 
     /**
      * <p>The instance's AWS OpsWorks ID.</p>
@@ -63,7 +64,7 @@ namespace Model
     /**
      * <p>The instance's AWS OpsWorks ID.</p>
      */
-    inline GrantAccessRequest& WithInstanceId(Aws::String&& value) { SetInstanceId(value); return *this;}
+    inline GrantAccessRequest& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
 
     /**
      * <p>The instance's AWS OpsWorks ID.</p>

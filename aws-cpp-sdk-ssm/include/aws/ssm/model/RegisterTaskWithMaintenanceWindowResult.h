@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/ssm/SSM_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -52,7 +53,7 @@ namespace Model
     /**
      * <p>The id of the task in the Maintenance Window.</p>
      */
-    inline void SetWindowTaskId(Aws::String&& value) { m_windowTaskId = value; }
+    inline void SetWindowTaskId(Aws::String&& value) { m_windowTaskId = std::move(value); }
 
     /**
      * <p>The id of the task in the Maintenance Window.</p>
@@ -67,7 +68,7 @@ namespace Model
     /**
      * <p>The id of the task in the Maintenance Window.</p>
      */
-    inline RegisterTaskWithMaintenanceWindowResult& WithWindowTaskId(Aws::String&& value) { SetWindowTaskId(value); return *this;}
+    inline RegisterTaskWithMaintenanceWindowResult& WithWindowTaskId(Aws::String&& value) { SetWindowTaskId(std::move(value)); return *this;}
 
     /**
      * <p>The id of the task in the Maintenance Window.</p>

@@ -16,6 +16,7 @@
 #include <aws/codepipeline/CodePipeline_EXPORTS.h>
 #include <aws/codepipeline/CodePipelineRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -55,7 +56,7 @@ namespace Model
      * <p>An identifier that was returned from the previous list pipelines call, which
      * can be used to return the next set of pipelines in the list.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
      * <p>An identifier that was returned from the previous list pipelines call, which
@@ -73,7 +74,7 @@ namespace Model
      * <p>An identifier that was returned from the previous list pipelines call, which
      * can be used to return the next set of pipelines in the list.</p>
      */
-    inline ListPipelinesRequest& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline ListPipelinesRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>An identifier that was returned from the previous list pipelines call, which

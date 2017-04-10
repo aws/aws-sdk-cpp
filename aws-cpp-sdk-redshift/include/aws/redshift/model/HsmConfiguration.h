@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/redshift/model/Tag.h>
+#include <utility>
 
 namespace Aws
 {
@@ -64,7 +65,7 @@ namespace Model
     /**
      * <p>The name of the Amazon Redshift HSM configuration.</p>
      */
-    inline void SetHsmConfigurationIdentifier(Aws::String&& value) { m_hsmConfigurationIdentifierHasBeenSet = true; m_hsmConfigurationIdentifier = value; }
+    inline void SetHsmConfigurationIdentifier(Aws::String&& value) { m_hsmConfigurationIdentifierHasBeenSet = true; m_hsmConfigurationIdentifier = std::move(value); }
 
     /**
      * <p>The name of the Amazon Redshift HSM configuration.</p>
@@ -79,7 +80,7 @@ namespace Model
     /**
      * <p>The name of the Amazon Redshift HSM configuration.</p>
      */
-    inline HsmConfiguration& WithHsmConfigurationIdentifier(Aws::String&& value) { SetHsmConfigurationIdentifier(value); return *this;}
+    inline HsmConfiguration& WithHsmConfigurationIdentifier(Aws::String&& value) { SetHsmConfigurationIdentifier(std::move(value)); return *this;}
 
     /**
      * <p>The name of the Amazon Redshift HSM configuration.</p>
@@ -99,7 +100,7 @@ namespace Model
     /**
      * <p>A text description of the HSM configuration.</p>
      */
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = value; }
+    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
      * <p>A text description of the HSM configuration.</p>
@@ -114,7 +115,7 @@ namespace Model
     /**
      * <p>A text description of the HSM configuration.</p>
      */
-    inline HsmConfiguration& WithDescription(Aws::String&& value) { SetDescription(value); return *this;}
+    inline HsmConfiguration& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
      * <p>A text description of the HSM configuration.</p>
@@ -137,7 +138,7 @@ namespace Model
      * <p>The IP address that the Amazon Redshift cluster must use to access the
      * HSM.</p>
      */
-    inline void SetHsmIpAddress(Aws::String&& value) { m_hsmIpAddressHasBeenSet = true; m_hsmIpAddress = value; }
+    inline void SetHsmIpAddress(Aws::String&& value) { m_hsmIpAddressHasBeenSet = true; m_hsmIpAddress = std::move(value); }
 
     /**
      * <p>The IP address that the Amazon Redshift cluster must use to access the
@@ -155,7 +156,7 @@ namespace Model
      * <p>The IP address that the Amazon Redshift cluster must use to access the
      * HSM.</p>
      */
-    inline HsmConfiguration& WithHsmIpAddress(Aws::String&& value) { SetHsmIpAddress(value); return *this;}
+    inline HsmConfiguration& WithHsmIpAddress(Aws::String&& value) { SetHsmIpAddress(std::move(value)); return *this;}
 
     /**
      * <p>The IP address that the Amazon Redshift cluster must use to access the
@@ -179,7 +180,7 @@ namespace Model
      * <p>The name of the partition in the HSM where the Amazon Redshift clusters will
      * store their database encryption keys.</p>
      */
-    inline void SetHsmPartitionName(Aws::String&& value) { m_hsmPartitionNameHasBeenSet = true; m_hsmPartitionName = value; }
+    inline void SetHsmPartitionName(Aws::String&& value) { m_hsmPartitionNameHasBeenSet = true; m_hsmPartitionName = std::move(value); }
 
     /**
      * <p>The name of the partition in the HSM where the Amazon Redshift clusters will
@@ -197,7 +198,7 @@ namespace Model
      * <p>The name of the partition in the HSM where the Amazon Redshift clusters will
      * store their database encryption keys.</p>
      */
-    inline HsmConfiguration& WithHsmPartitionName(Aws::String&& value) { SetHsmPartitionName(value); return *this;}
+    inline HsmConfiguration& WithHsmPartitionName(Aws::String&& value) { SetHsmPartitionName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the partition in the HSM where the Amazon Redshift clusters will
@@ -218,7 +219,7 @@ namespace Model
     /**
      * <p>The list of tags for the HSM configuration.</p>
      */
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = value; }
+    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
      * <p>The list of tags for the HSM configuration.</p>
@@ -228,7 +229,7 @@ namespace Model
     /**
      * <p>The list of tags for the HSM configuration.</p>
      */
-    inline HsmConfiguration& WithTags(Aws::Vector<Tag>&& value) { SetTags(value); return *this;}
+    inline HsmConfiguration& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
      * <p>The list of tags for the HSM configuration.</p>
@@ -238,7 +239,7 @@ namespace Model
     /**
      * <p>The list of tags for the HSM configuration.</p>
      */
-    inline HsmConfiguration& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
+    inline HsmConfiguration& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
   private:
     Aws::String m_hsmConfigurationIdentifier;

@@ -16,6 +16,7 @@
 #include <aws/inspector/Inspector_EXPORTS.h>
 #include <aws/inspector/InspectorRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -51,7 +52,7 @@ namespace Model
      * <p>A collection of keys and an array of possible values in JSON format.</p>
      * <p>For example, [{ "key1" : ["Value1","Value2"]},{"Key2": ["Value3"]}]</p>
      */
-    inline void SetResourceGroupTags(Aws::String&& value) { m_resourceGroupTagsHasBeenSet = true; m_resourceGroupTags = value; }
+    inline void SetResourceGroupTags(Aws::String&& value) { m_resourceGroupTagsHasBeenSet = true; m_resourceGroupTags = std::move(value); }
 
     /**
      * <p>A collection of keys and an array of possible values in JSON format.</p>
@@ -69,7 +70,7 @@ namespace Model
      * <p>A collection of keys and an array of possible values in JSON format.</p>
      * <p>For example, [{ "key1" : ["Value1","Value2"]},{"Key2": ["Value3"]}]</p>
      */
-    inline CreateResourceGroupRequest& WithResourceGroupTags(Aws::String&& value) { SetResourceGroupTags(value); return *this;}
+    inline CreateResourceGroupRequest& WithResourceGroupTags(Aws::String&& value) { SetResourceGroupTags(std::move(value)); return *this;}
 
     /**
      * <p>A collection of keys and an array of possible values in JSON format.</p>

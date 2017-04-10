@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/ssm/SSM_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -60,7 +61,7 @@ namespace Model
      * <p>A URL for an Amazon S3 bucket where you want to store the results of this
      * request.</p>
      */
-    inline void SetOutputUrl(Aws::String&& value) { m_outputUrlHasBeenSet = true; m_outputUrl = value; }
+    inline void SetOutputUrl(Aws::String&& value) { m_outputUrlHasBeenSet = true; m_outputUrl = std::move(value); }
 
     /**
      * <p>A URL for an Amazon S3 bucket where you want to store the results of this
@@ -78,7 +79,7 @@ namespace Model
      * <p>A URL for an Amazon S3 bucket where you want to store the results of this
      * request.</p>
      */
-    inline S3OutputUrl& WithOutputUrl(Aws::String&& value) { SetOutputUrl(value); return *this;}
+    inline S3OutputUrl& WithOutputUrl(Aws::String&& value) { SetOutputUrl(std::move(value)); return *this;}
 
     /**
      * <p>A URL for an Amazon S3 bucket where you want to store the results of this

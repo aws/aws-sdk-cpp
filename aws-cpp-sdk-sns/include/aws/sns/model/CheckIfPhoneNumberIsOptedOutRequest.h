@@ -16,6 +16,7 @@
 #include <aws/sns/SNS_EXPORTS.h>
 #include <aws/sns/SNSRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -54,7 +55,7 @@ namespace Model
     /**
      * <p>The phone number for which you want to check the opt out status.</p>
      */
-    inline void SetPhoneNumber(Aws::String&& value) { m_phoneNumberHasBeenSet = true; m_phoneNumber = value; }
+    inline void SetPhoneNumber(Aws::String&& value) { m_phoneNumberHasBeenSet = true; m_phoneNumber = std::move(value); }
 
     /**
      * <p>The phone number for which you want to check the opt out status.</p>
@@ -69,7 +70,7 @@ namespace Model
     /**
      * <p>The phone number for which you want to check the opt out status.</p>
      */
-    inline CheckIfPhoneNumberIsOptedOutRequest& WithPhoneNumber(Aws::String&& value) { SetPhoneNumber(value); return *this;}
+    inline CheckIfPhoneNumberIsOptedOutRequest& WithPhoneNumber(Aws::String&& value) { SetPhoneNumber(std::move(value)); return *this;}
 
     /**
      * <p>The phone number for which you want to check the opt out status.</p>

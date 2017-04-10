@@ -16,6 +16,7 @@
 #include <aws/cognito-idp/CognitoIdentityProvider_EXPORTS.h>
 #include <aws/cognito-idp/CognitoIdentityProviderRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -52,7 +53,7 @@ namespace Model
     /**
      * <p>The device key.</p>
      */
-    inline void SetDeviceKey(Aws::String&& value) { m_deviceKeyHasBeenSet = true; m_deviceKey = value; }
+    inline void SetDeviceKey(Aws::String&& value) { m_deviceKeyHasBeenSet = true; m_deviceKey = std::move(value); }
 
     /**
      * <p>The device key.</p>
@@ -67,7 +68,7 @@ namespace Model
     /**
      * <p>The device key.</p>
      */
-    inline AdminGetDeviceRequest& WithDeviceKey(Aws::String&& value) { SetDeviceKey(value); return *this;}
+    inline AdminGetDeviceRequest& WithDeviceKey(Aws::String&& value) { SetDeviceKey(std::move(value)); return *this;}
 
     /**
      * <p>The device key.</p>
@@ -87,7 +88,7 @@ namespace Model
     /**
      * <p>The user pool ID.</p>
      */
-    inline void SetUserPoolId(Aws::String&& value) { m_userPoolIdHasBeenSet = true; m_userPoolId = value; }
+    inline void SetUserPoolId(Aws::String&& value) { m_userPoolIdHasBeenSet = true; m_userPoolId = std::move(value); }
 
     /**
      * <p>The user pool ID.</p>
@@ -102,7 +103,7 @@ namespace Model
     /**
      * <p>The user pool ID.</p>
      */
-    inline AdminGetDeviceRequest& WithUserPoolId(Aws::String&& value) { SetUserPoolId(value); return *this;}
+    inline AdminGetDeviceRequest& WithUserPoolId(Aws::String&& value) { SetUserPoolId(std::move(value)); return *this;}
 
     /**
      * <p>The user pool ID.</p>
@@ -122,7 +123,7 @@ namespace Model
     /**
      * <p>The user name.</p>
      */
-    inline void SetUsername(Aws::String&& value) { m_usernameHasBeenSet = true; m_username = value; }
+    inline void SetUsername(Aws::String&& value) { m_usernameHasBeenSet = true; m_username = std::move(value); }
 
     /**
      * <p>The user name.</p>
@@ -137,7 +138,7 @@ namespace Model
     /**
      * <p>The user name.</p>
      */
-    inline AdminGetDeviceRequest& WithUsername(Aws::String&& value) { SetUsername(value); return *this;}
+    inline AdminGetDeviceRequest& WithUsername(Aws::String&& value) { SetUsername(std::move(value)); return *this;}
 
     /**
      * <p>The user name.</p>

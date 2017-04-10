@@ -16,6 +16,7 @@
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/ec2/EC2Request.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -77,7 +78,7 @@ namespace Model
     /**
      * <p>The ID of the VPC.</p>
      */
-    inline void SetVpcId(Aws::String&& value) { m_vpcIdHasBeenSet = true; m_vpcId = value; }
+    inline void SetVpcId(Aws::String&& value) { m_vpcIdHasBeenSet = true; m_vpcId = std::move(value); }
 
     /**
      * <p>The ID of the VPC.</p>
@@ -92,7 +93,7 @@ namespace Model
     /**
      * <p>The ID of the VPC.</p>
      */
-    inline CreateSubnetRequest& WithVpcId(Aws::String&& value) { SetVpcId(value); return *this;}
+    inline CreateSubnetRequest& WithVpcId(Aws::String&& value) { SetVpcId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the VPC.</p>
@@ -115,7 +116,7 @@ namespace Model
      * <p>The IPv4 network range for the subnet, in CIDR notation. For example,
      * <code>10.0.0.0/24</code>.</p>
      */
-    inline void SetCidrBlock(Aws::String&& value) { m_cidrBlockHasBeenSet = true; m_cidrBlock = value; }
+    inline void SetCidrBlock(Aws::String&& value) { m_cidrBlockHasBeenSet = true; m_cidrBlock = std::move(value); }
 
     /**
      * <p>The IPv4 network range for the subnet, in CIDR notation. For example,
@@ -133,7 +134,7 @@ namespace Model
      * <p>The IPv4 network range for the subnet, in CIDR notation. For example,
      * <code>10.0.0.0/24</code>.</p>
      */
-    inline CreateSubnetRequest& WithCidrBlock(Aws::String&& value) { SetCidrBlock(value); return *this;}
+    inline CreateSubnetRequest& WithCidrBlock(Aws::String&& value) { SetCidrBlock(std::move(value)); return *this;}
 
     /**
      * <p>The IPv4 network range for the subnet, in CIDR notation. For example,
@@ -157,7 +158,7 @@ namespace Model
      * <p>The IPv6 network range for the subnet, in CIDR notation. The subnet size must
      * use a /64 prefix length.</p>
      */
-    inline void SetIpv6CidrBlock(Aws::String&& value) { m_ipv6CidrBlockHasBeenSet = true; m_ipv6CidrBlock = value; }
+    inline void SetIpv6CidrBlock(Aws::String&& value) { m_ipv6CidrBlockHasBeenSet = true; m_ipv6CidrBlock = std::move(value); }
 
     /**
      * <p>The IPv6 network range for the subnet, in CIDR notation. The subnet size must
@@ -175,7 +176,7 @@ namespace Model
      * <p>The IPv6 network range for the subnet, in CIDR notation. The subnet size must
      * use a /64 prefix length.</p>
      */
-    inline CreateSubnetRequest& WithIpv6CidrBlock(Aws::String&& value) { SetIpv6CidrBlock(value); return *this;}
+    inline CreateSubnetRequest& WithIpv6CidrBlock(Aws::String&& value) { SetIpv6CidrBlock(std::move(value)); return *this;}
 
     /**
      * <p>The IPv6 network range for the subnet, in CIDR notation. The subnet size must
@@ -202,7 +203,7 @@ namespace Model
      * you. If you create more than one subnet in your VPC, we may not necessarily
      * select a different zone for each subnet.</p>
      */
-    inline void SetAvailabilityZone(Aws::String&& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = value; }
+    inline void SetAvailabilityZone(Aws::String&& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = std::move(value); }
 
     /**
      * <p>The Availability Zone for the subnet.</p> <p>Default: AWS selects one for
@@ -223,7 +224,7 @@ namespace Model
      * you. If you create more than one subnet in your VPC, we may not necessarily
      * select a different zone for each subnet.</p>
      */
-    inline CreateSubnetRequest& WithAvailabilityZone(Aws::String&& value) { SetAvailabilityZone(value); return *this;}
+    inline CreateSubnetRequest& WithAvailabilityZone(Aws::String&& value) { SetAvailabilityZone(std::move(value)); return *this;}
 
     /**
      * <p>The Availability Zone for the subnet.</p> <p>Default: AWS selects one for

@@ -16,6 +16,7 @@
 #include <aws/cloudformation/CloudFormation_EXPORTS.h>
 #include <aws/cloudformation/CloudFormationRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -68,7 +69,7 @@ namespace Model
      * pass <code>TemplateURL</code> or <code>TemplateBody</code>. If both are passed,
      * only <code>TemplateBody</code> is used.</p>
      */
-    inline void SetTemplateBody(Aws::String&& value) { m_templateBodyHasBeenSet = true; m_templateBody = value; }
+    inline void SetTemplateBody(Aws::String&& value) { m_templateBodyHasBeenSet = true; m_templateBody = std::move(value); }
 
     /**
      * <p>Structure containing the template body with a minimum length of 1 byte and a
@@ -98,7 +99,7 @@ namespace Model
      * pass <code>TemplateURL</code> or <code>TemplateBody</code>. If both are passed,
      * only <code>TemplateBody</code> is used.</p>
      */
-    inline ValidateTemplateRequest& WithTemplateBody(Aws::String&& value) { SetTemplateBody(value); return *this;}
+    inline ValidateTemplateRequest& WithTemplateBody(Aws::String&& value) { SetTemplateBody(std::move(value)); return *this;}
 
     /**
      * <p>Structure containing the template body with a minimum length of 1 byte and a
@@ -141,7 +142,7 @@ namespace Model
      * pass <code>TemplateURL</code> or <code>TemplateBody</code>. If both are passed,
      * only <code>TemplateBody</code> is used.</p>
      */
-    inline void SetTemplateURL(Aws::String&& value) { m_templateURLHasBeenSet = true; m_templateURL = value; }
+    inline void SetTemplateURL(Aws::String&& value) { m_templateURLHasBeenSet = true; m_templateURL = std::move(value); }
 
     /**
      * <p>Location of file containing the template body. The URL must point to a
@@ -174,7 +175,7 @@ namespace Model
      * pass <code>TemplateURL</code> or <code>TemplateBody</code>. If both are passed,
      * only <code>TemplateBody</code> is used.</p>
      */
-    inline ValidateTemplateRequest& WithTemplateURL(Aws::String&& value) { SetTemplateURL(value); return *this;}
+    inline ValidateTemplateRequest& WithTemplateURL(Aws::String&& value) { SetTemplateURL(std::move(value)); return *this;}
 
     /**
      * <p>Location of file containing the template body. The URL must point to a

@@ -17,6 +17,7 @@
 #include <aws/mturk-requester/MTurkRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/mturk-requester/model/NotificationSpecification.h>
+#include <utility>
 
 namespace Aws
 {
@@ -52,7 +53,7 @@ namespace Model
      * <p> The ID of the HIT type whose notification specification is being updated.
      * </p>
      */
-    inline void SetHITTypeId(Aws::String&& value) { m_hITTypeIdHasBeenSet = true; m_hITTypeId = value; }
+    inline void SetHITTypeId(Aws::String&& value) { m_hITTypeIdHasBeenSet = true; m_hITTypeId = std::move(value); }
 
     /**
      * <p> The ID of the HIT type whose notification specification is being updated.
@@ -70,7 +71,7 @@ namespace Model
      * <p> The ID of the HIT type whose notification specification is being updated.
      * </p>
      */
-    inline UpdateNotificationSettingsRequest& WithHITTypeId(Aws::String&& value) { SetHITTypeId(value); return *this;}
+    inline UpdateNotificationSettingsRequest& WithHITTypeId(Aws::String&& value) { SetHITTypeId(std::move(value)); return *this;}
 
     /**
      * <p> The ID of the HIT type whose notification specification is being updated.
@@ -91,7 +92,7 @@ namespace Model
     /**
      * <p> The notification specification for the HIT type. </p>
      */
-    inline void SetNotification(NotificationSpecification&& value) { m_notificationHasBeenSet = true; m_notification = value; }
+    inline void SetNotification(NotificationSpecification&& value) { m_notificationHasBeenSet = true; m_notification = std::move(value); }
 
     /**
      * <p> The notification specification for the HIT type. </p>
@@ -101,7 +102,7 @@ namespace Model
     /**
      * <p> The notification specification for the HIT type. </p>
      */
-    inline UpdateNotificationSettingsRequest& WithNotification(NotificationSpecification&& value) { SetNotification(value); return *this;}
+    inline UpdateNotificationSettingsRequest& WithNotification(NotificationSpecification&& value) { SetNotification(std::move(value)); return *this;}
 
     /**
      * <p> Specifies whether notifications are sent for HITs of this HIT type,

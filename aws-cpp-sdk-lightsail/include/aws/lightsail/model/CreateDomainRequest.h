@@ -16,6 +16,7 @@
 #include <aws/lightsail/Lightsail_EXPORTS.h>
 #include <aws/lightsail/LightsailRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -60,7 +61,7 @@ namespace Model
      * registered your domain, you can enter its name in this parameter to manage the
      * DNS records for that domain.</p> </note>
      */
-    inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
+    inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = std::move(value); }
 
     /**
      * <p>The domain name to manage (e.g., <code>example.com</code>).</p> <note> <p>You
@@ -87,7 +88,7 @@ namespace Model
      * registered your domain, you can enter its name in this parameter to manage the
      * DNS records for that domain.</p> </note>
      */
-    inline CreateDomainRequest& WithDomainName(Aws::String&& value) { SetDomainName(value); return *this;}
+    inline CreateDomainRequest& WithDomainName(Aws::String&& value) { SetDomainName(std::move(value)); return *this;}
 
     /**
      * <p>The domain name to manage (e.g., <code>example.com</code>).</p> <note> <p>You

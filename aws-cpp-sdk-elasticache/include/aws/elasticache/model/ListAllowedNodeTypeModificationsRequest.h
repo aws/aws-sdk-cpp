@@ -16,6 +16,7 @@
 #include <aws/elasticache/ElastiCache_EXPORTS.h>
 #include <aws/elasticache/ElastiCacheRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -69,7 +70,7 @@ namespace Model
      * <code>CacheClusterId</code> or the <code>ReplicationGroupId</code>.</p>
      * </important>
      */
-    inline void SetCacheClusterId(Aws::String&& value) { m_cacheClusterIdHasBeenSet = true; m_cacheClusterId = value; }
+    inline void SetCacheClusterId(Aws::String&& value) { m_cacheClusterIdHasBeenSet = true; m_cacheClusterId = std::move(value); }
 
     /**
      * <p>The name of the cache cluster you want to scale up to a larger node instanced
@@ -99,7 +100,7 @@ namespace Model
      * <code>CacheClusterId</code> or the <code>ReplicationGroupId</code>.</p>
      * </important>
      */
-    inline ListAllowedNodeTypeModificationsRequest& WithCacheClusterId(Aws::String&& value) { SetCacheClusterId(value); return *this;}
+    inline ListAllowedNodeTypeModificationsRequest& WithCacheClusterId(Aws::String&& value) { SetCacheClusterId(std::move(value)); return *this;}
 
     /**
      * <p>The name of the cache cluster you want to scale up to a larger node instanced
@@ -139,7 +140,7 @@ namespace Model
      * either the <code>CacheClusterId</code> or the
      * <code>ReplicationGroupId</code>.</p> </important>
      */
-    inline void SetReplicationGroupId(Aws::String&& value) { m_replicationGroupIdHasBeenSet = true; m_replicationGroupId = value; }
+    inline void SetReplicationGroupId(Aws::String&& value) { m_replicationGroupIdHasBeenSet = true; m_replicationGroupId = std::move(value); }
 
     /**
      * <p>The name of the replication group want to scale up to a larger node type.
@@ -169,7 +170,7 @@ namespace Model
      * either the <code>CacheClusterId</code> or the
      * <code>ReplicationGroupId</code>.</p> </important>
      */
-    inline ListAllowedNodeTypeModificationsRequest& WithReplicationGroupId(Aws::String&& value) { SetReplicationGroupId(value); return *this;}
+    inline ListAllowedNodeTypeModificationsRequest& WithReplicationGroupId(Aws::String&& value) { SetReplicationGroupId(std::move(value)); return *this;}
 
     /**
      * <p>The name of the replication group want to scale up to a larger node type.

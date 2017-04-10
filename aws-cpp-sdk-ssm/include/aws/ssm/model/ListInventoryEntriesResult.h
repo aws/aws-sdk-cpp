@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <utility>
 
 namespace Aws
 {
@@ -54,7 +55,7 @@ namespace Model
     /**
      * <p>The type of inventory item returned by the request.</p>
      */
-    inline void SetTypeName(Aws::String&& value) { m_typeName = value; }
+    inline void SetTypeName(Aws::String&& value) { m_typeName = std::move(value); }
 
     /**
      * <p>The type of inventory item returned by the request.</p>
@@ -69,7 +70,7 @@ namespace Model
     /**
      * <p>The type of inventory item returned by the request.</p>
      */
-    inline ListInventoryEntriesResult& WithTypeName(Aws::String&& value) { SetTypeName(value); return *this;}
+    inline ListInventoryEntriesResult& WithTypeName(Aws::String&& value) { SetTypeName(std::move(value)); return *this;}
 
     /**
      * <p>The type of inventory item returned by the request.</p>
@@ -89,7 +90,7 @@ namespace Model
     /**
      * <p>The instance ID targeted by the request to query inventory information.</p>
      */
-    inline void SetInstanceId(Aws::String&& value) { m_instanceId = value; }
+    inline void SetInstanceId(Aws::String&& value) { m_instanceId = std::move(value); }
 
     /**
      * <p>The instance ID targeted by the request to query inventory information.</p>
@@ -104,7 +105,7 @@ namespace Model
     /**
      * <p>The instance ID targeted by the request to query inventory information.</p>
      */
-    inline ListInventoryEntriesResult& WithInstanceId(Aws::String&& value) { SetInstanceId(value); return *this;}
+    inline ListInventoryEntriesResult& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
 
     /**
      * <p>The instance ID targeted by the request to query inventory information.</p>
@@ -124,7 +125,7 @@ namespace Model
     /**
      * <p>The inventory schema version used by the instance(s).</p>
      */
-    inline void SetSchemaVersion(Aws::String&& value) { m_schemaVersion = value; }
+    inline void SetSchemaVersion(Aws::String&& value) { m_schemaVersion = std::move(value); }
 
     /**
      * <p>The inventory schema version used by the instance(s).</p>
@@ -139,7 +140,7 @@ namespace Model
     /**
      * <p>The inventory schema version used by the instance(s).</p>
      */
-    inline ListInventoryEntriesResult& WithSchemaVersion(Aws::String&& value) { SetSchemaVersion(value); return *this;}
+    inline ListInventoryEntriesResult& WithSchemaVersion(Aws::String&& value) { SetSchemaVersion(std::move(value)); return *this;}
 
     /**
      * <p>The inventory schema version used by the instance(s).</p>
@@ -159,7 +160,7 @@ namespace Model
     /**
      * <p>The time that inventory information was collected for the instance(s).</p>
      */
-    inline void SetCaptureTime(Aws::String&& value) { m_captureTime = value; }
+    inline void SetCaptureTime(Aws::String&& value) { m_captureTime = std::move(value); }
 
     /**
      * <p>The time that inventory information was collected for the instance(s).</p>
@@ -174,7 +175,7 @@ namespace Model
     /**
      * <p>The time that inventory information was collected for the instance(s).</p>
      */
-    inline ListInventoryEntriesResult& WithCaptureTime(Aws::String&& value) { SetCaptureTime(value); return *this;}
+    inline ListInventoryEntriesResult& WithCaptureTime(Aws::String&& value) { SetCaptureTime(std::move(value)); return *this;}
 
     /**
      * <p>The time that inventory information was collected for the instance(s).</p>
@@ -194,7 +195,7 @@ namespace Model
     /**
      * <p>A list of inventory items on the instance(s).</p>
      */
-    inline void SetEntries(Aws::Vector<Aws::Map<Aws::String, Aws::String>>&& value) { m_entries = value; }
+    inline void SetEntries(Aws::Vector<Aws::Map<Aws::String, Aws::String>>&& value) { m_entries = std::move(value); }
 
     /**
      * <p>A list of inventory items on the instance(s).</p>
@@ -204,7 +205,7 @@ namespace Model
     /**
      * <p>A list of inventory items on the instance(s).</p>
      */
-    inline ListInventoryEntriesResult& WithEntries(Aws::Vector<Aws::Map<Aws::String, Aws::String>>&& value) { SetEntries(value); return *this;}
+    inline ListInventoryEntriesResult& WithEntries(Aws::Vector<Aws::Map<Aws::String, Aws::String>>&& value) { SetEntries(std::move(value)); return *this;}
 
     /**
      * <p>A list of inventory items on the instance(s).</p>
@@ -214,7 +215,7 @@ namespace Model
     /**
      * <p>A list of inventory items on the instance(s).</p>
      */
-    inline ListInventoryEntriesResult& AddEntries(Aws::Map<Aws::String, Aws::String>&& value) { m_entries.push_back(value); return *this; }
+    inline ListInventoryEntriesResult& AddEntries(Aws::Map<Aws::String, Aws::String>&& value) { m_entries.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The token to use when requesting the next set of items. If there are no
@@ -232,7 +233,7 @@ namespace Model
      * <p>The token to use when requesting the next set of items. If there are no
      * additional items to return, the string is empty.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
      * <p>The token to use when requesting the next set of items. If there are no
@@ -250,7 +251,7 @@ namespace Model
      * <p>The token to use when requesting the next set of items. If there are no
      * additional items to return, the string is empty.</p>
      */
-    inline ListInventoryEntriesResult& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline ListInventoryEntriesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>The token to use when requesting the next set of items. If there are no

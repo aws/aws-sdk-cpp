@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/kinesis/Kinesis_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -52,7 +53,7 @@ namespace Model
     /**
      * <p>The name of the stream.</p>
      */
-    inline void SetStreamName(Aws::String&& value) { m_streamName = value; }
+    inline void SetStreamName(Aws::String&& value) { m_streamName = std::move(value); }
 
     /**
      * <p>The name of the stream.</p>
@@ -67,7 +68,7 @@ namespace Model
     /**
      * <p>The name of the stream.</p>
      */
-    inline UpdateShardCountResult& WithStreamName(Aws::String&& value) { SetStreamName(value); return *this;}
+    inline UpdateShardCountResult& WithStreamName(Aws::String&& value) { SetStreamName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the stream.</p>

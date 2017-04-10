@@ -19,6 +19,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/elasticmapreduce/model/InstanceFleetProvisioningSpecifications.h>
 #include <aws/elasticmapreduce/model/InstanceTypeConfig.h>
+#include <utility>
 
 namespace Aws
 {
@@ -62,7 +63,7 @@ namespace Model
     /**
      * <p>The friendly name of the instance fleet.</p>
      */
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p>The friendly name of the instance fleet.</p>
@@ -77,7 +78,7 @@ namespace Model
     /**
      * <p>The friendly name of the instance fleet.</p>
      */
-    inline InstanceFleetConfig& WithName(Aws::String&& value) { SetName(value); return *this;}
+    inline InstanceFleetConfig& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>The friendly name of the instance fleet.</p>
@@ -100,7 +101,7 @@ namespace Model
      * <p>The node type that the instance fleet hosts. Valid values are MASTER,CORE,and
      * TASK.</p>
      */
-    inline void SetInstanceFleetType(InstanceFleetType&& value) { m_instanceFleetTypeHasBeenSet = true; m_instanceFleetType = value; }
+    inline void SetInstanceFleetType(InstanceFleetType&& value) { m_instanceFleetTypeHasBeenSet = true; m_instanceFleetType = std::move(value); }
 
     /**
      * <p>The node type that the instance fleet hosts. Valid values are MASTER,CORE,and
@@ -112,7 +113,7 @@ namespace Model
      * <p>The node type that the instance fleet hosts. Valid values are MASTER,CORE,and
      * TASK.</p>
      */
-    inline InstanceFleetConfig& WithInstanceFleetType(InstanceFleetType&& value) { SetInstanceFleetType(value); return *this;}
+    inline InstanceFleetConfig& WithInstanceFleetType(InstanceFleetType&& value) { SetInstanceFleetType(std::move(value)); return *this;}
 
     /**
      * <p>The target capacity of On-Demand units for the instance fleet, which
@@ -253,7 +254,7 @@ namespace Model
      * <p>The instance type configurations that define the EC2 instances in the
      * instance fleet.</p>
      */
-    inline void SetInstanceTypeConfigs(Aws::Vector<InstanceTypeConfig>&& value) { m_instanceTypeConfigsHasBeenSet = true; m_instanceTypeConfigs = value; }
+    inline void SetInstanceTypeConfigs(Aws::Vector<InstanceTypeConfig>&& value) { m_instanceTypeConfigsHasBeenSet = true; m_instanceTypeConfigs = std::move(value); }
 
     /**
      * <p>The instance type configurations that define the EC2 instances in the
@@ -265,7 +266,7 @@ namespace Model
      * <p>The instance type configurations that define the EC2 instances in the
      * instance fleet.</p>
      */
-    inline InstanceFleetConfig& WithInstanceTypeConfigs(Aws::Vector<InstanceTypeConfig>&& value) { SetInstanceTypeConfigs(value); return *this;}
+    inline InstanceFleetConfig& WithInstanceTypeConfigs(Aws::Vector<InstanceTypeConfig>&& value) { SetInstanceTypeConfigs(std::move(value)); return *this;}
 
     /**
      * <p>The instance type configurations that define the EC2 instances in the
@@ -277,7 +278,7 @@ namespace Model
      * <p>The instance type configurations that define the EC2 instances in the
      * instance fleet.</p>
      */
-    inline InstanceFleetConfig& AddInstanceTypeConfigs(InstanceTypeConfig&& value) { m_instanceTypeConfigsHasBeenSet = true; m_instanceTypeConfigs.push_back(value); return *this; }
+    inline InstanceFleetConfig& AddInstanceTypeConfigs(InstanceTypeConfig&& value) { m_instanceTypeConfigsHasBeenSet = true; m_instanceTypeConfigs.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The launch specification for the instance fleet.</p>
@@ -292,7 +293,7 @@ namespace Model
     /**
      * <p>The launch specification for the instance fleet.</p>
      */
-    inline void SetLaunchSpecifications(InstanceFleetProvisioningSpecifications&& value) { m_launchSpecificationsHasBeenSet = true; m_launchSpecifications = value; }
+    inline void SetLaunchSpecifications(InstanceFleetProvisioningSpecifications&& value) { m_launchSpecificationsHasBeenSet = true; m_launchSpecifications = std::move(value); }
 
     /**
      * <p>The launch specification for the instance fleet.</p>
@@ -302,7 +303,7 @@ namespace Model
     /**
      * <p>The launch specification for the instance fleet.</p>
      */
-    inline InstanceFleetConfig& WithLaunchSpecifications(InstanceFleetProvisioningSpecifications&& value) { SetLaunchSpecifications(value); return *this;}
+    inline InstanceFleetConfig& WithLaunchSpecifications(InstanceFleetProvisioningSpecifications&& value) { SetLaunchSpecifications(std::move(value)); return *this;}
 
   private:
     Aws::String m_name;

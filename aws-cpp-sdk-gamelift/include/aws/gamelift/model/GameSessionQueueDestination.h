@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/gamelift/GameLift_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -64,7 +65,7 @@ namespace Model
      * include a fleet ID or alias ID and a region name, provide a unique identifier
      * across all regions. </p>
      */
-    inline void SetDestinationArn(Aws::String&& value) { m_destinationArnHasBeenSet = true; m_destinationArn = value; }
+    inline void SetDestinationArn(Aws::String&& value) { m_destinationArnHasBeenSet = true; m_destinationArn = std::move(value); }
 
     /**
      * <p>Amazon Resource Name (ARN) assigned to fleet or fleet alias. ARNs, which
@@ -85,7 +86,7 @@ namespace Model
      * include a fleet ID or alias ID and a region name, provide a unique identifier
      * across all regions. </p>
      */
-    inline GameSessionQueueDestination& WithDestinationArn(Aws::String&& value) { SetDestinationArn(value); return *this;}
+    inline GameSessionQueueDestination& WithDestinationArn(Aws::String&& value) { SetDestinationArn(std::move(value)); return *this;}
 
     /**
      * <p>Amazon Resource Name (ARN) assigned to fleet or fleet alias. ARNs, which

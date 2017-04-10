@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/gamelift/GameLift_EXPORTS.h>
 #include <aws/gamelift/model/GameSessionPlacement.h>
+#include <utility>
 
 namespace Aws
 {
@@ -58,7 +59,7 @@ namespace Model
      * includes all the information provided in the request, as well as start/end time
      * stamps and placement status. </p>
      */
-    inline void SetGameSessionPlacement(GameSessionPlacement&& value) { m_gameSessionPlacement = value; }
+    inline void SetGameSessionPlacement(GameSessionPlacement&& value) { m_gameSessionPlacement = std::move(value); }
 
     /**
      * <p>Object that describes the newly created game session placement. This object
@@ -72,7 +73,7 @@ namespace Model
      * includes all the information provided in the request, as well as start/end time
      * stamps and placement status. </p>
      */
-    inline StartGameSessionPlacementResult& WithGameSessionPlacement(GameSessionPlacement&& value) { SetGameSessionPlacement(value); return *this;}
+    inline StartGameSessionPlacementResult& WithGameSessionPlacement(GameSessionPlacement&& value) { SetGameSessionPlacement(std::move(value)); return *this;}
 
   private:
     GameSessionPlacement m_gameSessionPlacement;

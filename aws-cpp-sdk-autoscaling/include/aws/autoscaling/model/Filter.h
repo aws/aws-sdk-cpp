@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <utility>
 
 namespace Aws
 {
@@ -66,7 +67,7 @@ namespace Model
      * <code>"auto-scaling-group"</code>, <code>"key"</code>, <code>"value"</code>, and
      * <code>"propagate-at-launch"</code>.</p>
      */
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p>The name of the filter. The valid values are:
@@ -87,7 +88,7 @@ namespace Model
      * <code>"auto-scaling-group"</code>, <code>"key"</code>, <code>"value"</code>, and
      * <code>"propagate-at-launch"</code>.</p>
      */
-    inline Filter& WithName(Aws::String&& value) { SetName(value); return *this;}
+    inline Filter& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the filter. The valid values are:
@@ -109,7 +110,7 @@ namespace Model
     /**
      * <p>The value of the filter.</p>
      */
-    inline void SetValues(Aws::Vector<Aws::String>&& value) { m_valuesHasBeenSet = true; m_values = value; }
+    inline void SetValues(Aws::Vector<Aws::String>&& value) { m_valuesHasBeenSet = true; m_values = std::move(value); }
 
     /**
      * <p>The value of the filter.</p>
@@ -119,7 +120,7 @@ namespace Model
     /**
      * <p>The value of the filter.</p>
      */
-    inline Filter& WithValues(Aws::Vector<Aws::String>&& value) { SetValues(value); return *this;}
+    inline Filter& WithValues(Aws::Vector<Aws::String>&& value) { SetValues(std::move(value)); return *this;}
 
     /**
      * <p>The value of the filter.</p>
@@ -129,7 +130,7 @@ namespace Model
     /**
      * <p>The value of the filter.</p>
      */
-    inline Filter& AddValues(Aws::String&& value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
+    inline Filter& AddValues(Aws::String&& value) { m_valuesHasBeenSet = true; m_values.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The value of the filter.</p>

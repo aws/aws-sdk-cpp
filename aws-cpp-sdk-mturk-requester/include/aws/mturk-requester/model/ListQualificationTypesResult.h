@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/mturk-requester/model/QualificationType.h>
+#include <utility>
 
 namespace Aws
 {
@@ -66,7 +67,7 @@ namespace Model
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
 
     
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
@@ -75,7 +76,7 @@ namespace Model
     inline ListQualificationTypesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     
-    inline ListQualificationTypesResult& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline ListQualificationTypesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     
     inline ListQualificationTypesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
@@ -93,7 +94,7 @@ namespace Model
     /**
      * <p> The list of QualificationType elements returned by the query. </p>
      */
-    inline void SetQualificationTypes(Aws::Vector<QualificationType>&& value) { m_qualificationTypes = value; }
+    inline void SetQualificationTypes(Aws::Vector<QualificationType>&& value) { m_qualificationTypes = std::move(value); }
 
     /**
      * <p> The list of QualificationType elements returned by the query. </p>
@@ -103,7 +104,7 @@ namespace Model
     /**
      * <p> The list of QualificationType elements returned by the query. </p>
      */
-    inline ListQualificationTypesResult& WithQualificationTypes(Aws::Vector<QualificationType>&& value) { SetQualificationTypes(value); return *this;}
+    inline ListQualificationTypesResult& WithQualificationTypes(Aws::Vector<QualificationType>&& value) { SetQualificationTypes(std::move(value)); return *this;}
 
     /**
      * <p> The list of QualificationType elements returned by the query. </p>
@@ -113,7 +114,7 @@ namespace Model
     /**
      * <p> The list of QualificationType elements returned by the query. </p>
      */
-    inline ListQualificationTypesResult& AddQualificationTypes(QualificationType&& value) { m_qualificationTypes.push_back(value); return *this; }
+    inline ListQualificationTypesResult& AddQualificationTypes(QualificationType&& value) { m_qualificationTypes.push_back(std::move(value)); return *this; }
 
   private:
     int m_numResults;

@@ -17,6 +17,7 @@
 #include <aws/cloudsearch/CloudSearchRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/cloudsearch/model/AnalysisScheme.h>
+#include <utility>
 
 namespace Aws
 {
@@ -50,7 +51,7 @@ namespace Model
     inline void SetDomainName(const Aws::String& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
 
     
-    inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
+    inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = std::move(value); }
 
     
     inline void SetDomainName(const char* value) { m_domainNameHasBeenSet = true; m_domainName.assign(value); }
@@ -59,7 +60,7 @@ namespace Model
     inline DefineAnalysisSchemeRequest& WithDomainName(const Aws::String& value) { SetDomainName(value); return *this;}
 
     
-    inline DefineAnalysisSchemeRequest& WithDomainName(Aws::String&& value) { SetDomainName(value); return *this;}
+    inline DefineAnalysisSchemeRequest& WithDomainName(Aws::String&& value) { SetDomainName(std::move(value)); return *this;}
 
     
     inline DefineAnalysisSchemeRequest& WithDomainName(const char* value) { SetDomainName(value); return *this;}
@@ -71,13 +72,13 @@ namespace Model
     inline void SetAnalysisScheme(const AnalysisScheme& value) { m_analysisSchemeHasBeenSet = true; m_analysisScheme = value; }
 
     
-    inline void SetAnalysisScheme(AnalysisScheme&& value) { m_analysisSchemeHasBeenSet = true; m_analysisScheme = value; }
+    inline void SetAnalysisScheme(AnalysisScheme&& value) { m_analysisSchemeHasBeenSet = true; m_analysisScheme = std::move(value); }
 
     
     inline DefineAnalysisSchemeRequest& WithAnalysisScheme(const AnalysisScheme& value) { SetAnalysisScheme(value); return *this;}
 
     
-    inline DefineAnalysisSchemeRequest& WithAnalysisScheme(AnalysisScheme&& value) { SetAnalysisScheme(value); return *this;}
+    inline DefineAnalysisSchemeRequest& WithAnalysisScheme(AnalysisScheme&& value) { SetAnalysisScheme(std::move(value)); return *this;}
 
   private:
     Aws::String m_domainName;

@@ -16,6 +16,7 @@
 #include <aws/inspector/Inspector_EXPORTS.h>
 #include <aws/inspector/InspectorRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -51,7 +52,7 @@ namespace Model
      * The ARN of the IAM role that Inspector uses to list your EC2 instances during
      * the assessment.
      */
-    inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
+    inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
 
     /**
      * The ARN of the IAM role that Inspector uses to list your EC2 instances during
@@ -69,7 +70,7 @@ namespace Model
      * The ARN of the IAM role that Inspector uses to list your EC2 instances during
      * the assessment.
      */
-    inline RegisterCrossAccountAccessRoleRequest& WithRoleArn(Aws::String&& value) { SetRoleArn(value); return *this;}
+    inline RegisterCrossAccountAccessRoleRequest& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
 
     /**
      * The ARN of the IAM role that Inspector uses to list your EC2 instances during

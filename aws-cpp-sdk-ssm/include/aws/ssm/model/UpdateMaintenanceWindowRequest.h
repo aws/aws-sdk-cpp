@@ -16,6 +16,7 @@
 #include <aws/ssm/SSM_EXPORTS.h>
 #include <aws/ssm/SSMRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -48,7 +49,7 @@ namespace Model
     /**
      * <p>The ID of the Maintenance Window to update.</p>
      */
-    inline void SetWindowId(Aws::String&& value) { m_windowIdHasBeenSet = true; m_windowId = value; }
+    inline void SetWindowId(Aws::String&& value) { m_windowIdHasBeenSet = true; m_windowId = std::move(value); }
 
     /**
      * <p>The ID of the Maintenance Window to update.</p>
@@ -63,7 +64,7 @@ namespace Model
     /**
      * <p>The ID of the Maintenance Window to update.</p>
      */
-    inline UpdateMaintenanceWindowRequest& WithWindowId(Aws::String&& value) { SetWindowId(value); return *this;}
+    inline UpdateMaintenanceWindowRequest& WithWindowId(Aws::String&& value) { SetWindowId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the Maintenance Window to update.</p>
@@ -83,7 +84,7 @@ namespace Model
     /**
      * <p>The name of the Maintenance Window.</p>
      */
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p>The name of the Maintenance Window.</p>
@@ -98,7 +99,7 @@ namespace Model
     /**
      * <p>The name of the Maintenance Window.</p>
      */
-    inline UpdateMaintenanceWindowRequest& WithName(Aws::String&& value) { SetName(value); return *this;}
+    inline UpdateMaintenanceWindowRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the Maintenance Window.</p>
@@ -121,7 +122,7 @@ namespace Model
      * <p>The schedule of the Maintenance Window in the form of a cron or rate
      * expression.</p>
      */
-    inline void SetSchedule(Aws::String&& value) { m_scheduleHasBeenSet = true; m_schedule = value; }
+    inline void SetSchedule(Aws::String&& value) { m_scheduleHasBeenSet = true; m_schedule = std::move(value); }
 
     /**
      * <p>The schedule of the Maintenance Window in the form of a cron or rate
@@ -139,7 +140,7 @@ namespace Model
      * <p>The schedule of the Maintenance Window in the form of a cron or rate
      * expression.</p>
      */
-    inline UpdateMaintenanceWindowRequest& WithSchedule(Aws::String&& value) { SetSchedule(value); return *this;}
+    inline UpdateMaintenanceWindowRequest& WithSchedule(Aws::String&& value) { SetSchedule(std::move(value)); return *this;}
 
     /**
      * <p>The schedule of the Maintenance Window in the form of a cron or rate

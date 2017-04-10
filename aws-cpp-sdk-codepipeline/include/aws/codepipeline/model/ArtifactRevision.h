@@ -16,6 +16,7 @@
 #include <aws/codepipeline/CodePipeline_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
+#include <utility>
 
 namespace Aws
 {
@@ -60,7 +61,7 @@ namespace Model
      * <p>The name of an artifact. This name might be system-generated, such as
      * "MyApp", or might be defined by the user when an action is created.</p>
      */
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p>The name of an artifact. This name might be system-generated, such as
@@ -78,7 +79,7 @@ namespace Model
      * <p>The name of an artifact. This name might be system-generated, such as
      * "MyApp", or might be defined by the user when an action is created.</p>
      */
-    inline ArtifactRevision& WithName(Aws::String&& value) { SetName(value); return *this;}
+    inline ArtifactRevision& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>The name of an artifact. This name might be system-generated, such as
@@ -99,7 +100,7 @@ namespace Model
     /**
      * <p>The revision ID of the artifact.</p>
      */
-    inline void SetRevisionId(Aws::String&& value) { m_revisionIdHasBeenSet = true; m_revisionId = value; }
+    inline void SetRevisionId(Aws::String&& value) { m_revisionIdHasBeenSet = true; m_revisionId = std::move(value); }
 
     /**
      * <p>The revision ID of the artifact.</p>
@@ -114,7 +115,7 @@ namespace Model
     /**
      * <p>The revision ID of the artifact.</p>
      */
-    inline ArtifactRevision& WithRevisionId(Aws::String&& value) { SetRevisionId(value); return *this;}
+    inline ArtifactRevision& WithRevisionId(Aws::String&& value) { SetRevisionId(std::move(value)); return *this;}
 
     /**
      * <p>The revision ID of the artifact.</p>
@@ -137,7 +138,7 @@ namespace Model
      * <p>An additional identifier for a revision, such as a commit date or, for
      * artifacts stored in Amazon S3 buckets, the ETag value.</p>
      */
-    inline void SetRevisionChangeIdentifier(Aws::String&& value) { m_revisionChangeIdentifierHasBeenSet = true; m_revisionChangeIdentifier = value; }
+    inline void SetRevisionChangeIdentifier(Aws::String&& value) { m_revisionChangeIdentifierHasBeenSet = true; m_revisionChangeIdentifier = std::move(value); }
 
     /**
      * <p>An additional identifier for a revision, such as a commit date or, for
@@ -155,7 +156,7 @@ namespace Model
      * <p>An additional identifier for a revision, such as a commit date or, for
      * artifacts stored in Amazon S3 buckets, the ETag value.</p>
      */
-    inline ArtifactRevision& WithRevisionChangeIdentifier(Aws::String&& value) { SetRevisionChangeIdentifier(value); return *this;}
+    inline ArtifactRevision& WithRevisionChangeIdentifier(Aws::String&& value) { SetRevisionChangeIdentifier(std::move(value)); return *this;}
 
     /**
      * <p>An additional identifier for a revision, such as a commit date or, for
@@ -188,7 +189,7 @@ namespace Model
      * <code>codepipeline-artifact-revision-summary</code> key specified in the object
      * metadata.</p>
      */
-    inline void SetRevisionSummary(Aws::String&& value) { m_revisionSummaryHasBeenSet = true; m_revisionSummary = value; }
+    inline void SetRevisionSummary(Aws::String&& value) { m_revisionSummaryHasBeenSet = true; m_revisionSummary = std::move(value); }
 
     /**
      * <p>Summary information about the most recent revision of the artifact. For
@@ -215,7 +216,7 @@ namespace Model
      * <code>codepipeline-artifact-revision-summary</code> key specified in the object
      * metadata.</p>
      */
-    inline ArtifactRevision& WithRevisionSummary(Aws::String&& value) { SetRevisionSummary(value); return *this;}
+    inline ArtifactRevision& WithRevisionSummary(Aws::String&& value) { SetRevisionSummary(std::move(value)); return *this;}
 
     /**
      * <p>Summary information about the most recent revision of the artifact. For
@@ -242,7 +243,7 @@ namespace Model
      * <p>The date and time when the most recent revision of the artifact was created,
      * in timestamp format.</p>
      */
-    inline void SetCreated(Aws::Utils::DateTime&& value) { m_createdHasBeenSet = true; m_created = value; }
+    inline void SetCreated(Aws::Utils::DateTime&& value) { m_createdHasBeenSet = true; m_created = std::move(value); }
 
     /**
      * <p>The date and time when the most recent revision of the artifact was created,
@@ -254,7 +255,7 @@ namespace Model
      * <p>The date and time when the most recent revision of the artifact was created,
      * in timestamp format.</p>
      */
-    inline ArtifactRevision& WithCreated(Aws::Utils::DateTime&& value) { SetCreated(value); return *this;}
+    inline ArtifactRevision& WithCreated(Aws::Utils::DateTime&& value) { SetCreated(std::move(value)); return *this;}
 
     /**
      * <p>The commit ID for the artifact revision. For artifacts stored in GitHub or
@@ -275,7 +276,7 @@ namespace Model
      * AWS CodeCommit repositories, the commit ID is linked to a commit details
      * page.</p>
      */
-    inline void SetRevisionUrl(Aws::String&& value) { m_revisionUrlHasBeenSet = true; m_revisionUrl = value; }
+    inline void SetRevisionUrl(Aws::String&& value) { m_revisionUrlHasBeenSet = true; m_revisionUrl = std::move(value); }
 
     /**
      * <p>The commit ID for the artifact revision. For artifacts stored in GitHub or
@@ -296,7 +297,7 @@ namespace Model
      * AWS CodeCommit repositories, the commit ID is linked to a commit details
      * page.</p>
      */
-    inline ArtifactRevision& WithRevisionUrl(Aws::String&& value) { SetRevisionUrl(value); return *this;}
+    inline ArtifactRevision& WithRevisionUrl(Aws::String&& value) { SetRevisionUrl(std::move(value)); return *this;}
 
     /**
      * <p>The commit ID for the artifact revision. For artifacts stored in GitHub or

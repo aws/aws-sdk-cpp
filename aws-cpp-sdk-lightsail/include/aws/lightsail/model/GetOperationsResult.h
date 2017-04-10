@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/lightsail/model/Operation.h>
+#include <utility>
 
 namespace Aws
 {
@@ -57,7 +58,7 @@ namespace Model
      * <p>An array of key-value pairs containing information about the results of your
      * get operations request.</p>
      */
-    inline void SetOperations(Aws::Vector<Operation>&& value) { m_operations = value; }
+    inline void SetOperations(Aws::Vector<Operation>&& value) { m_operations = std::move(value); }
 
     /**
      * <p>An array of key-value pairs containing information about the results of your
@@ -69,7 +70,7 @@ namespace Model
      * <p>An array of key-value pairs containing information about the results of your
      * get operations request.</p>
      */
-    inline GetOperationsResult& WithOperations(Aws::Vector<Operation>&& value) { SetOperations(value); return *this;}
+    inline GetOperationsResult& WithOperations(Aws::Vector<Operation>&& value) { SetOperations(std::move(value)); return *this;}
 
     /**
      * <p>An array of key-value pairs containing information about the results of your
@@ -81,7 +82,7 @@ namespace Model
      * <p>An array of key-value pairs containing information about the results of your
      * get operations request.</p>
      */
-    inline GetOperationsResult& AddOperations(Operation&& value) { m_operations.push_back(value); return *this; }
+    inline GetOperationsResult& AddOperations(Operation&& value) { m_operations.push_back(std::move(value)); return *this; }
 
     /**
      * <p>A token used for advancing to the next page of results from your get
@@ -99,7 +100,7 @@ namespace Model
      * <p>A token used for advancing to the next page of results from your get
      * operations request.</p>
      */
-    inline void SetNextPageToken(Aws::String&& value) { m_nextPageToken = value; }
+    inline void SetNextPageToken(Aws::String&& value) { m_nextPageToken = std::move(value); }
 
     /**
      * <p>A token used for advancing to the next page of results from your get
@@ -117,7 +118,7 @@ namespace Model
      * <p>A token used for advancing to the next page of results from your get
      * operations request.</p>
      */
-    inline GetOperationsResult& WithNextPageToken(Aws::String&& value) { SetNextPageToken(value); return *this;}
+    inline GetOperationsResult& WithNextPageToken(Aws::String&& value) { SetNextPageToken(std::move(value)); return *this;}
 
     /**
      * <p>A token used for advancing to the next page of results from your get

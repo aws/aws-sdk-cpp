@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/swf/SWF_EXPORTS.h>
 #include <aws/swf/model/WorkflowExecution.h>
+#include <utility>
 
 namespace Aws
 {
@@ -60,7 +61,7 @@ namespace Model
      * <p>The external workflow execution to which the cancellation request was
      * delivered.</p>
      */
-    inline void SetWorkflowExecution(WorkflowExecution&& value) { m_workflowExecutionHasBeenSet = true; m_workflowExecution = value; }
+    inline void SetWorkflowExecution(WorkflowExecution&& value) { m_workflowExecutionHasBeenSet = true; m_workflowExecution = std::move(value); }
 
     /**
      * <p>The external workflow execution to which the cancellation request was
@@ -72,7 +73,7 @@ namespace Model
      * <p>The external workflow execution to which the cancellation request was
      * delivered.</p>
      */
-    inline ExternalWorkflowExecutionCancelRequestedEventAttributes& WithWorkflowExecution(WorkflowExecution&& value) { SetWorkflowExecution(value); return *this;}
+    inline ExternalWorkflowExecutionCancelRequestedEventAttributes& WithWorkflowExecution(WorkflowExecution&& value) { SetWorkflowExecution(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the <code>RequestCancelExternalWorkflowExecutionInitiated</code>

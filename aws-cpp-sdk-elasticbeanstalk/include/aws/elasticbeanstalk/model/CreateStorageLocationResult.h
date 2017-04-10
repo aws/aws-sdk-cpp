@@ -16,6 +16,7 @@
 #include <aws/elasticbeanstalk/ElasticBeanstalk_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/elasticbeanstalk/model/ResponseMetadata.h>
+#include <utility>
 
 namespace Aws
 {
@@ -59,7 +60,7 @@ namespace Model
     /**
      * <p>The name of the Amazon S3 bucket created.</p>
      */
-    inline void SetS3Bucket(Aws::String&& value) { m_s3Bucket = value; }
+    inline void SetS3Bucket(Aws::String&& value) { m_s3Bucket = std::move(value); }
 
     /**
      * <p>The name of the Amazon S3 bucket created.</p>
@@ -74,7 +75,7 @@ namespace Model
     /**
      * <p>The name of the Amazon S3 bucket created.</p>
      */
-    inline CreateStorageLocationResult& WithS3Bucket(Aws::String&& value) { SetS3Bucket(value); return *this;}
+    inline CreateStorageLocationResult& WithS3Bucket(Aws::String&& value) { SetS3Bucket(std::move(value)); return *this;}
 
     /**
      * <p>The name of the Amazon S3 bucket created.</p>
@@ -88,13 +89,13 @@ namespace Model
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
 
     
     inline CreateStorageLocationResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
 
     
-    inline CreateStorageLocationResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
+    inline CreateStorageLocationResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
     Aws::String m_s3Bucket;

@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/waf/WAF_EXPORTS.h>
 #include <aws/waf/model/XssMatchSet.h>
+#include <utility>
 
 namespace Aws
 {
@@ -79,7 +80,7 @@ namespace Model
      * </p> </li> <li> <p> <a>FieldToMatch</a>: Contains <code>Data</code> and
      * <code>Type</code> </p> </li> </ul>
      */
-    inline void SetXssMatchSet(XssMatchSet&& value) { m_xssMatchSet = value; }
+    inline void SetXssMatchSet(XssMatchSet&& value) { m_xssMatchSet = std::move(value); }
 
     /**
      * <p>Information about the <a>XssMatchSet</a> that you specified in the
@@ -103,7 +104,7 @@ namespace Model
      * </p> </li> <li> <p> <a>FieldToMatch</a>: Contains <code>Data</code> and
      * <code>Type</code> </p> </li> </ul>
      */
-    inline GetXssMatchSetResult& WithXssMatchSet(XssMatchSet&& value) { SetXssMatchSet(value); return *this;}
+    inline GetXssMatchSetResult& WithXssMatchSet(XssMatchSet&& value) { SetXssMatchSet(std::move(value)); return *this;}
 
   private:
     XssMatchSet m_xssMatchSet;

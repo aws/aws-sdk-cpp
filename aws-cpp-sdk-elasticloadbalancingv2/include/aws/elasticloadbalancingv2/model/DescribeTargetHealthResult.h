@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/elasticloadbalancingv2/model/ResponseMetadata.h>
 #include <aws/elasticloadbalancingv2/model/TargetHealthDescription.h>
+#include <utility>
 
 namespace Aws
 {
@@ -54,7 +55,7 @@ namespace Model
     /**
      * <p>Information about the health of the targets.</p>
      */
-    inline void SetTargetHealthDescriptions(Aws::Vector<TargetHealthDescription>&& value) { m_targetHealthDescriptions = value; }
+    inline void SetTargetHealthDescriptions(Aws::Vector<TargetHealthDescription>&& value) { m_targetHealthDescriptions = std::move(value); }
 
     /**
      * <p>Information about the health of the targets.</p>
@@ -64,7 +65,7 @@ namespace Model
     /**
      * <p>Information about the health of the targets.</p>
      */
-    inline DescribeTargetHealthResult& WithTargetHealthDescriptions(Aws::Vector<TargetHealthDescription>&& value) { SetTargetHealthDescriptions(value); return *this;}
+    inline DescribeTargetHealthResult& WithTargetHealthDescriptions(Aws::Vector<TargetHealthDescription>&& value) { SetTargetHealthDescriptions(std::move(value)); return *this;}
 
     /**
      * <p>Information about the health of the targets.</p>
@@ -74,7 +75,7 @@ namespace Model
     /**
      * <p>Information about the health of the targets.</p>
      */
-    inline DescribeTargetHealthResult& AddTargetHealthDescriptions(TargetHealthDescription&& value) { m_targetHealthDescriptions.push_back(value); return *this; }
+    inline DescribeTargetHealthResult& AddTargetHealthDescriptions(TargetHealthDescription&& value) { m_targetHealthDescriptions.push_back(std::move(value)); return *this; }
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
@@ -83,13 +84,13 @@ namespace Model
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
 
     
     inline DescribeTargetHealthResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
 
     
-    inline DescribeTargetHealthResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
+    inline DescribeTargetHealthResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
     Aws::Vector<TargetHealthDescription> m_targetHealthDescriptions;

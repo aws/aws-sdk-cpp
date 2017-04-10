@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/states/model/ExecutionListItem.h>
+#include <utility>
 
 namespace Aws
 {
@@ -54,7 +55,7 @@ namespace Model
     /**
      * <p>The list of matching executions.</p>
      */
-    inline void SetExecutions(Aws::Vector<ExecutionListItem>&& value) { m_executions = value; }
+    inline void SetExecutions(Aws::Vector<ExecutionListItem>&& value) { m_executions = std::move(value); }
 
     /**
      * <p>The list of matching executions.</p>
@@ -64,7 +65,7 @@ namespace Model
     /**
      * <p>The list of matching executions.</p>
      */
-    inline ListExecutionsResult& WithExecutions(Aws::Vector<ExecutionListItem>&& value) { SetExecutions(value); return *this;}
+    inline ListExecutionsResult& WithExecutions(Aws::Vector<ExecutionListItem>&& value) { SetExecutions(std::move(value)); return *this;}
 
     /**
      * <p>The list of matching executions.</p>
@@ -74,7 +75,7 @@ namespace Model
     /**
      * <p>The list of matching executions.</p>
      */
-    inline ListExecutionsResult& AddExecutions(ExecutionListItem&& value) { m_executions.push_back(value); return *this; }
+    inline ListExecutionsResult& AddExecutions(ExecutionListItem&& value) { m_executions.push_back(std::move(value)); return *this; }
 
     /**
      * <p>If a <code>nextToken</code> is returned, there are more results available. To
@@ -101,7 +102,7 @@ namespace Model
      * configured <code>maxResults</code> determines how many results can be returned
      * in a single call.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
      * <p>If a <code>nextToken</code> is returned, there are more results available. To
@@ -128,7 +129,7 @@ namespace Model
      * configured <code>maxResults</code> determines how many results can be returned
      * in a single call.</p>
      */
-    inline ListExecutionsResult& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline ListExecutionsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>If a <code>nextToken</code> is returned, there are more results available. To

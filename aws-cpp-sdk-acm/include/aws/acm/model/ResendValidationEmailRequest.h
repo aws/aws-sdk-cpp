@@ -16,6 +16,7 @@
 #include <aws/acm/ACM_EXPORTS.h>
 #include <aws/acm/ACMRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -66,7 +67,7 @@ namespace Model
      * <code>arn:aws:acm:us-east-1:123456789012:certificate/12345678-1234-1234-1234-123456789012</code>
      * </p>
      */
-    inline void SetCertificateArn(Aws::String&& value) { m_certificateArnHasBeenSet = true; m_certificateArn = value; }
+    inline void SetCertificateArn(Aws::String&& value) { m_certificateArnHasBeenSet = true; m_certificateArn = std::move(value); }
 
     /**
      * <p>String that contains the ARN of the requested certificate. The certificate
@@ -99,7 +100,7 @@ namespace Model
      * <code>arn:aws:acm:us-east-1:123456789012:certificate/12345678-1234-1234-1234-123456789012</code>
      * </p>
      */
-    inline ResendValidationEmailRequest& WithCertificateArn(Aws::String&& value) { SetCertificateArn(value); return *this;}
+    inline ResendValidationEmailRequest& WithCertificateArn(Aws::String&& value) { SetCertificateArn(std::move(value)); return *this;}
 
     /**
      * <p>String that contains the ARN of the requested certificate. The certificate
@@ -128,7 +129,7 @@ namespace Model
      * <p>The fully qualified domain name (FQDN) of the certificate that needs to be
      * validated.</p>
      */
-    inline void SetDomain(Aws::String&& value) { m_domainHasBeenSet = true; m_domain = value; }
+    inline void SetDomain(Aws::String&& value) { m_domainHasBeenSet = true; m_domain = std::move(value); }
 
     /**
      * <p>The fully qualified domain name (FQDN) of the certificate that needs to be
@@ -146,7 +147,7 @@ namespace Model
      * <p>The fully qualified domain name (FQDN) of the certificate that needs to be
      * validated.</p>
      */
-    inline ResendValidationEmailRequest& WithDomain(Aws::String&& value) { SetDomain(value); return *this;}
+    inline ResendValidationEmailRequest& WithDomain(Aws::String&& value) { SetDomain(std::move(value)); return *this;}
 
     /**
      * <p>The fully qualified domain name (FQDN) of the certificate that needs to be
@@ -200,7 +201,7 @@ namespace Model
      * <p>postmaster@subdomain.example.com</p> </li> <li>
      * <p>webmaster@subdomain.example.com</p> </li> </ul>
      */
-    inline void SetValidationDomain(Aws::String&& value) { m_validationDomainHasBeenSet = true; m_validationDomain = value; }
+    inline void SetValidationDomain(Aws::String&& value) { m_validationDomainHasBeenSet = true; m_validationDomain = std::move(value); }
 
     /**
      * <p>The base validation domain that will act as the suffix of the email addresses
@@ -248,7 +249,7 @@ namespace Model
      * <p>postmaster@subdomain.example.com</p> </li> <li>
      * <p>webmaster@subdomain.example.com</p> </li> </ul>
      */
-    inline ResendValidationEmailRequest& WithValidationDomain(Aws::String&& value) { SetValidationDomain(value); return *this;}
+    inline ResendValidationEmailRequest& WithValidationDomain(Aws::String&& value) { SetValidationDomain(std::move(value)); return *this;}
 
     /**
      * <p>The base validation domain that will act as the suffix of the email addresses

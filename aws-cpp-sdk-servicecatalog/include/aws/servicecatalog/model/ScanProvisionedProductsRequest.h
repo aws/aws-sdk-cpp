@@ -17,6 +17,7 @@
 #include <aws/servicecatalog/ServiceCatalogRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/servicecatalog/model/AccessLevelFilter.h>
+#include <utility>
 
 namespace Aws
 {
@@ -55,7 +56,7 @@ namespace Model
      * follows:</p> <p>"en" (English)</p> <p>"jp" (Japanese)</p> <p>"zh" (Chinese)</p>
      * <p>If no code is specified, "en" is used as the default.</p>
      */
-    inline void SetAcceptLanguage(Aws::String&& value) { m_acceptLanguageHasBeenSet = true; m_acceptLanguage = value; }
+    inline void SetAcceptLanguage(Aws::String&& value) { m_acceptLanguageHasBeenSet = true; m_acceptLanguage = std::move(value); }
 
     /**
      * <p>The language code to use for this operation. Supported language codes are as
@@ -76,7 +77,7 @@ namespace Model
      * follows:</p> <p>"en" (English)</p> <p>"jp" (Japanese)</p> <p>"zh" (Chinese)</p>
      * <p>If no code is specified, "en" is used as the default.</p>
      */
-    inline ScanProvisionedProductsRequest& WithAcceptLanguage(Aws::String&& value) { SetAcceptLanguage(value); return *this;}
+    inline ScanProvisionedProductsRequest& WithAcceptLanguage(Aws::String&& value) { SetAcceptLanguage(std::move(value)); return *this;}
 
     /**
      * <p>The language code to use for this operation. Supported language codes are as
@@ -101,7 +102,7 @@ namespace Model
      * <p>The access level for obtaining results. If left unspecified,
      * <code>User</code> level access is used.</p>
      */
-    inline void SetAccessLevelFilter(AccessLevelFilter&& value) { m_accessLevelFilterHasBeenSet = true; m_accessLevelFilter = value; }
+    inline void SetAccessLevelFilter(AccessLevelFilter&& value) { m_accessLevelFilterHasBeenSet = true; m_accessLevelFilter = std::move(value); }
 
     /**
      * <p>The access level for obtaining results. If left unspecified,
@@ -113,7 +114,7 @@ namespace Model
      * <p>The access level for obtaining results. If left unspecified,
      * <code>User</code> level access is used.</p>
      */
-    inline ScanProvisionedProductsRequest& WithAccessLevelFilter(AccessLevelFilter&& value) { SetAccessLevelFilter(value); return *this;}
+    inline ScanProvisionedProductsRequest& WithAccessLevelFilter(AccessLevelFilter&& value) { SetAccessLevelFilter(std::move(value)); return *this;}
 
     /**
      * <p>The maximum number of items to return in the results. If more results exist
@@ -152,7 +153,7 @@ namespace Model
      * <p>The page token of the first page retrieved. If null, this retrieves the first
      * page of size <code>PageSize</code>.</p>
      */
-    inline void SetPageToken(Aws::String&& value) { m_pageTokenHasBeenSet = true; m_pageToken = value; }
+    inline void SetPageToken(Aws::String&& value) { m_pageTokenHasBeenSet = true; m_pageToken = std::move(value); }
 
     /**
      * <p>The page token of the first page retrieved. If null, this retrieves the first
@@ -170,7 +171,7 @@ namespace Model
      * <p>The page token of the first page retrieved. If null, this retrieves the first
      * page of size <code>PageSize</code>.</p>
      */
-    inline ScanProvisionedProductsRequest& WithPageToken(Aws::String&& value) { SetPageToken(value); return *this;}
+    inline ScanProvisionedProductsRequest& WithPageToken(Aws::String&& value) { SetPageToken(std::move(value)); return *this;}
 
     /**
      * <p>The page token of the first page retrieved. If null, this retrieves the first

@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/lex/model/Button.h>
+#include <utility>
 
 namespace Aws
 {
@@ -59,7 +60,7 @@ namespace Model
     /**
      * <p>The title of the option.</p>
      */
-    inline void SetTitle(Aws::String&& value) { m_titleHasBeenSet = true; m_title = value; }
+    inline void SetTitle(Aws::String&& value) { m_titleHasBeenSet = true; m_title = std::move(value); }
 
     /**
      * <p>The title of the option.</p>
@@ -74,7 +75,7 @@ namespace Model
     /**
      * <p>The title of the option.</p>
      */
-    inline GenericAttachment& WithTitle(Aws::String&& value) { SetTitle(value); return *this;}
+    inline GenericAttachment& WithTitle(Aws::String&& value) { SetTitle(std::move(value)); return *this;}
 
     /**
      * <p>The title of the option.</p>
@@ -94,7 +95,7 @@ namespace Model
     /**
      * <p>The subtitle shown below the title.</p>
      */
-    inline void SetSubTitle(Aws::String&& value) { m_subTitleHasBeenSet = true; m_subTitle = value; }
+    inline void SetSubTitle(Aws::String&& value) { m_subTitleHasBeenSet = true; m_subTitle = std::move(value); }
 
     /**
      * <p>The subtitle shown below the title.</p>
@@ -109,7 +110,7 @@ namespace Model
     /**
      * <p>The subtitle shown below the title.</p>
      */
-    inline GenericAttachment& WithSubTitle(Aws::String&& value) { SetSubTitle(value); return *this;}
+    inline GenericAttachment& WithSubTitle(Aws::String&& value) { SetSubTitle(std::move(value)); return *this;}
 
     /**
      * <p>The subtitle shown below the title.</p>
@@ -129,7 +130,7 @@ namespace Model
     /**
      * <p>The URL of an attachment to the response card.</p>
      */
-    inline void SetAttachmentLinkUrl(Aws::String&& value) { m_attachmentLinkUrlHasBeenSet = true; m_attachmentLinkUrl = value; }
+    inline void SetAttachmentLinkUrl(Aws::String&& value) { m_attachmentLinkUrlHasBeenSet = true; m_attachmentLinkUrl = std::move(value); }
 
     /**
      * <p>The URL of an attachment to the response card.</p>
@@ -144,7 +145,7 @@ namespace Model
     /**
      * <p>The URL of an attachment to the response card.</p>
      */
-    inline GenericAttachment& WithAttachmentLinkUrl(Aws::String&& value) { SetAttachmentLinkUrl(value); return *this;}
+    inline GenericAttachment& WithAttachmentLinkUrl(Aws::String&& value) { SetAttachmentLinkUrl(std::move(value)); return *this;}
 
     /**
      * <p>The URL of an attachment to the response card.</p>
@@ -164,7 +165,7 @@ namespace Model
     /**
      * <p>The URL of an image that is displayed to the user.</p>
      */
-    inline void SetImageUrl(Aws::String&& value) { m_imageUrlHasBeenSet = true; m_imageUrl = value; }
+    inline void SetImageUrl(Aws::String&& value) { m_imageUrlHasBeenSet = true; m_imageUrl = std::move(value); }
 
     /**
      * <p>The URL of an image that is displayed to the user.</p>
@@ -179,7 +180,7 @@ namespace Model
     /**
      * <p>The URL of an image that is displayed to the user.</p>
      */
-    inline GenericAttachment& WithImageUrl(Aws::String&& value) { SetImageUrl(value); return *this;}
+    inline GenericAttachment& WithImageUrl(Aws::String&& value) { SetImageUrl(std::move(value)); return *this;}
 
     /**
      * <p>The URL of an image that is displayed to the user.</p>
@@ -199,7 +200,7 @@ namespace Model
     /**
      * <p>The list of options to show to the user.</p>
      */
-    inline void SetButtons(Aws::Vector<Button>&& value) { m_buttonsHasBeenSet = true; m_buttons = value; }
+    inline void SetButtons(Aws::Vector<Button>&& value) { m_buttonsHasBeenSet = true; m_buttons = std::move(value); }
 
     /**
      * <p>The list of options to show to the user.</p>
@@ -209,7 +210,7 @@ namespace Model
     /**
      * <p>The list of options to show to the user.</p>
      */
-    inline GenericAttachment& WithButtons(Aws::Vector<Button>&& value) { SetButtons(value); return *this;}
+    inline GenericAttachment& WithButtons(Aws::Vector<Button>&& value) { SetButtons(std::move(value)); return *this;}
 
     /**
      * <p>The list of options to show to the user.</p>
@@ -219,7 +220,7 @@ namespace Model
     /**
      * <p>The list of options to show to the user.</p>
      */
-    inline GenericAttachment& AddButtons(Button&& value) { m_buttonsHasBeenSet = true; m_buttons.push_back(value); return *this; }
+    inline GenericAttachment& AddButtons(Button&& value) { m_buttonsHasBeenSet = true; m_buttons.push_back(std::move(value)); return *this; }
 
   private:
     Aws::String m_title;

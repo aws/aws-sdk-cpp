@@ -16,6 +16,7 @@
 #include <aws/datapipeline/DataPipeline_EXPORTS.h>
 #include <aws/datapipeline/DataPipelineRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -52,7 +53,7 @@ namespace Model
     /**
      * <p>The ID of the pipeline.</p>
      */
-    inline void SetPipelineId(Aws::String&& value) { m_pipelineIdHasBeenSet = true; m_pipelineId = value; }
+    inline void SetPipelineId(Aws::String&& value) { m_pipelineIdHasBeenSet = true; m_pipelineId = std::move(value); }
 
     /**
      * <p>The ID of the pipeline.</p>
@@ -67,7 +68,7 @@ namespace Model
     /**
      * <p>The ID of the pipeline.</p>
      */
-    inline GetPipelineDefinitionRequest& WithPipelineId(Aws::String&& value) { SetPipelineId(value); return *this;}
+    inline GetPipelineDefinitionRequest& WithPipelineId(Aws::String&& value) { SetPipelineId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the pipeline.</p>
@@ -93,7 +94,7 @@ namespace Model
      * <code>latest</code> (default) to use the last definition saved to the pipeline
      * or <code>active</code> to use the last definition that was activated.</p>
      */
-    inline void SetVersion(Aws::String&& value) { m_versionHasBeenSet = true; m_version = value; }
+    inline void SetVersion(Aws::String&& value) { m_versionHasBeenSet = true; m_version = std::move(value); }
 
     /**
      * <p>The version of the pipeline definition to retrieve. Set this parameter to
@@ -114,7 +115,7 @@ namespace Model
      * <code>latest</code> (default) to use the last definition saved to the pipeline
      * or <code>active</code> to use the last definition that was activated.</p>
      */
-    inline GetPipelineDefinitionRequest& WithVersion(Aws::String&& value) { SetVersion(value); return *this;}
+    inline GetPipelineDefinitionRequest& WithVersion(Aws::String&& value) { SetVersion(std::move(value)); return *this;}
 
     /**
      * <p>The version of the pipeline definition to retrieve. Set this parameter to

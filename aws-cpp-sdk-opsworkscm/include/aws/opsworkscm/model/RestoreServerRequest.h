@@ -16,6 +16,7 @@
 #include <aws/opsworkscm/OpsWorksCM_EXPORTS.h>
 #include <aws/opsworkscm/OpsWorksCMRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -48,7 +49,7 @@ namespace Model
     /**
      * <p> The ID of the backup that you want to use to restore a server. </p>
      */
-    inline void SetBackupId(Aws::String&& value) { m_backupIdHasBeenSet = true; m_backupId = value; }
+    inline void SetBackupId(Aws::String&& value) { m_backupIdHasBeenSet = true; m_backupId = std::move(value); }
 
     /**
      * <p> The ID of the backup that you want to use to restore a server. </p>
@@ -63,7 +64,7 @@ namespace Model
     /**
      * <p> The ID of the backup that you want to use to restore a server. </p>
      */
-    inline RestoreServerRequest& WithBackupId(Aws::String&& value) { SetBackupId(value); return *this;}
+    inline RestoreServerRequest& WithBackupId(Aws::String&& value) { SetBackupId(std::move(value)); return *this;}
 
     /**
      * <p> The ID of the backup that you want to use to restore a server. </p>
@@ -83,7 +84,7 @@ namespace Model
     /**
      * <p> The name of the server that you want to restore. </p>
      */
-    inline void SetServerName(Aws::String&& value) { m_serverNameHasBeenSet = true; m_serverName = value; }
+    inline void SetServerName(Aws::String&& value) { m_serverNameHasBeenSet = true; m_serverName = std::move(value); }
 
     /**
      * <p> The name of the server that you want to restore. </p>
@@ -98,7 +99,7 @@ namespace Model
     /**
      * <p> The name of the server that you want to restore. </p>
      */
-    inline RestoreServerRequest& WithServerName(Aws::String&& value) { SetServerName(value); return *this;}
+    inline RestoreServerRequest& WithServerName(Aws::String&& value) { SetServerName(std::move(value)); return *this;}
 
     /**
      * <p> The name of the server that you want to restore. </p>
@@ -130,7 +131,7 @@ namespace Model
      * <code>m4.large</code>, and <code>m4.2xlarge</code>. If you do not specify this
      * parameter, RestoreServer uses the instance type from the specified backup. </p>
      */
-    inline void SetInstanceType(Aws::String&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
+    inline void SetInstanceType(Aws::String&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = std::move(value); }
 
     /**
      * <p> The type of the instance to create. Valid values must be specified in the
@@ -157,7 +158,7 @@ namespace Model
      * <code>m4.large</code>, and <code>m4.2xlarge</code>. If you do not specify this
      * parameter, RestoreServer uses the instance type from the specified backup. </p>
      */
-    inline RestoreServerRequest& WithInstanceType(Aws::String&& value) { SetInstanceType(value); return *this;}
+    inline RestoreServerRequest& WithInstanceType(Aws::String&& value) { SetInstanceType(std::move(value)); return *this;}
 
     /**
      * <p> The type of the instance to create. Valid values must be specified in the
@@ -184,7 +185,7 @@ namespace Model
      * <p> The name of the key pair to set on the new EC2 instance. This can be helpful
      * if the administrator no longer has the SSH key. </p>
      */
-    inline void SetKeyPair(Aws::String&& value) { m_keyPairHasBeenSet = true; m_keyPair = value; }
+    inline void SetKeyPair(Aws::String&& value) { m_keyPairHasBeenSet = true; m_keyPair = std::move(value); }
 
     /**
      * <p> The name of the key pair to set on the new EC2 instance. This can be helpful
@@ -202,7 +203,7 @@ namespace Model
      * <p> The name of the key pair to set on the new EC2 instance. This can be helpful
      * if the administrator no longer has the SSH key. </p>
      */
-    inline RestoreServerRequest& WithKeyPair(Aws::String&& value) { SetKeyPair(value); return *this;}
+    inline RestoreServerRequest& WithKeyPair(Aws::String&& value) { SetKeyPair(std::move(value)); return *this;}
 
     /**
      * <p> The name of the key pair to set on the new EC2 instance. This can be helpful

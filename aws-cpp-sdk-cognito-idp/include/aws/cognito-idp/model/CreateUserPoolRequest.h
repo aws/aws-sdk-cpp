@@ -28,6 +28,7 @@
 #include <aws/cognito-idp/model/VerifiedAttributeType.h>
 #include <aws/cognito-idp/model/AliasAttributeType.h>
 #include <aws/cognito-idp/model/SchemaAttributeType.h>
+#include <utility>
 
 namespace Aws
 {
@@ -63,7 +64,7 @@ namespace Model
     /**
      * <p>A string used to name the user pool.</p>
      */
-    inline void SetPoolName(Aws::String&& value) { m_poolNameHasBeenSet = true; m_poolName = value; }
+    inline void SetPoolName(Aws::String&& value) { m_poolNameHasBeenSet = true; m_poolName = std::move(value); }
 
     /**
      * <p>A string used to name the user pool.</p>
@@ -78,7 +79,7 @@ namespace Model
     /**
      * <p>A string used to name the user pool.</p>
      */
-    inline CreateUserPoolRequest& WithPoolName(Aws::String&& value) { SetPoolName(value); return *this;}
+    inline CreateUserPoolRequest& WithPoolName(Aws::String&& value) { SetPoolName(std::move(value)); return *this;}
 
     /**
      * <p>A string used to name the user pool.</p>
@@ -98,7 +99,7 @@ namespace Model
     /**
      * <p>The policies associated with the new user pool.</p>
      */
-    inline void SetPolicies(UserPoolPolicyType&& value) { m_policiesHasBeenSet = true; m_policies = value; }
+    inline void SetPolicies(UserPoolPolicyType&& value) { m_policiesHasBeenSet = true; m_policies = std::move(value); }
 
     /**
      * <p>The policies associated with the new user pool.</p>
@@ -108,7 +109,7 @@ namespace Model
     /**
      * <p>The policies associated with the new user pool.</p>
      */
-    inline CreateUserPoolRequest& WithPolicies(UserPoolPolicyType&& value) { SetPolicies(value); return *this;}
+    inline CreateUserPoolRequest& WithPolicies(UserPoolPolicyType&& value) { SetPolicies(std::move(value)); return *this;}
 
     /**
      * <p>The Lambda trigger configuration information for the new user pool.</p>
@@ -123,7 +124,7 @@ namespace Model
     /**
      * <p>The Lambda trigger configuration information for the new user pool.</p>
      */
-    inline void SetLambdaConfig(LambdaConfigType&& value) { m_lambdaConfigHasBeenSet = true; m_lambdaConfig = value; }
+    inline void SetLambdaConfig(LambdaConfigType&& value) { m_lambdaConfigHasBeenSet = true; m_lambdaConfig = std::move(value); }
 
     /**
      * <p>The Lambda trigger configuration information for the new user pool.</p>
@@ -133,7 +134,7 @@ namespace Model
     /**
      * <p>The Lambda trigger configuration information for the new user pool.</p>
      */
-    inline CreateUserPoolRequest& WithLambdaConfig(LambdaConfigType&& value) { SetLambdaConfig(value); return *this;}
+    inline CreateUserPoolRequest& WithLambdaConfig(LambdaConfigType&& value) { SetLambdaConfig(std::move(value)); return *this;}
 
     /**
      * <p>The attributes to be auto-verified. Possible values: <b>email</b>,
@@ -151,7 +152,7 @@ namespace Model
      * <p>The attributes to be auto-verified. Possible values: <b>email</b>,
      * <b>phone_number</b>.</p>
      */
-    inline void SetAutoVerifiedAttributes(Aws::Vector<VerifiedAttributeType>&& value) { m_autoVerifiedAttributesHasBeenSet = true; m_autoVerifiedAttributes = value; }
+    inline void SetAutoVerifiedAttributes(Aws::Vector<VerifiedAttributeType>&& value) { m_autoVerifiedAttributesHasBeenSet = true; m_autoVerifiedAttributes = std::move(value); }
 
     /**
      * <p>The attributes to be auto-verified. Possible values: <b>email</b>,
@@ -163,7 +164,7 @@ namespace Model
      * <p>The attributes to be auto-verified. Possible values: <b>email</b>,
      * <b>phone_number</b>.</p>
      */
-    inline CreateUserPoolRequest& WithAutoVerifiedAttributes(Aws::Vector<VerifiedAttributeType>&& value) { SetAutoVerifiedAttributes(value); return *this;}
+    inline CreateUserPoolRequest& WithAutoVerifiedAttributes(Aws::Vector<VerifiedAttributeType>&& value) { SetAutoVerifiedAttributes(std::move(value)); return *this;}
 
     /**
      * <p>The attributes to be auto-verified. Possible values: <b>email</b>,
@@ -175,7 +176,7 @@ namespace Model
      * <p>The attributes to be auto-verified. Possible values: <b>email</b>,
      * <b>phone_number</b>.</p>
      */
-    inline CreateUserPoolRequest& AddAutoVerifiedAttributes(VerifiedAttributeType&& value) { m_autoVerifiedAttributesHasBeenSet = true; m_autoVerifiedAttributes.push_back(value); return *this; }
+    inline CreateUserPoolRequest& AddAutoVerifiedAttributes(VerifiedAttributeType&& value) { m_autoVerifiedAttributesHasBeenSet = true; m_autoVerifiedAttributes.push_back(std::move(value)); return *this; }
 
     /**
      * <p>Attributes supported as an alias for this user pool. Possible values:
@@ -193,7 +194,7 @@ namespace Model
      * <p>Attributes supported as an alias for this user pool. Possible values:
      * <b>phone_number</b>, <b>email</b>, or <b>preferred_username</b>.</p>
      */
-    inline void SetAliasAttributes(Aws::Vector<AliasAttributeType>&& value) { m_aliasAttributesHasBeenSet = true; m_aliasAttributes = value; }
+    inline void SetAliasAttributes(Aws::Vector<AliasAttributeType>&& value) { m_aliasAttributesHasBeenSet = true; m_aliasAttributes = std::move(value); }
 
     /**
      * <p>Attributes supported as an alias for this user pool. Possible values:
@@ -205,7 +206,7 @@ namespace Model
      * <p>Attributes supported as an alias for this user pool. Possible values:
      * <b>phone_number</b>, <b>email</b>, or <b>preferred_username</b>.</p>
      */
-    inline CreateUserPoolRequest& WithAliasAttributes(Aws::Vector<AliasAttributeType>&& value) { SetAliasAttributes(value); return *this;}
+    inline CreateUserPoolRequest& WithAliasAttributes(Aws::Vector<AliasAttributeType>&& value) { SetAliasAttributes(std::move(value)); return *this;}
 
     /**
      * <p>Attributes supported as an alias for this user pool. Possible values:
@@ -217,7 +218,7 @@ namespace Model
      * <p>Attributes supported as an alias for this user pool. Possible values:
      * <b>phone_number</b>, <b>email</b>, or <b>preferred_username</b>.</p>
      */
-    inline CreateUserPoolRequest& AddAliasAttributes(AliasAttributeType&& value) { m_aliasAttributesHasBeenSet = true; m_aliasAttributes.push_back(value); return *this; }
+    inline CreateUserPoolRequest& AddAliasAttributes(AliasAttributeType&& value) { m_aliasAttributesHasBeenSet = true; m_aliasAttributes.push_back(std::move(value)); return *this; }
 
     /**
      * <p>A string representing the SMS verification message.</p>
@@ -232,7 +233,7 @@ namespace Model
     /**
      * <p>A string representing the SMS verification message.</p>
      */
-    inline void SetSmsVerificationMessage(Aws::String&& value) { m_smsVerificationMessageHasBeenSet = true; m_smsVerificationMessage = value; }
+    inline void SetSmsVerificationMessage(Aws::String&& value) { m_smsVerificationMessageHasBeenSet = true; m_smsVerificationMessage = std::move(value); }
 
     /**
      * <p>A string representing the SMS verification message.</p>
@@ -247,7 +248,7 @@ namespace Model
     /**
      * <p>A string representing the SMS verification message.</p>
      */
-    inline CreateUserPoolRequest& WithSmsVerificationMessage(Aws::String&& value) { SetSmsVerificationMessage(value); return *this;}
+    inline CreateUserPoolRequest& WithSmsVerificationMessage(Aws::String&& value) { SetSmsVerificationMessage(std::move(value)); return *this;}
 
     /**
      * <p>A string representing the SMS verification message.</p>
@@ -267,7 +268,7 @@ namespace Model
     /**
      * <p>A string representing the email verification message.</p>
      */
-    inline void SetEmailVerificationMessage(Aws::String&& value) { m_emailVerificationMessageHasBeenSet = true; m_emailVerificationMessage = value; }
+    inline void SetEmailVerificationMessage(Aws::String&& value) { m_emailVerificationMessageHasBeenSet = true; m_emailVerificationMessage = std::move(value); }
 
     /**
      * <p>A string representing the email verification message.</p>
@@ -282,7 +283,7 @@ namespace Model
     /**
      * <p>A string representing the email verification message.</p>
      */
-    inline CreateUserPoolRequest& WithEmailVerificationMessage(Aws::String&& value) { SetEmailVerificationMessage(value); return *this;}
+    inline CreateUserPoolRequest& WithEmailVerificationMessage(Aws::String&& value) { SetEmailVerificationMessage(std::move(value)); return *this;}
 
     /**
      * <p>A string representing the email verification message.</p>
@@ -302,7 +303,7 @@ namespace Model
     /**
      * <p>A string representing the email verification subject.</p>
      */
-    inline void SetEmailVerificationSubject(Aws::String&& value) { m_emailVerificationSubjectHasBeenSet = true; m_emailVerificationSubject = value; }
+    inline void SetEmailVerificationSubject(Aws::String&& value) { m_emailVerificationSubjectHasBeenSet = true; m_emailVerificationSubject = std::move(value); }
 
     /**
      * <p>A string representing the email verification subject.</p>
@@ -317,7 +318,7 @@ namespace Model
     /**
      * <p>A string representing the email verification subject.</p>
      */
-    inline CreateUserPoolRequest& WithEmailVerificationSubject(Aws::String&& value) { SetEmailVerificationSubject(value); return *this;}
+    inline CreateUserPoolRequest& WithEmailVerificationSubject(Aws::String&& value) { SetEmailVerificationSubject(std::move(value)); return *this;}
 
     /**
      * <p>A string representing the email verification subject.</p>
@@ -337,7 +338,7 @@ namespace Model
     /**
      * <p>A string representing the SMS authentication message.</p>
      */
-    inline void SetSmsAuthenticationMessage(Aws::String&& value) { m_smsAuthenticationMessageHasBeenSet = true; m_smsAuthenticationMessage = value; }
+    inline void SetSmsAuthenticationMessage(Aws::String&& value) { m_smsAuthenticationMessageHasBeenSet = true; m_smsAuthenticationMessage = std::move(value); }
 
     /**
      * <p>A string representing the SMS authentication message.</p>
@@ -352,7 +353,7 @@ namespace Model
     /**
      * <p>A string representing the SMS authentication message.</p>
      */
-    inline CreateUserPoolRequest& WithSmsAuthenticationMessage(Aws::String&& value) { SetSmsAuthenticationMessage(value); return *this;}
+    inline CreateUserPoolRequest& WithSmsAuthenticationMessage(Aws::String&& value) { SetSmsAuthenticationMessage(std::move(value)); return *this;}
 
     /**
      * <p>A string representing the SMS authentication message.</p>
@@ -372,7 +373,7 @@ namespace Model
     /**
      * <p>Specifies MFA configuration details.</p>
      */
-    inline void SetMfaConfiguration(UserPoolMfaType&& value) { m_mfaConfigurationHasBeenSet = true; m_mfaConfiguration = value; }
+    inline void SetMfaConfiguration(UserPoolMfaType&& value) { m_mfaConfigurationHasBeenSet = true; m_mfaConfiguration = std::move(value); }
 
     /**
      * <p>Specifies MFA configuration details.</p>
@@ -382,7 +383,7 @@ namespace Model
     /**
      * <p>Specifies MFA configuration details.</p>
      */
-    inline CreateUserPoolRequest& WithMfaConfiguration(UserPoolMfaType&& value) { SetMfaConfiguration(value); return *this;}
+    inline CreateUserPoolRequest& WithMfaConfiguration(UserPoolMfaType&& value) { SetMfaConfiguration(std::move(value)); return *this;}
 
     /**
      * <p>The device configuration.</p>
@@ -397,7 +398,7 @@ namespace Model
     /**
      * <p>The device configuration.</p>
      */
-    inline void SetDeviceConfiguration(DeviceConfigurationType&& value) { m_deviceConfigurationHasBeenSet = true; m_deviceConfiguration = value; }
+    inline void SetDeviceConfiguration(DeviceConfigurationType&& value) { m_deviceConfigurationHasBeenSet = true; m_deviceConfiguration = std::move(value); }
 
     /**
      * <p>The device configuration.</p>
@@ -407,7 +408,7 @@ namespace Model
     /**
      * <p>The device configuration.</p>
      */
-    inline CreateUserPoolRequest& WithDeviceConfiguration(DeviceConfigurationType&& value) { SetDeviceConfiguration(value); return *this;}
+    inline CreateUserPoolRequest& WithDeviceConfiguration(DeviceConfigurationType&& value) { SetDeviceConfiguration(std::move(value)); return *this;}
 
     /**
      * <p>The email configuration.</p>
@@ -422,7 +423,7 @@ namespace Model
     /**
      * <p>The email configuration.</p>
      */
-    inline void SetEmailConfiguration(EmailConfigurationType&& value) { m_emailConfigurationHasBeenSet = true; m_emailConfiguration = value; }
+    inline void SetEmailConfiguration(EmailConfigurationType&& value) { m_emailConfigurationHasBeenSet = true; m_emailConfiguration = std::move(value); }
 
     /**
      * <p>The email configuration.</p>
@@ -432,7 +433,7 @@ namespace Model
     /**
      * <p>The email configuration.</p>
      */
-    inline CreateUserPoolRequest& WithEmailConfiguration(EmailConfigurationType&& value) { SetEmailConfiguration(value); return *this;}
+    inline CreateUserPoolRequest& WithEmailConfiguration(EmailConfigurationType&& value) { SetEmailConfiguration(std::move(value)); return *this;}
 
     /**
      * <p>The SMS configuration.</p>
@@ -447,7 +448,7 @@ namespace Model
     /**
      * <p>The SMS configuration.</p>
      */
-    inline void SetSmsConfiguration(SmsConfigurationType&& value) { m_smsConfigurationHasBeenSet = true; m_smsConfiguration = value; }
+    inline void SetSmsConfiguration(SmsConfigurationType&& value) { m_smsConfigurationHasBeenSet = true; m_smsConfiguration = std::move(value); }
 
     /**
      * <p>The SMS configuration.</p>
@@ -457,7 +458,7 @@ namespace Model
     /**
      * <p>The SMS configuration.</p>
      */
-    inline CreateUserPoolRequest& WithSmsConfiguration(SmsConfigurationType&& value) { SetSmsConfiguration(value); return *this;}
+    inline CreateUserPoolRequest& WithSmsConfiguration(SmsConfigurationType&& value) { SetSmsConfiguration(std::move(value)); return *this;}
 
     /**
      * <p>The cost allocation tags for the user pool. For more information, see <a
@@ -478,7 +479,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-cost-allocation-tagging.html">Adding
      * Cost Allocation Tags to Your User Pool</a> </p>
      */
-    inline void SetUserPoolTags(Aws::Map<Aws::String, Aws::String>&& value) { m_userPoolTagsHasBeenSet = true; m_userPoolTags = value; }
+    inline void SetUserPoolTags(Aws::Map<Aws::String, Aws::String>&& value) { m_userPoolTagsHasBeenSet = true; m_userPoolTags = std::move(value); }
 
     /**
      * <p>The cost allocation tags for the user pool. For more information, see <a
@@ -492,56 +493,56 @@ namespace Model
      * href="http://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-cost-allocation-tagging.html">Adding
      * Cost Allocation Tags to Your User Pool</a> </p>
      */
-    inline CreateUserPoolRequest& WithUserPoolTags(Aws::Map<Aws::String, Aws::String>&& value) { SetUserPoolTags(value); return *this;}
+    inline CreateUserPoolRequest& WithUserPoolTags(Aws::Map<Aws::String, Aws::String>&& value) { SetUserPoolTags(std::move(value)); return *this;}
 
     /**
      * <p>The cost allocation tags for the user pool. For more information, see <a
      * href="http://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-cost-allocation-tagging.html">Adding
      * Cost Allocation Tags to Your User Pool</a> </p>
      */
-    inline CreateUserPoolRequest& AddUserPoolTags(const Aws::String& key, const Aws::String& value) { m_userPoolTagsHasBeenSet = true; m_userPoolTags[key] = value; return *this; }
+    inline CreateUserPoolRequest& AddUserPoolTags(const Aws::String& key, const Aws::String& value) { m_userPoolTagsHasBeenSet = true; m_userPoolTags.emplace(key, value); return *this; }
 
     /**
      * <p>The cost allocation tags for the user pool. For more information, see <a
      * href="http://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-cost-allocation-tagging.html">Adding
      * Cost Allocation Tags to Your User Pool</a> </p>
      */
-    inline CreateUserPoolRequest& AddUserPoolTags(Aws::String&& key, const Aws::String& value) { m_userPoolTagsHasBeenSet = true; m_userPoolTags[key] = value; return *this; }
+    inline CreateUserPoolRequest& AddUserPoolTags(Aws::String&& key, const Aws::String& value) { m_userPoolTagsHasBeenSet = true; m_userPoolTags.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>The cost allocation tags for the user pool. For more information, see <a
      * href="http://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-cost-allocation-tagging.html">Adding
      * Cost Allocation Tags to Your User Pool</a> </p>
      */
-    inline CreateUserPoolRequest& AddUserPoolTags(const Aws::String& key, Aws::String&& value) { m_userPoolTagsHasBeenSet = true; m_userPoolTags[key] = value; return *this; }
+    inline CreateUserPoolRequest& AddUserPoolTags(const Aws::String& key, Aws::String&& value) { m_userPoolTagsHasBeenSet = true; m_userPoolTags.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>The cost allocation tags for the user pool. For more information, see <a
      * href="http://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-cost-allocation-tagging.html">Adding
      * Cost Allocation Tags to Your User Pool</a> </p>
      */
-    inline CreateUserPoolRequest& AddUserPoolTags(Aws::String&& key, Aws::String&& value) { m_userPoolTagsHasBeenSet = true; m_userPoolTags[key] = value; return *this; }
+    inline CreateUserPoolRequest& AddUserPoolTags(Aws::String&& key, Aws::String&& value) { m_userPoolTagsHasBeenSet = true; m_userPoolTags.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
      * <p>The cost allocation tags for the user pool. For more information, see <a
      * href="http://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-cost-allocation-tagging.html">Adding
      * Cost Allocation Tags to Your User Pool</a> </p>
      */
-    inline CreateUserPoolRequest& AddUserPoolTags(const char* key, Aws::String&& value) { m_userPoolTagsHasBeenSet = true; m_userPoolTags[key] = value; return *this; }
+    inline CreateUserPoolRequest& AddUserPoolTags(const char* key, Aws::String&& value) { m_userPoolTagsHasBeenSet = true; m_userPoolTags.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>The cost allocation tags for the user pool. For more information, see <a
      * href="http://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-cost-allocation-tagging.html">Adding
      * Cost Allocation Tags to Your User Pool</a> </p>
      */
-    inline CreateUserPoolRequest& AddUserPoolTags(Aws::String&& key, const char* value) { m_userPoolTagsHasBeenSet = true; m_userPoolTags[key] = value; return *this; }
+    inline CreateUserPoolRequest& AddUserPoolTags(Aws::String&& key, const char* value) { m_userPoolTagsHasBeenSet = true; m_userPoolTags.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>The cost allocation tags for the user pool. For more information, see <a
      * href="http://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-cost-allocation-tagging.html">Adding
      * Cost Allocation Tags to Your User Pool</a> </p>
      */
-    inline CreateUserPoolRequest& AddUserPoolTags(const char* key, const char* value) { m_userPoolTagsHasBeenSet = true; m_userPoolTags[key] = value; return *this; }
+    inline CreateUserPoolRequest& AddUserPoolTags(const char* key, const char* value) { m_userPoolTagsHasBeenSet = true; m_userPoolTags.emplace(key, value); return *this; }
 
     /**
      * <p>The configuration for AdminCreateUser requests.</p>
@@ -556,7 +557,7 @@ namespace Model
     /**
      * <p>The configuration for AdminCreateUser requests.</p>
      */
-    inline void SetAdminCreateUserConfig(AdminCreateUserConfigType&& value) { m_adminCreateUserConfigHasBeenSet = true; m_adminCreateUserConfig = value; }
+    inline void SetAdminCreateUserConfig(AdminCreateUserConfigType&& value) { m_adminCreateUserConfigHasBeenSet = true; m_adminCreateUserConfig = std::move(value); }
 
     /**
      * <p>The configuration for AdminCreateUser requests.</p>
@@ -566,7 +567,7 @@ namespace Model
     /**
      * <p>The configuration for AdminCreateUser requests.</p>
      */
-    inline CreateUserPoolRequest& WithAdminCreateUserConfig(AdminCreateUserConfigType&& value) { SetAdminCreateUserConfig(value); return *this;}
+    inline CreateUserPoolRequest& WithAdminCreateUserConfig(AdminCreateUserConfigType&& value) { SetAdminCreateUserConfig(std::move(value)); return *this;}
 
     /**
      * <p>An array of schema attributes for the new user pool. These attributes can be
@@ -584,7 +585,7 @@ namespace Model
      * <p>An array of schema attributes for the new user pool. These attributes can be
      * standard or custom attributes.</p>
      */
-    inline void SetSchema(Aws::Vector<SchemaAttributeType>&& value) { m_schemaHasBeenSet = true; m_schema = value; }
+    inline void SetSchema(Aws::Vector<SchemaAttributeType>&& value) { m_schemaHasBeenSet = true; m_schema = std::move(value); }
 
     /**
      * <p>An array of schema attributes for the new user pool. These attributes can be
@@ -596,7 +597,7 @@ namespace Model
      * <p>An array of schema attributes for the new user pool. These attributes can be
      * standard or custom attributes.</p>
      */
-    inline CreateUserPoolRequest& WithSchema(Aws::Vector<SchemaAttributeType>&& value) { SetSchema(value); return *this;}
+    inline CreateUserPoolRequest& WithSchema(Aws::Vector<SchemaAttributeType>&& value) { SetSchema(std::move(value)); return *this;}
 
     /**
      * <p>An array of schema attributes for the new user pool. These attributes can be
@@ -608,7 +609,7 @@ namespace Model
      * <p>An array of schema attributes for the new user pool. These attributes can be
      * standard or custom attributes.</p>
      */
-    inline CreateUserPoolRequest& AddSchema(SchemaAttributeType&& value) { m_schemaHasBeenSet = true; m_schema.push_back(value); return *this; }
+    inline CreateUserPoolRequest& AddSchema(SchemaAttributeType&& value) { m_schemaHasBeenSet = true; m_schema.push_back(std::move(value)); return *this; }
 
   private:
     Aws::String m_poolName;

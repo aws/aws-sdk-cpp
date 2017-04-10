@@ -17,6 +17,7 @@
 #include <aws/budgets/model/Notification.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/budgets/model/Subscriber.h>
+#include <utility>
 
 namespace Aws
 {
@@ -53,13 +54,13 @@ namespace Model
     inline void SetNotification(const Notification& value) { m_notificationHasBeenSet = true; m_notification = value; }
 
     
-    inline void SetNotification(Notification&& value) { m_notificationHasBeenSet = true; m_notification = value; }
+    inline void SetNotification(Notification&& value) { m_notificationHasBeenSet = true; m_notification = std::move(value); }
 
     
     inline NotificationWithSubscribers& WithNotification(const Notification& value) { SetNotification(value); return *this;}
 
     
-    inline NotificationWithSubscribers& WithNotification(Notification&& value) { SetNotification(value); return *this;}
+    inline NotificationWithSubscribers& WithNotification(Notification&& value) { SetNotification(std::move(value)); return *this;}
 
     
     inline const Aws::Vector<Subscriber>& GetSubscribers() const{ return m_subscribers; }
@@ -68,19 +69,19 @@ namespace Model
     inline void SetSubscribers(const Aws::Vector<Subscriber>& value) { m_subscribersHasBeenSet = true; m_subscribers = value; }
 
     
-    inline void SetSubscribers(Aws::Vector<Subscriber>&& value) { m_subscribersHasBeenSet = true; m_subscribers = value; }
+    inline void SetSubscribers(Aws::Vector<Subscriber>&& value) { m_subscribersHasBeenSet = true; m_subscribers = std::move(value); }
 
     
     inline NotificationWithSubscribers& WithSubscribers(const Aws::Vector<Subscriber>& value) { SetSubscribers(value); return *this;}
 
     
-    inline NotificationWithSubscribers& WithSubscribers(Aws::Vector<Subscriber>&& value) { SetSubscribers(value); return *this;}
+    inline NotificationWithSubscribers& WithSubscribers(Aws::Vector<Subscriber>&& value) { SetSubscribers(std::move(value)); return *this;}
 
     
     inline NotificationWithSubscribers& AddSubscribers(const Subscriber& value) { m_subscribersHasBeenSet = true; m_subscribers.push_back(value); return *this; }
 
     
-    inline NotificationWithSubscribers& AddSubscribers(Subscriber&& value) { m_subscribersHasBeenSet = true; m_subscribers.push_back(value); return *this; }
+    inline NotificationWithSubscribers& AddSubscribers(Subscriber&& value) { m_subscribersHasBeenSet = true; m_subscribers.push_back(std::move(value)); return *this; }
 
   private:
     Notification m_notification;

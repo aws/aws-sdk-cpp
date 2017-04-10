@@ -19,6 +19,7 @@
 #include <aws/core/utils/Array.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/kms/model/ExpirationModelType.h>
+#include <utility>
 
 namespace Aws
 {
@@ -69,7 +70,7 @@ namespace Model
      * <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p> </li> </ul>
      */
-    inline void SetKeyId(Aws::String&& value) { m_keyIdHasBeenSet = true; m_keyId = value; }
+    inline void SetKeyId(Aws::String&& value) { m_keyIdHasBeenSet = true; m_keyId = std::move(value); }
 
     /**
      * <p>The identifier of the CMK to import the key material into. The CMK's
@@ -102,7 +103,7 @@ namespace Model
      * <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p> </li> </ul>
      */
-    inline ImportKeyMaterialRequest& WithKeyId(Aws::String&& value) { SetKeyId(value); return *this;}
+    inline ImportKeyMaterialRequest& WithKeyId(Aws::String&& value) { SetKeyId(std::move(value)); return *this;}
 
     /**
      * <p>The identifier of the CMK to import the key material into. The CMK's
@@ -134,7 +135,7 @@ namespace Model
      * <a>GetParametersForImport</a> request. It must be from the same response that
      * contained the public key that you used to encrypt the key material.</p>
      */
-    inline void SetImportToken(Aws::Utils::ByteBuffer&& value) { m_importTokenHasBeenSet = true; m_importToken = value; }
+    inline void SetImportToken(Aws::Utils::ByteBuffer&& value) { m_importTokenHasBeenSet = true; m_importToken = std::move(value); }
 
     /**
      * <p>The import token that you received in the response to a previous
@@ -148,7 +149,7 @@ namespace Model
      * <a>GetParametersForImport</a> request. It must be from the same response that
      * contained the public key that you used to encrypt the key material.</p>
      */
-    inline ImportKeyMaterialRequest& WithImportToken(Aws::Utils::ByteBuffer&& value) { SetImportToken(value); return *this;}
+    inline ImportKeyMaterialRequest& WithImportToken(Aws::Utils::ByteBuffer&& value) { SetImportToken(std::move(value)); return *this;}
 
     /**
      * <p>The encrypted key material to import. It must be encrypted with the public
@@ -172,7 +173,7 @@ namespace Model
      * <a>GetParametersForImport</a> request, using the wrapping algorithm that you
      * specified in that request.</p>
      */
-    inline void SetEncryptedKeyMaterial(Aws::Utils::ByteBuffer&& value) { m_encryptedKeyMaterialHasBeenSet = true; m_encryptedKeyMaterial = value; }
+    inline void SetEncryptedKeyMaterial(Aws::Utils::ByteBuffer&& value) { m_encryptedKeyMaterialHasBeenSet = true; m_encryptedKeyMaterial = std::move(value); }
 
     /**
      * <p>The encrypted key material to import. It must be encrypted with the public
@@ -188,7 +189,7 @@ namespace Model
      * <a>GetParametersForImport</a> request, using the wrapping algorithm that you
      * specified in that request.</p>
      */
-    inline ImportKeyMaterialRequest& WithEncryptedKeyMaterial(Aws::Utils::ByteBuffer&& value) { SetEncryptedKeyMaterial(value); return *this;}
+    inline ImportKeyMaterialRequest& WithEncryptedKeyMaterial(Aws::Utils::ByteBuffer&& value) { SetEncryptedKeyMaterial(std::move(value)); return *this;}
 
     /**
      * <p>The time at which the imported key material expires. When the key material
@@ -212,7 +213,7 @@ namespace Model
      * omit this parameter when the <code>ExpirationModel</code> parameter is set to
      * <code>KEY_MATERIAL_DOES_NOT_EXPIRE</code>. Otherwise it is required.</p>
      */
-    inline void SetValidTo(Aws::Utils::DateTime&& value) { m_validToHasBeenSet = true; m_validTo = value; }
+    inline void SetValidTo(Aws::Utils::DateTime&& value) { m_validToHasBeenSet = true; m_validTo = std::move(value); }
 
     /**
      * <p>The time at which the imported key material expires. When the key material
@@ -228,7 +229,7 @@ namespace Model
      * omit this parameter when the <code>ExpirationModel</code> parameter is set to
      * <code>KEY_MATERIAL_DOES_NOT_EXPIRE</code>. Otherwise it is required.</p>
      */
-    inline ImportKeyMaterialRequest& WithValidTo(Aws::Utils::DateTime&& value) { SetValidTo(value); return *this;}
+    inline ImportKeyMaterialRequest& WithValidTo(Aws::Utils::DateTime&& value) { SetValidTo(std::move(value)); return *this;}
 
     /**
      * <p>Specifies whether the key material expires. The default is
@@ -255,7 +256,7 @@ namespace Model
      * <code>KEY_MATERIAL_DOES_NOT_EXPIRE</code>, you must omit the
      * <code>ValidTo</code> parameter.</p>
      */
-    inline void SetExpirationModel(ExpirationModelType&& value) { m_expirationModelHasBeenSet = true; m_expirationModel = value; }
+    inline void SetExpirationModel(ExpirationModelType&& value) { m_expirationModelHasBeenSet = true; m_expirationModel = std::move(value); }
 
     /**
      * <p>Specifies whether the key material expires. The default is
@@ -273,7 +274,7 @@ namespace Model
      * <code>KEY_MATERIAL_DOES_NOT_EXPIRE</code>, you must omit the
      * <code>ValidTo</code> parameter.</p>
      */
-    inline ImportKeyMaterialRequest& WithExpirationModel(ExpirationModelType&& value) { SetExpirationModel(value); return *this;}
+    inline ImportKeyMaterialRequest& WithExpirationModel(ExpirationModelType&& value) { SetExpirationModel(std::move(value)); return *this;}
 
   private:
     Aws::String m_keyId;

@@ -16,6 +16,7 @@
 #include <aws/lambda/Lambda_EXPORTS.h>
 #include <aws/lambda/model/AccountLimit.h>
 #include <aws/lambda/model/AccountUsage.h>
+#include <utility>
 
 namespace Aws
 {
@@ -47,13 +48,13 @@ namespace Model
     inline void SetAccountLimit(const AccountLimit& value) { m_accountLimit = value; }
 
     
-    inline void SetAccountLimit(AccountLimit&& value) { m_accountLimit = value; }
+    inline void SetAccountLimit(AccountLimit&& value) { m_accountLimit = std::move(value); }
 
     
     inline GetAccountSettingsResult& WithAccountLimit(const AccountLimit& value) { SetAccountLimit(value); return *this;}
 
     
-    inline GetAccountSettingsResult& WithAccountLimit(AccountLimit&& value) { SetAccountLimit(value); return *this;}
+    inline GetAccountSettingsResult& WithAccountLimit(AccountLimit&& value) { SetAccountLimit(std::move(value)); return *this;}
 
     
     inline const AccountUsage& GetAccountUsage() const{ return m_accountUsage; }
@@ -62,13 +63,13 @@ namespace Model
     inline void SetAccountUsage(const AccountUsage& value) { m_accountUsage = value; }
 
     
-    inline void SetAccountUsage(AccountUsage&& value) { m_accountUsage = value; }
+    inline void SetAccountUsage(AccountUsage&& value) { m_accountUsage = std::move(value); }
 
     
     inline GetAccountSettingsResult& WithAccountUsage(const AccountUsage& value) { SetAccountUsage(value); return *this;}
 
     
-    inline GetAccountSettingsResult& WithAccountUsage(AccountUsage&& value) { SetAccountUsage(value); return *this;}
+    inline GetAccountSettingsResult& WithAccountUsage(AccountUsage&& value) { SetAccountUsage(std::move(value)); return *this;}
 
   private:
     AccountLimit m_accountLimit;

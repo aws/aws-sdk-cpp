@@ -16,6 +16,7 @@
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/ec2/EC2Request.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -56,7 +57,7 @@ namespace Model
      * <p>The ID of the export task. This is the ID returned by
      * <code>CreateInstanceExportTask</code>.</p>
      */
-    inline void SetExportTaskId(Aws::String&& value) { m_exportTaskIdHasBeenSet = true; m_exportTaskId = value; }
+    inline void SetExportTaskId(Aws::String&& value) { m_exportTaskIdHasBeenSet = true; m_exportTaskId = std::move(value); }
 
     /**
      * <p>The ID of the export task. This is the ID returned by
@@ -74,7 +75,7 @@ namespace Model
      * <p>The ID of the export task. This is the ID returned by
      * <code>CreateInstanceExportTask</code>.</p>
      */
-    inline CancelExportTaskRequest& WithExportTaskId(Aws::String&& value) { SetExportTaskId(value); return *this;}
+    inline CancelExportTaskRequest& WithExportTaskId(Aws::String&& value) { SetExportTaskId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the export task. This is the ID returned by

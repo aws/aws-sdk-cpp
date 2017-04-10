@@ -16,6 +16,7 @@
 #include <aws/support/Support_EXPORTS.h>
 #include <aws/support/SupportRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -57,7 +58,7 @@ namespace Model
      * alphanumeric string formatted as shown in this example:
      * case-<i>12345678910-2013-c4c1d2bf33c5cf47</i> </p>
      */
-    inline void SetCaseId(Aws::String&& value) { m_caseIdHasBeenSet = true; m_caseId = value; }
+    inline void SetCaseId(Aws::String&& value) { m_caseIdHasBeenSet = true; m_caseId = std::move(value); }
 
     /**
      * <p>The AWS Support case ID requested or returned in the call. The case ID is an
@@ -78,7 +79,7 @@ namespace Model
      * alphanumeric string formatted as shown in this example:
      * case-<i>12345678910-2013-c4c1d2bf33c5cf47</i> </p>
      */
-    inline ResolveCaseRequest& WithCaseId(Aws::String&& value) { SetCaseId(value); return *this;}
+    inline ResolveCaseRequest& WithCaseId(Aws::String&& value) { SetCaseId(std::move(value)); return *this;}
 
     /**
      * <p>The AWS Support case ID requested or returned in the call. The case ID is an

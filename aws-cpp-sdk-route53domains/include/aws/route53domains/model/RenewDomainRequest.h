@@ -16,6 +16,7 @@
 #include <aws/route53domains/Route53Domains_EXPORTS.h>
 #include <aws/route53domains/Route53DomainsRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -46,7 +47,7 @@ namespace Model
     inline void SetDomainName(const Aws::String& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
 
     
-    inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
+    inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = std::move(value); }
 
     
     inline void SetDomainName(const char* value) { m_domainNameHasBeenSet = true; m_domainName.assign(value); }
@@ -55,7 +56,7 @@ namespace Model
     inline RenewDomainRequest& WithDomainName(const Aws::String& value) { SetDomainName(value); return *this;}
 
     
-    inline RenewDomainRequest& WithDomainName(Aws::String&& value) { SetDomainName(value); return *this;}
+    inline RenewDomainRequest& WithDomainName(Aws::String&& value) { SetDomainName(std::move(value)); return *this;}
 
     
     inline RenewDomainRequest& WithDomainName(const char* value) { SetDomainName(value); return *this;}

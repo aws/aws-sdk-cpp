@@ -16,6 +16,7 @@
 #include <aws/redshift/Redshift_EXPORTS.h>
 #include <aws/redshift/RedshiftRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -53,7 +54,7 @@ namespace Model
     /**
      * <p>The identifier of the snapshot that the account can no longer access.</p>
      */
-    inline void SetSnapshotIdentifier(Aws::String&& value) { m_snapshotIdentifierHasBeenSet = true; m_snapshotIdentifier = value; }
+    inline void SetSnapshotIdentifier(Aws::String&& value) { m_snapshotIdentifierHasBeenSet = true; m_snapshotIdentifier = std::move(value); }
 
     /**
      * <p>The identifier of the snapshot that the account can no longer access.</p>
@@ -68,7 +69,7 @@ namespace Model
     /**
      * <p>The identifier of the snapshot that the account can no longer access.</p>
      */
-    inline RevokeSnapshotAccessRequest& WithSnapshotIdentifier(Aws::String&& value) { SetSnapshotIdentifier(value); return *this;}
+    inline RevokeSnapshotAccessRequest& WithSnapshotIdentifier(Aws::String&& value) { SetSnapshotIdentifier(std::move(value)); return *this;}
 
     /**
      * <p>The identifier of the snapshot that the account can no longer access.</p>
@@ -94,7 +95,7 @@ namespace Model
      * is required if your IAM user has a policy containing a snapshot resource element
      * that specifies anything other than * for the cluster name.</p>
      */
-    inline void SetSnapshotClusterIdentifier(Aws::String&& value) { m_snapshotClusterIdentifierHasBeenSet = true; m_snapshotClusterIdentifier = value; }
+    inline void SetSnapshotClusterIdentifier(Aws::String&& value) { m_snapshotClusterIdentifierHasBeenSet = true; m_snapshotClusterIdentifier = std::move(value); }
 
     /**
      * <p>The identifier of the cluster the snapshot was created from. This parameter
@@ -115,7 +116,7 @@ namespace Model
      * is required if your IAM user has a policy containing a snapshot resource element
      * that specifies anything other than * for the cluster name.</p>
      */
-    inline RevokeSnapshotAccessRequest& WithSnapshotClusterIdentifier(Aws::String&& value) { SetSnapshotClusterIdentifier(value); return *this;}
+    inline RevokeSnapshotAccessRequest& WithSnapshotClusterIdentifier(Aws::String&& value) { SetSnapshotClusterIdentifier(std::move(value)); return *this;}
 
     /**
      * <p>The identifier of the cluster the snapshot was created from. This parameter
@@ -140,7 +141,7 @@ namespace Model
      * <p>The identifier of the AWS customer account that can no longer restore the
      * specified snapshot.</p>
      */
-    inline void SetAccountWithRestoreAccess(Aws::String&& value) { m_accountWithRestoreAccessHasBeenSet = true; m_accountWithRestoreAccess = value; }
+    inline void SetAccountWithRestoreAccess(Aws::String&& value) { m_accountWithRestoreAccessHasBeenSet = true; m_accountWithRestoreAccess = std::move(value); }
 
     /**
      * <p>The identifier of the AWS customer account that can no longer restore the
@@ -158,7 +159,7 @@ namespace Model
      * <p>The identifier of the AWS customer account that can no longer restore the
      * specified snapshot.</p>
      */
-    inline RevokeSnapshotAccessRequest& WithAccountWithRestoreAccess(Aws::String&& value) { SetAccountWithRestoreAccess(value); return *this;}
+    inline RevokeSnapshotAccessRequest& WithAccountWithRestoreAccess(Aws::String&& value) { SetAccountWithRestoreAccess(std::move(value)); return *this;}
 
     /**
      * <p>The identifier of the AWS customer account that can no longer restore the

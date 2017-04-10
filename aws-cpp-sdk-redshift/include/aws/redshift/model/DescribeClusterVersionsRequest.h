@@ -16,6 +16,7 @@
 #include <aws/redshift/Redshift_EXPORTS.h>
 #include <aws/redshift/RedshiftRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -53,7 +54,7 @@ namespace Model
     /**
      * <p>The specific cluster version to return.</p> <p>Example: <code>1.0</code> </p>
      */
-    inline void SetClusterVersion(Aws::String&& value) { m_clusterVersionHasBeenSet = true; m_clusterVersion = value; }
+    inline void SetClusterVersion(Aws::String&& value) { m_clusterVersionHasBeenSet = true; m_clusterVersion = std::move(value); }
 
     /**
      * <p>The specific cluster version to return.</p> <p>Example: <code>1.0</code> </p>
@@ -68,7 +69,7 @@ namespace Model
     /**
      * <p>The specific cluster version to return.</p> <p>Example: <code>1.0</code> </p>
      */
-    inline DescribeClusterVersionsRequest& WithClusterVersion(Aws::String&& value) { SetClusterVersion(value); return *this;}
+    inline DescribeClusterVersionsRequest& WithClusterVersion(Aws::String&& value) { SetClusterVersion(std::move(value)); return *this;}
 
     /**
      * <p>The specific cluster version to return.</p> <p>Example: <code>1.0</code> </p>
@@ -97,7 +98,7 @@ namespace Model
      * characters</p> </li> <li> <p>First character must be a letter</p> </li> <li>
      * <p>Cannot end with a hyphen or contain two consecutive hyphens</p> </li> </ul>
      */
-    inline void SetClusterParameterGroupFamily(Aws::String&& value) { m_clusterParameterGroupFamilyHasBeenSet = true; m_clusterParameterGroupFamily = value; }
+    inline void SetClusterParameterGroupFamily(Aws::String&& value) { m_clusterParameterGroupFamilyHasBeenSet = true; m_clusterParameterGroupFamily = std::move(value); }
 
     /**
      * <p>The name of a specific cluster parameter group family to return details
@@ -121,7 +122,7 @@ namespace Model
      * characters</p> </li> <li> <p>First character must be a letter</p> </li> <li>
      * <p>Cannot end with a hyphen or contain two consecutive hyphens</p> </li> </ul>
      */
-    inline DescribeClusterVersionsRequest& WithClusterParameterGroupFamily(Aws::String&& value) { SetClusterParameterGroupFamily(value); return *this;}
+    inline DescribeClusterVersionsRequest& WithClusterParameterGroupFamily(Aws::String&& value) { SetClusterParameterGroupFamily(std::move(value)); return *this;}
 
     /**
      * <p>The name of a specific cluster parameter group family to return details
@@ -189,7 +190,7 @@ namespace Model
      * response records by providing the returned marker value in the
      * <code>Marker</code> parameter and retrying the request. </p>
      */
-    inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = value; }
+    inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = std::move(value); }
 
     /**
      * <p>An optional parameter that specifies the starting point to return a set of
@@ -219,7 +220,7 @@ namespace Model
      * response records by providing the returned marker value in the
      * <code>Marker</code> parameter and retrying the request. </p>
      */
-    inline DescribeClusterVersionsRequest& WithMarker(Aws::String&& value) { SetMarker(value); return *this;}
+    inline DescribeClusterVersionsRequest& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
 
     /**
      * <p>An optional parameter that specifies the starting point to return a set of

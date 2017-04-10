@@ -16,6 +16,7 @@
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/ec2/EC2Request.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -86,7 +87,7 @@ namespace Model
      * The operation fails if you specify an instance ID unless exactly one network
      * interface is attached.</p>
      */
-    inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
+    inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::move(value); }
 
     /**
      * <p>The ID of the instance. This is required for EC2-Classic. For EC2-VPC, you
@@ -110,7 +111,7 @@ namespace Model
      * The operation fails if you specify an instance ID unless exactly one network
      * interface is attached.</p>
      */
-    inline AssociateAddressRequest& WithInstanceId(Aws::String&& value) { SetInstanceId(value); return *this;}
+    inline AssociateAddressRequest& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the instance. This is required for EC2-Classic. For EC2-VPC, you
@@ -133,7 +134,7 @@ namespace Model
     /**
      * <p>The Elastic IP address. This is required for EC2-Classic.</p>
      */
-    inline void SetPublicIp(Aws::String&& value) { m_publicIpHasBeenSet = true; m_publicIp = value; }
+    inline void SetPublicIp(Aws::String&& value) { m_publicIpHasBeenSet = true; m_publicIp = std::move(value); }
 
     /**
      * <p>The Elastic IP address. This is required for EC2-Classic.</p>
@@ -148,7 +149,7 @@ namespace Model
     /**
      * <p>The Elastic IP address. This is required for EC2-Classic.</p>
      */
-    inline AssociateAddressRequest& WithPublicIp(Aws::String&& value) { SetPublicIp(value); return *this;}
+    inline AssociateAddressRequest& WithPublicIp(Aws::String&& value) { SetPublicIp(std::move(value)); return *this;}
 
     /**
      * <p>The Elastic IP address. This is required for EC2-Classic.</p>
@@ -168,7 +169,7 @@ namespace Model
     /**
      * <p>[EC2-VPC] The allocation ID. This is required for EC2-VPC.</p>
      */
-    inline void SetAllocationId(Aws::String&& value) { m_allocationIdHasBeenSet = true; m_allocationId = value; }
+    inline void SetAllocationId(Aws::String&& value) { m_allocationIdHasBeenSet = true; m_allocationId = std::move(value); }
 
     /**
      * <p>[EC2-VPC] The allocation ID. This is required for EC2-VPC.</p>
@@ -183,7 +184,7 @@ namespace Model
     /**
      * <p>[EC2-VPC] The allocation ID. This is required for EC2-VPC.</p>
      */
-    inline AssociateAddressRequest& WithAllocationId(Aws::String&& value) { SetAllocationId(value); return *this;}
+    inline AssociateAddressRequest& WithAllocationId(Aws::String&& value) { SetAllocationId(std::move(value)); return *this;}
 
     /**
      * <p>[EC2-VPC] The allocation ID. This is required for EC2-VPC.</p>
@@ -206,7 +207,7 @@ namespace Model
      * <p>[EC2-VPC] The ID of the network interface. If the instance has more than one
      * network interface, you must specify a network interface ID.</p>
      */
-    inline void SetNetworkInterfaceId(Aws::String&& value) { m_networkInterfaceIdHasBeenSet = true; m_networkInterfaceId = value; }
+    inline void SetNetworkInterfaceId(Aws::String&& value) { m_networkInterfaceIdHasBeenSet = true; m_networkInterfaceId = std::move(value); }
 
     /**
      * <p>[EC2-VPC] The ID of the network interface. If the instance has more than one
@@ -224,7 +225,7 @@ namespace Model
      * <p>[EC2-VPC] The ID of the network interface. If the instance has more than one
      * network interface, you must specify a network interface ID.</p>
      */
-    inline AssociateAddressRequest& WithNetworkInterfaceId(Aws::String&& value) { SetNetworkInterfaceId(value); return *this;}
+    inline AssociateAddressRequest& WithNetworkInterfaceId(Aws::String&& value) { SetNetworkInterfaceId(std::move(value)); return *this;}
 
     /**
      * <p>[EC2-VPC] The ID of the network interface. If the instance has more than one
@@ -251,7 +252,7 @@ namespace Model
      * Elastic IP address. If no private IP address is specified, the Elastic IP
      * address is associated with the primary private IP address.</p>
      */
-    inline void SetPrivateIpAddress(Aws::String&& value) { m_privateIpAddressHasBeenSet = true; m_privateIpAddress = value; }
+    inline void SetPrivateIpAddress(Aws::String&& value) { m_privateIpAddressHasBeenSet = true; m_privateIpAddress = std::move(value); }
 
     /**
      * <p>[EC2-VPC] The primary or secondary private IP address to associate with the
@@ -272,7 +273,7 @@ namespace Model
      * Elastic IP address. If no private IP address is specified, the Elastic IP
      * address is associated with the primary private IP address.</p>
      */
-    inline AssociateAddressRequest& WithPrivateIpAddress(Aws::String&& value) { SetPrivateIpAddress(value); return *this;}
+    inline AssociateAddressRequest& WithPrivateIpAddress(Aws::String&& value) { SetPrivateIpAddress(std::move(value)); return *this;}
 
     /**
      * <p>[EC2-VPC] The primary or secondary private IP address to associate with the

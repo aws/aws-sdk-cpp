@@ -16,6 +16,7 @@
 #include <aws/lambda/Lambda_EXPORTS.h>
 #include <aws/lambda/LambdaRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -46,7 +47,7 @@ namespace Model
     /**
      * <p>Name of the Lambda function for which you want to create an alias.</p>
      */
-    inline void SetFunctionName(Aws::String&& value) { m_functionNameHasBeenSet = true; m_functionName = value; }
+    inline void SetFunctionName(Aws::String&& value) { m_functionNameHasBeenSet = true; m_functionName = std::move(value); }
 
     /**
      * <p>Name of the Lambda function for which you want to create an alias.</p>
@@ -61,7 +62,7 @@ namespace Model
     /**
      * <p>Name of the Lambda function for which you want to create an alias.</p>
      */
-    inline CreateAliasRequest& WithFunctionName(Aws::String&& value) { SetFunctionName(value); return *this;}
+    inline CreateAliasRequest& WithFunctionName(Aws::String&& value) { SetFunctionName(std::move(value)); return *this;}
 
     /**
      * <p>Name of the Lambda function for which you want to create an alias.</p>
@@ -81,7 +82,7 @@ namespace Model
     /**
      * <p>Name for the alias you are creating.</p>
      */
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p>Name for the alias you are creating.</p>
@@ -96,7 +97,7 @@ namespace Model
     /**
      * <p>Name for the alias you are creating.</p>
      */
-    inline CreateAliasRequest& WithName(Aws::String&& value) { SetName(value); return *this;}
+    inline CreateAliasRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>Name for the alias you are creating.</p>
@@ -116,7 +117,7 @@ namespace Model
     /**
      * <p>Lambda function version for which you are creating the alias.</p>
      */
-    inline void SetFunctionVersion(Aws::String&& value) { m_functionVersionHasBeenSet = true; m_functionVersion = value; }
+    inline void SetFunctionVersion(Aws::String&& value) { m_functionVersionHasBeenSet = true; m_functionVersion = std::move(value); }
 
     /**
      * <p>Lambda function version for which you are creating the alias.</p>
@@ -131,7 +132,7 @@ namespace Model
     /**
      * <p>Lambda function version for which you are creating the alias.</p>
      */
-    inline CreateAliasRequest& WithFunctionVersion(Aws::String&& value) { SetFunctionVersion(value); return *this;}
+    inline CreateAliasRequest& WithFunctionVersion(Aws::String&& value) { SetFunctionVersion(std::move(value)); return *this;}
 
     /**
      * <p>Lambda function version for which you are creating the alias.</p>
@@ -151,7 +152,7 @@ namespace Model
     /**
      * <p>Description of the alias.</p>
      */
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = value; }
+    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
      * <p>Description of the alias.</p>
@@ -166,7 +167,7 @@ namespace Model
     /**
      * <p>Description of the alias.</p>
      */
-    inline CreateAliasRequest& WithDescription(Aws::String&& value) { SetDescription(value); return *this;}
+    inline CreateAliasRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
      * <p>Description of the alias.</p>

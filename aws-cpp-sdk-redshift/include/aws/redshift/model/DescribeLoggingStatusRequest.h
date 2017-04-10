@@ -16,6 +16,7 @@
 #include <aws/redshift/Redshift_EXPORTS.h>
 #include <aws/redshift/RedshiftRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -56,7 +57,7 @@ namespace Model
      * <p>The identifier of the cluster from which to get the logging status.</p>
      * <p>Example: <code>examplecluster</code> </p>
      */
-    inline void SetClusterIdentifier(Aws::String&& value) { m_clusterIdentifierHasBeenSet = true; m_clusterIdentifier = value; }
+    inline void SetClusterIdentifier(Aws::String&& value) { m_clusterIdentifierHasBeenSet = true; m_clusterIdentifier = std::move(value); }
 
     /**
      * <p>The identifier of the cluster from which to get the logging status.</p>
@@ -74,7 +75,7 @@ namespace Model
      * <p>The identifier of the cluster from which to get the logging status.</p>
      * <p>Example: <code>examplecluster</code> </p>
      */
-    inline DescribeLoggingStatusRequest& WithClusterIdentifier(Aws::String&& value) { SetClusterIdentifier(value); return *this;}
+    inline DescribeLoggingStatusRequest& WithClusterIdentifier(Aws::String&& value) { SetClusterIdentifier(std::move(value)); return *this;}
 
     /**
      * <p>The identifier of the cluster from which to get the logging status.</p>

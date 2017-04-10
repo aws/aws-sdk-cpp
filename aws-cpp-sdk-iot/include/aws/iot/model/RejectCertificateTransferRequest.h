@@ -16,6 +16,7 @@
 #include <aws/iot/IoT_EXPORTS.h>
 #include <aws/iot/IoTRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -50,7 +51,7 @@ namespace Model
     /**
      * <p>The ID of the certificate.</p>
      */
-    inline void SetCertificateId(Aws::String&& value) { m_certificateIdHasBeenSet = true; m_certificateId = value; }
+    inline void SetCertificateId(Aws::String&& value) { m_certificateIdHasBeenSet = true; m_certificateId = std::move(value); }
 
     /**
      * <p>The ID of the certificate.</p>
@@ -65,7 +66,7 @@ namespace Model
     /**
      * <p>The ID of the certificate.</p>
      */
-    inline RejectCertificateTransferRequest& WithCertificateId(Aws::String&& value) { SetCertificateId(value); return *this;}
+    inline RejectCertificateTransferRequest& WithCertificateId(Aws::String&& value) { SetCertificateId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the certificate.</p>
@@ -85,7 +86,7 @@ namespace Model
     /**
      * <p>The reason the certificate transfer was rejected.</p>
      */
-    inline void SetRejectReason(Aws::String&& value) { m_rejectReasonHasBeenSet = true; m_rejectReason = value; }
+    inline void SetRejectReason(Aws::String&& value) { m_rejectReasonHasBeenSet = true; m_rejectReason = std::move(value); }
 
     /**
      * <p>The reason the certificate transfer was rejected.</p>
@@ -100,7 +101,7 @@ namespace Model
     /**
      * <p>The reason the certificate transfer was rejected.</p>
      */
-    inline RejectCertificateTransferRequest& WithRejectReason(Aws::String&& value) { SetRejectReason(value); return *this;}
+    inline RejectCertificateTransferRequest& WithRejectReason(Aws::String&& value) { SetRejectReason(std::move(value)); return *this;}
 
     /**
      * <p>The reason the certificate transfer was rejected.</p>

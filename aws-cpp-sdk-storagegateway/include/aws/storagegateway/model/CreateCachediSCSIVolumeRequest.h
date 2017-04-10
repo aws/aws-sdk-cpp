@@ -16,6 +16,7 @@
 #include <aws/storagegateway/StorageGateway_EXPORTS.h>
 #include <aws/storagegateway/StorageGatewayRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -42,7 +43,7 @@ namespace Model
     inline void SetGatewayARN(const Aws::String& value) { m_gatewayARNHasBeenSet = true; m_gatewayARN = value; }
 
     
-    inline void SetGatewayARN(Aws::String&& value) { m_gatewayARNHasBeenSet = true; m_gatewayARN = value; }
+    inline void SetGatewayARN(Aws::String&& value) { m_gatewayARNHasBeenSet = true; m_gatewayARN = std::move(value); }
 
     
     inline void SetGatewayARN(const char* value) { m_gatewayARNHasBeenSet = true; m_gatewayARN.assign(value); }
@@ -51,7 +52,7 @@ namespace Model
     inline CreateCachediSCSIVolumeRequest& WithGatewayARN(const Aws::String& value) { SetGatewayARN(value); return *this;}
 
     
-    inline CreateCachediSCSIVolumeRequest& WithGatewayARN(Aws::String&& value) { SetGatewayARN(value); return *this;}
+    inline CreateCachediSCSIVolumeRequest& WithGatewayARN(Aws::String&& value) { SetGatewayARN(std::move(value)); return *this;}
 
     
     inline CreateCachediSCSIVolumeRequest& WithGatewayARN(const char* value) { SetGatewayARN(value); return *this;}
@@ -72,7 +73,7 @@ namespace Model
     inline void SetSnapshotId(const Aws::String& value) { m_snapshotIdHasBeenSet = true; m_snapshotId = value; }
 
     
-    inline void SetSnapshotId(Aws::String&& value) { m_snapshotIdHasBeenSet = true; m_snapshotId = value; }
+    inline void SetSnapshotId(Aws::String&& value) { m_snapshotIdHasBeenSet = true; m_snapshotId = std::move(value); }
 
     
     inline void SetSnapshotId(const char* value) { m_snapshotIdHasBeenSet = true; m_snapshotId.assign(value); }
@@ -81,7 +82,7 @@ namespace Model
     inline CreateCachediSCSIVolumeRequest& WithSnapshotId(const Aws::String& value) { SetSnapshotId(value); return *this;}
 
     
-    inline CreateCachediSCSIVolumeRequest& WithSnapshotId(Aws::String&& value) { SetSnapshotId(value); return *this;}
+    inline CreateCachediSCSIVolumeRequest& WithSnapshotId(Aws::String&& value) { SetSnapshotId(std::move(value)); return *this;}
 
     
     inline CreateCachediSCSIVolumeRequest& WithSnapshotId(const char* value) { SetSnapshotId(value); return *this;}
@@ -93,7 +94,7 @@ namespace Model
     inline void SetTargetName(const Aws::String& value) { m_targetNameHasBeenSet = true; m_targetName = value; }
 
     
-    inline void SetTargetName(Aws::String&& value) { m_targetNameHasBeenSet = true; m_targetName = value; }
+    inline void SetTargetName(Aws::String&& value) { m_targetNameHasBeenSet = true; m_targetName = std::move(value); }
 
     
     inline void SetTargetName(const char* value) { m_targetNameHasBeenSet = true; m_targetName.assign(value); }
@@ -102,7 +103,7 @@ namespace Model
     inline CreateCachediSCSIVolumeRequest& WithTargetName(const Aws::String& value) { SetTargetName(value); return *this;}
 
     
-    inline CreateCachediSCSIVolumeRequest& WithTargetName(Aws::String&& value) { SetTargetName(value); return *this;}
+    inline CreateCachediSCSIVolumeRequest& WithTargetName(Aws::String&& value) { SetTargetName(std::move(value)); return *this;}
 
     
     inline CreateCachediSCSIVolumeRequest& WithTargetName(const char* value) { SetTargetName(value); return *this;}
@@ -129,7 +130,7 @@ namespace Model
      * <code>VolumeSizeInBytes</code> value for this new volume must be equal to or
      * larger than the size of the existing volume, in bytes.</p>
      */
-    inline void SetSourceVolumeARN(Aws::String&& value) { m_sourceVolumeARNHasBeenSet = true; m_sourceVolumeARN = value; }
+    inline void SetSourceVolumeARN(Aws::String&& value) { m_sourceVolumeARNHasBeenSet = true; m_sourceVolumeARN = std::move(value); }
 
     /**
      * <p>The ARN for an existing volume. Specifying this ARN makes the new volume into
@@ -153,7 +154,7 @@ namespace Model
      * <code>VolumeSizeInBytes</code> value for this new volume must be equal to or
      * larger than the size of the existing volume, in bytes.</p>
      */
-    inline CreateCachediSCSIVolumeRequest& WithSourceVolumeARN(Aws::String&& value) { SetSourceVolumeARN(value); return *this;}
+    inline CreateCachediSCSIVolumeRequest& WithSourceVolumeARN(Aws::String&& value) { SetSourceVolumeARN(std::move(value)); return *this;}
 
     /**
      * <p>The ARN for an existing volume. Specifying this ARN makes the new volume into
@@ -170,7 +171,7 @@ namespace Model
     inline void SetNetworkInterfaceId(const Aws::String& value) { m_networkInterfaceIdHasBeenSet = true; m_networkInterfaceId = value; }
 
     
-    inline void SetNetworkInterfaceId(Aws::String&& value) { m_networkInterfaceIdHasBeenSet = true; m_networkInterfaceId = value; }
+    inline void SetNetworkInterfaceId(Aws::String&& value) { m_networkInterfaceIdHasBeenSet = true; m_networkInterfaceId = std::move(value); }
 
     
     inline void SetNetworkInterfaceId(const char* value) { m_networkInterfaceIdHasBeenSet = true; m_networkInterfaceId.assign(value); }
@@ -179,7 +180,7 @@ namespace Model
     inline CreateCachediSCSIVolumeRequest& WithNetworkInterfaceId(const Aws::String& value) { SetNetworkInterfaceId(value); return *this;}
 
     
-    inline CreateCachediSCSIVolumeRequest& WithNetworkInterfaceId(Aws::String&& value) { SetNetworkInterfaceId(value); return *this;}
+    inline CreateCachediSCSIVolumeRequest& WithNetworkInterfaceId(Aws::String&& value) { SetNetworkInterfaceId(std::move(value)); return *this;}
 
     
     inline CreateCachediSCSIVolumeRequest& WithNetworkInterfaceId(const char* value) { SetNetworkInterfaceId(value); return *this;}
@@ -191,7 +192,7 @@ namespace Model
     inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
 
     
-    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
+    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
 
     
     inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
@@ -200,7 +201,7 @@ namespace Model
     inline CreateCachediSCSIVolumeRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
 
     
-    inline CreateCachediSCSIVolumeRequest& WithClientToken(Aws::String&& value) { SetClientToken(value); return *this;}
+    inline CreateCachediSCSIVolumeRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
 
     
     inline CreateCachediSCSIVolumeRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}

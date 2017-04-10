@@ -16,6 +16,7 @@
 #include <aws/directconnect/DirectConnect_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/directconnect/model/VirtualInterface.h>
+#include <utility>
 
 namespace Aws
 {
@@ -59,7 +60,7 @@ namespace Model
     /**
      * <p>A list of virtual interfaces.</p>
      */
-    inline void SetVirtualInterfaces(Aws::Vector<VirtualInterface>&& value) { m_virtualInterfaces = value; }
+    inline void SetVirtualInterfaces(Aws::Vector<VirtualInterface>&& value) { m_virtualInterfaces = std::move(value); }
 
     /**
      * <p>A list of virtual interfaces.</p>
@@ -69,7 +70,7 @@ namespace Model
     /**
      * <p>A list of virtual interfaces.</p>
      */
-    inline DescribeVirtualInterfacesResult& WithVirtualInterfaces(Aws::Vector<VirtualInterface>&& value) { SetVirtualInterfaces(value); return *this;}
+    inline DescribeVirtualInterfacesResult& WithVirtualInterfaces(Aws::Vector<VirtualInterface>&& value) { SetVirtualInterfaces(std::move(value)); return *this;}
 
     /**
      * <p>A list of virtual interfaces.</p>
@@ -79,7 +80,7 @@ namespace Model
     /**
      * <p>A list of virtual interfaces.</p>
      */
-    inline DescribeVirtualInterfacesResult& AddVirtualInterfaces(VirtualInterface&& value) { m_virtualInterfaces.push_back(value); return *this; }
+    inline DescribeVirtualInterfacesResult& AddVirtualInterfaces(VirtualInterface&& value) { m_virtualInterfaces.push_back(std::move(value)); return *this; }
 
   private:
     Aws::Vector<VirtualInterface> m_virtualInterfaces;

@@ -16,6 +16,7 @@
 #include <aws/codecommit/CodeCommit_EXPORTS.h>
 #include <aws/codecommit/CodeCommitRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -52,7 +53,7 @@ namespace Model
     /**
      * <p>The name of the repository to set or change the default branch for.</p>
      */
-    inline void SetRepositoryName(Aws::String&& value) { m_repositoryNameHasBeenSet = true; m_repositoryName = value; }
+    inline void SetRepositoryName(Aws::String&& value) { m_repositoryNameHasBeenSet = true; m_repositoryName = std::move(value); }
 
     /**
      * <p>The name of the repository to set or change the default branch for.</p>
@@ -67,7 +68,7 @@ namespace Model
     /**
      * <p>The name of the repository to set or change the default branch for.</p>
      */
-    inline UpdateDefaultBranchRequest& WithRepositoryName(Aws::String&& value) { SetRepositoryName(value); return *this;}
+    inline UpdateDefaultBranchRequest& WithRepositoryName(Aws::String&& value) { SetRepositoryName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the repository to set or change the default branch for.</p>
@@ -87,7 +88,7 @@ namespace Model
     /**
      * <p>The name of the branch to set as the default.</p>
      */
-    inline void SetDefaultBranchName(Aws::String&& value) { m_defaultBranchNameHasBeenSet = true; m_defaultBranchName = value; }
+    inline void SetDefaultBranchName(Aws::String&& value) { m_defaultBranchNameHasBeenSet = true; m_defaultBranchName = std::move(value); }
 
     /**
      * <p>The name of the branch to set as the default.</p>
@@ -102,7 +103,7 @@ namespace Model
     /**
      * <p>The name of the branch to set as the default.</p>
      */
-    inline UpdateDefaultBranchRequest& WithDefaultBranchName(Aws::String&& value) { SetDefaultBranchName(value); return *this;}
+    inline UpdateDefaultBranchRequest& WithDefaultBranchName(Aws::String&& value) { SetDefaultBranchName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the branch to set as the default.</p>

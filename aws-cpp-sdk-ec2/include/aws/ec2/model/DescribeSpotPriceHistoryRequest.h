@@ -20,6 +20,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/InstanceType.h>
 #include <aws/ec2/model/Filter.h>
+#include <utility>
 
 namespace Aws
 {
@@ -88,7 +89,7 @@ namespace Model
      * price history data, in UTC format (for example,
      * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
      */
-    inline void SetStartTime(Aws::Utils::DateTime&& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
+    inline void SetStartTime(Aws::Utils::DateTime&& value) { m_startTimeHasBeenSet = true; m_startTime = std::move(value); }
 
     /**
      * <p>The date and time, up to the past 90 days, from which to start retrieving the
@@ -102,7 +103,7 @@ namespace Model
      * price history data, in UTC format (for example,
      * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
      */
-    inline DescribeSpotPriceHistoryRequest& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(value); return *this;}
+    inline DescribeSpotPriceHistoryRequest& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(std::move(value)); return *this;}
 
     /**
      * <p>The date and time, up to the current date, from which to stop retrieving the
@@ -123,7 +124,7 @@ namespace Model
      * price history data, in UTC format (for example,
      * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
      */
-    inline void SetEndTime(Aws::Utils::DateTime&& value) { m_endTimeHasBeenSet = true; m_endTime = value; }
+    inline void SetEndTime(Aws::Utils::DateTime&& value) { m_endTimeHasBeenSet = true; m_endTime = std::move(value); }
 
     /**
      * <p>The date and time, up to the current date, from which to stop retrieving the
@@ -137,7 +138,7 @@ namespace Model
      * price history data, in UTC format (for example,
      * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
      */
-    inline DescribeSpotPriceHistoryRequest& WithEndTime(Aws::Utils::DateTime&& value) { SetEndTime(value); return *this;}
+    inline DescribeSpotPriceHistoryRequest& WithEndTime(Aws::Utils::DateTime&& value) { SetEndTime(std::move(value)); return *this;}
 
     /**
      * <p>Filters the results by the specified instance types. Note that T2 and HS1
@@ -155,7 +156,7 @@ namespace Model
      * <p>Filters the results by the specified instance types. Note that T2 and HS1
      * instance types are not supported.</p>
      */
-    inline void SetInstanceTypes(Aws::Vector<InstanceType>&& value) { m_instanceTypesHasBeenSet = true; m_instanceTypes = value; }
+    inline void SetInstanceTypes(Aws::Vector<InstanceType>&& value) { m_instanceTypesHasBeenSet = true; m_instanceTypes = std::move(value); }
 
     /**
      * <p>Filters the results by the specified instance types. Note that T2 and HS1
@@ -167,7 +168,7 @@ namespace Model
      * <p>Filters the results by the specified instance types. Note that T2 and HS1
      * instance types are not supported.</p>
      */
-    inline DescribeSpotPriceHistoryRequest& WithInstanceTypes(Aws::Vector<InstanceType>&& value) { SetInstanceTypes(value); return *this;}
+    inline DescribeSpotPriceHistoryRequest& WithInstanceTypes(Aws::Vector<InstanceType>&& value) { SetInstanceTypes(std::move(value)); return *this;}
 
     /**
      * <p>Filters the results by the specified instance types. Note that T2 and HS1
@@ -179,7 +180,7 @@ namespace Model
      * <p>Filters the results by the specified instance types. Note that T2 and HS1
      * instance types are not supported.</p>
      */
-    inline DescribeSpotPriceHistoryRequest& AddInstanceTypes(InstanceType&& value) { m_instanceTypesHasBeenSet = true; m_instanceTypes.push_back(value); return *this; }
+    inline DescribeSpotPriceHistoryRequest& AddInstanceTypes(InstanceType&& value) { m_instanceTypesHasBeenSet = true; m_instanceTypes.push_back(std::move(value)); return *this; }
 
     /**
      * <p>Filters the results by the specified basic product descriptions.</p>
@@ -194,7 +195,7 @@ namespace Model
     /**
      * <p>Filters the results by the specified basic product descriptions.</p>
      */
-    inline void SetProductDescriptions(Aws::Vector<Aws::String>&& value) { m_productDescriptionsHasBeenSet = true; m_productDescriptions = value; }
+    inline void SetProductDescriptions(Aws::Vector<Aws::String>&& value) { m_productDescriptionsHasBeenSet = true; m_productDescriptions = std::move(value); }
 
     /**
      * <p>Filters the results by the specified basic product descriptions.</p>
@@ -204,7 +205,7 @@ namespace Model
     /**
      * <p>Filters the results by the specified basic product descriptions.</p>
      */
-    inline DescribeSpotPriceHistoryRequest& WithProductDescriptions(Aws::Vector<Aws::String>&& value) { SetProductDescriptions(value); return *this;}
+    inline DescribeSpotPriceHistoryRequest& WithProductDescriptions(Aws::Vector<Aws::String>&& value) { SetProductDescriptions(std::move(value)); return *this;}
 
     /**
      * <p>Filters the results by the specified basic product descriptions.</p>
@@ -214,7 +215,7 @@ namespace Model
     /**
      * <p>Filters the results by the specified basic product descriptions.</p>
      */
-    inline DescribeSpotPriceHistoryRequest& AddProductDescriptions(Aws::String&& value) { m_productDescriptionsHasBeenSet = true; m_productDescriptions.push_back(value); return *this; }
+    inline DescribeSpotPriceHistoryRequest& AddProductDescriptions(Aws::String&& value) { m_productDescriptionsHasBeenSet = true; m_productDescriptions.push_back(std::move(value)); return *this; }
 
     /**
      * <p>Filters the results by the specified basic product descriptions.</p>
@@ -273,7 +274,7 @@ namespace Model
      * wildcards (* and ?). Greater than or less than comparison is not supported.</p>
      * </li> </ul>
      */
-    inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = value; }
+    inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
 
     /**
      * <p>One or more filters.</p> <ul> <li> <p> <code>availability-zone</code> - The
@@ -309,7 +310,7 @@ namespace Model
      * wildcards (* and ?). Greater than or less than comparison is not supported.</p>
      * </li> </ul>
      */
-    inline DescribeSpotPriceHistoryRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(value); return *this;}
+    inline DescribeSpotPriceHistoryRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(std::move(value)); return *this;}
 
     /**
      * <p>One or more filters.</p> <ul> <li> <p> <code>availability-zone</code> - The
@@ -345,7 +346,7 @@ namespace Model
      * wildcards (* and ?). Greater than or less than comparison is not supported.</p>
      * </li> </ul>
      */
-    inline DescribeSpotPriceHistoryRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
+    inline DescribeSpotPriceHistoryRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 
     /**
      * <p>Filters the results by the specified Availability Zone.</p>
@@ -360,7 +361,7 @@ namespace Model
     /**
      * <p>Filters the results by the specified Availability Zone.</p>
      */
-    inline void SetAvailabilityZone(Aws::String&& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = value; }
+    inline void SetAvailabilityZone(Aws::String&& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = std::move(value); }
 
     /**
      * <p>Filters the results by the specified Availability Zone.</p>
@@ -375,7 +376,7 @@ namespace Model
     /**
      * <p>Filters the results by the specified Availability Zone.</p>
      */
-    inline DescribeSpotPriceHistoryRequest& WithAvailabilityZone(Aws::String&& value) { SetAvailabilityZone(value); return *this;}
+    inline DescribeSpotPriceHistoryRequest& WithAvailabilityZone(Aws::String&& value) { SetAvailabilityZone(std::move(value)); return *this;}
 
     /**
      * <p>Filters the results by the specified Availability Zone.</p>
@@ -416,7 +417,7 @@ namespace Model
     /**
      * <p>The token for the next set of results.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
      * <p>The token for the next set of results.</p>
@@ -431,7 +432,7 @@ namespace Model
     /**
      * <p>The token for the next set of results.</p>
      */
-    inline DescribeSpotPriceHistoryRequest& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline DescribeSpotPriceHistoryRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>The token for the next set of results.</p>

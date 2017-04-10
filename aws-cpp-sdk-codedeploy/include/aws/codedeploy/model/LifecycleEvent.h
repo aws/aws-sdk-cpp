@@ -18,6 +18,7 @@
 #include <aws/codedeploy/model/Diagnostics.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/codedeploy/model/LifecycleEventStatus.h>
+#include <utility>
 
 namespace Aws
 {
@@ -62,7 +63,7 @@ namespace Model
      * <p>The deployment lifecycle event name, such as ApplicationStop, BeforeInstall,
      * AfterInstall, ApplicationStart, or ValidateService.</p>
      */
-    inline void SetLifecycleEventName(Aws::String&& value) { m_lifecycleEventNameHasBeenSet = true; m_lifecycleEventName = value; }
+    inline void SetLifecycleEventName(Aws::String&& value) { m_lifecycleEventNameHasBeenSet = true; m_lifecycleEventName = std::move(value); }
 
     /**
      * <p>The deployment lifecycle event name, such as ApplicationStop, BeforeInstall,
@@ -80,7 +81,7 @@ namespace Model
      * <p>The deployment lifecycle event name, such as ApplicationStop, BeforeInstall,
      * AfterInstall, ApplicationStart, or ValidateService.</p>
      */
-    inline LifecycleEvent& WithLifecycleEventName(Aws::String&& value) { SetLifecycleEventName(value); return *this;}
+    inline LifecycleEvent& WithLifecycleEventName(Aws::String&& value) { SetLifecycleEventName(std::move(value)); return *this;}
 
     /**
      * <p>The deployment lifecycle event name, such as ApplicationStop, BeforeInstall,
@@ -101,7 +102,7 @@ namespace Model
     /**
      * <p>Diagnostic information about the deployment lifecycle event.</p>
      */
-    inline void SetDiagnostics(Diagnostics&& value) { m_diagnosticsHasBeenSet = true; m_diagnostics = value; }
+    inline void SetDiagnostics(Diagnostics&& value) { m_diagnosticsHasBeenSet = true; m_diagnostics = std::move(value); }
 
     /**
      * <p>Diagnostic information about the deployment lifecycle event.</p>
@@ -111,7 +112,7 @@ namespace Model
     /**
      * <p>Diagnostic information about the deployment lifecycle event.</p>
      */
-    inline LifecycleEvent& WithDiagnostics(Diagnostics&& value) { SetDiagnostics(value); return *this;}
+    inline LifecycleEvent& WithDiagnostics(Diagnostics&& value) { SetDiagnostics(std::move(value)); return *this;}
 
     /**
      * <p>A timestamp indicating when the deployment lifecycle event started.</p>
@@ -126,7 +127,7 @@ namespace Model
     /**
      * <p>A timestamp indicating when the deployment lifecycle event started.</p>
      */
-    inline void SetStartTime(Aws::Utils::DateTime&& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
+    inline void SetStartTime(Aws::Utils::DateTime&& value) { m_startTimeHasBeenSet = true; m_startTime = std::move(value); }
 
     /**
      * <p>A timestamp indicating when the deployment lifecycle event started.</p>
@@ -136,7 +137,7 @@ namespace Model
     /**
      * <p>A timestamp indicating when the deployment lifecycle event started.</p>
      */
-    inline LifecycleEvent& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(value); return *this;}
+    inline LifecycleEvent& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(std::move(value)); return *this;}
 
     /**
      * <p>A timestamp indicating when the deployment lifecycle event ended.</p>
@@ -151,7 +152,7 @@ namespace Model
     /**
      * <p>A timestamp indicating when the deployment lifecycle event ended.</p>
      */
-    inline void SetEndTime(Aws::Utils::DateTime&& value) { m_endTimeHasBeenSet = true; m_endTime = value; }
+    inline void SetEndTime(Aws::Utils::DateTime&& value) { m_endTimeHasBeenSet = true; m_endTime = std::move(value); }
 
     /**
      * <p>A timestamp indicating when the deployment lifecycle event ended.</p>
@@ -161,7 +162,7 @@ namespace Model
     /**
      * <p>A timestamp indicating when the deployment lifecycle event ended.</p>
      */
-    inline LifecycleEvent& WithEndTime(Aws::Utils::DateTime&& value) { SetEndTime(value); return *this;}
+    inline LifecycleEvent& WithEndTime(Aws::Utils::DateTime&& value) { SetEndTime(std::move(value)); return *this;}
 
     /**
      * <p>The deployment lifecycle event status:</p> <ul> <li> <p>Pending: The
@@ -194,7 +195,7 @@ namespace Model
      * lifecycle event has been skipped.</p> </li> <li> <p>Unknown: The deployment
      * lifecycle event is unknown.</p> </li> </ul>
      */
-    inline void SetStatus(LifecycleEventStatus&& value) { m_statusHasBeenSet = true; m_status = value; }
+    inline void SetStatus(LifecycleEventStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
      * <p>The deployment lifecycle event status:</p> <ul> <li> <p>Pending: The
@@ -216,7 +217,7 @@ namespace Model
      * lifecycle event has been skipped.</p> </li> <li> <p>Unknown: The deployment
      * lifecycle event is unknown.</p> </li> </ul>
      */
-    inline LifecycleEvent& WithStatus(LifecycleEventStatus&& value) { SetStatus(value); return *this;}
+    inline LifecycleEvent& WithStatus(LifecycleEventStatus&& value) { SetStatus(std::move(value)); return *this;}
 
   private:
     Aws::String m_lifecycleEventName;

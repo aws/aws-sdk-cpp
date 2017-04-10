@@ -18,6 +18,7 @@
 #include <aws/rekognition/model/Image.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/rekognition/model/Attribute.h>
+#include <utility>
 
 namespace Aws
 {
@@ -53,7 +54,7 @@ namespace Model
      * <p>The image in which you want to detect faces. You can specify a blob or an S3
      * object. </p>
      */
-    inline void SetImage(Image&& value) { m_imageHasBeenSet = true; m_image = value; }
+    inline void SetImage(Image&& value) { m_imageHasBeenSet = true; m_image = std::move(value); }
 
     /**
      * <p>The image in which you want to detect faces. You can specify a blob or an S3
@@ -65,7 +66,7 @@ namespace Model
      * <p>The image in which you want to detect faces. You can specify a blob or an S3
      * object. </p>
      */
-    inline DetectFacesRequest& WithImage(Image&& value) { SetImage(value); return *this;}
+    inline DetectFacesRequest& WithImage(Image&& value) { SetImage(std::move(value)); return *this;}
 
     /**
      * <p>A list of facial attributes you want to be returned. This can be the default
@@ -107,7 +108,7 @@ namespace Model
      * logical AND operator to determine which attributes to return (in this case, all
      * attributes). </p>
      */
-    inline void SetAttributes(Aws::Vector<Attribute>&& value) { m_attributesHasBeenSet = true; m_attributes = value; }
+    inline void SetAttributes(Aws::Vector<Attribute>&& value) { m_attributesHasBeenSet = true; m_attributes = std::move(value); }
 
     /**
      * <p>A list of facial attributes you want to be returned. This can be the default
@@ -135,7 +136,7 @@ namespace Model
      * logical AND operator to determine which attributes to return (in this case, all
      * attributes). </p>
      */
-    inline DetectFacesRequest& WithAttributes(Aws::Vector<Attribute>&& value) { SetAttributes(value); return *this;}
+    inline DetectFacesRequest& WithAttributes(Aws::Vector<Attribute>&& value) { SetAttributes(std::move(value)); return *this;}
 
     /**
      * <p>A list of facial attributes you want to be returned. This can be the default
@@ -163,7 +164,7 @@ namespace Model
      * logical AND operator to determine which attributes to return (in this case, all
      * attributes). </p>
      */
-    inline DetectFacesRequest& AddAttributes(Attribute&& value) { m_attributesHasBeenSet = true; m_attributes.push_back(value); return *this; }
+    inline DetectFacesRequest& AddAttributes(Attribute&& value) { m_attributesHasBeenSet = true; m_attributes.push_back(std::move(value)); return *this; }
 
   private:
     Image m_image;

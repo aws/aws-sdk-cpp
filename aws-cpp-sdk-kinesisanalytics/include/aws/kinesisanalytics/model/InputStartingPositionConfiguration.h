@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/kinesisanalytics/KinesisAnalytics_EXPORTS.h>
 #include <aws/kinesisanalytics/model/InputStartingPosition.h>
+#include <utility>
 
 namespace Aws
 {
@@ -75,7 +76,7 @@ namespace Model
      * <code>LAST_STOPPED_POINT</code> - Resume reading from where the application last
      * stopped reading.</p> </li> </ul>
      */
-    inline void SetInputStartingPosition(InputStartingPosition&& value) { m_inputStartingPositionHasBeenSet = true; m_inputStartingPosition = value; }
+    inline void SetInputStartingPosition(InputStartingPosition&& value) { m_inputStartingPositionHasBeenSet = true; m_inputStartingPosition = std::move(value); }
 
     /**
      * <p>The starting position on the stream.</p> <ul> <li> <p> <code>LATEST</code> -
@@ -97,7 +98,7 @@ namespace Model
      * <code>LAST_STOPPED_POINT</code> - Resume reading from where the application last
      * stopped reading.</p> </li> </ul>
      */
-    inline InputStartingPositionConfiguration& WithInputStartingPosition(InputStartingPosition&& value) { SetInputStartingPosition(value); return *this;}
+    inline InputStartingPositionConfiguration& WithInputStartingPosition(InputStartingPosition&& value) { SetInputStartingPosition(std::move(value)); return *this;}
 
   private:
     InputStartingPosition m_inputStartingPosition;

@@ -17,6 +17,7 @@
 #include <aws/devicefarm/DeviceFarmRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/devicefarm/model/UploadType.h>
+#include <utility>
 
 namespace Aws
 {
@@ -53,7 +54,7 @@ namespace Model
     /**
      * <p>The ARN of the project for the upload.</p>
      */
-    inline void SetProjectArn(Aws::String&& value) { m_projectArnHasBeenSet = true; m_projectArn = value; }
+    inline void SetProjectArn(Aws::String&& value) { m_projectArnHasBeenSet = true; m_projectArn = std::move(value); }
 
     /**
      * <p>The ARN of the project for the upload.</p>
@@ -68,7 +69,7 @@ namespace Model
     /**
      * <p>The ARN of the project for the upload.</p>
      */
-    inline CreateUploadRequest& WithProjectArn(Aws::String&& value) { SetProjectArn(value); return *this;}
+    inline CreateUploadRequest& WithProjectArn(Aws::String&& value) { SetProjectArn(std::move(value)); return *this;}
 
     /**
      * <p>The ARN of the project for the upload.</p>
@@ -100,7 +101,7 @@ namespace Model
      * <code>.apk</code> extension. For all others, the file name must end with the
      * <code>.zip</code> file extension.</p>
      */
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p>The upload's file name. The name should not contain the '/' character. If
@@ -127,7 +128,7 @@ namespace Model
      * <code>.apk</code> extension. For all others, the file name must end with the
      * <code>.zip</code> file extension.</p>
      */
-    inline CreateUploadRequest& WithName(Aws::String&& value) { SetName(value); return *this;}
+    inline CreateUploadRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>The upload's file name. The name should not contain the '/' character. If
@@ -208,7 +209,7 @@ namespace Model
      * <code>WEB_APP</code> specified, AWS Device Farm throws an
      * <code>ArgumentException</code> error.</p>
      */
-    inline void SetType(UploadType&& value) { m_typeHasBeenSet = true; m_type = value; }
+    inline void SetType(UploadType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
      * <p>The upload's upload type.</p> <p>Must be one of the following values:</p>
@@ -256,7 +257,7 @@ namespace Model
      * <code>WEB_APP</code> specified, AWS Device Farm throws an
      * <code>ArgumentException</code> error.</p>
      */
-    inline CreateUploadRequest& WithType(UploadType&& value) { SetType(value); return *this;}
+    inline CreateUploadRequest& WithType(UploadType&& value) { SetType(std::move(value)); return *this;}
 
     /**
      * <p>The upload's content type (for example, "application/octet-stream").</p>
@@ -271,7 +272,7 @@ namespace Model
     /**
      * <p>The upload's content type (for example, "application/octet-stream").</p>
      */
-    inline void SetContentType(Aws::String&& value) { m_contentTypeHasBeenSet = true; m_contentType = value; }
+    inline void SetContentType(Aws::String&& value) { m_contentTypeHasBeenSet = true; m_contentType = std::move(value); }
 
     /**
      * <p>The upload's content type (for example, "application/octet-stream").</p>
@@ -286,7 +287,7 @@ namespace Model
     /**
      * <p>The upload's content type (for example, "application/octet-stream").</p>
      */
-    inline CreateUploadRequest& WithContentType(Aws::String&& value) { SetContentType(value); return *this;}
+    inline CreateUploadRequest& WithContentType(Aws::String&& value) { SetContentType(std::move(value)); return *this;}
 
     /**
      * <p>The upload's content type (for example, "application/octet-stream").</p>

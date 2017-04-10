@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/elasticache/model/ResponseMetadata.h>
 #include <aws/elasticache/model/CacheSubnetGroup.h>
+#include <utility>
 
 namespace Aws
 {
@@ -61,7 +62,7 @@ namespace Model
     /**
      * <p>Provides an identifier to allow retrieval of paginated results.</p>
      */
-    inline void SetMarker(Aws::String&& value) { m_marker = value; }
+    inline void SetMarker(Aws::String&& value) { m_marker = std::move(value); }
 
     /**
      * <p>Provides an identifier to allow retrieval of paginated results.</p>
@@ -76,7 +77,7 @@ namespace Model
     /**
      * <p>Provides an identifier to allow retrieval of paginated results.</p>
      */
-    inline DescribeCacheSubnetGroupsResult& WithMarker(Aws::String&& value) { SetMarker(value); return *this;}
+    inline DescribeCacheSubnetGroupsResult& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
 
     /**
      * <p>Provides an identifier to allow retrieval of paginated results.</p>
@@ -99,7 +100,7 @@ namespace Model
      * <p>A list of cache subnet groups. Each element in the list contains detailed
      * information about one group.</p>
      */
-    inline void SetCacheSubnetGroups(Aws::Vector<CacheSubnetGroup>&& value) { m_cacheSubnetGroups = value; }
+    inline void SetCacheSubnetGroups(Aws::Vector<CacheSubnetGroup>&& value) { m_cacheSubnetGroups = std::move(value); }
 
     /**
      * <p>A list of cache subnet groups. Each element in the list contains detailed
@@ -111,7 +112,7 @@ namespace Model
      * <p>A list of cache subnet groups. Each element in the list contains detailed
      * information about one group.</p>
      */
-    inline DescribeCacheSubnetGroupsResult& WithCacheSubnetGroups(Aws::Vector<CacheSubnetGroup>&& value) { SetCacheSubnetGroups(value); return *this;}
+    inline DescribeCacheSubnetGroupsResult& WithCacheSubnetGroups(Aws::Vector<CacheSubnetGroup>&& value) { SetCacheSubnetGroups(std::move(value)); return *this;}
 
     /**
      * <p>A list of cache subnet groups. Each element in the list contains detailed
@@ -123,7 +124,7 @@ namespace Model
      * <p>A list of cache subnet groups. Each element in the list contains detailed
      * information about one group.</p>
      */
-    inline DescribeCacheSubnetGroupsResult& AddCacheSubnetGroups(CacheSubnetGroup&& value) { m_cacheSubnetGroups.push_back(value); return *this; }
+    inline DescribeCacheSubnetGroupsResult& AddCacheSubnetGroups(CacheSubnetGroup&& value) { m_cacheSubnetGroups.push_back(std::move(value)); return *this; }
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
@@ -132,13 +133,13 @@ namespace Model
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
 
     
     inline DescribeCacheSubnetGroupsResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
 
     
-    inline DescribeCacheSubnetGroupsResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
+    inline DescribeCacheSubnetGroupsResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
     Aws::String m_marker;

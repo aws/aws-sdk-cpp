@@ -16,6 +16,7 @@
 #include <aws/clouddirectory/CloudDirectory_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -61,7 +62,7 @@ namespace Model
      * <p>Children structure, which is a map with key as the <code>LinkName</code> and
      * <code>ObjectIdentifier</code> as the value.</p>
      */
-    inline void SetChildren(Aws::Map<Aws::String, Aws::String>&& value) { m_childrenHasBeenSet = true; m_children = value; }
+    inline void SetChildren(Aws::Map<Aws::String, Aws::String>&& value) { m_childrenHasBeenSet = true; m_children = std::move(value); }
 
     /**
      * <p>Children structure, which is a map with key as the <code>LinkName</code> and
@@ -73,49 +74,49 @@ namespace Model
      * <p>Children structure, which is a map with key as the <code>LinkName</code> and
      * <code>ObjectIdentifier</code> as the value.</p>
      */
-    inline BatchListObjectChildrenResponse& WithChildren(Aws::Map<Aws::String, Aws::String>&& value) { SetChildren(value); return *this;}
+    inline BatchListObjectChildrenResponse& WithChildren(Aws::Map<Aws::String, Aws::String>&& value) { SetChildren(std::move(value)); return *this;}
 
     /**
      * <p>Children structure, which is a map with key as the <code>LinkName</code> and
      * <code>ObjectIdentifier</code> as the value.</p>
      */
-    inline BatchListObjectChildrenResponse& AddChildren(const Aws::String& key, const Aws::String& value) { m_childrenHasBeenSet = true; m_children[key] = value; return *this; }
+    inline BatchListObjectChildrenResponse& AddChildren(const Aws::String& key, const Aws::String& value) { m_childrenHasBeenSet = true; m_children.emplace(key, value); return *this; }
 
     /**
      * <p>Children structure, which is a map with key as the <code>LinkName</code> and
      * <code>ObjectIdentifier</code> as the value.</p>
      */
-    inline BatchListObjectChildrenResponse& AddChildren(Aws::String&& key, const Aws::String& value) { m_childrenHasBeenSet = true; m_children[key] = value; return *this; }
+    inline BatchListObjectChildrenResponse& AddChildren(Aws::String&& key, const Aws::String& value) { m_childrenHasBeenSet = true; m_children.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>Children structure, which is a map with key as the <code>LinkName</code> and
      * <code>ObjectIdentifier</code> as the value.</p>
      */
-    inline BatchListObjectChildrenResponse& AddChildren(const Aws::String& key, Aws::String&& value) { m_childrenHasBeenSet = true; m_children[key] = value; return *this; }
+    inline BatchListObjectChildrenResponse& AddChildren(const Aws::String& key, Aws::String&& value) { m_childrenHasBeenSet = true; m_children.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>Children structure, which is a map with key as the <code>LinkName</code> and
      * <code>ObjectIdentifier</code> as the value.</p>
      */
-    inline BatchListObjectChildrenResponse& AddChildren(Aws::String&& key, Aws::String&& value) { m_childrenHasBeenSet = true; m_children[key] = value; return *this; }
+    inline BatchListObjectChildrenResponse& AddChildren(Aws::String&& key, Aws::String&& value) { m_childrenHasBeenSet = true; m_children.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
      * <p>Children structure, which is a map with key as the <code>LinkName</code> and
      * <code>ObjectIdentifier</code> as the value.</p>
      */
-    inline BatchListObjectChildrenResponse& AddChildren(const char* key, Aws::String&& value) { m_childrenHasBeenSet = true; m_children[key] = value; return *this; }
+    inline BatchListObjectChildrenResponse& AddChildren(const char* key, Aws::String&& value) { m_childrenHasBeenSet = true; m_children.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>Children structure, which is a map with key as the <code>LinkName</code> and
      * <code>ObjectIdentifier</code> as the value.</p>
      */
-    inline BatchListObjectChildrenResponse& AddChildren(Aws::String&& key, const char* value) { m_childrenHasBeenSet = true; m_children[key] = value; return *this; }
+    inline BatchListObjectChildrenResponse& AddChildren(Aws::String&& key, const char* value) { m_childrenHasBeenSet = true; m_children.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>Children structure, which is a map with key as the <code>LinkName</code> and
      * <code>ObjectIdentifier</code> as the value.</p>
      */
-    inline BatchListObjectChildrenResponse& AddChildren(const char* key, const char* value) { m_childrenHasBeenSet = true; m_children[key] = value; return *this; }
+    inline BatchListObjectChildrenResponse& AddChildren(const char* key, const char* value) { m_childrenHasBeenSet = true; m_children.emplace(key, value); return *this; }
 
     /**
      * <p>The pagination token.</p>
@@ -130,7 +131,7 @@ namespace Model
     /**
      * <p>The pagination token.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
      * <p>The pagination token.</p>
@@ -145,7 +146,7 @@ namespace Model
     /**
      * <p>The pagination token.</p>
      */
-    inline BatchListObjectChildrenResponse& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline BatchListObjectChildrenResponse& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>The pagination token.</p>

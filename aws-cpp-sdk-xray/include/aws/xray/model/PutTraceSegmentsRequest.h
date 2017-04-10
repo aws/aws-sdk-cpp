@@ -17,6 +17,7 @@
 #include <aws/xray/XRayRequest.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -125,7 +126,7 @@ namespace Model
      * hexadecimal.</p> </li> <li> <p>A 96-bit identifier for the trace, globally
      * unique, in 24 hexadecimal digits.</p> </li> </ul>
      */
-    inline void SetTraceSegmentDocuments(Aws::Vector<Aws::String>&& value) { m_traceSegmentDocumentsHasBeenSet = true; m_traceSegmentDocuments = value; }
+    inline void SetTraceSegmentDocuments(Aws::Vector<Aws::String>&& value) { m_traceSegmentDocumentsHasBeenSet = true; m_traceSegmentDocuments = std::move(value); }
 
     /**
      * <p>A JSON document defining one or more segments or subsegments. Segments must
@@ -187,7 +188,7 @@ namespace Model
      * hexadecimal.</p> </li> <li> <p>A 96-bit identifier for the trace, globally
      * unique, in 24 hexadecimal digits.</p> </li> </ul>
      */
-    inline PutTraceSegmentsRequest& WithTraceSegmentDocuments(Aws::Vector<Aws::String>&& value) { SetTraceSegmentDocuments(value); return *this;}
+    inline PutTraceSegmentsRequest& WithTraceSegmentDocuments(Aws::Vector<Aws::String>&& value) { SetTraceSegmentDocuments(std::move(value)); return *this;}
 
     /**
      * <p>A JSON document defining one or more segments or subsegments. Segments must
@@ -249,7 +250,7 @@ namespace Model
      * hexadecimal.</p> </li> <li> <p>A 96-bit identifier for the trace, globally
      * unique, in 24 hexadecimal digits.</p> </li> </ul>
      */
-    inline PutTraceSegmentsRequest& AddTraceSegmentDocuments(Aws::String&& value) { m_traceSegmentDocumentsHasBeenSet = true; m_traceSegmentDocuments.push_back(value); return *this; }
+    inline PutTraceSegmentsRequest& AddTraceSegmentDocuments(Aws::String&& value) { m_traceSegmentDocumentsHasBeenSet = true; m_traceSegmentDocuments.push_back(std::move(value)); return *this; }
 
     /**
      * <p>A JSON document defining one or more segments or subsegments. Segments must

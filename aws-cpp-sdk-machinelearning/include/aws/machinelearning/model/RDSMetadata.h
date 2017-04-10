@@ -16,6 +16,7 @@
 #include <aws/machinelearning/MachineLearning_EXPORTS.h>
 #include <aws/machinelearning/model/RDSDatabase.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -58,7 +59,7 @@ namespace Model
     /**
      * <p>The database details required to connect to an Amazon RDS.</p>
      */
-    inline void SetDatabase(RDSDatabase&& value) { m_databaseHasBeenSet = true; m_database = value; }
+    inline void SetDatabase(RDSDatabase&& value) { m_databaseHasBeenSet = true; m_database = std::move(value); }
 
     /**
      * <p>The database details required to connect to an Amazon RDS.</p>
@@ -68,7 +69,7 @@ namespace Model
     /**
      * <p>The database details required to connect to an Amazon RDS.</p>
      */
-    inline RDSMetadata& WithDatabase(RDSDatabase&& value) { SetDatabase(value); return *this;}
+    inline RDSMetadata& WithDatabase(RDSDatabase&& value) { SetDatabase(std::move(value)); return *this;}
 
     
     inline const Aws::String& GetDatabaseUserName() const{ return m_databaseUserName; }
@@ -77,7 +78,7 @@ namespace Model
     inline void SetDatabaseUserName(const Aws::String& value) { m_databaseUserNameHasBeenSet = true; m_databaseUserName = value; }
 
     
-    inline void SetDatabaseUserName(Aws::String&& value) { m_databaseUserNameHasBeenSet = true; m_databaseUserName = value; }
+    inline void SetDatabaseUserName(Aws::String&& value) { m_databaseUserNameHasBeenSet = true; m_databaseUserName = std::move(value); }
 
     
     inline void SetDatabaseUserName(const char* value) { m_databaseUserNameHasBeenSet = true; m_databaseUserName.assign(value); }
@@ -86,7 +87,7 @@ namespace Model
     inline RDSMetadata& WithDatabaseUserName(const Aws::String& value) { SetDatabaseUserName(value); return *this;}
 
     
-    inline RDSMetadata& WithDatabaseUserName(Aws::String&& value) { SetDatabaseUserName(value); return *this;}
+    inline RDSMetadata& WithDatabaseUserName(Aws::String&& value) { SetDatabaseUserName(std::move(value)); return *this;}
 
     
     inline RDSMetadata& WithDatabaseUserName(const char* value) { SetDatabaseUserName(value); return *this;}
@@ -107,7 +108,7 @@ namespace Model
      * <p>The SQL query that is supplied during <a>CreateDataSourceFromRDS</a>. Returns
      * only if <code>Verbose</code> is true in <code>GetDataSourceInput</code>. </p>
      */
-    inline void SetSelectSqlQuery(Aws::String&& value) { m_selectSqlQueryHasBeenSet = true; m_selectSqlQuery = value; }
+    inline void SetSelectSqlQuery(Aws::String&& value) { m_selectSqlQueryHasBeenSet = true; m_selectSqlQuery = std::move(value); }
 
     /**
      * <p>The SQL query that is supplied during <a>CreateDataSourceFromRDS</a>. Returns
@@ -125,7 +126,7 @@ namespace Model
      * <p>The SQL query that is supplied during <a>CreateDataSourceFromRDS</a>. Returns
      * only if <code>Verbose</code> is true in <code>GetDataSourceInput</code>. </p>
      */
-    inline RDSMetadata& WithSelectSqlQuery(Aws::String&& value) { SetSelectSqlQuery(value); return *this;}
+    inline RDSMetadata& WithSelectSqlQuery(Aws::String&& value) { SetSelectSqlQuery(std::move(value)); return *this;}
 
     /**
      * <p>The SQL query that is supplied during <a>CreateDataSourceFromRDS</a>. Returns
@@ -158,7 +159,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-roles.html">Role
      * templates</a> for data pipelines.</p>
      */
-    inline void SetResourceRole(Aws::String&& value) { m_resourceRoleHasBeenSet = true; m_resourceRole = value; }
+    inline void SetResourceRole(Aws::String&& value) { m_resourceRoleHasBeenSet = true; m_resourceRole = std::move(value); }
 
     /**
      * <p>The role (DataPipelineDefaultResourceRole) assumed by an Amazon EC2 instance
@@ -185,7 +186,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-roles.html">Role
      * templates</a> for data pipelines.</p>
      */
-    inline RDSMetadata& WithResourceRole(Aws::String&& value) { SetResourceRole(value); return *this;}
+    inline RDSMetadata& WithResourceRole(Aws::String&& value) { SetResourceRole(std::move(value)); return *this;}
 
     /**
      * <p>The role (DataPipelineDefaultResourceRole) assumed by an Amazon EC2 instance
@@ -221,7 +222,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-roles.html">Role
      * templates</a> for data pipelines.</p>
      */
-    inline void SetServiceRole(Aws::String&& value) { m_serviceRoleHasBeenSet = true; m_serviceRole = value; }
+    inline void SetServiceRole(Aws::String&& value) { m_serviceRoleHasBeenSet = true; m_serviceRole = std::move(value); }
 
     /**
      * <p>The role (DataPipelineDefaultRole) assumed by the Data Pipeline service to
@@ -248,7 +249,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-roles.html">Role
      * templates</a> for data pipelines.</p>
      */
-    inline RDSMetadata& WithServiceRole(Aws::String&& value) { SetServiceRole(value); return *this;}
+    inline RDSMetadata& WithServiceRole(Aws::String&& value) { SetServiceRole(std::move(value)); return *this;}
 
     /**
      * <p>The role (DataPipelineDefaultRole) assumed by the Data Pipeline service to
@@ -278,7 +279,7 @@ namespace Model
      * Amazon RDS to Amazon S3. You can use the ID to find details about the instance
      * in the Data Pipeline console.</p>
      */
-    inline void SetDataPipelineId(Aws::String&& value) { m_dataPipelineIdHasBeenSet = true; m_dataPipelineId = value; }
+    inline void SetDataPipelineId(Aws::String&& value) { m_dataPipelineIdHasBeenSet = true; m_dataPipelineId = std::move(value); }
 
     /**
      * <p>The ID of the Data Pipeline instance that is used to carry to copy data from
@@ -299,7 +300,7 @@ namespace Model
      * Amazon RDS to Amazon S3. You can use the ID to find details about the instance
      * in the Data Pipeline console.</p>
      */
-    inline RDSMetadata& WithDataPipelineId(Aws::String&& value) { SetDataPipelineId(value); return *this;}
+    inline RDSMetadata& WithDataPipelineId(Aws::String&& value) { SetDataPipelineId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the Data Pipeline instance that is used to carry to copy data from

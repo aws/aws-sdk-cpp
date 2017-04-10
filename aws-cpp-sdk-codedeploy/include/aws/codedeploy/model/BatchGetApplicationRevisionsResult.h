@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/codedeploy/model/RevisionInfo.h>
+#include <utility>
 
 namespace Aws
 {
@@ -60,7 +61,7 @@ namespace Model
     /**
      * <p>The name of the application that corresponds to the revisions.</p>
      */
-    inline void SetApplicationName(Aws::String&& value) { m_applicationName = value; }
+    inline void SetApplicationName(Aws::String&& value) { m_applicationName = std::move(value); }
 
     /**
      * <p>The name of the application that corresponds to the revisions.</p>
@@ -75,7 +76,7 @@ namespace Model
     /**
      * <p>The name of the application that corresponds to the revisions.</p>
      */
-    inline BatchGetApplicationRevisionsResult& WithApplicationName(Aws::String&& value) { SetApplicationName(value); return *this;}
+    inline BatchGetApplicationRevisionsResult& WithApplicationName(Aws::String&& value) { SetApplicationName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the application that corresponds to the revisions.</p>
@@ -95,7 +96,7 @@ namespace Model
     /**
      * <p>Information about errors that may have occurred during the API call.</p>
      */
-    inline void SetErrorMessage(Aws::String&& value) { m_errorMessage = value; }
+    inline void SetErrorMessage(Aws::String&& value) { m_errorMessage = std::move(value); }
 
     /**
      * <p>Information about errors that may have occurred during the API call.</p>
@@ -110,7 +111,7 @@ namespace Model
     /**
      * <p>Information about errors that may have occurred during the API call.</p>
      */
-    inline BatchGetApplicationRevisionsResult& WithErrorMessage(Aws::String&& value) { SetErrorMessage(value); return *this;}
+    inline BatchGetApplicationRevisionsResult& WithErrorMessage(Aws::String&& value) { SetErrorMessage(std::move(value)); return *this;}
 
     /**
      * <p>Information about errors that may have occurred during the API call.</p>
@@ -133,7 +134,7 @@ namespace Model
      * <p>Additional information about the revisions, including the type and
      * location.</p>
      */
-    inline void SetRevisions(Aws::Vector<RevisionInfo>&& value) { m_revisions = value; }
+    inline void SetRevisions(Aws::Vector<RevisionInfo>&& value) { m_revisions = std::move(value); }
 
     /**
      * <p>Additional information about the revisions, including the type and
@@ -145,7 +146,7 @@ namespace Model
      * <p>Additional information about the revisions, including the type and
      * location.</p>
      */
-    inline BatchGetApplicationRevisionsResult& WithRevisions(Aws::Vector<RevisionInfo>&& value) { SetRevisions(value); return *this;}
+    inline BatchGetApplicationRevisionsResult& WithRevisions(Aws::Vector<RevisionInfo>&& value) { SetRevisions(std::move(value)); return *this;}
 
     /**
      * <p>Additional information about the revisions, including the type and
@@ -157,7 +158,7 @@ namespace Model
      * <p>Additional information about the revisions, including the type and
      * location.</p>
      */
-    inline BatchGetApplicationRevisionsResult& AddRevisions(RevisionInfo&& value) { m_revisions.push_back(value); return *this; }
+    inline BatchGetApplicationRevisionsResult& AddRevisions(RevisionInfo&& value) { m_revisions.push_back(std::move(value)); return *this; }
 
   private:
     Aws::String m_applicationName;

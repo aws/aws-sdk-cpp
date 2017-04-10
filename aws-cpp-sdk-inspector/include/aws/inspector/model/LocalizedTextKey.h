@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/inspector/Inspector_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -54,7 +55,7 @@ namespace Model
     /**
      * <p>The module response source of the text.</p>
      */
-    inline void SetFacility(Aws::String&& value) { m_facilityHasBeenSet = true; m_facility = value; }
+    inline void SetFacility(Aws::String&& value) { m_facilityHasBeenSet = true; m_facility = std::move(value); }
 
     /**
      * <p>The module response source of the text.</p>
@@ -69,7 +70,7 @@ namespace Model
     /**
      * <p>The module response source of the text.</p>
      */
-    inline LocalizedTextKey& WithFacility(Aws::String&& value) { SetFacility(value); return *this;}
+    inline LocalizedTextKey& WithFacility(Aws::String&& value) { SetFacility(std::move(value)); return *this;}
 
     /**
      * <p>The module response source of the text.</p>
@@ -89,7 +90,7 @@ namespace Model
     /**
      * <p>Part of the module response source of the text.</p>
      */
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = value; }
+    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
 
     /**
      * <p>Part of the module response source of the text.</p>
@@ -104,7 +105,7 @@ namespace Model
     /**
      * <p>Part of the module response source of the text.</p>
      */
-    inline LocalizedTextKey& WithId(Aws::String&& value) { SetId(value); return *this;}
+    inline LocalizedTextKey& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
 
     /**
      * <p>Part of the module response source of the text.</p>

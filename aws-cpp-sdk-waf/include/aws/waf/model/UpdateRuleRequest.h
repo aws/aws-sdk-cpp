@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/waf/model/RuleUpdate.h>
+#include <utility>
 
 namespace Aws
 {
@@ -56,7 +57,7 @@ namespace Model
      * <code>RuleId</code> is returned by <code>CreateRule</code> and by
      * <a>ListRules</a>.</p>
      */
-    inline void SetRuleId(Aws::String&& value) { m_ruleIdHasBeenSet = true; m_ruleId = value; }
+    inline void SetRuleId(Aws::String&& value) { m_ruleIdHasBeenSet = true; m_ruleId = std::move(value); }
 
     /**
      * <p>The <code>RuleId</code> of the <code>Rule</code> that you want to update.
@@ -77,7 +78,7 @@ namespace Model
      * <code>RuleId</code> is returned by <code>CreateRule</code> and by
      * <a>ListRules</a>.</p>
      */
-    inline UpdateRuleRequest& WithRuleId(Aws::String&& value) { SetRuleId(value); return *this;}
+    inline UpdateRuleRequest& WithRuleId(Aws::String&& value) { SetRuleId(std::move(value)); return *this;}
 
     /**
      * <p>The <code>RuleId</code> of the <code>Rule</code> that you want to update.
@@ -99,7 +100,7 @@ namespace Model
     /**
      * <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
      */
-    inline void SetChangeToken(Aws::String&& value) { m_changeTokenHasBeenSet = true; m_changeToken = value; }
+    inline void SetChangeToken(Aws::String&& value) { m_changeTokenHasBeenSet = true; m_changeToken = std::move(value); }
 
     /**
      * <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
@@ -114,7 +115,7 @@ namespace Model
     /**
      * <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
      */
-    inline UpdateRuleRequest& WithChangeToken(Aws::String&& value) { SetChangeToken(value); return *this;}
+    inline UpdateRuleRequest& WithChangeToken(Aws::String&& value) { SetChangeToken(std::move(value)); return *this;}
 
     /**
      * <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
@@ -152,7 +153,7 @@ namespace Model
      * <p> <a>FieldToMatch</a>: Contains <code>Data</code> and <code>Type</code> </p>
      * </li> </ul>
      */
-    inline void SetUpdates(Aws::Vector<RuleUpdate>&& value) { m_updatesHasBeenSet = true; m_updates = value; }
+    inline void SetUpdates(Aws::Vector<RuleUpdate>&& value) { m_updatesHasBeenSet = true; m_updates = std::move(value); }
 
     /**
      * <p>An array of <code>RuleUpdate</code> objects that you want to insert into or
@@ -174,7 +175,7 @@ namespace Model
      * <p> <a>FieldToMatch</a>: Contains <code>Data</code> and <code>Type</code> </p>
      * </li> </ul>
      */
-    inline UpdateRuleRequest& WithUpdates(Aws::Vector<RuleUpdate>&& value) { SetUpdates(value); return *this;}
+    inline UpdateRuleRequest& WithUpdates(Aws::Vector<RuleUpdate>&& value) { SetUpdates(std::move(value)); return *this;}
 
     /**
      * <p>An array of <code>RuleUpdate</code> objects that you want to insert into or
@@ -196,7 +197,7 @@ namespace Model
      * <p> <a>FieldToMatch</a>: Contains <code>Data</code> and <code>Type</code> </p>
      * </li> </ul>
      */
-    inline UpdateRuleRequest& AddUpdates(RuleUpdate&& value) { m_updatesHasBeenSet = true; m_updates.push_back(value); return *this; }
+    inline UpdateRuleRequest& AddUpdates(RuleUpdate&& value) { m_updatesHasBeenSet = true; m_updates.push_back(std::move(value)); return *this; }
 
   private:
     Aws::String m_ruleId;

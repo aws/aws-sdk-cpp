@@ -17,6 +17,7 @@
 #include <aws/cognito-identity/CognitoIdentityRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <utility>
 
 namespace Aws
 {
@@ -53,7 +54,7 @@ namespace Model
     /**
      * <p>A unique identifier in the format REGION:GUID.</p>
      */
-    inline void SetIdentityId(Aws::String&& value) { m_identityIdHasBeenSet = true; m_identityId = value; }
+    inline void SetIdentityId(Aws::String&& value) { m_identityIdHasBeenSet = true; m_identityId = std::move(value); }
 
     /**
      * <p>A unique identifier in the format REGION:GUID.</p>
@@ -68,7 +69,7 @@ namespace Model
     /**
      * <p>A unique identifier in the format REGION:GUID.</p>
      */
-    inline GetCredentialsForIdentityRequest& WithIdentityId(Aws::String&& value) { SetIdentityId(value); return *this;}
+    inline GetCredentialsForIdentityRequest& WithIdentityId(Aws::String&& value) { SetIdentityId(std::move(value)); return *this;}
 
     /**
      * <p>A unique identifier in the format REGION:GUID.</p>
@@ -91,7 +92,7 @@ namespace Model
      * <p>A set of optional name-value pairs that map provider names to provider
      * tokens.</p>
      */
-    inline void SetLogins(Aws::Map<Aws::String, Aws::String>&& value) { m_loginsHasBeenSet = true; m_logins = value; }
+    inline void SetLogins(Aws::Map<Aws::String, Aws::String>&& value) { m_loginsHasBeenSet = true; m_logins = std::move(value); }
 
     /**
      * <p>A set of optional name-value pairs that map provider names to provider
@@ -103,49 +104,49 @@ namespace Model
      * <p>A set of optional name-value pairs that map provider names to provider
      * tokens.</p>
      */
-    inline GetCredentialsForIdentityRequest& WithLogins(Aws::Map<Aws::String, Aws::String>&& value) { SetLogins(value); return *this;}
+    inline GetCredentialsForIdentityRequest& WithLogins(Aws::Map<Aws::String, Aws::String>&& value) { SetLogins(std::move(value)); return *this;}
 
     /**
      * <p>A set of optional name-value pairs that map provider names to provider
      * tokens.</p>
      */
-    inline GetCredentialsForIdentityRequest& AddLogins(const Aws::String& key, const Aws::String& value) { m_loginsHasBeenSet = true; m_logins[key] = value; return *this; }
+    inline GetCredentialsForIdentityRequest& AddLogins(const Aws::String& key, const Aws::String& value) { m_loginsHasBeenSet = true; m_logins.emplace(key, value); return *this; }
 
     /**
      * <p>A set of optional name-value pairs that map provider names to provider
      * tokens.</p>
      */
-    inline GetCredentialsForIdentityRequest& AddLogins(Aws::String&& key, const Aws::String& value) { m_loginsHasBeenSet = true; m_logins[key] = value; return *this; }
+    inline GetCredentialsForIdentityRequest& AddLogins(Aws::String&& key, const Aws::String& value) { m_loginsHasBeenSet = true; m_logins.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>A set of optional name-value pairs that map provider names to provider
      * tokens.</p>
      */
-    inline GetCredentialsForIdentityRequest& AddLogins(const Aws::String& key, Aws::String&& value) { m_loginsHasBeenSet = true; m_logins[key] = value; return *this; }
+    inline GetCredentialsForIdentityRequest& AddLogins(const Aws::String& key, Aws::String&& value) { m_loginsHasBeenSet = true; m_logins.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>A set of optional name-value pairs that map provider names to provider
      * tokens.</p>
      */
-    inline GetCredentialsForIdentityRequest& AddLogins(Aws::String&& key, Aws::String&& value) { m_loginsHasBeenSet = true; m_logins[key] = value; return *this; }
+    inline GetCredentialsForIdentityRequest& AddLogins(Aws::String&& key, Aws::String&& value) { m_loginsHasBeenSet = true; m_logins.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
      * <p>A set of optional name-value pairs that map provider names to provider
      * tokens.</p>
      */
-    inline GetCredentialsForIdentityRequest& AddLogins(const char* key, Aws::String&& value) { m_loginsHasBeenSet = true; m_logins[key] = value; return *this; }
+    inline GetCredentialsForIdentityRequest& AddLogins(const char* key, Aws::String&& value) { m_loginsHasBeenSet = true; m_logins.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>A set of optional name-value pairs that map provider names to provider
      * tokens.</p>
      */
-    inline GetCredentialsForIdentityRequest& AddLogins(Aws::String&& key, const char* value) { m_loginsHasBeenSet = true; m_logins[key] = value; return *this; }
+    inline GetCredentialsForIdentityRequest& AddLogins(Aws::String&& key, const char* value) { m_loginsHasBeenSet = true; m_logins.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>A set of optional name-value pairs that map provider names to provider
      * tokens.</p>
      */
-    inline GetCredentialsForIdentityRequest& AddLogins(const char* key, const char* value) { m_loginsHasBeenSet = true; m_logins[key] = value; return *this; }
+    inline GetCredentialsForIdentityRequest& AddLogins(const char* key, const char* value) { m_loginsHasBeenSet = true; m_logins.emplace(key, value); return *this; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the role to be assumed when multiple roles
@@ -169,7 +170,7 @@ namespace Model
      * identity provider. This parameter is optional for identity providers that do not
      * support role customization.</p>
      */
-    inline void SetCustomRoleArn(Aws::String&& value) { m_customRoleArnHasBeenSet = true; m_customRoleArn = value; }
+    inline void SetCustomRoleArn(Aws::String&& value) { m_customRoleArnHasBeenSet = true; m_customRoleArn = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the role to be assumed when multiple roles
@@ -193,7 +194,7 @@ namespace Model
      * identity provider. This parameter is optional for identity providers that do not
      * support role customization.</p>
      */
-    inline GetCredentialsForIdentityRequest& WithCustomRoleArn(Aws::String&& value) { SetCustomRoleArn(value); return *this;}
+    inline GetCredentialsForIdentityRequest& WithCustomRoleArn(Aws::String&& value) { SetCustomRoleArn(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the role to be assumed when multiple roles

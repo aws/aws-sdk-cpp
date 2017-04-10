@@ -16,6 +16,7 @@
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -60,7 +61,7 @@ namespace Model
     /**
      * <p>The ID of the virtual private gateway (VGW).</p>
      */
-    inline void SetGatewayId(Aws::String&& value) { m_gatewayIdHasBeenSet = true; m_gatewayId = value; }
+    inline void SetGatewayId(Aws::String&& value) { m_gatewayIdHasBeenSet = true; m_gatewayId = std::move(value); }
 
     /**
      * <p>The ID of the virtual private gateway (VGW).</p>
@@ -75,7 +76,7 @@ namespace Model
     /**
      * <p>The ID of the virtual private gateway (VGW).</p>
      */
-    inline PropagatingVgw& WithGatewayId(Aws::String&& value) { SetGatewayId(value); return *this;}
+    inline PropagatingVgw& WithGatewayId(Aws::String&& value) { SetGatewayId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the virtual private gateway (VGW).</p>

@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/ssm/SSM_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -57,7 +58,7 @@ namespace Model
     /**
      * <p>The Amazon S3 region where the association information is stored.</p>
      */
-    inline void SetOutputS3Region(Aws::String&& value) { m_outputS3RegionHasBeenSet = true; m_outputS3Region = value; }
+    inline void SetOutputS3Region(Aws::String&& value) { m_outputS3RegionHasBeenSet = true; m_outputS3Region = std::move(value); }
 
     /**
      * <p>The Amazon S3 region where the association information is stored.</p>
@@ -72,7 +73,7 @@ namespace Model
     /**
      * <p>The Amazon S3 region where the association information is stored.</p>
      */
-    inline S3OutputLocation& WithOutputS3Region(Aws::String&& value) { SetOutputS3Region(value); return *this;}
+    inline S3OutputLocation& WithOutputS3Region(Aws::String&& value) { SetOutputS3Region(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon S3 region where the association information is stored.</p>
@@ -92,7 +93,7 @@ namespace Model
     /**
      * <p>The name of the Amazon S3 bucket.</p>
      */
-    inline void SetOutputS3BucketName(Aws::String&& value) { m_outputS3BucketNameHasBeenSet = true; m_outputS3BucketName = value; }
+    inline void SetOutputS3BucketName(Aws::String&& value) { m_outputS3BucketNameHasBeenSet = true; m_outputS3BucketName = std::move(value); }
 
     /**
      * <p>The name of the Amazon S3 bucket.</p>
@@ -107,7 +108,7 @@ namespace Model
     /**
      * <p>The name of the Amazon S3 bucket.</p>
      */
-    inline S3OutputLocation& WithOutputS3BucketName(Aws::String&& value) { SetOutputS3BucketName(value); return *this;}
+    inline S3OutputLocation& WithOutputS3BucketName(Aws::String&& value) { SetOutputS3BucketName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the Amazon S3 bucket.</p>
@@ -127,7 +128,7 @@ namespace Model
     /**
      * <p>The Amazon S3 bucket subfolder.</p>
      */
-    inline void SetOutputS3KeyPrefix(Aws::String&& value) { m_outputS3KeyPrefixHasBeenSet = true; m_outputS3KeyPrefix = value; }
+    inline void SetOutputS3KeyPrefix(Aws::String&& value) { m_outputS3KeyPrefixHasBeenSet = true; m_outputS3KeyPrefix = std::move(value); }
 
     /**
      * <p>The Amazon S3 bucket subfolder.</p>
@@ -142,7 +143,7 @@ namespace Model
     /**
      * <p>The Amazon S3 bucket subfolder.</p>
      */
-    inline S3OutputLocation& WithOutputS3KeyPrefix(Aws::String&& value) { SetOutputS3KeyPrefix(value); return *this;}
+    inline S3OutputLocation& WithOutputS3KeyPrefix(Aws::String&& value) { SetOutputS3KeyPrefix(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon S3 bucket subfolder.</p>

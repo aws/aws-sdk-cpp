@@ -23,6 +23,7 @@
 #include <aws/s3/model/ServerSideEncryption.h>
 #include <aws/s3/model/StorageClass.h>
 #include <aws/s3/model/RequestPayer.h>
+#include <utility>
 
 namespace Aws
 {
@@ -53,7 +54,7 @@ namespace Model
     /**
      * The canned ACL to apply to the object.
      */
-    inline void SetACL(ObjectCannedACL&& value) { m_aCLHasBeenSet = true; m_aCL = value; }
+    inline void SetACL(ObjectCannedACL&& value) { m_aCLHasBeenSet = true; m_aCL = std::move(value); }
 
     /**
      * The canned ACL to apply to the object.
@@ -63,7 +64,7 @@ namespace Model
     /**
      * The canned ACL to apply to the object.
      */
-    inline PutObjectRequest& WithACL(ObjectCannedACL&& value) { SetACL(value); return *this;}
+    inline PutObjectRequest& WithACL(ObjectCannedACL&& value) { SetACL(std::move(value)); return *this;}
 
     /**
      * Name of the bucket to which the PUT operation was initiated.
@@ -78,7 +79,7 @@ namespace Model
     /**
      * Name of the bucket to which the PUT operation was initiated.
      */
-    inline void SetBucket(Aws::String&& value) { m_bucketHasBeenSet = true; m_bucket = value; }
+    inline void SetBucket(Aws::String&& value) { m_bucketHasBeenSet = true; m_bucket = std::move(value); }
 
     /**
      * Name of the bucket to which the PUT operation was initiated.
@@ -93,7 +94,7 @@ namespace Model
     /**
      * Name of the bucket to which the PUT operation was initiated.
      */
-    inline PutObjectRequest& WithBucket(Aws::String&& value) { SetBucket(value); return *this;}
+    inline PutObjectRequest& WithBucket(Aws::String&& value) { SetBucket(std::move(value)); return *this;}
 
     /**
      * Name of the bucket to which the PUT operation was initiated.
@@ -113,7 +114,7 @@ namespace Model
     /**
      * Specifies caching behavior along the request/reply chain.
      */
-    inline void SetCacheControl(Aws::String&& value) { m_cacheControlHasBeenSet = true; m_cacheControl = value; }
+    inline void SetCacheControl(Aws::String&& value) { m_cacheControlHasBeenSet = true; m_cacheControl = std::move(value); }
 
     /**
      * Specifies caching behavior along the request/reply chain.
@@ -128,7 +129,7 @@ namespace Model
     /**
      * Specifies caching behavior along the request/reply chain.
      */
-    inline PutObjectRequest& WithCacheControl(Aws::String&& value) { SetCacheControl(value); return *this;}
+    inline PutObjectRequest& WithCacheControl(Aws::String&& value) { SetCacheControl(std::move(value)); return *this;}
 
     /**
      * Specifies caching behavior along the request/reply chain.
@@ -148,7 +149,7 @@ namespace Model
     /**
      * Specifies presentational information for the object.
      */
-    inline void SetContentDisposition(Aws::String&& value) { m_contentDispositionHasBeenSet = true; m_contentDisposition = value; }
+    inline void SetContentDisposition(Aws::String&& value) { m_contentDispositionHasBeenSet = true; m_contentDisposition = std::move(value); }
 
     /**
      * Specifies presentational information for the object.
@@ -163,7 +164,7 @@ namespace Model
     /**
      * Specifies presentational information for the object.
      */
-    inline PutObjectRequest& WithContentDisposition(Aws::String&& value) { SetContentDisposition(value); return *this;}
+    inline PutObjectRequest& WithContentDisposition(Aws::String&& value) { SetContentDisposition(std::move(value)); return *this;}
 
     /**
      * Specifies presentational information for the object.
@@ -189,7 +190,7 @@ namespace Model
      * decoding mechanisms must be applied to obtain the media-type referenced by the
      * Content-Type header field.
      */
-    inline void SetContentEncoding(Aws::String&& value) { m_contentEncodingHasBeenSet = true; m_contentEncoding = value; }
+    inline void SetContentEncoding(Aws::String&& value) { m_contentEncodingHasBeenSet = true; m_contentEncoding = std::move(value); }
 
     /**
      * Specifies what content encodings have been applied to the object and thus what
@@ -210,7 +211,7 @@ namespace Model
      * decoding mechanisms must be applied to obtain the media-type referenced by the
      * Content-Type header field.
      */
-    inline PutObjectRequest& WithContentEncoding(Aws::String&& value) { SetContentEncoding(value); return *this;}
+    inline PutObjectRequest& WithContentEncoding(Aws::String&& value) { SetContentEncoding(std::move(value)); return *this;}
 
     /**
      * Specifies what content encodings have been applied to the object and thus what
@@ -232,7 +233,7 @@ namespace Model
     /**
      * The language the content is in.
      */
-    inline void SetContentLanguage(Aws::String&& value) { m_contentLanguageHasBeenSet = true; m_contentLanguage = value; }
+    inline void SetContentLanguage(Aws::String&& value) { m_contentLanguageHasBeenSet = true; m_contentLanguage = std::move(value); }
 
     /**
      * The language the content is in.
@@ -247,7 +248,7 @@ namespace Model
     /**
      * The language the content is in.
      */
-    inline PutObjectRequest& WithContentLanguage(Aws::String&& value) { SetContentLanguage(value); return *this;}
+    inline PutObjectRequest& WithContentLanguage(Aws::String&& value) { SetContentLanguage(std::move(value)); return *this;}
 
     /**
      * The language the content is in.
@@ -285,7 +286,7 @@ namespace Model
     /**
      * The base64-encoded 128-bit MD5 digest of the part data.
      */
-    inline void SetContentMD5(Aws::String&& value) { m_contentMD5HasBeenSet = true; m_contentMD5 = value; }
+    inline void SetContentMD5(Aws::String&& value) { m_contentMD5HasBeenSet = true; m_contentMD5 = std::move(value); }
 
     /**
      * The base64-encoded 128-bit MD5 digest of the part data.
@@ -300,7 +301,7 @@ namespace Model
     /**
      * The base64-encoded 128-bit MD5 digest of the part data.
      */
-    inline PutObjectRequest& WithContentMD5(Aws::String&& value) { SetContentMD5(value); return *this;}
+    inline PutObjectRequest& WithContentMD5(Aws::String&& value) { SetContentMD5(std::move(value)); return *this;}
 
     /**
      * The base64-encoded 128-bit MD5 digest of the part data.
@@ -320,7 +321,7 @@ namespace Model
     /**
      * The date and time at which the object is no longer cacheable.
      */
-    inline void SetExpires(Aws::Utils::DateTime&& value) { m_expiresHasBeenSet = true; m_expires = value; }
+    inline void SetExpires(Aws::Utils::DateTime&& value) { m_expiresHasBeenSet = true; m_expires = std::move(value); }
 
     /**
      * The date and time at which the object is no longer cacheable.
@@ -330,7 +331,7 @@ namespace Model
     /**
      * The date and time at which the object is no longer cacheable.
      */
-    inline PutObjectRequest& WithExpires(Aws::Utils::DateTime&& value) { SetExpires(value); return *this;}
+    inline PutObjectRequest& WithExpires(Aws::Utils::DateTime&& value) { SetExpires(std::move(value)); return *this;}
 
     /**
      * Gives the grantee READ, READ_ACP, and WRITE_ACP permissions on the object.
@@ -345,7 +346,7 @@ namespace Model
     /**
      * Gives the grantee READ, READ_ACP, and WRITE_ACP permissions on the object.
      */
-    inline void SetGrantFullControl(Aws::String&& value) { m_grantFullControlHasBeenSet = true; m_grantFullControl = value; }
+    inline void SetGrantFullControl(Aws::String&& value) { m_grantFullControlHasBeenSet = true; m_grantFullControl = std::move(value); }
 
     /**
      * Gives the grantee READ, READ_ACP, and WRITE_ACP permissions on the object.
@@ -360,7 +361,7 @@ namespace Model
     /**
      * Gives the grantee READ, READ_ACP, and WRITE_ACP permissions on the object.
      */
-    inline PutObjectRequest& WithGrantFullControl(Aws::String&& value) { SetGrantFullControl(value); return *this;}
+    inline PutObjectRequest& WithGrantFullControl(Aws::String&& value) { SetGrantFullControl(std::move(value)); return *this;}
 
     /**
      * Gives the grantee READ, READ_ACP, and WRITE_ACP permissions on the object.
@@ -380,7 +381,7 @@ namespace Model
     /**
      * Allows grantee to read the object data and its metadata.
      */
-    inline void SetGrantRead(Aws::String&& value) { m_grantReadHasBeenSet = true; m_grantRead = value; }
+    inline void SetGrantRead(Aws::String&& value) { m_grantReadHasBeenSet = true; m_grantRead = std::move(value); }
 
     /**
      * Allows grantee to read the object data and its metadata.
@@ -395,7 +396,7 @@ namespace Model
     /**
      * Allows grantee to read the object data and its metadata.
      */
-    inline PutObjectRequest& WithGrantRead(Aws::String&& value) { SetGrantRead(value); return *this;}
+    inline PutObjectRequest& WithGrantRead(Aws::String&& value) { SetGrantRead(std::move(value)); return *this;}
 
     /**
      * Allows grantee to read the object data and its metadata.
@@ -415,7 +416,7 @@ namespace Model
     /**
      * Allows grantee to read the object ACL.
      */
-    inline void SetGrantReadACP(Aws::String&& value) { m_grantReadACPHasBeenSet = true; m_grantReadACP = value; }
+    inline void SetGrantReadACP(Aws::String&& value) { m_grantReadACPHasBeenSet = true; m_grantReadACP = std::move(value); }
 
     /**
      * Allows grantee to read the object ACL.
@@ -430,7 +431,7 @@ namespace Model
     /**
      * Allows grantee to read the object ACL.
      */
-    inline PutObjectRequest& WithGrantReadACP(Aws::String&& value) { SetGrantReadACP(value); return *this;}
+    inline PutObjectRequest& WithGrantReadACP(Aws::String&& value) { SetGrantReadACP(std::move(value)); return *this;}
 
     /**
      * Allows grantee to read the object ACL.
@@ -450,7 +451,7 @@ namespace Model
     /**
      * Allows grantee to write the ACL for the applicable object.
      */
-    inline void SetGrantWriteACP(Aws::String&& value) { m_grantWriteACPHasBeenSet = true; m_grantWriteACP = value; }
+    inline void SetGrantWriteACP(Aws::String&& value) { m_grantWriteACPHasBeenSet = true; m_grantWriteACP = std::move(value); }
 
     /**
      * Allows grantee to write the ACL for the applicable object.
@@ -465,7 +466,7 @@ namespace Model
     /**
      * Allows grantee to write the ACL for the applicable object.
      */
-    inline PutObjectRequest& WithGrantWriteACP(Aws::String&& value) { SetGrantWriteACP(value); return *this;}
+    inline PutObjectRequest& WithGrantWriteACP(Aws::String&& value) { SetGrantWriteACP(std::move(value)); return *this;}
 
     /**
      * Allows grantee to write the ACL for the applicable object.
@@ -485,7 +486,7 @@ namespace Model
     /**
      * Object key for which the PUT operation was initiated.
      */
-    inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = value; }
+    inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
 
     /**
      * Object key for which the PUT operation was initiated.
@@ -500,7 +501,7 @@ namespace Model
     /**
      * Object key for which the PUT operation was initiated.
      */
-    inline PutObjectRequest& WithKey(Aws::String&& value) { SetKey(value); return *this;}
+    inline PutObjectRequest& WithKey(Aws::String&& value) { SetKey(std::move(value)); return *this;}
 
     /**
      * Object key for which the PUT operation was initiated.
@@ -520,7 +521,7 @@ namespace Model
     /**
      * A map of metadata to store with the object in S3.
      */
-    inline void SetMetadata(Aws::Map<Aws::String, Aws::String>&& value) { m_metadataHasBeenSet = true; m_metadata = value; }
+    inline void SetMetadata(Aws::Map<Aws::String, Aws::String>&& value) { m_metadataHasBeenSet = true; m_metadata = std::move(value); }
 
     /**
      * A map of metadata to store with the object in S3.
@@ -530,42 +531,42 @@ namespace Model
     /**
      * A map of metadata to store with the object in S3.
      */
-    inline PutObjectRequest& WithMetadata(Aws::Map<Aws::String, Aws::String>&& value) { SetMetadata(value); return *this;}
+    inline PutObjectRequest& WithMetadata(Aws::Map<Aws::String, Aws::String>&& value) { SetMetadata(std::move(value)); return *this;}
 
     /**
      * A map of metadata to store with the object in S3.
      */
-    inline PutObjectRequest& AddMetadata(const Aws::String& key, const Aws::String& value) { m_metadataHasBeenSet = true; m_metadata[key] = value; return *this; }
+    inline PutObjectRequest& AddMetadata(const Aws::String& key, const Aws::String& value) { m_metadataHasBeenSet = true; m_metadata.emplace(key, value); return *this; }
 
     /**
      * A map of metadata to store with the object in S3.
      */
-    inline PutObjectRequest& AddMetadata(Aws::String&& key, const Aws::String& value) { m_metadataHasBeenSet = true; m_metadata[key] = value; return *this; }
+    inline PutObjectRequest& AddMetadata(Aws::String&& key, const Aws::String& value) { m_metadataHasBeenSet = true; m_metadata.emplace(std::move(key), value); return *this; }
 
     /**
      * A map of metadata to store with the object in S3.
      */
-    inline PutObjectRequest& AddMetadata(const Aws::String& key, Aws::String&& value) { m_metadataHasBeenSet = true; m_metadata[key] = value; return *this; }
+    inline PutObjectRequest& AddMetadata(const Aws::String& key, Aws::String&& value) { m_metadataHasBeenSet = true; m_metadata.emplace(key, std::move(value)); return *this; }
 
     /**
      * A map of metadata to store with the object in S3.
      */
-    inline PutObjectRequest& AddMetadata(Aws::String&& key, Aws::String&& value) { m_metadataHasBeenSet = true; m_metadata[key] = value; return *this; }
+    inline PutObjectRequest& AddMetadata(Aws::String&& key, Aws::String&& value) { m_metadataHasBeenSet = true; m_metadata.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
      * A map of metadata to store with the object in S3.
      */
-    inline PutObjectRequest& AddMetadata(const char* key, Aws::String&& value) { m_metadataHasBeenSet = true; m_metadata[key] = value; return *this; }
+    inline PutObjectRequest& AddMetadata(const char* key, Aws::String&& value) { m_metadataHasBeenSet = true; m_metadata.emplace(key, std::move(value)); return *this; }
 
     /**
      * A map of metadata to store with the object in S3.
      */
-    inline PutObjectRequest& AddMetadata(Aws::String&& key, const char* value) { m_metadataHasBeenSet = true; m_metadata[key] = value; return *this; }
+    inline PutObjectRequest& AddMetadata(Aws::String&& key, const char* value) { m_metadataHasBeenSet = true; m_metadata.emplace(std::move(key), value); return *this; }
 
     /**
      * A map of metadata to store with the object in S3.
      */
-    inline PutObjectRequest& AddMetadata(const char* key, const char* value) { m_metadataHasBeenSet = true; m_metadata[key] = value; return *this; }
+    inline PutObjectRequest& AddMetadata(const char* key, const char* value) { m_metadataHasBeenSet = true; m_metadata.emplace(key, value); return *this; }
 
     /**
      * The Server-side encryption algorithm used when storing this object in S3 (e.g.,
@@ -583,7 +584,7 @@ namespace Model
      * The Server-side encryption algorithm used when storing this object in S3 (e.g.,
      * AES256, aws:kms).
      */
-    inline void SetServerSideEncryption(ServerSideEncryption&& value) { m_serverSideEncryptionHasBeenSet = true; m_serverSideEncryption = value; }
+    inline void SetServerSideEncryption(ServerSideEncryption&& value) { m_serverSideEncryptionHasBeenSet = true; m_serverSideEncryption = std::move(value); }
 
     /**
      * The Server-side encryption algorithm used when storing this object in S3 (e.g.,
@@ -595,7 +596,7 @@ namespace Model
      * The Server-side encryption algorithm used when storing this object in S3 (e.g.,
      * AES256, aws:kms).
      */
-    inline PutObjectRequest& WithServerSideEncryption(ServerSideEncryption&& value) { SetServerSideEncryption(value); return *this;}
+    inline PutObjectRequest& WithServerSideEncryption(ServerSideEncryption&& value) { SetServerSideEncryption(std::move(value)); return *this;}
 
     /**
      * The type of storage to use for the object. Defaults to 'STANDARD'.
@@ -610,7 +611,7 @@ namespace Model
     /**
      * The type of storage to use for the object. Defaults to 'STANDARD'.
      */
-    inline void SetStorageClass(StorageClass&& value) { m_storageClassHasBeenSet = true; m_storageClass = value; }
+    inline void SetStorageClass(StorageClass&& value) { m_storageClassHasBeenSet = true; m_storageClass = std::move(value); }
 
     /**
      * The type of storage to use for the object. Defaults to 'STANDARD'.
@@ -620,7 +621,7 @@ namespace Model
     /**
      * The type of storage to use for the object. Defaults to 'STANDARD'.
      */
-    inline PutObjectRequest& WithStorageClass(StorageClass&& value) { SetStorageClass(value); return *this;}
+    inline PutObjectRequest& WithStorageClass(StorageClass&& value) { SetStorageClass(std::move(value)); return *this;}
 
     /**
      * If the bucket is configured as a website, redirects requests for this object to
@@ -641,7 +642,7 @@ namespace Model
      * another object in the same bucket or to an external URL. Amazon S3 stores the
      * value of this header in the object metadata.
      */
-    inline void SetWebsiteRedirectLocation(Aws::String&& value) { m_websiteRedirectLocationHasBeenSet = true; m_websiteRedirectLocation = value; }
+    inline void SetWebsiteRedirectLocation(Aws::String&& value) { m_websiteRedirectLocationHasBeenSet = true; m_websiteRedirectLocation = std::move(value); }
 
     /**
      * If the bucket is configured as a website, redirects requests for this object to
@@ -662,7 +663,7 @@ namespace Model
      * another object in the same bucket or to an external URL. Amazon S3 stores the
      * value of this header in the object metadata.
      */
-    inline PutObjectRequest& WithWebsiteRedirectLocation(Aws::String&& value) { SetWebsiteRedirectLocation(value); return *this;}
+    inline PutObjectRequest& WithWebsiteRedirectLocation(Aws::String&& value) { SetWebsiteRedirectLocation(std::move(value)); return *this;}
 
     /**
      * If the bucket is configured as a website, redirects requests for this object to
@@ -684,7 +685,7 @@ namespace Model
     /**
      * Specifies the algorithm to use to when encrypting the object (e.g., AES256).
      */
-    inline void SetSSECustomerAlgorithm(Aws::String&& value) { m_sSECustomerAlgorithmHasBeenSet = true; m_sSECustomerAlgorithm = value; }
+    inline void SetSSECustomerAlgorithm(Aws::String&& value) { m_sSECustomerAlgorithmHasBeenSet = true; m_sSECustomerAlgorithm = std::move(value); }
 
     /**
      * Specifies the algorithm to use to when encrypting the object (e.g., AES256).
@@ -699,7 +700,7 @@ namespace Model
     /**
      * Specifies the algorithm to use to when encrypting the object (e.g., AES256).
      */
-    inline PutObjectRequest& WithSSECustomerAlgorithm(Aws::String&& value) { SetSSECustomerAlgorithm(value); return *this;}
+    inline PutObjectRequest& WithSSECustomerAlgorithm(Aws::String&& value) { SetSSECustomerAlgorithm(std::move(value)); return *this;}
 
     /**
      * Specifies the algorithm to use to when encrypting the object (e.g., AES256).
@@ -731,7 +732,7 @@ namespace Model
      * for use with the algorithm specified in the
      * x-amz-server-side​-encryption​-customer-algorithm header.
      */
-    inline void SetSSECustomerKey(Aws::String&& value) { m_sSECustomerKeyHasBeenSet = true; m_sSECustomerKey = value; }
+    inline void SetSSECustomerKey(Aws::String&& value) { m_sSECustomerKeyHasBeenSet = true; m_sSECustomerKey = std::move(value); }
 
     /**
      * Specifies the customer-provided encryption key for Amazon S3 to use in
@@ -758,7 +759,7 @@ namespace Model
      * for use with the algorithm specified in the
      * x-amz-server-side​-encryption​-customer-algorithm header.
      */
-    inline PutObjectRequest& WithSSECustomerKey(Aws::String&& value) { SetSSECustomerKey(value); return *this;}
+    inline PutObjectRequest& WithSSECustomerKey(Aws::String&& value) { SetSSECustomerKey(std::move(value)); return *this;}
 
     /**
      * Specifies the customer-provided encryption key for Amazon S3 to use in
@@ -788,7 +789,7 @@ namespace Model
      * Amazon S3 uses this header for a message integrity check to ensure the
      * encryption key was transmitted without error.
      */
-    inline void SetSSECustomerKeyMD5(Aws::String&& value) { m_sSECustomerKeyMD5HasBeenSet = true; m_sSECustomerKeyMD5 = value; }
+    inline void SetSSECustomerKeyMD5(Aws::String&& value) { m_sSECustomerKeyMD5HasBeenSet = true; m_sSECustomerKeyMD5 = std::move(value); }
 
     /**
      * Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321.
@@ -809,7 +810,7 @@ namespace Model
      * Amazon S3 uses this header for a message integrity check to ensure the
      * encryption key was transmitted without error.
      */
-    inline PutObjectRequest& WithSSECustomerKeyMD5(Aws::String&& value) { SetSSECustomerKeyMD5(value); return *this;}
+    inline PutObjectRequest& WithSSECustomerKeyMD5(Aws::String&& value) { SetSSECustomerKeyMD5(std::move(value)); return *this;}
 
     /**
      * Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321.
@@ -843,7 +844,7 @@ namespace Model
      * SDKs and CLI can be found at
      * http://docs.aws.amazon.com/AmazonS3/latest/dev/UsingAWSSDK.html#specify-signature-version
      */
-    inline void SetSSEKMSKeyId(Aws::String&& value) { m_sSEKMSKeyIdHasBeenSet = true; m_sSEKMSKeyId = value; }
+    inline void SetSSEKMSKeyId(Aws::String&& value) { m_sSEKMSKeyIdHasBeenSet = true; m_sSEKMSKeyId = std::move(value); }
 
     /**
      * Specifies the AWS KMS key ID to use for object encryption. All GET and PUT
@@ -870,7 +871,7 @@ namespace Model
      * SDKs and CLI can be found at
      * http://docs.aws.amazon.com/AmazonS3/latest/dev/UsingAWSSDK.html#specify-signature-version
      */
-    inline PutObjectRequest& WithSSEKMSKeyId(Aws::String&& value) { SetSSEKMSKeyId(value); return *this;}
+    inline PutObjectRequest& WithSSEKMSKeyId(Aws::String&& value) { SetSSEKMSKeyId(std::move(value)); return *this;}
 
     /**
      * Specifies the AWS KMS key ID to use for object encryption. All GET and PUT
@@ -888,13 +889,13 @@ namespace Model
     inline void SetRequestPayer(const RequestPayer& value) { m_requestPayerHasBeenSet = true; m_requestPayer = value; }
 
     
-    inline void SetRequestPayer(RequestPayer&& value) { m_requestPayerHasBeenSet = true; m_requestPayer = value; }
+    inline void SetRequestPayer(RequestPayer&& value) { m_requestPayerHasBeenSet = true; m_requestPayer = std::move(value); }
 
     
     inline PutObjectRequest& WithRequestPayer(const RequestPayer& value) { SetRequestPayer(value); return *this;}
 
     
-    inline PutObjectRequest& WithRequestPayer(RequestPayer&& value) { SetRequestPayer(value); return *this;}
+    inline PutObjectRequest& WithRequestPayer(RequestPayer&& value) { SetRequestPayer(std::move(value)); return *this;}
 
     /**
      * The tag-set for the object. The tag-set must be encoded as URL Query parameters
@@ -909,7 +910,7 @@ namespace Model
     /**
      * The tag-set for the object. The tag-set must be encoded as URL Query parameters
      */
-    inline void SetTagging(Aws::String&& value) { m_taggingHasBeenSet = true; m_tagging = value; }
+    inline void SetTagging(Aws::String&& value) { m_taggingHasBeenSet = true; m_tagging = std::move(value); }
 
     /**
      * The tag-set for the object. The tag-set must be encoded as URL Query parameters
@@ -924,7 +925,7 @@ namespace Model
     /**
      * The tag-set for the object. The tag-set must be encoded as URL Query parameters
      */
-    inline PutObjectRequest& WithTagging(Aws::String&& value) { SetTagging(value); return *this;}
+    inline PutObjectRequest& WithTagging(Aws::String&& value) { SetTagging(std::move(value)); return *this;}
 
     /**
      * The tag-set for the object. The tag-set must be encoded as URL Query parameters

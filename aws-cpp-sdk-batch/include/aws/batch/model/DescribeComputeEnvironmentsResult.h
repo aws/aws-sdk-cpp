@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/batch/model/ComputeEnvironmentDetail.h>
+#include <utility>
 
 namespace Aws
 {
@@ -54,7 +55,7 @@ namespace Model
     /**
      * <p>The list of compute environments.</p>
      */
-    inline void SetComputeEnvironments(Aws::Vector<ComputeEnvironmentDetail>&& value) { m_computeEnvironments = value; }
+    inline void SetComputeEnvironments(Aws::Vector<ComputeEnvironmentDetail>&& value) { m_computeEnvironments = std::move(value); }
 
     /**
      * <p>The list of compute environments.</p>
@@ -64,7 +65,7 @@ namespace Model
     /**
      * <p>The list of compute environments.</p>
      */
-    inline DescribeComputeEnvironmentsResult& WithComputeEnvironments(Aws::Vector<ComputeEnvironmentDetail>&& value) { SetComputeEnvironments(value); return *this;}
+    inline DescribeComputeEnvironmentsResult& WithComputeEnvironments(Aws::Vector<ComputeEnvironmentDetail>&& value) { SetComputeEnvironments(std::move(value)); return *this;}
 
     /**
      * <p>The list of compute environments.</p>
@@ -74,7 +75,7 @@ namespace Model
     /**
      * <p>The list of compute environments.</p>
      */
-    inline DescribeComputeEnvironmentsResult& AddComputeEnvironments(ComputeEnvironmentDetail&& value) { m_computeEnvironments.push_back(value); return *this; }
+    inline DescribeComputeEnvironmentsResult& AddComputeEnvironments(ComputeEnvironmentDetail&& value) { m_computeEnvironments.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The <code>nextToken</code> value to include in a future
@@ -101,7 +102,7 @@ namespace Model
      * value can be used to retrieve the next page of results. This value is
      * <code>null</code> when there are no more results to return.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
      * <p>The <code>nextToken</code> value to include in a future
@@ -128,7 +129,7 @@ namespace Model
      * value can be used to retrieve the next page of results. This value is
      * <code>null</code> when there are no more results to return.</p>
      */
-    inline DescribeComputeEnvironmentsResult& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline DescribeComputeEnvironmentsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>The <code>nextToken</code> value to include in a future

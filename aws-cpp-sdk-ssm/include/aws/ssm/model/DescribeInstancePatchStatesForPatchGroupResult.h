@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ssm/model/InstancePatchState.h>
+#include <utility>
 
 namespace Aws
 {
@@ -54,7 +55,7 @@ namespace Model
     /**
      * <p>The high-level patch state for the requested instances. </p>
      */
-    inline void SetInstancePatchStates(Aws::Vector<InstancePatchState>&& value) { m_instancePatchStates = value; }
+    inline void SetInstancePatchStates(Aws::Vector<InstancePatchState>&& value) { m_instancePatchStates = std::move(value); }
 
     /**
      * <p>The high-level patch state for the requested instances. </p>
@@ -64,7 +65,7 @@ namespace Model
     /**
      * <p>The high-level patch state for the requested instances. </p>
      */
-    inline DescribeInstancePatchStatesForPatchGroupResult& WithInstancePatchStates(Aws::Vector<InstancePatchState>&& value) { SetInstancePatchStates(value); return *this;}
+    inline DescribeInstancePatchStatesForPatchGroupResult& WithInstancePatchStates(Aws::Vector<InstancePatchState>&& value) { SetInstancePatchStates(std::move(value)); return *this;}
 
     /**
      * <p>The high-level patch state for the requested instances. </p>
@@ -74,7 +75,7 @@ namespace Model
     /**
      * <p>The high-level patch state for the requested instances. </p>
      */
-    inline DescribeInstancePatchStatesForPatchGroupResult& AddInstancePatchStates(InstancePatchState&& value) { m_instancePatchStates.push_back(value); return *this; }
+    inline DescribeInstancePatchStatesForPatchGroupResult& AddInstancePatchStates(InstancePatchState&& value) { m_instancePatchStates.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The token to use when requesting the next set of items. If there are no
@@ -92,7 +93,7 @@ namespace Model
      * <p>The token to use when requesting the next set of items. If there are no
      * additional items to return, the string is empty.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
      * <p>The token to use when requesting the next set of items. If there are no
@@ -110,7 +111,7 @@ namespace Model
      * <p>The token to use when requesting the next set of items. If there are no
      * additional items to return, the string is empty.</p>
      */
-    inline DescribeInstancePatchStatesForPatchGroupResult& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline DescribeInstancePatchStatesForPatchGroupResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>The token to use when requesting the next set of items. If there are no

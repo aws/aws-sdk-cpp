@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/Filter.h>
+#include <utility>
 
 namespace Aws
 {
@@ -79,7 +80,7 @@ namespace Model
      * <p>One or more volume IDs for which in-progress modifications will be
      * described.</p>
      */
-    inline void SetVolumeIds(Aws::Vector<Aws::String>&& value) { m_volumeIdsHasBeenSet = true; m_volumeIds = value; }
+    inline void SetVolumeIds(Aws::Vector<Aws::String>&& value) { m_volumeIdsHasBeenSet = true; m_volumeIds = std::move(value); }
 
     /**
      * <p>One or more volume IDs for which in-progress modifications will be
@@ -91,7 +92,7 @@ namespace Model
      * <p>One or more volume IDs for which in-progress modifications will be
      * described.</p>
      */
-    inline DescribeVolumesModificationsRequest& WithVolumeIds(Aws::Vector<Aws::String>&& value) { SetVolumeIds(value); return *this;}
+    inline DescribeVolumesModificationsRequest& WithVolumeIds(Aws::Vector<Aws::String>&& value) { SetVolumeIds(std::move(value)); return *this;}
 
     /**
      * <p>One or more volume IDs for which in-progress modifications will be
@@ -103,7 +104,7 @@ namespace Model
      * <p>One or more volume IDs for which in-progress modifications will be
      * described.</p>
      */
-    inline DescribeVolumesModificationsRequest& AddVolumeIds(Aws::String&& value) { m_volumeIdsHasBeenSet = true; m_volumeIds.push_back(value); return *this; }
+    inline DescribeVolumesModificationsRequest& AddVolumeIds(Aws::String&& value) { m_volumeIdsHasBeenSet = true; m_volumeIds.push_back(std::move(value)); return *this; }
 
     /**
      * <p>One or more volume IDs for which in-progress modifications will be
@@ -136,7 +137,7 @@ namespace Model
      * <code>original-size</code>, <code>original-iops</code>,
      * <code>original-volume-type</code>, <code>start-time</code>. </p>
      */
-    inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = value; }
+    inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
 
     /**
      * <p>One or more filters. Supported filters: <code>volume-id</code>,
@@ -154,7 +155,7 @@ namespace Model
      * <code>original-size</code>, <code>original-iops</code>,
      * <code>original-volume-type</code>, <code>start-time</code>. </p>
      */
-    inline DescribeVolumesModificationsRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(value); return *this;}
+    inline DescribeVolumesModificationsRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(std::move(value)); return *this;}
 
     /**
      * <p>One or more filters. Supported filters: <code>volume-id</code>,
@@ -172,7 +173,7 @@ namespace Model
      * <code>original-size</code>, <code>original-iops</code>,
      * <code>original-volume-type</code>, <code>start-time</code>. </p>
      */
-    inline DescribeVolumesModificationsRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
+    inline DescribeVolumesModificationsRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The <code>nextToken</code> value returned by a previous paginated
@@ -190,7 +191,7 @@ namespace Model
      * <p>The <code>nextToken</code> value returned by a previous paginated
      * request.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
      * <p>The <code>nextToken</code> value returned by a previous paginated
@@ -208,7 +209,7 @@ namespace Model
      * <p>The <code>nextToken</code> value returned by a previous paginated
      * request.</p>
      */
-    inline DescribeVolumesModificationsRequest& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline DescribeVolumesModificationsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>The <code>nextToken</code> value returned by a previous paginated

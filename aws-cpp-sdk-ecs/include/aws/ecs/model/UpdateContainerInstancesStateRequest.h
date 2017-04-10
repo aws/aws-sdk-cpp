@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ecs/model/ContainerInstanceStatus.h>
+#include <utility>
 
 namespace Aws
 {
@@ -56,7 +57,7 @@ namespace Model
      * the container instance to update. If you do not specify a cluster, the default
      * cluster is assumed.</p>
      */
-    inline void SetCluster(Aws::String&& value) { m_clusterHasBeenSet = true; m_cluster = value; }
+    inline void SetCluster(Aws::String&& value) { m_clusterHasBeenSet = true; m_cluster = std::move(value); }
 
     /**
      * <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts
@@ -77,7 +78,7 @@ namespace Model
      * the container instance to update. If you do not specify a cluster, the default
      * cluster is assumed.</p>
      */
-    inline UpdateContainerInstancesStateRequest& WithCluster(Aws::String&& value) { SetCluster(value); return *this;}
+    inline UpdateContainerInstancesStateRequest& WithCluster(Aws::String&& value) { SetCluster(std::move(value)); return *this;}
 
     /**
      * <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts
@@ -102,7 +103,7 @@ namespace Model
      * <p>A space-separated list of container instance IDs or full Amazon Resource Name
      * (ARN) entries.</p>
      */
-    inline void SetContainerInstances(Aws::Vector<Aws::String>&& value) { m_containerInstancesHasBeenSet = true; m_containerInstances = value; }
+    inline void SetContainerInstances(Aws::Vector<Aws::String>&& value) { m_containerInstancesHasBeenSet = true; m_containerInstances = std::move(value); }
 
     /**
      * <p>A space-separated list of container instance IDs or full Amazon Resource Name
@@ -114,7 +115,7 @@ namespace Model
      * <p>A space-separated list of container instance IDs or full Amazon Resource Name
      * (ARN) entries.</p>
      */
-    inline UpdateContainerInstancesStateRequest& WithContainerInstances(Aws::Vector<Aws::String>&& value) { SetContainerInstances(value); return *this;}
+    inline UpdateContainerInstancesStateRequest& WithContainerInstances(Aws::Vector<Aws::String>&& value) { SetContainerInstances(std::move(value)); return *this;}
 
     /**
      * <p>A space-separated list of container instance IDs or full Amazon Resource Name
@@ -126,7 +127,7 @@ namespace Model
      * <p>A space-separated list of container instance IDs or full Amazon Resource Name
      * (ARN) entries.</p>
      */
-    inline UpdateContainerInstancesStateRequest& AddContainerInstances(Aws::String&& value) { m_containerInstancesHasBeenSet = true; m_containerInstances.push_back(value); return *this; }
+    inline UpdateContainerInstancesStateRequest& AddContainerInstances(Aws::String&& value) { m_containerInstancesHasBeenSet = true; m_containerInstances.push_back(std::move(value)); return *this; }
 
     /**
      * <p>A space-separated list of container instance IDs or full Amazon Resource Name
@@ -147,7 +148,7 @@ namespace Model
     /**
      * <p>The container instance state with which to update the container instance.</p>
      */
-    inline void SetStatus(ContainerInstanceStatus&& value) { m_statusHasBeenSet = true; m_status = value; }
+    inline void SetStatus(ContainerInstanceStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
      * <p>The container instance state with which to update the container instance.</p>
@@ -157,7 +158,7 @@ namespace Model
     /**
      * <p>The container instance state with which to update the container instance.</p>
      */
-    inline UpdateContainerInstancesStateRequest& WithStatus(ContainerInstanceStatus&& value) { SetStatus(value); return *this;}
+    inline UpdateContainerInstancesStateRequest& WithStatus(ContainerInstanceStatus&& value) { SetStatus(std::move(value)); return *this;}
 
   private:
     Aws::String m_cluster;

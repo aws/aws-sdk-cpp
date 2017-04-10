@@ -22,6 +22,7 @@
 #include <aws/snowball/model/ShippingOption.h>
 #include <aws/snowball/model/Notification.h>
 #include <aws/snowball/model/SnowballType.h>
+#include <utility>
 
 namespace Aws
 {
@@ -54,7 +55,7 @@ namespace Model
     /**
      * <p>Defines the type of job that you're creating. </p>
      */
-    inline void SetJobType(JobType&& value) { m_jobTypeHasBeenSet = true; m_jobType = value; }
+    inline void SetJobType(JobType&& value) { m_jobTypeHasBeenSet = true; m_jobType = std::move(value); }
 
     /**
      * <p>Defines the type of job that you're creating. </p>
@@ -64,7 +65,7 @@ namespace Model
     /**
      * <p>Defines the type of job that you're creating. </p>
      */
-    inline CreateJobRequest& WithJobType(JobType&& value) { SetJobType(value); return *this;}
+    inline CreateJobRequest& WithJobType(JobType&& value) { SetJobType(std::move(value)); return *this;}
 
     /**
      * <p>Defines the Amazon S3 buckets associated with this job.</p> <p>With
@@ -100,7 +101,7 @@ namespace Model
      * an inclusive <code>BeginMarker</code> value, an inclusive <code>EndMarker</code>
      * value, or both. Ranges are UTF-8 binary sorted.</p>
      */
-    inline void SetResources(JobResource&& value) { m_resourcesHasBeenSet = true; m_resources = value; }
+    inline void SetResources(JobResource&& value) { m_resourcesHasBeenSet = true; m_resources = std::move(value); }
 
     /**
      * <p>Defines the Amazon S3 buckets associated with this job.</p> <p>With
@@ -124,7 +125,7 @@ namespace Model
      * an inclusive <code>BeginMarker</code> value, an inclusive <code>EndMarker</code>
      * value, or both. Ranges are UTF-8 binary sorted.</p>
      */
-    inline CreateJobRequest& WithResources(JobResource&& value) { SetResources(value); return *this;}
+    inline CreateJobRequest& WithResources(JobResource&& value) { SetResources(std::move(value)); return *this;}
 
     /**
      * <p>Defines an optional description of this specific job, for example
@@ -142,7 +143,7 @@ namespace Model
      * <p>Defines an optional description of this specific job, for example
      * <code>Important Photos 2016-08-11</code>.</p>
      */
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = value; }
+    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
      * <p>Defines an optional description of this specific job, for example
@@ -160,7 +161,7 @@ namespace Model
      * <p>Defines an optional description of this specific job, for example
      * <code>Important Photos 2016-08-11</code>.</p>
      */
-    inline CreateJobRequest& WithDescription(Aws::String&& value) { SetDescription(value); return *this;}
+    inline CreateJobRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
      * <p>Defines an optional description of this specific job, for example
@@ -181,7 +182,7 @@ namespace Model
     /**
      * <p>The ID for the address that you want the Snowball shipped to.</p>
      */
-    inline void SetAddressId(Aws::String&& value) { m_addressIdHasBeenSet = true; m_addressId = value; }
+    inline void SetAddressId(Aws::String&& value) { m_addressIdHasBeenSet = true; m_addressId = std::move(value); }
 
     /**
      * <p>The ID for the address that you want the Snowball shipped to.</p>
@@ -196,7 +197,7 @@ namespace Model
     /**
      * <p>The ID for the address that you want the Snowball shipped to.</p>
      */
-    inline CreateJobRequest& WithAddressId(Aws::String&& value) { SetAddressId(value); return *this;}
+    inline CreateJobRequest& WithAddressId(Aws::String&& value) { SetAddressId(std::move(value)); return *this;}
 
     /**
      * <p>The ID for the address that you want the Snowball shipped to.</p>
@@ -225,7 +226,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/kms/latest/APIReference/API_CreateKey.html">CreateKey</a>
      * AWS Key Management Service (KMS) API action.</p>
      */
-    inline void SetKmsKeyARN(Aws::String&& value) { m_kmsKeyARNHasBeenSet = true; m_kmsKeyARN = value; }
+    inline void SetKmsKeyARN(Aws::String&& value) { m_kmsKeyARNHasBeenSet = true; m_kmsKeyARN = std::move(value); }
 
     /**
      * <p>The <code>KmsKeyARN</code> that you want to associate with this job.
@@ -249,7 +250,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/kms/latest/APIReference/API_CreateKey.html">CreateKey</a>
      * AWS Key Management Service (KMS) API action.</p>
      */
-    inline CreateJobRequest& WithKmsKeyARN(Aws::String&& value) { SetKmsKeyARN(value); return *this;}
+    inline CreateJobRequest& WithKmsKeyARN(Aws::String&& value) { SetKmsKeyARN(std::move(value)); return *this;}
 
     /**
      * <p>The <code>KmsKeyARN</code> that you want to associate with this job.
@@ -281,7 +282,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a>
      * AWS Identity and Access Management (IAM) API action.</p>
      */
-    inline void SetRoleARN(Aws::String&& value) { m_roleARNHasBeenSet = true; m_roleARN = value; }
+    inline void SetRoleARN(Aws::String&& value) { m_roleARNHasBeenSet = true; m_roleARN = std::move(value); }
 
     /**
      * <p>The <code>RoleARN</code> that you want to associate with this job.
@@ -305,7 +306,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a>
      * AWS Identity and Access Management (IAM) API action.</p>
      */
-    inline CreateJobRequest& WithRoleARN(Aws::String&& value) { SetRoleARN(value); return *this;}
+    inline CreateJobRequest& WithRoleARN(Aws::String&& value) { SetRoleARN(std::move(value)); return *this;}
 
     /**
      * <p>The <code>RoleARN</code> that you want to associate with this job.
@@ -334,7 +335,7 @@ namespace Model
      * specifying what size Snowball you'd like for this job. In all other regions,
      * Snowballs come with 80 TB in storage capacity.</p>
      */
-    inline void SetSnowballCapacityPreference(SnowballCapacity&& value) { m_snowballCapacityPreferenceHasBeenSet = true; m_snowballCapacityPreference = value; }
+    inline void SetSnowballCapacityPreference(SnowballCapacity&& value) { m_snowballCapacityPreferenceHasBeenSet = true; m_snowballCapacityPreference = std::move(value); }
 
     /**
      * <p>If your job is being created in one of the US regions, you have the option of
@@ -348,7 +349,7 @@ namespace Model
      * specifying what size Snowball you'd like for this job. In all other regions,
      * Snowballs come with 80 TB in storage capacity.</p>
      */
-    inline CreateJobRequest& WithSnowballCapacityPreference(SnowballCapacity&& value) { SetSnowballCapacityPreference(value); return *this;}
+    inline CreateJobRequest& WithSnowballCapacityPreference(SnowballCapacity&& value) { SetSnowballCapacityPreference(std::move(value)); return *this;}
 
     /**
      * <p>The shipping speed for this job. This speed doesn't dictate how soon you'll
@@ -393,7 +394,7 @@ namespace Model
      * days.</p> </li> <li> <p>In the US, you have access to one-day shipping and
      * two-day shipping.</p> </li> </ul>
      */
-    inline void SetShippingOption(ShippingOption&& value) { m_shippingOptionHasBeenSet = true; m_shippingOption = value; }
+    inline void SetShippingOption(ShippingOption&& value) { m_shippingOptionHasBeenSet = true; m_shippingOption = std::move(value); }
 
     /**
      * <p>The shipping speed for this job. This speed doesn't dictate how soon you'll
@@ -423,7 +424,7 @@ namespace Model
      * days.</p> </li> <li> <p>In the US, you have access to one-day shipping and
      * two-day shipping.</p> </li> </ul>
      */
-    inline CreateJobRequest& WithShippingOption(ShippingOption&& value) { SetShippingOption(value); return *this;}
+    inline CreateJobRequest& WithShippingOption(ShippingOption&& value) { SetShippingOption(std::move(value)); return *this;}
 
     /**
      * <p>Defines the Amazon Simple Notification Service (Amazon SNS) notification
@@ -441,7 +442,7 @@ namespace Model
      * <p>Defines the Amazon Simple Notification Service (Amazon SNS) notification
      * settings for this job.</p>
      */
-    inline void SetNotification(Notification&& value) { m_notificationHasBeenSet = true; m_notification = value; }
+    inline void SetNotification(Notification&& value) { m_notificationHasBeenSet = true; m_notification = std::move(value); }
 
     /**
      * <p>Defines the Amazon Simple Notification Service (Amazon SNS) notification
@@ -453,7 +454,7 @@ namespace Model
      * <p>Defines the Amazon Simple Notification Service (Amazon SNS) notification
      * settings for this job.</p>
      */
-    inline CreateJobRequest& WithNotification(Notification&& value) { SetNotification(value); return *this;}
+    inline CreateJobRequest& WithNotification(Notification&& value) { SetNotification(std::move(value)); return *this;}
 
     /**
      * <p>The ID of a cluster. If you're creating a job for a node in a cluster, you
@@ -474,7 +475,7 @@ namespace Model
      * need to provide only this <code>clusterId</code> value. The other job attributes
      * are inherited from the cluster.</p>
      */
-    inline void SetClusterId(Aws::String&& value) { m_clusterIdHasBeenSet = true; m_clusterId = value; }
+    inline void SetClusterId(Aws::String&& value) { m_clusterIdHasBeenSet = true; m_clusterId = std::move(value); }
 
     /**
      * <p>The ID of a cluster. If you're creating a job for a node in a cluster, you
@@ -495,7 +496,7 @@ namespace Model
      * need to provide only this <code>clusterId</code> value. The other job attributes
      * are inherited from the cluster.</p>
      */
-    inline CreateJobRequest& WithClusterId(Aws::String&& value) { SetClusterId(value); return *this;}
+    inline CreateJobRequest& WithClusterId(Aws::String&& value) { SetClusterId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of a cluster. If you're creating a job for a node in a cluster, you
@@ -520,7 +521,7 @@ namespace Model
      * <p>The type of AWS Snowball appliance to use for this job. Currently, the only
      * supported appliance type for cluster jobs is <code>EDGE</code>.</p>
      */
-    inline void SetSnowballType(SnowballType&& value) { m_snowballTypeHasBeenSet = true; m_snowballType = value; }
+    inline void SetSnowballType(SnowballType&& value) { m_snowballTypeHasBeenSet = true; m_snowballType = std::move(value); }
 
     /**
      * <p>The type of AWS Snowball appliance to use for this job. Currently, the only
@@ -532,7 +533,7 @@ namespace Model
      * <p>The type of AWS Snowball appliance to use for this job. Currently, the only
      * supported appliance type for cluster jobs is <code>EDGE</code>.</p>
      */
-    inline CreateJobRequest& WithSnowballType(SnowballType&& value) { SetSnowballType(value); return *this;}
+    inline CreateJobRequest& WithSnowballType(SnowballType&& value) { SetSnowballType(std::move(value)); return *this;}
 
   private:
     JobType m_jobType;

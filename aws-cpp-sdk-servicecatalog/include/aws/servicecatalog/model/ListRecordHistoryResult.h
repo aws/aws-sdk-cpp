@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/servicecatalog/model/RecordDetail.h>
+#include <utility>
 
 namespace Aws
 {
@@ -54,7 +55,7 @@ namespace Model
     /**
      * <p>A list of record detail objects, listed in reverse chronological order.</p>
      */
-    inline void SetRecordDetails(Aws::Vector<RecordDetail>&& value) { m_recordDetails = value; }
+    inline void SetRecordDetails(Aws::Vector<RecordDetail>&& value) { m_recordDetails = std::move(value); }
 
     /**
      * <p>A list of record detail objects, listed in reverse chronological order.</p>
@@ -64,7 +65,7 @@ namespace Model
     /**
      * <p>A list of record detail objects, listed in reverse chronological order.</p>
      */
-    inline ListRecordHistoryResult& WithRecordDetails(Aws::Vector<RecordDetail>&& value) { SetRecordDetails(value); return *this;}
+    inline ListRecordHistoryResult& WithRecordDetails(Aws::Vector<RecordDetail>&& value) { SetRecordDetails(std::move(value)); return *this;}
 
     /**
      * <p>A list of record detail objects, listed in reverse chronological order.</p>
@@ -74,7 +75,7 @@ namespace Model
     /**
      * <p>A list of record detail objects, listed in reverse chronological order.</p>
      */
-    inline ListRecordHistoryResult& AddRecordDetails(RecordDetail&& value) { m_recordDetails.push_back(value); return *this; }
+    inline ListRecordHistoryResult& AddRecordDetails(RecordDetail&& value) { m_recordDetails.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The page token to use to retrieve the next page of results for this
@@ -92,7 +93,7 @@ namespace Model
      * <p>The page token to use to retrieve the next page of results for this
      * operation. If there are no more pages, this value is null.</p>
      */
-    inline void SetNextPageToken(Aws::String&& value) { m_nextPageToken = value; }
+    inline void SetNextPageToken(Aws::String&& value) { m_nextPageToken = std::move(value); }
 
     /**
      * <p>The page token to use to retrieve the next page of results for this
@@ -110,7 +111,7 @@ namespace Model
      * <p>The page token to use to retrieve the next page of results for this
      * operation. If there are no more pages, this value is null.</p>
      */
-    inline ListRecordHistoryResult& WithNextPageToken(Aws::String&& value) { SetNextPageToken(value); return *this;}
+    inline ListRecordHistoryResult& WithNextPageToken(Aws::String&& value) { SetNextPageToken(std::move(value)); return *this;}
 
     /**
      * <p>The page token to use to retrieve the next page of results for this

@@ -17,6 +17,7 @@
 #include <aws/cloudtrail/model/ReadWriteType.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/cloudtrail/model/DataResource.h>
+#include <utility>
 
 namespace Aws
 {
@@ -72,7 +73,7 @@ namespace Model
      * operation and <code>RunInstances</code> is a write-only API operation.</p> <p>
      * By default, the value is <code>All</code>.</p>
      */
-    inline void SetReadWriteType(ReadWriteType&& value) { m_readWriteTypeHasBeenSet = true; m_readWriteType = value; }
+    inline void SetReadWriteType(ReadWriteType&& value) { m_readWriteTypeHasBeenSet = true; m_readWriteType = std::move(value); }
 
     /**
      * <p>Specify if you want your trail to log read-only events, write-only events, or
@@ -88,7 +89,7 @@ namespace Model
      * operation and <code>RunInstances</code> is a write-only API operation.</p> <p>
      * By default, the value is <code>All</code>.</p>
      */
-    inline EventSelector& WithReadWriteType(ReadWriteType&& value) { SetReadWriteType(value); return *this;}
+    inline EventSelector& WithReadWriteType(ReadWriteType&& value) { SetReadWriteType(std::move(value)); return *this;}
 
     /**
      * <p>Specify if you want your event selector to include management events for your
@@ -142,7 +143,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html#logging-data-events">Data
      * Events</a> in the <i>AWS CloudTrail User Guide</i>.</p>
      */
-    inline void SetDataResources(Aws::Vector<DataResource>&& value) { m_dataResourcesHasBeenSet = true; m_dataResources = value; }
+    inline void SetDataResources(Aws::Vector<DataResource>&& value) { m_dataResourcesHasBeenSet = true; m_dataResources = std::move(value); }
 
     /**
      * <p>CloudTrail supports logging only data events for S3 objects. You can specify
@@ -160,7 +161,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html#logging-data-events">Data
      * Events</a> in the <i>AWS CloudTrail User Guide</i>.</p>
      */
-    inline EventSelector& WithDataResources(Aws::Vector<DataResource>&& value) { SetDataResources(value); return *this;}
+    inline EventSelector& WithDataResources(Aws::Vector<DataResource>&& value) { SetDataResources(std::move(value)); return *this;}
 
     /**
      * <p>CloudTrail supports logging only data events for S3 objects. You can specify
@@ -178,7 +179,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html#logging-data-events">Data
      * Events</a> in the <i>AWS CloudTrail User Guide</i>.</p>
      */
-    inline EventSelector& AddDataResources(DataResource&& value) { m_dataResourcesHasBeenSet = true; m_dataResources.push_back(value); return *this; }
+    inline EventSelector& AddDataResources(DataResource&& value) { m_dataResourcesHasBeenSet = true; m_dataResources.push_back(std::move(value)); return *this; }
 
   private:
     ReadWriteType m_readWriteType;

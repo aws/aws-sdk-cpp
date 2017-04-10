@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/glacier/Glacier_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -58,7 +59,7 @@ namespace Model
     /**
      * <p>The lock ID, which is used to complete the vault locking process.</p>
      */
-    inline void SetLockId(Aws::String&& value) { m_lockId = value; }
+    inline void SetLockId(Aws::String&& value) { m_lockId = std::move(value); }
 
     /**
      * <p>The lock ID, which is used to complete the vault locking process.</p>
@@ -73,7 +74,7 @@ namespace Model
     /**
      * <p>The lock ID, which is used to complete the vault locking process.</p>
      */
-    inline InitiateVaultLockResult& WithLockId(Aws::String&& value) { SetLockId(value); return *this;}
+    inline InitiateVaultLockResult& WithLockId(Aws::String&& value) { SetLockId(std::move(value)); return *this;}
 
     /**
      * <p>The lock ID, which is used to complete the vault locking process.</p>

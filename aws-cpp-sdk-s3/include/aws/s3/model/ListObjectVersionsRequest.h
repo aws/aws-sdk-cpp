@@ -17,6 +17,7 @@
 #include <aws/s3/S3Request.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/s3/model/EncodingType.h>
+#include <utility>
 
 namespace Aws
 {
@@ -47,7 +48,7 @@ namespace Model
     inline void SetBucket(const Aws::String& value) { m_bucketHasBeenSet = true; m_bucket = value; }
 
     
-    inline void SetBucket(Aws::String&& value) { m_bucketHasBeenSet = true; m_bucket = value; }
+    inline void SetBucket(Aws::String&& value) { m_bucketHasBeenSet = true; m_bucket = std::move(value); }
 
     
     inline void SetBucket(const char* value) { m_bucketHasBeenSet = true; m_bucket.assign(value); }
@@ -56,7 +57,7 @@ namespace Model
     inline ListObjectVersionsRequest& WithBucket(const Aws::String& value) { SetBucket(value); return *this;}
 
     
-    inline ListObjectVersionsRequest& WithBucket(Aws::String&& value) { SetBucket(value); return *this;}
+    inline ListObjectVersionsRequest& WithBucket(Aws::String&& value) { SetBucket(std::move(value)); return *this;}
 
     
     inline ListObjectVersionsRequest& WithBucket(const char* value) { SetBucket(value); return *this;}
@@ -74,7 +75,7 @@ namespace Model
     /**
      * A delimiter is a character you use to group keys.
      */
-    inline void SetDelimiter(Aws::String&& value) { m_delimiterHasBeenSet = true; m_delimiter = value; }
+    inline void SetDelimiter(Aws::String&& value) { m_delimiterHasBeenSet = true; m_delimiter = std::move(value); }
 
     /**
      * A delimiter is a character you use to group keys.
@@ -89,7 +90,7 @@ namespace Model
     /**
      * A delimiter is a character you use to group keys.
      */
-    inline ListObjectVersionsRequest& WithDelimiter(Aws::String&& value) { SetDelimiter(value); return *this;}
+    inline ListObjectVersionsRequest& WithDelimiter(Aws::String&& value) { SetDelimiter(std::move(value)); return *this;}
 
     /**
      * A delimiter is a character you use to group keys.
@@ -103,13 +104,13 @@ namespace Model
     inline void SetEncodingType(const EncodingType& value) { m_encodingTypeHasBeenSet = true; m_encodingType = value; }
 
     
-    inline void SetEncodingType(EncodingType&& value) { m_encodingTypeHasBeenSet = true; m_encodingType = value; }
+    inline void SetEncodingType(EncodingType&& value) { m_encodingTypeHasBeenSet = true; m_encodingType = std::move(value); }
 
     
     inline ListObjectVersionsRequest& WithEncodingType(const EncodingType& value) { SetEncodingType(value); return *this;}
 
     
-    inline ListObjectVersionsRequest& WithEncodingType(EncodingType&& value) { SetEncodingType(value); return *this;}
+    inline ListObjectVersionsRequest& WithEncodingType(EncodingType&& value) { SetEncodingType(std::move(value)); return *this;}
 
     /**
      * Specifies the key to start with when listing objects in a bucket.
@@ -124,7 +125,7 @@ namespace Model
     /**
      * Specifies the key to start with when listing objects in a bucket.
      */
-    inline void SetKeyMarker(Aws::String&& value) { m_keyMarkerHasBeenSet = true; m_keyMarker = value; }
+    inline void SetKeyMarker(Aws::String&& value) { m_keyMarkerHasBeenSet = true; m_keyMarker = std::move(value); }
 
     /**
      * Specifies the key to start with when listing objects in a bucket.
@@ -139,7 +140,7 @@ namespace Model
     /**
      * Specifies the key to start with when listing objects in a bucket.
      */
-    inline ListObjectVersionsRequest& WithKeyMarker(Aws::String&& value) { SetKeyMarker(value); return *this;}
+    inline ListObjectVersionsRequest& WithKeyMarker(Aws::String&& value) { SetKeyMarker(std::move(value)); return *this;}
 
     /**
      * Specifies the key to start with when listing objects in a bucket.
@@ -177,7 +178,7 @@ namespace Model
     /**
      * Limits the response to keys that begin with the specified prefix.
      */
-    inline void SetPrefix(Aws::String&& value) { m_prefixHasBeenSet = true; m_prefix = value; }
+    inline void SetPrefix(Aws::String&& value) { m_prefixHasBeenSet = true; m_prefix = std::move(value); }
 
     /**
      * Limits the response to keys that begin with the specified prefix.
@@ -192,7 +193,7 @@ namespace Model
     /**
      * Limits the response to keys that begin with the specified prefix.
      */
-    inline ListObjectVersionsRequest& WithPrefix(Aws::String&& value) { SetPrefix(value); return *this;}
+    inline ListObjectVersionsRequest& WithPrefix(Aws::String&& value) { SetPrefix(std::move(value)); return *this;}
 
     /**
      * Limits the response to keys that begin with the specified prefix.
@@ -212,7 +213,7 @@ namespace Model
     /**
      * Specifies the object version you want to start listing from.
      */
-    inline void SetVersionIdMarker(Aws::String&& value) { m_versionIdMarkerHasBeenSet = true; m_versionIdMarker = value; }
+    inline void SetVersionIdMarker(Aws::String&& value) { m_versionIdMarkerHasBeenSet = true; m_versionIdMarker = std::move(value); }
 
     /**
      * Specifies the object version you want to start listing from.
@@ -227,7 +228,7 @@ namespace Model
     /**
      * Specifies the object version you want to start listing from.
      */
-    inline ListObjectVersionsRequest& WithVersionIdMarker(Aws::String&& value) { SetVersionIdMarker(value); return *this;}
+    inline ListObjectVersionsRequest& WithVersionIdMarker(Aws::String&& value) { SetVersionIdMarker(std::move(value)); return *this;}
 
     /**
      * Specifies the object version you want to start listing from.

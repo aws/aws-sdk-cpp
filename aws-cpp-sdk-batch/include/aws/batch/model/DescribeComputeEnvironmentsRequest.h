@@ -17,6 +17,7 @@
 #include <aws/batch/BatchRequest.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -50,7 +51,7 @@ namespace Model
      * <p>A list of up to 100 compute environment names or full Amazon Resource Name
      * (ARN) entries. </p>
      */
-    inline void SetComputeEnvironments(Aws::Vector<Aws::String>&& value) { m_computeEnvironmentsHasBeenSet = true; m_computeEnvironments = value; }
+    inline void SetComputeEnvironments(Aws::Vector<Aws::String>&& value) { m_computeEnvironmentsHasBeenSet = true; m_computeEnvironments = std::move(value); }
 
     /**
      * <p>A list of up to 100 compute environment names or full Amazon Resource Name
@@ -62,7 +63,7 @@ namespace Model
      * <p>A list of up to 100 compute environment names or full Amazon Resource Name
      * (ARN) entries. </p>
      */
-    inline DescribeComputeEnvironmentsRequest& WithComputeEnvironments(Aws::Vector<Aws::String>&& value) { SetComputeEnvironments(value); return *this;}
+    inline DescribeComputeEnvironmentsRequest& WithComputeEnvironments(Aws::Vector<Aws::String>&& value) { SetComputeEnvironments(std::move(value)); return *this;}
 
     /**
      * <p>A list of up to 100 compute environment names or full Amazon Resource Name
@@ -74,7 +75,7 @@ namespace Model
      * <p>A list of up to 100 compute environment names or full Amazon Resource Name
      * (ARN) entries. </p>
      */
-    inline DescribeComputeEnvironmentsRequest& AddComputeEnvironments(Aws::String&& value) { m_computeEnvironmentsHasBeenSet = true; m_computeEnvironments.push_back(value); return *this; }
+    inline DescribeComputeEnvironmentsRequest& AddComputeEnvironments(Aws::String&& value) { m_computeEnvironmentsHasBeenSet = true; m_computeEnvironments.push_back(std::move(value)); return *this; }
 
     /**
      * <p>A list of up to 100 compute environment names or full Amazon Resource Name
@@ -158,7 +159,7 @@ namespace Model
      * identifier that is only used to retrieve the next items in a list and not for
      * other programmatic purposes.</p> </note>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
      * <p>The <code>nextToken</code> value returned from a previous paginated
@@ -194,7 +195,7 @@ namespace Model
      * identifier that is only used to retrieve the next items in a list and not for
      * other programmatic purposes.</p> </note>
      */
-    inline DescribeComputeEnvironmentsRequest& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline DescribeComputeEnvironmentsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>The <code>nextToken</code> value returned from a previous paginated

@@ -18,6 +18,7 @@
 #include <aws/ssm/model/MaintenanceWindowResourceType.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ssm/model/Target.h>
+#include <utility>
 
 namespace Aws
 {
@@ -60,7 +61,7 @@ namespace Model
     /**
      * <p>The Maintenance Window ID where the target is registered.</p>
      */
-    inline void SetWindowId(Aws::String&& value) { m_windowIdHasBeenSet = true; m_windowId = value; }
+    inline void SetWindowId(Aws::String&& value) { m_windowIdHasBeenSet = true; m_windowId = std::move(value); }
 
     /**
      * <p>The Maintenance Window ID where the target is registered.</p>
@@ -75,7 +76,7 @@ namespace Model
     /**
      * <p>The Maintenance Window ID where the target is registered.</p>
      */
-    inline MaintenanceWindowTarget& WithWindowId(Aws::String&& value) { SetWindowId(value); return *this;}
+    inline MaintenanceWindowTarget& WithWindowId(Aws::String&& value) { SetWindowId(std::move(value)); return *this;}
 
     /**
      * <p>The Maintenance Window ID where the target is registered.</p>
@@ -95,7 +96,7 @@ namespace Model
     /**
      * <p>The ID of the target.</p>
      */
-    inline void SetWindowTargetId(Aws::String&& value) { m_windowTargetIdHasBeenSet = true; m_windowTargetId = value; }
+    inline void SetWindowTargetId(Aws::String&& value) { m_windowTargetIdHasBeenSet = true; m_windowTargetId = std::move(value); }
 
     /**
      * <p>The ID of the target.</p>
@@ -110,7 +111,7 @@ namespace Model
     /**
      * <p>The ID of the target.</p>
      */
-    inline MaintenanceWindowTarget& WithWindowTargetId(Aws::String&& value) { SetWindowTargetId(value); return *this;}
+    inline MaintenanceWindowTarget& WithWindowTargetId(Aws::String&& value) { SetWindowTargetId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the target.</p>
@@ -130,7 +131,7 @@ namespace Model
     /**
      * <p>The type of target.</p>
      */
-    inline void SetResourceType(MaintenanceWindowResourceType&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
+    inline void SetResourceType(MaintenanceWindowResourceType&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
 
     /**
      * <p>The type of target.</p>
@@ -140,7 +141,7 @@ namespace Model
     /**
      * <p>The type of target.</p>
      */
-    inline MaintenanceWindowTarget& WithResourceType(MaintenanceWindowResourceType&& value) { SetResourceType(value); return *this;}
+    inline MaintenanceWindowTarget& WithResourceType(MaintenanceWindowResourceType&& value) { SetResourceType(std::move(value)); return *this;}
 
     /**
      * <p>The targets (either instances or tags). Instances are specified using
@@ -161,7 +162,7 @@ namespace Model
      * Key=instanceids,Values=&lt;instanceid1&gt;,&lt;instanceid2&gt;. Tags are
      * specified using Key=&lt;tag name&gt;,Values=&lt;tag value&gt;.</p>
      */
-    inline void SetTargets(Aws::Vector<Target>&& value) { m_targetsHasBeenSet = true; m_targets = value; }
+    inline void SetTargets(Aws::Vector<Target>&& value) { m_targetsHasBeenSet = true; m_targets = std::move(value); }
 
     /**
      * <p>The targets (either instances or tags). Instances are specified using
@@ -175,7 +176,7 @@ namespace Model
      * Key=instanceids,Values=&lt;instanceid1&gt;,&lt;instanceid2&gt;. Tags are
      * specified using Key=&lt;tag name&gt;,Values=&lt;tag value&gt;.</p>
      */
-    inline MaintenanceWindowTarget& WithTargets(Aws::Vector<Target>&& value) { SetTargets(value); return *this;}
+    inline MaintenanceWindowTarget& WithTargets(Aws::Vector<Target>&& value) { SetTargets(std::move(value)); return *this;}
 
     /**
      * <p>The targets (either instances or tags). Instances are specified using
@@ -189,7 +190,7 @@ namespace Model
      * Key=instanceids,Values=&lt;instanceid1&gt;,&lt;instanceid2&gt;. Tags are
      * specified using Key=&lt;tag name&gt;,Values=&lt;tag value&gt;.</p>
      */
-    inline MaintenanceWindowTarget& AddTargets(Target&& value) { m_targetsHasBeenSet = true; m_targets.push_back(value); return *this; }
+    inline MaintenanceWindowTarget& AddTargets(Target&& value) { m_targetsHasBeenSet = true; m_targets.push_back(std::move(value)); return *this; }
 
     /**
      * <p>User-provided value that will be included in any CloudWatch events raised
@@ -207,7 +208,7 @@ namespace Model
      * <p>User-provided value that will be included in any CloudWatch events raised
      * while running tasks for these targets in this Maintenance Window.</p>
      */
-    inline void SetOwnerInformation(Aws::String&& value) { m_ownerInformationHasBeenSet = true; m_ownerInformation = value; }
+    inline void SetOwnerInformation(Aws::String&& value) { m_ownerInformationHasBeenSet = true; m_ownerInformation = std::move(value); }
 
     /**
      * <p>User-provided value that will be included in any CloudWatch events raised
@@ -225,7 +226,7 @@ namespace Model
      * <p>User-provided value that will be included in any CloudWatch events raised
      * while running tasks for these targets in this Maintenance Window.</p>
      */
-    inline MaintenanceWindowTarget& WithOwnerInformation(Aws::String&& value) { SetOwnerInformation(value); return *this;}
+    inline MaintenanceWindowTarget& WithOwnerInformation(Aws::String&& value) { SetOwnerInformation(std::move(value)); return *this;}
 
     /**
      * <p>User-provided value that will be included in any CloudWatch events raised

@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/apigateway/APIGateway_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -69,7 +70,7 @@ namespace Model
      * target="_blank">Velocity Template Language (VTL)</a> template content used for
      * the template resource.</p>
      */
-    inline void SetValue(Aws::String&& value) { m_value = value; }
+    inline void SetValue(Aws::String&& value) { m_value = std::move(value); }
 
     /**
      * <p>The Apache <a
@@ -93,7 +94,7 @@ namespace Model
      * target="_blank">Velocity Template Language (VTL)</a> template content used for
      * the template resource.</p>
      */
-    inline GetModelTemplateResult& WithValue(Aws::String&& value) { SetValue(value); return *this;}
+    inline GetModelTemplateResult& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
 
     /**
      * <p>The Apache <a

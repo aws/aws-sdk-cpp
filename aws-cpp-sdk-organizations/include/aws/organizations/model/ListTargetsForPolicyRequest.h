@@ -16,6 +16,7 @@
 #include <aws/organizations/Organizations_EXPORTS.h>
 #include <aws/organizations/OrganizationsRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -57,7 +58,7 @@ namespace Model
      * pattern</a> for a policy ID string requires "p-" followed by from 8 to 128
      * lower-case letters or digits.</p>
      */
-    inline void SetPolicyId(Aws::String&& value) { m_policyIdHasBeenSet = true; m_policyId = value; }
+    inline void SetPolicyId(Aws::String&& value) { m_policyIdHasBeenSet = true; m_policyId = std::move(value); }
 
     /**
      * <p>The unique identifier (ID) of the policy for which you want to know its
@@ -81,7 +82,7 @@ namespace Model
      * pattern</a> for a policy ID string requires "p-" followed by from 8 to 128
      * lower-case letters or digits.</p>
      */
-    inline ListTargetsForPolicyRequest& WithPolicyId(Aws::String&& value) { SetPolicyId(value); return *this;}
+    inline ListTargetsForPolicyRequest& WithPolicyId(Aws::String&& value) { SetPolicyId(std::move(value)); return *this;}
 
     /**
      * <p>The unique identifier (ID) of the policy for which you want to know its
@@ -113,7 +114,7 @@ namespace Model
      * the value of the previous call's <code>NextToken</code> response to indicate
      * where the output should continue from.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
      * <p>Use this parameter if you receive a <code>NextToken</code> response in a
@@ -137,7 +138,7 @@ namespace Model
      * the value of the previous call's <code>NextToken</code> response to indicate
      * where the output should continue from.</p>
      */
-    inline ListTargetsForPolicyRequest& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline ListTargetsForPolicyRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>Use this parameter if you receive a <code>NextToken</code> response in a

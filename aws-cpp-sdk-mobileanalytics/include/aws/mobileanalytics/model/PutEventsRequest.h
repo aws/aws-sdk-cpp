@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/mobileanalytics/model/Event.h>
+#include <utility>
 
 namespace Aws
 {
@@ -51,7 +52,7 @@ namespace Model
     /**
      * <p>An array of Event JSON objects</p>
      */
-    inline void SetEvents(Aws::Vector<Event>&& value) { m_eventsHasBeenSet = true; m_events = value; }
+    inline void SetEvents(Aws::Vector<Event>&& value) { m_eventsHasBeenSet = true; m_events = std::move(value); }
 
     /**
      * <p>An array of Event JSON objects</p>
@@ -61,7 +62,7 @@ namespace Model
     /**
      * <p>An array of Event JSON objects</p>
      */
-    inline PutEventsRequest& WithEvents(Aws::Vector<Event>&& value) { SetEvents(value); return *this;}
+    inline PutEventsRequest& WithEvents(Aws::Vector<Event>&& value) { SetEvents(std::move(value)); return *this;}
 
     /**
      * <p>An array of Event JSON objects</p>
@@ -71,7 +72,7 @@ namespace Model
     /**
      * <p>An array of Event JSON objects</p>
      */
-    inline PutEventsRequest& AddEvents(Event&& value) { m_eventsHasBeenSet = true; m_events.push_back(value); return *this; }
+    inline PutEventsRequest& AddEvents(Event&& value) { m_eventsHasBeenSet = true; m_events.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The client context including the client ID, app title, app version and
@@ -89,7 +90,7 @@ namespace Model
      * <p>The client context including the client ID, app title, app version and
      * package name.</p>
      */
-    inline void SetClientContext(Aws::String&& value) { m_clientContextHasBeenSet = true; m_clientContext = value; }
+    inline void SetClientContext(Aws::String&& value) { m_clientContextHasBeenSet = true; m_clientContext = std::move(value); }
 
     /**
      * <p>The client context including the client ID, app title, app version and
@@ -107,7 +108,7 @@ namespace Model
      * <p>The client context including the client ID, app title, app version and
      * package name.</p>
      */
-    inline PutEventsRequest& WithClientContext(Aws::String&& value) { SetClientContext(value); return *this;}
+    inline PutEventsRequest& WithClientContext(Aws::String&& value) { SetClientContext(std::move(value)); return *this;}
 
     /**
      * <p>The client context including the client ID, app title, app version and
@@ -128,7 +129,7 @@ namespace Model
     /**
      * <p>The encoding used for the client context.</p>
      */
-    inline void SetClientContextEncoding(Aws::String&& value) { m_clientContextEncodingHasBeenSet = true; m_clientContextEncoding = value; }
+    inline void SetClientContextEncoding(Aws::String&& value) { m_clientContextEncodingHasBeenSet = true; m_clientContextEncoding = std::move(value); }
 
     /**
      * <p>The encoding used for the client context.</p>
@@ -143,7 +144,7 @@ namespace Model
     /**
      * <p>The encoding used for the client context.</p>
      */
-    inline PutEventsRequest& WithClientContextEncoding(Aws::String&& value) { SetClientContextEncoding(value); return *this;}
+    inline PutEventsRequest& WithClientContextEncoding(Aws::String&& value) { SetClientContextEncoding(std::move(value)); return *this;}
 
     /**
      * <p>The encoding used for the client context.</p>

@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ecr/model/ImageIdentifier.h>
+#include <utility>
 
 namespace Aws
 {
@@ -54,7 +55,7 @@ namespace Model
     /**
      * <p>The list of image IDs for the requested repository.</p>
      */
-    inline void SetImageIds(Aws::Vector<ImageIdentifier>&& value) { m_imageIds = value; }
+    inline void SetImageIds(Aws::Vector<ImageIdentifier>&& value) { m_imageIds = std::move(value); }
 
     /**
      * <p>The list of image IDs for the requested repository.</p>
@@ -64,7 +65,7 @@ namespace Model
     /**
      * <p>The list of image IDs for the requested repository.</p>
      */
-    inline ListImagesResult& WithImageIds(Aws::Vector<ImageIdentifier>&& value) { SetImageIds(value); return *this;}
+    inline ListImagesResult& WithImageIds(Aws::Vector<ImageIdentifier>&& value) { SetImageIds(std::move(value)); return *this;}
 
     /**
      * <p>The list of image IDs for the requested repository.</p>
@@ -74,7 +75,7 @@ namespace Model
     /**
      * <p>The list of image IDs for the requested repository.</p>
      */
-    inline ListImagesResult& AddImageIds(ImageIdentifier&& value) { m_imageIds.push_back(value); return *this; }
+    inline ListImagesResult& AddImageIds(ImageIdentifier&& value) { m_imageIds.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The <code>nextToken</code> value to include in a future
@@ -101,7 +102,7 @@ namespace Model
      * next page of results. This value is <code>null</code> when there are no more
      * results to return.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
      * <p>The <code>nextToken</code> value to include in a future
@@ -128,7 +129,7 @@ namespace Model
      * next page of results. This value is <code>null</code> when there are no more
      * results to return.</p>
      */
-    inline ListImagesResult& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline ListImagesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>The <code>nextToken</code> value to include in a future

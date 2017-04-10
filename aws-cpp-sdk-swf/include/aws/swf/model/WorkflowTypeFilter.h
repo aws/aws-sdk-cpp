@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/swf/SWF_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -58,7 +59,7 @@ namespace Model
     /**
      * <p><b>Required.</b> Name of the workflow type.</p>
      */
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p><b>Required.</b> Name of the workflow type.</p>
@@ -73,7 +74,7 @@ namespace Model
     /**
      * <p><b>Required.</b> Name of the workflow type.</p>
      */
-    inline WorkflowTypeFilter& WithName(Aws::String&& value) { SetName(value); return *this;}
+    inline WorkflowTypeFilter& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p><b>Required.</b> Name of the workflow type.</p>
@@ -93,7 +94,7 @@ namespace Model
     /**
      * <p>Version of the workflow type.</p>
      */
-    inline void SetVersion(Aws::String&& value) { m_versionHasBeenSet = true; m_version = value; }
+    inline void SetVersion(Aws::String&& value) { m_versionHasBeenSet = true; m_version = std::move(value); }
 
     /**
      * <p>Version of the workflow type.</p>
@@ -108,7 +109,7 @@ namespace Model
     /**
      * <p>Version of the workflow type.</p>
      */
-    inline WorkflowTypeFilter& WithVersion(Aws::String&& value) { SetVersion(value); return *this;}
+    inline WorkflowTypeFilter& WithVersion(Aws::String&& value) { SetVersion(std::move(value)); return *this;}
 
     /**
      * <p>Version of the workflow type.</p>

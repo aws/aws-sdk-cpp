@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/gamelift/model/GameSession.h>
+#include <utility>
 
 namespace Aws
 {
@@ -63,7 +64,7 @@ namespace Model
      * <p>Collection of objects containing game session properties for each session
      * matching the request.</p>
      */
-    inline void SetGameSessions(Aws::Vector<GameSession>&& value) { m_gameSessions = value; }
+    inline void SetGameSessions(Aws::Vector<GameSession>&& value) { m_gameSessions = std::move(value); }
 
     /**
      * <p>Collection of objects containing game session properties for each session
@@ -75,7 +76,7 @@ namespace Model
      * <p>Collection of objects containing game session properties for each session
      * matching the request.</p>
      */
-    inline SearchGameSessionsResult& WithGameSessions(Aws::Vector<GameSession>&& value) { SetGameSessions(value); return *this;}
+    inline SearchGameSessionsResult& WithGameSessions(Aws::Vector<GameSession>&& value) { SetGameSessions(std::move(value)); return *this;}
 
     /**
      * <p>Collection of objects containing game session properties for each session
@@ -87,7 +88,7 @@ namespace Model
      * <p>Collection of objects containing game session properties for each session
      * matching the request.</p>
      */
-    inline SearchGameSessionsResult& AddGameSessions(GameSession&& value) { m_gameSessions.push_back(value); return *this; }
+    inline SearchGameSessionsResult& AddGameSessions(GameSession&& value) { m_gameSessions.push_back(std::move(value)); return *this; }
 
     /**
      * <p>Token that indicates where to resume retrieving results on the next call to
@@ -108,7 +109,7 @@ namespace Model
      * this action. If no token is returned, these results represent the end of the
      * list.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
      * <p>Token that indicates where to resume retrieving results on the next call to
@@ -129,7 +130,7 @@ namespace Model
      * this action. If no token is returned, these results represent the end of the
      * list.</p>
      */
-    inline SearchGameSessionsResult& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline SearchGameSessionsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>Token that indicates where to resume retrieving results on the next call to

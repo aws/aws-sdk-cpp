@@ -16,6 +16,7 @@
 #include <aws/clouddirectory/CloudDirectory_EXPORTS.h>
 #include <aws/clouddirectory/CloudDirectoryRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -46,7 +47,7 @@ namespace Model
     /**
      * <p>ARN of the resource. Tagging is only supported for directories.</p>
      */
-    inline void SetResourceArn(Aws::String&& value) { m_resourceArnHasBeenSet = true; m_resourceArn = value; }
+    inline void SetResourceArn(Aws::String&& value) { m_resourceArnHasBeenSet = true; m_resourceArn = std::move(value); }
 
     /**
      * <p>ARN of the resource. Tagging is only supported for directories.</p>
@@ -61,7 +62,7 @@ namespace Model
     /**
      * <p>ARN of the resource. Tagging is only supported for directories.</p>
      */
-    inline ListTagsForResourceRequest& WithResourceArn(Aws::String&& value) { SetResourceArn(value); return *this;}
+    inline ListTagsForResourceRequest& WithResourceArn(Aws::String&& value) { SetResourceArn(std::move(value)); return *this;}
 
     /**
      * <p>ARN of the resource. Tagging is only supported for directories.</p>
@@ -84,7 +85,7 @@ namespace Model
      * <p>The pagination token. This is for future use. Currently pagination is not
      * supported for tagging.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
      * <p>The pagination token. This is for future use. Currently pagination is not
@@ -102,7 +103,7 @@ namespace Model
      * <p>The pagination token. This is for future use. Currently pagination is not
      * supported for tagging.</p>
      */
-    inline ListTagsForResourceRequest& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline ListTagsForResourceRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>The pagination token. This is for future use. Currently pagination is not

@@ -16,6 +16,7 @@
 #include <aws/support/Support_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/Array.h>
+#include <utility>
 
 namespace Aws
 {
@@ -58,7 +59,7 @@ namespace Model
     /**
      * <p>The name of the attachment file.</p>
      */
-    inline void SetFileName(Aws::String&& value) { m_fileNameHasBeenSet = true; m_fileName = value; }
+    inline void SetFileName(Aws::String&& value) { m_fileNameHasBeenSet = true; m_fileName = std::move(value); }
 
     /**
      * <p>The name of the attachment file.</p>
@@ -73,7 +74,7 @@ namespace Model
     /**
      * <p>The name of the attachment file.</p>
      */
-    inline Attachment& WithFileName(Aws::String&& value) { SetFileName(value); return *this;}
+    inline Attachment& WithFileName(Aws::String&& value) { SetFileName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the attachment file.</p>
@@ -93,7 +94,7 @@ namespace Model
     /**
      * <p>The content of the attachment file.</p>
      */
-    inline void SetData(Aws::Utils::ByteBuffer&& value) { m_dataHasBeenSet = true; m_data = value; }
+    inline void SetData(Aws::Utils::ByteBuffer&& value) { m_dataHasBeenSet = true; m_data = std::move(value); }
 
     /**
      * <p>The content of the attachment file.</p>
@@ -103,7 +104,7 @@ namespace Model
     /**
      * <p>The content of the attachment file.</p>
      */
-    inline Attachment& WithData(Aws::Utils::ByteBuffer&& value) { SetData(value); return *this;}
+    inline Attachment& WithData(Aws::Utils::ByteBuffer&& value) { SetData(std::move(value)); return *this;}
 
   private:
     Aws::String m_fileName;

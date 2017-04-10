@@ -16,6 +16,7 @@
 #include <aws/sns/SNS_EXPORTS.h>
 #include <aws/sns/SNSRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -59,7 +60,7 @@ namespace Model
      * must be made up of only uppercase and lowercase ASCII letters, numbers,
      * underscores, and hyphens, and must be between 1 and 256 characters long.</p>
      */
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p>The name of the topic you want to create.</p> <p>Constraints: Topic names
@@ -80,7 +81,7 @@ namespace Model
      * must be made up of only uppercase and lowercase ASCII letters, numbers,
      * underscores, and hyphens, and must be between 1 and 256 characters long.</p>
      */
-    inline CreateTopicRequest& WithName(Aws::String&& value) { SetName(value); return *this;}
+    inline CreateTopicRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the topic you want to create.</p> <p>Constraints: Topic names

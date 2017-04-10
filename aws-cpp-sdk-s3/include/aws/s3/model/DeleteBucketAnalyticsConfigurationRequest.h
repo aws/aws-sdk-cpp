@@ -16,6 +16,7 @@
 #include <aws/s3/S3_EXPORTS.h>
 #include <aws/s3/S3Request.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -52,7 +53,7 @@ namespace Model
     /**
      * The name of the bucket from which an analytics configuration is deleted.
      */
-    inline void SetBucket(Aws::String&& value) { m_bucketHasBeenSet = true; m_bucket = value; }
+    inline void SetBucket(Aws::String&& value) { m_bucketHasBeenSet = true; m_bucket = std::move(value); }
 
     /**
      * The name of the bucket from which an analytics configuration is deleted.
@@ -67,7 +68,7 @@ namespace Model
     /**
      * The name of the bucket from which an analytics configuration is deleted.
      */
-    inline DeleteBucketAnalyticsConfigurationRequest& WithBucket(Aws::String&& value) { SetBucket(value); return *this;}
+    inline DeleteBucketAnalyticsConfigurationRequest& WithBucket(Aws::String&& value) { SetBucket(std::move(value)); return *this;}
 
     /**
      * The name of the bucket from which an analytics configuration is deleted.
@@ -87,7 +88,7 @@ namespace Model
     /**
      * The identifier used to represent an analytics configuration.
      */
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = value; }
+    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
 
     /**
      * The identifier used to represent an analytics configuration.
@@ -102,7 +103,7 @@ namespace Model
     /**
      * The identifier used to represent an analytics configuration.
      */
-    inline DeleteBucketAnalyticsConfigurationRequest& WithId(Aws::String&& value) { SetId(value); return *this;}
+    inline DeleteBucketAnalyticsConfigurationRequest& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
 
     /**
      * The identifier used to represent an analytics configuration.

@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ecs/model/Attribute.h>
+#include <utility>
 
 namespace Aws
 {
@@ -56,7 +57,7 @@ namespace Model
      * contains the resource to apply attributes. If you do not specify a cluster, the
      * default cluster is assumed.</p>
      */
-    inline void SetCluster(Aws::String&& value) { m_clusterHasBeenSet = true; m_cluster = value; }
+    inline void SetCluster(Aws::String&& value) { m_clusterHasBeenSet = true; m_cluster = std::move(value); }
 
     /**
      * <p>The short name or full Amazon Resource Name (ARN) of the cluster that
@@ -77,7 +78,7 @@ namespace Model
      * contains the resource to apply attributes. If you do not specify a cluster, the
      * default cluster is assumed.</p>
      */
-    inline DeleteAttributesRequest& WithCluster(Aws::String&& value) { SetCluster(value); return *this;}
+    inline DeleteAttributesRequest& WithCluster(Aws::String&& value) { SetCluster(std::move(value)); return *this;}
 
     /**
      * <p>The short name or full Amazon Resource Name (ARN) of the cluster that
@@ -108,7 +109,7 @@ namespace Model
      * target ID, but do not specify the value. If you specify the target ID using the
      * short form, you must also specify the target type.</p>
      */
-    inline void SetAttributes(Aws::Vector<Attribute>&& value) { m_attributesHasBeenSet = true; m_attributes = value; }
+    inline void SetAttributes(Aws::Vector<Attribute>&& value) { m_attributesHasBeenSet = true; m_attributes = std::move(value); }
 
     /**
      * <p>The attributes to delete from your resource. You can specify up to 10
@@ -124,7 +125,7 @@ namespace Model
      * target ID, but do not specify the value. If you specify the target ID using the
      * short form, you must also specify the target type.</p>
      */
-    inline DeleteAttributesRequest& WithAttributes(Aws::Vector<Attribute>&& value) { SetAttributes(value); return *this;}
+    inline DeleteAttributesRequest& WithAttributes(Aws::Vector<Attribute>&& value) { SetAttributes(std::move(value)); return *this;}
 
     /**
      * <p>The attributes to delete from your resource. You can specify up to 10
@@ -140,7 +141,7 @@ namespace Model
      * target ID, but do not specify the value. If you specify the target ID using the
      * short form, you must also specify the target type.</p>
      */
-    inline DeleteAttributesRequest& AddAttributes(Attribute&& value) { m_attributesHasBeenSet = true; m_attributes.push_back(value); return *this; }
+    inline DeleteAttributesRequest& AddAttributes(Attribute&& value) { m_attributesHasBeenSet = true; m_attributes.push_back(std::move(value)); return *this; }
 
   private:
     Aws::String m_cluster;

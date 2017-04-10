@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/cognito-idp/model/AttributeType.h>
+#include <utility>
 
 namespace Aws
 {
@@ -54,7 +55,7 @@ namespace Model
     /**
      * <p>An array of name-value pairs representing user attributes.</p>
      */
-    inline void SetUserAttributes(Aws::Vector<AttributeType>&& value) { m_userAttributesHasBeenSet = true; m_userAttributes = value; }
+    inline void SetUserAttributes(Aws::Vector<AttributeType>&& value) { m_userAttributesHasBeenSet = true; m_userAttributes = std::move(value); }
 
     /**
      * <p>An array of name-value pairs representing user attributes.</p>
@@ -64,7 +65,7 @@ namespace Model
     /**
      * <p>An array of name-value pairs representing user attributes.</p>
      */
-    inline UpdateUserAttributesRequest& WithUserAttributes(Aws::Vector<AttributeType>&& value) { SetUserAttributes(value); return *this;}
+    inline UpdateUserAttributesRequest& WithUserAttributes(Aws::Vector<AttributeType>&& value) { SetUserAttributes(std::move(value)); return *this;}
 
     /**
      * <p>An array of name-value pairs representing user attributes.</p>
@@ -74,7 +75,7 @@ namespace Model
     /**
      * <p>An array of name-value pairs representing user attributes.</p>
      */
-    inline UpdateUserAttributesRequest& AddUserAttributes(AttributeType&& value) { m_userAttributesHasBeenSet = true; m_userAttributes.push_back(value); return *this; }
+    inline UpdateUserAttributesRequest& AddUserAttributes(AttributeType&& value) { m_userAttributesHasBeenSet = true; m_userAttributes.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The access token for the request to update user attributes.</p>
@@ -89,7 +90,7 @@ namespace Model
     /**
      * <p>The access token for the request to update user attributes.</p>
      */
-    inline void SetAccessToken(Aws::String&& value) { m_accessTokenHasBeenSet = true; m_accessToken = value; }
+    inline void SetAccessToken(Aws::String&& value) { m_accessTokenHasBeenSet = true; m_accessToken = std::move(value); }
 
     /**
      * <p>The access token for the request to update user attributes.</p>
@@ -104,7 +105,7 @@ namespace Model
     /**
      * <p>The access token for the request to update user attributes.</p>
      */
-    inline UpdateUserAttributesRequest& WithAccessToken(Aws::String&& value) { SetAccessToken(value); return *this;}
+    inline UpdateUserAttributesRequest& WithAccessToken(Aws::String&& value) { SetAccessToken(std::move(value)); return *this;}
 
     /**
      * <p>The access token for the request to update user attributes.</p>

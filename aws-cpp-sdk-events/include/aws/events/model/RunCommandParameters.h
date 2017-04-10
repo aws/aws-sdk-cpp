@@ -16,6 +16,7 @@
 #include <aws/events/CloudWatchEvents_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/events/model/RunCommandTarget.h>
+#include <utility>
 
 namespace Aws
 {
@@ -68,7 +69,7 @@ namespace Model
      * </zonbook> <xhtml> <p>Currently, we support including only one RunCommandTarget
      * block, which specifies either an array of InstanceIds or a tag.</p> </xhtml>
      */
-    inline void SetRunCommandTargets(Aws::Vector<RunCommandTarget>&& value) { m_runCommandTargetsHasBeenSet = true; m_runCommandTargets = value; }
+    inline void SetRunCommandTargets(Aws::Vector<RunCommandTarget>&& value) { m_runCommandTargetsHasBeenSet = true; m_runCommandTargets = std::move(value); }
 
     /**
      * <zonbook> <simpara>Currently, we support including only one RunCommandTarget
@@ -84,7 +85,7 @@ namespace Model
      * </zonbook> <xhtml> <p>Currently, we support including only one RunCommandTarget
      * block, which specifies either an array of InstanceIds or a tag.</p> </xhtml>
      */
-    inline RunCommandParameters& WithRunCommandTargets(Aws::Vector<RunCommandTarget>&& value) { SetRunCommandTargets(value); return *this;}
+    inline RunCommandParameters& WithRunCommandTargets(Aws::Vector<RunCommandTarget>&& value) { SetRunCommandTargets(std::move(value)); return *this;}
 
     /**
      * <zonbook> <simpara>Currently, we support including only one RunCommandTarget
@@ -100,7 +101,7 @@ namespace Model
      * </zonbook> <xhtml> <p>Currently, we support including only one RunCommandTarget
      * block, which specifies either an array of InstanceIds or a tag.</p> </xhtml>
      */
-    inline RunCommandParameters& AddRunCommandTargets(RunCommandTarget&& value) { m_runCommandTargetsHasBeenSet = true; m_runCommandTargets.push_back(value); return *this; }
+    inline RunCommandParameters& AddRunCommandTargets(RunCommandTarget&& value) { m_runCommandTargetsHasBeenSet = true; m_runCommandTargets.push_back(std::move(value)); return *this; }
 
   private:
     Aws::Vector<RunCommandTarget> m_runCommandTargets;

@@ -16,6 +16,7 @@
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/ec2/EC2Request.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -54,7 +55,7 @@ namespace Model
     /**
      * <p>The ID of the VPN connection.</p>
      */
-    inline void SetVpnConnectionId(Aws::String&& value) { m_vpnConnectionIdHasBeenSet = true; m_vpnConnectionId = value; }
+    inline void SetVpnConnectionId(Aws::String&& value) { m_vpnConnectionIdHasBeenSet = true; m_vpnConnectionId = std::move(value); }
 
     /**
      * <p>The ID of the VPN connection.</p>
@@ -69,7 +70,7 @@ namespace Model
     /**
      * <p>The ID of the VPN connection.</p>
      */
-    inline DeleteVpnConnectionRouteRequest& WithVpnConnectionId(Aws::String&& value) { SetVpnConnectionId(value); return *this;}
+    inline DeleteVpnConnectionRouteRequest& WithVpnConnectionId(Aws::String&& value) { SetVpnConnectionId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the VPN connection.</p>
@@ -89,7 +90,7 @@ namespace Model
     /**
      * <p>The CIDR block associated with the local subnet of the customer network.</p>
      */
-    inline void SetDestinationCidrBlock(Aws::String&& value) { m_destinationCidrBlockHasBeenSet = true; m_destinationCidrBlock = value; }
+    inline void SetDestinationCidrBlock(Aws::String&& value) { m_destinationCidrBlockHasBeenSet = true; m_destinationCidrBlock = std::move(value); }
 
     /**
      * <p>The CIDR block associated with the local subnet of the customer network.</p>
@@ -104,7 +105,7 @@ namespace Model
     /**
      * <p>The CIDR block associated with the local subnet of the customer network.</p>
      */
-    inline DeleteVpnConnectionRouteRequest& WithDestinationCidrBlock(Aws::String&& value) { SetDestinationCidrBlock(value); return *this;}
+    inline DeleteVpnConnectionRouteRequest& WithDestinationCidrBlock(Aws::String&& value) { SetDestinationCidrBlock(std::move(value)); return *this;}
 
     /**
      * <p>The CIDR block associated with the local subnet of the customer network.</p>

@@ -17,6 +17,7 @@
 #include <aws/ec2/EC2Request.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/ScheduledInstancesLaunchSpecification.h>
+#include <utility>
 #include <aws/core/utils/UUID.h>
 
 namespace Aws
@@ -89,7 +90,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
      * Idempotency</a>.</p>
      */
-    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
+    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
 
     /**
      * <p>Unique, case-sensitive identifier that ensures the idempotency of the
@@ -113,7 +114,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
      * Idempotency</a>.</p>
      */
-    inline RunScheduledInstancesRequest& WithClientToken(Aws::String&& value) { SetClientToken(value); return *this;}
+    inline RunScheduledInstancesRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
 
     /**
      * <p>Unique, case-sensitive identifier that ensures the idempotency of the
@@ -151,7 +152,7 @@ namespace Model
     /**
      * <p>The Scheduled Instance ID.</p>
      */
-    inline void SetScheduledInstanceId(Aws::String&& value) { m_scheduledInstanceIdHasBeenSet = true; m_scheduledInstanceId = value; }
+    inline void SetScheduledInstanceId(Aws::String&& value) { m_scheduledInstanceIdHasBeenSet = true; m_scheduledInstanceId = std::move(value); }
 
     /**
      * <p>The Scheduled Instance ID.</p>
@@ -166,7 +167,7 @@ namespace Model
     /**
      * <p>The Scheduled Instance ID.</p>
      */
-    inline RunScheduledInstancesRequest& WithScheduledInstanceId(Aws::String&& value) { SetScheduledInstanceId(value); return *this;}
+    inline RunScheduledInstancesRequest& WithScheduledInstanceId(Aws::String&& value) { SetScheduledInstanceId(std::move(value)); return *this;}
 
     /**
      * <p>The Scheduled Instance ID.</p>
@@ -189,7 +190,7 @@ namespace Model
      * <p>The launch specification. You must match the instance type, Availability
      * Zone, network, and platform of the schedule that you purchased.</p>
      */
-    inline void SetLaunchSpecification(ScheduledInstancesLaunchSpecification&& value) { m_launchSpecificationHasBeenSet = true; m_launchSpecification = value; }
+    inline void SetLaunchSpecification(ScheduledInstancesLaunchSpecification&& value) { m_launchSpecificationHasBeenSet = true; m_launchSpecification = std::move(value); }
 
     /**
      * <p>The launch specification. You must match the instance type, Availability
@@ -201,7 +202,7 @@ namespace Model
      * <p>The launch specification. You must match the instance type, Availability
      * Zone, network, and platform of the schedule that you purchased.</p>
      */
-    inline RunScheduledInstancesRequest& WithLaunchSpecification(ScheduledInstancesLaunchSpecification&& value) { SetLaunchSpecification(value); return *this;}
+    inline RunScheduledInstancesRequest& WithLaunchSpecification(ScheduledInstancesLaunchSpecification&& value) { SetLaunchSpecification(std::move(value)); return *this;}
 
   private:
     bool m_dryRun;

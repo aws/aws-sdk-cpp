@@ -16,6 +16,7 @@
 #include <aws/devicefarm/DeviceFarm_EXPORTS.h>
 #include <aws/devicefarm/DeviceFarmRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -55,7 +56,7 @@ namespace Model
      * <p>Represents the Amazon Resource Name (ARN) of the Device Farm upload you wish
      * to delete.</p>
      */
-    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = value; }
+    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
 
     /**
      * <p>Represents the Amazon Resource Name (ARN) of the Device Farm upload you wish
@@ -73,7 +74,7 @@ namespace Model
      * <p>Represents the Amazon Resource Name (ARN) of the Device Farm upload you wish
      * to delete.</p>
      */
-    inline DeleteUploadRequest& WithArn(Aws::String&& value) { SetArn(value); return *this;}
+    inline DeleteUploadRequest& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
 
     /**
      * <p>Represents the Amazon Resource Name (ARN) of the Device Farm upload you wish

@@ -16,6 +16,7 @@
 #include <aws/organizations/Organizations_EXPORTS.h>
 #include <aws/organizations/OrganizationsRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -60,7 +61,7 @@ namespace Model
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> for an account ID
      * string requires exactly 12 digits.</p>
      */
-    inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
+    inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
 
     /**
      * <p>The unique identifier (ID) of the AWS account that you want information
@@ -87,7 +88,7 @@ namespace Model
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> for an account ID
      * string requires exactly 12 digits.</p>
      */
-    inline DescribeAccountRequest& WithAccountId(Aws::String&& value) { SetAccountId(value); return *this;}
+    inline DescribeAccountRequest& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
 
     /**
      * <p>The unique identifier (ID) of the AWS account that you want information

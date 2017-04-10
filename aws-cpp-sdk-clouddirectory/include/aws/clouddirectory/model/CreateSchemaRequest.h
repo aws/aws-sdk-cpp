@@ -16,6 +16,7 @@
 #include <aws/clouddirectory/CloudDirectory_EXPORTS.h>
 #include <aws/clouddirectory/CloudDirectoryRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -49,7 +50,7 @@ namespace Model
      * <p>Name associated with the schema. This is unique to each account and in each
      * region.</p>
      */
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p>Name associated with the schema. This is unique to each account and in each
@@ -67,7 +68,7 @@ namespace Model
      * <p>Name associated with the schema. This is unique to each account and in each
      * region.</p>
      */
-    inline CreateSchemaRequest& WithName(Aws::String&& value) { SetName(value); return *this;}
+    inline CreateSchemaRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>Name associated with the schema. This is unique to each account and in each

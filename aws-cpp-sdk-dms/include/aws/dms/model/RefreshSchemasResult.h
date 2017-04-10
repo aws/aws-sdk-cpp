@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/dms/DatabaseMigrationService_EXPORTS.h>
 #include <aws/dms/model/RefreshSchemasStatus.h>
+#include <utility>
 
 namespace Aws
 {
@@ -57,7 +58,7 @@ namespace Model
     /**
      * <p>The status of the refreshed schema.</p>
      */
-    inline void SetRefreshSchemasStatus(RefreshSchemasStatus&& value) { m_refreshSchemasStatus = value; }
+    inline void SetRefreshSchemasStatus(RefreshSchemasStatus&& value) { m_refreshSchemasStatus = std::move(value); }
 
     /**
      * <p>The status of the refreshed schema.</p>
@@ -67,7 +68,7 @@ namespace Model
     /**
      * <p>The status of the refreshed schema.</p>
      */
-    inline RefreshSchemasResult& WithRefreshSchemasStatus(RefreshSchemasStatus&& value) { SetRefreshSchemasStatus(value); return *this;}
+    inline RefreshSchemasResult& WithRefreshSchemasStatus(RefreshSchemasStatus&& value) { SetRefreshSchemasStatus(std::move(value)); return *this;}
 
   private:
     RefreshSchemasStatus m_refreshSchemasStatus;

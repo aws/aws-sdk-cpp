@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/shield/Shield_EXPORTS.h>
 #include <aws/shield/model/Subscription.h>
+#include <utility>
 
 namespace Aws
 {
@@ -52,7 +53,7 @@ namespace Model
     /**
      * <p>The AWS Shield Advanced subscription details for an account.</p>
      */
-    inline void SetSubscription(Subscription&& value) { m_subscription = value; }
+    inline void SetSubscription(Subscription&& value) { m_subscription = std::move(value); }
 
     /**
      * <p>The AWS Shield Advanced subscription details for an account.</p>
@@ -62,7 +63,7 @@ namespace Model
     /**
      * <p>The AWS Shield Advanced subscription details for an account.</p>
      */
-    inline DescribeSubscriptionResult& WithSubscription(Subscription&& value) { SetSubscription(value); return *this;}
+    inline DescribeSubscriptionResult& WithSubscription(Subscription&& value) { SetSubscription(std::move(value)); return *this;}
 
   private:
     Subscription m_subscription;

@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/route53/Route53_EXPORTS.h>
 #include <aws/route53/model/HealthCheck.h>
+#include <utility>
 
 namespace Aws
 {
@@ -46,13 +47,13 @@ namespace Model
     inline void SetHealthCheck(const HealthCheck& value) { m_healthCheck = value; }
 
     
-    inline void SetHealthCheck(HealthCheck&& value) { m_healthCheck = value; }
+    inline void SetHealthCheck(HealthCheck&& value) { m_healthCheck = std::move(value); }
 
     
     inline UpdateHealthCheckResult& WithHealthCheck(const HealthCheck& value) { SetHealthCheck(value); return *this;}
 
     
-    inline UpdateHealthCheckResult& WithHealthCheck(HealthCheck&& value) { SetHealthCheck(value); return *this;}
+    inline UpdateHealthCheckResult& WithHealthCheck(HealthCheck&& value) { SetHealthCheck(std::move(value)); return *this;}
 
   private:
     HealthCheck m_healthCheck;

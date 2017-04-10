@@ -16,6 +16,7 @@
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/ec2/model/Vpc.h>
 #include <aws/ec2/model/ResponseMetadata.h>
+#include <utility>
 
 namespace Aws
 {
@@ -58,7 +59,7 @@ namespace Model
     /**
      * <p>Information about the VPC.</p>
      */
-    inline void SetVpc(Vpc&& value) { m_vpc = value; }
+    inline void SetVpc(Vpc&& value) { m_vpc = std::move(value); }
 
     /**
      * <p>Information about the VPC.</p>
@@ -68,7 +69,7 @@ namespace Model
     /**
      * <p>Information about the VPC.</p>
      */
-    inline CreateVpcResponse& WithVpc(Vpc&& value) { SetVpc(value); return *this;}
+    inline CreateVpcResponse& WithVpc(Vpc&& value) { SetVpc(std::move(value)); return *this;}
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
@@ -77,13 +78,13 @@ namespace Model
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
 
     
     inline CreateVpcResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
 
     
-    inline CreateVpcResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
+    inline CreateVpcResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
     Vpc m_vpc;

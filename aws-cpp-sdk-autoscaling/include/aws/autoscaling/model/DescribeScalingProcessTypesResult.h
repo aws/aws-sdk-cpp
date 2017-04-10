@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/autoscaling/model/ResponseMetadata.h>
 #include <aws/autoscaling/model/ProcessType.h>
+#include <utility>
 
 namespace Aws
 {
@@ -60,7 +61,7 @@ namespace Model
     /**
      * <p>The names of the process types.</p>
      */
-    inline void SetProcesses(Aws::Vector<ProcessType>&& value) { m_processes = value; }
+    inline void SetProcesses(Aws::Vector<ProcessType>&& value) { m_processes = std::move(value); }
 
     /**
      * <p>The names of the process types.</p>
@@ -70,7 +71,7 @@ namespace Model
     /**
      * <p>The names of the process types.</p>
      */
-    inline DescribeScalingProcessTypesResult& WithProcesses(Aws::Vector<ProcessType>&& value) { SetProcesses(value); return *this;}
+    inline DescribeScalingProcessTypesResult& WithProcesses(Aws::Vector<ProcessType>&& value) { SetProcesses(std::move(value)); return *this;}
 
     /**
      * <p>The names of the process types.</p>
@@ -80,7 +81,7 @@ namespace Model
     /**
      * <p>The names of the process types.</p>
      */
-    inline DescribeScalingProcessTypesResult& AddProcesses(ProcessType&& value) { m_processes.push_back(value); return *this; }
+    inline DescribeScalingProcessTypesResult& AddProcesses(ProcessType&& value) { m_processes.push_back(std::move(value)); return *this; }
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
@@ -89,13 +90,13 @@ namespace Model
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
 
     
     inline DescribeScalingProcessTypesResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
 
     
-    inline DescribeScalingProcessTypesResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
+    inline DescribeScalingProcessTypesResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
     Aws::Vector<ProcessType> m_processes;

@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/elasticmapreduce/EMR_EXPORTS.h>
 #include <aws/elasticmapreduce/model/SpotProvisioningTimeoutAction.h>
+#include <utility>
 
 namespace Aws
 {
@@ -95,7 +96,7 @@ namespace Model
      * values are <code>TERMINATE_CLUSTER</code> and <code>SWITCH_TO_ON_DEMAND</code>
      * to fulfill the remaining capacity.</p>
      */
-    inline void SetTimeoutAction(SpotProvisioningTimeoutAction&& value) { m_timeoutActionHasBeenSet = true; m_timeoutAction = value; }
+    inline void SetTimeoutAction(SpotProvisioningTimeoutAction&& value) { m_timeoutActionHasBeenSet = true; m_timeoutAction = std::move(value); }
 
     /**
      * <p>The action to take when <code>TargetSpotCapacity</code> has not been
@@ -113,7 +114,7 @@ namespace Model
      * values are <code>TERMINATE_CLUSTER</code> and <code>SWITCH_TO_ON_DEMAND</code>
      * to fulfill the remaining capacity.</p>
      */
-    inline SpotProvisioningSpecification& WithTimeoutAction(SpotProvisioningTimeoutAction&& value) { SetTimeoutAction(value); return *this;}
+    inline SpotProvisioningSpecification& WithTimeoutAction(SpotProvisioningTimeoutAction&& value) { SetTimeoutAction(std::move(value)); return *this;}
 
     /**
      * <p>The defined duration for Spot instances (also known as Spot blocks) in

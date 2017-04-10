@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/elasticache/model/SourceType.h>
 #include <aws/core/utils/DateTime.h>
+#include <utility>
 
 namespace Aws
 {
@@ -69,7 +70,7 @@ namespace Model
      * occurred at the cache cluster level, the identifier would be the name of the
      * cache cluster.</p>
      */
-    inline void SetSourceIdentifier(Aws::String&& value) { m_sourceIdentifierHasBeenSet = true; m_sourceIdentifier = value; }
+    inline void SetSourceIdentifier(Aws::String&& value) { m_sourceIdentifierHasBeenSet = true; m_sourceIdentifier = std::move(value); }
 
     /**
      * <p>The identifier for the source of the event. For example, if the event
@@ -90,7 +91,7 @@ namespace Model
      * occurred at the cache cluster level, the identifier would be the name of the
      * cache cluster.</p>
      */
-    inline Event& WithSourceIdentifier(Aws::String&& value) { SetSourceIdentifier(value); return *this;}
+    inline Event& WithSourceIdentifier(Aws::String&& value) { SetSourceIdentifier(std::move(value)); return *this;}
 
     /**
      * <p>The identifier for the source of the event. For example, if the event
@@ -115,7 +116,7 @@ namespace Model
      * <p>Specifies the origin of this event - a cache cluster, a parameter group, a
      * security group, etc.</p>
      */
-    inline void SetSourceType(SourceType&& value) { m_sourceTypeHasBeenSet = true; m_sourceType = value; }
+    inline void SetSourceType(SourceType&& value) { m_sourceTypeHasBeenSet = true; m_sourceType = std::move(value); }
 
     /**
      * <p>Specifies the origin of this event - a cache cluster, a parameter group, a
@@ -127,7 +128,7 @@ namespace Model
      * <p>Specifies the origin of this event - a cache cluster, a parameter group, a
      * security group, etc.</p>
      */
-    inline Event& WithSourceType(SourceType&& value) { SetSourceType(value); return *this;}
+    inline Event& WithSourceType(SourceType&& value) { SetSourceType(std::move(value)); return *this;}
 
     /**
      * <p>The text of the event.</p>
@@ -142,7 +143,7 @@ namespace Model
     /**
      * <p>The text of the event.</p>
      */
-    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = value; }
+    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
 
     /**
      * <p>The text of the event.</p>
@@ -157,7 +158,7 @@ namespace Model
     /**
      * <p>The text of the event.</p>
      */
-    inline Event& WithMessage(Aws::String&& value) { SetMessage(value); return *this;}
+    inline Event& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
 
     /**
      * <p>The text of the event.</p>
@@ -177,7 +178,7 @@ namespace Model
     /**
      * <p>The date and time when the event occurred.</p>
      */
-    inline void SetDate(Aws::Utils::DateTime&& value) { m_dateHasBeenSet = true; m_date = value; }
+    inline void SetDate(Aws::Utils::DateTime&& value) { m_dateHasBeenSet = true; m_date = std::move(value); }
 
     /**
      * <p>The date and time when the event occurred.</p>
@@ -187,7 +188,7 @@ namespace Model
     /**
      * <p>The date and time when the event occurred.</p>
      */
-    inline Event& WithDate(Aws::Utils::DateTime&& value) { SetDate(value); return *this;}
+    inline Event& WithDate(Aws::Utils::DateTime&& value) { SetDate(std::move(value)); return *this;}
 
   private:
     Aws::String m_sourceIdentifier;

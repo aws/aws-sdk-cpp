@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/swf/SWF_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -57,7 +58,7 @@ namespace Model
     /**
      * <p>The unique Amazon SWF ID for the AWS Lambda task.</p>
      */
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = value; }
+    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
 
     /**
      * <p>The unique Amazon SWF ID for the AWS Lambda task.</p>
@@ -72,7 +73,7 @@ namespace Model
     /**
      * <p>The unique Amazon SWF ID for the AWS Lambda task.</p>
      */
-    inline LambdaFunctionScheduledEventAttributes& WithId(Aws::String&& value) { SetId(value); return *this;}
+    inline LambdaFunctionScheduledEventAttributes& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
 
     /**
      * <p>The unique Amazon SWF ID for the AWS Lambda task.</p>
@@ -92,7 +93,7 @@ namespace Model
     /**
      * <p>The name of the scheduled AWS Lambda function.</p>
      */
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p>The name of the scheduled AWS Lambda function.</p>
@@ -107,7 +108,7 @@ namespace Model
     /**
      * <p>The name of the scheduled AWS Lambda function.</p>
      */
-    inline LambdaFunctionScheduledEventAttributes& WithName(Aws::String&& value) { SetName(value); return *this;}
+    inline LambdaFunctionScheduledEventAttributes& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the scheduled AWS Lambda function.</p>
@@ -127,7 +128,7 @@ namespace Model
     /**
      * <p>Input provided to the AWS Lambda function.</p>
      */
-    inline void SetInput(Aws::String&& value) { m_inputHasBeenSet = true; m_input = value; }
+    inline void SetInput(Aws::String&& value) { m_inputHasBeenSet = true; m_input = std::move(value); }
 
     /**
      * <p>Input provided to the AWS Lambda function.</p>
@@ -142,7 +143,7 @@ namespace Model
     /**
      * <p>Input provided to the AWS Lambda function.</p>
      */
-    inline LambdaFunctionScheduledEventAttributes& WithInput(Aws::String&& value) { SetInput(value); return *this;}
+    inline LambdaFunctionScheduledEventAttributes& WithInput(Aws::String&& value) { SetInput(std::move(value)); return *this;}
 
     /**
      * <p>Input provided to the AWS Lambda function.</p>
@@ -165,7 +166,7 @@ namespace Model
      * <p>The maximum time, in seconds, that the AWS Lambda function can take to
      * execute from start to close before it is marked as failed.</p>
      */
-    inline void SetStartToCloseTimeout(Aws::String&& value) { m_startToCloseTimeoutHasBeenSet = true; m_startToCloseTimeout = value; }
+    inline void SetStartToCloseTimeout(Aws::String&& value) { m_startToCloseTimeoutHasBeenSet = true; m_startToCloseTimeout = std::move(value); }
 
     /**
      * <p>The maximum time, in seconds, that the AWS Lambda function can take to
@@ -183,7 +184,7 @@ namespace Model
      * <p>The maximum time, in seconds, that the AWS Lambda function can take to
      * execute from start to close before it is marked as failed.</p>
      */
-    inline LambdaFunctionScheduledEventAttributes& WithStartToCloseTimeout(Aws::String&& value) { SetStartToCloseTimeout(value); return *this;}
+    inline LambdaFunctionScheduledEventAttributes& WithStartToCloseTimeout(Aws::String&& value) { SetStartToCloseTimeout(std::move(value)); return *this;}
 
     /**
      * <p>The maximum time, in seconds, that the AWS Lambda function can take to

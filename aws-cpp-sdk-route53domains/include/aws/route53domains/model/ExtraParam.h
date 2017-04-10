@@ -16,6 +16,7 @@
 #include <aws/route53domains/Route53Domains_EXPORTS.h>
 #include <aws/route53domains/model/ExtraParamName.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -93,7 +94,7 @@ namespace Model
      * | <code>SG_ID_NUMBER</code> | <code>VAT_NUMBER</code></p> <p>Parent:
      * <code>ExtraParams</code></p> <p>Required: Yes</p>
      */
-    inline void SetName(ExtraParamName&& value) { m_nameHasBeenSet = true; m_name = value; }
+    inline void SetName(ExtraParamName&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p>Name of the additional parameter required by the top-level domain.</p>
@@ -127,7 +128,7 @@ namespace Model
      * | <code>SG_ID_NUMBER</code> | <code>VAT_NUMBER</code></p> <p>Parent:
      * <code>ExtraParams</code></p> <p>Required: Yes</p>
      */
-    inline ExtraParam& WithName(ExtraParamName&& value) { SetName(value); return *this;}
+    inline ExtraParam& WithName(ExtraParamName&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>Values corresponding to the additional parameter names required by some
@@ -151,7 +152,7 @@ namespace Model
      * Maximum 2048 characters.</p> <p>Parent: <code>ExtraParams</code></p>
      * <p>Required: Yes</p>
      */
-    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = value; }
+    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
 
     /**
      * <p>Values corresponding to the additional parameter names required by some
@@ -175,7 +176,7 @@ namespace Model
      * Maximum 2048 characters.</p> <p>Parent: <code>ExtraParams</code></p>
      * <p>Required: Yes</p>
      */
-    inline ExtraParam& WithValue(Aws::String&& value) { SetValue(value); return *this;}
+    inline ExtraParam& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
 
     /**
      * <p>Values corresponding to the additional parameter names required by some

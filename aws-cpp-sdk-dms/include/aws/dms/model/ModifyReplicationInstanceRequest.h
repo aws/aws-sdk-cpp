@@ -17,6 +17,7 @@
 #include <aws/dms/DatabaseMigrationServiceRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <utility>
 
 namespace Aws
 {
@@ -52,7 +53,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the replication instance.</p>
      */
-    inline void SetReplicationInstanceArn(Aws::String&& value) { m_replicationInstanceArnHasBeenSet = true; m_replicationInstanceArn = value; }
+    inline void SetReplicationInstanceArn(Aws::String&& value) { m_replicationInstanceArnHasBeenSet = true; m_replicationInstanceArn = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the replication instance.</p>
@@ -67,7 +68,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the replication instance.</p>
      */
-    inline ModifyReplicationInstanceRequest& WithReplicationInstanceArn(Aws::String&& value) { SetReplicationInstanceArn(value); return *this;}
+    inline ModifyReplicationInstanceRequest& WithReplicationInstanceArn(Aws::String&& value) { SetReplicationInstanceArn(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the replication instance.</p>
@@ -129,7 +130,7 @@ namespace Model
      * Values: <code>dms.t2.micro | dms.t2.small | dms.t2.medium | dms.t2.large |
      * dms.c4.large | dms.c4.xlarge | dms.c4.2xlarge | dms.c4.4xlarge </code> </p>
      */
-    inline void SetReplicationInstanceClass(Aws::String&& value) { m_replicationInstanceClassHasBeenSet = true; m_replicationInstanceClass = value; }
+    inline void SetReplicationInstanceClass(Aws::String&& value) { m_replicationInstanceClassHasBeenSet = true; m_replicationInstanceClass = std::move(value); }
 
     /**
      * <p>The compute and memory capacity of the replication instance.</p> <p> Valid
@@ -150,7 +151,7 @@ namespace Model
      * Values: <code>dms.t2.micro | dms.t2.small | dms.t2.medium | dms.t2.large |
      * dms.c4.large | dms.c4.xlarge | dms.c4.2xlarge | dms.c4.4xlarge </code> </p>
      */
-    inline ModifyReplicationInstanceRequest& WithReplicationInstanceClass(Aws::String&& value) { SetReplicationInstanceClass(value); return *this;}
+    inline ModifyReplicationInstanceRequest& WithReplicationInstanceClass(Aws::String&& value) { SetReplicationInstanceClass(std::move(value)); return *this;}
 
     /**
      * <p>The compute and memory capacity of the replication instance.</p> <p> Valid
@@ -178,7 +179,7 @@ namespace Model
      * The VPC security group must work with the VPC containing the replication
      * instance. </p>
      */
-    inline void SetVpcSecurityGroupIds(Aws::Vector<Aws::String>&& value) { m_vpcSecurityGroupIdsHasBeenSet = true; m_vpcSecurityGroupIds = value; }
+    inline void SetVpcSecurityGroupIds(Aws::Vector<Aws::String>&& value) { m_vpcSecurityGroupIdsHasBeenSet = true; m_vpcSecurityGroupIds = std::move(value); }
 
     /**
      * <p> Specifies the VPC security group to be used with the replication instance.
@@ -192,7 +193,7 @@ namespace Model
      * The VPC security group must work with the VPC containing the replication
      * instance. </p>
      */
-    inline ModifyReplicationInstanceRequest& WithVpcSecurityGroupIds(Aws::Vector<Aws::String>&& value) { SetVpcSecurityGroupIds(value); return *this;}
+    inline ModifyReplicationInstanceRequest& WithVpcSecurityGroupIds(Aws::Vector<Aws::String>&& value) { SetVpcSecurityGroupIds(std::move(value)); return *this;}
 
     /**
      * <p> Specifies the VPC security group to be used with the replication instance.
@@ -206,7 +207,7 @@ namespace Model
      * The VPC security group must work with the VPC containing the replication
      * instance. </p>
      */
-    inline ModifyReplicationInstanceRequest& AddVpcSecurityGroupIds(Aws::String&& value) { m_vpcSecurityGroupIdsHasBeenSet = true; m_vpcSecurityGroupIds.push_back(value); return *this; }
+    inline ModifyReplicationInstanceRequest& AddVpcSecurityGroupIds(Aws::String&& value) { m_vpcSecurityGroupIdsHasBeenSet = true; m_vpcSecurityGroupIds.push_back(std::move(value)); return *this; }
 
     /**
      * <p> Specifies the VPC security group to be used with the replication instance.
@@ -249,7 +250,7 @@ namespace Model
      * <p>Format: ddd:hh24:mi-ddd:hh24:mi</p> <p>Valid Days: Mon | Tue | Wed | Thu |
      * Fri | Sat | Sun</p> <p>Constraints: Must be at least 30 minutes</p>
      */
-    inline void SetPreferredMaintenanceWindow(Aws::String&& value) { m_preferredMaintenanceWindowHasBeenSet = true; m_preferredMaintenanceWindow = value; }
+    inline void SetPreferredMaintenanceWindow(Aws::String&& value) { m_preferredMaintenanceWindowHasBeenSet = true; m_preferredMaintenanceWindow = std::move(value); }
 
     /**
      * <p>The weekly time range (in UTC) during which system maintenance can occur,
@@ -285,7 +286,7 @@ namespace Model
      * <p>Format: ddd:hh24:mi-ddd:hh24:mi</p> <p>Valid Days: Mon | Tue | Wed | Thu |
      * Fri | Sat | Sun</p> <p>Constraints: Must be at least 30 minutes</p>
      */
-    inline ModifyReplicationInstanceRequest& WithPreferredMaintenanceWindow(Aws::String&& value) { SetPreferredMaintenanceWindow(value); return *this;}
+    inline ModifyReplicationInstanceRequest& WithPreferredMaintenanceWindow(Aws::String&& value) { SetPreferredMaintenanceWindow(std::move(value)); return *this;}
 
     /**
      * <p>The weekly time range (in UTC) during which system maintenance can occur,
@@ -333,7 +334,7 @@ namespace Model
     /**
      * <p>The engine version number of the replication instance.</p>
      */
-    inline void SetEngineVersion(Aws::String&& value) { m_engineVersionHasBeenSet = true; m_engineVersion = value; }
+    inline void SetEngineVersion(Aws::String&& value) { m_engineVersionHasBeenSet = true; m_engineVersion = std::move(value); }
 
     /**
      * <p>The engine version number of the replication instance.</p>
@@ -348,7 +349,7 @@ namespace Model
     /**
      * <p>The engine version number of the replication instance.</p>
      */
-    inline ModifyReplicationInstanceRequest& WithEngineVersion(Aws::String&& value) { SetEngineVersion(value); return *this;}
+    inline ModifyReplicationInstanceRequest& WithEngineVersion(Aws::String&& value) { SetEngineVersion(std::move(value)); return *this;}
 
     /**
      * <p>The engine version number of the replication instance.</p>
@@ -431,7 +432,7 @@ namespace Model
      * <p>The replication instance identifier. This parameter is stored as a lowercase
      * string.</p>
      */
-    inline void SetReplicationInstanceIdentifier(Aws::String&& value) { m_replicationInstanceIdentifierHasBeenSet = true; m_replicationInstanceIdentifier = value; }
+    inline void SetReplicationInstanceIdentifier(Aws::String&& value) { m_replicationInstanceIdentifierHasBeenSet = true; m_replicationInstanceIdentifier = std::move(value); }
 
     /**
      * <p>The replication instance identifier. This parameter is stored as a lowercase
@@ -449,7 +450,7 @@ namespace Model
      * <p>The replication instance identifier. This parameter is stored as a lowercase
      * string.</p>
      */
-    inline ModifyReplicationInstanceRequest& WithReplicationInstanceIdentifier(Aws::String&& value) { SetReplicationInstanceIdentifier(value); return *this;}
+    inline ModifyReplicationInstanceRequest& WithReplicationInstanceIdentifier(Aws::String&& value) { SetReplicationInstanceIdentifier(std::move(value)); return *this;}
 
     /**
      * <p>The replication instance identifier. This parameter is stored as a lowercase

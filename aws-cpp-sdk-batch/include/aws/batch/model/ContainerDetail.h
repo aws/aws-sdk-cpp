@@ -20,6 +20,7 @@
 #include <aws/batch/model/KeyValuePair.h>
 #include <aws/batch/model/MountPoint.h>
 #include <aws/batch/model/Ulimit.h>
+#include <utility>
 
 namespace Aws
 {
@@ -62,7 +63,7 @@ namespace Model
     /**
      * <p>The image used to start the container.</p>
      */
-    inline void SetImage(Aws::String&& value) { m_imageHasBeenSet = true; m_image = value; }
+    inline void SetImage(Aws::String&& value) { m_imageHasBeenSet = true; m_image = std::move(value); }
 
     /**
      * <p>The image used to start the container.</p>
@@ -77,7 +78,7 @@ namespace Model
     /**
      * <p>The image used to start the container.</p>
      */
-    inline ContainerDetail& WithImage(Aws::String&& value) { SetImage(value); return *this;}
+    inline ContainerDetail& WithImage(Aws::String&& value) { SetImage(std::move(value)); return *this;}
 
     /**
      * <p>The image used to start the container.</p>
@@ -127,7 +128,7 @@ namespace Model
     /**
      * <p>The command that is passed to the container. </p>
      */
-    inline void SetCommand(Aws::Vector<Aws::String>&& value) { m_commandHasBeenSet = true; m_command = value; }
+    inline void SetCommand(Aws::Vector<Aws::String>&& value) { m_commandHasBeenSet = true; m_command = std::move(value); }
 
     /**
      * <p>The command that is passed to the container. </p>
@@ -137,7 +138,7 @@ namespace Model
     /**
      * <p>The command that is passed to the container. </p>
      */
-    inline ContainerDetail& WithCommand(Aws::Vector<Aws::String>&& value) { SetCommand(value); return *this;}
+    inline ContainerDetail& WithCommand(Aws::Vector<Aws::String>&& value) { SetCommand(std::move(value)); return *this;}
 
     /**
      * <p>The command that is passed to the container. </p>
@@ -147,7 +148,7 @@ namespace Model
     /**
      * <p>The command that is passed to the container. </p>
      */
-    inline ContainerDetail& AddCommand(Aws::String&& value) { m_commandHasBeenSet = true; m_command.push_back(value); return *this; }
+    inline ContainerDetail& AddCommand(Aws::String&& value) { m_commandHasBeenSet = true; m_command.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The command that is passed to the container. </p>
@@ -167,7 +168,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) associated with the job upon execution. </p>
      */
-    inline void SetJobRoleArn(Aws::String&& value) { m_jobRoleArnHasBeenSet = true; m_jobRoleArn = value; }
+    inline void SetJobRoleArn(Aws::String&& value) { m_jobRoleArnHasBeenSet = true; m_jobRoleArn = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) associated with the job upon execution. </p>
@@ -182,7 +183,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) associated with the job upon execution. </p>
      */
-    inline ContainerDetail& WithJobRoleArn(Aws::String&& value) { SetJobRoleArn(value); return *this;}
+    inline ContainerDetail& WithJobRoleArn(Aws::String&& value) { SetJobRoleArn(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) associated with the job upon execution. </p>
@@ -202,7 +203,7 @@ namespace Model
     /**
      * <p>A list of volumes associated with the job.</p>
      */
-    inline void SetVolumes(Aws::Vector<Volume>&& value) { m_volumesHasBeenSet = true; m_volumes = value; }
+    inline void SetVolumes(Aws::Vector<Volume>&& value) { m_volumesHasBeenSet = true; m_volumes = std::move(value); }
 
     /**
      * <p>A list of volumes associated with the job.</p>
@@ -212,7 +213,7 @@ namespace Model
     /**
      * <p>A list of volumes associated with the job.</p>
      */
-    inline ContainerDetail& WithVolumes(Aws::Vector<Volume>&& value) { SetVolumes(value); return *this;}
+    inline ContainerDetail& WithVolumes(Aws::Vector<Volume>&& value) { SetVolumes(std::move(value)); return *this;}
 
     /**
      * <p>A list of volumes associated with the job.</p>
@@ -222,7 +223,7 @@ namespace Model
     /**
      * <p>A list of volumes associated with the job.</p>
      */
-    inline ContainerDetail& AddVolumes(Volume&& value) { m_volumesHasBeenSet = true; m_volumes.push_back(value); return *this; }
+    inline ContainerDetail& AddVolumes(Volume&& value) { m_volumesHasBeenSet = true; m_volumes.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The environment variables to pass to a container.</p>
@@ -237,7 +238,7 @@ namespace Model
     /**
      * <p>The environment variables to pass to a container.</p>
      */
-    inline void SetEnvironment(Aws::Vector<KeyValuePair>&& value) { m_environmentHasBeenSet = true; m_environment = value; }
+    inline void SetEnvironment(Aws::Vector<KeyValuePair>&& value) { m_environmentHasBeenSet = true; m_environment = std::move(value); }
 
     /**
      * <p>The environment variables to pass to a container.</p>
@@ -247,7 +248,7 @@ namespace Model
     /**
      * <p>The environment variables to pass to a container.</p>
      */
-    inline ContainerDetail& WithEnvironment(Aws::Vector<KeyValuePair>&& value) { SetEnvironment(value); return *this;}
+    inline ContainerDetail& WithEnvironment(Aws::Vector<KeyValuePair>&& value) { SetEnvironment(std::move(value)); return *this;}
 
     /**
      * <p>The environment variables to pass to a container.</p>
@@ -257,7 +258,7 @@ namespace Model
     /**
      * <p>The environment variables to pass to a container.</p>
      */
-    inline ContainerDetail& AddEnvironment(KeyValuePair&& value) { m_environmentHasBeenSet = true; m_environment.push_back(value); return *this; }
+    inline ContainerDetail& AddEnvironment(KeyValuePair&& value) { m_environmentHasBeenSet = true; m_environment.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The mount points for data volumes in your container.</p>
@@ -272,7 +273,7 @@ namespace Model
     /**
      * <p>The mount points for data volumes in your container.</p>
      */
-    inline void SetMountPoints(Aws::Vector<MountPoint>&& value) { m_mountPointsHasBeenSet = true; m_mountPoints = value; }
+    inline void SetMountPoints(Aws::Vector<MountPoint>&& value) { m_mountPointsHasBeenSet = true; m_mountPoints = std::move(value); }
 
     /**
      * <p>The mount points for data volumes in your container.</p>
@@ -282,7 +283,7 @@ namespace Model
     /**
      * <p>The mount points for data volumes in your container.</p>
      */
-    inline ContainerDetail& WithMountPoints(Aws::Vector<MountPoint>&& value) { SetMountPoints(value); return *this;}
+    inline ContainerDetail& WithMountPoints(Aws::Vector<MountPoint>&& value) { SetMountPoints(std::move(value)); return *this;}
 
     /**
      * <p>The mount points for data volumes in your container.</p>
@@ -292,7 +293,7 @@ namespace Model
     /**
      * <p>The mount points for data volumes in your container.</p>
      */
-    inline ContainerDetail& AddMountPoints(MountPoint&& value) { m_mountPointsHasBeenSet = true; m_mountPoints.push_back(value); return *this; }
+    inline ContainerDetail& AddMountPoints(MountPoint&& value) { m_mountPointsHasBeenSet = true; m_mountPoints.push_back(std::move(value)); return *this; }
 
     /**
      * <p>When this parameter is true, the container is given read-only access to its
@@ -325,7 +326,7 @@ namespace Model
     /**
      * <p>A list of <code>ulimit</code> values to set in the container.</p>
      */
-    inline void SetUlimits(Aws::Vector<Ulimit>&& value) { m_ulimitsHasBeenSet = true; m_ulimits = value; }
+    inline void SetUlimits(Aws::Vector<Ulimit>&& value) { m_ulimitsHasBeenSet = true; m_ulimits = std::move(value); }
 
     /**
      * <p>A list of <code>ulimit</code> values to set in the container.</p>
@@ -335,7 +336,7 @@ namespace Model
     /**
      * <p>A list of <code>ulimit</code> values to set in the container.</p>
      */
-    inline ContainerDetail& WithUlimits(Aws::Vector<Ulimit>&& value) { SetUlimits(value); return *this;}
+    inline ContainerDetail& WithUlimits(Aws::Vector<Ulimit>&& value) { SetUlimits(std::move(value)); return *this;}
 
     /**
      * <p>A list of <code>ulimit</code> values to set in the container.</p>
@@ -345,7 +346,7 @@ namespace Model
     /**
      * <p>A list of <code>ulimit</code> values to set in the container.</p>
      */
-    inline ContainerDetail& AddUlimits(Ulimit&& value) { m_ulimitsHasBeenSet = true; m_ulimits.push_back(value); return *this; }
+    inline ContainerDetail& AddUlimits(Ulimit&& value) { m_ulimitsHasBeenSet = true; m_ulimits.push_back(std::move(value)); return *this; }
 
     /**
      * <p>When this parameter is true, the container is given elevated privileges on
@@ -378,7 +379,7 @@ namespace Model
     /**
      * <p>The user name to use inside the container.</p>
      */
-    inline void SetUser(Aws::String&& value) { m_userHasBeenSet = true; m_user = value; }
+    inline void SetUser(Aws::String&& value) { m_userHasBeenSet = true; m_user = std::move(value); }
 
     /**
      * <p>The user name to use inside the container.</p>
@@ -393,7 +394,7 @@ namespace Model
     /**
      * <p>The user name to use inside the container.</p>
      */
-    inline ContainerDetail& WithUser(Aws::String&& value) { SetUser(value); return *this;}
+    inline ContainerDetail& WithUser(Aws::String&& value) { SetUser(std::move(value)); return *this;}
 
     /**
      * <p>The user name to use inside the container.</p>
@@ -431,7 +432,7 @@ namespace Model
      * <p>A short (255 max characters) human-readable string to provide additional
      * details about a running or stopped container.</p>
      */
-    inline void SetReason(Aws::String&& value) { m_reasonHasBeenSet = true; m_reason = value; }
+    inline void SetReason(Aws::String&& value) { m_reasonHasBeenSet = true; m_reason = std::move(value); }
 
     /**
      * <p>A short (255 max characters) human-readable string to provide additional
@@ -449,7 +450,7 @@ namespace Model
      * <p>A short (255 max characters) human-readable string to provide additional
      * details about a running or stopped container.</p>
      */
-    inline ContainerDetail& WithReason(Aws::String&& value) { SetReason(value); return *this;}
+    inline ContainerDetail& WithReason(Aws::String&& value) { SetReason(std::move(value)); return *this;}
 
     /**
      * <p>A short (255 max characters) human-readable string to provide additional
@@ -473,7 +474,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the container instance on which the
      * container is running.</p>
      */
-    inline void SetContainerInstanceArn(Aws::String&& value) { m_containerInstanceArnHasBeenSet = true; m_containerInstanceArn = value; }
+    inline void SetContainerInstanceArn(Aws::String&& value) { m_containerInstanceArnHasBeenSet = true; m_containerInstanceArn = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the container instance on which the
@@ -491,7 +492,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the container instance on which the
      * container is running.</p>
      */
-    inline ContainerDetail& WithContainerInstanceArn(Aws::String&& value) { SetContainerInstanceArn(value); return *this;}
+    inline ContainerDetail& WithContainerInstanceArn(Aws::String&& value) { SetContainerInstanceArn(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the container instance on which the
@@ -515,7 +516,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the Amazon ECS task that is associated with
      * the container job.</p>
      */
-    inline void SetTaskArn(Aws::String&& value) { m_taskArnHasBeenSet = true; m_taskArn = value; }
+    inline void SetTaskArn(Aws::String&& value) { m_taskArnHasBeenSet = true; m_taskArn = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon ECS task that is associated with
@@ -533,7 +534,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the Amazon ECS task that is associated with
      * the container job.</p>
      */
-    inline ContainerDetail& WithTaskArn(Aws::String&& value) { SetTaskArn(value); return *this;}
+    inline ContainerDetail& WithTaskArn(Aws::String&& value) { SetTaskArn(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon ECS task that is associated with

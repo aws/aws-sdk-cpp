@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/clouddirectory/CloudDirectory_EXPORTS.h>
 #include <aws/clouddirectory/model/Facet.h>
+#include <utility>
 
 namespace Aws
 {
@@ -52,7 +53,7 @@ namespace Model
     /**
      * <p> <a>Facet</a> structure associated with the facet.</p>
      */
-    inline void SetFacet(Facet&& value) { m_facet = value; }
+    inline void SetFacet(Facet&& value) { m_facet = std::move(value); }
 
     /**
      * <p> <a>Facet</a> structure associated with the facet.</p>
@@ -62,7 +63,7 @@ namespace Model
     /**
      * <p> <a>Facet</a> structure associated with the facet.</p>
      */
-    inline GetFacetResult& WithFacet(Facet&& value) { SetFacet(value); return *this;}
+    inline GetFacetResult& WithFacet(Facet&& value) { SetFacet(std::move(value)); return *this;}
 
   private:
     Facet m_facet;

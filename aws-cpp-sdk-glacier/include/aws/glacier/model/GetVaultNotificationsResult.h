@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/glacier/Glacier_EXPORTS.h>
 #include <aws/glacier/model/VaultNotificationConfig.h>
+#include <utility>
 
 namespace Aws
 {
@@ -58,7 +59,7 @@ namespace Model
     /**
      * <p>Returns the notification configuration set on the vault.</p>
      */
-    inline void SetVaultNotificationConfig(VaultNotificationConfig&& value) { m_vaultNotificationConfig = value; }
+    inline void SetVaultNotificationConfig(VaultNotificationConfig&& value) { m_vaultNotificationConfig = std::move(value); }
 
     /**
      * <p>Returns the notification configuration set on the vault.</p>
@@ -68,7 +69,7 @@ namespace Model
     /**
      * <p>Returns the notification configuration set on the vault.</p>
      */
-    inline GetVaultNotificationsResult& WithVaultNotificationConfig(VaultNotificationConfig&& value) { SetVaultNotificationConfig(value); return *this;}
+    inline GetVaultNotificationsResult& WithVaultNotificationConfig(VaultNotificationConfig&& value) { SetVaultNotificationConfig(std::move(value)); return *this;}
 
   private:
     VaultNotificationConfig m_vaultNotificationConfig;

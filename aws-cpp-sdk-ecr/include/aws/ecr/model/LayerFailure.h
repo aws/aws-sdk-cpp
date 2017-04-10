@@ -16,6 +16,7 @@
 #include <aws/ecr/ECR_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ecr/model/LayerFailureCode.h>
+#include <utility>
 
 namespace Aws
 {
@@ -58,7 +59,7 @@ namespace Model
     /**
      * <p>The layer digest associated with the failure.</p>
      */
-    inline void SetLayerDigest(Aws::String&& value) { m_layerDigestHasBeenSet = true; m_layerDigest = value; }
+    inline void SetLayerDigest(Aws::String&& value) { m_layerDigestHasBeenSet = true; m_layerDigest = std::move(value); }
 
     /**
      * <p>The layer digest associated with the failure.</p>
@@ -73,7 +74,7 @@ namespace Model
     /**
      * <p>The layer digest associated with the failure.</p>
      */
-    inline LayerFailure& WithLayerDigest(Aws::String&& value) { SetLayerDigest(value); return *this;}
+    inline LayerFailure& WithLayerDigest(Aws::String&& value) { SetLayerDigest(std::move(value)); return *this;}
 
     /**
      * <p>The layer digest associated with the failure.</p>
@@ -93,7 +94,7 @@ namespace Model
     /**
      * <p>The failure code associated with the failure.</p>
      */
-    inline void SetFailureCode(LayerFailureCode&& value) { m_failureCodeHasBeenSet = true; m_failureCode = value; }
+    inline void SetFailureCode(LayerFailureCode&& value) { m_failureCodeHasBeenSet = true; m_failureCode = std::move(value); }
 
     /**
      * <p>The failure code associated with the failure.</p>
@@ -103,7 +104,7 @@ namespace Model
     /**
      * <p>The failure code associated with the failure.</p>
      */
-    inline LayerFailure& WithFailureCode(LayerFailureCode&& value) { SetFailureCode(value); return *this;}
+    inline LayerFailure& WithFailureCode(LayerFailureCode&& value) { SetFailureCode(std::move(value)); return *this;}
 
     /**
      * <p>The reason for the failure.</p>
@@ -118,7 +119,7 @@ namespace Model
     /**
      * <p>The reason for the failure.</p>
      */
-    inline void SetFailureReason(Aws::String&& value) { m_failureReasonHasBeenSet = true; m_failureReason = value; }
+    inline void SetFailureReason(Aws::String&& value) { m_failureReasonHasBeenSet = true; m_failureReason = std::move(value); }
 
     /**
      * <p>The reason for the failure.</p>
@@ -133,7 +134,7 @@ namespace Model
     /**
      * <p>The reason for the failure.</p>
      */
-    inline LayerFailure& WithFailureReason(Aws::String&& value) { SetFailureReason(value); return *this;}
+    inline LayerFailure& WithFailureReason(Aws::String&& value) { SetFailureReason(std::move(value)); return *this;}
 
     /**
      * <p>The reason for the failure.</p>

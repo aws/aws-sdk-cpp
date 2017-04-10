@@ -17,6 +17,7 @@
 #include <aws/appstream/AppStreamRequest.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -49,7 +50,7 @@ namespace Model
     /**
      * <p>A specific list of images to describe.</p>
      */
-    inline void SetNames(Aws::Vector<Aws::String>&& value) { m_namesHasBeenSet = true; m_names = value; }
+    inline void SetNames(Aws::Vector<Aws::String>&& value) { m_namesHasBeenSet = true; m_names = std::move(value); }
 
     /**
      * <p>A specific list of images to describe.</p>
@@ -59,7 +60,7 @@ namespace Model
     /**
      * <p>A specific list of images to describe.</p>
      */
-    inline DescribeImagesRequest& WithNames(Aws::Vector<Aws::String>&& value) { SetNames(value); return *this;}
+    inline DescribeImagesRequest& WithNames(Aws::Vector<Aws::String>&& value) { SetNames(std::move(value)); return *this;}
 
     /**
      * <p>A specific list of images to describe.</p>
@@ -69,7 +70,7 @@ namespace Model
     /**
      * <p>A specific list of images to describe.</p>
      */
-    inline DescribeImagesRequest& AddNames(Aws::String&& value) { m_namesHasBeenSet = true; m_names.push_back(value); return *this; }
+    inline DescribeImagesRequest& AddNames(Aws::String&& value) { m_namesHasBeenSet = true; m_names.push_back(std::move(value)); return *this; }
 
     /**
      * <p>A specific list of images to describe.</p>

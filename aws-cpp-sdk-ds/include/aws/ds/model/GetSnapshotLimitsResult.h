@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/ds/DirectoryService_EXPORTS.h>
 #include <aws/ds/model/SnapshotLimits.h>
+#include <utility>
 
 namespace Aws
 {
@@ -61,7 +62,7 @@ namespace Model
      * <p>A <a>SnapshotLimits</a> object that contains the manual snapshot limits for
      * the specified directory.</p>
      */
-    inline void SetSnapshotLimits(SnapshotLimits&& value) { m_snapshotLimits = value; }
+    inline void SetSnapshotLimits(SnapshotLimits&& value) { m_snapshotLimits = std::move(value); }
 
     /**
      * <p>A <a>SnapshotLimits</a> object that contains the manual snapshot limits for
@@ -73,7 +74,7 @@ namespace Model
      * <p>A <a>SnapshotLimits</a> object that contains the manual snapshot limits for
      * the specified directory.</p>
      */
-    inline GetSnapshotLimitsResult& WithSnapshotLimits(SnapshotLimits&& value) { SetSnapshotLimits(value); return *this;}
+    inline GetSnapshotLimitsResult& WithSnapshotLimits(SnapshotLimits&& value) { SetSnapshotLimits(std::move(value)); return *this;}
 
   private:
     SnapshotLimits m_snapshotLimits;

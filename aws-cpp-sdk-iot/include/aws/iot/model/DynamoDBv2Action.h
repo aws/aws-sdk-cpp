@@ -16,6 +16,7 @@
 #include <aws/iot/IoT_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/iot/model/PutItemInput.h>
+#include <utility>
 
 namespace Aws
 {
@@ -59,7 +60,7 @@ namespace Model
     /**
      * <p>The ARN of the IAM role that grants access to the DynamoDB table.</p>
      */
-    inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
+    inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
 
     /**
      * <p>The ARN of the IAM role that grants access to the DynamoDB table.</p>
@@ -74,7 +75,7 @@ namespace Model
     /**
      * <p>The ARN of the IAM role that grants access to the DynamoDB table.</p>
      */
-    inline DynamoDBv2Action& WithRoleArn(Aws::String&& value) { SetRoleArn(value); return *this;}
+    inline DynamoDBv2Action& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
 
     /**
      * <p>The ARN of the IAM role that grants access to the DynamoDB table.</p>
@@ -106,7 +107,7 @@ namespace Model
      * message payload will be written to a separate column in the DynamoDB
      * database.</p>
      */
-    inline void SetPutItem(PutItemInput&& value) { m_putItemHasBeenSet = true; m_putItem = value; }
+    inline void SetPutItem(PutItemInput&& value) { m_putItemHasBeenSet = true; m_putItem = std::move(value); }
 
     /**
      * <p>Specifies the DynamoDB table to which the message data will be written. For
@@ -124,7 +125,7 @@ namespace Model
      * message payload will be written to a separate column in the DynamoDB
      * database.</p>
      */
-    inline DynamoDBv2Action& WithPutItem(PutItemInput&& value) { SetPutItem(value); return *this;}
+    inline DynamoDBv2Action& WithPutItem(PutItemInput&& value) { SetPutItem(std::move(value)); return *this;}
 
   private:
     Aws::String m_roleArn;

@@ -16,6 +16,7 @@
 #include <aws/waf/WAF_EXPORTS.h>
 #include <aws/waf/WAFRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -54,7 +55,7 @@ namespace Model
      * <code>WebACLId</code> is returned by <a>CreateWebACL</a> and by
      * <a>ListWebACLs</a>.</p>
      */
-    inline void SetWebACLId(Aws::String&& value) { m_webACLIdHasBeenSet = true; m_webACLId = value; }
+    inline void SetWebACLId(Aws::String&& value) { m_webACLIdHasBeenSet = true; m_webACLId = std::move(value); }
 
     /**
      * <p>The <code>WebACLId</code> of the <a>WebACL</a> that you want to delete.
@@ -75,7 +76,7 @@ namespace Model
      * <code>WebACLId</code> is returned by <a>CreateWebACL</a> and by
      * <a>ListWebACLs</a>.</p>
      */
-    inline DeleteWebACLRequest& WithWebACLId(Aws::String&& value) { SetWebACLId(value); return *this;}
+    inline DeleteWebACLRequest& WithWebACLId(Aws::String&& value) { SetWebACLId(std::move(value)); return *this;}
 
     /**
      * <p>The <code>WebACLId</code> of the <a>WebACL</a> that you want to delete.
@@ -97,7 +98,7 @@ namespace Model
     /**
      * <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
      */
-    inline void SetChangeToken(Aws::String&& value) { m_changeTokenHasBeenSet = true; m_changeToken = value; }
+    inline void SetChangeToken(Aws::String&& value) { m_changeTokenHasBeenSet = true; m_changeToken = std::move(value); }
 
     /**
      * <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
@@ -112,7 +113,7 @@ namespace Model
     /**
      * <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
      */
-    inline DeleteWebACLRequest& WithChangeToken(Aws::String&& value) { SetChangeToken(value); return *this;}
+    inline DeleteWebACLRequest& WithChangeToken(Aws::String&& value) { SetChangeToken(std::move(value)); return *this;}
 
     /**
      * <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>

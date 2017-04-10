@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/logs/model/Destination.h>
+#include <utility>
 
 namespace Aws
 {
@@ -54,7 +55,7 @@ namespace Model
     /**
      * <p>The destinations.</p>
      */
-    inline void SetDestinations(Aws::Vector<Destination>&& value) { m_destinations = value; }
+    inline void SetDestinations(Aws::Vector<Destination>&& value) { m_destinations = std::move(value); }
 
     /**
      * <p>The destinations.</p>
@@ -64,7 +65,7 @@ namespace Model
     /**
      * <p>The destinations.</p>
      */
-    inline DescribeDestinationsResult& WithDestinations(Aws::Vector<Destination>&& value) { SetDestinations(value); return *this;}
+    inline DescribeDestinationsResult& WithDestinations(Aws::Vector<Destination>&& value) { SetDestinations(std::move(value)); return *this;}
 
     /**
      * <p>The destinations.</p>
@@ -74,7 +75,7 @@ namespace Model
     /**
      * <p>The destinations.</p>
      */
-    inline DescribeDestinationsResult& AddDestinations(Destination&& value) { m_destinations.push_back(value); return *this; }
+    inline DescribeDestinationsResult& AddDestinations(Destination&& value) { m_destinations.push_back(std::move(value)); return *this; }
 
     
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
@@ -83,7 +84,7 @@ namespace Model
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
 
     
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
@@ -92,7 +93,7 @@ namespace Model
     inline DescribeDestinationsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     
-    inline DescribeDestinationsResult& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline DescribeDestinationsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     
     inline DescribeDestinationsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}

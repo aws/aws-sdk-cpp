@@ -16,6 +16,7 @@
 #include <aws/importexport/ImportExport_EXPORTS.h>
 #include <aws/importexport/ImportExportRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -56,7 +57,7 @@ namespace Model
     inline void SetMarker(const Aws::String& value) { m_markerHasBeenSet = true; m_marker = value; }
 
     
-    inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = value; }
+    inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = std::move(value); }
 
     
     inline void SetMarker(const char* value) { m_markerHasBeenSet = true; m_marker.assign(value); }
@@ -65,7 +66,7 @@ namespace Model
     inline ListJobsRequest& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
 
     
-    inline ListJobsRequest& WithMarker(Aws::String&& value) { SetMarker(value); return *this;}
+    inline ListJobsRequest& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
 
     
     inline ListJobsRequest& WithMarker(const char* value) { SetMarker(value); return *this;}
@@ -77,7 +78,7 @@ namespace Model
     inline void SetAPIVersion(const Aws::String& value) { m_aPIVersionHasBeenSet = true; m_aPIVersion = value; }
 
     
-    inline void SetAPIVersion(Aws::String&& value) { m_aPIVersionHasBeenSet = true; m_aPIVersion = value; }
+    inline void SetAPIVersion(Aws::String&& value) { m_aPIVersionHasBeenSet = true; m_aPIVersion = std::move(value); }
 
     
     inline void SetAPIVersion(const char* value) { m_aPIVersionHasBeenSet = true; m_aPIVersion.assign(value); }
@@ -86,7 +87,7 @@ namespace Model
     inline ListJobsRequest& WithAPIVersion(const Aws::String& value) { SetAPIVersion(value); return *this;}
 
     
-    inline ListJobsRequest& WithAPIVersion(Aws::String&& value) { SetAPIVersion(value); return *this;}
+    inline ListJobsRequest& WithAPIVersion(Aws::String&& value) { SetAPIVersion(std::move(value)); return *this;}
 
     
     inline ListJobsRequest& WithAPIVersion(const char* value) { SetAPIVersion(value); return *this;}

@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/storagegateway/StorageGateway_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -57,7 +58,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the medium changer you have selected.</p>
      */
-    inline void SetVTLDeviceARN(Aws::String&& value) { m_vTLDeviceARN = value; }
+    inline void SetVTLDeviceARN(Aws::String&& value) { m_vTLDeviceARN = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the medium changer you have selected.</p>
@@ -72,7 +73,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the medium changer you have selected.</p>
      */
-    inline UpdateVTLDeviceTypeResult& WithVTLDeviceARN(Aws::String&& value) { SetVTLDeviceARN(value); return *this;}
+    inline UpdateVTLDeviceTypeResult& WithVTLDeviceARN(Aws::String&& value) { SetVTLDeviceARN(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the medium changer you have selected.</p>

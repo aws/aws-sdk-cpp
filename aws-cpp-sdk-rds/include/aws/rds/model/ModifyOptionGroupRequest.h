@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/rds/model/OptionConfiguration.h>
+#include <utility>
 
 namespace Aws
 {
@@ -64,7 +65,7 @@ namespace Model
      * option group, and that option group cannot be removed from a DB instance once it
      * is associated with a DB instance</p>
      */
-    inline void SetOptionGroupName(Aws::String&& value) { m_optionGroupNameHasBeenSet = true; m_optionGroupName = value; }
+    inline void SetOptionGroupName(Aws::String&& value) { m_optionGroupNameHasBeenSet = true; m_optionGroupName = std::move(value); }
 
     /**
      * <p>The name of the option group to be modified.</p> <p>Permanent options, such
@@ -88,7 +89,7 @@ namespace Model
      * option group, and that option group cannot be removed from a DB instance once it
      * is associated with a DB instance</p>
      */
-    inline ModifyOptionGroupRequest& WithOptionGroupName(Aws::String&& value) { SetOptionGroupName(value); return *this;}
+    inline ModifyOptionGroupRequest& WithOptionGroupName(Aws::String&& value) { SetOptionGroupName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the option group to be modified.</p> <p>Permanent options, such
@@ -114,7 +115,7 @@ namespace Model
      * <p>Options in this list are added to the option group or, if already present,
      * the specified configuration is used to update the existing configuration.</p>
      */
-    inline void SetOptionsToInclude(Aws::Vector<OptionConfiguration>&& value) { m_optionsToIncludeHasBeenSet = true; m_optionsToInclude = value; }
+    inline void SetOptionsToInclude(Aws::Vector<OptionConfiguration>&& value) { m_optionsToIncludeHasBeenSet = true; m_optionsToInclude = std::move(value); }
 
     /**
      * <p>Options in this list are added to the option group or, if already present,
@@ -126,7 +127,7 @@ namespace Model
      * <p>Options in this list are added to the option group or, if already present,
      * the specified configuration is used to update the existing configuration.</p>
      */
-    inline ModifyOptionGroupRequest& WithOptionsToInclude(Aws::Vector<OptionConfiguration>&& value) { SetOptionsToInclude(value); return *this;}
+    inline ModifyOptionGroupRequest& WithOptionsToInclude(Aws::Vector<OptionConfiguration>&& value) { SetOptionsToInclude(std::move(value)); return *this;}
 
     /**
      * <p>Options in this list are added to the option group or, if already present,
@@ -138,7 +139,7 @@ namespace Model
      * <p>Options in this list are added to the option group or, if already present,
      * the specified configuration is used to update the existing configuration.</p>
      */
-    inline ModifyOptionGroupRequest& AddOptionsToInclude(OptionConfiguration&& value) { m_optionsToIncludeHasBeenSet = true; m_optionsToInclude.push_back(value); return *this; }
+    inline ModifyOptionGroupRequest& AddOptionsToInclude(OptionConfiguration&& value) { m_optionsToIncludeHasBeenSet = true; m_optionsToInclude.push_back(std::move(value)); return *this; }
 
     /**
      * <p>Options in this list are removed from the option group.</p>
@@ -153,7 +154,7 @@ namespace Model
     /**
      * <p>Options in this list are removed from the option group.</p>
      */
-    inline void SetOptionsToRemove(Aws::Vector<Aws::String>&& value) { m_optionsToRemoveHasBeenSet = true; m_optionsToRemove = value; }
+    inline void SetOptionsToRemove(Aws::Vector<Aws::String>&& value) { m_optionsToRemoveHasBeenSet = true; m_optionsToRemove = std::move(value); }
 
     /**
      * <p>Options in this list are removed from the option group.</p>
@@ -163,7 +164,7 @@ namespace Model
     /**
      * <p>Options in this list are removed from the option group.</p>
      */
-    inline ModifyOptionGroupRequest& WithOptionsToRemove(Aws::Vector<Aws::String>&& value) { SetOptionsToRemove(value); return *this;}
+    inline ModifyOptionGroupRequest& WithOptionsToRemove(Aws::Vector<Aws::String>&& value) { SetOptionsToRemove(std::move(value)); return *this;}
 
     /**
      * <p>Options in this list are removed from the option group.</p>
@@ -173,7 +174,7 @@ namespace Model
     /**
      * <p>Options in this list are removed from the option group.</p>
      */
-    inline ModifyOptionGroupRequest& AddOptionsToRemove(Aws::String&& value) { m_optionsToRemoveHasBeenSet = true; m_optionsToRemove.push_back(value); return *this; }
+    inline ModifyOptionGroupRequest& AddOptionsToRemove(Aws::String&& value) { m_optionsToRemoveHasBeenSet = true; m_optionsToRemove.push_back(std::move(value)); return *this; }
 
     /**
      * <p>Options in this list are removed from the option group.</p>

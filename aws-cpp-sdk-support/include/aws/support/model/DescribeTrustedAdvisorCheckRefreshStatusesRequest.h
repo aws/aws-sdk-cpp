@@ -17,6 +17,7 @@
 #include <aws/support/SupportRequest.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -58,7 +59,7 @@ namespace Model
      * Specifying the check ID of a check that is automatically refreshed causes an
      * <code>InvalidParameterValue</code> error.</p>
      */
-    inline void SetCheckIds(Aws::Vector<Aws::String>&& value) { m_checkIdsHasBeenSet = true; m_checkIds = value; }
+    inline void SetCheckIds(Aws::Vector<Aws::String>&& value) { m_checkIdsHasBeenSet = true; m_checkIds = std::move(value); }
 
     /**
      * <p>The IDs of the Trusted Advisor checks to get the status of. <b>Note:</b>
@@ -72,7 +73,7 @@ namespace Model
      * Specifying the check ID of a check that is automatically refreshed causes an
      * <code>InvalidParameterValue</code> error.</p>
      */
-    inline DescribeTrustedAdvisorCheckRefreshStatusesRequest& WithCheckIds(Aws::Vector<Aws::String>&& value) { SetCheckIds(value); return *this;}
+    inline DescribeTrustedAdvisorCheckRefreshStatusesRequest& WithCheckIds(Aws::Vector<Aws::String>&& value) { SetCheckIds(std::move(value)); return *this;}
 
     /**
      * <p>The IDs of the Trusted Advisor checks to get the status of. <b>Note:</b>
@@ -86,7 +87,7 @@ namespace Model
      * Specifying the check ID of a check that is automatically refreshed causes an
      * <code>InvalidParameterValue</code> error.</p>
      */
-    inline DescribeTrustedAdvisorCheckRefreshStatusesRequest& AddCheckIds(Aws::String&& value) { m_checkIdsHasBeenSet = true; m_checkIds.push_back(value); return *this; }
+    inline DescribeTrustedAdvisorCheckRefreshStatusesRequest& AddCheckIds(Aws::String&& value) { m_checkIdsHasBeenSet = true; m_checkIds.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The IDs of the Trusted Advisor checks to get the status of. <b>Note:</b>

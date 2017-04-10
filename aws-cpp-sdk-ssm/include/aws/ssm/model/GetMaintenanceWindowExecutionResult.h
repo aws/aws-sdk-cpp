@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ssm/model/MaintenanceWindowExecutionStatus.h>
 #include <aws/core/utils/DateTime.h>
+#include <utility>
 
 namespace Aws
 {
@@ -55,7 +56,7 @@ namespace Model
     /**
      * <p>The ID of the Maintenance Window execution.</p>
      */
-    inline void SetWindowExecutionId(Aws::String&& value) { m_windowExecutionId = value; }
+    inline void SetWindowExecutionId(Aws::String&& value) { m_windowExecutionId = std::move(value); }
 
     /**
      * <p>The ID of the Maintenance Window execution.</p>
@@ -70,7 +71,7 @@ namespace Model
     /**
      * <p>The ID of the Maintenance Window execution.</p>
      */
-    inline GetMaintenanceWindowExecutionResult& WithWindowExecutionId(Aws::String&& value) { SetWindowExecutionId(value); return *this;}
+    inline GetMaintenanceWindowExecutionResult& WithWindowExecutionId(Aws::String&& value) { SetWindowExecutionId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the Maintenance Window execution.</p>
@@ -90,7 +91,7 @@ namespace Model
     /**
      * <p>The ID of the task executions from the Maintenance Window execution.</p>
      */
-    inline void SetTaskIds(Aws::Vector<Aws::String>&& value) { m_taskIds = value; }
+    inline void SetTaskIds(Aws::Vector<Aws::String>&& value) { m_taskIds = std::move(value); }
 
     /**
      * <p>The ID of the task executions from the Maintenance Window execution.</p>
@@ -100,7 +101,7 @@ namespace Model
     /**
      * <p>The ID of the task executions from the Maintenance Window execution.</p>
      */
-    inline GetMaintenanceWindowExecutionResult& WithTaskIds(Aws::Vector<Aws::String>&& value) { SetTaskIds(value); return *this;}
+    inline GetMaintenanceWindowExecutionResult& WithTaskIds(Aws::Vector<Aws::String>&& value) { SetTaskIds(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the task executions from the Maintenance Window execution.</p>
@@ -110,7 +111,7 @@ namespace Model
     /**
      * <p>The ID of the task executions from the Maintenance Window execution.</p>
      */
-    inline GetMaintenanceWindowExecutionResult& AddTaskIds(Aws::String&& value) { m_taskIds.push_back(value); return *this; }
+    inline GetMaintenanceWindowExecutionResult& AddTaskIds(Aws::String&& value) { m_taskIds.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The ID of the task executions from the Maintenance Window execution.</p>
@@ -130,7 +131,7 @@ namespace Model
     /**
      * <p>The status of the Maintenance Window execution.</p>
      */
-    inline void SetStatus(MaintenanceWindowExecutionStatus&& value) { m_status = value; }
+    inline void SetStatus(MaintenanceWindowExecutionStatus&& value) { m_status = std::move(value); }
 
     /**
      * <p>The status of the Maintenance Window execution.</p>
@@ -140,7 +141,7 @@ namespace Model
     /**
      * <p>The status of the Maintenance Window execution.</p>
      */
-    inline GetMaintenanceWindowExecutionResult& WithStatus(MaintenanceWindowExecutionStatus&& value) { SetStatus(value); return *this;}
+    inline GetMaintenanceWindowExecutionResult& WithStatus(MaintenanceWindowExecutionStatus&& value) { SetStatus(std::move(value)); return *this;}
 
     /**
      * <p>The details explaining the Status. Only available for certain status
@@ -158,7 +159,7 @@ namespace Model
      * <p>The details explaining the Status. Only available for certain status
      * values.</p>
      */
-    inline void SetStatusDetails(Aws::String&& value) { m_statusDetails = value; }
+    inline void SetStatusDetails(Aws::String&& value) { m_statusDetails = std::move(value); }
 
     /**
      * <p>The details explaining the Status. Only available for certain status
@@ -176,7 +177,7 @@ namespace Model
      * <p>The details explaining the Status. Only available for certain status
      * values.</p>
      */
-    inline GetMaintenanceWindowExecutionResult& WithStatusDetails(Aws::String&& value) { SetStatusDetails(value); return *this;}
+    inline GetMaintenanceWindowExecutionResult& WithStatusDetails(Aws::String&& value) { SetStatusDetails(std::move(value)); return *this;}
 
     /**
      * <p>The details explaining the Status. Only available for certain status
@@ -197,7 +198,7 @@ namespace Model
     /**
      * <p>The time the Maintenance Window started executing.</p>
      */
-    inline void SetStartTime(Aws::Utils::DateTime&& value) { m_startTime = value; }
+    inline void SetStartTime(Aws::Utils::DateTime&& value) { m_startTime = std::move(value); }
 
     /**
      * <p>The time the Maintenance Window started executing.</p>
@@ -207,7 +208,7 @@ namespace Model
     /**
      * <p>The time the Maintenance Window started executing.</p>
      */
-    inline GetMaintenanceWindowExecutionResult& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(value); return *this;}
+    inline GetMaintenanceWindowExecutionResult& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(std::move(value)); return *this;}
 
     /**
      * <p>The time the Maintenance Window finished executing.</p>
@@ -222,7 +223,7 @@ namespace Model
     /**
      * <p>The time the Maintenance Window finished executing.</p>
      */
-    inline void SetEndTime(Aws::Utils::DateTime&& value) { m_endTime = value; }
+    inline void SetEndTime(Aws::Utils::DateTime&& value) { m_endTime = std::move(value); }
 
     /**
      * <p>The time the Maintenance Window finished executing.</p>
@@ -232,7 +233,7 @@ namespace Model
     /**
      * <p>The time the Maintenance Window finished executing.</p>
      */
-    inline GetMaintenanceWindowExecutionResult& WithEndTime(Aws::Utils::DateTime&& value) { SetEndTime(value); return *this;}
+    inline GetMaintenanceWindowExecutionResult& WithEndTime(Aws::Utils::DateTime&& value) { SetEndTime(std::move(value)); return *this;}
 
   private:
     Aws::String m_windowExecutionId;

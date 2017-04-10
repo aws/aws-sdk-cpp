@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/dms/model/ReplicationSubnetGroup.h>
+#include <utility>
 
 namespace Aws
 {
@@ -65,7 +66,7 @@ namespace Model
      * parameter is specified, the response includes only records beyond the marker, up
      * to the value specified by <code>MaxRecords</code>. </p>
      */
-    inline void SetMarker(Aws::String&& value) { m_marker = value; }
+    inline void SetMarker(Aws::String&& value) { m_marker = std::move(value); }
 
     /**
      * <p> An optional pagination token provided by a previous request. If this
@@ -86,7 +87,7 @@ namespace Model
      * parameter is specified, the response includes only records beyond the marker, up
      * to the value specified by <code>MaxRecords</code>. </p>
      */
-    inline DescribeReplicationSubnetGroupsResult& WithMarker(Aws::String&& value) { SetMarker(value); return *this;}
+    inline DescribeReplicationSubnetGroupsResult& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
 
     /**
      * <p> An optional pagination token provided by a previous request. If this
@@ -108,7 +109,7 @@ namespace Model
     /**
      * <p>A description of the replication subnet groups.</p>
      */
-    inline void SetReplicationSubnetGroups(Aws::Vector<ReplicationSubnetGroup>&& value) { m_replicationSubnetGroups = value; }
+    inline void SetReplicationSubnetGroups(Aws::Vector<ReplicationSubnetGroup>&& value) { m_replicationSubnetGroups = std::move(value); }
 
     /**
      * <p>A description of the replication subnet groups.</p>
@@ -118,7 +119,7 @@ namespace Model
     /**
      * <p>A description of the replication subnet groups.</p>
      */
-    inline DescribeReplicationSubnetGroupsResult& WithReplicationSubnetGroups(Aws::Vector<ReplicationSubnetGroup>&& value) { SetReplicationSubnetGroups(value); return *this;}
+    inline DescribeReplicationSubnetGroupsResult& WithReplicationSubnetGroups(Aws::Vector<ReplicationSubnetGroup>&& value) { SetReplicationSubnetGroups(std::move(value)); return *this;}
 
     /**
      * <p>A description of the replication subnet groups.</p>
@@ -128,7 +129,7 @@ namespace Model
     /**
      * <p>A description of the replication subnet groups.</p>
      */
-    inline DescribeReplicationSubnetGroupsResult& AddReplicationSubnetGroups(ReplicationSubnetGroup&& value) { m_replicationSubnetGroups.push_back(value); return *this; }
+    inline DescribeReplicationSubnetGroupsResult& AddReplicationSubnetGroups(ReplicationSubnetGroup&& value) { m_replicationSubnetGroups.push_back(std::move(value)); return *this; }
 
   private:
     Aws::String m_marker;

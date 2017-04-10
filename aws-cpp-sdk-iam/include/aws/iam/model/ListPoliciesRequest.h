@@ -17,6 +17,7 @@
 #include <aws/iam/IAMRequest.h>
 #include <aws/iam/model/PolicyScopeType.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -63,7 +64,7 @@ namespace Model
      * <code>Local</code>.</p> <p>This parameter is optional. If it is not included, or
      * if it is set to <code>All</code>, all policies are returned.</p>
      */
-    inline void SetScope(PolicyScopeType&& value) { m_scopeHasBeenSet = true; m_scope = value; }
+    inline void SetScope(PolicyScopeType&& value) { m_scopeHasBeenSet = true; m_scope = std::move(value); }
 
     /**
      * <p>The scope to use for filtering the results.</p> <p>To list only AWS managed
@@ -81,7 +82,7 @@ namespace Model
      * <code>Local</code>.</p> <p>This parameter is optional. If it is not included, or
      * if it is set to <code>All</code>, all policies are returned.</p>
      */
-    inline ListPoliciesRequest& WithScope(PolicyScopeType&& value) { SetScope(value); return *this;}
+    inline ListPoliciesRequest& WithScope(PolicyScopeType&& value) { SetScope(std::move(value)); return *this;}
 
     /**
      * <p>A flag to filter the results to only the attached policies.</p> <p>When
@@ -141,7 +142,7 @@ namespace Model
      * ASCII character from the ! (\u0021) thru the DEL character (\u007F), including
      * most punctuation characters, digits, and upper and lowercased letters.</p>
      */
-    inline void SetPathPrefix(Aws::String&& value) { m_pathPrefixHasBeenSet = true; m_pathPrefix = value; }
+    inline void SetPathPrefix(Aws::String&& value) { m_pathPrefixHasBeenSet = true; m_pathPrefix = std::move(value); }
 
     /**
      * <p>The path prefix for filtering the results. This parameter is optional. If it
@@ -174,7 +175,7 @@ namespace Model
      * ASCII character from the ! (\u0021) thru the DEL character (\u007F), including
      * most punctuation characters, digits, and upper and lowercased letters.</p>
      */
-    inline ListPoliciesRequest& WithPathPrefix(Aws::String&& value) { SetPathPrefix(value); return *this;}
+    inline ListPoliciesRequest& WithPathPrefix(Aws::String&& value) { SetPathPrefix(std::move(value)); return *this;}
 
     /**
      * <p>The path prefix for filtering the results. This parameter is optional. If it
@@ -209,7 +210,7 @@ namespace Model
      * <code>Marker</code> element in the response that you received to indicate where
      * the next call should start.</p>
      */
-    inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = value; }
+    inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = std::move(value); }
 
     /**
      * <p>Use this parameter only when paginating results and only after you receive a
@@ -233,7 +234,7 @@ namespace Model
      * <code>Marker</code> element in the response that you received to indicate where
      * the next call should start.</p>
      */
-    inline ListPoliciesRequest& WithMarker(Aws::String&& value) { SetMarker(value); return *this;}
+    inline ListPoliciesRequest& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
 
     /**
      * <p>Use this parameter only when paginating results and only after you receive a

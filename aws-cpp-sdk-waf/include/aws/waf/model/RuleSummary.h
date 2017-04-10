@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/waf/WAF_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -75,7 +76,7 @@ namespace Model
      * <a>DeleteRule</a>).</p> <p> <code>RuleId</code> is returned by <a>CreateRule</a>
      * and by <a>ListRules</a>.</p>
      */
-    inline void SetRuleId(Aws::String&& value) { m_ruleIdHasBeenSet = true; m_ruleId = value; }
+    inline void SetRuleId(Aws::String&& value) { m_ruleIdHasBeenSet = true; m_ruleId = std::move(value); }
 
     /**
      * <p>A unique identifier for a <code>Rule</code>. You use <code>RuleId</code> to
@@ -108,7 +109,7 @@ namespace Model
      * <a>DeleteRule</a>).</p> <p> <code>RuleId</code> is returned by <a>CreateRule</a>
      * and by <a>ListRules</a>.</p>
      */
-    inline RuleSummary& WithRuleId(Aws::String&& value) { SetRuleId(value); return *this;}
+    inline RuleSummary& WithRuleId(Aws::String&& value) { SetRuleId(std::move(value)); return *this;}
 
     /**
      * <p>A unique identifier for a <code>Rule</code>. You use <code>RuleId</code> to
@@ -137,7 +138,7 @@ namespace Model
      * <p>A friendly name or description of the <a>Rule</a>. You can't change the name
      * of a <code>Rule</code> after you create it.</p>
      */
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p>A friendly name or description of the <a>Rule</a>. You can't change the name
@@ -155,7 +156,7 @@ namespace Model
      * <p>A friendly name or description of the <a>Rule</a>. You can't change the name
      * of a <code>Rule</code> after you create it.</p>
      */
-    inline RuleSummary& WithName(Aws::String&& value) { SetName(value); return *this;}
+    inline RuleSummary& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>A friendly name or description of the <a>Rule</a>. You can't change the name

@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/cloudtrail/model/EventSelector.h>
+#include <utility>
 
 namespace Aws
 {
@@ -77,7 +78,7 @@ namespace Model
      * <p>If you specify a trail ARN, it must be in the format:</p> <p>
      * <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code> </p>
      */
-    inline void SetTrailName(Aws::String&& value) { m_trailNameHasBeenSet = true; m_trailName = value; }
+    inline void SetTrailName(Aws::String&& value) { m_trailNameHasBeenSet = true; m_trailName = std::move(value); }
 
     /**
      * <p>Specifies the name of the trail or trail ARN. If you specify a trail name,
@@ -119,7 +120,7 @@ namespace Model
      * <p>If you specify a trail ARN, it must be in the format:</p> <p>
      * <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code> </p>
      */
-    inline PutEventSelectorsRequest& WithTrailName(Aws::String&& value) { SetTrailName(value); return *this;}
+    inline PutEventSelectorsRequest& WithTrailName(Aws::String&& value) { SetTrailName(std::move(value)); return *this;}
 
     /**
      * <p>Specifies the name of the trail or trail ARN. If you specify a trail name,
@@ -151,7 +152,7 @@ namespace Model
      * <p>Specifies the settings for your event selectors. You can configure up to five
      * event selectors for a trail.</p>
      */
-    inline void SetEventSelectors(Aws::Vector<EventSelector>&& value) { m_eventSelectorsHasBeenSet = true; m_eventSelectors = value; }
+    inline void SetEventSelectors(Aws::Vector<EventSelector>&& value) { m_eventSelectorsHasBeenSet = true; m_eventSelectors = std::move(value); }
 
     /**
      * <p>Specifies the settings for your event selectors. You can configure up to five
@@ -163,7 +164,7 @@ namespace Model
      * <p>Specifies the settings for your event selectors. You can configure up to five
      * event selectors for a trail.</p>
      */
-    inline PutEventSelectorsRequest& WithEventSelectors(Aws::Vector<EventSelector>&& value) { SetEventSelectors(value); return *this;}
+    inline PutEventSelectorsRequest& WithEventSelectors(Aws::Vector<EventSelector>&& value) { SetEventSelectors(std::move(value)); return *this;}
 
     /**
      * <p>Specifies the settings for your event selectors. You can configure up to five
@@ -175,7 +176,7 @@ namespace Model
      * <p>Specifies the settings for your event selectors. You can configure up to five
      * event selectors for a trail.</p>
      */
-    inline PutEventSelectorsRequest& AddEventSelectors(EventSelector&& value) { m_eventSelectorsHasBeenSet = true; m_eventSelectors.push_back(value); return *this; }
+    inline PutEventSelectorsRequest& AddEventSelectors(EventSelector&& value) { m_eventSelectorsHasBeenSet = true; m_eventSelectors.push_back(std::move(value)); return *this; }
 
   private:
     Aws::String m_trailName;

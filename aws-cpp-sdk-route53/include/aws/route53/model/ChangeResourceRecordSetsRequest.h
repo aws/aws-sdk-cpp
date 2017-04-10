@@ -17,6 +17,7 @@
 #include <aws/route53/Route53Request.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/route53/model/ChangeBatch.h>
+#include <utility>
 
 namespace Aws
 {
@@ -54,7 +55,7 @@ namespace Model
      * <p>The ID of the hosted zone that contains the resource record sets that you
      * want to change.</p>
      */
-    inline void SetHostedZoneId(Aws::String&& value) { m_hostedZoneIdHasBeenSet = true; m_hostedZoneId = value; }
+    inline void SetHostedZoneId(Aws::String&& value) { m_hostedZoneIdHasBeenSet = true; m_hostedZoneId = std::move(value); }
 
     /**
      * <p>The ID of the hosted zone that contains the resource record sets that you
@@ -72,7 +73,7 @@ namespace Model
      * <p>The ID of the hosted zone that contains the resource record sets that you
      * want to change.</p>
      */
-    inline ChangeResourceRecordSetsRequest& WithHostedZoneId(Aws::String&& value) { SetHostedZoneId(value); return *this;}
+    inline ChangeResourceRecordSetsRequest& WithHostedZoneId(Aws::String&& value) { SetHostedZoneId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the hosted zone that contains the resource record sets that you
@@ -96,7 +97,7 @@ namespace Model
      * <p>A complex type that contains an optional comment and the <code>Changes</code>
      * element.</p>
      */
-    inline void SetChangeBatch(ChangeBatch&& value) { m_changeBatchHasBeenSet = true; m_changeBatch = value; }
+    inline void SetChangeBatch(ChangeBatch&& value) { m_changeBatchHasBeenSet = true; m_changeBatch = std::move(value); }
 
     /**
      * <p>A complex type that contains an optional comment and the <code>Changes</code>
@@ -108,7 +109,7 @@ namespace Model
      * <p>A complex type that contains an optional comment and the <code>Changes</code>
      * element.</p>
      */
-    inline ChangeResourceRecordSetsRequest& WithChangeBatch(ChangeBatch&& value) { SetChangeBatch(value); return *this;}
+    inline ChangeResourceRecordSetsRequest& WithChangeBatch(ChangeBatch&& value) { SetChangeBatch(std::move(value)); return *this;}
 
   private:
     Aws::String m_hostedZoneId;

@@ -17,6 +17,7 @@
 #include <aws/ssm/model/ParametersFilterKey.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -59,7 +60,7 @@ namespace Model
     /**
      * <p>The name of the filter.</p>
      */
-    inline void SetKey(ParametersFilterKey&& value) { m_keyHasBeenSet = true; m_key = value; }
+    inline void SetKey(ParametersFilterKey&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
 
     /**
      * <p>The name of the filter.</p>
@@ -69,7 +70,7 @@ namespace Model
     /**
      * <p>The name of the filter.</p>
      */
-    inline ParametersFilter& WithKey(ParametersFilterKey&& value) { SetKey(value); return *this;}
+    inline ParametersFilter& WithKey(ParametersFilterKey&& value) { SetKey(std::move(value)); return *this;}
 
     /**
      * <p>The filter values.</p>
@@ -84,7 +85,7 @@ namespace Model
     /**
      * <p>The filter values.</p>
      */
-    inline void SetValues(Aws::Vector<Aws::String>&& value) { m_valuesHasBeenSet = true; m_values = value; }
+    inline void SetValues(Aws::Vector<Aws::String>&& value) { m_valuesHasBeenSet = true; m_values = std::move(value); }
 
     /**
      * <p>The filter values.</p>
@@ -94,7 +95,7 @@ namespace Model
     /**
      * <p>The filter values.</p>
      */
-    inline ParametersFilter& WithValues(Aws::Vector<Aws::String>&& value) { SetValues(value); return *this;}
+    inline ParametersFilter& WithValues(Aws::Vector<Aws::String>&& value) { SetValues(std::move(value)); return *this;}
 
     /**
      * <p>The filter values.</p>
@@ -104,7 +105,7 @@ namespace Model
     /**
      * <p>The filter values.</p>
      */
-    inline ParametersFilter& AddValues(Aws::String&& value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
+    inline ParametersFilter& AddValues(Aws::String&& value) { m_valuesHasBeenSet = true; m_values.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The filter values.</p>

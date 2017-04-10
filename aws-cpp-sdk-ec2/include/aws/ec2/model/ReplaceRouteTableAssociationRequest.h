@@ -16,6 +16,7 @@
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/ec2/EC2Request.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -78,7 +79,7 @@ namespace Model
     /**
      * <p>The association ID.</p>
      */
-    inline void SetAssociationId(Aws::String&& value) { m_associationIdHasBeenSet = true; m_associationId = value; }
+    inline void SetAssociationId(Aws::String&& value) { m_associationIdHasBeenSet = true; m_associationId = std::move(value); }
 
     /**
      * <p>The association ID.</p>
@@ -93,7 +94,7 @@ namespace Model
     /**
      * <p>The association ID.</p>
      */
-    inline ReplaceRouteTableAssociationRequest& WithAssociationId(Aws::String&& value) { SetAssociationId(value); return *this;}
+    inline ReplaceRouteTableAssociationRequest& WithAssociationId(Aws::String&& value) { SetAssociationId(std::move(value)); return *this;}
 
     /**
      * <p>The association ID.</p>
@@ -113,7 +114,7 @@ namespace Model
     /**
      * <p>The ID of the new route table to associate with the subnet.</p>
      */
-    inline void SetRouteTableId(Aws::String&& value) { m_routeTableIdHasBeenSet = true; m_routeTableId = value; }
+    inline void SetRouteTableId(Aws::String&& value) { m_routeTableIdHasBeenSet = true; m_routeTableId = std::move(value); }
 
     /**
      * <p>The ID of the new route table to associate with the subnet.</p>
@@ -128,7 +129,7 @@ namespace Model
     /**
      * <p>The ID of the new route table to associate with the subnet.</p>
      */
-    inline ReplaceRouteTableAssociationRequest& WithRouteTableId(Aws::String&& value) { SetRouteTableId(value); return *this;}
+    inline ReplaceRouteTableAssociationRequest& WithRouteTableId(Aws::String&& value) { SetRouteTableId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the new route table to associate with the subnet.</p>

@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/cognito-idp/CognitoIdentityProvider_EXPORTS.h>
 #include <aws/cognito-idp/model/PasswordPolicyType.h>
+#include <utility>
 
 namespace Aws
 {
@@ -56,7 +57,7 @@ namespace Model
     /**
      * <p>A container with information about the user pool password policy.</p>
      */
-    inline void SetPasswordPolicy(PasswordPolicyType&& value) { m_passwordPolicyHasBeenSet = true; m_passwordPolicy = value; }
+    inline void SetPasswordPolicy(PasswordPolicyType&& value) { m_passwordPolicyHasBeenSet = true; m_passwordPolicy = std::move(value); }
 
     /**
      * <p>A container with information about the user pool password policy.</p>
@@ -66,7 +67,7 @@ namespace Model
     /**
      * <p>A container with information about the user pool password policy.</p>
      */
-    inline UserPoolPolicyType& WithPasswordPolicy(PasswordPolicyType&& value) { SetPasswordPolicy(value); return *this;}
+    inline UserPoolPolicyType& WithPasswordPolicy(PasswordPolicyType&& value) { SetPasswordPolicy(std::move(value)); return *this;}
 
   private:
     PasswordPolicyType m_passwordPolicy;

@@ -17,6 +17,7 @@
 #include <aws/cloudsearch/CloudSearchRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/cloudsearch/model/IndexField.h>
+#include <utility>
 
 namespace Aws
 {
@@ -50,7 +51,7 @@ namespace Model
     inline void SetDomainName(const Aws::String& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
 
     
-    inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
+    inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = std::move(value); }
 
     
     inline void SetDomainName(const char* value) { m_domainNameHasBeenSet = true; m_domainName.assign(value); }
@@ -59,7 +60,7 @@ namespace Model
     inline DefineIndexFieldRequest& WithDomainName(const Aws::String& value) { SetDomainName(value); return *this;}
 
     
-    inline DefineIndexFieldRequest& WithDomainName(Aws::String&& value) { SetDomainName(value); return *this;}
+    inline DefineIndexFieldRequest& WithDomainName(Aws::String&& value) { SetDomainName(std::move(value)); return *this;}
 
     
     inline DefineIndexFieldRequest& WithDomainName(const char* value) { SetDomainName(value); return *this;}
@@ -77,7 +78,7 @@ namespace Model
     /**
      * <p>The index field and field options you want to configure. </p>
      */
-    inline void SetIndexField(IndexField&& value) { m_indexFieldHasBeenSet = true; m_indexField = value; }
+    inline void SetIndexField(IndexField&& value) { m_indexFieldHasBeenSet = true; m_indexField = std::move(value); }
 
     /**
      * <p>The index field and field options you want to configure. </p>
@@ -87,7 +88,7 @@ namespace Model
     /**
      * <p>The index field and field options you want to configure. </p>
      */
-    inline DefineIndexFieldRequest& WithIndexField(IndexField&& value) { SetIndexField(value); return *this;}
+    inline DefineIndexFieldRequest& WithIndexField(IndexField&& value) { SetIndexField(std::move(value)); return *this;}
 
   private:
     Aws::String m_domainName;

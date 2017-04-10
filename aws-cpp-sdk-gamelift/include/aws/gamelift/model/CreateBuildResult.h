@@ -17,6 +17,7 @@
 #include <aws/gamelift/model/Build.h>
 #include <aws/gamelift/model/AwsCredentials.h>
 #include <aws/gamelift/model/S3Location.h>
+#include <utility>
 
 namespace Aws
 {
@@ -60,7 +61,7 @@ namespace Model
     /**
      * <p>The newly created build record, including a unique build ID and status. </p>
      */
-    inline void SetBuild(Build&& value) { m_build = value; }
+    inline void SetBuild(Build&& value) { m_build = std::move(value); }
 
     /**
      * <p>The newly created build record, including a unique build ID and status. </p>
@@ -70,7 +71,7 @@ namespace Model
     /**
      * <p>The newly created build record, including a unique build ID and status. </p>
      */
-    inline CreateBuildResult& WithBuild(Build&& value) { SetBuild(value); return *this;}
+    inline CreateBuildResult& WithBuild(Build&& value) { SetBuild(std::move(value)); return *this;}
 
     /**
      * <p>This element is not currently in use.</p>
@@ -85,7 +86,7 @@ namespace Model
     /**
      * <p>This element is not currently in use.</p>
      */
-    inline void SetUploadCredentials(AwsCredentials&& value) { m_uploadCredentials = value; }
+    inline void SetUploadCredentials(AwsCredentials&& value) { m_uploadCredentials = std::move(value); }
 
     /**
      * <p>This element is not currently in use.</p>
@@ -95,7 +96,7 @@ namespace Model
     /**
      * <p>This element is not currently in use.</p>
      */
-    inline CreateBuildResult& WithUploadCredentials(AwsCredentials&& value) { SetUploadCredentials(value); return *this;}
+    inline CreateBuildResult& WithUploadCredentials(AwsCredentials&& value) { SetUploadCredentials(std::move(value)); return *this;}
 
     /**
      * <p>Amazon S3 location specified in the request.</p>
@@ -110,7 +111,7 @@ namespace Model
     /**
      * <p>Amazon S3 location specified in the request.</p>
      */
-    inline void SetStorageLocation(S3Location&& value) { m_storageLocation = value; }
+    inline void SetStorageLocation(S3Location&& value) { m_storageLocation = std::move(value); }
 
     /**
      * <p>Amazon S3 location specified in the request.</p>
@@ -120,7 +121,7 @@ namespace Model
     /**
      * <p>Amazon S3 location specified in the request.</p>
      */
-    inline CreateBuildResult& WithStorageLocation(S3Location&& value) { SetStorageLocation(value); return *this;}
+    inline CreateBuildResult& WithStorageLocation(S3Location&& value) { SetStorageLocation(std::move(value)); return *this;}
 
   private:
     Build m_build;

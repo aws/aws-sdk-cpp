@@ -16,6 +16,7 @@
 #include <aws/elastictranscoder/ElasticTranscoder_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/elastictranscoder/model/CaptionFormat.h>
+#include <utility>
 
 namespace Aws
 {
@@ -60,7 +61,7 @@ namespace Model
      * <p>The array of file formats for the output captions. If you leave this value
      * blank, Elastic Transcoder returns an error.</p>
      */
-    inline void SetCaptionFormats(Aws::Vector<CaptionFormat>&& value) { m_captionFormatsHasBeenSet = true; m_captionFormats = value; }
+    inline void SetCaptionFormats(Aws::Vector<CaptionFormat>&& value) { m_captionFormatsHasBeenSet = true; m_captionFormats = std::move(value); }
 
     /**
      * <p>The array of file formats for the output captions. If you leave this value
@@ -72,7 +73,7 @@ namespace Model
      * <p>The array of file formats for the output captions. If you leave this value
      * blank, Elastic Transcoder returns an error.</p>
      */
-    inline Captions& WithCaptionFormats(Aws::Vector<CaptionFormat>&& value) { SetCaptionFormats(value); return *this;}
+    inline Captions& WithCaptionFormats(Aws::Vector<CaptionFormat>&& value) { SetCaptionFormats(std::move(value)); return *this;}
 
     /**
      * <p>The array of file formats for the output captions. If you leave this value
@@ -84,7 +85,7 @@ namespace Model
      * <p>The array of file formats for the output captions. If you leave this value
      * blank, Elastic Transcoder returns an error.</p>
      */
-    inline Captions& AddCaptionFormats(CaptionFormat&& value) { m_captionFormatsHasBeenSet = true; m_captionFormats.push_back(value); return *this; }
+    inline Captions& AddCaptionFormats(CaptionFormat&& value) { m_captionFormatsHasBeenSet = true; m_captionFormats.push_back(std::move(value)); return *this; }
 
   private:
     Aws::Vector<CaptionFormat> m_captionFormats;

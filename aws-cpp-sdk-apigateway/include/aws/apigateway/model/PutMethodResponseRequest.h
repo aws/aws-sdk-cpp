@@ -17,6 +17,7 @@
 #include <aws/apigateway/APIGatewayRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <utility>
 
 namespace Aws
 {
@@ -51,7 +52,7 @@ namespace Model
     /**
      * <p>The <a>RestApi</a> identifier for the <a>Method</a> resource.</p>
      */
-    inline void SetRestApiId(Aws::String&& value) { m_restApiIdHasBeenSet = true; m_restApiId = value; }
+    inline void SetRestApiId(Aws::String&& value) { m_restApiIdHasBeenSet = true; m_restApiId = std::move(value); }
 
     /**
      * <p>The <a>RestApi</a> identifier for the <a>Method</a> resource.</p>
@@ -66,7 +67,7 @@ namespace Model
     /**
      * <p>The <a>RestApi</a> identifier for the <a>Method</a> resource.</p>
      */
-    inline PutMethodResponseRequest& WithRestApiId(Aws::String&& value) { SetRestApiId(value); return *this;}
+    inline PutMethodResponseRequest& WithRestApiId(Aws::String&& value) { SetRestApiId(std::move(value)); return *this;}
 
     /**
      * <p>The <a>RestApi</a> identifier for the <a>Method</a> resource.</p>
@@ -86,7 +87,7 @@ namespace Model
     /**
      * <p>The <a>Resource</a> identifier for the <a>Method</a> resource.</p>
      */
-    inline void SetResourceId(Aws::String&& value) { m_resourceIdHasBeenSet = true; m_resourceId = value; }
+    inline void SetResourceId(Aws::String&& value) { m_resourceIdHasBeenSet = true; m_resourceId = std::move(value); }
 
     /**
      * <p>The <a>Resource</a> identifier for the <a>Method</a> resource.</p>
@@ -101,7 +102,7 @@ namespace Model
     /**
      * <p>The <a>Resource</a> identifier for the <a>Method</a> resource.</p>
      */
-    inline PutMethodResponseRequest& WithResourceId(Aws::String&& value) { SetResourceId(value); return *this;}
+    inline PutMethodResponseRequest& WithResourceId(Aws::String&& value) { SetResourceId(std::move(value)); return *this;}
 
     /**
      * <p>The <a>Resource</a> identifier for the <a>Method</a> resource.</p>
@@ -121,7 +122,7 @@ namespace Model
     /**
      * <p>The HTTP verb of the <a>Method</a> resource.</p>
      */
-    inline void SetHttpMethod(Aws::String&& value) { m_httpMethodHasBeenSet = true; m_httpMethod = value; }
+    inline void SetHttpMethod(Aws::String&& value) { m_httpMethodHasBeenSet = true; m_httpMethod = std::move(value); }
 
     /**
      * <p>The HTTP verb of the <a>Method</a> resource.</p>
@@ -136,7 +137,7 @@ namespace Model
     /**
      * <p>The HTTP verb of the <a>Method</a> resource.</p>
      */
-    inline PutMethodResponseRequest& WithHttpMethod(Aws::String&& value) { SetHttpMethod(value); return *this;}
+    inline PutMethodResponseRequest& WithHttpMethod(Aws::String&& value) { SetHttpMethod(std::move(value)); return *this;}
 
     /**
      * <p>The HTTP verb of the <a>Method</a> resource.</p>
@@ -156,7 +157,7 @@ namespace Model
     /**
      * <p>The method response's status code.</p>
      */
-    inline void SetStatusCode(Aws::String&& value) { m_statusCodeHasBeenSet = true; m_statusCode = value; }
+    inline void SetStatusCode(Aws::String&& value) { m_statusCodeHasBeenSet = true; m_statusCode = std::move(value); }
 
     /**
      * <p>The method response's status code.</p>
@@ -171,7 +172,7 @@ namespace Model
     /**
      * <p>The method response's status code.</p>
      */
-    inline PutMethodResponseRequest& WithStatusCode(Aws::String&& value) { SetStatusCode(value); return *this;}
+    inline PutMethodResponseRequest& WithStatusCode(Aws::String&& value) { SetStatusCode(std::move(value)); return *this;}
 
     /**
      * <p>The method response's status code.</p>
@@ -230,7 +231,7 @@ namespace Model
      * <code>JSON-expression</code> is a valid JSON expression without the
      * <code>$</code> prefix.)</p>
      */
-    inline void SetResponseParameters(Aws::Map<Aws::String, bool>&& value) { m_responseParametersHasBeenSet = true; m_responseParameters = value; }
+    inline void SetResponseParameters(Aws::Map<Aws::String, bool>&& value) { m_responseParametersHasBeenSet = true; m_responseParameters = std::move(value); }
 
     /**
      * <p>A key-value map specifying required or optional response parameters that
@@ -266,7 +267,7 @@ namespace Model
      * <code>JSON-expression</code> is a valid JSON expression without the
      * <code>$</code> prefix.)</p>
      */
-    inline PutMethodResponseRequest& WithResponseParameters(Aws::Map<Aws::String, bool>&& value) { SetResponseParameters(value); return *this;}
+    inline PutMethodResponseRequest& WithResponseParameters(Aws::Map<Aws::String, bool>&& value) { SetResponseParameters(std::move(value)); return *this;}
 
     /**
      * <p>A key-value map specifying required or optional response parameters that
@@ -284,7 +285,7 @@ namespace Model
      * <code>JSON-expression</code> is a valid JSON expression without the
      * <code>$</code> prefix.)</p>
      */
-    inline PutMethodResponseRequest& AddResponseParameters(const Aws::String& key, bool value) { m_responseParametersHasBeenSet = true; m_responseParameters[key] = value; return *this; }
+    inline PutMethodResponseRequest& AddResponseParameters(const Aws::String& key, bool value) { m_responseParametersHasBeenSet = true; m_responseParameters.emplace(key, value); return *this; }
 
     /**
      * <p>A key-value map specifying required or optional response parameters that
@@ -302,7 +303,7 @@ namespace Model
      * <code>JSON-expression</code> is a valid JSON expression without the
      * <code>$</code> prefix.)</p>
      */
-    inline PutMethodResponseRequest& AddResponseParameters(Aws::String&& key, bool value) { m_responseParametersHasBeenSet = true; m_responseParameters[key] = value; return *this; }
+    inline PutMethodResponseRequest& AddResponseParameters(Aws::String&& key, bool value) { m_responseParametersHasBeenSet = true; m_responseParameters.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>A key-value map specifying required or optional response parameters that
@@ -320,7 +321,7 @@ namespace Model
      * <code>JSON-expression</code> is a valid JSON expression without the
      * <code>$</code> prefix.)</p>
      */
-    inline PutMethodResponseRequest& AddResponseParameters(const char* key, bool value) { m_responseParametersHasBeenSet = true; m_responseParameters[key] = value; return *this; }
+    inline PutMethodResponseRequest& AddResponseParameters(const char* key, bool value) { m_responseParametersHasBeenSet = true; m_responseParameters.emplace(key, value); return *this; }
 
     /**
      * <p>Specifies the <a>Model</a> resources used for the response's content type.
@@ -341,7 +342,7 @@ namespace Model
      * Response models are represented as a key/value map, with a content type as the
      * key and a <a>Model</a> name as the value.</p>
      */
-    inline void SetResponseModels(Aws::Map<Aws::String, Aws::String>&& value) { m_responseModelsHasBeenSet = true; m_responseModels = value; }
+    inline void SetResponseModels(Aws::Map<Aws::String, Aws::String>&& value) { m_responseModelsHasBeenSet = true; m_responseModels = std::move(value); }
 
     /**
      * <p>Specifies the <a>Model</a> resources used for the response's content type.
@@ -355,56 +356,56 @@ namespace Model
      * Response models are represented as a key/value map, with a content type as the
      * key and a <a>Model</a> name as the value.</p>
      */
-    inline PutMethodResponseRequest& WithResponseModels(Aws::Map<Aws::String, Aws::String>&& value) { SetResponseModels(value); return *this;}
+    inline PutMethodResponseRequest& WithResponseModels(Aws::Map<Aws::String, Aws::String>&& value) { SetResponseModels(std::move(value)); return *this;}
 
     /**
      * <p>Specifies the <a>Model</a> resources used for the response's content type.
      * Response models are represented as a key/value map, with a content type as the
      * key and a <a>Model</a> name as the value.</p>
      */
-    inline PutMethodResponseRequest& AddResponseModels(const Aws::String& key, const Aws::String& value) { m_responseModelsHasBeenSet = true; m_responseModels[key] = value; return *this; }
+    inline PutMethodResponseRequest& AddResponseModels(const Aws::String& key, const Aws::String& value) { m_responseModelsHasBeenSet = true; m_responseModels.emplace(key, value); return *this; }
 
     /**
      * <p>Specifies the <a>Model</a> resources used for the response's content type.
      * Response models are represented as a key/value map, with a content type as the
      * key and a <a>Model</a> name as the value.</p>
      */
-    inline PutMethodResponseRequest& AddResponseModels(Aws::String&& key, const Aws::String& value) { m_responseModelsHasBeenSet = true; m_responseModels[key] = value; return *this; }
+    inline PutMethodResponseRequest& AddResponseModels(Aws::String&& key, const Aws::String& value) { m_responseModelsHasBeenSet = true; m_responseModels.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>Specifies the <a>Model</a> resources used for the response's content type.
      * Response models are represented as a key/value map, with a content type as the
      * key and a <a>Model</a> name as the value.</p>
      */
-    inline PutMethodResponseRequest& AddResponseModels(const Aws::String& key, Aws::String&& value) { m_responseModelsHasBeenSet = true; m_responseModels[key] = value; return *this; }
+    inline PutMethodResponseRequest& AddResponseModels(const Aws::String& key, Aws::String&& value) { m_responseModelsHasBeenSet = true; m_responseModels.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>Specifies the <a>Model</a> resources used for the response's content type.
      * Response models are represented as a key/value map, with a content type as the
      * key and a <a>Model</a> name as the value.</p>
      */
-    inline PutMethodResponseRequest& AddResponseModels(Aws::String&& key, Aws::String&& value) { m_responseModelsHasBeenSet = true; m_responseModels[key] = value; return *this; }
+    inline PutMethodResponseRequest& AddResponseModels(Aws::String&& key, Aws::String&& value) { m_responseModelsHasBeenSet = true; m_responseModels.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
      * <p>Specifies the <a>Model</a> resources used for the response's content type.
      * Response models are represented as a key/value map, with a content type as the
      * key and a <a>Model</a> name as the value.</p>
      */
-    inline PutMethodResponseRequest& AddResponseModels(const char* key, Aws::String&& value) { m_responseModelsHasBeenSet = true; m_responseModels[key] = value; return *this; }
+    inline PutMethodResponseRequest& AddResponseModels(const char* key, Aws::String&& value) { m_responseModelsHasBeenSet = true; m_responseModels.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>Specifies the <a>Model</a> resources used for the response's content type.
      * Response models are represented as a key/value map, with a content type as the
      * key and a <a>Model</a> name as the value.</p>
      */
-    inline PutMethodResponseRequest& AddResponseModels(Aws::String&& key, const char* value) { m_responseModelsHasBeenSet = true; m_responseModels[key] = value; return *this; }
+    inline PutMethodResponseRequest& AddResponseModels(Aws::String&& key, const char* value) { m_responseModelsHasBeenSet = true; m_responseModels.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>Specifies the <a>Model</a> resources used for the response's content type.
      * Response models are represented as a key/value map, with a content type as the
      * key and a <a>Model</a> name as the value.</p>
      */
-    inline PutMethodResponseRequest& AddResponseModels(const char* key, const char* value) { m_responseModelsHasBeenSet = true; m_responseModels[key] = value; return *this; }
+    inline PutMethodResponseRequest& AddResponseModels(const char* key, const char* value) { m_responseModelsHasBeenSet = true; m_responseModels.emplace(key, value); return *this; }
 
   private:
     Aws::String m_restApiId;

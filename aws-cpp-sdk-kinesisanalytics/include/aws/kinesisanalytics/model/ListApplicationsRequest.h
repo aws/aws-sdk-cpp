@@ -16,6 +16,7 @@
 #include <aws/kinesisanalytics/KinesisAnalytics_EXPORTS.h>
 #include <aws/kinesisanalytics/KinesisAnalyticsRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -75,7 +76,7 @@ namespace Model
      * request. However, in subsequent requests, you add the last application name from
      * the previous response to get the next page of applications.</p>
      */
-    inline void SetExclusiveStartApplicationName(Aws::String&& value) { m_exclusiveStartApplicationNameHasBeenSet = true; m_exclusiveStartApplicationName = value; }
+    inline void SetExclusiveStartApplicationName(Aws::String&& value) { m_exclusiveStartApplicationNameHasBeenSet = true; m_exclusiveStartApplicationName = std::move(value); }
 
     /**
      * <p>Name of the application to start the list with. When using pagination to
@@ -99,7 +100,7 @@ namespace Model
      * request. However, in subsequent requests, you add the last application name from
      * the previous response to get the next page of applications.</p>
      */
-    inline ListApplicationsRequest& WithExclusiveStartApplicationName(Aws::String&& value) { SetExclusiveStartApplicationName(value); return *this;}
+    inline ListApplicationsRequest& WithExclusiveStartApplicationName(Aws::String&& value) { SetExclusiveStartApplicationName(std::move(value)); return *this;}
 
     /**
      * <p>Name of the application to start the list with. When using pagination to

@@ -16,6 +16,7 @@
 #include <aws/gamelift/GameLift_EXPORTS.h>
 #include <aws/gamelift/GameLiftRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -51,7 +52,7 @@ namespace Model
     /**
      * <p>Unique identifier for the game session to retrieve player sessions for.</p>
      */
-    inline void SetGameSessionId(Aws::String&& value) { m_gameSessionIdHasBeenSet = true; m_gameSessionId = value; }
+    inline void SetGameSessionId(Aws::String&& value) { m_gameSessionIdHasBeenSet = true; m_gameSessionId = std::move(value); }
 
     /**
      * <p>Unique identifier for the game session to retrieve player sessions for.</p>
@@ -66,7 +67,7 @@ namespace Model
     /**
      * <p>Unique identifier for the game session to retrieve player sessions for.</p>
      */
-    inline DescribePlayerSessionsRequest& WithGameSessionId(Aws::String&& value) { SetGameSessionId(value); return *this;}
+    inline DescribePlayerSessionsRequest& WithGameSessionId(Aws::String&& value) { SetGameSessionId(std::move(value)); return *this;}
 
     /**
      * <p>Unique identifier for the game session to retrieve player sessions for.</p>
@@ -86,7 +87,7 @@ namespace Model
     /**
      * <p>Unique identifier for a player to retrieve player sessions for.</p>
      */
-    inline void SetPlayerId(Aws::String&& value) { m_playerIdHasBeenSet = true; m_playerId = value; }
+    inline void SetPlayerId(Aws::String&& value) { m_playerIdHasBeenSet = true; m_playerId = std::move(value); }
 
     /**
      * <p>Unique identifier for a player to retrieve player sessions for.</p>
@@ -101,7 +102,7 @@ namespace Model
     /**
      * <p>Unique identifier for a player to retrieve player sessions for.</p>
      */
-    inline DescribePlayerSessionsRequest& WithPlayerId(Aws::String&& value) { SetPlayerId(value); return *this;}
+    inline DescribePlayerSessionsRequest& WithPlayerId(Aws::String&& value) { SetPlayerId(std::move(value)); return *this;}
 
     /**
      * <p>Unique identifier for a player to retrieve player sessions for.</p>
@@ -121,7 +122,7 @@ namespace Model
     /**
      * <p>Unique identifier for a player session to retrieve.</p>
      */
-    inline void SetPlayerSessionId(Aws::String&& value) { m_playerSessionIdHasBeenSet = true; m_playerSessionId = value; }
+    inline void SetPlayerSessionId(Aws::String&& value) { m_playerSessionIdHasBeenSet = true; m_playerSessionId = std::move(value); }
 
     /**
      * <p>Unique identifier for a player session to retrieve.</p>
@@ -136,7 +137,7 @@ namespace Model
     /**
      * <p>Unique identifier for a player session to retrieve.</p>
      */
-    inline DescribePlayerSessionsRequest& WithPlayerSessionId(Aws::String&& value) { SetPlayerSessionId(value); return *this;}
+    inline DescribePlayerSessionsRequest& WithPlayerSessionId(Aws::String&& value) { SetPlayerSessionId(std::move(value)); return *this;}
 
     /**
      * <p>Unique identifier for a player session to retrieve.</p>
@@ -180,7 +181,7 @@ namespace Model
      * player did not connect and/or was not validated within the time-out limit (60
      * seconds).</p> </li> </ul>
      */
-    inline void SetPlayerSessionStatusFilter(Aws::String&& value) { m_playerSessionStatusFilterHasBeenSet = true; m_playerSessionStatusFilter = value; }
+    inline void SetPlayerSessionStatusFilter(Aws::String&& value) { m_playerSessionStatusFilterHasBeenSet = true; m_playerSessionStatusFilter = std::move(value); }
 
     /**
      * <p>Player session status to filter results on.</p> <p>Possible player session
@@ -219,7 +220,7 @@ namespace Model
      * player did not connect and/or was not validated within the time-out limit (60
      * seconds).</p> </li> </ul>
      */
-    inline DescribePlayerSessionsRequest& WithPlayerSessionStatusFilter(Aws::String&& value) { SetPlayerSessionStatusFilter(value); return *this;}
+    inline DescribePlayerSessionsRequest& WithPlayerSessionStatusFilter(Aws::String&& value) { SetPlayerSessionStatusFilter(std::move(value)); return *this;}
 
     /**
      * <p>Player session status to filter results on.</p> <p>Possible player session
@@ -277,7 +278,7 @@ namespace Model
      * start of the result set, do not specify a value. If a player session ID is
      * specified, this parameter is ignored.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
      * <p>Token that indicates the start of the next sequential page of results. Use
@@ -301,7 +302,7 @@ namespace Model
      * start of the result set, do not specify a value. If a player session ID is
      * specified, this parameter is ignored.</p>
      */
-    inline DescribePlayerSessionsRequest& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline DescribePlayerSessionsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>Token that indicates the start of the next sequential page of results. Use

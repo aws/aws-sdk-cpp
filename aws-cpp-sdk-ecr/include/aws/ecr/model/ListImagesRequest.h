@@ -17,6 +17,7 @@
 #include <aws/ecr/ECRRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ecr/model/ListImagesFilter.h>
+#include <utility>
 
 namespace Aws
 {
@@ -55,7 +56,7 @@ namespace Model
      * to list images in. If you do not specify a registry, the default registry is
      * assumed.</p>
      */
-    inline void SetRegistryId(Aws::String&& value) { m_registryIdHasBeenSet = true; m_registryId = value; }
+    inline void SetRegistryId(Aws::String&& value) { m_registryIdHasBeenSet = true; m_registryId = std::move(value); }
 
     /**
      * <p>The AWS account ID associated with the registry that contains the repository
@@ -76,7 +77,7 @@ namespace Model
      * to list images in. If you do not specify a registry, the default registry is
      * assumed.</p>
      */
-    inline ListImagesRequest& WithRegistryId(Aws::String&& value) { SetRegistryId(value); return *this;}
+    inline ListImagesRequest& WithRegistryId(Aws::String&& value) { SetRegistryId(std::move(value)); return *this;}
 
     /**
      * <p>The AWS account ID associated with the registry that contains the repository
@@ -98,7 +99,7 @@ namespace Model
     /**
      * <p>The repository whose image IDs are to be listed.</p>
      */
-    inline void SetRepositoryName(Aws::String&& value) { m_repositoryNameHasBeenSet = true; m_repositoryName = value; }
+    inline void SetRepositoryName(Aws::String&& value) { m_repositoryNameHasBeenSet = true; m_repositoryName = std::move(value); }
 
     /**
      * <p>The repository whose image IDs are to be listed.</p>
@@ -113,7 +114,7 @@ namespace Model
     /**
      * <p>The repository whose image IDs are to be listed.</p>
      */
-    inline ListImagesRequest& WithRepositoryName(Aws::String&& value) { SetRepositoryName(value); return *this;}
+    inline ListImagesRequest& WithRepositoryName(Aws::String&& value) { SetRepositoryName(std::move(value)); return *this;}
 
     /**
      * <p>The repository whose image IDs are to be listed.</p>
@@ -154,7 +155,7 @@ namespace Model
      * retrieve the next items in a list and not for other programmatic purposes.</p>
      * </note>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
      * <p>The <code>nextToken</code> value returned from a previous paginated
@@ -190,7 +191,7 @@ namespace Model
      * retrieve the next items in a list and not for other programmatic purposes.</p>
      * </note>
      */
-    inline ListImagesRequest& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline ListImagesRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>The <code>nextToken</code> value returned from a previous paginated
@@ -256,7 +257,7 @@ namespace Model
      * <p>The filter key and value with which to filter your <code>ListImages</code>
      * results.</p>
      */
-    inline void SetFilter(ListImagesFilter&& value) { m_filterHasBeenSet = true; m_filter = value; }
+    inline void SetFilter(ListImagesFilter&& value) { m_filterHasBeenSet = true; m_filter = std::move(value); }
 
     /**
      * <p>The filter key and value with which to filter your <code>ListImages</code>
@@ -268,7 +269,7 @@ namespace Model
      * <p>The filter key and value with which to filter your <code>ListImages</code>
      * results.</p>
      */
-    inline ListImagesRequest& WithFilter(ListImagesFilter&& value) { SetFilter(value); return *this;}
+    inline ListImagesRequest& WithFilter(ListImagesFilter&& value) { SetFilter(std::move(value)); return *this;}
 
   private:
     Aws::String m_registryId;

@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/appstream/AppStream_EXPORTS.h>
 #include <aws/appstream/model/Fleet.h>
+#include <utility>
 
 namespace Aws
 {
@@ -52,7 +53,7 @@ namespace Model
     /**
      * <p>The details for the created fleet.</p>
      */
-    inline void SetFleet(Fleet&& value) { m_fleet = value; }
+    inline void SetFleet(Fleet&& value) { m_fleet = std::move(value); }
 
     /**
      * <p>The details for the created fleet.</p>
@@ -62,7 +63,7 @@ namespace Model
     /**
      * <p>The details for the created fleet.</p>
      */
-    inline CreateFleetResult& WithFleet(Fleet&& value) { SetFleet(value); return *this;}
+    inline CreateFleetResult& WithFleet(Fleet&& value) { SetFleet(std::move(value)); return *this;}
 
   private:
     Fleet m_fleet;

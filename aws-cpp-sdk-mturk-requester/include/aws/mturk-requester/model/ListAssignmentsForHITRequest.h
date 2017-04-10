@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/mturk-requester/model/AssignmentStatus.h>
+#include <utility>
 
 namespace Aws
 {
@@ -50,7 +51,7 @@ namespace Model
     /**
      * <p>The ID of the HIT.</p>
      */
-    inline void SetHITId(Aws::String&& value) { m_hITIdHasBeenSet = true; m_hITId = value; }
+    inline void SetHITId(Aws::String&& value) { m_hITIdHasBeenSet = true; m_hITId = std::move(value); }
 
     /**
      * <p>The ID of the HIT.</p>
@@ -65,7 +66,7 @@ namespace Model
     /**
      * <p>The ID of the HIT.</p>
      */
-    inline ListAssignmentsForHITRequest& WithHITId(Aws::String&& value) { SetHITId(value); return *this;}
+    inline ListAssignmentsForHITRequest& WithHITId(Aws::String&& value) { SetHITId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the HIT.</p>
@@ -85,7 +86,7 @@ namespace Model
     /**
      * <p>Pagination token</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
      * <p>Pagination token</p>
@@ -100,7 +101,7 @@ namespace Model
     /**
      * <p>Pagination token</p>
      */
-    inline ListAssignmentsForHITRequest& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline ListAssignmentsForHITRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>Pagination token</p>
@@ -129,7 +130,7 @@ namespace Model
     /**
      * <p>The status of the assignments to return: Submitted | Approved | Rejected</p>
      */
-    inline void SetAssignmentStatuses(Aws::Vector<AssignmentStatus>&& value) { m_assignmentStatusesHasBeenSet = true; m_assignmentStatuses = value; }
+    inline void SetAssignmentStatuses(Aws::Vector<AssignmentStatus>&& value) { m_assignmentStatusesHasBeenSet = true; m_assignmentStatuses = std::move(value); }
 
     /**
      * <p>The status of the assignments to return: Submitted | Approved | Rejected</p>
@@ -139,7 +140,7 @@ namespace Model
     /**
      * <p>The status of the assignments to return: Submitted | Approved | Rejected</p>
      */
-    inline ListAssignmentsForHITRequest& WithAssignmentStatuses(Aws::Vector<AssignmentStatus>&& value) { SetAssignmentStatuses(value); return *this;}
+    inline ListAssignmentsForHITRequest& WithAssignmentStatuses(Aws::Vector<AssignmentStatus>&& value) { SetAssignmentStatuses(std::move(value)); return *this;}
 
     /**
      * <p>The status of the assignments to return: Submitted | Approved | Rejected</p>
@@ -149,7 +150,7 @@ namespace Model
     /**
      * <p>The status of the assignments to return: Submitted | Approved | Rejected</p>
      */
-    inline ListAssignmentsForHITRequest& AddAssignmentStatuses(AssignmentStatus&& value) { m_assignmentStatusesHasBeenSet = true; m_assignmentStatuses.push_back(value); return *this; }
+    inline ListAssignmentsForHITRequest& AddAssignmentStatuses(AssignmentStatus&& value) { m_assignmentStatusesHasBeenSet = true; m_assignmentStatuses.push_back(std::move(value)); return *this; }
 
   private:
     Aws::String m_hITId;

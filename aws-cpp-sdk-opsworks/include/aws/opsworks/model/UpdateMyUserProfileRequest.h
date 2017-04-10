@@ -16,6 +16,7 @@
 #include <aws/opsworks/OpsWorks_EXPORTS.h>
 #include <aws/opsworks/OpsWorksRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -48,7 +49,7 @@ namespace Model
     /**
      * <p>The user's SSH public key.</p>
      */
-    inline void SetSshPublicKey(Aws::String&& value) { m_sshPublicKeyHasBeenSet = true; m_sshPublicKey = value; }
+    inline void SetSshPublicKey(Aws::String&& value) { m_sshPublicKeyHasBeenSet = true; m_sshPublicKey = std::move(value); }
 
     /**
      * <p>The user's SSH public key.</p>
@@ -63,7 +64,7 @@ namespace Model
     /**
      * <p>The user's SSH public key.</p>
      */
-    inline UpdateMyUserProfileRequest& WithSshPublicKey(Aws::String&& value) { SetSshPublicKey(value); return *this;}
+    inline UpdateMyUserProfileRequest& WithSshPublicKey(Aws::String&& value) { SetSshPublicKey(std::move(value)); return *this;}
 
     /**
      * <p>The user's SSH public key.</p>

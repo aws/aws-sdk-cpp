@@ -17,6 +17,7 @@
 #include <aws/route53/Route53Request.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/route53/model/RRType.h>
+#include <utility>
 
 namespace Aws
 {
@@ -60,7 +61,7 @@ namespace Model
      * <p>The ID of the hosted zone for which you want to list traffic policy
      * instances.</p>
      */
-    inline void SetHostedZoneId(Aws::String&& value) { m_hostedZoneIdHasBeenSet = true; m_hostedZoneId = value; }
+    inline void SetHostedZoneId(Aws::String&& value) { m_hostedZoneIdHasBeenSet = true; m_hostedZoneId = std::move(value); }
 
     /**
      * <p>The ID of the hosted zone for which you want to list traffic policy
@@ -78,7 +79,7 @@ namespace Model
      * <p>The ID of the hosted zone for which you want to list traffic policy
      * instances.</p>
      */
-    inline ListTrafficPolicyInstancesByHostedZoneRequest& WithHostedZoneId(Aws::String&& value) { SetHostedZoneId(value); return *this;}
+    inline ListTrafficPolicyInstancesByHostedZoneRequest& WithHostedZoneId(Aws::String&& value) { SetHostedZoneId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the hosted zone for which you want to list traffic policy
@@ -123,7 +124,7 @@ namespace Model
      * value of <code>IsTruncated</code> in the previous response was
      * <code>false</code>, omit this value.</p>
      */
-    inline void SetTrafficPolicyInstanceNameMarker(Aws::String&& value) { m_trafficPolicyInstanceNameMarkerHasBeenSet = true; m_trafficPolicyInstanceNameMarker = value; }
+    inline void SetTrafficPolicyInstanceNameMarker(Aws::String&& value) { m_trafficPolicyInstanceNameMarkerHasBeenSet = true; m_trafficPolicyInstanceNameMarker = std::move(value); }
 
     /**
      * <p>For the first request to <code>ListTrafficPolicyInstancesByHostedZone</code>,
@@ -162,7 +163,7 @@ namespace Model
      * value of <code>IsTruncated</code> in the previous response was
      * <code>false</code>, omit this value.</p>
      */
-    inline ListTrafficPolicyInstancesByHostedZoneRequest& WithTrafficPolicyInstanceNameMarker(Aws::String&& value) { SetTrafficPolicyInstanceNameMarker(value); return *this;}
+    inline ListTrafficPolicyInstancesByHostedZoneRequest& WithTrafficPolicyInstanceNameMarker(Aws::String&& value) { SetTrafficPolicyInstanceNameMarker(std::move(value)); return *this;}
 
     /**
      * <p>For the first request to <code>ListTrafficPolicyInstancesByHostedZone</code>,
@@ -208,7 +209,7 @@ namespace Model
      * <code>IsTruncated</code> in the previous response was <code>false</code>, there
      * are no more traffic policy instances to get for this hosted zone.</p>
      */
-    inline void SetTrafficPolicyInstanceTypeMarker(RRType&& value) { m_trafficPolicyInstanceTypeMarkerHasBeenSet = true; m_trafficPolicyInstanceTypeMarker = value; }
+    inline void SetTrafficPolicyInstanceTypeMarker(RRType&& value) { m_trafficPolicyInstanceTypeMarkerHasBeenSet = true; m_trafficPolicyInstanceTypeMarker = std::move(value); }
 
     /**
      * <p>For the first request to <code>ListTrafficPolicyInstancesByHostedZone</code>,
@@ -230,7 +231,7 @@ namespace Model
      * <code>IsTruncated</code> in the previous response was <code>false</code>, there
      * are no more traffic policy instances to get for this hosted zone.</p>
      */
-    inline ListTrafficPolicyInstancesByHostedZoneRequest& WithTrafficPolicyInstanceTypeMarker(RRType&& value) { SetTrafficPolicyInstanceTypeMarker(value); return *this;}
+    inline ListTrafficPolicyInstancesByHostedZoneRequest& WithTrafficPolicyInstanceTypeMarker(RRType&& value) { SetTrafficPolicyInstanceTypeMarker(std::move(value)); return *this;}
 
     /**
      * <p>The maximum number of traffic policy instances to be included in the response
@@ -266,7 +267,7 @@ namespace Model
      * policy instance in the next group of <code>MaxItems</code> traffic policy
      * instances.</p>
      */
-    inline void SetMaxItems(Aws::String&& value) { m_maxItemsHasBeenSet = true; m_maxItems = value; }
+    inline void SetMaxItems(Aws::String&& value) { m_maxItemsHasBeenSet = true; m_maxItems = std::move(value); }
 
     /**
      * <p>The maximum number of traffic policy instances to be included in the response
@@ -302,7 +303,7 @@ namespace Model
      * policy instance in the next group of <code>MaxItems</code> traffic policy
      * instances.</p>
      */
-    inline ListTrafficPolicyInstancesByHostedZoneRequest& WithMaxItems(Aws::String&& value) { SetMaxItems(value); return *this;}
+    inline ListTrafficPolicyInstancesByHostedZoneRequest& WithMaxItems(Aws::String&& value) { SetMaxItems(std::move(value)); return *this;}
 
     /**
      * <p>The maximum number of traffic policy instances to be included in the response

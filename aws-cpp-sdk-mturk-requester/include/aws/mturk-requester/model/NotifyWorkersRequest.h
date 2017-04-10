@@ -17,6 +17,7 @@
 #include <aws/mturk-requester/MTurkRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <utility>
 
 namespace Aws
 {
@@ -52,7 +53,7 @@ namespace Model
      * <p>The subject line of the email message to send. Can include up to 200
      * characters.</p>
      */
-    inline void SetSubject(Aws::String&& value) { m_subjectHasBeenSet = true; m_subject = value; }
+    inline void SetSubject(Aws::String&& value) { m_subjectHasBeenSet = true; m_subject = std::move(value); }
 
     /**
      * <p>The subject line of the email message to send. Can include up to 200
@@ -70,7 +71,7 @@ namespace Model
      * <p>The subject line of the email message to send. Can include up to 200
      * characters.</p>
      */
-    inline NotifyWorkersRequest& WithSubject(Aws::String&& value) { SetSubject(value); return *this;}
+    inline NotifyWorkersRequest& WithSubject(Aws::String&& value) { SetSubject(std::move(value)); return *this;}
 
     /**
      * <p>The subject line of the email message to send. Can include up to 200
@@ -91,7 +92,7 @@ namespace Model
     /**
      * <p>The text of the email message to send. Can include up to 4,096 characters</p>
      */
-    inline void SetMessageText(Aws::String&& value) { m_messageTextHasBeenSet = true; m_messageText = value; }
+    inline void SetMessageText(Aws::String&& value) { m_messageTextHasBeenSet = true; m_messageText = std::move(value); }
 
     /**
      * <p>The text of the email message to send. Can include up to 4,096 characters</p>
@@ -106,7 +107,7 @@ namespace Model
     /**
      * <p>The text of the email message to send. Can include up to 4,096 characters</p>
      */
-    inline NotifyWorkersRequest& WithMessageText(Aws::String&& value) { SetMessageText(value); return *this;}
+    inline NotifyWorkersRequest& WithMessageText(Aws::String&& value) { SetMessageText(std::move(value)); return *this;}
 
     /**
      * <p>The text of the email message to send. Can include up to 4,096 characters</p>
@@ -129,7 +130,7 @@ namespace Model
      * <p>A list of Worker IDs you wish to notify. You can notify upto 100 Workers at a
      * time.</p>
      */
-    inline void SetWorkerIds(Aws::Vector<Aws::String>&& value) { m_workerIdsHasBeenSet = true; m_workerIds = value; }
+    inline void SetWorkerIds(Aws::Vector<Aws::String>&& value) { m_workerIdsHasBeenSet = true; m_workerIds = std::move(value); }
 
     /**
      * <p>A list of Worker IDs you wish to notify. You can notify upto 100 Workers at a
@@ -141,7 +142,7 @@ namespace Model
      * <p>A list of Worker IDs you wish to notify. You can notify upto 100 Workers at a
      * time.</p>
      */
-    inline NotifyWorkersRequest& WithWorkerIds(Aws::Vector<Aws::String>&& value) { SetWorkerIds(value); return *this;}
+    inline NotifyWorkersRequest& WithWorkerIds(Aws::Vector<Aws::String>&& value) { SetWorkerIds(std::move(value)); return *this;}
 
     /**
      * <p>A list of Worker IDs you wish to notify. You can notify upto 100 Workers at a
@@ -153,7 +154,7 @@ namespace Model
      * <p>A list of Worker IDs you wish to notify. You can notify upto 100 Workers at a
      * time.</p>
      */
-    inline NotifyWorkersRequest& AddWorkerIds(Aws::String&& value) { m_workerIdsHasBeenSet = true; m_workerIds.push_back(value); return *this; }
+    inline NotifyWorkersRequest& AddWorkerIds(Aws::String&& value) { m_workerIdsHasBeenSet = true; m_workerIds.push_back(std::move(value)); return *this; }
 
     /**
      * <p>A list of Worker IDs you wish to notify. You can notify upto 100 Workers at a

@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/waf/WAF_EXPORTS.h>
 #include <aws/waf/model/ByteMatchSet.h>
+#include <utility>
 
 namespace Aws
 {
@@ -79,7 +80,7 @@ namespace Model
      * <p> <a>FieldToMatch</a>: Contains <code>Data</code> and <code>Type</code> </p>
      * </li> </ul>
      */
-    inline void SetByteMatchSet(ByteMatchSet&& value) { m_byteMatchSet = value; }
+    inline void SetByteMatchSet(ByteMatchSet&& value) { m_byteMatchSet = std::move(value); }
 
     /**
      * <p>Information about the <a>ByteMatchSet</a> that you specified in the
@@ -107,7 +108,7 @@ namespace Model
      * <p> <a>FieldToMatch</a>: Contains <code>Data</code> and <code>Type</code> </p>
      * </li> </ul>
      */
-    inline GetByteMatchSetResult& WithByteMatchSet(ByteMatchSet&& value) { SetByteMatchSet(value); return *this;}
+    inline GetByteMatchSetResult& WithByteMatchSet(ByteMatchSet&& value) { SetByteMatchSet(std::move(value)); return *this;}
 
   private:
     ByteMatchSet m_byteMatchSet;

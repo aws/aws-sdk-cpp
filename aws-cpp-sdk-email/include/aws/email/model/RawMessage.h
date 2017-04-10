@@ -16,6 +16,7 @@
 #include <aws/email/SES_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/Array.h>
+#include <utility>
 
 namespace Aws
 {
@@ -92,7 +93,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-raw.html">Amazon
      * SES Developer Guide</a>. </p>
      */
-    inline void SetData(Aws::Utils::ByteBuffer&& value) { m_dataHasBeenSet = true; m_data = value; }
+    inline void SetData(Aws::Utils::ByteBuffer&& value) { m_dataHasBeenSet = true; m_data = std::move(value); }
 
     /**
      * <p>The raw data of the message. The client must ensure that the message format
@@ -124,7 +125,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-raw.html">Amazon
      * SES Developer Guide</a>. </p>
      */
-    inline RawMessage& WithData(Aws::Utils::ByteBuffer&& value) { SetData(value); return *this;}
+    inline RawMessage& WithData(Aws::Utils::ByteBuffer&& value) { SetData(std::move(value)); return *this;}
 
   private:
     Aws::Utils::ByteBuffer m_data;

@@ -16,6 +16,7 @@
 #include <aws/elasticbeanstalk/ElasticBeanstalk_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -60,7 +61,7 @@ namespace Model
     /**
      * <p>The Amazon S3 bucket where the data is located.</p>
      */
-    inline void SetS3Bucket(Aws::String&& value) { m_s3BucketHasBeenSet = true; m_s3Bucket = value; }
+    inline void SetS3Bucket(Aws::String&& value) { m_s3BucketHasBeenSet = true; m_s3Bucket = std::move(value); }
 
     /**
      * <p>The Amazon S3 bucket where the data is located.</p>
@@ -75,7 +76,7 @@ namespace Model
     /**
      * <p>The Amazon S3 bucket where the data is located.</p>
      */
-    inline S3Location& WithS3Bucket(Aws::String&& value) { SetS3Bucket(value); return *this;}
+    inline S3Location& WithS3Bucket(Aws::String&& value) { SetS3Bucket(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon S3 bucket where the data is located.</p>
@@ -95,7 +96,7 @@ namespace Model
     /**
      * <p>The Amazon S3 key where the data is located.</p>
      */
-    inline void SetS3Key(Aws::String&& value) { m_s3KeyHasBeenSet = true; m_s3Key = value; }
+    inline void SetS3Key(Aws::String&& value) { m_s3KeyHasBeenSet = true; m_s3Key = std::move(value); }
 
     /**
      * <p>The Amazon S3 key where the data is located.</p>
@@ -110,7 +111,7 @@ namespace Model
     /**
      * <p>The Amazon S3 key where the data is located.</p>
      */
-    inline S3Location& WithS3Key(Aws::String&& value) { SetS3Key(value); return *this;}
+    inline S3Location& WithS3Key(Aws::String&& value) { SetS3Key(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon S3 key where the data is located.</p>

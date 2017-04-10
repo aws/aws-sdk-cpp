@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/codebuild/CodeBuild_EXPORTS.h>
 #include <aws/codebuild/model/Project.h>
+#include <utility>
 
 namespace Aws
 {
@@ -52,7 +53,7 @@ namespace Model
     /**
      * <p>Information about the build project that was changed.</p>
      */
-    inline void SetProject(Project&& value) { m_project = value; }
+    inline void SetProject(Project&& value) { m_project = std::move(value); }
 
     /**
      * <p>Information about the build project that was changed.</p>
@@ -62,7 +63,7 @@ namespace Model
     /**
      * <p>Information about the build project that was changed.</p>
      */
-    inline UpdateProjectResult& WithProject(Project&& value) { SetProject(value); return *this;}
+    inline UpdateProjectResult& WithProject(Project&& value) { SetProject(std::move(value)); return *this;}
 
   private:
     Project m_project;

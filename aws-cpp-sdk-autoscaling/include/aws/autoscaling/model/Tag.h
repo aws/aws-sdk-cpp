@@ -16,6 +16,7 @@
 #include <aws/autoscaling/AutoScaling_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -59,7 +60,7 @@ namespace Model
     /**
      * <p>The name of the group.</p>
      */
-    inline void SetResourceId(Aws::String&& value) { m_resourceIdHasBeenSet = true; m_resourceId = value; }
+    inline void SetResourceId(Aws::String&& value) { m_resourceIdHasBeenSet = true; m_resourceId = std::move(value); }
 
     /**
      * <p>The name of the group.</p>
@@ -74,7 +75,7 @@ namespace Model
     /**
      * <p>The name of the group.</p>
      */
-    inline Tag& WithResourceId(Aws::String&& value) { SetResourceId(value); return *this;}
+    inline Tag& WithResourceId(Aws::String&& value) { SetResourceId(std::move(value)); return *this;}
 
     /**
      * <p>The name of the group.</p>
@@ -97,7 +98,7 @@ namespace Model
      * <p>The type of resource. The only supported value is
      * <code>auto-scaling-group</code>.</p>
      */
-    inline void SetResourceType(Aws::String&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
+    inline void SetResourceType(Aws::String&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
 
     /**
      * <p>The type of resource. The only supported value is
@@ -115,7 +116,7 @@ namespace Model
      * <p>The type of resource. The only supported value is
      * <code>auto-scaling-group</code>.</p>
      */
-    inline Tag& WithResourceType(Aws::String&& value) { SetResourceType(value); return *this;}
+    inline Tag& WithResourceType(Aws::String&& value) { SetResourceType(std::move(value)); return *this;}
 
     /**
      * <p>The type of resource. The only supported value is
@@ -136,7 +137,7 @@ namespace Model
     /**
      * <p>The tag key.</p>
      */
-    inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = value; }
+    inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
 
     /**
      * <p>The tag key.</p>
@@ -151,7 +152,7 @@ namespace Model
     /**
      * <p>The tag key.</p>
      */
-    inline Tag& WithKey(Aws::String&& value) { SetKey(value); return *this;}
+    inline Tag& WithKey(Aws::String&& value) { SetKey(std::move(value)); return *this;}
 
     /**
      * <p>The tag key.</p>
@@ -171,7 +172,7 @@ namespace Model
     /**
      * <p>The tag value.</p>
      */
-    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = value; }
+    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
 
     /**
      * <p>The tag value.</p>
@@ -186,7 +187,7 @@ namespace Model
     /**
      * <p>The tag value.</p>
      */
-    inline Tag& WithValue(Aws::String&& value) { SetValue(value); return *this;}
+    inline Tag& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
 
     /**
      * <p>The tag value.</p>

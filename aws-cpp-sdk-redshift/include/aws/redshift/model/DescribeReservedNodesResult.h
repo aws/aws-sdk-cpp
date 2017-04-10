@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/redshift/model/ResponseMetadata.h>
 #include <aws/redshift/model/ReservedNode.h>
+#include <utility>
 
 namespace Aws
 {
@@ -75,7 +76,7 @@ namespace Model
      * <code>Marker</code> field is empty, all response records have been retrieved for
      * the request. </p>
      */
-    inline void SetMarker(Aws::String&& value) { m_marker = value; }
+    inline void SetMarker(Aws::String&& value) { m_marker = std::move(value); }
 
     /**
      * <p>A value that indicates the starting point for the next set of response
@@ -105,7 +106,7 @@ namespace Model
      * <code>Marker</code> field is empty, all response records have been retrieved for
      * the request. </p>
      */
-    inline DescribeReservedNodesResult& WithMarker(Aws::String&& value) { SetMarker(value); return *this;}
+    inline DescribeReservedNodesResult& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
 
     /**
      * <p>A value that indicates the starting point for the next set of response
@@ -130,7 +131,7 @@ namespace Model
     /**
      * <p>The list of <code>ReservedNode</code> objects.</p>
      */
-    inline void SetReservedNodes(Aws::Vector<ReservedNode>&& value) { m_reservedNodes = value; }
+    inline void SetReservedNodes(Aws::Vector<ReservedNode>&& value) { m_reservedNodes = std::move(value); }
 
     /**
      * <p>The list of <code>ReservedNode</code> objects.</p>
@@ -140,7 +141,7 @@ namespace Model
     /**
      * <p>The list of <code>ReservedNode</code> objects.</p>
      */
-    inline DescribeReservedNodesResult& WithReservedNodes(Aws::Vector<ReservedNode>&& value) { SetReservedNodes(value); return *this;}
+    inline DescribeReservedNodesResult& WithReservedNodes(Aws::Vector<ReservedNode>&& value) { SetReservedNodes(std::move(value)); return *this;}
 
     /**
      * <p>The list of <code>ReservedNode</code> objects.</p>
@@ -150,7 +151,7 @@ namespace Model
     /**
      * <p>The list of <code>ReservedNode</code> objects.</p>
      */
-    inline DescribeReservedNodesResult& AddReservedNodes(ReservedNode&& value) { m_reservedNodes.push_back(value); return *this; }
+    inline DescribeReservedNodesResult& AddReservedNodes(ReservedNode&& value) { m_reservedNodes.push_back(std::move(value)); return *this; }
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
@@ -159,13 +160,13 @@ namespace Model
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
 
     
     inline DescribeReservedNodesResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
 
     
-    inline DescribeReservedNodesResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
+    inline DescribeReservedNodesResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
     Aws::String m_marker;

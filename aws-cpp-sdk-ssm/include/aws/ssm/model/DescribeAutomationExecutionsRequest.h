@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ssm/model/AutomationExecutionFilter.h>
+#include <utility>
 
 namespace Aws
 {
@@ -50,7 +51,7 @@ namespace Model
     /**
      * <p>Filters used to limit the scope of executions that are requested.</p>
      */
-    inline void SetFilters(Aws::Vector<AutomationExecutionFilter>&& value) { m_filtersHasBeenSet = true; m_filters = value; }
+    inline void SetFilters(Aws::Vector<AutomationExecutionFilter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
 
     /**
      * <p>Filters used to limit the scope of executions that are requested.</p>
@@ -60,7 +61,7 @@ namespace Model
     /**
      * <p>Filters used to limit the scope of executions that are requested.</p>
      */
-    inline DescribeAutomationExecutionsRequest& WithFilters(Aws::Vector<AutomationExecutionFilter>&& value) { SetFilters(value); return *this;}
+    inline DescribeAutomationExecutionsRequest& WithFilters(Aws::Vector<AutomationExecutionFilter>&& value) { SetFilters(std::move(value)); return *this;}
 
     /**
      * <p>Filters used to limit the scope of executions that are requested.</p>
@@ -70,7 +71,7 @@ namespace Model
     /**
      * <p>Filters used to limit the scope of executions that are requested.</p>
      */
-    inline DescribeAutomationExecutionsRequest& AddFilters(AutomationExecutionFilter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
+    inline DescribeAutomationExecutionsRequest& AddFilters(AutomationExecutionFilter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The maximum number of items to return for this call. The call also returns a
@@ -109,7 +110,7 @@ namespace Model
      * <p>The token for the next set of items to return. (You received this token from
      * a previous call.)</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
      * <p>The token for the next set of items to return. (You received this token from
@@ -127,7 +128,7 @@ namespace Model
      * <p>The token for the next set of items to return. (You received this token from
      * a previous call.)</p>
      */
-    inline DescribeAutomationExecutionsRequest& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline DescribeAutomationExecutionsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>The token for the next set of items to return. (You received this token from

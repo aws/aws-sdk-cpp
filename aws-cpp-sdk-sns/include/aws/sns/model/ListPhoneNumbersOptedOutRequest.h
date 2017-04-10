@@ -16,6 +16,7 @@
 #include <aws/sns/SNS_EXPORTS.h>
 #include <aws/sns/SNSRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -60,7 +61,7 @@ namespace Model
      * <code>ListPhoneNumbersOptedOut</code> action to retrieve additional records that
      * are available after the first page of results.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
      * <p>A <code>NextToken</code> string is used when you call the
@@ -81,7 +82,7 @@ namespace Model
      * <code>ListPhoneNumbersOptedOut</code> action to retrieve additional records that
      * are available after the first page of results.</p>
      */
-    inline ListPhoneNumbersOptedOutRequest& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline ListPhoneNumbersOptedOutRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>A <code>NextToken</code> string is used when you call the

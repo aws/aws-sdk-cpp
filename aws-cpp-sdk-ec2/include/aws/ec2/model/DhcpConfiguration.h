@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ec2/model/AttributeValue.h>
+#include <utility>
 
 namespace Aws
 {
@@ -61,7 +62,7 @@ namespace Model
     /**
      * <p>The name of a DHCP option.</p>
      */
-    inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = value; }
+    inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
 
     /**
      * <p>The name of a DHCP option.</p>
@@ -76,7 +77,7 @@ namespace Model
     /**
      * <p>The name of a DHCP option.</p>
      */
-    inline DhcpConfiguration& WithKey(Aws::String&& value) { SetKey(value); return *this;}
+    inline DhcpConfiguration& WithKey(Aws::String&& value) { SetKey(std::move(value)); return *this;}
 
     /**
      * <p>The name of a DHCP option.</p>
@@ -96,7 +97,7 @@ namespace Model
     /**
      * <p>One or more values for the DHCP option.</p>
      */
-    inline void SetValues(Aws::Vector<AttributeValue>&& value) { m_valuesHasBeenSet = true; m_values = value; }
+    inline void SetValues(Aws::Vector<AttributeValue>&& value) { m_valuesHasBeenSet = true; m_values = std::move(value); }
 
     /**
      * <p>One or more values for the DHCP option.</p>
@@ -106,7 +107,7 @@ namespace Model
     /**
      * <p>One or more values for the DHCP option.</p>
      */
-    inline DhcpConfiguration& WithValues(Aws::Vector<AttributeValue>&& value) { SetValues(value); return *this;}
+    inline DhcpConfiguration& WithValues(Aws::Vector<AttributeValue>&& value) { SetValues(std::move(value)); return *this;}
 
     /**
      * <p>One or more values for the DHCP option.</p>
@@ -116,7 +117,7 @@ namespace Model
     /**
      * <p>One or more values for the DHCP option.</p>
      */
-    inline DhcpConfiguration& AddValues(AttributeValue&& value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
+    inline DhcpConfiguration& AddValues(AttributeValue&& value) { m_valuesHasBeenSet = true; m_values.push_back(std::move(value)); return *this; }
 
   private:
     Aws::String m_key;

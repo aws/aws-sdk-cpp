@@ -16,6 +16,7 @@
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/ec2/model/Subnet.h>
 #include <aws/ec2/model/ResponseMetadata.h>
+#include <utility>
 
 namespace Aws
 {
@@ -58,7 +59,7 @@ namespace Model
     /**
      * <p>Information about the subnet.</p>
      */
-    inline void SetSubnet(Subnet&& value) { m_subnet = value; }
+    inline void SetSubnet(Subnet&& value) { m_subnet = std::move(value); }
 
     /**
      * <p>Information about the subnet.</p>
@@ -68,7 +69,7 @@ namespace Model
     /**
      * <p>Information about the subnet.</p>
      */
-    inline CreateSubnetResponse& WithSubnet(Subnet&& value) { SetSubnet(value); return *this;}
+    inline CreateSubnetResponse& WithSubnet(Subnet&& value) { SetSubnet(std::move(value)); return *this;}
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
@@ -77,13 +78,13 @@ namespace Model
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
 
     
     inline CreateSubnetResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
 
     
-    inline CreateSubnetResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
+    inline CreateSubnetResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
     Subnet m_subnet;

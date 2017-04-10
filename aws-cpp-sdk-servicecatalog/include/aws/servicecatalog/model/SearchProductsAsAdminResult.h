@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/servicecatalog/model/ProductViewDetail.h>
+#include <utility>
 
 namespace Aws
 {
@@ -54,7 +55,7 @@ namespace Model
     /**
      * <p>List of detailed product view information objects.</p>
      */
-    inline void SetProductViewDetails(Aws::Vector<ProductViewDetail>&& value) { m_productViewDetails = value; }
+    inline void SetProductViewDetails(Aws::Vector<ProductViewDetail>&& value) { m_productViewDetails = std::move(value); }
 
     /**
      * <p>List of detailed product view information objects.</p>
@@ -64,7 +65,7 @@ namespace Model
     /**
      * <p>List of detailed product view information objects.</p>
      */
-    inline SearchProductsAsAdminResult& WithProductViewDetails(Aws::Vector<ProductViewDetail>&& value) { SetProductViewDetails(value); return *this;}
+    inline SearchProductsAsAdminResult& WithProductViewDetails(Aws::Vector<ProductViewDetail>&& value) { SetProductViewDetails(std::move(value)); return *this;}
 
     /**
      * <p>List of detailed product view information objects.</p>
@@ -74,7 +75,7 @@ namespace Model
     /**
      * <p>List of detailed product view information objects.</p>
      */
-    inline SearchProductsAsAdminResult& AddProductViewDetails(ProductViewDetail&& value) { m_productViewDetails.push_back(value); return *this; }
+    inline SearchProductsAsAdminResult& AddProductViewDetails(ProductViewDetail&& value) { m_productViewDetails.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The page token to use to retrieve the next page of results for this
@@ -92,7 +93,7 @@ namespace Model
      * <p>The page token to use to retrieve the next page of results for this
      * operation. If there are no more pages, this value is null.</p>
      */
-    inline void SetNextPageToken(Aws::String&& value) { m_nextPageToken = value; }
+    inline void SetNextPageToken(Aws::String&& value) { m_nextPageToken = std::move(value); }
 
     /**
      * <p>The page token to use to retrieve the next page of results for this
@@ -110,7 +111,7 @@ namespace Model
      * <p>The page token to use to retrieve the next page of results for this
      * operation. If there are no more pages, this value is null.</p>
      */
-    inline SearchProductsAsAdminResult& WithNextPageToken(Aws::String&& value) { SetNextPageToken(value); return *this;}
+    inline SearchProductsAsAdminResult& WithNextPageToken(Aws::String&& value) { SetNextPageToken(std::move(value)); return *this;}
 
     /**
      * <p>The page token to use to retrieve the next page of results for this

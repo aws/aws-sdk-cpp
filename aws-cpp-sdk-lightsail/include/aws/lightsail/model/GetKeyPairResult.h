@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/lightsail/Lightsail_EXPORTS.h>
 #include <aws/lightsail/model/KeyPair.h>
+#include <utility>
 
 namespace Aws
 {
@@ -52,7 +53,7 @@ namespace Model
     /**
      * <p>An array of key-value pairs containing information about the key pair.</p>
      */
-    inline void SetKeyPair(KeyPair&& value) { m_keyPair = value; }
+    inline void SetKeyPair(KeyPair&& value) { m_keyPair = std::move(value); }
 
     /**
      * <p>An array of key-value pairs containing information about the key pair.</p>
@@ -62,7 +63,7 @@ namespace Model
     /**
      * <p>An array of key-value pairs containing information about the key pair.</p>
      */
-    inline GetKeyPairResult& WithKeyPair(KeyPair&& value) { SetKeyPair(value); return *this;}
+    inline GetKeyPairResult& WithKeyPair(KeyPair&& value) { SetKeyPair(std::move(value)); return *this;}
 
   private:
     KeyPair m_keyPair;

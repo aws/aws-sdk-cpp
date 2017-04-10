@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/ssm/SSM_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -57,7 +58,7 @@ namespace Model
     /**
      * <p>The ID of the patch baseline.</p>
      */
-    inline void SetBaselineId(Aws::String&& value) { m_baselineIdHasBeenSet = true; m_baselineId = value; }
+    inline void SetBaselineId(Aws::String&& value) { m_baselineIdHasBeenSet = true; m_baselineId = std::move(value); }
 
     /**
      * <p>The ID of the patch baseline.</p>
@@ -72,7 +73,7 @@ namespace Model
     /**
      * <p>The ID of the patch baseline.</p>
      */
-    inline PatchBaselineIdentity& WithBaselineId(Aws::String&& value) { SetBaselineId(value); return *this;}
+    inline PatchBaselineIdentity& WithBaselineId(Aws::String&& value) { SetBaselineId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the patch baseline.</p>
@@ -92,7 +93,7 @@ namespace Model
     /**
      * <p>The name of the patch baseline.</p>
      */
-    inline void SetBaselineName(Aws::String&& value) { m_baselineNameHasBeenSet = true; m_baselineName = value; }
+    inline void SetBaselineName(Aws::String&& value) { m_baselineNameHasBeenSet = true; m_baselineName = std::move(value); }
 
     /**
      * <p>The name of the patch baseline.</p>
@@ -107,7 +108,7 @@ namespace Model
     /**
      * <p>The name of the patch baseline.</p>
      */
-    inline PatchBaselineIdentity& WithBaselineName(Aws::String&& value) { SetBaselineName(value); return *this;}
+    inline PatchBaselineIdentity& WithBaselineName(Aws::String&& value) { SetBaselineName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the patch baseline.</p>
@@ -127,7 +128,7 @@ namespace Model
     /**
      * <p>The description of the patch baseline.</p>
      */
-    inline void SetBaselineDescription(Aws::String&& value) { m_baselineDescriptionHasBeenSet = true; m_baselineDescription = value; }
+    inline void SetBaselineDescription(Aws::String&& value) { m_baselineDescriptionHasBeenSet = true; m_baselineDescription = std::move(value); }
 
     /**
      * <p>The description of the patch baseline.</p>
@@ -142,7 +143,7 @@ namespace Model
     /**
      * <p>The description of the patch baseline.</p>
      */
-    inline PatchBaselineIdentity& WithBaselineDescription(Aws::String&& value) { SetBaselineDescription(value); return *this;}
+    inline PatchBaselineIdentity& WithBaselineDescription(Aws::String&& value) { SetBaselineDescription(std::move(value)); return *this;}
 
     /**
      * <p>The description of the patch baseline.</p>

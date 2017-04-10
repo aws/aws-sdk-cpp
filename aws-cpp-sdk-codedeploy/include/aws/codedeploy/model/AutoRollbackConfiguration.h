@@ -16,6 +16,7 @@
 #include <aws/codedeploy/CodeDeploy_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/codedeploy/model/AutoRollbackEvent.h>
+#include <utility>
 
 namespace Aws
 {
@@ -77,7 +78,7 @@ namespace Model
     /**
      * <p>The event type or types that trigger a rollback.</p>
      */
-    inline void SetEvents(Aws::Vector<AutoRollbackEvent>&& value) { m_eventsHasBeenSet = true; m_events = value; }
+    inline void SetEvents(Aws::Vector<AutoRollbackEvent>&& value) { m_eventsHasBeenSet = true; m_events = std::move(value); }
 
     /**
      * <p>The event type or types that trigger a rollback.</p>
@@ -87,7 +88,7 @@ namespace Model
     /**
      * <p>The event type or types that trigger a rollback.</p>
      */
-    inline AutoRollbackConfiguration& WithEvents(Aws::Vector<AutoRollbackEvent>&& value) { SetEvents(value); return *this;}
+    inline AutoRollbackConfiguration& WithEvents(Aws::Vector<AutoRollbackEvent>&& value) { SetEvents(std::move(value)); return *this;}
 
     /**
      * <p>The event type or types that trigger a rollback.</p>
@@ -97,7 +98,7 @@ namespace Model
     /**
      * <p>The event type or types that trigger a rollback.</p>
      */
-    inline AutoRollbackConfiguration& AddEvents(AutoRollbackEvent&& value) { m_eventsHasBeenSet = true; m_events.push_back(value); return *this; }
+    inline AutoRollbackConfiguration& AddEvents(AutoRollbackEvent&& value) { m_eventsHasBeenSet = true; m_events.push_back(std::move(value)); return *this; }
 
   private:
     bool m_enabled;

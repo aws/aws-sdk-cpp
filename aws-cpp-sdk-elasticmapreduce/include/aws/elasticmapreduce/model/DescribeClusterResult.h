@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/elasticmapreduce/EMR_EXPORTS.h>
 #include <aws/elasticmapreduce/model/Cluster.h>
+#include <utility>
 
 namespace Aws
 {
@@ -58,7 +59,7 @@ namespace Model
     /**
      * <p>This output contains the details for the requested cluster.</p>
      */
-    inline void SetCluster(Cluster&& value) { m_cluster = value; }
+    inline void SetCluster(Cluster&& value) { m_cluster = std::move(value); }
 
     /**
      * <p>This output contains the details for the requested cluster.</p>
@@ -68,7 +69,7 @@ namespace Model
     /**
      * <p>This output contains the details for the requested cluster.</p>
      */
-    inline DescribeClusterResult& WithCluster(Cluster&& value) { SetCluster(value); return *this;}
+    inline DescribeClusterResult& WithCluster(Cluster&& value) { SetCluster(std::move(value)); return *this;}
 
   private:
     Cluster m_cluster;

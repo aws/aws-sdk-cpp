@@ -16,6 +16,7 @@
 #include <aws/budgets/Budgets_EXPORTS.h>
 #include <aws/budgets/BudgetsRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -45,7 +46,7 @@ namespace Model
     inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
 
     
-    inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
+    inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
 
     
     inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
@@ -54,7 +55,7 @@ namespace Model
     inline DescribeNotificationsForBudgetRequest& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
 
     
-    inline DescribeNotificationsForBudgetRequest& WithAccountId(Aws::String&& value) { SetAccountId(value); return *this;}
+    inline DescribeNotificationsForBudgetRequest& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
 
     
     inline DescribeNotificationsForBudgetRequest& WithAccountId(const char* value) { SetAccountId(value); return *this;}
@@ -66,7 +67,7 @@ namespace Model
     inline void SetBudgetName(const Aws::String& value) { m_budgetNameHasBeenSet = true; m_budgetName = value; }
 
     
-    inline void SetBudgetName(Aws::String&& value) { m_budgetNameHasBeenSet = true; m_budgetName = value; }
+    inline void SetBudgetName(Aws::String&& value) { m_budgetNameHasBeenSet = true; m_budgetName = std::move(value); }
 
     
     inline void SetBudgetName(const char* value) { m_budgetNameHasBeenSet = true; m_budgetName.assign(value); }
@@ -75,7 +76,7 @@ namespace Model
     inline DescribeNotificationsForBudgetRequest& WithBudgetName(const Aws::String& value) { SetBudgetName(value); return *this;}
 
     
-    inline DescribeNotificationsForBudgetRequest& WithBudgetName(Aws::String&& value) { SetBudgetName(value); return *this;}
+    inline DescribeNotificationsForBudgetRequest& WithBudgetName(Aws::String&& value) { SetBudgetName(std::move(value)); return *this;}
 
     
     inline DescribeNotificationsForBudgetRequest& WithBudgetName(const char* value) { SetBudgetName(value); return *this;}
@@ -96,7 +97,7 @@ namespace Model
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
@@ -105,7 +106,7 @@ namespace Model
     inline DescribeNotificationsForBudgetRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     
-    inline DescribeNotificationsForBudgetRequest& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline DescribeNotificationsForBudgetRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     
     inline DescribeNotificationsForBudgetRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}

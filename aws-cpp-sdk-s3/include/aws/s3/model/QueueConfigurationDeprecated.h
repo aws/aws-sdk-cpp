@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/s3/model/Event.h>
+#include <utility>
 
 namespace Aws
 {
@@ -48,7 +49,7 @@ namespace Model
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = value; }
+    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
 
     
     inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
@@ -57,7 +58,7 @@ namespace Model
     inline QueueConfigurationDeprecated& WithId(const Aws::String& value) { SetId(value); return *this;}
 
     
-    inline QueueConfigurationDeprecated& WithId(Aws::String&& value) { SetId(value); return *this;}
+    inline QueueConfigurationDeprecated& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
 
     
     inline QueueConfigurationDeprecated& WithId(const char* value) { SetId(value); return *this;}
@@ -69,19 +70,19 @@ namespace Model
     inline void SetEvents(const Aws::Vector<Event>& value) { m_eventsHasBeenSet = true; m_events = value; }
 
     
-    inline void SetEvents(Aws::Vector<Event>&& value) { m_eventsHasBeenSet = true; m_events = value; }
+    inline void SetEvents(Aws::Vector<Event>&& value) { m_eventsHasBeenSet = true; m_events = std::move(value); }
 
     
     inline QueueConfigurationDeprecated& WithEvents(const Aws::Vector<Event>& value) { SetEvents(value); return *this;}
 
     
-    inline QueueConfigurationDeprecated& WithEvents(Aws::Vector<Event>&& value) { SetEvents(value); return *this;}
+    inline QueueConfigurationDeprecated& WithEvents(Aws::Vector<Event>&& value) { SetEvents(std::move(value)); return *this;}
 
     
     inline QueueConfigurationDeprecated& AddEvents(const Event& value) { m_eventsHasBeenSet = true; m_events.push_back(value); return *this; }
 
     
-    inline QueueConfigurationDeprecated& AddEvents(Event&& value) { m_eventsHasBeenSet = true; m_events.push_back(value); return *this; }
+    inline QueueConfigurationDeprecated& AddEvents(Event&& value) { m_eventsHasBeenSet = true; m_events.push_back(std::move(value)); return *this; }
 
     
     inline const Aws::String& GetQueue() const{ return m_queue; }
@@ -90,7 +91,7 @@ namespace Model
     inline void SetQueue(const Aws::String& value) { m_queueHasBeenSet = true; m_queue = value; }
 
     
-    inline void SetQueue(Aws::String&& value) { m_queueHasBeenSet = true; m_queue = value; }
+    inline void SetQueue(Aws::String&& value) { m_queueHasBeenSet = true; m_queue = std::move(value); }
 
     
     inline void SetQueue(const char* value) { m_queueHasBeenSet = true; m_queue.assign(value); }
@@ -99,7 +100,7 @@ namespace Model
     inline QueueConfigurationDeprecated& WithQueue(const Aws::String& value) { SetQueue(value); return *this;}
 
     
-    inline QueueConfigurationDeprecated& WithQueue(Aws::String&& value) { SetQueue(value); return *this;}
+    inline QueueConfigurationDeprecated& WithQueue(Aws::String&& value) { SetQueue(std::move(value)); return *this;}
 
     
     inline QueueConfigurationDeprecated& WithQueue(const char* value) { SetQueue(value); return *this;}

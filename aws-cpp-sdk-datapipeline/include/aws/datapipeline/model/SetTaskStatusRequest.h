@@ -17,6 +17,7 @@
 #include <aws/datapipeline/DataPipelineRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/datapipeline/model/TaskStatus.h>
+#include <utility>
 
 namespace Aws
 {
@@ -55,7 +56,7 @@ namespace Model
      * <p>The ID of the task assigned to the task runner. This value is provided in the
      * response for <a>PollForTask</a>.</p>
      */
-    inline void SetTaskId(Aws::String&& value) { m_taskIdHasBeenSet = true; m_taskId = value; }
+    inline void SetTaskId(Aws::String&& value) { m_taskIdHasBeenSet = true; m_taskId = std::move(value); }
 
     /**
      * <p>The ID of the task assigned to the task runner. This value is provided in the
@@ -73,7 +74,7 @@ namespace Model
      * <p>The ID of the task assigned to the task runner. This value is provided in the
      * response for <a>PollForTask</a>.</p>
      */
-    inline SetTaskStatusRequest& WithTaskId(Aws::String&& value) { SetTaskId(value); return *this;}
+    inline SetTaskStatusRequest& WithTaskId(Aws::String&& value) { SetTaskId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the task assigned to the task runner. This value is provided in the
@@ -97,7 +98,7 @@ namespace Model
      * <p>If <code>FINISHED</code>, the task successfully completed. If
      * <code>FAILED</code>, the task ended unsuccessfully. Preconditions use false.</p>
      */
-    inline void SetTaskStatus(TaskStatus&& value) { m_taskStatusHasBeenSet = true; m_taskStatus = value; }
+    inline void SetTaskStatus(TaskStatus&& value) { m_taskStatusHasBeenSet = true; m_taskStatus = std::move(value); }
 
     /**
      * <p>If <code>FINISHED</code>, the task successfully completed. If
@@ -109,7 +110,7 @@ namespace Model
      * <p>If <code>FINISHED</code>, the task successfully completed. If
      * <code>FAILED</code>, the task ended unsuccessfully. Preconditions use false.</p>
      */
-    inline SetTaskStatusRequest& WithTaskStatus(TaskStatus&& value) { SetTaskStatus(value); return *this;}
+    inline SetTaskStatusRequest& WithTaskStatus(TaskStatus&& value) { SetTaskStatus(std::move(value)); return *this;}
 
     /**
      * <p>If an error occurred during the task, this value specifies the error code.
@@ -133,7 +134,7 @@ namespace Model
      * information to the user. It should not start with string "Service_" which is
      * reserved by the system.</p>
      */
-    inline void SetErrorId(Aws::String&& value) { m_errorIdHasBeenSet = true; m_errorId = value; }
+    inline void SetErrorId(Aws::String&& value) { m_errorIdHasBeenSet = true; m_errorId = std::move(value); }
 
     /**
      * <p>If an error occurred during the task, this value specifies the error code.
@@ -157,7 +158,7 @@ namespace Model
      * information to the user. It should not start with string "Service_" which is
      * reserved by the system.</p>
      */
-    inline SetTaskStatusRequest& WithErrorId(Aws::String&& value) { SetErrorId(value); return *this;}
+    inline SetTaskStatusRequest& WithErrorId(Aws::String&& value) { SetErrorId(std::move(value)); return *this;}
 
     /**
      * <p>If an error occurred during the task, this value specifies the error code.
@@ -189,7 +190,7 @@ namespace Model
      * display error information to the user. The web service does not parse this
      * value.</p>
      */
-    inline void SetErrorMessage(Aws::String&& value) { m_errorMessageHasBeenSet = true; m_errorMessage = value; }
+    inline void SetErrorMessage(Aws::String&& value) { m_errorMessageHasBeenSet = true; m_errorMessage = std::move(value); }
 
     /**
      * <p>If an error occurred during the task, this value specifies a text description
@@ -213,7 +214,7 @@ namespace Model
      * display error information to the user. The web service does not parse this
      * value.</p>
      */
-    inline SetTaskStatusRequest& WithErrorMessage(Aws::String&& value) { SetErrorMessage(value); return *this;}
+    inline SetTaskStatusRequest& WithErrorMessage(Aws::String&& value) { SetErrorMessage(std::move(value)); return *this;}
 
     /**
      * <p>If an error occurred during the task, this value specifies a text description
@@ -245,7 +246,7 @@ namespace Model
      * is used to display error information to the user. The web service does not parse
      * this value.</p>
      */
-    inline void SetErrorStackTrace(Aws::String&& value) { m_errorStackTraceHasBeenSet = true; m_errorStackTrace = value; }
+    inline void SetErrorStackTrace(Aws::String&& value) { m_errorStackTraceHasBeenSet = true; m_errorStackTrace = std::move(value); }
 
     /**
      * <p>If an error occurred during the task, this value specifies the stack trace
@@ -269,7 +270,7 @@ namespace Model
      * is used to display error information to the user. The web service does not parse
      * this value.</p>
      */
-    inline SetTaskStatusRequest& WithErrorStackTrace(Aws::String&& value) { SetErrorStackTrace(value); return *this;}
+    inline SetTaskStatusRequest& WithErrorStackTrace(Aws::String&& value) { SetErrorStackTrace(std::move(value)); return *this;}
 
     /**
      * <p>If an error occurred during the task, this value specifies the stack trace

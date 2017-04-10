@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/elasticbeanstalk/model/ValidationSeverity.h>
+#include <utility>
 
 namespace Aws
 {
@@ -61,7 +62,7 @@ namespace Model
     /**
      * <p>A message describing the error or warning.</p>
      */
-    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = value; }
+    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
 
     /**
      * <p>A message describing the error or warning.</p>
@@ -76,7 +77,7 @@ namespace Model
     /**
      * <p>A message describing the error or warning.</p>
      */
-    inline ValidationMessage& WithMessage(Aws::String&& value) { SetMessage(value); return *this;}
+    inline ValidationMessage& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
 
     /**
      * <p>A message describing the error or warning.</p>
@@ -105,7 +106,7 @@ namespace Model
      * an option.</p> </li> <li> <p> <code>warning</code>: This message is providing
      * information you should take into account.</p> </li> </ul>
      */
-    inline void SetSeverity(ValidationSeverity&& value) { m_severityHasBeenSet = true; m_severity = value; }
+    inline void SetSeverity(ValidationSeverity&& value) { m_severityHasBeenSet = true; m_severity = std::move(value); }
 
     /**
      * <p>An indication of the severity of this message:</p> <ul> <li> <p>
@@ -121,7 +122,7 @@ namespace Model
      * an option.</p> </li> <li> <p> <code>warning</code>: This message is providing
      * information you should take into account.</p> </li> </ul>
      */
-    inline ValidationMessage& WithSeverity(ValidationSeverity&& value) { SetSeverity(value); return *this;}
+    inline ValidationMessage& WithSeverity(ValidationSeverity&& value) { SetSeverity(std::move(value)); return *this;}
 
     /**
      * <p>The namespace to which the option belongs.</p>
@@ -136,7 +137,7 @@ namespace Model
     /**
      * <p>The namespace to which the option belongs.</p>
      */
-    inline void SetNamespace(Aws::String&& value) { m_namespaceHasBeenSet = true; m_namespace = value; }
+    inline void SetNamespace(Aws::String&& value) { m_namespaceHasBeenSet = true; m_namespace = std::move(value); }
 
     /**
      * <p>The namespace to which the option belongs.</p>
@@ -151,7 +152,7 @@ namespace Model
     /**
      * <p>The namespace to which the option belongs.</p>
      */
-    inline ValidationMessage& WithNamespace(Aws::String&& value) { SetNamespace(value); return *this;}
+    inline ValidationMessage& WithNamespace(Aws::String&& value) { SetNamespace(std::move(value)); return *this;}
 
     /**
      * <p>The namespace to which the option belongs.</p>
@@ -171,7 +172,7 @@ namespace Model
     /**
      * <p>The name of the option.</p>
      */
-    inline void SetOptionName(Aws::String&& value) { m_optionNameHasBeenSet = true; m_optionName = value; }
+    inline void SetOptionName(Aws::String&& value) { m_optionNameHasBeenSet = true; m_optionName = std::move(value); }
 
     /**
      * <p>The name of the option.</p>
@@ -186,7 +187,7 @@ namespace Model
     /**
      * <p>The name of the option.</p>
      */
-    inline ValidationMessage& WithOptionName(Aws::String&& value) { SetOptionName(value); return *this;}
+    inline ValidationMessage& WithOptionName(Aws::String&& value) { SetOptionName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the option.</p>

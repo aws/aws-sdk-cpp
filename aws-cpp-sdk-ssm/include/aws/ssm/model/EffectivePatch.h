@@ -16,6 +16,7 @@
 #include <aws/ssm/SSM_EXPORTS.h>
 #include <aws/ssm/model/Patch.h>
 #include <aws/ssm/model/PatchStatus.h>
+#include <utility>
 
 namespace Aws
 {
@@ -67,7 +68,7 @@ namespace Model
      * severity, classification and a URL for where more information can be obtained
      * about the patch.</p>
      */
-    inline void SetPatch(Patch&& value) { m_patchHasBeenSet = true; m_patch = value; }
+    inline void SetPatch(Patch&& value) { m_patchHasBeenSet = true; m_patch = std::move(value); }
 
     /**
      * <p>Provides metadata for a patch, including information such as the KB ID,
@@ -81,7 +82,7 @@ namespace Model
      * severity, classification and a URL for where more information can be obtained
      * about the patch.</p>
      */
-    inline EffectivePatch& WithPatch(Patch&& value) { SetPatch(value); return *this;}
+    inline EffectivePatch& WithPatch(Patch&& value) { SetPatch(std::move(value)); return *this;}
 
     /**
      * <p>The status of the patch in a patch baseline. This includes information about
@@ -105,7 +106,7 @@ namespace Model
      * explicitly approved, or explicitly rejected and the date the patch was or will
      * be approved.</p>
      */
-    inline void SetPatchStatus(PatchStatus&& value) { m_patchStatusHasBeenSet = true; m_patchStatus = value; }
+    inline void SetPatchStatus(PatchStatus&& value) { m_patchStatusHasBeenSet = true; m_patchStatus = std::move(value); }
 
     /**
      * <p>The status of the patch in a patch baseline. This includes information about
@@ -121,7 +122,7 @@ namespace Model
      * explicitly approved, or explicitly rejected and the date the patch was or will
      * be approved.</p>
      */
-    inline EffectivePatch& WithPatchStatus(PatchStatus&& value) { SetPatchStatus(value); return *this;}
+    inline EffectivePatch& WithPatchStatus(PatchStatus&& value) { SetPatchStatus(std::move(value)); return *this;}
 
   private:
     Patch m_patch;

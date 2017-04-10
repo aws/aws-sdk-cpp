@@ -16,6 +16,7 @@
 #include <aws/iam/IAM_EXPORTS.h>
 #include <aws/iam/IAMRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -62,7 +63,7 @@ namespace Model
      * consisting of upper and lowercase alphanumeric characters with no spaces. You
      * can also include any of the following characters: =,.@-</p>
      */
-    inline void SetUserName(Aws::String&& value) { m_userNameHasBeenSet = true; m_userName = value; }
+    inline void SetUserName(Aws::String&& value) { m_userNameHasBeenSet = true; m_userName = std::move(value); }
 
     /**
      * <p>Name of the user to update. If you're changing the name of the user, this is
@@ -89,7 +90,7 @@ namespace Model
      * consisting of upper and lowercase alphanumeric characters with no spaces. You
      * can also include any of the following characters: =,.@-</p>
      */
-    inline UpdateUserRequest& WithUserName(Aws::String&& value) { SetUserName(value); return *this;}
+    inline UpdateUserRequest& WithUserName(Aws::String&& value) { SetUserName(std::move(value)); return *this;}
 
     /**
      * <p>Name of the user to update. If you're changing the name of the user, this is
@@ -131,7 +132,7 @@ namespace Model
      * thru the DEL character (\u007F), including most punctuation characters, digits,
      * and upper and lowercased letters.</p>
      */
-    inline void SetNewPath(Aws::String&& value) { m_newPathHasBeenSet = true; m_newPath = value; }
+    inline void SetNewPath(Aws::String&& value) { m_newPathHasBeenSet = true; m_newPath = std::move(value); }
 
     /**
      * <p>New path for the IAM user. Include this parameter only if you're changing the
@@ -164,7 +165,7 @@ namespace Model
      * thru the DEL character (\u007F), including most punctuation characters, digits,
      * and upper and lowercased letters.</p>
      */
-    inline UpdateUserRequest& WithNewPath(Aws::String&& value) { SetNewPath(value); return *this;}
+    inline UpdateUserRequest& WithNewPath(Aws::String&& value) { SetNewPath(std::move(value)); return *this;}
 
     /**
      * <p>New path for the IAM user. Include this parameter only if you're changing the
@@ -202,7 +203,7 @@ namespace Model
      * consisting of upper and lowercase alphanumeric characters with no spaces. You
      * can also include any of the following characters: =,.@-</p>
      */
-    inline void SetNewUserName(Aws::String&& value) { m_newUserNameHasBeenSet = true; m_newUserName = value; }
+    inline void SetNewUserName(Aws::String&& value) { m_newUserNameHasBeenSet = true; m_newUserName = std::move(value); }
 
     /**
      * <p>New name for the user. Include this parameter only if you're changing the
@@ -229,7 +230,7 @@ namespace Model
      * consisting of upper and lowercase alphanumeric characters with no spaces. You
      * can also include any of the following characters: =,.@-</p>
      */
-    inline UpdateUserRequest& WithNewUserName(Aws::String&& value) { SetNewUserName(value); return *this;}
+    inline UpdateUserRequest& WithNewUserName(Aws::String&& value) { SetNewUserName(std::move(value)); return *this;}
 
     /**
      * <p>New name for the user. Include this parameter only if you're changing the

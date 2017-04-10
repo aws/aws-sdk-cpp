@@ -16,6 +16,7 @@
 #include <aws/codepipeline/CodePipeline_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/codepipeline/model/JobData.h>
+#include <utility>
 
 namespace Aws
 {
@@ -57,7 +58,7 @@ namespace Model
     /**
      * <p>The unique system-generated ID of the job.</p>
      */
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = value; }
+    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
 
     /**
      * <p>The unique system-generated ID of the job.</p>
@@ -72,7 +73,7 @@ namespace Model
     /**
      * <p>The unique system-generated ID of the job.</p>
      */
-    inline Job& WithId(Aws::String&& value) { SetId(value); return *this;}
+    inline Job& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
 
     /**
      * <p>The unique system-generated ID of the job.</p>
@@ -92,7 +93,7 @@ namespace Model
     /**
      * <p>Additional data about a job.</p>
      */
-    inline void SetData(JobData&& value) { m_dataHasBeenSet = true; m_data = value; }
+    inline void SetData(JobData&& value) { m_dataHasBeenSet = true; m_data = std::move(value); }
 
     /**
      * <p>Additional data about a job.</p>
@@ -102,7 +103,7 @@ namespace Model
     /**
      * <p>Additional data about a job.</p>
      */
-    inline Job& WithData(JobData&& value) { SetData(value); return *this;}
+    inline Job& WithData(JobData&& value) { SetData(std::move(value)); return *this;}
 
     /**
      * <p>A system-generated random number that AWS CodePipeline uses to ensure that
@@ -123,7 +124,7 @@ namespace Model
      * the job is being worked on by only one job worker. Use this number in an
      * <a>AcknowledgeJob</a> request.</p>
      */
-    inline void SetNonce(Aws::String&& value) { m_nonceHasBeenSet = true; m_nonce = value; }
+    inline void SetNonce(Aws::String&& value) { m_nonceHasBeenSet = true; m_nonce = std::move(value); }
 
     /**
      * <p>A system-generated random number that AWS CodePipeline uses to ensure that
@@ -144,7 +145,7 @@ namespace Model
      * the job is being worked on by only one job worker. Use this number in an
      * <a>AcknowledgeJob</a> request.</p>
      */
-    inline Job& WithNonce(Aws::String&& value) { SetNonce(value); return *this;}
+    inline Job& WithNonce(Aws::String&& value) { SetNonce(std::move(value)); return *this;}
 
     /**
      * <p>A system-generated random number that AWS CodePipeline uses to ensure that
@@ -166,7 +167,7 @@ namespace Model
     /**
      * <p>The ID of the AWS account to use when performing the job.</p>
      */
-    inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
+    inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
 
     /**
      * <p>The ID of the AWS account to use when performing the job.</p>
@@ -181,7 +182,7 @@ namespace Model
     /**
      * <p>The ID of the AWS account to use when performing the job.</p>
      */
-    inline Job& WithAccountId(Aws::String&& value) { SetAccountId(value); return *this;}
+    inline Job& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the AWS account to use when performing the job.</p>

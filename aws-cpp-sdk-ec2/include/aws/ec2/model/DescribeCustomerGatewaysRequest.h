@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/Filter.h>
+#include <utility>
 
 namespace Aws
 {
@@ -83,7 +84,7 @@ namespace Model
      * <p>One or more customer gateway IDs.</p> <p>Default: Describes all your customer
      * gateways.</p>
      */
-    inline void SetCustomerGatewayIds(Aws::Vector<Aws::String>&& value) { m_customerGatewayIdsHasBeenSet = true; m_customerGatewayIds = value; }
+    inline void SetCustomerGatewayIds(Aws::Vector<Aws::String>&& value) { m_customerGatewayIdsHasBeenSet = true; m_customerGatewayIds = std::move(value); }
 
     /**
      * <p>One or more customer gateway IDs.</p> <p>Default: Describes all your customer
@@ -95,7 +96,7 @@ namespace Model
      * <p>One or more customer gateway IDs.</p> <p>Default: Describes all your customer
      * gateways.</p>
      */
-    inline DescribeCustomerGatewaysRequest& WithCustomerGatewayIds(Aws::Vector<Aws::String>&& value) { SetCustomerGatewayIds(value); return *this;}
+    inline DescribeCustomerGatewaysRequest& WithCustomerGatewayIds(Aws::Vector<Aws::String>&& value) { SetCustomerGatewayIds(std::move(value)); return *this;}
 
     /**
      * <p>One or more customer gateway IDs.</p> <p>Default: Describes all your customer
@@ -107,7 +108,7 @@ namespace Model
      * <p>One or more customer gateway IDs.</p> <p>Default: Describes all your customer
      * gateways.</p>
      */
-    inline DescribeCustomerGatewaysRequest& AddCustomerGatewayIds(Aws::String&& value) { m_customerGatewayIdsHasBeenSet = true; m_customerGatewayIds.push_back(value); return *this; }
+    inline DescribeCustomerGatewaysRequest& AddCustomerGatewayIds(Aws::String&& value) { m_customerGatewayIdsHasBeenSet = true; m_customerGatewayIds.push_back(std::move(value)); return *this; }
 
     /**
      * <p>One or more customer gateway IDs.</p> <p>Default: Describes all your customer
@@ -194,7 +195,7 @@ namespace Model
      * to the resource. This filter is independent of the <code>tag-key</code>
      * filter.</p> </li> </ul>
      */
-    inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = value; }
+    inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
 
     /**
      * <p>One or more filters.</p> <ul> <li> <p> <code>bgp-asn</code> - The customer
@@ -248,7 +249,7 @@ namespace Model
      * to the resource. This filter is independent of the <code>tag-key</code>
      * filter.</p> </li> </ul>
      */
-    inline DescribeCustomerGatewaysRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(value); return *this;}
+    inline DescribeCustomerGatewaysRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(std::move(value)); return *this;}
 
     /**
      * <p>One or more filters.</p> <ul> <li> <p> <code>bgp-asn</code> - The customer
@@ -302,7 +303,7 @@ namespace Model
      * to the resource. This filter is independent of the <code>tag-key</code>
      * filter.</p> </li> </ul>
      */
-    inline DescribeCustomerGatewaysRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
+    inline DescribeCustomerGatewaysRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 
   private:
     bool m_dryRun;

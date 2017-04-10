@@ -16,6 +16,7 @@
 #include <aws/es/ElasticsearchService_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/es/model/OptionStatus.h>
+#include <utility>
 
 namespace Aws
 {
@@ -67,7 +68,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-access-policies"
      * target="_blank"> Configuring Access Policies</a>for more information.</p>
      */
-    inline void SetOptions(Aws::String&& value) { m_optionsHasBeenSet = true; m_options = value; }
+    inline void SetOptions(Aws::String&& value) { m_optionsHasBeenSet = true; m_options = std::move(value); }
 
     /**
      * <p>The access policy configured for the Elasticsearch domain. Access policies
@@ -91,7 +92,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-access-policies"
      * target="_blank"> Configuring Access Policies</a>for more information.</p>
      */
-    inline AccessPoliciesStatus& WithOptions(Aws::String&& value) { SetOptions(value); return *this;}
+    inline AccessPoliciesStatus& WithOptions(Aws::String&& value) { SetOptions(std::move(value)); return *this;}
 
     /**
      * <p>The access policy configured for the Elasticsearch domain. Access policies
@@ -117,7 +118,7 @@ namespace Model
      * <p>The status of the access policy for the Elasticsearch domain. See
      * <code>OptionStatus</code> for the status information that's included. </p>
      */
-    inline void SetStatus(OptionStatus&& value) { m_statusHasBeenSet = true; m_status = value; }
+    inline void SetStatus(OptionStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
      * <p>The status of the access policy for the Elasticsearch domain. See
@@ -129,7 +130,7 @@ namespace Model
      * <p>The status of the access policy for the Elasticsearch domain. See
      * <code>OptionStatus</code> for the status information that's included. </p>
      */
-    inline AccessPoliciesStatus& WithStatus(OptionStatus&& value) { SetStatus(value); return *this;}
+    inline AccessPoliciesStatus& WithStatus(OptionStatus&& value) { SetStatus(std::move(value)); return *this;}
 
   private:
     Aws::String m_options;

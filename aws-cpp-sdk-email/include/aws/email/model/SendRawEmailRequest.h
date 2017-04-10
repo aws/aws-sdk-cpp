@@ -19,6 +19,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/email/model/RawMessage.h>
 #include <aws/email/model/MessageTag.h>
+#include <utility>
 
 namespace Aws
 {
@@ -89,7 +90,7 @@ namespace Model
      * this email address. This takes precedence over any <i>Return-Path</i> header
      * that you might include in the raw text of the message.</p> </note>
      */
-    inline void SetSource(Aws::String&& value) { m_sourceHasBeenSet = true; m_source = value; }
+    inline void SetSource(Aws::String&& value) { m_sourceHasBeenSet = true; m_source = std::move(value); }
 
     /**
      * <p>The identity's email address. If you do not provide a value for this
@@ -134,7 +135,7 @@ namespace Model
      * this email address. This takes precedence over any <i>Return-Path</i> header
      * that you might include in the raw text of the message.</p> </note>
      */
-    inline SendRawEmailRequest& WithSource(Aws::String&& value) { SetSource(value); return *this;}
+    inline SendRawEmailRequest& WithSource(Aws::String&& value) { SetSource(std::move(value)); return *this;}
 
     /**
      * <p>The identity's email address. If you do not provide a value for this
@@ -167,7 +168,7 @@ namespace Model
      * <p>A list of destinations for the message, consisting of To:, CC:, and BCC:
      * addresses.</p>
      */
-    inline void SetDestinations(Aws::Vector<Aws::String>&& value) { m_destinationsHasBeenSet = true; m_destinations = value; }
+    inline void SetDestinations(Aws::Vector<Aws::String>&& value) { m_destinationsHasBeenSet = true; m_destinations = std::move(value); }
 
     /**
      * <p>A list of destinations for the message, consisting of To:, CC:, and BCC:
@@ -179,7 +180,7 @@ namespace Model
      * <p>A list of destinations for the message, consisting of To:, CC:, and BCC:
      * addresses.</p>
      */
-    inline SendRawEmailRequest& WithDestinations(Aws::Vector<Aws::String>&& value) { SetDestinations(value); return *this;}
+    inline SendRawEmailRequest& WithDestinations(Aws::Vector<Aws::String>&& value) { SetDestinations(std::move(value)); return *this;}
 
     /**
      * <p>A list of destinations for the message, consisting of To:, CC:, and BCC:
@@ -191,7 +192,7 @@ namespace Model
      * <p>A list of destinations for the message, consisting of To:, CC:, and BCC:
      * addresses.</p>
      */
-    inline SendRawEmailRequest& AddDestinations(Aws::String&& value) { m_destinationsHasBeenSet = true; m_destinations.push_back(value); return *this; }
+    inline SendRawEmailRequest& AddDestinations(Aws::String&& value) { m_destinationsHasBeenSet = true; m_destinations.push_back(std::move(value)); return *this; }
 
     /**
      * <p>A list of destinations for the message, consisting of To:, CC:, and BCC:
@@ -236,7 +237,7 @@ namespace Model
      * SES Developer Guide</a>.</p> </li> <li> <p>Must be base64-encoded.</p> </li>
      * </ul>
      */
-    inline void SetRawMessage(RawMessage&& value) { m_rawMessageHasBeenSet = true; m_rawMessage = value; }
+    inline void SetRawMessage(RawMessage&& value) { m_rawMessageHasBeenSet = true; m_rawMessage = std::move(value); }
 
     /**
      * <p>The raw text of the message. The client is responsible for ensuring the
@@ -262,7 +263,7 @@ namespace Model
      * SES Developer Guide</a>.</p> </li> <li> <p>Must be base64-encoded.</p> </li>
      * </ul>
      */
-    inline SendRawEmailRequest& WithRawMessage(RawMessage&& value) { SetRawMessage(value); return *this;}
+    inline SendRawEmailRequest& WithRawMessage(RawMessage&& value) { SetRawMessage(std::move(value)); return *this;}
 
     /**
      * <p>This parameter is used only for sending authorization. It is the ARN of the
@@ -307,7 +308,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-delegate-sender-tasks-email.html">Amazon
      * SES Developer Guide</a>.</p> </note>
      */
-    inline void SetFromArn(Aws::String&& value) { m_fromArnHasBeenSet = true; m_fromArn = value; }
+    inline void SetFromArn(Aws::String&& value) { m_fromArnHasBeenSet = true; m_fromArn = std::move(value); }
 
     /**
      * <p>This parameter is used only for sending authorization. It is the ARN of the
@@ -352,7 +353,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-delegate-sender-tasks-email.html">Amazon
      * SES Developer Guide</a>.</p> </note>
      */
-    inline SendRawEmailRequest& WithFromArn(Aws::String&& value) { SetFromArn(value); return *this;}
+    inline SendRawEmailRequest& WithFromArn(Aws::String&& value) { SetFromArn(std::move(value)); return *this;}
 
     /**
      * <p>This parameter is used only for sending authorization. It is the ARN of the
@@ -430,7 +431,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-delegate-sender-tasks-email.html">Amazon
      * SES Developer Guide</a>.</p> </note>
      */
-    inline void SetSourceArn(Aws::String&& value) { m_sourceArnHasBeenSet = true; m_sourceArn = value; }
+    inline void SetSourceArn(Aws::String&& value) { m_sourceArnHasBeenSet = true; m_sourceArn = std::move(value); }
 
     /**
      * <p>This parameter is used only for sending authorization. It is the ARN of the
@@ -493,7 +494,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-delegate-sender-tasks-email.html">Amazon
      * SES Developer Guide</a>.</p> </note>
      */
-    inline SendRawEmailRequest& WithSourceArn(Aws::String&& value) { SetSourceArn(value); return *this;}
+    inline SendRawEmailRequest& WithSourceArn(Aws::String&& value) { SetSourceArn(std::move(value)); return *this;}
 
     /**
      * <p>This parameter is used only for sending authorization. It is the ARN of the
@@ -580,7 +581,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-delegate-sender-tasks-email.html">Amazon
      * SES Developer Guide</a>.</p> </note>
      */
-    inline void SetReturnPathArn(Aws::String&& value) { m_returnPathArnHasBeenSet = true; m_returnPathArn = value; }
+    inline void SetReturnPathArn(Aws::String&& value) { m_returnPathArnHasBeenSet = true; m_returnPathArn = std::move(value); }
 
     /**
      * <p>This parameter is used only for sending authorization. It is the ARN of the
@@ -646,7 +647,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-delegate-sender-tasks-email.html">Amazon
      * SES Developer Guide</a>.</p> </note>
      */
-    inline SendRawEmailRequest& WithReturnPathArn(Aws::String&& value) { SetReturnPathArn(value); return *this;}
+    inline SendRawEmailRequest& WithReturnPathArn(Aws::String&& value) { SetReturnPathArn(std::move(value)); return *this;}
 
     /**
      * <p>This parameter is used only for sending authorization. It is the ARN of the
@@ -689,7 +690,7 @@ namespace Model
      * you send using <code>SendRawEmail</code>. Tags correspond to characteristics of
      * the email that you define, so that you can publish email sending events.</p>
      */
-    inline void SetTags(Aws::Vector<MessageTag>&& value) { m_tagsHasBeenSet = true; m_tags = value; }
+    inline void SetTags(Aws::Vector<MessageTag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
      * <p>A list of tags, in the form of name/value pairs, to apply to an email that
@@ -703,7 +704,7 @@ namespace Model
      * you send using <code>SendRawEmail</code>. Tags correspond to characteristics of
      * the email that you define, so that you can publish email sending events.</p>
      */
-    inline SendRawEmailRequest& WithTags(Aws::Vector<MessageTag>&& value) { SetTags(value); return *this;}
+    inline SendRawEmailRequest& WithTags(Aws::Vector<MessageTag>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
      * <p>A list of tags, in the form of name/value pairs, to apply to an email that
@@ -717,7 +718,7 @@ namespace Model
      * you send using <code>SendRawEmail</code>. Tags correspond to characteristics of
      * the email that you define, so that you can publish email sending events.</p>
      */
-    inline SendRawEmailRequest& AddTags(MessageTag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
+    inline SendRawEmailRequest& AddTags(MessageTag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The name of the configuration set to use when you send an email using
@@ -735,7 +736,7 @@ namespace Model
      * <p>The name of the configuration set to use when you send an email using
      * <code>SendRawEmail</code>.</p>
      */
-    inline void SetConfigurationSetName(Aws::String&& value) { m_configurationSetNameHasBeenSet = true; m_configurationSetName = value; }
+    inline void SetConfigurationSetName(Aws::String&& value) { m_configurationSetNameHasBeenSet = true; m_configurationSetName = std::move(value); }
 
     /**
      * <p>The name of the configuration set to use when you send an email using
@@ -753,7 +754,7 @@ namespace Model
      * <p>The name of the configuration set to use when you send an email using
      * <code>SendRawEmail</code>.</p>
      */
-    inline SendRawEmailRequest& WithConfigurationSetName(Aws::String&& value) { SetConfigurationSetName(value); return *this;}
+    inline SendRawEmailRequest& WithConfigurationSetName(Aws::String&& value) { SetConfigurationSetName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the configuration set to use when you send an email using

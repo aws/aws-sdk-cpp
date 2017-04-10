@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/ssm/SSM_EXPORTS.h>
 #include <aws/ssm/model/DocumentDefaultVersionDescription.h>
+#include <utility>
 
 namespace Aws
 {
@@ -55,7 +56,7 @@ namespace Model
      * <p>The description of a custom document that you want to set as the default
      * version.</p>
      */
-    inline void SetDescription(DocumentDefaultVersionDescription&& value) { m_description = value; }
+    inline void SetDescription(DocumentDefaultVersionDescription&& value) { m_description = std::move(value); }
 
     /**
      * <p>The description of a custom document that you want to set as the default
@@ -67,7 +68,7 @@ namespace Model
      * <p>The description of a custom document that you want to set as the default
      * version.</p>
      */
-    inline UpdateDocumentDefaultVersionResult& WithDescription(DocumentDefaultVersionDescription&& value) { SetDescription(value); return *this;}
+    inline UpdateDocumentDefaultVersionResult& WithDescription(DocumentDefaultVersionDescription&& value) { SetDescription(std::move(value)); return *this;}
 
   private:
     DocumentDefaultVersionDescription m_description;

@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/codepipeline/CodePipeline_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -57,7 +58,7 @@ namespace Model
     /**
      * <p>The summary of the current status of the actions.</p>
      */
-    inline void SetSummary(Aws::String&& value) { m_summaryHasBeenSet = true; m_summary = value; }
+    inline void SetSummary(Aws::String&& value) { m_summaryHasBeenSet = true; m_summary = std::move(value); }
 
     /**
      * <p>The summary of the current status of the actions.</p>
@@ -72,7 +73,7 @@ namespace Model
     /**
      * <p>The summary of the current status of the actions.</p>
      */
-    inline ExecutionDetails& WithSummary(Aws::String&& value) { SetSummary(value); return *this;}
+    inline ExecutionDetails& WithSummary(Aws::String&& value) { SetSummary(std::move(value)); return *this;}
 
     /**
      * <p>The summary of the current status of the actions.</p>
@@ -95,7 +96,7 @@ namespace Model
      * <p>The system-generated unique ID of this action used to identify this job
      * worker in any external systems, such as AWS CodeDeploy.</p>
      */
-    inline void SetExternalExecutionId(Aws::String&& value) { m_externalExecutionIdHasBeenSet = true; m_externalExecutionId = value; }
+    inline void SetExternalExecutionId(Aws::String&& value) { m_externalExecutionIdHasBeenSet = true; m_externalExecutionId = std::move(value); }
 
     /**
      * <p>The system-generated unique ID of this action used to identify this job
@@ -113,7 +114,7 @@ namespace Model
      * <p>The system-generated unique ID of this action used to identify this job
      * worker in any external systems, such as AWS CodeDeploy.</p>
      */
-    inline ExecutionDetails& WithExternalExecutionId(Aws::String&& value) { SetExternalExecutionId(value); return *this;}
+    inline ExecutionDetails& WithExternalExecutionId(Aws::String&& value) { SetExternalExecutionId(std::move(value)); return *this;}
 
     /**
      * <p>The system-generated unique ID of this action used to identify this job

@@ -16,6 +16,7 @@
 #include <aws/apigateway/APIGateway_EXPORTS.h>
 #include <aws/apigateway/APIGatewayRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -52,7 +53,7 @@ namespace Model
      * <p>[Required] The identifier of the API of the to-be-retrieved documentation
      * snapshot.</p>
      */
-    inline void SetRestApiId(Aws::String&& value) { m_restApiIdHasBeenSet = true; m_restApiId = value; }
+    inline void SetRestApiId(Aws::String&& value) { m_restApiIdHasBeenSet = true; m_restApiId = std::move(value); }
 
     /**
      * <p>[Required] The identifier of the API of the to-be-retrieved documentation
@@ -70,7 +71,7 @@ namespace Model
      * <p>[Required] The identifier of the API of the to-be-retrieved documentation
      * snapshot.</p>
      */
-    inline GetDocumentationVersionRequest& WithRestApiId(Aws::String&& value) { SetRestApiId(value); return *this;}
+    inline GetDocumentationVersionRequest& WithRestApiId(Aws::String&& value) { SetRestApiId(std::move(value)); return *this;}
 
     /**
      * <p>[Required] The identifier of the API of the to-be-retrieved documentation
@@ -94,7 +95,7 @@ namespace Model
      * <p>[Required] The version identifier of the to-be-retrieved documentation
      * snapshot.</p>
      */
-    inline void SetDocumentationVersion(Aws::String&& value) { m_documentationVersionHasBeenSet = true; m_documentationVersion = value; }
+    inline void SetDocumentationVersion(Aws::String&& value) { m_documentationVersionHasBeenSet = true; m_documentationVersion = std::move(value); }
 
     /**
      * <p>[Required] The version identifier of the to-be-retrieved documentation
@@ -112,7 +113,7 @@ namespace Model
      * <p>[Required] The version identifier of the to-be-retrieved documentation
      * snapshot.</p>
      */
-    inline GetDocumentationVersionRequest& WithDocumentationVersion(Aws::String&& value) { SetDocumentationVersion(value); return *this;}
+    inline GetDocumentationVersionRequest& WithDocumentationVersion(Aws::String&& value) { SetDocumentationVersion(std::move(value)); return *this;}
 
     /**
      * <p>[Required] The version identifier of the to-be-retrieved documentation

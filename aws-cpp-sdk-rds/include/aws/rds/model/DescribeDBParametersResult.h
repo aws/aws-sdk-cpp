@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/rds/model/ResponseMetadata.h>
 #include <aws/rds/model/Parameter.h>
+#include <utility>
 
 namespace Aws
 {
@@ -61,7 +62,7 @@ namespace Model
     /**
      * <p> A list of <a>Parameter</a> values. </p>
      */
-    inline void SetParameters(Aws::Vector<Parameter>&& value) { m_parameters = value; }
+    inline void SetParameters(Aws::Vector<Parameter>&& value) { m_parameters = std::move(value); }
 
     /**
      * <p> A list of <a>Parameter</a> values. </p>
@@ -71,7 +72,7 @@ namespace Model
     /**
      * <p> A list of <a>Parameter</a> values. </p>
      */
-    inline DescribeDBParametersResult& WithParameters(Aws::Vector<Parameter>&& value) { SetParameters(value); return *this;}
+    inline DescribeDBParametersResult& WithParameters(Aws::Vector<Parameter>&& value) { SetParameters(std::move(value)); return *this;}
 
     /**
      * <p> A list of <a>Parameter</a> values. </p>
@@ -81,7 +82,7 @@ namespace Model
     /**
      * <p> A list of <a>Parameter</a> values. </p>
      */
-    inline DescribeDBParametersResult& AddParameters(Parameter&& value) { m_parameters.push_back(value); return *this; }
+    inline DescribeDBParametersResult& AddParameters(Parameter&& value) { m_parameters.push_back(std::move(value)); return *this; }
 
     /**
      * <p> An optional pagination token provided by a previous request. If this
@@ -102,7 +103,7 @@ namespace Model
      * parameter is specified, the response includes only records beyond the marker, up
      * to the value specified by <code>MaxRecords</code>. </p>
      */
-    inline void SetMarker(Aws::String&& value) { m_marker = value; }
+    inline void SetMarker(Aws::String&& value) { m_marker = std::move(value); }
 
     /**
      * <p> An optional pagination token provided by a previous request. If this
@@ -123,7 +124,7 @@ namespace Model
      * parameter is specified, the response includes only records beyond the marker, up
      * to the value specified by <code>MaxRecords</code>. </p>
      */
-    inline DescribeDBParametersResult& WithMarker(Aws::String&& value) { SetMarker(value); return *this;}
+    inline DescribeDBParametersResult& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
 
     /**
      * <p> An optional pagination token provided by a previous request. If this
@@ -139,13 +140,13 @@ namespace Model
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
 
     
     inline DescribeDBParametersResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
 
     
-    inline DescribeDBParametersResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
+    inline DescribeDBParametersResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
     Aws::Vector<Parameter> m_parameters;

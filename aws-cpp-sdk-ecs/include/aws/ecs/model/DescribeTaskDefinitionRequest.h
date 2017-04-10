@@ -16,6 +16,7 @@
 #include <aws/ecs/ECS_EXPORTS.h>
 #include <aws/ecs/ECSRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -57,7 +58,7 @@ namespace Model
      * a specific revision in the family, or full Amazon Resource Name (ARN) of the
      * task definition to describe.</p>
      */
-    inline void SetTaskDefinition(Aws::String&& value) { m_taskDefinitionHasBeenSet = true; m_taskDefinition = value; }
+    inline void SetTaskDefinition(Aws::String&& value) { m_taskDefinitionHasBeenSet = true; m_taskDefinition = std::move(value); }
 
     /**
      * <p>The <code>family</code> for the latest <code>ACTIVE</code> revision,
@@ -81,7 +82,7 @@ namespace Model
      * a specific revision in the family, or full Amazon Resource Name (ARN) of the
      * task definition to describe.</p>
      */
-    inline DescribeTaskDefinitionRequest& WithTaskDefinition(Aws::String&& value) { SetTaskDefinition(value); return *this;}
+    inline DescribeTaskDefinitionRequest& WithTaskDefinition(Aws::String&& value) { SetTaskDefinition(std::move(value)); return *this;}
 
     /**
      * <p>The <code>family</code> for the latest <code>ACTIVE</code> revision,

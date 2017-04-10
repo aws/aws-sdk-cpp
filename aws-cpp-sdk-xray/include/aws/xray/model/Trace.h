@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/xray/model/Segment.h>
+#include <utility>
 
 namespace Aws
 {
@@ -62,7 +63,7 @@ namespace Model
      * <p>The unique identifier for the request that generated the trace's segments and
      * subsegments.</p>
      */
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = value; }
+    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
 
     /**
      * <p>The unique identifier for the request that generated the trace's segments and
@@ -80,7 +81,7 @@ namespace Model
      * <p>The unique identifier for the request that generated the trace's segments and
      * subsegments.</p>
      */
-    inline Trace& WithId(Aws::String&& value) { SetId(value); return *this;}
+    inline Trace& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
 
     /**
      * <p>The unique identifier for the request that generated the trace's segments and
@@ -122,7 +123,7 @@ namespace Model
      * <p>Segment documents for the segments and subsegments that comprise the
      * trace.</p>
      */
-    inline void SetSegments(Aws::Vector<Segment>&& value) { m_segmentsHasBeenSet = true; m_segments = value; }
+    inline void SetSegments(Aws::Vector<Segment>&& value) { m_segmentsHasBeenSet = true; m_segments = std::move(value); }
 
     /**
      * <p>Segment documents for the segments and subsegments that comprise the
@@ -134,7 +135,7 @@ namespace Model
      * <p>Segment documents for the segments and subsegments that comprise the
      * trace.</p>
      */
-    inline Trace& WithSegments(Aws::Vector<Segment>&& value) { SetSegments(value); return *this;}
+    inline Trace& WithSegments(Aws::Vector<Segment>&& value) { SetSegments(std::move(value)); return *this;}
 
     /**
      * <p>Segment documents for the segments and subsegments that comprise the
@@ -146,7 +147,7 @@ namespace Model
      * <p>Segment documents for the segments and subsegments that comprise the
      * trace.</p>
      */
-    inline Trace& AddSegments(Segment&& value) { m_segmentsHasBeenSet = true; m_segments.push_back(value); return *this; }
+    inline Trace& AddSegments(Segment&& value) { m_segmentsHasBeenSet = true; m_segments.push_back(std::move(value)); return *this; }
 
   private:
     Aws::String m_id;

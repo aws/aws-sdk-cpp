@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -76,7 +77,7 @@ namespace Model
     /**
      * <p>The names of the policies enabled for the EC2 instance.</p>
      */
-    inline void SetPolicyNames(Aws::Vector<Aws::String>&& value) { m_policyNamesHasBeenSet = true; m_policyNames = value; }
+    inline void SetPolicyNames(Aws::Vector<Aws::String>&& value) { m_policyNamesHasBeenSet = true; m_policyNames = std::move(value); }
 
     /**
      * <p>The names of the policies enabled for the EC2 instance.</p>
@@ -86,7 +87,7 @@ namespace Model
     /**
      * <p>The names of the policies enabled for the EC2 instance.</p>
      */
-    inline BackendServerDescription& WithPolicyNames(Aws::Vector<Aws::String>&& value) { SetPolicyNames(value); return *this;}
+    inline BackendServerDescription& WithPolicyNames(Aws::Vector<Aws::String>&& value) { SetPolicyNames(std::move(value)); return *this;}
 
     /**
      * <p>The names of the policies enabled for the EC2 instance.</p>
@@ -96,7 +97,7 @@ namespace Model
     /**
      * <p>The names of the policies enabled for the EC2 instance.</p>
      */
-    inline BackendServerDescription& AddPolicyNames(Aws::String&& value) { m_policyNamesHasBeenSet = true; m_policyNames.push_back(value); return *this; }
+    inline BackendServerDescription& AddPolicyNames(Aws::String&& value) { m_policyNamesHasBeenSet = true; m_policyNames.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The names of the policies enabled for the EC2 instance.</p>

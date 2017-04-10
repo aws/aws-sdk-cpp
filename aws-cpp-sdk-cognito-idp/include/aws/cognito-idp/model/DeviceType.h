@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/cognito-idp/model/AttributeType.h>
+#include <utility>
 
 namespace Aws
 {
@@ -59,7 +60,7 @@ namespace Model
     /**
      * <p>The device key.</p>
      */
-    inline void SetDeviceKey(Aws::String&& value) { m_deviceKeyHasBeenSet = true; m_deviceKey = value; }
+    inline void SetDeviceKey(Aws::String&& value) { m_deviceKeyHasBeenSet = true; m_deviceKey = std::move(value); }
 
     /**
      * <p>The device key.</p>
@@ -74,7 +75,7 @@ namespace Model
     /**
      * <p>The device key.</p>
      */
-    inline DeviceType& WithDeviceKey(Aws::String&& value) { SetDeviceKey(value); return *this;}
+    inline DeviceType& WithDeviceKey(Aws::String&& value) { SetDeviceKey(std::move(value)); return *this;}
 
     /**
      * <p>The device key.</p>
@@ -94,7 +95,7 @@ namespace Model
     /**
      * <p>The device attributes.</p>
      */
-    inline void SetDeviceAttributes(Aws::Vector<AttributeType>&& value) { m_deviceAttributesHasBeenSet = true; m_deviceAttributes = value; }
+    inline void SetDeviceAttributes(Aws::Vector<AttributeType>&& value) { m_deviceAttributesHasBeenSet = true; m_deviceAttributes = std::move(value); }
 
     /**
      * <p>The device attributes.</p>
@@ -104,7 +105,7 @@ namespace Model
     /**
      * <p>The device attributes.</p>
      */
-    inline DeviceType& WithDeviceAttributes(Aws::Vector<AttributeType>&& value) { SetDeviceAttributes(value); return *this;}
+    inline DeviceType& WithDeviceAttributes(Aws::Vector<AttributeType>&& value) { SetDeviceAttributes(std::move(value)); return *this;}
 
     /**
      * <p>The device attributes.</p>
@@ -114,7 +115,7 @@ namespace Model
     /**
      * <p>The device attributes.</p>
      */
-    inline DeviceType& AddDeviceAttributes(AttributeType&& value) { m_deviceAttributesHasBeenSet = true; m_deviceAttributes.push_back(value); return *this; }
+    inline DeviceType& AddDeviceAttributes(AttributeType&& value) { m_deviceAttributesHasBeenSet = true; m_deviceAttributes.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The creation date of the device.</p>
@@ -129,7 +130,7 @@ namespace Model
     /**
      * <p>The creation date of the device.</p>
      */
-    inline void SetDeviceCreateDate(Aws::Utils::DateTime&& value) { m_deviceCreateDateHasBeenSet = true; m_deviceCreateDate = value; }
+    inline void SetDeviceCreateDate(Aws::Utils::DateTime&& value) { m_deviceCreateDateHasBeenSet = true; m_deviceCreateDate = std::move(value); }
 
     /**
      * <p>The creation date of the device.</p>
@@ -139,7 +140,7 @@ namespace Model
     /**
      * <p>The creation date of the device.</p>
      */
-    inline DeviceType& WithDeviceCreateDate(Aws::Utils::DateTime&& value) { SetDeviceCreateDate(value); return *this;}
+    inline DeviceType& WithDeviceCreateDate(Aws::Utils::DateTime&& value) { SetDeviceCreateDate(std::move(value)); return *this;}
 
     /**
      * <p>The last modified date of the device.</p>
@@ -154,7 +155,7 @@ namespace Model
     /**
      * <p>The last modified date of the device.</p>
      */
-    inline void SetDeviceLastModifiedDate(Aws::Utils::DateTime&& value) { m_deviceLastModifiedDateHasBeenSet = true; m_deviceLastModifiedDate = value; }
+    inline void SetDeviceLastModifiedDate(Aws::Utils::DateTime&& value) { m_deviceLastModifiedDateHasBeenSet = true; m_deviceLastModifiedDate = std::move(value); }
 
     /**
      * <p>The last modified date of the device.</p>
@@ -164,7 +165,7 @@ namespace Model
     /**
      * <p>The last modified date of the device.</p>
      */
-    inline DeviceType& WithDeviceLastModifiedDate(Aws::Utils::DateTime&& value) { SetDeviceLastModifiedDate(value); return *this;}
+    inline DeviceType& WithDeviceLastModifiedDate(Aws::Utils::DateTime&& value) { SetDeviceLastModifiedDate(std::move(value)); return *this;}
 
     /**
      * <p>The date in which the device was last authenticated.</p>
@@ -179,7 +180,7 @@ namespace Model
     /**
      * <p>The date in which the device was last authenticated.</p>
      */
-    inline void SetDeviceLastAuthenticatedDate(Aws::Utils::DateTime&& value) { m_deviceLastAuthenticatedDateHasBeenSet = true; m_deviceLastAuthenticatedDate = value; }
+    inline void SetDeviceLastAuthenticatedDate(Aws::Utils::DateTime&& value) { m_deviceLastAuthenticatedDateHasBeenSet = true; m_deviceLastAuthenticatedDate = std::move(value); }
 
     /**
      * <p>The date in which the device was last authenticated.</p>
@@ -189,7 +190,7 @@ namespace Model
     /**
      * <p>The date in which the device was last authenticated.</p>
      */
-    inline DeviceType& WithDeviceLastAuthenticatedDate(Aws::Utils::DateTime&& value) { SetDeviceLastAuthenticatedDate(value); return *this;}
+    inline DeviceType& WithDeviceLastAuthenticatedDate(Aws::Utils::DateTime&& value) { SetDeviceLastAuthenticatedDate(std::move(value)); return *this;}
 
   private:
     Aws::String m_deviceKey;

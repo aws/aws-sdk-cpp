@@ -22,6 +22,7 @@
 #include <aws/opsworks/model/Source.h>
 #include <aws/opsworks/model/RootDeviceType.h>
 #include <aws/opsworks/model/StackAttributesKeys.h>
+#include <utility>
 
 namespace Aws
 {
@@ -54,7 +55,7 @@ namespace Model
     /**
      * <p>The stack ID.</p>
      */
-    inline void SetStackId(Aws::String&& value) { m_stackIdHasBeenSet = true; m_stackId = value; }
+    inline void SetStackId(Aws::String&& value) { m_stackIdHasBeenSet = true; m_stackId = std::move(value); }
 
     /**
      * <p>The stack ID.</p>
@@ -69,7 +70,7 @@ namespace Model
     /**
      * <p>The stack ID.</p>
      */
-    inline UpdateStackRequest& WithStackId(Aws::String&& value) { SetStackId(value); return *this;}
+    inline UpdateStackRequest& WithStackId(Aws::String&& value) { SetStackId(std::move(value)); return *this;}
 
     /**
      * <p>The stack ID.</p>
@@ -89,7 +90,7 @@ namespace Model
     /**
      * <p>The stack's new name.</p>
      */
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p>The stack's new name.</p>
@@ -104,7 +105,7 @@ namespace Model
     /**
      * <p>The stack's new name.</p>
      */
-    inline UpdateStackRequest& WithName(Aws::String&& value) { SetName(value); return *this;}
+    inline UpdateStackRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>The stack's new name.</p>
@@ -127,7 +128,7 @@ namespace Model
      * <p>One or more user-defined key-value pairs to be added to the stack
      * attributes.</p>
      */
-    inline void SetAttributes(Aws::Map<StackAttributesKeys, Aws::String>&& value) { m_attributesHasBeenSet = true; m_attributes = value; }
+    inline void SetAttributes(Aws::Map<StackAttributesKeys, Aws::String>&& value) { m_attributesHasBeenSet = true; m_attributes = std::move(value); }
 
     /**
      * <p>One or more user-defined key-value pairs to be added to the stack
@@ -139,43 +140,43 @@ namespace Model
      * <p>One or more user-defined key-value pairs to be added to the stack
      * attributes.</p>
      */
-    inline UpdateStackRequest& WithAttributes(Aws::Map<StackAttributesKeys, Aws::String>&& value) { SetAttributes(value); return *this;}
+    inline UpdateStackRequest& WithAttributes(Aws::Map<StackAttributesKeys, Aws::String>&& value) { SetAttributes(std::move(value)); return *this;}
 
     /**
      * <p>One or more user-defined key-value pairs to be added to the stack
      * attributes.</p>
      */
-    inline UpdateStackRequest& AddAttributes(const StackAttributesKeys& key, const Aws::String& value) { m_attributesHasBeenSet = true; m_attributes[key] = value; return *this; }
+    inline UpdateStackRequest& AddAttributes(const StackAttributesKeys& key, const Aws::String& value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, value); return *this; }
 
     /**
      * <p>One or more user-defined key-value pairs to be added to the stack
      * attributes.</p>
      */
-    inline UpdateStackRequest& AddAttributes(StackAttributesKeys&& key, const Aws::String& value) { m_attributesHasBeenSet = true; m_attributes[key] = value; return *this; }
+    inline UpdateStackRequest& AddAttributes(StackAttributesKeys&& key, const Aws::String& value) { m_attributesHasBeenSet = true; m_attributes.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>One or more user-defined key-value pairs to be added to the stack
      * attributes.</p>
      */
-    inline UpdateStackRequest& AddAttributes(const StackAttributesKeys& key, Aws::String&& value) { m_attributesHasBeenSet = true; m_attributes[key] = value; return *this; }
+    inline UpdateStackRequest& AddAttributes(const StackAttributesKeys& key, Aws::String&& value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>One or more user-defined key-value pairs to be added to the stack
      * attributes.</p>
      */
-    inline UpdateStackRequest& AddAttributes(StackAttributesKeys&& key, Aws::String&& value) { m_attributesHasBeenSet = true; m_attributes[key] = value; return *this; }
+    inline UpdateStackRequest& AddAttributes(StackAttributesKeys&& key, Aws::String&& value) { m_attributesHasBeenSet = true; m_attributes.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
      * <p>One or more user-defined key-value pairs to be added to the stack
      * attributes.</p>
      */
-    inline UpdateStackRequest& AddAttributes(StackAttributesKeys&& key, const char* value) { m_attributesHasBeenSet = true; m_attributes[key] = value; return *this; }
+    inline UpdateStackRequest& AddAttributes(StackAttributesKeys&& key, const char* value) { m_attributesHasBeenSet = true; m_attributes.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>One or more user-defined key-value pairs to be added to the stack
      * attributes.</p>
      */
-    inline UpdateStackRequest& AddAttributes(const StackAttributesKeys& key, const char* value) { m_attributesHasBeenSet = true; m_attributes[key] = value; return *this; }
+    inline UpdateStackRequest& AddAttributes(const StackAttributesKeys& key, const char* value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, value); return *this; }
 
     /**
      * <p>Do not use this parameter. You cannot update a stack's service role.</p>
@@ -190,7 +191,7 @@ namespace Model
     /**
      * <p>Do not use this parameter. You cannot update a stack's service role.</p>
      */
-    inline void SetServiceRoleArn(Aws::String&& value) { m_serviceRoleArnHasBeenSet = true; m_serviceRoleArn = value; }
+    inline void SetServiceRoleArn(Aws::String&& value) { m_serviceRoleArnHasBeenSet = true; m_serviceRoleArn = std::move(value); }
 
     /**
      * <p>Do not use this parameter. You cannot update a stack's service role.</p>
@@ -205,7 +206,7 @@ namespace Model
     /**
      * <p>Do not use this parameter. You cannot update a stack's service role.</p>
      */
-    inline UpdateStackRequest& WithServiceRoleArn(Aws::String&& value) { SetServiceRoleArn(value); return *this;}
+    inline UpdateStackRequest& WithServiceRoleArn(Aws::String&& value) { SetServiceRoleArn(std::move(value)); return *this;}
 
     /**
      * <p>Do not use this parameter. You cannot update a stack's service role.</p>
@@ -234,7 +235,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
      * Identifiers</a>.</p>
      */
-    inline void SetDefaultInstanceProfileArn(Aws::String&& value) { m_defaultInstanceProfileArnHasBeenSet = true; m_defaultInstanceProfileArn = value; }
+    inline void SetDefaultInstanceProfileArn(Aws::String&& value) { m_defaultInstanceProfileArnHasBeenSet = true; m_defaultInstanceProfileArn = std::move(value); }
 
     /**
      * <p>The ARN of an IAM profile that is the default profile for all of the stack's
@@ -258,7 +259,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
      * Identifiers</a>.</p>
      */
-    inline UpdateStackRequest& WithDefaultInstanceProfileArn(Aws::String&& value) { SetDefaultInstanceProfileArn(value); return *this;}
+    inline UpdateStackRequest& WithDefaultInstanceProfileArn(Aws::String&& value) { SetDefaultInstanceProfileArn(std::move(value)); return *this;}
 
     /**
      * <p>The ARN of an IAM profile that is the default profile for all of the stack's
@@ -338,7 +339,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS
      * OpsWorks Operating Systems</a>.</p>
      */
-    inline void SetDefaultOs(Aws::String&& value) { m_defaultOsHasBeenSet = true; m_defaultOs = value; }
+    inline void SetDefaultOs(Aws::String&& value) { m_defaultOsHasBeenSet = true; m_defaultOs = std::move(value); }
 
     /**
      * <p>The stack's operating system, which must be set to one of the following:</p>
@@ -410,7 +411,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS
      * OpsWorks Operating Systems</a>.</p>
      */
-    inline UpdateStackRequest& WithDefaultOs(Aws::String&& value) { SetDefaultOs(value); return *this;}
+    inline UpdateStackRequest& WithDefaultOs(Aws::String&& value) { SetDefaultOs(std::move(value)); return *this;}
 
     /**
      * <p>The stack's operating system, which must be set to one of the following:</p>
@@ -488,7 +489,7 @@ namespace Model
      * <code>GetHostNameSuggestion</code>, which returns a host name based on the
      * current theme.</p>
      */
-    inline void SetHostnameTheme(Aws::String&& value) { m_hostnameThemeHasBeenSet = true; m_hostnameTheme = value; }
+    inline void SetHostnameTheme(Aws::String&& value) { m_hostnameThemeHasBeenSet = true; m_hostnameTheme = std::move(value); }
 
     /**
      * <p>The stack's new host name theme, with spaces replaced by underscores. The
@@ -542,7 +543,7 @@ namespace Model
      * <code>GetHostNameSuggestion</code>, which returns a host name based on the
      * current theme.</p>
      */
-    inline UpdateStackRequest& WithHostnameTheme(Aws::String&& value) { SetHostnameTheme(value); return *this;}
+    inline UpdateStackRequest& WithHostnameTheme(Aws::String&& value) { SetHostnameTheme(std::move(value)); return *this;}
 
     /**
      * <p>The stack's new host name theme, with spaces replaced by underscores. The
@@ -590,7 +591,7 @@ namespace Model
      * subnet must be in the same zone. For more information, see <a>CreateStack</a>.
      * </p>
      */
-    inline void SetDefaultAvailabilityZone(Aws::String&& value) { m_defaultAvailabilityZoneHasBeenSet = true; m_defaultAvailabilityZone = value; }
+    inline void SetDefaultAvailabilityZone(Aws::String&& value) { m_defaultAvailabilityZoneHasBeenSet = true; m_defaultAvailabilityZone = std::move(value); }
 
     /**
      * <p>The stack's default Availability Zone, which must be in the stack's region.
@@ -620,7 +621,7 @@ namespace Model
      * subnet must be in the same zone. For more information, see <a>CreateStack</a>.
      * </p>
      */
-    inline UpdateStackRequest& WithDefaultAvailabilityZone(Aws::String&& value) { SetDefaultAvailabilityZone(value); return *this;}
+    inline UpdateStackRequest& WithDefaultAvailabilityZone(Aws::String&& value) { SetDefaultAvailabilityZone(std::move(value)); return *this;}
 
     /**
      * <p>The stack's default Availability Zone, which must be in the stack's region.
@@ -660,7 +661,7 @@ namespace Model
      * be in that zone. For information on default values and when this parameter is
      * required, see the <code>VpcId</code> parameter description. </p>
      */
-    inline void SetDefaultSubnetId(Aws::String&& value) { m_defaultSubnetIdHasBeenSet = true; m_defaultSubnetId = value; }
+    inline void SetDefaultSubnetId(Aws::String&& value) { m_defaultSubnetIdHasBeenSet = true; m_defaultSubnetId = std::move(value); }
 
     /**
      * <p>The stack's default VPC subnet ID. This parameter is required if you specify
@@ -690,7 +691,7 @@ namespace Model
      * be in that zone. For information on default values and when this parameter is
      * required, see the <code>VpcId</code> parameter description. </p>
      */
-    inline UpdateStackRequest& WithDefaultSubnetId(Aws::String&& value) { SetDefaultSubnetId(value); return *this;}
+    inline UpdateStackRequest& WithDefaultSubnetId(Aws::String&& value) { SetDefaultSubnetId(std::move(value)); return *this;}
 
     /**
      * <p>The stack's default VPC subnet ID. This parameter is required if you specify
@@ -733,7 +734,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use
      * Custom JSON to Modify the Stack Configuration Attributes</a>.</p>
      */
-    inline void SetCustomJson(Aws::String&& value) { m_customJsonHasBeenSet = true; m_customJson = value; }
+    inline void SetCustomJson(Aws::String&& value) { m_customJsonHasBeenSet = true; m_customJson = std::move(value); }
 
     /**
      * <p>A string that contains user-defined, custom JSON. It can be used to override
@@ -766,7 +767,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use
      * Custom JSON to Modify the Stack Configuration Attributes</a>.</p>
      */
-    inline UpdateStackRequest& WithCustomJson(Aws::String&& value) { SetCustomJson(value); return *this;}
+    inline UpdateStackRequest& WithCustomJson(Aws::String&& value) { SetCustomJson(std::move(value)); return *this;}
 
     /**
      * <p>A string that contains user-defined, custom JSON. It can be used to override
@@ -801,7 +802,7 @@ namespace Model
      * Linux stacks, or 12.2 for Windows stacks. The default value for Linux stacks is
      * currently 11.4.</p>
      */
-    inline void SetConfigurationManager(StackConfigurationManager&& value) { m_configurationManagerHasBeenSet = true; m_configurationManager = value; }
+    inline void SetConfigurationManager(StackConfigurationManager&& value) { m_configurationManagerHasBeenSet = true; m_configurationManager = std::move(value); }
 
     /**
      * <p>The configuration manager. When you update a stack, we recommend that you use
@@ -817,7 +818,7 @@ namespace Model
      * Linux stacks, or 12.2 for Windows stacks. The default value for Linux stacks is
      * currently 11.4.</p>
      */
-    inline UpdateStackRequest& WithConfigurationManager(StackConfigurationManager&& value) { SetConfigurationManager(value); return *this;}
+    inline UpdateStackRequest& WithConfigurationManager(StackConfigurationManager&& value) { SetConfigurationManager(std::move(value)); return *this;}
 
     /**
      * <p>A <code>ChefConfiguration</code> object that specifies whether to enable
@@ -844,7 +845,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create
      * a New Stack</a>.</p>
      */
-    inline void SetChefConfiguration(ChefConfiguration&& value) { m_chefConfigurationHasBeenSet = true; m_chefConfiguration = value; }
+    inline void SetChefConfiguration(ChefConfiguration&& value) { m_chefConfigurationHasBeenSet = true; m_chefConfiguration = std::move(value); }
 
     /**
      * <p>A <code>ChefConfiguration</code> object that specifies whether to enable
@@ -862,7 +863,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create
      * a New Stack</a>.</p>
      */
-    inline UpdateStackRequest& WithChefConfiguration(ChefConfiguration&& value) { SetChefConfiguration(value); return *this;}
+    inline UpdateStackRequest& WithChefConfiguration(ChefConfiguration&& value) { SetChefConfiguration(std::move(value)); return *this;}
 
     /**
      * <p>Whether the stack uses custom cookbooks.</p>
@@ -886,13 +887,13 @@ namespace Model
     inline void SetCustomCookbooksSource(const Source& value) { m_customCookbooksSourceHasBeenSet = true; m_customCookbooksSource = value; }
 
     
-    inline void SetCustomCookbooksSource(Source&& value) { m_customCookbooksSourceHasBeenSet = true; m_customCookbooksSource = value; }
+    inline void SetCustomCookbooksSource(Source&& value) { m_customCookbooksSourceHasBeenSet = true; m_customCookbooksSource = std::move(value); }
 
     
     inline UpdateStackRequest& WithCustomCookbooksSource(const Source& value) { SetCustomCookbooksSource(value); return *this;}
 
     
-    inline UpdateStackRequest& WithCustomCookbooksSource(Source&& value) { SetCustomCookbooksSource(value); return *this;}
+    inline UpdateStackRequest& WithCustomCookbooksSource(Source&& value) { SetCustomCookbooksSource(std::move(value)); return *this;}
 
     /**
      * <p>A default Amazon EC2 key-pair name. The default value is <code>none</code>.
@@ -937,7 +938,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-add.html">
      * create an instance</a>. </p>
      */
-    inline void SetDefaultSshKeyName(Aws::String&& value) { m_defaultSshKeyNameHasBeenSet = true; m_defaultSshKeyName = value; }
+    inline void SetDefaultSshKeyName(Aws::String&& value) { m_defaultSshKeyNameHasBeenSet = true; m_defaultSshKeyName = std::move(value); }
 
     /**
      * <p>A default Amazon EC2 key-pair name. The default value is <code>none</code>.
@@ -982,7 +983,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-add.html">
      * create an instance</a>. </p>
      */
-    inline UpdateStackRequest& WithDefaultSshKeyName(Aws::String&& value) { SetDefaultSshKeyName(value); return *this;}
+    inline UpdateStackRequest& WithDefaultSshKeyName(Aws::String&& value) { SetDefaultSshKeyName(std::move(value)); return *this;}
 
     /**
      * <p>A default Amazon EC2 key-pair name. The default value is <code>none</code>.
@@ -1024,7 +1025,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage
      * for the Root Device</a>.</p>
      */
-    inline void SetDefaultRootDeviceType(RootDeviceType&& value) { m_defaultRootDeviceTypeHasBeenSet = true; m_defaultRootDeviceType = value; }
+    inline void SetDefaultRootDeviceType(RootDeviceType&& value) { m_defaultRootDeviceTypeHasBeenSet = true; m_defaultRootDeviceType = std::move(value); }
 
     /**
      * <p>The default root device type. This value is used by default for all instances
@@ -1042,7 +1043,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage
      * for the Root Device</a>.</p>
      */
-    inline UpdateStackRequest& WithDefaultRootDeviceType(RootDeviceType&& value) { SetDefaultRootDeviceType(value); return *this;}
+    inline UpdateStackRequest& WithDefaultRootDeviceType(RootDeviceType&& value) { SetDefaultRootDeviceType(std::move(value)); return *this;}
 
     /**
      * <p>Whether to associate the AWS OpsWorks built-in security groups with the
@@ -1153,7 +1154,7 @@ namespace Model
      * <note> <p>You can also specify an agent version when you create or update an
      * instance, which overrides the stack's default setting.</p> </note>
      */
-    inline void SetAgentVersion(Aws::String&& value) { m_agentVersionHasBeenSet = true; m_agentVersion = value; }
+    inline void SetAgentVersion(Aws::String&& value) { m_agentVersionHasBeenSet = true; m_agentVersion = std::move(value); }
 
     /**
      * <p>The default AWS OpsWorks agent version. You have the following options:</p>
@@ -1201,7 +1202,7 @@ namespace Model
      * <note> <p>You can also specify an agent version when you create or update an
      * instance, which overrides the stack's default setting.</p> </note>
      */
-    inline UpdateStackRequest& WithAgentVersion(Aws::String&& value) { SetAgentVersion(value); return *this;}
+    inline UpdateStackRequest& WithAgentVersion(Aws::String&& value) { SetAgentVersion(std::move(value)); return *this;}
 
     /**
      * <p>The default AWS OpsWorks agent version. You have the following options:</p>

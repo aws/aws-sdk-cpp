@@ -16,6 +16,7 @@
 #include <aws/redshift/Redshift_EXPORTS.h>
 #include <aws/redshift/RedshiftRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -65,7 +66,7 @@ namespace Model
      * be a letter.</p> </li> <li> <p>Cannot end with a hyphen or contain two
      * consecutive hyphens.</p> </li> </ul>
      */
-    inline void SetClusterIdentifier(Aws::String&& value) { m_clusterIdentifierHasBeenSet = true; m_clusterIdentifier = value; }
+    inline void SetClusterIdentifier(Aws::String&& value) { m_clusterIdentifierHasBeenSet = true; m_clusterIdentifier = std::move(value); }
 
     /**
      * <p>The identifier of the cluster to be deleted.</p> <p>Constraints:</p> <ul>
@@ -92,7 +93,7 @@ namespace Model
      * be a letter.</p> </li> <li> <p>Cannot end with a hyphen or contain two
      * consecutive hyphens.</p> </li> </ul>
      */
-    inline DeleteClusterRequest& WithClusterIdentifier(Aws::String&& value) { SetClusterIdentifier(value); return *this;}
+    inline DeleteClusterRequest& WithClusterIdentifier(Aws::String&& value) { SetClusterIdentifier(std::move(value)); return *this;}
 
     /**
      * <p>The identifier of the cluster to be deleted.</p> <p>Constraints:</p> <ul>
@@ -161,7 +162,7 @@ namespace Model
      * </li> <li> <p>First character must be a letter.</p> </li> <li> <p>Cannot end
      * with a hyphen or contain two consecutive hyphens.</p> </li> </ul>
      */
-    inline void SetFinalClusterSnapshotIdentifier(Aws::String&& value) { m_finalClusterSnapshotIdentifierHasBeenSet = true; m_finalClusterSnapshotIdentifier = value; }
+    inline void SetFinalClusterSnapshotIdentifier(Aws::String&& value) { m_finalClusterSnapshotIdentifierHasBeenSet = true; m_finalClusterSnapshotIdentifier = std::move(value); }
 
     /**
      * <p>The identifier of the final snapshot that is to be created immediately before
@@ -191,7 +192,7 @@ namespace Model
      * </li> <li> <p>First character must be a letter.</p> </li> <li> <p>Cannot end
      * with a hyphen or contain two consecutive hyphens.</p> </li> </ul>
      */
-    inline DeleteClusterRequest& WithFinalClusterSnapshotIdentifier(Aws::String&& value) { SetFinalClusterSnapshotIdentifier(value); return *this;}
+    inline DeleteClusterRequest& WithFinalClusterSnapshotIdentifier(Aws::String&& value) { SetFinalClusterSnapshotIdentifier(std::move(value)); return *this;}
 
     /**
      * <p>The identifier of the final snapshot that is to be created immediately before

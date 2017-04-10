@@ -16,6 +16,7 @@
 #include <aws/dynamodb/DynamoDB_EXPORTS.h>
 #include <aws/dynamodb/model/AttributeValue.h>
 #include <aws/dynamodb/model/AttributeAction.h>
+#include <utility>
 
 namespace Aws
 {
@@ -77,7 +78,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.NamingRulesDataTypes.html#HowItWorks.DataTypes">Data
      * TYpes</a> in the <i>Amazon DynamoDB Developer Guide</i>. </p>
      */
-    inline void SetValue(AttributeValue&& value) { m_valueHasBeenSet = true; m_value = value; }
+    inline void SetValue(AttributeValue&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
 
     /**
      * <p>Represents the data for an attribute.</p> <p>Each attribute value is
@@ -95,7 +96,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.NamingRulesDataTypes.html#HowItWorks.DataTypes">Data
      * TYpes</a> in the <i>Amazon DynamoDB Developer Guide</i>. </p>
      */
-    inline AttributeValueUpdate& WithValue(AttributeValue&& value) { SetValue(value); return *this;}
+    inline AttributeValueUpdate& WithValue(AttributeValue&& value) { SetValue(std::move(value)); return *this;}
 
     /**
      * <p>Specifies how to perform the update. Valid values are <code>PUT</code>
@@ -257,7 +258,7 @@ namespace Model
      * numbers) for the attribute value. The only data types allowed are number and
      * number set; no other data types can be specified.</p> </li> </ul>
      */
-    inline void SetAction(AttributeAction&& value) { m_actionHasBeenSet = true; m_action = value; }
+    inline void SetAction(AttributeAction&& value) { m_actionHasBeenSet = true; m_action = std::move(value); }
 
     /**
      * <p>Specifies how to perform the update. Valid values are <code>PUT</code>
@@ -365,7 +366,7 @@ namespace Model
      * numbers) for the attribute value. The only data types allowed are number and
      * number set; no other data types can be specified.</p> </li> </ul>
      */
-    inline AttributeValueUpdate& WithAction(AttributeAction&& value) { SetAction(value); return *this;}
+    inline AttributeValueUpdate& WithAction(AttributeAction&& value) { SetAction(std::move(value)); return *this;}
 
   private:
     AttributeValue m_value;

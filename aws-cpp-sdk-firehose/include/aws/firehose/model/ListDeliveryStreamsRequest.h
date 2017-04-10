@@ -16,6 +16,7 @@
 #include <aws/firehose/Firehose_EXPORTS.h>
 #include <aws/firehose/FirehoseRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -63,7 +64,7 @@ namespace Model
     /**
      * <p>The name of the delivery stream to start the list with.</p>
      */
-    inline void SetExclusiveStartDeliveryStreamName(Aws::String&& value) { m_exclusiveStartDeliveryStreamNameHasBeenSet = true; m_exclusiveStartDeliveryStreamName = value; }
+    inline void SetExclusiveStartDeliveryStreamName(Aws::String&& value) { m_exclusiveStartDeliveryStreamNameHasBeenSet = true; m_exclusiveStartDeliveryStreamName = std::move(value); }
 
     /**
      * <p>The name of the delivery stream to start the list with.</p>
@@ -78,7 +79,7 @@ namespace Model
     /**
      * <p>The name of the delivery stream to start the list with.</p>
      */
-    inline ListDeliveryStreamsRequest& WithExclusiveStartDeliveryStreamName(Aws::String&& value) { SetExclusiveStartDeliveryStreamName(value); return *this;}
+    inline ListDeliveryStreamsRequest& WithExclusiveStartDeliveryStreamName(Aws::String&& value) { SetExclusiveStartDeliveryStreamName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the delivery stream to start the list with.</p>

@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/s3/S3_EXPORTS.h>
 #include <aws/s3/model/StorageClassAnalysisDataExport.h>
+#include <utility>
 
 namespace Aws
 {
@@ -55,7 +56,7 @@ namespace Model
      * A container used to describe how data related to the storage class analysis
      * should be exported.
      */
-    inline void SetDataExport(StorageClassAnalysisDataExport&& value) { m_dataExportHasBeenSet = true; m_dataExport = value; }
+    inline void SetDataExport(StorageClassAnalysisDataExport&& value) { m_dataExportHasBeenSet = true; m_dataExport = std::move(value); }
 
     /**
      * A container used to describe how data related to the storage class analysis
@@ -67,7 +68,7 @@ namespace Model
      * A container used to describe how data related to the storage class analysis
      * should be exported.
      */
-    inline StorageClassAnalysis& WithDataExport(StorageClassAnalysisDataExport&& value) { SetDataExport(value); return *this;}
+    inline StorageClassAnalysis& WithDataExport(StorageClassAnalysisDataExport&& value) { SetDataExport(std::move(value)); return *this;}
 
   private:
     StorageClassAnalysisDataExport m_dataExport;

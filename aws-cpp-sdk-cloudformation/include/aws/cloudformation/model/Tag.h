@@ -16,6 +16,7 @@
 #include <aws/cloudformation/CloudFormation_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -67,7 +68,7 @@ namespace Model
      * maximum of 128 characters for a tag key. Tags owned by Amazon Web Services (AWS)
      * have the reserved prefix: <code>aws:</code>.</p>
      */
-    inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = value; }
+    inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
 
     /**
      * <p> <i>Required</i>. A string used to identify this tag. You can specify a
@@ -88,7 +89,7 @@ namespace Model
      * maximum of 128 characters for a tag key. Tags owned by Amazon Web Services (AWS)
      * have the reserved prefix: <code>aws:</code>.</p>
      */
-    inline Tag& WithKey(Aws::String&& value) { SetKey(value); return *this;}
+    inline Tag& WithKey(Aws::String&& value) { SetKey(std::move(value)); return *this;}
 
     /**
      * <p> <i>Required</i>. A string used to identify this tag. You can specify a
@@ -113,7 +114,7 @@ namespace Model
      * <p> <i>Required</i>. A string containing the value for this tag. You can specify
      * a maximum of 256 characters for a tag value.</p>
      */
-    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = value; }
+    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
 
     /**
      * <p> <i>Required</i>. A string containing the value for this tag. You can specify
@@ -131,7 +132,7 @@ namespace Model
      * <p> <i>Required</i>. A string containing the value for this tag. You can specify
      * a maximum of 256 characters for a tag value.</p>
      */
-    inline Tag& WithValue(Aws::String&& value) { SetValue(value); return *this;}
+    inline Tag& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
 
     /**
      * <p> <i>Required</i>. A string containing the value for this tag. You can specify

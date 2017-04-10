@@ -16,6 +16,7 @@
 #include <aws/apigateway/APIGateway_EXPORTS.h>
 #include <aws/apigateway/APIGatewayRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -58,7 +59,7 @@ namespace Model
      * <p>[Required] The identifier of an API of the to-be-retrieved documentation
      * versions.</p>
      */
-    inline void SetRestApiId(Aws::String&& value) { m_restApiIdHasBeenSet = true; m_restApiId = value; }
+    inline void SetRestApiId(Aws::String&& value) { m_restApiIdHasBeenSet = true; m_restApiId = std::move(value); }
 
     /**
      * <p>[Required] The identifier of an API of the to-be-retrieved documentation
@@ -76,7 +77,7 @@ namespace Model
      * <p>[Required] The identifier of an API of the to-be-retrieved documentation
      * versions.</p>
      */
-    inline GetDocumentationVersionsRequest& WithRestApiId(Aws::String&& value) { SetRestApiId(value); return *this;}
+    inline GetDocumentationVersionsRequest& WithRestApiId(Aws::String&& value) { SetRestApiId(std::move(value)); return *this;}
 
     /**
      * <p>[Required] The identifier of an API of the to-be-retrieved documentation
@@ -100,7 +101,7 @@ namespace Model
      * <p>The position of the returned <code>DocumentationVersion</code> in the
      * <a>DocumentationVersions</a> collection.</p>
      */
-    inline void SetPosition(Aws::String&& value) { m_positionHasBeenSet = true; m_position = value; }
+    inline void SetPosition(Aws::String&& value) { m_positionHasBeenSet = true; m_position = std::move(value); }
 
     /**
      * <p>The position of the returned <code>DocumentationVersion</code> in the
@@ -118,7 +119,7 @@ namespace Model
      * <p>The position of the returned <code>DocumentationVersion</code> in the
      * <a>DocumentationVersions</a> collection.</p>
      */
-    inline GetDocumentationVersionsRequest& WithPosition(Aws::String&& value) { SetPosition(value); return *this;}
+    inline GetDocumentationVersionsRequest& WithPosition(Aws::String&& value) { SetPosition(std::move(value)); return *this;}
 
     /**
      * <p>The position of the returned <code>DocumentationVersion</code> in the

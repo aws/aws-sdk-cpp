@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/logs/model/OutputLogEvent.h>
+#include <utility>
 
 namespace Aws
 {
@@ -54,7 +55,7 @@ namespace Model
     /**
      * <p>The events.</p>
      */
-    inline void SetEvents(Aws::Vector<OutputLogEvent>&& value) { m_events = value; }
+    inline void SetEvents(Aws::Vector<OutputLogEvent>&& value) { m_events = std::move(value); }
 
     /**
      * <p>The events.</p>
@@ -64,7 +65,7 @@ namespace Model
     /**
      * <p>The events.</p>
      */
-    inline GetLogEventsResult& WithEvents(Aws::Vector<OutputLogEvent>&& value) { SetEvents(value); return *this;}
+    inline GetLogEventsResult& WithEvents(Aws::Vector<OutputLogEvent>&& value) { SetEvents(std::move(value)); return *this;}
 
     /**
      * <p>The events.</p>
@@ -74,7 +75,7 @@ namespace Model
     /**
      * <p>The events.</p>
      */
-    inline GetLogEventsResult& AddEvents(OutputLogEvent&& value) { m_events.push_back(value); return *this; }
+    inline GetLogEventsResult& AddEvents(OutputLogEvent&& value) { m_events.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The token for the next set of items in the forward direction. The token
@@ -92,7 +93,7 @@ namespace Model
      * <p>The token for the next set of items in the forward direction. The token
      * expires after 24 hours.</p>
      */
-    inline void SetNextForwardToken(Aws::String&& value) { m_nextForwardToken = value; }
+    inline void SetNextForwardToken(Aws::String&& value) { m_nextForwardToken = std::move(value); }
 
     /**
      * <p>The token for the next set of items in the forward direction. The token
@@ -110,7 +111,7 @@ namespace Model
      * <p>The token for the next set of items in the forward direction. The token
      * expires after 24 hours.</p>
      */
-    inline GetLogEventsResult& WithNextForwardToken(Aws::String&& value) { SetNextForwardToken(value); return *this;}
+    inline GetLogEventsResult& WithNextForwardToken(Aws::String&& value) { SetNextForwardToken(std::move(value)); return *this;}
 
     /**
      * <p>The token for the next set of items in the forward direction. The token
@@ -134,7 +135,7 @@ namespace Model
      * <p>The token for the next set of items in the backward direction. The token
      * expires after 24 hours.</p>
      */
-    inline void SetNextBackwardToken(Aws::String&& value) { m_nextBackwardToken = value; }
+    inline void SetNextBackwardToken(Aws::String&& value) { m_nextBackwardToken = std::move(value); }
 
     /**
      * <p>The token for the next set of items in the backward direction. The token
@@ -152,7 +153,7 @@ namespace Model
      * <p>The token for the next set of items in the backward direction. The token
      * expires after 24 hours.</p>
      */
-    inline GetLogEventsResult& WithNextBackwardToken(Aws::String&& value) { SetNextBackwardToken(value); return *this;}
+    inline GetLogEventsResult& WithNextBackwardToken(Aws::String&& value) { SetNextBackwardToken(std::move(value)); return *this;}
 
     /**
      * <p>The token for the next set of items in the backward direction. The token

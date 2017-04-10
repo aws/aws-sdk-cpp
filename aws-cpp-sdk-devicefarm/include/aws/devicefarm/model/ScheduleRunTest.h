@@ -17,6 +17,7 @@
 #include <aws/devicefarm/model/TestType.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <utility>
 
 namespace Aws
 {
@@ -97,7 +98,7 @@ namespace Model
      * </li> <li> <p>XCTEST: The XCode test type.</p> </li> <li> <p>XCTEST_UI: The
      * XCode UI test type.</p> </li> </ul>
      */
-    inline void SetType(TestType&& value) { m_typeHasBeenSet = true; m_type = value; }
+    inline void SetType(TestType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
      * <p>The test's type.</p> <p>Must be one of the following values:</p> <ul> <li>
@@ -133,7 +134,7 @@ namespace Model
      * </li> <li> <p>XCTEST: The XCode test type.</p> </li> <li> <p>XCTEST_UI: The
      * XCode UI test type.</p> </li> </ul>
      */
-    inline ScheduleRunTest& WithType(TestType&& value) { SetType(value); return *this;}
+    inline ScheduleRunTest& WithType(TestType&& value) { SetType(std::move(value)); return *this;}
 
     /**
      * <p>The ARN of the uploaded test that will be run.</p>
@@ -148,7 +149,7 @@ namespace Model
     /**
      * <p>The ARN of the uploaded test that will be run.</p>
      */
-    inline void SetTestPackageArn(Aws::String&& value) { m_testPackageArnHasBeenSet = true; m_testPackageArn = value; }
+    inline void SetTestPackageArn(Aws::String&& value) { m_testPackageArnHasBeenSet = true; m_testPackageArn = std::move(value); }
 
     /**
      * <p>The ARN of the uploaded test that will be run.</p>
@@ -163,7 +164,7 @@ namespace Model
     /**
      * <p>The ARN of the uploaded test that will be run.</p>
      */
-    inline ScheduleRunTest& WithTestPackageArn(Aws::String&& value) { SetTestPackageArn(value); return *this;}
+    inline ScheduleRunTest& WithTestPackageArn(Aws::String&& value) { SetTestPackageArn(std::move(value)); return *this;}
 
     /**
      * <p>The ARN of the uploaded test that will be run.</p>
@@ -183,7 +184,7 @@ namespace Model
     /**
      * <p>The test's filter.</p>
      */
-    inline void SetFilter(Aws::String&& value) { m_filterHasBeenSet = true; m_filter = value; }
+    inline void SetFilter(Aws::String&& value) { m_filterHasBeenSet = true; m_filter = std::move(value); }
 
     /**
      * <p>The test's filter.</p>
@@ -198,7 +199,7 @@ namespace Model
     /**
      * <p>The test's filter.</p>
      */
-    inline ScheduleRunTest& WithFilter(Aws::String&& value) { SetFilter(value); return *this;}
+    inline ScheduleRunTest& WithFilter(Aws::String&& value) { SetFilter(std::move(value)); return *this;}
 
     /**
      * <p>The test's filter.</p>
@@ -221,7 +222,7 @@ namespace Model
      * <p>The test's parameters, such as test framework parameters and fixture
      * settings.</p>
      */
-    inline void SetParameters(Aws::Map<Aws::String, Aws::String>&& value) { m_parametersHasBeenSet = true; m_parameters = value; }
+    inline void SetParameters(Aws::Map<Aws::String, Aws::String>&& value) { m_parametersHasBeenSet = true; m_parameters = std::move(value); }
 
     /**
      * <p>The test's parameters, such as test framework parameters and fixture
@@ -233,49 +234,49 @@ namespace Model
      * <p>The test's parameters, such as test framework parameters and fixture
      * settings.</p>
      */
-    inline ScheduleRunTest& WithParameters(Aws::Map<Aws::String, Aws::String>&& value) { SetParameters(value); return *this;}
+    inline ScheduleRunTest& WithParameters(Aws::Map<Aws::String, Aws::String>&& value) { SetParameters(std::move(value)); return *this;}
 
     /**
      * <p>The test's parameters, such as test framework parameters and fixture
      * settings.</p>
      */
-    inline ScheduleRunTest& AddParameters(const Aws::String& key, const Aws::String& value) { m_parametersHasBeenSet = true; m_parameters[key] = value; return *this; }
+    inline ScheduleRunTest& AddParameters(const Aws::String& key, const Aws::String& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, value); return *this; }
 
     /**
      * <p>The test's parameters, such as test framework parameters and fixture
      * settings.</p>
      */
-    inline ScheduleRunTest& AddParameters(Aws::String&& key, const Aws::String& value) { m_parametersHasBeenSet = true; m_parameters[key] = value; return *this; }
+    inline ScheduleRunTest& AddParameters(Aws::String&& key, const Aws::String& value) { m_parametersHasBeenSet = true; m_parameters.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>The test's parameters, such as test framework parameters and fixture
      * settings.</p>
      */
-    inline ScheduleRunTest& AddParameters(const Aws::String& key, Aws::String&& value) { m_parametersHasBeenSet = true; m_parameters[key] = value; return *this; }
+    inline ScheduleRunTest& AddParameters(const Aws::String& key, Aws::String&& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>The test's parameters, such as test framework parameters and fixture
      * settings.</p>
      */
-    inline ScheduleRunTest& AddParameters(Aws::String&& key, Aws::String&& value) { m_parametersHasBeenSet = true; m_parameters[key] = value; return *this; }
+    inline ScheduleRunTest& AddParameters(Aws::String&& key, Aws::String&& value) { m_parametersHasBeenSet = true; m_parameters.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
      * <p>The test's parameters, such as test framework parameters and fixture
      * settings.</p>
      */
-    inline ScheduleRunTest& AddParameters(const char* key, Aws::String&& value) { m_parametersHasBeenSet = true; m_parameters[key] = value; return *this; }
+    inline ScheduleRunTest& AddParameters(const char* key, Aws::String&& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>The test's parameters, such as test framework parameters and fixture
      * settings.</p>
      */
-    inline ScheduleRunTest& AddParameters(Aws::String&& key, const char* value) { m_parametersHasBeenSet = true; m_parameters[key] = value; return *this; }
+    inline ScheduleRunTest& AddParameters(Aws::String&& key, const char* value) { m_parametersHasBeenSet = true; m_parameters.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>The test's parameters, such as test framework parameters and fixture
      * settings.</p>
      */
-    inline ScheduleRunTest& AddParameters(const char* key, const char* value) { m_parametersHasBeenSet = true; m_parameters[key] = value; return *this; }
+    inline ScheduleRunTest& AddParameters(const char* key, const char* value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, value); return *this; }
 
   private:
     TestType m_type;

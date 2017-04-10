@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/codedeploy/CodeDeploy_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -56,7 +57,7 @@ namespace Model
     /**
      * <p>The Auto Scaling group name.</p>
      */
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p>The Auto Scaling group name.</p>
@@ -71,7 +72,7 @@ namespace Model
     /**
      * <p>The Auto Scaling group name.</p>
      */
-    inline AutoScalingGroup& WithName(Aws::String&& value) { SetName(value); return *this;}
+    inline AutoScalingGroup& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>The Auto Scaling group name.</p>
@@ -91,7 +92,7 @@ namespace Model
     /**
      * <p>An Auto Scaling lifecycle event hook name.</p>
      */
-    inline void SetHook(Aws::String&& value) { m_hookHasBeenSet = true; m_hook = value; }
+    inline void SetHook(Aws::String&& value) { m_hookHasBeenSet = true; m_hook = std::move(value); }
 
     /**
      * <p>An Auto Scaling lifecycle event hook name.</p>
@@ -106,7 +107,7 @@ namespace Model
     /**
      * <p>An Auto Scaling lifecycle event hook name.</p>
      */
-    inline AutoScalingGroup& WithHook(Aws::String&& value) { SetHook(value); return *this;}
+    inline AutoScalingGroup& WithHook(Aws::String&& value) { SetHook(std::move(value)); return *this;}
 
     /**
      * <p>An Auto Scaling lifecycle event hook name.</p>

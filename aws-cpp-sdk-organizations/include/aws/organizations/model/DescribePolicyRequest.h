@@ -16,6 +16,7 @@
 #include <aws/organizations/Organizations_EXPORTS.h>
 #include <aws/organizations/OrganizationsRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -60,7 +61,7 @@ namespace Model
      * pattern</a> for a policy ID string requires "p-" followed by from 8 to 128
      * lower-case letters or digits.</p>
      */
-    inline void SetPolicyId(Aws::String&& value) { m_policyIdHasBeenSet = true; m_policyId = value; }
+    inline void SetPolicyId(Aws::String&& value) { m_policyIdHasBeenSet = true; m_policyId = std::move(value); }
 
     /**
      * <p>The unique identifier (ID) of the policy that you want details about. You can
@@ -87,7 +88,7 @@ namespace Model
      * pattern</a> for a policy ID string requires "p-" followed by from 8 to 128
      * lower-case letters or digits.</p>
      */
-    inline DescribePolicyRequest& WithPolicyId(Aws::String&& value) { SetPolicyId(value); return *this;}
+    inline DescribePolicyRequest& WithPolicyId(Aws::String&& value) { SetPolicyId(std::move(value)); return *this;}
 
     /**
      * <p>The unique identifier (ID) of the policy that you want details about. You can

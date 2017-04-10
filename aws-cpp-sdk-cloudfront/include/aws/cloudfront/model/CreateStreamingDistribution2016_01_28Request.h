@@ -16,6 +16,7 @@
 #include <aws/cloudfront/CloudFront_EXPORTS.h>
 #include <aws/cloudfront/CloudFrontRequest.h>
 #include <aws/cloudfront/model/StreamingDistributionConfig.h>
+#include <utility>
 
 namespace Aws
 {
@@ -49,7 +50,7 @@ namespace Model
     /**
      * The streaming distribution's configuration information.
      */
-    inline void SetStreamingDistributionConfig(StreamingDistributionConfig&& value) { m_streamingDistributionConfigHasBeenSet = true; m_streamingDistributionConfig = value; }
+    inline void SetStreamingDistributionConfig(StreamingDistributionConfig&& value) { m_streamingDistributionConfigHasBeenSet = true; m_streamingDistributionConfig = std::move(value); }
 
     /**
      * The streaming distribution's configuration information.
@@ -59,7 +60,7 @@ namespace Model
     /**
      * The streaming distribution's configuration information.
      */
-    inline CreateStreamingDistribution2016_01_28Request& WithStreamingDistributionConfig(StreamingDistributionConfig&& value) { SetStreamingDistributionConfig(value); return *this;}
+    inline CreateStreamingDistribution2016_01_28Request& WithStreamingDistributionConfig(StreamingDistributionConfig&& value) { SetStreamingDistributionConfig(std::move(value)); return *this;}
 
   private:
     StreamingDistributionConfig m_streamingDistributionConfig;

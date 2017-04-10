@@ -17,6 +17,7 @@
 #include <aws/gamelift/GameLiftRequest.h>
 #include <aws/gamelift/model/RoutingStrategyType.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -73,7 +74,7 @@ namespace Model
      * A terminal alias throws a TerminalRoutingStrategyException with the
      * <a>RoutingStrategy</a> message embedded.</p> </li> </ul>
      */
-    inline void SetRoutingStrategyType(RoutingStrategyType&& value) { m_routingStrategyTypeHasBeenSet = true; m_routingStrategyType = value; }
+    inline void SetRoutingStrategyType(RoutingStrategyType&& value) { m_routingStrategyTypeHasBeenSet = true; m_routingStrategyType = std::move(value); }
 
     /**
      * <p>Type of routing to filter results on. Use this parameter to retrieve only
@@ -97,7 +98,7 @@ namespace Model
      * A terminal alias throws a TerminalRoutingStrategyException with the
      * <a>RoutingStrategy</a> message embedded.</p> </li> </ul>
      */
-    inline ListAliasesRequest& WithRoutingStrategyType(RoutingStrategyType&& value) { SetRoutingStrategyType(value); return *this;}
+    inline ListAliasesRequest& WithRoutingStrategyType(RoutingStrategyType&& value) { SetRoutingStrategyType(std::move(value)); return *this;}
 
     /**
      * <p>Descriptive label that is associated with an alias. Alias names do not need
@@ -115,7 +116,7 @@ namespace Model
      * <p>Descriptive label that is associated with an alias. Alias names do not need
      * to be unique.</p>
      */
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p>Descriptive label that is associated with an alias. Alias names do not need
@@ -133,7 +134,7 @@ namespace Model
      * <p>Descriptive label that is associated with an alias. Alias names do not need
      * to be unique.</p>
      */
-    inline ListAliasesRequest& WithName(Aws::String&& value) { SetName(value); return *this;}
+    inline ListAliasesRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>Descriptive label that is associated with an alias. Alias names do not need
@@ -178,7 +179,7 @@ namespace Model
      * the token that is returned with a previous call to this action. To specify the
      * start of the result set, do not specify a value.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
      * <p>Token that indicates the start of the next sequential page of results. Use
@@ -199,7 +200,7 @@ namespace Model
      * the token that is returned with a previous call to this action. To specify the
      * start of the result set, do not specify a value.</p>
      */
-    inline ListAliasesRequest& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline ListAliasesRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>Token that indicates the start of the next sequential page of results. Use

@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/elasticloadbalancing/model/Listener.h>
+#include <utility>
 
 namespace Aws
 {
@@ -56,7 +57,7 @@ namespace Model
     /**
      * <p>The name of the load balancer.</p>
      */
-    inline void SetLoadBalancerName(Aws::String&& value) { m_loadBalancerNameHasBeenSet = true; m_loadBalancerName = value; }
+    inline void SetLoadBalancerName(Aws::String&& value) { m_loadBalancerNameHasBeenSet = true; m_loadBalancerName = std::move(value); }
 
     /**
      * <p>The name of the load balancer.</p>
@@ -71,7 +72,7 @@ namespace Model
     /**
      * <p>The name of the load balancer.</p>
      */
-    inline CreateLoadBalancerListenersRequest& WithLoadBalancerName(Aws::String&& value) { SetLoadBalancerName(value); return *this;}
+    inline CreateLoadBalancerListenersRequest& WithLoadBalancerName(Aws::String&& value) { SetLoadBalancerName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the load balancer.</p>
@@ -91,7 +92,7 @@ namespace Model
     /**
      * <p>The listeners.</p>
      */
-    inline void SetListeners(Aws::Vector<Listener>&& value) { m_listenersHasBeenSet = true; m_listeners = value; }
+    inline void SetListeners(Aws::Vector<Listener>&& value) { m_listenersHasBeenSet = true; m_listeners = std::move(value); }
 
     /**
      * <p>The listeners.</p>
@@ -101,7 +102,7 @@ namespace Model
     /**
      * <p>The listeners.</p>
      */
-    inline CreateLoadBalancerListenersRequest& WithListeners(Aws::Vector<Listener>&& value) { SetListeners(value); return *this;}
+    inline CreateLoadBalancerListenersRequest& WithListeners(Aws::Vector<Listener>&& value) { SetListeners(std::move(value)); return *this;}
 
     /**
      * <p>The listeners.</p>
@@ -111,7 +112,7 @@ namespace Model
     /**
      * <p>The listeners.</p>
      */
-    inline CreateLoadBalancerListenersRequest& AddListeners(Listener&& value) { m_listenersHasBeenSet = true; m_listeners.push_back(value); return *this; }
+    inline CreateLoadBalancerListenersRequest& AddListeners(Listener&& value) { m_listenersHasBeenSet = true; m_listeners.push_back(std::move(value)); return *this; }
 
   private:
     Aws::String m_loadBalancerName;

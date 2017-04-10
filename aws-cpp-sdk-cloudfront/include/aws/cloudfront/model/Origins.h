@@ -16,6 +16,7 @@
 #include <aws/cloudfront/CloudFront_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/cloudfront/model/Origin.h>
+#include <utility>
 
 namespace Aws
 {
@@ -74,7 +75,7 @@ namespace Model
     /**
      * A complex type that contains origins for this distribution.
      */
-    inline void SetItems(Aws::Vector<Origin>&& value) { m_itemsHasBeenSet = true; m_items = value; }
+    inline void SetItems(Aws::Vector<Origin>&& value) { m_itemsHasBeenSet = true; m_items = std::move(value); }
 
     /**
      * A complex type that contains origins for this distribution.
@@ -84,7 +85,7 @@ namespace Model
     /**
      * A complex type that contains origins for this distribution.
      */
-    inline Origins& WithItems(Aws::Vector<Origin>&& value) { SetItems(value); return *this;}
+    inline Origins& WithItems(Aws::Vector<Origin>&& value) { SetItems(std::move(value)); return *this;}
 
     /**
      * A complex type that contains origins for this distribution.
@@ -94,7 +95,7 @@ namespace Model
     /**
      * A complex type that contains origins for this distribution.
      */
-    inline Origins& AddItems(Origin&& value) { m_itemsHasBeenSet = true; m_items.push_back(value); return *this; }
+    inline Origins& AddItems(Origin&& value) { m_itemsHasBeenSet = true; m_items.push_back(std::move(value)); return *this; }
 
   private:
     int m_quantity;

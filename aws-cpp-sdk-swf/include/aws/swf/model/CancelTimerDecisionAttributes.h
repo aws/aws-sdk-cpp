@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/swf/SWF_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -68,7 +69,7 @@ namespace Model
     /**
      * <p><b>Required.</b> The unique ID of the timer to cancel.</p>
      */
-    inline void SetTimerId(Aws::String&& value) { m_timerIdHasBeenSet = true; m_timerId = value; }
+    inline void SetTimerId(Aws::String&& value) { m_timerIdHasBeenSet = true; m_timerId = std::move(value); }
 
     /**
      * <p><b>Required.</b> The unique ID of the timer to cancel.</p>
@@ -83,7 +84,7 @@ namespace Model
     /**
      * <p><b>Required.</b> The unique ID of the timer to cancel.</p>
      */
-    inline CancelTimerDecisionAttributes& WithTimerId(Aws::String&& value) { SetTimerId(value); return *this;}
+    inline CancelTimerDecisionAttributes& WithTimerId(Aws::String&& value) { SetTimerId(std::move(value)); return *this;}
 
     /**
      * <p><b>Required.</b> The unique ID of the timer to cancel.</p>

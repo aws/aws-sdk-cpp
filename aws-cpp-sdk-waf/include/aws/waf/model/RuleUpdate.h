@@ -16,6 +16,7 @@
 #include <aws/waf/WAF_EXPORTS.h>
 #include <aws/waf/model/ChangeAction.h>
 #include <aws/waf/model/Predicate.h>
+#include <utility>
 
 namespace Aws
 {
@@ -65,7 +66,7 @@ namespace Model
      * <code>Rule</code>. Use <code>DELETE</code> to remove a <code>Predicate</code>
      * from a <code>Rule</code>.</p>
      */
-    inline void SetAction(ChangeAction&& value) { m_actionHasBeenSet = true; m_action = value; }
+    inline void SetAction(ChangeAction&& value) { m_actionHasBeenSet = true; m_action = std::move(value); }
 
     /**
      * <p>Specify <code>INSERT</code> to add a <code>Predicate</code> to a
@@ -79,7 +80,7 @@ namespace Model
      * <code>Rule</code>. Use <code>DELETE</code> to remove a <code>Predicate</code>
      * from a <code>Rule</code>.</p>
      */
-    inline RuleUpdate& WithAction(ChangeAction&& value) { SetAction(value); return *this;}
+    inline RuleUpdate& WithAction(ChangeAction&& value) { SetAction(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the <code>Predicate</code> (such as an <code>IPSet</code>) that you
@@ -97,7 +98,7 @@ namespace Model
      * <p>The ID of the <code>Predicate</code> (such as an <code>IPSet</code>) that you
      * want to add to a <code>Rule</code>.</p>
      */
-    inline void SetPredicate(Predicate&& value) { m_predicateHasBeenSet = true; m_predicate = value; }
+    inline void SetPredicate(Predicate&& value) { m_predicateHasBeenSet = true; m_predicate = std::move(value); }
 
     /**
      * <p>The ID of the <code>Predicate</code> (such as an <code>IPSet</code>) that you
@@ -109,7 +110,7 @@ namespace Model
      * <p>The ID of the <code>Predicate</code> (such as an <code>IPSet</code>) that you
      * want to add to a <code>Rule</code>.</p>
      */
-    inline RuleUpdate& WithPredicate(Predicate&& value) { SetPredicate(value); return *this;}
+    inline RuleUpdate& WithPredicate(Predicate&& value) { SetPredicate(std::move(value)); return *this;}
 
   private:
     ChangeAction m_action;

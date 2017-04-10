@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/elastictranscoder/ElasticTranscoder_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -63,7 +64,7 @@ namespace Model
      * <code>aes-128</code>.</p> <p>This value is written into the method attribute of
      * the <code>EXT-X-KEY</code> metadata tag in the output playlist.</p>
      */
-    inline void SetMethod(Aws::String&& value) { m_methodHasBeenSet = true; m_method = value; }
+    inline void SetMethod(Aws::String&& value) { m_methodHasBeenSet = true; m_method = std::move(value); }
 
     /**
      * <p>The content protection method for your output. The only valid value is:
@@ -84,7 +85,7 @@ namespace Model
      * <code>aes-128</code>.</p> <p>This value is written into the method attribute of
      * the <code>EXT-X-KEY</code> metadata tag in the output playlist.</p>
      */
-    inline HlsContentProtection& WithMethod(Aws::String&& value) { SetMethod(value); return *this;}
+    inline HlsContentProtection& WithMethod(Aws::String&& value) { SetMethod(std::move(value)); return *this;}
 
     /**
      * <p>The content protection method for your output. The only valid value is:
@@ -118,7 +119,7 @@ namespace Model
      * following bit lengths before being base64-encoded:</p> <p> <code>128</code>,
      * <code>192</code>, or <code>256</code>. </p>
      */
-    inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = value; }
+    inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
 
     /**
      * <p>If you want Elastic Transcoder to generate a key for you, leave this field
@@ -145,7 +146,7 @@ namespace Model
      * following bit lengths before being base64-encoded:</p> <p> <code>128</code>,
      * <code>192</code>, or <code>256</code>. </p>
      */
-    inline HlsContentProtection& WithKey(Aws::String&& value) { SetKey(value); return *this;}
+    inline HlsContentProtection& WithKey(Aws::String&& value) { SetKey(std::move(value)); return *this;}
 
     /**
      * <p>If you want Elastic Transcoder to generate a key for you, leave this field
@@ -184,7 +185,7 @@ namespace Model
      * must be base64-encoded, and it must be exactly 16 bytes before being base64-
      * encoded.</p>
      */
-    inline void SetKeyMd5(Aws::String&& value) { m_keyMd5HasBeenSet = true; m_keyMd5 = value; }
+    inline void SetKeyMd5(Aws::String&& value) { m_keyMd5HasBeenSet = true; m_keyMd5 = std::move(value); }
 
     /**
      * <p>If Elastic Transcoder is generating your key for you, you must leave this
@@ -214,7 +215,7 @@ namespace Model
      * must be base64-encoded, and it must be exactly 16 bytes before being base64-
      * encoded.</p>
      */
-    inline HlsContentProtection& WithKeyMd5(Aws::String&& value) { SetKeyMd5(value); return *this;}
+    inline HlsContentProtection& WithKeyMd5(Aws::String&& value) { SetKeyMd5(std::move(value)); return *this;}
 
     /**
      * <p>If Elastic Transcoder is generating your key for you, you must leave this
@@ -251,7 +252,7 @@ namespace Model
      * to encrypt your output files. The initialization vector must be base64-encoded,
      * and it must be exactly 16 bytes before being base64-encoded.</p>
      */
-    inline void SetInitializationVector(Aws::String&& value) { m_initializationVectorHasBeenSet = true; m_initializationVector = value; }
+    inline void SetInitializationVector(Aws::String&& value) { m_initializationVectorHasBeenSet = true; m_initializationVector = std::move(value); }
 
     /**
      * <p>If Elastic Transcoder is generating your key for you, you must leave this
@@ -278,7 +279,7 @@ namespace Model
      * to encrypt your output files. The initialization vector must be base64-encoded,
      * and it must be exactly 16 bytes before being base64-encoded.</p>
      */
-    inline HlsContentProtection& WithInitializationVector(Aws::String&& value) { SetInitializationVector(value); return *this;}
+    inline HlsContentProtection& WithInitializationVector(Aws::String&& value) { SetInitializationVector(std::move(value)); return *this;}
 
     /**
      * <p>If Elastic Transcoder is generating your key for you, you must leave this
@@ -308,7 +309,7 @@ namespace Model
      * URL must be an absolute path, and is referenced in the URI attribute of the
      * EXT-X-KEY metadata tag in the playlist file.</p>
      */
-    inline void SetLicenseAcquisitionUrl(Aws::String&& value) { m_licenseAcquisitionUrlHasBeenSet = true; m_licenseAcquisitionUrl = value; }
+    inline void SetLicenseAcquisitionUrl(Aws::String&& value) { m_licenseAcquisitionUrlHasBeenSet = true; m_licenseAcquisitionUrl = std::move(value); }
 
     /**
      * <p>The location of the license key required to decrypt your HLS playlist. The
@@ -329,7 +330,7 @@ namespace Model
      * URL must be an absolute path, and is referenced in the URI attribute of the
      * EXT-X-KEY metadata tag in the playlist file.</p>
      */
-    inline HlsContentProtection& WithLicenseAcquisitionUrl(Aws::String&& value) { SetLicenseAcquisitionUrl(value); return *this;}
+    inline HlsContentProtection& WithLicenseAcquisitionUrl(Aws::String&& value) { SetLicenseAcquisitionUrl(std::move(value)); return *this;}
 
     /**
      * <p>The location of the license key required to decrypt your HLS playlist. The
@@ -360,7 +361,7 @@ namespace Model
      * <code>LicenseAcquisitionUrl</code> must be left blank and Elastic Transcoder
      * writes your data key into the same bucket as the associated playlist.</p>
      */
-    inline void SetKeyStoragePolicy(Aws::String&& value) { m_keyStoragePolicyHasBeenSet = true; m_keyStoragePolicy = value; }
+    inline void SetKeyStoragePolicy(Aws::String&& value) { m_keyStoragePolicyHasBeenSet = true; m_keyStoragePolicy = std::move(value); }
 
     /**
      * <p>Specify whether you want Elastic Transcoder to write your HLS license key to
@@ -384,7 +385,7 @@ namespace Model
      * <code>LicenseAcquisitionUrl</code> must be left blank and Elastic Transcoder
      * writes your data key into the same bucket as the associated playlist.</p>
      */
-    inline HlsContentProtection& WithKeyStoragePolicy(Aws::String&& value) { SetKeyStoragePolicy(value); return *this;}
+    inline HlsContentProtection& WithKeyStoragePolicy(Aws::String&& value) { SetKeyStoragePolicy(std::move(value)); return *this;}
 
     /**
      * <p>Specify whether you want Elastic Transcoder to write your HLS license key to

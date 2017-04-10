@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/devicefarm/DeviceFarm_EXPORTS.h>
 #include <aws/devicefarm/model/RemoteAccessSession.h>
+#include <utility>
 
 namespace Aws
 {
@@ -61,7 +62,7 @@ namespace Model
      * <p>A container representing the metadata from the service about the remote
      * access session you are stopping.</p>
      */
-    inline void SetRemoteAccessSession(RemoteAccessSession&& value) { m_remoteAccessSession = value; }
+    inline void SetRemoteAccessSession(RemoteAccessSession&& value) { m_remoteAccessSession = std::move(value); }
 
     /**
      * <p>A container representing the metadata from the service about the remote
@@ -73,7 +74,7 @@ namespace Model
      * <p>A container representing the metadata from the service about the remote
      * access session you are stopping.</p>
      */
-    inline StopRemoteAccessSessionResult& WithRemoteAccessSession(RemoteAccessSession&& value) { SetRemoteAccessSession(value); return *this;}
+    inline StopRemoteAccessSessionResult& WithRemoteAccessSession(RemoteAccessSession&& value) { SetRemoteAccessSession(std::move(value)); return *this;}
 
   private:
     RemoteAccessSession m_remoteAccessSession;

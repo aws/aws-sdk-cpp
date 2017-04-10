@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/elasticloadbalancing/model/PolicyAttribute.h>
+#include <utility>
 
 namespace Aws
 {
@@ -56,7 +57,7 @@ namespace Model
     /**
      * <p>The name of the load balancer.</p>
      */
-    inline void SetLoadBalancerName(Aws::String&& value) { m_loadBalancerNameHasBeenSet = true; m_loadBalancerName = value; }
+    inline void SetLoadBalancerName(Aws::String&& value) { m_loadBalancerNameHasBeenSet = true; m_loadBalancerName = std::move(value); }
 
     /**
      * <p>The name of the load balancer.</p>
@@ -71,7 +72,7 @@ namespace Model
     /**
      * <p>The name of the load balancer.</p>
      */
-    inline CreateLoadBalancerPolicyRequest& WithLoadBalancerName(Aws::String&& value) { SetLoadBalancerName(value); return *this;}
+    inline CreateLoadBalancerPolicyRequest& WithLoadBalancerName(Aws::String&& value) { SetLoadBalancerName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the load balancer.</p>
@@ -94,7 +95,7 @@ namespace Model
      * <p>The name of the load balancer policy to be created. This name must be unique
      * within the set of policies for this load balancer.</p>
      */
-    inline void SetPolicyName(Aws::String&& value) { m_policyNameHasBeenSet = true; m_policyName = value; }
+    inline void SetPolicyName(Aws::String&& value) { m_policyNameHasBeenSet = true; m_policyName = std::move(value); }
 
     /**
      * <p>The name of the load balancer policy to be created. This name must be unique
@@ -112,7 +113,7 @@ namespace Model
      * <p>The name of the load balancer policy to be created. This name must be unique
      * within the set of policies for this load balancer.</p>
      */
-    inline CreateLoadBalancerPolicyRequest& WithPolicyName(Aws::String&& value) { SetPolicyName(value); return *this;}
+    inline CreateLoadBalancerPolicyRequest& WithPolicyName(Aws::String&& value) { SetPolicyName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the load balancer policy to be created. This name must be unique
@@ -136,7 +137,7 @@ namespace Model
      * <p>The name of the base policy type. To get the list of policy types, use
      * <a>DescribeLoadBalancerPolicyTypes</a>.</p>
      */
-    inline void SetPolicyTypeName(Aws::String&& value) { m_policyTypeNameHasBeenSet = true; m_policyTypeName = value; }
+    inline void SetPolicyTypeName(Aws::String&& value) { m_policyTypeNameHasBeenSet = true; m_policyTypeName = std::move(value); }
 
     /**
      * <p>The name of the base policy type. To get the list of policy types, use
@@ -154,7 +155,7 @@ namespace Model
      * <p>The name of the base policy type. To get the list of policy types, use
      * <a>DescribeLoadBalancerPolicyTypes</a>.</p>
      */
-    inline CreateLoadBalancerPolicyRequest& WithPolicyTypeName(Aws::String&& value) { SetPolicyTypeName(value); return *this;}
+    inline CreateLoadBalancerPolicyRequest& WithPolicyTypeName(Aws::String&& value) { SetPolicyTypeName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the base policy type. To get the list of policy types, use
@@ -175,7 +176,7 @@ namespace Model
     /**
      * <p>The policy attributes.</p>
      */
-    inline void SetPolicyAttributes(Aws::Vector<PolicyAttribute>&& value) { m_policyAttributesHasBeenSet = true; m_policyAttributes = value; }
+    inline void SetPolicyAttributes(Aws::Vector<PolicyAttribute>&& value) { m_policyAttributesHasBeenSet = true; m_policyAttributes = std::move(value); }
 
     /**
      * <p>The policy attributes.</p>
@@ -185,7 +186,7 @@ namespace Model
     /**
      * <p>The policy attributes.</p>
      */
-    inline CreateLoadBalancerPolicyRequest& WithPolicyAttributes(Aws::Vector<PolicyAttribute>&& value) { SetPolicyAttributes(value); return *this;}
+    inline CreateLoadBalancerPolicyRequest& WithPolicyAttributes(Aws::Vector<PolicyAttribute>&& value) { SetPolicyAttributes(std::move(value)); return *this;}
 
     /**
      * <p>The policy attributes.</p>
@@ -195,7 +196,7 @@ namespace Model
     /**
      * <p>The policy attributes.</p>
      */
-    inline CreateLoadBalancerPolicyRequest& AddPolicyAttributes(PolicyAttribute&& value) { m_policyAttributesHasBeenSet = true; m_policyAttributes.push_back(value); return *this; }
+    inline CreateLoadBalancerPolicyRequest& AddPolicyAttributes(PolicyAttribute&& value) { m_policyAttributesHasBeenSet = true; m_policyAttributes.push_back(std::move(value)); return *this; }
 
   private:
     Aws::String m_loadBalancerName;

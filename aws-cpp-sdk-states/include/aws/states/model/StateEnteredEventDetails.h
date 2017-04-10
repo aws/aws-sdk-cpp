@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/states/SFN_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -51,7 +52,7 @@ namespace Model
     /**
      * <p>The name of the state.</p>
      */
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p>The name of the state.</p>
@@ -66,7 +67,7 @@ namespace Model
     /**
      * <p>The name of the state.</p>
      */
-    inline StateEnteredEventDetails& WithName(Aws::String&& value) { SetName(value); return *this;}
+    inline StateEnteredEventDetails& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the state.</p>
@@ -86,7 +87,7 @@ namespace Model
     /**
      * <p>The JSON input data to the state.</p>
      */
-    inline void SetInput(Aws::String&& value) { m_inputHasBeenSet = true; m_input = value; }
+    inline void SetInput(Aws::String&& value) { m_inputHasBeenSet = true; m_input = std::move(value); }
 
     /**
      * <p>The JSON input data to the state.</p>
@@ -101,7 +102,7 @@ namespace Model
     /**
      * <p>The JSON input data to the state.</p>
      */
-    inline StateEnteredEventDetails& WithInput(Aws::String&& value) { SetInput(value); return *this;}
+    inline StateEnteredEventDetails& WithInput(Aws::String&& value) { SetInput(std::move(value)); return *this;}
 
     /**
      * <p>The JSON input data to the state.</p>

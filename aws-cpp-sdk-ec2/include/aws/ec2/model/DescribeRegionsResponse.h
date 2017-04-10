@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ec2/model/ResponseMetadata.h>
 #include <aws/ec2/model/Region.h>
+#include <utility>
 
 namespace Aws
 {
@@ -59,7 +60,7 @@ namespace Model
     /**
      * <p>Information about one or more regions.</p>
      */
-    inline void SetRegions(Aws::Vector<Region>&& value) { m_regions = value; }
+    inline void SetRegions(Aws::Vector<Region>&& value) { m_regions = std::move(value); }
 
     /**
      * <p>Information about one or more regions.</p>
@@ -69,7 +70,7 @@ namespace Model
     /**
      * <p>Information about one or more regions.</p>
      */
-    inline DescribeRegionsResponse& WithRegions(Aws::Vector<Region>&& value) { SetRegions(value); return *this;}
+    inline DescribeRegionsResponse& WithRegions(Aws::Vector<Region>&& value) { SetRegions(std::move(value)); return *this;}
 
     /**
      * <p>Information about one or more regions.</p>
@@ -79,7 +80,7 @@ namespace Model
     /**
      * <p>Information about one or more regions.</p>
      */
-    inline DescribeRegionsResponse& AddRegions(Region&& value) { m_regions.push_back(value); return *this; }
+    inline DescribeRegionsResponse& AddRegions(Region&& value) { m_regions.push_back(std::move(value)); return *this; }
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
@@ -88,13 +89,13 @@ namespace Model
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
 
     
     inline DescribeRegionsResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
 
     
-    inline DescribeRegionsResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
+    inline DescribeRegionsResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
     Aws::Vector<Region> m_regions;

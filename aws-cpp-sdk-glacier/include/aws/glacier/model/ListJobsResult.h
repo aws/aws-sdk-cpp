@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/glacier/model/GlacierJobDescription.h>
+#include <utility>
 
 namespace Aws
 {
@@ -63,7 +64,7 @@ namespace Model
      * <p>A list of job objects. Each job object contains metadata describing the
      * job.</p>
      */
-    inline void SetJobList(Aws::Vector<GlacierJobDescription>&& value) { m_jobList = value; }
+    inline void SetJobList(Aws::Vector<GlacierJobDescription>&& value) { m_jobList = std::move(value); }
 
     /**
      * <p>A list of job objects. Each job object contains metadata describing the
@@ -75,7 +76,7 @@ namespace Model
      * <p>A list of job objects. Each job object contains metadata describing the
      * job.</p>
      */
-    inline ListJobsResult& WithJobList(Aws::Vector<GlacierJobDescription>&& value) { SetJobList(value); return *this;}
+    inline ListJobsResult& WithJobList(Aws::Vector<GlacierJobDescription>&& value) { SetJobList(std::move(value)); return *this;}
 
     /**
      * <p>A list of job objects. Each job object contains metadata describing the
@@ -87,7 +88,7 @@ namespace Model
      * <p>A list of job objects. Each job object contains metadata describing the
      * job.</p>
      */
-    inline ListJobsResult& AddJobList(GlacierJobDescription&& value) { m_jobList.push_back(value); return *this; }
+    inline ListJobsResult& AddJobList(GlacierJobDescription&& value) { m_jobList.push_back(std::move(value)); return *this; }
 
     /**
      * <p> An opaque string used for pagination that specifies the job at which the
@@ -114,7 +115,7 @@ namespace Model
      * continuing the pagination of the results started in a previous List Jobs
      * request. </p>
      */
-    inline void SetMarker(Aws::String&& value) { m_marker = value; }
+    inline void SetMarker(Aws::String&& value) { m_marker = std::move(value); }
 
     /**
      * <p> An opaque string used for pagination that specifies the job at which the
@@ -141,7 +142,7 @@ namespace Model
      * continuing the pagination of the results started in a previous List Jobs
      * request. </p>
      */
-    inline ListJobsResult& WithMarker(Aws::String&& value) { SetMarker(value); return *this;}
+    inline ListJobsResult& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
 
     /**
      * <p> An opaque string used for pagination that specifies the job at which the

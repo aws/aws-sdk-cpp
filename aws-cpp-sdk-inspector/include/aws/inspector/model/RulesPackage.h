@@ -16,6 +16,7 @@
 #include <aws/inspector/Inspector_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/inspector/model/LocalizedText.h>
+#include <utility>
 
 namespace Aws
 {
@@ -56,7 +57,7 @@ namespace Model
     /**
      * <p> The ARN of the rules package.</p>
      */
-    inline void SetRulesPackageArn(Aws::String&& value) { m_rulesPackageArnHasBeenSet = true; m_rulesPackageArn = value; }
+    inline void SetRulesPackageArn(Aws::String&& value) { m_rulesPackageArnHasBeenSet = true; m_rulesPackageArn = std::move(value); }
 
     /**
      * <p> The ARN of the rules package.</p>
@@ -71,7 +72,7 @@ namespace Model
     /**
      * <p> The ARN of the rules package.</p>
      */
-    inline RulesPackage& WithRulesPackageArn(Aws::String&& value) { SetRulesPackageArn(value); return *this;}
+    inline RulesPackage& WithRulesPackageArn(Aws::String&& value) { SetRulesPackageArn(std::move(value)); return *this;}
 
     /**
      * <p> The ARN of the rules package.</p>
@@ -91,7 +92,7 @@ namespace Model
     /**
      * <p>The name of the rules package.</p>
      */
-    inline void SetRulesPackageName(Aws::String&& value) { m_rulesPackageNameHasBeenSet = true; m_rulesPackageName = value; }
+    inline void SetRulesPackageName(Aws::String&& value) { m_rulesPackageNameHasBeenSet = true; m_rulesPackageName = std::move(value); }
 
     /**
      * <p>The name of the rules package.</p>
@@ -106,7 +107,7 @@ namespace Model
     /**
      * <p>The name of the rules package.</p>
      */
-    inline RulesPackage& WithRulesPackageName(Aws::String&& value) { SetRulesPackageName(value); return *this;}
+    inline RulesPackage& WithRulesPackageName(Aws::String&& value) { SetRulesPackageName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the rules package.</p>
@@ -126,7 +127,7 @@ namespace Model
     /**
      * <p>The version id of the rules package.</p>
      */
-    inline void SetVersion(Aws::String&& value) { m_versionHasBeenSet = true; m_version = value; }
+    inline void SetVersion(Aws::String&& value) { m_versionHasBeenSet = true; m_version = std::move(value); }
 
     /**
      * <p>The version id of the rules package.</p>
@@ -141,7 +142,7 @@ namespace Model
     /**
      * <p>The version id of the rules package.</p>
      */
-    inline RulesPackage& WithVersion(Aws::String&& value) { SetVersion(value); return *this;}
+    inline RulesPackage& WithVersion(Aws::String&& value) { SetVersion(std::move(value)); return *this;}
 
     /**
      * <p>The version id of the rules package.</p>
@@ -161,7 +162,7 @@ namespace Model
     /**
      * <p>The provider of the rules package.</p>
      */
-    inline void SetProvider(Aws::String&& value) { m_providerHasBeenSet = true; m_provider = value; }
+    inline void SetProvider(Aws::String&& value) { m_providerHasBeenSet = true; m_provider = std::move(value); }
 
     /**
      * <p>The provider of the rules package.</p>
@@ -176,7 +177,7 @@ namespace Model
     /**
      * <p>The provider of the rules package.</p>
      */
-    inline RulesPackage& WithProvider(Aws::String&& value) { SetProvider(value); return *this;}
+    inline RulesPackage& WithProvider(Aws::String&& value) { SetProvider(std::move(value)); return *this;}
 
     /**
      * <p>The provider of the rules package.</p>
@@ -196,7 +197,7 @@ namespace Model
     /**
      * <p>The description of the rules package.</p>
      */
-    inline void SetDescription(LocalizedText&& value) { m_descriptionHasBeenSet = true; m_description = value; }
+    inline void SetDescription(LocalizedText&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
      * <p>The description of the rules package.</p>
@@ -206,7 +207,7 @@ namespace Model
     /**
      * <p>The description of the rules package.</p>
      */
-    inline RulesPackage& WithDescription(LocalizedText&& value) { SetDescription(value); return *this;}
+    inline RulesPackage& WithDescription(LocalizedText&& value) { SetDescription(std::move(value)); return *this;}
 
   private:
     Aws::String m_rulesPackageArn;

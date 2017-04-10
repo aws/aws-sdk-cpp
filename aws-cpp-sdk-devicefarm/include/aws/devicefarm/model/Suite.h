@@ -21,6 +21,7 @@
 #include <aws/devicefarm/model/ExecutionResult.h>
 #include <aws/devicefarm/model/Counters.h>
 #include <aws/devicefarm/model/DeviceMinutes.h>
+#include <utility>
 
 namespace Aws
 {
@@ -62,7 +63,7 @@ namespace Model
     /**
      * <p>The suite's ARN.</p>
      */
-    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = value; }
+    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
 
     /**
      * <p>The suite's ARN.</p>
@@ -77,7 +78,7 @@ namespace Model
     /**
      * <p>The suite's ARN.</p>
      */
-    inline Suite& WithArn(Aws::String&& value) { SetArn(value); return *this;}
+    inline Suite& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
 
     /**
      * <p>The suite's ARN.</p>
@@ -97,7 +98,7 @@ namespace Model
     /**
      * <p>The suite's name.</p>
      */
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p>The suite's name.</p>
@@ -112,7 +113,7 @@ namespace Model
     /**
      * <p>The suite's name.</p>
      */
-    inline Suite& WithName(Aws::String&& value) { SetName(value); return *this;}
+    inline Suite& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>The suite's name.</p>
@@ -171,7 +172,7 @@ namespace Model
      * </li> <li> <p>XCTEST: The XCode test type.</p> </li> <li> <p>XCTEST_UI: The
      * XCode UI test type.</p> </li> </ul>
      */
-    inline void SetType(TestType&& value) { m_typeHasBeenSet = true; m_type = value; }
+    inline void SetType(TestType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
      * <p>The suite's type.</p> <p>Must be one of the following values:</p> <ul> <li>
@@ -207,7 +208,7 @@ namespace Model
      * </li> <li> <p>XCTEST: The XCode test type.</p> </li> <li> <p>XCTEST_UI: The
      * XCode UI test type.</p> </li> </ul>
      */
-    inline Suite& WithType(TestType&& value) { SetType(value); return *this;}
+    inline Suite& WithType(TestType&& value) { SetType(std::move(value)); return *this;}
 
     /**
      * <p>When the suite was created.</p>
@@ -222,7 +223,7 @@ namespace Model
     /**
      * <p>When the suite was created.</p>
      */
-    inline void SetCreated(Aws::Utils::DateTime&& value) { m_createdHasBeenSet = true; m_created = value; }
+    inline void SetCreated(Aws::Utils::DateTime&& value) { m_createdHasBeenSet = true; m_created = std::move(value); }
 
     /**
      * <p>When the suite was created.</p>
@@ -232,7 +233,7 @@ namespace Model
     /**
      * <p>When the suite was created.</p>
      */
-    inline Suite& WithCreated(Aws::Utils::DateTime&& value) { SetCreated(value); return *this;}
+    inline Suite& WithCreated(Aws::Utils::DateTime&& value) { SetCreated(std::move(value)); return *this;}
 
     /**
      * <p>The suite's status.</p> <p>Allowed values include:</p> <ul> <li> <p>PENDING:
@@ -265,7 +266,7 @@ namespace Model
      * <li> <p>RUNNING: A running status.</p> </li> <li> <p>COMPLETED: A completed
      * status.</p> </li> <li> <p>STOPPING: A stopping status.</p> </li> </ul>
      */
-    inline void SetStatus(ExecutionStatus&& value) { m_statusHasBeenSet = true; m_status = value; }
+    inline void SetStatus(ExecutionStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
      * <p>The suite's status.</p> <p>Allowed values include:</p> <ul> <li> <p>PENDING:
@@ -287,7 +288,7 @@ namespace Model
      * <li> <p>RUNNING: A running status.</p> </li> <li> <p>COMPLETED: A completed
      * status.</p> </li> <li> <p>STOPPING: A stopping status.</p> </li> </ul>
      */
-    inline Suite& WithStatus(ExecutionStatus&& value) { SetStatus(value); return *this;}
+    inline Suite& WithStatus(ExecutionStatus&& value) { SetStatus(std::move(value)); return *this;}
 
     /**
      * <p>The suite's result.</p> <p>Allowed values include:</p> <ul> <li> <p>PENDING:
@@ -317,7 +318,7 @@ namespace Model
      * <p>ERRORED: An error condition.</p> </li> <li> <p>STOPPED: A stopped
      * condition.</p> </li> </ul>
      */
-    inline void SetResult(ExecutionResult&& value) { m_resultHasBeenSet = true; m_result = value; }
+    inline void SetResult(ExecutionResult&& value) { m_resultHasBeenSet = true; m_result = std::move(value); }
 
     /**
      * <p>The suite's result.</p> <p>Allowed values include:</p> <ul> <li> <p>PENDING:
@@ -337,7 +338,7 @@ namespace Model
      * <p>ERRORED: An error condition.</p> </li> <li> <p>STOPPED: A stopped
      * condition.</p> </li> </ul>
      */
-    inline Suite& WithResult(ExecutionResult&& value) { SetResult(value); return *this;}
+    inline Suite& WithResult(ExecutionResult&& value) { SetResult(std::move(value)); return *this;}
 
     /**
      * <p>The suite's start time.</p>
@@ -352,7 +353,7 @@ namespace Model
     /**
      * <p>The suite's start time.</p>
      */
-    inline void SetStarted(Aws::Utils::DateTime&& value) { m_startedHasBeenSet = true; m_started = value; }
+    inline void SetStarted(Aws::Utils::DateTime&& value) { m_startedHasBeenSet = true; m_started = std::move(value); }
 
     /**
      * <p>The suite's start time.</p>
@@ -362,7 +363,7 @@ namespace Model
     /**
      * <p>The suite's start time.</p>
      */
-    inline Suite& WithStarted(Aws::Utils::DateTime&& value) { SetStarted(value); return *this;}
+    inline Suite& WithStarted(Aws::Utils::DateTime&& value) { SetStarted(std::move(value)); return *this;}
 
     /**
      * <p>The suite's stop time.</p>
@@ -377,7 +378,7 @@ namespace Model
     /**
      * <p>The suite's stop time.</p>
      */
-    inline void SetStopped(Aws::Utils::DateTime&& value) { m_stoppedHasBeenSet = true; m_stopped = value; }
+    inline void SetStopped(Aws::Utils::DateTime&& value) { m_stoppedHasBeenSet = true; m_stopped = std::move(value); }
 
     /**
      * <p>The suite's stop time.</p>
@@ -387,7 +388,7 @@ namespace Model
     /**
      * <p>The suite's stop time.</p>
      */
-    inline Suite& WithStopped(Aws::Utils::DateTime&& value) { SetStopped(value); return *this;}
+    inline Suite& WithStopped(Aws::Utils::DateTime&& value) { SetStopped(std::move(value)); return *this;}
 
     /**
      * <p>The suite's result counters.</p>
@@ -402,7 +403,7 @@ namespace Model
     /**
      * <p>The suite's result counters.</p>
      */
-    inline void SetCounters(Counters&& value) { m_countersHasBeenSet = true; m_counters = value; }
+    inline void SetCounters(Counters&& value) { m_countersHasBeenSet = true; m_counters = std::move(value); }
 
     /**
      * <p>The suite's result counters.</p>
@@ -412,7 +413,7 @@ namespace Model
     /**
      * <p>The suite's result counters.</p>
      */
-    inline Suite& WithCounters(Counters&& value) { SetCounters(value); return *this;}
+    inline Suite& WithCounters(Counters&& value) { SetCounters(std::move(value)); return *this;}
 
     /**
      * <p>A message about the suite's result.</p>
@@ -427,7 +428,7 @@ namespace Model
     /**
      * <p>A message about the suite's result.</p>
      */
-    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = value; }
+    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
 
     /**
      * <p>A message about the suite's result.</p>
@@ -442,7 +443,7 @@ namespace Model
     /**
      * <p>A message about the suite's result.</p>
      */
-    inline Suite& WithMessage(Aws::String&& value) { SetMessage(value); return *this;}
+    inline Suite& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
 
     /**
      * <p>A message about the suite's result.</p>
@@ -465,7 +466,7 @@ namespace Model
      * <p>Represents the total (metered or unmetered) minutes used by the test
      * suite.</p>
      */
-    inline void SetDeviceMinutes(DeviceMinutes&& value) { m_deviceMinutesHasBeenSet = true; m_deviceMinutes = value; }
+    inline void SetDeviceMinutes(DeviceMinutes&& value) { m_deviceMinutesHasBeenSet = true; m_deviceMinutes = std::move(value); }
 
     /**
      * <p>Represents the total (metered or unmetered) minutes used by the test
@@ -477,7 +478,7 @@ namespace Model
      * <p>Represents the total (metered or unmetered) minutes used by the test
      * suite.</p>
      */
-    inline Suite& WithDeviceMinutes(DeviceMinutes&& value) { SetDeviceMinutes(value); return *this;}
+    inline Suite& WithDeviceMinutes(DeviceMinutes&& value) { SetDeviceMinutes(std::move(value)); return *this;}
 
   private:
     Aws::String m_arn;

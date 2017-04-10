@@ -22,6 +22,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/codepipeline/model/EncryptionKey.h>
 #include <aws/codepipeline/model/Artifact.h>
+#include <utility>
 
 namespace Aws
 {
@@ -58,13 +59,13 @@ namespace Model
     inline void SetActionTypeId(const ActionTypeId& value) { m_actionTypeIdHasBeenSet = true; m_actionTypeId = value; }
 
     
-    inline void SetActionTypeId(ActionTypeId&& value) { m_actionTypeIdHasBeenSet = true; m_actionTypeId = value; }
+    inline void SetActionTypeId(ActionTypeId&& value) { m_actionTypeIdHasBeenSet = true; m_actionTypeId = std::move(value); }
 
     
     inline JobData& WithActionTypeId(const ActionTypeId& value) { SetActionTypeId(value); return *this;}
 
     
-    inline JobData& WithActionTypeId(ActionTypeId&& value) { SetActionTypeId(value); return *this;}
+    inline JobData& WithActionTypeId(ActionTypeId&& value) { SetActionTypeId(std::move(value)); return *this;}
 
     
     inline const ActionConfiguration& GetActionConfiguration() const{ return m_actionConfiguration; }
@@ -73,13 +74,13 @@ namespace Model
     inline void SetActionConfiguration(const ActionConfiguration& value) { m_actionConfigurationHasBeenSet = true; m_actionConfiguration = value; }
 
     
-    inline void SetActionConfiguration(ActionConfiguration&& value) { m_actionConfigurationHasBeenSet = true; m_actionConfiguration = value; }
+    inline void SetActionConfiguration(ActionConfiguration&& value) { m_actionConfigurationHasBeenSet = true; m_actionConfiguration = std::move(value); }
 
     
     inline JobData& WithActionConfiguration(const ActionConfiguration& value) { SetActionConfiguration(value); return *this;}
 
     
-    inline JobData& WithActionConfiguration(ActionConfiguration&& value) { SetActionConfiguration(value); return *this;}
+    inline JobData& WithActionConfiguration(ActionConfiguration&& value) { SetActionConfiguration(std::move(value)); return *this;}
 
     
     inline const PipelineContext& GetPipelineContext() const{ return m_pipelineContext; }
@@ -88,13 +89,13 @@ namespace Model
     inline void SetPipelineContext(const PipelineContext& value) { m_pipelineContextHasBeenSet = true; m_pipelineContext = value; }
 
     
-    inline void SetPipelineContext(PipelineContext&& value) { m_pipelineContextHasBeenSet = true; m_pipelineContext = value; }
+    inline void SetPipelineContext(PipelineContext&& value) { m_pipelineContextHasBeenSet = true; m_pipelineContext = std::move(value); }
 
     
     inline JobData& WithPipelineContext(const PipelineContext& value) { SetPipelineContext(value); return *this;}
 
     
-    inline JobData& WithPipelineContext(PipelineContext&& value) { SetPipelineContext(value); return *this;}
+    inline JobData& WithPipelineContext(PipelineContext&& value) { SetPipelineContext(std::move(value)); return *this;}
 
     /**
      * <p>The artifact supplied to the job.</p>
@@ -109,7 +110,7 @@ namespace Model
     /**
      * <p>The artifact supplied to the job.</p>
      */
-    inline void SetInputArtifacts(Aws::Vector<Artifact>&& value) { m_inputArtifactsHasBeenSet = true; m_inputArtifacts = value; }
+    inline void SetInputArtifacts(Aws::Vector<Artifact>&& value) { m_inputArtifactsHasBeenSet = true; m_inputArtifacts = std::move(value); }
 
     /**
      * <p>The artifact supplied to the job.</p>
@@ -119,7 +120,7 @@ namespace Model
     /**
      * <p>The artifact supplied to the job.</p>
      */
-    inline JobData& WithInputArtifacts(Aws::Vector<Artifact>&& value) { SetInputArtifacts(value); return *this;}
+    inline JobData& WithInputArtifacts(Aws::Vector<Artifact>&& value) { SetInputArtifacts(std::move(value)); return *this;}
 
     /**
      * <p>The artifact supplied to the job.</p>
@@ -129,7 +130,7 @@ namespace Model
     /**
      * <p>The artifact supplied to the job.</p>
      */
-    inline JobData& AddInputArtifacts(Artifact&& value) { m_inputArtifactsHasBeenSet = true; m_inputArtifacts.push_back(value); return *this; }
+    inline JobData& AddInputArtifacts(Artifact&& value) { m_inputArtifactsHasBeenSet = true; m_inputArtifacts.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The output of the job.</p>
@@ -144,7 +145,7 @@ namespace Model
     /**
      * <p>The output of the job.</p>
      */
-    inline void SetOutputArtifacts(Aws::Vector<Artifact>&& value) { m_outputArtifactsHasBeenSet = true; m_outputArtifacts = value; }
+    inline void SetOutputArtifacts(Aws::Vector<Artifact>&& value) { m_outputArtifactsHasBeenSet = true; m_outputArtifacts = std::move(value); }
 
     /**
      * <p>The output of the job.</p>
@@ -154,7 +155,7 @@ namespace Model
     /**
      * <p>The output of the job.</p>
      */
-    inline JobData& WithOutputArtifacts(Aws::Vector<Artifact>&& value) { SetOutputArtifacts(value); return *this;}
+    inline JobData& WithOutputArtifacts(Aws::Vector<Artifact>&& value) { SetOutputArtifacts(std::move(value)); return *this;}
 
     /**
      * <p>The output of the job.</p>
@@ -164,7 +165,7 @@ namespace Model
     /**
      * <p>The output of the job.</p>
      */
-    inline JobData& AddOutputArtifacts(Artifact&& value) { m_outputArtifactsHasBeenSet = true; m_outputArtifacts.push_back(value); return *this; }
+    inline JobData& AddOutputArtifacts(Artifact&& value) { m_outputArtifactsHasBeenSet = true; m_outputArtifacts.push_back(std::move(value)); return *this; }
 
     
     inline const AWSSessionCredentials& GetArtifactCredentials() const{ return m_artifactCredentials; }
@@ -173,13 +174,13 @@ namespace Model
     inline void SetArtifactCredentials(const AWSSessionCredentials& value) { m_artifactCredentialsHasBeenSet = true; m_artifactCredentials = value; }
 
     
-    inline void SetArtifactCredentials(AWSSessionCredentials&& value) { m_artifactCredentialsHasBeenSet = true; m_artifactCredentials = value; }
+    inline void SetArtifactCredentials(AWSSessionCredentials&& value) { m_artifactCredentialsHasBeenSet = true; m_artifactCredentials = std::move(value); }
 
     
     inline JobData& WithArtifactCredentials(const AWSSessionCredentials& value) { SetArtifactCredentials(value); return *this;}
 
     
-    inline JobData& WithArtifactCredentials(AWSSessionCredentials&& value) { SetArtifactCredentials(value); return *this;}
+    inline JobData& WithArtifactCredentials(AWSSessionCredentials&& value) { SetArtifactCredentials(std::move(value)); return *this;}
 
     /**
      * <p>A system-generated token, such as a AWS CodeDeploy deployment ID, that a job
@@ -197,7 +198,7 @@ namespace Model
      * <p>A system-generated token, such as a AWS CodeDeploy deployment ID, that a job
      * requires in order to continue the job asynchronously.</p>
      */
-    inline void SetContinuationToken(Aws::String&& value) { m_continuationTokenHasBeenSet = true; m_continuationToken = value; }
+    inline void SetContinuationToken(Aws::String&& value) { m_continuationTokenHasBeenSet = true; m_continuationToken = std::move(value); }
 
     /**
      * <p>A system-generated token, such as a AWS CodeDeploy deployment ID, that a job
@@ -215,7 +216,7 @@ namespace Model
      * <p>A system-generated token, such as a AWS CodeDeploy deployment ID, that a job
      * requires in order to continue the job asynchronously.</p>
      */
-    inline JobData& WithContinuationToken(Aws::String&& value) { SetContinuationToken(value); return *this;}
+    inline JobData& WithContinuationToken(Aws::String&& value) { SetContinuationToken(std::move(value)); return *this;}
 
     /**
      * <p>A system-generated token, such as a AWS CodeDeploy deployment ID, that a job
@@ -230,13 +231,13 @@ namespace Model
     inline void SetEncryptionKey(const EncryptionKey& value) { m_encryptionKeyHasBeenSet = true; m_encryptionKey = value; }
 
     
-    inline void SetEncryptionKey(EncryptionKey&& value) { m_encryptionKeyHasBeenSet = true; m_encryptionKey = value; }
+    inline void SetEncryptionKey(EncryptionKey&& value) { m_encryptionKeyHasBeenSet = true; m_encryptionKey = std::move(value); }
 
     
     inline JobData& WithEncryptionKey(const EncryptionKey& value) { SetEncryptionKey(value); return *this;}
 
     
-    inline JobData& WithEncryptionKey(EncryptionKey&& value) { SetEncryptionKey(value); return *this;}
+    inline JobData& WithEncryptionKey(EncryptionKey&& value) { SetEncryptionKey(std::move(value)); return *this;}
 
   private:
     ActionTypeId m_actionTypeId;

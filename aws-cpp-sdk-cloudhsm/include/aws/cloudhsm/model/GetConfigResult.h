@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/cloudhsm/CloudHSM_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -52,7 +53,7 @@ namespace Model
     /**
      * <p>The type of credentials.</p>
      */
-    inline void SetConfigType(Aws::String&& value) { m_configType = value; }
+    inline void SetConfigType(Aws::String&& value) { m_configType = std::move(value); }
 
     /**
      * <p>The type of credentials.</p>
@@ -67,7 +68,7 @@ namespace Model
     /**
      * <p>The type of credentials.</p>
      */
-    inline GetConfigResult& WithConfigType(Aws::String&& value) { SetConfigType(value); return *this;}
+    inline GetConfigResult& WithConfigType(Aws::String&& value) { SetConfigType(std::move(value)); return *this;}
 
     /**
      * <p>The type of credentials.</p>
@@ -87,7 +88,7 @@ namespace Model
     /**
      * <p>The chrystoki.conf configuration file.</p>
      */
-    inline void SetConfigFile(Aws::String&& value) { m_configFile = value; }
+    inline void SetConfigFile(Aws::String&& value) { m_configFile = std::move(value); }
 
     /**
      * <p>The chrystoki.conf configuration file.</p>
@@ -102,7 +103,7 @@ namespace Model
     /**
      * <p>The chrystoki.conf configuration file.</p>
      */
-    inline GetConfigResult& WithConfigFile(Aws::String&& value) { SetConfigFile(value); return *this;}
+    inline GetConfigResult& WithConfigFile(Aws::String&& value) { SetConfigFile(std::move(value)); return *this;}
 
     /**
      * <p>The chrystoki.conf configuration file.</p>
@@ -122,7 +123,7 @@ namespace Model
     /**
      * <p>The certificate file containing the server.pem files of the HSMs.</p>
      */
-    inline void SetConfigCred(Aws::String&& value) { m_configCred = value; }
+    inline void SetConfigCred(Aws::String&& value) { m_configCred = std::move(value); }
 
     /**
      * <p>The certificate file containing the server.pem files of the HSMs.</p>
@@ -137,7 +138,7 @@ namespace Model
     /**
      * <p>The certificate file containing the server.pem files of the HSMs.</p>
      */
-    inline GetConfigResult& WithConfigCred(Aws::String&& value) { SetConfigCred(value); return *this;}
+    inline GetConfigResult& WithConfigCred(Aws::String&& value) { SetConfigCred(std::move(value)); return *this;}
 
     /**
      * <p>The certificate file containing the server.pem files of the HSMs.</p>

@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/states/SFN_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -61,7 +62,7 @@ namespace Model
      * or <a>SendTaskFailure</a> in order to report the progress or completion of the
      * task.</p>
      */
-    inline void SetTaskToken(Aws::String&& value) { m_taskToken = value; }
+    inline void SetTaskToken(Aws::String&& value) { m_taskToken = std::move(value); }
 
     /**
      * <p>A token that identifies the scheduled task. This token must be copied and
@@ -85,7 +86,7 @@ namespace Model
      * or <a>SendTaskFailure</a> in order to report the progress or completion of the
      * task.</p>
      */
-    inline GetActivityTaskResult& WithTaskToken(Aws::String&& value) { SetTaskToken(value); return *this;}
+    inline GetActivityTaskResult& WithTaskToken(Aws::String&& value) { SetTaskToken(std::move(value)); return *this;}
 
     /**
      * <p>A token that identifies the scheduled task. This token must be copied and
@@ -108,7 +109,7 @@ namespace Model
     /**
      * <p>The JSON input data for the task.</p>
      */
-    inline void SetInput(Aws::String&& value) { m_input = value; }
+    inline void SetInput(Aws::String&& value) { m_input = std::move(value); }
 
     /**
      * <p>The JSON input data for the task.</p>
@@ -123,7 +124,7 @@ namespace Model
     /**
      * <p>The JSON input data for the task.</p>
      */
-    inline GetActivityTaskResult& WithInput(Aws::String&& value) { SetInput(value); return *this;}
+    inline GetActivityTaskResult& WithInput(Aws::String&& value) { SetInput(std::move(value)); return *this;}
 
     /**
      * <p>The JSON input data for the task.</p>

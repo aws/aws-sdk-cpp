@@ -17,6 +17,7 @@
 #include <aws/redshift/RedshiftRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <utility>
 
 namespace Aws
 {
@@ -69,7 +70,7 @@ namespace Model
      * <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li> <li>
      * <p>Must be unique for all clusters within an AWS account.</p> </li> </ul>
      */
-    inline void SetClusterIdentifier(Aws::String&& value) { m_clusterIdentifierHasBeenSet = true; m_clusterIdentifier = value; }
+    inline void SetClusterIdentifier(Aws::String&& value) { m_clusterIdentifierHasBeenSet = true; m_clusterIdentifier = std::move(value); }
 
     /**
      * <p>The identifier of the cluster that will be created from restoring the
@@ -99,7 +100,7 @@ namespace Model
      * <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li> <li>
      * <p>Must be unique for all clusters within an AWS account.</p> </li> </ul>
      */
-    inline RestoreFromClusterSnapshotRequest& WithClusterIdentifier(Aws::String&& value) { SetClusterIdentifier(value); return *this;}
+    inline RestoreFromClusterSnapshotRequest& WithClusterIdentifier(Aws::String&& value) { SetClusterIdentifier(std::move(value)); return *this;}
 
     /**
      * <p>The identifier of the cluster that will be created from restoring the
@@ -127,7 +128,7 @@ namespace Model
      * <p>The name of the snapshot from which to create the new cluster. This parameter
      * isn't case sensitive.</p> <p>Example: <code>my-snapshot-id</code> </p>
      */
-    inline void SetSnapshotIdentifier(Aws::String&& value) { m_snapshotIdentifierHasBeenSet = true; m_snapshotIdentifier = value; }
+    inline void SetSnapshotIdentifier(Aws::String&& value) { m_snapshotIdentifierHasBeenSet = true; m_snapshotIdentifier = std::move(value); }
 
     /**
      * <p>The name of the snapshot from which to create the new cluster. This parameter
@@ -145,7 +146,7 @@ namespace Model
      * <p>The name of the snapshot from which to create the new cluster. This parameter
      * isn't case sensitive.</p> <p>Example: <code>my-snapshot-id</code> </p>
      */
-    inline RestoreFromClusterSnapshotRequest& WithSnapshotIdentifier(Aws::String&& value) { SetSnapshotIdentifier(value); return *this;}
+    inline RestoreFromClusterSnapshotRequest& WithSnapshotIdentifier(Aws::String&& value) { SetSnapshotIdentifier(std::move(value)); return *this;}
 
     /**
      * <p>The name of the snapshot from which to create the new cluster. This parameter
@@ -172,7 +173,7 @@ namespace Model
      * is required if your IAM user has a policy containing a snapshot resource element
      * that specifies anything other than * for the cluster name.</p>
      */
-    inline void SetSnapshotClusterIdentifier(Aws::String&& value) { m_snapshotClusterIdentifierHasBeenSet = true; m_snapshotClusterIdentifier = value; }
+    inline void SetSnapshotClusterIdentifier(Aws::String&& value) { m_snapshotClusterIdentifierHasBeenSet = true; m_snapshotClusterIdentifier = std::move(value); }
 
     /**
      * <p>The name of the cluster the source snapshot was created from. This parameter
@@ -193,7 +194,7 @@ namespace Model
      * is required if your IAM user has a policy containing a snapshot resource element
      * that specifies anything other than * for the cluster name.</p>
      */
-    inline RestoreFromClusterSnapshotRequest& WithSnapshotClusterIdentifier(Aws::String&& value) { SetSnapshotClusterIdentifier(value); return *this;}
+    inline RestoreFromClusterSnapshotRequest& WithSnapshotClusterIdentifier(Aws::String&& value) { SetSnapshotClusterIdentifier(std::move(value)); return *this;}
 
     /**
      * <p>The name of the cluster the source snapshot was created from. This parameter
@@ -242,7 +243,7 @@ namespace Model
      * <p>Default: A random, system-chosen Availability Zone.</p> <p>Example:
      * <code>us-east-1a</code> </p>
      */
-    inline void SetAvailabilityZone(Aws::String&& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = value; }
+    inline void SetAvailabilityZone(Aws::String&& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = std::move(value); }
 
     /**
      * <p>The Amazon EC2 Availability Zone in which to restore the cluster.</p>
@@ -263,7 +264,7 @@ namespace Model
      * <p>Default: A random, system-chosen Availability Zone.</p> <p>Example:
      * <code>us-east-1a</code> </p>
      */
-    inline RestoreFromClusterSnapshotRequest& WithAvailabilityZone(Aws::String&& value) { SetAvailabilityZone(value); return *this;}
+    inline RestoreFromClusterSnapshotRequest& WithAvailabilityZone(Aws::String&& value) { SetAvailabilityZone(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon EC2 Availability Zone in which to restore the cluster.</p>
@@ -312,7 +313,7 @@ namespace Model
      * snapshot of cluster in VPC can be restored only in VPC. Therefore, you must
      * provide subnet group name where you want the cluster restored.</p>
      */
-    inline void SetClusterSubnetGroupName(Aws::String&& value) { m_clusterSubnetGroupNameHasBeenSet = true; m_clusterSubnetGroupName = value; }
+    inline void SetClusterSubnetGroupName(Aws::String&& value) { m_clusterSubnetGroupNameHasBeenSet = true; m_clusterSubnetGroupName = std::move(value); }
 
     /**
      * <p>The name of the subnet group where you want to cluster restored.</p> <p>A
@@ -333,7 +334,7 @@ namespace Model
      * snapshot of cluster in VPC can be restored only in VPC. Therefore, you must
      * provide subnet group name where you want the cluster restored.</p>
      */
-    inline RestoreFromClusterSnapshotRequest& WithClusterSubnetGroupName(Aws::String&& value) { SetClusterSubnetGroupName(value); return *this;}
+    inline RestoreFromClusterSnapshotRequest& WithClusterSubnetGroupName(Aws::String&& value) { SetClusterSubnetGroupName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the subnet group where you want to cluster restored.</p> <p>A
@@ -373,7 +374,7 @@ namespace Model
      * <p>The AWS customer account used to create or copy the snapshot. Required if you
      * are restoring a snapshot you do not own, optional if you own the snapshot.</p>
      */
-    inline void SetOwnerAccount(Aws::String&& value) { m_ownerAccountHasBeenSet = true; m_ownerAccount = value; }
+    inline void SetOwnerAccount(Aws::String&& value) { m_ownerAccountHasBeenSet = true; m_ownerAccount = std::move(value); }
 
     /**
      * <p>The AWS customer account used to create or copy the snapshot. Required if you
@@ -391,7 +392,7 @@ namespace Model
      * <p>The AWS customer account used to create or copy the snapshot. Required if you
      * are restoring a snapshot you do not own, optional if you own the snapshot.</p>
      */
-    inline RestoreFromClusterSnapshotRequest& WithOwnerAccount(Aws::String&& value) { SetOwnerAccount(value); return *this;}
+    inline RestoreFromClusterSnapshotRequest& WithOwnerAccount(Aws::String&& value) { SetOwnerAccount(std::move(value)); return *this;}
 
     /**
      * <p>The AWS customer account used to create or copy the snapshot. Required if you
@@ -415,7 +416,7 @@ namespace Model
      * <p>Specifies the name of the HSM client certificate the Amazon Redshift cluster
      * uses to retrieve the data encryption keys stored in an HSM.</p>
      */
-    inline void SetHsmClientCertificateIdentifier(Aws::String&& value) { m_hsmClientCertificateIdentifierHasBeenSet = true; m_hsmClientCertificateIdentifier = value; }
+    inline void SetHsmClientCertificateIdentifier(Aws::String&& value) { m_hsmClientCertificateIdentifierHasBeenSet = true; m_hsmClientCertificateIdentifier = std::move(value); }
 
     /**
      * <p>Specifies the name of the HSM client certificate the Amazon Redshift cluster
@@ -433,7 +434,7 @@ namespace Model
      * <p>Specifies the name of the HSM client certificate the Amazon Redshift cluster
      * uses to retrieve the data encryption keys stored in an HSM.</p>
      */
-    inline RestoreFromClusterSnapshotRequest& WithHsmClientCertificateIdentifier(Aws::String&& value) { SetHsmClientCertificateIdentifier(value); return *this;}
+    inline RestoreFromClusterSnapshotRequest& WithHsmClientCertificateIdentifier(Aws::String&& value) { SetHsmClientCertificateIdentifier(std::move(value)); return *this;}
 
     /**
      * <p>Specifies the name of the HSM client certificate the Amazon Redshift cluster
@@ -457,7 +458,7 @@ namespace Model
      * <p>Specifies the name of the HSM configuration that contains the information the
      * Amazon Redshift cluster can use to retrieve and store keys in an HSM.</p>
      */
-    inline void SetHsmConfigurationIdentifier(Aws::String&& value) { m_hsmConfigurationIdentifierHasBeenSet = true; m_hsmConfigurationIdentifier = value; }
+    inline void SetHsmConfigurationIdentifier(Aws::String&& value) { m_hsmConfigurationIdentifierHasBeenSet = true; m_hsmConfigurationIdentifier = std::move(value); }
 
     /**
      * <p>Specifies the name of the HSM configuration that contains the information the
@@ -475,7 +476,7 @@ namespace Model
      * <p>Specifies the name of the HSM configuration that contains the information the
      * Amazon Redshift cluster can use to retrieve and store keys in an HSM.</p>
      */
-    inline RestoreFromClusterSnapshotRequest& WithHsmConfigurationIdentifier(Aws::String&& value) { SetHsmConfigurationIdentifier(value); return *this;}
+    inline RestoreFromClusterSnapshotRequest& WithHsmConfigurationIdentifier(Aws::String&& value) { SetHsmConfigurationIdentifier(std::move(value)); return *this;}
 
     /**
      * <p>Specifies the name of the HSM configuration that contains the information the
@@ -496,7 +497,7 @@ namespace Model
     /**
      * <p>The elastic IP (EIP) address for the cluster.</p>
      */
-    inline void SetElasticIp(Aws::String&& value) { m_elasticIpHasBeenSet = true; m_elasticIp = value; }
+    inline void SetElasticIp(Aws::String&& value) { m_elasticIpHasBeenSet = true; m_elasticIp = std::move(value); }
 
     /**
      * <p>The elastic IP (EIP) address for the cluster.</p>
@@ -511,7 +512,7 @@ namespace Model
     /**
      * <p>The elastic IP (EIP) address for the cluster.</p>
      */
-    inline RestoreFromClusterSnapshotRequest& WithElasticIp(Aws::String&& value) { SetElasticIp(value); return *this;}
+    inline RestoreFromClusterSnapshotRequest& WithElasticIp(Aws::String&& value) { SetElasticIp(std::move(value)); return *this;}
 
     /**
      * <p>The elastic IP (EIP) address for the cluster.</p>
@@ -552,7 +553,7 @@ namespace Model
      * character must be a letter.</p> </li> <li> <p>Cannot end with a hyphen or
      * contain two consecutive hyphens.</p> </li> </ul>
      */
-    inline void SetClusterParameterGroupName(Aws::String&& value) { m_clusterParameterGroupNameHasBeenSet = true; m_clusterParameterGroupName = value; }
+    inline void SetClusterParameterGroupName(Aws::String&& value) { m_clusterParameterGroupNameHasBeenSet = true; m_clusterParameterGroupName = std::move(value); }
 
     /**
      * <p>The name of the parameter group to be associated with this cluster.</p>
@@ -588,7 +589,7 @@ namespace Model
      * character must be a letter.</p> </li> <li> <p>Cannot end with a hyphen or
      * contain two consecutive hyphens.</p> </li> </ul>
      */
-    inline RestoreFromClusterSnapshotRequest& WithClusterParameterGroupName(Aws::String&& value) { SetClusterParameterGroupName(value); return *this;}
+    inline RestoreFromClusterSnapshotRequest& WithClusterParameterGroupName(Aws::String&& value) { SetClusterParameterGroupName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the parameter group to be associated with this cluster.</p>
@@ -621,7 +622,7 @@ namespace Model
      * The default cluster security group for Amazon Redshift.</p> <p>Cluster security
      * groups only apply to clusters outside of VPCs.</p>
      */
-    inline void SetClusterSecurityGroups(Aws::Vector<Aws::String>&& value) { m_clusterSecurityGroupsHasBeenSet = true; m_clusterSecurityGroups = value; }
+    inline void SetClusterSecurityGroups(Aws::Vector<Aws::String>&& value) { m_clusterSecurityGroupsHasBeenSet = true; m_clusterSecurityGroups = std::move(value); }
 
     /**
      * <p>A list of security groups to be associated with this cluster.</p> <p>Default:
@@ -635,7 +636,7 @@ namespace Model
      * The default cluster security group for Amazon Redshift.</p> <p>Cluster security
      * groups only apply to clusters outside of VPCs.</p>
      */
-    inline RestoreFromClusterSnapshotRequest& WithClusterSecurityGroups(Aws::Vector<Aws::String>&& value) { SetClusterSecurityGroups(value); return *this;}
+    inline RestoreFromClusterSnapshotRequest& WithClusterSecurityGroups(Aws::Vector<Aws::String>&& value) { SetClusterSecurityGroups(std::move(value)); return *this;}
 
     /**
      * <p>A list of security groups to be associated with this cluster.</p> <p>Default:
@@ -649,7 +650,7 @@ namespace Model
      * The default cluster security group for Amazon Redshift.</p> <p>Cluster security
      * groups only apply to clusters outside of VPCs.</p>
      */
-    inline RestoreFromClusterSnapshotRequest& AddClusterSecurityGroups(Aws::String&& value) { m_clusterSecurityGroupsHasBeenSet = true; m_clusterSecurityGroups.push_back(value); return *this; }
+    inline RestoreFromClusterSnapshotRequest& AddClusterSecurityGroups(Aws::String&& value) { m_clusterSecurityGroupsHasBeenSet = true; m_clusterSecurityGroups.push_back(std::move(value)); return *this; }
 
     /**
      * <p>A list of security groups to be associated with this cluster.</p> <p>Default:
@@ -677,7 +678,7 @@ namespace Model
      * the cluster.</p> <p>Default: The default VPC security group is associated with
      * the cluster.</p> <p>VPC security groups only apply to clusters in VPCs.</p>
      */
-    inline void SetVpcSecurityGroupIds(Aws::Vector<Aws::String>&& value) { m_vpcSecurityGroupIdsHasBeenSet = true; m_vpcSecurityGroupIds = value; }
+    inline void SetVpcSecurityGroupIds(Aws::Vector<Aws::String>&& value) { m_vpcSecurityGroupIdsHasBeenSet = true; m_vpcSecurityGroupIds = std::move(value); }
 
     /**
      * <p>A list of Virtual Private Cloud (VPC) security groups to be associated with
@@ -691,7 +692,7 @@ namespace Model
      * the cluster.</p> <p>Default: The default VPC security group is associated with
      * the cluster.</p> <p>VPC security groups only apply to clusters in VPCs.</p>
      */
-    inline RestoreFromClusterSnapshotRequest& WithVpcSecurityGroupIds(Aws::Vector<Aws::String>&& value) { SetVpcSecurityGroupIds(value); return *this;}
+    inline RestoreFromClusterSnapshotRequest& WithVpcSecurityGroupIds(Aws::Vector<Aws::String>&& value) { SetVpcSecurityGroupIds(std::move(value)); return *this;}
 
     /**
      * <p>A list of Virtual Private Cloud (VPC) security groups to be associated with
@@ -705,7 +706,7 @@ namespace Model
      * the cluster.</p> <p>Default: The default VPC security group is associated with
      * the cluster.</p> <p>VPC security groups only apply to clusters in VPCs.</p>
      */
-    inline RestoreFromClusterSnapshotRequest& AddVpcSecurityGroupIds(Aws::String&& value) { m_vpcSecurityGroupIdsHasBeenSet = true; m_vpcSecurityGroupIds.push_back(value); return *this; }
+    inline RestoreFromClusterSnapshotRequest& AddVpcSecurityGroupIds(Aws::String&& value) { m_vpcSecurityGroupIdsHasBeenSet = true; m_vpcSecurityGroupIds.push_back(std::move(value)); return *this; }
 
     /**
      * <p>A list of Virtual Private Cloud (VPC) security groups to be associated with
@@ -748,7 +749,7 @@ namespace Model
      * | Tue | Wed | Thu | Fri | Sat | Sun</p> <p>Constraints: Minimum 30-minute
      * window.</p>
      */
-    inline void SetPreferredMaintenanceWindow(Aws::String&& value) { m_preferredMaintenanceWindowHasBeenSet = true; m_preferredMaintenanceWindow = value; }
+    inline void SetPreferredMaintenanceWindow(Aws::String&& value) { m_preferredMaintenanceWindowHasBeenSet = true; m_preferredMaintenanceWindow = std::move(value); }
 
     /**
      * <p>The weekly time range (in UTC) during which automated cluster maintenance can
@@ -784,7 +785,7 @@ namespace Model
      * | Tue | Wed | Thu | Fri | Sat | Sun</p> <p>Constraints: Minimum 30-minute
      * window.</p>
      */
-    inline RestoreFromClusterSnapshotRequest& WithPreferredMaintenanceWindow(Aws::String&& value) { SetPreferredMaintenanceWindow(value); return *this;}
+    inline RestoreFromClusterSnapshotRequest& WithPreferredMaintenanceWindow(Aws::String&& value) { SetPreferredMaintenanceWindow(std::move(value)); return *this;}
 
     /**
      * <p>The weekly time range (in UTC) during which automated cluster maintenance can
@@ -847,7 +848,7 @@ namespace Model
      * want to use to encrypt data in the cluster that you restore from a shared
      * snapshot.</p>
      */
-    inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
+    inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
 
     /**
      * <p>The AWS Key Management Service (KMS) key ID of the encryption key that you
@@ -868,7 +869,7 @@ namespace Model
      * want to use to encrypt data in the cluster that you restore from a shared
      * snapshot.</p>
      */
-    inline RestoreFromClusterSnapshotRequest& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(value); return *this;}
+    inline RestoreFromClusterSnapshotRequest& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
 
     /**
      * <p>The AWS Key Management Service (KMS) key ID of the encryption key that you
@@ -920,7 +921,7 @@ namespace Model
      * About Clusters and Nodes</a> in the <i>Amazon Redshift Cluster Management
      * Guide</i> </p>
      */
-    inline void SetNodeType(Aws::String&& value) { m_nodeTypeHasBeenSet = true; m_nodeType = value; }
+    inline void SetNodeType(Aws::String&& value) { m_nodeTypeHasBeenSet = true; m_nodeType = std::move(value); }
 
     /**
      * <p>The node type that the restored cluster will be provisioned with.</p>
@@ -965,7 +966,7 @@ namespace Model
      * About Clusters and Nodes</a> in the <i>Amazon Redshift Cluster Management
      * Guide</i> </p>
      */
-    inline RestoreFromClusterSnapshotRequest& WithNodeType(Aws::String&& value) { SetNodeType(value); return *this;}
+    inline RestoreFromClusterSnapshotRequest& WithNodeType(Aws::String&& value) { SetNodeType(std::move(value)); return *this;}
 
     /**
      * <p>The node type that the restored cluster will be provisioned with.</p>
@@ -1028,7 +1029,7 @@ namespace Model
     /**
      * <p>Reserved.</p>
      */
-    inline void SetAdditionalInfo(Aws::String&& value) { m_additionalInfoHasBeenSet = true; m_additionalInfo = value; }
+    inline void SetAdditionalInfo(Aws::String&& value) { m_additionalInfoHasBeenSet = true; m_additionalInfo = std::move(value); }
 
     /**
      * <p>Reserved.</p>
@@ -1043,7 +1044,7 @@ namespace Model
     /**
      * <p>Reserved.</p>
      */
-    inline RestoreFromClusterSnapshotRequest& WithAdditionalInfo(Aws::String&& value) { SetAdditionalInfo(value); return *this;}
+    inline RestoreFromClusterSnapshotRequest& WithAdditionalInfo(Aws::String&& value) { SetAdditionalInfo(std::move(value)); return *this;}
 
     /**
      * <p>Reserved.</p>
@@ -1075,7 +1076,7 @@ namespace Model
      * request.</p> <p>A cluster can have up to 10 IAM roles associated at any
      * time.</p>
      */
-    inline void SetIamRoles(Aws::Vector<Aws::String>&& value) { m_iamRolesHasBeenSet = true; m_iamRoles = value; }
+    inline void SetIamRoles(Aws::Vector<Aws::String>&& value) { m_iamRolesHasBeenSet = true; m_iamRoles = std::move(value); }
 
     /**
      * <p>A list of AWS Identity and Access Management (IAM) roles that can be used by
@@ -1093,7 +1094,7 @@ namespace Model
      * request.</p> <p>A cluster can have up to 10 IAM roles associated at any
      * time.</p>
      */
-    inline RestoreFromClusterSnapshotRequest& WithIamRoles(Aws::Vector<Aws::String>&& value) { SetIamRoles(value); return *this;}
+    inline RestoreFromClusterSnapshotRequest& WithIamRoles(Aws::Vector<Aws::String>&& value) { SetIamRoles(std::move(value)); return *this;}
 
     /**
      * <p>A list of AWS Identity and Access Management (IAM) roles that can be used by
@@ -1111,7 +1112,7 @@ namespace Model
      * request.</p> <p>A cluster can have up to 10 IAM roles associated at any
      * time.</p>
      */
-    inline RestoreFromClusterSnapshotRequest& AddIamRoles(Aws::String&& value) { m_iamRolesHasBeenSet = true; m_iamRoles.push_back(value); return *this; }
+    inline RestoreFromClusterSnapshotRequest& AddIamRoles(Aws::String&& value) { m_iamRolesHasBeenSet = true; m_iamRoles.push_back(std::move(value)); return *this; }
 
     /**
      * <p>A list of AWS Identity and Access Management (IAM) roles that can be used by

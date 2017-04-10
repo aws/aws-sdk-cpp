@@ -16,6 +16,7 @@
 #include <aws/redshift/Redshift_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -63,7 +64,7 @@ namespace Model
      * <p>The identifier of an AWS customer account authorized to restore a
      * snapshot.</p>
      */
-    inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
+    inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
 
     /**
      * <p>The identifier of an AWS customer account authorized to restore a
@@ -81,7 +82,7 @@ namespace Model
      * <p>The identifier of an AWS customer account authorized to restore a
      * snapshot.</p>
      */
-    inline AccountWithRestoreAccess& WithAccountId(Aws::String&& value) { SetAccountId(value); return *this;}
+    inline AccountWithRestoreAccess& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
 
     /**
      * <p>The identifier of an AWS customer account authorized to restore a
@@ -105,7 +106,7 @@ namespace Model
      * <p>The identifier of an AWS support account authorized to restore a snapshot.
      * For AWS support, the identifier is <code>amazon-redshift-support</code>. </p>
      */
-    inline void SetAccountAlias(Aws::String&& value) { m_accountAliasHasBeenSet = true; m_accountAlias = value; }
+    inline void SetAccountAlias(Aws::String&& value) { m_accountAliasHasBeenSet = true; m_accountAlias = std::move(value); }
 
     /**
      * <p>The identifier of an AWS support account authorized to restore a snapshot.
@@ -123,7 +124,7 @@ namespace Model
      * <p>The identifier of an AWS support account authorized to restore a snapshot.
      * For AWS support, the identifier is <code>amazon-redshift-support</code>. </p>
      */
-    inline AccountWithRestoreAccess& WithAccountAlias(Aws::String&& value) { SetAccountAlias(value); return *this;}
+    inline AccountWithRestoreAccess& WithAccountAlias(Aws::String&& value) { SetAccountAlias(std::move(value)); return *this;}
 
     /**
      * <p>The identifier of an AWS support account authorized to restore a snapshot.

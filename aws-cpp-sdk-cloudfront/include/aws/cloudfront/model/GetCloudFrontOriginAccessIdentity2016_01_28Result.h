@@ -16,6 +16,7 @@
 #include <aws/cloudfront/CloudFront_EXPORTS.h>
 #include <aws/cloudfront/model/CloudFrontOriginAccessIdentity.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -58,7 +59,7 @@ namespace Model
     /**
      * The origin access identity's information.
      */
-    inline void SetCloudFrontOriginAccessIdentity(CloudFrontOriginAccessIdentity&& value) { m_cloudFrontOriginAccessIdentity = value; }
+    inline void SetCloudFrontOriginAccessIdentity(CloudFrontOriginAccessIdentity&& value) { m_cloudFrontOriginAccessIdentity = std::move(value); }
 
     /**
      * The origin access identity's information.
@@ -68,7 +69,7 @@ namespace Model
     /**
      * The origin access identity's information.
      */
-    inline GetCloudFrontOriginAccessIdentity2016_01_28Result& WithCloudFrontOriginAccessIdentity(CloudFrontOriginAccessIdentity&& value) { SetCloudFrontOriginAccessIdentity(value); return *this;}
+    inline GetCloudFrontOriginAccessIdentity2016_01_28Result& WithCloudFrontOriginAccessIdentity(CloudFrontOriginAccessIdentity&& value) { SetCloudFrontOriginAccessIdentity(std::move(value)); return *this;}
 
     /**
      * The current version of the origin access identity's information. For example:
@@ -86,7 +87,7 @@ namespace Model
      * The current version of the origin access identity's information. For example:
      * E2QWRUHAPOMQZL.
      */
-    inline void SetETag(Aws::String&& value) { m_eTag = value; }
+    inline void SetETag(Aws::String&& value) { m_eTag = std::move(value); }
 
     /**
      * The current version of the origin access identity's information. For example:
@@ -104,7 +105,7 @@ namespace Model
      * The current version of the origin access identity's information. For example:
      * E2QWRUHAPOMQZL.
      */
-    inline GetCloudFrontOriginAccessIdentity2016_01_28Result& WithETag(Aws::String&& value) { SetETag(value); return *this;}
+    inline GetCloudFrontOriginAccessIdentity2016_01_28Result& WithETag(Aws::String&& value) { SetETag(std::move(value)); return *this;}
 
     /**
      * The current version of the origin access identity's information. For example:

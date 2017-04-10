@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ssm/model/InventoryFilter.h>
+#include <utility>
 
 namespace Aws
 {
@@ -50,7 +51,7 @@ namespace Model
     /**
      * <p>The instance ID for which you want inventory information.</p>
      */
-    inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
+    inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::move(value); }
 
     /**
      * <p>The instance ID for which you want inventory information.</p>
@@ -65,7 +66,7 @@ namespace Model
     /**
      * <p>The instance ID for which you want inventory information.</p>
      */
-    inline ListInventoryEntriesRequest& WithInstanceId(Aws::String&& value) { SetInstanceId(value); return *this;}
+    inline ListInventoryEntriesRequest& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
 
     /**
      * <p>The instance ID for which you want inventory information.</p>
@@ -85,7 +86,7 @@ namespace Model
     /**
      * <p>The type of inventory item for which you want information.</p>
      */
-    inline void SetTypeName(Aws::String&& value) { m_typeNameHasBeenSet = true; m_typeName = value; }
+    inline void SetTypeName(Aws::String&& value) { m_typeNameHasBeenSet = true; m_typeName = std::move(value); }
 
     /**
      * <p>The type of inventory item for which you want information.</p>
@@ -100,7 +101,7 @@ namespace Model
     /**
      * <p>The type of inventory item for which you want information.</p>
      */
-    inline ListInventoryEntriesRequest& WithTypeName(Aws::String&& value) { SetTypeName(value); return *this;}
+    inline ListInventoryEntriesRequest& WithTypeName(Aws::String&& value) { SetTypeName(std::move(value)); return *this;}
 
     /**
      * <p>The type of inventory item for which you want information.</p>
@@ -123,7 +124,7 @@ namespace Model
      * <p>One or more filters. Use a filter to return a more specific list of
      * results.</p>
      */
-    inline void SetFilters(Aws::Vector<InventoryFilter>&& value) { m_filtersHasBeenSet = true; m_filters = value; }
+    inline void SetFilters(Aws::Vector<InventoryFilter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
 
     /**
      * <p>One or more filters. Use a filter to return a more specific list of
@@ -135,7 +136,7 @@ namespace Model
      * <p>One or more filters. Use a filter to return a more specific list of
      * results.</p>
      */
-    inline ListInventoryEntriesRequest& WithFilters(Aws::Vector<InventoryFilter>&& value) { SetFilters(value); return *this;}
+    inline ListInventoryEntriesRequest& WithFilters(Aws::Vector<InventoryFilter>&& value) { SetFilters(std::move(value)); return *this;}
 
     /**
      * <p>One or more filters. Use a filter to return a more specific list of
@@ -147,7 +148,7 @@ namespace Model
      * <p>One or more filters. Use a filter to return a more specific list of
      * results.</p>
      */
-    inline ListInventoryEntriesRequest& AddFilters(InventoryFilter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
+    inline ListInventoryEntriesRequest& AddFilters(InventoryFilter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The token for the next set of items to return. (You received this token from
@@ -165,7 +166,7 @@ namespace Model
      * <p>The token for the next set of items to return. (You received this token from
      * a previous call.)</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
      * <p>The token for the next set of items to return. (You received this token from
@@ -183,7 +184,7 @@ namespace Model
      * <p>The token for the next set of items to return. (You received this token from
      * a previous call.)</p>
      */
-    inline ListInventoryEntriesRequest& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline ListInventoryEntriesRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>The token for the next set of items to return. (You received this token from

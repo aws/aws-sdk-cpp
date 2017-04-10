@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/elasticfilesystem/EFS_EXPORTS.h>
 #include <aws/core/utils/DateTime.h>
+#include <utility>
 
 namespace Aws
 {
@@ -84,7 +85,7 @@ namespace Model
      * determined. The value is the integer number of seconds since
      * 1970-01-01T00:00:00Z.</p>
      */
-    inline void SetTimestamp(Aws::Utils::DateTime&& value) { m_timestampHasBeenSet = true; m_timestamp = value; }
+    inline void SetTimestamp(Aws::Utils::DateTime&& value) { m_timestampHasBeenSet = true; m_timestamp = std::move(value); }
 
     /**
      * <p>Time at which the size of data, returned in the <code>Value</code> field, was
@@ -98,7 +99,7 @@ namespace Model
      * determined. The value is the integer number of seconds since
      * 1970-01-01T00:00:00Z.</p>
      */
-    inline FileSystemSize& WithTimestamp(Aws::Utils::DateTime&& value) { SetTimestamp(value); return *this;}
+    inline FileSystemSize& WithTimestamp(Aws::Utils::DateTime&& value) { SetTimestamp(std::move(value)); return *this;}
 
   private:
     long long m_value;

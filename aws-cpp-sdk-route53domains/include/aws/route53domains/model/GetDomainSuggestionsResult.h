@@ -16,6 +16,7 @@
 #include <aws/route53domains/Route53Domains_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/route53domains/model/DomainSuggestion.h>
+#include <utility>
 
 namespace Aws
 {
@@ -47,19 +48,19 @@ namespace Model
     inline void SetSuggestionsList(const Aws::Vector<DomainSuggestion>& value) { m_suggestionsList = value; }
 
     
-    inline void SetSuggestionsList(Aws::Vector<DomainSuggestion>&& value) { m_suggestionsList = value; }
+    inline void SetSuggestionsList(Aws::Vector<DomainSuggestion>&& value) { m_suggestionsList = std::move(value); }
 
     
     inline GetDomainSuggestionsResult& WithSuggestionsList(const Aws::Vector<DomainSuggestion>& value) { SetSuggestionsList(value); return *this;}
 
     
-    inline GetDomainSuggestionsResult& WithSuggestionsList(Aws::Vector<DomainSuggestion>&& value) { SetSuggestionsList(value); return *this;}
+    inline GetDomainSuggestionsResult& WithSuggestionsList(Aws::Vector<DomainSuggestion>&& value) { SetSuggestionsList(std::move(value)); return *this;}
 
     
     inline GetDomainSuggestionsResult& AddSuggestionsList(const DomainSuggestion& value) { m_suggestionsList.push_back(value); return *this; }
 
     
-    inline GetDomainSuggestionsResult& AddSuggestionsList(DomainSuggestion&& value) { m_suggestionsList.push_back(value); return *this; }
+    inline GetDomainSuggestionsResult& AddSuggestionsList(DomainSuggestion&& value) { m_suggestionsList.push_back(std::move(value)); return *this; }
 
   private:
     Aws::Vector<DomainSuggestion> m_suggestionsList;

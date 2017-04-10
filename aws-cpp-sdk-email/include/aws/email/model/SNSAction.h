@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/email/model/SNSActionEncoding.h>
+#include <utility>
 
 namespace Aws
 {
@@ -91,7 +92,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon SNS
      * Developer Guide</a>.</p>
      */
-    inline void SetTopicArn(Aws::String&& value) { m_topicArnHasBeenSet = true; m_topicArn = value; }
+    inline void SetTopicArn(Aws::String&& value) { m_topicArnHasBeenSet = true; m_topicArn = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon SNS topic to notify. An example
@@ -121,7 +122,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon SNS
      * Developer Guide</a>.</p>
      */
-    inline SNSAction& WithTopicArn(Aws::String&& value) { SetTopicArn(value); return *this;}
+    inline SNSAction& WithTopicArn(Aws::String&& value) { SetTopicArn(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon SNS topic to notify. An example
@@ -155,7 +156,7 @@ namespace Model
      * encoded with a different encoding format. Base64 preserves all special
      * characters. The default value is UTF-8.</p>
      */
-    inline void SetEncoding(SNSActionEncoding&& value) { m_encodingHasBeenSet = true; m_encoding = value; }
+    inline void SetEncoding(SNSActionEncoding&& value) { m_encodingHasBeenSet = true; m_encoding = std::move(value); }
 
     /**
      * <p>The encoding to use for the email within the Amazon SNS notification. UTF-8
@@ -171,7 +172,7 @@ namespace Model
      * encoded with a different encoding format. Base64 preserves all special
      * characters. The default value is UTF-8.</p>
      */
-    inline SNSAction& WithEncoding(SNSActionEncoding&& value) { SetEncoding(value); return *this;}
+    inline SNSAction& WithEncoding(SNSActionEncoding&& value) { SetEncoding(std::move(value)); return *this;}
 
   private:
     Aws::String m_topicArn;

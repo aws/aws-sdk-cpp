@@ -16,6 +16,7 @@
 #include <aws/rekognition/Rekognition_EXPORTS.h>
 #include <aws/core/utils/Array.h>
 #include <aws/rekognition/model/S3Object.h>
+#include <utility>
 
 namespace Aws
 {
@@ -67,7 +68,7 @@ namespace Model
     /**
      * <p>Blob of image bytes up to 5 MBs.</p>
      */
-    inline void SetBytes(Aws::Utils::ByteBuffer&& value) { m_bytesHasBeenSet = true; m_bytes = value; }
+    inline void SetBytes(Aws::Utils::ByteBuffer&& value) { m_bytesHasBeenSet = true; m_bytes = std::move(value); }
 
     /**
      * <p>Blob of image bytes up to 5 MBs.</p>
@@ -77,7 +78,7 @@ namespace Model
     /**
      * <p>Blob of image bytes up to 5 MBs.</p>
      */
-    inline Image& WithBytes(Aws::Utils::ByteBuffer&& value) { SetBytes(value); return *this;}
+    inline Image& WithBytes(Aws::Utils::ByteBuffer&& value) { SetBytes(std::move(value)); return *this;}
 
     /**
      * <p>Identifies an S3 object as the image source.</p>
@@ -92,7 +93,7 @@ namespace Model
     /**
      * <p>Identifies an S3 object as the image source.</p>
      */
-    inline void SetS3Object(S3Object&& value) { m_s3ObjectHasBeenSet = true; m_s3Object = value; }
+    inline void SetS3Object(S3Object&& value) { m_s3ObjectHasBeenSet = true; m_s3Object = std::move(value); }
 
     /**
      * <p>Identifies an S3 object as the image source.</p>
@@ -102,7 +103,7 @@ namespace Model
     /**
      * <p>Identifies an S3 object as the image source.</p>
      */
-    inline Image& WithS3Object(S3Object&& value) { SetS3Object(value); return *this;}
+    inline Image& WithS3Object(S3Object&& value) { SetS3Object(std::move(value)); return *this;}
 
   private:
     Aws::Utils::ByteBuffer m_bytes;

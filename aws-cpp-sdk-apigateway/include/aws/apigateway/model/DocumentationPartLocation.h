@@ -16,6 +16,7 @@
 #include <aws/apigateway/APIGateway_EXPORTS.h>
 #include <aws/apigateway/model/DocumentationPartType.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -82,7 +83,7 @@ namespace Model
      * <code>AUTHROZER</code>, <code>METHOD</code>, <code>MODEL</code>,
      * <code>REQUEST_BODY</code>, or <code>RESOURCE</code> type.</p>
      */
-    inline void SetType(DocumentationPartType&& value) { m_typeHasBeenSet = true; m_type = value; }
+    inline void SetType(DocumentationPartType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
      * <p>The type of API entity to which the documentation content applies. It is a
@@ -108,7 +109,7 @@ namespace Model
      * <code>AUTHROZER</code>, <code>METHOD</code>, <code>MODEL</code>,
      * <code>REQUEST_BODY</code>, or <code>RESOURCE</code> type.</p>
      */
-    inline DocumentationPartLocation& WithType(DocumentationPartType&& value) { SetType(value); return *this;}
+    inline DocumentationPartLocation& WithType(DocumentationPartType&& value) { SetType(std::move(value)); return *this;}
 
     /**
      * <p>The URL path of the target. It is a valid field for the API entity types of
@@ -147,7 +148,7 @@ namespace Model
      * <code>location</code> attributes, the child entity's <code>path</code> attribute
      * must match that of the parent entity as a prefix.</p>
      */
-    inline void SetPath(Aws::String&& value) { m_pathHasBeenSet = true; m_path = value; }
+    inline void SetPath(Aws::String&& value) { m_pathHasBeenSet = true; m_path = std::move(value); }
 
     /**
      * <p>The URL path of the target. It is a valid field for the API entity types of
@@ -186,7 +187,7 @@ namespace Model
      * <code>location</code> attributes, the child entity's <code>path</code> attribute
      * must match that of the parent entity as a prefix.</p>
      */
-    inline DocumentationPartLocation& WithPath(Aws::String&& value) { SetPath(value); return *this;}
+    inline DocumentationPartLocation& WithPath(Aws::String&& value) { SetPath(std::move(value)); return *this;}
 
     /**
      * <p>The URL path of the target. It is a valid field for the API entity types of
@@ -235,7 +236,7 @@ namespace Model
      * other <code>location</code> attributes, the child entity's <code>method</code>
      * attribute must match that of the parent entity exactly.</p>
      */
-    inline void SetMethod(Aws::String&& value) { m_methodHasBeenSet = true; m_method = value; }
+    inline void SetMethod(Aws::String&& value) { m_methodHasBeenSet = true; m_method = std::move(value); }
 
     /**
      * <p>The HTTP verb of a method. It is a valid field for the API entity types of
@@ -271,7 +272,7 @@ namespace Model
      * other <code>location</code> attributes, the child entity's <code>method</code>
      * attribute must match that of the parent entity exactly.</p>
      */
-    inline DocumentationPartLocation& WithMethod(Aws::String&& value) { SetMethod(value); return *this;}
+    inline DocumentationPartLocation& WithMethod(Aws::String&& value) { SetMethod(std::move(value)); return *this;}
 
     /**
      * <p>The HTTP verb of a method. It is a valid field for the API entity types of
@@ -316,7 +317,7 @@ namespace Model
      * attributes, the child entity's <code>statusCode</code> attribute must match that
      * of the parent entity exactly.</p>
      */
-    inline void SetStatusCode(Aws::String&& value) { m_statusCodeHasBeenSet = true; m_statusCode = value; }
+    inline void SetStatusCode(Aws::String&& value) { m_statusCodeHasBeenSet = true; m_statusCode = std::move(value); }
 
     /**
      * <p>The HTTP status code of a response. It is a valid field for the API entity
@@ -349,7 +350,7 @@ namespace Model
      * attributes, the child entity's <code>statusCode</code> attribute must match that
      * of the parent entity exactly.</p>
      */
-    inline DocumentationPartLocation& WithStatusCode(Aws::String&& value) { SetStatusCode(value); return *this;}
+    inline DocumentationPartLocation& WithStatusCode(Aws::String&& value) { SetStatusCode(std::move(value)); return *this;}
 
     /**
      * <p>The HTTP status code of a response. It is a valid field for the API entity
@@ -390,7 +391,7 @@ namespace Model
      * <code>RESPONSE_HEADER</code>. It is an invalid field for any other entity
      * type.</p>
      */
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p>The name of the targeted API entity. It is a valid and required field for the
@@ -420,7 +421,7 @@ namespace Model
      * <code>RESPONSE_HEADER</code>. It is an invalid field for any other entity
      * type.</p>
      */
-    inline DocumentationPartLocation& WithName(Aws::String&& value) { SetName(value); return *this;}
+    inline DocumentationPartLocation& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the targeted API entity. It is a valid and required field for the

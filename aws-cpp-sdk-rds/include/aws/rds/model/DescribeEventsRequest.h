@@ -20,6 +20,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/rds/model/Filter.h>
+#include <utility>
 
 namespace Aws
 {
@@ -90,7 +91,7 @@ namespace Model
      * be supplied.</p> </li> <li> <p>Cannot end with a hyphen or contain two
      * consecutive hyphens.</p> </li> </ul>
      */
-    inline void SetSourceIdentifier(Aws::String&& value) { m_sourceIdentifierHasBeenSet = true; m_sourceIdentifier = value; }
+    inline void SetSourceIdentifier(Aws::String&& value) { m_sourceIdentifierHasBeenSet = true; m_sourceIdentifier = std::move(value); }
 
     /**
      * <p>The identifier of the event source for which events will be returned. If not
@@ -138,7 +139,7 @@ namespace Model
      * be supplied.</p> </li> <li> <p>Cannot end with a hyphen or contain two
      * consecutive hyphens.</p> </li> </ul>
      */
-    inline DescribeEventsRequest& WithSourceIdentifier(Aws::String&& value) { SetSourceIdentifier(value); return *this;}
+    inline DescribeEventsRequest& WithSourceIdentifier(Aws::String&& value) { SetSourceIdentifier(std::move(value)); return *this;}
 
     /**
      * <p>The identifier of the event source for which events will be returned. If not
@@ -172,7 +173,7 @@ namespace Model
      * <p>The event source to retrieve events for. If no value is specified, all events
      * are returned.</p>
      */
-    inline void SetSourceType(SourceType&& value) { m_sourceTypeHasBeenSet = true; m_sourceType = value; }
+    inline void SetSourceType(SourceType&& value) { m_sourceTypeHasBeenSet = true; m_sourceType = std::move(value); }
 
     /**
      * <p>The event source to retrieve events for. If no value is specified, all events
@@ -184,7 +185,7 @@ namespace Model
      * <p>The event source to retrieve events for. If no value is specified, all events
      * are returned.</p>
      */
-    inline DescribeEventsRequest& WithSourceType(SourceType&& value) { SetSourceType(value); return *this;}
+    inline DescribeEventsRequest& WithSourceType(SourceType&& value) { SetSourceType(std::move(value)); return *this;}
 
     /**
      * <p> The beginning of the time interval to retrieve events for, specified in ISO
@@ -208,7 +209,7 @@ namespace Model
      * href="http://en.wikipedia.org/wiki/ISO_8601">ISO8601 Wikipedia page.</a> </p>
      * <p>Example: 2009-07-08T18:00Z</p>
      */
-    inline void SetStartTime(Aws::Utils::DateTime&& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
+    inline void SetStartTime(Aws::Utils::DateTime&& value) { m_startTimeHasBeenSet = true; m_startTime = std::move(value); }
 
     /**
      * <p> The beginning of the time interval to retrieve events for, specified in ISO
@@ -224,7 +225,7 @@ namespace Model
      * href="http://en.wikipedia.org/wiki/ISO_8601">ISO8601 Wikipedia page.</a> </p>
      * <p>Example: 2009-07-08T18:00Z</p>
      */
-    inline DescribeEventsRequest& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(value); return *this;}
+    inline DescribeEventsRequest& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(std::move(value)); return *this;}
 
     /**
      * <p> The end of the time interval for which to retrieve events, specified in ISO
@@ -248,7 +249,7 @@ namespace Model
      * href="http://en.wikipedia.org/wiki/ISO_8601">ISO8601 Wikipedia page.</a> </p>
      * <p>Example: 2009-07-08T18:00Z</p>
      */
-    inline void SetEndTime(Aws::Utils::DateTime&& value) { m_endTimeHasBeenSet = true; m_endTime = value; }
+    inline void SetEndTime(Aws::Utils::DateTime&& value) { m_endTimeHasBeenSet = true; m_endTime = std::move(value); }
 
     /**
      * <p> The end of the time interval for which to retrieve events, specified in ISO
@@ -264,7 +265,7 @@ namespace Model
      * href="http://en.wikipedia.org/wiki/ISO_8601">ISO8601 Wikipedia page.</a> </p>
      * <p>Example: 2009-07-08T18:00Z</p>
      */
-    inline DescribeEventsRequest& WithEndTime(Aws::Utils::DateTime&& value) { SetEndTime(value); return *this;}
+    inline DescribeEventsRequest& WithEndTime(Aws::Utils::DateTime&& value) { SetEndTime(std::move(value)); return *this;}
 
     /**
      * <p>The number of minutes to retrieve events for.</p> <p>Default: 60</p>
@@ -297,7 +298,7 @@ namespace Model
      * <p>A list of event categories that trigger notifications for a event
      * notification subscription.</p>
      */
-    inline void SetEventCategories(Aws::Vector<Aws::String>&& value) { m_eventCategoriesHasBeenSet = true; m_eventCategories = value; }
+    inline void SetEventCategories(Aws::Vector<Aws::String>&& value) { m_eventCategoriesHasBeenSet = true; m_eventCategories = std::move(value); }
 
     /**
      * <p>A list of event categories that trigger notifications for a event
@@ -309,7 +310,7 @@ namespace Model
      * <p>A list of event categories that trigger notifications for a event
      * notification subscription.</p>
      */
-    inline DescribeEventsRequest& WithEventCategories(Aws::Vector<Aws::String>&& value) { SetEventCategories(value); return *this;}
+    inline DescribeEventsRequest& WithEventCategories(Aws::Vector<Aws::String>&& value) { SetEventCategories(std::move(value)); return *this;}
 
     /**
      * <p>A list of event categories that trigger notifications for a event
@@ -321,7 +322,7 @@ namespace Model
      * <p>A list of event categories that trigger notifications for a event
      * notification subscription.</p>
      */
-    inline DescribeEventsRequest& AddEventCategories(Aws::String&& value) { m_eventCategoriesHasBeenSet = true; m_eventCategories.push_back(value); return *this; }
+    inline DescribeEventsRequest& AddEventCategories(Aws::String&& value) { m_eventCategoriesHasBeenSet = true; m_eventCategories.push_back(std::move(value)); return *this; }
 
     /**
      * <p>A list of event categories that trigger notifications for a event
@@ -342,7 +343,7 @@ namespace Model
     /**
      * <p>This parameter is not currently supported.</p>
      */
-    inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = value; }
+    inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
 
     /**
      * <p>This parameter is not currently supported.</p>
@@ -352,7 +353,7 @@ namespace Model
     /**
      * <p>This parameter is not currently supported.</p>
      */
-    inline DescribeEventsRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(value); return *this;}
+    inline DescribeEventsRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(std::move(value)); return *this;}
 
     /**
      * <p>This parameter is not currently supported.</p>
@@ -362,7 +363,7 @@ namespace Model
     /**
      * <p>This parameter is not currently supported.</p>
      */
-    inline DescribeEventsRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
+    inline DescribeEventsRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 
     /**
      * <p> The maximum number of records to include in the response. If more records
@@ -407,7 +408,7 @@ namespace Model
      * If this parameter is specified, the response includes only records beyond the
      * marker, up to the value specified by <code>MaxRecords</code>. </p>
      */
-    inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = value; }
+    inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = std::move(value); }
 
     /**
      * <p> An optional pagination token provided by a previous DescribeEvents request.
@@ -428,7 +429,7 @@ namespace Model
      * If this parameter is specified, the response includes only records beyond the
      * marker, up to the value specified by <code>MaxRecords</code>. </p>
      */
-    inline DescribeEventsRequest& WithMarker(Aws::String&& value) { SetMarker(value); return *this;}
+    inline DescribeEventsRequest& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
 
     /**
      * <p> An optional pagination token provided by a previous DescribeEvents request.

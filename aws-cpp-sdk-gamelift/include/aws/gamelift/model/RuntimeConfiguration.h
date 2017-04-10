@@ -16,6 +16,7 @@
 #include <aws/gamelift/GameLift_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/gamelift/model/ServerProcess.h>
+#include <utility>
 
 namespace Aws
 {
@@ -75,7 +76,7 @@ namespace Model
      * <p>Collection of server process configurations describing what server processes
      * to run on each instance in a fleet</p>
      */
-    inline void SetServerProcesses(Aws::Vector<ServerProcess>&& value) { m_serverProcessesHasBeenSet = true; m_serverProcesses = value; }
+    inline void SetServerProcesses(Aws::Vector<ServerProcess>&& value) { m_serverProcessesHasBeenSet = true; m_serverProcesses = std::move(value); }
 
     /**
      * <p>Collection of server process configurations describing what server processes
@@ -87,7 +88,7 @@ namespace Model
      * <p>Collection of server process configurations describing what server processes
      * to run on each instance in a fleet</p>
      */
-    inline RuntimeConfiguration& WithServerProcesses(Aws::Vector<ServerProcess>&& value) { SetServerProcesses(value); return *this;}
+    inline RuntimeConfiguration& WithServerProcesses(Aws::Vector<ServerProcess>&& value) { SetServerProcesses(std::move(value)); return *this;}
 
     /**
      * <p>Collection of server process configurations describing what server processes
@@ -99,7 +100,7 @@ namespace Model
      * <p>Collection of server process configurations describing what server processes
      * to run on each instance in a fleet</p>
      */
-    inline RuntimeConfiguration& AddServerProcesses(ServerProcess&& value) { m_serverProcessesHasBeenSet = true; m_serverProcesses.push_back(value); return *this; }
+    inline RuntimeConfiguration& AddServerProcesses(ServerProcess&& value) { m_serverProcessesHasBeenSet = true; m_serverProcesses.push_back(std::move(value)); return *this; }
 
   private:
     Aws::Vector<ServerProcess> m_serverProcesses;

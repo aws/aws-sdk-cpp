@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/workspaces/model/WorkspaceState.h>
 #include <aws/workspaces/model/WorkspaceProperties.h>
+#include <utility>
 
 namespace Aws
 {
@@ -58,7 +59,7 @@ namespace Model
     /**
      * <p>The identifier of the WorkSpace.</p>
      */
-    inline void SetWorkspaceId(Aws::String&& value) { m_workspaceIdHasBeenSet = true; m_workspaceId = value; }
+    inline void SetWorkspaceId(Aws::String&& value) { m_workspaceIdHasBeenSet = true; m_workspaceId = std::move(value); }
 
     /**
      * <p>The identifier of the WorkSpace.</p>
@@ -73,7 +74,7 @@ namespace Model
     /**
      * <p>The identifier of the WorkSpace.</p>
      */
-    inline Workspace& WithWorkspaceId(Aws::String&& value) { SetWorkspaceId(value); return *this;}
+    inline Workspace& WithWorkspaceId(Aws::String&& value) { SetWorkspaceId(std::move(value)); return *this;}
 
     /**
      * <p>The identifier of the WorkSpace.</p>
@@ -96,7 +97,7 @@ namespace Model
      * <p>The identifier of the AWS Directory Service directory that the WorkSpace
      * belongs to.</p>
      */
-    inline void SetDirectoryId(Aws::String&& value) { m_directoryIdHasBeenSet = true; m_directoryId = value; }
+    inline void SetDirectoryId(Aws::String&& value) { m_directoryIdHasBeenSet = true; m_directoryId = std::move(value); }
 
     /**
      * <p>The identifier of the AWS Directory Service directory that the WorkSpace
@@ -114,7 +115,7 @@ namespace Model
      * <p>The identifier of the AWS Directory Service directory that the WorkSpace
      * belongs to.</p>
      */
-    inline Workspace& WithDirectoryId(Aws::String&& value) { SetDirectoryId(value); return *this;}
+    inline Workspace& WithDirectoryId(Aws::String&& value) { SetDirectoryId(std::move(value)); return *this;}
 
     /**
      * <p>The identifier of the AWS Directory Service directory that the WorkSpace
@@ -135,7 +136,7 @@ namespace Model
     /**
      * <p>The user that the WorkSpace is assigned to.</p>
      */
-    inline void SetUserName(Aws::String&& value) { m_userNameHasBeenSet = true; m_userName = value; }
+    inline void SetUserName(Aws::String&& value) { m_userNameHasBeenSet = true; m_userName = std::move(value); }
 
     /**
      * <p>The user that the WorkSpace is assigned to.</p>
@@ -150,7 +151,7 @@ namespace Model
     /**
      * <p>The user that the WorkSpace is assigned to.</p>
      */
-    inline Workspace& WithUserName(Aws::String&& value) { SetUserName(value); return *this;}
+    inline Workspace& WithUserName(Aws::String&& value) { SetUserName(std::move(value)); return *this;}
 
     /**
      * <p>The user that the WorkSpace is assigned to.</p>
@@ -170,7 +171,7 @@ namespace Model
     /**
      * <p>The IP address of the WorkSpace.</p>
      */
-    inline void SetIpAddress(Aws::String&& value) { m_ipAddressHasBeenSet = true; m_ipAddress = value; }
+    inline void SetIpAddress(Aws::String&& value) { m_ipAddressHasBeenSet = true; m_ipAddress = std::move(value); }
 
     /**
      * <p>The IP address of the WorkSpace.</p>
@@ -185,7 +186,7 @@ namespace Model
     /**
      * <p>The IP address of the WorkSpace.</p>
      */
-    inline Workspace& WithIpAddress(Aws::String&& value) { SetIpAddress(value); return *this;}
+    inline Workspace& WithIpAddress(Aws::String&& value) { SetIpAddress(std::move(value)); return *this;}
 
     /**
      * <p>The IP address of the WorkSpace.</p>
@@ -205,7 +206,7 @@ namespace Model
     /**
      * <p>The operational state of the WorkSpace.</p>
      */
-    inline void SetState(WorkspaceState&& value) { m_stateHasBeenSet = true; m_state = value; }
+    inline void SetState(WorkspaceState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
 
     /**
      * <p>The operational state of the WorkSpace.</p>
@@ -215,7 +216,7 @@ namespace Model
     /**
      * <p>The operational state of the WorkSpace.</p>
      */
-    inline Workspace& WithState(WorkspaceState&& value) { SetState(value); return *this;}
+    inline Workspace& WithState(WorkspaceState&& value) { SetState(std::move(value)); return *this;}
 
     /**
      * <p>The identifier of the bundle that the WorkSpace was created from.</p>
@@ -230,7 +231,7 @@ namespace Model
     /**
      * <p>The identifier of the bundle that the WorkSpace was created from.</p>
      */
-    inline void SetBundleId(Aws::String&& value) { m_bundleIdHasBeenSet = true; m_bundleId = value; }
+    inline void SetBundleId(Aws::String&& value) { m_bundleIdHasBeenSet = true; m_bundleId = std::move(value); }
 
     /**
      * <p>The identifier of the bundle that the WorkSpace was created from.</p>
@@ -245,7 +246,7 @@ namespace Model
     /**
      * <p>The identifier of the bundle that the WorkSpace was created from.</p>
      */
-    inline Workspace& WithBundleId(Aws::String&& value) { SetBundleId(value); return *this;}
+    inline Workspace& WithBundleId(Aws::String&& value) { SetBundleId(std::move(value)); return *this;}
 
     /**
      * <p>The identifier of the bundle that the WorkSpace was created from.</p>
@@ -265,7 +266,7 @@ namespace Model
     /**
      * <p>The identifier of the subnet that the WorkSpace is in.</p>
      */
-    inline void SetSubnetId(Aws::String&& value) { m_subnetIdHasBeenSet = true; m_subnetId = value; }
+    inline void SetSubnetId(Aws::String&& value) { m_subnetIdHasBeenSet = true; m_subnetId = std::move(value); }
 
     /**
      * <p>The identifier of the subnet that the WorkSpace is in.</p>
@@ -280,7 +281,7 @@ namespace Model
     /**
      * <p>The identifier of the subnet that the WorkSpace is in.</p>
      */
-    inline Workspace& WithSubnetId(Aws::String&& value) { SetSubnetId(value); return *this;}
+    inline Workspace& WithSubnetId(Aws::String&& value) { SetSubnetId(std::move(value)); return *this;}
 
     /**
      * <p>The identifier of the subnet that the WorkSpace is in.</p>
@@ -303,7 +304,7 @@ namespace Model
      * <p>If the WorkSpace could not be created, this contains a textual error message
      * that describes the failure.</p>
      */
-    inline void SetErrorMessage(Aws::String&& value) { m_errorMessageHasBeenSet = true; m_errorMessage = value; }
+    inline void SetErrorMessage(Aws::String&& value) { m_errorMessageHasBeenSet = true; m_errorMessage = std::move(value); }
 
     /**
      * <p>If the WorkSpace could not be created, this contains a textual error message
@@ -321,7 +322,7 @@ namespace Model
      * <p>If the WorkSpace could not be created, this contains a textual error message
      * that describes the failure.</p>
      */
-    inline Workspace& WithErrorMessage(Aws::String&& value) { SetErrorMessage(value); return *this;}
+    inline Workspace& WithErrorMessage(Aws::String&& value) { SetErrorMessage(std::move(value)); return *this;}
 
     /**
      * <p>If the WorkSpace could not be created, this contains a textual error message
@@ -342,7 +343,7 @@ namespace Model
     /**
      * <p>If the WorkSpace could not be created, this contains the error code.</p>
      */
-    inline void SetErrorCode(Aws::String&& value) { m_errorCodeHasBeenSet = true; m_errorCode = value; }
+    inline void SetErrorCode(Aws::String&& value) { m_errorCodeHasBeenSet = true; m_errorCode = std::move(value); }
 
     /**
      * <p>If the WorkSpace could not be created, this contains the error code.</p>
@@ -357,7 +358,7 @@ namespace Model
     /**
      * <p>If the WorkSpace could not be created, this contains the error code.</p>
      */
-    inline Workspace& WithErrorCode(Aws::String&& value) { SetErrorCode(value); return *this;}
+    inline Workspace& WithErrorCode(Aws::String&& value) { SetErrorCode(std::move(value)); return *this;}
 
     /**
      * <p>If the WorkSpace could not be created, this contains the error code.</p>
@@ -377,7 +378,7 @@ namespace Model
     /**
      * <p>The name of the WorkSpace as seen by the operating system.</p>
      */
-    inline void SetComputerName(Aws::String&& value) { m_computerNameHasBeenSet = true; m_computerName = value; }
+    inline void SetComputerName(Aws::String&& value) { m_computerNameHasBeenSet = true; m_computerName = std::move(value); }
 
     /**
      * <p>The name of the WorkSpace as seen by the operating system.</p>
@@ -392,7 +393,7 @@ namespace Model
     /**
      * <p>The name of the WorkSpace as seen by the operating system.</p>
      */
-    inline Workspace& WithComputerName(Aws::String&& value) { SetComputerName(value); return *this;}
+    inline Workspace& WithComputerName(Aws::String&& value) { SetComputerName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the WorkSpace as seen by the operating system.</p>
@@ -412,7 +413,7 @@ namespace Model
     /**
      * <p>The KMS key used to encrypt data stored on your WorkSpace.</p>
      */
-    inline void SetVolumeEncryptionKey(Aws::String&& value) { m_volumeEncryptionKeyHasBeenSet = true; m_volumeEncryptionKey = value; }
+    inline void SetVolumeEncryptionKey(Aws::String&& value) { m_volumeEncryptionKeyHasBeenSet = true; m_volumeEncryptionKey = std::move(value); }
 
     /**
      * <p>The KMS key used to encrypt data stored on your WorkSpace.</p>
@@ -427,7 +428,7 @@ namespace Model
     /**
      * <p>The KMS key used to encrypt data stored on your WorkSpace.</p>
      */
-    inline Workspace& WithVolumeEncryptionKey(Aws::String&& value) { SetVolumeEncryptionKey(value); return *this;}
+    inline Workspace& WithVolumeEncryptionKey(Aws::String&& value) { SetVolumeEncryptionKey(std::move(value)); return *this;}
 
     /**
      * <p>The KMS key used to encrypt data stored on your WorkSpace.</p>
@@ -477,13 +478,13 @@ namespace Model
     inline void SetWorkspaceProperties(const WorkspaceProperties& value) { m_workspacePropertiesHasBeenSet = true; m_workspaceProperties = value; }
 
     
-    inline void SetWorkspaceProperties(WorkspaceProperties&& value) { m_workspacePropertiesHasBeenSet = true; m_workspaceProperties = value; }
+    inline void SetWorkspaceProperties(WorkspaceProperties&& value) { m_workspacePropertiesHasBeenSet = true; m_workspaceProperties = std::move(value); }
 
     
     inline Workspace& WithWorkspaceProperties(const WorkspaceProperties& value) { SetWorkspaceProperties(value); return *this;}
 
     
-    inline Workspace& WithWorkspaceProperties(WorkspaceProperties&& value) { SetWorkspaceProperties(value); return *this;}
+    inline Workspace& WithWorkspaceProperties(WorkspaceProperties&& value) { SetWorkspaceProperties(std::move(value)); return *this;}
 
   private:
     Aws::String m_workspaceId;

@@ -16,6 +16,7 @@
 #include <aws/ds/DirectoryService_EXPORTS.h>
 #include <aws/ds/DirectoryServiceRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -51,7 +52,7 @@ namespace Model
      * <p>Identifier (ID) of the directory for which you want to retrieve the IP
      * addresses.</p>
      */
-    inline void SetDirectoryId(Aws::String&& value) { m_directoryIdHasBeenSet = true; m_directoryId = value; }
+    inline void SetDirectoryId(Aws::String&& value) { m_directoryIdHasBeenSet = true; m_directoryId = std::move(value); }
 
     /**
      * <p>Identifier (ID) of the directory for which you want to retrieve the IP
@@ -69,7 +70,7 @@ namespace Model
      * <p>Identifier (ID) of the directory for which you want to retrieve the IP
      * addresses.</p>
      */
-    inline ListIpRoutesRequest& WithDirectoryId(Aws::String&& value) { SetDirectoryId(value); return *this;}
+    inline ListIpRoutesRequest& WithDirectoryId(Aws::String&& value) { SetDirectoryId(std::move(value)); return *this;}
 
     /**
      * <p>Identifier (ID) of the directory for which you want to retrieve the IP
@@ -93,7 +94,7 @@ namespace Model
      * <p>The <i>ListIpRoutes.NextToken</i> value from a previous call to
      * <a>ListIpRoutes</a>. Pass null if this is the first call.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
      * <p>The <i>ListIpRoutes.NextToken</i> value from a previous call to
@@ -111,7 +112,7 @@ namespace Model
      * <p>The <i>ListIpRoutes.NextToken</i> value from a previous call to
      * <a>ListIpRoutes</a>. Pass null if this is the first call.</p>
      */
-    inline ListIpRoutesRequest& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline ListIpRoutesRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>The <i>ListIpRoutes.NextToken</i> value from a previous call to

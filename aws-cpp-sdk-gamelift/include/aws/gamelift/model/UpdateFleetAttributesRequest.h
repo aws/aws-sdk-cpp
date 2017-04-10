@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/gamelift/model/ProtectionPolicy.h>
 #include <aws/gamelift/model/ResourceCreationLimitPolicy.h>
+#include <utility>
 
 namespace Aws
 {
@@ -53,7 +54,7 @@ namespace Model
     /**
      * <p>Unique identifier for a fleet to update attribute metadata for.</p>
      */
-    inline void SetFleetId(Aws::String&& value) { m_fleetIdHasBeenSet = true; m_fleetId = value; }
+    inline void SetFleetId(Aws::String&& value) { m_fleetIdHasBeenSet = true; m_fleetId = std::move(value); }
 
     /**
      * <p>Unique identifier for a fleet to update attribute metadata for.</p>
@@ -68,7 +69,7 @@ namespace Model
     /**
      * <p>Unique identifier for a fleet to update attribute metadata for.</p>
      */
-    inline UpdateFleetAttributesRequest& WithFleetId(Aws::String&& value) { SetFleetId(value); return *this;}
+    inline UpdateFleetAttributesRequest& WithFleetId(Aws::String&& value) { SetFleetId(std::move(value)); return *this;}
 
     /**
      * <p>Unique identifier for a fleet to update attribute metadata for.</p>
@@ -91,7 +92,7 @@ namespace Model
      * <p>Descriptive label that is associated with a fleet. Fleet names do not need to
      * be unique.</p>
      */
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p>Descriptive label that is associated with a fleet. Fleet names do not need to
@@ -109,7 +110,7 @@ namespace Model
      * <p>Descriptive label that is associated with a fleet. Fleet names do not need to
      * be unique.</p>
      */
-    inline UpdateFleetAttributesRequest& WithName(Aws::String&& value) { SetName(value); return *this;}
+    inline UpdateFleetAttributesRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>Descriptive label that is associated with a fleet. Fleet names do not need to
@@ -130,7 +131,7 @@ namespace Model
     /**
      * <p>Human-readable description of a fleet.</p>
      */
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = value; }
+    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
      * <p>Human-readable description of a fleet.</p>
@@ -145,7 +146,7 @@ namespace Model
     /**
      * <p>Human-readable description of a fleet.</p>
      */
-    inline UpdateFleetAttributesRequest& WithDescription(Aws::String&& value) { SetDescription(value); return *this;}
+    inline UpdateFleetAttributesRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
      * <p>Human-readable description of a fleet.</p>
@@ -183,7 +184,7 @@ namespace Model
      * <code>ACTIVE</code> status, it cannot be terminated during a scale-down
      * event.</p> </li> </ul>
      */
-    inline void SetNewGameSessionProtectionPolicy(ProtectionPolicy&& value) { m_newGameSessionProtectionPolicyHasBeenSet = true; m_newGameSessionProtectionPolicy = value; }
+    inline void SetNewGameSessionProtectionPolicy(ProtectionPolicy&& value) { m_newGameSessionProtectionPolicyHasBeenSet = true; m_newGameSessionProtectionPolicy = std::move(value); }
 
     /**
      * <p>Game session protection policy to apply to all new instances created in this
@@ -205,7 +206,7 @@ namespace Model
      * <code>ACTIVE</code> status, it cannot be terminated during a scale-down
      * event.</p> </li> </ul>
      */
-    inline UpdateFleetAttributesRequest& WithNewGameSessionProtectionPolicy(ProtectionPolicy&& value) { SetNewGameSessionProtectionPolicy(value); return *this;}
+    inline UpdateFleetAttributesRequest& WithNewGameSessionProtectionPolicy(ProtectionPolicy&& value) { SetNewGameSessionProtectionPolicy(std::move(value)); return *this;}
 
     /**
      * <p>Policy that limits the number of game sessions an individual player can
@@ -223,7 +224,7 @@ namespace Model
      * <p>Policy that limits the number of game sessions an individual player can
      * create over a span of time. </p>
      */
-    inline void SetResourceCreationLimitPolicy(ResourceCreationLimitPolicy&& value) { m_resourceCreationLimitPolicyHasBeenSet = true; m_resourceCreationLimitPolicy = value; }
+    inline void SetResourceCreationLimitPolicy(ResourceCreationLimitPolicy&& value) { m_resourceCreationLimitPolicyHasBeenSet = true; m_resourceCreationLimitPolicy = std::move(value); }
 
     /**
      * <p>Policy that limits the number of game sessions an individual player can
@@ -235,7 +236,7 @@ namespace Model
      * <p>Policy that limits the number of game sessions an individual player can
      * create over a span of time. </p>
      */
-    inline UpdateFleetAttributesRequest& WithResourceCreationLimitPolicy(ResourceCreationLimitPolicy&& value) { SetResourceCreationLimitPolicy(value); return *this;}
+    inline UpdateFleetAttributesRequest& WithResourceCreationLimitPolicy(ResourceCreationLimitPolicy&& value) { SetResourceCreationLimitPolicy(std::move(value)); return *this;}
 
   private:
     Aws::String m_fleetId;

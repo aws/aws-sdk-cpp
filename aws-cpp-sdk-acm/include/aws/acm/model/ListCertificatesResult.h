@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/acm/model/CertificateSummary.h>
+#include <utility>
 
 namespace Aws
 {
@@ -60,7 +61,7 @@ namespace Model
      * use for the <code>NextToken</code> parameter in a subsequent pagination
      * request.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
      * <p>When the list is truncated, this value is present and contains the value to
@@ -81,7 +82,7 @@ namespace Model
      * use for the <code>NextToken</code> parameter in a subsequent pagination
      * request.</p>
      */
-    inline ListCertificatesResult& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline ListCertificatesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>When the list is truncated, this value is present and contains the value to
@@ -103,7 +104,7 @@ namespace Model
     /**
      * <p>A list of ACM Certificates.</p>
      */
-    inline void SetCertificateSummaryList(Aws::Vector<CertificateSummary>&& value) { m_certificateSummaryList = value; }
+    inline void SetCertificateSummaryList(Aws::Vector<CertificateSummary>&& value) { m_certificateSummaryList = std::move(value); }
 
     /**
      * <p>A list of ACM Certificates.</p>
@@ -113,7 +114,7 @@ namespace Model
     /**
      * <p>A list of ACM Certificates.</p>
      */
-    inline ListCertificatesResult& WithCertificateSummaryList(Aws::Vector<CertificateSummary>&& value) { SetCertificateSummaryList(value); return *this;}
+    inline ListCertificatesResult& WithCertificateSummaryList(Aws::Vector<CertificateSummary>&& value) { SetCertificateSummaryList(std::move(value)); return *this;}
 
     /**
      * <p>A list of ACM Certificates.</p>
@@ -123,7 +124,7 @@ namespace Model
     /**
      * <p>A list of ACM Certificates.</p>
      */
-    inline ListCertificatesResult& AddCertificateSummaryList(CertificateSummary&& value) { m_certificateSummaryList.push_back(value); return *this; }
+    inline ListCertificatesResult& AddCertificateSummaryList(CertificateSummary&& value) { m_certificateSummaryList.push_back(std::move(value)); return *this; }
 
   private:
     Aws::String m_nextToken;

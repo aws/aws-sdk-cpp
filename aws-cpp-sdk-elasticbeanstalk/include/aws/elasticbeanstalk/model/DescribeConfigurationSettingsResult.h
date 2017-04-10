@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/elasticbeanstalk/model/ResponseMetadata.h>
 #include <aws/elasticbeanstalk/model/ConfigurationSettingsDescription.h>
+#include <utility>
 
 namespace Aws
 {
@@ -60,7 +61,7 @@ namespace Model
     /**
      * <p> A list of <a>ConfigurationSettingsDescription</a>. </p>
      */
-    inline void SetConfigurationSettings(Aws::Vector<ConfigurationSettingsDescription>&& value) { m_configurationSettings = value; }
+    inline void SetConfigurationSettings(Aws::Vector<ConfigurationSettingsDescription>&& value) { m_configurationSettings = std::move(value); }
 
     /**
      * <p> A list of <a>ConfigurationSettingsDescription</a>. </p>
@@ -70,7 +71,7 @@ namespace Model
     /**
      * <p> A list of <a>ConfigurationSettingsDescription</a>. </p>
      */
-    inline DescribeConfigurationSettingsResult& WithConfigurationSettings(Aws::Vector<ConfigurationSettingsDescription>&& value) { SetConfigurationSettings(value); return *this;}
+    inline DescribeConfigurationSettingsResult& WithConfigurationSettings(Aws::Vector<ConfigurationSettingsDescription>&& value) { SetConfigurationSettings(std::move(value)); return *this;}
 
     /**
      * <p> A list of <a>ConfigurationSettingsDescription</a>. </p>
@@ -80,7 +81,7 @@ namespace Model
     /**
      * <p> A list of <a>ConfigurationSettingsDescription</a>. </p>
      */
-    inline DescribeConfigurationSettingsResult& AddConfigurationSettings(ConfigurationSettingsDescription&& value) { m_configurationSettings.push_back(value); return *this; }
+    inline DescribeConfigurationSettingsResult& AddConfigurationSettings(ConfigurationSettingsDescription&& value) { m_configurationSettings.push_back(std::move(value)); return *this; }
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
@@ -89,13 +90,13 @@ namespace Model
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
 
     
     inline DescribeConfigurationSettingsResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
 
     
-    inline DescribeConfigurationSettingsResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
+    inline DescribeConfigurationSettingsResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
     Aws::Vector<ConfigurationSettingsDescription> m_configurationSettings;

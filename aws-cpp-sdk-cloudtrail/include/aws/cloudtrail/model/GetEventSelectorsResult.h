@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/cloudtrail/model/EventSelector.h>
+#include <utility>
 
 namespace Aws
 {
@@ -54,7 +55,7 @@ namespace Model
     /**
      * <p>The specified trail ARN that has the event selectors.</p>
      */
-    inline void SetTrailARN(Aws::String&& value) { m_trailARN = value; }
+    inline void SetTrailARN(Aws::String&& value) { m_trailARN = std::move(value); }
 
     /**
      * <p>The specified trail ARN that has the event selectors.</p>
@@ -69,7 +70,7 @@ namespace Model
     /**
      * <p>The specified trail ARN that has the event selectors.</p>
      */
-    inline GetEventSelectorsResult& WithTrailARN(Aws::String&& value) { SetTrailARN(value); return *this;}
+    inline GetEventSelectorsResult& WithTrailARN(Aws::String&& value) { SetTrailARN(std::move(value)); return *this;}
 
     /**
      * <p>The specified trail ARN that has the event selectors.</p>
@@ -89,7 +90,7 @@ namespace Model
     /**
      * <p>The event selectors that are configured for the trail.</p>
      */
-    inline void SetEventSelectors(Aws::Vector<EventSelector>&& value) { m_eventSelectors = value; }
+    inline void SetEventSelectors(Aws::Vector<EventSelector>&& value) { m_eventSelectors = std::move(value); }
 
     /**
      * <p>The event selectors that are configured for the trail.</p>
@@ -99,7 +100,7 @@ namespace Model
     /**
      * <p>The event selectors that are configured for the trail.</p>
      */
-    inline GetEventSelectorsResult& WithEventSelectors(Aws::Vector<EventSelector>&& value) { SetEventSelectors(value); return *this;}
+    inline GetEventSelectorsResult& WithEventSelectors(Aws::Vector<EventSelector>&& value) { SetEventSelectors(std::move(value)); return *this;}
 
     /**
      * <p>The event selectors that are configured for the trail.</p>
@@ -109,7 +110,7 @@ namespace Model
     /**
      * <p>The event selectors that are configured for the trail.</p>
      */
-    inline GetEventSelectorsResult& AddEventSelectors(EventSelector&& value) { m_eventSelectors.push_back(value); return *this; }
+    inline GetEventSelectorsResult& AddEventSelectors(EventSelector&& value) { m_eventSelectors.push_back(std::move(value)); return *this; }
 
   private:
     Aws::String m_trailARN;

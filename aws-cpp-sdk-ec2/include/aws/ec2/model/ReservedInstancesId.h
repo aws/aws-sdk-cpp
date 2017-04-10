@@ -16,6 +16,7 @@
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -59,7 +60,7 @@ namespace Model
     /**
      * <p>The ID of the Reserved Instance.</p>
      */
-    inline void SetReservedInstancesId(Aws::String&& value) { m_reservedInstancesIdHasBeenSet = true; m_reservedInstancesId = value; }
+    inline void SetReservedInstancesId(Aws::String&& value) { m_reservedInstancesIdHasBeenSet = true; m_reservedInstancesId = std::move(value); }
 
     /**
      * <p>The ID of the Reserved Instance.</p>
@@ -74,7 +75,7 @@ namespace Model
     /**
      * <p>The ID of the Reserved Instance.</p>
      */
-    inline ReservedInstancesId& WithReservedInstancesId(Aws::String&& value) { SetReservedInstancesId(value); return *this;}
+    inline ReservedInstancesId& WithReservedInstancesId(Aws::String&& value) { SetReservedInstancesId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the Reserved Instance.</p>

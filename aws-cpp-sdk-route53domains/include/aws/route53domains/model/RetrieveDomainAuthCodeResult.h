@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/route53domains/Route53Domains_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -58,7 +59,7 @@ namespace Model
     /**
      * <p>The authorization code for the domain.</p> <p>Type: String</p>
      */
-    inline void SetAuthCode(Aws::String&& value) { m_authCode = value; }
+    inline void SetAuthCode(Aws::String&& value) { m_authCode = std::move(value); }
 
     /**
      * <p>The authorization code for the domain.</p> <p>Type: String</p>
@@ -73,7 +74,7 @@ namespace Model
     /**
      * <p>The authorization code for the domain.</p> <p>Type: String</p>
      */
-    inline RetrieveDomainAuthCodeResult& WithAuthCode(Aws::String&& value) { SetAuthCode(value); return *this;}
+    inline RetrieveDomainAuthCodeResult& WithAuthCode(Aws::String&& value) { SetAuthCode(std::move(value)); return *this;}
 
     /**
      * <p>The authorization code for the domain.</p> <p>Type: String</p>

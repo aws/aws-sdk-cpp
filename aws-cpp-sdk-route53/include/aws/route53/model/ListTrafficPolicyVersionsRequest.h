@@ -16,6 +16,7 @@
 #include <aws/route53/Route53_EXPORTS.h>
 #include <aws/route53/Route53Request.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -59,7 +60,7 @@ namespace Model
      * <p>Specify the value of <code>Id</code> of the traffic policy for which you want
      * to list all versions.</p>
      */
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = value; }
+    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
 
     /**
      * <p>Specify the value of <code>Id</code> of the traffic policy for which you want
@@ -77,7 +78,7 @@ namespace Model
      * <p>Specify the value of <code>Id</code> of the traffic policy for which you want
      * to list all versions.</p>
      */
-    inline ListTrafficPolicyVersionsRequest& WithId(Aws::String&& value) { SetId(value); return *this;}
+    inline ListTrafficPolicyVersionsRequest& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
 
     /**
      * <p>Specify the value of <code>Id</code> of the traffic policy for which you want
@@ -128,7 +129,7 @@ namespace Model
      * previous response.</p> <p>Traffic policy versions are listed in sequential
      * order.</p>
      */
-    inline void SetTrafficPolicyVersionMarker(Aws::String&& value) { m_trafficPolicyVersionMarkerHasBeenSet = true; m_trafficPolicyVersionMarker = value; }
+    inline void SetTrafficPolicyVersionMarker(Aws::String&& value) { m_trafficPolicyVersionMarkerHasBeenSet = true; m_trafficPolicyVersionMarker = std::move(value); }
 
     /**
      * <p>For your first request to <code>ListTrafficPolicyVersions</code>, do not
@@ -173,7 +174,7 @@ namespace Model
      * previous response.</p> <p>Traffic policy versions are listed in sequential
      * order.</p>
      */
-    inline ListTrafficPolicyVersionsRequest& WithTrafficPolicyVersionMarker(Aws::String&& value) { SetTrafficPolicyVersionMarker(value); return *this;}
+    inline ListTrafficPolicyVersionsRequest& WithTrafficPolicyVersionMarker(Aws::String&& value) { SetTrafficPolicyVersionMarker(std::move(value)); return *this;}
 
     /**
      * <p>For your first request to <code>ListTrafficPolicyVersions</code>, do not
@@ -221,7 +222,7 @@ namespace Model
      * first version in the next group of <code>MaxItems</code> traffic policy
      * versions.</p>
      */
-    inline void SetMaxItems(Aws::String&& value) { m_maxItemsHasBeenSet = true; m_maxItems = value; }
+    inline void SetMaxItems(Aws::String&& value) { m_maxItemsHasBeenSet = true; m_maxItems = std::move(value); }
 
     /**
      * <p>The maximum number of traffic policy versions that you want Amazon Route 53
@@ -254,7 +255,7 @@ namespace Model
      * first version in the next group of <code>MaxItems</code> traffic policy
      * versions.</p>
      */
-    inline ListTrafficPolicyVersionsRequest& WithMaxItems(Aws::String&& value) { SetMaxItems(value); return *this;}
+    inline ListTrafficPolicyVersionsRequest& WithMaxItems(Aws::String&& value) { SetMaxItems(std::move(value)); return *this;}
 
     /**
      * <p>The maximum number of traffic policy versions that you want Amazon Route 53

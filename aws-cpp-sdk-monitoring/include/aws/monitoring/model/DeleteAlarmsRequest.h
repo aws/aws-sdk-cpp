@@ -17,6 +17,7 @@
 #include <aws/monitoring/CloudWatchRequest.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -51,7 +52,7 @@ namespace Model
     /**
      * <p>The alarms to be deleted.</p>
      */
-    inline void SetAlarmNames(Aws::Vector<Aws::String>&& value) { m_alarmNamesHasBeenSet = true; m_alarmNames = value; }
+    inline void SetAlarmNames(Aws::Vector<Aws::String>&& value) { m_alarmNamesHasBeenSet = true; m_alarmNames = std::move(value); }
 
     /**
      * <p>The alarms to be deleted.</p>
@@ -61,7 +62,7 @@ namespace Model
     /**
      * <p>The alarms to be deleted.</p>
      */
-    inline DeleteAlarmsRequest& WithAlarmNames(Aws::Vector<Aws::String>&& value) { SetAlarmNames(value); return *this;}
+    inline DeleteAlarmsRequest& WithAlarmNames(Aws::Vector<Aws::String>&& value) { SetAlarmNames(std::move(value)); return *this;}
 
     /**
      * <p>The alarms to be deleted.</p>
@@ -71,7 +72,7 @@ namespace Model
     /**
      * <p>The alarms to be deleted.</p>
      */
-    inline DeleteAlarmsRequest& AddAlarmNames(Aws::String&& value) { m_alarmNamesHasBeenSet = true; m_alarmNames.push_back(value); return *this; }
+    inline DeleteAlarmsRequest& AddAlarmNames(Aws::String&& value) { m_alarmNamesHasBeenSet = true; m_alarmNames.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The alarms to be deleted.</p>

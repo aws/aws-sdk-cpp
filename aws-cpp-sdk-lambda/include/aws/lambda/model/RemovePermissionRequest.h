@@ -16,6 +16,7 @@
 #include <aws/lambda/Lambda_EXPORTS.h>
 #include <aws/lambda/LambdaRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -79,7 +80,7 @@ namespace Model
      * to the ARN. If you specify only the function name, it is limited to 64 character
      * in length. </p>
      */
-    inline void SetFunctionName(Aws::String&& value) { m_functionNameHasBeenSet = true; m_functionName = value; }
+    inline void SetFunctionName(Aws::String&& value) { m_functionNameHasBeenSet = true; m_functionName = std::move(value); }
 
     /**
      * <p>Lambda function whose resource policy you want to remove a permission
@@ -118,7 +119,7 @@ namespace Model
      * to the ARN. If you specify only the function name, it is limited to 64 character
      * in length. </p>
      */
-    inline RemovePermissionRequest& WithFunctionName(Aws::String&& value) { SetFunctionName(value); return *this;}
+    inline RemovePermissionRequest& WithFunctionName(Aws::String&& value) { SetFunctionName(std::move(value)); return *this;}
 
     /**
      * <p>Lambda function whose resource policy you want to remove a permission
@@ -146,7 +147,7 @@ namespace Model
     /**
      * <p>Statement ID of the permission to remove.</p>
      */
-    inline void SetStatementId(Aws::String&& value) { m_statementIdHasBeenSet = true; m_statementId = value; }
+    inline void SetStatementId(Aws::String&& value) { m_statementIdHasBeenSet = true; m_statementId = std::move(value); }
 
     /**
      * <p>Statement ID of the permission to remove.</p>
@@ -161,7 +162,7 @@ namespace Model
     /**
      * <p>Statement ID of the permission to remove.</p>
      */
-    inline RemovePermissionRequest& WithStatementId(Aws::String&& value) { SetStatementId(value); return *this;}
+    inline RemovePermissionRequest& WithStatementId(Aws::String&& value) { SetStatementId(std::move(value)); return *this;}
 
     /**
      * <p>Statement ID of the permission to remove.</p>
@@ -190,7 +191,7 @@ namespace Model
      * parameter, the API removes permission associated with the unqualified function
      * ARN.</p>
      */
-    inline void SetQualifier(Aws::String&& value) { m_qualifierHasBeenSet = true; m_qualifier = value; }
+    inline void SetQualifier(Aws::String&& value) { m_qualifierHasBeenSet = true; m_qualifier = std::move(value); }
 
     /**
      * <p>You can specify this optional parameter to remove permission associated with
@@ -214,7 +215,7 @@ namespace Model
      * parameter, the API removes permission associated with the unqualified function
      * ARN.</p>
      */
-    inline RemovePermissionRequest& WithQualifier(Aws::String&& value) { SetQualifier(value); return *this;}
+    inline RemovePermissionRequest& WithQualifier(Aws::String&& value) { SetQualifier(std::move(value)); return *this;}
 
     /**
      * <p>You can specify this optional parameter to remove permission associated with

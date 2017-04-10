@@ -17,6 +17,7 @@
 #include <aws/ecr/ECRRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/Array.h>
+#include <utility>
 
 namespace Aws
 {
@@ -52,7 +53,7 @@ namespace Model
      * <p>The AWS account ID associated with the registry that you are uploading layer
      * parts to. If you do not specify a registry, the default registry is assumed.</p>
      */
-    inline void SetRegistryId(Aws::String&& value) { m_registryIdHasBeenSet = true; m_registryId = value; }
+    inline void SetRegistryId(Aws::String&& value) { m_registryIdHasBeenSet = true; m_registryId = std::move(value); }
 
     /**
      * <p>The AWS account ID associated with the registry that you are uploading layer
@@ -70,7 +71,7 @@ namespace Model
      * <p>The AWS account ID associated with the registry that you are uploading layer
      * parts to. If you do not specify a registry, the default registry is assumed.</p>
      */
-    inline UploadLayerPartRequest& WithRegistryId(Aws::String&& value) { SetRegistryId(value); return *this;}
+    inline UploadLayerPartRequest& WithRegistryId(Aws::String&& value) { SetRegistryId(std::move(value)); return *this;}
 
     /**
      * <p>The AWS account ID associated with the registry that you are uploading layer
@@ -91,7 +92,7 @@ namespace Model
     /**
      * <p>The name of the repository that you are uploading layer parts to.</p>
      */
-    inline void SetRepositoryName(Aws::String&& value) { m_repositoryNameHasBeenSet = true; m_repositoryName = value; }
+    inline void SetRepositoryName(Aws::String&& value) { m_repositoryNameHasBeenSet = true; m_repositoryName = std::move(value); }
 
     /**
      * <p>The name of the repository that you are uploading layer parts to.</p>
@@ -106,7 +107,7 @@ namespace Model
     /**
      * <p>The name of the repository that you are uploading layer parts to.</p>
      */
-    inline UploadLayerPartRequest& WithRepositoryName(Aws::String&& value) { SetRepositoryName(value); return *this;}
+    inline UploadLayerPartRequest& WithRepositoryName(Aws::String&& value) { SetRepositoryName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the repository that you are uploading layer parts to.</p>
@@ -129,7 +130,7 @@ namespace Model
      * <p>The upload ID from a previous <a>InitiateLayerUpload</a> operation to
      * associate with the layer part upload.</p>
      */
-    inline void SetUploadId(Aws::String&& value) { m_uploadIdHasBeenSet = true; m_uploadId = value; }
+    inline void SetUploadId(Aws::String&& value) { m_uploadIdHasBeenSet = true; m_uploadId = std::move(value); }
 
     /**
      * <p>The upload ID from a previous <a>InitiateLayerUpload</a> operation to
@@ -147,7 +148,7 @@ namespace Model
      * <p>The upload ID from a previous <a>InitiateLayerUpload</a> operation to
      * associate with the layer part upload.</p>
      */
-    inline UploadLayerPartRequest& WithUploadId(Aws::String&& value) { SetUploadId(value); return *this;}
+    inline UploadLayerPartRequest& WithUploadId(Aws::String&& value) { SetUploadId(std::move(value)); return *this;}
 
     /**
      * <p>The upload ID from a previous <a>InitiateLayerUpload</a> operation to
@@ -198,7 +199,7 @@ namespace Model
     /**
      * <p>The base64-encoded layer part payload.</p>
      */
-    inline void SetLayerPartBlob(Aws::Utils::ByteBuffer&& value) { m_layerPartBlobHasBeenSet = true; m_layerPartBlob = value; }
+    inline void SetLayerPartBlob(Aws::Utils::ByteBuffer&& value) { m_layerPartBlobHasBeenSet = true; m_layerPartBlob = std::move(value); }
 
     /**
      * <p>The base64-encoded layer part payload.</p>
@@ -208,7 +209,7 @@ namespace Model
     /**
      * <p>The base64-encoded layer part payload.</p>
      */
-    inline UploadLayerPartRequest& WithLayerPartBlob(Aws::Utils::ByteBuffer&& value) { SetLayerPartBlob(value); return *this;}
+    inline UploadLayerPartRequest& WithLayerPartBlob(Aws::Utils::ByteBuffer&& value) { SetLayerPartBlob(std::move(value)); return *this;}
 
   private:
     Aws::String m_registryId;

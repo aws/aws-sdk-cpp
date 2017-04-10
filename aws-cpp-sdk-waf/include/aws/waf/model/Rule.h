@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/waf/model/Predicate.h>
+#include <utility>
 
 namespace Aws
 {
@@ -86,7 +87,7 @@ namespace Model
      * <a>DeleteRule</a>).</p> <p> <code>RuleId</code> is returned by <a>CreateRule</a>
      * and by <a>ListRules</a>.</p>
      */
-    inline void SetRuleId(Aws::String&& value) { m_ruleIdHasBeenSet = true; m_ruleId = value; }
+    inline void SetRuleId(Aws::String&& value) { m_ruleIdHasBeenSet = true; m_ruleId = std::move(value); }
 
     /**
      * <p>A unique identifier for a <code>Rule</code>. You use <code>RuleId</code> to
@@ -119,7 +120,7 @@ namespace Model
      * <a>DeleteRule</a>).</p> <p> <code>RuleId</code> is returned by <a>CreateRule</a>
      * and by <a>ListRules</a>.</p>
      */
-    inline Rule& WithRuleId(Aws::String&& value) { SetRuleId(value); return *this;}
+    inline Rule& WithRuleId(Aws::String&& value) { SetRuleId(std::move(value)); return *this;}
 
     /**
      * <p>A unique identifier for a <code>Rule</code>. You use <code>RuleId</code> to
@@ -148,7 +149,7 @@ namespace Model
      * <p>The friendly name or description for the <code>Rule</code>. You can't change
      * the name of a <code>Rule</code> after you create it.</p>
      */
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p>The friendly name or description for the <code>Rule</code>. You can't change
@@ -166,7 +167,7 @@ namespace Model
      * <p>The friendly name or description for the <code>Rule</code>. You can't change
      * the name of a <code>Rule</code> after you create it.</p>
      */
-    inline Rule& WithName(Aws::String&& value) { SetName(value); return *this;}
+    inline Rule& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>The friendly name or description for the <code>Rule</code>. You can't change
@@ -196,7 +197,7 @@ namespace Model
      * can't contain whitespace. You can't change <code>MetricName</code> after you
      * create the <code>Rule</code>.</p>
      */
-    inline void SetMetricName(Aws::String&& value) { m_metricNameHasBeenSet = true; m_metricName = value; }
+    inline void SetMetricName(Aws::String&& value) { m_metricNameHasBeenSet = true; m_metricName = std::move(value); }
 
     /**
      * <p>A friendly name or description for the metrics for this <code>Rule</code>.
@@ -220,7 +221,7 @@ namespace Model
      * can't contain whitespace. You can't change <code>MetricName</code> after you
      * create the <code>Rule</code>.</p>
      */
-    inline Rule& WithMetricName(Aws::String&& value) { SetMetricName(value); return *this;}
+    inline Rule& WithMetricName(Aws::String&& value) { SetMetricName(std::move(value)); return *this;}
 
     /**
      * <p>A friendly name or description for the metrics for this <code>Rule</code>.
@@ -252,7 +253,7 @@ namespace Model
      * <a>SqlInjectionMatchSet</a> object that you want to include in a
      * <code>Rule</code>.</p>
      */
-    inline void SetPredicates(Aws::Vector<Predicate>&& value) { m_predicatesHasBeenSet = true; m_predicates = value; }
+    inline void SetPredicates(Aws::Vector<Predicate>&& value) { m_predicatesHasBeenSet = true; m_predicates = std::move(value); }
 
     /**
      * <p>The <code>Predicates</code> object contains one <code>Predicate</code>
@@ -268,7 +269,7 @@ namespace Model
      * <a>SqlInjectionMatchSet</a> object that you want to include in a
      * <code>Rule</code>.</p>
      */
-    inline Rule& WithPredicates(Aws::Vector<Predicate>&& value) { SetPredicates(value); return *this;}
+    inline Rule& WithPredicates(Aws::Vector<Predicate>&& value) { SetPredicates(std::move(value)); return *this;}
 
     /**
      * <p>The <code>Predicates</code> object contains one <code>Predicate</code>
@@ -284,7 +285,7 @@ namespace Model
      * <a>SqlInjectionMatchSet</a> object that you want to include in a
      * <code>Rule</code>.</p>
      */
-    inline Rule& AddPredicates(Predicate&& value) { m_predicatesHasBeenSet = true; m_predicates.push_back(value); return *this; }
+    inline Rule& AddPredicates(Predicate&& value) { m_predicatesHasBeenSet = true; m_predicates.push_back(std::move(value)); return *this; }
 
   private:
     Aws::String m_ruleId;

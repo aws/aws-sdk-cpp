@@ -16,6 +16,7 @@
 #include <aws/iot/IoT_EXPORTS.h>
 #include <aws/iot/IoTRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -56,7 +57,7 @@ namespace Model
     /**
      * <p>The CA certificate.</p>
      */
-    inline void SetCaCertificate(Aws::String&& value) { m_caCertificateHasBeenSet = true; m_caCertificate = value; }
+    inline void SetCaCertificate(Aws::String&& value) { m_caCertificateHasBeenSet = true; m_caCertificate = std::move(value); }
 
     /**
      * <p>The CA certificate.</p>
@@ -71,7 +72,7 @@ namespace Model
     /**
      * <p>The CA certificate.</p>
      */
-    inline RegisterCACertificateRequest& WithCaCertificate(Aws::String&& value) { SetCaCertificate(value); return *this;}
+    inline RegisterCACertificateRequest& WithCaCertificate(Aws::String&& value) { SetCaCertificate(std::move(value)); return *this;}
 
     /**
      * <p>The CA certificate.</p>
@@ -91,7 +92,7 @@ namespace Model
     /**
      * <p>The private key verification certificate.</p>
      */
-    inline void SetVerificationCertificate(Aws::String&& value) { m_verificationCertificateHasBeenSet = true; m_verificationCertificate = value; }
+    inline void SetVerificationCertificate(Aws::String&& value) { m_verificationCertificateHasBeenSet = true; m_verificationCertificate = std::move(value); }
 
     /**
      * <p>The private key verification certificate.</p>
@@ -106,7 +107,7 @@ namespace Model
     /**
      * <p>The private key verification certificate.</p>
      */
-    inline RegisterCACertificateRequest& WithVerificationCertificate(Aws::String&& value) { SetVerificationCertificate(value); return *this;}
+    inline RegisterCACertificateRequest& WithVerificationCertificate(Aws::String&& value) { SetVerificationCertificate(std::move(value)); return *this;}
 
     /**
      * <p>The private key verification certificate.</p>

@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/s3/model/AnalyticsFilter.h>
 #include <aws/s3/model/StorageClassAnalysis.h>
+#include <utility>
 
 namespace Aws
 {
@@ -54,7 +55,7 @@ namespace Model
     /**
      * The identifier used to represent an analytics configuration.
      */
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = value; }
+    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
 
     /**
      * The identifier used to represent an analytics configuration.
@@ -69,7 +70,7 @@ namespace Model
     /**
      * The identifier used to represent an analytics configuration.
      */
-    inline AnalyticsConfiguration& WithId(Aws::String&& value) { SetId(value); return *this;}
+    inline AnalyticsConfiguration& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
 
     /**
      * The identifier used to represent an analytics configuration.
@@ -95,7 +96,7 @@ namespace Model
      * exactly one prefix, one tag, or one conjunction (AnalyticsAndOperator). If no
      * filter is provided, all objects will be considered in any analysis.
      */
-    inline void SetFilter(AnalyticsFilter&& value) { m_filterHasBeenSet = true; m_filter = value; }
+    inline void SetFilter(AnalyticsFilter&& value) { m_filterHasBeenSet = true; m_filter = std::move(value); }
 
     /**
      * The filter used to describe a set of objects for analyses. A filter must have
@@ -109,7 +110,7 @@ namespace Model
      * exactly one prefix, one tag, or one conjunction (AnalyticsAndOperator). If no
      * filter is provided, all objects will be considered in any analysis.
      */
-    inline AnalyticsConfiguration& WithFilter(AnalyticsFilter&& value) { SetFilter(value); return *this;}
+    inline AnalyticsConfiguration& WithFilter(AnalyticsFilter&& value) { SetFilter(std::move(value)); return *this;}
 
     /**
      * If present, it indicates that data related to access patterns will be collected
@@ -127,7 +128,7 @@ namespace Model
      * If present, it indicates that data related to access patterns will be collected
      * and made available to analyze the tradeoffs between different storage classes.
      */
-    inline void SetStorageClassAnalysis(StorageClassAnalysis&& value) { m_storageClassAnalysisHasBeenSet = true; m_storageClassAnalysis = value; }
+    inline void SetStorageClassAnalysis(StorageClassAnalysis&& value) { m_storageClassAnalysisHasBeenSet = true; m_storageClassAnalysis = std::move(value); }
 
     /**
      * If present, it indicates that data related to access patterns will be collected
@@ -139,7 +140,7 @@ namespace Model
      * If present, it indicates that data related to access patterns will be collected
      * and made available to analyze the tradeoffs between different storage classes.
      */
-    inline AnalyticsConfiguration& WithStorageClassAnalysis(StorageClassAnalysis&& value) { SetStorageClassAnalysis(value); return *this;}
+    inline AnalyticsConfiguration& WithStorageClassAnalysis(StorageClassAnalysis&& value) { SetStorageClassAnalysis(std::move(value)); return *this;}
 
   private:
     Aws::String m_id;

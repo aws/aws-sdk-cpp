@@ -16,6 +16,7 @@
 #include <aws/rekognition/Rekognition_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/rekognition/model/BoundingBox.h>
+#include <utility>
 
 namespace Aws
 {
@@ -59,7 +60,7 @@ namespace Model
     /**
      * <p>Unique identifier that Amazon Rekognition assigns to the face.</p>
      */
-    inline void SetFaceId(Aws::String&& value) { m_faceIdHasBeenSet = true; m_faceId = value; }
+    inline void SetFaceId(Aws::String&& value) { m_faceIdHasBeenSet = true; m_faceId = std::move(value); }
 
     /**
      * <p>Unique identifier that Amazon Rekognition assigns to the face.</p>
@@ -74,7 +75,7 @@ namespace Model
     /**
      * <p>Unique identifier that Amazon Rekognition assigns to the face.</p>
      */
-    inline Face& WithFaceId(Aws::String&& value) { SetFaceId(value); return *this;}
+    inline Face& WithFaceId(Aws::String&& value) { SetFaceId(std::move(value)); return *this;}
 
     /**
      * <p>Unique identifier that Amazon Rekognition assigns to the face.</p>
@@ -88,13 +89,13 @@ namespace Model
     inline void SetBoundingBox(const BoundingBox& value) { m_boundingBoxHasBeenSet = true; m_boundingBox = value; }
 
     
-    inline void SetBoundingBox(BoundingBox&& value) { m_boundingBoxHasBeenSet = true; m_boundingBox = value; }
+    inline void SetBoundingBox(BoundingBox&& value) { m_boundingBoxHasBeenSet = true; m_boundingBox = std::move(value); }
 
     
     inline Face& WithBoundingBox(const BoundingBox& value) { SetBoundingBox(value); return *this;}
 
     
-    inline Face& WithBoundingBox(BoundingBox&& value) { SetBoundingBox(value); return *this;}
+    inline Face& WithBoundingBox(BoundingBox&& value) { SetBoundingBox(std::move(value)); return *this;}
 
     /**
      * <p>Unique identifier that Amazon Rekognition assigns to the source image.</p>
@@ -109,7 +110,7 @@ namespace Model
     /**
      * <p>Unique identifier that Amazon Rekognition assigns to the source image.</p>
      */
-    inline void SetImageId(Aws::String&& value) { m_imageIdHasBeenSet = true; m_imageId = value; }
+    inline void SetImageId(Aws::String&& value) { m_imageIdHasBeenSet = true; m_imageId = std::move(value); }
 
     /**
      * <p>Unique identifier that Amazon Rekognition assigns to the source image.</p>
@@ -124,7 +125,7 @@ namespace Model
     /**
      * <p>Unique identifier that Amazon Rekognition assigns to the source image.</p>
      */
-    inline Face& WithImageId(Aws::String&& value) { SetImageId(value); return *this;}
+    inline Face& WithImageId(Aws::String&& value) { SetImageId(std::move(value)); return *this;}
 
     /**
      * <p>Unique identifier that Amazon Rekognition assigns to the source image.</p>
@@ -144,7 +145,7 @@ namespace Model
     /**
      * <p>Identifier that you assign to all the faces in the input image.</p>
      */
-    inline void SetExternalImageId(Aws::String&& value) { m_externalImageIdHasBeenSet = true; m_externalImageId = value; }
+    inline void SetExternalImageId(Aws::String&& value) { m_externalImageIdHasBeenSet = true; m_externalImageId = std::move(value); }
 
     /**
      * <p>Identifier that you assign to all the faces in the input image.</p>
@@ -159,7 +160,7 @@ namespace Model
     /**
      * <p>Identifier that you assign to all the faces in the input image.</p>
      */
-    inline Face& WithExternalImageId(Aws::String&& value) { SetExternalImageId(value); return *this;}
+    inline Face& WithExternalImageId(Aws::String&& value) { SetExternalImageId(std::move(value)); return *this;}
 
     /**
      * <p>Identifier that you assign to all the faces in the input image.</p>

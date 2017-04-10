@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/route53/model/VPC.h>
+#include <utility>
 
 namespace Aws
 {
@@ -60,7 +61,7 @@ namespace Model
     /**
      * <p>The ID of the hosted zone that you can associate the listed VPCs with.</p>
      */
-    inline void SetHostedZoneId(Aws::String&& value) { m_hostedZoneId = value; }
+    inline void SetHostedZoneId(Aws::String&& value) { m_hostedZoneId = std::move(value); }
 
     /**
      * <p>The ID of the hosted zone that you can associate the listed VPCs with.</p>
@@ -75,7 +76,7 @@ namespace Model
     /**
      * <p>The ID of the hosted zone that you can associate the listed VPCs with.</p>
      */
-    inline ListVPCAssociationAuthorizationsResult& WithHostedZoneId(Aws::String&& value) { SetHostedZoneId(value); return *this;}
+    inline ListVPCAssociationAuthorizationsResult& WithHostedZoneId(Aws::String&& value) { SetHostedZoneId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the hosted zone that you can associate the listed VPCs with.</p>
@@ -116,7 +117,7 @@ namespace Model
      * ID</i>/authorizevpcassociation?MaxItems=<i>VPCs per page</i>&amp;NextToken=<i/>
      * </code> </p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
      * <p>When the response includes a <code>NextToken</code> element, there are more
@@ -152,7 +153,7 @@ namespace Model
      * ID</i>/authorizevpcassociation?MaxItems=<i>VPCs per page</i>&amp;NextToken=<i/>
      * </code> </p>
      */
-    inline ListVPCAssociationAuthorizationsResult& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline ListVPCAssociationAuthorizationsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>When the response includes a <code>NextToken</code> element, there are more
@@ -182,7 +183,7 @@ namespace Model
      * <p>The list of VPCs that are authorized to be associated with the specified
      * hosted zone.</p>
      */
-    inline void SetVPCs(Aws::Vector<VPC>&& value) { m_vPCs = value; }
+    inline void SetVPCs(Aws::Vector<VPC>&& value) { m_vPCs = std::move(value); }
 
     /**
      * <p>The list of VPCs that are authorized to be associated with the specified
@@ -194,7 +195,7 @@ namespace Model
      * <p>The list of VPCs that are authorized to be associated with the specified
      * hosted zone.</p>
      */
-    inline ListVPCAssociationAuthorizationsResult& WithVPCs(Aws::Vector<VPC>&& value) { SetVPCs(value); return *this;}
+    inline ListVPCAssociationAuthorizationsResult& WithVPCs(Aws::Vector<VPC>&& value) { SetVPCs(std::move(value)); return *this;}
 
     /**
      * <p>The list of VPCs that are authorized to be associated with the specified
@@ -206,7 +207,7 @@ namespace Model
      * <p>The list of VPCs that are authorized to be associated with the specified
      * hosted zone.</p>
      */
-    inline ListVPCAssociationAuthorizationsResult& AddVPCs(VPC&& value) { m_vPCs.push_back(value); return *this; }
+    inline ListVPCAssociationAuthorizationsResult& AddVPCs(VPC&& value) { m_vPCs.push_back(std::move(value)); return *this; }
 
   private:
     Aws::String m_hostedZoneId;

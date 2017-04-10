@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/inspector/Inspector_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -52,7 +53,7 @@ namespace Model
     /**
      * <p>The ARN specifying the run of the assessment.</p>
      */
-    inline void SetRunArn(Aws::String&& value) { m_runArn = value; }
+    inline void SetRunArn(Aws::String&& value) { m_runArn = std::move(value); }
 
     /**
      * <p>The ARN specifying the run of the assessment.</p>
@@ -67,7 +68,7 @@ namespace Model
     /**
      * <p>The ARN specifying the run of the assessment.</p>
      */
-    inline RunAssessmentResult& WithRunArn(Aws::String&& value) { SetRunArn(value); return *this;}
+    inline RunAssessmentResult& WithRunArn(Aws::String&& value) { SetRunArn(std::move(value)); return *this;}
 
     /**
      * <p>The ARN specifying the run of the assessment.</p>

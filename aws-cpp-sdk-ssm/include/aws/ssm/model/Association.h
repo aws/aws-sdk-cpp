@@ -19,6 +19,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/ssm/model/AssociationOverview.h>
 #include <aws/ssm/model/Target.h>
+#include <utility>
 
 namespace Aws
 {
@@ -61,7 +62,7 @@ namespace Model
     /**
      * <p>The name of the SSM document.</p>
      */
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p>The name of the SSM document.</p>
@@ -76,7 +77,7 @@ namespace Model
     /**
      * <p>The name of the SSM document.</p>
      */
-    inline Association& WithName(Aws::String&& value) { SetName(value); return *this;}
+    inline Association& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the SSM document.</p>
@@ -96,7 +97,7 @@ namespace Model
     /**
      * <p>The ID of the instance.</p>
      */
-    inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
+    inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::move(value); }
 
     /**
      * <p>The ID of the instance.</p>
@@ -111,7 +112,7 @@ namespace Model
     /**
      * <p>The ID of the instance.</p>
      */
-    inline Association& WithInstanceId(Aws::String&& value) { SetInstanceId(value); return *this;}
+    inline Association& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the instance.</p>
@@ -134,7 +135,7 @@ namespace Model
      * <p>The ID created by the system when you create an association. An association
      * is a binding between a document and a set of targets with a schedule.</p>
      */
-    inline void SetAssociationId(Aws::String&& value) { m_associationIdHasBeenSet = true; m_associationId = value; }
+    inline void SetAssociationId(Aws::String&& value) { m_associationIdHasBeenSet = true; m_associationId = std::move(value); }
 
     /**
      * <p>The ID created by the system when you create an association. An association
@@ -152,7 +153,7 @@ namespace Model
      * <p>The ID created by the system when you create an association. An association
      * is a binding between a document and a set of targets with a schedule.</p>
      */
-    inline Association& WithAssociationId(Aws::String&& value) { SetAssociationId(value); return *this;}
+    inline Association& WithAssociationId(Aws::String&& value) { SetAssociationId(std::move(value)); return *this;}
 
     /**
      * <p>The ID created by the system when you create an association. An association
@@ -173,7 +174,7 @@ namespace Model
     /**
      * <p>The version of the document used in the association.</p>
      */
-    inline void SetDocumentVersion(Aws::String&& value) { m_documentVersionHasBeenSet = true; m_documentVersion = value; }
+    inline void SetDocumentVersion(Aws::String&& value) { m_documentVersionHasBeenSet = true; m_documentVersion = std::move(value); }
 
     /**
      * <p>The version of the document used in the association.</p>
@@ -188,7 +189,7 @@ namespace Model
     /**
      * <p>The version of the document used in the association.</p>
      */
-    inline Association& WithDocumentVersion(Aws::String&& value) { SetDocumentVersion(value); return *this;}
+    inline Association& WithDocumentVersion(Aws::String&& value) { SetDocumentVersion(std::move(value)); return *this;}
 
     /**
      * <p>The version of the document used in the association.</p>
@@ -208,7 +209,7 @@ namespace Model
     /**
      * <p>The instances targeted by the request to create an association. </p>
      */
-    inline void SetTargets(Aws::Vector<Target>&& value) { m_targetsHasBeenSet = true; m_targets = value; }
+    inline void SetTargets(Aws::Vector<Target>&& value) { m_targetsHasBeenSet = true; m_targets = std::move(value); }
 
     /**
      * <p>The instances targeted by the request to create an association. </p>
@@ -218,7 +219,7 @@ namespace Model
     /**
      * <p>The instances targeted by the request to create an association. </p>
      */
-    inline Association& WithTargets(Aws::Vector<Target>&& value) { SetTargets(value); return *this;}
+    inline Association& WithTargets(Aws::Vector<Target>&& value) { SetTargets(std::move(value)); return *this;}
 
     /**
      * <p>The instances targeted by the request to create an association. </p>
@@ -228,7 +229,7 @@ namespace Model
     /**
      * <p>The instances targeted by the request to create an association. </p>
      */
-    inline Association& AddTargets(Target&& value) { m_targetsHasBeenSet = true; m_targets.push_back(value); return *this; }
+    inline Association& AddTargets(Target&& value) { m_targetsHasBeenSet = true; m_targets.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The date on which the association was last run.</p>
@@ -243,7 +244,7 @@ namespace Model
     /**
      * <p>The date on which the association was last run.</p>
      */
-    inline void SetLastExecutionDate(Aws::Utils::DateTime&& value) { m_lastExecutionDateHasBeenSet = true; m_lastExecutionDate = value; }
+    inline void SetLastExecutionDate(Aws::Utils::DateTime&& value) { m_lastExecutionDateHasBeenSet = true; m_lastExecutionDate = std::move(value); }
 
     /**
      * <p>The date on which the association was last run.</p>
@@ -253,7 +254,7 @@ namespace Model
     /**
      * <p>The date on which the association was last run.</p>
      */
-    inline Association& WithLastExecutionDate(Aws::Utils::DateTime&& value) { SetLastExecutionDate(value); return *this;}
+    inline Association& WithLastExecutionDate(Aws::Utils::DateTime&& value) { SetLastExecutionDate(std::move(value)); return *this;}
 
     /**
      * <p>Information about the association.</p>
@@ -268,7 +269,7 @@ namespace Model
     /**
      * <p>Information about the association.</p>
      */
-    inline void SetOverview(AssociationOverview&& value) { m_overviewHasBeenSet = true; m_overview = value; }
+    inline void SetOverview(AssociationOverview&& value) { m_overviewHasBeenSet = true; m_overview = std::move(value); }
 
     /**
      * <p>Information about the association.</p>
@@ -278,7 +279,7 @@ namespace Model
     /**
      * <p>Information about the association.</p>
      */
-    inline Association& WithOverview(AssociationOverview&& value) { SetOverview(value); return *this;}
+    inline Association& WithOverview(AssociationOverview&& value) { SetOverview(std::move(value)); return *this;}
 
     /**
      * <p>A cron expression that specifies a schedule when the association runs.</p>
@@ -293,7 +294,7 @@ namespace Model
     /**
      * <p>A cron expression that specifies a schedule when the association runs.</p>
      */
-    inline void SetScheduleExpression(Aws::String&& value) { m_scheduleExpressionHasBeenSet = true; m_scheduleExpression = value; }
+    inline void SetScheduleExpression(Aws::String&& value) { m_scheduleExpressionHasBeenSet = true; m_scheduleExpression = std::move(value); }
 
     /**
      * <p>A cron expression that specifies a schedule when the association runs.</p>
@@ -308,7 +309,7 @@ namespace Model
     /**
      * <p>A cron expression that specifies a schedule when the association runs.</p>
      */
-    inline Association& WithScheduleExpression(Aws::String&& value) { SetScheduleExpression(value); return *this;}
+    inline Association& WithScheduleExpression(Aws::String&& value) { SetScheduleExpression(std::move(value)); return *this;}
 
     /**
      * <p>A cron expression that specifies a schedule when the association runs.</p>

@@ -17,6 +17,7 @@
 #include <aws/swf/SWFRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/swf/model/WorkflowType.h>
+#include <utility>
 
 namespace Aws
 {
@@ -49,7 +50,7 @@ namespace Model
     /**
      * <p>The name of the domain in which the workflow type is registered.</p>
      */
-    inline void SetDomain(Aws::String&& value) { m_domainHasBeenSet = true; m_domain = value; }
+    inline void SetDomain(Aws::String&& value) { m_domainHasBeenSet = true; m_domain = std::move(value); }
 
     /**
      * <p>The name of the domain in which the workflow type is registered.</p>
@@ -64,7 +65,7 @@ namespace Model
     /**
      * <p>The name of the domain in which the workflow type is registered.</p>
      */
-    inline DeprecateWorkflowTypeRequest& WithDomain(Aws::String&& value) { SetDomain(value); return *this;}
+    inline DeprecateWorkflowTypeRequest& WithDomain(Aws::String&& value) { SetDomain(std::move(value)); return *this;}
 
     /**
      * <p>The name of the domain in which the workflow type is registered.</p>
@@ -84,7 +85,7 @@ namespace Model
     /**
      * <p>The workflow type to deprecate.</p>
      */
-    inline void SetWorkflowType(WorkflowType&& value) { m_workflowTypeHasBeenSet = true; m_workflowType = value; }
+    inline void SetWorkflowType(WorkflowType&& value) { m_workflowTypeHasBeenSet = true; m_workflowType = std::move(value); }
 
     /**
      * <p>The workflow type to deprecate.</p>
@@ -94,7 +95,7 @@ namespace Model
     /**
      * <p>The workflow type to deprecate.</p>
      */
-    inline DeprecateWorkflowTypeRequest& WithWorkflowType(WorkflowType&& value) { SetWorkflowType(value); return *this;}
+    inline DeprecateWorkflowTypeRequest& WithWorkflowType(WorkflowType&& value) { SetWorkflowType(std::move(value)); return *this;}
 
   private:
     Aws::String m_domain;

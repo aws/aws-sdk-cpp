@@ -16,6 +16,7 @@
 #include <aws/ds/DirectoryService_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ds/model/EventTopic.h>
+#include <utility>
 
 namespace Aws
 {
@@ -61,7 +62,7 @@ namespace Model
      * <p>A list of SNS topic names that receive status messages from the specified
      * Directory ID.</p>
      */
-    inline void SetEventTopics(Aws::Vector<EventTopic>&& value) { m_eventTopics = value; }
+    inline void SetEventTopics(Aws::Vector<EventTopic>&& value) { m_eventTopics = std::move(value); }
 
     /**
      * <p>A list of SNS topic names that receive status messages from the specified
@@ -73,7 +74,7 @@ namespace Model
      * <p>A list of SNS topic names that receive status messages from the specified
      * Directory ID.</p>
      */
-    inline DescribeEventTopicsResult& WithEventTopics(Aws::Vector<EventTopic>&& value) { SetEventTopics(value); return *this;}
+    inline DescribeEventTopicsResult& WithEventTopics(Aws::Vector<EventTopic>&& value) { SetEventTopics(std::move(value)); return *this;}
 
     /**
      * <p>A list of SNS topic names that receive status messages from the specified
@@ -85,7 +86,7 @@ namespace Model
      * <p>A list of SNS topic names that receive status messages from the specified
      * Directory ID.</p>
      */
-    inline DescribeEventTopicsResult& AddEventTopics(EventTopic&& value) { m_eventTopics.push_back(value); return *this; }
+    inline DescribeEventTopicsResult& AddEventTopics(EventTopic&& value) { m_eventTopics.push_back(std::move(value)); return *this; }
 
   private:
     Aws::Vector<EventTopic> m_eventTopics;

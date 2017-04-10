@@ -16,6 +16,7 @@
 #include <aws/workspaces/WorkSpaces_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/workspaces/model/FailedWorkspaceChangeRequest.h>
+#include <utility>
 
 namespace Aws
 {
@@ -53,7 +54,7 @@ namespace Model
     /**
      * <p>The failed requests.</p>
      */
-    inline void SetFailedRequests(Aws::Vector<FailedWorkspaceChangeRequest>&& value) { m_failedRequests = value; }
+    inline void SetFailedRequests(Aws::Vector<FailedWorkspaceChangeRequest>&& value) { m_failedRequests = std::move(value); }
 
     /**
      * <p>The failed requests.</p>
@@ -63,7 +64,7 @@ namespace Model
     /**
      * <p>The failed requests.</p>
      */
-    inline StartWorkspacesResult& WithFailedRequests(Aws::Vector<FailedWorkspaceChangeRequest>&& value) { SetFailedRequests(value); return *this;}
+    inline StartWorkspacesResult& WithFailedRequests(Aws::Vector<FailedWorkspaceChangeRequest>&& value) { SetFailedRequests(std::move(value)); return *this;}
 
     /**
      * <p>The failed requests.</p>
@@ -73,7 +74,7 @@ namespace Model
     /**
      * <p>The failed requests.</p>
      */
-    inline StartWorkspacesResult& AddFailedRequests(FailedWorkspaceChangeRequest&& value) { m_failedRequests.push_back(value); return *this; }
+    inline StartWorkspacesResult& AddFailedRequests(FailedWorkspaceChangeRequest&& value) { m_failedRequests.push_back(std::move(value)); return *this; }
 
   private:
     Aws::Vector<FailedWorkspaceChangeRequest> m_failedRequests;

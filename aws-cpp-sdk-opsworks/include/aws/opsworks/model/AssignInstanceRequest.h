@@ -17,6 +17,7 @@
 #include <aws/opsworks/OpsWorksRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <utility>
 
 namespace Aws
 {
@@ -49,7 +50,7 @@ namespace Model
     /**
      * <p>The instance ID.</p>
      */
-    inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
+    inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::move(value); }
 
     /**
      * <p>The instance ID.</p>
@@ -64,7 +65,7 @@ namespace Model
     /**
      * <p>The instance ID.</p>
      */
-    inline AssignInstanceRequest& WithInstanceId(Aws::String&& value) { SetInstanceId(value); return *this;}
+    inline AssignInstanceRequest& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
 
     /**
      * <p>The instance ID.</p>
@@ -87,7 +88,7 @@ namespace Model
      * <p>The layer ID, which must correspond to a custom layer. You cannot assign a
      * registered instance to a built-in layer.</p>
      */
-    inline void SetLayerIds(Aws::Vector<Aws::String>&& value) { m_layerIdsHasBeenSet = true; m_layerIds = value; }
+    inline void SetLayerIds(Aws::Vector<Aws::String>&& value) { m_layerIdsHasBeenSet = true; m_layerIds = std::move(value); }
 
     /**
      * <p>The layer ID, which must correspond to a custom layer. You cannot assign a
@@ -99,7 +100,7 @@ namespace Model
      * <p>The layer ID, which must correspond to a custom layer. You cannot assign a
      * registered instance to a built-in layer.</p>
      */
-    inline AssignInstanceRequest& WithLayerIds(Aws::Vector<Aws::String>&& value) { SetLayerIds(value); return *this;}
+    inline AssignInstanceRequest& WithLayerIds(Aws::Vector<Aws::String>&& value) { SetLayerIds(std::move(value)); return *this;}
 
     /**
      * <p>The layer ID, which must correspond to a custom layer. You cannot assign a
@@ -111,7 +112,7 @@ namespace Model
      * <p>The layer ID, which must correspond to a custom layer. You cannot assign a
      * registered instance to a built-in layer.</p>
      */
-    inline AssignInstanceRequest& AddLayerIds(Aws::String&& value) { m_layerIdsHasBeenSet = true; m_layerIds.push_back(value); return *this; }
+    inline AssignInstanceRequest& AddLayerIds(Aws::String&& value) { m_layerIdsHasBeenSet = true; m_layerIds.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The layer ID, which must correspond to a custom layer. You cannot assign a

@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/elastictranscoder/ElasticTranscoder_EXPORTS.h>
 #include <aws/elastictranscoder/model/Job.h>
+#include <utility>
 
 namespace Aws
 {
@@ -60,7 +61,7 @@ namespace Model
      * <p>A section of the response body that provides information about the job that
      * is created.</p>
      */
-    inline void SetJob(Job&& value) { m_job = value; }
+    inline void SetJob(Job&& value) { m_job = std::move(value); }
 
     /**
      * <p>A section of the response body that provides information about the job that
@@ -72,7 +73,7 @@ namespace Model
      * <p>A section of the response body that provides information about the job that
      * is created.</p>
      */
-    inline CreateJobResult& WithJob(Job&& value) { SetJob(value); return *this;}
+    inline CreateJobResult& WithJob(Job&& value) { SetJob(std::move(value)); return *this;}
 
   private:
     Job m_job;

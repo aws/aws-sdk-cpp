@@ -20,6 +20,7 @@
 #include <aws/kms/model/OriginType.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/kms/model/Tag.h>
+#include <utility>
 
 namespace Aws
 {
@@ -109,7 +110,7 @@ namespace Model
      * Key Policy</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
      * <p>The policy size limit is 32 KiB (32768 bytes).</p>
      */
-    inline void SetPolicy(Aws::String&& value) { m_policyHasBeenSet = true; m_policy = value; }
+    inline void SetPolicy(Aws::String&& value) { m_policyHasBeenSet = true; m_policy = std::move(value); }
 
     /**
      * <p>The key policy to attach to the CMK.</p> <p>If you specify a policy and do
@@ -181,7 +182,7 @@ namespace Model
      * Key Policy</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
      * <p>The policy size limit is 32 KiB (32768 bytes).</p>
      */
-    inline CreateKeyRequest& WithPolicy(Aws::String&& value) { SetPolicy(value); return *this;}
+    inline CreateKeyRequest& WithPolicy(Aws::String&& value) { SetPolicy(std::move(value)); return *this;}
 
     /**
      * <p>The key policy to attach to the CMK.</p> <p>If you specify a policy and do
@@ -223,7 +224,7 @@ namespace Model
      * <p>A description of the CMK.</p> <p>Use a description that helps you decide
      * whether the CMK is appropriate for a task.</p>
      */
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = value; }
+    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
      * <p>A description of the CMK.</p> <p>Use a description that helps you decide
@@ -241,7 +242,7 @@ namespace Model
      * <p>A description of the CMK.</p> <p>Use a description that helps you decide
      * whether the CMK is appropriate for a task.</p>
      */
-    inline CreateKeyRequest& WithDescription(Aws::String&& value) { SetDescription(value); return *this;}
+    inline CreateKeyRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
      * <p>A description of the CMK.</p> <p>Use a description that helps you decide
@@ -265,7 +266,7 @@ namespace Model
      * <p>The intended use of the CMK.</p> <p>You can use CMKs only for symmetric
      * encryption and decryption.</p>
      */
-    inline void SetKeyUsage(KeyUsageType&& value) { m_keyUsageHasBeenSet = true; m_keyUsage = value; }
+    inline void SetKeyUsage(KeyUsageType&& value) { m_keyUsageHasBeenSet = true; m_keyUsage = std::move(value); }
 
     /**
      * <p>The intended use of the CMK.</p> <p>You can use CMKs only for symmetric
@@ -277,7 +278,7 @@ namespace Model
      * <p>The intended use of the CMK.</p> <p>You can use CMKs only for symmetric
      * encryption and decryption.</p>
      */
-    inline CreateKeyRequest& WithKeyUsage(KeyUsageType&& value) { SetKeyUsage(value); return *this;}
+    inline CreateKeyRequest& WithKeyUsage(KeyUsageType&& value) { SetKeyUsage(std::move(value)); return *this;}
 
     /**
      * <p>The source of the CMK's key material.</p> <p>The default is
@@ -319,7 +320,7 @@ namespace Model
      * <p>The CMK's <code>Origin</code> is immutable and is set when the CMK is
      * created.</p>
      */
-    inline void SetOrigin(OriginType&& value) { m_originHasBeenSet = true; m_origin = value; }
+    inline void SetOrigin(OriginType&& value) { m_originHasBeenSet = true; m_origin = std::move(value); }
 
     /**
      * <p>The source of the CMK's key material.</p> <p>The default is
@@ -347,7 +348,7 @@ namespace Model
      * <p>The CMK's <code>Origin</code> is immutable and is set when the CMK is
      * created.</p>
      */
-    inline CreateKeyRequest& WithOrigin(OriginType&& value) { SetOrigin(value); return *this;}
+    inline CreateKeyRequest& WithOrigin(OriginType&& value) { SetOrigin(std::move(value)); return *this;}
 
     /**
      * <p>A flag to indicate whether to bypass the key policy lockout safety check.</p>
@@ -416,7 +417,7 @@ namespace Model
      * Alternately, you can omit this parameter and instead tag the CMK after it is
      * created using <a>TagResource</a>.</p>
      */
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = value; }
+    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
      * <p>One or more tags. Each tag consists of a tag key and a tag value. Tag keys
@@ -434,7 +435,7 @@ namespace Model
      * Alternately, you can omit this parameter and instead tag the CMK after it is
      * created using <a>TagResource</a>.</p>
      */
-    inline CreateKeyRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(value); return *this;}
+    inline CreateKeyRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
      * <p>One or more tags. Each tag consists of a tag key and a tag value. Tag keys
@@ -452,7 +453,7 @@ namespace Model
      * Alternately, you can omit this parameter and instead tag the CMK after it is
      * created using <a>TagResource</a>.</p>
      */
-    inline CreateKeyRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
+    inline CreateKeyRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
   private:
     Aws::String m_policy;

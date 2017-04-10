@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/elasticbeanstalk/model/ResponseMetadata.h>
 #include <aws/elasticbeanstalk/model/EnvironmentDescription.h>
+#include <utility>
 
 namespace Aws
 {
@@ -60,7 +61,7 @@ namespace Model
     /**
      * <p> Returns an <a>EnvironmentDescription</a> list. </p>
      */
-    inline void SetEnvironments(Aws::Vector<EnvironmentDescription>&& value) { m_environments = value; }
+    inline void SetEnvironments(Aws::Vector<EnvironmentDescription>&& value) { m_environments = std::move(value); }
 
     /**
      * <p> Returns an <a>EnvironmentDescription</a> list. </p>
@@ -70,7 +71,7 @@ namespace Model
     /**
      * <p> Returns an <a>EnvironmentDescription</a> list. </p>
      */
-    inline DescribeEnvironmentsResult& WithEnvironments(Aws::Vector<EnvironmentDescription>&& value) { SetEnvironments(value); return *this;}
+    inline DescribeEnvironmentsResult& WithEnvironments(Aws::Vector<EnvironmentDescription>&& value) { SetEnvironments(std::move(value)); return *this;}
 
     /**
      * <p> Returns an <a>EnvironmentDescription</a> list. </p>
@@ -80,7 +81,7 @@ namespace Model
     /**
      * <p> Returns an <a>EnvironmentDescription</a> list. </p>
      */
-    inline DescribeEnvironmentsResult& AddEnvironments(EnvironmentDescription&& value) { m_environments.push_back(value); return *this; }
+    inline DescribeEnvironmentsResult& AddEnvironments(EnvironmentDescription&& value) { m_environments.push_back(std::move(value)); return *this; }
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
@@ -89,13 +90,13 @@ namespace Model
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
 
     
     inline DescribeEnvironmentsResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
 
     
-    inline DescribeEnvironmentsResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
+    inline DescribeEnvironmentsResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
     Aws::Vector<EnvironmentDescription> m_environments;

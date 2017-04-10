@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/VpcIpv6CidrBlockAssociation.h>
 #include <aws/ec2/model/ResponseMetadata.h>
+#include <utility>
 
 namespace Aws
 {
@@ -54,7 +55,7 @@ namespace Model
     /**
      * <p>The ID of the VPC.</p>
      */
-    inline void SetVpcId(Aws::String&& value) { m_vpcId = value; }
+    inline void SetVpcId(Aws::String&& value) { m_vpcId = std::move(value); }
 
     /**
      * <p>The ID of the VPC.</p>
@@ -69,7 +70,7 @@ namespace Model
     /**
      * <p>The ID of the VPC.</p>
      */
-    inline AssociateVpcCidrBlockResponse& WithVpcId(Aws::String&& value) { SetVpcId(value); return *this;}
+    inline AssociateVpcCidrBlockResponse& WithVpcId(Aws::String&& value) { SetVpcId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the VPC.</p>
@@ -89,7 +90,7 @@ namespace Model
     /**
      * <p>Information about the IPv6 CIDR block association.</p>
      */
-    inline void SetIpv6CidrBlockAssociation(VpcIpv6CidrBlockAssociation&& value) { m_ipv6CidrBlockAssociation = value; }
+    inline void SetIpv6CidrBlockAssociation(VpcIpv6CidrBlockAssociation&& value) { m_ipv6CidrBlockAssociation = std::move(value); }
 
     /**
      * <p>Information about the IPv6 CIDR block association.</p>
@@ -99,7 +100,7 @@ namespace Model
     /**
      * <p>Information about the IPv6 CIDR block association.</p>
      */
-    inline AssociateVpcCidrBlockResponse& WithIpv6CidrBlockAssociation(VpcIpv6CidrBlockAssociation&& value) { SetIpv6CidrBlockAssociation(value); return *this;}
+    inline AssociateVpcCidrBlockResponse& WithIpv6CidrBlockAssociation(VpcIpv6CidrBlockAssociation&& value) { SetIpv6CidrBlockAssociation(std::move(value)); return *this;}
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
@@ -108,13 +109,13 @@ namespace Model
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
 
     
     inline AssociateVpcCidrBlockResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
 
     
-    inline AssociateVpcCidrBlockResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
+    inline AssociateVpcCidrBlockResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
     Aws::String m_vpcId;

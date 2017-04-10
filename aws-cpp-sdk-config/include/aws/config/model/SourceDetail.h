@@ -17,6 +17,7 @@
 #include <aws/config/model/EventSource.h>
 #include <aws/config/model/MessageType.h>
 #include <aws/config/model/MaximumExecutionFrequency.h>
+#include <utility>
 
 namespace Aws
 {
@@ -65,7 +66,7 @@ namespace Model
      * <p>The source of the event, such as an AWS service, that triggers AWS Config to
      * evaluate your AWS resources.</p>
      */
-    inline void SetEventSource(EventSource&& value) { m_eventSourceHasBeenSet = true; m_eventSource = value; }
+    inline void SetEventSource(EventSource&& value) { m_eventSourceHasBeenSet = true; m_eventSource = std::move(value); }
 
     /**
      * <p>The source of the event, such as an AWS service, that triggers AWS Config to
@@ -77,7 +78,7 @@ namespace Model
      * <p>The source of the event, such as an AWS service, that triggers AWS Config to
      * evaluate your AWS resources.</p>
      */
-    inline SourceDetail& WithEventSource(EventSource&& value) { SetEventSource(value); return *this;}
+    inline SourceDetail& WithEventSource(EventSource&& value) { SetEventSource(std::move(value)); return *this;}
 
     /**
      * <p>The type of notification that triggers AWS Config to run an evaluation for a
@@ -134,7 +135,7 @@ namespace Model
      * specify both <code>ConfigurationItemChangeNotification</code> and
      * <code>OversizedConfigurationItemChangeNotification</code>. </p>
      */
-    inline void SetMessageType(MessageType&& value) { m_messageTypeHasBeenSet = true; m_messageType = value; }
+    inline void SetMessageType(MessageType&& value) { m_messageTypeHasBeenSet = true; m_messageType = std::move(value); }
 
     /**
      * <p>The type of notification that triggers AWS Config to run an evaluation for a
@@ -172,7 +173,7 @@ namespace Model
      * specify both <code>ConfigurationItemChangeNotification</code> and
      * <code>OversizedConfigurationItemChangeNotification</code>. </p>
      */
-    inline SourceDetail& WithMessageType(MessageType&& value) { SetMessageType(value); return *this;}
+    inline SourceDetail& WithMessageType(MessageType&& value) { SetMessageType(std::move(value)); return *this;}
 
     /**
      * <p>The frequency that you want AWS Config to run evaluations for a custom rule
@@ -205,7 +206,7 @@ namespace Model
      * specify a valid value for the <code>MaximumExecutionFrequency</code>
      * parameter.</p> </note>
      */
-    inline void SetMaximumExecutionFrequency(MaximumExecutionFrequency&& value) { m_maximumExecutionFrequencyHasBeenSet = true; m_maximumExecutionFrequency = value; }
+    inline void SetMaximumExecutionFrequency(MaximumExecutionFrequency&& value) { m_maximumExecutionFrequencyHasBeenSet = true; m_maximumExecutionFrequency = std::move(value); }
 
     /**
      * <p>The frequency that you want AWS Config to run evaluations for a custom rule
@@ -227,7 +228,7 @@ namespace Model
      * specify a valid value for the <code>MaximumExecutionFrequency</code>
      * parameter.</p> </note>
      */
-    inline SourceDetail& WithMaximumExecutionFrequency(MaximumExecutionFrequency&& value) { SetMaximumExecutionFrequency(value); return *this;}
+    inline SourceDetail& WithMaximumExecutionFrequency(MaximumExecutionFrequency&& value) { SetMaximumExecutionFrequency(std::move(value)); return *this;}
 
   private:
     EventSource m_eventSource;

@@ -16,6 +16,7 @@
 #include <aws/cloudfront/CloudFront_EXPORTS.h>
 #include <aws/cloudfront/CloudFrontRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -49,7 +50,7 @@ namespace Model
     /**
      * The distribution's id.
      */
-    inline void SetDistributionId(Aws::String&& value) { m_distributionIdHasBeenSet = true; m_distributionId = value; }
+    inline void SetDistributionId(Aws::String&& value) { m_distributionIdHasBeenSet = true; m_distributionId = std::move(value); }
 
     /**
      * The distribution's id.
@@ -64,7 +65,7 @@ namespace Model
     /**
      * The distribution's id.
      */
-    inline GetInvalidation2016_01_28Request& WithDistributionId(Aws::String&& value) { SetDistributionId(value); return *this;}
+    inline GetInvalidation2016_01_28Request& WithDistributionId(Aws::String&& value) { SetDistributionId(std::move(value)); return *this;}
 
     /**
      * The distribution's id.
@@ -84,7 +85,7 @@ namespace Model
     /**
      * The invalidation's id.
      */
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = value; }
+    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
 
     /**
      * The invalidation's id.
@@ -99,7 +100,7 @@ namespace Model
     /**
      * The invalidation's id.
      */
-    inline GetInvalidation2016_01_28Request& WithId(Aws::String&& value) { SetId(value); return *this;}
+    inline GetInvalidation2016_01_28Request& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
 
     /**
      * The invalidation's id.

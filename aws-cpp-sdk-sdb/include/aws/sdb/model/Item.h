@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/sdb/model/Attribute.h>
+#include <utility>
 
 namespace Aws
 {
@@ -61,7 +62,7 @@ namespace Model
     /**
      * The name of the item.
      */
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * The name of the item.
@@ -76,7 +77,7 @@ namespace Model
     /**
      * The name of the item.
      */
-    inline Item& WithName(Aws::String&& value) { SetName(value); return *this;}
+    inline Item& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * The name of the item.
@@ -96,7 +97,7 @@ namespace Model
     /**
      * <p></p>
      */
-    inline void SetAlternateNameEncoding(Aws::String&& value) { m_alternateNameEncodingHasBeenSet = true; m_alternateNameEncoding = value; }
+    inline void SetAlternateNameEncoding(Aws::String&& value) { m_alternateNameEncodingHasBeenSet = true; m_alternateNameEncoding = std::move(value); }
 
     /**
      * <p></p>
@@ -111,7 +112,7 @@ namespace Model
     /**
      * <p></p>
      */
-    inline Item& WithAlternateNameEncoding(Aws::String&& value) { SetAlternateNameEncoding(value); return *this;}
+    inline Item& WithAlternateNameEncoding(Aws::String&& value) { SetAlternateNameEncoding(std::move(value)); return *this;}
 
     /**
      * <p></p>
@@ -131,7 +132,7 @@ namespace Model
     /**
      * A list of attributes.
      */
-    inline void SetAttributes(Aws::Vector<Attribute>&& value) { m_attributesHasBeenSet = true; m_attributes = value; }
+    inline void SetAttributes(Aws::Vector<Attribute>&& value) { m_attributesHasBeenSet = true; m_attributes = std::move(value); }
 
     /**
      * A list of attributes.
@@ -141,7 +142,7 @@ namespace Model
     /**
      * A list of attributes.
      */
-    inline Item& WithAttributes(Aws::Vector<Attribute>&& value) { SetAttributes(value); return *this;}
+    inline Item& WithAttributes(Aws::Vector<Attribute>&& value) { SetAttributes(std::move(value)); return *this;}
 
     /**
      * A list of attributes.
@@ -151,7 +152,7 @@ namespace Model
     /**
      * A list of attributes.
      */
-    inline Item& AddAttributes(Attribute&& value) { m_attributesHasBeenSet = true; m_attributes.push_back(value); return *this; }
+    inline Item& AddAttributes(Attribute&& value) { m_attributesHasBeenSet = true; m_attributes.push_back(std::move(value)); return *this; }
 
   private:
     Aws::String m_name;

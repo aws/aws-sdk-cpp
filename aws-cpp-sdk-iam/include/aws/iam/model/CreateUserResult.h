@@ -16,6 +16,7 @@
 #include <aws/iam/IAM_EXPORTS.h>
 #include <aws/iam/model/User.h>
 #include <aws/iam/model/ResponseMetadata.h>
+#include <utility>
 
 namespace Aws
 {
@@ -59,7 +60,7 @@ namespace Model
     /**
      * <p>A structure with details about the new IAM user.</p>
      */
-    inline void SetUser(User&& value) { m_user = value; }
+    inline void SetUser(User&& value) { m_user = std::move(value); }
 
     /**
      * <p>A structure with details about the new IAM user.</p>
@@ -69,7 +70,7 @@ namespace Model
     /**
      * <p>A structure with details about the new IAM user.</p>
      */
-    inline CreateUserResult& WithUser(User&& value) { SetUser(value); return *this;}
+    inline CreateUserResult& WithUser(User&& value) { SetUser(std::move(value)); return *this;}
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
@@ -78,13 +79,13 @@ namespace Model
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
 
     
     inline CreateUserResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
 
     
-    inline CreateUserResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
+    inline CreateUserResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
     User m_user;

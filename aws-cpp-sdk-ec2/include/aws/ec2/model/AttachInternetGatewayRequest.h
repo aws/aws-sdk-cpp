@@ -16,6 +16,7 @@
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/ec2/EC2Request.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -78,7 +79,7 @@ namespace Model
     /**
      * <p>The ID of the Internet gateway.</p>
      */
-    inline void SetInternetGatewayId(Aws::String&& value) { m_internetGatewayIdHasBeenSet = true; m_internetGatewayId = value; }
+    inline void SetInternetGatewayId(Aws::String&& value) { m_internetGatewayIdHasBeenSet = true; m_internetGatewayId = std::move(value); }
 
     /**
      * <p>The ID of the Internet gateway.</p>
@@ -93,7 +94,7 @@ namespace Model
     /**
      * <p>The ID of the Internet gateway.</p>
      */
-    inline AttachInternetGatewayRequest& WithInternetGatewayId(Aws::String&& value) { SetInternetGatewayId(value); return *this;}
+    inline AttachInternetGatewayRequest& WithInternetGatewayId(Aws::String&& value) { SetInternetGatewayId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the Internet gateway.</p>
@@ -113,7 +114,7 @@ namespace Model
     /**
      * <p>The ID of the VPC.</p>
      */
-    inline void SetVpcId(Aws::String&& value) { m_vpcIdHasBeenSet = true; m_vpcId = value; }
+    inline void SetVpcId(Aws::String&& value) { m_vpcIdHasBeenSet = true; m_vpcId = std::move(value); }
 
     /**
      * <p>The ID of the VPC.</p>
@@ -128,7 +129,7 @@ namespace Model
     /**
      * <p>The ID of the VPC.</p>
      */
-    inline AttachInternetGatewayRequest& WithVpcId(Aws::String&& value) { SetVpcId(value); return *this;}
+    inline AttachInternetGatewayRequest& WithVpcId(Aws::String&& value) { SetVpcId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the VPC.</p>

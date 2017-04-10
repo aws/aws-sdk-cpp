@@ -17,6 +17,7 @@
 #include <aws/cognito-idp/CognitoIdentityProviderRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <utility>
 
 namespace Aws
 {
@@ -52,7 +53,7 @@ namespace Model
     /**
      * <p>The user pool ID for which you want to list users.</p>
      */
-    inline void SetUserPoolId(Aws::String&& value) { m_userPoolIdHasBeenSet = true; m_userPoolId = value; }
+    inline void SetUserPoolId(Aws::String&& value) { m_userPoolIdHasBeenSet = true; m_userPoolId = std::move(value); }
 
     /**
      * <p>The user pool ID for which you want to list users.</p>
@@ -67,7 +68,7 @@ namespace Model
     /**
      * <p>The user pool ID for which you want to list users.</p>
      */
-    inline ListUsersRequest& WithUserPoolId(Aws::String&& value) { SetUserPoolId(value); return *this;}
+    inline ListUsersRequest& WithUserPoolId(Aws::String&& value) { SetUserPoolId(std::move(value)); return *this;}
 
     /**
      * <p>The user pool ID for which you want to list users.</p>
@@ -87,7 +88,7 @@ namespace Model
     /**
      * <p>The attributes to get from the request to list users.</p>
      */
-    inline void SetAttributesToGet(Aws::Vector<Aws::String>&& value) { m_attributesToGetHasBeenSet = true; m_attributesToGet = value; }
+    inline void SetAttributesToGet(Aws::Vector<Aws::String>&& value) { m_attributesToGetHasBeenSet = true; m_attributesToGet = std::move(value); }
 
     /**
      * <p>The attributes to get from the request to list users.</p>
@@ -97,7 +98,7 @@ namespace Model
     /**
      * <p>The attributes to get from the request to list users.</p>
      */
-    inline ListUsersRequest& WithAttributesToGet(Aws::Vector<Aws::String>&& value) { SetAttributesToGet(value); return *this;}
+    inline ListUsersRequest& WithAttributesToGet(Aws::Vector<Aws::String>&& value) { SetAttributesToGet(std::move(value)); return *this;}
 
     /**
      * <p>The attributes to get from the request to list users.</p>
@@ -107,7 +108,7 @@ namespace Model
     /**
      * <p>The attributes to get from the request to list users.</p>
      */
-    inline ListUsersRequest& AddAttributesToGet(Aws::String&& value) { m_attributesToGetHasBeenSet = true; m_attributesToGet.push_back(value); return *this; }
+    inline ListUsersRequest& AddAttributesToGet(Aws::String&& value) { m_attributesToGetHasBeenSet = true; m_attributesToGet.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The attributes to get from the request to list users.</p>
@@ -145,7 +146,7 @@ namespace Model
      * <p>An identifier that was returned from the previous call to this operation,
      * which can be used to return the next set of items in the list.</p>
      */
-    inline void SetPaginationToken(Aws::String&& value) { m_paginationTokenHasBeenSet = true; m_paginationToken = value; }
+    inline void SetPaginationToken(Aws::String&& value) { m_paginationTokenHasBeenSet = true; m_paginationToken = std::move(value); }
 
     /**
      * <p>An identifier that was returned from the previous call to this operation,
@@ -163,7 +164,7 @@ namespace Model
      * <p>An identifier that was returned from the previous call to this operation,
      * which can be used to return the next set of items in the list.</p>
      */
-    inline ListUsersRequest& WithPaginationToken(Aws::String&& value) { SetPaginationToken(value); return *this;}
+    inline ListUsersRequest& WithPaginationToken(Aws::String&& value) { SetPaginationToken(std::move(value)); return *this;}
 
     /**
      * <p>An identifier that was returned from the previous call to this operation,
@@ -184,7 +185,7 @@ namespace Model
     /**
      * <p>The filter for the list users request.</p>
      */
-    inline void SetFilter(Aws::String&& value) { m_filterHasBeenSet = true; m_filter = value; }
+    inline void SetFilter(Aws::String&& value) { m_filterHasBeenSet = true; m_filter = std::move(value); }
 
     /**
      * <p>The filter for the list users request.</p>
@@ -199,7 +200,7 @@ namespace Model
     /**
      * <p>The filter for the list users request.</p>
      */
-    inline ListUsersRequest& WithFilter(Aws::String&& value) { SetFilter(value); return *this;}
+    inline ListUsersRequest& WithFilter(Aws::String&& value) { SetFilter(std::move(value)); return *this;}
 
     /**
      * <p>The filter for the list users request.</p>

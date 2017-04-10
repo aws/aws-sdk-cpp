@@ -16,6 +16,7 @@
 #include <aws/lightsail/Lightsail_EXPORTS.h>
 #include <aws/lightsail/LightsailRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -48,7 +49,7 @@ namespace Model
     /**
      * <p>The name for your new key pair.</p>
      */
-    inline void SetKeyPairName(Aws::String&& value) { m_keyPairNameHasBeenSet = true; m_keyPairName = value; }
+    inline void SetKeyPairName(Aws::String&& value) { m_keyPairNameHasBeenSet = true; m_keyPairName = std::move(value); }
 
     /**
      * <p>The name for your new key pair.</p>
@@ -63,7 +64,7 @@ namespace Model
     /**
      * <p>The name for your new key pair.</p>
      */
-    inline CreateKeyPairRequest& WithKeyPairName(Aws::String&& value) { SetKeyPairName(value); return *this;}
+    inline CreateKeyPairRequest& WithKeyPairName(Aws::String&& value) { SetKeyPairName(std::move(value)); return *this;}
 
     /**
      * <p>The name for your new key pair.</p>

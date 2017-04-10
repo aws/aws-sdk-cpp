@@ -17,6 +17,7 @@
 #include <aws/ecs/ECSRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <utility>
 
 namespace Aws
 {
@@ -55,7 +56,7 @@ namespace Model
      * the container instances to describe. If you do not specify a cluster, the
      * default cluster is assumed.</p>
      */
-    inline void SetCluster(Aws::String&& value) { m_clusterHasBeenSet = true; m_cluster = value; }
+    inline void SetCluster(Aws::String&& value) { m_clusterHasBeenSet = true; m_cluster = std::move(value); }
 
     /**
      * <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts
@@ -76,7 +77,7 @@ namespace Model
      * the container instances to describe. If you do not specify a cluster, the
      * default cluster is assumed.</p>
      */
-    inline DescribeContainerInstancesRequest& WithCluster(Aws::String&& value) { SetCluster(value); return *this;}
+    inline DescribeContainerInstancesRequest& WithCluster(Aws::String&& value) { SetCluster(std::move(value)); return *this;}
 
     /**
      * <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts
@@ -101,7 +102,7 @@ namespace Model
      * <p>A space-separated list of container instance IDs or full Amazon Resource Name
      * (ARN) entries.</p>
      */
-    inline void SetContainerInstances(Aws::Vector<Aws::String>&& value) { m_containerInstancesHasBeenSet = true; m_containerInstances = value; }
+    inline void SetContainerInstances(Aws::Vector<Aws::String>&& value) { m_containerInstancesHasBeenSet = true; m_containerInstances = std::move(value); }
 
     /**
      * <p>A space-separated list of container instance IDs or full Amazon Resource Name
@@ -113,7 +114,7 @@ namespace Model
      * <p>A space-separated list of container instance IDs or full Amazon Resource Name
      * (ARN) entries.</p>
      */
-    inline DescribeContainerInstancesRequest& WithContainerInstances(Aws::Vector<Aws::String>&& value) { SetContainerInstances(value); return *this;}
+    inline DescribeContainerInstancesRequest& WithContainerInstances(Aws::Vector<Aws::String>&& value) { SetContainerInstances(std::move(value)); return *this;}
 
     /**
      * <p>A space-separated list of container instance IDs or full Amazon Resource Name
@@ -125,7 +126,7 @@ namespace Model
      * <p>A space-separated list of container instance IDs or full Amazon Resource Name
      * (ARN) entries.</p>
      */
-    inline DescribeContainerInstancesRequest& AddContainerInstances(Aws::String&& value) { m_containerInstancesHasBeenSet = true; m_containerInstances.push_back(value); return *this; }
+    inline DescribeContainerInstancesRequest& AddContainerInstances(Aws::String&& value) { m_containerInstancesHasBeenSet = true; m_containerInstances.push_back(std::move(value)); return *this; }
 
     /**
      * <p>A space-separated list of container instance IDs or full Amazon Resource Name

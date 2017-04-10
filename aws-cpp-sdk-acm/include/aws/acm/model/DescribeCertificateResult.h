@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/acm/ACM_EXPORTS.h>
 #include <aws/acm/model/CertificateDetail.h>
+#include <utility>
 
 namespace Aws
 {
@@ -52,7 +53,7 @@ namespace Model
     /**
      * <p>Metadata about an ACM certificate.</p>
      */
-    inline void SetCertificate(CertificateDetail&& value) { m_certificate = value; }
+    inline void SetCertificate(CertificateDetail&& value) { m_certificate = std::move(value); }
 
     /**
      * <p>Metadata about an ACM certificate.</p>
@@ -62,7 +63,7 @@ namespace Model
     /**
      * <p>Metadata about an ACM certificate.</p>
      */
-    inline DescribeCertificateResult& WithCertificate(CertificateDetail&& value) { SetCertificate(value); return *this;}
+    inline DescribeCertificateResult& WithCertificate(CertificateDetail&& value) { SetCertificate(std::move(value)); return *this;}
 
   private:
     CertificateDetail m_certificate;

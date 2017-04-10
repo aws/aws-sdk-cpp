@@ -16,6 +16,7 @@
 #include <aws/iot/IoT_EXPORTS.h>
 #include <aws/iot/IoTRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -58,7 +59,7 @@ namespace Model
     /**
      * <p>The policy name.</p>
      */
-    inline void SetPolicyName(Aws::String&& value) { m_policyNameHasBeenSet = true; m_policyName = value; }
+    inline void SetPolicyName(Aws::String&& value) { m_policyNameHasBeenSet = true; m_policyName = std::move(value); }
 
     /**
      * <p>The policy name.</p>
@@ -73,7 +74,7 @@ namespace Model
     /**
      * <p>The policy name.</p>
      */
-    inline ListPolicyPrincipalsRequest& WithPolicyName(Aws::String&& value) { SetPolicyName(value); return *this;}
+    inline ListPolicyPrincipalsRequest& WithPolicyName(Aws::String&& value) { SetPolicyName(std::move(value)); return *this;}
 
     /**
      * <p>The policy name.</p>
@@ -93,7 +94,7 @@ namespace Model
     /**
      * <p>The marker for the next set of results.</p>
      */
-    inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = value; }
+    inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = std::move(value); }
 
     /**
      * <p>The marker for the next set of results.</p>
@@ -108,7 +109,7 @@ namespace Model
     /**
      * <p>The marker for the next set of results.</p>
      */
-    inline ListPolicyPrincipalsRequest& WithMarker(Aws::String&& value) { SetMarker(value); return *this;}
+    inline ListPolicyPrincipalsRequest& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
 
     /**
      * <p>The marker for the next set of results.</p>

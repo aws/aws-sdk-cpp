@@ -16,6 +16,7 @@
 #include <aws/mturk-requester/MTurk_EXPORTS.h>
 #include <aws/mturk-requester/MTurkRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -48,7 +49,7 @@ namespace Model
     /**
      * <p>The HIT to update.</p>
      */
-    inline void SetHITId(Aws::String&& value) { m_hITIdHasBeenSet = true; m_hITId = value; }
+    inline void SetHITId(Aws::String&& value) { m_hITIdHasBeenSet = true; m_hITId = std::move(value); }
 
     /**
      * <p>The HIT to update.</p>
@@ -63,7 +64,7 @@ namespace Model
     /**
      * <p>The HIT to update.</p>
      */
-    inline UpdateHITTypeOfHITRequest& WithHITId(Aws::String&& value) { SetHITId(value); return *this;}
+    inline UpdateHITTypeOfHITRequest& WithHITId(Aws::String&& value) { SetHITId(std::move(value)); return *this;}
 
     /**
      * <p>The HIT to update.</p>
@@ -83,7 +84,7 @@ namespace Model
     /**
      * <p>The ID of the new HIT type.</p>
      */
-    inline void SetHITTypeId(Aws::String&& value) { m_hITTypeIdHasBeenSet = true; m_hITTypeId = value; }
+    inline void SetHITTypeId(Aws::String&& value) { m_hITTypeIdHasBeenSet = true; m_hITTypeId = std::move(value); }
 
     /**
      * <p>The ID of the new HIT type.</p>
@@ -98,7 +99,7 @@ namespace Model
     /**
      * <p>The ID of the new HIT type.</p>
      */
-    inline UpdateHITTypeOfHITRequest& WithHITTypeId(Aws::String&& value) { SetHITTypeId(value); return *this;}
+    inline UpdateHITTypeOfHITRequest& WithHITTypeId(Aws::String&& value) { SetHITTypeId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the new HIT type.</p>

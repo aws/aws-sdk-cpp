@@ -17,6 +17,7 @@
 #include <aws/elasticfilesystem/EFSRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <utility>
 
 namespace Aws
 {
@@ -50,7 +51,7 @@ namespace Model
     /**
      * <p>ID of the mount target whose security groups you want to modify.</p>
      */
-    inline void SetMountTargetId(Aws::String&& value) { m_mountTargetIdHasBeenSet = true; m_mountTargetId = value; }
+    inline void SetMountTargetId(Aws::String&& value) { m_mountTargetIdHasBeenSet = true; m_mountTargetId = std::move(value); }
 
     /**
      * <p>ID of the mount target whose security groups you want to modify.</p>
@@ -65,7 +66,7 @@ namespace Model
     /**
      * <p>ID of the mount target whose security groups you want to modify.</p>
      */
-    inline ModifyMountTargetSecurityGroupsRequest& WithMountTargetId(Aws::String&& value) { SetMountTargetId(value); return *this;}
+    inline ModifyMountTargetSecurityGroupsRequest& WithMountTargetId(Aws::String&& value) { SetMountTargetId(std::move(value)); return *this;}
 
     /**
      * <p>ID of the mount target whose security groups you want to modify.</p>
@@ -85,7 +86,7 @@ namespace Model
     /**
      * <p>Array of up to five VPC security group IDs.</p>
      */
-    inline void SetSecurityGroups(Aws::Vector<Aws::String>&& value) { m_securityGroupsHasBeenSet = true; m_securityGroups = value; }
+    inline void SetSecurityGroups(Aws::Vector<Aws::String>&& value) { m_securityGroupsHasBeenSet = true; m_securityGroups = std::move(value); }
 
     /**
      * <p>Array of up to five VPC security group IDs.</p>
@@ -95,7 +96,7 @@ namespace Model
     /**
      * <p>Array of up to five VPC security group IDs.</p>
      */
-    inline ModifyMountTargetSecurityGroupsRequest& WithSecurityGroups(Aws::Vector<Aws::String>&& value) { SetSecurityGroups(value); return *this;}
+    inline ModifyMountTargetSecurityGroupsRequest& WithSecurityGroups(Aws::Vector<Aws::String>&& value) { SetSecurityGroups(std::move(value)); return *this;}
 
     /**
      * <p>Array of up to five VPC security group IDs.</p>
@@ -105,7 +106,7 @@ namespace Model
     /**
      * <p>Array of up to five VPC security group IDs.</p>
      */
-    inline ModifyMountTargetSecurityGroupsRequest& AddSecurityGroups(Aws::String&& value) { m_securityGroupsHasBeenSet = true; m_securityGroups.push_back(value); return *this; }
+    inline ModifyMountTargetSecurityGroupsRequest& AddSecurityGroups(Aws::String&& value) { m_securityGroupsHasBeenSet = true; m_securityGroups.push_back(std::move(value)); return *this; }
 
     /**
      * <p>Array of up to five VPC security group IDs.</p>

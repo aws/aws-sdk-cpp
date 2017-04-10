@@ -16,6 +16,7 @@
 #include <aws/ssm/SSM_EXPORTS.h>
 #include <aws/ssm/SSMRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -48,7 +49,7 @@ namespace Model
     /**
      * <p>The ID of the patch baseline to retrieve.</p>
      */
-    inline void SetBaselineId(Aws::String&& value) { m_baselineIdHasBeenSet = true; m_baselineId = value; }
+    inline void SetBaselineId(Aws::String&& value) { m_baselineIdHasBeenSet = true; m_baselineId = std::move(value); }
 
     /**
      * <p>The ID of the patch baseline to retrieve.</p>
@@ -63,7 +64,7 @@ namespace Model
     /**
      * <p>The ID of the patch baseline to retrieve.</p>
      */
-    inline GetPatchBaselineRequest& WithBaselineId(Aws::String&& value) { SetBaselineId(value); return *this;}
+    inline GetPatchBaselineRequest& WithBaselineId(Aws::String&& value) { SetBaselineId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the patch baseline to retrieve.</p>

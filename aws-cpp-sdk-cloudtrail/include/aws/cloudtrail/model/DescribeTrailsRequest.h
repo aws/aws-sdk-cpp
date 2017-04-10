@@ -17,6 +17,7 @@
 #include <aws/cloudtrail/CloudTrailRequest.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -88,7 +89,7 @@ namespace Model
      * only to the current region. To return information about a trail in another
      * region, you must specify its trail ARN.</p> </note>
      */
-    inline void SetTrailNameList(Aws::Vector<Aws::String>&& value) { m_trailNameListHasBeenSet = true; m_trailNameList = value; }
+    inline void SetTrailNameList(Aws::Vector<Aws::String>&& value) { m_trailNameListHasBeenSet = true; m_trailNameList = std::move(value); }
 
     /**
      * <p>Specifies a list of trail names, trail ARNs, or both, of the trails to
@@ -122,7 +123,7 @@ namespace Model
      * only to the current region. To return information about a trail in another
      * region, you must specify its trail ARN.</p> </note>
      */
-    inline DescribeTrailsRequest& WithTrailNameList(Aws::Vector<Aws::String>&& value) { SetTrailNameList(value); return *this;}
+    inline DescribeTrailsRequest& WithTrailNameList(Aws::Vector<Aws::String>&& value) { SetTrailNameList(std::move(value)); return *this;}
 
     /**
      * <p>Specifies a list of trail names, trail ARNs, or both, of the trails to
@@ -156,7 +157,7 @@ namespace Model
      * only to the current region. To return information about a trail in another
      * region, you must specify its trail ARN.</p> </note>
      */
-    inline DescribeTrailsRequest& AddTrailNameList(Aws::String&& value) { m_trailNameListHasBeenSet = true; m_trailNameList.push_back(value); return *this; }
+    inline DescribeTrailsRequest& AddTrailNameList(Aws::String&& value) { m_trailNameListHasBeenSet = true; m_trailNameList.push_back(std::move(value)); return *this; }
 
     /**
      * <p>Specifies a list of trail names, trail ARNs, or both, of the trails to

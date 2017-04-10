@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/gamelift/GameLift_EXPORTS.h>
 #include <aws/gamelift/model/GameSession.h>
+#include <utility>
 
 namespace Aws
 {
@@ -58,7 +59,7 @@ namespace Model
     /**
      * <p>Object that contains the updated game session metadata.</p>
      */
-    inline void SetGameSession(GameSession&& value) { m_gameSession = value; }
+    inline void SetGameSession(GameSession&& value) { m_gameSession = std::move(value); }
 
     /**
      * <p>Object that contains the updated game session metadata.</p>
@@ -68,7 +69,7 @@ namespace Model
     /**
      * <p>Object that contains the updated game session metadata.</p>
      */
-    inline UpdateGameSessionResult& WithGameSession(GameSession&& value) { SetGameSession(value); return *this;}
+    inline UpdateGameSessionResult& WithGameSession(GameSession&& value) { SetGameSession(std::move(value)); return *this;}
 
   private:
     GameSession m_gameSession;

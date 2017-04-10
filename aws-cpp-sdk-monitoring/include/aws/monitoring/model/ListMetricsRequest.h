@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/monitoring/model/DimensionFilter.h>
+#include <utility>
 
 namespace Aws
 {
@@ -52,7 +53,7 @@ namespace Model
     /**
      * <p>The namespace to filter against.</p>
      */
-    inline void SetNamespace(Aws::String&& value) { m_namespaceHasBeenSet = true; m_namespace = value; }
+    inline void SetNamespace(Aws::String&& value) { m_namespaceHasBeenSet = true; m_namespace = std::move(value); }
 
     /**
      * <p>The namespace to filter against.</p>
@@ -67,7 +68,7 @@ namespace Model
     /**
      * <p>The namespace to filter against.</p>
      */
-    inline ListMetricsRequest& WithNamespace(Aws::String&& value) { SetNamespace(value); return *this;}
+    inline ListMetricsRequest& WithNamespace(Aws::String&& value) { SetNamespace(std::move(value)); return *this;}
 
     /**
      * <p>The namespace to filter against.</p>
@@ -87,7 +88,7 @@ namespace Model
     /**
      * <p>The name of the metric to filter against.</p>
      */
-    inline void SetMetricName(Aws::String&& value) { m_metricNameHasBeenSet = true; m_metricName = value; }
+    inline void SetMetricName(Aws::String&& value) { m_metricNameHasBeenSet = true; m_metricName = std::move(value); }
 
     /**
      * <p>The name of the metric to filter against.</p>
@@ -102,7 +103,7 @@ namespace Model
     /**
      * <p>The name of the metric to filter against.</p>
      */
-    inline ListMetricsRequest& WithMetricName(Aws::String&& value) { SetMetricName(value); return *this;}
+    inline ListMetricsRequest& WithMetricName(Aws::String&& value) { SetMetricName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the metric to filter against.</p>
@@ -122,7 +123,7 @@ namespace Model
     /**
      * <p>The dimensions to filter against.</p>
      */
-    inline void SetDimensions(Aws::Vector<DimensionFilter>&& value) { m_dimensionsHasBeenSet = true; m_dimensions = value; }
+    inline void SetDimensions(Aws::Vector<DimensionFilter>&& value) { m_dimensionsHasBeenSet = true; m_dimensions = std::move(value); }
 
     /**
      * <p>The dimensions to filter against.</p>
@@ -132,7 +133,7 @@ namespace Model
     /**
      * <p>The dimensions to filter against.</p>
      */
-    inline ListMetricsRequest& WithDimensions(Aws::Vector<DimensionFilter>&& value) { SetDimensions(value); return *this;}
+    inline ListMetricsRequest& WithDimensions(Aws::Vector<DimensionFilter>&& value) { SetDimensions(std::move(value)); return *this;}
 
     /**
      * <p>The dimensions to filter against.</p>
@@ -142,7 +143,7 @@ namespace Model
     /**
      * <p>The dimensions to filter against.</p>
      */
-    inline ListMetricsRequest& AddDimensions(DimensionFilter&& value) { m_dimensionsHasBeenSet = true; m_dimensions.push_back(value); return *this; }
+    inline ListMetricsRequest& AddDimensions(DimensionFilter&& value) { m_dimensionsHasBeenSet = true; m_dimensions.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The token returned by a previous call to indicate that there is more data
@@ -160,7 +161,7 @@ namespace Model
      * <p>The token returned by a previous call to indicate that there is more data
      * available.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
      * <p>The token returned by a previous call to indicate that there is more data
@@ -178,7 +179,7 @@ namespace Model
      * <p>The token returned by a previous call to indicate that there is more data
      * available.</p>
      */
-    inline ListMetricsRequest& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline ListMetricsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>The token returned by a previous call to indicate that there is more data

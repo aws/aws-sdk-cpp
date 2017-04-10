@@ -16,6 +16,7 @@
 #include <aws/rds/RDS_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -60,7 +61,7 @@ namespace Model
     /**
      * <p>The name of the Amazon RDS quota for this AWS account.</p>
      */
-    inline void SetAccountQuotaName(Aws::String&& value) { m_accountQuotaNameHasBeenSet = true; m_accountQuotaName = value; }
+    inline void SetAccountQuotaName(Aws::String&& value) { m_accountQuotaNameHasBeenSet = true; m_accountQuotaName = std::move(value); }
 
     /**
      * <p>The name of the Amazon RDS quota for this AWS account.</p>
@@ -75,7 +76,7 @@ namespace Model
     /**
      * <p>The name of the Amazon RDS quota for this AWS account.</p>
      */
-    inline AccountQuota& WithAccountQuotaName(Aws::String&& value) { SetAccountQuotaName(value); return *this;}
+    inline AccountQuota& WithAccountQuotaName(Aws::String&& value) { SetAccountQuotaName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the Amazon RDS quota for this AWS account.</p>

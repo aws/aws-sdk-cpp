@@ -16,6 +16,7 @@
 #include <aws/gamelift/GameLift_EXPORTS.h>
 #include <aws/gamelift/GameLiftRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -51,7 +52,7 @@ namespace Model
     /**
      * <p>Unique identifier for a build to get credentials for.</p>
      */
-    inline void SetBuildId(Aws::String&& value) { m_buildIdHasBeenSet = true; m_buildId = value; }
+    inline void SetBuildId(Aws::String&& value) { m_buildIdHasBeenSet = true; m_buildId = std::move(value); }
 
     /**
      * <p>Unique identifier for a build to get credentials for.</p>
@@ -66,7 +67,7 @@ namespace Model
     /**
      * <p>Unique identifier for a build to get credentials for.</p>
      */
-    inline RequestUploadCredentialsRequest& WithBuildId(Aws::String&& value) { SetBuildId(value); return *this;}
+    inline RequestUploadCredentialsRequest& WithBuildId(Aws::String&& value) { SetBuildId(std::move(value)); return *this;}
 
     /**
      * <p>Unique identifier for a build to get credentials for.</p>

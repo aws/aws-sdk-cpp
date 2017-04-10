@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/clouddirectory/CloudDirectory_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -52,7 +53,7 @@ namespace Model
     /**
      * <p> <code>ObjectIdentifier</code> of the updated object.</p>
      */
-    inline void SetObjectIdentifier(Aws::String&& value) { m_objectIdentifier = value; }
+    inline void SetObjectIdentifier(Aws::String&& value) { m_objectIdentifier = std::move(value); }
 
     /**
      * <p> <code>ObjectIdentifier</code> of the updated object.</p>
@@ -67,7 +68,7 @@ namespace Model
     /**
      * <p> <code>ObjectIdentifier</code> of the updated object.</p>
      */
-    inline UpdateObjectAttributesResult& WithObjectIdentifier(Aws::String&& value) { SetObjectIdentifier(value); return *this;}
+    inline UpdateObjectAttributesResult& WithObjectIdentifier(Aws::String&& value) { SetObjectIdentifier(std::move(value)); return *this;}
 
     /**
      * <p> <code>ObjectIdentifier</code> of the updated object.</p>

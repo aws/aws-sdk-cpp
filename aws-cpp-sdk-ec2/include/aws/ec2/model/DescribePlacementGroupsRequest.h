@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/Filter.h>
+#include <utility>
 
 namespace Aws
 {
@@ -83,7 +84,7 @@ namespace Model
      * <p>One or more placement group names.</p> <p>Default: Describes all your
      * placement groups, or only those otherwise specified.</p>
      */
-    inline void SetGroupNames(Aws::Vector<Aws::String>&& value) { m_groupNamesHasBeenSet = true; m_groupNames = value; }
+    inline void SetGroupNames(Aws::Vector<Aws::String>&& value) { m_groupNamesHasBeenSet = true; m_groupNames = std::move(value); }
 
     /**
      * <p>One or more placement group names.</p> <p>Default: Describes all your
@@ -95,7 +96,7 @@ namespace Model
      * <p>One or more placement group names.</p> <p>Default: Describes all your
      * placement groups, or only those otherwise specified.</p>
      */
-    inline DescribePlacementGroupsRequest& WithGroupNames(Aws::Vector<Aws::String>&& value) { SetGroupNames(value); return *this;}
+    inline DescribePlacementGroupsRequest& WithGroupNames(Aws::Vector<Aws::String>&& value) { SetGroupNames(std::move(value)); return *this;}
 
     /**
      * <p>One or more placement group names.</p> <p>Default: Describes all your
@@ -107,7 +108,7 @@ namespace Model
      * <p>One or more placement group names.</p> <p>Default: Describes all your
      * placement groups, or only those otherwise specified.</p>
      */
-    inline DescribePlacementGroupsRequest& AddGroupNames(Aws::String&& value) { m_groupNamesHasBeenSet = true; m_groupNames.push_back(value); return *this; }
+    inline DescribePlacementGroupsRequest& AddGroupNames(Aws::String&& value) { m_groupNamesHasBeenSet = true; m_groupNames.push_back(std::move(value)); return *this; }
 
     /**
      * <p>One or more placement group names.</p> <p>Default: Describes all your
@@ -143,7 +144,7 @@ namespace Model
      * <code>strategy</code> - The strategy of the placement group
      * (<code>cluster</code>).</p> </li> </ul>
      */
-    inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = value; }
+    inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
 
     /**
      * <p>One or more filters.</p> <ul> <li> <p> <code>group-name</code> - The name of
@@ -163,7 +164,7 @@ namespace Model
      * <code>strategy</code> - The strategy of the placement group
      * (<code>cluster</code>).</p> </li> </ul>
      */
-    inline DescribePlacementGroupsRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(value); return *this;}
+    inline DescribePlacementGroupsRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(std::move(value)); return *this;}
 
     /**
      * <p>One or more filters.</p> <ul> <li> <p> <code>group-name</code> - The name of
@@ -183,7 +184,7 @@ namespace Model
      * <code>strategy</code> - The strategy of the placement group
      * (<code>cluster</code>).</p> </li> </ul>
      */
-    inline DescribePlacementGroupsRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
+    inline DescribePlacementGroupsRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 
   private:
     bool m_dryRun;

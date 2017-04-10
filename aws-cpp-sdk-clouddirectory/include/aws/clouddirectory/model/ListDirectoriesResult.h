@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/clouddirectory/model/Directory.h>
+#include <utility>
 
 namespace Aws
 {
@@ -54,7 +55,7 @@ namespace Model
     /**
      * <p>Lists all directories associated with your account in pagination fashion.</p>
      */
-    inline void SetDirectories(Aws::Vector<Directory>&& value) { m_directories = value; }
+    inline void SetDirectories(Aws::Vector<Directory>&& value) { m_directories = std::move(value); }
 
     /**
      * <p>Lists all directories associated with your account in pagination fashion.</p>
@@ -64,7 +65,7 @@ namespace Model
     /**
      * <p>Lists all directories associated with your account in pagination fashion.</p>
      */
-    inline ListDirectoriesResult& WithDirectories(Aws::Vector<Directory>&& value) { SetDirectories(value); return *this;}
+    inline ListDirectoriesResult& WithDirectories(Aws::Vector<Directory>&& value) { SetDirectories(std::move(value)); return *this;}
 
     /**
      * <p>Lists all directories associated with your account in pagination fashion.</p>
@@ -74,7 +75,7 @@ namespace Model
     /**
      * <p>Lists all directories associated with your account in pagination fashion.</p>
      */
-    inline ListDirectoriesResult& AddDirectories(Directory&& value) { m_directories.push_back(value); return *this; }
+    inline ListDirectoriesResult& AddDirectories(Directory&& value) { m_directories.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The pagination token.</p>
@@ -89,7 +90,7 @@ namespace Model
     /**
      * <p>The pagination token.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
      * <p>The pagination token.</p>
@@ -104,7 +105,7 @@ namespace Model
     /**
      * <p>The pagination token.</p>
      */
-    inline ListDirectoriesResult& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline ListDirectoriesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>The pagination token.</p>

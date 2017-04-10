@@ -16,6 +16,7 @@
 #include <aws/rds/RDS_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -60,7 +61,7 @@ namespace Model
     /**
      * <p>The identifier of the Active Directory Domain.</p>
      */
-    inline void SetDomain(Aws::String&& value) { m_domainHasBeenSet = true; m_domain = value; }
+    inline void SetDomain(Aws::String&& value) { m_domainHasBeenSet = true; m_domain = std::move(value); }
 
     /**
      * <p>The identifier of the Active Directory Domain.</p>
@@ -75,7 +76,7 @@ namespace Model
     /**
      * <p>The identifier of the Active Directory Domain.</p>
      */
-    inline DomainMembership& WithDomain(Aws::String&& value) { SetDomain(value); return *this;}
+    inline DomainMembership& WithDomain(Aws::String&& value) { SetDomain(std::move(value)); return *this;}
 
     /**
      * <p>The identifier of the Active Directory Domain.</p>
@@ -98,7 +99,7 @@ namespace Model
      * <p>The status of the DB instance's Active Directory Domain membership, such as
      * joined, pending-join, failed etc).</p>
      */
-    inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = value; }
+    inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
      * <p>The status of the DB instance's Active Directory Domain membership, such as
@@ -116,7 +117,7 @@ namespace Model
      * <p>The status of the DB instance's Active Directory Domain membership, such as
      * joined, pending-join, failed etc).</p>
      */
-    inline DomainMembership& WithStatus(Aws::String&& value) { SetStatus(value); return *this;}
+    inline DomainMembership& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
 
     /**
      * <p>The status of the DB instance's Active Directory Domain membership, such as
@@ -137,7 +138,7 @@ namespace Model
     /**
      * <p>The fully qualified domain name of the Active Directory Domain.</p>
      */
-    inline void SetFQDN(Aws::String&& value) { m_fQDNHasBeenSet = true; m_fQDN = value; }
+    inline void SetFQDN(Aws::String&& value) { m_fQDNHasBeenSet = true; m_fQDN = std::move(value); }
 
     /**
      * <p>The fully qualified domain name of the Active Directory Domain.</p>
@@ -152,7 +153,7 @@ namespace Model
     /**
      * <p>The fully qualified domain name of the Active Directory Domain.</p>
      */
-    inline DomainMembership& WithFQDN(Aws::String&& value) { SetFQDN(value); return *this;}
+    inline DomainMembership& WithFQDN(Aws::String&& value) { SetFQDN(std::move(value)); return *this;}
 
     /**
      * <p>The fully qualified domain name of the Active Directory Domain.</p>
@@ -175,7 +176,7 @@ namespace Model
      * <p>The name of the IAM role to be used when making API calls to the Directory
      * Service.</p>
      */
-    inline void SetIAMRoleName(Aws::String&& value) { m_iAMRoleNameHasBeenSet = true; m_iAMRoleName = value; }
+    inline void SetIAMRoleName(Aws::String&& value) { m_iAMRoleNameHasBeenSet = true; m_iAMRoleName = std::move(value); }
 
     /**
      * <p>The name of the IAM role to be used when making API calls to the Directory
@@ -193,7 +194,7 @@ namespace Model
      * <p>The name of the IAM role to be used when making API calls to the Directory
      * Service.</p>
      */
-    inline DomainMembership& WithIAMRoleName(Aws::String&& value) { SetIAMRoleName(value); return *this;}
+    inline DomainMembership& WithIAMRoleName(Aws::String&& value) { SetIAMRoleName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the IAM role to be used when making API calls to the Directory

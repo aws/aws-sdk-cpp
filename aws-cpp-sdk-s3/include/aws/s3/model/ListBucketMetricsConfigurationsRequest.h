@@ -16,6 +16,7 @@
 #include <aws/s3/S3_EXPORTS.h>
 #include <aws/s3/S3Request.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -52,7 +53,7 @@ namespace Model
     /**
      * The name of the bucket containing the metrics configurations to retrieve.
      */
-    inline void SetBucket(Aws::String&& value) { m_bucketHasBeenSet = true; m_bucket = value; }
+    inline void SetBucket(Aws::String&& value) { m_bucketHasBeenSet = true; m_bucket = std::move(value); }
 
     /**
      * The name of the bucket containing the metrics configurations to retrieve.
@@ -67,7 +68,7 @@ namespace Model
     /**
      * The name of the bucket containing the metrics configurations to retrieve.
      */
-    inline ListBucketMetricsConfigurationsRequest& WithBucket(Aws::String&& value) { SetBucket(value); return *this;}
+    inline ListBucketMetricsConfigurationsRequest& WithBucket(Aws::String&& value) { SetBucket(std::move(value)); return *this;}
 
     /**
      * The name of the bucket containing the metrics configurations to retrieve.
@@ -96,7 +97,7 @@ namespace Model
      * response to continue the listing. The continuation token is an opaque value that
      * Amazon S3 understands.
      */
-    inline void SetContinuationToken(Aws::String&& value) { m_continuationTokenHasBeenSet = true; m_continuationToken = value; }
+    inline void SetContinuationToken(Aws::String&& value) { m_continuationTokenHasBeenSet = true; m_continuationToken = std::move(value); }
 
     /**
      * The marker that is used to continue a metrics configuration listing that has
@@ -120,7 +121,7 @@ namespace Model
      * response to continue the listing. The continuation token is an opaque value that
      * Amazon S3 understands.
      */
-    inline ListBucketMetricsConfigurationsRequest& WithContinuationToken(Aws::String&& value) { SetContinuationToken(value); return *this;}
+    inline ListBucketMetricsConfigurationsRequest& WithContinuationToken(Aws::String&& value) { SetContinuationToken(std::move(value)); return *this;}
 
     /**
      * The marker that is used to continue a metrics configuration listing that has

@@ -17,6 +17,7 @@
 #include <aws/glacier/GlacierRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/glacier/model/VaultAccessPolicy.h>
+#include <utility>
 
 namespace Aws
 {
@@ -62,7 +63,7 @@ namespace Model
      * associated with the credentials used to sign the request. If you use an account
      * ID, do not include any hyphens ('-') in the ID.</p>
      */
-    inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
+    inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
 
     /**
      * <p>The <code>AccountId</code> value is the AWS account ID of the account that
@@ -89,7 +90,7 @@ namespace Model
      * associated with the credentials used to sign the request. If you use an account
      * ID, do not include any hyphens ('-') in the ID.</p>
      */
-    inline SetVaultAccessPolicyRequest& WithAccountId(Aws::String&& value) { SetAccountId(value); return *this;}
+    inline SetVaultAccessPolicyRequest& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
 
     /**
      * <p>The <code>AccountId</code> value is the AWS account ID of the account that
@@ -113,7 +114,7 @@ namespace Model
     /**
      * <p>The name of the vault.</p>
      */
-    inline void SetVaultName(Aws::String&& value) { m_vaultNameHasBeenSet = true; m_vaultName = value; }
+    inline void SetVaultName(Aws::String&& value) { m_vaultNameHasBeenSet = true; m_vaultName = std::move(value); }
 
     /**
      * <p>The name of the vault.</p>
@@ -128,7 +129,7 @@ namespace Model
     /**
      * <p>The name of the vault.</p>
      */
-    inline SetVaultAccessPolicyRequest& WithVaultName(Aws::String&& value) { SetVaultName(value); return *this;}
+    inline SetVaultAccessPolicyRequest& WithVaultName(Aws::String&& value) { SetVaultName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the vault.</p>
@@ -148,7 +149,7 @@ namespace Model
     /**
      * <p>The vault access policy as a JSON string.</p>
      */
-    inline void SetPolicy(VaultAccessPolicy&& value) { m_policyHasBeenSet = true; m_policy = value; }
+    inline void SetPolicy(VaultAccessPolicy&& value) { m_policyHasBeenSet = true; m_policy = std::move(value); }
 
     /**
      * <p>The vault access policy as a JSON string.</p>
@@ -158,7 +159,7 @@ namespace Model
     /**
      * <p>The vault access policy as a JSON string.</p>
      */
-    inline SetVaultAccessPolicyRequest& WithPolicy(VaultAccessPolicy&& value) { SetPolicy(value); return *this;}
+    inline SetVaultAccessPolicyRequest& WithPolicy(VaultAccessPolicy&& value) { SetPolicy(std::move(value)); return *this;}
 
   private:
     Aws::String m_accountId;

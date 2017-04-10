@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/cloudtrail/model/EventSelector.h>
+#include <utility>
 
 namespace Aws
 {
@@ -60,7 +61,7 @@ namespace Model
      * format of a trail ARN is:</p> <p>
      * <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code> </p>
      */
-    inline void SetTrailARN(Aws::String&& value) { m_trailARN = value; }
+    inline void SetTrailARN(Aws::String&& value) { m_trailARN = std::move(value); }
 
     /**
      * <p>Specifies the ARN of the trail that was updated with event selectors. The
@@ -81,7 +82,7 @@ namespace Model
      * format of a trail ARN is:</p> <p>
      * <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code> </p>
      */
-    inline PutEventSelectorsResult& WithTrailARN(Aws::String&& value) { SetTrailARN(value); return *this;}
+    inline PutEventSelectorsResult& WithTrailARN(Aws::String&& value) { SetTrailARN(std::move(value)); return *this;}
 
     /**
      * <p>Specifies the ARN of the trail that was updated with event selectors. The
@@ -103,7 +104,7 @@ namespace Model
     /**
      * <p>Specifies the event selectors configured for your trail.</p>
      */
-    inline void SetEventSelectors(Aws::Vector<EventSelector>&& value) { m_eventSelectors = value; }
+    inline void SetEventSelectors(Aws::Vector<EventSelector>&& value) { m_eventSelectors = std::move(value); }
 
     /**
      * <p>Specifies the event selectors configured for your trail.</p>
@@ -113,7 +114,7 @@ namespace Model
     /**
      * <p>Specifies the event selectors configured for your trail.</p>
      */
-    inline PutEventSelectorsResult& WithEventSelectors(Aws::Vector<EventSelector>&& value) { SetEventSelectors(value); return *this;}
+    inline PutEventSelectorsResult& WithEventSelectors(Aws::Vector<EventSelector>&& value) { SetEventSelectors(std::move(value)); return *this;}
 
     /**
      * <p>Specifies the event selectors configured for your trail.</p>
@@ -123,7 +124,7 @@ namespace Model
     /**
      * <p>Specifies the event selectors configured for your trail.</p>
      */
-    inline PutEventSelectorsResult& AddEventSelectors(EventSelector&& value) { m_eventSelectors.push_back(value); return *this; }
+    inline PutEventSelectorsResult& AddEventSelectors(EventSelector&& value) { m_eventSelectors.push_back(std::move(value)); return *this; }
 
   private:
     Aws::String m_trailARN;

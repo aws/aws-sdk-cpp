@@ -16,6 +16,7 @@
 #include <aws/es/ElasticsearchService_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/es/model/DomainInfo.h>
+#include <utility>
 
 namespace Aws
 {
@@ -59,7 +60,7 @@ namespace Model
     /**
      * <p>List of Elasticsearch domain names.</p>
      */
-    inline void SetDomainNames(Aws::Vector<DomainInfo>&& value) { m_domainNames = value; }
+    inline void SetDomainNames(Aws::Vector<DomainInfo>&& value) { m_domainNames = std::move(value); }
 
     /**
      * <p>List of Elasticsearch domain names.</p>
@@ -69,7 +70,7 @@ namespace Model
     /**
      * <p>List of Elasticsearch domain names.</p>
      */
-    inline ListDomainNamesResult& WithDomainNames(Aws::Vector<DomainInfo>&& value) { SetDomainNames(value); return *this;}
+    inline ListDomainNamesResult& WithDomainNames(Aws::Vector<DomainInfo>&& value) { SetDomainNames(std::move(value)); return *this;}
 
     /**
      * <p>List of Elasticsearch domain names.</p>
@@ -79,7 +80,7 @@ namespace Model
     /**
      * <p>List of Elasticsearch domain names.</p>
      */
-    inline ListDomainNamesResult& AddDomainNames(DomainInfo&& value) { m_domainNames.push_back(value); return *this; }
+    inline ListDomainNamesResult& AddDomainNames(DomainInfo&& value) { m_domainNames.push_back(std::move(value)); return *this; }
 
   private:
     Aws::Vector<DomainInfo> m_domainNames;

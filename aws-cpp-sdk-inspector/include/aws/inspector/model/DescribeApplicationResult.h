@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/inspector/Inspector_EXPORTS.h>
 #include <aws/inspector/model/Application.h>
+#include <utility>
 
 namespace Aws
 {
@@ -52,7 +53,7 @@ namespace Model
     /**
      * <p>Information about the application.</p>
      */
-    inline void SetApplication(Application&& value) { m_application = value; }
+    inline void SetApplication(Application&& value) { m_application = std::move(value); }
 
     /**
      * <p>Information about the application.</p>
@@ -62,7 +63,7 @@ namespace Model
     /**
      * <p>Information about the application.</p>
      */
-    inline DescribeApplicationResult& WithApplication(Application&& value) { SetApplication(value); return *this;}
+    inline DescribeApplicationResult& WithApplication(Application&& value) { SetApplication(std::move(value)); return *this;}
 
   private:
     Application m_application;

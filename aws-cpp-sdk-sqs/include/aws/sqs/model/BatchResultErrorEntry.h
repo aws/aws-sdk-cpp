@@ -16,6 +16,7 @@
 #include <aws/sqs/SQS_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -61,7 +62,7 @@ namespace Model
     /**
      * <p>The <code>Id</code> of an entry in a batch request.</p>
      */
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = value; }
+    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
 
     /**
      * <p>The <code>Id</code> of an entry in a batch request.</p>
@@ -76,7 +77,7 @@ namespace Model
     /**
      * <p>The <code>Id</code> of an entry in a batch request.</p>
      */
-    inline BatchResultErrorEntry& WithId(Aws::String&& value) { SetId(value); return *this;}
+    inline BatchResultErrorEntry& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
 
     /**
      * <p>The <code>Id</code> of an entry in a batch request.</p>
@@ -111,7 +112,7 @@ namespace Model
     /**
      * <p>An error code representing why the action failed on this entry.</p>
      */
-    inline void SetCode(Aws::String&& value) { m_codeHasBeenSet = true; m_code = value; }
+    inline void SetCode(Aws::String&& value) { m_codeHasBeenSet = true; m_code = std::move(value); }
 
     /**
      * <p>An error code representing why the action failed on this entry.</p>
@@ -126,7 +127,7 @@ namespace Model
     /**
      * <p>An error code representing why the action failed on this entry.</p>
      */
-    inline BatchResultErrorEntry& WithCode(Aws::String&& value) { SetCode(value); return *this;}
+    inline BatchResultErrorEntry& WithCode(Aws::String&& value) { SetCode(std::move(value)); return *this;}
 
     /**
      * <p>An error code representing why the action failed on this entry.</p>
@@ -146,7 +147,7 @@ namespace Model
     /**
      * <p>A message explaining why the action failed on this entry.</p>
      */
-    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = value; }
+    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
 
     /**
      * <p>A message explaining why the action failed on this entry.</p>
@@ -161,7 +162,7 @@ namespace Model
     /**
      * <p>A message explaining why the action failed on this entry.</p>
      */
-    inline BatchResultErrorEntry& WithMessage(Aws::String&& value) { SetMessage(value); return *this;}
+    inline BatchResultErrorEntry& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
 
     /**
      * <p>A message explaining why the action failed on this entry.</p>

@@ -16,6 +16,7 @@
 #include <aws/codepipeline/CodePipeline_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/codepipeline/model/ThirdPartyJob.h>
+#include <utility>
 
 namespace Aws
 {
@@ -59,7 +60,7 @@ namespace Model
     /**
      * <p>Information about the jobs to take action on.</p>
      */
-    inline void SetJobs(Aws::Vector<ThirdPartyJob>&& value) { m_jobs = value; }
+    inline void SetJobs(Aws::Vector<ThirdPartyJob>&& value) { m_jobs = std::move(value); }
 
     /**
      * <p>Information about the jobs to take action on.</p>
@@ -69,7 +70,7 @@ namespace Model
     /**
      * <p>Information about the jobs to take action on.</p>
      */
-    inline PollForThirdPartyJobsResult& WithJobs(Aws::Vector<ThirdPartyJob>&& value) { SetJobs(value); return *this;}
+    inline PollForThirdPartyJobsResult& WithJobs(Aws::Vector<ThirdPartyJob>&& value) { SetJobs(std::move(value)); return *this;}
 
     /**
      * <p>Information about the jobs to take action on.</p>
@@ -79,7 +80,7 @@ namespace Model
     /**
      * <p>Information about the jobs to take action on.</p>
      */
-    inline PollForThirdPartyJobsResult& AddJobs(ThirdPartyJob&& value) { m_jobs.push_back(value); return *this; }
+    inline PollForThirdPartyJobsResult& AddJobs(ThirdPartyJob&& value) { m_jobs.push_back(std::move(value)); return *this; }
 
   private:
     Aws::Vector<ThirdPartyJob> m_jobs;

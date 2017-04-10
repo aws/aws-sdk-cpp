@@ -17,6 +17,7 @@
 #include <aws/redshift/RedshiftRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <utility>
 
 namespace Aws
 {
@@ -54,7 +55,7 @@ namespace Model
     /**
      * <p>The name of the cluster subnet group for which information is requested.</p>
      */
-    inline void SetClusterSubnetGroupName(Aws::String&& value) { m_clusterSubnetGroupNameHasBeenSet = true; m_clusterSubnetGroupName = value; }
+    inline void SetClusterSubnetGroupName(Aws::String&& value) { m_clusterSubnetGroupNameHasBeenSet = true; m_clusterSubnetGroupName = std::move(value); }
 
     /**
      * <p>The name of the cluster subnet group for which information is requested.</p>
@@ -69,7 +70,7 @@ namespace Model
     /**
      * <p>The name of the cluster subnet group for which information is requested.</p>
      */
-    inline DescribeClusterSubnetGroupsRequest& WithClusterSubnetGroupName(Aws::String&& value) { SetClusterSubnetGroupName(value); return *this;}
+    inline DescribeClusterSubnetGroupsRequest& WithClusterSubnetGroupName(Aws::String&& value) { SetClusterSubnetGroupName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the cluster subnet group for which information is requested.</p>
@@ -134,7 +135,7 @@ namespace Model
      * next set of response records by providing the returned marker value in the
      * <code>Marker</code> parameter and retrying the request. </p>
      */
-    inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = value; }
+    inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = std::move(value); }
 
     /**
      * <p>An optional parameter that specifies the starting point to return a set of
@@ -164,7 +165,7 @@ namespace Model
      * next set of response records by providing the returned marker value in the
      * <code>Marker</code> parameter and retrying the request. </p>
      */
-    inline DescribeClusterSubnetGroupsRequest& WithMarker(Aws::String&& value) { SetMarker(value); return *this;}
+    inline DescribeClusterSubnetGroupsRequest& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
 
     /**
      * <p>An optional parameter that specifies the starting point to return a set of
@@ -204,7 +205,7 @@ namespace Model
      * request, Amazon Redshift returns a response with the subnet groups that have
      * either or both of these tag keys associated with them.</p>
      */
-    inline void SetTagKeys(Aws::Vector<Aws::String>&& value) { m_tagKeysHasBeenSet = true; m_tagKeys = value; }
+    inline void SetTagKeys(Aws::Vector<Aws::String>&& value) { m_tagKeysHasBeenSet = true; m_tagKeys = std::move(value); }
 
     /**
      * <p>A tag key or keys for which you want to return all matching cluster subnet
@@ -224,7 +225,7 @@ namespace Model
      * request, Amazon Redshift returns a response with the subnet groups that have
      * either or both of these tag keys associated with them.</p>
      */
-    inline DescribeClusterSubnetGroupsRequest& WithTagKeys(Aws::Vector<Aws::String>&& value) { SetTagKeys(value); return *this;}
+    inline DescribeClusterSubnetGroupsRequest& WithTagKeys(Aws::Vector<Aws::String>&& value) { SetTagKeys(std::move(value)); return *this;}
 
     /**
      * <p>A tag key or keys for which you want to return all matching cluster subnet
@@ -244,7 +245,7 @@ namespace Model
      * request, Amazon Redshift returns a response with the subnet groups that have
      * either or both of these tag keys associated with them.</p>
      */
-    inline DescribeClusterSubnetGroupsRequest& AddTagKeys(Aws::String&& value) { m_tagKeysHasBeenSet = true; m_tagKeys.push_back(value); return *this; }
+    inline DescribeClusterSubnetGroupsRequest& AddTagKeys(Aws::String&& value) { m_tagKeysHasBeenSet = true; m_tagKeys.push_back(std::move(value)); return *this; }
 
     /**
      * <p>A tag key or keys for which you want to return all matching cluster subnet
@@ -284,7 +285,7 @@ namespace Model
      * values in the request, Amazon Redshift returns a response with the subnet groups
      * that have either or both of these tag values associated with them.</p>
      */
-    inline void SetTagValues(Aws::Vector<Aws::String>&& value) { m_tagValuesHasBeenSet = true; m_tagValues = value; }
+    inline void SetTagValues(Aws::Vector<Aws::String>&& value) { m_tagValuesHasBeenSet = true; m_tagValues = std::move(value); }
 
     /**
      * <p>A tag value or values for which you want to return all matching cluster
@@ -304,7 +305,7 @@ namespace Model
      * values in the request, Amazon Redshift returns a response with the subnet groups
      * that have either or both of these tag values associated with them.</p>
      */
-    inline DescribeClusterSubnetGroupsRequest& WithTagValues(Aws::Vector<Aws::String>&& value) { SetTagValues(value); return *this;}
+    inline DescribeClusterSubnetGroupsRequest& WithTagValues(Aws::Vector<Aws::String>&& value) { SetTagValues(std::move(value)); return *this;}
 
     /**
      * <p>A tag value or values for which you want to return all matching cluster
@@ -324,7 +325,7 @@ namespace Model
      * values in the request, Amazon Redshift returns a response with the subnet groups
      * that have either or both of these tag values associated with them.</p>
      */
-    inline DescribeClusterSubnetGroupsRequest& AddTagValues(Aws::String&& value) { m_tagValuesHasBeenSet = true; m_tagValues.push_back(value); return *this; }
+    inline DescribeClusterSubnetGroupsRequest& AddTagValues(Aws::String&& value) { m_tagValuesHasBeenSet = true; m_tagValues.push_back(std::move(value)); return *this; }
 
     /**
      * <p>A tag value or values for which you want to return all matching cluster

@@ -22,6 +22,7 @@
 #include <aws/s3/model/StorageClass.h>
 #include <aws/s3/model/RequestCharged.h>
 #include <aws/s3/model/Part.h>
+#include <utility>
 
 namespace Aws
 {
@@ -62,7 +63,7 @@ namespace Model
      * Date when multipart upload will become eligible for abort operation by
      * lifecycle.
      */
-    inline void SetAbortDate(Aws::Utils::DateTime&& value) { m_abortDate = value; }
+    inline void SetAbortDate(Aws::Utils::DateTime&& value) { m_abortDate = std::move(value); }
 
     /**
      * Date when multipart upload will become eligible for abort operation by
@@ -74,7 +75,7 @@ namespace Model
      * Date when multipart upload will become eligible for abort operation by
      * lifecycle.
      */
-    inline ListPartsResult& WithAbortDate(Aws::Utils::DateTime&& value) { SetAbortDate(value); return *this;}
+    inline ListPartsResult& WithAbortDate(Aws::Utils::DateTime&& value) { SetAbortDate(std::move(value)); return *this;}
 
     /**
      * Id of the lifecycle rule that makes a multipart upload eligible for abort
@@ -92,7 +93,7 @@ namespace Model
      * Id of the lifecycle rule that makes a multipart upload eligible for abort
      * operation.
      */
-    inline void SetAbortRuleId(Aws::String&& value) { m_abortRuleId = value; }
+    inline void SetAbortRuleId(Aws::String&& value) { m_abortRuleId = std::move(value); }
 
     /**
      * Id of the lifecycle rule that makes a multipart upload eligible for abort
@@ -110,7 +111,7 @@ namespace Model
      * Id of the lifecycle rule that makes a multipart upload eligible for abort
      * operation.
      */
-    inline ListPartsResult& WithAbortRuleId(Aws::String&& value) { SetAbortRuleId(value); return *this;}
+    inline ListPartsResult& WithAbortRuleId(Aws::String&& value) { SetAbortRuleId(std::move(value)); return *this;}
 
     /**
      * Id of the lifecycle rule that makes a multipart upload eligible for abort
@@ -131,7 +132,7 @@ namespace Model
     /**
      * Name of the bucket to which the multipart upload was initiated.
      */
-    inline void SetBucket(Aws::String&& value) { m_bucket = value; }
+    inline void SetBucket(Aws::String&& value) { m_bucket = std::move(value); }
 
     /**
      * Name of the bucket to which the multipart upload was initiated.
@@ -146,7 +147,7 @@ namespace Model
     /**
      * Name of the bucket to which the multipart upload was initiated.
      */
-    inline ListPartsResult& WithBucket(Aws::String&& value) { SetBucket(value); return *this;}
+    inline ListPartsResult& WithBucket(Aws::String&& value) { SetBucket(std::move(value)); return *this;}
 
     /**
      * Name of the bucket to which the multipart upload was initiated.
@@ -166,7 +167,7 @@ namespace Model
     /**
      * Object key for which the multipart upload was initiated.
      */
-    inline void SetKey(Aws::String&& value) { m_key = value; }
+    inline void SetKey(Aws::String&& value) { m_key = std::move(value); }
 
     /**
      * Object key for which the multipart upload was initiated.
@@ -181,7 +182,7 @@ namespace Model
     /**
      * Object key for which the multipart upload was initiated.
      */
-    inline ListPartsResult& WithKey(Aws::String&& value) { SetKey(value); return *this;}
+    inline ListPartsResult& WithKey(Aws::String&& value) { SetKey(std::move(value)); return *this;}
 
     /**
      * Object key for which the multipart upload was initiated.
@@ -201,7 +202,7 @@ namespace Model
     /**
      * Upload ID identifying the multipart upload whose parts are being listed.
      */
-    inline void SetUploadId(Aws::String&& value) { m_uploadId = value; }
+    inline void SetUploadId(Aws::String&& value) { m_uploadId = std::move(value); }
 
     /**
      * Upload ID identifying the multipart upload whose parts are being listed.
@@ -216,7 +217,7 @@ namespace Model
     /**
      * Upload ID identifying the multipart upload whose parts are being listed.
      */
-    inline ListPartsResult& WithUploadId(Aws::String&& value) { SetUploadId(value); return *this;}
+    inline ListPartsResult& WithUploadId(Aws::String&& value) { SetUploadId(std::move(value)); return *this;}
 
     /**
      * Upload ID identifying the multipart upload whose parts are being listed.
@@ -296,19 +297,19 @@ namespace Model
     inline void SetParts(const Aws::Vector<Part>& value) { m_parts = value; }
 
     
-    inline void SetParts(Aws::Vector<Part>&& value) { m_parts = value; }
+    inline void SetParts(Aws::Vector<Part>&& value) { m_parts = std::move(value); }
 
     
     inline ListPartsResult& WithParts(const Aws::Vector<Part>& value) { SetParts(value); return *this;}
 
     
-    inline ListPartsResult& WithParts(Aws::Vector<Part>&& value) { SetParts(value); return *this;}
+    inline ListPartsResult& WithParts(Aws::Vector<Part>&& value) { SetParts(std::move(value)); return *this;}
 
     
     inline ListPartsResult& AddParts(const Part& value) { m_parts.push_back(value); return *this; }
 
     
-    inline ListPartsResult& AddParts(Part&& value) { m_parts.push_back(value); return *this; }
+    inline ListPartsResult& AddParts(Part&& value) { m_parts.push_back(std::move(value)); return *this; }
 
     /**
      * Identifies who initiated the multipart upload.
@@ -323,7 +324,7 @@ namespace Model
     /**
      * Identifies who initiated the multipart upload.
      */
-    inline void SetInitiator(Initiator&& value) { m_initiator = value; }
+    inline void SetInitiator(Initiator&& value) { m_initiator = std::move(value); }
 
     /**
      * Identifies who initiated the multipart upload.
@@ -333,7 +334,7 @@ namespace Model
     /**
      * Identifies who initiated the multipart upload.
      */
-    inline ListPartsResult& WithInitiator(Initiator&& value) { SetInitiator(value); return *this;}
+    inline ListPartsResult& WithInitiator(Initiator&& value) { SetInitiator(std::move(value)); return *this;}
 
     
     inline const Owner& GetOwner() const{ return m_owner; }
@@ -342,13 +343,13 @@ namespace Model
     inline void SetOwner(const Owner& value) { m_owner = value; }
 
     
-    inline void SetOwner(Owner&& value) { m_owner = value; }
+    inline void SetOwner(Owner&& value) { m_owner = std::move(value); }
 
     
     inline ListPartsResult& WithOwner(const Owner& value) { SetOwner(value); return *this;}
 
     
-    inline ListPartsResult& WithOwner(Owner&& value) { SetOwner(value); return *this;}
+    inline ListPartsResult& WithOwner(Owner&& value) { SetOwner(std::move(value)); return *this;}
 
     /**
      * The class of storage used to store the object.
@@ -363,7 +364,7 @@ namespace Model
     /**
      * The class of storage used to store the object.
      */
-    inline void SetStorageClass(StorageClass&& value) { m_storageClass = value; }
+    inline void SetStorageClass(StorageClass&& value) { m_storageClass = std::move(value); }
 
     /**
      * The class of storage used to store the object.
@@ -373,7 +374,7 @@ namespace Model
     /**
      * The class of storage used to store the object.
      */
-    inline ListPartsResult& WithStorageClass(StorageClass&& value) { SetStorageClass(value); return *this;}
+    inline ListPartsResult& WithStorageClass(StorageClass&& value) { SetStorageClass(std::move(value)); return *this;}
 
     
     inline const RequestCharged& GetRequestCharged() const{ return m_requestCharged; }
@@ -382,13 +383,13 @@ namespace Model
     inline void SetRequestCharged(const RequestCharged& value) { m_requestCharged = value; }
 
     
-    inline void SetRequestCharged(RequestCharged&& value) { m_requestCharged = value; }
+    inline void SetRequestCharged(RequestCharged&& value) { m_requestCharged = std::move(value); }
 
     
     inline ListPartsResult& WithRequestCharged(const RequestCharged& value) { SetRequestCharged(value); return *this;}
 
     
-    inline ListPartsResult& WithRequestCharged(RequestCharged&& value) { SetRequestCharged(value); return *this;}
+    inline ListPartsResult& WithRequestCharged(RequestCharged&& value) { SetRequestCharged(std::move(value)); return *this;}
 
   private:
     Aws::Utils::DateTime m_abortDate;

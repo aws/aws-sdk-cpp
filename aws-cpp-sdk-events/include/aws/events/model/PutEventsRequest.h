@@ -17,6 +17,7 @@
 #include <aws/events/CloudWatchEventsRequest.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/events/model/PutEventsRequestEntry.h>
+#include <utility>
 
 namespace Aws
 {
@@ -64,7 +65,7 @@ namespace Model
      * several parameters for the entry such as the source and type of the event,
      * resources associated with the event, and so on.</p> </xhtml>
      */
-    inline void SetEntries(Aws::Vector<PutEventsRequestEntry>&& value) { m_entriesHasBeenSet = true; m_entries = value; }
+    inline void SetEntries(Aws::Vector<PutEventsRequestEntry>&& value) { m_entriesHasBeenSet = true; m_entries = std::move(value); }
 
     /**
      * <zonbook> <simpara>The entry that defines an event in your system. You can
@@ -84,7 +85,7 @@ namespace Model
      * several parameters for the entry such as the source and type of the event,
      * resources associated with the event, and so on.</p> </xhtml>
      */
-    inline PutEventsRequest& WithEntries(Aws::Vector<PutEventsRequestEntry>&& value) { SetEntries(value); return *this;}
+    inline PutEventsRequest& WithEntries(Aws::Vector<PutEventsRequestEntry>&& value) { SetEntries(std::move(value)); return *this;}
 
     /**
      * <zonbook> <simpara>The entry that defines an event in your system. You can
@@ -104,7 +105,7 @@ namespace Model
      * several parameters for the entry such as the source and type of the event,
      * resources associated with the event, and so on.</p> </xhtml>
      */
-    inline PutEventsRequest& AddEntries(PutEventsRequestEntry&& value) { m_entriesHasBeenSet = true; m_entries.push_back(value); return *this; }
+    inline PutEventsRequest& AddEntries(PutEventsRequestEntry&& value) { m_entriesHasBeenSet = true; m_entries.push_back(std::move(value)); return *this; }
 
   private:
     Aws::Vector<PutEventsRequestEntry> m_entries;

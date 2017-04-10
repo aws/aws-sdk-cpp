@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/storagegateway/model/TapeInfo.h>
+#include <utility>
 
 namespace Aws
 {
@@ -55,19 +56,19 @@ namespace Model
     inline void SetTapeInfos(const Aws::Vector<TapeInfo>& value) { m_tapeInfos = value; }
 
     
-    inline void SetTapeInfos(Aws::Vector<TapeInfo>&& value) { m_tapeInfos = value; }
+    inline void SetTapeInfos(Aws::Vector<TapeInfo>&& value) { m_tapeInfos = std::move(value); }
 
     
     inline ListTapesResult& WithTapeInfos(const Aws::Vector<TapeInfo>& value) { SetTapeInfos(value); return *this;}
 
     
-    inline ListTapesResult& WithTapeInfos(Aws::Vector<TapeInfo>&& value) { SetTapeInfos(value); return *this;}
+    inline ListTapesResult& WithTapeInfos(Aws::Vector<TapeInfo>&& value) { SetTapeInfos(std::move(value)); return *this;}
 
     
     inline ListTapesResult& AddTapeInfos(const TapeInfo& value) { m_tapeInfos.push_back(value); return *this; }
 
     
-    inline ListTapesResult& AddTapeInfos(TapeInfo&& value) { m_tapeInfos.push_back(value); return *this; }
+    inline ListTapesResult& AddTapeInfos(TapeInfo&& value) { m_tapeInfos.push_back(std::move(value)); return *this; }
 
     /**
      * <p>A string that indicates the position at which to begin returning the next
@@ -91,7 +92,7 @@ namespace Model
      * tapes. If there are no more tapes to list, this element does not appear in the
      * response body.</p>
      */
-    inline void SetMarker(Aws::String&& value) { m_marker = value; }
+    inline void SetMarker(Aws::String&& value) { m_marker = std::move(value); }
 
     /**
      * <p>A string that indicates the position at which to begin returning the next
@@ -115,7 +116,7 @@ namespace Model
      * tapes. If there are no more tapes to list, this element does not appear in the
      * response body.</p>
      */
-    inline ListTapesResult& WithMarker(Aws::String&& value) { SetMarker(value); return *this;}
+    inline ListTapesResult& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
 
     /**
      * <p>A string that indicates the position at which to begin returning the next

@@ -17,6 +17,7 @@
 #include <aws/iot/IoTRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/iot/model/CertificateStatus.h>
+#include <utility>
 
 namespace Aws
 {
@@ -56,7 +57,7 @@ namespace Model
     /**
      * <p>The ID of the certificate.</p>
      */
-    inline void SetCertificateId(Aws::String&& value) { m_certificateIdHasBeenSet = true; m_certificateId = value; }
+    inline void SetCertificateId(Aws::String&& value) { m_certificateIdHasBeenSet = true; m_certificateId = std::move(value); }
 
     /**
      * <p>The ID of the certificate.</p>
@@ -71,7 +72,7 @@ namespace Model
     /**
      * <p>The ID of the certificate.</p>
      */
-    inline UpdateCertificateRequest& WithCertificateId(Aws::String&& value) { SetCertificateId(value); return *this;}
+    inline UpdateCertificateRequest& WithCertificateId(Aws::String&& value) { SetCertificateId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the certificate.</p>
@@ -100,7 +101,7 @@ namespace Model
      * internally by AWS IoT. It is not intended for developer use.</p> <p><b>Note:</b>
      * The status value REGISTER_INACTIVE is deprecated and should not be used.</p>
      */
-    inline void SetNewStatus(CertificateStatus&& value) { m_newStatusHasBeenSet = true; m_newStatus = value; }
+    inline void SetNewStatus(CertificateStatus&& value) { m_newStatusHasBeenSet = true; m_newStatus = std::move(value); }
 
     /**
      * <p>The new status.</p> <p><b>Note:</b> Setting the status to PENDING_TRANSFER
@@ -116,7 +117,7 @@ namespace Model
      * internally by AWS IoT. It is not intended for developer use.</p> <p><b>Note:</b>
      * The status value REGISTER_INACTIVE is deprecated and should not be used.</p>
      */
-    inline UpdateCertificateRequest& WithNewStatus(CertificateStatus&& value) { SetNewStatus(value); return *this;}
+    inline UpdateCertificateRequest& WithNewStatus(CertificateStatus&& value) { SetNewStatus(std::move(value)); return *this;}
 
   private:
     Aws::String m_certificateId;

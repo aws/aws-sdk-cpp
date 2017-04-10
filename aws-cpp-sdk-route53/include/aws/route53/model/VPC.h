@@ -16,6 +16,7 @@
 #include <aws/route53/Route53_EXPORTS.h>
 #include <aws/route53/model/VPCRegion.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -62,7 +63,7 @@ namespace Model
      * <p>The region in which you created the VPC that you want to associate with the
      * specified Amazon Route 53 hosted zone.</p>
      */
-    inline void SetVPCRegion(VPCRegion&& value) { m_vPCRegionHasBeenSet = true; m_vPCRegion = value; }
+    inline void SetVPCRegion(VPCRegion&& value) { m_vPCRegionHasBeenSet = true; m_vPCRegion = std::move(value); }
 
     /**
      * <p>The region in which you created the VPC that you want to associate with the
@@ -74,7 +75,7 @@ namespace Model
      * <p>The region in which you created the VPC that you want to associate with the
      * specified Amazon Route 53 hosted zone.</p>
      */
-    inline VPC& WithVPCRegion(VPCRegion&& value) { SetVPCRegion(value); return *this;}
+    inline VPC& WithVPCRegion(VPCRegion&& value) { SetVPCRegion(std::move(value)); return *this;}
 
     
     inline const Aws::String& GetVPCId() const{ return m_vPCId; }
@@ -83,7 +84,7 @@ namespace Model
     inline void SetVPCId(const Aws::String& value) { m_vPCIdHasBeenSet = true; m_vPCId = value; }
 
     
-    inline void SetVPCId(Aws::String&& value) { m_vPCIdHasBeenSet = true; m_vPCId = value; }
+    inline void SetVPCId(Aws::String&& value) { m_vPCIdHasBeenSet = true; m_vPCId = std::move(value); }
 
     
     inline void SetVPCId(const char* value) { m_vPCIdHasBeenSet = true; m_vPCId.assign(value); }
@@ -92,7 +93,7 @@ namespace Model
     inline VPC& WithVPCId(const Aws::String& value) { SetVPCId(value); return *this;}
 
     
-    inline VPC& WithVPCId(Aws::String&& value) { SetVPCId(value); return *this;}
+    inline VPC& WithVPCId(Aws::String&& value) { SetVPCId(std::move(value)); return *this;}
 
     
     inline VPC& WithVPCId(const char* value) { SetVPCId(value); return *this;}

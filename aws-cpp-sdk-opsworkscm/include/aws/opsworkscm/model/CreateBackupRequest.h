@@ -16,6 +16,7 @@
 #include <aws/opsworkscm/OpsWorksCM_EXPORTS.h>
 #include <aws/opsworkscm/OpsWorksCMRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -48,7 +49,7 @@ namespace Model
     /**
      * <p>The name of the server that you want to back up. </p>
      */
-    inline void SetServerName(Aws::String&& value) { m_serverNameHasBeenSet = true; m_serverName = value; }
+    inline void SetServerName(Aws::String&& value) { m_serverNameHasBeenSet = true; m_serverName = std::move(value); }
 
     /**
      * <p>The name of the server that you want to back up. </p>
@@ -63,7 +64,7 @@ namespace Model
     /**
      * <p>The name of the server that you want to back up. </p>
      */
-    inline CreateBackupRequest& WithServerName(Aws::String&& value) { SetServerName(value); return *this;}
+    inline CreateBackupRequest& WithServerName(Aws::String&& value) { SetServerName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the server that you want to back up. </p>
@@ -83,7 +84,7 @@ namespace Model
     /**
      * <p> A user-defined description of the backup. </p>
      */
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = value; }
+    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
      * <p> A user-defined description of the backup. </p>
@@ -98,7 +99,7 @@ namespace Model
     /**
      * <p> A user-defined description of the backup. </p>
      */
-    inline CreateBackupRequest& WithDescription(Aws::String&& value) { SetDescription(value); return *this;}
+    inline CreateBackupRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
      * <p> A user-defined description of the backup. </p>

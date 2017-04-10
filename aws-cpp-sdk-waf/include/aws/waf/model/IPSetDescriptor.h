@@ -16,6 +16,7 @@
 #include <aws/waf/WAF_EXPORTS.h>
 #include <aws/waf/model/IPSetDescriptorType.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -59,7 +60,7 @@ namespace Model
     /**
      * <p>Specify <code>IPV4</code> or <code>IPV6</code>.</p>
      */
-    inline void SetType(IPSetDescriptorType&& value) { m_typeHasBeenSet = true; m_type = value; }
+    inline void SetType(IPSetDescriptorType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
      * <p>Specify <code>IPV4</code> or <code>IPV6</code>.</p>
@@ -69,7 +70,7 @@ namespace Model
     /**
      * <p>Specify <code>IPV4</code> or <code>IPV6</code>.</p>
      */
-    inline IPSetDescriptor& WithType(IPSetDescriptorType&& value) { SetType(value); return *this;}
+    inline IPSetDescriptor& WithType(IPSetDescriptorType&& value) { SetType(std::move(value)); return *this;}
 
     /**
      * <p>Specify an IPv4 address by using CIDR notation. For example:</p> <ul> <li>
@@ -132,7 +133,7 @@ namespace Model
      * 1111:0000:0000:0000:ffff:ffff:ffff:ffff, specify
      * <code>1111:0000:0000:0000:0000:0000:0000:0000/64</code>.</p> </li> </ul>
      */
-    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = value; }
+    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
 
     /**
      * <p>Specify an IPv4 address by using CIDR notation. For example:</p> <ul> <li>
@@ -195,7 +196,7 @@ namespace Model
      * 1111:0000:0000:0000:ffff:ffff:ffff:ffff, specify
      * <code>1111:0000:0000:0000:0000:0000:0000:0000/64</code>.</p> </li> </ul>
      */
-    inline IPSetDescriptor& WithValue(Aws::String&& value) { SetValue(value); return *this;}
+    inline IPSetDescriptor& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
 
     /**
      * <p>Specify an IPv4 address by using CIDR notation. For example:</p> <ul> <li>

@@ -16,6 +16,7 @@
 #include <aws/codepipeline/CodePipeline_EXPORTS.h>
 #include <aws/codepipeline/CodePipelineRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -54,7 +55,7 @@ namespace Model
      * <p>The name of the pipeline for which you want to get information. Pipeline
      * names must be unique under an Amazon Web Services (AWS) user account.</p>
      */
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p>The name of the pipeline for which you want to get information. Pipeline
@@ -72,7 +73,7 @@ namespace Model
      * <p>The name of the pipeline for which you want to get information. Pipeline
      * names must be unique under an Amazon Web Services (AWS) user account.</p>
      */
-    inline GetPipelineRequest& WithName(Aws::String&& value) { SetName(value); return *this;}
+    inline GetPipelineRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the pipeline for which you want to get information. Pipeline

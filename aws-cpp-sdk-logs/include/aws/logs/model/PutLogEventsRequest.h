@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/logs/model/InputLogEvent.h>
+#include <utility>
 
 namespace Aws
 {
@@ -50,7 +51,7 @@ namespace Model
     /**
      * <p>The name of the log group.</p>
      */
-    inline void SetLogGroupName(Aws::String&& value) { m_logGroupNameHasBeenSet = true; m_logGroupName = value; }
+    inline void SetLogGroupName(Aws::String&& value) { m_logGroupNameHasBeenSet = true; m_logGroupName = std::move(value); }
 
     /**
      * <p>The name of the log group.</p>
@@ -65,7 +66,7 @@ namespace Model
     /**
      * <p>The name of the log group.</p>
      */
-    inline PutLogEventsRequest& WithLogGroupName(Aws::String&& value) { SetLogGroupName(value); return *this;}
+    inline PutLogEventsRequest& WithLogGroupName(Aws::String&& value) { SetLogGroupName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the log group.</p>
@@ -85,7 +86,7 @@ namespace Model
     /**
      * <p>The name of the log stream.</p>
      */
-    inline void SetLogStreamName(Aws::String&& value) { m_logStreamNameHasBeenSet = true; m_logStreamName = value; }
+    inline void SetLogStreamName(Aws::String&& value) { m_logStreamNameHasBeenSet = true; m_logStreamName = std::move(value); }
 
     /**
      * <p>The name of the log stream.</p>
@@ -100,7 +101,7 @@ namespace Model
     /**
      * <p>The name of the log stream.</p>
      */
-    inline PutLogEventsRequest& WithLogStreamName(Aws::String&& value) { SetLogStreamName(value); return *this;}
+    inline PutLogEventsRequest& WithLogStreamName(Aws::String&& value) { SetLogStreamName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the log stream.</p>
@@ -120,7 +121,7 @@ namespace Model
     /**
      * <p>The log events.</p>
      */
-    inline void SetLogEvents(Aws::Vector<InputLogEvent>&& value) { m_logEventsHasBeenSet = true; m_logEvents = value; }
+    inline void SetLogEvents(Aws::Vector<InputLogEvent>&& value) { m_logEventsHasBeenSet = true; m_logEvents = std::move(value); }
 
     /**
      * <p>The log events.</p>
@@ -130,7 +131,7 @@ namespace Model
     /**
      * <p>The log events.</p>
      */
-    inline PutLogEventsRequest& WithLogEvents(Aws::Vector<InputLogEvent>&& value) { SetLogEvents(value); return *this;}
+    inline PutLogEventsRequest& WithLogEvents(Aws::Vector<InputLogEvent>&& value) { SetLogEvents(std::move(value)); return *this;}
 
     /**
      * <p>The log events.</p>
@@ -140,7 +141,7 @@ namespace Model
     /**
      * <p>The log events.</p>
      */
-    inline PutLogEventsRequest& AddLogEvents(InputLogEvent&& value) { m_logEventsHasBeenSet = true; m_logEvents.push_back(value); return *this; }
+    inline PutLogEventsRequest& AddLogEvents(InputLogEvent&& value) { m_logEventsHasBeenSet = true; m_logEvents.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The sequence token.</p>
@@ -155,7 +156,7 @@ namespace Model
     /**
      * <p>The sequence token.</p>
      */
-    inline void SetSequenceToken(Aws::String&& value) { m_sequenceTokenHasBeenSet = true; m_sequenceToken = value; }
+    inline void SetSequenceToken(Aws::String&& value) { m_sequenceTokenHasBeenSet = true; m_sequenceToken = std::move(value); }
 
     /**
      * <p>The sequence token.</p>
@@ -170,7 +171,7 @@ namespace Model
     /**
      * <p>The sequence token.</p>
      */
-    inline PutLogEventsRequest& WithSequenceToken(Aws::String&& value) { SetSequenceToken(value); return *this;}
+    inline PutLogEventsRequest& WithSequenceToken(Aws::String&& value) { SetSequenceToken(std::move(value)); return *this;}
 
     /**
      * <p>The sequence token.</p>

@@ -16,6 +16,7 @@
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/ec2/EC2Request.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -78,7 +79,7 @@ namespace Model
     /**
      * <p>The Elastic IP address.</p>
      */
-    inline void SetPublicIp(Aws::String&& value) { m_publicIpHasBeenSet = true; m_publicIp = value; }
+    inline void SetPublicIp(Aws::String&& value) { m_publicIpHasBeenSet = true; m_publicIp = std::move(value); }
 
     /**
      * <p>The Elastic IP address.</p>
@@ -93,7 +94,7 @@ namespace Model
     /**
      * <p>The Elastic IP address.</p>
      */
-    inline RestoreAddressToClassicRequest& WithPublicIp(Aws::String&& value) { SetPublicIp(value); return *this;}
+    inline RestoreAddressToClassicRequest& WithPublicIp(Aws::String&& value) { SetPublicIp(std::move(value)); return *this;}
 
     /**
      * <p>The Elastic IP address.</p>

@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/cognito-idp/CognitoIdentityProvider_EXPORTS.h>
 #include <aws/cognito-idp/model/MessageTemplateType.h>
+#include <utility>
 
 namespace Aws
 {
@@ -99,7 +100,7 @@ namespace Model
     /**
      * <p>The message template to be used for the welcome message to new users.</p>
      */
-    inline void SetInviteMessageTemplate(MessageTemplateType&& value) { m_inviteMessageTemplateHasBeenSet = true; m_inviteMessageTemplate = value; }
+    inline void SetInviteMessageTemplate(MessageTemplateType&& value) { m_inviteMessageTemplateHasBeenSet = true; m_inviteMessageTemplate = std::move(value); }
 
     /**
      * <p>The message template to be used for the welcome message to new users.</p>
@@ -109,7 +110,7 @@ namespace Model
     /**
      * <p>The message template to be used for the welcome message to new users.</p>
      */
-    inline AdminCreateUserConfigType& WithInviteMessageTemplate(MessageTemplateType&& value) { SetInviteMessageTemplate(value); return *this;}
+    inline AdminCreateUserConfigType& WithInviteMessageTemplate(MessageTemplateType&& value) { SetInviteMessageTemplate(std::move(value)); return *this;}
 
   private:
     bool m_allowAdminCreateUserOnly;

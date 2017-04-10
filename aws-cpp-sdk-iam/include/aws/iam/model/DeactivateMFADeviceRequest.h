@@ -16,6 +16,7 @@
 #include <aws/iam/IAM_EXPORTS.h>
 #include <aws/iam/IAMRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -62,7 +63,7 @@ namespace Model
      * alphanumeric characters with no spaces. You can also include any of the
      * following characters: =,.@-</p>
      */
-    inline void SetUserName(Aws::String&& value) { m_userNameHasBeenSet = true; m_userName = value; }
+    inline void SetUserName(Aws::String&& value) { m_userNameHasBeenSet = true; m_userName = std::move(value); }
 
     /**
      * <p>The name of the user whose MFA device you want to deactivate.</p> <p>This
@@ -89,7 +90,7 @@ namespace Model
      * alphanumeric characters with no spaces. You can also include any of the
      * following characters: =,.@-</p>
      */
-    inline DeactivateMFADeviceRequest& WithUserName(Aws::String&& value) { SetUserName(value); return *this;}
+    inline DeactivateMFADeviceRequest& WithUserName(Aws::String&& value) { SetUserName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the user whose MFA device you want to deactivate.</p> <p>This
@@ -125,7 +126,7 @@ namespace Model
      * characters consisting of upper and lowercase alphanumeric characters with no
      * spaces. You can also include any of the following characters: =/:,.@-</p>
      */
-    inline void SetSerialNumber(Aws::String&& value) { m_serialNumberHasBeenSet = true; m_serialNumber = value; }
+    inline void SetSerialNumber(Aws::String&& value) { m_serialNumberHasBeenSet = true; m_serialNumber = std::move(value); }
 
     /**
      * <p>The serial number that uniquely identifies the MFA device. For virtual MFA
@@ -152,7 +153,7 @@ namespace Model
      * characters consisting of upper and lowercase alphanumeric characters with no
      * spaces. You can also include any of the following characters: =/:,.@-</p>
      */
-    inline DeactivateMFADeviceRequest& WithSerialNumber(Aws::String&& value) { SetSerialNumber(value); return *this;}
+    inline DeactivateMFADeviceRequest& WithSerialNumber(Aws::String&& value) { SetSerialNumber(std::move(value)); return *this;}
 
     /**
      * <p>The serial number that uniquely identifies the MFA device. For virtual MFA

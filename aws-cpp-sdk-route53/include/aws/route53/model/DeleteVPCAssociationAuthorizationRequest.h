@@ -17,6 +17,7 @@
 #include <aws/route53/Route53Request.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/route53/model/VPC.h>
+#include <utility>
 
 namespace Aws
 {
@@ -59,7 +60,7 @@ namespace Model
      * account with a hosted zone that was created with a different AWS account, the ID
      * of the hosted zone.</p>
      */
-    inline void SetHostedZoneId(Aws::String&& value) { m_hostedZoneIdHasBeenSet = true; m_hostedZoneId = value; }
+    inline void SetHostedZoneId(Aws::String&& value) { m_hostedZoneIdHasBeenSet = true; m_hostedZoneId = std::move(value); }
 
     /**
      * <p>When removing authorization to associate a VPC that was created by one AWS
@@ -80,7 +81,7 @@ namespace Model
      * account with a hosted zone that was created with a different AWS account, the ID
      * of the hosted zone.</p>
      */
-    inline DeleteVPCAssociationAuthorizationRequest& WithHostedZoneId(Aws::String&& value) { SetHostedZoneId(value); return *this;}
+    inline DeleteVPCAssociationAuthorizationRequest& WithHostedZoneId(Aws::String&& value) { SetHostedZoneId(std::move(value)); return *this;}
 
     /**
      * <p>When removing authorization to associate a VPC that was created by one AWS
@@ -108,7 +109,7 @@ namespace Model
      * account with a hosted zone that was created with a different AWS account, a
      * complex type that includes the ID and region of the VPC.</p>
      */
-    inline void SetVPC(VPC&& value) { m_vPCHasBeenSet = true; m_vPC = value; }
+    inline void SetVPC(VPC&& value) { m_vPCHasBeenSet = true; m_vPC = std::move(value); }
 
     /**
      * <p>When removing authorization to associate a VPC that was created by one AWS
@@ -122,7 +123,7 @@ namespace Model
      * account with a hosted zone that was created with a different AWS account, a
      * complex type that includes the ID and region of the VPC.</p>
      */
-    inline DeleteVPCAssociationAuthorizationRequest& WithVPC(VPC&& value) { SetVPC(value); return *this;}
+    inline DeleteVPCAssociationAuthorizationRequest& WithVPC(VPC&& value) { SetVPC(std::move(value)); return *this;}
 
   private:
     Aws::String m_hostedZoneId;

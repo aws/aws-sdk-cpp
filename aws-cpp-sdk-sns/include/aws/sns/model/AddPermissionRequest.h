@@ -17,6 +17,7 @@
 #include <aws/sns/SNSRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <utility>
 
 namespace Aws
 {
@@ -51,7 +52,7 @@ namespace Model
     /**
      * <p>The ARN of the topic whose access control policy you wish to modify.</p>
      */
-    inline void SetTopicArn(Aws::String&& value) { m_topicArnHasBeenSet = true; m_topicArn = value; }
+    inline void SetTopicArn(Aws::String&& value) { m_topicArnHasBeenSet = true; m_topicArn = std::move(value); }
 
     /**
      * <p>The ARN of the topic whose access control policy you wish to modify.</p>
@@ -66,7 +67,7 @@ namespace Model
     /**
      * <p>The ARN of the topic whose access control policy you wish to modify.</p>
      */
-    inline AddPermissionRequest& WithTopicArn(Aws::String&& value) { SetTopicArn(value); return *this;}
+    inline AddPermissionRequest& WithTopicArn(Aws::String&& value) { SetTopicArn(std::move(value)); return *this;}
 
     /**
      * <p>The ARN of the topic whose access control policy you wish to modify.</p>
@@ -86,7 +87,7 @@ namespace Model
     /**
      * <p>A unique identifier for the new policy statement.</p>
      */
-    inline void SetLabel(Aws::String&& value) { m_labelHasBeenSet = true; m_label = value; }
+    inline void SetLabel(Aws::String&& value) { m_labelHasBeenSet = true; m_label = std::move(value); }
 
     /**
      * <p>A unique identifier for the new policy statement.</p>
@@ -101,7 +102,7 @@ namespace Model
     /**
      * <p>A unique identifier for the new policy statement.</p>
      */
-    inline AddPermissionRequest& WithLabel(Aws::String&& value) { SetLabel(value); return *this;}
+    inline AddPermissionRequest& WithLabel(Aws::String&& value) { SetLabel(std::move(value)); return *this;}
 
     /**
      * <p>A unique identifier for the new policy statement.</p>
@@ -127,7 +128,7 @@ namespace Model
      * specified actions. The users must have AWS accounts, but do not need to be
      * signed up for this service.</p>
      */
-    inline void SetAWSAccountId(Aws::Vector<Aws::String>&& value) { m_aWSAccountIdHasBeenSet = true; m_aWSAccountId = value; }
+    inline void SetAWSAccountId(Aws::Vector<Aws::String>&& value) { m_aWSAccountIdHasBeenSet = true; m_aWSAccountId = std::move(value); }
 
     /**
      * <p>The AWS account IDs of the users (principals) who will be given access to the
@@ -141,7 +142,7 @@ namespace Model
      * specified actions. The users must have AWS accounts, but do not need to be
      * signed up for this service.</p>
      */
-    inline AddPermissionRequest& WithAWSAccountId(Aws::Vector<Aws::String>&& value) { SetAWSAccountId(value); return *this;}
+    inline AddPermissionRequest& WithAWSAccountId(Aws::Vector<Aws::String>&& value) { SetAWSAccountId(std::move(value)); return *this;}
 
     /**
      * <p>The AWS account IDs of the users (principals) who will be given access to the
@@ -155,7 +156,7 @@ namespace Model
      * specified actions. The users must have AWS accounts, but do not need to be
      * signed up for this service.</p>
      */
-    inline AddPermissionRequest& AddAWSAccountId(Aws::String&& value) { m_aWSAccountIdHasBeenSet = true; m_aWSAccountId.push_back(value); return *this; }
+    inline AddPermissionRequest& AddAWSAccountId(Aws::String&& value) { m_aWSAccountIdHasBeenSet = true; m_aWSAccountId.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The AWS account IDs of the users (principals) who will be given access to the
@@ -180,7 +181,7 @@ namespace Model
      * <p>The action you want to allow for the specified principal(s).</p> <p>Valid
      * values: any Amazon SNS action name.</p>
      */
-    inline void SetActionName(Aws::Vector<Aws::String>&& value) { m_actionNameHasBeenSet = true; m_actionName = value; }
+    inline void SetActionName(Aws::Vector<Aws::String>&& value) { m_actionNameHasBeenSet = true; m_actionName = std::move(value); }
 
     /**
      * <p>The action you want to allow for the specified principal(s).</p> <p>Valid
@@ -192,7 +193,7 @@ namespace Model
      * <p>The action you want to allow for the specified principal(s).</p> <p>Valid
      * values: any Amazon SNS action name.</p>
      */
-    inline AddPermissionRequest& WithActionName(Aws::Vector<Aws::String>&& value) { SetActionName(value); return *this;}
+    inline AddPermissionRequest& WithActionName(Aws::Vector<Aws::String>&& value) { SetActionName(std::move(value)); return *this;}
 
     /**
      * <p>The action you want to allow for the specified principal(s).</p> <p>Valid
@@ -204,7 +205,7 @@ namespace Model
      * <p>The action you want to allow for the specified principal(s).</p> <p>Valid
      * values: any Amazon SNS action name.</p>
      */
-    inline AddPermissionRequest& AddActionName(Aws::String&& value) { m_actionNameHasBeenSet = true; m_actionName.push_back(value); return *this; }
+    inline AddPermissionRequest& AddActionName(Aws::String&& value) { m_actionNameHasBeenSet = true; m_actionName.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The action you want to allow for the specified principal(s).</p> <p>Valid

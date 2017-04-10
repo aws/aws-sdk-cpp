@@ -20,6 +20,7 @@
 #include <aws/xray/model/ServiceStatistics.h>
 #include <aws/xray/model/Edge.h>
 #include <aws/xray/model/HistogramEntry.h>
+#include <utility>
 
 namespace Aws
 {
@@ -78,7 +79,7 @@ namespace Model
     /**
      * <p>The canonical name of the service.</p>
      */
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p>The canonical name of the service.</p>
@@ -93,7 +94,7 @@ namespace Model
     /**
      * <p>The canonical name of the service.</p>
      */
-    inline Service& WithName(Aws::String&& value) { SetName(value); return *this;}
+    inline Service& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>The canonical name of the service.</p>
@@ -113,7 +114,7 @@ namespace Model
     /**
      * <p>A list of names for the service, including the canonical name.</p>
      */
-    inline void SetNames(Aws::Vector<Aws::String>&& value) { m_namesHasBeenSet = true; m_names = value; }
+    inline void SetNames(Aws::Vector<Aws::String>&& value) { m_namesHasBeenSet = true; m_names = std::move(value); }
 
     /**
      * <p>A list of names for the service, including the canonical name.</p>
@@ -123,7 +124,7 @@ namespace Model
     /**
      * <p>A list of names for the service, including the canonical name.</p>
      */
-    inline Service& WithNames(Aws::Vector<Aws::String>&& value) { SetNames(value); return *this;}
+    inline Service& WithNames(Aws::Vector<Aws::String>&& value) { SetNames(std::move(value)); return *this;}
 
     /**
      * <p>A list of names for the service, including the canonical name.</p>
@@ -133,7 +134,7 @@ namespace Model
     /**
      * <p>A list of names for the service, including the canonical name.</p>
      */
-    inline Service& AddNames(Aws::String&& value) { m_namesHasBeenSet = true; m_names.push_back(value); return *this; }
+    inline Service& AddNames(Aws::String&& value) { m_namesHasBeenSet = true; m_names.push_back(std::move(value)); return *this; }
 
     /**
      * <p>A list of names for the service, including the canonical name.</p>
@@ -168,7 +169,7 @@ namespace Model
     /**
      * <p>Identifier of the AWS account in which the service runs.</p>
      */
-    inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
+    inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
 
     /**
      * <p>Identifier of the AWS account in which the service runs.</p>
@@ -183,7 +184,7 @@ namespace Model
     /**
      * <p>Identifier of the AWS account in which the service runs.</p>
      */
-    inline Service& WithAccountId(Aws::String&& value) { SetAccountId(value); return *this;}
+    inline Service& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
 
     /**
      * <p>Identifier of the AWS account in which the service runs.</p>
@@ -227,7 +228,7 @@ namespace Model
      * service.</p> </li> <li> <p> <code>remote</code> - A downstream service of
      * indeterminate type.</p> </li> </ul>
      */
-    inline void SetType(Aws::String&& value) { m_typeHasBeenSet = true; m_type = value; }
+    inline void SetType(Aws::String&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
      * <p>The type of service.</p> <ul> <li> <p>AWS Resource - The type of an AWS
@@ -266,7 +267,7 @@ namespace Model
      * service.</p> </li> <li> <p> <code>remote</code> - A downstream service of
      * indeterminate type.</p> </li> </ul>
      */
-    inline Service& WithType(Aws::String&& value) { SetType(value); return *this;}
+    inline Service& WithType(Aws::String&& value) { SetType(std::move(value)); return *this;}
 
     /**
      * <p>The type of service.</p> <ul> <li> <p>AWS Resource - The type of an AWS
@@ -294,7 +295,7 @@ namespace Model
     /**
      * <p>The service's state.</p>
      */
-    inline void SetState(Aws::String&& value) { m_stateHasBeenSet = true; m_state = value; }
+    inline void SetState(Aws::String&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
 
     /**
      * <p>The service's state.</p>
@@ -309,7 +310,7 @@ namespace Model
     /**
      * <p>The service's state.</p>
      */
-    inline Service& WithState(Aws::String&& value) { SetState(value); return *this;}
+    inline Service& WithState(Aws::String&& value) { SetState(std::move(value)); return *this;}
 
     /**
      * <p>The service's state.</p>
@@ -329,7 +330,7 @@ namespace Model
     /**
      * <p>The start time of the first segment that the service generated.</p>
      */
-    inline void SetStartTime(Aws::Utils::DateTime&& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
+    inline void SetStartTime(Aws::Utils::DateTime&& value) { m_startTimeHasBeenSet = true; m_startTime = std::move(value); }
 
     /**
      * <p>The start time of the first segment that the service generated.</p>
@@ -339,7 +340,7 @@ namespace Model
     /**
      * <p>The start time of the first segment that the service generated.</p>
      */
-    inline Service& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(value); return *this;}
+    inline Service& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(std::move(value)); return *this;}
 
     /**
      * <p>The end time of the last segment that the service generated.</p>
@@ -354,7 +355,7 @@ namespace Model
     /**
      * <p>The end time of the last segment that the service generated.</p>
      */
-    inline void SetEndTime(Aws::Utils::DateTime&& value) { m_endTimeHasBeenSet = true; m_endTime = value; }
+    inline void SetEndTime(Aws::Utils::DateTime&& value) { m_endTimeHasBeenSet = true; m_endTime = std::move(value); }
 
     /**
      * <p>The end time of the last segment that the service generated.</p>
@@ -364,7 +365,7 @@ namespace Model
     /**
      * <p>The end time of the last segment that the service generated.</p>
      */
-    inline Service& WithEndTime(Aws::Utils::DateTime&& value) { SetEndTime(value); return *this;}
+    inline Service& WithEndTime(Aws::Utils::DateTime&& value) { SetEndTime(std::move(value)); return *this;}
 
     /**
      * <p>Connections to downstream services.</p>
@@ -379,7 +380,7 @@ namespace Model
     /**
      * <p>Connections to downstream services.</p>
      */
-    inline void SetEdges(Aws::Vector<Edge>&& value) { m_edgesHasBeenSet = true; m_edges = value; }
+    inline void SetEdges(Aws::Vector<Edge>&& value) { m_edgesHasBeenSet = true; m_edges = std::move(value); }
 
     /**
      * <p>Connections to downstream services.</p>
@@ -389,7 +390,7 @@ namespace Model
     /**
      * <p>Connections to downstream services.</p>
      */
-    inline Service& WithEdges(Aws::Vector<Edge>&& value) { SetEdges(value); return *this;}
+    inline Service& WithEdges(Aws::Vector<Edge>&& value) { SetEdges(std::move(value)); return *this;}
 
     /**
      * <p>Connections to downstream services.</p>
@@ -399,7 +400,7 @@ namespace Model
     /**
      * <p>Connections to downstream services.</p>
      */
-    inline Service& AddEdges(Edge&& value) { m_edgesHasBeenSet = true; m_edges.push_back(value); return *this; }
+    inline Service& AddEdges(Edge&& value) { m_edgesHasBeenSet = true; m_edges.push_back(std::move(value)); return *this; }
 
     /**
      * <p>Aggregated statistics for the service.</p>
@@ -414,7 +415,7 @@ namespace Model
     /**
      * <p>Aggregated statistics for the service.</p>
      */
-    inline void SetSummaryStatistics(ServiceStatistics&& value) { m_summaryStatisticsHasBeenSet = true; m_summaryStatistics = value; }
+    inline void SetSummaryStatistics(ServiceStatistics&& value) { m_summaryStatisticsHasBeenSet = true; m_summaryStatistics = std::move(value); }
 
     /**
      * <p>Aggregated statistics for the service.</p>
@@ -424,7 +425,7 @@ namespace Model
     /**
      * <p>Aggregated statistics for the service.</p>
      */
-    inline Service& WithSummaryStatistics(ServiceStatistics&& value) { SetSummaryStatistics(value); return *this;}
+    inline Service& WithSummaryStatistics(ServiceStatistics&& value) { SetSummaryStatistics(std::move(value)); return *this;}
 
     /**
      * <p>Histogram mapping the spread of trace durations</p>
@@ -439,7 +440,7 @@ namespace Model
     /**
      * <p>Histogram mapping the spread of trace durations</p>
      */
-    inline void SetDurationHistogram(Aws::Vector<HistogramEntry>&& value) { m_durationHistogramHasBeenSet = true; m_durationHistogram = value; }
+    inline void SetDurationHistogram(Aws::Vector<HistogramEntry>&& value) { m_durationHistogramHasBeenSet = true; m_durationHistogram = std::move(value); }
 
     /**
      * <p>Histogram mapping the spread of trace durations</p>
@@ -449,7 +450,7 @@ namespace Model
     /**
      * <p>Histogram mapping the spread of trace durations</p>
      */
-    inline Service& WithDurationHistogram(Aws::Vector<HistogramEntry>&& value) { SetDurationHistogram(value); return *this;}
+    inline Service& WithDurationHistogram(Aws::Vector<HistogramEntry>&& value) { SetDurationHistogram(std::move(value)); return *this;}
 
     /**
      * <p>Histogram mapping the spread of trace durations</p>
@@ -459,7 +460,7 @@ namespace Model
     /**
      * <p>Histogram mapping the spread of trace durations</p>
      */
-    inline Service& AddDurationHistogram(HistogramEntry&& value) { m_durationHistogramHasBeenSet = true; m_durationHistogram.push_back(value); return *this; }
+    inline Service& AddDurationHistogram(HistogramEntry&& value) { m_durationHistogramHasBeenSet = true; m_durationHistogram.push_back(std::move(value)); return *this; }
 
   private:
     int m_referenceId;

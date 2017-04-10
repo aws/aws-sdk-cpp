@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/rekognition/Rekognition_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -60,7 +61,7 @@ namespace Model
     /**
      * <p>Name of the S3 bucket.</p>
      */
-    inline void SetBucket(Aws::String&& value) { m_bucketHasBeenSet = true; m_bucket = value; }
+    inline void SetBucket(Aws::String&& value) { m_bucketHasBeenSet = true; m_bucket = std::move(value); }
 
     /**
      * <p>Name of the S3 bucket.</p>
@@ -75,7 +76,7 @@ namespace Model
     /**
      * <p>Name of the S3 bucket.</p>
      */
-    inline S3Object& WithBucket(Aws::String&& value) { SetBucket(value); return *this;}
+    inline S3Object& WithBucket(Aws::String&& value) { SetBucket(std::move(value)); return *this;}
 
     /**
      * <p>Name of the S3 bucket.</p>
@@ -95,7 +96,7 @@ namespace Model
     /**
      * <p>S3 object key name.</p>
      */
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p>S3 object key name.</p>
@@ -110,7 +111,7 @@ namespace Model
     /**
      * <p>S3 object key name.</p>
      */
-    inline S3Object& WithName(Aws::String&& value) { SetName(value); return *this;}
+    inline S3Object& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>S3 object key name.</p>
@@ -130,7 +131,7 @@ namespace Model
     /**
      * <p>If the bucket is versioning enabled, you can specify the object version. </p>
      */
-    inline void SetVersion(Aws::String&& value) { m_versionHasBeenSet = true; m_version = value; }
+    inline void SetVersion(Aws::String&& value) { m_versionHasBeenSet = true; m_version = std::move(value); }
 
     /**
      * <p>If the bucket is versioning enabled, you can specify the object version. </p>
@@ -145,7 +146,7 @@ namespace Model
     /**
      * <p>If the bucket is versioning enabled, you can specify the object version. </p>
      */
-    inline S3Object& WithVersion(Aws::String&& value) { SetVersion(value); return *this;}
+    inline S3Object& WithVersion(Aws::String&& value) { SetVersion(std::move(value)); return *this;}
 
     /**
      * <p>If the bucket is versioning enabled, you can specify the object version. </p>

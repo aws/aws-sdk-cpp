@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/elasticbeanstalk/model/ResponseMetadata.h>
 #include <aws/elasticbeanstalk/model/ValidationMessage.h>
+#include <utility>
 
 namespace Aws
 {
@@ -59,7 +60,7 @@ namespace Model
     /**
      * <p> A list of <a>ValidationMessage</a>. </p>
      */
-    inline void SetMessages(Aws::Vector<ValidationMessage>&& value) { m_messages = value; }
+    inline void SetMessages(Aws::Vector<ValidationMessage>&& value) { m_messages = std::move(value); }
 
     /**
      * <p> A list of <a>ValidationMessage</a>. </p>
@@ -69,7 +70,7 @@ namespace Model
     /**
      * <p> A list of <a>ValidationMessage</a>. </p>
      */
-    inline ValidateConfigurationSettingsResult& WithMessages(Aws::Vector<ValidationMessage>&& value) { SetMessages(value); return *this;}
+    inline ValidateConfigurationSettingsResult& WithMessages(Aws::Vector<ValidationMessage>&& value) { SetMessages(std::move(value)); return *this;}
 
     /**
      * <p> A list of <a>ValidationMessage</a>. </p>
@@ -79,7 +80,7 @@ namespace Model
     /**
      * <p> A list of <a>ValidationMessage</a>. </p>
      */
-    inline ValidateConfigurationSettingsResult& AddMessages(ValidationMessage&& value) { m_messages.push_back(value); return *this; }
+    inline ValidateConfigurationSettingsResult& AddMessages(ValidationMessage&& value) { m_messages.push_back(std::move(value)); return *this; }
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
@@ -88,13 +89,13 @@ namespace Model
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
 
     
     inline ValidateConfigurationSettingsResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
 
     
-    inline ValidateConfigurationSettingsResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
+    inline ValidateConfigurationSettingsResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
     Aws::Vector<ValidationMessage> m_messages;

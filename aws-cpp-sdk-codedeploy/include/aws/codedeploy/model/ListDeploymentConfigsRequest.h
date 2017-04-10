@@ -16,6 +16,7 @@
 #include <aws/codedeploy/CodeDeploy_EXPORTS.h>
 #include <aws/codedeploy/CodeDeployRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -58,7 +59,7 @@ namespace Model
      * It can be used to return the next set of deployment configurations in the list.
      * </p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
      * <p>An identifier returned from the previous list deployment configurations call.
@@ -79,7 +80,7 @@ namespace Model
      * It can be used to return the next set of deployment configurations in the list.
      * </p>
      */
-    inline ListDeploymentConfigsRequest& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline ListDeploymentConfigsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>An identifier returned from the previous list deployment configurations call.

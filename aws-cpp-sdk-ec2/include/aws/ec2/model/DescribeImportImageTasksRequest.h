@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/Filter.h>
+#include <utility>
 
 namespace Aws
 {
@@ -80,7 +81,7 @@ namespace Model
     /**
      * <p>A list of import image task IDs.</p>
      */
-    inline void SetImportTaskIds(Aws::Vector<Aws::String>&& value) { m_importTaskIdsHasBeenSet = true; m_importTaskIds = value; }
+    inline void SetImportTaskIds(Aws::Vector<Aws::String>&& value) { m_importTaskIdsHasBeenSet = true; m_importTaskIds = std::move(value); }
 
     /**
      * <p>A list of import image task IDs.</p>
@@ -90,7 +91,7 @@ namespace Model
     /**
      * <p>A list of import image task IDs.</p>
      */
-    inline DescribeImportImageTasksRequest& WithImportTaskIds(Aws::Vector<Aws::String>&& value) { SetImportTaskIds(value); return *this;}
+    inline DescribeImportImageTasksRequest& WithImportTaskIds(Aws::Vector<Aws::String>&& value) { SetImportTaskIds(std::move(value)); return *this;}
 
     /**
      * <p>A list of import image task IDs.</p>
@@ -100,7 +101,7 @@ namespace Model
     /**
      * <p>A list of import image task IDs.</p>
      */
-    inline DescribeImportImageTasksRequest& AddImportTaskIds(Aws::String&& value) { m_importTaskIdsHasBeenSet = true; m_importTaskIds.push_back(value); return *this; }
+    inline DescribeImportImageTasksRequest& AddImportTaskIds(Aws::String&& value) { m_importTaskIdsHasBeenSet = true; m_importTaskIds.push_back(std::move(value)); return *this; }
 
     /**
      * <p>A list of import image task IDs.</p>
@@ -120,7 +121,7 @@ namespace Model
     /**
      * <p>A token that indicates the next page of results.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
      * <p>A token that indicates the next page of results.</p>
@@ -135,7 +136,7 @@ namespace Model
     /**
      * <p>A token that indicates the next page of results.</p>
      */
-    inline DescribeImportImageTasksRequest& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline DescribeImportImageTasksRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>A token that indicates the next page of results.</p>
@@ -179,7 +180,7 @@ namespace Model
      * <p>Filter tasks using the <code>task-state</code> filter and one of the
      * following values: active, completed, deleting, deleted.</p>
      */
-    inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = value; }
+    inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
 
     /**
      * <p>Filter tasks using the <code>task-state</code> filter and one of the
@@ -191,7 +192,7 @@ namespace Model
      * <p>Filter tasks using the <code>task-state</code> filter and one of the
      * following values: active, completed, deleting, deleted.</p>
      */
-    inline DescribeImportImageTasksRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(value); return *this;}
+    inline DescribeImportImageTasksRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(std::move(value)); return *this;}
 
     /**
      * <p>Filter tasks using the <code>task-state</code> filter and one of the
@@ -203,7 +204,7 @@ namespace Model
      * <p>Filter tasks using the <code>task-state</code> filter and one of the
      * following values: active, completed, deleting, deleted.</p>
      */
-    inline DescribeImportImageTasksRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
+    inline DescribeImportImageTasksRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 
   private:
     bool m_dryRun;

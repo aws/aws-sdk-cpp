@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/elasticmapreduce/EMR_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -52,7 +53,7 @@ namespace Model
     /**
      * <p>The unique identifier of the cluster.</p>
      */
-    inline void SetClusterId(Aws::String&& value) { m_clusterId = value; }
+    inline void SetClusterId(Aws::String&& value) { m_clusterId = std::move(value); }
 
     /**
      * <p>The unique identifier of the cluster.</p>
@@ -67,7 +68,7 @@ namespace Model
     /**
      * <p>The unique identifier of the cluster.</p>
      */
-    inline AddInstanceFleetResult& WithClusterId(Aws::String&& value) { SetClusterId(value); return *this;}
+    inline AddInstanceFleetResult& WithClusterId(Aws::String&& value) { SetClusterId(std::move(value)); return *this;}
 
     /**
      * <p>The unique identifier of the cluster.</p>
@@ -87,7 +88,7 @@ namespace Model
     /**
      * <p>The unique identifier of the instance fleet.</p>
      */
-    inline void SetInstanceFleetId(Aws::String&& value) { m_instanceFleetId = value; }
+    inline void SetInstanceFleetId(Aws::String&& value) { m_instanceFleetId = std::move(value); }
 
     /**
      * <p>The unique identifier of the instance fleet.</p>
@@ -102,7 +103,7 @@ namespace Model
     /**
      * <p>The unique identifier of the instance fleet.</p>
      */
-    inline AddInstanceFleetResult& WithInstanceFleetId(Aws::String&& value) { SetInstanceFleetId(value); return *this;}
+    inline AddInstanceFleetResult& WithInstanceFleetId(Aws::String&& value) { SetInstanceFleetId(std::move(value)); return *this;}
 
     /**
      * <p>The unique identifier of the instance fleet.</p>

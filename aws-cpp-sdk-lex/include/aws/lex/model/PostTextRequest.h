@@ -17,6 +17,7 @@
 #include <aws/lex/LexRuntimeServiceRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <utility>
 
 namespace Aws
 {
@@ -47,7 +48,7 @@ namespace Model
     /**
      * <p>The name of the Amazon Lex bot.</p>
      */
-    inline void SetBotName(Aws::String&& value) { m_botNameHasBeenSet = true; m_botName = value; }
+    inline void SetBotName(Aws::String&& value) { m_botNameHasBeenSet = true; m_botName = std::move(value); }
 
     /**
      * <p>The name of the Amazon Lex bot.</p>
@@ -62,7 +63,7 @@ namespace Model
     /**
      * <p>The name of the Amazon Lex bot.</p>
      */
-    inline PostTextRequest& WithBotName(Aws::String&& value) { SetBotName(value); return *this;}
+    inline PostTextRequest& WithBotName(Aws::String&& value) { SetBotName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the Amazon Lex bot.</p>
@@ -82,7 +83,7 @@ namespace Model
     /**
      * <p>The alias of the Amazon Lex bot.</p>
      */
-    inline void SetBotAlias(Aws::String&& value) { m_botAliasHasBeenSet = true; m_botAlias = value; }
+    inline void SetBotAlias(Aws::String&& value) { m_botAliasHasBeenSet = true; m_botAlias = std::move(value); }
 
     /**
      * <p>The alias of the Amazon Lex bot.</p>
@@ -97,7 +98,7 @@ namespace Model
     /**
      * <p>The alias of the Amazon Lex bot.</p>
      */
-    inline PostTextRequest& WithBotAlias(Aws::String&& value) { SetBotAlias(value); return *this;}
+    inline PostTextRequest& WithBotAlias(Aws::String&& value) { SetBotAlias(std::move(value)); return *this;}
 
     /**
      * <p>The alias of the Amazon Lex bot.</p>
@@ -144,7 +145,7 @@ namespace Model
      * devices, you might choose a device-specific identifier, such as device ID, or
      * some globally unique identifier. </p> </li> </ul>
      */
-    inline void SetUserId(Aws::String&& value) { m_userIdHasBeenSet = true; m_userId = value; }
+    inline void SetUserId(Aws::String&& value) { m_userIdHasBeenSet = true; m_userId = std::move(value); }
 
     /**
      * <p>The ID of the client application user. The application developer decides the
@@ -186,7 +187,7 @@ namespace Model
      * devices, you might choose a device-specific identifier, such as device ID, or
      * some globally unique identifier. </p> </li> </ul>
      */
-    inline PostTextRequest& WithUserId(Aws::String&& value) { SetUserId(value); return *this;}
+    inline PostTextRequest& WithUserId(Aws::String&& value) { SetUserId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the client application user. The application developer decides the
@@ -311,7 +312,7 @@ namespace Model
      * </p> <p> If there is no code hook configured for the intent, Amazon Lex simply
      * returns the session attributes back to the client application. </p> </note>
      */
-    inline void SetSessionAttributes(Aws::Map<Aws::String, Aws::String>&& value) { m_sessionAttributesHasBeenSet = true; m_sessionAttributes = value; }
+    inline void SetSessionAttributes(Aws::Map<Aws::String, Aws::String>&& value) { m_sessionAttributesHasBeenSet = true; m_sessionAttributes = std::move(value); }
 
     /**
      * <p> By using session attributes, a client application can pass contextual
@@ -385,7 +386,7 @@ namespace Model
      * </p> <p> If there is no code hook configured for the intent, Amazon Lex simply
      * returns the session attributes back to the client application. </p> </note>
      */
-    inline PostTextRequest& WithSessionAttributes(Aws::Map<Aws::String, Aws::String>&& value) { SetSessionAttributes(value); return *this;}
+    inline PostTextRequest& WithSessionAttributes(Aws::Map<Aws::String, Aws::String>&& value) { SetSessionAttributes(std::move(value)); return *this;}
 
     /**
      * <p> By using session attributes, a client application can pass contextual
@@ -422,7 +423,7 @@ namespace Model
      * </p> <p> If there is no code hook configured for the intent, Amazon Lex simply
      * returns the session attributes back to the client application. </p> </note>
      */
-    inline PostTextRequest& AddSessionAttributes(const Aws::String& key, const Aws::String& value) { m_sessionAttributesHasBeenSet = true; m_sessionAttributes[key] = value; return *this; }
+    inline PostTextRequest& AddSessionAttributes(const Aws::String& key, const Aws::String& value) { m_sessionAttributesHasBeenSet = true; m_sessionAttributes.emplace(key, value); return *this; }
 
     /**
      * <p> By using session attributes, a client application can pass contextual
@@ -459,7 +460,7 @@ namespace Model
      * </p> <p> If there is no code hook configured for the intent, Amazon Lex simply
      * returns the session attributes back to the client application. </p> </note>
      */
-    inline PostTextRequest& AddSessionAttributes(Aws::String&& key, const Aws::String& value) { m_sessionAttributesHasBeenSet = true; m_sessionAttributes[key] = value; return *this; }
+    inline PostTextRequest& AddSessionAttributes(Aws::String&& key, const Aws::String& value) { m_sessionAttributesHasBeenSet = true; m_sessionAttributes.emplace(std::move(key), value); return *this; }
 
     /**
      * <p> By using session attributes, a client application can pass contextual
@@ -496,7 +497,7 @@ namespace Model
      * </p> <p> If there is no code hook configured for the intent, Amazon Lex simply
      * returns the session attributes back to the client application. </p> </note>
      */
-    inline PostTextRequest& AddSessionAttributes(const Aws::String& key, Aws::String&& value) { m_sessionAttributesHasBeenSet = true; m_sessionAttributes[key] = value; return *this; }
+    inline PostTextRequest& AddSessionAttributes(const Aws::String& key, Aws::String&& value) { m_sessionAttributesHasBeenSet = true; m_sessionAttributes.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p> By using session attributes, a client application can pass contextual
@@ -533,7 +534,7 @@ namespace Model
      * </p> <p> If there is no code hook configured for the intent, Amazon Lex simply
      * returns the session attributes back to the client application. </p> </note>
      */
-    inline PostTextRequest& AddSessionAttributes(Aws::String&& key, Aws::String&& value) { m_sessionAttributesHasBeenSet = true; m_sessionAttributes[key] = value; return *this; }
+    inline PostTextRequest& AddSessionAttributes(Aws::String&& key, Aws::String&& value) { m_sessionAttributesHasBeenSet = true; m_sessionAttributes.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
      * <p> By using session attributes, a client application can pass contextual
@@ -570,7 +571,7 @@ namespace Model
      * </p> <p> If there is no code hook configured for the intent, Amazon Lex simply
      * returns the session attributes back to the client application. </p> </note>
      */
-    inline PostTextRequest& AddSessionAttributes(const char* key, Aws::String&& value) { m_sessionAttributesHasBeenSet = true; m_sessionAttributes[key] = value; return *this; }
+    inline PostTextRequest& AddSessionAttributes(const char* key, Aws::String&& value) { m_sessionAttributesHasBeenSet = true; m_sessionAttributes.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p> By using session attributes, a client application can pass contextual
@@ -607,7 +608,7 @@ namespace Model
      * </p> <p> If there is no code hook configured for the intent, Amazon Lex simply
      * returns the session attributes back to the client application. </p> </note>
      */
-    inline PostTextRequest& AddSessionAttributes(Aws::String&& key, const char* value) { m_sessionAttributesHasBeenSet = true; m_sessionAttributes[key] = value; return *this; }
+    inline PostTextRequest& AddSessionAttributes(Aws::String&& key, const char* value) { m_sessionAttributesHasBeenSet = true; m_sessionAttributes.emplace(std::move(key), value); return *this; }
 
     /**
      * <p> By using session attributes, a client application can pass contextual
@@ -644,7 +645,7 @@ namespace Model
      * </p> <p> If there is no code hook configured for the intent, Amazon Lex simply
      * returns the session attributes back to the client application. </p> </note>
      */
-    inline PostTextRequest& AddSessionAttributes(const char* key, const char* value) { m_sessionAttributesHasBeenSet = true; m_sessionAttributes[key] = value; return *this; }
+    inline PostTextRequest& AddSessionAttributes(const char* key, const char* value) { m_sessionAttributesHasBeenSet = true; m_sessionAttributes.emplace(key, value); return *this; }
 
     /**
      * <p>The text that the user entered (Amazon Lex interprets this text).</p>
@@ -659,7 +660,7 @@ namespace Model
     /**
      * <p>The text that the user entered (Amazon Lex interprets this text).</p>
      */
-    inline void SetInputText(Aws::String&& value) { m_inputTextHasBeenSet = true; m_inputText = value; }
+    inline void SetInputText(Aws::String&& value) { m_inputTextHasBeenSet = true; m_inputText = std::move(value); }
 
     /**
      * <p>The text that the user entered (Amazon Lex interprets this text).</p>
@@ -674,7 +675,7 @@ namespace Model
     /**
      * <p>The text that the user entered (Amazon Lex interprets this text).</p>
      */
-    inline PostTextRequest& WithInputText(Aws::String&& value) { SetInputText(value); return *this;}
+    inline PostTextRequest& WithInputText(Aws::String&& value) { SetInputText(std::move(value)); return *this;}
 
     /**
      * <p>The text that the user entered (Amazon Lex interprets this text).</p>

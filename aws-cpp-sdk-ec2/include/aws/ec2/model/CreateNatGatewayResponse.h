@@ -17,6 +17,7 @@
 #include <aws/ec2/model/NatGateway.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/ResponseMetadata.h>
+#include <utility>
 
 namespace Aws
 {
@@ -59,7 +60,7 @@ namespace Model
     /**
      * <p>Information about the NAT gateway.</p>
      */
-    inline void SetNatGateway(NatGateway&& value) { m_natGateway = value; }
+    inline void SetNatGateway(NatGateway&& value) { m_natGateway = std::move(value); }
 
     /**
      * <p>Information about the NAT gateway.</p>
@@ -69,7 +70,7 @@ namespace Model
     /**
      * <p>Information about the NAT gateway.</p>
      */
-    inline CreateNatGatewayResponse& WithNatGateway(NatGateway&& value) { SetNatGateway(value); return *this;}
+    inline CreateNatGatewayResponse& WithNatGateway(NatGateway&& value) { SetNatGateway(std::move(value)); return *this;}
 
     /**
      * <p>Unique, case-sensitive identifier to ensure the idempotency of the request.
@@ -87,7 +88,7 @@ namespace Model
      * <p>Unique, case-sensitive identifier to ensure the idempotency of the request.
      * Only returned if a client token was provided in the request.</p>
      */
-    inline void SetClientToken(Aws::String&& value) { m_clientToken = value; }
+    inline void SetClientToken(Aws::String&& value) { m_clientToken = std::move(value); }
 
     /**
      * <p>Unique, case-sensitive identifier to ensure the idempotency of the request.
@@ -105,7 +106,7 @@ namespace Model
      * <p>Unique, case-sensitive identifier to ensure the idempotency of the request.
      * Only returned if a client token was provided in the request.</p>
      */
-    inline CreateNatGatewayResponse& WithClientToken(Aws::String&& value) { SetClientToken(value); return *this;}
+    inline CreateNatGatewayResponse& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
 
     /**
      * <p>Unique, case-sensitive identifier to ensure the idempotency of the request.
@@ -120,13 +121,13 @@ namespace Model
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
 
     
     inline CreateNatGatewayResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
 
     
-    inline CreateNatGatewayResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
+    inline CreateNatGatewayResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
     NatGateway m_natGateway;

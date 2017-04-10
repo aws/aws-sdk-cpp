@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/s3/S3_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -52,7 +53,7 @@ namespace Model
     /**
      * The object key name to use when a 4XX class error occurs.
      */
-    inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = value; }
+    inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
 
     /**
      * The object key name to use when a 4XX class error occurs.
@@ -67,7 +68,7 @@ namespace Model
     /**
      * The object key name to use when a 4XX class error occurs.
      */
-    inline ErrorDocument& WithKey(Aws::String&& value) { SetKey(value); return *this;}
+    inline ErrorDocument& WithKey(Aws::String&& value) { SetKey(std::move(value)); return *this;}
 
     /**
      * The object key name to use when a 4XX class error occurs.

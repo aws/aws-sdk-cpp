@@ -17,6 +17,7 @@
 #include <aws/rds/RDSRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <utility>
 
 namespace Aws
 {
@@ -54,7 +55,7 @@ namespace Model
     /**
      * <p>The identifier for the DB cluster snapshot to modify the attributes for.</p>
      */
-    inline void SetDBClusterSnapshotIdentifier(Aws::String&& value) { m_dBClusterSnapshotIdentifierHasBeenSet = true; m_dBClusterSnapshotIdentifier = value; }
+    inline void SetDBClusterSnapshotIdentifier(Aws::String&& value) { m_dBClusterSnapshotIdentifierHasBeenSet = true; m_dBClusterSnapshotIdentifier = std::move(value); }
 
     /**
      * <p>The identifier for the DB cluster snapshot to modify the attributes for.</p>
@@ -69,7 +70,7 @@ namespace Model
     /**
      * <p>The identifier for the DB cluster snapshot to modify the attributes for.</p>
      */
-    inline ModifyDBClusterSnapshotAttributeRequest& WithDBClusterSnapshotIdentifier(Aws::String&& value) { SetDBClusterSnapshotIdentifier(value); return *this;}
+    inline ModifyDBClusterSnapshotAttributeRequest& WithDBClusterSnapshotIdentifier(Aws::String&& value) { SetDBClusterSnapshotIdentifier(std::move(value)); return *this;}
 
     /**
      * <p>The identifier for the DB cluster snapshot to modify the attributes for.</p>
@@ -95,7 +96,7 @@ namespace Model
      * authorization for other AWS accounts to copy or restore a manual DB cluster
      * snapshot, set this value to <code>restore</code>.</p>
      */
-    inline void SetAttributeName(Aws::String&& value) { m_attributeNameHasBeenSet = true; m_attributeName = value; }
+    inline void SetAttributeName(Aws::String&& value) { m_attributeNameHasBeenSet = true; m_attributeName = std::move(value); }
 
     /**
      * <p>The name of the DB cluster snapshot attribute to modify.</p> <p>To manage
@@ -116,7 +117,7 @@ namespace Model
      * authorization for other AWS accounts to copy or restore a manual DB cluster
      * snapshot, set this value to <code>restore</code>.</p>
      */
-    inline ModifyDBClusterSnapshotAttributeRequest& WithAttributeName(Aws::String&& value) { SetAttributeName(value); return *this;}
+    inline ModifyDBClusterSnapshotAttributeRequest& WithAttributeName(Aws::String&& value) { SetAttributeName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the DB cluster snapshot attribute to modify.</p> <p>To manage
@@ -156,7 +157,7 @@ namespace Model
      * manual DB cluster snapshots that contain private information that you don't want
      * available to all AWS accounts.</p>
      */
-    inline void SetValuesToAdd(Aws::Vector<Aws::String>&& value) { m_valuesToAddHasBeenSet = true; m_valuesToAdd = value; }
+    inline void SetValuesToAdd(Aws::Vector<Aws::String>&& value) { m_valuesToAddHasBeenSet = true; m_valuesToAdd = std::move(value); }
 
     /**
      * <p>A list of DB cluster snapshot attributes to add to the attribute specified by
@@ -178,7 +179,7 @@ namespace Model
      * manual DB cluster snapshots that contain private information that you don't want
      * available to all AWS accounts.</p>
      */
-    inline ModifyDBClusterSnapshotAttributeRequest& WithValuesToAdd(Aws::Vector<Aws::String>&& value) { SetValuesToAdd(value); return *this;}
+    inline ModifyDBClusterSnapshotAttributeRequest& WithValuesToAdd(Aws::Vector<Aws::String>&& value) { SetValuesToAdd(std::move(value)); return *this;}
 
     /**
      * <p>A list of DB cluster snapshot attributes to add to the attribute specified by
@@ -200,7 +201,7 @@ namespace Model
      * manual DB cluster snapshots that contain private information that you don't want
      * available to all AWS accounts.</p>
      */
-    inline ModifyDBClusterSnapshotAttributeRequest& AddValuesToAdd(Aws::String&& value) { m_valuesToAddHasBeenSet = true; m_valuesToAdd.push_back(value); return *this; }
+    inline ModifyDBClusterSnapshotAttributeRequest& AddValuesToAdd(Aws::String&& value) { m_valuesToAddHasBeenSet = true; m_valuesToAdd.push_back(std::move(value)); return *this; }
 
     /**
      * <p>A list of DB cluster snapshot attributes to add to the attribute specified by
@@ -247,7 +248,7 @@ namespace Model
      * explicitly added to the <code>restore</code> attribute can still copy or restore
      * a manual DB cluster snapshot.</p>
      */
-    inline void SetValuesToRemove(Aws::Vector<Aws::String>&& value) { m_valuesToRemoveHasBeenSet = true; m_valuesToRemove = value; }
+    inline void SetValuesToRemove(Aws::Vector<Aws::String>&& value) { m_valuesToRemoveHasBeenSet = true; m_valuesToRemove = std::move(value); }
 
     /**
      * <p>A list of DB cluster snapshot attributes to remove from the attribute
@@ -271,7 +272,7 @@ namespace Model
      * explicitly added to the <code>restore</code> attribute can still copy or restore
      * a manual DB cluster snapshot.</p>
      */
-    inline ModifyDBClusterSnapshotAttributeRequest& WithValuesToRemove(Aws::Vector<Aws::String>&& value) { SetValuesToRemove(value); return *this;}
+    inline ModifyDBClusterSnapshotAttributeRequest& WithValuesToRemove(Aws::Vector<Aws::String>&& value) { SetValuesToRemove(std::move(value)); return *this;}
 
     /**
      * <p>A list of DB cluster snapshot attributes to remove from the attribute
@@ -295,7 +296,7 @@ namespace Model
      * explicitly added to the <code>restore</code> attribute can still copy or restore
      * a manual DB cluster snapshot.</p>
      */
-    inline ModifyDBClusterSnapshotAttributeRequest& AddValuesToRemove(Aws::String&& value) { m_valuesToRemoveHasBeenSet = true; m_valuesToRemove.push_back(value); return *this; }
+    inline ModifyDBClusterSnapshotAttributeRequest& AddValuesToRemove(Aws::String&& value) { m_valuesToRemoveHasBeenSet = true; m_valuesToRemove.push_back(std::move(value)); return *this; }
 
     /**
      * <p>A list of DB cluster snapshot attributes to remove from the attribute

@@ -16,6 +16,7 @@
 #include <aws/organizations/Organizations_EXPORTS.h>
 #include <aws/organizations/OrganizationsRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -63,7 +64,7 @@ namespace Model
      * request ID string requires "car-" followed by from 8 to 32 lower-case letters or
      * digits.</p>
      */
-    inline void SetCreateAccountRequestId(Aws::String&& value) { m_createAccountRequestIdHasBeenSet = true; m_createAccountRequestId = value; }
+    inline void SetCreateAccountRequestId(Aws::String&& value) { m_createAccountRequestIdHasBeenSet = true; m_createAccountRequestId = std::move(value); }
 
     /**
      * <p>Specifies the <code>operationId</code> that uniquely identifies the request.
@@ -93,7 +94,7 @@ namespace Model
      * request ID string requires "car-" followed by from 8 to 32 lower-case letters or
      * digits.</p>
      */
-    inline DescribeCreateAccountStatusRequest& WithCreateAccountRequestId(Aws::String&& value) { SetCreateAccountRequestId(value); return *this;}
+    inline DescribeCreateAccountStatusRequest& WithCreateAccountRequestId(Aws::String&& value) { SetCreateAccountRequestId(std::move(value)); return *this;}
 
     /**
      * <p>Specifies the <code>operationId</code> that uniquely identifies the request.

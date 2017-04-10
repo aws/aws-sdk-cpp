@@ -16,6 +16,7 @@
 #include <aws/apigateway/APIGateway_EXPORTS.h>
 #include <aws/apigateway/APIGatewayRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -50,7 +51,7 @@ namespace Model
     /**
      * <p>The domain name of the <a>BasePathMapping</a> resource to delete.</p>
      */
-    inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
+    inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = std::move(value); }
 
     /**
      * <p>The domain name of the <a>BasePathMapping</a> resource to delete.</p>
@@ -65,7 +66,7 @@ namespace Model
     /**
      * <p>The domain name of the <a>BasePathMapping</a> resource to delete.</p>
      */
-    inline DeleteBasePathMappingRequest& WithDomainName(Aws::String&& value) { SetDomainName(value); return *this;}
+    inline DeleteBasePathMappingRequest& WithDomainName(Aws::String&& value) { SetDomainName(std::move(value)); return *this;}
 
     /**
      * <p>The domain name of the <a>BasePathMapping</a> resource to delete.</p>
@@ -85,7 +86,7 @@ namespace Model
     /**
      * <p>The base path name of the <a>BasePathMapping</a> resource to delete.</p>
      */
-    inline void SetBasePath(Aws::String&& value) { m_basePathHasBeenSet = true; m_basePath = value; }
+    inline void SetBasePath(Aws::String&& value) { m_basePathHasBeenSet = true; m_basePath = std::move(value); }
 
     /**
      * <p>The base path name of the <a>BasePathMapping</a> resource to delete.</p>
@@ -100,7 +101,7 @@ namespace Model
     /**
      * <p>The base path name of the <a>BasePathMapping</a> resource to delete.</p>
      */
-    inline DeleteBasePathMappingRequest& WithBasePath(Aws::String&& value) { SetBasePath(value); return *this;}
+    inline DeleteBasePathMappingRequest& WithBasePath(Aws::String&& value) { SetBasePath(std::move(value)); return *this;}
 
     /**
      * <p>The base path name of the <a>BasePathMapping</a> resource to delete.</p>

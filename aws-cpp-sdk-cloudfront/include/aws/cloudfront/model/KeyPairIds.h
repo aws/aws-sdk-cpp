@@ -16,6 +16,7 @@
 #include <aws/cloudfront/CloudFront_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -77,7 +78,7 @@ namespace Model
      * A complex type that lists the active CloudFront key pairs, if any, that are
      * associated with AwsAccountNumber.
      */
-    inline void SetItems(Aws::Vector<Aws::String>&& value) { m_itemsHasBeenSet = true; m_items = value; }
+    inline void SetItems(Aws::Vector<Aws::String>&& value) { m_itemsHasBeenSet = true; m_items = std::move(value); }
 
     /**
      * A complex type that lists the active CloudFront key pairs, if any, that are
@@ -89,7 +90,7 @@ namespace Model
      * A complex type that lists the active CloudFront key pairs, if any, that are
      * associated with AwsAccountNumber.
      */
-    inline KeyPairIds& WithItems(Aws::Vector<Aws::String>&& value) { SetItems(value); return *this;}
+    inline KeyPairIds& WithItems(Aws::Vector<Aws::String>&& value) { SetItems(std::move(value)); return *this;}
 
     /**
      * A complex type that lists the active CloudFront key pairs, if any, that are
@@ -101,7 +102,7 @@ namespace Model
      * A complex type that lists the active CloudFront key pairs, if any, that are
      * associated with AwsAccountNumber.
      */
-    inline KeyPairIds& AddItems(Aws::String&& value) { m_itemsHasBeenSet = true; m_items.push_back(value); return *this; }
+    inline KeyPairIds& AddItems(Aws::String&& value) { m_itemsHasBeenSet = true; m_items.push_back(std::move(value)); return *this; }
 
     /**
      * A complex type that lists the active CloudFront key pairs, if any, that are

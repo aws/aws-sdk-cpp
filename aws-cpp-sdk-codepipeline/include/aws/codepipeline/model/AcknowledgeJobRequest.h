@@ -16,6 +16,7 @@
 #include <aws/codepipeline/CodePipeline_EXPORTS.h>
 #include <aws/codepipeline/CodePipelineRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -55,7 +56,7 @@ namespace Model
      * <p>The unique system-generated ID of the job for which you want to confirm
      * receipt.</p>
      */
-    inline void SetJobId(Aws::String&& value) { m_jobIdHasBeenSet = true; m_jobId = value; }
+    inline void SetJobId(Aws::String&& value) { m_jobIdHasBeenSet = true; m_jobId = std::move(value); }
 
     /**
      * <p>The unique system-generated ID of the job for which you want to confirm
@@ -73,7 +74,7 @@ namespace Model
      * <p>The unique system-generated ID of the job for which you want to confirm
      * receipt.</p>
      */
-    inline AcknowledgeJobRequest& WithJobId(Aws::String&& value) { SetJobId(value); return *this;}
+    inline AcknowledgeJobRequest& WithJobId(Aws::String&& value) { SetJobId(std::move(value)); return *this;}
 
     /**
      * <p>The unique system-generated ID of the job for which you want to confirm
@@ -100,7 +101,7 @@ namespace Model
      * the job is being worked on by only one job worker. Get this number from the
      * response of the <a>PollForJobs</a> request that returned this job.</p>
      */
-    inline void SetNonce(Aws::String&& value) { m_nonceHasBeenSet = true; m_nonce = value; }
+    inline void SetNonce(Aws::String&& value) { m_nonceHasBeenSet = true; m_nonce = std::move(value); }
 
     /**
      * <p>A system-generated random number that AWS CodePipeline uses to ensure that
@@ -121,7 +122,7 @@ namespace Model
      * the job is being worked on by only one job worker. Get this number from the
      * response of the <a>PollForJobs</a> request that returned this job.</p>
      */
-    inline AcknowledgeJobRequest& WithNonce(Aws::String&& value) { SetNonce(value); return *this;}
+    inline AcknowledgeJobRequest& WithNonce(Aws::String&& value) { SetNonce(std::move(value)); return *this;}
 
     /**
      * <p>A system-generated random number that AWS CodePipeline uses to ensure that

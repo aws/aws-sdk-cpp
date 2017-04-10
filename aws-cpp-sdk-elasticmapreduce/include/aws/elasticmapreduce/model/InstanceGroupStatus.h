@@ -17,6 +17,7 @@
 #include <aws/elasticmapreduce/model/InstanceGroupState.h>
 #include <aws/elasticmapreduce/model/InstanceGroupStateChangeReason.h>
 #include <aws/elasticmapreduce/model/InstanceGroupTimeline.h>
+#include <utility>
 
 namespace Aws
 {
@@ -58,7 +59,7 @@ namespace Model
     /**
      * <p>The current state of the instance group.</p>
      */
-    inline void SetState(InstanceGroupState&& value) { m_stateHasBeenSet = true; m_state = value; }
+    inline void SetState(InstanceGroupState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
 
     /**
      * <p>The current state of the instance group.</p>
@@ -68,7 +69,7 @@ namespace Model
     /**
      * <p>The current state of the instance group.</p>
      */
-    inline InstanceGroupStatus& WithState(InstanceGroupState&& value) { SetState(value); return *this;}
+    inline InstanceGroupStatus& WithState(InstanceGroupState&& value) { SetState(std::move(value)); return *this;}
 
     /**
      * <p>The status change reason details for the instance group.</p>
@@ -83,7 +84,7 @@ namespace Model
     /**
      * <p>The status change reason details for the instance group.</p>
      */
-    inline void SetStateChangeReason(InstanceGroupStateChangeReason&& value) { m_stateChangeReasonHasBeenSet = true; m_stateChangeReason = value; }
+    inline void SetStateChangeReason(InstanceGroupStateChangeReason&& value) { m_stateChangeReasonHasBeenSet = true; m_stateChangeReason = std::move(value); }
 
     /**
      * <p>The status change reason details for the instance group.</p>
@@ -93,7 +94,7 @@ namespace Model
     /**
      * <p>The status change reason details for the instance group.</p>
      */
-    inline InstanceGroupStatus& WithStateChangeReason(InstanceGroupStateChangeReason&& value) { SetStateChangeReason(value); return *this;}
+    inline InstanceGroupStatus& WithStateChangeReason(InstanceGroupStateChangeReason&& value) { SetStateChangeReason(std::move(value)); return *this;}
 
     /**
      * <p>The timeline of the instance group status over time.</p>
@@ -108,7 +109,7 @@ namespace Model
     /**
      * <p>The timeline of the instance group status over time.</p>
      */
-    inline void SetTimeline(InstanceGroupTimeline&& value) { m_timelineHasBeenSet = true; m_timeline = value; }
+    inline void SetTimeline(InstanceGroupTimeline&& value) { m_timelineHasBeenSet = true; m_timeline = std::move(value); }
 
     /**
      * <p>The timeline of the instance group status over time.</p>
@@ -118,7 +119,7 @@ namespace Model
     /**
      * <p>The timeline of the instance group status over time.</p>
      */
-    inline InstanceGroupStatus& WithTimeline(InstanceGroupTimeline&& value) { SetTimeline(value); return *this;}
+    inline InstanceGroupStatus& WithTimeline(InstanceGroupTimeline&& value) { SetTimeline(std::move(value)); return *this;}
 
   private:
     InstanceGroupState m_state;

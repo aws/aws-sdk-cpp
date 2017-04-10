@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/Tag.h>
+#include <utility>
 
 namespace Aws
 {
@@ -79,7 +80,7 @@ namespace Model
     /**
      * <p>The IDs of one or more resources to tag. For example, ami-1a2b3c4d.</p>
      */
-    inline void SetResources(Aws::Vector<Aws::String>&& value) { m_resourcesHasBeenSet = true; m_resources = value; }
+    inline void SetResources(Aws::Vector<Aws::String>&& value) { m_resourcesHasBeenSet = true; m_resources = std::move(value); }
 
     /**
      * <p>The IDs of one or more resources to tag. For example, ami-1a2b3c4d.</p>
@@ -89,7 +90,7 @@ namespace Model
     /**
      * <p>The IDs of one or more resources to tag. For example, ami-1a2b3c4d.</p>
      */
-    inline CreateTagsRequest& WithResources(Aws::Vector<Aws::String>&& value) { SetResources(value); return *this;}
+    inline CreateTagsRequest& WithResources(Aws::Vector<Aws::String>&& value) { SetResources(std::move(value)); return *this;}
 
     /**
      * <p>The IDs of one or more resources to tag. For example, ami-1a2b3c4d.</p>
@@ -99,7 +100,7 @@ namespace Model
     /**
      * <p>The IDs of one or more resources to tag. For example, ami-1a2b3c4d.</p>
      */
-    inline CreateTagsRequest& AddResources(Aws::String&& value) { m_resourcesHasBeenSet = true; m_resources.push_back(value); return *this; }
+    inline CreateTagsRequest& AddResources(Aws::String&& value) { m_resourcesHasBeenSet = true; m_resources.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The IDs of one or more resources to tag. For example, ami-1a2b3c4d.</p>
@@ -125,7 +126,7 @@ namespace Model
      * don't want the tag to have a value, specify the parameter with no value, and we
      * set the value to an empty string. </p>
      */
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = value; }
+    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
      * <p>One or more tags. The <code>value</code> parameter is required, but if you
@@ -139,7 +140,7 @@ namespace Model
      * don't want the tag to have a value, specify the parameter with no value, and we
      * set the value to an empty string. </p>
      */
-    inline CreateTagsRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(value); return *this;}
+    inline CreateTagsRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
      * <p>One or more tags. The <code>value</code> parameter is required, but if you
@@ -153,7 +154,7 @@ namespace Model
      * don't want the tag to have a value, specify the parameter with no value, and we
      * set the value to an empty string. </p>
      */
-    inline CreateTagsRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
+    inline CreateTagsRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
   private:
     bool m_dryRun;

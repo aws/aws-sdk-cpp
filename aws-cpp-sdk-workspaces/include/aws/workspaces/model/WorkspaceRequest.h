@@ -18,6 +18,7 @@
 #include <aws/workspaces/model/WorkspaceProperties.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/workspaces/model/Tag.h>
+#include <utility>
 
 namespace Aws
 {
@@ -66,7 +67,7 @@ namespace Model
      * in. You can use the <a>DescribeWorkspaceDirectories</a> operation to obtain a
      * list of the directories that are available.</p>
      */
-    inline void SetDirectoryId(Aws::String&& value) { m_directoryIdHasBeenSet = true; m_directoryId = value; }
+    inline void SetDirectoryId(Aws::String&& value) { m_directoryIdHasBeenSet = true; m_directoryId = std::move(value); }
 
     /**
      * <p>The identifier of the AWS Directory Service directory to create the WorkSpace
@@ -87,7 +88,7 @@ namespace Model
      * in. You can use the <a>DescribeWorkspaceDirectories</a> operation to obtain a
      * list of the directories that are available.</p>
      */
-    inline WorkspaceRequest& WithDirectoryId(Aws::String&& value) { SetDirectoryId(value); return *this;}
+    inline WorkspaceRequest& WithDirectoryId(Aws::String&& value) { SetDirectoryId(std::move(value)); return *this;}
 
     /**
      * <p>The identifier of the AWS Directory Service directory to create the WorkSpace
@@ -115,7 +116,7 @@ namespace Model
      * the AWS Directory Service directory specified by the <code>DirectoryId</code>
      * member.</p>
      */
-    inline void SetUserName(Aws::String&& value) { m_userNameHasBeenSet = true; m_userName = value; }
+    inline void SetUserName(Aws::String&& value) { m_userNameHasBeenSet = true; m_userName = std::move(value); }
 
     /**
      * <p>The username that the WorkSpace is assigned to. This username must exist in
@@ -136,7 +137,7 @@ namespace Model
      * the AWS Directory Service directory specified by the <code>DirectoryId</code>
      * member.</p>
      */
-    inline WorkspaceRequest& WithUserName(Aws::String&& value) { SetUserName(value); return *this;}
+    inline WorkspaceRequest& WithUserName(Aws::String&& value) { SetUserName(std::move(value)); return *this;}
 
     /**
      * <p>The username that the WorkSpace is assigned to. This username must exist in
@@ -164,7 +165,7 @@ namespace Model
      * <a>DescribeWorkspaceBundles</a> operation to obtain a list of the bundles that
      * are available.</p>
      */
-    inline void SetBundleId(Aws::String&& value) { m_bundleIdHasBeenSet = true; m_bundleId = value; }
+    inline void SetBundleId(Aws::String&& value) { m_bundleIdHasBeenSet = true; m_bundleId = std::move(value); }
 
     /**
      * <p>The identifier of the bundle to create the WorkSpace from. You can use the
@@ -185,7 +186,7 @@ namespace Model
      * <a>DescribeWorkspaceBundles</a> operation to obtain a list of the bundles that
      * are available.</p>
      */
-    inline WorkspaceRequest& WithBundleId(Aws::String&& value) { SetBundleId(value); return *this;}
+    inline WorkspaceRequest& WithBundleId(Aws::String&& value) { SetBundleId(std::move(value)); return *this;}
 
     /**
      * <p>The identifier of the bundle to create the WorkSpace from. You can use the
@@ -207,7 +208,7 @@ namespace Model
     /**
      * <p>The KMS key used to encrypt data stored on your WorkSpace.</p>
      */
-    inline void SetVolumeEncryptionKey(Aws::String&& value) { m_volumeEncryptionKeyHasBeenSet = true; m_volumeEncryptionKey = value; }
+    inline void SetVolumeEncryptionKey(Aws::String&& value) { m_volumeEncryptionKeyHasBeenSet = true; m_volumeEncryptionKey = std::move(value); }
 
     /**
      * <p>The KMS key used to encrypt data stored on your WorkSpace.</p>
@@ -222,7 +223,7 @@ namespace Model
     /**
      * <p>The KMS key used to encrypt data stored on your WorkSpace.</p>
      */
-    inline WorkspaceRequest& WithVolumeEncryptionKey(Aws::String&& value) { SetVolumeEncryptionKey(value); return *this;}
+    inline WorkspaceRequest& WithVolumeEncryptionKey(Aws::String&& value) { SetVolumeEncryptionKey(std::move(value)); return *this;}
 
     /**
      * <p>The KMS key used to encrypt data stored on your WorkSpace.</p>
@@ -272,13 +273,13 @@ namespace Model
     inline void SetWorkspaceProperties(const WorkspaceProperties& value) { m_workspacePropertiesHasBeenSet = true; m_workspaceProperties = value; }
 
     
-    inline void SetWorkspaceProperties(WorkspaceProperties&& value) { m_workspacePropertiesHasBeenSet = true; m_workspaceProperties = value; }
+    inline void SetWorkspaceProperties(WorkspaceProperties&& value) { m_workspacePropertiesHasBeenSet = true; m_workspaceProperties = std::move(value); }
 
     
     inline WorkspaceRequest& WithWorkspaceProperties(const WorkspaceProperties& value) { SetWorkspaceProperties(value); return *this;}
 
     
-    inline WorkspaceRequest& WithWorkspaceProperties(WorkspaceProperties&& value) { SetWorkspaceProperties(value); return *this;}
+    inline WorkspaceRequest& WithWorkspaceProperties(WorkspaceProperties&& value) { SetWorkspaceProperties(std::move(value)); return *this;}
 
     /**
      * <p>The tags of the WorkSpace request.</p>
@@ -293,7 +294,7 @@ namespace Model
     /**
      * <p>The tags of the WorkSpace request.</p>
      */
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = value; }
+    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
      * <p>The tags of the WorkSpace request.</p>
@@ -303,7 +304,7 @@ namespace Model
     /**
      * <p>The tags of the WorkSpace request.</p>
      */
-    inline WorkspaceRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(value); return *this;}
+    inline WorkspaceRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
      * <p>The tags of the WorkSpace request.</p>
@@ -313,7 +314,7 @@ namespace Model
     /**
      * <p>The tags of the WorkSpace request.</p>
      */
-    inline WorkspaceRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
+    inline WorkspaceRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
   private:
     Aws::String m_directoryId;

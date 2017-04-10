@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/snowball/model/EventTriggerDefinition.h>
+#include <utility>
 
 namespace Aws
 {
@@ -61,7 +62,7 @@ namespace Model
      * <p>An Amazon Resource Name (ARN) that represents an AWS Lambda function to be
      * triggered by PUT object actions on the associated local Amazon S3 resource.</p>
      */
-    inline void SetLambdaArn(Aws::String&& value) { m_lambdaArnHasBeenSet = true; m_lambdaArn = value; }
+    inline void SetLambdaArn(Aws::String&& value) { m_lambdaArnHasBeenSet = true; m_lambdaArn = std::move(value); }
 
     /**
      * <p>An Amazon Resource Name (ARN) that represents an AWS Lambda function to be
@@ -79,7 +80,7 @@ namespace Model
      * <p>An Amazon Resource Name (ARN) that represents an AWS Lambda function to be
      * triggered by PUT object actions on the associated local Amazon S3 resource.</p>
      */
-    inline LambdaResource& WithLambdaArn(Aws::String&& value) { SetLambdaArn(value); return *this;}
+    inline LambdaResource& WithLambdaArn(Aws::String&& value) { SetLambdaArn(std::move(value)); return *this;}
 
     /**
      * <p>An Amazon Resource Name (ARN) that represents an AWS Lambda function to be
@@ -103,7 +104,7 @@ namespace Model
      * <p>The array of ARNs for <a>S3Resource</a> objects to trigger the
      * <a>LambdaResource</a> objects associated with this job.</p>
      */
-    inline void SetEventTriggers(Aws::Vector<EventTriggerDefinition>&& value) { m_eventTriggersHasBeenSet = true; m_eventTriggers = value; }
+    inline void SetEventTriggers(Aws::Vector<EventTriggerDefinition>&& value) { m_eventTriggersHasBeenSet = true; m_eventTriggers = std::move(value); }
 
     /**
      * <p>The array of ARNs for <a>S3Resource</a> objects to trigger the
@@ -115,7 +116,7 @@ namespace Model
      * <p>The array of ARNs for <a>S3Resource</a> objects to trigger the
      * <a>LambdaResource</a> objects associated with this job.</p>
      */
-    inline LambdaResource& WithEventTriggers(Aws::Vector<EventTriggerDefinition>&& value) { SetEventTriggers(value); return *this;}
+    inline LambdaResource& WithEventTriggers(Aws::Vector<EventTriggerDefinition>&& value) { SetEventTriggers(std::move(value)); return *this;}
 
     /**
      * <p>The array of ARNs for <a>S3Resource</a> objects to trigger the
@@ -127,7 +128,7 @@ namespace Model
      * <p>The array of ARNs for <a>S3Resource</a> objects to trigger the
      * <a>LambdaResource</a> objects associated with this job.</p>
      */
-    inline LambdaResource& AddEventTriggers(EventTriggerDefinition&& value) { m_eventTriggersHasBeenSet = true; m_eventTriggers.push_back(value); return *this; }
+    inline LambdaResource& AddEventTriggers(EventTriggerDefinition&& value) { m_eventTriggersHasBeenSet = true; m_eventTriggers.push_back(std::move(value)); return *this; }
 
   private:
     Aws::String m_lambdaArn;

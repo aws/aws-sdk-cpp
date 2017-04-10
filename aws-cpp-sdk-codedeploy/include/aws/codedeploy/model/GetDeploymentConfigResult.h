@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/codedeploy/CodeDeploy_EXPORTS.h>
 #include <aws/codedeploy/model/DeploymentConfigInfo.h>
+#include <utility>
 
 namespace Aws
 {
@@ -58,7 +59,7 @@ namespace Model
     /**
      * <p>Information about the deployment configuration.</p>
      */
-    inline void SetDeploymentConfigInfo(DeploymentConfigInfo&& value) { m_deploymentConfigInfo = value; }
+    inline void SetDeploymentConfigInfo(DeploymentConfigInfo&& value) { m_deploymentConfigInfo = std::move(value); }
 
     /**
      * <p>Information about the deployment configuration.</p>
@@ -68,7 +69,7 @@ namespace Model
     /**
      * <p>Information about the deployment configuration.</p>
      */
-    inline GetDeploymentConfigResult& WithDeploymentConfigInfo(DeploymentConfigInfo&& value) { SetDeploymentConfigInfo(value); return *this;}
+    inline GetDeploymentConfigResult& WithDeploymentConfigInfo(DeploymentConfigInfo&& value) { SetDeploymentConfigInfo(std::move(value)); return *this;}
 
   private:
     DeploymentConfigInfo m_deploymentConfigInfo;

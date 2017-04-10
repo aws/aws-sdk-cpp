@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/route53/Route53_EXPORTS.h>
 #include <aws/route53/model/ChangeInfo.h>
+#include <utility>
 
 namespace Aws
 {
@@ -64,7 +65,7 @@ namespace Model
      * zone.</p> <p>This element contains an ID that you use when performing a
      * <a>GetChange</a> action to get detailed information about the change.</p>
      */
-    inline void SetChangeInfo(ChangeInfo&& value) { m_changeInfo = value; }
+    inline void SetChangeInfo(ChangeInfo&& value) { m_changeInfo = std::move(value); }
 
     /**
      * <p>A complex type that contains information about changes made to your hosted
@@ -78,7 +79,7 @@ namespace Model
      * zone.</p> <p>This element contains an ID that you use when performing a
      * <a>GetChange</a> action to get detailed information about the change.</p>
      */
-    inline ChangeResourceRecordSetsResult& WithChangeInfo(ChangeInfo&& value) { SetChangeInfo(value); return *this;}
+    inline ChangeResourceRecordSetsResult& WithChangeInfo(ChangeInfo&& value) { SetChangeInfo(std::move(value)); return *this;}
 
   private:
     ChangeInfo m_changeInfo;

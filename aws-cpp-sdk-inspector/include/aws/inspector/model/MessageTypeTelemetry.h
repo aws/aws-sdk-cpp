@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/inspector/Inspector_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -57,7 +58,7 @@ namespace Model
     /**
      * <p>A specific type of behavioral data that is collected by the agent.</p>
      */
-    inline void SetMessageType(Aws::String&& value) { m_messageTypeHasBeenSet = true; m_messageType = value; }
+    inline void SetMessageType(Aws::String&& value) { m_messageTypeHasBeenSet = true; m_messageType = std::move(value); }
 
     /**
      * <p>A specific type of behavioral data that is collected by the agent.</p>
@@ -72,7 +73,7 @@ namespace Model
     /**
      * <p>A specific type of behavioral data that is collected by the agent.</p>
      */
-    inline MessageTypeTelemetry& WithMessageType(Aws::String&& value) { SetMessageType(value); return *this;}
+    inline MessageTypeTelemetry& WithMessageType(Aws::String&& value) { SetMessageType(std::move(value)); return *this;}
 
     /**
      * <p>A specific type of behavioral data that is collected by the agent.</p>

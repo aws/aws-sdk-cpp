@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/Filter.h>
+#include <utility>
 
 namespace Aws
 {
@@ -80,7 +81,7 @@ namespace Model
     /**
      * <p>One or more volume IDs.</p> <p>Default: Describes all your volumes.</p>
      */
-    inline void SetVolumeIds(Aws::Vector<Aws::String>&& value) { m_volumeIdsHasBeenSet = true; m_volumeIds = value; }
+    inline void SetVolumeIds(Aws::Vector<Aws::String>&& value) { m_volumeIdsHasBeenSet = true; m_volumeIds = std::move(value); }
 
     /**
      * <p>One or more volume IDs.</p> <p>Default: Describes all your volumes.</p>
@@ -90,7 +91,7 @@ namespace Model
     /**
      * <p>One or more volume IDs.</p> <p>Default: Describes all your volumes.</p>
      */
-    inline DescribeVolumeStatusRequest& WithVolumeIds(Aws::Vector<Aws::String>&& value) { SetVolumeIds(value); return *this;}
+    inline DescribeVolumeStatusRequest& WithVolumeIds(Aws::Vector<Aws::String>&& value) { SetVolumeIds(std::move(value)); return *this;}
 
     /**
      * <p>One or more volume IDs.</p> <p>Default: Describes all your volumes.</p>
@@ -100,7 +101,7 @@ namespace Model
     /**
      * <p>One or more volume IDs.</p> <p>Default: Describes all your volumes.</p>
      */
-    inline DescribeVolumeStatusRequest& AddVolumeIds(Aws::String&& value) { m_volumeIdsHasBeenSet = true; m_volumeIds.push_back(value); return *this; }
+    inline DescribeVolumeStatusRequest& AddVolumeIds(Aws::String&& value) { m_volumeIdsHasBeenSet = true; m_volumeIds.push_back(std::move(value)); return *this; }
 
     /**
      * <p>One or more volume IDs.</p> <p>Default: Describes all your volumes.</p>
@@ -189,7 +190,7 @@ namespace Model
      * The status of the volume (<code>ok</code> | <code>impaired</code> |
      * <code>warning</code> | <code>insufficient-data</code>).</p> </li> </ul>
      */
-    inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = value; }
+    inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
 
     /**
      * <p>One or more filters.</p> <ul> <li> <p> <code>action.code</code> - The action
@@ -245,7 +246,7 @@ namespace Model
      * The status of the volume (<code>ok</code> | <code>impaired</code> |
      * <code>warning</code> | <code>insufficient-data</code>).</p> </li> </ul>
      */
-    inline DescribeVolumeStatusRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(value); return *this;}
+    inline DescribeVolumeStatusRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(std::move(value)); return *this;}
 
     /**
      * <p>One or more filters.</p> <ul> <li> <p> <code>action.code</code> - The action
@@ -301,7 +302,7 @@ namespace Model
      * The status of the volume (<code>ok</code> | <code>impaired</code> |
      * <code>warning</code> | <code>insufficient-data</code>).</p> </li> </ul>
      */
-    inline DescribeVolumeStatusRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
+    inline DescribeVolumeStatusRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The <code>NextToken</code> value to include in a future
@@ -328,7 +329,7 @@ namespace Model
      * of results. This value is <code>null</code> when there are no more results to
      * return.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
      * <p>The <code>NextToken</code> value to include in a future
@@ -355,7 +356,7 @@ namespace Model
      * of results. This value is <code>null</code> when there are no more results to
      * return.</p>
      */
-    inline DescribeVolumeStatusRequest& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline DescribeVolumeStatusRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>The <code>NextToken</code> value to include in a future

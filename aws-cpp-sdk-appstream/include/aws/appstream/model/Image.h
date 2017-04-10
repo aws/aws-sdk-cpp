@@ -22,6 +22,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/appstream/model/Application.h>
+#include <utility>
 
 namespace Aws
 {
@@ -64,7 +65,7 @@ namespace Model
     /**
      * <p>The unique identifier for the image.</p>
      */
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p>The unique identifier for the image.</p>
@@ -79,7 +80,7 @@ namespace Model
     /**
      * <p>The unique identifier for the image.</p>
      */
-    inline Image& WithName(Aws::String&& value) { SetName(value); return *this;}
+    inline Image& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>The unique identifier for the image.</p>
@@ -99,7 +100,7 @@ namespace Model
     /**
      * <p>The ARN for the image.</p>
      */
-    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = value; }
+    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
 
     /**
      * <p>The ARN for the image.</p>
@@ -114,7 +115,7 @@ namespace Model
     /**
      * <p>The ARN for the image.</p>
      */
-    inline Image& WithArn(Aws::String&& value) { SetArn(value); return *this;}
+    inline Image& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
 
     /**
      * <p>The ARN for the image.</p>
@@ -134,7 +135,7 @@ namespace Model
     /**
      * <p>The source image ARN from which this image was created.</p>
      */
-    inline void SetBaseImageArn(Aws::String&& value) { m_baseImageArnHasBeenSet = true; m_baseImageArn = value; }
+    inline void SetBaseImageArn(Aws::String&& value) { m_baseImageArnHasBeenSet = true; m_baseImageArn = std::move(value); }
 
     /**
      * <p>The source image ARN from which this image was created.</p>
@@ -149,7 +150,7 @@ namespace Model
     /**
      * <p>The source image ARN from which this image was created.</p>
      */
-    inline Image& WithBaseImageArn(Aws::String&& value) { SetBaseImageArn(value); return *this;}
+    inline Image& WithBaseImageArn(Aws::String&& value) { SetBaseImageArn(std::move(value)); return *this;}
 
     /**
      * <p>The source image ARN from which this image was created.</p>
@@ -169,7 +170,7 @@ namespace Model
     /**
      * <p>The display name for the image.</p>
      */
-    inline void SetDisplayName(Aws::String&& value) { m_displayNameHasBeenSet = true; m_displayName = value; }
+    inline void SetDisplayName(Aws::String&& value) { m_displayNameHasBeenSet = true; m_displayName = std::move(value); }
 
     /**
      * <p>The display name for the image.</p>
@@ -184,7 +185,7 @@ namespace Model
     /**
      * <p>The display name for the image.</p>
      */
-    inline Image& WithDisplayName(Aws::String&& value) { SetDisplayName(value); return *this;}
+    inline Image& WithDisplayName(Aws::String&& value) { SetDisplayName(std::move(value)); return *this;}
 
     /**
      * <p>The display name for the image.</p>
@@ -210,7 +211,7 @@ namespace Model
      * <b>AVAILABLE</b> if image creation succeeds and <b>FAILED</b> if image creation
      * has failed.</p>
      */
-    inline void SetState(ImageState&& value) { m_stateHasBeenSet = true; m_state = value; }
+    inline void SetState(ImageState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
 
     /**
      * <p>The image starts in the <b>PENDING</b> state, and then moves to
@@ -224,7 +225,7 @@ namespace Model
      * <b>AVAILABLE</b> if image creation succeeds and <b>FAILED</b> if image creation
      * has failed.</p>
      */
-    inline Image& WithState(ImageState&& value) { SetState(value); return *this;}
+    inline Image& WithState(ImageState&& value) { SetState(std::move(value)); return *this;}
 
     /**
      * <p>The visibility of an image to the user; images can be public or private.</p>
@@ -239,7 +240,7 @@ namespace Model
     /**
      * <p>The visibility of an image to the user; images can be public or private.</p>
      */
-    inline void SetVisibility(VisibilityType&& value) { m_visibilityHasBeenSet = true; m_visibility = value; }
+    inline void SetVisibility(VisibilityType&& value) { m_visibilityHasBeenSet = true; m_visibility = std::move(value); }
 
     /**
      * <p>The visibility of an image to the user; images can be public or private.</p>
@@ -249,7 +250,7 @@ namespace Model
     /**
      * <p>The visibility of an image to the user; images can be public or private.</p>
      */
-    inline Image& WithVisibility(VisibilityType&& value) { SetVisibility(value); return *this;}
+    inline Image& WithVisibility(VisibilityType&& value) { SetVisibility(std::move(value)); return *this;}
 
     /**
      * <p>The operating system platform of the image.</p>
@@ -264,7 +265,7 @@ namespace Model
     /**
      * <p>The operating system platform of the image.</p>
      */
-    inline void SetPlatform(PlatformType&& value) { m_platformHasBeenSet = true; m_platform = value; }
+    inline void SetPlatform(PlatformType&& value) { m_platformHasBeenSet = true; m_platform = std::move(value); }
 
     /**
      * <p>The operating system platform of the image.</p>
@@ -274,7 +275,7 @@ namespace Model
     /**
      * <p>The operating system platform of the image.</p>
      */
-    inline Image& WithPlatform(PlatformType&& value) { SetPlatform(value); return *this;}
+    inline Image& WithPlatform(PlatformType&& value) { SetPlatform(std::move(value)); return *this;}
 
     /**
      * <p>A meaningful description for the image.</p>
@@ -289,7 +290,7 @@ namespace Model
     /**
      * <p>A meaningful description for the image.</p>
      */
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = value; }
+    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
      * <p>A meaningful description for the image.</p>
@@ -304,7 +305,7 @@ namespace Model
     /**
      * <p>A meaningful description for the image.</p>
      */
-    inline Image& WithDescription(Aws::String&& value) { SetDescription(value); return *this;}
+    inline Image& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
      * <p>A meaningful description for the image.</p>
@@ -324,7 +325,7 @@ namespace Model
     /**
      * <p>The reason why the last state change occurred.</p>
      */
-    inline void SetStateChangeReason(ImageStateChangeReason&& value) { m_stateChangeReasonHasBeenSet = true; m_stateChangeReason = value; }
+    inline void SetStateChangeReason(ImageStateChangeReason&& value) { m_stateChangeReasonHasBeenSet = true; m_stateChangeReason = std::move(value); }
 
     /**
      * <p>The reason why the last state change occurred.</p>
@@ -334,7 +335,7 @@ namespace Model
     /**
      * <p>The reason why the last state change occurred.</p>
      */
-    inline Image& WithStateChangeReason(ImageStateChangeReason&& value) { SetStateChangeReason(value); return *this;}
+    inline Image& WithStateChangeReason(ImageStateChangeReason&& value) { SetStateChangeReason(std::move(value)); return *this;}
 
     /**
      * <p>The applications associated with an image.</p>
@@ -349,7 +350,7 @@ namespace Model
     /**
      * <p>The applications associated with an image.</p>
      */
-    inline void SetApplications(Aws::Vector<Application>&& value) { m_applicationsHasBeenSet = true; m_applications = value; }
+    inline void SetApplications(Aws::Vector<Application>&& value) { m_applicationsHasBeenSet = true; m_applications = std::move(value); }
 
     /**
      * <p>The applications associated with an image.</p>
@@ -359,7 +360,7 @@ namespace Model
     /**
      * <p>The applications associated with an image.</p>
      */
-    inline Image& WithApplications(Aws::Vector<Application>&& value) { SetApplications(value); return *this;}
+    inline Image& WithApplications(Aws::Vector<Application>&& value) { SetApplications(std::move(value)); return *this;}
 
     /**
      * <p>The applications associated with an image.</p>
@@ -369,7 +370,7 @@ namespace Model
     /**
      * <p>The applications associated with an image.</p>
      */
-    inline Image& AddApplications(Application&& value) { m_applicationsHasBeenSet = true; m_applications.push_back(value); return *this; }
+    inline Image& AddApplications(Application&& value) { m_applicationsHasBeenSet = true; m_applications.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The timestamp when the image was created.</p>
@@ -384,7 +385,7 @@ namespace Model
     /**
      * <p>The timestamp when the image was created.</p>
      */
-    inline void SetCreatedTime(Aws::Utils::DateTime&& value) { m_createdTimeHasBeenSet = true; m_createdTime = value; }
+    inline void SetCreatedTime(Aws::Utils::DateTime&& value) { m_createdTimeHasBeenSet = true; m_createdTime = std::move(value); }
 
     /**
      * <p>The timestamp when the image was created.</p>
@@ -394,7 +395,7 @@ namespace Model
     /**
      * <p>The timestamp when the image was created.</p>
      */
-    inline Image& WithCreatedTime(Aws::Utils::DateTime&& value) { SetCreatedTime(value); return *this;}
+    inline Image& WithCreatedTime(Aws::Utils::DateTime&& value) { SetCreatedTime(std::move(value)); return *this;}
 
   private:
     Aws::String m_name;

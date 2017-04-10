@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/appstream/model/Stack.h>
+#include <utility>
 
 namespace Aws
 {
@@ -54,7 +55,7 @@ namespace Model
     /**
      * <p>The list of stack details.</p>
      */
-    inline void SetStacks(Aws::Vector<Stack>&& value) { m_stacks = value; }
+    inline void SetStacks(Aws::Vector<Stack>&& value) { m_stacks = std::move(value); }
 
     /**
      * <p>The list of stack details.</p>
@@ -64,7 +65,7 @@ namespace Model
     /**
      * <p>The list of stack details.</p>
      */
-    inline DescribeStacksResult& WithStacks(Aws::Vector<Stack>&& value) { SetStacks(value); return *this;}
+    inline DescribeStacksResult& WithStacks(Aws::Vector<Stack>&& value) { SetStacks(std::move(value)); return *this;}
 
     /**
      * <p>The list of stack details.</p>
@@ -74,7 +75,7 @@ namespace Model
     /**
      * <p>The list of stack details.</p>
      */
-    inline DescribeStacksResult& AddStacks(Stack&& value) { m_stacks.push_back(value); return *this; }
+    inline DescribeStacksResult& AddStacks(Stack&& value) { m_stacks.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The pagination token to use to retrieve the next page of results for this
@@ -92,7 +93,7 @@ namespace Model
      * <p>The pagination token to use to retrieve the next page of results for this
      * operation. If there are no more pages, this value is null.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
      * <p>The pagination token to use to retrieve the next page of results for this
@@ -110,7 +111,7 @@ namespace Model
      * <p>The pagination token to use to retrieve the next page of results for this
      * operation. If there are no more pages, this value is null.</p>
      */
-    inline DescribeStacksResult& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline DescribeStacksResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>The pagination token to use to retrieve the next page of results for this

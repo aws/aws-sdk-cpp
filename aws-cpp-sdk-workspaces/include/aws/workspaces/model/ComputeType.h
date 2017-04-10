@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/workspaces/WorkSpaces_EXPORTS.h>
 #include <aws/workspaces/model/Compute.h>
+#include <utility>
 
 namespace Aws
 {
@@ -57,7 +58,7 @@ namespace Model
     /**
      * <p>The name of the compute type for the bundle.</p>
      */
-    inline void SetName(Compute&& value) { m_nameHasBeenSet = true; m_name = value; }
+    inline void SetName(Compute&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p>The name of the compute type for the bundle.</p>
@@ -67,7 +68,7 @@ namespace Model
     /**
      * <p>The name of the compute type for the bundle.</p>
      */
-    inline ComputeType& WithName(Compute&& value) { SetName(value); return *this;}
+    inline ComputeType& WithName(Compute&& value) { SetName(std::move(value)); return *this;}
 
   private:
     Compute m_name;

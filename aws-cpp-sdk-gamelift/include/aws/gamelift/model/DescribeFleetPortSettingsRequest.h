@@ -16,6 +16,7 @@
 #include <aws/gamelift/GameLift_EXPORTS.h>
 #include <aws/gamelift/GameLiftRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -51,7 +52,7 @@ namespace Model
     /**
      * <p>Unique identifier for a fleet to retrieve port settings for.</p>
      */
-    inline void SetFleetId(Aws::String&& value) { m_fleetIdHasBeenSet = true; m_fleetId = value; }
+    inline void SetFleetId(Aws::String&& value) { m_fleetIdHasBeenSet = true; m_fleetId = std::move(value); }
 
     /**
      * <p>Unique identifier for a fleet to retrieve port settings for.</p>
@@ -66,7 +67,7 @@ namespace Model
     /**
      * <p>Unique identifier for a fleet to retrieve port settings for.</p>
      */
-    inline DescribeFleetPortSettingsRequest& WithFleetId(Aws::String&& value) { SetFleetId(value); return *this;}
+    inline DescribeFleetPortSettingsRequest& WithFleetId(Aws::String&& value) { SetFleetId(std::move(value)); return *this;}
 
     /**
      * <p>Unique identifier for a fleet to retrieve port settings for.</p>

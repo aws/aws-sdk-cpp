@@ -18,6 +18,7 @@
 #include <aws/ec2/model/DiskImageDetail.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/VolumeDetail.h>
+#include <utility>
 
 namespace Aws
 {
@@ -61,7 +62,7 @@ namespace Model
     /**
      * <p>Information about the disk image.</p>
      */
-    inline void SetImage(DiskImageDetail&& value) { m_imageHasBeenSet = true; m_image = value; }
+    inline void SetImage(DiskImageDetail&& value) { m_imageHasBeenSet = true; m_image = std::move(value); }
 
     /**
      * <p>Information about the disk image.</p>
@@ -71,7 +72,7 @@ namespace Model
     /**
      * <p>Information about the disk image.</p>
      */
-    inline DiskImage& WithImage(DiskImageDetail&& value) { SetImage(value); return *this;}
+    inline DiskImage& WithImage(DiskImageDetail&& value) { SetImage(std::move(value)); return *this;}
 
     /**
      * <p>A description of the disk image.</p>
@@ -86,7 +87,7 @@ namespace Model
     /**
      * <p>A description of the disk image.</p>
      */
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = value; }
+    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
      * <p>A description of the disk image.</p>
@@ -101,7 +102,7 @@ namespace Model
     /**
      * <p>A description of the disk image.</p>
      */
-    inline DiskImage& WithDescription(Aws::String&& value) { SetDescription(value); return *this;}
+    inline DiskImage& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
      * <p>A description of the disk image.</p>
@@ -121,7 +122,7 @@ namespace Model
     /**
      * <p>Information about the volume.</p>
      */
-    inline void SetVolume(VolumeDetail&& value) { m_volumeHasBeenSet = true; m_volume = value; }
+    inline void SetVolume(VolumeDetail&& value) { m_volumeHasBeenSet = true; m_volume = std::move(value); }
 
     /**
      * <p>Information about the volume.</p>
@@ -131,7 +132,7 @@ namespace Model
     /**
      * <p>Information about the volume.</p>
      */
-    inline DiskImage& WithVolume(VolumeDetail&& value) { SetVolume(value); return *this;}
+    inline DiskImage& WithVolume(VolumeDetail&& value) { SetVolume(std::move(value)); return *this;}
 
   private:
     DiskImageDetail m_image;

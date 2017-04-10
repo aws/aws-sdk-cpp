@@ -16,6 +16,7 @@
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -60,7 +61,7 @@ namespace Model
     /**
      * <p>The address of the Elastic IP address bound to the network interface.</p>
      */
-    inline void SetPublicIp(Aws::String&& value) { m_publicIpHasBeenSet = true; m_publicIp = value; }
+    inline void SetPublicIp(Aws::String&& value) { m_publicIpHasBeenSet = true; m_publicIp = std::move(value); }
 
     /**
      * <p>The address of the Elastic IP address bound to the network interface.</p>
@@ -75,7 +76,7 @@ namespace Model
     /**
      * <p>The address of the Elastic IP address bound to the network interface.</p>
      */
-    inline NetworkInterfaceAssociation& WithPublicIp(Aws::String&& value) { SetPublicIp(value); return *this;}
+    inline NetworkInterfaceAssociation& WithPublicIp(Aws::String&& value) { SetPublicIp(std::move(value)); return *this;}
 
     /**
      * <p>The address of the Elastic IP address bound to the network interface.</p>
@@ -95,7 +96,7 @@ namespace Model
     /**
      * <p>The public DNS name.</p>
      */
-    inline void SetPublicDnsName(Aws::String&& value) { m_publicDnsNameHasBeenSet = true; m_publicDnsName = value; }
+    inline void SetPublicDnsName(Aws::String&& value) { m_publicDnsNameHasBeenSet = true; m_publicDnsName = std::move(value); }
 
     /**
      * <p>The public DNS name.</p>
@@ -110,7 +111,7 @@ namespace Model
     /**
      * <p>The public DNS name.</p>
      */
-    inline NetworkInterfaceAssociation& WithPublicDnsName(Aws::String&& value) { SetPublicDnsName(value); return *this;}
+    inline NetworkInterfaceAssociation& WithPublicDnsName(Aws::String&& value) { SetPublicDnsName(std::move(value)); return *this;}
 
     /**
      * <p>The public DNS name.</p>
@@ -130,7 +131,7 @@ namespace Model
     /**
      * <p>The ID of the Elastic IP address owner.</p>
      */
-    inline void SetIpOwnerId(Aws::String&& value) { m_ipOwnerIdHasBeenSet = true; m_ipOwnerId = value; }
+    inline void SetIpOwnerId(Aws::String&& value) { m_ipOwnerIdHasBeenSet = true; m_ipOwnerId = std::move(value); }
 
     /**
      * <p>The ID of the Elastic IP address owner.</p>
@@ -145,7 +146,7 @@ namespace Model
     /**
      * <p>The ID of the Elastic IP address owner.</p>
      */
-    inline NetworkInterfaceAssociation& WithIpOwnerId(Aws::String&& value) { SetIpOwnerId(value); return *this;}
+    inline NetworkInterfaceAssociation& WithIpOwnerId(Aws::String&& value) { SetIpOwnerId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the Elastic IP address owner.</p>
@@ -165,7 +166,7 @@ namespace Model
     /**
      * <p>The allocation ID.</p>
      */
-    inline void SetAllocationId(Aws::String&& value) { m_allocationIdHasBeenSet = true; m_allocationId = value; }
+    inline void SetAllocationId(Aws::String&& value) { m_allocationIdHasBeenSet = true; m_allocationId = std::move(value); }
 
     /**
      * <p>The allocation ID.</p>
@@ -180,7 +181,7 @@ namespace Model
     /**
      * <p>The allocation ID.</p>
      */
-    inline NetworkInterfaceAssociation& WithAllocationId(Aws::String&& value) { SetAllocationId(value); return *this;}
+    inline NetworkInterfaceAssociation& WithAllocationId(Aws::String&& value) { SetAllocationId(std::move(value)); return *this;}
 
     /**
      * <p>The allocation ID.</p>
@@ -200,7 +201,7 @@ namespace Model
     /**
      * <p>The association ID.</p>
      */
-    inline void SetAssociationId(Aws::String&& value) { m_associationIdHasBeenSet = true; m_associationId = value; }
+    inline void SetAssociationId(Aws::String&& value) { m_associationIdHasBeenSet = true; m_associationId = std::move(value); }
 
     /**
      * <p>The association ID.</p>
@@ -215,7 +216,7 @@ namespace Model
     /**
      * <p>The association ID.</p>
      */
-    inline NetworkInterfaceAssociation& WithAssociationId(Aws::String&& value) { SetAssociationId(value); return *this;}
+    inline NetworkInterfaceAssociation& WithAssociationId(Aws::String&& value) { SetAssociationId(std::move(value)); return *this;}
 
     /**
      * <p>The association ID.</p>

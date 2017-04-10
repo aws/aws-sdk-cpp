@@ -16,6 +16,7 @@
 #include <aws/cloudsearch/CloudSearch_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -55,7 +56,7 @@ namespace Model
     inline void SetExpressionName(const Aws::String& value) { m_expressionNameHasBeenSet = true; m_expressionName = value; }
 
     
-    inline void SetExpressionName(Aws::String&& value) { m_expressionNameHasBeenSet = true; m_expressionName = value; }
+    inline void SetExpressionName(Aws::String&& value) { m_expressionNameHasBeenSet = true; m_expressionName = std::move(value); }
 
     
     inline void SetExpressionName(const char* value) { m_expressionNameHasBeenSet = true; m_expressionName.assign(value); }
@@ -64,7 +65,7 @@ namespace Model
     inline Expression& WithExpressionName(const Aws::String& value) { SetExpressionName(value); return *this;}
 
     
-    inline Expression& WithExpressionName(Aws::String&& value) { SetExpressionName(value); return *this;}
+    inline Expression& WithExpressionName(Aws::String&& value) { SetExpressionName(std::move(value)); return *this;}
 
     
     inline Expression& WithExpressionName(const char* value) { SetExpressionName(value); return *this;}
@@ -76,7 +77,7 @@ namespace Model
     inline void SetExpressionValue(const Aws::String& value) { m_expressionValueHasBeenSet = true; m_expressionValue = value; }
 
     
-    inline void SetExpressionValue(Aws::String&& value) { m_expressionValueHasBeenSet = true; m_expressionValue = value; }
+    inline void SetExpressionValue(Aws::String&& value) { m_expressionValueHasBeenSet = true; m_expressionValue = std::move(value); }
 
     
     inline void SetExpressionValue(const char* value) { m_expressionValueHasBeenSet = true; m_expressionValue.assign(value); }
@@ -85,7 +86,7 @@ namespace Model
     inline Expression& WithExpressionValue(const Aws::String& value) { SetExpressionValue(value); return *this;}
 
     
-    inline Expression& WithExpressionValue(Aws::String&& value) { SetExpressionValue(value); return *this;}
+    inline Expression& WithExpressionValue(Aws::String&& value) { SetExpressionValue(std::move(value)); return *this;}
 
     
     inline Expression& WithExpressionValue(const char* value) { SetExpressionValue(value); return *this;}

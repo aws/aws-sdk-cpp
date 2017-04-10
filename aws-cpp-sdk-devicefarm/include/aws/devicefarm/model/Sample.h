@@ -16,6 +16,7 @@
 #include <aws/devicefarm/DeviceFarm_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/devicefarm/model/SampleType.h>
+#include <utility>
 
 namespace Aws
 {
@@ -57,7 +58,7 @@ namespace Model
     /**
      * <p>The sample's ARN.</p>
      */
-    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = value; }
+    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
 
     /**
      * <p>The sample's ARN.</p>
@@ -72,7 +73,7 @@ namespace Model
     /**
      * <p>The sample's ARN.</p>
      */
-    inline Sample& WithArn(Aws::String&& value) { SetArn(value); return *this;}
+    inline Sample& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
 
     /**
      * <p>The sample's ARN.</p>
@@ -134,7 +135,7 @@ namespace Model
      * </li> <li> <p>TX</p> </li> <li> <p>TX_RATE: The total number of bytes per second
      * (TCP and UDP) that are received, by app process.</p> </li> </ul>
      */
-    inline void SetType(SampleType&& value) { m_typeHasBeenSet = true; m_type = value; }
+    inline void SetType(SampleType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
      * <p>The sample's type.</p> <p>Must be one of the following values:</p> <ul> <li>
@@ -172,7 +173,7 @@ namespace Model
      * </li> <li> <p>TX</p> </li> <li> <p>TX_RATE: The total number of bytes per second
      * (TCP and UDP) that are received, by app process.</p> </li> </ul>
      */
-    inline Sample& WithType(SampleType&& value) { SetType(value); return *this;}
+    inline Sample& WithType(SampleType&& value) { SetType(std::move(value)); return *this;}
 
     /**
      * <p>The pre-signed Amazon S3 URL that can be used with a corresponding GET
@@ -190,7 +191,7 @@ namespace Model
      * <p>The pre-signed Amazon S3 URL that can be used with a corresponding GET
      * request to download the sample's file.</p>
      */
-    inline void SetUrl(Aws::String&& value) { m_urlHasBeenSet = true; m_url = value; }
+    inline void SetUrl(Aws::String&& value) { m_urlHasBeenSet = true; m_url = std::move(value); }
 
     /**
      * <p>The pre-signed Amazon S3 URL that can be used with a corresponding GET
@@ -208,7 +209,7 @@ namespace Model
      * <p>The pre-signed Amazon S3 URL that can be used with a corresponding GET
      * request to download the sample's file.</p>
      */
-    inline Sample& WithUrl(Aws::String&& value) { SetUrl(value); return *this;}
+    inline Sample& WithUrl(Aws::String&& value) { SetUrl(std::move(value)); return *this;}
 
     /**
      * <p>The pre-signed Amazon S3 URL that can be used with a corresponding GET

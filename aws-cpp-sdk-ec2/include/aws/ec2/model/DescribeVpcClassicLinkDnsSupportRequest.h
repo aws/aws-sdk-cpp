@@ -17,6 +17,7 @@
 #include <aws/ec2/EC2Request.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -55,7 +56,7 @@ namespace Model
     /**
      * <p>One or more VPC IDs.</p>
      */
-    inline void SetVpcIds(Aws::Vector<Aws::String>&& value) { m_vpcIdsHasBeenSet = true; m_vpcIds = value; }
+    inline void SetVpcIds(Aws::Vector<Aws::String>&& value) { m_vpcIdsHasBeenSet = true; m_vpcIds = std::move(value); }
 
     /**
      * <p>One or more VPC IDs.</p>
@@ -65,7 +66,7 @@ namespace Model
     /**
      * <p>One or more VPC IDs.</p>
      */
-    inline DescribeVpcClassicLinkDnsSupportRequest& WithVpcIds(Aws::Vector<Aws::String>&& value) { SetVpcIds(value); return *this;}
+    inline DescribeVpcClassicLinkDnsSupportRequest& WithVpcIds(Aws::Vector<Aws::String>&& value) { SetVpcIds(std::move(value)); return *this;}
 
     /**
      * <p>One or more VPC IDs.</p>
@@ -75,7 +76,7 @@ namespace Model
     /**
      * <p>One or more VPC IDs.</p>
      */
-    inline DescribeVpcClassicLinkDnsSupportRequest& AddVpcIds(Aws::String&& value) { m_vpcIdsHasBeenSet = true; m_vpcIds.push_back(value); return *this; }
+    inline DescribeVpcClassicLinkDnsSupportRequest& AddVpcIds(Aws::String&& value) { m_vpcIdsHasBeenSet = true; m_vpcIds.push_back(std::move(value)); return *this; }
 
     /**
      * <p>One or more VPC IDs.</p>
@@ -119,7 +120,7 @@ namespace Model
      * <p>The token for the next set of items to return. (You received this token from
      * a prior call.)</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
      * <p>The token for the next set of items to return. (You received this token from
@@ -137,7 +138,7 @@ namespace Model
      * <p>The token for the next set of items to return. (You received this token from
      * a prior call.)</p>
      */
-    inline DescribeVpcClassicLinkDnsSupportRequest& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline DescribeVpcClassicLinkDnsSupportRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>The token for the next set of items to return. (You received this token from

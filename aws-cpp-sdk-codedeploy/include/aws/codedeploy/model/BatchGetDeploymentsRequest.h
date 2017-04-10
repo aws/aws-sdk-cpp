@@ -17,6 +17,7 @@
 #include <aws/codedeploy/CodeDeployRequest.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -53,7 +54,7 @@ namespace Model
     /**
      * <p>A list of deployment IDs, separated by spaces.</p>
      */
-    inline void SetDeploymentIds(Aws::Vector<Aws::String>&& value) { m_deploymentIdsHasBeenSet = true; m_deploymentIds = value; }
+    inline void SetDeploymentIds(Aws::Vector<Aws::String>&& value) { m_deploymentIdsHasBeenSet = true; m_deploymentIds = std::move(value); }
 
     /**
      * <p>A list of deployment IDs, separated by spaces.</p>
@@ -63,7 +64,7 @@ namespace Model
     /**
      * <p>A list of deployment IDs, separated by spaces.</p>
      */
-    inline BatchGetDeploymentsRequest& WithDeploymentIds(Aws::Vector<Aws::String>&& value) { SetDeploymentIds(value); return *this;}
+    inline BatchGetDeploymentsRequest& WithDeploymentIds(Aws::Vector<Aws::String>&& value) { SetDeploymentIds(std::move(value)); return *this;}
 
     /**
      * <p>A list of deployment IDs, separated by spaces.</p>
@@ -73,7 +74,7 @@ namespace Model
     /**
      * <p>A list of deployment IDs, separated by spaces.</p>
      */
-    inline BatchGetDeploymentsRequest& AddDeploymentIds(Aws::String&& value) { m_deploymentIdsHasBeenSet = true; m_deploymentIds.push_back(value); return *this; }
+    inline BatchGetDeploymentsRequest& AddDeploymentIds(Aws::String&& value) { m_deploymentIdsHasBeenSet = true; m_deploymentIds.push_back(std::move(value)); return *this; }
 
     /**
      * <p>A list of deployment IDs, separated by spaces.</p>

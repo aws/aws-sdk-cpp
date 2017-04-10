@@ -17,6 +17,7 @@
 #include <aws/cloudhsm/CloudHSMRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <utility>
 
 namespace Aws
 {
@@ -49,7 +50,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the AWS CloudHSM resource.</p>
      */
-    inline void SetResourceArn(Aws::String&& value) { m_resourceArnHasBeenSet = true; m_resourceArn = value; }
+    inline void SetResourceArn(Aws::String&& value) { m_resourceArnHasBeenSet = true; m_resourceArn = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the AWS CloudHSM resource.</p>
@@ -64,7 +65,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the AWS CloudHSM resource.</p>
      */
-    inline RemoveTagsFromResourceRequest& WithResourceArn(Aws::String&& value) { SetResourceArn(value); return *this;}
+    inline RemoveTagsFromResourceRequest& WithResourceArn(Aws::String&& value) { SetResourceArn(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the AWS CloudHSM resource.</p>
@@ -90,7 +91,7 @@ namespace Model
      * the value). To overwrite the value for an existing tag, use
      * <a>AddTagsToResource</a>.</p>
      */
-    inline void SetTagKeyList(Aws::Vector<Aws::String>&& value) { m_tagKeyListHasBeenSet = true; m_tagKeyList = value; }
+    inline void SetTagKeyList(Aws::Vector<Aws::String>&& value) { m_tagKeyListHasBeenSet = true; m_tagKeyList = std::move(value); }
 
     /**
      * <p>The tag key or keys to remove.</p> <p>Specify only the tag key to remove (not
@@ -104,7 +105,7 @@ namespace Model
      * the value). To overwrite the value for an existing tag, use
      * <a>AddTagsToResource</a>.</p>
      */
-    inline RemoveTagsFromResourceRequest& WithTagKeyList(Aws::Vector<Aws::String>&& value) { SetTagKeyList(value); return *this;}
+    inline RemoveTagsFromResourceRequest& WithTagKeyList(Aws::Vector<Aws::String>&& value) { SetTagKeyList(std::move(value)); return *this;}
 
     /**
      * <p>The tag key or keys to remove.</p> <p>Specify only the tag key to remove (not
@@ -118,7 +119,7 @@ namespace Model
      * the value). To overwrite the value for an existing tag, use
      * <a>AddTagsToResource</a>.</p>
      */
-    inline RemoveTagsFromResourceRequest& AddTagKeyList(Aws::String&& value) { m_tagKeyListHasBeenSet = true; m_tagKeyList.push_back(value); return *this; }
+    inline RemoveTagsFromResourceRequest& AddTagKeyList(Aws::String&& value) { m_tagKeyListHasBeenSet = true; m_tagKeyList.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The tag key or keys to remove.</p> <p>Specify only the tag key to remove (not

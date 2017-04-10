@@ -16,6 +16,7 @@
 #include <aws/opsworks/OpsWorks_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/opsworks/model/Volume.h>
+#include <utility>
 
 namespace Aws
 {
@@ -59,7 +60,7 @@ namespace Model
     /**
      * <p>An array of volume IDs.</p>
      */
-    inline void SetVolumes(Aws::Vector<Volume>&& value) { m_volumes = value; }
+    inline void SetVolumes(Aws::Vector<Volume>&& value) { m_volumes = std::move(value); }
 
     /**
      * <p>An array of volume IDs.</p>
@@ -69,7 +70,7 @@ namespace Model
     /**
      * <p>An array of volume IDs.</p>
      */
-    inline DescribeVolumesResult& WithVolumes(Aws::Vector<Volume>&& value) { SetVolumes(value); return *this;}
+    inline DescribeVolumesResult& WithVolumes(Aws::Vector<Volume>&& value) { SetVolumes(std::move(value)); return *this;}
 
     /**
      * <p>An array of volume IDs.</p>
@@ -79,7 +80,7 @@ namespace Model
     /**
      * <p>An array of volume IDs.</p>
      */
-    inline DescribeVolumesResult& AddVolumes(Volume&& value) { m_volumes.push_back(value); return *this; }
+    inline DescribeVolumesResult& AddVolumes(Volume&& value) { m_volumes.push_back(std::move(value)); return *this; }
 
   private:
     Aws::Vector<Volume> m_volumes;

@@ -16,6 +16,7 @@
 #include <aws/gamelift/GameLift_EXPORTS.h>
 #include <aws/gamelift/model/RoutingStrategyType.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -75,7 +76,7 @@ namespace Model
      * TerminalRoutingStrategyException with the <a>RoutingStrategy</a> message
      * embedded.</p> </li> </ul>
      */
-    inline void SetType(RoutingStrategyType&& value) { m_typeHasBeenSet = true; m_type = value; }
+    inline void SetType(RoutingStrategyType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
      * <p>Type of routing strategy.</p> <p>Possible routing types include the
@@ -97,7 +98,7 @@ namespace Model
      * TerminalRoutingStrategyException with the <a>RoutingStrategy</a> message
      * embedded.</p> </li> </ul>
      */
-    inline RoutingStrategy& WithType(RoutingStrategyType&& value) { SetType(value); return *this;}
+    inline RoutingStrategy& WithType(RoutingStrategyType&& value) { SetType(std::move(value)); return *this;}
 
     /**
      * <p>Unique identifier for a fleet that the alias points to.</p>
@@ -112,7 +113,7 @@ namespace Model
     /**
      * <p>Unique identifier for a fleet that the alias points to.</p>
      */
-    inline void SetFleetId(Aws::String&& value) { m_fleetIdHasBeenSet = true; m_fleetId = value; }
+    inline void SetFleetId(Aws::String&& value) { m_fleetIdHasBeenSet = true; m_fleetId = std::move(value); }
 
     /**
      * <p>Unique identifier for a fleet that the alias points to.</p>
@@ -127,7 +128,7 @@ namespace Model
     /**
      * <p>Unique identifier for a fleet that the alias points to.</p>
      */
-    inline RoutingStrategy& WithFleetId(Aws::String&& value) { SetFleetId(value); return *this;}
+    inline RoutingStrategy& WithFleetId(Aws::String&& value) { SetFleetId(std::move(value)); return *this;}
 
     /**
      * <p>Unique identifier for a fleet that the alias points to.</p>
@@ -147,7 +148,7 @@ namespace Model
     /**
      * <p>Message text to be used with a terminal routing strategy.</p>
      */
-    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = value; }
+    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
 
     /**
      * <p>Message text to be used with a terminal routing strategy.</p>
@@ -162,7 +163,7 @@ namespace Model
     /**
      * <p>Message text to be used with a terminal routing strategy.</p>
      */
-    inline RoutingStrategy& WithMessage(Aws::String&& value) { SetMessage(value); return *this;}
+    inline RoutingStrategy& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
 
     /**
      * <p>Message text to be used with a terminal routing strategy.</p>

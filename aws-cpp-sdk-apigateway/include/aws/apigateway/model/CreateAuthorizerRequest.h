@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/apigateway/model/AuthorizerType.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <utility>
 
 namespace Aws
 {
@@ -55,7 +56,7 @@ namespace Model
      * <p>The <a>RestApi</a> identifier under which the <a>Authorizer</a> will be
      * created.</p>
      */
-    inline void SetRestApiId(Aws::String&& value) { m_restApiIdHasBeenSet = true; m_restApiId = value; }
+    inline void SetRestApiId(Aws::String&& value) { m_restApiIdHasBeenSet = true; m_restApiId = std::move(value); }
 
     /**
      * <p>The <a>RestApi</a> identifier under which the <a>Authorizer</a> will be
@@ -73,7 +74,7 @@ namespace Model
      * <p>The <a>RestApi</a> identifier under which the <a>Authorizer</a> will be
      * created.</p>
      */
-    inline CreateAuthorizerRequest& WithRestApiId(Aws::String&& value) { SetRestApiId(value); return *this;}
+    inline CreateAuthorizerRequest& WithRestApiId(Aws::String&& value) { SetRestApiId(std::move(value)); return *this;}
 
     /**
      * <p>The <a>RestApi</a> identifier under which the <a>Authorizer</a> will be
@@ -94,7 +95,7 @@ namespace Model
     /**
      * <p>[Required] The name of the authorizer.</p>
      */
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p>[Required] The name of the authorizer.</p>
@@ -109,7 +110,7 @@ namespace Model
     /**
      * <p>[Required] The name of the authorizer.</p>
      */
-    inline CreateAuthorizerRequest& WithName(Aws::String&& value) { SetName(value); return *this;}
+    inline CreateAuthorizerRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>[Required] The name of the authorizer.</p>
@@ -129,7 +130,7 @@ namespace Model
     /**
      * <p>[Required] The type of the authorizer.</p>
      */
-    inline void SetType(AuthorizerType&& value) { m_typeHasBeenSet = true; m_type = value; }
+    inline void SetType(AuthorizerType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
      * <p>[Required] The type of the authorizer.</p>
@@ -139,7 +140,7 @@ namespace Model
     /**
      * <p>[Required] The type of the authorizer.</p>
      */
-    inline CreateAuthorizerRequest& WithType(AuthorizerType&& value) { SetType(value); return *this;}
+    inline CreateAuthorizerRequest& WithType(AuthorizerType&& value) { SetType(std::move(value)); return *this;}
 
     /**
      * <p>A list of the Cognito Your User Pool authorizer's provider ARNs.</p>
@@ -154,7 +155,7 @@ namespace Model
     /**
      * <p>A list of the Cognito Your User Pool authorizer's provider ARNs.</p>
      */
-    inline void SetProviderARNs(Aws::Vector<Aws::String>&& value) { m_providerARNsHasBeenSet = true; m_providerARNs = value; }
+    inline void SetProviderARNs(Aws::Vector<Aws::String>&& value) { m_providerARNsHasBeenSet = true; m_providerARNs = std::move(value); }
 
     /**
      * <p>A list of the Cognito Your User Pool authorizer's provider ARNs.</p>
@@ -164,7 +165,7 @@ namespace Model
     /**
      * <p>A list of the Cognito Your User Pool authorizer's provider ARNs.</p>
      */
-    inline CreateAuthorizerRequest& WithProviderARNs(Aws::Vector<Aws::String>&& value) { SetProviderARNs(value); return *this;}
+    inline CreateAuthorizerRequest& WithProviderARNs(Aws::Vector<Aws::String>&& value) { SetProviderARNs(std::move(value)); return *this;}
 
     /**
      * <p>A list of the Cognito Your User Pool authorizer's provider ARNs.</p>
@@ -174,7 +175,7 @@ namespace Model
     /**
      * <p>A list of the Cognito Your User Pool authorizer's provider ARNs.</p>
      */
-    inline CreateAuthorizerRequest& AddProviderARNs(Aws::String&& value) { m_providerARNsHasBeenSet = true; m_providerARNs.push_back(value); return *this; }
+    inline CreateAuthorizerRequest& AddProviderARNs(Aws::String&& value) { m_providerARNsHasBeenSet = true; m_providerARNs.push_back(std::move(value)); return *this; }
 
     /**
      * <p>A list of the Cognito Your User Pool authorizer's provider ARNs.</p>
@@ -197,7 +198,7 @@ namespace Model
      * <p>Optional customer-defined field, used in Swagger imports/exports. Has no
      * functional impact.</p>
      */
-    inline void SetAuthType(Aws::String&& value) { m_authTypeHasBeenSet = true; m_authType = value; }
+    inline void SetAuthType(Aws::String&& value) { m_authTypeHasBeenSet = true; m_authType = std::move(value); }
 
     /**
      * <p>Optional customer-defined field, used in Swagger imports/exports. Has no
@@ -215,7 +216,7 @@ namespace Model
      * <p>Optional customer-defined field, used in Swagger imports/exports. Has no
      * functional impact.</p>
      */
-    inline CreateAuthorizerRequest& WithAuthType(Aws::String&& value) { SetAuthType(value); return *this;}
+    inline CreateAuthorizerRequest& WithAuthType(Aws::String&& value) { SetAuthType(std::move(value)); return *this;}
 
     /**
      * <p>Optional customer-defined field, used in Swagger imports/exports. Has no
@@ -236,7 +237,7 @@ namespace Model
     /**
      * <p>[Required] Specifies the authorizer's Uniform Resource Identifier (URI).</p>
      */
-    inline void SetAuthorizerUri(Aws::String&& value) { m_authorizerUriHasBeenSet = true; m_authorizerUri = value; }
+    inline void SetAuthorizerUri(Aws::String&& value) { m_authorizerUriHasBeenSet = true; m_authorizerUri = std::move(value); }
 
     /**
      * <p>[Required] Specifies the authorizer's Uniform Resource Identifier (URI).</p>
@@ -251,7 +252,7 @@ namespace Model
     /**
      * <p>[Required] Specifies the authorizer's Uniform Resource Identifier (URI).</p>
      */
-    inline CreateAuthorizerRequest& WithAuthorizerUri(Aws::String&& value) { SetAuthorizerUri(value); return *this;}
+    inline CreateAuthorizerRequest& WithAuthorizerUri(Aws::String&& value) { SetAuthorizerUri(std::move(value)); return *this;}
 
     /**
      * <p>[Required] Specifies the authorizer's Uniform Resource Identifier (URI).</p>
@@ -271,7 +272,7 @@ namespace Model
     /**
      * <p>Specifies the credentials required for the authorizer, if any.</p>
      */
-    inline void SetAuthorizerCredentials(Aws::String&& value) { m_authorizerCredentialsHasBeenSet = true; m_authorizerCredentials = value; }
+    inline void SetAuthorizerCredentials(Aws::String&& value) { m_authorizerCredentialsHasBeenSet = true; m_authorizerCredentials = std::move(value); }
 
     /**
      * <p>Specifies the credentials required for the authorizer, if any.</p>
@@ -286,7 +287,7 @@ namespace Model
     /**
      * <p>Specifies the credentials required for the authorizer, if any.</p>
      */
-    inline CreateAuthorizerRequest& WithAuthorizerCredentials(Aws::String&& value) { SetAuthorizerCredentials(value); return *this;}
+    inline CreateAuthorizerRequest& WithAuthorizerCredentials(Aws::String&& value) { SetAuthorizerCredentials(std::move(value)); return *this;}
 
     /**
      * <p>Specifies the credentials required for the authorizer, if any.</p>
@@ -306,7 +307,7 @@ namespace Model
     /**
      * <p>[Required] The source of the identity in an incoming request.</p>
      */
-    inline void SetIdentitySource(Aws::String&& value) { m_identitySourceHasBeenSet = true; m_identitySource = value; }
+    inline void SetIdentitySource(Aws::String&& value) { m_identitySourceHasBeenSet = true; m_identitySource = std::move(value); }
 
     /**
      * <p>[Required] The source of the identity in an incoming request.</p>
@@ -321,7 +322,7 @@ namespace Model
     /**
      * <p>[Required] The source of the identity in an incoming request.</p>
      */
-    inline CreateAuthorizerRequest& WithIdentitySource(Aws::String&& value) { SetIdentitySource(value); return *this;}
+    inline CreateAuthorizerRequest& WithIdentitySource(Aws::String&& value) { SetIdentitySource(std::move(value)); return *this;}
 
     /**
      * <p>[Required] The source of the identity in an incoming request.</p>
@@ -341,7 +342,7 @@ namespace Model
     /**
      * <p>A validation expression for the incoming identity.</p>
      */
-    inline void SetIdentityValidationExpression(Aws::String&& value) { m_identityValidationExpressionHasBeenSet = true; m_identityValidationExpression = value; }
+    inline void SetIdentityValidationExpression(Aws::String&& value) { m_identityValidationExpressionHasBeenSet = true; m_identityValidationExpression = std::move(value); }
 
     /**
      * <p>A validation expression for the incoming identity.</p>
@@ -356,7 +357,7 @@ namespace Model
     /**
      * <p>A validation expression for the incoming identity.</p>
      */
-    inline CreateAuthorizerRequest& WithIdentityValidationExpression(Aws::String&& value) { SetIdentityValidationExpression(value); return *this;}
+    inline CreateAuthorizerRequest& WithIdentityValidationExpression(Aws::String&& value) { SetIdentityValidationExpression(std::move(value)); return *this;}
 
     /**
      * <p>A validation expression for the incoming identity.</p>

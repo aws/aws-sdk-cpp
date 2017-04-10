@@ -16,6 +16,7 @@
 #include <aws/snowball/Snowball_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/snowball/model/KeyRange.h>
+#include <utility>
 
 namespace Aws
 {
@@ -62,7 +63,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of an Amazon S3 bucket.</p>
      */
-    inline void SetBucketArn(Aws::String&& value) { m_bucketArnHasBeenSet = true; m_bucketArn = value; }
+    inline void SetBucketArn(Aws::String&& value) { m_bucketArnHasBeenSet = true; m_bucketArn = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of an Amazon S3 bucket.</p>
@@ -77,7 +78,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of an Amazon S3 bucket.</p>
      */
-    inline S3Resource& WithBucketArn(Aws::String&& value) { SetBucketArn(value); return *this;}
+    inline S3Resource& WithBucketArn(Aws::String&& value) { SetBucketArn(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of an Amazon S3 bucket.</p>
@@ -106,7 +107,7 @@ namespace Model
      * and has either an inclusive <code>BeginMarker</code>, an inclusive
      * <code>EndMarker</code>, or both. Ranges are UTF-8 binary sorted.</p>
      */
-    inline void SetKeyRange(KeyRange&& value) { m_keyRangeHasBeenSet = true; m_keyRange = value; }
+    inline void SetKeyRange(KeyRange&& value) { m_keyRangeHasBeenSet = true; m_keyRange = std::move(value); }
 
     /**
      * <p>For export jobs, you can provide an optional <code>KeyRange</code> within a
@@ -122,7 +123,7 @@ namespace Model
      * and has either an inclusive <code>BeginMarker</code>, an inclusive
      * <code>EndMarker</code>, or both. Ranges are UTF-8 binary sorted.</p>
      */
-    inline S3Resource& WithKeyRange(KeyRange&& value) { SetKeyRange(value); return *this;}
+    inline S3Resource& WithKeyRange(KeyRange&& value) { SetKeyRange(std::move(value)); return *this;}
 
   private:
     Aws::String m_bucketArn;

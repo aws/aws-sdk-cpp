@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/glacier/Glacier_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -57,7 +58,7 @@ namespace Model
     /**
      * <p>The relative URI path of the multipart upload ID Amazon Glacier created.</p>
      */
-    inline void SetLocation(Aws::String&& value) { m_location = value; }
+    inline void SetLocation(Aws::String&& value) { m_location = std::move(value); }
 
     /**
      * <p>The relative URI path of the multipart upload ID Amazon Glacier created.</p>
@@ -72,7 +73,7 @@ namespace Model
     /**
      * <p>The relative URI path of the multipart upload ID Amazon Glacier created.</p>
      */
-    inline InitiateMultipartUploadResult& WithLocation(Aws::String&& value) { SetLocation(value); return *this;}
+    inline InitiateMultipartUploadResult& WithLocation(Aws::String&& value) { SetLocation(std::move(value)); return *this;}
 
     /**
      * <p>The relative URI path of the multipart upload ID Amazon Glacier created.</p>
@@ -95,7 +96,7 @@ namespace Model
      * <p>The ID of the multipart upload. This value is also included as part of the
      * location.</p>
      */
-    inline void SetUploadId(Aws::String&& value) { m_uploadId = value; }
+    inline void SetUploadId(Aws::String&& value) { m_uploadId = std::move(value); }
 
     /**
      * <p>The ID of the multipart upload. This value is also included as part of the
@@ -113,7 +114,7 @@ namespace Model
      * <p>The ID of the multipart upload. This value is also included as part of the
      * location.</p>
      */
-    inline InitiateMultipartUploadResult& WithUploadId(Aws::String&& value) { SetUploadId(value); return *this;}
+    inline InitiateMultipartUploadResult& WithUploadId(Aws::String&& value) { SetUploadId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the multipart upload. This value is also included as part of the

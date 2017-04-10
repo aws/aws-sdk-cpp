@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/config/ConfigService_EXPORTS.h>
 #include <aws/config/model/ComplianceSummary.h>
+#include <utility>
 
 namespace Aws
 {
@@ -60,7 +61,7 @@ namespace Model
      * <p>The number of AWS Config rules that are compliant and the number that are
      * noncompliant, up to a maximum of 25 for each.</p>
      */
-    inline void SetComplianceSummary(ComplianceSummary&& value) { m_complianceSummary = value; }
+    inline void SetComplianceSummary(ComplianceSummary&& value) { m_complianceSummary = std::move(value); }
 
     /**
      * <p>The number of AWS Config rules that are compliant and the number that are
@@ -72,7 +73,7 @@ namespace Model
      * <p>The number of AWS Config rules that are compliant and the number that are
      * noncompliant, up to a maximum of 25 for each.</p>
      */
-    inline GetComplianceSummaryByConfigRuleResult& WithComplianceSummary(ComplianceSummary&& value) { SetComplianceSummary(value); return *this;}
+    inline GetComplianceSummaryByConfigRuleResult& WithComplianceSummary(ComplianceSummary&& value) { SetComplianceSummary(std::move(value)); return *this;}
 
   private:
     ComplianceSummary m_complianceSummary;

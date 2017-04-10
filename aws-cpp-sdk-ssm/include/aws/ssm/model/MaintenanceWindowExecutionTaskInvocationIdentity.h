@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ssm/model/MaintenanceWindowExecutionStatus.h>
 #include <aws/core/utils/DateTime.h>
+#include <utility>
 
 namespace Aws
 {
@@ -60,7 +61,7 @@ namespace Model
     /**
      * <p>The ID of the Maintenance Window execution that ran the task.</p>
      */
-    inline void SetWindowExecutionId(Aws::String&& value) { m_windowExecutionIdHasBeenSet = true; m_windowExecutionId = value; }
+    inline void SetWindowExecutionId(Aws::String&& value) { m_windowExecutionIdHasBeenSet = true; m_windowExecutionId = std::move(value); }
 
     /**
      * <p>The ID of the Maintenance Window execution that ran the task.</p>
@@ -75,7 +76,7 @@ namespace Model
     /**
      * <p>The ID of the Maintenance Window execution that ran the task.</p>
      */
-    inline MaintenanceWindowExecutionTaskInvocationIdentity& WithWindowExecutionId(Aws::String&& value) { SetWindowExecutionId(value); return *this;}
+    inline MaintenanceWindowExecutionTaskInvocationIdentity& WithWindowExecutionId(Aws::String&& value) { SetWindowExecutionId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the Maintenance Window execution that ran the task.</p>
@@ -98,7 +99,7 @@ namespace Model
      * <p>The ID of the specific task execution in the Maintenance Window
      * execution.</p>
      */
-    inline void SetTaskExecutionId(Aws::String&& value) { m_taskExecutionIdHasBeenSet = true; m_taskExecutionId = value; }
+    inline void SetTaskExecutionId(Aws::String&& value) { m_taskExecutionIdHasBeenSet = true; m_taskExecutionId = std::move(value); }
 
     /**
      * <p>The ID of the specific task execution in the Maintenance Window
@@ -116,7 +117,7 @@ namespace Model
      * <p>The ID of the specific task execution in the Maintenance Window
      * execution.</p>
      */
-    inline MaintenanceWindowExecutionTaskInvocationIdentity& WithTaskExecutionId(Aws::String&& value) { SetTaskExecutionId(value); return *this;}
+    inline MaintenanceWindowExecutionTaskInvocationIdentity& WithTaskExecutionId(Aws::String&& value) { SetTaskExecutionId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the specific task execution in the Maintenance Window
@@ -137,7 +138,7 @@ namespace Model
     /**
      * <p>The ID of the task invocation.</p>
      */
-    inline void SetInvocationId(Aws::String&& value) { m_invocationIdHasBeenSet = true; m_invocationId = value; }
+    inline void SetInvocationId(Aws::String&& value) { m_invocationIdHasBeenSet = true; m_invocationId = std::move(value); }
 
     /**
      * <p>The ID of the task invocation.</p>
@@ -152,7 +153,7 @@ namespace Model
     /**
      * <p>The ID of the task invocation.</p>
      */
-    inline MaintenanceWindowExecutionTaskInvocationIdentity& WithInvocationId(Aws::String&& value) { SetInvocationId(value); return *this;}
+    inline MaintenanceWindowExecutionTaskInvocationIdentity& WithInvocationId(Aws::String&& value) { SetInvocationId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the task invocation.</p>
@@ -175,7 +176,7 @@ namespace Model
      * <p>The ID of the action performed in the service that actually handled the task
      * invocation. If the task type is RUN_COMMAND, this value is the command ID.</p>
      */
-    inline void SetExecutionId(Aws::String&& value) { m_executionIdHasBeenSet = true; m_executionId = value; }
+    inline void SetExecutionId(Aws::String&& value) { m_executionIdHasBeenSet = true; m_executionId = std::move(value); }
 
     /**
      * <p>The ID of the action performed in the service that actually handled the task
@@ -193,7 +194,7 @@ namespace Model
      * <p>The ID of the action performed in the service that actually handled the task
      * invocation. If the task type is RUN_COMMAND, this value is the command ID.</p>
      */
-    inline MaintenanceWindowExecutionTaskInvocationIdentity& WithExecutionId(Aws::String&& value) { SetExecutionId(value); return *this;}
+    inline MaintenanceWindowExecutionTaskInvocationIdentity& WithExecutionId(Aws::String&& value) { SetExecutionId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the action performed in the service that actually handled the task
@@ -217,7 +218,7 @@ namespace Model
      * <p>The parameters that were provided for the invocation when it was
      * executed.</p>
      */
-    inline void SetParameters(Aws::String&& value) { m_parametersHasBeenSet = true; m_parameters = value; }
+    inline void SetParameters(Aws::String&& value) { m_parametersHasBeenSet = true; m_parameters = std::move(value); }
 
     /**
      * <p>The parameters that were provided for the invocation when it was
@@ -235,7 +236,7 @@ namespace Model
      * <p>The parameters that were provided for the invocation when it was
      * executed.</p>
      */
-    inline MaintenanceWindowExecutionTaskInvocationIdentity& WithParameters(Aws::String&& value) { SetParameters(value); return *this;}
+    inline MaintenanceWindowExecutionTaskInvocationIdentity& WithParameters(Aws::String&& value) { SetParameters(std::move(value)); return *this;}
 
     /**
      * <p>The parameters that were provided for the invocation when it was
@@ -256,7 +257,7 @@ namespace Model
     /**
      * <p>The status of the task invocation.</p>
      */
-    inline void SetStatus(MaintenanceWindowExecutionStatus&& value) { m_statusHasBeenSet = true; m_status = value; }
+    inline void SetStatus(MaintenanceWindowExecutionStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
      * <p>The status of the task invocation.</p>
@@ -266,7 +267,7 @@ namespace Model
     /**
      * <p>The status of the task invocation.</p>
      */
-    inline MaintenanceWindowExecutionTaskInvocationIdentity& WithStatus(MaintenanceWindowExecutionStatus&& value) { SetStatus(value); return *this;}
+    inline MaintenanceWindowExecutionTaskInvocationIdentity& WithStatus(MaintenanceWindowExecutionStatus&& value) { SetStatus(std::move(value)); return *this;}
 
     /**
      * <p>The details explaining the status of the task invocation. Only available for
@@ -284,7 +285,7 @@ namespace Model
      * <p>The details explaining the status of the task invocation. Only available for
      * certain Status values. </p>
      */
-    inline void SetStatusDetails(Aws::String&& value) { m_statusDetailsHasBeenSet = true; m_statusDetails = value; }
+    inline void SetStatusDetails(Aws::String&& value) { m_statusDetailsHasBeenSet = true; m_statusDetails = std::move(value); }
 
     /**
      * <p>The details explaining the status of the task invocation. Only available for
@@ -302,7 +303,7 @@ namespace Model
      * <p>The details explaining the status of the task invocation. Only available for
      * certain Status values. </p>
      */
-    inline MaintenanceWindowExecutionTaskInvocationIdentity& WithStatusDetails(Aws::String&& value) { SetStatusDetails(value); return *this;}
+    inline MaintenanceWindowExecutionTaskInvocationIdentity& WithStatusDetails(Aws::String&& value) { SetStatusDetails(std::move(value)); return *this;}
 
     /**
      * <p>The details explaining the status of the task invocation. Only available for
@@ -323,7 +324,7 @@ namespace Model
     /**
      * <p>The time the invocation started.</p>
      */
-    inline void SetStartTime(Aws::Utils::DateTime&& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
+    inline void SetStartTime(Aws::Utils::DateTime&& value) { m_startTimeHasBeenSet = true; m_startTime = std::move(value); }
 
     /**
      * <p>The time the invocation started.</p>
@@ -333,7 +334,7 @@ namespace Model
     /**
      * <p>The time the invocation started.</p>
      */
-    inline MaintenanceWindowExecutionTaskInvocationIdentity& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(value); return *this;}
+    inline MaintenanceWindowExecutionTaskInvocationIdentity& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(std::move(value)); return *this;}
 
     /**
      * <p>The time the invocation finished.</p>
@@ -348,7 +349,7 @@ namespace Model
     /**
      * <p>The time the invocation finished.</p>
      */
-    inline void SetEndTime(Aws::Utils::DateTime&& value) { m_endTimeHasBeenSet = true; m_endTime = value; }
+    inline void SetEndTime(Aws::Utils::DateTime&& value) { m_endTimeHasBeenSet = true; m_endTime = std::move(value); }
 
     /**
      * <p>The time the invocation finished.</p>
@@ -358,7 +359,7 @@ namespace Model
     /**
      * <p>The time the invocation finished.</p>
      */
-    inline MaintenanceWindowExecutionTaskInvocationIdentity& WithEndTime(Aws::Utils::DateTime&& value) { SetEndTime(value); return *this;}
+    inline MaintenanceWindowExecutionTaskInvocationIdentity& WithEndTime(Aws::Utils::DateTime&& value) { SetEndTime(std::move(value)); return *this;}
 
     /**
      * <p>User-provided value that was specified when the target was registered with
@@ -379,7 +380,7 @@ namespace Model
      * the Maintenance Window. This was also included in any CloudWatch events raised
      * during the task invocation.</p>
      */
-    inline void SetOwnerInformation(Aws::String&& value) { m_ownerInformationHasBeenSet = true; m_ownerInformation = value; }
+    inline void SetOwnerInformation(Aws::String&& value) { m_ownerInformationHasBeenSet = true; m_ownerInformation = std::move(value); }
 
     /**
      * <p>User-provided value that was specified when the target was registered with
@@ -400,7 +401,7 @@ namespace Model
      * the Maintenance Window. This was also included in any CloudWatch events raised
      * during the task invocation.</p>
      */
-    inline MaintenanceWindowExecutionTaskInvocationIdentity& WithOwnerInformation(Aws::String&& value) { SetOwnerInformation(value); return *this;}
+    inline MaintenanceWindowExecutionTaskInvocationIdentity& WithOwnerInformation(Aws::String&& value) { SetOwnerInformation(std::move(value)); return *this;}
 
     /**
      * <p>User-provided value that was specified when the target was registered with
@@ -425,7 +426,7 @@ namespace Model
      * <p>The ID of the target definition in this Maintenance Window the invocation was
      * performed for.</p>
      */
-    inline void SetWindowTargetId(Aws::String&& value) { m_windowTargetIdHasBeenSet = true; m_windowTargetId = value; }
+    inline void SetWindowTargetId(Aws::String&& value) { m_windowTargetIdHasBeenSet = true; m_windowTargetId = std::move(value); }
 
     /**
      * <p>The ID of the target definition in this Maintenance Window the invocation was
@@ -443,7 +444,7 @@ namespace Model
      * <p>The ID of the target definition in this Maintenance Window the invocation was
      * performed for.</p>
      */
-    inline MaintenanceWindowExecutionTaskInvocationIdentity& WithWindowTargetId(Aws::String&& value) { SetWindowTargetId(value); return *this;}
+    inline MaintenanceWindowExecutionTaskInvocationIdentity& WithWindowTargetId(Aws::String&& value) { SetWindowTargetId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the target definition in this Maintenance Window the invocation was

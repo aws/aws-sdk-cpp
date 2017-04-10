@@ -17,6 +17,7 @@
 #include <aws/ec2/EC2Request.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/ImageAttributeName.h>
+#include <utility>
 
 namespace Aws
 {
@@ -79,7 +80,7 @@ namespace Model
     /**
      * <p>The ID of the AMI.</p>
      */
-    inline void SetImageId(Aws::String&& value) { m_imageIdHasBeenSet = true; m_imageId = value; }
+    inline void SetImageId(Aws::String&& value) { m_imageIdHasBeenSet = true; m_imageId = std::move(value); }
 
     /**
      * <p>The ID of the AMI.</p>
@@ -94,7 +95,7 @@ namespace Model
     /**
      * <p>The ID of the AMI.</p>
      */
-    inline DescribeImageAttributeRequest& WithImageId(Aws::String&& value) { SetImageId(value); return *this;}
+    inline DescribeImageAttributeRequest& WithImageId(Aws::String&& value) { SetImageId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the AMI.</p>
@@ -126,7 +127,7 @@ namespace Model
      * <a>DescribeImages</a> to get information about the block device mapping for the
      * AMI.</p>
      */
-    inline void SetAttribute(ImageAttributeName&& value) { m_attributeHasBeenSet = true; m_attribute = value; }
+    inline void SetAttribute(ImageAttributeName&& value) { m_attributeHasBeenSet = true; m_attribute = std::move(value); }
 
     /**
      * <p>The AMI attribute.</p> <p> <b>Note</b>: Depending on your account privileges,
@@ -144,7 +145,7 @@ namespace Model
      * <a>DescribeImages</a> to get information about the block device mapping for the
      * AMI.</p>
      */
-    inline DescribeImageAttributeRequest& WithAttribute(ImageAttributeName&& value) { SetAttribute(value); return *this;}
+    inline DescribeImageAttributeRequest& WithAttribute(ImageAttributeName&& value) { SetAttribute(std::move(value)); return *this;}
 
   private:
     bool m_dryRun;

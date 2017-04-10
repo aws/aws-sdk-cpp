@@ -19,6 +19,7 @@
 #include <aws/clouddirectory/model/ObjectReference.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/clouddirectory/model/ObjectAttributeUpdate.h>
+#include <utility>
 
 namespace Aws
 {
@@ -54,7 +55,7 @@ namespace Model
      * <p>ARN associated with the <a>Directory</a> where the object resides. For more
      * information, see <a>arns</a>.</p>
      */
-    inline void SetDirectoryArn(Aws::String&& value) { m_directoryArnHasBeenSet = true; m_directoryArn = value; }
+    inline void SetDirectoryArn(Aws::String&& value) { m_directoryArnHasBeenSet = true; m_directoryArn = std::move(value); }
 
     /**
      * <p>ARN associated with the <a>Directory</a> where the object resides. For more
@@ -72,7 +73,7 @@ namespace Model
      * <p>ARN associated with the <a>Directory</a> where the object resides. For more
      * information, see <a>arns</a>.</p>
      */
-    inline UpdateObjectAttributesRequest& WithDirectoryArn(Aws::String&& value) { SetDirectoryArn(value); return *this;}
+    inline UpdateObjectAttributesRequest& WithDirectoryArn(Aws::String&& value) { SetDirectoryArn(std::move(value)); return *this;}
 
     /**
      * <p>ARN associated with the <a>Directory</a> where the object resides. For more
@@ -93,7 +94,7 @@ namespace Model
     /**
      * <p>Reference that identifies the object.</p>
      */
-    inline void SetObjectReference(ObjectReference&& value) { m_objectReferenceHasBeenSet = true; m_objectReference = value; }
+    inline void SetObjectReference(ObjectReference&& value) { m_objectReferenceHasBeenSet = true; m_objectReference = std::move(value); }
 
     /**
      * <p>Reference that identifies the object.</p>
@@ -103,7 +104,7 @@ namespace Model
     /**
      * <p>Reference that identifies the object.</p>
      */
-    inline UpdateObjectAttributesRequest& WithObjectReference(ObjectReference&& value) { SetObjectReference(value); return *this;}
+    inline UpdateObjectAttributesRequest& WithObjectReference(ObjectReference&& value) { SetObjectReference(std::move(value)); return *this;}
 
     /**
      * <p>Attributes update structure.</p>
@@ -118,7 +119,7 @@ namespace Model
     /**
      * <p>Attributes update structure.</p>
      */
-    inline void SetAttributeUpdates(Aws::Vector<ObjectAttributeUpdate>&& value) { m_attributeUpdatesHasBeenSet = true; m_attributeUpdates = value; }
+    inline void SetAttributeUpdates(Aws::Vector<ObjectAttributeUpdate>&& value) { m_attributeUpdatesHasBeenSet = true; m_attributeUpdates = std::move(value); }
 
     /**
      * <p>Attributes update structure.</p>
@@ -128,7 +129,7 @@ namespace Model
     /**
      * <p>Attributes update structure.</p>
      */
-    inline UpdateObjectAttributesRequest& WithAttributeUpdates(Aws::Vector<ObjectAttributeUpdate>&& value) { SetAttributeUpdates(value); return *this;}
+    inline UpdateObjectAttributesRequest& WithAttributeUpdates(Aws::Vector<ObjectAttributeUpdate>&& value) { SetAttributeUpdates(std::move(value)); return *this;}
 
     /**
      * <p>Attributes update structure.</p>
@@ -138,7 +139,7 @@ namespace Model
     /**
      * <p>Attributes update structure.</p>
      */
-    inline UpdateObjectAttributesRequest& AddAttributeUpdates(ObjectAttributeUpdate&& value) { m_attributeUpdatesHasBeenSet = true; m_attributeUpdates.push_back(value); return *this; }
+    inline UpdateObjectAttributesRequest& AddAttributeUpdates(ObjectAttributeUpdate&& value) { m_attributeUpdatesHasBeenSet = true; m_attributeUpdates.push_back(std::move(value)); return *this; }
 
   private:
     Aws::String m_directoryArn;

@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/elasticmapreduce/model/Command.h>
+#include <utility>
 
 namespace Aws
 {
@@ -60,7 +61,7 @@ namespace Model
     /**
      * <p>The bootstrap actions associated with the cluster.</p>
      */
-    inline void SetBootstrapActions(Aws::Vector<Command>&& value) { m_bootstrapActions = value; }
+    inline void SetBootstrapActions(Aws::Vector<Command>&& value) { m_bootstrapActions = std::move(value); }
 
     /**
      * <p>The bootstrap actions associated with the cluster.</p>
@@ -70,7 +71,7 @@ namespace Model
     /**
      * <p>The bootstrap actions associated with the cluster.</p>
      */
-    inline ListBootstrapActionsResult& WithBootstrapActions(Aws::Vector<Command>&& value) { SetBootstrapActions(value); return *this;}
+    inline ListBootstrapActionsResult& WithBootstrapActions(Aws::Vector<Command>&& value) { SetBootstrapActions(std::move(value)); return *this;}
 
     /**
      * <p>The bootstrap actions associated with the cluster.</p>
@@ -80,7 +81,7 @@ namespace Model
     /**
      * <p>The bootstrap actions associated with the cluster.</p>
      */
-    inline ListBootstrapActionsResult& AddBootstrapActions(Command&& value) { m_bootstrapActions.push_back(value); return *this; }
+    inline ListBootstrapActionsResult& AddBootstrapActions(Command&& value) { m_bootstrapActions.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The pagination token that indicates the next set of results to retrieve.</p>
@@ -95,7 +96,7 @@ namespace Model
     /**
      * <p>The pagination token that indicates the next set of results to retrieve.</p>
      */
-    inline void SetMarker(Aws::String&& value) { m_marker = value; }
+    inline void SetMarker(Aws::String&& value) { m_marker = std::move(value); }
 
     /**
      * <p>The pagination token that indicates the next set of results to retrieve.</p>
@@ -110,7 +111,7 @@ namespace Model
     /**
      * <p>The pagination token that indicates the next set of results to retrieve.</p>
      */
-    inline ListBootstrapActionsResult& WithMarker(Aws::String&& value) { SetMarker(value); return *this;}
+    inline ListBootstrapActionsResult& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
 
     /**
      * <p>The pagination token that indicates the next set of results to retrieve.</p>

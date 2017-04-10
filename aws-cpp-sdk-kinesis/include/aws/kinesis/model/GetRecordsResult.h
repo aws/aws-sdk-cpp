@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/kinesis/model/Record.h>
+#include <utility>
 
 namespace Aws
 {
@@ -59,7 +60,7 @@ namespace Model
     /**
      * <p>The data records retrieved from the shard.</p>
      */
-    inline void SetRecords(Aws::Vector<Record>&& value) { m_records = value; }
+    inline void SetRecords(Aws::Vector<Record>&& value) { m_records = std::move(value); }
 
     /**
      * <p>The data records retrieved from the shard.</p>
@@ -69,7 +70,7 @@ namespace Model
     /**
      * <p>The data records retrieved from the shard.</p>
      */
-    inline GetRecordsResult& WithRecords(Aws::Vector<Record>&& value) { SetRecords(value); return *this;}
+    inline GetRecordsResult& WithRecords(Aws::Vector<Record>&& value) { SetRecords(std::move(value)); return *this;}
 
     /**
      * <p>The data records retrieved from the shard.</p>
@@ -79,7 +80,7 @@ namespace Model
     /**
      * <p>The data records retrieved from the shard.</p>
      */
-    inline GetRecordsResult& AddRecords(Record&& value) { m_records.push_back(value); return *this; }
+    inline GetRecordsResult& AddRecords(Record&& value) { m_records.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The next position in the shard from which to start sequentially reading data
@@ -100,7 +101,7 @@ namespace Model
      * records. If set to <code>null</code>, the shard has been closed and the
      * requested iterator will not return any more data. </p>
      */
-    inline void SetNextShardIterator(Aws::String&& value) { m_nextShardIterator = value; }
+    inline void SetNextShardIterator(Aws::String&& value) { m_nextShardIterator = std::move(value); }
 
     /**
      * <p>The next position in the shard from which to start sequentially reading data
@@ -121,7 +122,7 @@ namespace Model
      * records. If set to <code>null</code>, the shard has been closed and the
      * requested iterator will not return any more data. </p>
      */
-    inline GetRecordsResult& WithNextShardIterator(Aws::String&& value) { SetNextShardIterator(value); return *this;}
+    inline GetRecordsResult& WithNextShardIterator(Aws::String&& value) { SetNextShardIterator(std::move(value)); return *this;}
 
     /**
      * <p>The next position in the shard from which to start sequentially reading data

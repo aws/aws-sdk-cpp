@@ -16,6 +16,7 @@
 #include <aws/cloudfront/CloudFront_EXPORTS.h>
 #include <aws/cloudfront/CloudFrontRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -67,7 +68,7 @@ namespace Model
      * of the NextMarker from the current page's response (which is also the ID of the
      * last identity on that page).
      */
-    inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = value; }
+    inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = std::move(value); }
 
     /**
      * Use this when paginating results to indicate where to begin in your list of
@@ -94,7 +95,7 @@ namespace Model
      * of the NextMarker from the current page's response (which is also the ID of the
      * last identity on that page).
      */
-    inline ListCloudFrontOriginAccessIdentities2016_01_28Request& WithMarker(Aws::String&& value) { SetMarker(value); return *this;}
+    inline ListCloudFrontOriginAccessIdentities2016_01_28Request& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
 
     /**
      * Use this when paginating results to indicate where to begin in your list of
@@ -118,7 +119,7 @@ namespace Model
     /**
      * The maximum number of origin access identities you want in the response body.
      */
-    inline void SetMaxItems(Aws::String&& value) { m_maxItemsHasBeenSet = true; m_maxItems = value; }
+    inline void SetMaxItems(Aws::String&& value) { m_maxItemsHasBeenSet = true; m_maxItems = std::move(value); }
 
     /**
      * The maximum number of origin access identities you want in the response body.
@@ -133,7 +134,7 @@ namespace Model
     /**
      * The maximum number of origin access identities you want in the response body.
      */
-    inline ListCloudFrontOriginAccessIdentities2016_01_28Request& WithMaxItems(Aws::String&& value) { SetMaxItems(value); return *this;}
+    inline ListCloudFrontOriginAccessIdentities2016_01_28Request& WithMaxItems(Aws::String&& value) { SetMaxItems(std::move(value)); return *this;}
 
     /**
      * The maximum number of origin access identities you want in the response body.

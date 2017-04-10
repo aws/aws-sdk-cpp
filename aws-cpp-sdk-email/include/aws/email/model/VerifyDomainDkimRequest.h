@@ -16,6 +16,7 @@
 #include <aws/email/SES_EXPORTS.h>
 #include <aws/email/SESRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -56,7 +57,7 @@ namespace Model
     /**
      * <p>The name of the domain to be verified for Easy DKIM signing.</p>
      */
-    inline void SetDomain(Aws::String&& value) { m_domainHasBeenSet = true; m_domain = value; }
+    inline void SetDomain(Aws::String&& value) { m_domainHasBeenSet = true; m_domain = std::move(value); }
 
     /**
      * <p>The name of the domain to be verified for Easy DKIM signing.</p>
@@ -71,7 +72,7 @@ namespace Model
     /**
      * <p>The name of the domain to be verified for Easy DKIM signing.</p>
      */
-    inline VerifyDomainDkimRequest& WithDomain(Aws::String&& value) { SetDomain(value); return *this;}
+    inline VerifyDomainDkimRequest& WithDomain(Aws::String&& value) { SetDomain(std::move(value)); return *this;}
 
     /**
      * <p>The name of the domain to be verified for Easy DKIM signing.</p>

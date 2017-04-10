@@ -20,6 +20,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/gamelift/model/GameProperty.h>
 #include <aws/gamelift/model/PlayerLatency.h>
+#include <utility>
 
 namespace Aws
 {
@@ -66,7 +67,7 @@ namespace Model
     /**
      * <p>Unique identifier for a game session placement.</p>
      */
-    inline void SetPlacementId(Aws::String&& value) { m_placementIdHasBeenSet = true; m_placementId = value; }
+    inline void SetPlacementId(Aws::String&& value) { m_placementIdHasBeenSet = true; m_placementId = std::move(value); }
 
     /**
      * <p>Unique identifier for a game session placement.</p>
@@ -81,7 +82,7 @@ namespace Model
     /**
      * <p>Unique identifier for a game session placement.</p>
      */
-    inline GameSessionPlacement& WithPlacementId(Aws::String&& value) { SetPlacementId(value); return *this;}
+    inline GameSessionPlacement& WithPlacementId(Aws::String&& value) { SetPlacementId(std::move(value)); return *this;}
 
     /**
      * <p>Unique identifier for a game session placement.</p>
@@ -104,7 +105,7 @@ namespace Model
      * <p>Descriptive label that is associated with queue. Queue names must be unique
      * within each region.</p>
      */
-    inline void SetGameSessionQueueName(Aws::String&& value) { m_gameSessionQueueNameHasBeenSet = true; m_gameSessionQueueName = value; }
+    inline void SetGameSessionQueueName(Aws::String&& value) { m_gameSessionQueueNameHasBeenSet = true; m_gameSessionQueueName = std::move(value); }
 
     /**
      * <p>Descriptive label that is associated with queue. Queue names must be unique
@@ -122,7 +123,7 @@ namespace Model
      * <p>Descriptive label that is associated with queue. Queue names must be unique
      * within each region.</p>
      */
-    inline GameSessionPlacement& WithGameSessionQueueName(Aws::String&& value) { SetGameSessionQueueName(value); return *this;}
+    inline GameSessionPlacement& WithGameSessionQueueName(Aws::String&& value) { SetGameSessionQueueName(std::move(value)); return *this;}
 
     /**
      * <p>Descriptive label that is associated with queue. Queue names must be unique
@@ -167,7 +168,7 @@ namespace Model
      * game session was not successfully created before the time limit expired. You can
      * resubmit the placement request as needed.</p> </li> </ul>
      */
-    inline void SetStatus(GameSessionPlacementState&& value) { m_statusHasBeenSet = true; m_status = value; }
+    inline void SetStatus(GameSessionPlacementState&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
      * <p>Current status of the game session placement request.</p> <ul> <li> <p>
@@ -193,7 +194,7 @@ namespace Model
      * game session was not successfully created before the time limit expired. You can
      * resubmit the placement request as needed.</p> </li> </ul>
      */
-    inline GameSessionPlacement& WithStatus(GameSessionPlacementState&& value) { SetStatus(value); return *this;}
+    inline GameSessionPlacement& WithStatus(GameSessionPlacementState&& value) { SetStatus(std::move(value)); return *this;}
 
     /**
      * <p>Set of developer-defined properties for a game session. These properties are
@@ -211,7 +212,7 @@ namespace Model
      * <p>Set of developer-defined properties for a game session. These properties are
      * passed to the server process hosting the game session.</p>
      */
-    inline void SetGameProperties(Aws::Vector<GameProperty>&& value) { m_gamePropertiesHasBeenSet = true; m_gameProperties = value; }
+    inline void SetGameProperties(Aws::Vector<GameProperty>&& value) { m_gamePropertiesHasBeenSet = true; m_gameProperties = std::move(value); }
 
     /**
      * <p>Set of developer-defined properties for a game session. These properties are
@@ -223,7 +224,7 @@ namespace Model
      * <p>Set of developer-defined properties for a game session. These properties are
      * passed to the server process hosting the game session.</p>
      */
-    inline GameSessionPlacement& WithGameProperties(Aws::Vector<GameProperty>&& value) { SetGameProperties(value); return *this;}
+    inline GameSessionPlacement& WithGameProperties(Aws::Vector<GameProperty>&& value) { SetGameProperties(std::move(value)); return *this;}
 
     /**
      * <p>Set of developer-defined properties for a game session. These properties are
@@ -235,7 +236,7 @@ namespace Model
      * <p>Set of developer-defined properties for a game session. These properties are
      * passed to the server process hosting the game session.</p>
      */
-    inline GameSessionPlacement& AddGameProperties(GameProperty&& value) { m_gamePropertiesHasBeenSet = true; m_gameProperties.push_back(value); return *this; }
+    inline GameSessionPlacement& AddGameProperties(GameProperty&& value) { m_gamePropertiesHasBeenSet = true; m_gameProperties.push_back(std::move(value)); return *this; }
 
     /**
      * <p>Maximum number of players that can be connected simultaneously to the game
@@ -271,7 +272,7 @@ namespace Model
      * <p>Descriptive label that is associated with a game session. Session names do
      * not need to be unique.</p>
      */
-    inline void SetGameSessionName(Aws::String&& value) { m_gameSessionNameHasBeenSet = true; m_gameSessionName = value; }
+    inline void SetGameSessionName(Aws::String&& value) { m_gameSessionNameHasBeenSet = true; m_gameSessionName = std::move(value); }
 
     /**
      * <p>Descriptive label that is associated with a game session. Session names do
@@ -289,7 +290,7 @@ namespace Model
      * <p>Descriptive label that is associated with a game session. Session names do
      * not need to be unique.</p>
      */
-    inline GameSessionPlacement& WithGameSessionName(Aws::String&& value) { SetGameSessionName(value); return *this;}
+    inline GameSessionPlacement& WithGameSessionName(Aws::String&& value) { SetGameSessionName(std::move(value)); return *this;}
 
     /**
      * <p>Descriptive label that is associated with a game session. Session names do
@@ -316,7 +317,7 @@ namespace Model
      * exists only if the game session placement status is Completed. This identifier
      * is unique across all regions.</p>
      */
-    inline void SetGameSessionArn(Aws::String&& value) { m_gameSessionArnHasBeenSet = true; m_gameSessionArn = value; }
+    inline void SetGameSessionArn(Aws::String&& value) { m_gameSessionArnHasBeenSet = true; m_gameSessionArn = std::move(value); }
 
     /**
      * <p>Identifier for the game session created by this placement request. This value
@@ -337,7 +338,7 @@ namespace Model
      * exists only if the game session placement status is Completed. This identifier
      * is unique across all regions.</p>
      */
-    inline GameSessionPlacement& WithGameSessionArn(Aws::String&& value) { SetGameSessionArn(value); return *this;}
+    inline GameSessionPlacement& WithGameSessionArn(Aws::String&& value) { SetGameSessionArn(std::move(value)); return *this;}
 
     /**
      * <p>Identifier for the game session created by this placement request. This value
@@ -365,7 +366,7 @@ namespace Model
      * is running. This value exists only if the game session placement status is
      * Completed.</p>
      */
-    inline void SetGameSessionRegion(Aws::String&& value) { m_gameSessionRegionHasBeenSet = true; m_gameSessionRegion = value; }
+    inline void SetGameSessionRegion(Aws::String&& value) { m_gameSessionRegionHasBeenSet = true; m_gameSessionRegion = std::move(value); }
 
     /**
      * <p>Name of the region where the game session created by this placement request
@@ -386,7 +387,7 @@ namespace Model
      * is running. This value exists only if the game session placement status is
      * Completed.</p>
      */
-    inline GameSessionPlacement& WithGameSessionRegion(Aws::String&& value) { SetGameSessionRegion(value); return *this;}
+    inline GameSessionPlacement& WithGameSessionRegion(Aws::String&& value) { SetGameSessionRegion(std::move(value)); return *this;}
 
     /**
      * <p>Name of the region where the game session created by this placement request
@@ -411,7 +412,7 @@ namespace Model
      * <p>Set of values, expressed in milliseconds, indicating the amount of latency
      * that players experience when connected to AWS regions.</p>
      */
-    inline void SetPlayerLatencies(Aws::Vector<PlayerLatency>&& value) { m_playerLatenciesHasBeenSet = true; m_playerLatencies = value; }
+    inline void SetPlayerLatencies(Aws::Vector<PlayerLatency>&& value) { m_playerLatenciesHasBeenSet = true; m_playerLatencies = std::move(value); }
 
     /**
      * <p>Set of values, expressed in milliseconds, indicating the amount of latency
@@ -423,7 +424,7 @@ namespace Model
      * <p>Set of values, expressed in milliseconds, indicating the amount of latency
      * that players experience when connected to AWS regions.</p>
      */
-    inline GameSessionPlacement& WithPlayerLatencies(Aws::Vector<PlayerLatency>&& value) { SetPlayerLatencies(value); return *this;}
+    inline GameSessionPlacement& WithPlayerLatencies(Aws::Vector<PlayerLatency>&& value) { SetPlayerLatencies(std::move(value)); return *this;}
 
     /**
      * <p>Set of values, expressed in milliseconds, indicating the amount of latency
@@ -435,7 +436,7 @@ namespace Model
      * <p>Set of values, expressed in milliseconds, indicating the amount of latency
      * that players experience when connected to AWS regions.</p>
      */
-    inline GameSessionPlacement& AddPlayerLatencies(PlayerLatency&& value) { m_playerLatenciesHasBeenSet = true; m_playerLatencies.push_back(value); return *this; }
+    inline GameSessionPlacement& AddPlayerLatencies(PlayerLatency&& value) { m_playerLatenciesHasBeenSet = true; m_playerLatencies.push_back(std::move(value)); return *this; }
 
     /**
      * <p>Time stamp indicating when this request was placed in the queue. Format is a
@@ -456,7 +457,7 @@ namespace Model
      * number expressed in Unix time as milliseconds (for example
      * "1469498468.057").</p>
      */
-    inline void SetStartTime(Aws::Utils::DateTime&& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
+    inline void SetStartTime(Aws::Utils::DateTime&& value) { m_startTimeHasBeenSet = true; m_startTime = std::move(value); }
 
     /**
      * <p>Time stamp indicating when this request was placed in the queue. Format is a
@@ -470,7 +471,7 @@ namespace Model
      * number expressed in Unix time as milliseconds (for example
      * "1469498468.057").</p>
      */
-    inline GameSessionPlacement& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(value); return *this;}
+    inline GameSessionPlacement& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(std::move(value)); return *this;}
 
     /**
      * <p>Time stamp indicating when this request was completed, cancelled, or timed
@@ -488,7 +489,7 @@ namespace Model
      * <p>Time stamp indicating when this request was completed, cancelled, or timed
      * out.</p>
      */
-    inline void SetEndTime(Aws::Utils::DateTime&& value) { m_endTimeHasBeenSet = true; m_endTime = value; }
+    inline void SetEndTime(Aws::Utils::DateTime&& value) { m_endTimeHasBeenSet = true; m_endTime = std::move(value); }
 
     /**
      * <p>Time stamp indicating when this request was completed, cancelled, or timed
@@ -500,7 +501,7 @@ namespace Model
      * <p>Time stamp indicating when this request was completed, cancelled, or timed
      * out.</p>
      */
-    inline GameSessionPlacement& WithEndTime(Aws::Utils::DateTime&& value) { SetEndTime(value); return *this;}
+    inline GameSessionPlacement& WithEndTime(Aws::Utils::DateTime&& value) { SetEndTime(std::move(value)); return *this;}
 
   private:
     Aws::String m_placementId;

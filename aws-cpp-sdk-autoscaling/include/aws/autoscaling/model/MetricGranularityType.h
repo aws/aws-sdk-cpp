@@ -16,6 +16,7 @@
 #include <aws/autoscaling/AutoScaling_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -59,7 +60,7 @@ namespace Model
     /**
      * <p>The granularity. The only valid value is <code>1Minute</code>.</p>
      */
-    inline void SetGranularity(Aws::String&& value) { m_granularityHasBeenSet = true; m_granularity = value; }
+    inline void SetGranularity(Aws::String&& value) { m_granularityHasBeenSet = true; m_granularity = std::move(value); }
 
     /**
      * <p>The granularity. The only valid value is <code>1Minute</code>.</p>
@@ -74,7 +75,7 @@ namespace Model
     /**
      * <p>The granularity. The only valid value is <code>1Minute</code>.</p>
      */
-    inline MetricGranularityType& WithGranularity(Aws::String&& value) { SetGranularity(value); return *this;}
+    inline MetricGranularityType& WithGranularity(Aws::String&& value) { SetGranularity(std::move(value)); return *this;}
 
     /**
      * <p>The granularity. The only valid value is <code>1Minute</code>.</p>

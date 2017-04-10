@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/inspector/model/Tag.h>
+#include <utility>
 
 namespace Aws
 {
@@ -50,7 +51,7 @@ namespace Model
     /**
      * <p>The ARN of the assessment that you want to set tags to.</p>
      */
-    inline void SetResourceArn(Aws::String&& value) { m_resourceArnHasBeenSet = true; m_resourceArn = value; }
+    inline void SetResourceArn(Aws::String&& value) { m_resourceArnHasBeenSet = true; m_resourceArn = std::move(value); }
 
     /**
      * <p>The ARN of the assessment that you want to set tags to.</p>
@@ -65,7 +66,7 @@ namespace Model
     /**
      * <p>The ARN of the assessment that you want to set tags to.</p>
      */
-    inline SetTagsForResourceRequest& WithResourceArn(Aws::String&& value) { SetResourceArn(value); return *this;}
+    inline SetTagsForResourceRequest& WithResourceArn(Aws::String&& value) { SetResourceArn(std::move(value)); return *this;}
 
     /**
      * <p>The ARN of the assessment that you want to set tags to.</p>
@@ -88,7 +89,7 @@ namespace Model
      * <p>A collection of key and value pairs that you want to set to an
      * assessment.</p>
      */
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = value; }
+    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
      * <p>A collection of key and value pairs that you want to set to an
@@ -100,7 +101,7 @@ namespace Model
      * <p>A collection of key and value pairs that you want to set to an
      * assessment.</p>
      */
-    inline SetTagsForResourceRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(value); return *this;}
+    inline SetTagsForResourceRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
      * <p>A collection of key and value pairs that you want to set to an
@@ -112,7 +113,7 @@ namespace Model
      * <p>A collection of key and value pairs that you want to set to an
      * assessment.</p>
      */
-    inline SetTagsForResourceRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
+    inline SetTagsForResourceRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
   private:
     Aws::String m_resourceArn;

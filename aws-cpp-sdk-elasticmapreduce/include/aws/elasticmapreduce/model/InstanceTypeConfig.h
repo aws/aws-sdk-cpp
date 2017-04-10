@@ -18,6 +18,7 @@
 #include <aws/elasticmapreduce/model/EbsConfiguration.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/elasticmapreduce/model/Configuration.h>
+#include <utility>
 
 namespace Aws
 {
@@ -64,7 +65,7 @@ namespace Model
     /**
      * <p>An EC2 instance type, such as <code>m3.xlarge</code>. </p>
      */
-    inline void SetInstanceType(Aws::String&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
+    inline void SetInstanceType(Aws::String&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = std::move(value); }
 
     /**
      * <p>An EC2 instance type, such as <code>m3.xlarge</code>. </p>
@@ -79,7 +80,7 @@ namespace Model
     /**
      * <p>An EC2 instance type, such as <code>m3.xlarge</code>. </p>
      */
-    inline InstanceTypeConfig& WithInstanceType(Aws::String&& value) { SetInstanceType(value); return *this;}
+    inline InstanceTypeConfig& WithInstanceType(Aws::String&& value) { SetInstanceType(std::move(value)); return *this;}
 
     /**
      * <p>An EC2 instance type, such as <code>m3.xlarge</code>. </p>
@@ -132,7 +133,7 @@ namespace Model
      * nor <code>BidPriceAsPercentageOfOnDemandPrice</code> is provided,
      * <code>BidPriceAsPercentageOfOnDemandPrice</code> defaults to 100%. </p>
      */
-    inline void SetBidPrice(Aws::String&& value) { m_bidPriceHasBeenSet = true; m_bidPrice = value; }
+    inline void SetBidPrice(Aws::String&& value) { m_bidPriceHasBeenSet = true; m_bidPrice = std::move(value); }
 
     /**
      * <p>The bid price for each EC2 Spot instance type as defined by
@@ -156,7 +157,7 @@ namespace Model
      * nor <code>BidPriceAsPercentageOfOnDemandPrice</code> is provided,
      * <code>BidPriceAsPercentageOfOnDemandPrice</code> defaults to 100%. </p>
      */
-    inline InstanceTypeConfig& WithBidPrice(Aws::String&& value) { SetBidPrice(value); return *this;}
+    inline InstanceTypeConfig& WithBidPrice(Aws::String&& value) { SetBidPrice(std::move(value)); return *this;}
 
     /**
      * <p>The bid price for each EC2 Spot instance type as defined by
@@ -209,7 +210,7 @@ namespace Model
      * <p>The configuration of Amazon Elastic Block Storage (EBS) attached to each
      * instance as defined by <code>InstanceType</code>. </p>
      */
-    inline void SetEbsConfiguration(EbsConfiguration&& value) { m_ebsConfigurationHasBeenSet = true; m_ebsConfiguration = value; }
+    inline void SetEbsConfiguration(EbsConfiguration&& value) { m_ebsConfigurationHasBeenSet = true; m_ebsConfiguration = std::move(value); }
 
     /**
      * <p>The configuration of Amazon Elastic Block Storage (EBS) attached to each
@@ -221,7 +222,7 @@ namespace Model
      * <p>The configuration of Amazon Elastic Block Storage (EBS) attached to each
      * instance as defined by <code>InstanceType</code>. </p>
      */
-    inline InstanceTypeConfig& WithEbsConfiguration(EbsConfiguration&& value) { SetEbsConfiguration(value); return *this;}
+    inline InstanceTypeConfig& WithEbsConfiguration(EbsConfiguration&& value) { SetEbsConfiguration(std::move(value)); return *this;}
 
     /**
      * <p>A configuration classification that applies when provisioning cluster
@@ -242,7 +243,7 @@ namespace Model
      * instances, which can include configurations for applications and software that
      * run on the cluster.</p>
      */
-    inline void SetConfigurations(Aws::Vector<Configuration>&& value) { m_configurationsHasBeenSet = true; m_configurations = value; }
+    inline void SetConfigurations(Aws::Vector<Configuration>&& value) { m_configurationsHasBeenSet = true; m_configurations = std::move(value); }
 
     /**
      * <p>A configuration classification that applies when provisioning cluster
@@ -256,7 +257,7 @@ namespace Model
      * instances, which can include configurations for applications and software that
      * run on the cluster.</p>
      */
-    inline InstanceTypeConfig& WithConfigurations(Aws::Vector<Configuration>&& value) { SetConfigurations(value); return *this;}
+    inline InstanceTypeConfig& WithConfigurations(Aws::Vector<Configuration>&& value) { SetConfigurations(std::move(value)); return *this;}
 
     /**
      * <p>A configuration classification that applies when provisioning cluster
@@ -270,7 +271,7 @@ namespace Model
      * instances, which can include configurations for applications and software that
      * run on the cluster.</p>
      */
-    inline InstanceTypeConfig& AddConfigurations(Configuration&& value) { m_configurationsHasBeenSet = true; m_configurations.push_back(value); return *this; }
+    inline InstanceTypeConfig& AddConfigurations(Configuration&& value) { m_configurationsHasBeenSet = true; m_configurations.push_back(std::move(value)); return *this; }
 
   private:
     Aws::String m_instanceType;

@@ -17,6 +17,7 @@
 #include <aws/ec2/EC2Request.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <utility>
 
 namespace Aws
 {
@@ -51,7 +52,7 @@ namespace Model
     /**
      * <p>The offering ID of the reservation.</p>
      */
-    inline void SetOfferingId(Aws::String&& value) { m_offeringIdHasBeenSet = true; m_offeringId = value; }
+    inline void SetOfferingId(Aws::String&& value) { m_offeringIdHasBeenSet = true; m_offeringId = std::move(value); }
 
     /**
      * <p>The offering ID of the reservation.</p>
@@ -66,7 +67,7 @@ namespace Model
     /**
      * <p>The offering ID of the reservation.</p>
      */
-    inline GetHostReservationPurchasePreviewRequest& WithOfferingId(Aws::String&& value) { SetOfferingId(value); return *this;}
+    inline GetHostReservationPurchasePreviewRequest& WithOfferingId(Aws::String&& value) { SetOfferingId(std::move(value)); return *this;}
 
     /**
      * <p>The offering ID of the reservation.</p>
@@ -89,7 +90,7 @@ namespace Model
      * <p>The ID/s of the Dedicated Host/s that the reservation will be associated
      * with.</p>
      */
-    inline void SetHostIdSet(Aws::Vector<Aws::String>&& value) { m_hostIdSetHasBeenSet = true; m_hostIdSet = value; }
+    inline void SetHostIdSet(Aws::Vector<Aws::String>&& value) { m_hostIdSetHasBeenSet = true; m_hostIdSet = std::move(value); }
 
     /**
      * <p>The ID/s of the Dedicated Host/s that the reservation will be associated
@@ -101,7 +102,7 @@ namespace Model
      * <p>The ID/s of the Dedicated Host/s that the reservation will be associated
      * with.</p>
      */
-    inline GetHostReservationPurchasePreviewRequest& WithHostIdSet(Aws::Vector<Aws::String>&& value) { SetHostIdSet(value); return *this;}
+    inline GetHostReservationPurchasePreviewRequest& WithHostIdSet(Aws::Vector<Aws::String>&& value) { SetHostIdSet(std::move(value)); return *this;}
 
     /**
      * <p>The ID/s of the Dedicated Host/s that the reservation will be associated
@@ -113,7 +114,7 @@ namespace Model
      * <p>The ID/s of the Dedicated Host/s that the reservation will be associated
      * with.</p>
      */
-    inline GetHostReservationPurchasePreviewRequest& AddHostIdSet(Aws::String&& value) { m_hostIdSetHasBeenSet = true; m_hostIdSet.push_back(value); return *this; }
+    inline GetHostReservationPurchasePreviewRequest& AddHostIdSet(Aws::String&& value) { m_hostIdSetHasBeenSet = true; m_hostIdSet.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The ID/s of the Dedicated Host/s that the reservation will be associated

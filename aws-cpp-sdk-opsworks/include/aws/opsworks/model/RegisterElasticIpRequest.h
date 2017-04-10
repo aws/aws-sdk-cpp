@@ -16,6 +16,7 @@
 #include <aws/opsworks/OpsWorks_EXPORTS.h>
 #include <aws/opsworks/OpsWorksRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -48,7 +49,7 @@ namespace Model
     /**
      * <p>The Elastic IP address.</p>
      */
-    inline void SetElasticIp(Aws::String&& value) { m_elasticIpHasBeenSet = true; m_elasticIp = value; }
+    inline void SetElasticIp(Aws::String&& value) { m_elasticIpHasBeenSet = true; m_elasticIp = std::move(value); }
 
     /**
      * <p>The Elastic IP address.</p>
@@ -63,7 +64,7 @@ namespace Model
     /**
      * <p>The Elastic IP address.</p>
      */
-    inline RegisterElasticIpRequest& WithElasticIp(Aws::String&& value) { SetElasticIp(value); return *this;}
+    inline RegisterElasticIpRequest& WithElasticIp(Aws::String&& value) { SetElasticIp(std::move(value)); return *this;}
 
     /**
      * <p>The Elastic IP address.</p>
@@ -83,7 +84,7 @@ namespace Model
     /**
      * <p>The stack ID.</p>
      */
-    inline void SetStackId(Aws::String&& value) { m_stackIdHasBeenSet = true; m_stackId = value; }
+    inline void SetStackId(Aws::String&& value) { m_stackIdHasBeenSet = true; m_stackId = std::move(value); }
 
     /**
      * <p>The stack ID.</p>
@@ -98,7 +99,7 @@ namespace Model
     /**
      * <p>The stack ID.</p>
      */
-    inline RegisterElasticIpRequest& WithStackId(Aws::String&& value) { SetStackId(value); return *this;}
+    inline RegisterElasticIpRequest& WithStackId(Aws::String&& value) { SetStackId(std::move(value)); return *this;}
 
     /**
      * <p>The stack ID.</p>

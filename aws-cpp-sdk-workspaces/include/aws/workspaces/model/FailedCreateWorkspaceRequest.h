@@ -16,6 +16,7 @@
 #include <aws/workspaces/WorkSpaces_EXPORTS.h>
 #include <aws/workspaces/model/WorkspaceRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -61,7 +62,7 @@ namespace Model
      * <p>A <a>FailedCreateWorkspaceRequest$WorkspaceRequest</a> object that contains
      * the information about the WorkSpace that could not be created.</p>
      */
-    inline void SetWorkspaceRequest(WorkspaceRequest&& value) { m_workspaceRequestHasBeenSet = true; m_workspaceRequest = value; }
+    inline void SetWorkspaceRequest(WorkspaceRequest&& value) { m_workspaceRequestHasBeenSet = true; m_workspaceRequest = std::move(value); }
 
     /**
      * <p>A <a>FailedCreateWorkspaceRequest$WorkspaceRequest</a> object that contains
@@ -73,7 +74,7 @@ namespace Model
      * <p>A <a>FailedCreateWorkspaceRequest$WorkspaceRequest</a> object that contains
      * the information about the WorkSpace that could not be created.</p>
      */
-    inline FailedCreateWorkspaceRequest& WithWorkspaceRequest(WorkspaceRequest&& value) { SetWorkspaceRequest(value); return *this;}
+    inline FailedCreateWorkspaceRequest& WithWorkspaceRequest(WorkspaceRequest&& value) { SetWorkspaceRequest(std::move(value)); return *this;}
 
     /**
      * <p>The error code.</p>
@@ -88,7 +89,7 @@ namespace Model
     /**
      * <p>The error code.</p>
      */
-    inline void SetErrorCode(Aws::String&& value) { m_errorCodeHasBeenSet = true; m_errorCode = value; }
+    inline void SetErrorCode(Aws::String&& value) { m_errorCodeHasBeenSet = true; m_errorCode = std::move(value); }
 
     /**
      * <p>The error code.</p>
@@ -103,7 +104,7 @@ namespace Model
     /**
      * <p>The error code.</p>
      */
-    inline FailedCreateWorkspaceRequest& WithErrorCode(Aws::String&& value) { SetErrorCode(value); return *this;}
+    inline FailedCreateWorkspaceRequest& WithErrorCode(Aws::String&& value) { SetErrorCode(std::move(value)); return *this;}
 
     /**
      * <p>The error code.</p>
@@ -123,7 +124,7 @@ namespace Model
     /**
      * <p>The textual error message.</p>
      */
-    inline void SetErrorMessage(Aws::String&& value) { m_errorMessageHasBeenSet = true; m_errorMessage = value; }
+    inline void SetErrorMessage(Aws::String&& value) { m_errorMessageHasBeenSet = true; m_errorMessage = std::move(value); }
 
     /**
      * <p>The textual error message.</p>
@@ -138,7 +139,7 @@ namespace Model
     /**
      * <p>The textual error message.</p>
      */
-    inline FailedCreateWorkspaceRequest& WithErrorMessage(Aws::String&& value) { SetErrorMessage(value); return *this;}
+    inline FailedCreateWorkspaceRequest& WithErrorMessage(Aws::String&& value) { SetErrorMessage(std::move(value)); return *this;}
 
     /**
      * <p>The textual error message.</p>

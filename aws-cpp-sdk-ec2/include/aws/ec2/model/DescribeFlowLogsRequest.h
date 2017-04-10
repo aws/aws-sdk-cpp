@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/Filter.h>
+#include <utility>
 
 namespace Aws
 {
@@ -55,7 +56,7 @@ namespace Model
     /**
      * <p>One or more flow log IDs.</p>
      */
-    inline void SetFlowLogIds(Aws::Vector<Aws::String>&& value) { m_flowLogIdsHasBeenSet = true; m_flowLogIds = value; }
+    inline void SetFlowLogIds(Aws::Vector<Aws::String>&& value) { m_flowLogIdsHasBeenSet = true; m_flowLogIds = std::move(value); }
 
     /**
      * <p>One or more flow log IDs.</p>
@@ -65,7 +66,7 @@ namespace Model
     /**
      * <p>One or more flow log IDs.</p>
      */
-    inline DescribeFlowLogsRequest& WithFlowLogIds(Aws::Vector<Aws::String>&& value) { SetFlowLogIds(value); return *this;}
+    inline DescribeFlowLogsRequest& WithFlowLogIds(Aws::Vector<Aws::String>&& value) { SetFlowLogIds(std::move(value)); return *this;}
 
     /**
      * <p>One or more flow log IDs.</p>
@@ -75,7 +76,7 @@ namespace Model
     /**
      * <p>One or more flow log IDs.</p>
      */
-    inline DescribeFlowLogsRequest& AddFlowLogIds(Aws::String&& value) { m_flowLogIdsHasBeenSet = true; m_flowLogIds.push_back(value); return *this; }
+    inline DescribeFlowLogsRequest& AddFlowLogIds(Aws::String&& value) { m_flowLogIdsHasBeenSet = true; m_flowLogIds.push_back(std::move(value)); return *this; }
 
     /**
      * <p>One or more flow log IDs.</p>
@@ -113,7 +114,7 @@ namespace Model
      * </li> <li> <p> <code>traffic-type</code> - The type of traffic
      * (<code>ACCEPT</code> | <code>REJECT</code> | <code>ALL</code>)</p> </li> </ul>
      */
-    inline void SetFilter(Aws::Vector<Filter>&& value) { m_filterHasBeenSet = true; m_filter = value; }
+    inline void SetFilter(Aws::Vector<Filter>&& value) { m_filterHasBeenSet = true; m_filter = std::move(value); }
 
     /**
      * <p>One or more filters.</p> <ul> <li> <p> <code>deliver-log-status</code> - The
@@ -135,7 +136,7 @@ namespace Model
      * </li> <li> <p> <code>traffic-type</code> - The type of traffic
      * (<code>ACCEPT</code> | <code>REJECT</code> | <code>ALL</code>)</p> </li> </ul>
      */
-    inline DescribeFlowLogsRequest& WithFilter(Aws::Vector<Filter>&& value) { SetFilter(value); return *this;}
+    inline DescribeFlowLogsRequest& WithFilter(Aws::Vector<Filter>&& value) { SetFilter(std::move(value)); return *this;}
 
     /**
      * <p>One or more filters.</p> <ul> <li> <p> <code>deliver-log-status</code> - The
@@ -157,7 +158,7 @@ namespace Model
      * </li> <li> <p> <code>traffic-type</code> - The type of traffic
      * (<code>ACCEPT</code> | <code>REJECT</code> | <code>ALL</code>)</p> </li> </ul>
      */
-    inline DescribeFlowLogsRequest& AddFilter(Filter&& value) { m_filterHasBeenSet = true; m_filter.push_back(value); return *this; }
+    inline DescribeFlowLogsRequest& AddFilter(Filter&& value) { m_filterHasBeenSet = true; m_filter.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The token to retrieve the next page of results.</p>
@@ -172,7 +173,7 @@ namespace Model
     /**
      * <p>The token to retrieve the next page of results.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
      * <p>The token to retrieve the next page of results.</p>
@@ -187,7 +188,7 @@ namespace Model
     /**
      * <p>The token to retrieve the next page of results.</p>
      */
-    inline DescribeFlowLogsRequest& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline DescribeFlowLogsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>The token to retrieve the next page of results.</p>

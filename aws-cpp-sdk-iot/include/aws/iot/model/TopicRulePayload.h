@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/iot/model/Action.h>
+#include <utility>
 
 namespace Aws
 {
@@ -64,7 +65,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/iot/latest/developerguide/iot-rules.html#aws-iot-sql-reference">AWS
      * IoT SQL Reference</a> in the <i>AWS IoT Developer Guide</i>.</p>
      */
-    inline void SetSql(Aws::String&& value) { m_sqlHasBeenSet = true; m_sql = value; }
+    inline void SetSql(Aws::String&& value) { m_sqlHasBeenSet = true; m_sql = std::move(value); }
 
     /**
      * <p>The SQL statement used to query the topic. For more information, see <a
@@ -85,7 +86,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/iot/latest/developerguide/iot-rules.html#aws-iot-sql-reference">AWS
      * IoT SQL Reference</a> in the <i>AWS IoT Developer Guide</i>.</p>
      */
-    inline TopicRulePayload& WithSql(Aws::String&& value) { SetSql(value); return *this;}
+    inline TopicRulePayload& WithSql(Aws::String&& value) { SetSql(std::move(value)); return *this;}
 
     /**
      * <p>The SQL statement used to query the topic. For more information, see <a
@@ -107,7 +108,7 @@ namespace Model
     /**
      * <p>The description of the rule.</p>
      */
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = value; }
+    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
      * <p>The description of the rule.</p>
@@ -122,7 +123,7 @@ namespace Model
     /**
      * <p>The description of the rule.</p>
      */
-    inline TopicRulePayload& WithDescription(Aws::String&& value) { SetDescription(value); return *this;}
+    inline TopicRulePayload& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
      * <p>The description of the rule.</p>
@@ -142,7 +143,7 @@ namespace Model
     /**
      * <p>The actions associated with the rule.</p>
      */
-    inline void SetActions(Aws::Vector<Action>&& value) { m_actionsHasBeenSet = true; m_actions = value; }
+    inline void SetActions(Aws::Vector<Action>&& value) { m_actionsHasBeenSet = true; m_actions = std::move(value); }
 
     /**
      * <p>The actions associated with the rule.</p>
@@ -152,7 +153,7 @@ namespace Model
     /**
      * <p>The actions associated with the rule.</p>
      */
-    inline TopicRulePayload& WithActions(Aws::Vector<Action>&& value) { SetActions(value); return *this;}
+    inline TopicRulePayload& WithActions(Aws::Vector<Action>&& value) { SetActions(std::move(value)); return *this;}
 
     /**
      * <p>The actions associated with the rule.</p>
@@ -162,7 +163,7 @@ namespace Model
     /**
      * <p>The actions associated with the rule.</p>
      */
-    inline TopicRulePayload& AddActions(Action&& value) { m_actionsHasBeenSet = true; m_actions.push_back(value); return *this; }
+    inline TopicRulePayload& AddActions(Action&& value) { m_actionsHasBeenSet = true; m_actions.push_back(std::move(value)); return *this; }
 
     /**
      * <p>Specifies whether the rule is disabled.</p>
@@ -192,7 +193,7 @@ namespace Model
     /**
      * <p>The version of the SQL rules engine to use when evaluating the rule.</p>
      */
-    inline void SetAwsIotSqlVersion(Aws::String&& value) { m_awsIotSqlVersionHasBeenSet = true; m_awsIotSqlVersion = value; }
+    inline void SetAwsIotSqlVersion(Aws::String&& value) { m_awsIotSqlVersionHasBeenSet = true; m_awsIotSqlVersion = std::move(value); }
 
     /**
      * <p>The version of the SQL rules engine to use when evaluating the rule.</p>
@@ -207,7 +208,7 @@ namespace Model
     /**
      * <p>The version of the SQL rules engine to use when evaluating the rule.</p>
      */
-    inline TopicRulePayload& WithAwsIotSqlVersion(Aws::String&& value) { SetAwsIotSqlVersion(value); return *this;}
+    inline TopicRulePayload& WithAwsIotSqlVersion(Aws::String&& value) { SetAwsIotSqlVersion(std::move(value)); return *this;}
 
     /**
      * <p>The version of the SQL rules engine to use when evaluating the rule.</p>

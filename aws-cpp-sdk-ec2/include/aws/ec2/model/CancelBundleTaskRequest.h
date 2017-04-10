@@ -16,6 +16,7 @@
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/ec2/EC2Request.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -77,7 +78,7 @@ namespace Model
     /**
      * <p>The ID of the bundle task.</p>
      */
-    inline void SetBundleId(Aws::String&& value) { m_bundleIdHasBeenSet = true; m_bundleId = value; }
+    inline void SetBundleId(Aws::String&& value) { m_bundleIdHasBeenSet = true; m_bundleId = std::move(value); }
 
     /**
      * <p>The ID of the bundle task.</p>
@@ -92,7 +93,7 @@ namespace Model
     /**
      * <p>The ID of the bundle task.</p>
      */
-    inline CancelBundleTaskRequest& WithBundleId(Aws::String&& value) { SetBundleId(value); return *this;}
+    inline CancelBundleTaskRequest& WithBundleId(Aws::String&& value) { SetBundleId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the bundle task.</p>

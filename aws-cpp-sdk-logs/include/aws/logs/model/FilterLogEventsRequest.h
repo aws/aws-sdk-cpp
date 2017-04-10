@@ -17,6 +17,7 @@
 #include <aws/logs/CloudWatchLogsRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <utility>
 
 namespace Aws
 {
@@ -49,7 +50,7 @@ namespace Model
     /**
      * <p>The name of the log group.</p>
      */
-    inline void SetLogGroupName(Aws::String&& value) { m_logGroupNameHasBeenSet = true; m_logGroupName = value; }
+    inline void SetLogGroupName(Aws::String&& value) { m_logGroupNameHasBeenSet = true; m_logGroupName = std::move(value); }
 
     /**
      * <p>The name of the log group.</p>
@@ -64,7 +65,7 @@ namespace Model
     /**
      * <p>The name of the log group.</p>
      */
-    inline FilterLogEventsRequest& WithLogGroupName(Aws::String&& value) { SetLogGroupName(value); return *this;}
+    inline FilterLogEventsRequest& WithLogGroupName(Aws::String&& value) { SetLogGroupName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the log group.</p>
@@ -84,7 +85,7 @@ namespace Model
     /**
      * <p>Optional list of log stream names.</p>
      */
-    inline void SetLogStreamNames(Aws::Vector<Aws::String>&& value) { m_logStreamNamesHasBeenSet = true; m_logStreamNames = value; }
+    inline void SetLogStreamNames(Aws::Vector<Aws::String>&& value) { m_logStreamNamesHasBeenSet = true; m_logStreamNames = std::move(value); }
 
     /**
      * <p>Optional list of log stream names.</p>
@@ -94,7 +95,7 @@ namespace Model
     /**
      * <p>Optional list of log stream names.</p>
      */
-    inline FilterLogEventsRequest& WithLogStreamNames(Aws::Vector<Aws::String>&& value) { SetLogStreamNames(value); return *this;}
+    inline FilterLogEventsRequest& WithLogStreamNames(Aws::Vector<Aws::String>&& value) { SetLogStreamNames(std::move(value)); return *this;}
 
     /**
      * <p>Optional list of log stream names.</p>
@@ -104,7 +105,7 @@ namespace Model
     /**
      * <p>Optional list of log stream names.</p>
      */
-    inline FilterLogEventsRequest& AddLogStreamNames(Aws::String&& value) { m_logStreamNamesHasBeenSet = true; m_logStreamNames.push_back(value); return *this; }
+    inline FilterLogEventsRequest& AddLogStreamNames(Aws::String&& value) { m_logStreamNamesHasBeenSet = true; m_logStreamNames.push_back(std::move(value)); return *this; }
 
     /**
      * <p>Optional list of log stream names.</p>
@@ -166,7 +167,7 @@ namespace Model
     /**
      * <p>The filter pattern to use. If not provided, all the events are matched.</p>
      */
-    inline void SetFilterPattern(Aws::String&& value) { m_filterPatternHasBeenSet = true; m_filterPattern = value; }
+    inline void SetFilterPattern(Aws::String&& value) { m_filterPatternHasBeenSet = true; m_filterPattern = std::move(value); }
 
     /**
      * <p>The filter pattern to use. If not provided, all the events are matched.</p>
@@ -181,7 +182,7 @@ namespace Model
     /**
      * <p>The filter pattern to use. If not provided, all the events are matched.</p>
      */
-    inline FilterLogEventsRequest& WithFilterPattern(Aws::String&& value) { SetFilterPattern(value); return *this;}
+    inline FilterLogEventsRequest& WithFilterPattern(Aws::String&& value) { SetFilterPattern(std::move(value)); return *this;}
 
     /**
      * <p>The filter pattern to use. If not provided, all the events are matched.</p>
@@ -204,7 +205,7 @@ namespace Model
      * <p>The token for the next set of events to return. (You received this token from
      * a previous call.)</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
      * <p>The token for the next set of events to return. (You received this token from
@@ -222,7 +223,7 @@ namespace Model
      * <p>The token for the next set of events to return. (You received this token from
      * a previous call.)</p>
      */
-    inline FilterLogEventsRequest& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline FilterLogEventsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>The token for the next set of events to return. (You received this token from

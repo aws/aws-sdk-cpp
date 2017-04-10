@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/elasticmapreduce/model/Configuration.h>
+#include <utility>
 
 namespace Aws
 {
@@ -67,7 +68,7 @@ namespace Model
     /**
      * <p>The classification within a configuration.</p>
      */
-    inline void SetClassification(Aws::String&& value) { m_classificationHasBeenSet = true; m_classification = value; }
+    inline void SetClassification(Aws::String&& value) { m_classificationHasBeenSet = true; m_classification = std::move(value); }
 
     /**
      * <p>The classification within a configuration.</p>
@@ -82,7 +83,7 @@ namespace Model
     /**
      * <p>The classification within a configuration.</p>
      */
-    inline Configuration& WithClassification(Aws::String&& value) { SetClassification(value); return *this;}
+    inline Configuration& WithClassification(Aws::String&& value) { SetClassification(std::move(value)); return *this;}
 
     /**
      * <p>The classification within a configuration.</p>
@@ -105,7 +106,7 @@ namespace Model
      * <p>A list of additional configurations to apply within a configuration
      * object.</p>
      */
-    inline void SetConfigurations(Aws::Vector<Configuration>&& value) { m_configurationsHasBeenSet = true; m_configurations = value; }
+    inline void SetConfigurations(Aws::Vector<Configuration>&& value) { m_configurationsHasBeenSet = true; m_configurations = std::move(value); }
 
     /**
      * <p>A list of additional configurations to apply within a configuration
@@ -117,7 +118,7 @@ namespace Model
      * <p>A list of additional configurations to apply within a configuration
      * object.</p>
      */
-    inline Configuration& WithConfigurations(Aws::Vector<Configuration>&& value) { SetConfigurations(value); return *this;}
+    inline Configuration& WithConfigurations(Aws::Vector<Configuration>&& value) { SetConfigurations(std::move(value)); return *this;}
 
     /**
      * <p>A list of additional configurations to apply within a configuration
@@ -129,7 +130,7 @@ namespace Model
      * <p>A list of additional configurations to apply within a configuration
      * object.</p>
      */
-    inline Configuration& AddConfigurations(Configuration&& value) { m_configurationsHasBeenSet = true; m_configurations.push_back(value); return *this; }
+    inline Configuration& AddConfigurations(Configuration&& value) { m_configurationsHasBeenSet = true; m_configurations.push_back(std::move(value)); return *this; }
 
     /**
      * <p>A set of properties specified within a configuration classification.</p>
@@ -144,7 +145,7 @@ namespace Model
     /**
      * <p>A set of properties specified within a configuration classification.</p>
      */
-    inline void SetProperties(Aws::Map<Aws::String, Aws::String>&& value) { m_propertiesHasBeenSet = true; m_properties = value; }
+    inline void SetProperties(Aws::Map<Aws::String, Aws::String>&& value) { m_propertiesHasBeenSet = true; m_properties = std::move(value); }
 
     /**
      * <p>A set of properties specified within a configuration classification.</p>
@@ -154,42 +155,42 @@ namespace Model
     /**
      * <p>A set of properties specified within a configuration classification.</p>
      */
-    inline Configuration& WithProperties(Aws::Map<Aws::String, Aws::String>&& value) { SetProperties(value); return *this;}
+    inline Configuration& WithProperties(Aws::Map<Aws::String, Aws::String>&& value) { SetProperties(std::move(value)); return *this;}
 
     /**
      * <p>A set of properties specified within a configuration classification.</p>
      */
-    inline Configuration& AddProperties(const Aws::String& key, const Aws::String& value) { m_propertiesHasBeenSet = true; m_properties[key] = value; return *this; }
+    inline Configuration& AddProperties(const Aws::String& key, const Aws::String& value) { m_propertiesHasBeenSet = true; m_properties.emplace(key, value); return *this; }
 
     /**
      * <p>A set of properties specified within a configuration classification.</p>
      */
-    inline Configuration& AddProperties(Aws::String&& key, const Aws::String& value) { m_propertiesHasBeenSet = true; m_properties[key] = value; return *this; }
+    inline Configuration& AddProperties(Aws::String&& key, const Aws::String& value) { m_propertiesHasBeenSet = true; m_properties.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>A set of properties specified within a configuration classification.</p>
      */
-    inline Configuration& AddProperties(const Aws::String& key, Aws::String&& value) { m_propertiesHasBeenSet = true; m_properties[key] = value; return *this; }
+    inline Configuration& AddProperties(const Aws::String& key, Aws::String&& value) { m_propertiesHasBeenSet = true; m_properties.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>A set of properties specified within a configuration classification.</p>
      */
-    inline Configuration& AddProperties(Aws::String&& key, Aws::String&& value) { m_propertiesHasBeenSet = true; m_properties[key] = value; return *this; }
+    inline Configuration& AddProperties(Aws::String&& key, Aws::String&& value) { m_propertiesHasBeenSet = true; m_properties.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
      * <p>A set of properties specified within a configuration classification.</p>
      */
-    inline Configuration& AddProperties(const char* key, Aws::String&& value) { m_propertiesHasBeenSet = true; m_properties[key] = value; return *this; }
+    inline Configuration& AddProperties(const char* key, Aws::String&& value) { m_propertiesHasBeenSet = true; m_properties.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>A set of properties specified within a configuration classification.</p>
      */
-    inline Configuration& AddProperties(Aws::String&& key, const char* value) { m_propertiesHasBeenSet = true; m_properties[key] = value; return *this; }
+    inline Configuration& AddProperties(Aws::String&& key, const char* value) { m_propertiesHasBeenSet = true; m_properties.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>A set of properties specified within a configuration classification.</p>
      */
-    inline Configuration& AddProperties(const char* key, const char* value) { m_propertiesHasBeenSet = true; m_properties[key] = value; return *this; }
+    inline Configuration& AddProperties(const char* key, const char* value) { m_propertiesHasBeenSet = true; m_properties.emplace(key, value); return *this; }
 
   private:
     Aws::String m_classification;

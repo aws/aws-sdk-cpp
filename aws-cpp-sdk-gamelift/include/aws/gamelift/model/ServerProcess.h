@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/gamelift/GameLift_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -82,7 +83,7 @@ namespace Model
      * must have a launch path of "<code>/local/game/MyGame/latest/server.exe</code>".
      * </p>
      */
-    inline void SetLaunchPath(Aws::String&& value) { m_launchPathHasBeenSet = true; m_launchPath = value; }
+    inline void SetLaunchPath(Aws::String&& value) { m_launchPathHasBeenSet = true; m_launchPath = std::move(value); }
 
     /**
      * <p>Location of the server executable in a game build. All game builds are
@@ -118,7 +119,7 @@ namespace Model
      * must have a launch path of "<code>/local/game/MyGame/latest/server.exe</code>".
      * </p>
      */
-    inline ServerProcess& WithLaunchPath(Aws::String&& value) { SetLaunchPath(value); return *this;}
+    inline ServerProcess& WithLaunchPath(Aws::String&& value) { SetLaunchPath(std::move(value)); return *this;}
 
     /**
      * <p>Location of the server executable in a game build. All game builds are
@@ -145,7 +146,7 @@ namespace Model
     /**
      * <p>Optional list of parameters to pass to the server executable on launch.</p>
      */
-    inline void SetParameters(Aws::String&& value) { m_parametersHasBeenSet = true; m_parameters = value; }
+    inline void SetParameters(Aws::String&& value) { m_parametersHasBeenSet = true; m_parameters = std::move(value); }
 
     /**
      * <p>Optional list of parameters to pass to the server executable on launch.</p>
@@ -160,7 +161,7 @@ namespace Model
     /**
      * <p>Optional list of parameters to pass to the server executable on launch.</p>
      */
-    inline ServerProcess& WithParameters(Aws::String&& value) { SetParameters(value); return *this;}
+    inline ServerProcess& WithParameters(Aws::String&& value) { SetParameters(std::move(value)); return *this;}
 
     /**
      * <p>Optional list of parameters to pass to the server executable on launch.</p>

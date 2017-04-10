@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/lightsail/Lightsail_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -75,7 +76,7 @@ namespace Model
      * <p>The state of the instance (e.g., <code>running</code> or
      * <code>pending</code>).</p>
      */
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p>The state of the instance (e.g., <code>running</code> or
@@ -93,7 +94,7 @@ namespace Model
      * <p>The state of the instance (e.g., <code>running</code> or
      * <code>pending</code>).</p>
      */
-    inline InstanceState& WithName(Aws::String&& value) { SetName(value); return *this;}
+    inline InstanceState& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>The state of the instance (e.g., <code>running</code> or

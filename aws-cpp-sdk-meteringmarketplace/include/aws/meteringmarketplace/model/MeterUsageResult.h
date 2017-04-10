@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/meteringmarketplace/MarketplaceMetering_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -46,7 +47,7 @@ namespace Model
     inline void SetMeteringRecordId(const Aws::String& value) { m_meteringRecordId = value; }
 
     
-    inline void SetMeteringRecordId(Aws::String&& value) { m_meteringRecordId = value; }
+    inline void SetMeteringRecordId(Aws::String&& value) { m_meteringRecordId = std::move(value); }
 
     
     inline void SetMeteringRecordId(const char* value) { m_meteringRecordId.assign(value); }
@@ -55,7 +56,7 @@ namespace Model
     inline MeterUsageResult& WithMeteringRecordId(const Aws::String& value) { SetMeteringRecordId(value); return *this;}
 
     
-    inline MeterUsageResult& WithMeteringRecordId(Aws::String&& value) { SetMeteringRecordId(value); return *this;}
+    inline MeterUsageResult& WithMeteringRecordId(Aws::String&& value) { SetMeteringRecordId(std::move(value)); return *this;}
 
     
     inline MeterUsageResult& WithMeteringRecordId(const char* value) { SetMeteringRecordId(value); return *this;}

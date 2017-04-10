@@ -17,6 +17,7 @@
 #include <aws/workspaces/WorkSpacesRequest.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -56,7 +57,7 @@ namespace Model
      * <p>An array of strings that contains the directory identifiers to retrieve
      * information for. If this member is null, all directories are retrieved.</p>
      */
-    inline void SetDirectoryIds(Aws::Vector<Aws::String>&& value) { m_directoryIdsHasBeenSet = true; m_directoryIds = value; }
+    inline void SetDirectoryIds(Aws::Vector<Aws::String>&& value) { m_directoryIdsHasBeenSet = true; m_directoryIds = std::move(value); }
 
     /**
      * <p>An array of strings that contains the directory identifiers to retrieve
@@ -68,7 +69,7 @@ namespace Model
      * <p>An array of strings that contains the directory identifiers to retrieve
      * information for. If this member is null, all directories are retrieved.</p>
      */
-    inline DescribeWorkspaceDirectoriesRequest& WithDirectoryIds(Aws::Vector<Aws::String>&& value) { SetDirectoryIds(value); return *this;}
+    inline DescribeWorkspaceDirectoriesRequest& WithDirectoryIds(Aws::Vector<Aws::String>&& value) { SetDirectoryIds(std::move(value)); return *this;}
 
     /**
      * <p>An array of strings that contains the directory identifiers to retrieve
@@ -80,7 +81,7 @@ namespace Model
      * <p>An array of strings that contains the directory identifiers to retrieve
      * information for. If this member is null, all directories are retrieved.</p>
      */
-    inline DescribeWorkspaceDirectoriesRequest& AddDirectoryIds(Aws::String&& value) { m_directoryIdsHasBeenSet = true; m_directoryIds.push_back(value); return *this; }
+    inline DescribeWorkspaceDirectoriesRequest& AddDirectoryIds(Aws::String&& value) { m_directoryIdsHasBeenSet = true; m_directoryIds.push_back(std::move(value)); return *this; }
 
     /**
      * <p>An array of strings that contains the directory identifiers to retrieve
@@ -104,7 +105,7 @@ namespace Model
      * <p>The <code>NextToken</code> value from a previous call to this operation. Pass
      * null if this is the first call.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
      * <p>The <code>NextToken</code> value from a previous call to this operation. Pass
@@ -122,7 +123,7 @@ namespace Model
      * <p>The <code>NextToken</code> value from a previous call to this operation. Pass
      * null if this is the first call.</p>
      */
-    inline DescribeWorkspaceDirectoriesRequest& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline DescribeWorkspaceDirectoriesRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>The <code>NextToken</code> value from a previous call to this operation. Pass

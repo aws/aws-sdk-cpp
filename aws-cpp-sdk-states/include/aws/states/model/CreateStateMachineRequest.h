@@ -16,6 +16,7 @@
 #include <aws/states/SFN_EXPORTS.h>
 #include <aws/states/SFNRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -51,7 +52,7 @@ namespace Model
      * <p>The name of the state machine. This name must be unique for your AWS account
      * and region.</p>
      */
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p>The name of the state machine. This name must be unique for your AWS account
@@ -69,7 +70,7 @@ namespace Model
      * <p>The name of the state machine. This name must be unique for your AWS account
      * and region.</p>
      */
-    inline CreateStateMachineRequest& WithName(Aws::String&& value) { SetName(value); return *this;}
+    inline CreateStateMachineRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the state machine. This name must be unique for your AWS account
@@ -90,7 +91,7 @@ namespace Model
     /**
      * <p>The Amazon States Language definition of the state machine.</p>
      */
-    inline void SetDefinition(Aws::String&& value) { m_definitionHasBeenSet = true; m_definition = value; }
+    inline void SetDefinition(Aws::String&& value) { m_definitionHasBeenSet = true; m_definition = std::move(value); }
 
     /**
      * <p>The Amazon States Language definition of the state machine.</p>
@@ -105,7 +106,7 @@ namespace Model
     /**
      * <p>The Amazon States Language definition of the state machine.</p>
      */
-    inline CreateStateMachineRequest& WithDefinition(Aws::String&& value) { SetDefinition(value); return *this;}
+    inline CreateStateMachineRequest& WithDefinition(Aws::String&& value) { SetDefinition(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon States Language definition of the state machine.</p>
@@ -128,7 +129,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the IAM role to use for this state
      * machine.</p>
      */
-    inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
+    inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM role to use for this state
@@ -146,7 +147,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the IAM role to use for this state
      * machine.</p>
      */
-    inline CreateStateMachineRequest& WithRoleArn(Aws::String&& value) { SetRoleArn(value); return *this;}
+    inline CreateStateMachineRequest& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM role to use for this state

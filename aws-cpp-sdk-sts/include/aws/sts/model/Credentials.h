@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
+#include <utility>
 
 namespace Aws
 {
@@ -60,7 +61,7 @@ namespace Model
     /**
      * <p>The access key ID that identifies the temporary security credentials.</p>
      */
-    inline void SetAccessKeyId(Aws::String&& value) { m_accessKeyIdHasBeenSet = true; m_accessKeyId = value; }
+    inline void SetAccessKeyId(Aws::String&& value) { m_accessKeyIdHasBeenSet = true; m_accessKeyId = std::move(value); }
 
     /**
      * <p>The access key ID that identifies the temporary security credentials.</p>
@@ -75,7 +76,7 @@ namespace Model
     /**
      * <p>The access key ID that identifies the temporary security credentials.</p>
      */
-    inline Credentials& WithAccessKeyId(Aws::String&& value) { SetAccessKeyId(value); return *this;}
+    inline Credentials& WithAccessKeyId(Aws::String&& value) { SetAccessKeyId(std::move(value)); return *this;}
 
     /**
      * <p>The access key ID that identifies the temporary security credentials.</p>
@@ -95,7 +96,7 @@ namespace Model
     /**
      * <p>The secret access key that can be used to sign requests.</p>
      */
-    inline void SetSecretAccessKey(Aws::String&& value) { m_secretAccessKeyHasBeenSet = true; m_secretAccessKey = value; }
+    inline void SetSecretAccessKey(Aws::String&& value) { m_secretAccessKeyHasBeenSet = true; m_secretAccessKey = std::move(value); }
 
     /**
      * <p>The secret access key that can be used to sign requests.</p>
@@ -110,7 +111,7 @@ namespace Model
     /**
      * <p>The secret access key that can be used to sign requests.</p>
      */
-    inline Credentials& WithSecretAccessKey(Aws::String&& value) { SetSecretAccessKey(value); return *this;}
+    inline Credentials& WithSecretAccessKey(Aws::String&& value) { SetSecretAccessKey(std::move(value)); return *this;}
 
     /**
      * <p>The secret access key that can be used to sign requests.</p>
@@ -133,7 +134,7 @@ namespace Model
      * <p>The token that users must pass to the service API to use the temporary
      * credentials.</p>
      */
-    inline void SetSessionToken(Aws::String&& value) { m_sessionTokenHasBeenSet = true; m_sessionToken = value; }
+    inline void SetSessionToken(Aws::String&& value) { m_sessionTokenHasBeenSet = true; m_sessionToken = std::move(value); }
 
     /**
      * <p>The token that users must pass to the service API to use the temporary
@@ -151,7 +152,7 @@ namespace Model
      * <p>The token that users must pass to the service API to use the temporary
      * credentials.</p>
      */
-    inline Credentials& WithSessionToken(Aws::String&& value) { SetSessionToken(value); return *this;}
+    inline Credentials& WithSessionToken(Aws::String&& value) { SetSessionToken(std::move(value)); return *this;}
 
     /**
      * <p>The token that users must pass to the service API to use the temporary
@@ -172,7 +173,7 @@ namespace Model
     /**
      * <p>The date on which the current credentials expire.</p>
      */
-    inline void SetExpiration(Aws::Utils::DateTime&& value) { m_expirationHasBeenSet = true; m_expiration = value; }
+    inline void SetExpiration(Aws::Utils::DateTime&& value) { m_expirationHasBeenSet = true; m_expiration = std::move(value); }
 
     /**
      * <p>The date on which the current credentials expire.</p>
@@ -182,7 +183,7 @@ namespace Model
     /**
      * <p>The date on which the current credentials expire.</p>
      */
-    inline Credentials& WithExpiration(Aws::Utils::DateTime&& value) { SetExpiration(value); return *this;}
+    inline Credentials& WithExpiration(Aws::Utils::DateTime&& value) { SetExpiration(std::move(value)); return *this;}
 
   private:
     Aws::String m_accessKeyId;

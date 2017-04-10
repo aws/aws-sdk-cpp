@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/organizations/Organizations_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -71,7 +72,7 @@ namespace Model
      * digits (the ID of the root that contains the OU) followed by a second "-" dash
      * and from 8 to 32 additional lower-case letters or digits.</p>
      */
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = value; }
+    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
 
     /**
      * <p>The unique identifier (ID) associated with this OU.</p> <p>The <a
@@ -98,7 +99,7 @@ namespace Model
      * digits (the ID of the root that contains the OU) followed by a second "-" dash
      * and from 8 to 32 additional lower-case letters or digits.</p>
      */
-    inline OrganizationalUnit& WithId(Aws::String&& value) { SetId(value); return *this;}
+    inline OrganizationalUnit& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
 
     /**
      * <p>The unique identifier (ID) associated with this OU.</p> <p>The <a
@@ -134,7 +135,7 @@ namespace Model
      * Formats Supported by Organizations</a> in the <i>AWS Organizations User
      * Guide</i>.</p>
      */
-    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = value; }
+    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of this OU.</p> <p>For more information about
@@ -161,7 +162,7 @@ namespace Model
      * Formats Supported by Organizations</a> in the <i>AWS Organizations User
      * Guide</i>.</p>
      */
-    inline OrganizationalUnit& WithArn(Aws::String&& value) { SetArn(value); return *this;}
+    inline OrganizationalUnit& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of this OU.</p> <p>For more information about
@@ -194,7 +195,7 @@ namespace Model
      * validate this parameter is a string of any of the characters in the ASCII
      * character range.</p>
      */
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p>The friendly name of this OU.</p> <p>The <a
@@ -218,7 +219,7 @@ namespace Model
      * validate this parameter is a string of any of the characters in the ASCII
      * character range.</p>
      */
-    inline OrganizationalUnit& WithName(Aws::String&& value) { SetName(value); return *this;}
+    inline OrganizationalUnit& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>The friendly name of this OU.</p> <p>The <a

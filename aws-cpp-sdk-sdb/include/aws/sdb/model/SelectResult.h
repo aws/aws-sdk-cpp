@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/sdb/model/ResponseMetadata.h>
 #include <aws/sdb/model/Item.h>
+#include <utility>
 
 namespace Aws
 {
@@ -55,7 +56,7 @@ namespace Model
     /**
      * A list of items that match the select expression.
      */
-    inline void SetItems(Aws::Vector<Item>&& value) { m_items = value; }
+    inline void SetItems(Aws::Vector<Item>&& value) { m_items = std::move(value); }
 
     /**
      * A list of items that match the select expression.
@@ -65,7 +66,7 @@ namespace Model
     /**
      * A list of items that match the select expression.
      */
-    inline SelectResult& WithItems(Aws::Vector<Item>&& value) { SetItems(value); return *this;}
+    inline SelectResult& WithItems(Aws::Vector<Item>&& value) { SetItems(std::move(value)); return *this;}
 
     /**
      * A list of items that match the select expression.
@@ -75,7 +76,7 @@ namespace Model
     /**
      * A list of items that match the select expression.
      */
-    inline SelectResult& AddItems(Item&& value) { m_items.push_back(value); return *this; }
+    inline SelectResult& AddItems(Item&& value) { m_items.push_back(std::move(value)); return *this; }
 
     /**
      * An opaque token indicating that more items than <code>MaxNumberOfItems</code>
@@ -96,7 +97,7 @@ namespace Model
      * were matched, the response size exceeded 1 megabyte, or the execution time
      * exceeded 5 seconds.
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
      * An opaque token indicating that more items than <code>MaxNumberOfItems</code>
@@ -117,7 +118,7 @@ namespace Model
      * were matched, the response size exceeded 1 megabyte, or the execution time
      * exceeded 5 seconds.
      */
-    inline SelectResult& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline SelectResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * An opaque token indicating that more items than <code>MaxNumberOfItems</code>
@@ -133,13 +134,13 @@ namespace Model
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
 
     
     inline SelectResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
 
     
-    inline SelectResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
+    inline SelectResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
     Aws::Vector<Item> m_items;

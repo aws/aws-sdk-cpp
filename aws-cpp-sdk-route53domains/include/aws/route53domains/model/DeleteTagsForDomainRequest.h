@@ -17,6 +17,7 @@
 #include <aws/route53domains/Route53DomainsRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <utility>
 
 namespace Aws
 {
@@ -71,7 +72,7 @@ namespace Model
      * beginning or end of a label. To specify an Internationalized Domain Name, you
      * must convert the name to Punycode.</p> <p>Required: Yes</p>
      */
-    inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
+    inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = std::move(value); }
 
     /**
      * <p>The domain for which you want to delete one or more tags.</p> <p>The name of
@@ -104,7 +105,7 @@ namespace Model
      * beginning or end of a label. To specify an Internationalized Domain Name, you
      * must convert the name to Punycode.</p> <p>Required: Yes</p>
      */
-    inline DeleteTagsForDomainRequest& WithDomainName(Aws::String&& value) { SetDomainName(value); return *this;}
+    inline DeleteTagsForDomainRequest& WithDomainName(Aws::String&& value) { SetDomainName(std::move(value)); return *this;}
 
     /**
      * <p>The domain for which you want to delete one or more tags.</p> <p>The name of
@@ -133,7 +134,7 @@ namespace Model
      * <p>A list of tag keys to delete.</p> <p>Type: A list that contains the keys of
      * the tags that you want to delete.</p> <p>Default: None</p> <p>Required: No</p>'>
      */
-    inline void SetTagsToDelete(Aws::Vector<Aws::String>&& value) { m_tagsToDeleteHasBeenSet = true; m_tagsToDelete = value; }
+    inline void SetTagsToDelete(Aws::Vector<Aws::String>&& value) { m_tagsToDeleteHasBeenSet = true; m_tagsToDelete = std::move(value); }
 
     /**
      * <p>A list of tag keys to delete.</p> <p>Type: A list that contains the keys of
@@ -145,7 +146,7 @@ namespace Model
      * <p>A list of tag keys to delete.</p> <p>Type: A list that contains the keys of
      * the tags that you want to delete.</p> <p>Default: None</p> <p>Required: No</p>'>
      */
-    inline DeleteTagsForDomainRequest& WithTagsToDelete(Aws::Vector<Aws::String>&& value) { SetTagsToDelete(value); return *this;}
+    inline DeleteTagsForDomainRequest& WithTagsToDelete(Aws::Vector<Aws::String>&& value) { SetTagsToDelete(std::move(value)); return *this;}
 
     /**
      * <p>A list of tag keys to delete.</p> <p>Type: A list that contains the keys of
@@ -157,7 +158,7 @@ namespace Model
      * <p>A list of tag keys to delete.</p> <p>Type: A list that contains the keys of
      * the tags that you want to delete.</p> <p>Default: None</p> <p>Required: No</p>'>
      */
-    inline DeleteTagsForDomainRequest& AddTagsToDelete(Aws::String&& value) { m_tagsToDeleteHasBeenSet = true; m_tagsToDelete.push_back(value); return *this; }
+    inline DeleteTagsForDomainRequest& AddTagsToDelete(Aws::String&& value) { m_tagsToDeleteHasBeenSet = true; m_tagsToDelete.push_back(std::move(value)); return *this; }
 
     /**
      * <p>A list of tag keys to delete.</p> <p>Type: A list that contains the keys of

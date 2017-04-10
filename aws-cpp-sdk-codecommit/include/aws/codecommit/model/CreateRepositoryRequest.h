@@ -16,6 +16,7 @@
 #include <aws/codecommit/CodeCommit_EXPORTS.h>
 #include <aws/codecommit/CodeCommitRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -70,7 +71,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">Limits</a>
      * in the AWS CodeCommit User Guide. The suffix ".git" is prohibited.</p> </note>
      */
-    inline void SetRepositoryName(Aws::String&& value) { m_repositoryNameHasBeenSet = true; m_repositoryName = value; }
+    inline void SetRepositoryName(Aws::String&& value) { m_repositoryNameHasBeenSet = true; m_repositoryName = std::move(value); }
 
     /**
      * <p>The name of the new repository to be created.</p> <note> <p>The repository
@@ -103,7 +104,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">Limits</a>
      * in the AWS CodeCommit User Guide. The suffix ".git" is prohibited.</p> </note>
      */
-    inline CreateRepositoryRequest& WithRepositoryName(Aws::String&& value) { SetRepositoryName(value); return *this;}
+    inline CreateRepositoryRequest& WithRepositoryName(Aws::String&& value) { SetRepositoryName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the new repository to be created.</p> <note> <p>The repository
@@ -144,7 +145,7 @@ namespace Model
      * sure that you HTML-encode the description field in any application that uses
      * this API to display the repository description on a web page.</p> </note>
      */
-    inline void SetRepositoryDescription(Aws::String&& value) { m_repositoryDescriptionHasBeenSet = true; m_repositoryDescription = value; }
+    inline void SetRepositoryDescription(Aws::String&& value) { m_repositoryDescriptionHasBeenSet = true; m_repositoryDescription = std::move(value); }
 
     /**
      * <p>A comment or description about the new repository.</p> <note> <p>The
@@ -174,7 +175,7 @@ namespace Model
      * sure that you HTML-encode the description field in any application that uses
      * this API to display the repository description on a web page.</p> </note>
      */
-    inline CreateRepositoryRequest& WithRepositoryDescription(Aws::String&& value) { SetRepositoryDescription(value); return *this;}
+    inline CreateRepositoryRequest& WithRepositoryDescription(Aws::String&& value) { SetRepositoryDescription(std::move(value)); return *this;}
 
     /**
      * <p>A comment or description about the new repository.</p> <note> <p>The

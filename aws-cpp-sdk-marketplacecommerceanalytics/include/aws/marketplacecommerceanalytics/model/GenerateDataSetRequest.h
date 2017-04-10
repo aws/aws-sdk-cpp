@@ -19,6 +19,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <utility>
 
 namespace Aws
 {
@@ -178,7 +179,7 @@ namespace Model
      * 2016-12.</li> <li><i>us_sales_and_use_tax_records</i> - Available monthly on the
      * 15th day of the month by 5:00 PM Pacific Time since 2017-02-15.</li> </ul> </p>
      */
-    inline void SetDataSetType(DataSetType&& value) { m_dataSetTypeHasBeenSet = true; m_dataSetType = value; }
+    inline void SetDataSetType(DataSetType&& value) { m_dataSetTypeHasBeenSet = true; m_dataSetType = std::move(value); }
 
     /**
      * <p>The desired data set type.</p> <p> <ul>
@@ -270,7 +271,7 @@ namespace Model
      * 2016-12.</li> <li><i>us_sales_and_use_tax_records</i> - Available monthly on the
      * 15th day of the month by 5:00 PM Pacific Time since 2017-02-15.</li> </ul> </p>
      */
-    inline GenerateDataSetRequest& WithDataSetType(DataSetType&& value) { SetDataSetType(value); return *this;}
+    inline GenerateDataSetRequest& WithDataSetType(DataSetType&& value) { SetDataSetType(std::move(value)); return *this;}
 
     /**
      * The date a data set was published. For daily data sets, provide a date with
@@ -297,7 +298,7 @@ namespace Model
      * ignored). For monthly data sets, provide a date with month-level granularity for
      * the desired month (the day value will be ignored).
      */
-    inline void SetDataSetPublicationDate(Aws::Utils::DateTime&& value) { m_dataSetPublicationDateHasBeenSet = true; m_dataSetPublicationDate = value; }
+    inline void SetDataSetPublicationDate(Aws::Utils::DateTime&& value) { m_dataSetPublicationDateHasBeenSet = true; m_dataSetPublicationDate = std::move(value); }
 
     /**
      * The date a data set was published. For daily data sets, provide a date with
@@ -315,7 +316,7 @@ namespace Model
      * ignored). For monthly data sets, provide a date with month-level granularity for
      * the desired month (the day value will be ignored).
      */
-    inline GenerateDataSetRequest& WithDataSetPublicationDate(Aws::Utils::DateTime&& value) { SetDataSetPublicationDate(value); return *this;}
+    inline GenerateDataSetRequest& WithDataSetPublicationDate(Aws::Utils::DateTime&& value) { SetDataSetPublicationDate(std::move(value)); return *this;}
 
     /**
      * The Amazon Resource Name (ARN) of the Role with an attached permissions policy
@@ -333,7 +334,7 @@ namespace Model
      * The Amazon Resource Name (ARN) of the Role with an attached permissions policy
      * to interact with the provided AWS services.
      */
-    inline void SetRoleNameArn(Aws::String&& value) { m_roleNameArnHasBeenSet = true; m_roleNameArn = value; }
+    inline void SetRoleNameArn(Aws::String&& value) { m_roleNameArnHasBeenSet = true; m_roleNameArn = std::move(value); }
 
     /**
      * The Amazon Resource Name (ARN) of the Role with an attached permissions policy
@@ -351,7 +352,7 @@ namespace Model
      * The Amazon Resource Name (ARN) of the Role with an attached permissions policy
      * to interact with the provided AWS services.
      */
-    inline GenerateDataSetRequest& WithRoleNameArn(Aws::String&& value) { SetRoleNameArn(value); return *this;}
+    inline GenerateDataSetRequest& WithRoleNameArn(Aws::String&& value) { SetRoleNameArn(std::move(value)); return *this;}
 
     /**
      * The Amazon Resource Name (ARN) of the Role with an attached permissions policy
@@ -372,7 +373,7 @@ namespace Model
     /**
      * The name (friendly name, not ARN) of the destination S3 bucket.
      */
-    inline void SetDestinationS3BucketName(Aws::String&& value) { m_destinationS3BucketNameHasBeenSet = true; m_destinationS3BucketName = value; }
+    inline void SetDestinationS3BucketName(Aws::String&& value) { m_destinationS3BucketNameHasBeenSet = true; m_destinationS3BucketName = std::move(value); }
 
     /**
      * The name (friendly name, not ARN) of the destination S3 bucket.
@@ -387,7 +388,7 @@ namespace Model
     /**
      * The name (friendly name, not ARN) of the destination S3 bucket.
      */
-    inline GenerateDataSetRequest& WithDestinationS3BucketName(Aws::String&& value) { SetDestinationS3BucketName(value); return *this;}
+    inline GenerateDataSetRequest& WithDestinationS3BucketName(Aws::String&& value) { SetDestinationS3BucketName(std::move(value)); return *this;}
 
     /**
      * The name (friendly name, not ARN) of the destination S3 bucket.
@@ -422,7 +423,7 @@ namespace Model
      * prefix directory structure does not exist, it will be created. If no prefix is
      * provided, the data set will be published to the S3 bucket root.
      */
-    inline void SetDestinationS3Prefix(Aws::String&& value) { m_destinationS3PrefixHasBeenSet = true; m_destinationS3Prefix = value; }
+    inline void SetDestinationS3Prefix(Aws::String&& value) { m_destinationS3PrefixHasBeenSet = true; m_destinationS3Prefix = std::move(value); }
 
     /**
      * (Optional) The desired S3 prefix for the published data set, similar to a
@@ -452,7 +453,7 @@ namespace Model
      * prefix directory structure does not exist, it will be created. If no prefix is
      * provided, the data set will be published to the S3 bucket root.
      */
-    inline GenerateDataSetRequest& WithDestinationS3Prefix(Aws::String&& value) { SetDestinationS3Prefix(value); return *this;}
+    inline GenerateDataSetRequest& WithDestinationS3Prefix(Aws::String&& value) { SetDestinationS3Prefix(std::move(value)); return *this;}
 
     /**
      * (Optional) The desired S3 prefix for the published data set, similar to a
@@ -480,7 +481,7 @@ namespace Model
      * Amazon Resource Name (ARN) for the SNS Topic that will be notified when the data
      * set has been published or if an error has occurred.
      */
-    inline void SetSnsTopicArn(Aws::String&& value) { m_snsTopicArnHasBeenSet = true; m_snsTopicArn = value; }
+    inline void SetSnsTopicArn(Aws::String&& value) { m_snsTopicArnHasBeenSet = true; m_snsTopicArn = std::move(value); }
 
     /**
      * Amazon Resource Name (ARN) for the SNS Topic that will be notified when the data
@@ -498,7 +499,7 @@ namespace Model
      * Amazon Resource Name (ARN) for the SNS Topic that will be notified when the data
      * set has been published or if an error has occurred.
      */
-    inline GenerateDataSetRequest& WithSnsTopicArn(Aws::String&& value) { SetSnsTopicArn(value); return *this;}
+    inline GenerateDataSetRequest& WithSnsTopicArn(Aws::String&& value) { SetSnsTopicArn(std::move(value)); return *this;}
 
     /**
      * Amazon Resource Name (ARN) for the SNS Topic that will be notified when the data
@@ -525,7 +526,7 @@ namespace Model
      * notification message and the data set metadata file. These key-value pairs can
      * be used to correlated responses with tracking information from other systems.
      */
-    inline void SetCustomerDefinedValues(Aws::Map<Aws::String, Aws::String>&& value) { m_customerDefinedValuesHasBeenSet = true; m_customerDefinedValues = value; }
+    inline void SetCustomerDefinedValues(Aws::Map<Aws::String, Aws::String>&& value) { m_customerDefinedValuesHasBeenSet = true; m_customerDefinedValues = std::move(value); }
 
     /**
      * (Optional) Key-value pairs which will be returned, unmodified, in the Amazon SNS
@@ -539,56 +540,56 @@ namespace Model
      * notification message and the data set metadata file. These key-value pairs can
      * be used to correlated responses with tracking information from other systems.
      */
-    inline GenerateDataSetRequest& WithCustomerDefinedValues(Aws::Map<Aws::String, Aws::String>&& value) { SetCustomerDefinedValues(value); return *this;}
+    inline GenerateDataSetRequest& WithCustomerDefinedValues(Aws::Map<Aws::String, Aws::String>&& value) { SetCustomerDefinedValues(std::move(value)); return *this;}
 
     /**
      * (Optional) Key-value pairs which will be returned, unmodified, in the Amazon SNS
      * notification message and the data set metadata file. These key-value pairs can
      * be used to correlated responses with tracking information from other systems.
      */
-    inline GenerateDataSetRequest& AddCustomerDefinedValues(const Aws::String& key, const Aws::String& value) { m_customerDefinedValuesHasBeenSet = true; m_customerDefinedValues[key] = value; return *this; }
+    inline GenerateDataSetRequest& AddCustomerDefinedValues(const Aws::String& key, const Aws::String& value) { m_customerDefinedValuesHasBeenSet = true; m_customerDefinedValues.emplace(key, value); return *this; }
 
     /**
      * (Optional) Key-value pairs which will be returned, unmodified, in the Amazon SNS
      * notification message and the data set metadata file. These key-value pairs can
      * be used to correlated responses with tracking information from other systems.
      */
-    inline GenerateDataSetRequest& AddCustomerDefinedValues(Aws::String&& key, const Aws::String& value) { m_customerDefinedValuesHasBeenSet = true; m_customerDefinedValues[key] = value; return *this; }
+    inline GenerateDataSetRequest& AddCustomerDefinedValues(Aws::String&& key, const Aws::String& value) { m_customerDefinedValuesHasBeenSet = true; m_customerDefinedValues.emplace(std::move(key), value); return *this; }
 
     /**
      * (Optional) Key-value pairs which will be returned, unmodified, in the Amazon SNS
      * notification message and the data set metadata file. These key-value pairs can
      * be used to correlated responses with tracking information from other systems.
      */
-    inline GenerateDataSetRequest& AddCustomerDefinedValues(const Aws::String& key, Aws::String&& value) { m_customerDefinedValuesHasBeenSet = true; m_customerDefinedValues[key] = value; return *this; }
+    inline GenerateDataSetRequest& AddCustomerDefinedValues(const Aws::String& key, Aws::String&& value) { m_customerDefinedValuesHasBeenSet = true; m_customerDefinedValues.emplace(key, std::move(value)); return *this; }
 
     /**
      * (Optional) Key-value pairs which will be returned, unmodified, in the Amazon SNS
      * notification message and the data set metadata file. These key-value pairs can
      * be used to correlated responses with tracking information from other systems.
      */
-    inline GenerateDataSetRequest& AddCustomerDefinedValues(Aws::String&& key, Aws::String&& value) { m_customerDefinedValuesHasBeenSet = true; m_customerDefinedValues[key] = value; return *this; }
+    inline GenerateDataSetRequest& AddCustomerDefinedValues(Aws::String&& key, Aws::String&& value) { m_customerDefinedValuesHasBeenSet = true; m_customerDefinedValues.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
      * (Optional) Key-value pairs which will be returned, unmodified, in the Amazon SNS
      * notification message and the data set metadata file. These key-value pairs can
      * be used to correlated responses with tracking information from other systems.
      */
-    inline GenerateDataSetRequest& AddCustomerDefinedValues(const char* key, Aws::String&& value) { m_customerDefinedValuesHasBeenSet = true; m_customerDefinedValues[key] = value; return *this; }
+    inline GenerateDataSetRequest& AddCustomerDefinedValues(const char* key, Aws::String&& value) { m_customerDefinedValuesHasBeenSet = true; m_customerDefinedValues.emplace(key, std::move(value)); return *this; }
 
     /**
      * (Optional) Key-value pairs which will be returned, unmodified, in the Amazon SNS
      * notification message and the data set metadata file. These key-value pairs can
      * be used to correlated responses with tracking information from other systems.
      */
-    inline GenerateDataSetRequest& AddCustomerDefinedValues(Aws::String&& key, const char* value) { m_customerDefinedValuesHasBeenSet = true; m_customerDefinedValues[key] = value; return *this; }
+    inline GenerateDataSetRequest& AddCustomerDefinedValues(Aws::String&& key, const char* value) { m_customerDefinedValuesHasBeenSet = true; m_customerDefinedValues.emplace(std::move(key), value); return *this; }
 
     /**
      * (Optional) Key-value pairs which will be returned, unmodified, in the Amazon SNS
      * notification message and the data set metadata file. These key-value pairs can
      * be used to correlated responses with tracking information from other systems.
      */
-    inline GenerateDataSetRequest& AddCustomerDefinedValues(const char* key, const char* value) { m_customerDefinedValuesHasBeenSet = true; m_customerDefinedValues[key] = value; return *this; }
+    inline GenerateDataSetRequest& AddCustomerDefinedValues(const char* key, const char* value) { m_customerDefinedValuesHasBeenSet = true; m_customerDefinedValues.emplace(key, value); return *this; }
 
   private:
     DataSetType m_dataSetType;

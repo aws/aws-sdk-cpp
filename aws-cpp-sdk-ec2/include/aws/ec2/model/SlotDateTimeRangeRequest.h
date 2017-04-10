@@ -16,6 +16,7 @@
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/DateTime.h>
+#include <utility>
 
 namespace Aws
 {
@@ -61,7 +62,7 @@ namespace Model
     /**
      * <p>The earliest date and time, in UTC, for the Scheduled Instance to start.</p>
      */
-    inline void SetEarliestTime(Aws::Utils::DateTime&& value) { m_earliestTimeHasBeenSet = true; m_earliestTime = value; }
+    inline void SetEarliestTime(Aws::Utils::DateTime&& value) { m_earliestTimeHasBeenSet = true; m_earliestTime = std::move(value); }
 
     /**
      * <p>The earliest date and time, in UTC, for the Scheduled Instance to start.</p>
@@ -71,7 +72,7 @@ namespace Model
     /**
      * <p>The earliest date and time, in UTC, for the Scheduled Instance to start.</p>
      */
-    inline SlotDateTimeRangeRequest& WithEarliestTime(Aws::Utils::DateTime&& value) { SetEarliestTime(value); return *this;}
+    inline SlotDateTimeRangeRequest& WithEarliestTime(Aws::Utils::DateTime&& value) { SetEarliestTime(std::move(value)); return *this;}
 
     /**
      * <p>The latest date and time, in UTC, for the Scheduled Instance to start. This
@@ -92,7 +93,7 @@ namespace Model
      * value must be later than or equal to the earliest date and at most three months
      * in the future.</p>
      */
-    inline void SetLatestTime(Aws::Utils::DateTime&& value) { m_latestTimeHasBeenSet = true; m_latestTime = value; }
+    inline void SetLatestTime(Aws::Utils::DateTime&& value) { m_latestTimeHasBeenSet = true; m_latestTime = std::move(value); }
 
     /**
      * <p>The latest date and time, in UTC, for the Scheduled Instance to start. This
@@ -106,7 +107,7 @@ namespace Model
      * value must be later than or equal to the earliest date and at most three months
      * in the future.</p>
      */
-    inline SlotDateTimeRangeRequest& WithLatestTime(Aws::Utils::DateTime&& value) { SetLatestTime(value); return *this;}
+    inline SlotDateTimeRangeRequest& WithLatestTime(Aws::Utils::DateTime&& value) { SetLatestTime(std::move(value)); return *this;}
 
   private:
     Aws::Utils::DateTime m_earliestTime;

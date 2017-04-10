@@ -17,6 +17,7 @@
 #include <aws/iam/IAMRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/iam/model/EncodingType.h>
+#include <utility>
 
 namespace Aws
 {
@@ -63,7 +64,7 @@ namespace Model
      * alphanumeric characters with no spaces. You can also include any of the
      * following characters: =,.@-</p>
      */
-    inline void SetUserName(Aws::String&& value) { m_userNameHasBeenSet = true; m_userName = value; }
+    inline void SetUserName(Aws::String&& value) { m_userNameHasBeenSet = true; m_userName = std::move(value); }
 
     /**
      * <p>The name of the IAM user associated with the SSH public key.</p> <p>This
@@ -90,7 +91,7 @@ namespace Model
      * alphanumeric characters with no spaces. You can also include any of the
      * following characters: =,.@-</p>
      */
-    inline GetSSHPublicKeyRequest& WithUserName(Aws::String&& value) { SetUserName(value); return *this;}
+    inline GetSSHPublicKeyRequest& WithUserName(Aws::String&& value) { SetUserName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the IAM user associated with the SSH public key.</p> <p>This
@@ -120,7 +121,7 @@ namespace Model
      * (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string
      * of characters that can consist of any upper or lowercased letter or digit.</p>
      */
-    inline void SetSSHPublicKeyId(Aws::String&& value) { m_sSHPublicKeyIdHasBeenSet = true; m_sSHPublicKeyId = value; }
+    inline void SetSSHPublicKeyId(Aws::String&& value) { m_sSHPublicKeyIdHasBeenSet = true; m_sSHPublicKeyId = std::move(value); }
 
     /**
      * <p>The unique identifier for the SSH public key.</p> <p>This parameter allows
@@ -141,7 +142,7 @@ namespace Model
      * (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string
      * of characters that can consist of any upper or lowercased letter or digit.</p>
      */
-    inline GetSSHPublicKeyRequest& WithSSHPublicKeyId(Aws::String&& value) { SetSSHPublicKeyId(value); return *this;}
+    inline GetSSHPublicKeyRequest& WithSSHPublicKeyId(Aws::String&& value) { SetSSHPublicKeyId(std::move(value)); return *this;}
 
     /**
      * <p>The unique identifier for the SSH public key.</p> <p>This parameter allows
@@ -169,7 +170,7 @@ namespace Model
      * the public key in ssh-rsa format, use <code>SSH</code>. To retrieve the public
      * key in PEM format, use <code>PEM</code>.</p>
      */
-    inline void SetEncoding(EncodingType&& value) { m_encodingHasBeenSet = true; m_encoding = value; }
+    inline void SetEncoding(EncodingType&& value) { m_encodingHasBeenSet = true; m_encoding = std::move(value); }
 
     /**
      * <p>Specifies the public key encoding format to use in the response. To retrieve
@@ -183,7 +184,7 @@ namespace Model
      * the public key in ssh-rsa format, use <code>SSH</code>. To retrieve the public
      * key in PEM format, use <code>PEM</code>.</p>
      */
-    inline GetSSHPublicKeyRequest& WithEncoding(EncodingType&& value) { SetEncoding(value); return *this;}
+    inline GetSSHPublicKeyRequest& WithEncoding(EncodingType&& value) { SetEncoding(std::move(value)); return *this;}
 
   private:
     Aws::String m_userName;

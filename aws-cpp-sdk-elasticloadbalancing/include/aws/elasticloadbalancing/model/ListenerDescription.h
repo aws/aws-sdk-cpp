@@ -18,6 +18,7 @@
 #include <aws/elasticloadbalancing/model/Listener.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -55,13 +56,13 @@ namespace Model
     inline void SetListener(const Listener& value) { m_listenerHasBeenSet = true; m_listener = value; }
 
     
-    inline void SetListener(Listener&& value) { m_listenerHasBeenSet = true; m_listener = value; }
+    inline void SetListener(Listener&& value) { m_listenerHasBeenSet = true; m_listener = std::move(value); }
 
     
     inline ListenerDescription& WithListener(const Listener& value) { SetListener(value); return *this;}
 
     
-    inline ListenerDescription& WithListener(Listener&& value) { SetListener(value); return *this;}
+    inline ListenerDescription& WithListener(Listener&& value) { SetListener(std::move(value)); return *this;}
 
     /**
      * <p>The policies. If there are no policies enabled, the list is empty.</p>
@@ -76,7 +77,7 @@ namespace Model
     /**
      * <p>The policies. If there are no policies enabled, the list is empty.</p>
      */
-    inline void SetPolicyNames(Aws::Vector<Aws::String>&& value) { m_policyNamesHasBeenSet = true; m_policyNames = value; }
+    inline void SetPolicyNames(Aws::Vector<Aws::String>&& value) { m_policyNamesHasBeenSet = true; m_policyNames = std::move(value); }
 
     /**
      * <p>The policies. If there are no policies enabled, the list is empty.</p>
@@ -86,7 +87,7 @@ namespace Model
     /**
      * <p>The policies. If there are no policies enabled, the list is empty.</p>
      */
-    inline ListenerDescription& WithPolicyNames(Aws::Vector<Aws::String>&& value) { SetPolicyNames(value); return *this;}
+    inline ListenerDescription& WithPolicyNames(Aws::Vector<Aws::String>&& value) { SetPolicyNames(std::move(value)); return *this;}
 
     /**
      * <p>The policies. If there are no policies enabled, the list is empty.</p>
@@ -96,7 +97,7 @@ namespace Model
     /**
      * <p>The policies. If there are no policies enabled, the list is empty.</p>
      */
-    inline ListenerDescription& AddPolicyNames(Aws::String&& value) { m_policyNamesHasBeenSet = true; m_policyNames.push_back(value); return *this; }
+    inline ListenerDescription& AddPolicyNames(Aws::String&& value) { m_policyNamesHasBeenSet = true; m_policyNames.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The policies. If there are no policies enabled, the list is empty.</p>

@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/HostTenancy.h>
 #include <aws/ec2/model/Affinity.h>
+#include <utility>
 
 namespace Aws
 {
@@ -56,7 +57,7 @@ namespace Model
     /**
      * <p>The ID of the instance that you are modifying.</p>
      */
-    inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
+    inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::move(value); }
 
     /**
      * <p>The ID of the instance that you are modifying.</p>
@@ -71,7 +72,7 @@ namespace Model
     /**
      * <p>The ID of the instance that you are modifying.</p>
      */
-    inline ModifyInstancePlacementRequest& WithInstanceId(Aws::String&& value) { SetInstanceId(value); return *this;}
+    inline ModifyInstancePlacementRequest& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the instance that you are modifying.</p>
@@ -91,7 +92,7 @@ namespace Model
     /**
      * <p>The tenancy of the instance that you are modifying.</p>
      */
-    inline void SetTenancy(HostTenancy&& value) { m_tenancyHasBeenSet = true; m_tenancy = value; }
+    inline void SetTenancy(HostTenancy&& value) { m_tenancyHasBeenSet = true; m_tenancy = std::move(value); }
 
     /**
      * <p>The tenancy of the instance that you are modifying.</p>
@@ -101,7 +102,7 @@ namespace Model
     /**
      * <p>The tenancy of the instance that you are modifying.</p>
      */
-    inline ModifyInstancePlacementRequest& WithTenancy(HostTenancy&& value) { SetTenancy(value); return *this;}
+    inline ModifyInstancePlacementRequest& WithTenancy(HostTenancy&& value) { SetTenancy(std::move(value)); return *this;}
 
     /**
      * <p>The new affinity setting for the instance.</p>
@@ -116,7 +117,7 @@ namespace Model
     /**
      * <p>The new affinity setting for the instance.</p>
      */
-    inline void SetAffinity(Affinity&& value) { m_affinityHasBeenSet = true; m_affinity = value; }
+    inline void SetAffinity(Affinity&& value) { m_affinityHasBeenSet = true; m_affinity = std::move(value); }
 
     /**
      * <p>The new affinity setting for the instance.</p>
@@ -126,7 +127,7 @@ namespace Model
     /**
      * <p>The new affinity setting for the instance.</p>
      */
-    inline ModifyInstancePlacementRequest& WithAffinity(Affinity&& value) { SetAffinity(value); return *this;}
+    inline ModifyInstancePlacementRequest& WithAffinity(Affinity&& value) { SetAffinity(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the Dedicated Host that the instance will have affinity with.</p>
@@ -141,7 +142,7 @@ namespace Model
     /**
      * <p>The ID of the Dedicated Host that the instance will have affinity with.</p>
      */
-    inline void SetHostId(Aws::String&& value) { m_hostIdHasBeenSet = true; m_hostId = value; }
+    inline void SetHostId(Aws::String&& value) { m_hostIdHasBeenSet = true; m_hostId = std::move(value); }
 
     /**
      * <p>The ID of the Dedicated Host that the instance will have affinity with.</p>
@@ -156,7 +157,7 @@ namespace Model
     /**
      * <p>The ID of the Dedicated Host that the instance will have affinity with.</p>
      */
-    inline ModifyInstancePlacementRequest& WithHostId(Aws::String&& value) { SetHostId(value); return *this;}
+    inline ModifyInstancePlacementRequest& WithHostId(Aws::String&& value) { SetHostId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the Dedicated Host that the instance will have affinity with.</p>

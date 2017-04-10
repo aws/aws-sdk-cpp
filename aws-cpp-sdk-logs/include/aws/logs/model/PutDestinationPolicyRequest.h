@@ -16,6 +16,7 @@
 #include <aws/logs/CloudWatchLogs_EXPORTS.h>
 #include <aws/logs/CloudWatchLogsRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -48,7 +49,7 @@ namespace Model
     /**
      * <p>A name for an existing destination.</p>
      */
-    inline void SetDestinationName(Aws::String&& value) { m_destinationNameHasBeenSet = true; m_destinationName = value; }
+    inline void SetDestinationName(Aws::String&& value) { m_destinationNameHasBeenSet = true; m_destinationName = std::move(value); }
 
     /**
      * <p>A name for an existing destination.</p>
@@ -63,7 +64,7 @@ namespace Model
     /**
      * <p>A name for an existing destination.</p>
      */
-    inline PutDestinationPolicyRequest& WithDestinationName(Aws::String&& value) { SetDestinationName(value); return *this;}
+    inline PutDestinationPolicyRequest& WithDestinationName(Aws::String&& value) { SetDestinationName(std::move(value)); return *this;}
 
     /**
      * <p>A name for an existing destination.</p>
@@ -86,7 +87,7 @@ namespace Model
      * <p>An IAM policy document that authorizes cross-account users to deliver their
      * log events to the associated destination.</p>
      */
-    inline void SetAccessPolicy(Aws::String&& value) { m_accessPolicyHasBeenSet = true; m_accessPolicy = value; }
+    inline void SetAccessPolicy(Aws::String&& value) { m_accessPolicyHasBeenSet = true; m_accessPolicy = std::move(value); }
 
     /**
      * <p>An IAM policy document that authorizes cross-account users to deliver their
@@ -104,7 +105,7 @@ namespace Model
      * <p>An IAM policy document that authorizes cross-account users to deliver their
      * log events to the associated destination.</p>
      */
-    inline PutDestinationPolicyRequest& WithAccessPolicy(Aws::String&& value) { SetAccessPolicy(value); return *this;}
+    inline PutDestinationPolicyRequest& WithAccessPolicy(Aws::String&& value) { SetAccessPolicy(std::move(value)); return *this;}
 
     /**
      * <p>An IAM policy document that authorizes cross-account users to deliver their

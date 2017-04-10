@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/cloudhsm/CloudHSM_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -58,7 +59,7 @@ namespace Model
     /**
      * <p>The ARN of the high-availability partition group.</p>
      */
-    inline void SetHapgArn(Aws::String&& value) { m_hapgArn = value; }
+    inline void SetHapgArn(Aws::String&& value) { m_hapgArn = std::move(value); }
 
     /**
      * <p>The ARN of the high-availability partition group.</p>
@@ -73,7 +74,7 @@ namespace Model
     /**
      * <p>The ARN of the high-availability partition group.</p>
      */
-    inline CreateHapgResult& WithHapgArn(Aws::String&& value) { SetHapgArn(value); return *this;}
+    inline CreateHapgResult& WithHapgArn(Aws::String&& value) { SetHapgArn(std::move(value)); return *this;}
 
     /**
      * <p>The ARN of the high-availability partition group.</p>

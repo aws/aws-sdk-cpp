@@ -16,6 +16,7 @@
 #include <aws/elasticmapreduce/EMR_EXPORTS.h>
 #include <aws/elasticmapreduce/model/MarketType.h>
 #include <aws/elasticmapreduce/model/SimpleScalingPolicyConfiguration.h>
+#include <utility>
 
 namespace Aws
 {
@@ -61,7 +62,7 @@ namespace Model
      * <p>Not available for instance groups. Instance groups use the market type
      * specified for the group.</p>
      */
-    inline void SetMarket(MarketType&& value) { m_marketHasBeenSet = true; m_market = value; }
+    inline void SetMarket(MarketType&& value) { m_marketHasBeenSet = true; m_market = std::move(value); }
 
     /**
      * <p>Not available for instance groups. Instance groups use the market type
@@ -73,7 +74,7 @@ namespace Model
      * <p>Not available for instance groups. Instance groups use the market type
      * specified for the group.</p>
      */
-    inline ScalingAction& WithMarket(MarketType&& value) { SetMarket(value); return *this;}
+    inline ScalingAction& WithMarket(MarketType&& value) { SetMarket(std::move(value)); return *this;}
 
     /**
      * <p>The type of adjustment the automatic scaling activity makes when triggered,
@@ -91,7 +92,7 @@ namespace Model
      * <p>The type of adjustment the automatic scaling activity makes when triggered,
      * and the periodicity of the adjustment.</p>
      */
-    inline void SetSimpleScalingPolicyConfiguration(SimpleScalingPolicyConfiguration&& value) { m_simpleScalingPolicyConfigurationHasBeenSet = true; m_simpleScalingPolicyConfiguration = value; }
+    inline void SetSimpleScalingPolicyConfiguration(SimpleScalingPolicyConfiguration&& value) { m_simpleScalingPolicyConfigurationHasBeenSet = true; m_simpleScalingPolicyConfiguration = std::move(value); }
 
     /**
      * <p>The type of adjustment the automatic scaling activity makes when triggered,
@@ -103,7 +104,7 @@ namespace Model
      * <p>The type of adjustment the automatic scaling activity makes when triggered,
      * and the periodicity of the adjustment.</p>
      */
-    inline ScalingAction& WithSimpleScalingPolicyConfiguration(SimpleScalingPolicyConfiguration&& value) { SetSimpleScalingPolicyConfiguration(value); return *this;}
+    inline ScalingAction& WithSimpleScalingPolicyConfiguration(SimpleScalingPolicyConfiguration&& value) { SetSimpleScalingPolicyConfiguration(std::move(value)); return *this;}
 
   private:
     MarketType m_market;

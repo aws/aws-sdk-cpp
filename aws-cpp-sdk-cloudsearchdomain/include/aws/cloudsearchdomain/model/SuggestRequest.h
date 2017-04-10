@@ -16,6 +16,7 @@
 #include <aws/cloudsearchdomain/CloudSearchDomain_EXPORTS.h>
 #include <aws/cloudsearchdomain/CloudSearchDomainRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -56,7 +57,7 @@ namespace Model
     /**
      * <p>Specifies the string for which you want to get suggestions.</p>
      */
-    inline void SetQuery(Aws::String&& value) { m_queryHasBeenSet = true; m_query = value; }
+    inline void SetQuery(Aws::String&& value) { m_queryHasBeenSet = true; m_query = std::move(value); }
 
     /**
      * <p>Specifies the string for which you want to get suggestions.</p>
@@ -71,7 +72,7 @@ namespace Model
     /**
      * <p>Specifies the string for which you want to get suggestions.</p>
      */
-    inline SuggestRequest& WithQuery(Aws::String&& value) { SetQuery(value); return *this;}
+    inline SuggestRequest& WithQuery(Aws::String&& value) { SetQuery(std::move(value)); return *this;}
 
     /**
      * <p>Specifies the string for which you want to get suggestions.</p>
@@ -91,7 +92,7 @@ namespace Model
     /**
      * <p>Specifies the name of the suggester to use to find suggested matches.</p>
      */
-    inline void SetSuggester(Aws::String&& value) { m_suggesterHasBeenSet = true; m_suggester = value; }
+    inline void SetSuggester(Aws::String&& value) { m_suggesterHasBeenSet = true; m_suggester = std::move(value); }
 
     /**
      * <p>Specifies the name of the suggester to use to find suggested matches.</p>
@@ -106,7 +107,7 @@ namespace Model
     /**
      * <p>Specifies the name of the suggester to use to find suggested matches.</p>
      */
-    inline SuggestRequest& WithSuggester(Aws::String&& value) { SetSuggester(value); return *this;}
+    inline SuggestRequest& WithSuggester(Aws::String&& value) { SetSuggester(std::move(value)); return *this;}
 
     /**
      * <p>Specifies the name of the suggester to use to find suggested matches.</p>

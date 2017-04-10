@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/elasticbeanstalk/model/Listener.h>
+#include <utility>
 
 namespace Aws
 {
@@ -61,7 +62,7 @@ namespace Model
     /**
      * <p>The name of the LoadBalancer.</p>
      */
-    inline void SetLoadBalancerName(Aws::String&& value) { m_loadBalancerNameHasBeenSet = true; m_loadBalancerName = value; }
+    inline void SetLoadBalancerName(Aws::String&& value) { m_loadBalancerNameHasBeenSet = true; m_loadBalancerName = std::move(value); }
 
     /**
      * <p>The name of the LoadBalancer.</p>
@@ -76,7 +77,7 @@ namespace Model
     /**
      * <p>The name of the LoadBalancer.</p>
      */
-    inline LoadBalancerDescription& WithLoadBalancerName(Aws::String&& value) { SetLoadBalancerName(value); return *this;}
+    inline LoadBalancerDescription& WithLoadBalancerName(Aws::String&& value) { SetLoadBalancerName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the LoadBalancer.</p>
@@ -96,7 +97,7 @@ namespace Model
     /**
      * <p>The domain name of the LoadBalancer.</p>
      */
-    inline void SetDomain(Aws::String&& value) { m_domainHasBeenSet = true; m_domain = value; }
+    inline void SetDomain(Aws::String&& value) { m_domainHasBeenSet = true; m_domain = std::move(value); }
 
     /**
      * <p>The domain name of the LoadBalancer.</p>
@@ -111,7 +112,7 @@ namespace Model
     /**
      * <p>The domain name of the LoadBalancer.</p>
      */
-    inline LoadBalancerDescription& WithDomain(Aws::String&& value) { SetDomain(value); return *this;}
+    inline LoadBalancerDescription& WithDomain(Aws::String&& value) { SetDomain(std::move(value)); return *this;}
 
     /**
      * <p>The domain name of the LoadBalancer.</p>
@@ -131,7 +132,7 @@ namespace Model
     /**
      * <p>A list of Listeners used by the LoadBalancer.</p>
      */
-    inline void SetListeners(Aws::Vector<Listener>&& value) { m_listenersHasBeenSet = true; m_listeners = value; }
+    inline void SetListeners(Aws::Vector<Listener>&& value) { m_listenersHasBeenSet = true; m_listeners = std::move(value); }
 
     /**
      * <p>A list of Listeners used by the LoadBalancer.</p>
@@ -141,7 +142,7 @@ namespace Model
     /**
      * <p>A list of Listeners used by the LoadBalancer.</p>
      */
-    inline LoadBalancerDescription& WithListeners(Aws::Vector<Listener>&& value) { SetListeners(value); return *this;}
+    inline LoadBalancerDescription& WithListeners(Aws::Vector<Listener>&& value) { SetListeners(std::move(value)); return *this;}
 
     /**
      * <p>A list of Listeners used by the LoadBalancer.</p>
@@ -151,7 +152,7 @@ namespace Model
     /**
      * <p>A list of Listeners used by the LoadBalancer.</p>
      */
-    inline LoadBalancerDescription& AddListeners(Listener&& value) { m_listenersHasBeenSet = true; m_listeners.push_back(value); return *this; }
+    inline LoadBalancerDescription& AddListeners(Listener&& value) { m_listenersHasBeenSet = true; m_listeners.push_back(std::move(value)); return *this; }
 
   private:
     Aws::String m_loadBalancerName;

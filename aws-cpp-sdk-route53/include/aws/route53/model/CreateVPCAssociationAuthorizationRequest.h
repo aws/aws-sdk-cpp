@@ -17,6 +17,7 @@
 #include <aws/route53/Route53Request.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/route53/model/VPC.h>
+#include <utility>
 
 namespace Aws
 {
@@ -56,7 +57,7 @@ namespace Model
      * <p>The ID of the private hosted zone that you want to authorize associating a
      * VPC with.</p>
      */
-    inline void SetHostedZoneId(Aws::String&& value) { m_hostedZoneIdHasBeenSet = true; m_hostedZoneId = value; }
+    inline void SetHostedZoneId(Aws::String&& value) { m_hostedZoneIdHasBeenSet = true; m_hostedZoneId = std::move(value); }
 
     /**
      * <p>The ID of the private hosted zone that you want to authorize associating a
@@ -74,7 +75,7 @@ namespace Model
      * <p>The ID of the private hosted zone that you want to authorize associating a
      * VPC with.</p>
      */
-    inline CreateVPCAssociationAuthorizationRequest& WithHostedZoneId(Aws::String&& value) { SetHostedZoneId(value); return *this;}
+    inline CreateVPCAssociationAuthorizationRequest& WithHostedZoneId(Aws::String&& value) { SetHostedZoneId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the private hosted zone that you want to authorize associating a
@@ -98,7 +99,7 @@ namespace Model
      * <p>A complex type that contains the VPC ID and region for the VPC that you want
      * to authorize associating with your hosted zone.</p>
      */
-    inline void SetVPC(VPC&& value) { m_vPCHasBeenSet = true; m_vPC = value; }
+    inline void SetVPC(VPC&& value) { m_vPCHasBeenSet = true; m_vPC = std::move(value); }
 
     /**
      * <p>A complex type that contains the VPC ID and region for the VPC that you want
@@ -110,7 +111,7 @@ namespace Model
      * <p>A complex type that contains the VPC ID and region for the VPC that you want
      * to authorize associating with your hosted zone.</p>
      */
-    inline CreateVPCAssociationAuthorizationRequest& WithVPC(VPC&& value) { SetVPC(value); return *this;}
+    inline CreateVPCAssociationAuthorizationRequest& WithVPC(VPC&& value) { SetVPC(std::move(value)); return *this;}
 
   private:
     Aws::String m_hostedZoneId;

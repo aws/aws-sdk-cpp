@@ -16,6 +16,7 @@
 #include <aws/firehose/Firehose_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/firehose/model/Processor.h>
+#include <utility>
 
 namespace Aws
 {
@@ -72,7 +73,7 @@ namespace Model
     /**
      * <p>The data processors.</p>
      */
-    inline void SetProcessors(Aws::Vector<Processor>&& value) { m_processorsHasBeenSet = true; m_processors = value; }
+    inline void SetProcessors(Aws::Vector<Processor>&& value) { m_processorsHasBeenSet = true; m_processors = std::move(value); }
 
     /**
      * <p>The data processors.</p>
@@ -82,7 +83,7 @@ namespace Model
     /**
      * <p>The data processors.</p>
      */
-    inline ProcessingConfiguration& WithProcessors(Aws::Vector<Processor>&& value) { SetProcessors(value); return *this;}
+    inline ProcessingConfiguration& WithProcessors(Aws::Vector<Processor>&& value) { SetProcessors(std::move(value)); return *this;}
 
     /**
      * <p>The data processors.</p>
@@ -92,7 +93,7 @@ namespace Model
     /**
      * <p>The data processors.</p>
      */
-    inline ProcessingConfiguration& AddProcessors(Processor&& value) { m_processorsHasBeenSet = true; m_processors.push_back(value); return *this; }
+    inline ProcessingConfiguration& AddProcessors(Processor&& value) { m_processorsHasBeenSet = true; m_processors.push_back(std::move(value)); return *this; }
 
   private:
     bool m_enabled;

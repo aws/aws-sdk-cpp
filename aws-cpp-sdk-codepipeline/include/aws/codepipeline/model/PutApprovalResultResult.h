@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/codepipeline/CodePipeline_EXPORTS.h>
 #include <aws/core/utils/DateTime.h>
+#include <utility>
 
 namespace Aws
 {
@@ -58,7 +59,7 @@ namespace Model
     /**
      * <p>The timestamp showing when the approval or rejection was submitted.</p>
      */
-    inline void SetApprovedAt(Aws::Utils::DateTime&& value) { m_approvedAt = value; }
+    inline void SetApprovedAt(Aws::Utils::DateTime&& value) { m_approvedAt = std::move(value); }
 
     /**
      * <p>The timestamp showing when the approval or rejection was submitted.</p>
@@ -68,7 +69,7 @@ namespace Model
     /**
      * <p>The timestamp showing when the approval or rejection was submitted.</p>
      */
-    inline PutApprovalResultResult& WithApprovedAt(Aws::Utils::DateTime&& value) { SetApprovedAt(value); return *this;}
+    inline PutApprovalResultResult& WithApprovedAt(Aws::Utils::DateTime&& value) { SetApprovedAt(std::move(value)); return *this;}
 
   private:
     Aws::Utils::DateTime m_approvedAt;

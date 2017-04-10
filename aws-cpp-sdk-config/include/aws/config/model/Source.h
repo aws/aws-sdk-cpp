@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/config/model/SourceDetail.h>
+#include <utility>
 
 namespace Aws
 {
@@ -64,7 +65,7 @@ namespace Model
      * <p>Indicates whether AWS or the customer owns and manages the AWS Config
      * rule.</p>
      */
-    inline void SetOwner(Owner&& value) { m_ownerHasBeenSet = true; m_owner = value; }
+    inline void SetOwner(Owner&& value) { m_ownerHasBeenSet = true; m_owner = std::move(value); }
 
     /**
      * <p>Indicates whether AWS or the customer owns and manages the AWS Config
@@ -76,7 +77,7 @@ namespace Model
      * <p>Indicates whether AWS or the customer owns and manages the AWS Config
      * rule.</p>
      */
-    inline Source& WithOwner(Owner&& value) { SetOwner(value); return *this;}
+    inline Source& WithOwner(Owner&& value) { SetOwner(std::move(value)); return *this;}
 
     /**
      * <p>For AWS Config managed rules, a predefined identifier from a list. For
@@ -109,7 +110,7 @@ namespace Model
      * Amazon Resource Name (ARN) of the rule's AWS Lambda function, such as
      * <code>arn:aws:lambda:us-east-1:123456789012:function:custom_rule_name</code>.</p>
      */
-    inline void SetSourceIdentifier(Aws::String&& value) { m_sourceIdentifierHasBeenSet = true; m_sourceIdentifier = value; }
+    inline void SetSourceIdentifier(Aws::String&& value) { m_sourceIdentifierHasBeenSet = true; m_sourceIdentifier = std::move(value); }
 
     /**
      * <p>For AWS Config managed rules, a predefined identifier from a list. For
@@ -142,7 +143,7 @@ namespace Model
      * Amazon Resource Name (ARN) of the rule's AWS Lambda function, such as
      * <code>arn:aws:lambda:us-east-1:123456789012:function:custom_rule_name</code>.</p>
      */
-    inline Source& WithSourceIdentifier(Aws::String&& value) { SetSourceIdentifier(value); return *this;}
+    inline Source& WithSourceIdentifier(Aws::String&& value) { SetSourceIdentifier(std::move(value)); return *this;}
 
     /**
      * <p>For AWS Config managed rules, a predefined identifier from a list. For
@@ -171,7 +172,7 @@ namespace Model
      * <p>Provides the source and type of the event that causes AWS Config to evaluate
      * your AWS resources.</p>
      */
-    inline void SetSourceDetails(Aws::Vector<SourceDetail>&& value) { m_sourceDetailsHasBeenSet = true; m_sourceDetails = value; }
+    inline void SetSourceDetails(Aws::Vector<SourceDetail>&& value) { m_sourceDetailsHasBeenSet = true; m_sourceDetails = std::move(value); }
 
     /**
      * <p>Provides the source and type of the event that causes AWS Config to evaluate
@@ -183,7 +184,7 @@ namespace Model
      * <p>Provides the source and type of the event that causes AWS Config to evaluate
      * your AWS resources.</p>
      */
-    inline Source& WithSourceDetails(Aws::Vector<SourceDetail>&& value) { SetSourceDetails(value); return *this;}
+    inline Source& WithSourceDetails(Aws::Vector<SourceDetail>&& value) { SetSourceDetails(std::move(value)); return *this;}
 
     /**
      * <p>Provides the source and type of the event that causes AWS Config to evaluate
@@ -195,7 +196,7 @@ namespace Model
      * <p>Provides the source and type of the event that causes AWS Config to evaluate
      * your AWS resources.</p>
      */
-    inline Source& AddSourceDetails(SourceDetail&& value) { m_sourceDetailsHasBeenSet = true; m_sourceDetails.push_back(value); return *this; }
+    inline Source& AddSourceDetails(SourceDetail&& value) { m_sourceDetailsHasBeenSet = true; m_sourceDetails.push_back(std::move(value)); return *this; }
 
   private:
     Owner m_owner;

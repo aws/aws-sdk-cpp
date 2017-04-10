@@ -17,6 +17,7 @@
 #include <aws/config/ConfigServiceRequest.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -53,7 +54,7 @@ namespace Model
     /**
      * <p>A list of configuration recorder names.</p>
      */
-    inline void SetConfigurationRecorderNames(Aws::Vector<Aws::String>&& value) { m_configurationRecorderNamesHasBeenSet = true; m_configurationRecorderNames = value; }
+    inline void SetConfigurationRecorderNames(Aws::Vector<Aws::String>&& value) { m_configurationRecorderNamesHasBeenSet = true; m_configurationRecorderNames = std::move(value); }
 
     /**
      * <p>A list of configuration recorder names.</p>
@@ -63,7 +64,7 @@ namespace Model
     /**
      * <p>A list of configuration recorder names.</p>
      */
-    inline DescribeConfigurationRecordersRequest& WithConfigurationRecorderNames(Aws::Vector<Aws::String>&& value) { SetConfigurationRecorderNames(value); return *this;}
+    inline DescribeConfigurationRecordersRequest& WithConfigurationRecorderNames(Aws::Vector<Aws::String>&& value) { SetConfigurationRecorderNames(std::move(value)); return *this;}
 
     /**
      * <p>A list of configuration recorder names.</p>
@@ -73,7 +74,7 @@ namespace Model
     /**
      * <p>A list of configuration recorder names.</p>
      */
-    inline DescribeConfigurationRecordersRequest& AddConfigurationRecorderNames(Aws::String&& value) { m_configurationRecorderNamesHasBeenSet = true; m_configurationRecorderNames.push_back(value); return *this; }
+    inline DescribeConfigurationRecordersRequest& AddConfigurationRecorderNames(Aws::String&& value) { m_configurationRecorderNamesHasBeenSet = true; m_configurationRecorderNames.push_back(std::move(value)); return *this; }
 
     /**
      * <p>A list of configuration recorder names.</p>

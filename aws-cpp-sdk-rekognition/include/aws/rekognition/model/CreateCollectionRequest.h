@@ -16,6 +16,7 @@
 #include <aws/rekognition/Rekognition_EXPORTS.h>
 #include <aws/rekognition/RekognitionRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -48,7 +49,7 @@ namespace Model
     /**
      * <p>ID for the collection that you are creating.</p>
      */
-    inline void SetCollectionId(Aws::String&& value) { m_collectionIdHasBeenSet = true; m_collectionId = value; }
+    inline void SetCollectionId(Aws::String&& value) { m_collectionIdHasBeenSet = true; m_collectionId = std::move(value); }
 
     /**
      * <p>ID for the collection that you are creating.</p>
@@ -63,7 +64,7 @@ namespace Model
     /**
      * <p>ID for the collection that you are creating.</p>
      */
-    inline CreateCollectionRequest& WithCollectionId(Aws::String&& value) { SetCollectionId(value); return *this;}
+    inline CreateCollectionRequest& WithCollectionId(Aws::String&& value) { SetCollectionId(std::move(value)); return *this;}
 
     /**
      * <p>ID for the collection that you are creating.</p>

@@ -19,6 +19,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/opsworks/model/AutoScalingType.h>
 #include <aws/opsworks/model/Architecture.h>
+#include <utility>
 
 namespace Aws
 {
@@ -51,7 +52,7 @@ namespace Model
     /**
      * <p>The instance ID.</p>
      */
-    inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
+    inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::move(value); }
 
     /**
      * <p>The instance ID.</p>
@@ -66,7 +67,7 @@ namespace Model
     /**
      * <p>The instance ID.</p>
      */
-    inline UpdateInstanceRequest& WithInstanceId(Aws::String&& value) { SetInstanceId(value); return *this;}
+    inline UpdateInstanceRequest& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
 
     /**
      * <p>The instance ID.</p>
@@ -86,7 +87,7 @@ namespace Model
     /**
      * <p>The instance's layer IDs.</p>
      */
-    inline void SetLayerIds(Aws::Vector<Aws::String>&& value) { m_layerIdsHasBeenSet = true; m_layerIds = value; }
+    inline void SetLayerIds(Aws::Vector<Aws::String>&& value) { m_layerIdsHasBeenSet = true; m_layerIds = std::move(value); }
 
     /**
      * <p>The instance's layer IDs.</p>
@@ -96,7 +97,7 @@ namespace Model
     /**
      * <p>The instance's layer IDs.</p>
      */
-    inline UpdateInstanceRequest& WithLayerIds(Aws::Vector<Aws::String>&& value) { SetLayerIds(value); return *this;}
+    inline UpdateInstanceRequest& WithLayerIds(Aws::Vector<Aws::String>&& value) { SetLayerIds(std::move(value)); return *this;}
 
     /**
      * <p>The instance's layer IDs.</p>
@@ -106,7 +107,7 @@ namespace Model
     /**
      * <p>The instance's layer IDs.</p>
      */
-    inline UpdateInstanceRequest& AddLayerIds(Aws::String&& value) { m_layerIdsHasBeenSet = true; m_layerIds.push_back(value); return *this; }
+    inline UpdateInstanceRequest& AddLayerIds(Aws::String&& value) { m_layerIdsHasBeenSet = true; m_layerIds.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The instance's layer IDs.</p>
@@ -147,7 +148,7 @@ namespace Model
      * types are in the <b>API Name</b> column of the <b>Available Instance Types</b>
      * table.</p>
      */
-    inline void SetInstanceType(Aws::String&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
+    inline void SetInstanceType(Aws::String&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = std::move(value); }
 
     /**
      * <p>The instance type, such as <code>t2.micro</code>. For a list of supported
@@ -183,7 +184,7 @@ namespace Model
      * types are in the <b>API Name</b> column of the <b>Available Instance Types</b>
      * table.</p>
      */
-    inline UpdateInstanceRequest& WithInstanceType(Aws::String&& value) { SetInstanceType(value); return *this;}
+    inline UpdateInstanceRequest& WithInstanceType(Aws::String&& value) { SetInstanceType(std::move(value)); return *this;}
 
     /**
      * <p>The instance type, such as <code>t2.micro</code>. For a list of supported
@@ -213,7 +214,7 @@ namespace Model
      * <p>For load-based or time-based instances, the type. Windows stacks can use only
      * time-based instances.</p>
      */
-    inline void SetAutoScalingType(AutoScalingType&& value) { m_autoScalingTypeHasBeenSet = true; m_autoScalingType = value; }
+    inline void SetAutoScalingType(AutoScalingType&& value) { m_autoScalingTypeHasBeenSet = true; m_autoScalingType = std::move(value); }
 
     /**
      * <p>For load-based or time-based instances, the type. Windows stacks can use only
@@ -225,7 +226,7 @@ namespace Model
      * <p>For load-based or time-based instances, the type. Windows stacks can use only
      * time-based instances.</p>
      */
-    inline UpdateInstanceRequest& WithAutoScalingType(AutoScalingType&& value) { SetAutoScalingType(value); return *this;}
+    inline UpdateInstanceRequest& WithAutoScalingType(AutoScalingType&& value) { SetAutoScalingType(std::move(value)); return *this;}
 
     /**
      * <p>The instance host name.</p>
@@ -240,7 +241,7 @@ namespace Model
     /**
      * <p>The instance host name.</p>
      */
-    inline void SetHostname(Aws::String&& value) { m_hostnameHasBeenSet = true; m_hostname = value; }
+    inline void SetHostname(Aws::String&& value) { m_hostnameHasBeenSet = true; m_hostname = std::move(value); }
 
     /**
      * <p>The instance host name.</p>
@@ -255,7 +256,7 @@ namespace Model
     /**
      * <p>The instance host name.</p>
      */
-    inline UpdateInstanceRequest& WithHostname(Aws::String&& value) { SetHostname(value); return *this;}
+    inline UpdateInstanceRequest& WithHostname(Aws::String&& value) { SetHostname(std::move(value)); return *this;}
 
     /**
      * <p>The instance host name.</p>
@@ -347,7 +348,7 @@ namespace Model
      * system for the updated stack, but you cannot change from Linux to Windows or
      * Windows to Linux.</p> </note>
      */
-    inline void SetOs(Aws::String&& value) { m_osHasBeenSet = true; m_os = value; }
+    inline void SetOs(Aws::String&& value) { m_osHasBeenSet = true; m_os = std::move(value); }
 
     /**
      * <p>The instance's operating system, which must be set to one of the following.
@@ -434,7 +435,7 @@ namespace Model
      * system for the updated stack, but you cannot change from Linux to Windows or
      * Windows to Linux.</p> </note>
      */
-    inline UpdateInstanceRequest& WithOs(Aws::String&& value) { SetOs(value); return *this;}
+    inline UpdateInstanceRequest& WithOs(Aws::String&& value) { SetOs(std::move(value)); return *this;}
 
     /**
      * <p>The instance's operating system, which must be set to one of the following.
@@ -487,7 +488,7 @@ namespace Model
      * apply a new AMI to an instance by running UpdateInstance. UpdateInstance does
      * not work on instances that are using custom AMIs. </p>
      */
-    inline void SetAmiId(Aws::String&& value) { m_amiIdHasBeenSet = true; m_amiId = value; }
+    inline void SetAmiId(Aws::String&& value) { m_amiIdHasBeenSet = true; m_amiId = std::move(value); }
 
     /**
      * <p>The ID of the AMI that was used to create the instance. The value of this
@@ -511,7 +512,7 @@ namespace Model
      * apply a new AMI to an instance by running UpdateInstance. UpdateInstance does
      * not work on instances that are using custom AMIs. </p>
      */
-    inline UpdateInstanceRequest& WithAmiId(Aws::String&& value) { SetAmiId(value); return *this;}
+    inline UpdateInstanceRequest& WithAmiId(Aws::String&& value) { SetAmiId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the AMI that was used to create the instance. The value of this
@@ -534,7 +535,7 @@ namespace Model
     /**
      * <p>The instance's Amazon EC2 key name.</p>
      */
-    inline void SetSshKeyName(Aws::String&& value) { m_sshKeyNameHasBeenSet = true; m_sshKeyName = value; }
+    inline void SetSshKeyName(Aws::String&& value) { m_sshKeyNameHasBeenSet = true; m_sshKeyName = std::move(value); }
 
     /**
      * <p>The instance's Amazon EC2 key name.</p>
@@ -549,7 +550,7 @@ namespace Model
     /**
      * <p>The instance's Amazon EC2 key name.</p>
      */
-    inline UpdateInstanceRequest& WithSshKeyName(Aws::String&& value) { SetSshKeyName(value); return *this;}
+    inline UpdateInstanceRequest& WithSshKeyName(Aws::String&& value) { SetSshKeyName(std::move(value)); return *this;}
 
     /**
      * <p>The instance's Amazon EC2 key name.</p>
@@ -581,7 +582,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
      * Families and Types</a>.</p>
      */
-    inline void SetArchitecture(Architecture&& value) { m_architectureHasBeenSet = true; m_architecture = value; }
+    inline void SetArchitecture(Architecture&& value) { m_architectureHasBeenSet = true; m_architecture = std::move(value); }
 
     /**
      * <p>The instance architecture. Instance types do not necessarily support both
@@ -599,7 +600,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
      * Families and Types</a>.</p>
      */
-    inline UpdateInstanceRequest& WithArchitecture(Architecture&& value) { SetArchitecture(value); return *this;}
+    inline UpdateInstanceRequest& WithArchitecture(Architecture&& value) { SetArchitecture(std::move(value)); return *this;}
 
     /**
      * <p>Whether to install operating system and package updates when the instance
@@ -695,7 +696,7 @@ namespace Model
      * shown on the console. For a list of available agent version numbers, call
      * <a>DescribeAgentVersions</a>.</p>
      */
-    inline void SetAgentVersion(Aws::String&& value) { m_agentVersionHasBeenSet = true; m_agentVersion = value; }
+    inline void SetAgentVersion(Aws::String&& value) { m_agentVersionHasBeenSet = true; m_agentVersion = std::move(value); }
 
     /**
      * <p>The default AWS OpsWorks agent version. You have the following options:</p>
@@ -737,7 +738,7 @@ namespace Model
      * shown on the console. For a list of available agent version numbers, call
      * <a>DescribeAgentVersions</a>.</p>
      */
-    inline UpdateInstanceRequest& WithAgentVersion(Aws::String&& value) { SetAgentVersion(value); return *this;}
+    inline UpdateInstanceRequest& WithAgentVersion(Aws::String&& value) { SetAgentVersion(std::move(value)); return *this;}
 
     /**
      * <p>The default AWS OpsWorks agent version. You have the following options:</p>

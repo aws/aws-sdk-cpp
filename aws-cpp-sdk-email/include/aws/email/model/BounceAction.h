@@ -16,6 +16,7 @@
 #include <aws/email/SES_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -80,7 +81,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon SNS
      * Developer Guide</a>.</p>
      */
-    inline void SetTopicArn(Aws::String&& value) { m_topicArnHasBeenSet = true; m_topicArn = value; }
+    inline void SetTopicArn(Aws::String&& value) { m_topicArnHasBeenSet = true; m_topicArn = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon SNS topic to notify when the
@@ -110,7 +111,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon SNS
      * Developer Guide</a>.</p>
      */
-    inline BounceAction& WithTopicArn(Aws::String&& value) { SetTopicArn(value); return *this;}
+    inline BounceAction& WithTopicArn(Aws::String&& value) { SetTopicArn(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon SNS topic to notify when the
@@ -138,7 +139,7 @@ namespace Model
      * <p>The SMTP reply code, as defined by <a
      * href="https://tools.ietf.org/html/rfc5321">RFC 5321</a>.</p>
      */
-    inline void SetSmtpReplyCode(Aws::String&& value) { m_smtpReplyCodeHasBeenSet = true; m_smtpReplyCode = value; }
+    inline void SetSmtpReplyCode(Aws::String&& value) { m_smtpReplyCodeHasBeenSet = true; m_smtpReplyCode = std::move(value); }
 
     /**
      * <p>The SMTP reply code, as defined by <a
@@ -156,7 +157,7 @@ namespace Model
      * <p>The SMTP reply code, as defined by <a
      * href="https://tools.ietf.org/html/rfc5321">RFC 5321</a>.</p>
      */
-    inline BounceAction& WithSmtpReplyCode(Aws::String&& value) { SetSmtpReplyCode(value); return *this;}
+    inline BounceAction& WithSmtpReplyCode(Aws::String&& value) { SetSmtpReplyCode(std::move(value)); return *this;}
 
     /**
      * <p>The SMTP reply code, as defined by <a
@@ -180,7 +181,7 @@ namespace Model
      * <p>The SMTP enhanced status code, as defined by <a
      * href="https://tools.ietf.org/html/rfc3463">RFC 3463</a>.</p>
      */
-    inline void SetStatusCode(Aws::String&& value) { m_statusCodeHasBeenSet = true; m_statusCode = value; }
+    inline void SetStatusCode(Aws::String&& value) { m_statusCodeHasBeenSet = true; m_statusCode = std::move(value); }
 
     /**
      * <p>The SMTP enhanced status code, as defined by <a
@@ -198,7 +199,7 @@ namespace Model
      * <p>The SMTP enhanced status code, as defined by <a
      * href="https://tools.ietf.org/html/rfc3463">RFC 3463</a>.</p>
      */
-    inline BounceAction& WithStatusCode(Aws::String&& value) { SetStatusCode(value); return *this;}
+    inline BounceAction& WithStatusCode(Aws::String&& value) { SetStatusCode(std::move(value)); return *this;}
 
     /**
      * <p>The SMTP enhanced status code, as defined by <a
@@ -219,7 +220,7 @@ namespace Model
     /**
      * <p>Human-readable text to include in the bounce message.</p>
      */
-    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = value; }
+    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
 
     /**
      * <p>Human-readable text to include in the bounce message.</p>
@@ -234,7 +235,7 @@ namespace Model
     /**
      * <p>Human-readable text to include in the bounce message.</p>
      */
-    inline BounceAction& WithMessage(Aws::String&& value) { SetMessage(value); return *this;}
+    inline BounceAction& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
 
     /**
      * <p>Human-readable text to include in the bounce message.</p>
@@ -257,7 +258,7 @@ namespace Model
      * <p>The email address of the sender of the bounced email. This is the address
      * from which the bounce message will be sent.</p>
      */
-    inline void SetSender(Aws::String&& value) { m_senderHasBeenSet = true; m_sender = value; }
+    inline void SetSender(Aws::String&& value) { m_senderHasBeenSet = true; m_sender = std::move(value); }
 
     /**
      * <p>The email address of the sender of the bounced email. This is the address
@@ -275,7 +276,7 @@ namespace Model
      * <p>The email address of the sender of the bounced email. This is the address
      * from which the bounce message will be sent.</p>
      */
-    inline BounceAction& WithSender(Aws::String&& value) { SetSender(value); return *this;}
+    inline BounceAction& WithSender(Aws::String&& value) { SetSender(std::move(value)); return *this;}
 
     /**
      * <p>The email address of the sender of the bounced email. This is the address

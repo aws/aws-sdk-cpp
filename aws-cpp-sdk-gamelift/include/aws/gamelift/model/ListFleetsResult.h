@@ -16,6 +16,7 @@
 #include <aws/gamelift/GameLift_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -68,7 +69,7 @@ namespace Model
      * <a>DescribeFleetAttributes</a>, <a>DescribeFleetCapacity</a>, or
      * <a>DescribeFleetUtilization</a>.</p>
      */
-    inline void SetFleetIds(Aws::Vector<Aws::String>&& value) { m_fleetIds = value; }
+    inline void SetFleetIds(Aws::Vector<Aws::String>&& value) { m_fleetIds = std::move(value); }
 
     /**
      * <p>Set of fleet IDs matching the list request. You can retrieve additional
@@ -84,7 +85,7 @@ namespace Model
      * <a>DescribeFleetAttributes</a>, <a>DescribeFleetCapacity</a>, or
      * <a>DescribeFleetUtilization</a>.</p>
      */
-    inline ListFleetsResult& WithFleetIds(Aws::Vector<Aws::String>&& value) { SetFleetIds(value); return *this;}
+    inline ListFleetsResult& WithFleetIds(Aws::Vector<Aws::String>&& value) { SetFleetIds(std::move(value)); return *this;}
 
     /**
      * <p>Set of fleet IDs matching the list request. You can retrieve additional
@@ -100,7 +101,7 @@ namespace Model
      * <a>DescribeFleetAttributes</a>, <a>DescribeFleetCapacity</a>, or
      * <a>DescribeFleetUtilization</a>.</p>
      */
-    inline ListFleetsResult& AddFleetIds(Aws::String&& value) { m_fleetIds.push_back(value); return *this; }
+    inline ListFleetsResult& AddFleetIds(Aws::String&& value) { m_fleetIds.push_back(std::move(value)); return *this; }
 
     /**
      * <p>Set of fleet IDs matching the list request. You can retrieve additional
@@ -129,7 +130,7 @@ namespace Model
      * this action. If no token is returned, these results represent the end of the
      * list.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
      * <p>Token that indicates where to resume retrieving results on the next call to
@@ -150,7 +151,7 @@ namespace Model
      * this action. If no token is returned, these results represent the end of the
      * list.</p>
      */
-    inline ListFleetsResult& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline ListFleetsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>Token that indicates where to resume retrieving results on the next call to

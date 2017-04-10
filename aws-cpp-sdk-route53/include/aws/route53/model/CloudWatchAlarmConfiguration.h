@@ -19,6 +19,7 @@
 #include <aws/route53/model/Statistic.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/route53/model/Dimension.h>
+#include <utility>
 
 namespace Aws
 {
@@ -102,7 +103,7 @@ namespace Model
      * <p>For the metric that the CloudWatch alarm is associated with, the arithmetic
      * operation that is used for the comparison.</p>
      */
-    inline void SetComparisonOperator(ComparisonOperator&& value) { m_comparisonOperatorHasBeenSet = true; m_comparisonOperator = value; }
+    inline void SetComparisonOperator(ComparisonOperator&& value) { m_comparisonOperatorHasBeenSet = true; m_comparisonOperator = std::move(value); }
 
     /**
      * <p>For the metric that the CloudWatch alarm is associated with, the arithmetic
@@ -114,7 +115,7 @@ namespace Model
      * <p>For the metric that the CloudWatch alarm is associated with, the arithmetic
      * operation that is used for the comparison.</p>
      */
-    inline CloudWatchAlarmConfiguration& WithComparisonOperator(ComparisonOperator&& value) { SetComparisonOperator(value); return *this;}
+    inline CloudWatchAlarmConfiguration& WithComparisonOperator(ComparisonOperator&& value) { SetComparisonOperator(std::move(value)); return *this;}
 
     /**
      * <p>For the metric that the CloudWatch alarm is associated with, the duration of
@@ -147,7 +148,7 @@ namespace Model
     /**
      * <p>The name of the CloudWatch metric that the alarm is associated with.</p>
      */
-    inline void SetMetricName(Aws::String&& value) { m_metricNameHasBeenSet = true; m_metricName = value; }
+    inline void SetMetricName(Aws::String&& value) { m_metricNameHasBeenSet = true; m_metricName = std::move(value); }
 
     /**
      * <p>The name of the CloudWatch metric that the alarm is associated with.</p>
@@ -162,7 +163,7 @@ namespace Model
     /**
      * <p>The name of the CloudWatch metric that the alarm is associated with.</p>
      */
-    inline CloudWatchAlarmConfiguration& WithMetricName(Aws::String&& value) { SetMetricName(value); return *this;}
+    inline CloudWatchAlarmConfiguration& WithMetricName(Aws::String&& value) { SetMetricName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the CloudWatch metric that the alarm is associated with.</p>
@@ -194,7 +195,7 @@ namespace Model
      * CloudWatch Namespaces, Dimensions, and Metrics Reference</a> in the <i>Amazon
      * CloudWatch User Guide</i>.</p>
      */
-    inline void SetNamespace(Aws::String&& value) { m_namespaceHasBeenSet = true; m_namespace = value; }
+    inline void SetNamespace(Aws::String&& value) { m_namespaceHasBeenSet = true; m_namespace = std::move(value); }
 
     /**
      * <p>The namespace of the metric that the alarm is associated with. For more
@@ -221,7 +222,7 @@ namespace Model
      * CloudWatch Namespaces, Dimensions, and Metrics Reference</a> in the <i>Amazon
      * CloudWatch User Guide</i>.</p>
      */
-    inline CloudWatchAlarmConfiguration& WithNamespace(Aws::String&& value) { SetNamespace(value); return *this;}
+    inline CloudWatchAlarmConfiguration& WithNamespace(Aws::String&& value) { SetNamespace(std::move(value)); return *this;}
 
     /**
      * <p>The namespace of the metric that the alarm is associated with. For more
@@ -248,7 +249,7 @@ namespace Model
      * <p>For the metric that the CloudWatch alarm is associated with, the statistic
      * that is applied to the metric.</p>
      */
-    inline void SetStatistic(Statistic&& value) { m_statisticHasBeenSet = true; m_statistic = value; }
+    inline void SetStatistic(Statistic&& value) { m_statisticHasBeenSet = true; m_statistic = std::move(value); }
 
     /**
      * <p>For the metric that the CloudWatch alarm is associated with, the statistic
@@ -260,7 +261,7 @@ namespace Model
      * <p>For the metric that the CloudWatch alarm is associated with, the statistic
      * that is applied to the metric.</p>
      */
-    inline CloudWatchAlarmConfiguration& WithStatistic(Statistic&& value) { SetStatistic(value); return *this;}
+    inline CloudWatchAlarmConfiguration& WithStatistic(Statistic&& value) { SetStatistic(std::move(value)); return *this;}
 
     /**
      * <p>For the metric that the CloudWatch alarm is associated with, a complex type
@@ -290,7 +291,7 @@ namespace Model
      * CloudWatch Namespaces, Dimensions, and Metrics Reference</a> in the <i>Amazon
      * CloudWatch User Guide</i>.</p>
      */
-    inline void SetDimensions(Aws::Vector<Dimension>&& value) { m_dimensionsHasBeenSet = true; m_dimensions = value; }
+    inline void SetDimensions(Aws::Vector<Dimension>&& value) { m_dimensionsHasBeenSet = true; m_dimensions = std::move(value); }
 
     /**
      * <p>For the metric that the CloudWatch alarm is associated with, a complex type
@@ -310,7 +311,7 @@ namespace Model
      * CloudWatch Namespaces, Dimensions, and Metrics Reference</a> in the <i>Amazon
      * CloudWatch User Guide</i>.</p>
      */
-    inline CloudWatchAlarmConfiguration& WithDimensions(Aws::Vector<Dimension>&& value) { SetDimensions(value); return *this;}
+    inline CloudWatchAlarmConfiguration& WithDimensions(Aws::Vector<Dimension>&& value) { SetDimensions(std::move(value)); return *this;}
 
     /**
      * <p>For the metric that the CloudWatch alarm is associated with, a complex type
@@ -330,7 +331,7 @@ namespace Model
      * CloudWatch Namespaces, Dimensions, and Metrics Reference</a> in the <i>Amazon
      * CloudWatch User Guide</i>.</p>
      */
-    inline CloudWatchAlarmConfiguration& AddDimensions(Dimension&& value) { m_dimensionsHasBeenSet = true; m_dimensions.push_back(value); return *this; }
+    inline CloudWatchAlarmConfiguration& AddDimensions(Dimension&& value) { m_dimensionsHasBeenSet = true; m_dimensions.push_back(std::move(value)); return *this; }
 
   private:
     int m_evaluationPeriods;

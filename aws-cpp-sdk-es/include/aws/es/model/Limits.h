@@ -18,6 +18,7 @@
 #include <aws/es/model/InstanceLimits.h>
 #include <aws/es/model/StorageType.h>
 #include <aws/es/model/AdditionalLimit.h>
+#include <utility>
 
 namespace Aws
 {
@@ -65,7 +66,7 @@ namespace Model
      * <p>StorageType represents the list of storage related types and attributes that
      * are available for given InstanceType. </p>
      */
-    inline void SetStorageTypes(Aws::Vector<StorageType>&& value) { m_storageTypesHasBeenSet = true; m_storageTypes = value; }
+    inline void SetStorageTypes(Aws::Vector<StorageType>&& value) { m_storageTypesHasBeenSet = true; m_storageTypes = std::move(value); }
 
     /**
      * <p>StorageType represents the list of storage related types and attributes that
@@ -77,7 +78,7 @@ namespace Model
      * <p>StorageType represents the list of storage related types and attributes that
      * are available for given InstanceType. </p>
      */
-    inline Limits& WithStorageTypes(Aws::Vector<StorageType>&& value) { SetStorageTypes(value); return *this;}
+    inline Limits& WithStorageTypes(Aws::Vector<StorageType>&& value) { SetStorageTypes(std::move(value)); return *this;}
 
     /**
      * <p>StorageType represents the list of storage related types and attributes that
@@ -89,7 +90,7 @@ namespace Model
      * <p>StorageType represents the list of storage related types and attributes that
      * are available for given InstanceType. </p>
      */
-    inline Limits& AddStorageTypes(StorageType&& value) { m_storageTypesHasBeenSet = true; m_storageTypes.push_back(value); return *this; }
+    inline Limits& AddStorageTypes(StorageType&& value) { m_storageTypesHasBeenSet = true; m_storageTypes.push_back(std::move(value)); return *this; }
 
     
     inline const InstanceLimits& GetInstanceLimits() const{ return m_instanceLimits; }
@@ -98,13 +99,13 @@ namespace Model
     inline void SetInstanceLimits(const InstanceLimits& value) { m_instanceLimitsHasBeenSet = true; m_instanceLimits = value; }
 
     
-    inline void SetInstanceLimits(InstanceLimits&& value) { m_instanceLimitsHasBeenSet = true; m_instanceLimits = value; }
+    inline void SetInstanceLimits(InstanceLimits&& value) { m_instanceLimitsHasBeenSet = true; m_instanceLimits = std::move(value); }
 
     
     inline Limits& WithInstanceLimits(const InstanceLimits& value) { SetInstanceLimits(value); return *this;}
 
     
-    inline Limits& WithInstanceLimits(InstanceLimits&& value) { SetInstanceLimits(value); return *this;}
+    inline Limits& WithInstanceLimits(InstanceLimits&& value) { SetInstanceLimits(std::move(value)); return *this;}
 
     /**
      * <p> List of additional limits that are specific to a given InstanceType and for
@@ -122,7 +123,7 @@ namespace Model
      * <p> List of additional limits that are specific to a given InstanceType and for
      * each of it's <code> <a>InstanceRole</a> </code> . </p>
      */
-    inline void SetAdditionalLimits(Aws::Vector<AdditionalLimit>&& value) { m_additionalLimitsHasBeenSet = true; m_additionalLimits = value; }
+    inline void SetAdditionalLimits(Aws::Vector<AdditionalLimit>&& value) { m_additionalLimitsHasBeenSet = true; m_additionalLimits = std::move(value); }
 
     /**
      * <p> List of additional limits that are specific to a given InstanceType and for
@@ -134,7 +135,7 @@ namespace Model
      * <p> List of additional limits that are specific to a given InstanceType and for
      * each of it's <code> <a>InstanceRole</a> </code> . </p>
      */
-    inline Limits& WithAdditionalLimits(Aws::Vector<AdditionalLimit>&& value) { SetAdditionalLimits(value); return *this;}
+    inline Limits& WithAdditionalLimits(Aws::Vector<AdditionalLimit>&& value) { SetAdditionalLimits(std::move(value)); return *this;}
 
     /**
      * <p> List of additional limits that are specific to a given InstanceType and for
@@ -146,7 +147,7 @@ namespace Model
      * <p> List of additional limits that are specific to a given InstanceType and for
      * each of it's <code> <a>InstanceRole</a> </code> . </p>
      */
-    inline Limits& AddAdditionalLimits(AdditionalLimit&& value) { m_additionalLimitsHasBeenSet = true; m_additionalLimits.push_back(value); return *this; }
+    inline Limits& AddAdditionalLimits(AdditionalLimit&& value) { m_additionalLimitsHasBeenSet = true; m_additionalLimits.push_back(std::move(value)); return *this; }
 
   private:
     Aws::Vector<StorageType> m_storageTypes;

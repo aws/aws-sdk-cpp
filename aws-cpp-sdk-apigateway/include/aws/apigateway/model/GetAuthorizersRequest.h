@@ -16,6 +16,7 @@
 #include <aws/apigateway/APIGateway_EXPORTS.h>
 #include <aws/apigateway/APIGatewayRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -56,7 +57,7 @@ namespace Model
     /**
      * <p>The <a>RestApi</a> identifier for the <a>Authorizers</a> resource.</p>
      */
-    inline void SetRestApiId(Aws::String&& value) { m_restApiIdHasBeenSet = true; m_restApiId = value; }
+    inline void SetRestApiId(Aws::String&& value) { m_restApiIdHasBeenSet = true; m_restApiId = std::move(value); }
 
     /**
      * <p>The <a>RestApi</a> identifier for the <a>Authorizers</a> resource.</p>
@@ -71,7 +72,7 @@ namespace Model
     /**
      * <p>The <a>RestApi</a> identifier for the <a>Authorizers</a> resource.</p>
      */
-    inline GetAuthorizersRequest& WithRestApiId(Aws::String&& value) { SetRestApiId(value); return *this;}
+    inline GetAuthorizersRequest& WithRestApiId(Aws::String&& value) { SetRestApiId(std::move(value)); return *this;}
 
     /**
      * <p>The <a>RestApi</a> identifier for the <a>Authorizers</a> resource.</p>
@@ -94,7 +95,7 @@ namespace Model
      * <p>If not all <a>Authorizer</a> resources in the response were present, the
      * position will specify where to start the next page of results.</p>
      */
-    inline void SetPosition(Aws::String&& value) { m_positionHasBeenSet = true; m_position = value; }
+    inline void SetPosition(Aws::String&& value) { m_positionHasBeenSet = true; m_position = std::move(value); }
 
     /**
      * <p>If not all <a>Authorizer</a> resources in the response were present, the
@@ -112,7 +113,7 @@ namespace Model
      * <p>If not all <a>Authorizer</a> resources in the response were present, the
      * position will specify where to start the next page of results.</p>
      */
-    inline GetAuthorizersRequest& WithPosition(Aws::String&& value) { SetPosition(value); return *this;}
+    inline GetAuthorizersRequest& WithPosition(Aws::String&& value) { SetPosition(std::move(value)); return *this;}
 
     /**
      * <p>If not all <a>Authorizer</a> resources in the response were present, the

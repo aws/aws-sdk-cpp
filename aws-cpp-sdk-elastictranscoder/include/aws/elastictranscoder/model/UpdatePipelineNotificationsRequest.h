@@ -17,6 +17,7 @@
 #include <aws/elastictranscoder/ElasticTranscoderRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/elastictranscoder/model/Notifications.h>
+#include <utility>
 
 namespace Aws
 {
@@ -54,7 +55,7 @@ namespace Model
      * <p>The identifier of the pipeline for which you want to change notification
      * settings.</p>
      */
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = value; }
+    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
 
     /**
      * <p>The identifier of the pipeline for which you want to change notification
@@ -72,7 +73,7 @@ namespace Model
      * <p>The identifier of the pipeline for which you want to change notification
      * settings.</p>
      */
-    inline UpdatePipelineNotificationsRequest& WithId(Aws::String&& value) { SetId(value); return *this;}
+    inline UpdatePipelineNotificationsRequest& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
 
     /**
      * <p>The identifier of the pipeline for which you want to change notification
@@ -138,7 +139,7 @@ namespace Model
      * when Elastic Transcoder encounters an error condition. This is the ARN that
      * Amazon SNS returned when you created the topic.</p> </li> </ul>
      */
-    inline void SetNotifications(Notifications&& value) { m_notificationsHasBeenSet = true; m_notifications = value; }
+    inline void SetNotifications(Notifications&& value) { m_notificationsHasBeenSet = true; m_notifications = std::move(value); }
 
     /**
      * <p>The topic ARN for the Amazon Simple Notification Service (Amazon SNS) topic
@@ -178,7 +179,7 @@ namespace Model
      * when Elastic Transcoder encounters an error condition. This is the ARN that
      * Amazon SNS returned when you created the topic.</p> </li> </ul>
      */
-    inline UpdatePipelineNotificationsRequest& WithNotifications(Notifications&& value) { SetNotifications(value); return *this;}
+    inline UpdatePipelineNotificationsRequest& WithNotifications(Notifications&& value) { SetNotifications(std::move(value)); return *this;}
 
   private:
     Aws::String m_id;

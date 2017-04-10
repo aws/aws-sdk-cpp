@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/config/model/ComplianceType.h>
+#include <utility>
 
 namespace Aws
 {
@@ -62,7 +63,7 @@ namespace Model
      * the resource type is an AWS account by specifying
      * <code>AWS::::Account</code>.</p>
      */
-    inline void SetResourceType(Aws::String&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
+    inline void SetResourceType(Aws::String&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
 
     /**
      * <p>The types of AWS resources for which you want compliance information; for
@@ -86,7 +87,7 @@ namespace Model
      * the resource type is an AWS account by specifying
      * <code>AWS::::Account</code>.</p>
      */
-    inline DescribeComplianceByResourceRequest& WithResourceType(Aws::String&& value) { SetResourceType(value); return *this;}
+    inline DescribeComplianceByResourceRequest& WithResourceType(Aws::String&& value) { SetResourceType(std::move(value)); return *this;}
 
     /**
      * <p>The types of AWS resources for which you want compliance information; for
@@ -115,7 +116,7 @@ namespace Model
      * specify only one resource ID. If you specify a resource ID, you must also
      * specify a type for <code>ResourceType</code>.</p>
      */
-    inline void SetResourceId(Aws::String&& value) { m_resourceIdHasBeenSet = true; m_resourceId = value; }
+    inline void SetResourceId(Aws::String&& value) { m_resourceIdHasBeenSet = true; m_resourceId = std::move(value); }
 
     /**
      * <p>The ID of the AWS resource for which you want compliance information. You can
@@ -136,7 +137,7 @@ namespace Model
      * specify only one resource ID. If you specify a resource ID, you must also
      * specify a type for <code>ResourceType</code>.</p>
      */
-    inline DescribeComplianceByResourceRequest& WithResourceId(Aws::String&& value) { SetResourceId(value); return *this;}
+    inline DescribeComplianceByResourceRequest& WithResourceId(Aws::String&& value) { SetResourceId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the AWS resource for which you want compliance information. You can
@@ -164,7 +165,7 @@ namespace Model
      * <code>COMPLIANT</code>, <code>NON_COMPLIANT</code>, and
      * <code>INSUFFICIENT_DATA</code>.</p>
      */
-    inline void SetComplianceTypes(Aws::Vector<ComplianceType>&& value) { m_complianceTypesHasBeenSet = true; m_complianceTypes = value; }
+    inline void SetComplianceTypes(Aws::Vector<ComplianceType>&& value) { m_complianceTypesHasBeenSet = true; m_complianceTypes = std::move(value); }
 
     /**
      * <p>Filters the results by compliance.</p> <p>The allowed values are
@@ -178,7 +179,7 @@ namespace Model
      * <code>COMPLIANT</code>, <code>NON_COMPLIANT</code>, and
      * <code>INSUFFICIENT_DATA</code>.</p>
      */
-    inline DescribeComplianceByResourceRequest& WithComplianceTypes(Aws::Vector<ComplianceType>&& value) { SetComplianceTypes(value); return *this;}
+    inline DescribeComplianceByResourceRequest& WithComplianceTypes(Aws::Vector<ComplianceType>&& value) { SetComplianceTypes(std::move(value)); return *this;}
 
     /**
      * <p>Filters the results by compliance.</p> <p>The allowed values are
@@ -192,7 +193,7 @@ namespace Model
      * <code>COMPLIANT</code>, <code>NON_COMPLIANT</code>, and
      * <code>INSUFFICIENT_DATA</code>.</p>
      */
-    inline DescribeComplianceByResourceRequest& AddComplianceTypes(ComplianceType&& value) { m_complianceTypesHasBeenSet = true; m_complianceTypes.push_back(value); return *this; }
+    inline DescribeComplianceByResourceRequest& AddComplianceTypes(ComplianceType&& value) { m_complianceTypesHasBeenSet = true; m_complianceTypes.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The maximum number of evaluation results returned on each page. The default
@@ -231,7 +232,7 @@ namespace Model
      * <p>The <code>NextToken</code> string returned on a previous page that you use to
      * get the next page of results in a paginated response.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
      * <p>The <code>NextToken</code> string returned on a previous page that you use to
@@ -249,7 +250,7 @@ namespace Model
      * <p>The <code>NextToken</code> string returned on a previous page that you use to
      * get the next page of results in a paginated response.</p>
      */
-    inline DescribeComplianceByResourceRequest& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline DescribeComplianceByResourceRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>The <code>NextToken</code> string returned on a previous page that you use to

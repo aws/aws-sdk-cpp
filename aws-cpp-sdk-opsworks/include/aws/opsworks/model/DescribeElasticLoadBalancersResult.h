@@ -16,6 +16,7 @@
 #include <aws/opsworks/OpsWorks_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/opsworks/model/ElasticLoadBalancer.h>
+#include <utility>
 
 namespace Aws
 {
@@ -62,7 +63,7 @@ namespace Model
      * <p>A list of <code>ElasticLoadBalancer</code> objects that describe the
      * specified Elastic Load Balancing instances.</p>
      */
-    inline void SetElasticLoadBalancers(Aws::Vector<ElasticLoadBalancer>&& value) { m_elasticLoadBalancers = value; }
+    inline void SetElasticLoadBalancers(Aws::Vector<ElasticLoadBalancer>&& value) { m_elasticLoadBalancers = std::move(value); }
 
     /**
      * <p>A list of <code>ElasticLoadBalancer</code> objects that describe the
@@ -74,7 +75,7 @@ namespace Model
      * <p>A list of <code>ElasticLoadBalancer</code> objects that describe the
      * specified Elastic Load Balancing instances.</p>
      */
-    inline DescribeElasticLoadBalancersResult& WithElasticLoadBalancers(Aws::Vector<ElasticLoadBalancer>&& value) { SetElasticLoadBalancers(value); return *this;}
+    inline DescribeElasticLoadBalancersResult& WithElasticLoadBalancers(Aws::Vector<ElasticLoadBalancer>&& value) { SetElasticLoadBalancers(std::move(value)); return *this;}
 
     /**
      * <p>A list of <code>ElasticLoadBalancer</code> objects that describe the
@@ -86,7 +87,7 @@ namespace Model
      * <p>A list of <code>ElasticLoadBalancer</code> objects that describe the
      * specified Elastic Load Balancing instances.</p>
      */
-    inline DescribeElasticLoadBalancersResult& AddElasticLoadBalancers(ElasticLoadBalancer&& value) { m_elasticLoadBalancers.push_back(value); return *this; }
+    inline DescribeElasticLoadBalancersResult& AddElasticLoadBalancers(ElasticLoadBalancer&& value) { m_elasticLoadBalancers.push_back(std::move(value)); return *this; }
 
   private:
     Aws::Vector<ElasticLoadBalancer> m_elasticLoadBalancers;

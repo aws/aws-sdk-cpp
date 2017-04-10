@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/kms/model/Tag.h>
+#include <utility>
 
 namespace Aws
 {
@@ -54,7 +55,7 @@ namespace Model
     /**
      * <p>A list of tags. Each tag consists of a tag key and a tag value.</p>
      */
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tags = value; }
+    inline void SetTags(Aws::Vector<Tag>&& value) { m_tags = std::move(value); }
 
     /**
      * <p>A list of tags. Each tag consists of a tag key and a tag value.</p>
@@ -64,7 +65,7 @@ namespace Model
     /**
      * <p>A list of tags. Each tag consists of a tag key and a tag value.</p>
      */
-    inline ListResourceTagsResult& WithTags(Aws::Vector<Tag>&& value) { SetTags(value); return *this;}
+    inline ListResourceTagsResult& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
      * <p>A list of tags. Each tag consists of a tag key and a tag value.</p>
@@ -74,7 +75,7 @@ namespace Model
     /**
      * <p>A list of tags. Each tag consists of a tag key and a tag value.</p>
      */
-    inline ListResourceTagsResult& AddTags(Tag&& value) { m_tags.push_back(value); return *this; }
+    inline ListResourceTagsResult& AddTags(Tag&& value) { m_tags.push_back(std::move(value)); return *this; }
 
     /**
      * <p>When <code>Truncated</code> is true, this element is present and contains the
@@ -95,7 +96,7 @@ namespace Model
      * value to use for the <code>Marker</code> parameter in a subsequent request.</p>
      * <p>Do not assume or infer any information from this value.</p>
      */
-    inline void SetNextMarker(Aws::String&& value) { m_nextMarker = value; }
+    inline void SetNextMarker(Aws::String&& value) { m_nextMarker = std::move(value); }
 
     /**
      * <p>When <code>Truncated</code> is true, this element is present and contains the
@@ -116,7 +117,7 @@ namespace Model
      * value to use for the <code>Marker</code> parameter in a subsequent request.</p>
      * <p>Do not assume or infer any information from this value.</p>
      */
-    inline ListResourceTagsResult& WithNextMarker(Aws::String&& value) { SetNextMarker(value); return *this;}
+    inline ListResourceTagsResult& WithNextMarker(Aws::String&& value) { SetNextMarker(std::move(value)); return *this;}
 
     /**
      * <p>When <code>Truncated</code> is true, this element is present and contains the

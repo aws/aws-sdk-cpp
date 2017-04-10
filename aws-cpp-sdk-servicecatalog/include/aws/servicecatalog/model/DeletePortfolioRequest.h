@@ -16,6 +16,7 @@
 #include <aws/servicecatalog/ServiceCatalog_EXPORTS.h>
 #include <aws/servicecatalog/ServiceCatalogRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -54,7 +55,7 @@ namespace Model
      * follows:</p> <p>"en" (English)</p> <p>"jp" (Japanese)</p> <p>"zh" (Chinese)</p>
      * <p>If no code is specified, "en" is used as the default.</p>
      */
-    inline void SetAcceptLanguage(Aws::String&& value) { m_acceptLanguageHasBeenSet = true; m_acceptLanguage = value; }
+    inline void SetAcceptLanguage(Aws::String&& value) { m_acceptLanguageHasBeenSet = true; m_acceptLanguage = std::move(value); }
 
     /**
      * <p>The language code to use for this operation. Supported language codes are as
@@ -75,7 +76,7 @@ namespace Model
      * follows:</p> <p>"en" (English)</p> <p>"jp" (Japanese)</p> <p>"zh" (Chinese)</p>
      * <p>If no code is specified, "en" is used as the default.</p>
      */
-    inline DeletePortfolioRequest& WithAcceptLanguage(Aws::String&& value) { SetAcceptLanguage(value); return *this;}
+    inline DeletePortfolioRequest& WithAcceptLanguage(Aws::String&& value) { SetAcceptLanguage(std::move(value)); return *this;}
 
     /**
      * <p>The language code to use for this operation. Supported language codes are as
@@ -97,7 +98,7 @@ namespace Model
     /**
      * <p>The identifier of the portfolio for the delete request.</p>
      */
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = value; }
+    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
 
     /**
      * <p>The identifier of the portfolio for the delete request.</p>
@@ -112,7 +113,7 @@ namespace Model
     /**
      * <p>The identifier of the portfolio for the delete request.</p>
      */
-    inline DeletePortfolioRequest& WithId(Aws::String&& value) { SetId(value); return *this;}
+    inline DeletePortfolioRequest& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
 
     /**
      * <p>The identifier of the portfolio for the delete request.</p>

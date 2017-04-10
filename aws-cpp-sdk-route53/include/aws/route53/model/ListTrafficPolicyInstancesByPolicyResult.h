@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/route53/model/RRType.h>
 #include <aws/route53/model/TrafficPolicyInstance.h>
+#include <utility>
 
 namespace Aws
 {
@@ -64,7 +65,7 @@ namespace Model
      * <p>A list that contains one <code>TrafficPolicyInstance</code> element for each
      * traffic policy instance that matches the elements in the request.</p>
      */
-    inline void SetTrafficPolicyInstances(Aws::Vector<TrafficPolicyInstance>&& value) { m_trafficPolicyInstances = value; }
+    inline void SetTrafficPolicyInstances(Aws::Vector<TrafficPolicyInstance>&& value) { m_trafficPolicyInstances = std::move(value); }
 
     /**
      * <p>A list that contains one <code>TrafficPolicyInstance</code> element for each
@@ -76,7 +77,7 @@ namespace Model
      * <p>A list that contains one <code>TrafficPolicyInstance</code> element for each
      * traffic policy instance that matches the elements in the request.</p>
      */
-    inline ListTrafficPolicyInstancesByPolicyResult& WithTrafficPolicyInstances(Aws::Vector<TrafficPolicyInstance>&& value) { SetTrafficPolicyInstances(value); return *this;}
+    inline ListTrafficPolicyInstancesByPolicyResult& WithTrafficPolicyInstances(Aws::Vector<TrafficPolicyInstance>&& value) { SetTrafficPolicyInstances(std::move(value)); return *this;}
 
     /**
      * <p>A list that contains one <code>TrafficPolicyInstance</code> element for each
@@ -88,7 +89,7 @@ namespace Model
      * <p>A list that contains one <code>TrafficPolicyInstance</code> element for each
      * traffic policy instance that matches the elements in the request.</p>
      */
-    inline ListTrafficPolicyInstancesByPolicyResult& AddTrafficPolicyInstances(TrafficPolicyInstance&& value) { m_trafficPolicyInstances.push_back(value); return *this; }
+    inline ListTrafficPolicyInstancesByPolicyResult& AddTrafficPolicyInstances(TrafficPolicyInstance&& value) { m_trafficPolicyInstances.push_back(std::move(value)); return *this; }
 
     /**
      * <p>If <code>IsTruncated</code> is <code>true</code>,
@@ -112,7 +113,7 @@ namespace Model
      * traffic policy instance in the next group of <code>MaxItems</code> traffic
      * policy instances.</p>
      */
-    inline void SetHostedZoneIdMarker(Aws::String&& value) { m_hostedZoneIdMarker = value; }
+    inline void SetHostedZoneIdMarker(Aws::String&& value) { m_hostedZoneIdMarker = std::move(value); }
 
     /**
      * <p>If <code>IsTruncated</code> is <code>true</code>,
@@ -136,7 +137,7 @@ namespace Model
      * traffic policy instance in the next group of <code>MaxItems</code> traffic
      * policy instances.</p>
      */
-    inline ListTrafficPolicyInstancesByPolicyResult& WithHostedZoneIdMarker(Aws::String&& value) { SetHostedZoneIdMarker(value); return *this;}
+    inline ListTrafficPolicyInstancesByPolicyResult& WithHostedZoneIdMarker(Aws::String&& value) { SetHostedZoneIdMarker(std::move(value)); return *this;}
 
     /**
      * <p>If <code>IsTruncated</code> is <code>true</code>,
@@ -168,7 +169,7 @@ namespace Model
      * policy instance in the next group of <code>MaxItems</code> traffic policy
      * instances.</p>
      */
-    inline void SetTrafficPolicyInstanceNameMarker(Aws::String&& value) { m_trafficPolicyInstanceNameMarker = value; }
+    inline void SetTrafficPolicyInstanceNameMarker(Aws::String&& value) { m_trafficPolicyInstanceNameMarker = std::move(value); }
 
     /**
      * <p>If <code>IsTruncated</code> is <code>true</code>,
@@ -192,7 +193,7 @@ namespace Model
      * policy instance in the next group of <code>MaxItems</code> traffic policy
      * instances.</p>
      */
-    inline ListTrafficPolicyInstancesByPolicyResult& WithTrafficPolicyInstanceNameMarker(Aws::String&& value) { SetTrafficPolicyInstanceNameMarker(value); return *this;}
+    inline ListTrafficPolicyInstancesByPolicyResult& WithTrafficPolicyInstanceNameMarker(Aws::String&& value) { SetTrafficPolicyInstanceNameMarker(std::move(value)); return *this;}
 
     /**
      * <p>If <code>IsTruncated</code> is <code>true</code>,
@@ -224,7 +225,7 @@ namespace Model
      * record sets that are associated with the first traffic policy instance in the
      * next group of <code>MaxItems</code> traffic policy instances.</p>
      */
-    inline void SetTrafficPolicyInstanceTypeMarker(RRType&& value) { m_trafficPolicyInstanceTypeMarker = value; }
+    inline void SetTrafficPolicyInstanceTypeMarker(RRType&& value) { m_trafficPolicyInstanceTypeMarker = std::move(value); }
 
     /**
      * <p>If <code>IsTruncated</code> is <code>true</code>,
@@ -240,7 +241,7 @@ namespace Model
      * record sets that are associated with the first traffic policy instance in the
      * next group of <code>MaxItems</code> traffic policy instances.</p>
      */
-    inline ListTrafficPolicyInstancesByPolicyResult& WithTrafficPolicyInstanceTypeMarker(RRType&& value) { SetTrafficPolicyInstanceTypeMarker(value); return *this;}
+    inline ListTrafficPolicyInstancesByPolicyResult& WithTrafficPolicyInstanceTypeMarker(RRType&& value) { SetTrafficPolicyInstanceTypeMarker(std::move(value)); return *this;}
 
     /**
      * <p>A flag that indicates whether there are more traffic policy instances to be
@@ -297,7 +298,7 @@ namespace Model
      * call to <code>ListTrafficPolicyInstancesByPolicy</code> that produced the
      * current response.</p>
      */
-    inline void SetMaxItems(Aws::String&& value) { m_maxItems = value; }
+    inline void SetMaxItems(Aws::String&& value) { m_maxItems = std::move(value); }
 
     /**
      * <p>The value that you specified for the <code>MaxItems</code> parameter in the
@@ -318,7 +319,7 @@ namespace Model
      * call to <code>ListTrafficPolicyInstancesByPolicy</code> that produced the
      * current response.</p>
      */
-    inline ListTrafficPolicyInstancesByPolicyResult& WithMaxItems(Aws::String&& value) { SetMaxItems(value); return *this;}
+    inline ListTrafficPolicyInstancesByPolicyResult& WithMaxItems(Aws::String&& value) { SetMaxItems(std::move(value)); return *this;}
 
     /**
      * <p>The value that you specified for the <code>MaxItems</code> parameter in the

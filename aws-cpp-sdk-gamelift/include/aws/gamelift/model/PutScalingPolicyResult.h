@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/gamelift/GameLift_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -61,7 +62,7 @@ namespace Model
      * <p>Descriptive label that is associated with a scaling policy. Policy names do
      * not need to be unique.</p>
      */
-    inline void SetName(Aws::String&& value) { m_name = value; }
+    inline void SetName(Aws::String&& value) { m_name = std::move(value); }
 
     /**
      * <p>Descriptive label that is associated with a scaling policy. Policy names do
@@ -79,7 +80,7 @@ namespace Model
      * <p>Descriptive label that is associated with a scaling policy. Policy names do
      * not need to be unique.</p>
      */
-    inline PutScalingPolicyResult& WithName(Aws::String&& value) { SetName(value); return *this;}
+    inline PutScalingPolicyResult& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>Descriptive label that is associated with a scaling policy. Policy names do

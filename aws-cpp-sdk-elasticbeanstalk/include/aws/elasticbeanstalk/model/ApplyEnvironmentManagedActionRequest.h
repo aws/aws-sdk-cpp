@@ -16,6 +16,7 @@
 #include <aws/elasticbeanstalk/ElasticBeanstalk_EXPORTS.h>
 #include <aws/elasticbeanstalk/ElasticBeanstalkRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -54,7 +55,7 @@ namespace Model
     /**
      * <p>The name of the target environment.</p>
      */
-    inline void SetEnvironmentName(Aws::String&& value) { m_environmentNameHasBeenSet = true; m_environmentName = value; }
+    inline void SetEnvironmentName(Aws::String&& value) { m_environmentNameHasBeenSet = true; m_environmentName = std::move(value); }
 
     /**
      * <p>The name of the target environment.</p>
@@ -69,7 +70,7 @@ namespace Model
     /**
      * <p>The name of the target environment.</p>
      */
-    inline ApplyEnvironmentManagedActionRequest& WithEnvironmentName(Aws::String&& value) { SetEnvironmentName(value); return *this;}
+    inline ApplyEnvironmentManagedActionRequest& WithEnvironmentName(Aws::String&& value) { SetEnvironmentName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the target environment.</p>
@@ -89,7 +90,7 @@ namespace Model
     /**
      * <p>The environment ID of the target environment.</p>
      */
-    inline void SetEnvironmentId(Aws::String&& value) { m_environmentIdHasBeenSet = true; m_environmentId = value; }
+    inline void SetEnvironmentId(Aws::String&& value) { m_environmentIdHasBeenSet = true; m_environmentId = std::move(value); }
 
     /**
      * <p>The environment ID of the target environment.</p>
@@ -104,7 +105,7 @@ namespace Model
     /**
      * <p>The environment ID of the target environment.</p>
      */
-    inline ApplyEnvironmentManagedActionRequest& WithEnvironmentId(Aws::String&& value) { SetEnvironmentId(value); return *this;}
+    inline ApplyEnvironmentManagedActionRequest& WithEnvironmentId(Aws::String&& value) { SetEnvironmentId(std::move(value)); return *this;}
 
     /**
      * <p>The environment ID of the target environment.</p>
@@ -124,7 +125,7 @@ namespace Model
     /**
      * <p>The action ID of the scheduled managed action to execute.</p>
      */
-    inline void SetActionId(Aws::String&& value) { m_actionIdHasBeenSet = true; m_actionId = value; }
+    inline void SetActionId(Aws::String&& value) { m_actionIdHasBeenSet = true; m_actionId = std::move(value); }
 
     /**
      * <p>The action ID of the scheduled managed action to execute.</p>
@@ -139,7 +140,7 @@ namespace Model
     /**
      * <p>The action ID of the scheduled managed action to execute.</p>
      */
-    inline ApplyEnvironmentManagedActionRequest& WithActionId(Aws::String&& value) { SetActionId(value); return *this;}
+    inline ApplyEnvironmentManagedActionRequest& WithActionId(Aws::String&& value) { SetActionId(std::move(value)); return *this;}
 
     /**
      * <p>The action ID of the scheduled managed action to execute.</p>

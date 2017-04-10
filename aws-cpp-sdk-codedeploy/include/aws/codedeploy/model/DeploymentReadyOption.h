@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/codedeploy/CodeDeploy_EXPORTS.h>
 #include <aws/codedeploy/model/DeploymentReadyAction.h>
+#include <utility>
 
 namespace Aws
 {
@@ -78,7 +79,7 @@ namespace Model
      * is not rerouted manually before the end of the specified wait period, the
      * deployment status is changed to Stopped.</p> </li> </ul>
      */
-    inline void SetActionOnTimeout(DeploymentReadyAction&& value) { m_actionOnTimeoutHasBeenSet = true; m_actionOnTimeout = value; }
+    inline void SetActionOnTimeout(DeploymentReadyAction&& value) { m_actionOnTimeoutHasBeenSet = true; m_actionOnTimeout = std::move(value); }
 
     /**
      * <p>Information about when to reroute traffic from an original environment to a
@@ -102,7 +103,7 @@ namespace Model
      * is not rerouted manually before the end of the specified wait period, the
      * deployment status is changed to Stopped.</p> </li> </ul>
      */
-    inline DeploymentReadyOption& WithActionOnTimeout(DeploymentReadyAction&& value) { SetActionOnTimeout(value); return *this;}
+    inline DeploymentReadyOption& WithActionOnTimeout(DeploymentReadyAction&& value) { SetActionOnTimeout(std::move(value)); return *this;}
 
     /**
      * <p>The number of minutes to wait before the status of a blue/green deployment

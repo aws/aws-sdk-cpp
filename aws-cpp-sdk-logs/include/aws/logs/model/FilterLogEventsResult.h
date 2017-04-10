@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/logs/model/FilteredLogEvent.h>
 #include <aws/logs/model/SearchedLogStream.h>
+#include <utility>
 
 namespace Aws
 {
@@ -55,7 +56,7 @@ namespace Model
     /**
      * <p>The matched events.</p>
      */
-    inline void SetEvents(Aws::Vector<FilteredLogEvent>&& value) { m_events = value; }
+    inline void SetEvents(Aws::Vector<FilteredLogEvent>&& value) { m_events = std::move(value); }
 
     /**
      * <p>The matched events.</p>
@@ -65,7 +66,7 @@ namespace Model
     /**
      * <p>The matched events.</p>
      */
-    inline FilterLogEventsResult& WithEvents(Aws::Vector<FilteredLogEvent>&& value) { SetEvents(value); return *this;}
+    inline FilterLogEventsResult& WithEvents(Aws::Vector<FilteredLogEvent>&& value) { SetEvents(std::move(value)); return *this;}
 
     /**
      * <p>The matched events.</p>
@@ -75,7 +76,7 @@ namespace Model
     /**
      * <p>The matched events.</p>
      */
-    inline FilterLogEventsResult& AddEvents(FilteredLogEvent&& value) { m_events.push_back(value); return *this; }
+    inline FilterLogEventsResult& AddEvents(FilteredLogEvent&& value) { m_events.push_back(std::move(value)); return *this; }
 
     /**
      * <p>Indicates which log streams have been searched and whether each has been
@@ -93,7 +94,7 @@ namespace Model
      * <p>Indicates which log streams have been searched and whether each has been
      * searched completely.</p>
      */
-    inline void SetSearchedLogStreams(Aws::Vector<SearchedLogStream>&& value) { m_searchedLogStreams = value; }
+    inline void SetSearchedLogStreams(Aws::Vector<SearchedLogStream>&& value) { m_searchedLogStreams = std::move(value); }
 
     /**
      * <p>Indicates which log streams have been searched and whether each has been
@@ -105,7 +106,7 @@ namespace Model
      * <p>Indicates which log streams have been searched and whether each has been
      * searched completely.</p>
      */
-    inline FilterLogEventsResult& WithSearchedLogStreams(Aws::Vector<SearchedLogStream>&& value) { SetSearchedLogStreams(value); return *this;}
+    inline FilterLogEventsResult& WithSearchedLogStreams(Aws::Vector<SearchedLogStream>&& value) { SetSearchedLogStreams(std::move(value)); return *this;}
 
     /**
      * <p>Indicates which log streams have been searched and whether each has been
@@ -117,7 +118,7 @@ namespace Model
      * <p>Indicates which log streams have been searched and whether each has been
      * searched completely.</p>
      */
-    inline FilterLogEventsResult& AddSearchedLogStreams(SearchedLogStream&& value) { m_searchedLogStreams.push_back(value); return *this; }
+    inline FilterLogEventsResult& AddSearchedLogStreams(SearchedLogStream&& value) { m_searchedLogStreams.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The token to use when requesting the next set of items. The token expires
@@ -135,7 +136,7 @@ namespace Model
      * <p>The token to use when requesting the next set of items. The token expires
      * after 24 hours.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
      * <p>The token to use when requesting the next set of items. The token expires
@@ -153,7 +154,7 @@ namespace Model
      * <p>The token to use when requesting the next set of items. The token expires
      * after 24 hours.</p>
      */
-    inline FilterLogEventsResult& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline FilterLogEventsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>The token to use when requesting the next set of items. The token expires

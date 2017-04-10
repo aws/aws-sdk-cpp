@@ -17,6 +17,7 @@
 #include <aws/clouddirectory/CloudDirectoryRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/clouddirectory/model/ObjectReference.h>
+#include <utility>
 
 namespace Aws
 {
@@ -52,7 +53,7 @@ namespace Model
      * <p>ARN associated with the <a>Directory</a> where objects reside. For more
      * information, see <a>arns</a>.</p>
      */
-    inline void SetDirectoryArn(Aws::String&& value) { m_directoryArnHasBeenSet = true; m_directoryArn = value; }
+    inline void SetDirectoryArn(Aws::String&& value) { m_directoryArnHasBeenSet = true; m_directoryArn = std::move(value); }
 
     /**
      * <p>ARN associated with the <a>Directory</a> where objects reside. For more
@@ -70,7 +71,7 @@ namespace Model
      * <p>ARN associated with the <a>Directory</a> where objects reside. For more
      * information, see <a>arns</a>.</p>
      */
-    inline DetachObjectRequest& WithDirectoryArn(Aws::String&& value) { SetDirectoryArn(value); return *this;}
+    inline DetachObjectRequest& WithDirectoryArn(Aws::String&& value) { SetDirectoryArn(std::move(value)); return *this;}
 
     /**
      * <p>ARN associated with the <a>Directory</a> where objects reside. For more
@@ -94,7 +95,7 @@ namespace Model
      * <p>Parent reference from which the object with the specified link name is
      * detached.</p>
      */
-    inline void SetParentReference(ObjectReference&& value) { m_parentReferenceHasBeenSet = true; m_parentReference = value; }
+    inline void SetParentReference(ObjectReference&& value) { m_parentReferenceHasBeenSet = true; m_parentReference = std::move(value); }
 
     /**
      * <p>Parent reference from which the object with the specified link name is
@@ -106,7 +107,7 @@ namespace Model
      * <p>Parent reference from which the object with the specified link name is
      * detached.</p>
      */
-    inline DetachObjectRequest& WithParentReference(ObjectReference&& value) { SetParentReference(value); return *this;}
+    inline DetachObjectRequest& WithParentReference(ObjectReference&& value) { SetParentReference(std::move(value)); return *this;}
 
     /**
      * <p>Link name associated with the object that needs to be detached.</p>
@@ -121,7 +122,7 @@ namespace Model
     /**
      * <p>Link name associated with the object that needs to be detached.</p>
      */
-    inline void SetLinkName(Aws::String&& value) { m_linkNameHasBeenSet = true; m_linkName = value; }
+    inline void SetLinkName(Aws::String&& value) { m_linkNameHasBeenSet = true; m_linkName = std::move(value); }
 
     /**
      * <p>Link name associated with the object that needs to be detached.</p>
@@ -136,7 +137,7 @@ namespace Model
     /**
      * <p>Link name associated with the object that needs to be detached.</p>
      */
-    inline DetachObjectRequest& WithLinkName(Aws::String&& value) { SetLinkName(value); return *this;}
+    inline DetachObjectRequest& WithLinkName(Aws::String&& value) { SetLinkName(std::move(value)); return *this;}
 
     /**
      * <p>Link name associated with the object that needs to be detached.</p>

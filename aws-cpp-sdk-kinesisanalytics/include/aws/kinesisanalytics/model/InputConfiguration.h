@@ -16,6 +16,7 @@
 #include <aws/kinesisanalytics/KinesisAnalytics_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/kinesisanalytics/model/InputStartingPositionConfiguration.h>
+#include <utility>
 
 namespace Aws
 {
@@ -62,7 +63,7 @@ namespace Model
      * <p>Input source ID. You can get this ID by calling the
      * <a>DescribeApplication</a> operation.</p>
      */
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = value; }
+    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
 
     /**
      * <p>Input source ID. You can get this ID by calling the
@@ -80,7 +81,7 @@ namespace Model
      * <p>Input source ID. You can get this ID by calling the
      * <a>DescribeApplication</a> operation.</p>
      */
-    inline InputConfiguration& WithId(Aws::String&& value) { SetId(value); return *this;}
+    inline InputConfiguration& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
 
     /**
      * <p>Input source ID. You can get this ID by calling the
@@ -104,7 +105,7 @@ namespace Model
      * <p>Point at which you want the application to start processing records from the
      * streaming source.</p>
      */
-    inline void SetInputStartingPositionConfiguration(InputStartingPositionConfiguration&& value) { m_inputStartingPositionConfigurationHasBeenSet = true; m_inputStartingPositionConfiguration = value; }
+    inline void SetInputStartingPositionConfiguration(InputStartingPositionConfiguration&& value) { m_inputStartingPositionConfigurationHasBeenSet = true; m_inputStartingPositionConfiguration = std::move(value); }
 
     /**
      * <p>Point at which you want the application to start processing records from the
@@ -116,7 +117,7 @@ namespace Model
      * <p>Point at which you want the application to start processing records from the
      * streaming source.</p>
      */
-    inline InputConfiguration& WithInputStartingPositionConfiguration(InputStartingPositionConfiguration&& value) { SetInputStartingPositionConfiguration(value); return *this;}
+    inline InputConfiguration& WithInputStartingPositionConfiguration(InputStartingPositionConfiguration&& value) { SetInputStartingPositionConfiguration(std::move(value)); return *this;}
 
   private:
     Aws::String m_id;

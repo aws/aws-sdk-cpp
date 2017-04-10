@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ssm/model/CommandPluginStatus.h>
 #include <aws/core/utils/DateTime.h>
+#include <utility>
 
 namespace Aws
 {
@@ -64,7 +65,7 @@ namespace Model
      * aws:domainjoin, aws:applications, aws:runPowerShellScript, aws:psmodule,
      * aws:cloudWatch, aws:runShellScript, or aws:updateSSMAgent. </p>
      */
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p>The name of the plugin. Must be one of the following: aws:updateAgent,
@@ -85,7 +86,7 @@ namespace Model
      * aws:domainjoin, aws:applications, aws:runPowerShellScript, aws:psmodule,
      * aws:cloudWatch, aws:runShellScript, or aws:updateSSMAgent. </p>
      */
-    inline CommandPlugin& WithName(Aws::String&& value) { SetName(value); return *this;}
+    inline CommandPlugin& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the plugin. Must be one of the following: aws:updateAgent,
@@ -110,7 +111,7 @@ namespace Model
      * <p>The status of this plugin. You can execute a document with multiple
      * plugins.</p>
      */
-    inline void SetStatus(CommandPluginStatus&& value) { m_statusHasBeenSet = true; m_status = value; }
+    inline void SetStatus(CommandPluginStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
      * <p>The status of this plugin. You can execute a document with multiple
@@ -122,7 +123,7 @@ namespace Model
      * <p>The status of this plugin. You can execute a document with multiple
      * plugins.</p>
      */
-    inline CommandPlugin& WithStatus(CommandPluginStatus&& value) { SetStatus(value); return *this;}
+    inline CommandPlugin& WithStatus(CommandPluginStatus&& value) { SetStatus(std::move(value)); return *this;}
 
     /**
      * <p>A detailed status of the plugin execution. <code>StatusDetails</code>
@@ -233,7 +234,7 @@ namespace Model
      * <code>MaxErrors</code> limit and subsequent command invocations were canceled by
      * the system. This is a terminal state.</p> </li> </ul>
      */
-    inline void SetStatusDetails(Aws::String&& value) { m_statusDetailsHasBeenSet = true; m_statusDetails = value; }
+    inline void SetStatusDetails(Aws::String&& value) { m_statusDetailsHasBeenSet = true; m_statusDetails = std::move(value); }
 
     /**
      * <p>A detailed status of the plugin execution. <code>StatusDetails</code>
@@ -344,7 +345,7 @@ namespace Model
      * <code>MaxErrors</code> limit and subsequent command invocations were canceled by
      * the system. This is a terminal state.</p> </li> </ul>
      */
-    inline CommandPlugin& WithStatusDetails(Aws::String&& value) { SetStatusDetails(value); return *this;}
+    inline CommandPlugin& WithStatusDetails(Aws::String&& value) { SetStatusDetails(std::move(value)); return *this;}
 
     /**
      * <p>A detailed status of the plugin execution. <code>StatusDetails</code>
@@ -411,7 +412,7 @@ namespace Model
     /**
      * <p>The time the plugin started executing. </p>
      */
-    inline void SetResponseStartDateTime(Aws::Utils::DateTime&& value) { m_responseStartDateTimeHasBeenSet = true; m_responseStartDateTime = value; }
+    inline void SetResponseStartDateTime(Aws::Utils::DateTime&& value) { m_responseStartDateTimeHasBeenSet = true; m_responseStartDateTime = std::move(value); }
 
     /**
      * <p>The time the plugin started executing. </p>
@@ -421,7 +422,7 @@ namespace Model
     /**
      * <p>The time the plugin started executing. </p>
      */
-    inline CommandPlugin& WithResponseStartDateTime(Aws::Utils::DateTime&& value) { SetResponseStartDateTime(value); return *this;}
+    inline CommandPlugin& WithResponseStartDateTime(Aws::Utils::DateTime&& value) { SetResponseStartDateTime(std::move(value)); return *this;}
 
     /**
      * <p>The time the plugin stopped executing. Could stop prematurely if, for
@@ -439,7 +440,7 @@ namespace Model
      * <p>The time the plugin stopped executing. Could stop prematurely if, for
      * example, a cancel command was sent. </p>
      */
-    inline void SetResponseFinishDateTime(Aws::Utils::DateTime&& value) { m_responseFinishDateTimeHasBeenSet = true; m_responseFinishDateTime = value; }
+    inline void SetResponseFinishDateTime(Aws::Utils::DateTime&& value) { m_responseFinishDateTimeHasBeenSet = true; m_responseFinishDateTime = std::move(value); }
 
     /**
      * <p>The time the plugin stopped executing. Could stop prematurely if, for
@@ -451,7 +452,7 @@ namespace Model
      * <p>The time the plugin stopped executing. Could stop prematurely if, for
      * example, a cancel command was sent. </p>
      */
-    inline CommandPlugin& WithResponseFinishDateTime(Aws::Utils::DateTime&& value) { SetResponseFinishDateTime(value); return *this;}
+    inline CommandPlugin& WithResponseFinishDateTime(Aws::Utils::DateTime&& value) { SetResponseFinishDateTime(std::move(value)); return *this;}
 
     /**
      * <p>Output of the plugin execution.</p>
@@ -466,7 +467,7 @@ namespace Model
     /**
      * <p>Output of the plugin execution.</p>
      */
-    inline void SetOutput(Aws::String&& value) { m_outputHasBeenSet = true; m_output = value; }
+    inline void SetOutput(Aws::String&& value) { m_outputHasBeenSet = true; m_output = std::move(value); }
 
     /**
      * <p>Output of the plugin execution.</p>
@@ -481,7 +482,7 @@ namespace Model
     /**
      * <p>Output of the plugin execution.</p>
      */
-    inline CommandPlugin& WithOutput(Aws::String&& value) { SetOutput(value); return *this;}
+    inline CommandPlugin& WithOutput(Aws::String&& value) { SetOutput(std::move(value)); return *this;}
 
     /**
      * <p>Output of the plugin execution.</p>
@@ -507,7 +508,7 @@ namespace Model
      * If the Amazon S3 bucket for the command was not specified, then this string is
      * empty.</p>
      */
-    inline void SetStandardOutputUrl(Aws::String&& value) { m_standardOutputUrlHasBeenSet = true; m_standardOutputUrl = value; }
+    inline void SetStandardOutputUrl(Aws::String&& value) { m_standardOutputUrlHasBeenSet = true; m_standardOutputUrl = std::move(value); }
 
     /**
      * <p>The URL for the complete text written by the plugin to stdout in Amazon S3.
@@ -528,7 +529,7 @@ namespace Model
      * If the Amazon S3 bucket for the command was not specified, then this string is
      * empty.</p>
      */
-    inline CommandPlugin& WithStandardOutputUrl(Aws::String&& value) { SetStandardOutputUrl(value); return *this;}
+    inline CommandPlugin& WithStandardOutputUrl(Aws::String&& value) { SetStandardOutputUrl(std::move(value)); return *this;}
 
     /**
      * <p>The URL for the complete text written by the plugin to stdout in Amazon S3.
@@ -553,7 +554,7 @@ namespace Model
      * <p>The URL for the complete text written by the plugin to stderr. If execution
      * is not yet complete, then this string is empty.</p>
      */
-    inline void SetStandardErrorUrl(Aws::String&& value) { m_standardErrorUrlHasBeenSet = true; m_standardErrorUrl = value; }
+    inline void SetStandardErrorUrl(Aws::String&& value) { m_standardErrorUrlHasBeenSet = true; m_standardErrorUrl = std::move(value); }
 
     /**
      * <p>The URL for the complete text written by the plugin to stderr. If execution
@@ -571,7 +572,7 @@ namespace Model
      * <p>The URL for the complete text written by the plugin to stderr. If execution
      * is not yet complete, then this string is empty.</p>
      */
-    inline CommandPlugin& WithStandardErrorUrl(Aws::String&& value) { SetStandardErrorUrl(value); return *this;}
+    inline CommandPlugin& WithStandardErrorUrl(Aws::String&& value) { SetStandardErrorUrl(std::move(value)); return *this;}
 
     /**
      * <p>The URL for the complete text written by the plugin to stderr. If execution
@@ -592,7 +593,7 @@ namespace Model
     /**
      * <p>The name of the region where the output is stored in Amazon S3.</p>
      */
-    inline void SetOutputS3Region(Aws::String&& value) { m_outputS3RegionHasBeenSet = true; m_outputS3Region = value; }
+    inline void SetOutputS3Region(Aws::String&& value) { m_outputS3RegionHasBeenSet = true; m_outputS3Region = std::move(value); }
 
     /**
      * <p>The name of the region where the output is stored in Amazon S3.</p>
@@ -607,7 +608,7 @@ namespace Model
     /**
      * <p>The name of the region where the output is stored in Amazon S3.</p>
      */
-    inline CommandPlugin& WithOutputS3Region(Aws::String&& value) { SetOutputS3Region(value); return *this;}
+    inline CommandPlugin& WithOutputS3Region(Aws::String&& value) { SetOutputS3Region(std::move(value)); return *this;}
 
     /**
      * <p>The name of the region where the output is stored in Amazon S3.</p>
@@ -648,7 +649,7 @@ namespace Model
      * prefix;</p> <p> <code>i-1234567876543</code> is the instance ID;</p> <p>
      * <code>awsrunShellScript</code> is the name of the plugin.</p>
      */
-    inline void SetOutputS3BucketName(Aws::String&& value) { m_outputS3BucketNameHasBeenSet = true; m_outputS3BucketName = value; }
+    inline void SetOutputS3BucketName(Aws::String&& value) { m_outputS3BucketNameHasBeenSet = true; m_outputS3BucketName = std::move(value); }
 
     /**
      * <p>The S3 bucket where the responses to the command executions should be stored.
@@ -684,7 +685,7 @@ namespace Model
      * prefix;</p> <p> <code>i-1234567876543</code> is the instance ID;</p> <p>
      * <code>awsrunShellScript</code> is the name of the plugin.</p>
      */
-    inline CommandPlugin& WithOutputS3BucketName(Aws::String&& value) { SetOutputS3BucketName(value); return *this;}
+    inline CommandPlugin& WithOutputS3BucketName(Aws::String&& value) { SetOutputS3BucketName(std::move(value)); return *this;}
 
     /**
      * <p>The S3 bucket where the responses to the command executions should be stored.
@@ -732,7 +733,7 @@ namespace Model
      * prefix;</p> <p> <code>i-1234567876543</code> is the instance ID;</p> <p>
      * <code>awsrunShellScript</code> is the name of the plugin.</p>
      */
-    inline void SetOutputS3KeyPrefix(Aws::String&& value) { m_outputS3KeyPrefixHasBeenSet = true; m_outputS3KeyPrefix = value; }
+    inline void SetOutputS3KeyPrefix(Aws::String&& value) { m_outputS3KeyPrefixHasBeenSet = true; m_outputS3KeyPrefix = std::move(value); }
 
     /**
      * <p>The S3 directory path inside the bucket where the responses to the command
@@ -768,7 +769,7 @@ namespace Model
      * prefix;</p> <p> <code>i-1234567876543</code> is the instance ID;</p> <p>
      * <code>awsrunShellScript</code> is the name of the plugin.</p>
      */
-    inline CommandPlugin& WithOutputS3KeyPrefix(Aws::String&& value) { SetOutputS3KeyPrefix(value); return *this;}
+    inline CommandPlugin& WithOutputS3KeyPrefix(Aws::String&& value) { SetOutputS3KeyPrefix(std::move(value)); return *this;}
 
     /**
      * <p>The S3 directory path inside the bucket where the responses to the command

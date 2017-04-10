@@ -16,6 +16,7 @@
 #include <aws/polly/Polly_EXPORTS.h>
 #include <aws/polly/model/Lexicon.h>
 #include <aws/polly/model/LexiconAttributes.h>
+#include <utility>
 
 namespace Aws
 {
@@ -53,7 +54,7 @@ namespace Model
     /**
      * <p>Lexicon object that provides name and the string content of the lexicon. </p>
      */
-    inline void SetLexicon(Lexicon&& value) { m_lexicon = value; }
+    inline void SetLexicon(Lexicon&& value) { m_lexicon = std::move(value); }
 
     /**
      * <p>Lexicon object that provides name and the string content of the lexicon. </p>
@@ -63,7 +64,7 @@ namespace Model
     /**
      * <p>Lexicon object that provides name and the string content of the lexicon. </p>
      */
-    inline GetLexiconResult& WithLexicon(Lexicon&& value) { SetLexicon(value); return *this;}
+    inline GetLexiconResult& WithLexicon(Lexicon&& value) { SetLexicon(std::move(value)); return *this;}
 
     /**
      * <p>Metadata of the lexicon, including phonetic alphabetic used, language code,
@@ -84,7 +85,7 @@ namespace Model
      * lexicon ARN, number of lexemes defined in the lexicon, and size of lexicon in
      * bytes.</p>
      */
-    inline void SetLexiconAttributes(LexiconAttributes&& value) { m_lexiconAttributes = value; }
+    inline void SetLexiconAttributes(LexiconAttributes&& value) { m_lexiconAttributes = std::move(value); }
 
     /**
      * <p>Metadata of the lexicon, including phonetic alphabetic used, language code,
@@ -98,7 +99,7 @@ namespace Model
      * lexicon ARN, number of lexemes defined in the lexicon, and size of lexicon in
      * bytes.</p>
      */
-    inline GetLexiconResult& WithLexiconAttributes(LexiconAttributes&& value) { SetLexiconAttributes(value); return *this;}
+    inline GetLexiconResult& WithLexiconAttributes(LexiconAttributes&& value) { SetLexiconAttributes(std::move(value)); return *this;}
 
   private:
     Lexicon m_lexicon;

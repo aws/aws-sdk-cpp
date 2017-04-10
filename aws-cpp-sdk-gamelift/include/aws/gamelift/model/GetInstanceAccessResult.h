@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/gamelift/GameLift_EXPORTS.h>
 #include <aws/gamelift/model/InstanceAccess.h>
+#include <utility>
 
 namespace Aws
 {
@@ -55,7 +56,7 @@ namespace Model
      * <p>Object that contains connection information for a fleet instance, including
      * IP address and access credentials.</p>
      */
-    inline void SetInstanceAccess(InstanceAccess&& value) { m_instanceAccess = value; }
+    inline void SetInstanceAccess(InstanceAccess&& value) { m_instanceAccess = std::move(value); }
 
     /**
      * <p>Object that contains connection information for a fleet instance, including
@@ -67,7 +68,7 @@ namespace Model
      * <p>Object that contains connection information for a fleet instance, including
      * IP address and access credentials.</p>
      */
-    inline GetInstanceAccessResult& WithInstanceAccess(InstanceAccess&& value) { SetInstanceAccess(value); return *this;}
+    inline GetInstanceAccessResult& WithInstanceAccess(InstanceAccess&& value) { SetInstanceAccess(std::move(value)); return *this;}
 
   private:
     InstanceAccess m_instanceAccess;

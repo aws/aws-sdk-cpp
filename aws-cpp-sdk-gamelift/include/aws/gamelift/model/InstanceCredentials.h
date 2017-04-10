@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/gamelift/GameLift_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -58,7 +59,7 @@ namespace Model
     /**
      * <p>User login string.</p>
      */
-    inline void SetUserName(Aws::String&& value) { m_userNameHasBeenSet = true; m_userName = value; }
+    inline void SetUserName(Aws::String&& value) { m_userNameHasBeenSet = true; m_userName = std::move(value); }
 
     /**
      * <p>User login string.</p>
@@ -73,7 +74,7 @@ namespace Model
     /**
      * <p>User login string.</p>
      */
-    inline InstanceCredentials& WithUserName(Aws::String&& value) { SetUserName(value); return *this;}
+    inline InstanceCredentials& WithUserName(Aws::String&& value) { SetUserName(std::move(value)); return *this;}
 
     /**
      * <p>User login string.</p>
@@ -99,7 +100,7 @@ namespace Model
      * Windows Remote Desktop. For Linux instances, it is a private key (which must be
      * saved as a <code>.pem</code> file) for use with SSH.</p>
      */
-    inline void SetSecret(Aws::String&& value) { m_secretHasBeenSet = true; m_secret = value; }
+    inline void SetSecret(Aws::String&& value) { m_secretHasBeenSet = true; m_secret = std::move(value); }
 
     /**
      * <p>Secret string. For Windows instances, the secret is a password for use with
@@ -120,7 +121,7 @@ namespace Model
      * Windows Remote Desktop. For Linux instances, it is a private key (which must be
      * saved as a <code>.pem</code> file) for use with SSH.</p>
      */
-    inline InstanceCredentials& WithSecret(Aws::String&& value) { SetSecret(value); return *this;}
+    inline InstanceCredentials& WithSecret(Aws::String&& value) { SetSecret(std::move(value)); return *this;}
 
     /**
      * <p>Secret string. For Windows instances, the secret is a password for use with

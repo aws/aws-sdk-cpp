@@ -19,6 +19,7 @@
 #include <aws/events/model/KinesisParameters.h>
 #include <aws/events/model/RunCommandParameters.h>
 #include <aws/events/model/EcsParameters.h>
+#include <utility>
 
 namespace Aws
 {
@@ -67,7 +68,7 @@ namespace Model
      * <zonbook> <simpara>The ID of the target.</simpara> </zonbook> <xhtml> <p>The ID
      * of the target.</p> </xhtml>
      */
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = value; }
+    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
 
     /**
      * <zonbook> <simpara>The ID of the target.</simpara> </zonbook> <xhtml> <p>The ID
@@ -85,7 +86,7 @@ namespace Model
      * <zonbook> <simpara>The ID of the target.</simpara> </zonbook> <xhtml> <p>The ID
      * of the target.</p> </xhtml>
      */
-    inline Target& WithId(Aws::String&& value) { SetId(value); return *this;}
+    inline Target& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
 
     /**
      * <zonbook> <simpara>The ID of the target.</simpara> </zonbook> <xhtml> <p>The ID
@@ -109,7 +110,7 @@ namespace Model
      * <zonbook> <simpara>The Amazon Resource Name (ARN) of the target.</simpara>
      * </zonbook> <xhtml> <p>The Amazon Resource Name (ARN) of the target.</p> </xhtml>
      */
-    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = value; }
+    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
 
     /**
      * <zonbook> <simpara>The Amazon Resource Name (ARN) of the target.</simpara>
@@ -127,7 +128,7 @@ namespace Model
      * <zonbook> <simpara>The Amazon Resource Name (ARN) of the target.</simpara>
      * </zonbook> <xhtml> <p>The Amazon Resource Name (ARN) of the target.</p> </xhtml>
      */
-    inline Target& WithArn(Aws::String&& value) { SetArn(value); return *this;}
+    inline Target& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
 
     /**
      * <zonbook> <simpara>The Amazon Resource Name (ARN) of the target.</simpara>
@@ -163,7 +164,7 @@ namespace Model
      * when the rule is triggered. If one rule triggers multiple targets, you can use a
      * different IAM role for each target.</p> </xhtml>
      */
-    inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
+    inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
 
     /**
      * <zonbook> <simpara>The Amazon Resource Name (ARN) of the IAM role to be used for
@@ -193,7 +194,7 @@ namespace Model
      * when the rule is triggered. If one rule triggers multiple targets, you can use a
      * different IAM role for each target.</p> </xhtml>
      */
-    inline Target& WithRoleArn(Aws::String&& value) { SetRoleArn(value); return *this;}
+    inline Target& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
 
     /**
      * <zonbook> <simpara>The Amazon Resource Name (ARN) of the IAM role to be used for
@@ -239,7 +240,7 @@ namespace Model
      * href="http://www.rfc-editor.org/rfc/rfc7159.txt">The JavaScript Object Notation
      * (JSON) Data Interchange Format</a>.</p> </xhtml>
      */
-    inline void SetInput(Aws::String&& value) { m_inputHasBeenSet = true; m_input = value; }
+    inline void SetInput(Aws::String&& value) { m_inputHasBeenSet = true; m_input = std::move(value); }
 
     /**
      * <zonbook> <simpara>Valid JSON text passed to the target. In this case, nothing
@@ -275,7 +276,7 @@ namespace Model
      * href="http://www.rfc-editor.org/rfc/rfc7159.txt">The JavaScript Object Notation
      * (JSON) Data Interchange Format</a>.</p> </xhtml>
      */
-    inline Target& WithInput(Aws::String&& value) { SetInput(value); return *this;}
+    inline Target& WithInput(Aws::String&& value) { SetInput(std::move(value)); return *this;}
 
     /**
      * <zonbook> <simpara>Valid JSON text passed to the target. In this case, nothing
@@ -323,7 +324,7 @@ namespace Model
      * JSON paths, see <a
      * href="http://goessner.net/articles/JsonPath/">JSONPath</a>.</p> </xhtml>
      */
-    inline void SetInputPath(Aws::String&& value) { m_inputPathHasBeenSet = true; m_inputPath = value; }
+    inline void SetInputPath(Aws::String&& value) { m_inputPathHasBeenSet = true; m_inputPath = std::move(value); }
 
     /**
      * <zonbook> <simpara>The value of the JSONPath that is used for extracting part of
@@ -359,7 +360,7 @@ namespace Model
      * JSON paths, see <a
      * href="http://goessner.net/articles/JsonPath/">JSONPath</a>.</p> </xhtml>
      */
-    inline Target& WithInputPath(Aws::String&& value) { SetInputPath(value); return *this;}
+    inline Target& WithInputPath(Aws::String&& value) { SetInputPath(std::move(value)); return *this;}
 
     /**
      * <zonbook> <simpara>The value of the JSONPath that is used for extracting part of
@@ -404,7 +405,7 @@ namespace Model
      * key-value pairs from the event and then use that data to send customized input
      * to the target.</p> </xhtml>
      */
-    inline void SetInputTransformer(InputTransformer&& value) { m_inputTransformerHasBeenSet = true; m_inputTransformer = value; }
+    inline void SetInputTransformer(InputTransformer&& value) { m_inputTransformerHasBeenSet = true; m_inputTransformer = std::move(value); }
 
     /**
      * <zonbook> <simpara>Settings to enable you to provide custom input to a target
@@ -426,7 +427,7 @@ namespace Model
      * key-value pairs from the event and then use that data to send customized input
      * to the target.</p> </xhtml>
      */
-    inline Target& WithInputTransformer(InputTransformer&& value) { SetInputTransformer(value); return *this;}
+    inline Target& WithInputTransformer(InputTransformer&& value) { SetInputTransformer(std::move(value)); return *this;}
 
     /**
      * <zonbook> <simpara>The custom parameter you can use to control shard assignment,
@@ -459,7 +460,7 @@ namespace Model
      * include this parameter, the default is to use the <code>eventId</code> as the
      * partition key.</p> </xhtml>
      */
-    inline void SetKinesisParameters(KinesisParameters&& value) { m_kinesisParametersHasBeenSet = true; m_kinesisParameters = value; }
+    inline void SetKinesisParameters(KinesisParameters&& value) { m_kinesisParametersHasBeenSet = true; m_kinesisParameters = std::move(value); }
 
     /**
      * <zonbook> <simpara>The custom parameter you can use to control shard assignment,
@@ -481,7 +482,7 @@ namespace Model
      * include this parameter, the default is to use the <code>eventId</code> as the
      * partition key.</p> </xhtml>
      */
-    inline Target& WithKinesisParameters(KinesisParameters&& value) { SetKinesisParameters(value); return *this;}
+    inline Target& WithKinesisParameters(KinesisParameters&& value) { SetKinesisParameters(std::move(value)); return *this;}
 
     /**
      * <zonbook> <simpara>Parameters used when you are using the rule to invoke Amazon
@@ -502,7 +503,7 @@ namespace Model
      * EC2 Run Command.</simpara> </zonbook> <xhtml> <p>Parameters used when you are
      * using the rule to invoke Amazon EC2 Run Command.</p> </xhtml>
      */
-    inline void SetRunCommandParameters(RunCommandParameters&& value) { m_runCommandParametersHasBeenSet = true; m_runCommandParameters = value; }
+    inline void SetRunCommandParameters(RunCommandParameters&& value) { m_runCommandParametersHasBeenSet = true; m_runCommandParameters = std::move(value); }
 
     /**
      * <zonbook> <simpara>Parameters used when you are using the rule to invoke Amazon
@@ -516,7 +517,7 @@ namespace Model
      * EC2 Run Command.</simpara> </zonbook> <xhtml> <p>Parameters used when you are
      * using the rule to invoke Amazon EC2 Run Command.</p> </xhtml>
      */
-    inline Target& WithRunCommandParameters(RunCommandParameters&& value) { SetRunCommandParameters(value); return *this;}
+    inline Target& WithRunCommandParameters(RunCommandParameters&& value) { SetRunCommandParameters(std::move(value)); return *this;}
 
     /**
      * <zonbook> <simpara>Contains the Amazon ECS task definition and task count to be
@@ -561,7 +562,7 @@ namespace Model
      * Definitions </a> in the <i>Amazon EC2 Container Service Developer Guide</i>.</p>
      * </xhtml>
      */
-    inline void SetEcsParameters(EcsParameters&& value) { m_ecsParametersHasBeenSet = true; m_ecsParameters = value; }
+    inline void SetEcsParameters(EcsParameters&& value) { m_ecsParametersHasBeenSet = true; m_ecsParameters = std::move(value); }
 
     /**
      * <zonbook> <simpara>Contains the Amazon ECS task definition and task count to be
@@ -591,7 +592,7 @@ namespace Model
      * Definitions </a> in the <i>Amazon EC2 Container Service Developer Guide</i>.</p>
      * </xhtml>
      */
-    inline Target& WithEcsParameters(EcsParameters&& value) { SetEcsParameters(value); return *this;}
+    inline Target& WithEcsParameters(EcsParameters&& value) { SetEcsParameters(std::move(value)); return *this;}
 
   private:
     Aws::String m_id;

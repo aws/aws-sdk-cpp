@@ -17,6 +17,7 @@
 #include <aws/swf/model/WorkflowExecution.h>
 #include <aws/swf/model/WorkflowType.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -59,7 +60,7 @@ namespace Model
     /**
      * <p>The child workflow execution that failed.</p>
      */
-    inline void SetWorkflowExecution(WorkflowExecution&& value) { m_workflowExecutionHasBeenSet = true; m_workflowExecution = value; }
+    inline void SetWorkflowExecution(WorkflowExecution&& value) { m_workflowExecutionHasBeenSet = true; m_workflowExecution = std::move(value); }
 
     /**
      * <p>The child workflow execution that failed.</p>
@@ -69,7 +70,7 @@ namespace Model
     /**
      * <p>The child workflow execution that failed.</p>
      */
-    inline ChildWorkflowExecutionFailedEventAttributes& WithWorkflowExecution(WorkflowExecution&& value) { SetWorkflowExecution(value); return *this;}
+    inline ChildWorkflowExecutionFailedEventAttributes& WithWorkflowExecution(WorkflowExecution&& value) { SetWorkflowExecution(std::move(value)); return *this;}
 
     /**
      * <p>The type of the child workflow execution.</p>
@@ -84,7 +85,7 @@ namespace Model
     /**
      * <p>The type of the child workflow execution.</p>
      */
-    inline void SetWorkflowType(WorkflowType&& value) { m_workflowTypeHasBeenSet = true; m_workflowType = value; }
+    inline void SetWorkflowType(WorkflowType&& value) { m_workflowTypeHasBeenSet = true; m_workflowType = std::move(value); }
 
     /**
      * <p>The type of the child workflow execution.</p>
@@ -94,7 +95,7 @@ namespace Model
     /**
      * <p>The type of the child workflow execution.</p>
      */
-    inline ChildWorkflowExecutionFailedEventAttributes& WithWorkflowType(WorkflowType&& value) { SetWorkflowType(value); return *this;}
+    inline ChildWorkflowExecutionFailedEventAttributes& WithWorkflowType(WorkflowType&& value) { SetWorkflowType(std::move(value)); return *this;}
 
     /**
      * <p>The reason for the failure (if provided).</p>
@@ -109,7 +110,7 @@ namespace Model
     /**
      * <p>The reason for the failure (if provided).</p>
      */
-    inline void SetReason(Aws::String&& value) { m_reasonHasBeenSet = true; m_reason = value; }
+    inline void SetReason(Aws::String&& value) { m_reasonHasBeenSet = true; m_reason = std::move(value); }
 
     /**
      * <p>The reason for the failure (if provided).</p>
@@ -124,7 +125,7 @@ namespace Model
     /**
      * <p>The reason for the failure (if provided).</p>
      */
-    inline ChildWorkflowExecutionFailedEventAttributes& WithReason(Aws::String&& value) { SetReason(value); return *this;}
+    inline ChildWorkflowExecutionFailedEventAttributes& WithReason(Aws::String&& value) { SetReason(std::move(value)); return *this;}
 
     /**
      * <p>The reason for the failure (if provided).</p>
@@ -144,7 +145,7 @@ namespace Model
     /**
      * <p>The details of the failure (if provided).</p>
      */
-    inline void SetDetails(Aws::String&& value) { m_detailsHasBeenSet = true; m_details = value; }
+    inline void SetDetails(Aws::String&& value) { m_detailsHasBeenSet = true; m_details = std::move(value); }
 
     /**
      * <p>The details of the failure (if provided).</p>
@@ -159,7 +160,7 @@ namespace Model
     /**
      * <p>The details of the failure (if provided).</p>
      */
-    inline ChildWorkflowExecutionFailedEventAttributes& WithDetails(Aws::String&& value) { SetDetails(value); return *this;}
+    inline ChildWorkflowExecutionFailedEventAttributes& WithDetails(Aws::String&& value) { SetDetails(std::move(value)); return *this;}
 
     /**
      * <p>The details of the failure (if provided).</p>

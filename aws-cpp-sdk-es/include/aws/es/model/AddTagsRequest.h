@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/es/model/Tag.h>
+#include <utility>
 
 namespace Aws
 {
@@ -53,7 +54,7 @@ namespace Model
     /**
      * <p> Specify the <code>ARN</code> for which you want to add the tags.</p>
      */
-    inline void SetARN(Aws::String&& value) { m_aRNHasBeenSet = true; m_aRN = value; }
+    inline void SetARN(Aws::String&& value) { m_aRNHasBeenSet = true; m_aRN = std::move(value); }
 
     /**
      * <p> Specify the <code>ARN</code> for which you want to add the tags.</p>
@@ -68,7 +69,7 @@ namespace Model
     /**
      * <p> Specify the <code>ARN</code> for which you want to add the tags.</p>
      */
-    inline AddTagsRequest& WithARN(Aws::String&& value) { SetARN(value); return *this;}
+    inline AddTagsRequest& WithARN(Aws::String&& value) { SetARN(std::move(value)); return *this;}
 
     /**
      * <p> Specify the <code>ARN</code> for which you want to add the tags.</p>
@@ -91,7 +92,7 @@ namespace Model
      * <p> List of <code>Tag</code> that need to be added for the Elasticsearch domain.
      * </p>
      */
-    inline void SetTagList(Aws::Vector<Tag>&& value) { m_tagListHasBeenSet = true; m_tagList = value; }
+    inline void SetTagList(Aws::Vector<Tag>&& value) { m_tagListHasBeenSet = true; m_tagList = std::move(value); }
 
     /**
      * <p> List of <code>Tag</code> that need to be added for the Elasticsearch domain.
@@ -103,7 +104,7 @@ namespace Model
      * <p> List of <code>Tag</code> that need to be added for the Elasticsearch domain.
      * </p>
      */
-    inline AddTagsRequest& WithTagList(Aws::Vector<Tag>&& value) { SetTagList(value); return *this;}
+    inline AddTagsRequest& WithTagList(Aws::Vector<Tag>&& value) { SetTagList(std::move(value)); return *this;}
 
     /**
      * <p> List of <code>Tag</code> that need to be added for the Elasticsearch domain.
@@ -115,7 +116,7 @@ namespace Model
      * <p> List of <code>Tag</code> that need to be added for the Elasticsearch domain.
      * </p>
      */
-    inline AddTagsRequest& AddTagList(Tag&& value) { m_tagListHasBeenSet = true; m_tagList.push_back(value); return *this; }
+    inline AddTagsRequest& AddTagList(Tag&& value) { m_tagListHasBeenSet = true; m_tagList.push_back(std::move(value)); return *this; }
 
   private:
     Aws::String m_aRN;

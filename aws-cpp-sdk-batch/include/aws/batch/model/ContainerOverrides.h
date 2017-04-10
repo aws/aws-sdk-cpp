@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/batch/model/KeyValuePair.h>
+#include <utility>
 
 namespace Aws
 {
@@ -98,7 +99,7 @@ namespace Model
      * <p>The command to send to the container that overrides the default command from
      * the Docker image or the job definition.</p>
      */
-    inline void SetCommand(Aws::Vector<Aws::String>&& value) { m_commandHasBeenSet = true; m_command = value; }
+    inline void SetCommand(Aws::Vector<Aws::String>&& value) { m_commandHasBeenSet = true; m_command = std::move(value); }
 
     /**
      * <p>The command to send to the container that overrides the default command from
@@ -110,7 +111,7 @@ namespace Model
      * <p>The command to send to the container that overrides the default command from
      * the Docker image or the job definition.</p>
      */
-    inline ContainerOverrides& WithCommand(Aws::Vector<Aws::String>&& value) { SetCommand(value); return *this;}
+    inline ContainerOverrides& WithCommand(Aws::Vector<Aws::String>&& value) { SetCommand(std::move(value)); return *this;}
 
     /**
      * <p>The command to send to the container that overrides the default command from
@@ -122,7 +123,7 @@ namespace Model
      * <p>The command to send to the container that overrides the default command from
      * the Docker image or the job definition.</p>
      */
-    inline ContainerOverrides& AddCommand(Aws::String&& value) { m_commandHasBeenSet = true; m_command.push_back(value); return *this; }
+    inline ContainerOverrides& AddCommand(Aws::String&& value) { m_commandHasBeenSet = true; m_command.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The command to send to the container that overrides the default command from
@@ -152,7 +153,7 @@ namespace Model
      * override the existing environment variables from the Docker image or the job
      * definition.</p>
      */
-    inline void SetEnvironment(Aws::Vector<KeyValuePair>&& value) { m_environmentHasBeenSet = true; m_environment = value; }
+    inline void SetEnvironment(Aws::Vector<KeyValuePair>&& value) { m_environmentHasBeenSet = true; m_environment = std::move(value); }
 
     /**
      * <p>The environment variables to send to the container. You can add new
@@ -168,7 +169,7 @@ namespace Model
      * override the existing environment variables from the Docker image or the job
      * definition.</p>
      */
-    inline ContainerOverrides& WithEnvironment(Aws::Vector<KeyValuePair>&& value) { SetEnvironment(value); return *this;}
+    inline ContainerOverrides& WithEnvironment(Aws::Vector<KeyValuePair>&& value) { SetEnvironment(std::move(value)); return *this;}
 
     /**
      * <p>The environment variables to send to the container. You can add new
@@ -184,7 +185,7 @@ namespace Model
      * override the existing environment variables from the Docker image or the job
      * definition.</p>
      */
-    inline ContainerOverrides& AddEnvironment(KeyValuePair&& value) { m_environmentHasBeenSet = true; m_environment.push_back(value); return *this; }
+    inline ContainerOverrides& AddEnvironment(KeyValuePair&& value) { m_environmentHasBeenSet = true; m_environment.push_back(std::move(value)); return *this; }
 
   private:
     int m_vcpus;

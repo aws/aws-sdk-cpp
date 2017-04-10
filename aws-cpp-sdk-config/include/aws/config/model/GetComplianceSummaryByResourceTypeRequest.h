@@ -17,6 +17,7 @@
 #include <aws/config/ConfigServiceRequest.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -64,7 +65,7 @@ namespace Model
      * <code>AWS::EC2::Instance</code>, and you can specify that the resource type is
      * an AWS account by specifying <code>AWS::::Account</code>.</p>
      */
-    inline void SetResourceTypes(Aws::Vector<Aws::String>&& value) { m_resourceTypesHasBeenSet = true; m_resourceTypes = value; }
+    inline void SetResourceTypes(Aws::Vector<Aws::String>&& value) { m_resourceTypesHasBeenSet = true; m_resourceTypes = std::move(value); }
 
     /**
      * <p>Specify one or more resource types to get the number of resources that are
@@ -82,7 +83,7 @@ namespace Model
      * <code>AWS::EC2::Instance</code>, and you can specify that the resource type is
      * an AWS account by specifying <code>AWS::::Account</code>.</p>
      */
-    inline GetComplianceSummaryByResourceTypeRequest& WithResourceTypes(Aws::Vector<Aws::String>&& value) { SetResourceTypes(value); return *this;}
+    inline GetComplianceSummaryByResourceTypeRequest& WithResourceTypes(Aws::Vector<Aws::String>&& value) { SetResourceTypes(std::move(value)); return *this;}
 
     /**
      * <p>Specify one or more resource types to get the number of resources that are
@@ -100,7 +101,7 @@ namespace Model
      * <code>AWS::EC2::Instance</code>, and you can specify that the resource type is
      * an AWS account by specifying <code>AWS::::Account</code>.</p>
      */
-    inline GetComplianceSummaryByResourceTypeRequest& AddResourceTypes(Aws::String&& value) { m_resourceTypesHasBeenSet = true; m_resourceTypes.push_back(value); return *this; }
+    inline GetComplianceSummaryByResourceTypeRequest& AddResourceTypes(Aws::String&& value) { m_resourceTypesHasBeenSet = true; m_resourceTypes.push_back(std::move(value)); return *this; }
 
     /**
      * <p>Specify one or more resource types to get the number of resources that are

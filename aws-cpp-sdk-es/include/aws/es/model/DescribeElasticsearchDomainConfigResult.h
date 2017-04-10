@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/es/ElasticsearchService_EXPORTS.h>
 #include <aws/es/model/ElasticsearchDomainConfig.h>
+#include <utility>
 
 namespace Aws
 {
@@ -62,7 +63,7 @@ namespace Model
      * <p>The configuration information of the domain requested in the
      * <code>DescribeElasticsearchDomainConfig</code> request.</p>
      */
-    inline void SetDomainConfig(ElasticsearchDomainConfig&& value) { m_domainConfig = value; }
+    inline void SetDomainConfig(ElasticsearchDomainConfig&& value) { m_domainConfig = std::move(value); }
 
     /**
      * <p>The configuration information of the domain requested in the
@@ -74,7 +75,7 @@ namespace Model
      * <p>The configuration information of the domain requested in the
      * <code>DescribeElasticsearchDomainConfig</code> request.</p>
      */
-    inline DescribeElasticsearchDomainConfigResult& WithDomainConfig(ElasticsearchDomainConfig&& value) { SetDomainConfig(value); return *this;}
+    inline DescribeElasticsearchDomainConfigResult& WithDomainConfig(ElasticsearchDomainConfig&& value) { SetDomainConfig(std::move(value)); return *this;}
 
   private:
     ElasticsearchDomainConfig m_domainConfig;

@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/AttachmentStatus.h>
 #include <aws/core/utils/DateTime.h>
+#include <utility>
 
 namespace Aws
 {
@@ -62,7 +63,7 @@ namespace Model
     /**
      * <p>The ID of the EBS volume.</p>
      */
-    inline void SetVolumeId(Aws::String&& value) { m_volumeIdHasBeenSet = true; m_volumeId = value; }
+    inline void SetVolumeId(Aws::String&& value) { m_volumeIdHasBeenSet = true; m_volumeId = std::move(value); }
 
     /**
      * <p>The ID of the EBS volume.</p>
@@ -77,7 +78,7 @@ namespace Model
     /**
      * <p>The ID of the EBS volume.</p>
      */
-    inline EbsInstanceBlockDevice& WithVolumeId(Aws::String&& value) { SetVolumeId(value); return *this;}
+    inline EbsInstanceBlockDevice& WithVolumeId(Aws::String&& value) { SetVolumeId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the EBS volume.</p>
@@ -97,7 +98,7 @@ namespace Model
     /**
      * <p>The attachment state.</p>
      */
-    inline void SetStatus(AttachmentStatus&& value) { m_statusHasBeenSet = true; m_status = value; }
+    inline void SetStatus(AttachmentStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
      * <p>The attachment state.</p>
@@ -107,7 +108,7 @@ namespace Model
     /**
      * <p>The attachment state.</p>
      */
-    inline EbsInstanceBlockDevice& WithStatus(AttachmentStatus&& value) { SetStatus(value); return *this;}
+    inline EbsInstanceBlockDevice& WithStatus(AttachmentStatus&& value) { SetStatus(std::move(value)); return *this;}
 
     /**
      * <p>The time stamp when the attachment initiated.</p>
@@ -122,7 +123,7 @@ namespace Model
     /**
      * <p>The time stamp when the attachment initiated.</p>
      */
-    inline void SetAttachTime(Aws::Utils::DateTime&& value) { m_attachTimeHasBeenSet = true; m_attachTime = value; }
+    inline void SetAttachTime(Aws::Utils::DateTime&& value) { m_attachTimeHasBeenSet = true; m_attachTime = std::move(value); }
 
     /**
      * <p>The time stamp when the attachment initiated.</p>
@@ -132,7 +133,7 @@ namespace Model
     /**
      * <p>The time stamp when the attachment initiated.</p>
      */
-    inline EbsInstanceBlockDevice& WithAttachTime(Aws::Utils::DateTime&& value) { SetAttachTime(value); return *this;}
+    inline EbsInstanceBlockDevice& WithAttachTime(Aws::Utils::DateTime&& value) { SetAttachTime(std::move(value)); return *this;}
 
     /**
      * <p>Indicates whether the volume is deleted on instance termination.</p>

@@ -16,6 +16,7 @@
 #include <aws/elasticbeanstalk/ElasticBeanstalk_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -59,7 +60,7 @@ namespace Model
     /**
      * <p>The type of virtualization used to create the custom AMI.</p>
      */
-    inline void SetVirtualizationType(Aws::String&& value) { m_virtualizationTypeHasBeenSet = true; m_virtualizationType = value; }
+    inline void SetVirtualizationType(Aws::String&& value) { m_virtualizationTypeHasBeenSet = true; m_virtualizationType = std::move(value); }
 
     /**
      * <p>The type of virtualization used to create the custom AMI.</p>
@@ -74,7 +75,7 @@ namespace Model
     /**
      * <p>The type of virtualization used to create the custom AMI.</p>
      */
-    inline CustomAmi& WithVirtualizationType(Aws::String&& value) { SetVirtualizationType(value); return *this;}
+    inline CustomAmi& WithVirtualizationType(Aws::String&& value) { SetVirtualizationType(std::move(value)); return *this;}
 
     /**
      * <p>The type of virtualization used to create the custom AMI.</p>
@@ -94,7 +95,7 @@ namespace Model
     /**
      * <p>THe ID of the image used to create the custom AMI.</p>
      */
-    inline void SetImageId(Aws::String&& value) { m_imageIdHasBeenSet = true; m_imageId = value; }
+    inline void SetImageId(Aws::String&& value) { m_imageIdHasBeenSet = true; m_imageId = std::move(value); }
 
     /**
      * <p>THe ID of the image used to create the custom AMI.</p>
@@ -109,7 +110,7 @@ namespace Model
     /**
      * <p>THe ID of the image used to create the custom AMI.</p>
      */
-    inline CustomAmi& WithImageId(Aws::String&& value) { SetImageId(value); return *this;}
+    inline CustomAmi& WithImageId(Aws::String&& value) { SetImageId(std::move(value)); return *this;}
 
     /**
      * <p>THe ID of the image used to create the custom AMI.</p>

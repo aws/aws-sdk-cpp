@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/opsworks/OpsWorks_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -58,7 +59,7 @@ namespace Model
     /**
      * <p>The app ID.</p>
      */
-    inline void SetAppId(Aws::String&& value) { m_appId = value; }
+    inline void SetAppId(Aws::String&& value) { m_appId = std::move(value); }
 
     /**
      * <p>The app ID.</p>
@@ -73,7 +74,7 @@ namespace Model
     /**
      * <p>The app ID.</p>
      */
-    inline CreateAppResult& WithAppId(Aws::String&& value) { SetAppId(value); return *this;}
+    inline CreateAppResult& WithAppId(Aws::String&& value) { SetAppId(std::move(value)); return *this;}
 
     /**
      * <p>The app ID.</p>

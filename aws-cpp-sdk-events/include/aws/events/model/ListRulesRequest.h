@@ -16,6 +16,7 @@
 #include <aws/events/CloudWatchEvents_EXPORTS.h>
 #include <aws/events/CloudWatchEventsRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -51,7 +52,7 @@ namespace Model
      * <zonbook> <simpara>The prefix matching the rule name.</simpara> </zonbook>
      * <xhtml> <p>The prefix matching the rule name.</p> </xhtml>
      */
-    inline void SetNamePrefix(Aws::String&& value) { m_namePrefixHasBeenSet = true; m_namePrefix = value; }
+    inline void SetNamePrefix(Aws::String&& value) { m_namePrefixHasBeenSet = true; m_namePrefix = std::move(value); }
 
     /**
      * <zonbook> <simpara>The prefix matching the rule name.</simpara> </zonbook>
@@ -69,7 +70,7 @@ namespace Model
      * <zonbook> <simpara>The prefix matching the rule name.</simpara> </zonbook>
      * <xhtml> <p>The prefix matching the rule name.</p> </xhtml>
      */
-    inline ListRulesRequest& WithNamePrefix(Aws::String&& value) { SetNamePrefix(value); return *this;}
+    inline ListRulesRequest& WithNamePrefix(Aws::String&& value) { SetNamePrefix(std::move(value)); return *this;}
 
     /**
      * <zonbook> <simpara>The prefix matching the rule name.</simpara> </zonbook>
@@ -96,7 +97,7 @@ namespace Model
      * set of results.</simpara> </zonbook> <xhtml> <p>The token returned by a previous
      * call to retrieve the next set of results.</p> </xhtml>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
      * <zonbook> <simpara>The token returned by a previous call to retrieve the next
@@ -117,7 +118,7 @@ namespace Model
      * set of results.</simpara> </zonbook> <xhtml> <p>The token returned by a previous
      * call to retrieve the next set of results.</p> </xhtml>
      */
-    inline ListRulesRequest& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline ListRulesRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <zonbook> <simpara>The token returned by a previous call to retrieve the next

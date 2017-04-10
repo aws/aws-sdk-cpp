@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ecs/model/Task.h>
 #include <aws/ecs/model/Failure.h>
+#include <utility>
 
 namespace Aws
 {
@@ -54,7 +55,7 @@ namespace Model
     /**
      * <p>The list of tasks.</p>
      */
-    inline void SetTasks(Aws::Vector<Task>&& value) { m_tasks = value; }
+    inline void SetTasks(Aws::Vector<Task>&& value) { m_tasks = std::move(value); }
 
     /**
      * <p>The list of tasks.</p>
@@ -64,7 +65,7 @@ namespace Model
     /**
      * <p>The list of tasks.</p>
      */
-    inline DescribeTasksResult& WithTasks(Aws::Vector<Task>&& value) { SetTasks(value); return *this;}
+    inline DescribeTasksResult& WithTasks(Aws::Vector<Task>&& value) { SetTasks(std::move(value)); return *this;}
 
     /**
      * <p>The list of tasks.</p>
@@ -74,7 +75,7 @@ namespace Model
     /**
      * <p>The list of tasks.</p>
      */
-    inline DescribeTasksResult& AddTasks(Task&& value) { m_tasks.push_back(value); return *this; }
+    inline DescribeTasksResult& AddTasks(Task&& value) { m_tasks.push_back(std::move(value)); return *this; }
 
     /**
      * <p>Any failures associated with the call.</p>
@@ -89,7 +90,7 @@ namespace Model
     /**
      * <p>Any failures associated with the call.</p>
      */
-    inline void SetFailures(Aws::Vector<Failure>&& value) { m_failures = value; }
+    inline void SetFailures(Aws::Vector<Failure>&& value) { m_failures = std::move(value); }
 
     /**
      * <p>Any failures associated with the call.</p>
@@ -99,7 +100,7 @@ namespace Model
     /**
      * <p>Any failures associated with the call.</p>
      */
-    inline DescribeTasksResult& WithFailures(Aws::Vector<Failure>&& value) { SetFailures(value); return *this;}
+    inline DescribeTasksResult& WithFailures(Aws::Vector<Failure>&& value) { SetFailures(std::move(value)); return *this;}
 
     /**
      * <p>Any failures associated with the call.</p>
@@ -109,7 +110,7 @@ namespace Model
     /**
      * <p>Any failures associated with the call.</p>
      */
-    inline DescribeTasksResult& AddFailures(Failure&& value) { m_failures.push_back(value); return *this; }
+    inline DescribeTasksResult& AddFailures(Failure&& value) { m_failures.push_back(std::move(value)); return *this; }
 
   private:
     Aws::Vector<Task> m_tasks;

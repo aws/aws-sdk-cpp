@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/cognito-idp/CognitoIdentityProvider_EXPORTS.h>
 #include <aws/cognito-idp/model/UserImportJobType.h>
+#include <utility>
 
 namespace Aws
 {
@@ -58,7 +59,7 @@ namespace Model
     /**
      * <p>The job object that represents the user import job.</p>
      */
-    inline void SetUserImportJob(UserImportJobType&& value) { m_userImportJob = value; }
+    inline void SetUserImportJob(UserImportJobType&& value) { m_userImportJob = std::move(value); }
 
     /**
      * <p>The job object that represents the user import job.</p>
@@ -68,7 +69,7 @@ namespace Model
     /**
      * <p>The job object that represents the user import job.</p>
      */
-    inline CreateUserImportJobResult& WithUserImportJob(UserImportJobType&& value) { SetUserImportJob(value); return *this;}
+    inline CreateUserImportJobResult& WithUserImportJob(UserImportJobType&& value) { SetUserImportJob(std::move(value)); return *this;}
 
   private:
     UserImportJobType m_userImportJob;

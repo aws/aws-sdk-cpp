@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/mturk-requester/model/Qualification.h>
+#include <utility>
 
 namespace Aws
 {
@@ -48,7 +49,7 @@ namespace Model
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
 
     
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
@@ -57,7 +58,7 @@ namespace Model
     inline ListWorkersWithQualificationTypeResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     
-    inline ListWorkersWithQualificationTypeResult& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline ListWorkersWithQualificationTypeResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     
     inline ListWorkersWithQualificationTypeResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
@@ -93,7 +94,7 @@ namespace Model
     /**
      * <p> The list of Qualification elements returned by this call. </p>
      */
-    inline void SetQualifications(Aws::Vector<Qualification>&& value) { m_qualifications = value; }
+    inline void SetQualifications(Aws::Vector<Qualification>&& value) { m_qualifications = std::move(value); }
 
     /**
      * <p> The list of Qualification elements returned by this call. </p>
@@ -103,7 +104,7 @@ namespace Model
     /**
      * <p> The list of Qualification elements returned by this call. </p>
      */
-    inline ListWorkersWithQualificationTypeResult& WithQualifications(Aws::Vector<Qualification>&& value) { SetQualifications(value); return *this;}
+    inline ListWorkersWithQualificationTypeResult& WithQualifications(Aws::Vector<Qualification>&& value) { SetQualifications(std::move(value)); return *this;}
 
     /**
      * <p> The list of Qualification elements returned by this call. </p>
@@ -113,7 +114,7 @@ namespace Model
     /**
      * <p> The list of Qualification elements returned by this call. </p>
      */
-    inline ListWorkersWithQualificationTypeResult& AddQualifications(Qualification&& value) { m_qualifications.push_back(value); return *this; }
+    inline ListWorkersWithQualificationTypeResult& AddQualifications(Qualification&& value) { m_qualifications.push_back(std::move(value)); return *this; }
 
   private:
     Aws::String m_nextToken;

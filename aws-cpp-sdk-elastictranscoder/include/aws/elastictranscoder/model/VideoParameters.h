@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/elastictranscoder/model/PresetWatermark.h>
+#include <utility>
 
 namespace Aws
 {
@@ -74,7 +75,7 @@ namespace Model
      * <code>gif</code>, and <code>mpeg2</code> when the container type is
      * <code>mpg</code>.</p>
      */
-    inline void SetCodec(Aws::String&& value) { m_codecHasBeenSet = true; m_codec = value; }
+    inline void SetCodec(Aws::String&& value) { m_codecHasBeenSet = true; m_codec = std::move(value); }
 
     /**
      * <p>The video codec for the output file. Valid values include <code>gif</code>,
@@ -104,7 +105,7 @@ namespace Model
      * <code>gif</code>, and <code>mpeg2</code> when the container type is
      * <code>mpg</code>.</p>
      */
-    inline VideoParameters& WithCodec(Aws::String&& value) { SetCodec(value); return *this;}
+    inline VideoParameters& WithCodec(Aws::String&& value) { SetCodec(std::move(value)); return *this;}
 
     /**
      * <p>The video codec for the output file. Valid values include <code>gif</code>,
@@ -390,7 +391,7 @@ namespace Model
      * <code>Infinite</code> and integers between <code>0</code> and <code>100</code>,
      * inclusive.</p>
      */
-    inline void SetCodecOptions(Aws::Map<Aws::String, Aws::String>&& value) { m_codecOptionsHasBeenSet = true; m_codecOptions = value; }
+    inline void SetCodecOptions(Aws::Map<Aws::String, Aws::String>&& value) { m_codecOptionsHasBeenSet = true; m_codecOptions = std::move(value); }
 
     /**
      * <p> <b>Profile (H.264/VP8/VP9 Only)</b> </p> <p>The H.264 profile that you want
@@ -574,7 +575,7 @@ namespace Model
      * <code>Infinite</code> and integers between <code>0</code> and <code>100</code>,
      * inclusive.</p>
      */
-    inline VideoParameters& WithCodecOptions(Aws::Map<Aws::String, Aws::String>&& value) { SetCodecOptions(value); return *this;}
+    inline VideoParameters& WithCodecOptions(Aws::Map<Aws::String, Aws::String>&& value) { SetCodecOptions(std::move(value)); return *this;}
 
     /**
      * <p> <b>Profile (H.264/VP8/VP9 Only)</b> </p> <p>The H.264 profile that you want
@@ -666,7 +667,7 @@ namespace Model
      * <code>Infinite</code> and integers between <code>0</code> and <code>100</code>,
      * inclusive.</p>
      */
-    inline VideoParameters& AddCodecOptions(const Aws::String& key, const Aws::String& value) { m_codecOptionsHasBeenSet = true; m_codecOptions[key] = value; return *this; }
+    inline VideoParameters& AddCodecOptions(const Aws::String& key, const Aws::String& value) { m_codecOptionsHasBeenSet = true; m_codecOptions.emplace(key, value); return *this; }
 
     /**
      * <p> <b>Profile (H.264/VP8/VP9 Only)</b> </p> <p>The H.264 profile that you want
@@ -758,7 +759,7 @@ namespace Model
      * <code>Infinite</code> and integers between <code>0</code> and <code>100</code>,
      * inclusive.</p>
      */
-    inline VideoParameters& AddCodecOptions(Aws::String&& key, const Aws::String& value) { m_codecOptionsHasBeenSet = true; m_codecOptions[key] = value; return *this; }
+    inline VideoParameters& AddCodecOptions(Aws::String&& key, const Aws::String& value) { m_codecOptionsHasBeenSet = true; m_codecOptions.emplace(std::move(key), value); return *this; }
 
     /**
      * <p> <b>Profile (H.264/VP8/VP9 Only)</b> </p> <p>The H.264 profile that you want
@@ -850,7 +851,7 @@ namespace Model
      * <code>Infinite</code> and integers between <code>0</code> and <code>100</code>,
      * inclusive.</p>
      */
-    inline VideoParameters& AddCodecOptions(const Aws::String& key, Aws::String&& value) { m_codecOptionsHasBeenSet = true; m_codecOptions[key] = value; return *this; }
+    inline VideoParameters& AddCodecOptions(const Aws::String& key, Aws::String&& value) { m_codecOptionsHasBeenSet = true; m_codecOptions.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p> <b>Profile (H.264/VP8/VP9 Only)</b> </p> <p>The H.264 profile that you want
@@ -942,7 +943,7 @@ namespace Model
      * <code>Infinite</code> and integers between <code>0</code> and <code>100</code>,
      * inclusive.</p>
      */
-    inline VideoParameters& AddCodecOptions(Aws::String&& key, Aws::String&& value) { m_codecOptionsHasBeenSet = true; m_codecOptions[key] = value; return *this; }
+    inline VideoParameters& AddCodecOptions(Aws::String&& key, Aws::String&& value) { m_codecOptionsHasBeenSet = true; m_codecOptions.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
      * <p> <b>Profile (H.264/VP8/VP9 Only)</b> </p> <p>The H.264 profile that you want
@@ -1034,7 +1035,7 @@ namespace Model
      * <code>Infinite</code> and integers between <code>0</code> and <code>100</code>,
      * inclusive.</p>
      */
-    inline VideoParameters& AddCodecOptions(const char* key, Aws::String&& value) { m_codecOptionsHasBeenSet = true; m_codecOptions[key] = value; return *this; }
+    inline VideoParameters& AddCodecOptions(const char* key, Aws::String&& value) { m_codecOptionsHasBeenSet = true; m_codecOptions.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p> <b>Profile (H.264/VP8/VP9 Only)</b> </p> <p>The H.264 profile that you want
@@ -1126,7 +1127,7 @@ namespace Model
      * <code>Infinite</code> and integers between <code>0</code> and <code>100</code>,
      * inclusive.</p>
      */
-    inline VideoParameters& AddCodecOptions(Aws::String&& key, const char* value) { m_codecOptionsHasBeenSet = true; m_codecOptions[key] = value; return *this; }
+    inline VideoParameters& AddCodecOptions(Aws::String&& key, const char* value) { m_codecOptionsHasBeenSet = true; m_codecOptions.emplace(std::move(key), value); return *this; }
 
     /**
      * <p> <b>Profile (H.264/VP8/VP9 Only)</b> </p> <p>The H.264 profile that you want
@@ -1218,7 +1219,7 @@ namespace Model
      * <code>Infinite</code> and integers between <code>0</code> and <code>100</code>,
      * inclusive.</p>
      */
-    inline VideoParameters& AddCodecOptions(const char* key, const char* value) { m_codecOptionsHasBeenSet = true; m_codecOptions[key] = value; return *this; }
+    inline VideoParameters& AddCodecOptions(const char* key, const char* value) { m_codecOptionsHasBeenSet = true; m_codecOptions.emplace(key, value); return *this; }
 
     /**
      * <p>Applicable only when the value of Video:Codec is one of <code>H.264</code>,
@@ -1281,7 +1282,7 @@ namespace Model
      * and having the same values for <code>MaxFrameRate</code> and
      * <code>KeyframesMaxDist</code>.</p>
      */
-    inline void SetKeyframesMaxDist(Aws::String&& value) { m_keyframesMaxDistHasBeenSet = true; m_keyframesMaxDist = value; }
+    inline void SetKeyframesMaxDist(Aws::String&& value) { m_keyframesMaxDistHasBeenSet = true; m_keyframesMaxDist = std::move(value); }
 
     /**
      * <p>Applicable only when the value of Video:Codec is one of <code>H.264</code>,
@@ -1344,7 +1345,7 @@ namespace Model
      * and having the same values for <code>MaxFrameRate</code> and
      * <code>KeyframesMaxDist</code>.</p>
      */
-    inline VideoParameters& WithKeyframesMaxDist(Aws::String&& value) { SetKeyframesMaxDist(value); return *this;}
+    inline VideoParameters& WithKeyframesMaxDist(Aws::String&& value) { SetKeyframesMaxDist(std::move(value)); return *this;}
 
     /**
      * <p>Applicable only when the value of Video:Codec is one of <code>H.264</code>,
@@ -1404,7 +1405,7 @@ namespace Model
      * <important> <p> <code>FixedGOP</code> must be set to <code>true</code> for
      * <code>fmp4</code> containers.</p> </important>
      */
-    inline void SetFixedGOP(Aws::String&& value) { m_fixedGOPHasBeenSet = true; m_fixedGOP = value; }
+    inline void SetFixedGOP(Aws::String&& value) { m_fixedGOPHasBeenSet = true; m_fixedGOP = std::move(value); }
 
     /**
      * <p>Applicable only when the value of Video:Codec is one of <code>H.264</code>,
@@ -1443,7 +1444,7 @@ namespace Model
      * <important> <p> <code>FixedGOP</code> must be set to <code>true</code> for
      * <code>fmp4</code> containers.</p> </important>
      */
-    inline VideoParameters& WithFixedGOP(Aws::String&& value) { SetFixedGOP(value); return *this;}
+    inline VideoParameters& WithFixedGOP(Aws::String&& value) { SetFixedGOP(std::move(value)); return *this;}
 
     /**
      * <p>Applicable only when the value of Video:Codec is one of <code>H.264</code>,
@@ -1507,7 +1508,7 @@ namespace Model
      * <p>3.1 - 14000 : 17500</p> </li> <li> <p>3.2 - 20000 : 25000</p> </li> <li> <p>4
      * - 20000 : 25000</p> </li> <li> <p>4.1 - 50000 : 62500</p> </li> </ul>
      */
-    inline void SetBitRate(Aws::String&& value) { m_bitRateHasBeenSet = true; m_bitRate = value; }
+    inline void SetBitRate(Aws::String&& value) { m_bitRateHasBeenSet = true; m_bitRate = std::move(value); }
 
     /**
      * <p>The bit rate of the video stream in the output file, in kilobits/second.
@@ -1558,7 +1559,7 @@ namespace Model
      * <p>3.1 - 14000 : 17500</p> </li> <li> <p>3.2 - 20000 : 25000</p> </li> <li> <p>4
      * - 20000 : 25000</p> </li> <li> <p>4.1 - 50000 : 62500</p> </li> </ul>
      */
-    inline VideoParameters& WithBitRate(Aws::String&& value) { SetBitRate(value); return *this;}
+    inline VideoParameters& WithBitRate(Aws::String&& value) { SetBitRate(std::move(value)); return *this;}
 
     /**
      * <p>The bit rate of the video stream in the output file, in kilobits/second.
@@ -1647,7 +1648,7 @@ namespace Model
      * </li> <li> <p>3.1 - 27648000</p> </li> <li> <p>3.2 - 55296000</p> </li> <li>
      * <p>4 - 62914560</p> </li> <li> <p>4.1 - 62914560</p> </li> </ul>
      */
-    inline void SetFrameRate(Aws::String&& value) { m_frameRateHasBeenSet = true; m_frameRate = value; }
+    inline void SetFrameRate(Aws::String&& value) { m_frameRateHasBeenSet = true; m_frameRate = std::move(value); }
 
     /**
      * <p>The frames per second for the video stream in the output file. Valid values
@@ -1719,7 +1720,7 @@ namespace Model
      * </li> <li> <p>3.1 - 27648000</p> </li> <li> <p>3.2 - 55296000</p> </li> <li>
      * <p>4 - 62914560</p> </li> <li> <p>4.1 - 62914560</p> </li> </ul>
      */
-    inline VideoParameters& WithFrameRate(Aws::String&& value) { SetFrameRate(value); return *this;}
+    inline VideoParameters& WithFrameRate(Aws::String&& value) { SetFrameRate(std::move(value)); return *this;}
 
     /**
      * <p>The frames per second for the video stream in the output file. Valid values
@@ -1776,7 +1777,7 @@ namespace Model
      * <code>15</code>, <code>23.97</code>, <code>24</code>, <code>25</code>,
      * <code>29.97</code>, <code>30</code>, <code>60</code>.</p>
      */
-    inline void SetMaxFrameRate(Aws::String&& value) { m_maxFrameRateHasBeenSet = true; m_maxFrameRate = value; }
+    inline void SetMaxFrameRate(Aws::String&& value) { m_maxFrameRateHasBeenSet = true; m_maxFrameRate = std::move(value); }
 
     /**
      * <p>If you specify <code>auto</code> for <code>FrameRate</code>, Elastic
@@ -1809,7 +1810,7 @@ namespace Model
      * <code>15</code>, <code>23.97</code>, <code>24</code>, <code>25</code>,
      * <code>29.97</code>, <code>30</code>, <code>60</code>.</p>
      */
-    inline VideoParameters& WithMaxFrameRate(Aws::String&& value) { SetMaxFrameRate(value); return *this;}
+    inline VideoParameters& WithMaxFrameRate(Aws::String&& value) { SetMaxFrameRate(std::move(value)); return *this;}
 
     /**
      * <p>If you specify <code>auto</code> for <code>FrameRate</code>, Elastic
@@ -1910,7 +1911,7 @@ namespace Model
      * 404720</p> </li> <li> <p>3.1 - 921600</p> </li> <li> <p>3.2 - 1310720</p> </li>
      * <li> <p>4 - 2097152</p> </li> <li> <p>4.1 - 2097152</p> </li> </ul> </li> </ul>
      */
-    inline void SetResolution(Aws::String&& value) { m_resolutionHasBeenSet = true; m_resolution = value; }
+    inline void SetResolution(Aws::String&& value) { m_resolutionHasBeenSet = true; m_resolution = std::move(value); }
 
     /**
      * <important> <p>To better control resolution and aspect ratio of output videos,
@@ -2000,7 +2001,7 @@ namespace Model
      * 404720</p> </li> <li> <p>3.1 - 921600</p> </li> <li> <p>3.2 - 1310720</p> </li>
      * <li> <p>4 - 2097152</p> </li> <li> <p>4.1 - 2097152</p> </li> </ul> </li> </ul>
      */
-    inline VideoParameters& WithResolution(Aws::String&& value) { SetResolution(value); return *this;}
+    inline VideoParameters& WithResolution(Aws::String&& value) { SetResolution(std::move(value)); return *this;}
 
     /**
      * <important> <p>To better control resolution and aspect ratio of output videos,
@@ -2084,7 +2085,7 @@ namespace Model
      * top and bottom) to maintain the aspect ratio of the active region of the
      * video.</p>
      */
-    inline void SetAspectRatio(Aws::String&& value) { m_aspectRatioHasBeenSet = true; m_aspectRatio = value; }
+    inline void SetAspectRatio(Aws::String&& value) { m_aspectRatioHasBeenSet = true; m_aspectRatio = std::move(value); }
 
     /**
      * <important> <p>To better control resolution and aspect ratio of output videos,
@@ -2138,7 +2139,7 @@ namespace Model
      * top and bottom) to maintain the aspect ratio of the active region of the
      * video.</p>
      */
-    inline VideoParameters& WithAspectRatio(Aws::String&& value) { SetAspectRatio(value); return *this;}
+    inline VideoParameters& WithAspectRatio(Aws::String&& value) { SetAspectRatio(std::move(value)); return *this;}
 
     /**
      * <important> <p>To better control resolution and aspect ratio of output videos,
@@ -2177,7 +2178,7 @@ namespace Model
      * <code>auto</code>, Elastic Transcoder uses 1920 (Full HD) as the default value.
      * If you specify a numeric value, enter an even integer between 128 and 4096. </p>
      */
-    inline void SetMaxWidth(Aws::String&& value) { m_maxWidthHasBeenSet = true; m_maxWidth = value; }
+    inline void SetMaxWidth(Aws::String&& value) { m_maxWidthHasBeenSet = true; m_maxWidth = std::move(value); }
 
     /**
      * <p> The maximum width of the output video in pixels. If you specify
@@ -2198,7 +2199,7 @@ namespace Model
      * <code>auto</code>, Elastic Transcoder uses 1920 (Full HD) as the default value.
      * If you specify a numeric value, enter an even integer between 128 and 4096. </p>
      */
-    inline VideoParameters& WithMaxWidth(Aws::String&& value) { SetMaxWidth(value); return *this;}
+    inline VideoParameters& WithMaxWidth(Aws::String&& value) { SetMaxWidth(std::move(value)); return *this;}
 
     /**
      * <p> The maximum width of the output video in pixels. If you specify
@@ -2226,7 +2227,7 @@ namespace Model
      * <code>auto</code>, Elastic Transcoder uses 1080 (Full HD) as the default value.
      * If you specify a numeric value, enter an even integer between 96 and 3072.</p>
      */
-    inline void SetMaxHeight(Aws::String&& value) { m_maxHeightHasBeenSet = true; m_maxHeight = value; }
+    inline void SetMaxHeight(Aws::String&& value) { m_maxHeightHasBeenSet = true; m_maxHeight = std::move(value); }
 
     /**
      * <p>The maximum height of the output video in pixels. If you specify
@@ -2247,7 +2248,7 @@ namespace Model
      * <code>auto</code>, Elastic Transcoder uses 1080 (Full HD) as the default value.
      * If you specify a numeric value, enter an even integer between 96 and 3072.</p>
      */
-    inline VideoParameters& WithMaxHeight(Aws::String&& value) { SetMaxHeight(value); return *this;}
+    inline VideoParameters& WithMaxHeight(Aws::String&& value) { SetMaxHeight(std::move(value)); return *this;}
 
     /**
      * <p>The maximum height of the output video in pixels. If you specify
@@ -2272,7 +2273,7 @@ namespace Model
      * <p>The value that Elastic Transcoder adds to the metadata in the output
      * file.</p>
      */
-    inline void SetDisplayAspectRatio(Aws::String&& value) { m_displayAspectRatioHasBeenSet = true; m_displayAspectRatio = value; }
+    inline void SetDisplayAspectRatio(Aws::String&& value) { m_displayAspectRatioHasBeenSet = true; m_displayAspectRatio = std::move(value); }
 
     /**
      * <p>The value that Elastic Transcoder adds to the metadata in the output
@@ -2290,7 +2291,7 @@ namespace Model
      * <p>The value that Elastic Transcoder adds to the metadata in the output
      * file.</p>
      */
-    inline VideoParameters& WithDisplayAspectRatio(Aws::String&& value) { SetDisplayAspectRatio(value); return *this;}
+    inline VideoParameters& WithDisplayAspectRatio(Aws::String&& value) { SetDisplayAspectRatio(std::move(value)); return *this;}
 
     /**
      * <p>The value that Elastic Transcoder adds to the metadata in the output
@@ -2383,7 +2384,7 @@ namespace Model
      * below either value. If you specify this option, Elastic Transcoder does not
      * scale the video up.</p> </li> </ul>
      */
-    inline void SetSizingPolicy(Aws::String&& value) { m_sizingPolicyHasBeenSet = true; m_sizingPolicy = value; }
+    inline void SetSizingPolicy(Aws::String&& value) { m_sizingPolicyHasBeenSet = true; m_sizingPolicy = std::move(value); }
 
     /**
      * <p>Specify one of the following values to control scaling of the output
@@ -2470,7 +2471,7 @@ namespace Model
      * below either value. If you specify this option, Elastic Transcoder does not
      * scale the video up.</p> </li> </ul>
      */
-    inline VideoParameters& WithSizingPolicy(Aws::String&& value) { SetSizingPolicy(value); return *this;}
+    inline VideoParameters& WithSizingPolicy(Aws::String&& value) { SetSizingPolicy(std::move(value)); return *this;}
 
     /**
      * <p>Specify one of the following values to control scaling of the output
@@ -2523,7 +2524,7 @@ namespace Model
      * of the output video to make the total size of the output video match the values
      * that you specified for <code>MaxWidth</code> and <code>MaxHeight</code>.</p>
      */
-    inline void SetPaddingPolicy(Aws::String&& value) { m_paddingPolicyHasBeenSet = true; m_paddingPolicy = value; }
+    inline void SetPaddingPolicy(Aws::String&& value) { m_paddingPolicyHasBeenSet = true; m_paddingPolicy = std::move(value); }
 
     /**
      * <p>When you set <code>PaddingPolicy</code> to <code>Pad</code>, Elastic
@@ -2547,7 +2548,7 @@ namespace Model
      * of the output video to make the total size of the output video match the values
      * that you specified for <code>MaxWidth</code> and <code>MaxHeight</code>.</p>
      */
-    inline VideoParameters& WithPaddingPolicy(Aws::String&& value) { SetPaddingPolicy(value); return *this;}
+    inline VideoParameters& WithPaddingPolicy(Aws::String&& value) { SetPaddingPolicy(std::move(value)); return *this;}
 
     /**
      * <p>When you set <code>PaddingPolicy</code> to <code>Pad</code>, Elastic
@@ -2600,7 +2601,7 @@ namespace Model
      * specify watermark settings in the preset, which allows you to use the same
      * preset for up to four watermarks that have different dimensions.</p>
      */
-    inline void SetWatermarks(Aws::Vector<PresetWatermark>&& value) { m_watermarksHasBeenSet = true; m_watermarks = value; }
+    inline void SetWatermarks(Aws::Vector<PresetWatermark>&& value) { m_watermarksHasBeenSet = true; m_watermarks = std::move(value); }
 
     /**
      * <p>Settings for the size, location, and opacity of graphics that you want
@@ -2630,7 +2631,7 @@ namespace Model
      * specify watermark settings in the preset, which allows you to use the same
      * preset for up to four watermarks that have different dimensions.</p>
      */
-    inline VideoParameters& WithWatermarks(Aws::Vector<PresetWatermark>&& value) { SetWatermarks(value); return *this;}
+    inline VideoParameters& WithWatermarks(Aws::Vector<PresetWatermark>&& value) { SetWatermarks(std::move(value)); return *this;}
 
     /**
      * <p>Settings for the size, location, and opacity of graphics that you want
@@ -2660,7 +2661,7 @@ namespace Model
      * specify watermark settings in the preset, which allows you to use the same
      * preset for up to four watermarks that have different dimensions.</p>
      */
-    inline VideoParameters& AddWatermarks(PresetWatermark&& value) { m_watermarksHasBeenSet = true; m_watermarks.push_back(value); return *this; }
+    inline VideoParameters& AddWatermarks(PresetWatermark&& value) { m_watermarksHasBeenSet = true; m_watermarks.push_back(std::move(value)); return *this; }
 
   private:
     Aws::String m_codec;

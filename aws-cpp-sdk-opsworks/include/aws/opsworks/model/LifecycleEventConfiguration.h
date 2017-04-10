@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/opsworks/OpsWorks_EXPORTS.h>
 #include <aws/opsworks/model/ShutdownEventConfiguration.h>
+#include <utility>
 
 namespace Aws
 {
@@ -59,7 +60,7 @@ namespace Model
      * <p>A <code>ShutdownEventConfiguration</code> object that specifies the Shutdown
      * event configuration.</p>
      */
-    inline void SetShutdown(ShutdownEventConfiguration&& value) { m_shutdownHasBeenSet = true; m_shutdown = value; }
+    inline void SetShutdown(ShutdownEventConfiguration&& value) { m_shutdownHasBeenSet = true; m_shutdown = std::move(value); }
 
     /**
      * <p>A <code>ShutdownEventConfiguration</code> object that specifies the Shutdown
@@ -71,7 +72,7 @@ namespace Model
      * <p>A <code>ShutdownEventConfiguration</code> object that specifies the Shutdown
      * event configuration.</p>
      */
-    inline LifecycleEventConfiguration& WithShutdown(ShutdownEventConfiguration&& value) { SetShutdown(value); return *this;}
+    inline LifecycleEventConfiguration& WithShutdown(ShutdownEventConfiguration&& value) { SetShutdown(std::move(value)); return *this;}
 
   private:
     ShutdownEventConfiguration m_shutdown;

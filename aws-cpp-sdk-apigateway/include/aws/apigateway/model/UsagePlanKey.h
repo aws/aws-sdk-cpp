@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/apigateway/APIGateway_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -61,7 +62,7 @@ namespace Model
     /**
      * <p>The Id of a usage plan key.</p>
      */
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = value; }
+    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
 
     /**
      * <p>The Id of a usage plan key.</p>
@@ -76,7 +77,7 @@ namespace Model
     /**
      * <p>The Id of a usage plan key.</p>
      */
-    inline UsagePlanKey& WithId(Aws::String&& value) { SetId(value); return *this;}
+    inline UsagePlanKey& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
 
     /**
      * <p>The Id of a usage plan key.</p>
@@ -99,7 +100,7 @@ namespace Model
      * <p>The type of a usage plan key. Currently, the valid key type is
      * <code>API_KEY</code>.</p>
      */
-    inline void SetType(Aws::String&& value) { m_typeHasBeenSet = true; m_type = value; }
+    inline void SetType(Aws::String&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
      * <p>The type of a usage plan key. Currently, the valid key type is
@@ -117,7 +118,7 @@ namespace Model
      * <p>The type of a usage plan key. Currently, the valid key type is
      * <code>API_KEY</code>.</p>
      */
-    inline UsagePlanKey& WithType(Aws::String&& value) { SetType(value); return *this;}
+    inline UsagePlanKey& WithType(Aws::String&& value) { SetType(std::move(value)); return *this;}
 
     /**
      * <p>The type of a usage plan key. Currently, the valid key type is
@@ -138,7 +139,7 @@ namespace Model
     /**
      * <p>The value of a usage plan key.</p>
      */
-    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = value; }
+    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
 
     /**
      * <p>The value of a usage plan key.</p>
@@ -153,7 +154,7 @@ namespace Model
     /**
      * <p>The value of a usage plan key.</p>
      */
-    inline UsagePlanKey& WithValue(Aws::String&& value) { SetValue(value); return *this;}
+    inline UsagePlanKey& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
 
     /**
      * <p>The value of a usage plan key.</p>
@@ -173,7 +174,7 @@ namespace Model
     /**
      * <p>The name of a usage plan key.</p>
      */
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p>The name of a usage plan key.</p>
@@ -188,7 +189,7 @@ namespace Model
     /**
      * <p>The name of a usage plan key.</p>
      */
-    inline UsagePlanKey& WithName(Aws::String&& value) { SetName(value); return *this;}
+    inline UsagePlanKey& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>The name of a usage plan key.</p>

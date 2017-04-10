@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/kinesisanalytics/KinesisAnalytics_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -58,7 +59,7 @@ namespace Model
     /**
      * <p>ARN of the input Amazon Kinesis Firehose delivery stream to read.</p>
      */
-    inline void SetResourceARNUpdate(Aws::String&& value) { m_resourceARNUpdateHasBeenSet = true; m_resourceARNUpdate = value; }
+    inline void SetResourceARNUpdate(Aws::String&& value) { m_resourceARNUpdateHasBeenSet = true; m_resourceARNUpdate = std::move(value); }
 
     /**
      * <p>ARN of the input Amazon Kinesis Firehose delivery stream to read.</p>
@@ -73,7 +74,7 @@ namespace Model
     /**
      * <p>ARN of the input Amazon Kinesis Firehose delivery stream to read.</p>
      */
-    inline KinesisFirehoseInputUpdate& WithResourceARNUpdate(Aws::String&& value) { SetResourceARNUpdate(value); return *this;}
+    inline KinesisFirehoseInputUpdate& WithResourceARNUpdate(Aws::String&& value) { SetResourceARNUpdate(std::move(value)); return *this;}
 
     /**
      * <p>ARN of the input Amazon Kinesis Firehose delivery stream to read.</p>
@@ -99,7 +100,7 @@ namespace Model
      * assume to access the stream on your behalf. You need to grant necessary
      * permissions to this role.</p>
      */
-    inline void SetRoleARNUpdate(Aws::String&& value) { m_roleARNUpdateHasBeenSet = true; m_roleARNUpdate = value; }
+    inline void SetRoleARNUpdate(Aws::String&& value) { m_roleARNUpdateHasBeenSet = true; m_roleARNUpdate = std::move(value); }
 
     /**
      * <p>Amazon Resource Name (ARN) of the IAM role that Amazon Kinesis Analytics can
@@ -120,7 +121,7 @@ namespace Model
      * assume to access the stream on your behalf. You need to grant necessary
      * permissions to this role.</p>
      */
-    inline KinesisFirehoseInputUpdate& WithRoleARNUpdate(Aws::String&& value) { SetRoleARNUpdate(value); return *this;}
+    inline KinesisFirehoseInputUpdate& WithRoleARNUpdate(Aws::String&& value) { SetRoleARNUpdate(std::move(value)); return *this;}
 
     /**
      * <p>Amazon Resource Name (ARN) of the IAM role that Amazon Kinesis Analytics can

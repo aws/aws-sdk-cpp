@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/elasticmapreduce/EMR_EXPORTS.h>
 #include <aws/elasticmapreduce/model/Step.h>
+#include <utility>
 
 namespace Aws
 {
@@ -58,7 +59,7 @@ namespace Model
     /**
      * <p>The step details for the requested step identifier.</p>
      */
-    inline void SetStep(Step&& value) { m_step = value; }
+    inline void SetStep(Step&& value) { m_step = std::move(value); }
 
     /**
      * <p>The step details for the requested step identifier.</p>
@@ -68,7 +69,7 @@ namespace Model
     /**
      * <p>The step details for the requested step identifier.</p>
      */
-    inline DescribeStepResult& WithStep(Step&& value) { SetStep(value); return *this;}
+    inline DescribeStepResult& WithStep(Step&& value) { SetStep(std::move(value)); return *this;}
 
   private:
     Step m_step;

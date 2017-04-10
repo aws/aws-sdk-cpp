@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/route53/model/HostedZone.h>
+#include <utility>
 
 namespace Aws
 {
@@ -54,7 +55,7 @@ namespace Model
     /**
      * <p>A complex type that contains general information about the hosted zone.</p>
      */
-    inline void SetHostedZones(Aws::Vector<HostedZone>&& value) { m_hostedZones = value; }
+    inline void SetHostedZones(Aws::Vector<HostedZone>&& value) { m_hostedZones = std::move(value); }
 
     /**
      * <p>A complex type that contains general information about the hosted zone.</p>
@@ -64,7 +65,7 @@ namespace Model
     /**
      * <p>A complex type that contains general information about the hosted zone.</p>
      */
-    inline ListHostedZonesResult& WithHostedZones(Aws::Vector<HostedZone>&& value) { SetHostedZones(value); return *this;}
+    inline ListHostedZonesResult& WithHostedZones(Aws::Vector<HostedZone>&& value) { SetHostedZones(std::move(value)); return *this;}
 
     /**
      * <p>A complex type that contains general information about the hosted zone.</p>
@@ -74,7 +75,7 @@ namespace Model
     /**
      * <p>A complex type that contains general information about the hosted zone.</p>
      */
-    inline ListHostedZonesResult& AddHostedZones(HostedZone&& value) { m_hostedZones.push_back(value); return *this; }
+    inline ListHostedZonesResult& AddHostedZones(HostedZone&& value) { m_hostedZones.push_back(std::move(value)); return *this; }
 
     /**
      * <p>For the second and subsequent calls to <code>ListHostedZones</code>,
@@ -95,7 +96,7 @@ namespace Model
      * <code>Marker</code> is the value that you specified for the marker parameter in
      * the request that produced the current response.</p>
      */
-    inline void SetMarker(Aws::String&& value) { m_marker = value; }
+    inline void SetMarker(Aws::String&& value) { m_marker = std::move(value); }
 
     /**
      * <p>For the second and subsequent calls to <code>ListHostedZones</code>,
@@ -116,7 +117,7 @@ namespace Model
      * <code>Marker</code> is the value that you specified for the marker parameter in
      * the request that produced the current response.</p>
      */
-    inline ListHostedZonesResult& WithMarker(Aws::String&& value) { SetMarker(value); return *this;}
+    inline ListHostedZonesResult& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
 
     /**
      * <p>For the second and subsequent calls to <code>ListHostedZones</code>,
@@ -177,7 +178,7 @@ namespace Model
      * parameter.</p> <p>This element is present only if <code>IsTruncated</code> is
      * <code>true</code>.</p>
      */
-    inline void SetNextMarker(Aws::String&& value) { m_nextMarker = value; }
+    inline void SetNextMarker(Aws::String&& value) { m_nextMarker = std::move(value); }
 
     /**
      * <p>If <code>IsTruncated</code> is <code>true</code>, the value of
@@ -207,7 +208,7 @@ namespace Model
      * parameter.</p> <p>This element is present only if <code>IsTruncated</code> is
      * <code>true</code>.</p>
      */
-    inline ListHostedZonesResult& WithNextMarker(Aws::String&& value) { SetNextMarker(value); return *this;}
+    inline ListHostedZonesResult& WithNextMarker(Aws::String&& value) { SetNextMarker(std::move(value)); return *this;}
 
     /**
      * <p>If <code>IsTruncated</code> is <code>true</code>, the value of
@@ -235,7 +236,7 @@ namespace Model
      * <p>The value that you specified for the <code>maxitems</code> parameter in the
      * call to <code>ListHostedZones</code> that produced the current response.</p>
      */
-    inline void SetMaxItems(Aws::String&& value) { m_maxItems = value; }
+    inline void SetMaxItems(Aws::String&& value) { m_maxItems = std::move(value); }
 
     /**
      * <p>The value that you specified for the <code>maxitems</code> parameter in the
@@ -253,7 +254,7 @@ namespace Model
      * <p>The value that you specified for the <code>maxitems</code> parameter in the
      * call to <code>ListHostedZones</code> that produced the current response.</p>
      */
-    inline ListHostedZonesResult& WithMaxItems(Aws::String&& value) { SetMaxItems(value); return *this;}
+    inline ListHostedZonesResult& WithMaxItems(Aws::String&& value) { SetMaxItems(std::move(value)); return *this;}
 
     /**
      * <p>The value that you specified for the <code>maxitems</code> parameter in the

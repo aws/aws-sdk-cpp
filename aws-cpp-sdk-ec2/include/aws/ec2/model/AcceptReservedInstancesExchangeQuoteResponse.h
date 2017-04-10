@@ -16,6 +16,7 @@
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/ResponseMetadata.h>
+#include <utility>
 
 namespace Aws
 {
@@ -59,7 +60,7 @@ namespace Model
     /**
      * <p>The ID of the successful exchange.</p>
      */
-    inline void SetExchangeId(Aws::String&& value) { m_exchangeId = value; }
+    inline void SetExchangeId(Aws::String&& value) { m_exchangeId = std::move(value); }
 
     /**
      * <p>The ID of the successful exchange.</p>
@@ -74,7 +75,7 @@ namespace Model
     /**
      * <p>The ID of the successful exchange.</p>
      */
-    inline AcceptReservedInstancesExchangeQuoteResponse& WithExchangeId(Aws::String&& value) { SetExchangeId(value); return *this;}
+    inline AcceptReservedInstancesExchangeQuoteResponse& WithExchangeId(Aws::String&& value) { SetExchangeId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the successful exchange.</p>
@@ -88,13 +89,13 @@ namespace Model
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
 
     
     inline AcceptReservedInstancesExchangeQuoteResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
 
     
-    inline AcceptReservedInstancesExchangeQuoteResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
+    inline AcceptReservedInstancesExchangeQuoteResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
     Aws::String m_exchangeId;

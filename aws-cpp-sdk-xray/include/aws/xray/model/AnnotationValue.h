@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/xray/XRay_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -87,7 +88,7 @@ namespace Model
     /**
      * <p>Value for a String annotation.</p>
      */
-    inline void SetStringValue(Aws::String&& value) { m_stringValueHasBeenSet = true; m_stringValue = value; }
+    inline void SetStringValue(Aws::String&& value) { m_stringValueHasBeenSet = true; m_stringValue = std::move(value); }
 
     /**
      * <p>Value for a String annotation.</p>
@@ -102,7 +103,7 @@ namespace Model
     /**
      * <p>Value for a String annotation.</p>
      */
-    inline AnnotationValue& WithStringValue(Aws::String&& value) { SetStringValue(value); return *this;}
+    inline AnnotationValue& WithStringValue(Aws::String&& value) { SetStringValue(std::move(value)); return *this;}
 
     /**
      * <p>Value for a String annotation.</p>

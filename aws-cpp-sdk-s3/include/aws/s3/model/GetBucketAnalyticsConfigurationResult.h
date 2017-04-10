@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/s3/S3_EXPORTS.h>
 #include <aws/s3/model/AnalyticsConfiguration.h>
+#include <utility>
 
 namespace Aws
 {
@@ -52,7 +53,7 @@ namespace Model
     /**
      * The configuration and any analyses for the analytics filter.
      */
-    inline void SetAnalyticsConfiguration(AnalyticsConfiguration&& value) { m_analyticsConfiguration = value; }
+    inline void SetAnalyticsConfiguration(AnalyticsConfiguration&& value) { m_analyticsConfiguration = std::move(value); }
 
     /**
      * The configuration and any analyses for the analytics filter.
@@ -62,7 +63,7 @@ namespace Model
     /**
      * The configuration and any analyses for the analytics filter.
      */
-    inline GetBucketAnalyticsConfigurationResult& WithAnalyticsConfiguration(AnalyticsConfiguration&& value) { SetAnalyticsConfiguration(value); return *this;}
+    inline GetBucketAnalyticsConfigurationResult& WithAnalyticsConfiguration(AnalyticsConfiguration&& value) { SetAnalyticsConfiguration(std::move(value)); return *this;}
 
   private:
     AnalyticsConfiguration m_analyticsConfiguration;

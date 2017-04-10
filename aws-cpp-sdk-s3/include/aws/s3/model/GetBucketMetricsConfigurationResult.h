@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/s3/S3_EXPORTS.h>
 #include <aws/s3/model/MetricsConfiguration.h>
+#include <utility>
 
 namespace Aws
 {
@@ -52,7 +53,7 @@ namespace Model
     /**
      * Specifies the metrics configuration.
      */
-    inline void SetMetricsConfiguration(MetricsConfiguration&& value) { m_metricsConfiguration = value; }
+    inline void SetMetricsConfiguration(MetricsConfiguration&& value) { m_metricsConfiguration = std::move(value); }
 
     /**
      * Specifies the metrics configuration.
@@ -62,7 +63,7 @@ namespace Model
     /**
      * Specifies the metrics configuration.
      */
-    inline GetBucketMetricsConfigurationResult& WithMetricsConfiguration(MetricsConfiguration&& value) { SetMetricsConfiguration(value); return *this;}
+    inline GetBucketMetricsConfigurationResult& WithMetricsConfiguration(MetricsConfiguration&& value) { SetMetricsConfiguration(std::move(value)); return *this;}
 
   private:
     MetricsConfiguration m_metricsConfiguration;

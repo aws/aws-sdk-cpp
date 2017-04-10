@@ -16,6 +16,7 @@
 #include <aws/cloudfront/CloudFront_EXPORTS.h>
 #include <aws/cloudfront/model/Distribution.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -58,7 +59,7 @@ namespace Model
     /**
      * The distribution's information.
      */
-    inline void SetDistribution(Distribution&& value) { m_distribution = value; }
+    inline void SetDistribution(Distribution&& value) { m_distribution = std::move(value); }
 
     /**
      * The distribution's information.
@@ -68,7 +69,7 @@ namespace Model
     /**
      * The distribution's information.
      */
-    inline GetDistribution2016_01_28Result& WithDistribution(Distribution&& value) { SetDistribution(value); return *this;}
+    inline GetDistribution2016_01_28Result& WithDistribution(Distribution&& value) { SetDistribution(std::move(value)); return *this;}
 
     /**
      * The current version of the distribution's information. For example:
@@ -86,7 +87,7 @@ namespace Model
      * The current version of the distribution's information. For example:
      * E2QWRUHAPOMQZL.
      */
-    inline void SetETag(Aws::String&& value) { m_eTag = value; }
+    inline void SetETag(Aws::String&& value) { m_eTag = std::move(value); }
 
     /**
      * The current version of the distribution's information. For example:
@@ -104,7 +105,7 @@ namespace Model
      * The current version of the distribution's information. For example:
      * E2QWRUHAPOMQZL.
      */
-    inline GetDistribution2016_01_28Result& WithETag(Aws::String&& value) { SetETag(value); return *this;}
+    inline GetDistribution2016_01_28Result& WithETag(Aws::String&& value) { SetETag(std::move(value)); return *this;}
 
     /**
      * The current version of the distribution's information. For example:

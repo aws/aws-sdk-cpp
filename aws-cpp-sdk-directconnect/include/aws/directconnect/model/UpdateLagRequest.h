@@ -16,6 +16,7 @@
 #include <aws/directconnect/DirectConnect_EXPORTS.h>
 #include <aws/directconnect/DirectConnectRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -55,7 +56,7 @@ namespace Model
      * <p>The ID of the LAG to update.</p> <p>Example: dxlag-abc123</p> <p>Default:
      * None</p>
      */
-    inline void SetLagId(Aws::String&& value) { m_lagIdHasBeenSet = true; m_lagId = value; }
+    inline void SetLagId(Aws::String&& value) { m_lagIdHasBeenSet = true; m_lagId = std::move(value); }
 
     /**
      * <p>The ID of the LAG to update.</p> <p>Example: dxlag-abc123</p> <p>Default:
@@ -73,7 +74,7 @@ namespace Model
      * <p>The ID of the LAG to update.</p> <p>Example: dxlag-abc123</p> <p>Default:
      * None</p>
      */
-    inline UpdateLagRequest& WithLagId(Aws::String&& value) { SetLagId(value); return *this;}
+    inline UpdateLagRequest& WithLagId(Aws::String&& value) { SetLagId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the LAG to update.</p> <p>Example: dxlag-abc123</p> <p>Default:
@@ -97,7 +98,7 @@ namespace Model
      * <p>The name for the LAG.</p> <p>Example: "<code>3x10G LAG to AWS</code>"</p>
      * <p>Default: None</p>
      */
-    inline void SetLagName(Aws::String&& value) { m_lagNameHasBeenSet = true; m_lagName = value; }
+    inline void SetLagName(Aws::String&& value) { m_lagNameHasBeenSet = true; m_lagName = std::move(value); }
 
     /**
      * <p>The name for the LAG.</p> <p>Example: "<code>3x10G LAG to AWS</code>"</p>
@@ -115,7 +116,7 @@ namespace Model
      * <p>The name for the LAG.</p> <p>Example: "<code>3x10G LAG to AWS</code>"</p>
      * <p>Default: None</p>
      */
-    inline UpdateLagRequest& WithLagName(Aws::String&& value) { SetLagName(value); return *this;}
+    inline UpdateLagRequest& WithLagName(Aws::String&& value) { SetLagName(std::move(value)); return *this;}
 
     /**
      * <p>The name for the LAG.</p> <p>Example: "<code>3x10G LAG to AWS</code>"</p>

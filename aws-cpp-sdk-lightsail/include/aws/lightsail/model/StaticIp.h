@@ -18,6 +18,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/lightsail/model/ResourceLocation.h>
 #include <aws/lightsail/model/ResourceType.h>
+#include <utility>
 
 namespace Aws
 {
@@ -59,7 +60,7 @@ namespace Model
     /**
      * <p>The name of the static IP (e.g., <code>StaticIP-Virginia-EXAMPLE</code>).</p>
      */
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p>The name of the static IP (e.g., <code>StaticIP-Virginia-EXAMPLE</code>).</p>
@@ -74,7 +75,7 @@ namespace Model
     /**
      * <p>The name of the static IP (e.g., <code>StaticIP-Virginia-EXAMPLE</code>).</p>
      */
-    inline StaticIp& WithName(Aws::String&& value) { SetName(value); return *this;}
+    inline StaticIp& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the static IP (e.g., <code>StaticIP-Virginia-EXAMPLE</code>).</p>
@@ -97,7 +98,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the static IP (e.g.,
      * <code>arn:aws:lightsail:us-east-1:123456789101:StaticIp/9cbb4a9e-f8e3-4dfe-b57e-12345EXAMPLE</code>).</p>
      */
-    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = value; }
+    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the static IP (e.g.,
@@ -115,7 +116,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the static IP (e.g.,
      * <code>arn:aws:lightsail:us-east-1:123456789101:StaticIp/9cbb4a9e-f8e3-4dfe-b57e-12345EXAMPLE</code>).</p>
      */
-    inline StaticIp& WithArn(Aws::String&& value) { SetArn(value); return *this;}
+    inline StaticIp& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the static IP (e.g.,
@@ -142,7 +143,7 @@ namespace Model
      * questions about an instance or another resource in Lightsail. This code enables
      * our support team to look up your Lightsail information more easily.</p>
      */
-    inline void SetSupportCode(Aws::String&& value) { m_supportCodeHasBeenSet = true; m_supportCode = value; }
+    inline void SetSupportCode(Aws::String&& value) { m_supportCodeHasBeenSet = true; m_supportCode = std::move(value); }
 
     /**
      * <p>The support code. Include this code in your email to support when you have
@@ -163,7 +164,7 @@ namespace Model
      * questions about an instance or another resource in Lightsail. This code enables
      * our support team to look up your Lightsail information more easily.</p>
      */
-    inline StaticIp& WithSupportCode(Aws::String&& value) { SetSupportCode(value); return *this;}
+    inline StaticIp& WithSupportCode(Aws::String&& value) { SetSupportCode(std::move(value)); return *this;}
 
     /**
      * <p>The support code. Include this code in your email to support when you have
@@ -188,7 +189,7 @@ namespace Model
      * <p>The timestamp when the static IP was created (e.g.,
      * <code>1479735304.222</code>).</p>
      */
-    inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
+    inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::move(value); }
 
     /**
      * <p>The timestamp when the static IP was created (e.g.,
@@ -200,7 +201,7 @@ namespace Model
      * <p>The timestamp when the static IP was created (e.g.,
      * <code>1479735304.222</code>).</p>
      */
-    inline StaticIp& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(value); return *this;}
+    inline StaticIp& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
 
     /**
      * <p>The region and Availability Zone where the static IP was created.</p>
@@ -215,7 +216,7 @@ namespace Model
     /**
      * <p>The region and Availability Zone where the static IP was created.</p>
      */
-    inline void SetLocation(ResourceLocation&& value) { m_locationHasBeenSet = true; m_location = value; }
+    inline void SetLocation(ResourceLocation&& value) { m_locationHasBeenSet = true; m_location = std::move(value); }
 
     /**
      * <p>The region and Availability Zone where the static IP was created.</p>
@@ -225,7 +226,7 @@ namespace Model
     /**
      * <p>The region and Availability Zone where the static IP was created.</p>
      */
-    inline StaticIp& WithLocation(ResourceLocation&& value) { SetLocation(value); return *this;}
+    inline StaticIp& WithLocation(ResourceLocation&& value) { SetLocation(std::move(value)); return *this;}
 
     /**
      * <p>The resource type (usually <code>StaticIp</code>).</p>
@@ -240,7 +241,7 @@ namespace Model
     /**
      * <p>The resource type (usually <code>StaticIp</code>).</p>
      */
-    inline void SetResourceType(ResourceType&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
+    inline void SetResourceType(ResourceType&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
 
     /**
      * <p>The resource type (usually <code>StaticIp</code>).</p>
@@ -250,7 +251,7 @@ namespace Model
     /**
      * <p>The resource type (usually <code>StaticIp</code>).</p>
      */
-    inline StaticIp& WithResourceType(ResourceType&& value) { SetResourceType(value); return *this;}
+    inline StaticIp& WithResourceType(ResourceType&& value) { SetResourceType(std::move(value)); return *this;}
 
     /**
      * <p>The static IP address.</p>
@@ -265,7 +266,7 @@ namespace Model
     /**
      * <p>The static IP address.</p>
      */
-    inline void SetIpAddress(Aws::String&& value) { m_ipAddressHasBeenSet = true; m_ipAddress = value; }
+    inline void SetIpAddress(Aws::String&& value) { m_ipAddressHasBeenSet = true; m_ipAddress = std::move(value); }
 
     /**
      * <p>The static IP address.</p>
@@ -280,7 +281,7 @@ namespace Model
     /**
      * <p>The static IP address.</p>
      */
-    inline StaticIp& WithIpAddress(Aws::String&& value) { SetIpAddress(value); return *this;}
+    inline StaticIp& WithIpAddress(Aws::String&& value) { SetIpAddress(std::move(value)); return *this;}
 
     /**
      * <p>The static IP address.</p>
@@ -303,7 +304,7 @@ namespace Model
      * <p>The instance where the static IP is attached (e.g.,
      * <code>Amazon_Linux-1GB-Virginia-1</code>).</p>
      */
-    inline void SetAttachedTo(Aws::String&& value) { m_attachedToHasBeenSet = true; m_attachedTo = value; }
+    inline void SetAttachedTo(Aws::String&& value) { m_attachedToHasBeenSet = true; m_attachedTo = std::move(value); }
 
     /**
      * <p>The instance where the static IP is attached (e.g.,
@@ -321,7 +322,7 @@ namespace Model
      * <p>The instance where the static IP is attached (e.g.,
      * <code>Amazon_Linux-1GB-Virginia-1</code>).</p>
      */
-    inline StaticIp& WithAttachedTo(Aws::String&& value) { SetAttachedTo(value); return *this;}
+    inline StaticIp& WithAttachedTo(Aws::String&& value) { SetAttachedTo(std::move(value)); return *this;}
 
     /**
      * <p>The instance where the static IP is attached (e.g.,

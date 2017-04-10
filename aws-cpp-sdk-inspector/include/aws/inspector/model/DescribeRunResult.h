@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/inspector/Inspector_EXPORTS.h>
 #include <aws/inspector/model/Run.h>
+#include <utility>
 
 namespace Aws
 {
@@ -52,7 +53,7 @@ namespace Model
     /**
      * <p>Information about the assessment run.</p>
      */
-    inline void SetRun(Run&& value) { m_run = value; }
+    inline void SetRun(Run&& value) { m_run = std::move(value); }
 
     /**
      * <p>Information about the assessment run.</p>
@@ -62,7 +63,7 @@ namespace Model
     /**
      * <p>Information about the assessment run.</p>
      */
-    inline DescribeRunResult& WithRun(Run&& value) { SetRun(value); return *this;}
+    inline DescribeRunResult& WithRun(Run&& value) { SetRun(std::move(value)); return *this;}
 
   private:
     Run m_run;

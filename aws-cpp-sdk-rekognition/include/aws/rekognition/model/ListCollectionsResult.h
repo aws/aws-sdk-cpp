@@ -16,6 +16,7 @@
 #include <aws/rekognition/Rekognition_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -53,7 +54,7 @@ namespace Model
     /**
      * <p>An array of collection IDs.</p>
      */
-    inline void SetCollectionIds(Aws::Vector<Aws::String>&& value) { m_collectionIds = value; }
+    inline void SetCollectionIds(Aws::Vector<Aws::String>&& value) { m_collectionIds = std::move(value); }
 
     /**
      * <p>An array of collection IDs.</p>
@@ -63,7 +64,7 @@ namespace Model
     /**
      * <p>An array of collection IDs.</p>
      */
-    inline ListCollectionsResult& WithCollectionIds(Aws::Vector<Aws::String>&& value) { SetCollectionIds(value); return *this;}
+    inline ListCollectionsResult& WithCollectionIds(Aws::Vector<Aws::String>&& value) { SetCollectionIds(std::move(value)); return *this;}
 
     /**
      * <p>An array of collection IDs.</p>
@@ -73,7 +74,7 @@ namespace Model
     /**
      * <p>An array of collection IDs.</p>
      */
-    inline ListCollectionsResult& AddCollectionIds(Aws::String&& value) { m_collectionIds.push_back(value); return *this; }
+    inline ListCollectionsResult& AddCollectionIds(Aws::String&& value) { m_collectionIds.push_back(std::move(value)); return *this; }
 
     /**
      * <p>An array of collection IDs.</p>
@@ -99,7 +100,7 @@ namespace Model
      * that you can use in the subsequent request to fetch the next set of collection
      * IDs.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
      * <p>If the result is truncated, the response provides a <code>NextToken</code>
@@ -120,7 +121,7 @@ namespace Model
      * that you can use in the subsequent request to fetch the next set of collection
      * IDs.</p>
      */
-    inline ListCollectionsResult& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline ListCollectionsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>If the result is truncated, the response provides a <code>NextToken</code>

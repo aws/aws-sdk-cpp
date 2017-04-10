@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/es/model/ESPartitionInstanceType.h>
+#include <utility>
 
 namespace Aws
 {
@@ -64,7 +65,7 @@ namespace Model
      * <p> List of instance types supported by Amazon Elasticsearch service for given
      * <code> <a>ElasticsearchVersion</a> </code> </p>
      */
-    inline void SetElasticsearchInstanceTypes(Aws::Vector<ESPartitionInstanceType>&& value) { m_elasticsearchInstanceTypes = value; }
+    inline void SetElasticsearchInstanceTypes(Aws::Vector<ESPartitionInstanceType>&& value) { m_elasticsearchInstanceTypes = std::move(value); }
 
     /**
      * <p> List of instance types supported by Amazon Elasticsearch service for given
@@ -76,7 +77,7 @@ namespace Model
      * <p> List of instance types supported by Amazon Elasticsearch service for given
      * <code> <a>ElasticsearchVersion</a> </code> </p>
      */
-    inline ListElasticsearchInstanceTypesResult& WithElasticsearchInstanceTypes(Aws::Vector<ESPartitionInstanceType>&& value) { SetElasticsearchInstanceTypes(value); return *this;}
+    inline ListElasticsearchInstanceTypesResult& WithElasticsearchInstanceTypes(Aws::Vector<ESPartitionInstanceType>&& value) { SetElasticsearchInstanceTypes(std::move(value)); return *this;}
 
     /**
      * <p> List of instance types supported by Amazon Elasticsearch service for given
@@ -88,7 +89,7 @@ namespace Model
      * <p> List of instance types supported by Amazon Elasticsearch service for given
      * <code> <a>ElasticsearchVersion</a> </code> </p>
      */
-    inline ListElasticsearchInstanceTypesResult& AddElasticsearchInstanceTypes(ESPartitionInstanceType&& value) { m_elasticsearchInstanceTypes.push_back(value); return *this; }
+    inline ListElasticsearchInstanceTypesResult& AddElasticsearchInstanceTypes(ESPartitionInstanceType&& value) { m_elasticsearchInstanceTypes.push_back(std::move(value)); return *this; }
 
     /**
      * <p>In case if there are more results available NextToken would be present, make
@@ -109,7 +110,7 @@ namespace Model
      * further request to the same API with received NextToken to paginate remaining
      * results. </p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
      * <p>In case if there are more results available NextToken would be present, make
@@ -130,7 +131,7 @@ namespace Model
      * further request to the same API with received NextToken to paginate remaining
      * results. </p>
      */
-    inline ListElasticsearchInstanceTypesResult& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline ListElasticsearchInstanceTypesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>In case if there are more results available NextToken would be present, make

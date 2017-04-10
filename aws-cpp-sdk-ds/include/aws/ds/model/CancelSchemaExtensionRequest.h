@@ -16,6 +16,7 @@
 #include <aws/ds/DirectoryService_EXPORTS.h>
 #include <aws/ds/DirectoryServiceRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -48,7 +49,7 @@ namespace Model
     /**
      * <p>The identifier of the directory whose schema extension will be canceled.</p>
      */
-    inline void SetDirectoryId(Aws::String&& value) { m_directoryIdHasBeenSet = true; m_directoryId = value; }
+    inline void SetDirectoryId(Aws::String&& value) { m_directoryIdHasBeenSet = true; m_directoryId = std::move(value); }
 
     /**
      * <p>The identifier of the directory whose schema extension will be canceled.</p>
@@ -63,7 +64,7 @@ namespace Model
     /**
      * <p>The identifier of the directory whose schema extension will be canceled.</p>
      */
-    inline CancelSchemaExtensionRequest& WithDirectoryId(Aws::String&& value) { SetDirectoryId(value); return *this;}
+    inline CancelSchemaExtensionRequest& WithDirectoryId(Aws::String&& value) { SetDirectoryId(std::move(value)); return *this;}
 
     /**
      * <p>The identifier of the directory whose schema extension will be canceled.</p>
@@ -83,7 +84,7 @@ namespace Model
     /**
      * <p>The identifier of the schema extension that will be canceled.</p>
      */
-    inline void SetSchemaExtensionId(Aws::String&& value) { m_schemaExtensionIdHasBeenSet = true; m_schemaExtensionId = value; }
+    inline void SetSchemaExtensionId(Aws::String&& value) { m_schemaExtensionIdHasBeenSet = true; m_schemaExtensionId = std::move(value); }
 
     /**
      * <p>The identifier of the schema extension that will be canceled.</p>
@@ -98,7 +99,7 @@ namespace Model
     /**
      * <p>The identifier of the schema extension that will be canceled.</p>
      */
-    inline CancelSchemaExtensionRequest& WithSchemaExtensionId(Aws::String&& value) { SetSchemaExtensionId(value); return *this;}
+    inline CancelSchemaExtensionRequest& WithSchemaExtensionId(Aws::String&& value) { SetSchemaExtensionId(std::move(value)); return *this;}
 
     /**
      * <p>The identifier of the schema extension that will be canceled.</p>

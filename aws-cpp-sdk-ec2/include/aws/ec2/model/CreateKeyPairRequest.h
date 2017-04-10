@@ -16,6 +16,7 @@
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/ec2/EC2Request.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -80,7 +81,7 @@ namespace Model
      * <p>A unique name for the key pair.</p> <p>Constraints: Up to 255 ASCII
      * characters</p>
      */
-    inline void SetKeyName(Aws::String&& value) { m_keyNameHasBeenSet = true; m_keyName = value; }
+    inline void SetKeyName(Aws::String&& value) { m_keyNameHasBeenSet = true; m_keyName = std::move(value); }
 
     /**
      * <p>A unique name for the key pair.</p> <p>Constraints: Up to 255 ASCII
@@ -98,7 +99,7 @@ namespace Model
      * <p>A unique name for the key pair.</p> <p>Constraints: Up to 255 ASCII
      * characters</p>
      */
-    inline CreateKeyPairRequest& WithKeyName(Aws::String&& value) { SetKeyName(value); return *this;}
+    inline CreateKeyPairRequest& WithKeyName(Aws::String&& value) { SetKeyName(std::move(value)); return *this;}
 
     /**
      * <p>A unique name for the key pair.</p> <p>Constraints: Up to 255 ASCII

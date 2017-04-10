@@ -16,6 +16,7 @@
 #include <aws/dms/DatabaseMigrationService_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/dms/model/AccountQuota.h>
+#include <utility>
 
 namespace Aws
 {
@@ -58,7 +59,7 @@ namespace Model
     /**
      * <p>Account quota information.</p>
      */
-    inline void SetAccountQuotas(Aws::Vector<AccountQuota>&& value) { m_accountQuotas = value; }
+    inline void SetAccountQuotas(Aws::Vector<AccountQuota>&& value) { m_accountQuotas = std::move(value); }
 
     /**
      * <p>Account quota information.</p>
@@ -68,7 +69,7 @@ namespace Model
     /**
      * <p>Account quota information.</p>
      */
-    inline DescribeAccountAttributesResult& WithAccountQuotas(Aws::Vector<AccountQuota>&& value) { SetAccountQuotas(value); return *this;}
+    inline DescribeAccountAttributesResult& WithAccountQuotas(Aws::Vector<AccountQuota>&& value) { SetAccountQuotas(std::move(value)); return *this;}
 
     /**
      * <p>Account quota information.</p>
@@ -78,7 +79,7 @@ namespace Model
     /**
      * <p>Account quota information.</p>
      */
-    inline DescribeAccountAttributesResult& AddAccountQuotas(AccountQuota&& value) { m_accountQuotas.push_back(value); return *this; }
+    inline DescribeAccountAttributesResult& AddAccountQuotas(AccountQuota&& value) { m_accountQuotas.push_back(std::move(value)); return *this; }
 
   private:
     Aws::Vector<AccountQuota> m_accountQuotas;

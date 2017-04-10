@@ -16,6 +16,7 @@
 #include <aws/opsworks/OpsWorks_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/opsworks/model/VolumeType.h>
+#include <utility>
 
 namespace Aws
 {
@@ -60,7 +61,7 @@ namespace Model
     /**
      * <p>The snapshot ID.</p>
      */
-    inline void SetSnapshotId(Aws::String&& value) { m_snapshotIdHasBeenSet = true; m_snapshotId = value; }
+    inline void SetSnapshotId(Aws::String&& value) { m_snapshotIdHasBeenSet = true; m_snapshotId = std::move(value); }
 
     /**
      * <p>The snapshot ID.</p>
@@ -75,7 +76,7 @@ namespace Model
     /**
      * <p>The snapshot ID.</p>
      */
-    inline EbsBlockDevice& WithSnapshotId(Aws::String&& value) { SetSnapshotId(value); return *this;}
+    inline EbsBlockDevice& WithSnapshotId(Aws::String&& value) { SetSnapshotId(std::move(value)); return *this;}
 
     /**
      * <p>The snapshot ID.</p>
@@ -140,7 +141,7 @@ namespace Model
      * <code>io1</code> for Provisioned IOPS (SSD) volumes, and <code>standard</code>
      * for Magnetic volumes.</p>
      */
-    inline void SetVolumeType(VolumeType&& value) { m_volumeTypeHasBeenSet = true; m_volumeType = value; }
+    inline void SetVolumeType(VolumeType&& value) { m_volumeTypeHasBeenSet = true; m_volumeType = std::move(value); }
 
     /**
      * <p>The volume type. <code>gp2</code> for General Purpose (SSD) volumes,
@@ -154,7 +155,7 @@ namespace Model
      * <code>io1</code> for Provisioned IOPS (SSD) volumes, and <code>standard</code>
      * for Magnetic volumes.</p>
      */
-    inline EbsBlockDevice& WithVolumeType(VolumeType&& value) { SetVolumeType(value); return *this;}
+    inline EbsBlockDevice& WithVolumeType(VolumeType&& value) { SetVolumeType(std::move(value)); return *this;}
 
     /**
      * <p>Whether the volume is deleted on instance termination.</p>

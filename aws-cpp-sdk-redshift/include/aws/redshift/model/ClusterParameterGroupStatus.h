@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/redshift/model/ClusterParameterStatus.h>
+#include <utility>
 
 namespace Aws
 {
@@ -61,7 +62,7 @@ namespace Model
     /**
      * <p>The name of the cluster parameter group.</p>
      */
-    inline void SetParameterGroupName(Aws::String&& value) { m_parameterGroupNameHasBeenSet = true; m_parameterGroupName = value; }
+    inline void SetParameterGroupName(Aws::String&& value) { m_parameterGroupNameHasBeenSet = true; m_parameterGroupName = std::move(value); }
 
     /**
      * <p>The name of the cluster parameter group.</p>
@@ -76,7 +77,7 @@ namespace Model
     /**
      * <p>The name of the cluster parameter group.</p>
      */
-    inline ClusterParameterGroupStatus& WithParameterGroupName(Aws::String&& value) { SetParameterGroupName(value); return *this;}
+    inline ClusterParameterGroupStatus& WithParameterGroupName(Aws::String&& value) { SetParameterGroupName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the cluster parameter group.</p>
@@ -96,7 +97,7 @@ namespace Model
     /**
      * <p>The status of parameter updates.</p>
      */
-    inline void SetParameterApplyStatus(Aws::String&& value) { m_parameterApplyStatusHasBeenSet = true; m_parameterApplyStatus = value; }
+    inline void SetParameterApplyStatus(Aws::String&& value) { m_parameterApplyStatusHasBeenSet = true; m_parameterApplyStatus = std::move(value); }
 
     /**
      * <p>The status of parameter updates.</p>
@@ -111,7 +112,7 @@ namespace Model
     /**
      * <p>The status of parameter updates.</p>
      */
-    inline ClusterParameterGroupStatus& WithParameterApplyStatus(Aws::String&& value) { SetParameterApplyStatus(value); return *this;}
+    inline ClusterParameterGroupStatus& WithParameterApplyStatus(Aws::String&& value) { SetParameterApplyStatus(std::move(value)); return *this;}
 
     /**
      * <p>The status of parameter updates.</p>
@@ -143,7 +144,7 @@ namespace Model
      * Redshift Parameter Groups</a> in the <i>Amazon Redshift Cluster Management
      * Guide</i>.</p>
      */
-    inline void SetClusterParameterStatusList(Aws::Vector<ClusterParameterStatus>&& value) { m_clusterParameterStatusListHasBeenSet = true; m_clusterParameterStatusList = value; }
+    inline void SetClusterParameterStatusList(Aws::Vector<ClusterParameterStatus>&& value) { m_clusterParameterStatusListHasBeenSet = true; m_clusterParameterStatusList = std::move(value); }
 
     /**
      * <p>The list of parameter statuses.</p> <p> For more information about parameters
@@ -161,7 +162,7 @@ namespace Model
      * Redshift Parameter Groups</a> in the <i>Amazon Redshift Cluster Management
      * Guide</i>.</p>
      */
-    inline ClusterParameterGroupStatus& WithClusterParameterStatusList(Aws::Vector<ClusterParameterStatus>&& value) { SetClusterParameterStatusList(value); return *this;}
+    inline ClusterParameterGroupStatus& WithClusterParameterStatusList(Aws::Vector<ClusterParameterStatus>&& value) { SetClusterParameterStatusList(std::move(value)); return *this;}
 
     /**
      * <p>The list of parameter statuses.</p> <p> For more information about parameters
@@ -179,7 +180,7 @@ namespace Model
      * Redshift Parameter Groups</a> in the <i>Amazon Redshift Cluster Management
      * Guide</i>.</p>
      */
-    inline ClusterParameterGroupStatus& AddClusterParameterStatusList(ClusterParameterStatus&& value) { m_clusterParameterStatusListHasBeenSet = true; m_clusterParameterStatusList.push_back(value); return *this; }
+    inline ClusterParameterGroupStatus& AddClusterParameterStatusList(ClusterParameterStatus&& value) { m_clusterParameterStatusListHasBeenSet = true; m_clusterParameterStatusList.push_back(std::move(value)); return *this; }
 
   private:
     Aws::String m_parameterGroupName;

@@ -16,6 +16,7 @@
 #include <aws/cloudsearch/CloudSearch_EXPORTS.h>
 #include <aws/cloudsearch/CloudSearchRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -61,7 +62,7 @@ namespace Model
      * (lower-case letters), 0-9, and hyphen (-). Domain names must start with a letter
      * or number and be at least 3 and no more than 28 characters long.</p>
      */
-    inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
+    inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = std::move(value); }
 
     /**
      * <p>A name for the domain you are creating. Allowed characters are a-z
@@ -82,7 +83,7 @@ namespace Model
      * (lower-case letters), 0-9, and hyphen (-). Domain names must start with a letter
      * or number and be at least 3 and no more than 28 characters long.</p>
      */
-    inline CreateDomainRequest& WithDomainName(Aws::String&& value) { SetDomainName(value); return *this;}
+    inline CreateDomainRequest& WithDomainName(Aws::String&& value) { SetDomainName(std::move(value)); return *this;}
 
     /**
      * <p>A name for the domain you are creating. Allowed characters are a-z

@@ -19,6 +19,7 @@
 #include <aws/swf/model/WorkflowType.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/swf/model/HistoryEvent.h>
+#include <utility>
 
 namespace Aws
 {
@@ -68,7 +69,7 @@ namespace Model
      * to communicate progress and response information back to the system about the
      * task.</p>
      */
-    inline void SetTaskToken(Aws::String&& value) { m_taskToken = value; }
+    inline void SetTaskToken(Aws::String&& value) { m_taskToken = std::move(value); }
 
     /**
      * <p>The opaque string used as a handle on the task. This token is used by workers
@@ -89,7 +90,7 @@ namespace Model
      * to communicate progress and response information back to the system about the
      * task.</p>
      */
-    inline PollForDecisionTaskResult& WithTaskToken(Aws::String&& value) { SetTaskToken(value); return *this;}
+    inline PollForDecisionTaskResult& WithTaskToken(Aws::String&& value) { SetTaskToken(std::move(value)); return *this;}
 
     /**
      * <p>The opaque string used as a handle on the task. This token is used by workers
@@ -129,7 +130,7 @@ namespace Model
     /**
      * <p>The workflow execution for which this decision task was created.</p>
      */
-    inline void SetWorkflowExecution(WorkflowExecution&& value) { m_workflowExecution = value; }
+    inline void SetWorkflowExecution(WorkflowExecution&& value) { m_workflowExecution = std::move(value); }
 
     /**
      * <p>The workflow execution for which this decision task was created.</p>
@@ -139,7 +140,7 @@ namespace Model
     /**
      * <p>The workflow execution for which this decision task was created.</p>
      */
-    inline PollForDecisionTaskResult& WithWorkflowExecution(WorkflowExecution&& value) { SetWorkflowExecution(value); return *this;}
+    inline PollForDecisionTaskResult& WithWorkflowExecution(WorkflowExecution&& value) { SetWorkflowExecution(std::move(value)); return *this;}
 
     /**
      * <p>The type of the workflow execution for which this decision task was
@@ -157,7 +158,7 @@ namespace Model
      * <p>The type of the workflow execution for which this decision task was
      * created.</p>
      */
-    inline void SetWorkflowType(WorkflowType&& value) { m_workflowType = value; }
+    inline void SetWorkflowType(WorkflowType&& value) { m_workflowType = std::move(value); }
 
     /**
      * <p>The type of the workflow execution for which this decision task was
@@ -169,7 +170,7 @@ namespace Model
      * <p>The type of the workflow execution for which this decision task was
      * created.</p>
      */
-    inline PollForDecisionTaskResult& WithWorkflowType(WorkflowType&& value) { SetWorkflowType(value); return *this;}
+    inline PollForDecisionTaskResult& WithWorkflowType(WorkflowType&& value) { SetWorkflowType(std::move(value)); return *this;}
 
     /**
      * <p>A paginated list of history events of the workflow execution. The decider
@@ -187,7 +188,7 @@ namespace Model
      * <p>A paginated list of history events of the workflow execution. The decider
      * uses this during the processing of the decision task.</p>
      */
-    inline void SetEvents(Aws::Vector<HistoryEvent>&& value) { m_events = value; }
+    inline void SetEvents(Aws::Vector<HistoryEvent>&& value) { m_events = std::move(value); }
 
     /**
      * <p>A paginated list of history events of the workflow execution. The decider
@@ -199,7 +200,7 @@ namespace Model
      * <p>A paginated list of history events of the workflow execution. The decider
      * uses this during the processing of the decision task.</p>
      */
-    inline PollForDecisionTaskResult& WithEvents(Aws::Vector<HistoryEvent>&& value) { SetEvents(value); return *this;}
+    inline PollForDecisionTaskResult& WithEvents(Aws::Vector<HistoryEvent>&& value) { SetEvents(std::move(value)); return *this;}
 
     /**
      * <p>A paginated list of history events of the workflow execution. The decider
@@ -211,7 +212,7 @@ namespace Model
      * <p>A paginated list of history events of the workflow execution. The decider
      * uses this during the processing of the decision task.</p>
      */
-    inline PollForDecisionTaskResult& AddEvents(HistoryEvent&& value) { m_events.push_back(value); return *this; }
+    inline PollForDecisionTaskResult& AddEvents(HistoryEvent&& value) { m_events.push_back(std::move(value)); return *this; }
 
     /**
      * <p>If a <code>NextPageToken</code> was returned by a previous call, there are
@@ -238,7 +239,7 @@ namespace Model
      * arguments unchanged.</p> <p>The configured <code>maximumPageSize</code>
      * determines how many results can be returned in a single call.</p>
      */
-    inline void SetNextPageToken(Aws::String&& value) { m_nextPageToken = value; }
+    inline void SetNextPageToken(Aws::String&& value) { m_nextPageToken = std::move(value); }
 
     /**
      * <p>If a <code>NextPageToken</code> was returned by a previous call, there are
@@ -265,7 +266,7 @@ namespace Model
      * arguments unchanged.</p> <p>The configured <code>maximumPageSize</code>
      * determines how many results can be returned in a single call.</p>
      */
-    inline PollForDecisionTaskResult& WithNextPageToken(Aws::String&& value) { SetNextPageToken(value); return *this;}
+    inline PollForDecisionTaskResult& WithNextPageToken(Aws::String&& value) { SetNextPageToken(std::move(value)); return *this;}
 
     /**
      * <p>If a <code>NextPageToken</code> was returned by a previous call, there are

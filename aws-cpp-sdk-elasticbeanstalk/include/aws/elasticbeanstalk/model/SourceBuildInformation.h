@@ -18,6 +18,7 @@
 #include <aws/elasticbeanstalk/model/SourceType.h>
 #include <aws/elasticbeanstalk/model/SourceRepository.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -65,7 +66,7 @@ namespace Model
      * <p>The type of repository.</p> <ul> <li> <p> <code>Git</code> </p> </li> <li>
      * <p> <code>Zip</code> </p> </li> </ul>
      */
-    inline void SetSourceType(SourceType&& value) { m_sourceTypeHasBeenSet = true; m_sourceType = value; }
+    inline void SetSourceType(SourceType&& value) { m_sourceTypeHasBeenSet = true; m_sourceType = std::move(value); }
 
     /**
      * <p>The type of repository.</p> <ul> <li> <p> <code>Git</code> </p> </li> <li>
@@ -77,7 +78,7 @@ namespace Model
      * <p>The type of repository.</p> <ul> <li> <p> <code>Git</code> </p> </li> <li>
      * <p> <code>Zip</code> </p> </li> </ul>
      */
-    inline SourceBuildInformation& WithSourceType(SourceType&& value) { SetSourceType(value); return *this;}
+    inline SourceBuildInformation& WithSourceType(SourceType&& value) { SetSourceType(std::move(value)); return *this;}
 
     /**
      * <p>Location where the repository is stored.</p> <ul> <li> <p>
@@ -95,7 +96,7 @@ namespace Model
      * <p>Location where the repository is stored.</p> <ul> <li> <p>
      * <code>CodeCommit</code> </p> </li> <li> <p> <code>S3</code> </p> </li> </ul>
      */
-    inline void SetSourceRepository(SourceRepository&& value) { m_sourceRepositoryHasBeenSet = true; m_sourceRepository = value; }
+    inline void SetSourceRepository(SourceRepository&& value) { m_sourceRepositoryHasBeenSet = true; m_sourceRepository = std::move(value); }
 
     /**
      * <p>Location where the repository is stored.</p> <ul> <li> <p>
@@ -107,7 +108,7 @@ namespace Model
      * <p>Location where the repository is stored.</p> <ul> <li> <p>
      * <code>CodeCommit</code> </p> </li> <li> <p> <code>S3</code> </p> </li> </ul>
      */
-    inline SourceBuildInformation& WithSourceRepository(SourceRepository&& value) { SetSourceRepository(value); return *this;}
+    inline SourceBuildInformation& WithSourceRepository(SourceRepository&& value) { SetSourceRepository(std::move(value)); return *this;}
 
     /**
      * <p>The location of the source code, as a formatted string, depending on the
@@ -143,7 +144,7 @@ namespace Model
      * separated by a forward slash. For example,
      * <code>my-s3-bucket/Folders/my-source-file</code>.</p> </li> </ul>
      */
-    inline void SetSourceLocation(Aws::String&& value) { m_sourceLocationHasBeenSet = true; m_sourceLocation = value; }
+    inline void SetSourceLocation(Aws::String&& value) { m_sourceLocationHasBeenSet = true; m_sourceLocation = std::move(value); }
 
     /**
      * <p>The location of the source code, as a formatted string, depending on the
@@ -179,7 +180,7 @@ namespace Model
      * separated by a forward slash. For example,
      * <code>my-s3-bucket/Folders/my-source-file</code>.</p> </li> </ul>
      */
-    inline SourceBuildInformation& WithSourceLocation(Aws::String&& value) { SetSourceLocation(value); return *this;}
+    inline SourceBuildInformation& WithSourceLocation(Aws::String&& value) { SetSourceLocation(std::move(value)); return *this;}
 
     /**
      * <p>The location of the source code, as a formatted string, depending on the

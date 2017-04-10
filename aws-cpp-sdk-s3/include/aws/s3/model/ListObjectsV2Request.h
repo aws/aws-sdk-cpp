@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/s3/model/EncodingType.h>
 #include <aws/s3/model/RequestPayer.h>
+#include <utility>
 
 namespace Aws
 {
@@ -56,7 +57,7 @@ namespace Model
     /**
      * Name of the bucket to list.
      */
-    inline void SetBucket(Aws::String&& value) { m_bucketHasBeenSet = true; m_bucket = value; }
+    inline void SetBucket(Aws::String&& value) { m_bucketHasBeenSet = true; m_bucket = std::move(value); }
 
     /**
      * Name of the bucket to list.
@@ -71,7 +72,7 @@ namespace Model
     /**
      * Name of the bucket to list.
      */
-    inline ListObjectsV2Request& WithBucket(Aws::String&& value) { SetBucket(value); return *this;}
+    inline ListObjectsV2Request& WithBucket(Aws::String&& value) { SetBucket(std::move(value)); return *this;}
 
     /**
      * Name of the bucket to list.
@@ -91,7 +92,7 @@ namespace Model
     /**
      * A delimiter is a character you use to group keys.
      */
-    inline void SetDelimiter(Aws::String&& value) { m_delimiterHasBeenSet = true; m_delimiter = value; }
+    inline void SetDelimiter(Aws::String&& value) { m_delimiterHasBeenSet = true; m_delimiter = std::move(value); }
 
     /**
      * A delimiter is a character you use to group keys.
@@ -106,7 +107,7 @@ namespace Model
     /**
      * A delimiter is a character you use to group keys.
      */
-    inline ListObjectsV2Request& WithDelimiter(Aws::String&& value) { SetDelimiter(value); return *this;}
+    inline ListObjectsV2Request& WithDelimiter(Aws::String&& value) { SetDelimiter(std::move(value)); return *this;}
 
     /**
      * A delimiter is a character you use to group keys.
@@ -126,7 +127,7 @@ namespace Model
     /**
      * Encoding type used by Amazon S3 to encode object keys in the response.
      */
-    inline void SetEncodingType(EncodingType&& value) { m_encodingTypeHasBeenSet = true; m_encodingType = value; }
+    inline void SetEncodingType(EncodingType&& value) { m_encodingTypeHasBeenSet = true; m_encodingType = std::move(value); }
 
     /**
      * Encoding type used by Amazon S3 to encode object keys in the response.
@@ -136,7 +137,7 @@ namespace Model
     /**
      * Encoding type used by Amazon S3 to encode object keys in the response.
      */
-    inline ListObjectsV2Request& WithEncodingType(EncodingType&& value) { SetEncodingType(value); return *this;}
+    inline ListObjectsV2Request& WithEncodingType(EncodingType&& value) { SetEncodingType(std::move(value)); return *this;}
 
     /**
      * Sets the maximum number of keys returned in the response. The response might
@@ -169,7 +170,7 @@ namespace Model
     /**
      * Limits the response to keys that begin with the specified prefix.
      */
-    inline void SetPrefix(Aws::String&& value) { m_prefixHasBeenSet = true; m_prefix = value; }
+    inline void SetPrefix(Aws::String&& value) { m_prefixHasBeenSet = true; m_prefix = std::move(value); }
 
     /**
      * Limits the response to keys that begin with the specified prefix.
@@ -184,7 +185,7 @@ namespace Model
     /**
      * Limits the response to keys that begin with the specified prefix.
      */
-    inline ListObjectsV2Request& WithPrefix(Aws::String&& value) { SetPrefix(value); return *this;}
+    inline ListObjectsV2Request& WithPrefix(Aws::String&& value) { SetPrefix(std::move(value)); return *this;}
 
     /**
      * Limits the response to keys that begin with the specified prefix.
@@ -207,7 +208,7 @@ namespace Model
      * ContinuationToken indicates Amazon S3 that the list is being continued on this
      * bucket with a token. ContinuationToken is obfuscated and is not a real key
      */
-    inline void SetContinuationToken(Aws::String&& value) { m_continuationTokenHasBeenSet = true; m_continuationToken = value; }
+    inline void SetContinuationToken(Aws::String&& value) { m_continuationTokenHasBeenSet = true; m_continuationToken = std::move(value); }
 
     /**
      * ContinuationToken indicates Amazon S3 that the list is being continued on this
@@ -225,7 +226,7 @@ namespace Model
      * ContinuationToken indicates Amazon S3 that the list is being continued on this
      * bucket with a token. ContinuationToken is obfuscated and is not a real key
      */
-    inline ListObjectsV2Request& WithContinuationToken(Aws::String&& value) { SetContinuationToken(value); return *this;}
+    inline ListObjectsV2Request& WithContinuationToken(Aws::String&& value) { SetContinuationToken(std::move(value)); return *this;}
 
     /**
      * ContinuationToken indicates Amazon S3 that the list is being continued on this
@@ -267,7 +268,7 @@ namespace Model
      * StartAfter is where you want Amazon S3 to start listing from. Amazon S3 starts
      * listing after this specified key. StartAfter can be any key in the bucket
      */
-    inline void SetStartAfter(Aws::String&& value) { m_startAfterHasBeenSet = true; m_startAfter = value; }
+    inline void SetStartAfter(Aws::String&& value) { m_startAfterHasBeenSet = true; m_startAfter = std::move(value); }
 
     /**
      * StartAfter is where you want Amazon S3 to start listing from. Amazon S3 starts
@@ -285,7 +286,7 @@ namespace Model
      * StartAfter is where you want Amazon S3 to start listing from. Amazon S3 starts
      * listing after this specified key. StartAfter can be any key in the bucket
      */
-    inline ListObjectsV2Request& WithStartAfter(Aws::String&& value) { SetStartAfter(value); return *this;}
+    inline ListObjectsV2Request& WithStartAfter(Aws::String&& value) { SetStartAfter(std::move(value)); return *this;}
 
     /**
      * StartAfter is where you want Amazon S3 to start listing from. Amazon S3 starts
@@ -312,7 +313,7 @@ namespace Model
      * objects request in V2 style. Bucket owners need not specify this parameter in
      * their requests.
      */
-    inline void SetRequestPayer(RequestPayer&& value) { m_requestPayerHasBeenSet = true; m_requestPayer = value; }
+    inline void SetRequestPayer(RequestPayer&& value) { m_requestPayerHasBeenSet = true; m_requestPayer = std::move(value); }
 
     /**
      * Confirms that the requester knows that she or he will be charged for the list
@@ -326,7 +327,7 @@ namespace Model
      * objects request in V2 style. Bucket owners need not specify this parameter in
      * their requests.
      */
-    inline ListObjectsV2Request& WithRequestPayer(RequestPayer&& value) { SetRequestPayer(value); return *this;}
+    inline ListObjectsV2Request& WithRequestPayer(RequestPayer&& value) { SetRequestPayer(std::move(value)); return *this;}
 
   private:
     Aws::String m_bucket;

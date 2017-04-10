@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/route53domains/model/DomainSummary.h>
+#include <utility>
 
 namespace Aws
 {
@@ -66,7 +67,7 @@ namespace Model
      * summaries.</p> <p>Children: <code>AutoRenew</code>, <code>DomainName</code>,
      * <code>Expiry</code>, <code>TransferLock</code></p>
      */
-    inline void SetDomains(Aws::Vector<DomainSummary>&& value) { m_domains = value; }
+    inline void SetDomains(Aws::Vector<DomainSummary>&& value) { m_domains = std::move(value); }
 
     /**
      * <p>A summary of domains.</p> <p>Type: Complex type containing a list of domain
@@ -80,7 +81,7 @@ namespace Model
      * summaries.</p> <p>Children: <code>AutoRenew</code>, <code>DomainName</code>,
      * <code>Expiry</code>, <code>TransferLock</code></p>
      */
-    inline ListDomainsResult& WithDomains(Aws::Vector<DomainSummary>&& value) { SetDomains(value); return *this;}
+    inline ListDomainsResult& WithDomains(Aws::Vector<DomainSummary>&& value) { SetDomains(std::move(value)); return *this;}
 
     /**
      * <p>A summary of domains.</p> <p>Type: Complex type containing a list of domain
@@ -94,7 +95,7 @@ namespace Model
      * summaries.</p> <p>Children: <code>AutoRenew</code>, <code>DomainName</code>,
      * <code>Expiry</code>, <code>TransferLock</code></p>
      */
-    inline ListDomainsResult& AddDomains(DomainSummary&& value) { m_domains.push_back(value); return *this; }
+    inline ListDomainsResult& AddDomains(DomainSummary&& value) { m_domains.push_back(std::move(value)); return *this; }
 
     /**
      * <p>If there are more domains than you specified for <code>MaxItems</code> in the
@@ -118,7 +119,7 @@ namespace Model
      * <code>NextPageMarker</code> in the value of <code>Marker</code>.</p> <p>Type:
      * String</p> <p>Parent: <code>Operations</code></p>
      */
-    inline void SetNextPageMarker(Aws::String&& value) { m_nextPageMarker = value; }
+    inline void SetNextPageMarker(Aws::String&& value) { m_nextPageMarker = std::move(value); }
 
     /**
      * <p>If there are more domains than you specified for <code>MaxItems</code> in the
@@ -142,7 +143,7 @@ namespace Model
      * <code>NextPageMarker</code> in the value of <code>Marker</code>.</p> <p>Type:
      * String</p> <p>Parent: <code>Operations</code></p>
      */
-    inline ListDomainsResult& WithNextPageMarker(Aws::String&& value) { SetNextPageMarker(value); return *this;}
+    inline ListDomainsResult& WithNextPageMarker(Aws::String&& value) { SetNextPageMarker(std::move(value)); return *this;}
 
     /**
      * <p>If there are more domains than you specified for <code>MaxItems</code> in the

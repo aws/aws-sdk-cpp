@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/cognito-identity/CognitoIdentity_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -61,7 +62,7 @@ namespace Model
      * <p>A unique identifier in the format REGION:GUID. Note that the IdentityId
      * returned may not match the one passed on input.</p>
      */
-    inline void SetIdentityId(Aws::String&& value) { m_identityId = value; }
+    inline void SetIdentityId(Aws::String&& value) { m_identityId = std::move(value); }
 
     /**
      * <p>A unique identifier in the format REGION:GUID. Note that the IdentityId
@@ -79,7 +80,7 @@ namespace Model
      * <p>A unique identifier in the format REGION:GUID. Note that the IdentityId
      * returned may not match the one passed on input.</p>
      */
-    inline GetOpenIdTokenResult& WithIdentityId(Aws::String&& value) { SetIdentityId(value); return *this;}
+    inline GetOpenIdTokenResult& WithIdentityId(Aws::String&& value) { SetIdentityId(std::move(value)); return *this;}
 
     /**
      * <p>A unique identifier in the format REGION:GUID. Note that the IdentityId
@@ -100,7 +101,7 @@ namespace Model
     /**
      * <p>An OpenID token, valid for 15 minutes.</p>
      */
-    inline void SetToken(Aws::String&& value) { m_token = value; }
+    inline void SetToken(Aws::String&& value) { m_token = std::move(value); }
 
     /**
      * <p>An OpenID token, valid for 15 minutes.</p>
@@ -115,7 +116,7 @@ namespace Model
     /**
      * <p>An OpenID token, valid for 15 minutes.</p>
      */
-    inline GetOpenIdTokenResult& WithToken(Aws::String&& value) { SetToken(value); return *this;}
+    inline GetOpenIdTokenResult& WithToken(Aws::String&& value) { SetToken(std::move(value)); return *this;}
 
     /**
      * <p>An OpenID token, valid for 15 minutes.</p>

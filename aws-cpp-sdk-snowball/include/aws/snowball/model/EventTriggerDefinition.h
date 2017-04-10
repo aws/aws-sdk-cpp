@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/snowball/Snowball_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -60,7 +61,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) for any local Amazon S3 resource that is an
      * AWS Lambda function's event trigger associated with this job.</p>
      */
-    inline void SetEventResourceARN(Aws::String&& value) { m_eventResourceARNHasBeenSet = true; m_eventResourceARN = value; }
+    inline void SetEventResourceARN(Aws::String&& value) { m_eventResourceARNHasBeenSet = true; m_eventResourceARN = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) for any local Amazon S3 resource that is an
@@ -78,7 +79,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) for any local Amazon S3 resource that is an
      * AWS Lambda function's event trigger associated with this job.</p>
      */
-    inline EventTriggerDefinition& WithEventResourceARN(Aws::String&& value) { SetEventResourceARN(value); return *this;}
+    inline EventTriggerDefinition& WithEventResourceARN(Aws::String&& value) { SetEventResourceARN(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) for any local Amazon S3 resource that is an

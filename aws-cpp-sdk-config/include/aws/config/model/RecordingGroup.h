@@ -16,6 +16,7 @@
 #include <aws/config/ConfigService_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/config/model/ResourceType.h>
+#include <utility>
 
 namespace Aws
 {
@@ -183,7 +184,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/config/latest/developerguide/resource-config-reference.html#supported-resources">Supported
      * AWS Resource Types</a>.</p>
      */
-    inline void SetResourceTypes(Aws::Vector<ResourceType>&& value) { m_resourceTypesHasBeenSet = true; m_resourceTypes = value; }
+    inline void SetResourceTypes(Aws::Vector<ResourceType>&& value) { m_resourceTypesHasBeenSet = true; m_resourceTypes = std::move(value); }
 
     /**
      * <p>A comma-separated list that specifies the types of AWS resources for which
@@ -215,7 +216,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/config/latest/developerguide/resource-config-reference.html#supported-resources">Supported
      * AWS Resource Types</a>.</p>
      */
-    inline RecordingGroup& WithResourceTypes(Aws::Vector<ResourceType>&& value) { SetResourceTypes(value); return *this;}
+    inline RecordingGroup& WithResourceTypes(Aws::Vector<ResourceType>&& value) { SetResourceTypes(std::move(value)); return *this;}
 
     /**
      * <p>A comma-separated list that specifies the types of AWS resources for which
@@ -247,7 +248,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/config/latest/developerguide/resource-config-reference.html#supported-resources">Supported
      * AWS Resource Types</a>.</p>
      */
-    inline RecordingGroup& AddResourceTypes(ResourceType&& value) { m_resourceTypesHasBeenSet = true; m_resourceTypes.push_back(value); return *this; }
+    inline RecordingGroup& AddResourceTypes(ResourceType&& value) { m_resourceTypesHasBeenSet = true; m_resourceTypes.push_back(std::move(value)); return *this; }
 
   private:
     bool m_allSupported;

@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ssm/model/NotificationType.h>
 #include <aws/ssm/model/NotificationEvent.h>
+#include <utility>
 
 namespace Aws
 {
@@ -62,7 +63,7 @@ namespace Model
      * <p>An Amazon Resource Name (ARN) for a Simple Notification Service (SNS) topic.
      * Run Command pushes notifications about command status changes to this topic.</p>
      */
-    inline void SetNotificationArn(Aws::String&& value) { m_notificationArnHasBeenSet = true; m_notificationArn = value; }
+    inline void SetNotificationArn(Aws::String&& value) { m_notificationArnHasBeenSet = true; m_notificationArn = std::move(value); }
 
     /**
      * <p>An Amazon Resource Name (ARN) for a Simple Notification Service (SNS) topic.
@@ -80,7 +81,7 @@ namespace Model
      * <p>An Amazon Resource Name (ARN) for a Simple Notification Service (SNS) topic.
      * Run Command pushes notifications about command status changes to this topic.</p>
      */
-    inline NotificationConfig& WithNotificationArn(Aws::String&& value) { SetNotificationArn(value); return *this;}
+    inline NotificationConfig& WithNotificationArn(Aws::String&& value) { SetNotificationArn(std::move(value)); return *this;}
 
     /**
      * <p>An Amazon Resource Name (ARN) for a Simple Notification Service (SNS) topic.
@@ -116,7 +117,7 @@ namespace Model
      * Up Events and Notifications</a> in the <i>Amazon EC2 Systems Manager User
      * Guide</i>.</p>
      */
-    inline void SetNotificationEvents(Aws::Vector<NotificationEvent>&& value) { m_notificationEventsHasBeenSet = true; m_notificationEvents = value; }
+    inline void SetNotificationEvents(Aws::Vector<NotificationEvent>&& value) { m_notificationEventsHasBeenSet = true; m_notificationEvents = std::move(value); }
 
     /**
      * <p>The different events for which you can receive notifications. These events
@@ -136,7 +137,7 @@ namespace Model
      * Up Events and Notifications</a> in the <i>Amazon EC2 Systems Manager User
      * Guide</i>.</p>
      */
-    inline NotificationConfig& WithNotificationEvents(Aws::Vector<NotificationEvent>&& value) { SetNotificationEvents(value); return *this;}
+    inline NotificationConfig& WithNotificationEvents(Aws::Vector<NotificationEvent>&& value) { SetNotificationEvents(std::move(value)); return *this;}
 
     /**
      * <p>The different events for which you can receive notifications. These events
@@ -156,7 +157,7 @@ namespace Model
      * Up Events and Notifications</a> in the <i>Amazon EC2 Systems Manager User
      * Guide</i>.</p>
      */
-    inline NotificationConfig& AddNotificationEvents(NotificationEvent&& value) { m_notificationEventsHasBeenSet = true; m_notificationEvents.push_back(value); return *this; }
+    inline NotificationConfig& AddNotificationEvents(NotificationEvent&& value) { m_notificationEventsHasBeenSet = true; m_notificationEvents.push_back(std::move(value)); return *this; }
 
     /**
      * <p>Command: Receive notification when the status of a command changes.
@@ -177,7 +178,7 @@ namespace Model
      * Invocation: For commands sent to multiple instances, receive notification on a
      * per-instance basis when the status of a command changes. </p>
      */
-    inline void SetNotificationType(NotificationType&& value) { m_notificationTypeHasBeenSet = true; m_notificationType = value; }
+    inline void SetNotificationType(NotificationType&& value) { m_notificationTypeHasBeenSet = true; m_notificationType = std::move(value); }
 
     /**
      * <p>Command: Receive notification when the status of a command changes.
@@ -191,7 +192,7 @@ namespace Model
      * Invocation: For commands sent to multiple instances, receive notification on a
      * per-instance basis when the status of a command changes. </p>
      */
-    inline NotificationConfig& WithNotificationType(NotificationType&& value) { SetNotificationType(value); return *this;}
+    inline NotificationConfig& WithNotificationType(NotificationType&& value) { SetNotificationType(std::move(value)); return *this;}
 
   private:
     Aws::String m_notificationArn;

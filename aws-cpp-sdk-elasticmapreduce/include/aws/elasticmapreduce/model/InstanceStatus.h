@@ -17,6 +17,7 @@
 #include <aws/elasticmapreduce/model/InstanceState.h>
 #include <aws/elasticmapreduce/model/InstanceStateChangeReason.h>
 #include <aws/elasticmapreduce/model/InstanceTimeline.h>
+#include <utility>
 
 namespace Aws
 {
@@ -58,7 +59,7 @@ namespace Model
     /**
      * <p>The current state of the instance.</p>
      */
-    inline void SetState(InstanceState&& value) { m_stateHasBeenSet = true; m_state = value; }
+    inline void SetState(InstanceState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
 
     /**
      * <p>The current state of the instance.</p>
@@ -68,7 +69,7 @@ namespace Model
     /**
      * <p>The current state of the instance.</p>
      */
-    inline InstanceStatus& WithState(InstanceState&& value) { SetState(value); return *this;}
+    inline InstanceStatus& WithState(InstanceState&& value) { SetState(std::move(value)); return *this;}
 
     /**
      * <p>The details of the status change reason for the instance.</p>
@@ -83,7 +84,7 @@ namespace Model
     /**
      * <p>The details of the status change reason for the instance.</p>
      */
-    inline void SetStateChangeReason(InstanceStateChangeReason&& value) { m_stateChangeReasonHasBeenSet = true; m_stateChangeReason = value; }
+    inline void SetStateChangeReason(InstanceStateChangeReason&& value) { m_stateChangeReasonHasBeenSet = true; m_stateChangeReason = std::move(value); }
 
     /**
      * <p>The details of the status change reason for the instance.</p>
@@ -93,7 +94,7 @@ namespace Model
     /**
      * <p>The details of the status change reason for the instance.</p>
      */
-    inline InstanceStatus& WithStateChangeReason(InstanceStateChangeReason&& value) { SetStateChangeReason(value); return *this;}
+    inline InstanceStatus& WithStateChangeReason(InstanceStateChangeReason&& value) { SetStateChangeReason(std::move(value)); return *this;}
 
     /**
      * <p>The timeline of the instance status over time.</p>
@@ -108,7 +109,7 @@ namespace Model
     /**
      * <p>The timeline of the instance status over time.</p>
      */
-    inline void SetTimeline(InstanceTimeline&& value) { m_timelineHasBeenSet = true; m_timeline = value; }
+    inline void SetTimeline(InstanceTimeline&& value) { m_timelineHasBeenSet = true; m_timeline = std::move(value); }
 
     /**
      * <p>The timeline of the instance status over time.</p>
@@ -118,7 +119,7 @@ namespace Model
     /**
      * <p>The timeline of the instance status over time.</p>
      */
-    inline InstanceStatus& WithTimeline(InstanceTimeline&& value) { SetTimeline(value); return *this;}
+    inline InstanceStatus& WithTimeline(InstanceTimeline&& value) { SetTimeline(std::move(value)); return *this;}
 
   private:
     InstanceState m_state;

@@ -17,6 +17,7 @@
 #include <aws/directconnect/DirectConnectRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/directconnect/model/NewPrivateVirtualInterfaceAllocation.h>
+#include <utility>
 
 namespace Aws
 {
@@ -56,7 +57,7 @@ namespace Model
      * <p>The connection ID on which the private virtual interface is provisioned.</p>
      * <p>Default: None</p>
      */
-    inline void SetConnectionId(Aws::String&& value) { m_connectionIdHasBeenSet = true; m_connectionId = value; }
+    inline void SetConnectionId(Aws::String&& value) { m_connectionIdHasBeenSet = true; m_connectionId = std::move(value); }
 
     /**
      * <p>The connection ID on which the private virtual interface is provisioned.</p>
@@ -74,7 +75,7 @@ namespace Model
      * <p>The connection ID on which the private virtual interface is provisioned.</p>
      * <p>Default: None</p>
      */
-    inline AllocatePrivateVirtualInterfaceRequest& WithConnectionId(Aws::String&& value) { SetConnectionId(value); return *this;}
+    inline AllocatePrivateVirtualInterfaceRequest& WithConnectionId(Aws::String&& value) { SetConnectionId(std::move(value)); return *this;}
 
     /**
      * <p>The connection ID on which the private virtual interface is provisioned.</p>
@@ -98,7 +99,7 @@ namespace Model
      * <p>The AWS account that will own the new private virtual interface.</p>
      * <p>Default: None</p>
      */
-    inline void SetOwnerAccount(Aws::String&& value) { m_ownerAccountHasBeenSet = true; m_ownerAccount = value; }
+    inline void SetOwnerAccount(Aws::String&& value) { m_ownerAccountHasBeenSet = true; m_ownerAccount = std::move(value); }
 
     /**
      * <p>The AWS account that will own the new private virtual interface.</p>
@@ -116,7 +117,7 @@ namespace Model
      * <p>The AWS account that will own the new private virtual interface.</p>
      * <p>Default: None</p>
      */
-    inline AllocatePrivateVirtualInterfaceRequest& WithOwnerAccount(Aws::String&& value) { SetOwnerAccount(value); return *this;}
+    inline AllocatePrivateVirtualInterfaceRequest& WithOwnerAccount(Aws::String&& value) { SetOwnerAccount(std::move(value)); return *this;}
 
     /**
      * <p>The AWS account that will own the new private virtual interface.</p>
@@ -140,7 +141,7 @@ namespace Model
      * <p>Detailed information for the private virtual interface to be provisioned.</p>
      * <p>Default: None</p>
      */
-    inline void SetNewPrivateVirtualInterfaceAllocation(NewPrivateVirtualInterfaceAllocation&& value) { m_newPrivateVirtualInterfaceAllocationHasBeenSet = true; m_newPrivateVirtualInterfaceAllocation = value; }
+    inline void SetNewPrivateVirtualInterfaceAllocation(NewPrivateVirtualInterfaceAllocation&& value) { m_newPrivateVirtualInterfaceAllocationHasBeenSet = true; m_newPrivateVirtualInterfaceAllocation = std::move(value); }
 
     /**
      * <p>Detailed information for the private virtual interface to be provisioned.</p>
@@ -152,7 +153,7 @@ namespace Model
      * <p>Detailed information for the private virtual interface to be provisioned.</p>
      * <p>Default: None</p>
      */
-    inline AllocatePrivateVirtualInterfaceRequest& WithNewPrivateVirtualInterfaceAllocation(NewPrivateVirtualInterfaceAllocation&& value) { SetNewPrivateVirtualInterfaceAllocation(value); return *this;}
+    inline AllocatePrivateVirtualInterfaceRequest& WithNewPrivateVirtualInterfaceAllocation(NewPrivateVirtualInterfaceAllocation&& value) { SetNewPrivateVirtualInterfaceAllocation(std::move(value)); return *this;}
 
   private:
     Aws::String m_connectionId;

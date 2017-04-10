@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/gamelift/model/GameProperty.h>
+#include <utility>
 
 namespace Aws
 {
@@ -56,7 +57,7 @@ namespace Model
      * <p>Unique identifier for a fleet to create a game session in. Each request must
      * reference either a fleet ID or alias ID, but not both.</p>
      */
-    inline void SetFleetId(Aws::String&& value) { m_fleetIdHasBeenSet = true; m_fleetId = value; }
+    inline void SetFleetId(Aws::String&& value) { m_fleetIdHasBeenSet = true; m_fleetId = std::move(value); }
 
     /**
      * <p>Unique identifier for a fleet to create a game session in. Each request must
@@ -74,7 +75,7 @@ namespace Model
      * <p>Unique identifier for a fleet to create a game session in. Each request must
      * reference either a fleet ID or alias ID, but not both.</p>
      */
-    inline CreateGameSessionRequest& WithFleetId(Aws::String&& value) { SetFleetId(value); return *this;}
+    inline CreateGameSessionRequest& WithFleetId(Aws::String&& value) { SetFleetId(std::move(value)); return *this;}
 
     /**
      * <p>Unique identifier for a fleet to create a game session in. Each request must
@@ -101,7 +102,7 @@ namespace Model
      * session in. Each request must reference either a fleet ID or alias ID, but not
      * both.</p>
      */
-    inline void SetAliasId(Aws::String&& value) { m_aliasIdHasBeenSet = true; m_aliasId = value; }
+    inline void SetAliasId(Aws::String&& value) { m_aliasIdHasBeenSet = true; m_aliasId = std::move(value); }
 
     /**
      * <p>Unique identifier for an alias associated with the fleet to create a game
@@ -122,7 +123,7 @@ namespace Model
      * session in. Each request must reference either a fleet ID or alias ID, but not
      * both.</p>
      */
-    inline CreateGameSessionRequest& WithAliasId(Aws::String&& value) { SetAliasId(value); return *this;}
+    inline CreateGameSessionRequest& WithAliasId(Aws::String&& value) { SetAliasId(std::move(value)); return *this;}
 
     /**
      * <p>Unique identifier for an alias associated with the fleet to create a game
@@ -165,7 +166,7 @@ namespace Model
      * <p>Descriptive label that is associated with a game session. Session names do
      * not need to be unique.</p>
      */
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p>Descriptive label that is associated with a game session. Session names do
@@ -183,7 +184,7 @@ namespace Model
      * <p>Descriptive label that is associated with a game session. Session names do
      * not need to be unique.</p>
      */
-    inline CreateGameSessionRequest& WithName(Aws::String&& value) { SetName(value); return *this;}
+    inline CreateGameSessionRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>Descriptive label that is associated with a game session. Session names do
@@ -207,7 +208,7 @@ namespace Model
      * <p>Set of developer-defined properties for a game session. These properties are
      * passed to the server process hosting the game session.</p>
      */
-    inline void SetGameProperties(Aws::Vector<GameProperty>&& value) { m_gamePropertiesHasBeenSet = true; m_gameProperties = value; }
+    inline void SetGameProperties(Aws::Vector<GameProperty>&& value) { m_gamePropertiesHasBeenSet = true; m_gameProperties = std::move(value); }
 
     /**
      * <p>Set of developer-defined properties for a game session. These properties are
@@ -219,7 +220,7 @@ namespace Model
      * <p>Set of developer-defined properties for a game session. These properties are
      * passed to the server process hosting the game session.</p>
      */
-    inline CreateGameSessionRequest& WithGameProperties(Aws::Vector<GameProperty>&& value) { SetGameProperties(value); return *this;}
+    inline CreateGameSessionRequest& WithGameProperties(Aws::Vector<GameProperty>&& value) { SetGameProperties(std::move(value)); return *this;}
 
     /**
      * <p>Set of developer-defined properties for a game session. These properties are
@@ -231,7 +232,7 @@ namespace Model
      * <p>Set of developer-defined properties for a game session. These properties are
      * passed to the server process hosting the game session.</p>
      */
-    inline CreateGameSessionRequest& AddGameProperties(GameProperty&& value) { m_gamePropertiesHasBeenSet = true; m_gameProperties.push_back(value); return *this; }
+    inline CreateGameSessionRequest& AddGameProperties(GameProperty&& value) { m_gamePropertiesHasBeenSet = true; m_gameProperties.push_back(std::move(value)); return *this; }
 
     /**
      * <p>$player-id; or entity creating the game session. This ID is used to enforce a
@@ -252,7 +253,7 @@ namespace Model
      * resource protection policy (if one exists) that limits the number of concurrent
      * active game sessions one player can have.</p>
      */
-    inline void SetCreatorId(Aws::String&& value) { m_creatorIdHasBeenSet = true; m_creatorId = value; }
+    inline void SetCreatorId(Aws::String&& value) { m_creatorIdHasBeenSet = true; m_creatorId = std::move(value); }
 
     /**
      * <p>$player-id; or entity creating the game session. This ID is used to enforce a
@@ -273,7 +274,7 @@ namespace Model
      * resource protection policy (if one exists) that limits the number of concurrent
      * active game sessions one player can have.</p>
      */
-    inline CreateGameSessionRequest& WithCreatorId(Aws::String&& value) { SetCreatorId(value); return *this;}
+    inline CreateGameSessionRequest& WithCreatorId(Aws::String&& value) { SetCreatorId(std::move(value)); return *this;}
 
     /**
      * <p>$player-id; or entity creating the game session. This ID is used to enforce a
@@ -307,7 +308,7 @@ namespace Model
      * ID&gt;". If provided, the custom string is used for the game session ID string.
      * This value cannot be updated once a game session is created.</p>
      */
-    inline void SetGameSessionId(Aws::String&& value) { m_gameSessionIdHasBeenSet = true; m_gameSessionId = value; }
+    inline void SetGameSessionId(Aws::String&& value) { m_gameSessionIdHasBeenSet = true; m_gameSessionId = std::move(value); }
 
     /**
      * <p>Custom string to include in the game session ID, with a maximum length of 48
@@ -334,7 +335,7 @@ namespace Model
      * ID&gt;". If provided, the custom string is used for the game session ID string.
      * This value cannot be updated once a game session is created.</p>
      */
-    inline CreateGameSessionRequest& WithGameSessionId(Aws::String&& value) { SetGameSessionId(value); return *this;}
+    inline CreateGameSessionRequest& WithGameSessionId(Aws::String&& value) { SetGameSessionId(std::move(value)); return *this;}
 
     /**
      * <p>Custom string to include in the game session ID, with a maximum length of 48

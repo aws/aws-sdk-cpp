@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/mturk-requester/MTurk_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -60,7 +61,7 @@ namespace Model
      * <p> The country of the locale. Must be a valid ISO 3166 country code. For
      * example, the code US refers to the United States of America. </p>
      */
-    inline void SetCountry(Aws::String&& value) { m_countryHasBeenSet = true; m_country = value; }
+    inline void SetCountry(Aws::String&& value) { m_countryHasBeenSet = true; m_country = std::move(value); }
 
     /**
      * <p> The country of the locale. Must be a valid ISO 3166 country code. For
@@ -78,7 +79,7 @@ namespace Model
      * <p> The country of the locale. Must be a valid ISO 3166 country code. For
      * example, the code US refers to the United States of America. </p>
      */
-    inline Locale& WithCountry(Aws::String&& value) { SetCountry(value); return *this;}
+    inline Locale& WithCountry(Aws::String&& value) { SetCountry(std::move(value)); return *this;}
 
     /**
      * <p> The country of the locale. Must be a valid ISO 3166 country code. For
@@ -102,7 +103,7 @@ namespace Model
      * <p>The state or subdivision of the locale. A valid ISO 3166-2 subdivision code.
      * For example, the code WA refers to the state of Washington.</p>
      */
-    inline void SetSubdivision(Aws::String&& value) { m_subdivisionHasBeenSet = true; m_subdivision = value; }
+    inline void SetSubdivision(Aws::String&& value) { m_subdivisionHasBeenSet = true; m_subdivision = std::move(value); }
 
     /**
      * <p>The state or subdivision of the locale. A valid ISO 3166-2 subdivision code.
@@ -120,7 +121,7 @@ namespace Model
      * <p>The state or subdivision of the locale. A valid ISO 3166-2 subdivision code.
      * For example, the code WA refers to the state of Washington.</p>
      */
-    inline Locale& WithSubdivision(Aws::String&& value) { SetSubdivision(value); return *this;}
+    inline Locale& WithSubdivision(Aws::String&& value) { SetSubdivision(std::move(value)); return *this;}
 
     /**
      * <p>The state or subdivision of the locale. A valid ISO 3166-2 subdivision code.

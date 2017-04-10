@@ -16,6 +16,7 @@
 #include <aws/clouddirectory/CloudDirectory_EXPORTS.h>
 #include <aws/clouddirectory/model/RangeMode.h>
 #include <aws/clouddirectory/model/TypedAttributeValue.h>
+#include <utility>
 
 namespace Aws
 {
@@ -57,7 +58,7 @@ namespace Model
     /**
      * <p>Inclusive or exclusive range start.</p>
      */
-    inline void SetStartMode(RangeMode&& value) { m_startModeHasBeenSet = true; m_startMode = value; }
+    inline void SetStartMode(RangeMode&& value) { m_startModeHasBeenSet = true; m_startMode = std::move(value); }
 
     /**
      * <p>Inclusive or exclusive range start.</p>
@@ -67,7 +68,7 @@ namespace Model
     /**
      * <p>Inclusive or exclusive range start.</p>
      */
-    inline TypedAttributeValueRange& WithStartMode(RangeMode&& value) { SetStartMode(value); return *this;}
+    inline TypedAttributeValueRange& WithStartMode(RangeMode&& value) { SetStartMode(std::move(value)); return *this;}
 
     /**
      * <p>The value to start the range at.</p>
@@ -82,7 +83,7 @@ namespace Model
     /**
      * <p>The value to start the range at.</p>
      */
-    inline void SetStartValue(TypedAttributeValue&& value) { m_startValueHasBeenSet = true; m_startValue = value; }
+    inline void SetStartValue(TypedAttributeValue&& value) { m_startValueHasBeenSet = true; m_startValue = std::move(value); }
 
     /**
      * <p>The value to start the range at.</p>
@@ -92,7 +93,7 @@ namespace Model
     /**
      * <p>The value to start the range at.</p>
      */
-    inline TypedAttributeValueRange& WithStartValue(TypedAttributeValue&& value) { SetStartValue(value); return *this;}
+    inline TypedAttributeValueRange& WithStartValue(TypedAttributeValue&& value) { SetStartValue(std::move(value)); return *this;}
 
     /**
      * <p>Inclusive or exclusive range end.</p>
@@ -107,7 +108,7 @@ namespace Model
     /**
      * <p>Inclusive or exclusive range end.</p>
      */
-    inline void SetEndMode(RangeMode&& value) { m_endModeHasBeenSet = true; m_endMode = value; }
+    inline void SetEndMode(RangeMode&& value) { m_endModeHasBeenSet = true; m_endMode = std::move(value); }
 
     /**
      * <p>Inclusive or exclusive range end.</p>
@@ -117,7 +118,7 @@ namespace Model
     /**
      * <p>Inclusive or exclusive range end.</p>
      */
-    inline TypedAttributeValueRange& WithEndMode(RangeMode&& value) { SetEndMode(value); return *this;}
+    inline TypedAttributeValueRange& WithEndMode(RangeMode&& value) { SetEndMode(std::move(value)); return *this;}
 
     /**
      * <p>The attribute value to terminate the range at.</p>
@@ -132,7 +133,7 @@ namespace Model
     /**
      * <p>The attribute value to terminate the range at.</p>
      */
-    inline void SetEndValue(TypedAttributeValue&& value) { m_endValueHasBeenSet = true; m_endValue = value; }
+    inline void SetEndValue(TypedAttributeValue&& value) { m_endValueHasBeenSet = true; m_endValue = std::move(value); }
 
     /**
      * <p>The attribute value to terminate the range at.</p>
@@ -142,7 +143,7 @@ namespace Model
     /**
      * <p>The attribute value to terminate the range at.</p>
      */
-    inline TypedAttributeValueRange& WithEndValue(TypedAttributeValue&& value) { SetEndValue(value); return *this;}
+    inline TypedAttributeValueRange& WithEndValue(TypedAttributeValue&& value) { SetEndValue(std::move(value)); return *this;}
 
   private:
     RangeMode m_startMode;

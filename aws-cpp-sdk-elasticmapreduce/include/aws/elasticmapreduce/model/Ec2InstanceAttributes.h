@@ -16,6 +16,7 @@
 #include <aws/elasticmapreduce/EMR_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <utility>
 
 namespace Aws
 {
@@ -62,7 +63,7 @@ namespace Model
      * <p>The name of the Amazon EC2 key pair to use when connecting with SSH into the
      * master node as a user named "hadoop".</p>
      */
-    inline void SetEc2KeyName(Aws::String&& value) { m_ec2KeyNameHasBeenSet = true; m_ec2KeyName = value; }
+    inline void SetEc2KeyName(Aws::String&& value) { m_ec2KeyNameHasBeenSet = true; m_ec2KeyName = std::move(value); }
 
     /**
      * <p>The name of the Amazon EC2 key pair to use when connecting with SSH into the
@@ -80,7 +81,7 @@ namespace Model
      * <p>The name of the Amazon EC2 key pair to use when connecting with SSH into the
      * master node as a user named "hadoop".</p>
      */
-    inline Ec2InstanceAttributes& WithEc2KeyName(Aws::String&& value) { SetEc2KeyName(value); return *this;}
+    inline Ec2InstanceAttributes& WithEc2KeyName(Aws::String&& value) { SetEc2KeyName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the Amazon EC2 key pair to use when connecting with SSH into the
@@ -116,7 +117,7 @@ namespace Model
      * extra large (cc1.4xlarge) instances. Thus, you cannot specify the cc1.4xlarge
      * instance type for nodes of a cluster launched in a VPC.</p>
      */
-    inline void SetEc2SubnetId(Aws::String&& value) { m_ec2SubnetIdHasBeenSet = true; m_ec2SubnetId = value; }
+    inline void SetEc2SubnetId(Aws::String&& value) { m_ec2SubnetIdHasBeenSet = true; m_ec2SubnetId = std::move(value); }
 
     /**
      * <p>To launch the cluster in Amazon VPC, set this parameter to the identifier of
@@ -146,7 +147,7 @@ namespace Model
      * extra large (cc1.4xlarge) instances. Thus, you cannot specify the cc1.4xlarge
      * instance type for nodes of a cluster launched in a VPC.</p>
      */
-    inline Ec2InstanceAttributes& WithEc2SubnetId(Aws::String&& value) { SetEc2SubnetId(value); return *this;}
+    inline Ec2InstanceAttributes& WithEc2SubnetId(Aws::String&& value) { SetEc2SubnetId(std::move(value)); return *this;}
 
     /**
      * <p>To launch the cluster in Amazon VPC, set this parameter to the identifier of
@@ -189,7 +190,7 @@ namespace Model
      * specified, and the account supports EC2-Classic networks, the cluster launches
      * instances in the EC2-Classic network and uses Requested</p>
      */
-    inline void SetRequestedEc2SubnetIds(Aws::Vector<Aws::String>&& value) { m_requestedEc2SubnetIdsHasBeenSet = true; m_requestedEc2SubnetIds = value; }
+    inline void SetRequestedEc2SubnetIds(Aws::Vector<Aws::String>&& value) { m_requestedEc2SubnetIdsHasBeenSet = true; m_requestedEc2SubnetIds = std::move(value); }
 
     /**
      * <p>Applies to clusters configured with the instance fleets option. Specifies the
@@ -211,7 +212,7 @@ namespace Model
      * specified, and the account supports EC2-Classic networks, the cluster launches
      * instances in the EC2-Classic network and uses Requested</p>
      */
-    inline Ec2InstanceAttributes& WithRequestedEc2SubnetIds(Aws::Vector<Aws::String>&& value) { SetRequestedEc2SubnetIds(value); return *this;}
+    inline Ec2InstanceAttributes& WithRequestedEc2SubnetIds(Aws::Vector<Aws::String>&& value) { SetRequestedEc2SubnetIds(std::move(value)); return *this;}
 
     /**
      * <p>Applies to clusters configured with the instance fleets option. Specifies the
@@ -233,7 +234,7 @@ namespace Model
      * specified, and the account supports EC2-Classic networks, the cluster launches
      * instances in the EC2-Classic network and uses Requested</p>
      */
-    inline Ec2InstanceAttributes& AddRequestedEc2SubnetIds(Aws::String&& value) { m_requestedEc2SubnetIdsHasBeenSet = true; m_requestedEc2SubnetIds.push_back(value); return *this; }
+    inline Ec2InstanceAttributes& AddRequestedEc2SubnetIds(Aws::String&& value) { m_requestedEc2SubnetIdsHasBeenSet = true; m_requestedEc2SubnetIds.push_back(std::move(value)); return *this; }
 
     /**
      * <p>Applies to clusters configured with the instance fleets option. Specifies the
@@ -259,7 +260,7 @@ namespace Model
     /**
      * <p>The Availability Zone in which the cluster will run. </p>
      */
-    inline void SetEc2AvailabilityZone(Aws::String&& value) { m_ec2AvailabilityZoneHasBeenSet = true; m_ec2AvailabilityZone = value; }
+    inline void SetEc2AvailabilityZone(Aws::String&& value) { m_ec2AvailabilityZoneHasBeenSet = true; m_ec2AvailabilityZone = std::move(value); }
 
     /**
      * <p>The Availability Zone in which the cluster will run. </p>
@@ -274,7 +275,7 @@ namespace Model
     /**
      * <p>The Availability Zone in which the cluster will run. </p>
      */
-    inline Ec2InstanceAttributes& WithEc2AvailabilityZone(Aws::String&& value) { SetEc2AvailabilityZone(value); return *this;}
+    inline Ec2InstanceAttributes& WithEc2AvailabilityZone(Aws::String&& value) { SetEc2AvailabilityZone(std::move(value)); return *this;}
 
     /**
      * <p>The Availability Zone in which the cluster will run. </p>
@@ -306,7 +307,7 @@ namespace Model
      * this value, the cluster is launched in any availability zone that the customer
      * account has access to.</p>
      */
-    inline void SetRequestedEc2AvailabilityZones(Aws::Vector<Aws::String>&& value) { m_requestedEc2AvailabilityZonesHasBeenSet = true; m_requestedEc2AvailabilityZones = value; }
+    inline void SetRequestedEc2AvailabilityZones(Aws::Vector<Aws::String>&& value) { m_requestedEc2AvailabilityZonesHasBeenSet = true; m_requestedEc2AvailabilityZones = std::move(value); }
 
     /**
      * <p>Applies to clusters configured with the The list of availability zones to
@@ -324,7 +325,7 @@ namespace Model
      * this value, the cluster is launched in any availability zone that the customer
      * account has access to.</p>
      */
-    inline Ec2InstanceAttributes& WithRequestedEc2AvailabilityZones(Aws::Vector<Aws::String>&& value) { SetRequestedEc2AvailabilityZones(value); return *this;}
+    inline Ec2InstanceAttributes& WithRequestedEc2AvailabilityZones(Aws::Vector<Aws::String>&& value) { SetRequestedEc2AvailabilityZones(std::move(value)); return *this;}
 
     /**
      * <p>Applies to clusters configured with the The list of availability zones to
@@ -342,7 +343,7 @@ namespace Model
      * this value, the cluster is launched in any availability zone that the customer
      * account has access to.</p>
      */
-    inline Ec2InstanceAttributes& AddRequestedEc2AvailabilityZones(Aws::String&& value) { m_requestedEc2AvailabilityZonesHasBeenSet = true; m_requestedEc2AvailabilityZones.push_back(value); return *this; }
+    inline Ec2InstanceAttributes& AddRequestedEc2AvailabilityZones(Aws::String&& value) { m_requestedEc2AvailabilityZonesHasBeenSet = true; m_requestedEc2AvailabilityZones.push_back(std::move(value)); return *this; }
 
     /**
      * <p>Applies to clusters configured with the The list of availability zones to
@@ -369,7 +370,7 @@ namespace Model
      * <p>The IAM role that was specified when the cluster was launched. The EC2
      * instances of the cluster assume this role.</p>
      */
-    inline void SetIamInstanceProfile(Aws::String&& value) { m_iamInstanceProfileHasBeenSet = true; m_iamInstanceProfile = value; }
+    inline void SetIamInstanceProfile(Aws::String&& value) { m_iamInstanceProfileHasBeenSet = true; m_iamInstanceProfile = std::move(value); }
 
     /**
      * <p>The IAM role that was specified when the cluster was launched. The EC2
@@ -387,7 +388,7 @@ namespace Model
      * <p>The IAM role that was specified when the cluster was launched. The EC2
      * instances of the cluster assume this role.</p>
      */
-    inline Ec2InstanceAttributes& WithIamInstanceProfile(Aws::String&& value) { SetIamInstanceProfile(value); return *this;}
+    inline Ec2InstanceAttributes& WithIamInstanceProfile(Aws::String&& value) { SetIamInstanceProfile(std::move(value)); return *this;}
 
     /**
      * <p>The IAM role that was specified when the cluster was launched. The EC2
@@ -408,7 +409,7 @@ namespace Model
     /**
      * <p>The identifier of the Amazon EC2 security group for the master node.</p>
      */
-    inline void SetEmrManagedMasterSecurityGroup(Aws::String&& value) { m_emrManagedMasterSecurityGroupHasBeenSet = true; m_emrManagedMasterSecurityGroup = value; }
+    inline void SetEmrManagedMasterSecurityGroup(Aws::String&& value) { m_emrManagedMasterSecurityGroupHasBeenSet = true; m_emrManagedMasterSecurityGroup = std::move(value); }
 
     /**
      * <p>The identifier of the Amazon EC2 security group for the master node.</p>
@@ -423,7 +424,7 @@ namespace Model
     /**
      * <p>The identifier of the Amazon EC2 security group for the master node.</p>
      */
-    inline Ec2InstanceAttributes& WithEmrManagedMasterSecurityGroup(Aws::String&& value) { SetEmrManagedMasterSecurityGroup(value); return *this;}
+    inline Ec2InstanceAttributes& WithEmrManagedMasterSecurityGroup(Aws::String&& value) { SetEmrManagedMasterSecurityGroup(std::move(value)); return *this;}
 
     /**
      * <p>The identifier of the Amazon EC2 security group for the master node.</p>
@@ -443,7 +444,7 @@ namespace Model
     /**
      * <p>The identifier of the Amazon EC2 security group for the slave nodes.</p>
      */
-    inline void SetEmrManagedSlaveSecurityGroup(Aws::String&& value) { m_emrManagedSlaveSecurityGroupHasBeenSet = true; m_emrManagedSlaveSecurityGroup = value; }
+    inline void SetEmrManagedSlaveSecurityGroup(Aws::String&& value) { m_emrManagedSlaveSecurityGroupHasBeenSet = true; m_emrManagedSlaveSecurityGroup = std::move(value); }
 
     /**
      * <p>The identifier of the Amazon EC2 security group for the slave nodes.</p>
@@ -458,7 +459,7 @@ namespace Model
     /**
      * <p>The identifier of the Amazon EC2 security group for the slave nodes.</p>
      */
-    inline Ec2InstanceAttributes& WithEmrManagedSlaveSecurityGroup(Aws::String&& value) { SetEmrManagedSlaveSecurityGroup(value); return *this;}
+    inline Ec2InstanceAttributes& WithEmrManagedSlaveSecurityGroup(Aws::String&& value) { SetEmrManagedSlaveSecurityGroup(std::move(value)); return *this;}
 
     /**
      * <p>The identifier of the Amazon EC2 security group for the slave nodes.</p>
@@ -481,7 +482,7 @@ namespace Model
      * <p>The identifier of the Amazon EC2 security group for the Amazon EMR service to
      * access clusters in VPC private subnets.</p>
      */
-    inline void SetServiceAccessSecurityGroup(Aws::String&& value) { m_serviceAccessSecurityGroupHasBeenSet = true; m_serviceAccessSecurityGroup = value; }
+    inline void SetServiceAccessSecurityGroup(Aws::String&& value) { m_serviceAccessSecurityGroupHasBeenSet = true; m_serviceAccessSecurityGroup = std::move(value); }
 
     /**
      * <p>The identifier of the Amazon EC2 security group for the Amazon EMR service to
@@ -499,7 +500,7 @@ namespace Model
      * <p>The identifier of the Amazon EC2 security group for the Amazon EMR service to
      * access clusters in VPC private subnets.</p>
      */
-    inline Ec2InstanceAttributes& WithServiceAccessSecurityGroup(Aws::String&& value) { SetServiceAccessSecurityGroup(value); return *this;}
+    inline Ec2InstanceAttributes& WithServiceAccessSecurityGroup(Aws::String&& value) { SetServiceAccessSecurityGroup(std::move(value)); return *this;}
 
     /**
      * <p>The identifier of the Amazon EC2 security group for the Amazon EMR service to
@@ -520,7 +521,7 @@ namespace Model
     /**
      * <p>A list of additional Amazon EC2 security group IDs for the master node.</p>
      */
-    inline void SetAdditionalMasterSecurityGroups(Aws::Vector<Aws::String>&& value) { m_additionalMasterSecurityGroupsHasBeenSet = true; m_additionalMasterSecurityGroups = value; }
+    inline void SetAdditionalMasterSecurityGroups(Aws::Vector<Aws::String>&& value) { m_additionalMasterSecurityGroupsHasBeenSet = true; m_additionalMasterSecurityGroups = std::move(value); }
 
     /**
      * <p>A list of additional Amazon EC2 security group IDs for the master node.</p>
@@ -530,7 +531,7 @@ namespace Model
     /**
      * <p>A list of additional Amazon EC2 security group IDs for the master node.</p>
      */
-    inline Ec2InstanceAttributes& WithAdditionalMasterSecurityGroups(Aws::Vector<Aws::String>&& value) { SetAdditionalMasterSecurityGroups(value); return *this;}
+    inline Ec2InstanceAttributes& WithAdditionalMasterSecurityGroups(Aws::Vector<Aws::String>&& value) { SetAdditionalMasterSecurityGroups(std::move(value)); return *this;}
 
     /**
      * <p>A list of additional Amazon EC2 security group IDs for the master node.</p>
@@ -540,7 +541,7 @@ namespace Model
     /**
      * <p>A list of additional Amazon EC2 security group IDs for the master node.</p>
      */
-    inline Ec2InstanceAttributes& AddAdditionalMasterSecurityGroups(Aws::String&& value) { m_additionalMasterSecurityGroupsHasBeenSet = true; m_additionalMasterSecurityGroups.push_back(value); return *this; }
+    inline Ec2InstanceAttributes& AddAdditionalMasterSecurityGroups(Aws::String&& value) { m_additionalMasterSecurityGroupsHasBeenSet = true; m_additionalMasterSecurityGroups.push_back(std::move(value)); return *this; }
 
     /**
      * <p>A list of additional Amazon EC2 security group IDs for the master node.</p>
@@ -560,7 +561,7 @@ namespace Model
     /**
      * <p>A list of additional Amazon EC2 security group IDs for the slave nodes.</p>
      */
-    inline void SetAdditionalSlaveSecurityGroups(Aws::Vector<Aws::String>&& value) { m_additionalSlaveSecurityGroupsHasBeenSet = true; m_additionalSlaveSecurityGroups = value; }
+    inline void SetAdditionalSlaveSecurityGroups(Aws::Vector<Aws::String>&& value) { m_additionalSlaveSecurityGroupsHasBeenSet = true; m_additionalSlaveSecurityGroups = std::move(value); }
 
     /**
      * <p>A list of additional Amazon EC2 security group IDs for the slave nodes.</p>
@@ -570,7 +571,7 @@ namespace Model
     /**
      * <p>A list of additional Amazon EC2 security group IDs for the slave nodes.</p>
      */
-    inline Ec2InstanceAttributes& WithAdditionalSlaveSecurityGroups(Aws::Vector<Aws::String>&& value) { SetAdditionalSlaveSecurityGroups(value); return *this;}
+    inline Ec2InstanceAttributes& WithAdditionalSlaveSecurityGroups(Aws::Vector<Aws::String>&& value) { SetAdditionalSlaveSecurityGroups(std::move(value)); return *this;}
 
     /**
      * <p>A list of additional Amazon EC2 security group IDs for the slave nodes.</p>
@@ -580,7 +581,7 @@ namespace Model
     /**
      * <p>A list of additional Amazon EC2 security group IDs for the slave nodes.</p>
      */
-    inline Ec2InstanceAttributes& AddAdditionalSlaveSecurityGroups(Aws::String&& value) { m_additionalSlaveSecurityGroupsHasBeenSet = true; m_additionalSlaveSecurityGroups.push_back(value); return *this; }
+    inline Ec2InstanceAttributes& AddAdditionalSlaveSecurityGroups(Aws::String&& value) { m_additionalSlaveSecurityGroupsHasBeenSet = true; m_additionalSlaveSecurityGroups.push_back(std::move(value)); return *this; }
 
     /**
      * <p>A list of additional Amazon EC2 security group IDs for the slave nodes.</p>

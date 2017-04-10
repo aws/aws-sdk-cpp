@@ -16,6 +16,7 @@
 #include <aws/servicecatalog/ServiceCatalog_EXPORTS.h>
 #include <aws/servicecatalog/ServiceCatalogRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -54,7 +55,7 @@ namespace Model
      * follows:</p> <p>"en" (English)</p> <p>"jp" (Japanese)</p> <p>"zh" (Chinese)</p>
      * <p>If no code is specified, "en" is used as the default.</p>
      */
-    inline void SetAcceptLanguage(Aws::String&& value) { m_acceptLanguageHasBeenSet = true; m_acceptLanguage = value; }
+    inline void SetAcceptLanguage(Aws::String&& value) { m_acceptLanguageHasBeenSet = true; m_acceptLanguage = std::move(value); }
 
     /**
      * <p>The language code to use for this operation. Supported language codes are as
@@ -75,7 +76,7 @@ namespace Model
      * follows:</p> <p>"en" (English)</p> <p>"jp" (Japanese)</p> <p>"zh" (Chinese)</p>
      * <p>If no code is specified, "en" is used as the default.</p>
      */
-    inline ListConstraintsForPortfolioRequest& WithAcceptLanguage(Aws::String&& value) { SetAcceptLanguage(value); return *this;}
+    inline ListConstraintsForPortfolioRequest& WithAcceptLanguage(Aws::String&& value) { SetAcceptLanguage(std::move(value)); return *this;}
 
     /**
      * <p>The language code to use for this operation. Supported language codes are as
@@ -97,7 +98,7 @@ namespace Model
     /**
      * <p>The portfolio identifier.</p>
      */
-    inline void SetPortfolioId(Aws::String&& value) { m_portfolioIdHasBeenSet = true; m_portfolioId = value; }
+    inline void SetPortfolioId(Aws::String&& value) { m_portfolioIdHasBeenSet = true; m_portfolioId = std::move(value); }
 
     /**
      * <p>The portfolio identifier.</p>
@@ -112,7 +113,7 @@ namespace Model
     /**
      * <p>The portfolio identifier.</p>
      */
-    inline ListConstraintsForPortfolioRequest& WithPortfolioId(Aws::String&& value) { SetPortfolioId(value); return *this;}
+    inline ListConstraintsForPortfolioRequest& WithPortfolioId(Aws::String&& value) { SetPortfolioId(std::move(value)); return *this;}
 
     /**
      * <p>The portfolio identifier.</p>
@@ -132,7 +133,7 @@ namespace Model
     /**
      * <p>The product identifier.</p>
      */
-    inline void SetProductId(Aws::String&& value) { m_productIdHasBeenSet = true; m_productId = value; }
+    inline void SetProductId(Aws::String&& value) { m_productIdHasBeenSet = true; m_productId = std::move(value); }
 
     /**
      * <p>The product identifier.</p>
@@ -147,7 +148,7 @@ namespace Model
     /**
      * <p>The product identifier.</p>
      */
-    inline ListConstraintsForPortfolioRequest& WithProductId(Aws::String&& value) { SetProductId(value); return *this;}
+    inline ListConstraintsForPortfolioRequest& WithProductId(Aws::String&& value) { SetProductId(std::move(value)); return *this;}
 
     /**
      * <p>The product identifier.</p>
@@ -191,7 +192,7 @@ namespace Model
      * <p>The page token of the first page retrieved. If null, this retrieves the first
      * page of size <code>PageSize</code>.</p>
      */
-    inline void SetPageToken(Aws::String&& value) { m_pageTokenHasBeenSet = true; m_pageToken = value; }
+    inline void SetPageToken(Aws::String&& value) { m_pageTokenHasBeenSet = true; m_pageToken = std::move(value); }
 
     /**
      * <p>The page token of the first page retrieved. If null, this retrieves the first
@@ -209,7 +210,7 @@ namespace Model
      * <p>The page token of the first page retrieved. If null, this retrieves the first
      * page of size <code>PageSize</code>.</p>
      */
-    inline ListConstraintsForPortfolioRequest& WithPageToken(Aws::String&& value) { SetPageToken(value); return *this;}
+    inline ListConstraintsForPortfolioRequest& WithPageToken(Aws::String&& value) { SetPageToken(std::move(value)); return *this;}
 
     /**
      * <p>The page token of the first page retrieved. If null, this retrieves the first

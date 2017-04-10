@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/devicefarm/model/MonetaryAmount.h>
+#include <utility>
 
 namespace Aws
 {
@@ -60,7 +61,7 @@ namespace Model
     /**
      * <p>The status of an offering transaction.</p>
      */
-    inline void SetOfferingStatus(OfferingStatus&& value) { m_offeringStatusHasBeenSet = true; m_offeringStatus = value; }
+    inline void SetOfferingStatus(OfferingStatus&& value) { m_offeringStatusHasBeenSet = true; m_offeringStatus = std::move(value); }
 
     /**
      * <p>The status of an offering transaction.</p>
@@ -70,7 +71,7 @@ namespace Model
     /**
      * <p>The status of an offering transaction.</p>
      */
-    inline OfferingTransaction& WithOfferingStatus(OfferingStatus&& value) { SetOfferingStatus(value); return *this;}
+    inline OfferingTransaction& WithOfferingStatus(OfferingStatus&& value) { SetOfferingStatus(std::move(value)); return *this;}
 
     /**
      * <p>The transaction ID of the offering transaction.</p>
@@ -85,7 +86,7 @@ namespace Model
     /**
      * <p>The transaction ID of the offering transaction.</p>
      */
-    inline void SetTransactionId(Aws::String&& value) { m_transactionIdHasBeenSet = true; m_transactionId = value; }
+    inline void SetTransactionId(Aws::String&& value) { m_transactionIdHasBeenSet = true; m_transactionId = std::move(value); }
 
     /**
      * <p>The transaction ID of the offering transaction.</p>
@@ -100,7 +101,7 @@ namespace Model
     /**
      * <p>The transaction ID of the offering transaction.</p>
      */
-    inline OfferingTransaction& WithTransactionId(Aws::String&& value) { SetTransactionId(value); return *this;}
+    inline OfferingTransaction& WithTransactionId(Aws::String&& value) { SetTransactionId(std::move(value)); return *this;}
 
     /**
      * <p>The transaction ID of the offering transaction.</p>
@@ -120,7 +121,7 @@ namespace Model
     /**
      * <p>The date on which an offering transaction was created.</p>
      */
-    inline void SetCreatedOn(Aws::Utils::DateTime&& value) { m_createdOnHasBeenSet = true; m_createdOn = value; }
+    inline void SetCreatedOn(Aws::Utils::DateTime&& value) { m_createdOnHasBeenSet = true; m_createdOn = std::move(value); }
 
     /**
      * <p>The date on which an offering transaction was created.</p>
@@ -130,7 +131,7 @@ namespace Model
     /**
      * <p>The date on which an offering transaction was created.</p>
      */
-    inline OfferingTransaction& WithCreatedOn(Aws::Utils::DateTime&& value) { SetCreatedOn(value); return *this;}
+    inline OfferingTransaction& WithCreatedOn(Aws::Utils::DateTime&& value) { SetCreatedOn(std::move(value)); return *this;}
 
     /**
      * <p>The cost of an offering transaction.</p>
@@ -145,7 +146,7 @@ namespace Model
     /**
      * <p>The cost of an offering transaction.</p>
      */
-    inline void SetCost(MonetaryAmount&& value) { m_costHasBeenSet = true; m_cost = value; }
+    inline void SetCost(MonetaryAmount&& value) { m_costHasBeenSet = true; m_cost = std::move(value); }
 
     /**
      * <p>The cost of an offering transaction.</p>
@@ -155,7 +156,7 @@ namespace Model
     /**
      * <p>The cost of an offering transaction.</p>
      */
-    inline OfferingTransaction& WithCost(MonetaryAmount&& value) { SetCost(value); return *this;}
+    inline OfferingTransaction& WithCost(MonetaryAmount&& value) { SetCost(std::move(value)); return *this;}
 
   private:
     OfferingStatus m_offeringStatus;

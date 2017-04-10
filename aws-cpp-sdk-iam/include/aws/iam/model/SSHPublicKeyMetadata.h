@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/iam/model/StatusType.h>
 #include <aws/core/utils/DateTime.h>
+#include <utility>
 
 namespace Aws
 {
@@ -63,7 +64,7 @@ namespace Model
     /**
      * <p>The name of the IAM user associated with the SSH public key.</p>
      */
-    inline void SetUserName(Aws::String&& value) { m_userNameHasBeenSet = true; m_userName = value; }
+    inline void SetUserName(Aws::String&& value) { m_userNameHasBeenSet = true; m_userName = std::move(value); }
 
     /**
      * <p>The name of the IAM user associated with the SSH public key.</p>
@@ -78,7 +79,7 @@ namespace Model
     /**
      * <p>The name of the IAM user associated with the SSH public key.</p>
      */
-    inline SSHPublicKeyMetadata& WithUserName(Aws::String&& value) { SetUserName(value); return *this;}
+    inline SSHPublicKeyMetadata& WithUserName(Aws::String&& value) { SetUserName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the IAM user associated with the SSH public key.</p>
@@ -98,7 +99,7 @@ namespace Model
     /**
      * <p>The unique identifier for the SSH public key.</p>
      */
-    inline void SetSSHPublicKeyId(Aws::String&& value) { m_sSHPublicKeyIdHasBeenSet = true; m_sSHPublicKeyId = value; }
+    inline void SetSSHPublicKeyId(Aws::String&& value) { m_sSHPublicKeyIdHasBeenSet = true; m_sSHPublicKeyId = std::move(value); }
 
     /**
      * <p>The unique identifier for the SSH public key.</p>
@@ -113,7 +114,7 @@ namespace Model
     /**
      * <p>The unique identifier for the SSH public key.</p>
      */
-    inline SSHPublicKeyMetadata& WithSSHPublicKeyId(Aws::String&& value) { SetSSHPublicKeyId(value); return *this;}
+    inline SSHPublicKeyMetadata& WithSSHPublicKeyId(Aws::String&& value) { SetSSHPublicKeyId(std::move(value)); return *this;}
 
     /**
      * <p>The unique identifier for the SSH public key.</p>
@@ -139,7 +140,7 @@ namespace Model
      * used for authentication with an AWS CodeCommit repository. <code>Inactive</code>
      * means the key cannot be used.</p>
      */
-    inline void SetStatus(StatusType&& value) { m_statusHasBeenSet = true; m_status = value; }
+    inline void SetStatus(StatusType&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
      * <p>The status of the SSH public key. <code>Active</code> means the key can be
@@ -153,7 +154,7 @@ namespace Model
      * used for authentication with an AWS CodeCommit repository. <code>Inactive</code>
      * means the key cannot be used.</p>
      */
-    inline SSHPublicKeyMetadata& WithStatus(StatusType&& value) { SetStatus(value); return *this;}
+    inline SSHPublicKeyMetadata& WithStatus(StatusType&& value) { SetStatus(std::move(value)); return *this;}
 
     /**
      * <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601
@@ -171,7 +172,7 @@ namespace Model
      * <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601
      * date-time format</a>, when the SSH public key was uploaded.</p>
      */
-    inline void SetUploadDate(Aws::Utils::DateTime&& value) { m_uploadDateHasBeenSet = true; m_uploadDate = value; }
+    inline void SetUploadDate(Aws::Utils::DateTime&& value) { m_uploadDateHasBeenSet = true; m_uploadDate = std::move(value); }
 
     /**
      * <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601
@@ -183,7 +184,7 @@ namespace Model
      * <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601
      * date-time format</a>, when the SSH public key was uploaded.</p>
      */
-    inline SSHPublicKeyMetadata& WithUploadDate(Aws::Utils::DateTime&& value) { SetUploadDate(value); return *this;}
+    inline SSHPublicKeyMetadata& WithUploadDate(Aws::Utils::DateTime&& value) { SetUploadDate(std::move(value)); return *this;}
 
   private:
     Aws::String m_userName;

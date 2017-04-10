@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/swf/SWF_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -57,7 +58,7 @@ namespace Model
     /**
      * <p>The results of the activity task (if any).</p>
      */
-    inline void SetResult(Aws::String&& value) { m_resultHasBeenSet = true; m_result = value; }
+    inline void SetResult(Aws::String&& value) { m_resultHasBeenSet = true; m_result = std::move(value); }
 
     /**
      * <p>The results of the activity task (if any).</p>
@@ -72,7 +73,7 @@ namespace Model
     /**
      * <p>The results of the activity task (if any).</p>
      */
-    inline ActivityTaskCompletedEventAttributes& WithResult(Aws::String&& value) { SetResult(value); return *this;}
+    inline ActivityTaskCompletedEventAttributes& WithResult(Aws::String&& value) { SetResult(std::move(value)); return *this;}
 
     /**
      * <p>The results of the activity task (if any).</p>

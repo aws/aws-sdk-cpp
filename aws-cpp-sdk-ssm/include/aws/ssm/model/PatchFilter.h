@@ -17,6 +17,7 @@
 #include <aws/ssm/model/PatchFilterKey.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -58,7 +59,7 @@ namespace Model
     /**
      * <p>The key for the filter (PRODUCT, CLASSIFICATION, MSRC_SEVERITY, PATCH_ID)</p>
      */
-    inline void SetKey(PatchFilterKey&& value) { m_keyHasBeenSet = true; m_key = value; }
+    inline void SetKey(PatchFilterKey&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
 
     /**
      * <p>The key for the filter (PRODUCT, CLASSIFICATION, MSRC_SEVERITY, PATCH_ID)</p>
@@ -68,7 +69,7 @@ namespace Model
     /**
      * <p>The key for the filter (PRODUCT, CLASSIFICATION, MSRC_SEVERITY, PATCH_ID)</p>
      */
-    inline PatchFilter& WithKey(PatchFilterKey&& value) { SetKey(value); return *this;}
+    inline PatchFilter& WithKey(PatchFilterKey&& value) { SetKey(std::move(value)); return *this;}
 
     /**
      * <p>The value for the filter key.</p>
@@ -83,7 +84,7 @@ namespace Model
     /**
      * <p>The value for the filter key.</p>
      */
-    inline void SetValues(Aws::Vector<Aws::String>&& value) { m_valuesHasBeenSet = true; m_values = value; }
+    inline void SetValues(Aws::Vector<Aws::String>&& value) { m_valuesHasBeenSet = true; m_values = std::move(value); }
 
     /**
      * <p>The value for the filter key.</p>
@@ -93,7 +94,7 @@ namespace Model
     /**
      * <p>The value for the filter key.</p>
      */
-    inline PatchFilter& WithValues(Aws::Vector<Aws::String>&& value) { SetValues(value); return *this;}
+    inline PatchFilter& WithValues(Aws::Vector<Aws::String>&& value) { SetValues(std::move(value)); return *this;}
 
     /**
      * <p>The value for the filter key.</p>
@@ -103,7 +104,7 @@ namespace Model
     /**
      * <p>The value for the filter key.</p>
      */
-    inline PatchFilter& AddValues(Aws::String&& value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
+    inline PatchFilter& AddValues(Aws::String&& value) { m_valuesHasBeenSet = true; m_values.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The value for the filter key.</p>

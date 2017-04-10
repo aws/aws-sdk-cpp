@@ -16,6 +16,7 @@
 #include <aws/redshift/Redshift_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -59,7 +60,7 @@ namespace Model
     /**
      * <p>The DNS address of the Cluster.</p>
      */
-    inline void SetAddress(Aws::String&& value) { m_addressHasBeenSet = true; m_address = value; }
+    inline void SetAddress(Aws::String&& value) { m_addressHasBeenSet = true; m_address = std::move(value); }
 
     /**
      * <p>The DNS address of the Cluster.</p>
@@ -74,7 +75,7 @@ namespace Model
     /**
      * <p>The DNS address of the Cluster.</p>
      */
-    inline Endpoint& WithAddress(Aws::String&& value) { SetAddress(value); return *this;}
+    inline Endpoint& WithAddress(Aws::String&& value) { SetAddress(std::move(value)); return *this;}
 
     /**
      * <p>The DNS address of the Cluster.</p>

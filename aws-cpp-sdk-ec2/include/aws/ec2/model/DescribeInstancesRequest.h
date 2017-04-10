@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/Filter.h>
+#include <utility>
 
 namespace Aws
 {
@@ -79,7 +80,7 @@ namespace Model
     /**
      * <p>One or more instance IDs.</p> <p>Default: Describes all your instances.</p>
      */
-    inline void SetInstanceIds(Aws::Vector<Aws::String>&& value) { m_instanceIdsHasBeenSet = true; m_instanceIds = value; }
+    inline void SetInstanceIds(Aws::Vector<Aws::String>&& value) { m_instanceIdsHasBeenSet = true; m_instanceIds = std::move(value); }
 
     /**
      * <p>One or more instance IDs.</p> <p>Default: Describes all your instances.</p>
@@ -89,7 +90,7 @@ namespace Model
     /**
      * <p>One or more instance IDs.</p> <p>Default: Describes all your instances.</p>
      */
-    inline DescribeInstancesRequest& WithInstanceIds(Aws::Vector<Aws::String>&& value) { SetInstanceIds(value); return *this;}
+    inline DescribeInstancesRequest& WithInstanceIds(Aws::Vector<Aws::String>&& value) { SetInstanceIds(std::move(value)); return *this;}
 
     /**
      * <p>One or more instance IDs.</p> <p>Default: Describes all your instances.</p>
@@ -99,7 +100,7 @@ namespace Model
     /**
      * <p>One or more instance IDs.</p> <p>Default: Describes all your instances.</p>
      */
-    inline DescribeInstancesRequest& AddInstanceIds(Aws::String&& value) { m_instanceIdsHasBeenSet = true; m_instanceIds.push_back(value); return *this; }
+    inline DescribeInstancesRequest& AddInstanceIds(Aws::String&& value) { m_instanceIdsHasBeenSet = true; m_instanceIds.push_back(std::move(value)); return *this; }
 
     /**
      * <p>One or more instance IDs.</p> <p>Default: Describes all your instances.</p>
@@ -620,7 +621,7 @@ namespace Model
      * <code>vpc-id</code> - The ID of the VPC that the instance is running in.</p>
      * </li> </ul>
      */
-    inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = value; }
+    inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
 
     /**
      * <p>One or more filters.</p> <ul> <li> <p> <code>affinity</code> - The affinity
@@ -964,7 +965,7 @@ namespace Model
      * <code>vpc-id</code> - The ID of the VPC that the instance is running in.</p>
      * </li> </ul>
      */
-    inline DescribeInstancesRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(value); return *this;}
+    inline DescribeInstancesRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(std::move(value)); return *this;}
 
     /**
      * <p>One or more filters.</p> <ul> <li> <p> <code>affinity</code> - The affinity
@@ -1308,7 +1309,7 @@ namespace Model
      * <code>vpc-id</code> - The ID of the VPC that the instance is running in.</p>
      * </li> </ul>
      */
-    inline DescribeInstancesRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
+    inline DescribeInstancesRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The token to request the next page of results.</p>
@@ -1323,7 +1324,7 @@ namespace Model
     /**
      * <p>The token to request the next page of results.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
      * <p>The token to request the next page of results.</p>
@@ -1338,7 +1339,7 @@ namespace Model
     /**
      * <p>The token to request the next page of results.</p>
      */
-    inline DescribeInstancesRequest& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline DescribeInstancesRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>The token to request the next page of results.</p>

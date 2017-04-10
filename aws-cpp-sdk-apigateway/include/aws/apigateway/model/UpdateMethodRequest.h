@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/apigateway/model/PatchOperation.h>
+#include <utility>
 
 namespace Aws
 {
@@ -52,7 +53,7 @@ namespace Model
     /**
      * <p>The <a>RestApi</a> identifier for the <a>Method</a> resource.</p>
      */
-    inline void SetRestApiId(Aws::String&& value) { m_restApiIdHasBeenSet = true; m_restApiId = value; }
+    inline void SetRestApiId(Aws::String&& value) { m_restApiIdHasBeenSet = true; m_restApiId = std::move(value); }
 
     /**
      * <p>The <a>RestApi</a> identifier for the <a>Method</a> resource.</p>
@@ -67,7 +68,7 @@ namespace Model
     /**
      * <p>The <a>RestApi</a> identifier for the <a>Method</a> resource.</p>
      */
-    inline UpdateMethodRequest& WithRestApiId(Aws::String&& value) { SetRestApiId(value); return *this;}
+    inline UpdateMethodRequest& WithRestApiId(Aws::String&& value) { SetRestApiId(std::move(value)); return *this;}
 
     /**
      * <p>The <a>RestApi</a> identifier for the <a>Method</a> resource.</p>
@@ -87,7 +88,7 @@ namespace Model
     /**
      * <p>The <a>Resource</a> identifier for the <a>Method</a> resource.</p>
      */
-    inline void SetResourceId(Aws::String&& value) { m_resourceIdHasBeenSet = true; m_resourceId = value; }
+    inline void SetResourceId(Aws::String&& value) { m_resourceIdHasBeenSet = true; m_resourceId = std::move(value); }
 
     /**
      * <p>The <a>Resource</a> identifier for the <a>Method</a> resource.</p>
@@ -102,7 +103,7 @@ namespace Model
     /**
      * <p>The <a>Resource</a> identifier for the <a>Method</a> resource.</p>
      */
-    inline UpdateMethodRequest& WithResourceId(Aws::String&& value) { SetResourceId(value); return *this;}
+    inline UpdateMethodRequest& WithResourceId(Aws::String&& value) { SetResourceId(std::move(value)); return *this;}
 
     /**
      * <p>The <a>Resource</a> identifier for the <a>Method</a> resource.</p>
@@ -122,7 +123,7 @@ namespace Model
     /**
      * <p>The HTTP verb of the <a>Method</a> resource.</p>
      */
-    inline void SetHttpMethod(Aws::String&& value) { m_httpMethodHasBeenSet = true; m_httpMethod = value; }
+    inline void SetHttpMethod(Aws::String&& value) { m_httpMethodHasBeenSet = true; m_httpMethod = std::move(value); }
 
     /**
      * <p>The HTTP verb of the <a>Method</a> resource.</p>
@@ -137,7 +138,7 @@ namespace Model
     /**
      * <p>The HTTP verb of the <a>Method</a> resource.</p>
      */
-    inline UpdateMethodRequest& WithHttpMethod(Aws::String&& value) { SetHttpMethod(value); return *this;}
+    inline UpdateMethodRequest& WithHttpMethod(Aws::String&& value) { SetHttpMethod(std::move(value)); return *this;}
 
     /**
      * <p>The HTTP verb of the <a>Method</a> resource.</p>
@@ -160,7 +161,7 @@ namespace Model
      * <p>A list of update operations to be applied to the specified resource and in
      * the order specified in this list.</p>
      */
-    inline void SetPatchOperations(Aws::Vector<PatchOperation>&& value) { m_patchOperationsHasBeenSet = true; m_patchOperations = value; }
+    inline void SetPatchOperations(Aws::Vector<PatchOperation>&& value) { m_patchOperationsHasBeenSet = true; m_patchOperations = std::move(value); }
 
     /**
      * <p>A list of update operations to be applied to the specified resource and in
@@ -172,7 +173,7 @@ namespace Model
      * <p>A list of update operations to be applied to the specified resource and in
      * the order specified in this list.</p>
      */
-    inline UpdateMethodRequest& WithPatchOperations(Aws::Vector<PatchOperation>&& value) { SetPatchOperations(value); return *this;}
+    inline UpdateMethodRequest& WithPatchOperations(Aws::Vector<PatchOperation>&& value) { SetPatchOperations(std::move(value)); return *this;}
 
     /**
      * <p>A list of update operations to be applied to the specified resource and in
@@ -184,7 +185,7 @@ namespace Model
      * <p>A list of update operations to be applied to the specified resource and in
      * the order specified in this list.</p>
      */
-    inline UpdateMethodRequest& AddPatchOperations(PatchOperation&& value) { m_patchOperationsHasBeenSet = true; m_patchOperations.push_back(value); return *this; }
+    inline UpdateMethodRequest& AddPatchOperations(PatchOperation&& value) { m_patchOperationsHasBeenSet = true; m_patchOperations.push_back(std::move(value)); return *this; }
 
   private:
     Aws::String m_restApiId;

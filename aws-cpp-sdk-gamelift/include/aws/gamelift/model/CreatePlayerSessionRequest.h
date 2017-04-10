@@ -16,6 +16,7 @@
 #include <aws/gamelift/GameLift_EXPORTS.h>
 #include <aws/gamelift/GameLiftRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -51,7 +52,7 @@ namespace Model
     /**
      * <p>Unique identifier for the game session to add a player to.</p>
      */
-    inline void SetGameSessionId(Aws::String&& value) { m_gameSessionIdHasBeenSet = true; m_gameSessionId = value; }
+    inline void SetGameSessionId(Aws::String&& value) { m_gameSessionIdHasBeenSet = true; m_gameSessionId = std::move(value); }
 
     /**
      * <p>Unique identifier for the game session to add a player to.</p>
@@ -66,7 +67,7 @@ namespace Model
     /**
      * <p>Unique identifier for the game session to add a player to.</p>
      */
-    inline CreatePlayerSessionRequest& WithGameSessionId(Aws::String&& value) { SetGameSessionId(value); return *this;}
+    inline CreatePlayerSessionRequest& WithGameSessionId(Aws::String&& value) { SetGameSessionId(std::move(value)); return *this;}
 
     /**
      * <p>Unique identifier for the game session to add a player to.</p>
@@ -86,7 +87,7 @@ namespace Model
     /**
      * <p>Unique identifier for a player. Player IDs are developer-defined.</p>
      */
-    inline void SetPlayerId(Aws::String&& value) { m_playerIdHasBeenSet = true; m_playerId = value; }
+    inline void SetPlayerId(Aws::String&& value) { m_playerIdHasBeenSet = true; m_playerId = std::move(value); }
 
     /**
      * <p>Unique identifier for a player. Player IDs are developer-defined.</p>
@@ -101,7 +102,7 @@ namespace Model
     /**
      * <p>Unique identifier for a player. Player IDs are developer-defined.</p>
      */
-    inline CreatePlayerSessionRequest& WithPlayerId(Aws::String&& value) { SetPlayerId(value); return *this;}
+    inline CreatePlayerSessionRequest& WithPlayerId(Aws::String&& value) { SetPlayerId(std::move(value)); return *this;}
 
     /**
      * <p>Unique identifier for a player. Player IDs are developer-defined.</p>
@@ -124,7 +125,7 @@ namespace Model
      * <p>Developer-defined information related to a player. Amazon GameLift does not
      * use this data, so it can be formatted as needed for use in the game.</p>
      */
-    inline void SetPlayerData(Aws::String&& value) { m_playerDataHasBeenSet = true; m_playerData = value; }
+    inline void SetPlayerData(Aws::String&& value) { m_playerDataHasBeenSet = true; m_playerData = std::move(value); }
 
     /**
      * <p>Developer-defined information related to a player. Amazon GameLift does not
@@ -142,7 +143,7 @@ namespace Model
      * <p>Developer-defined information related to a player. Amazon GameLift does not
      * use this data, so it can be formatted as needed for use in the game.</p>
      */
-    inline CreatePlayerSessionRequest& WithPlayerData(Aws::String&& value) { SetPlayerData(value); return *this;}
+    inline CreatePlayerSessionRequest& WithPlayerData(Aws::String&& value) { SetPlayerData(std::move(value)); return *this;}
 
     /**
      * <p>Developer-defined information related to a player. Amazon GameLift does not

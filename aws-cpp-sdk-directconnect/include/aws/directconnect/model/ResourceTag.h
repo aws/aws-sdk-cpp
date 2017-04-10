@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/directconnect/model/Tag.h>
+#include <utility>
 
 namespace Aws
 {
@@ -59,7 +60,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the Direct Connect resource.</p>
      */
-    inline void SetResourceArn(Aws::String&& value) { m_resourceArnHasBeenSet = true; m_resourceArn = value; }
+    inline void SetResourceArn(Aws::String&& value) { m_resourceArnHasBeenSet = true; m_resourceArn = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Direct Connect resource.</p>
@@ -74,7 +75,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the Direct Connect resource.</p>
      */
-    inline ResourceTag& WithResourceArn(Aws::String&& value) { SetResourceArn(value); return *this;}
+    inline ResourceTag& WithResourceArn(Aws::String&& value) { SetResourceArn(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Direct Connect resource.</p>
@@ -94,7 +95,7 @@ namespace Model
     /**
      * <p>The tags.</p>
      */
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = value; }
+    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
      * <p>The tags.</p>
@@ -104,7 +105,7 @@ namespace Model
     /**
      * <p>The tags.</p>
      */
-    inline ResourceTag& WithTags(Aws::Vector<Tag>&& value) { SetTags(value); return *this;}
+    inline ResourceTag& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
      * <p>The tags.</p>
@@ -114,7 +115,7 @@ namespace Model
     /**
      * <p>The tags.</p>
      */
-    inline ResourceTag& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
+    inline ResourceTag& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
   private:
     Aws::String m_resourceArn;

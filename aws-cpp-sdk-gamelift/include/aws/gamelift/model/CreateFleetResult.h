@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/gamelift/GameLift_EXPORTS.h>
 #include <aws/gamelift/model/FleetAttributes.h>
+#include <utility>
 
 namespace Aws
 {
@@ -58,7 +59,7 @@ namespace Model
     /**
      * <p>Properties for the newly created fleet.</p>
      */
-    inline void SetFleetAttributes(FleetAttributes&& value) { m_fleetAttributes = value; }
+    inline void SetFleetAttributes(FleetAttributes&& value) { m_fleetAttributes = std::move(value); }
 
     /**
      * <p>Properties for the newly created fleet.</p>
@@ -68,7 +69,7 @@ namespace Model
     /**
      * <p>Properties for the newly created fleet.</p>
      */
-    inline CreateFleetResult& WithFleetAttributes(FleetAttributes&& value) { SetFleetAttributes(value); return *this;}
+    inline CreateFleetResult& WithFleetAttributes(FleetAttributes&& value) { SetFleetAttributes(std::move(value)); return *this;}
 
   private:
     FleetAttributes m_fleetAttributes;

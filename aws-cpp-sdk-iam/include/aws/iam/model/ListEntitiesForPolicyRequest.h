@@ -17,6 +17,7 @@
 #include <aws/iam/IAMRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/iam/model/EntityType.h>
+#include <utility>
 
 namespace Aws
 {
@@ -63,7 +64,7 @@ namespace Model
      * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
      * Reference</i>.</p>
      */
-    inline void SetPolicyArn(Aws::String&& value) { m_policyArnHasBeenSet = true; m_policyArn = value; }
+    inline void SetPolicyArn(Aws::String&& value) { m_policyArnHasBeenSet = true; m_policyArn = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM policy for which you want the
@@ -90,7 +91,7 @@ namespace Model
      * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
      * Reference</i>.</p>
      */
-    inline ListEntitiesForPolicyRequest& WithPolicyArn(Aws::String&& value) { SetPolicyArn(value); return *this;}
+    inline ListEntitiesForPolicyRequest& WithPolicyArn(Aws::String&& value) { SetPolicyArn(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM policy for which you want the
@@ -126,7 +127,7 @@ namespace Model
      * included, all attached entities (users, groups, and roles) are returned. The
      * argument for this parameter must be one of the valid values listed below.</p>
      */
-    inline void SetEntityFilter(EntityType&& value) { m_entityFilterHasBeenSet = true; m_entityFilter = value; }
+    inline void SetEntityFilter(EntityType&& value) { m_entityFilterHasBeenSet = true; m_entityFilter = std::move(value); }
 
     /**
      * <p>The entity type to use for filtering the results.</p> <p>For example, when
@@ -144,7 +145,7 @@ namespace Model
      * included, all attached entities (users, groups, and roles) are returned. The
      * argument for this parameter must be one of the valid values listed below.</p>
      */
-    inline ListEntitiesForPolicyRequest& WithEntityFilter(EntityType&& value) { SetEntityFilter(value); return *this;}
+    inline ListEntitiesForPolicyRequest& WithEntityFilter(EntityType&& value) { SetEntityFilter(std::move(value)); return *this;}
 
     /**
      * <p>The path prefix for filtering the results. This parameter is optional. If it
@@ -177,7 +178,7 @@ namespace Model
      * ASCII character from the ! (\u0021) thru the DEL character (\u007F), including
      * most punctuation characters, digits, and upper and lowercased letters.</p>
      */
-    inline void SetPathPrefix(Aws::String&& value) { m_pathPrefixHasBeenSet = true; m_pathPrefix = value; }
+    inline void SetPathPrefix(Aws::String&& value) { m_pathPrefixHasBeenSet = true; m_pathPrefix = std::move(value); }
 
     /**
      * <p>The path prefix for filtering the results. This parameter is optional. If it
@@ -210,7 +211,7 @@ namespace Model
      * ASCII character from the ! (\u0021) thru the DEL character (\u007F), including
      * most punctuation characters, digits, and upper and lowercased letters.</p>
      */
-    inline ListEntitiesForPolicyRequest& WithPathPrefix(Aws::String&& value) { SetPathPrefix(value); return *this;}
+    inline ListEntitiesForPolicyRequest& WithPathPrefix(Aws::String&& value) { SetPathPrefix(std::move(value)); return *this;}
 
     /**
      * <p>The path prefix for filtering the results. This parameter is optional. If it
@@ -245,7 +246,7 @@ namespace Model
      * <code>Marker</code> element in the response that you received to indicate where
      * the next call should start.</p>
      */
-    inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = value; }
+    inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = std::move(value); }
 
     /**
      * <p>Use this parameter only when paginating results and only after you receive a
@@ -269,7 +270,7 @@ namespace Model
      * <code>Marker</code> element in the response that you received to indicate where
      * the next call should start.</p>
      */
-    inline ListEntitiesForPolicyRequest& WithMarker(Aws::String&& value) { SetMarker(value); return *this;}
+    inline ListEntitiesForPolicyRequest& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
 
     /**
      * <p>Use this parameter only when paginating results and only after you receive a

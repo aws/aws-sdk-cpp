@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/opsworkscm/OpsWorksCM_EXPORTS.h>
 #include <aws/opsworkscm/model/Backup.h>
+#include <utility>
 
 namespace Aws
 {
@@ -52,7 +53,7 @@ namespace Model
     /**
      * <p>Backup created by request.</p>
      */
-    inline void SetBackup(Backup&& value) { m_backup = value; }
+    inline void SetBackup(Backup&& value) { m_backup = std::move(value); }
 
     /**
      * <p>Backup created by request.</p>
@@ -62,7 +63,7 @@ namespace Model
     /**
      * <p>Backup created by request.</p>
      */
-    inline CreateBackupResult& WithBackup(Backup&& value) { SetBackup(value); return *this;}
+    inline CreateBackupResult& WithBackup(Backup&& value) { SetBackup(std::move(value)); return *this;}
 
   private:
     Backup m_backup;

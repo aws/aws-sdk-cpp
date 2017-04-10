@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/opsworkscm/OpsWorksCM_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -71,7 +72,7 @@ namespace Model
      * number of backups allowed. By default, you can have a maximum of 50 manual
      * backups saved. </p> </li> </ul>
      */
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p> The attribute name. The following are supported attribute names. </p> <ul>
@@ -101,7 +102,7 @@ namespace Model
      * number of backups allowed. By default, you can have a maximum of 50 manual
      * backups saved. </p> </li> </ul>
      */
-    inline AccountAttribute& WithName(Aws::String&& value) { SetName(value); return *this;}
+    inline AccountAttribute& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p> The attribute name. The following are supported attribute names. </p> <ul>

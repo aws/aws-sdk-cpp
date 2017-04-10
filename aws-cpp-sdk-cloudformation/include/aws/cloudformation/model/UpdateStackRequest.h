@@ -20,6 +20,7 @@
 #include <aws/cloudformation/model/Parameter.h>
 #include <aws/cloudformation/model/Capability.h>
 #include <aws/cloudformation/model/Tag.h>
+#include <utility>
 
 namespace Aws
 {
@@ -57,7 +58,7 @@ namespace Model
     /**
      * <p>The name or unique stack ID of the stack to update.</p>
      */
-    inline void SetStackName(Aws::String&& value) { m_stackNameHasBeenSet = true; m_stackName = value; }
+    inline void SetStackName(Aws::String&& value) { m_stackNameHasBeenSet = true; m_stackName = std::move(value); }
 
     /**
      * <p>The name or unique stack ID of the stack to update.</p>
@@ -72,7 +73,7 @@ namespace Model
     /**
      * <p>The name or unique stack ID of the stack to update.</p>
      */
-    inline UpdateStackRequest& WithStackName(Aws::String&& value) { SetStackName(value); return *this;}
+    inline UpdateStackRequest& WithStackName(Aws::String&& value) { SetStackName(std::move(value)); return *this;}
 
     /**
      * <p>The name or unique stack ID of the stack to update.</p>
@@ -107,7 +108,7 @@ namespace Model
      * specify either the <code>TemplateBody</code> or the <code>TemplateURL</code>
      * parameter, but not both.</p>
      */
-    inline void SetTemplateBody(Aws::String&& value) { m_templateBodyHasBeenSet = true; m_templateBody = value; }
+    inline void SetTemplateBody(Aws::String&& value) { m_templateBodyHasBeenSet = true; m_templateBody = std::move(value); }
 
     /**
      * <p>Structure containing the template body with a minimum length of 1 byte and a
@@ -137,7 +138,7 @@ namespace Model
      * specify either the <code>TemplateBody</code> or the <code>TemplateURL</code>
      * parameter, but not both.</p>
      */
-    inline UpdateStackRequest& WithTemplateBody(Aws::String&& value) { SetTemplateBody(value); return *this;}
+    inline UpdateStackRequest& WithTemplateBody(Aws::String&& value) { SetTemplateBody(std::move(value)); return *this;}
 
     /**
      * <p>Structure containing the template body with a minimum length of 1 byte and a
@@ -177,7 +178,7 @@ namespace Model
      * specify either the <code>TemplateBody</code> or the <code>TemplateURL</code>
      * parameter, but not both.</p>
      */
-    inline void SetTemplateURL(Aws::String&& value) { m_templateURLHasBeenSet = true; m_templateURL = value; }
+    inline void SetTemplateURL(Aws::String&& value) { m_templateURLHasBeenSet = true; m_templateURL = std::move(value); }
 
     /**
      * <p>Location of file containing the template body. The URL must point to a
@@ -207,7 +208,7 @@ namespace Model
      * specify either the <code>TemplateBody</code> or the <code>TemplateURL</code>
      * parameter, but not both.</p>
      */
-    inline UpdateStackRequest& WithTemplateURL(Aws::String&& value) { SetTemplateURL(value); return *this;}
+    inline UpdateStackRequest& WithTemplateURL(Aws::String&& value) { SetTemplateURL(std::move(value)); return *this;}
 
     /**
      * <p>Location of file containing the template body. The URL must point to a
@@ -265,7 +266,7 @@ namespace Model
      * during this update. If you do not specify a stack policy, the current policy
      * that is associated with the stack will be used.</p>
      */
-    inline void SetStackPolicyDuringUpdateBody(Aws::String&& value) { m_stackPolicyDuringUpdateBodyHasBeenSet = true; m_stackPolicyDuringUpdateBody = value; }
+    inline void SetStackPolicyDuringUpdateBody(Aws::String&& value) { m_stackPolicyDuringUpdateBodyHasBeenSet = true; m_stackPolicyDuringUpdateBody = std::move(value); }
 
     /**
      * <p>Structure containing the temporary overriding stack policy body. You can
@@ -295,7 +296,7 @@ namespace Model
      * during this update. If you do not specify a stack policy, the current policy
      * that is associated with the stack will be used.</p>
      */
-    inline UpdateStackRequest& WithStackPolicyDuringUpdateBody(Aws::String&& value) { SetStackPolicyDuringUpdateBody(value); return *this;}
+    inline UpdateStackRequest& WithStackPolicyDuringUpdateBody(Aws::String&& value) { SetStackPolicyDuringUpdateBody(std::move(value)); return *this;}
 
     /**
      * <p>Structure containing the temporary overriding stack policy body. You can
@@ -341,7 +342,7 @@ namespace Model
      * during this update. If you do not specify a stack policy, the current policy
      * that is associated with the stack will be used.</p>
      */
-    inline void SetStackPolicyDuringUpdateURL(Aws::String&& value) { m_stackPolicyDuringUpdateURLHasBeenSet = true; m_stackPolicyDuringUpdateURL = value; }
+    inline void SetStackPolicyDuringUpdateURL(Aws::String&& value) { m_stackPolicyDuringUpdateURLHasBeenSet = true; m_stackPolicyDuringUpdateURL = std::move(value); }
 
     /**
      * <p>Location of a file containing the temporary overriding stack policy. The URL
@@ -377,7 +378,7 @@ namespace Model
      * during this update. If you do not specify a stack policy, the current policy
      * that is associated with the stack will be used.</p>
      */
-    inline UpdateStackRequest& WithStackPolicyDuringUpdateURL(Aws::String&& value) { SetStackPolicyDuringUpdateURL(value); return *this;}
+    inline UpdateStackRequest& WithStackPolicyDuringUpdateURL(Aws::String&& value) { SetStackPolicyDuringUpdateURL(std::move(value)); return *this;}
 
     /**
      * <p>Location of a file containing the temporary overriding stack policy. The URL
@@ -413,7 +414,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_Parameter.html">Parameter</a>
      * data type.</p>
      */
-    inline void SetParameters(Aws::Vector<Parameter>&& value) { m_parametersHasBeenSet = true; m_parameters = value; }
+    inline void SetParameters(Aws::Vector<Parameter>&& value) { m_parametersHasBeenSet = true; m_parameters = std::move(value); }
 
     /**
      * <p>A list of <code>Parameter</code> structures that specify input parameters for
@@ -429,7 +430,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_Parameter.html">Parameter</a>
      * data type.</p>
      */
-    inline UpdateStackRequest& WithParameters(Aws::Vector<Parameter>&& value) { SetParameters(value); return *this;}
+    inline UpdateStackRequest& WithParameters(Aws::Vector<Parameter>&& value) { SetParameters(std::move(value)); return *this;}
 
     /**
      * <p>A list of <code>Parameter</code> structures that specify input parameters for
@@ -445,7 +446,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_Parameter.html">Parameter</a>
      * data type.</p>
      */
-    inline UpdateStackRequest& AddParameters(Parameter&& value) { m_parametersHasBeenSet = true; m_parameters.push_back(value); return *this; }
+    inline UpdateStackRequest& AddParameters(Parameter&& value) { m_parametersHasBeenSet = true; m_parameters.push_back(std::move(value)); return *this; }
 
     /**
      * <p>A list of values that you must specify before AWS CloudFormation can update
@@ -544,7 +545,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging
      * IAM Resources in AWS CloudFormation Templates</a>.</p>
      */
-    inline void SetCapabilities(Aws::Vector<Capability>&& value) { m_capabilitiesHasBeenSet = true; m_capabilities = value; }
+    inline void SetCapabilities(Aws::Vector<Capability>&& value) { m_capabilitiesHasBeenSet = true; m_capabilities = std::move(value); }
 
     /**
      * <p>A list of values that you must specify before AWS CloudFormation can update
@@ -610,7 +611,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging
      * IAM Resources in AWS CloudFormation Templates</a>.</p>
      */
-    inline UpdateStackRequest& WithCapabilities(Aws::Vector<Capability>&& value) { SetCapabilities(value); return *this;}
+    inline UpdateStackRequest& WithCapabilities(Aws::Vector<Capability>&& value) { SetCapabilities(std::move(value)); return *this;}
 
     /**
      * <p>A list of values that you must specify before AWS CloudFormation can update
@@ -676,7 +677,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging
      * IAM Resources in AWS CloudFormation Templates</a>.</p>
      */
-    inline UpdateStackRequest& AddCapabilities(Capability&& value) { m_capabilitiesHasBeenSet = true; m_capabilities.push_back(value); return *this; }
+    inline UpdateStackRequest& AddCapabilities(Capability&& value) { m_capabilitiesHasBeenSet = true; m_capabilities.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The template resource types that you have permissions to work with for this
@@ -718,7 +719,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html">Controlling
      * Access with AWS Identity and Access Management</a>.</p>
      */
-    inline void SetResourceTypes(Aws::Vector<Aws::String>&& value) { m_resourceTypesHasBeenSet = true; m_resourceTypes = value; }
+    inline void SetResourceTypes(Aws::Vector<Aws::String>&& value) { m_resourceTypesHasBeenSet = true; m_resourceTypes = std::move(value); }
 
     /**
      * <p>The template resource types that you have permissions to work with for this
@@ -746,7 +747,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html">Controlling
      * Access with AWS Identity and Access Management</a>.</p>
      */
-    inline UpdateStackRequest& WithResourceTypes(Aws::Vector<Aws::String>&& value) { SetResourceTypes(value); return *this;}
+    inline UpdateStackRequest& WithResourceTypes(Aws::Vector<Aws::String>&& value) { SetResourceTypes(std::move(value)); return *this;}
 
     /**
      * <p>The template resource types that you have permissions to work with for this
@@ -774,7 +775,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html">Controlling
      * Access with AWS Identity and Access Management</a>.</p>
      */
-    inline UpdateStackRequest& AddResourceTypes(Aws::String&& value) { m_resourceTypesHasBeenSet = true; m_resourceTypes.push_back(value); return *this; }
+    inline UpdateStackRequest& AddResourceTypes(Aws::String&& value) { m_resourceTypesHasBeenSet = true; m_resourceTypes.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The template resource types that you have permissions to work with for this
@@ -830,7 +831,7 @@ namespace Model
      * CloudFormation uses a temporary session that is generated from your user
      * credentials.</p>
      */
-    inline void SetRoleARN(Aws::String&& value) { m_roleARNHasBeenSet = true; m_roleARN = value; }
+    inline void SetRoleARN(Aws::String&& value) { m_roleARNHasBeenSet = true; m_roleARN = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of an AWS Identity and Access Management (IAM)
@@ -872,7 +873,7 @@ namespace Model
      * CloudFormation uses a temporary session that is generated from your user
      * credentials.</p>
      */
-    inline UpdateStackRequest& WithRoleARN(Aws::String&& value) { SetRoleARN(value); return *this;}
+    inline UpdateStackRequest& WithRoleARN(Aws::String&& value) { SetRoleARN(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of an AWS Identity and Access Management (IAM)
@@ -916,7 +917,7 @@ namespace Model
      * specify a stack policy, the current policy that is associated with the stack is
      * unchanged.</p>
      */
-    inline void SetStackPolicyBody(Aws::String&& value) { m_stackPolicyBodyHasBeenSet = true; m_stackPolicyBody = value; }
+    inline void SetStackPolicyBody(Aws::String&& value) { m_stackPolicyBodyHasBeenSet = true; m_stackPolicyBody = std::move(value); }
 
     /**
      * <p>Structure containing a new stack policy body. You can specify either the
@@ -946,7 +947,7 @@ namespace Model
      * specify a stack policy, the current policy that is associated with the stack is
      * unchanged.</p>
      */
-    inline UpdateStackRequest& WithStackPolicyBody(Aws::String&& value) { SetStackPolicyBody(value); return *this;}
+    inline UpdateStackRequest& WithStackPolicyBody(Aws::String&& value) { SetStackPolicyBody(std::move(value)); return *this;}
 
     /**
      * <p>Structure containing a new stack policy body. You can specify either the
@@ -989,7 +990,7 @@ namespace Model
      * during a stack update. If you do not specify a stack policy, the current policy
      * that is associated with the stack is unchanged.</p>
      */
-    inline void SetStackPolicyURL(Aws::String&& value) { m_stackPolicyURLHasBeenSet = true; m_stackPolicyURL = value; }
+    inline void SetStackPolicyURL(Aws::String&& value) { m_stackPolicyURLHasBeenSet = true; m_stackPolicyURL = std::move(value); }
 
     /**
      * <p>Location of a file containing the updated stack policy. The URL must point to
@@ -1022,7 +1023,7 @@ namespace Model
      * during a stack update. If you do not specify a stack policy, the current policy
      * that is associated with the stack is unchanged.</p>
      */
-    inline UpdateStackRequest& WithStackPolicyURL(Aws::String&& value) { SetStackPolicyURL(value); return *this;}
+    inline UpdateStackRequest& WithStackPolicyURL(Aws::String&& value) { SetStackPolicyURL(std::move(value)); return *this;}
 
     /**
      * <p>Location of a file containing the updated stack policy. The URL must point to
@@ -1054,7 +1055,7 @@ namespace Model
      * AWS CloudFormation associates with the stack. Specify an empty list to remove
      * all notification topics.</p>
      */
-    inline void SetNotificationARNs(Aws::Vector<Aws::String>&& value) { m_notificationARNsHasBeenSet = true; m_notificationARNs = value; }
+    inline void SetNotificationARNs(Aws::Vector<Aws::String>&& value) { m_notificationARNsHasBeenSet = true; m_notificationARNs = std::move(value); }
 
     /**
      * <p>Amazon Simple Notification Service topic Amazon Resource Names (ARNs) that
@@ -1068,7 +1069,7 @@ namespace Model
      * AWS CloudFormation associates with the stack. Specify an empty list to remove
      * all notification topics.</p>
      */
-    inline UpdateStackRequest& WithNotificationARNs(Aws::Vector<Aws::String>&& value) { SetNotificationARNs(value); return *this;}
+    inline UpdateStackRequest& WithNotificationARNs(Aws::Vector<Aws::String>&& value) { SetNotificationARNs(std::move(value)); return *this;}
 
     /**
      * <p>Amazon Simple Notification Service topic Amazon Resource Names (ARNs) that
@@ -1082,7 +1083,7 @@ namespace Model
      * AWS CloudFormation associates with the stack. Specify an empty list to remove
      * all notification topics.</p>
      */
-    inline UpdateStackRequest& AddNotificationARNs(Aws::String&& value) { m_notificationARNsHasBeenSet = true; m_notificationARNs.push_back(value); return *this; }
+    inline UpdateStackRequest& AddNotificationARNs(Aws::String&& value) { m_notificationARNsHasBeenSet = true; m_notificationARNs.push_back(std::move(value)); return *this; }
 
     /**
      * <p>Amazon Simple Notification Service topic Amazon Resource Names (ARNs) that
@@ -1116,7 +1117,7 @@ namespace Model
      * CloudFormation doesn't modify the stack's tags. If you specify an empty value,
      * AWS CloudFormation removes all associated tags.</p>
      */
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = value; }
+    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
      * <p>Key-value pairs to associate with this stack. AWS CloudFormation also
@@ -1134,7 +1135,7 @@ namespace Model
      * CloudFormation doesn't modify the stack's tags. If you specify an empty value,
      * AWS CloudFormation removes all associated tags.</p>
      */
-    inline UpdateStackRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(value); return *this;}
+    inline UpdateStackRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
      * <p>Key-value pairs to associate with this stack. AWS CloudFormation also
@@ -1152,7 +1153,7 @@ namespace Model
      * CloudFormation doesn't modify the stack's tags. If you specify an empty value,
      * AWS CloudFormation removes all associated tags.</p>
      */
-    inline UpdateStackRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
+    inline UpdateStackRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
   private:
     Aws::String m_stackName;

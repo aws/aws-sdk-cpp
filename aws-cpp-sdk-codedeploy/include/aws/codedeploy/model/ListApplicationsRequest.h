@@ -16,6 +16,7 @@
 #include <aws/codedeploy/CodeDeploy_EXPORTS.h>
 #include <aws/codedeploy/CodeDeployRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -55,7 +56,7 @@ namespace Model
      * <p>An identifier returned from the previous list applications call. It can be
      * used to return the next set of applications in the list.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
      * <p>An identifier returned from the previous list applications call. It can be
@@ -73,7 +74,7 @@ namespace Model
      * <p>An identifier returned from the previous list applications call. It can be
      * used to return the next set of applications in the list.</p>
      */
-    inline ListApplicationsRequest& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline ListApplicationsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>An identifier returned from the previous list applications call. It can be

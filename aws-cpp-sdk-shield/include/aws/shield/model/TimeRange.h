@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/shield/Shield_EXPORTS.h>
 #include <aws/core/utils/DateTime.h>
+#include <utility>
 
 namespace Aws
 {
@@ -56,7 +57,7 @@ namespace Model
     /**
      * <p>The start time, in the format 2016-12-16T13:50Z.</p>
      */
-    inline void SetFromInclusive(Aws::Utils::DateTime&& value) { m_fromInclusiveHasBeenSet = true; m_fromInclusive = value; }
+    inline void SetFromInclusive(Aws::Utils::DateTime&& value) { m_fromInclusiveHasBeenSet = true; m_fromInclusive = std::move(value); }
 
     /**
      * <p>The start time, in the format 2016-12-16T13:50Z.</p>
@@ -66,7 +67,7 @@ namespace Model
     /**
      * <p>The start time, in the format 2016-12-16T13:50Z.</p>
      */
-    inline TimeRange& WithFromInclusive(Aws::Utils::DateTime&& value) { SetFromInclusive(value); return *this;}
+    inline TimeRange& WithFromInclusive(Aws::Utils::DateTime&& value) { SetFromInclusive(std::move(value)); return *this;}
 
     /**
      * <p>The end time, in the format 2016-12-16T15:50Z.</p>
@@ -81,7 +82,7 @@ namespace Model
     /**
      * <p>The end time, in the format 2016-12-16T15:50Z.</p>
      */
-    inline void SetToExclusive(Aws::Utils::DateTime&& value) { m_toExclusiveHasBeenSet = true; m_toExclusive = value; }
+    inline void SetToExclusive(Aws::Utils::DateTime&& value) { m_toExclusiveHasBeenSet = true; m_toExclusive = std::move(value); }
 
     /**
      * <p>The end time, in the format 2016-12-16T15:50Z.</p>
@@ -91,7 +92,7 @@ namespace Model
     /**
      * <p>The end time, in the format 2016-12-16T15:50Z.</p>
      */
-    inline TimeRange& WithToExclusive(Aws::Utils::DateTime&& value) { SetToExclusive(value); return *this;}
+    inline TimeRange& WithToExclusive(Aws::Utils::DateTime&& value) { SetToExclusive(std::move(value)); return *this;}
 
   private:
     Aws::Utils::DateTime m_fromInclusive;

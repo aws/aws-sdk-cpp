@@ -16,6 +16,7 @@
 #include <aws/waf/WAF_EXPORTS.h>
 #include <aws/waf/model/PredicateType.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -112,7 +113,7 @@ namespace Model
      * <p>The type of predicate in a <code>Rule</code>, such as
      * <code>ByteMatchSet</code> or <code>IPSet</code>.</p>
      */
-    inline void SetType(PredicateType&& value) { m_typeHasBeenSet = true; m_type = value; }
+    inline void SetType(PredicateType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
      * <p>The type of predicate in a <code>Rule</code>, such as
@@ -124,7 +125,7 @@ namespace Model
      * <p>The type of predicate in a <code>Rule</code>, such as
      * <code>ByteMatchSet</code> or <code>IPSet</code>.</p>
      */
-    inline Predicate& WithType(PredicateType&& value) { SetType(value); return *this;}
+    inline Predicate& WithType(PredicateType&& value) { SetType(std::move(value)); return *this;}
 
     /**
      * <p>A unique identifier for a predicate in a <code>Rule</code>, such as
@@ -145,7 +146,7 @@ namespace Model
      * <code>ByteMatchSetId</code> or <code>IPSetId</code>. The ID is returned by the
      * corresponding <code>Create</code> or <code>List</code> command.</p>
      */
-    inline void SetDataId(Aws::String&& value) { m_dataIdHasBeenSet = true; m_dataId = value; }
+    inline void SetDataId(Aws::String&& value) { m_dataIdHasBeenSet = true; m_dataId = std::move(value); }
 
     /**
      * <p>A unique identifier for a predicate in a <code>Rule</code>, such as
@@ -166,7 +167,7 @@ namespace Model
      * <code>ByteMatchSetId</code> or <code>IPSetId</code>. The ID is returned by the
      * corresponding <code>Create</code> or <code>List</code> command.</p>
      */
-    inline Predicate& WithDataId(Aws::String&& value) { SetDataId(value); return *this;}
+    inline Predicate& WithDataId(Aws::String&& value) { SetDataId(std::move(value)); return *this;}
 
     /**
      * <p>A unique identifier for a predicate in a <code>Rule</code>, such as

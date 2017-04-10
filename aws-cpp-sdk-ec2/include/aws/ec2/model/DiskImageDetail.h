@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/ec2/model/DiskImageFormat.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -60,7 +61,7 @@ namespace Model
     /**
      * <p>The disk image format.</p>
      */
-    inline void SetFormat(DiskImageFormat&& value) { m_formatHasBeenSet = true; m_format = value; }
+    inline void SetFormat(DiskImageFormat&& value) { m_formatHasBeenSet = true; m_format = std::move(value); }
 
     /**
      * <p>The disk image format.</p>
@@ -70,7 +71,7 @@ namespace Model
     /**
      * <p>The disk image format.</p>
      */
-    inline DiskImageDetail& WithFormat(DiskImageFormat&& value) { SetFormat(value); return *this;}
+    inline DiskImageDetail& WithFormat(DiskImageFormat&& value) { SetFormat(std::move(value)); return *this;}
 
     /**
      * <p>The size of the disk image, in GiB.</p>
@@ -127,7 +128,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/manifest.html">VM
      * Import Manifest</a>.</p>
      */
-    inline void SetImportManifestUrl(Aws::String&& value) { m_importManifestUrlHasBeenSet = true; m_importManifestUrl = value; }
+    inline void SetImportManifestUrl(Aws::String&& value) { m_importManifestUrlHasBeenSet = true; m_importManifestUrl = std::move(value); }
 
     /**
      * <p>A presigned URL for the import manifest stored in Amazon S3 and presented
@@ -169,7 +170,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/manifest.html">VM
      * Import Manifest</a>.</p>
      */
-    inline DiskImageDetail& WithImportManifestUrl(Aws::String&& value) { SetImportManifestUrl(value); return *this;}
+    inline DiskImageDetail& WithImportManifestUrl(Aws::String&& value) { SetImportManifestUrl(std::move(value)); return *this;}
 
     /**
      * <p>A presigned URL for the import manifest stored in Amazon S3 and presented

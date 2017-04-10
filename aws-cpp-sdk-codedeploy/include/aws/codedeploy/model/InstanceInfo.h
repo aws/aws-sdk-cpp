@@ -18,6 +18,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/codedeploy/model/Tag.h>
+#include <utility>
 
 namespace Aws
 {
@@ -59,7 +60,7 @@ namespace Model
     /**
      * <p>The name of the on-premises instance.</p>
      */
-    inline void SetInstanceName(Aws::String&& value) { m_instanceNameHasBeenSet = true; m_instanceName = value; }
+    inline void SetInstanceName(Aws::String&& value) { m_instanceNameHasBeenSet = true; m_instanceName = std::move(value); }
 
     /**
      * <p>The name of the on-premises instance.</p>
@@ -74,7 +75,7 @@ namespace Model
     /**
      * <p>The name of the on-premises instance.</p>
      */
-    inline InstanceInfo& WithInstanceName(Aws::String&& value) { SetInstanceName(value); return *this;}
+    inline InstanceInfo& WithInstanceName(Aws::String&& value) { SetInstanceName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the on-premises instance.</p>
@@ -94,7 +95,7 @@ namespace Model
     /**
      * <p>The ARN of the IAM session associated with the on-premises instance.</p>
      */
-    inline void SetIamSessionArn(Aws::String&& value) { m_iamSessionArnHasBeenSet = true; m_iamSessionArn = value; }
+    inline void SetIamSessionArn(Aws::String&& value) { m_iamSessionArnHasBeenSet = true; m_iamSessionArn = std::move(value); }
 
     /**
      * <p>The ARN of the IAM session associated with the on-premises instance.</p>
@@ -109,7 +110,7 @@ namespace Model
     /**
      * <p>The ARN of the IAM session associated with the on-premises instance.</p>
      */
-    inline InstanceInfo& WithIamSessionArn(Aws::String&& value) { SetIamSessionArn(value); return *this;}
+    inline InstanceInfo& WithIamSessionArn(Aws::String&& value) { SetIamSessionArn(std::move(value)); return *this;}
 
     /**
      * <p>The ARN of the IAM session associated with the on-premises instance.</p>
@@ -129,7 +130,7 @@ namespace Model
     /**
      * <p>The IAM user ARN associated with the on-premises instance.</p>
      */
-    inline void SetIamUserArn(Aws::String&& value) { m_iamUserArnHasBeenSet = true; m_iamUserArn = value; }
+    inline void SetIamUserArn(Aws::String&& value) { m_iamUserArnHasBeenSet = true; m_iamUserArn = std::move(value); }
 
     /**
      * <p>The IAM user ARN associated with the on-premises instance.</p>
@@ -144,7 +145,7 @@ namespace Model
     /**
      * <p>The IAM user ARN associated with the on-premises instance.</p>
      */
-    inline InstanceInfo& WithIamUserArn(Aws::String&& value) { SetIamUserArn(value); return *this;}
+    inline InstanceInfo& WithIamUserArn(Aws::String&& value) { SetIamUserArn(std::move(value)); return *this;}
 
     /**
      * <p>The IAM user ARN associated with the on-premises instance.</p>
@@ -164,7 +165,7 @@ namespace Model
     /**
      * <p>The ARN of the on-premises instance.</p>
      */
-    inline void SetInstanceArn(Aws::String&& value) { m_instanceArnHasBeenSet = true; m_instanceArn = value; }
+    inline void SetInstanceArn(Aws::String&& value) { m_instanceArnHasBeenSet = true; m_instanceArn = std::move(value); }
 
     /**
      * <p>The ARN of the on-premises instance.</p>
@@ -179,7 +180,7 @@ namespace Model
     /**
      * <p>The ARN of the on-premises instance.</p>
      */
-    inline InstanceInfo& WithInstanceArn(Aws::String&& value) { SetInstanceArn(value); return *this;}
+    inline InstanceInfo& WithInstanceArn(Aws::String&& value) { SetInstanceArn(std::move(value)); return *this;}
 
     /**
      * <p>The ARN of the on-premises instance.</p>
@@ -199,7 +200,7 @@ namespace Model
     /**
      * <p>The time at which the on-premises instance was registered.</p>
      */
-    inline void SetRegisterTime(Aws::Utils::DateTime&& value) { m_registerTimeHasBeenSet = true; m_registerTime = value; }
+    inline void SetRegisterTime(Aws::Utils::DateTime&& value) { m_registerTimeHasBeenSet = true; m_registerTime = std::move(value); }
 
     /**
      * <p>The time at which the on-premises instance was registered.</p>
@@ -209,7 +210,7 @@ namespace Model
     /**
      * <p>The time at which the on-premises instance was registered.</p>
      */
-    inline InstanceInfo& WithRegisterTime(Aws::Utils::DateTime&& value) { SetRegisterTime(value); return *this;}
+    inline InstanceInfo& WithRegisterTime(Aws::Utils::DateTime&& value) { SetRegisterTime(std::move(value)); return *this;}
 
     /**
      * <p>If the on-premises instance was deregistered, the time at which the
@@ -227,7 +228,7 @@ namespace Model
      * <p>If the on-premises instance was deregistered, the time at which the
      * on-premises instance was deregistered.</p>
      */
-    inline void SetDeregisterTime(Aws::Utils::DateTime&& value) { m_deregisterTimeHasBeenSet = true; m_deregisterTime = value; }
+    inline void SetDeregisterTime(Aws::Utils::DateTime&& value) { m_deregisterTimeHasBeenSet = true; m_deregisterTime = std::move(value); }
 
     /**
      * <p>If the on-premises instance was deregistered, the time at which the
@@ -239,7 +240,7 @@ namespace Model
      * <p>If the on-premises instance was deregistered, the time at which the
      * on-premises instance was deregistered.</p>
      */
-    inline InstanceInfo& WithDeregisterTime(Aws::Utils::DateTime&& value) { SetDeregisterTime(value); return *this;}
+    inline InstanceInfo& WithDeregisterTime(Aws::Utils::DateTime&& value) { SetDeregisterTime(std::move(value)); return *this;}
 
     /**
      * <p>The tags currently associated with the on-premises instance.</p>
@@ -254,7 +255,7 @@ namespace Model
     /**
      * <p>The tags currently associated with the on-premises instance.</p>
      */
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = value; }
+    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
      * <p>The tags currently associated with the on-premises instance.</p>
@@ -264,7 +265,7 @@ namespace Model
     /**
      * <p>The tags currently associated with the on-premises instance.</p>
      */
-    inline InstanceInfo& WithTags(Aws::Vector<Tag>&& value) { SetTags(value); return *this;}
+    inline InstanceInfo& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
      * <p>The tags currently associated with the on-premises instance.</p>
@@ -274,7 +275,7 @@ namespace Model
     /**
      * <p>The tags currently associated with the on-premises instance.</p>
      */
-    inline InstanceInfo& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
+    inline InstanceInfo& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
   private:
     Aws::String m_instanceName;

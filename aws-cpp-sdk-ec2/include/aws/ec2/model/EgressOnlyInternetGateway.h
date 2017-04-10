@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ec2/model/InternetGatewayAttachment.h>
+#include <utility>
 
 namespace Aws
 {
@@ -61,7 +62,7 @@ namespace Model
     /**
      * <p>The ID of the egress-only Internet gateway.</p>
      */
-    inline void SetEgressOnlyInternetGatewayId(Aws::String&& value) { m_egressOnlyInternetGatewayIdHasBeenSet = true; m_egressOnlyInternetGatewayId = value; }
+    inline void SetEgressOnlyInternetGatewayId(Aws::String&& value) { m_egressOnlyInternetGatewayIdHasBeenSet = true; m_egressOnlyInternetGatewayId = std::move(value); }
 
     /**
      * <p>The ID of the egress-only Internet gateway.</p>
@@ -76,7 +77,7 @@ namespace Model
     /**
      * <p>The ID of the egress-only Internet gateway.</p>
      */
-    inline EgressOnlyInternetGateway& WithEgressOnlyInternetGatewayId(Aws::String&& value) { SetEgressOnlyInternetGatewayId(value); return *this;}
+    inline EgressOnlyInternetGateway& WithEgressOnlyInternetGatewayId(Aws::String&& value) { SetEgressOnlyInternetGatewayId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the egress-only Internet gateway.</p>
@@ -96,7 +97,7 @@ namespace Model
     /**
      * <p>Information about the attachment of the egress-only Internet gateway.</p>
      */
-    inline void SetAttachments(Aws::Vector<InternetGatewayAttachment>&& value) { m_attachmentsHasBeenSet = true; m_attachments = value; }
+    inline void SetAttachments(Aws::Vector<InternetGatewayAttachment>&& value) { m_attachmentsHasBeenSet = true; m_attachments = std::move(value); }
 
     /**
      * <p>Information about the attachment of the egress-only Internet gateway.</p>
@@ -106,7 +107,7 @@ namespace Model
     /**
      * <p>Information about the attachment of the egress-only Internet gateway.</p>
      */
-    inline EgressOnlyInternetGateway& WithAttachments(Aws::Vector<InternetGatewayAttachment>&& value) { SetAttachments(value); return *this;}
+    inline EgressOnlyInternetGateway& WithAttachments(Aws::Vector<InternetGatewayAttachment>&& value) { SetAttachments(std::move(value)); return *this;}
 
     /**
      * <p>Information about the attachment of the egress-only Internet gateway.</p>
@@ -116,7 +117,7 @@ namespace Model
     /**
      * <p>Information about the attachment of the egress-only Internet gateway.</p>
      */
-    inline EgressOnlyInternetGateway& AddAttachments(InternetGatewayAttachment&& value) { m_attachmentsHasBeenSet = true; m_attachments.push_back(value); return *this; }
+    inline EgressOnlyInternetGateway& AddAttachments(InternetGatewayAttachment&& value) { m_attachmentsHasBeenSet = true; m_attachments.push_back(std::move(value)); return *this; }
 
   private:
     Aws::String m_egressOnlyInternetGatewayId;

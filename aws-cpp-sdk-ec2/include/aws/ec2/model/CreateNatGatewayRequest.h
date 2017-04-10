@@ -16,6 +16,7 @@
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/ec2/EC2Request.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -53,7 +54,7 @@ namespace Model
     /**
      * <p>The subnet in which to create the NAT gateway.</p>
      */
-    inline void SetSubnetId(Aws::String&& value) { m_subnetIdHasBeenSet = true; m_subnetId = value; }
+    inline void SetSubnetId(Aws::String&& value) { m_subnetIdHasBeenSet = true; m_subnetId = std::move(value); }
 
     /**
      * <p>The subnet in which to create the NAT gateway.</p>
@@ -68,7 +69,7 @@ namespace Model
     /**
      * <p>The subnet in which to create the NAT gateway.</p>
      */
-    inline CreateNatGatewayRequest& WithSubnetId(Aws::String&& value) { SetSubnetId(value); return *this;}
+    inline CreateNatGatewayRequest& WithSubnetId(Aws::String&& value) { SetSubnetId(std::move(value)); return *this;}
 
     /**
      * <p>The subnet in which to create the NAT gateway.</p>
@@ -94,7 +95,7 @@ namespace Model
      * If the Elastic IP address is associated with another resource, you must first
      * disassociate it.</p>
      */
-    inline void SetAllocationId(Aws::String&& value) { m_allocationIdHasBeenSet = true; m_allocationId = value; }
+    inline void SetAllocationId(Aws::String&& value) { m_allocationIdHasBeenSet = true; m_allocationId = std::move(value); }
 
     /**
      * <p>The allocation ID of an Elastic IP address to associate with the NAT gateway.
@@ -115,7 +116,7 @@ namespace Model
      * If the Elastic IP address is associated with another resource, you must first
      * disassociate it.</p>
      */
-    inline CreateNatGatewayRequest& WithAllocationId(Aws::String&& value) { SetAllocationId(value); return *this;}
+    inline CreateNatGatewayRequest& WithAllocationId(Aws::String&& value) { SetAllocationId(std::move(value)); return *this;}
 
     /**
      * <p>The allocation ID of an Elastic IP address to associate with the NAT gateway.
@@ -146,7 +147,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How
      * to Ensure Idempotency</a>.</p> <p>Constraint: Maximum 64 ASCII characters.</p>
      */
-    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
+    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
 
     /**
      * <p>Unique, case-sensitive identifier you provide to ensure the idempotency of
@@ -170,7 +171,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How
      * to Ensure Idempotency</a>.</p> <p>Constraint: Maximum 64 ASCII characters.</p>
      */
-    inline CreateNatGatewayRequest& WithClientToken(Aws::String&& value) { SetClientToken(value); return *this;}
+    inline CreateNatGatewayRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
 
     /**
      * <p>Unique, case-sensitive identifier you provide to ensure the idempotency of

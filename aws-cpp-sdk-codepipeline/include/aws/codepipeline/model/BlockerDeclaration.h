@@ -16,6 +16,7 @@
 #include <aws/codepipeline/CodePipeline_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/codepipeline/model/BlockerType.h>
+#include <utility>
 
 namespace Aws
 {
@@ -57,7 +58,7 @@ namespace Model
     /**
      * <p>Reserved for future use.</p>
      */
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p>Reserved for future use.</p>
@@ -72,7 +73,7 @@ namespace Model
     /**
      * <p>Reserved for future use.</p>
      */
-    inline BlockerDeclaration& WithName(Aws::String&& value) { SetName(value); return *this;}
+    inline BlockerDeclaration& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>Reserved for future use.</p>
@@ -92,7 +93,7 @@ namespace Model
     /**
      * <p>Reserved for future use.</p>
      */
-    inline void SetType(BlockerType&& value) { m_typeHasBeenSet = true; m_type = value; }
+    inline void SetType(BlockerType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
      * <p>Reserved for future use.</p>
@@ -102,7 +103,7 @@ namespace Model
     /**
      * <p>Reserved for future use.</p>
      */
-    inline BlockerDeclaration& WithType(BlockerType&& value) { SetType(value); return *this;}
+    inline BlockerDeclaration& WithType(BlockerType&& value) { SetType(std::move(value)); return *this;}
 
   private:
     Aws::String m_name;

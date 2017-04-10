@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ds/model/Tag.h>
+#include <utility>
 
 namespace Aws
 {
@@ -50,7 +51,7 @@ namespace Model
     /**
      * <p>Identifier (ID) for the directory to which to add the tag.</p>
      */
-    inline void SetResourceId(Aws::String&& value) { m_resourceIdHasBeenSet = true; m_resourceId = value; }
+    inline void SetResourceId(Aws::String&& value) { m_resourceIdHasBeenSet = true; m_resourceId = std::move(value); }
 
     /**
      * <p>Identifier (ID) for the directory to which to add the tag.</p>
@@ -65,7 +66,7 @@ namespace Model
     /**
      * <p>Identifier (ID) for the directory to which to add the tag.</p>
      */
-    inline AddTagsToResourceRequest& WithResourceId(Aws::String&& value) { SetResourceId(value); return *this;}
+    inline AddTagsToResourceRequest& WithResourceId(Aws::String&& value) { SetResourceId(std::move(value)); return *this;}
 
     /**
      * <p>Identifier (ID) for the directory to which to add the tag.</p>
@@ -85,7 +86,7 @@ namespace Model
     /**
      * <p>The tags to be assigned to the directory.</p>
      */
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = value; }
+    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
      * <p>The tags to be assigned to the directory.</p>
@@ -95,7 +96,7 @@ namespace Model
     /**
      * <p>The tags to be assigned to the directory.</p>
      */
-    inline AddTagsToResourceRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(value); return *this;}
+    inline AddTagsToResourceRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
      * <p>The tags to be assigned to the directory.</p>
@@ -105,7 +106,7 @@ namespace Model
     /**
      * <p>The tags to be assigned to the directory.</p>
      */
-    inline AddTagsToResourceRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
+    inline AddTagsToResourceRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
   private:
     Aws::String m_resourceId;

@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/waf/WAF_EXPORTS.h>
 #include <aws/waf/model/WebACL.h>
+#include <utility>
 
 namespace Aws
 {
@@ -79,7 +80,7 @@ namespace Model
      * <code>Priority</code>, and <code>RuleId</code> </p> </li> <li> <p>
      * <code>Action</code>: Contains <code>Type</code> </p> </li> </ul>
      */
-    inline void SetWebACL(WebACL&& value) { m_webACL = value; }
+    inline void SetWebACL(WebACL&& value) { m_webACL = std::move(value); }
 
     /**
      * <p>Information about the <a>WebACL</a> that you specified in the
@@ -107,7 +108,7 @@ namespace Model
      * <code>Priority</code>, and <code>RuleId</code> </p> </li> <li> <p>
      * <code>Action</code>: Contains <code>Type</code> </p> </li> </ul>
      */
-    inline GetWebACLResult& WithWebACL(WebACL&& value) { SetWebACL(value); return *this;}
+    inline GetWebACLResult& WithWebACL(WebACL&& value) { SetWebACL(std::move(value)); return *this;}
 
   private:
     WebACL m_webACL;

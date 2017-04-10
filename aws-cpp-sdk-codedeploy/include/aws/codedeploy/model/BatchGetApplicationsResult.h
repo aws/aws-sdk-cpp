@@ -16,6 +16,7 @@
 #include <aws/codedeploy/CodeDeploy_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/codedeploy/model/ApplicationInfo.h>
+#include <utility>
 
 namespace Aws
 {
@@ -59,7 +60,7 @@ namespace Model
     /**
      * <p>Information about the applications.</p>
      */
-    inline void SetApplicationsInfo(Aws::Vector<ApplicationInfo>&& value) { m_applicationsInfo = value; }
+    inline void SetApplicationsInfo(Aws::Vector<ApplicationInfo>&& value) { m_applicationsInfo = std::move(value); }
 
     /**
      * <p>Information about the applications.</p>
@@ -69,7 +70,7 @@ namespace Model
     /**
      * <p>Information about the applications.</p>
      */
-    inline BatchGetApplicationsResult& WithApplicationsInfo(Aws::Vector<ApplicationInfo>&& value) { SetApplicationsInfo(value); return *this;}
+    inline BatchGetApplicationsResult& WithApplicationsInfo(Aws::Vector<ApplicationInfo>&& value) { SetApplicationsInfo(std::move(value)); return *this;}
 
     /**
      * <p>Information about the applications.</p>
@@ -79,7 +80,7 @@ namespace Model
     /**
      * <p>Information about the applications.</p>
      */
-    inline BatchGetApplicationsResult& AddApplicationsInfo(ApplicationInfo&& value) { m_applicationsInfo.push_back(value); return *this; }
+    inline BatchGetApplicationsResult& AddApplicationsInfo(ApplicationInfo&& value) { m_applicationsInfo.push_back(std::move(value)); return *this; }
 
   private:
     Aws::Vector<ApplicationInfo> m_applicationsInfo;

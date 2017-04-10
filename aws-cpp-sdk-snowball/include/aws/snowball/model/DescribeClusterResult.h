@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/snowball/Snowball_EXPORTS.h>
 #include <aws/snowball/model/ClusterMetadata.h>
+#include <utility>
 
 namespace Aws
 {
@@ -55,7 +56,7 @@ namespace Model
      * <p>Information about a specific cluster, including shipping information, cluster
      * status, and other important metadata.</p>
      */
-    inline void SetClusterMetadata(ClusterMetadata&& value) { m_clusterMetadata = value; }
+    inline void SetClusterMetadata(ClusterMetadata&& value) { m_clusterMetadata = std::move(value); }
 
     /**
      * <p>Information about a specific cluster, including shipping information, cluster
@@ -67,7 +68,7 @@ namespace Model
      * <p>Information about a specific cluster, including shipping information, cluster
      * status, and other important metadata.</p>
      */
-    inline DescribeClusterResult& WithClusterMetadata(ClusterMetadata&& value) { SetClusterMetadata(value); return *this;}
+    inline DescribeClusterResult& WithClusterMetadata(ClusterMetadata&& value) { SetClusterMetadata(std::move(value)); return *this;}
 
   private:
     ClusterMetadata m_clusterMetadata;

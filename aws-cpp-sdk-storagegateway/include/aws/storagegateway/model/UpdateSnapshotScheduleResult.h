@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/storagegateway/StorageGateway_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -58,7 +59,7 @@ namespace Model
     /**
      * <p/>
      */
-    inline void SetVolumeARN(Aws::String&& value) { m_volumeARN = value; }
+    inline void SetVolumeARN(Aws::String&& value) { m_volumeARN = std::move(value); }
 
     /**
      * <p/>
@@ -73,7 +74,7 @@ namespace Model
     /**
      * <p/>
      */
-    inline UpdateSnapshotScheduleResult& WithVolumeARN(Aws::String&& value) { SetVolumeARN(value); return *this;}
+    inline UpdateSnapshotScheduleResult& WithVolumeARN(Aws::String&& value) { SetVolumeARN(std::move(value)); return *this;}
 
     /**
      * <p/>

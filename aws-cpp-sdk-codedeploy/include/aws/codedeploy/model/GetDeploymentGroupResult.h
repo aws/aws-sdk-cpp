@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/codedeploy/CodeDeploy_EXPORTS.h>
 #include <aws/codedeploy/model/DeploymentGroupInfo.h>
+#include <utility>
 
 namespace Aws
 {
@@ -58,7 +59,7 @@ namespace Model
     /**
      * <p>Information about the deployment group.</p>
      */
-    inline void SetDeploymentGroupInfo(DeploymentGroupInfo&& value) { m_deploymentGroupInfo = value; }
+    inline void SetDeploymentGroupInfo(DeploymentGroupInfo&& value) { m_deploymentGroupInfo = std::move(value); }
 
     /**
      * <p>Information about the deployment group.</p>
@@ -68,7 +69,7 @@ namespace Model
     /**
      * <p>Information about the deployment group.</p>
      */
-    inline GetDeploymentGroupResult& WithDeploymentGroupInfo(DeploymentGroupInfo&& value) { SetDeploymentGroupInfo(value); return *this;}
+    inline GetDeploymentGroupResult& WithDeploymentGroupInfo(DeploymentGroupInfo&& value) { SetDeploymentGroupInfo(std::move(value)); return *this;}
 
   private:
     DeploymentGroupInfo m_deploymentGroupInfo;

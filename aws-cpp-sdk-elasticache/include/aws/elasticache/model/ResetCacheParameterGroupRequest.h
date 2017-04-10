@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/elasticache/model/ParameterNameValue.h>
+#include <utility>
 
 namespace Aws
 {
@@ -56,7 +57,7 @@ namespace Model
     /**
      * <p>The name of the cache parameter group to reset.</p>
      */
-    inline void SetCacheParameterGroupName(Aws::String&& value) { m_cacheParameterGroupNameHasBeenSet = true; m_cacheParameterGroupName = value; }
+    inline void SetCacheParameterGroupName(Aws::String&& value) { m_cacheParameterGroupNameHasBeenSet = true; m_cacheParameterGroupName = std::move(value); }
 
     /**
      * <p>The name of the cache parameter group to reset.</p>
@@ -71,7 +72,7 @@ namespace Model
     /**
      * <p>The name of the cache parameter group to reset.</p>
      */
-    inline ResetCacheParameterGroupRequest& WithCacheParameterGroupName(Aws::String&& value) { SetCacheParameterGroupName(value); return *this;}
+    inline ResetCacheParameterGroupRequest& WithCacheParameterGroupName(Aws::String&& value) { SetCacheParameterGroupName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the cache parameter group to reset.</p>
@@ -127,7 +128,7 @@ namespace Model
      * <code>false</code>, you must specify the name of at least one parameter to
      * reset.</p>
      */
-    inline void SetParameterNameValues(Aws::Vector<ParameterNameValue>&& value) { m_parameterNameValuesHasBeenSet = true; m_parameterNameValues = value; }
+    inline void SetParameterNameValues(Aws::Vector<ParameterNameValue>&& value) { m_parameterNameValuesHasBeenSet = true; m_parameterNameValues = std::move(value); }
 
     /**
      * <p>An array of parameter names to reset to their default values. If
@@ -145,7 +146,7 @@ namespace Model
      * <code>false</code>, you must specify the name of at least one parameter to
      * reset.</p>
      */
-    inline ResetCacheParameterGroupRequest& WithParameterNameValues(Aws::Vector<ParameterNameValue>&& value) { SetParameterNameValues(value); return *this;}
+    inline ResetCacheParameterGroupRequest& WithParameterNameValues(Aws::Vector<ParameterNameValue>&& value) { SetParameterNameValues(std::move(value)); return *this;}
 
     /**
      * <p>An array of parameter names to reset to their default values. If
@@ -163,7 +164,7 @@ namespace Model
      * <code>false</code>, you must specify the name of at least one parameter to
      * reset.</p>
      */
-    inline ResetCacheParameterGroupRequest& AddParameterNameValues(ParameterNameValue&& value) { m_parameterNameValuesHasBeenSet = true; m_parameterNameValues.push_back(value); return *this; }
+    inline ResetCacheParameterGroupRequest& AddParameterNameValues(ParameterNameValue&& value) { m_parameterNameValuesHasBeenSet = true; m_parameterNameValues.push_back(std::move(value)); return *this; }
 
   private:
     Aws::String m_cacheParameterGroupName;

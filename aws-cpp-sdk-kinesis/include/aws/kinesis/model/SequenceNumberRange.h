@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/kinesis/Kinesis_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -57,7 +58,7 @@ namespace Model
     /**
      * <p>The starting sequence number for the range.</p>
      */
-    inline void SetStartingSequenceNumber(Aws::String&& value) { m_startingSequenceNumberHasBeenSet = true; m_startingSequenceNumber = value; }
+    inline void SetStartingSequenceNumber(Aws::String&& value) { m_startingSequenceNumberHasBeenSet = true; m_startingSequenceNumber = std::move(value); }
 
     /**
      * <p>The starting sequence number for the range.</p>
@@ -72,7 +73,7 @@ namespace Model
     /**
      * <p>The starting sequence number for the range.</p>
      */
-    inline SequenceNumberRange& WithStartingSequenceNumber(Aws::String&& value) { SetStartingSequenceNumber(value); return *this;}
+    inline SequenceNumberRange& WithStartingSequenceNumber(Aws::String&& value) { SetStartingSequenceNumber(std::move(value)); return *this;}
 
     /**
      * <p>The starting sequence number for the range.</p>
@@ -95,7 +96,7 @@ namespace Model
      * <p>The ending sequence number for the range. Shards that are in the OPEN state
      * have an ending sequence number of <code>null</code>.</p>
      */
-    inline void SetEndingSequenceNumber(Aws::String&& value) { m_endingSequenceNumberHasBeenSet = true; m_endingSequenceNumber = value; }
+    inline void SetEndingSequenceNumber(Aws::String&& value) { m_endingSequenceNumberHasBeenSet = true; m_endingSequenceNumber = std::move(value); }
 
     /**
      * <p>The ending sequence number for the range. Shards that are in the OPEN state
@@ -113,7 +114,7 @@ namespace Model
      * <p>The ending sequence number for the range. Shards that are in the OPEN state
      * have an ending sequence number of <code>null</code>.</p>
      */
-    inline SequenceNumberRange& WithEndingSequenceNumber(Aws::String&& value) { SetEndingSequenceNumber(value); return *this;}
+    inline SequenceNumberRange& WithEndingSequenceNumber(Aws::String&& value) { SetEndingSequenceNumber(std::move(value)); return *this;}
 
     /**
      * <p>The ending sequence number for the range. Shards that are in the OPEN state

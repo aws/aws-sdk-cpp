@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ssm/model/InventoryItem.h>
+#include <utility>
 
 namespace Aws
 {
@@ -50,7 +51,7 @@ namespace Model
     /**
      * <p>One or more instance IDs where you want to add or update inventory items.</p>
      */
-    inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
+    inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::move(value); }
 
     /**
      * <p>One or more instance IDs where you want to add or update inventory items.</p>
@@ -65,7 +66,7 @@ namespace Model
     /**
      * <p>One or more instance IDs where you want to add or update inventory items.</p>
      */
-    inline PutInventoryRequest& WithInstanceId(Aws::String&& value) { SetInstanceId(value); return *this;}
+    inline PutInventoryRequest& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
 
     /**
      * <p>One or more instance IDs where you want to add or update inventory items.</p>
@@ -85,7 +86,7 @@ namespace Model
     /**
      * <p>The inventory items that you want to add or update on instances.</p>
      */
-    inline void SetItems(Aws::Vector<InventoryItem>&& value) { m_itemsHasBeenSet = true; m_items = value; }
+    inline void SetItems(Aws::Vector<InventoryItem>&& value) { m_itemsHasBeenSet = true; m_items = std::move(value); }
 
     /**
      * <p>The inventory items that you want to add or update on instances.</p>
@@ -95,7 +96,7 @@ namespace Model
     /**
      * <p>The inventory items that you want to add or update on instances.</p>
      */
-    inline PutInventoryRequest& WithItems(Aws::Vector<InventoryItem>&& value) { SetItems(value); return *this;}
+    inline PutInventoryRequest& WithItems(Aws::Vector<InventoryItem>&& value) { SetItems(std::move(value)); return *this;}
 
     /**
      * <p>The inventory items that you want to add or update on instances.</p>
@@ -105,7 +106,7 @@ namespace Model
     /**
      * <p>The inventory items that you want to add or update on instances.</p>
      */
-    inline PutInventoryRequest& AddItems(InventoryItem&& value) { m_itemsHasBeenSet = true; m_items.push_back(value); return *this; }
+    inline PutInventoryRequest& AddItems(InventoryItem&& value) { m_itemsHasBeenSet = true; m_items.push_back(std::move(value)); return *this; }
 
   private:
     Aws::String m_instanceId;

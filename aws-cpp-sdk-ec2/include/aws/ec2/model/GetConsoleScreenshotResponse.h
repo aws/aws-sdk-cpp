@@ -16,6 +16,7 @@
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/ResponseMetadata.h>
+#include <utility>
 
 namespace Aws
 {
@@ -58,7 +59,7 @@ namespace Model
     /**
      * <p>The ID of the instance.</p>
      */
-    inline void SetInstanceId(Aws::String&& value) { m_instanceId = value; }
+    inline void SetInstanceId(Aws::String&& value) { m_instanceId = std::move(value); }
 
     /**
      * <p>The ID of the instance.</p>
@@ -73,7 +74,7 @@ namespace Model
     /**
      * <p>The ID of the instance.</p>
      */
-    inline GetConsoleScreenshotResponse& WithInstanceId(Aws::String&& value) { SetInstanceId(value); return *this;}
+    inline GetConsoleScreenshotResponse& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the instance.</p>
@@ -93,7 +94,7 @@ namespace Model
     /**
      * <p>The data that comprises the image.</p>
      */
-    inline void SetImageData(Aws::String&& value) { m_imageData = value; }
+    inline void SetImageData(Aws::String&& value) { m_imageData = std::move(value); }
 
     /**
      * <p>The data that comprises the image.</p>
@@ -108,7 +109,7 @@ namespace Model
     /**
      * <p>The data that comprises the image.</p>
      */
-    inline GetConsoleScreenshotResponse& WithImageData(Aws::String&& value) { SetImageData(value); return *this;}
+    inline GetConsoleScreenshotResponse& WithImageData(Aws::String&& value) { SetImageData(std::move(value)); return *this;}
 
     /**
      * <p>The data that comprises the image.</p>
@@ -122,13 +123,13 @@ namespace Model
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
 
     
     inline GetConsoleScreenshotResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
 
     
-    inline GetConsoleScreenshotResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
+    inline GetConsoleScreenshotResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
     Aws::String m_instanceId;

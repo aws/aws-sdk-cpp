@@ -17,6 +17,7 @@
 #include <aws/sqs/SQSRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <utility>
 
 namespace Aws
 {
@@ -57,7 +58,7 @@ namespace Model
      * <p>The URL of the Amazon SQS queue to which permissions are added.</p> <p>Queue
      * URLs are case-sensitive.</p>
      */
-    inline void SetQueueUrl(Aws::String&& value) { m_queueUrlHasBeenSet = true; m_queueUrl = value; }
+    inline void SetQueueUrl(Aws::String&& value) { m_queueUrlHasBeenSet = true; m_queueUrl = std::move(value); }
 
     /**
      * <p>The URL of the Amazon SQS queue to which permissions are added.</p> <p>Queue
@@ -75,7 +76,7 @@ namespace Model
      * <p>The URL of the Amazon SQS queue to which permissions are added.</p> <p>Queue
      * URLs are case-sensitive.</p>
      */
-    inline AddPermissionRequest& WithQueueUrl(Aws::String&& value) { SetQueueUrl(value); return *this;}
+    inline AddPermissionRequest& WithQueueUrl(Aws::String&& value) { SetQueueUrl(std::move(value)); return *this;}
 
     /**
      * <p>The URL of the Amazon SQS queue to which permissions are added.</p> <p>Queue
@@ -105,7 +106,7 @@ namespace Model
      * include alphanumeric characters, hyphens (<code>-</code>), and underscores
      * (<code>_</code>).</p>
      */
-    inline void SetLabel(Aws::String&& value) { m_labelHasBeenSet = true; m_label = value; }
+    inline void SetLabel(Aws::String&& value) { m_labelHasBeenSet = true; m_label = std::move(value); }
 
     /**
      * <p>The unique identification of the permission you're setting (for example,
@@ -129,7 +130,7 @@ namespace Model
      * include alphanumeric characters, hyphens (<code>-</code>), and underscores
      * (<code>_</code>).</p>
      */
-    inline AddPermissionRequest& WithLabel(Aws::String&& value) { SetLabel(value); return *this;}
+    inline AddPermissionRequest& WithLabel(Aws::String&& value) { SetLabel(std::move(value)); return *this;}
 
     /**
      * <p>The unique identification of the permission you're setting (for example,
@@ -170,7 +171,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/AWSCredentials.html">Your
      * AWS Identifiers</a> in the <i>Amazon SQS Developer Guide</i>.</p>
      */
-    inline void SetAWSAccountIds(Aws::Vector<Aws::String>&& value) { m_aWSAccountIdsHasBeenSet = true; m_aWSAccountIds = value; }
+    inline void SetAWSAccountIds(Aws::Vector<Aws::String>&& value) { m_aWSAccountIdsHasBeenSet = true; m_aWSAccountIds = std::move(value); }
 
     /**
      * <p>The AWS account number of the <a
@@ -192,7 +193,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/AWSCredentials.html">Your
      * AWS Identifiers</a> in the <i>Amazon SQS Developer Guide</i>.</p>
      */
-    inline AddPermissionRequest& WithAWSAccountIds(Aws::Vector<Aws::String>&& value) { SetAWSAccountIds(value); return *this;}
+    inline AddPermissionRequest& WithAWSAccountIds(Aws::Vector<Aws::String>&& value) { SetAWSAccountIds(std::move(value)); return *this;}
 
     /**
      * <p>The AWS account number of the <a
@@ -214,7 +215,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/AWSCredentials.html">Your
      * AWS Identifiers</a> in the <i>Amazon SQS Developer Guide</i>.</p>
      */
-    inline AddPermissionRequest& AddAWSAccountIds(Aws::String&& value) { m_aWSAccountIdsHasBeenSet = true; m_aWSAccountIds.push_back(value); return *this; }
+    inline AddPermissionRequest& AddAWSAccountIds(Aws::String&& value) { m_aWSAccountIdsHasBeenSet = true; m_aWSAccountIds.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The AWS account number of the <a
@@ -279,7 +280,7 @@ namespace Model
      * <code>SendMessageBatch</code>, <code>DeleteMessageBatch</code>, and
      * <code>ChangeMessageVisibilityBatch</code>.</p>
      */
-    inline void SetActions(Aws::Vector<Aws::String>&& value) { m_actionsHasBeenSet = true; m_actions = value; }
+    inline void SetActions(Aws::Vector<Aws::String>&& value) { m_actionsHasBeenSet = true; m_actions = std::move(value); }
 
     /**
      * <p>The action the client wants to allow for the specified principal. The
@@ -315,7 +316,7 @@ namespace Model
      * <code>SendMessageBatch</code>, <code>DeleteMessageBatch</code>, and
      * <code>ChangeMessageVisibilityBatch</code>.</p>
      */
-    inline AddPermissionRequest& WithActions(Aws::Vector<Aws::String>&& value) { SetActions(value); return *this;}
+    inline AddPermissionRequest& WithActions(Aws::Vector<Aws::String>&& value) { SetActions(std::move(value)); return *this;}
 
     /**
      * <p>The action the client wants to allow for the specified principal. The
@@ -351,7 +352,7 @@ namespace Model
      * <code>SendMessageBatch</code>, <code>DeleteMessageBatch</code>, and
      * <code>ChangeMessageVisibilityBatch</code>.</p>
      */
-    inline AddPermissionRequest& AddActions(Aws::String&& value) { m_actionsHasBeenSet = true; m_actions.push_back(value); return *this; }
+    inline AddPermissionRequest& AddActions(Aws::String&& value) { m_actionsHasBeenSet = true; m_actions.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The action the client wants to allow for the specified principal. The

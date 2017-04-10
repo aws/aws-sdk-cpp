@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/rekognition/Rekognition_EXPORTS.h>
 #include <aws/rekognition/model/EmotionName.h>
+#include <utility>
 
 namespace Aws
 {
@@ -57,7 +58,7 @@ namespace Model
     /**
      * <p>Type of emotion detected.</p>
      */
-    inline void SetType(EmotionName&& value) { m_typeHasBeenSet = true; m_type = value; }
+    inline void SetType(EmotionName&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
      * <p>Type of emotion detected.</p>
@@ -67,7 +68,7 @@ namespace Model
     /**
      * <p>Type of emotion detected.</p>
      */
-    inline Emotion& WithType(EmotionName&& value) { SetType(value); return *this;}
+    inline Emotion& WithType(EmotionName&& value) { SetType(std::move(value)); return *this;}
 
     /**
      * <p>Level of confidence in the determination.</p>

@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/clouddirectory/model/PolicyToPath.h>
+#include <utility>
 
 namespace Aws
 {
@@ -57,7 +58,7 @@ namespace Model
      * <p>Provides list of path to policies. Policies contain <code>PolicyId</code>,
      * <code>ObjectIdentifier</code>, and <code>PolicyType</code>.</p>
      */
-    inline void SetPolicyToPathList(Aws::Vector<PolicyToPath>&& value) { m_policyToPathList = value; }
+    inline void SetPolicyToPathList(Aws::Vector<PolicyToPath>&& value) { m_policyToPathList = std::move(value); }
 
     /**
      * <p>Provides list of path to policies. Policies contain <code>PolicyId</code>,
@@ -69,7 +70,7 @@ namespace Model
      * <p>Provides list of path to policies. Policies contain <code>PolicyId</code>,
      * <code>ObjectIdentifier</code>, and <code>PolicyType</code>.</p>
      */
-    inline LookupPolicyResult& WithPolicyToPathList(Aws::Vector<PolicyToPath>&& value) { SetPolicyToPathList(value); return *this;}
+    inline LookupPolicyResult& WithPolicyToPathList(Aws::Vector<PolicyToPath>&& value) { SetPolicyToPathList(std::move(value)); return *this;}
 
     /**
      * <p>Provides list of path to policies. Policies contain <code>PolicyId</code>,
@@ -81,7 +82,7 @@ namespace Model
      * <p>Provides list of path to policies. Policies contain <code>PolicyId</code>,
      * <code>ObjectIdentifier</code>, and <code>PolicyType</code>.</p>
      */
-    inline LookupPolicyResult& AddPolicyToPathList(PolicyToPath&& value) { m_policyToPathList.push_back(value); return *this; }
+    inline LookupPolicyResult& AddPolicyToPathList(PolicyToPath&& value) { m_policyToPathList.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The pagination token.</p>
@@ -96,7 +97,7 @@ namespace Model
     /**
      * <p>The pagination token.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
      * <p>The pagination token.</p>
@@ -111,7 +112,7 @@ namespace Model
     /**
      * <p>The pagination token.</p>
      */
-    inline LookupPolicyResult& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline LookupPolicyResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>The pagination token.</p>

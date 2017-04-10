@@ -16,6 +16,7 @@
 #include <aws/lightsail/Lightsail_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/lightsail/model/RegionName.h>
+#include <utility>
 
 namespace Aws
 {
@@ -57,7 +58,7 @@ namespace Model
     /**
      * <p>The Availability Zone.</p>
      */
-    inline void SetAvailabilityZone(Aws::String&& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = value; }
+    inline void SetAvailabilityZone(Aws::String&& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = std::move(value); }
 
     /**
      * <p>The Availability Zone.</p>
@@ -72,7 +73,7 @@ namespace Model
     /**
      * <p>The Availability Zone.</p>
      */
-    inline ResourceLocation& WithAvailabilityZone(Aws::String&& value) { SetAvailabilityZone(value); return *this;}
+    inline ResourceLocation& WithAvailabilityZone(Aws::String&& value) { SetAvailabilityZone(std::move(value)); return *this;}
 
     /**
      * <p>The Availability Zone.</p>
@@ -92,7 +93,7 @@ namespace Model
     /**
      * <p>The AWS Region name.</p>
      */
-    inline void SetRegionName(RegionName&& value) { m_regionNameHasBeenSet = true; m_regionName = value; }
+    inline void SetRegionName(RegionName&& value) { m_regionNameHasBeenSet = true; m_regionName = std::move(value); }
 
     /**
      * <p>The AWS Region name.</p>
@@ -102,7 +103,7 @@ namespace Model
     /**
      * <p>The AWS Region name.</p>
      */
-    inline ResourceLocation& WithRegionName(RegionName&& value) { SetRegionName(value); return *this;}
+    inline ResourceLocation& WithRegionName(RegionName&& value) { SetRegionName(std::move(value)); return *this;}
 
   private:
     Aws::String m_availabilityZone;

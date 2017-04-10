@@ -17,6 +17,7 @@
 #include <aws/core/utils/stream/ResponseStream.h>
 #include <aws/core/utils/Array.h>
 #include <aws/s3/model/RequestCharged.h>
+#include <utility>
 
 namespace Aws
 {
@@ -57,13 +58,13 @@ namespace Model
     inline void SetRequestCharged(const RequestCharged& value) { m_requestCharged = value; }
 
     
-    inline void SetRequestCharged(RequestCharged&& value) { m_requestCharged = value; }
+    inline void SetRequestCharged(RequestCharged&& value) { m_requestCharged = std::move(value); }
 
     
     inline GetObjectTorrentResult& WithRequestCharged(const RequestCharged& value) { SetRequestCharged(value); return *this;}
 
     
-    inline GetObjectTorrentResult& WithRequestCharged(RequestCharged&& value) { SetRequestCharged(value); return *this;}
+    inline GetObjectTorrentResult& WithRequestCharged(RequestCharged&& value) { SetRequestCharged(std::move(value)); return *this;}
 
   private:
     Utils::Stream::ResponseStream m_body;

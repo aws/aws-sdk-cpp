@@ -16,6 +16,7 @@
 #include <aws/cloudsearch/CloudSearch_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/cloudsearch/model/PartitionInstanceType.h>
+#include <utility>
 
 namespace Aws
 {
@@ -63,7 +64,7 @@ namespace Model
      * <p>The instance type that you want to preconfigure for your domain. For example,
      * <code>search.m1.small</code>.</p>
      */
-    inline void SetDesiredInstanceType(PartitionInstanceType&& value) { m_desiredInstanceTypeHasBeenSet = true; m_desiredInstanceType = value; }
+    inline void SetDesiredInstanceType(PartitionInstanceType&& value) { m_desiredInstanceTypeHasBeenSet = true; m_desiredInstanceType = std::move(value); }
 
     /**
      * <p>The instance type that you want to preconfigure for your domain. For example,
@@ -75,7 +76,7 @@ namespace Model
      * <p>The instance type that you want to preconfigure for your domain. For example,
      * <code>search.m1.small</code>.</p>
      */
-    inline ScalingParameters& WithDesiredInstanceType(PartitionInstanceType&& value) { SetDesiredInstanceType(value); return *this;}
+    inline ScalingParameters& WithDesiredInstanceType(PartitionInstanceType&& value) { SetDesiredInstanceType(std::move(value)); return *this;}
 
     /**
      * <p>The number of replicas you want to preconfigure for each index partition.</p>

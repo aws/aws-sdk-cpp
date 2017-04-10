@@ -19,6 +19,7 @@
 #include <aws/elasticbeanstalk/model/SourceBuildInformation.h>
 #include <aws/elasticbeanstalk/model/S3Location.h>
 #include <aws/elasticbeanstalk/model/BuildConfiguration.h>
+#include <utility>
 
 namespace Aws
 {
@@ -62,7 +63,7 @@ namespace Model
      * <code>AutoCreateApplication</code> is <code>false</code>, returns an
      * <code>InvalidParameterValue</code> error. </p>
      */
-    inline void SetApplicationName(Aws::String&& value) { m_applicationNameHasBeenSet = true; m_applicationName = value; }
+    inline void SetApplicationName(Aws::String&& value) { m_applicationNameHasBeenSet = true; m_applicationName = std::move(value); }
 
     /**
      * <p> The name of the application. If no application is found with this name, and
@@ -83,7 +84,7 @@ namespace Model
      * <code>AutoCreateApplication</code> is <code>false</code>, returns an
      * <code>InvalidParameterValue</code> error. </p>
      */
-    inline CreateApplicationVersionRequest& WithApplicationName(Aws::String&& value) { SetApplicationName(value); return *this;}
+    inline CreateApplicationVersionRequest& WithApplicationName(Aws::String&& value) { SetApplicationName(std::move(value)); return *this;}
 
     /**
      * <p> The name of the application. If no application is found with this name, and
@@ -114,7 +115,7 @@ namespace Model
      * specified application, AWS Elastic Beanstalk returns an
      * <code>InvalidParameterValue</code> error. </p>
      */
-    inline void SetVersionLabel(Aws::String&& value) { m_versionLabelHasBeenSet = true; m_versionLabel = value; }
+    inline void SetVersionLabel(Aws::String&& value) { m_versionLabelHasBeenSet = true; m_versionLabel = std::move(value); }
 
     /**
      * <p>A label identifying this version.</p> <p>Constraint: Must be unique per
@@ -138,7 +139,7 @@ namespace Model
      * specified application, AWS Elastic Beanstalk returns an
      * <code>InvalidParameterValue</code> error. </p>
      */
-    inline CreateApplicationVersionRequest& WithVersionLabel(Aws::String&& value) { SetVersionLabel(value); return *this;}
+    inline CreateApplicationVersionRequest& WithVersionLabel(Aws::String&& value) { SetVersionLabel(std::move(value)); return *this;}
 
     /**
      * <p>A label identifying this version.</p> <p>Constraint: Must be unique per
@@ -161,7 +162,7 @@ namespace Model
     /**
      * <p>Describes this version.</p>
      */
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = value; }
+    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
      * <p>Describes this version.</p>
@@ -176,7 +177,7 @@ namespace Model
     /**
      * <p>Describes this version.</p>
      */
-    inline CreateApplicationVersionRequest& WithDescription(Aws::String&& value) { SetDescription(value); return *this;}
+    inline CreateApplicationVersionRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
      * <p>Describes this version.</p>
@@ -199,7 +200,7 @@ namespace Model
      * <p>Specify a commit in an AWS CodeCommit Git repository to use as the source
      * code for the application version.</p>
      */
-    inline void SetSourceBuildInformation(SourceBuildInformation&& value) { m_sourceBuildInformationHasBeenSet = true; m_sourceBuildInformation = value; }
+    inline void SetSourceBuildInformation(SourceBuildInformation&& value) { m_sourceBuildInformationHasBeenSet = true; m_sourceBuildInformation = std::move(value); }
 
     /**
      * <p>Specify a commit in an AWS CodeCommit Git repository to use as the source
@@ -211,7 +212,7 @@ namespace Model
      * <p>Specify a commit in an AWS CodeCommit Git repository to use as the source
      * code for the application version.</p>
      */
-    inline CreateApplicationVersionRequest& WithSourceBuildInformation(SourceBuildInformation&& value) { SetSourceBuildInformation(value); return *this;}
+    inline CreateApplicationVersionRequest& WithSourceBuildInformation(SourceBuildInformation&& value) { SetSourceBuildInformation(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon S3 bucket and key that identify the location of the source bundle
@@ -244,7 +245,7 @@ namespace Model
      * <code>SourceBuildInformation</code> are provided, Elastic Beanstalk uses a
      * sample application.</p>
      */
-    inline void SetSourceBundle(S3Location&& value) { m_sourceBundleHasBeenSet = true; m_sourceBundle = value; }
+    inline void SetSourceBundle(S3Location&& value) { m_sourceBundleHasBeenSet = true; m_sourceBundle = std::move(value); }
 
     /**
      * <p>The Amazon S3 bucket and key that identify the location of the source bundle
@@ -266,7 +267,7 @@ namespace Model
      * <code>SourceBuildInformation</code> are provided, Elastic Beanstalk uses a
      * sample application.</p>
      */
-    inline CreateApplicationVersionRequest& WithSourceBundle(S3Location&& value) { SetSourceBundle(value); return *this;}
+    inline CreateApplicationVersionRequest& WithSourceBundle(S3Location&& value) { SetSourceBundle(std::move(value)); return *this;}
 
     /**
      * <p>Settings for an AWS CodeBuild build.</p>
@@ -281,7 +282,7 @@ namespace Model
     /**
      * <p>Settings for an AWS CodeBuild build.</p>
      */
-    inline void SetBuildConfiguration(BuildConfiguration&& value) { m_buildConfigurationHasBeenSet = true; m_buildConfiguration = value; }
+    inline void SetBuildConfiguration(BuildConfiguration&& value) { m_buildConfigurationHasBeenSet = true; m_buildConfiguration = std::move(value); }
 
     /**
      * <p>Settings for an AWS CodeBuild build.</p>
@@ -291,7 +292,7 @@ namespace Model
     /**
      * <p>Settings for an AWS CodeBuild build.</p>
      */
-    inline CreateApplicationVersionRequest& WithBuildConfiguration(BuildConfiguration&& value) { SetBuildConfiguration(value); return *this;}
+    inline CreateApplicationVersionRequest& WithBuildConfiguration(BuildConfiguration&& value) { SetBuildConfiguration(std::move(value)); return *this;}
 
     /**
      * <p>Set to <code>true</code> to create an application with the specified name if

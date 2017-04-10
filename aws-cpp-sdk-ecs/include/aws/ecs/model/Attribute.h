@@ -16,6 +16,7 @@
 #include <aws/ecs/ECS_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ecs/model/TargetType.h>
+#include <utility>
 
 namespace Aws
 {
@@ -65,7 +66,7 @@ namespace Model
      * <p>The name of the attribute. Up to 128 letters (uppercase and lowercase),
      * numbers, hyphens, underscores, and periods are allowed.</p>
      */
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p>The name of the attribute. Up to 128 letters (uppercase and lowercase),
@@ -83,7 +84,7 @@ namespace Model
      * <p>The name of the attribute. Up to 128 letters (uppercase and lowercase),
      * numbers, hyphens, underscores, and periods are allowed.</p>
      */
-    inline Attribute& WithName(Aws::String&& value) { SetName(value); return *this;}
+    inline Attribute& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the attribute. Up to 128 letters (uppercase and lowercase),
@@ -110,7 +111,7 @@ namespace Model
      * numbers, hyphens, underscores, periods, at signs (@), forward slashes, colons,
      * and spaces are allowed.</p>
      */
-    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = value; }
+    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
 
     /**
      * <p>The value of the attribute. Up to 128 letters (uppercase and lowercase),
@@ -131,7 +132,7 @@ namespace Model
      * numbers, hyphens, underscores, periods, at signs (@), forward slashes, colons,
      * and spaces are allowed.</p>
      */
-    inline Attribute& WithValue(Aws::String&& value) { SetValue(value); return *this;}
+    inline Attribute& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
 
     /**
      * <p>The value of the attribute. Up to 128 letters (uppercase and lowercase),
@@ -159,7 +160,7 @@ namespace Model
      * required if you use the short form ID for a resource instead of the full Amazon
      * Resource Name (ARN).</p>
      */
-    inline void SetTargetType(TargetType&& value) { m_targetTypeHasBeenSet = true; m_targetType = value; }
+    inline void SetTargetType(TargetType&& value) { m_targetTypeHasBeenSet = true; m_targetType = std::move(value); }
 
     /**
      * <p>The type of the target with which to attach the attribute. This parameter is
@@ -173,7 +174,7 @@ namespace Model
      * required if you use the short form ID for a resource instead of the full Amazon
      * Resource Name (ARN).</p>
      */
-    inline Attribute& WithTargetType(TargetType&& value) { SetTargetType(value); return *this;}
+    inline Attribute& WithTargetType(TargetType&& value) { SetTargetType(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the target. You can specify the short form ID for a resource or the
@@ -191,7 +192,7 @@ namespace Model
      * <p>The ID of the target. You can specify the short form ID for a resource or the
      * full Amazon Resource Name (ARN).</p>
      */
-    inline void SetTargetId(Aws::String&& value) { m_targetIdHasBeenSet = true; m_targetId = value; }
+    inline void SetTargetId(Aws::String&& value) { m_targetIdHasBeenSet = true; m_targetId = std::move(value); }
 
     /**
      * <p>The ID of the target. You can specify the short form ID for a resource or the
@@ -209,7 +210,7 @@ namespace Model
      * <p>The ID of the target. You can specify the short form ID for a resource or the
      * full Amazon Resource Name (ARN).</p>
      */
-    inline Attribute& WithTargetId(Aws::String&& value) { SetTargetId(value); return *this;}
+    inline Attribute& WithTargetId(Aws::String&& value) { SetTargetId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the target. You can specify the short form ID for a resource or the

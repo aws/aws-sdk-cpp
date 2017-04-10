@@ -19,6 +19,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/clouddirectory/model/ObjectReference.h>
 #include <aws/clouddirectory/model/AttributeKey.h>
+#include <utility>
 
 namespace Aws
 {
@@ -51,7 +52,7 @@ namespace Model
     /**
      * <p>The ARN of the directory where the index should be created.</p>
      */
-    inline void SetDirectoryArn(Aws::String&& value) { m_directoryArnHasBeenSet = true; m_directoryArn = value; }
+    inline void SetDirectoryArn(Aws::String&& value) { m_directoryArnHasBeenSet = true; m_directoryArn = std::move(value); }
 
     /**
      * <p>The ARN of the directory where the index should be created.</p>
@@ -66,7 +67,7 @@ namespace Model
     /**
      * <p>The ARN of the directory where the index should be created.</p>
      */
-    inline CreateIndexRequest& WithDirectoryArn(Aws::String&& value) { SetDirectoryArn(value); return *this;}
+    inline CreateIndexRequest& WithDirectoryArn(Aws::String&& value) { SetDirectoryArn(std::move(value)); return *this;}
 
     /**
      * <p>The ARN of the directory where the index should be created.</p>
@@ -89,7 +90,7 @@ namespace Model
      * <p>Specifies the Attributes that should be indexed on. Currently only a single
      * attribute is supported.</p>
      */
-    inline void SetOrderedIndexedAttributeList(Aws::Vector<AttributeKey>&& value) { m_orderedIndexedAttributeListHasBeenSet = true; m_orderedIndexedAttributeList = value; }
+    inline void SetOrderedIndexedAttributeList(Aws::Vector<AttributeKey>&& value) { m_orderedIndexedAttributeListHasBeenSet = true; m_orderedIndexedAttributeList = std::move(value); }
 
     /**
      * <p>Specifies the Attributes that should be indexed on. Currently only a single
@@ -101,7 +102,7 @@ namespace Model
      * <p>Specifies the Attributes that should be indexed on. Currently only a single
      * attribute is supported.</p>
      */
-    inline CreateIndexRequest& WithOrderedIndexedAttributeList(Aws::Vector<AttributeKey>&& value) { SetOrderedIndexedAttributeList(value); return *this;}
+    inline CreateIndexRequest& WithOrderedIndexedAttributeList(Aws::Vector<AttributeKey>&& value) { SetOrderedIndexedAttributeList(std::move(value)); return *this;}
 
     /**
      * <p>Specifies the Attributes that should be indexed on. Currently only a single
@@ -113,7 +114,7 @@ namespace Model
      * <p>Specifies the Attributes that should be indexed on. Currently only a single
      * attribute is supported.</p>
      */
-    inline CreateIndexRequest& AddOrderedIndexedAttributeList(AttributeKey&& value) { m_orderedIndexedAttributeListHasBeenSet = true; m_orderedIndexedAttributeList.push_back(value); return *this; }
+    inline CreateIndexRequest& AddOrderedIndexedAttributeList(AttributeKey&& value) { m_orderedIndexedAttributeListHasBeenSet = true; m_orderedIndexedAttributeList.push_back(std::move(value)); return *this; }
 
     /**
      * <p>Indicates whether objects with the same indexed attribute value can be added
@@ -146,7 +147,7 @@ namespace Model
     /**
      * <p>A reference to the parent object that contains the index object.</p>
      */
-    inline void SetParentReference(ObjectReference&& value) { m_parentReferenceHasBeenSet = true; m_parentReference = value; }
+    inline void SetParentReference(ObjectReference&& value) { m_parentReferenceHasBeenSet = true; m_parentReference = std::move(value); }
 
     /**
      * <p>A reference to the parent object that contains the index object.</p>
@@ -156,7 +157,7 @@ namespace Model
     /**
      * <p>A reference to the parent object that contains the index object.</p>
      */
-    inline CreateIndexRequest& WithParentReference(ObjectReference&& value) { SetParentReference(value); return *this;}
+    inline CreateIndexRequest& WithParentReference(ObjectReference&& value) { SetParentReference(std::move(value)); return *this;}
 
     /**
      * <p>The name of the link between the parent object and the index object.</p>
@@ -171,7 +172,7 @@ namespace Model
     /**
      * <p>The name of the link between the parent object and the index object.</p>
      */
-    inline void SetLinkName(Aws::String&& value) { m_linkNameHasBeenSet = true; m_linkName = value; }
+    inline void SetLinkName(Aws::String&& value) { m_linkNameHasBeenSet = true; m_linkName = std::move(value); }
 
     /**
      * <p>The name of the link between the parent object and the index object.</p>
@@ -186,7 +187,7 @@ namespace Model
     /**
      * <p>The name of the link between the parent object and the index object.</p>
      */
-    inline CreateIndexRequest& WithLinkName(Aws::String&& value) { SetLinkName(value); return *this;}
+    inline CreateIndexRequest& WithLinkName(Aws::String&& value) { SetLinkName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the link between the parent object and the index object.</p>

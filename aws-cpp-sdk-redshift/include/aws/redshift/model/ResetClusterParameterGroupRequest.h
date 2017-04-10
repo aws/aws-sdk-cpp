@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/redshift/model/Parameter.h>
+#include <utility>
 
 namespace Aws
 {
@@ -55,7 +56,7 @@ namespace Model
     /**
      * <p>The name of the cluster parameter group to be reset.</p>
      */
-    inline void SetParameterGroupName(Aws::String&& value) { m_parameterGroupNameHasBeenSet = true; m_parameterGroupName = value; }
+    inline void SetParameterGroupName(Aws::String&& value) { m_parameterGroupNameHasBeenSet = true; m_parameterGroupName = std::move(value); }
 
     /**
      * <p>The name of the cluster parameter group to be reset.</p>
@@ -70,7 +71,7 @@ namespace Model
     /**
      * <p>The name of the cluster parameter group to be reset.</p>
      */
-    inline ResetClusterParameterGroupRequest& WithParameterGroupName(Aws::String&& value) { SetParameterGroupName(value); return *this;}
+    inline ResetClusterParameterGroupRequest& WithParameterGroupName(Aws::String&& value) { SetParameterGroupName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the cluster parameter group to be reset.</p>
@@ -114,7 +115,7 @@ namespace Model
      * option is not used, then at least one parameter name must be supplied. </p>
      * <p>Constraints: A maximum of 20 parameters can be reset in a single request.</p>
      */
-    inline void SetParameters(Aws::Vector<Parameter>&& value) { m_parametersHasBeenSet = true; m_parameters = value; }
+    inline void SetParameters(Aws::Vector<Parameter>&& value) { m_parametersHasBeenSet = true; m_parameters = std::move(value); }
 
     /**
      * <p>An array of names of parameters to be reset. If <i>ResetAllParameters</i>
@@ -128,7 +129,7 @@ namespace Model
      * option is not used, then at least one parameter name must be supplied. </p>
      * <p>Constraints: A maximum of 20 parameters can be reset in a single request.</p>
      */
-    inline ResetClusterParameterGroupRequest& WithParameters(Aws::Vector<Parameter>&& value) { SetParameters(value); return *this;}
+    inline ResetClusterParameterGroupRequest& WithParameters(Aws::Vector<Parameter>&& value) { SetParameters(std::move(value)); return *this;}
 
     /**
      * <p>An array of names of parameters to be reset. If <i>ResetAllParameters</i>
@@ -142,7 +143,7 @@ namespace Model
      * option is not used, then at least one parameter name must be supplied. </p>
      * <p>Constraints: A maximum of 20 parameters can be reset in a single request.</p>
      */
-    inline ResetClusterParameterGroupRequest& AddParameters(Parameter&& value) { m_parametersHasBeenSet = true; m_parameters.push_back(value); return *this; }
+    inline ResetClusterParameterGroupRequest& AddParameters(Parameter&& value) { m_parametersHasBeenSet = true; m_parameters.push_back(std::move(value)); return *this; }
 
   private:
     Aws::String m_parameterGroupName;

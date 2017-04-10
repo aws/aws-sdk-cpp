@@ -17,6 +17,7 @@
 #include <aws/ssm/SSMRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ssm/model/AssociationStatus.h>
+#include <utility>
 
 namespace Aws
 {
@@ -49,7 +50,7 @@ namespace Model
     /**
      * <p>The name of the SSM document.</p>
      */
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p>The name of the SSM document.</p>
@@ -64,7 +65,7 @@ namespace Model
     /**
      * <p>The name of the SSM document.</p>
      */
-    inline UpdateAssociationStatusRequest& WithName(Aws::String&& value) { SetName(value); return *this;}
+    inline UpdateAssociationStatusRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the SSM document.</p>
@@ -84,7 +85,7 @@ namespace Model
     /**
      * <p>The ID of the instance.</p>
      */
-    inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
+    inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::move(value); }
 
     /**
      * <p>The ID of the instance.</p>
@@ -99,7 +100,7 @@ namespace Model
     /**
      * <p>The ID of the instance.</p>
      */
-    inline UpdateAssociationStatusRequest& WithInstanceId(Aws::String&& value) { SetInstanceId(value); return *this;}
+    inline UpdateAssociationStatusRequest& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the instance.</p>
@@ -119,7 +120,7 @@ namespace Model
     /**
      * <p>The association status.</p>
      */
-    inline void SetAssociationStatus(AssociationStatus&& value) { m_associationStatusHasBeenSet = true; m_associationStatus = value; }
+    inline void SetAssociationStatus(AssociationStatus&& value) { m_associationStatusHasBeenSet = true; m_associationStatus = std::move(value); }
 
     /**
      * <p>The association status.</p>
@@ -129,7 +130,7 @@ namespace Model
     /**
      * <p>The association status.</p>
      */
-    inline UpdateAssociationStatusRequest& WithAssociationStatus(AssociationStatus&& value) { SetAssociationStatus(value); return *this;}
+    inline UpdateAssociationStatusRequest& WithAssociationStatus(AssociationStatus&& value) { SetAssociationStatus(std::move(value)); return *this;}
 
   private:
     Aws::String m_name;

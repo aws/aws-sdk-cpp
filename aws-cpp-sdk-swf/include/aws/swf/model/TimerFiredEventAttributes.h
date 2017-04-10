@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/swf/SWF_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -57,7 +58,7 @@ namespace Model
     /**
      * <p>The unique ID of the timer that fired.</p>
      */
-    inline void SetTimerId(Aws::String&& value) { m_timerIdHasBeenSet = true; m_timerId = value; }
+    inline void SetTimerId(Aws::String&& value) { m_timerIdHasBeenSet = true; m_timerId = std::move(value); }
 
     /**
      * <p>The unique ID of the timer that fired.</p>
@@ -72,7 +73,7 @@ namespace Model
     /**
      * <p>The unique ID of the timer that fired.</p>
      */
-    inline TimerFiredEventAttributes& WithTimerId(Aws::String&& value) { SetTimerId(value); return *this;}
+    inline TimerFiredEventAttributes& WithTimerId(Aws::String&& value) { SetTimerId(std::move(value)); return *this;}
 
     /**
      * <p>The unique ID of the timer that fired.</p>

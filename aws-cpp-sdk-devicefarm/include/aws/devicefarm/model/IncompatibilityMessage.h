@@ -16,6 +16,7 @@
 #include <aws/devicefarm/DeviceFarm_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/devicefarm/model/DeviceAttribute.h>
+#include <utility>
 
 namespace Aws
 {
@@ -57,7 +58,7 @@ namespace Model
     /**
      * <p>A message about the incompatibility.</p>
      */
-    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = value; }
+    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
 
     /**
      * <p>A message about the incompatibility.</p>
@@ -72,7 +73,7 @@ namespace Model
     /**
      * <p>A message about the incompatibility.</p>
      */
-    inline IncompatibilityMessage& WithMessage(Aws::String&& value) { SetMessage(value); return *this;}
+    inline IncompatibilityMessage& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
 
     /**
      * <p>A message about the incompatibility.</p>
@@ -101,7 +102,7 @@ namespace Model
      * phone or tablet).</p> </li> <li> <p>MANUFACTURER: The manufacturer.</p> </li>
      * <li> <p>PLATFORM: The platform (for example, Android or iOS).</p> </li> </ul>
      */
-    inline void SetType(DeviceAttribute&& value) { m_typeHasBeenSet = true; m_type = value; }
+    inline void SetType(DeviceAttribute&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
      * <p>The type of incompatibility.</p> <p>Allowed values include:</p> <ul> <li>
@@ -117,7 +118,7 @@ namespace Model
      * phone or tablet).</p> </li> <li> <p>MANUFACTURER: The manufacturer.</p> </li>
      * <li> <p>PLATFORM: The platform (for example, Android or iOS).</p> </li> </ul>
      */
-    inline IncompatibilityMessage& WithType(DeviceAttribute&& value) { SetType(value); return *this;}
+    inline IncompatibilityMessage& WithType(DeviceAttribute&& value) { SetType(std::move(value)); return *this;}
 
   private:
     Aws::String m_message;

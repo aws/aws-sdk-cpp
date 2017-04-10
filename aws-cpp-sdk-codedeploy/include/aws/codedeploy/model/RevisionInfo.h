@@ -16,6 +16,7 @@
 #include <aws/codedeploy/CodeDeploy_EXPORTS.h>
 #include <aws/codedeploy/model/RevisionLocation.h>
 #include <aws/codedeploy/model/GenericRevisionInfo.h>
+#include <utility>
 
 namespace Aws
 {
@@ -57,7 +58,7 @@ namespace Model
     /**
      * <p>Information about the location and type of an application revision.</p>
      */
-    inline void SetRevisionLocation(RevisionLocation&& value) { m_revisionLocationHasBeenSet = true; m_revisionLocation = value; }
+    inline void SetRevisionLocation(RevisionLocation&& value) { m_revisionLocationHasBeenSet = true; m_revisionLocation = std::move(value); }
 
     /**
      * <p>Information about the location and type of an application revision.</p>
@@ -67,7 +68,7 @@ namespace Model
     /**
      * <p>Information about the location and type of an application revision.</p>
      */
-    inline RevisionInfo& WithRevisionLocation(RevisionLocation&& value) { SetRevisionLocation(value); return *this;}
+    inline RevisionInfo& WithRevisionLocation(RevisionLocation&& value) { SetRevisionLocation(std::move(value)); return *this;}
 
     /**
      * <p>Information about an application revision, including usage details and
@@ -85,7 +86,7 @@ namespace Model
      * <p>Information about an application revision, including usage details and
      * associated deployment groups.</p>
      */
-    inline void SetGenericRevisionInfo(GenericRevisionInfo&& value) { m_genericRevisionInfoHasBeenSet = true; m_genericRevisionInfo = value; }
+    inline void SetGenericRevisionInfo(GenericRevisionInfo&& value) { m_genericRevisionInfoHasBeenSet = true; m_genericRevisionInfo = std::move(value); }
 
     /**
      * <p>Information about an application revision, including usage details and
@@ -97,7 +98,7 @@ namespace Model
      * <p>Information about an application revision, including usage details and
      * associated deployment groups.</p>
      */
-    inline RevisionInfo& WithGenericRevisionInfo(GenericRevisionInfo&& value) { SetGenericRevisionInfo(value); return *this;}
+    inline RevisionInfo& WithGenericRevisionInfo(GenericRevisionInfo&& value) { SetGenericRevisionInfo(std::move(value)); return *this;}
 
   private:
     RevisionLocation m_revisionLocation;

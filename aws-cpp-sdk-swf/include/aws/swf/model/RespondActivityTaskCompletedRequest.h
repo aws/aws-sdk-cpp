@@ -16,6 +16,7 @@
 #include <aws/swf/SWF_EXPORTS.h>
 #include <aws/swf/SWFRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -60,7 +61,7 @@ namespace Model
      * <code>taskToken</code> must also be passed. This enables it to provide its
      * progress and respond with results.</important>
      */
-    inline void SetTaskToken(Aws::String&& value) { m_taskTokenHasBeenSet = true; m_taskToken = value; }
+    inline void SetTaskToken(Aws::String&& value) { m_taskTokenHasBeenSet = true; m_taskToken = std::move(value); }
 
     /**
      * <p>The <code>taskToken</code> of the <a>ActivityTask</a>.</p> <important>
@@ -87,7 +88,7 @@ namespace Model
      * <code>taskToken</code> must also be passed. This enables it to provide its
      * progress and respond with results.</important>
      */
-    inline RespondActivityTaskCompletedRequest& WithTaskToken(Aws::String&& value) { SetTaskToken(value); return *this;}
+    inline RespondActivityTaskCompletedRequest& WithTaskToken(Aws::String&& value) { SetTaskToken(std::move(value)); return *this;}
 
     /**
      * <p>The <code>taskToken</code> of the <a>ActivityTask</a>.</p> <important>
@@ -114,7 +115,7 @@ namespace Model
      * <p>The result of the activity task. It is a free form string that is
      * implementation specific.</p>
      */
-    inline void SetResult(Aws::String&& value) { m_resultHasBeenSet = true; m_result = value; }
+    inline void SetResult(Aws::String&& value) { m_resultHasBeenSet = true; m_result = std::move(value); }
 
     /**
      * <p>The result of the activity task. It is a free form string that is
@@ -132,7 +133,7 @@ namespace Model
      * <p>The result of the activity task. It is a free form string that is
      * implementation specific.</p>
      */
-    inline RespondActivityTaskCompletedRequest& WithResult(Aws::String&& value) { SetResult(value); return *this;}
+    inline RespondActivityTaskCompletedRequest& WithResult(Aws::String&& value) { SetResult(std::move(value)); return *this;}
 
     /**
      * <p>The result of the activity task. It is a free form string that is

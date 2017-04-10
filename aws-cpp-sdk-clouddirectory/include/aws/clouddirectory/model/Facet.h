@@ -16,6 +16,7 @@
 #include <aws/clouddirectory/CloudDirectory_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/clouddirectory/model/ObjectType.h>
+#include <utility>
 
 namespace Aws
 {
@@ -59,7 +60,7 @@ namespace Model
     /**
      * <p>The name of the <a>Facet</a>.</p>
      */
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p>The name of the <a>Facet</a>.</p>
@@ -74,7 +75,7 @@ namespace Model
     /**
      * <p>The name of the <a>Facet</a>.</p>
      */
-    inline Facet& WithName(Aws::String&& value) { SetName(value); return *this;}
+    inline Facet& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the <a>Facet</a>.</p>
@@ -97,7 +98,7 @@ namespace Model
      * <p>Object type associated with the facet. See
      * <a>CreateFacetRequest$ObjectType</a> for more details.</p>
      */
-    inline void SetObjectType(ObjectType&& value) { m_objectTypeHasBeenSet = true; m_objectType = value; }
+    inline void SetObjectType(ObjectType&& value) { m_objectTypeHasBeenSet = true; m_objectType = std::move(value); }
 
     /**
      * <p>Object type associated with the facet. See
@@ -109,7 +110,7 @@ namespace Model
      * <p>Object type associated with the facet. See
      * <a>CreateFacetRequest$ObjectType</a> for more details.</p>
      */
-    inline Facet& WithObjectType(ObjectType&& value) { SetObjectType(value); return *this;}
+    inline Facet& WithObjectType(ObjectType&& value) { SetObjectType(std::move(value)); return *this;}
 
   private:
     Aws::String m_name;

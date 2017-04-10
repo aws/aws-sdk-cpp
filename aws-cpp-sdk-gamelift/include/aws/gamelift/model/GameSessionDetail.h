@@ -16,6 +16,7 @@
 #include <aws/gamelift/GameLift_EXPORTS.h>
 #include <aws/gamelift/model/GameSession.h>
 #include <aws/gamelift/model/ProtectionPolicy.h>
+#include <utility>
 
 namespace Aws
 {
@@ -58,7 +59,7 @@ namespace Model
     /**
      * <p>Object that describes a game session.</p>
      */
-    inline void SetGameSession(GameSession&& value) { m_gameSessionHasBeenSet = true; m_gameSession = value; }
+    inline void SetGameSession(GameSession&& value) { m_gameSessionHasBeenSet = true; m_gameSession = std::move(value); }
 
     /**
      * <p>Object that describes a game session.</p>
@@ -68,7 +69,7 @@ namespace Model
     /**
      * <p>Object that describes a game session.</p>
      */
-    inline GameSessionDetail& WithGameSession(GameSession&& value) { SetGameSession(value); return *this;}
+    inline GameSessionDetail& WithGameSession(GameSession&& value) { SetGameSession(std::move(value)); return *this;}
 
     /**
      * <p>Current status of protection for the game session.</p> <ul> <li> <p>
@@ -95,7 +96,7 @@ namespace Model
      * <code>ACTIVE</code> status, it cannot be terminated during a scale-down
      * event.</p> </li> </ul>
      */
-    inline void SetProtectionPolicy(ProtectionPolicy&& value) { m_protectionPolicyHasBeenSet = true; m_protectionPolicy = value; }
+    inline void SetProtectionPolicy(ProtectionPolicy&& value) { m_protectionPolicyHasBeenSet = true; m_protectionPolicy = std::move(value); }
 
     /**
      * <p>Current status of protection for the game session.</p> <ul> <li> <p>
@@ -113,7 +114,7 @@ namespace Model
      * <code>ACTIVE</code> status, it cannot be terminated during a scale-down
      * event.</p> </li> </ul>
      */
-    inline GameSessionDetail& WithProtectionPolicy(ProtectionPolicy&& value) { SetProtectionPolicy(value); return *this;}
+    inline GameSessionDetail& WithProtectionPolicy(ProtectionPolicy&& value) { SetProtectionPolicy(std::move(value)); return *this;}
 
   private:
     GameSession m_gameSession;

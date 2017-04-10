@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/iot/IoT_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -57,7 +58,7 @@ namespace Model
     /**
      * <p>The name of the new thing.</p>
      */
-    inline void SetThingName(Aws::String&& value) { m_thingName = value; }
+    inline void SetThingName(Aws::String&& value) { m_thingName = std::move(value); }
 
     /**
      * <p>The name of the new thing.</p>
@@ -72,7 +73,7 @@ namespace Model
     /**
      * <p>The name of the new thing.</p>
      */
-    inline CreateThingResult& WithThingName(Aws::String&& value) { SetThingName(value); return *this;}
+    inline CreateThingResult& WithThingName(Aws::String&& value) { SetThingName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the new thing.</p>
@@ -92,7 +93,7 @@ namespace Model
     /**
      * <p>The ARN of the new thing.</p>
      */
-    inline void SetThingArn(Aws::String&& value) { m_thingArn = value; }
+    inline void SetThingArn(Aws::String&& value) { m_thingArn = std::move(value); }
 
     /**
      * <p>The ARN of the new thing.</p>
@@ -107,7 +108,7 @@ namespace Model
     /**
      * <p>The ARN of the new thing.</p>
      */
-    inline CreateThingResult& WithThingArn(Aws::String&& value) { SetThingArn(value); return *this;}
+    inline CreateThingResult& WithThingArn(Aws::String&& value) { SetThingArn(std::move(value)); return *this;}
 
     /**
      * <p>The ARN of the new thing.</p>

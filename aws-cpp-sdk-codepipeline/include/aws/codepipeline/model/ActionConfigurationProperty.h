@@ -16,6 +16,7 @@
 #include <aws/codepipeline/CodePipeline_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/codepipeline/model/ActionConfigurationPropertyType.h>
+#include <utility>
 
 namespace Aws
 {
@@ -58,7 +59,7 @@ namespace Model
     /**
      * <p>The name of the action configuration property.</p>
      */
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p>The name of the action configuration property.</p>
@@ -73,7 +74,7 @@ namespace Model
     /**
      * <p>The name of the action configuration property.</p>
      */
-    inline ActionConfigurationProperty& WithName(Aws::String&& value) { SetName(value); return *this;}
+    inline ActionConfigurationProperty& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the action configuration property.</p>
@@ -189,7 +190,7 @@ namespace Model
      * <p>The description of the action configuration property that will be displayed
      * to users.</p>
      */
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = value; }
+    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
      * <p>The description of the action configuration property that will be displayed
@@ -207,7 +208,7 @@ namespace Model
      * <p>The description of the action configuration property that will be displayed
      * to users.</p>
      */
-    inline ActionConfigurationProperty& WithDescription(Aws::String&& value) { SetDescription(value); return *this;}
+    inline ActionConfigurationProperty& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
      * <p>The description of the action configuration property that will be displayed
@@ -228,7 +229,7 @@ namespace Model
     /**
      * <p>The type of the configuration property.</p>
      */
-    inline void SetType(ActionConfigurationPropertyType&& value) { m_typeHasBeenSet = true; m_type = value; }
+    inline void SetType(ActionConfigurationPropertyType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
      * <p>The type of the configuration property.</p>
@@ -238,7 +239,7 @@ namespace Model
     /**
      * <p>The type of the configuration property.</p>
      */
-    inline ActionConfigurationProperty& WithType(ActionConfigurationPropertyType&& value) { SetType(value); return *this;}
+    inline ActionConfigurationProperty& WithType(ActionConfigurationPropertyType&& value) { SetType(std::move(value)); return *this;}
 
   private:
     Aws::String m_name;

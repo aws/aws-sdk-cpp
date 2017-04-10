@@ -16,6 +16,7 @@
 #include <aws/route53/Route53_EXPORTS.h>
 #include <aws/route53/Route53Request.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -96,7 +97,7 @@ namespace Model
      * <code>NextMarker</code> element that was returned in the previous response.</p>
      * <p>Hosted zones are listed in the order in which they were created.</p>
      */
-    inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = value; }
+    inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = std::move(value); }
 
     /**
      * <p>(Optional) If you have more hosted zones than the value of
@@ -129,7 +130,7 @@ namespace Model
      * <code>NextMarker</code> element that was returned in the previous response.</p>
      * <p>Hosted zones are listed in the order in which they were created.</p>
      */
-    inline ListHostedZonesRequest& WithMarker(Aws::String&& value) { SetMarker(value); return *this;}
+    inline ListHostedZonesRequest& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
 
     /**
      * <p>(Optional) If you have more hosted zones than the value of
@@ -170,7 +171,7 @@ namespace Model
      * hosted zone ID of the first hosted zone in the next group of
      * <code>maxitems</code> hosted zones.</p>
      */
-    inline void SetMaxItems(Aws::String&& value) { m_maxItemsHasBeenSet = true; m_maxItems = value; }
+    inline void SetMaxItems(Aws::String&& value) { m_maxItemsHasBeenSet = true; m_maxItems = std::move(value); }
 
     /**
      * <p>(Optional) The maximum number of hosted zones to be included in the response
@@ -200,7 +201,7 @@ namespace Model
      * hosted zone ID of the first hosted zone in the next group of
      * <code>maxitems</code> hosted zones.</p>
      */
-    inline ListHostedZonesRequest& WithMaxItems(Aws::String&& value) { SetMaxItems(value); return *this;}
+    inline ListHostedZonesRequest& WithMaxItems(Aws::String&& value) { SetMaxItems(std::move(value)); return *this;}
 
     /**
      * <p>(Optional) The maximum number of hosted zones to be included in the response
@@ -231,7 +232,7 @@ namespace Model
      * hosted zones that are associated with a reusable delegation set, specify the ID
      * of that reusable delegation set. </p>
      */
-    inline void SetDelegationSetId(Aws::String&& value) { m_delegationSetIdHasBeenSet = true; m_delegationSetId = value; }
+    inline void SetDelegationSetId(Aws::String&& value) { m_delegationSetIdHasBeenSet = true; m_delegationSetId = std::move(value); }
 
     /**
      * <p>If you're using reusable delegation sets and you want to list all of the
@@ -252,7 +253,7 @@ namespace Model
      * hosted zones that are associated with a reusable delegation set, specify the ID
      * of that reusable delegation set. </p>
      */
-    inline ListHostedZonesRequest& WithDelegationSetId(Aws::String&& value) { SetDelegationSetId(value); return *this;}
+    inline ListHostedZonesRequest& WithDelegationSetId(Aws::String&& value) { SetDelegationSetId(std::move(value)); return *this;}
 
     /**
      * <p>If you're using reusable delegation sets and you want to list all of the

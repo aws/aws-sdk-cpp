@@ -16,6 +16,7 @@
 #include <aws/clouddirectory/CloudDirectory_EXPORTS.h>
 #include <aws/clouddirectory/CloudDirectoryRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -51,7 +52,7 @@ namespace Model
      * <p>ARN associated with the development schema. For more information, see
      * <a>arns</a>.</p>
      */
-    inline void SetDevelopmentSchemaArn(Aws::String&& value) { m_developmentSchemaArnHasBeenSet = true; m_developmentSchemaArn = value; }
+    inline void SetDevelopmentSchemaArn(Aws::String&& value) { m_developmentSchemaArnHasBeenSet = true; m_developmentSchemaArn = std::move(value); }
 
     /**
      * <p>ARN associated with the development schema. For more information, see
@@ -69,7 +70,7 @@ namespace Model
      * <p>ARN associated with the development schema. For more information, see
      * <a>arns</a>.</p>
      */
-    inline PublishSchemaRequest& WithDevelopmentSchemaArn(Aws::String&& value) { SetDevelopmentSchemaArn(value); return *this;}
+    inline PublishSchemaRequest& WithDevelopmentSchemaArn(Aws::String&& value) { SetDevelopmentSchemaArn(std::move(value)); return *this;}
 
     /**
      * <p>ARN associated with the development schema. For more information, see
@@ -90,7 +91,7 @@ namespace Model
     /**
      * <p>Version under which the schema will be published.</p>
      */
-    inline void SetVersion(Aws::String&& value) { m_versionHasBeenSet = true; m_version = value; }
+    inline void SetVersion(Aws::String&& value) { m_versionHasBeenSet = true; m_version = std::move(value); }
 
     /**
      * <p>Version under which the schema will be published.</p>
@@ -105,7 +106,7 @@ namespace Model
     /**
      * <p>Version under which the schema will be published.</p>
      */
-    inline PublishSchemaRequest& WithVersion(Aws::String&& value) { SetVersion(value); return *this;}
+    inline PublishSchemaRequest& WithVersion(Aws::String&& value) { SetVersion(std::move(value)); return *this;}
 
     /**
      * <p>Version under which the schema will be published.</p>
@@ -128,7 +129,7 @@ namespace Model
      * <p>New name under which the schema will be published. If this is not provided,
      * the development schema is considered.</p>
      */
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p>New name under which the schema will be published. If this is not provided,
@@ -146,7 +147,7 @@ namespace Model
      * <p>New name under which the schema will be published. If this is not provided,
      * the development schema is considered.</p>
      */
-    inline PublishSchemaRequest& WithName(Aws::String&& value) { SetName(value); return *this;}
+    inline PublishSchemaRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>New name under which the schema will be published. If this is not provided,

@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/iot/IoT_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -60,7 +61,7 @@ namespace Model
      * <p>The endpoint. The format of the endpoint is as follows:
      * <i>identifier</i>.iot.<i>region</i>.amazonaws.com.</p>
      */
-    inline void SetEndpointAddress(Aws::String&& value) { m_endpointAddress = value; }
+    inline void SetEndpointAddress(Aws::String&& value) { m_endpointAddress = std::move(value); }
 
     /**
      * <p>The endpoint. The format of the endpoint is as follows:
@@ -78,7 +79,7 @@ namespace Model
      * <p>The endpoint. The format of the endpoint is as follows:
      * <i>identifier</i>.iot.<i>region</i>.amazonaws.com.</p>
      */
-    inline DescribeEndpointResult& WithEndpointAddress(Aws::String&& value) { SetEndpointAddress(value); return *this;}
+    inline DescribeEndpointResult& WithEndpointAddress(Aws::String&& value) { SetEndpointAddress(std::move(value)); return *this;}
 
     /**
      * <p>The endpoint. The format of the endpoint is as follows:

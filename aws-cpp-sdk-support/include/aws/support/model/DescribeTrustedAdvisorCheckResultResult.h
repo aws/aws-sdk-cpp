@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/support/Support_EXPORTS.h>
 #include <aws/support/model/TrustedAdvisorCheckResult.h>
+#include <utility>
 
 namespace Aws
 {
@@ -59,7 +60,7 @@ namespace Model
     /**
      * <p>The detailed results of the Trusted Advisor check.</p>
      */
-    inline void SetResult(TrustedAdvisorCheckResult&& value) { m_result = value; }
+    inline void SetResult(TrustedAdvisorCheckResult&& value) { m_result = std::move(value); }
 
     /**
      * <p>The detailed results of the Trusted Advisor check.</p>
@@ -69,7 +70,7 @@ namespace Model
     /**
      * <p>The detailed results of the Trusted Advisor check.</p>
      */
-    inline DescribeTrustedAdvisorCheckResultResult& WithResult(TrustedAdvisorCheckResult&& value) { SetResult(value); return *this;}
+    inline DescribeTrustedAdvisorCheckResultResult& WithResult(TrustedAdvisorCheckResult&& value) { SetResult(std::move(value)); return *this;}
 
   private:
     TrustedAdvisorCheckResult m_result;

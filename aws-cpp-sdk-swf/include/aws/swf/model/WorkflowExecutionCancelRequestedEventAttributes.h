@@ -16,6 +16,7 @@
 #include <aws/swf/SWF_EXPORTS.h>
 #include <aws/swf/model/WorkflowExecution.h>
 #include <aws/swf/model/WorkflowExecutionCancelRequestedCause.h>
+#include <utility>
 
 namespace Aws
 {
@@ -58,7 +59,7 @@ namespace Model
     /**
      * <p>The external workflow execution for which the cancellation was requested.</p>
      */
-    inline void SetExternalWorkflowExecution(WorkflowExecution&& value) { m_externalWorkflowExecutionHasBeenSet = true; m_externalWorkflowExecution = value; }
+    inline void SetExternalWorkflowExecution(WorkflowExecution&& value) { m_externalWorkflowExecutionHasBeenSet = true; m_externalWorkflowExecution = std::move(value); }
 
     /**
      * <p>The external workflow execution for which the cancellation was requested.</p>
@@ -68,7 +69,7 @@ namespace Model
     /**
      * <p>The external workflow execution for which the cancellation was requested.</p>
      */
-    inline WorkflowExecutionCancelRequestedEventAttributes& WithExternalWorkflowExecution(WorkflowExecution&& value) { SetExternalWorkflowExecution(value); return *this;}
+    inline WorkflowExecutionCancelRequestedEventAttributes& WithExternalWorkflowExecution(WorkflowExecution&& value) { SetExternalWorkflowExecution(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the <code>RequestCancelExternalWorkflowExecutionInitiated</code>
@@ -122,7 +123,7 @@ namespace Model
      * workflow execution times out or is terminated, and the child policy is set to
      * cancel child executions.</p>
      */
-    inline void SetCause(WorkflowExecutionCancelRequestedCause&& value) { m_causeHasBeenSet = true; m_cause = value; }
+    inline void SetCause(WorkflowExecutionCancelRequestedCause&& value) { m_causeHasBeenSet = true; m_cause = std::move(value); }
 
     /**
      * <p>If set, indicates that the request to cancel the workflow execution was
@@ -138,7 +139,7 @@ namespace Model
      * workflow execution times out or is terminated, and the child policy is set to
      * cancel child executions.</p>
      */
-    inline WorkflowExecutionCancelRequestedEventAttributes& WithCause(WorkflowExecutionCancelRequestedCause&& value) { SetCause(value); return *this;}
+    inline WorkflowExecutionCancelRequestedEventAttributes& WithCause(WorkflowExecutionCancelRequestedCause&& value) { SetCause(std::move(value)); return *this;}
 
   private:
     WorkflowExecution m_externalWorkflowExecution;

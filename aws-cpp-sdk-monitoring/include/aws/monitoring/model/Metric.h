@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/monitoring/model/Dimension.h>
+#include <utility>
 
 namespace Aws
 {
@@ -61,7 +62,7 @@ namespace Model
     /**
      * <p>The namespace of the metric.</p>
      */
-    inline void SetNamespace(Aws::String&& value) { m_namespaceHasBeenSet = true; m_namespace = value; }
+    inline void SetNamespace(Aws::String&& value) { m_namespaceHasBeenSet = true; m_namespace = std::move(value); }
 
     /**
      * <p>The namespace of the metric.</p>
@@ -76,7 +77,7 @@ namespace Model
     /**
      * <p>The namespace of the metric.</p>
      */
-    inline Metric& WithNamespace(Aws::String&& value) { SetNamespace(value); return *this;}
+    inline Metric& WithNamespace(Aws::String&& value) { SetNamespace(std::move(value)); return *this;}
 
     /**
      * <p>The namespace of the metric.</p>
@@ -96,7 +97,7 @@ namespace Model
     /**
      * <p>The name of the metric.</p>
      */
-    inline void SetMetricName(Aws::String&& value) { m_metricNameHasBeenSet = true; m_metricName = value; }
+    inline void SetMetricName(Aws::String&& value) { m_metricNameHasBeenSet = true; m_metricName = std::move(value); }
 
     /**
      * <p>The name of the metric.</p>
@@ -111,7 +112,7 @@ namespace Model
     /**
      * <p>The name of the metric.</p>
      */
-    inline Metric& WithMetricName(Aws::String&& value) { SetMetricName(value); return *this;}
+    inline Metric& WithMetricName(Aws::String&& value) { SetMetricName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the metric.</p>
@@ -131,7 +132,7 @@ namespace Model
     /**
      * <p>The dimensions for the metric.</p>
      */
-    inline void SetDimensions(Aws::Vector<Dimension>&& value) { m_dimensionsHasBeenSet = true; m_dimensions = value; }
+    inline void SetDimensions(Aws::Vector<Dimension>&& value) { m_dimensionsHasBeenSet = true; m_dimensions = std::move(value); }
 
     /**
      * <p>The dimensions for the metric.</p>
@@ -141,7 +142,7 @@ namespace Model
     /**
      * <p>The dimensions for the metric.</p>
      */
-    inline Metric& WithDimensions(Aws::Vector<Dimension>&& value) { SetDimensions(value); return *this;}
+    inline Metric& WithDimensions(Aws::Vector<Dimension>&& value) { SetDimensions(std::move(value)); return *this;}
 
     /**
      * <p>The dimensions for the metric.</p>
@@ -151,7 +152,7 @@ namespace Model
     /**
      * <p>The dimensions for the metric.</p>
      */
-    inline Metric& AddDimensions(Dimension&& value) { m_dimensionsHasBeenSet = true; m_dimensions.push_back(value); return *this; }
+    inline Metric& AddDimensions(Dimension&& value) { m_dimensionsHasBeenSet = true; m_dimensions.push_back(std::move(value)); return *this; }
 
   private:
     Aws::String m_namespace;

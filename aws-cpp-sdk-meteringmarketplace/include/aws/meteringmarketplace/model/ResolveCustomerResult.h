@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/meteringmarketplace/MarketplaceMetering_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -64,7 +65,7 @@ namespace Model
      * application. Calls to BatchMeterUsage require CustomerIdentifiers for each
      * UsageRecord.</p>
      */
-    inline void SetCustomerIdentifier(Aws::String&& value) { m_customerIdentifier = value; }
+    inline void SetCustomerIdentifier(Aws::String&& value) { m_customerIdentifier = std::move(value); }
 
     /**
      * <p>The CustomerIdentifier is used to identify an individual customer in your
@@ -85,7 +86,7 @@ namespace Model
      * application. Calls to BatchMeterUsage require CustomerIdentifiers for each
      * UsageRecord.</p>
      */
-    inline ResolveCustomerResult& WithCustomerIdentifier(Aws::String&& value) { SetCustomerIdentifier(value); return *this;}
+    inline ResolveCustomerResult& WithCustomerIdentifier(Aws::String&& value) { SetCustomerIdentifier(std::move(value)); return *this;}
 
     /**
      * <p>The CustomerIdentifier is used to identify an individual customer in your
@@ -113,7 +114,7 @@ namespace Model
      * your product. Subsequent BatchMeterUsage calls should be made using this product
      * code.</p>
      */
-    inline void SetProductCode(Aws::String&& value) { m_productCode = value; }
+    inline void SetProductCode(Aws::String&& value) { m_productCode = std::move(value); }
 
     /**
      * <p>The product code is returned to confirm that the buyer is registering for
@@ -134,7 +135,7 @@ namespace Model
      * your product. Subsequent BatchMeterUsage calls should be made using this product
      * code.</p>
      */
-    inline ResolveCustomerResult& WithProductCode(Aws::String&& value) { SetProductCode(value); return *this;}
+    inline ResolveCustomerResult& WithProductCode(Aws::String&& value) { SetProductCode(std::move(value)); return *this;}
 
     /**
      * <p>The product code is returned to confirm that the buyer is registering for

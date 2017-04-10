@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/es/ElasticsearchService_EXPORTS.h>
 #include <aws/es/model/ESPartitionInstanceType.h>
+#include <utility>
 
 namespace Aws
 {
@@ -57,7 +58,7 @@ namespace Model
     /**
      * <p>The instance type for an Elasticsearch cluster.</p>
      */
-    inline void SetInstanceType(ESPartitionInstanceType&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
+    inline void SetInstanceType(ESPartitionInstanceType&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = std::move(value); }
 
     /**
      * <p>The instance type for an Elasticsearch cluster.</p>
@@ -67,7 +68,7 @@ namespace Model
     /**
      * <p>The instance type for an Elasticsearch cluster.</p>
      */
-    inline ElasticsearchClusterConfig& WithInstanceType(ESPartitionInstanceType&& value) { SetInstanceType(value); return *this;}
+    inline ElasticsearchClusterConfig& WithInstanceType(ESPartitionInstanceType&& value) { SetInstanceType(std::move(value)); return *this;}
 
     /**
      * <p>The number of instances in the specified domain cluster.</p>
@@ -142,7 +143,7 @@ namespace Model
     /**
      * <p>The instance type for a dedicated master node.</p>
      */
-    inline void SetDedicatedMasterType(ESPartitionInstanceType&& value) { m_dedicatedMasterTypeHasBeenSet = true; m_dedicatedMasterType = value; }
+    inline void SetDedicatedMasterType(ESPartitionInstanceType&& value) { m_dedicatedMasterTypeHasBeenSet = true; m_dedicatedMasterType = std::move(value); }
 
     /**
      * <p>The instance type for a dedicated master node.</p>
@@ -152,7 +153,7 @@ namespace Model
     /**
      * <p>The instance type for a dedicated master node.</p>
      */
-    inline ElasticsearchClusterConfig& WithDedicatedMasterType(ESPartitionInstanceType&& value) { SetDedicatedMasterType(value); return *this;}
+    inline ElasticsearchClusterConfig& WithDedicatedMasterType(ESPartitionInstanceType&& value) { SetDedicatedMasterType(std::move(value)); return *this;}
 
     /**
      * <p>Total number of dedicated master nodes, active and on standby, for the

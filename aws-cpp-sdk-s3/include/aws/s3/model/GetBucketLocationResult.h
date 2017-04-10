@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/s3/S3_EXPORTS.h>
 #include <aws/s3/model/BucketLocationConstraint.h>
+#include <utility>
 
 namespace Aws
 {
@@ -46,13 +47,13 @@ namespace Model
     inline void SetLocationConstraint(const BucketLocationConstraint& value) { m_locationConstraint = value; }
 
     
-    inline void SetLocationConstraint(BucketLocationConstraint&& value) { m_locationConstraint = value; }
+    inline void SetLocationConstraint(BucketLocationConstraint&& value) { m_locationConstraint = std::move(value); }
 
     
     inline GetBucketLocationResult& WithLocationConstraint(const BucketLocationConstraint& value) { SetLocationConstraint(value); return *this;}
 
     
-    inline GetBucketLocationResult& WithLocationConstraint(BucketLocationConstraint&& value) { SetLocationConstraint(value); return *this;}
+    inline GetBucketLocationResult& WithLocationConstraint(BucketLocationConstraint&& value) { SetLocationConstraint(std::move(value)); return *this;}
 
   private:
     BucketLocationConstraint m_locationConstraint;

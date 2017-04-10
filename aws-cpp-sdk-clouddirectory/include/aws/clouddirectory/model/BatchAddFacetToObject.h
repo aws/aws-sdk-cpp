@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/clouddirectory/model/ObjectReference.h>
 #include <aws/clouddirectory/model/AttributeKeyAndValue.h>
+#include <utility>
 
 namespace Aws
 {
@@ -60,7 +61,7 @@ namespace Model
     /**
      * <p>Represents the facet being added to the object.</p>
      */
-    inline void SetSchemaFacet(SchemaFacet&& value) { m_schemaFacetHasBeenSet = true; m_schemaFacet = value; }
+    inline void SetSchemaFacet(SchemaFacet&& value) { m_schemaFacetHasBeenSet = true; m_schemaFacet = std::move(value); }
 
     /**
      * <p>Represents the facet being added to the object.</p>
@@ -70,7 +71,7 @@ namespace Model
     /**
      * <p>Represents the facet being added to the object.</p>
      */
-    inline BatchAddFacetToObject& WithSchemaFacet(SchemaFacet&& value) { SetSchemaFacet(value); return *this;}
+    inline BatchAddFacetToObject& WithSchemaFacet(SchemaFacet&& value) { SetSchemaFacet(std::move(value)); return *this;}
 
     /**
      * <p>The attributes to set on the object.</p>
@@ -85,7 +86,7 @@ namespace Model
     /**
      * <p>The attributes to set on the object.</p>
      */
-    inline void SetObjectAttributeList(Aws::Vector<AttributeKeyAndValue>&& value) { m_objectAttributeListHasBeenSet = true; m_objectAttributeList = value; }
+    inline void SetObjectAttributeList(Aws::Vector<AttributeKeyAndValue>&& value) { m_objectAttributeListHasBeenSet = true; m_objectAttributeList = std::move(value); }
 
     /**
      * <p>The attributes to set on the object.</p>
@@ -95,7 +96,7 @@ namespace Model
     /**
      * <p>The attributes to set on the object.</p>
      */
-    inline BatchAddFacetToObject& WithObjectAttributeList(Aws::Vector<AttributeKeyAndValue>&& value) { SetObjectAttributeList(value); return *this;}
+    inline BatchAddFacetToObject& WithObjectAttributeList(Aws::Vector<AttributeKeyAndValue>&& value) { SetObjectAttributeList(std::move(value)); return *this;}
 
     /**
      * <p>The attributes to set on the object.</p>
@@ -105,7 +106,7 @@ namespace Model
     /**
      * <p>The attributes to set on the object.</p>
      */
-    inline BatchAddFacetToObject& AddObjectAttributeList(AttributeKeyAndValue&& value) { m_objectAttributeListHasBeenSet = true; m_objectAttributeList.push_back(value); return *this; }
+    inline BatchAddFacetToObject& AddObjectAttributeList(AttributeKeyAndValue&& value) { m_objectAttributeListHasBeenSet = true; m_objectAttributeList.push_back(std::move(value)); return *this; }
 
     /**
      * <p>A reference to the object being mutated.</p>
@@ -120,7 +121,7 @@ namespace Model
     /**
      * <p>A reference to the object being mutated.</p>
      */
-    inline void SetObjectReference(ObjectReference&& value) { m_objectReferenceHasBeenSet = true; m_objectReference = value; }
+    inline void SetObjectReference(ObjectReference&& value) { m_objectReferenceHasBeenSet = true; m_objectReference = std::move(value); }
 
     /**
      * <p>A reference to the object being mutated.</p>
@@ -130,7 +131,7 @@ namespace Model
     /**
      * <p>A reference to the object being mutated.</p>
      */
-    inline BatchAddFacetToObject& WithObjectReference(ObjectReference&& value) { SetObjectReference(value); return *this;}
+    inline BatchAddFacetToObject& WithObjectReference(ObjectReference&& value) { SetObjectReference(std::move(value)); return *this;}
 
   private:
     SchemaFacet m_schemaFacet;

@@ -17,6 +17,7 @@
 #include <aws/ssm/SSMRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ssm/model/DocumentType.h>
+#include <utility>
 
 namespace Aws
 {
@@ -49,7 +50,7 @@ namespace Model
     /**
      * <p>A valid JSON string.</p>
      */
-    inline void SetContent(Aws::String&& value) { m_contentHasBeenSet = true; m_content = value; }
+    inline void SetContent(Aws::String&& value) { m_contentHasBeenSet = true; m_content = std::move(value); }
 
     /**
      * <p>A valid JSON string.</p>
@@ -64,7 +65,7 @@ namespace Model
     /**
      * <p>A valid JSON string.</p>
      */
-    inline CreateDocumentRequest& WithContent(Aws::String&& value) { SetContent(value); return *this;}
+    inline CreateDocumentRequest& WithContent(Aws::String&& value) { SetContent(std::move(value)); return *this;}
 
     /**
      * <p>A valid JSON string.</p>
@@ -84,7 +85,7 @@ namespace Model
     /**
      * <p>A name for the Systems Manager document.</p>
      */
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p>A name for the Systems Manager document.</p>
@@ -99,7 +100,7 @@ namespace Model
     /**
      * <p>A name for the Systems Manager document.</p>
      */
-    inline CreateDocumentRequest& WithName(Aws::String&& value) { SetName(value); return *this;}
+    inline CreateDocumentRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>A name for the Systems Manager document.</p>
@@ -122,7 +123,7 @@ namespace Model
      * <p>The type of document to create. Valid document types include: Policy,
      * Automation, and Command.</p>
      */
-    inline void SetDocumentType(DocumentType&& value) { m_documentTypeHasBeenSet = true; m_documentType = value; }
+    inline void SetDocumentType(DocumentType&& value) { m_documentTypeHasBeenSet = true; m_documentType = std::move(value); }
 
     /**
      * <p>The type of document to create. Valid document types include: Policy,
@@ -134,7 +135,7 @@ namespace Model
      * <p>The type of document to create. Valid document types include: Policy,
      * Automation, and Command.</p>
      */
-    inline CreateDocumentRequest& WithDocumentType(DocumentType&& value) { SetDocumentType(value); return *this;}
+    inline CreateDocumentRequest& WithDocumentType(DocumentType&& value) { SetDocumentType(std::move(value)); return *this;}
 
   private:
     Aws::String m_content;

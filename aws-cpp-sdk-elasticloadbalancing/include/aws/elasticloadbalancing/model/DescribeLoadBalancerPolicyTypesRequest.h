@@ -17,6 +17,7 @@
 #include <aws/elasticloadbalancing/ElasticLoadBalancingRequest.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -58,7 +59,7 @@ namespace Model
      * <p>The names of the policy types. If no names are specified, describes all
      * policy types defined by Elastic Load Balancing.</p>
      */
-    inline void SetPolicyTypeNames(Aws::Vector<Aws::String>&& value) { m_policyTypeNamesHasBeenSet = true; m_policyTypeNames = value; }
+    inline void SetPolicyTypeNames(Aws::Vector<Aws::String>&& value) { m_policyTypeNamesHasBeenSet = true; m_policyTypeNames = std::move(value); }
 
     /**
      * <p>The names of the policy types. If no names are specified, describes all
@@ -70,7 +71,7 @@ namespace Model
      * <p>The names of the policy types. If no names are specified, describes all
      * policy types defined by Elastic Load Balancing.</p>
      */
-    inline DescribeLoadBalancerPolicyTypesRequest& WithPolicyTypeNames(Aws::Vector<Aws::String>&& value) { SetPolicyTypeNames(value); return *this;}
+    inline DescribeLoadBalancerPolicyTypesRequest& WithPolicyTypeNames(Aws::Vector<Aws::String>&& value) { SetPolicyTypeNames(std::move(value)); return *this;}
 
     /**
      * <p>The names of the policy types. If no names are specified, describes all
@@ -82,7 +83,7 @@ namespace Model
      * <p>The names of the policy types. If no names are specified, describes all
      * policy types defined by Elastic Load Balancing.</p>
      */
-    inline DescribeLoadBalancerPolicyTypesRequest& AddPolicyTypeNames(Aws::String&& value) { m_policyTypeNamesHasBeenSet = true; m_policyTypeNames.push_back(value); return *this; }
+    inline DescribeLoadBalancerPolicyTypesRequest& AddPolicyTypeNames(Aws::String&& value) { m_policyTypeNamesHasBeenSet = true; m_policyTypeNames.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The names of the policy types. If no names are specified, describes all

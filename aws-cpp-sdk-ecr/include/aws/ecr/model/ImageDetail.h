@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/DateTime.h>
+#include <utility>
 
 namespace Aws
 {
@@ -62,7 +63,7 @@ namespace Model
      * <p>The AWS account ID associated with the registry to which this image
      * belongs.</p>
      */
-    inline void SetRegistryId(Aws::String&& value) { m_registryIdHasBeenSet = true; m_registryId = value; }
+    inline void SetRegistryId(Aws::String&& value) { m_registryIdHasBeenSet = true; m_registryId = std::move(value); }
 
     /**
      * <p>The AWS account ID associated with the registry to which this image
@@ -80,7 +81,7 @@ namespace Model
      * <p>The AWS account ID associated with the registry to which this image
      * belongs.</p>
      */
-    inline ImageDetail& WithRegistryId(Aws::String&& value) { SetRegistryId(value); return *this;}
+    inline ImageDetail& WithRegistryId(Aws::String&& value) { SetRegistryId(std::move(value)); return *this;}
 
     /**
      * <p>The AWS account ID associated with the registry to which this image
@@ -101,7 +102,7 @@ namespace Model
     /**
      * <p>The name of the repository to which this image belongs.</p>
      */
-    inline void SetRepositoryName(Aws::String&& value) { m_repositoryNameHasBeenSet = true; m_repositoryName = value; }
+    inline void SetRepositoryName(Aws::String&& value) { m_repositoryNameHasBeenSet = true; m_repositoryName = std::move(value); }
 
     /**
      * <p>The name of the repository to which this image belongs.</p>
@@ -116,7 +117,7 @@ namespace Model
     /**
      * <p>The name of the repository to which this image belongs.</p>
      */
-    inline ImageDetail& WithRepositoryName(Aws::String&& value) { SetRepositoryName(value); return *this;}
+    inline ImageDetail& WithRepositoryName(Aws::String&& value) { SetRepositoryName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the repository to which this image belongs.</p>
@@ -136,7 +137,7 @@ namespace Model
     /**
      * <p>The <code>sha256</code> digest of the image manifest.</p>
      */
-    inline void SetImageDigest(Aws::String&& value) { m_imageDigestHasBeenSet = true; m_imageDigest = value; }
+    inline void SetImageDigest(Aws::String&& value) { m_imageDigestHasBeenSet = true; m_imageDigest = std::move(value); }
 
     /**
      * <p>The <code>sha256</code> digest of the image manifest.</p>
@@ -151,7 +152,7 @@ namespace Model
     /**
      * <p>The <code>sha256</code> digest of the image manifest.</p>
      */
-    inline ImageDetail& WithImageDigest(Aws::String&& value) { SetImageDigest(value); return *this;}
+    inline ImageDetail& WithImageDigest(Aws::String&& value) { SetImageDigest(std::move(value)); return *this;}
 
     /**
      * <p>The <code>sha256</code> digest of the image manifest.</p>
@@ -171,7 +172,7 @@ namespace Model
     /**
      * <p>The list of tags associated with this image.</p>
      */
-    inline void SetImageTags(Aws::Vector<Aws::String>&& value) { m_imageTagsHasBeenSet = true; m_imageTags = value; }
+    inline void SetImageTags(Aws::Vector<Aws::String>&& value) { m_imageTagsHasBeenSet = true; m_imageTags = std::move(value); }
 
     /**
      * <p>The list of tags associated with this image.</p>
@@ -181,7 +182,7 @@ namespace Model
     /**
      * <p>The list of tags associated with this image.</p>
      */
-    inline ImageDetail& WithImageTags(Aws::Vector<Aws::String>&& value) { SetImageTags(value); return *this;}
+    inline ImageDetail& WithImageTags(Aws::Vector<Aws::String>&& value) { SetImageTags(std::move(value)); return *this;}
 
     /**
      * <p>The list of tags associated with this image.</p>
@@ -191,7 +192,7 @@ namespace Model
     /**
      * <p>The list of tags associated with this image.</p>
      */
-    inline ImageDetail& AddImageTags(Aws::String&& value) { m_imageTagsHasBeenSet = true; m_imageTags.push_back(value); return *this; }
+    inline ImageDetail& AddImageTags(Aws::String&& value) { m_imageTagsHasBeenSet = true; m_imageTags.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The list of tags associated with this image.</p>
@@ -244,7 +245,7 @@ namespace Model
      * <p>The date and time, expressed in standard JavaScript date format, at which the
      * current image was pushed to the repository. </p>
      */
-    inline void SetImagePushedAt(Aws::Utils::DateTime&& value) { m_imagePushedAtHasBeenSet = true; m_imagePushedAt = value; }
+    inline void SetImagePushedAt(Aws::Utils::DateTime&& value) { m_imagePushedAtHasBeenSet = true; m_imagePushedAt = std::move(value); }
 
     /**
      * <p>The date and time, expressed in standard JavaScript date format, at which the
@@ -256,7 +257,7 @@ namespace Model
      * <p>The date and time, expressed in standard JavaScript date format, at which the
      * current image was pushed to the repository. </p>
      */
-    inline ImageDetail& WithImagePushedAt(Aws::Utils::DateTime&& value) { SetImagePushedAt(value); return *this;}
+    inline ImageDetail& WithImagePushedAt(Aws::Utils::DateTime&& value) { SetImagePushedAt(std::move(value)); return *this;}
 
   private:
     Aws::String m_registryId;

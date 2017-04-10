@@ -20,6 +20,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ec2/model/SubnetIpv6CidrBlockAssociation.h>
 #include <aws/ec2/model/Tag.h>
+#include <utility>
 
 namespace Aws
 {
@@ -63,7 +64,7 @@ namespace Model
     /**
      * <p>The ID of the subnet.</p>
      */
-    inline void SetSubnetId(Aws::String&& value) { m_subnetIdHasBeenSet = true; m_subnetId = value; }
+    inline void SetSubnetId(Aws::String&& value) { m_subnetIdHasBeenSet = true; m_subnetId = std::move(value); }
 
     /**
      * <p>The ID of the subnet.</p>
@@ -78,7 +79,7 @@ namespace Model
     /**
      * <p>The ID of the subnet.</p>
      */
-    inline Subnet& WithSubnetId(Aws::String&& value) { SetSubnetId(value); return *this;}
+    inline Subnet& WithSubnetId(Aws::String&& value) { SetSubnetId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the subnet.</p>
@@ -98,7 +99,7 @@ namespace Model
     /**
      * <p>The current state of the subnet.</p>
      */
-    inline void SetState(SubnetState&& value) { m_stateHasBeenSet = true; m_state = value; }
+    inline void SetState(SubnetState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
 
     /**
      * <p>The current state of the subnet.</p>
@@ -108,7 +109,7 @@ namespace Model
     /**
      * <p>The current state of the subnet.</p>
      */
-    inline Subnet& WithState(SubnetState&& value) { SetState(value); return *this;}
+    inline Subnet& WithState(SubnetState&& value) { SetState(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the VPC the subnet is in.</p>
@@ -123,7 +124,7 @@ namespace Model
     /**
      * <p>The ID of the VPC the subnet is in.</p>
      */
-    inline void SetVpcId(Aws::String&& value) { m_vpcIdHasBeenSet = true; m_vpcId = value; }
+    inline void SetVpcId(Aws::String&& value) { m_vpcIdHasBeenSet = true; m_vpcId = std::move(value); }
 
     /**
      * <p>The ID of the VPC the subnet is in.</p>
@@ -138,7 +139,7 @@ namespace Model
     /**
      * <p>The ID of the VPC the subnet is in.</p>
      */
-    inline Subnet& WithVpcId(Aws::String&& value) { SetVpcId(value); return *this;}
+    inline Subnet& WithVpcId(Aws::String&& value) { SetVpcId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the VPC the subnet is in.</p>
@@ -158,7 +159,7 @@ namespace Model
     /**
      * <p>The IPv4 CIDR block assigned to the subnet.</p>
      */
-    inline void SetCidrBlock(Aws::String&& value) { m_cidrBlockHasBeenSet = true; m_cidrBlock = value; }
+    inline void SetCidrBlock(Aws::String&& value) { m_cidrBlockHasBeenSet = true; m_cidrBlock = std::move(value); }
 
     /**
      * <p>The IPv4 CIDR block assigned to the subnet.</p>
@@ -173,7 +174,7 @@ namespace Model
     /**
      * <p>The IPv4 CIDR block assigned to the subnet.</p>
      */
-    inline Subnet& WithCidrBlock(Aws::String&& value) { SetCidrBlock(value); return *this;}
+    inline Subnet& WithCidrBlock(Aws::String&& value) { SetCidrBlock(std::move(value)); return *this;}
 
     /**
      * <p>The IPv4 CIDR block assigned to the subnet.</p>
@@ -193,7 +194,7 @@ namespace Model
     /**
      * <p>Information about the IPv6 CIDR blocks associated with the subnet.</p>
      */
-    inline void SetIpv6CidrBlockAssociationSet(Aws::Vector<SubnetIpv6CidrBlockAssociation>&& value) { m_ipv6CidrBlockAssociationSetHasBeenSet = true; m_ipv6CidrBlockAssociationSet = value; }
+    inline void SetIpv6CidrBlockAssociationSet(Aws::Vector<SubnetIpv6CidrBlockAssociation>&& value) { m_ipv6CidrBlockAssociationSetHasBeenSet = true; m_ipv6CidrBlockAssociationSet = std::move(value); }
 
     /**
      * <p>Information about the IPv6 CIDR blocks associated with the subnet.</p>
@@ -203,7 +204,7 @@ namespace Model
     /**
      * <p>Information about the IPv6 CIDR blocks associated with the subnet.</p>
      */
-    inline Subnet& WithIpv6CidrBlockAssociationSet(Aws::Vector<SubnetIpv6CidrBlockAssociation>&& value) { SetIpv6CidrBlockAssociationSet(value); return *this;}
+    inline Subnet& WithIpv6CidrBlockAssociationSet(Aws::Vector<SubnetIpv6CidrBlockAssociation>&& value) { SetIpv6CidrBlockAssociationSet(std::move(value)); return *this;}
 
     /**
      * <p>Information about the IPv6 CIDR blocks associated with the subnet.</p>
@@ -213,7 +214,7 @@ namespace Model
     /**
      * <p>Information about the IPv6 CIDR blocks associated with the subnet.</p>
      */
-    inline Subnet& AddIpv6CidrBlockAssociationSet(SubnetIpv6CidrBlockAssociation&& value) { m_ipv6CidrBlockAssociationSetHasBeenSet = true; m_ipv6CidrBlockAssociationSet.push_back(value); return *this; }
+    inline Subnet& AddIpv6CidrBlockAssociationSet(SubnetIpv6CidrBlockAssociation&& value) { m_ipv6CidrBlockAssociationSetHasBeenSet = true; m_ipv6CidrBlockAssociationSet.push_back(std::move(value)); return *this; }
 
     /**
      * <p>Indicates whether a network interface created in this subnet (including a
@@ -264,7 +265,7 @@ namespace Model
     /**
      * <p>The Availability Zone of the subnet.</p>
      */
-    inline void SetAvailabilityZone(Aws::String&& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = value; }
+    inline void SetAvailabilityZone(Aws::String&& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = std::move(value); }
 
     /**
      * <p>The Availability Zone of the subnet.</p>
@@ -279,7 +280,7 @@ namespace Model
     /**
      * <p>The Availability Zone of the subnet.</p>
      */
-    inline Subnet& WithAvailabilityZone(Aws::String&& value) { SetAvailabilityZone(value); return *this;}
+    inline Subnet& WithAvailabilityZone(Aws::String&& value) { SetAvailabilityZone(std::move(value)); return *this;}
 
     /**
      * <p>The Availability Zone of the subnet.</p>
@@ -332,7 +333,7 @@ namespace Model
     /**
      * <p>Any tags assigned to the subnet.</p>
      */
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = value; }
+    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
      * <p>Any tags assigned to the subnet.</p>
@@ -342,7 +343,7 @@ namespace Model
     /**
      * <p>Any tags assigned to the subnet.</p>
      */
-    inline Subnet& WithTags(Aws::Vector<Tag>&& value) { SetTags(value); return *this;}
+    inline Subnet& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
      * <p>Any tags assigned to the subnet.</p>
@@ -352,7 +353,7 @@ namespace Model
     /**
      * <p>Any tags assigned to the subnet.</p>
      */
-    inline Subnet& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
+    inline Subnet& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
   private:
     Aws::String m_subnetId;

@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/storagegateway/model/NFSFileShareDefaults.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <utility>
 
 namespace Aws
 {
@@ -53,7 +54,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the file share to be updated. </p>
      */
-    inline void SetFileShareARN(Aws::String&& value) { m_fileShareARNHasBeenSet = true; m_fileShareARN = value; }
+    inline void SetFileShareARN(Aws::String&& value) { m_fileShareARNHasBeenSet = true; m_fileShareARN = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the file share to be updated. </p>
@@ -68,7 +69,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the file share to be updated. </p>
      */
-    inline UpdateNFSFileShareRequest& WithFileShareARN(Aws::String&& value) { SetFileShareARN(value); return *this;}
+    inline UpdateNFSFileShareRequest& WithFileShareARN(Aws::String&& value) { SetFileShareARN(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the file share to be updated. </p>
@@ -109,7 +110,7 @@ namespace Model
      * <p>The KMS key used for Amazon S3 server side encryption. This value can only be
      * set when KmsEncrypted is true. Optional. </p>
      */
-    inline void SetKMSKey(Aws::String&& value) { m_kMSKeyHasBeenSet = true; m_kMSKey = value; }
+    inline void SetKMSKey(Aws::String&& value) { m_kMSKeyHasBeenSet = true; m_kMSKey = std::move(value); }
 
     /**
      * <p>The KMS key used for Amazon S3 server side encryption. This value can only be
@@ -127,7 +128,7 @@ namespace Model
      * <p>The KMS key used for Amazon S3 server side encryption. This value can only be
      * set when KmsEncrypted is true. Optional. </p>
      */
-    inline UpdateNFSFileShareRequest& WithKMSKey(Aws::String&& value) { SetKMSKey(value); return *this;}
+    inline UpdateNFSFileShareRequest& WithKMSKey(Aws::String&& value) { SetKMSKey(std::move(value)); return *this;}
 
     /**
      * <p>The KMS key used for Amazon S3 server side encryption. This value can only be
@@ -148,7 +149,7 @@ namespace Model
     /**
      * <p>The default values for the file share. Optional.</p>
      */
-    inline void SetNFSFileShareDefaults(NFSFileShareDefaults&& value) { m_nFSFileShareDefaultsHasBeenSet = true; m_nFSFileShareDefaults = value; }
+    inline void SetNFSFileShareDefaults(NFSFileShareDefaults&& value) { m_nFSFileShareDefaultsHasBeenSet = true; m_nFSFileShareDefaults = std::move(value); }
 
     /**
      * <p>The default values for the file share. Optional.</p>
@@ -158,7 +159,7 @@ namespace Model
     /**
      * <p>The default values for the file share. Optional.</p>
      */
-    inline UpdateNFSFileShareRequest& WithNFSFileShareDefaults(NFSFileShareDefaults&& value) { SetNFSFileShareDefaults(value); return *this;}
+    inline UpdateNFSFileShareRequest& WithNFSFileShareDefaults(NFSFileShareDefaults&& value) { SetNFSFileShareDefaults(std::move(value)); return *this;}
 
     /**
      * <p>The default storage class for objects put into an Amazon S3 bucket by a file
@@ -179,7 +180,7 @@ namespace Model
      * gateway. Possible values are S3_STANDARD or S3_STANDARD_IA. If this field is not
      * populated, the default value S3_STANDARD is used. Optional.</p>
      */
-    inline void SetDefaultStorageClass(Aws::String&& value) { m_defaultStorageClassHasBeenSet = true; m_defaultStorageClass = value; }
+    inline void SetDefaultStorageClass(Aws::String&& value) { m_defaultStorageClassHasBeenSet = true; m_defaultStorageClass = std::move(value); }
 
     /**
      * <p>The default storage class for objects put into an Amazon S3 bucket by a file
@@ -200,7 +201,7 @@ namespace Model
      * gateway. Possible values are S3_STANDARD or S3_STANDARD_IA. If this field is not
      * populated, the default value S3_STANDARD is used. Optional.</p>
      */
-    inline UpdateNFSFileShareRequest& WithDefaultStorageClass(Aws::String&& value) { SetDefaultStorageClass(value); return *this;}
+    inline UpdateNFSFileShareRequest& WithDefaultStorageClass(Aws::String&& value) { SetDefaultStorageClass(std::move(value)); return *this;}
 
     /**
      * <p>The default storage class for objects put into an Amazon S3 bucket by a file
@@ -225,7 +226,7 @@ namespace Model
      * <p>The list of clients that are allowed to access the file gateway. The list
      * must contain either valid IP addresses or valid CIDR blocks.</p>
      */
-    inline void SetClientList(Aws::Vector<Aws::String>&& value) { m_clientListHasBeenSet = true; m_clientList = value; }
+    inline void SetClientList(Aws::Vector<Aws::String>&& value) { m_clientListHasBeenSet = true; m_clientList = std::move(value); }
 
     /**
      * <p>The list of clients that are allowed to access the file gateway. The list
@@ -237,7 +238,7 @@ namespace Model
      * <p>The list of clients that are allowed to access the file gateway. The list
      * must contain either valid IP addresses or valid CIDR blocks.</p>
      */
-    inline UpdateNFSFileShareRequest& WithClientList(Aws::Vector<Aws::String>&& value) { SetClientList(value); return *this;}
+    inline UpdateNFSFileShareRequest& WithClientList(Aws::Vector<Aws::String>&& value) { SetClientList(std::move(value)); return *this;}
 
     /**
      * <p>The list of clients that are allowed to access the file gateway. The list
@@ -249,7 +250,7 @@ namespace Model
      * <p>The list of clients that are allowed to access the file gateway. The list
      * must contain either valid IP addresses or valid CIDR blocks.</p>
      */
-    inline UpdateNFSFileShareRequest& AddClientList(Aws::String&& value) { m_clientListHasBeenSet = true; m_clientList.push_back(value); return *this; }
+    inline UpdateNFSFileShareRequest& AddClientList(Aws::String&& value) { m_clientListHasBeenSet = true; m_clientList.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The list of clients that are allowed to access the file gateway. The list
@@ -276,7 +277,7 @@ namespace Model
      * Only root is mapped to anonymous user, "NoSquash" - No one is mapped to
      * anonymous user or "AllSquash" - Everyone is mapped to anonymous user.</p>
      */
-    inline void SetSquash(Aws::String&& value) { m_squashHasBeenSet = true; m_squash = value; }
+    inline void SetSquash(Aws::String&& value) { m_squashHasBeenSet = true; m_squash = std::move(value); }
 
     /**
      * <p>Indicates the user mapped to anonymous user. Valid options: "RootSquash" -
@@ -297,7 +298,7 @@ namespace Model
      * Only root is mapped to anonymous user, "NoSquash" - No one is mapped to
      * anonymous user or "AllSquash" - Everyone is mapped to anonymous user.</p>
      */
-    inline UpdateNFSFileShareRequest& WithSquash(Aws::String&& value) { SetSquash(value); return *this;}
+    inline UpdateNFSFileShareRequest& WithSquash(Aws::String&& value) { SetSquash(std::move(value)); return *this;}
 
     /**
      * <p>Indicates the user mapped to anonymous user. Valid options: "RootSquash" -

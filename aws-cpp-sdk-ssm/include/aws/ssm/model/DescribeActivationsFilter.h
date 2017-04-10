@@ -17,6 +17,7 @@
 #include <aws/ssm/model/DescribeActivationsFilterKeys.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -58,7 +59,7 @@ namespace Model
     /**
      * <p>The name of the filter.</p>
      */
-    inline void SetFilterKey(DescribeActivationsFilterKeys&& value) { m_filterKeyHasBeenSet = true; m_filterKey = value; }
+    inline void SetFilterKey(DescribeActivationsFilterKeys&& value) { m_filterKeyHasBeenSet = true; m_filterKey = std::move(value); }
 
     /**
      * <p>The name of the filter.</p>
@@ -68,7 +69,7 @@ namespace Model
     /**
      * <p>The name of the filter.</p>
      */
-    inline DescribeActivationsFilter& WithFilterKey(DescribeActivationsFilterKeys&& value) { SetFilterKey(value); return *this;}
+    inline DescribeActivationsFilter& WithFilterKey(DescribeActivationsFilterKeys&& value) { SetFilterKey(std::move(value)); return *this;}
 
     /**
      * <p>The filter values.</p>
@@ -83,7 +84,7 @@ namespace Model
     /**
      * <p>The filter values.</p>
      */
-    inline void SetFilterValues(Aws::Vector<Aws::String>&& value) { m_filterValuesHasBeenSet = true; m_filterValues = value; }
+    inline void SetFilterValues(Aws::Vector<Aws::String>&& value) { m_filterValuesHasBeenSet = true; m_filterValues = std::move(value); }
 
     /**
      * <p>The filter values.</p>
@@ -93,7 +94,7 @@ namespace Model
     /**
      * <p>The filter values.</p>
      */
-    inline DescribeActivationsFilter& WithFilterValues(Aws::Vector<Aws::String>&& value) { SetFilterValues(value); return *this;}
+    inline DescribeActivationsFilter& WithFilterValues(Aws::Vector<Aws::String>&& value) { SetFilterValues(std::move(value)); return *this;}
 
     /**
      * <p>The filter values.</p>
@@ -103,7 +104,7 @@ namespace Model
     /**
      * <p>The filter values.</p>
      */
-    inline DescribeActivationsFilter& AddFilterValues(Aws::String&& value) { m_filterValuesHasBeenSet = true; m_filterValues.push_back(value); return *this; }
+    inline DescribeActivationsFilter& AddFilterValues(Aws::String&& value) { m_filterValuesHasBeenSet = true; m_filterValues.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The filter values.</p>

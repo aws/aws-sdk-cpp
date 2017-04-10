@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/iot/IoT_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -58,7 +59,7 @@ namespace Model
     /**
      * <p>The ARN of the certificate.</p>
      */
-    inline void SetTransferredCertificateArn(Aws::String&& value) { m_transferredCertificateArn = value; }
+    inline void SetTransferredCertificateArn(Aws::String&& value) { m_transferredCertificateArn = std::move(value); }
 
     /**
      * <p>The ARN of the certificate.</p>
@@ -73,7 +74,7 @@ namespace Model
     /**
      * <p>The ARN of the certificate.</p>
      */
-    inline TransferCertificateResult& WithTransferredCertificateArn(Aws::String&& value) { SetTransferredCertificateArn(value); return *this;}
+    inline TransferCertificateResult& WithTransferredCertificateArn(Aws::String&& value) { SetTransferredCertificateArn(std::move(value)); return *this;}
 
     /**
      * <p>The ARN of the certificate.</p>

@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ds/model/RadiusAuthenticationProtocol.h>
+#include <utility>
 
 namespace Aws
 {
@@ -62,7 +63,7 @@ namespace Model
      * <p>An array of strings that contains the IP addresses of the RADIUS server
      * endpoints, or the IP addresses of your RADIUS server load balancer.</p>
      */
-    inline void SetRadiusServers(Aws::Vector<Aws::String>&& value) { m_radiusServersHasBeenSet = true; m_radiusServers = value; }
+    inline void SetRadiusServers(Aws::Vector<Aws::String>&& value) { m_radiusServersHasBeenSet = true; m_radiusServers = std::move(value); }
 
     /**
      * <p>An array of strings that contains the IP addresses of the RADIUS server
@@ -74,7 +75,7 @@ namespace Model
      * <p>An array of strings that contains the IP addresses of the RADIUS server
      * endpoints, or the IP addresses of your RADIUS server load balancer.</p>
      */
-    inline RadiusSettings& WithRadiusServers(Aws::Vector<Aws::String>&& value) { SetRadiusServers(value); return *this;}
+    inline RadiusSettings& WithRadiusServers(Aws::Vector<Aws::String>&& value) { SetRadiusServers(std::move(value)); return *this;}
 
     /**
      * <p>An array of strings that contains the IP addresses of the RADIUS server
@@ -86,7 +87,7 @@ namespace Model
      * <p>An array of strings that contains the IP addresses of the RADIUS server
      * endpoints, or the IP addresses of your RADIUS server load balancer.</p>
      */
-    inline RadiusSettings& AddRadiusServers(Aws::String&& value) { m_radiusServersHasBeenSet = true; m_radiusServers.push_back(value); return *this; }
+    inline RadiusSettings& AddRadiusServers(Aws::String&& value) { m_radiusServersHasBeenSet = true; m_radiusServers.push_back(std::move(value)); return *this; }
 
     /**
      * <p>An array of strings that contains the IP addresses of the RADIUS server
@@ -161,7 +162,7 @@ namespace Model
     /**
      * <p>Not currently used.</p>
      */
-    inline void SetSharedSecret(Aws::String&& value) { m_sharedSecretHasBeenSet = true; m_sharedSecret = value; }
+    inline void SetSharedSecret(Aws::String&& value) { m_sharedSecretHasBeenSet = true; m_sharedSecret = std::move(value); }
 
     /**
      * <p>Not currently used.</p>
@@ -176,7 +177,7 @@ namespace Model
     /**
      * <p>Not currently used.</p>
      */
-    inline RadiusSettings& WithSharedSecret(Aws::String&& value) { SetSharedSecret(value); return *this;}
+    inline RadiusSettings& WithSharedSecret(Aws::String&& value) { SetSharedSecret(std::move(value)); return *this;}
 
     /**
      * <p>Not currently used.</p>
@@ -196,7 +197,7 @@ namespace Model
     /**
      * <p>The protocol specified for your RADIUS endpoints.</p>
      */
-    inline void SetAuthenticationProtocol(RadiusAuthenticationProtocol&& value) { m_authenticationProtocolHasBeenSet = true; m_authenticationProtocol = value; }
+    inline void SetAuthenticationProtocol(RadiusAuthenticationProtocol&& value) { m_authenticationProtocolHasBeenSet = true; m_authenticationProtocol = std::move(value); }
 
     /**
      * <p>The protocol specified for your RADIUS endpoints.</p>
@@ -206,7 +207,7 @@ namespace Model
     /**
      * <p>The protocol specified for your RADIUS endpoints.</p>
      */
-    inline RadiusSettings& WithAuthenticationProtocol(RadiusAuthenticationProtocol&& value) { SetAuthenticationProtocol(value); return *this;}
+    inline RadiusSettings& WithAuthenticationProtocol(RadiusAuthenticationProtocol&& value) { SetAuthenticationProtocol(std::move(value)); return *this;}
 
     /**
      * <p>Not currently used.</p>
@@ -221,7 +222,7 @@ namespace Model
     /**
      * <p>Not currently used.</p>
      */
-    inline void SetDisplayLabel(Aws::String&& value) { m_displayLabelHasBeenSet = true; m_displayLabel = value; }
+    inline void SetDisplayLabel(Aws::String&& value) { m_displayLabelHasBeenSet = true; m_displayLabel = std::move(value); }
 
     /**
      * <p>Not currently used.</p>
@@ -236,7 +237,7 @@ namespace Model
     /**
      * <p>Not currently used.</p>
      */
-    inline RadiusSettings& WithDisplayLabel(Aws::String&& value) { SetDisplayLabel(value); return *this;}
+    inline RadiusSettings& WithDisplayLabel(Aws::String&& value) { SetDisplayLabel(std::move(value)); return *this;}
 
     /**
      * <p>Not currently used.</p>

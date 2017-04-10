@@ -16,6 +16,7 @@
 #include <aws/ssm/SSM_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ssm/model/DocumentParameterType.h>
+#include <utility>
 
 namespace Aws
 {
@@ -58,7 +59,7 @@ namespace Model
     /**
      * <p>The name of the parameter.</p>
      */
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p>The name of the parameter.</p>
@@ -73,7 +74,7 @@ namespace Model
     /**
      * <p>The name of the parameter.</p>
      */
-    inline DocumentParameter& WithName(Aws::String&& value) { SetName(value); return *this;}
+    inline DocumentParameter& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the parameter.</p>
@@ -93,7 +94,7 @@ namespace Model
     /**
      * <p>The type of parameter. The type can be either “String” or “StringList”.</p>
      */
-    inline void SetType(DocumentParameterType&& value) { m_typeHasBeenSet = true; m_type = value; }
+    inline void SetType(DocumentParameterType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
      * <p>The type of parameter. The type can be either “String” or “StringList”.</p>
@@ -103,7 +104,7 @@ namespace Model
     /**
      * <p>The type of parameter. The type can be either “String” or “StringList”.</p>
      */
-    inline DocumentParameter& WithType(DocumentParameterType&& value) { SetType(value); return *this;}
+    inline DocumentParameter& WithType(DocumentParameterType&& value) { SetType(std::move(value)); return *this;}
 
     /**
      * <p>A description of what the parameter does, how to use it, the default value,
@@ -121,7 +122,7 @@ namespace Model
      * <p>A description of what the parameter does, how to use it, the default value,
      * and whether or not the parameter is optional.</p>
      */
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = value; }
+    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
      * <p>A description of what the parameter does, how to use it, the default value,
@@ -139,7 +140,7 @@ namespace Model
      * <p>A description of what the parameter does, how to use it, the default value,
      * and whether or not the parameter is optional.</p>
      */
-    inline DocumentParameter& WithDescription(Aws::String&& value) { SetDescription(value); return *this;}
+    inline DocumentParameter& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
      * <p>A description of what the parameter does, how to use it, the default value,
@@ -163,7 +164,7 @@ namespace Model
      * <p>If specified, the default values for the parameters. Parameters without a
      * default value are required. Parameters with a default value are optional.</p>
      */
-    inline void SetDefaultValue(Aws::String&& value) { m_defaultValueHasBeenSet = true; m_defaultValue = value; }
+    inline void SetDefaultValue(Aws::String&& value) { m_defaultValueHasBeenSet = true; m_defaultValue = std::move(value); }
 
     /**
      * <p>If specified, the default values for the parameters. Parameters without a
@@ -181,7 +182,7 @@ namespace Model
      * <p>If specified, the default values for the parameters. Parameters without a
      * default value are required. Parameters with a default value are optional.</p>
      */
-    inline DocumentParameter& WithDefaultValue(Aws::String&& value) { SetDefaultValue(value); return *this;}
+    inline DocumentParameter& WithDefaultValue(Aws::String&& value) { SetDefaultValue(std::move(value)); return *this;}
 
     /**
      * <p>If specified, the default values for the parameters. Parameters without a

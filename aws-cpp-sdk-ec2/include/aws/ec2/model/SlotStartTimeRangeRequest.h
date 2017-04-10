@@ -16,6 +16,7 @@
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/DateTime.h>
+#include <utility>
 
 namespace Aws
 {
@@ -60,7 +61,7 @@ namespace Model
     /**
      * <p>The earliest date and time, in UTC, for the Scheduled Instance to start.</p>
      */
-    inline void SetEarliestTime(Aws::Utils::DateTime&& value) { m_earliestTimeHasBeenSet = true; m_earliestTime = value; }
+    inline void SetEarliestTime(Aws::Utils::DateTime&& value) { m_earliestTimeHasBeenSet = true; m_earliestTime = std::move(value); }
 
     /**
      * <p>The earliest date and time, in UTC, for the Scheduled Instance to start.</p>
@@ -70,7 +71,7 @@ namespace Model
     /**
      * <p>The earliest date and time, in UTC, for the Scheduled Instance to start.</p>
      */
-    inline SlotStartTimeRangeRequest& WithEarliestTime(Aws::Utils::DateTime&& value) { SetEarliestTime(value); return *this;}
+    inline SlotStartTimeRangeRequest& WithEarliestTime(Aws::Utils::DateTime&& value) { SetEarliestTime(std::move(value)); return *this;}
 
     /**
      * <p>The latest date and time, in UTC, for the Scheduled Instance to start.</p>
@@ -85,7 +86,7 @@ namespace Model
     /**
      * <p>The latest date and time, in UTC, for the Scheduled Instance to start.</p>
      */
-    inline void SetLatestTime(Aws::Utils::DateTime&& value) { m_latestTimeHasBeenSet = true; m_latestTime = value; }
+    inline void SetLatestTime(Aws::Utils::DateTime&& value) { m_latestTimeHasBeenSet = true; m_latestTime = std::move(value); }
 
     /**
      * <p>The latest date and time, in UTC, for the Scheduled Instance to start.</p>
@@ -95,7 +96,7 @@ namespace Model
     /**
      * <p>The latest date and time, in UTC, for the Scheduled Instance to start.</p>
      */
-    inline SlotStartTimeRangeRequest& WithLatestTime(Aws::Utils::DateTime&& value) { SetLatestTime(value); return *this;}
+    inline SlotStartTimeRangeRequest& WithLatestTime(Aws::Utils::DateTime&& value) { SetLatestTime(std::move(value)); return *this;}
 
   private:
     Aws::Utils::DateTime m_earliestTime;

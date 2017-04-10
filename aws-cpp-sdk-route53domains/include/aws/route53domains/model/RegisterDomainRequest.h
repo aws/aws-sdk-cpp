@@ -17,6 +17,7 @@
 #include <aws/route53domains/Route53DomainsRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/route53domains/model/ContactDetail.h>
+#include <utility>
 
 namespace Aws
 {
@@ -62,7 +63,7 @@ namespace Model
      * numbers 0 through 9, and hyphen (-). Internationalized Domain Names are not
      * supported.</p> <p>Required: Yes</p>
      */
-    inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
+    inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = std::move(value); }
 
     /**
      * <p>The name of a domain.</p> <p>Type: String</p> <p>Default: None</p>
@@ -86,7 +87,7 @@ namespace Model
      * numbers 0 through 9, and hyphen (-). Internationalized Domain Names are not
      * supported.</p> <p>Required: Yes</p>
      */
-    inline RegisterDomainRequest& WithDomainName(Aws::String&& value) { SetDomainName(value); return *this;}
+    inline RegisterDomainRequest& WithDomainName(Aws::String&& value) { SetDomainName(std::move(value)); return *this;}
 
     /**
      * <p>The name of a domain.</p> <p>Type: String</p> <p>Default: None</p>
@@ -109,7 +110,7 @@ namespace Model
     /**
      * <p>Reserved for future use.</p>
      */
-    inline void SetIdnLangCode(Aws::String&& value) { m_idnLangCodeHasBeenSet = true; m_idnLangCode = value; }
+    inline void SetIdnLangCode(Aws::String&& value) { m_idnLangCodeHasBeenSet = true; m_idnLangCode = std::move(value); }
 
     /**
      * <p>Reserved for future use.</p>
@@ -124,7 +125,7 @@ namespace Model
     /**
      * <p>Reserved for future use.</p>
      */
-    inline RegisterDomainRequest& WithIdnLangCode(Aws::String&& value) { SetIdnLangCode(value); return *this;}
+    inline RegisterDomainRequest& WithIdnLangCode(Aws::String&& value) { SetIdnLangCode(std::move(value)); return *this;}
 
     /**
      * <p>Reserved for future use.</p>
@@ -213,7 +214,7 @@ namespace Model
      * <code>PhoneNumber</code>, <code>Email</code>, <code>Fax</code>,
      * <code>ExtraParams</code></p> <p>Required: Yes</p>
      */
-    inline void SetAdminContact(ContactDetail&& value) { m_adminContactHasBeenSet = true; m_adminContact = value; }
+    inline void SetAdminContact(ContactDetail&& value) { m_adminContactHasBeenSet = true; m_adminContact = std::move(value); }
 
     /**
      * <p>Provides detailed contact information.</p> <p>Type: Complex</p> <p>Children:
@@ -235,7 +236,7 @@ namespace Model
      * <code>PhoneNumber</code>, <code>Email</code>, <code>Fax</code>,
      * <code>ExtraParams</code></p> <p>Required: Yes</p>
      */
-    inline RegisterDomainRequest& WithAdminContact(ContactDetail&& value) { SetAdminContact(value); return *this;}
+    inline RegisterDomainRequest& WithAdminContact(ContactDetail&& value) { SetAdminContact(std::move(value)); return *this;}
 
     /**
      * <p>Provides detailed contact information.</p> <p>Type: Complex</p> <p>Children:
@@ -268,7 +269,7 @@ namespace Model
      * <code>PhoneNumber</code>, <code>Email</code>, <code>Fax</code>,
      * <code>ExtraParams</code></p> <p>Required: Yes</p>
      */
-    inline void SetRegistrantContact(ContactDetail&& value) { m_registrantContactHasBeenSet = true; m_registrantContact = value; }
+    inline void SetRegistrantContact(ContactDetail&& value) { m_registrantContactHasBeenSet = true; m_registrantContact = std::move(value); }
 
     /**
      * <p>Provides detailed contact information.</p> <p>Type: Complex</p> <p>Children:
@@ -290,7 +291,7 @@ namespace Model
      * <code>PhoneNumber</code>, <code>Email</code>, <code>Fax</code>,
      * <code>ExtraParams</code></p> <p>Required: Yes</p>
      */
-    inline RegisterDomainRequest& WithRegistrantContact(ContactDetail&& value) { SetRegistrantContact(value); return *this;}
+    inline RegisterDomainRequest& WithRegistrantContact(ContactDetail&& value) { SetRegistrantContact(std::move(value)); return *this;}
 
     /**
      * <p>Provides detailed contact information.</p> <p>Type: Complex</p> <p>Children:
@@ -323,7 +324,7 @@ namespace Model
      * <code>PhoneNumber</code>, <code>Email</code>, <code>Fax</code>,
      * <code>ExtraParams</code></p> <p>Required: Yes</p>
      */
-    inline void SetTechContact(ContactDetail&& value) { m_techContactHasBeenSet = true; m_techContact = value; }
+    inline void SetTechContact(ContactDetail&& value) { m_techContactHasBeenSet = true; m_techContact = std::move(value); }
 
     /**
      * <p>Provides detailed contact information.</p> <p>Type: Complex</p> <p>Children:
@@ -345,7 +346,7 @@ namespace Model
      * <code>PhoneNumber</code>, <code>Email</code>, <code>Fax</code>,
      * <code>ExtraParams</code></p> <p>Required: Yes</p>
      */
-    inline RegisterDomainRequest& WithTechContact(ContactDetail&& value) { SetTechContact(value); return *this;}
+    inline RegisterDomainRequest& WithTechContact(ContactDetail&& value) { SetTechContact(std::move(value)); return *this;}
 
     /**
      * <p>Whether you want to conceal contact information from WHOIS queries. If you

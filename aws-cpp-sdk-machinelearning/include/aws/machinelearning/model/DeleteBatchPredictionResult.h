@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/machinelearning/MachineLearning_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -67,7 +68,7 @@ namespace Model
      * This value should be identical to the value of the
      * <code>BatchPredictionID</code> in the request.</p>
      */
-    inline void SetBatchPredictionId(Aws::String&& value) { m_batchPredictionId = value; }
+    inline void SetBatchPredictionId(Aws::String&& value) { m_batchPredictionId = std::move(value); }
 
     /**
      * <p>A user-supplied ID that uniquely identifies the <code>BatchPrediction</code>.
@@ -88,7 +89,7 @@ namespace Model
      * This value should be identical to the value of the
      * <code>BatchPredictionID</code> in the request.</p>
      */
-    inline DeleteBatchPredictionResult& WithBatchPredictionId(Aws::String&& value) { SetBatchPredictionId(value); return *this;}
+    inline DeleteBatchPredictionResult& WithBatchPredictionId(Aws::String&& value) { SetBatchPredictionId(std::move(value)); return *this;}
 
     /**
      * <p>A user-supplied ID that uniquely identifies the <code>BatchPrediction</code>.

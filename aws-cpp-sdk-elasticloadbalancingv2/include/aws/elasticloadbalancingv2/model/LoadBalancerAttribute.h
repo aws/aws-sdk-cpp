@@ -16,6 +16,7 @@
 #include <aws/elasticloadbalancingv2/ElasticLoadBalancingv2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -98,7 +99,7 @@ namespace Model
      * <p> <code>idle_timeout.timeout_seconds</code> - The idle timeout value, in
      * seconds. The valid range is 1-3600. The default is 60 seconds.</p> </li> </ul>
      */
-    inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = value; }
+    inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
 
     /**
      * <p>The name of the attribute.</p> <ul> <li> <p>
@@ -152,7 +153,7 @@ namespace Model
      * <p> <code>idle_timeout.timeout_seconds</code> - The idle timeout value, in
      * seconds. The valid range is 1-3600. The default is 60 seconds.</p> </li> </ul>
      */
-    inline LoadBalancerAttribute& WithKey(Aws::String&& value) { SetKey(value); return *this;}
+    inline LoadBalancerAttribute& WithKey(Aws::String&& value) { SetKey(std::move(value)); return *this;}
 
     /**
      * <p>The name of the attribute.</p> <ul> <li> <p>
@@ -185,7 +186,7 @@ namespace Model
     /**
      * <p>The value of the attribute.</p>
      */
-    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = value; }
+    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
 
     /**
      * <p>The value of the attribute.</p>
@@ -200,7 +201,7 @@ namespace Model
     /**
      * <p>The value of the attribute.</p>
      */
-    inline LoadBalancerAttribute& WithValue(Aws::String&& value) { SetValue(value); return *this;}
+    inline LoadBalancerAttribute& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
 
     /**
      * <p>The value of the attribute.</p>

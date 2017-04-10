@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/gamelift/GameLift_EXPORTS.h>
 #include <aws/gamelift/model/RuntimeConfiguration.h>
+#include <utility>
 
 namespace Aws
 {
@@ -61,7 +62,7 @@ namespace Model
      * <p>Instructions describing how server processes should be launched and
      * maintained on each instance in the fleet.</p>
      */
-    inline void SetRuntimeConfiguration(RuntimeConfiguration&& value) { m_runtimeConfiguration = value; }
+    inline void SetRuntimeConfiguration(RuntimeConfiguration&& value) { m_runtimeConfiguration = std::move(value); }
 
     /**
      * <p>Instructions describing how server processes should be launched and
@@ -73,7 +74,7 @@ namespace Model
      * <p>Instructions describing how server processes should be launched and
      * maintained on each instance in the fleet.</p>
      */
-    inline DescribeRuntimeConfigurationResult& WithRuntimeConfiguration(RuntimeConfiguration&& value) { SetRuntimeConfiguration(value); return *this;}
+    inline DescribeRuntimeConfigurationResult& WithRuntimeConfiguration(RuntimeConfiguration&& value) { SetRuntimeConfiguration(std::move(value)); return *this;}
 
   private:
     RuntimeConfiguration m_runtimeConfiguration;

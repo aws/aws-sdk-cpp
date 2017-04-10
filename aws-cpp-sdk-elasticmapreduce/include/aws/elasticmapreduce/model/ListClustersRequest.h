@@ -19,6 +19,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/elasticmapreduce/model/ClusterState.h>
+#include <utility>
 
 namespace Aws
 {
@@ -55,7 +56,7 @@ namespace Model
     /**
      * <p>The creation date and time beginning value filter for listing clusters.</p>
      */
-    inline void SetCreatedAfter(Aws::Utils::DateTime&& value) { m_createdAfterHasBeenSet = true; m_createdAfter = value; }
+    inline void SetCreatedAfter(Aws::Utils::DateTime&& value) { m_createdAfterHasBeenSet = true; m_createdAfter = std::move(value); }
 
     /**
      * <p>The creation date and time beginning value filter for listing clusters.</p>
@@ -65,7 +66,7 @@ namespace Model
     /**
      * <p>The creation date and time beginning value filter for listing clusters.</p>
      */
-    inline ListClustersRequest& WithCreatedAfter(Aws::Utils::DateTime&& value) { SetCreatedAfter(value); return *this;}
+    inline ListClustersRequest& WithCreatedAfter(Aws::Utils::DateTime&& value) { SetCreatedAfter(std::move(value)); return *this;}
 
     /**
      * <p>The creation date and time end value filter for listing clusters.</p>
@@ -80,7 +81,7 @@ namespace Model
     /**
      * <p>The creation date and time end value filter for listing clusters.</p>
      */
-    inline void SetCreatedBefore(Aws::Utils::DateTime&& value) { m_createdBeforeHasBeenSet = true; m_createdBefore = value; }
+    inline void SetCreatedBefore(Aws::Utils::DateTime&& value) { m_createdBeforeHasBeenSet = true; m_createdBefore = std::move(value); }
 
     /**
      * <p>The creation date and time end value filter for listing clusters.</p>
@@ -90,7 +91,7 @@ namespace Model
     /**
      * <p>The creation date and time end value filter for listing clusters.</p>
      */
-    inline ListClustersRequest& WithCreatedBefore(Aws::Utils::DateTime&& value) { SetCreatedBefore(value); return *this;}
+    inline ListClustersRequest& WithCreatedBefore(Aws::Utils::DateTime&& value) { SetCreatedBefore(std::move(value)); return *this;}
 
     /**
      * <p>The cluster state filters to apply when listing clusters.</p>
@@ -105,7 +106,7 @@ namespace Model
     /**
      * <p>The cluster state filters to apply when listing clusters.</p>
      */
-    inline void SetClusterStates(Aws::Vector<ClusterState>&& value) { m_clusterStatesHasBeenSet = true; m_clusterStates = value; }
+    inline void SetClusterStates(Aws::Vector<ClusterState>&& value) { m_clusterStatesHasBeenSet = true; m_clusterStates = std::move(value); }
 
     /**
      * <p>The cluster state filters to apply when listing clusters.</p>
@@ -115,7 +116,7 @@ namespace Model
     /**
      * <p>The cluster state filters to apply when listing clusters.</p>
      */
-    inline ListClustersRequest& WithClusterStates(Aws::Vector<ClusterState>&& value) { SetClusterStates(value); return *this;}
+    inline ListClustersRequest& WithClusterStates(Aws::Vector<ClusterState>&& value) { SetClusterStates(std::move(value)); return *this;}
 
     /**
      * <p>The cluster state filters to apply when listing clusters.</p>
@@ -125,7 +126,7 @@ namespace Model
     /**
      * <p>The cluster state filters to apply when listing clusters.</p>
      */
-    inline ListClustersRequest& AddClusterStates(ClusterState&& value) { m_clusterStatesHasBeenSet = true; m_clusterStates.push_back(value); return *this; }
+    inline ListClustersRequest& AddClusterStates(ClusterState&& value) { m_clusterStatesHasBeenSet = true; m_clusterStates.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The pagination token that indicates the next set of results to retrieve.</p>
@@ -140,7 +141,7 @@ namespace Model
     /**
      * <p>The pagination token that indicates the next set of results to retrieve.</p>
      */
-    inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = value; }
+    inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = std::move(value); }
 
     /**
      * <p>The pagination token that indicates the next set of results to retrieve.</p>
@@ -155,7 +156,7 @@ namespace Model
     /**
      * <p>The pagination token that indicates the next set of results to retrieve.</p>
      */
-    inline ListClustersRequest& WithMarker(Aws::String&& value) { SetMarker(value); return *this;}
+    inline ListClustersRequest& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
 
     /**
      * <p>The pagination token that indicates the next set of results to retrieve.</p>

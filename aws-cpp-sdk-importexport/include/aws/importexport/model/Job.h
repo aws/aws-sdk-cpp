@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/importexport/model/JobType.h>
+#include <utility>
 
 namespace Aws
 {
@@ -55,7 +56,7 @@ namespace Model
     inline void SetJobId(const Aws::String& value) { m_jobIdHasBeenSet = true; m_jobId = value; }
 
     
-    inline void SetJobId(Aws::String&& value) { m_jobIdHasBeenSet = true; m_jobId = value; }
+    inline void SetJobId(Aws::String&& value) { m_jobIdHasBeenSet = true; m_jobId = std::move(value); }
 
     
     inline void SetJobId(const char* value) { m_jobIdHasBeenSet = true; m_jobId.assign(value); }
@@ -64,7 +65,7 @@ namespace Model
     inline Job& WithJobId(const Aws::String& value) { SetJobId(value); return *this;}
 
     
-    inline Job& WithJobId(Aws::String&& value) { SetJobId(value); return *this;}
+    inline Job& WithJobId(Aws::String&& value) { SetJobId(std::move(value)); return *this;}
 
     
     inline Job& WithJobId(const char* value) { SetJobId(value); return *this;}
@@ -76,13 +77,13 @@ namespace Model
     inline void SetCreationDate(const Aws::Utils::DateTime& value) { m_creationDateHasBeenSet = true; m_creationDate = value; }
 
     
-    inline void SetCreationDate(Aws::Utils::DateTime&& value) { m_creationDateHasBeenSet = true; m_creationDate = value; }
+    inline void SetCreationDate(Aws::Utils::DateTime&& value) { m_creationDateHasBeenSet = true; m_creationDate = std::move(value); }
 
     
     inline Job& WithCreationDate(const Aws::Utils::DateTime& value) { SetCreationDate(value); return *this;}
 
     
-    inline Job& WithCreationDate(Aws::Utils::DateTime&& value) { SetCreationDate(value); return *this;}
+    inline Job& WithCreationDate(Aws::Utils::DateTime&& value) { SetCreationDate(std::move(value)); return *this;}
 
     
     inline bool GetIsCanceled() const{ return m_isCanceled; }
@@ -100,13 +101,13 @@ namespace Model
     inline void SetJobType(const JobType& value) { m_jobTypeHasBeenSet = true; m_jobType = value; }
 
     
-    inline void SetJobType(JobType&& value) { m_jobTypeHasBeenSet = true; m_jobType = value; }
+    inline void SetJobType(JobType&& value) { m_jobTypeHasBeenSet = true; m_jobType = std::move(value); }
 
     
     inline Job& WithJobType(const JobType& value) { SetJobType(value); return *this;}
 
     
-    inline Job& WithJobType(JobType&& value) { SetJobType(value); return *this;}
+    inline Job& WithJobType(JobType&& value) { SetJobType(std::move(value)); return *this;}
 
   private:
     Aws::String m_jobId;

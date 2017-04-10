@@ -17,6 +17,7 @@
 #include <aws/servicecatalog/model/ConstraintDetail.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/servicecatalog/model/Status.h>
+#include <utility>
 
 namespace Aws
 {
@@ -54,7 +55,7 @@ namespace Model
     /**
      * <p>The resulting detailed constraint information.</p>
      */
-    inline void SetConstraintDetail(ConstraintDetail&& value) { m_constraintDetail = value; }
+    inline void SetConstraintDetail(ConstraintDetail&& value) { m_constraintDetail = std::move(value); }
 
     /**
      * <p>The resulting detailed constraint information.</p>
@@ -64,7 +65,7 @@ namespace Model
     /**
      * <p>The resulting detailed constraint information.</p>
      */
-    inline CreateConstraintResult& WithConstraintDetail(ConstraintDetail&& value) { SetConstraintDetail(value); return *this;}
+    inline CreateConstraintResult& WithConstraintDetail(ConstraintDetail&& value) { SetConstraintDetail(std::move(value)); return *this;}
 
     /**
      * <p>The resulting constraint parameters.</p>
@@ -79,7 +80,7 @@ namespace Model
     /**
      * <p>The resulting constraint parameters.</p>
      */
-    inline void SetConstraintParameters(Aws::String&& value) { m_constraintParameters = value; }
+    inline void SetConstraintParameters(Aws::String&& value) { m_constraintParameters = std::move(value); }
 
     /**
      * <p>The resulting constraint parameters.</p>
@@ -94,7 +95,7 @@ namespace Model
     /**
      * <p>The resulting constraint parameters.</p>
      */
-    inline CreateConstraintResult& WithConstraintParameters(Aws::String&& value) { SetConstraintParameters(value); return *this;}
+    inline CreateConstraintResult& WithConstraintParameters(Aws::String&& value) { SetConstraintParameters(std::move(value)); return *this;}
 
     /**
      * <p>The resulting constraint parameters.</p>
@@ -114,7 +115,7 @@ namespace Model
     /**
      * <p>The status of the current request.</p>
      */
-    inline void SetStatus(Status&& value) { m_status = value; }
+    inline void SetStatus(Status&& value) { m_status = std::move(value); }
 
     /**
      * <p>The status of the current request.</p>
@@ -124,7 +125,7 @@ namespace Model
     /**
      * <p>The status of the current request.</p>
      */
-    inline CreateConstraintResult& WithStatus(Status&& value) { SetStatus(value); return *this;}
+    inline CreateConstraintResult& WithStatus(Status&& value) { SetStatus(std::move(value)); return *this;}
 
   private:
     ConstraintDetail m_constraintDetail;

@@ -19,6 +19,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ec2/model/ClientData.h>
 #include <aws/ec2/model/ImageDiskContainer.h>
+#include <utility>
 
 namespace Aws
 {
@@ -80,7 +81,7 @@ namespace Model
     /**
      * <p>A description string for the import image task.</p>
      */
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = value; }
+    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
      * <p>A description string for the import image task.</p>
@@ -95,7 +96,7 @@ namespace Model
     /**
      * <p>A description string for the import image task.</p>
      */
-    inline ImportImageRequest& WithDescription(Aws::String&& value) { SetDescription(value); return *this;}
+    inline ImportImageRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
      * <p>A description string for the import image task.</p>
@@ -115,7 +116,7 @@ namespace Model
     /**
      * <p>Information about the disk containers.</p>
      */
-    inline void SetDiskContainers(Aws::Vector<ImageDiskContainer>&& value) { m_diskContainersHasBeenSet = true; m_diskContainers = value; }
+    inline void SetDiskContainers(Aws::Vector<ImageDiskContainer>&& value) { m_diskContainersHasBeenSet = true; m_diskContainers = std::move(value); }
 
     /**
      * <p>Information about the disk containers.</p>
@@ -125,7 +126,7 @@ namespace Model
     /**
      * <p>Information about the disk containers.</p>
      */
-    inline ImportImageRequest& WithDiskContainers(Aws::Vector<ImageDiskContainer>&& value) { SetDiskContainers(value); return *this;}
+    inline ImportImageRequest& WithDiskContainers(Aws::Vector<ImageDiskContainer>&& value) { SetDiskContainers(std::move(value)); return *this;}
 
     /**
      * <p>Information about the disk containers.</p>
@@ -135,7 +136,7 @@ namespace Model
     /**
      * <p>Information about the disk containers.</p>
      */
-    inline ImportImageRequest& AddDiskContainers(ImageDiskContainer&& value) { m_diskContainersHasBeenSet = true; m_diskContainers.push_back(value); return *this; }
+    inline ImportImageRequest& AddDiskContainers(ImageDiskContainer&& value) { m_diskContainersHasBeenSet = true; m_diskContainers.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The license type to be used for the Amazon Machine Image (AMI) after
@@ -168,7 +169,7 @@ namespace Model
      * in the VM Import/Export User Guide.</p> <p>Valid values: <code>AWS</code> |
      * <code>BYOL</code> </p>
      */
-    inline void SetLicenseType(Aws::String&& value) { m_licenseTypeHasBeenSet = true; m_licenseType = value; }
+    inline void SetLicenseType(Aws::String&& value) { m_licenseTypeHasBeenSet = true; m_licenseType = std::move(value); }
 
     /**
      * <p>The license type to be used for the Amazon Machine Image (AMI) after
@@ -201,7 +202,7 @@ namespace Model
      * in the VM Import/Export User Guide.</p> <p>Valid values: <code>AWS</code> |
      * <code>BYOL</code> </p>
      */
-    inline ImportImageRequest& WithLicenseType(Aws::String&& value) { SetLicenseType(value); return *this;}
+    inline ImportImageRequest& WithLicenseType(Aws::String&& value) { SetLicenseType(std::move(value)); return *this;}
 
     /**
      * <p>The license type to be used for the Amazon Machine Image (AMI) after
@@ -227,7 +228,7 @@ namespace Model
     /**
      * <p>The target hypervisor platform.</p> <p>Valid values: <code>xen</code> </p>
      */
-    inline void SetHypervisor(Aws::String&& value) { m_hypervisorHasBeenSet = true; m_hypervisor = value; }
+    inline void SetHypervisor(Aws::String&& value) { m_hypervisorHasBeenSet = true; m_hypervisor = std::move(value); }
 
     /**
      * <p>The target hypervisor platform.</p> <p>Valid values: <code>xen</code> </p>
@@ -242,7 +243,7 @@ namespace Model
     /**
      * <p>The target hypervisor platform.</p> <p>Valid values: <code>xen</code> </p>
      */
-    inline ImportImageRequest& WithHypervisor(Aws::String&& value) { SetHypervisor(value); return *this;}
+    inline ImportImageRequest& WithHypervisor(Aws::String&& value) { SetHypervisor(std::move(value)); return *this;}
 
     /**
      * <p>The target hypervisor platform.</p> <p>Valid values: <code>xen</code> </p>
@@ -265,7 +266,7 @@ namespace Model
      * <p>The architecture of the virtual machine.</p> <p>Valid values:
      * <code>i386</code> | <code>x86_64</code> </p>
      */
-    inline void SetArchitecture(Aws::String&& value) { m_architectureHasBeenSet = true; m_architecture = value; }
+    inline void SetArchitecture(Aws::String&& value) { m_architectureHasBeenSet = true; m_architecture = std::move(value); }
 
     /**
      * <p>The architecture of the virtual machine.</p> <p>Valid values:
@@ -283,7 +284,7 @@ namespace Model
      * <p>The architecture of the virtual machine.</p> <p>Valid values:
      * <code>i386</code> | <code>x86_64</code> </p>
      */
-    inline ImportImageRequest& WithArchitecture(Aws::String&& value) { SetArchitecture(value); return *this;}
+    inline ImportImageRequest& WithArchitecture(Aws::String&& value) { SetArchitecture(std::move(value)); return *this;}
 
     /**
      * <p>The architecture of the virtual machine.</p> <p>Valid values:
@@ -307,7 +308,7 @@ namespace Model
      * <p>The operating system of the virtual machine.</p> <p>Valid values:
      * <code>Windows</code> | <code>Linux</code> </p>
      */
-    inline void SetPlatform(Aws::String&& value) { m_platformHasBeenSet = true; m_platform = value; }
+    inline void SetPlatform(Aws::String&& value) { m_platformHasBeenSet = true; m_platform = std::move(value); }
 
     /**
      * <p>The operating system of the virtual machine.</p> <p>Valid values:
@@ -325,7 +326,7 @@ namespace Model
      * <p>The operating system of the virtual machine.</p> <p>Valid values:
      * <code>Windows</code> | <code>Linux</code> </p>
      */
-    inline ImportImageRequest& WithPlatform(Aws::String&& value) { SetPlatform(value); return *this;}
+    inline ImportImageRequest& WithPlatform(Aws::String&& value) { SetPlatform(std::move(value)); return *this;}
 
     /**
      * <p>The operating system of the virtual machine.</p> <p>Valid values:
@@ -346,7 +347,7 @@ namespace Model
     /**
      * <p>The client-specific data.</p>
      */
-    inline void SetClientData(ClientData&& value) { m_clientDataHasBeenSet = true; m_clientData = value; }
+    inline void SetClientData(ClientData&& value) { m_clientDataHasBeenSet = true; m_clientData = std::move(value); }
 
     /**
      * <p>The client-specific data.</p>
@@ -356,7 +357,7 @@ namespace Model
     /**
      * <p>The client-specific data.</p>
      */
-    inline ImportImageRequest& WithClientData(ClientData&& value) { SetClientData(value); return *this;}
+    inline ImportImageRequest& WithClientData(ClientData&& value) { SetClientData(std::move(value)); return *this;}
 
     /**
      * <p>The token to enable idempotency for VM import requests.</p>
@@ -371,7 +372,7 @@ namespace Model
     /**
      * <p>The token to enable idempotency for VM import requests.</p>
      */
-    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
+    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
 
     /**
      * <p>The token to enable idempotency for VM import requests.</p>
@@ -386,7 +387,7 @@ namespace Model
     /**
      * <p>The token to enable idempotency for VM import requests.</p>
      */
-    inline ImportImageRequest& WithClientToken(Aws::String&& value) { SetClientToken(value); return *this;}
+    inline ImportImageRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
 
     /**
      * <p>The token to enable idempotency for VM import requests.</p>
@@ -406,7 +407,7 @@ namespace Model
     /**
      * <p>The name of the role to use when not using the default role, 'vmimport'.</p>
      */
-    inline void SetRoleName(Aws::String&& value) { m_roleNameHasBeenSet = true; m_roleName = value; }
+    inline void SetRoleName(Aws::String&& value) { m_roleNameHasBeenSet = true; m_roleName = std::move(value); }
 
     /**
      * <p>The name of the role to use when not using the default role, 'vmimport'.</p>
@@ -421,7 +422,7 @@ namespace Model
     /**
      * <p>The name of the role to use when not using the default role, 'vmimport'.</p>
      */
-    inline ImportImageRequest& WithRoleName(Aws::String&& value) { SetRoleName(value); return *this;}
+    inline ImportImageRequest& WithRoleName(Aws::String&& value) { SetRoleName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the role to use when not using the default role, 'vmimport'.</p>

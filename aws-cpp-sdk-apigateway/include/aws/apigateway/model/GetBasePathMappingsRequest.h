@@ -16,6 +16,7 @@
 #include <aws/apigateway/APIGateway_EXPORTS.h>
 #include <aws/apigateway/APIGatewayRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -56,7 +57,7 @@ namespace Model
     /**
      * <p>The domain name of a <a>BasePathMapping</a> resource.</p>
      */
-    inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
+    inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = std::move(value); }
 
     /**
      * <p>The domain name of a <a>BasePathMapping</a> resource.</p>
@@ -71,7 +72,7 @@ namespace Model
     /**
      * <p>The domain name of a <a>BasePathMapping</a> resource.</p>
      */
-    inline GetBasePathMappingsRequest& WithDomainName(Aws::String&& value) { SetDomainName(value); return *this;}
+    inline GetBasePathMappingsRequest& WithDomainName(Aws::String&& value) { SetDomainName(std::move(value)); return *this;}
 
     /**
      * <p>The domain name of a <a>BasePathMapping</a> resource.</p>
@@ -94,7 +95,7 @@ namespace Model
      * <p>The position of the current <a>BasePathMapping</a> resource in the collection
      * to get information about.</p>
      */
-    inline void SetPosition(Aws::String&& value) { m_positionHasBeenSet = true; m_position = value; }
+    inline void SetPosition(Aws::String&& value) { m_positionHasBeenSet = true; m_position = std::move(value); }
 
     /**
      * <p>The position of the current <a>BasePathMapping</a> resource in the collection
@@ -112,7 +113,7 @@ namespace Model
      * <p>The position of the current <a>BasePathMapping</a> resource in the collection
      * to get information about.</p>
      */
-    inline GetBasePathMappingsRequest& WithPosition(Aws::String&& value) { SetPosition(value); return *this;}
+    inline GetBasePathMappingsRequest& WithPosition(Aws::String&& value) { SetPosition(std::move(value)); return *this;}
 
     /**
      * <p>The position of the current <a>BasePathMapping</a> resource in the collection

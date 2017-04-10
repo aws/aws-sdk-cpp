@@ -16,6 +16,7 @@
 #include <aws/organizations/Organizations_EXPORTS.h>
 #include <aws/organizations/OrganizationsRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -69,7 +70,7 @@ namespace Model
      * of the root that contains the OU) followed by a second "-" dash and from 8 to 32
      * additional lower-case letters or digits.</p> </li> </ul>
      */
-    inline void SetChildId(Aws::String&& value) { m_childIdHasBeenSet = true; m_childId = value; }
+    inline void SetChildId(Aws::String&& value) { m_childIdHasBeenSet = true; m_childId = std::move(value); }
 
     /**
      * <p>The unique identifier (ID) of the OU or account whose parent containers you
@@ -105,7 +106,7 @@ namespace Model
      * of the root that contains the OU) followed by a second "-" dash and from 8 to 32
      * additional lower-case letters or digits.</p> </li> </ul>
      */
-    inline ListParentsRequest& WithChildId(Aws::String&& value) { SetChildId(value); return *this;}
+    inline ListParentsRequest& WithChildId(Aws::String&& value) { SetChildId(std::move(value)); return *this;}
 
     /**
      * <p>The unique identifier (ID) of the OU or account whose parent containers you
@@ -141,7 +142,7 @@ namespace Model
      * the value of the previous call's <code>NextToken</code> response to indicate
      * where the output should continue from.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
      * <p>Use this parameter if you receive a <code>NextToken</code> response in a
@@ -165,7 +166,7 @@ namespace Model
      * the value of the previous call's <code>NextToken</code> response to indicate
      * where the output should continue from.</p>
      */
-    inline ListParentsRequest& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline ListParentsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>Use this parameter if you receive a <code>NextToken</code> response in a

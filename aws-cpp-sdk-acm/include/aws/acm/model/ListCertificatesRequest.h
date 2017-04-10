@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/acm/model/CertificateStatus.h>
+#include <utility>
 
 namespace Aws
 {
@@ -50,7 +51,7 @@ namespace Model
     /**
      * <p>The status or statuses on which to filter the list of ACM Certificates.</p>
      */
-    inline void SetCertificateStatuses(Aws::Vector<CertificateStatus>&& value) { m_certificateStatusesHasBeenSet = true; m_certificateStatuses = value; }
+    inline void SetCertificateStatuses(Aws::Vector<CertificateStatus>&& value) { m_certificateStatusesHasBeenSet = true; m_certificateStatuses = std::move(value); }
 
     /**
      * <p>The status or statuses on which to filter the list of ACM Certificates.</p>
@@ -60,7 +61,7 @@ namespace Model
     /**
      * <p>The status or statuses on which to filter the list of ACM Certificates.</p>
      */
-    inline ListCertificatesRequest& WithCertificateStatuses(Aws::Vector<CertificateStatus>&& value) { SetCertificateStatuses(value); return *this;}
+    inline ListCertificatesRequest& WithCertificateStatuses(Aws::Vector<CertificateStatus>&& value) { SetCertificateStatuses(std::move(value)); return *this;}
 
     /**
      * <p>The status or statuses on which to filter the list of ACM Certificates.</p>
@@ -70,7 +71,7 @@ namespace Model
     /**
      * <p>The status or statuses on which to filter the list of ACM Certificates.</p>
      */
-    inline ListCertificatesRequest& AddCertificateStatuses(CertificateStatus&& value) { m_certificateStatusesHasBeenSet = true; m_certificateStatuses.push_back(value); return *this; }
+    inline ListCertificatesRequest& AddCertificateStatuses(CertificateStatus&& value) { m_certificateStatusesHasBeenSet = true; m_certificateStatuses.push_back(std::move(value)); return *this; }
 
     /**
      * <p>Use this parameter only when paginating results and only in a subsequent
@@ -91,7 +92,7 @@ namespace Model
      * request after you receive a response with truncated results. Set it to the value
      * of <code>NextToken</code> from the response you just received.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
      * <p>Use this parameter only when paginating results and only in a subsequent
@@ -112,7 +113,7 @@ namespace Model
      * request after you receive a response with truncated results. Set it to the value
      * of <code>NextToken</code> from the response you just received.</p>
      */
-    inline ListCertificatesRequest& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline ListCertificatesRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>Use this parameter only when paginating results and only in a subsequent

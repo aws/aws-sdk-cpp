@@ -16,6 +16,7 @@
 #include <aws/sdb/SimpleDB_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -63,7 +64,7 @@ namespace Model
     /**
      * <p>The name of the attribute involved in the condition.</p>
      */
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p>The name of the attribute involved in the condition.</p>
@@ -78,7 +79,7 @@ namespace Model
     /**
      * <p>The name of the attribute involved in the condition.</p>
      */
-    inline UpdateCondition& WithName(Aws::String&& value) { SetName(value); return *this;}
+    inline UpdateCondition& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the attribute involved in the condition.</p>
@@ -101,7 +102,7 @@ namespace Model
      * <p>The value of an attribute. This value can only be specified when the
      * <code>Exists</code> parameter is equal to <code>true</code>.</p>
      */
-    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = value; }
+    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
 
     /**
      * <p>The value of an attribute. This value can only be specified when the
@@ -119,7 +120,7 @@ namespace Model
      * <p>The value of an attribute. This value can only be specified when the
      * <code>Exists</code> parameter is equal to <code>true</code>.</p>
      */
-    inline UpdateCondition& WithValue(Aws::String&& value) { SetValue(value); return *this;}
+    inline UpdateCondition& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
 
     /**
      * <p>The value of an attribute. This value can only be specified when the

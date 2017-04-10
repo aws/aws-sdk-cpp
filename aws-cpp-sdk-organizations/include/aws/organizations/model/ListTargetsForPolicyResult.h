@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/organizations/model/PolicyTargetSummary.h>
+#include <utility>
 
 namespace Aws
 {
@@ -57,7 +58,7 @@ namespace Model
      * <p>A list of structures, each of which contains details about one of the
      * entities to which the specified policy is attached.</p>
      */
-    inline void SetTargets(Aws::Vector<PolicyTargetSummary>&& value) { m_targets = value; }
+    inline void SetTargets(Aws::Vector<PolicyTargetSummary>&& value) { m_targets = std::move(value); }
 
     /**
      * <p>A list of structures, each of which contains details about one of the
@@ -69,7 +70,7 @@ namespace Model
      * <p>A list of structures, each of which contains details about one of the
      * entities to which the specified policy is attached.</p>
      */
-    inline ListTargetsForPolicyResult& WithTargets(Aws::Vector<PolicyTargetSummary>&& value) { SetTargets(value); return *this;}
+    inline ListTargetsForPolicyResult& WithTargets(Aws::Vector<PolicyTargetSummary>&& value) { SetTargets(std::move(value)); return *this;}
 
     /**
      * <p>A list of structures, each of which contains details about one of the
@@ -81,7 +82,7 @@ namespace Model
      * <p>A list of structures, each of which contains details about one of the
      * entities to which the specified policy is attached.</p>
      */
-    inline ListTargetsForPolicyResult& AddTargets(PolicyTargetSummary&& value) { m_targets.push_back(value); return *this; }
+    inline ListTargetsForPolicyResult& AddTargets(PolicyTargetSummary&& value) { m_targets.push_back(std::move(value)); return *this; }
 
     /**
      * <p>If present, this value indicates that there is more output available than is
@@ -108,7 +109,7 @@ namespace Model
      * the output. You should repeat this until the <code>NextToken</code> response
      * element comes back as <code>null</code>.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
      * <p>If present, this value indicates that there is more output available than is
@@ -135,7 +136,7 @@ namespace Model
      * the output. You should repeat this until the <code>NextToken</code> response
      * element comes back as <code>null</code>.</p>
      */
-    inline ListTargetsForPolicyResult& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline ListTargetsForPolicyResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>If present, this value indicates that there is more output available than is

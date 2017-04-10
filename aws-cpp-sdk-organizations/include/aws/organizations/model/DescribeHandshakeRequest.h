@@ -16,6 +16,7 @@
 #include <aws/organizations/Organizations_EXPORTS.h>
 #include <aws/organizations/OrganizationsRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -63,7 +64,7 @@ namespace Model
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> for handshake ID string
      * requires "h-" followed by from 8 to 32 lower-case letters or digits.</p>
      */
-    inline void SetHandshakeId(Aws::String&& value) { m_handshakeIdHasBeenSet = true; m_handshakeId = value; }
+    inline void SetHandshakeId(Aws::String&& value) { m_handshakeIdHasBeenSet = true; m_handshakeId = std::move(value); }
 
     /**
      * <p>The unique identifier (ID) of the handshake that you want information about.
@@ -93,7 +94,7 @@ namespace Model
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> for handshake ID string
      * requires "h-" followed by from 8 to 32 lower-case letters or digits.</p>
      */
-    inline DescribeHandshakeRequest& WithHandshakeId(Aws::String&& value) { SetHandshakeId(value); return *this;}
+    inline DescribeHandshakeRequest& WithHandshakeId(Aws::String&& value) { SetHandshakeId(std::move(value)); return *this;}
 
     /**
      * <p>The unique identifier (ID) of the handshake that you want information about.

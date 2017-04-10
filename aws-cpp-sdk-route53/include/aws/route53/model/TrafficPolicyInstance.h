@@ -16,6 +16,7 @@
 #include <aws/route53/Route53_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/route53/model/RRType.h>
+#include <utility>
 
 namespace Aws
 {
@@ -59,7 +60,7 @@ namespace Model
     /**
      * <p>The ID that Amazon Route 53 assigned to the new traffic policy instance.</p>
      */
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = value; }
+    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
 
     /**
      * <p>The ID that Amazon Route 53 assigned to the new traffic policy instance.</p>
@@ -74,7 +75,7 @@ namespace Model
     /**
      * <p>The ID that Amazon Route 53 assigned to the new traffic policy instance.</p>
      */
-    inline TrafficPolicyInstance& WithId(Aws::String&& value) { SetId(value); return *this;}
+    inline TrafficPolicyInstance& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
 
     /**
      * <p>The ID that Amazon Route 53 assigned to the new traffic policy instance.</p>
@@ -97,7 +98,7 @@ namespace Model
      * <p>The ID of the hosted zone that Amazon Route 53 created resource record sets
      * in.</p>
      */
-    inline void SetHostedZoneId(Aws::String&& value) { m_hostedZoneIdHasBeenSet = true; m_hostedZoneId = value; }
+    inline void SetHostedZoneId(Aws::String&& value) { m_hostedZoneIdHasBeenSet = true; m_hostedZoneId = std::move(value); }
 
     /**
      * <p>The ID of the hosted zone that Amazon Route 53 created resource record sets
@@ -115,7 +116,7 @@ namespace Model
      * <p>The ID of the hosted zone that Amazon Route 53 created resource record sets
      * in.</p>
      */
-    inline TrafficPolicyInstance& WithHostedZoneId(Aws::String&& value) { SetHostedZoneId(value); return *this;}
+    inline TrafficPolicyInstance& WithHostedZoneId(Aws::String&& value) { SetHostedZoneId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the hosted zone that Amazon Route 53 created resource record sets
@@ -142,7 +143,7 @@ namespace Model
      * queries by using the resource record sets that are associated with this traffic
      * policy instance. </p>
      */
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p>The DNS name, such as www.example.com, for which Amazon Route 53 responds to
@@ -163,7 +164,7 @@ namespace Model
      * queries by using the resource record sets that are associated with this traffic
      * policy instance. </p>
      */
-    inline TrafficPolicyInstance& WithName(Aws::String&& value) { SetName(value); return *this;}
+    inline TrafficPolicyInstance& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>The DNS name, such as www.example.com, for which Amazon Route 53 responds to
@@ -230,7 +231,7 @@ namespace Model
      * <code>Failed</code>, see <code>Message</code> for an explanation of what caused
      * the request to fail.</p> </dd> </dl>
      */
-    inline void SetState(Aws::String&& value) { m_stateHasBeenSet = true; m_state = value; }
+    inline void SetState(Aws::String&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
 
     /**
      * <p>The value of <code>State</code> is one of the following values:</p> <dl>
@@ -272,7 +273,7 @@ namespace Model
      * <code>Failed</code>, see <code>Message</code> for an explanation of what caused
      * the request to fail.</p> </dd> </dl>
      */
-    inline TrafficPolicyInstance& WithState(Aws::String&& value) { SetState(value); return *this;}
+    inline TrafficPolicyInstance& WithState(Aws::String&& value) { SetState(std::move(value)); return *this;}
 
     /**
      * <p>The value of <code>State</code> is one of the following values:</p> <dl>
@@ -307,7 +308,7 @@ namespace Model
      * for the failure. If <code>State</code> is another value, <code>Message</code> is
      * empty.</p>
      */
-    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = value; }
+    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
 
     /**
      * <p>If <code>State</code> is <code>Failed</code>, an explanation of the reason
@@ -328,7 +329,7 @@ namespace Model
      * for the failure. If <code>State</code> is another value, <code>Message</code> is
      * empty.</p>
      */
-    inline TrafficPolicyInstance& WithMessage(Aws::String&& value) { SetMessage(value); return *this;}
+    inline TrafficPolicyInstance& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
 
     /**
      * <p>If <code>State</code> is <code>Failed</code>, an explanation of the reason
@@ -353,7 +354,7 @@ namespace Model
      * <p>The ID of the traffic policy that Amazon Route 53 used to create resource
      * record sets in the specified hosted zone.</p>
      */
-    inline void SetTrafficPolicyId(Aws::String&& value) { m_trafficPolicyIdHasBeenSet = true; m_trafficPolicyId = value; }
+    inline void SetTrafficPolicyId(Aws::String&& value) { m_trafficPolicyIdHasBeenSet = true; m_trafficPolicyId = std::move(value); }
 
     /**
      * <p>The ID of the traffic policy that Amazon Route 53 used to create resource
@@ -371,7 +372,7 @@ namespace Model
      * <p>The ID of the traffic policy that Amazon Route 53 used to create resource
      * record sets in the specified hosted zone.</p>
      */
-    inline TrafficPolicyInstance& WithTrafficPolicyId(Aws::String&& value) { SetTrafficPolicyId(value); return *this;}
+    inline TrafficPolicyInstance& WithTrafficPolicyId(Aws::String&& value) { SetTrafficPolicyId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the traffic policy that Amazon Route 53 used to create resource
@@ -413,7 +414,7 @@ namespace Model
      * <p>The DNS type that Amazon Route 53 assigned to all of the resource record sets
      * that it created for this traffic policy instance. </p>
      */
-    inline void SetTrafficPolicyType(RRType&& value) { m_trafficPolicyTypeHasBeenSet = true; m_trafficPolicyType = value; }
+    inline void SetTrafficPolicyType(RRType&& value) { m_trafficPolicyTypeHasBeenSet = true; m_trafficPolicyType = std::move(value); }
 
     /**
      * <p>The DNS type that Amazon Route 53 assigned to all of the resource record sets
@@ -425,7 +426,7 @@ namespace Model
      * <p>The DNS type that Amazon Route 53 assigned to all of the resource record sets
      * that it created for this traffic policy instance. </p>
      */
-    inline TrafficPolicyInstance& WithTrafficPolicyType(RRType&& value) { SetTrafficPolicyType(value); return *this;}
+    inline TrafficPolicyInstance& WithTrafficPolicyType(RRType&& value) { SetTrafficPolicyType(std::move(value)); return *this;}
 
   private:
     Aws::String m_id;

@@ -16,6 +16,7 @@
 #include <aws/opsworks/OpsWorks_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/opsworks/model/EbsBlockDevice.h>
+#include <utility>
 
 namespace Aws
 {
@@ -69,7 +70,7 @@ namespace Model
      * or you can set this parameter to <code>ROOT_DEVICE</code> and AWS OpsWorks will
      * provide the correct device name.</p>
      */
-    inline void SetDeviceName(Aws::String&& value) { m_deviceNameHasBeenSet = true; m_deviceName = value; }
+    inline void SetDeviceName(Aws::String&& value) { m_deviceNameHasBeenSet = true; m_deviceName = std::move(value); }
 
     /**
      * <p>The device name that is exposed to the instance, such as
@@ -93,7 +94,7 @@ namespace Model
      * or you can set this parameter to <code>ROOT_DEVICE</code> and AWS OpsWorks will
      * provide the correct device name.</p>
      */
-    inline BlockDeviceMapping& WithDeviceName(Aws::String&& value) { SetDeviceName(value); return *this;}
+    inline BlockDeviceMapping& WithDeviceName(Aws::String&& value) { SetDeviceName(std::move(value)); return *this;}
 
     /**
      * <p>The device name that is exposed to the instance, such as
@@ -119,7 +120,7 @@ namespace Model
      * <p>Suppresses the specified device included in the AMI's block device
      * mapping.</p>
      */
-    inline void SetNoDevice(Aws::String&& value) { m_noDeviceHasBeenSet = true; m_noDevice = value; }
+    inline void SetNoDevice(Aws::String&& value) { m_noDeviceHasBeenSet = true; m_noDevice = std::move(value); }
 
     /**
      * <p>Suppresses the specified device included in the AMI's block device
@@ -137,7 +138,7 @@ namespace Model
      * <p>Suppresses the specified device included in the AMI's block device
      * mapping.</p>
      */
-    inline BlockDeviceMapping& WithNoDevice(Aws::String&& value) { SetNoDevice(value); return *this;}
+    inline BlockDeviceMapping& WithNoDevice(Aws::String&& value) { SetNoDevice(std::move(value)); return *this;}
 
     /**
      * <p>Suppresses the specified device included in the AMI's block device
@@ -161,7 +162,7 @@ namespace Model
      * <p>The virtual device name. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_BlockDeviceMapping.html">BlockDeviceMapping</a>.</p>
      */
-    inline void SetVirtualName(Aws::String&& value) { m_virtualNameHasBeenSet = true; m_virtualName = value; }
+    inline void SetVirtualName(Aws::String&& value) { m_virtualNameHasBeenSet = true; m_virtualName = std::move(value); }
 
     /**
      * <p>The virtual device name. For more information, see <a
@@ -179,7 +180,7 @@ namespace Model
      * <p>The virtual device name. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_BlockDeviceMapping.html">BlockDeviceMapping</a>.</p>
      */
-    inline BlockDeviceMapping& WithVirtualName(Aws::String&& value) { SetVirtualName(value); return *this;}
+    inline BlockDeviceMapping& WithVirtualName(Aws::String&& value) { SetVirtualName(std::move(value)); return *this;}
 
     /**
      * <p>The virtual device name. For more information, see <a
@@ -203,7 +204,7 @@ namespace Model
      * <p>An <code>EBSBlockDevice</code> that defines how to configure an Amazon EBS
      * volume when the instance is launched.</p>
      */
-    inline void SetEbs(EbsBlockDevice&& value) { m_ebsHasBeenSet = true; m_ebs = value; }
+    inline void SetEbs(EbsBlockDevice&& value) { m_ebsHasBeenSet = true; m_ebs = std::move(value); }
 
     /**
      * <p>An <code>EBSBlockDevice</code> that defines how to configure an Amazon EBS
@@ -215,7 +216,7 @@ namespace Model
      * <p>An <code>EBSBlockDevice</code> that defines how to configure an Amazon EBS
      * volume when the instance is launched.</p>
      */
-    inline BlockDeviceMapping& WithEbs(EbsBlockDevice&& value) { SetEbs(value); return *this;}
+    inline BlockDeviceMapping& WithEbs(EbsBlockDevice&& value) { SetEbs(std::move(value)); return *this;}
 
   private:
     Aws::String m_deviceName;

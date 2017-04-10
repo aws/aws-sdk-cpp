@@ -20,6 +20,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ssm/model/NotificationConfig.h>
 #include <aws/ssm/model/CommandPlugin.h>
+#include <utility>
 
 namespace Aws
 {
@@ -66,7 +67,7 @@ namespace Model
     /**
      * <p>The command against which this invocation was requested.</p>
      */
-    inline void SetCommandId(Aws::String&& value) { m_commandIdHasBeenSet = true; m_commandId = value; }
+    inline void SetCommandId(Aws::String&& value) { m_commandIdHasBeenSet = true; m_commandId = std::move(value); }
 
     /**
      * <p>The command against which this invocation was requested.</p>
@@ -81,7 +82,7 @@ namespace Model
     /**
      * <p>The command against which this invocation was requested.</p>
      */
-    inline CommandInvocation& WithCommandId(Aws::String&& value) { SetCommandId(value); return *this;}
+    inline CommandInvocation& WithCommandId(Aws::String&& value) { SetCommandId(std::move(value)); return *this;}
 
     /**
      * <p>The command against which this invocation was requested.</p>
@@ -101,7 +102,7 @@ namespace Model
     /**
      * <p>The instance ID in which this invocation was requested.</p>
      */
-    inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
+    inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::move(value); }
 
     /**
      * <p>The instance ID in which this invocation was requested.</p>
@@ -116,7 +117,7 @@ namespace Model
     /**
      * <p>The instance ID in which this invocation was requested.</p>
      */
-    inline CommandInvocation& WithInstanceId(Aws::String&& value) { SetInstanceId(value); return *this;}
+    inline CommandInvocation& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
 
     /**
      * <p>The instance ID in which this invocation was requested.</p>
@@ -142,7 +143,7 @@ namespace Model
      * for the <code>aws:Name</code> tag. For on-premises instances, this is the name
      * of the instance.</p>
      */
-    inline void SetInstanceName(Aws::String&& value) { m_instanceNameHasBeenSet = true; m_instanceName = value; }
+    inline void SetInstanceName(Aws::String&& value) { m_instanceNameHasBeenSet = true; m_instanceName = std::move(value); }
 
     /**
      * <p>The name of the invocation target. For Amazon EC2 instances this is the value
@@ -163,7 +164,7 @@ namespace Model
      * for the <code>aws:Name</code> tag. For on-premises instances, this is the name
      * of the instance.</p>
      */
-    inline CommandInvocation& WithInstanceName(Aws::String&& value) { SetInstanceName(value); return *this;}
+    inline CommandInvocation& WithInstanceName(Aws::String&& value) { SetInstanceName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the invocation target. For Amazon EC2 instances this is the value
@@ -188,7 +189,7 @@ namespace Model
      * <p>User-specified information about the command, such as a brief description of
      * what the command should do.</p>
      */
-    inline void SetComment(Aws::String&& value) { m_commentHasBeenSet = true; m_comment = value; }
+    inline void SetComment(Aws::String&& value) { m_commentHasBeenSet = true; m_comment = std::move(value); }
 
     /**
      * <p>User-specified information about the command, such as a brief description of
@@ -206,7 +207,7 @@ namespace Model
      * <p>User-specified information about the command, such as a brief description of
      * what the command should do.</p>
      */
-    inline CommandInvocation& WithComment(Aws::String&& value) { SetComment(value); return *this;}
+    inline CommandInvocation& WithComment(Aws::String&& value) { SetComment(std::move(value)); return *this;}
 
     /**
      * <p>User-specified information about the command, such as a brief description of
@@ -227,7 +228,7 @@ namespace Model
     /**
      * <p>The document name that was requested for execution.</p>
      */
-    inline void SetDocumentName(Aws::String&& value) { m_documentNameHasBeenSet = true; m_documentName = value; }
+    inline void SetDocumentName(Aws::String&& value) { m_documentNameHasBeenSet = true; m_documentName = std::move(value); }
 
     /**
      * <p>The document name that was requested for execution.</p>
@@ -242,7 +243,7 @@ namespace Model
     /**
      * <p>The document name that was requested for execution.</p>
      */
-    inline CommandInvocation& WithDocumentName(Aws::String&& value) { SetDocumentName(value); return *this;}
+    inline CommandInvocation& WithDocumentName(Aws::String&& value) { SetDocumentName(std::move(value)); return *this;}
 
     /**
      * <p>The document name that was requested for execution.</p>
@@ -262,7 +263,7 @@ namespace Model
     /**
      * <p>The time and date the request was sent to this instance.</p>
      */
-    inline void SetRequestedDateTime(Aws::Utils::DateTime&& value) { m_requestedDateTimeHasBeenSet = true; m_requestedDateTime = value; }
+    inline void SetRequestedDateTime(Aws::Utils::DateTime&& value) { m_requestedDateTimeHasBeenSet = true; m_requestedDateTime = std::move(value); }
 
     /**
      * <p>The time and date the request was sent to this instance.</p>
@@ -272,7 +273,7 @@ namespace Model
     /**
      * <p>The time and date the request was sent to this instance.</p>
      */
-    inline CommandInvocation& WithRequestedDateTime(Aws::Utils::DateTime&& value) { SetRequestedDateTime(value); return *this;}
+    inline CommandInvocation& WithRequestedDateTime(Aws::Utils::DateTime&& value) { SetRequestedDateTime(std::move(value)); return *this;}
 
     /**
      * <p>Whether or not the invocation succeeded, failed, or is pending.</p>
@@ -287,7 +288,7 @@ namespace Model
     /**
      * <p>Whether or not the invocation succeeded, failed, or is pending.</p>
      */
-    inline void SetStatus(CommandInvocationStatus&& value) { m_statusHasBeenSet = true; m_status = value; }
+    inline void SetStatus(CommandInvocationStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
      * <p>Whether or not the invocation succeeded, failed, or is pending.</p>
@@ -297,7 +298,7 @@ namespace Model
     /**
      * <p>Whether or not the invocation succeeded, failed, or is pending.</p>
      */
-    inline CommandInvocation& WithStatus(CommandInvocationStatus&& value) { SetStatus(value); return *this;}
+    inline CommandInvocation& WithStatus(CommandInvocationStatus&& value) { SetStatus(std::move(value)); return *this;}
 
     /**
      * <p>A detailed status of the command execution for each invocation (each instance
@@ -411,7 +412,7 @@ namespace Model
      * <code>MaxErrors</code> limit and subsequent command invocations were canceled by
      * the system. This is a terminal state.</p> </li> </ul>
      */
-    inline void SetStatusDetails(Aws::String&& value) { m_statusDetailsHasBeenSet = true; m_statusDetails = value; }
+    inline void SetStatusDetails(Aws::String&& value) { m_statusDetailsHasBeenSet = true; m_statusDetails = std::move(value); }
 
     /**
      * <p>A detailed status of the command execution for each invocation (each instance
@@ -525,7 +526,7 @@ namespace Model
      * <code>MaxErrors</code> limit and subsequent command invocations were canceled by
      * the system. This is a terminal state.</p> </li> </ul>
      */
-    inline CommandInvocation& WithStatusDetails(Aws::String&& value) { SetStatusDetails(value); return *this;}
+    inline CommandInvocation& WithStatusDetails(Aws::String&& value) { SetStatusDetails(std::move(value)); return *this;}
 
     /**
      * <p>A detailed status of the command execution for each invocation (each instance
@@ -578,7 +579,7 @@ namespace Model
     /**
      * <p> Gets the trace output sent by the agent. </p>
      */
-    inline void SetTraceOutput(Aws::String&& value) { m_traceOutputHasBeenSet = true; m_traceOutput = value; }
+    inline void SetTraceOutput(Aws::String&& value) { m_traceOutputHasBeenSet = true; m_traceOutput = std::move(value); }
 
     /**
      * <p> Gets the trace output sent by the agent. </p>
@@ -593,7 +594,7 @@ namespace Model
     /**
      * <p> Gets the trace output sent by the agent. </p>
      */
-    inline CommandInvocation& WithTraceOutput(Aws::String&& value) { SetTraceOutput(value); return *this;}
+    inline CommandInvocation& WithTraceOutput(Aws::String&& value) { SetTraceOutput(std::move(value)); return *this;}
 
     /**
      * <p> Gets the trace output sent by the agent. </p>
@@ -622,7 +623,7 @@ namespace Model
      * <code>StandardOutputUrl</code> is populated if there is just one plugin defined
      * for the command, and the Amazon S3 bucket was defined for the command.</p>
      */
-    inline void SetStandardOutputUrl(Aws::String&& value) { m_standardOutputUrlHasBeenSet = true; m_standardOutputUrl = value; }
+    inline void SetStandardOutputUrl(Aws::String&& value) { m_standardOutputUrlHasBeenSet = true; m_standardOutputUrl = std::move(value); }
 
     /**
      * <p>The URL to the plugin’s StdOut file in Amazon S3, if the Amazon S3 bucket was
@@ -646,7 +647,7 @@ namespace Model
      * <code>StandardOutputUrl</code> is populated if there is just one plugin defined
      * for the command, and the Amazon S3 bucket was defined for the command.</p>
      */
-    inline CommandInvocation& WithStandardOutputUrl(Aws::String&& value) { SetStandardOutputUrl(value); return *this;}
+    inline CommandInvocation& WithStandardOutputUrl(Aws::String&& value) { SetStandardOutputUrl(std::move(value)); return *this;}
 
     /**
      * <p>The URL to the plugin’s StdOut file in Amazon S3, if the Amazon S3 bucket was
@@ -678,7 +679,7 @@ namespace Model
      * is populated if there is just one plugin defined for the command, and the Amazon
      * S3 bucket was defined for the command.</p>
      */
-    inline void SetStandardErrorUrl(Aws::String&& value) { m_standardErrorUrlHasBeenSet = true; m_standardErrorUrl = value; }
+    inline void SetStandardErrorUrl(Aws::String&& value) { m_standardErrorUrlHasBeenSet = true; m_standardErrorUrl = std::move(value); }
 
     /**
      * <p>The URL to the plugin’s StdErr file in Amazon S3, if the Amazon S3 bucket was
@@ -702,7 +703,7 @@ namespace Model
      * is populated if there is just one plugin defined for the command, and the Amazon
      * S3 bucket was defined for the command.</p>
      */
-    inline CommandInvocation& WithStandardErrorUrl(Aws::String&& value) { SetStandardErrorUrl(value); return *this;}
+    inline CommandInvocation& WithStandardErrorUrl(Aws::String&& value) { SetStandardErrorUrl(std::move(value)); return *this;}
 
     /**
      * <p>The URL to the plugin’s StdErr file in Amazon S3, if the Amazon S3 bucket was
@@ -719,19 +720,19 @@ namespace Model
     inline void SetCommandPlugins(const Aws::Vector<CommandPlugin>& value) { m_commandPluginsHasBeenSet = true; m_commandPlugins = value; }
 
     
-    inline void SetCommandPlugins(Aws::Vector<CommandPlugin>&& value) { m_commandPluginsHasBeenSet = true; m_commandPlugins = value; }
+    inline void SetCommandPlugins(Aws::Vector<CommandPlugin>&& value) { m_commandPluginsHasBeenSet = true; m_commandPlugins = std::move(value); }
 
     
     inline CommandInvocation& WithCommandPlugins(const Aws::Vector<CommandPlugin>& value) { SetCommandPlugins(value); return *this;}
 
     
-    inline CommandInvocation& WithCommandPlugins(Aws::Vector<CommandPlugin>&& value) { SetCommandPlugins(value); return *this;}
+    inline CommandInvocation& WithCommandPlugins(Aws::Vector<CommandPlugin>&& value) { SetCommandPlugins(std::move(value)); return *this;}
 
     
     inline CommandInvocation& AddCommandPlugins(const CommandPlugin& value) { m_commandPluginsHasBeenSet = true; m_commandPlugins.push_back(value); return *this; }
 
     
-    inline CommandInvocation& AddCommandPlugins(CommandPlugin&& value) { m_commandPluginsHasBeenSet = true; m_commandPlugins.push_back(value); return *this; }
+    inline CommandInvocation& AddCommandPlugins(CommandPlugin&& value) { m_commandPluginsHasBeenSet = true; m_commandPlugins.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The IAM service role that Run Command uses to act on your behalf when sending
@@ -749,7 +750,7 @@ namespace Model
      * <p>The IAM service role that Run Command uses to act on your behalf when sending
      * notifications about command status changes on a per instance basis.</p>
      */
-    inline void SetServiceRole(Aws::String&& value) { m_serviceRoleHasBeenSet = true; m_serviceRole = value; }
+    inline void SetServiceRole(Aws::String&& value) { m_serviceRoleHasBeenSet = true; m_serviceRole = std::move(value); }
 
     /**
      * <p>The IAM service role that Run Command uses to act on your behalf when sending
@@ -767,7 +768,7 @@ namespace Model
      * <p>The IAM service role that Run Command uses to act on your behalf when sending
      * notifications about command status changes on a per instance basis.</p>
      */
-    inline CommandInvocation& WithServiceRole(Aws::String&& value) { SetServiceRole(value); return *this;}
+    inline CommandInvocation& WithServiceRole(Aws::String&& value) { SetServiceRole(std::move(value)); return *this;}
 
     /**
      * <p>The IAM service role that Run Command uses to act on your behalf when sending
@@ -791,7 +792,7 @@ namespace Model
      * <p>Configurations for sending notifications about command status changes on a
      * per instance basis.</p>
      */
-    inline void SetNotificationConfig(NotificationConfig&& value) { m_notificationConfigHasBeenSet = true; m_notificationConfig = value; }
+    inline void SetNotificationConfig(NotificationConfig&& value) { m_notificationConfigHasBeenSet = true; m_notificationConfig = std::move(value); }
 
     /**
      * <p>Configurations for sending notifications about command status changes on a
@@ -803,7 +804,7 @@ namespace Model
      * <p>Configurations for sending notifications about command status changes on a
      * per instance basis.</p>
      */
-    inline CommandInvocation& WithNotificationConfig(NotificationConfig&& value) { SetNotificationConfig(value); return *this;}
+    inline CommandInvocation& WithNotificationConfig(NotificationConfig&& value) { SetNotificationConfig(std::move(value)); return *this;}
 
   private:
     Aws::String m_commandId;

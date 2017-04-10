@@ -16,6 +16,7 @@
 #include <aws/route53domains/Route53Domains_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <utility>
 
 namespace Aws
 {
@@ -63,7 +64,7 @@ namespace Model
      * <p>Constraint: Maximum 255 characterss</p> <p>Parent:
      * <code>Nameservers</code></p>
      */
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p>The fully qualified host name of the name server.</p> <p>Type: String</p>
@@ -84,7 +85,7 @@ namespace Model
      * <p>Constraint: Maximum 255 characterss</p> <p>Parent:
      * <code>Nameservers</code></p>
      */
-    inline Nameserver& WithName(Aws::String&& value) { SetName(value); return *this;}
+    inline Nameserver& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>The fully qualified host name of the name server.</p> <p>Type: String</p>
@@ -121,7 +122,7 @@ namespace Model
      * addresses.</p> <p>Constraints: The list can contain only one IPv4 and one IPv6
      * address.</p> <p>Parent: <code>Nameservers</code></p>
      */
-    inline void SetGlueIps(Aws::Vector<Aws::String>&& value) { m_glueIpsHasBeenSet = true; m_glueIps = value; }
+    inline void SetGlueIps(Aws::Vector<Aws::String>&& value) { m_glueIpsHasBeenSet = true; m_glueIps = std::move(value); }
 
     /**
      * <p>Glue IP address of a name server entry. Glue IP addresses are required only
@@ -141,7 +142,7 @@ namespace Model
      * addresses.</p> <p>Constraints: The list can contain only one IPv4 and one IPv6
      * address.</p> <p>Parent: <code>Nameservers</code></p>
      */
-    inline Nameserver& WithGlueIps(Aws::Vector<Aws::String>&& value) { SetGlueIps(value); return *this;}
+    inline Nameserver& WithGlueIps(Aws::Vector<Aws::String>&& value) { SetGlueIps(std::move(value)); return *this;}
 
     /**
      * <p>Glue IP address of a name server entry. Glue IP addresses are required only
@@ -161,7 +162,7 @@ namespace Model
      * addresses.</p> <p>Constraints: The list can contain only one IPv4 and one IPv6
      * address.</p> <p>Parent: <code>Nameservers</code></p>
      */
-    inline Nameserver& AddGlueIps(Aws::String&& value) { m_glueIpsHasBeenSet = true; m_glueIps.push_back(value); return *this; }
+    inline Nameserver& AddGlueIps(Aws::String&& value) { m_glueIpsHasBeenSet = true; m_glueIps.push_back(std::move(value)); return *this; }
 
     /**
      * <p>Glue IP address of a name server entry. Glue IP addresses are required only

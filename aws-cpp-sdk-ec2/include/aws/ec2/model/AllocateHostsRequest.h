@@ -17,6 +17,7 @@
 #include <aws/ec2/EC2Request.h>
 #include <aws/ec2/model/AutoPlacement.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -60,7 +61,7 @@ namespace Model
      * automatically placed onto available Dedicated Hosts, when you are launching
      * instances without specifying a host ID.</p> <p>Default: Enabled</p>
      */
-    inline void SetAutoPlacement(AutoPlacement&& value) { m_autoPlacementHasBeenSet = true; m_autoPlacement = value; }
+    inline void SetAutoPlacement(AutoPlacement&& value) { m_autoPlacementHasBeenSet = true; m_autoPlacement = std::move(value); }
 
     /**
      * <p>This is enabled by default. This property allows instances to be
@@ -74,7 +75,7 @@ namespace Model
      * automatically placed onto available Dedicated Hosts, when you are launching
      * instances without specifying a host ID.</p> <p>Default: Enabled</p>
      */
-    inline AllocateHostsRequest& WithAutoPlacement(AutoPlacement&& value) { SetAutoPlacement(value); return *this;}
+    inline AllocateHostsRequest& WithAutoPlacement(AutoPlacement&& value) { SetAutoPlacement(std::move(value)); return *this;}
 
     /**
      * <p>Unique, case-sensitive identifier you provide to ensure idempotency of the
@@ -101,7 +102,7 @@ namespace Model
      * to Ensure Idempotency</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      */
-    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
+    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
 
     /**
      * <p>Unique, case-sensitive identifier you provide to ensure idempotency of the
@@ -128,7 +129,7 @@ namespace Model
      * to Ensure Idempotency</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      */
-    inline AllocateHostsRequest& WithClientToken(Aws::String&& value) { SetClientToken(value); return *this;}
+    inline AllocateHostsRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
 
     /**
      * <p>Unique, case-sensitive identifier you provide to ensure idempotency of the
@@ -158,7 +159,7 @@ namespace Model
      * for. When you specify the instance type, that is the only instance type that you
      * can launch onto that host.</p>
      */
-    inline void SetInstanceType(Aws::String&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
+    inline void SetInstanceType(Aws::String&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = std::move(value); }
 
     /**
      * <p>Specify the instance type that you want your Dedicated Hosts to be configured
@@ -179,7 +180,7 @@ namespace Model
      * for. When you specify the instance type, that is the only instance type that you
      * can launch onto that host.</p>
      */
-    inline AllocateHostsRequest& WithInstanceType(Aws::String&& value) { SetInstanceType(value); return *this;}
+    inline AllocateHostsRequest& WithInstanceType(Aws::String&& value) { SetInstanceType(std::move(value)); return *this;}
 
     /**
      * <p>Specify the instance type that you want your Dedicated Hosts to be configured
@@ -219,7 +220,7 @@ namespace Model
     /**
      * <p>The Availability Zone for the Dedicated Hosts.</p>
      */
-    inline void SetAvailabilityZone(Aws::String&& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = value; }
+    inline void SetAvailabilityZone(Aws::String&& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = std::move(value); }
 
     /**
      * <p>The Availability Zone for the Dedicated Hosts.</p>
@@ -234,7 +235,7 @@ namespace Model
     /**
      * <p>The Availability Zone for the Dedicated Hosts.</p>
      */
-    inline AllocateHostsRequest& WithAvailabilityZone(Aws::String&& value) { SetAvailabilityZone(value); return *this;}
+    inline AllocateHostsRequest& WithAvailabilityZone(Aws::String&& value) { SetAvailabilityZone(std::move(value)); return *this;}
 
     /**
      * <p>The Availability Zone for the Dedicated Hosts.</p>

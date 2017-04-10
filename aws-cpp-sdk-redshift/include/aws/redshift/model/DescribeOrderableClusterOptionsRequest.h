@@ -16,6 +16,7 @@
 #include <aws/redshift/Redshift_EXPORTS.h>
 #include <aws/redshift/RedshiftRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -62,7 +63,7 @@ namespace Model
      * <p>Constraints: Must be one of the version returned from
      * <a>DescribeClusterVersions</a>.</p>
      */
-    inline void SetClusterVersion(Aws::String&& value) { m_clusterVersionHasBeenSet = true; m_clusterVersion = value; }
+    inline void SetClusterVersion(Aws::String&& value) { m_clusterVersionHasBeenSet = true; m_clusterVersion = std::move(value); }
 
     /**
      * <p>The version filter value. Specify this parameter to show only the available
@@ -86,7 +87,7 @@ namespace Model
      * <p>Constraints: Must be one of the version returned from
      * <a>DescribeClusterVersions</a>.</p>
      */
-    inline DescribeOrderableClusterOptionsRequest& WithClusterVersion(Aws::String&& value) { SetClusterVersion(value); return *this;}
+    inline DescribeOrderableClusterOptionsRequest& WithClusterVersion(Aws::String&& value) { SetClusterVersion(std::move(value)); return *this;}
 
     /**
      * <p>The version filter value. Specify this parameter to show only the available
@@ -112,7 +113,7 @@ namespace Model
      * <p>The node type filter value. Specify this parameter to show only the available
      * offerings matching the specified node type.</p>
      */
-    inline void SetNodeType(Aws::String&& value) { m_nodeTypeHasBeenSet = true; m_nodeType = value; }
+    inline void SetNodeType(Aws::String&& value) { m_nodeTypeHasBeenSet = true; m_nodeType = std::move(value); }
 
     /**
      * <p>The node type filter value. Specify this parameter to show only the available
@@ -130,7 +131,7 @@ namespace Model
      * <p>The node type filter value. Specify this parameter to show only the available
      * offerings matching the specified node type.</p>
      */
-    inline DescribeOrderableClusterOptionsRequest& WithNodeType(Aws::String&& value) { SetNodeType(value); return *this;}
+    inline DescribeOrderableClusterOptionsRequest& WithNodeType(Aws::String&& value) { SetNodeType(std::move(value)); return *this;}
 
     /**
      * <p>The node type filter value. Specify this parameter to show only the available
@@ -196,7 +197,7 @@ namespace Model
      * next set of response records by providing the returned marker value in the
      * <code>Marker</code> parameter and retrying the request. </p>
      */
-    inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = value; }
+    inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = std::move(value); }
 
     /**
      * <p>An optional parameter that specifies the starting point to return a set of
@@ -226,7 +227,7 @@ namespace Model
      * next set of response records by providing the returned marker value in the
      * <code>Marker</code> parameter and retrying the request. </p>
      */
-    inline DescribeOrderableClusterOptionsRequest& WithMarker(Aws::String&& value) { SetMarker(value); return *this;}
+    inline DescribeOrderableClusterOptionsRequest& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
 
     /**
      * <p>An optional parameter that specifies the starting point to return a set of

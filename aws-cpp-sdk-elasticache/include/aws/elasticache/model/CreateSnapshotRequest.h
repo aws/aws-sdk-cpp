@@ -16,6 +16,7 @@
 #include <aws/elasticache/ElastiCache_EXPORTS.h>
 #include <aws/elasticache/ElastiCacheRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -57,7 +58,7 @@ namespace Model
      * <p>The identifier of an existing replication group. The snapshot is created from
      * this replication group.</p>
      */
-    inline void SetReplicationGroupId(Aws::String&& value) { m_replicationGroupIdHasBeenSet = true; m_replicationGroupId = value; }
+    inline void SetReplicationGroupId(Aws::String&& value) { m_replicationGroupIdHasBeenSet = true; m_replicationGroupId = std::move(value); }
 
     /**
      * <p>The identifier of an existing replication group. The snapshot is created from
@@ -75,7 +76,7 @@ namespace Model
      * <p>The identifier of an existing replication group. The snapshot is created from
      * this replication group.</p>
      */
-    inline CreateSnapshotRequest& WithReplicationGroupId(Aws::String&& value) { SetReplicationGroupId(value); return *this;}
+    inline CreateSnapshotRequest& WithReplicationGroupId(Aws::String&& value) { SetReplicationGroupId(std::move(value)); return *this;}
 
     /**
      * <p>The identifier of an existing replication group. The snapshot is created from
@@ -99,7 +100,7 @@ namespace Model
      * <p>The identifier of an existing cache cluster. The snapshot is created from
      * this cache cluster.</p>
      */
-    inline void SetCacheClusterId(Aws::String&& value) { m_cacheClusterIdHasBeenSet = true; m_cacheClusterId = value; }
+    inline void SetCacheClusterId(Aws::String&& value) { m_cacheClusterIdHasBeenSet = true; m_cacheClusterId = std::move(value); }
 
     /**
      * <p>The identifier of an existing cache cluster. The snapshot is created from
@@ -117,7 +118,7 @@ namespace Model
      * <p>The identifier of an existing cache cluster. The snapshot is created from
      * this cache cluster.</p>
      */
-    inline CreateSnapshotRequest& WithCacheClusterId(Aws::String&& value) { SetCacheClusterId(value); return *this;}
+    inline CreateSnapshotRequest& WithCacheClusterId(Aws::String&& value) { SetCacheClusterId(std::move(value)); return *this;}
 
     /**
      * <p>The identifier of an existing cache cluster. The snapshot is created from
@@ -138,7 +139,7 @@ namespace Model
     /**
      * <p>A name for the snapshot being created.</p>
      */
-    inline void SetSnapshotName(Aws::String&& value) { m_snapshotNameHasBeenSet = true; m_snapshotName = value; }
+    inline void SetSnapshotName(Aws::String&& value) { m_snapshotNameHasBeenSet = true; m_snapshotName = std::move(value); }
 
     /**
      * <p>A name for the snapshot being created.</p>
@@ -153,7 +154,7 @@ namespace Model
     /**
      * <p>A name for the snapshot being created.</p>
      */
-    inline CreateSnapshotRequest& WithSnapshotName(Aws::String&& value) { SetSnapshotName(value); return *this;}
+    inline CreateSnapshotRequest& WithSnapshotName(Aws::String&& value) { SetSnapshotName(std::move(value)); return *this;}
 
     /**
      * <p>A name for the snapshot being created.</p>

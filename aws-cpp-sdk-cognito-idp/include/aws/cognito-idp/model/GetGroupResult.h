@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/cognito-idp/CognitoIdentityProvider_EXPORTS.h>
 #include <aws/cognito-idp/model/GroupType.h>
+#include <utility>
 
 namespace Aws
 {
@@ -52,7 +53,7 @@ namespace Model
     /**
      * <p>The group object for the group.</p>
      */
-    inline void SetGroup(GroupType&& value) { m_group = value; }
+    inline void SetGroup(GroupType&& value) { m_group = std::move(value); }
 
     /**
      * <p>The group object for the group.</p>
@@ -62,7 +63,7 @@ namespace Model
     /**
      * <p>The group object for the group.</p>
      */
-    inline GetGroupResult& WithGroup(GroupType&& value) { SetGroup(value); return *this;}
+    inline GetGroupResult& WithGroup(GroupType&& value) { SetGroup(std::move(value)); return *this;}
 
   private:
     GroupType m_group;

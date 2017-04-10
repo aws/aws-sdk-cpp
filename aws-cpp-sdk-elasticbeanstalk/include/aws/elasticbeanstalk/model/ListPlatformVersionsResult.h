@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/elasticbeanstalk/model/ResponseMetadata.h>
 #include <aws/elasticbeanstalk/model/PlatformSummary.h>
+#include <utility>
 
 namespace Aws
 {
@@ -55,7 +56,7 @@ namespace Model
     /**
      * <p>Detailed information about the platforms.</p>
      */
-    inline void SetPlatformSummaryList(Aws::Vector<PlatformSummary>&& value) { m_platformSummaryList = value; }
+    inline void SetPlatformSummaryList(Aws::Vector<PlatformSummary>&& value) { m_platformSummaryList = std::move(value); }
 
     /**
      * <p>Detailed information about the platforms.</p>
@@ -65,7 +66,7 @@ namespace Model
     /**
      * <p>Detailed information about the platforms.</p>
      */
-    inline ListPlatformVersionsResult& WithPlatformSummaryList(Aws::Vector<PlatformSummary>&& value) { SetPlatformSummaryList(value); return *this;}
+    inline ListPlatformVersionsResult& WithPlatformSummaryList(Aws::Vector<PlatformSummary>&& value) { SetPlatformSummaryList(std::move(value)); return *this;}
 
     /**
      * <p>Detailed information about the platforms.</p>
@@ -75,7 +76,7 @@ namespace Model
     /**
      * <p>Detailed information about the platforms.</p>
      */
-    inline ListPlatformVersionsResult& AddPlatformSummaryList(PlatformSummary&& value) { m_platformSummaryList.push_back(value); return *this; }
+    inline ListPlatformVersionsResult& AddPlatformSummaryList(PlatformSummary&& value) { m_platformSummaryList.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The starting index into the remaining list of platforms. if this value is not
@@ -96,7 +97,7 @@ namespace Model
      * <code>null</code>, you can use it in a subsequent
      * <code>ListPlatformVersion</code> call. </p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
      * <p>The starting index into the remaining list of platforms. if this value is not
@@ -117,7 +118,7 @@ namespace Model
      * <code>null</code>, you can use it in a subsequent
      * <code>ListPlatformVersion</code> call. </p>
      */
-    inline ListPlatformVersionsResult& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline ListPlatformVersionsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>The starting index into the remaining list of platforms. if this value is not
@@ -133,13 +134,13 @@ namespace Model
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
 
     
     inline ListPlatformVersionsResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
 
     
-    inline ListPlatformVersionsResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
+    inline ListPlatformVersionsResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
     Aws::Vector<PlatformSummary> m_platformSummaryList;

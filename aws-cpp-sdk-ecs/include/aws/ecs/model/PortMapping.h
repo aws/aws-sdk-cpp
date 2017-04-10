@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/ecs/ECS_EXPORTS.h>
 #include <aws/ecs/model/TransportProtocol.h>
+#include <utility>
 
 namespace Aws
 {
@@ -169,7 +170,7 @@ namespace Model
      * <p>The protocol used for the port mapping. Valid values are <code>tcp</code> and
      * <code>udp</code>. The default is <code>tcp</code>.</p>
      */
-    inline void SetProtocol(TransportProtocol&& value) { m_protocolHasBeenSet = true; m_protocol = value; }
+    inline void SetProtocol(TransportProtocol&& value) { m_protocolHasBeenSet = true; m_protocol = std::move(value); }
 
     /**
      * <p>The protocol used for the port mapping. Valid values are <code>tcp</code> and
@@ -181,7 +182,7 @@ namespace Model
      * <p>The protocol used for the port mapping. Valid values are <code>tcp</code> and
      * <code>udp</code>. The default is <code>tcp</code>.</p>
      */
-    inline PortMapping& WithProtocol(TransportProtocol&& value) { SetProtocol(value); return *this;}
+    inline PortMapping& WithProtocol(TransportProtocol&& value) { SetProtocol(std::move(value)); return *this;}
 
   private:
     int m_containerPort;

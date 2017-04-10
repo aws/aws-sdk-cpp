@@ -16,6 +16,7 @@
 #include <aws/cognito-sync/CognitoSync_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -58,7 +59,7 @@ namespace Model
     /**
      * <p>List of SNS platform application ARNs that could be used by clients.</p>
      */
-    inline void SetApplicationArns(Aws::Vector<Aws::String>&& value) { m_applicationArnsHasBeenSet = true; m_applicationArns = value; }
+    inline void SetApplicationArns(Aws::Vector<Aws::String>&& value) { m_applicationArnsHasBeenSet = true; m_applicationArns = std::move(value); }
 
     /**
      * <p>List of SNS platform application ARNs that could be used by clients.</p>
@@ -68,7 +69,7 @@ namespace Model
     /**
      * <p>List of SNS platform application ARNs that could be used by clients.</p>
      */
-    inline PushSync& WithApplicationArns(Aws::Vector<Aws::String>&& value) { SetApplicationArns(value); return *this;}
+    inline PushSync& WithApplicationArns(Aws::Vector<Aws::String>&& value) { SetApplicationArns(std::move(value)); return *this;}
 
     /**
      * <p>List of SNS platform application ARNs that could be used by clients.</p>
@@ -78,7 +79,7 @@ namespace Model
     /**
      * <p>List of SNS platform application ARNs that could be used by clients.</p>
      */
-    inline PushSync& AddApplicationArns(Aws::String&& value) { m_applicationArnsHasBeenSet = true; m_applicationArns.push_back(value); return *this; }
+    inline PushSync& AddApplicationArns(Aws::String&& value) { m_applicationArnsHasBeenSet = true; m_applicationArns.push_back(std::move(value)); return *this; }
 
     /**
      * <p>List of SNS platform application ARNs that could be used by clients.</p>
@@ -101,7 +102,7 @@ namespace Model
      * <p>A role configured to allow Cognito to call SNS on behalf of the
      * developer.</p>
      */
-    inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
+    inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
 
     /**
      * <p>A role configured to allow Cognito to call SNS on behalf of the
@@ -119,7 +120,7 @@ namespace Model
      * <p>A role configured to allow Cognito to call SNS on behalf of the
      * developer.</p>
      */
-    inline PushSync& WithRoleArn(Aws::String&& value) { SetRoleArn(value); return *this;}
+    inline PushSync& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
 
     /**
      * <p>A role configured to allow Cognito to call SNS on behalf of the

@@ -18,6 +18,7 @@
 #include <aws/route53domains/model/OperationStatus.h>
 #include <aws/route53domains/model/OperationType.h>
 #include <aws/core/utils/DateTime.h>
+#include <utility>
 
 namespace Aws
 {
@@ -60,7 +61,7 @@ namespace Model
     /**
      * <p>Identifier returned to track the requested action.</p> <p>Type: String</p>
      */
-    inline void SetOperationId(Aws::String&& value) { m_operationIdHasBeenSet = true; m_operationId = value; }
+    inline void SetOperationId(Aws::String&& value) { m_operationIdHasBeenSet = true; m_operationId = std::move(value); }
 
     /**
      * <p>Identifier returned to track the requested action.</p> <p>Type: String</p>
@@ -75,7 +76,7 @@ namespace Model
     /**
      * <p>Identifier returned to track the requested action.</p> <p>Type: String</p>
      */
-    inline OperationSummary& WithOperationId(Aws::String&& value) { SetOperationId(value); return *this;}
+    inline OperationSummary& WithOperationId(Aws::String&& value) { SetOperationId(std::move(value)); return *this;}
 
     /**
      * <p>Identifier returned to track the requested action.</p> <p>Type: String</p>
@@ -98,7 +99,7 @@ namespace Model
      * <p>The current status of the requested operation in the system.</p> <p>Type:
      * String</p>
      */
-    inline void SetStatus(OperationStatus&& value) { m_statusHasBeenSet = true; m_status = value; }
+    inline void SetStatus(OperationStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
      * <p>The current status of the requested operation in the system.</p> <p>Type:
@@ -110,7 +111,7 @@ namespace Model
      * <p>The current status of the requested operation in the system.</p> <p>Type:
      * String</p>
      */
-    inline OperationSummary& WithStatus(OperationStatus&& value) { SetStatus(value); return *this;}
+    inline OperationSummary& WithStatus(OperationStatus&& value) { SetStatus(std::move(value)); return *this;}
 
     /**
      * <p>Type of the action requested.</p> <p>Type: String</p> <p>Valid values:
@@ -137,7 +138,7 @@ namespace Model
      * <code>UPDATE_NAMESERVER</code> | <code>CHANGE_PRIVACY_PROTECTION</code> |
      * <code>DOMAIN_LOCK</code></p>
      */
-    inline void SetType(OperationType&& value) { m_typeHasBeenSet = true; m_type = value; }
+    inline void SetType(OperationType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
      * <p>Type of the action requested.</p> <p>Type: String</p> <p>Valid values:
@@ -155,7 +156,7 @@ namespace Model
      * <code>UPDATE_NAMESERVER</code> | <code>CHANGE_PRIVACY_PROTECTION</code> |
      * <code>DOMAIN_LOCK</code></p>
      */
-    inline OperationSummary& WithType(OperationType&& value) { SetType(value); return *this;}
+    inline OperationSummary& WithType(OperationType&& value) { SetType(std::move(value)); return *this;}
 
     /**
      * <p>The date when the request was submitted.</p>
@@ -170,7 +171,7 @@ namespace Model
     /**
      * <p>The date when the request was submitted.</p>
      */
-    inline void SetSubmittedDate(Aws::Utils::DateTime&& value) { m_submittedDateHasBeenSet = true; m_submittedDate = value; }
+    inline void SetSubmittedDate(Aws::Utils::DateTime&& value) { m_submittedDateHasBeenSet = true; m_submittedDate = std::move(value); }
 
     /**
      * <p>The date when the request was submitted.</p>
@@ -180,7 +181,7 @@ namespace Model
     /**
      * <p>The date when the request was submitted.</p>
      */
-    inline OperationSummary& WithSubmittedDate(Aws::Utils::DateTime&& value) { SetSubmittedDate(value); return *this;}
+    inline OperationSummary& WithSubmittedDate(Aws::Utils::DateTime&& value) { SetSubmittedDate(std::move(value)); return *this;}
 
   private:
     Aws::String m_operationId;

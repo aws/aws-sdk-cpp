@@ -16,6 +16,7 @@
 #include <aws/sqs/SQS_EXPORTS.h>
 #include <aws/sqs/SQSRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -53,7 +54,7 @@ namespace Model
     /**
      * <p>The URL of a dead letter queue.</p> <p>Queue URLs are case-sensitive.</p>
      */
-    inline void SetQueueUrl(Aws::String&& value) { m_queueUrlHasBeenSet = true; m_queueUrl = value; }
+    inline void SetQueueUrl(Aws::String&& value) { m_queueUrlHasBeenSet = true; m_queueUrl = std::move(value); }
 
     /**
      * <p>The URL of a dead letter queue.</p> <p>Queue URLs are case-sensitive.</p>
@@ -68,7 +69,7 @@ namespace Model
     /**
      * <p>The URL of a dead letter queue.</p> <p>Queue URLs are case-sensitive.</p>
      */
-    inline ListDeadLetterSourceQueuesRequest& WithQueueUrl(Aws::String&& value) { SetQueueUrl(value); return *this;}
+    inline ListDeadLetterSourceQueuesRequest& WithQueueUrl(Aws::String&& value) { SetQueueUrl(std::move(value)); return *this;}
 
     /**
      * <p>The URL of a dead letter queue.</p> <p>Queue URLs are case-sensitive.</p>

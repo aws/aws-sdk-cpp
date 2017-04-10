@@ -19,6 +19,7 @@
 #include <aws/ssm/model/MaintenanceWindowResourceType.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ssm/model/Target.h>
+#include <utility>
 #include <aws/core/utils/UUID.h>
 
 namespace Aws
@@ -52,7 +53,7 @@ namespace Model
     /**
      * <p>The ID of the Maintenance Window the target should be registered with.</p>
      */
-    inline void SetWindowId(Aws::String&& value) { m_windowIdHasBeenSet = true; m_windowId = value; }
+    inline void SetWindowId(Aws::String&& value) { m_windowIdHasBeenSet = true; m_windowId = std::move(value); }
 
     /**
      * <p>The ID of the Maintenance Window the target should be registered with.</p>
@@ -67,7 +68,7 @@ namespace Model
     /**
      * <p>The ID of the Maintenance Window the target should be registered with.</p>
      */
-    inline RegisterTargetWithMaintenanceWindowRequest& WithWindowId(Aws::String&& value) { SetWindowId(value); return *this;}
+    inline RegisterTargetWithMaintenanceWindowRequest& WithWindowId(Aws::String&& value) { SetWindowId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the Maintenance Window the target should be registered with.</p>
@@ -87,7 +88,7 @@ namespace Model
     /**
      * <p>The type of target being registered with the Maintenance Window.</p>
      */
-    inline void SetResourceType(MaintenanceWindowResourceType&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
+    inline void SetResourceType(MaintenanceWindowResourceType&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
 
     /**
      * <p>The type of target being registered with the Maintenance Window.</p>
@@ -97,7 +98,7 @@ namespace Model
     /**
      * <p>The type of target being registered with the Maintenance Window.</p>
      */
-    inline RegisterTargetWithMaintenanceWindowRequest& WithResourceType(MaintenanceWindowResourceType&& value) { SetResourceType(value); return *this;}
+    inline RegisterTargetWithMaintenanceWindowRequest& WithResourceType(MaintenanceWindowResourceType&& value) { SetResourceType(std::move(value)); return *this;}
 
     /**
      * <p>The targets (either instances or tags). Instances are specified using
@@ -118,7 +119,7 @@ namespace Model
      * Key=instanceids,Values=&lt;instanceid1&gt;,&lt;instanceid2&gt;. Tags are
      * specified using Key=&lt;tag name&gt;,Values=&lt;tag value&gt;.</p>
      */
-    inline void SetTargets(Aws::Vector<Target>&& value) { m_targetsHasBeenSet = true; m_targets = value; }
+    inline void SetTargets(Aws::Vector<Target>&& value) { m_targetsHasBeenSet = true; m_targets = std::move(value); }
 
     /**
      * <p>The targets (either instances or tags). Instances are specified using
@@ -132,7 +133,7 @@ namespace Model
      * Key=instanceids,Values=&lt;instanceid1&gt;,&lt;instanceid2&gt;. Tags are
      * specified using Key=&lt;tag name&gt;,Values=&lt;tag value&gt;.</p>
      */
-    inline RegisterTargetWithMaintenanceWindowRequest& WithTargets(Aws::Vector<Target>&& value) { SetTargets(value); return *this;}
+    inline RegisterTargetWithMaintenanceWindowRequest& WithTargets(Aws::Vector<Target>&& value) { SetTargets(std::move(value)); return *this;}
 
     /**
      * <p>The targets (either instances or tags). Instances are specified using
@@ -146,7 +147,7 @@ namespace Model
      * Key=instanceids,Values=&lt;instanceid1&gt;,&lt;instanceid2&gt;. Tags are
      * specified using Key=&lt;tag name&gt;,Values=&lt;tag value&gt;.</p>
      */
-    inline RegisterTargetWithMaintenanceWindowRequest& AddTargets(Target&& value) { m_targetsHasBeenSet = true; m_targets.push_back(value); return *this; }
+    inline RegisterTargetWithMaintenanceWindowRequest& AddTargets(Target&& value) { m_targetsHasBeenSet = true; m_targets.push_back(std::move(value)); return *this; }
 
     /**
      * <p>User-provided value that will be included in any CloudWatch events raised
@@ -164,7 +165,7 @@ namespace Model
      * <p>User-provided value that will be included in any CloudWatch events raised
      * while running tasks for these targets in this Maintenance Window.</p>
      */
-    inline void SetOwnerInformation(Aws::String&& value) { m_ownerInformationHasBeenSet = true; m_ownerInformation = value; }
+    inline void SetOwnerInformation(Aws::String&& value) { m_ownerInformationHasBeenSet = true; m_ownerInformation = std::move(value); }
 
     /**
      * <p>User-provided value that will be included in any CloudWatch events raised
@@ -182,7 +183,7 @@ namespace Model
      * <p>User-provided value that will be included in any CloudWatch events raised
      * while running tasks for these targets in this Maintenance Window.</p>
      */
-    inline RegisterTargetWithMaintenanceWindowRequest& WithOwnerInformation(Aws::String&& value) { SetOwnerInformation(value); return *this;}
+    inline RegisterTargetWithMaintenanceWindowRequest& WithOwnerInformation(Aws::String&& value) { SetOwnerInformation(std::move(value)); return *this;}
 
     /**
      * <p>User-provided value that will be included in any CloudWatch events raised
@@ -203,7 +204,7 @@ namespace Model
     /**
      * <p>User-provided idempotency token.</p>
      */
-    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
+    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
 
     /**
      * <p>User-provided idempotency token.</p>
@@ -218,7 +219,7 @@ namespace Model
     /**
      * <p>User-provided idempotency token.</p>
      */
-    inline RegisterTargetWithMaintenanceWindowRequest& WithClientToken(Aws::String&& value) { SetClientToken(value); return *this;}
+    inline RegisterTargetWithMaintenanceWindowRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
 
     /**
      * <p>User-provided idempotency token.</p>

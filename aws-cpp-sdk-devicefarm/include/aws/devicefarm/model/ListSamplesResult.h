@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/devicefarm/model/Sample.h>
+#include <utility>
 
 namespace Aws
 {
@@ -60,7 +61,7 @@ namespace Model
     /**
      * <p>Information about the samples.</p>
      */
-    inline void SetSamples(Aws::Vector<Sample>&& value) { m_samples = value; }
+    inline void SetSamples(Aws::Vector<Sample>&& value) { m_samples = std::move(value); }
 
     /**
      * <p>Information about the samples.</p>
@@ -70,7 +71,7 @@ namespace Model
     /**
      * <p>Information about the samples.</p>
      */
-    inline ListSamplesResult& WithSamples(Aws::Vector<Sample>&& value) { SetSamples(value); return *this;}
+    inline ListSamplesResult& WithSamples(Aws::Vector<Sample>&& value) { SetSamples(std::move(value)); return *this;}
 
     /**
      * <p>Information about the samples.</p>
@@ -80,7 +81,7 @@ namespace Model
     /**
      * <p>Information about the samples.</p>
      */
-    inline ListSamplesResult& AddSamples(Sample&& value) { m_samples.push_back(value); return *this; }
+    inline ListSamplesResult& AddSamples(Sample&& value) { m_samples.push_back(std::move(value)); return *this; }
 
     /**
      * <p>If the number of items that are returned is significantly large, this is an
@@ -101,7 +102,7 @@ namespace Model
      * identifier that is also returned, which can be used in a subsequent call to this
      * operation to return the next set of items in the list.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
      * <p>If the number of items that are returned is significantly large, this is an
@@ -122,7 +123,7 @@ namespace Model
      * identifier that is also returned, which can be used in a subsequent call to this
      * operation to return the next set of items in the list.</p>
      */
-    inline ListSamplesResult& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline ListSamplesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>If the number of items that are returned is significantly large, this is an

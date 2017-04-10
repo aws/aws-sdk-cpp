@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ssm/model/Activation.h>
+#include <utility>
 
 namespace Aws
 {
@@ -54,7 +55,7 @@ namespace Model
     /**
      * <p>A list of activations for your AWS account.</p>
      */
-    inline void SetActivationList(Aws::Vector<Activation>&& value) { m_activationList = value; }
+    inline void SetActivationList(Aws::Vector<Activation>&& value) { m_activationList = std::move(value); }
 
     /**
      * <p>A list of activations for your AWS account.</p>
@@ -64,7 +65,7 @@ namespace Model
     /**
      * <p>A list of activations for your AWS account.</p>
      */
-    inline DescribeActivationsResult& WithActivationList(Aws::Vector<Activation>&& value) { SetActivationList(value); return *this;}
+    inline DescribeActivationsResult& WithActivationList(Aws::Vector<Activation>&& value) { SetActivationList(std::move(value)); return *this;}
 
     /**
      * <p>A list of activations for your AWS account.</p>
@@ -74,7 +75,7 @@ namespace Model
     /**
      * <p>A list of activations for your AWS account.</p>
      */
-    inline DescribeActivationsResult& AddActivationList(Activation&& value) { m_activationList.push_back(value); return *this; }
+    inline DescribeActivationsResult& AddActivationList(Activation&& value) { m_activationList.push_back(std::move(value)); return *this; }
 
     /**
      * <p> The token for the next set of items to return. Use this token to get the
@@ -92,7 +93,7 @@ namespace Model
      * <p> The token for the next set of items to return. Use this token to get the
      * next set of results. </p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
      * <p> The token for the next set of items to return. Use this token to get the
@@ -110,7 +111,7 @@ namespace Model
      * <p> The token for the next set of items to return. Use this token to get the
      * next set of results. </p>
      */
-    inline DescribeActivationsResult& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline DescribeActivationsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p> The token for the next set of items to return. Use this token to get the

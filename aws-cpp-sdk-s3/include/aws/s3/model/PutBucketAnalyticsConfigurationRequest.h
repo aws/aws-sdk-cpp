@@ -17,6 +17,7 @@
 #include <aws/s3/S3Request.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/s3/model/AnalyticsConfiguration.h>
+#include <utility>
 
 namespace Aws
 {
@@ -53,7 +54,7 @@ namespace Model
     /**
      * The name of the bucket to which an analytics configuration is stored.
      */
-    inline void SetBucket(Aws::String&& value) { m_bucketHasBeenSet = true; m_bucket = value; }
+    inline void SetBucket(Aws::String&& value) { m_bucketHasBeenSet = true; m_bucket = std::move(value); }
 
     /**
      * The name of the bucket to which an analytics configuration is stored.
@@ -68,7 +69,7 @@ namespace Model
     /**
      * The name of the bucket to which an analytics configuration is stored.
      */
-    inline PutBucketAnalyticsConfigurationRequest& WithBucket(Aws::String&& value) { SetBucket(value); return *this;}
+    inline PutBucketAnalyticsConfigurationRequest& WithBucket(Aws::String&& value) { SetBucket(std::move(value)); return *this;}
 
     /**
      * The name of the bucket to which an analytics configuration is stored.
@@ -88,7 +89,7 @@ namespace Model
     /**
      * The identifier used to represent an analytics configuration.
      */
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = value; }
+    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
 
     /**
      * The identifier used to represent an analytics configuration.
@@ -103,7 +104,7 @@ namespace Model
     /**
      * The identifier used to represent an analytics configuration.
      */
-    inline PutBucketAnalyticsConfigurationRequest& WithId(Aws::String&& value) { SetId(value); return *this;}
+    inline PutBucketAnalyticsConfigurationRequest& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
 
     /**
      * The identifier used to represent an analytics configuration.
@@ -123,7 +124,7 @@ namespace Model
     /**
      * The configuration and any analyses for the analytics filter.
      */
-    inline void SetAnalyticsConfiguration(AnalyticsConfiguration&& value) { m_analyticsConfigurationHasBeenSet = true; m_analyticsConfiguration = value; }
+    inline void SetAnalyticsConfiguration(AnalyticsConfiguration&& value) { m_analyticsConfigurationHasBeenSet = true; m_analyticsConfiguration = std::move(value); }
 
     /**
      * The configuration and any analyses for the analytics filter.
@@ -133,7 +134,7 @@ namespace Model
     /**
      * The configuration and any analyses for the analytics filter.
      */
-    inline PutBucketAnalyticsConfigurationRequest& WithAnalyticsConfiguration(AnalyticsConfiguration&& value) { SetAnalyticsConfiguration(value); return *this;}
+    inline PutBucketAnalyticsConfigurationRequest& WithAnalyticsConfiguration(AnalyticsConfiguration&& value) { SetAnalyticsConfiguration(std::move(value)); return *this;}
 
   private:
     Aws::String m_bucket;

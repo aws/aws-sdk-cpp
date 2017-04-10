@@ -16,6 +16,7 @@
 #include <aws/cognito-idp/CognitoIdentityProvider_EXPORTS.h>
 #include <aws/cognito-idp/CognitoIdentityProviderRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -55,7 +56,7 @@ namespace Model
      * <p>The access token returned by the server response to get the user attribute
      * verification code.</p>
      */
-    inline void SetAccessToken(Aws::String&& value) { m_accessTokenHasBeenSet = true; m_accessToken = value; }
+    inline void SetAccessToken(Aws::String&& value) { m_accessTokenHasBeenSet = true; m_accessToken = std::move(value); }
 
     /**
      * <p>The access token returned by the server response to get the user attribute
@@ -73,7 +74,7 @@ namespace Model
      * <p>The access token returned by the server response to get the user attribute
      * verification code.</p>
      */
-    inline GetUserAttributeVerificationCodeRequest& WithAccessToken(Aws::String&& value) { SetAccessToken(value); return *this;}
+    inline GetUserAttributeVerificationCodeRequest& WithAccessToken(Aws::String&& value) { SetAccessToken(std::move(value)); return *this;}
 
     /**
      * <p>The access token returned by the server response to get the user attribute
@@ -97,7 +98,7 @@ namespace Model
      * <p>The attribute name returned by the server response to get the user attribute
      * verification code.</p>
      */
-    inline void SetAttributeName(Aws::String&& value) { m_attributeNameHasBeenSet = true; m_attributeName = value; }
+    inline void SetAttributeName(Aws::String&& value) { m_attributeNameHasBeenSet = true; m_attributeName = std::move(value); }
 
     /**
      * <p>The attribute name returned by the server response to get the user attribute
@@ -115,7 +116,7 @@ namespace Model
      * <p>The attribute name returned by the server response to get the user attribute
      * verification code.</p>
      */
-    inline GetUserAttributeVerificationCodeRequest& WithAttributeName(Aws::String&& value) { SetAttributeName(value); return *this;}
+    inline GetUserAttributeVerificationCodeRequest& WithAttributeName(Aws::String&& value) { SetAttributeName(std::move(value)); return *this;}
 
     /**
      * <p>The attribute name returned by the server response to get the user attribute

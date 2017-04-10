@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/s3/S3_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -46,7 +47,7 @@ namespace Model
     inline void SetLocation(const Aws::String& value) { m_location = value; }
 
     
-    inline void SetLocation(Aws::String&& value) { m_location = value; }
+    inline void SetLocation(Aws::String&& value) { m_location = std::move(value); }
 
     
     inline void SetLocation(const char* value) { m_location.assign(value); }
@@ -55,7 +56,7 @@ namespace Model
     inline CreateBucketResult& WithLocation(const Aws::String& value) { SetLocation(value); return *this;}
 
     
-    inline CreateBucketResult& WithLocation(Aws::String&& value) { SetLocation(value); return *this;}
+    inline CreateBucketResult& WithLocation(Aws::String&& value) { SetLocation(std::move(value)); return *this;}
 
     
     inline CreateBucketResult& WithLocation(const char* value) { SetLocation(value); return *this;}

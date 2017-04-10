@@ -17,6 +17,7 @@
 #include <aws/ec2/EC2Request.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/SnapshotAttributeName.h>
+#include <utility>
 
 namespace Aws
 {
@@ -79,7 +80,7 @@ namespace Model
     /**
      * <p>The ID of the snapshot.</p>
      */
-    inline void SetSnapshotId(Aws::String&& value) { m_snapshotIdHasBeenSet = true; m_snapshotId = value; }
+    inline void SetSnapshotId(Aws::String&& value) { m_snapshotIdHasBeenSet = true; m_snapshotId = std::move(value); }
 
     /**
      * <p>The ID of the snapshot.</p>
@@ -94,7 +95,7 @@ namespace Model
     /**
      * <p>The ID of the snapshot.</p>
      */
-    inline ResetSnapshotAttributeRequest& WithSnapshotId(Aws::String&& value) { SetSnapshotId(value); return *this;}
+    inline ResetSnapshotAttributeRequest& WithSnapshotId(Aws::String&& value) { SetSnapshotId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the snapshot.</p>
@@ -117,7 +118,7 @@ namespace Model
      * <p>The attribute to reset. Currently, only the attribute for permission to
      * create volumes can be reset.</p>
      */
-    inline void SetAttribute(SnapshotAttributeName&& value) { m_attributeHasBeenSet = true; m_attribute = value; }
+    inline void SetAttribute(SnapshotAttributeName&& value) { m_attributeHasBeenSet = true; m_attribute = std::move(value); }
 
     /**
      * <p>The attribute to reset. Currently, only the attribute for permission to
@@ -129,7 +130,7 @@ namespace Model
      * <p>The attribute to reset. Currently, only the attribute for permission to
      * create volumes can be reset.</p>
      */
-    inline ResetSnapshotAttributeRequest& WithAttribute(SnapshotAttributeName&& value) { SetAttribute(value); return *this;}
+    inline ResetSnapshotAttributeRequest& WithAttribute(SnapshotAttributeName&& value) { SetAttribute(std::move(value)); return *this;}
 
   private:
     bool m_dryRun;

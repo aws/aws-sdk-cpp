@@ -16,6 +16,7 @@
 #include <aws/sqs/SQS_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -60,7 +61,7 @@ namespace Model
     /**
      * <p>An identifier for the message in this batch.</p>
      */
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = value; }
+    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
 
     /**
      * <p>An identifier for the message in this batch.</p>
@@ -75,7 +76,7 @@ namespace Model
     /**
      * <p>An identifier for the message in this batch.</p>
      */
-    inline SendMessageBatchResultEntry& WithId(Aws::String&& value) { SetId(value); return *this;}
+    inline SendMessageBatchResultEntry& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
 
     /**
      * <p>An identifier for the message in this batch.</p>
@@ -95,7 +96,7 @@ namespace Model
     /**
      * <p>An identifier for the message.</p>
      */
-    inline void SetMessageId(Aws::String&& value) { m_messageIdHasBeenSet = true; m_messageId = value; }
+    inline void SetMessageId(Aws::String&& value) { m_messageIdHasBeenSet = true; m_messageId = std::move(value); }
 
     /**
      * <p>An identifier for the message.</p>
@@ -110,7 +111,7 @@ namespace Model
     /**
      * <p>An identifier for the message.</p>
      */
-    inline SendMessageBatchResultEntry& WithMessageId(Aws::String&& value) { SetMessageId(value); return *this;}
+    inline SendMessageBatchResultEntry& WithMessageId(Aws::String&& value) { SetMessageId(std::move(value)); return *this;}
 
     /**
      * <p>An identifier for the message.</p>
@@ -139,7 +140,7 @@ namespace Model
      * SQS URL-decodes the message before creating the MD5 digest. For information on
      * MD5, see <a href="https://www.ietf.org/rfc/rfc1321.txt">RFC1321</a>.</p>
      */
-    inline void SetMD5OfMessageBody(Aws::String&& value) { m_mD5OfMessageBodyHasBeenSet = true; m_mD5OfMessageBody = value; }
+    inline void SetMD5OfMessageBody(Aws::String&& value) { m_mD5OfMessageBodyHasBeenSet = true; m_mD5OfMessageBody = std::move(value); }
 
     /**
      * <p>An MD5 digest of the non-URL-encoded message attribute string. You can use
@@ -163,7 +164,7 @@ namespace Model
      * SQS URL-decodes the message before creating the MD5 digest. For information on
      * MD5, see <a href="https://www.ietf.org/rfc/rfc1321.txt">RFC1321</a>.</p>
      */
-    inline SendMessageBatchResultEntry& WithMD5OfMessageBody(Aws::String&& value) { SetMD5OfMessageBody(value); return *this;}
+    inline SendMessageBatchResultEntry& WithMD5OfMessageBody(Aws::String&& value) { SetMD5OfMessageBody(std::move(value)); return *this;}
 
     /**
      * <p>An MD5 digest of the non-URL-encoded message attribute string. You can use
@@ -195,7 +196,7 @@ namespace Model
      * SQS URL-decodes the message before creating the MD5 digest. For information on
      * MD5, see <a href="https://www.ietf.org/rfc/rfc1321.txt">RFC1321</a>.</p>
      */
-    inline void SetMD5OfMessageAttributes(Aws::String&& value) { m_mD5OfMessageAttributesHasBeenSet = true; m_mD5OfMessageAttributes = value; }
+    inline void SetMD5OfMessageAttributes(Aws::String&& value) { m_mD5OfMessageAttributesHasBeenSet = true; m_mD5OfMessageAttributes = std::move(value); }
 
     /**
      * <p>An MD5 digest of the non-URL-encoded message attribute string. You can use
@@ -219,7 +220,7 @@ namespace Model
      * SQS URL-decodes the message before creating the MD5 digest. For information on
      * MD5, see <a href="https://www.ietf.org/rfc/rfc1321.txt">RFC1321</a>.</p>
      */
-    inline SendMessageBatchResultEntry& WithMD5OfMessageAttributes(Aws::String&& value) { SetMD5OfMessageAttributes(value); return *this;}
+    inline SendMessageBatchResultEntry& WithMD5OfMessageAttributes(Aws::String&& value) { SetMD5OfMessageAttributes(std::move(value)); return *this;}
 
     /**
      * <p>An MD5 digest of the non-URL-encoded message attribute string. You can use
@@ -254,7 +255,7 @@ namespace Model
      * <code>SequenceNumber</code> continues to increase for a particular
      * <code>MessageGroupId</code>.</p>
      */
-    inline void SetSequenceNumber(Aws::String&& value) { m_sequenceNumberHasBeenSet = true; m_sequenceNumber = value; }
+    inline void SetSequenceNumber(Aws::String&& value) { m_sequenceNumberHasBeenSet = true; m_sequenceNumber = std::move(value); }
 
     /**
      * <p>This parameter applies only to FIFO (first-in-first-out) queues.</p> <p>A
@@ -281,7 +282,7 @@ namespace Model
      * <code>SequenceNumber</code> continues to increase for a particular
      * <code>MessageGroupId</code>.</p>
      */
-    inline SendMessageBatchResultEntry& WithSequenceNumber(Aws::String&& value) { SetSequenceNumber(value); return *this;}
+    inline SendMessageBatchResultEntry& WithSequenceNumber(Aws::String&& value) { SetSequenceNumber(std::move(value)); return *this;}
 
     /**
      * <p>This parameter applies only to FIFO (first-in-first-out) queues.</p> <p>A

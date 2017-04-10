@@ -16,6 +16,7 @@
 #include <aws/rds/RDS_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -62,7 +63,7 @@ namespace Model
     /**
      * <p>Specifies the DNS address of the DB instance.</p>
      */
-    inline void SetAddress(Aws::String&& value) { m_addressHasBeenSet = true; m_address = value; }
+    inline void SetAddress(Aws::String&& value) { m_addressHasBeenSet = true; m_address = std::move(value); }
 
     /**
      * <p>Specifies the DNS address of the DB instance.</p>
@@ -77,7 +78,7 @@ namespace Model
     /**
      * <p>Specifies the DNS address of the DB instance.</p>
      */
-    inline Endpoint& WithAddress(Aws::String&& value) { SetAddress(value); return *this;}
+    inline Endpoint& WithAddress(Aws::String&& value) { SetAddress(std::move(value)); return *this;}
 
     /**
      * <p>Specifies the DNS address of the DB instance.</p>
@@ -115,7 +116,7 @@ namespace Model
      * <p>Specifies the ID that Amazon Route 53 assigns when you create a hosted
      * zone.</p>
      */
-    inline void SetHostedZoneId(Aws::String&& value) { m_hostedZoneIdHasBeenSet = true; m_hostedZoneId = value; }
+    inline void SetHostedZoneId(Aws::String&& value) { m_hostedZoneIdHasBeenSet = true; m_hostedZoneId = std::move(value); }
 
     /**
      * <p>Specifies the ID that Amazon Route 53 assigns when you create a hosted
@@ -133,7 +134,7 @@ namespace Model
      * <p>Specifies the ID that Amazon Route 53 assigns when you create a hosted
      * zone.</p>
      */
-    inline Endpoint& WithHostedZoneId(Aws::String&& value) { SetHostedZoneId(value); return *this;}
+    inline Endpoint& WithHostedZoneId(Aws::String&& value) { SetHostedZoneId(std::move(value)); return *this;}
 
     /**
      * <p>Specifies the ID that Amazon Route 53 assigns when you create a hosted

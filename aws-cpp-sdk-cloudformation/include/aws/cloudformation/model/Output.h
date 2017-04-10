@@ -16,6 +16,7 @@
 #include <aws/cloudformation/CloudFormation_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -59,7 +60,7 @@ namespace Model
     /**
      * <p>The key associated with the output.</p>
      */
-    inline void SetOutputKey(Aws::String&& value) { m_outputKeyHasBeenSet = true; m_outputKey = value; }
+    inline void SetOutputKey(Aws::String&& value) { m_outputKeyHasBeenSet = true; m_outputKey = std::move(value); }
 
     /**
      * <p>The key associated with the output.</p>
@@ -74,7 +75,7 @@ namespace Model
     /**
      * <p>The key associated with the output.</p>
      */
-    inline Output& WithOutputKey(Aws::String&& value) { SetOutputKey(value); return *this;}
+    inline Output& WithOutputKey(Aws::String&& value) { SetOutputKey(std::move(value)); return *this;}
 
     /**
      * <p>The key associated with the output.</p>
@@ -94,7 +95,7 @@ namespace Model
     /**
      * <p>The value associated with the output.</p>
      */
-    inline void SetOutputValue(Aws::String&& value) { m_outputValueHasBeenSet = true; m_outputValue = value; }
+    inline void SetOutputValue(Aws::String&& value) { m_outputValueHasBeenSet = true; m_outputValue = std::move(value); }
 
     /**
      * <p>The value associated with the output.</p>
@@ -109,7 +110,7 @@ namespace Model
     /**
      * <p>The value associated with the output.</p>
      */
-    inline Output& WithOutputValue(Aws::String&& value) { SetOutputValue(value); return *this;}
+    inline Output& WithOutputValue(Aws::String&& value) { SetOutputValue(std::move(value)); return *this;}
 
     /**
      * <p>The value associated with the output.</p>
@@ -129,7 +130,7 @@ namespace Model
     /**
      * <p>User defined description associated with the output.</p>
      */
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = value; }
+    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
      * <p>User defined description associated with the output.</p>
@@ -144,7 +145,7 @@ namespace Model
     /**
      * <p>User defined description associated with the output.</p>
      */
-    inline Output& WithDescription(Aws::String&& value) { SetDescription(value); return *this;}
+    inline Output& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
      * <p>User defined description associated with the output.</p>

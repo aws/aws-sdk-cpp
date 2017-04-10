@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/cognito-idp/CognitoIdentityProvider_EXPORTS.h>
 #include <aws/cognito-idp/model/UserPoolType.h>
+#include <utility>
 
 namespace Aws
 {
@@ -58,7 +59,7 @@ namespace Model
     /**
      * <p>The container of metadata returned by the server to describe the pool.</p>
      */
-    inline void SetUserPool(UserPoolType&& value) { m_userPool = value; }
+    inline void SetUserPool(UserPoolType&& value) { m_userPool = std::move(value); }
 
     /**
      * <p>The container of metadata returned by the server to describe the pool.</p>
@@ -68,7 +69,7 @@ namespace Model
     /**
      * <p>The container of metadata returned by the server to describe the pool.</p>
      */
-    inline DescribeUserPoolResult& WithUserPool(UserPoolType&& value) { SetUserPool(value); return *this;}
+    inline DescribeUserPoolResult& WithUserPool(UserPoolType&& value) { SetUserPool(std::move(value)); return *this;}
 
   private:
     UserPoolType m_userPool;

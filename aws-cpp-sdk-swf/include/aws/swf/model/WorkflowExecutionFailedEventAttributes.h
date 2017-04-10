@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/swf/SWF_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -57,7 +58,7 @@ namespace Model
     /**
      * <p>The descriptive reason provided for the failure (if any).</p>
      */
-    inline void SetReason(Aws::String&& value) { m_reasonHasBeenSet = true; m_reason = value; }
+    inline void SetReason(Aws::String&& value) { m_reasonHasBeenSet = true; m_reason = std::move(value); }
 
     /**
      * <p>The descriptive reason provided for the failure (if any).</p>
@@ -72,7 +73,7 @@ namespace Model
     /**
      * <p>The descriptive reason provided for the failure (if any).</p>
      */
-    inline WorkflowExecutionFailedEventAttributes& WithReason(Aws::String&& value) { SetReason(value); return *this;}
+    inline WorkflowExecutionFailedEventAttributes& WithReason(Aws::String&& value) { SetReason(std::move(value)); return *this;}
 
     /**
      * <p>The descriptive reason provided for the failure (if any).</p>
@@ -92,7 +93,7 @@ namespace Model
     /**
      * <p>The details of the failure (if any).</p>
      */
-    inline void SetDetails(Aws::String&& value) { m_detailsHasBeenSet = true; m_details = value; }
+    inline void SetDetails(Aws::String&& value) { m_detailsHasBeenSet = true; m_details = std::move(value); }
 
     /**
      * <p>The details of the failure (if any).</p>
@@ -107,7 +108,7 @@ namespace Model
     /**
      * <p>The details of the failure (if any).</p>
      */
-    inline WorkflowExecutionFailedEventAttributes& WithDetails(Aws::String&& value) { SetDetails(value); return *this;}
+    inline WorkflowExecutionFailedEventAttributes& WithDetails(Aws::String&& value) { SetDetails(std::move(value)); return *this;}
 
     /**
      * <p>The details of the failure (if any).</p>

@@ -16,6 +16,7 @@
 #include <aws/opsworks/OpsWorks_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/opsworks/model/LoadBasedAutoScalingConfiguration.h>
+#include <utility>
 
 namespace Aws
 {
@@ -62,7 +63,7 @@ namespace Model
      * <p>An array of <code>LoadBasedAutoScalingConfiguration</code> objects that
      * describe each layer's configuration.</p>
      */
-    inline void SetLoadBasedAutoScalingConfigurations(Aws::Vector<LoadBasedAutoScalingConfiguration>&& value) { m_loadBasedAutoScalingConfigurations = value; }
+    inline void SetLoadBasedAutoScalingConfigurations(Aws::Vector<LoadBasedAutoScalingConfiguration>&& value) { m_loadBasedAutoScalingConfigurations = std::move(value); }
 
     /**
      * <p>An array of <code>LoadBasedAutoScalingConfiguration</code> objects that
@@ -74,7 +75,7 @@ namespace Model
      * <p>An array of <code>LoadBasedAutoScalingConfiguration</code> objects that
      * describe each layer's configuration.</p>
      */
-    inline DescribeLoadBasedAutoScalingResult& WithLoadBasedAutoScalingConfigurations(Aws::Vector<LoadBasedAutoScalingConfiguration>&& value) { SetLoadBasedAutoScalingConfigurations(value); return *this;}
+    inline DescribeLoadBasedAutoScalingResult& WithLoadBasedAutoScalingConfigurations(Aws::Vector<LoadBasedAutoScalingConfiguration>&& value) { SetLoadBasedAutoScalingConfigurations(std::move(value)); return *this;}
 
     /**
      * <p>An array of <code>LoadBasedAutoScalingConfiguration</code> objects that
@@ -86,7 +87,7 @@ namespace Model
      * <p>An array of <code>LoadBasedAutoScalingConfiguration</code> objects that
      * describe each layer's configuration.</p>
      */
-    inline DescribeLoadBasedAutoScalingResult& AddLoadBasedAutoScalingConfigurations(LoadBasedAutoScalingConfiguration&& value) { m_loadBasedAutoScalingConfigurations.push_back(value); return *this; }
+    inline DescribeLoadBasedAutoScalingResult& AddLoadBasedAutoScalingConfigurations(LoadBasedAutoScalingConfiguration&& value) { m_loadBasedAutoScalingConfigurations.push_back(std::move(value)); return *this; }
 
   private:
     Aws::Vector<LoadBasedAutoScalingConfiguration> m_loadBasedAutoScalingConfigurations;

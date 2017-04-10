@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/route53/Route53_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -83,7 +84,7 @@ namespace Model
      * <code>CNAME</code> and <code>SOA</code>. </p> <note> <p>If you're creating an
      * alias resource record set, omit <code>Value</code>.</p> </note>
      */
-    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = value; }
+    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
 
     /**
      * <p>The current or new DNS record value, not to exceed 4,000 characters. In the
@@ -122,7 +123,7 @@ namespace Model
      * <code>CNAME</code> and <code>SOA</code>. </p> <note> <p>If you're creating an
      * alias resource record set, omit <code>Value</code>.</p> </note>
      */
-    inline ResourceRecord& WithValue(Aws::String&& value) { SetValue(value); return *this;}
+    inline ResourceRecord& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
 
     /**
      * <p>The current or new DNS record value, not to exceed 4,000 characters. In the

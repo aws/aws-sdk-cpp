@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/states/SFN_EXPORTS.h>
 #include <aws/core/utils/DateTime.h>
+#include <utility>
 
 namespace Aws
 {
@@ -52,7 +53,7 @@ namespace Model
     /**
      * <p>The date the execution was stopped.</p>
      */
-    inline void SetStopDate(Aws::Utils::DateTime&& value) { m_stopDate = value; }
+    inline void SetStopDate(Aws::Utils::DateTime&& value) { m_stopDate = std::move(value); }
 
     /**
      * <p>The date the execution was stopped.</p>
@@ -62,7 +63,7 @@ namespace Model
     /**
      * <p>The date the execution was stopped.</p>
      */
-    inline StopExecutionResult& WithStopDate(Aws::Utils::DateTime&& value) { SetStopDate(value); return *this;}
+    inline StopExecutionResult& WithStopDate(Aws::Utils::DateTime&& value) { SetStopDate(std::move(value)); return *this;}
 
   private:
     Aws::Utils::DateTime m_stopDate;

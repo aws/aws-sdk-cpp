@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/s3/S3_EXPORTS.h>
 #include <aws/s3/model/InventoryConfiguration.h>
+#include <utility>
 
 namespace Aws
 {
@@ -52,7 +53,7 @@ namespace Model
     /**
      * Specifies the inventory configuration.
      */
-    inline void SetInventoryConfiguration(InventoryConfiguration&& value) { m_inventoryConfiguration = value; }
+    inline void SetInventoryConfiguration(InventoryConfiguration&& value) { m_inventoryConfiguration = std::move(value); }
 
     /**
      * Specifies the inventory configuration.
@@ -62,7 +63,7 @@ namespace Model
     /**
      * Specifies the inventory configuration.
      */
-    inline GetBucketInventoryConfigurationResult& WithInventoryConfiguration(InventoryConfiguration&& value) { SetInventoryConfiguration(value); return *this;}
+    inline GetBucketInventoryConfigurationResult& WithInventoryConfiguration(InventoryConfiguration&& value) { SetInventoryConfiguration(std::move(value)); return *this;}
 
   private:
     InventoryConfiguration m_inventoryConfiguration;

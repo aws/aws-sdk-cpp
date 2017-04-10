@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/ResponseMetadata.h>
 #include <aws/ec2/model/Reservation.h>
+#include <utility>
 
 namespace Aws
 {
@@ -60,7 +61,7 @@ namespace Model
     /**
      * <p>Zero or more reservations.</p>
      */
-    inline void SetReservations(Aws::Vector<Reservation>&& value) { m_reservations = value; }
+    inline void SetReservations(Aws::Vector<Reservation>&& value) { m_reservations = std::move(value); }
 
     /**
      * <p>Zero or more reservations.</p>
@@ -70,7 +71,7 @@ namespace Model
     /**
      * <p>Zero or more reservations.</p>
      */
-    inline DescribeInstancesResponse& WithReservations(Aws::Vector<Reservation>&& value) { SetReservations(value); return *this;}
+    inline DescribeInstancesResponse& WithReservations(Aws::Vector<Reservation>&& value) { SetReservations(std::move(value)); return *this;}
 
     /**
      * <p>Zero or more reservations.</p>
@@ -80,7 +81,7 @@ namespace Model
     /**
      * <p>Zero or more reservations.</p>
      */
-    inline DescribeInstancesResponse& AddReservations(Reservation&& value) { m_reservations.push_back(value); return *this; }
+    inline DescribeInstancesResponse& AddReservations(Reservation&& value) { m_reservations.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The token to use to retrieve the next page of results. This value is
@@ -98,7 +99,7 @@ namespace Model
      * <p>The token to use to retrieve the next page of results. This value is
      * <code>null</code> when there are no more results to return.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
      * <p>The token to use to retrieve the next page of results. This value is
@@ -116,7 +117,7 @@ namespace Model
      * <p>The token to use to retrieve the next page of results. This value is
      * <code>null</code> when there are no more results to return.</p>
      */
-    inline DescribeInstancesResponse& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline DescribeInstancesResponse& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>The token to use to retrieve the next page of results. This value is
@@ -131,13 +132,13 @@ namespace Model
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
 
     
     inline DescribeInstancesResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
 
     
-    inline DescribeInstancesResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
+    inline DescribeInstancesResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
     Aws::Vector<Reservation> m_reservations;

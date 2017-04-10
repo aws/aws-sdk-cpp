@@ -20,6 +20,7 @@
 #include <aws/cloudfront/model/Aliases.h>
 #include <aws/cloudfront/model/TrustedSigners.h>
 #include <aws/cloudfront/model/PriceClass.h>
+#include <utility>
 
 namespace Aws
 {
@@ -63,7 +64,7 @@ namespace Model
     /**
      * The identifier for the distribution. For example: EDFDVBD632BHDS5.
      */
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = value; }
+    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
 
     /**
      * The identifier for the distribution. For example: EDFDVBD632BHDS5.
@@ -78,7 +79,7 @@ namespace Model
     /**
      * The identifier for the distribution. For example: EDFDVBD632BHDS5.
      */
-    inline StreamingDistributionSummary& WithId(Aws::String&& value) { SetId(value); return *this;}
+    inline StreamingDistributionSummary& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
 
     /**
      * The identifier for the distribution. For example: EDFDVBD632BHDS5.
@@ -104,7 +105,7 @@ namespace Model
      * the distribution's information is fully propagated throughout the Amazon
      * CloudFront system.
      */
-    inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = value; }
+    inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
      * Indicates the current status of the distribution. When the status is Deployed,
@@ -125,7 +126,7 @@ namespace Model
      * the distribution's information is fully propagated throughout the Amazon
      * CloudFront system.
      */
-    inline StreamingDistributionSummary& WithStatus(Aws::String&& value) { SetStatus(value); return *this;}
+    inline StreamingDistributionSummary& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
 
     /**
      * Indicates the current status of the distribution. When the status is Deployed,
@@ -147,7 +148,7 @@ namespace Model
     /**
      * The date and time the distribution was last modified.
      */
-    inline void SetLastModifiedTime(Aws::Utils::DateTime&& value) { m_lastModifiedTimeHasBeenSet = true; m_lastModifiedTime = value; }
+    inline void SetLastModifiedTime(Aws::Utils::DateTime&& value) { m_lastModifiedTimeHasBeenSet = true; m_lastModifiedTime = std::move(value); }
 
     /**
      * The date and time the distribution was last modified.
@@ -157,7 +158,7 @@ namespace Model
     /**
      * The date and time the distribution was last modified.
      */
-    inline StreamingDistributionSummary& WithLastModifiedTime(Aws::Utils::DateTime&& value) { SetLastModifiedTime(value); return *this;}
+    inline StreamingDistributionSummary& WithLastModifiedTime(Aws::Utils::DateTime&& value) { SetLastModifiedTime(std::move(value)); return *this;}
 
     /**
      * The domain name corresponding to the distribution. For example:
@@ -175,7 +176,7 @@ namespace Model
      * The domain name corresponding to the distribution. For example:
      * d604721fxaaqy9.cloudfront.net.
      */
-    inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
+    inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = std::move(value); }
 
     /**
      * The domain name corresponding to the distribution. For example:
@@ -193,7 +194,7 @@ namespace Model
      * The domain name corresponding to the distribution. For example:
      * d604721fxaaqy9.cloudfront.net.
      */
-    inline StreamingDistributionSummary& WithDomainName(Aws::String&& value) { SetDomainName(value); return *this;}
+    inline StreamingDistributionSummary& WithDomainName(Aws::String&& value) { SetDomainName(std::move(value)); return *this;}
 
     /**
      * The domain name corresponding to the distribution. For example:
@@ -217,7 +218,7 @@ namespace Model
      * A complex type that contains information about the Amazon S3 bucket from which
      * you want CloudFront to get your media files for distribution.
      */
-    inline void SetS3Origin(S3Origin&& value) { m_s3OriginHasBeenSet = true; m_s3Origin = value; }
+    inline void SetS3Origin(S3Origin&& value) { m_s3OriginHasBeenSet = true; m_s3Origin = std::move(value); }
 
     /**
      * A complex type that contains information about the Amazon S3 bucket from which
@@ -229,7 +230,7 @@ namespace Model
      * A complex type that contains information about the Amazon S3 bucket from which
      * you want CloudFront to get your media files for distribution.
      */
-    inline StreamingDistributionSummary& WithS3Origin(S3Origin&& value) { SetS3Origin(value); return *this;}
+    inline StreamingDistributionSummary& WithS3Origin(S3Origin&& value) { SetS3Origin(std::move(value)); return *this;}
 
     /**
      * A complex type that contains information about CNAMEs (alternate domain names),
@@ -247,7 +248,7 @@ namespace Model
      * A complex type that contains information about CNAMEs (alternate domain names),
      * if any, for this streaming distribution.
      */
-    inline void SetAliases(Aliases&& value) { m_aliasesHasBeenSet = true; m_aliases = value; }
+    inline void SetAliases(Aliases&& value) { m_aliasesHasBeenSet = true; m_aliases = std::move(value); }
 
     /**
      * A complex type that contains information about CNAMEs (alternate domain names),
@@ -259,7 +260,7 @@ namespace Model
      * A complex type that contains information about CNAMEs (alternate domain names),
      * if any, for this streaming distribution.
      */
-    inline StreamingDistributionSummary& WithAliases(Aliases&& value) { SetAliases(value); return *this;}
+    inline StreamingDistributionSummary& WithAliases(Aliases&& value) { SetAliases(std::move(value)); return *this;}
 
     /**
      * A complex type that specifies the AWS accounts, if any, that you want to allow
@@ -304,7 +305,7 @@ namespace Model
      * change Quantity as applicable, and specify all of the trusted signers that you
      * want to include in the updated distribution.
      */
-    inline void SetTrustedSigners(TrustedSigners&& value) { m_trustedSignersHasBeenSet = true; m_trustedSigners = value; }
+    inline void SetTrustedSigners(TrustedSigners&& value) { m_trustedSignersHasBeenSet = true; m_trustedSigners = std::move(value); }
 
     /**
      * A complex type that specifies the AWS accounts, if any, that you want to allow
@@ -334,7 +335,7 @@ namespace Model
      * change Quantity as applicable, and specify all of the trusted signers that you
      * want to include in the updated distribution.
      */
-    inline StreamingDistributionSummary& WithTrustedSigners(TrustedSigners&& value) { SetTrustedSigners(value); return *this;}
+    inline StreamingDistributionSummary& WithTrustedSigners(TrustedSigners&& value) { SetTrustedSigners(std::move(value)); return *this;}
 
     /**
      * The comment originally specified when this distribution was created.
@@ -349,7 +350,7 @@ namespace Model
     /**
      * The comment originally specified when this distribution was created.
      */
-    inline void SetComment(Aws::String&& value) { m_commentHasBeenSet = true; m_comment = value; }
+    inline void SetComment(Aws::String&& value) { m_commentHasBeenSet = true; m_comment = std::move(value); }
 
     /**
      * The comment originally specified when this distribution was created.
@@ -364,7 +365,7 @@ namespace Model
     /**
      * The comment originally specified when this distribution was created.
      */
-    inline StreamingDistributionSummary& WithComment(Aws::String&& value) { SetComment(value); return *this;}
+    inline StreamingDistributionSummary& WithComment(Aws::String&& value) { SetComment(std::move(value)); return *this;}
 
     /**
      * The comment originally specified when this distribution was created.
@@ -378,13 +379,13 @@ namespace Model
     inline void SetPriceClass(const PriceClass& value) { m_priceClassHasBeenSet = true; m_priceClass = value; }
 
     
-    inline void SetPriceClass(PriceClass&& value) { m_priceClassHasBeenSet = true; m_priceClass = value; }
+    inline void SetPriceClass(PriceClass&& value) { m_priceClassHasBeenSet = true; m_priceClass = std::move(value); }
 
     
     inline StreamingDistributionSummary& WithPriceClass(const PriceClass& value) { SetPriceClass(value); return *this;}
 
     
-    inline StreamingDistributionSummary& WithPriceClass(PriceClass&& value) { SetPriceClass(value); return *this;}
+    inline StreamingDistributionSummary& WithPriceClass(PriceClass&& value) { SetPriceClass(std::move(value)); return *this;}
 
     /**
      * Whether the distribution is enabled to accept end user requests for content.

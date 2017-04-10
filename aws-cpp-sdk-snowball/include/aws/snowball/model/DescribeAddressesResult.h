@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/snowball/model/Address.h>
+#include <utility>
 
 namespace Aws
 {
@@ -54,7 +55,7 @@ namespace Model
     /**
      * <p>The Snowball shipping addresses that were created for this account.</p>
      */
-    inline void SetAddresses(Aws::Vector<Address>&& value) { m_addresses = value; }
+    inline void SetAddresses(Aws::Vector<Address>&& value) { m_addresses = std::move(value); }
 
     /**
      * <p>The Snowball shipping addresses that were created for this account.</p>
@@ -64,7 +65,7 @@ namespace Model
     /**
      * <p>The Snowball shipping addresses that were created for this account.</p>
      */
-    inline DescribeAddressesResult& WithAddresses(Aws::Vector<Address>&& value) { SetAddresses(value); return *this;}
+    inline DescribeAddressesResult& WithAddresses(Aws::Vector<Address>&& value) { SetAddresses(std::move(value)); return *this;}
 
     /**
      * <p>The Snowball shipping addresses that were created for this account.</p>
@@ -74,7 +75,7 @@ namespace Model
     /**
      * <p>The Snowball shipping addresses that were created for this account.</p>
      */
-    inline DescribeAddressesResult& AddAddresses(Address&& value) { m_addresses.push_back(value); return *this; }
+    inline DescribeAddressesResult& AddAddresses(Address&& value) { m_addresses.push_back(std::move(value)); return *this; }
 
     /**
      * <p>HTTP requests are stateless. If you use the automatically generated
@@ -95,7 +96,7 @@ namespace Model
      * <code>NextToken</code> value in your next <code>DescribeAddresses</code> call,
      * your list of returned addresses will start from this point in the array.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
      * <p>HTTP requests are stateless. If you use the automatically generated
@@ -116,7 +117,7 @@ namespace Model
      * <code>NextToken</code> value in your next <code>DescribeAddresses</code> call,
      * your list of returned addresses will start from this point in the array.</p>
      */
-    inline DescribeAddressesResult& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline DescribeAddressesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>HTTP requests are stateless. If you use the automatically generated

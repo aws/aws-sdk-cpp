@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/ecs/ECS_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -77,7 +78,7 @@ namespace Model
      * it. If the location does exist, the contents of the source path folder are
      * exported.</p>
      */
-    inline void SetSourcePath(Aws::String&& value) { m_sourcePathHasBeenSet = true; m_sourcePath = value; }
+    inline void SetSourcePath(Aws::String&& value) { m_sourcePathHasBeenSet = true; m_sourcePath = std::move(value); }
 
     /**
      * <p>The path on the host container instance that is presented to the container.
@@ -113,7 +114,7 @@ namespace Model
      * it. If the location does exist, the contents of the source path folder are
      * exported.</p>
      */
-    inline HostVolumeProperties& WithSourcePath(Aws::String&& value) { SetSourcePath(value); return *this;}
+    inline HostVolumeProperties& WithSourcePath(Aws::String&& value) { SetSourcePath(std::move(value)); return *this;}
 
     /**
      * <p>The path on the host container instance that is presented to the container.

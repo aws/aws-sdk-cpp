@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/organizations/model/Root.h>
+#include <utility>
 
 namespace Aws
 {
@@ -54,7 +55,7 @@ namespace Model
     /**
      * <p>A list of roots that are defined in an organization.</p>
      */
-    inline void SetRoots(Aws::Vector<Root>&& value) { m_roots = value; }
+    inline void SetRoots(Aws::Vector<Root>&& value) { m_roots = std::move(value); }
 
     /**
      * <p>A list of roots that are defined in an organization.</p>
@@ -64,7 +65,7 @@ namespace Model
     /**
      * <p>A list of roots that are defined in an organization.</p>
      */
-    inline ListRootsResult& WithRoots(Aws::Vector<Root>&& value) { SetRoots(value); return *this;}
+    inline ListRootsResult& WithRoots(Aws::Vector<Root>&& value) { SetRoots(std::move(value)); return *this;}
 
     /**
      * <p>A list of roots that are defined in an organization.</p>
@@ -74,7 +75,7 @@ namespace Model
     /**
      * <p>A list of roots that are defined in an organization.</p>
      */
-    inline ListRootsResult& AddRoots(Root&& value) { m_roots.push_back(value); return *this; }
+    inline ListRootsResult& AddRoots(Root&& value) { m_roots.push_back(std::move(value)); return *this; }
 
     /**
      * <p>If present, this value indicates that there is more output available than is
@@ -101,7 +102,7 @@ namespace Model
      * the output. You should repeat this until the <code>NextToken</code> response
      * element comes back as <code>null</code>.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
      * <p>If present, this value indicates that there is more output available than is
@@ -128,7 +129,7 @@ namespace Model
      * the output. You should repeat this until the <code>NextToken</code> response
      * element comes back as <code>null</code>.</p>
      */
-    inline ListRootsResult& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline ListRootsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>If present, this value indicates that there is more output available than is

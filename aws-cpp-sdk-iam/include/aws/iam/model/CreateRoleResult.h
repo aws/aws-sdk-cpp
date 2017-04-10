@@ -16,6 +16,7 @@
 #include <aws/iam/IAM_EXPORTS.h>
 #include <aws/iam/model/Role.h>
 #include <aws/iam/model/ResponseMetadata.h>
+#include <utility>
 
 namespace Aws
 {
@@ -59,7 +60,7 @@ namespace Model
     /**
      * <p>A structure containing details about the new role.</p>
      */
-    inline void SetRole(Role&& value) { m_role = value; }
+    inline void SetRole(Role&& value) { m_role = std::move(value); }
 
     /**
      * <p>A structure containing details about the new role.</p>
@@ -69,7 +70,7 @@ namespace Model
     /**
      * <p>A structure containing details about the new role.</p>
      */
-    inline CreateRoleResult& WithRole(Role&& value) { SetRole(value); return *this;}
+    inline CreateRoleResult& WithRole(Role&& value) { SetRole(std::move(value)); return *this;}
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
@@ -78,13 +79,13 @@ namespace Model
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
 
     
     inline CreateRoleResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
 
     
-    inline CreateRoleResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
+    inline CreateRoleResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
     Role m_role;

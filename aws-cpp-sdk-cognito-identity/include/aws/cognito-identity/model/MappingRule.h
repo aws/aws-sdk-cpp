@@ -16,6 +16,7 @@
 #include <aws/cognito-identity/CognitoIdentity_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/cognito-identity/model/MappingRuleMatchType.h>
+#include <utility>
 
 namespace Aws
 {
@@ -61,7 +62,7 @@ namespace Model
      * <p>The claim name that must be present in the token, for example, "isAdmin" or
      * "paid".</p>
      */
-    inline void SetClaim(Aws::String&& value) { m_claimHasBeenSet = true; m_claim = value; }
+    inline void SetClaim(Aws::String&& value) { m_claimHasBeenSet = true; m_claim = std::move(value); }
 
     /**
      * <p>The claim name that must be present in the token, for example, "isAdmin" or
@@ -79,7 +80,7 @@ namespace Model
      * <p>The claim name that must be present in the token, for example, "isAdmin" or
      * "paid".</p>
      */
-    inline MappingRule& WithClaim(Aws::String&& value) { SetClaim(value); return *this;}
+    inline MappingRule& WithClaim(Aws::String&& value) { SetClaim(std::move(value)); return *this;}
 
     /**
      * <p>The claim name that must be present in the token, for example, "isAdmin" or
@@ -103,7 +104,7 @@ namespace Model
      * <p>The match condition that specifies how closely the claim value in the IdP
      * token must match <code>Value</code>.</p>
      */
-    inline void SetMatchType(MappingRuleMatchType&& value) { m_matchTypeHasBeenSet = true; m_matchType = value; }
+    inline void SetMatchType(MappingRuleMatchType&& value) { m_matchTypeHasBeenSet = true; m_matchType = std::move(value); }
 
     /**
      * <p>The match condition that specifies how closely the claim value in the IdP
@@ -115,7 +116,7 @@ namespace Model
      * <p>The match condition that specifies how closely the claim value in the IdP
      * token must match <code>Value</code>.</p>
      */
-    inline MappingRule& WithMatchType(MappingRuleMatchType&& value) { SetMatchType(value); return *this;}
+    inline MappingRule& WithMatchType(MappingRuleMatchType&& value) { SetMatchType(std::move(value)); return *this;}
 
     /**
      * <p>A brief string that the claim must match, for example, "paid" or "yes".</p>
@@ -130,7 +131,7 @@ namespace Model
     /**
      * <p>A brief string that the claim must match, for example, "paid" or "yes".</p>
      */
-    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = value; }
+    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
 
     /**
      * <p>A brief string that the claim must match, for example, "paid" or "yes".</p>
@@ -145,7 +146,7 @@ namespace Model
     /**
      * <p>A brief string that the claim must match, for example, "paid" or "yes".</p>
      */
-    inline MappingRule& WithValue(Aws::String&& value) { SetValue(value); return *this;}
+    inline MappingRule& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
 
     /**
      * <p>A brief string that the claim must match, for example, "paid" or "yes".</p>
@@ -165,7 +166,7 @@ namespace Model
     /**
      * <p>The role ARN.</p>
      */
-    inline void SetRoleARN(Aws::String&& value) { m_roleARNHasBeenSet = true; m_roleARN = value; }
+    inline void SetRoleARN(Aws::String&& value) { m_roleARNHasBeenSet = true; m_roleARN = std::move(value); }
 
     /**
      * <p>The role ARN.</p>
@@ -180,7 +181,7 @@ namespace Model
     /**
      * <p>The role ARN.</p>
      */
-    inline MappingRule& WithRoleARN(Aws::String&& value) { SetRoleARN(value); return *this;}
+    inline MappingRule& WithRoleARN(Aws::String&& value) { SetRoleARN(std::move(value)); return *this;}
 
     /**
      * <p>The role ARN.</p>

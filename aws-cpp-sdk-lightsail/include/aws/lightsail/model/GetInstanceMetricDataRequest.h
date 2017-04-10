@@ -21,6 +21,7 @@
 #include <aws/lightsail/model/MetricUnit.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/lightsail/model/MetricStatistic.h>
+#include <utility>
 
 namespace Aws
 {
@@ -53,7 +54,7 @@ namespace Model
     /**
      * <p>The name of the instance for which you want to get metrics data.</p>
      */
-    inline void SetInstanceName(Aws::String&& value) { m_instanceNameHasBeenSet = true; m_instanceName = value; }
+    inline void SetInstanceName(Aws::String&& value) { m_instanceNameHasBeenSet = true; m_instanceName = std::move(value); }
 
     /**
      * <p>The name of the instance for which you want to get metrics data.</p>
@@ -68,7 +69,7 @@ namespace Model
     /**
      * <p>The name of the instance for which you want to get metrics data.</p>
      */
-    inline GetInstanceMetricDataRequest& WithInstanceName(Aws::String&& value) { SetInstanceName(value); return *this;}
+    inline GetInstanceMetricDataRequest& WithInstanceName(Aws::String&& value) { SetInstanceName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the instance for which you want to get metrics data.</p>
@@ -88,7 +89,7 @@ namespace Model
     /**
      * <p>The metric name to get data about. </p>
      */
-    inline void SetMetricName(InstanceMetricName&& value) { m_metricNameHasBeenSet = true; m_metricName = value; }
+    inline void SetMetricName(InstanceMetricName&& value) { m_metricNameHasBeenSet = true; m_metricName = std::move(value); }
 
     /**
      * <p>The metric name to get data about. </p>
@@ -98,7 +99,7 @@ namespace Model
     /**
      * <p>The metric name to get data about. </p>
      */
-    inline GetInstanceMetricDataRequest& WithMetricName(InstanceMetricName&& value) { SetMetricName(value); return *this;}
+    inline GetInstanceMetricDataRequest& WithMetricName(InstanceMetricName&& value) { SetMetricName(std::move(value)); return *this;}
 
     /**
      * <p>The time period for which you are requesting data.</p>
@@ -128,7 +129,7 @@ namespace Model
     /**
      * <p>The start time of the time period.</p>
      */
-    inline void SetStartTime(Aws::Utils::DateTime&& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
+    inline void SetStartTime(Aws::Utils::DateTime&& value) { m_startTimeHasBeenSet = true; m_startTime = std::move(value); }
 
     /**
      * <p>The start time of the time period.</p>
@@ -138,7 +139,7 @@ namespace Model
     /**
      * <p>The start time of the time period.</p>
      */
-    inline GetInstanceMetricDataRequest& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(value); return *this;}
+    inline GetInstanceMetricDataRequest& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(std::move(value)); return *this;}
 
     /**
      * <p>The end time of the time period.</p>
@@ -153,7 +154,7 @@ namespace Model
     /**
      * <p>The end time of the time period.</p>
      */
-    inline void SetEndTime(Aws::Utils::DateTime&& value) { m_endTimeHasBeenSet = true; m_endTime = value; }
+    inline void SetEndTime(Aws::Utils::DateTime&& value) { m_endTimeHasBeenSet = true; m_endTime = std::move(value); }
 
     /**
      * <p>The end time of the time period.</p>
@@ -163,7 +164,7 @@ namespace Model
     /**
      * <p>The end time of the time period.</p>
      */
-    inline GetInstanceMetricDataRequest& WithEndTime(Aws::Utils::DateTime&& value) { SetEndTime(value); return *this;}
+    inline GetInstanceMetricDataRequest& WithEndTime(Aws::Utils::DateTime&& value) { SetEndTime(std::move(value)); return *this;}
 
     /**
      * <p>The unit. The list of valid values is below.</p>
@@ -178,7 +179,7 @@ namespace Model
     /**
      * <p>The unit. The list of valid values is below.</p>
      */
-    inline void SetUnit(MetricUnit&& value) { m_unitHasBeenSet = true; m_unit = value; }
+    inline void SetUnit(MetricUnit&& value) { m_unitHasBeenSet = true; m_unit = std::move(value); }
 
     /**
      * <p>The unit. The list of valid values is below.</p>
@@ -188,7 +189,7 @@ namespace Model
     /**
      * <p>The unit. The list of valid values is below.</p>
      */
-    inline GetInstanceMetricDataRequest& WithUnit(MetricUnit&& value) { SetUnit(value); return *this;}
+    inline GetInstanceMetricDataRequest& WithUnit(MetricUnit&& value) { SetUnit(std::move(value)); return *this;}
 
     /**
      * <p>The instance statistics. </p>
@@ -203,7 +204,7 @@ namespace Model
     /**
      * <p>The instance statistics. </p>
      */
-    inline void SetStatistics(Aws::Vector<MetricStatistic>&& value) { m_statisticsHasBeenSet = true; m_statistics = value; }
+    inline void SetStatistics(Aws::Vector<MetricStatistic>&& value) { m_statisticsHasBeenSet = true; m_statistics = std::move(value); }
 
     /**
      * <p>The instance statistics. </p>
@@ -213,7 +214,7 @@ namespace Model
     /**
      * <p>The instance statistics. </p>
      */
-    inline GetInstanceMetricDataRequest& WithStatistics(Aws::Vector<MetricStatistic>&& value) { SetStatistics(value); return *this;}
+    inline GetInstanceMetricDataRequest& WithStatistics(Aws::Vector<MetricStatistic>&& value) { SetStatistics(std::move(value)); return *this;}
 
     /**
      * <p>The instance statistics. </p>
@@ -223,7 +224,7 @@ namespace Model
     /**
      * <p>The instance statistics. </p>
      */
-    inline GetInstanceMetricDataRequest& AddStatistics(MetricStatistic&& value) { m_statisticsHasBeenSet = true; m_statistics.push_back(value); return *this; }
+    inline GetInstanceMetricDataRequest& AddStatistics(MetricStatistic&& value) { m_statisticsHasBeenSet = true; m_statistics.push_back(std::move(value)); return *this; }
 
   private:
     Aws::String m_instanceName;

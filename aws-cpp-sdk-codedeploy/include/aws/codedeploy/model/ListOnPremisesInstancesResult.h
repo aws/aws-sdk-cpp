@@ -16,6 +16,7 @@
 #include <aws/codedeploy/CodeDeploy_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -59,7 +60,7 @@ namespace Model
     /**
      * <p>The list of matching on-premises instance names.</p>
      */
-    inline void SetInstanceNames(Aws::Vector<Aws::String>&& value) { m_instanceNames = value; }
+    inline void SetInstanceNames(Aws::Vector<Aws::String>&& value) { m_instanceNames = std::move(value); }
 
     /**
      * <p>The list of matching on-premises instance names.</p>
@@ -69,7 +70,7 @@ namespace Model
     /**
      * <p>The list of matching on-premises instance names.</p>
      */
-    inline ListOnPremisesInstancesResult& WithInstanceNames(Aws::Vector<Aws::String>&& value) { SetInstanceNames(value); return *this;}
+    inline ListOnPremisesInstancesResult& WithInstanceNames(Aws::Vector<Aws::String>&& value) { SetInstanceNames(std::move(value)); return *this;}
 
     /**
      * <p>The list of matching on-premises instance names.</p>
@@ -79,7 +80,7 @@ namespace Model
     /**
      * <p>The list of matching on-premises instance names.</p>
      */
-    inline ListOnPremisesInstancesResult& AddInstanceNames(Aws::String&& value) { m_instanceNames.push_back(value); return *this; }
+    inline ListOnPremisesInstancesResult& AddInstanceNames(Aws::String&& value) { m_instanceNames.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The list of matching on-premises instance names.</p>
@@ -105,7 +106,7 @@ namespace Model
      * It can be used in a subsequent list on-premises instances call to return the
      * next set of on-premises instances in the list.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
      * <p>If a large amount of information is returned, an identifier is also returned.
@@ -126,7 +127,7 @@ namespace Model
      * It can be used in a subsequent list on-premises instances call to return the
      * next set of on-premises instances in the list.</p>
      */
-    inline ListOnPremisesInstancesResult& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline ListOnPremisesInstancesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>If a large amount of information is returned, an identifier is also returned.

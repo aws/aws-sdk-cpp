@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/ssm/SSM_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -52,7 +53,7 @@ namespace Model
     /**
      * <p>The unique ID of a newly scheduled automation execution.</p>
      */
-    inline void SetAutomationExecutionId(Aws::String&& value) { m_automationExecutionId = value; }
+    inline void SetAutomationExecutionId(Aws::String&& value) { m_automationExecutionId = std::move(value); }
 
     /**
      * <p>The unique ID of a newly scheduled automation execution.</p>
@@ -67,7 +68,7 @@ namespace Model
     /**
      * <p>The unique ID of a newly scheduled automation execution.</p>
      */
-    inline StartAutomationExecutionResult& WithAutomationExecutionId(Aws::String&& value) { SetAutomationExecutionId(value); return *this;}
+    inline StartAutomationExecutionResult& WithAutomationExecutionId(Aws::String&& value) { SetAutomationExecutionId(std::move(value)); return *this;}
 
     /**
      * <p>The unique ID of a newly scheduled automation execution.</p>

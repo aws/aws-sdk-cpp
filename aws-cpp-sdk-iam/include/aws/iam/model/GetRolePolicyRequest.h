@@ -16,6 +16,7 @@
 #include <aws/iam/IAM_EXPORTS.h>
 #include <aws/iam/IAMRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -59,7 +60,7 @@ namespace Model
      * of characters consisting of upper and lowercase alphanumeric characters with no
      * spaces. You can also include any of the following characters: =,.@-</p>
      */
-    inline void SetRoleName(Aws::String&& value) { m_roleNameHasBeenSet = true; m_roleName = value; }
+    inline void SetRoleName(Aws::String&& value) { m_roleNameHasBeenSet = true; m_roleName = std::move(value); }
 
     /**
      * <p>The name of the role associated with the policy.</p> <p>This parameter allows
@@ -83,7 +84,7 @@ namespace Model
      * of characters consisting of upper and lowercase alphanumeric characters with no
      * spaces. You can also include any of the following characters: =,.@-</p>
      */
-    inline GetRolePolicyRequest& WithRoleName(Aws::String&& value) { SetRoleName(value); return *this;}
+    inline GetRolePolicyRequest& WithRoleName(Aws::String&& value) { SetRoleName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the role associated with the policy.</p> <p>This parameter allows
@@ -115,7 +116,7 @@ namespace Model
      * characters consisting of upper and lowercase alphanumeric characters with no
      * spaces. You can also include any of the following characters: =,.@-</p>
      */
-    inline void SetPolicyName(Aws::String&& value) { m_policyNameHasBeenSet = true; m_policyName = value; }
+    inline void SetPolicyName(Aws::String&& value) { m_policyNameHasBeenSet = true; m_policyName = std::move(value); }
 
     /**
      * <p>The name of the policy document to get.</p> <p>This parameter allows (per its
@@ -139,7 +140,7 @@ namespace Model
      * characters consisting of upper and lowercase alphanumeric characters with no
      * spaces. You can also include any of the following characters: =,.@-</p>
      */
-    inline GetRolePolicyRequest& WithPolicyName(Aws::String&& value) { SetPolicyName(value); return *this;}
+    inline GetRolePolicyRequest& WithPolicyName(Aws::String&& value) { SetPolicyName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the policy document to get.</p> <p>This parameter allows (per its

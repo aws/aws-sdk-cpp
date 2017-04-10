@@ -30,6 +30,7 @@
 #include <aws/redshift/model/ClusterNode.h>
 #include <aws/redshift/model/Tag.h>
 #include <aws/redshift/model/ClusterIamRole.h>
+#include <utility>
 
 namespace Aws
 {
@@ -73,7 +74,7 @@ namespace Model
     /**
      * <p>The unique identifier of the cluster.</p>
      */
-    inline void SetClusterIdentifier(Aws::String&& value) { m_clusterIdentifierHasBeenSet = true; m_clusterIdentifier = value; }
+    inline void SetClusterIdentifier(Aws::String&& value) { m_clusterIdentifierHasBeenSet = true; m_clusterIdentifier = std::move(value); }
 
     /**
      * <p>The unique identifier of the cluster.</p>
@@ -88,7 +89,7 @@ namespace Model
     /**
      * <p>The unique identifier of the cluster.</p>
      */
-    inline Cluster& WithClusterIdentifier(Aws::String&& value) { SetClusterIdentifier(value); return *this;}
+    inline Cluster& WithClusterIdentifier(Aws::String&& value) { SetClusterIdentifier(std::move(value)); return *this;}
 
     /**
      * <p>The unique identifier of the cluster.</p>
@@ -108,7 +109,7 @@ namespace Model
     /**
      * <p>The node type for the nodes in the cluster.</p>
      */
-    inline void SetNodeType(Aws::String&& value) { m_nodeTypeHasBeenSet = true; m_nodeType = value; }
+    inline void SetNodeType(Aws::String&& value) { m_nodeTypeHasBeenSet = true; m_nodeType = std::move(value); }
 
     /**
      * <p>The node type for the nodes in the cluster.</p>
@@ -123,7 +124,7 @@ namespace Model
     /**
      * <p>The node type for the nodes in the cluster.</p>
      */
-    inline Cluster& WithNodeType(Aws::String&& value) { SetNodeType(value); return *this;}
+    inline Cluster& WithNodeType(Aws::String&& value) { SetNodeType(std::move(value)); return *this;}
 
     /**
      * <p>The node type for the nodes in the cluster.</p>
@@ -176,7 +177,7 @@ namespace Model
      * <p> <code>rotating-keys</code> </p> </li> <li> <p> <code>storage-full</code>
      * </p> </li> <li> <p> <code>updating-hsm</code> </p> </li> </ul>
      */
-    inline void SetClusterStatus(Aws::String&& value) { m_clusterStatusHasBeenSet = true; m_clusterStatus = value; }
+    inline void SetClusterStatus(Aws::String&& value) { m_clusterStatusHasBeenSet = true; m_clusterStatus = std::move(value); }
 
     /**
      * <p> The current state of the cluster. Possible values are the following:</p>
@@ -224,7 +225,7 @@ namespace Model
      * <p> <code>rotating-keys</code> </p> </li> <li> <p> <code>storage-full</code>
      * </p> </li> <li> <p> <code>updating-hsm</code> </p> </li> </ul>
      */
-    inline Cluster& WithClusterStatus(Aws::String&& value) { SetClusterStatus(value); return *this;}
+    inline Cluster& WithClusterStatus(Aws::String&& value) { SetClusterStatus(std::move(value)); return *this;}
 
     /**
      * <p> The current state of the cluster. Possible values are the following:</p>
@@ -255,7 +256,7 @@ namespace Model
     /**
      * <p>The status of a modify operation, if any, initiated for the cluster.</p>
      */
-    inline void SetModifyStatus(Aws::String&& value) { m_modifyStatusHasBeenSet = true; m_modifyStatus = value; }
+    inline void SetModifyStatus(Aws::String&& value) { m_modifyStatusHasBeenSet = true; m_modifyStatus = std::move(value); }
 
     /**
      * <p>The status of a modify operation, if any, initiated for the cluster.</p>
@@ -270,7 +271,7 @@ namespace Model
     /**
      * <p>The status of a modify operation, if any, initiated for the cluster.</p>
      */
-    inline Cluster& WithModifyStatus(Aws::String&& value) { SetModifyStatus(value); return *this;}
+    inline Cluster& WithModifyStatus(Aws::String&& value) { SetModifyStatus(std::move(value)); return *this;}
 
     /**
      * <p>The status of a modify operation, if any, initiated for the cluster.</p>
@@ -293,7 +294,7 @@ namespace Model
      * <p>The master user name for the cluster. This name is used to connect to the
      * database that is specified in the <b>DBName</b> parameter. </p>
      */
-    inline void SetMasterUsername(Aws::String&& value) { m_masterUsernameHasBeenSet = true; m_masterUsername = value; }
+    inline void SetMasterUsername(Aws::String&& value) { m_masterUsernameHasBeenSet = true; m_masterUsername = std::move(value); }
 
     /**
      * <p>The master user name for the cluster. This name is used to connect to the
@@ -311,7 +312,7 @@ namespace Model
      * <p>The master user name for the cluster. This name is used to connect to the
      * database that is specified in the <b>DBName</b> parameter. </p>
      */
-    inline Cluster& WithMasterUsername(Aws::String&& value) { SetMasterUsername(value); return *this;}
+    inline Cluster& WithMasterUsername(Aws::String&& value) { SetMasterUsername(std::move(value)); return *this;}
 
     /**
      * <p>The master user name for the cluster. This name is used to connect to the
@@ -341,7 +342,7 @@ namespace Model
      * database was not specified, a database named <code>dev</code>dev was created by
      * default. </p>
      */
-    inline void SetDBName(Aws::String&& value) { m_dBNameHasBeenSet = true; m_dBName = value; }
+    inline void SetDBName(Aws::String&& value) { m_dBNameHasBeenSet = true; m_dBName = std::move(value); }
 
     /**
      * <p>The name of the initial database that was created when the cluster was
@@ -365,7 +366,7 @@ namespace Model
      * database was not specified, a database named <code>dev</code>dev was created by
      * default. </p>
      */
-    inline Cluster& WithDBName(Aws::String&& value) { SetDBName(value); return *this;}
+    inline Cluster& WithDBName(Aws::String&& value) { SetDBName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the initial database that was created when the cluster was
@@ -388,7 +389,7 @@ namespace Model
     /**
      * <p>The connection endpoint.</p>
      */
-    inline void SetEndpoint(Endpoint&& value) { m_endpointHasBeenSet = true; m_endpoint = value; }
+    inline void SetEndpoint(Endpoint&& value) { m_endpointHasBeenSet = true; m_endpoint = std::move(value); }
 
     /**
      * <p>The connection endpoint.</p>
@@ -398,7 +399,7 @@ namespace Model
     /**
      * <p>The connection endpoint.</p>
      */
-    inline Cluster& WithEndpoint(Endpoint&& value) { SetEndpoint(value); return *this;}
+    inline Cluster& WithEndpoint(Endpoint&& value) { SetEndpoint(std::move(value)); return *this;}
 
     /**
      * <p>The date and time that the cluster was created.</p>
@@ -413,7 +414,7 @@ namespace Model
     /**
      * <p>The date and time that the cluster was created.</p>
      */
-    inline void SetClusterCreateTime(Aws::Utils::DateTime&& value) { m_clusterCreateTimeHasBeenSet = true; m_clusterCreateTime = value; }
+    inline void SetClusterCreateTime(Aws::Utils::DateTime&& value) { m_clusterCreateTimeHasBeenSet = true; m_clusterCreateTime = std::move(value); }
 
     /**
      * <p>The date and time that the cluster was created.</p>
@@ -423,7 +424,7 @@ namespace Model
     /**
      * <p>The date and time that the cluster was created.</p>
      */
-    inline Cluster& WithClusterCreateTime(Aws::Utils::DateTime&& value) { SetClusterCreateTime(value); return *this;}
+    inline Cluster& WithClusterCreateTime(Aws::Utils::DateTime&& value) { SetClusterCreateTime(std::move(value)); return *this;}
 
     /**
      * <p>The number of days that automatic cluster snapshots are retained.</p>
@@ -471,7 +472,7 @@ namespace Model
      * Cloud (VPC). Clusters that are created in a VPC use VPC security groups, which
      * are listed by the <b>VpcSecurityGroups</b> parameter. </p>
      */
-    inline void SetClusterSecurityGroups(Aws::Vector<ClusterSecurityGroupMembership>&& value) { m_clusterSecurityGroupsHasBeenSet = true; m_clusterSecurityGroups = value; }
+    inline void SetClusterSecurityGroups(Aws::Vector<ClusterSecurityGroupMembership>&& value) { m_clusterSecurityGroupsHasBeenSet = true; m_clusterSecurityGroups = std::move(value); }
 
     /**
      * <p>A list of cluster security group that are associated with the cluster. Each
@@ -493,7 +494,7 @@ namespace Model
      * Cloud (VPC). Clusters that are created in a VPC use VPC security groups, which
      * are listed by the <b>VpcSecurityGroups</b> parameter. </p>
      */
-    inline Cluster& WithClusterSecurityGroups(Aws::Vector<ClusterSecurityGroupMembership>&& value) { SetClusterSecurityGroups(value); return *this;}
+    inline Cluster& WithClusterSecurityGroups(Aws::Vector<ClusterSecurityGroupMembership>&& value) { SetClusterSecurityGroups(std::move(value)); return *this;}
 
     /**
      * <p>A list of cluster security group that are associated with the cluster. Each
@@ -515,7 +516,7 @@ namespace Model
      * Cloud (VPC). Clusters that are created in a VPC use VPC security groups, which
      * are listed by the <b>VpcSecurityGroups</b> parameter. </p>
      */
-    inline Cluster& AddClusterSecurityGroups(ClusterSecurityGroupMembership&& value) { m_clusterSecurityGroupsHasBeenSet = true; m_clusterSecurityGroups.push_back(value); return *this; }
+    inline Cluster& AddClusterSecurityGroups(ClusterSecurityGroupMembership&& value) { m_clusterSecurityGroupsHasBeenSet = true; m_clusterSecurityGroups.push_back(std::move(value)); return *this; }
 
     /**
      * <p>A list of Amazon Virtual Private Cloud (Amazon VPC) security groups that are
@@ -536,7 +537,7 @@ namespace Model
      * associated with the cluster. This parameter is returned only if the cluster is
      * in a VPC.</p>
      */
-    inline void SetVpcSecurityGroups(Aws::Vector<VpcSecurityGroupMembership>&& value) { m_vpcSecurityGroupsHasBeenSet = true; m_vpcSecurityGroups = value; }
+    inline void SetVpcSecurityGroups(Aws::Vector<VpcSecurityGroupMembership>&& value) { m_vpcSecurityGroupsHasBeenSet = true; m_vpcSecurityGroups = std::move(value); }
 
     /**
      * <p>A list of Amazon Virtual Private Cloud (Amazon VPC) security groups that are
@@ -550,7 +551,7 @@ namespace Model
      * associated with the cluster. This parameter is returned only if the cluster is
      * in a VPC.</p>
      */
-    inline Cluster& WithVpcSecurityGroups(Aws::Vector<VpcSecurityGroupMembership>&& value) { SetVpcSecurityGroups(value); return *this;}
+    inline Cluster& WithVpcSecurityGroups(Aws::Vector<VpcSecurityGroupMembership>&& value) { SetVpcSecurityGroups(std::move(value)); return *this;}
 
     /**
      * <p>A list of Amazon Virtual Private Cloud (Amazon VPC) security groups that are
@@ -564,7 +565,7 @@ namespace Model
      * associated with the cluster. This parameter is returned only if the cluster is
      * in a VPC.</p>
      */
-    inline Cluster& AddVpcSecurityGroups(VpcSecurityGroupMembership&& value) { m_vpcSecurityGroupsHasBeenSet = true; m_vpcSecurityGroups.push_back(value); return *this; }
+    inline Cluster& AddVpcSecurityGroups(VpcSecurityGroupMembership&& value) { m_vpcSecurityGroupsHasBeenSet = true; m_vpcSecurityGroups.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The list of cluster parameter groups that are associated with this cluster.
@@ -582,7 +583,7 @@ namespace Model
      * <p>The list of cluster parameter groups that are associated with this cluster.
      * Each parameter group in the list is returned with its status.</p>
      */
-    inline void SetClusterParameterGroups(Aws::Vector<ClusterParameterGroupStatus>&& value) { m_clusterParameterGroupsHasBeenSet = true; m_clusterParameterGroups = value; }
+    inline void SetClusterParameterGroups(Aws::Vector<ClusterParameterGroupStatus>&& value) { m_clusterParameterGroupsHasBeenSet = true; m_clusterParameterGroups = std::move(value); }
 
     /**
      * <p>The list of cluster parameter groups that are associated with this cluster.
@@ -594,7 +595,7 @@ namespace Model
      * <p>The list of cluster parameter groups that are associated with this cluster.
      * Each parameter group in the list is returned with its status.</p>
      */
-    inline Cluster& WithClusterParameterGroups(Aws::Vector<ClusterParameterGroupStatus>&& value) { SetClusterParameterGroups(value); return *this;}
+    inline Cluster& WithClusterParameterGroups(Aws::Vector<ClusterParameterGroupStatus>&& value) { SetClusterParameterGroups(std::move(value)); return *this;}
 
     /**
      * <p>The list of cluster parameter groups that are associated with this cluster.
@@ -606,7 +607,7 @@ namespace Model
      * <p>The list of cluster parameter groups that are associated with this cluster.
      * Each parameter group in the list is returned with its status.</p>
      */
-    inline Cluster& AddClusterParameterGroups(ClusterParameterGroupStatus&& value) { m_clusterParameterGroupsHasBeenSet = true; m_clusterParameterGroups.push_back(value); return *this; }
+    inline Cluster& AddClusterParameterGroups(ClusterParameterGroupStatus&& value) { m_clusterParameterGroupsHasBeenSet = true; m_clusterParameterGroups.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The name of the subnet group that is associated with the cluster. This
@@ -624,7 +625,7 @@ namespace Model
      * <p>The name of the subnet group that is associated with the cluster. This
      * parameter is valid only when the cluster is in a VPC.</p>
      */
-    inline void SetClusterSubnetGroupName(Aws::String&& value) { m_clusterSubnetGroupNameHasBeenSet = true; m_clusterSubnetGroupName = value; }
+    inline void SetClusterSubnetGroupName(Aws::String&& value) { m_clusterSubnetGroupNameHasBeenSet = true; m_clusterSubnetGroupName = std::move(value); }
 
     /**
      * <p>The name of the subnet group that is associated with the cluster. This
@@ -642,7 +643,7 @@ namespace Model
      * <p>The name of the subnet group that is associated with the cluster. This
      * parameter is valid only when the cluster is in a VPC.</p>
      */
-    inline Cluster& WithClusterSubnetGroupName(Aws::String&& value) { SetClusterSubnetGroupName(value); return *this;}
+    inline Cluster& WithClusterSubnetGroupName(Aws::String&& value) { SetClusterSubnetGroupName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the subnet group that is associated with the cluster. This
@@ -663,7 +664,7 @@ namespace Model
     /**
      * <p>The identifier of the VPC the cluster is in, if the cluster is in a VPC.</p>
      */
-    inline void SetVpcId(Aws::String&& value) { m_vpcIdHasBeenSet = true; m_vpcId = value; }
+    inline void SetVpcId(Aws::String&& value) { m_vpcIdHasBeenSet = true; m_vpcId = std::move(value); }
 
     /**
      * <p>The identifier of the VPC the cluster is in, if the cluster is in a VPC.</p>
@@ -678,7 +679,7 @@ namespace Model
     /**
      * <p>The identifier of the VPC the cluster is in, if the cluster is in a VPC.</p>
      */
-    inline Cluster& WithVpcId(Aws::String&& value) { SetVpcId(value); return *this;}
+    inline Cluster& WithVpcId(Aws::String&& value) { SetVpcId(std::move(value)); return *this;}
 
     /**
      * <p>The identifier of the VPC the cluster is in, if the cluster is in a VPC.</p>
@@ -698,7 +699,7 @@ namespace Model
     /**
      * <p>The name of the Availability Zone in which the cluster is located.</p>
      */
-    inline void SetAvailabilityZone(Aws::String&& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = value; }
+    inline void SetAvailabilityZone(Aws::String&& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = std::move(value); }
 
     /**
      * <p>The name of the Availability Zone in which the cluster is located.</p>
@@ -713,7 +714,7 @@ namespace Model
     /**
      * <p>The name of the Availability Zone in which the cluster is located.</p>
      */
-    inline Cluster& WithAvailabilityZone(Aws::String&& value) { SetAvailabilityZone(value); return *this;}
+    inline Cluster& WithAvailabilityZone(Aws::String&& value) { SetAvailabilityZone(std::move(value)); return *this;}
 
     /**
      * <p>The name of the Availability Zone in which the cluster is located.</p>
@@ -736,7 +737,7 @@ namespace Model
      * <p>The weekly time range, in Universal Coordinated Time (UTC), during which
      * system maintenance can occur.</p>
      */
-    inline void SetPreferredMaintenanceWindow(Aws::String&& value) { m_preferredMaintenanceWindowHasBeenSet = true; m_preferredMaintenanceWindow = value; }
+    inline void SetPreferredMaintenanceWindow(Aws::String&& value) { m_preferredMaintenanceWindowHasBeenSet = true; m_preferredMaintenanceWindow = std::move(value); }
 
     /**
      * <p>The weekly time range, in Universal Coordinated Time (UTC), during which
@@ -754,7 +755,7 @@ namespace Model
      * <p>The weekly time range, in Universal Coordinated Time (UTC), during which
      * system maintenance can occur.</p>
      */
-    inline Cluster& WithPreferredMaintenanceWindow(Aws::String&& value) { SetPreferredMaintenanceWindow(value); return *this;}
+    inline Cluster& WithPreferredMaintenanceWindow(Aws::String&& value) { SetPreferredMaintenanceWindow(std::move(value)); return *this;}
 
     /**
      * <p>The weekly time range, in Universal Coordinated Time (UTC), during which
@@ -778,7 +779,7 @@ namespace Model
      * <p>A value that, if present, indicates that changes to the cluster are pending.
      * Specific pending changes are identified by subelements.</p>
      */
-    inline void SetPendingModifiedValues(PendingModifiedValues&& value) { m_pendingModifiedValuesHasBeenSet = true; m_pendingModifiedValues = value; }
+    inline void SetPendingModifiedValues(PendingModifiedValues&& value) { m_pendingModifiedValuesHasBeenSet = true; m_pendingModifiedValues = std::move(value); }
 
     /**
      * <p>A value that, if present, indicates that changes to the cluster are pending.
@@ -790,7 +791,7 @@ namespace Model
      * <p>A value that, if present, indicates that changes to the cluster are pending.
      * Specific pending changes are identified by subelements.</p>
      */
-    inline Cluster& WithPendingModifiedValues(PendingModifiedValues&& value) { SetPendingModifiedValues(value); return *this;}
+    inline Cluster& WithPendingModifiedValues(PendingModifiedValues&& value) { SetPendingModifiedValues(std::move(value)); return *this;}
 
     /**
      * <p>The version ID of the Amazon Redshift engine that is running on the
@@ -808,7 +809,7 @@ namespace Model
      * <p>The version ID of the Amazon Redshift engine that is running on the
      * cluster.</p>
      */
-    inline void SetClusterVersion(Aws::String&& value) { m_clusterVersionHasBeenSet = true; m_clusterVersion = value; }
+    inline void SetClusterVersion(Aws::String&& value) { m_clusterVersionHasBeenSet = true; m_clusterVersion = std::move(value); }
 
     /**
      * <p>The version ID of the Amazon Redshift engine that is running on the
@@ -826,7 +827,7 @@ namespace Model
      * <p>The version ID of the Amazon Redshift engine that is running on the
      * cluster.</p>
      */
-    inline Cluster& WithClusterVersion(Aws::String&& value) { SetClusterVersion(value); return *this;}
+    inline Cluster& WithClusterVersion(Aws::String&& value) { SetClusterVersion(std::move(value)); return *this;}
 
     /**
      * <p>The version ID of the Amazon Redshift engine that is running on the
@@ -922,7 +923,7 @@ namespace Model
      * <p>A value that describes the status of a cluster restore action. This parameter
      * returns null if the cluster was not created by restoring a snapshot.</p>
      */
-    inline void SetRestoreStatus(RestoreStatus&& value) { m_restoreStatusHasBeenSet = true; m_restoreStatus = value; }
+    inline void SetRestoreStatus(RestoreStatus&& value) { m_restoreStatusHasBeenSet = true; m_restoreStatus = std::move(value); }
 
     /**
      * <p>A value that describes the status of a cluster restore action. This parameter
@@ -934,7 +935,7 @@ namespace Model
      * <p>A value that describes the status of a cluster restore action. This parameter
      * returns null if the cluster was not created by restoring a snapshot.</p>
      */
-    inline Cluster& WithRestoreStatus(RestoreStatus&& value) { SetRestoreStatus(value); return *this;}
+    inline Cluster& WithRestoreStatus(RestoreStatus&& value) { SetRestoreStatus(std::move(value)); return *this;}
 
     /**
      * <p>A value that reports whether the Amazon Redshift cluster has finished
@@ -955,7 +956,7 @@ namespace Model
      * applying any hardware security module (HSM) settings changes specified in a
      * modify cluster command.</p> <p>Values: active, applying</p>
      */
-    inline void SetHsmStatus(HsmStatus&& value) { m_hsmStatusHasBeenSet = true; m_hsmStatus = value; }
+    inline void SetHsmStatus(HsmStatus&& value) { m_hsmStatusHasBeenSet = true; m_hsmStatus = std::move(value); }
 
     /**
      * <p>A value that reports whether the Amazon Redshift cluster has finished
@@ -969,7 +970,7 @@ namespace Model
      * applying any hardware security module (HSM) settings changes specified in a
      * modify cluster command.</p> <p>Values: active, applying</p>
      */
-    inline Cluster& WithHsmStatus(HsmStatus&& value) { SetHsmStatus(value); return *this;}
+    inline Cluster& WithHsmStatus(HsmStatus&& value) { SetHsmStatus(std::move(value)); return *this;}
 
     /**
      * <p>A value that returns the destination region and retention period that are
@@ -987,7 +988,7 @@ namespace Model
      * <p>A value that returns the destination region and retention period that are
      * configured for cross-region snapshot copy.</p>
      */
-    inline void SetClusterSnapshotCopyStatus(ClusterSnapshotCopyStatus&& value) { m_clusterSnapshotCopyStatusHasBeenSet = true; m_clusterSnapshotCopyStatus = value; }
+    inline void SetClusterSnapshotCopyStatus(ClusterSnapshotCopyStatus&& value) { m_clusterSnapshotCopyStatusHasBeenSet = true; m_clusterSnapshotCopyStatus = std::move(value); }
 
     /**
      * <p>A value that returns the destination region and retention period that are
@@ -999,7 +1000,7 @@ namespace Model
      * <p>A value that returns the destination region and retention period that are
      * configured for cross-region snapshot copy.</p>
      */
-    inline Cluster& WithClusterSnapshotCopyStatus(ClusterSnapshotCopyStatus&& value) { SetClusterSnapshotCopyStatus(value); return *this;}
+    inline Cluster& WithClusterSnapshotCopyStatus(ClusterSnapshotCopyStatus&& value) { SetClusterSnapshotCopyStatus(std::move(value)); return *this;}
 
     /**
      * <p>The public key for the cluster.</p>
@@ -1014,7 +1015,7 @@ namespace Model
     /**
      * <p>The public key for the cluster.</p>
      */
-    inline void SetClusterPublicKey(Aws::String&& value) { m_clusterPublicKeyHasBeenSet = true; m_clusterPublicKey = value; }
+    inline void SetClusterPublicKey(Aws::String&& value) { m_clusterPublicKeyHasBeenSet = true; m_clusterPublicKey = std::move(value); }
 
     /**
      * <p>The public key for the cluster.</p>
@@ -1029,7 +1030,7 @@ namespace Model
     /**
      * <p>The public key for the cluster.</p>
      */
-    inline Cluster& WithClusterPublicKey(Aws::String&& value) { SetClusterPublicKey(value); return *this;}
+    inline Cluster& WithClusterPublicKey(Aws::String&& value) { SetClusterPublicKey(std::move(value)); return *this;}
 
     /**
      * <p>The public key for the cluster.</p>
@@ -1049,7 +1050,7 @@ namespace Model
     /**
      * <p>The nodes in the cluster.</p>
      */
-    inline void SetClusterNodes(Aws::Vector<ClusterNode>&& value) { m_clusterNodesHasBeenSet = true; m_clusterNodes = value; }
+    inline void SetClusterNodes(Aws::Vector<ClusterNode>&& value) { m_clusterNodesHasBeenSet = true; m_clusterNodes = std::move(value); }
 
     /**
      * <p>The nodes in the cluster.</p>
@@ -1059,7 +1060,7 @@ namespace Model
     /**
      * <p>The nodes in the cluster.</p>
      */
-    inline Cluster& WithClusterNodes(Aws::Vector<ClusterNode>&& value) { SetClusterNodes(value); return *this;}
+    inline Cluster& WithClusterNodes(Aws::Vector<ClusterNode>&& value) { SetClusterNodes(std::move(value)); return *this;}
 
     /**
      * <p>The nodes in the cluster.</p>
@@ -1069,7 +1070,7 @@ namespace Model
     /**
      * <p>The nodes in the cluster.</p>
      */
-    inline Cluster& AddClusterNodes(ClusterNode&& value) { m_clusterNodesHasBeenSet = true; m_clusterNodes.push_back(value); return *this; }
+    inline Cluster& AddClusterNodes(ClusterNode&& value) { m_clusterNodesHasBeenSet = true; m_clusterNodes.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The status of the elastic IP (EIP) address.</p>
@@ -1084,7 +1085,7 @@ namespace Model
     /**
      * <p>The status of the elastic IP (EIP) address.</p>
      */
-    inline void SetElasticIpStatus(ElasticIpStatus&& value) { m_elasticIpStatusHasBeenSet = true; m_elasticIpStatus = value; }
+    inline void SetElasticIpStatus(ElasticIpStatus&& value) { m_elasticIpStatusHasBeenSet = true; m_elasticIpStatus = std::move(value); }
 
     /**
      * <p>The status of the elastic IP (EIP) address.</p>
@@ -1094,7 +1095,7 @@ namespace Model
     /**
      * <p>The status of the elastic IP (EIP) address.</p>
      */
-    inline Cluster& WithElasticIpStatus(ElasticIpStatus&& value) { SetElasticIpStatus(value); return *this;}
+    inline Cluster& WithElasticIpStatus(ElasticIpStatus&& value) { SetElasticIpStatus(std::move(value)); return *this;}
 
     /**
      * <p>The specific revision number of the database in the cluster.</p>
@@ -1109,7 +1110,7 @@ namespace Model
     /**
      * <p>The specific revision number of the database in the cluster.</p>
      */
-    inline void SetClusterRevisionNumber(Aws::String&& value) { m_clusterRevisionNumberHasBeenSet = true; m_clusterRevisionNumber = value; }
+    inline void SetClusterRevisionNumber(Aws::String&& value) { m_clusterRevisionNumberHasBeenSet = true; m_clusterRevisionNumber = std::move(value); }
 
     /**
      * <p>The specific revision number of the database in the cluster.</p>
@@ -1124,7 +1125,7 @@ namespace Model
     /**
      * <p>The specific revision number of the database in the cluster.</p>
      */
-    inline Cluster& WithClusterRevisionNumber(Aws::String&& value) { SetClusterRevisionNumber(value); return *this;}
+    inline Cluster& WithClusterRevisionNumber(Aws::String&& value) { SetClusterRevisionNumber(std::move(value)); return *this;}
 
     /**
      * <p>The specific revision number of the database in the cluster.</p>
@@ -1144,7 +1145,7 @@ namespace Model
     /**
      * <p>The list of tags for the cluster.</p>
      */
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = value; }
+    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
      * <p>The list of tags for the cluster.</p>
@@ -1154,7 +1155,7 @@ namespace Model
     /**
      * <p>The list of tags for the cluster.</p>
      */
-    inline Cluster& WithTags(Aws::Vector<Tag>&& value) { SetTags(value); return *this;}
+    inline Cluster& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
      * <p>The list of tags for the cluster.</p>
@@ -1164,7 +1165,7 @@ namespace Model
     /**
      * <p>The list of tags for the cluster.</p>
      */
-    inline Cluster& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
+    inline Cluster& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The AWS Key Management Service (AWS KMS) key ID of the encryption key used to
@@ -1182,7 +1183,7 @@ namespace Model
      * <p>The AWS Key Management Service (AWS KMS) key ID of the encryption key used to
      * encrypt data in the cluster.</p>
      */
-    inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
+    inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
 
     /**
      * <p>The AWS Key Management Service (AWS KMS) key ID of the encryption key used to
@@ -1200,7 +1201,7 @@ namespace Model
      * <p>The AWS Key Management Service (AWS KMS) key ID of the encryption key used to
      * encrypt data in the cluster.</p>
      */
-    inline Cluster& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(value); return *this;}
+    inline Cluster& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
 
     /**
      * <p>The AWS Key Management Service (AWS KMS) key ID of the encryption key used to
@@ -1257,7 +1258,7 @@ namespace Model
      * <p>A list of AWS Identity and Access Management (IAM) roles that can be used by
      * the cluster to access other AWS services.</p>
      */
-    inline void SetIamRoles(Aws::Vector<ClusterIamRole>&& value) { m_iamRolesHasBeenSet = true; m_iamRoles = value; }
+    inline void SetIamRoles(Aws::Vector<ClusterIamRole>&& value) { m_iamRolesHasBeenSet = true; m_iamRoles = std::move(value); }
 
     /**
      * <p>A list of AWS Identity and Access Management (IAM) roles that can be used by
@@ -1269,7 +1270,7 @@ namespace Model
      * <p>A list of AWS Identity and Access Management (IAM) roles that can be used by
      * the cluster to access other AWS services.</p>
      */
-    inline Cluster& WithIamRoles(Aws::Vector<ClusterIamRole>&& value) { SetIamRoles(value); return *this;}
+    inline Cluster& WithIamRoles(Aws::Vector<ClusterIamRole>&& value) { SetIamRoles(std::move(value)); return *this;}
 
     /**
      * <p>A list of AWS Identity and Access Management (IAM) roles that can be used by
@@ -1281,7 +1282,7 @@ namespace Model
      * <p>A list of AWS Identity and Access Management (IAM) roles that can be used by
      * the cluster to access other AWS services.</p>
      */
-    inline Cluster& AddIamRoles(ClusterIamRole&& value) { m_iamRolesHasBeenSet = true; m_iamRoles.push_back(value); return *this; }
+    inline Cluster& AddIamRoles(ClusterIamRole&& value) { m_iamRolesHasBeenSet = true; m_iamRoles.push_back(std::move(value)); return *this; }
 
   private:
     Aws::String m_clusterIdentifier;

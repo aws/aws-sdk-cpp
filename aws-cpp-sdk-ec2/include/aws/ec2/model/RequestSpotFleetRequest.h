@@ -16,6 +16,7 @@
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/ec2/EC2Request.h>
 #include <aws/ec2/model/SpotFleetRequestConfigData.h>
+#include <utility>
 
 namespace Aws
 {
@@ -77,7 +78,7 @@ namespace Model
     /**
      * <p>The configuration for the Spot fleet request.</p>
      */
-    inline void SetSpotFleetRequestConfig(SpotFleetRequestConfigData&& value) { m_spotFleetRequestConfigHasBeenSet = true; m_spotFleetRequestConfig = value; }
+    inline void SetSpotFleetRequestConfig(SpotFleetRequestConfigData&& value) { m_spotFleetRequestConfigHasBeenSet = true; m_spotFleetRequestConfig = std::move(value); }
 
     /**
      * <p>The configuration for the Spot fleet request.</p>
@@ -87,7 +88,7 @@ namespace Model
     /**
      * <p>The configuration for the Spot fleet request.</p>
      */
-    inline RequestSpotFleetRequest& WithSpotFleetRequestConfig(SpotFleetRequestConfigData&& value) { SetSpotFleetRequestConfig(value); return *this;}
+    inline RequestSpotFleetRequest& WithSpotFleetRequestConfig(SpotFleetRequestConfigData&& value) { SetSpotFleetRequestConfig(std::move(value)); return *this;}
 
   private:
     bool m_dryRun;

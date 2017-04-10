@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/dynamodb/DynamoDB_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -78,7 +79,7 @@ namespace Model
      * <p>The name of the Time to Live attribute used to store the expiration time for
      * items in the table.</p>
      */
-    inline void SetAttributeName(Aws::String&& value) { m_attributeNameHasBeenSet = true; m_attributeName = value; }
+    inline void SetAttributeName(Aws::String&& value) { m_attributeNameHasBeenSet = true; m_attributeName = std::move(value); }
 
     /**
      * <p>The name of the Time to Live attribute used to store the expiration time for
@@ -96,7 +97,7 @@ namespace Model
      * <p>The name of the Time to Live attribute used to store the expiration time for
      * items in the table.</p>
      */
-    inline TimeToLiveSpecification& WithAttributeName(Aws::String&& value) { SetAttributeName(value); return *this;}
+    inline TimeToLiveSpecification& WithAttributeName(Aws::String&& value) { SetAttributeName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the Time to Live attribute used to store the expiration time for

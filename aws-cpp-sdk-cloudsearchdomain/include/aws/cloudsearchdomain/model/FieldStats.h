@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/cloudsearchdomain/CloudSearchDomain_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -78,7 +79,7 @@ namespace Model
      * href="http://tools.ietf.org/html/rfc3339">IETF RFC3339</a>:
      * yyyy-mm-ddTHH:mm:ss.SSSZ.</p>
      */
-    inline void SetMin(Aws::String&& value) { m_minHasBeenSet = true; m_min = value; }
+    inline void SetMin(Aws::String&& value) { m_minHasBeenSet = true; m_min = std::move(value); }
 
     /**
      * <p>The minimum value found in the specified field in the result set.</p> <p>If
@@ -114,7 +115,7 @@ namespace Model
      * href="http://tools.ietf.org/html/rfc3339">IETF RFC3339</a>:
      * yyyy-mm-ddTHH:mm:ss.SSSZ.</p>
      */
-    inline FieldStats& WithMin(Aws::String&& value) { SetMin(value); return *this;}
+    inline FieldStats& WithMin(Aws::String&& value) { SetMin(std::move(value)); return *this;}
 
     /**
      * <p>The minimum value found in the specified field in the result set.</p> <p>If
@@ -162,7 +163,7 @@ namespace Model
      * href="http://tools.ietf.org/html/rfc3339">IETF RFC3339</a>:
      * yyyy-mm-ddTHH:mm:ss.SSSZ.</p>
      */
-    inline void SetMax(Aws::String&& value) { m_maxHasBeenSet = true; m_max = value; }
+    inline void SetMax(Aws::String&& value) { m_maxHasBeenSet = true; m_max = std::move(value); }
 
     /**
      * <p>The maximum value found in the specified field in the result set.</p> <p>If
@@ -198,7 +199,7 @@ namespace Model
      * href="http://tools.ietf.org/html/rfc3339">IETF RFC3339</a>:
      * yyyy-mm-ddTHH:mm:ss.SSSZ.</p>
      */
-    inline FieldStats& WithMax(Aws::String&& value) { SetMax(value); return *this;}
+    inline FieldStats& WithMax(Aws::String&& value) { SetMax(std::move(value)); return *this;}
 
     /**
      * <p>The maximum value found in the specified field in the result set.</p> <p>If
@@ -315,7 +316,7 @@ namespace Model
      * href="http://tools.ietf.org/html/rfc3339">IETF RFC3339</a>:
      * yyyy-mm-ddTHH:mm:ss.SSSZ.</p>
      */
-    inline void SetMean(Aws::String&& value) { m_meanHasBeenSet = true; m_mean = value; }
+    inline void SetMean(Aws::String&& value) { m_meanHasBeenSet = true; m_mean = std::move(value); }
 
     /**
      * <p>The average of the values found in the specified field in the result set.</p>
@@ -351,7 +352,7 @@ namespace Model
      * href="http://tools.ietf.org/html/rfc3339">IETF RFC3339</a>:
      * yyyy-mm-ddTHH:mm:ss.SSSZ.</p>
      */
-    inline FieldStats& WithMean(Aws::String&& value) { SetMean(value); return *this;}
+    inline FieldStats& WithMean(Aws::String&& value) { SetMean(std::move(value)); return *this;}
 
     /**
      * <p>The average of the values found in the specified field in the result set.</p>

@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/clouddirectory/CloudDirectory_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -55,7 +56,7 @@ namespace Model
      * <p>Attached <code>ObjectIdentifier</code>, which is the child
      * <code>ObjectIdentifier</code>.</p>
      */
-    inline void SetAttachedObjectIdentifier(Aws::String&& value) { m_attachedObjectIdentifier = value; }
+    inline void SetAttachedObjectIdentifier(Aws::String&& value) { m_attachedObjectIdentifier = std::move(value); }
 
     /**
      * <p>Attached <code>ObjectIdentifier</code>, which is the child
@@ -73,7 +74,7 @@ namespace Model
      * <p>Attached <code>ObjectIdentifier</code>, which is the child
      * <code>ObjectIdentifier</code>.</p>
      */
-    inline AttachObjectResult& WithAttachedObjectIdentifier(Aws::String&& value) { SetAttachedObjectIdentifier(value); return *this;}
+    inline AttachObjectResult& WithAttachedObjectIdentifier(Aws::String&& value) { SetAttachedObjectIdentifier(std::move(value)); return *this;}
 
     /**
      * <p>Attached <code>ObjectIdentifier</code>, which is the child

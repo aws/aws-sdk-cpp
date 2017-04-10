@@ -16,6 +16,7 @@
 #include <aws/lightsail/Lightsail_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/lightsail/model/Operation.h>
+#include <utility>
 
 namespace Aws
 {
@@ -56,7 +57,7 @@ namespace Model
      * <p>An array of key-value pairs containing information about the results of your
      * delete instance request.</p>
      */
-    inline void SetOperations(Aws::Vector<Operation>&& value) { m_operations = value; }
+    inline void SetOperations(Aws::Vector<Operation>&& value) { m_operations = std::move(value); }
 
     /**
      * <p>An array of key-value pairs containing information about the results of your
@@ -68,7 +69,7 @@ namespace Model
      * <p>An array of key-value pairs containing information about the results of your
      * delete instance request.</p>
      */
-    inline DeleteInstanceResult& WithOperations(Aws::Vector<Operation>&& value) { SetOperations(value); return *this;}
+    inline DeleteInstanceResult& WithOperations(Aws::Vector<Operation>&& value) { SetOperations(std::move(value)); return *this;}
 
     /**
      * <p>An array of key-value pairs containing information about the results of your
@@ -80,7 +81,7 @@ namespace Model
      * <p>An array of key-value pairs containing information about the results of your
      * delete instance request.</p>
      */
-    inline DeleteInstanceResult& AddOperations(Operation&& value) { m_operations.push_back(value); return *this; }
+    inline DeleteInstanceResult& AddOperations(Operation&& value) { m_operations.push_back(std::move(value)); return *this; }
 
   private:
     Aws::Vector<Operation> m_operations;

@@ -16,6 +16,7 @@
 #include <aws/elasticbeanstalk/ElasticBeanstalk_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -59,7 +60,7 @@ namespace Model
     /**
      * <p>The name of this environment tier.</p>
      */
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p>The name of this environment tier.</p>
@@ -74,7 +75,7 @@ namespace Model
     /**
      * <p>The name of this environment tier.</p>
      */
-    inline EnvironmentTier& WithName(Aws::String&& value) { SetName(value); return *this;}
+    inline EnvironmentTier& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>The name of this environment tier.</p>
@@ -94,7 +95,7 @@ namespace Model
     /**
      * <p>The type of this environment tier.</p>
      */
-    inline void SetType(Aws::String&& value) { m_typeHasBeenSet = true; m_type = value; }
+    inline void SetType(Aws::String&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
      * <p>The type of this environment tier.</p>
@@ -109,7 +110,7 @@ namespace Model
     /**
      * <p>The type of this environment tier.</p>
      */
-    inline EnvironmentTier& WithType(Aws::String&& value) { SetType(value); return *this;}
+    inline EnvironmentTier& WithType(Aws::String&& value) { SetType(std::move(value)); return *this;}
 
     /**
      * <p>The type of this environment tier.</p>
@@ -129,7 +130,7 @@ namespace Model
     /**
      * <p>The version of this environment tier.</p>
      */
-    inline void SetVersion(Aws::String&& value) { m_versionHasBeenSet = true; m_version = value; }
+    inline void SetVersion(Aws::String&& value) { m_versionHasBeenSet = true; m_version = std::move(value); }
 
     /**
      * <p>The version of this environment tier.</p>
@@ -144,7 +145,7 @@ namespace Model
     /**
      * <p>The version of this environment tier.</p>
      */
-    inline EnvironmentTier& WithVersion(Aws::String&& value) { SetVersion(value); return *this;}
+    inline EnvironmentTier& WithVersion(Aws::String&& value) { SetVersion(std::move(value)); return *this;}
 
     /**
      * <p>The version of this environment tier.</p>

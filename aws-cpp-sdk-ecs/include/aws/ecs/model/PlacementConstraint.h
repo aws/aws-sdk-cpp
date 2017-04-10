@@ -16,6 +16,7 @@
 #include <aws/ecs/ECS_EXPORTS.h>
 #include <aws/ecs/model/PlacementConstraintType.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -70,7 +71,7 @@ namespace Model
      * <code>memberOf</code> to restrict selection to a group of valid candidates. Note
      * that <code>distinctInstance</code> is not supported in task definitions.</p>
      */
-    inline void SetType(PlacementConstraintType&& value) { m_typeHasBeenSet = true; m_type = value; }
+    inline void SetType(PlacementConstraintType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
      * <p>The type of constraint. Use <code>distinctInstance</code> to ensure that each
@@ -86,7 +87,7 @@ namespace Model
      * <code>memberOf</code> to restrict selection to a group of valid candidates. Note
      * that <code>distinctInstance</code> is not supported in task definitions.</p>
      */
-    inline PlacementConstraint& WithType(PlacementConstraintType&& value) { SetType(value); return *this;}
+    inline PlacementConstraint& WithType(PlacementConstraintType&& value) { SetType(std::move(value)); return *this;}
 
     /**
      * <p>A cluster query language expression to apply to the constraint. Note you
@@ -116,7 +117,7 @@ namespace Model
      * Query Language</a> in the <i>Amazon EC2 Container Service Developer
      * Guide</i>.</p>
      */
-    inline void SetExpression(Aws::String&& value) { m_expressionHasBeenSet = true; m_expression = value; }
+    inline void SetExpression(Aws::String&& value) { m_expressionHasBeenSet = true; m_expression = std::move(value); }
 
     /**
      * <p>A cluster query language expression to apply to the constraint. Note you
@@ -146,7 +147,7 @@ namespace Model
      * Query Language</a> in the <i>Amazon EC2 Container Service Developer
      * Guide</i>.</p>
      */
-    inline PlacementConstraint& WithExpression(Aws::String&& value) { SetExpression(value); return *this;}
+    inline PlacementConstraint& WithExpression(Aws::String&& value) { SetExpression(std::move(value)); return *this;}
 
     /**
      * <p>A cluster query language expression to apply to the constraint. Note you

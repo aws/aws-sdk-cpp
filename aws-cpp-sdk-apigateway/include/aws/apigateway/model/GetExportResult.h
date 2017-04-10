@@ -17,6 +17,7 @@
 #include <aws/core/utils/stream/ResponseStream.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/Array.h>
+#include <utility>
 
 namespace Aws
 {
@@ -66,7 +67,7 @@ namespace Model
      * <p>The content-type header value in the HTTP response. This will correspond to a
      * valid 'accept' type in the request.</p>
      */
-    inline void SetContentType(Aws::String&& value) { m_contentType = value; }
+    inline void SetContentType(Aws::String&& value) { m_contentType = std::move(value); }
 
     /**
      * <p>The content-type header value in the HTTP response. This will correspond to a
@@ -84,7 +85,7 @@ namespace Model
      * <p>The content-type header value in the HTTP response. This will correspond to a
      * valid 'accept' type in the request.</p>
      */
-    inline GetExportResult& WithContentType(Aws::String&& value) { SetContentType(value); return *this;}
+    inline GetExportResult& WithContentType(Aws::String&& value) { SetContentType(std::move(value)); return *this;}
 
     /**
      * <p>The content-type header value in the HTTP response. This will correspond to a
@@ -105,7 +106,7 @@ namespace Model
     /**
      * <p>The content-disposition header value in the HTTP response.</p>
      */
-    inline void SetContentDisposition(Aws::String&& value) { m_contentDisposition = value; }
+    inline void SetContentDisposition(Aws::String&& value) { m_contentDisposition = std::move(value); }
 
     /**
      * <p>The content-disposition header value in the HTTP response.</p>
@@ -120,7 +121,7 @@ namespace Model
     /**
      * <p>The content-disposition header value in the HTTP response.</p>
      */
-    inline GetExportResult& WithContentDisposition(Aws::String&& value) { SetContentDisposition(value); return *this;}
+    inline GetExportResult& WithContentDisposition(Aws::String&& value) { SetContentDisposition(std::move(value)); return *this;}
 
     /**
      * <p>The content-disposition header value in the HTTP response.</p>

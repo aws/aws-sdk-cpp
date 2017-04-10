@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/opsworks/OpsWorks_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -59,7 +60,7 @@ namespace Model
     /**
      * <p>A JSON document that contains the metadata.</p>
      */
-    inline void SetDocument(Aws::String&& value) { m_documentHasBeenSet = true; m_document = value; }
+    inline void SetDocument(Aws::String&& value) { m_documentHasBeenSet = true; m_document = std::move(value); }
 
     /**
      * <p>A JSON document that contains the metadata.</p>
@@ -74,7 +75,7 @@ namespace Model
     /**
      * <p>A JSON document that contains the metadata.</p>
      */
-    inline InstanceIdentity& WithDocument(Aws::String&& value) { SetDocument(value); return *this;}
+    inline InstanceIdentity& WithDocument(Aws::String&& value) { SetDocument(std::move(value)); return *this;}
 
     /**
      * <p>A JSON document that contains the metadata.</p>
@@ -97,7 +98,7 @@ namespace Model
      * <p>A signature that can be used to verify the document's accuracy and
      * authenticity.</p>
      */
-    inline void SetSignature(Aws::String&& value) { m_signatureHasBeenSet = true; m_signature = value; }
+    inline void SetSignature(Aws::String&& value) { m_signatureHasBeenSet = true; m_signature = std::move(value); }
 
     /**
      * <p>A signature that can be used to verify the document's accuracy and
@@ -115,7 +116,7 @@ namespace Model
      * <p>A signature that can be used to verify the document's accuracy and
      * authenticity.</p>
      */
-    inline InstanceIdentity& WithSignature(Aws::String&& value) { SetSignature(value); return *this;}
+    inline InstanceIdentity& WithSignature(Aws::String&& value) { SetSignature(std::move(value)); return *this;}
 
     /**
      * <p>A signature that can be used to verify the document's accuracy and

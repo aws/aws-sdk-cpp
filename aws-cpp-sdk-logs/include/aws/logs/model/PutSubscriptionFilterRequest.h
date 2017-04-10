@@ -17,6 +17,7 @@
 #include <aws/logs/CloudWatchLogsRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/logs/model/Distribution.h>
+#include <utility>
 
 namespace Aws
 {
@@ -49,7 +50,7 @@ namespace Model
     /**
      * <p>The name of the log group.</p>
      */
-    inline void SetLogGroupName(Aws::String&& value) { m_logGroupNameHasBeenSet = true; m_logGroupName = value; }
+    inline void SetLogGroupName(Aws::String&& value) { m_logGroupNameHasBeenSet = true; m_logGroupName = std::move(value); }
 
     /**
      * <p>The name of the log group.</p>
@@ -64,7 +65,7 @@ namespace Model
     /**
      * <p>The name of the log group.</p>
      */
-    inline PutSubscriptionFilterRequest& WithLogGroupName(Aws::String&& value) { SetLogGroupName(value); return *this;}
+    inline PutSubscriptionFilterRequest& WithLogGroupName(Aws::String&& value) { SetLogGroupName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the log group.</p>
@@ -84,7 +85,7 @@ namespace Model
     /**
      * <p>A name for the subscription filter.</p>
      */
-    inline void SetFilterName(Aws::String&& value) { m_filterNameHasBeenSet = true; m_filterName = value; }
+    inline void SetFilterName(Aws::String&& value) { m_filterNameHasBeenSet = true; m_filterName = std::move(value); }
 
     /**
      * <p>A name for the subscription filter.</p>
@@ -99,7 +100,7 @@ namespace Model
     /**
      * <p>A name for the subscription filter.</p>
      */
-    inline PutSubscriptionFilterRequest& WithFilterName(Aws::String&& value) { SetFilterName(value); return *this;}
+    inline PutSubscriptionFilterRequest& WithFilterName(Aws::String&& value) { SetFilterName(std::move(value)); return *this;}
 
     /**
      * <p>A name for the subscription filter.</p>
@@ -119,7 +120,7 @@ namespace Model
     /**
      * <p>A filter pattern for subscribing to a filtered stream of log events.</p>
      */
-    inline void SetFilterPattern(Aws::String&& value) { m_filterPatternHasBeenSet = true; m_filterPattern = value; }
+    inline void SetFilterPattern(Aws::String&& value) { m_filterPatternHasBeenSet = true; m_filterPattern = std::move(value); }
 
     /**
      * <p>A filter pattern for subscribing to a filtered stream of log events.</p>
@@ -134,7 +135,7 @@ namespace Model
     /**
      * <p>A filter pattern for subscribing to a filtered stream of log events.</p>
      */
-    inline PutSubscriptionFilterRequest& WithFilterPattern(Aws::String&& value) { SetFilterPattern(value); return *this;}
+    inline PutSubscriptionFilterRequest& WithFilterPattern(Aws::String&& value) { SetFilterPattern(std::move(value)); return *this;}
 
     /**
      * <p>A filter pattern for subscribing to a filtered stream of log events.</p>
@@ -178,7 +179,7 @@ namespace Model
      * belonging to the same account as the subscription filter, for same-account
      * delivery.</p> </li> </ul>
      */
-    inline void SetDestinationArn(Aws::String&& value) { m_destinationArnHasBeenSet = true; m_destinationArn = value; }
+    inline void SetDestinationArn(Aws::String&& value) { m_destinationArnHasBeenSet = true; m_destinationArn = std::move(value); }
 
     /**
      * <p>The ARN of the destination to deliver matching log events to. Currently, the
@@ -217,7 +218,7 @@ namespace Model
      * belonging to the same account as the subscription filter, for same-account
      * delivery.</p> </li> </ul>
      */
-    inline PutSubscriptionFilterRequest& WithDestinationArn(Aws::String&& value) { SetDestinationArn(value); return *this;}
+    inline PutSubscriptionFilterRequest& WithDestinationArn(Aws::String&& value) { SetDestinationArn(std::move(value)); return *this;}
 
     /**
      * <p>The ARN of the destination to deliver matching log events to. Currently, the
@@ -251,7 +252,7 @@ namespace Model
      * ingested log events to the destination stream. You don't need to provide the ARN
      * when you are working with a logical destination for cross-account delivery.</p>
      */
-    inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
+    inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
 
     /**
      * <p>The ARN of an IAM role that grants CloudWatch Logs permissions to deliver
@@ -272,7 +273,7 @@ namespace Model
      * ingested log events to the destination stream. You don't need to provide the ARN
      * when you are working with a logical destination for cross-account delivery.</p>
      */
-    inline PutSubscriptionFilterRequest& WithRoleArn(Aws::String&& value) { SetRoleArn(value); return *this;}
+    inline PutSubscriptionFilterRequest& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
 
     /**
      * <p>The ARN of an IAM role that grants CloudWatch Logs permissions to deliver
@@ -300,7 +301,7 @@ namespace Model
      * destination is an Amazon Kinesis stream. By default, log data is grouped by log
      * stream. For a more even distribution, you can group log data randomly.</p>
      */
-    inline void SetDistribution(Distribution&& value) { m_distributionHasBeenSet = true; m_distribution = value; }
+    inline void SetDistribution(Distribution&& value) { m_distributionHasBeenSet = true; m_distribution = std::move(value); }
 
     /**
      * <p>The method used to distribute log data to the destination, when the
@@ -314,7 +315,7 @@ namespace Model
      * destination is an Amazon Kinesis stream. By default, log data is grouped by log
      * stream. For a more even distribution, you can group log data randomly.</p>
      */
-    inline PutSubscriptionFilterRequest& WithDistribution(Distribution&& value) { SetDistribution(value); return *this;}
+    inline PutSubscriptionFilterRequest& WithDistribution(Distribution&& value) { SetDistribution(std::move(value)); return *this;}
 
   private:
     Aws::String m_logGroupName;

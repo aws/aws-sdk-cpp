@@ -16,6 +16,7 @@
 #include <aws/cloudfront/CloudFront_EXPORTS.h>
 #include <aws/cloudfront/model/StreamingDistribution.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -58,7 +59,7 @@ namespace Model
     /**
      * The streaming distribution's information.
      */
-    inline void SetStreamingDistribution(StreamingDistribution&& value) { m_streamingDistribution = value; }
+    inline void SetStreamingDistribution(StreamingDistribution&& value) { m_streamingDistribution = std::move(value); }
 
     /**
      * The streaming distribution's information.
@@ -68,7 +69,7 @@ namespace Model
     /**
      * The streaming distribution's information.
      */
-    inline CreateStreamingDistribution2016_01_28Result& WithStreamingDistribution(StreamingDistribution&& value) { SetStreamingDistribution(value); return *this;}
+    inline CreateStreamingDistribution2016_01_28Result& WithStreamingDistribution(StreamingDistribution&& value) { SetStreamingDistribution(std::move(value)); return *this;}
 
     /**
      * The fully qualified URI of the new streaming distribution resource just created.
@@ -89,7 +90,7 @@ namespace Model
      * For example:
      * https://cloudfront.amazonaws.com/2010-11-01/streaming-distribution/EGTXBD79H29TRA8.
      */
-    inline void SetLocation(Aws::String&& value) { m_location = value; }
+    inline void SetLocation(Aws::String&& value) { m_location = std::move(value); }
 
     /**
      * The fully qualified URI of the new streaming distribution resource just created.
@@ -110,7 +111,7 @@ namespace Model
      * For example:
      * https://cloudfront.amazonaws.com/2010-11-01/streaming-distribution/EGTXBD79H29TRA8.
      */
-    inline CreateStreamingDistribution2016_01_28Result& WithLocation(Aws::String&& value) { SetLocation(value); return *this;}
+    inline CreateStreamingDistribution2016_01_28Result& WithLocation(Aws::String&& value) { SetLocation(std::move(value)); return *this;}
 
     /**
      * The fully qualified URI of the new streaming distribution resource just created.
@@ -132,7 +133,7 @@ namespace Model
     /**
      * The current version of the streaming distribution created.
      */
-    inline void SetETag(Aws::String&& value) { m_eTag = value; }
+    inline void SetETag(Aws::String&& value) { m_eTag = std::move(value); }
 
     /**
      * The current version of the streaming distribution created.
@@ -147,7 +148,7 @@ namespace Model
     /**
      * The current version of the streaming distribution created.
      */
-    inline CreateStreamingDistribution2016_01_28Result& WithETag(Aws::String&& value) { SetETag(value); return *this;}
+    inline CreateStreamingDistribution2016_01_28Result& WithETag(Aws::String&& value) { SetETag(std::move(value)); return *this;}
 
     /**
      * The current version of the streaming distribution created.

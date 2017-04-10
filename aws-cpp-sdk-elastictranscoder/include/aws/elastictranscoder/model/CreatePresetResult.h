@@ -16,6 +16,7 @@
 #include <aws/elastictranscoder/ElasticTranscoder_EXPORTS.h>
 #include <aws/elastictranscoder/model/Preset.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -62,7 +63,7 @@ namespace Model
      * <p>A section of the response body that provides information about the preset
      * that is created.</p>
      */
-    inline void SetPreset(Preset&& value) { m_preset = value; }
+    inline void SetPreset(Preset&& value) { m_preset = std::move(value); }
 
     /**
      * <p>A section of the response body that provides information about the preset
@@ -74,7 +75,7 @@ namespace Model
      * <p>A section of the response body that provides information about the preset
      * that is created.</p>
      */
-    inline CreatePresetResult& WithPreset(Preset&& value) { SetPreset(value); return *this;}
+    inline CreatePresetResult& WithPreset(Preset&& value) { SetPreset(std::move(value)); return *this;}
 
     /**
      * <p>If the preset settings don't comply with the standards for the video codec
@@ -98,7 +99,7 @@ namespace Model
      * preset settings don't meet the standard. Elastic Transcoder created the preset
      * because the settings might produce acceptable output.</p>
      */
-    inline void SetWarning(Aws::String&& value) { m_warning = value; }
+    inline void SetWarning(Aws::String&& value) { m_warning = std::move(value); }
 
     /**
      * <p>If the preset settings don't comply with the standards for the video codec
@@ -122,7 +123,7 @@ namespace Model
      * preset settings don't meet the standard. Elastic Transcoder created the preset
      * because the settings might produce acceptable output.</p>
      */
-    inline CreatePresetResult& WithWarning(Aws::String&& value) { SetWarning(value); return *this;}
+    inline CreatePresetResult& WithWarning(Aws::String&& value) { SetWarning(std::move(value)); return *this;}
 
     /**
      * <p>If the preset settings don't comply with the standards for the video codec

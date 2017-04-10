@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/xray/XRay_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -56,7 +57,7 @@ namespace Model
     /**
      * <p>The segment's ID.</p>
      */
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = value; }
+    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
 
     /**
      * <p>The segment's ID.</p>
@@ -71,7 +72,7 @@ namespace Model
     /**
      * <p>The segment's ID.</p>
      */
-    inline Segment& WithId(Aws::String&& value) { SetId(value); return *this;}
+    inline Segment& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
 
     /**
      * <p>The segment's ID.</p>
@@ -91,7 +92,7 @@ namespace Model
     /**
      * <p>The segment document.</p>
      */
-    inline void SetDocument(Aws::String&& value) { m_documentHasBeenSet = true; m_document = value; }
+    inline void SetDocument(Aws::String&& value) { m_documentHasBeenSet = true; m_document = std::move(value); }
 
     /**
      * <p>The segment document.</p>
@@ -106,7 +107,7 @@ namespace Model
     /**
      * <p>The segment document.</p>
      */
-    inline Segment& WithDocument(Aws::String&& value) { SetDocument(value); return *this;}
+    inline Segment& WithDocument(Aws::String&& value) { SetDocument(std::move(value)); return *this;}
 
     /**
      * <p>The segment document.</p>

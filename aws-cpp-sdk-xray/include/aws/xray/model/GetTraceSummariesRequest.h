@@ -17,6 +17,7 @@
 #include <aws/xray/XRayRequest.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -47,7 +48,7 @@ namespace Model
     /**
      * <p>The start of the time frame for which to retrieve traces.</p>
      */
-    inline void SetStartTime(Aws::Utils::DateTime&& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
+    inline void SetStartTime(Aws::Utils::DateTime&& value) { m_startTimeHasBeenSet = true; m_startTime = std::move(value); }
 
     /**
      * <p>The start of the time frame for which to retrieve traces.</p>
@@ -57,7 +58,7 @@ namespace Model
     /**
      * <p>The start of the time frame for which to retrieve traces.</p>
      */
-    inline GetTraceSummariesRequest& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(value); return *this;}
+    inline GetTraceSummariesRequest& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(std::move(value)); return *this;}
 
     /**
      * <p>The end of the time frame for which to retrieve traces.</p>
@@ -72,7 +73,7 @@ namespace Model
     /**
      * <p>The end of the time frame for which to retrieve traces.</p>
      */
-    inline void SetEndTime(Aws::Utils::DateTime&& value) { m_endTimeHasBeenSet = true; m_endTime = value; }
+    inline void SetEndTime(Aws::Utils::DateTime&& value) { m_endTimeHasBeenSet = true; m_endTime = std::move(value); }
 
     /**
      * <p>The end of the time frame for which to retrieve traces.</p>
@@ -82,7 +83,7 @@ namespace Model
     /**
      * <p>The end of the time frame for which to retrieve traces.</p>
      */
-    inline GetTraceSummariesRequest& WithEndTime(Aws::Utils::DateTime&& value) { SetEndTime(value); return *this;}
+    inline GetTraceSummariesRequest& WithEndTime(Aws::Utils::DateTime&& value) { SetEndTime(std::move(value)); return *this;}
 
     /**
      * <p>Set to <code>true</code> to get summaries for only a subset of available
@@ -118,7 +119,7 @@ namespace Model
      * <p>Specify a filter expression to retrieve trace summaries for services or
      * requests that meet certain requirements.</p>
      */
-    inline void SetFilterExpression(Aws::String&& value) { m_filterExpressionHasBeenSet = true; m_filterExpression = value; }
+    inline void SetFilterExpression(Aws::String&& value) { m_filterExpressionHasBeenSet = true; m_filterExpression = std::move(value); }
 
     /**
      * <p>Specify a filter expression to retrieve trace summaries for services or
@@ -136,7 +137,7 @@ namespace Model
      * <p>Specify a filter expression to retrieve trace summaries for services or
      * requests that meet certain requirements.</p>
      */
-    inline GetTraceSummariesRequest& WithFilterExpression(Aws::String&& value) { SetFilterExpression(value); return *this;}
+    inline GetTraceSummariesRequest& WithFilterExpression(Aws::String&& value) { SetFilterExpression(std::move(value)); return *this;}
 
     /**
      * <p>Specify a filter expression to retrieve trace summaries for services or
@@ -160,7 +161,7 @@ namespace Model
      * <p>Specify the pagination token returned by a previous request to retrieve the
      * next page of results.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
      * <p>Specify the pagination token returned by a previous request to retrieve the
@@ -178,7 +179,7 @@ namespace Model
      * <p>Specify the pagination token returned by a previous request to retrieve the
      * next page of results.</p>
      */
-    inline GetTraceSummariesRequest& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline GetTraceSummariesRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>Specify the pagination token returned by a previous request to retrieve the

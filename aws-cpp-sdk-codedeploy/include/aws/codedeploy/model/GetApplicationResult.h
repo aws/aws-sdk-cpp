@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/codedeploy/CodeDeploy_EXPORTS.h>
 #include <aws/codedeploy/model/ApplicationInfo.h>
+#include <utility>
 
 namespace Aws
 {
@@ -58,7 +59,7 @@ namespace Model
     /**
      * <p>Information about the application.</p>
      */
-    inline void SetApplication(ApplicationInfo&& value) { m_application = value; }
+    inline void SetApplication(ApplicationInfo&& value) { m_application = std::move(value); }
 
     /**
      * <p>Information about the application.</p>
@@ -68,7 +69,7 @@ namespace Model
     /**
      * <p>Information about the application.</p>
      */
-    inline GetApplicationResult& WithApplication(ApplicationInfo&& value) { SetApplication(value); return *this;}
+    inline GetApplicationResult& WithApplication(ApplicationInfo&& value) { SetApplication(std::move(value)); return *this;}
 
   private:
     ApplicationInfo m_application;

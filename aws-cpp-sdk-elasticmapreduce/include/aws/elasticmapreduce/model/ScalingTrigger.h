@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/elasticmapreduce/EMR_EXPORTS.h>
 #include <aws/elasticmapreduce/model/CloudWatchAlarmDefinition.h>
+#include <utility>
 
 namespace Aws
 {
@@ -63,7 +64,7 @@ namespace Model
      * conditions are met along with other trigger parameters, scaling activity
      * begins.</p>
      */
-    inline void SetCloudWatchAlarmDefinition(CloudWatchAlarmDefinition&& value) { m_cloudWatchAlarmDefinitionHasBeenSet = true; m_cloudWatchAlarmDefinition = value; }
+    inline void SetCloudWatchAlarmDefinition(CloudWatchAlarmDefinition&& value) { m_cloudWatchAlarmDefinitionHasBeenSet = true; m_cloudWatchAlarmDefinition = std::move(value); }
 
     /**
      * <p>The definition of a CloudWatch metric alarm. When the defined alarm
@@ -77,7 +78,7 @@ namespace Model
      * conditions are met along with other trigger parameters, scaling activity
      * begins.</p>
      */
-    inline ScalingTrigger& WithCloudWatchAlarmDefinition(CloudWatchAlarmDefinition&& value) { SetCloudWatchAlarmDefinition(value); return *this;}
+    inline ScalingTrigger& WithCloudWatchAlarmDefinition(CloudWatchAlarmDefinition&& value) { SetCloudWatchAlarmDefinition(std::move(value)); return *this;}
 
   private:
     CloudWatchAlarmDefinition m_cloudWatchAlarmDefinition;

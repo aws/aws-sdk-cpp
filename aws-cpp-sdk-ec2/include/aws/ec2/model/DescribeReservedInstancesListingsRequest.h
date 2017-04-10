@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ec2/model/Filter.h>
+#include <utility>
 
 namespace Aws
 {
@@ -56,7 +57,7 @@ namespace Model
     /**
      * <p>One or more Reserved Instance IDs.</p>
      */
-    inline void SetReservedInstancesId(Aws::String&& value) { m_reservedInstancesIdHasBeenSet = true; m_reservedInstancesId = value; }
+    inline void SetReservedInstancesId(Aws::String&& value) { m_reservedInstancesIdHasBeenSet = true; m_reservedInstancesId = std::move(value); }
 
     /**
      * <p>One or more Reserved Instance IDs.</p>
@@ -71,7 +72,7 @@ namespace Model
     /**
      * <p>One or more Reserved Instance IDs.</p>
      */
-    inline DescribeReservedInstancesListingsRequest& WithReservedInstancesId(Aws::String&& value) { SetReservedInstancesId(value); return *this;}
+    inline DescribeReservedInstancesListingsRequest& WithReservedInstancesId(Aws::String&& value) { SetReservedInstancesId(std::move(value)); return *this;}
 
     /**
      * <p>One or more Reserved Instance IDs.</p>
@@ -91,7 +92,7 @@ namespace Model
     /**
      * <p>One or more Reserved Instance listing IDs.</p>
      */
-    inline void SetReservedInstancesListingId(Aws::String&& value) { m_reservedInstancesListingIdHasBeenSet = true; m_reservedInstancesListingId = value; }
+    inline void SetReservedInstancesListingId(Aws::String&& value) { m_reservedInstancesListingIdHasBeenSet = true; m_reservedInstancesListingId = std::move(value); }
 
     /**
      * <p>One or more Reserved Instance listing IDs.</p>
@@ -106,7 +107,7 @@ namespace Model
     /**
      * <p>One or more Reserved Instance listing IDs.</p>
      */
-    inline DescribeReservedInstancesListingsRequest& WithReservedInstancesListingId(Aws::String&& value) { SetReservedInstancesListingId(value); return *this;}
+    inline DescribeReservedInstancesListingsRequest& WithReservedInstancesListingId(Aws::String&& value) { SetReservedInstancesListingId(std::move(value)); return *this;}
 
     /**
      * <p>One or more Reserved Instance listing IDs.</p>
@@ -144,7 +145,7 @@ namespace Model
      * <code>cancelled</code> | <code>closed</code>).</p> </li> <li> <p>
      * <code>status-message</code> - The reason for the status.</p> </li> </ul>
      */
-    inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = value; }
+    inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
 
     /**
      * <p>One or more filters.</p> <ul> <li> <p> <code>reserved-instances-id</code> -
@@ -166,7 +167,7 @@ namespace Model
      * <code>cancelled</code> | <code>closed</code>).</p> </li> <li> <p>
      * <code>status-message</code> - The reason for the status.</p> </li> </ul>
      */
-    inline DescribeReservedInstancesListingsRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(value); return *this;}
+    inline DescribeReservedInstancesListingsRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(std::move(value)); return *this;}
 
     /**
      * <p>One or more filters.</p> <ul> <li> <p> <code>reserved-instances-id</code> -
@@ -188,7 +189,7 @@ namespace Model
      * <code>cancelled</code> | <code>closed</code>).</p> </li> <li> <p>
      * <code>status-message</code> - The reason for the status.</p> </li> </ul>
      */
-    inline DescribeReservedInstancesListingsRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
+    inline DescribeReservedInstancesListingsRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 
   private:
     Aws::String m_reservedInstancesId;

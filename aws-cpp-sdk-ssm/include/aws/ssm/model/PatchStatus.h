@@ -16,6 +16,7 @@
 #include <aws/ssm/SSM_EXPORTS.h>
 #include <aws/ssm/model/PatchDeploymentStatus.h>
 #include <aws/core/utils/DateTime.h>
+#include <utility>
 
 namespace Aws
 {
@@ -60,7 +61,7 @@ namespace Model
      * <p>The approval status of a patch (APPROVED, PENDING_APPROVAL,
      * EXPLICIT_APPROVED, EXPLICIT_REJECTED).</p>
      */
-    inline void SetDeploymentStatus(PatchDeploymentStatus&& value) { m_deploymentStatusHasBeenSet = true; m_deploymentStatus = value; }
+    inline void SetDeploymentStatus(PatchDeploymentStatus&& value) { m_deploymentStatusHasBeenSet = true; m_deploymentStatus = std::move(value); }
 
     /**
      * <p>The approval status of a patch (APPROVED, PENDING_APPROVAL,
@@ -72,7 +73,7 @@ namespace Model
      * <p>The approval status of a patch (APPROVED, PENDING_APPROVAL,
      * EXPLICIT_APPROVED, EXPLICIT_REJECTED).</p>
      */
-    inline PatchStatus& WithDeploymentStatus(PatchDeploymentStatus&& value) { SetDeploymentStatus(value); return *this;}
+    inline PatchStatus& WithDeploymentStatus(PatchDeploymentStatus&& value) { SetDeploymentStatus(std::move(value)); return *this;}
 
     /**
      * <p>The date the patch was approved (or will be approved if the status is
@@ -90,7 +91,7 @@ namespace Model
      * <p>The date the patch was approved (or will be approved if the status is
      * PENDING_APPROVAL).</p>
      */
-    inline void SetApprovalDate(Aws::Utils::DateTime&& value) { m_approvalDateHasBeenSet = true; m_approvalDate = value; }
+    inline void SetApprovalDate(Aws::Utils::DateTime&& value) { m_approvalDateHasBeenSet = true; m_approvalDate = std::move(value); }
 
     /**
      * <p>The date the patch was approved (or will be approved if the status is
@@ -102,7 +103,7 @@ namespace Model
      * <p>The date the patch was approved (or will be approved if the status is
      * PENDING_APPROVAL).</p>
      */
-    inline PatchStatus& WithApprovalDate(Aws::Utils::DateTime&& value) { SetApprovalDate(value); return *this;}
+    inline PatchStatus& WithApprovalDate(Aws::Utils::DateTime&& value) { SetApprovalDate(std::move(value)); return *this;}
 
   private:
     PatchDeploymentStatus m_deploymentStatus;

@@ -18,6 +18,7 @@
 #include <aws/application-autoscaling/model/ServiceNamespace.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/application-autoscaling/model/ScalableDimension.h>
+#include <utility>
 
 namespace Aws
 {
@@ -56,7 +57,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">AWS
      * Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
      */
-    inline void SetServiceNamespace(ServiceNamespace&& value) { m_serviceNamespaceHasBeenSet = true; m_serviceNamespace = value; }
+    inline void SetServiceNamespace(ServiceNamespace&& value) { m_serviceNamespaceHasBeenSet = true; m_serviceNamespace = std::move(value); }
 
     /**
      * <p>The namespace of the AWS service. For more information, see <a
@@ -70,7 +71,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">AWS
      * Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
      */
-    inline DeregisterScalableTargetRequest& WithServiceNamespace(ServiceNamespace&& value) { SetServiceNamespace(value); return *this;}
+    inline DeregisterScalableTargetRequest& WithServiceNamespace(ServiceNamespace&& value) { SetServiceNamespace(std::move(value)); return *this;}
 
     /**
      * <p>The identifier of the resource associated with the scalable target. This
@@ -124,7 +125,7 @@ namespace Model
      * identifier is the fleet name. Example: <code>fleet/sample-fleet</code>.</p>
      * </li> </ul>
      */
-    inline void SetResourceId(Aws::String&& value) { m_resourceIdHasBeenSet = true; m_resourceId = value; }
+    inline void SetResourceId(Aws::String&& value) { m_resourceIdHasBeenSet = true; m_resourceId = std::move(value); }
 
     /**
      * <p>The identifier of the resource associated with the scalable target. This
@@ -178,7 +179,7 @@ namespace Model
      * identifier is the fleet name. Example: <code>fleet/sample-fleet</code>.</p>
      * </li> </ul>
      */
-    inline DeregisterScalableTargetRequest& WithResourceId(Aws::String&& value) { SetResourceId(value); return *this;}
+    inline DeregisterScalableTargetRequest& WithResourceId(Aws::String&& value) { SetResourceId(std::move(value)); return *this;}
 
     /**
      * <p>The identifier of the resource associated with the scalable target. This
@@ -238,7 +239,7 @@ namespace Model
      * <code>appstream:fleet:DesiredCapacity</code> - The desired capacity of an
      * AppStream 2.0 fleet.</p> </li> </ul>
      */
-    inline void SetScalableDimension(ScalableDimension&& value) { m_scalableDimensionHasBeenSet = true; m_scalableDimension = value; }
+    inline void SetScalableDimension(ScalableDimension&& value) { m_scalableDimensionHasBeenSet = true; m_scalableDimension = std::move(value); }
 
     /**
      * <p>The scalable dimension associated with the scalable target. This string
@@ -266,7 +267,7 @@ namespace Model
      * <code>appstream:fleet:DesiredCapacity</code> - The desired capacity of an
      * AppStream 2.0 fleet.</p> </li> </ul>
      */
-    inline DeregisterScalableTargetRequest& WithScalableDimension(ScalableDimension&& value) { SetScalableDimension(value); return *this;}
+    inline DeregisterScalableTargetRequest& WithScalableDimension(ScalableDimension&& value) { SetScalableDimension(std::move(value)); return *this;}
 
   private:
     ServiceNamespace m_serviceNamespace;

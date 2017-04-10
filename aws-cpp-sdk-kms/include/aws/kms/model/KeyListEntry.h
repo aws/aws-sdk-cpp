@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/kms/KMS_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -57,7 +58,7 @@ namespace Model
     /**
      * <p>Unique identifier of the key.</p>
      */
-    inline void SetKeyId(Aws::String&& value) { m_keyIdHasBeenSet = true; m_keyId = value; }
+    inline void SetKeyId(Aws::String&& value) { m_keyIdHasBeenSet = true; m_keyId = std::move(value); }
 
     /**
      * <p>Unique identifier of the key.</p>
@@ -72,7 +73,7 @@ namespace Model
     /**
      * <p>Unique identifier of the key.</p>
      */
-    inline KeyListEntry& WithKeyId(Aws::String&& value) { SetKeyId(value); return *this;}
+    inline KeyListEntry& WithKeyId(Aws::String&& value) { SetKeyId(std::move(value)); return *this;}
 
     /**
      * <p>Unique identifier of the key.</p>
@@ -92,7 +93,7 @@ namespace Model
     /**
      * <p>ARN of the key.</p>
      */
-    inline void SetKeyArn(Aws::String&& value) { m_keyArnHasBeenSet = true; m_keyArn = value; }
+    inline void SetKeyArn(Aws::String&& value) { m_keyArnHasBeenSet = true; m_keyArn = std::move(value); }
 
     /**
      * <p>ARN of the key.</p>
@@ -107,7 +108,7 @@ namespace Model
     /**
      * <p>ARN of the key.</p>
      */
-    inline KeyListEntry& WithKeyArn(Aws::String&& value) { SetKeyArn(value); return *this;}
+    inline KeyListEntry& WithKeyArn(Aws::String&& value) { SetKeyArn(std::move(value)); return *this;}
 
     /**
      * <p>ARN of the key.</p>

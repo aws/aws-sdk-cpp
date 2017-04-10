@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/cloudfront/model/CachedMethods.h>
 #include <aws/cloudfront/model/Method.h>
+#include <utility>
 
 namespace Aws
 {
@@ -91,7 +92,7 @@ namespace Model
      * A complex type that contains the HTTP methods that you want CloudFront to
      * process and forward to your origin.
      */
-    inline void SetItems(Aws::Vector<Method>&& value) { m_itemsHasBeenSet = true; m_items = value; }
+    inline void SetItems(Aws::Vector<Method>&& value) { m_itemsHasBeenSet = true; m_items = std::move(value); }
 
     /**
      * A complex type that contains the HTTP methods that you want CloudFront to
@@ -103,7 +104,7 @@ namespace Model
      * A complex type that contains the HTTP methods that you want CloudFront to
      * process and forward to your origin.
      */
-    inline AllowedMethods& WithItems(Aws::Vector<Method>&& value) { SetItems(value); return *this;}
+    inline AllowedMethods& WithItems(Aws::Vector<Method>&& value) { SetItems(std::move(value)); return *this;}
 
     /**
      * A complex type that contains the HTTP methods that you want CloudFront to
@@ -115,7 +116,7 @@ namespace Model
      * A complex type that contains the HTTP methods that you want CloudFront to
      * process and forward to your origin.
      */
-    inline AllowedMethods& AddItems(Method&& value) { m_itemsHasBeenSet = true; m_items.push_back(value); return *this; }
+    inline AllowedMethods& AddItems(Method&& value) { m_itemsHasBeenSet = true; m_items.push_back(std::move(value)); return *this; }
 
     
     inline const CachedMethods& GetCachedMethods() const{ return m_cachedMethods; }
@@ -124,13 +125,13 @@ namespace Model
     inline void SetCachedMethods(const CachedMethods& value) { m_cachedMethodsHasBeenSet = true; m_cachedMethods = value; }
 
     
-    inline void SetCachedMethods(CachedMethods&& value) { m_cachedMethodsHasBeenSet = true; m_cachedMethods = value; }
+    inline void SetCachedMethods(CachedMethods&& value) { m_cachedMethodsHasBeenSet = true; m_cachedMethods = std::move(value); }
 
     
     inline AllowedMethods& WithCachedMethods(const CachedMethods& value) { SetCachedMethods(value); return *this;}
 
     
-    inline AllowedMethods& WithCachedMethods(CachedMethods&& value) { SetCachedMethods(value); return *this;}
+    inline AllowedMethods& WithCachedMethods(CachedMethods&& value) { SetCachedMethods(std::move(value)); return *this;}
 
   private:
     int m_quantity;

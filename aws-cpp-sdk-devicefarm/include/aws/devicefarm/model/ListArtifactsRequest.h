@@ -17,6 +17,7 @@
 #include <aws/devicefarm/DeviceFarmRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/devicefarm/model/ArtifactCategory.h>
+#include <utility>
 
 namespace Aws
 {
@@ -53,7 +54,7 @@ namespace Model
     /**
      * <p>The Run, Job, Suite, or Test ARN.</p>
      */
-    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = value; }
+    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
 
     /**
      * <p>The Run, Job, Suite, or Test ARN.</p>
@@ -68,7 +69,7 @@ namespace Model
     /**
      * <p>The Run, Job, Suite, or Test ARN.</p>
      */
-    inline ListArtifactsRequest& WithArn(Aws::String&& value) { SetArn(value); return *this;}
+    inline ListArtifactsRequest& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
 
     /**
      * <p>The Run, Job, Suite, or Test ARN.</p>
@@ -94,7 +95,7 @@ namespace Model
      * The artifacts are files.</p> </li> <li> <p>LOG: The artifacts are logs.</p>
      * </li> <li> <p>SCREENSHOT: The artifacts are screenshots.</p> </li> </ul>
      */
-    inline void SetType(ArtifactCategory&& value) { m_typeHasBeenSet = true; m_type = value; }
+    inline void SetType(ArtifactCategory&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
      * <p>The artifacts' type.</p> <p>Allowed values include:</p> <ul> <li> <p>FILE:
@@ -108,7 +109,7 @@ namespace Model
      * The artifacts are files.</p> </li> <li> <p>LOG: The artifacts are logs.</p>
      * </li> <li> <p>SCREENSHOT: The artifacts are screenshots.</p> </li> </ul>
      */
-    inline ListArtifactsRequest& WithType(ArtifactCategory&& value) { SetType(value); return *this;}
+    inline ListArtifactsRequest& WithType(ArtifactCategory&& value) { SetType(std::move(value)); return *this;}
 
     /**
      * <p>An identifier that was returned from the previous call to this operation,
@@ -126,7 +127,7 @@ namespace Model
      * <p>An identifier that was returned from the previous call to this operation,
      * which can be used to return the next set of items in the list.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
      * <p>An identifier that was returned from the previous call to this operation,
@@ -144,7 +145,7 @@ namespace Model
      * <p>An identifier that was returned from the previous call to this operation,
      * which can be used to return the next set of items in the list.</p>
      */
-    inline ListArtifactsRequest& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline ListArtifactsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>An identifier that was returned from the previous call to this operation,

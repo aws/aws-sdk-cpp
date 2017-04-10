@@ -17,6 +17,7 @@
 #include <aws/apigateway/APIGatewayRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <utility>
 
 namespace Aws
 {
@@ -51,7 +52,7 @@ namespace Model
     /**
      * <p>The name of the <a>RestApi</a>.</p>
      */
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p>The name of the <a>RestApi</a>.</p>
@@ -66,7 +67,7 @@ namespace Model
     /**
      * <p>The name of the <a>RestApi</a>.</p>
      */
-    inline CreateRestApiRequest& WithName(Aws::String&& value) { SetName(value); return *this;}
+    inline CreateRestApiRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the <a>RestApi</a>.</p>
@@ -86,7 +87,7 @@ namespace Model
     /**
      * <p>The description of the <a>RestApi</a>.</p>
      */
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = value; }
+    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
      * <p>The description of the <a>RestApi</a>.</p>
@@ -101,7 +102,7 @@ namespace Model
     /**
      * <p>The description of the <a>RestApi</a>.</p>
      */
-    inline CreateRestApiRequest& WithDescription(Aws::String&& value) { SetDescription(value); return *this;}
+    inline CreateRestApiRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
      * <p>The description of the <a>RestApi</a>.</p>
@@ -121,7 +122,7 @@ namespace Model
     /**
      * <p>A version identifier for the API.</p>
      */
-    inline void SetVersion(Aws::String&& value) { m_versionHasBeenSet = true; m_version = value; }
+    inline void SetVersion(Aws::String&& value) { m_versionHasBeenSet = true; m_version = std::move(value); }
 
     /**
      * <p>A version identifier for the API.</p>
@@ -136,7 +137,7 @@ namespace Model
     /**
      * <p>A version identifier for the API.</p>
      */
-    inline CreateRestApiRequest& WithVersion(Aws::String&& value) { SetVersion(value); return *this;}
+    inline CreateRestApiRequest& WithVersion(Aws::String&& value) { SetVersion(std::move(value)); return *this;}
 
     /**
      * <p>A version identifier for the API.</p>
@@ -156,7 +157,7 @@ namespace Model
     /**
      * <p>The ID of the <a>RestApi</a> that you want to clone from.</p>
      */
-    inline void SetCloneFrom(Aws::String&& value) { m_cloneFromHasBeenSet = true; m_cloneFrom = value; }
+    inline void SetCloneFrom(Aws::String&& value) { m_cloneFromHasBeenSet = true; m_cloneFrom = std::move(value); }
 
     /**
      * <p>The ID of the <a>RestApi</a> that you want to clone from.</p>
@@ -171,7 +172,7 @@ namespace Model
     /**
      * <p>The ID of the <a>RestApi</a> that you want to clone from.</p>
      */
-    inline CreateRestApiRequest& WithCloneFrom(Aws::String&& value) { SetCloneFrom(value); return *this;}
+    inline CreateRestApiRequest& WithCloneFrom(Aws::String&& value) { SetCloneFrom(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the <a>RestApi</a> that you want to clone from.</p>
@@ -194,7 +195,7 @@ namespace Model
      * <p>The list of binary media types supported by the <a>RestApi</a>. By default,
      * the <a>RestApi</a> supports only UTF-8-encoded text payloads.</p>
      */
-    inline void SetBinaryMediaTypes(Aws::Vector<Aws::String>&& value) { m_binaryMediaTypesHasBeenSet = true; m_binaryMediaTypes = value; }
+    inline void SetBinaryMediaTypes(Aws::Vector<Aws::String>&& value) { m_binaryMediaTypesHasBeenSet = true; m_binaryMediaTypes = std::move(value); }
 
     /**
      * <p>The list of binary media types supported by the <a>RestApi</a>. By default,
@@ -206,7 +207,7 @@ namespace Model
      * <p>The list of binary media types supported by the <a>RestApi</a>. By default,
      * the <a>RestApi</a> supports only UTF-8-encoded text payloads.</p>
      */
-    inline CreateRestApiRequest& WithBinaryMediaTypes(Aws::Vector<Aws::String>&& value) { SetBinaryMediaTypes(value); return *this;}
+    inline CreateRestApiRequest& WithBinaryMediaTypes(Aws::Vector<Aws::String>&& value) { SetBinaryMediaTypes(std::move(value)); return *this;}
 
     /**
      * <p>The list of binary media types supported by the <a>RestApi</a>. By default,
@@ -218,7 +219,7 @@ namespace Model
      * <p>The list of binary media types supported by the <a>RestApi</a>. By default,
      * the <a>RestApi</a> supports only UTF-8-encoded text payloads.</p>
      */
-    inline CreateRestApiRequest& AddBinaryMediaTypes(Aws::String&& value) { m_binaryMediaTypesHasBeenSet = true; m_binaryMediaTypes.push_back(value); return *this; }
+    inline CreateRestApiRequest& AddBinaryMediaTypes(Aws::String&& value) { m_binaryMediaTypesHasBeenSet = true; m_binaryMediaTypes.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The list of binary media types supported by the <a>RestApi</a>. By default,

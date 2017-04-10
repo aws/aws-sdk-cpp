@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/redshift/model/Tag.h>
+#include <utility>
 
 namespace Aws
 {
@@ -61,7 +62,7 @@ namespace Model
     /**
      * <p>The status of the IP range, for example, "authorized".</p>
      */
-    inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = value; }
+    inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
      * <p>The status of the IP range, for example, "authorized".</p>
@@ -76,7 +77,7 @@ namespace Model
     /**
      * <p>The status of the IP range, for example, "authorized".</p>
      */
-    inline IPRange& WithStatus(Aws::String&& value) { SetStatus(value); return *this;}
+    inline IPRange& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
 
     /**
      * <p>The status of the IP range, for example, "authorized".</p>
@@ -96,7 +97,7 @@ namespace Model
     /**
      * <p>The IP range in Classless Inter-Domain Routing (CIDR) notation.</p>
      */
-    inline void SetCIDRIP(Aws::String&& value) { m_cIDRIPHasBeenSet = true; m_cIDRIP = value; }
+    inline void SetCIDRIP(Aws::String&& value) { m_cIDRIPHasBeenSet = true; m_cIDRIP = std::move(value); }
 
     /**
      * <p>The IP range in Classless Inter-Domain Routing (CIDR) notation.</p>
@@ -111,7 +112,7 @@ namespace Model
     /**
      * <p>The IP range in Classless Inter-Domain Routing (CIDR) notation.</p>
      */
-    inline IPRange& WithCIDRIP(Aws::String&& value) { SetCIDRIP(value); return *this;}
+    inline IPRange& WithCIDRIP(Aws::String&& value) { SetCIDRIP(std::move(value)); return *this;}
 
     /**
      * <p>The IP range in Classless Inter-Domain Routing (CIDR) notation.</p>
@@ -131,7 +132,7 @@ namespace Model
     /**
      * <p>The list of tags for the IP range.</p>
      */
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = value; }
+    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
      * <p>The list of tags for the IP range.</p>
@@ -141,7 +142,7 @@ namespace Model
     /**
      * <p>The list of tags for the IP range.</p>
      */
-    inline IPRange& WithTags(Aws::Vector<Tag>&& value) { SetTags(value); return *this;}
+    inline IPRange& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
      * <p>The list of tags for the IP range.</p>
@@ -151,7 +152,7 @@ namespace Model
     /**
      * <p>The list of tags for the IP range.</p>
      */
-    inline IPRange& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
+    inline IPRange& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
   private:
     Aws::String m_status;

@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/route53/model/ChangeStatus.h>
 #include <aws/core/utils/DateTime.h>
+#include <utility>
 
 namespace Aws
 {
@@ -60,7 +61,7 @@ namespace Model
     /**
      * <p>The ID of the request.</p>
      */
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = value; }
+    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
 
     /**
      * <p>The ID of the request.</p>
@@ -75,7 +76,7 @@ namespace Model
     /**
      * <p>The ID of the request.</p>
      */
-    inline ChangeInfo& WithId(Aws::String&& value) { SetId(value); return *this;}
+    inline ChangeInfo& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the request.</p>
@@ -98,7 +99,7 @@ namespace Model
      * <p>The current state of the request. <code>PENDING</code> indicates that this
      * request has not yet been applied to all Amazon Route 53 DNS servers.</p>
      */
-    inline void SetStatus(ChangeStatus&& value) { m_statusHasBeenSet = true; m_status = value; }
+    inline void SetStatus(ChangeStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
      * <p>The current state of the request. <code>PENDING</code> indicates that this
@@ -110,7 +111,7 @@ namespace Model
      * <p>The current state of the request. <code>PENDING</code> indicates that this
      * request has not yet been applied to all Amazon Route 53 DNS servers.</p>
      */
-    inline ChangeInfo& WithStatus(ChangeStatus&& value) { SetStatus(value); return *this;}
+    inline ChangeInfo& WithStatus(ChangeStatus&& value) { SetStatus(std::move(value)); return *this;}
 
     /**
      * <p>The date and time the change request was submitted, in Coordinated Universal
@@ -134,7 +135,7 @@ namespace Model
      * the Wikipedia entry <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO
      * 8601</a>.</p>
      */
-    inline void SetSubmittedAt(Aws::Utils::DateTime&& value) { m_submittedAtHasBeenSet = true; m_submittedAt = value; }
+    inline void SetSubmittedAt(Aws::Utils::DateTime&& value) { m_submittedAtHasBeenSet = true; m_submittedAt = std::move(value); }
 
     /**
      * <p>The date and time the change request was submitted, in Coordinated Universal
@@ -150,7 +151,7 @@ namespace Model
      * the Wikipedia entry <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO
      * 8601</a>.</p>
      */
-    inline ChangeInfo& WithSubmittedAt(Aws::Utils::DateTime&& value) { SetSubmittedAt(value); return *this;}
+    inline ChangeInfo& WithSubmittedAt(Aws::Utils::DateTime&& value) { SetSubmittedAt(std::move(value)); return *this;}
 
     /**
      * <p>A complex type that describes change information about changes made to your
@@ -171,7 +172,7 @@ namespace Model
      * hosted zone.</p> <p>This element contains an ID that you use when performing a
      * <a>GetChange</a> action to get detailed information about the change.</p>
      */
-    inline void SetComment(Aws::String&& value) { m_commentHasBeenSet = true; m_comment = value; }
+    inline void SetComment(Aws::String&& value) { m_commentHasBeenSet = true; m_comment = std::move(value); }
 
     /**
      * <p>A complex type that describes change information about changes made to your
@@ -192,7 +193,7 @@ namespace Model
      * hosted zone.</p> <p>This element contains an ID that you use when performing a
      * <a>GetChange</a> action to get detailed information about the change.</p>
      */
-    inline ChangeInfo& WithComment(Aws::String&& value) { SetComment(value); return *this;}
+    inline ChangeInfo& WithComment(Aws::String&& value) { SetComment(std::move(value)); return *this;}
 
     /**
      * <p>A complex type that describes change information about changes made to your

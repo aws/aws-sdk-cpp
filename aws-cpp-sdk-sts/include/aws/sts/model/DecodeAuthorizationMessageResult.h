@@ -16,6 +16,7 @@
 #include <aws/sts/STS_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/sts/model/ResponseMetadata.h>
+#include <utility>
 
 namespace Aws
 {
@@ -60,7 +61,7 @@ namespace Model
     /**
      * <p>An XML document that contains the decoded message.</p>
      */
-    inline void SetDecodedMessage(Aws::String&& value) { m_decodedMessage = value; }
+    inline void SetDecodedMessage(Aws::String&& value) { m_decodedMessage = std::move(value); }
 
     /**
      * <p>An XML document that contains the decoded message.</p>
@@ -75,7 +76,7 @@ namespace Model
     /**
      * <p>An XML document that contains the decoded message.</p>
      */
-    inline DecodeAuthorizationMessageResult& WithDecodedMessage(Aws::String&& value) { SetDecodedMessage(value); return *this;}
+    inline DecodeAuthorizationMessageResult& WithDecodedMessage(Aws::String&& value) { SetDecodedMessage(std::move(value)); return *this;}
 
     /**
      * <p>An XML document that contains the decoded message.</p>
@@ -89,13 +90,13 @@ namespace Model
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
 
     
     inline DecodeAuthorizationMessageResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
 
     
-    inline DecodeAuthorizationMessageResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
+    inline DecodeAuthorizationMessageResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
     Aws::String m_decodedMessage;

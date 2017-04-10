@@ -19,6 +19,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/clouddirectory/model/SchemaFacet.h>
 #include <aws/clouddirectory/model/AttributeKeyAndValue.h>
+#include <utility>
 
 namespace Aws
 {
@@ -64,7 +65,7 @@ namespace Model
      * <p>List of FacetArns that will be associated with the object. For more
      * information, see <a>arns</a>.</p>
      */
-    inline void SetSchemaFacet(Aws::Vector<SchemaFacet>&& value) { m_schemaFacetHasBeenSet = true; m_schemaFacet = value; }
+    inline void SetSchemaFacet(Aws::Vector<SchemaFacet>&& value) { m_schemaFacetHasBeenSet = true; m_schemaFacet = std::move(value); }
 
     /**
      * <p>List of FacetArns that will be associated with the object. For more
@@ -76,7 +77,7 @@ namespace Model
      * <p>List of FacetArns that will be associated with the object. For more
      * information, see <a>arns</a>.</p>
      */
-    inline BatchCreateObject& WithSchemaFacet(Aws::Vector<SchemaFacet>&& value) { SetSchemaFacet(value); return *this;}
+    inline BatchCreateObject& WithSchemaFacet(Aws::Vector<SchemaFacet>&& value) { SetSchemaFacet(std::move(value)); return *this;}
 
     /**
      * <p>List of FacetArns that will be associated with the object. For more
@@ -88,7 +89,7 @@ namespace Model
      * <p>List of FacetArns that will be associated with the object. For more
      * information, see <a>arns</a>.</p>
      */
-    inline BatchCreateObject& AddSchemaFacet(SchemaFacet&& value) { m_schemaFacetHasBeenSet = true; m_schemaFacet.push_back(value); return *this; }
+    inline BatchCreateObject& AddSchemaFacet(SchemaFacet&& value) { m_schemaFacetHasBeenSet = true; m_schemaFacet.push_back(std::move(value)); return *this; }
 
     /**
      * <p>Attribute map, which contains an attribute ARN as the key and attribute value
@@ -106,7 +107,7 @@ namespace Model
      * <p>Attribute map, which contains an attribute ARN as the key and attribute value
      * as the map value.</p>
      */
-    inline void SetObjectAttributeList(Aws::Vector<AttributeKeyAndValue>&& value) { m_objectAttributeListHasBeenSet = true; m_objectAttributeList = value; }
+    inline void SetObjectAttributeList(Aws::Vector<AttributeKeyAndValue>&& value) { m_objectAttributeListHasBeenSet = true; m_objectAttributeList = std::move(value); }
 
     /**
      * <p>Attribute map, which contains an attribute ARN as the key and attribute value
@@ -118,7 +119,7 @@ namespace Model
      * <p>Attribute map, which contains an attribute ARN as the key and attribute value
      * as the map value.</p>
      */
-    inline BatchCreateObject& WithObjectAttributeList(Aws::Vector<AttributeKeyAndValue>&& value) { SetObjectAttributeList(value); return *this;}
+    inline BatchCreateObject& WithObjectAttributeList(Aws::Vector<AttributeKeyAndValue>&& value) { SetObjectAttributeList(std::move(value)); return *this;}
 
     /**
      * <p>Attribute map, which contains an attribute ARN as the key and attribute value
@@ -130,7 +131,7 @@ namespace Model
      * <p>Attribute map, which contains an attribute ARN as the key and attribute value
      * as the map value.</p>
      */
-    inline BatchCreateObject& AddObjectAttributeList(AttributeKeyAndValue&& value) { m_objectAttributeListHasBeenSet = true; m_objectAttributeList.push_back(value); return *this; }
+    inline BatchCreateObject& AddObjectAttributeList(AttributeKeyAndValue&& value) { m_objectAttributeListHasBeenSet = true; m_objectAttributeList.push_back(std::move(value)); return *this; }
 
     /**
      * <p>If specified, the parent reference to which this object will be attached.</p>
@@ -145,7 +146,7 @@ namespace Model
     /**
      * <p>If specified, the parent reference to which this object will be attached.</p>
      */
-    inline void SetParentReference(ObjectReference&& value) { m_parentReferenceHasBeenSet = true; m_parentReference = value; }
+    inline void SetParentReference(ObjectReference&& value) { m_parentReferenceHasBeenSet = true; m_parentReference = std::move(value); }
 
     /**
      * <p>If specified, the parent reference to which this object will be attached.</p>
@@ -155,7 +156,7 @@ namespace Model
     /**
      * <p>If specified, the parent reference to which this object will be attached.</p>
      */
-    inline BatchCreateObject& WithParentReference(ObjectReference&& value) { SetParentReference(value); return *this;}
+    inline BatchCreateObject& WithParentReference(ObjectReference&& value) { SetParentReference(std::move(value)); return *this;}
 
     /**
      * <p>The name of the link.</p>
@@ -170,7 +171,7 @@ namespace Model
     /**
      * <p>The name of the link.</p>
      */
-    inline void SetLinkName(Aws::String&& value) { m_linkNameHasBeenSet = true; m_linkName = value; }
+    inline void SetLinkName(Aws::String&& value) { m_linkNameHasBeenSet = true; m_linkName = std::move(value); }
 
     /**
      * <p>The name of the link.</p>
@@ -185,7 +186,7 @@ namespace Model
     /**
      * <p>The name of the link.</p>
      */
-    inline BatchCreateObject& WithLinkName(Aws::String&& value) { SetLinkName(value); return *this;}
+    inline BatchCreateObject& WithLinkName(Aws::String&& value) { SetLinkName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the link.</p>
@@ -211,7 +212,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_advanced.html#batches">Batches</a>
      * for more information.</p>
      */
-    inline void SetBatchReferenceName(Aws::String&& value) { m_batchReferenceNameHasBeenSet = true; m_batchReferenceName = value; }
+    inline void SetBatchReferenceName(Aws::String&& value) { m_batchReferenceNameHasBeenSet = true; m_batchReferenceName = std::move(value); }
 
     /**
      * <p>The batch reference name. See <a
@@ -232,7 +233,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_advanced.html#batches">Batches</a>
      * for more information.</p>
      */
-    inline BatchCreateObject& WithBatchReferenceName(Aws::String&& value) { SetBatchReferenceName(value); return *this;}
+    inline BatchCreateObject& WithBatchReferenceName(Aws::String&& value) { SetBatchReferenceName(std::move(value)); return *this;}
 
     /**
      * <p>The batch reference name. See <a

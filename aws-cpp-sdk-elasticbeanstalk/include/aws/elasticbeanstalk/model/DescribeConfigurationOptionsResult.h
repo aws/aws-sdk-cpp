@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/elasticbeanstalk/model/ResponseMetadata.h>
 #include <aws/elasticbeanstalk/model/ConfigurationOptionDescription.h>
+#include <utility>
 
 namespace Aws
 {
@@ -61,7 +62,7 @@ namespace Model
     /**
      * <p>The name of the solution stack these configuration options belong to.</p>
      */
-    inline void SetSolutionStackName(Aws::String&& value) { m_solutionStackName = value; }
+    inline void SetSolutionStackName(Aws::String&& value) { m_solutionStackName = std::move(value); }
 
     /**
      * <p>The name of the solution stack these configuration options belong to.</p>
@@ -76,7 +77,7 @@ namespace Model
     /**
      * <p>The name of the solution stack these configuration options belong to.</p>
      */
-    inline DescribeConfigurationOptionsResult& WithSolutionStackName(Aws::String&& value) { SetSolutionStackName(value); return *this;}
+    inline DescribeConfigurationOptionsResult& WithSolutionStackName(Aws::String&& value) { SetSolutionStackName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the solution stack these configuration options belong to.</p>
@@ -96,7 +97,7 @@ namespace Model
     /**
      * <p>The ARN of the custom platform.</p>
      */
-    inline void SetPlatformArn(Aws::String&& value) { m_platformArn = value; }
+    inline void SetPlatformArn(Aws::String&& value) { m_platformArn = std::move(value); }
 
     /**
      * <p>The ARN of the custom platform.</p>
@@ -111,7 +112,7 @@ namespace Model
     /**
      * <p>The ARN of the custom platform.</p>
      */
-    inline DescribeConfigurationOptionsResult& WithPlatformArn(Aws::String&& value) { SetPlatformArn(value); return *this;}
+    inline DescribeConfigurationOptionsResult& WithPlatformArn(Aws::String&& value) { SetPlatformArn(std::move(value)); return *this;}
 
     /**
      * <p>The ARN of the custom platform.</p>
@@ -131,7 +132,7 @@ namespace Model
     /**
      * <p> A list of <a>ConfigurationOptionDescription</a>. </p>
      */
-    inline void SetOptions(Aws::Vector<ConfigurationOptionDescription>&& value) { m_options = value; }
+    inline void SetOptions(Aws::Vector<ConfigurationOptionDescription>&& value) { m_options = std::move(value); }
 
     /**
      * <p> A list of <a>ConfigurationOptionDescription</a>. </p>
@@ -141,7 +142,7 @@ namespace Model
     /**
      * <p> A list of <a>ConfigurationOptionDescription</a>. </p>
      */
-    inline DescribeConfigurationOptionsResult& WithOptions(Aws::Vector<ConfigurationOptionDescription>&& value) { SetOptions(value); return *this;}
+    inline DescribeConfigurationOptionsResult& WithOptions(Aws::Vector<ConfigurationOptionDescription>&& value) { SetOptions(std::move(value)); return *this;}
 
     /**
      * <p> A list of <a>ConfigurationOptionDescription</a>. </p>
@@ -151,7 +152,7 @@ namespace Model
     /**
      * <p> A list of <a>ConfigurationOptionDescription</a>. </p>
      */
-    inline DescribeConfigurationOptionsResult& AddOptions(ConfigurationOptionDescription&& value) { m_options.push_back(value); return *this; }
+    inline DescribeConfigurationOptionsResult& AddOptions(ConfigurationOptionDescription&& value) { m_options.push_back(std::move(value)); return *this; }
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
@@ -160,13 +161,13 @@ namespace Model
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
 
     
     inline DescribeConfigurationOptionsResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
 
     
-    inline DescribeConfigurationOptionsResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
+    inline DescribeConfigurationOptionsResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
     Aws::String m_solutionStackName;

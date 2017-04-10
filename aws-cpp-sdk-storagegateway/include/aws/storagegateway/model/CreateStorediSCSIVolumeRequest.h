@@ -16,6 +16,7 @@
 #include <aws/storagegateway/StorageGateway_EXPORTS.h>
 #include <aws/storagegateway/StorageGatewayRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -51,7 +52,7 @@ namespace Model
     inline void SetGatewayARN(const Aws::String& value) { m_gatewayARNHasBeenSet = true; m_gatewayARN = value; }
 
     
-    inline void SetGatewayARN(Aws::String&& value) { m_gatewayARNHasBeenSet = true; m_gatewayARN = value; }
+    inline void SetGatewayARN(Aws::String&& value) { m_gatewayARNHasBeenSet = true; m_gatewayARN = std::move(value); }
 
     
     inline void SetGatewayARN(const char* value) { m_gatewayARNHasBeenSet = true; m_gatewayARN.assign(value); }
@@ -60,7 +61,7 @@ namespace Model
     inline CreateStorediSCSIVolumeRequest& WithGatewayARN(const Aws::String& value) { SetGatewayARN(value); return *this;}
 
     
-    inline CreateStorediSCSIVolumeRequest& WithGatewayARN(Aws::String&& value) { SetGatewayARN(value); return *this;}
+    inline CreateStorediSCSIVolumeRequest& WithGatewayARN(Aws::String&& value) { SetGatewayARN(std::move(value)); return *this;}
 
     
     inline CreateStorediSCSIVolumeRequest& WithGatewayARN(const char* value) { SetGatewayARN(value); return *this;}
@@ -87,7 +88,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/storagegateway/latest/userguide/API_ListLocalDisks.html">ListLocalDisks</a>
      * to list disk IDs for a gateway.</p>
      */
-    inline void SetDiskId(Aws::String&& value) { m_diskIdHasBeenSet = true; m_diskId = value; }
+    inline void SetDiskId(Aws::String&& value) { m_diskIdHasBeenSet = true; m_diskId = std::move(value); }
 
     /**
      * <p>The unique identifier for the gateway local disk that is configured as a
@@ -111,7 +112,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/storagegateway/latest/userguide/API_ListLocalDisks.html">ListLocalDisks</a>
      * to list disk IDs for a gateway.</p>
      */
-    inline CreateStorediSCSIVolumeRequest& WithDiskId(Aws::String&& value) { SetDiskId(value); return *this;}
+    inline CreateStorediSCSIVolumeRequest& WithDiskId(Aws::String&& value) { SetDiskId(std::move(value)); return *this;}
 
     /**
      * <p>The unique identifier for the gateway local disk that is configured as a
@@ -149,7 +150,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-DescribeSnapshots.html">DescribeSnapshots</a>
      * in the <i>Amazon Elastic Compute Cloud API Reference</i>.</p>
      */
-    inline void SetSnapshotId(Aws::String&& value) { m_snapshotIdHasBeenSet = true; m_snapshotId = value; }
+    inline void SetSnapshotId(Aws::String&& value) { m_snapshotIdHasBeenSet = true; m_snapshotId = std::move(value); }
 
     /**
      * <p>The snapshot ID (e.g. "snap-1122aabb") of the snapshot to restore as the new
@@ -179,7 +180,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-DescribeSnapshots.html">DescribeSnapshots</a>
      * in the <i>Amazon Elastic Compute Cloud API Reference</i>.</p>
      */
-    inline CreateStorediSCSIVolumeRequest& WithSnapshotId(Aws::String&& value) { SetSnapshotId(value); return *this;}
+    inline CreateStorediSCSIVolumeRequest& WithSnapshotId(Aws::String&& value) { SetSnapshotId(std::move(value)); return *this;}
 
     /**
      * <p>The snapshot ID (e.g. "snap-1122aabb") of the snapshot to restore as the new
@@ -237,7 +238,7 @@ namespace Model
      * arn:aws:storagegateway:us-east-1:111122223333:gateway/sgw-12A3456B/target/iqn.1997-05.com.amazon:myvolume.
      * The target name must be unique across all volumes of a gateway.</p>
      */
-    inline void SetTargetName(Aws::String&& value) { m_targetNameHasBeenSet = true; m_targetName = value; }
+    inline void SetTargetName(Aws::String&& value) { m_targetNameHasBeenSet = true; m_targetName = std::move(value); }
 
     /**
      * <p>The name of the iSCSI target used by initiators to connect to the target and
@@ -264,7 +265,7 @@ namespace Model
      * arn:aws:storagegateway:us-east-1:111122223333:gateway/sgw-12A3456B/target/iqn.1997-05.com.amazon:myvolume.
      * The target name must be unique across all volumes of a gateway.</p>
      */
-    inline CreateStorediSCSIVolumeRequest& WithTargetName(Aws::String&& value) { SetTargetName(value); return *this;}
+    inline CreateStorediSCSIVolumeRequest& WithTargetName(Aws::String&& value) { SetTargetName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the iSCSI target used by initiators to connect to the target and
@@ -297,7 +298,7 @@ namespace Model
      * list of the network interfaces available on a gateway.</p> <p> Valid Values: A
      * valid IP address.</p>
      */
-    inline void SetNetworkInterfaceId(Aws::String&& value) { m_networkInterfaceIdHasBeenSet = true; m_networkInterfaceId = value; }
+    inline void SetNetworkInterfaceId(Aws::String&& value) { m_networkInterfaceIdHasBeenSet = true; m_networkInterfaceId = std::move(value); }
 
     /**
      * <p>The network interface of the gateway on which to expose the iSCSI target.
@@ -321,7 +322,7 @@ namespace Model
      * list of the network interfaces available on a gateway.</p> <p> Valid Values: A
      * valid IP address.</p>
      */
-    inline CreateStorediSCSIVolumeRequest& WithNetworkInterfaceId(Aws::String&& value) { SetNetworkInterfaceId(value); return *this;}
+    inline CreateStorediSCSIVolumeRequest& WithNetworkInterfaceId(Aws::String&& value) { SetNetworkInterfaceId(std::move(value)); return *this;}
 
     /**
      * <p>The network interface of the gateway on which to expose the iSCSI target.

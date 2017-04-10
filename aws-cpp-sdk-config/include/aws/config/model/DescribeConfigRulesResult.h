@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/config/model/ConfigRule.h>
+#include <utility>
 
 namespace Aws
 {
@@ -59,7 +60,7 @@ namespace Model
     /**
      * <p>The details about your AWS Config rules.</p>
      */
-    inline void SetConfigRules(Aws::Vector<ConfigRule>&& value) { m_configRules = value; }
+    inline void SetConfigRules(Aws::Vector<ConfigRule>&& value) { m_configRules = std::move(value); }
 
     /**
      * <p>The details about your AWS Config rules.</p>
@@ -69,7 +70,7 @@ namespace Model
     /**
      * <p>The details about your AWS Config rules.</p>
      */
-    inline DescribeConfigRulesResult& WithConfigRules(Aws::Vector<ConfigRule>&& value) { SetConfigRules(value); return *this;}
+    inline DescribeConfigRulesResult& WithConfigRules(Aws::Vector<ConfigRule>&& value) { SetConfigRules(std::move(value)); return *this;}
 
     /**
      * <p>The details about your AWS Config rules.</p>
@@ -79,7 +80,7 @@ namespace Model
     /**
      * <p>The details about your AWS Config rules.</p>
      */
-    inline DescribeConfigRulesResult& AddConfigRules(ConfigRule&& value) { m_configRules.push_back(value); return *this; }
+    inline DescribeConfigRulesResult& AddConfigRules(ConfigRule&& value) { m_configRules.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The string that you use in a subsequent request to get the next page of
@@ -97,7 +98,7 @@ namespace Model
      * <p>The string that you use in a subsequent request to get the next page of
      * results in a paginated response.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
      * <p>The string that you use in a subsequent request to get the next page of
@@ -115,7 +116,7 @@ namespace Model
      * <p>The string that you use in a subsequent request to get the next page of
      * results in a paginated response.</p>
      */
-    inline DescribeConfigRulesResult& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline DescribeConfigRulesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>The string that you use in a subsequent request to get the next page of

@@ -16,6 +16,7 @@
 #include <aws/cloudfront/CloudFront_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/cloudfront/model/CacheBehavior.h>
+#include <utility>
 
 namespace Aws
 {
@@ -77,7 +78,7 @@ namespace Model
      * Optional: A complex type that contains cache behaviors for this distribution. If
      * Quantity is 0, you can omit Items.
      */
-    inline void SetItems(Aws::Vector<CacheBehavior>&& value) { m_itemsHasBeenSet = true; m_items = value; }
+    inline void SetItems(Aws::Vector<CacheBehavior>&& value) { m_itemsHasBeenSet = true; m_items = std::move(value); }
 
     /**
      * Optional: A complex type that contains cache behaviors for this distribution. If
@@ -89,7 +90,7 @@ namespace Model
      * Optional: A complex type that contains cache behaviors for this distribution. If
      * Quantity is 0, you can omit Items.
      */
-    inline CacheBehaviors& WithItems(Aws::Vector<CacheBehavior>&& value) { SetItems(value); return *this;}
+    inline CacheBehaviors& WithItems(Aws::Vector<CacheBehavior>&& value) { SetItems(std::move(value)); return *this;}
 
     /**
      * Optional: A complex type that contains cache behaviors for this distribution. If
@@ -101,7 +102,7 @@ namespace Model
      * Optional: A complex type that contains cache behaviors for this distribution. If
      * Quantity is 0, you can omit Items.
      */
-    inline CacheBehaviors& AddItems(CacheBehavior&& value) { m_itemsHasBeenSet = true; m_items.push_back(value); return *this; }
+    inline CacheBehaviors& AddItems(CacheBehavior&& value) { m_itemsHasBeenSet = true; m_items.push_back(std::move(value)); return *this; }
 
   private:
     int m_quantity;

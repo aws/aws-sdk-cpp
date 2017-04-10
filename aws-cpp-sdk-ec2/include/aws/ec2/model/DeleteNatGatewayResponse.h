@@ -16,6 +16,7 @@
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/ResponseMetadata.h>
+#include <utility>
 
 namespace Aws
 {
@@ -58,7 +59,7 @@ namespace Model
     /**
      * <p>The ID of the NAT gateway.</p>
      */
-    inline void SetNatGatewayId(Aws::String&& value) { m_natGatewayId = value; }
+    inline void SetNatGatewayId(Aws::String&& value) { m_natGatewayId = std::move(value); }
 
     /**
      * <p>The ID of the NAT gateway.</p>
@@ -73,7 +74,7 @@ namespace Model
     /**
      * <p>The ID of the NAT gateway.</p>
      */
-    inline DeleteNatGatewayResponse& WithNatGatewayId(Aws::String&& value) { SetNatGatewayId(value); return *this;}
+    inline DeleteNatGatewayResponse& WithNatGatewayId(Aws::String&& value) { SetNatGatewayId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the NAT gateway.</p>
@@ -87,13 +88,13 @@ namespace Model
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
 
     
     inline DeleteNatGatewayResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
 
     
-    inline DeleteNatGatewayResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
+    inline DeleteNatGatewayResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
     Aws::String m_natGatewayId;

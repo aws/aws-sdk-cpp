@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ec2/model/PriceScheduleSpecification.h>
+#include <utility>
 
 namespace Aws
 {
@@ -56,7 +57,7 @@ namespace Model
     /**
      * <p>The ID of the active Standard Reserved Instance.</p>
      */
-    inline void SetReservedInstancesId(Aws::String&& value) { m_reservedInstancesIdHasBeenSet = true; m_reservedInstancesId = value; }
+    inline void SetReservedInstancesId(Aws::String&& value) { m_reservedInstancesIdHasBeenSet = true; m_reservedInstancesId = std::move(value); }
 
     /**
      * <p>The ID of the active Standard Reserved Instance.</p>
@@ -71,7 +72,7 @@ namespace Model
     /**
      * <p>The ID of the active Standard Reserved Instance.</p>
      */
-    inline CreateReservedInstancesListingRequest& WithReservedInstancesId(Aws::String&& value) { SetReservedInstancesId(value); return *this;}
+    inline CreateReservedInstancesListingRequest& WithReservedInstancesId(Aws::String&& value) { SetReservedInstancesId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the active Standard Reserved Instance.</p>
@@ -118,7 +119,7 @@ namespace Model
      * <p>A list specifying the price of the Standard Reserved Instance for each month
      * remaining in the Reserved Instance term.</p>
      */
-    inline void SetPriceSchedules(Aws::Vector<PriceScheduleSpecification>&& value) { m_priceSchedulesHasBeenSet = true; m_priceSchedules = value; }
+    inline void SetPriceSchedules(Aws::Vector<PriceScheduleSpecification>&& value) { m_priceSchedulesHasBeenSet = true; m_priceSchedules = std::move(value); }
 
     /**
      * <p>A list specifying the price of the Standard Reserved Instance for each month
@@ -130,7 +131,7 @@ namespace Model
      * <p>A list specifying the price of the Standard Reserved Instance for each month
      * remaining in the Reserved Instance term.</p>
      */
-    inline CreateReservedInstancesListingRequest& WithPriceSchedules(Aws::Vector<PriceScheduleSpecification>&& value) { SetPriceSchedules(value); return *this;}
+    inline CreateReservedInstancesListingRequest& WithPriceSchedules(Aws::Vector<PriceScheduleSpecification>&& value) { SetPriceSchedules(std::move(value)); return *this;}
 
     /**
      * <p>A list specifying the price of the Standard Reserved Instance for each month
@@ -142,7 +143,7 @@ namespace Model
      * <p>A list specifying the price of the Standard Reserved Instance for each month
      * remaining in the Reserved Instance term.</p>
      */
-    inline CreateReservedInstancesListingRequest& AddPriceSchedules(PriceScheduleSpecification&& value) { m_priceSchedulesHasBeenSet = true; m_priceSchedules.push_back(value); return *this; }
+    inline CreateReservedInstancesListingRequest& AddPriceSchedules(PriceScheduleSpecification&& value) { m_priceSchedulesHasBeenSet = true; m_priceSchedules.push_back(std::move(value)); return *this; }
 
     /**
      * <p>Unique, case-sensitive identifier you provide to ensure idempotency of your
@@ -166,7 +167,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
      * Idempotency</a>.</p>
      */
-    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
+    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
 
     /**
      * <p>Unique, case-sensitive identifier you provide to ensure idempotency of your
@@ -190,7 +191,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
      * Idempotency</a>.</p>
      */
-    inline CreateReservedInstancesListingRequest& WithClientToken(Aws::String&& value) { SetClientToken(value); return *this;}
+    inline CreateReservedInstancesListingRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
 
     /**
      * <p>Unique, case-sensitive identifier you provide to ensure idempotency of your

@@ -16,6 +16,7 @@
 #include <aws/logs/CloudWatchLogs_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/logs/model/RejectedLogEventsInfo.h>
+#include <utility>
 
 namespace Aws
 {
@@ -53,7 +54,7 @@ namespace Model
     /**
      * <p>The next sequence token.</p>
      */
-    inline void SetNextSequenceToken(Aws::String&& value) { m_nextSequenceToken = value; }
+    inline void SetNextSequenceToken(Aws::String&& value) { m_nextSequenceToken = std::move(value); }
 
     /**
      * <p>The next sequence token.</p>
@@ -68,7 +69,7 @@ namespace Model
     /**
      * <p>The next sequence token.</p>
      */
-    inline PutLogEventsResult& WithNextSequenceToken(Aws::String&& value) { SetNextSequenceToken(value); return *this;}
+    inline PutLogEventsResult& WithNextSequenceToken(Aws::String&& value) { SetNextSequenceToken(std::move(value)); return *this;}
 
     /**
      * <p>The next sequence token.</p>
@@ -88,7 +89,7 @@ namespace Model
     /**
      * <p>The rejected events.</p>
      */
-    inline void SetRejectedLogEventsInfo(RejectedLogEventsInfo&& value) { m_rejectedLogEventsInfo = value; }
+    inline void SetRejectedLogEventsInfo(RejectedLogEventsInfo&& value) { m_rejectedLogEventsInfo = std::move(value); }
 
     /**
      * <p>The rejected events.</p>
@@ -98,7 +99,7 @@ namespace Model
     /**
      * <p>The rejected events.</p>
      */
-    inline PutLogEventsResult& WithRejectedLogEventsInfo(RejectedLogEventsInfo&& value) { SetRejectedLogEventsInfo(value); return *this;}
+    inline PutLogEventsResult& WithRejectedLogEventsInfo(RejectedLogEventsInfo&& value) { SetRejectedLogEventsInfo(std::move(value)); return *this;}
 
   private:
     Aws::String m_nextSequenceToken;

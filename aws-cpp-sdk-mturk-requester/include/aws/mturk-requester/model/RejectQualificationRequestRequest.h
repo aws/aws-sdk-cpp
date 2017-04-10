@@ -16,6 +16,7 @@
 #include <aws/mturk-requester/MTurk_EXPORTS.h>
 #include <aws/mturk-requester/MTurkRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -51,7 +52,7 @@ namespace Model
      * <p> The ID of the Qualification request, as returned by the
      * <code>ListQualificationRequests</code> operation. </p>
      */
-    inline void SetQualificationRequestId(Aws::String&& value) { m_qualificationRequestIdHasBeenSet = true; m_qualificationRequestId = value; }
+    inline void SetQualificationRequestId(Aws::String&& value) { m_qualificationRequestIdHasBeenSet = true; m_qualificationRequestId = std::move(value); }
 
     /**
      * <p> The ID of the Qualification request, as returned by the
@@ -69,7 +70,7 @@ namespace Model
      * <p> The ID of the Qualification request, as returned by the
      * <code>ListQualificationRequests</code> operation. </p>
      */
-    inline RejectQualificationRequestRequest& WithQualificationRequestId(Aws::String&& value) { SetQualificationRequestId(value); return *this;}
+    inline RejectQualificationRequestRequest& WithQualificationRequestId(Aws::String&& value) { SetQualificationRequestId(std::move(value)); return *this;}
 
     /**
      * <p> The ID of the Qualification request, as returned by the
@@ -93,7 +94,7 @@ namespace Model
      * <p>A text message explaining why the request was rejected, to be shown to the
      * Worker who made the request.</p>
      */
-    inline void SetReason(Aws::String&& value) { m_reasonHasBeenSet = true; m_reason = value; }
+    inline void SetReason(Aws::String&& value) { m_reasonHasBeenSet = true; m_reason = std::move(value); }
 
     /**
      * <p>A text message explaining why the request was rejected, to be shown to the
@@ -111,7 +112,7 @@ namespace Model
      * <p>A text message explaining why the request was rejected, to be shown to the
      * Worker who made the request.</p>
      */
-    inline RejectQualificationRequestRequest& WithReason(Aws::String&& value) { SetReason(value); return *this;}
+    inline RejectQualificationRequestRequest& WithReason(Aws::String&& value) { SetReason(std::move(value)); return *this;}
 
     /**
      * <p>A text message explaining why the request was rejected, to be shown to the

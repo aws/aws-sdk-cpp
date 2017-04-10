@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/cloudtrail/model/Event.h>
+#include <utility>
 
 namespace Aws
 {
@@ -65,7 +66,7 @@ namespace Model
      * CloudTrail event. The events list is sorted by time. The most recent event is
      * listed first.</p>
      */
-    inline void SetEvents(Aws::Vector<Event>&& value) { m_events = value; }
+    inline void SetEvents(Aws::Vector<Event>&& value) { m_events = std::move(value); }
 
     /**
      * <p>A list of events returned based on the lookup attributes specified and the
@@ -79,7 +80,7 @@ namespace Model
      * CloudTrail event. The events list is sorted by time. The most recent event is
      * listed first.</p>
      */
-    inline LookupEventsResult& WithEvents(Aws::Vector<Event>&& value) { SetEvents(value); return *this;}
+    inline LookupEventsResult& WithEvents(Aws::Vector<Event>&& value) { SetEvents(std::move(value)); return *this;}
 
     /**
      * <p>A list of events returned based on the lookup attributes specified and the
@@ -93,7 +94,7 @@ namespace Model
      * CloudTrail event. The events list is sorted by time. The most recent event is
      * listed first.</p>
      */
-    inline LookupEventsResult& AddEvents(Event&& value) { m_events.push_back(value); return *this; }
+    inline LookupEventsResult& AddEvents(Event&& value) { m_events.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The token to use to get the next page of results after a previous API call.
@@ -120,7 +121,7 @@ namespace Model
      * the original call specified an AttributeKey of 'Username' with a value of
      * 'root', the call with NextToken should include those same parameters.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
      * <p>The token to use to get the next page of results after a previous API call.
@@ -147,7 +148,7 @@ namespace Model
      * the original call specified an AttributeKey of 'Username' with a value of
      * 'root', the call with NextToken should include those same parameters.</p>
      */
-    inline LookupEventsResult& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline LookupEventsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>The token to use to get the next page of results after a previous API call.

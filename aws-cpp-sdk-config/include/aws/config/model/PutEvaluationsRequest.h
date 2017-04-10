@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/config/model/Evaluation.h>
+#include <utility>
 
 namespace Aws
 {
@@ -59,7 +60,7 @@ namespace Model
      * identifies an AWS resource and indicates whether it complies with the AWS Config
      * rule that invokes the AWS Lambda function.</p>
      */
-    inline void SetEvaluations(Aws::Vector<Evaluation>&& value) { m_evaluationsHasBeenSet = true; m_evaluations = value; }
+    inline void SetEvaluations(Aws::Vector<Evaluation>&& value) { m_evaluationsHasBeenSet = true; m_evaluations = std::move(value); }
 
     /**
      * <p>The assessments that the AWS Lambda function performs. Each evaluation
@@ -73,7 +74,7 @@ namespace Model
      * identifies an AWS resource and indicates whether it complies with the AWS Config
      * rule that invokes the AWS Lambda function.</p>
      */
-    inline PutEvaluationsRequest& WithEvaluations(Aws::Vector<Evaluation>&& value) { SetEvaluations(value); return *this;}
+    inline PutEvaluationsRequest& WithEvaluations(Aws::Vector<Evaluation>&& value) { SetEvaluations(std::move(value)); return *this;}
 
     /**
      * <p>The assessments that the AWS Lambda function performs. Each evaluation
@@ -87,7 +88,7 @@ namespace Model
      * identifies an AWS resource and indicates whether it complies with the AWS Config
      * rule that invokes the AWS Lambda function.</p>
      */
-    inline PutEvaluationsRequest& AddEvaluations(Evaluation&& value) { m_evaluationsHasBeenSet = true; m_evaluations.push_back(value); return *this; }
+    inline PutEvaluationsRequest& AddEvaluations(Evaluation&& value) { m_evaluationsHasBeenSet = true; m_evaluations.push_back(std::move(value)); return *this; }
 
     /**
      * <p>An encrypted token that associates an evaluation with an AWS Config rule.
@@ -105,7 +106,7 @@ namespace Model
      * <p>An encrypted token that associates an evaluation with an AWS Config rule.
      * Identifies the rule and the event that triggered the evaluation</p>
      */
-    inline void SetResultToken(Aws::String&& value) { m_resultTokenHasBeenSet = true; m_resultToken = value; }
+    inline void SetResultToken(Aws::String&& value) { m_resultTokenHasBeenSet = true; m_resultToken = std::move(value); }
 
     /**
      * <p>An encrypted token that associates an evaluation with an AWS Config rule.
@@ -123,7 +124,7 @@ namespace Model
      * <p>An encrypted token that associates an evaluation with an AWS Config rule.
      * Identifies the rule and the event that triggered the evaluation</p>
      */
-    inline PutEvaluationsRequest& WithResultToken(Aws::String&& value) { SetResultToken(value); return *this;}
+    inline PutEvaluationsRequest& WithResultToken(Aws::String&& value) { SetResultToken(std::move(value)); return *this;}
 
     /**
      * <p>An encrypted token that associates an evaluation with an AWS Config rule.

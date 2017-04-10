@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/redshift/model/Tag.h>
+#include <utility>
 
 namespace Aws
 {
@@ -88,7 +89,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved
      * Words</a> in the Amazon Redshift Database Developer Guide. </p> </li> </ul>
      */
-    inline void SetDBName(Aws::String&& value) { m_dBNameHasBeenSet = true; m_dBName = value; }
+    inline void SetDBName(Aws::String&& value) { m_dBNameHasBeenSet = true; m_dBName = std::move(value); }
 
     /**
      * <p>The name of the first database to be created when the cluster is created.</p>
@@ -136,7 +137,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved
      * Words</a> in the Amazon Redshift Database Developer Guide. </p> </li> </ul>
      */
-    inline CreateClusterRequest& WithDBName(Aws::String&& value) { SetDBName(value); return *this;}
+    inline CreateClusterRequest& WithDBName(Aws::String&& value) { SetDBName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the first database to be created when the cluster is created.</p>
@@ -191,7 +192,7 @@ namespace Model
      * clusters within an AWS account.</p> </li> </ul> <p>Example:
      * <code>myexamplecluster</code> </p>
      */
-    inline void SetClusterIdentifier(Aws::String&& value) { m_clusterIdentifierHasBeenSet = true; m_clusterIdentifier = value; }
+    inline void SetClusterIdentifier(Aws::String&& value) { m_clusterIdentifierHasBeenSet = true; m_clusterIdentifier = std::move(value); }
 
     /**
      * <p>A unique identifier for the cluster. You use this identifier to refer to the
@@ -230,7 +231,7 @@ namespace Model
      * clusters within an AWS account.</p> </li> </ul> <p>Example:
      * <code>myexamplecluster</code> </p>
      */
-    inline CreateClusterRequest& WithClusterIdentifier(Aws::String&& value) { SetClusterIdentifier(value); return *this;}
+    inline CreateClusterRequest& WithClusterIdentifier(Aws::String&& value) { SetClusterIdentifier(std::move(value)); return *this;}
 
     /**
      * <p>A unique identifier for the cluster. You use this identifier to refer to the
@@ -270,7 +271,7 @@ namespace Model
      * parameter is required.</p> </li> </ul> <p>Valid Values: <code>multi-node</code>
      * | <code>single-node</code> </p> <p>Default: <code>multi-node</code> </p>
      */
-    inline void SetClusterType(Aws::String&& value) { m_clusterTypeHasBeenSet = true; m_clusterType = value; }
+    inline void SetClusterType(Aws::String&& value) { m_clusterTypeHasBeenSet = true; m_clusterType = std::move(value); }
 
     /**
      * <p>The type of the cluster. When cluster type is specified as</p> <ul> <li> <p>
@@ -297,7 +298,7 @@ namespace Model
      * parameter is required.</p> </li> </ul> <p>Valid Values: <code>multi-node</code>
      * | <code>single-node</code> </p> <p>Default: <code>multi-node</code> </p>
      */
-    inline CreateClusterRequest& WithClusterType(Aws::String&& value) { SetClusterType(value); return *this;}
+    inline CreateClusterRequest& WithClusterType(Aws::String&& value) { SetClusterType(std::move(value)); return *this;}
 
     /**
      * <p>The type of the cluster. When cluster type is specified as</p> <ul> <li> <p>
@@ -339,7 +340,7 @@ namespace Model
      * <code>ds1.8xlarge</code> | <code>ds2.xlarge</code> | <code>ds2.8xlarge</code> |
      * <code>dc1.large</code> | <code>dc1.8xlarge</code>. </p>
      */
-    inline void SetNodeType(Aws::String&& value) { m_nodeTypeHasBeenSet = true; m_nodeType = value; }
+    inline void SetNodeType(Aws::String&& value) { m_nodeTypeHasBeenSet = true; m_nodeType = std::move(value); }
 
     /**
      * <p>The node type to be provisioned for the cluster. For information about node
@@ -372,7 +373,7 @@ namespace Model
      * <code>ds1.8xlarge</code> | <code>ds2.xlarge</code> | <code>ds2.8xlarge</code> |
      * <code>dc1.large</code> | <code>dc1.8xlarge</code>. </p>
      */
-    inline CreateClusterRequest& WithNodeType(Aws::String&& value) { SetNodeType(value); return *this;}
+    inline CreateClusterRequest& WithNodeType(Aws::String&& value) { SetNodeType(std::move(value)); return *this;}
 
     /**
      * <p>The node type to be provisioned for the cluster. For information about node
@@ -413,7 +414,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved
      * Words</a> in the Amazon Redshift Database Developer Guide. </p> </li> </ul>
      */
-    inline void SetMasterUsername(Aws::String&& value) { m_masterUsernameHasBeenSet = true; m_masterUsername = value; }
+    inline void SetMasterUsername(Aws::String&& value) { m_masterUsernameHasBeenSet = true; m_masterUsername = std::move(value); }
 
     /**
      * <p>The user name associated with the master user account for the cluster that is
@@ -443,7 +444,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved
      * Words</a> in the Amazon Redshift Database Developer Guide. </p> </li> </ul>
      */
-    inline CreateClusterRequest& WithMasterUsername(Aws::String&& value) { SetMasterUsername(value); return *this;}
+    inline CreateClusterRequest& WithMasterUsername(Aws::String&& value) { SetMasterUsername(std::move(value)); return *this;}
 
     /**
      * <p>The user name associated with the master user account for the cluster that is
@@ -486,7 +487,7 @@ namespace Model
      * character (ASCII code 33 to 126) except ' (single quote), " (double quote), \,
      * /, @, or space.</p> </li> </ul>
      */
-    inline void SetMasterUserPassword(Aws::String&& value) { m_masterUserPasswordHasBeenSet = true; m_masterUserPassword = value; }
+    inline void SetMasterUserPassword(Aws::String&& value) { m_masterUserPasswordHasBeenSet = true; m_masterUserPassword = std::move(value); }
 
     /**
      * <p>The password associated with the master user account for the cluster that is
@@ -519,7 +520,7 @@ namespace Model
      * character (ASCII code 33 to 126) except ' (single quote), " (double quote), \,
      * /, @, or space.</p> </li> </ul>
      */
-    inline CreateClusterRequest& WithMasterUserPassword(Aws::String&& value) { SetMasterUserPassword(value); return *this;}
+    inline CreateClusterRequest& WithMasterUserPassword(Aws::String&& value) { SetMasterUserPassword(std::move(value)); return *this;}
 
     /**
      * <p>The password associated with the master user account for the cluster that is
@@ -548,7 +549,7 @@ namespace Model
      * <p>A list of security groups to be associated with this cluster.</p> <p>Default:
      * The default cluster security group for Amazon Redshift.</p>
      */
-    inline void SetClusterSecurityGroups(Aws::Vector<Aws::String>&& value) { m_clusterSecurityGroupsHasBeenSet = true; m_clusterSecurityGroups = value; }
+    inline void SetClusterSecurityGroups(Aws::Vector<Aws::String>&& value) { m_clusterSecurityGroupsHasBeenSet = true; m_clusterSecurityGroups = std::move(value); }
 
     /**
      * <p>A list of security groups to be associated with this cluster.</p> <p>Default:
@@ -560,7 +561,7 @@ namespace Model
      * <p>A list of security groups to be associated with this cluster.</p> <p>Default:
      * The default cluster security group for Amazon Redshift.</p>
      */
-    inline CreateClusterRequest& WithClusterSecurityGroups(Aws::Vector<Aws::String>&& value) { SetClusterSecurityGroups(value); return *this;}
+    inline CreateClusterRequest& WithClusterSecurityGroups(Aws::Vector<Aws::String>&& value) { SetClusterSecurityGroups(std::move(value)); return *this;}
 
     /**
      * <p>A list of security groups to be associated with this cluster.</p> <p>Default:
@@ -572,7 +573,7 @@ namespace Model
      * <p>A list of security groups to be associated with this cluster.</p> <p>Default:
      * The default cluster security group for Amazon Redshift.</p>
      */
-    inline CreateClusterRequest& AddClusterSecurityGroups(Aws::String&& value) { m_clusterSecurityGroupsHasBeenSet = true; m_clusterSecurityGroups.push_back(value); return *this; }
+    inline CreateClusterRequest& AddClusterSecurityGroups(Aws::String&& value) { m_clusterSecurityGroupsHasBeenSet = true; m_clusterSecurityGroups.push_back(std::move(value)); return *this; }
 
     /**
      * <p>A list of security groups to be associated with this cluster.</p> <p>Default:
@@ -599,7 +600,7 @@ namespace Model
      * the cluster.</p> <p>Default: The default VPC security group is associated with
      * the cluster.</p>
      */
-    inline void SetVpcSecurityGroupIds(Aws::Vector<Aws::String>&& value) { m_vpcSecurityGroupIdsHasBeenSet = true; m_vpcSecurityGroupIds = value; }
+    inline void SetVpcSecurityGroupIds(Aws::Vector<Aws::String>&& value) { m_vpcSecurityGroupIdsHasBeenSet = true; m_vpcSecurityGroupIds = std::move(value); }
 
     /**
      * <p>A list of Virtual Private Cloud (VPC) security groups to be associated with
@@ -613,7 +614,7 @@ namespace Model
      * the cluster.</p> <p>Default: The default VPC security group is associated with
      * the cluster.</p>
      */
-    inline CreateClusterRequest& WithVpcSecurityGroupIds(Aws::Vector<Aws::String>&& value) { SetVpcSecurityGroupIds(value); return *this;}
+    inline CreateClusterRequest& WithVpcSecurityGroupIds(Aws::Vector<Aws::String>&& value) { SetVpcSecurityGroupIds(std::move(value)); return *this;}
 
     /**
      * <p>A list of Virtual Private Cloud (VPC) security groups to be associated with
@@ -627,7 +628,7 @@ namespace Model
      * the cluster.</p> <p>Default: The default VPC security group is associated with
      * the cluster.</p>
      */
-    inline CreateClusterRequest& AddVpcSecurityGroupIds(Aws::String&& value) { m_vpcSecurityGroupIdsHasBeenSet = true; m_vpcSecurityGroupIds.push_back(value); return *this; }
+    inline CreateClusterRequest& AddVpcSecurityGroupIds(Aws::String&& value) { m_vpcSecurityGroupIdsHasBeenSet = true; m_vpcSecurityGroupIds.push_back(std::move(value)); return *this; }
 
     /**
      * <p>A list of Virtual Private Cloud (VPC) security groups to be associated with
@@ -655,7 +656,7 @@ namespace Model
      * <p>If this parameter is not provided the resulting cluster will be deployed
      * outside virtual private cloud (VPC).</p>
      */
-    inline void SetClusterSubnetGroupName(Aws::String&& value) { m_clusterSubnetGroupNameHasBeenSet = true; m_clusterSubnetGroupName = value; }
+    inline void SetClusterSubnetGroupName(Aws::String&& value) { m_clusterSubnetGroupNameHasBeenSet = true; m_clusterSubnetGroupName = std::move(value); }
 
     /**
      * <p>The name of a cluster subnet group to be associated with this cluster.</p>
@@ -676,7 +677,7 @@ namespace Model
      * <p>If this parameter is not provided the resulting cluster will be deployed
      * outside virtual private cloud (VPC).</p>
      */
-    inline CreateClusterRequest& WithClusterSubnetGroupName(Aws::String&& value) { SetClusterSubnetGroupName(value); return *this;}
+    inline CreateClusterRequest& WithClusterSubnetGroupName(Aws::String&& value) { SetClusterSubnetGroupName(std::move(value)); return *this;}
 
     /**
      * <p>The name of a cluster subnet group to be associated with this cluster.</p>
@@ -719,7 +720,7 @@ namespace Model
      * specified Availability Zone must be in the same region as the current
      * endpoint.</p>
      */
-    inline void SetAvailabilityZone(Aws::String&& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = value; }
+    inline void SetAvailabilityZone(Aws::String&& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = std::move(value); }
 
     /**
      * <p>The EC2 Availability Zone (AZ) in which you want Amazon Redshift to provision
@@ -755,7 +756,7 @@ namespace Model
      * specified Availability Zone must be in the same region as the current
      * endpoint.</p>
      */
-    inline CreateClusterRequest& WithAvailabilityZone(Aws::String&& value) { SetAvailabilityZone(value); return *this;}
+    inline CreateClusterRequest& WithAvailabilityZone(Aws::String&& value) { SetAvailabilityZone(std::move(value)); return *this;}
 
     /**
      * <p>The EC2 Availability Zone (AZ) in which you want Amazon Redshift to provision
@@ -806,7 +807,7 @@ namespace Model
      * | Tue | Wed | Thu | Fri | Sat | Sun</p> <p>Constraints: Minimum 30-minute
      * window.</p>
      */
-    inline void SetPreferredMaintenanceWindow(Aws::String&& value) { m_preferredMaintenanceWindowHasBeenSet = true; m_preferredMaintenanceWindow = value; }
+    inline void SetPreferredMaintenanceWindow(Aws::String&& value) { m_preferredMaintenanceWindowHasBeenSet = true; m_preferredMaintenanceWindow = std::move(value); }
 
     /**
      * <p>The weekly time range (in UTC) during which automated cluster maintenance can
@@ -845,7 +846,7 @@ namespace Model
      * | Tue | Wed | Thu | Fri | Sat | Sun</p> <p>Constraints: Minimum 30-minute
      * window.</p>
      */
-    inline CreateClusterRequest& WithPreferredMaintenanceWindow(Aws::String&& value) { SetPreferredMaintenanceWindow(value); return *this;}
+    inline CreateClusterRequest& WithPreferredMaintenanceWindow(Aws::String&& value) { SetPreferredMaintenanceWindow(std::move(value)); return *this;}
 
     /**
      * <p>The weekly time range (in UTC) during which automated cluster maintenance can
@@ -894,7 +895,7 @@ namespace Model
      * character must be a letter.</p> </li> <li> <p>Cannot end with a hyphen or
      * contain two consecutive hyphens.</p> </li> </ul>
      */
-    inline void SetClusterParameterGroupName(Aws::String&& value) { m_clusterParameterGroupNameHasBeenSet = true; m_clusterParameterGroupName = value; }
+    inline void SetClusterParameterGroupName(Aws::String&& value) { m_clusterParameterGroupNameHasBeenSet = true; m_clusterParameterGroupName = std::move(value); }
 
     /**
      * <p>The name of the parameter group to be associated with this cluster.</p>
@@ -930,7 +931,7 @@ namespace Model
      * character must be a letter.</p> </li> <li> <p>Cannot end with a hyphen or
      * contain two consecutive hyphens.</p> </li> </ul>
      */
-    inline CreateClusterRequest& WithClusterParameterGroupName(Aws::String&& value) { SetClusterParameterGroupName(value); return *this;}
+    inline CreateClusterRequest& WithClusterParameterGroupName(Aws::String&& value) { SetClusterParameterGroupName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the parameter group to be associated with this cluster.</p>
@@ -1020,7 +1021,7 @@ namespace Model
      * cluster.</p> <p>Constraints: Only version 1.0 is currently available.</p>
      * <p>Example: <code>1.0</code> </p>
      */
-    inline void SetClusterVersion(Aws::String&& value) { m_clusterVersionHasBeenSet = true; m_clusterVersion = value; }
+    inline void SetClusterVersion(Aws::String&& value) { m_clusterVersionHasBeenSet = true; m_clusterVersion = std::move(value); }
 
     /**
      * <p>The version of the Amazon Redshift engine software that you want to deploy on
@@ -1044,7 +1045,7 @@ namespace Model
      * cluster.</p> <p>Constraints: Only version 1.0 is currently available.</p>
      * <p>Example: <code>1.0</code> </p>
      */
-    inline CreateClusterRequest& WithClusterVersion(Aws::String&& value) { SetClusterVersion(value); return *this;}
+    inline CreateClusterRequest& WithClusterVersion(Aws::String&& value) { SetClusterVersion(std::move(value)); return *this;}
 
     /**
      * <p>The version of the Amazon Redshift engine software that you want to deploy on
@@ -1172,7 +1173,7 @@ namespace Model
      * <p>Specifies the name of the HSM client certificate the Amazon Redshift cluster
      * uses to retrieve the data encryption keys stored in an HSM.</p>
      */
-    inline void SetHsmClientCertificateIdentifier(Aws::String&& value) { m_hsmClientCertificateIdentifierHasBeenSet = true; m_hsmClientCertificateIdentifier = value; }
+    inline void SetHsmClientCertificateIdentifier(Aws::String&& value) { m_hsmClientCertificateIdentifierHasBeenSet = true; m_hsmClientCertificateIdentifier = std::move(value); }
 
     /**
      * <p>Specifies the name of the HSM client certificate the Amazon Redshift cluster
@@ -1190,7 +1191,7 @@ namespace Model
      * <p>Specifies the name of the HSM client certificate the Amazon Redshift cluster
      * uses to retrieve the data encryption keys stored in an HSM.</p>
      */
-    inline CreateClusterRequest& WithHsmClientCertificateIdentifier(Aws::String&& value) { SetHsmClientCertificateIdentifier(value); return *this;}
+    inline CreateClusterRequest& WithHsmClientCertificateIdentifier(Aws::String&& value) { SetHsmClientCertificateIdentifier(std::move(value)); return *this;}
 
     /**
      * <p>Specifies the name of the HSM client certificate the Amazon Redshift cluster
@@ -1214,7 +1215,7 @@ namespace Model
      * <p>Specifies the name of the HSM configuration that contains the information the
      * Amazon Redshift cluster can use to retrieve and store keys in an HSM.</p>
      */
-    inline void SetHsmConfigurationIdentifier(Aws::String&& value) { m_hsmConfigurationIdentifierHasBeenSet = true; m_hsmConfigurationIdentifier = value; }
+    inline void SetHsmConfigurationIdentifier(Aws::String&& value) { m_hsmConfigurationIdentifierHasBeenSet = true; m_hsmConfigurationIdentifier = std::move(value); }
 
     /**
      * <p>Specifies the name of the HSM configuration that contains the information the
@@ -1232,7 +1233,7 @@ namespace Model
      * <p>Specifies the name of the HSM configuration that contains the information the
      * Amazon Redshift cluster can use to retrieve and store keys in an HSM.</p>
      */
-    inline CreateClusterRequest& WithHsmConfigurationIdentifier(Aws::String&& value) { SetHsmConfigurationIdentifier(value); return *this;}
+    inline CreateClusterRequest& WithHsmConfigurationIdentifier(Aws::String&& value) { SetHsmConfigurationIdentifier(std::move(value)); return *this;}
 
     /**
      * <p>Specifies the name of the HSM configuration that contains the information the
@@ -1268,7 +1269,7 @@ namespace Model
      * Platforms to Launch Your Cluster</a> in the Amazon Redshift Cluster Management
      * Guide.</p>
      */
-    inline void SetElasticIp(Aws::String&& value) { m_elasticIpHasBeenSet = true; m_elasticIp = value; }
+    inline void SetElasticIp(Aws::String&& value) { m_elasticIpHasBeenSet = true; m_elasticIp = std::move(value); }
 
     /**
      * <p>The Elastic IP (EIP) address for the cluster.</p> <p>Constraints: The cluster
@@ -1298,7 +1299,7 @@ namespace Model
      * Platforms to Launch Your Cluster</a> in the Amazon Redshift Cluster Management
      * Guide.</p>
      */
-    inline CreateClusterRequest& WithElasticIp(Aws::String&& value) { SetElasticIp(value); return *this;}
+    inline CreateClusterRequest& WithElasticIp(Aws::String&& value) { SetElasticIp(std::move(value)); return *this;}
 
     /**
      * <p>The Elastic IP (EIP) address for the cluster.</p> <p>Constraints: The cluster
@@ -1323,7 +1324,7 @@ namespace Model
     /**
      * <p>A list of tag instances.</p>
      */
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = value; }
+    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
      * <p>A list of tag instances.</p>
@@ -1333,7 +1334,7 @@ namespace Model
     /**
      * <p>A list of tag instances.</p>
      */
-    inline CreateClusterRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(value); return *this;}
+    inline CreateClusterRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
      * <p>A list of tag instances.</p>
@@ -1343,7 +1344,7 @@ namespace Model
     /**
      * <p>A list of tag instances.</p>
      */
-    inline CreateClusterRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
+    inline CreateClusterRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The AWS Key Management Service (KMS) key ID of the encryption key that you
@@ -1361,7 +1362,7 @@ namespace Model
      * <p>The AWS Key Management Service (KMS) key ID of the encryption key that you
      * want to use to encrypt data in the cluster.</p>
      */
-    inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
+    inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
 
     /**
      * <p>The AWS Key Management Service (KMS) key ID of the encryption key that you
@@ -1379,7 +1380,7 @@ namespace Model
      * <p>The AWS Key Management Service (KMS) key ID of the encryption key that you
      * want to use to encrypt data in the cluster.</p>
      */
-    inline CreateClusterRequest& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(value); return *this;}
+    inline CreateClusterRequest& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
 
     /**
      * <p>The AWS Key Management Service (KMS) key ID of the encryption key that you
@@ -1433,7 +1434,7 @@ namespace Model
     /**
      * <p>Reserved.</p>
      */
-    inline void SetAdditionalInfo(Aws::String&& value) { m_additionalInfoHasBeenSet = true; m_additionalInfo = value; }
+    inline void SetAdditionalInfo(Aws::String&& value) { m_additionalInfoHasBeenSet = true; m_additionalInfo = std::move(value); }
 
     /**
      * <p>Reserved.</p>
@@ -1448,7 +1449,7 @@ namespace Model
     /**
      * <p>Reserved.</p>
      */
-    inline CreateClusterRequest& WithAdditionalInfo(Aws::String&& value) { SetAdditionalInfo(value); return *this;}
+    inline CreateClusterRequest& WithAdditionalInfo(Aws::String&& value) { SetAdditionalInfo(std::move(value)); return *this;}
 
     /**
      * <p>Reserved.</p>
@@ -1480,7 +1481,7 @@ namespace Model
      * request.</p> <p>A cluster can have up to 10 IAM roles associated with it at any
      * time.</p>
      */
-    inline void SetIamRoles(Aws::Vector<Aws::String>&& value) { m_iamRolesHasBeenSet = true; m_iamRoles = value; }
+    inline void SetIamRoles(Aws::Vector<Aws::String>&& value) { m_iamRolesHasBeenSet = true; m_iamRoles = std::move(value); }
 
     /**
      * <p>A list of AWS Identity and Access Management (IAM) roles that can be used by
@@ -1498,7 +1499,7 @@ namespace Model
      * request.</p> <p>A cluster can have up to 10 IAM roles associated with it at any
      * time.</p>
      */
-    inline CreateClusterRequest& WithIamRoles(Aws::Vector<Aws::String>&& value) { SetIamRoles(value); return *this;}
+    inline CreateClusterRequest& WithIamRoles(Aws::Vector<Aws::String>&& value) { SetIamRoles(std::move(value)); return *this;}
 
     /**
      * <p>A list of AWS Identity and Access Management (IAM) roles that can be used by
@@ -1516,7 +1517,7 @@ namespace Model
      * request.</p> <p>A cluster can have up to 10 IAM roles associated with it at any
      * time.</p>
      */
-    inline CreateClusterRequest& AddIamRoles(Aws::String&& value) { m_iamRolesHasBeenSet = true; m_iamRoles.push_back(value); return *this; }
+    inline CreateClusterRequest& AddIamRoles(Aws::String&& value) { m_iamRolesHasBeenSet = true; m_iamRoles.push_back(std::move(value)); return *this; }
 
     /**
      * <p>A list of AWS Identity and Access Management (IAM) roles that can be used by

@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/rekognition/Rekognition_EXPORTS.h>
 #include <aws/rekognition/model/BoundingBox.h>
+#include <utility>
 
 namespace Aws
 {
@@ -51,13 +52,13 @@ namespace Model
     inline void SetBoundingBox(const BoundingBox& value) { m_boundingBoxHasBeenSet = true; m_boundingBox = value; }
 
     
-    inline void SetBoundingBox(BoundingBox&& value) { m_boundingBoxHasBeenSet = true; m_boundingBox = value; }
+    inline void SetBoundingBox(BoundingBox&& value) { m_boundingBoxHasBeenSet = true; m_boundingBox = std::move(value); }
 
     
     inline ComparedFace& WithBoundingBox(const BoundingBox& value) { SetBoundingBox(value); return *this;}
 
     
-    inline ComparedFace& WithBoundingBox(BoundingBox&& value) { SetBoundingBox(value); return *this;}
+    inline ComparedFace& WithBoundingBox(BoundingBox&& value) { SetBoundingBox(std::move(value)); return *this;}
 
     /**
      * <p>Level of confidence that what the bounding box contains is a face.</p>

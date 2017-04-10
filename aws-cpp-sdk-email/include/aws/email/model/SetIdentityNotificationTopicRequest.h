@@ -17,6 +17,7 @@
 #include <aws/email/SESRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/email/model/NotificationType.h>
+#include <utility>
 
 namespace Aws
 {
@@ -68,7 +69,7 @@ namespace Model
      * <code>user@example.com</code>, <code>example.com</code>,
      * <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.</p>
      */
-    inline void SetIdentity(Aws::String&& value) { m_identityHasBeenSet = true; m_identity = value; }
+    inline void SetIdentity(Aws::String&& value) { m_identityHasBeenSet = true; m_identity = std::move(value); }
 
     /**
      * <p>The identity for which the Amazon SNS topic will be set. You can specify an
@@ -92,7 +93,7 @@ namespace Model
      * <code>user@example.com</code>, <code>example.com</code>,
      * <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.</p>
      */
-    inline SetIdentityNotificationTopicRequest& WithIdentity(Aws::String&& value) { SetIdentity(value); return *this;}
+    inline SetIdentityNotificationTopicRequest& WithIdentity(Aws::String&& value) { SetIdentity(std::move(value)); return *this;}
 
     /**
      * <p>The identity for which the Amazon SNS topic will be set. You can specify an
@@ -118,7 +119,7 @@ namespace Model
      * <p>The type of notifications that will be published to the specified Amazon SNS
      * topic.</p>
      */
-    inline void SetNotificationType(NotificationType&& value) { m_notificationTypeHasBeenSet = true; m_notificationType = value; }
+    inline void SetNotificationType(NotificationType&& value) { m_notificationTypeHasBeenSet = true; m_notificationType = std::move(value); }
 
     /**
      * <p>The type of notifications that will be published to the specified Amazon SNS
@@ -130,7 +131,7 @@ namespace Model
      * <p>The type of notifications that will be published to the specified Amazon SNS
      * topic.</p>
      */
-    inline SetIdentityNotificationTopicRequest& WithNotificationType(NotificationType&& value) { SetNotificationType(value); return *this;}
+    inline SetIdentityNotificationTopicRequest& WithNotificationType(NotificationType&& value) { SetNotificationType(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon SNS topic. If the parameter is
@@ -151,7 +152,7 @@ namespace Model
      * omitted from the request or a null value is passed, <code>SnsTopic</code> is
      * cleared and publishing is disabled.</p>
      */
-    inline void SetSnsTopic(Aws::String&& value) { m_snsTopicHasBeenSet = true; m_snsTopic = value; }
+    inline void SetSnsTopic(Aws::String&& value) { m_snsTopicHasBeenSet = true; m_snsTopic = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon SNS topic. If the parameter is
@@ -172,7 +173,7 @@ namespace Model
      * omitted from the request or a null value is passed, <code>SnsTopic</code> is
      * cleared and publishing is disabled.</p>
      */
-    inline SetIdentityNotificationTopicRequest& WithSnsTopic(Aws::String&& value) { SetSnsTopic(value); return *this;}
+    inline SetIdentityNotificationTopicRequest& WithSnsTopic(Aws::String&& value) { SetSnsTopic(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon SNS topic. If the parameter is

@@ -16,6 +16,7 @@
 #include <aws/elasticache/ElastiCache_EXPORTS.h>
 #include <aws/elasticache/ElastiCacheRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -54,7 +55,7 @@ namespace Model
     /**
      * <p>The cache security group that allows network ingress.</p>
      */
-    inline void SetCacheSecurityGroupName(Aws::String&& value) { m_cacheSecurityGroupNameHasBeenSet = true; m_cacheSecurityGroupName = value; }
+    inline void SetCacheSecurityGroupName(Aws::String&& value) { m_cacheSecurityGroupNameHasBeenSet = true; m_cacheSecurityGroupName = std::move(value); }
 
     /**
      * <p>The cache security group that allows network ingress.</p>
@@ -69,7 +70,7 @@ namespace Model
     /**
      * <p>The cache security group that allows network ingress.</p>
      */
-    inline AuthorizeCacheSecurityGroupIngressRequest& WithCacheSecurityGroupName(Aws::String&& value) { SetCacheSecurityGroupName(value); return *this;}
+    inline AuthorizeCacheSecurityGroupIngressRequest& WithCacheSecurityGroupName(Aws::String&& value) { SetCacheSecurityGroupName(std::move(value)); return *this;}
 
     /**
      * <p>The cache security group that allows network ingress.</p>
@@ -92,7 +93,7 @@ namespace Model
      * <p>The Amazon EC2 security group to be authorized for ingress to the cache
      * security group.</p>
      */
-    inline void SetEC2SecurityGroupName(Aws::String&& value) { m_eC2SecurityGroupNameHasBeenSet = true; m_eC2SecurityGroupName = value; }
+    inline void SetEC2SecurityGroupName(Aws::String&& value) { m_eC2SecurityGroupNameHasBeenSet = true; m_eC2SecurityGroupName = std::move(value); }
 
     /**
      * <p>The Amazon EC2 security group to be authorized for ingress to the cache
@@ -110,7 +111,7 @@ namespace Model
      * <p>The Amazon EC2 security group to be authorized for ingress to the cache
      * security group.</p>
      */
-    inline AuthorizeCacheSecurityGroupIngressRequest& WithEC2SecurityGroupName(Aws::String&& value) { SetEC2SecurityGroupName(value); return *this;}
+    inline AuthorizeCacheSecurityGroupIngressRequest& WithEC2SecurityGroupName(Aws::String&& value) { SetEC2SecurityGroupName(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon EC2 security group to be authorized for ingress to the cache
@@ -137,7 +138,7 @@ namespace Model
      * is not the same thing as an AWS access key ID - you must provide a valid AWS
      * account number for this parameter.</p>
      */
-    inline void SetEC2SecurityGroupOwnerId(Aws::String&& value) { m_eC2SecurityGroupOwnerIdHasBeenSet = true; m_eC2SecurityGroupOwnerId = value; }
+    inline void SetEC2SecurityGroupOwnerId(Aws::String&& value) { m_eC2SecurityGroupOwnerIdHasBeenSet = true; m_eC2SecurityGroupOwnerId = std::move(value); }
 
     /**
      * <p>The AWS account number of the Amazon EC2 security group owner. Note that this
@@ -158,7 +159,7 @@ namespace Model
      * is not the same thing as an AWS access key ID - you must provide a valid AWS
      * account number for this parameter.</p>
      */
-    inline AuthorizeCacheSecurityGroupIngressRequest& WithEC2SecurityGroupOwnerId(Aws::String&& value) { SetEC2SecurityGroupOwnerId(value); return *this;}
+    inline AuthorizeCacheSecurityGroupIngressRequest& WithEC2SecurityGroupOwnerId(Aws::String&& value) { SetEC2SecurityGroupOwnerId(std::move(value)); return *this;}
 
     /**
      * <p>The AWS account number of the Amazon EC2 security group owner. Note that this

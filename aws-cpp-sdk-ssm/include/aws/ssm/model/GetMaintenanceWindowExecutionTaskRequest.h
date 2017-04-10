@@ -16,6 +16,7 @@
 #include <aws/ssm/SSM_EXPORTS.h>
 #include <aws/ssm/SSMRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -48,7 +49,7 @@ namespace Model
     /**
      * <p>The ID of the Maintenance Window execution that includes the task.</p>
      */
-    inline void SetWindowExecutionId(Aws::String&& value) { m_windowExecutionIdHasBeenSet = true; m_windowExecutionId = value; }
+    inline void SetWindowExecutionId(Aws::String&& value) { m_windowExecutionIdHasBeenSet = true; m_windowExecutionId = std::move(value); }
 
     /**
      * <p>The ID of the Maintenance Window execution that includes the task.</p>
@@ -63,7 +64,7 @@ namespace Model
     /**
      * <p>The ID of the Maintenance Window execution that includes the task.</p>
      */
-    inline GetMaintenanceWindowExecutionTaskRequest& WithWindowExecutionId(Aws::String&& value) { SetWindowExecutionId(value); return *this;}
+    inline GetMaintenanceWindowExecutionTaskRequest& WithWindowExecutionId(Aws::String&& value) { SetWindowExecutionId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the Maintenance Window execution that includes the task.</p>
@@ -86,7 +87,7 @@ namespace Model
      * <p>The ID of the specific task execution in the Maintenance Window task that
      * should be retrieved.</p>
      */
-    inline void SetTaskId(Aws::String&& value) { m_taskIdHasBeenSet = true; m_taskId = value; }
+    inline void SetTaskId(Aws::String&& value) { m_taskIdHasBeenSet = true; m_taskId = std::move(value); }
 
     /**
      * <p>The ID of the specific task execution in the Maintenance Window task that
@@ -104,7 +105,7 @@ namespace Model
      * <p>The ID of the specific task execution in the Maintenance Window task that
      * should be retrieved.</p>
      */
-    inline GetMaintenanceWindowExecutionTaskRequest& WithTaskId(Aws::String&& value) { SetTaskId(value); return *this;}
+    inline GetMaintenanceWindowExecutionTaskRequest& WithTaskId(Aws::String&& value) { SetTaskId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the specific task execution in the Maintenance Window task that

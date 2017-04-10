@@ -16,6 +16,7 @@
 #include <aws/directconnect/DirectConnect_EXPORTS.h>
 #include <aws/directconnect/DirectConnectRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -58,7 +59,7 @@ namespace Model
      * provisioned.</p> <p>Example: dxcon-abc123 or dxlag-abc123</p> <p>Default:
      * None</p>
      */
-    inline void SetConnectionId(Aws::String&& value) { m_connectionIdHasBeenSet = true; m_connectionId = value; }
+    inline void SetConnectionId(Aws::String&& value) { m_connectionIdHasBeenSet = true; m_connectionId = std::move(value); }
 
     /**
      * <p>The ID of the interconnect or LAG on which the hosted connections are
@@ -79,7 +80,7 @@ namespace Model
      * provisioned.</p> <p>Example: dxcon-abc123 or dxlag-abc123</p> <p>Default:
      * None</p>
      */
-    inline DescribeHostedConnectionsRequest& WithConnectionId(Aws::String&& value) { SetConnectionId(value); return *this;}
+    inline DescribeHostedConnectionsRequest& WithConnectionId(Aws::String&& value) { SetConnectionId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the interconnect or LAG on which the hosted connections are

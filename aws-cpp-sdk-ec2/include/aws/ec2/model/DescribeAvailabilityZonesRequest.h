@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/Filter.h>
+#include <utility>
 
 namespace Aws
 {
@@ -80,7 +81,7 @@ namespace Model
     /**
      * <p>The names of one or more Availability Zones.</p>
      */
-    inline void SetZoneNames(Aws::Vector<Aws::String>&& value) { m_zoneNamesHasBeenSet = true; m_zoneNames = value; }
+    inline void SetZoneNames(Aws::Vector<Aws::String>&& value) { m_zoneNamesHasBeenSet = true; m_zoneNames = std::move(value); }
 
     /**
      * <p>The names of one or more Availability Zones.</p>
@@ -90,7 +91,7 @@ namespace Model
     /**
      * <p>The names of one or more Availability Zones.</p>
      */
-    inline DescribeAvailabilityZonesRequest& WithZoneNames(Aws::Vector<Aws::String>&& value) { SetZoneNames(value); return *this;}
+    inline DescribeAvailabilityZonesRequest& WithZoneNames(Aws::Vector<Aws::String>&& value) { SetZoneNames(std::move(value)); return *this;}
 
     /**
      * <p>The names of one or more Availability Zones.</p>
@@ -100,7 +101,7 @@ namespace Model
     /**
      * <p>The names of one or more Availability Zones.</p>
      */
-    inline DescribeAvailabilityZonesRequest& AddZoneNames(Aws::String&& value) { m_zoneNamesHasBeenSet = true; m_zoneNames.push_back(value); return *this; }
+    inline DescribeAvailabilityZonesRequest& AddZoneNames(Aws::String&& value) { m_zoneNamesHasBeenSet = true; m_zoneNames.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The names of one or more Availability Zones.</p>
@@ -141,7 +142,7 @@ namespace Model
      * <code>zone-name</code> - The name of the Availability Zone (for example,
      * <code>us-east-1a</code>).</p> </li> </ul>
      */
-    inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = value; }
+    inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
 
     /**
      * <p>One or more filters.</p> <ul> <li> <p> <code>message</code> - Information
@@ -165,7 +166,7 @@ namespace Model
      * <code>zone-name</code> - The name of the Availability Zone (for example,
      * <code>us-east-1a</code>).</p> </li> </ul>
      */
-    inline DescribeAvailabilityZonesRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(value); return *this;}
+    inline DescribeAvailabilityZonesRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(std::move(value)); return *this;}
 
     /**
      * <p>One or more filters.</p> <ul> <li> <p> <code>message</code> - Information
@@ -189,7 +190,7 @@ namespace Model
      * <code>zone-name</code> - The name of the Availability Zone (for example,
      * <code>us-east-1a</code>).</p> </li> </ul>
      */
-    inline DescribeAvailabilityZonesRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
+    inline DescribeAvailabilityZonesRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 
   private:
     bool m_dryRun;

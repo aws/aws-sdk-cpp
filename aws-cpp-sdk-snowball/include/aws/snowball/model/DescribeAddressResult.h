@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/snowball/Snowball_EXPORTS.h>
 #include <aws/snowball/model/Address.h>
+#include <utility>
 
 namespace Aws
 {
@@ -55,7 +56,7 @@ namespace Model
      * <p>The address that you want the Snowball or Snowballs associated with a
      * specific job to be shipped to.</p>
      */
-    inline void SetAddress(Address&& value) { m_address = value; }
+    inline void SetAddress(Address&& value) { m_address = std::move(value); }
 
     /**
      * <p>The address that you want the Snowball or Snowballs associated with a
@@ -67,7 +68,7 @@ namespace Model
      * <p>The address that you want the Snowball or Snowballs associated with a
      * specific job to be shipped to.</p>
      */
-    inline DescribeAddressResult& WithAddress(Address&& value) { SetAddress(value); return *this;}
+    inline DescribeAddressResult& WithAddress(Address&& value) { SetAddress(std::move(value)); return *this;}
 
   private:
     Address m_address;

@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/cognito-idp/model/ExplicitAuthFlowsType.h>
+#include <utility>
 
 namespace Aws
 {
@@ -57,7 +58,7 @@ namespace Model
      * <p>The user pool ID for the user pool where you want to create a user pool
      * client.</p>
      */
-    inline void SetUserPoolId(Aws::String&& value) { m_userPoolIdHasBeenSet = true; m_userPoolId = value; }
+    inline void SetUserPoolId(Aws::String&& value) { m_userPoolIdHasBeenSet = true; m_userPoolId = std::move(value); }
 
     /**
      * <p>The user pool ID for the user pool where you want to create a user pool
@@ -75,7 +76,7 @@ namespace Model
      * <p>The user pool ID for the user pool where you want to create a user pool
      * client.</p>
      */
-    inline CreateUserPoolClientRequest& WithUserPoolId(Aws::String&& value) { SetUserPoolId(value); return *this;}
+    inline CreateUserPoolClientRequest& WithUserPoolId(Aws::String&& value) { SetUserPoolId(std::move(value)); return *this;}
 
     /**
      * <p>The user pool ID for the user pool where you want to create a user pool
@@ -96,7 +97,7 @@ namespace Model
     /**
      * <p>The client name for the user pool client you would like to create.</p>
      */
-    inline void SetClientName(Aws::String&& value) { m_clientNameHasBeenSet = true; m_clientName = value; }
+    inline void SetClientName(Aws::String&& value) { m_clientNameHasBeenSet = true; m_clientName = std::move(value); }
 
     /**
      * <p>The client name for the user pool client you would like to create.</p>
@@ -111,7 +112,7 @@ namespace Model
     /**
      * <p>The client name for the user pool client you would like to create.</p>
      */
-    inline CreateUserPoolClientRequest& WithClientName(Aws::String&& value) { SetClientName(value); return *this;}
+    inline CreateUserPoolClientRequest& WithClientName(Aws::String&& value) { SetClientName(std::move(value)); return *this;}
 
     /**
      * <p>The client name for the user pool client you would like to create.</p>
@@ -164,7 +165,7 @@ namespace Model
     /**
      * <p>The read attributes.</p>
      */
-    inline void SetReadAttributes(Aws::Vector<Aws::String>&& value) { m_readAttributesHasBeenSet = true; m_readAttributes = value; }
+    inline void SetReadAttributes(Aws::Vector<Aws::String>&& value) { m_readAttributesHasBeenSet = true; m_readAttributes = std::move(value); }
 
     /**
      * <p>The read attributes.</p>
@@ -174,7 +175,7 @@ namespace Model
     /**
      * <p>The read attributes.</p>
      */
-    inline CreateUserPoolClientRequest& WithReadAttributes(Aws::Vector<Aws::String>&& value) { SetReadAttributes(value); return *this;}
+    inline CreateUserPoolClientRequest& WithReadAttributes(Aws::Vector<Aws::String>&& value) { SetReadAttributes(std::move(value)); return *this;}
 
     /**
      * <p>The read attributes.</p>
@@ -184,7 +185,7 @@ namespace Model
     /**
      * <p>The read attributes.</p>
      */
-    inline CreateUserPoolClientRequest& AddReadAttributes(Aws::String&& value) { m_readAttributesHasBeenSet = true; m_readAttributes.push_back(value); return *this; }
+    inline CreateUserPoolClientRequest& AddReadAttributes(Aws::String&& value) { m_readAttributesHasBeenSet = true; m_readAttributes.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The read attributes.</p>
@@ -204,7 +205,7 @@ namespace Model
     /**
      * <p>The write attributes.</p>
      */
-    inline void SetWriteAttributes(Aws::Vector<Aws::String>&& value) { m_writeAttributesHasBeenSet = true; m_writeAttributes = value; }
+    inline void SetWriteAttributes(Aws::Vector<Aws::String>&& value) { m_writeAttributesHasBeenSet = true; m_writeAttributes = std::move(value); }
 
     /**
      * <p>The write attributes.</p>
@@ -214,7 +215,7 @@ namespace Model
     /**
      * <p>The write attributes.</p>
      */
-    inline CreateUserPoolClientRequest& WithWriteAttributes(Aws::Vector<Aws::String>&& value) { SetWriteAttributes(value); return *this;}
+    inline CreateUserPoolClientRequest& WithWriteAttributes(Aws::Vector<Aws::String>&& value) { SetWriteAttributes(std::move(value)); return *this;}
 
     /**
      * <p>The write attributes.</p>
@@ -224,7 +225,7 @@ namespace Model
     /**
      * <p>The write attributes.</p>
      */
-    inline CreateUserPoolClientRequest& AddWriteAttributes(Aws::String&& value) { m_writeAttributesHasBeenSet = true; m_writeAttributes.push_back(value); return *this; }
+    inline CreateUserPoolClientRequest& AddWriteAttributes(Aws::String&& value) { m_writeAttributesHasBeenSet = true; m_writeAttributes.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The write attributes.</p>
@@ -244,7 +245,7 @@ namespace Model
     /**
      * <p>The explicit authentication flows.</p>
      */
-    inline void SetExplicitAuthFlows(Aws::Vector<ExplicitAuthFlowsType>&& value) { m_explicitAuthFlowsHasBeenSet = true; m_explicitAuthFlows = value; }
+    inline void SetExplicitAuthFlows(Aws::Vector<ExplicitAuthFlowsType>&& value) { m_explicitAuthFlowsHasBeenSet = true; m_explicitAuthFlows = std::move(value); }
 
     /**
      * <p>The explicit authentication flows.</p>
@@ -254,7 +255,7 @@ namespace Model
     /**
      * <p>The explicit authentication flows.</p>
      */
-    inline CreateUserPoolClientRequest& WithExplicitAuthFlows(Aws::Vector<ExplicitAuthFlowsType>&& value) { SetExplicitAuthFlows(value); return *this;}
+    inline CreateUserPoolClientRequest& WithExplicitAuthFlows(Aws::Vector<ExplicitAuthFlowsType>&& value) { SetExplicitAuthFlows(std::move(value)); return *this;}
 
     /**
      * <p>The explicit authentication flows.</p>
@@ -264,7 +265,7 @@ namespace Model
     /**
      * <p>The explicit authentication flows.</p>
      */
-    inline CreateUserPoolClientRequest& AddExplicitAuthFlows(ExplicitAuthFlowsType&& value) { m_explicitAuthFlowsHasBeenSet = true; m_explicitAuthFlows.push_back(value); return *this; }
+    inline CreateUserPoolClientRequest& AddExplicitAuthFlows(ExplicitAuthFlowsType&& value) { m_explicitAuthFlowsHasBeenSet = true; m_explicitAuthFlows.push_back(std::move(value)); return *this; }
 
   private:
     Aws::String m_userPoolId;

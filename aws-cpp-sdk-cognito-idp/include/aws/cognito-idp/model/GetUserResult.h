@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/cognito-idp/model/AttributeType.h>
 #include <aws/cognito-idp/model/MFAOptionType.h>
+#include <utility>
 
 namespace Aws
 {
@@ -61,7 +62,7 @@ namespace Model
     /**
      * <p>The user name of the user you wish to retrieve from the get user request.</p>
      */
-    inline void SetUsername(Aws::String&& value) { m_username = value; }
+    inline void SetUsername(Aws::String&& value) { m_username = std::move(value); }
 
     /**
      * <p>The user name of the user you wish to retrieve from the get user request.</p>
@@ -76,7 +77,7 @@ namespace Model
     /**
      * <p>The user name of the user you wish to retrieve from the get user request.</p>
      */
-    inline GetUserResult& WithUsername(Aws::String&& value) { SetUsername(value); return *this;}
+    inline GetUserResult& WithUsername(Aws::String&& value) { SetUsername(std::move(value)); return *this;}
 
     /**
      * <p>The user name of the user you wish to retrieve from the get user request.</p>
@@ -96,7 +97,7 @@ namespace Model
     /**
      * <p>An array of name-value pairs representing user attributes.</p>
      */
-    inline void SetUserAttributes(Aws::Vector<AttributeType>&& value) { m_userAttributes = value; }
+    inline void SetUserAttributes(Aws::Vector<AttributeType>&& value) { m_userAttributes = std::move(value); }
 
     /**
      * <p>An array of name-value pairs representing user attributes.</p>
@@ -106,7 +107,7 @@ namespace Model
     /**
      * <p>An array of name-value pairs representing user attributes.</p>
      */
-    inline GetUserResult& WithUserAttributes(Aws::Vector<AttributeType>&& value) { SetUserAttributes(value); return *this;}
+    inline GetUserResult& WithUserAttributes(Aws::Vector<AttributeType>&& value) { SetUserAttributes(std::move(value)); return *this;}
 
     /**
      * <p>An array of name-value pairs representing user attributes.</p>
@@ -116,7 +117,7 @@ namespace Model
     /**
      * <p>An array of name-value pairs representing user attributes.</p>
      */
-    inline GetUserResult& AddUserAttributes(AttributeType&& value) { m_userAttributes.push_back(value); return *this; }
+    inline GetUserResult& AddUserAttributes(AttributeType&& value) { m_userAttributes.push_back(std::move(value)); return *this; }
 
     /**
      * <p>Specifies the options for MFA (e.g., email or phone number).</p>
@@ -131,7 +132,7 @@ namespace Model
     /**
      * <p>Specifies the options for MFA (e.g., email or phone number).</p>
      */
-    inline void SetMFAOptions(Aws::Vector<MFAOptionType>&& value) { m_mFAOptions = value; }
+    inline void SetMFAOptions(Aws::Vector<MFAOptionType>&& value) { m_mFAOptions = std::move(value); }
 
     /**
      * <p>Specifies the options for MFA (e.g., email or phone number).</p>
@@ -141,7 +142,7 @@ namespace Model
     /**
      * <p>Specifies the options for MFA (e.g., email or phone number).</p>
      */
-    inline GetUserResult& WithMFAOptions(Aws::Vector<MFAOptionType>&& value) { SetMFAOptions(value); return *this;}
+    inline GetUserResult& WithMFAOptions(Aws::Vector<MFAOptionType>&& value) { SetMFAOptions(std::move(value)); return *this;}
 
     /**
      * <p>Specifies the options for MFA (e.g., email or phone number).</p>
@@ -151,7 +152,7 @@ namespace Model
     /**
      * <p>Specifies the options for MFA (e.g., email or phone number).</p>
      */
-    inline GetUserResult& AddMFAOptions(MFAOptionType&& value) { m_mFAOptions.push_back(value); return *this; }
+    inline GetUserResult& AddMFAOptions(MFAOptionType&& value) { m_mFAOptions.push_back(std::move(value)); return *this; }
 
   private:
     Aws::String m_username;

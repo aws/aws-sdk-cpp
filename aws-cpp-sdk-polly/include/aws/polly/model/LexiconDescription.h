@@ -16,6 +16,7 @@
 #include <aws/polly/Polly_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/polly/model/LexiconAttributes.h>
+#include <utility>
 
 namespace Aws
 {
@@ -57,7 +58,7 @@ namespace Model
     /**
      * <p>Name of the lexicon.</p>
      */
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p>Name of the lexicon.</p>
@@ -72,7 +73,7 @@ namespace Model
     /**
      * <p>Name of the lexicon.</p>
      */
-    inline LexiconDescription& WithName(Aws::String&& value) { SetName(value); return *this;}
+    inline LexiconDescription& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>Name of the lexicon.</p>
@@ -92,7 +93,7 @@ namespace Model
     /**
      * <p>Provides lexicon metadata.</p>
      */
-    inline void SetAttributes(LexiconAttributes&& value) { m_attributesHasBeenSet = true; m_attributes = value; }
+    inline void SetAttributes(LexiconAttributes&& value) { m_attributesHasBeenSet = true; m_attributes = std::move(value); }
 
     /**
      * <p>Provides lexicon metadata.</p>
@@ -102,7 +103,7 @@ namespace Model
     /**
      * <p>Provides lexicon metadata.</p>
      */
-    inline LexiconDescription& WithAttributes(LexiconAttributes&& value) { SetAttributes(value); return *this;}
+    inline LexiconDescription& WithAttributes(LexiconAttributes&& value) { SetAttributes(std::move(value)); return *this;}
 
   private:
     Aws::String m_name;

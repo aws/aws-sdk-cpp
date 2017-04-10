@@ -16,6 +16,7 @@
 #include <aws/machinelearning/MachineLearning_EXPORTS.h>
 #include <aws/machinelearning/MachineLearningRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -48,7 +49,7 @@ namespace Model
     /**
      * <p>A user-supplied ID that uniquely identifies the <code>Evaluation</code>.</p>
      */
-    inline void SetEvaluationId(Aws::String&& value) { m_evaluationIdHasBeenSet = true; m_evaluationId = value; }
+    inline void SetEvaluationId(Aws::String&& value) { m_evaluationIdHasBeenSet = true; m_evaluationId = std::move(value); }
 
     /**
      * <p>A user-supplied ID that uniquely identifies the <code>Evaluation</code>.</p>
@@ -63,7 +64,7 @@ namespace Model
     /**
      * <p>A user-supplied ID that uniquely identifies the <code>Evaluation</code>.</p>
      */
-    inline CreateEvaluationRequest& WithEvaluationId(Aws::String&& value) { SetEvaluationId(value); return *this;}
+    inline CreateEvaluationRequest& WithEvaluationId(Aws::String&& value) { SetEvaluationId(std::move(value)); return *this;}
 
     /**
      * <p>A user-supplied ID that uniquely identifies the <code>Evaluation</code>.</p>
@@ -83,7 +84,7 @@ namespace Model
     /**
      * <p>A user-supplied name or description of the <code>Evaluation</code>.</p>
      */
-    inline void SetEvaluationName(Aws::String&& value) { m_evaluationNameHasBeenSet = true; m_evaluationName = value; }
+    inline void SetEvaluationName(Aws::String&& value) { m_evaluationNameHasBeenSet = true; m_evaluationName = std::move(value); }
 
     /**
      * <p>A user-supplied name or description of the <code>Evaluation</code>.</p>
@@ -98,7 +99,7 @@ namespace Model
     /**
      * <p>A user-supplied name or description of the <code>Evaluation</code>.</p>
      */
-    inline CreateEvaluationRequest& WithEvaluationName(Aws::String&& value) { SetEvaluationName(value); return *this;}
+    inline CreateEvaluationRequest& WithEvaluationName(Aws::String&& value) { SetEvaluationName(std::move(value)); return *this;}
 
     /**
      * <p>A user-supplied name or description of the <code>Evaluation</code>.</p>
@@ -124,7 +125,7 @@ namespace Model
      * creating the <code>MLModel</code> must match the schema of the
      * <code>DataSource</code> used in the <code>Evaluation</code>.</p>
      */
-    inline void SetMLModelId(Aws::String&& value) { m_mLModelIdHasBeenSet = true; m_mLModelId = value; }
+    inline void SetMLModelId(Aws::String&& value) { m_mLModelIdHasBeenSet = true; m_mLModelId = std::move(value); }
 
     /**
      * <p>The ID of the <code>MLModel</code> to evaluate.</p> <p>The schema used in
@@ -145,7 +146,7 @@ namespace Model
      * creating the <code>MLModel</code> must match the schema of the
      * <code>DataSource</code> used in the <code>Evaluation</code>.</p>
      */
-    inline CreateEvaluationRequest& WithMLModelId(Aws::String&& value) { SetMLModelId(value); return *this;}
+    inline CreateEvaluationRequest& WithMLModelId(Aws::String&& value) { SetMLModelId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the <code>MLModel</code> to evaluate.</p> <p>The schema used in
@@ -173,7 +174,7 @@ namespace Model
      * <code>DataSource</code> must match the schema used to create the
      * <code>MLModel</code>.</p>
      */
-    inline void SetEvaluationDataSourceId(Aws::String&& value) { m_evaluationDataSourceIdHasBeenSet = true; m_evaluationDataSourceId = value; }
+    inline void SetEvaluationDataSourceId(Aws::String&& value) { m_evaluationDataSourceIdHasBeenSet = true; m_evaluationDataSourceId = std::move(value); }
 
     /**
      * <p>The ID of the <code>DataSource</code> for the evaluation. The schema of the
@@ -194,7 +195,7 @@ namespace Model
      * <code>DataSource</code> must match the schema used to create the
      * <code>MLModel</code>.</p>
      */
-    inline CreateEvaluationRequest& WithEvaluationDataSourceId(Aws::String&& value) { SetEvaluationDataSourceId(value); return *this;}
+    inline CreateEvaluationRequest& WithEvaluationDataSourceId(Aws::String&& value) { SetEvaluationDataSourceId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the <code>DataSource</code> for the evaluation. The schema of the

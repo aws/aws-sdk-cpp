@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/cloudtrail/CloudTrail_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -63,7 +64,7 @@ namespace Model
      * Unicode characters. The key must be unique for the resource to which it
      * applies.</p>
      */
-    inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = value; }
+    inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
 
     /**
      * <p>The key in a key-value pair. The key must be must be no longer than 128
@@ -84,7 +85,7 @@ namespace Model
      * Unicode characters. The key must be unique for the resource to which it
      * applies.</p>
      */
-    inline Tag& WithKey(Aws::String&& value) { SetKey(value); return *this;}
+    inline Tag& WithKey(Aws::String&& value) { SetKey(std::move(value)); return *this;}
 
     /**
      * <p>The key in a key-value pair. The key must be must be no longer than 128
@@ -109,7 +110,7 @@ namespace Model
      * <p>The value in a key-value pair of a tag. The value must be no longer than 256
      * Unicode characters.</p>
      */
-    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = value; }
+    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
 
     /**
      * <p>The value in a key-value pair of a tag. The value must be no longer than 256
@@ -127,7 +128,7 @@ namespace Model
      * <p>The value in a key-value pair of a tag. The value must be no longer than 256
      * Unicode characters.</p>
      */
-    inline Tag& WithValue(Aws::String&& value) { SetValue(value); return *this;}
+    inline Tag& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
 
     /**
      * <p>The value in a key-value pair of a tag. The value must be no longer than 256

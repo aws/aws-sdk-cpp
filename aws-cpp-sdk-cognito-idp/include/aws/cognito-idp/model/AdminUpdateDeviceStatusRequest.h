@@ -17,6 +17,7 @@
 #include <aws/cognito-idp/CognitoIdentityProviderRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/cognito-idp/model/DeviceRememberedStatusType.h>
+#include <utility>
 
 namespace Aws
 {
@@ -53,7 +54,7 @@ namespace Model
     /**
      * <p>The user pool ID&gt;</p>
      */
-    inline void SetUserPoolId(Aws::String&& value) { m_userPoolIdHasBeenSet = true; m_userPoolId = value; }
+    inline void SetUserPoolId(Aws::String&& value) { m_userPoolIdHasBeenSet = true; m_userPoolId = std::move(value); }
 
     /**
      * <p>The user pool ID&gt;</p>
@@ -68,7 +69,7 @@ namespace Model
     /**
      * <p>The user pool ID&gt;</p>
      */
-    inline AdminUpdateDeviceStatusRequest& WithUserPoolId(Aws::String&& value) { SetUserPoolId(value); return *this;}
+    inline AdminUpdateDeviceStatusRequest& WithUserPoolId(Aws::String&& value) { SetUserPoolId(std::move(value)); return *this;}
 
     /**
      * <p>The user pool ID&gt;</p>
@@ -88,7 +89,7 @@ namespace Model
     /**
      * <p>The user name.</p>
      */
-    inline void SetUsername(Aws::String&& value) { m_usernameHasBeenSet = true; m_username = value; }
+    inline void SetUsername(Aws::String&& value) { m_usernameHasBeenSet = true; m_username = std::move(value); }
 
     /**
      * <p>The user name.</p>
@@ -103,7 +104,7 @@ namespace Model
     /**
      * <p>The user name.</p>
      */
-    inline AdminUpdateDeviceStatusRequest& WithUsername(Aws::String&& value) { SetUsername(value); return *this;}
+    inline AdminUpdateDeviceStatusRequest& WithUsername(Aws::String&& value) { SetUsername(std::move(value)); return *this;}
 
     /**
      * <p>The user name.</p>
@@ -123,7 +124,7 @@ namespace Model
     /**
      * <p>The device key.</p>
      */
-    inline void SetDeviceKey(Aws::String&& value) { m_deviceKeyHasBeenSet = true; m_deviceKey = value; }
+    inline void SetDeviceKey(Aws::String&& value) { m_deviceKeyHasBeenSet = true; m_deviceKey = std::move(value); }
 
     /**
      * <p>The device key.</p>
@@ -138,7 +139,7 @@ namespace Model
     /**
      * <p>The device key.</p>
      */
-    inline AdminUpdateDeviceStatusRequest& WithDeviceKey(Aws::String&& value) { SetDeviceKey(value); return *this;}
+    inline AdminUpdateDeviceStatusRequest& WithDeviceKey(Aws::String&& value) { SetDeviceKey(std::move(value)); return *this;}
 
     /**
      * <p>The device key.</p>
@@ -158,7 +159,7 @@ namespace Model
     /**
      * <p>The status indicating whether a device has been remembered or not.</p>
      */
-    inline void SetDeviceRememberedStatus(DeviceRememberedStatusType&& value) { m_deviceRememberedStatusHasBeenSet = true; m_deviceRememberedStatus = value; }
+    inline void SetDeviceRememberedStatus(DeviceRememberedStatusType&& value) { m_deviceRememberedStatusHasBeenSet = true; m_deviceRememberedStatus = std::move(value); }
 
     /**
      * <p>The status indicating whether a device has been remembered or not.</p>
@@ -168,7 +169,7 @@ namespace Model
     /**
      * <p>The status indicating whether a device has been remembered or not.</p>
      */
-    inline AdminUpdateDeviceStatusRequest& WithDeviceRememberedStatus(DeviceRememberedStatusType&& value) { SetDeviceRememberedStatus(value); return *this;}
+    inline AdminUpdateDeviceStatusRequest& WithDeviceRememberedStatus(DeviceRememberedStatusType&& value) { SetDeviceRememberedStatus(std::move(value)); return *this;}
 
   private:
     Aws::String m_userPoolId;

@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/mturk-requester/model/BonusPayment.h>
+#include <utility>
 
 namespace Aws
 {
@@ -66,7 +67,7 @@ namespace Model
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
 
     
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
@@ -75,7 +76,7 @@ namespace Model
     inline ListBonusPaymentsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     
-    inline ListBonusPaymentsResult& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline ListBonusPaymentsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     
     inline ListBonusPaymentsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
@@ -96,7 +97,7 @@ namespace Model
      * <p>A successful request to the ListBonusPayments operation returns a list of
      * BonusPayment objects. </p>
      */
-    inline void SetBonusPayments(Aws::Vector<BonusPayment>&& value) { m_bonusPayments = value; }
+    inline void SetBonusPayments(Aws::Vector<BonusPayment>&& value) { m_bonusPayments = std::move(value); }
 
     /**
      * <p>A successful request to the ListBonusPayments operation returns a list of
@@ -108,7 +109,7 @@ namespace Model
      * <p>A successful request to the ListBonusPayments operation returns a list of
      * BonusPayment objects. </p>
      */
-    inline ListBonusPaymentsResult& WithBonusPayments(Aws::Vector<BonusPayment>&& value) { SetBonusPayments(value); return *this;}
+    inline ListBonusPaymentsResult& WithBonusPayments(Aws::Vector<BonusPayment>&& value) { SetBonusPayments(std::move(value)); return *this;}
 
     /**
      * <p>A successful request to the ListBonusPayments operation returns a list of
@@ -120,7 +121,7 @@ namespace Model
      * <p>A successful request to the ListBonusPayments operation returns a list of
      * BonusPayment objects. </p>
      */
-    inline ListBonusPaymentsResult& AddBonusPayments(BonusPayment&& value) { m_bonusPayments.push_back(value); return *this; }
+    inline ListBonusPaymentsResult& AddBonusPayments(BonusPayment&& value) { m_bonusPayments.push_back(std::move(value)); return *this; }
 
   private:
     int m_numResults;

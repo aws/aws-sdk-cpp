@@ -19,6 +19,7 @@
 #include <aws/dynamodb/model/ConsumedCapacity.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/dynamodb/model/AttributeValue.h>
+#include <utility>
 
 namespace Aws
 {
@@ -65,7 +66,7 @@ namespace Model
      * <p>An array of item attributes that match the query criteria. Each element in
      * this array consists of an attribute name and the value for that attribute.</p>
      */
-    inline void SetItems(Aws::Vector<Aws::Map<Aws::String, AttributeValue>>&& value) { m_items = value; }
+    inline void SetItems(Aws::Vector<Aws::Map<Aws::String, AttributeValue>>&& value) { m_items = std::move(value); }
 
     /**
      * <p>An array of item attributes that match the query criteria. Each element in
@@ -77,7 +78,7 @@ namespace Model
      * <p>An array of item attributes that match the query criteria. Each element in
      * this array consists of an attribute name and the value for that attribute.</p>
      */
-    inline QueryResult& WithItems(Aws::Vector<Aws::Map<Aws::String, AttributeValue>>&& value) { SetItems(value); return *this;}
+    inline QueryResult& WithItems(Aws::Vector<Aws::Map<Aws::String, AttributeValue>>&& value) { SetItems(std::move(value)); return *this;}
 
     /**
      * <p>An array of item attributes that match the query criteria. Each element in
@@ -89,7 +90,7 @@ namespace Model
      * <p>An array of item attributes that match the query criteria. Each element in
      * this array consists of an attribute name and the value for that attribute.</p>
      */
-    inline QueryResult& AddItems(Aws::Map<Aws::String, AttributeValue>&& value) { m_items.push_back(value); return *this; }
+    inline QueryResult& AddItems(Aws::Map<Aws::String, AttributeValue>&& value) { m_items.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The number of items in the response.</p> <p>If you used a
@@ -191,7 +192,7 @@ namespace Model
      * when you have reached the end of the result set is when
      * <code>LastEvaluatedKey</code> is empty.</p>
      */
-    inline void SetLastEvaluatedKey(Aws::Map<Aws::String, AttributeValue>&& value) { m_lastEvaluatedKey = value; }
+    inline void SetLastEvaluatedKey(Aws::Map<Aws::String, AttributeValue>&& value) { m_lastEvaluatedKey = std::move(value); }
 
     /**
      * <p>The primary key of the item where the operation stopped, inclusive of the
@@ -215,7 +216,7 @@ namespace Model
      * when you have reached the end of the result set is when
      * <code>LastEvaluatedKey</code> is empty.</p>
      */
-    inline QueryResult& WithLastEvaluatedKey(Aws::Map<Aws::String, AttributeValue>&& value) { SetLastEvaluatedKey(value); return *this;}
+    inline QueryResult& WithLastEvaluatedKey(Aws::Map<Aws::String, AttributeValue>&& value) { SetLastEvaluatedKey(std::move(value)); return *this;}
 
     /**
      * <p>The primary key of the item where the operation stopped, inclusive of the
@@ -227,7 +228,7 @@ namespace Model
      * when you have reached the end of the result set is when
      * <code>LastEvaluatedKey</code> is empty.</p>
      */
-    inline QueryResult& AddLastEvaluatedKey(const Aws::String& key, const AttributeValue& value) { m_lastEvaluatedKey[key] = value; return *this; }
+    inline QueryResult& AddLastEvaluatedKey(const Aws::String& key, const AttributeValue& value) { m_lastEvaluatedKey.emplace(key, value); return *this; }
 
     /**
      * <p>The primary key of the item where the operation stopped, inclusive of the
@@ -239,7 +240,7 @@ namespace Model
      * when you have reached the end of the result set is when
      * <code>LastEvaluatedKey</code> is empty.</p>
      */
-    inline QueryResult& AddLastEvaluatedKey(Aws::String&& key, const AttributeValue& value) { m_lastEvaluatedKey[key] = value; return *this; }
+    inline QueryResult& AddLastEvaluatedKey(Aws::String&& key, const AttributeValue& value) { m_lastEvaluatedKey.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>The primary key of the item where the operation stopped, inclusive of the
@@ -251,7 +252,7 @@ namespace Model
      * when you have reached the end of the result set is when
      * <code>LastEvaluatedKey</code> is empty.</p>
      */
-    inline QueryResult& AddLastEvaluatedKey(const Aws::String& key, AttributeValue&& value) { m_lastEvaluatedKey[key] = value; return *this; }
+    inline QueryResult& AddLastEvaluatedKey(const Aws::String& key, AttributeValue&& value) { m_lastEvaluatedKey.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>The primary key of the item where the operation stopped, inclusive of the
@@ -263,7 +264,7 @@ namespace Model
      * when you have reached the end of the result set is when
      * <code>LastEvaluatedKey</code> is empty.</p>
      */
-    inline QueryResult& AddLastEvaluatedKey(Aws::String&& key, AttributeValue&& value) { m_lastEvaluatedKey[key] = value; return *this; }
+    inline QueryResult& AddLastEvaluatedKey(Aws::String&& key, AttributeValue&& value) { m_lastEvaluatedKey.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
      * <p>The primary key of the item where the operation stopped, inclusive of the
@@ -275,7 +276,7 @@ namespace Model
      * when you have reached the end of the result set is when
      * <code>LastEvaluatedKey</code> is empty.</p>
      */
-    inline QueryResult& AddLastEvaluatedKey(const char* key, AttributeValue&& value) { m_lastEvaluatedKey[key] = value; return *this; }
+    inline QueryResult& AddLastEvaluatedKey(const char* key, AttributeValue&& value) { m_lastEvaluatedKey.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>The primary key of the item where the operation stopped, inclusive of the
@@ -287,7 +288,7 @@ namespace Model
      * when you have reached the end of the result set is when
      * <code>LastEvaluatedKey</code> is empty.</p>
      */
-    inline QueryResult& AddLastEvaluatedKey(const char* key, const AttributeValue& value) { m_lastEvaluatedKey[key] = value; return *this; }
+    inline QueryResult& AddLastEvaluatedKey(const char* key, const AttributeValue& value) { m_lastEvaluatedKey.emplace(key, value); return *this; }
 
     /**
      * <p>The capacity units consumed by the <code>Query</code> operation. The data
@@ -323,7 +324,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html">Provisioned
      * Throughput</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
-    inline void SetConsumedCapacity(ConsumedCapacity&& value) { m_consumedCapacity = value; }
+    inline void SetConsumedCapacity(ConsumedCapacity&& value) { m_consumedCapacity = std::move(value); }
 
     /**
      * <p>The capacity units consumed by the <code>Query</code> operation. The data
@@ -347,7 +348,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html">Provisioned
      * Throughput</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
-    inline QueryResult& WithConsumedCapacity(ConsumedCapacity&& value) { SetConsumedCapacity(value); return *this;}
+    inline QueryResult& WithConsumedCapacity(ConsumedCapacity&& value) { SetConsumedCapacity(std::move(value)); return *this;}
 
   private:
     Aws::Vector<Aws::Map<Aws::String, AttributeValue>> m_items;

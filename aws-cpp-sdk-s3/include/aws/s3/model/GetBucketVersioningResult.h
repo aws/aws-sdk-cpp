@@ -16,6 +16,7 @@
 #include <aws/s3/S3_EXPORTS.h>
 #include <aws/s3/model/BucketVersioningStatus.h>
 #include <aws/s3/model/MFADeleteStatus.h>
+#include <utility>
 
 namespace Aws
 {
@@ -53,7 +54,7 @@ namespace Model
     /**
      * The versioning state of the bucket.
      */
-    inline void SetStatus(BucketVersioningStatus&& value) { m_status = value; }
+    inline void SetStatus(BucketVersioningStatus&& value) { m_status = std::move(value); }
 
     /**
      * The versioning state of the bucket.
@@ -63,7 +64,7 @@ namespace Model
     /**
      * The versioning state of the bucket.
      */
-    inline GetBucketVersioningResult& WithStatus(BucketVersioningStatus&& value) { SetStatus(value); return *this;}
+    inline GetBucketVersioningResult& WithStatus(BucketVersioningStatus&& value) { SetStatus(std::move(value)); return *this;}
 
     /**
      * Specifies whether MFA delete is enabled in the bucket versioning configuration.
@@ -84,7 +85,7 @@ namespace Model
      * This element is only returned if the bucket has been configured with MFA delete.
      * If the bucket has never been so configured, this element is not returned.
      */
-    inline void SetMFADelete(MFADeleteStatus&& value) { m_mFADelete = value; }
+    inline void SetMFADelete(MFADeleteStatus&& value) { m_mFADelete = std::move(value); }
 
     /**
      * Specifies whether MFA delete is enabled in the bucket versioning configuration.
@@ -98,7 +99,7 @@ namespace Model
      * This element is only returned if the bucket has been configured with MFA delete.
      * If the bucket has never been so configured, this element is not returned.
      */
-    inline GetBucketVersioningResult& WithMFADelete(MFADeleteStatus&& value) { SetMFADelete(value); return *this;}
+    inline GetBucketVersioningResult& WithMFADelete(MFADeleteStatus&& value) { SetMFADelete(std::move(value)); return *this;}
 
   private:
     BucketVersioningStatus m_status;

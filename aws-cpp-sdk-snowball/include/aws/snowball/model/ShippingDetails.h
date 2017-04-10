@@ -16,6 +16,7 @@
 #include <aws/snowball/Snowball_EXPORTS.h>
 #include <aws/snowball/model/ShippingOption.h>
 #include <aws/snowball/model/Shipment.h>
+#include <utility>
 
 namespace Aws
 {
@@ -88,7 +89,7 @@ namespace Model
      * in one to seven days.</p> </li> <li> <p>In the United States of America (US),
      * you have access to one-day shipping and two-day shipping.</p> </li> </ul>
      */
-    inline void SetShippingOption(ShippingOption&& value) { m_shippingOptionHasBeenSet = true; m_shippingOption = value; }
+    inline void SetShippingOption(ShippingOption&& value) { m_shippingOptionHasBeenSet = true; m_shippingOption = std::move(value); }
 
     /**
      * <p>The shipping speed for a particular job. This speed doesn't dictate how soon
@@ -118,7 +119,7 @@ namespace Model
      * in one to seven days.</p> </li> <li> <p>In the United States of America (US),
      * you have access to one-day shipping and two-day shipping.</p> </li> </ul>
      */
-    inline ShippingDetails& WithShippingOption(ShippingOption&& value) { SetShippingOption(value); return *this;}
+    inline ShippingDetails& WithShippingOption(ShippingOption&& value) { SetShippingOption(std::move(value)); return *this;}
 
     /**
      * <p>The <code>Status</code> and <code>TrackingNumber</code> values for a Snowball
@@ -136,7 +137,7 @@ namespace Model
      * <p>The <code>Status</code> and <code>TrackingNumber</code> values for a Snowball
      * being delivered to the address that you specified for a particular job.</p>
      */
-    inline void SetInboundShipment(Shipment&& value) { m_inboundShipmentHasBeenSet = true; m_inboundShipment = value; }
+    inline void SetInboundShipment(Shipment&& value) { m_inboundShipmentHasBeenSet = true; m_inboundShipment = std::move(value); }
 
     /**
      * <p>The <code>Status</code> and <code>TrackingNumber</code> values for a Snowball
@@ -148,7 +149,7 @@ namespace Model
      * <p>The <code>Status</code> and <code>TrackingNumber</code> values for a Snowball
      * being delivered to the address that you specified for a particular job.</p>
      */
-    inline ShippingDetails& WithInboundShipment(Shipment&& value) { SetInboundShipment(value); return *this;}
+    inline ShippingDetails& WithInboundShipment(Shipment&& value) { SetInboundShipment(std::move(value)); return *this;}
 
     /**
      * <p>The <code>Status</code> and <code>TrackingNumber</code> values for a Snowball
@@ -166,7 +167,7 @@ namespace Model
      * <p>The <code>Status</code> and <code>TrackingNumber</code> values for a Snowball
      * being returned to AWS for a particular job.</p>
      */
-    inline void SetOutboundShipment(Shipment&& value) { m_outboundShipmentHasBeenSet = true; m_outboundShipment = value; }
+    inline void SetOutboundShipment(Shipment&& value) { m_outboundShipmentHasBeenSet = true; m_outboundShipment = std::move(value); }
 
     /**
      * <p>The <code>Status</code> and <code>TrackingNumber</code> values for a Snowball
@@ -178,7 +179,7 @@ namespace Model
      * <p>The <code>Status</code> and <code>TrackingNumber</code> values for a Snowball
      * being returned to AWS for a particular job.</p>
      */
-    inline ShippingDetails& WithOutboundShipment(Shipment&& value) { SetOutboundShipment(value); return *this;}
+    inline ShippingDetails& WithOutboundShipment(Shipment&& value) { SetOutboundShipment(std::move(value)); return *this;}
 
   private:
     ShippingOption m_shippingOption;

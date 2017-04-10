@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/swf/model/WorkflowTypeInfo.h>
+#include <utility>
 
 namespace Aws
 {
@@ -60,7 +61,7 @@ namespace Model
     /**
      * <p>The list of workflow type information.</p>
      */
-    inline void SetTypeInfos(Aws::Vector<WorkflowTypeInfo>&& value) { m_typeInfos = value; }
+    inline void SetTypeInfos(Aws::Vector<WorkflowTypeInfo>&& value) { m_typeInfos = std::move(value); }
 
     /**
      * <p>The list of workflow type information.</p>
@@ -70,7 +71,7 @@ namespace Model
     /**
      * <p>The list of workflow type information.</p>
      */
-    inline ListWorkflowTypesResult& WithTypeInfos(Aws::Vector<WorkflowTypeInfo>&& value) { SetTypeInfos(value); return *this;}
+    inline ListWorkflowTypesResult& WithTypeInfos(Aws::Vector<WorkflowTypeInfo>&& value) { SetTypeInfos(std::move(value)); return *this;}
 
     /**
      * <p>The list of workflow type information.</p>
@@ -80,7 +81,7 @@ namespace Model
     /**
      * <p>The list of workflow type information.</p>
      */
-    inline ListWorkflowTypesResult& AddTypeInfos(WorkflowTypeInfo&& value) { m_typeInfos.push_back(value); return *this; }
+    inline ListWorkflowTypesResult& AddTypeInfos(WorkflowTypeInfo&& value) { m_typeInfos.push_back(std::move(value)); return *this; }
 
     /**
      * <p>If a <code>NextPageToken</code> was returned by a previous call, there are
@@ -107,7 +108,7 @@ namespace Model
      * arguments unchanged.</p> <p>The configured <code>maximumPageSize</code>
      * determines how many results can be returned in a single call.</p>
      */
-    inline void SetNextPageToken(Aws::String&& value) { m_nextPageToken = value; }
+    inline void SetNextPageToken(Aws::String&& value) { m_nextPageToken = std::move(value); }
 
     /**
      * <p>If a <code>NextPageToken</code> was returned by a previous call, there are
@@ -134,7 +135,7 @@ namespace Model
      * arguments unchanged.</p> <p>The configured <code>maximumPageSize</code>
      * determines how many results can be returned in a single call.</p>
      */
-    inline ListWorkflowTypesResult& WithNextPageToken(Aws::String&& value) { SetNextPageToken(value); return *this;}
+    inline ListWorkflowTypesResult& WithNextPageToken(Aws::String&& value) { SetNextPageToken(std::move(value)); return *this;}
 
     /**
      * <p>If a <code>NextPageToken</code> was returned by a previous call, there are

@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/swf/SWF_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -57,7 +58,7 @@ namespace Model
     /**
      * <p>The workflowId to pass of match the criteria of this filter.</p>
      */
-    inline void SetWorkflowId(Aws::String&& value) { m_workflowIdHasBeenSet = true; m_workflowId = value; }
+    inline void SetWorkflowId(Aws::String&& value) { m_workflowIdHasBeenSet = true; m_workflowId = std::move(value); }
 
     /**
      * <p>The workflowId to pass of match the criteria of this filter.</p>
@@ -72,7 +73,7 @@ namespace Model
     /**
      * <p>The workflowId to pass of match the criteria of this filter.</p>
      */
-    inline WorkflowExecutionFilter& WithWorkflowId(Aws::String&& value) { SetWorkflowId(value); return *this;}
+    inline WorkflowExecutionFilter& WithWorkflowId(Aws::String&& value) { SetWorkflowId(std::move(value)); return *this;}
 
     /**
      * <p>The workflowId to pass of match the criteria of this filter.</p>

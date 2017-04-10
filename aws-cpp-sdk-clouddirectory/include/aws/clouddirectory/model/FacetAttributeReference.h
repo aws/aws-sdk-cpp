@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/clouddirectory/CloudDirectory_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -63,7 +64,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_advanced.html#attributereferences">Attribute
      * References</a> for more information.</p>
      */
-    inline void SetTargetFacetName(Aws::String&& value) { m_targetFacetNameHasBeenSet = true; m_targetFacetName = value; }
+    inline void SetTargetFacetName(Aws::String&& value) { m_targetFacetNameHasBeenSet = true; m_targetFacetName = std::move(value); }
 
     /**
      * <p>Target facet name associated with the facet reference. See <a
@@ -84,7 +85,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_advanced.html#attributereferences">Attribute
      * References</a> for more information.</p>
      */
-    inline FacetAttributeReference& WithTargetFacetName(Aws::String&& value) { SetTargetFacetName(value); return *this;}
+    inline FacetAttributeReference& WithTargetFacetName(Aws::String&& value) { SetTargetFacetName(std::move(value)); return *this;}
 
     /**
      * <p>Target facet name associated with the facet reference. See <a
@@ -112,7 +113,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_advanced.html#attributereferences">Attribute
      * References</a> for more information.</p>
      */
-    inline void SetTargetAttributeName(Aws::String&& value) { m_targetAttributeNameHasBeenSet = true; m_targetAttributeName = value; }
+    inline void SetTargetAttributeName(Aws::String&& value) { m_targetAttributeNameHasBeenSet = true; m_targetAttributeName = std::move(value); }
 
     /**
      * <p>Target attribute name associated with the facet reference. See <a
@@ -133,7 +134,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_advanced.html#attributereferences">Attribute
      * References</a> for more information.</p>
      */
-    inline FacetAttributeReference& WithTargetAttributeName(Aws::String&& value) { SetTargetAttributeName(value); return *this;}
+    inline FacetAttributeReference& WithTargetAttributeName(Aws::String&& value) { SetTargetAttributeName(std::move(value)); return *this;}
 
     /**
      * <p>Target attribute name associated with the facet reference. See <a

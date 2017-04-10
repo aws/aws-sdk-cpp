@@ -17,6 +17,7 @@
 #include <aws/cloudsearch/CloudSearchRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <utility>
 
 namespace Aws
 {
@@ -60,7 +61,7 @@ namespace Model
     /**
      * <p>The name of the domain you want to describe.</p>
      */
-    inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
+    inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = std::move(value); }
 
     /**
      * <p>The name of the domain you want to describe.</p>
@@ -75,7 +76,7 @@ namespace Model
     /**
      * <p>The name of the domain you want to describe.</p>
      */
-    inline DescribeAnalysisSchemesRequest& WithDomainName(Aws::String&& value) { SetDomainName(value); return *this;}
+    inline DescribeAnalysisSchemesRequest& WithDomainName(Aws::String&& value) { SetDomainName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the domain you want to describe.</p>
@@ -95,7 +96,7 @@ namespace Model
     /**
      * <p>The analysis schemes you want to describe.</p>
      */
-    inline void SetAnalysisSchemeNames(Aws::Vector<Aws::String>&& value) { m_analysisSchemeNamesHasBeenSet = true; m_analysisSchemeNames = value; }
+    inline void SetAnalysisSchemeNames(Aws::Vector<Aws::String>&& value) { m_analysisSchemeNamesHasBeenSet = true; m_analysisSchemeNames = std::move(value); }
 
     /**
      * <p>The analysis schemes you want to describe.</p>
@@ -105,7 +106,7 @@ namespace Model
     /**
      * <p>The analysis schemes you want to describe.</p>
      */
-    inline DescribeAnalysisSchemesRequest& WithAnalysisSchemeNames(Aws::Vector<Aws::String>&& value) { SetAnalysisSchemeNames(value); return *this;}
+    inline DescribeAnalysisSchemesRequest& WithAnalysisSchemeNames(Aws::Vector<Aws::String>&& value) { SetAnalysisSchemeNames(std::move(value)); return *this;}
 
     /**
      * <p>The analysis schemes you want to describe.</p>
@@ -115,7 +116,7 @@ namespace Model
     /**
      * <p>The analysis schemes you want to describe.</p>
      */
-    inline DescribeAnalysisSchemesRequest& AddAnalysisSchemeNames(Aws::String&& value) { m_analysisSchemeNamesHasBeenSet = true; m_analysisSchemeNames.push_back(value); return *this; }
+    inline DescribeAnalysisSchemesRequest& AddAnalysisSchemeNames(Aws::String&& value) { m_analysisSchemeNamesHasBeenSet = true; m_analysisSchemeNames.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The analysis schemes you want to describe.</p>

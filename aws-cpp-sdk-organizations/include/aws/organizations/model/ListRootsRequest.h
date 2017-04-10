@@ -16,6 +16,7 @@
 #include <aws/organizations/Organizations_EXPORTS.h>
 #include <aws/organizations/OrganizationsRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -57,7 +58,7 @@ namespace Model
      * the value of the previous call's <code>NextToken</code> response to indicate
      * where the output should continue from.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
      * <p>Use this parameter if you receive a <code>NextToken</code> response in a
@@ -81,7 +82,7 @@ namespace Model
      * the value of the previous call's <code>NextToken</code> response to indicate
      * where the output should continue from.</p>
      */
-    inline ListRootsRequest& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline ListRootsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>Use this parameter if you receive a <code>NextToken</code> response in a

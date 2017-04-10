@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/shield/model/AttackSummary.h>
+#include <utility>
 
 namespace Aws
 {
@@ -54,7 +55,7 @@ namespace Model
     /**
      * <p>The attack information for the specified time range.</p>
      */
-    inline void SetAttackSummaries(Aws::Vector<AttackSummary>&& value) { m_attackSummaries = value; }
+    inline void SetAttackSummaries(Aws::Vector<AttackSummary>&& value) { m_attackSummaries = std::move(value); }
 
     /**
      * <p>The attack information for the specified time range.</p>
@@ -64,7 +65,7 @@ namespace Model
     /**
      * <p>The attack information for the specified time range.</p>
      */
-    inline ListAttacksResult& WithAttackSummaries(Aws::Vector<AttackSummary>&& value) { SetAttackSummaries(value); return *this;}
+    inline ListAttacksResult& WithAttackSummaries(Aws::Vector<AttackSummary>&& value) { SetAttackSummaries(std::move(value)); return *this;}
 
     /**
      * <p>The attack information for the specified time range.</p>
@@ -74,7 +75,7 @@ namespace Model
     /**
      * <p>The attack information for the specified time range.</p>
      */
-    inline ListAttacksResult& AddAttackSummaries(AttackSummary&& value) { m_attackSummaries.push_back(value); return *this; }
+    inline ListAttacksResult& AddAttackSummaries(AttackSummary&& value) { m_attackSummaries.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The token returned by a previous call to indicate that there is more data
@@ -98,7 +99,7 @@ namespace Model
      * <code>NextMarker</code> parameter in a subsequent call to
      * <code>ListAttacks</code> to retrieve the next set of items.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
      * <p>The token returned by a previous call to indicate that there is more data
@@ -122,7 +123,7 @@ namespace Model
      * <code>NextMarker</code> parameter in a subsequent call to
      * <code>ListAttacks</code> to retrieve the next set of items.</p>
      */
-    inline ListAttacksResult& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline ListAttacksResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>The token returned by a previous call to indicate that there is more data

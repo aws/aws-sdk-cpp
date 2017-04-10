@@ -21,6 +21,7 @@
 #include <aws/iam/model/GroupDetail.h>
 #include <aws/iam/model/RoleDetail.h>
 #include <aws/iam/model/ManagedPolicyDetail.h>
+#include <utility>
 
 namespace Aws
 {
@@ -64,7 +65,7 @@ namespace Model
     /**
      * <p>A list containing information about IAM users.</p>
      */
-    inline void SetUserDetailList(Aws::Vector<UserDetail>&& value) { m_userDetailList = value; }
+    inline void SetUserDetailList(Aws::Vector<UserDetail>&& value) { m_userDetailList = std::move(value); }
 
     /**
      * <p>A list containing information about IAM users.</p>
@@ -74,7 +75,7 @@ namespace Model
     /**
      * <p>A list containing information about IAM users.</p>
      */
-    inline GetAccountAuthorizationDetailsResult& WithUserDetailList(Aws::Vector<UserDetail>&& value) { SetUserDetailList(value); return *this;}
+    inline GetAccountAuthorizationDetailsResult& WithUserDetailList(Aws::Vector<UserDetail>&& value) { SetUserDetailList(std::move(value)); return *this;}
 
     /**
      * <p>A list containing information about IAM users.</p>
@@ -84,7 +85,7 @@ namespace Model
     /**
      * <p>A list containing information about IAM users.</p>
      */
-    inline GetAccountAuthorizationDetailsResult& AddUserDetailList(UserDetail&& value) { m_userDetailList.push_back(value); return *this; }
+    inline GetAccountAuthorizationDetailsResult& AddUserDetailList(UserDetail&& value) { m_userDetailList.push_back(std::move(value)); return *this; }
 
     /**
      * <p>A list containing information about IAM groups.</p>
@@ -99,7 +100,7 @@ namespace Model
     /**
      * <p>A list containing information about IAM groups.</p>
      */
-    inline void SetGroupDetailList(Aws::Vector<GroupDetail>&& value) { m_groupDetailList = value; }
+    inline void SetGroupDetailList(Aws::Vector<GroupDetail>&& value) { m_groupDetailList = std::move(value); }
 
     /**
      * <p>A list containing information about IAM groups.</p>
@@ -109,7 +110,7 @@ namespace Model
     /**
      * <p>A list containing information about IAM groups.</p>
      */
-    inline GetAccountAuthorizationDetailsResult& WithGroupDetailList(Aws::Vector<GroupDetail>&& value) { SetGroupDetailList(value); return *this;}
+    inline GetAccountAuthorizationDetailsResult& WithGroupDetailList(Aws::Vector<GroupDetail>&& value) { SetGroupDetailList(std::move(value)); return *this;}
 
     /**
      * <p>A list containing information about IAM groups.</p>
@@ -119,7 +120,7 @@ namespace Model
     /**
      * <p>A list containing information about IAM groups.</p>
      */
-    inline GetAccountAuthorizationDetailsResult& AddGroupDetailList(GroupDetail&& value) { m_groupDetailList.push_back(value); return *this; }
+    inline GetAccountAuthorizationDetailsResult& AddGroupDetailList(GroupDetail&& value) { m_groupDetailList.push_back(std::move(value)); return *this; }
 
     /**
      * <p>A list containing information about IAM roles.</p>
@@ -134,7 +135,7 @@ namespace Model
     /**
      * <p>A list containing information about IAM roles.</p>
      */
-    inline void SetRoleDetailList(Aws::Vector<RoleDetail>&& value) { m_roleDetailList = value; }
+    inline void SetRoleDetailList(Aws::Vector<RoleDetail>&& value) { m_roleDetailList = std::move(value); }
 
     /**
      * <p>A list containing information about IAM roles.</p>
@@ -144,7 +145,7 @@ namespace Model
     /**
      * <p>A list containing information about IAM roles.</p>
      */
-    inline GetAccountAuthorizationDetailsResult& WithRoleDetailList(Aws::Vector<RoleDetail>&& value) { SetRoleDetailList(value); return *this;}
+    inline GetAccountAuthorizationDetailsResult& WithRoleDetailList(Aws::Vector<RoleDetail>&& value) { SetRoleDetailList(std::move(value)); return *this;}
 
     /**
      * <p>A list containing information about IAM roles.</p>
@@ -154,7 +155,7 @@ namespace Model
     /**
      * <p>A list containing information about IAM roles.</p>
      */
-    inline GetAccountAuthorizationDetailsResult& AddRoleDetailList(RoleDetail&& value) { m_roleDetailList.push_back(value); return *this; }
+    inline GetAccountAuthorizationDetailsResult& AddRoleDetailList(RoleDetail&& value) { m_roleDetailList.push_back(std::move(value)); return *this; }
 
     /**
      * <p>A list containing information about managed policies.</p>
@@ -169,7 +170,7 @@ namespace Model
     /**
      * <p>A list containing information about managed policies.</p>
      */
-    inline void SetPolicies(Aws::Vector<ManagedPolicyDetail>&& value) { m_policies = value; }
+    inline void SetPolicies(Aws::Vector<ManagedPolicyDetail>&& value) { m_policies = std::move(value); }
 
     /**
      * <p>A list containing information about managed policies.</p>
@@ -179,7 +180,7 @@ namespace Model
     /**
      * <p>A list containing information about managed policies.</p>
      */
-    inline GetAccountAuthorizationDetailsResult& WithPolicies(Aws::Vector<ManagedPolicyDetail>&& value) { SetPolicies(value); return *this;}
+    inline GetAccountAuthorizationDetailsResult& WithPolicies(Aws::Vector<ManagedPolicyDetail>&& value) { SetPolicies(std::move(value)); return *this;}
 
     /**
      * <p>A list containing information about managed policies.</p>
@@ -189,7 +190,7 @@ namespace Model
     /**
      * <p>A list containing information about managed policies.</p>
      */
-    inline GetAccountAuthorizationDetailsResult& AddPolicies(ManagedPolicyDetail&& value) { m_policies.push_back(value); return *this; }
+    inline GetAccountAuthorizationDetailsResult& AddPolicies(ManagedPolicyDetail&& value) { m_policies.push_back(std::move(value)); return *this; }
 
     /**
      * <p>A flag that indicates whether there are more items to return. If your results
@@ -243,7 +244,7 @@ namespace Model
      * and contains the value to use for the <code>Marker</code> parameter in a
      * subsequent pagination request.</p>
      */
-    inline void SetMarker(Aws::String&& value) { m_marker = value; }
+    inline void SetMarker(Aws::String&& value) { m_marker = std::move(value); }
 
     /**
      * <p>When <code>IsTruncated</code> is <code>true</code>, this element is present
@@ -264,7 +265,7 @@ namespace Model
      * and contains the value to use for the <code>Marker</code> parameter in a
      * subsequent pagination request.</p>
      */
-    inline GetAccountAuthorizationDetailsResult& WithMarker(Aws::String&& value) { SetMarker(value); return *this;}
+    inline GetAccountAuthorizationDetailsResult& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
 
     /**
      * <p>When <code>IsTruncated</code> is <code>true</code>, this element is present
@@ -280,13 +281,13 @@ namespace Model
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
 
     
     inline GetAccountAuthorizationDetailsResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
 
     
-    inline GetAccountAuthorizationDetailsResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
+    inline GetAccountAuthorizationDetailsResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
     Aws::Vector<UserDetail> m_userDetailList;

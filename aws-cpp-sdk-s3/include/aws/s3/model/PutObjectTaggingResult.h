@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/s3/S3_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -46,7 +47,7 @@ namespace Model
     inline void SetVersionId(const Aws::String& value) { m_versionId = value; }
 
     
-    inline void SetVersionId(Aws::String&& value) { m_versionId = value; }
+    inline void SetVersionId(Aws::String&& value) { m_versionId = std::move(value); }
 
     
     inline void SetVersionId(const char* value) { m_versionId.assign(value); }
@@ -55,7 +56,7 @@ namespace Model
     inline PutObjectTaggingResult& WithVersionId(const Aws::String& value) { SetVersionId(value); return *this;}
 
     
-    inline PutObjectTaggingResult& WithVersionId(Aws::String&& value) { SetVersionId(value); return *this;}
+    inline PutObjectTaggingResult& WithVersionId(Aws::String&& value) { SetVersionId(std::move(value)); return *this;}
 
     
     inline PutObjectTaggingResult& WithVersionId(const char* value) { SetVersionId(value); return *this;}

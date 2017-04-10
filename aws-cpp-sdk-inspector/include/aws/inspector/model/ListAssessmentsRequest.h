@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/inspector/model/AssessmentsFilter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -53,7 +54,7 @@ namespace Model
      * <p>A list of ARNs specifying the applications the assessments of which you want
      * to list.</p>
      */
-    inline void SetApplicationArns(Aws::Vector<Aws::String>&& value) { m_applicationArnsHasBeenSet = true; m_applicationArns = value; }
+    inline void SetApplicationArns(Aws::Vector<Aws::String>&& value) { m_applicationArnsHasBeenSet = true; m_applicationArns = std::move(value); }
 
     /**
      * <p>A list of ARNs specifying the applications the assessments of which you want
@@ -65,7 +66,7 @@ namespace Model
      * <p>A list of ARNs specifying the applications the assessments of which you want
      * to list.</p>
      */
-    inline ListAssessmentsRequest& WithApplicationArns(Aws::Vector<Aws::String>&& value) { SetApplicationArns(value); return *this;}
+    inline ListAssessmentsRequest& WithApplicationArns(Aws::Vector<Aws::String>&& value) { SetApplicationArns(std::move(value)); return *this;}
 
     /**
      * <p>A list of ARNs specifying the applications the assessments of which you want
@@ -77,7 +78,7 @@ namespace Model
      * <p>A list of ARNs specifying the applications the assessments of which you want
      * to list.</p>
      */
-    inline ListAssessmentsRequest& AddApplicationArns(Aws::String&& value) { m_applicationArnsHasBeenSet = true; m_applicationArns.push_back(value); return *this; }
+    inline ListAssessmentsRequest& AddApplicationArns(Aws::String&& value) { m_applicationArnsHasBeenSet = true; m_applicationArns.push_back(std::move(value)); return *this; }
 
     /**
      * <p>A list of ARNs specifying the applications the assessments of which you want
@@ -107,7 +108,7 @@ namespace Model
      * attributes must match. When multiple values are specified for a filter
      * attribute, any of the values can match.</p>
      */
-    inline void SetFilter(AssessmentsFilter&& value) { m_filterHasBeenSet = true; m_filter = value; }
+    inline void SetFilter(AssessmentsFilter&& value) { m_filterHasBeenSet = true; m_filter = std::move(value); }
 
     /**
      * <p>You can use this parameter to specify a subset of data to be included in the
@@ -123,7 +124,7 @@ namespace Model
      * attributes must match. When multiple values are specified for a filter
      * attribute, any of the values can match.</p>
      */
-    inline ListAssessmentsRequest& WithFilter(AssessmentsFilter&& value) { SetFilter(value); return *this;}
+    inline ListAssessmentsRequest& WithFilter(AssessmentsFilter&& value) { SetFilter(std::move(value)); return *this;}
 
     /**
      * <p>You can use this parameter when paginating results. Set the value of this
@@ -147,7 +148,7 @@ namespace Model
      * Subsequent calls to the action fill <b>nextToken</b> in the request with the
      * value of <b>NextToken</b> from previous response to continue listing data.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
      * <p>You can use this parameter when paginating results. Set the value of this
@@ -171,7 +172,7 @@ namespace Model
      * Subsequent calls to the action fill <b>nextToken</b> in the request with the
      * value of <b>NextToken</b> from previous response to continue listing data.</p>
      */
-    inline ListAssessmentsRequest& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline ListAssessmentsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>You can use this parameter when paginating results. Set the value of this

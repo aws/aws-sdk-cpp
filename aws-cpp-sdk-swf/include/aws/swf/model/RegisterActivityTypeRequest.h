@@ -17,6 +17,7 @@
 #include <aws/swf/SWFRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/swf/model/TaskList.h>
+#include <utility>
 
 namespace Aws
 {
@@ -49,7 +50,7 @@ namespace Model
     /**
      * <p>The name of the domain in which this activity is to be registered.</p>
      */
-    inline void SetDomain(Aws::String&& value) { m_domainHasBeenSet = true; m_domain = value; }
+    inline void SetDomain(Aws::String&& value) { m_domainHasBeenSet = true; m_domain = std::move(value); }
 
     /**
      * <p>The name of the domain in which this activity is to be registered.</p>
@@ -64,7 +65,7 @@ namespace Model
     /**
      * <p>The name of the domain in which this activity is to be registered.</p>
      */
-    inline RegisterActivityTypeRequest& WithDomain(Aws::String&& value) { SetDomain(value); return *this;}
+    inline RegisterActivityTypeRequest& WithDomain(Aws::String&& value) { SetDomain(std::move(value)); return *this;}
 
     /**
      * <p>The name of the domain in which this activity is to be registered.</p>
@@ -96,7 +97,7 @@ namespace Model
      * characters (\u0000-\u001f | \u007f - \u009f). Also, it must not contain the
      * literal string quotarnquot.</p>
      */
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p>The name of the activity type within the domain.</p> <p>The specified string
@@ -123,7 +124,7 @@ namespace Model
      * characters (\u0000-\u001f | \u007f - \u009f). Also, it must not contain the
      * literal string quotarnquot.</p>
      */
-    inline RegisterActivityTypeRequest& WithName(Aws::String&& value) { SetName(value); return *this;}
+    inline RegisterActivityTypeRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the activity type within the domain.</p> <p>The specified string
@@ -162,7 +163,7 @@ namespace Model
      * <code>|</code> (vertical bar), or any control characters (\u0000-\u001f | \u007f
      * - \u009f). Also, it must not contain the literal string quotarnquot.</p>
      */
-    inline void SetVersion(Aws::String&& value) { m_versionHasBeenSet = true; m_version = value; }
+    inline void SetVersion(Aws::String&& value) { m_versionHasBeenSet = true; m_version = std::move(value); }
 
     /**
      * <p>The version of the activity type.</p> <note>The activity type consists of the
@@ -192,7 +193,7 @@ namespace Model
      * <code>|</code> (vertical bar), or any control characters (\u0000-\u001f | \u007f
      * - \u009f). Also, it must not contain the literal string quotarnquot.</p>
      */
-    inline RegisterActivityTypeRequest& WithVersion(Aws::String&& value) { SetVersion(value); return *this;}
+    inline RegisterActivityTypeRequest& WithVersion(Aws::String&& value) { SetVersion(std::move(value)); return *this;}
 
     /**
      * <p>The version of the activity type.</p> <note>The activity type consists of the
@@ -217,7 +218,7 @@ namespace Model
     /**
      * <p>A textual description of the activity type.</p>
      */
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = value; }
+    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
      * <p>A textual description of the activity type.</p>
@@ -232,7 +233,7 @@ namespace Model
     /**
      * <p>A textual description of the activity type.</p>
      */
-    inline RegisterActivityTypeRequest& WithDescription(Aws::String&& value) { SetDescription(value); return *this;}
+    inline RegisterActivityTypeRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
      * <p>A textual description of the activity type.</p>
@@ -264,7 +265,7 @@ namespace Model
      * decision.</p> <p>The duration is specified in seconds; an integer greater than
      * or equal to 0. The value "NONE" can be used to specify unlimited duration.</p>
      */
-    inline void SetDefaultTaskStartToCloseTimeout(Aws::String&& value) { m_defaultTaskStartToCloseTimeoutHasBeenSet = true; m_defaultTaskStartToCloseTimeout = value; }
+    inline void SetDefaultTaskStartToCloseTimeout(Aws::String&& value) { m_defaultTaskStartToCloseTimeoutHasBeenSet = true; m_defaultTaskStartToCloseTimeout = std::move(value); }
 
     /**
      * <p>If set, specifies the default maximum duration that a worker can take to
@@ -291,7 +292,7 @@ namespace Model
      * decision.</p> <p>The duration is specified in seconds; an integer greater than
      * or equal to 0. The value "NONE" can be used to specify unlimited duration.</p>
      */
-    inline RegisterActivityTypeRequest& WithDefaultTaskStartToCloseTimeout(Aws::String&& value) { SetDefaultTaskStartToCloseTimeout(value); return *this;}
+    inline RegisterActivityTypeRequest& WithDefaultTaskStartToCloseTimeout(Aws::String&& value) { SetDefaultTaskStartToCloseTimeout(std::move(value)); return *this;}
 
     /**
      * <p>If set, specifies the default maximum duration that a worker can take to
@@ -345,7 +346,7 @@ namespace Model
      * seconds; an integer greater than or equal to 0. The value "NONE" can be used to
      * specify unlimited duration.</p>
      */
-    inline void SetDefaultTaskHeartbeatTimeout(Aws::String&& value) { m_defaultTaskHeartbeatTimeoutHasBeenSet = true; m_defaultTaskHeartbeatTimeout = value; }
+    inline void SetDefaultTaskHeartbeatTimeout(Aws::String&& value) { m_defaultTaskHeartbeatTimeoutHasBeenSet = true; m_defaultTaskHeartbeatTimeout = std::move(value); }
 
     /**
      * <p>If set, specifies the default maximum time before which a worker processing a
@@ -390,7 +391,7 @@ namespace Model
      * seconds; an integer greater than or equal to 0. The value "NONE" can be used to
      * specify unlimited duration.</p>
      */
-    inline RegisterActivityTypeRequest& WithDefaultTaskHeartbeatTimeout(Aws::String&& value) { SetDefaultTaskHeartbeatTimeout(value); return *this;}
+    inline RegisterActivityTypeRequest& WithDefaultTaskHeartbeatTimeout(Aws::String&& value) { SetDefaultTaskHeartbeatTimeout(std::move(value)); return *this;}
 
     /**
      * <p>If set, specifies the default maximum time before which a worker processing a
@@ -429,7 +430,7 @@ namespace Model
      * when a task is scheduled through the <code>ScheduleActivityTask</code>
      * decision.</p>
      */
-    inline void SetDefaultTaskList(TaskList&& value) { m_defaultTaskListHasBeenSet = true; m_defaultTaskList = value; }
+    inline void SetDefaultTaskList(TaskList&& value) { m_defaultTaskListHasBeenSet = true; m_defaultTaskList = std::move(value); }
 
     /**
      * <p>If set, specifies the default task list to use for scheduling tasks of this
@@ -445,7 +446,7 @@ namespace Model
      * when a task is scheduled through the <code>ScheduleActivityTask</code>
      * decision.</p>
      */
-    inline RegisterActivityTypeRequest& WithDefaultTaskList(TaskList&& value) { SetDefaultTaskList(value); return *this;}
+    inline RegisterActivityTypeRequest& WithDefaultTaskList(TaskList&& value) { SetDefaultTaskList(std::move(value)); return *this;}
 
     /**
      * <p>The default task priority to assign to the activity type. If not assigned,
@@ -478,7 +479,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting
      * Task Priority</a> in the <i>Amazon Simple Workflow Developer Guide</i>.</p>
      */
-    inline void SetDefaultTaskPriority(Aws::String&& value) { m_defaultTaskPriorityHasBeenSet = true; m_defaultTaskPriority = value; }
+    inline void SetDefaultTaskPriority(Aws::String&& value) { m_defaultTaskPriorityHasBeenSet = true; m_defaultTaskPriority = std::move(value); }
 
     /**
      * <p>The default task priority to assign to the activity type. If not assigned,
@@ -511,7 +512,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting
      * Task Priority</a> in the <i>Amazon Simple Workflow Developer Guide</i>.</p>
      */
-    inline RegisterActivityTypeRequest& WithDefaultTaskPriority(Aws::String&& value) { SetDefaultTaskPriority(value); return *this;}
+    inline RegisterActivityTypeRequest& WithDefaultTaskPriority(Aws::String&& value) { SetDefaultTaskPriority(std::move(value)); return *this;}
 
     /**
      * <p>The default task priority to assign to the activity type. If not assigned,
@@ -549,7 +550,7 @@ namespace Model
      * decision.</p> <p>The duration is specified in seconds; an integer greater than
      * or equal to 0. The value "NONE" can be used to specify unlimited duration.</p>
      */
-    inline void SetDefaultTaskScheduleToStartTimeout(Aws::String&& value) { m_defaultTaskScheduleToStartTimeoutHasBeenSet = true; m_defaultTaskScheduleToStartTimeout = value; }
+    inline void SetDefaultTaskScheduleToStartTimeout(Aws::String&& value) { m_defaultTaskScheduleToStartTimeoutHasBeenSet = true; m_defaultTaskScheduleToStartTimeout = std::move(value); }
 
     /**
      * <p>If set, specifies the default maximum duration that a task of this activity
@@ -576,7 +577,7 @@ namespace Model
      * decision.</p> <p>The duration is specified in seconds; an integer greater than
      * or equal to 0. The value "NONE" can be used to specify unlimited duration.</p>
      */
-    inline RegisterActivityTypeRequest& WithDefaultTaskScheduleToStartTimeout(Aws::String&& value) { SetDefaultTaskScheduleToStartTimeout(value); return *this;}
+    inline RegisterActivityTypeRequest& WithDefaultTaskScheduleToStartTimeout(Aws::String&& value) { SetDefaultTaskScheduleToStartTimeout(std::move(value)); return *this;}
 
     /**
      * <p>If set, specifies the default maximum duration that a task of this activity
@@ -612,7 +613,7 @@ namespace Model
      * seconds; an integer greater than or equal to 0. The value "NONE" can be used to
      * specify unlimited duration.</p>
      */
-    inline void SetDefaultTaskScheduleToCloseTimeout(Aws::String&& value) { m_defaultTaskScheduleToCloseTimeoutHasBeenSet = true; m_defaultTaskScheduleToCloseTimeout = value; }
+    inline void SetDefaultTaskScheduleToCloseTimeout(Aws::String&& value) { m_defaultTaskScheduleToCloseTimeoutHasBeenSet = true; m_defaultTaskScheduleToCloseTimeout = std::move(value); }
 
     /**
      * <p>If set, specifies the default maximum duration for a task of this activity
@@ -639,7 +640,7 @@ namespace Model
      * seconds; an integer greater than or equal to 0. The value "NONE" can be used to
      * specify unlimited duration.</p>
      */
-    inline RegisterActivityTypeRequest& WithDefaultTaskScheduleToCloseTimeout(Aws::String&& value) { SetDefaultTaskScheduleToCloseTimeout(value); return *this;}
+    inline RegisterActivityTypeRequest& WithDefaultTaskScheduleToCloseTimeout(Aws::String&& value) { SetDefaultTaskScheduleToCloseTimeout(std::move(value)); return *this;}
 
     /**
      * <p>If set, specifies the default maximum duration for a task of this activity

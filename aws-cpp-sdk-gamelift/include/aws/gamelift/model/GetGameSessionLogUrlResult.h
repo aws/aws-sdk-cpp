@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/gamelift/GameLift_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -58,7 +59,7 @@ namespace Model
     /**
      * <p>Location of the requested game session logs, available for download.</p>
      */
-    inline void SetPreSignedUrl(Aws::String&& value) { m_preSignedUrl = value; }
+    inline void SetPreSignedUrl(Aws::String&& value) { m_preSignedUrl = std::move(value); }
 
     /**
      * <p>Location of the requested game session logs, available for download.</p>
@@ -73,7 +74,7 @@ namespace Model
     /**
      * <p>Location of the requested game session logs, available for download.</p>
      */
-    inline GetGameSessionLogUrlResult& WithPreSignedUrl(Aws::String&& value) { SetPreSignedUrl(value); return *this;}
+    inline GetGameSessionLogUrlResult& WithPreSignedUrl(Aws::String&& value) { SetPreSignedUrl(std::move(value)); return *this;}
 
     /**
      * <p>Location of the requested game session logs, available for download.</p>

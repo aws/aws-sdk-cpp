@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/redshift/model/EventInfoMap.h>
+#include <utility>
 
 namespace Aws
 {
@@ -64,7 +65,7 @@ namespace Model
      * <p>The source type, such as cluster or cluster-snapshot, that the returned
      * categories belong to.</p>
      */
-    inline void SetSourceType(Aws::String&& value) { m_sourceTypeHasBeenSet = true; m_sourceType = value; }
+    inline void SetSourceType(Aws::String&& value) { m_sourceTypeHasBeenSet = true; m_sourceType = std::move(value); }
 
     /**
      * <p>The source type, such as cluster or cluster-snapshot, that the returned
@@ -82,7 +83,7 @@ namespace Model
      * <p>The source type, such as cluster or cluster-snapshot, that the returned
      * categories belong to.</p>
      */
-    inline EventCategoriesMap& WithSourceType(Aws::String&& value) { SetSourceType(value); return *this;}
+    inline EventCategoriesMap& WithSourceType(Aws::String&& value) { SetSourceType(std::move(value)); return *this;}
 
     /**
      * <p>The source type, such as cluster or cluster-snapshot, that the returned
@@ -103,7 +104,7 @@ namespace Model
     /**
      * <p>The events in the event category.</p>
      */
-    inline void SetEvents(Aws::Vector<EventInfoMap>&& value) { m_eventsHasBeenSet = true; m_events = value; }
+    inline void SetEvents(Aws::Vector<EventInfoMap>&& value) { m_eventsHasBeenSet = true; m_events = std::move(value); }
 
     /**
      * <p>The events in the event category.</p>
@@ -113,7 +114,7 @@ namespace Model
     /**
      * <p>The events in the event category.</p>
      */
-    inline EventCategoriesMap& WithEvents(Aws::Vector<EventInfoMap>&& value) { SetEvents(value); return *this;}
+    inline EventCategoriesMap& WithEvents(Aws::Vector<EventInfoMap>&& value) { SetEvents(std::move(value)); return *this;}
 
     /**
      * <p>The events in the event category.</p>
@@ -123,7 +124,7 @@ namespace Model
     /**
      * <p>The events in the event category.</p>
      */
-    inline EventCategoriesMap& AddEvents(EventInfoMap&& value) { m_eventsHasBeenSet = true; m_events.push_back(value); return *this; }
+    inline EventCategoriesMap& AddEvents(EventInfoMap&& value) { m_eventsHasBeenSet = true; m_events.push_back(std::move(value)); return *this; }
 
   private:
     Aws::String m_sourceType;

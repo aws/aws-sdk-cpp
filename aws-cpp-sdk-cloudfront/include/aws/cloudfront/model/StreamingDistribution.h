@@ -18,6 +18,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/cloudfront/model/ActiveTrustedSigners.h>
 #include <aws/cloudfront/model/StreamingDistributionConfig.h>
+#include <utility>
 
 namespace Aws
 {
@@ -60,7 +61,7 @@ namespace Model
     /**
      * The identifier for the streaming distribution. For example: EGTXBD79H29TRA8.
      */
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = value; }
+    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
 
     /**
      * The identifier for the streaming distribution. For example: EGTXBD79H29TRA8.
@@ -75,7 +76,7 @@ namespace Model
     /**
      * The identifier for the streaming distribution. For example: EGTXBD79H29TRA8.
      */
-    inline StreamingDistribution& WithId(Aws::String&& value) { SetId(value); return *this;}
+    inline StreamingDistribution& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
 
     /**
      * The identifier for the streaming distribution. For example: EGTXBD79H29TRA8.
@@ -101,7 +102,7 @@ namespace Model
      * the distribution's information is fully propagated throughout the Amazon
      * CloudFront system.
      */
-    inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = value; }
+    inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
      * The current status of the streaming distribution. When the status is Deployed,
@@ -122,7 +123,7 @@ namespace Model
      * the distribution's information is fully propagated throughout the Amazon
      * CloudFront system.
      */
-    inline StreamingDistribution& WithStatus(Aws::String&& value) { SetStatus(value); return *this;}
+    inline StreamingDistribution& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
 
     /**
      * The current status of the streaming distribution. When the status is Deployed,
@@ -144,7 +145,7 @@ namespace Model
     /**
      * The date and time the distribution was last modified.
      */
-    inline void SetLastModifiedTime(Aws::Utils::DateTime&& value) { m_lastModifiedTimeHasBeenSet = true; m_lastModifiedTime = value; }
+    inline void SetLastModifiedTime(Aws::Utils::DateTime&& value) { m_lastModifiedTimeHasBeenSet = true; m_lastModifiedTime = std::move(value); }
 
     /**
      * The date and time the distribution was last modified.
@@ -154,7 +155,7 @@ namespace Model
     /**
      * The date and time the distribution was last modified.
      */
-    inline StreamingDistribution& WithLastModifiedTime(Aws::Utils::DateTime&& value) { SetLastModifiedTime(value); return *this;}
+    inline StreamingDistribution& WithLastModifiedTime(Aws::Utils::DateTime&& value) { SetLastModifiedTime(std::move(value)); return *this;}
 
     /**
      * The domain name corresponding to the streaming distribution. For example:
@@ -172,7 +173,7 @@ namespace Model
      * The domain name corresponding to the streaming distribution. For example:
      * s5c39gqb8ow64r.cloudfront.net.
      */
-    inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
+    inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = std::move(value); }
 
     /**
      * The domain name corresponding to the streaming distribution. For example:
@@ -190,7 +191,7 @@ namespace Model
      * The domain name corresponding to the streaming distribution. For example:
      * s5c39gqb8ow64r.cloudfront.net.
      */
-    inline StreamingDistribution& WithDomainName(Aws::String&& value) { SetDomainName(value); return *this;}
+    inline StreamingDistribution& WithDomainName(Aws::String&& value) { SetDomainName(std::move(value)); return *this;}
 
     /**
      * The domain name corresponding to the streaming distribution. For example:
@@ -232,7 +233,7 @@ namespace Model
      * KeyPairId element appears for a Signer, that signer can't create working signed
      * URLs.
      */
-    inline void SetActiveTrustedSigners(ActiveTrustedSigners&& value) { m_activeTrustedSignersHasBeenSet = true; m_activeTrustedSigners = value; }
+    inline void SetActiveTrustedSigners(ActiveTrustedSigners&& value) { m_activeTrustedSignersHasBeenSet = true; m_activeTrustedSigners = std::move(value); }
 
     /**
      * CloudFront automatically adds this element to the response only if you've set up
@@ -256,7 +257,7 @@ namespace Model
      * KeyPairId element appears for a Signer, that signer can't create working signed
      * URLs.
      */
-    inline StreamingDistribution& WithActiveTrustedSigners(ActiveTrustedSigners&& value) { SetActiveTrustedSigners(value); return *this;}
+    inline StreamingDistribution& WithActiveTrustedSigners(ActiveTrustedSigners&& value) { SetActiveTrustedSigners(std::move(value)); return *this;}
 
     /**
      * The current configuration information for the streaming distribution.
@@ -271,7 +272,7 @@ namespace Model
     /**
      * The current configuration information for the streaming distribution.
      */
-    inline void SetStreamingDistributionConfig(StreamingDistributionConfig&& value) { m_streamingDistributionConfigHasBeenSet = true; m_streamingDistributionConfig = value; }
+    inline void SetStreamingDistributionConfig(StreamingDistributionConfig&& value) { m_streamingDistributionConfigHasBeenSet = true; m_streamingDistributionConfig = std::move(value); }
 
     /**
      * The current configuration information for the streaming distribution.
@@ -281,7 +282,7 @@ namespace Model
     /**
      * The current configuration information for the streaming distribution.
      */
-    inline StreamingDistribution& WithStreamingDistributionConfig(StreamingDistributionConfig&& value) { SetStreamingDistributionConfig(value); return *this;}
+    inline StreamingDistribution& WithStreamingDistributionConfig(StreamingDistributionConfig&& value) { SetStreamingDistributionConfig(std::move(value)); return *this;}
 
   private:
     Aws::String m_id;

@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/machinelearning/model/Evaluation.h>
+#include <utility>
 
 namespace Aws
 {
@@ -61,7 +62,7 @@ namespace Model
     /**
      * <p>A list of <code>Evaluation</code> that meet the search criteria. </p>
      */
-    inline void SetResults(Aws::Vector<Evaluation>&& value) { m_results = value; }
+    inline void SetResults(Aws::Vector<Evaluation>&& value) { m_results = std::move(value); }
 
     /**
      * <p>A list of <code>Evaluation</code> that meet the search criteria. </p>
@@ -71,7 +72,7 @@ namespace Model
     /**
      * <p>A list of <code>Evaluation</code> that meet the search criteria. </p>
      */
-    inline DescribeEvaluationsResult& WithResults(Aws::Vector<Evaluation>&& value) { SetResults(value); return *this;}
+    inline DescribeEvaluationsResult& WithResults(Aws::Vector<Evaluation>&& value) { SetResults(std::move(value)); return *this;}
 
     /**
      * <p>A list of <code>Evaluation</code> that meet the search criteria. </p>
@@ -81,7 +82,7 @@ namespace Model
     /**
      * <p>A list of <code>Evaluation</code> that meet the search criteria. </p>
      */
-    inline DescribeEvaluationsResult& AddResults(Evaluation&& value) { m_results.push_back(value); return *this; }
+    inline DescribeEvaluationsResult& AddResults(Evaluation&& value) { m_results.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The ID of the next page in the paginated results that indicates at least one
@@ -99,7 +100,7 @@ namespace Model
      * <p>The ID of the next page in the paginated results that indicates at least one
      * more page follows.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
      * <p>The ID of the next page in the paginated results that indicates at least one
@@ -117,7 +118,7 @@ namespace Model
      * <p>The ID of the next page in the paginated results that indicates at least one
      * more page follows.</p>
      */
-    inline DescribeEvaluationsResult& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline DescribeEvaluationsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the next page in the paginated results that indicates at least one

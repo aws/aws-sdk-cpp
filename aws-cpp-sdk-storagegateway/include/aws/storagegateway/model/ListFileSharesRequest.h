@@ -16,6 +16,7 @@
 #include <aws/storagegateway/StorageGateway_EXPORTS.h>
 #include <aws/storagegateway/StorageGatewayRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -57,7 +58,7 @@ namespace Model
      * list. If this field is not present, all file shares under your account are
      * listed.</p>
      */
-    inline void SetGatewayARN(Aws::String&& value) { m_gatewayARNHasBeenSet = true; m_gatewayARN = value; }
+    inline void SetGatewayARN(Aws::String&& value) { m_gatewayARNHasBeenSet = true; m_gatewayARN = std::move(value); }
 
     /**
      * <p>The Amazon resource Name (ARN) of the gateway whose file shares you want to
@@ -78,7 +79,7 @@ namespace Model
      * list. If this field is not present, all file shares under your account are
      * listed.</p>
      */
-    inline ListFileSharesRequest& WithGatewayARN(Aws::String&& value) { SetGatewayARN(value); return *this;}
+    inline ListFileSharesRequest& WithGatewayARN(Aws::String&& value) { SetGatewayARN(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon resource Name (ARN) of the gateway whose file shares you want to
@@ -124,7 +125,7 @@ namespace Model
      * present, <code>Marker</code> specifies where to continue the list from after a
      * previous call to ListFileShares. Optional.</p>
      */
-    inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = value; }
+    inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = std::move(value); }
 
     /**
      * <p>Opaque pagination token returned from a previous ListFileShares operation. If
@@ -145,7 +146,7 @@ namespace Model
      * present, <code>Marker</code> specifies where to continue the list from after a
      * previous call to ListFileShares. Optional.</p>
      */
-    inline ListFileSharesRequest& WithMarker(Aws::String&& value) { SetMarker(value); return *this;}
+    inline ListFileSharesRequest& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
 
     /**
      * <p>Opaque pagination token returned from a previous ListFileShares operation. If

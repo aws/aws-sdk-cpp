@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/ssm/SSM_EXPORTS.h>
 #include <aws/ssm/model/AssociationDescription.h>
+#include <utility>
 
 namespace Aws
 {
@@ -52,7 +53,7 @@ namespace Model
     /**
      * <p>Information about the association.</p>
      */
-    inline void SetAssociationDescription(AssociationDescription&& value) { m_associationDescription = value; }
+    inline void SetAssociationDescription(AssociationDescription&& value) { m_associationDescription = std::move(value); }
 
     /**
      * <p>Information about the association.</p>
@@ -62,7 +63,7 @@ namespace Model
     /**
      * <p>Information about the association.</p>
      */
-    inline UpdateAssociationStatusResult& WithAssociationDescription(AssociationDescription&& value) { SetAssociationDescription(value); return *this;}
+    inline UpdateAssociationStatusResult& WithAssociationDescription(AssociationDescription&& value) { SetAssociationDescription(std::move(value)); return *this;}
 
   private:
     AssociationDescription m_associationDescription;

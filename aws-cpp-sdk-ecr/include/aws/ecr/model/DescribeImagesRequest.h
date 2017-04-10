@@ -19,6 +19,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ecr/model/DescribeImagesFilter.h>
 #include <aws/ecr/model/ImageIdentifier.h>
+#include <utility>
 
 namespace Aws
 {
@@ -57,7 +58,7 @@ namespace Model
      * in which to describe images. If you do not specify a registry, the default
      * registry is assumed.</p>
      */
-    inline void SetRegistryId(Aws::String&& value) { m_registryIdHasBeenSet = true; m_registryId = value; }
+    inline void SetRegistryId(Aws::String&& value) { m_registryIdHasBeenSet = true; m_registryId = std::move(value); }
 
     /**
      * <p>The AWS account ID associated with the registry that contains the repository
@@ -78,7 +79,7 @@ namespace Model
      * in which to describe images. If you do not specify a registry, the default
      * registry is assumed.</p>
      */
-    inline DescribeImagesRequest& WithRegistryId(Aws::String&& value) { SetRegistryId(value); return *this;}
+    inline DescribeImagesRequest& WithRegistryId(Aws::String&& value) { SetRegistryId(std::move(value)); return *this;}
 
     /**
      * <p>The AWS account ID associated with the registry that contains the repository
@@ -103,7 +104,7 @@ namespace Model
      * <p>A list of repositories to describe. If this parameter is omitted, then all
      * repositories in a registry are described.</p>
      */
-    inline void SetRepositoryName(Aws::String&& value) { m_repositoryNameHasBeenSet = true; m_repositoryName = value; }
+    inline void SetRepositoryName(Aws::String&& value) { m_repositoryNameHasBeenSet = true; m_repositoryName = std::move(value); }
 
     /**
      * <p>A list of repositories to describe. If this parameter is omitted, then all
@@ -121,7 +122,7 @@ namespace Model
      * <p>A list of repositories to describe. If this parameter is omitted, then all
      * repositories in a registry are described.</p>
      */
-    inline DescribeImagesRequest& WithRepositoryName(Aws::String&& value) { SetRepositoryName(value); return *this;}
+    inline DescribeImagesRequest& WithRepositoryName(Aws::String&& value) { SetRepositoryName(std::move(value)); return *this;}
 
     /**
      * <p>A list of repositories to describe. If this parameter is omitted, then all
@@ -142,7 +143,7 @@ namespace Model
     /**
      * <p>The list of image IDs for the requested repository.</p>
      */
-    inline void SetImageIds(Aws::Vector<ImageIdentifier>&& value) { m_imageIdsHasBeenSet = true; m_imageIds = value; }
+    inline void SetImageIds(Aws::Vector<ImageIdentifier>&& value) { m_imageIdsHasBeenSet = true; m_imageIds = std::move(value); }
 
     /**
      * <p>The list of image IDs for the requested repository.</p>
@@ -152,7 +153,7 @@ namespace Model
     /**
      * <p>The list of image IDs for the requested repository.</p>
      */
-    inline DescribeImagesRequest& WithImageIds(Aws::Vector<ImageIdentifier>&& value) { SetImageIds(value); return *this;}
+    inline DescribeImagesRequest& WithImageIds(Aws::Vector<ImageIdentifier>&& value) { SetImageIds(std::move(value)); return *this;}
 
     /**
      * <p>The list of image IDs for the requested repository.</p>
@@ -162,7 +163,7 @@ namespace Model
     /**
      * <p>The list of image IDs for the requested repository.</p>
      */
-    inline DescribeImagesRequest& AddImageIds(ImageIdentifier&& value) { m_imageIdsHasBeenSet = true; m_imageIds.push_back(value); return *this; }
+    inline DescribeImagesRequest& AddImageIds(ImageIdentifier&& value) { m_imageIdsHasBeenSet = true; m_imageIds.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The <code>nextToken</code> value returned from a previous paginated
@@ -189,7 +190,7 @@ namespace Model
      * end of the previous results that returned the <code>nextToken</code> value. This
      * value is <code>null</code> when there are no more results to return.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
      * <p>The <code>nextToken</code> value returned from a previous paginated
@@ -216,7 +217,7 @@ namespace Model
      * end of the previous results that returned the <code>nextToken</code> value. This
      * value is <code>null</code> when there are no more results to return.</p>
      */
-    inline DescribeImagesRequest& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline DescribeImagesRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>The <code>nextToken</code> value returned from a previous paginated
@@ -282,7 +283,7 @@ namespace Model
      * <p>The filter key and value with which to filter your
      * <code>DescribeImages</code> results.</p>
      */
-    inline void SetFilter(DescribeImagesFilter&& value) { m_filterHasBeenSet = true; m_filter = value; }
+    inline void SetFilter(DescribeImagesFilter&& value) { m_filterHasBeenSet = true; m_filter = std::move(value); }
 
     /**
      * <p>The filter key and value with which to filter your
@@ -294,7 +295,7 @@ namespace Model
      * <p>The filter key and value with which to filter your
      * <code>DescribeImages</code> results.</p>
      */
-    inline DescribeImagesRequest& WithFilter(DescribeImagesFilter&& value) { SetFilter(value); return *this;}
+    inline DescribeImagesRequest& WithFilter(DescribeImagesFilter&& value) { SetFilter(std::move(value)); return *this;}
 
   private:
     Aws::String m_registryId;

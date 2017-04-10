@@ -16,6 +16,7 @@
 #include <aws/opsworks/OpsWorks_EXPORTS.h>
 #include <aws/opsworks/OpsWorksRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -48,7 +49,7 @@ namespace Model
     /**
      * <p>The stack ID.</p>
      */
-    inline void SetStackId(Aws::String&& value) { m_stackIdHasBeenSet = true; m_stackId = value; }
+    inline void SetStackId(Aws::String&& value) { m_stackIdHasBeenSet = true; m_stackId = std::move(value); }
 
     /**
      * <p>The stack ID.</p>
@@ -63,7 +64,7 @@ namespace Model
     /**
      * <p>The stack ID.</p>
      */
-    inline SetPermissionRequest& WithStackId(Aws::String&& value) { SetStackId(value); return *this;}
+    inline SetPermissionRequest& WithStackId(Aws::String&& value) { SetStackId(std::move(value)); return *this;}
 
     /**
      * <p>The stack ID.</p>
@@ -83,7 +84,7 @@ namespace Model
     /**
      * <p>The user's IAM ARN. This can also be a federated user's ARN.</p>
      */
-    inline void SetIamUserArn(Aws::String&& value) { m_iamUserArnHasBeenSet = true; m_iamUserArn = value; }
+    inline void SetIamUserArn(Aws::String&& value) { m_iamUserArnHasBeenSet = true; m_iamUserArn = std::move(value); }
 
     /**
      * <p>The user's IAM ARN. This can also be a federated user's ARN.</p>
@@ -98,7 +99,7 @@ namespace Model
     /**
      * <p>The user's IAM ARN. This can also be a federated user's ARN.</p>
      */
-    inline SetPermissionRequest& WithIamUserArn(Aws::String&& value) { SetIamUserArn(value); return *this;}
+    inline SetPermissionRequest& WithIamUserArn(Aws::String&& value) { SetIamUserArn(std::move(value)); return *this;}
 
     /**
      * <p>The user's IAM ARN. This can also be a federated user's ARN.</p>
@@ -169,7 +170,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
      * User Permissions</a>.</p>
      */
-    inline void SetLevel(Aws::String&& value) { m_levelHasBeenSet = true; m_level = value; }
+    inline void SetLevel(Aws::String&& value) { m_levelHasBeenSet = true; m_level = std::move(value); }
 
     /**
      * <p>The user's permission level, which must be set to one of the following
@@ -205,7 +206,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
      * User Permissions</a>.</p>
      */
-    inline SetPermissionRequest& WithLevel(Aws::String&& value) { SetLevel(value); return *this;}
+    inline SetPermissionRequest& WithLevel(Aws::String&& value) { SetLevel(std::move(value)); return *this;}
 
     /**
      * <p>The user's permission level, which must be set to one of the following

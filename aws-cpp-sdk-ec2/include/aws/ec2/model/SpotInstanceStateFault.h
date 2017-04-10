@@ -16,6 +16,7 @@
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -59,7 +60,7 @@ namespace Model
     /**
      * <p>The reason code for the Spot instance state change.</p>
      */
-    inline void SetCode(Aws::String&& value) { m_codeHasBeenSet = true; m_code = value; }
+    inline void SetCode(Aws::String&& value) { m_codeHasBeenSet = true; m_code = std::move(value); }
 
     /**
      * <p>The reason code for the Spot instance state change.</p>
@@ -74,7 +75,7 @@ namespace Model
     /**
      * <p>The reason code for the Spot instance state change.</p>
      */
-    inline SpotInstanceStateFault& WithCode(Aws::String&& value) { SetCode(value); return *this;}
+    inline SpotInstanceStateFault& WithCode(Aws::String&& value) { SetCode(std::move(value)); return *this;}
 
     /**
      * <p>The reason code for the Spot instance state change.</p>
@@ -94,7 +95,7 @@ namespace Model
     /**
      * <p>The message for the Spot instance state change.</p>
      */
-    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = value; }
+    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
 
     /**
      * <p>The message for the Spot instance state change.</p>
@@ -109,7 +110,7 @@ namespace Model
     /**
      * <p>The message for the Spot instance state change.</p>
      */
-    inline SpotInstanceStateFault& WithMessage(Aws::String&& value) { SetMessage(value); return *this;}
+    inline SpotInstanceStateFault& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
 
     /**
      * <p>The message for the Spot instance state change.</p>

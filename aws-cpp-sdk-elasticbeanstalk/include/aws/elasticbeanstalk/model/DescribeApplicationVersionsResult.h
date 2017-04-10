@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/elasticbeanstalk/model/ResponseMetadata.h>
 #include <aws/elasticbeanstalk/model/ApplicationVersionDescription.h>
+#include <utility>
 
 namespace Aws
 {
@@ -64,7 +65,7 @@ namespace Model
      * <p>List of <code>ApplicationVersionDescription</code> objects sorted in order of
      * creation.</p>
      */
-    inline void SetApplicationVersions(Aws::Vector<ApplicationVersionDescription>&& value) { m_applicationVersions = value; }
+    inline void SetApplicationVersions(Aws::Vector<ApplicationVersionDescription>&& value) { m_applicationVersions = std::move(value); }
 
     /**
      * <p>List of <code>ApplicationVersionDescription</code> objects sorted in order of
@@ -76,7 +77,7 @@ namespace Model
      * <p>List of <code>ApplicationVersionDescription</code> objects sorted in order of
      * creation.</p>
      */
-    inline DescribeApplicationVersionsResult& WithApplicationVersions(Aws::Vector<ApplicationVersionDescription>&& value) { SetApplicationVersions(value); return *this;}
+    inline DescribeApplicationVersionsResult& WithApplicationVersions(Aws::Vector<ApplicationVersionDescription>&& value) { SetApplicationVersions(std::move(value)); return *this;}
 
     /**
      * <p>List of <code>ApplicationVersionDescription</code> objects sorted in order of
@@ -88,7 +89,7 @@ namespace Model
      * <p>List of <code>ApplicationVersionDescription</code> objects sorted in order of
      * creation.</p>
      */
-    inline DescribeApplicationVersionsResult& AddApplicationVersions(ApplicationVersionDescription&& value) { m_applicationVersions.push_back(value); return *this; }
+    inline DescribeApplicationVersionsResult& AddApplicationVersions(ApplicationVersionDescription&& value) { m_applicationVersions.push_back(std::move(value)); return *this; }
 
     /**
      * <p>For a paginated request, the token that you can pass in a subsequent request
@@ -106,7 +107,7 @@ namespace Model
      * <p>For a paginated request, the token that you can pass in a subsequent request
      * to get the next page.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
      * <p>For a paginated request, the token that you can pass in a subsequent request
@@ -124,7 +125,7 @@ namespace Model
      * <p>For a paginated request, the token that you can pass in a subsequent request
      * to get the next page.</p>
      */
-    inline DescribeApplicationVersionsResult& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline DescribeApplicationVersionsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>For a paginated request, the token that you can pass in a subsequent request
@@ -139,13 +140,13 @@ namespace Model
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
 
     
     inline DescribeApplicationVersionsResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
 
     
-    inline DescribeApplicationVersionsResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
+    inline DescribeApplicationVersionsResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
     Aws::Vector<ApplicationVersionDescription> m_applicationVersions;

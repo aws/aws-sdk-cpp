@@ -17,6 +17,7 @@
 #include <aws/servicecatalog/ServiceCatalogRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/servicecatalog/model/PrincipalType.h>
+#include <utility>
 
 namespace Aws
 {
@@ -55,7 +56,7 @@ namespace Model
      * follows:</p> <p>"en" (English)</p> <p>"jp" (Japanese)</p> <p>"zh" (Chinese)</p>
      * <p>If no code is specified, "en" is used as the default.</p>
      */
-    inline void SetAcceptLanguage(Aws::String&& value) { m_acceptLanguageHasBeenSet = true; m_acceptLanguage = value; }
+    inline void SetAcceptLanguage(Aws::String&& value) { m_acceptLanguageHasBeenSet = true; m_acceptLanguage = std::move(value); }
 
     /**
      * <p>The language code to use for this operation. Supported language codes are as
@@ -76,7 +77,7 @@ namespace Model
      * follows:</p> <p>"en" (English)</p> <p>"jp" (Japanese)</p> <p>"zh" (Chinese)</p>
      * <p>If no code is specified, "en" is used as the default.</p>
      */
-    inline AssociatePrincipalWithPortfolioRequest& WithAcceptLanguage(Aws::String&& value) { SetAcceptLanguage(value); return *this;}
+    inline AssociatePrincipalWithPortfolioRequest& WithAcceptLanguage(Aws::String&& value) { SetAcceptLanguage(std::move(value)); return *this;}
 
     /**
      * <p>The language code to use for this operation. Supported language codes are as
@@ -98,7 +99,7 @@ namespace Model
     /**
      * <p>The portfolio identifier.</p>
      */
-    inline void SetPortfolioId(Aws::String&& value) { m_portfolioIdHasBeenSet = true; m_portfolioId = value; }
+    inline void SetPortfolioId(Aws::String&& value) { m_portfolioIdHasBeenSet = true; m_portfolioId = std::move(value); }
 
     /**
      * <p>The portfolio identifier.</p>
@@ -113,7 +114,7 @@ namespace Model
     /**
      * <p>The portfolio identifier.</p>
      */
-    inline AssociatePrincipalWithPortfolioRequest& WithPortfolioId(Aws::String&& value) { SetPortfolioId(value); return *this;}
+    inline AssociatePrincipalWithPortfolioRequest& WithPortfolioId(Aws::String&& value) { SetPortfolioId(std::move(value)); return *this;}
 
     /**
      * <p>The portfolio identifier.</p>
@@ -133,7 +134,7 @@ namespace Model
     /**
      * <p>The ARN representing the principal (IAM user, role, or group).</p>
      */
-    inline void SetPrincipalARN(Aws::String&& value) { m_principalARNHasBeenSet = true; m_principalARN = value; }
+    inline void SetPrincipalARN(Aws::String&& value) { m_principalARNHasBeenSet = true; m_principalARN = std::move(value); }
 
     /**
      * <p>The ARN representing the principal (IAM user, role, or group).</p>
@@ -148,7 +149,7 @@ namespace Model
     /**
      * <p>The ARN representing the principal (IAM user, role, or group).</p>
      */
-    inline AssociatePrincipalWithPortfolioRequest& WithPrincipalARN(Aws::String&& value) { SetPrincipalARN(value); return *this;}
+    inline AssociatePrincipalWithPortfolioRequest& WithPrincipalARN(Aws::String&& value) { SetPrincipalARN(std::move(value)); return *this;}
 
     /**
      * <p>The ARN representing the principal (IAM user, role, or group).</p>
@@ -168,7 +169,7 @@ namespace Model
     /**
      * <p>The principal type. Must be <code>IAM</code> </p>
      */
-    inline void SetPrincipalType(PrincipalType&& value) { m_principalTypeHasBeenSet = true; m_principalType = value; }
+    inline void SetPrincipalType(PrincipalType&& value) { m_principalTypeHasBeenSet = true; m_principalType = std::move(value); }
 
     /**
      * <p>The principal type. Must be <code>IAM</code> </p>
@@ -178,7 +179,7 @@ namespace Model
     /**
      * <p>The principal type. Must be <code>IAM</code> </p>
      */
-    inline AssociatePrincipalWithPortfolioRequest& WithPrincipalType(PrincipalType&& value) { SetPrincipalType(value); return *this;}
+    inline AssociatePrincipalWithPortfolioRequest& WithPrincipalType(PrincipalType&& value) { SetPrincipalType(std::move(value)); return *this;}
 
   private:
     Aws::String m_acceptLanguage;

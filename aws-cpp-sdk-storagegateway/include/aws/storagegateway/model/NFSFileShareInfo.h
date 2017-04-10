@@ -17,6 +17,7 @@
 #include <aws/storagegateway/model/NFSFileShareDefaults.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <utility>
 
 namespace Aws
 {
@@ -54,13 +55,13 @@ namespace Model
     inline void SetNFSFileShareDefaults(const NFSFileShareDefaults& value) { m_nFSFileShareDefaultsHasBeenSet = true; m_nFSFileShareDefaults = value; }
 
     
-    inline void SetNFSFileShareDefaults(NFSFileShareDefaults&& value) { m_nFSFileShareDefaultsHasBeenSet = true; m_nFSFileShareDefaults = value; }
+    inline void SetNFSFileShareDefaults(NFSFileShareDefaults&& value) { m_nFSFileShareDefaultsHasBeenSet = true; m_nFSFileShareDefaults = std::move(value); }
 
     
     inline NFSFileShareInfo& WithNFSFileShareDefaults(const NFSFileShareDefaults& value) { SetNFSFileShareDefaults(value); return *this;}
 
     
-    inline NFSFileShareInfo& WithNFSFileShareDefaults(NFSFileShareDefaults&& value) { SetNFSFileShareDefaults(value); return *this;}
+    inline NFSFileShareInfo& WithNFSFileShareDefaults(NFSFileShareDefaults&& value) { SetNFSFileShareDefaults(std::move(value)); return *this;}
 
     
     inline const Aws::String& GetFileShareARN() const{ return m_fileShareARN; }
@@ -69,7 +70,7 @@ namespace Model
     inline void SetFileShareARN(const Aws::String& value) { m_fileShareARNHasBeenSet = true; m_fileShareARN = value; }
 
     
-    inline void SetFileShareARN(Aws::String&& value) { m_fileShareARNHasBeenSet = true; m_fileShareARN = value; }
+    inline void SetFileShareARN(Aws::String&& value) { m_fileShareARNHasBeenSet = true; m_fileShareARN = std::move(value); }
 
     
     inline void SetFileShareARN(const char* value) { m_fileShareARNHasBeenSet = true; m_fileShareARN.assign(value); }
@@ -78,7 +79,7 @@ namespace Model
     inline NFSFileShareInfo& WithFileShareARN(const Aws::String& value) { SetFileShareARN(value); return *this;}
 
     
-    inline NFSFileShareInfo& WithFileShareARN(Aws::String&& value) { SetFileShareARN(value); return *this;}
+    inline NFSFileShareInfo& WithFileShareARN(Aws::String&& value) { SetFileShareARN(std::move(value)); return *this;}
 
     
     inline NFSFileShareInfo& WithFileShareARN(const char* value) { SetFileShareARN(value); return *this;}
@@ -90,7 +91,7 @@ namespace Model
     inline void SetFileShareId(const Aws::String& value) { m_fileShareIdHasBeenSet = true; m_fileShareId = value; }
 
     
-    inline void SetFileShareId(Aws::String&& value) { m_fileShareIdHasBeenSet = true; m_fileShareId = value; }
+    inline void SetFileShareId(Aws::String&& value) { m_fileShareIdHasBeenSet = true; m_fileShareId = std::move(value); }
 
     
     inline void SetFileShareId(const char* value) { m_fileShareIdHasBeenSet = true; m_fileShareId.assign(value); }
@@ -99,7 +100,7 @@ namespace Model
     inline NFSFileShareInfo& WithFileShareId(const Aws::String& value) { SetFileShareId(value); return *this;}
 
     
-    inline NFSFileShareInfo& WithFileShareId(Aws::String&& value) { SetFileShareId(value); return *this;}
+    inline NFSFileShareInfo& WithFileShareId(Aws::String&& value) { SetFileShareId(std::move(value)); return *this;}
 
     
     inline NFSFileShareInfo& WithFileShareId(const char* value) { SetFileShareId(value); return *this;}
@@ -111,7 +112,7 @@ namespace Model
     inline void SetFileShareStatus(const Aws::String& value) { m_fileShareStatusHasBeenSet = true; m_fileShareStatus = value; }
 
     
-    inline void SetFileShareStatus(Aws::String&& value) { m_fileShareStatusHasBeenSet = true; m_fileShareStatus = value; }
+    inline void SetFileShareStatus(Aws::String&& value) { m_fileShareStatusHasBeenSet = true; m_fileShareStatus = std::move(value); }
 
     
     inline void SetFileShareStatus(const char* value) { m_fileShareStatusHasBeenSet = true; m_fileShareStatus.assign(value); }
@@ -120,7 +121,7 @@ namespace Model
     inline NFSFileShareInfo& WithFileShareStatus(const Aws::String& value) { SetFileShareStatus(value); return *this;}
 
     
-    inline NFSFileShareInfo& WithFileShareStatus(Aws::String&& value) { SetFileShareStatus(value); return *this;}
+    inline NFSFileShareInfo& WithFileShareStatus(Aws::String&& value) { SetFileShareStatus(std::move(value)); return *this;}
 
     
     inline NFSFileShareInfo& WithFileShareStatus(const char* value) { SetFileShareStatus(value); return *this;}
@@ -132,7 +133,7 @@ namespace Model
     inline void SetGatewayARN(const Aws::String& value) { m_gatewayARNHasBeenSet = true; m_gatewayARN = value; }
 
     
-    inline void SetGatewayARN(Aws::String&& value) { m_gatewayARNHasBeenSet = true; m_gatewayARN = value; }
+    inline void SetGatewayARN(Aws::String&& value) { m_gatewayARNHasBeenSet = true; m_gatewayARN = std::move(value); }
 
     
     inline void SetGatewayARN(const char* value) { m_gatewayARNHasBeenSet = true; m_gatewayARN.assign(value); }
@@ -141,7 +142,7 @@ namespace Model
     inline NFSFileShareInfo& WithGatewayARN(const Aws::String& value) { SetGatewayARN(value); return *this;}
 
     
-    inline NFSFileShareInfo& WithGatewayARN(Aws::String&& value) { SetGatewayARN(value); return *this;}
+    inline NFSFileShareInfo& WithGatewayARN(Aws::String&& value) { SetGatewayARN(std::move(value)); return *this;}
 
     
     inline NFSFileShareInfo& WithGatewayARN(const char* value) { SetGatewayARN(value); return *this;}
@@ -171,7 +172,7 @@ namespace Model
     inline void SetKMSKey(const Aws::String& value) { m_kMSKeyHasBeenSet = true; m_kMSKey = value; }
 
     
-    inline void SetKMSKey(Aws::String&& value) { m_kMSKeyHasBeenSet = true; m_kMSKey = value; }
+    inline void SetKMSKey(Aws::String&& value) { m_kMSKeyHasBeenSet = true; m_kMSKey = std::move(value); }
 
     
     inline void SetKMSKey(const char* value) { m_kMSKeyHasBeenSet = true; m_kMSKey.assign(value); }
@@ -180,7 +181,7 @@ namespace Model
     inline NFSFileShareInfo& WithKMSKey(const Aws::String& value) { SetKMSKey(value); return *this;}
 
     
-    inline NFSFileShareInfo& WithKMSKey(Aws::String&& value) { SetKMSKey(value); return *this;}
+    inline NFSFileShareInfo& WithKMSKey(Aws::String&& value) { SetKMSKey(std::move(value)); return *this;}
 
     
     inline NFSFileShareInfo& WithKMSKey(const char* value) { SetKMSKey(value); return *this;}
@@ -192,7 +193,7 @@ namespace Model
     inline void SetPath(const Aws::String& value) { m_pathHasBeenSet = true; m_path = value; }
 
     
-    inline void SetPath(Aws::String&& value) { m_pathHasBeenSet = true; m_path = value; }
+    inline void SetPath(Aws::String&& value) { m_pathHasBeenSet = true; m_path = std::move(value); }
 
     
     inline void SetPath(const char* value) { m_pathHasBeenSet = true; m_path.assign(value); }
@@ -201,7 +202,7 @@ namespace Model
     inline NFSFileShareInfo& WithPath(const Aws::String& value) { SetPath(value); return *this;}
 
     
-    inline NFSFileShareInfo& WithPath(Aws::String&& value) { SetPath(value); return *this;}
+    inline NFSFileShareInfo& WithPath(Aws::String&& value) { SetPath(std::move(value)); return *this;}
 
     
     inline NFSFileShareInfo& WithPath(const char* value) { SetPath(value); return *this;}
@@ -213,7 +214,7 @@ namespace Model
     inline void SetRole(const Aws::String& value) { m_roleHasBeenSet = true; m_role = value; }
 
     
-    inline void SetRole(Aws::String&& value) { m_roleHasBeenSet = true; m_role = value; }
+    inline void SetRole(Aws::String&& value) { m_roleHasBeenSet = true; m_role = std::move(value); }
 
     
     inline void SetRole(const char* value) { m_roleHasBeenSet = true; m_role.assign(value); }
@@ -222,7 +223,7 @@ namespace Model
     inline NFSFileShareInfo& WithRole(const Aws::String& value) { SetRole(value); return *this;}
 
     
-    inline NFSFileShareInfo& WithRole(Aws::String&& value) { SetRole(value); return *this;}
+    inline NFSFileShareInfo& WithRole(Aws::String&& value) { SetRole(std::move(value)); return *this;}
 
     
     inline NFSFileShareInfo& WithRole(const char* value) { SetRole(value); return *this;}
@@ -234,7 +235,7 @@ namespace Model
     inline void SetLocationARN(const Aws::String& value) { m_locationARNHasBeenSet = true; m_locationARN = value; }
 
     
-    inline void SetLocationARN(Aws::String&& value) { m_locationARNHasBeenSet = true; m_locationARN = value; }
+    inline void SetLocationARN(Aws::String&& value) { m_locationARNHasBeenSet = true; m_locationARN = std::move(value); }
 
     
     inline void SetLocationARN(const char* value) { m_locationARNHasBeenSet = true; m_locationARN.assign(value); }
@@ -243,7 +244,7 @@ namespace Model
     inline NFSFileShareInfo& WithLocationARN(const Aws::String& value) { SetLocationARN(value); return *this;}
 
     
-    inline NFSFileShareInfo& WithLocationARN(Aws::String&& value) { SetLocationARN(value); return *this;}
+    inline NFSFileShareInfo& WithLocationARN(Aws::String&& value) { SetLocationARN(std::move(value)); return *this;}
 
     
     inline NFSFileShareInfo& WithLocationARN(const char* value) { SetLocationARN(value); return *this;}
@@ -267,7 +268,7 @@ namespace Model
      * gateway. Possible values are S3_STANDARD or S3_STANDARD_IA. If this field is not
      * populated, the default value S3_STANDARD is used. Optional.</p>
      */
-    inline void SetDefaultStorageClass(Aws::String&& value) { m_defaultStorageClassHasBeenSet = true; m_defaultStorageClass = value; }
+    inline void SetDefaultStorageClass(Aws::String&& value) { m_defaultStorageClassHasBeenSet = true; m_defaultStorageClass = std::move(value); }
 
     /**
      * <p>The default storage class for objects put into an Amazon S3 bucket by file
@@ -288,7 +289,7 @@ namespace Model
      * gateway. Possible values are S3_STANDARD or S3_STANDARD_IA. If this field is not
      * populated, the default value S3_STANDARD is used. Optional.</p>
      */
-    inline NFSFileShareInfo& WithDefaultStorageClass(Aws::String&& value) { SetDefaultStorageClass(value); return *this;}
+    inline NFSFileShareInfo& WithDefaultStorageClass(Aws::String&& value) { SetDefaultStorageClass(std::move(value)); return *this;}
 
     /**
      * <p>The default storage class for objects put into an Amazon S3 bucket by file
@@ -304,19 +305,19 @@ namespace Model
     inline void SetClientList(const Aws::Vector<Aws::String>& value) { m_clientListHasBeenSet = true; m_clientList = value; }
 
     
-    inline void SetClientList(Aws::Vector<Aws::String>&& value) { m_clientListHasBeenSet = true; m_clientList = value; }
+    inline void SetClientList(Aws::Vector<Aws::String>&& value) { m_clientListHasBeenSet = true; m_clientList = std::move(value); }
 
     
     inline NFSFileShareInfo& WithClientList(const Aws::Vector<Aws::String>& value) { SetClientList(value); return *this;}
 
     
-    inline NFSFileShareInfo& WithClientList(Aws::Vector<Aws::String>&& value) { SetClientList(value); return *this;}
+    inline NFSFileShareInfo& WithClientList(Aws::Vector<Aws::String>&& value) { SetClientList(std::move(value)); return *this;}
 
     
     inline NFSFileShareInfo& AddClientList(const Aws::String& value) { m_clientListHasBeenSet = true; m_clientList.push_back(value); return *this; }
 
     
-    inline NFSFileShareInfo& AddClientList(Aws::String&& value) { m_clientListHasBeenSet = true; m_clientList.push_back(value); return *this; }
+    inline NFSFileShareInfo& AddClientList(Aws::String&& value) { m_clientListHasBeenSet = true; m_clientList.push_back(std::move(value)); return *this; }
 
     
     inline NFSFileShareInfo& AddClientList(const char* value) { m_clientListHasBeenSet = true; m_clientList.push_back(value); return *this; }
@@ -328,7 +329,7 @@ namespace Model
     inline void SetSquash(const Aws::String& value) { m_squashHasBeenSet = true; m_squash = value; }
 
     
-    inline void SetSquash(Aws::String&& value) { m_squashHasBeenSet = true; m_squash = value; }
+    inline void SetSquash(Aws::String&& value) { m_squashHasBeenSet = true; m_squash = std::move(value); }
 
     
     inline void SetSquash(const char* value) { m_squashHasBeenSet = true; m_squash.assign(value); }
@@ -337,7 +338,7 @@ namespace Model
     inline NFSFileShareInfo& WithSquash(const Aws::String& value) { SetSquash(value); return *this;}
 
     
-    inline NFSFileShareInfo& WithSquash(Aws::String&& value) { SetSquash(value); return *this;}
+    inline NFSFileShareInfo& WithSquash(Aws::String&& value) { SetSquash(std::move(value)); return *this;}
 
     
     inline NFSFileShareInfo& WithSquash(const char* value) { SetSquash(value); return *this;}

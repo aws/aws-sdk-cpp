@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/RouteState.h>
 #include <aws/ec2/model/RouteOrigin.h>
+#include <utility>
 
 namespace Aws
 {
@@ -61,7 +62,7 @@ namespace Model
     /**
      * <p>The IPv4 CIDR block used for the destination match.</p>
      */
-    inline void SetDestinationCidrBlock(Aws::String&& value) { m_destinationCidrBlockHasBeenSet = true; m_destinationCidrBlock = value; }
+    inline void SetDestinationCidrBlock(Aws::String&& value) { m_destinationCidrBlockHasBeenSet = true; m_destinationCidrBlock = std::move(value); }
 
     /**
      * <p>The IPv4 CIDR block used for the destination match.</p>
@@ -76,7 +77,7 @@ namespace Model
     /**
      * <p>The IPv4 CIDR block used for the destination match.</p>
      */
-    inline Route& WithDestinationCidrBlock(Aws::String&& value) { SetDestinationCidrBlock(value); return *this;}
+    inline Route& WithDestinationCidrBlock(Aws::String&& value) { SetDestinationCidrBlock(std::move(value)); return *this;}
 
     /**
      * <p>The IPv4 CIDR block used for the destination match.</p>
@@ -96,7 +97,7 @@ namespace Model
     /**
      * <p>The prefix of the AWS service.</p>
      */
-    inline void SetDestinationPrefixListId(Aws::String&& value) { m_destinationPrefixListIdHasBeenSet = true; m_destinationPrefixListId = value; }
+    inline void SetDestinationPrefixListId(Aws::String&& value) { m_destinationPrefixListIdHasBeenSet = true; m_destinationPrefixListId = std::move(value); }
 
     /**
      * <p>The prefix of the AWS service.</p>
@@ -111,7 +112,7 @@ namespace Model
     /**
      * <p>The prefix of the AWS service.</p>
      */
-    inline Route& WithDestinationPrefixListId(Aws::String&& value) { SetDestinationPrefixListId(value); return *this;}
+    inline Route& WithDestinationPrefixListId(Aws::String&& value) { SetDestinationPrefixListId(std::move(value)); return *this;}
 
     /**
      * <p>The prefix of the AWS service.</p>
@@ -131,7 +132,7 @@ namespace Model
     /**
      * <p>The ID of a gateway attached to your VPC.</p>
      */
-    inline void SetGatewayId(Aws::String&& value) { m_gatewayIdHasBeenSet = true; m_gatewayId = value; }
+    inline void SetGatewayId(Aws::String&& value) { m_gatewayIdHasBeenSet = true; m_gatewayId = std::move(value); }
 
     /**
      * <p>The ID of a gateway attached to your VPC.</p>
@@ -146,7 +147,7 @@ namespace Model
     /**
      * <p>The ID of a gateway attached to your VPC.</p>
      */
-    inline Route& WithGatewayId(Aws::String&& value) { SetGatewayId(value); return *this;}
+    inline Route& WithGatewayId(Aws::String&& value) { SetGatewayId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of a gateway attached to your VPC.</p>
@@ -166,7 +167,7 @@ namespace Model
     /**
      * <p>The ID of a NAT instance in your VPC.</p>
      */
-    inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
+    inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::move(value); }
 
     /**
      * <p>The ID of a NAT instance in your VPC.</p>
@@ -181,7 +182,7 @@ namespace Model
     /**
      * <p>The ID of a NAT instance in your VPC.</p>
      */
-    inline Route& WithInstanceId(Aws::String&& value) { SetInstanceId(value); return *this;}
+    inline Route& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of a NAT instance in your VPC.</p>
@@ -201,7 +202,7 @@ namespace Model
     /**
      * <p>The AWS account ID of the owner of the instance.</p>
      */
-    inline void SetInstanceOwnerId(Aws::String&& value) { m_instanceOwnerIdHasBeenSet = true; m_instanceOwnerId = value; }
+    inline void SetInstanceOwnerId(Aws::String&& value) { m_instanceOwnerIdHasBeenSet = true; m_instanceOwnerId = std::move(value); }
 
     /**
      * <p>The AWS account ID of the owner of the instance.</p>
@@ -216,7 +217,7 @@ namespace Model
     /**
      * <p>The AWS account ID of the owner of the instance.</p>
      */
-    inline Route& WithInstanceOwnerId(Aws::String&& value) { SetInstanceOwnerId(value); return *this;}
+    inline Route& WithInstanceOwnerId(Aws::String&& value) { SetInstanceOwnerId(std::move(value)); return *this;}
 
     /**
      * <p>The AWS account ID of the owner of the instance.</p>
@@ -236,7 +237,7 @@ namespace Model
     /**
      * <p>The ID of the network interface.</p>
      */
-    inline void SetNetworkInterfaceId(Aws::String&& value) { m_networkInterfaceIdHasBeenSet = true; m_networkInterfaceId = value; }
+    inline void SetNetworkInterfaceId(Aws::String&& value) { m_networkInterfaceIdHasBeenSet = true; m_networkInterfaceId = std::move(value); }
 
     /**
      * <p>The ID of the network interface.</p>
@@ -251,7 +252,7 @@ namespace Model
     /**
      * <p>The ID of the network interface.</p>
      */
-    inline Route& WithNetworkInterfaceId(Aws::String&& value) { SetNetworkInterfaceId(value); return *this;}
+    inline Route& WithNetworkInterfaceId(Aws::String&& value) { SetNetworkInterfaceId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the network interface.</p>
@@ -271,7 +272,7 @@ namespace Model
     /**
      * <p>The ID of the VPC peering connection.</p>
      */
-    inline void SetVpcPeeringConnectionId(Aws::String&& value) { m_vpcPeeringConnectionIdHasBeenSet = true; m_vpcPeeringConnectionId = value; }
+    inline void SetVpcPeeringConnectionId(Aws::String&& value) { m_vpcPeeringConnectionIdHasBeenSet = true; m_vpcPeeringConnectionId = std::move(value); }
 
     /**
      * <p>The ID of the VPC peering connection.</p>
@@ -286,7 +287,7 @@ namespace Model
     /**
      * <p>The ID of the VPC peering connection.</p>
      */
-    inline Route& WithVpcPeeringConnectionId(Aws::String&& value) { SetVpcPeeringConnectionId(value); return *this;}
+    inline Route& WithVpcPeeringConnectionId(Aws::String&& value) { SetVpcPeeringConnectionId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the VPC peering connection.</p>
@@ -306,7 +307,7 @@ namespace Model
     /**
      * <p>The ID of a NAT gateway.</p>
      */
-    inline void SetNatGatewayId(Aws::String&& value) { m_natGatewayIdHasBeenSet = true; m_natGatewayId = value; }
+    inline void SetNatGatewayId(Aws::String&& value) { m_natGatewayIdHasBeenSet = true; m_natGatewayId = std::move(value); }
 
     /**
      * <p>The ID of a NAT gateway.</p>
@@ -321,7 +322,7 @@ namespace Model
     /**
      * <p>The ID of a NAT gateway.</p>
      */
-    inline Route& WithNatGatewayId(Aws::String&& value) { SetNatGatewayId(value); return *this;}
+    inline Route& WithNatGatewayId(Aws::String&& value) { SetNatGatewayId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of a NAT gateway.</p>
@@ -347,7 +348,7 @@ namespace Model
      * route's target isn't available (for example, the specified gateway isn't
      * attached to the VPC, or the specified NAT instance has been terminated).</p>
      */
-    inline void SetState(RouteState&& value) { m_stateHasBeenSet = true; m_state = value; }
+    inline void SetState(RouteState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
 
     /**
      * <p>The state of the route. The <code>blackhole</code> state indicates that the
@@ -361,7 +362,7 @@ namespace Model
      * route's target isn't available (for example, the specified gateway isn't
      * attached to the VPC, or the specified NAT instance has been terminated).</p>
      */
-    inline Route& WithState(RouteState&& value) { SetState(value); return *this;}
+    inline Route& WithState(RouteState&& value) { SetState(std::move(value)); return *this;}
 
     /**
      * <p>Describes how the route was created.</p> <ul> <li> <p>
@@ -391,7 +392,7 @@ namespace Model
      * <code>EnableVgwRoutePropagation</code> - The route was propagated by route
      * propagation.</p> </li> </ul>
      */
-    inline void SetOrigin(RouteOrigin&& value) { m_originHasBeenSet = true; m_origin = value; }
+    inline void SetOrigin(RouteOrigin&& value) { m_originHasBeenSet = true; m_origin = std::move(value); }
 
     /**
      * <p>Describes how the route was created.</p> <ul> <li> <p>
@@ -411,7 +412,7 @@ namespace Model
      * <code>EnableVgwRoutePropagation</code> - The route was propagated by route
      * propagation.</p> </li> </ul>
      */
-    inline Route& WithOrigin(RouteOrigin&& value) { SetOrigin(value); return *this;}
+    inline Route& WithOrigin(RouteOrigin&& value) { SetOrigin(std::move(value)); return *this;}
 
     /**
      * <p>The IPv6 CIDR block used for the destination match.</p>
@@ -426,7 +427,7 @@ namespace Model
     /**
      * <p>The IPv6 CIDR block used for the destination match.</p>
      */
-    inline void SetDestinationIpv6CidrBlock(Aws::String&& value) { m_destinationIpv6CidrBlockHasBeenSet = true; m_destinationIpv6CidrBlock = value; }
+    inline void SetDestinationIpv6CidrBlock(Aws::String&& value) { m_destinationIpv6CidrBlockHasBeenSet = true; m_destinationIpv6CidrBlock = std::move(value); }
 
     /**
      * <p>The IPv6 CIDR block used for the destination match.</p>
@@ -441,7 +442,7 @@ namespace Model
     /**
      * <p>The IPv6 CIDR block used for the destination match.</p>
      */
-    inline Route& WithDestinationIpv6CidrBlock(Aws::String&& value) { SetDestinationIpv6CidrBlock(value); return *this;}
+    inline Route& WithDestinationIpv6CidrBlock(Aws::String&& value) { SetDestinationIpv6CidrBlock(std::move(value)); return *this;}
 
     /**
      * <p>The IPv6 CIDR block used for the destination match.</p>
@@ -461,7 +462,7 @@ namespace Model
     /**
      * <p>The ID of the egress-only Internet gateway.</p>
      */
-    inline void SetEgressOnlyInternetGatewayId(Aws::String&& value) { m_egressOnlyInternetGatewayIdHasBeenSet = true; m_egressOnlyInternetGatewayId = value; }
+    inline void SetEgressOnlyInternetGatewayId(Aws::String&& value) { m_egressOnlyInternetGatewayIdHasBeenSet = true; m_egressOnlyInternetGatewayId = std::move(value); }
 
     /**
      * <p>The ID of the egress-only Internet gateway.</p>
@@ -476,7 +477,7 @@ namespace Model
     /**
      * <p>The ID of the egress-only Internet gateway.</p>
      */
-    inline Route& WithEgressOnlyInternetGatewayId(Aws::String&& value) { SetEgressOnlyInternetGatewayId(value); return *this;}
+    inline Route& WithEgressOnlyInternetGatewayId(Aws::String&& value) { SetEgressOnlyInternetGatewayId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the egress-only Internet gateway.</p>

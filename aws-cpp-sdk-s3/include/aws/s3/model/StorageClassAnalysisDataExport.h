@@ -16,6 +16,7 @@
 #include <aws/s3/S3_EXPORTS.h>
 #include <aws/s3/model/StorageClassAnalysisSchemaVersion.h>
 #include <aws/s3/model/AnalyticsExportDestination.h>
+#include <utility>
 
 namespace Aws
 {
@@ -53,7 +54,7 @@ namespace Model
     /**
      * The version of the output schema to use when exporting data. Must be V_1.
      */
-    inline void SetOutputSchemaVersion(StorageClassAnalysisSchemaVersion&& value) { m_outputSchemaVersionHasBeenSet = true; m_outputSchemaVersion = value; }
+    inline void SetOutputSchemaVersion(StorageClassAnalysisSchemaVersion&& value) { m_outputSchemaVersionHasBeenSet = true; m_outputSchemaVersion = std::move(value); }
 
     /**
      * The version of the output schema to use when exporting data. Must be V_1.
@@ -63,7 +64,7 @@ namespace Model
     /**
      * The version of the output schema to use when exporting data. Must be V_1.
      */
-    inline StorageClassAnalysisDataExport& WithOutputSchemaVersion(StorageClassAnalysisSchemaVersion&& value) { SetOutputSchemaVersion(value); return *this;}
+    inline StorageClassAnalysisDataExport& WithOutputSchemaVersion(StorageClassAnalysisSchemaVersion&& value) { SetOutputSchemaVersion(std::move(value)); return *this;}
 
     /**
      * The place to store the data for an analysis.
@@ -78,7 +79,7 @@ namespace Model
     /**
      * The place to store the data for an analysis.
      */
-    inline void SetDestination(AnalyticsExportDestination&& value) { m_destinationHasBeenSet = true; m_destination = value; }
+    inline void SetDestination(AnalyticsExportDestination&& value) { m_destinationHasBeenSet = true; m_destination = std::move(value); }
 
     /**
      * The place to store the data for an analysis.
@@ -88,7 +89,7 @@ namespace Model
     /**
      * The place to store the data for an analysis.
      */
-    inline StorageClassAnalysisDataExport& WithDestination(AnalyticsExportDestination&& value) { SetDestination(value); return *this;}
+    inline StorageClassAnalysisDataExport& WithDestination(AnalyticsExportDestination&& value) { SetDestination(std::move(value)); return *this;}
 
   private:
     StorageClassAnalysisSchemaVersion m_outputSchemaVersion;

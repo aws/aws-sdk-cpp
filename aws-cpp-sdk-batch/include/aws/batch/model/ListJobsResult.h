@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/batch/model/JobSummary.h>
+#include <utility>
 
 namespace Aws
 {
@@ -54,7 +55,7 @@ namespace Model
     /**
      * <p>A list of job summaries that match the request.</p>
      */
-    inline void SetJobSummaryList(Aws::Vector<JobSummary>&& value) { m_jobSummaryList = value; }
+    inline void SetJobSummaryList(Aws::Vector<JobSummary>&& value) { m_jobSummaryList = std::move(value); }
 
     /**
      * <p>A list of job summaries that match the request.</p>
@@ -64,7 +65,7 @@ namespace Model
     /**
      * <p>A list of job summaries that match the request.</p>
      */
-    inline ListJobsResult& WithJobSummaryList(Aws::Vector<JobSummary>&& value) { SetJobSummaryList(value); return *this;}
+    inline ListJobsResult& WithJobSummaryList(Aws::Vector<JobSummary>&& value) { SetJobSummaryList(std::move(value)); return *this;}
 
     /**
      * <p>A list of job summaries that match the request.</p>
@@ -74,7 +75,7 @@ namespace Model
     /**
      * <p>A list of job summaries that match the request.</p>
      */
-    inline ListJobsResult& AddJobSummaryList(JobSummary&& value) { m_jobSummaryList.push_back(value); return *this; }
+    inline ListJobsResult& AddJobSummaryList(JobSummary&& value) { m_jobSummaryList.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The <code>nextToken</code> value to include in a future <code>ListJobs</code>
@@ -101,7 +102,7 @@ namespace Model
      * results. This value is <code>null</code> when there are no more results to
      * return.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
      * <p>The <code>nextToken</code> value to include in a future <code>ListJobs</code>
@@ -128,7 +129,7 @@ namespace Model
      * results. This value is <code>null</code> when there are no more results to
      * return.</p>
      */
-    inline ListJobsResult& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline ListJobsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>The <code>nextToken</code> value to include in a future <code>ListJobs</code>

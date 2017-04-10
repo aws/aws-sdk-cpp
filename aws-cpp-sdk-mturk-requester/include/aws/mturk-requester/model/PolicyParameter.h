@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/mturk-requester/model/ParameterMapEntry.h>
+#include <utility>
 
 namespace Aws
 {
@@ -58,7 +59,7 @@ namespace Model
     /**
      * <p> Name of the parameter from the list of Review Polices. </p>
      */
-    inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = value; }
+    inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
 
     /**
      * <p> Name of the parameter from the list of Review Polices. </p>
@@ -73,7 +74,7 @@ namespace Model
     /**
      * <p> Name of the parameter from the list of Review Polices. </p>
      */
-    inline PolicyParameter& WithKey(Aws::String&& value) { SetKey(value); return *this;}
+    inline PolicyParameter& WithKey(Aws::String&& value) { SetKey(std::move(value)); return *this;}
 
     /**
      * <p> Name of the parameter from the list of Review Polices. </p>
@@ -93,7 +94,7 @@ namespace Model
     /**
      * <p> The list of values of the Parameter</p>
      */
-    inline void SetValues(Aws::Vector<Aws::String>&& value) { m_valuesHasBeenSet = true; m_values = value; }
+    inline void SetValues(Aws::Vector<Aws::String>&& value) { m_valuesHasBeenSet = true; m_values = std::move(value); }
 
     /**
      * <p> The list of values of the Parameter</p>
@@ -103,7 +104,7 @@ namespace Model
     /**
      * <p> The list of values of the Parameter</p>
      */
-    inline PolicyParameter& WithValues(Aws::Vector<Aws::String>&& value) { SetValues(value); return *this;}
+    inline PolicyParameter& WithValues(Aws::Vector<Aws::String>&& value) { SetValues(std::move(value)); return *this;}
 
     /**
      * <p> The list of values of the Parameter</p>
@@ -113,7 +114,7 @@ namespace Model
     /**
      * <p> The list of values of the Parameter</p>
      */
-    inline PolicyParameter& AddValues(Aws::String&& value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
+    inline PolicyParameter& AddValues(Aws::String&& value) { m_valuesHasBeenSet = true; m_values.push_back(std::move(value)); return *this; }
 
     /**
      * <p> The list of values of the Parameter</p>
@@ -133,7 +134,7 @@ namespace Model
     /**
      * <p> List of ParameterMapEntry objects. </p>
      */
-    inline void SetMapEntries(Aws::Vector<ParameterMapEntry>&& value) { m_mapEntriesHasBeenSet = true; m_mapEntries = value; }
+    inline void SetMapEntries(Aws::Vector<ParameterMapEntry>&& value) { m_mapEntriesHasBeenSet = true; m_mapEntries = std::move(value); }
 
     /**
      * <p> List of ParameterMapEntry objects. </p>
@@ -143,7 +144,7 @@ namespace Model
     /**
      * <p> List of ParameterMapEntry objects. </p>
      */
-    inline PolicyParameter& WithMapEntries(Aws::Vector<ParameterMapEntry>&& value) { SetMapEntries(value); return *this;}
+    inline PolicyParameter& WithMapEntries(Aws::Vector<ParameterMapEntry>&& value) { SetMapEntries(std::move(value)); return *this;}
 
     /**
      * <p> List of ParameterMapEntry objects. </p>
@@ -153,7 +154,7 @@ namespace Model
     /**
      * <p> List of ParameterMapEntry objects. </p>
      */
-    inline PolicyParameter& AddMapEntries(ParameterMapEntry&& value) { m_mapEntriesHasBeenSet = true; m_mapEntries.push_back(value); return *this; }
+    inline PolicyParameter& AddMapEntries(ParameterMapEntry&& value) { m_mapEntriesHasBeenSet = true; m_mapEntries.push_back(std::move(value)); return *this; }
 
   private:
     Aws::String m_key;

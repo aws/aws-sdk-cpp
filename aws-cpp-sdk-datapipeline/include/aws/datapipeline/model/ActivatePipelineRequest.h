@@ -19,6 +19,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/datapipeline/model/ParameterValue.h>
+#include <utility>
 
 namespace Aws
 {
@@ -54,7 +55,7 @@ namespace Model
     /**
      * <p>The ID of the pipeline.</p>
      */
-    inline void SetPipelineId(Aws::String&& value) { m_pipelineIdHasBeenSet = true; m_pipelineId = value; }
+    inline void SetPipelineId(Aws::String&& value) { m_pipelineIdHasBeenSet = true; m_pipelineId = std::move(value); }
 
     /**
      * <p>The ID of the pipeline.</p>
@@ -69,7 +70,7 @@ namespace Model
     /**
      * <p>The ID of the pipeline.</p>
      */
-    inline ActivatePipelineRequest& WithPipelineId(Aws::String&& value) { SetPipelineId(value); return *this;}
+    inline ActivatePipelineRequest& WithPipelineId(Aws::String&& value) { SetPipelineId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the pipeline.</p>
@@ -89,7 +90,7 @@ namespace Model
     /**
      * <p>A list of parameter values to pass to the pipeline at activation.</p>
      */
-    inline void SetParameterValues(Aws::Vector<ParameterValue>&& value) { m_parameterValuesHasBeenSet = true; m_parameterValues = value; }
+    inline void SetParameterValues(Aws::Vector<ParameterValue>&& value) { m_parameterValuesHasBeenSet = true; m_parameterValues = std::move(value); }
 
     /**
      * <p>A list of parameter values to pass to the pipeline at activation.</p>
@@ -99,7 +100,7 @@ namespace Model
     /**
      * <p>A list of parameter values to pass to the pipeline at activation.</p>
      */
-    inline ActivatePipelineRequest& WithParameterValues(Aws::Vector<ParameterValue>&& value) { SetParameterValues(value); return *this;}
+    inline ActivatePipelineRequest& WithParameterValues(Aws::Vector<ParameterValue>&& value) { SetParameterValues(std::move(value)); return *this;}
 
     /**
      * <p>A list of parameter values to pass to the pipeline at activation.</p>
@@ -109,7 +110,7 @@ namespace Model
     /**
      * <p>A list of parameter values to pass to the pipeline at activation.</p>
      */
-    inline ActivatePipelineRequest& AddParameterValues(ParameterValue&& value) { m_parameterValuesHasBeenSet = true; m_parameterValues.push_back(value); return *this; }
+    inline ActivatePipelineRequest& AddParameterValues(ParameterValue&& value) { m_parameterValuesHasBeenSet = true; m_parameterValues.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The date and time to resume the pipeline. By default, the pipeline resumes
@@ -127,7 +128,7 @@ namespace Model
      * <p>The date and time to resume the pipeline. By default, the pipeline resumes
      * from the last completed execution.</p>
      */
-    inline void SetStartTimestamp(Aws::Utils::DateTime&& value) { m_startTimestampHasBeenSet = true; m_startTimestamp = value; }
+    inline void SetStartTimestamp(Aws::Utils::DateTime&& value) { m_startTimestampHasBeenSet = true; m_startTimestamp = std::move(value); }
 
     /**
      * <p>The date and time to resume the pipeline. By default, the pipeline resumes
@@ -139,7 +140,7 @@ namespace Model
      * <p>The date and time to resume the pipeline. By default, the pipeline resumes
      * from the last completed execution.</p>
      */
-    inline ActivatePipelineRequest& WithStartTimestamp(Aws::Utils::DateTime&& value) { SetStartTimestamp(value); return *this;}
+    inline ActivatePipelineRequest& WithStartTimestamp(Aws::Utils::DateTime&& value) { SetStartTimestamp(std::move(value)); return *this;}
 
   private:
     Aws::String m_pipelineId;

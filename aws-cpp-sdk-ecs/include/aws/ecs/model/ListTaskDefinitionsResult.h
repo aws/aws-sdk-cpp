@@ -16,6 +16,7 @@
 #include <aws/ecs/ECS_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -56,7 +57,7 @@ namespace Model
      * <p>The list of task definition Amazon Resource Name (ARN) entries for the
      * <code>ListTaskDefinitions</code> request.</p>
      */
-    inline void SetTaskDefinitionArns(Aws::Vector<Aws::String>&& value) { m_taskDefinitionArns = value; }
+    inline void SetTaskDefinitionArns(Aws::Vector<Aws::String>&& value) { m_taskDefinitionArns = std::move(value); }
 
     /**
      * <p>The list of task definition Amazon Resource Name (ARN) entries for the
@@ -68,7 +69,7 @@ namespace Model
      * <p>The list of task definition Amazon Resource Name (ARN) entries for the
      * <code>ListTaskDefinitions</code> request.</p>
      */
-    inline ListTaskDefinitionsResult& WithTaskDefinitionArns(Aws::Vector<Aws::String>&& value) { SetTaskDefinitionArns(value); return *this;}
+    inline ListTaskDefinitionsResult& WithTaskDefinitionArns(Aws::Vector<Aws::String>&& value) { SetTaskDefinitionArns(std::move(value)); return *this;}
 
     /**
      * <p>The list of task definition Amazon Resource Name (ARN) entries for the
@@ -80,7 +81,7 @@ namespace Model
      * <p>The list of task definition Amazon Resource Name (ARN) entries for the
      * <code>ListTaskDefinitions</code> request.</p>
      */
-    inline ListTaskDefinitionsResult& AddTaskDefinitionArns(Aws::String&& value) { m_taskDefinitionArns.push_back(value); return *this; }
+    inline ListTaskDefinitionsResult& AddTaskDefinitionArns(Aws::String&& value) { m_taskDefinitionArns.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The list of task definition Amazon Resource Name (ARN) entries for the
@@ -113,7 +114,7 @@ namespace Model
      * value can be used to retrieve the next page of results. This value is
      * <code>null</code> when there are no more results to return.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
      * <p>The <code>nextToken</code> value to include in a future
@@ -140,7 +141,7 @@ namespace Model
      * value can be used to retrieve the next page of results. This value is
      * <code>null</code> when there are no more results to return.</p>
      */
-    inline ListTaskDefinitionsResult& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline ListTaskDefinitionsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>The <code>nextToken</code> value to include in a future

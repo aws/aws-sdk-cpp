@@ -16,6 +16,7 @@
 #include <aws/kms/KMS_EXPORTS.h>
 #include <aws/kms/KMSRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -63,7 +64,7 @@ namespace Model
      * </li> <li> <p>Globally Unique Key ID Example -
      * 12345678-1234-1234-1234-123456789012</p> </li> </ul>
      */
-    inline void SetKeyId(Aws::String&& value) { m_keyIdHasBeenSet = true; m_keyId = value; }
+    inline void SetKeyId(Aws::String&& value) { m_keyIdHasBeenSet = true; m_keyId = std::move(value); }
 
     /**
      * <p>A unique identifier for the customer master key. This value can be a globally
@@ -93,7 +94,7 @@ namespace Model
      * </li> <li> <p>Globally Unique Key ID Example -
      * 12345678-1234-1234-1234-123456789012</p> </li> </ul>
      */
-    inline EnableKeyRequest& WithKeyId(Aws::String&& value) { SetKeyId(value); return *this;}
+    inline EnableKeyRequest& WithKeyId(Aws::String&& value) { SetKeyId(std::move(value)); return *this;}
 
     /**
      * <p>A unique identifier for the customer master key. This value can be a globally

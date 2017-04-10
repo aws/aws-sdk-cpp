@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ec2/model/UserIdGroupPair.h>
+#include <utility>
 
 namespace Aws
 {
@@ -88,7 +89,7 @@ namespace Model
      * href="http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol
      * Numbers)</a>.</p>
      */
-    inline void SetIpProtocol(Aws::String&& value) { m_ipProtocolHasBeenSet = true; m_ipProtocol = value; }
+    inline void SetIpProtocol(Aws::String&& value) { m_ipProtocolHasBeenSet = true; m_ipProtocol = std::move(value); }
 
     /**
      * <p>The IP protocol name (for <code>tcp</code>, <code>udp</code>, and
@@ -112,7 +113,7 @@ namespace Model
      * href="http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol
      * Numbers)</a>.</p>
      */
-    inline StaleIpPermission& WithIpProtocol(Aws::String&& value) { SetIpProtocol(value); return *this;}
+    inline StaleIpPermission& WithIpProtocol(Aws::String&& value) { SetIpProtocol(std::move(value)); return *this;}
 
     /**
      * <p>The IP protocol name (for <code>tcp</code>, <code>udp</code>, and
@@ -135,7 +136,7 @@ namespace Model
     /**
      * <p>One or more IP ranges. Not applicable for stale security group rules.</p>
      */
-    inline void SetIpRanges(Aws::Vector<Aws::String>&& value) { m_ipRangesHasBeenSet = true; m_ipRanges = value; }
+    inline void SetIpRanges(Aws::Vector<Aws::String>&& value) { m_ipRangesHasBeenSet = true; m_ipRanges = std::move(value); }
 
     /**
      * <p>One or more IP ranges. Not applicable for stale security group rules.</p>
@@ -145,7 +146,7 @@ namespace Model
     /**
      * <p>One or more IP ranges. Not applicable for stale security group rules.</p>
      */
-    inline StaleIpPermission& WithIpRanges(Aws::Vector<Aws::String>&& value) { SetIpRanges(value); return *this;}
+    inline StaleIpPermission& WithIpRanges(Aws::Vector<Aws::String>&& value) { SetIpRanges(std::move(value)); return *this;}
 
     /**
      * <p>One or more IP ranges. Not applicable for stale security group rules.</p>
@@ -155,7 +156,7 @@ namespace Model
     /**
      * <p>One or more IP ranges. Not applicable for stale security group rules.</p>
      */
-    inline StaleIpPermission& AddIpRanges(Aws::String&& value) { m_ipRangesHasBeenSet = true; m_ipRanges.push_back(value); return *this; }
+    inline StaleIpPermission& AddIpRanges(Aws::String&& value) { m_ipRangesHasBeenSet = true; m_ipRanges.push_back(std::move(value)); return *this; }
 
     /**
      * <p>One or more IP ranges. Not applicable for stale security group rules.</p>
@@ -178,7 +179,7 @@ namespace Model
      * <p>One or more prefix list IDs for an AWS service. Not applicable for stale
      * security group rules.</p>
      */
-    inline void SetPrefixListIds(Aws::Vector<Aws::String>&& value) { m_prefixListIdsHasBeenSet = true; m_prefixListIds = value; }
+    inline void SetPrefixListIds(Aws::Vector<Aws::String>&& value) { m_prefixListIdsHasBeenSet = true; m_prefixListIds = std::move(value); }
 
     /**
      * <p>One or more prefix list IDs for an AWS service. Not applicable for stale
@@ -190,7 +191,7 @@ namespace Model
      * <p>One or more prefix list IDs for an AWS service. Not applicable for stale
      * security group rules.</p>
      */
-    inline StaleIpPermission& WithPrefixListIds(Aws::Vector<Aws::String>&& value) { SetPrefixListIds(value); return *this;}
+    inline StaleIpPermission& WithPrefixListIds(Aws::Vector<Aws::String>&& value) { SetPrefixListIds(std::move(value)); return *this;}
 
     /**
      * <p>One or more prefix list IDs for an AWS service. Not applicable for stale
@@ -202,7 +203,7 @@ namespace Model
      * <p>One or more prefix list IDs for an AWS service. Not applicable for stale
      * security group rules.</p>
      */
-    inline StaleIpPermission& AddPrefixListIds(Aws::String&& value) { m_prefixListIdsHasBeenSet = true; m_prefixListIds.push_back(value); return *this; }
+    inline StaleIpPermission& AddPrefixListIds(Aws::String&& value) { m_prefixListIdsHasBeenSet = true; m_prefixListIds.push_back(std::move(value)); return *this; }
 
     /**
      * <p>One or more prefix list IDs for an AWS service. Not applicable for stale
@@ -244,7 +245,7 @@ namespace Model
      * <p>One or more security group pairs. Returns the ID of the referenced security
      * group and VPC, and the ID and status of the VPC peering connection.</p>
      */
-    inline void SetUserIdGroupPairs(Aws::Vector<UserIdGroupPair>&& value) { m_userIdGroupPairsHasBeenSet = true; m_userIdGroupPairs = value; }
+    inline void SetUserIdGroupPairs(Aws::Vector<UserIdGroupPair>&& value) { m_userIdGroupPairsHasBeenSet = true; m_userIdGroupPairs = std::move(value); }
 
     /**
      * <p>One or more security group pairs. Returns the ID of the referenced security
@@ -256,7 +257,7 @@ namespace Model
      * <p>One or more security group pairs. Returns the ID of the referenced security
      * group and VPC, and the ID and status of the VPC peering connection.</p>
      */
-    inline StaleIpPermission& WithUserIdGroupPairs(Aws::Vector<UserIdGroupPair>&& value) { SetUserIdGroupPairs(value); return *this;}
+    inline StaleIpPermission& WithUserIdGroupPairs(Aws::Vector<UserIdGroupPair>&& value) { SetUserIdGroupPairs(std::move(value)); return *this;}
 
     /**
      * <p>One or more security group pairs. Returns the ID of the referenced security
@@ -268,7 +269,7 @@ namespace Model
      * <p>One or more security group pairs. Returns the ID of the referenced security
      * group and VPC, and the ID and status of the VPC peering connection.</p>
      */
-    inline StaleIpPermission& AddUserIdGroupPairs(UserIdGroupPair&& value) { m_userIdGroupPairsHasBeenSet = true; m_userIdGroupPairs.push_back(value); return *this; }
+    inline StaleIpPermission& AddUserIdGroupPairs(UserIdGroupPair&& value) { m_userIdGroupPairsHasBeenSet = true; m_userIdGroupPairs.push_back(std::move(value)); return *this; }
 
   private:
     int m_fromPort;

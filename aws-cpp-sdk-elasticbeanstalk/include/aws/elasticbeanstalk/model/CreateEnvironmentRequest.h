@@ -21,6 +21,7 @@
 #include <aws/elasticbeanstalk/model/Tag.h>
 #include <aws/elasticbeanstalk/model/ConfigurationOptionSetting.h>
 #include <aws/elasticbeanstalk/model/OptionSpecification.h>
+#include <utility>
 
 namespace Aws
 {
@@ -64,7 +65,7 @@ namespace Model
      * If no application is found with this name, <code>CreateEnvironment</code>
      * returns an <code>InvalidParameterValue</code> error. </p>
      */
-    inline void SetApplicationName(Aws::String&& value) { m_applicationNameHasBeenSet = true; m_applicationName = value; }
+    inline void SetApplicationName(Aws::String&& value) { m_applicationNameHasBeenSet = true; m_applicationName = std::move(value); }
 
     /**
      * <p>The name of the application that contains the version to be deployed.</p> <p>
@@ -85,7 +86,7 @@ namespace Model
      * If no application is found with this name, <code>CreateEnvironment</code>
      * returns an <code>InvalidParameterValue</code> error. </p>
      */
-    inline CreateEnvironmentRequest& WithApplicationName(Aws::String&& value) { SetApplicationName(value); return *this;}
+    inline CreateEnvironmentRequest& WithApplicationName(Aws::String&& value) { SetApplicationName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the application that contains the version to be deployed.</p> <p>
@@ -128,7 +129,7 @@ namespace Model
      * name becomes part of the CNAME, and therefore part of the visible URL for your
      * application.</p>
      */
-    inline void SetEnvironmentName(Aws::String&& value) { m_environmentNameHasBeenSet = true; m_environmentName = value; }
+    inline void SetEnvironmentName(Aws::String&& value) { m_environmentNameHasBeenSet = true; m_environmentName = std::move(value); }
 
     /**
      * <p>A unique name for the deployment environment. Used in the application
@@ -164,7 +165,7 @@ namespace Model
      * name becomes part of the CNAME, and therefore part of the visible URL for your
      * application.</p>
      */
-    inline CreateEnvironmentRequest& WithEnvironmentName(Aws::String&& value) { SetEnvironmentName(value); return *this;}
+    inline CreateEnvironmentRequest& WithEnvironmentName(Aws::String&& value) { SetEnvironmentName(std::move(value)); return *this;}
 
     /**
      * <p>A unique name for the deployment environment. Used in the application
@@ -203,7 +204,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-cfg-manifest.html">Environment
      * Manifest (env.yaml)</a> for details.</p>
      */
-    inline void SetGroupName(Aws::String&& value) { m_groupNameHasBeenSet = true; m_groupName = value; }
+    inline void SetGroupName(Aws::String&& value) { m_groupNameHasBeenSet = true; m_groupName = std::move(value); }
 
     /**
      * <p>The name of the group to which the target environment belongs. Specify a
@@ -230,7 +231,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-cfg-manifest.html">Environment
      * Manifest (env.yaml)</a> for details.</p>
      */
-    inline CreateEnvironmentRequest& WithGroupName(Aws::String&& value) { SetGroupName(value); return *this;}
+    inline CreateEnvironmentRequest& WithGroupName(Aws::String&& value) { SetGroupName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the group to which the target environment belongs. Specify a
@@ -254,7 +255,7 @@ namespace Model
     /**
      * <p>Describes this environment.</p>
      */
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = value; }
+    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
      * <p>Describes this environment.</p>
@@ -269,7 +270,7 @@ namespace Model
     /**
      * <p>Describes this environment.</p>
      */
-    inline CreateEnvironmentRequest& WithDescription(Aws::String&& value) { SetDescription(value); return *this;}
+    inline CreateEnvironmentRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
      * <p>Describes this environment.</p>
@@ -295,7 +296,7 @@ namespace Model
      * the CNAME. If not specified, the CNAME is generated automatically by appending a
      * random alphanumeric string to the environment name.</p>
      */
-    inline void SetCNAMEPrefix(Aws::String&& value) { m_cNAMEPrefixHasBeenSet = true; m_cNAMEPrefix = value; }
+    inline void SetCNAMEPrefix(Aws::String&& value) { m_cNAMEPrefixHasBeenSet = true; m_cNAMEPrefix = std::move(value); }
 
     /**
      * <p>If specified, the environment attempts to use this value as the prefix for
@@ -316,7 +317,7 @@ namespace Model
      * the CNAME. If not specified, the CNAME is generated automatically by appending a
      * random alphanumeric string to the environment name.</p>
      */
-    inline CreateEnvironmentRequest& WithCNAMEPrefix(Aws::String&& value) { SetCNAMEPrefix(value); return *this;}
+    inline CreateEnvironmentRequest& WithCNAMEPrefix(Aws::String&& value) { SetCNAMEPrefix(std::move(value)); return *this;}
 
     /**
      * <p>If specified, the environment attempts to use this value as the prefix for
@@ -338,7 +339,7 @@ namespace Model
     /**
      * <p>This specifies the tier to use for creating this environment.</p>
      */
-    inline void SetTier(EnvironmentTier&& value) { m_tierHasBeenSet = true; m_tier = value; }
+    inline void SetTier(EnvironmentTier&& value) { m_tierHasBeenSet = true; m_tier = std::move(value); }
 
     /**
      * <p>This specifies the tier to use for creating this environment.</p>
@@ -348,7 +349,7 @@ namespace Model
     /**
      * <p>This specifies the tier to use for creating this environment.</p>
      */
-    inline CreateEnvironmentRequest& WithTier(EnvironmentTier&& value) { SetTier(value); return *this;}
+    inline CreateEnvironmentRequest& WithTier(EnvironmentTier&& value) { SetTier(std::move(value)); return *this;}
 
     /**
      * <p>This specifies the tags applied to resources in the environment.</p>
@@ -363,7 +364,7 @@ namespace Model
     /**
      * <p>This specifies the tags applied to resources in the environment.</p>
      */
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = value; }
+    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
      * <p>This specifies the tags applied to resources in the environment.</p>
@@ -373,7 +374,7 @@ namespace Model
     /**
      * <p>This specifies the tags applied to resources in the environment.</p>
      */
-    inline CreateEnvironmentRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(value); return *this;}
+    inline CreateEnvironmentRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
      * <p>This specifies the tags applied to resources in the environment.</p>
@@ -383,7 +384,7 @@ namespace Model
     /**
      * <p>This specifies the tags applied to resources in the environment.</p>
      */
-    inline CreateEnvironmentRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
+    inline CreateEnvironmentRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The name of the application version to deploy.</p> <p> If the specified
@@ -410,7 +411,7 @@ namespace Model
      * error. </p> <p>Default: If not specified, AWS Elastic Beanstalk attempts to
      * launch the sample application in the container.</p>
      */
-    inline void SetVersionLabel(Aws::String&& value) { m_versionLabelHasBeenSet = true; m_versionLabel = value; }
+    inline void SetVersionLabel(Aws::String&& value) { m_versionLabelHasBeenSet = true; m_versionLabel = std::move(value); }
 
     /**
      * <p>The name of the application version to deploy.</p> <p> If the specified
@@ -437,7 +438,7 @@ namespace Model
      * error. </p> <p>Default: If not specified, AWS Elastic Beanstalk attempts to
      * launch the sample application in the container.</p>
      */
-    inline CreateEnvironmentRequest& WithVersionLabel(Aws::String&& value) { SetVersionLabel(value); return *this;}
+    inline CreateEnvironmentRequest& WithVersionLabel(Aws::String&& value) { SetVersionLabel(std::move(value)); return *this;}
 
     /**
      * <p>The name of the application version to deploy.</p> <p> If the specified
@@ -467,7 +468,7 @@ namespace Model
      * configuration template is found with this name, AWS Elastic Beanstalk returns an
      * <code>InvalidParameterValue</code> error. </p>
      */
-    inline void SetTemplateName(Aws::String&& value) { m_templateNameHasBeenSet = true; m_templateName = value; }
+    inline void SetTemplateName(Aws::String&& value) { m_templateNameHasBeenSet = true; m_templateName = std::move(value); }
 
     /**
      * <p> The name of the configuration template to use in deployment. If no
@@ -488,7 +489,7 @@ namespace Model
      * configuration template is found with this name, AWS Elastic Beanstalk returns an
      * <code>InvalidParameterValue</code> error. </p>
      */
-    inline CreateEnvironmentRequest& WithTemplateName(Aws::String&& value) { SetTemplateName(value); return *this;}
+    inline CreateEnvironmentRequest& WithTemplateName(Aws::String&& value) { SetTemplateName(std::move(value)); return *this;}
 
     /**
      * <p> The name of the configuration template to use in deployment. If no
@@ -516,7 +517,7 @@ namespace Model
      * Elastic Beanstalk sets the configuration values to the default values associated
      * with the specified solution stack.</p>
      */
-    inline void SetSolutionStackName(Aws::String&& value) { m_solutionStackNameHasBeenSet = true; m_solutionStackName = value; }
+    inline void SetSolutionStackName(Aws::String&& value) { m_solutionStackNameHasBeenSet = true; m_solutionStackName = std::move(value); }
 
     /**
      * <p>This is an alternative to specifying a template name. If specified, AWS
@@ -537,7 +538,7 @@ namespace Model
      * Elastic Beanstalk sets the configuration values to the default values associated
      * with the specified solution stack.</p>
      */
-    inline CreateEnvironmentRequest& WithSolutionStackName(Aws::String&& value) { SetSolutionStackName(value); return *this;}
+    inline CreateEnvironmentRequest& WithSolutionStackName(Aws::String&& value) { SetSolutionStackName(std::move(value)); return *this;}
 
     /**
      * <p>This is an alternative to specifying a template name. If specified, AWS
@@ -559,7 +560,7 @@ namespace Model
     /**
      * <p>The ARN of the custom platform.</p>
      */
-    inline void SetPlatformArn(Aws::String&& value) { m_platformArnHasBeenSet = true; m_platformArn = value; }
+    inline void SetPlatformArn(Aws::String&& value) { m_platformArnHasBeenSet = true; m_platformArn = std::move(value); }
 
     /**
      * <p>The ARN of the custom platform.</p>
@@ -574,7 +575,7 @@ namespace Model
     /**
      * <p>The ARN of the custom platform.</p>
      */
-    inline CreateEnvironmentRequest& WithPlatformArn(Aws::String&& value) { SetPlatformArn(value); return *this;}
+    inline CreateEnvironmentRequest& WithPlatformArn(Aws::String&& value) { SetPlatformArn(std::move(value)); return *this;}
 
     /**
      * <p>The ARN of the custom platform.</p>
@@ -603,7 +604,7 @@ namespace Model
      * override the values obtained from the solution stack or the configuration
      * template.</p>
      */
-    inline void SetOptionSettings(Aws::Vector<ConfigurationOptionSetting>&& value) { m_optionSettingsHasBeenSet = true; m_optionSettings = value; }
+    inline void SetOptionSettings(Aws::Vector<ConfigurationOptionSetting>&& value) { m_optionSettingsHasBeenSet = true; m_optionSettings = std::move(value); }
 
     /**
      * <p>If specified, AWS Elastic Beanstalk sets the specified configuration options
@@ -619,7 +620,7 @@ namespace Model
      * override the values obtained from the solution stack or the configuration
      * template.</p>
      */
-    inline CreateEnvironmentRequest& WithOptionSettings(Aws::Vector<ConfigurationOptionSetting>&& value) { SetOptionSettings(value); return *this;}
+    inline CreateEnvironmentRequest& WithOptionSettings(Aws::Vector<ConfigurationOptionSetting>&& value) { SetOptionSettings(std::move(value)); return *this;}
 
     /**
      * <p>If specified, AWS Elastic Beanstalk sets the specified configuration options
@@ -635,7 +636,7 @@ namespace Model
      * override the values obtained from the solution stack or the configuration
      * template.</p>
      */
-    inline CreateEnvironmentRequest& AddOptionSettings(ConfigurationOptionSetting&& value) { m_optionSettingsHasBeenSet = true; m_optionSettings.push_back(value); return *this; }
+    inline CreateEnvironmentRequest& AddOptionSettings(ConfigurationOptionSetting&& value) { m_optionSettingsHasBeenSet = true; m_optionSettings.push_back(std::move(value)); return *this; }
 
     /**
      * <p>A list of custom user-defined configuration options to remove from the
@@ -653,7 +654,7 @@ namespace Model
      * <p>A list of custom user-defined configuration options to remove from the
      * configuration set for this new environment.</p>
      */
-    inline void SetOptionsToRemove(Aws::Vector<OptionSpecification>&& value) { m_optionsToRemoveHasBeenSet = true; m_optionsToRemove = value; }
+    inline void SetOptionsToRemove(Aws::Vector<OptionSpecification>&& value) { m_optionsToRemoveHasBeenSet = true; m_optionsToRemove = std::move(value); }
 
     /**
      * <p>A list of custom user-defined configuration options to remove from the
@@ -665,7 +666,7 @@ namespace Model
      * <p>A list of custom user-defined configuration options to remove from the
      * configuration set for this new environment.</p>
      */
-    inline CreateEnvironmentRequest& WithOptionsToRemove(Aws::Vector<OptionSpecification>&& value) { SetOptionsToRemove(value); return *this;}
+    inline CreateEnvironmentRequest& WithOptionsToRemove(Aws::Vector<OptionSpecification>&& value) { SetOptionsToRemove(std::move(value)); return *this;}
 
     /**
      * <p>A list of custom user-defined configuration options to remove from the
@@ -677,7 +678,7 @@ namespace Model
      * <p>A list of custom user-defined configuration options to remove from the
      * configuration set for this new environment.</p>
      */
-    inline CreateEnvironmentRequest& AddOptionsToRemove(OptionSpecification&& value) { m_optionsToRemoveHasBeenSet = true; m_optionsToRemove.push_back(value); return *this; }
+    inline CreateEnvironmentRequest& AddOptionsToRemove(OptionSpecification&& value) { m_optionsToRemoveHasBeenSet = true; m_optionsToRemove.push_back(std::move(value)); return *this; }
 
   private:
     Aws::String m_applicationName;

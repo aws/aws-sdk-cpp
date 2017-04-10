@@ -24,6 +24,7 @@
 #include <aws/cloudformation/model/Capability.h>
 #include <aws/cloudformation/model/Tag.h>
 #include <aws/cloudformation/model/Change.h>
+#include <utility>
 
 namespace Aws
 {
@@ -67,7 +68,7 @@ namespace Model
     /**
      * <p>The name of the change set.</p>
      */
-    inline void SetChangeSetName(Aws::String&& value) { m_changeSetName = value; }
+    inline void SetChangeSetName(Aws::String&& value) { m_changeSetName = std::move(value); }
 
     /**
      * <p>The name of the change set.</p>
@@ -82,7 +83,7 @@ namespace Model
     /**
      * <p>The name of the change set.</p>
      */
-    inline DescribeChangeSetResult& WithChangeSetName(Aws::String&& value) { SetChangeSetName(value); return *this;}
+    inline DescribeChangeSetResult& WithChangeSetName(Aws::String&& value) { SetChangeSetName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the change set.</p>
@@ -102,7 +103,7 @@ namespace Model
     /**
      * <p>The ARN of the change set.</p>
      */
-    inline void SetChangeSetId(Aws::String&& value) { m_changeSetId = value; }
+    inline void SetChangeSetId(Aws::String&& value) { m_changeSetId = std::move(value); }
 
     /**
      * <p>The ARN of the change set.</p>
@@ -117,7 +118,7 @@ namespace Model
     /**
      * <p>The ARN of the change set.</p>
      */
-    inline DescribeChangeSetResult& WithChangeSetId(Aws::String&& value) { SetChangeSetId(value); return *this;}
+    inline DescribeChangeSetResult& WithChangeSetId(Aws::String&& value) { SetChangeSetId(std::move(value)); return *this;}
 
     /**
      * <p>The ARN of the change set.</p>
@@ -137,7 +138,7 @@ namespace Model
     /**
      * <p>The ARN of the stack that is associated with the change set.</p>
      */
-    inline void SetStackId(Aws::String&& value) { m_stackId = value; }
+    inline void SetStackId(Aws::String&& value) { m_stackId = std::move(value); }
 
     /**
      * <p>The ARN of the stack that is associated with the change set.</p>
@@ -152,7 +153,7 @@ namespace Model
     /**
      * <p>The ARN of the stack that is associated with the change set.</p>
      */
-    inline DescribeChangeSetResult& WithStackId(Aws::String&& value) { SetStackId(value); return *this;}
+    inline DescribeChangeSetResult& WithStackId(Aws::String&& value) { SetStackId(std::move(value)); return *this;}
 
     /**
      * <p>The ARN of the stack that is associated with the change set.</p>
@@ -172,7 +173,7 @@ namespace Model
     /**
      * <p>The name of the stack that is associated with the change set.</p>
      */
-    inline void SetStackName(Aws::String&& value) { m_stackName = value; }
+    inline void SetStackName(Aws::String&& value) { m_stackName = std::move(value); }
 
     /**
      * <p>The name of the stack that is associated with the change set.</p>
@@ -187,7 +188,7 @@ namespace Model
     /**
      * <p>The name of the stack that is associated with the change set.</p>
      */
-    inline DescribeChangeSetResult& WithStackName(Aws::String&& value) { SetStackName(value); return *this;}
+    inline DescribeChangeSetResult& WithStackName(Aws::String&& value) { SetStackName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the stack that is associated with the change set.</p>
@@ -207,7 +208,7 @@ namespace Model
     /**
      * <p>Information about the change set.</p>
      */
-    inline void SetDescription(Aws::String&& value) { m_description = value; }
+    inline void SetDescription(Aws::String&& value) { m_description = std::move(value); }
 
     /**
      * <p>Information about the change set.</p>
@@ -222,7 +223,7 @@ namespace Model
     /**
      * <p>Information about the change set.</p>
      */
-    inline DescribeChangeSetResult& WithDescription(Aws::String&& value) { SetDescription(value); return *this;}
+    inline DescribeChangeSetResult& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
      * <p>Information about the change set.</p>
@@ -254,7 +255,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_Parameter.html">Parameter</a>
      * data type.</p>
      */
-    inline void SetParameters(Aws::Vector<Parameter>&& value) { m_parameters = value; }
+    inline void SetParameters(Aws::Vector<Parameter>&& value) { m_parameters = std::move(value); }
 
     /**
      * <p>A list of <code>Parameter</code> structures that describes the input
@@ -272,7 +273,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_Parameter.html">Parameter</a>
      * data type.</p>
      */
-    inline DescribeChangeSetResult& WithParameters(Aws::Vector<Parameter>&& value) { SetParameters(value); return *this;}
+    inline DescribeChangeSetResult& WithParameters(Aws::Vector<Parameter>&& value) { SetParameters(std::move(value)); return *this;}
 
     /**
      * <p>A list of <code>Parameter</code> structures that describes the input
@@ -290,7 +291,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_Parameter.html">Parameter</a>
      * data type.</p>
      */
-    inline DescribeChangeSetResult& AddParameters(Parameter&& value) { m_parameters.push_back(value); return *this; }
+    inline DescribeChangeSetResult& AddParameters(Parameter&& value) { m_parameters.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The start time when the change set was created, in UTC.</p>
@@ -305,7 +306,7 @@ namespace Model
     /**
      * <p>The start time when the change set was created, in UTC.</p>
      */
-    inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTime = value; }
+    inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTime = std::move(value); }
 
     /**
      * <p>The start time when the change set was created, in UTC.</p>
@@ -315,7 +316,7 @@ namespace Model
     /**
      * <p>The start time when the change set was created, in UTC.</p>
      */
-    inline DescribeChangeSetResult& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(value); return *this;}
+    inline DescribeChangeSetResult& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
 
     /**
      * <p>If the change set execution status is <code>AVAILABLE</code>, you can execute
@@ -342,7 +343,7 @@ namespace Model
      * AWS CloudFormation is still creating it or in an <code>OBSOLETE</code> state
      * because the stack was already updated.</p>
      */
-    inline void SetExecutionStatus(ExecutionStatus&& value) { m_executionStatus = value; }
+    inline void SetExecutionStatus(ExecutionStatus&& value) { m_executionStatus = std::move(value); }
 
     /**
      * <p>If the change set execution status is <code>AVAILABLE</code>, you can execute
@@ -360,7 +361,7 @@ namespace Model
      * AWS CloudFormation is still creating it or in an <code>OBSOLETE</code> state
      * because the stack was already updated.</p>
      */
-    inline DescribeChangeSetResult& WithExecutionStatus(ExecutionStatus&& value) { SetExecutionStatus(value); return *this;}
+    inline DescribeChangeSetResult& WithExecutionStatus(ExecutionStatus&& value) { SetExecutionStatus(std::move(value)); return *this;}
 
     /**
      * <p>The current status of the change set, such as
@@ -381,7 +382,7 @@ namespace Model
      * <code>CREATE_IN_PROGRESS</code>, <code>CREATE_COMPLETE</code>, or
      * <code>FAILED</code>.</p>
      */
-    inline void SetStatus(ChangeSetStatus&& value) { m_status = value; }
+    inline void SetStatus(ChangeSetStatus&& value) { m_status = std::move(value); }
 
     /**
      * <p>The current status of the change set, such as
@@ -395,7 +396,7 @@ namespace Model
      * <code>CREATE_IN_PROGRESS</code>, <code>CREATE_COMPLETE</code>, or
      * <code>FAILED</code>.</p>
      */
-    inline DescribeChangeSetResult& WithStatus(ChangeSetStatus&& value) { SetStatus(value); return *this;}
+    inline DescribeChangeSetResult& WithStatus(ChangeSetStatus&& value) { SetStatus(std::move(value)); return *this;}
 
     /**
      * <p>A description of the change set's status. For example, if your attempt to
@@ -413,7 +414,7 @@ namespace Model
      * <p>A description of the change set's status. For example, if your attempt to
      * create a change set failed, AWS CloudFormation shows the error message.</p>
      */
-    inline void SetStatusReason(Aws::String&& value) { m_statusReason = value; }
+    inline void SetStatusReason(Aws::String&& value) { m_statusReason = std::move(value); }
 
     /**
      * <p>A description of the change set's status. For example, if your attempt to
@@ -431,7 +432,7 @@ namespace Model
      * <p>A description of the change set's status. For example, if your attempt to
      * create a change set failed, AWS CloudFormation shows the error message.</p>
      */
-    inline DescribeChangeSetResult& WithStatusReason(Aws::String&& value) { SetStatusReason(value); return *this;}
+    inline DescribeChangeSetResult& WithStatusReason(Aws::String&& value) { SetStatusReason(std::move(value)); return *this;}
 
     /**
      * <p>A description of the change set's status. For example, if your attempt to
@@ -455,7 +456,7 @@ namespace Model
      * <p>The ARNs of the Amazon Simple Notification Service (Amazon SNS) topics that
      * will be associated with the stack if you execute the change set.</p>
      */
-    inline void SetNotificationARNs(Aws::Vector<Aws::String>&& value) { m_notificationARNs = value; }
+    inline void SetNotificationARNs(Aws::Vector<Aws::String>&& value) { m_notificationARNs = std::move(value); }
 
     /**
      * <p>The ARNs of the Amazon Simple Notification Service (Amazon SNS) topics that
@@ -467,7 +468,7 @@ namespace Model
      * <p>The ARNs of the Amazon Simple Notification Service (Amazon SNS) topics that
      * will be associated with the stack if you execute the change set.</p>
      */
-    inline DescribeChangeSetResult& WithNotificationARNs(Aws::Vector<Aws::String>&& value) { SetNotificationARNs(value); return *this;}
+    inline DescribeChangeSetResult& WithNotificationARNs(Aws::Vector<Aws::String>&& value) { SetNotificationARNs(std::move(value)); return *this;}
 
     /**
      * <p>The ARNs of the Amazon Simple Notification Service (Amazon SNS) topics that
@@ -479,7 +480,7 @@ namespace Model
      * <p>The ARNs of the Amazon Simple Notification Service (Amazon SNS) topics that
      * will be associated with the stack if you execute the change set.</p>
      */
-    inline DescribeChangeSetResult& AddNotificationARNs(Aws::String&& value) { m_notificationARNs.push_back(value); return *this; }
+    inline DescribeChangeSetResult& AddNotificationARNs(Aws::String&& value) { m_notificationARNs.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The ARNs of the Amazon Simple Notification Service (Amazon SNS) topics that
@@ -503,7 +504,7 @@ namespace Model
      * <p>If you execute the change set, the list of capabilities that were explicitly
      * acknowledged when the change set was created.</p>
      */
-    inline void SetCapabilities(Aws::Vector<Capability>&& value) { m_capabilities = value; }
+    inline void SetCapabilities(Aws::Vector<Capability>&& value) { m_capabilities = std::move(value); }
 
     /**
      * <p>If you execute the change set, the list of capabilities that were explicitly
@@ -515,7 +516,7 @@ namespace Model
      * <p>If you execute the change set, the list of capabilities that were explicitly
      * acknowledged when the change set was created.</p>
      */
-    inline DescribeChangeSetResult& WithCapabilities(Aws::Vector<Capability>&& value) { SetCapabilities(value); return *this;}
+    inline DescribeChangeSetResult& WithCapabilities(Aws::Vector<Capability>&& value) { SetCapabilities(std::move(value)); return *this;}
 
     /**
      * <p>If you execute the change set, the list of capabilities that were explicitly
@@ -527,7 +528,7 @@ namespace Model
      * <p>If you execute the change set, the list of capabilities that were explicitly
      * acknowledged when the change set was created.</p>
      */
-    inline DescribeChangeSetResult& AddCapabilities(Capability&& value) { m_capabilities.push_back(value); return *this; }
+    inline DescribeChangeSetResult& AddCapabilities(Capability&& value) { m_capabilities.push_back(std::move(value)); return *this; }
 
     /**
      * <p>If you execute the change set, the tags that will be associated with the
@@ -545,7 +546,7 @@ namespace Model
      * <p>If you execute the change set, the tags that will be associated with the
      * stack.</p>
      */
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tags = value; }
+    inline void SetTags(Aws::Vector<Tag>&& value) { m_tags = std::move(value); }
 
     /**
      * <p>If you execute the change set, the tags that will be associated with the
@@ -557,7 +558,7 @@ namespace Model
      * <p>If you execute the change set, the tags that will be associated with the
      * stack.</p>
      */
-    inline DescribeChangeSetResult& WithTags(Aws::Vector<Tag>&& value) { SetTags(value); return *this;}
+    inline DescribeChangeSetResult& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
      * <p>If you execute the change set, the tags that will be associated with the
@@ -569,7 +570,7 @@ namespace Model
      * <p>If you execute the change set, the tags that will be associated with the
      * stack.</p>
      */
-    inline DescribeChangeSetResult& AddTags(Tag&& value) { m_tags.push_back(value); return *this; }
+    inline DescribeChangeSetResult& AddTags(Tag&& value) { m_tags.push_back(std::move(value)); return *this; }
 
     /**
      * <p>A list of <code>Change</code> structures that describes the resources AWS
@@ -587,7 +588,7 @@ namespace Model
      * <p>A list of <code>Change</code> structures that describes the resources AWS
      * CloudFormation changes if you execute the change set.</p>
      */
-    inline void SetChanges(Aws::Vector<Change>&& value) { m_changes = value; }
+    inline void SetChanges(Aws::Vector<Change>&& value) { m_changes = std::move(value); }
 
     /**
      * <p>A list of <code>Change</code> structures that describes the resources AWS
@@ -599,7 +600,7 @@ namespace Model
      * <p>A list of <code>Change</code> structures that describes the resources AWS
      * CloudFormation changes if you execute the change set.</p>
      */
-    inline DescribeChangeSetResult& WithChanges(Aws::Vector<Change>&& value) { SetChanges(value); return *this;}
+    inline DescribeChangeSetResult& WithChanges(Aws::Vector<Change>&& value) { SetChanges(std::move(value)); return *this;}
 
     /**
      * <p>A list of <code>Change</code> structures that describes the resources AWS
@@ -611,7 +612,7 @@ namespace Model
      * <p>A list of <code>Change</code> structures that describes the resources AWS
      * CloudFormation changes if you execute the change set.</p>
      */
-    inline DescribeChangeSetResult& AddChanges(Change&& value) { m_changes.push_back(value); return *this; }
+    inline DescribeChangeSetResult& AddChanges(Change&& value) { m_changes.push_back(std::move(value)); return *this; }
 
     /**
      * <p>If the output exceeds 1 MB, a string that identifies the next page of
@@ -629,7 +630,7 @@ namespace Model
      * <p>If the output exceeds 1 MB, a string that identifies the next page of
      * changes. If there is no additional page, this value is null.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
      * <p>If the output exceeds 1 MB, a string that identifies the next page of
@@ -647,7 +648,7 @@ namespace Model
      * <p>If the output exceeds 1 MB, a string that identifies the next page of
      * changes. If there is no additional page, this value is null.</p>
      */
-    inline DescribeChangeSetResult& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline DescribeChangeSetResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>If the output exceeds 1 MB, a string that identifies the next page of
@@ -662,13 +663,13 @@ namespace Model
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
 
     
     inline DescribeChangeSetResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
 
     
-    inline DescribeChangeSetResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
+    inline DescribeChangeSetResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
     Aws::String m_changeSetName;

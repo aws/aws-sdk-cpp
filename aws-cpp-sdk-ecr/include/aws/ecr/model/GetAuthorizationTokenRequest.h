@@ -17,6 +17,7 @@
 #include <aws/ecr/ECRRequest.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -55,7 +56,7 @@ namespace Model
      * to get authorization tokens. If you do not specify a registry, the default
      * registry is assumed.</p>
      */
-    inline void SetRegistryIds(Aws::Vector<Aws::String>&& value) { m_registryIdsHasBeenSet = true; m_registryIds = value; }
+    inline void SetRegistryIds(Aws::Vector<Aws::String>&& value) { m_registryIdsHasBeenSet = true; m_registryIds = std::move(value); }
 
     /**
      * <p>A list of AWS account IDs that are associated with the registries for which
@@ -69,7 +70,7 @@ namespace Model
      * to get authorization tokens. If you do not specify a registry, the default
      * registry is assumed.</p>
      */
-    inline GetAuthorizationTokenRequest& WithRegistryIds(Aws::Vector<Aws::String>&& value) { SetRegistryIds(value); return *this;}
+    inline GetAuthorizationTokenRequest& WithRegistryIds(Aws::Vector<Aws::String>&& value) { SetRegistryIds(std::move(value)); return *this;}
 
     /**
      * <p>A list of AWS account IDs that are associated with the registries for which
@@ -83,7 +84,7 @@ namespace Model
      * to get authorization tokens. If you do not specify a registry, the default
      * registry is assumed.</p>
      */
-    inline GetAuthorizationTokenRequest& AddRegistryIds(Aws::String&& value) { m_registryIdsHasBeenSet = true; m_registryIds.push_back(value); return *this; }
+    inline GetAuthorizationTokenRequest& AddRegistryIds(Aws::String&& value) { m_registryIdsHasBeenSet = true; m_registryIds.push_back(std::move(value)); return *this; }
 
     /**
      * <p>A list of AWS account IDs that are associated with the registries for which

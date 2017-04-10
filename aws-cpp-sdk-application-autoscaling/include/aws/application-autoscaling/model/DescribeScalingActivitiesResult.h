@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/application-autoscaling/model/ScalingActivity.h>
+#include <utility>
 
 namespace Aws
 {
@@ -54,7 +55,7 @@ namespace Model
     /**
      * <p>A list of scaling activity objects.</p>
      */
-    inline void SetScalingActivities(Aws::Vector<ScalingActivity>&& value) { m_scalingActivities = value; }
+    inline void SetScalingActivities(Aws::Vector<ScalingActivity>&& value) { m_scalingActivities = std::move(value); }
 
     /**
      * <p>A list of scaling activity objects.</p>
@@ -64,7 +65,7 @@ namespace Model
     /**
      * <p>A list of scaling activity objects.</p>
      */
-    inline DescribeScalingActivitiesResult& WithScalingActivities(Aws::Vector<ScalingActivity>&& value) { SetScalingActivities(value); return *this;}
+    inline DescribeScalingActivitiesResult& WithScalingActivities(Aws::Vector<ScalingActivity>&& value) { SetScalingActivities(std::move(value)); return *this;}
 
     /**
      * <p>A list of scaling activity objects.</p>
@@ -74,7 +75,7 @@ namespace Model
     /**
      * <p>A list of scaling activity objects.</p>
      */
-    inline DescribeScalingActivitiesResult& AddScalingActivities(ScalingActivity&& value) { m_scalingActivities.push_back(value); return *this; }
+    inline DescribeScalingActivitiesResult& AddScalingActivities(ScalingActivity&& value) { m_scalingActivities.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The token required to get the next set of results. This value is
@@ -92,7 +93,7 @@ namespace Model
      * <p>The token required to get the next set of results. This value is
      * <code>null</code> if there are no more results to return.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
      * <p>The token required to get the next set of results. This value is
@@ -110,7 +111,7 @@ namespace Model
      * <p>The token required to get the next set of results. This value is
      * <code>null</code> if there are no more results to return.</p>
      */
-    inline DescribeScalingActivitiesResult& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline DescribeScalingActivitiesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>The token required to get the next set of results. This value is

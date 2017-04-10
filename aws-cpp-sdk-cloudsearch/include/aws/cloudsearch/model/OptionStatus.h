@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/cloudsearch/model/OptionState.h>
+#include <utility>
 
 namespace Aws
 {
@@ -60,7 +61,7 @@ namespace Model
     /**
      * <p>A timestamp for when this option was created.</p>
      */
-    inline void SetCreationDate(Aws::Utils::DateTime&& value) { m_creationDateHasBeenSet = true; m_creationDate = value; }
+    inline void SetCreationDate(Aws::Utils::DateTime&& value) { m_creationDateHasBeenSet = true; m_creationDate = std::move(value); }
 
     /**
      * <p>A timestamp for when this option was created.</p>
@@ -70,7 +71,7 @@ namespace Model
     /**
      * <p>A timestamp for when this option was created.</p>
      */
-    inline OptionStatus& WithCreationDate(Aws::Utils::DateTime&& value) { SetCreationDate(value); return *this;}
+    inline OptionStatus& WithCreationDate(Aws::Utils::DateTime&& value) { SetCreationDate(std::move(value)); return *this;}
 
     /**
      * <p>A timestamp for when this option was last updated.</p>
@@ -85,7 +86,7 @@ namespace Model
     /**
      * <p>A timestamp for when this option was last updated.</p>
      */
-    inline void SetUpdateDate(Aws::Utils::DateTime&& value) { m_updateDateHasBeenSet = true; m_updateDate = value; }
+    inline void SetUpdateDate(Aws::Utils::DateTime&& value) { m_updateDateHasBeenSet = true; m_updateDate = std::move(value); }
 
     /**
      * <p>A timestamp for when this option was last updated.</p>
@@ -95,7 +96,7 @@ namespace Model
     /**
      * <p>A timestamp for when this option was last updated.</p>
      */
-    inline OptionStatus& WithUpdateDate(Aws::Utils::DateTime&& value) { SetUpdateDate(value); return *this;}
+    inline OptionStatus& WithUpdateDate(Aws::Utils::DateTime&& value) { SetUpdateDate(std::move(value)); return *this;}
 
     /**
      * <p>A unique integer that indicates when this option was last updated.</p>
@@ -149,7 +150,7 @@ namespace Model
      * index the data. You must either modify the option value or update or remove the
      * incompatible documents.</li> </ul>
      */
-    inline void SetState(OptionState&& value) { m_stateHasBeenSet = true; m_state = value; }
+    inline void SetState(OptionState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
 
     /**
      * <p>The state of processing a change to an option. Possible values:</p> <ul> <li>
@@ -175,7 +176,7 @@ namespace Model
      * index the data. You must either modify the option value or update or remove the
      * incompatible documents.</li> </ul>
      */
-    inline OptionStatus& WithState(OptionState&& value) { SetState(value); return *this;}
+    inline OptionStatus& WithState(OptionState&& value) { SetState(std::move(value)); return *this;}
 
     /**
      * <p>Indicates that the option will be deleted once processing is complete.</p>

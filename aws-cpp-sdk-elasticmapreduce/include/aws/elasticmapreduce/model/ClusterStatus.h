@@ -17,6 +17,7 @@
 #include <aws/elasticmapreduce/model/ClusterState.h>
 #include <aws/elasticmapreduce/model/ClusterStateChangeReason.h>
 #include <aws/elasticmapreduce/model/ClusterTimeline.h>
+#include <utility>
 
 namespace Aws
 {
@@ -58,7 +59,7 @@ namespace Model
     /**
      * <p>The current state of the cluster.</p>
      */
-    inline void SetState(ClusterState&& value) { m_stateHasBeenSet = true; m_state = value; }
+    inline void SetState(ClusterState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
 
     /**
      * <p>The current state of the cluster.</p>
@@ -68,7 +69,7 @@ namespace Model
     /**
      * <p>The current state of the cluster.</p>
      */
-    inline ClusterStatus& WithState(ClusterState&& value) { SetState(value); return *this;}
+    inline ClusterStatus& WithState(ClusterState&& value) { SetState(std::move(value)); return *this;}
 
     /**
      * <p>The reason for the cluster status change.</p>
@@ -83,7 +84,7 @@ namespace Model
     /**
      * <p>The reason for the cluster status change.</p>
      */
-    inline void SetStateChangeReason(ClusterStateChangeReason&& value) { m_stateChangeReasonHasBeenSet = true; m_stateChangeReason = value; }
+    inline void SetStateChangeReason(ClusterStateChangeReason&& value) { m_stateChangeReasonHasBeenSet = true; m_stateChangeReason = std::move(value); }
 
     /**
      * <p>The reason for the cluster status change.</p>
@@ -93,7 +94,7 @@ namespace Model
     /**
      * <p>The reason for the cluster status change.</p>
      */
-    inline ClusterStatus& WithStateChangeReason(ClusterStateChangeReason&& value) { SetStateChangeReason(value); return *this;}
+    inline ClusterStatus& WithStateChangeReason(ClusterStateChangeReason&& value) { SetStateChangeReason(std::move(value)); return *this;}
 
     /**
      * <p>A timeline that represents the status of a cluster over the lifetime of the
@@ -111,7 +112,7 @@ namespace Model
      * <p>A timeline that represents the status of a cluster over the lifetime of the
      * cluster.</p>
      */
-    inline void SetTimeline(ClusterTimeline&& value) { m_timelineHasBeenSet = true; m_timeline = value; }
+    inline void SetTimeline(ClusterTimeline&& value) { m_timelineHasBeenSet = true; m_timeline = std::move(value); }
 
     /**
      * <p>A timeline that represents the status of a cluster over the lifetime of the
@@ -123,7 +124,7 @@ namespace Model
      * <p>A timeline that represents the status of a cluster over the lifetime of the
      * cluster.</p>
      */
-    inline ClusterStatus& WithTimeline(ClusterTimeline&& value) { SetTimeline(value); return *this;}
+    inline ClusterStatus& WithTimeline(ClusterTimeline&& value) { SetTimeline(std::move(value)); return *this;}
 
   private:
     ClusterState m_state;

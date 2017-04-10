@@ -17,6 +17,7 @@
 #include <aws/codepipeline/CodePipelineRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/codepipeline/model/StageRetryMode.h>
+#include <utility>
 
 namespace Aws
 {
@@ -53,7 +54,7 @@ namespace Model
     /**
      * <p>The name of the pipeline that contains the failed stage.</p>
      */
-    inline void SetPipelineName(Aws::String&& value) { m_pipelineNameHasBeenSet = true; m_pipelineName = value; }
+    inline void SetPipelineName(Aws::String&& value) { m_pipelineNameHasBeenSet = true; m_pipelineName = std::move(value); }
 
     /**
      * <p>The name of the pipeline that contains the failed stage.</p>
@@ -68,7 +69,7 @@ namespace Model
     /**
      * <p>The name of the pipeline that contains the failed stage.</p>
      */
-    inline RetryStageExecutionRequest& WithPipelineName(Aws::String&& value) { SetPipelineName(value); return *this;}
+    inline RetryStageExecutionRequest& WithPipelineName(Aws::String&& value) { SetPipelineName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the pipeline that contains the failed stage.</p>
@@ -88,7 +89,7 @@ namespace Model
     /**
      * <p>The name of the failed stage to be retried.</p>
      */
-    inline void SetStageName(Aws::String&& value) { m_stageNameHasBeenSet = true; m_stageName = value; }
+    inline void SetStageName(Aws::String&& value) { m_stageNameHasBeenSet = true; m_stageName = std::move(value); }
 
     /**
      * <p>The name of the failed stage to be retried.</p>
@@ -103,7 +104,7 @@ namespace Model
     /**
      * <p>The name of the failed stage to be retried.</p>
      */
-    inline RetryStageExecutionRequest& WithStageName(Aws::String&& value) { SetStageName(value); return *this;}
+    inline RetryStageExecutionRequest& WithStageName(Aws::String&& value) { SetStageName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the failed stage to be retried.</p>
@@ -129,7 +130,7 @@ namespace Model
      * <a>GetPipelineState</a> action to retrieve the current pipelineExecutionId of
      * the failed stage</p>
      */
-    inline void SetPipelineExecutionId(Aws::String&& value) { m_pipelineExecutionIdHasBeenSet = true; m_pipelineExecutionId = value; }
+    inline void SetPipelineExecutionId(Aws::String&& value) { m_pipelineExecutionIdHasBeenSet = true; m_pipelineExecutionId = std::move(value); }
 
     /**
      * <p>The ID of the pipeline execution in the failed stage to be retried. Use the
@@ -150,7 +151,7 @@ namespace Model
      * <a>GetPipelineState</a> action to retrieve the current pipelineExecutionId of
      * the failed stage</p>
      */
-    inline RetryStageExecutionRequest& WithPipelineExecutionId(Aws::String&& value) { SetPipelineExecutionId(value); return *this;}
+    inline RetryStageExecutionRequest& WithPipelineExecutionId(Aws::String&& value) { SetPipelineExecutionId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the pipeline execution in the failed stage to be retried. Use the
@@ -175,7 +176,7 @@ namespace Model
      * <p>The scope of the retry attempt. Currently, the only supported value is
      * FAILED_ACTIONS.</p>
      */
-    inline void SetRetryMode(StageRetryMode&& value) { m_retryModeHasBeenSet = true; m_retryMode = value; }
+    inline void SetRetryMode(StageRetryMode&& value) { m_retryModeHasBeenSet = true; m_retryMode = std::move(value); }
 
     /**
      * <p>The scope of the retry attempt. Currently, the only supported value is
@@ -187,7 +188,7 @@ namespace Model
      * <p>The scope of the retry attempt. Currently, the only supported value is
      * FAILED_ACTIONS.</p>
      */
-    inline RetryStageExecutionRequest& WithRetryMode(StageRetryMode&& value) { SetRetryMode(value); return *this;}
+    inline RetryStageExecutionRequest& WithRetryMode(StageRetryMode&& value) { SetRetryMode(std::move(value)); return *this;}
 
   private:
     Aws::String m_pipelineName;

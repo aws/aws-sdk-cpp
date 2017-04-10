@@ -16,6 +16,7 @@
 #include <aws/redshift/Redshift_EXPORTS.h>
 #include <aws/redshift/model/Cluster.h>
 #include <aws/redshift/model/ResponseMetadata.h>
+#include <utility>
 
 namespace Aws
 {
@@ -47,13 +48,13 @@ namespace Model
     inline void SetCluster(const Cluster& value) { m_cluster = value; }
 
     
-    inline void SetCluster(Cluster&& value) { m_cluster = value; }
+    inline void SetCluster(Cluster&& value) { m_cluster = std::move(value); }
 
     
     inline DisableSnapshotCopyResult& WithCluster(const Cluster& value) { SetCluster(value); return *this;}
 
     
-    inline DisableSnapshotCopyResult& WithCluster(Cluster&& value) { SetCluster(value); return *this;}
+    inline DisableSnapshotCopyResult& WithCluster(Cluster&& value) { SetCluster(std::move(value)); return *this;}
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
@@ -62,13 +63,13 @@ namespace Model
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
 
     
     inline DisableSnapshotCopyResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
 
     
-    inline DisableSnapshotCopyResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
+    inline DisableSnapshotCopyResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
     Cluster m_cluster;

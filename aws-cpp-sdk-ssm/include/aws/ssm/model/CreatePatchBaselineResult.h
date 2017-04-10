@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/ssm/SSM_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -52,7 +53,7 @@ namespace Model
     /**
      * <p>The ID of the created patch baseline.</p>
      */
-    inline void SetBaselineId(Aws::String&& value) { m_baselineId = value; }
+    inline void SetBaselineId(Aws::String&& value) { m_baselineId = std::move(value); }
 
     /**
      * <p>The ID of the created patch baseline.</p>
@@ -67,7 +68,7 @@ namespace Model
     /**
      * <p>The ID of the created patch baseline.</p>
      */
-    inline CreatePatchBaselineResult& WithBaselineId(Aws::String&& value) { SetBaselineId(value); return *this;}
+    inline CreatePatchBaselineResult& WithBaselineId(Aws::String&& value) { SetBaselineId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the created patch baseline.</p>

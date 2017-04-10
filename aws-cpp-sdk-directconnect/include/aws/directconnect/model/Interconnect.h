@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/directconnect/model/InterconnectState.h>
 #include <aws/core/utils/DateTime.h>
+#include <utility>
 
 namespace Aws
 {
@@ -61,7 +62,7 @@ namespace Model
     inline void SetInterconnectId(const Aws::String& value) { m_interconnectIdHasBeenSet = true; m_interconnectId = value; }
 
     
-    inline void SetInterconnectId(Aws::String&& value) { m_interconnectIdHasBeenSet = true; m_interconnectId = value; }
+    inline void SetInterconnectId(Aws::String&& value) { m_interconnectIdHasBeenSet = true; m_interconnectId = std::move(value); }
 
     
     inline void SetInterconnectId(const char* value) { m_interconnectIdHasBeenSet = true; m_interconnectId.assign(value); }
@@ -70,7 +71,7 @@ namespace Model
     inline Interconnect& WithInterconnectId(const Aws::String& value) { SetInterconnectId(value); return *this;}
 
     
-    inline Interconnect& WithInterconnectId(Aws::String&& value) { SetInterconnectId(value); return *this;}
+    inline Interconnect& WithInterconnectId(Aws::String&& value) { SetInterconnectId(std::move(value)); return *this;}
 
     
     inline Interconnect& WithInterconnectId(const char* value) { SetInterconnectId(value); return *this;}
@@ -82,7 +83,7 @@ namespace Model
     inline void SetInterconnectName(const Aws::String& value) { m_interconnectNameHasBeenSet = true; m_interconnectName = value; }
 
     
-    inline void SetInterconnectName(Aws::String&& value) { m_interconnectNameHasBeenSet = true; m_interconnectName = value; }
+    inline void SetInterconnectName(Aws::String&& value) { m_interconnectNameHasBeenSet = true; m_interconnectName = std::move(value); }
 
     
     inline void SetInterconnectName(const char* value) { m_interconnectNameHasBeenSet = true; m_interconnectName.assign(value); }
@@ -91,7 +92,7 @@ namespace Model
     inline Interconnect& WithInterconnectName(const Aws::String& value) { SetInterconnectName(value); return *this;}
 
     
-    inline Interconnect& WithInterconnectName(Aws::String&& value) { SetInterconnectName(value); return *this;}
+    inline Interconnect& WithInterconnectName(Aws::String&& value) { SetInterconnectName(std::move(value)); return *this;}
 
     
     inline Interconnect& WithInterconnectName(const char* value) { SetInterconnectName(value); return *this;}
@@ -103,13 +104,13 @@ namespace Model
     inline void SetInterconnectState(const InterconnectState& value) { m_interconnectStateHasBeenSet = true; m_interconnectState = value; }
 
     
-    inline void SetInterconnectState(InterconnectState&& value) { m_interconnectStateHasBeenSet = true; m_interconnectState = value; }
+    inline void SetInterconnectState(InterconnectState&& value) { m_interconnectStateHasBeenSet = true; m_interconnectState = std::move(value); }
 
     
     inline Interconnect& WithInterconnectState(const InterconnectState& value) { SetInterconnectState(value); return *this;}
 
     
-    inline Interconnect& WithInterconnectState(InterconnectState&& value) { SetInterconnectState(value); return *this;}
+    inline Interconnect& WithInterconnectState(InterconnectState&& value) { SetInterconnectState(std::move(value)); return *this;}
 
     
     inline const Aws::String& GetRegion() const{ return m_region; }
@@ -118,7 +119,7 @@ namespace Model
     inline void SetRegion(const Aws::String& value) { m_regionHasBeenSet = true; m_region = value; }
 
     
-    inline void SetRegion(Aws::String&& value) { m_regionHasBeenSet = true; m_region = value; }
+    inline void SetRegion(Aws::String&& value) { m_regionHasBeenSet = true; m_region = std::move(value); }
 
     
     inline void SetRegion(const char* value) { m_regionHasBeenSet = true; m_region.assign(value); }
@@ -127,7 +128,7 @@ namespace Model
     inline Interconnect& WithRegion(const Aws::String& value) { SetRegion(value); return *this;}
 
     
-    inline Interconnect& WithRegion(Aws::String&& value) { SetRegion(value); return *this;}
+    inline Interconnect& WithRegion(Aws::String&& value) { SetRegion(std::move(value)); return *this;}
 
     
     inline Interconnect& WithRegion(const char* value) { SetRegion(value); return *this;}
@@ -139,7 +140,7 @@ namespace Model
     inline void SetLocation(const Aws::String& value) { m_locationHasBeenSet = true; m_location = value; }
 
     
-    inline void SetLocation(Aws::String&& value) { m_locationHasBeenSet = true; m_location = value; }
+    inline void SetLocation(Aws::String&& value) { m_locationHasBeenSet = true; m_location = std::move(value); }
 
     
     inline void SetLocation(const char* value) { m_locationHasBeenSet = true; m_location.assign(value); }
@@ -148,7 +149,7 @@ namespace Model
     inline Interconnect& WithLocation(const Aws::String& value) { SetLocation(value); return *this;}
 
     
-    inline Interconnect& WithLocation(Aws::String&& value) { SetLocation(value); return *this;}
+    inline Interconnect& WithLocation(Aws::String&& value) { SetLocation(std::move(value)); return *this;}
 
     
     inline Interconnect& WithLocation(const char* value) { SetLocation(value); return *this;}
@@ -160,7 +161,7 @@ namespace Model
     inline void SetBandwidth(const Aws::String& value) { m_bandwidthHasBeenSet = true; m_bandwidth = value; }
 
     
-    inline void SetBandwidth(Aws::String&& value) { m_bandwidthHasBeenSet = true; m_bandwidth = value; }
+    inline void SetBandwidth(Aws::String&& value) { m_bandwidthHasBeenSet = true; m_bandwidth = std::move(value); }
 
     
     inline void SetBandwidth(const char* value) { m_bandwidthHasBeenSet = true; m_bandwidth.assign(value); }
@@ -169,7 +170,7 @@ namespace Model
     inline Interconnect& WithBandwidth(const Aws::String& value) { SetBandwidth(value); return *this;}
 
     
-    inline Interconnect& WithBandwidth(Aws::String&& value) { SetBandwidth(value); return *this;}
+    inline Interconnect& WithBandwidth(Aws::String&& value) { SetBandwidth(std::move(value)); return *this;}
 
     
     inline Interconnect& WithBandwidth(const char* value) { SetBandwidth(value); return *this;}
@@ -190,7 +191,7 @@ namespace Model
      * <p>The time of the most recent call to DescribeInterconnectLoa for this
      * Interconnect.</p>
      */
-    inline void SetLoaIssueTime(Aws::Utils::DateTime&& value) { m_loaIssueTimeHasBeenSet = true; m_loaIssueTime = value; }
+    inline void SetLoaIssueTime(Aws::Utils::DateTime&& value) { m_loaIssueTimeHasBeenSet = true; m_loaIssueTime = std::move(value); }
 
     /**
      * <p>The time of the most recent call to DescribeInterconnectLoa for this
@@ -202,7 +203,7 @@ namespace Model
      * <p>The time of the most recent call to DescribeInterconnectLoa for this
      * Interconnect.</p>
      */
-    inline Interconnect& WithLoaIssueTime(Aws::Utils::DateTime&& value) { SetLoaIssueTime(value); return *this;}
+    inline Interconnect& WithLoaIssueTime(Aws::Utils::DateTime&& value) { SetLoaIssueTime(std::move(value)); return *this;}
 
     
     inline const Aws::String& GetLagId() const{ return m_lagId; }
@@ -211,7 +212,7 @@ namespace Model
     inline void SetLagId(const Aws::String& value) { m_lagIdHasBeenSet = true; m_lagId = value; }
 
     
-    inline void SetLagId(Aws::String&& value) { m_lagIdHasBeenSet = true; m_lagId = value; }
+    inline void SetLagId(Aws::String&& value) { m_lagIdHasBeenSet = true; m_lagId = std::move(value); }
 
     
     inline void SetLagId(const char* value) { m_lagIdHasBeenSet = true; m_lagId.assign(value); }
@@ -220,7 +221,7 @@ namespace Model
     inline Interconnect& WithLagId(const Aws::String& value) { SetLagId(value); return *this;}
 
     
-    inline Interconnect& WithLagId(Aws::String&& value) { SetLagId(value); return *this;}
+    inline Interconnect& WithLagId(Aws::String&& value) { SetLagId(std::move(value)); return *this;}
 
     
     inline Interconnect& WithLagId(const char* value) { SetLagId(value); return *this;}
@@ -241,7 +242,7 @@ namespace Model
      * <p>The Direct Connection endpoint which the physical connection terminates
      * on.</p>
      */
-    inline void SetAwsDevice(Aws::String&& value) { m_awsDeviceHasBeenSet = true; m_awsDevice = value; }
+    inline void SetAwsDevice(Aws::String&& value) { m_awsDeviceHasBeenSet = true; m_awsDevice = std::move(value); }
 
     /**
      * <p>The Direct Connection endpoint which the physical connection terminates
@@ -259,7 +260,7 @@ namespace Model
      * <p>The Direct Connection endpoint which the physical connection terminates
      * on.</p>
      */
-    inline Interconnect& WithAwsDevice(Aws::String&& value) { SetAwsDevice(value); return *this;}
+    inline Interconnect& WithAwsDevice(Aws::String&& value) { SetAwsDevice(std::move(value)); return *this;}
 
     /**
      * <p>The Direct Connection endpoint which the physical connection terminates

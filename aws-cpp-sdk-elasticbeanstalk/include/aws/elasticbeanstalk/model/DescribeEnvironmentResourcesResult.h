@@ -16,6 +16,7 @@
 #include <aws/elasticbeanstalk/ElasticBeanstalk_EXPORTS.h>
 #include <aws/elasticbeanstalk/model/EnvironmentResourceDescription.h>
 #include <aws/elasticbeanstalk/model/ResponseMetadata.h>
+#include <utility>
 
 namespace Aws
 {
@@ -59,7 +60,7 @@ namespace Model
     /**
      * <p> A list of <a>EnvironmentResourceDescription</a>. </p>
      */
-    inline void SetEnvironmentResources(EnvironmentResourceDescription&& value) { m_environmentResources = value; }
+    inline void SetEnvironmentResources(EnvironmentResourceDescription&& value) { m_environmentResources = std::move(value); }
 
     /**
      * <p> A list of <a>EnvironmentResourceDescription</a>. </p>
@@ -69,7 +70,7 @@ namespace Model
     /**
      * <p> A list of <a>EnvironmentResourceDescription</a>. </p>
      */
-    inline DescribeEnvironmentResourcesResult& WithEnvironmentResources(EnvironmentResourceDescription&& value) { SetEnvironmentResources(value); return *this;}
+    inline DescribeEnvironmentResourcesResult& WithEnvironmentResources(EnvironmentResourceDescription&& value) { SetEnvironmentResources(std::move(value)); return *this;}
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
@@ -78,13 +79,13 @@ namespace Model
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
 
     
     inline DescribeEnvironmentResourcesResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
 
     
-    inline DescribeEnvironmentResourcesResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
+    inline DescribeEnvironmentResourcesResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
     EnvironmentResourceDescription m_environmentResources;

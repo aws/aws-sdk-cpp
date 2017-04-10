@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/waf/WAF_EXPORTS.h>
 #include <aws/waf/model/ChangeTokenStatus.h>
+#include <utility>
 
 namespace Aws
 {
@@ -52,7 +53,7 @@ namespace Model
     /**
      * <p>The status of the change token.</p>
      */
-    inline void SetChangeTokenStatus(ChangeTokenStatus&& value) { m_changeTokenStatus = value; }
+    inline void SetChangeTokenStatus(ChangeTokenStatus&& value) { m_changeTokenStatus = std::move(value); }
 
     /**
      * <p>The status of the change token.</p>
@@ -62,7 +63,7 @@ namespace Model
     /**
      * <p>The status of the change token.</p>
      */
-    inline GetChangeTokenStatusResult& WithChangeTokenStatus(ChangeTokenStatus&& value) { SetChangeTokenStatus(value); return *this;}
+    inline GetChangeTokenStatusResult& WithChangeTokenStatus(ChangeTokenStatus&& value) { SetChangeTokenStatus(std::move(value)); return *this;}
 
   private:
     ChangeTokenStatus m_changeTokenStatus;

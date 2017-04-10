@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/cloudtrail/model/ResourceTag.h>
+#include <utility>
 
 namespace Aws
 {
@@ -60,7 +61,7 @@ namespace Model
     /**
      * <p>A list of resource tags.</p>
      */
-    inline void SetResourceTagList(Aws::Vector<ResourceTag>&& value) { m_resourceTagList = value; }
+    inline void SetResourceTagList(Aws::Vector<ResourceTag>&& value) { m_resourceTagList = std::move(value); }
 
     /**
      * <p>A list of resource tags.</p>
@@ -70,7 +71,7 @@ namespace Model
     /**
      * <p>A list of resource tags.</p>
      */
-    inline ListTagsResult& WithResourceTagList(Aws::Vector<ResourceTag>&& value) { SetResourceTagList(value); return *this;}
+    inline ListTagsResult& WithResourceTagList(Aws::Vector<ResourceTag>&& value) { SetResourceTagList(std::move(value)); return *this;}
 
     /**
      * <p>A list of resource tags.</p>
@@ -80,7 +81,7 @@ namespace Model
     /**
      * <p>A list of resource tags.</p>
      */
-    inline ListTagsResult& AddResourceTagList(ResourceTag&& value) { m_resourceTagList.push_back(value); return *this; }
+    inline ListTagsResult& AddResourceTagList(ResourceTag&& value) { m_resourceTagList.push_back(std::move(value)); return *this; }
 
     /**
      * <p>Reserved for future use.</p>
@@ -95,7 +96,7 @@ namespace Model
     /**
      * <p>Reserved for future use.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
      * <p>Reserved for future use.</p>
@@ -110,7 +111,7 @@ namespace Model
     /**
      * <p>Reserved for future use.</p>
      */
-    inline ListTagsResult& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline ListTagsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>Reserved for future use.</p>

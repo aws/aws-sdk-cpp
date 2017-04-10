@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/cloudfront/CloudFront_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -58,7 +59,7 @@ namespace Model
     /**
      * The ID for the origin access identity. For example: E74FTE3AJFJ256A.
      */
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = value; }
+    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
 
     /**
      * The ID for the origin access identity. For example: E74FTE3AJFJ256A.
@@ -73,7 +74,7 @@ namespace Model
     /**
      * The ID for the origin access identity. For example: E74FTE3AJFJ256A.
      */
-    inline CloudFrontOriginAccessIdentitySummary& WithId(Aws::String&& value) { SetId(value); return *this;}
+    inline CloudFrontOriginAccessIdentitySummary& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
 
     /**
      * The ID for the origin access identity. For example: E74FTE3AJFJ256A.
@@ -99,7 +100,7 @@ namespace Model
      * when giving the origin access identity read permission to an object in Amazon
      * S3.
      */
-    inline void SetS3CanonicalUserId(Aws::String&& value) { m_s3CanonicalUserIdHasBeenSet = true; m_s3CanonicalUserId = value; }
+    inline void SetS3CanonicalUserId(Aws::String&& value) { m_s3CanonicalUserIdHasBeenSet = true; m_s3CanonicalUserId = std::move(value); }
 
     /**
      * The Amazon S3 canonical user ID for the origin access identity, which you use
@@ -120,7 +121,7 @@ namespace Model
      * when giving the origin access identity read permission to an object in Amazon
      * S3.
      */
-    inline CloudFrontOriginAccessIdentitySummary& WithS3CanonicalUserId(Aws::String&& value) { SetS3CanonicalUserId(value); return *this;}
+    inline CloudFrontOriginAccessIdentitySummary& WithS3CanonicalUserId(Aws::String&& value) { SetS3CanonicalUserId(std::move(value)); return *this;}
 
     /**
      * The Amazon S3 canonical user ID for the origin access identity, which you use
@@ -145,7 +146,7 @@ namespace Model
      * The comment for this origin access identity, as originally specified when
      * created.
      */
-    inline void SetComment(Aws::String&& value) { m_commentHasBeenSet = true; m_comment = value; }
+    inline void SetComment(Aws::String&& value) { m_commentHasBeenSet = true; m_comment = std::move(value); }
 
     /**
      * The comment for this origin access identity, as originally specified when
@@ -163,7 +164,7 @@ namespace Model
      * The comment for this origin access identity, as originally specified when
      * created.
      */
-    inline CloudFrontOriginAccessIdentitySummary& WithComment(Aws::String&& value) { SetComment(value); return *this;}
+    inline CloudFrontOriginAccessIdentitySummary& WithComment(Aws::String&& value) { SetComment(std::move(value)); return *this;}
 
     /**
      * The comment for this origin access identity, as originally specified when

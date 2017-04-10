@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/PlacementStrategy.h>
 #include <aws/ec2/model/PlacementGroupState.h>
+#include <utility>
 
 namespace Aws
 {
@@ -61,7 +62,7 @@ namespace Model
     /**
      * <p>The name of the placement group.</p>
      */
-    inline void SetGroupName(Aws::String&& value) { m_groupNameHasBeenSet = true; m_groupName = value; }
+    inline void SetGroupName(Aws::String&& value) { m_groupNameHasBeenSet = true; m_groupName = std::move(value); }
 
     /**
      * <p>The name of the placement group.</p>
@@ -76,7 +77,7 @@ namespace Model
     /**
      * <p>The name of the placement group.</p>
      */
-    inline PlacementGroup& WithGroupName(Aws::String&& value) { SetGroupName(value); return *this;}
+    inline PlacementGroup& WithGroupName(Aws::String&& value) { SetGroupName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the placement group.</p>
@@ -96,7 +97,7 @@ namespace Model
     /**
      * <p>The placement strategy.</p>
      */
-    inline void SetStrategy(PlacementStrategy&& value) { m_strategyHasBeenSet = true; m_strategy = value; }
+    inline void SetStrategy(PlacementStrategy&& value) { m_strategyHasBeenSet = true; m_strategy = std::move(value); }
 
     /**
      * <p>The placement strategy.</p>
@@ -106,7 +107,7 @@ namespace Model
     /**
      * <p>The placement strategy.</p>
      */
-    inline PlacementGroup& WithStrategy(PlacementStrategy&& value) { SetStrategy(value); return *this;}
+    inline PlacementGroup& WithStrategy(PlacementStrategy&& value) { SetStrategy(std::move(value)); return *this;}
 
     /**
      * <p>The state of the placement group.</p>
@@ -121,7 +122,7 @@ namespace Model
     /**
      * <p>The state of the placement group.</p>
      */
-    inline void SetState(PlacementGroupState&& value) { m_stateHasBeenSet = true; m_state = value; }
+    inline void SetState(PlacementGroupState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
 
     /**
      * <p>The state of the placement group.</p>
@@ -131,7 +132,7 @@ namespace Model
     /**
      * <p>The state of the placement group.</p>
      */
-    inline PlacementGroup& WithState(PlacementGroupState&& value) { SetState(value); return *this;}
+    inline PlacementGroup& WithState(PlacementGroupState&& value) { SetState(std::move(value)); return *this;}
 
   private:
     Aws::String m_groupName;

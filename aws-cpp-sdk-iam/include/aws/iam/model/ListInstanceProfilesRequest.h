@@ -16,6 +16,7 @@
 #include <aws/iam/IAM_EXPORTS.h>
 #include <aws/iam/IAMRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -77,7 +78,7 @@ namespace Model
      * thru the DEL character (\u007F), including most punctuation characters, digits,
      * and upper and lowercased letters.</p>
      */
-    inline void SetPathPrefix(Aws::String&& value) { m_pathPrefixHasBeenSet = true; m_pathPrefix = value; }
+    inline void SetPathPrefix(Aws::String&& value) { m_pathPrefixHasBeenSet = true; m_pathPrefix = std::move(value); }
 
     /**
      * <p> The path prefix for filtering the results. For example, the prefix
@@ -119,7 +120,7 @@ namespace Model
      * thru the DEL character (\u007F), including most punctuation characters, digits,
      * and upper and lowercased letters.</p>
      */
-    inline ListInstanceProfilesRequest& WithPathPrefix(Aws::String&& value) { SetPathPrefix(value); return *this;}
+    inline ListInstanceProfilesRequest& WithPathPrefix(Aws::String&& value) { SetPathPrefix(std::move(value)); return *this;}
 
     /**
      * <p> The path prefix for filtering the results. For example, the prefix
@@ -157,7 +158,7 @@ namespace Model
      * <code>Marker</code> element in the response that you received to indicate where
      * the next call should start.</p>
      */
-    inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = value; }
+    inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = std::move(value); }
 
     /**
      * <p>Use this parameter only when paginating results and only after you receive a
@@ -181,7 +182,7 @@ namespace Model
      * <code>Marker</code> element in the response that you received to indicate where
      * the next call should start.</p>
      */
-    inline ListInstanceProfilesRequest& WithMarker(Aws::String&& value) { SetMarker(value); return *this;}
+    inline ListInstanceProfilesRequest& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
 
     /**
      * <p>Use this parameter only when paginating results and only after you receive a

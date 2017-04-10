@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/lightsail/Lightsail_EXPORTS.h>
 #include <aws/lightsail/model/Instance.h>
+#include <utility>
 
 namespace Aws
 {
@@ -55,7 +56,7 @@ namespace Model
      * <p>An array of key-value pairs containing information about the specified
      * instance.</p>
      */
-    inline void SetInstance(Instance&& value) { m_instance = value; }
+    inline void SetInstance(Instance&& value) { m_instance = std::move(value); }
 
     /**
      * <p>An array of key-value pairs containing information about the specified
@@ -67,7 +68,7 @@ namespace Model
      * <p>An array of key-value pairs containing information about the specified
      * instance.</p>
      */
-    inline GetInstanceResult& WithInstance(Instance&& value) { SetInstance(value); return *this;}
+    inline GetInstanceResult& WithInstance(Instance&& value) { SetInstance(std::move(value)); return *this;}
 
   private:
     Instance m_instance;

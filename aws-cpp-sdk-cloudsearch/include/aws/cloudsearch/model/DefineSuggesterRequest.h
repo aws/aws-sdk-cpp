@@ -17,6 +17,7 @@
 #include <aws/cloudsearch/CloudSearchRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/cloudsearch/model/Suggester.h>
+#include <utility>
 
 namespace Aws
 {
@@ -50,7 +51,7 @@ namespace Model
     inline void SetDomainName(const Aws::String& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
 
     
-    inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
+    inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = std::move(value); }
 
     
     inline void SetDomainName(const char* value) { m_domainNameHasBeenSet = true; m_domainName.assign(value); }
@@ -59,7 +60,7 @@ namespace Model
     inline DefineSuggesterRequest& WithDomainName(const Aws::String& value) { SetDomainName(value); return *this;}
 
     
-    inline DefineSuggesterRequest& WithDomainName(Aws::String&& value) { SetDomainName(value); return *this;}
+    inline DefineSuggesterRequest& WithDomainName(Aws::String&& value) { SetDomainName(std::move(value)); return *this;}
 
     
     inline DefineSuggesterRequest& WithDomainName(const char* value) { SetDomainName(value); return *this;}
@@ -71,13 +72,13 @@ namespace Model
     inline void SetSuggester(const Suggester& value) { m_suggesterHasBeenSet = true; m_suggester = value; }
 
     
-    inline void SetSuggester(Suggester&& value) { m_suggesterHasBeenSet = true; m_suggester = value; }
+    inline void SetSuggester(Suggester&& value) { m_suggesterHasBeenSet = true; m_suggester = std::move(value); }
 
     
     inline DefineSuggesterRequest& WithSuggester(const Suggester& value) { SetSuggester(value); return *this;}
 
     
-    inline DefineSuggesterRequest& WithSuggester(Suggester&& value) { SetSuggester(value); return *this;}
+    inline DefineSuggesterRequest& WithSuggester(Suggester&& value) { SetSuggester(std::move(value)); return *this;}
 
   private:
     Aws::String m_domainName;

@@ -16,6 +16,7 @@
 #include <aws/datapipeline/DataPipeline_EXPORTS.h>
 #include <aws/datapipeline/DataPipelineRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -60,7 +61,7 @@ namespace Model
      * <code>ListPipelines</code> with the marker value from the previous call to
      * retrieve the next set of results.</p>
      */
-    inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = value; }
+    inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = std::move(value); }
 
     /**
      * <p>The starting point for the results to be returned. For the first call, this
@@ -84,7 +85,7 @@ namespace Model
      * <code>ListPipelines</code> with the marker value from the previous call to
      * retrieve the next set of results.</p>
      */
-    inline ListPipelinesRequest& WithMarker(Aws::String&& value) { SetMarker(value); return *this;}
+    inline ListPipelinesRequest& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
 
     /**
      * <p>The starting point for the results to be returned. For the first call, this

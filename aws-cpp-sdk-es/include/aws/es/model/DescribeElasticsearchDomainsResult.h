@@ -16,6 +16,7 @@
 #include <aws/es/ElasticsearchService_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/es/model/ElasticsearchDomainStatus.h>
+#include <utility>
 
 namespace Aws
 {
@@ -63,7 +64,7 @@ namespace Model
      * <p>The status of the domains requested in the
      * <code>DescribeElasticsearchDomains</code> request.</p>
      */
-    inline void SetDomainStatusList(Aws::Vector<ElasticsearchDomainStatus>&& value) { m_domainStatusList = value; }
+    inline void SetDomainStatusList(Aws::Vector<ElasticsearchDomainStatus>&& value) { m_domainStatusList = std::move(value); }
 
     /**
      * <p>The status of the domains requested in the
@@ -75,7 +76,7 @@ namespace Model
      * <p>The status of the domains requested in the
      * <code>DescribeElasticsearchDomains</code> request.</p>
      */
-    inline DescribeElasticsearchDomainsResult& WithDomainStatusList(Aws::Vector<ElasticsearchDomainStatus>&& value) { SetDomainStatusList(value); return *this;}
+    inline DescribeElasticsearchDomainsResult& WithDomainStatusList(Aws::Vector<ElasticsearchDomainStatus>&& value) { SetDomainStatusList(std::move(value)); return *this;}
 
     /**
      * <p>The status of the domains requested in the
@@ -87,7 +88,7 @@ namespace Model
      * <p>The status of the domains requested in the
      * <code>DescribeElasticsearchDomains</code> request.</p>
      */
-    inline DescribeElasticsearchDomainsResult& AddDomainStatusList(ElasticsearchDomainStatus&& value) { m_domainStatusList.push_back(value); return *this; }
+    inline DescribeElasticsearchDomainsResult& AddDomainStatusList(ElasticsearchDomainStatus&& value) { m_domainStatusList.push_back(std::move(value)); return *this; }
 
   private:
     Aws::Vector<ElasticsearchDomainStatus> m_domainStatusList;

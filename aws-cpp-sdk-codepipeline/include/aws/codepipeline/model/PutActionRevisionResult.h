@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/codepipeline/CodePipeline_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -76,7 +77,7 @@ namespace Model
     /**
      * <p>The ID of the current workflow state of the pipeline.</p>
      */
-    inline void SetPipelineExecutionId(Aws::String&& value) { m_pipelineExecutionId = value; }
+    inline void SetPipelineExecutionId(Aws::String&& value) { m_pipelineExecutionId = std::move(value); }
 
     /**
      * <p>The ID of the current workflow state of the pipeline.</p>
@@ -91,7 +92,7 @@ namespace Model
     /**
      * <p>The ID of the current workflow state of the pipeline.</p>
      */
-    inline PutActionRevisionResult& WithPipelineExecutionId(Aws::String&& value) { SetPipelineExecutionId(value); return *this;}
+    inline PutActionRevisionResult& WithPipelineExecutionId(Aws::String&& value) { SetPipelineExecutionId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the current workflow state of the pipeline.</p>

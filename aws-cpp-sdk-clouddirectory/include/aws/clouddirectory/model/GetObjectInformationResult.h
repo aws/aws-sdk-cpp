@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/clouddirectory/model/SchemaFacet.h>
+#include <utility>
 
 namespace Aws
 {
@@ -54,7 +55,7 @@ namespace Model
     /**
      * <p>The facets attached to the specified object.</p>
      */
-    inline void SetSchemaFacets(Aws::Vector<SchemaFacet>&& value) { m_schemaFacets = value; }
+    inline void SetSchemaFacets(Aws::Vector<SchemaFacet>&& value) { m_schemaFacets = std::move(value); }
 
     /**
      * <p>The facets attached to the specified object.</p>
@@ -64,7 +65,7 @@ namespace Model
     /**
      * <p>The facets attached to the specified object.</p>
      */
-    inline GetObjectInformationResult& WithSchemaFacets(Aws::Vector<SchemaFacet>&& value) { SetSchemaFacets(value); return *this;}
+    inline GetObjectInformationResult& WithSchemaFacets(Aws::Vector<SchemaFacet>&& value) { SetSchemaFacets(std::move(value)); return *this;}
 
     /**
      * <p>The facets attached to the specified object.</p>
@@ -74,7 +75,7 @@ namespace Model
     /**
      * <p>The facets attached to the specified object.</p>
      */
-    inline GetObjectInformationResult& AddSchemaFacets(SchemaFacet&& value) { m_schemaFacets.push_back(value); return *this; }
+    inline GetObjectInformationResult& AddSchemaFacets(SchemaFacet&& value) { m_schemaFacets.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The <code>ObjectIdentifier</code> of the specified object.</p>
@@ -89,7 +90,7 @@ namespace Model
     /**
      * <p>The <code>ObjectIdentifier</code> of the specified object.</p>
      */
-    inline void SetObjectIdentifier(Aws::String&& value) { m_objectIdentifier = value; }
+    inline void SetObjectIdentifier(Aws::String&& value) { m_objectIdentifier = std::move(value); }
 
     /**
      * <p>The <code>ObjectIdentifier</code> of the specified object.</p>
@@ -104,7 +105,7 @@ namespace Model
     /**
      * <p>The <code>ObjectIdentifier</code> of the specified object.</p>
      */
-    inline GetObjectInformationResult& WithObjectIdentifier(Aws::String&& value) { SetObjectIdentifier(value); return *this;}
+    inline GetObjectInformationResult& WithObjectIdentifier(Aws::String&& value) { SetObjectIdentifier(std::move(value)); return *this;}
 
     /**
      * <p>The <code>ObjectIdentifier</code> of the specified object.</p>

@@ -20,6 +20,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ec2/model/LaunchPermissionModifications.h>
 #include <aws/ec2/model/AttributeValue.h>
+#include <utility>
 
 namespace Aws
 {
@@ -82,7 +83,7 @@ namespace Model
     /**
      * <p>The ID of the AMI.</p>
      */
-    inline void SetImageId(Aws::String&& value) { m_imageIdHasBeenSet = true; m_imageId = value; }
+    inline void SetImageId(Aws::String&& value) { m_imageIdHasBeenSet = true; m_imageId = std::move(value); }
 
     /**
      * <p>The ID of the AMI.</p>
@@ -97,7 +98,7 @@ namespace Model
     /**
      * <p>The ID of the AMI.</p>
      */
-    inline ModifyImageAttributeRequest& WithImageId(Aws::String&& value) { SetImageId(value); return *this;}
+    inline ModifyImageAttributeRequest& WithImageId(Aws::String&& value) { SetImageId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the AMI.</p>
@@ -117,7 +118,7 @@ namespace Model
     /**
      * <p>The name of the attribute to modify.</p>
      */
-    inline void SetAttribute(Aws::String&& value) { m_attributeHasBeenSet = true; m_attribute = value; }
+    inline void SetAttribute(Aws::String&& value) { m_attributeHasBeenSet = true; m_attribute = std::move(value); }
 
     /**
      * <p>The name of the attribute to modify.</p>
@@ -132,7 +133,7 @@ namespace Model
     /**
      * <p>The name of the attribute to modify.</p>
      */
-    inline ModifyImageAttributeRequest& WithAttribute(Aws::String&& value) { SetAttribute(value); return *this;}
+    inline ModifyImageAttributeRequest& WithAttribute(Aws::String&& value) { SetAttribute(std::move(value)); return *this;}
 
     /**
      * <p>The name of the attribute to modify.</p>
@@ -152,7 +153,7 @@ namespace Model
     /**
      * <p>The operation type.</p>
      */
-    inline void SetOperationType(OperationType&& value) { m_operationTypeHasBeenSet = true; m_operationType = value; }
+    inline void SetOperationType(OperationType&& value) { m_operationTypeHasBeenSet = true; m_operationType = std::move(value); }
 
     /**
      * <p>The operation type.</p>
@@ -162,7 +163,7 @@ namespace Model
     /**
      * <p>The operation type.</p>
      */
-    inline ModifyImageAttributeRequest& WithOperationType(OperationType&& value) { SetOperationType(value); return *this;}
+    inline ModifyImageAttributeRequest& WithOperationType(OperationType&& value) { SetOperationType(std::move(value)); return *this;}
 
     /**
      * <p>One or more AWS account IDs. This is only valid when modifying the
@@ -180,7 +181,7 @@ namespace Model
      * <p>One or more AWS account IDs. This is only valid when modifying the
      * <code>launchPermission</code> attribute.</p>
      */
-    inline void SetUserIds(Aws::Vector<Aws::String>&& value) { m_userIdsHasBeenSet = true; m_userIds = value; }
+    inline void SetUserIds(Aws::Vector<Aws::String>&& value) { m_userIdsHasBeenSet = true; m_userIds = std::move(value); }
 
     /**
      * <p>One or more AWS account IDs. This is only valid when modifying the
@@ -192,7 +193,7 @@ namespace Model
      * <p>One or more AWS account IDs. This is only valid when modifying the
      * <code>launchPermission</code> attribute.</p>
      */
-    inline ModifyImageAttributeRequest& WithUserIds(Aws::Vector<Aws::String>&& value) { SetUserIds(value); return *this;}
+    inline ModifyImageAttributeRequest& WithUserIds(Aws::Vector<Aws::String>&& value) { SetUserIds(std::move(value)); return *this;}
 
     /**
      * <p>One or more AWS account IDs. This is only valid when modifying the
@@ -204,7 +205,7 @@ namespace Model
      * <p>One or more AWS account IDs. This is only valid when modifying the
      * <code>launchPermission</code> attribute.</p>
      */
-    inline ModifyImageAttributeRequest& AddUserIds(Aws::String&& value) { m_userIdsHasBeenSet = true; m_userIds.push_back(value); return *this; }
+    inline ModifyImageAttributeRequest& AddUserIds(Aws::String&& value) { m_userIdsHasBeenSet = true; m_userIds.push_back(std::move(value)); return *this; }
 
     /**
      * <p>One or more AWS account IDs. This is only valid when modifying the
@@ -228,7 +229,7 @@ namespace Model
      * <p>One or more user groups. This is only valid when modifying the
      * <code>launchPermission</code> attribute.</p>
      */
-    inline void SetUserGroups(Aws::Vector<Aws::String>&& value) { m_userGroupsHasBeenSet = true; m_userGroups = value; }
+    inline void SetUserGroups(Aws::Vector<Aws::String>&& value) { m_userGroupsHasBeenSet = true; m_userGroups = std::move(value); }
 
     /**
      * <p>One or more user groups. This is only valid when modifying the
@@ -240,7 +241,7 @@ namespace Model
      * <p>One or more user groups. This is only valid when modifying the
      * <code>launchPermission</code> attribute.</p>
      */
-    inline ModifyImageAttributeRequest& WithUserGroups(Aws::Vector<Aws::String>&& value) { SetUserGroups(value); return *this;}
+    inline ModifyImageAttributeRequest& WithUserGroups(Aws::Vector<Aws::String>&& value) { SetUserGroups(std::move(value)); return *this;}
 
     /**
      * <p>One or more user groups. This is only valid when modifying the
@@ -252,7 +253,7 @@ namespace Model
      * <p>One or more user groups. This is only valid when modifying the
      * <code>launchPermission</code> attribute.</p>
      */
-    inline ModifyImageAttributeRequest& AddUserGroups(Aws::String&& value) { m_userGroupsHasBeenSet = true; m_userGroups.push_back(value); return *this; }
+    inline ModifyImageAttributeRequest& AddUserGroups(Aws::String&& value) { m_userGroupsHasBeenSet = true; m_userGroups.push_back(std::move(value)); return *this; }
 
     /**
      * <p>One or more user groups. This is only valid when modifying the
@@ -279,7 +280,7 @@ namespace Model
      * be removed. This is only valid when modifying the <code>productCodes</code>
      * attribute.</p>
      */
-    inline void SetProductCodes(Aws::Vector<Aws::String>&& value) { m_productCodesHasBeenSet = true; m_productCodes = value; }
+    inline void SetProductCodes(Aws::Vector<Aws::String>&& value) { m_productCodesHasBeenSet = true; m_productCodes = std::move(value); }
 
     /**
      * <p>One or more product codes. After you add a product code to an AMI, it can't
@@ -293,7 +294,7 @@ namespace Model
      * be removed. This is only valid when modifying the <code>productCodes</code>
      * attribute.</p>
      */
-    inline ModifyImageAttributeRequest& WithProductCodes(Aws::Vector<Aws::String>&& value) { SetProductCodes(value); return *this;}
+    inline ModifyImageAttributeRequest& WithProductCodes(Aws::Vector<Aws::String>&& value) { SetProductCodes(std::move(value)); return *this;}
 
     /**
      * <p>One or more product codes. After you add a product code to an AMI, it can't
@@ -307,7 +308,7 @@ namespace Model
      * be removed. This is only valid when modifying the <code>productCodes</code>
      * attribute.</p>
      */
-    inline ModifyImageAttributeRequest& AddProductCodes(Aws::String&& value) { m_productCodesHasBeenSet = true; m_productCodes.push_back(value); return *this; }
+    inline ModifyImageAttributeRequest& AddProductCodes(Aws::String&& value) { m_productCodesHasBeenSet = true; m_productCodes.push_back(std::move(value)); return *this; }
 
     /**
      * <p>One or more product codes. After you add a product code to an AMI, it can't
@@ -332,7 +333,7 @@ namespace Model
      * <p>The value of the attribute being modified. This is only valid when modifying
      * the <code>description</code> attribute.</p>
      */
-    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = value; }
+    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
 
     /**
      * <p>The value of the attribute being modified. This is only valid when modifying
@@ -350,7 +351,7 @@ namespace Model
      * <p>The value of the attribute being modified. This is only valid when modifying
      * the <code>description</code> attribute.</p>
      */
-    inline ModifyImageAttributeRequest& WithValue(Aws::String&& value) { SetValue(value); return *this;}
+    inline ModifyImageAttributeRequest& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
 
     /**
      * <p>The value of the attribute being modified. This is only valid when modifying
@@ -371,7 +372,7 @@ namespace Model
     /**
      * <p>A launch permission modification.</p>
      */
-    inline void SetLaunchPermission(LaunchPermissionModifications&& value) { m_launchPermissionHasBeenSet = true; m_launchPermission = value; }
+    inline void SetLaunchPermission(LaunchPermissionModifications&& value) { m_launchPermissionHasBeenSet = true; m_launchPermission = std::move(value); }
 
     /**
      * <p>A launch permission modification.</p>
@@ -381,7 +382,7 @@ namespace Model
     /**
      * <p>A launch permission modification.</p>
      */
-    inline ModifyImageAttributeRequest& WithLaunchPermission(LaunchPermissionModifications&& value) { SetLaunchPermission(value); return *this;}
+    inline ModifyImageAttributeRequest& WithLaunchPermission(LaunchPermissionModifications&& value) { SetLaunchPermission(std::move(value)); return *this;}
 
     /**
      * <p>A description for the AMI.</p>
@@ -396,7 +397,7 @@ namespace Model
     /**
      * <p>A description for the AMI.</p>
      */
-    inline void SetDescription(AttributeValue&& value) { m_descriptionHasBeenSet = true; m_description = value; }
+    inline void SetDescription(AttributeValue&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
      * <p>A description for the AMI.</p>
@@ -406,7 +407,7 @@ namespace Model
     /**
      * <p>A description for the AMI.</p>
      */
-    inline ModifyImageAttributeRequest& WithDescription(AttributeValue&& value) { SetDescription(value); return *this;}
+    inline ModifyImageAttributeRequest& WithDescription(AttributeValue&& value) { SetDescription(std::move(value)); return *this;}
 
   private:
     bool m_dryRun;

@@ -16,6 +16,7 @@
 #include <aws/sdb/SimpleDB_EXPORTS.h>
 #include <aws/sdb/SimpleDBRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -68,7 +69,7 @@ namespace Model
     /**
      * A string informing Amazon SimpleDB where to start the next list of domain names.
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
      * A string informing Amazon SimpleDB where to start the next list of domain names.
@@ -83,7 +84,7 @@ namespace Model
     /**
      * A string informing Amazon SimpleDB where to start the next list of domain names.
      */
-    inline ListDomainsRequest& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline ListDomainsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * A string informing Amazon SimpleDB where to start the next list of domain names.

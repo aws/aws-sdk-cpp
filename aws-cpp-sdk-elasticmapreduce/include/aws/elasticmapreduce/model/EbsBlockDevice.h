@@ -16,6 +16,7 @@
 #include <aws/elasticmapreduce/EMR_EXPORTS.h>
 #include <aws/elasticmapreduce/model/VolumeSpecification.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -61,7 +62,7 @@ namespace Model
      * <p>EBS volume specifications such as volume type, IOPS, and size (GiB) that will
      * be requested for the EBS volume attached to an EC2 instance in the cluster.</p>
      */
-    inline void SetVolumeSpecification(VolumeSpecification&& value) { m_volumeSpecificationHasBeenSet = true; m_volumeSpecification = value; }
+    inline void SetVolumeSpecification(VolumeSpecification&& value) { m_volumeSpecificationHasBeenSet = true; m_volumeSpecification = std::move(value); }
 
     /**
      * <p>EBS volume specifications such as volume type, IOPS, and size (GiB) that will
@@ -73,7 +74,7 @@ namespace Model
      * <p>EBS volume specifications such as volume type, IOPS, and size (GiB) that will
      * be requested for the EBS volume attached to an EC2 instance in the cluster.</p>
      */
-    inline EbsBlockDevice& WithVolumeSpecification(VolumeSpecification&& value) { SetVolumeSpecification(value); return *this;}
+    inline EbsBlockDevice& WithVolumeSpecification(VolumeSpecification&& value) { SetVolumeSpecification(std::move(value)); return *this;}
 
     /**
      * <p>The device name that is exposed to the instance, such as /dev/sdh.</p>
@@ -88,7 +89,7 @@ namespace Model
     /**
      * <p>The device name that is exposed to the instance, such as /dev/sdh.</p>
      */
-    inline void SetDevice(Aws::String&& value) { m_deviceHasBeenSet = true; m_device = value; }
+    inline void SetDevice(Aws::String&& value) { m_deviceHasBeenSet = true; m_device = std::move(value); }
 
     /**
      * <p>The device name that is exposed to the instance, such as /dev/sdh.</p>
@@ -103,7 +104,7 @@ namespace Model
     /**
      * <p>The device name that is exposed to the instance, such as /dev/sdh.</p>
      */
-    inline EbsBlockDevice& WithDevice(Aws::String&& value) { SetDevice(value); return *this;}
+    inline EbsBlockDevice& WithDevice(Aws::String&& value) { SetDevice(std::move(value)); return *this;}
 
     /**
      * <p>The device name that is exposed to the instance, such as /dev/sdh.</p>

@@ -17,6 +17,7 @@
 #include <aws/elasticloadbalancingv2/ElasticLoadBalancingv2Request.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -54,7 +55,7 @@ namespace Model
      * <p>The Amazon Resource Names (ARN) of the load balancers. You can specify up to
      * 20 load balancers in a single call.</p>
      */
-    inline void SetLoadBalancerArns(Aws::Vector<Aws::String>&& value) { m_loadBalancerArnsHasBeenSet = true; m_loadBalancerArns = value; }
+    inline void SetLoadBalancerArns(Aws::Vector<Aws::String>&& value) { m_loadBalancerArnsHasBeenSet = true; m_loadBalancerArns = std::move(value); }
 
     /**
      * <p>The Amazon Resource Names (ARN) of the load balancers. You can specify up to
@@ -66,7 +67,7 @@ namespace Model
      * <p>The Amazon Resource Names (ARN) of the load balancers. You can specify up to
      * 20 load balancers in a single call.</p>
      */
-    inline DescribeLoadBalancersRequest& WithLoadBalancerArns(Aws::Vector<Aws::String>&& value) { SetLoadBalancerArns(value); return *this;}
+    inline DescribeLoadBalancersRequest& WithLoadBalancerArns(Aws::Vector<Aws::String>&& value) { SetLoadBalancerArns(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Names (ARN) of the load balancers. You can specify up to
@@ -78,7 +79,7 @@ namespace Model
      * <p>The Amazon Resource Names (ARN) of the load balancers. You can specify up to
      * 20 load balancers in a single call.</p>
      */
-    inline DescribeLoadBalancersRequest& AddLoadBalancerArns(Aws::String&& value) { m_loadBalancerArnsHasBeenSet = true; m_loadBalancerArns.push_back(value); return *this; }
+    inline DescribeLoadBalancersRequest& AddLoadBalancerArns(Aws::String&& value) { m_loadBalancerArnsHasBeenSet = true; m_loadBalancerArns.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The Amazon Resource Names (ARN) of the load balancers. You can specify up to
@@ -99,7 +100,7 @@ namespace Model
     /**
      * <p>The names of the load balancers.</p>
      */
-    inline void SetNames(Aws::Vector<Aws::String>&& value) { m_namesHasBeenSet = true; m_names = value; }
+    inline void SetNames(Aws::Vector<Aws::String>&& value) { m_namesHasBeenSet = true; m_names = std::move(value); }
 
     /**
      * <p>The names of the load balancers.</p>
@@ -109,7 +110,7 @@ namespace Model
     /**
      * <p>The names of the load balancers.</p>
      */
-    inline DescribeLoadBalancersRequest& WithNames(Aws::Vector<Aws::String>&& value) { SetNames(value); return *this;}
+    inline DescribeLoadBalancersRequest& WithNames(Aws::Vector<Aws::String>&& value) { SetNames(std::move(value)); return *this;}
 
     /**
      * <p>The names of the load balancers.</p>
@@ -119,7 +120,7 @@ namespace Model
     /**
      * <p>The names of the load balancers.</p>
      */
-    inline DescribeLoadBalancersRequest& AddNames(Aws::String&& value) { m_namesHasBeenSet = true; m_names.push_back(value); return *this; }
+    inline DescribeLoadBalancersRequest& AddNames(Aws::String&& value) { m_namesHasBeenSet = true; m_names.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The names of the load balancers.</p>
@@ -142,7 +143,7 @@ namespace Model
      * <p>The marker for the next set of results. (You received this marker from a
      * previous call.)</p>
      */
-    inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = value; }
+    inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = std::move(value); }
 
     /**
      * <p>The marker for the next set of results. (You received this marker from a
@@ -160,7 +161,7 @@ namespace Model
      * <p>The marker for the next set of results. (You received this marker from a
      * previous call.)</p>
      */
-    inline DescribeLoadBalancersRequest& WithMarker(Aws::String&& value) { SetMarker(value); return *this;}
+    inline DescribeLoadBalancersRequest& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
 
     /**
      * <p>The marker for the next set of results. (You received this marker from a

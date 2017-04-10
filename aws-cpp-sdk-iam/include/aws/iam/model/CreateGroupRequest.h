@@ -16,6 +16,7 @@
 #include <aws/iam/IAM_EXPORTS.h>
 #include <aws/iam/IAMRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -74,7 +75,7 @@ namespace Model
      * from the ! (\u0021) thru the DEL character (\u007F), including most punctuation
      * characters, digits, and upper and lowercased letters.</p>
      */
-    inline void SetPath(Aws::String&& value) { m_pathHasBeenSet = true; m_path = value; }
+    inline void SetPath(Aws::String&& value) { m_pathHasBeenSet = true; m_path = std::move(value); }
 
     /**
      * <p> The path to the group. For more information about paths, see <a
@@ -113,7 +114,7 @@ namespace Model
      * from the ! (\u0021) thru the DEL character (\u007F), including most punctuation
      * characters, digits, and upper and lowercased letters.</p>
      */
-    inline CreateGroupRequest& WithPath(Aws::String&& value) { SetPath(value); return *this;}
+    inline CreateGroupRequest& WithPath(Aws::String&& value) { SetPath(std::move(value)); return *this;}
 
     /**
      * <p> The path to the group. For more information about paths, see <a
@@ -159,7 +160,7 @@ namespace Model
      * unique within the account. Group names are not distinguished by case. For
      * example, you cannot create groups named both "ADMINS" and "admins".</p>
      */
-    inline void SetGroupName(Aws::String&& value) { m_groupNameHasBeenSet = true; m_groupName = value; }
+    inline void SetGroupName(Aws::String&& value) { m_groupNameHasBeenSet = true; m_groupName = std::move(value); }
 
     /**
      * <p>The name of the group to create. Do not include the path in this value.</p>
@@ -192,7 +193,7 @@ namespace Model
      * unique within the account. Group names are not distinguished by case. For
      * example, you cannot create groups named both "ADMINS" and "admins".</p>
      */
-    inline CreateGroupRequest& WithGroupName(Aws::String&& value) { SetGroupName(value); return *this;}
+    inline CreateGroupRequest& WithGroupName(Aws::String&& value) { SetGroupName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the group to create. Do not include the path in this value.</p>

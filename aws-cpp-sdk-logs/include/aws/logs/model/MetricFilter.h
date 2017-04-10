@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/logs/model/MetricTransformation.h>
+#include <utility>
 
 namespace Aws
 {
@@ -60,7 +61,7 @@ namespace Model
     /**
      * <p>The name of the metric filter.</p>
      */
-    inline void SetFilterName(Aws::String&& value) { m_filterNameHasBeenSet = true; m_filterName = value; }
+    inline void SetFilterName(Aws::String&& value) { m_filterNameHasBeenSet = true; m_filterName = std::move(value); }
 
     /**
      * <p>The name of the metric filter.</p>
@@ -75,7 +76,7 @@ namespace Model
     /**
      * <p>The name of the metric filter.</p>
      */
-    inline MetricFilter& WithFilterName(Aws::String&& value) { SetFilterName(value); return *this;}
+    inline MetricFilter& WithFilterName(Aws::String&& value) { SetFilterName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the metric filter.</p>
@@ -89,7 +90,7 @@ namespace Model
     inline void SetFilterPattern(const Aws::String& value) { m_filterPatternHasBeenSet = true; m_filterPattern = value; }
 
     
-    inline void SetFilterPattern(Aws::String&& value) { m_filterPatternHasBeenSet = true; m_filterPattern = value; }
+    inline void SetFilterPattern(Aws::String&& value) { m_filterPatternHasBeenSet = true; m_filterPattern = std::move(value); }
 
     
     inline void SetFilterPattern(const char* value) { m_filterPatternHasBeenSet = true; m_filterPattern.assign(value); }
@@ -98,7 +99,7 @@ namespace Model
     inline MetricFilter& WithFilterPattern(const Aws::String& value) { SetFilterPattern(value); return *this;}
 
     
-    inline MetricFilter& WithFilterPattern(Aws::String&& value) { SetFilterPattern(value); return *this;}
+    inline MetricFilter& WithFilterPattern(Aws::String&& value) { SetFilterPattern(std::move(value)); return *this;}
 
     
     inline MetricFilter& WithFilterPattern(const char* value) { SetFilterPattern(value); return *this;}
@@ -116,7 +117,7 @@ namespace Model
     /**
      * <p>The metric transformations.</p>
      */
-    inline void SetMetricTransformations(Aws::Vector<MetricTransformation>&& value) { m_metricTransformationsHasBeenSet = true; m_metricTransformations = value; }
+    inline void SetMetricTransformations(Aws::Vector<MetricTransformation>&& value) { m_metricTransformationsHasBeenSet = true; m_metricTransformations = std::move(value); }
 
     /**
      * <p>The metric transformations.</p>
@@ -126,7 +127,7 @@ namespace Model
     /**
      * <p>The metric transformations.</p>
      */
-    inline MetricFilter& WithMetricTransformations(Aws::Vector<MetricTransformation>&& value) { SetMetricTransformations(value); return *this;}
+    inline MetricFilter& WithMetricTransformations(Aws::Vector<MetricTransformation>&& value) { SetMetricTransformations(std::move(value)); return *this;}
 
     /**
      * <p>The metric transformations.</p>
@@ -136,7 +137,7 @@ namespace Model
     /**
      * <p>The metric transformations.</p>
      */
-    inline MetricFilter& AddMetricTransformations(MetricTransformation&& value) { m_metricTransformationsHasBeenSet = true; m_metricTransformations.push_back(value); return *this; }
+    inline MetricFilter& AddMetricTransformations(MetricTransformation&& value) { m_metricTransformationsHasBeenSet = true; m_metricTransformations.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The creation time of the metric filter.</p>
@@ -166,7 +167,7 @@ namespace Model
     /**
      * <p>The name of the log group.</p>
      */
-    inline void SetLogGroupName(Aws::String&& value) { m_logGroupNameHasBeenSet = true; m_logGroupName = value; }
+    inline void SetLogGroupName(Aws::String&& value) { m_logGroupNameHasBeenSet = true; m_logGroupName = std::move(value); }
 
     /**
      * <p>The name of the log group.</p>
@@ -181,7 +182,7 @@ namespace Model
     /**
      * <p>The name of the log group.</p>
      */
-    inline MetricFilter& WithLogGroupName(Aws::String&& value) { SetLogGroupName(value); return *this;}
+    inline MetricFilter& WithLogGroupName(Aws::String&& value) { SetLogGroupName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the log group.</p>

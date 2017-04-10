@@ -16,6 +16,7 @@
 #include <aws/opsworks/OpsWorks_EXPORTS.h>
 #include <aws/opsworks/OpsWorksRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -48,7 +49,7 @@ namespace Model
     /**
      * <p>The user's IAM ARN. This can also be a federated user's ARN.</p>
      */
-    inline void SetIamUserArn(Aws::String&& value) { m_iamUserArnHasBeenSet = true; m_iamUserArn = value; }
+    inline void SetIamUserArn(Aws::String&& value) { m_iamUserArnHasBeenSet = true; m_iamUserArn = std::move(value); }
 
     /**
      * <p>The user's IAM ARN. This can also be a federated user's ARN.</p>
@@ -63,7 +64,7 @@ namespace Model
     /**
      * <p>The user's IAM ARN. This can also be a federated user's ARN.</p>
      */
-    inline DeleteUserProfileRequest& WithIamUserArn(Aws::String&& value) { SetIamUserArn(value); return *this;}
+    inline DeleteUserProfileRequest& WithIamUserArn(Aws::String&& value) { SetIamUserArn(std::move(value)); return *this;}
 
     /**
      * <p>The user's IAM ARN. This can also be a federated user's ARN.</p>

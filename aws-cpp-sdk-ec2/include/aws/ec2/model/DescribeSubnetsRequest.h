@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/Filter.h>
+#include <utility>
 
 namespace Aws
 {
@@ -79,7 +80,7 @@ namespace Model
     /**
      * <p>One or more subnet IDs.</p> <p>Default: Describes all your subnets.</p>
      */
-    inline void SetSubnetIds(Aws::Vector<Aws::String>&& value) { m_subnetIdsHasBeenSet = true; m_subnetIds = value; }
+    inline void SetSubnetIds(Aws::Vector<Aws::String>&& value) { m_subnetIdsHasBeenSet = true; m_subnetIds = std::move(value); }
 
     /**
      * <p>One or more subnet IDs.</p> <p>Default: Describes all your subnets.</p>
@@ -89,7 +90,7 @@ namespace Model
     /**
      * <p>One or more subnet IDs.</p> <p>Default: Describes all your subnets.</p>
      */
-    inline DescribeSubnetsRequest& WithSubnetIds(Aws::Vector<Aws::String>&& value) { SetSubnetIds(value); return *this;}
+    inline DescribeSubnetsRequest& WithSubnetIds(Aws::Vector<Aws::String>&& value) { SetSubnetIds(std::move(value)); return *this;}
 
     /**
      * <p>One or more subnet IDs.</p> <p>Default: Describes all your subnets.</p>
@@ -99,7 +100,7 @@ namespace Model
     /**
      * <p>One or more subnet IDs.</p> <p>Default: Describes all your subnets.</p>
      */
-    inline DescribeSubnetsRequest& AddSubnetIds(Aws::String&& value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(value); return *this; }
+    inline DescribeSubnetsRequest& AddSubnetIds(Aws::String&& value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(std::move(value)); return *this; }
 
     /**
      * <p>One or more subnet IDs.</p> <p>Default: Describes all your subnets.</p>
@@ -218,7 +219,7 @@ namespace Model
      * filter.</p> </li> <li> <p> <code>vpc-id</code> - The ID of the VPC for the
      * subnet.</p> </li> </ul>
      */
-    inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = value; }
+    inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
 
     /**
      * <p>One or more filters.</p> <ul> <li> <p> <code>availabilityZone</code> - The
@@ -294,7 +295,7 @@ namespace Model
      * filter.</p> </li> <li> <p> <code>vpc-id</code> - The ID of the VPC for the
      * subnet.</p> </li> </ul>
      */
-    inline DescribeSubnetsRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(value); return *this;}
+    inline DescribeSubnetsRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(std::move(value)); return *this;}
 
     /**
      * <p>One or more filters.</p> <ul> <li> <p> <code>availabilityZone</code> - The
@@ -370,7 +371,7 @@ namespace Model
      * filter.</p> </li> <li> <p> <code>vpc-id</code> - The ID of the VPC for the
      * subnet.</p> </li> </ul>
      */
-    inline DescribeSubnetsRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
+    inline DescribeSubnetsRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 
   private:
     bool m_dryRun;

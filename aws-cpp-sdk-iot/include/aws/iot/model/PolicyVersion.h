@@ -16,6 +16,7 @@
 #include <aws/iot/IoT_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
+#include <utility>
 
 namespace Aws
 {
@@ -57,7 +58,7 @@ namespace Model
     /**
      * <p>The policy version ID.</p>
      */
-    inline void SetVersionId(Aws::String&& value) { m_versionIdHasBeenSet = true; m_versionId = value; }
+    inline void SetVersionId(Aws::String&& value) { m_versionIdHasBeenSet = true; m_versionId = std::move(value); }
 
     /**
      * <p>The policy version ID.</p>
@@ -72,7 +73,7 @@ namespace Model
     /**
      * <p>The policy version ID.</p>
      */
-    inline PolicyVersion& WithVersionId(Aws::String&& value) { SetVersionId(value); return *this;}
+    inline PolicyVersion& WithVersionId(Aws::String&& value) { SetVersionId(std::move(value)); return *this;}
 
     /**
      * <p>The policy version ID.</p>
@@ -107,7 +108,7 @@ namespace Model
     /**
      * <p>The date and time the policy was created.</p>
      */
-    inline void SetCreateDate(Aws::Utils::DateTime&& value) { m_createDateHasBeenSet = true; m_createDate = value; }
+    inline void SetCreateDate(Aws::Utils::DateTime&& value) { m_createDateHasBeenSet = true; m_createDate = std::move(value); }
 
     /**
      * <p>The date and time the policy was created.</p>
@@ -117,7 +118,7 @@ namespace Model
     /**
      * <p>The date and time the policy was created.</p>
      */
-    inline PolicyVersion& WithCreateDate(Aws::Utils::DateTime&& value) { SetCreateDate(value); return *this;}
+    inline PolicyVersion& WithCreateDate(Aws::Utils::DateTime&& value) { SetCreateDate(std::move(value)); return *this;}
 
   private:
     Aws::String m_versionId;

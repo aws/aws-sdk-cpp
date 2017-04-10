@@ -16,6 +16,7 @@
 #include <aws/devicefarm/DeviceFarm_EXPORTS.h>
 #include <aws/devicefarm/DeviceFarmRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -55,7 +56,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the remote access session about which you
      * want to get session information.</p>
      */
-    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = value; }
+    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the remote access session about which you
@@ -73,7 +74,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the remote access session about which you
      * want to get session information.</p>
      */
-    inline GetRemoteAccessSessionRequest& WithArn(Aws::String&& value) { SetArn(value); return *this;}
+    inline GetRemoteAccessSessionRequest& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the remote access session about which you

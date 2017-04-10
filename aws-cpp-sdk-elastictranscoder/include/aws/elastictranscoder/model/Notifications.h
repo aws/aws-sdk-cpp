@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/elastictranscoder/ElasticTranscoder_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -62,7 +63,7 @@ namespace Model
      * <p>The Amazon Simple Notification Service (Amazon SNS) topic that you want to
      * notify when Elastic Transcoder has started to process the job.</p>
      */
-    inline void SetProgressing(Aws::String&& value) { m_progressingHasBeenSet = true; m_progressing = value; }
+    inline void SetProgressing(Aws::String&& value) { m_progressingHasBeenSet = true; m_progressing = std::move(value); }
 
     /**
      * <p>The Amazon Simple Notification Service (Amazon SNS) topic that you want to
@@ -80,7 +81,7 @@ namespace Model
      * <p>The Amazon Simple Notification Service (Amazon SNS) topic that you want to
      * notify when Elastic Transcoder has started to process the job.</p>
      */
-    inline Notifications& WithProgressing(Aws::String&& value) { SetProgressing(value); return *this;}
+    inline Notifications& WithProgressing(Aws::String&& value) { SetProgressing(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Simple Notification Service (Amazon SNS) topic that you want to
@@ -104,7 +105,7 @@ namespace Model
      * <p>The Amazon SNS topic that you want to notify when Elastic Transcoder has
      * finished processing the job.</p>
      */
-    inline void SetCompleted(Aws::String&& value) { m_completedHasBeenSet = true; m_completed = value; }
+    inline void SetCompleted(Aws::String&& value) { m_completedHasBeenSet = true; m_completed = std::move(value); }
 
     /**
      * <p>The Amazon SNS topic that you want to notify when Elastic Transcoder has
@@ -122,7 +123,7 @@ namespace Model
      * <p>The Amazon SNS topic that you want to notify when Elastic Transcoder has
      * finished processing the job.</p>
      */
-    inline Notifications& WithCompleted(Aws::String&& value) { SetCompleted(value); return *this;}
+    inline Notifications& WithCompleted(Aws::String&& value) { SetCompleted(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon SNS topic that you want to notify when Elastic Transcoder has
@@ -146,7 +147,7 @@ namespace Model
      * <p>The Amazon SNS topic that you want to notify when Elastic Transcoder
      * encounters a warning condition.</p>
      */
-    inline void SetWarning(Aws::String&& value) { m_warningHasBeenSet = true; m_warning = value; }
+    inline void SetWarning(Aws::String&& value) { m_warningHasBeenSet = true; m_warning = std::move(value); }
 
     /**
      * <p>The Amazon SNS topic that you want to notify when Elastic Transcoder
@@ -164,7 +165,7 @@ namespace Model
      * <p>The Amazon SNS topic that you want to notify when Elastic Transcoder
      * encounters a warning condition.</p>
      */
-    inline Notifications& WithWarning(Aws::String&& value) { SetWarning(value); return *this;}
+    inline Notifications& WithWarning(Aws::String&& value) { SetWarning(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon SNS topic that you want to notify when Elastic Transcoder
@@ -188,7 +189,7 @@ namespace Model
      * <p>The Amazon SNS topic that you want to notify when Elastic Transcoder
      * encounters an error condition.</p>
      */
-    inline void SetError(Aws::String&& value) { m_errorHasBeenSet = true; m_error = value; }
+    inline void SetError(Aws::String&& value) { m_errorHasBeenSet = true; m_error = std::move(value); }
 
     /**
      * <p>The Amazon SNS topic that you want to notify when Elastic Transcoder
@@ -206,7 +207,7 @@ namespace Model
      * <p>The Amazon SNS topic that you want to notify when Elastic Transcoder
      * encounters an error condition.</p>
      */
-    inline Notifications& WithError(Aws::String&& value) { SetError(value); return *this;}
+    inline Notifications& WithError(Aws::String&& value) { SetError(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon SNS topic that you want to notify when Elastic Transcoder

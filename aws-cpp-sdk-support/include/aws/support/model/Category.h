@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/support/Support_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -58,7 +59,7 @@ namespace Model
     /**
      * <p>The category code for the support case.</p>
      */
-    inline void SetCode(Aws::String&& value) { m_codeHasBeenSet = true; m_code = value; }
+    inline void SetCode(Aws::String&& value) { m_codeHasBeenSet = true; m_code = std::move(value); }
 
     /**
      * <p>The category code for the support case.</p>
@@ -73,7 +74,7 @@ namespace Model
     /**
      * <p>The category code for the support case.</p>
      */
-    inline Category& WithCode(Aws::String&& value) { SetCode(value); return *this;}
+    inline Category& WithCode(Aws::String&& value) { SetCode(std::move(value)); return *this;}
 
     /**
      * <p>The category code for the support case.</p>
@@ -93,7 +94,7 @@ namespace Model
     /**
      * <p>The category name for the support case.</p>
      */
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p>The category name for the support case.</p>
@@ -108,7 +109,7 @@ namespace Model
     /**
      * <p>The category name for the support case.</p>
      */
-    inline Category& WithName(Aws::String&& value) { SetName(value); return *this;}
+    inline Category& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>The category name for the support case.</p>

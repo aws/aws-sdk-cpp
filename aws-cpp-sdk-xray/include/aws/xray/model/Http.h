@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/xray/XRay_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -56,7 +57,7 @@ namespace Model
     /**
      * <p>The request URL.</p>
      */
-    inline void SetHttpURL(Aws::String&& value) { m_httpURLHasBeenSet = true; m_httpURL = value; }
+    inline void SetHttpURL(Aws::String&& value) { m_httpURLHasBeenSet = true; m_httpURL = std::move(value); }
 
     /**
      * <p>The request URL.</p>
@@ -71,7 +72,7 @@ namespace Model
     /**
      * <p>The request URL.</p>
      */
-    inline Http& WithHttpURL(Aws::String&& value) { SetHttpURL(value); return *this;}
+    inline Http& WithHttpURL(Aws::String&& value) { SetHttpURL(std::move(value)); return *this;}
 
     /**
      * <p>The request URL.</p>
@@ -106,7 +107,7 @@ namespace Model
     /**
      * <p>The request method.</p>
      */
-    inline void SetHttpMethod(Aws::String&& value) { m_httpMethodHasBeenSet = true; m_httpMethod = value; }
+    inline void SetHttpMethod(Aws::String&& value) { m_httpMethodHasBeenSet = true; m_httpMethod = std::move(value); }
 
     /**
      * <p>The request method.</p>
@@ -121,7 +122,7 @@ namespace Model
     /**
      * <p>The request method.</p>
      */
-    inline Http& WithHttpMethod(Aws::String&& value) { SetHttpMethod(value); return *this;}
+    inline Http& WithHttpMethod(Aws::String&& value) { SetHttpMethod(std::move(value)); return *this;}
 
     /**
      * <p>The request method.</p>
@@ -141,7 +142,7 @@ namespace Model
     /**
      * <p>The request's user agent string.</p>
      */
-    inline void SetUserAgent(Aws::String&& value) { m_userAgentHasBeenSet = true; m_userAgent = value; }
+    inline void SetUserAgent(Aws::String&& value) { m_userAgentHasBeenSet = true; m_userAgent = std::move(value); }
 
     /**
      * <p>The request's user agent string.</p>
@@ -156,7 +157,7 @@ namespace Model
     /**
      * <p>The request's user agent string.</p>
      */
-    inline Http& WithUserAgent(Aws::String&& value) { SetUserAgent(value); return *this;}
+    inline Http& WithUserAgent(Aws::String&& value) { SetUserAgent(std::move(value)); return *this;}
 
     /**
      * <p>The request's user agent string.</p>
@@ -176,7 +177,7 @@ namespace Model
     /**
      * <p>The IP address of the requestor.</p>
      */
-    inline void SetClientIp(Aws::String&& value) { m_clientIpHasBeenSet = true; m_clientIp = value; }
+    inline void SetClientIp(Aws::String&& value) { m_clientIpHasBeenSet = true; m_clientIp = std::move(value); }
 
     /**
      * <p>The IP address of the requestor.</p>
@@ -191,7 +192,7 @@ namespace Model
     /**
      * <p>The IP address of the requestor.</p>
      */
-    inline Http& WithClientIp(Aws::String&& value) { SetClientIp(value); return *this;}
+    inline Http& WithClientIp(Aws::String&& value) { SetClientIp(std::move(value)); return *this;}
 
     /**
      * <p>The IP address of the requestor.</p>

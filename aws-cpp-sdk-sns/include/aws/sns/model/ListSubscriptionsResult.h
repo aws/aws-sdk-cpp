@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/sns/model/ResponseMetadata.h>
 #include <aws/sns/model/Subscription.h>
+#include <utility>
 
 namespace Aws
 {
@@ -60,7 +61,7 @@ namespace Model
     /**
      * <p>A list of subscriptions.</p>
      */
-    inline void SetSubscriptions(Aws::Vector<Subscription>&& value) { m_subscriptions = value; }
+    inline void SetSubscriptions(Aws::Vector<Subscription>&& value) { m_subscriptions = std::move(value); }
 
     /**
      * <p>A list of subscriptions.</p>
@@ -70,7 +71,7 @@ namespace Model
     /**
      * <p>A list of subscriptions.</p>
      */
-    inline ListSubscriptionsResult& WithSubscriptions(Aws::Vector<Subscription>&& value) { SetSubscriptions(value); return *this;}
+    inline ListSubscriptionsResult& WithSubscriptions(Aws::Vector<Subscription>&& value) { SetSubscriptions(std::move(value)); return *this;}
 
     /**
      * <p>A list of subscriptions.</p>
@@ -80,7 +81,7 @@ namespace Model
     /**
      * <p>A list of subscriptions.</p>
      */
-    inline ListSubscriptionsResult& AddSubscriptions(Subscription&& value) { m_subscriptions.push_back(value); return *this; }
+    inline ListSubscriptionsResult& AddSubscriptions(Subscription&& value) { m_subscriptions.push_back(std::move(value)); return *this; }
 
     /**
      * <p>Token to pass along to the next <code>ListSubscriptions</code> request. This
@@ -98,7 +99,7 @@ namespace Model
      * <p>Token to pass along to the next <code>ListSubscriptions</code> request. This
      * element is returned if there are more subscriptions to retrieve.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
      * <p>Token to pass along to the next <code>ListSubscriptions</code> request. This
@@ -116,7 +117,7 @@ namespace Model
      * <p>Token to pass along to the next <code>ListSubscriptions</code> request. This
      * element is returned if there are more subscriptions to retrieve.</p>
      */
-    inline ListSubscriptionsResult& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline ListSubscriptionsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>Token to pass along to the next <code>ListSubscriptions</code> request. This
@@ -131,13 +132,13 @@ namespace Model
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
 
     
     inline ListSubscriptionsResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
 
     
-    inline ListSubscriptionsResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
+    inline ListSubscriptionsResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
     Aws::Vector<Subscription> m_subscriptions;

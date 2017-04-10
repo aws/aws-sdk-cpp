@@ -19,6 +19,7 @@
 #include <aws/lambda/model/InvocationType.h>
 #include <aws/lambda/model/LogType.h>
 #include <aws/core/utils/Array.h>
+#include <utility>
 
 namespace Aws
 {
@@ -79,7 +80,7 @@ namespace Model
      * to the ARN. If you specify only the function name, it is limited to 64 character
      * in length. </p>
      */
-    inline void SetFunctionName(Aws::String&& value) { m_functionNameHasBeenSet = true; m_functionName = value; }
+    inline void SetFunctionName(Aws::String&& value) { m_functionNameHasBeenSet = true; m_functionName = std::move(value); }
 
     /**
      * <p>The Lambda function name.</p> <p> You can specify a function name (for
@@ -115,7 +116,7 @@ namespace Model
      * to the ARN. If you specify only the function name, it is limited to 64 character
      * in length. </p>
      */
-    inline InvokeRequest& WithFunctionName(Aws::String&& value) { SetFunctionName(value); return *this;}
+    inline InvokeRequest& WithFunctionName(Aws::String&& value) { SetFunctionName(std::move(value)); return *this;}
 
     /**
      * <p>The Lambda function name.</p> <p> You can specify a function name (for
@@ -163,7 +164,7 @@ namespace Model
      * <code>InvocationType</code>. This is useful in a cross-account scenario when you
      * want to verify access to a function without running it. </p>
      */
-    inline void SetInvocationType(InvocationType&& value) { m_invocationTypeHasBeenSet = true; m_invocationType = value; }
+    inline void SetInvocationType(InvocationType&& value) { m_invocationTypeHasBeenSet = true; m_invocationType = std::move(value); }
 
     /**
      * <p>By default, the <code>Invoke</code> API assumes <code>RequestResponse</code>
@@ -187,7 +188,7 @@ namespace Model
      * <code>InvocationType</code>. This is useful in a cross-account scenario when you
      * want to verify access to a function without running it. </p>
      */
-    inline InvokeRequest& WithInvocationType(InvocationType&& value) { SetInvocationType(value); return *this;}
+    inline InvokeRequest& WithInvocationType(InvocationType&& value) { SetInvocationType(std::move(value)); return *this;}
 
     /**
      * <p>You can set this optional parameter to <code>Tail</code> in the request only
@@ -214,7 +215,7 @@ namespace Model
      * base64-encoded last 4 KB of log data produced by your Lambda function in the
      * <code>x-amz-log-result</code> header. </p>
      */
-    inline void SetLogType(LogType&& value) { m_logTypeHasBeenSet = true; m_logType = value; }
+    inline void SetLogType(LogType&& value) { m_logTypeHasBeenSet = true; m_logType = std::move(value); }
 
     /**
      * <p>You can set this optional parameter to <code>Tail</code> in the request only
@@ -232,7 +233,7 @@ namespace Model
      * base64-encoded last 4 KB of log data produced by your Lambda function in the
      * <code>x-amz-log-result</code> header. </p>
      */
-    inline InvokeRequest& WithLogType(LogType&& value) { SetLogType(value); return *this;}
+    inline InvokeRequest& WithLogType(LogType&& value) { SetLogType(std::move(value)); return *this;}
 
     /**
      * <p>Using the <code>ClientContext</code> you can pass client-specific information
@@ -265,7 +266,7 @@ namespace Model
      * in the <i>Amazon Mobile Analytics API Reference and User Guide</i>.</p> <p>The
      * ClientContext JSON must be base64-encoded.</p>
      */
-    inline void SetClientContext(Aws::String&& value) { m_clientContextHasBeenSet = true; m_clientContext = value; }
+    inline void SetClientContext(Aws::String&& value) { m_clientContextHasBeenSet = true; m_clientContext = std::move(value); }
 
     /**
      * <p>Using the <code>ClientContext</code> you can pass client-specific information
@@ -298,7 +299,7 @@ namespace Model
      * in the <i>Amazon Mobile Analytics API Reference and User Guide</i>.</p> <p>The
      * ClientContext JSON must be base64-encoded.</p>
      */
-    inline InvokeRequest& WithClientContext(Aws::String&& value) { SetClientContext(value); return *this;}
+    inline InvokeRequest& WithClientContext(Aws::String&& value) { SetClientContext(std::move(value)); return *this;}
 
     /**
      * <p>Using the <code>ClientContext</code> you can pass client-specific information
@@ -342,7 +343,7 @@ namespace Model
      * unqualified function ARN which results in invocation of the <code>$LATEST</code>
      * version.</p>
      */
-    inline void SetQualifier(Aws::String&& value) { m_qualifierHasBeenSet = true; m_qualifier = value; }
+    inline void SetQualifier(Aws::String&& value) { m_qualifierHasBeenSet = true; m_qualifier = std::move(value); }
 
     /**
      * <p>You can use this optional parameter to specify a Lambda function version or
@@ -375,7 +376,7 @@ namespace Model
      * unqualified function ARN which results in invocation of the <code>$LATEST</code>
      * version.</p>
      */
-    inline InvokeRequest& WithQualifier(Aws::String&& value) { SetQualifier(value); return *this;}
+    inline InvokeRequest& WithQualifier(Aws::String&& value) { SetQualifier(std::move(value)); return *this;}
 
     /**
      * <p>You can use this optional parameter to specify a Lambda function version or

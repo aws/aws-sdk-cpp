@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/codepipeline/model/StageContext.h>
 #include <aws/codepipeline/model/ActionContext.h>
+#include <utility>
 
 namespace Aws
 {
@@ -62,7 +63,7 @@ namespace Model
      * <p>The name of the pipeline. This is a user-specified value. Pipeline names must
      * be unique across all pipeline names under an Amazon Web Services account.</p>
      */
-    inline void SetPipelineName(Aws::String&& value) { m_pipelineNameHasBeenSet = true; m_pipelineName = value; }
+    inline void SetPipelineName(Aws::String&& value) { m_pipelineNameHasBeenSet = true; m_pipelineName = std::move(value); }
 
     /**
      * <p>The name of the pipeline. This is a user-specified value. Pipeline names must
@@ -80,7 +81,7 @@ namespace Model
      * <p>The name of the pipeline. This is a user-specified value. Pipeline names must
      * be unique across all pipeline names under an Amazon Web Services account.</p>
      */
-    inline PipelineContext& WithPipelineName(Aws::String&& value) { SetPipelineName(value); return *this;}
+    inline PipelineContext& WithPipelineName(Aws::String&& value) { SetPipelineName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the pipeline. This is a user-specified value. Pipeline names must
@@ -101,7 +102,7 @@ namespace Model
     /**
      * <p>The stage of the pipeline.</p>
      */
-    inline void SetStage(StageContext&& value) { m_stageHasBeenSet = true; m_stage = value; }
+    inline void SetStage(StageContext&& value) { m_stageHasBeenSet = true; m_stage = std::move(value); }
 
     /**
      * <p>The stage of the pipeline.</p>
@@ -111,7 +112,7 @@ namespace Model
     /**
      * <p>The stage of the pipeline.</p>
      */
-    inline PipelineContext& WithStage(StageContext&& value) { SetStage(value); return *this;}
+    inline PipelineContext& WithStage(StageContext&& value) { SetStage(std::move(value)); return *this;}
 
     
     inline const ActionContext& GetAction() const{ return m_action; }
@@ -120,13 +121,13 @@ namespace Model
     inline void SetAction(const ActionContext& value) { m_actionHasBeenSet = true; m_action = value; }
 
     
-    inline void SetAction(ActionContext&& value) { m_actionHasBeenSet = true; m_action = value; }
+    inline void SetAction(ActionContext&& value) { m_actionHasBeenSet = true; m_action = std::move(value); }
 
     
     inline PipelineContext& WithAction(const ActionContext& value) { SetAction(value); return *this;}
 
     
-    inline PipelineContext& WithAction(ActionContext&& value) { SetAction(value); return *this;}
+    inline PipelineContext& WithAction(ActionContext&& value) { SetAction(std::move(value)); return *this;}
 
   private:
     Aws::String m_pipelineName;

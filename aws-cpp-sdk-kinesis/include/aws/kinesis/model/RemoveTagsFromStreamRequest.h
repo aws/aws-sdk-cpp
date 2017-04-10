@@ -17,6 +17,7 @@
 #include <aws/kinesis/KinesisRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <utility>
 
 namespace Aws
 {
@@ -53,7 +54,7 @@ namespace Model
     /**
      * <p>The name of the stream.</p>
      */
-    inline void SetStreamName(Aws::String&& value) { m_streamNameHasBeenSet = true; m_streamName = value; }
+    inline void SetStreamName(Aws::String&& value) { m_streamNameHasBeenSet = true; m_streamName = std::move(value); }
 
     /**
      * <p>The name of the stream.</p>
@@ -68,7 +69,7 @@ namespace Model
     /**
      * <p>The name of the stream.</p>
      */
-    inline RemoveTagsFromStreamRequest& WithStreamName(Aws::String&& value) { SetStreamName(value); return *this;}
+    inline RemoveTagsFromStreamRequest& WithStreamName(Aws::String&& value) { SetStreamName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the stream.</p>
@@ -88,7 +89,7 @@ namespace Model
     /**
      * <p>A list of tag keys. Each corresponding tag is removed from the stream.</p>
      */
-    inline void SetTagKeys(Aws::Vector<Aws::String>&& value) { m_tagKeysHasBeenSet = true; m_tagKeys = value; }
+    inline void SetTagKeys(Aws::Vector<Aws::String>&& value) { m_tagKeysHasBeenSet = true; m_tagKeys = std::move(value); }
 
     /**
      * <p>A list of tag keys. Each corresponding tag is removed from the stream.</p>
@@ -98,7 +99,7 @@ namespace Model
     /**
      * <p>A list of tag keys. Each corresponding tag is removed from the stream.</p>
      */
-    inline RemoveTagsFromStreamRequest& WithTagKeys(Aws::Vector<Aws::String>&& value) { SetTagKeys(value); return *this;}
+    inline RemoveTagsFromStreamRequest& WithTagKeys(Aws::Vector<Aws::String>&& value) { SetTagKeys(std::move(value)); return *this;}
 
     /**
      * <p>A list of tag keys. Each corresponding tag is removed from the stream.</p>
@@ -108,7 +109,7 @@ namespace Model
     /**
      * <p>A list of tag keys. Each corresponding tag is removed from the stream.</p>
      */
-    inline RemoveTagsFromStreamRequest& AddTagKeys(Aws::String&& value) { m_tagKeysHasBeenSet = true; m_tagKeys.push_back(value); return *this; }
+    inline RemoveTagsFromStreamRequest& AddTagKeys(Aws::String&& value) { m_tagKeysHasBeenSet = true; m_tagKeys.push_back(std::move(value)); return *this; }
 
     /**
      * <p>A list of tag keys. Each corresponding tag is removed from the stream.</p>

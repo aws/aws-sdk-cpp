@@ -17,6 +17,7 @@
 #include <aws/servicecatalog/model/PortfolioDetail.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/servicecatalog/model/Tag.h>
+#include <utility>
 
 namespace Aws
 {
@@ -54,7 +55,7 @@ namespace Model
     /**
      * <p>The resulting detailed portfolio information.</p>
      */
-    inline void SetPortfolioDetail(PortfolioDetail&& value) { m_portfolioDetail = value; }
+    inline void SetPortfolioDetail(PortfolioDetail&& value) { m_portfolioDetail = std::move(value); }
 
     /**
      * <p>The resulting detailed portfolio information.</p>
@@ -64,7 +65,7 @@ namespace Model
     /**
      * <p>The resulting detailed portfolio information.</p>
      */
-    inline UpdatePortfolioResult& WithPortfolioDetail(PortfolioDetail&& value) { SetPortfolioDetail(value); return *this;}
+    inline UpdatePortfolioResult& WithPortfolioDetail(PortfolioDetail&& value) { SetPortfolioDetail(std::move(value)); return *this;}
 
     /**
      * <p>Tags associated with the portfolio.</p>
@@ -79,7 +80,7 @@ namespace Model
     /**
      * <p>Tags associated with the portfolio.</p>
      */
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tags = value; }
+    inline void SetTags(Aws::Vector<Tag>&& value) { m_tags = std::move(value); }
 
     /**
      * <p>Tags associated with the portfolio.</p>
@@ -89,7 +90,7 @@ namespace Model
     /**
      * <p>Tags associated with the portfolio.</p>
      */
-    inline UpdatePortfolioResult& WithTags(Aws::Vector<Tag>&& value) { SetTags(value); return *this;}
+    inline UpdatePortfolioResult& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
      * <p>Tags associated with the portfolio.</p>
@@ -99,7 +100,7 @@ namespace Model
     /**
      * <p>Tags associated with the portfolio.</p>
      */
-    inline UpdatePortfolioResult& AddTags(Tag&& value) { m_tags.push_back(value); return *this; }
+    inline UpdatePortfolioResult& AddTags(Tag&& value) { m_tags.push_back(std::move(value)); return *this; }
 
   private:
     PortfolioDetail m_portfolioDetail;

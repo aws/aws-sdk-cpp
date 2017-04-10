@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/cloudformation/model/StackStatus.h>
+#include <utility>
 
 namespace Aws
 {
@@ -61,7 +62,7 @@ namespace Model
     /**
      * <p>Unique stack identifier.</p>
      */
-    inline void SetStackId(Aws::String&& value) { m_stackIdHasBeenSet = true; m_stackId = value; }
+    inline void SetStackId(Aws::String&& value) { m_stackIdHasBeenSet = true; m_stackId = std::move(value); }
 
     /**
      * <p>Unique stack identifier.</p>
@@ -76,7 +77,7 @@ namespace Model
     /**
      * <p>Unique stack identifier.</p>
      */
-    inline StackSummary& WithStackId(Aws::String&& value) { SetStackId(value); return *this;}
+    inline StackSummary& WithStackId(Aws::String&& value) { SetStackId(std::move(value)); return *this;}
 
     /**
      * <p>Unique stack identifier.</p>
@@ -96,7 +97,7 @@ namespace Model
     /**
      * <p>The name associated with the stack.</p>
      */
-    inline void SetStackName(Aws::String&& value) { m_stackNameHasBeenSet = true; m_stackName = value; }
+    inline void SetStackName(Aws::String&& value) { m_stackNameHasBeenSet = true; m_stackName = std::move(value); }
 
     /**
      * <p>The name associated with the stack.</p>
@@ -111,7 +112,7 @@ namespace Model
     /**
      * <p>The name associated with the stack.</p>
      */
-    inline StackSummary& WithStackName(Aws::String&& value) { SetStackName(value); return *this;}
+    inline StackSummary& WithStackName(Aws::String&& value) { SetStackName(std::move(value)); return *this;}
 
     /**
      * <p>The name associated with the stack.</p>
@@ -131,7 +132,7 @@ namespace Model
     /**
      * <p>The template description of the template used to create the stack.</p>
      */
-    inline void SetTemplateDescription(Aws::String&& value) { m_templateDescriptionHasBeenSet = true; m_templateDescription = value; }
+    inline void SetTemplateDescription(Aws::String&& value) { m_templateDescriptionHasBeenSet = true; m_templateDescription = std::move(value); }
 
     /**
      * <p>The template description of the template used to create the stack.</p>
@@ -146,7 +147,7 @@ namespace Model
     /**
      * <p>The template description of the template used to create the stack.</p>
      */
-    inline StackSummary& WithTemplateDescription(Aws::String&& value) { SetTemplateDescription(value); return *this;}
+    inline StackSummary& WithTemplateDescription(Aws::String&& value) { SetTemplateDescription(std::move(value)); return *this;}
 
     /**
      * <p>The template description of the template used to create the stack.</p>
@@ -166,7 +167,7 @@ namespace Model
     /**
      * <p>The time the stack was created.</p>
      */
-    inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
+    inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::move(value); }
 
     /**
      * <p>The time the stack was created.</p>
@@ -176,7 +177,7 @@ namespace Model
     /**
      * <p>The time the stack was created.</p>
      */
-    inline StackSummary& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(value); return *this;}
+    inline StackSummary& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
 
     /**
      * <p>The time the stack was last updated. This field will only be returned if the
@@ -194,7 +195,7 @@ namespace Model
      * <p>The time the stack was last updated. This field will only be returned if the
      * stack has been updated at least once.</p>
      */
-    inline void SetLastUpdatedTime(Aws::Utils::DateTime&& value) { m_lastUpdatedTimeHasBeenSet = true; m_lastUpdatedTime = value; }
+    inline void SetLastUpdatedTime(Aws::Utils::DateTime&& value) { m_lastUpdatedTimeHasBeenSet = true; m_lastUpdatedTime = std::move(value); }
 
     /**
      * <p>The time the stack was last updated. This field will only be returned if the
@@ -206,7 +207,7 @@ namespace Model
      * <p>The time the stack was last updated. This field will only be returned if the
      * stack has been updated at least once.</p>
      */
-    inline StackSummary& WithLastUpdatedTime(Aws::Utils::DateTime&& value) { SetLastUpdatedTime(value); return *this;}
+    inline StackSummary& WithLastUpdatedTime(Aws::Utils::DateTime&& value) { SetLastUpdatedTime(std::move(value)); return *this;}
 
     /**
      * <p>The time the stack was deleted.</p>
@@ -221,7 +222,7 @@ namespace Model
     /**
      * <p>The time the stack was deleted.</p>
      */
-    inline void SetDeletionTime(Aws::Utils::DateTime&& value) { m_deletionTimeHasBeenSet = true; m_deletionTime = value; }
+    inline void SetDeletionTime(Aws::Utils::DateTime&& value) { m_deletionTimeHasBeenSet = true; m_deletionTime = std::move(value); }
 
     /**
      * <p>The time the stack was deleted.</p>
@@ -231,7 +232,7 @@ namespace Model
     /**
      * <p>The time the stack was deleted.</p>
      */
-    inline StackSummary& WithDeletionTime(Aws::Utils::DateTime&& value) { SetDeletionTime(value); return *this;}
+    inline StackSummary& WithDeletionTime(Aws::Utils::DateTime&& value) { SetDeletionTime(std::move(value)); return *this;}
 
     /**
      * <p>The current status of the stack.</p>
@@ -246,7 +247,7 @@ namespace Model
     /**
      * <p>The current status of the stack.</p>
      */
-    inline void SetStackStatus(StackStatus&& value) { m_stackStatusHasBeenSet = true; m_stackStatus = value; }
+    inline void SetStackStatus(StackStatus&& value) { m_stackStatusHasBeenSet = true; m_stackStatus = std::move(value); }
 
     /**
      * <p>The current status of the stack.</p>
@@ -256,7 +257,7 @@ namespace Model
     /**
      * <p>The current status of the stack.</p>
      */
-    inline StackSummary& WithStackStatus(StackStatus&& value) { SetStackStatus(value); return *this;}
+    inline StackSummary& WithStackStatus(StackStatus&& value) { SetStackStatus(std::move(value)); return *this;}
 
     /**
      * <p>Success/Failure message associated with the stack status.</p>
@@ -271,7 +272,7 @@ namespace Model
     /**
      * <p>Success/Failure message associated with the stack status.</p>
      */
-    inline void SetStackStatusReason(Aws::String&& value) { m_stackStatusReasonHasBeenSet = true; m_stackStatusReason = value; }
+    inline void SetStackStatusReason(Aws::String&& value) { m_stackStatusReasonHasBeenSet = true; m_stackStatusReason = std::move(value); }
 
     /**
      * <p>Success/Failure message associated with the stack status.</p>
@@ -286,7 +287,7 @@ namespace Model
     /**
      * <p>Success/Failure message associated with the stack status.</p>
      */
-    inline StackSummary& WithStackStatusReason(Aws::String&& value) { SetStackStatusReason(value); return *this;}
+    inline StackSummary& WithStackStatusReason(Aws::String&& value) { SetStackStatusReason(std::move(value)); return *this;}
 
     /**
      * <p>Success/Failure message associated with the stack status.</p>

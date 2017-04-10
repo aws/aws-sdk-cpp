@@ -16,6 +16,7 @@
 #include <aws/logs/CloudWatchLogs_EXPORTS.h>
 #include <aws/logs/model/ExportTaskStatusCode.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -57,7 +58,7 @@ namespace Model
     /**
      * <p>The status code of the export task.</p>
      */
-    inline void SetCode(ExportTaskStatusCode&& value) { m_codeHasBeenSet = true; m_code = value; }
+    inline void SetCode(ExportTaskStatusCode&& value) { m_codeHasBeenSet = true; m_code = std::move(value); }
 
     /**
      * <p>The status code of the export task.</p>
@@ -67,7 +68,7 @@ namespace Model
     /**
      * <p>The status code of the export task.</p>
      */
-    inline ExportTaskStatus& WithCode(ExportTaskStatusCode&& value) { SetCode(value); return *this;}
+    inline ExportTaskStatus& WithCode(ExportTaskStatusCode&& value) { SetCode(std::move(value)); return *this;}
 
     /**
      * <p>The status message related to the status code.</p>
@@ -82,7 +83,7 @@ namespace Model
     /**
      * <p>The status message related to the status code.</p>
      */
-    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = value; }
+    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
 
     /**
      * <p>The status message related to the status code.</p>
@@ -97,7 +98,7 @@ namespace Model
     /**
      * <p>The status message related to the status code.</p>
      */
-    inline ExportTaskStatus& WithMessage(Aws::String&& value) { SetMessage(value); return *this;}
+    inline ExportTaskStatus& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
 
     /**
      * <p>The status message related to the status code.</p>

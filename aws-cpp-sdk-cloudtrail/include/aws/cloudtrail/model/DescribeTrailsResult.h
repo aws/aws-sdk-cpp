@@ -16,6 +16,7 @@
 #include <aws/cloudtrail/CloudTrail_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/cloudtrail/model/Trail.h>
+#include <utility>
 
 namespace Aws
 {
@@ -59,7 +60,7 @@ namespace Model
     /**
      * <p>The list of trail objects.</p>
      */
-    inline void SetTrailList(Aws::Vector<Trail>&& value) { m_trailList = value; }
+    inline void SetTrailList(Aws::Vector<Trail>&& value) { m_trailList = std::move(value); }
 
     /**
      * <p>The list of trail objects.</p>
@@ -69,7 +70,7 @@ namespace Model
     /**
      * <p>The list of trail objects.</p>
      */
-    inline DescribeTrailsResult& WithTrailList(Aws::Vector<Trail>&& value) { SetTrailList(value); return *this;}
+    inline DescribeTrailsResult& WithTrailList(Aws::Vector<Trail>&& value) { SetTrailList(std::move(value)); return *this;}
 
     /**
      * <p>The list of trail objects.</p>
@@ -79,7 +80,7 @@ namespace Model
     /**
      * <p>The list of trail objects.</p>
      */
-    inline DescribeTrailsResult& AddTrailList(Trail&& value) { m_trailList.push_back(value); return *this; }
+    inline DescribeTrailsResult& AddTrailList(Trail&& value) { m_trailList.push_back(std::move(value)); return *this; }
 
   private:
     Aws::Vector<Trail> m_trailList;

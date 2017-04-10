@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/storagegateway/StorageGateway_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -60,7 +61,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the virtual tape for which the recovery
      * point was retrieved.</p>
      */
-    inline void SetTapeARN(Aws::String&& value) { m_tapeARN = value; }
+    inline void SetTapeARN(Aws::String&& value) { m_tapeARN = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the virtual tape for which the recovery
@@ -78,7 +79,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the virtual tape for which the recovery
      * point was retrieved.</p>
      */
-    inline RetrieveTapeRecoveryPointResult& WithTapeARN(Aws::String&& value) { SetTapeARN(value); return *this;}
+    inline RetrieveTapeRecoveryPointResult& WithTapeARN(Aws::String&& value) { SetTapeARN(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the virtual tape for which the recovery

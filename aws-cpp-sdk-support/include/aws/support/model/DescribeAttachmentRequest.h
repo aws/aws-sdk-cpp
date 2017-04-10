@@ -16,6 +16,7 @@
 #include <aws/support/Support_EXPORTS.h>
 #include <aws/support/SupportRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -51,7 +52,7 @@ namespace Model
      * <p>The ID of the attachment to return. Attachment IDs are returned by the
      * <a>DescribeCommunications</a> operation.</p>
      */
-    inline void SetAttachmentId(Aws::String&& value) { m_attachmentIdHasBeenSet = true; m_attachmentId = value; }
+    inline void SetAttachmentId(Aws::String&& value) { m_attachmentIdHasBeenSet = true; m_attachmentId = std::move(value); }
 
     /**
      * <p>The ID of the attachment to return. Attachment IDs are returned by the
@@ -69,7 +70,7 @@ namespace Model
      * <p>The ID of the attachment to return. Attachment IDs are returned by the
      * <a>DescribeCommunications</a> operation.</p>
      */
-    inline DescribeAttachmentRequest& WithAttachmentId(Aws::String&& value) { SetAttachmentId(value); return *this;}
+    inline DescribeAttachmentRequest& WithAttachmentId(Aws::String&& value) { SetAttachmentId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the attachment to return. Attachment IDs are returned by the

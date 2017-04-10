@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/codedeploy/model/TriggerEventType.h>
+#include <utility>
 
 namespace Aws
 {
@@ -59,7 +60,7 @@ namespace Model
     /**
      * <p>The name of the notification trigger.</p>
      */
-    inline void SetTriggerName(Aws::String&& value) { m_triggerNameHasBeenSet = true; m_triggerName = value; }
+    inline void SetTriggerName(Aws::String&& value) { m_triggerNameHasBeenSet = true; m_triggerName = std::move(value); }
 
     /**
      * <p>The name of the notification trigger.</p>
@@ -74,7 +75,7 @@ namespace Model
     /**
      * <p>The name of the notification trigger.</p>
      */
-    inline TriggerConfig& WithTriggerName(Aws::String&& value) { SetTriggerName(value); return *this;}
+    inline TriggerConfig& WithTriggerName(Aws::String&& value) { SetTriggerName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the notification trigger.</p>
@@ -97,7 +98,7 @@ namespace Model
      * <p>The ARN of the Amazon Simple Notification Service topic through which
      * notifications about deployment or instance events are sent.</p>
      */
-    inline void SetTriggerTargetArn(Aws::String&& value) { m_triggerTargetArnHasBeenSet = true; m_triggerTargetArn = value; }
+    inline void SetTriggerTargetArn(Aws::String&& value) { m_triggerTargetArnHasBeenSet = true; m_triggerTargetArn = std::move(value); }
 
     /**
      * <p>The ARN of the Amazon Simple Notification Service topic through which
@@ -115,7 +116,7 @@ namespace Model
      * <p>The ARN of the Amazon Simple Notification Service topic through which
      * notifications about deployment or instance events are sent.</p>
      */
-    inline TriggerConfig& WithTriggerTargetArn(Aws::String&& value) { SetTriggerTargetArn(value); return *this;}
+    inline TriggerConfig& WithTriggerTargetArn(Aws::String&& value) { SetTriggerTargetArn(std::move(value)); return *this;}
 
     /**
      * <p>The ARN of the Amazon Simple Notification Service topic through which
@@ -136,7 +137,7 @@ namespace Model
     /**
      * <p>The event type or types for which notifications are triggered.</p>
      */
-    inline void SetTriggerEvents(Aws::Vector<TriggerEventType>&& value) { m_triggerEventsHasBeenSet = true; m_triggerEvents = value; }
+    inline void SetTriggerEvents(Aws::Vector<TriggerEventType>&& value) { m_triggerEventsHasBeenSet = true; m_triggerEvents = std::move(value); }
 
     /**
      * <p>The event type or types for which notifications are triggered.</p>
@@ -146,7 +147,7 @@ namespace Model
     /**
      * <p>The event type or types for which notifications are triggered.</p>
      */
-    inline TriggerConfig& WithTriggerEvents(Aws::Vector<TriggerEventType>&& value) { SetTriggerEvents(value); return *this;}
+    inline TriggerConfig& WithTriggerEvents(Aws::Vector<TriggerEventType>&& value) { SetTriggerEvents(std::move(value)); return *this;}
 
     /**
      * <p>The event type or types for which notifications are triggered.</p>
@@ -156,7 +157,7 @@ namespace Model
     /**
      * <p>The event type or types for which notifications are triggered.</p>
      */
-    inline TriggerConfig& AddTriggerEvents(TriggerEventType&& value) { m_triggerEventsHasBeenSet = true; m_triggerEvents.push_back(value); return *this; }
+    inline TriggerConfig& AddTriggerEvents(TriggerEventType&& value) { m_triggerEventsHasBeenSet = true; m_triggerEvents.push_back(std::move(value)); return *this; }
 
   private:
     Aws::String m_triggerName;

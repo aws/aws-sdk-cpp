@@ -26,6 +26,7 @@
 #include <aws/ec2/model/InstanceIpv6Address.h>
 #include <aws/ec2/model/InstanceNetworkInterfaceSpecification.h>
 #include <aws/ec2/model/TagSpecification.h>
+#include <utility>
 
 namespace Aws
 {
@@ -87,7 +88,7 @@ namespace Model
     /**
      * <p>The ID of the AMI, which you can get by calling <a>DescribeImages</a>.</p>
      */
-    inline void SetImageId(Aws::String&& value) { m_imageIdHasBeenSet = true; m_imageId = value; }
+    inline void SetImageId(Aws::String&& value) { m_imageIdHasBeenSet = true; m_imageId = std::move(value); }
 
     /**
      * <p>The ID of the AMI, which you can get by calling <a>DescribeImages</a>.</p>
@@ -102,7 +103,7 @@ namespace Model
     /**
      * <p>The ID of the AMI, which you can get by calling <a>DescribeImages</a>.</p>
      */
-    inline RunInstancesRequest& WithImageId(Aws::String&& value) { SetImageId(value); return *this;}
+    inline RunInstancesRequest& WithImageId(Aws::String&& value) { SetImageId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the AMI, which you can get by calling <a>DescribeImages</a>.</p>
@@ -200,7 +201,7 @@ namespace Model
      * specify a key pair, you can't connect to the instance unless you choose an AMI
      * that is configured to allow users another way to log in.</p> </important>
      */
-    inline void SetKeyName(Aws::String&& value) { m_keyNameHasBeenSet = true; m_keyName = value; }
+    inline void SetKeyName(Aws::String&& value) { m_keyNameHasBeenSet = true; m_keyName = std::move(value); }
 
     /**
      * <p>The name of the key pair. You can create a key pair using
@@ -224,7 +225,7 @@ namespace Model
      * specify a key pair, you can't connect to the instance unless you choose an AMI
      * that is configured to allow users another way to log in.</p> </important>
      */
-    inline RunInstancesRequest& WithKeyName(Aws::String&& value) { SetKeyName(value); return *this;}
+    inline RunInstancesRequest& WithKeyName(Aws::String&& value) { SetKeyName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the key pair. You can create a key pair using
@@ -253,7 +254,7 @@ namespace Model
      * VPC, you must use security group IDs instead.</p> <p>Default: Amazon EC2 uses
      * the default security group.</p>
      */
-    inline void SetSecurityGroups(Aws::Vector<Aws::String>&& value) { m_securityGroupsHasBeenSet = true; m_securityGroups = value; }
+    inline void SetSecurityGroups(Aws::Vector<Aws::String>&& value) { m_securityGroupsHasBeenSet = true; m_securityGroups = std::move(value); }
 
     /**
      * <p>[EC2-Classic, default VPC] One or more security group names. For a nondefault
@@ -267,7 +268,7 @@ namespace Model
      * VPC, you must use security group IDs instead.</p> <p>Default: Amazon EC2 uses
      * the default security group.</p>
      */
-    inline RunInstancesRequest& WithSecurityGroups(Aws::Vector<Aws::String>&& value) { SetSecurityGroups(value); return *this;}
+    inline RunInstancesRequest& WithSecurityGroups(Aws::Vector<Aws::String>&& value) { SetSecurityGroups(std::move(value)); return *this;}
 
     /**
      * <p>[EC2-Classic, default VPC] One or more security group names. For a nondefault
@@ -281,7 +282,7 @@ namespace Model
      * VPC, you must use security group IDs instead.</p> <p>Default: Amazon EC2 uses
      * the default security group.</p>
      */
-    inline RunInstancesRequest& AddSecurityGroups(Aws::String&& value) { m_securityGroupsHasBeenSet = true; m_securityGroups.push_back(value); return *this; }
+    inline RunInstancesRequest& AddSecurityGroups(Aws::String&& value) { m_securityGroupsHasBeenSet = true; m_securityGroups.push_back(std::move(value)); return *this; }
 
     /**
      * <p>[EC2-Classic, default VPC] One or more security group names. For a nondefault
@@ -309,7 +310,7 @@ namespace Model
      * <a>CreateSecurityGroup</a>.</p> <p>Default: Amazon EC2 uses the default security
      * group.</p>
      */
-    inline void SetSecurityGroupIds(Aws::Vector<Aws::String>&& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds = value; }
+    inline void SetSecurityGroupIds(Aws::Vector<Aws::String>&& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds = std::move(value); }
 
     /**
      * <p>One or more security group IDs. You can create a security group using
@@ -323,7 +324,7 @@ namespace Model
      * <a>CreateSecurityGroup</a>.</p> <p>Default: Amazon EC2 uses the default security
      * group.</p>
      */
-    inline RunInstancesRequest& WithSecurityGroupIds(Aws::Vector<Aws::String>&& value) { SetSecurityGroupIds(value); return *this;}
+    inline RunInstancesRequest& WithSecurityGroupIds(Aws::Vector<Aws::String>&& value) { SetSecurityGroupIds(std::move(value)); return *this;}
 
     /**
      * <p>One or more security group IDs. You can create a security group using
@@ -337,7 +338,7 @@ namespace Model
      * <a>CreateSecurityGroup</a>.</p> <p>Default: Amazon EC2 uses the default security
      * group.</p>
      */
-    inline RunInstancesRequest& AddSecurityGroupIds(Aws::String&& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(value); return *this; }
+    inline RunInstancesRequest& AddSecurityGroupIds(Aws::String&& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(std::move(value)); return *this; }
 
     /**
      * <p>One or more security group IDs. You can create a security group using
@@ -377,7 +378,7 @@ namespace Model
      * Base64-encoding is performed for you, and you can load the text from a file.
      * Otherwise, you must provide Base64-encoded text.</p>
      */
-    inline void SetUserData(Aws::String&& value) { m_userDataHasBeenSet = true; m_userData = value; }
+    inline void SetUserData(Aws::String&& value) { m_userDataHasBeenSet = true; m_userData = std::move(value); }
 
     /**
      * <p>The user data to make available to the instance. For more information, see <a
@@ -410,7 +411,7 @@ namespace Model
      * Base64-encoding is performed for you, and you can load the text from a file.
      * Otherwise, you must provide Base64-encoded text.</p>
      */
-    inline RunInstancesRequest& WithUserData(Aws::String&& value) { SetUserData(value); return *this;}
+    inline RunInstancesRequest& WithUserData(Aws::String&& value) { SetUserData(std::move(value)); return *this;}
 
     /**
      * <p>The user data to make available to the instance. For more information, see <a
@@ -445,7 +446,7 @@ namespace Model
      * Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> <p>Default:
      * <code>m1.small</code> </p>
      */
-    inline void SetInstanceType(InstanceType&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
+    inline void SetInstanceType(InstanceType&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = std::move(value); }
 
     /**
      * <p>The instance type. For more information, see <a
@@ -461,7 +462,7 @@ namespace Model
      * Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> <p>Default:
      * <code>m1.small</code> </p>
      */
-    inline RunInstancesRequest& WithInstanceType(InstanceType&& value) { SetInstanceType(value); return *this;}
+    inline RunInstancesRequest& WithInstanceType(InstanceType&& value) { SetInstanceType(std::move(value)); return *this;}
 
     /**
      * <p>The placement for the instance.</p>
@@ -476,7 +477,7 @@ namespace Model
     /**
      * <p>The placement for the instance.</p>
      */
-    inline void SetPlacement(Placement&& value) { m_placementHasBeenSet = true; m_placement = value; }
+    inline void SetPlacement(Placement&& value) { m_placementHasBeenSet = true; m_placement = std::move(value); }
 
     /**
      * <p>The placement for the instance.</p>
@@ -486,7 +487,7 @@ namespace Model
     /**
      * <p>The placement for the instance.</p>
      */
-    inline RunInstancesRequest& WithPlacement(Placement&& value) { SetPlacement(value); return *this;}
+    inline RunInstancesRequest& WithPlacement(Placement&& value) { SetPlacement(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the kernel.</p> <important> <p>We recommend that you use PV-GRUB
@@ -513,7 +514,7 @@ namespace Model
      * PV-GRUB</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      * </important>
      */
-    inline void SetKernelId(Aws::String&& value) { m_kernelIdHasBeenSet = true; m_kernelId = value; }
+    inline void SetKernelId(Aws::String&& value) { m_kernelIdHasBeenSet = true; m_kernelId = std::move(value); }
 
     /**
      * <p>The ID of the kernel.</p> <important> <p>We recommend that you use PV-GRUB
@@ -540,7 +541,7 @@ namespace Model
      * PV-GRUB</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      * </important>
      */
-    inline RunInstancesRequest& WithKernelId(Aws::String&& value) { SetKernelId(value); return *this;}
+    inline RunInstancesRequest& WithKernelId(Aws::String&& value) { SetKernelId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the kernel.</p> <important> <p>We recommend that you use PV-GRUB
@@ -576,7 +577,7 @@ namespace Model
      * PV-GRUB</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      * </important>
      */
-    inline void SetRamdiskId(Aws::String&& value) { m_ramdiskIdHasBeenSet = true; m_ramdiskId = value; }
+    inline void SetRamdiskId(Aws::String&& value) { m_ramdiskIdHasBeenSet = true; m_ramdiskId = std::move(value); }
 
     /**
      * <p>The ID of the RAM disk.</p> <important> <p>We recommend that you use PV-GRUB
@@ -603,7 +604,7 @@ namespace Model
      * PV-GRUB</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      * </important>
      */
-    inline RunInstancesRequest& WithRamdiskId(Aws::String&& value) { SetRamdiskId(value); return *this;}
+    inline RunInstancesRequest& WithRamdiskId(Aws::String&& value) { SetRamdiskId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the RAM disk.</p> <important> <p>We recommend that you use PV-GRUB
@@ -642,7 +643,7 @@ namespace Model
      * data by definition and its encryption status cannot be changed using this
      * action.</p> </important>
      */
-    inline void SetBlockDeviceMappings(Aws::Vector<BlockDeviceMapping>&& value) { m_blockDeviceMappingsHasBeenSet = true; m_blockDeviceMappings = value; }
+    inline void SetBlockDeviceMappings(Aws::Vector<BlockDeviceMapping>&& value) { m_blockDeviceMappingsHasBeenSet = true; m_blockDeviceMappings = std::move(value); }
 
     /**
      * <p>The block device mapping.</p> <important> <p>Supplying both a snapshot ID and
@@ -662,7 +663,7 @@ namespace Model
      * data by definition and its encryption status cannot be changed using this
      * action.</p> </important>
      */
-    inline RunInstancesRequest& WithBlockDeviceMappings(Aws::Vector<BlockDeviceMapping>&& value) { SetBlockDeviceMappings(value); return *this;}
+    inline RunInstancesRequest& WithBlockDeviceMappings(Aws::Vector<BlockDeviceMapping>&& value) { SetBlockDeviceMappings(std::move(value)); return *this;}
 
     /**
      * <p>The block device mapping.</p> <important> <p>Supplying both a snapshot ID and
@@ -682,7 +683,7 @@ namespace Model
      * data by definition and its encryption status cannot be changed using this
      * action.</p> </important>
      */
-    inline RunInstancesRequest& AddBlockDeviceMappings(BlockDeviceMapping&& value) { m_blockDeviceMappingsHasBeenSet = true; m_blockDeviceMappings.push_back(value); return *this; }
+    inline RunInstancesRequest& AddBlockDeviceMappings(BlockDeviceMapping&& value) { m_blockDeviceMappingsHasBeenSet = true; m_blockDeviceMappings.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The monitoring for the instance.</p>
@@ -697,7 +698,7 @@ namespace Model
     /**
      * <p>The monitoring for the instance.</p>
      */
-    inline void SetMonitoring(RunInstancesMonitoringEnabled&& value) { m_monitoringHasBeenSet = true; m_monitoring = value; }
+    inline void SetMonitoring(RunInstancesMonitoringEnabled&& value) { m_monitoringHasBeenSet = true; m_monitoring = std::move(value); }
 
     /**
      * <p>The monitoring for the instance.</p>
@@ -707,7 +708,7 @@ namespace Model
     /**
      * <p>The monitoring for the instance.</p>
      */
-    inline RunInstancesRequest& WithMonitoring(RunInstancesMonitoringEnabled&& value) { SetMonitoring(value); return *this;}
+    inline RunInstancesRequest& WithMonitoring(RunInstancesMonitoringEnabled&& value) { SetMonitoring(std::move(value)); return *this;}
 
     /**
      * <p>[EC2-VPC] The ID of the subnet to launch the instance into.</p>
@@ -722,7 +723,7 @@ namespace Model
     /**
      * <p>[EC2-VPC] The ID of the subnet to launch the instance into.</p>
      */
-    inline void SetSubnetId(Aws::String&& value) { m_subnetIdHasBeenSet = true; m_subnetId = value; }
+    inline void SetSubnetId(Aws::String&& value) { m_subnetIdHasBeenSet = true; m_subnetId = std::move(value); }
 
     /**
      * <p>[EC2-VPC] The ID of the subnet to launch the instance into.</p>
@@ -737,7 +738,7 @@ namespace Model
     /**
      * <p>[EC2-VPC] The ID of the subnet to launch the instance into.</p>
      */
-    inline RunInstancesRequest& WithSubnetId(Aws::String&& value) { SetSubnetId(value); return *this;}
+    inline RunInstancesRequest& WithSubnetId(Aws::String&& value) { SetSubnetId(std::move(value)); return *this;}
 
     /**
      * <p>[EC2-VPC] The ID of the subnet to launch the instance into.</p>
@@ -796,7 +797,7 @@ namespace Model
      * from the instance (using the operating system command for system shutdown).</p>
      * <p>Default: <code>stop</code> </p>
      */
-    inline void SetInstanceInitiatedShutdownBehavior(ShutdownBehavior&& value) { m_instanceInitiatedShutdownBehaviorHasBeenSet = true; m_instanceInitiatedShutdownBehavior = value; }
+    inline void SetInstanceInitiatedShutdownBehavior(ShutdownBehavior&& value) { m_instanceInitiatedShutdownBehaviorHasBeenSet = true; m_instanceInitiatedShutdownBehavior = std::move(value); }
 
     /**
      * <p>Indicates whether an instance stops or terminates when you initiate shutdown
@@ -810,7 +811,7 @@ namespace Model
      * from the instance (using the operating system command for system shutdown).</p>
      * <p>Default: <code>stop</code> </p>
      */
-    inline RunInstancesRequest& WithInstanceInitiatedShutdownBehavior(ShutdownBehavior&& value) { SetInstanceInitiatedShutdownBehavior(value); return *this;}
+    inline RunInstancesRequest& WithInstanceInitiatedShutdownBehavior(ShutdownBehavior&& value) { SetInstanceInitiatedShutdownBehavior(std::move(value)); return *this;}
 
     /**
      * <p>[EC2-VPC] The primary IPv4 address. You must specify a value from the IPv4
@@ -840,7 +841,7 @@ namespace Model
      * interface specification. You cannot specify this option if you're launching more
      * than one instance in the request.</p>
      */
-    inline void SetPrivateIpAddress(Aws::String&& value) { m_privateIpAddressHasBeenSet = true; m_privateIpAddress = value; }
+    inline void SetPrivateIpAddress(Aws::String&& value) { m_privateIpAddressHasBeenSet = true; m_privateIpAddress = std::move(value); }
 
     /**
      * <p>[EC2-VPC] The primary IPv4 address. You must specify a value from the IPv4
@@ -870,7 +871,7 @@ namespace Model
      * interface specification. You cannot specify this option if you're launching more
      * than one instance in the request.</p>
      */
-    inline RunInstancesRequest& WithPrivateIpAddress(Aws::String&& value) { SetPrivateIpAddress(value); return *this;}
+    inline RunInstancesRequest& WithPrivateIpAddress(Aws::String&& value) { SetPrivateIpAddress(std::move(value)); return *this;}
 
     /**
      * <p>[EC2-VPC] The primary IPv4 address. You must specify a value from the IPv4
@@ -907,7 +908,7 @@ namespace Model
      * specify this option if you've specified a minimum number of instances to
      * launch.</p>
      */
-    inline void SetIpv6Addresses(Aws::Vector<InstanceIpv6Address>&& value) { m_ipv6AddressesHasBeenSet = true; m_ipv6Addresses = value; }
+    inline void SetIpv6Addresses(Aws::Vector<InstanceIpv6Address>&& value) { m_ipv6AddressesHasBeenSet = true; m_ipv6Addresses = std::move(value); }
 
     /**
      * <p>[EC2-VPC] Specify one or more IPv6 addresses from the range of the subnet to
@@ -925,7 +926,7 @@ namespace Model
      * specify this option if you've specified a minimum number of instances to
      * launch.</p>
      */
-    inline RunInstancesRequest& WithIpv6Addresses(Aws::Vector<InstanceIpv6Address>&& value) { SetIpv6Addresses(value); return *this;}
+    inline RunInstancesRequest& WithIpv6Addresses(Aws::Vector<InstanceIpv6Address>&& value) { SetIpv6Addresses(std::move(value)); return *this;}
 
     /**
      * <p>[EC2-VPC] Specify one or more IPv6 addresses from the range of the subnet to
@@ -943,7 +944,7 @@ namespace Model
      * specify this option if you've specified a minimum number of instances to
      * launch.</p>
      */
-    inline RunInstancesRequest& AddIpv6Addresses(InstanceIpv6Address&& value) { m_ipv6AddressesHasBeenSet = true; m_ipv6Addresses.push_back(value); return *this; }
+    inline RunInstancesRequest& AddIpv6Addresses(InstanceIpv6Address&& value) { m_ipv6AddressesHasBeenSet = true; m_ipv6Addresses.push_back(std::move(value)); return *this; }
 
     /**
      * <p>[EC2-VPC] A number of IPv6 addresses to associate with the primary network
@@ -994,7 +995,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
      * Idempotency</a>.</p> <p>Constraints: Maximum 64 ASCII characters</p>
      */
-    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
+    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
 
     /**
      * <p>Unique, case-sensitive identifier you provide to ensure the idempotency of
@@ -1018,7 +1019,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
      * Idempotency</a>.</p> <p>Constraints: Maximum 64 ASCII characters</p>
      */
-    inline RunInstancesRequest& WithClientToken(Aws::String&& value) { SetClientToken(value); return *this;}
+    inline RunInstancesRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
 
     /**
      * <p>Unique, case-sensitive identifier you provide to ensure the idempotency of
@@ -1041,7 +1042,7 @@ namespace Model
     /**
      * <p>Reserved.</p>
      */
-    inline void SetAdditionalInfo(Aws::String&& value) { m_additionalInfoHasBeenSet = true; m_additionalInfo = value; }
+    inline void SetAdditionalInfo(Aws::String&& value) { m_additionalInfoHasBeenSet = true; m_additionalInfo = std::move(value); }
 
     /**
      * <p>Reserved.</p>
@@ -1056,7 +1057,7 @@ namespace Model
     /**
      * <p>Reserved.</p>
      */
-    inline RunInstancesRequest& WithAdditionalInfo(Aws::String&& value) { SetAdditionalInfo(value); return *this;}
+    inline RunInstancesRequest& WithAdditionalInfo(Aws::String&& value) { SetAdditionalInfo(std::move(value)); return *this;}
 
     /**
      * <p>Reserved.</p>
@@ -1076,7 +1077,7 @@ namespace Model
     /**
      * <p>One or more network interfaces.</p>
      */
-    inline void SetNetworkInterfaces(Aws::Vector<InstanceNetworkInterfaceSpecification>&& value) { m_networkInterfacesHasBeenSet = true; m_networkInterfaces = value; }
+    inline void SetNetworkInterfaces(Aws::Vector<InstanceNetworkInterfaceSpecification>&& value) { m_networkInterfacesHasBeenSet = true; m_networkInterfaces = std::move(value); }
 
     /**
      * <p>One or more network interfaces.</p>
@@ -1086,7 +1087,7 @@ namespace Model
     /**
      * <p>One or more network interfaces.</p>
      */
-    inline RunInstancesRequest& WithNetworkInterfaces(Aws::Vector<InstanceNetworkInterfaceSpecification>&& value) { SetNetworkInterfaces(value); return *this;}
+    inline RunInstancesRequest& WithNetworkInterfaces(Aws::Vector<InstanceNetworkInterfaceSpecification>&& value) { SetNetworkInterfaces(std::move(value)); return *this;}
 
     /**
      * <p>One or more network interfaces.</p>
@@ -1096,7 +1097,7 @@ namespace Model
     /**
      * <p>One or more network interfaces.</p>
      */
-    inline RunInstancesRequest& AddNetworkInterfaces(InstanceNetworkInterfaceSpecification&& value) { m_networkInterfacesHasBeenSet = true; m_networkInterfaces.push_back(value); return *this; }
+    inline RunInstancesRequest& AddNetworkInterfaces(InstanceNetworkInterfaceSpecification&& value) { m_networkInterfacesHasBeenSet = true; m_networkInterfaces.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The IAM instance profile.</p>
@@ -1111,7 +1112,7 @@ namespace Model
     /**
      * <p>The IAM instance profile.</p>
      */
-    inline void SetIamInstanceProfile(IamInstanceProfileSpecification&& value) { m_iamInstanceProfileHasBeenSet = true; m_iamInstanceProfile = value; }
+    inline void SetIamInstanceProfile(IamInstanceProfileSpecification&& value) { m_iamInstanceProfileHasBeenSet = true; m_iamInstanceProfile = std::move(value); }
 
     /**
      * <p>The IAM instance profile.</p>
@@ -1121,7 +1122,7 @@ namespace Model
     /**
      * <p>The IAM instance profile.</p>
      */
-    inline RunInstancesRequest& WithIamInstanceProfile(IamInstanceProfileSpecification&& value) { SetIamInstanceProfile(value); return *this;}
+    inline RunInstancesRequest& WithIamInstanceProfile(IamInstanceProfileSpecification&& value) { SetIamInstanceProfile(std::move(value)); return *this;}
 
     /**
      * <p>Indicates whether the instance is optimized for EBS I/O. This optimization
@@ -1169,7 +1170,7 @@ namespace Model
      * volumes. The specified tags are applied to all instances or volumes that are
      * created during launch.</p>
      */
-    inline void SetTagSpecifications(Aws::Vector<TagSpecification>&& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications = value; }
+    inline void SetTagSpecifications(Aws::Vector<TagSpecification>&& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications = std::move(value); }
 
     /**
      * <p>The tags to apply to the resources during launch. You can tag instances and
@@ -1183,7 +1184,7 @@ namespace Model
      * volumes. The specified tags are applied to all instances or volumes that are
      * created during launch.</p>
      */
-    inline RunInstancesRequest& WithTagSpecifications(Aws::Vector<TagSpecification>&& value) { SetTagSpecifications(value); return *this;}
+    inline RunInstancesRequest& WithTagSpecifications(Aws::Vector<TagSpecification>&& value) { SetTagSpecifications(std::move(value)); return *this;}
 
     /**
      * <p>The tags to apply to the resources during launch. You can tag instances and
@@ -1197,7 +1198,7 @@ namespace Model
      * volumes. The specified tags are applied to all instances or volumes that are
      * created during launch.</p>
      */
-    inline RunInstancesRequest& AddTagSpecifications(TagSpecification&& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications.push_back(value); return *this; }
+    inline RunInstancesRequest& AddTagSpecifications(TagSpecification&& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications.push_back(std::move(value)); return *this; }
 
   private:
     bool m_dryRun;

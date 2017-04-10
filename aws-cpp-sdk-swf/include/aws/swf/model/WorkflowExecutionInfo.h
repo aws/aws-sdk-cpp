@@ -21,6 +21,7 @@
 #include <aws/swf/model/CloseStatus.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -63,7 +64,7 @@ namespace Model
     /**
      * <p>The workflow execution this information is about.</p>
      */
-    inline void SetExecution(WorkflowExecution&& value) { m_executionHasBeenSet = true; m_execution = value; }
+    inline void SetExecution(WorkflowExecution&& value) { m_executionHasBeenSet = true; m_execution = std::move(value); }
 
     /**
      * <p>The workflow execution this information is about.</p>
@@ -73,7 +74,7 @@ namespace Model
     /**
      * <p>The workflow execution this information is about.</p>
      */
-    inline WorkflowExecutionInfo& WithExecution(WorkflowExecution&& value) { SetExecution(value); return *this;}
+    inline WorkflowExecutionInfo& WithExecution(WorkflowExecution&& value) { SetExecution(std::move(value)); return *this;}
 
     /**
      * <p>The type of the workflow execution.</p>
@@ -88,7 +89,7 @@ namespace Model
     /**
      * <p>The type of the workflow execution.</p>
      */
-    inline void SetWorkflowType(WorkflowType&& value) { m_workflowTypeHasBeenSet = true; m_workflowType = value; }
+    inline void SetWorkflowType(WorkflowType&& value) { m_workflowTypeHasBeenSet = true; m_workflowType = std::move(value); }
 
     /**
      * <p>The type of the workflow execution.</p>
@@ -98,7 +99,7 @@ namespace Model
     /**
      * <p>The type of the workflow execution.</p>
      */
-    inline WorkflowExecutionInfo& WithWorkflowType(WorkflowType&& value) { SetWorkflowType(value); return *this;}
+    inline WorkflowExecutionInfo& WithWorkflowType(WorkflowType&& value) { SetWorkflowType(std::move(value)); return *this;}
 
     /**
      * <p>The time when the execution was started.</p>
@@ -113,7 +114,7 @@ namespace Model
     /**
      * <p>The time when the execution was started.</p>
      */
-    inline void SetStartTimestamp(Aws::Utils::DateTime&& value) { m_startTimestampHasBeenSet = true; m_startTimestamp = value; }
+    inline void SetStartTimestamp(Aws::Utils::DateTime&& value) { m_startTimestampHasBeenSet = true; m_startTimestamp = std::move(value); }
 
     /**
      * <p>The time when the execution was started.</p>
@@ -123,7 +124,7 @@ namespace Model
     /**
      * <p>The time when the execution was started.</p>
      */
-    inline WorkflowExecutionInfo& WithStartTimestamp(Aws::Utils::DateTime&& value) { SetStartTimestamp(value); return *this;}
+    inline WorkflowExecutionInfo& WithStartTimestamp(Aws::Utils::DateTime&& value) { SetStartTimestamp(std::move(value)); return *this;}
 
     /**
      * <p>The time when the workflow execution was closed. Set only if the execution
@@ -141,7 +142,7 @@ namespace Model
      * <p>The time when the workflow execution was closed. Set only if the execution
      * status is CLOSED.</p>
      */
-    inline void SetCloseTimestamp(Aws::Utils::DateTime&& value) { m_closeTimestampHasBeenSet = true; m_closeTimestamp = value; }
+    inline void SetCloseTimestamp(Aws::Utils::DateTime&& value) { m_closeTimestampHasBeenSet = true; m_closeTimestamp = std::move(value); }
 
     /**
      * <p>The time when the workflow execution was closed. Set only if the execution
@@ -153,7 +154,7 @@ namespace Model
      * <p>The time when the workflow execution was closed. Set only if the execution
      * status is CLOSED.</p>
      */
-    inline WorkflowExecutionInfo& WithCloseTimestamp(Aws::Utils::DateTime&& value) { SetCloseTimestamp(value); return *this;}
+    inline WorkflowExecutionInfo& WithCloseTimestamp(Aws::Utils::DateTime&& value) { SetCloseTimestamp(std::move(value)); return *this;}
 
     /**
      * <p>The current status of the execution.</p>
@@ -168,7 +169,7 @@ namespace Model
     /**
      * <p>The current status of the execution.</p>
      */
-    inline void SetExecutionStatus(ExecutionStatus&& value) { m_executionStatusHasBeenSet = true; m_executionStatus = value; }
+    inline void SetExecutionStatus(ExecutionStatus&& value) { m_executionStatusHasBeenSet = true; m_executionStatus = std::move(value); }
 
     /**
      * <p>The current status of the execution.</p>
@@ -178,7 +179,7 @@ namespace Model
     /**
      * <p>The current status of the execution.</p>
      */
-    inline WorkflowExecutionInfo& WithExecutionStatus(ExecutionStatus&& value) { SetExecutionStatus(value); return *this;}
+    inline WorkflowExecutionInfo& WithExecutionStatus(ExecutionStatus&& value) { SetExecutionStatus(std::move(value)); return *this;}
 
     /**
      * <p>If the execution status is closed then this specifies how the execution was
@@ -223,7 +224,7 @@ namespace Model
      * the current execution was completed and a new execution was started to carry on
      * the workflow.</li> </ul>
      */
-    inline void SetCloseStatus(CloseStatus&& value) { m_closeStatusHasBeenSet = true; m_closeStatus = value; }
+    inline void SetCloseStatus(CloseStatus&& value) { m_closeStatusHasBeenSet = true; m_closeStatus = std::move(value); }
 
     /**
      * <p>If the execution status is closed then this specifies how the execution was
@@ -253,7 +254,7 @@ namespace Model
      * the current execution was completed and a new execution was started to carry on
      * the workflow.</li> </ul>
      */
-    inline WorkflowExecutionInfo& WithCloseStatus(CloseStatus&& value) { SetCloseStatus(value); return *this;}
+    inline WorkflowExecutionInfo& WithCloseStatus(CloseStatus&& value) { SetCloseStatus(std::move(value)); return *this;}
 
     /**
      * <p>If this workflow execution is a child of another execution then contains the
@@ -271,7 +272,7 @@ namespace Model
      * <p>If this workflow execution is a child of another execution then contains the
      * workflow execution that started this execution.</p>
      */
-    inline void SetParent(WorkflowExecution&& value) { m_parentHasBeenSet = true; m_parent = value; }
+    inline void SetParent(WorkflowExecution&& value) { m_parentHasBeenSet = true; m_parent = std::move(value); }
 
     /**
      * <p>If this workflow execution is a child of another execution then contains the
@@ -283,7 +284,7 @@ namespace Model
      * <p>If this workflow execution is a child of another execution then contains the
      * workflow execution that started this execution.</p>
      */
-    inline WorkflowExecutionInfo& WithParent(WorkflowExecution&& value) { SetParent(value); return *this;}
+    inline WorkflowExecutionInfo& WithParent(WorkflowExecution&& value) { SetParent(std::move(value)); return *this;}
 
     /**
      * <p>The list of tags associated with the workflow execution. Tags can be used to
@@ -304,7 +305,7 @@ namespace Model
      * identify and list workflow executions of interest through the visibility APIs. A
      * workflow execution can have a maximum of 5 tags.</p>
      */
-    inline void SetTagList(Aws::Vector<Aws::String>&& value) { m_tagListHasBeenSet = true; m_tagList = value; }
+    inline void SetTagList(Aws::Vector<Aws::String>&& value) { m_tagListHasBeenSet = true; m_tagList = std::move(value); }
 
     /**
      * <p>The list of tags associated with the workflow execution. Tags can be used to
@@ -318,7 +319,7 @@ namespace Model
      * identify and list workflow executions of interest through the visibility APIs. A
      * workflow execution can have a maximum of 5 tags.</p>
      */
-    inline WorkflowExecutionInfo& WithTagList(Aws::Vector<Aws::String>&& value) { SetTagList(value); return *this;}
+    inline WorkflowExecutionInfo& WithTagList(Aws::Vector<Aws::String>&& value) { SetTagList(std::move(value)); return *this;}
 
     /**
      * <p>The list of tags associated with the workflow execution. Tags can be used to
@@ -332,7 +333,7 @@ namespace Model
      * identify and list workflow executions of interest through the visibility APIs. A
      * workflow execution can have a maximum of 5 tags.</p>
      */
-    inline WorkflowExecutionInfo& AddTagList(Aws::String&& value) { m_tagListHasBeenSet = true; m_tagList.push_back(value); return *this; }
+    inline WorkflowExecutionInfo& AddTagList(Aws::String&& value) { m_tagListHasBeenSet = true; m_tagList.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The list of tags associated with the workflow execution. Tags can be used to

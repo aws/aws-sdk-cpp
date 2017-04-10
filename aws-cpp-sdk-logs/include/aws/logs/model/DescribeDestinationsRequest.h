@@ -16,6 +16,7 @@
 #include <aws/logs/CloudWatchLogs_EXPORTS.h>
 #include <aws/logs/CloudWatchLogsRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -51,7 +52,7 @@ namespace Model
      * <p>The prefix to match. If you don't specify a value, no prefix filter is
      * applied.</p>
      */
-    inline void SetDestinationNamePrefix(Aws::String&& value) { m_destinationNamePrefixHasBeenSet = true; m_destinationNamePrefix = value; }
+    inline void SetDestinationNamePrefix(Aws::String&& value) { m_destinationNamePrefixHasBeenSet = true; m_destinationNamePrefix = std::move(value); }
 
     /**
      * <p>The prefix to match. If you don't specify a value, no prefix filter is
@@ -69,7 +70,7 @@ namespace Model
      * <p>The prefix to match. If you don't specify a value, no prefix filter is
      * applied.</p>
      */
-    inline DescribeDestinationsRequest& WithDestinationNamePrefix(Aws::String&& value) { SetDestinationNamePrefix(value); return *this;}
+    inline DescribeDestinationsRequest& WithDestinationNamePrefix(Aws::String&& value) { SetDestinationNamePrefix(std::move(value)); return *this;}
 
     /**
      * <p>The prefix to match. If you don't specify a value, no prefix filter is
@@ -93,7 +94,7 @@ namespace Model
      * <p>The token for the next set of items to return. (You received this token from
      * a previous call.)</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
      * <p>The token for the next set of items to return. (You received this token from
@@ -111,7 +112,7 @@ namespace Model
      * <p>The token for the next set of items to return. (You received this token from
      * a previous call.)</p>
      */
-    inline DescribeDestinationsRequest& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline DescribeDestinationsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>The token for the next set of items to return. (You received this token from

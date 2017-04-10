@@ -16,6 +16,7 @@
 #include <aws/kms/KMS_EXPORTS.h>
 #include <aws/kms/KMSRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -81,7 +82,7 @@ namespace Model
      * truncated results. Set it to the value of <code>NextMarker</code> from the
      * truncated response you just received.</p>
      */
-    inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = value; }
+    inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = std::move(value); }
 
     /**
      * <p>Use this parameter in a subsequent request after you receive a response with
@@ -102,7 +103,7 @@ namespace Model
      * truncated results. Set it to the value of <code>NextMarker</code> from the
      * truncated response you just received.</p>
      */
-    inline ListGrantsRequest& WithMarker(Aws::String&& value) { SetMarker(value); return *this;}
+    inline ListGrantsRequest& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
 
     /**
      * <p>Use this parameter in a subsequent request after you receive a response with
@@ -139,7 +140,7 @@ namespace Model
      * </li> <li> <p>Globally Unique Key ID Example -
      * 12345678-1234-1234-1234-123456789012</p> </li> </ul>
      */
-    inline void SetKeyId(Aws::String&& value) { m_keyIdHasBeenSet = true; m_keyId = value; }
+    inline void SetKeyId(Aws::String&& value) { m_keyIdHasBeenSet = true; m_keyId = std::move(value); }
 
     /**
      * <p>A unique identifier for the customer master key. This value can be a globally
@@ -169,7 +170,7 @@ namespace Model
      * </li> <li> <p>Globally Unique Key ID Example -
      * 12345678-1234-1234-1234-123456789012</p> </li> </ul>
      */
-    inline ListGrantsRequest& WithKeyId(Aws::String&& value) { SetKeyId(value); return *this;}
+    inline ListGrantsRequest& WithKeyId(Aws::String&& value) { SetKeyId(std::move(value)); return *this;}
 
     /**
      * <p>A unique identifier for the customer master key. This value can be a globally

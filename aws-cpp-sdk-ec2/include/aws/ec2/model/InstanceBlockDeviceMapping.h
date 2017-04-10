@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/EbsInstanceBlockDevice.h>
+#include <utility>
 
 namespace Aws
 {
@@ -63,7 +64,7 @@ namespace Model
      * <p>The device name exposed to the instance (for example, <code>/dev/sdh</code>
      * or <code>xvdh</code>).</p>
      */
-    inline void SetDeviceName(Aws::String&& value) { m_deviceNameHasBeenSet = true; m_deviceName = value; }
+    inline void SetDeviceName(Aws::String&& value) { m_deviceNameHasBeenSet = true; m_deviceName = std::move(value); }
 
     /**
      * <p>The device name exposed to the instance (for example, <code>/dev/sdh</code>
@@ -81,7 +82,7 @@ namespace Model
      * <p>The device name exposed to the instance (for example, <code>/dev/sdh</code>
      * or <code>xvdh</code>).</p>
      */
-    inline InstanceBlockDeviceMapping& WithDeviceName(Aws::String&& value) { SetDeviceName(value); return *this;}
+    inline InstanceBlockDeviceMapping& WithDeviceName(Aws::String&& value) { SetDeviceName(std::move(value)); return *this;}
 
     /**
      * <p>The device name exposed to the instance (for example, <code>/dev/sdh</code>
@@ -105,7 +106,7 @@ namespace Model
      * <p>Parameters used to automatically set up EBS volumes when the instance is
      * launched.</p>
      */
-    inline void SetEbs(EbsInstanceBlockDevice&& value) { m_ebsHasBeenSet = true; m_ebs = value; }
+    inline void SetEbs(EbsInstanceBlockDevice&& value) { m_ebsHasBeenSet = true; m_ebs = std::move(value); }
 
     /**
      * <p>Parameters used to automatically set up EBS volumes when the instance is
@@ -117,7 +118,7 @@ namespace Model
      * <p>Parameters used to automatically set up EBS volumes when the instance is
      * launched.</p>
      */
-    inline InstanceBlockDeviceMapping& WithEbs(EbsInstanceBlockDevice&& value) { SetEbs(value); return *this;}
+    inline InstanceBlockDeviceMapping& WithEbs(EbsInstanceBlockDevice&& value) { SetEbs(std::move(value)); return *this;}
 
   private:
     Aws::String m_deviceName;

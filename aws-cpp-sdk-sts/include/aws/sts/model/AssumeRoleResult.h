@@ -17,6 +17,7 @@
 #include <aws/sts/model/Credentials.h>
 #include <aws/sts/model/AssumedRoleUser.h>
 #include <aws/sts/model/ResponseMetadata.h>
+#include <utility>
 
 namespace Aws
 {
@@ -76,7 +77,7 @@ namespace Model
      * size is less than 4096 bytes, but that can vary. Also, future updates to AWS
      * might require larger sizes.</p>
      */
-    inline void SetCredentials(Credentials&& value) { m_credentials = value; }
+    inline void SetCredentials(Credentials&& value) { m_credentials = std::move(value); }
 
     /**
      * <p>The temporary security credentials, which include an access key ID, a secret
@@ -96,7 +97,7 @@ namespace Model
      * size is less than 4096 bytes, but that can vary. Also, future updates to AWS
      * might require larger sizes.</p>
      */
-    inline AssumeRoleResult& WithCredentials(Credentials&& value) { SetCredentials(value); return *this;}
+    inline AssumeRoleResult& WithCredentials(Credentials&& value) { SetCredentials(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) and the assumed role ID, which are identifiers
@@ -126,7 +127,7 @@ namespace Model
      * <code>RoleSessionName</code> that you specified when you called
      * <code>AssumeRole</code>. </p>
      */
-    inline void SetAssumedRoleUser(AssumedRoleUser&& value) { m_assumedRoleUser = value; }
+    inline void SetAssumedRoleUser(AssumedRoleUser&& value) { m_assumedRoleUser = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) and the assumed role ID, which are identifiers
@@ -146,7 +147,7 @@ namespace Model
      * <code>RoleSessionName</code> that you specified when you called
      * <code>AssumeRole</code>. </p>
      */
-    inline AssumeRoleResult& WithAssumedRoleUser(AssumedRoleUser&& value) { SetAssumedRoleUser(value); return *this;}
+    inline AssumeRoleResult& WithAssumedRoleUser(AssumedRoleUser&& value) { SetAssumedRoleUser(std::move(value)); return *this;}
 
     /**
      * <p>A percentage value that indicates the size of the policy in packed form. The
@@ -176,13 +177,13 @@ namespace Model
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
 
     
     inline AssumeRoleResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
 
     
-    inline AssumeRoleResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
+    inline AssumeRoleResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
     Credentials m_credentials;

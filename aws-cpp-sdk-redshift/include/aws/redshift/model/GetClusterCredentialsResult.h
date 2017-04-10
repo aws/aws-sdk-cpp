@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/redshift/model/ResponseMetadata.h>
+#include <utility>
 
 namespace Aws
 {
@@ -75,7 +76,7 @@ namespace Model
      * <code>IAM:</code> for an existing user name or <code>IAMA:</code> if the user
      * was auto-created. </p>
      */
-    inline void SetDbUser(Aws::String&& value) { m_dbUser = value; }
+    inline void SetDbUser(Aws::String&& value) { m_dbUser = std::move(value); }
 
     /**
      * <p>A database user name that is authorized to log on to the database
@@ -105,7 +106,7 @@ namespace Model
      * <code>IAM:</code> for an existing user name or <code>IAMA:</code> if the user
      * was auto-created. </p>
      */
-    inline GetClusterCredentialsResult& WithDbUser(Aws::String&& value) { SetDbUser(value); return *this;}
+    inline GetClusterCredentialsResult& WithDbUser(Aws::String&& value) { SetDbUser(std::move(value)); return *this;}
 
     /**
      * <p>A database user name that is authorized to log on to the database
@@ -133,7 +134,7 @@ namespace Model
      * <p>A temporary password that authorizes the user name returned by
      * <code>DbUser</code> to log on to the database <code>DbName</code>. </p>
      */
-    inline void SetDbPassword(Aws::String&& value) { m_dbPassword = value; }
+    inline void SetDbPassword(Aws::String&& value) { m_dbPassword = std::move(value); }
 
     /**
      * <p>A temporary password that authorizes the user name returned by
@@ -151,7 +152,7 @@ namespace Model
      * <p>A temporary password that authorizes the user name returned by
      * <code>DbUser</code> to log on to the database <code>DbName</code>. </p>
      */
-    inline GetClusterCredentialsResult& WithDbPassword(Aws::String&& value) { SetDbPassword(value); return *this;}
+    inline GetClusterCredentialsResult& WithDbPassword(Aws::String&& value) { SetDbPassword(std::move(value)); return *this;}
 
     /**
      * <p>A temporary password that authorizes the user name returned by
@@ -172,7 +173,7 @@ namespace Model
     /**
      * <p>The date and time <code>DbPassword</code> expires.</p>
      */
-    inline void SetExpiration(Aws::Utils::DateTime&& value) { m_expiration = value; }
+    inline void SetExpiration(Aws::Utils::DateTime&& value) { m_expiration = std::move(value); }
 
     /**
      * <p>The date and time <code>DbPassword</code> expires.</p>
@@ -182,7 +183,7 @@ namespace Model
     /**
      * <p>The date and time <code>DbPassword</code> expires.</p>
      */
-    inline GetClusterCredentialsResult& WithExpiration(Aws::Utils::DateTime&& value) { SetExpiration(value); return *this;}
+    inline GetClusterCredentialsResult& WithExpiration(Aws::Utils::DateTime&& value) { SetExpiration(std::move(value)); return *this;}
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
@@ -191,13 +192,13 @@ namespace Model
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
 
     
     inline GetClusterCredentialsResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
 
     
-    inline GetClusterCredentialsResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
+    inline GetClusterCredentialsResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
     Aws::String m_dbUser;

@@ -20,6 +20,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/polly/model/TextType.h>
 #include <aws/polly/model/VoiceId.h>
+#include <utility>
 
 namespace Aws
 {
@@ -66,7 +67,7 @@ namespace Model
      * see <a
      * href="http://docs.aws.amazon.com/polly/latest/dg/API_PutLexicon.html">PutLexicon</a>.</p>
      */
-    inline void SetLexiconNames(Aws::Vector<Aws::String>&& value) { m_lexiconNamesHasBeenSet = true; m_lexiconNames = value; }
+    inline void SetLexiconNames(Aws::Vector<Aws::String>&& value) { m_lexiconNamesHasBeenSet = true; m_lexiconNames = std::move(value); }
 
     /**
      * <p>List of one or more pronunciation lexicon names you want the service to apply
@@ -84,7 +85,7 @@ namespace Model
      * see <a
      * href="http://docs.aws.amazon.com/polly/latest/dg/API_PutLexicon.html">PutLexicon</a>.</p>
      */
-    inline SynthesizeSpeechRequest& WithLexiconNames(Aws::Vector<Aws::String>&& value) { SetLexiconNames(value); return *this;}
+    inline SynthesizeSpeechRequest& WithLexiconNames(Aws::Vector<Aws::String>&& value) { SetLexiconNames(std::move(value)); return *this;}
 
     /**
      * <p>List of one or more pronunciation lexicon names you want the service to apply
@@ -102,7 +103,7 @@ namespace Model
      * see <a
      * href="http://docs.aws.amazon.com/polly/latest/dg/API_PutLexicon.html">PutLexicon</a>.</p>
      */
-    inline SynthesizeSpeechRequest& AddLexiconNames(Aws::String&& value) { m_lexiconNamesHasBeenSet = true; m_lexiconNames.push_back(value); return *this; }
+    inline SynthesizeSpeechRequest& AddLexiconNames(Aws::String&& value) { m_lexiconNamesHasBeenSet = true; m_lexiconNames.push_back(std::move(value)); return *this; }
 
     /**
      * <p>List of one or more pronunciation lexicon names you want the service to apply
@@ -126,7 +127,7 @@ namespace Model
     /**
      * <p> The audio format in which the resulting stream will be encoded. </p>
      */
-    inline void SetOutputFormat(OutputFormat&& value) { m_outputFormatHasBeenSet = true; m_outputFormat = value; }
+    inline void SetOutputFormat(OutputFormat&& value) { m_outputFormatHasBeenSet = true; m_outputFormat = std::move(value); }
 
     /**
      * <p> The audio format in which the resulting stream will be encoded. </p>
@@ -136,7 +137,7 @@ namespace Model
     /**
      * <p> The audio format in which the resulting stream will be encoded. </p>
      */
-    inline SynthesizeSpeechRequest& WithOutputFormat(OutputFormat&& value) { SetOutputFormat(value); return *this;}
+    inline SynthesizeSpeechRequest& WithOutputFormat(OutputFormat&& value) { SetOutputFormat(std::move(value)); return *this;}
 
     /**
      * <p> The audio frequency specified in Hz. </p> <p>The valid values for
@@ -160,7 +161,7 @@ namespace Model
      * The default value is "22050". </p> <p> Valid values for <code>pcm</code> are
      * "8000" and "16000" The default value is "16000". </p>
      */
-    inline void SetSampleRate(Aws::String&& value) { m_sampleRateHasBeenSet = true; m_sampleRate = value; }
+    inline void SetSampleRate(Aws::String&& value) { m_sampleRateHasBeenSet = true; m_sampleRate = std::move(value); }
 
     /**
      * <p> The audio frequency specified in Hz. </p> <p>The valid values for
@@ -184,7 +185,7 @@ namespace Model
      * The default value is "22050". </p> <p> Valid values for <code>pcm</code> are
      * "8000" and "16000" The default value is "16000". </p>
      */
-    inline SynthesizeSpeechRequest& WithSampleRate(Aws::String&& value) { SetSampleRate(value); return *this;}
+    inline SynthesizeSpeechRequest& WithSampleRate(Aws::String&& value) { SetSampleRate(std::move(value)); return *this;}
 
     /**
      * <p> The audio frequency specified in Hz. </p> <p>The valid values for
@@ -210,7 +211,7 @@ namespace Model
      * <p> Input text to synthesize. If you specify <code>ssml</code> as the
      * <code>TextType</code>, follow the SSML format for the input text. </p>
      */
-    inline void SetText(Aws::String&& value) { m_textHasBeenSet = true; m_text = value; }
+    inline void SetText(Aws::String&& value) { m_textHasBeenSet = true; m_text = std::move(value); }
 
     /**
      * <p> Input text to synthesize. If you specify <code>ssml</code> as the
@@ -228,7 +229,7 @@ namespace Model
      * <p> Input text to synthesize. If you specify <code>ssml</code> as the
      * <code>TextType</code>, follow the SSML format for the input text. </p>
      */
-    inline SynthesizeSpeechRequest& WithText(Aws::String&& value) { SetText(value); return *this;}
+    inline SynthesizeSpeechRequest& WithText(Aws::String&& value) { SetText(std::move(value)); return *this;}
 
     /**
      * <p> Input text to synthesize. If you specify <code>ssml</code> as the
@@ -255,7 +256,7 @@ namespace Model
      * plain text. For more information, see <a
      * href="http://docs.aws.amazon.com/polly/latest/dg/ssml.html">Using SSML</a>.</p>
      */
-    inline void SetTextType(TextType&& value) { m_textTypeHasBeenSet = true; m_textType = value; }
+    inline void SetTextType(TextType&& value) { m_textTypeHasBeenSet = true; m_textType = std::move(value); }
 
     /**
      * <p> Specifies whether the input text is plain text or SSML. The default value is
@@ -269,7 +270,7 @@ namespace Model
      * plain text. For more information, see <a
      * href="http://docs.aws.amazon.com/polly/latest/dg/ssml.html">Using SSML</a>.</p>
      */
-    inline SynthesizeSpeechRequest& WithTextType(TextType&& value) { SetTextType(value); return *this;}
+    inline SynthesizeSpeechRequest& WithTextType(TextType&& value) { SetTextType(std::move(value)); return *this;}
 
     /**
      * <p> Voice ID to use for the synthesis. You can get a list of available voice IDs
@@ -293,7 +294,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/polly/latest/dg/API_DescribeVoices.html">DescribeVoices</a>
      * operation. </p>
      */
-    inline void SetVoiceId(VoiceId&& value) { m_voiceIdHasBeenSet = true; m_voiceId = value; }
+    inline void SetVoiceId(VoiceId&& value) { m_voiceIdHasBeenSet = true; m_voiceId = std::move(value); }
 
     /**
      * <p> Voice ID to use for the synthesis. You can get a list of available voice IDs
@@ -309,7 +310,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/polly/latest/dg/API_DescribeVoices.html">DescribeVoices</a>
      * operation. </p>
      */
-    inline SynthesizeSpeechRequest& WithVoiceId(VoiceId&& value) { SetVoiceId(value); return *this;}
+    inline SynthesizeSpeechRequest& WithVoiceId(VoiceId&& value) { SetVoiceId(std::move(value)); return *this;}
 
   private:
     Aws::Vector<Aws::String> m_lexiconNames;

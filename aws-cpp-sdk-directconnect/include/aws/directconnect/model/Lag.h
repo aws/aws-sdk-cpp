@@ -18,6 +18,7 @@
 #include <aws/directconnect/model/LagState.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/directconnect/model/Connection.h>
+#include <utility>
 
 namespace Aws
 {
@@ -66,7 +67,7 @@ namespace Model
      * <p>The individual bandwidth of the physical connections bundled by the LAG.</p>
      * <p>Available values: 1Gbps, 10Gbps</p>
      */
-    inline void SetConnectionsBandwidth(Aws::String&& value) { m_connectionsBandwidthHasBeenSet = true; m_connectionsBandwidth = value; }
+    inline void SetConnectionsBandwidth(Aws::String&& value) { m_connectionsBandwidthHasBeenSet = true; m_connectionsBandwidth = std::move(value); }
 
     /**
      * <p>The individual bandwidth of the physical connections bundled by the LAG.</p>
@@ -84,7 +85,7 @@ namespace Model
      * <p>The individual bandwidth of the physical connections bundled by the LAG.</p>
      * <p>Available values: 1Gbps, 10Gbps</p>
      */
-    inline Lag& WithConnectionsBandwidth(Aws::String&& value) { SetConnectionsBandwidth(value); return *this;}
+    inline Lag& WithConnectionsBandwidth(Aws::String&& value) { SetConnectionsBandwidth(std::move(value)); return *this;}
 
     /**
      * <p>The individual bandwidth of the physical connections bundled by the LAG.</p>
@@ -117,7 +118,7 @@ namespace Model
     inline void SetLagId(const Aws::String& value) { m_lagIdHasBeenSet = true; m_lagId = value; }
 
     
-    inline void SetLagId(Aws::String&& value) { m_lagIdHasBeenSet = true; m_lagId = value; }
+    inline void SetLagId(Aws::String&& value) { m_lagIdHasBeenSet = true; m_lagId = std::move(value); }
 
     
     inline void SetLagId(const char* value) { m_lagIdHasBeenSet = true; m_lagId.assign(value); }
@@ -126,7 +127,7 @@ namespace Model
     inline Lag& WithLagId(const Aws::String& value) { SetLagId(value); return *this;}
 
     
-    inline Lag& WithLagId(Aws::String&& value) { SetLagId(value); return *this;}
+    inline Lag& WithLagId(Aws::String&& value) { SetLagId(std::move(value)); return *this;}
 
     
     inline Lag& WithLagId(const char* value) { SetLagId(value); return *this;}
@@ -144,7 +145,7 @@ namespace Model
     /**
      * <p>The owner of the LAG.</p>
      */
-    inline void SetOwnerAccount(Aws::String&& value) { m_ownerAccountHasBeenSet = true; m_ownerAccount = value; }
+    inline void SetOwnerAccount(Aws::String&& value) { m_ownerAccountHasBeenSet = true; m_ownerAccount = std::move(value); }
 
     /**
      * <p>The owner of the LAG.</p>
@@ -159,7 +160,7 @@ namespace Model
     /**
      * <p>The owner of the LAG.</p>
      */
-    inline Lag& WithOwnerAccount(Aws::String&& value) { SetOwnerAccount(value); return *this;}
+    inline Lag& WithOwnerAccount(Aws::String&& value) { SetOwnerAccount(std::move(value)); return *this;}
 
     /**
      * <p>The owner of the LAG.</p>
@@ -179,7 +180,7 @@ namespace Model
     /**
      * <p>The name of the LAG.</p>
      */
-    inline void SetLagName(Aws::String&& value) { m_lagNameHasBeenSet = true; m_lagName = value; }
+    inline void SetLagName(Aws::String&& value) { m_lagNameHasBeenSet = true; m_lagName = std::move(value); }
 
     /**
      * <p>The name of the LAG.</p>
@@ -194,7 +195,7 @@ namespace Model
     /**
      * <p>The name of the LAG.</p>
      */
-    inline Lag& WithLagName(Aws::String&& value) { SetLagName(value); return *this;}
+    inline Lag& WithLagName(Aws::String&& value) { SetLagName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the LAG.</p>
@@ -208,13 +209,13 @@ namespace Model
     inline void SetLagState(const LagState& value) { m_lagStateHasBeenSet = true; m_lagState = value; }
 
     
-    inline void SetLagState(LagState&& value) { m_lagStateHasBeenSet = true; m_lagState = value; }
+    inline void SetLagState(LagState&& value) { m_lagStateHasBeenSet = true; m_lagState = std::move(value); }
 
     
     inline Lag& WithLagState(const LagState& value) { SetLagState(value); return *this;}
 
     
-    inline Lag& WithLagState(LagState&& value) { SetLagState(value); return *this;}
+    inline Lag& WithLagState(LagState&& value) { SetLagState(std::move(value)); return *this;}
 
     
     inline const Aws::String& GetLocation() const{ return m_location; }
@@ -223,7 +224,7 @@ namespace Model
     inline void SetLocation(const Aws::String& value) { m_locationHasBeenSet = true; m_location = value; }
 
     
-    inline void SetLocation(Aws::String&& value) { m_locationHasBeenSet = true; m_location = value; }
+    inline void SetLocation(Aws::String&& value) { m_locationHasBeenSet = true; m_location = std::move(value); }
 
     
     inline void SetLocation(const char* value) { m_locationHasBeenSet = true; m_location.assign(value); }
@@ -232,7 +233,7 @@ namespace Model
     inline Lag& WithLocation(const Aws::String& value) { SetLocation(value); return *this;}
 
     
-    inline Lag& WithLocation(Aws::String&& value) { SetLocation(value); return *this;}
+    inline Lag& WithLocation(Aws::String&& value) { SetLocation(std::move(value)); return *this;}
 
     
     inline Lag& WithLocation(const char* value) { SetLocation(value); return *this;}
@@ -244,7 +245,7 @@ namespace Model
     inline void SetRegion(const Aws::String& value) { m_regionHasBeenSet = true; m_region = value; }
 
     
-    inline void SetRegion(Aws::String&& value) { m_regionHasBeenSet = true; m_region = value; }
+    inline void SetRegion(Aws::String&& value) { m_regionHasBeenSet = true; m_region = std::move(value); }
 
     
     inline void SetRegion(const char* value) { m_regionHasBeenSet = true; m_region.assign(value); }
@@ -253,7 +254,7 @@ namespace Model
     inline Lag& WithRegion(const Aws::String& value) { SetRegion(value); return *this;}
 
     
-    inline Lag& WithRegion(Aws::String&& value) { SetRegion(value); return *this;}
+    inline Lag& WithRegion(Aws::String&& value) { SetRegion(std::move(value)); return *this;}
 
     
     inline Lag& WithRegion(const char* value) { SetRegion(value); return *this;}
@@ -298,7 +299,7 @@ namespace Model
     /**
      * <p>The AWS Direct Connection endpoint that hosts the LAG.</p>
      */
-    inline void SetAwsDevice(Aws::String&& value) { m_awsDeviceHasBeenSet = true; m_awsDevice = value; }
+    inline void SetAwsDevice(Aws::String&& value) { m_awsDeviceHasBeenSet = true; m_awsDevice = std::move(value); }
 
     /**
      * <p>The AWS Direct Connection endpoint that hosts the LAG.</p>
@@ -313,7 +314,7 @@ namespace Model
     /**
      * <p>The AWS Direct Connection endpoint that hosts the LAG.</p>
      */
-    inline Lag& WithAwsDevice(Aws::String&& value) { SetAwsDevice(value); return *this;}
+    inline Lag& WithAwsDevice(Aws::String&& value) { SetAwsDevice(std::move(value)); return *this;}
 
     /**
      * <p>The AWS Direct Connection endpoint that hosts the LAG.</p>
@@ -333,7 +334,7 @@ namespace Model
     /**
      * <p>A list of connections bundled by this LAG.</p>
      */
-    inline void SetConnections(Aws::Vector<Connection>&& value) { m_connectionsHasBeenSet = true; m_connections = value; }
+    inline void SetConnections(Aws::Vector<Connection>&& value) { m_connectionsHasBeenSet = true; m_connections = std::move(value); }
 
     /**
      * <p>A list of connections bundled by this LAG.</p>
@@ -343,7 +344,7 @@ namespace Model
     /**
      * <p>A list of connections bundled by this LAG.</p>
      */
-    inline Lag& WithConnections(Aws::Vector<Connection>&& value) { SetConnections(value); return *this;}
+    inline Lag& WithConnections(Aws::Vector<Connection>&& value) { SetConnections(std::move(value)); return *this;}
 
     /**
      * <p>A list of connections bundled by this LAG.</p>
@@ -353,7 +354,7 @@ namespace Model
     /**
      * <p>A list of connections bundled by this LAG.</p>
      */
-    inline Lag& AddConnections(Connection&& value) { m_connectionsHasBeenSet = true; m_connections.push_back(value); return *this; }
+    inline Lag& AddConnections(Connection&& value) { m_connectionsHasBeenSet = true; m_connections.push_back(std::move(value)); return *this; }
 
     /**
      * <p>Indicates whether the LAG can host other connections.</p> <note> <p>This is

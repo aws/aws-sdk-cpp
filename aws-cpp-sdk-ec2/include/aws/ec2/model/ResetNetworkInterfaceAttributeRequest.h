@@ -16,6 +16,7 @@
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/ec2/EC2Request.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -78,7 +79,7 @@ namespace Model
     /**
      * <p>The ID of the network interface.</p>
      */
-    inline void SetNetworkInterfaceId(Aws::String&& value) { m_networkInterfaceIdHasBeenSet = true; m_networkInterfaceId = value; }
+    inline void SetNetworkInterfaceId(Aws::String&& value) { m_networkInterfaceIdHasBeenSet = true; m_networkInterfaceId = std::move(value); }
 
     /**
      * <p>The ID of the network interface.</p>
@@ -93,7 +94,7 @@ namespace Model
     /**
      * <p>The ID of the network interface.</p>
      */
-    inline ResetNetworkInterfaceAttributeRequest& WithNetworkInterfaceId(Aws::String&& value) { SetNetworkInterfaceId(value); return *this;}
+    inline ResetNetworkInterfaceAttributeRequest& WithNetworkInterfaceId(Aws::String&& value) { SetNetworkInterfaceId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the network interface.</p>
@@ -116,7 +117,7 @@ namespace Model
      * <p>The source/destination checking attribute. Resets the value to
      * <code>true</code>.</p>
      */
-    inline void SetSourceDestCheck(Aws::String&& value) { m_sourceDestCheckHasBeenSet = true; m_sourceDestCheck = value; }
+    inline void SetSourceDestCheck(Aws::String&& value) { m_sourceDestCheckHasBeenSet = true; m_sourceDestCheck = std::move(value); }
 
     /**
      * <p>The source/destination checking attribute. Resets the value to
@@ -134,7 +135,7 @@ namespace Model
      * <p>The source/destination checking attribute. Resets the value to
      * <code>true</code>.</p>
      */
-    inline ResetNetworkInterfaceAttributeRequest& WithSourceDestCheck(Aws::String&& value) { SetSourceDestCheck(value); return *this;}
+    inline ResetNetworkInterfaceAttributeRequest& WithSourceDestCheck(Aws::String&& value) { SetSourceDestCheck(std::move(value)); return *this;}
 
     /**
      * <p>The source/destination checking attribute. Resets the value to

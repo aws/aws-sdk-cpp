@@ -17,6 +17,7 @@
 #include <aws/gamelift/GameLiftRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
+#include <utility>
 
 namespace Aws
 {
@@ -52,7 +53,7 @@ namespace Model
     /**
      * <p>Unique identifier for a fleet to get event logs for.</p>
      */
-    inline void SetFleetId(Aws::String&& value) { m_fleetIdHasBeenSet = true; m_fleetId = value; }
+    inline void SetFleetId(Aws::String&& value) { m_fleetIdHasBeenSet = true; m_fleetId = std::move(value); }
 
     /**
      * <p>Unique identifier for a fleet to get event logs for.</p>
@@ -67,7 +68,7 @@ namespace Model
     /**
      * <p>Unique identifier for a fleet to get event logs for.</p>
      */
-    inline DescribeFleetEventsRequest& WithFleetId(Aws::String&& value) { SetFleetId(value); return *this;}
+    inline DescribeFleetEventsRequest& WithFleetId(Aws::String&& value) { SetFleetId(std::move(value)); return *this;}
 
     /**
      * <p>Unique identifier for a fleet to get event logs for.</p>
@@ -96,7 +97,7 @@ namespace Model
      * end time. Format is a number expressed in Unix time as milliseconds (ex:
      * "1469498468.057").</p>
      */
-    inline void SetStartTime(Aws::Utils::DateTime&& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
+    inline void SetStartTime(Aws::Utils::DateTime&& value) { m_startTimeHasBeenSet = true; m_startTime = std::move(value); }
 
     /**
      * <p>Earliest date to retrieve event logs for. If no start time is specified, this
@@ -112,7 +113,7 @@ namespace Model
      * end time. Format is a number expressed in Unix time as milliseconds (ex:
      * "1469498468.057").</p>
      */
-    inline DescribeFleetEventsRequest& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(value); return *this;}
+    inline DescribeFleetEventsRequest& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(std::move(value)); return *this;}
 
     /**
      * <p>Most recent date to retrieve event logs for. If no end time is specified,
@@ -136,7 +137,7 @@ namespace Model
      * Format is a number expressed in Unix time as milliseconds (ex:
      * "1469498468.057").</p>
      */
-    inline void SetEndTime(Aws::Utils::DateTime&& value) { m_endTimeHasBeenSet = true; m_endTime = value; }
+    inline void SetEndTime(Aws::Utils::DateTime&& value) { m_endTimeHasBeenSet = true; m_endTime = std::move(value); }
 
     /**
      * <p>Most recent date to retrieve event logs for. If no end time is specified,
@@ -152,7 +153,7 @@ namespace Model
      * Format is a number expressed in Unix time as milliseconds (ex:
      * "1469498468.057").</p>
      */
-    inline DescribeFleetEventsRequest& WithEndTime(Aws::Utils::DateTime&& value) { SetEndTime(value); return *this;}
+    inline DescribeFleetEventsRequest& WithEndTime(Aws::Utils::DateTime&& value) { SetEndTime(std::move(value)); return *this;}
 
     /**
      * <p>Maximum number of results to return. Use this parameter with
@@ -191,7 +192,7 @@ namespace Model
      * the token that is returned with a previous call to this action. To specify the
      * start of the result set, do not specify a value.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
      * <p>Token that indicates the start of the next sequential page of results. Use
@@ -212,7 +213,7 @@ namespace Model
      * the token that is returned with a previous call to this action. To specify the
      * start of the result set, do not specify a value.</p>
      */
-    inline DescribeFleetEventsRequest& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline DescribeFleetEventsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>Token that indicates the start of the next sequential page of results. Use

@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/Tenancy.h>
+#include <utility>
 
 namespace Aws
 {
@@ -60,7 +61,7 @@ namespace Model
     /**
      * <p>The Availability Zone of the instance.</p>
      */
-    inline void SetAvailabilityZone(Aws::String&& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = value; }
+    inline void SetAvailabilityZone(Aws::String&& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = std::move(value); }
 
     /**
      * <p>The Availability Zone of the instance.</p>
@@ -75,7 +76,7 @@ namespace Model
     /**
      * <p>The Availability Zone of the instance.</p>
      */
-    inline Placement& WithAvailabilityZone(Aws::String&& value) { SetAvailabilityZone(value); return *this;}
+    inline Placement& WithAvailabilityZone(Aws::String&& value) { SetAvailabilityZone(std::move(value)); return *this;}
 
     /**
      * <p>The Availability Zone of the instance.</p>
@@ -98,7 +99,7 @@ namespace Model
      * <p>The name of the placement group the instance is in (for cluster compute
      * instances).</p>
      */
-    inline void SetGroupName(Aws::String&& value) { m_groupNameHasBeenSet = true; m_groupName = value; }
+    inline void SetGroupName(Aws::String&& value) { m_groupNameHasBeenSet = true; m_groupName = std::move(value); }
 
     /**
      * <p>The name of the placement group the instance is in (for cluster compute
@@ -116,7 +117,7 @@ namespace Model
      * <p>The name of the placement group the instance is in (for cluster compute
      * instances).</p>
      */
-    inline Placement& WithGroupName(Aws::String&& value) { SetGroupName(value); return *this;}
+    inline Placement& WithGroupName(Aws::String&& value) { SetGroupName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the placement group the instance is in (for cluster compute
@@ -146,7 +147,7 @@ namespace Model
      * hardware. The <code>host</code> tenancy is not supported for the
      * <a>ImportInstance</a> command.</p>
      */
-    inline void SetTenancy(Tenancy&& value) { m_tenancyHasBeenSet = true; m_tenancy = value; }
+    inline void SetTenancy(Tenancy&& value) { m_tenancyHasBeenSet = true; m_tenancy = std::move(value); }
 
     /**
      * <p>The tenancy of the instance (if the instance is running in a VPC). An
@@ -162,7 +163,7 @@ namespace Model
      * hardware. The <code>host</code> tenancy is not supported for the
      * <a>ImportInstance</a> command.</p>
      */
-    inline Placement& WithTenancy(Tenancy&& value) { SetTenancy(value); return *this;}
+    inline Placement& WithTenancy(Tenancy&& value) { SetTenancy(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the Dedicated Host on which the instance resides. This parameter is
@@ -180,7 +181,7 @@ namespace Model
      * <p>The ID of the Dedicated Host on which the instance resides. This parameter is
      * not supported for the <a>ImportInstance</a> command.</p>
      */
-    inline void SetHostId(Aws::String&& value) { m_hostIdHasBeenSet = true; m_hostId = value; }
+    inline void SetHostId(Aws::String&& value) { m_hostIdHasBeenSet = true; m_hostId = std::move(value); }
 
     /**
      * <p>The ID of the Dedicated Host on which the instance resides. This parameter is
@@ -198,7 +199,7 @@ namespace Model
      * <p>The ID of the Dedicated Host on which the instance resides. This parameter is
      * not supported for the <a>ImportInstance</a> command.</p>
      */
-    inline Placement& WithHostId(Aws::String&& value) { SetHostId(value); return *this;}
+    inline Placement& WithHostId(Aws::String&& value) { SetHostId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the Dedicated Host on which the instance resides. This parameter is
@@ -222,7 +223,7 @@ namespace Model
      * <p>The affinity setting for the instance on the Dedicated Host. This parameter
      * is not supported for the <a>ImportInstance</a> command.</p>
      */
-    inline void SetAffinity(Aws::String&& value) { m_affinityHasBeenSet = true; m_affinity = value; }
+    inline void SetAffinity(Aws::String&& value) { m_affinityHasBeenSet = true; m_affinity = std::move(value); }
 
     /**
      * <p>The affinity setting for the instance on the Dedicated Host. This parameter
@@ -240,7 +241,7 @@ namespace Model
      * <p>The affinity setting for the instance on the Dedicated Host. This parameter
      * is not supported for the <a>ImportInstance</a> command.</p>
      */
-    inline Placement& WithAffinity(Aws::String&& value) { SetAffinity(value); return *this;}
+    inline Placement& WithAffinity(Aws::String&& value) { SetAffinity(std::move(value)); return *this;}
 
     /**
      * <p>The affinity setting for the instance on the Dedicated Host. This parameter

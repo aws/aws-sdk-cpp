@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <utility>
 
 namespace Aws
 {
@@ -61,7 +62,7 @@ namespace Model
     /**
      * <p>The source type that the returned categories belong to</p>
      */
-    inline void SetSourceType(Aws::String&& value) { m_sourceTypeHasBeenSet = true; m_sourceType = value; }
+    inline void SetSourceType(Aws::String&& value) { m_sourceTypeHasBeenSet = true; m_sourceType = std::move(value); }
 
     /**
      * <p>The source type that the returned categories belong to</p>
@@ -76,7 +77,7 @@ namespace Model
     /**
      * <p>The source type that the returned categories belong to</p>
      */
-    inline EventCategoriesMap& WithSourceType(Aws::String&& value) { SetSourceType(value); return *this;}
+    inline EventCategoriesMap& WithSourceType(Aws::String&& value) { SetSourceType(std::move(value)); return *this;}
 
     /**
      * <p>The source type that the returned categories belong to</p>
@@ -96,7 +97,7 @@ namespace Model
     /**
      * <p>The event categories for the specified source type</p>
      */
-    inline void SetEventCategories(Aws::Vector<Aws::String>&& value) { m_eventCategoriesHasBeenSet = true; m_eventCategories = value; }
+    inline void SetEventCategories(Aws::Vector<Aws::String>&& value) { m_eventCategoriesHasBeenSet = true; m_eventCategories = std::move(value); }
 
     /**
      * <p>The event categories for the specified source type</p>
@@ -106,7 +107,7 @@ namespace Model
     /**
      * <p>The event categories for the specified source type</p>
      */
-    inline EventCategoriesMap& WithEventCategories(Aws::Vector<Aws::String>&& value) { SetEventCategories(value); return *this;}
+    inline EventCategoriesMap& WithEventCategories(Aws::Vector<Aws::String>&& value) { SetEventCategories(std::move(value)); return *this;}
 
     /**
      * <p>The event categories for the specified source type</p>
@@ -116,7 +117,7 @@ namespace Model
     /**
      * <p>The event categories for the specified source type</p>
      */
-    inline EventCategoriesMap& AddEventCategories(Aws::String&& value) { m_eventCategoriesHasBeenSet = true; m_eventCategories.push_back(value); return *this; }
+    inline EventCategoriesMap& AddEventCategories(Aws::String&& value) { m_eventCategoriesHasBeenSet = true; m_eventCategories.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The event categories for the specified source type</p>

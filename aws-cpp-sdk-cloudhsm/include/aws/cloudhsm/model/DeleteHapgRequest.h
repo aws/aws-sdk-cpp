@@ -16,6 +16,7 @@
 #include <aws/cloudhsm/CloudHSM_EXPORTS.h>
 #include <aws/cloudhsm/CloudHSMRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -52,7 +53,7 @@ namespace Model
     /**
      * <p>The ARN of the high-availability partition group to delete.</p>
      */
-    inline void SetHapgArn(Aws::String&& value) { m_hapgArnHasBeenSet = true; m_hapgArn = value; }
+    inline void SetHapgArn(Aws::String&& value) { m_hapgArnHasBeenSet = true; m_hapgArn = std::move(value); }
 
     /**
      * <p>The ARN of the high-availability partition group to delete.</p>
@@ -67,7 +68,7 @@ namespace Model
     /**
      * <p>The ARN of the high-availability partition group to delete.</p>
      */
-    inline DeleteHapgRequest& WithHapgArn(Aws::String&& value) { SetHapgArn(value); return *this;}
+    inline DeleteHapgRequest& WithHapgArn(Aws::String&& value) { SetHapgArn(std::move(value)); return *this;}
 
     /**
      * <p>The ARN of the high-availability partition group to delete.</p>

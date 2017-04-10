@@ -16,6 +16,7 @@
 #include <aws/clouddirectory/CloudDirectory_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <utility>
 
 namespace Aws
 {
@@ -58,7 +59,7 @@ namespace Model
     /**
      * <p>The path used to identify the object starting from directory root.</p>
      */
-    inline void SetPath(Aws::String&& value) { m_pathHasBeenSet = true; m_path = value; }
+    inline void SetPath(Aws::String&& value) { m_pathHasBeenSet = true; m_path = std::move(value); }
 
     /**
      * <p>The path used to identify the object starting from directory root.</p>
@@ -73,7 +74,7 @@ namespace Model
     /**
      * <p>The path used to identify the object starting from directory root.</p>
      */
-    inline PathToObjectIdentifiers& WithPath(Aws::String&& value) { SetPath(value); return *this;}
+    inline PathToObjectIdentifiers& WithPath(Aws::String&& value) { SetPath(std::move(value)); return *this;}
 
     /**
      * <p>The path used to identify the object starting from directory root.</p>
@@ -96,7 +97,7 @@ namespace Model
      * <p>Lists <code>ObjectIdentifiers</code> starting from directory root to the
      * object in the request.</p>
      */
-    inline void SetObjectIdentifiers(Aws::Vector<Aws::String>&& value) { m_objectIdentifiersHasBeenSet = true; m_objectIdentifiers = value; }
+    inline void SetObjectIdentifiers(Aws::Vector<Aws::String>&& value) { m_objectIdentifiersHasBeenSet = true; m_objectIdentifiers = std::move(value); }
 
     /**
      * <p>Lists <code>ObjectIdentifiers</code> starting from directory root to the
@@ -108,7 +109,7 @@ namespace Model
      * <p>Lists <code>ObjectIdentifiers</code> starting from directory root to the
      * object in the request.</p>
      */
-    inline PathToObjectIdentifiers& WithObjectIdentifiers(Aws::Vector<Aws::String>&& value) { SetObjectIdentifiers(value); return *this;}
+    inline PathToObjectIdentifiers& WithObjectIdentifiers(Aws::Vector<Aws::String>&& value) { SetObjectIdentifiers(std::move(value)); return *this;}
 
     /**
      * <p>Lists <code>ObjectIdentifiers</code> starting from directory root to the
@@ -120,7 +121,7 @@ namespace Model
      * <p>Lists <code>ObjectIdentifiers</code> starting from directory root to the
      * object in the request.</p>
      */
-    inline PathToObjectIdentifiers& AddObjectIdentifiers(Aws::String&& value) { m_objectIdentifiersHasBeenSet = true; m_objectIdentifiers.push_back(value); return *this; }
+    inline PathToObjectIdentifiers& AddObjectIdentifiers(Aws::String&& value) { m_objectIdentifiersHasBeenSet = true; m_objectIdentifiers.push_back(std::move(value)); return *this; }
 
     /**
      * <p>Lists <code>ObjectIdentifiers</code> starting from directory root to the

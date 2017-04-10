@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/cognito-identity/model/IdentityDescription.h>
+#include <utility>
 
 namespace Aws
 {
@@ -59,7 +60,7 @@ namespace Model
     /**
      * <p>An identity pool ID in the format REGION:GUID.</p>
      */
-    inline void SetIdentityPoolId(Aws::String&& value) { m_identityPoolId = value; }
+    inline void SetIdentityPoolId(Aws::String&& value) { m_identityPoolId = std::move(value); }
 
     /**
      * <p>An identity pool ID in the format REGION:GUID.</p>
@@ -74,7 +75,7 @@ namespace Model
     /**
      * <p>An identity pool ID in the format REGION:GUID.</p>
      */
-    inline ListIdentitiesResult& WithIdentityPoolId(Aws::String&& value) { SetIdentityPoolId(value); return *this;}
+    inline ListIdentitiesResult& WithIdentityPoolId(Aws::String&& value) { SetIdentityPoolId(std::move(value)); return *this;}
 
     /**
      * <p>An identity pool ID in the format REGION:GUID.</p>
@@ -94,7 +95,7 @@ namespace Model
     /**
      * <p>An object containing a set of identities and associated mappings.</p>
      */
-    inline void SetIdentities(Aws::Vector<IdentityDescription>&& value) { m_identities = value; }
+    inline void SetIdentities(Aws::Vector<IdentityDescription>&& value) { m_identities = std::move(value); }
 
     /**
      * <p>An object containing a set of identities and associated mappings.</p>
@@ -104,7 +105,7 @@ namespace Model
     /**
      * <p>An object containing a set of identities and associated mappings.</p>
      */
-    inline ListIdentitiesResult& WithIdentities(Aws::Vector<IdentityDescription>&& value) { SetIdentities(value); return *this;}
+    inline ListIdentitiesResult& WithIdentities(Aws::Vector<IdentityDescription>&& value) { SetIdentities(std::move(value)); return *this;}
 
     /**
      * <p>An object containing a set of identities and associated mappings.</p>
@@ -114,7 +115,7 @@ namespace Model
     /**
      * <p>An object containing a set of identities and associated mappings.</p>
      */
-    inline ListIdentitiesResult& AddIdentities(IdentityDescription&& value) { m_identities.push_back(value); return *this; }
+    inline ListIdentitiesResult& AddIdentities(IdentityDescription&& value) { m_identities.push_back(std::move(value)); return *this; }
 
     /**
      * <p>A pagination token.</p>
@@ -129,7 +130,7 @@ namespace Model
     /**
      * <p>A pagination token.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
      * <p>A pagination token.</p>
@@ -144,7 +145,7 @@ namespace Model
     /**
      * <p>A pagination token.</p>
      */
-    inline ListIdentitiesResult& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline ListIdentitiesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>A pagination token.</p>

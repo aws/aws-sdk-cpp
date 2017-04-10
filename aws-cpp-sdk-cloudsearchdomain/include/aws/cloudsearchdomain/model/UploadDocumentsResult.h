@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/cloudsearchdomain/model/DocumentServiceWarning.h>
+#include <utility>
 
 namespace Aws
 {
@@ -60,7 +61,7 @@ namespace Model
     /**
      * <p>The status of an <code>UploadDocumentsRequest</code>.</p>
      */
-    inline void SetStatus(Aws::String&& value) { m_status = value; }
+    inline void SetStatus(Aws::String&& value) { m_status = std::move(value); }
 
     /**
      * <p>The status of an <code>UploadDocumentsRequest</code>.</p>
@@ -75,7 +76,7 @@ namespace Model
     /**
      * <p>The status of an <code>UploadDocumentsRequest</code>.</p>
      */
-    inline UploadDocumentsResult& WithStatus(Aws::String&& value) { SetStatus(value); return *this;}
+    inline UploadDocumentsResult& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
 
     /**
      * <p>The status of an <code>UploadDocumentsRequest</code>.</p>
@@ -128,7 +129,7 @@ namespace Model
      * <p>Any warnings returned by the document service about the documents being
      * uploaded.</p>
      */
-    inline void SetWarnings(Aws::Vector<DocumentServiceWarning>&& value) { m_warnings = value; }
+    inline void SetWarnings(Aws::Vector<DocumentServiceWarning>&& value) { m_warnings = std::move(value); }
 
     /**
      * <p>Any warnings returned by the document service about the documents being
@@ -140,7 +141,7 @@ namespace Model
      * <p>Any warnings returned by the document service about the documents being
      * uploaded.</p>
      */
-    inline UploadDocumentsResult& WithWarnings(Aws::Vector<DocumentServiceWarning>&& value) { SetWarnings(value); return *this;}
+    inline UploadDocumentsResult& WithWarnings(Aws::Vector<DocumentServiceWarning>&& value) { SetWarnings(std::move(value)); return *this;}
 
     /**
      * <p>Any warnings returned by the document service about the documents being
@@ -152,7 +153,7 @@ namespace Model
      * <p>Any warnings returned by the document service about the documents being
      * uploaded.</p>
      */
-    inline UploadDocumentsResult& AddWarnings(DocumentServiceWarning&& value) { m_warnings.push_back(value); return *this; }
+    inline UploadDocumentsResult& AddWarnings(DocumentServiceWarning&& value) { m_warnings.push_back(std::move(value)); return *this; }
 
   private:
     Aws::String m_status;

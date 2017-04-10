@@ -16,6 +16,7 @@
 #include <aws/route53/Route53_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/route53/model/RRType.h>
+#include <utility>
 
 namespace Aws
 {
@@ -63,7 +64,7 @@ namespace Model
      * <p>The ID that Amazon Route 53 assigned to the traffic policy when you created
      * it.</p>
      */
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = value; }
+    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
 
     /**
      * <p>The ID that Amazon Route 53 assigned to the traffic policy when you created
@@ -81,7 +82,7 @@ namespace Model
      * <p>The ID that Amazon Route 53 assigned to the traffic policy when you created
      * it.</p>
      */
-    inline TrafficPolicySummary& WithId(Aws::String&& value) { SetId(value); return *this;}
+    inline TrafficPolicySummary& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
 
     /**
      * <p>The ID that Amazon Route 53 assigned to the traffic policy when you created
@@ -102,7 +103,7 @@ namespace Model
     /**
      * <p>The name that you specified for the traffic policy when you created it.</p>
      */
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p>The name that you specified for the traffic policy when you created it.</p>
@@ -117,7 +118,7 @@ namespace Model
     /**
      * <p>The name that you specified for the traffic policy when you created it.</p>
      */
-    inline TrafficPolicySummary& WithName(Aws::String&& value) { SetName(value); return *this;}
+    inline TrafficPolicySummary& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>The name that you specified for the traffic policy when you created it.</p>
@@ -140,7 +141,7 @@ namespace Model
      * <p>The DNS type of the resource record sets that Amazon Route 53 creates when
      * you use a traffic policy to create a traffic policy instance.</p>
      */
-    inline void SetType(RRType&& value) { m_typeHasBeenSet = true; m_type = value; }
+    inline void SetType(RRType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
      * <p>The DNS type of the resource record sets that Amazon Route 53 creates when
@@ -152,7 +153,7 @@ namespace Model
      * <p>The DNS type of the resource record sets that Amazon Route 53 creates when
      * you use a traffic policy to create a traffic policy instance.</p>
      */
-    inline TrafficPolicySummary& WithType(RRType&& value) { SetType(value); return *this;}
+    inline TrafficPolicySummary& WithType(RRType&& value) { SetType(std::move(value)); return *this;}
 
     /**
      * <p>The version number of the latest version of the traffic policy.</p>

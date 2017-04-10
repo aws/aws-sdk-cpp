@@ -21,6 +21,7 @@
 #include <aws/firehose/model/S3DestinationUpdate.h>
 #include <aws/firehose/model/ProcessingConfiguration.h>
 #include <aws/firehose/model/CloudWatchLoggingOptions.h>
+#include <utility>
 
 namespace Aws
 {
@@ -72,7 +73,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/firehose/latest/dev/controlling-access.html#using-iam-s3">Amazon
      * S3 Bucket Access</a>.</p>
      */
-    inline void SetRoleARN(Aws::String&& value) { m_roleARNHasBeenSet = true; m_roleARN = value; }
+    inline void SetRoleARN(Aws::String&& value) { m_roleARNHasBeenSet = true; m_roleARN = std::move(value); }
 
     /**
      * <p>The ARN of the IAM role to be assumed by Firehose for calling the Amazon ES
@@ -96,7 +97,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/firehose/latest/dev/controlling-access.html#using-iam-s3">Amazon
      * S3 Bucket Access</a>.</p>
      */
-    inline ElasticsearchDestinationUpdate& WithRoleARN(Aws::String&& value) { SetRoleARN(value); return *this;}
+    inline ElasticsearchDestinationUpdate& WithRoleARN(Aws::String&& value) { SetRoleARN(std::move(value)); return *this;}
 
     /**
      * <p>The ARN of the IAM role to be assumed by Firehose for calling the Amazon ES
@@ -131,7 +132,7 @@ namespace Model
      * <code>DescribeElasticsearchDomainConfig</code> after assuming the IAM role
      * specified in <b>RoleARN</b>.</p>
      */
-    inline void SetDomainARN(Aws::String&& value) { m_domainARNHasBeenSet = true; m_domainARN = value; }
+    inline void SetDomainARN(Aws::String&& value) { m_domainARNHasBeenSet = true; m_domainARN = std::move(value); }
 
     /**
      * <p>The ARN of the Amazon ES domain. The IAM role must have permissions
@@ -158,7 +159,7 @@ namespace Model
      * <code>DescribeElasticsearchDomainConfig</code> after assuming the IAM role
      * specified in <b>RoleARN</b>.</p>
      */
-    inline ElasticsearchDestinationUpdate& WithDomainARN(Aws::String&& value) { SetDomainARN(value); return *this;}
+    inline ElasticsearchDestinationUpdate& WithDomainARN(Aws::String&& value) { SetDomainARN(std::move(value)); return *this;}
 
     /**
      * <p>The ARN of the Amazon ES domain. The IAM role must have permissions
@@ -182,7 +183,7 @@ namespace Model
     /**
      * <p>The Elasticsearch index name.</p>
      */
-    inline void SetIndexName(Aws::String&& value) { m_indexNameHasBeenSet = true; m_indexName = value; }
+    inline void SetIndexName(Aws::String&& value) { m_indexNameHasBeenSet = true; m_indexName = std::move(value); }
 
     /**
      * <p>The Elasticsearch index name.</p>
@@ -197,7 +198,7 @@ namespace Model
     /**
      * <p>The Elasticsearch index name.</p>
      */
-    inline ElasticsearchDestinationUpdate& WithIndexName(Aws::String&& value) { SetIndexName(value); return *this;}
+    inline ElasticsearchDestinationUpdate& WithIndexName(Aws::String&& value) { SetIndexName(std::move(value)); return *this;}
 
     /**
      * <p>The Elasticsearch index name.</p>
@@ -217,7 +218,7 @@ namespace Model
     /**
      * <p>The Elasticsearch type name.</p>
      */
-    inline void SetTypeName(Aws::String&& value) { m_typeNameHasBeenSet = true; m_typeName = value; }
+    inline void SetTypeName(Aws::String&& value) { m_typeNameHasBeenSet = true; m_typeName = std::move(value); }
 
     /**
      * <p>The Elasticsearch type name.</p>
@@ -232,7 +233,7 @@ namespace Model
     /**
      * <p>The Elasticsearch type name.</p>
      */
-    inline ElasticsearchDestinationUpdate& WithTypeName(Aws::String&& value) { SetTypeName(value); return *this;}
+    inline ElasticsearchDestinationUpdate& WithTypeName(Aws::String&& value) { SetTypeName(std::move(value)); return *this;}
 
     /**
      * <p>The Elasticsearch type name.</p>
@@ -267,7 +268,7 @@ namespace Model
      * Rotation for Amazon Elasticsearch Service Destination</a>. Default value
      * is <code>OneDay</code>.</p>
      */
-    inline void SetIndexRotationPeriod(ElasticsearchIndexRotationPeriod&& value) { m_indexRotationPeriodHasBeenSet = true; m_indexRotationPeriod = value; }
+    inline void SetIndexRotationPeriod(ElasticsearchIndexRotationPeriod&& value) { m_indexRotationPeriodHasBeenSet = true; m_indexRotationPeriod = std::move(value); }
 
     /**
      * <p>The Elasticsearch index rotation period. Index rotation appends a timestamp
@@ -287,7 +288,7 @@ namespace Model
      * Rotation for Amazon Elasticsearch Service Destination</a>. Default value
      * is <code>OneDay</code>.</p>
      */
-    inline ElasticsearchDestinationUpdate& WithIndexRotationPeriod(ElasticsearchIndexRotationPeriod&& value) { SetIndexRotationPeriod(value); return *this;}
+    inline ElasticsearchDestinationUpdate& WithIndexRotationPeriod(ElasticsearchIndexRotationPeriod&& value) { SetIndexRotationPeriod(std::move(value)); return *this;}
 
     /**
      * <p>The buffering options. If no value is specified,
@@ -305,7 +306,7 @@ namespace Model
      * <p>The buffering options. If no value is specified,
      * <b>ElasticsearchBufferingHints</b> object default values are used. </p>
      */
-    inline void SetBufferingHints(ElasticsearchBufferingHints&& value) { m_bufferingHintsHasBeenSet = true; m_bufferingHints = value; }
+    inline void SetBufferingHints(ElasticsearchBufferingHints&& value) { m_bufferingHintsHasBeenSet = true; m_bufferingHints = std::move(value); }
 
     /**
      * <p>The buffering options. If no value is specified,
@@ -317,7 +318,7 @@ namespace Model
      * <p>The buffering options. If no value is specified,
      * <b>ElasticsearchBufferingHints</b> object default values are used. </p>
      */
-    inline ElasticsearchDestinationUpdate& WithBufferingHints(ElasticsearchBufferingHints&& value) { SetBufferingHints(value); return *this;}
+    inline ElasticsearchDestinationUpdate& WithBufferingHints(ElasticsearchBufferingHints&& value) { SetBufferingHints(std::move(value)); return *this;}
 
     /**
      * <p>The retry behavior in the event that Firehose is unable to deliver documents
@@ -335,7 +336,7 @@ namespace Model
      * <p>The retry behavior in the event that Firehose is unable to deliver documents
      * to Amazon ES. Default value is 300 (5 minutes).</p>
      */
-    inline void SetRetryOptions(ElasticsearchRetryOptions&& value) { m_retryOptionsHasBeenSet = true; m_retryOptions = value; }
+    inline void SetRetryOptions(ElasticsearchRetryOptions&& value) { m_retryOptionsHasBeenSet = true; m_retryOptions = std::move(value); }
 
     /**
      * <p>The retry behavior in the event that Firehose is unable to deliver documents
@@ -347,7 +348,7 @@ namespace Model
      * <p>The retry behavior in the event that Firehose is unable to deliver documents
      * to Amazon ES. Default value is 300 (5 minutes).</p>
      */
-    inline ElasticsearchDestinationUpdate& WithRetryOptions(ElasticsearchRetryOptions&& value) { SetRetryOptions(value); return *this;}
+    inline ElasticsearchDestinationUpdate& WithRetryOptions(ElasticsearchRetryOptions&& value) { SetRetryOptions(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon S3 destination.</p>
@@ -362,7 +363,7 @@ namespace Model
     /**
      * <p>The Amazon S3 destination.</p>
      */
-    inline void SetS3Update(S3DestinationUpdate&& value) { m_s3UpdateHasBeenSet = true; m_s3Update = value; }
+    inline void SetS3Update(S3DestinationUpdate&& value) { m_s3UpdateHasBeenSet = true; m_s3Update = std::move(value); }
 
     /**
      * <p>The Amazon S3 destination.</p>
@@ -372,7 +373,7 @@ namespace Model
     /**
      * <p>The Amazon S3 destination.</p>
      */
-    inline ElasticsearchDestinationUpdate& WithS3Update(S3DestinationUpdate&& value) { SetS3Update(value); return *this;}
+    inline ElasticsearchDestinationUpdate& WithS3Update(S3DestinationUpdate&& value) { SetS3Update(std::move(value)); return *this;}
 
     /**
      * <p>The data processing configuration.</p>
@@ -387,7 +388,7 @@ namespace Model
     /**
      * <p>The data processing configuration.</p>
      */
-    inline void SetProcessingConfiguration(ProcessingConfiguration&& value) { m_processingConfigurationHasBeenSet = true; m_processingConfiguration = value; }
+    inline void SetProcessingConfiguration(ProcessingConfiguration&& value) { m_processingConfigurationHasBeenSet = true; m_processingConfiguration = std::move(value); }
 
     /**
      * <p>The data processing configuration.</p>
@@ -397,7 +398,7 @@ namespace Model
     /**
      * <p>The data processing configuration.</p>
      */
-    inline ElasticsearchDestinationUpdate& WithProcessingConfiguration(ProcessingConfiguration&& value) { SetProcessingConfiguration(value); return *this;}
+    inline ElasticsearchDestinationUpdate& WithProcessingConfiguration(ProcessingConfiguration&& value) { SetProcessingConfiguration(std::move(value)); return *this;}
 
     /**
      * <p>The CloudWatch logging options for your delivery stream.</p>
@@ -412,7 +413,7 @@ namespace Model
     /**
      * <p>The CloudWatch logging options for your delivery stream.</p>
      */
-    inline void SetCloudWatchLoggingOptions(CloudWatchLoggingOptions&& value) { m_cloudWatchLoggingOptionsHasBeenSet = true; m_cloudWatchLoggingOptions = value; }
+    inline void SetCloudWatchLoggingOptions(CloudWatchLoggingOptions&& value) { m_cloudWatchLoggingOptionsHasBeenSet = true; m_cloudWatchLoggingOptions = std::move(value); }
 
     /**
      * <p>The CloudWatch logging options for your delivery stream.</p>
@@ -422,7 +423,7 @@ namespace Model
     /**
      * <p>The CloudWatch logging options for your delivery stream.</p>
      */
-    inline ElasticsearchDestinationUpdate& WithCloudWatchLoggingOptions(CloudWatchLoggingOptions&& value) { SetCloudWatchLoggingOptions(value); return *this;}
+    inline ElasticsearchDestinationUpdate& WithCloudWatchLoggingOptions(CloudWatchLoggingOptions&& value) { SetCloudWatchLoggingOptions(std::move(value)); return *this;}
 
   private:
     Aws::String m_roleARN;

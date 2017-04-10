@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/elastictranscoder/ElasticTranscoder_EXPORTS.h>
 #include <aws/elastictranscoder/model/Preset.h>
+#include <utility>
 
 namespace Aws
 {
@@ -60,7 +61,7 @@ namespace Model
      * <p>A section of the response body that provides information about the
      * preset.</p>
      */
-    inline void SetPreset(Preset&& value) { m_preset = value; }
+    inline void SetPreset(Preset&& value) { m_preset = std::move(value); }
 
     /**
      * <p>A section of the response body that provides information about the
@@ -72,7 +73,7 @@ namespace Model
      * <p>A section of the response body that provides information about the
      * preset.</p>
      */
-    inline ReadPresetResult& WithPreset(Preset&& value) { SetPreset(value); return *this;}
+    inline ReadPresetResult& WithPreset(Preset&& value) { SetPreset(std::move(value)); return *this;}
 
   private:
     Preset m_preset;

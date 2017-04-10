@@ -17,6 +17,7 @@
 #include <aws/dynamodb/model/AttributeValue.h>
 #include <aws/dynamodb/model/ComparisonOperator.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <utility>
 
 namespace Aws
 {
@@ -88,7 +89,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.NamingRulesDataTypes.html#HowItWorks.DataTypes">Data
      * Types</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
-    inline void SetValue(AttributeValue&& value) { m_valueHasBeenSet = true; m_value = value; }
+    inline void SetValue(AttributeValue&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
 
     /**
      * <p>Represents the data for the expected attribute.</p> <p>Each attribute value
@@ -106,7 +107,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.NamingRulesDataTypes.html#HowItWorks.DataTypes">Data
      * Types</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
-    inline ExpectedAttributeValue& WithValue(AttributeValue&& value) { SetValue(value); return *this;}
+    inline ExpectedAttributeValue& WithValue(AttributeValue&& value) { SetValue(std::move(value)); return *this;}
 
     /**
      * <p>Causes DynamoDB to evaluate the value before attempting a conditional
@@ -505,7 +506,7 @@ namespace Model
      * <code>{"N":"6"}</code> does not compare to <code>{"NS":["6", "2", "1"]}</code>
      * </p> </li> </ul>
      */
-    inline void SetComparisonOperator(ComparisonOperator&& value) { m_comparisonOperatorHasBeenSet = true; m_comparisonOperator = value; }
+    inline void SetComparisonOperator(ComparisonOperator&& value) { m_comparisonOperatorHasBeenSet = true; m_comparisonOperator = std::move(value); }
 
     /**
      * <p>A comparator for evaluating attributes in the
@@ -723,7 +724,7 @@ namespace Model
      * <code>{"N":"6"}</code> does not compare to <code>{"NS":["6", "2", "1"]}</code>
      * </p> </li> </ul>
      */
-    inline ExpectedAttributeValue& WithComparisonOperator(ComparisonOperator&& value) { SetComparisonOperator(value); return *this;}
+    inline ExpectedAttributeValue& WithComparisonOperator(ComparisonOperator&& value) { SetComparisonOperator(std::move(value)); return *this;}
 
     /**
      * <p>One or more values to evaluate against the supplied attribute. The number of
@@ -771,7 +772,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataFormat.html">JSON
      * Data Format</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
-    inline void SetAttributeValueList(Aws::Vector<AttributeValue>&& value) { m_attributeValueListHasBeenSet = true; m_attributeValueList = value; }
+    inline void SetAttributeValueList(Aws::Vector<AttributeValue>&& value) { m_attributeValueListHasBeenSet = true; m_attributeValueList = std::move(value); }
 
     /**
      * <p>One or more values to evaluate against the supplied attribute. The number of
@@ -803,7 +804,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataFormat.html">JSON
      * Data Format</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
-    inline ExpectedAttributeValue& WithAttributeValueList(Aws::Vector<AttributeValue>&& value) { SetAttributeValueList(value); return *this;}
+    inline ExpectedAttributeValue& WithAttributeValueList(Aws::Vector<AttributeValue>&& value) { SetAttributeValueList(std::move(value)); return *this;}
 
     /**
      * <p>One or more values to evaluate against the supplied attribute. The number of
@@ -835,7 +836,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataFormat.html">JSON
      * Data Format</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
-    inline ExpectedAttributeValue& AddAttributeValueList(AttributeValue&& value) { m_attributeValueListHasBeenSet = true; m_attributeValueList.push_back(value); return *this; }
+    inline ExpectedAttributeValue& AddAttributeValueList(AttributeValue&& value) { m_attributeValueListHasBeenSet = true; m_attributeValueList.push_back(std::move(value)); return *this; }
 
   private:
     AttributeValue m_value;

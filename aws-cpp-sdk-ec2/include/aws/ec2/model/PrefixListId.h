@@ -16,6 +16,7 @@
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -59,7 +60,7 @@ namespace Model
     /**
      * <p>The ID of the prefix.</p>
      */
-    inline void SetPrefixListId(Aws::String&& value) { m_prefixListIdHasBeenSet = true; m_prefixListId = value; }
+    inline void SetPrefixListId(Aws::String&& value) { m_prefixListIdHasBeenSet = true; m_prefixListId = std::move(value); }
 
     /**
      * <p>The ID of the prefix.</p>
@@ -74,7 +75,7 @@ namespace Model
     /**
      * <p>The ID of the prefix.</p>
      */
-    inline PrefixListId& WithPrefixListId(Aws::String&& value) { SetPrefixListId(value); return *this;}
+    inline PrefixListId& WithPrefixListId(Aws::String&& value) { SetPrefixListId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the prefix.</p>

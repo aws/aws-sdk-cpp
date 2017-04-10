@@ -16,6 +16,7 @@
 #include <aws/appstream/AppStream_EXPORTS.h>
 #include <aws/appstream/AppStreamRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -48,7 +49,7 @@ namespace Model
     /**
      * <p>The name displayed to end users on the AppStream 2.0 portal.</p>
      */
-    inline void SetDisplayName(Aws::String&& value) { m_displayNameHasBeenSet = true; m_displayName = value; }
+    inline void SetDisplayName(Aws::String&& value) { m_displayNameHasBeenSet = true; m_displayName = std::move(value); }
 
     /**
      * <p>The name displayed to end users on the AppStream 2.0 portal.</p>
@@ -63,7 +64,7 @@ namespace Model
     /**
      * <p>The name displayed to end users on the AppStream 2.0 portal.</p>
      */
-    inline UpdateStackRequest& WithDisplayName(Aws::String&& value) { SetDisplayName(value); return *this;}
+    inline UpdateStackRequest& WithDisplayName(Aws::String&& value) { SetDisplayName(std::move(value)); return *this;}
 
     /**
      * <p>The name displayed to end users on the AppStream 2.0 portal.</p>
@@ -83,7 +84,7 @@ namespace Model
     /**
      * <p>The description displayed to end users on the AppStream 2.0 portal.</p>
      */
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = value; }
+    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
      * <p>The description displayed to end users on the AppStream 2.0 portal.</p>
@@ -98,7 +99,7 @@ namespace Model
     /**
      * <p>The description displayed to end users on the AppStream 2.0 portal.</p>
      */
-    inline UpdateStackRequest& WithDescription(Aws::String&& value) { SetDescription(value); return *this;}
+    inline UpdateStackRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
      * <p>The description displayed to end users on the AppStream 2.0 portal.</p>
@@ -118,7 +119,7 @@ namespace Model
     /**
      * <p>The name of the stack to update.</p>
      */
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p>The name of the stack to update.</p>
@@ -133,7 +134,7 @@ namespace Model
     /**
      * <p>The name of the stack to update.</p>
      */
-    inline UpdateStackRequest& WithName(Aws::String&& value) { SetName(value); return *this;}
+    inline UpdateStackRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the stack to update.</p>

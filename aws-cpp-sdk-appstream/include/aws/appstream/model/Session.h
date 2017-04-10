@@ -16,6 +16,7 @@
 #include <aws/appstream/AppStream_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/appstream/model/SessionState.h>
+#include <utility>
 
 namespace Aws
 {
@@ -58,7 +59,7 @@ namespace Model
     /**
      * <p>The unique ID for a streaming session.</p>
      */
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = value; }
+    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
 
     /**
      * <p>The unique ID for a streaming session.</p>
@@ -73,7 +74,7 @@ namespace Model
     /**
      * <p>The unique ID for a streaming session.</p>
      */
-    inline Session& WithId(Aws::String&& value) { SetId(value); return *this;}
+    inline Session& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
 
     /**
      * <p>The unique ID for a streaming session.</p>
@@ -93,7 +94,7 @@ namespace Model
     /**
      * <p>The identifier of the user for whom the session was created.</p>
      */
-    inline void SetUserId(Aws::String&& value) { m_userIdHasBeenSet = true; m_userId = value; }
+    inline void SetUserId(Aws::String&& value) { m_userIdHasBeenSet = true; m_userId = std::move(value); }
 
     /**
      * <p>The identifier of the user for whom the session was created.</p>
@@ -108,7 +109,7 @@ namespace Model
     /**
      * <p>The identifier of the user for whom the session was created.</p>
      */
-    inline Session& WithUserId(Aws::String&& value) { SetUserId(value); return *this;}
+    inline Session& WithUserId(Aws::String&& value) { SetUserId(std::move(value)); return *this;}
 
     /**
      * <p>The identifier of the user for whom the session was created.</p>
@@ -128,7 +129,7 @@ namespace Model
     /**
      * <p>The name of the stack for which the streaming session was created.</p>
      */
-    inline void SetStackName(Aws::String&& value) { m_stackNameHasBeenSet = true; m_stackName = value; }
+    inline void SetStackName(Aws::String&& value) { m_stackNameHasBeenSet = true; m_stackName = std::move(value); }
 
     /**
      * <p>The name of the stack for which the streaming session was created.</p>
@@ -143,7 +144,7 @@ namespace Model
     /**
      * <p>The name of the stack for which the streaming session was created.</p>
      */
-    inline Session& WithStackName(Aws::String&& value) { SetStackName(value); return *this;}
+    inline Session& WithStackName(Aws::String&& value) { SetStackName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the stack for which the streaming session was created.</p>
@@ -163,7 +164,7 @@ namespace Model
     /**
      * <p>The name of the fleet for which the streaming session was created.</p>
      */
-    inline void SetFleetName(Aws::String&& value) { m_fleetNameHasBeenSet = true; m_fleetName = value; }
+    inline void SetFleetName(Aws::String&& value) { m_fleetNameHasBeenSet = true; m_fleetName = std::move(value); }
 
     /**
      * <p>The name of the fleet for which the streaming session was created.</p>
@@ -178,7 +179,7 @@ namespace Model
     /**
      * <p>The name of the fleet for which the streaming session was created.</p>
      */
-    inline Session& WithFleetName(Aws::String&& value) { SetFleetName(value); return *this;}
+    inline Session& WithFleetName(Aws::String&& value) { SetFleetName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the fleet for which the streaming session was created.</p>
@@ -198,7 +199,7 @@ namespace Model
     /**
      * <p>The current state of the streaming session.</p>
      */
-    inline void SetState(SessionState&& value) { m_stateHasBeenSet = true; m_state = value; }
+    inline void SetState(SessionState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
 
     /**
      * <p>The current state of the streaming session.</p>
@@ -208,7 +209,7 @@ namespace Model
     /**
      * <p>The current state of the streaming session.</p>
      */
-    inline Session& WithState(SessionState&& value) { SetState(value); return *this;}
+    inline Session& WithState(SessionState&& value) { SetState(std::move(value)); return *this;}
 
   private:
     Aws::String m_id;

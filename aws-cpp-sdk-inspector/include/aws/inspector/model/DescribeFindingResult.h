@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/inspector/Inspector_EXPORTS.h>
 #include <aws/inspector/model/Finding.h>
+#include <utility>
 
 namespace Aws
 {
@@ -52,7 +53,7 @@ namespace Model
     /**
      * <p>Information about the finding.</p>
      */
-    inline void SetFinding(Finding&& value) { m_finding = value; }
+    inline void SetFinding(Finding&& value) { m_finding = std::move(value); }
 
     /**
      * <p>Information about the finding.</p>
@@ -62,7 +63,7 @@ namespace Model
     /**
      * <p>Information about the finding.</p>
      */
-    inline DescribeFindingResult& WithFinding(Finding&& value) { SetFinding(value); return *this;}
+    inline DescribeFindingResult& WithFinding(Finding&& value) { SetFinding(std::move(value)); return *this;}
 
   private:
     Finding m_finding;

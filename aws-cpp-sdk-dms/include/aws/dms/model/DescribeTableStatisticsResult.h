@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/dms/model/TableStatistics.h>
+#include <utility>
 
 namespace Aws
 {
@@ -59,7 +60,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the replication task.</p>
      */
-    inline void SetReplicationTaskArn(Aws::String&& value) { m_replicationTaskArn = value; }
+    inline void SetReplicationTaskArn(Aws::String&& value) { m_replicationTaskArn = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the replication task.</p>
@@ -74,7 +75,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the replication task.</p>
      */
-    inline DescribeTableStatisticsResult& WithReplicationTaskArn(Aws::String&& value) { SetReplicationTaskArn(value); return *this;}
+    inline DescribeTableStatisticsResult& WithReplicationTaskArn(Aws::String&& value) { SetReplicationTaskArn(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the replication task.</p>
@@ -94,7 +95,7 @@ namespace Model
     /**
      * <p>The table statistics.</p>
      */
-    inline void SetTableStatistics(Aws::Vector<TableStatistics>&& value) { m_tableStatistics = value; }
+    inline void SetTableStatistics(Aws::Vector<TableStatistics>&& value) { m_tableStatistics = std::move(value); }
 
     /**
      * <p>The table statistics.</p>
@@ -104,7 +105,7 @@ namespace Model
     /**
      * <p>The table statistics.</p>
      */
-    inline DescribeTableStatisticsResult& WithTableStatistics(Aws::Vector<TableStatistics>&& value) { SetTableStatistics(value); return *this;}
+    inline DescribeTableStatisticsResult& WithTableStatistics(Aws::Vector<TableStatistics>&& value) { SetTableStatistics(std::move(value)); return *this;}
 
     /**
      * <p>The table statistics.</p>
@@ -114,7 +115,7 @@ namespace Model
     /**
      * <p>The table statistics.</p>
      */
-    inline DescribeTableStatisticsResult& AddTableStatistics(TableStatistics&& value) { m_tableStatistics.push_back(value); return *this; }
+    inline DescribeTableStatisticsResult& AddTableStatistics(TableStatistics&& value) { m_tableStatistics.push_back(std::move(value)); return *this; }
 
     /**
      * <p> An optional pagination token provided by a previous request. If this
@@ -135,7 +136,7 @@ namespace Model
      * parameter is specified, the response includes only records beyond the marker, up
      * to the value specified by <code>MaxRecords</code>. </p>
      */
-    inline void SetMarker(Aws::String&& value) { m_marker = value; }
+    inline void SetMarker(Aws::String&& value) { m_marker = std::move(value); }
 
     /**
      * <p> An optional pagination token provided by a previous request. If this
@@ -156,7 +157,7 @@ namespace Model
      * parameter is specified, the response includes only records beyond the marker, up
      * to the value specified by <code>MaxRecords</code>. </p>
      */
-    inline DescribeTableStatisticsResult& WithMarker(Aws::String&& value) { SetMarker(value); return *this;}
+    inline DescribeTableStatisticsResult& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
 
     /**
      * <p> An optional pagination token provided by a previous request. If this

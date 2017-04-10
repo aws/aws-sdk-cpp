@@ -16,6 +16,7 @@
 #include <aws/firehose/Firehose_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/firehose/model/PutRecordBatchResponseEntry.h>
+#include <utility>
 
 namespace Aws
 {
@@ -71,7 +72,7 @@ namespace Model
      * <p>The results array. For each record, the index of the response element is the
      * same as the index used in the request array.</p>
      */
-    inline void SetRequestResponses(Aws::Vector<PutRecordBatchResponseEntry>&& value) { m_requestResponses = value; }
+    inline void SetRequestResponses(Aws::Vector<PutRecordBatchResponseEntry>&& value) { m_requestResponses = std::move(value); }
 
     /**
      * <p>The results array. For each record, the index of the response element is the
@@ -83,7 +84,7 @@ namespace Model
      * <p>The results array. For each record, the index of the response element is the
      * same as the index used in the request array.</p>
      */
-    inline PutRecordBatchResult& WithRequestResponses(Aws::Vector<PutRecordBatchResponseEntry>&& value) { SetRequestResponses(value); return *this;}
+    inline PutRecordBatchResult& WithRequestResponses(Aws::Vector<PutRecordBatchResponseEntry>&& value) { SetRequestResponses(std::move(value)); return *this;}
 
     /**
      * <p>The results array. For each record, the index of the response element is the
@@ -95,7 +96,7 @@ namespace Model
      * <p>The results array. For each record, the index of the response element is the
      * same as the index used in the request array.</p>
      */
-    inline PutRecordBatchResult& AddRequestResponses(PutRecordBatchResponseEntry&& value) { m_requestResponses.push_back(value); return *this; }
+    inline PutRecordBatchResult& AddRequestResponses(PutRecordBatchResponseEntry&& value) { m_requestResponses.push_back(std::move(value)); return *this; }
 
   private:
     int m_failedPutCount;

@@ -20,6 +20,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/email/model/ExtensionField.h>
+#include <utility>
 
 namespace Aws
 {
@@ -91,7 +92,7 @@ namespace Model
      * address with <code>rfc 822;</code>, as described in <a
      * href="https://tools.ietf.org/html/rfc3798">RFC 3798</a>.</p> </note>
      */
-    inline void SetFinalRecipient(Aws::String&& value) { m_finalRecipientHasBeenSet = true; m_finalRecipient = value; }
+    inline void SetFinalRecipient(Aws::String&& value) { m_finalRecipientHasBeenSet = true; m_finalRecipient = std::move(value); }
 
     /**
      * <p>The email address to which the message was ultimately delivered. This
@@ -130,7 +131,7 @@ namespace Model
      * address with <code>rfc 822;</code>, as described in <a
      * href="https://tools.ietf.org/html/rfc3798">RFC 3798</a>.</p> </note>
      */
-    inline RecipientDsnFields& WithFinalRecipient(Aws::String&& value) { SetFinalRecipient(value); return *this;}
+    inline RecipientDsnFields& WithFinalRecipient(Aws::String&& value) { SetFinalRecipient(std::move(value)); return *this;}
 
     /**
      * <p>The email address to which the message was ultimately delivered. This
@@ -164,7 +165,7 @@ namespace Model
      * of its attempt to deliver the message to the recipient address. This is required
      * by <a href="https://tools.ietf.org/html/rfc3464">RFC 3464</a>.</p>
      */
-    inline void SetAction(DsnAction&& value) { m_actionHasBeenSet = true; m_action = value; }
+    inline void SetAction(DsnAction&& value) { m_actionHasBeenSet = true; m_action = std::move(value); }
 
     /**
      * <p>The action performed by the reporting mail transfer agent (MTA) as a result
@@ -178,7 +179,7 @@ namespace Model
      * of its attempt to deliver the message to the recipient address. This is required
      * by <a href="https://tools.ietf.org/html/rfc3464">RFC 3464</a>.</p>
      */
-    inline RecipientDsnFields& WithAction(DsnAction&& value) { SetAction(value); return *this;}
+    inline RecipientDsnFields& WithAction(DsnAction&& value) { SetAction(std::move(value)); return *this;}
 
     /**
      * <p>The MTA to which the remote MTA attempted to deliver the message, formatted
@@ -202,7 +203,7 @@ namespace Model
      * (<code>mta-name-type; mta-name</code>). This parameter typically applies only to
      * propagating synchronous bounces.</p>
      */
-    inline void SetRemoteMta(Aws::String&& value) { m_remoteMtaHasBeenSet = true; m_remoteMta = value; }
+    inline void SetRemoteMta(Aws::String&& value) { m_remoteMtaHasBeenSet = true; m_remoteMta = std::move(value); }
 
     /**
      * <p>The MTA to which the remote MTA attempted to deliver the message, formatted
@@ -226,7 +227,7 @@ namespace Model
      * (<code>mta-name-type; mta-name</code>). This parameter typically applies only to
      * propagating synchronous bounces.</p>
      */
-    inline RecipientDsnFields& WithRemoteMta(Aws::String&& value) { SetRemoteMta(value); return *this;}
+    inline RecipientDsnFields& WithRemoteMta(Aws::String&& value) { SetRemoteMta(std::move(value)); return *this;}
 
     /**
      * <p>The MTA to which the remote MTA attempted to deliver the message, formatted
@@ -252,7 +253,7 @@ namespace Model
      * <p>The status code that indicates what went wrong. This is required by <a
      * href="https://tools.ietf.org/html/rfc3464">RFC 3464</a>.</p>
      */
-    inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = value; }
+    inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
      * <p>The status code that indicates what went wrong. This is required by <a
@@ -270,7 +271,7 @@ namespace Model
      * <p>The status code that indicates what went wrong. This is required by <a
      * href="https://tools.ietf.org/html/rfc3464">RFC 3464</a>.</p>
      */
-    inline RecipientDsnFields& WithStatus(Aws::String&& value) { SetStatus(value); return *this;}
+    inline RecipientDsnFields& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
 
     /**
      * <p>The status code that indicates what went wrong. This is required by <a
@@ -297,7 +298,7 @@ namespace Model
      * See <a href="https://tools.ietf.org/html/rfc3463">RFC 3463</a> for the correct
      * formatting of this parameter.</p>
      */
-    inline void SetDiagnosticCode(Aws::String&& value) { m_diagnosticCodeHasBeenSet = true; m_diagnosticCode = value; }
+    inline void SetDiagnosticCode(Aws::String&& value) { m_diagnosticCodeHasBeenSet = true; m_diagnosticCode = std::move(value); }
 
     /**
      * <p>An extended explanation of what went wrong; this is usually an SMTP response.
@@ -318,7 +319,7 @@ namespace Model
      * See <a href="https://tools.ietf.org/html/rfc3463">RFC 3463</a> for the correct
      * formatting of this parameter.</p>
      */
-    inline RecipientDsnFields& WithDiagnosticCode(Aws::String&& value) { SetDiagnosticCode(value); return *this;}
+    inline RecipientDsnFields& WithDiagnosticCode(Aws::String&& value) { SetDiagnosticCode(std::move(value)); return *this;}
 
     /**
      * <p>An extended explanation of what went wrong; this is usually an SMTP response.
@@ -343,7 +344,7 @@ namespace Model
      * <p>The time the final delivery attempt was made, in <a
      * href="https://www.ietf.org/rfc/rfc0822.txt">RFC 822</a> date-time format.</p>
      */
-    inline void SetLastAttemptDate(Aws::Utils::DateTime&& value) { m_lastAttemptDateHasBeenSet = true; m_lastAttemptDate = value; }
+    inline void SetLastAttemptDate(Aws::Utils::DateTime&& value) { m_lastAttemptDateHasBeenSet = true; m_lastAttemptDate = std::move(value); }
 
     /**
      * <p>The time the final delivery attempt was made, in <a
@@ -355,7 +356,7 @@ namespace Model
      * <p>The time the final delivery attempt was made, in <a
      * href="https://www.ietf.org/rfc/rfc0822.txt">RFC 822</a> date-time format.</p>
      */
-    inline RecipientDsnFields& WithLastAttemptDate(Aws::Utils::DateTime&& value) { SetLastAttemptDate(value); return *this;}
+    inline RecipientDsnFields& WithLastAttemptDate(Aws::Utils::DateTime&& value) { SetLastAttemptDate(std::move(value)); return *this;}
 
     /**
      * <p>Additional X-headers to include in the DSN.</p>
@@ -370,7 +371,7 @@ namespace Model
     /**
      * <p>Additional X-headers to include in the DSN.</p>
      */
-    inline void SetExtensionFields(Aws::Vector<ExtensionField>&& value) { m_extensionFieldsHasBeenSet = true; m_extensionFields = value; }
+    inline void SetExtensionFields(Aws::Vector<ExtensionField>&& value) { m_extensionFieldsHasBeenSet = true; m_extensionFields = std::move(value); }
 
     /**
      * <p>Additional X-headers to include in the DSN.</p>
@@ -380,7 +381,7 @@ namespace Model
     /**
      * <p>Additional X-headers to include in the DSN.</p>
      */
-    inline RecipientDsnFields& WithExtensionFields(Aws::Vector<ExtensionField>&& value) { SetExtensionFields(value); return *this;}
+    inline RecipientDsnFields& WithExtensionFields(Aws::Vector<ExtensionField>&& value) { SetExtensionFields(std::move(value)); return *this;}
 
     /**
      * <p>Additional X-headers to include in the DSN.</p>
@@ -390,7 +391,7 @@ namespace Model
     /**
      * <p>Additional X-headers to include in the DSN.</p>
      */
-    inline RecipientDsnFields& AddExtensionFields(ExtensionField&& value) { m_extensionFieldsHasBeenSet = true; m_extensionFields.push_back(value); return *this; }
+    inline RecipientDsnFields& AddExtensionFields(ExtensionField&& value) { m_extensionFieldsHasBeenSet = true; m_extensionFields.push_back(std::move(value)); return *this; }
 
   private:
     Aws::String m_finalRecipient;

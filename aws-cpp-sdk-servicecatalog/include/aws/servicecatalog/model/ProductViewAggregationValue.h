@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/servicecatalog/ServiceCatalog_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -57,7 +58,7 @@ namespace Model
     /**
      * <p>The value of the product view aggregation.</p>
      */
-    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = value; }
+    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
 
     /**
      * <p>The value of the product view aggregation.</p>
@@ -72,7 +73,7 @@ namespace Model
     /**
      * <p>The value of the product view aggregation.</p>
      */
-    inline ProductViewAggregationValue& WithValue(Aws::String&& value) { SetValue(value); return *this;}
+    inline ProductViewAggregationValue& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
 
     /**
      * <p>The value of the product view aggregation.</p>

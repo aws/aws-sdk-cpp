@@ -16,6 +16,7 @@
 #include <aws/ecs/ECS_EXPORTS.h>
 #include <aws/ecs/ECSRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -51,7 +52,7 @@ namespace Model
      * <p>The short name or full Amazon Resource Name (ARN) of the cluster to
      * delete.</p>
      */
-    inline void SetCluster(Aws::String&& value) { m_clusterHasBeenSet = true; m_cluster = value; }
+    inline void SetCluster(Aws::String&& value) { m_clusterHasBeenSet = true; m_cluster = std::move(value); }
 
     /**
      * <p>The short name or full Amazon Resource Name (ARN) of the cluster to
@@ -69,7 +70,7 @@ namespace Model
      * <p>The short name or full Amazon Resource Name (ARN) of the cluster to
      * delete.</p>
      */
-    inline DeleteClusterRequest& WithCluster(Aws::String&& value) { SetCluster(value); return *this;}
+    inline DeleteClusterRequest& WithCluster(Aws::String&& value) { SetCluster(std::move(value)); return *this;}
 
     /**
      * <p>The short name or full Amazon Resource Name (ARN) of the cluster to

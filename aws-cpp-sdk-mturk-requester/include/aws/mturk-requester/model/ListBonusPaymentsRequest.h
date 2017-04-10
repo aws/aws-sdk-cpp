@@ -16,6 +16,7 @@
 #include <aws/mturk-requester/MTurk_EXPORTS.h>
 #include <aws/mturk-requester/MTurkRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -57,7 +58,7 @@ namespace Model
      * returned. Either the HITId parameter or the AssignmentId parameter must be
      * specified</p>
      */
-    inline void SetHITId(Aws::String&& value) { m_hITIdHasBeenSet = true; m_hITId = value; }
+    inline void SetHITId(Aws::String&& value) { m_hITIdHasBeenSet = true; m_hITId = std::move(value); }
 
     /**
      * <p>The ID of the HIT associated with the bonus payments to retrieve. If not
@@ -81,7 +82,7 @@ namespace Model
      * returned. Either the HITId parameter or the AssignmentId parameter must be
      * specified</p>
      */
-    inline ListBonusPaymentsRequest& WithHITId(Aws::String&& value) { SetHITId(value); return *this;}
+    inline ListBonusPaymentsRequest& WithHITId(Aws::String&& value) { SetHITId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the HIT associated with the bonus payments to retrieve. If not
@@ -110,7 +111,7 @@ namespace Model
      * specified, only bonus payments for the given assignment are returned. Either the
      * HITId parameter or the AssignmentId parameter must be specified</p>
      */
-    inline void SetAssignmentId(Aws::String&& value) { m_assignmentIdHasBeenSet = true; m_assignmentId = value; }
+    inline void SetAssignmentId(Aws::String&& value) { m_assignmentIdHasBeenSet = true; m_assignmentId = std::move(value); }
 
     /**
      * <p>The ID of the assignment associated with the bonus payments to retrieve. If
@@ -131,7 +132,7 @@ namespace Model
      * specified, only bonus payments for the given assignment are returned. Either the
      * HITId parameter or the AssignmentId parameter must be specified</p>
      */
-    inline ListBonusPaymentsRequest& WithAssignmentId(Aws::String&& value) { SetAssignmentId(value); return *this;}
+    inline ListBonusPaymentsRequest& WithAssignmentId(Aws::String&& value) { SetAssignmentId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the assignment associated with the bonus payments to retrieve. If
@@ -153,7 +154,7 @@ namespace Model
     /**
      * <p>Pagination token</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
      * <p>Pagination token</p>
@@ -168,7 +169,7 @@ namespace Model
     /**
      * <p>Pagination token</p>
      */
-    inline ListBonusPaymentsRequest& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline ListBonusPaymentsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>Pagination token</p>

@@ -17,6 +17,7 @@
 #include <aws/clouddirectory/CloudDirectoryRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/clouddirectory/model/ObjectReference.h>
+#include <utility>
 
 namespace Aws
 {
@@ -49,7 +50,7 @@ namespace Model
     /**
      * <p>The ARN of the directory to which the parent path applies.</p>
      */
-    inline void SetDirectoryArn(Aws::String&& value) { m_directoryArnHasBeenSet = true; m_directoryArn = value; }
+    inline void SetDirectoryArn(Aws::String&& value) { m_directoryArnHasBeenSet = true; m_directoryArn = std::move(value); }
 
     /**
      * <p>The ARN of the directory to which the parent path applies.</p>
@@ -64,7 +65,7 @@ namespace Model
     /**
      * <p>The ARN of the directory to which the parent path applies.</p>
      */
-    inline ListObjectParentPathsRequest& WithDirectoryArn(Aws::String&& value) { SetDirectoryArn(value); return *this;}
+    inline ListObjectParentPathsRequest& WithDirectoryArn(Aws::String&& value) { SetDirectoryArn(std::move(value)); return *this;}
 
     /**
      * <p>The ARN of the directory to which the parent path applies.</p>
@@ -84,7 +85,7 @@ namespace Model
     /**
      * <p>Reference that identifies the object whose parent paths are listed.</p>
      */
-    inline void SetObjectReference(ObjectReference&& value) { m_objectReferenceHasBeenSet = true; m_objectReference = value; }
+    inline void SetObjectReference(ObjectReference&& value) { m_objectReferenceHasBeenSet = true; m_objectReference = std::move(value); }
 
     /**
      * <p>Reference that identifies the object whose parent paths are listed.</p>
@@ -94,7 +95,7 @@ namespace Model
     /**
      * <p>Reference that identifies the object whose parent paths are listed.</p>
      */
-    inline ListObjectParentPathsRequest& WithObjectReference(ObjectReference&& value) { SetObjectReference(value); return *this;}
+    inline ListObjectParentPathsRequest& WithObjectReference(ObjectReference&& value) { SetObjectReference(std::move(value)); return *this;}
 
     /**
      * <p>The pagination token.</p>
@@ -109,7 +110,7 @@ namespace Model
     /**
      * <p>The pagination token.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
      * <p>The pagination token.</p>
@@ -124,7 +125,7 @@ namespace Model
     /**
      * <p>The pagination token.</p>
      */
-    inline ListObjectParentPathsRequest& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline ListObjectParentPathsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>The pagination token.</p>

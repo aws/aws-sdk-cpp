@@ -16,6 +16,7 @@
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/ResponseMetadata.h>
+#include <utility>
 
 namespace Aws
 {
@@ -58,7 +59,7 @@ namespace Model
     /**
      * <p>The name of the key pair.</p>
      */
-    inline void SetKeyName(Aws::String&& value) { m_keyName = value; }
+    inline void SetKeyName(Aws::String&& value) { m_keyName = std::move(value); }
 
     /**
      * <p>The name of the key pair.</p>
@@ -73,7 +74,7 @@ namespace Model
     /**
      * <p>The name of the key pair.</p>
      */
-    inline CreateKeyPairResponse& WithKeyName(Aws::String&& value) { SetKeyName(value); return *this;}
+    inline CreateKeyPairResponse& WithKeyName(Aws::String&& value) { SetKeyName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the key pair.</p>
@@ -93,7 +94,7 @@ namespace Model
     /**
      * <p>The SHA-1 digest of the DER encoded private key.</p>
      */
-    inline void SetKeyFingerprint(Aws::String&& value) { m_keyFingerprint = value; }
+    inline void SetKeyFingerprint(Aws::String&& value) { m_keyFingerprint = std::move(value); }
 
     /**
      * <p>The SHA-1 digest of the DER encoded private key.</p>
@@ -108,7 +109,7 @@ namespace Model
     /**
      * <p>The SHA-1 digest of the DER encoded private key.</p>
      */
-    inline CreateKeyPairResponse& WithKeyFingerprint(Aws::String&& value) { SetKeyFingerprint(value); return *this;}
+    inline CreateKeyPairResponse& WithKeyFingerprint(Aws::String&& value) { SetKeyFingerprint(std::move(value)); return *this;}
 
     /**
      * <p>The SHA-1 digest of the DER encoded private key.</p>
@@ -128,7 +129,7 @@ namespace Model
     /**
      * <p>An unencrypted PEM encoded RSA private key.</p>
      */
-    inline void SetKeyMaterial(Aws::String&& value) { m_keyMaterial = value; }
+    inline void SetKeyMaterial(Aws::String&& value) { m_keyMaterial = std::move(value); }
 
     /**
      * <p>An unencrypted PEM encoded RSA private key.</p>
@@ -143,7 +144,7 @@ namespace Model
     /**
      * <p>An unencrypted PEM encoded RSA private key.</p>
      */
-    inline CreateKeyPairResponse& WithKeyMaterial(Aws::String&& value) { SetKeyMaterial(value); return *this;}
+    inline CreateKeyPairResponse& WithKeyMaterial(Aws::String&& value) { SetKeyMaterial(std::move(value)); return *this;}
 
     /**
      * <p>An unencrypted PEM encoded RSA private key.</p>
@@ -157,13 +158,13 @@ namespace Model
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
 
     
     inline CreateKeyPairResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
 
     
-    inline CreateKeyPairResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
+    inline CreateKeyPairResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
     Aws::String m_keyName;

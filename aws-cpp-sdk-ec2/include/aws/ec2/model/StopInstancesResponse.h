@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ec2/model/ResponseMetadata.h>
 #include <aws/ec2/model/InstanceStateChange.h>
+#include <utility>
 
 namespace Aws
 {
@@ -59,7 +60,7 @@ namespace Model
     /**
      * <p>Information about one or more stopped instances.</p>
      */
-    inline void SetStoppingInstances(Aws::Vector<InstanceStateChange>&& value) { m_stoppingInstances = value; }
+    inline void SetStoppingInstances(Aws::Vector<InstanceStateChange>&& value) { m_stoppingInstances = std::move(value); }
 
     /**
      * <p>Information about one or more stopped instances.</p>
@@ -69,7 +70,7 @@ namespace Model
     /**
      * <p>Information about one or more stopped instances.</p>
      */
-    inline StopInstancesResponse& WithStoppingInstances(Aws::Vector<InstanceStateChange>&& value) { SetStoppingInstances(value); return *this;}
+    inline StopInstancesResponse& WithStoppingInstances(Aws::Vector<InstanceStateChange>&& value) { SetStoppingInstances(std::move(value)); return *this;}
 
     /**
      * <p>Information about one or more stopped instances.</p>
@@ -79,7 +80,7 @@ namespace Model
     /**
      * <p>Information about one or more stopped instances.</p>
      */
-    inline StopInstancesResponse& AddStoppingInstances(InstanceStateChange&& value) { m_stoppingInstances.push_back(value); return *this; }
+    inline StopInstancesResponse& AddStoppingInstances(InstanceStateChange&& value) { m_stoppingInstances.push_back(std::move(value)); return *this; }
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
@@ -88,13 +89,13 @@ namespace Model
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
 
     
     inline StopInstancesResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
 
     
-    inline StopInstancesResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
+    inline StopInstancesResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
     Aws::Vector<InstanceStateChange> m_stoppingInstances;

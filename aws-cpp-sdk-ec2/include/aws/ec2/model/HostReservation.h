@@ -21,6 +21,7 @@
 #include <aws/ec2/model/CurrencyCodeValues.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/ec2/model/ReservationState.h>
+#include <utility>
 
 namespace Aws
 {
@@ -65,7 +66,7 @@ namespace Model
     /**
      * <p>The ID of the reservation that specifies the associated Dedicated Hosts.</p>
      */
-    inline void SetHostReservationId(Aws::String&& value) { m_hostReservationIdHasBeenSet = true; m_hostReservationId = value; }
+    inline void SetHostReservationId(Aws::String&& value) { m_hostReservationIdHasBeenSet = true; m_hostReservationId = std::move(value); }
 
     /**
      * <p>The ID of the reservation that specifies the associated Dedicated Hosts.</p>
@@ -80,7 +81,7 @@ namespace Model
     /**
      * <p>The ID of the reservation that specifies the associated Dedicated Hosts.</p>
      */
-    inline HostReservation& WithHostReservationId(Aws::String&& value) { SetHostReservationId(value); return *this;}
+    inline HostReservation& WithHostReservationId(Aws::String&& value) { SetHostReservationId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the reservation that specifies the associated Dedicated Hosts.</p>
@@ -100,7 +101,7 @@ namespace Model
     /**
      * <p>The IDs of the Dedicated Hosts associated with the reservation.</p>
      */
-    inline void SetHostIdSet(Aws::Vector<Aws::String>&& value) { m_hostIdSetHasBeenSet = true; m_hostIdSet = value; }
+    inline void SetHostIdSet(Aws::Vector<Aws::String>&& value) { m_hostIdSetHasBeenSet = true; m_hostIdSet = std::move(value); }
 
     /**
      * <p>The IDs of the Dedicated Hosts associated with the reservation.</p>
@@ -110,7 +111,7 @@ namespace Model
     /**
      * <p>The IDs of the Dedicated Hosts associated with the reservation.</p>
      */
-    inline HostReservation& WithHostIdSet(Aws::Vector<Aws::String>&& value) { SetHostIdSet(value); return *this;}
+    inline HostReservation& WithHostIdSet(Aws::Vector<Aws::String>&& value) { SetHostIdSet(std::move(value)); return *this;}
 
     /**
      * <p>The IDs of the Dedicated Hosts associated with the reservation.</p>
@@ -120,7 +121,7 @@ namespace Model
     /**
      * <p>The IDs of the Dedicated Hosts associated with the reservation.</p>
      */
-    inline HostReservation& AddHostIdSet(Aws::String&& value) { m_hostIdSetHasBeenSet = true; m_hostIdSet.push_back(value); return *this; }
+    inline HostReservation& AddHostIdSet(Aws::String&& value) { m_hostIdSetHasBeenSet = true; m_hostIdSet.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The IDs of the Dedicated Hosts associated with the reservation.</p>
@@ -143,7 +144,7 @@ namespace Model
      * <p>The ID of the reservation. This remains the same regardless of which
      * Dedicated Hosts are associated with it.</p>
      */
-    inline void SetOfferingId(Aws::String&& value) { m_offeringIdHasBeenSet = true; m_offeringId = value; }
+    inline void SetOfferingId(Aws::String&& value) { m_offeringIdHasBeenSet = true; m_offeringId = std::move(value); }
 
     /**
      * <p>The ID of the reservation. This remains the same regardless of which
@@ -161,7 +162,7 @@ namespace Model
      * <p>The ID of the reservation. This remains the same regardless of which
      * Dedicated Hosts are associated with it.</p>
      */
-    inline HostReservation& WithOfferingId(Aws::String&& value) { SetOfferingId(value); return *this;}
+    inline HostReservation& WithOfferingId(Aws::String&& value) { SetOfferingId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the reservation. This remains the same regardless of which
@@ -188,7 +189,7 @@ namespace Model
      * the Dedicated Host must be the same in order for it to benefit from the
      * reservation.</p>
      */
-    inline void SetInstanceFamily(Aws::String&& value) { m_instanceFamilyHasBeenSet = true; m_instanceFamily = value; }
+    inline void SetInstanceFamily(Aws::String&& value) { m_instanceFamilyHasBeenSet = true; m_instanceFamily = std::move(value); }
 
     /**
      * <p>The instance family of the Dedicated Host Reservation. The instance family on
@@ -209,7 +210,7 @@ namespace Model
      * the Dedicated Host must be the same in order for it to benefit from the
      * reservation.</p>
      */
-    inline HostReservation& WithInstanceFamily(Aws::String&& value) { SetInstanceFamily(value); return *this;}
+    inline HostReservation& WithInstanceFamily(Aws::String&& value) { SetInstanceFamily(std::move(value)); return *this;}
 
     /**
      * <p>The instance family of the Dedicated Host Reservation. The instance family on
@@ -231,7 +232,7 @@ namespace Model
     /**
      * <p>The payment option selected for this reservation.</p>
      */
-    inline void SetPaymentOption(PaymentOption&& value) { m_paymentOptionHasBeenSet = true; m_paymentOption = value; }
+    inline void SetPaymentOption(PaymentOption&& value) { m_paymentOptionHasBeenSet = true; m_paymentOption = std::move(value); }
 
     /**
      * <p>The payment option selected for this reservation.</p>
@@ -241,7 +242,7 @@ namespace Model
     /**
      * <p>The payment option selected for this reservation.</p>
      */
-    inline HostReservation& WithPaymentOption(PaymentOption&& value) { SetPaymentOption(value); return *this;}
+    inline HostReservation& WithPaymentOption(PaymentOption&& value) { SetPaymentOption(std::move(value)); return *this;}
 
     /**
      * <p>The hourly price of the reservation.</p>
@@ -256,7 +257,7 @@ namespace Model
     /**
      * <p>The hourly price of the reservation.</p>
      */
-    inline void SetHourlyPrice(Aws::String&& value) { m_hourlyPriceHasBeenSet = true; m_hourlyPrice = value; }
+    inline void SetHourlyPrice(Aws::String&& value) { m_hourlyPriceHasBeenSet = true; m_hourlyPrice = std::move(value); }
 
     /**
      * <p>The hourly price of the reservation.</p>
@@ -271,7 +272,7 @@ namespace Model
     /**
      * <p>The hourly price of the reservation.</p>
      */
-    inline HostReservation& WithHourlyPrice(Aws::String&& value) { SetHourlyPrice(value); return *this;}
+    inline HostReservation& WithHourlyPrice(Aws::String&& value) { SetHourlyPrice(std::move(value)); return *this;}
 
     /**
      * <p>The hourly price of the reservation.</p>
@@ -291,7 +292,7 @@ namespace Model
     /**
      * <p>The upfront price of the reservation.</p>
      */
-    inline void SetUpfrontPrice(Aws::String&& value) { m_upfrontPriceHasBeenSet = true; m_upfrontPrice = value; }
+    inline void SetUpfrontPrice(Aws::String&& value) { m_upfrontPriceHasBeenSet = true; m_upfrontPrice = std::move(value); }
 
     /**
      * <p>The upfront price of the reservation.</p>
@@ -306,7 +307,7 @@ namespace Model
     /**
      * <p>The upfront price of the reservation.</p>
      */
-    inline HostReservation& WithUpfrontPrice(Aws::String&& value) { SetUpfrontPrice(value); return *this;}
+    inline HostReservation& WithUpfrontPrice(Aws::String&& value) { SetUpfrontPrice(std::move(value)); return *this;}
 
     /**
      * <p>The upfront price of the reservation.</p>
@@ -332,7 +333,7 @@ namespace Model
      * <code>hourlyPrice</code> amounts are specified. At this time, the only supported
      * currency is <code>USD</code>.</p>
      */
-    inline void SetCurrencyCode(CurrencyCodeValues&& value) { m_currencyCodeHasBeenSet = true; m_currencyCode = value; }
+    inline void SetCurrencyCode(CurrencyCodeValues&& value) { m_currencyCodeHasBeenSet = true; m_currencyCode = std::move(value); }
 
     /**
      * <p>The currency in which the <code>upfrontPrice</code> and
@@ -346,7 +347,7 @@ namespace Model
      * <code>hourlyPrice</code> amounts are specified. At this time, the only supported
      * currency is <code>USD</code>.</p>
      */
-    inline HostReservation& WithCurrencyCode(CurrencyCodeValues&& value) { SetCurrencyCode(value); return *this;}
+    inline HostReservation& WithCurrencyCode(CurrencyCodeValues&& value) { SetCurrencyCode(std::move(value)); return *this;}
 
     /**
      * <p>The number of Dedicated Hosts the reservation is associated with.</p>
@@ -394,7 +395,7 @@ namespace Model
     /**
      * <p>The date and time that the reservation ends.</p>
      */
-    inline void SetEnd(Aws::Utils::DateTime&& value) { m_endHasBeenSet = true; m_end = value; }
+    inline void SetEnd(Aws::Utils::DateTime&& value) { m_endHasBeenSet = true; m_end = std::move(value); }
 
     /**
      * <p>The date and time that the reservation ends.</p>
@@ -404,7 +405,7 @@ namespace Model
     /**
      * <p>The date and time that the reservation ends.</p>
      */
-    inline HostReservation& WithEnd(Aws::Utils::DateTime&& value) { SetEnd(value); return *this;}
+    inline HostReservation& WithEnd(Aws::Utils::DateTime&& value) { SetEnd(std::move(value)); return *this;}
 
     /**
      * <p>The date and time that the reservation started.</p>
@@ -419,7 +420,7 @@ namespace Model
     /**
      * <p>The date and time that the reservation started.</p>
      */
-    inline void SetStart(Aws::Utils::DateTime&& value) { m_startHasBeenSet = true; m_start = value; }
+    inline void SetStart(Aws::Utils::DateTime&& value) { m_startHasBeenSet = true; m_start = std::move(value); }
 
     /**
      * <p>The date and time that the reservation started.</p>
@@ -429,7 +430,7 @@ namespace Model
     /**
      * <p>The date and time that the reservation started.</p>
      */
-    inline HostReservation& WithStart(Aws::Utils::DateTime&& value) { SetStart(value); return *this;}
+    inline HostReservation& WithStart(Aws::Utils::DateTime&& value) { SetStart(std::move(value)); return *this;}
 
     /**
      * <p>The state of the reservation.</p>
@@ -444,7 +445,7 @@ namespace Model
     /**
      * <p>The state of the reservation.</p>
      */
-    inline void SetState(ReservationState&& value) { m_stateHasBeenSet = true; m_state = value; }
+    inline void SetState(ReservationState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
 
     /**
      * <p>The state of the reservation.</p>
@@ -454,7 +455,7 @@ namespace Model
     /**
      * <p>The state of the reservation.</p>
      */
-    inline HostReservation& WithState(ReservationState&& value) { SetState(value); return *this;}
+    inline HostReservation& WithState(ReservationState&& value) { SetState(std::move(value)); return *this;}
 
   private:
     Aws::String m_hostReservationId;

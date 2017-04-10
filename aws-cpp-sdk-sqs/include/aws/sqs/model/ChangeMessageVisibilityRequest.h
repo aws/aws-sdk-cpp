@@ -16,6 +16,7 @@
 #include <aws/sqs/SQS_EXPORTS.h>
 #include <aws/sqs/SQSRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -53,7 +54,7 @@ namespace Model
      * <p>The URL of the Amazon SQS queue whose message's visibility is changed.</p>
      * <p>Queue URLs are case-sensitive.</p>
      */
-    inline void SetQueueUrl(Aws::String&& value) { m_queueUrlHasBeenSet = true; m_queueUrl = value; }
+    inline void SetQueueUrl(Aws::String&& value) { m_queueUrlHasBeenSet = true; m_queueUrl = std::move(value); }
 
     /**
      * <p>The URL of the Amazon SQS queue whose message's visibility is changed.</p>
@@ -71,7 +72,7 @@ namespace Model
      * <p>The URL of the Amazon SQS queue whose message's visibility is changed.</p>
      * <p>Queue URLs are case-sensitive.</p>
      */
-    inline ChangeMessageVisibilityRequest& WithQueueUrl(Aws::String&& value) { SetQueueUrl(value); return *this;}
+    inline ChangeMessageVisibilityRequest& WithQueueUrl(Aws::String&& value) { SetQueueUrl(std::move(value)); return *this;}
 
     /**
      * <p>The URL of the Amazon SQS queue whose message's visibility is changed.</p>
@@ -98,7 +99,7 @@ namespace Model
      * changed. This parameter is returned by the <code> <a>ReceiveMessage</a> </code>
      * action.</p>
      */
-    inline void SetReceiptHandle(Aws::String&& value) { m_receiptHandleHasBeenSet = true; m_receiptHandle = value; }
+    inline void SetReceiptHandle(Aws::String&& value) { m_receiptHandleHasBeenSet = true; m_receiptHandle = std::move(value); }
 
     /**
      * <p>The receipt handle associated with the message whose visibility timeout is
@@ -119,7 +120,7 @@ namespace Model
      * changed. This parameter is returned by the <code> <a>ReceiveMessage</a> </code>
      * action.</p>
      */
-    inline ChangeMessageVisibilityRequest& WithReceiptHandle(Aws::String&& value) { SetReceiptHandle(value); return *this;}
+    inline ChangeMessageVisibilityRequest& WithReceiptHandle(Aws::String&& value) { SetReceiptHandle(std::move(value)); return *this;}
 
     /**
      * <p>The receipt handle associated with the message whose visibility timeout is

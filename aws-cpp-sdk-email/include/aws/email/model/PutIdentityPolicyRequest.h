@@ -16,6 +16,7 @@
 #include <aws/email/SES_EXPORTS.h>
 #include <aws/email/SESRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -69,7 +70,7 @@ namespace Model
      * <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.</p> <p>To
      * successfully call this API, you must own the identity.</p>
      */
-    inline void SetIdentity(Aws::String&& value) { m_identityHasBeenSet = true; m_identity = value; }
+    inline void SetIdentity(Aws::String&& value) { m_identityHasBeenSet = true; m_identity = std::move(value); }
 
     /**
      * <p>The identity to which the policy will apply. You can specify an identity by
@@ -96,7 +97,7 @@ namespace Model
      * <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.</p> <p>To
      * successfully call this API, you must own the identity.</p>
      */
-    inline PutIdentityPolicyRequest& WithIdentity(Aws::String&& value) { SetIdentity(value); return *this;}
+    inline PutIdentityPolicyRequest& WithIdentity(Aws::String&& value) { SetIdentity(std::move(value)); return *this;}
 
     /**
      * <p>The identity to which the policy will apply. You can specify an identity by
@@ -123,7 +124,7 @@ namespace Model
      * <p>The name of the policy.</p> <p>The policy name cannot exceed 64 characters
      * and can only include alphanumeric characters, dashes, and underscores.</p>
      */
-    inline void SetPolicyName(Aws::String&& value) { m_policyNameHasBeenSet = true; m_policyName = value; }
+    inline void SetPolicyName(Aws::String&& value) { m_policyNameHasBeenSet = true; m_policyName = std::move(value); }
 
     /**
      * <p>The name of the policy.</p> <p>The policy name cannot exceed 64 characters
@@ -141,7 +142,7 @@ namespace Model
      * <p>The name of the policy.</p> <p>The policy name cannot exceed 64 characters
      * and can only include alphanumeric characters, dashes, and underscores.</p>
      */
-    inline PutIdentityPolicyRequest& WithPolicyName(Aws::String&& value) { SetPolicyName(value); return *this;}
+    inline PutIdentityPolicyRequest& WithPolicyName(Aws::String&& value) { SetPolicyName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the policy.</p> <p>The policy name cannot exceed 64 characters
@@ -174,7 +175,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-policies.html">Amazon
      * SES Developer Guide</a>. </p>
      */
-    inline void SetPolicy(Aws::String&& value) { m_policyHasBeenSet = true; m_policy = value; }
+    inline void SetPolicy(Aws::String&& value) { m_policyHasBeenSet = true; m_policy = std::move(value); }
 
     /**
      * <p>The text of the policy in JSON format. The policy cannot exceed 4 KB.</p>
@@ -201,7 +202,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-policies.html">Amazon
      * SES Developer Guide</a>. </p>
      */
-    inline PutIdentityPolicyRequest& WithPolicy(Aws::String&& value) { SetPolicy(value); return *this;}
+    inline PutIdentityPolicyRequest& WithPolicy(Aws::String&& value) { SetPolicy(std::move(value)); return *this;}
 
     /**
      * <p>The text of the policy in JSON format. The policy cannot exceed 4 KB.</p>

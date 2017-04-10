@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/swf/model/DomainInfo.h>
+#include <utility>
 
 namespace Aws
 {
@@ -60,7 +61,7 @@ namespace Model
     /**
      * <p>A list of DomainInfo structures.</p>
      */
-    inline void SetDomainInfos(Aws::Vector<DomainInfo>&& value) { m_domainInfos = value; }
+    inline void SetDomainInfos(Aws::Vector<DomainInfo>&& value) { m_domainInfos = std::move(value); }
 
     /**
      * <p>A list of DomainInfo structures.</p>
@@ -70,7 +71,7 @@ namespace Model
     /**
      * <p>A list of DomainInfo structures.</p>
      */
-    inline ListDomainsResult& WithDomainInfos(Aws::Vector<DomainInfo>&& value) { SetDomainInfos(value); return *this;}
+    inline ListDomainsResult& WithDomainInfos(Aws::Vector<DomainInfo>&& value) { SetDomainInfos(std::move(value)); return *this;}
 
     /**
      * <p>A list of DomainInfo structures.</p>
@@ -80,7 +81,7 @@ namespace Model
     /**
      * <p>A list of DomainInfo structures.</p>
      */
-    inline ListDomainsResult& AddDomainInfos(DomainInfo&& value) { m_domainInfos.push_back(value); return *this; }
+    inline ListDomainsResult& AddDomainInfos(DomainInfo&& value) { m_domainInfos.push_back(std::move(value)); return *this; }
 
     /**
      * <p>If a <code>NextPageToken</code> was returned by a previous call, there are
@@ -107,7 +108,7 @@ namespace Model
      * arguments unchanged.</p> <p>The configured <code>maximumPageSize</code>
      * determines how many results can be returned in a single call.</p>
      */
-    inline void SetNextPageToken(Aws::String&& value) { m_nextPageToken = value; }
+    inline void SetNextPageToken(Aws::String&& value) { m_nextPageToken = std::move(value); }
 
     /**
      * <p>If a <code>NextPageToken</code> was returned by a previous call, there are
@@ -134,7 +135,7 @@ namespace Model
      * arguments unchanged.</p> <p>The configured <code>maximumPageSize</code>
      * determines how many results can be returned in a single call.</p>
      */
-    inline ListDomainsResult& WithNextPageToken(Aws::String&& value) { SetNextPageToken(value); return *this;}
+    inline ListDomainsResult& WithNextPageToken(Aws::String&& value) { SetNextPageToken(std::move(value)); return *this;}
 
     /**
      * <p>If a <code>NextPageToken</code> was returned by a previous call, there are

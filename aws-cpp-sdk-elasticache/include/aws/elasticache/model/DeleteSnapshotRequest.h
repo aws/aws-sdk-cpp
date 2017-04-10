@@ -16,6 +16,7 @@
 #include <aws/elasticache/ElastiCache_EXPORTS.h>
 #include <aws/elasticache/ElastiCacheRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -54,7 +55,7 @@ namespace Model
     /**
      * <p>The name of the snapshot to be deleted.</p>
      */
-    inline void SetSnapshotName(Aws::String&& value) { m_snapshotNameHasBeenSet = true; m_snapshotName = value; }
+    inline void SetSnapshotName(Aws::String&& value) { m_snapshotNameHasBeenSet = true; m_snapshotName = std::move(value); }
 
     /**
      * <p>The name of the snapshot to be deleted.</p>
@@ -69,7 +70,7 @@ namespace Model
     /**
      * <p>The name of the snapshot to be deleted.</p>
      */
-    inline DeleteSnapshotRequest& WithSnapshotName(Aws::String&& value) { SetSnapshotName(value); return *this;}
+    inline DeleteSnapshotRequest& WithSnapshotName(Aws::String&& value) { SetSnapshotName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the snapshot to be deleted.</p>

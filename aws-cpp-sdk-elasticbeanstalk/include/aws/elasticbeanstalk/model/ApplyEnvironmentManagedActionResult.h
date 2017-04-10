@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/elasticbeanstalk/model/ActionType.h>
 #include <aws/elasticbeanstalk/model/ResponseMetadata.h>
+#include <utility>
 
 namespace Aws
 {
@@ -60,7 +61,7 @@ namespace Model
     /**
      * <p>The action ID of the managed action.</p>
      */
-    inline void SetActionId(Aws::String&& value) { m_actionId = value; }
+    inline void SetActionId(Aws::String&& value) { m_actionId = std::move(value); }
 
     /**
      * <p>The action ID of the managed action.</p>
@@ -75,7 +76,7 @@ namespace Model
     /**
      * <p>The action ID of the managed action.</p>
      */
-    inline ApplyEnvironmentManagedActionResult& WithActionId(Aws::String&& value) { SetActionId(value); return *this;}
+    inline ApplyEnvironmentManagedActionResult& WithActionId(Aws::String&& value) { SetActionId(std::move(value)); return *this;}
 
     /**
      * <p>The action ID of the managed action.</p>
@@ -95,7 +96,7 @@ namespace Model
     /**
      * <p>A description of the managed action.</p>
      */
-    inline void SetActionDescription(Aws::String&& value) { m_actionDescription = value; }
+    inline void SetActionDescription(Aws::String&& value) { m_actionDescription = std::move(value); }
 
     /**
      * <p>A description of the managed action.</p>
@@ -110,7 +111,7 @@ namespace Model
     /**
      * <p>A description of the managed action.</p>
      */
-    inline ApplyEnvironmentManagedActionResult& WithActionDescription(Aws::String&& value) { SetActionDescription(value); return *this;}
+    inline ApplyEnvironmentManagedActionResult& WithActionDescription(Aws::String&& value) { SetActionDescription(std::move(value)); return *this;}
 
     /**
      * <p>A description of the managed action.</p>
@@ -130,7 +131,7 @@ namespace Model
     /**
      * <p>The type of managed action.</p>
      */
-    inline void SetActionType(ActionType&& value) { m_actionType = value; }
+    inline void SetActionType(ActionType&& value) { m_actionType = std::move(value); }
 
     /**
      * <p>The type of managed action.</p>
@@ -140,7 +141,7 @@ namespace Model
     /**
      * <p>The type of managed action.</p>
      */
-    inline ApplyEnvironmentManagedActionResult& WithActionType(ActionType&& value) { SetActionType(value); return *this;}
+    inline ApplyEnvironmentManagedActionResult& WithActionType(ActionType&& value) { SetActionType(std::move(value)); return *this;}
 
     /**
      * <p>The status of the managed action.</p>
@@ -155,7 +156,7 @@ namespace Model
     /**
      * <p>The status of the managed action.</p>
      */
-    inline void SetStatus(Aws::String&& value) { m_status = value; }
+    inline void SetStatus(Aws::String&& value) { m_status = std::move(value); }
 
     /**
      * <p>The status of the managed action.</p>
@@ -170,7 +171,7 @@ namespace Model
     /**
      * <p>The status of the managed action.</p>
      */
-    inline ApplyEnvironmentManagedActionResult& WithStatus(Aws::String&& value) { SetStatus(value); return *this;}
+    inline ApplyEnvironmentManagedActionResult& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
 
     /**
      * <p>The status of the managed action.</p>
@@ -184,13 +185,13 @@ namespace Model
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
 
     
     inline ApplyEnvironmentManagedActionResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
 
     
-    inline ApplyEnvironmentManagedActionResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
+    inline ApplyEnvironmentManagedActionResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
     Aws::String m_actionId;

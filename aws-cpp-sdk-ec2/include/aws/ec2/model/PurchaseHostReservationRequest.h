@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ec2/model/CurrencyCodeValues.h>
+#include <utility>
 
 namespace Aws
 {
@@ -52,7 +53,7 @@ namespace Model
     /**
      * <p>The ID of the offering.</p>
      */
-    inline void SetOfferingId(Aws::String&& value) { m_offeringIdHasBeenSet = true; m_offeringId = value; }
+    inline void SetOfferingId(Aws::String&& value) { m_offeringIdHasBeenSet = true; m_offeringId = std::move(value); }
 
     /**
      * <p>The ID of the offering.</p>
@@ -67,7 +68,7 @@ namespace Model
     /**
      * <p>The ID of the offering.</p>
      */
-    inline PurchaseHostReservationRequest& WithOfferingId(Aws::String&& value) { SetOfferingId(value); return *this;}
+    inline PurchaseHostReservationRequest& WithOfferingId(Aws::String&& value) { SetOfferingId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the offering.</p>
@@ -90,7 +91,7 @@ namespace Model
      * <p>The ID/s of the Dedicated Host/s that the reservation will be associated
      * with.</p>
      */
-    inline void SetHostIdSet(Aws::Vector<Aws::String>&& value) { m_hostIdSetHasBeenSet = true; m_hostIdSet = value; }
+    inline void SetHostIdSet(Aws::Vector<Aws::String>&& value) { m_hostIdSetHasBeenSet = true; m_hostIdSet = std::move(value); }
 
     /**
      * <p>The ID/s of the Dedicated Host/s that the reservation will be associated
@@ -102,7 +103,7 @@ namespace Model
      * <p>The ID/s of the Dedicated Host/s that the reservation will be associated
      * with.</p>
      */
-    inline PurchaseHostReservationRequest& WithHostIdSet(Aws::Vector<Aws::String>&& value) { SetHostIdSet(value); return *this;}
+    inline PurchaseHostReservationRequest& WithHostIdSet(Aws::Vector<Aws::String>&& value) { SetHostIdSet(std::move(value)); return *this;}
 
     /**
      * <p>The ID/s of the Dedicated Host/s that the reservation will be associated
@@ -114,7 +115,7 @@ namespace Model
      * <p>The ID/s of the Dedicated Host/s that the reservation will be associated
      * with.</p>
      */
-    inline PurchaseHostReservationRequest& AddHostIdSet(Aws::String&& value) { m_hostIdSetHasBeenSet = true; m_hostIdSet.push_back(value); return *this; }
+    inline PurchaseHostReservationRequest& AddHostIdSet(Aws::String&& value) { m_hostIdSetHasBeenSet = true; m_hostIdSet.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The ID/s of the Dedicated Host/s that the reservation will be associated
@@ -153,7 +154,7 @@ namespace Model
      * is <code>USD</code>. For example, to indicate a limit price of USD 100, specify
      * 100.00.</p>
      */
-    inline void SetLimitPrice(Aws::String&& value) { m_limitPriceHasBeenSet = true; m_limitPrice = value; }
+    inline void SetLimitPrice(Aws::String&& value) { m_limitPriceHasBeenSet = true; m_limitPrice = std::move(value); }
 
     /**
      * <p>The specified limit is checked against the total upfront cost of the
@@ -186,7 +187,7 @@ namespace Model
      * is <code>USD</code>. For example, to indicate a limit price of USD 100, specify
      * 100.00.</p>
      */
-    inline PurchaseHostReservationRequest& WithLimitPrice(Aws::String&& value) { SetLimitPrice(value); return *this;}
+    inline PurchaseHostReservationRequest& WithLimitPrice(Aws::String&& value) { SetLimitPrice(std::move(value)); return *this;}
 
     /**
      * <p>The specified limit is checked against the total upfront cost of the
@@ -218,7 +219,7 @@ namespace Model
      * <code>LimitPrice</code>, and <code>totalHourlyPrice</code> amounts are
      * specified. At this time, the only supported currency is <code>USD</code>.</p>
      */
-    inline void SetCurrencyCode(CurrencyCodeValues&& value) { m_currencyCodeHasBeenSet = true; m_currencyCode = value; }
+    inline void SetCurrencyCode(CurrencyCodeValues&& value) { m_currencyCodeHasBeenSet = true; m_currencyCode = std::move(value); }
 
     /**
      * <p>The currency in which the <code>totalUpfrontPrice</code>,
@@ -232,7 +233,7 @@ namespace Model
      * <code>LimitPrice</code>, and <code>totalHourlyPrice</code> amounts are
      * specified. At this time, the only supported currency is <code>USD</code>.</p>
      */
-    inline PurchaseHostReservationRequest& WithCurrencyCode(CurrencyCodeValues&& value) { SetCurrencyCode(value); return *this;}
+    inline PurchaseHostReservationRequest& WithCurrencyCode(CurrencyCodeValues&& value) { SetCurrencyCode(std::move(value)); return *this;}
 
     /**
      * <p>Unique, case-sensitive identifier you provide to ensure idempotency of the
@@ -259,7 +260,7 @@ namespace Model
      * to Ensure Idempotency</a> in the <i>Amazon Elastic Compute Cloud User
      * Guide</i>.</p>
      */
-    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
+    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
 
     /**
      * <p>Unique, case-sensitive identifier you provide to ensure idempotency of the
@@ -286,7 +287,7 @@ namespace Model
      * to Ensure Idempotency</a> in the <i>Amazon Elastic Compute Cloud User
      * Guide</i>.</p>
      */
-    inline PurchaseHostReservationRequest& WithClientToken(Aws::String&& value) { SetClientToken(value); return *this;}
+    inline PurchaseHostReservationRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
 
     /**
      * <p>Unique, case-sensitive identifier you provide to ensure idempotency of the

@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/storagegateway/StorageGateway_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -56,7 +57,7 @@ namespace Model
     inline void SetGatewayARN(const Aws::String& value) { m_gatewayARN = value; }
 
     
-    inline void SetGatewayARN(Aws::String&& value) { m_gatewayARN = value; }
+    inline void SetGatewayARN(Aws::String&& value) { m_gatewayARN = std::move(value); }
 
     
     inline void SetGatewayARN(const char* value) { m_gatewayARN.assign(value); }
@@ -65,7 +66,7 @@ namespace Model
     inline DescribeMaintenanceStartTimeResult& WithGatewayARN(const Aws::String& value) { SetGatewayARN(value); return *this;}
 
     
-    inline DescribeMaintenanceStartTimeResult& WithGatewayARN(Aws::String&& value) { SetGatewayARN(value); return *this;}
+    inline DescribeMaintenanceStartTimeResult& WithGatewayARN(Aws::String&& value) { SetGatewayARN(std::move(value)); return *this;}
 
     
     inline DescribeMaintenanceStartTimeResult& WithGatewayARN(const char* value) { SetGatewayARN(value); return *this;}
@@ -140,7 +141,7 @@ namespace Model
     inline void SetTimezone(const Aws::String& value) { m_timezone = value; }
 
     
-    inline void SetTimezone(Aws::String&& value) { m_timezone = value; }
+    inline void SetTimezone(Aws::String&& value) { m_timezone = std::move(value); }
 
     
     inline void SetTimezone(const char* value) { m_timezone.assign(value); }
@@ -149,7 +150,7 @@ namespace Model
     inline DescribeMaintenanceStartTimeResult& WithTimezone(const Aws::String& value) { SetTimezone(value); return *this;}
 
     
-    inline DescribeMaintenanceStartTimeResult& WithTimezone(Aws::String&& value) { SetTimezone(value); return *this;}
+    inline DescribeMaintenanceStartTimeResult& WithTimezone(Aws::String&& value) { SetTimezone(std::move(value)); return *this;}
 
     
     inline DescribeMaintenanceStartTimeResult& WithTimezone(const char* value) { SetTimezone(value); return *this;}

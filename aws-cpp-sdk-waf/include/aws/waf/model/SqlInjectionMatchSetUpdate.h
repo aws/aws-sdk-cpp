@@ -16,6 +16,7 @@
 #include <aws/waf/WAF_EXPORTS.h>
 #include <aws/waf/model/ChangeAction.h>
 #include <aws/waf/model/SqlInjectionMatchTuple.h>
+#include <utility>
 
 namespace Aws
 {
@@ -69,7 +70,7 @@ namespace Model
      * <code>SqlInjectionMatchSetUpdate</code> from a
      * <code>SqlInjectionMatchSet</code>.</p>
      */
-    inline void SetAction(ChangeAction&& value) { m_actionHasBeenSet = true; m_action = value; }
+    inline void SetAction(ChangeAction&& value) { m_actionHasBeenSet = true; m_action = std::move(value); }
 
     /**
      * <p>Specify <code>INSERT</code> to add a <a>SqlInjectionMatchSetUpdate</a> to a
@@ -85,7 +86,7 @@ namespace Model
      * <code>SqlInjectionMatchSetUpdate</code> from a
      * <code>SqlInjectionMatchSet</code>.</p>
      */
-    inline SqlInjectionMatchSetUpdate& WithAction(ChangeAction&& value) { SetAction(value); return *this;}
+    inline SqlInjectionMatchSetUpdate& WithAction(ChangeAction&& value) { SetAction(std::move(value)); return *this;}
 
     /**
      * <p>Specifies the part of a web request that you want AWS WAF to inspect for
@@ -106,7 +107,7 @@ namespace Model
      * snippets of malicious SQL code and, if you want AWS WAF to inspect a header, the
      * name of the header.</p>
      */
-    inline void SetSqlInjectionMatchTuple(SqlInjectionMatchTuple&& value) { m_sqlInjectionMatchTupleHasBeenSet = true; m_sqlInjectionMatchTuple = value; }
+    inline void SetSqlInjectionMatchTuple(SqlInjectionMatchTuple&& value) { m_sqlInjectionMatchTupleHasBeenSet = true; m_sqlInjectionMatchTuple = std::move(value); }
 
     /**
      * <p>Specifies the part of a web request that you want AWS WAF to inspect for
@@ -120,7 +121,7 @@ namespace Model
      * snippets of malicious SQL code and, if you want AWS WAF to inspect a header, the
      * name of the header.</p>
      */
-    inline SqlInjectionMatchSetUpdate& WithSqlInjectionMatchTuple(SqlInjectionMatchTuple&& value) { SetSqlInjectionMatchTuple(value); return *this;}
+    inline SqlInjectionMatchSetUpdate& WithSqlInjectionMatchTuple(SqlInjectionMatchTuple&& value) { SetSqlInjectionMatchTuple(std::move(value)); return *this;}
 
   private:
     ChangeAction m_action;

@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/codecommit/CodeCommit_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -57,7 +58,7 @@ namespace Model
     /**
      * <p>The name of the user who made the specified commit.</p>
      */
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p>The name of the user who made the specified commit.</p>
@@ -72,7 +73,7 @@ namespace Model
     /**
      * <p>The name of the user who made the specified commit.</p>
      */
-    inline UserInfo& WithName(Aws::String&& value) { SetName(value); return *this;}
+    inline UserInfo& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the user who made the specified commit.</p>
@@ -92,7 +93,7 @@ namespace Model
     /**
      * <p>The email address associated with the user who made the commit, if any.</p>
      */
-    inline void SetEmail(Aws::String&& value) { m_emailHasBeenSet = true; m_email = value; }
+    inline void SetEmail(Aws::String&& value) { m_emailHasBeenSet = true; m_email = std::move(value); }
 
     /**
      * <p>The email address associated with the user who made the commit, if any.</p>
@@ -107,7 +108,7 @@ namespace Model
     /**
      * <p>The email address associated with the user who made the commit, if any.</p>
      */
-    inline UserInfo& WithEmail(Aws::String&& value) { SetEmail(value); return *this;}
+    inline UserInfo& WithEmail(Aws::String&& value) { SetEmail(std::move(value)); return *this;}
 
     /**
      * <p>The email address associated with the user who made the commit, if any.</p>
@@ -127,7 +128,7 @@ namespace Model
     /**
      * <p>The date when the specified commit was pushed to the repository.</p>
      */
-    inline void SetDate(Aws::String&& value) { m_dateHasBeenSet = true; m_date = value; }
+    inline void SetDate(Aws::String&& value) { m_dateHasBeenSet = true; m_date = std::move(value); }
 
     /**
      * <p>The date when the specified commit was pushed to the repository.</p>
@@ -142,7 +143,7 @@ namespace Model
     /**
      * <p>The date when the specified commit was pushed to the repository.</p>
      */
-    inline UserInfo& WithDate(Aws::String&& value) { SetDate(value); return *this;}
+    inline UserInfo& WithDate(Aws::String&& value) { SetDate(std::move(value)); return *this;}
 
     /**
      * <p>The date when the specified commit was pushed to the repository.</p>

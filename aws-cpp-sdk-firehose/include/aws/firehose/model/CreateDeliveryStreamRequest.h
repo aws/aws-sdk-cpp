@@ -19,6 +19,7 @@
 #include <aws/firehose/model/ExtendedS3DestinationConfiguration.h>
 #include <aws/firehose/model/RedshiftDestinationConfiguration.h>
 #include <aws/firehose/model/ElasticsearchDestinationConfiguration.h>
+#include <utility>
 
 namespace Aws
 {
@@ -57,7 +58,7 @@ namespace Model
      * the same region. You can have multiple delivery streams with the same name if
      * they are in different accounts or different regions.</p>
      */
-    inline void SetDeliveryStreamName(Aws::String&& value) { m_deliveryStreamNameHasBeenSet = true; m_deliveryStreamName = value; }
+    inline void SetDeliveryStreamName(Aws::String&& value) { m_deliveryStreamNameHasBeenSet = true; m_deliveryStreamName = std::move(value); }
 
     /**
      * <p>The name of the delivery stream. This name must be unique per AWS account in
@@ -78,7 +79,7 @@ namespace Model
      * the same region. You can have multiple delivery streams with the same name if
      * they are in different accounts or different regions.</p>
      */
-    inline CreateDeliveryStreamRequest& WithDeliveryStreamName(Aws::String&& value) { SetDeliveryStreamName(value); return *this;}
+    inline CreateDeliveryStreamRequest& WithDeliveryStreamName(Aws::String&& value) { SetDeliveryStreamName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the delivery stream. This name must be unique per AWS account in
@@ -100,7 +101,7 @@ namespace Model
     /**
      * <p>The destination in Amazon S3. You can specify only one destination.</p>
      */
-    inline void SetExtendedS3DestinationConfiguration(ExtendedS3DestinationConfiguration&& value) { m_extendedS3DestinationConfigurationHasBeenSet = true; m_extendedS3DestinationConfiguration = value; }
+    inline void SetExtendedS3DestinationConfiguration(ExtendedS3DestinationConfiguration&& value) { m_extendedS3DestinationConfigurationHasBeenSet = true; m_extendedS3DestinationConfiguration = std::move(value); }
 
     /**
      * <p>The destination in Amazon S3. You can specify only one destination.</p>
@@ -110,7 +111,7 @@ namespace Model
     /**
      * <p>The destination in Amazon S3. You can specify only one destination.</p>
      */
-    inline CreateDeliveryStreamRequest& WithExtendedS3DestinationConfiguration(ExtendedS3DestinationConfiguration&& value) { SetExtendedS3DestinationConfiguration(value); return *this;}
+    inline CreateDeliveryStreamRequest& WithExtendedS3DestinationConfiguration(ExtendedS3DestinationConfiguration&& value) { SetExtendedS3DestinationConfiguration(std::move(value)); return *this;}
 
     /**
      * <p>The destination in Amazon Redshift. You can specify only one destination.</p>
@@ -125,7 +126,7 @@ namespace Model
     /**
      * <p>The destination in Amazon Redshift. You can specify only one destination.</p>
      */
-    inline void SetRedshiftDestinationConfiguration(RedshiftDestinationConfiguration&& value) { m_redshiftDestinationConfigurationHasBeenSet = true; m_redshiftDestinationConfiguration = value; }
+    inline void SetRedshiftDestinationConfiguration(RedshiftDestinationConfiguration&& value) { m_redshiftDestinationConfigurationHasBeenSet = true; m_redshiftDestinationConfiguration = std::move(value); }
 
     /**
      * <p>The destination in Amazon Redshift. You can specify only one destination.</p>
@@ -135,7 +136,7 @@ namespace Model
     /**
      * <p>The destination in Amazon Redshift. You can specify only one destination.</p>
      */
-    inline CreateDeliveryStreamRequest& WithRedshiftDestinationConfiguration(RedshiftDestinationConfiguration&& value) { SetRedshiftDestinationConfiguration(value); return *this;}
+    inline CreateDeliveryStreamRequest& WithRedshiftDestinationConfiguration(RedshiftDestinationConfiguration&& value) { SetRedshiftDestinationConfiguration(std::move(value)); return *this;}
 
     /**
      * <p>The destination in Amazon ES. You can specify only one destination.</p>
@@ -150,7 +151,7 @@ namespace Model
     /**
      * <p>The destination in Amazon ES. You can specify only one destination.</p>
      */
-    inline void SetElasticsearchDestinationConfiguration(ElasticsearchDestinationConfiguration&& value) { m_elasticsearchDestinationConfigurationHasBeenSet = true; m_elasticsearchDestinationConfiguration = value; }
+    inline void SetElasticsearchDestinationConfiguration(ElasticsearchDestinationConfiguration&& value) { m_elasticsearchDestinationConfigurationHasBeenSet = true; m_elasticsearchDestinationConfiguration = std::move(value); }
 
     /**
      * <p>The destination in Amazon ES. You can specify only one destination.</p>
@@ -160,7 +161,7 @@ namespace Model
     /**
      * <p>The destination in Amazon ES. You can specify only one destination.</p>
      */
-    inline CreateDeliveryStreamRequest& WithElasticsearchDestinationConfiguration(ElasticsearchDestinationConfiguration&& value) { SetElasticsearchDestinationConfiguration(value); return *this;}
+    inline CreateDeliveryStreamRequest& WithElasticsearchDestinationConfiguration(ElasticsearchDestinationConfiguration&& value) { SetElasticsearchDestinationConfiguration(std::move(value)); return *this;}
 
   private:
     Aws::String m_deliveryStreamName;

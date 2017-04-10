@@ -16,6 +16,7 @@
 #include <aws/organizations/Organizations_EXPORTS.h>
 #include <aws/organizations/OrganizationsRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -60,7 +61,7 @@ namespace Model
      * pattern</a> for a policy ID string requires "p-" followed by from 8 to 128
      * lower-case letters or digits.</p>
      */
-    inline void SetPolicyId(Aws::String&& value) { m_policyIdHasBeenSet = true; m_policyId = value; }
+    inline void SetPolicyId(Aws::String&& value) { m_policyIdHasBeenSet = true; m_policyId = std::move(value); }
 
     /**
      * <p>The unique identifier (ID) of the policy that you want to attach to the
@@ -87,7 +88,7 @@ namespace Model
      * pattern</a> for a policy ID string requires "p-" followed by from 8 to 128
      * lower-case letters or digits.</p>
      */
-    inline AttachPolicyRequest& WithPolicyId(Aws::String&& value) { SetPolicyId(value); return *this;}
+    inline AttachPolicyRequest& WithPolicyId(Aws::String&& value) { SetPolicyId(std::move(value)); return *this;}
 
     /**
      * <p>The unique identifier (ID) of the policy that you want to attach to the
@@ -141,7 +142,7 @@ namespace Model
      * followed by a second "-" dash and from 8 to 32 additional lower-case letters or
      * digits.</p> </li> </ul>
      */
-    inline void SetTargetId(Aws::String&& value) { m_targetIdHasBeenSet = true; m_targetId = value; }
+    inline void SetTargetId(Aws::String&& value) { m_targetIdHasBeenSet = true; m_targetId = std::move(value); }
 
     /**
      * <p>The unique identifier (ID) of the root, OU, or account that you want to
@@ -186,7 +187,7 @@ namespace Model
      * followed by a second "-" dash and from 8 to 32 additional lower-case letters or
      * digits.</p> </li> </ul>
      */
-    inline AttachPolicyRequest& WithTargetId(Aws::String&& value) { SetTargetId(value); return *this;}
+    inline AttachPolicyRequest& WithTargetId(Aws::String&& value) { SetTargetId(std::move(value)); return *this;}
 
     /**
      * <p>The unique identifier (ID) of the root, OU, or account that you want to

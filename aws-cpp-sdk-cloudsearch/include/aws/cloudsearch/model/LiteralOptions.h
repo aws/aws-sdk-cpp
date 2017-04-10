@@ -16,6 +16,7 @@
 #include <aws/cloudsearch/CloudSearch_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -61,7 +62,7 @@ namespace Model
     /**
      * A value to use for the field if the field isn't specified for a document.
      */
-    inline void SetDefaultValue(Aws::String&& value) { m_defaultValueHasBeenSet = true; m_defaultValue = value; }
+    inline void SetDefaultValue(Aws::String&& value) { m_defaultValueHasBeenSet = true; m_defaultValue = std::move(value); }
 
     /**
      * A value to use for the field if the field isn't specified for a document.
@@ -76,7 +77,7 @@ namespace Model
     /**
      * A value to use for the field if the field isn't specified for a document.
      */
-    inline LiteralOptions& WithDefaultValue(Aws::String&& value) { SetDefaultValue(value); return *this;}
+    inline LiteralOptions& WithDefaultValue(Aws::String&& value) { SetDefaultValue(std::move(value)); return *this;}
 
     /**
      * A value to use for the field if the field isn't specified for a document.
@@ -90,7 +91,7 @@ namespace Model
     inline void SetSourceField(const Aws::String& value) { m_sourceFieldHasBeenSet = true; m_sourceField = value; }
 
     
-    inline void SetSourceField(Aws::String&& value) { m_sourceFieldHasBeenSet = true; m_sourceField = value; }
+    inline void SetSourceField(Aws::String&& value) { m_sourceFieldHasBeenSet = true; m_sourceField = std::move(value); }
 
     
     inline void SetSourceField(const char* value) { m_sourceFieldHasBeenSet = true; m_sourceField.assign(value); }
@@ -99,7 +100,7 @@ namespace Model
     inline LiteralOptions& WithSourceField(const Aws::String& value) { SetSourceField(value); return *this;}
 
     
-    inline LiteralOptions& WithSourceField(Aws::String&& value) { SetSourceField(value); return *this;}
+    inline LiteralOptions& WithSourceField(Aws::String&& value) { SetSourceField(std::move(value)); return *this;}
 
     
     inline LiteralOptions& WithSourceField(const char* value) { SetSourceField(value); return *this;}

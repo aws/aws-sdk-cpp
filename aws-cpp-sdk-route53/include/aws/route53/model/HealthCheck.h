@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/route53/model/HealthCheckConfig.h>
 #include <aws/route53/model/CloudWatchAlarmConfiguration.h>
+#include <utility>
 
 namespace Aws
 {
@@ -69,7 +70,7 @@ namespace Model
      * specify which health check to use. The value can be up to 64 characters long.
      * </p>
      */
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = value; }
+    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
 
     /**
      * <p>The identifier that Amazon Route 53assigned to the health check when you
@@ -93,7 +94,7 @@ namespace Model
      * specify which health check to use. The value can be up to 64 characters long.
      * </p>
      */
-    inline HealthCheck& WithId(Aws::String&& value) { SetId(value); return *this;}
+    inline HealthCheck& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
 
     /**
      * <p>The identifier that Amazon Route 53assigned to the health check when you
@@ -116,7 +117,7 @@ namespace Model
     /**
      * <p>A unique string that you specified when you created the health check.</p>
      */
-    inline void SetCallerReference(Aws::String&& value) { m_callerReferenceHasBeenSet = true; m_callerReference = value; }
+    inline void SetCallerReference(Aws::String&& value) { m_callerReferenceHasBeenSet = true; m_callerReference = std::move(value); }
 
     /**
      * <p>A unique string that you specified when you created the health check.</p>
@@ -131,7 +132,7 @@ namespace Model
     /**
      * <p>A unique string that you specified when you created the health check.</p>
      */
-    inline HealthCheck& WithCallerReference(Aws::String&& value) { SetCallerReference(value); return *this;}
+    inline HealthCheck& WithCallerReference(Aws::String&& value) { SetCallerReference(std::move(value)); return *this;}
 
     /**
      * <p>A unique string that you specified when you created the health check.</p>
@@ -151,7 +152,7 @@ namespace Model
     /**
      * <p>A complex type that contains detailed information about one health check.</p>
      */
-    inline void SetHealthCheckConfig(HealthCheckConfig&& value) { m_healthCheckConfigHasBeenSet = true; m_healthCheckConfig = value; }
+    inline void SetHealthCheckConfig(HealthCheckConfig&& value) { m_healthCheckConfigHasBeenSet = true; m_healthCheckConfig = std::move(value); }
 
     /**
      * <p>A complex type that contains detailed information about one health check.</p>
@@ -161,7 +162,7 @@ namespace Model
     /**
      * <p>A complex type that contains detailed information about one health check.</p>
      */
-    inline HealthCheck& WithHealthCheckConfig(HealthCheckConfig&& value) { SetHealthCheckConfig(value); return *this;}
+    inline HealthCheck& WithHealthCheckConfig(HealthCheckConfig&& value) { SetHealthCheckConfig(std::move(value)); return *this;}
 
     /**
      * <p>The version of the health check. You can optionally pass this value in a call
@@ -200,7 +201,7 @@ namespace Model
      * <p>A complex type that contains information about the CloudWatch alarm that
      * Amazon Route 53 is monitoring for this health check.</p>
      */
-    inline void SetCloudWatchAlarmConfiguration(CloudWatchAlarmConfiguration&& value) { m_cloudWatchAlarmConfigurationHasBeenSet = true; m_cloudWatchAlarmConfiguration = value; }
+    inline void SetCloudWatchAlarmConfiguration(CloudWatchAlarmConfiguration&& value) { m_cloudWatchAlarmConfigurationHasBeenSet = true; m_cloudWatchAlarmConfiguration = std::move(value); }
 
     /**
      * <p>A complex type that contains information about the CloudWatch alarm that
@@ -212,7 +213,7 @@ namespace Model
      * <p>A complex type that contains information about the CloudWatch alarm that
      * Amazon Route 53 is monitoring for this health check.</p>
      */
-    inline HealthCheck& WithCloudWatchAlarmConfiguration(CloudWatchAlarmConfiguration&& value) { SetCloudWatchAlarmConfiguration(value); return *this;}
+    inline HealthCheck& WithCloudWatchAlarmConfiguration(CloudWatchAlarmConfiguration&& value) { SetCloudWatchAlarmConfiguration(std::move(value)); return *this;}
 
   private:
     Aws::String m_id;

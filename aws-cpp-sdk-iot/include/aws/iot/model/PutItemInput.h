@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/iot/IoT_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -57,7 +58,7 @@ namespace Model
     /**
      * <p>The table where the message data will be written</p>
      */
-    inline void SetTableName(Aws::String&& value) { m_tableNameHasBeenSet = true; m_tableName = value; }
+    inline void SetTableName(Aws::String&& value) { m_tableNameHasBeenSet = true; m_tableName = std::move(value); }
 
     /**
      * <p>The table where the message data will be written</p>
@@ -72,7 +73,7 @@ namespace Model
     /**
      * <p>The table where the message data will be written</p>
      */
-    inline PutItemInput& WithTableName(Aws::String&& value) { SetTableName(value); return *this;}
+    inline PutItemInput& WithTableName(Aws::String&& value) { SetTableName(std::move(value)); return *this;}
 
     /**
      * <p>The table where the message data will be written</p>

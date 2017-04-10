@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/gamelift/model/GameSessionQueueDestination.h>
+#include <utility>
 
 namespace Aws
 {
@@ -53,7 +54,7 @@ namespace Model
      * <p>Descriptive label that is associated with queue. Queue names must be unique
      * within each region.</p>
      */
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p>Descriptive label that is associated with queue. Queue names must be unique
@@ -71,7 +72,7 @@ namespace Model
      * <p>Descriptive label that is associated with queue. Queue names must be unique
      * within each region.</p>
      */
-    inline CreateGameSessionQueueRequest& WithName(Aws::String&& value) { SetName(value); return *this;}
+    inline CreateGameSessionQueueRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>Descriptive label that is associated with queue. Queue names must be unique
@@ -119,7 +120,7 @@ namespace Model
      * the queue. Fleets are identified by either a fleet ARN or a fleet alias ARN.
      * Destinations are listed in default preference order.</p>
      */
-    inline void SetDestinations(Aws::Vector<GameSessionQueueDestination>&& value) { m_destinationsHasBeenSet = true; m_destinations = value; }
+    inline void SetDestinations(Aws::Vector<GameSessionQueueDestination>&& value) { m_destinationsHasBeenSet = true; m_destinations = std::move(value); }
 
     /**
      * <p>List of fleets that can be used to fulfill game session placement requests in
@@ -133,7 +134,7 @@ namespace Model
      * the queue. Fleets are identified by either a fleet ARN or a fleet alias ARN.
      * Destinations are listed in default preference order.</p>
      */
-    inline CreateGameSessionQueueRequest& WithDestinations(Aws::Vector<GameSessionQueueDestination>&& value) { SetDestinations(value); return *this;}
+    inline CreateGameSessionQueueRequest& WithDestinations(Aws::Vector<GameSessionQueueDestination>&& value) { SetDestinations(std::move(value)); return *this;}
 
     /**
      * <p>List of fleets that can be used to fulfill game session placement requests in
@@ -147,7 +148,7 @@ namespace Model
      * the queue. Fleets are identified by either a fleet ARN or a fleet alias ARN.
      * Destinations are listed in default preference order.</p>
      */
-    inline CreateGameSessionQueueRequest& AddDestinations(GameSessionQueueDestination&& value) { m_destinationsHasBeenSet = true; m_destinations.push_back(value); return *this; }
+    inline CreateGameSessionQueueRequest& AddDestinations(GameSessionQueueDestination&& value) { m_destinationsHasBeenSet = true; m_destinations.push_back(std::move(value)); return *this; }
 
   private:
     Aws::String m_name;

@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/codedeploy/model/RevisionLocation.h>
+#include <utility>
 
 namespace Aws
 {
@@ -60,7 +61,7 @@ namespace Model
     /**
      * <p>A list of locations that contain the matching revisions.</p>
      */
-    inline void SetRevisions(Aws::Vector<RevisionLocation>&& value) { m_revisions = value; }
+    inline void SetRevisions(Aws::Vector<RevisionLocation>&& value) { m_revisions = std::move(value); }
 
     /**
      * <p>A list of locations that contain the matching revisions.</p>
@@ -70,7 +71,7 @@ namespace Model
     /**
      * <p>A list of locations that contain the matching revisions.</p>
      */
-    inline ListApplicationRevisionsResult& WithRevisions(Aws::Vector<RevisionLocation>&& value) { SetRevisions(value); return *this;}
+    inline ListApplicationRevisionsResult& WithRevisions(Aws::Vector<RevisionLocation>&& value) { SetRevisions(std::move(value)); return *this;}
 
     /**
      * <p>A list of locations that contain the matching revisions.</p>
@@ -80,7 +81,7 @@ namespace Model
     /**
      * <p>A list of locations that contain the matching revisions.</p>
      */
-    inline ListApplicationRevisionsResult& AddRevisions(RevisionLocation&& value) { m_revisions.push_back(value); return *this; }
+    inline ListApplicationRevisionsResult& AddRevisions(RevisionLocation&& value) { m_revisions.push_back(std::move(value)); return *this; }
 
     /**
      * <p>If a large amount of information is returned, an identifier will also be
@@ -101,7 +102,7 @@ namespace Model
      * returned. It can be used in a subsequent list application revisions call to
      * return the next set of application revisions in the list.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
      * <p>If a large amount of information is returned, an identifier will also be
@@ -122,7 +123,7 @@ namespace Model
      * returned. It can be used in a subsequent list application revisions call to
      * return the next set of application revisions in the list.</p>
      */
-    inline ListApplicationRevisionsResult& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline ListApplicationRevisionsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>If a large amount of information is returned, an identifier will also be

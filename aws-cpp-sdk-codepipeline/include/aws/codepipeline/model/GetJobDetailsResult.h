@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/codepipeline/CodePipeline_EXPORTS.h>
 #include <aws/codepipeline/model/JobDetails.h>
+#include <utility>
 
 namespace Aws
 {
@@ -64,7 +65,7 @@ namespace Model
      * long-running job can call GetJobDetails again to obtain new credentials.</p>
      * </note>
      */
-    inline void SetJobDetails(JobDetails&& value) { m_jobDetails = value; }
+    inline void SetJobDetails(JobDetails&& value) { m_jobDetails = std::move(value); }
 
     /**
      * <p>The details of the job.</p> <note> <p>If AWSSessionCredentials is used, a
@@ -78,7 +79,7 @@ namespace Model
      * long-running job can call GetJobDetails again to obtain new credentials.</p>
      * </note>
      */
-    inline GetJobDetailsResult& WithJobDetails(JobDetails&& value) { SetJobDetails(value); return *this;}
+    inline GetJobDetailsResult& WithJobDetails(JobDetails&& value) { SetJobDetails(std::move(value)); return *this;}
 
   private:
     JobDetails m_jobDetails;

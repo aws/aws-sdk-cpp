@@ -20,6 +20,7 @@
 #include <aws/cognito-idp/model/UserStatusType.h>
 #include <aws/cognito-idp/model/AttributeType.h>
 #include <aws/cognito-idp/model/MFAOptionType.h>
+#include <utility>
 
 namespace Aws
 {
@@ -61,7 +62,7 @@ namespace Model
     /**
      * <p>The user name of the user you wish to describe.</p>
      */
-    inline void SetUsername(Aws::String&& value) { m_usernameHasBeenSet = true; m_username = value; }
+    inline void SetUsername(Aws::String&& value) { m_usernameHasBeenSet = true; m_username = std::move(value); }
 
     /**
      * <p>The user name of the user you wish to describe.</p>
@@ -76,7 +77,7 @@ namespace Model
     /**
      * <p>The user name of the user you wish to describe.</p>
      */
-    inline UserType& WithUsername(Aws::String&& value) { SetUsername(value); return *this;}
+    inline UserType& WithUsername(Aws::String&& value) { SetUsername(std::move(value)); return *this;}
 
     /**
      * <p>The user name of the user you wish to describe.</p>
@@ -96,7 +97,7 @@ namespace Model
     /**
      * <p>A container with information about the user type attributes.</p>
      */
-    inline void SetAttributes(Aws::Vector<AttributeType>&& value) { m_attributesHasBeenSet = true; m_attributes = value; }
+    inline void SetAttributes(Aws::Vector<AttributeType>&& value) { m_attributesHasBeenSet = true; m_attributes = std::move(value); }
 
     /**
      * <p>A container with information about the user type attributes.</p>
@@ -106,7 +107,7 @@ namespace Model
     /**
      * <p>A container with information about the user type attributes.</p>
      */
-    inline UserType& WithAttributes(Aws::Vector<AttributeType>&& value) { SetAttributes(value); return *this;}
+    inline UserType& WithAttributes(Aws::Vector<AttributeType>&& value) { SetAttributes(std::move(value)); return *this;}
 
     /**
      * <p>A container with information about the user type attributes.</p>
@@ -116,7 +117,7 @@ namespace Model
     /**
      * <p>A container with information about the user type attributes.</p>
      */
-    inline UserType& AddAttributes(AttributeType&& value) { m_attributesHasBeenSet = true; m_attributes.push_back(value); return *this; }
+    inline UserType& AddAttributes(AttributeType&& value) { m_attributesHasBeenSet = true; m_attributes.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The creation date of the user.</p>
@@ -131,7 +132,7 @@ namespace Model
     /**
      * <p>The creation date of the user.</p>
      */
-    inline void SetUserCreateDate(Aws::Utils::DateTime&& value) { m_userCreateDateHasBeenSet = true; m_userCreateDate = value; }
+    inline void SetUserCreateDate(Aws::Utils::DateTime&& value) { m_userCreateDateHasBeenSet = true; m_userCreateDate = std::move(value); }
 
     /**
      * <p>The creation date of the user.</p>
@@ -141,7 +142,7 @@ namespace Model
     /**
      * <p>The creation date of the user.</p>
      */
-    inline UserType& WithUserCreateDate(Aws::Utils::DateTime&& value) { SetUserCreateDate(value); return *this;}
+    inline UserType& WithUserCreateDate(Aws::Utils::DateTime&& value) { SetUserCreateDate(std::move(value)); return *this;}
 
     /**
      * <p>The last modified date of the user.</p>
@@ -156,7 +157,7 @@ namespace Model
     /**
      * <p>The last modified date of the user.</p>
      */
-    inline void SetUserLastModifiedDate(Aws::Utils::DateTime&& value) { m_userLastModifiedDateHasBeenSet = true; m_userLastModifiedDate = value; }
+    inline void SetUserLastModifiedDate(Aws::Utils::DateTime&& value) { m_userLastModifiedDateHasBeenSet = true; m_userLastModifiedDate = std::move(value); }
 
     /**
      * <p>The last modified date of the user.</p>
@@ -166,7 +167,7 @@ namespace Model
     /**
      * <p>The last modified date of the user.</p>
      */
-    inline UserType& WithUserLastModifiedDate(Aws::Utils::DateTime&& value) { SetUserLastModifiedDate(value); return *this;}
+    inline UserType& WithUserLastModifiedDate(Aws::Utils::DateTime&& value) { SetUserLastModifiedDate(std::move(value)); return *this;}
 
     /**
      * <p>Specifies whether the user is enabled.</p>
@@ -208,7 +209,7 @@ namespace Model
      * <li> <p>COMPROMISED - User is disabled due to a potential security threat.</p>
      * </li> <li> <p>UNKNOWN - User status is not known.</p> </li> </ul>
      */
-    inline void SetUserStatus(UserStatusType&& value) { m_userStatusHasBeenSet = true; m_userStatus = value; }
+    inline void SetUserStatus(UserStatusType&& value) { m_userStatusHasBeenSet = true; m_userStatus = std::move(value); }
 
     /**
      * <p>The user status. Can be one of the following:</p> <ul> <li> <p>UNCONFIRMED -
@@ -226,7 +227,7 @@ namespace Model
      * <li> <p>COMPROMISED - User is disabled due to a potential security threat.</p>
      * </li> <li> <p>UNKNOWN - User status is not known.</p> </li> </ul>
      */
-    inline UserType& WithUserStatus(UserStatusType&& value) { SetUserStatus(value); return *this;}
+    inline UserType& WithUserStatus(UserStatusType&& value) { SetUserStatus(std::move(value)); return *this;}
 
     /**
      * <p>The MFA options for the user.</p>
@@ -241,7 +242,7 @@ namespace Model
     /**
      * <p>The MFA options for the user.</p>
      */
-    inline void SetMFAOptions(Aws::Vector<MFAOptionType>&& value) { m_mFAOptionsHasBeenSet = true; m_mFAOptions = value; }
+    inline void SetMFAOptions(Aws::Vector<MFAOptionType>&& value) { m_mFAOptionsHasBeenSet = true; m_mFAOptions = std::move(value); }
 
     /**
      * <p>The MFA options for the user.</p>
@@ -251,7 +252,7 @@ namespace Model
     /**
      * <p>The MFA options for the user.</p>
      */
-    inline UserType& WithMFAOptions(Aws::Vector<MFAOptionType>&& value) { SetMFAOptions(value); return *this;}
+    inline UserType& WithMFAOptions(Aws::Vector<MFAOptionType>&& value) { SetMFAOptions(std::move(value)); return *this;}
 
     /**
      * <p>The MFA options for the user.</p>
@@ -261,7 +262,7 @@ namespace Model
     /**
      * <p>The MFA options for the user.</p>
      */
-    inline UserType& AddMFAOptions(MFAOptionType&& value) { m_mFAOptionsHasBeenSet = true; m_mFAOptions.push_back(value); return *this; }
+    inline UserType& AddMFAOptions(MFAOptionType&& value) { m_mFAOptionsHasBeenSet = true; m_mFAOptions.push_back(std::move(value)); return *this; }
 
   private:
     Aws::String m_username;

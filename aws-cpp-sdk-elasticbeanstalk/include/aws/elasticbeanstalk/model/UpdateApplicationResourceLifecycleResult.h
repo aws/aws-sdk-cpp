@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/elasticbeanstalk/model/ApplicationResourceLifecycleConfig.h>
 #include <aws/elasticbeanstalk/model/ResponseMetadata.h>
+#include <utility>
 
 namespace Aws
 {
@@ -54,7 +55,7 @@ namespace Model
     /**
      * <p>The name of the application.</p>
      */
-    inline void SetApplicationName(Aws::String&& value) { m_applicationName = value; }
+    inline void SetApplicationName(Aws::String&& value) { m_applicationName = std::move(value); }
 
     /**
      * <p>The name of the application.</p>
@@ -69,7 +70,7 @@ namespace Model
     /**
      * <p>The name of the application.</p>
      */
-    inline UpdateApplicationResourceLifecycleResult& WithApplicationName(Aws::String&& value) { SetApplicationName(value); return *this;}
+    inline UpdateApplicationResourceLifecycleResult& WithApplicationName(Aws::String&& value) { SetApplicationName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the application.</p>
@@ -89,7 +90,7 @@ namespace Model
     /**
      * <p>The lifecycle configuration.</p>
      */
-    inline void SetResourceLifecycleConfig(ApplicationResourceLifecycleConfig&& value) { m_resourceLifecycleConfig = value; }
+    inline void SetResourceLifecycleConfig(ApplicationResourceLifecycleConfig&& value) { m_resourceLifecycleConfig = std::move(value); }
 
     /**
      * <p>The lifecycle configuration.</p>
@@ -99,7 +100,7 @@ namespace Model
     /**
      * <p>The lifecycle configuration.</p>
      */
-    inline UpdateApplicationResourceLifecycleResult& WithResourceLifecycleConfig(ApplicationResourceLifecycleConfig&& value) { SetResourceLifecycleConfig(value); return *this;}
+    inline UpdateApplicationResourceLifecycleResult& WithResourceLifecycleConfig(ApplicationResourceLifecycleConfig&& value) { SetResourceLifecycleConfig(std::move(value)); return *this;}
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
@@ -108,13 +109,13 @@ namespace Model
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
 
     
     inline UpdateApplicationResourceLifecycleResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
 
     
-    inline UpdateApplicationResourceLifecycleResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
+    inline UpdateApplicationResourceLifecycleResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
     Aws::String m_applicationName;

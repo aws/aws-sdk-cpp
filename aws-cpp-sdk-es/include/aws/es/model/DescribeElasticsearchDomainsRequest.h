@@ -17,6 +17,7 @@
 #include <aws/es/ElasticsearchServiceRequest.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -52,7 +53,7 @@ namespace Model
     /**
      * <p>The Elasticsearch domains for which you want information.</p>
      */
-    inline void SetDomainNames(Aws::Vector<Aws::String>&& value) { m_domainNamesHasBeenSet = true; m_domainNames = value; }
+    inline void SetDomainNames(Aws::Vector<Aws::String>&& value) { m_domainNamesHasBeenSet = true; m_domainNames = std::move(value); }
 
     /**
      * <p>The Elasticsearch domains for which you want information.</p>
@@ -62,7 +63,7 @@ namespace Model
     /**
      * <p>The Elasticsearch domains for which you want information.</p>
      */
-    inline DescribeElasticsearchDomainsRequest& WithDomainNames(Aws::Vector<Aws::String>&& value) { SetDomainNames(value); return *this;}
+    inline DescribeElasticsearchDomainsRequest& WithDomainNames(Aws::Vector<Aws::String>&& value) { SetDomainNames(std::move(value)); return *this;}
 
     /**
      * <p>The Elasticsearch domains for which you want information.</p>
@@ -72,7 +73,7 @@ namespace Model
     /**
      * <p>The Elasticsearch domains for which you want information.</p>
      */
-    inline DescribeElasticsearchDomainsRequest& AddDomainNames(Aws::String&& value) { m_domainNamesHasBeenSet = true; m_domainNames.push_back(value); return *this; }
+    inline DescribeElasticsearchDomainsRequest& AddDomainNames(Aws::String&& value) { m_domainNamesHasBeenSet = true; m_domainNames.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The Elasticsearch domains for which you want information.</p>

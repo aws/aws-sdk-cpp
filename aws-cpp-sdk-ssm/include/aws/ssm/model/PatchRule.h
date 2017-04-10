@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/ssm/SSM_EXPORTS.h>
 #include <aws/ssm/model/PatchFilterGroup.h>
+#include <utility>
 
 namespace Aws
 {
@@ -56,7 +57,7 @@ namespace Model
     /**
      * <p>The patch filter group that defines the criteria for the rule.</p>
      */
-    inline void SetPatchFilterGroup(PatchFilterGroup&& value) { m_patchFilterGroupHasBeenSet = true; m_patchFilterGroup = value; }
+    inline void SetPatchFilterGroup(PatchFilterGroup&& value) { m_patchFilterGroupHasBeenSet = true; m_patchFilterGroup = std::move(value); }
 
     /**
      * <p>The patch filter group that defines the criteria for the rule.</p>
@@ -66,7 +67,7 @@ namespace Model
     /**
      * <p>The patch filter group that defines the criteria for the rule.</p>
      */
-    inline PatchRule& WithPatchFilterGroup(PatchFilterGroup&& value) { SetPatchFilterGroup(value); return *this;}
+    inline PatchRule& WithPatchFilterGroup(PatchFilterGroup&& value) { SetPatchFilterGroup(std::move(value)); return *this;}
 
     /**
      * <p>The number of days after the release date of each patch matched by the rule

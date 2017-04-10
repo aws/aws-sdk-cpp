@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/AttachmentStatus.h>
 #include <aws/core/utils/DateTime.h>
+#include <utility>
 
 namespace Aws
 {
@@ -61,7 +62,7 @@ namespace Model
     /**
      * <p>The ID of the network interface attachment.</p>
      */
-    inline void SetAttachmentId(Aws::String&& value) { m_attachmentIdHasBeenSet = true; m_attachmentId = value; }
+    inline void SetAttachmentId(Aws::String&& value) { m_attachmentIdHasBeenSet = true; m_attachmentId = std::move(value); }
 
     /**
      * <p>The ID of the network interface attachment.</p>
@@ -76,7 +77,7 @@ namespace Model
     /**
      * <p>The ID of the network interface attachment.</p>
      */
-    inline InstanceNetworkInterfaceAttachment& WithAttachmentId(Aws::String&& value) { SetAttachmentId(value); return *this;}
+    inline InstanceNetworkInterfaceAttachment& WithAttachmentId(Aws::String&& value) { SetAttachmentId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the network interface attachment.</p>
@@ -114,7 +115,7 @@ namespace Model
     /**
      * <p>The attachment state.</p>
      */
-    inline void SetStatus(AttachmentStatus&& value) { m_statusHasBeenSet = true; m_status = value; }
+    inline void SetStatus(AttachmentStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
      * <p>The attachment state.</p>
@@ -124,7 +125,7 @@ namespace Model
     /**
      * <p>The attachment state.</p>
      */
-    inline InstanceNetworkInterfaceAttachment& WithStatus(AttachmentStatus&& value) { SetStatus(value); return *this;}
+    inline InstanceNetworkInterfaceAttachment& WithStatus(AttachmentStatus&& value) { SetStatus(std::move(value)); return *this;}
 
     /**
      * <p>The time stamp when the attachment initiated.</p>
@@ -139,7 +140,7 @@ namespace Model
     /**
      * <p>The time stamp when the attachment initiated.</p>
      */
-    inline void SetAttachTime(Aws::Utils::DateTime&& value) { m_attachTimeHasBeenSet = true; m_attachTime = value; }
+    inline void SetAttachTime(Aws::Utils::DateTime&& value) { m_attachTimeHasBeenSet = true; m_attachTime = std::move(value); }
 
     /**
      * <p>The time stamp when the attachment initiated.</p>
@@ -149,7 +150,7 @@ namespace Model
     /**
      * <p>The time stamp when the attachment initiated.</p>
      */
-    inline InstanceNetworkInterfaceAttachment& WithAttachTime(Aws::Utils::DateTime&& value) { SetAttachTime(value); return *this;}
+    inline InstanceNetworkInterfaceAttachment& WithAttachTime(Aws::Utils::DateTime&& value) { SetAttachTime(std::move(value)); return *this;}
 
     /**
      * <p>Indicates whether the network interface is deleted when the instance is

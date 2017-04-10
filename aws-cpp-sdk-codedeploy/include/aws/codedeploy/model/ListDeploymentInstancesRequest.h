@@ -19,6 +19,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/codedeploy/model/InstanceStatus.h>
 #include <aws/codedeploy/model/InstanceType.h>
+#include <utility>
 
 namespace Aws
 {
@@ -55,7 +56,7 @@ namespace Model
     /**
      * <p>The unique ID of a deployment.</p>
      */
-    inline void SetDeploymentId(Aws::String&& value) { m_deploymentIdHasBeenSet = true; m_deploymentId = value; }
+    inline void SetDeploymentId(Aws::String&& value) { m_deploymentIdHasBeenSet = true; m_deploymentId = std::move(value); }
 
     /**
      * <p>The unique ID of a deployment.</p>
@@ -70,7 +71,7 @@ namespace Model
     /**
      * <p>The unique ID of a deployment.</p>
      */
-    inline ListDeploymentInstancesRequest& WithDeploymentId(Aws::String&& value) { SetDeploymentId(value); return *this;}
+    inline ListDeploymentInstancesRequest& WithDeploymentId(Aws::String&& value) { SetDeploymentId(std::move(value)); return *this;}
 
     /**
      * <p>The unique ID of a deployment.</p>
@@ -93,7 +94,7 @@ namespace Model
      * <p>An identifier returned from the previous list deployment instances call. It
      * can be used to return the next set of deployment instances in the list.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
      * <p>An identifier returned from the previous list deployment instances call. It
@@ -111,7 +112,7 @@ namespace Model
      * <p>An identifier returned from the previous list deployment instances call. It
      * can be used to return the next set of deployment instances in the list.</p>
      */
-    inline ListDeploymentInstancesRequest& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline ListDeploymentInstancesRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>An identifier returned from the previous list deployment instances call. It
@@ -153,7 +154,7 @@ namespace Model
      * <p>Unknown: Include those instance with deployments in an unknown state.</p>
      * </li> </ul>
      */
-    inline void SetInstanceStatusFilter(Aws::Vector<InstanceStatus>&& value) { m_instanceStatusFilterHasBeenSet = true; m_instanceStatusFilter = value; }
+    inline void SetInstanceStatusFilter(Aws::Vector<InstanceStatus>&& value) { m_instanceStatusFilterHasBeenSet = true; m_instanceStatusFilter = std::move(value); }
 
     /**
      * <p>A subset of instances to list by status:</p> <ul> <li> <p>Pending: Include
@@ -177,7 +178,7 @@ namespace Model
      * <p>Unknown: Include those instance with deployments in an unknown state.</p>
      * </li> </ul>
      */
-    inline ListDeploymentInstancesRequest& WithInstanceStatusFilter(Aws::Vector<InstanceStatus>&& value) { SetInstanceStatusFilter(value); return *this;}
+    inline ListDeploymentInstancesRequest& WithInstanceStatusFilter(Aws::Vector<InstanceStatus>&& value) { SetInstanceStatusFilter(std::move(value)); return *this;}
 
     /**
      * <p>A subset of instances to list by status:</p> <ul> <li> <p>Pending: Include
@@ -201,7 +202,7 @@ namespace Model
      * <p>Unknown: Include those instance with deployments in an unknown state.</p>
      * </li> </ul>
      */
-    inline ListDeploymentInstancesRequest& AddInstanceStatusFilter(InstanceStatus&& value) { m_instanceStatusFilterHasBeenSet = true; m_instanceStatusFilter.push_back(value); return *this; }
+    inline ListDeploymentInstancesRequest& AddInstanceStatusFilter(InstanceStatus&& value) { m_instanceStatusFilterHasBeenSet = true; m_instanceStatusFilter.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The set of instances in a blue/green deployment, either those in the original
@@ -222,7 +223,7 @@ namespace Model
      * environment ("BLUE") or those in the replacement environment ("GREEN"), for
      * which you want to view instance information.</p>
      */
-    inline void SetInstanceTypeFilter(Aws::Vector<InstanceType>&& value) { m_instanceTypeFilterHasBeenSet = true; m_instanceTypeFilter = value; }
+    inline void SetInstanceTypeFilter(Aws::Vector<InstanceType>&& value) { m_instanceTypeFilterHasBeenSet = true; m_instanceTypeFilter = std::move(value); }
 
     /**
      * <p>The set of instances in a blue/green deployment, either those in the original
@@ -236,7 +237,7 @@ namespace Model
      * environment ("BLUE") or those in the replacement environment ("GREEN"), for
      * which you want to view instance information.</p>
      */
-    inline ListDeploymentInstancesRequest& WithInstanceTypeFilter(Aws::Vector<InstanceType>&& value) { SetInstanceTypeFilter(value); return *this;}
+    inline ListDeploymentInstancesRequest& WithInstanceTypeFilter(Aws::Vector<InstanceType>&& value) { SetInstanceTypeFilter(std::move(value)); return *this;}
 
     /**
      * <p>The set of instances in a blue/green deployment, either those in the original
@@ -250,7 +251,7 @@ namespace Model
      * environment ("BLUE") or those in the replacement environment ("GREEN"), for
      * which you want to view instance information.</p>
      */
-    inline ListDeploymentInstancesRequest& AddInstanceTypeFilter(InstanceType&& value) { m_instanceTypeFilterHasBeenSet = true; m_instanceTypeFilter.push_back(value); return *this; }
+    inline ListDeploymentInstancesRequest& AddInstanceTypeFilter(InstanceType&& value) { m_instanceTypeFilterHasBeenSet = true; m_instanceTypeFilter.push_back(std::move(value)); return *this; }
 
   private:
     Aws::String m_deploymentId;

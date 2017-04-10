@@ -16,6 +16,7 @@
 #include <aws/datapipeline/DataPipeline_EXPORTS.h>
 #include <aws/datapipeline/DataPipelineRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -64,7 +65,7 @@ namespace Model
      * it launches the application. If you have written a custom task runner, you
      * should assign a unique identifier for the task runner.</p>
      */
-    inline void SetTaskrunnerId(Aws::String&& value) { m_taskrunnerIdHasBeenSet = true; m_taskrunnerId = value; }
+    inline void SetTaskrunnerId(Aws::String&& value) { m_taskrunnerIdHasBeenSet = true; m_taskrunnerId = std::move(value); }
 
     /**
      * <p>The ID of the task runner. This value should be unique across your AWS
@@ -91,7 +92,7 @@ namespace Model
      * it launches the application. If you have written a custom task runner, you
      * should assign a unique identifier for the task runner.</p>
      */
-    inline ReportTaskRunnerHeartbeatRequest& WithTaskrunnerId(Aws::String&& value) { SetTaskrunnerId(value); return *this;}
+    inline ReportTaskRunnerHeartbeatRequest& WithTaskrunnerId(Aws::String&& value) { SetTaskrunnerId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the task runner. This value should be unique across your AWS
@@ -127,7 +128,7 @@ namespace Model
      * wildcard values permitted in <code>workerGroup</code>; the string must be an
      * exact, case-sensitive, match.</p>
      */
-    inline void SetWorkerGroup(Aws::String&& value) { m_workerGroupHasBeenSet = true; m_workerGroup = value; }
+    inline void SetWorkerGroup(Aws::String&& value) { m_workerGroupHasBeenSet = true; m_workerGroup = std::move(value); }
 
     /**
      * <p>The type of task the task runner is configured to accept and process. The
@@ -154,7 +155,7 @@ namespace Model
      * wildcard values permitted in <code>workerGroup</code>; the string must be an
      * exact, case-sensitive, match.</p>
      */
-    inline ReportTaskRunnerHeartbeatRequest& WithWorkerGroup(Aws::String&& value) { SetWorkerGroup(value); return *this;}
+    inline ReportTaskRunnerHeartbeatRequest& WithWorkerGroup(Aws::String&& value) { SetWorkerGroup(std::move(value)); return *this;}
 
     /**
      * <p>The type of task the task runner is configured to accept and process. The
@@ -178,7 +179,7 @@ namespace Model
     /**
      * <p>The public DNS name of the task runner.</p>
      */
-    inline void SetHostname(Aws::String&& value) { m_hostnameHasBeenSet = true; m_hostname = value; }
+    inline void SetHostname(Aws::String&& value) { m_hostnameHasBeenSet = true; m_hostname = std::move(value); }
 
     /**
      * <p>The public DNS name of the task runner.</p>
@@ -193,7 +194,7 @@ namespace Model
     /**
      * <p>The public DNS name of the task runner.</p>
      */
-    inline ReportTaskRunnerHeartbeatRequest& WithHostname(Aws::String&& value) { SetHostname(value); return *this;}
+    inline ReportTaskRunnerHeartbeatRequest& WithHostname(Aws::String&& value) { SetHostname(std::move(value)); return *this;}
 
     /**
      * <p>The public DNS name of the task runner.</p>

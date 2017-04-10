@@ -21,6 +21,7 @@
 #include <aws/elastictranscoder/model/CreateJobOutput.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/elastictranscoder/model/CreateJobPlaylist.h>
+#include <utility>
 
 namespace Aws
 {
@@ -63,7 +64,7 @@ namespace Model
      * S3 bucket from which Elastic Transcoder gets the files to transcode and the
      * bucket into which Elastic Transcoder puts the transcoded files.</p>
      */
-    inline void SetPipelineId(Aws::String&& value) { m_pipelineIdHasBeenSet = true; m_pipelineId = value; }
+    inline void SetPipelineId(Aws::String&& value) { m_pipelineIdHasBeenSet = true; m_pipelineId = std::move(value); }
 
     /**
      * <p>The <code>Id</code> of the pipeline that you want Elastic Transcoder to use
@@ -87,7 +88,7 @@ namespace Model
      * S3 bucket from which Elastic Transcoder gets the files to transcode and the
      * bucket into which Elastic Transcoder puts the transcoded files.</p>
      */
-    inline CreateJobRequest& WithPipelineId(Aws::String&& value) { SetPipelineId(value); return *this;}
+    inline CreateJobRequest& WithPipelineId(Aws::String&& value) { SetPipelineId(std::move(value)); return *this;}
 
     /**
      * <p>The <code>Id</code> of the pipeline that you want Elastic Transcoder to use
@@ -113,7 +114,7 @@ namespace Model
      * <p>A section of the request body that provides information about the file that
      * is being transcoded.</p>
      */
-    inline void SetInput(JobInput&& value) { m_inputHasBeenSet = true; m_input = value; }
+    inline void SetInput(JobInput&& value) { m_inputHasBeenSet = true; m_input = std::move(value); }
 
     /**
      * <p>A section of the request body that provides information about the file that
@@ -125,7 +126,7 @@ namespace Model
      * <p>A section of the request body that provides information about the file that
      * is being transcoded.</p>
      */
-    inline CreateJobRequest& WithInput(JobInput&& value) { SetInput(value); return *this;}
+    inline CreateJobRequest& WithInput(JobInput&& value) { SetInput(std::move(value)); return *this;}
 
     /**
      * <p>A section of the request body that provides information about the files that
@@ -143,7 +144,7 @@ namespace Model
      * <p>A section of the request body that provides information about the files that
      * are being transcoded.</p>
      */
-    inline void SetInputs(Aws::Vector<JobInput>&& value) { m_inputsHasBeenSet = true; m_inputs = value; }
+    inline void SetInputs(Aws::Vector<JobInput>&& value) { m_inputsHasBeenSet = true; m_inputs = std::move(value); }
 
     /**
      * <p>A section of the request body that provides information about the files that
@@ -155,7 +156,7 @@ namespace Model
      * <p>A section of the request body that provides information about the files that
      * are being transcoded.</p>
      */
-    inline CreateJobRequest& WithInputs(Aws::Vector<JobInput>&& value) { SetInputs(value); return *this;}
+    inline CreateJobRequest& WithInputs(Aws::Vector<JobInput>&& value) { SetInputs(std::move(value)); return *this;}
 
     /**
      * <p>A section of the request body that provides information about the files that
@@ -167,7 +168,7 @@ namespace Model
      * <p>A section of the request body that provides information about the files that
      * are being transcoded.</p>
      */
-    inline CreateJobRequest& AddInputs(JobInput&& value) { m_inputsHasBeenSet = true; m_inputs.push_back(value); return *this; }
+    inline CreateJobRequest& AddInputs(JobInput&& value) { m_inputsHasBeenSet = true; m_inputs.push_back(std::move(value)); return *this; }
 
     /**
      * <p> A section of the request body that provides information about the transcoded
@@ -188,7 +189,7 @@ namespace Model
      * (target) file. We strongly recommend that you use the <code>Outputs</code>
      * syntax instead of the <code>Output</code> syntax. </p>
      */
-    inline void SetOutput(CreateJobOutput&& value) { m_outputHasBeenSet = true; m_output = value; }
+    inline void SetOutput(CreateJobOutput&& value) { m_outputHasBeenSet = true; m_output = std::move(value); }
 
     /**
      * <p> A section of the request body that provides information about the transcoded
@@ -202,7 +203,7 @@ namespace Model
      * (target) file. We strongly recommend that you use the <code>Outputs</code>
      * syntax instead of the <code>Output</code> syntax. </p>
      */
-    inline CreateJobRequest& WithOutput(CreateJobOutput&& value) { SetOutput(value); return *this;}
+    inline CreateJobRequest& WithOutput(CreateJobOutput&& value) { SetOutput(std::move(value)); return *this;}
 
     /**
      * <p> A section of the request body that provides information about the transcoded
@@ -223,7 +224,7 @@ namespace Model
      * (target) files. We recommend that you use the <code>Outputs</code> syntax
      * instead of the <code>Output</code> syntax. </p>
      */
-    inline void SetOutputs(Aws::Vector<CreateJobOutput>&& value) { m_outputsHasBeenSet = true; m_outputs = value; }
+    inline void SetOutputs(Aws::Vector<CreateJobOutput>&& value) { m_outputsHasBeenSet = true; m_outputs = std::move(value); }
 
     /**
      * <p> A section of the request body that provides information about the transcoded
@@ -237,7 +238,7 @@ namespace Model
      * (target) files. We recommend that you use the <code>Outputs</code> syntax
      * instead of the <code>Output</code> syntax. </p>
      */
-    inline CreateJobRequest& WithOutputs(Aws::Vector<CreateJobOutput>&& value) { SetOutputs(value); return *this;}
+    inline CreateJobRequest& WithOutputs(Aws::Vector<CreateJobOutput>&& value) { SetOutputs(std::move(value)); return *this;}
 
     /**
      * <p> A section of the request body that provides information about the transcoded
@@ -251,7 +252,7 @@ namespace Model
      * (target) files. We recommend that you use the <code>Outputs</code> syntax
      * instead of the <code>Output</code> syntax. </p>
      */
-    inline CreateJobRequest& AddOutputs(CreateJobOutput&& value) { m_outputsHasBeenSet = true; m_outputs.push_back(value); return *this; }
+    inline CreateJobRequest& AddOutputs(CreateJobOutput&& value) { m_outputsHasBeenSet = true; m_outputs.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The value, if any, that you want Elastic Transcoder to prepend to the names
@@ -272,7 +273,7 @@ namespace Model
      * of all files that this job creates, including output files, thumbnails, and
      * playlists.</p>
      */
-    inline void SetOutputKeyPrefix(Aws::String&& value) { m_outputKeyPrefixHasBeenSet = true; m_outputKeyPrefix = value; }
+    inline void SetOutputKeyPrefix(Aws::String&& value) { m_outputKeyPrefixHasBeenSet = true; m_outputKeyPrefix = std::move(value); }
 
     /**
      * <p>The value, if any, that you want Elastic Transcoder to prepend to the names
@@ -293,7 +294,7 @@ namespace Model
      * of all files that this job creates, including output files, thumbnails, and
      * playlists.</p>
      */
-    inline CreateJobRequest& WithOutputKeyPrefix(Aws::String&& value) { SetOutputKeyPrefix(value); return *this;}
+    inline CreateJobRequest& WithOutputKeyPrefix(Aws::String&& value) { SetOutputKeyPrefix(std::move(value)); return *this;}
 
     /**
      * <p>The value, if any, that you want Elastic Transcoder to prepend to the names
@@ -324,7 +325,7 @@ namespace Model
      * contains information about the master playlists that you want Elastic Transcoder
      * to create.</p> <p>The maximum number of master playlists in a job is 30.</p>
      */
-    inline void SetPlaylists(Aws::Vector<CreateJobPlaylist>&& value) { m_playlistsHasBeenSet = true; m_playlists = value; }
+    inline void SetPlaylists(Aws::Vector<CreateJobPlaylist>&& value) { m_playlistsHasBeenSet = true; m_playlists = std::move(value); }
 
     /**
      * <p>If you specify a preset in <code>PresetId</code> for which the value of
@@ -340,7 +341,7 @@ namespace Model
      * contains information about the master playlists that you want Elastic Transcoder
      * to create.</p> <p>The maximum number of master playlists in a job is 30.</p>
      */
-    inline CreateJobRequest& WithPlaylists(Aws::Vector<CreateJobPlaylist>&& value) { SetPlaylists(value); return *this;}
+    inline CreateJobRequest& WithPlaylists(Aws::Vector<CreateJobPlaylist>&& value) { SetPlaylists(std::move(value)); return *this;}
 
     /**
      * <p>If you specify a preset in <code>PresetId</code> for which the value of
@@ -356,7 +357,7 @@ namespace Model
      * contains information about the master playlists that you want Elastic Transcoder
      * to create.</p> <p>The maximum number of master playlists in a job is 30.</p>
      */
-    inline CreateJobRequest& AddPlaylists(CreateJobPlaylist&& value) { m_playlistsHasBeenSet = true; m_playlists.push_back(value); return *this; }
+    inline CreateJobRequest& AddPlaylists(CreateJobPlaylist&& value) { m_playlistsHasBeenSet = true; m_playlists.push_back(std::move(value)); return *this; }
 
     /**
      * <p>User-defined metadata that you want to associate with an Elastic Transcoder
@@ -383,7 +384,7 @@ namespace Model
      * that <code>key/value</code> pairs are returned in the same order in which you
      * specify them.</p>
      */
-    inline void SetUserMetadata(Aws::Map<Aws::String, Aws::String>&& value) { m_userMetadataHasBeenSet = true; m_userMetadata = value; }
+    inline void SetUserMetadata(Aws::Map<Aws::String, Aws::String>&& value) { m_userMetadataHasBeenSet = true; m_userMetadata = std::move(value); }
 
     /**
      * <p>User-defined metadata that you want to associate with an Elastic Transcoder
@@ -401,7 +402,7 @@ namespace Model
      * that <code>key/value</code> pairs are returned in the same order in which you
      * specify them.</p>
      */
-    inline CreateJobRequest& WithUserMetadata(Aws::Map<Aws::String, Aws::String>&& value) { SetUserMetadata(value); return *this;}
+    inline CreateJobRequest& WithUserMetadata(Aws::Map<Aws::String, Aws::String>&& value) { SetUserMetadata(std::move(value)); return *this;}
 
     /**
      * <p>User-defined metadata that you want to associate with an Elastic Transcoder
@@ -410,7 +411,7 @@ namespace Model
      * that <code>key/value</code> pairs are returned in the same order in which you
      * specify them.</p>
      */
-    inline CreateJobRequest& AddUserMetadata(const Aws::String& key, const Aws::String& value) { m_userMetadataHasBeenSet = true; m_userMetadata[key] = value; return *this; }
+    inline CreateJobRequest& AddUserMetadata(const Aws::String& key, const Aws::String& value) { m_userMetadataHasBeenSet = true; m_userMetadata.emplace(key, value); return *this; }
 
     /**
      * <p>User-defined metadata that you want to associate with an Elastic Transcoder
@@ -419,7 +420,7 @@ namespace Model
      * that <code>key/value</code> pairs are returned in the same order in which you
      * specify them.</p>
      */
-    inline CreateJobRequest& AddUserMetadata(Aws::String&& key, const Aws::String& value) { m_userMetadataHasBeenSet = true; m_userMetadata[key] = value; return *this; }
+    inline CreateJobRequest& AddUserMetadata(Aws::String&& key, const Aws::String& value) { m_userMetadataHasBeenSet = true; m_userMetadata.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>User-defined metadata that you want to associate with an Elastic Transcoder
@@ -428,7 +429,7 @@ namespace Model
      * that <code>key/value</code> pairs are returned in the same order in which you
      * specify them.</p>
      */
-    inline CreateJobRequest& AddUserMetadata(const Aws::String& key, Aws::String&& value) { m_userMetadataHasBeenSet = true; m_userMetadata[key] = value; return *this; }
+    inline CreateJobRequest& AddUserMetadata(const Aws::String& key, Aws::String&& value) { m_userMetadataHasBeenSet = true; m_userMetadata.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>User-defined metadata that you want to associate with an Elastic Transcoder
@@ -437,7 +438,7 @@ namespace Model
      * that <code>key/value</code> pairs are returned in the same order in which you
      * specify them.</p>
      */
-    inline CreateJobRequest& AddUserMetadata(Aws::String&& key, Aws::String&& value) { m_userMetadataHasBeenSet = true; m_userMetadata[key] = value; return *this; }
+    inline CreateJobRequest& AddUserMetadata(Aws::String&& key, Aws::String&& value) { m_userMetadataHasBeenSet = true; m_userMetadata.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
      * <p>User-defined metadata that you want to associate with an Elastic Transcoder
@@ -446,7 +447,7 @@ namespace Model
      * that <code>key/value</code> pairs are returned in the same order in which you
      * specify them.</p>
      */
-    inline CreateJobRequest& AddUserMetadata(const char* key, Aws::String&& value) { m_userMetadataHasBeenSet = true; m_userMetadata[key] = value; return *this; }
+    inline CreateJobRequest& AddUserMetadata(const char* key, Aws::String&& value) { m_userMetadataHasBeenSet = true; m_userMetadata.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>User-defined metadata that you want to associate with an Elastic Transcoder
@@ -455,7 +456,7 @@ namespace Model
      * that <code>key/value</code> pairs are returned in the same order in which you
      * specify them.</p>
      */
-    inline CreateJobRequest& AddUserMetadata(Aws::String&& key, const char* value) { m_userMetadataHasBeenSet = true; m_userMetadata[key] = value; return *this; }
+    inline CreateJobRequest& AddUserMetadata(Aws::String&& key, const char* value) { m_userMetadataHasBeenSet = true; m_userMetadata.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>User-defined metadata that you want to associate with an Elastic Transcoder
@@ -464,7 +465,7 @@ namespace Model
      * that <code>key/value</code> pairs are returned in the same order in which you
      * specify them.</p>
      */
-    inline CreateJobRequest& AddUserMetadata(const char* key, const char* value) { m_userMetadataHasBeenSet = true; m_userMetadata[key] = value; return *this; }
+    inline CreateJobRequest& AddUserMetadata(const char* key, const char* value) { m_userMetadataHasBeenSet = true; m_userMetadata.emplace(key, value); return *this; }
 
   private:
     Aws::String m_pipelineId;

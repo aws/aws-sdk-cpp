@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/glacier/Glacier_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -58,7 +59,7 @@ namespace Model
     /**
      * <p>The relative URI path of the job.</p>
      */
-    inline void SetLocation(Aws::String&& value) { m_location = value; }
+    inline void SetLocation(Aws::String&& value) { m_location = std::move(value); }
 
     /**
      * <p>The relative URI path of the job.</p>
@@ -73,7 +74,7 @@ namespace Model
     /**
      * <p>The relative URI path of the job.</p>
      */
-    inline InitiateJobResult& WithLocation(Aws::String&& value) { SetLocation(value); return *this;}
+    inline InitiateJobResult& WithLocation(Aws::String&& value) { SetLocation(std::move(value)); return *this;}
 
     /**
      * <p>The relative URI path of the job.</p>
@@ -93,7 +94,7 @@ namespace Model
     /**
      * <p>The ID of the job.</p>
      */
-    inline void SetJobId(Aws::String&& value) { m_jobId = value; }
+    inline void SetJobId(Aws::String&& value) { m_jobId = std::move(value); }
 
     /**
      * <p>The ID of the job.</p>
@@ -108,7 +109,7 @@ namespace Model
     /**
      * <p>The ID of the job.</p>
      */
-    inline InitiateJobResult& WithJobId(Aws::String&& value) { SetJobId(value); return *this;}
+    inline InitiateJobResult& WithJobId(Aws::String&& value) { SetJobId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the job.</p>

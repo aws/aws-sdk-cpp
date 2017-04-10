@@ -21,6 +21,7 @@
 #include <aws/monitoring/model/StandardUnit.h>
 #include <aws/monitoring/model/Dimension.h>
 #include <aws/monitoring/model/Statistic.h>
+#include <utility>
 
 namespace Aws
 {
@@ -55,7 +56,7 @@ namespace Model
     /**
      * <p>The namespace of the metric, with or without spaces.</p>
      */
-    inline void SetNamespace(Aws::String&& value) { m_namespaceHasBeenSet = true; m_namespace = value; }
+    inline void SetNamespace(Aws::String&& value) { m_namespaceHasBeenSet = true; m_namespace = std::move(value); }
 
     /**
      * <p>The namespace of the metric, with or without spaces.</p>
@@ -70,7 +71,7 @@ namespace Model
     /**
      * <p>The namespace of the metric, with or without spaces.</p>
      */
-    inline GetMetricStatisticsRequest& WithNamespace(Aws::String&& value) { SetNamespace(value); return *this;}
+    inline GetMetricStatisticsRequest& WithNamespace(Aws::String&& value) { SetNamespace(std::move(value)); return *this;}
 
     /**
      * <p>The namespace of the metric, with or without spaces.</p>
@@ -90,7 +91,7 @@ namespace Model
     /**
      * <p>The name of the metric, with or without spaces.</p>
      */
-    inline void SetMetricName(Aws::String&& value) { m_metricNameHasBeenSet = true; m_metricName = value; }
+    inline void SetMetricName(Aws::String&& value) { m_metricNameHasBeenSet = true; m_metricName = std::move(value); }
 
     /**
      * <p>The name of the metric, with or without spaces.</p>
@@ -105,7 +106,7 @@ namespace Model
     /**
      * <p>The name of the metric, with or without spaces.</p>
      */
-    inline GetMetricStatisticsRequest& WithMetricName(Aws::String&& value) { SetMetricName(value); return *this;}
+    inline GetMetricStatisticsRequest& WithMetricName(Aws::String&& value) { SetMetricName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the metric, with or without spaces.</p>
@@ -155,7 +156,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/publishingMetrics.html">Publishing
      * Metrics</a> in the <i>Amazon CloudWatch User Guide</i>.</p>
      */
-    inline void SetDimensions(Aws::Vector<Dimension>&& value) { m_dimensionsHasBeenSet = true; m_dimensions = value; }
+    inline void SetDimensions(Aws::Vector<Dimension>&& value) { m_dimensionsHasBeenSet = true; m_dimensions = std::move(value); }
 
     /**
      * <p>The dimensions. If the metric contains multiple dimensions, you must include
@@ -185,7 +186,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/publishingMetrics.html">Publishing
      * Metrics</a> in the <i>Amazon CloudWatch User Guide</i>.</p>
      */
-    inline GetMetricStatisticsRequest& WithDimensions(Aws::Vector<Dimension>&& value) { SetDimensions(value); return *this;}
+    inline GetMetricStatisticsRequest& WithDimensions(Aws::Vector<Dimension>&& value) { SetDimensions(std::move(value)); return *this;}
 
     /**
      * <p>The dimensions. If the metric contains multiple dimensions, you must include
@@ -215,7 +216,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/publishingMetrics.html">Publishing
      * Metrics</a> in the <i>Amazon CloudWatch User Guide</i>.</p>
      */
-    inline GetMetricStatisticsRequest& AddDimensions(Dimension&& value) { m_dimensionsHasBeenSet = true; m_dimensions.push_back(value); return *this; }
+    inline GetMetricStatisticsRequest& AddDimensions(Dimension&& value) { m_dimensionsHasBeenSet = true; m_dimensions.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The time stamp that determines the first data point to return. Note that
@@ -263,7 +264,7 @@ namespace Model
      * the nearest 1-hour clock interval. For example, 12:32:34 is rounded down to
      * 12:00:00.</p> </li> </ul>
      */
-    inline void SetStartTime(Aws::Utils::DateTime&& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
+    inline void SetStartTime(Aws::Utils::DateTime&& value) { m_startTimeHasBeenSet = true; m_startTime = std::move(value); }
 
     /**
      * <p>The time stamp that determines the first data point to return. Note that
@@ -295,7 +296,7 @@ namespace Model
      * the nearest 1-hour clock interval. For example, 12:32:34 is rounded down to
      * 12:00:00.</p> </li> </ul>
      */
-    inline GetMetricStatisticsRequest& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(value); return *this;}
+    inline GetMetricStatisticsRequest& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(std::move(value)); return *this;}
 
     /**
      * <p>The time stamp that determines the last data point to return.</p> <p>The
@@ -319,7 +320,7 @@ namespace Model
      * specified time stamp. The time stamp must be in ISO 8601 UTC format (for
      * example, 2016-10-10T23:00:00Z).</p>
      */
-    inline void SetEndTime(Aws::Utils::DateTime&& value) { m_endTimeHasBeenSet = true; m_endTime = value; }
+    inline void SetEndTime(Aws::Utils::DateTime&& value) { m_endTimeHasBeenSet = true; m_endTime = std::move(value); }
 
     /**
      * <p>The time stamp that determines the last data point to return.</p> <p>The
@@ -335,7 +336,7 @@ namespace Model
      * specified time stamp. The time stamp must be in ISO 8601 UTC format (for
      * example, 2016-10-10T23:00:00Z).</p>
      */
-    inline GetMetricStatisticsRequest& WithEndTime(Aws::Utils::DateTime&& value) { SetEndTime(value); return *this;}
+    inline GetMetricStatisticsRequest& WithEndTime(Aws::Utils::DateTime&& value) { SetEndTime(std::move(value)); return *this;}
 
     /**
      * <p>The granularity, in seconds, of the returned data points. A period can be as
@@ -389,7 +390,7 @@ namespace Model
      * <p>The metric statistics, other than percentile. For percentile statistics, use
      * <code>ExtendedStatistic</code>.</p>
      */
-    inline void SetStatistics(Aws::Vector<Statistic>&& value) { m_statisticsHasBeenSet = true; m_statistics = value; }
+    inline void SetStatistics(Aws::Vector<Statistic>&& value) { m_statisticsHasBeenSet = true; m_statistics = std::move(value); }
 
     /**
      * <p>The metric statistics, other than percentile. For percentile statistics, use
@@ -401,7 +402,7 @@ namespace Model
      * <p>The metric statistics, other than percentile. For percentile statistics, use
      * <code>ExtendedStatistic</code>.</p>
      */
-    inline GetMetricStatisticsRequest& WithStatistics(Aws::Vector<Statistic>&& value) { SetStatistics(value); return *this;}
+    inline GetMetricStatisticsRequest& WithStatistics(Aws::Vector<Statistic>&& value) { SetStatistics(std::move(value)); return *this;}
 
     /**
      * <p>The metric statistics, other than percentile. For percentile statistics, use
@@ -413,7 +414,7 @@ namespace Model
      * <p>The metric statistics, other than percentile. For percentile statistics, use
      * <code>ExtendedStatistic</code>.</p>
      */
-    inline GetMetricStatisticsRequest& AddStatistics(Statistic&& value) { m_statisticsHasBeenSet = true; m_statistics.push_back(value); return *this; }
+    inline GetMetricStatisticsRequest& AddStatistics(Statistic&& value) { m_statisticsHasBeenSet = true; m_statistics.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The percentile statistics. Specify values between p0.0 and p100.</p>
@@ -428,7 +429,7 @@ namespace Model
     /**
      * <p>The percentile statistics. Specify values between p0.0 and p100.</p>
      */
-    inline void SetExtendedStatistics(Aws::Vector<Aws::String>&& value) { m_extendedStatisticsHasBeenSet = true; m_extendedStatistics = value; }
+    inline void SetExtendedStatistics(Aws::Vector<Aws::String>&& value) { m_extendedStatisticsHasBeenSet = true; m_extendedStatistics = std::move(value); }
 
     /**
      * <p>The percentile statistics. Specify values between p0.0 and p100.</p>
@@ -438,7 +439,7 @@ namespace Model
     /**
      * <p>The percentile statistics. Specify values between p0.0 and p100.</p>
      */
-    inline GetMetricStatisticsRequest& WithExtendedStatistics(Aws::Vector<Aws::String>&& value) { SetExtendedStatistics(value); return *this;}
+    inline GetMetricStatisticsRequest& WithExtendedStatistics(Aws::Vector<Aws::String>&& value) { SetExtendedStatistics(std::move(value)); return *this;}
 
     /**
      * <p>The percentile statistics. Specify values between p0.0 and p100.</p>
@@ -448,7 +449,7 @@ namespace Model
     /**
      * <p>The percentile statistics. Specify values between p0.0 and p100.</p>
      */
-    inline GetMetricStatisticsRequest& AddExtendedStatistics(Aws::String&& value) { m_extendedStatisticsHasBeenSet = true; m_extendedStatistics.push_back(value); return *this; }
+    inline GetMetricStatisticsRequest& AddExtendedStatistics(Aws::String&& value) { m_extendedStatisticsHasBeenSet = true; m_extendedStatistics.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The percentile statistics. Specify values between p0.0 and p100.</p>
@@ -474,7 +475,7 @@ namespace Model
      * supplying a unit results in all units being returned. If the metric only ever
      * reports one unit, specifying a unit has no effect.</p>
      */
-    inline void SetUnit(StandardUnit&& value) { m_unitHasBeenSet = true; m_unit = value; }
+    inline void SetUnit(StandardUnit&& value) { m_unitHasBeenSet = true; m_unit = std::move(value); }
 
     /**
      * <p>The unit for a given metric. Metrics may be reported in multiple units. Not
@@ -488,7 +489,7 @@ namespace Model
      * supplying a unit results in all units being returned. If the metric only ever
      * reports one unit, specifying a unit has no effect.</p>
      */
-    inline GetMetricStatisticsRequest& WithUnit(StandardUnit&& value) { SetUnit(value); return *this;}
+    inline GetMetricStatisticsRequest& WithUnit(StandardUnit&& value) { SetUnit(std::move(value)); return *this;}
 
   private:
     Aws::String m_namespace;

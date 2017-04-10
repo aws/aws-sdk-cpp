@@ -18,6 +18,7 @@
 #include <aws/organizations/model/HandshakeResourceType.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/organizations/model/HandshakeResource.h>
+#include <utility>
 
 namespace Aws
 {
@@ -66,7 +67,7 @@ namespace Model
      * format of the value string must match the requirements of the specified
      * type.</p>
      */
-    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = value; }
+    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
 
     /**
      * <p>The information that is passed to the other party in the handshake. The
@@ -87,7 +88,7 @@ namespace Model
      * format of the value string must match the requirements of the specified
      * type.</p>
      */
-    inline HandshakeResource& WithValue(Aws::String&& value) { SetValue(value); return *this;}
+    inline HandshakeResource& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
 
     /**
      * <p>The information that is passed to the other party in the handshake. The
@@ -142,7 +143,7 @@ namespace Model
      * by the handshake initiator and intended for the recipient to read.</p> </li>
      * </ul>
      */
-    inline void SetType(HandshakeResourceType&& value) { m_typeHasBeenSet = true; m_type = value; }
+    inline void SetType(HandshakeResourceType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
      * <p>The type of information being passed, specifying how the value is to be
@@ -174,7 +175,7 @@ namespace Model
      * by the handshake initiator and intended for the recipient to read.</p> </li>
      * </ul>
      */
-    inline HandshakeResource& WithType(HandshakeResourceType&& value) { SetType(value); return *this;}
+    inline HandshakeResource& WithType(HandshakeResourceType&& value) { SetType(std::move(value)); return *this;}
 
     /**
      * <p>When needed, contains an additional array of <code>HandshakeResource</code>
@@ -192,7 +193,7 @@ namespace Model
      * <p>When needed, contains an additional array of <code>HandshakeResource</code>
      * objects.</p>
      */
-    inline void SetResources(Aws::Vector<HandshakeResource>&& value) { m_resourcesHasBeenSet = true; m_resources = value; }
+    inline void SetResources(Aws::Vector<HandshakeResource>&& value) { m_resourcesHasBeenSet = true; m_resources = std::move(value); }
 
     /**
      * <p>When needed, contains an additional array of <code>HandshakeResource</code>
@@ -204,7 +205,7 @@ namespace Model
      * <p>When needed, contains an additional array of <code>HandshakeResource</code>
      * objects.</p>
      */
-    inline HandshakeResource& WithResources(Aws::Vector<HandshakeResource>&& value) { SetResources(value); return *this;}
+    inline HandshakeResource& WithResources(Aws::Vector<HandshakeResource>&& value) { SetResources(std::move(value)); return *this;}
 
     /**
      * <p>When needed, contains an additional array of <code>HandshakeResource</code>
@@ -216,7 +217,7 @@ namespace Model
      * <p>When needed, contains an additional array of <code>HandshakeResource</code>
      * objects.</p>
      */
-    inline HandshakeResource& AddResources(HandshakeResource&& value) { m_resourcesHasBeenSet = true; m_resources.push_back(value); return *this; }
+    inline HandshakeResource& AddResources(HandshakeResource&& value) { m_resourcesHasBeenSet = true; m_resources.push_back(std::move(value)); return *this; }
 
   private:
     Aws::String m_value;

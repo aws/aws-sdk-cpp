@@ -17,6 +17,7 @@
 #include <aws/lightsail/LightsailRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/lightsail/model/DomainEntry.h>
+#include <utility>
 
 namespace Aws
 {
@@ -52,7 +53,7 @@ namespace Model
      * <p>The domain name (e.g., <code>example.com</code>) for which you want to create
      * the domain entry.</p>
      */
-    inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
+    inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = std::move(value); }
 
     /**
      * <p>The domain name (e.g., <code>example.com</code>) for which you want to create
@@ -70,7 +71,7 @@ namespace Model
      * <p>The domain name (e.g., <code>example.com</code>) for which you want to create
      * the domain entry.</p>
      */
-    inline CreateDomainEntryRequest& WithDomainName(Aws::String&& value) { SetDomainName(value); return *this;}
+    inline CreateDomainEntryRequest& WithDomainName(Aws::String&& value) { SetDomainName(std::move(value)); return *this;}
 
     /**
      * <p>The domain name (e.g., <code>example.com</code>) for which you want to create
@@ -94,7 +95,7 @@ namespace Model
      * <p>An array of key-value pairs containing information about the domain entry
      * request.</p>
      */
-    inline void SetDomainEntry(DomainEntry&& value) { m_domainEntryHasBeenSet = true; m_domainEntry = value; }
+    inline void SetDomainEntry(DomainEntry&& value) { m_domainEntryHasBeenSet = true; m_domainEntry = std::move(value); }
 
     /**
      * <p>An array of key-value pairs containing information about the domain entry
@@ -106,7 +107,7 @@ namespace Model
      * <p>An array of key-value pairs containing information about the domain entry
      * request.</p>
      */
-    inline CreateDomainEntryRequest& WithDomainEntry(DomainEntry&& value) { SetDomainEntry(value); return *this;}
+    inline CreateDomainEntryRequest& WithDomainEntry(DomainEntry&& value) { SetDomainEntry(std::move(value)); return *this;}
 
   private:
     Aws::String m_domainName;

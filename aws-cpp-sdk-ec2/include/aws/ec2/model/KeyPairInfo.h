@@ -16,6 +16,7 @@
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -59,7 +60,7 @@ namespace Model
     /**
      * <p>The name of the key pair.</p>
      */
-    inline void SetKeyName(Aws::String&& value) { m_keyNameHasBeenSet = true; m_keyName = value; }
+    inline void SetKeyName(Aws::String&& value) { m_keyNameHasBeenSet = true; m_keyName = std::move(value); }
 
     /**
      * <p>The name of the key pair.</p>
@@ -74,7 +75,7 @@ namespace Model
     /**
      * <p>The name of the key pair.</p>
      */
-    inline KeyPairInfo& WithKeyName(Aws::String&& value) { SetKeyName(value); return *this;}
+    inline KeyPairInfo& WithKeyName(Aws::String&& value) { SetKeyName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the key pair.</p>
@@ -103,7 +104,7 @@ namespace Model
      * provide AWS the public key, this is the MD5 public key fingerprint as specified
      * in section 4 of RFC4716.</p>
      */
-    inline void SetKeyFingerprint(Aws::String&& value) { m_keyFingerprintHasBeenSet = true; m_keyFingerprint = value; }
+    inline void SetKeyFingerprint(Aws::String&& value) { m_keyFingerprintHasBeenSet = true; m_keyFingerprint = std::move(value); }
 
     /**
      * <p>If you used <a>CreateKeyPair</a> to create the key pair, this is the SHA-1
@@ -127,7 +128,7 @@ namespace Model
      * provide AWS the public key, this is the MD5 public key fingerprint as specified
      * in section 4 of RFC4716.</p>
      */
-    inline KeyPairInfo& WithKeyFingerprint(Aws::String&& value) { SetKeyFingerprint(value); return *this;}
+    inline KeyPairInfo& WithKeyFingerprint(Aws::String&& value) { SetKeyFingerprint(std::move(value)); return *this;}
 
     /**
      * <p>If you used <a>CreateKeyPair</a> to create the key pair, this is the SHA-1

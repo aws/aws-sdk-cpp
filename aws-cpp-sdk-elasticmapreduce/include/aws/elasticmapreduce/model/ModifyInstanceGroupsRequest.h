@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/elasticmapreduce/model/InstanceGroupModifyConfig.h>
+#include <utility>
 
 namespace Aws
 {
@@ -53,7 +54,7 @@ namespace Model
     /**
      * <p>The ID of the cluster to which the instance group belongs.</p>
      */
-    inline void SetClusterId(Aws::String&& value) { m_clusterIdHasBeenSet = true; m_clusterId = value; }
+    inline void SetClusterId(Aws::String&& value) { m_clusterIdHasBeenSet = true; m_clusterId = std::move(value); }
 
     /**
      * <p>The ID of the cluster to which the instance group belongs.</p>
@@ -68,7 +69,7 @@ namespace Model
     /**
      * <p>The ID of the cluster to which the instance group belongs.</p>
      */
-    inline ModifyInstanceGroupsRequest& WithClusterId(Aws::String&& value) { SetClusterId(value); return *this;}
+    inline ModifyInstanceGroupsRequest& WithClusterId(Aws::String&& value) { SetClusterId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the cluster to which the instance group belongs.</p>
@@ -88,7 +89,7 @@ namespace Model
     /**
      * <p>Instance groups to change.</p>
      */
-    inline void SetInstanceGroups(Aws::Vector<InstanceGroupModifyConfig>&& value) { m_instanceGroupsHasBeenSet = true; m_instanceGroups = value; }
+    inline void SetInstanceGroups(Aws::Vector<InstanceGroupModifyConfig>&& value) { m_instanceGroupsHasBeenSet = true; m_instanceGroups = std::move(value); }
 
     /**
      * <p>Instance groups to change.</p>
@@ -98,7 +99,7 @@ namespace Model
     /**
      * <p>Instance groups to change.</p>
      */
-    inline ModifyInstanceGroupsRequest& WithInstanceGroups(Aws::Vector<InstanceGroupModifyConfig>&& value) { SetInstanceGroups(value); return *this;}
+    inline ModifyInstanceGroupsRequest& WithInstanceGroups(Aws::Vector<InstanceGroupModifyConfig>&& value) { SetInstanceGroups(std::move(value)); return *this;}
 
     /**
      * <p>Instance groups to change.</p>
@@ -108,7 +109,7 @@ namespace Model
     /**
      * <p>Instance groups to change.</p>
      */
-    inline ModifyInstanceGroupsRequest& AddInstanceGroups(InstanceGroupModifyConfig&& value) { m_instanceGroupsHasBeenSet = true; m_instanceGroups.push_back(value); return *this; }
+    inline ModifyInstanceGroupsRequest& AddInstanceGroups(InstanceGroupModifyConfig&& value) { m_instanceGroupsHasBeenSet = true; m_instanceGroups.push_back(std::move(value)); return *this; }
 
   private:
     Aws::String m_clusterId;

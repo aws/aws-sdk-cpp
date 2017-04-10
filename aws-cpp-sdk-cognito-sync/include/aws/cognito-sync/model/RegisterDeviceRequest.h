@@ -17,6 +17,7 @@
 #include <aws/cognito-sync/CognitoSyncRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/cognito-sync/model/Platform.h>
+#include <utility>
 
 namespace Aws
 {
@@ -56,7 +57,7 @@ namespace Model
      * us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. Here,
      * the ID of the pool that the identity belongs to.</p>
      */
-    inline void SetIdentityPoolId(Aws::String&& value) { m_identityPoolIdHasBeenSet = true; m_identityPoolId = value; }
+    inline void SetIdentityPoolId(Aws::String&& value) { m_identityPoolIdHasBeenSet = true; m_identityPoolId = std::move(value); }
 
     /**
      * <p>A name-spaced GUID (for example,
@@ -77,7 +78,7 @@ namespace Model
      * us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. Here,
      * the ID of the pool that the identity belongs to.</p>
      */
-    inline RegisterDeviceRequest& WithIdentityPoolId(Aws::String&& value) { SetIdentityPoolId(value); return *this;}
+    inline RegisterDeviceRequest& WithIdentityPoolId(Aws::String&& value) { SetIdentityPoolId(std::move(value)); return *this;}
 
     /**
      * <p>A name-spaced GUID (for example,
@@ -99,7 +100,7 @@ namespace Model
     /**
      * <p>The unique ID for this identity.</p>
      */
-    inline void SetIdentityId(Aws::String&& value) { m_identityIdHasBeenSet = true; m_identityId = value; }
+    inline void SetIdentityId(Aws::String&& value) { m_identityIdHasBeenSet = true; m_identityId = std::move(value); }
 
     /**
      * <p>The unique ID for this identity.</p>
@@ -114,7 +115,7 @@ namespace Model
     /**
      * <p>The unique ID for this identity.</p>
      */
-    inline RegisterDeviceRequest& WithIdentityId(Aws::String&& value) { SetIdentityId(value); return *this;}
+    inline RegisterDeviceRequest& WithIdentityId(Aws::String&& value) { SetIdentityId(std::move(value)); return *this;}
 
     /**
      * <p>The unique ID for this identity.</p>
@@ -134,7 +135,7 @@ namespace Model
     /**
      * <p>The SNS platform type (e.g. GCM, SDM, APNS, APNS_SANDBOX).</p>
      */
-    inline void SetPlatform(Platform&& value) { m_platformHasBeenSet = true; m_platform = value; }
+    inline void SetPlatform(Platform&& value) { m_platformHasBeenSet = true; m_platform = std::move(value); }
 
     /**
      * <p>The SNS platform type (e.g. GCM, SDM, APNS, APNS_SANDBOX).</p>
@@ -144,7 +145,7 @@ namespace Model
     /**
      * <p>The SNS platform type (e.g. GCM, SDM, APNS, APNS_SANDBOX).</p>
      */
-    inline RegisterDeviceRequest& WithPlatform(Platform&& value) { SetPlatform(value); return *this;}
+    inline RegisterDeviceRequest& WithPlatform(Platform&& value) { SetPlatform(std::move(value)); return *this;}
 
     /**
      * <p>The push token.</p>
@@ -159,7 +160,7 @@ namespace Model
     /**
      * <p>The push token.</p>
      */
-    inline void SetToken(Aws::String&& value) { m_tokenHasBeenSet = true; m_token = value; }
+    inline void SetToken(Aws::String&& value) { m_tokenHasBeenSet = true; m_token = std::move(value); }
 
     /**
      * <p>The push token.</p>
@@ -174,7 +175,7 @@ namespace Model
     /**
      * <p>The push token.</p>
      */
-    inline RegisterDeviceRequest& WithToken(Aws::String&& value) { SetToken(value); return *this;}
+    inline RegisterDeviceRequest& WithToken(Aws::String&& value) { SetToken(std::move(value)); return *this;}
 
     /**
      * <p>The push token.</p>

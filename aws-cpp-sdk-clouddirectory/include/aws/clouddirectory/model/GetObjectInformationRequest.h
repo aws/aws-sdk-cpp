@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/clouddirectory/model/ObjectReference.h>
 #include <aws/clouddirectory/model/ConsistencyLevel.h>
+#include <utility>
 
 namespace Aws
 {
@@ -50,7 +51,7 @@ namespace Model
     /**
      * <p>The ARN of the directory being retrieved.</p>
      */
-    inline void SetDirectoryArn(Aws::String&& value) { m_directoryArnHasBeenSet = true; m_directoryArn = value; }
+    inline void SetDirectoryArn(Aws::String&& value) { m_directoryArnHasBeenSet = true; m_directoryArn = std::move(value); }
 
     /**
      * <p>The ARN of the directory being retrieved.</p>
@@ -65,7 +66,7 @@ namespace Model
     /**
      * <p>The ARN of the directory being retrieved.</p>
      */
-    inline GetObjectInformationRequest& WithDirectoryArn(Aws::String&& value) { SetDirectoryArn(value); return *this;}
+    inline GetObjectInformationRequest& WithDirectoryArn(Aws::String&& value) { SetDirectoryArn(std::move(value)); return *this;}
 
     /**
      * <p>The ARN of the directory being retrieved.</p>
@@ -85,7 +86,7 @@ namespace Model
     /**
      * <p>A reference to the object.</p>
      */
-    inline void SetObjectReference(ObjectReference&& value) { m_objectReferenceHasBeenSet = true; m_objectReference = value; }
+    inline void SetObjectReference(ObjectReference&& value) { m_objectReferenceHasBeenSet = true; m_objectReference = std::move(value); }
 
     /**
      * <p>A reference to the object.</p>
@@ -95,7 +96,7 @@ namespace Model
     /**
      * <p>A reference to the object.</p>
      */
-    inline GetObjectInformationRequest& WithObjectReference(ObjectReference&& value) { SetObjectReference(value); return *this;}
+    inline GetObjectInformationRequest& WithObjectReference(ObjectReference&& value) { SetObjectReference(std::move(value)); return *this;}
 
     /**
      * <p>The consistency level at which to retrieve the object information.</p>
@@ -110,7 +111,7 @@ namespace Model
     /**
      * <p>The consistency level at which to retrieve the object information.</p>
      */
-    inline void SetConsistencyLevel(ConsistencyLevel&& value) { m_consistencyLevelHasBeenSet = true; m_consistencyLevel = value; }
+    inline void SetConsistencyLevel(ConsistencyLevel&& value) { m_consistencyLevelHasBeenSet = true; m_consistencyLevel = std::move(value); }
 
     /**
      * <p>The consistency level at which to retrieve the object information.</p>
@@ -120,7 +121,7 @@ namespace Model
     /**
      * <p>The consistency level at which to retrieve the object information.</p>
      */
-    inline GetObjectInformationRequest& WithConsistencyLevel(ConsistencyLevel&& value) { SetConsistencyLevel(value); return *this;}
+    inline GetObjectInformationRequest& WithConsistencyLevel(ConsistencyLevel&& value) { SetConsistencyLevel(std::move(value)); return *this;}
 
   private:
     Aws::String m_directoryArn;

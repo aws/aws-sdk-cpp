@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/cloudsearchdomain/CloudSearchDomain_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -57,7 +58,7 @@ namespace Model
     /**
      * <p>The description for a warning returned by the document service.</p>
      */
-    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = value; }
+    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
 
     /**
      * <p>The description for a warning returned by the document service.</p>
@@ -72,7 +73,7 @@ namespace Model
     /**
      * <p>The description for a warning returned by the document service.</p>
      */
-    inline DocumentServiceWarning& WithMessage(Aws::String&& value) { SetMessage(value); return *this;}
+    inline DocumentServiceWarning& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
 
     /**
      * <p>The description for a warning returned by the document service.</p>

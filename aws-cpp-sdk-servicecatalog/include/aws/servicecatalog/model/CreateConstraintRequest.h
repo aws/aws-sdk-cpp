@@ -16,6 +16,7 @@
 #include <aws/servicecatalog/ServiceCatalog_EXPORTS.h>
 #include <aws/servicecatalog/ServiceCatalogRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 #include <aws/core/utils/UUID.h>
 
 namespace Aws
@@ -55,7 +56,7 @@ namespace Model
      * follows:</p> <p>"en" (English)</p> <p>"jp" (Japanese)</p> <p>"zh" (Chinese)</p>
      * <p>If no code is specified, "en" is used as the default.</p>
      */
-    inline void SetAcceptLanguage(Aws::String&& value) { m_acceptLanguageHasBeenSet = true; m_acceptLanguage = value; }
+    inline void SetAcceptLanguage(Aws::String&& value) { m_acceptLanguageHasBeenSet = true; m_acceptLanguage = std::move(value); }
 
     /**
      * <p>The language code to use for this operation. Supported language codes are as
@@ -76,7 +77,7 @@ namespace Model
      * follows:</p> <p>"en" (English)</p> <p>"jp" (Japanese)</p> <p>"zh" (Chinese)</p>
      * <p>If no code is specified, "en" is used as the default.</p>
      */
-    inline CreateConstraintRequest& WithAcceptLanguage(Aws::String&& value) { SetAcceptLanguage(value); return *this;}
+    inline CreateConstraintRequest& WithAcceptLanguage(Aws::String&& value) { SetAcceptLanguage(std::move(value)); return *this;}
 
     /**
      * <p>The language code to use for this operation. Supported language codes are as
@@ -98,7 +99,7 @@ namespace Model
     /**
      * <p>The portfolio identifier.</p>
      */
-    inline void SetPortfolioId(Aws::String&& value) { m_portfolioIdHasBeenSet = true; m_portfolioId = value; }
+    inline void SetPortfolioId(Aws::String&& value) { m_portfolioIdHasBeenSet = true; m_portfolioId = std::move(value); }
 
     /**
      * <p>The portfolio identifier.</p>
@@ -113,7 +114,7 @@ namespace Model
     /**
      * <p>The portfolio identifier.</p>
      */
-    inline CreateConstraintRequest& WithPortfolioId(Aws::String&& value) { SetPortfolioId(value); return *this;}
+    inline CreateConstraintRequest& WithPortfolioId(Aws::String&& value) { SetPortfolioId(std::move(value)); return *this;}
 
     /**
      * <p>The portfolio identifier.</p>
@@ -133,7 +134,7 @@ namespace Model
     /**
      * <p>The product identifier.</p>
      */
-    inline void SetProductId(Aws::String&& value) { m_productIdHasBeenSet = true; m_productId = value; }
+    inline void SetProductId(Aws::String&& value) { m_productIdHasBeenSet = true; m_productId = std::move(value); }
 
     /**
      * <p>The product identifier.</p>
@@ -148,7 +149,7 @@ namespace Model
     /**
      * <p>The product identifier.</p>
      */
-    inline CreateConstraintRequest& WithProductId(Aws::String&& value) { SetProductId(value); return *this;}
+    inline CreateConstraintRequest& WithProductId(Aws::String&& value) { SetProductId(std::move(value)); return *this;}
 
     /**
      * <p>The product identifier.</p>
@@ -168,7 +169,7 @@ namespace Model
     /**
      * <p>The constraint parameters.</p>
      */
-    inline void SetParameters(Aws::String&& value) { m_parametersHasBeenSet = true; m_parameters = value; }
+    inline void SetParameters(Aws::String&& value) { m_parametersHasBeenSet = true; m_parameters = std::move(value); }
 
     /**
      * <p>The constraint parameters.</p>
@@ -183,7 +184,7 @@ namespace Model
     /**
      * <p>The constraint parameters.</p>
      */
-    inline CreateConstraintRequest& WithParameters(Aws::String&& value) { SetParameters(value); return *this;}
+    inline CreateConstraintRequest& WithParameters(Aws::String&& value) { SetParameters(std::move(value)); return *this;}
 
     /**
      * <p>The constraint parameters.</p>
@@ -203,7 +204,7 @@ namespace Model
     /**
      * <p>The type of the constraint.</p>
      */
-    inline void SetType(Aws::String&& value) { m_typeHasBeenSet = true; m_type = value; }
+    inline void SetType(Aws::String&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
      * <p>The type of the constraint.</p>
@@ -218,7 +219,7 @@ namespace Model
     /**
      * <p>The type of the constraint.</p>
      */
-    inline CreateConstraintRequest& WithType(Aws::String&& value) { SetType(value); return *this;}
+    inline CreateConstraintRequest& WithType(Aws::String&& value) { SetType(std::move(value)); return *this;}
 
     /**
      * <p>The type of the constraint.</p>
@@ -238,7 +239,7 @@ namespace Model
     /**
      * <p>The text description of the constraint.</p>
      */
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = value; }
+    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
      * <p>The text description of the constraint.</p>
@@ -253,7 +254,7 @@ namespace Model
     /**
      * <p>The text description of the constraint.</p>
      */
-    inline CreateConstraintRequest& WithDescription(Aws::String&& value) { SetDescription(value); return *this;}
+    inline CreateConstraintRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
      * <p>The text description of the constraint.</p>
@@ -279,7 +280,7 @@ namespace Model
      * using the same input in multiple requests, provided that you also specify a
      * different idempotency token for each request.</p>
      */
-    inline void SetIdempotencyToken(Aws::String&& value) { m_idempotencyTokenHasBeenSet = true; m_idempotencyToken = value; }
+    inline void SetIdempotencyToken(Aws::String&& value) { m_idempotencyTokenHasBeenSet = true; m_idempotencyToken = std::move(value); }
 
     /**
      * <p>A token to disambiguate duplicate requests. You can create multiple resources
@@ -300,7 +301,7 @@ namespace Model
      * using the same input in multiple requests, provided that you also specify a
      * different idempotency token for each request.</p>
      */
-    inline CreateConstraintRequest& WithIdempotencyToken(Aws::String&& value) { SetIdempotencyToken(value); return *this;}
+    inline CreateConstraintRequest& WithIdempotencyToken(Aws::String&& value) { SetIdempotencyToken(std::move(value)); return *this;}
 
     /**
      * <p>A token to disambiguate duplicate requests. You can create multiple resources

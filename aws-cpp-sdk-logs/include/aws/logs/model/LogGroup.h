@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/logs/CloudWatchLogs_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -56,7 +57,7 @@ namespace Model
     /**
      * <p>The name of the log group.</p>
      */
-    inline void SetLogGroupName(Aws::String&& value) { m_logGroupNameHasBeenSet = true; m_logGroupName = value; }
+    inline void SetLogGroupName(Aws::String&& value) { m_logGroupNameHasBeenSet = true; m_logGroupName = std::move(value); }
 
     /**
      * <p>The name of the log group.</p>
@@ -71,7 +72,7 @@ namespace Model
     /**
      * <p>The name of the log group.</p>
      */
-    inline LogGroup& WithLogGroupName(Aws::String&& value) { SetLogGroupName(value); return *this;}
+    inline LogGroup& WithLogGroupName(Aws::String&& value) { SetLogGroupName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the log group.</p>
@@ -130,7 +131,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the log group.</p>
      */
-    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = value; }
+    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the log group.</p>
@@ -145,7 +146,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the log group.</p>
      */
-    inline LogGroup& WithArn(Aws::String&& value) { SetArn(value); return *this;}
+    inline LogGroup& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the log group.</p>

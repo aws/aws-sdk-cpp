@@ -16,6 +16,7 @@
 #include <aws/redshift/Redshift_EXPORTS.h>
 #include <aws/redshift/model/SnapshotCopyGrant.h>
 #include <aws/redshift/model/ResponseMetadata.h>
+#include <utility>
 
 namespace Aws
 {
@@ -47,13 +48,13 @@ namespace Model
     inline void SetSnapshotCopyGrant(const SnapshotCopyGrant& value) { m_snapshotCopyGrant = value; }
 
     
-    inline void SetSnapshotCopyGrant(SnapshotCopyGrant&& value) { m_snapshotCopyGrant = value; }
+    inline void SetSnapshotCopyGrant(SnapshotCopyGrant&& value) { m_snapshotCopyGrant = std::move(value); }
 
     
     inline CreateSnapshotCopyGrantResult& WithSnapshotCopyGrant(const SnapshotCopyGrant& value) { SetSnapshotCopyGrant(value); return *this;}
 
     
-    inline CreateSnapshotCopyGrantResult& WithSnapshotCopyGrant(SnapshotCopyGrant&& value) { SetSnapshotCopyGrant(value); return *this;}
+    inline CreateSnapshotCopyGrantResult& WithSnapshotCopyGrant(SnapshotCopyGrant&& value) { SetSnapshotCopyGrant(std::move(value)); return *this;}
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
@@ -62,13 +63,13 @@ namespace Model
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
 
     
     inline CreateSnapshotCopyGrantResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
 
     
-    inline CreateSnapshotCopyGrantResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
+    inline CreateSnapshotCopyGrantResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
     SnapshotCopyGrant m_snapshotCopyGrant;

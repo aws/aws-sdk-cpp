@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/clouddirectory/model/AttributeKeyAndValue.h>
+#include <utility>
 
 namespace Aws
 {
@@ -58,7 +59,7 @@ namespace Model
     /**
      * <p>The indexed attribute values.</p>
      */
-    inline void SetIndexedAttributes(Aws::Vector<AttributeKeyAndValue>&& value) { m_indexedAttributesHasBeenSet = true; m_indexedAttributes = value; }
+    inline void SetIndexedAttributes(Aws::Vector<AttributeKeyAndValue>&& value) { m_indexedAttributesHasBeenSet = true; m_indexedAttributes = std::move(value); }
 
     /**
      * <p>The indexed attribute values.</p>
@@ -68,7 +69,7 @@ namespace Model
     /**
      * <p>The indexed attribute values.</p>
      */
-    inline IndexAttachment& WithIndexedAttributes(Aws::Vector<AttributeKeyAndValue>&& value) { SetIndexedAttributes(value); return *this;}
+    inline IndexAttachment& WithIndexedAttributes(Aws::Vector<AttributeKeyAndValue>&& value) { SetIndexedAttributes(std::move(value)); return *this;}
 
     /**
      * <p>The indexed attribute values.</p>
@@ -78,7 +79,7 @@ namespace Model
     /**
      * <p>The indexed attribute values.</p>
      */
-    inline IndexAttachment& AddIndexedAttributes(AttributeKeyAndValue&& value) { m_indexedAttributesHasBeenSet = true; m_indexedAttributes.push_back(value); return *this; }
+    inline IndexAttachment& AddIndexedAttributes(AttributeKeyAndValue&& value) { m_indexedAttributesHasBeenSet = true; m_indexedAttributes.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The <code>ObjectIdentifier</code> of the object attached to the index.</p>
@@ -93,7 +94,7 @@ namespace Model
     /**
      * <p>The <code>ObjectIdentifier</code> of the object attached to the index.</p>
      */
-    inline void SetObjectIdentifier(Aws::String&& value) { m_objectIdentifierHasBeenSet = true; m_objectIdentifier = value; }
+    inline void SetObjectIdentifier(Aws::String&& value) { m_objectIdentifierHasBeenSet = true; m_objectIdentifier = std::move(value); }
 
     /**
      * <p>The <code>ObjectIdentifier</code> of the object attached to the index.</p>
@@ -108,7 +109,7 @@ namespace Model
     /**
      * <p>The <code>ObjectIdentifier</code> of the object attached to the index.</p>
      */
-    inline IndexAttachment& WithObjectIdentifier(Aws::String&& value) { SetObjectIdentifier(value); return *this;}
+    inline IndexAttachment& WithObjectIdentifier(Aws::String&& value) { SetObjectIdentifier(std::move(value)); return *this;}
 
     /**
      * <p>The <code>ObjectIdentifier</code> of the object attached to the index.</p>

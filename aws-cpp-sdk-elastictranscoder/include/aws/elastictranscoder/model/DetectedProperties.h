@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/elastictranscoder/ElasticTranscoder_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -87,7 +88,7 @@ namespace Model
     /**
      * <p>The detected frame rate of the input file, in frames per second.</p>
      */
-    inline void SetFrameRate(Aws::String&& value) { m_frameRateHasBeenSet = true; m_frameRate = value; }
+    inline void SetFrameRate(Aws::String&& value) { m_frameRateHasBeenSet = true; m_frameRate = std::move(value); }
 
     /**
      * <p>The detected frame rate of the input file, in frames per second.</p>
@@ -102,7 +103,7 @@ namespace Model
     /**
      * <p>The detected frame rate of the input file, in frames per second.</p>
      */
-    inline DetectedProperties& WithFrameRate(Aws::String&& value) { SetFrameRate(value); return *this;}
+    inline DetectedProperties& WithFrameRate(Aws::String&& value) { SetFrameRate(std::move(value)); return *this;}
 
     /**
      * <p>The detected frame rate of the input file, in frames per second.</p>

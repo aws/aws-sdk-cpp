@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/cognito-idp/CognitoIdentityProvider_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -57,7 +58,7 @@ namespace Model
     /**
      * <p>The password verifier.</p>
      */
-    inline void SetPasswordVerifier(Aws::String&& value) { m_passwordVerifierHasBeenSet = true; m_passwordVerifier = value; }
+    inline void SetPasswordVerifier(Aws::String&& value) { m_passwordVerifierHasBeenSet = true; m_passwordVerifier = std::move(value); }
 
     /**
      * <p>The password verifier.</p>
@@ -72,7 +73,7 @@ namespace Model
     /**
      * <p>The password verifier.</p>
      */
-    inline DeviceSecretVerifierConfigType& WithPasswordVerifier(Aws::String&& value) { SetPasswordVerifier(value); return *this;}
+    inline DeviceSecretVerifierConfigType& WithPasswordVerifier(Aws::String&& value) { SetPasswordVerifier(std::move(value)); return *this;}
 
     /**
      * <p>The password verifier.</p>
@@ -92,7 +93,7 @@ namespace Model
     /**
      * <p>The salt.</p>
      */
-    inline void SetSalt(Aws::String&& value) { m_saltHasBeenSet = true; m_salt = value; }
+    inline void SetSalt(Aws::String&& value) { m_saltHasBeenSet = true; m_salt = std::move(value); }
 
     /**
      * <p>The salt.</p>
@@ -107,7 +108,7 @@ namespace Model
     /**
      * <p>The salt.</p>
      */
-    inline DeviceSecretVerifierConfigType& WithSalt(Aws::String&& value) { SetSalt(value); return *this;}
+    inline DeviceSecretVerifierConfigType& WithSalt(Aws::String&& value) { SetSalt(std::move(value)); return *this;}
 
     /**
      * <p>The salt.</p>

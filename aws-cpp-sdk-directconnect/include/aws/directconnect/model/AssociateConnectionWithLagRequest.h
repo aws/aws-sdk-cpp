@@ -16,6 +16,7 @@
 #include <aws/directconnect/DirectConnect_EXPORTS.h>
 #include <aws/directconnect/DirectConnectRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -55,7 +56,7 @@ namespace Model
      * <p>The ID of the connection.</p> <p>Example: dxcon-abc123</p> <p>Default:
      * None</p>
      */
-    inline void SetConnectionId(Aws::String&& value) { m_connectionIdHasBeenSet = true; m_connectionId = value; }
+    inline void SetConnectionId(Aws::String&& value) { m_connectionIdHasBeenSet = true; m_connectionId = std::move(value); }
 
     /**
      * <p>The ID of the connection.</p> <p>Example: dxcon-abc123</p> <p>Default:
@@ -73,7 +74,7 @@ namespace Model
      * <p>The ID of the connection.</p> <p>Example: dxcon-abc123</p> <p>Default:
      * None</p>
      */
-    inline AssociateConnectionWithLagRequest& WithConnectionId(Aws::String&& value) { SetConnectionId(value); return *this;}
+    inline AssociateConnectionWithLagRequest& WithConnectionId(Aws::String&& value) { SetConnectionId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the connection.</p> <p>Example: dxcon-abc123</p> <p>Default:
@@ -97,7 +98,7 @@ namespace Model
      * <p>The ID of the LAG with which to associate the connection.</p> <p>Example:
      * dxlag-abc123</p> <p>Default: None</p>
      */
-    inline void SetLagId(Aws::String&& value) { m_lagIdHasBeenSet = true; m_lagId = value; }
+    inline void SetLagId(Aws::String&& value) { m_lagIdHasBeenSet = true; m_lagId = std::move(value); }
 
     /**
      * <p>The ID of the LAG with which to associate the connection.</p> <p>Example:
@@ -115,7 +116,7 @@ namespace Model
      * <p>The ID of the LAG with which to associate the connection.</p> <p>Example:
      * dxlag-abc123</p> <p>Default: None</p>
      */
-    inline AssociateConnectionWithLagRequest& WithLagId(Aws::String&& value) { SetLagId(value); return *this;}
+    inline AssociateConnectionWithLagRequest& WithLagId(Aws::String&& value) { SetLagId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the LAG with which to associate the connection.</p> <p>Example:

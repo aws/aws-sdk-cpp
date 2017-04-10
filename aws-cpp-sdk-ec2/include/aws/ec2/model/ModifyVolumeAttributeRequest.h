@@ -17,6 +17,7 @@
 #include <aws/ec2/EC2Request.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/AttributeBooleanValue.h>
+#include <utility>
 
 namespace Aws
 {
@@ -79,7 +80,7 @@ namespace Model
     /**
      * <p>The ID of the volume.</p>
      */
-    inline void SetVolumeId(Aws::String&& value) { m_volumeIdHasBeenSet = true; m_volumeId = value; }
+    inline void SetVolumeId(Aws::String&& value) { m_volumeIdHasBeenSet = true; m_volumeId = std::move(value); }
 
     /**
      * <p>The ID of the volume.</p>
@@ -94,7 +95,7 @@ namespace Model
     /**
      * <p>The ID of the volume.</p>
      */
-    inline ModifyVolumeAttributeRequest& WithVolumeId(Aws::String&& value) { SetVolumeId(value); return *this;}
+    inline ModifyVolumeAttributeRequest& WithVolumeId(Aws::String&& value) { SetVolumeId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the volume.</p>
@@ -114,7 +115,7 @@ namespace Model
     /**
      * <p>Indicates whether the volume should be auto-enabled for I/O operations.</p>
      */
-    inline void SetAutoEnableIO(AttributeBooleanValue&& value) { m_autoEnableIOHasBeenSet = true; m_autoEnableIO = value; }
+    inline void SetAutoEnableIO(AttributeBooleanValue&& value) { m_autoEnableIOHasBeenSet = true; m_autoEnableIO = std::move(value); }
 
     /**
      * <p>Indicates whether the volume should be auto-enabled for I/O operations.</p>
@@ -124,7 +125,7 @@ namespace Model
     /**
      * <p>Indicates whether the volume should be auto-enabled for I/O operations.</p>
      */
-    inline ModifyVolumeAttributeRequest& WithAutoEnableIO(AttributeBooleanValue&& value) { SetAutoEnableIO(value); return *this;}
+    inline ModifyVolumeAttributeRequest& WithAutoEnableIO(AttributeBooleanValue&& value) { SetAutoEnableIO(std::move(value)); return *this;}
 
   private:
     bool m_dryRun;

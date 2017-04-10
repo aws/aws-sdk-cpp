@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/EbsInstanceBlockDeviceSpecification.h>
+#include <utility>
 
 namespace Aws
 {
@@ -63,7 +64,7 @@ namespace Model
      * <p>The device name exposed to the instance (for example, <code>/dev/sdh</code>
      * or <code>xvdh</code>).</p>
      */
-    inline void SetDeviceName(Aws::String&& value) { m_deviceNameHasBeenSet = true; m_deviceName = value; }
+    inline void SetDeviceName(Aws::String&& value) { m_deviceNameHasBeenSet = true; m_deviceName = std::move(value); }
 
     /**
      * <p>The device name exposed to the instance (for example, <code>/dev/sdh</code>
@@ -81,7 +82,7 @@ namespace Model
      * <p>The device name exposed to the instance (for example, <code>/dev/sdh</code>
      * or <code>xvdh</code>).</p>
      */
-    inline InstanceBlockDeviceMappingSpecification& WithDeviceName(Aws::String&& value) { SetDeviceName(value); return *this;}
+    inline InstanceBlockDeviceMappingSpecification& WithDeviceName(Aws::String&& value) { SetDeviceName(std::move(value)); return *this;}
 
     /**
      * <p>The device name exposed to the instance (for example, <code>/dev/sdh</code>
@@ -105,7 +106,7 @@ namespace Model
      * <p>Parameters used to automatically set up EBS volumes when the instance is
      * launched.</p>
      */
-    inline void SetEbs(EbsInstanceBlockDeviceSpecification&& value) { m_ebsHasBeenSet = true; m_ebs = value; }
+    inline void SetEbs(EbsInstanceBlockDeviceSpecification&& value) { m_ebsHasBeenSet = true; m_ebs = std::move(value); }
 
     /**
      * <p>Parameters used to automatically set up EBS volumes when the instance is
@@ -117,7 +118,7 @@ namespace Model
      * <p>Parameters used to automatically set up EBS volumes when the instance is
      * launched.</p>
      */
-    inline InstanceBlockDeviceMappingSpecification& WithEbs(EbsInstanceBlockDeviceSpecification&& value) { SetEbs(value); return *this;}
+    inline InstanceBlockDeviceMappingSpecification& WithEbs(EbsInstanceBlockDeviceSpecification&& value) { SetEbs(std::move(value)); return *this;}
 
     /**
      * <p>The virtual device name.</p>
@@ -132,7 +133,7 @@ namespace Model
     /**
      * <p>The virtual device name.</p>
      */
-    inline void SetVirtualName(Aws::String&& value) { m_virtualNameHasBeenSet = true; m_virtualName = value; }
+    inline void SetVirtualName(Aws::String&& value) { m_virtualNameHasBeenSet = true; m_virtualName = std::move(value); }
 
     /**
      * <p>The virtual device name.</p>
@@ -147,7 +148,7 @@ namespace Model
     /**
      * <p>The virtual device name.</p>
      */
-    inline InstanceBlockDeviceMappingSpecification& WithVirtualName(Aws::String&& value) { SetVirtualName(value); return *this;}
+    inline InstanceBlockDeviceMappingSpecification& WithVirtualName(Aws::String&& value) { SetVirtualName(std::move(value)); return *this;}
 
     /**
      * <p>The virtual device name.</p>
@@ -167,7 +168,7 @@ namespace Model
     /**
      * <p>suppress the specified device included in the block device mapping.</p>
      */
-    inline void SetNoDevice(Aws::String&& value) { m_noDeviceHasBeenSet = true; m_noDevice = value; }
+    inline void SetNoDevice(Aws::String&& value) { m_noDeviceHasBeenSet = true; m_noDevice = std::move(value); }
 
     /**
      * <p>suppress the specified device included in the block device mapping.</p>
@@ -182,7 +183,7 @@ namespace Model
     /**
      * <p>suppress the specified device included in the block device mapping.</p>
      */
-    inline InstanceBlockDeviceMappingSpecification& WithNoDevice(Aws::String&& value) { SetNoDevice(value); return *this;}
+    inline InstanceBlockDeviceMappingSpecification& WithNoDevice(Aws::String&& value) { SetNoDevice(std::move(value)); return *this;}
 
     /**
      * <p>suppress the specified device included in the block device mapping.</p>

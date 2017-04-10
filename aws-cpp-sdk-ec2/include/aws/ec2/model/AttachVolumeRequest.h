@@ -16,6 +16,7 @@
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/ec2/EC2Request.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -80,7 +81,7 @@ namespace Model
      * <p>The ID of the EBS volume. The volume and instance must be within the same
      * Availability Zone.</p>
      */
-    inline void SetVolumeId(Aws::String&& value) { m_volumeIdHasBeenSet = true; m_volumeId = value; }
+    inline void SetVolumeId(Aws::String&& value) { m_volumeIdHasBeenSet = true; m_volumeId = std::move(value); }
 
     /**
      * <p>The ID of the EBS volume. The volume and instance must be within the same
@@ -98,7 +99,7 @@ namespace Model
      * <p>The ID of the EBS volume. The volume and instance must be within the same
      * Availability Zone.</p>
      */
-    inline AttachVolumeRequest& WithVolumeId(Aws::String&& value) { SetVolumeId(value); return *this;}
+    inline AttachVolumeRequest& WithVolumeId(Aws::String&& value) { SetVolumeId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the EBS volume. The volume and instance must be within the same
@@ -119,7 +120,7 @@ namespace Model
     /**
      * <p>The ID of the instance.</p>
      */
-    inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
+    inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::move(value); }
 
     /**
      * <p>The ID of the instance.</p>
@@ -134,7 +135,7 @@ namespace Model
     /**
      * <p>The ID of the instance.</p>
      */
-    inline AttachVolumeRequest& WithInstanceId(Aws::String&& value) { SetInstanceId(value); return *this;}
+    inline AttachVolumeRequest& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the instance.</p>
@@ -157,7 +158,7 @@ namespace Model
      * <p>The device name to expose to the instance (for example, <code>/dev/sdh</code>
      * or <code>xvdh</code>).</p>
      */
-    inline void SetDevice(Aws::String&& value) { m_deviceHasBeenSet = true; m_device = value; }
+    inline void SetDevice(Aws::String&& value) { m_deviceHasBeenSet = true; m_device = std::move(value); }
 
     /**
      * <p>The device name to expose to the instance (for example, <code>/dev/sdh</code>
@@ -175,7 +176,7 @@ namespace Model
      * <p>The device name to expose to the instance (for example, <code>/dev/sdh</code>
      * or <code>xvdh</code>).</p>
      */
-    inline AttachVolumeRequest& WithDevice(Aws::String&& value) { SetDevice(value); return *this;}
+    inline AttachVolumeRequest& WithDevice(Aws::String&& value) { SetDevice(std::move(value)); return *this;}
 
     /**
      * <p>The device name to expose to the instance (for example, <code>/dev/sdh</code>

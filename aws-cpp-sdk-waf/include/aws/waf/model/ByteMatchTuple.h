@@ -18,6 +18,7 @@
 #include <aws/core/utils/Array.h>
 #include <aws/waf/model/TextTransformation.h>
 #include <aws/waf/model/PositionalConstraint.h>
+#include <utility>
 
 namespace Aws
 {
@@ -67,7 +68,7 @@ namespace Model
      * specified header or a query string. For more information, see
      * <a>FieldToMatch</a>.</p>
      */
-    inline void SetFieldToMatch(FieldToMatch&& value) { m_fieldToMatchHasBeenSet = true; m_fieldToMatch = value; }
+    inline void SetFieldToMatch(FieldToMatch&& value) { m_fieldToMatchHasBeenSet = true; m_fieldToMatch = std::move(value); }
 
     /**
      * <p>The part of a web request that you want AWS WAF to search, such as a
@@ -81,7 +82,7 @@ namespace Model
      * specified header or a query string. For more information, see
      * <a>FieldToMatch</a>.</p>
      */
-    inline ByteMatchTuple& WithFieldToMatch(FieldToMatch&& value) { SetFieldToMatch(value); return *this;}
+    inline ByteMatchTuple& WithFieldToMatch(FieldToMatch&& value) { SetFieldToMatch(std::move(value)); return *this;}
 
     /**
      * <p>The value that you want AWS WAF to search for. AWS WAF searches for the
@@ -198,7 +199,7 @@ namespace Model
      * you're using the AWS CLI or one of the AWS SDKs</b> </p> <p>The value that you
      * want AWS WAF to search for. The SDK automatically base64 encodes the value.</p>
      */
-    inline void SetTargetString(Aws::Utils::ByteBuffer&& value) { m_targetStringHasBeenSet = true; m_targetString = value; }
+    inline void SetTargetString(Aws::Utils::ByteBuffer&& value) { m_targetStringHasBeenSet = true; m_targetString = std::move(value); }
 
     /**
      * <p>The value that you want AWS WAF to search for. AWS WAF searches for the
@@ -276,7 +277,7 @@ namespace Model
      * you're using the AWS CLI or one of the AWS SDKs</b> </p> <p>The value that you
      * want AWS WAF to search for. The SDK automatically base64 encodes the value.</p>
      */
-    inline ByteMatchTuple& WithTargetString(Aws::Utils::ByteBuffer&& value) { SetTargetString(value); return *this;}
+    inline ByteMatchTuple& WithTargetString(Aws::Utils::ByteBuffer&& value) { SetTargetString(std::move(value)); return *this;}
 
     /**
      * <p>Text transformations eliminate some of the unusual formatting that attackers
@@ -384,7 +385,7 @@ namespace Model
      * option to decode a URL-encoded value.</p> <p> <b>NONE</b> </p> <p>Specify
      * <code>NONE</code> if you don't want to perform any text transformations.</p>
      */
-    inline void SetTextTransformation(TextTransformation&& value) { m_textTransformationHasBeenSet = true; m_textTransformation = value; }
+    inline void SetTextTransformation(TextTransformation&& value) { m_textTransformationHasBeenSet = true; m_textTransformation = std::move(value); }
 
     /**
      * <p>Text transformations eliminate some of the unusual formatting that attackers
@@ -456,7 +457,7 @@ namespace Model
      * option to decode a URL-encoded value.</p> <p> <b>NONE</b> </p> <p>Specify
      * <code>NONE</code> if you don't want to perform any text transformations.</p>
      */
-    inline ByteMatchTuple& WithTextTransformation(TextTransformation&& value) { SetTextTransformation(value); return *this;}
+    inline ByteMatchTuple& WithTextTransformation(TextTransformation&& value) { SetTextTransformation(std::move(value)); return *this;}
 
     /**
      * <p>Within the portion of a web request that you want to search (for example, in
@@ -546,7 +547,7 @@ namespace Model
      * </p> <p>The value of <code>TargetString</code> must appear at the end of the
      * specified part of the web request.</p>
      */
-    inline void SetPositionalConstraint(PositionalConstraint&& value) { m_positionalConstraintHasBeenSet = true; m_positionalConstraint = value; }
+    inline void SetPositionalConstraint(PositionalConstraint&& value) { m_positionalConstraintHasBeenSet = true; m_positionalConstraint = std::move(value); }
 
     /**
      * <p>Within the portion of a web request that you want to search (for example, in
@@ -606,7 +607,7 @@ namespace Model
      * </p> <p>The value of <code>TargetString</code> must appear at the end of the
      * specified part of the web request.</p>
      */
-    inline ByteMatchTuple& WithPositionalConstraint(PositionalConstraint&& value) { SetPositionalConstraint(value); return *this;}
+    inline ByteMatchTuple& WithPositionalConstraint(PositionalConstraint&& value) { SetPositionalConstraint(std::move(value)); return *this;}
 
   private:
     FieldToMatch m_fieldToMatch;

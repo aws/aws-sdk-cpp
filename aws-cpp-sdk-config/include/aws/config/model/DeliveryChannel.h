@@ -16,6 +16,7 @@
 #include <aws/config/ConfigService_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/config/model/ConfigSnapshotDeliveryProperties.h>
+#include <utility>
 
 namespace Aws
 {
@@ -70,7 +71,7 @@ namespace Model
      * delivery channel, and then you must use the PutDeliveryChannel command to create
      * a delivery channel that has the desired name.</p>
      */
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p>The name of the delivery channel. By default, AWS Config assigns the name
@@ -97,7 +98,7 @@ namespace Model
      * delivery channel, and then you must use the PutDeliveryChannel command to create
      * a delivery channel that has the desired name.</p>
      */
-    inline DeliveryChannel& WithName(Aws::String&& value) { SetName(value); return *this;}
+    inline DeliveryChannel& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the delivery channel. By default, AWS Config assigns the name
@@ -136,7 +137,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/config/latest/developerguide/s3-bucket-policy.html">Permissions
      * for the Amazon S3 Bucket</a> in the AWS Config Developer Guide.</p>
      */
-    inline void SetS3BucketName(Aws::String&& value) { m_s3BucketNameHasBeenSet = true; m_s3BucketName = value; }
+    inline void SetS3BucketName(Aws::String&& value) { m_s3BucketNameHasBeenSet = true; m_s3BucketName = std::move(value); }
 
     /**
      * <p>The name of the Amazon S3 bucket to which AWS Config delivers configuration
@@ -166,7 +167,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/config/latest/developerguide/s3-bucket-policy.html">Permissions
      * for the Amazon S3 Bucket</a> in the AWS Config Developer Guide.</p>
      */
-    inline DeliveryChannel& WithS3BucketName(Aws::String&& value) { SetS3BucketName(value); return *this;}
+    inline DeliveryChannel& WithS3BucketName(Aws::String&& value) { SetS3BucketName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the Amazon S3 bucket to which AWS Config delivers configuration
@@ -191,7 +192,7 @@ namespace Model
     /**
      * <p>The prefix for the specified Amazon S3 bucket.</p>
      */
-    inline void SetS3KeyPrefix(Aws::String&& value) { m_s3KeyPrefixHasBeenSet = true; m_s3KeyPrefix = value; }
+    inline void SetS3KeyPrefix(Aws::String&& value) { m_s3KeyPrefixHasBeenSet = true; m_s3KeyPrefix = std::move(value); }
 
     /**
      * <p>The prefix for the specified Amazon S3 bucket.</p>
@@ -206,7 +207,7 @@ namespace Model
     /**
      * <p>The prefix for the specified Amazon S3 bucket.</p>
      */
-    inline DeliveryChannel& WithS3KeyPrefix(Aws::String&& value) { SetS3KeyPrefix(value); return *this;}
+    inline DeliveryChannel& WithS3KeyPrefix(Aws::String&& value) { SetS3KeyPrefix(std::move(value)); return *this;}
 
     /**
      * <p>The prefix for the specified Amazon S3 bucket.</p>
@@ -241,7 +242,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/config/latest/developerguide/sns-topic-policy.html">Permissions
      * for the Amazon SNS Topic</a> in the AWS Config Developer Guide.</p>
      */
-    inline void SetSnsTopicARN(Aws::String&& value) { m_snsTopicARNHasBeenSet = true; m_snsTopicARN = value; }
+    inline void SetSnsTopicARN(Aws::String&& value) { m_snsTopicARNHasBeenSet = true; m_snsTopicARN = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon SNS topic to which AWS Config
@@ -271,7 +272,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/config/latest/developerguide/sns-topic-policy.html">Permissions
      * for the Amazon SNS Topic</a> in the AWS Config Developer Guide.</p>
      */
-    inline DeliveryChannel& WithSnsTopicARN(Aws::String&& value) { SetSnsTopicARN(value); return *this;}
+    inline DeliveryChannel& WithSnsTopicARN(Aws::String&& value) { SetSnsTopicARN(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon SNS topic to which AWS Config
@@ -299,7 +300,7 @@ namespace Model
      * <p>The options for how often AWS Config delivers configuration snapshots to the
      * Amazon S3 bucket.</p>
      */
-    inline void SetConfigSnapshotDeliveryProperties(ConfigSnapshotDeliveryProperties&& value) { m_configSnapshotDeliveryPropertiesHasBeenSet = true; m_configSnapshotDeliveryProperties = value; }
+    inline void SetConfigSnapshotDeliveryProperties(ConfigSnapshotDeliveryProperties&& value) { m_configSnapshotDeliveryPropertiesHasBeenSet = true; m_configSnapshotDeliveryProperties = std::move(value); }
 
     /**
      * <p>The options for how often AWS Config delivers configuration snapshots to the
@@ -311,7 +312,7 @@ namespace Model
      * <p>The options for how often AWS Config delivers configuration snapshots to the
      * Amazon S3 bucket.</p>
      */
-    inline DeliveryChannel& WithConfigSnapshotDeliveryProperties(ConfigSnapshotDeliveryProperties&& value) { SetConfigSnapshotDeliveryProperties(value); return *this;}
+    inline DeliveryChannel& WithConfigSnapshotDeliveryProperties(ConfigSnapshotDeliveryProperties&& value) { SetConfigSnapshotDeliveryProperties(std::move(value)); return *this;}
 
   private:
     Aws::String m_name;

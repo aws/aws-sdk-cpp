@@ -16,6 +16,7 @@
 #include <aws/servicecatalog/ServiceCatalog_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/servicecatalog/model/ProductType.h>
+#include <utility>
 
 namespace Aws
 {
@@ -58,7 +59,7 @@ namespace Model
     /**
      * <p>The product view identifier.</p>
      */
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = value; }
+    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
 
     /**
      * <p>The product view identifier.</p>
@@ -73,7 +74,7 @@ namespace Model
     /**
      * <p>The product view identifier.</p>
      */
-    inline ProductViewSummary& WithId(Aws::String&& value) { SetId(value); return *this;}
+    inline ProductViewSummary& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
 
     /**
      * <p>The product view identifier.</p>
@@ -93,7 +94,7 @@ namespace Model
     /**
      * <p>The product identifier.</p>
      */
-    inline void SetProductId(Aws::String&& value) { m_productIdHasBeenSet = true; m_productId = value; }
+    inline void SetProductId(Aws::String&& value) { m_productIdHasBeenSet = true; m_productId = std::move(value); }
 
     /**
      * <p>The product identifier.</p>
@@ -108,7 +109,7 @@ namespace Model
     /**
      * <p>The product identifier.</p>
      */
-    inline ProductViewSummary& WithProductId(Aws::String&& value) { SetProductId(value); return *this;}
+    inline ProductViewSummary& WithProductId(Aws::String&& value) { SetProductId(std::move(value)); return *this;}
 
     /**
      * <p>The product identifier.</p>
@@ -128,7 +129,7 @@ namespace Model
     /**
      * <p>The name of the product.</p>
      */
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p>The name of the product.</p>
@@ -143,7 +144,7 @@ namespace Model
     /**
      * <p>The name of the product.</p>
      */
-    inline ProductViewSummary& WithName(Aws::String&& value) { SetName(value); return *this;}
+    inline ProductViewSummary& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the product.</p>
@@ -166,7 +167,7 @@ namespace Model
      * <p>The owner of the product. Contact the product administrator for the
      * significance of this value.</p>
      */
-    inline void SetOwner(Aws::String&& value) { m_ownerHasBeenSet = true; m_owner = value; }
+    inline void SetOwner(Aws::String&& value) { m_ownerHasBeenSet = true; m_owner = std::move(value); }
 
     /**
      * <p>The owner of the product. Contact the product administrator for the
@@ -184,7 +185,7 @@ namespace Model
      * <p>The owner of the product. Contact the product administrator for the
      * significance of this value.</p>
      */
-    inline ProductViewSummary& WithOwner(Aws::String&& value) { SetOwner(value); return *this;}
+    inline ProductViewSummary& WithOwner(Aws::String&& value) { SetOwner(std::move(value)); return *this;}
 
     /**
      * <p>The owner of the product. Contact the product administrator for the
@@ -205,7 +206,7 @@ namespace Model
     /**
      * <p>Short description of the product.</p>
      */
-    inline void SetShortDescription(Aws::String&& value) { m_shortDescriptionHasBeenSet = true; m_shortDescription = value; }
+    inline void SetShortDescription(Aws::String&& value) { m_shortDescriptionHasBeenSet = true; m_shortDescription = std::move(value); }
 
     /**
      * <p>Short description of the product.</p>
@@ -220,7 +221,7 @@ namespace Model
     /**
      * <p>Short description of the product.</p>
      */
-    inline ProductViewSummary& WithShortDescription(Aws::String&& value) { SetShortDescription(value); return *this;}
+    inline ProductViewSummary& WithShortDescription(Aws::String&& value) { SetShortDescription(std::move(value)); return *this;}
 
     /**
      * <p>Short description of the product.</p>
@@ -243,7 +244,7 @@ namespace Model
      * <p>The product type. Contact the product administrator for the significance of
      * this value.</p>
      */
-    inline void SetType(ProductType&& value) { m_typeHasBeenSet = true; m_type = value; }
+    inline void SetType(ProductType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
      * <p>The product type. Contact the product administrator for the significance of
@@ -255,7 +256,7 @@ namespace Model
      * <p>The product type. Contact the product administrator for the significance of
      * this value.</p>
      */
-    inline ProductViewSummary& WithType(ProductType&& value) { SetType(value); return *this;}
+    inline ProductViewSummary& WithType(ProductType&& value) { SetType(std::move(value)); return *this;}
 
     /**
      * <p>The distributor of the product. Contact the product administrator for the
@@ -273,7 +274,7 @@ namespace Model
      * <p>The distributor of the product. Contact the product administrator for the
      * significance of this value.</p>
      */
-    inline void SetDistributor(Aws::String&& value) { m_distributorHasBeenSet = true; m_distributor = value; }
+    inline void SetDistributor(Aws::String&& value) { m_distributorHasBeenSet = true; m_distributor = std::move(value); }
 
     /**
      * <p>The distributor of the product. Contact the product administrator for the
@@ -291,7 +292,7 @@ namespace Model
      * <p>The distributor of the product. Contact the product administrator for the
      * significance of this value.</p>
      */
-    inline ProductViewSummary& WithDistributor(Aws::String&& value) { SetDistributor(value); return *this;}
+    inline ProductViewSummary& WithDistributor(Aws::String&& value) { SetDistributor(std::move(value)); return *this;}
 
     /**
      * <p>The distributor of the product. Contact the product administrator for the
@@ -342,7 +343,7 @@ namespace Model
     /**
      * <p>The email contact information to obtain support for this Product.</p>
      */
-    inline void SetSupportEmail(Aws::String&& value) { m_supportEmailHasBeenSet = true; m_supportEmail = value; }
+    inline void SetSupportEmail(Aws::String&& value) { m_supportEmailHasBeenSet = true; m_supportEmail = std::move(value); }
 
     /**
      * <p>The email contact information to obtain support for this Product.</p>
@@ -357,7 +358,7 @@ namespace Model
     /**
      * <p>The email contact information to obtain support for this Product.</p>
      */
-    inline ProductViewSummary& WithSupportEmail(Aws::String&& value) { SetSupportEmail(value); return *this;}
+    inline ProductViewSummary& WithSupportEmail(Aws::String&& value) { SetSupportEmail(std::move(value)); return *this;}
 
     /**
      * <p>The email contact information to obtain support for this Product.</p>
@@ -377,7 +378,7 @@ namespace Model
     /**
      * <p>The description of the support for this Product.</p>
      */
-    inline void SetSupportDescription(Aws::String&& value) { m_supportDescriptionHasBeenSet = true; m_supportDescription = value; }
+    inline void SetSupportDescription(Aws::String&& value) { m_supportDescriptionHasBeenSet = true; m_supportDescription = std::move(value); }
 
     /**
      * <p>The description of the support for this Product.</p>
@@ -392,7 +393,7 @@ namespace Model
     /**
      * <p>The description of the support for this Product.</p>
      */
-    inline ProductViewSummary& WithSupportDescription(Aws::String&& value) { SetSupportDescription(value); return *this;}
+    inline ProductViewSummary& WithSupportDescription(Aws::String&& value) { SetSupportDescription(std::move(value)); return *this;}
 
     /**
      * <p>The description of the support for this Product.</p>
@@ -412,7 +413,7 @@ namespace Model
     /**
      * <p>The URL information to obtain support for this Product.</p>
      */
-    inline void SetSupportUrl(Aws::String&& value) { m_supportUrlHasBeenSet = true; m_supportUrl = value; }
+    inline void SetSupportUrl(Aws::String&& value) { m_supportUrlHasBeenSet = true; m_supportUrl = std::move(value); }
 
     /**
      * <p>The URL information to obtain support for this Product.</p>
@@ -427,7 +428,7 @@ namespace Model
     /**
      * <p>The URL information to obtain support for this Product.</p>
      */
-    inline ProductViewSummary& WithSupportUrl(Aws::String&& value) { SetSupportUrl(value); return *this;}
+    inline ProductViewSummary& WithSupportUrl(Aws::String&& value) { SetSupportUrl(std::move(value)); return *this;}
 
     /**
      * <p>The URL information to obtain support for this Product.</p>

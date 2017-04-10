@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/opsworks/OpsWorks_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -59,7 +60,7 @@ namespace Model
      * <p>The data source's type, <code>AutoSelectOpsworksMysqlInstance</code>,
      * <code>OpsworksMysqlInstance</code>, or <code>RdsDbInstance</code>.</p>
      */
-    inline void SetType(Aws::String&& value) { m_typeHasBeenSet = true; m_type = value; }
+    inline void SetType(Aws::String&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
      * <p>The data source's type, <code>AutoSelectOpsworksMysqlInstance</code>,
@@ -77,7 +78,7 @@ namespace Model
      * <p>The data source's type, <code>AutoSelectOpsworksMysqlInstance</code>,
      * <code>OpsworksMysqlInstance</code>, or <code>RdsDbInstance</code>.</p>
      */
-    inline DataSource& WithType(Aws::String&& value) { SetType(value); return *this;}
+    inline DataSource& WithType(Aws::String&& value) { SetType(std::move(value)); return *this;}
 
     /**
      * <p>The data source's type, <code>AutoSelectOpsworksMysqlInstance</code>,
@@ -98,7 +99,7 @@ namespace Model
     /**
      * <p>The data source's ARN.</p>
      */
-    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = value; }
+    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
 
     /**
      * <p>The data source's ARN.</p>
@@ -113,7 +114,7 @@ namespace Model
     /**
      * <p>The data source's ARN.</p>
      */
-    inline DataSource& WithArn(Aws::String&& value) { SetArn(value); return *this;}
+    inline DataSource& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
 
     /**
      * <p>The data source's ARN.</p>
@@ -133,7 +134,7 @@ namespace Model
     /**
      * <p>The database name.</p>
      */
-    inline void SetDatabaseName(Aws::String&& value) { m_databaseNameHasBeenSet = true; m_databaseName = value; }
+    inline void SetDatabaseName(Aws::String&& value) { m_databaseNameHasBeenSet = true; m_databaseName = std::move(value); }
 
     /**
      * <p>The database name.</p>
@@ -148,7 +149,7 @@ namespace Model
     /**
      * <p>The database name.</p>
      */
-    inline DataSource& WithDatabaseName(Aws::String&& value) { SetDatabaseName(value); return *this;}
+    inline DataSource& WithDatabaseName(Aws::String&& value) { SetDatabaseName(std::move(value)); return *this;}
 
     /**
      * <p>The database name.</p>

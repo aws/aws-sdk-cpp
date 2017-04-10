@@ -21,6 +21,7 @@
 #include <aws/ec2/model/ResponseMetadata.h>
 #include <aws/ec2/model/ReservedInstanceReservationValue.h>
 #include <aws/ec2/model/TargetReservationValue.h>
+#include <utility>
 
 namespace Aws
 {
@@ -64,7 +65,7 @@ namespace Model
     /**
      * <p>The configuration of your Convertible Reserved Instances.</p>
      */
-    inline void SetReservedInstanceValueSet(Aws::Vector<ReservedInstanceReservationValue>&& value) { m_reservedInstanceValueSet = value; }
+    inline void SetReservedInstanceValueSet(Aws::Vector<ReservedInstanceReservationValue>&& value) { m_reservedInstanceValueSet = std::move(value); }
 
     /**
      * <p>The configuration of your Convertible Reserved Instances.</p>
@@ -74,7 +75,7 @@ namespace Model
     /**
      * <p>The configuration of your Convertible Reserved Instances.</p>
      */
-    inline GetReservedInstancesExchangeQuoteResponse& WithReservedInstanceValueSet(Aws::Vector<ReservedInstanceReservationValue>&& value) { SetReservedInstanceValueSet(value); return *this;}
+    inline GetReservedInstancesExchangeQuoteResponse& WithReservedInstanceValueSet(Aws::Vector<ReservedInstanceReservationValue>&& value) { SetReservedInstanceValueSet(std::move(value)); return *this;}
 
     /**
      * <p>The configuration of your Convertible Reserved Instances.</p>
@@ -84,7 +85,7 @@ namespace Model
     /**
      * <p>The configuration of your Convertible Reserved Instances.</p>
      */
-    inline GetReservedInstancesExchangeQuoteResponse& AddReservedInstanceValueSet(ReservedInstanceReservationValue&& value) { m_reservedInstanceValueSet.push_back(value); return *this; }
+    inline GetReservedInstancesExchangeQuoteResponse& AddReservedInstanceValueSet(ReservedInstanceReservationValue&& value) { m_reservedInstanceValueSet.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The cost associated with the Reserved Instance.</p>
@@ -99,7 +100,7 @@ namespace Model
     /**
      * <p>The cost associated with the Reserved Instance.</p>
      */
-    inline void SetReservedInstanceValueRollup(ReservationValue&& value) { m_reservedInstanceValueRollup = value; }
+    inline void SetReservedInstanceValueRollup(ReservationValue&& value) { m_reservedInstanceValueRollup = std::move(value); }
 
     /**
      * <p>The cost associated with the Reserved Instance.</p>
@@ -109,7 +110,7 @@ namespace Model
     /**
      * <p>The cost associated with the Reserved Instance.</p>
      */
-    inline GetReservedInstancesExchangeQuoteResponse& WithReservedInstanceValueRollup(ReservationValue&& value) { SetReservedInstanceValueRollup(value); return *this;}
+    inline GetReservedInstancesExchangeQuoteResponse& WithReservedInstanceValueRollup(ReservationValue&& value) { SetReservedInstanceValueRollup(std::move(value)); return *this;}
 
     /**
      * <p>The values of the target Convertible Reserved Instances.</p>
@@ -124,7 +125,7 @@ namespace Model
     /**
      * <p>The values of the target Convertible Reserved Instances.</p>
      */
-    inline void SetTargetConfigurationValueSet(Aws::Vector<TargetReservationValue>&& value) { m_targetConfigurationValueSet = value; }
+    inline void SetTargetConfigurationValueSet(Aws::Vector<TargetReservationValue>&& value) { m_targetConfigurationValueSet = std::move(value); }
 
     /**
      * <p>The values of the target Convertible Reserved Instances.</p>
@@ -134,7 +135,7 @@ namespace Model
     /**
      * <p>The values of the target Convertible Reserved Instances.</p>
      */
-    inline GetReservedInstancesExchangeQuoteResponse& WithTargetConfigurationValueSet(Aws::Vector<TargetReservationValue>&& value) { SetTargetConfigurationValueSet(value); return *this;}
+    inline GetReservedInstancesExchangeQuoteResponse& WithTargetConfigurationValueSet(Aws::Vector<TargetReservationValue>&& value) { SetTargetConfigurationValueSet(std::move(value)); return *this;}
 
     /**
      * <p>The values of the target Convertible Reserved Instances.</p>
@@ -144,7 +145,7 @@ namespace Model
     /**
      * <p>The values of the target Convertible Reserved Instances.</p>
      */
-    inline GetReservedInstancesExchangeQuoteResponse& AddTargetConfigurationValueSet(TargetReservationValue&& value) { m_targetConfigurationValueSet.push_back(value); return *this; }
+    inline GetReservedInstancesExchangeQuoteResponse& AddTargetConfigurationValueSet(TargetReservationValue&& value) { m_targetConfigurationValueSet.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The cost associated with the Reserved Instance.</p>
@@ -159,7 +160,7 @@ namespace Model
     /**
      * <p>The cost associated with the Reserved Instance.</p>
      */
-    inline void SetTargetConfigurationValueRollup(ReservationValue&& value) { m_targetConfigurationValueRollup = value; }
+    inline void SetTargetConfigurationValueRollup(ReservationValue&& value) { m_targetConfigurationValueRollup = std::move(value); }
 
     /**
      * <p>The cost associated with the Reserved Instance.</p>
@@ -169,7 +170,7 @@ namespace Model
     /**
      * <p>The cost associated with the Reserved Instance.</p>
      */
-    inline GetReservedInstancesExchangeQuoteResponse& WithTargetConfigurationValueRollup(ReservationValue&& value) { SetTargetConfigurationValueRollup(value); return *this;}
+    inline GetReservedInstancesExchangeQuoteResponse& WithTargetConfigurationValueRollup(ReservationValue&& value) { SetTargetConfigurationValueRollup(std::move(value)); return *this;}
 
     /**
      * <p>The total true upfront charge for the exchange.</p>
@@ -184,7 +185,7 @@ namespace Model
     /**
      * <p>The total true upfront charge for the exchange.</p>
      */
-    inline void SetPaymentDue(Aws::String&& value) { m_paymentDue = value; }
+    inline void SetPaymentDue(Aws::String&& value) { m_paymentDue = std::move(value); }
 
     /**
      * <p>The total true upfront charge for the exchange.</p>
@@ -199,7 +200,7 @@ namespace Model
     /**
      * <p>The total true upfront charge for the exchange.</p>
      */
-    inline GetReservedInstancesExchangeQuoteResponse& WithPaymentDue(Aws::String&& value) { SetPaymentDue(value); return *this;}
+    inline GetReservedInstancesExchangeQuoteResponse& WithPaymentDue(Aws::String&& value) { SetPaymentDue(std::move(value)); return *this;}
 
     /**
      * <p>The total true upfront charge for the exchange.</p>
@@ -219,7 +220,7 @@ namespace Model
     /**
      * <p>The currency of the transaction.</p>
      */
-    inline void SetCurrencyCode(Aws::String&& value) { m_currencyCode = value; }
+    inline void SetCurrencyCode(Aws::String&& value) { m_currencyCode = std::move(value); }
 
     /**
      * <p>The currency of the transaction.</p>
@@ -234,7 +235,7 @@ namespace Model
     /**
      * <p>The currency of the transaction.</p>
      */
-    inline GetReservedInstancesExchangeQuoteResponse& WithCurrencyCode(Aws::String&& value) { SetCurrencyCode(value); return *this;}
+    inline GetReservedInstancesExchangeQuoteResponse& WithCurrencyCode(Aws::String&& value) { SetCurrencyCode(std::move(value)); return *this;}
 
     /**
      * <p>The currency of the transaction.</p>
@@ -254,7 +255,7 @@ namespace Model
     /**
      * <p>The new end date of the reservation term.</p>
      */
-    inline void SetOutputReservedInstancesWillExpireAt(Aws::Utils::DateTime&& value) { m_outputReservedInstancesWillExpireAt = value; }
+    inline void SetOutputReservedInstancesWillExpireAt(Aws::Utils::DateTime&& value) { m_outputReservedInstancesWillExpireAt = std::move(value); }
 
     /**
      * <p>The new end date of the reservation term.</p>
@@ -264,7 +265,7 @@ namespace Model
     /**
      * <p>The new end date of the reservation term.</p>
      */
-    inline GetReservedInstancesExchangeQuoteResponse& WithOutputReservedInstancesWillExpireAt(Aws::Utils::DateTime&& value) { SetOutputReservedInstancesWillExpireAt(value); return *this;}
+    inline GetReservedInstancesExchangeQuoteResponse& WithOutputReservedInstancesWillExpireAt(Aws::Utils::DateTime&& value) { SetOutputReservedInstancesWillExpireAt(std::move(value)); return *this;}
 
     /**
      * <p>If <code>true</code>, the exchange is valid. If <code>false</code>, the
@@ -297,7 +298,7 @@ namespace Model
     /**
      * <p>Describes the reason why the exchange cannot be completed.</p>
      */
-    inline void SetValidationFailureReason(Aws::String&& value) { m_validationFailureReason = value; }
+    inline void SetValidationFailureReason(Aws::String&& value) { m_validationFailureReason = std::move(value); }
 
     /**
      * <p>Describes the reason why the exchange cannot be completed.</p>
@@ -312,7 +313,7 @@ namespace Model
     /**
      * <p>Describes the reason why the exchange cannot be completed.</p>
      */
-    inline GetReservedInstancesExchangeQuoteResponse& WithValidationFailureReason(Aws::String&& value) { SetValidationFailureReason(value); return *this;}
+    inline GetReservedInstancesExchangeQuoteResponse& WithValidationFailureReason(Aws::String&& value) { SetValidationFailureReason(std::move(value)); return *this;}
 
     /**
      * <p>Describes the reason why the exchange cannot be completed.</p>
@@ -326,13 +327,13 @@ namespace Model
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
 
     
     inline GetReservedInstancesExchangeQuoteResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
 
     
-    inline GetReservedInstancesExchangeQuoteResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
+    inline GetReservedInstancesExchangeQuoteResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
     Aws::Vector<ReservedInstanceReservationValue> m_reservedInstanceValueSet;

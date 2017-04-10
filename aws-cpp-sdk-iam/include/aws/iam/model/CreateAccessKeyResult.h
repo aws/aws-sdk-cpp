@@ -16,6 +16,7 @@
 #include <aws/iam/IAM_EXPORTS.h>
 #include <aws/iam/model/AccessKey.h>
 #include <aws/iam/model/ResponseMetadata.h>
+#include <utility>
 
 namespace Aws
 {
@@ -59,7 +60,7 @@ namespace Model
     /**
      * <p>A structure with details about the access key.</p>
      */
-    inline void SetAccessKey(AccessKey&& value) { m_accessKey = value; }
+    inline void SetAccessKey(AccessKey&& value) { m_accessKey = std::move(value); }
 
     /**
      * <p>A structure with details about the access key.</p>
@@ -69,7 +70,7 @@ namespace Model
     /**
      * <p>A structure with details about the access key.</p>
      */
-    inline CreateAccessKeyResult& WithAccessKey(AccessKey&& value) { SetAccessKey(value); return *this;}
+    inline CreateAccessKeyResult& WithAccessKey(AccessKey&& value) { SetAccessKey(std::move(value)); return *this;}
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
@@ -78,13 +79,13 @@ namespace Model
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
 
     
     inline CreateAccessKeyResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
 
     
-    inline CreateAccessKeyResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
+    inline CreateAccessKeyResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
     AccessKey m_accessKey;

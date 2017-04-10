@@ -16,6 +16,7 @@
 #include <aws/opsworks/OpsWorks_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -212,7 +213,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-servicerole.html">Allowing
      * AWS OpsWorks to Act on Your Behalf</a>.</p> </note>
      */
-    inline void SetAlarms(Aws::Vector<Aws::String>&& value) { m_alarmsHasBeenSet = true; m_alarms = value; }
+    inline void SetAlarms(Aws::Vector<Aws::String>&& value) { m_alarmsHasBeenSet = true; m_alarms = std::move(value); }
 
     /**
      * <p>Custom Cloudwatch auto scaling alarms, to be used as thresholds. This
@@ -236,7 +237,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-servicerole.html">Allowing
      * AWS OpsWorks to Act on Your Behalf</a>.</p> </note>
      */
-    inline AutoScalingThresholds& WithAlarms(Aws::Vector<Aws::String>&& value) { SetAlarms(value); return *this;}
+    inline AutoScalingThresholds& WithAlarms(Aws::Vector<Aws::String>&& value) { SetAlarms(std::move(value)); return *this;}
 
     /**
      * <p>Custom Cloudwatch auto scaling alarms, to be used as thresholds. This
@@ -260,7 +261,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-servicerole.html">Allowing
      * AWS OpsWorks to Act on Your Behalf</a>.</p> </note>
      */
-    inline AutoScalingThresholds& AddAlarms(Aws::String&& value) { m_alarmsHasBeenSet = true; m_alarms.push_back(value); return *this; }
+    inline AutoScalingThresholds& AddAlarms(Aws::String&& value) { m_alarmsHasBeenSet = true; m_alarms.push_back(std::move(value)); return *this; }
 
     /**
      * <p>Custom Cloudwatch auto scaling alarms, to be used as thresholds. This

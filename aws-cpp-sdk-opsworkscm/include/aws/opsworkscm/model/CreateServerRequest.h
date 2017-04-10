@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/opsworkscm/model/EngineAttribute.h>
+#include <utility>
 
 namespace Aws
 {
@@ -92,7 +93,7 @@ namespace Model
      * <p> The configuration management engine to use. Valid values include
      * <code>Chef</code>. </p>
      */
-    inline void SetEngine(Aws::String&& value) { m_engineHasBeenSet = true; m_engine = value; }
+    inline void SetEngine(Aws::String&& value) { m_engineHasBeenSet = true; m_engine = std::move(value); }
 
     /**
      * <p> The configuration management engine to use. Valid values include
@@ -110,7 +111,7 @@ namespace Model
      * <p> The configuration management engine to use. Valid values include
      * <code>Chef</code>. </p>
      */
-    inline CreateServerRequest& WithEngine(Aws::String&& value) { SetEngine(value); return *this;}
+    inline CreateServerRequest& WithEngine(Aws::String&& value) { SetEngine(std::move(value)); return *this;}
 
     /**
      * <p> The configuration management engine to use. Valid values include
@@ -131,7 +132,7 @@ namespace Model
     /**
      * <p> The engine model, or option. Valid values include <code>Single</code>. </p>
      */
-    inline void SetEngineModel(Aws::String&& value) { m_engineModelHasBeenSet = true; m_engineModel = value; }
+    inline void SetEngineModel(Aws::String&& value) { m_engineModelHasBeenSet = true; m_engineModel = std::move(value); }
 
     /**
      * <p> The engine model, or option. Valid values include <code>Single</code>. </p>
@@ -146,7 +147,7 @@ namespace Model
     /**
      * <p> The engine model, or option. Valid values include <code>Single</code>. </p>
      */
-    inline CreateServerRequest& WithEngineModel(Aws::String&& value) { SetEngineModel(value); return *this;}
+    inline CreateServerRequest& WithEngineModel(Aws::String&& value) { SetEngineModel(std::move(value)); return *this;}
 
     /**
      * <p> The engine model, or option. Valid values include <code>Single</code>. </p>
@@ -169,7 +170,7 @@ namespace Model
      * <p> The major release version of the engine that you want to use. Values depend
      * on the engine that you choose. </p>
      */
-    inline void SetEngineVersion(Aws::String&& value) { m_engineVersionHasBeenSet = true; m_engineVersion = value; }
+    inline void SetEngineVersion(Aws::String&& value) { m_engineVersionHasBeenSet = true; m_engineVersion = std::move(value); }
 
     /**
      * <p> The major release version of the engine that you want to use. Values depend
@@ -187,7 +188,7 @@ namespace Model
      * <p> The major release version of the engine that you want to use. Values depend
      * on the engine that you choose. </p>
      */
-    inline CreateServerRequest& WithEngineVersion(Aws::String&& value) { SetEngineVersion(value); return *this;}
+    inline CreateServerRequest& WithEngineVersion(Aws::String&& value) { SetEngineVersion(std::move(value)); return *this;}
 
     /**
      * <p> The major release version of the engine that you want to use. Values depend
@@ -241,7 +242,7 @@ namespace Model
      * and one special character. When no CHEF_DELIVERY_ADMIN_PASSWORD is set, one is
      * generated and returned in the response.</p> </li> </ul>
      */
-    inline void SetEngineAttributes(Aws::Vector<EngineAttribute>&& value) { m_engineAttributesHasBeenSet = true; m_engineAttributes = value; }
+    inline void SetEngineAttributes(Aws::Vector<EngineAttribute>&& value) { m_engineAttributesHasBeenSet = true; m_engineAttributes = std::move(value); }
 
     /**
      * <p>Optional engine attributes on a specified server. </p> <p class="title">
@@ -273,7 +274,7 @@ namespace Model
      * and one special character. When no CHEF_DELIVERY_ADMIN_PASSWORD is set, one is
      * generated and returned in the response.</p> </li> </ul>
      */
-    inline CreateServerRequest& WithEngineAttributes(Aws::Vector<EngineAttribute>&& value) { SetEngineAttributes(value); return *this;}
+    inline CreateServerRequest& WithEngineAttributes(Aws::Vector<EngineAttribute>&& value) { SetEngineAttributes(std::move(value)); return *this;}
 
     /**
      * <p>Optional engine attributes on a specified server. </p> <p class="title">
@@ -305,7 +306,7 @@ namespace Model
      * and one special character. When no CHEF_DELIVERY_ADMIN_PASSWORD is set, one is
      * generated and returned in the response.</p> </li> </ul>
      */
-    inline CreateServerRequest& AddEngineAttributes(EngineAttribute&& value) { m_engineAttributesHasBeenSet = true; m_engineAttributes.push_back(value); return *this; }
+    inline CreateServerRequest& AddEngineAttributes(EngineAttribute&& value) { m_engineAttributesHasBeenSet = true; m_engineAttributes.push_back(std::move(value)); return *this; }
 
     /**
      * <p> The number of automated backups that you want to keep. Whenever a new backup
@@ -350,7 +351,7 @@ namespace Model
      * letters, numbers, or hyphens (-) are allowed, up to a maximum of 40 characters.
      * </p>
      */
-    inline void SetServerName(Aws::String&& value) { m_serverNameHasBeenSet = true; m_serverName = value; }
+    inline void SetServerName(Aws::String&& value) { m_serverNameHasBeenSet = true; m_serverName = std::move(value); }
 
     /**
      * <p> The name of the server. The server name must be unique within your AWS
@@ -374,7 +375,7 @@ namespace Model
      * letters, numbers, or hyphens (-) are allowed, up to a maximum of 40 characters.
      * </p>
      */
-    inline CreateServerRequest& WithServerName(Aws::String&& value) { SetServerName(value); return *this;}
+    inline CreateServerRequest& WithServerName(Aws::String&& value) { SetServerName(std::move(value)); return *this;}
 
     /**
      * <p> The name of the server. The server name must be unique within your AWS
@@ -415,7 +416,7 @@ namespace Model
      * This template creates a CloudFormation stack that includes the instance profile
      * you need. </p>
      */
-    inline void SetInstanceProfileArn(Aws::String&& value) { m_instanceProfileArnHasBeenSet = true; m_instanceProfileArn = value; }
+    inline void SetInstanceProfileArn(Aws::String&& value) { m_instanceProfileArnHasBeenSet = true; m_instanceProfileArn = std::move(value); }
 
     /**
      * <p> The ARN of the instance profile that your Amazon EC2 instances use. Although
@@ -448,7 +449,7 @@ namespace Model
      * This template creates a CloudFormation stack that includes the instance profile
      * you need. </p>
      */
-    inline CreateServerRequest& WithInstanceProfileArn(Aws::String&& value) { SetInstanceProfileArn(value); return *this;}
+    inline CreateServerRequest& WithInstanceProfileArn(Aws::String&& value) { SetInstanceProfileArn(std::move(value)); return *this;}
 
     /**
      * <p> The ARN of the instance profile that your Amazon EC2 instances use. Although
@@ -483,7 +484,7 @@ namespace Model
      * <code>m4.large</code>. Valid values are <code>t2.medium</code>,
      * <code>m4.large</code>, or <code>m4.2xlarge</code>. </p>
      */
-    inline void SetInstanceType(Aws::String&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
+    inline void SetInstanceType(Aws::String&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = std::move(value); }
 
     /**
      * <p> The Amazon EC2 instance type to use. Valid values must be specified in the
@@ -507,7 +508,7 @@ namespace Model
      * <code>m4.large</code>. Valid values are <code>t2.medium</code>,
      * <code>m4.large</code>, or <code>m4.2xlarge</code>. </p>
      */
-    inline CreateServerRequest& WithInstanceType(Aws::String&& value) { SetInstanceType(value); return *this;}
+    inline CreateServerRequest& WithInstanceType(Aws::String&& value) { SetInstanceType(std::move(value)); return *this;}
 
     /**
      * <p> The Amazon EC2 instance type to use. Valid values must be specified in the
@@ -536,7 +537,7 @@ namespace Model
      * if desired, you may specify this parameter to connect to your instances by using
      * SSH. </p>
      */
-    inline void SetKeyPair(Aws::String&& value) { m_keyPairHasBeenSet = true; m_keyPair = value; }
+    inline void SetKeyPair(Aws::String&& value) { m_keyPairHasBeenSet = true; m_keyPair = std::move(value); }
 
     /**
      * <p> The Amazon EC2 key pair to set for the instance. This parameter is optional;
@@ -557,7 +558,7 @@ namespace Model
      * if desired, you may specify this parameter to connect to your instances by using
      * SSH. </p>
      */
-    inline CreateServerRequest& WithKeyPair(Aws::String&& value) { SetKeyPair(value); return *this;}
+    inline CreateServerRequest& WithKeyPair(Aws::String&& value) { SetKeyPair(std::move(value)); return *this;}
 
     /**
      * <p> The Amazon EC2 key pair to set for the instance. This parameter is optional;
@@ -597,7 +598,7 @@ namespace Model
      * for more information. </p> <p> <b>Example:</b> <code>Mon:08:00</code>, which
      * represents a start time of every Monday at 08:00 UTC. (8:00 a.m.) </p>
      */
-    inline void SetPreferredMaintenanceWindow(Aws::String&& value) { m_preferredMaintenanceWindowHasBeenSet = true; m_preferredMaintenanceWindow = value; }
+    inline void SetPreferredMaintenanceWindow(Aws::String&& value) { m_preferredMaintenanceWindowHasBeenSet = true; m_preferredMaintenanceWindow = std::move(value); }
 
     /**
      * <p> The start time for a one-hour period each week during which AWS OpsWorks for
@@ -630,7 +631,7 @@ namespace Model
      * for more information. </p> <p> <b>Example:</b> <code>Mon:08:00</code>, which
      * represents a start time of every Monday at 08:00 UTC. (8:00 a.m.) </p>
      */
-    inline CreateServerRequest& WithPreferredMaintenanceWindow(Aws::String&& value) { SetPreferredMaintenanceWindow(value); return *this;}
+    inline CreateServerRequest& WithPreferredMaintenanceWindow(Aws::String&& value) { SetPreferredMaintenanceWindow(std::move(value)); return *this;}
 
     /**
      * <p> The start time for a one-hour period each week during which AWS OpsWorks for
@@ -680,7 +681,7 @@ namespace Model
      * start time of 08:00 UTC.</p> <p> <b>Example:</b> <code>Mon:08:00</code>, which
      * represents a start time of every Monday at 08:00 UTC. (8:00 a.m.)</p>
      */
-    inline void SetPreferredBackupWindow(Aws::String&& value) { m_preferredBackupWindowHasBeenSet = true; m_preferredBackupWindow = value; }
+    inline void SetPreferredBackupWindow(Aws::String&& value) { m_preferredBackupWindowHasBeenSet = true; m_preferredBackupWindow = std::move(value); }
 
     /**
      * <p> The start time for a one-hour period during which AWS OpsWorks for Chef
@@ -719,7 +720,7 @@ namespace Model
      * start time of 08:00 UTC.</p> <p> <b>Example:</b> <code>Mon:08:00</code>, which
      * represents a start time of every Monday at 08:00 UTC. (8:00 a.m.)</p>
      */
-    inline CreateServerRequest& WithPreferredBackupWindow(Aws::String&& value) { SetPreferredBackupWindow(value); return *this;}
+    inline CreateServerRequest& WithPreferredBackupWindow(Aws::String&& value) { SetPreferredBackupWindow(std::move(value)); return *this;}
 
     /**
      * <p> The start time for a one-hour period during which AWS OpsWorks for Chef
@@ -759,7 +760,7 @@ namespace Model
      * parameter, AWS OpsWorks for Chef Automate creates one new security group that
      * uses TCP ports 22 and 443, open to 0.0.0.0/0 (everyone). </p>
      */
-    inline void SetSecurityGroupIds(Aws::Vector<Aws::String>&& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds = value; }
+    inline void SetSecurityGroupIds(Aws::Vector<Aws::String>&& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds = std::move(value); }
 
     /**
      * <p> A list of security group IDs to attach to the Amazon EC2 instance. If you
@@ -777,7 +778,7 @@ namespace Model
      * parameter, AWS OpsWorks for Chef Automate creates one new security group that
      * uses TCP ports 22 and 443, open to 0.0.0.0/0 (everyone). </p>
      */
-    inline CreateServerRequest& WithSecurityGroupIds(Aws::Vector<Aws::String>&& value) { SetSecurityGroupIds(value); return *this;}
+    inline CreateServerRequest& WithSecurityGroupIds(Aws::Vector<Aws::String>&& value) { SetSecurityGroupIds(std::move(value)); return *this;}
 
     /**
      * <p> A list of security group IDs to attach to the Amazon EC2 instance. If you
@@ -795,7 +796,7 @@ namespace Model
      * parameter, AWS OpsWorks for Chef Automate creates one new security group that
      * uses TCP ports 22 and 443, open to 0.0.0.0/0 (everyone). </p>
      */
-    inline CreateServerRequest& AddSecurityGroupIds(Aws::String&& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(value); return *this; }
+    inline CreateServerRequest& AddSecurityGroupIds(Aws::String&& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(std::move(value)); return *this; }
 
     /**
      * <p> A list of security group IDs to attach to the Amazon EC2 instance. If you
@@ -840,7 +841,7 @@ namespace Model
      * template creates a CloudFormation stack that includes the service role that you
      * need. </p>
      */
-    inline void SetServiceRoleArn(Aws::String&& value) { m_serviceRoleArnHasBeenSet = true; m_serviceRoleArn = value; }
+    inline void SetServiceRoleArn(Aws::String&& value) { m_serviceRoleArnHasBeenSet = true; m_serviceRoleArn = std::move(value); }
 
     /**
      * <p> The service role that the AWS OpsWorks for Chef Automate service backend
@@ -876,7 +877,7 @@ namespace Model
      * template creates a CloudFormation stack that includes the service role that you
      * need. </p>
      */
-    inline CreateServerRequest& WithServiceRoleArn(Aws::String&& value) { SetServiceRoleArn(value); return *this;}
+    inline CreateServerRequest& WithServiceRoleArn(Aws::String&& value) { SetServiceRoleArn(std::move(value)); return *this;}
 
     /**
      * <p> The service role that the AWS OpsWorks for Chef Automate service backend
@@ -930,7 +931,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/https:/docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported
      * Platforms</a>.</p>
      */
-    inline void SetSubnetIds(Aws::Vector<Aws::String>&& value) { m_subnetIdsHasBeenSet = true; m_subnetIds = value; }
+    inline void SetSubnetIds(Aws::Vector<Aws::String>&& value) { m_subnetIdsHasBeenSet = true; m_subnetIds = std::move(value); }
 
     /**
      * <p> The IDs of subnets in which to launch the server EC2 instance. </p> <p>
@@ -958,7 +959,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/https:/docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported
      * Platforms</a>.</p>
      */
-    inline CreateServerRequest& WithSubnetIds(Aws::Vector<Aws::String>&& value) { SetSubnetIds(value); return *this;}
+    inline CreateServerRequest& WithSubnetIds(Aws::Vector<Aws::String>&& value) { SetSubnetIds(std::move(value)); return *this;}
 
     /**
      * <p> The IDs of subnets in which to launch the server EC2 instance. </p> <p>
@@ -986,7 +987,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/https:/docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported
      * Platforms</a>.</p>
      */
-    inline CreateServerRequest& AddSubnetIds(Aws::String&& value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(value); return *this; }
+    inline CreateServerRequest& AddSubnetIds(Aws::String&& value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(std::move(value)); return *this; }
 
     /**
      * <p> The IDs of subnets in which to launch the server EC2 instance. </p> <p>
@@ -1018,7 +1019,7 @@ namespace Model
      * <p> If you specify this field, AWS OpsWorks for Chef Automate creates the server
      * by using the backup represented by BackupId. </p>
      */
-    inline void SetBackupId(Aws::String&& value) { m_backupIdHasBeenSet = true; m_backupId = value; }
+    inline void SetBackupId(Aws::String&& value) { m_backupIdHasBeenSet = true; m_backupId = std::move(value); }
 
     /**
      * <p> If you specify this field, AWS OpsWorks for Chef Automate creates the server
@@ -1036,7 +1037,7 @@ namespace Model
      * <p> If you specify this field, AWS OpsWorks for Chef Automate creates the server
      * by using the backup represented by BackupId. </p>
      */
-    inline CreateServerRequest& WithBackupId(Aws::String&& value) { SetBackupId(value); return *this;}
+    inline CreateServerRequest& WithBackupId(Aws::String&& value) { SetBackupId(std::move(value)); return *this;}
 
     /**
      * <p> If you specify this field, AWS OpsWorks for Chef Automate creates the server

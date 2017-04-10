@@ -16,6 +16,7 @@
 #include <aws/sns/SNS_EXPORTS.h>
 #include <aws/sns/SNSRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -50,7 +51,7 @@ namespace Model
     /**
      * <p>Token returned by the previous <code>ListTopics</code> request.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
      * <p>Token returned by the previous <code>ListTopics</code> request.</p>
@@ -65,7 +66,7 @@ namespace Model
     /**
      * <p>Token returned by the previous <code>ListTopics</code> request.</p>
      */
-    inline ListTopicsRequest& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline ListTopicsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>Token returned by the previous <code>ListTopics</code> request.</p>

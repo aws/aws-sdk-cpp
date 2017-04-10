@@ -17,6 +17,7 @@
 #include <aws/storagegateway/StorageGatewayRequest.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -55,7 +56,7 @@ namespace Model
      * <p>Specifies one or more unique Amazon Resource Names (ARNs) that represent the
      * virtual tapes you want to describe.</p>
      */
-    inline void SetTapeARNs(Aws::Vector<Aws::String>&& value) { m_tapeARNsHasBeenSet = true; m_tapeARNs = value; }
+    inline void SetTapeARNs(Aws::Vector<Aws::String>&& value) { m_tapeARNsHasBeenSet = true; m_tapeARNs = std::move(value); }
 
     /**
      * <p>Specifies one or more unique Amazon Resource Names (ARNs) that represent the
@@ -67,7 +68,7 @@ namespace Model
      * <p>Specifies one or more unique Amazon Resource Names (ARNs) that represent the
      * virtual tapes you want to describe.</p>
      */
-    inline DescribeTapeArchivesRequest& WithTapeARNs(Aws::Vector<Aws::String>&& value) { SetTapeARNs(value); return *this;}
+    inline DescribeTapeArchivesRequest& WithTapeARNs(Aws::Vector<Aws::String>&& value) { SetTapeARNs(std::move(value)); return *this;}
 
     /**
      * <p>Specifies one or more unique Amazon Resource Names (ARNs) that represent the
@@ -79,7 +80,7 @@ namespace Model
      * <p>Specifies one or more unique Amazon Resource Names (ARNs) that represent the
      * virtual tapes you want to describe.</p>
      */
-    inline DescribeTapeArchivesRequest& AddTapeARNs(Aws::String&& value) { m_tapeARNsHasBeenSet = true; m_tapeARNs.push_back(value); return *this; }
+    inline DescribeTapeArchivesRequest& AddTapeARNs(Aws::String&& value) { m_tapeARNsHasBeenSet = true; m_tapeARNs.push_back(std::move(value)); return *this; }
 
     /**
      * <p>Specifies one or more unique Amazon Resource Names (ARNs) that represent the
@@ -103,7 +104,7 @@ namespace Model
      * <p>An opaque string that indicates the position at which to begin describing
      * virtual tapes.</p>
      */
-    inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = value; }
+    inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = std::move(value); }
 
     /**
      * <p>An opaque string that indicates the position at which to begin describing
@@ -121,7 +122,7 @@ namespace Model
      * <p>An opaque string that indicates the position at which to begin describing
      * virtual tapes.</p>
      */
-    inline DescribeTapeArchivesRequest& WithMarker(Aws::String&& value) { SetMarker(value); return *this;}
+    inline DescribeTapeArchivesRequest& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
 
     /**
      * <p>An opaque string that indicates the position at which to begin describing

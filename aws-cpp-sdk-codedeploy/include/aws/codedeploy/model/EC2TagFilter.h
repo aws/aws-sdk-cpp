@@ -16,6 +16,7 @@
 #include <aws/codedeploy/CodeDeploy_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/codedeploy/model/EC2TagFilterType.h>
+#include <utility>
 
 namespace Aws
 {
@@ -57,7 +58,7 @@ namespace Model
     /**
      * <p>The tag filter key.</p>
      */
-    inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = value; }
+    inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
 
     /**
      * <p>The tag filter key.</p>
@@ -72,7 +73,7 @@ namespace Model
     /**
      * <p>The tag filter key.</p>
      */
-    inline EC2TagFilter& WithKey(Aws::String&& value) { SetKey(value); return *this;}
+    inline EC2TagFilter& WithKey(Aws::String&& value) { SetKey(std::move(value)); return *this;}
 
     /**
      * <p>The tag filter key.</p>
@@ -92,7 +93,7 @@ namespace Model
     /**
      * <p>The tag filter value.</p>
      */
-    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = value; }
+    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
 
     /**
      * <p>The tag filter value.</p>
@@ -107,7 +108,7 @@ namespace Model
     /**
      * <p>The tag filter value.</p>
      */
-    inline EC2TagFilter& WithValue(Aws::String&& value) { SetValue(value); return *this;}
+    inline EC2TagFilter& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
 
     /**
      * <p>The tag filter value.</p>
@@ -133,7 +134,7 @@ namespace Model
      * <p>VALUE_ONLY: Value only.</p> </li> <li> <p>KEY_AND_VALUE: Key and value.</p>
      * </li> </ul>
      */
-    inline void SetType(EC2TagFilterType&& value) { m_typeHasBeenSet = true; m_type = value; }
+    inline void SetType(EC2TagFilterType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
      * <p>The tag filter type:</p> <ul> <li> <p>KEY_ONLY: Key only.</p> </li> <li>
@@ -147,7 +148,7 @@ namespace Model
      * <p>VALUE_ONLY: Value only.</p> </li> <li> <p>KEY_AND_VALUE: Key and value.</p>
      * </li> </ul>
      */
-    inline EC2TagFilter& WithType(EC2TagFilterType&& value) { SetType(value); return *this;}
+    inline EC2TagFilter& WithType(EC2TagFilterType&& value) { SetType(std::move(value)); return *this;}
 
   private:
     Aws::String m_key;

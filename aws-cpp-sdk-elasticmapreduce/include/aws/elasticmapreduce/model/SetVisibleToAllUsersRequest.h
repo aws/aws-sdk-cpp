@@ -17,6 +17,7 @@
 #include <aws/elasticmapreduce/EMRRequest.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -52,7 +53,7 @@ namespace Model
     /**
      * <p>Identifiers of the job flows to receive the new visibility setting.</p>
      */
-    inline void SetJobFlowIds(Aws::Vector<Aws::String>&& value) { m_jobFlowIdsHasBeenSet = true; m_jobFlowIds = value; }
+    inline void SetJobFlowIds(Aws::Vector<Aws::String>&& value) { m_jobFlowIdsHasBeenSet = true; m_jobFlowIds = std::move(value); }
 
     /**
      * <p>Identifiers of the job flows to receive the new visibility setting.</p>
@@ -62,7 +63,7 @@ namespace Model
     /**
      * <p>Identifiers of the job flows to receive the new visibility setting.</p>
      */
-    inline SetVisibleToAllUsersRequest& WithJobFlowIds(Aws::Vector<Aws::String>&& value) { SetJobFlowIds(value); return *this;}
+    inline SetVisibleToAllUsersRequest& WithJobFlowIds(Aws::Vector<Aws::String>&& value) { SetJobFlowIds(std::move(value)); return *this;}
 
     /**
      * <p>Identifiers of the job flows to receive the new visibility setting.</p>
@@ -72,7 +73,7 @@ namespace Model
     /**
      * <p>Identifiers of the job flows to receive the new visibility setting.</p>
      */
-    inline SetVisibleToAllUsersRequest& AddJobFlowIds(Aws::String&& value) { m_jobFlowIdsHasBeenSet = true; m_jobFlowIds.push_back(value); return *this; }
+    inline SetVisibleToAllUsersRequest& AddJobFlowIds(Aws::String&& value) { m_jobFlowIdsHasBeenSet = true; m_jobFlowIds.push_back(std::move(value)); return *this; }
 
     /**
      * <p>Identifiers of the job flows to receive the new visibility setting.</p>

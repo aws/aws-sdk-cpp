@@ -16,6 +16,7 @@
 #include <aws/clouddirectory/CloudDirectory_EXPORTS.h>
 #include <aws/clouddirectory/model/ObjectReference.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -61,7 +62,7 @@ namespace Model
      * <p>Parent reference from which the object with the specified link name is
      * detached.</p>
      */
-    inline void SetParentReference(ObjectReference&& value) { m_parentReferenceHasBeenSet = true; m_parentReference = value; }
+    inline void SetParentReference(ObjectReference&& value) { m_parentReferenceHasBeenSet = true; m_parentReference = std::move(value); }
 
     /**
      * <p>Parent reference from which the object with the specified link name is
@@ -73,7 +74,7 @@ namespace Model
      * <p>Parent reference from which the object with the specified link name is
      * detached.</p>
      */
-    inline BatchDetachObject& WithParentReference(ObjectReference&& value) { SetParentReference(value); return *this;}
+    inline BatchDetachObject& WithParentReference(ObjectReference&& value) { SetParentReference(std::move(value)); return *this;}
 
     /**
      * <p>The name of the link.</p>
@@ -88,7 +89,7 @@ namespace Model
     /**
      * <p>The name of the link.</p>
      */
-    inline void SetLinkName(Aws::String&& value) { m_linkNameHasBeenSet = true; m_linkName = value; }
+    inline void SetLinkName(Aws::String&& value) { m_linkNameHasBeenSet = true; m_linkName = std::move(value); }
 
     /**
      * <p>The name of the link.</p>
@@ -103,7 +104,7 @@ namespace Model
     /**
      * <p>The name of the link.</p>
      */
-    inline BatchDetachObject& WithLinkName(Aws::String&& value) { SetLinkName(value); return *this;}
+    inline BatchDetachObject& WithLinkName(Aws::String&& value) { SetLinkName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the link.</p>
@@ -129,7 +130,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_advanced.html#batches">Batches</a>
      * for more information.</p>
      */
-    inline void SetBatchReferenceName(Aws::String&& value) { m_batchReferenceNameHasBeenSet = true; m_batchReferenceName = value; }
+    inline void SetBatchReferenceName(Aws::String&& value) { m_batchReferenceNameHasBeenSet = true; m_batchReferenceName = std::move(value); }
 
     /**
      * <p>The batch reference name. See <a
@@ -150,7 +151,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_advanced.html#batches">Batches</a>
      * for more information.</p>
      */
-    inline BatchDetachObject& WithBatchReferenceName(Aws::String&& value) { SetBatchReferenceName(value); return *this;}
+    inline BatchDetachObject& WithBatchReferenceName(Aws::String&& value) { SetBatchReferenceName(std::move(value)); return *this;}
 
     /**
      * <p>The batch reference name. See <a

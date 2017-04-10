@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/config/model/ComplianceByResource.h>
+#include <utility>
 
 namespace Aws
 {
@@ -62,7 +63,7 @@ namespace Model
      * <p>Indicates whether the specified AWS resource complies with all of the AWS
      * Config rules that evaluate it.</p>
      */
-    inline void SetComplianceByResources(Aws::Vector<ComplianceByResource>&& value) { m_complianceByResources = value; }
+    inline void SetComplianceByResources(Aws::Vector<ComplianceByResource>&& value) { m_complianceByResources = std::move(value); }
 
     /**
      * <p>Indicates whether the specified AWS resource complies with all of the AWS
@@ -74,7 +75,7 @@ namespace Model
      * <p>Indicates whether the specified AWS resource complies with all of the AWS
      * Config rules that evaluate it.</p>
      */
-    inline DescribeComplianceByResourceResult& WithComplianceByResources(Aws::Vector<ComplianceByResource>&& value) { SetComplianceByResources(value); return *this;}
+    inline DescribeComplianceByResourceResult& WithComplianceByResources(Aws::Vector<ComplianceByResource>&& value) { SetComplianceByResources(std::move(value)); return *this;}
 
     /**
      * <p>Indicates whether the specified AWS resource complies with all of the AWS
@@ -86,7 +87,7 @@ namespace Model
      * <p>Indicates whether the specified AWS resource complies with all of the AWS
      * Config rules that evaluate it.</p>
      */
-    inline DescribeComplianceByResourceResult& AddComplianceByResources(ComplianceByResource&& value) { m_complianceByResources.push_back(value); return *this; }
+    inline DescribeComplianceByResourceResult& AddComplianceByResources(ComplianceByResource&& value) { m_complianceByResources.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The string that you use in a subsequent request to get the next page of
@@ -104,7 +105,7 @@ namespace Model
      * <p>The string that you use in a subsequent request to get the next page of
      * results in a paginated response.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
      * <p>The string that you use in a subsequent request to get the next page of
@@ -122,7 +123,7 @@ namespace Model
      * <p>The string that you use in a subsequent request to get the next page of
      * results in a paginated response.</p>
      */
-    inline DescribeComplianceByResourceResult& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline DescribeComplianceByResourceResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>The string that you use in a subsequent request to get the next page of

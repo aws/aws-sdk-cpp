@@ -19,6 +19,7 @@
 #include <aws/ec2/model/ResponseMetadata.h>
 #include <aws/ec2/model/GroupIdentifier.h>
 #include <aws/ec2/model/Instance.h>
+#include <utility>
 
 namespace Aws
 {
@@ -61,7 +62,7 @@ namespace Model
     /**
      * <p>The ID of the reservation.</p>
      */
-    inline void SetReservationId(Aws::String&& value) { m_reservationId = value; }
+    inline void SetReservationId(Aws::String&& value) { m_reservationId = std::move(value); }
 
     /**
      * <p>The ID of the reservation.</p>
@@ -76,7 +77,7 @@ namespace Model
     /**
      * <p>The ID of the reservation.</p>
      */
-    inline RunInstancesResponse& WithReservationId(Aws::String&& value) { SetReservationId(value); return *this;}
+    inline RunInstancesResponse& WithReservationId(Aws::String&& value) { SetReservationId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the reservation.</p>
@@ -96,7 +97,7 @@ namespace Model
     /**
      * <p>The ID of the AWS account that owns the reservation.</p>
      */
-    inline void SetOwnerId(Aws::String&& value) { m_ownerId = value; }
+    inline void SetOwnerId(Aws::String&& value) { m_ownerId = std::move(value); }
 
     /**
      * <p>The ID of the AWS account that owns the reservation.</p>
@@ -111,7 +112,7 @@ namespace Model
     /**
      * <p>The ID of the AWS account that owns the reservation.</p>
      */
-    inline RunInstancesResponse& WithOwnerId(Aws::String&& value) { SetOwnerId(value); return *this;}
+    inline RunInstancesResponse& WithOwnerId(Aws::String&& value) { SetOwnerId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the AWS account that owns the reservation.</p>
@@ -134,7 +135,7 @@ namespace Model
      * <p>The ID of the requester that launched the instances on your behalf (for
      * example, AWS Management Console or Auto Scaling).</p>
      */
-    inline void SetRequesterId(Aws::String&& value) { m_requesterId = value; }
+    inline void SetRequesterId(Aws::String&& value) { m_requesterId = std::move(value); }
 
     /**
      * <p>The ID of the requester that launched the instances on your behalf (for
@@ -152,7 +153,7 @@ namespace Model
      * <p>The ID of the requester that launched the instances on your behalf (for
      * example, AWS Management Console or Auto Scaling).</p>
      */
-    inline RunInstancesResponse& WithRequesterId(Aws::String&& value) { SetRequesterId(value); return *this;}
+    inline RunInstancesResponse& WithRequesterId(Aws::String&& value) { SetRequesterId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the requester that launched the instances on your behalf (for
@@ -173,7 +174,7 @@ namespace Model
     /**
      * <p>[EC2-Classic only] One or more security groups.</p>
      */
-    inline void SetGroups(Aws::Vector<GroupIdentifier>&& value) { m_groups = value; }
+    inline void SetGroups(Aws::Vector<GroupIdentifier>&& value) { m_groups = std::move(value); }
 
     /**
      * <p>[EC2-Classic only] One or more security groups.</p>
@@ -183,7 +184,7 @@ namespace Model
     /**
      * <p>[EC2-Classic only] One or more security groups.</p>
      */
-    inline RunInstancesResponse& WithGroups(Aws::Vector<GroupIdentifier>&& value) { SetGroups(value); return *this;}
+    inline RunInstancesResponse& WithGroups(Aws::Vector<GroupIdentifier>&& value) { SetGroups(std::move(value)); return *this;}
 
     /**
      * <p>[EC2-Classic only] One or more security groups.</p>
@@ -193,7 +194,7 @@ namespace Model
     /**
      * <p>[EC2-Classic only] One or more security groups.</p>
      */
-    inline RunInstancesResponse& AddGroups(GroupIdentifier&& value) { m_groups.push_back(value); return *this; }
+    inline RunInstancesResponse& AddGroups(GroupIdentifier&& value) { m_groups.push_back(std::move(value)); return *this; }
 
     /**
      * <p>One or more instances.</p>
@@ -208,7 +209,7 @@ namespace Model
     /**
      * <p>One or more instances.</p>
      */
-    inline void SetInstances(Aws::Vector<Instance>&& value) { m_instances = value; }
+    inline void SetInstances(Aws::Vector<Instance>&& value) { m_instances = std::move(value); }
 
     /**
      * <p>One or more instances.</p>
@@ -218,7 +219,7 @@ namespace Model
     /**
      * <p>One or more instances.</p>
      */
-    inline RunInstancesResponse& WithInstances(Aws::Vector<Instance>&& value) { SetInstances(value); return *this;}
+    inline RunInstancesResponse& WithInstances(Aws::Vector<Instance>&& value) { SetInstances(std::move(value)); return *this;}
 
     /**
      * <p>One or more instances.</p>
@@ -228,7 +229,7 @@ namespace Model
     /**
      * <p>One or more instances.</p>
      */
-    inline RunInstancesResponse& AddInstances(Instance&& value) { m_instances.push_back(value); return *this; }
+    inline RunInstancesResponse& AddInstances(Instance&& value) { m_instances.push_back(std::move(value)); return *this; }
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
@@ -237,13 +238,13 @@ namespace Model
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
 
     
     inline RunInstancesResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
 
     
-    inline RunInstancesResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
+    inline RunInstancesResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
     Aws::String m_reservationId;

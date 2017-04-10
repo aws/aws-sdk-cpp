@@ -16,6 +16,7 @@
 #include <aws/appstream/AppStream_EXPORTS.h>
 #include <aws/appstream/AppStreamRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -48,7 +49,7 @@ namespace Model
     /**
      * <p>The name of the stack for which to list sessions.</p>
      */
-    inline void SetStackName(Aws::String&& value) { m_stackNameHasBeenSet = true; m_stackName = value; }
+    inline void SetStackName(Aws::String&& value) { m_stackNameHasBeenSet = true; m_stackName = std::move(value); }
 
     /**
      * <p>The name of the stack for which to list sessions.</p>
@@ -63,7 +64,7 @@ namespace Model
     /**
      * <p>The name of the stack for which to list sessions.</p>
      */
-    inline DescribeSessionsRequest& WithStackName(Aws::String&& value) { SetStackName(value); return *this;}
+    inline DescribeSessionsRequest& WithStackName(Aws::String&& value) { SetStackName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the stack for which to list sessions.</p>
@@ -83,7 +84,7 @@ namespace Model
     /**
      * <p>The name of the fleet for which to list sessions.</p>
      */
-    inline void SetFleetName(Aws::String&& value) { m_fleetNameHasBeenSet = true; m_fleetName = value; }
+    inline void SetFleetName(Aws::String&& value) { m_fleetNameHasBeenSet = true; m_fleetName = std::move(value); }
 
     /**
      * <p>The name of the fleet for which to list sessions.</p>
@@ -98,7 +99,7 @@ namespace Model
     /**
      * <p>The name of the fleet for which to list sessions.</p>
      */
-    inline DescribeSessionsRequest& WithFleetName(Aws::String&& value) { SetFleetName(value); return *this;}
+    inline DescribeSessionsRequest& WithFleetName(Aws::String&& value) { SetFleetName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the fleet for which to list sessions.</p>
@@ -121,7 +122,7 @@ namespace Model
      * <p>The user for whom to list sessions. Use null to describe all the sessions for
      * the stack and fleet.</p>
      */
-    inline void SetUserId(Aws::String&& value) { m_userIdHasBeenSet = true; m_userId = value; }
+    inline void SetUserId(Aws::String&& value) { m_userIdHasBeenSet = true; m_userId = std::move(value); }
 
     /**
      * <p>The user for whom to list sessions. Use null to describe all the sessions for
@@ -139,7 +140,7 @@ namespace Model
      * <p>The user for whom to list sessions. Use null to describe all the sessions for
      * the stack and fleet.</p>
      */
-    inline DescribeSessionsRequest& WithUserId(Aws::String&& value) { SetUserId(value); return *this;}
+    inline DescribeSessionsRequest& WithUserId(Aws::String&& value) { SetUserId(std::move(value)); return *this;}
 
     /**
      * <p>The user for whom to list sessions. Use null to describe all the sessions for
@@ -163,7 +164,7 @@ namespace Model
      * <p>The pagination token to use to retrieve the next page of results for this
      * operation. If this value is null, it retrieves the first page.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
      * <p>The pagination token to use to retrieve the next page of results for this
@@ -181,7 +182,7 @@ namespace Model
      * <p>The pagination token to use to retrieve the next page of results for this
      * operation. If this value is null, it retrieves the first page.</p>
      */
-    inline DescribeSessionsRequest& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline DescribeSessionsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>The pagination token to use to retrieve the next page of results for this

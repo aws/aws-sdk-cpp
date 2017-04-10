@@ -19,6 +19,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/servicecatalog/model/ProductViewSummary.h>
 #include <aws/servicecatalog/model/ProductViewAggregationValue.h>
+#include <utility>
 
 namespace Aws
 {
@@ -56,7 +57,7 @@ namespace Model
     /**
      * <p>A list of the product view summary objects.</p>
      */
-    inline void SetProductViewSummaries(Aws::Vector<ProductViewSummary>&& value) { m_productViewSummaries = value; }
+    inline void SetProductViewSummaries(Aws::Vector<ProductViewSummary>&& value) { m_productViewSummaries = std::move(value); }
 
     /**
      * <p>A list of the product view summary objects.</p>
@@ -66,7 +67,7 @@ namespace Model
     /**
      * <p>A list of the product view summary objects.</p>
      */
-    inline SearchProductsResult& WithProductViewSummaries(Aws::Vector<ProductViewSummary>&& value) { SetProductViewSummaries(value); return *this;}
+    inline SearchProductsResult& WithProductViewSummaries(Aws::Vector<ProductViewSummary>&& value) { SetProductViewSummaries(std::move(value)); return *this;}
 
     /**
      * <p>A list of the product view summary objects.</p>
@@ -76,7 +77,7 @@ namespace Model
     /**
      * <p>A list of the product view summary objects.</p>
      */
-    inline SearchProductsResult& AddProductViewSummaries(ProductViewSummary&& value) { m_productViewSummaries.push_back(value); return *this; }
+    inline SearchProductsResult& AddProductViewSummaries(ProductViewSummary&& value) { m_productViewSummaries.push_back(std::move(value)); return *this; }
 
     /**
      * <p>A list of the product view aggregation value objects.</p>
@@ -91,7 +92,7 @@ namespace Model
     /**
      * <p>A list of the product view aggregation value objects.</p>
      */
-    inline void SetProductViewAggregations(Aws::Map<Aws::String, Aws::Vector<ProductViewAggregationValue>>&& value) { m_productViewAggregations = value; }
+    inline void SetProductViewAggregations(Aws::Map<Aws::String, Aws::Vector<ProductViewAggregationValue>>&& value) { m_productViewAggregations = std::move(value); }
 
     /**
      * <p>A list of the product view aggregation value objects.</p>
@@ -101,37 +102,37 @@ namespace Model
     /**
      * <p>A list of the product view aggregation value objects.</p>
      */
-    inline SearchProductsResult& WithProductViewAggregations(Aws::Map<Aws::String, Aws::Vector<ProductViewAggregationValue>>&& value) { SetProductViewAggregations(value); return *this;}
+    inline SearchProductsResult& WithProductViewAggregations(Aws::Map<Aws::String, Aws::Vector<ProductViewAggregationValue>>&& value) { SetProductViewAggregations(std::move(value)); return *this;}
 
     /**
      * <p>A list of the product view aggregation value objects.</p>
      */
-    inline SearchProductsResult& AddProductViewAggregations(const Aws::String& key, const Aws::Vector<ProductViewAggregationValue>& value) { m_productViewAggregations[key] = value; return *this; }
+    inline SearchProductsResult& AddProductViewAggregations(const Aws::String& key, const Aws::Vector<ProductViewAggregationValue>& value) { m_productViewAggregations.emplace(key, value); return *this; }
 
     /**
      * <p>A list of the product view aggregation value objects.</p>
      */
-    inline SearchProductsResult& AddProductViewAggregations(Aws::String&& key, const Aws::Vector<ProductViewAggregationValue>& value) { m_productViewAggregations[key] = value; return *this; }
+    inline SearchProductsResult& AddProductViewAggregations(Aws::String&& key, const Aws::Vector<ProductViewAggregationValue>& value) { m_productViewAggregations.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>A list of the product view aggregation value objects.</p>
      */
-    inline SearchProductsResult& AddProductViewAggregations(const Aws::String& key, Aws::Vector<ProductViewAggregationValue>&& value) { m_productViewAggregations[key] = value; return *this; }
+    inline SearchProductsResult& AddProductViewAggregations(const Aws::String& key, Aws::Vector<ProductViewAggregationValue>&& value) { m_productViewAggregations.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>A list of the product view aggregation value objects.</p>
      */
-    inline SearchProductsResult& AddProductViewAggregations(Aws::String&& key, Aws::Vector<ProductViewAggregationValue>&& value) { m_productViewAggregations[key] = value; return *this; }
+    inline SearchProductsResult& AddProductViewAggregations(Aws::String&& key, Aws::Vector<ProductViewAggregationValue>&& value) { m_productViewAggregations.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
      * <p>A list of the product view aggregation value objects.</p>
      */
-    inline SearchProductsResult& AddProductViewAggregations(const char* key, Aws::Vector<ProductViewAggregationValue>&& value) { m_productViewAggregations[key] = value; return *this; }
+    inline SearchProductsResult& AddProductViewAggregations(const char* key, Aws::Vector<ProductViewAggregationValue>&& value) { m_productViewAggregations.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>A list of the product view aggregation value objects.</p>
      */
-    inline SearchProductsResult& AddProductViewAggregations(const char* key, const Aws::Vector<ProductViewAggregationValue>& value) { m_productViewAggregations[key] = value; return *this; }
+    inline SearchProductsResult& AddProductViewAggregations(const char* key, const Aws::Vector<ProductViewAggregationValue>& value) { m_productViewAggregations.emplace(key, value); return *this; }
 
     /**
      * <p>The page token to use to retrieve the next page of results for this
@@ -149,7 +150,7 @@ namespace Model
      * <p>The page token to use to retrieve the next page of results for this
      * operation. If there are no more pages, this value is null.</p>
      */
-    inline void SetNextPageToken(Aws::String&& value) { m_nextPageToken = value; }
+    inline void SetNextPageToken(Aws::String&& value) { m_nextPageToken = std::move(value); }
 
     /**
      * <p>The page token to use to retrieve the next page of results for this
@@ -167,7 +168,7 @@ namespace Model
      * <p>The page token to use to retrieve the next page of results for this
      * operation. If there are no more pages, this value is null.</p>
      */
-    inline SearchProductsResult& WithNextPageToken(Aws::String&& value) { SetNextPageToken(value); return *this;}
+    inline SearchProductsResult& WithNextPageToken(Aws::String&& value) { SetNextPageToken(std::move(value)); return *this;}
 
     /**
      * <p>The page token to use to retrieve the next page of results for this

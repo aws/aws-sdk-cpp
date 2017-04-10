@@ -19,6 +19,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/clouddirectory/model/ObjectType.h>
 #include <aws/clouddirectory/model/FacetAttributeUpdate.h>
+#include <utility>
 
 namespace Aws
 {
@@ -54,7 +55,7 @@ namespace Model
      * <p>ARN associated with the <a>Facet</a>. For more information, see
      * <a>arns</a>.</p>
      */
-    inline void SetSchemaArn(Aws::String&& value) { m_schemaArnHasBeenSet = true; m_schemaArn = value; }
+    inline void SetSchemaArn(Aws::String&& value) { m_schemaArnHasBeenSet = true; m_schemaArn = std::move(value); }
 
     /**
      * <p>ARN associated with the <a>Facet</a>. For more information, see
@@ -72,7 +73,7 @@ namespace Model
      * <p>ARN associated with the <a>Facet</a>. For more information, see
      * <a>arns</a>.</p>
      */
-    inline UpdateFacetRequest& WithSchemaArn(Aws::String&& value) { SetSchemaArn(value); return *this;}
+    inline UpdateFacetRequest& WithSchemaArn(Aws::String&& value) { SetSchemaArn(std::move(value)); return *this;}
 
     /**
      * <p>ARN associated with the <a>Facet</a>. For more information, see
@@ -93,7 +94,7 @@ namespace Model
     /**
      * <p> </p>
      */
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p> </p>
@@ -108,7 +109,7 @@ namespace Model
     /**
      * <p> </p>
      */
-    inline UpdateFacetRequest& WithName(Aws::String&& value) { SetName(value); return *this;}
+    inline UpdateFacetRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p> </p>
@@ -134,7 +135,7 @@ namespace Model
      * Each attribute is followed by AttributeAction, which specifies the type of
      * update operation to perform. </p>
      */
-    inline void SetAttributeUpdates(Aws::Vector<FacetAttributeUpdate>&& value) { m_attributeUpdatesHasBeenSet = true; m_attributeUpdates = value; }
+    inline void SetAttributeUpdates(Aws::Vector<FacetAttributeUpdate>&& value) { m_attributeUpdatesHasBeenSet = true; m_attributeUpdates = std::move(value); }
 
     /**
      * <p>List of attributes that need to be updated in a given schema <a>Facet</a>.
@@ -148,7 +149,7 @@ namespace Model
      * Each attribute is followed by AttributeAction, which specifies the type of
      * update operation to perform. </p>
      */
-    inline UpdateFacetRequest& WithAttributeUpdates(Aws::Vector<FacetAttributeUpdate>&& value) { SetAttributeUpdates(value); return *this;}
+    inline UpdateFacetRequest& WithAttributeUpdates(Aws::Vector<FacetAttributeUpdate>&& value) { SetAttributeUpdates(std::move(value)); return *this;}
 
     /**
      * <p>List of attributes that need to be updated in a given schema <a>Facet</a>.
@@ -162,7 +163,7 @@ namespace Model
      * Each attribute is followed by AttributeAction, which specifies the type of
      * update operation to perform. </p>
      */
-    inline UpdateFacetRequest& AddAttributeUpdates(FacetAttributeUpdate&& value) { m_attributeUpdatesHasBeenSet = true; m_attributeUpdates.push_back(value); return *this; }
+    inline UpdateFacetRequest& AddAttributeUpdates(FacetAttributeUpdate&& value) { m_attributeUpdatesHasBeenSet = true; m_attributeUpdates.push_back(std::move(value)); return *this; }
 
     /**
      * <p>Object type associated with the facet. See
@@ -180,7 +181,7 @@ namespace Model
      * <p>Object type associated with the facet. See
      * <a>CreateFacetRequest$ObjectType</a> for more details.</p>
      */
-    inline void SetObjectType(ObjectType&& value) { m_objectTypeHasBeenSet = true; m_objectType = value; }
+    inline void SetObjectType(ObjectType&& value) { m_objectTypeHasBeenSet = true; m_objectType = std::move(value); }
 
     /**
      * <p>Object type associated with the facet. See
@@ -192,7 +193,7 @@ namespace Model
      * <p>Object type associated with the facet. See
      * <a>CreateFacetRequest$ObjectType</a> for more details.</p>
      */
-    inline UpdateFacetRequest& WithObjectType(ObjectType&& value) { SetObjectType(value); return *this;}
+    inline UpdateFacetRequest& WithObjectType(ObjectType&& value) { SetObjectType(std::move(value)); return *this;}
 
   private:
     Aws::String m_schemaArn;

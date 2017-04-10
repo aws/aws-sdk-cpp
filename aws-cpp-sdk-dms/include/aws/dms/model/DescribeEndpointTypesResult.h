@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/dms/model/SupportedEndpointType.h>
+#include <utility>
 
 namespace Aws
 {
@@ -65,7 +66,7 @@ namespace Model
      * parameter is specified, the response includes only records beyond the marker, up
      * to the value specified by <code>MaxRecords</code>. </p>
      */
-    inline void SetMarker(Aws::String&& value) { m_marker = value; }
+    inline void SetMarker(Aws::String&& value) { m_marker = std::move(value); }
 
     /**
      * <p> An optional pagination token provided by a previous request. If this
@@ -86,7 +87,7 @@ namespace Model
      * parameter is specified, the response includes only records beyond the marker, up
      * to the value specified by <code>MaxRecords</code>. </p>
      */
-    inline DescribeEndpointTypesResult& WithMarker(Aws::String&& value) { SetMarker(value); return *this;}
+    inline DescribeEndpointTypesResult& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
 
     /**
      * <p> An optional pagination token provided by a previous request. If this
@@ -108,7 +109,7 @@ namespace Model
     /**
      * <p>The type of endpoints that are supported.</p>
      */
-    inline void SetSupportedEndpointTypes(Aws::Vector<SupportedEndpointType>&& value) { m_supportedEndpointTypes = value; }
+    inline void SetSupportedEndpointTypes(Aws::Vector<SupportedEndpointType>&& value) { m_supportedEndpointTypes = std::move(value); }
 
     /**
      * <p>The type of endpoints that are supported.</p>
@@ -118,7 +119,7 @@ namespace Model
     /**
      * <p>The type of endpoints that are supported.</p>
      */
-    inline DescribeEndpointTypesResult& WithSupportedEndpointTypes(Aws::Vector<SupportedEndpointType>&& value) { SetSupportedEndpointTypes(value); return *this;}
+    inline DescribeEndpointTypesResult& WithSupportedEndpointTypes(Aws::Vector<SupportedEndpointType>&& value) { SetSupportedEndpointTypes(std::move(value)); return *this;}
 
     /**
      * <p>The type of endpoints that are supported.</p>
@@ -128,7 +129,7 @@ namespace Model
     /**
      * <p>The type of endpoints that are supported.</p>
      */
-    inline DescribeEndpointTypesResult& AddSupportedEndpointTypes(SupportedEndpointType&& value) { m_supportedEndpointTypes.push_back(value); return *this; }
+    inline DescribeEndpointTypesResult& AddSupportedEndpointTypes(SupportedEndpointType&& value) { m_supportedEndpointTypes.push_back(std::move(value)); return *this; }
 
   private:
     Aws::String m_marker;

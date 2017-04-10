@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/health/model/Event.h>
+#include <utility>
 
 namespace Aws
 {
@@ -54,7 +55,7 @@ namespace Model
     /**
      * <p>The events that match the specified filter criteria.</p>
      */
-    inline void SetEvents(Aws::Vector<Event>&& value) { m_events = value; }
+    inline void SetEvents(Aws::Vector<Event>&& value) { m_events = std::move(value); }
 
     /**
      * <p>The events that match the specified filter criteria.</p>
@@ -64,7 +65,7 @@ namespace Model
     /**
      * <p>The events that match the specified filter criteria.</p>
      */
-    inline DescribeEventsResult& WithEvents(Aws::Vector<Event>&& value) { SetEvents(value); return *this;}
+    inline DescribeEventsResult& WithEvents(Aws::Vector<Event>&& value) { SetEvents(std::move(value)); return *this;}
 
     /**
      * <p>The events that match the specified filter criteria.</p>
@@ -74,7 +75,7 @@ namespace Model
     /**
      * <p>The events that match the specified filter criteria.</p>
      */
-    inline DescribeEventsResult& AddEvents(Event&& value) { m_events.push_back(value); return *this; }
+    inline DescribeEventsResult& AddEvents(Event&& value) { m_events.push_back(std::move(value)); return *this; }
 
     /**
      * <p>If the results of a search are large, only a portion of the results are
@@ -101,7 +102,7 @@ namespace Model
      * include the returned token. When all results have been returned, the response
      * does not contain a pagination token value.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
      * <p>If the results of a search are large, only a portion of the results are
@@ -128,7 +129,7 @@ namespace Model
      * include the returned token. When all results have been returned, the response
      * does not contain a pagination token value.</p>
      */
-    inline DescribeEventsResult& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline DescribeEventsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>If the results of a search are large, only a portion of the results are

@@ -17,6 +17,7 @@
 #include <aws/mturk-requester/MTurkRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/mturk-requester/model/QualificationTypeStatus.h>
+#include <utility>
 
 namespace Aws
 {
@@ -58,7 +59,7 @@ namespace Model
      * Qualification type search. It must be unique across all of your Qualification
      * types.</p>
      */
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p> The name you give to the Qualification type. The type name is used to
@@ -82,7 +83,7 @@ namespace Model
      * Qualification type search. It must be unique across all of your Qualification
      * types.</p>
      */
-    inline CreateQualificationTypeRequest& WithName(Aws::String&& value) { SetName(value); return *this;}
+    inline CreateQualificationTypeRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p> The name you give to the Qualification type. The type name is used to
@@ -111,7 +112,7 @@ namespace Model
      * by commas. The keywords of a type make the type easier to find during a
      * search.</p>
      */
-    inline void SetKeywords(Aws::String&& value) { m_keywordsHasBeenSet = true; m_keywords = value; }
+    inline void SetKeywords(Aws::String&& value) { m_keywordsHasBeenSet = true; m_keywords = std::move(value); }
 
     /**
      * <p>One or more words or phrases that describe the Qualification type, separated
@@ -132,7 +133,7 @@ namespace Model
      * by commas. The keywords of a type make the type easier to find during a
      * search.</p>
      */
-    inline CreateQualificationTypeRequest& WithKeywords(Aws::String&& value) { SetKeywords(value); return *this;}
+    inline CreateQualificationTypeRequest& WithKeywords(Aws::String&& value) { SetKeywords(std::move(value)); return *this;}
 
     /**
      * <p>One or more words or phrases that describe the Qualification type, separated
@@ -160,7 +161,7 @@ namespace Model
      * website, the long description is displayed when a Worker examines a
      * Qualification type.</p>
      */
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = value; }
+    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
      * <p>A long description for the Qualification type. On the Amazon Mechanical Turk
@@ -181,7 +182,7 @@ namespace Model
      * website, the long description is displayed when a Worker examines a
      * Qualification type.</p>
      */
-    inline CreateQualificationTypeRequest& WithDescription(Aws::String&& value) { SetDescription(value); return *this;}
+    inline CreateQualificationTypeRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
      * <p>A long description for the Qualification type. On the Amazon Mechanical Turk
@@ -206,7 +207,7 @@ namespace Model
      * <p>The initial status of the Qualification type.</p> <p>Constraints: Valid
      * values are: Active | Inactive</p>
      */
-    inline void SetQualificationTypeStatus(QualificationTypeStatus&& value) { m_qualificationTypeStatusHasBeenSet = true; m_qualificationTypeStatus = value; }
+    inline void SetQualificationTypeStatus(QualificationTypeStatus&& value) { m_qualificationTypeStatusHasBeenSet = true; m_qualificationTypeStatus = std::move(value); }
 
     /**
      * <p>The initial status of the Qualification type.</p> <p>Constraints: Valid
@@ -218,7 +219,7 @@ namespace Model
      * <p>The initial status of the Qualification type.</p> <p>Constraints: Valid
      * values are: Active | Inactive</p>
      */
-    inline CreateQualificationTypeRequest& WithQualificationTypeStatus(QualificationTypeStatus&& value) { SetQualificationTypeStatus(value); return *this;}
+    inline CreateQualificationTypeRequest& WithQualificationTypeStatus(QualificationTypeStatus&& value) { SetQualificationTypeStatus(std::move(value)); return *this;}
 
     /**
      * <p>The number of seconds that a Worker must wait after requesting a
@@ -290,7 +291,7 @@ namespace Model
      * If not specified, the Worker may request the Qualification without answering any
      * questions.</p>
      */
-    inline void SetTest(Aws::String&& value) { m_testHasBeenSet = true; m_test = value; }
+    inline void SetTest(Aws::String&& value) { m_testHasBeenSet = true; m_test = std::move(value); }
 
     /**
      * <p> The questions for the Qualification test a Worker must answer correctly to
@@ -323,7 +324,7 @@ namespace Model
      * If not specified, the Worker may request the Qualification without answering any
      * questions.</p>
      */
-    inline CreateQualificationTypeRequest& WithTest(Aws::String&& value) { SetTest(value); return *this;}
+    inline CreateQualificationTypeRequest& WithTest(Aws::String&& value) { SetTest(std::move(value)); return *this;}
 
     /**
      * <p> The questions for the Qualification test a Worker must answer correctly to
@@ -358,7 +359,7 @@ namespace Model
      * 65535 bytes.</p> <p>Constraints: None. If not specified, you must process
      * Qualification requests manually.</p>
      */
-    inline void SetAnswerKey(Aws::String&& value) { m_answerKeyHasBeenSet = true; m_answerKey = value; }
+    inline void SetAnswerKey(Aws::String&& value) { m_answerKeyHasBeenSet = true; m_answerKey = std::move(value); }
 
     /**
      * <p>The answers to the Qualification test specified in the Test parameter, in the
@@ -382,7 +383,7 @@ namespace Model
      * 65535 bytes.</p> <p>Constraints: None. If not specified, you must process
      * Qualification requests manually.</p>
      */
-    inline CreateQualificationTypeRequest& WithAnswerKey(Aws::String&& value) { SetAnswerKey(value); return *this;}
+    inline CreateQualificationTypeRequest& WithAnswerKey(Aws::String&& value) { SetAnswerKey(std::move(value)); return *this;}
 
     /**
      * <p>The answers to the Qualification test specified in the Test parameter, in the

@@ -16,6 +16,7 @@
 #include <aws/support/Support_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/support/model/TrustedAdvisorCheckRefreshStatus.h>
+#include <utility>
 
 namespace Aws
 {
@@ -60,7 +61,7 @@ namespace Model
     /**
      * <p>The refresh status of the specified Trusted Advisor checks.</p>
      */
-    inline void SetStatuses(Aws::Vector<TrustedAdvisorCheckRefreshStatus>&& value) { m_statuses = value; }
+    inline void SetStatuses(Aws::Vector<TrustedAdvisorCheckRefreshStatus>&& value) { m_statuses = std::move(value); }
 
     /**
      * <p>The refresh status of the specified Trusted Advisor checks.</p>
@@ -70,7 +71,7 @@ namespace Model
     /**
      * <p>The refresh status of the specified Trusted Advisor checks.</p>
      */
-    inline DescribeTrustedAdvisorCheckRefreshStatusesResult& WithStatuses(Aws::Vector<TrustedAdvisorCheckRefreshStatus>&& value) { SetStatuses(value); return *this;}
+    inline DescribeTrustedAdvisorCheckRefreshStatusesResult& WithStatuses(Aws::Vector<TrustedAdvisorCheckRefreshStatus>&& value) { SetStatuses(std::move(value)); return *this;}
 
     /**
      * <p>The refresh status of the specified Trusted Advisor checks.</p>
@@ -80,7 +81,7 @@ namespace Model
     /**
      * <p>The refresh status of the specified Trusted Advisor checks.</p>
      */
-    inline DescribeTrustedAdvisorCheckRefreshStatusesResult& AddStatuses(TrustedAdvisorCheckRefreshStatus&& value) { m_statuses.push_back(value); return *this; }
+    inline DescribeTrustedAdvisorCheckRefreshStatusesResult& AddStatuses(TrustedAdvisorCheckRefreshStatus&& value) { m_statuses.push_back(std::move(value)); return *this; }
 
   private:
     Aws::Vector<TrustedAdvisorCheckRefreshStatus> m_statuses;

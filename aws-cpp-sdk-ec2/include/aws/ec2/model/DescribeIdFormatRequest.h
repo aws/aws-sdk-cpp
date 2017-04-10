@@ -16,6 +16,7 @@
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/ec2/EC2Request.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -56,7 +57,7 @@ namespace Model
      * <p>The type of resource: <code>instance</code> | <code>reservation</code> |
      * <code>snapshot</code> | <code>volume</code> </p>
      */
-    inline void SetResource(Aws::String&& value) { m_resourceHasBeenSet = true; m_resource = value; }
+    inline void SetResource(Aws::String&& value) { m_resourceHasBeenSet = true; m_resource = std::move(value); }
 
     /**
      * <p>The type of resource: <code>instance</code> | <code>reservation</code> |
@@ -74,7 +75,7 @@ namespace Model
      * <p>The type of resource: <code>instance</code> | <code>reservation</code> |
      * <code>snapshot</code> | <code>volume</code> </p>
      */
-    inline DescribeIdFormatRequest& WithResource(Aws::String&& value) { SetResource(value); return *this;}
+    inline DescribeIdFormatRequest& WithResource(Aws::String&& value) { SetResource(std::move(value)); return *this;}
 
     /**
      * <p>The type of resource: <code>instance</code> | <code>reservation</code> |

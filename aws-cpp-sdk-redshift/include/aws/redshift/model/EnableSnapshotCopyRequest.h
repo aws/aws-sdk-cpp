@@ -16,6 +16,7 @@
 #include <aws/redshift/Redshift_EXPORTS.h>
 #include <aws/redshift/RedshiftRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -59,7 +60,7 @@ namespace Model
      * <p>Constraints: Must be the valid name of an existing cluster that does not
      * already have cross-region snapshot copy enabled.</p>
      */
-    inline void SetClusterIdentifier(Aws::String&& value) { m_clusterIdentifierHasBeenSet = true; m_clusterIdentifier = value; }
+    inline void SetClusterIdentifier(Aws::String&& value) { m_clusterIdentifierHasBeenSet = true; m_clusterIdentifier = std::move(value); }
 
     /**
      * <p>The unique identifier of the source cluster to copy snapshots from.</p>
@@ -80,7 +81,7 @@ namespace Model
      * <p>Constraints: Must be the valid name of an existing cluster that does not
      * already have cross-region snapshot copy enabled.</p>
      */
-    inline EnableSnapshotCopyRequest& WithClusterIdentifier(Aws::String&& value) { SetClusterIdentifier(value); return *this;}
+    inline EnableSnapshotCopyRequest& WithClusterIdentifier(Aws::String&& value) { SetClusterIdentifier(std::move(value)); return *this;}
 
     /**
      * <p>The unique identifier of the source cluster to copy snapshots from.</p>
@@ -111,7 +112,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/general/latest/gr/rande.html#redshift_region">Regions
      * and Endpoints</a> in the Amazon Web Services General Reference. </p>
      */
-    inline void SetDestinationRegion(Aws::String&& value) { m_destinationRegionHasBeenSet = true; m_destinationRegion = value; }
+    inline void SetDestinationRegion(Aws::String&& value) { m_destinationRegionHasBeenSet = true; m_destinationRegion = std::move(value); }
 
     /**
      * <p>The destination region that you want to copy snapshots to.</p>
@@ -135,7 +136,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/general/latest/gr/rande.html#redshift_region">Regions
      * and Endpoints</a> in the Amazon Web Services General Reference. </p>
      */
-    inline EnableSnapshotCopyRequest& WithDestinationRegion(Aws::String&& value) { SetDestinationRegion(value); return *this;}
+    inline EnableSnapshotCopyRequest& WithDestinationRegion(Aws::String&& value) { SetDestinationRegion(std::move(value)); return *this;}
 
     /**
      * <p>The destination region that you want to copy snapshots to.</p>
@@ -182,7 +183,7 @@ namespace Model
      * <p>The name of the snapshot copy grant to use when snapshots of an AWS
      * KMS-encrypted cluster are copied to the destination region.</p>
      */
-    inline void SetSnapshotCopyGrantName(Aws::String&& value) { m_snapshotCopyGrantNameHasBeenSet = true; m_snapshotCopyGrantName = value; }
+    inline void SetSnapshotCopyGrantName(Aws::String&& value) { m_snapshotCopyGrantNameHasBeenSet = true; m_snapshotCopyGrantName = std::move(value); }
 
     /**
      * <p>The name of the snapshot copy grant to use when snapshots of an AWS
@@ -200,7 +201,7 @@ namespace Model
      * <p>The name of the snapshot copy grant to use when snapshots of an AWS
      * KMS-encrypted cluster are copied to the destination region.</p>
      */
-    inline EnableSnapshotCopyRequest& WithSnapshotCopyGrantName(Aws::String&& value) { SetSnapshotCopyGrantName(value); return *this;}
+    inline EnableSnapshotCopyRequest& WithSnapshotCopyGrantName(Aws::String&& value) { SetSnapshotCopyGrantName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the snapshot copy grant to use when snapshots of an AWS

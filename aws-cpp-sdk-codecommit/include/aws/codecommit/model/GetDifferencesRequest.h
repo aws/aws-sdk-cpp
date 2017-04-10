@@ -16,6 +16,7 @@
 #include <aws/codecommit/CodeCommit_EXPORTS.h>
 #include <aws/codecommit/CodeCommitRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -48,7 +49,7 @@ namespace Model
     /**
      * <p>The name of the repository where you want to get differences.</p>
      */
-    inline void SetRepositoryName(Aws::String&& value) { m_repositoryNameHasBeenSet = true; m_repositoryName = value; }
+    inline void SetRepositoryName(Aws::String&& value) { m_repositoryNameHasBeenSet = true; m_repositoryName = std::move(value); }
 
     /**
      * <p>The name of the repository where you want to get differences.</p>
@@ -63,7 +64,7 @@ namespace Model
     /**
      * <p>The name of the repository where you want to get differences.</p>
      */
-    inline GetDifferencesRequest& WithRepositoryName(Aws::String&& value) { SetRepositoryName(value); return *this;}
+    inline GetDifferencesRequest& WithRepositoryName(Aws::String&& value) { SetRepositoryName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the repository where you want to get differences.</p>
@@ -95,7 +96,7 @@ namespace Model
      * not use <code>beforeCommitSpecifier</code> in your request, consider limiting
      * the results with <code>maxResults</code>.</p>
      */
-    inline void SetBeforeCommitSpecifier(Aws::String&& value) { m_beforeCommitSpecifierHasBeenSet = true; m_beforeCommitSpecifier = value; }
+    inline void SetBeforeCommitSpecifier(Aws::String&& value) { m_beforeCommitSpecifierHasBeenSet = true; m_beforeCommitSpecifier = std::move(value); }
 
     /**
      * <p>The branch, tag, HEAD, or other fully qualified reference used to identify a
@@ -122,7 +123,7 @@ namespace Model
      * not use <code>beforeCommitSpecifier</code> in your request, consider limiting
      * the results with <code>maxResults</code>.</p>
      */
-    inline GetDifferencesRequest& WithBeforeCommitSpecifier(Aws::String&& value) { SetBeforeCommitSpecifier(value); return *this;}
+    inline GetDifferencesRequest& WithBeforeCommitSpecifier(Aws::String&& value) { SetBeforeCommitSpecifier(std::move(value)); return *this;}
 
     /**
      * <p>The branch, tag, HEAD, or other fully qualified reference used to identify a
@@ -149,7 +150,7 @@ namespace Model
      * <p>The branch, tag, HEAD, or other fully qualified reference used to identify a
      * commit.</p>
      */
-    inline void SetAfterCommitSpecifier(Aws::String&& value) { m_afterCommitSpecifierHasBeenSet = true; m_afterCommitSpecifier = value; }
+    inline void SetAfterCommitSpecifier(Aws::String&& value) { m_afterCommitSpecifierHasBeenSet = true; m_afterCommitSpecifier = std::move(value); }
 
     /**
      * <p>The branch, tag, HEAD, or other fully qualified reference used to identify a
@@ -167,7 +168,7 @@ namespace Model
      * <p>The branch, tag, HEAD, or other fully qualified reference used to identify a
      * commit.</p>
      */
-    inline GetDifferencesRequest& WithAfterCommitSpecifier(Aws::String&& value) { SetAfterCommitSpecifier(value); return *this;}
+    inline GetDifferencesRequest& WithAfterCommitSpecifier(Aws::String&& value) { SetAfterCommitSpecifier(std::move(value)); return *this;}
 
     /**
      * <p>The branch, tag, HEAD, or other fully qualified reference used to identify a
@@ -197,7 +198,7 @@ namespace Model
      * <code>beforePath</code> and <code>afterPath</code> are not specified,
      * differences will be shown for all paths.</p>
      */
-    inline void SetBeforePath(Aws::String&& value) { m_beforePathHasBeenSet = true; m_beforePath = value; }
+    inline void SetBeforePath(Aws::String&& value) { m_beforePathHasBeenSet = true; m_beforePath = std::move(value); }
 
     /**
      * <p>The file path in which to check for differences. Limits the results to this
@@ -221,7 +222,7 @@ namespace Model
      * <code>beforePath</code> and <code>afterPath</code> are not specified,
      * differences will be shown for all paths.</p>
      */
-    inline GetDifferencesRequest& WithBeforePath(Aws::String&& value) { SetBeforePath(value); return *this;}
+    inline GetDifferencesRequest& WithBeforePath(Aws::String&& value) { SetBeforePath(std::move(value)); return *this;}
 
     /**
      * <p>The file path in which to check for differences. Limits the results to this
@@ -250,7 +251,7 @@ namespace Model
      * Can also be used to specify the changed name of a directory or folder, if it has
      * changed. If not specified, differences will be shown for all paths.</p>
      */
-    inline void SetAfterPath(Aws::String&& value) { m_afterPathHasBeenSet = true; m_afterPath = value; }
+    inline void SetAfterPath(Aws::String&& value) { m_afterPathHasBeenSet = true; m_afterPath = std::move(value); }
 
     /**
      * <p>The file path in which to check differences. Limits the results to this path.
@@ -271,7 +272,7 @@ namespace Model
      * Can also be used to specify the changed name of a directory or folder, if it has
      * changed. If not specified, differences will be shown for all paths.</p>
      */
-    inline GetDifferencesRequest& WithAfterPath(Aws::String&& value) { SetAfterPath(value); return *this;}
+    inline GetDifferencesRequest& WithAfterPath(Aws::String&& value) { SetAfterPath(std::move(value)); return *this;}
 
     /**
      * <p>The file path in which to check differences. Limits the results to this path.
@@ -311,7 +312,7 @@ namespace Model
      * <p>An enumeration token that when provided in a request, returns the next batch
      * of the results.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
      * <p>An enumeration token that when provided in a request, returns the next batch
@@ -329,7 +330,7 @@ namespace Model
      * <p>An enumeration token that when provided in a request, returns the next batch
      * of the results.</p>
      */
-    inline GetDifferencesRequest& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline GetDifferencesRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>An enumeration token that when provided in a request, returns the next batch

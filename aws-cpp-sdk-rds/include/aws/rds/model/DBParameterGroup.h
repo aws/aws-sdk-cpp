@@ -16,6 +16,7 @@
 #include <aws/rds/RDS_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -63,7 +64,7 @@ namespace Model
     /**
      * <p>Provides the name of the DB parameter group.</p>
      */
-    inline void SetDBParameterGroupName(Aws::String&& value) { m_dBParameterGroupNameHasBeenSet = true; m_dBParameterGroupName = value; }
+    inline void SetDBParameterGroupName(Aws::String&& value) { m_dBParameterGroupNameHasBeenSet = true; m_dBParameterGroupName = std::move(value); }
 
     /**
      * <p>Provides the name of the DB parameter group.</p>
@@ -78,7 +79,7 @@ namespace Model
     /**
      * <p>Provides the name of the DB parameter group.</p>
      */
-    inline DBParameterGroup& WithDBParameterGroupName(Aws::String&& value) { SetDBParameterGroupName(value); return *this;}
+    inline DBParameterGroup& WithDBParameterGroupName(Aws::String&& value) { SetDBParameterGroupName(std::move(value)); return *this;}
 
     /**
      * <p>Provides the name of the DB parameter group.</p>
@@ -101,7 +102,7 @@ namespace Model
      * <p>Provides the name of the DB parameter group family that this DB parameter
      * group is compatible with.</p>
      */
-    inline void SetDBParameterGroupFamily(Aws::String&& value) { m_dBParameterGroupFamilyHasBeenSet = true; m_dBParameterGroupFamily = value; }
+    inline void SetDBParameterGroupFamily(Aws::String&& value) { m_dBParameterGroupFamilyHasBeenSet = true; m_dBParameterGroupFamily = std::move(value); }
 
     /**
      * <p>Provides the name of the DB parameter group family that this DB parameter
@@ -119,7 +120,7 @@ namespace Model
      * <p>Provides the name of the DB parameter group family that this DB parameter
      * group is compatible with.</p>
      */
-    inline DBParameterGroup& WithDBParameterGroupFamily(Aws::String&& value) { SetDBParameterGroupFamily(value); return *this;}
+    inline DBParameterGroup& WithDBParameterGroupFamily(Aws::String&& value) { SetDBParameterGroupFamily(std::move(value)); return *this;}
 
     /**
      * <p>Provides the name of the DB parameter group family that this DB parameter
@@ -140,7 +141,7 @@ namespace Model
     /**
      * <p>Provides the customer-specified description for this DB parameter group.</p>
      */
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = value; }
+    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
      * <p>Provides the customer-specified description for this DB parameter group.</p>
@@ -155,7 +156,7 @@ namespace Model
     /**
      * <p>Provides the customer-specified description for this DB parameter group.</p>
      */
-    inline DBParameterGroup& WithDescription(Aws::String&& value) { SetDescription(value); return *this;}
+    inline DBParameterGroup& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
      * <p>Provides the customer-specified description for this DB parameter group.</p>
@@ -175,7 +176,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) for the DB parameter group.</p>
      */
-    inline void SetDBParameterGroupArn(Aws::String&& value) { m_dBParameterGroupArnHasBeenSet = true; m_dBParameterGroupArn = value; }
+    inline void SetDBParameterGroupArn(Aws::String&& value) { m_dBParameterGroupArnHasBeenSet = true; m_dBParameterGroupArn = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) for the DB parameter group.</p>
@@ -190,7 +191,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) for the DB parameter group.</p>
      */
-    inline DBParameterGroup& WithDBParameterGroupArn(Aws::String&& value) { SetDBParameterGroupArn(value); return *this;}
+    inline DBParameterGroup& WithDBParameterGroupArn(Aws::String&& value) { SetDBParameterGroupArn(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) for the DB parameter group.</p>

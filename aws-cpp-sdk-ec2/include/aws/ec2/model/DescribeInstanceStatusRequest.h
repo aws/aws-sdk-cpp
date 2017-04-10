@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/Filter.h>
+#include <utility>
 
 namespace Aws
 {
@@ -83,7 +84,7 @@ namespace Model
      * <p>One or more instance IDs.</p> <p>Default: Describes all your instances.</p>
      * <p>Constraints: Maximum 100 explicitly specified instance IDs.</p>
      */
-    inline void SetInstanceIds(Aws::Vector<Aws::String>&& value) { m_instanceIdsHasBeenSet = true; m_instanceIds = value; }
+    inline void SetInstanceIds(Aws::Vector<Aws::String>&& value) { m_instanceIdsHasBeenSet = true; m_instanceIds = std::move(value); }
 
     /**
      * <p>One or more instance IDs.</p> <p>Default: Describes all your instances.</p>
@@ -95,7 +96,7 @@ namespace Model
      * <p>One or more instance IDs.</p> <p>Default: Describes all your instances.</p>
      * <p>Constraints: Maximum 100 explicitly specified instance IDs.</p>
      */
-    inline DescribeInstanceStatusRequest& WithInstanceIds(Aws::Vector<Aws::String>&& value) { SetInstanceIds(value); return *this;}
+    inline DescribeInstanceStatusRequest& WithInstanceIds(Aws::Vector<Aws::String>&& value) { SetInstanceIds(std::move(value)); return *this;}
 
     /**
      * <p>One or more instance IDs.</p> <p>Default: Describes all your instances.</p>
@@ -107,7 +108,7 @@ namespace Model
      * <p>One or more instance IDs.</p> <p>Default: Describes all your instances.</p>
      * <p>Constraints: Maximum 100 explicitly specified instance IDs.</p>
      */
-    inline DescribeInstanceStatusRequest& AddInstanceIds(Aws::String&& value) { m_instanceIdsHasBeenSet = true; m_instanceIds.push_back(value); return *this; }
+    inline DescribeInstanceStatusRequest& AddInstanceIds(Aws::String&& value) { m_instanceIdsHasBeenSet = true; m_instanceIds.push_back(std::move(value)); return *this; }
 
     /**
      * <p>One or more instance IDs.</p> <p>Default: Describes all your instances.</p>
@@ -218,7 +219,7 @@ namespace Model
      * (<code>ok</code> | <code>impaired</code> | <code>initializing</code> |
      * <code>insufficient-data</code> | <code>not-applicable</code>).</p> </li> </ul>
      */
-    inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = value; }
+    inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
 
     /**
      * <p>One or more filters.</p> <ul> <li> <p> <code>availability-zone</code> - The
@@ -288,7 +289,7 @@ namespace Model
      * (<code>ok</code> | <code>impaired</code> | <code>initializing</code> |
      * <code>insufficient-data</code> | <code>not-applicable</code>).</p> </li> </ul>
      */
-    inline DescribeInstanceStatusRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(value); return *this;}
+    inline DescribeInstanceStatusRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(std::move(value)); return *this;}
 
     /**
      * <p>One or more filters.</p> <ul> <li> <p> <code>availability-zone</code> - The
@@ -358,7 +359,7 @@ namespace Model
      * (<code>ok</code> | <code>impaired</code> | <code>initializing</code> |
      * <code>insufficient-data</code> | <code>not-applicable</code>).</p> </li> </ul>
      */
-    inline DescribeInstanceStatusRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
+    inline DescribeInstanceStatusRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The token to retrieve the next page of results.</p>
@@ -373,7 +374,7 @@ namespace Model
     /**
      * <p>The token to retrieve the next page of results.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
      * <p>The token to retrieve the next page of results.</p>
@@ -388,7 +389,7 @@ namespace Model
     /**
      * <p>The token to retrieve the next page of results.</p>
      */
-    inline DescribeInstanceStatusRequest& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline DescribeInstanceStatusRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>The token to retrieve the next page of results.</p>

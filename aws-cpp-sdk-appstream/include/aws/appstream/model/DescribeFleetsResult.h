@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/appstream/model/Fleet.h>
+#include <utility>
 
 namespace Aws
 {
@@ -54,7 +55,7 @@ namespace Model
     /**
      * <p>The list of fleet details.</p>
      */
-    inline void SetFleets(Aws::Vector<Fleet>&& value) { m_fleets = value; }
+    inline void SetFleets(Aws::Vector<Fleet>&& value) { m_fleets = std::move(value); }
 
     /**
      * <p>The list of fleet details.</p>
@@ -64,7 +65,7 @@ namespace Model
     /**
      * <p>The list of fleet details.</p>
      */
-    inline DescribeFleetsResult& WithFleets(Aws::Vector<Fleet>&& value) { SetFleets(value); return *this;}
+    inline DescribeFleetsResult& WithFleets(Aws::Vector<Fleet>&& value) { SetFleets(std::move(value)); return *this;}
 
     /**
      * <p>The list of fleet details.</p>
@@ -74,7 +75,7 @@ namespace Model
     /**
      * <p>The list of fleet details.</p>
      */
-    inline DescribeFleetsResult& AddFleets(Fleet&& value) { m_fleets.push_back(value); return *this; }
+    inline DescribeFleetsResult& AddFleets(Fleet&& value) { m_fleets.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The pagination token to use to retrieve the next page of results for this
@@ -92,7 +93,7 @@ namespace Model
      * <p>The pagination token to use to retrieve the next page of results for this
      * operation. If there are no more pages, this value is null.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
      * <p>The pagination token to use to retrieve the next page of results for this
@@ -110,7 +111,7 @@ namespace Model
      * <p>The pagination token to use to retrieve the next page of results for this
      * operation. If there are no more pages, this value is null.</p>
      */
-    inline DescribeFleetsResult& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline DescribeFleetsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>The pagination token to use to retrieve the next page of results for this

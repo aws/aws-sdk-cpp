@@ -16,6 +16,7 @@
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -59,7 +60,7 @@ namespace Model
     /**
      * <p>The reason code for the state change.</p>
      */
-    inline void SetCode(Aws::String&& value) { m_codeHasBeenSet = true; m_code = value; }
+    inline void SetCode(Aws::String&& value) { m_codeHasBeenSet = true; m_code = std::move(value); }
 
     /**
      * <p>The reason code for the state change.</p>
@@ -74,7 +75,7 @@ namespace Model
     /**
      * <p>The reason code for the state change.</p>
      */
-    inline StateReason& WithCode(Aws::String&& value) { SetCode(value); return *this;}
+    inline StateReason& WithCode(Aws::String&& value) { SetCode(std::move(value)); return *this;}
 
     /**
      * <p>The reason code for the state change.</p>
@@ -145,7 +146,7 @@ namespace Model
      * <code>Client.InvalidSnapshot.NotFound</code>: The specified snapshot was not
      * found.</p> </li> </ul>
      */
-    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = value; }
+    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
 
     /**
      * <p>The message for the state change.</p> <ul> <li> <p>
@@ -211,7 +212,7 @@ namespace Model
      * <code>Client.InvalidSnapshot.NotFound</code>: The specified snapshot was not
      * found.</p> </li> </ul>
      */
-    inline StateReason& WithMessage(Aws::String&& value) { SetMessage(value); return *this;}
+    inline StateReason& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
 
     /**
      * <p>The message for the state change.</p> <ul> <li> <p>

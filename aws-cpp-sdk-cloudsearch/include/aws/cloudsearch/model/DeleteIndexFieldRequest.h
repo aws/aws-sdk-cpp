@@ -16,6 +16,7 @@
 #include <aws/cloudsearch/CloudSearch_EXPORTS.h>
 #include <aws/cloudsearch/CloudSearchRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -49,7 +50,7 @@ namespace Model
     inline void SetDomainName(const Aws::String& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
 
     
-    inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
+    inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = std::move(value); }
 
     
     inline void SetDomainName(const char* value) { m_domainNameHasBeenSet = true; m_domainName.assign(value); }
@@ -58,7 +59,7 @@ namespace Model
     inline DeleteIndexFieldRequest& WithDomainName(const Aws::String& value) { SetDomainName(value); return *this;}
 
     
-    inline DeleteIndexFieldRequest& WithDomainName(Aws::String&& value) { SetDomainName(value); return *this;}
+    inline DeleteIndexFieldRequest& WithDomainName(Aws::String&& value) { SetDomainName(std::move(value)); return *this;}
 
     
     inline DeleteIndexFieldRequest& WithDomainName(const char* value) { SetDomainName(value); return *this;}
@@ -79,7 +80,7 @@ namespace Model
      * <p>The name of the index field your want to remove from the domain's indexing
      * options.</p>
      */
-    inline void SetIndexFieldName(Aws::String&& value) { m_indexFieldNameHasBeenSet = true; m_indexFieldName = value; }
+    inline void SetIndexFieldName(Aws::String&& value) { m_indexFieldNameHasBeenSet = true; m_indexFieldName = std::move(value); }
 
     /**
      * <p>The name of the index field your want to remove from the domain's indexing
@@ -97,7 +98,7 @@ namespace Model
      * <p>The name of the index field your want to remove from the domain's indexing
      * options.</p>
      */
-    inline DeleteIndexFieldRequest& WithIndexFieldName(Aws::String&& value) { SetIndexFieldName(value); return *this;}
+    inline DeleteIndexFieldRequest& WithIndexFieldName(Aws::String&& value) { SetIndexFieldName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the index field your want to remove from the domain's indexing

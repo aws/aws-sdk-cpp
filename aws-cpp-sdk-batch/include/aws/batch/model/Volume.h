@@ -16,6 +16,7 @@
 #include <aws/batch/Batch_EXPORTS.h>
 #include <aws/batch/model/Host.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -69,7 +70,7 @@ namespace Model
      * data volume, but the data is not guaranteed to persist after the containers
      * associated with it stop running.</p>
      */
-    inline void SetHost(Host&& value) { m_hostHasBeenSet = true; m_host = value; }
+    inline void SetHost(Host&& value) { m_hostHasBeenSet = true; m_host = std::move(value); }
 
     /**
      * <p>The contents of the <code>host</code> parameter determine whether your data
@@ -87,7 +88,7 @@ namespace Model
      * data volume, but the data is not guaranteed to persist after the containers
      * associated with it stop running.</p>
      */
-    inline Volume& WithHost(Host&& value) { SetHost(value); return *this;}
+    inline Volume& WithHost(Host&& value) { SetHost(std::move(value)); return *this;}
 
     /**
      * <p>The name of the volume. Up to 255 letters (uppercase and lowercase), numbers,
@@ -111,7 +112,7 @@ namespace Model
      * <code>sourceVolume</code> parameter of container definition
      * <code>mountPoints</code>.</p>
      */
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p>The name of the volume. Up to 255 letters (uppercase and lowercase), numbers,
@@ -135,7 +136,7 @@ namespace Model
      * <code>sourceVolume</code> parameter of container definition
      * <code>mountPoints</code>.</p>
      */
-    inline Volume& WithName(Aws::String&& value) { SetName(value); return *this;}
+    inline Volume& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the volume. Up to 255 letters (uppercase and lowercase), numbers,

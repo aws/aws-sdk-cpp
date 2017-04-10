@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/rds/model/Filter.h>
+#include <utility>
 
 namespace Aws
 {
@@ -55,7 +56,7 @@ namespace Model
     /**
      * <p>The ARN of a resource to return pending maintenance actions for.</p>
      */
-    inline void SetResourceIdentifier(Aws::String&& value) { m_resourceIdentifierHasBeenSet = true; m_resourceIdentifier = value; }
+    inline void SetResourceIdentifier(Aws::String&& value) { m_resourceIdentifierHasBeenSet = true; m_resourceIdentifier = std::move(value); }
 
     /**
      * <p>The ARN of a resource to return pending maintenance actions for.</p>
@@ -70,7 +71,7 @@ namespace Model
     /**
      * <p>The ARN of a resource to return pending maintenance actions for.</p>
      */
-    inline DescribePendingMaintenanceActionsRequest& WithResourceIdentifier(Aws::String&& value) { SetResourceIdentifier(value); return *this;}
+    inline DescribePendingMaintenanceActionsRequest& WithResourceIdentifier(Aws::String&& value) { SetResourceIdentifier(std::move(value)); return *this;}
 
     /**
      * <p>The ARN of a resource to return pending maintenance actions for.</p>
@@ -111,7 +112,7 @@ namespace Model
      * instance ARNs. The results list will only include pending maintenance actions
      * for the DB instances identified by these ARNs.</p> </li> </ul>
      */
-    inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = value; }
+    inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
 
     /**
      * <p>A filter that specifies one or more resources to return pending maintenance
@@ -135,7 +136,7 @@ namespace Model
      * instance ARNs. The results list will only include pending maintenance actions
      * for the DB instances identified by these ARNs.</p> </li> </ul>
      */
-    inline DescribePendingMaintenanceActionsRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(value); return *this;}
+    inline DescribePendingMaintenanceActionsRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(std::move(value)); return *this;}
 
     /**
      * <p>A filter that specifies one or more resources to return pending maintenance
@@ -159,7 +160,7 @@ namespace Model
      * instance ARNs. The results list will only include pending maintenance actions
      * for the DB instances identified by these ARNs.</p> </li> </ul>
      */
-    inline DescribePendingMaintenanceActionsRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
+    inline DescribePendingMaintenanceActionsRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 
     /**
      * <p> An optional pagination token provided by a previous
@@ -183,7 +184,7 @@ namespace Model
      * specified, the response includes only records beyond the marker, up to a number
      * of records specified by <code>MaxRecords</code>. </p>
      */
-    inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = value; }
+    inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = std::move(value); }
 
     /**
      * <p> An optional pagination token provided by a previous
@@ -207,7 +208,7 @@ namespace Model
      * specified, the response includes only records beyond the marker, up to a number
      * of records specified by <code>MaxRecords</code>. </p>
      */
-    inline DescribePendingMaintenanceActionsRequest& WithMarker(Aws::String&& value) { SetMarker(value); return *this;}
+    inline DescribePendingMaintenanceActionsRequest& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
 
     /**
      * <p> An optional pagination token provided by a previous

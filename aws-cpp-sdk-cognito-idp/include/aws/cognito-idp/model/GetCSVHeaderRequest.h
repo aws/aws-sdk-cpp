@@ -16,6 +16,7 @@
 #include <aws/cognito-idp/CognitoIdentityProvider_EXPORTS.h>
 #include <aws/cognito-idp/CognitoIdentityProviderRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -55,7 +56,7 @@ namespace Model
      * <p>The user pool ID for the user pool that the users are to be imported
      * into.</p>
      */
-    inline void SetUserPoolId(Aws::String&& value) { m_userPoolIdHasBeenSet = true; m_userPoolId = value; }
+    inline void SetUserPoolId(Aws::String&& value) { m_userPoolIdHasBeenSet = true; m_userPoolId = std::move(value); }
 
     /**
      * <p>The user pool ID for the user pool that the users are to be imported
@@ -73,7 +74,7 @@ namespace Model
      * <p>The user pool ID for the user pool that the users are to be imported
      * into.</p>
      */
-    inline GetCSVHeaderRequest& WithUserPoolId(Aws::String&& value) { SetUserPoolId(value); return *this;}
+    inline GetCSVHeaderRequest& WithUserPoolId(Aws::String&& value) { SetUserPoolId(std::move(value)); return *this;}
 
     /**
      * <p>The user pool ID for the user pool that the users are to be imported

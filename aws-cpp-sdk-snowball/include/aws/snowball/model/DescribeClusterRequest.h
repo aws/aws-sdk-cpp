@@ -16,6 +16,7 @@
 #include <aws/snowball/Snowball_EXPORTS.h>
 #include <aws/snowball/SnowballRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -48,7 +49,7 @@ namespace Model
     /**
      * <p>The automatically generated ID for a cluster.</p>
      */
-    inline void SetClusterId(Aws::String&& value) { m_clusterIdHasBeenSet = true; m_clusterId = value; }
+    inline void SetClusterId(Aws::String&& value) { m_clusterIdHasBeenSet = true; m_clusterId = std::move(value); }
 
     /**
      * <p>The automatically generated ID for a cluster.</p>
@@ -63,7 +64,7 @@ namespace Model
     /**
      * <p>The automatically generated ID for a cluster.</p>
      */
-    inline DescribeClusterRequest& WithClusterId(Aws::String&& value) { SetClusterId(value); return *this;}
+    inline DescribeClusterRequest& WithClusterId(Aws::String&& value) { SetClusterId(std::move(value)); return *this;}
 
     /**
      * <p>The automatically generated ID for a cluster.</p>

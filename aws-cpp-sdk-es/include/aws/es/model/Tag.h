@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/es/ElasticsearchService_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -59,7 +60,7 @@ namespace Model
      * <p>Specifies the <code>TagKey</code>, the name of the tag. Tag keys must be
      * unique for the Elasticsearch domain to which they are attached.</p>
      */
-    inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = value; }
+    inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
 
     /**
      * <p>Specifies the <code>TagKey</code>, the name of the tag. Tag keys must be
@@ -77,7 +78,7 @@ namespace Model
      * <p>Specifies the <code>TagKey</code>, the name of the tag. Tag keys must be
      * unique for the Elasticsearch domain to which they are attached.</p>
      */
-    inline Tag& WithKey(Aws::String&& value) { SetKey(value); return *this;}
+    inline Tag& WithKey(Aws::String&& value) { SetKey(std::move(value)); return *this;}
 
     /**
      * <p>Specifies the <code>TagKey</code>, the name of the tag. Tag keys must be
@@ -107,7 +108,7 @@ namespace Model
      * example, you can have a key value pair in a tag set of <code>project :
      * Trinity</code> and <code>cost-center : Trinity</code></p>
      */
-    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = value; }
+    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
 
     /**
      * <p>Specifies the <code>TagValue</code>, the value assigned to the corresponding
@@ -131,7 +132,7 @@ namespace Model
      * example, you can have a key value pair in a tag set of <code>project :
      * Trinity</code> and <code>cost-center : Trinity</code></p>
      */
-    inline Tag& WithValue(Aws::String&& value) { SetValue(value); return *this;}
+    inline Tag& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
 
     /**
      * <p>Specifies the <code>TagValue</code>, the value assigned to the corresponding

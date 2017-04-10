@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/gamelift/model/GameSessionQueue.h>
+#include <utility>
 
 namespace Aws
 {
@@ -54,7 +55,7 @@ namespace Model
     /**
      * <p>Collection of objects that describes the requested game session queues.</p>
      */
-    inline void SetGameSessionQueues(Aws::Vector<GameSessionQueue>&& value) { m_gameSessionQueues = value; }
+    inline void SetGameSessionQueues(Aws::Vector<GameSessionQueue>&& value) { m_gameSessionQueues = std::move(value); }
 
     /**
      * <p>Collection of objects that describes the requested game session queues.</p>
@@ -64,7 +65,7 @@ namespace Model
     /**
      * <p>Collection of objects that describes the requested game session queues.</p>
      */
-    inline DescribeGameSessionQueuesResult& WithGameSessionQueues(Aws::Vector<GameSessionQueue>&& value) { SetGameSessionQueues(value); return *this;}
+    inline DescribeGameSessionQueuesResult& WithGameSessionQueues(Aws::Vector<GameSessionQueue>&& value) { SetGameSessionQueues(std::move(value)); return *this;}
 
     /**
      * <p>Collection of objects that describes the requested game session queues.</p>
@@ -74,7 +75,7 @@ namespace Model
     /**
      * <p>Collection of objects that describes the requested game session queues.</p>
      */
-    inline DescribeGameSessionQueuesResult& AddGameSessionQueues(GameSessionQueue&& value) { m_gameSessionQueues.push_back(value); return *this; }
+    inline DescribeGameSessionQueuesResult& AddGameSessionQueues(GameSessionQueue&& value) { m_gameSessionQueues.push_back(std::move(value)); return *this; }
 
     /**
      * <p>Token that indicates where to resume retrieving results on the next call to
@@ -95,7 +96,7 @@ namespace Model
      * this action. If no token is returned, these results represent the end of the
      * list.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
      * <p>Token that indicates where to resume retrieving results on the next call to
@@ -116,7 +117,7 @@ namespace Model
      * this action. If no token is returned, these results represent the end of the
      * list.</p>
      */
-    inline DescribeGameSessionQueuesResult& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline DescribeGameSessionQueuesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>Token that indicates where to resume retrieving results on the next call to

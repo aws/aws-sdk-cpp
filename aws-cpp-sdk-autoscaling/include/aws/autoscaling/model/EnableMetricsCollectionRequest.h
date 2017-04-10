@@ -17,6 +17,7 @@
 #include <aws/autoscaling/AutoScalingRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <utility>
 
 namespace Aws
 {
@@ -55,7 +56,7 @@ namespace Model
     /**
      * <p>The name or ARN of the Auto Scaling group.</p>
      */
-    inline void SetAutoScalingGroupName(Aws::String&& value) { m_autoScalingGroupNameHasBeenSet = true; m_autoScalingGroupName = value; }
+    inline void SetAutoScalingGroupName(Aws::String&& value) { m_autoScalingGroupNameHasBeenSet = true; m_autoScalingGroupName = std::move(value); }
 
     /**
      * <p>The name or ARN of the Auto Scaling group.</p>
@@ -70,7 +71,7 @@ namespace Model
     /**
      * <p>The name or ARN of the Auto Scaling group.</p>
      */
-    inline EnableMetricsCollectionRequest& WithAutoScalingGroupName(Aws::String&& value) { SetAutoScalingGroupName(value); return *this;}
+    inline EnableMetricsCollectionRequest& WithAutoScalingGroupName(Aws::String&& value) { SetAutoScalingGroupName(std::move(value)); return *this;}
 
     /**
      * <p>The name or ARN of the Auto Scaling group.</p>
@@ -111,7 +112,7 @@ namespace Model
      * <code>GroupTerminatingInstances</code> </p> </li> <li> <p>
      * <code>GroupTotalInstances</code> </p> </li> </ul>
      */
-    inline void SetMetrics(Aws::Vector<Aws::String>&& value) { m_metricsHasBeenSet = true; m_metrics = value; }
+    inline void SetMetrics(Aws::Vector<Aws::String>&& value) { m_metricsHasBeenSet = true; m_metrics = std::move(value); }
 
     /**
      * <p>One or more of the following metrics. If you omit this parameter, all metrics
@@ -135,7 +136,7 @@ namespace Model
      * <code>GroupTerminatingInstances</code> </p> </li> <li> <p>
      * <code>GroupTotalInstances</code> </p> </li> </ul>
      */
-    inline EnableMetricsCollectionRequest& WithMetrics(Aws::Vector<Aws::String>&& value) { SetMetrics(value); return *this;}
+    inline EnableMetricsCollectionRequest& WithMetrics(Aws::Vector<Aws::String>&& value) { SetMetrics(std::move(value)); return *this;}
 
     /**
      * <p>One or more of the following metrics. If you omit this parameter, all metrics
@@ -159,7 +160,7 @@ namespace Model
      * <code>GroupTerminatingInstances</code> </p> </li> <li> <p>
      * <code>GroupTotalInstances</code> </p> </li> </ul>
      */
-    inline EnableMetricsCollectionRequest& AddMetrics(Aws::String&& value) { m_metricsHasBeenSet = true; m_metrics.push_back(value); return *this; }
+    inline EnableMetricsCollectionRequest& AddMetrics(Aws::String&& value) { m_metricsHasBeenSet = true; m_metrics.push_back(std::move(value)); return *this; }
 
     /**
      * <p>One or more of the following metrics. If you omit this parameter, all metrics
@@ -189,7 +190,7 @@ namespace Model
      * <p>The granularity to associate with the metrics to collect. The only valid
      * value is <code>1Minute</code>.</p>
      */
-    inline void SetGranularity(Aws::String&& value) { m_granularityHasBeenSet = true; m_granularity = value; }
+    inline void SetGranularity(Aws::String&& value) { m_granularityHasBeenSet = true; m_granularity = std::move(value); }
 
     /**
      * <p>The granularity to associate with the metrics to collect. The only valid
@@ -207,7 +208,7 @@ namespace Model
      * <p>The granularity to associate with the metrics to collect. The only valid
      * value is <code>1Minute</code>.</p>
      */
-    inline EnableMetricsCollectionRequest& WithGranularity(Aws::String&& value) { SetGranularity(value); return *this;}
+    inline EnableMetricsCollectionRequest& WithGranularity(Aws::String&& value) { SetGranularity(std::move(value)); return *this;}
 
     /**
      * <p>The granularity to associate with the metrics to collect. The only valid

@@ -16,6 +16,7 @@
 #include <aws/kinesis/Kinesis_EXPORTS.h>
 #include <aws/kinesis/KinesisRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -67,7 +68,7 @@ namespace Model
     /**
      * <p>The name of the stream to start the list with.</p>
      */
-    inline void SetExclusiveStartStreamName(Aws::String&& value) { m_exclusiveStartStreamNameHasBeenSet = true; m_exclusiveStartStreamName = value; }
+    inline void SetExclusiveStartStreamName(Aws::String&& value) { m_exclusiveStartStreamNameHasBeenSet = true; m_exclusiveStartStreamName = std::move(value); }
 
     /**
      * <p>The name of the stream to start the list with.</p>
@@ -82,7 +83,7 @@ namespace Model
     /**
      * <p>The name of the stream to start the list with.</p>
      */
-    inline ListStreamsRequest& WithExclusiveStartStreamName(Aws::String&& value) { SetExclusiveStartStreamName(value); return *this;}
+    inline ListStreamsRequest& WithExclusiveStartStreamName(Aws::String&& value) { SetExclusiveStartStreamName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the stream to start the list with.</p>

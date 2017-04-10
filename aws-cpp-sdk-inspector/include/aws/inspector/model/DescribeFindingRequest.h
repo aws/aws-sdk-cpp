@@ -16,6 +16,7 @@
 #include <aws/inspector/Inspector_EXPORTS.h>
 #include <aws/inspector/InspectorRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -48,7 +49,7 @@ namespace Model
     /**
      * <p>The ARN specifying the finding that you want to describe.</p>
      */
-    inline void SetFindingArn(Aws::String&& value) { m_findingArnHasBeenSet = true; m_findingArn = value; }
+    inline void SetFindingArn(Aws::String&& value) { m_findingArnHasBeenSet = true; m_findingArn = std::move(value); }
 
     /**
      * <p>The ARN specifying the finding that you want to describe.</p>
@@ -63,7 +64,7 @@ namespace Model
     /**
      * <p>The ARN specifying the finding that you want to describe.</p>
      */
-    inline DescribeFindingRequest& WithFindingArn(Aws::String&& value) { SetFindingArn(value); return *this;}
+    inline DescribeFindingRequest& WithFindingArn(Aws::String&& value) { SetFindingArn(std::move(value)); return *this;}
 
     /**
      * <p>The ARN specifying the finding that you want to describe.</p>

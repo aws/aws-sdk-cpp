@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/Array.h>
+#include <utility>
 
 namespace Aws
 {
@@ -67,7 +68,7 @@ namespace Model
      * already own or a new bucket that Amazon EC2 creates on your behalf. If you
      * specify a bucket that belongs to someone else, Amazon EC2 returns an error.</p>
      */
-    inline void SetBucket(Aws::String&& value) { m_bucketHasBeenSet = true; m_bucket = value; }
+    inline void SetBucket(Aws::String&& value) { m_bucketHasBeenSet = true; m_bucket = std::move(value); }
 
     /**
      * <p>The bucket in which to store the AMI. You can specify a bucket that you
@@ -88,7 +89,7 @@ namespace Model
      * already own or a new bucket that Amazon EC2 creates on your behalf. If you
      * specify a bucket that belongs to someone else, Amazon EC2 returns an error.</p>
      */
-    inline S3Storage& WithBucket(Aws::String&& value) { SetBucket(value); return *this;}
+    inline S3Storage& WithBucket(Aws::String&& value) { SetBucket(std::move(value)); return *this;}
 
     /**
      * <p>The bucket in which to store the AMI. You can specify a bucket that you
@@ -110,7 +111,7 @@ namespace Model
     /**
      * <p>The beginning of the file name of the AMI.</p>
      */
-    inline void SetPrefix(Aws::String&& value) { m_prefixHasBeenSet = true; m_prefix = value; }
+    inline void SetPrefix(Aws::String&& value) { m_prefixHasBeenSet = true; m_prefix = std::move(value); }
 
     /**
      * <p>The beginning of the file name of the AMI.</p>
@@ -125,7 +126,7 @@ namespace Model
     /**
      * <p>The beginning of the file name of the AMI.</p>
      */
-    inline S3Storage& WithPrefix(Aws::String&& value) { SetPrefix(value); return *this;}
+    inline S3Storage& WithPrefix(Aws::String&& value) { SetPrefix(std::move(value)); return *this;}
 
     /**
      * <p>The beginning of the file name of the AMI.</p>
@@ -154,7 +155,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html">Best
      * Practices for Managing AWS Access Keys</a>.</p>
      */
-    inline void SetAWSAccessKeyId(Aws::String&& value) { m_aWSAccessKeyIdHasBeenSet = true; m_aWSAccessKeyId = value; }
+    inline void SetAWSAccessKeyId(Aws::String&& value) { m_aWSAccessKeyIdHasBeenSet = true; m_aWSAccessKeyId = std::move(value); }
 
     /**
      * <p>The access key ID of the owner of the bucket. Before you specify a value for
@@ -178,7 +179,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html">Best
      * Practices for Managing AWS Access Keys</a>.</p>
      */
-    inline S3Storage& WithAWSAccessKeyId(Aws::String&& value) { SetAWSAccessKeyId(value); return *this;}
+    inline S3Storage& WithAWSAccessKeyId(Aws::String&& value) { SetAWSAccessKeyId(std::move(value)); return *this;}
 
     /**
      * <p>The access key ID of the owner of the bucket. Before you specify a value for
@@ -204,7 +205,7 @@ namespace Model
      * <p>An Amazon S3 upload policy that gives Amazon EC2 permission to upload items
      * into Amazon S3 on your behalf.</p>
      */
-    inline void SetUploadPolicy(Aws::Utils::ByteBuffer&& value) { m_uploadPolicyHasBeenSet = true; m_uploadPolicy = value; }
+    inline void SetUploadPolicy(Aws::Utils::ByteBuffer&& value) { m_uploadPolicyHasBeenSet = true; m_uploadPolicy = std::move(value); }
 
     /**
      * <p>An Amazon S3 upload policy that gives Amazon EC2 permission to upload items
@@ -216,7 +217,7 @@ namespace Model
      * <p>An Amazon S3 upload policy that gives Amazon EC2 permission to upload items
      * into Amazon S3 on your behalf.</p>
      */
-    inline S3Storage& WithUploadPolicy(Aws::Utils::ByteBuffer&& value) { SetUploadPolicy(value); return *this;}
+    inline S3Storage& WithUploadPolicy(Aws::Utils::ByteBuffer&& value) { SetUploadPolicy(std::move(value)); return *this;}
 
     /**
      * <p>The signature of the JSON document.</p>
@@ -231,7 +232,7 @@ namespace Model
     /**
      * <p>The signature of the JSON document.</p>
      */
-    inline void SetUploadPolicySignature(Aws::String&& value) { m_uploadPolicySignatureHasBeenSet = true; m_uploadPolicySignature = value; }
+    inline void SetUploadPolicySignature(Aws::String&& value) { m_uploadPolicySignatureHasBeenSet = true; m_uploadPolicySignature = std::move(value); }
 
     /**
      * <p>The signature of the JSON document.</p>
@@ -246,7 +247,7 @@ namespace Model
     /**
      * <p>The signature of the JSON document.</p>
      */
-    inline S3Storage& WithUploadPolicySignature(Aws::String&& value) { SetUploadPolicySignature(value); return *this;}
+    inline S3Storage& WithUploadPolicySignature(Aws::String&& value) { SetUploadPolicySignature(std::move(value)); return *this;}
 
     /**
      * <p>The signature of the JSON document.</p>

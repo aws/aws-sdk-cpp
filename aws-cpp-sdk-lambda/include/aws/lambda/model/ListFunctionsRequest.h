@@ -16,6 +16,7 @@
 #include <aws/lambda/Lambda_EXPORTS.h>
 #include <aws/lambda/LambdaRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -61,7 +62,7 @@ namespace Model
      * <code>ListFunctions</code> operation. If present, indicates where to continue
      * the listing. </p>
      */
-    inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = value; }
+    inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = std::move(value); }
 
     /**
      * <p>Optional string. An opaque pagination token returned from a previous
@@ -82,7 +83,7 @@ namespace Model
      * <code>ListFunctions</code> operation. If present, indicates where to continue
      * the listing. </p>
      */
-    inline ListFunctionsRequest& WithMarker(Aws::String&& value) { SetMarker(value); return *this;}
+    inline ListFunctionsRequest& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
 
     /**
      * <p>Optional string. An opaque pagination token returned from a previous

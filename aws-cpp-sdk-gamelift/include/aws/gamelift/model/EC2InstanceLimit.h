@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/gamelift/GameLift_EXPORTS.h>
 #include <aws/gamelift/model/EC2InstanceType.h>
+#include <utility>
 
 namespace Aws
 {
@@ -73,7 +74,7 @@ namespace Model
      * href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance Types</a>
      * for detailed descriptions.</p>
      */
-    inline void SetEC2InstanceType(EC2InstanceType&& value) { m_eC2InstanceTypeHasBeenSet = true; m_eC2InstanceType = value; }
+    inline void SetEC2InstanceType(EC2InstanceType&& value) { m_eC2InstanceTypeHasBeenSet = true; m_eC2InstanceType = std::move(value); }
 
     /**
      * <p>Name of an EC2 instance type that is supported in Amazon GameLift. A fleet
@@ -93,7 +94,7 @@ namespace Model
      * href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance Types</a>
      * for detailed descriptions.</p>
      */
-    inline EC2InstanceLimit& WithEC2InstanceType(EC2InstanceType&& value) { SetEC2InstanceType(value); return *this;}
+    inline EC2InstanceLimit& WithEC2InstanceType(EC2InstanceType&& value) { SetEC2InstanceType(std::move(value)); return *this;}
 
     /**
      * <p>Number of instances of the specified type that are currently in use by this

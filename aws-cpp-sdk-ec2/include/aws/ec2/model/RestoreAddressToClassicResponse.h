@@ -17,6 +17,7 @@
 #include <aws/ec2/model/Status.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/ResponseMetadata.h>
+#include <utility>
 
 namespace Aws
 {
@@ -59,7 +60,7 @@ namespace Model
     /**
      * <p>The move status for the IP address.</p>
      */
-    inline void SetStatus(Status&& value) { m_status = value; }
+    inline void SetStatus(Status&& value) { m_status = std::move(value); }
 
     /**
      * <p>The move status for the IP address.</p>
@@ -69,7 +70,7 @@ namespace Model
     /**
      * <p>The move status for the IP address.</p>
      */
-    inline RestoreAddressToClassicResponse& WithStatus(Status&& value) { SetStatus(value); return *this;}
+    inline RestoreAddressToClassicResponse& WithStatus(Status&& value) { SetStatus(std::move(value)); return *this;}
 
     /**
      * <p>The Elastic IP address.</p>
@@ -84,7 +85,7 @@ namespace Model
     /**
      * <p>The Elastic IP address.</p>
      */
-    inline void SetPublicIp(Aws::String&& value) { m_publicIp = value; }
+    inline void SetPublicIp(Aws::String&& value) { m_publicIp = std::move(value); }
 
     /**
      * <p>The Elastic IP address.</p>
@@ -99,7 +100,7 @@ namespace Model
     /**
      * <p>The Elastic IP address.</p>
      */
-    inline RestoreAddressToClassicResponse& WithPublicIp(Aws::String&& value) { SetPublicIp(value); return *this;}
+    inline RestoreAddressToClassicResponse& WithPublicIp(Aws::String&& value) { SetPublicIp(std::move(value)); return *this;}
 
     /**
      * <p>The Elastic IP address.</p>
@@ -113,13 +114,13 @@ namespace Model
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
 
     
     inline RestoreAddressToClassicResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
 
     
-    inline RestoreAddressToClassicResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
+    inline RestoreAddressToClassicResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
     Status m_status;

@@ -16,6 +16,7 @@
 #include <aws/monitoring/CloudWatch_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -59,7 +60,7 @@ namespace Model
     /**
      * <p>The dimension name to be matched.</p>
      */
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p>The dimension name to be matched.</p>
@@ -74,7 +75,7 @@ namespace Model
     /**
      * <p>The dimension name to be matched.</p>
      */
-    inline DimensionFilter& WithName(Aws::String&& value) { SetName(value); return *this;}
+    inline DimensionFilter& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>The dimension name to be matched.</p>
@@ -94,7 +95,7 @@ namespace Model
     /**
      * <p>The value of the dimension to be matched.</p>
      */
-    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = value; }
+    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
 
     /**
      * <p>The value of the dimension to be matched.</p>
@@ -109,7 +110,7 @@ namespace Model
     /**
      * <p>The value of the dimension to be matched.</p>
      */
-    inline DimensionFilter& WithValue(Aws::String&& value) { SetValue(value); return *this;}
+    inline DimensionFilter& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
 
     /**
      * <p>The value of the dimension to be matched.</p>

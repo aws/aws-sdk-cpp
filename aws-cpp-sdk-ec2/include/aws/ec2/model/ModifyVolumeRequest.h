@@ -17,6 +17,7 @@
 #include <aws/ec2/EC2Request.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/VolumeType.h>
+#include <utility>
 
 namespace Aws
 {
@@ -69,7 +70,7 @@ namespace Model
     inline void SetVolumeId(const Aws::String& value) { m_volumeIdHasBeenSet = true; m_volumeId = value; }
 
     
-    inline void SetVolumeId(Aws::String&& value) { m_volumeIdHasBeenSet = true; m_volumeId = value; }
+    inline void SetVolumeId(Aws::String&& value) { m_volumeIdHasBeenSet = true; m_volumeId = std::move(value); }
 
     
     inline void SetVolumeId(const char* value) { m_volumeIdHasBeenSet = true; m_volumeId.assign(value); }
@@ -78,7 +79,7 @@ namespace Model
     inline ModifyVolumeRequest& WithVolumeId(const Aws::String& value) { SetVolumeId(value); return *this;}
 
     
-    inline ModifyVolumeRequest& WithVolumeId(Aws::String&& value) { SetVolumeId(value); return *this;}
+    inline ModifyVolumeRequest& WithVolumeId(Aws::String&& value) { SetVolumeId(std::move(value)); return *this;}
 
     
     inline ModifyVolumeRequest& WithVolumeId(const char* value) { SetVolumeId(value); return *this;}
@@ -132,7 +133,7 @@ namespace Model
      * change the type of a volume to <code>standard</code>. </p> <p>Default: If no
      * type is specified, the existing type is retained. </p>
      */
-    inline void SetVolumeType(VolumeType&& value) { m_volumeTypeHasBeenSet = true; m_volumeType = value; }
+    inline void SetVolumeType(VolumeType&& value) { m_volumeTypeHasBeenSet = true; m_volumeType = std::move(value); }
 
     /**
      * <p>Target EBS volume type of the volume to be modified</p> <p> The API does not
@@ -148,7 +149,7 @@ namespace Model
      * change the type of a volume to <code>standard</code>. </p> <p>Default: If no
      * type is specified, the existing type is retained. </p>
      */
-    inline ModifyVolumeRequest& WithVolumeType(VolumeType&& value) { SetVolumeType(value); return *this;}
+    inline ModifyVolumeRequest& WithVolumeType(VolumeType&& value) { SetVolumeType(std::move(value)); return *this;}
 
     /**
      * <p>Target IOPS rate of the volume to be modified.</p> <p>Only valid for

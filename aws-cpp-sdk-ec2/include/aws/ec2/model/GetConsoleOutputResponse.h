@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/ec2/model/ResponseMetadata.h>
+#include <utility>
 
 namespace Aws
 {
@@ -59,7 +60,7 @@ namespace Model
     /**
      * <p>The ID of the instance.</p>
      */
-    inline void SetInstanceId(Aws::String&& value) { m_instanceId = value; }
+    inline void SetInstanceId(Aws::String&& value) { m_instanceId = std::move(value); }
 
     /**
      * <p>The ID of the instance.</p>
@@ -74,7 +75,7 @@ namespace Model
     /**
      * <p>The ID of the instance.</p>
      */
-    inline GetConsoleOutputResponse& WithInstanceId(Aws::String&& value) { SetInstanceId(value); return *this;}
+    inline GetConsoleOutputResponse& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the instance.</p>
@@ -94,7 +95,7 @@ namespace Model
     /**
      * <p>The time the output was last updated.</p>
      */
-    inline void SetTimestamp(Aws::Utils::DateTime&& value) { m_timestamp = value; }
+    inline void SetTimestamp(Aws::Utils::DateTime&& value) { m_timestamp = std::move(value); }
 
     /**
      * <p>The time the output was last updated.</p>
@@ -104,7 +105,7 @@ namespace Model
     /**
      * <p>The time the output was last updated.</p>
      */
-    inline GetConsoleOutputResponse& WithTimestamp(Aws::Utils::DateTime&& value) { SetTimestamp(value); return *this;}
+    inline GetConsoleOutputResponse& WithTimestamp(Aws::Utils::DateTime&& value) { SetTimestamp(std::move(value)); return *this;}
 
     /**
      * <p>The console output, Base64-encoded. If using a command line tool, the tool
@@ -122,7 +123,7 @@ namespace Model
      * <p>The console output, Base64-encoded. If using a command line tool, the tool
      * decodes the output for you.</p>
      */
-    inline void SetOutput(Aws::String&& value) { m_output = value; }
+    inline void SetOutput(Aws::String&& value) { m_output = std::move(value); }
 
     /**
      * <p>The console output, Base64-encoded. If using a command line tool, the tool
@@ -140,7 +141,7 @@ namespace Model
      * <p>The console output, Base64-encoded. If using a command line tool, the tool
      * decodes the output for you.</p>
      */
-    inline GetConsoleOutputResponse& WithOutput(Aws::String&& value) { SetOutput(value); return *this;}
+    inline GetConsoleOutputResponse& WithOutput(Aws::String&& value) { SetOutput(std::move(value)); return *this;}
 
     /**
      * <p>The console output, Base64-encoded. If using a command line tool, the tool
@@ -155,13 +156,13 @@ namespace Model
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
 
     
     inline GetConsoleOutputResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
 
     
-    inline GetConsoleOutputResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
+    inline GetConsoleOutputResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
     Aws::String m_instanceId;

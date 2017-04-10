@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/rekognition/Rekognition_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -70,7 +71,7 @@ namespace Model
      * <p>Amazon Resource Name (ARN) of the collection. You can use this to manage
      * permissions on your resources. </p>
      */
-    inline void SetCollectionArn(Aws::String&& value) { m_collectionArn = value; }
+    inline void SetCollectionArn(Aws::String&& value) { m_collectionArn = std::move(value); }
 
     /**
      * <p>Amazon Resource Name (ARN) of the collection. You can use this to manage
@@ -88,7 +89,7 @@ namespace Model
      * <p>Amazon Resource Name (ARN) of the collection. You can use this to manage
      * permissions on your resources. </p>
      */
-    inline CreateCollectionResult& WithCollectionArn(Aws::String&& value) { SetCollectionArn(value); return *this;}
+    inline CreateCollectionResult& WithCollectionArn(Aws::String&& value) { SetCollectionArn(std::move(value)); return *this;}
 
     /**
      * <p>Amazon Resource Name (ARN) of the collection. You can use this to manage

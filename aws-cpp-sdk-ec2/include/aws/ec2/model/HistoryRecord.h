@@ -18,6 +18,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/ec2/model/EventType.h>
 #include <aws/ec2/model/EventInformation.h>
+#include <utility>
 
 namespace Aws
 {
@@ -65,7 +66,7 @@ namespace Model
      * <p>The date and time of the event, in UTC format (for example,
      * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
      */
-    inline void SetTimestamp(Aws::Utils::DateTime&& value) { m_timestampHasBeenSet = true; m_timestamp = value; }
+    inline void SetTimestamp(Aws::Utils::DateTime&& value) { m_timestampHasBeenSet = true; m_timestamp = std::move(value); }
 
     /**
      * <p>The date and time of the event, in UTC format (for example,
@@ -77,7 +78,7 @@ namespace Model
      * <p>The date and time of the event, in UTC format (for example,
      * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
      */
-    inline HistoryRecord& WithTimestamp(Aws::Utils::DateTime&& value) { SetTimestamp(value); return *this;}
+    inline HistoryRecord& WithTimestamp(Aws::Utils::DateTime&& value) { SetTimestamp(std::move(value)); return *this;}
 
     /**
      * <p>The event type.</p> <ul> <li> <p> <code>error</code> - Indicates an error
@@ -104,7 +105,7 @@ namespace Model
      * request.</p> </li> <li> <p> <code>instanceChange</code> - Indicates that an
      * instance was launched or terminated.</p> </li> </ul>
      */
-    inline void SetEventType(EventType&& value) { m_eventTypeHasBeenSet = true; m_eventType = value; }
+    inline void SetEventType(EventType&& value) { m_eventTypeHasBeenSet = true; m_eventType = std::move(value); }
 
     /**
      * <p>The event type.</p> <ul> <li> <p> <code>error</code> - Indicates an error
@@ -122,7 +123,7 @@ namespace Model
      * request.</p> </li> <li> <p> <code>instanceChange</code> - Indicates that an
      * instance was launched or terminated.</p> </li> </ul>
      */
-    inline HistoryRecord& WithEventType(EventType&& value) { SetEventType(value); return *this;}
+    inline HistoryRecord& WithEventType(EventType&& value) { SetEventType(std::move(value)); return *this;}
 
     /**
      * <p>Information about the event.</p>
@@ -137,7 +138,7 @@ namespace Model
     /**
      * <p>Information about the event.</p>
      */
-    inline void SetEventInformation(EventInformation&& value) { m_eventInformationHasBeenSet = true; m_eventInformation = value; }
+    inline void SetEventInformation(EventInformation&& value) { m_eventInformationHasBeenSet = true; m_eventInformation = std::move(value); }
 
     /**
      * <p>Information about the event.</p>
@@ -147,7 +148,7 @@ namespace Model
     /**
      * <p>Information about the event.</p>
      */
-    inline HistoryRecord& WithEventInformation(EventInformation&& value) { SetEventInformation(value); return *this;}
+    inline HistoryRecord& WithEventInformation(EventInformation&& value) { SetEventInformation(std::move(value)); return *this;}
 
   private:
     Aws::Utils::DateTime m_timestamp;

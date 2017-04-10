@@ -16,6 +16,7 @@
 #include <aws/codedeploy/CodeDeploy_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/codedeploy/model/TagFilterType.h>
+#include <utility>
 
 namespace Aws
 {
@@ -58,7 +59,7 @@ namespace Model
     /**
      * <p>The on-premises instance tag filter key.</p>
      */
-    inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = value; }
+    inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
 
     /**
      * <p>The on-premises instance tag filter key.</p>
@@ -73,7 +74,7 @@ namespace Model
     /**
      * <p>The on-premises instance tag filter key.</p>
      */
-    inline TagFilter& WithKey(Aws::String&& value) { SetKey(value); return *this;}
+    inline TagFilter& WithKey(Aws::String&& value) { SetKey(std::move(value)); return *this;}
 
     /**
      * <p>The on-premises instance tag filter key.</p>
@@ -93,7 +94,7 @@ namespace Model
     /**
      * <p>The on-premises instance tag filter value.</p>
      */
-    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = value; }
+    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
 
     /**
      * <p>The on-premises instance tag filter value.</p>
@@ -108,7 +109,7 @@ namespace Model
     /**
      * <p>The on-premises instance tag filter value.</p>
      */
-    inline TagFilter& WithValue(Aws::String&& value) { SetValue(value); return *this;}
+    inline TagFilter& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
 
     /**
      * <p>The on-premises instance tag filter value.</p>
@@ -134,7 +135,7 @@ namespace Model
      * only.</p> </li> <li> <p>VALUE_ONLY: Value only.</p> </li> <li> <p>KEY_AND_VALUE:
      * Key and value.</p> </li> </ul>
      */
-    inline void SetType(TagFilterType&& value) { m_typeHasBeenSet = true; m_type = value; }
+    inline void SetType(TagFilterType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
      * <p>The on-premises instance tag filter type:</p> <ul> <li> <p>KEY_ONLY: Key
@@ -148,7 +149,7 @@ namespace Model
      * only.</p> </li> <li> <p>VALUE_ONLY: Value only.</p> </li> <li> <p>KEY_AND_VALUE:
      * Key and value.</p> </li> </ul>
      */
-    inline TagFilter& WithType(TagFilterType&& value) { SetType(value); return *this;}
+    inline TagFilter& WithType(TagFilterType&& value) { SetType(std::move(value)); return *this;}
 
   private:
     Aws::String m_key;

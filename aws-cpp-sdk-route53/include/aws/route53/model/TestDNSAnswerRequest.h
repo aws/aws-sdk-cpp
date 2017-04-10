@@ -17,6 +17,7 @@
 #include <aws/route53/Route53Request.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/route53/model/RRType.h>
+#include <utility>
 
 namespace Aws
 {
@@ -80,7 +81,7 @@ namespace Model
      * <p>The ID of the hosted zone that you want Amazon Route 53 to simulate a query
      * for.</p>
      */
-    inline void SetHostedZoneId(Aws::String&& value) { m_hostedZoneIdHasBeenSet = true; m_hostedZoneId = value; }
+    inline void SetHostedZoneId(Aws::String&& value) { m_hostedZoneIdHasBeenSet = true; m_hostedZoneId = std::move(value); }
 
     /**
      * <p>The ID of the hosted zone that you want Amazon Route 53 to simulate a query
@@ -98,7 +99,7 @@ namespace Model
      * <p>The ID of the hosted zone that you want Amazon Route 53 to simulate a query
      * for.</p>
      */
-    inline TestDNSAnswerRequest& WithHostedZoneId(Aws::String&& value) { SetHostedZoneId(value); return *this;}
+    inline TestDNSAnswerRequest& WithHostedZoneId(Aws::String&& value) { SetHostedZoneId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the hosted zone that you want Amazon Route 53 to simulate a query
@@ -122,7 +123,7 @@ namespace Model
      * <p>The name of the resource record set that you want Amazon Route 53 to simulate
      * a query for.</p>
      */
-    inline void SetRecordName(Aws::String&& value) { m_recordNameHasBeenSet = true; m_recordName = value; }
+    inline void SetRecordName(Aws::String&& value) { m_recordNameHasBeenSet = true; m_recordName = std::move(value); }
 
     /**
      * <p>The name of the resource record set that you want Amazon Route 53 to simulate
@@ -140,7 +141,7 @@ namespace Model
      * <p>The name of the resource record set that you want Amazon Route 53 to simulate
      * a query for.</p>
      */
-    inline TestDNSAnswerRequest& WithRecordName(Aws::String&& value) { SetRecordName(value); return *this;}
+    inline TestDNSAnswerRequest& WithRecordName(Aws::String&& value) { SetRecordName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the resource record set that you want Amazon Route 53 to simulate
@@ -161,7 +162,7 @@ namespace Model
     /**
      * <p>The type of the resource record set.</p>
      */
-    inline void SetRecordType(RRType&& value) { m_recordTypeHasBeenSet = true; m_recordType = value; }
+    inline void SetRecordType(RRType&& value) { m_recordTypeHasBeenSet = true; m_recordType = std::move(value); }
 
     /**
      * <p>The type of the resource record set.</p>
@@ -171,7 +172,7 @@ namespace Model
     /**
      * <p>The type of the resource record set.</p>
      */
-    inline TestDNSAnswerRequest& WithRecordType(RRType&& value) { SetRecordType(value); return *this;}
+    inline TestDNSAnswerRequest& WithRecordType(RRType&& value) { SetRecordType(std::move(value)); return *this;}
 
     /**
      * <p>If you want to simulate a request from a specific DNS resolver, specify the
@@ -192,7 +193,7 @@ namespace Model
      * IP address for that resolver. If you omit this value, <code>TestDnsAnswer</code>
      * uses the IP address of a DNS resolver in the AWS US East region.</p>
      */
-    inline void SetResolverIP(Aws::String&& value) { m_resolverIPHasBeenSet = true; m_resolverIP = value; }
+    inline void SetResolverIP(Aws::String&& value) { m_resolverIPHasBeenSet = true; m_resolverIP = std::move(value); }
 
     /**
      * <p>If you want to simulate a request from a specific DNS resolver, specify the
@@ -213,7 +214,7 @@ namespace Model
      * IP address for that resolver. If you omit this value, <code>TestDnsAnswer</code>
      * uses the IP address of a DNS resolver in the AWS US East region.</p>
      */
-    inline TestDNSAnswerRequest& WithResolverIP(Aws::String&& value) { SetResolverIP(value); return *this;}
+    inline TestDNSAnswerRequest& WithResolverIP(Aws::String&& value) { SetResolverIP(std::move(value)); return *this;}
 
     /**
      * <p>If you want to simulate a request from a specific DNS resolver, specify the
@@ -238,7 +239,7 @@ namespace Model
      * <p>If the resolver that you specified for resolverip supports EDNS0, specify the
      * IP address of a client in the applicable location.</p>
      */
-    inline void SetEDNS0ClientSubnetIP(Aws::String&& value) { m_eDNS0ClientSubnetIPHasBeenSet = true; m_eDNS0ClientSubnetIP = value; }
+    inline void SetEDNS0ClientSubnetIP(Aws::String&& value) { m_eDNS0ClientSubnetIPHasBeenSet = true; m_eDNS0ClientSubnetIP = std::move(value); }
 
     /**
      * <p>If the resolver that you specified for resolverip supports EDNS0, specify the
@@ -256,7 +257,7 @@ namespace Model
      * <p>If the resolver that you specified for resolverip supports EDNS0, specify the
      * IP address of a client in the applicable location.</p>
      */
-    inline TestDNSAnswerRequest& WithEDNS0ClientSubnetIP(Aws::String&& value) { SetEDNS0ClientSubnetIP(value); return *this;}
+    inline TestDNSAnswerRequest& WithEDNS0ClientSubnetIP(Aws::String&& value) { SetEDNS0ClientSubnetIP(std::move(value)); return *this;}
 
     /**
      * <p>If the resolver that you specified for resolverip supports EDNS0, specify the
@@ -292,7 +293,7 @@ namespace Model
      * for <code>edns0clientsubnetmask</code>, the checking tool will simulate a
      * request from 192.0.2.0/24. The default value is 24 bits.</p>
      */
-    inline void SetEDNS0ClientSubnetMask(Aws::String&& value) { m_eDNS0ClientSubnetMaskHasBeenSet = true; m_eDNS0ClientSubnetMask = value; }
+    inline void SetEDNS0ClientSubnetMask(Aws::String&& value) { m_eDNS0ClientSubnetMaskHasBeenSet = true; m_eDNS0ClientSubnetMask = std::move(value); }
 
     /**
      * <p>If you specify an IP address for <code>edns0clientsubnetip</code>, you can
@@ -322,7 +323,7 @@ namespace Model
      * for <code>edns0clientsubnetmask</code>, the checking tool will simulate a
      * request from 192.0.2.0/24. The default value is 24 bits.</p>
      */
-    inline TestDNSAnswerRequest& WithEDNS0ClientSubnetMask(Aws::String&& value) { SetEDNS0ClientSubnetMask(value); return *this;}
+    inline TestDNSAnswerRequest& WithEDNS0ClientSubnetMask(Aws::String&& value) { SetEDNS0ClientSubnetMask(std::move(value)); return *this;}
 
     /**
      * <p>If you specify an IP address for <code>edns0clientsubnetip</code>, you can

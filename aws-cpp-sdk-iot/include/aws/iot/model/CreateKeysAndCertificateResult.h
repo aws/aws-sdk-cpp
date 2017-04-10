@@ -16,6 +16,7 @@
 #include <aws/iot/IoT_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/iot/model/KeyPair.h>
+#include <utility>
 
 namespace Aws
 {
@@ -59,7 +60,7 @@ namespace Model
     /**
      * <p>The ARN of the certificate.</p>
      */
-    inline void SetCertificateArn(Aws::String&& value) { m_certificateArn = value; }
+    inline void SetCertificateArn(Aws::String&& value) { m_certificateArn = std::move(value); }
 
     /**
      * <p>The ARN of the certificate.</p>
@@ -74,7 +75,7 @@ namespace Model
     /**
      * <p>The ARN of the certificate.</p>
      */
-    inline CreateKeysAndCertificateResult& WithCertificateArn(Aws::String&& value) { SetCertificateArn(value); return *this;}
+    inline CreateKeysAndCertificateResult& WithCertificateArn(Aws::String&& value) { SetCertificateArn(std::move(value)); return *this;}
 
     /**
      * <p>The ARN of the certificate.</p>
@@ -97,7 +98,7 @@ namespace Model
      * <p>The ID of the certificate. AWS IoT issues a default subject name for the
      * certificate (for example, AWS IoT Certificate).</p>
      */
-    inline void SetCertificateId(Aws::String&& value) { m_certificateId = value; }
+    inline void SetCertificateId(Aws::String&& value) { m_certificateId = std::move(value); }
 
     /**
      * <p>The ID of the certificate. AWS IoT issues a default subject name for the
@@ -115,7 +116,7 @@ namespace Model
      * <p>The ID of the certificate. AWS IoT issues a default subject name for the
      * certificate (for example, AWS IoT Certificate).</p>
      */
-    inline CreateKeysAndCertificateResult& WithCertificateId(Aws::String&& value) { SetCertificateId(value); return *this;}
+    inline CreateKeysAndCertificateResult& WithCertificateId(Aws::String&& value) { SetCertificateId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the certificate. AWS IoT issues a default subject name for the
@@ -136,7 +137,7 @@ namespace Model
     /**
      * <p>The certificate data, in PEM format.</p>
      */
-    inline void SetCertificatePem(Aws::String&& value) { m_certificatePem = value; }
+    inline void SetCertificatePem(Aws::String&& value) { m_certificatePem = std::move(value); }
 
     /**
      * <p>The certificate data, in PEM format.</p>
@@ -151,7 +152,7 @@ namespace Model
     /**
      * <p>The certificate data, in PEM format.</p>
      */
-    inline CreateKeysAndCertificateResult& WithCertificatePem(Aws::String&& value) { SetCertificatePem(value); return *this;}
+    inline CreateKeysAndCertificateResult& WithCertificatePem(Aws::String&& value) { SetCertificatePem(std::move(value)); return *this;}
 
     /**
      * <p>The certificate data, in PEM format.</p>
@@ -171,7 +172,7 @@ namespace Model
     /**
      * <p>The generated key pair.</p>
      */
-    inline void SetKeyPair(KeyPair&& value) { m_keyPair = value; }
+    inline void SetKeyPair(KeyPair&& value) { m_keyPair = std::move(value); }
 
     /**
      * <p>The generated key pair.</p>
@@ -181,7 +182,7 @@ namespace Model
     /**
      * <p>The generated key pair.</p>
      */
-    inline CreateKeysAndCertificateResult& WithKeyPair(KeyPair&& value) { SetKeyPair(value); return *this;}
+    inline CreateKeysAndCertificateResult& WithKeyPair(KeyPair&& value) { SetKeyPair(std::move(value)); return *this;}
 
   private:
     Aws::String m_certificateArn;

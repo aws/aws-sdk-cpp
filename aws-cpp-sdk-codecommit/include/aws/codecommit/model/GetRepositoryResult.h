@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/codecommit/CodeCommit_EXPORTS.h>
 #include <aws/codecommit/model/RepositoryMetadata.h>
+#include <utility>
 
 namespace Aws
 {
@@ -58,7 +59,7 @@ namespace Model
     /**
      * <p>Information about the repository.</p>
      */
-    inline void SetRepositoryMetadata(RepositoryMetadata&& value) { m_repositoryMetadata = value; }
+    inline void SetRepositoryMetadata(RepositoryMetadata&& value) { m_repositoryMetadata = std::move(value); }
 
     /**
      * <p>Information about the repository.</p>
@@ -68,7 +69,7 @@ namespace Model
     /**
      * <p>Information about the repository.</p>
      */
-    inline GetRepositoryResult& WithRepositoryMetadata(RepositoryMetadata&& value) { SetRepositoryMetadata(value); return *this;}
+    inline GetRepositoryResult& WithRepositoryMetadata(RepositoryMetadata&& value) { SetRepositoryMetadata(std::move(value)); return *this;}
 
   private:
     RepositoryMetadata m_repositoryMetadata;

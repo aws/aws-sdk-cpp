@@ -16,6 +16,7 @@
 #include <aws/elasticloadbalancingv2/ElasticLoadBalancingv2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -59,7 +60,7 @@ namespace Model
     /**
      * <p>The name of the Availability Zone.</p>
      */
-    inline void SetZoneName(Aws::String&& value) { m_zoneNameHasBeenSet = true; m_zoneName = value; }
+    inline void SetZoneName(Aws::String&& value) { m_zoneNameHasBeenSet = true; m_zoneName = std::move(value); }
 
     /**
      * <p>The name of the Availability Zone.</p>
@@ -74,7 +75,7 @@ namespace Model
     /**
      * <p>The name of the Availability Zone.</p>
      */
-    inline AvailabilityZone& WithZoneName(Aws::String&& value) { SetZoneName(value); return *this;}
+    inline AvailabilityZone& WithZoneName(Aws::String&& value) { SetZoneName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the Availability Zone.</p>
@@ -94,7 +95,7 @@ namespace Model
     /**
      * <p>The ID of the subnet.</p>
      */
-    inline void SetSubnetId(Aws::String&& value) { m_subnetIdHasBeenSet = true; m_subnetId = value; }
+    inline void SetSubnetId(Aws::String&& value) { m_subnetIdHasBeenSet = true; m_subnetId = std::move(value); }
 
     /**
      * <p>The ID of the subnet.</p>
@@ -109,7 +110,7 @@ namespace Model
     /**
      * <p>The ID of the subnet.</p>
      */
-    inline AvailabilityZone& WithSubnetId(Aws::String&& value) { SetSubnetId(value); return *this;}
+    inline AvailabilityZone& WithSubnetId(Aws::String&& value) { SetSubnetId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the subnet.</p>

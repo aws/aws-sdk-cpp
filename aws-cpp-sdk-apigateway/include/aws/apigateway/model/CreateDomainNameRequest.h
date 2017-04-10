@@ -16,6 +16,7 @@
 #include <aws/apigateway/APIGateway_EXPORTS.h>
 #include <aws/apigateway/APIGatewayRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -49,7 +50,7 @@ namespace Model
     /**
      * <p>(Required) The name of the <a>DomainName</a> resource.</p>
      */
-    inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
+    inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = std::move(value); }
 
     /**
      * <p>(Required) The name of the <a>DomainName</a> resource.</p>
@@ -64,7 +65,7 @@ namespace Model
     /**
      * <p>(Required) The name of the <a>DomainName</a> resource.</p>
      */
-    inline CreateDomainNameRequest& WithDomainName(Aws::String&& value) { SetDomainName(value); return *this;}
+    inline CreateDomainNameRequest& WithDomainName(Aws::String&& value) { SetDomainName(std::move(value)); return *this;}
 
     /**
      * <p>(Required) The name of the <a>DomainName</a> resource.</p>
@@ -84,7 +85,7 @@ namespace Model
     /**
      * <p>The user-friendly name of the certificate.</p>
      */
-    inline void SetCertificateName(Aws::String&& value) { m_certificateNameHasBeenSet = true; m_certificateName = value; }
+    inline void SetCertificateName(Aws::String&& value) { m_certificateNameHasBeenSet = true; m_certificateName = std::move(value); }
 
     /**
      * <p>The user-friendly name of the certificate.</p>
@@ -99,7 +100,7 @@ namespace Model
     /**
      * <p>The user-friendly name of the certificate.</p>
      */
-    inline CreateDomainNameRequest& WithCertificateName(Aws::String&& value) { SetCertificateName(value); return *this;}
+    inline CreateDomainNameRequest& WithCertificateName(Aws::String&& value) { SetCertificateName(std::move(value)); return *this;}
 
     /**
      * <p>The user-friendly name of the certificate.</p>
@@ -122,7 +123,7 @@ namespace Model
      * <p>[Deprecated] The body of the server certificate provided by your certificate
      * authority.</p>
      */
-    inline void SetCertificateBody(Aws::String&& value) { m_certificateBodyHasBeenSet = true; m_certificateBody = value; }
+    inline void SetCertificateBody(Aws::String&& value) { m_certificateBodyHasBeenSet = true; m_certificateBody = std::move(value); }
 
     /**
      * <p>[Deprecated] The body of the server certificate provided by your certificate
@@ -140,7 +141,7 @@ namespace Model
      * <p>[Deprecated] The body of the server certificate provided by your certificate
      * authority.</p>
      */
-    inline CreateDomainNameRequest& WithCertificateBody(Aws::String&& value) { SetCertificateBody(value); return *this;}
+    inline CreateDomainNameRequest& WithCertificateBody(Aws::String&& value) { SetCertificateBody(std::move(value)); return *this;}
 
     /**
      * <p>[Deprecated] The body of the server certificate provided by your certificate
@@ -161,7 +162,7 @@ namespace Model
     /**
      * <p>[Deprecated] Your certificate's private key.</p>
      */
-    inline void SetCertificatePrivateKey(Aws::String&& value) { m_certificatePrivateKeyHasBeenSet = true; m_certificatePrivateKey = value; }
+    inline void SetCertificatePrivateKey(Aws::String&& value) { m_certificatePrivateKeyHasBeenSet = true; m_certificatePrivateKey = std::move(value); }
 
     /**
      * <p>[Deprecated] Your certificate's private key.</p>
@@ -176,7 +177,7 @@ namespace Model
     /**
      * <p>[Deprecated] Your certificate's private key.</p>
      */
-    inline CreateDomainNameRequest& WithCertificatePrivateKey(Aws::String&& value) { SetCertificatePrivateKey(value); return *this;}
+    inline CreateDomainNameRequest& WithCertificatePrivateKey(Aws::String&& value) { SetCertificatePrivateKey(std::move(value)); return *this;}
 
     /**
      * <p>[Deprecated] Your certificate's private key.</p>
@@ -211,7 +212,7 @@ namespace Model
      * certificates that were provided by your certificate authority. Do not include
      * any intermediaries that are not in the chain of trust path.</p>
      */
-    inline void SetCertificateChain(Aws::String&& value) { m_certificateChainHasBeenSet = true; m_certificateChain = value; }
+    inline void SetCertificateChain(Aws::String&& value) { m_certificateChainHasBeenSet = true; m_certificateChain = std::move(value); }
 
     /**
      * <p>[Deprecated] The intermediate certificates and optionally the root
@@ -241,7 +242,7 @@ namespace Model
      * certificates that were provided by your certificate authority. Do not include
      * any intermediaries that are not in the chain of trust path.</p>
      */
-    inline CreateDomainNameRequest& WithCertificateChain(Aws::String&& value) { SetCertificateChain(value); return *this;}
+    inline CreateDomainNameRequest& WithCertificateChain(Aws::String&& value) { SetCertificateChain(std::move(value)); return *this;}
 
     /**
      * <p>[Deprecated] The intermediate certificates and optionally the root
@@ -269,7 +270,7 @@ namespace Model
      * <p>The reference to an AWS-managed certificate. AWS Certificate Manager is the
      * only supported source.</p>
      */
-    inline void SetCertificateArn(Aws::String&& value) { m_certificateArnHasBeenSet = true; m_certificateArn = value; }
+    inline void SetCertificateArn(Aws::String&& value) { m_certificateArnHasBeenSet = true; m_certificateArn = std::move(value); }
 
     /**
      * <p>The reference to an AWS-managed certificate. AWS Certificate Manager is the
@@ -287,7 +288,7 @@ namespace Model
      * <p>The reference to an AWS-managed certificate. AWS Certificate Manager is the
      * only supported source.</p>
      */
-    inline CreateDomainNameRequest& WithCertificateArn(Aws::String&& value) { SetCertificateArn(value); return *this;}
+    inline CreateDomainNameRequest& WithCertificateArn(Aws::String&& value) { SetCertificateArn(std::move(value)); return *this;}
 
     /**
      * <p>The reference to an AWS-managed certificate. AWS Certificate Manager is the

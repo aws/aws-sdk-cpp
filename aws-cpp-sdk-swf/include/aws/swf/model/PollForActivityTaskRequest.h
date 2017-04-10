@@ -17,6 +17,7 @@
 #include <aws/swf/SWFRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/swf/model/TaskList.h>
+#include <utility>
 
 namespace Aws
 {
@@ -49,7 +50,7 @@ namespace Model
     /**
      * <p>The name of the domain that contains the task lists being polled.</p>
      */
-    inline void SetDomain(Aws::String&& value) { m_domainHasBeenSet = true; m_domain = value; }
+    inline void SetDomain(Aws::String&& value) { m_domainHasBeenSet = true; m_domain = std::move(value); }
 
     /**
      * <p>The name of the domain that contains the task lists being polled.</p>
@@ -64,7 +65,7 @@ namespace Model
     /**
      * <p>The name of the domain that contains the task lists being polled.</p>
      */
-    inline PollForActivityTaskRequest& WithDomain(Aws::String&& value) { SetDomain(value); return *this;}
+    inline PollForActivityTaskRequest& WithDomain(Aws::String&& value) { SetDomain(std::move(value)); return *this;}
 
     /**
      * <p>The name of the domain that contains the task lists being polled.</p>
@@ -96,7 +97,7 @@ namespace Model
      * or any control characters (\u0000-\u001f | \u007f - \u009f). Also, it must not
      * contain the literal string quotarnquot.</p>
      */
-    inline void SetTaskList(TaskList&& value) { m_taskListHasBeenSet = true; m_taskList = value; }
+    inline void SetTaskList(TaskList&& value) { m_taskListHasBeenSet = true; m_taskList = std::move(value); }
 
     /**
      * <p>Specifies the task list to poll for activity tasks.</p> <p>The specified
@@ -114,7 +115,7 @@ namespace Model
      * or any control characters (\u0000-\u001f | \u007f - \u009f). Also, it must not
      * contain the literal string quotarnquot.</p>
      */
-    inline PollForActivityTaskRequest& WithTaskList(TaskList&& value) { SetTaskList(value); return *this;}
+    inline PollForActivityTaskRequest& WithTaskList(TaskList&& value) { SetTaskList(std::move(value)); return *this;}
 
     /**
      * <p>Identity of the worker making the request, recorded in the
@@ -138,7 +139,7 @@ namespace Model
      * diagnostic tracing when problems arise. The form of this identity is user
      * defined.</p>
      */
-    inline void SetIdentity(Aws::String&& value) { m_identityHasBeenSet = true; m_identity = value; }
+    inline void SetIdentity(Aws::String&& value) { m_identityHasBeenSet = true; m_identity = std::move(value); }
 
     /**
      * <p>Identity of the worker making the request, recorded in the
@@ -162,7 +163,7 @@ namespace Model
      * diagnostic tracing when problems arise. The form of this identity is user
      * defined.</p>
      */
-    inline PollForActivityTaskRequest& WithIdentity(Aws::String&& value) { SetIdentity(value); return *this;}
+    inline PollForActivityTaskRequest& WithIdentity(Aws::String&& value) { SetIdentity(std::move(value)); return *this;}
 
     /**
      * <p>Identity of the worker making the request, recorded in the

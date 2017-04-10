@@ -17,6 +17,7 @@
 #include <aws/opsworks/OpsWorksRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <utility>
 
 namespace Aws
 {
@@ -52,7 +53,7 @@ namespace Model
      * <p>The stack ID that the instances are registered with. The operation returns
      * descriptions of all registered Amazon RDS instances.</p>
      */
-    inline void SetStackId(Aws::String&& value) { m_stackIdHasBeenSet = true; m_stackId = value; }
+    inline void SetStackId(Aws::String&& value) { m_stackIdHasBeenSet = true; m_stackId = std::move(value); }
 
     /**
      * <p>The stack ID that the instances are registered with. The operation returns
@@ -70,7 +71,7 @@ namespace Model
      * <p>The stack ID that the instances are registered with. The operation returns
      * descriptions of all registered Amazon RDS instances.</p>
      */
-    inline DescribeRdsDbInstancesRequest& WithStackId(Aws::String&& value) { SetStackId(value); return *this;}
+    inline DescribeRdsDbInstancesRequest& WithStackId(Aws::String&& value) { SetStackId(std::move(value)); return *this;}
 
     /**
      * <p>The stack ID that the instances are registered with. The operation returns
@@ -91,7 +92,7 @@ namespace Model
     /**
      * <p>An array containing the ARNs of the instances to be described.</p>
      */
-    inline void SetRdsDbInstanceArns(Aws::Vector<Aws::String>&& value) { m_rdsDbInstanceArnsHasBeenSet = true; m_rdsDbInstanceArns = value; }
+    inline void SetRdsDbInstanceArns(Aws::Vector<Aws::String>&& value) { m_rdsDbInstanceArnsHasBeenSet = true; m_rdsDbInstanceArns = std::move(value); }
 
     /**
      * <p>An array containing the ARNs of the instances to be described.</p>
@@ -101,7 +102,7 @@ namespace Model
     /**
      * <p>An array containing the ARNs of the instances to be described.</p>
      */
-    inline DescribeRdsDbInstancesRequest& WithRdsDbInstanceArns(Aws::Vector<Aws::String>&& value) { SetRdsDbInstanceArns(value); return *this;}
+    inline DescribeRdsDbInstancesRequest& WithRdsDbInstanceArns(Aws::Vector<Aws::String>&& value) { SetRdsDbInstanceArns(std::move(value)); return *this;}
 
     /**
      * <p>An array containing the ARNs of the instances to be described.</p>
@@ -111,7 +112,7 @@ namespace Model
     /**
      * <p>An array containing the ARNs of the instances to be described.</p>
      */
-    inline DescribeRdsDbInstancesRequest& AddRdsDbInstanceArns(Aws::String&& value) { m_rdsDbInstanceArnsHasBeenSet = true; m_rdsDbInstanceArns.push_back(value); return *this; }
+    inline DescribeRdsDbInstancesRequest& AddRdsDbInstanceArns(Aws::String&& value) { m_rdsDbInstanceArnsHasBeenSet = true; m_rdsDbInstanceArns.push_back(std::move(value)); return *this; }
 
     /**
      * <p>An array containing the ARNs of the instances to be described.</p>

@@ -16,6 +16,7 @@
 #include <aws/clouddirectory/CloudDirectory_EXPORTS.h>
 #include <aws/clouddirectory/model/UpdateActionType.h>
 #include <aws/clouddirectory/model/TypedAttributeValue.h>
+#include <utility>
 
 namespace Aws
 {
@@ -57,7 +58,7 @@ namespace Model
     /**
      * <p>Type can be either Update or Delete.</p>
      */
-    inline void SetObjectAttributeActionType(UpdateActionType&& value) { m_objectAttributeActionTypeHasBeenSet = true; m_objectAttributeActionType = value; }
+    inline void SetObjectAttributeActionType(UpdateActionType&& value) { m_objectAttributeActionTypeHasBeenSet = true; m_objectAttributeActionType = std::move(value); }
 
     /**
      * <p>Type can be either Update or Delete.</p>
@@ -67,7 +68,7 @@ namespace Model
     /**
      * <p>Type can be either Update or Delete.</p>
      */
-    inline ObjectAttributeAction& WithObjectAttributeActionType(UpdateActionType&& value) { SetObjectAttributeActionType(value); return *this;}
+    inline ObjectAttributeAction& WithObjectAttributeActionType(UpdateActionType&& value) { SetObjectAttributeActionType(std::move(value)); return *this;}
 
     /**
      * <p>The value that you want to update to.</p>
@@ -82,7 +83,7 @@ namespace Model
     /**
      * <p>The value that you want to update to.</p>
      */
-    inline void SetObjectAttributeUpdateValue(TypedAttributeValue&& value) { m_objectAttributeUpdateValueHasBeenSet = true; m_objectAttributeUpdateValue = value; }
+    inline void SetObjectAttributeUpdateValue(TypedAttributeValue&& value) { m_objectAttributeUpdateValueHasBeenSet = true; m_objectAttributeUpdateValue = std::move(value); }
 
     /**
      * <p>The value that you want to update to.</p>
@@ -92,7 +93,7 @@ namespace Model
     /**
      * <p>The value that you want to update to.</p>
      */
-    inline ObjectAttributeAction& WithObjectAttributeUpdateValue(TypedAttributeValue&& value) { SetObjectAttributeUpdateValue(value); return *this;}
+    inline ObjectAttributeAction& WithObjectAttributeUpdateValue(TypedAttributeValue&& value) { SetObjectAttributeUpdateValue(std::move(value)); return *this;}
 
   private:
     UpdateActionType m_objectAttributeActionType;

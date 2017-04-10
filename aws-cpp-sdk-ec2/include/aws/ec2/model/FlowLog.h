@@ -18,6 +18,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/TrafficType.h>
+#include <utility>
 
 namespace Aws
 {
@@ -61,7 +62,7 @@ namespace Model
     /**
      * <p>The date and time the flow log was created.</p>
      */
-    inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
+    inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::move(value); }
 
     /**
      * <p>The date and time the flow log was created.</p>
@@ -71,7 +72,7 @@ namespace Model
     /**
      * <p>The date and time the flow log was created.</p>
      */
-    inline FlowLog& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(value); return *this;}
+    inline FlowLog& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
 
     /**
      * <p>The flow log ID.</p>
@@ -86,7 +87,7 @@ namespace Model
     /**
      * <p>The flow log ID.</p>
      */
-    inline void SetFlowLogId(Aws::String&& value) { m_flowLogIdHasBeenSet = true; m_flowLogId = value; }
+    inline void SetFlowLogId(Aws::String&& value) { m_flowLogIdHasBeenSet = true; m_flowLogId = std::move(value); }
 
     /**
      * <p>The flow log ID.</p>
@@ -101,7 +102,7 @@ namespace Model
     /**
      * <p>The flow log ID.</p>
      */
-    inline FlowLog& WithFlowLogId(Aws::String&& value) { SetFlowLogId(value); return *this;}
+    inline FlowLog& WithFlowLogId(Aws::String&& value) { SetFlowLogId(std::move(value)); return *this;}
 
     /**
      * <p>The flow log ID.</p>
@@ -121,7 +122,7 @@ namespace Model
     /**
      * <p>The status of the flow log (<code>ACTIVE</code>).</p>
      */
-    inline void SetFlowLogStatus(Aws::String&& value) { m_flowLogStatusHasBeenSet = true; m_flowLogStatus = value; }
+    inline void SetFlowLogStatus(Aws::String&& value) { m_flowLogStatusHasBeenSet = true; m_flowLogStatus = std::move(value); }
 
     /**
      * <p>The status of the flow log (<code>ACTIVE</code>).</p>
@@ -136,7 +137,7 @@ namespace Model
     /**
      * <p>The status of the flow log (<code>ACTIVE</code>).</p>
      */
-    inline FlowLog& WithFlowLogStatus(Aws::String&& value) { SetFlowLogStatus(value); return *this;}
+    inline FlowLog& WithFlowLogStatus(Aws::String&& value) { SetFlowLogStatus(std::move(value)); return *this;}
 
     /**
      * <p>The status of the flow log (<code>ACTIVE</code>).</p>
@@ -156,7 +157,7 @@ namespace Model
     /**
      * <p>The ID of the resource on which the flow log was created.</p>
      */
-    inline void SetResourceId(Aws::String&& value) { m_resourceIdHasBeenSet = true; m_resourceId = value; }
+    inline void SetResourceId(Aws::String&& value) { m_resourceIdHasBeenSet = true; m_resourceId = std::move(value); }
 
     /**
      * <p>The ID of the resource on which the flow log was created.</p>
@@ -171,7 +172,7 @@ namespace Model
     /**
      * <p>The ID of the resource on which the flow log was created.</p>
      */
-    inline FlowLog& WithResourceId(Aws::String&& value) { SetResourceId(value); return *this;}
+    inline FlowLog& WithResourceId(Aws::String&& value) { SetResourceId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the resource on which the flow log was created.</p>
@@ -191,7 +192,7 @@ namespace Model
     /**
      * <p>The type of traffic captured for the flow log.</p>
      */
-    inline void SetTrafficType(TrafficType&& value) { m_trafficTypeHasBeenSet = true; m_trafficType = value; }
+    inline void SetTrafficType(TrafficType&& value) { m_trafficTypeHasBeenSet = true; m_trafficType = std::move(value); }
 
     /**
      * <p>The type of traffic captured for the flow log.</p>
@@ -201,7 +202,7 @@ namespace Model
     /**
      * <p>The type of traffic captured for the flow log.</p>
      */
-    inline FlowLog& WithTrafficType(TrafficType&& value) { SetTrafficType(value); return *this;}
+    inline FlowLog& WithTrafficType(TrafficType&& value) { SetTrafficType(std::move(value)); return *this;}
 
     /**
      * <p>The name of the flow log group.</p>
@@ -216,7 +217,7 @@ namespace Model
     /**
      * <p>The name of the flow log group.</p>
      */
-    inline void SetLogGroupName(Aws::String&& value) { m_logGroupNameHasBeenSet = true; m_logGroupName = value; }
+    inline void SetLogGroupName(Aws::String&& value) { m_logGroupNameHasBeenSet = true; m_logGroupName = std::move(value); }
 
     /**
      * <p>The name of the flow log group.</p>
@@ -231,7 +232,7 @@ namespace Model
     /**
      * <p>The name of the flow log group.</p>
      */
-    inline FlowLog& WithLogGroupName(Aws::String&& value) { SetLogGroupName(value); return *this;}
+    inline FlowLog& WithLogGroupName(Aws::String&& value) { SetLogGroupName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the flow log group.</p>
@@ -254,7 +255,7 @@ namespace Model
      * <p>The status of the logs delivery (<code>SUCCESS</code> |
      * <code>FAILED</code>).</p>
      */
-    inline void SetDeliverLogsStatus(Aws::String&& value) { m_deliverLogsStatusHasBeenSet = true; m_deliverLogsStatus = value; }
+    inline void SetDeliverLogsStatus(Aws::String&& value) { m_deliverLogsStatusHasBeenSet = true; m_deliverLogsStatus = std::move(value); }
 
     /**
      * <p>The status of the logs delivery (<code>SUCCESS</code> |
@@ -272,7 +273,7 @@ namespace Model
      * <p>The status of the logs delivery (<code>SUCCESS</code> |
      * <code>FAILED</code>).</p>
      */
-    inline FlowLog& WithDeliverLogsStatus(Aws::String&& value) { SetDeliverLogsStatus(value); return *this;}
+    inline FlowLog& WithDeliverLogsStatus(Aws::String&& value) { SetDeliverLogsStatus(std::move(value)); return *this;}
 
     /**
      * <p>The status of the logs delivery (<code>SUCCESS</code> |
@@ -311,7 +312,7 @@ namespace Model
      * to publish to CloudWatch Logs. <code>Unknown error</code> indicates an internal
      * error.</p>
      */
-    inline void SetDeliverLogsErrorMessage(Aws::String&& value) { m_deliverLogsErrorMessageHasBeenSet = true; m_deliverLogsErrorMessage = value; }
+    inline void SetDeliverLogsErrorMessage(Aws::String&& value) { m_deliverLogsErrorMessageHasBeenSet = true; m_deliverLogsErrorMessage = std::move(value); }
 
     /**
      * <p>Information about the error that occurred. <code>Rate limited</code>
@@ -344,7 +345,7 @@ namespace Model
      * to publish to CloudWatch Logs. <code>Unknown error</code> indicates an internal
      * error.</p>
      */
-    inline FlowLog& WithDeliverLogsErrorMessage(Aws::String&& value) { SetDeliverLogsErrorMessage(value); return *this;}
+    inline FlowLog& WithDeliverLogsErrorMessage(Aws::String&& value) { SetDeliverLogsErrorMessage(std::move(value)); return *this;}
 
     /**
      * <p>Information about the error that occurred. <code>Rate limited</code>
@@ -370,7 +371,7 @@ namespace Model
     /**
      * <p>The ARN of the IAM role that posts logs to CloudWatch Logs.</p>
      */
-    inline void SetDeliverLogsPermissionArn(Aws::String&& value) { m_deliverLogsPermissionArnHasBeenSet = true; m_deliverLogsPermissionArn = value; }
+    inline void SetDeliverLogsPermissionArn(Aws::String&& value) { m_deliverLogsPermissionArnHasBeenSet = true; m_deliverLogsPermissionArn = std::move(value); }
 
     /**
      * <p>The ARN of the IAM role that posts logs to CloudWatch Logs.</p>
@@ -385,7 +386,7 @@ namespace Model
     /**
      * <p>The ARN of the IAM role that posts logs to CloudWatch Logs.</p>
      */
-    inline FlowLog& WithDeliverLogsPermissionArn(Aws::String&& value) { SetDeliverLogsPermissionArn(value); return *this;}
+    inline FlowLog& WithDeliverLogsPermissionArn(Aws::String&& value) { SetDeliverLogsPermissionArn(std::move(value)); return *this;}
 
     /**
      * <p>The ARN of the IAM role that posts logs to CloudWatch Logs.</p>

@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/devicefarm/DeviceFarm_EXPORTS.h>
 #include <aws/devicefarm/model/CurrencyCode.h>
+#include <utility>
 
 namespace Aws
 {
@@ -75,7 +76,7 @@ namespace Model
      * <p>The currency code of a monetary amount. For example, <code>USD</code> means
      * "U.S. dollars."</p>
      */
-    inline void SetCurrencyCode(CurrencyCode&& value) { m_currencyCodeHasBeenSet = true; m_currencyCode = value; }
+    inline void SetCurrencyCode(CurrencyCode&& value) { m_currencyCodeHasBeenSet = true; m_currencyCode = std::move(value); }
 
     /**
      * <p>The currency code of a monetary amount. For example, <code>USD</code> means
@@ -87,7 +88,7 @@ namespace Model
      * <p>The currency code of a monetary amount. For example, <code>USD</code> means
      * "U.S. dollars."</p>
      */
-    inline MonetaryAmount& WithCurrencyCode(CurrencyCode&& value) { SetCurrencyCode(value); return *this;}
+    inline MonetaryAmount& WithCurrencyCode(CurrencyCode&& value) { SetCurrencyCode(std::move(value)); return *this;}
 
   private:
     double m_amount;

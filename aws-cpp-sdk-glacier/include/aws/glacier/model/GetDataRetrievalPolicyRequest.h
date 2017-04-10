@@ -16,6 +16,7 @@
 #include <aws/glacier/Glacier_EXPORTS.h>
 #include <aws/glacier/GlacierRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -64,7 +65,7 @@ namespace Model
      * the credentials used to sign the request. If you specify your account ID, do not
      * include any hyphens ('-') in the ID. </p>
      */
-    inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
+    inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
 
     /**
      * <p>The <code>AccountId</code> value is the AWS account ID. This value must match
@@ -94,7 +95,7 @@ namespace Model
      * the credentials used to sign the request. If you specify your account ID, do not
      * include any hyphens ('-') in the ID. </p>
      */
-    inline GetDataRetrievalPolicyRequest& WithAccountId(Aws::String&& value) { SetAccountId(value); return *this;}
+    inline GetDataRetrievalPolicyRequest& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
 
     /**
      * <p>The <code>AccountId</code> value is the AWS account ID. This value must match

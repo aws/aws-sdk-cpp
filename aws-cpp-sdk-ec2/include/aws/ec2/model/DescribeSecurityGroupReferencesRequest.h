@@ -17,6 +17,7 @@
 #include <aws/ec2/EC2Request.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -75,7 +76,7 @@ namespace Model
     /**
      * <p>One or more security group IDs in your account.</p>
      */
-    inline void SetGroupId(Aws::Vector<Aws::String>&& value) { m_groupIdHasBeenSet = true; m_groupId = value; }
+    inline void SetGroupId(Aws::Vector<Aws::String>&& value) { m_groupIdHasBeenSet = true; m_groupId = std::move(value); }
 
     /**
      * <p>One or more security group IDs in your account.</p>
@@ -85,7 +86,7 @@ namespace Model
     /**
      * <p>One or more security group IDs in your account.</p>
      */
-    inline DescribeSecurityGroupReferencesRequest& WithGroupId(Aws::Vector<Aws::String>&& value) { SetGroupId(value); return *this;}
+    inline DescribeSecurityGroupReferencesRequest& WithGroupId(Aws::Vector<Aws::String>&& value) { SetGroupId(std::move(value)); return *this;}
 
     /**
      * <p>One or more security group IDs in your account.</p>
@@ -95,7 +96,7 @@ namespace Model
     /**
      * <p>One or more security group IDs in your account.</p>
      */
-    inline DescribeSecurityGroupReferencesRequest& AddGroupId(Aws::String&& value) { m_groupIdHasBeenSet = true; m_groupId.push_back(value); return *this; }
+    inline DescribeSecurityGroupReferencesRequest& AddGroupId(Aws::String&& value) { m_groupIdHasBeenSet = true; m_groupId.push_back(std::move(value)); return *this; }
 
     /**
      * <p>One or more security group IDs in your account.</p>

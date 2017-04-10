@@ -16,6 +16,7 @@
 #include <aws/elasticbeanstalk/ElasticBeanstalk_EXPORTS.h>
 #include <aws/elasticbeanstalk/ElasticBeanstalkRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -56,7 +57,7 @@ namespace Model
      * <p>This specifies the ID of the environment with the in-progress update that you
      * want to cancel.</p>
      */
-    inline void SetEnvironmentId(Aws::String&& value) { m_environmentIdHasBeenSet = true; m_environmentId = value; }
+    inline void SetEnvironmentId(Aws::String&& value) { m_environmentIdHasBeenSet = true; m_environmentId = std::move(value); }
 
     /**
      * <p>This specifies the ID of the environment with the in-progress update that you
@@ -74,7 +75,7 @@ namespace Model
      * <p>This specifies the ID of the environment with the in-progress update that you
      * want to cancel.</p>
      */
-    inline AbortEnvironmentUpdateRequest& WithEnvironmentId(Aws::String&& value) { SetEnvironmentId(value); return *this;}
+    inline AbortEnvironmentUpdateRequest& WithEnvironmentId(Aws::String&& value) { SetEnvironmentId(std::move(value)); return *this;}
 
     /**
      * <p>This specifies the ID of the environment with the in-progress update that you
@@ -98,7 +99,7 @@ namespace Model
      * <p>This specifies the name of the environment with the in-progress update that
      * you want to cancel.</p>
      */
-    inline void SetEnvironmentName(Aws::String&& value) { m_environmentNameHasBeenSet = true; m_environmentName = value; }
+    inline void SetEnvironmentName(Aws::String&& value) { m_environmentNameHasBeenSet = true; m_environmentName = std::move(value); }
 
     /**
      * <p>This specifies the name of the environment with the in-progress update that
@@ -116,7 +117,7 @@ namespace Model
      * <p>This specifies the name of the environment with the in-progress update that
      * you want to cancel.</p>
      */
-    inline AbortEnvironmentUpdateRequest& WithEnvironmentName(Aws::String&& value) { SetEnvironmentName(value); return *this;}
+    inline AbortEnvironmentUpdateRequest& WithEnvironmentName(Aws::String&& value) { SetEnvironmentName(std::move(value)); return *this;}
 
     /**
      * <p>This specifies the name of the environment with the in-progress update that

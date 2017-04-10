@@ -16,6 +16,7 @@
 #include <aws/cognito-idp/CognitoIdentityProvider_EXPORTS.h>
 #include <aws/cognito-idp/CognitoIdentityProviderRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -51,7 +52,7 @@ namespace Model
     /**
      * <p>The access tokens for the request to list devices.</p>
      */
-    inline void SetAccessToken(Aws::String&& value) { m_accessTokenHasBeenSet = true; m_accessToken = value; }
+    inline void SetAccessToken(Aws::String&& value) { m_accessTokenHasBeenSet = true; m_accessToken = std::move(value); }
 
     /**
      * <p>The access tokens for the request to list devices.</p>
@@ -66,7 +67,7 @@ namespace Model
     /**
      * <p>The access tokens for the request to list devices.</p>
      */
-    inline ListDevicesRequest& WithAccessToken(Aws::String&& value) { SetAccessToken(value); return *this;}
+    inline ListDevicesRequest& WithAccessToken(Aws::String&& value) { SetAccessToken(std::move(value)); return *this;}
 
     /**
      * <p>The access tokens for the request to list devices.</p>
@@ -101,7 +102,7 @@ namespace Model
     /**
      * <p>The pagination token for the list request.</p>
      */
-    inline void SetPaginationToken(Aws::String&& value) { m_paginationTokenHasBeenSet = true; m_paginationToken = value; }
+    inline void SetPaginationToken(Aws::String&& value) { m_paginationTokenHasBeenSet = true; m_paginationToken = std::move(value); }
 
     /**
      * <p>The pagination token for the list request.</p>
@@ -116,7 +117,7 @@ namespace Model
     /**
      * <p>The pagination token for the list request.</p>
      */
-    inline ListDevicesRequest& WithPaginationToken(Aws::String&& value) { SetPaginationToken(value); return *this;}
+    inline ListDevicesRequest& WithPaginationToken(Aws::String&& value) { SetPaginationToken(std::move(value)); return *this;}
 
     /**
      * <p>The pagination token for the list request.</p>

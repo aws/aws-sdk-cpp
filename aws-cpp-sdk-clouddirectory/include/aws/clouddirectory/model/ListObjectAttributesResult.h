@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/clouddirectory/model/AttributeKeyAndValue.h>
+#include <utility>
 
 namespace Aws
 {
@@ -57,7 +58,7 @@ namespace Model
      * <p>Attributes map associated with the object. AttributeArn is the key, and
      * attribute value is the value.</p>
      */
-    inline void SetAttributes(Aws::Vector<AttributeKeyAndValue>&& value) { m_attributes = value; }
+    inline void SetAttributes(Aws::Vector<AttributeKeyAndValue>&& value) { m_attributes = std::move(value); }
 
     /**
      * <p>Attributes map associated with the object. AttributeArn is the key, and
@@ -69,7 +70,7 @@ namespace Model
      * <p>Attributes map associated with the object. AttributeArn is the key, and
      * attribute value is the value.</p>
      */
-    inline ListObjectAttributesResult& WithAttributes(Aws::Vector<AttributeKeyAndValue>&& value) { SetAttributes(value); return *this;}
+    inline ListObjectAttributesResult& WithAttributes(Aws::Vector<AttributeKeyAndValue>&& value) { SetAttributes(std::move(value)); return *this;}
 
     /**
      * <p>Attributes map associated with the object. AttributeArn is the key, and
@@ -81,7 +82,7 @@ namespace Model
      * <p>Attributes map associated with the object. AttributeArn is the key, and
      * attribute value is the value.</p>
      */
-    inline ListObjectAttributesResult& AddAttributes(AttributeKeyAndValue&& value) { m_attributes.push_back(value); return *this; }
+    inline ListObjectAttributesResult& AddAttributes(AttributeKeyAndValue&& value) { m_attributes.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The pagination token.</p>
@@ -96,7 +97,7 @@ namespace Model
     /**
      * <p>The pagination token.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
      * <p>The pagination token.</p>
@@ -111,7 +112,7 @@ namespace Model
     /**
      * <p>The pagination token.</p>
      */
-    inline ListObjectAttributesResult& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline ListObjectAttributesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>The pagination token.</p>

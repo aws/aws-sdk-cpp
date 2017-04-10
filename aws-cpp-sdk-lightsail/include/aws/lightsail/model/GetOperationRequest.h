@@ -16,6 +16,7 @@
 #include <aws/lightsail/Lightsail_EXPORTS.h>
 #include <aws/lightsail/LightsailRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -48,7 +49,7 @@ namespace Model
     /**
      * <p>A GUID used to identify the operation.</p>
      */
-    inline void SetOperationId(Aws::String&& value) { m_operationIdHasBeenSet = true; m_operationId = value; }
+    inline void SetOperationId(Aws::String&& value) { m_operationIdHasBeenSet = true; m_operationId = std::move(value); }
 
     /**
      * <p>A GUID used to identify the operation.</p>
@@ -63,7 +64,7 @@ namespace Model
     /**
      * <p>A GUID used to identify the operation.</p>
      */
-    inline GetOperationRequest& WithOperationId(Aws::String&& value) { SetOperationId(value); return *this;}
+    inline GetOperationRequest& WithOperationId(Aws::String&& value) { SetOperationId(std::move(value)); return *this;}
 
     /**
      * <p>A GUID used to identify the operation.</p>

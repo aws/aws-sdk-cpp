@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/gamelift/model/PlayerSessionStatus.h>
+#include <utility>
 
 namespace Aws
 {
@@ -65,7 +66,7 @@ namespace Model
     /**
      * <p>Unique identifier for a player session.</p>
      */
-    inline void SetPlayerSessionId(Aws::String&& value) { m_playerSessionIdHasBeenSet = true; m_playerSessionId = value; }
+    inline void SetPlayerSessionId(Aws::String&& value) { m_playerSessionIdHasBeenSet = true; m_playerSessionId = std::move(value); }
 
     /**
      * <p>Unique identifier for a player session.</p>
@@ -80,7 +81,7 @@ namespace Model
     /**
      * <p>Unique identifier for a player session.</p>
      */
-    inline PlayerSession& WithPlayerSessionId(Aws::String&& value) { SetPlayerSessionId(value); return *this;}
+    inline PlayerSession& WithPlayerSessionId(Aws::String&& value) { SetPlayerSessionId(std::move(value)); return *this;}
 
     /**
      * <p>Unique identifier for a player session.</p>
@@ -103,7 +104,7 @@ namespace Model
      * <p>Unique identifier for a player that is associated with this player
      * session.</p>
      */
-    inline void SetPlayerId(Aws::String&& value) { m_playerIdHasBeenSet = true; m_playerId = value; }
+    inline void SetPlayerId(Aws::String&& value) { m_playerIdHasBeenSet = true; m_playerId = std::move(value); }
 
     /**
      * <p>Unique identifier for a player that is associated with this player
@@ -121,7 +122,7 @@ namespace Model
      * <p>Unique identifier for a player that is associated with this player
      * session.</p>
      */
-    inline PlayerSession& WithPlayerId(Aws::String&& value) { SetPlayerId(value); return *this;}
+    inline PlayerSession& WithPlayerId(Aws::String&& value) { SetPlayerId(std::move(value)); return *this;}
 
     /**
      * <p>Unique identifier for a player that is associated with this player
@@ -145,7 +146,7 @@ namespace Model
      * <p>Unique identifier for the game session that the player session is connected
      * to.</p>
      */
-    inline void SetGameSessionId(Aws::String&& value) { m_gameSessionIdHasBeenSet = true; m_gameSessionId = value; }
+    inline void SetGameSessionId(Aws::String&& value) { m_gameSessionIdHasBeenSet = true; m_gameSessionId = std::move(value); }
 
     /**
      * <p>Unique identifier for the game session that the player session is connected
@@ -163,7 +164,7 @@ namespace Model
      * <p>Unique identifier for the game session that the player session is connected
      * to.</p>
      */
-    inline PlayerSession& WithGameSessionId(Aws::String&& value) { SetGameSessionId(value); return *this;}
+    inline PlayerSession& WithGameSessionId(Aws::String&& value) { SetGameSessionId(std::move(value)); return *this;}
 
     /**
      * <p>Unique identifier for the game session that the player session is connected
@@ -187,7 +188,7 @@ namespace Model
      * <p>Unique identifier for a fleet that the player's game session is running
      * on.</p>
      */
-    inline void SetFleetId(Aws::String&& value) { m_fleetIdHasBeenSet = true; m_fleetId = value; }
+    inline void SetFleetId(Aws::String&& value) { m_fleetIdHasBeenSet = true; m_fleetId = std::move(value); }
 
     /**
      * <p>Unique identifier for a fleet that the player's game session is running
@@ -205,7 +206,7 @@ namespace Model
      * <p>Unique identifier for a fleet that the player's game session is running
      * on.</p>
      */
-    inline PlayerSession& WithFleetId(Aws::String&& value) { SetFleetId(value); return *this;}
+    inline PlayerSession& WithFleetId(Aws::String&& value) { SetFleetId(std::move(value)); return *this;}
 
     /**
      * <p>Unique identifier for a fleet that the player's game session is running
@@ -229,7 +230,7 @@ namespace Model
      * <p>Time stamp indicating when this data object was created. Format is a number
      * expressed in Unix time as milliseconds (for example "1469498468.057").</p>
      */
-    inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
+    inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::move(value); }
 
     /**
      * <p>Time stamp indicating when this data object was created. Format is a number
@@ -241,7 +242,7 @@ namespace Model
      * <p>Time stamp indicating when this data object was created. Format is a number
      * expressed in Unix time as milliseconds (for example "1469498468.057").</p>
      */
-    inline PlayerSession& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(value); return *this;}
+    inline PlayerSession& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
 
     /**
      * <p>Time stamp indicating when this data object was terminated. Format is a
@@ -262,7 +263,7 @@ namespace Model
      * number expressed in Unix time as milliseconds (for example
      * "1469498468.057").</p>
      */
-    inline void SetTerminationTime(Aws::Utils::DateTime&& value) { m_terminationTimeHasBeenSet = true; m_terminationTime = value; }
+    inline void SetTerminationTime(Aws::Utils::DateTime&& value) { m_terminationTimeHasBeenSet = true; m_terminationTime = std::move(value); }
 
     /**
      * <p>Time stamp indicating when this data object was terminated. Format is a
@@ -276,7 +277,7 @@ namespace Model
      * number expressed in Unix time as milliseconds (for example
      * "1469498468.057").</p>
      */
-    inline PlayerSession& WithTerminationTime(Aws::Utils::DateTime&& value) { SetTerminationTime(value); return *this;}
+    inline PlayerSession& WithTerminationTime(Aws::Utils::DateTime&& value) { SetTerminationTime(std::move(value)); return *this;}
 
     /**
      * <p>Current status of the player session.</p> <p>Possible player session statuses
@@ -315,7 +316,7 @@ namespace Model
      * did not connect and/or was not validated within the time-out limit (60
      * seconds).</p> </li> </ul>
      */
-    inline void SetStatus(PlayerSessionStatus&& value) { m_statusHasBeenSet = true; m_status = value; }
+    inline void SetStatus(PlayerSessionStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
      * <p>Current status of the player session.</p> <p>Possible player session statuses
@@ -341,7 +342,7 @@ namespace Model
      * did not connect and/or was not validated within the time-out limit (60
      * seconds).</p> </li> </ul>
      */
-    inline PlayerSession& WithStatus(PlayerSessionStatus&& value) { SetStatus(value); return *this;}
+    inline PlayerSession& WithStatus(PlayerSessionStatus&& value) { SetStatus(std::move(value)); return *this;}
 
     /**
      * <p>Game session IP address. All player sessions reference the game session
@@ -359,7 +360,7 @@ namespace Model
      * <p>Game session IP address. All player sessions reference the game session
      * location.</p>
      */
-    inline void SetIpAddress(Aws::String&& value) { m_ipAddressHasBeenSet = true; m_ipAddress = value; }
+    inline void SetIpAddress(Aws::String&& value) { m_ipAddressHasBeenSet = true; m_ipAddress = std::move(value); }
 
     /**
      * <p>Game session IP address. All player sessions reference the game session
@@ -377,7 +378,7 @@ namespace Model
      * <p>Game session IP address. All player sessions reference the game session
      * location.</p>
      */
-    inline PlayerSession& WithIpAddress(Aws::String&& value) { SetIpAddress(value); return *this;}
+    inline PlayerSession& WithIpAddress(Aws::String&& value) { SetIpAddress(std::move(value)); return *this;}
 
     /**
      * <p>Game session IP address. All player sessions reference the game session
@@ -419,7 +420,7 @@ namespace Model
      * <p>Developer-defined information related to a player. Amazon GameLift does not
      * use this data, so it can be formatted as needed for use in the game. </p>
      */
-    inline void SetPlayerData(Aws::String&& value) { m_playerDataHasBeenSet = true; m_playerData = value; }
+    inline void SetPlayerData(Aws::String&& value) { m_playerDataHasBeenSet = true; m_playerData = std::move(value); }
 
     /**
      * <p>Developer-defined information related to a player. Amazon GameLift does not
@@ -437,7 +438,7 @@ namespace Model
      * <p>Developer-defined information related to a player. Amazon GameLift does not
      * use this data, so it can be formatted as needed for use in the game. </p>
      */
-    inline PlayerSession& WithPlayerData(Aws::String&& value) { SetPlayerData(value); return *this;}
+    inline PlayerSession& WithPlayerData(Aws::String&& value) { SetPlayerData(std::move(value)); return *this;}
 
     /**
      * <p>Developer-defined information related to a player. Amazon GameLift does not

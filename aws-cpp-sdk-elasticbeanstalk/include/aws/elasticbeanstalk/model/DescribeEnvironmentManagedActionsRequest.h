@@ -17,6 +17,7 @@
 #include <aws/elasticbeanstalk/ElasticBeanstalkRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/elasticbeanstalk/model/ActionStatus.h>
+#include <utility>
 
 namespace Aws
 {
@@ -55,7 +56,7 @@ namespace Model
     /**
      * <p>The name of the target environment.</p>
      */
-    inline void SetEnvironmentName(Aws::String&& value) { m_environmentNameHasBeenSet = true; m_environmentName = value; }
+    inline void SetEnvironmentName(Aws::String&& value) { m_environmentNameHasBeenSet = true; m_environmentName = std::move(value); }
 
     /**
      * <p>The name of the target environment.</p>
@@ -70,7 +71,7 @@ namespace Model
     /**
      * <p>The name of the target environment.</p>
      */
-    inline DescribeEnvironmentManagedActionsRequest& WithEnvironmentName(Aws::String&& value) { SetEnvironmentName(value); return *this;}
+    inline DescribeEnvironmentManagedActionsRequest& WithEnvironmentName(Aws::String&& value) { SetEnvironmentName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the target environment.</p>
@@ -90,7 +91,7 @@ namespace Model
     /**
      * <p>The environment ID of the target environment.</p>
      */
-    inline void SetEnvironmentId(Aws::String&& value) { m_environmentIdHasBeenSet = true; m_environmentId = value; }
+    inline void SetEnvironmentId(Aws::String&& value) { m_environmentIdHasBeenSet = true; m_environmentId = std::move(value); }
 
     /**
      * <p>The environment ID of the target environment.</p>
@@ -105,7 +106,7 @@ namespace Model
     /**
      * <p>The environment ID of the target environment.</p>
      */
-    inline DescribeEnvironmentManagedActionsRequest& WithEnvironmentId(Aws::String&& value) { SetEnvironmentId(value); return *this;}
+    inline DescribeEnvironmentManagedActionsRequest& WithEnvironmentId(Aws::String&& value) { SetEnvironmentId(std::move(value)); return *this;}
 
     /**
      * <p>The environment ID of the target environment.</p>
@@ -125,7 +126,7 @@ namespace Model
     /**
      * <p>To show only actions with a particular status, specify a status.</p>
      */
-    inline void SetStatus(ActionStatus&& value) { m_statusHasBeenSet = true; m_status = value; }
+    inline void SetStatus(ActionStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
      * <p>To show only actions with a particular status, specify a status.</p>
@@ -135,7 +136,7 @@ namespace Model
     /**
      * <p>To show only actions with a particular status, specify a status.</p>
      */
-    inline DescribeEnvironmentManagedActionsRequest& WithStatus(ActionStatus&& value) { SetStatus(value); return *this;}
+    inline DescribeEnvironmentManagedActionsRequest& WithStatus(ActionStatus&& value) { SetStatus(std::move(value)); return *this;}
 
   private:
     Aws::String m_environmentName;

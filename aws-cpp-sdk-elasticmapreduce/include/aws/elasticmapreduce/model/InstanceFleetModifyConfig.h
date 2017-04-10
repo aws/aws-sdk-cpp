@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/elasticmapreduce/EMR_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -59,7 +60,7 @@ namespace Model
     /**
      * <p>A unique identifier for the instance fleet.</p>
      */
-    inline void SetInstanceFleetId(Aws::String&& value) { m_instanceFleetIdHasBeenSet = true; m_instanceFleetId = value; }
+    inline void SetInstanceFleetId(Aws::String&& value) { m_instanceFleetIdHasBeenSet = true; m_instanceFleetId = std::move(value); }
 
     /**
      * <p>A unique identifier for the instance fleet.</p>
@@ -74,7 +75,7 @@ namespace Model
     /**
      * <p>A unique identifier for the instance fleet.</p>
      */
-    inline InstanceFleetModifyConfig& WithInstanceFleetId(Aws::String&& value) { SetInstanceFleetId(value); return *this;}
+    inline InstanceFleetModifyConfig& WithInstanceFleetId(Aws::String&& value) { SetInstanceFleetId(std::move(value)); return *this;}
 
     /**
      * <p>A unique identifier for the instance fleet.</p>

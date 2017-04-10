@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/sqs/model/ResponseMetadata.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -62,7 +63,7 @@ namespace Model
      * <p>A list of source queue URLs that have the <code>RedrivePolicy</code> queue
      * attribute configured with a dead letter queue.</p>
      */
-    inline void SetQueueUrls(Aws::Vector<Aws::String>&& value) { m_queueUrls = value; }
+    inline void SetQueueUrls(Aws::Vector<Aws::String>&& value) { m_queueUrls = std::move(value); }
 
     /**
      * <p>A list of source queue URLs that have the <code>RedrivePolicy</code> queue
@@ -74,7 +75,7 @@ namespace Model
      * <p>A list of source queue URLs that have the <code>RedrivePolicy</code> queue
      * attribute configured with a dead letter queue.</p>
      */
-    inline ListDeadLetterSourceQueuesResult& WithQueueUrls(Aws::Vector<Aws::String>&& value) { SetQueueUrls(value); return *this;}
+    inline ListDeadLetterSourceQueuesResult& WithQueueUrls(Aws::Vector<Aws::String>&& value) { SetQueueUrls(std::move(value)); return *this;}
 
     /**
      * <p>A list of source queue URLs that have the <code>RedrivePolicy</code> queue
@@ -86,7 +87,7 @@ namespace Model
      * <p>A list of source queue URLs that have the <code>RedrivePolicy</code> queue
      * attribute configured with a dead letter queue.</p>
      */
-    inline ListDeadLetterSourceQueuesResult& AddQueueUrls(Aws::String&& value) { m_queueUrls.push_back(value); return *this; }
+    inline ListDeadLetterSourceQueuesResult& AddQueueUrls(Aws::String&& value) { m_queueUrls.push_back(std::move(value)); return *this; }
 
     /**
      * <p>A list of source queue URLs that have the <code>RedrivePolicy</code> queue
@@ -101,13 +102,13 @@ namespace Model
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
 
     
     inline ListDeadLetterSourceQueuesResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
 
     
-    inline ListDeadLetterSourceQueuesResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
+    inline ListDeadLetterSourceQueuesResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
     Aws::Vector<Aws::String> m_queueUrls;

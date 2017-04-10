@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/cognito-idp/model/UserImportJobType.h>
+#include <utility>
 
 namespace Aws
 {
@@ -60,7 +61,7 @@ namespace Model
     /**
      * <p>The user import jobs.</p>
      */
-    inline void SetUserImportJobs(Aws::Vector<UserImportJobType>&& value) { m_userImportJobs = value; }
+    inline void SetUserImportJobs(Aws::Vector<UserImportJobType>&& value) { m_userImportJobs = std::move(value); }
 
     /**
      * <p>The user import jobs.</p>
@@ -70,7 +71,7 @@ namespace Model
     /**
      * <p>The user import jobs.</p>
      */
-    inline ListUserImportJobsResult& WithUserImportJobs(Aws::Vector<UserImportJobType>&& value) { SetUserImportJobs(value); return *this;}
+    inline ListUserImportJobsResult& WithUserImportJobs(Aws::Vector<UserImportJobType>&& value) { SetUserImportJobs(std::move(value)); return *this;}
 
     /**
      * <p>The user import jobs.</p>
@@ -80,7 +81,7 @@ namespace Model
     /**
      * <p>The user import jobs.</p>
      */
-    inline ListUserImportJobsResult& AddUserImportJobs(UserImportJobType&& value) { m_userImportJobs.push_back(value); return *this; }
+    inline ListUserImportJobsResult& AddUserImportJobs(UserImportJobType&& value) { m_userImportJobs.push_back(std::move(value)); return *this; }
 
     /**
      * <p>An identifier that can be used to return the next set of user import jobs in
@@ -98,7 +99,7 @@ namespace Model
      * <p>An identifier that can be used to return the next set of user import jobs in
      * the list.</p>
      */
-    inline void SetPaginationToken(Aws::String&& value) { m_paginationToken = value; }
+    inline void SetPaginationToken(Aws::String&& value) { m_paginationToken = std::move(value); }
 
     /**
      * <p>An identifier that can be used to return the next set of user import jobs in
@@ -116,7 +117,7 @@ namespace Model
      * <p>An identifier that can be used to return the next set of user import jobs in
      * the list.</p>
      */
-    inline ListUserImportJobsResult& WithPaginationToken(Aws::String&& value) { SetPaginationToken(value); return *this;}
+    inline ListUserImportJobsResult& WithPaginationToken(Aws::String&& value) { SetPaginationToken(std::move(value)); return *this;}
 
     /**
      * <p>An identifier that can be used to return the next set of user import jobs in

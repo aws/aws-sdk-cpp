@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/gamelift/model/EC2InstanceType.h>
 #include <aws/gamelift/model/EC2InstanceCounts.h>
+#include <utility>
 
 namespace Aws
 {
@@ -61,7 +62,7 @@ namespace Model
     /**
      * <p>Unique identifier for a fleet.</p>
      */
-    inline void SetFleetId(Aws::String&& value) { m_fleetIdHasBeenSet = true; m_fleetId = value; }
+    inline void SetFleetId(Aws::String&& value) { m_fleetIdHasBeenSet = true; m_fleetId = std::move(value); }
 
     /**
      * <p>Unique identifier for a fleet.</p>
@@ -76,7 +77,7 @@ namespace Model
     /**
      * <p>Unique identifier for a fleet.</p>
      */
-    inline FleetCapacity& WithFleetId(Aws::String&& value) { SetFleetId(value); return *this;}
+    inline FleetCapacity& WithFleetId(Aws::String&& value) { SetFleetId(std::move(value)); return *this;}
 
     /**
      * <p>Unique identifier for a fleet.</p>
@@ -111,7 +112,7 @@ namespace Model
      * href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance Types</a>
      * for detailed descriptions.</p>
      */
-    inline void SetInstanceType(EC2InstanceType&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
+    inline void SetInstanceType(EC2InstanceType&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = std::move(value); }
 
     /**
      * <p>Name of an EC2 instance type that is supported in Amazon GameLift. A fleet
@@ -131,7 +132,7 @@ namespace Model
      * href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance Types</a>
      * for detailed descriptions.</p>
      */
-    inline FleetCapacity& WithInstanceType(EC2InstanceType&& value) { SetInstanceType(value); return *this;}
+    inline FleetCapacity& WithInstanceType(EC2InstanceType&& value) { SetInstanceType(std::move(value)); return *this;}
 
     /**
      * <p>Current status of fleet capacity.</p>
@@ -146,7 +147,7 @@ namespace Model
     /**
      * <p>Current status of fleet capacity.</p>
      */
-    inline void SetInstanceCounts(EC2InstanceCounts&& value) { m_instanceCountsHasBeenSet = true; m_instanceCounts = value; }
+    inline void SetInstanceCounts(EC2InstanceCounts&& value) { m_instanceCountsHasBeenSet = true; m_instanceCounts = std::move(value); }
 
     /**
      * <p>Current status of fleet capacity.</p>
@@ -156,7 +157,7 @@ namespace Model
     /**
      * <p>Current status of fleet capacity.</p>
      */
-    inline FleetCapacity& WithInstanceCounts(EC2InstanceCounts&& value) { SetInstanceCounts(value); return *this;}
+    inline FleetCapacity& WithInstanceCounts(EC2InstanceCounts&& value) { SetInstanceCounts(std::move(value)); return *this;}
 
   private:
     Aws::String m_fleetId;

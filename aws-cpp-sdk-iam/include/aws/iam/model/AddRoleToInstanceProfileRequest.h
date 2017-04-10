@@ -16,6 +16,7 @@
 #include <aws/iam/IAM_EXPORTS.h>
 #include <aws/iam/IAMRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -59,7 +60,7 @@ namespace Model
      * characters consisting of upper and lowercase alphanumeric characters with no
      * spaces. You can also include any of the following characters: =,.@-</p>
      */
-    inline void SetInstanceProfileName(Aws::String&& value) { m_instanceProfileNameHasBeenSet = true; m_instanceProfileName = value; }
+    inline void SetInstanceProfileName(Aws::String&& value) { m_instanceProfileNameHasBeenSet = true; m_instanceProfileName = std::move(value); }
 
     /**
      * <p>The name of the instance profile to update.</p> <p>This parameter allows (per
@@ -83,7 +84,7 @@ namespace Model
      * characters consisting of upper and lowercase alphanumeric characters with no
      * spaces. You can also include any of the following characters: =,.@-</p>
      */
-    inline AddRoleToInstanceProfileRequest& WithInstanceProfileName(Aws::String&& value) { SetInstanceProfileName(value); return *this;}
+    inline AddRoleToInstanceProfileRequest& WithInstanceProfileName(Aws::String&& value) { SetInstanceProfileName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the instance profile to update.</p> <p>This parameter allows (per
@@ -115,7 +116,7 @@ namespace Model
      * consisting of upper and lowercase alphanumeric characters with no spaces. You
      * can also include any of the following characters: =,.@-</p>
      */
-    inline void SetRoleName(Aws::String&& value) { m_roleNameHasBeenSet = true; m_roleName = value; }
+    inline void SetRoleName(Aws::String&& value) { m_roleNameHasBeenSet = true; m_roleName = std::move(value); }
 
     /**
      * <p>The name of the role to add.</p> <p>This parameter allows (per its <a
@@ -139,7 +140,7 @@ namespace Model
      * consisting of upper and lowercase alphanumeric characters with no spaces. You
      * can also include any of the following characters: =,.@-</p>
      */
-    inline AddRoleToInstanceProfileRequest& WithRoleName(Aws::String&& value) { SetRoleName(value); return *this;}
+    inline AddRoleToInstanceProfileRequest& WithRoleName(Aws::String&& value) { SetRoleName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the role to add.</p> <p>This parameter allows (per its <a

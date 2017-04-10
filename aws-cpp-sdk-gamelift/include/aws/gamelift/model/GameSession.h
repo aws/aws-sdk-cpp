@@ -20,6 +20,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/gamelift/model/PlayerSessionCreationPolicy.h>
 #include <aws/gamelift/model/GameProperty.h>
+#include <utility>
 
 namespace Aws
 {
@@ -67,7 +68,7 @@ namespace Model
      * format: "arn:aws:gamelift:&lt;region&gt;::gamesession/&lt;fleet ID&gt;/&lt;game
      * session ID&gt;".</p>
      */
-    inline void SetGameSessionId(Aws::String&& value) { m_gameSessionIdHasBeenSet = true; m_gameSessionId = value; }
+    inline void SetGameSessionId(Aws::String&& value) { m_gameSessionIdHasBeenSet = true; m_gameSessionId = std::move(value); }
 
     /**
      * <p>Unique identifier for the game session. A game session ID has the following
@@ -88,7 +89,7 @@ namespace Model
      * format: "arn:aws:gamelift:&lt;region&gt;::gamesession/&lt;fleet ID&gt;/&lt;game
      * session ID&gt;".</p>
      */
-    inline GameSession& WithGameSessionId(Aws::String&& value) { SetGameSessionId(value); return *this;}
+    inline GameSession& WithGameSessionId(Aws::String&& value) { SetGameSessionId(std::move(value)); return *this;}
 
     /**
      * <p>Unique identifier for the game session. A game session ID has the following
@@ -113,7 +114,7 @@ namespace Model
      * <p>Descriptive label that is associated with a game session. Session names do
      * not need to be unique.</p>
      */
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p>Descriptive label that is associated with a game session. Session names do
@@ -131,7 +132,7 @@ namespace Model
      * <p>Descriptive label that is associated with a game session. Session names do
      * not need to be unique.</p>
      */
-    inline GameSession& WithName(Aws::String&& value) { SetName(value); return *this;}
+    inline GameSession& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>Descriptive label that is associated with a game session. Session names do
@@ -152,7 +153,7 @@ namespace Model
     /**
      * <p>Unique identifier for a fleet the game session is running on.</p>
      */
-    inline void SetFleetId(Aws::String&& value) { m_fleetIdHasBeenSet = true; m_fleetId = value; }
+    inline void SetFleetId(Aws::String&& value) { m_fleetIdHasBeenSet = true; m_fleetId = std::move(value); }
 
     /**
      * <p>Unique identifier for a fleet the game session is running on.</p>
@@ -167,7 +168,7 @@ namespace Model
     /**
      * <p>Unique identifier for a fleet the game session is running on.</p>
      */
-    inline GameSession& WithFleetId(Aws::String&& value) { SetFleetId(value); return *this;}
+    inline GameSession& WithFleetId(Aws::String&& value) { SetFleetId(std::move(value)); return *this;}
 
     /**
      * <p>Unique identifier for a fleet the game session is running on.</p>
@@ -190,7 +191,7 @@ namespace Model
      * <p>Time stamp indicating when this data object was created. Format is a number
      * expressed in Unix time as milliseconds (for example "1469498468.057").</p>
      */
-    inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
+    inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::move(value); }
 
     /**
      * <p>Time stamp indicating when this data object was created. Format is a number
@@ -202,7 +203,7 @@ namespace Model
      * <p>Time stamp indicating when this data object was created. Format is a number
      * expressed in Unix time as milliseconds (for example "1469498468.057").</p>
      */
-    inline GameSession& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(value); return *this;}
+    inline GameSession& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
 
     /**
      * <p>Time stamp indicating when this data object was terminated. Format is a
@@ -223,7 +224,7 @@ namespace Model
      * number expressed in Unix time as milliseconds (for example
      * "1469498468.057").</p>
      */
-    inline void SetTerminationTime(Aws::Utils::DateTime&& value) { m_terminationTimeHasBeenSet = true; m_terminationTime = value; }
+    inline void SetTerminationTime(Aws::Utils::DateTime&& value) { m_terminationTimeHasBeenSet = true; m_terminationTime = std::move(value); }
 
     /**
      * <p>Time stamp indicating when this data object was terminated. Format is a
@@ -237,7 +238,7 @@ namespace Model
      * number expressed in Unix time as milliseconds (for example
      * "1469498468.057").</p>
      */
-    inline GameSession& WithTerminationTime(Aws::Utils::DateTime&& value) { SetTerminationTime(value); return *this;}
+    inline GameSession& WithTerminationTime(Aws::Utils::DateTime&& value) { SetTerminationTime(std::move(value)); return *this;}
 
     /**
      * <p>Number of players currently in the game session.</p>
@@ -288,7 +289,7 @@ namespace Model
      * <p>Current status of the game session. A game session must have an
      * <code>ACTIVE</code> status to have player sessions.</p>
      */
-    inline void SetStatus(GameSessionStatus&& value) { m_statusHasBeenSet = true; m_status = value; }
+    inline void SetStatus(GameSessionStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
      * <p>Current status of the game session. A game session must have an
@@ -300,7 +301,7 @@ namespace Model
      * <p>Current status of the game session. A game session must have an
      * <code>ACTIVE</code> status to have player sessions.</p>
      */
-    inline GameSession& WithStatus(GameSessionStatus&& value) { SetStatus(value); return *this;}
+    inline GameSession& WithStatus(GameSessionStatus&& value) { SetStatus(std::move(value)); return *this;}
 
     /**
      * <p>Set of developer-defined properties for a game session. These properties are
@@ -318,7 +319,7 @@ namespace Model
      * <p>Set of developer-defined properties for a game session. These properties are
      * passed to the server process hosting the game session.</p>
      */
-    inline void SetGameProperties(Aws::Vector<GameProperty>&& value) { m_gamePropertiesHasBeenSet = true; m_gameProperties = value; }
+    inline void SetGameProperties(Aws::Vector<GameProperty>&& value) { m_gamePropertiesHasBeenSet = true; m_gameProperties = std::move(value); }
 
     /**
      * <p>Set of developer-defined properties for a game session. These properties are
@@ -330,7 +331,7 @@ namespace Model
      * <p>Set of developer-defined properties for a game session. These properties are
      * passed to the server process hosting the game session.</p>
      */
-    inline GameSession& WithGameProperties(Aws::Vector<GameProperty>&& value) { SetGameProperties(value); return *this;}
+    inline GameSession& WithGameProperties(Aws::Vector<GameProperty>&& value) { SetGameProperties(std::move(value)); return *this;}
 
     /**
      * <p>Set of developer-defined properties for a game session. These properties are
@@ -342,7 +343,7 @@ namespace Model
      * <p>Set of developer-defined properties for a game session. These properties are
      * passed to the server process hosting the game session.</p>
      */
-    inline GameSession& AddGameProperties(GameProperty&& value) { m_gamePropertiesHasBeenSet = true; m_gameProperties.push_back(value); return *this; }
+    inline GameSession& AddGameProperties(GameProperty&& value) { m_gamePropertiesHasBeenSet = true; m_gameProperties.push_back(std::move(value)); return *this; }
 
     /**
      * <p>IP address of the game session. To connect to a Amazon GameLift server
@@ -360,7 +361,7 @@ namespace Model
      * <p>IP address of the game session. To connect to a Amazon GameLift server
      * process, an app needs both the IP address and port number.</p>
      */
-    inline void SetIpAddress(Aws::String&& value) { m_ipAddressHasBeenSet = true; m_ipAddress = value; }
+    inline void SetIpAddress(Aws::String&& value) { m_ipAddressHasBeenSet = true; m_ipAddress = std::move(value); }
 
     /**
      * <p>IP address of the game session. To connect to a Amazon GameLift server
@@ -378,7 +379,7 @@ namespace Model
      * <p>IP address of the game session. To connect to a Amazon GameLift server
      * process, an app needs both the IP address and port number.</p>
      */
-    inline GameSession& WithIpAddress(Aws::String&& value) { SetIpAddress(value); return *this;}
+    inline GameSession& WithIpAddress(Aws::String&& value) { SetIpAddress(std::move(value)); return *this;}
 
     /**
      * <p>IP address of the game session. To connect to a Amazon GameLift server
@@ -417,7 +418,7 @@ namespace Model
     /**
      * <p>Indicates whether or not the game session is accepting new players.</p>
      */
-    inline void SetPlayerSessionCreationPolicy(PlayerSessionCreationPolicy&& value) { m_playerSessionCreationPolicyHasBeenSet = true; m_playerSessionCreationPolicy = value; }
+    inline void SetPlayerSessionCreationPolicy(PlayerSessionCreationPolicy&& value) { m_playerSessionCreationPolicyHasBeenSet = true; m_playerSessionCreationPolicy = std::move(value); }
 
     /**
      * <p>Indicates whether or not the game session is accepting new players.</p>
@@ -427,7 +428,7 @@ namespace Model
     /**
      * <p>Indicates whether or not the game session is accepting new players.</p>
      */
-    inline GameSession& WithPlayerSessionCreationPolicy(PlayerSessionCreationPolicy&& value) { SetPlayerSessionCreationPolicy(value); return *this;}
+    inline GameSession& WithPlayerSessionCreationPolicy(PlayerSessionCreationPolicy&& value) { SetPlayerSessionCreationPolicy(std::move(value)); return *this;}
 
     /**
      * <p>Unique identifier for a player. This ID is used to enforce a resource
@@ -448,7 +449,7 @@ namespace Model
      * protection policy (if one exists), that limits the number of game sessions a
      * player can create.</p>
      */
-    inline void SetCreatorId(Aws::String&& value) { m_creatorIdHasBeenSet = true; m_creatorId = value; }
+    inline void SetCreatorId(Aws::String&& value) { m_creatorIdHasBeenSet = true; m_creatorId = std::move(value); }
 
     /**
      * <p>Unique identifier for a player. This ID is used to enforce a resource
@@ -469,7 +470,7 @@ namespace Model
      * protection policy (if one exists), that limits the number of game sessions a
      * player can create.</p>
      */
-    inline GameSession& WithCreatorId(Aws::String&& value) { SetCreatorId(value); return *this;}
+    inline GameSession& WithCreatorId(Aws::String&& value) { SetCreatorId(std::move(value)); return *this;}
 
     /**
      * <p>Unique identifier for a player. This ID is used to enforce a resource

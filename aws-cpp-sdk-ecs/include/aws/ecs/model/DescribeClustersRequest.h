@@ -17,6 +17,7 @@
 #include <aws/ecs/ECSRequest.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -55,7 +56,7 @@ namespace Model
      * Resource Name (ARN) entries. If you do not specify a cluster, the default
      * cluster is assumed.</p>
      */
-    inline void SetClusters(Aws::Vector<Aws::String>&& value) { m_clustersHasBeenSet = true; m_clusters = value; }
+    inline void SetClusters(Aws::Vector<Aws::String>&& value) { m_clustersHasBeenSet = true; m_clusters = std::move(value); }
 
     /**
      * <p>A space-separated list of up to 100 cluster names or full cluster Amazon
@@ -69,7 +70,7 @@ namespace Model
      * Resource Name (ARN) entries. If you do not specify a cluster, the default
      * cluster is assumed.</p>
      */
-    inline DescribeClustersRequest& WithClusters(Aws::Vector<Aws::String>&& value) { SetClusters(value); return *this;}
+    inline DescribeClustersRequest& WithClusters(Aws::Vector<Aws::String>&& value) { SetClusters(std::move(value)); return *this;}
 
     /**
      * <p>A space-separated list of up to 100 cluster names or full cluster Amazon
@@ -83,7 +84,7 @@ namespace Model
      * Resource Name (ARN) entries. If you do not specify a cluster, the default
      * cluster is assumed.</p>
      */
-    inline DescribeClustersRequest& AddClusters(Aws::String&& value) { m_clustersHasBeenSet = true; m_clusters.push_back(value); return *this; }
+    inline DescribeClustersRequest& AddClusters(Aws::String&& value) { m_clustersHasBeenSet = true; m_clusters.push_back(std::move(value)); return *this; }
 
     /**
      * <p>A space-separated list of up to 100 cluster names or full cluster Amazon

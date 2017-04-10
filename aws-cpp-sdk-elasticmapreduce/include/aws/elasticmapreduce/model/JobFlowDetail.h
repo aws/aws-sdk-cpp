@@ -21,6 +21,7 @@
 #include <aws/elasticmapreduce/model/ScaleDownBehavior.h>
 #include <aws/elasticmapreduce/model/StepDetail.h>
 #include <aws/elasticmapreduce/model/BootstrapActionDetail.h>
+#include <utility>
 
 namespace Aws
 {
@@ -62,7 +63,7 @@ namespace Model
     /**
      * <p>The job flow identifier.</p>
      */
-    inline void SetJobFlowId(Aws::String&& value) { m_jobFlowIdHasBeenSet = true; m_jobFlowId = value; }
+    inline void SetJobFlowId(Aws::String&& value) { m_jobFlowIdHasBeenSet = true; m_jobFlowId = std::move(value); }
 
     /**
      * <p>The job flow identifier.</p>
@@ -77,7 +78,7 @@ namespace Model
     /**
      * <p>The job flow identifier.</p>
      */
-    inline JobFlowDetail& WithJobFlowId(Aws::String&& value) { SetJobFlowId(value); return *this;}
+    inline JobFlowDetail& WithJobFlowId(Aws::String&& value) { SetJobFlowId(std::move(value)); return *this;}
 
     /**
      * <p>The job flow identifier.</p>
@@ -97,7 +98,7 @@ namespace Model
     /**
      * <p>The name of the job flow.</p>
      */
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p>The name of the job flow.</p>
@@ -112,7 +113,7 @@ namespace Model
     /**
      * <p>The name of the job flow.</p>
      */
-    inline JobFlowDetail& WithName(Aws::String&& value) { SetName(value); return *this;}
+    inline JobFlowDetail& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the job flow.</p>
@@ -132,7 +133,7 @@ namespace Model
     /**
      * <p>The location in Amazon S3 where log files for the job are stored.</p>
      */
-    inline void SetLogUri(Aws::String&& value) { m_logUriHasBeenSet = true; m_logUri = value; }
+    inline void SetLogUri(Aws::String&& value) { m_logUriHasBeenSet = true; m_logUri = std::move(value); }
 
     /**
      * <p>The location in Amazon S3 where log files for the job are stored.</p>
@@ -147,7 +148,7 @@ namespace Model
     /**
      * <p>The location in Amazon S3 where log files for the job are stored.</p>
      */
-    inline JobFlowDetail& WithLogUri(Aws::String&& value) { SetLogUri(value); return *this;}
+    inline JobFlowDetail& WithLogUri(Aws::String&& value) { SetLogUri(std::move(value)); return *this;}
 
     /**
      * <p>The location in Amazon S3 where log files for the job are stored.</p>
@@ -176,7 +177,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/EnvironmentConfig_AMIVersion.html#ami-versions-supported">AMI
      * Versions Supported in EMR</a> in the <i>Amazon EMR Developer Guide.</i> </p>
      */
-    inline void SetAmiVersion(Aws::String&& value) { m_amiVersionHasBeenSet = true; m_amiVersion = value; }
+    inline void SetAmiVersion(Aws::String&& value) { m_amiVersionHasBeenSet = true; m_amiVersion = std::move(value); }
 
     /**
      * <p>The version of the AMI used to initialize Amazon EC2 instances in the job
@@ -200,7 +201,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/EnvironmentConfig_AMIVersion.html#ami-versions-supported">AMI
      * Versions Supported in EMR</a> in the <i>Amazon EMR Developer Guide.</i> </p>
      */
-    inline JobFlowDetail& WithAmiVersion(Aws::String&& value) { SetAmiVersion(value); return *this;}
+    inline JobFlowDetail& WithAmiVersion(Aws::String&& value) { SetAmiVersion(std::move(value)); return *this;}
 
     /**
      * <p>The version of the AMI used to initialize Amazon EC2 instances in the job
@@ -223,7 +224,7 @@ namespace Model
     /**
      * <p>Describes the execution status of the job flow.</p>
      */
-    inline void SetExecutionStatusDetail(JobFlowExecutionStatusDetail&& value) { m_executionStatusDetailHasBeenSet = true; m_executionStatusDetail = value; }
+    inline void SetExecutionStatusDetail(JobFlowExecutionStatusDetail&& value) { m_executionStatusDetailHasBeenSet = true; m_executionStatusDetail = std::move(value); }
 
     /**
      * <p>Describes the execution status of the job flow.</p>
@@ -233,7 +234,7 @@ namespace Model
     /**
      * <p>Describes the execution status of the job flow.</p>
      */
-    inline JobFlowDetail& WithExecutionStatusDetail(JobFlowExecutionStatusDetail&& value) { SetExecutionStatusDetail(value); return *this;}
+    inline JobFlowDetail& WithExecutionStatusDetail(JobFlowExecutionStatusDetail&& value) { SetExecutionStatusDetail(std::move(value)); return *this;}
 
     /**
      * <p>Describes the Amazon EC2 instances of the job flow.</p>
@@ -248,7 +249,7 @@ namespace Model
     /**
      * <p>Describes the Amazon EC2 instances of the job flow.</p>
      */
-    inline void SetInstances(JobFlowInstancesDetail&& value) { m_instancesHasBeenSet = true; m_instances = value; }
+    inline void SetInstances(JobFlowInstancesDetail&& value) { m_instancesHasBeenSet = true; m_instances = std::move(value); }
 
     /**
      * <p>Describes the Amazon EC2 instances of the job flow.</p>
@@ -258,7 +259,7 @@ namespace Model
     /**
      * <p>Describes the Amazon EC2 instances of the job flow.</p>
      */
-    inline JobFlowDetail& WithInstances(JobFlowInstancesDetail&& value) { SetInstances(value); return *this;}
+    inline JobFlowDetail& WithInstances(JobFlowInstancesDetail&& value) { SetInstances(std::move(value)); return *this;}
 
     /**
      * <p>A list of steps run by the job flow.</p>
@@ -273,7 +274,7 @@ namespace Model
     /**
      * <p>A list of steps run by the job flow.</p>
      */
-    inline void SetSteps(Aws::Vector<StepDetail>&& value) { m_stepsHasBeenSet = true; m_steps = value; }
+    inline void SetSteps(Aws::Vector<StepDetail>&& value) { m_stepsHasBeenSet = true; m_steps = std::move(value); }
 
     /**
      * <p>A list of steps run by the job flow.</p>
@@ -283,7 +284,7 @@ namespace Model
     /**
      * <p>A list of steps run by the job flow.</p>
      */
-    inline JobFlowDetail& WithSteps(Aws::Vector<StepDetail>&& value) { SetSteps(value); return *this;}
+    inline JobFlowDetail& WithSteps(Aws::Vector<StepDetail>&& value) { SetSteps(std::move(value)); return *this;}
 
     /**
      * <p>A list of steps run by the job flow.</p>
@@ -293,7 +294,7 @@ namespace Model
     /**
      * <p>A list of steps run by the job flow.</p>
      */
-    inline JobFlowDetail& AddSteps(StepDetail&& value) { m_stepsHasBeenSet = true; m_steps.push_back(value); return *this; }
+    inline JobFlowDetail& AddSteps(StepDetail&& value) { m_stepsHasBeenSet = true; m_steps.push_back(std::move(value)); return *this; }
 
     /**
      * <p>A list of the bootstrap actions run by the job flow.</p>
@@ -308,7 +309,7 @@ namespace Model
     /**
      * <p>A list of the bootstrap actions run by the job flow.</p>
      */
-    inline void SetBootstrapActions(Aws::Vector<BootstrapActionDetail>&& value) { m_bootstrapActionsHasBeenSet = true; m_bootstrapActions = value; }
+    inline void SetBootstrapActions(Aws::Vector<BootstrapActionDetail>&& value) { m_bootstrapActionsHasBeenSet = true; m_bootstrapActions = std::move(value); }
 
     /**
      * <p>A list of the bootstrap actions run by the job flow.</p>
@@ -318,7 +319,7 @@ namespace Model
     /**
      * <p>A list of the bootstrap actions run by the job flow.</p>
      */
-    inline JobFlowDetail& WithBootstrapActions(Aws::Vector<BootstrapActionDetail>&& value) { SetBootstrapActions(value); return *this;}
+    inline JobFlowDetail& WithBootstrapActions(Aws::Vector<BootstrapActionDetail>&& value) { SetBootstrapActions(std::move(value)); return *this;}
 
     /**
      * <p>A list of the bootstrap actions run by the job flow.</p>
@@ -328,7 +329,7 @@ namespace Model
     /**
      * <p>A list of the bootstrap actions run by the job flow.</p>
      */
-    inline JobFlowDetail& AddBootstrapActions(BootstrapActionDetail&& value) { m_bootstrapActionsHasBeenSet = true; m_bootstrapActions.push_back(value); return *this; }
+    inline JobFlowDetail& AddBootstrapActions(BootstrapActionDetail&& value) { m_bootstrapActionsHasBeenSet = true; m_bootstrapActions.push_back(std::move(value)); return *this; }
 
     /**
      * <p>A list of strings set by third party software when the job flow is launched.
@@ -349,7 +350,7 @@ namespace Model
      * If you are not using third party software to manage the job flow this value is
      * empty.</p>
      */
-    inline void SetSupportedProducts(Aws::Vector<Aws::String>&& value) { m_supportedProductsHasBeenSet = true; m_supportedProducts = value; }
+    inline void SetSupportedProducts(Aws::Vector<Aws::String>&& value) { m_supportedProductsHasBeenSet = true; m_supportedProducts = std::move(value); }
 
     /**
      * <p>A list of strings set by third party software when the job flow is launched.
@@ -363,7 +364,7 @@ namespace Model
      * If you are not using third party software to manage the job flow this value is
      * empty.</p>
      */
-    inline JobFlowDetail& WithSupportedProducts(Aws::Vector<Aws::String>&& value) { SetSupportedProducts(value); return *this;}
+    inline JobFlowDetail& WithSupportedProducts(Aws::Vector<Aws::String>&& value) { SetSupportedProducts(std::move(value)); return *this;}
 
     /**
      * <p>A list of strings set by third party software when the job flow is launched.
@@ -377,7 +378,7 @@ namespace Model
      * If you are not using third party software to manage the job flow this value is
      * empty.</p>
      */
-    inline JobFlowDetail& AddSupportedProducts(Aws::String&& value) { m_supportedProductsHasBeenSet = true; m_supportedProducts.push_back(value); return *this; }
+    inline JobFlowDetail& AddSupportedProducts(Aws::String&& value) { m_supportedProductsHasBeenSet = true; m_supportedProducts.push_back(std::move(value)); return *this; }
 
     /**
      * <p>A list of strings set by third party software when the job flow is launched.
@@ -432,7 +433,7 @@ namespace Model
      * <p>The IAM role that was specified when the job flow was launched. The EC2
      * instances of the job flow assume this role.</p>
      */
-    inline void SetJobFlowRole(Aws::String&& value) { m_jobFlowRoleHasBeenSet = true; m_jobFlowRole = value; }
+    inline void SetJobFlowRole(Aws::String&& value) { m_jobFlowRoleHasBeenSet = true; m_jobFlowRole = std::move(value); }
 
     /**
      * <p>The IAM role that was specified when the job flow was launched. The EC2
@@ -450,7 +451,7 @@ namespace Model
      * <p>The IAM role that was specified when the job flow was launched. The EC2
      * instances of the job flow assume this role.</p>
      */
-    inline JobFlowDetail& WithJobFlowRole(Aws::String&& value) { SetJobFlowRole(value); return *this;}
+    inline JobFlowDetail& WithJobFlowRole(Aws::String&& value) { SetJobFlowRole(std::move(value)); return *this;}
 
     /**
      * <p>The IAM role that was specified when the job flow was launched. The EC2
@@ -474,7 +475,7 @@ namespace Model
      * <p>The IAM role that will be assumed by the Amazon EMR service to access AWS
      * resources on your behalf.</p>
      */
-    inline void SetServiceRole(Aws::String&& value) { m_serviceRoleHasBeenSet = true; m_serviceRole = value; }
+    inline void SetServiceRole(Aws::String&& value) { m_serviceRoleHasBeenSet = true; m_serviceRole = std::move(value); }
 
     /**
      * <p>The IAM role that will be assumed by the Amazon EMR service to access AWS
@@ -492,7 +493,7 @@ namespace Model
      * <p>The IAM role that will be assumed by the Amazon EMR service to access AWS
      * resources on your behalf.</p>
      */
-    inline JobFlowDetail& WithServiceRole(Aws::String&& value) { SetServiceRole(value); return *this;}
+    inline JobFlowDetail& WithServiceRole(Aws::String&& value) { SetServiceRole(std::move(value)); return *this;}
 
     /**
      * <p>The IAM role that will be assumed by the Amazon EMR service to access AWS
@@ -522,7 +523,7 @@ namespace Model
      * automatic scaling feature to get the required permissions it needs to launch and
      * terminate EC2 instances in an instance group.</p>
      */
-    inline void SetAutoScalingRole(Aws::String&& value) { m_autoScalingRoleHasBeenSet = true; m_autoScalingRole = value; }
+    inline void SetAutoScalingRole(Aws::String&& value) { m_autoScalingRoleHasBeenSet = true; m_autoScalingRole = std::move(value); }
 
     /**
      * <p>An IAM role for automatic scaling policies. The default role is
@@ -546,7 +547,7 @@ namespace Model
      * automatic scaling feature to get the required permissions it needs to launch and
      * terminate EC2 instances in an instance group.</p>
      */
-    inline JobFlowDetail& WithAutoScalingRole(Aws::String&& value) { SetAutoScalingRole(value); return *this;}
+    inline JobFlowDetail& WithAutoScalingRole(Aws::String&& value) { SetAutoScalingRole(std::move(value)); return *this;}
 
     /**
      * <p>An IAM role for automatic scaling policies. The default role is
@@ -605,7 +606,7 @@ namespace Model
      * only in Amazon EMR version 4.1.0 and later, and is the default for versions of
      * Amazon EMR earlier than 5.1.0.</p>
      */
-    inline void SetScaleDownBehavior(ScaleDownBehavior&& value) { m_scaleDownBehaviorHasBeenSet = true; m_scaleDownBehavior = value; }
+    inline void SetScaleDownBehavior(ScaleDownBehavior&& value) { m_scaleDownBehaviorHasBeenSet = true; m_scaleDownBehavior = std::move(value); }
 
     /**
      * <p>The way that individual Amazon EC2 instances terminate when an automatic
@@ -639,7 +640,7 @@ namespace Model
      * only in Amazon EMR version 4.1.0 and later, and is the default for versions of
      * Amazon EMR earlier than 5.1.0.</p>
      */
-    inline JobFlowDetail& WithScaleDownBehavior(ScaleDownBehavior&& value) { SetScaleDownBehavior(value); return *this;}
+    inline JobFlowDetail& WithScaleDownBehavior(ScaleDownBehavior&& value) { SetScaleDownBehavior(std::move(value)); return *this;}
 
   private:
     Aws::String m_jobFlowId;

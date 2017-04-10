@@ -16,6 +16,7 @@
 #include <aws/opsworks/OpsWorks_EXPORTS.h>
 #include <aws/opsworks/OpsWorksRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -48,7 +49,7 @@ namespace Model
     /**
      * <p>The volume ID.</p>
      */
-    inline void SetVolumeId(Aws::String&& value) { m_volumeIdHasBeenSet = true; m_volumeId = value; }
+    inline void SetVolumeId(Aws::String&& value) { m_volumeIdHasBeenSet = true; m_volumeId = std::move(value); }
 
     /**
      * <p>The volume ID.</p>
@@ -63,7 +64,7 @@ namespace Model
     /**
      * <p>The volume ID.</p>
      */
-    inline UpdateVolumeRequest& WithVolumeId(Aws::String&& value) { SetVolumeId(value); return *this;}
+    inline UpdateVolumeRequest& WithVolumeId(Aws::String&& value) { SetVolumeId(std::move(value)); return *this;}
 
     /**
      * <p>The volume ID.</p>
@@ -83,7 +84,7 @@ namespace Model
     /**
      * <p>The new name.</p>
      */
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p>The new name.</p>
@@ -98,7 +99,7 @@ namespace Model
     /**
      * <p>The new name.</p>
      */
-    inline UpdateVolumeRequest& WithName(Aws::String&& value) { SetName(value); return *this;}
+    inline UpdateVolumeRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>The new name.</p>
@@ -118,7 +119,7 @@ namespace Model
     /**
      * <p>The new mount point.</p>
      */
-    inline void SetMountPoint(Aws::String&& value) { m_mountPointHasBeenSet = true; m_mountPoint = value; }
+    inline void SetMountPoint(Aws::String&& value) { m_mountPointHasBeenSet = true; m_mountPoint = std::move(value); }
 
     /**
      * <p>The new mount point.</p>
@@ -133,7 +134,7 @@ namespace Model
     /**
      * <p>The new mount point.</p>
      */
-    inline UpdateVolumeRequest& WithMountPoint(Aws::String&& value) { SetMountPoint(value); return *this;}
+    inline UpdateVolumeRequest& WithMountPoint(Aws::String&& value) { SetMountPoint(std::move(value)); return *this;}
 
     /**
      * <p>The new mount point.</p>

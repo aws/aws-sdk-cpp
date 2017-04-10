@@ -19,6 +19,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ssm/model/InventoryFilter.h>
 #include <aws/ssm/model/ResultAttribute.h>
+#include <utility>
 
 namespace Aws
 {
@@ -54,7 +55,7 @@ namespace Model
      * <p>One or more filters. Use a filter to return a more specific list of
      * results.</p>
      */
-    inline void SetFilters(Aws::Vector<InventoryFilter>&& value) { m_filtersHasBeenSet = true; m_filters = value; }
+    inline void SetFilters(Aws::Vector<InventoryFilter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
 
     /**
      * <p>One or more filters. Use a filter to return a more specific list of
@@ -66,7 +67,7 @@ namespace Model
      * <p>One or more filters. Use a filter to return a more specific list of
      * results.</p>
      */
-    inline GetInventoryRequest& WithFilters(Aws::Vector<InventoryFilter>&& value) { SetFilters(value); return *this;}
+    inline GetInventoryRequest& WithFilters(Aws::Vector<InventoryFilter>&& value) { SetFilters(std::move(value)); return *this;}
 
     /**
      * <p>One or more filters. Use a filter to return a more specific list of
@@ -78,7 +79,7 @@ namespace Model
      * <p>One or more filters. Use a filter to return a more specific list of
      * results.</p>
      */
-    inline GetInventoryRequest& AddFilters(InventoryFilter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
+    inline GetInventoryRequest& AddFilters(InventoryFilter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The list of inventory item types to return.</p>
@@ -93,7 +94,7 @@ namespace Model
     /**
      * <p>The list of inventory item types to return.</p>
      */
-    inline void SetResultAttributes(Aws::Vector<ResultAttribute>&& value) { m_resultAttributesHasBeenSet = true; m_resultAttributes = value; }
+    inline void SetResultAttributes(Aws::Vector<ResultAttribute>&& value) { m_resultAttributesHasBeenSet = true; m_resultAttributes = std::move(value); }
 
     /**
      * <p>The list of inventory item types to return.</p>
@@ -103,7 +104,7 @@ namespace Model
     /**
      * <p>The list of inventory item types to return.</p>
      */
-    inline GetInventoryRequest& WithResultAttributes(Aws::Vector<ResultAttribute>&& value) { SetResultAttributes(value); return *this;}
+    inline GetInventoryRequest& WithResultAttributes(Aws::Vector<ResultAttribute>&& value) { SetResultAttributes(std::move(value)); return *this;}
 
     /**
      * <p>The list of inventory item types to return.</p>
@@ -113,7 +114,7 @@ namespace Model
     /**
      * <p>The list of inventory item types to return.</p>
      */
-    inline GetInventoryRequest& AddResultAttributes(ResultAttribute&& value) { m_resultAttributesHasBeenSet = true; m_resultAttributes.push_back(value); return *this; }
+    inline GetInventoryRequest& AddResultAttributes(ResultAttribute&& value) { m_resultAttributesHasBeenSet = true; m_resultAttributes.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The token for the next set of items to return. (You received this token from
@@ -131,7 +132,7 @@ namespace Model
      * <p>The token for the next set of items to return. (You received this token from
      * a previous call.)</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
      * <p>The token for the next set of items to return. (You received this token from
@@ -149,7 +150,7 @@ namespace Model
      * <p>The token for the next set of items to return. (You received this token from
      * a previous call.)</p>
      */
-    inline GetInventoryRequest& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline GetInventoryRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>The token for the next set of items to return. (You received this token from

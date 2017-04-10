@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/gamelift/model/Event.h>
+#include <utility>
 
 namespace Aws
 {
@@ -63,7 +64,7 @@ namespace Model
      * <p>Collection of objects containing event log entries for the specified
      * fleet.</p>
      */
-    inline void SetEvents(Aws::Vector<Event>&& value) { m_events = value; }
+    inline void SetEvents(Aws::Vector<Event>&& value) { m_events = std::move(value); }
 
     /**
      * <p>Collection of objects containing event log entries for the specified
@@ -75,7 +76,7 @@ namespace Model
      * <p>Collection of objects containing event log entries for the specified
      * fleet.</p>
      */
-    inline DescribeFleetEventsResult& WithEvents(Aws::Vector<Event>&& value) { SetEvents(value); return *this;}
+    inline DescribeFleetEventsResult& WithEvents(Aws::Vector<Event>&& value) { SetEvents(std::move(value)); return *this;}
 
     /**
      * <p>Collection of objects containing event log entries for the specified
@@ -87,7 +88,7 @@ namespace Model
      * <p>Collection of objects containing event log entries for the specified
      * fleet.</p>
      */
-    inline DescribeFleetEventsResult& AddEvents(Event&& value) { m_events.push_back(value); return *this; }
+    inline DescribeFleetEventsResult& AddEvents(Event&& value) { m_events.push_back(std::move(value)); return *this; }
 
     /**
      * <p>Token that indicates where to resume retrieving results on the next call to
@@ -108,7 +109,7 @@ namespace Model
      * this action. If no token is returned, these results represent the end of the
      * list.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
      * <p>Token that indicates where to resume retrieving results on the next call to
@@ -129,7 +130,7 @@ namespace Model
      * this action. If no token is returned, these results represent the end of the
      * list.</p>
      */
-    inline DescribeFleetEventsResult& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline DescribeFleetEventsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>Token that indicates where to resume retrieving results on the next call to

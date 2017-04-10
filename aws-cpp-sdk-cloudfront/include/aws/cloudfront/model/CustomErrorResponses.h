@@ -16,6 +16,7 @@
 #include <aws/cloudfront/CloudFront_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/cloudfront/model/CustomErrorResponse.h>
+#include <utility>
 
 namespace Aws
 {
@@ -77,7 +78,7 @@ namespace Model
      * Optional: A complex type that contains custom error responses for this
      * distribution. If Quantity is 0, you can omit Items.
      */
-    inline void SetItems(Aws::Vector<CustomErrorResponse>&& value) { m_itemsHasBeenSet = true; m_items = value; }
+    inline void SetItems(Aws::Vector<CustomErrorResponse>&& value) { m_itemsHasBeenSet = true; m_items = std::move(value); }
 
     /**
      * Optional: A complex type that contains custom error responses for this
@@ -89,7 +90,7 @@ namespace Model
      * Optional: A complex type that contains custom error responses for this
      * distribution. If Quantity is 0, you can omit Items.
      */
-    inline CustomErrorResponses& WithItems(Aws::Vector<CustomErrorResponse>&& value) { SetItems(value); return *this;}
+    inline CustomErrorResponses& WithItems(Aws::Vector<CustomErrorResponse>&& value) { SetItems(std::move(value)); return *this;}
 
     /**
      * Optional: A complex type that contains custom error responses for this
@@ -101,7 +102,7 @@ namespace Model
      * Optional: A complex type that contains custom error responses for this
      * distribution. If Quantity is 0, you can omit Items.
      */
-    inline CustomErrorResponses& AddItems(CustomErrorResponse&& value) { m_itemsHasBeenSet = true; m_items.push_back(value); return *this; }
+    inline CustomErrorResponses& AddItems(CustomErrorResponse&& value) { m_itemsHasBeenSet = true; m_items.push_back(std::move(value)); return *this; }
 
   private:
     int m_quantity;

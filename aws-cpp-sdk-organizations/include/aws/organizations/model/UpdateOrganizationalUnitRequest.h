@@ -16,6 +16,7 @@
 #include <aws/organizations/Organizations_EXPORTS.h>
 #include <aws/organizations/OrganizationsRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -63,7 +64,7 @@ namespace Model
      * digits (the ID of the root that contains the OU) followed by a second "-" dash
      * and from 8 to 32 additional lower-case letters or digits.</p>
      */
-    inline void SetOrganizationalUnitId(Aws::String&& value) { m_organizationalUnitIdHasBeenSet = true; m_organizationalUnitId = value; }
+    inline void SetOrganizationalUnitId(Aws::String&& value) { m_organizationalUnitIdHasBeenSet = true; m_organizationalUnitId = std::move(value); }
 
     /**
      * <p>The unique identifier (ID) of the OU that you want to rename. You can get the
@@ -93,7 +94,7 @@ namespace Model
      * digits (the ID of the root that contains the OU) followed by a second "-" dash
      * and from 8 to 32 additional lower-case letters or digits.</p>
      */
-    inline UpdateOrganizationalUnitRequest& WithOrganizationalUnitId(Aws::String&& value) { SetOrganizationalUnitId(value); return *this;}
+    inline UpdateOrganizationalUnitRequest& WithOrganizationalUnitId(Aws::String&& value) { SetOrganizationalUnitId(std::move(value)); return *this;}
 
     /**
      * <p>The unique identifier (ID) of the OU that you want to rename. You can get the
@@ -127,7 +128,7 @@ namespace Model
      * validate this parameter is a string of any of the characters in the ASCII
      * character range.</p>
      */
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p>The new name that you want to assign to the OU.</p> <p>The <a
@@ -151,7 +152,7 @@ namespace Model
      * validate this parameter is a string of any of the characters in the ASCII
      * character range.</p>
      */
-    inline UpdateOrganizationalUnitRequest& WithName(Aws::String&& value) { SetName(value); return *this;}
+    inline UpdateOrganizationalUnitRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>The new name that you want to assign to the OU.</p> <p>The <a

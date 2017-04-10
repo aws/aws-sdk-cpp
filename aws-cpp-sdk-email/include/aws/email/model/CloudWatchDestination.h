@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/email/model/CloudWatchDimensionConfiguration.h>
+#include <utility>
 
 namespace Aws
 {
@@ -69,7 +70,7 @@ namespace Model
      * <p>A list of dimensions upon which to categorize your emails when you publish
      * email sending events to Amazon CloudWatch.</p>
      */
-    inline void SetDimensionConfigurations(Aws::Vector<CloudWatchDimensionConfiguration>&& value) { m_dimensionConfigurationsHasBeenSet = true; m_dimensionConfigurations = value; }
+    inline void SetDimensionConfigurations(Aws::Vector<CloudWatchDimensionConfiguration>&& value) { m_dimensionConfigurationsHasBeenSet = true; m_dimensionConfigurations = std::move(value); }
 
     /**
      * <p>A list of dimensions upon which to categorize your emails when you publish
@@ -81,7 +82,7 @@ namespace Model
      * <p>A list of dimensions upon which to categorize your emails when you publish
      * email sending events to Amazon CloudWatch.</p>
      */
-    inline CloudWatchDestination& WithDimensionConfigurations(Aws::Vector<CloudWatchDimensionConfiguration>&& value) { SetDimensionConfigurations(value); return *this;}
+    inline CloudWatchDestination& WithDimensionConfigurations(Aws::Vector<CloudWatchDimensionConfiguration>&& value) { SetDimensionConfigurations(std::move(value)); return *this;}
 
     /**
      * <p>A list of dimensions upon which to categorize your emails when you publish
@@ -93,7 +94,7 @@ namespace Model
      * <p>A list of dimensions upon which to categorize your emails when you publish
      * email sending events to Amazon CloudWatch.</p>
      */
-    inline CloudWatchDestination& AddDimensionConfigurations(CloudWatchDimensionConfiguration&& value) { m_dimensionConfigurationsHasBeenSet = true; m_dimensionConfigurations.push_back(value); return *this; }
+    inline CloudWatchDestination& AddDimensionConfigurations(CloudWatchDimensionConfiguration&& value) { m_dimensionConfigurationsHasBeenSet = true; m_dimensionConfigurations.push_back(std::move(value)); return *this; }
 
   private:
     Aws::Vector<CloudWatchDimensionConfiguration> m_dimensionConfigurations;

@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/route53domains/model/OperationType.h>
 #include <aws/core/utils/DateTime.h>
+#include <utility>
 
 namespace Aws
 {
@@ -53,7 +54,7 @@ namespace Model
     /**
      * <p>The name of a domain.</p> <p>Type: String</p>
      */
-    inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
+    inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = std::move(value); }
 
     /**
      * <p>The name of a domain.</p> <p>Type: String</p>
@@ -68,7 +69,7 @@ namespace Model
     /**
      * <p>The name of a domain.</p> <p>Type: String</p>
      */
-    inline BillingRecord& WithDomainName(Aws::String&& value) { SetDomainName(value); return *this;}
+    inline BillingRecord& WithDomainName(Aws::String&& value) { SetDomainName(std::move(value)); return *this;}
 
     /**
      * <p>The name of a domain.</p> <p>Type: String</p>
@@ -97,7 +98,7 @@ namespace Model
      * <li><code>TRANSFER_IN_DOMAIN</code></li> <li><code>RENEW_DOMAIN</code></li>
      * <li><code>CHANGE_DOMAIN_OWNER</code></li> </ul> </p>
      */
-    inline void SetOperation(OperationType&& value) { m_operationHasBeenSet = true; m_operation = value; }
+    inline void SetOperation(OperationType&& value) { m_operationHasBeenSet = true; m_operation = std::move(value); }
 
     /**
      * <p>The operation that you were charged for.</p> <p>Type: String</p> <p>Valid
@@ -113,7 +114,7 @@ namespace Model
      * <li><code>TRANSFER_IN_DOMAIN</code></li> <li><code>RENEW_DOMAIN</code></li>
      * <li><code>CHANGE_DOMAIN_OWNER</code></li> </ul> </p>
      */
-    inline BillingRecord& WithOperation(OperationType&& value) { SetOperation(value); return *this;}
+    inline BillingRecord& WithOperation(OperationType&& value) { SetOperation(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the invoice that is associated with the billing record.</p>
@@ -131,7 +132,7 @@ namespace Model
      * <p>The ID of the invoice that is associated with the billing record.</p>
      * <p>Type: String</p>
      */
-    inline void SetInvoiceId(Aws::String&& value) { m_invoiceIdHasBeenSet = true; m_invoiceId = value; }
+    inline void SetInvoiceId(Aws::String&& value) { m_invoiceIdHasBeenSet = true; m_invoiceId = std::move(value); }
 
     /**
      * <p>The ID of the invoice that is associated with the billing record.</p>
@@ -149,7 +150,7 @@ namespace Model
      * <p>The ID of the invoice that is associated with the billing record.</p>
      * <p>Type: String</p>
      */
-    inline BillingRecord& WithInvoiceId(Aws::String&& value) { SetInvoiceId(value); return *this;}
+    inline BillingRecord& WithInvoiceId(Aws::String&& value) { SetInvoiceId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the invoice that is associated with the billing record.</p>
@@ -173,7 +174,7 @@ namespace Model
      * <p>The date that the operation was billed, in Unix format.</p> <p>Type:
      * Double</p>
      */
-    inline void SetBillDate(Aws::Utils::DateTime&& value) { m_billDateHasBeenSet = true; m_billDate = value; }
+    inline void SetBillDate(Aws::Utils::DateTime&& value) { m_billDateHasBeenSet = true; m_billDate = std::move(value); }
 
     /**
      * <p>The date that the operation was billed, in Unix format.</p> <p>Type:
@@ -185,7 +186,7 @@ namespace Model
      * <p>The date that the operation was billed, in Unix format.</p> <p>Type:
      * Double</p>
      */
-    inline BillingRecord& WithBillDate(Aws::Utils::DateTime&& value) { SetBillDate(value); return *this;}
+    inline BillingRecord& WithBillDate(Aws::Utils::DateTime&& value) { SetBillDate(std::move(value)); return *this;}
 
     /**
      * <p>The price that you were charged for the operation, in US dollars.</p>

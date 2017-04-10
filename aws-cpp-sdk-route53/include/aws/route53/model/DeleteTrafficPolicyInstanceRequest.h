@@ -16,6 +16,7 @@
 #include <aws/route53/Route53_EXPORTS.h>
 #include <aws/route53/Route53Request.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -59,7 +60,7 @@ namespace Model
      * deletes all of the resource record sets that were created when you created the
      * traffic policy instance.</p> </important>
      */
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = value; }
+    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
 
     /**
      * <p>The ID of the traffic policy instance that you want to delete. </p>
@@ -83,7 +84,7 @@ namespace Model
      * deletes all of the resource record sets that were created when you created the
      * traffic policy instance.</p> </important>
      */
-    inline DeleteTrafficPolicyInstanceRequest& WithId(Aws::String&& value) { SetId(value); return *this;}
+    inline DeleteTrafficPolicyInstanceRequest& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the traffic policy instance that you want to delete. </p>

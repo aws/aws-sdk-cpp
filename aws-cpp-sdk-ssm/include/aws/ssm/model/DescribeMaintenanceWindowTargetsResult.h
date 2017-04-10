@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ssm/model/MaintenanceWindowTarget.h>
+#include <utility>
 
 namespace Aws
 {
@@ -54,7 +55,7 @@ namespace Model
     /**
      * <p>Information about the targets in the Maintenance Window.</p>
      */
-    inline void SetTargets(Aws::Vector<MaintenanceWindowTarget>&& value) { m_targets = value; }
+    inline void SetTargets(Aws::Vector<MaintenanceWindowTarget>&& value) { m_targets = std::move(value); }
 
     /**
      * <p>Information about the targets in the Maintenance Window.</p>
@@ -64,7 +65,7 @@ namespace Model
     /**
      * <p>Information about the targets in the Maintenance Window.</p>
      */
-    inline DescribeMaintenanceWindowTargetsResult& WithTargets(Aws::Vector<MaintenanceWindowTarget>&& value) { SetTargets(value); return *this;}
+    inline DescribeMaintenanceWindowTargetsResult& WithTargets(Aws::Vector<MaintenanceWindowTarget>&& value) { SetTargets(std::move(value)); return *this;}
 
     /**
      * <p>Information about the targets in the Maintenance Window.</p>
@@ -74,7 +75,7 @@ namespace Model
     /**
      * <p>Information about the targets in the Maintenance Window.</p>
      */
-    inline DescribeMaintenanceWindowTargetsResult& AddTargets(MaintenanceWindowTarget&& value) { m_targets.push_back(value); return *this; }
+    inline DescribeMaintenanceWindowTargetsResult& AddTargets(MaintenanceWindowTarget&& value) { m_targets.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The token to use when requesting the next set of items. If there are no
@@ -92,7 +93,7 @@ namespace Model
      * <p>The token to use when requesting the next set of items. If there are no
      * additional items to return, the string is empty.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
      * <p>The token to use when requesting the next set of items. If there are no
@@ -110,7 +111,7 @@ namespace Model
      * <p>The token to use when requesting the next set of items. If there are no
      * additional items to return, the string is empty.</p>
      */
-    inline DescribeMaintenanceWindowTargetsResult& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline DescribeMaintenanceWindowTargetsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>The token to use when requesting the next set of items. If there are no

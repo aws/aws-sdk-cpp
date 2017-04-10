@@ -16,6 +16,7 @@
 #include <aws/appstream/AppStream_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <utility>
 
 namespace Aws
 {
@@ -58,7 +59,7 @@ namespace Model
     /**
      * <p>The unique identifier for the application.</p>
      */
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p>The unique identifier for the application.</p>
@@ -73,7 +74,7 @@ namespace Model
     /**
      * <p>The unique identifier for the application.</p>
      */
-    inline Application& WithName(Aws::String&& value) { SetName(value); return *this;}
+    inline Application& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>The unique identifier for the application.</p>
@@ -93,7 +94,7 @@ namespace Model
     /**
      * <p>The name of the application shown to the end users.</p>
      */
-    inline void SetDisplayName(Aws::String&& value) { m_displayNameHasBeenSet = true; m_displayName = value; }
+    inline void SetDisplayName(Aws::String&& value) { m_displayNameHasBeenSet = true; m_displayName = std::move(value); }
 
     /**
      * <p>The name of the application shown to the end users.</p>
@@ -108,7 +109,7 @@ namespace Model
     /**
      * <p>The name of the application shown to the end users.</p>
      */
-    inline Application& WithDisplayName(Aws::String&& value) { SetDisplayName(value); return *this;}
+    inline Application& WithDisplayName(Aws::String&& value) { SetDisplayName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the application shown to the end users.</p>
@@ -128,7 +129,7 @@ namespace Model
     /**
      * <p>The URL for the application icon. This URL may be time-limited.</p>
      */
-    inline void SetIconURL(Aws::String&& value) { m_iconURLHasBeenSet = true; m_iconURL = value; }
+    inline void SetIconURL(Aws::String&& value) { m_iconURLHasBeenSet = true; m_iconURL = std::move(value); }
 
     /**
      * <p>The URL for the application icon. This URL may be time-limited.</p>
@@ -143,7 +144,7 @@ namespace Model
     /**
      * <p>The URL for the application icon. This URL may be time-limited.</p>
      */
-    inline Application& WithIconURL(Aws::String&& value) { SetIconURL(value); return *this;}
+    inline Application& WithIconURL(Aws::String&& value) { SetIconURL(std::move(value)); return *this;}
 
     /**
      * <p>The URL for the application icon. This URL may be time-limited.</p>
@@ -163,7 +164,7 @@ namespace Model
     /**
      * <p>The path to the application executable in the instance.</p>
      */
-    inline void SetLaunchPath(Aws::String&& value) { m_launchPathHasBeenSet = true; m_launchPath = value; }
+    inline void SetLaunchPath(Aws::String&& value) { m_launchPathHasBeenSet = true; m_launchPath = std::move(value); }
 
     /**
      * <p>The path to the application executable in the instance.</p>
@@ -178,7 +179,7 @@ namespace Model
     /**
      * <p>The path to the application executable in the instance.</p>
      */
-    inline Application& WithLaunchPath(Aws::String&& value) { SetLaunchPath(value); return *this;}
+    inline Application& WithLaunchPath(Aws::String&& value) { SetLaunchPath(std::move(value)); return *this;}
 
     /**
      * <p>The path to the application executable in the instance.</p>
@@ -198,7 +199,7 @@ namespace Model
     /**
      * <p>A list of arguments that are passed to the application at launch.</p>
      */
-    inline void SetLaunchParameters(Aws::String&& value) { m_launchParametersHasBeenSet = true; m_launchParameters = value; }
+    inline void SetLaunchParameters(Aws::String&& value) { m_launchParametersHasBeenSet = true; m_launchParameters = std::move(value); }
 
     /**
      * <p>A list of arguments that are passed to the application at launch.</p>
@@ -213,7 +214,7 @@ namespace Model
     /**
      * <p>A list of arguments that are passed to the application at launch.</p>
      */
-    inline Application& WithLaunchParameters(Aws::String&& value) { SetLaunchParameters(value); return *this;}
+    inline Application& WithLaunchParameters(Aws::String&& value) { SetLaunchParameters(std::move(value)); return *this;}
 
     /**
      * <p>A list of arguments that are passed to the application at launch.</p>
@@ -251,7 +252,7 @@ namespace Model
     /**
      * <p>Additional attributes that describes the application.</p>
      */
-    inline void SetMetadata(Aws::Map<Aws::String, Aws::String>&& value) { m_metadataHasBeenSet = true; m_metadata = value; }
+    inline void SetMetadata(Aws::Map<Aws::String, Aws::String>&& value) { m_metadataHasBeenSet = true; m_metadata = std::move(value); }
 
     /**
      * <p>Additional attributes that describes the application.</p>
@@ -261,42 +262,42 @@ namespace Model
     /**
      * <p>Additional attributes that describes the application.</p>
      */
-    inline Application& WithMetadata(Aws::Map<Aws::String, Aws::String>&& value) { SetMetadata(value); return *this;}
+    inline Application& WithMetadata(Aws::Map<Aws::String, Aws::String>&& value) { SetMetadata(std::move(value)); return *this;}
 
     /**
      * <p>Additional attributes that describes the application.</p>
      */
-    inline Application& AddMetadata(const Aws::String& key, const Aws::String& value) { m_metadataHasBeenSet = true; m_metadata[key] = value; return *this; }
+    inline Application& AddMetadata(const Aws::String& key, const Aws::String& value) { m_metadataHasBeenSet = true; m_metadata.emplace(key, value); return *this; }
 
     /**
      * <p>Additional attributes that describes the application.</p>
      */
-    inline Application& AddMetadata(Aws::String&& key, const Aws::String& value) { m_metadataHasBeenSet = true; m_metadata[key] = value; return *this; }
+    inline Application& AddMetadata(Aws::String&& key, const Aws::String& value) { m_metadataHasBeenSet = true; m_metadata.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>Additional attributes that describes the application.</p>
      */
-    inline Application& AddMetadata(const Aws::String& key, Aws::String&& value) { m_metadataHasBeenSet = true; m_metadata[key] = value; return *this; }
+    inline Application& AddMetadata(const Aws::String& key, Aws::String&& value) { m_metadataHasBeenSet = true; m_metadata.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>Additional attributes that describes the application.</p>
      */
-    inline Application& AddMetadata(Aws::String&& key, Aws::String&& value) { m_metadataHasBeenSet = true; m_metadata[key] = value; return *this; }
+    inline Application& AddMetadata(Aws::String&& key, Aws::String&& value) { m_metadataHasBeenSet = true; m_metadata.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
      * <p>Additional attributes that describes the application.</p>
      */
-    inline Application& AddMetadata(const char* key, Aws::String&& value) { m_metadataHasBeenSet = true; m_metadata[key] = value; return *this; }
+    inline Application& AddMetadata(const char* key, Aws::String&& value) { m_metadataHasBeenSet = true; m_metadata.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>Additional attributes that describes the application.</p>
      */
-    inline Application& AddMetadata(Aws::String&& key, const char* value) { m_metadataHasBeenSet = true; m_metadata[key] = value; return *this; }
+    inline Application& AddMetadata(Aws::String&& key, const char* value) { m_metadataHasBeenSet = true; m_metadata.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>Additional attributes that describes the application.</p>
      */
-    inline Application& AddMetadata(const char* key, const char* value) { m_metadataHasBeenSet = true; m_metadata[key] = value; return *this; }
+    inline Application& AddMetadata(const char* key, const char* value) { m_metadataHasBeenSet = true; m_metadata.emplace(key, value); return *this; }
 
   private:
     Aws::String m_name;

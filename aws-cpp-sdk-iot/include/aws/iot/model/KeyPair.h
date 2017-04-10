@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/iot/IoT_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -56,7 +57,7 @@ namespace Model
     /**
      * <p>The public key.</p>
      */
-    inline void SetPublicKey(Aws::String&& value) { m_publicKeyHasBeenSet = true; m_publicKey = value; }
+    inline void SetPublicKey(Aws::String&& value) { m_publicKeyHasBeenSet = true; m_publicKey = std::move(value); }
 
     /**
      * <p>The public key.</p>
@@ -71,7 +72,7 @@ namespace Model
     /**
      * <p>The public key.</p>
      */
-    inline KeyPair& WithPublicKey(Aws::String&& value) { SetPublicKey(value); return *this;}
+    inline KeyPair& WithPublicKey(Aws::String&& value) { SetPublicKey(std::move(value)); return *this;}
 
     /**
      * <p>The public key.</p>
@@ -91,7 +92,7 @@ namespace Model
     /**
      * <p>The private key.</p>
      */
-    inline void SetPrivateKey(Aws::String&& value) { m_privateKeyHasBeenSet = true; m_privateKey = value; }
+    inline void SetPrivateKey(Aws::String&& value) { m_privateKeyHasBeenSet = true; m_privateKey = std::move(value); }
 
     /**
      * <p>The private key.</p>
@@ -106,7 +107,7 @@ namespace Model
     /**
      * <p>The private key.</p>
      */
-    inline KeyPair& WithPrivateKey(Aws::String&& value) { SetPrivateKey(value); return *this;}
+    inline KeyPair& WithPrivateKey(Aws::String&& value) { SetPrivateKey(std::move(value)); return *this;}
 
     /**
      * <p>The private key.</p>

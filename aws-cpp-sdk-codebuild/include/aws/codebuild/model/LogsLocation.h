@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/codebuild/CodeBuild_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -57,7 +58,7 @@ namespace Model
     /**
      * <p>The name of the Amazon CloudWatch Logs group for the build logs.</p>
      */
-    inline void SetGroupName(Aws::String&& value) { m_groupNameHasBeenSet = true; m_groupName = value; }
+    inline void SetGroupName(Aws::String&& value) { m_groupNameHasBeenSet = true; m_groupName = std::move(value); }
 
     /**
      * <p>The name of the Amazon CloudWatch Logs group for the build logs.</p>
@@ -72,7 +73,7 @@ namespace Model
     /**
      * <p>The name of the Amazon CloudWatch Logs group for the build logs.</p>
      */
-    inline LogsLocation& WithGroupName(Aws::String&& value) { SetGroupName(value); return *this;}
+    inline LogsLocation& WithGroupName(Aws::String&& value) { SetGroupName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the Amazon CloudWatch Logs group for the build logs.</p>
@@ -92,7 +93,7 @@ namespace Model
     /**
      * <p>The name of the Amazon CloudWatch Logs stream for the build logs.</p>
      */
-    inline void SetStreamName(Aws::String&& value) { m_streamNameHasBeenSet = true; m_streamName = value; }
+    inline void SetStreamName(Aws::String&& value) { m_streamNameHasBeenSet = true; m_streamName = std::move(value); }
 
     /**
      * <p>The name of the Amazon CloudWatch Logs stream for the build logs.</p>
@@ -107,7 +108,7 @@ namespace Model
     /**
      * <p>The name of the Amazon CloudWatch Logs stream for the build logs.</p>
      */
-    inline LogsLocation& WithStreamName(Aws::String&& value) { SetStreamName(value); return *this;}
+    inline LogsLocation& WithStreamName(Aws::String&& value) { SetStreamName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the Amazon CloudWatch Logs stream for the build logs.</p>
@@ -127,7 +128,7 @@ namespace Model
     /**
      * <p>The URL to an individual build log in Amazon CloudWatch Logs.</p>
      */
-    inline void SetDeepLink(Aws::String&& value) { m_deepLinkHasBeenSet = true; m_deepLink = value; }
+    inline void SetDeepLink(Aws::String&& value) { m_deepLinkHasBeenSet = true; m_deepLink = std::move(value); }
 
     /**
      * <p>The URL to an individual build log in Amazon CloudWatch Logs.</p>
@@ -142,7 +143,7 @@ namespace Model
     /**
      * <p>The URL to an individual build log in Amazon CloudWatch Logs.</p>
      */
-    inline LogsLocation& WithDeepLink(Aws::String&& value) { SetDeepLink(value); return *this;}
+    inline LogsLocation& WithDeepLink(Aws::String&& value) { SetDeepLink(std::move(value)); return *this;}
 
     /**
      * <p>The URL to an individual build log in Amazon CloudWatch Logs.</p>

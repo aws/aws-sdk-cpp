@@ -16,6 +16,7 @@
 #include <aws/codepipeline/CodePipeline_EXPORTS.h>
 #include <aws/codepipeline/CodePipelineRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -52,7 +53,7 @@ namespace Model
     /**
      * <p>The unique system-generated ID used for identifying the job.</p>
      */
-    inline void SetJobId(Aws::String&& value) { m_jobIdHasBeenSet = true; m_jobId = value; }
+    inline void SetJobId(Aws::String&& value) { m_jobIdHasBeenSet = true; m_jobId = std::move(value); }
 
     /**
      * <p>The unique system-generated ID used for identifying the job.</p>
@@ -67,7 +68,7 @@ namespace Model
     /**
      * <p>The unique system-generated ID used for identifying the job.</p>
      */
-    inline GetThirdPartyJobDetailsRequest& WithJobId(Aws::String&& value) { SetJobId(value); return *this;}
+    inline GetThirdPartyJobDetailsRequest& WithJobId(Aws::String&& value) { SetJobId(std::move(value)); return *this;}
 
     /**
      * <p>The unique system-generated ID used for identifying the job.</p>
@@ -90,7 +91,7 @@ namespace Model
      * <p>The clientToken portion of the clientId and clientToken pair used to verify
      * that the calling entity is allowed access to the job and its details.</p>
      */
-    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
+    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
 
     /**
      * <p>The clientToken portion of the clientId and clientToken pair used to verify
@@ -108,7 +109,7 @@ namespace Model
      * <p>The clientToken portion of the clientId and clientToken pair used to verify
      * that the calling entity is allowed access to the job and its details.</p>
      */
-    inline GetThirdPartyJobDetailsRequest& WithClientToken(Aws::String&& value) { SetClientToken(value); return *this;}
+    inline GetThirdPartyJobDetailsRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
 
     /**
      * <p>The clientToken portion of the clientId and clientToken pair used to verify

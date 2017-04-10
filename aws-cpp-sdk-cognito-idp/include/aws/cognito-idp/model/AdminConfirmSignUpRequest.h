@@ -16,6 +16,7 @@
 #include <aws/cognito-idp/CognitoIdentityProvider_EXPORTS.h>
 #include <aws/cognito-idp/CognitoIdentityProviderRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -52,7 +53,7 @@ namespace Model
     /**
      * <p>The user pool ID for which you want to confirm user registration.</p>
      */
-    inline void SetUserPoolId(Aws::String&& value) { m_userPoolIdHasBeenSet = true; m_userPoolId = value; }
+    inline void SetUserPoolId(Aws::String&& value) { m_userPoolIdHasBeenSet = true; m_userPoolId = std::move(value); }
 
     /**
      * <p>The user pool ID for which you want to confirm user registration.</p>
@@ -67,7 +68,7 @@ namespace Model
     /**
      * <p>The user pool ID for which you want to confirm user registration.</p>
      */
-    inline AdminConfirmSignUpRequest& WithUserPoolId(Aws::String&& value) { SetUserPoolId(value); return *this;}
+    inline AdminConfirmSignUpRequest& WithUserPoolId(Aws::String&& value) { SetUserPoolId(std::move(value)); return *this;}
 
     /**
      * <p>The user pool ID for which you want to confirm user registration.</p>
@@ -87,7 +88,7 @@ namespace Model
     /**
      * <p>The user name for which you want to confirm user registration.</p>
      */
-    inline void SetUsername(Aws::String&& value) { m_usernameHasBeenSet = true; m_username = value; }
+    inline void SetUsername(Aws::String&& value) { m_usernameHasBeenSet = true; m_username = std::move(value); }
 
     /**
      * <p>The user name for which you want to confirm user registration.</p>
@@ -102,7 +103,7 @@ namespace Model
     /**
      * <p>The user name for which you want to confirm user registration.</p>
      */
-    inline AdminConfirmSignUpRequest& WithUsername(Aws::String&& value) { SetUsername(value); return *this;}
+    inline AdminConfirmSignUpRequest& WithUsername(Aws::String&& value) { SetUsername(std::move(value)); return *this;}
 
     /**
      * <p>The user name for which you want to confirm user registration.</p>

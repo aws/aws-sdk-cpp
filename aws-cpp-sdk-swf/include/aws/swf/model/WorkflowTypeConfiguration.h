@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/swf/model/TaskList.h>
 #include <aws/swf/model/ChildPolicy.h>
+#include <utility>
 
 namespace Aws
 {
@@ -85,7 +86,7 @@ namespace Model
      * specified in seconds; an integer greater than or equal to 0. The value "NONE"
      * can be used to specify unlimited duration.</p>
      */
-    inline void SetDefaultTaskStartToCloseTimeout(Aws::String&& value) { m_defaultTaskStartToCloseTimeoutHasBeenSet = true; m_defaultTaskStartToCloseTimeout = value; }
+    inline void SetDefaultTaskStartToCloseTimeout(Aws::String&& value) { m_defaultTaskStartToCloseTimeoutHasBeenSet = true; m_defaultTaskStartToCloseTimeout = std::move(value); }
 
     /**
      * <p><i>Optional.</i> The default maximum duration, specified when registering the
@@ -127,7 +128,7 @@ namespace Model
      * specified in seconds; an integer greater than or equal to 0. The value "NONE"
      * can be used to specify unlimited duration.</p>
      */
-    inline WorkflowTypeConfiguration& WithDefaultTaskStartToCloseTimeout(Aws::String&& value) { SetDefaultTaskStartToCloseTimeout(value); return *this;}
+    inline WorkflowTypeConfiguration& WithDefaultTaskStartToCloseTimeout(Aws::String&& value) { SetDefaultTaskStartToCloseTimeout(std::move(value)); return *this;}
 
     /**
      * <p><i>Optional.</i> The default maximum duration, specified when registering the
@@ -174,7 +175,7 @@ namespace Model
      * specified in seconds; an integer greater than or equal to 0. The value "NONE"
      * can be used to specify unlimited duration.</p>
      */
-    inline void SetDefaultExecutionStartToCloseTimeout(Aws::String&& value) { m_defaultExecutionStartToCloseTimeoutHasBeenSet = true; m_defaultExecutionStartToCloseTimeout = value; }
+    inline void SetDefaultExecutionStartToCloseTimeout(Aws::String&& value) { m_defaultExecutionStartToCloseTimeoutHasBeenSet = true; m_defaultExecutionStartToCloseTimeout = std::move(value); }
 
     /**
      * <p><i>Optional.</i> The default maximum duration, specified when registering the
@@ -207,7 +208,7 @@ namespace Model
      * specified in seconds; an integer greater than or equal to 0. The value "NONE"
      * can be used to specify unlimited duration.</p>
      */
-    inline WorkflowTypeConfiguration& WithDefaultExecutionStartToCloseTimeout(Aws::String&& value) { SetDefaultExecutionStartToCloseTimeout(value); return *this;}
+    inline WorkflowTypeConfiguration& WithDefaultExecutionStartToCloseTimeout(Aws::String&& value) { SetDefaultExecutionStartToCloseTimeout(std::move(value)); return *this;}
 
     /**
      * <p><i>Optional.</i> The default maximum duration, specified when registering the
@@ -245,7 +246,7 @@ namespace Model
      * the <a>StartWorkflowExecution</a> action or the
      * <code>StartChildWorkflowExecution</code> decision.</p>
      */
-    inline void SetDefaultTaskList(TaskList&& value) { m_defaultTaskListHasBeenSet = true; m_defaultTaskList = value; }
+    inline void SetDefaultTaskList(TaskList&& value) { m_defaultTaskListHasBeenSet = true; m_defaultTaskList = std::move(value); }
 
     /**
      * <p><i>Optional.</i> The default task list, specified when registering the
@@ -263,7 +264,7 @@ namespace Model
      * the <a>StartWorkflowExecution</a> action or the
      * <code>StartChildWorkflowExecution</code> decision.</p>
      */
-    inline WorkflowTypeConfiguration& WithDefaultTaskList(TaskList&& value) { SetDefaultTaskList(value); return *this;}
+    inline WorkflowTypeConfiguration& WithDefaultTaskList(TaskList&& value) { SetDefaultTaskList(std::move(value)); return *this;}
 
     /**
      * <p><i>Optional.</i> The default task priority, specified when registering the
@@ -305,7 +306,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting
      * Task Priority</a> in the <i>Amazon Simple Workflow Developer Guide</i>.</p>
      */
-    inline void SetDefaultTaskPriority(Aws::String&& value) { m_defaultTaskPriorityHasBeenSet = true; m_defaultTaskPriority = value; }
+    inline void SetDefaultTaskPriority(Aws::String&& value) { m_defaultTaskPriorityHasBeenSet = true; m_defaultTaskPriority = std::move(value); }
 
     /**
      * <p><i>Optional.</i> The default task priority, specified when registering the
@@ -347,7 +348,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting
      * Task Priority</a> in the <i>Amazon Simple Workflow Developer Guide</i>.</p>
      */
-    inline WorkflowTypeConfiguration& WithDefaultTaskPriority(Aws::String&& value) { SetDefaultTaskPriority(value); return *this;}
+    inline WorkflowTypeConfiguration& WithDefaultTaskPriority(Aws::String&& value) { SetDefaultTaskPriority(std::move(value)); return *this;}
 
     /**
      * <p><i>Optional.</i> The default task priority, specified when registering the
@@ -412,7 +413,7 @@ namespace Model
      * with this event.</li> <li><b>ABANDON:</b> no action will be taken. The child
      * executions will continue to run.</li> </ul>
      */
-    inline void SetDefaultChildPolicy(ChildPolicy&& value) { m_defaultChildPolicyHasBeenSet = true; m_defaultChildPolicy = value; }
+    inline void SetDefaultChildPolicy(ChildPolicy&& value) { m_defaultChildPolicyHasBeenSet = true; m_defaultChildPolicy = std::move(value); }
 
     /**
      * <p><i>Optional.</i> The default policy to use for the child workflow executions
@@ -446,7 +447,7 @@ namespace Model
      * with this event.</li> <li><b>ABANDON:</b> no action will be taken. The child
      * executions will continue to run.</li> </ul>
      */
-    inline WorkflowTypeConfiguration& WithDefaultChildPolicy(ChildPolicy&& value) { SetDefaultChildPolicy(value); return *this;}
+    inline WorkflowTypeConfiguration& WithDefaultChildPolicy(ChildPolicy&& value) { SetDefaultChildPolicy(std::move(value)); return *this;}
 
     /**
      * <p>The default IAM role to use when a workflow execution invokes a AWS Lambda
@@ -464,7 +465,7 @@ namespace Model
      * <p>The default IAM role to use when a workflow execution invokes a AWS Lambda
      * function.</p>
      */
-    inline void SetDefaultLambdaRole(Aws::String&& value) { m_defaultLambdaRoleHasBeenSet = true; m_defaultLambdaRole = value; }
+    inline void SetDefaultLambdaRole(Aws::String&& value) { m_defaultLambdaRoleHasBeenSet = true; m_defaultLambdaRole = std::move(value); }
 
     /**
      * <p>The default IAM role to use when a workflow execution invokes a AWS Lambda
@@ -482,7 +483,7 @@ namespace Model
      * <p>The default IAM role to use when a workflow execution invokes a AWS Lambda
      * function.</p>
      */
-    inline WorkflowTypeConfiguration& WithDefaultLambdaRole(Aws::String&& value) { SetDefaultLambdaRole(value); return *this;}
+    inline WorkflowTypeConfiguration& WithDefaultLambdaRole(Aws::String&& value) { SetDefaultLambdaRole(std::move(value)); return *this;}
 
     /**
      * <p>The default IAM role to use when a workflow execution invokes a AWS Lambda

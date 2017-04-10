@@ -16,6 +16,7 @@
 #include <aws/kinesis/Kinesis_EXPORTS.h>
 #include <aws/kinesis/KinesisRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -64,7 +65,7 @@ namespace Model
      * two streams in the same AWS account but in two different regions can have the
      * same name.</p>
      */
-    inline void SetStreamName(Aws::String&& value) { m_streamNameHasBeenSet = true; m_streamName = value; }
+    inline void SetStreamName(Aws::String&& value) { m_streamNameHasBeenSet = true; m_streamName = std::move(value); }
 
     /**
      * <p>A name to identify the stream. The stream name is scoped to the AWS account
@@ -91,7 +92,7 @@ namespace Model
      * two streams in the same AWS account but in two different regions can have the
      * same name.</p>
      */
-    inline CreateStreamRequest& WithStreamName(Aws::String&& value) { SetStreamName(value); return *this;}
+    inline CreateStreamRequest& WithStreamName(Aws::String&& value) { SetStreamName(std::move(value)); return *this;}
 
     /**
      * <p>A name to identify the stream. The stream name is scoped to the AWS account

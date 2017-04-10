@@ -17,6 +17,7 @@
 #include <aws/datapipeline/model/OperatorType.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -110,7 +111,7 @@ namespace Model
      * as symbols may be reserved by AWS Data Pipeline. User-defined fields that you
      * add to a pipeline should prefix their name with the string "my".</p>
      */
-    inline void SetType(OperatorType&& value) { m_typeHasBeenSet = true; m_type = value; }
+    inline void SetType(OperatorType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
      * <p> The logical operation to be performed: equal (<code>EQ</code>), equal
@@ -154,7 +155,7 @@ namespace Model
      * as symbols may be reserved by AWS Data Pipeline. User-defined fields that you
      * add to a pipeline should prefix their name with the string "my".</p>
      */
-    inline Operator& WithType(OperatorType&& value) { SetType(value); return *this;}
+    inline Operator& WithType(OperatorType&& value) { SetType(std::move(value)); return *this;}
 
     /**
      * <p>The value that the actual field value will be compared with.</p>
@@ -169,7 +170,7 @@ namespace Model
     /**
      * <p>The value that the actual field value will be compared with.</p>
      */
-    inline void SetValues(Aws::Vector<Aws::String>&& value) { m_valuesHasBeenSet = true; m_values = value; }
+    inline void SetValues(Aws::Vector<Aws::String>&& value) { m_valuesHasBeenSet = true; m_values = std::move(value); }
 
     /**
      * <p>The value that the actual field value will be compared with.</p>
@@ -179,7 +180,7 @@ namespace Model
     /**
      * <p>The value that the actual field value will be compared with.</p>
      */
-    inline Operator& WithValues(Aws::Vector<Aws::String>&& value) { SetValues(value); return *this;}
+    inline Operator& WithValues(Aws::Vector<Aws::String>&& value) { SetValues(std::move(value)); return *this;}
 
     /**
      * <p>The value that the actual field value will be compared with.</p>
@@ -189,7 +190,7 @@ namespace Model
     /**
      * <p>The value that the actual field value will be compared with.</p>
      */
-    inline Operator& AddValues(Aws::String&& value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
+    inline Operator& AddValues(Aws::String&& value) { m_valuesHasBeenSet = true; m_values.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The value that the actual field value will be compared with.</p>

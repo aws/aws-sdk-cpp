@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ssm/model/InstanceInformation.h>
+#include <utility>
 
 namespace Aws
 {
@@ -54,7 +55,7 @@ namespace Model
     /**
      * <p>The instance information list.</p>
      */
-    inline void SetInstanceInformationList(Aws::Vector<InstanceInformation>&& value) { m_instanceInformationList = value; }
+    inline void SetInstanceInformationList(Aws::Vector<InstanceInformation>&& value) { m_instanceInformationList = std::move(value); }
 
     /**
      * <p>The instance information list.</p>
@@ -64,7 +65,7 @@ namespace Model
     /**
      * <p>The instance information list.</p>
      */
-    inline DescribeInstanceInformationResult& WithInstanceInformationList(Aws::Vector<InstanceInformation>&& value) { SetInstanceInformationList(value); return *this;}
+    inline DescribeInstanceInformationResult& WithInstanceInformationList(Aws::Vector<InstanceInformation>&& value) { SetInstanceInformationList(std::move(value)); return *this;}
 
     /**
      * <p>The instance information list.</p>
@@ -74,7 +75,7 @@ namespace Model
     /**
      * <p>The instance information list.</p>
      */
-    inline DescribeInstanceInformationResult& AddInstanceInformationList(InstanceInformation&& value) { m_instanceInformationList.push_back(value); return *this; }
+    inline DescribeInstanceInformationResult& AddInstanceInformationList(InstanceInformation&& value) { m_instanceInformationList.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The token to use when requesting the next set of items. If there are no
@@ -92,7 +93,7 @@ namespace Model
      * <p>The token to use when requesting the next set of items. If there are no
      * additional items to return, the string is empty. </p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
      * <p>The token to use when requesting the next set of items. If there are no
@@ -110,7 +111,7 @@ namespace Model
      * <p>The token to use when requesting the next set of items. If there are no
      * additional items to return, the string is empty. </p>
      */
-    inline DescribeInstanceInformationResult& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline DescribeInstanceInformationResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>The token to use when requesting the next set of items. If there are no

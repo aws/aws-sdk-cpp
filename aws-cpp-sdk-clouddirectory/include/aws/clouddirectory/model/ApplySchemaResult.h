@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/clouddirectory/CloudDirectory_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -58,7 +59,7 @@ namespace Model
      * You can use this ARN to describe the schema information applied on this
      * directory. For more information, see <a>arns</a>.</p>
      */
-    inline void SetAppliedSchemaArn(Aws::String&& value) { m_appliedSchemaArn = value; }
+    inline void SetAppliedSchemaArn(Aws::String&& value) { m_appliedSchemaArn = std::move(value); }
 
     /**
      * <p>Applied schema ARN associated with the copied schema in the <a>Directory</a>.
@@ -79,7 +80,7 @@ namespace Model
      * You can use this ARN to describe the schema information applied on this
      * directory. For more information, see <a>arns</a>.</p>
      */
-    inline ApplySchemaResult& WithAppliedSchemaArn(Aws::String&& value) { SetAppliedSchemaArn(value); return *this;}
+    inline ApplySchemaResult& WithAppliedSchemaArn(Aws::String&& value) { SetAppliedSchemaArn(std::move(value)); return *this;}
 
     /**
      * <p>Applied schema ARN associated with the copied schema in the <a>Directory</a>.
@@ -104,7 +105,7 @@ namespace Model
      * <p>ARN associated with the <a>Directory</a>. For more information, see
      * <a>arns</a>.</p>
      */
-    inline void SetDirectoryArn(Aws::String&& value) { m_directoryArn = value; }
+    inline void SetDirectoryArn(Aws::String&& value) { m_directoryArn = std::move(value); }
 
     /**
      * <p>ARN associated with the <a>Directory</a>. For more information, see
@@ -122,7 +123,7 @@ namespace Model
      * <p>ARN associated with the <a>Directory</a>. For more information, see
      * <a>arns</a>.</p>
      */
-    inline ApplySchemaResult& WithDirectoryArn(Aws::String&& value) { SetDirectoryArn(value); return *this;}
+    inline ApplySchemaResult& WithDirectoryArn(Aws::String&& value) { SetDirectoryArn(std::move(value)); return *this;}
 
     /**
      * <p>ARN associated with the <a>Directory</a>. For more information, see

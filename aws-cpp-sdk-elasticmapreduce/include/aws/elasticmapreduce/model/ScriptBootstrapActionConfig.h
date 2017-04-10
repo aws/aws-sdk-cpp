@@ -16,6 +16,7 @@
 #include <aws/elasticmapreduce/EMR_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <utility>
 
 namespace Aws
 {
@@ -61,7 +62,7 @@ namespace Model
      * <p>Location of the script to run during a bootstrap action. Can be either a
      * location in Amazon S3 or on a local file system.</p>
      */
-    inline void SetPath(Aws::String&& value) { m_pathHasBeenSet = true; m_path = value; }
+    inline void SetPath(Aws::String&& value) { m_pathHasBeenSet = true; m_path = std::move(value); }
 
     /**
      * <p>Location of the script to run during a bootstrap action. Can be either a
@@ -79,7 +80,7 @@ namespace Model
      * <p>Location of the script to run during a bootstrap action. Can be either a
      * location in Amazon S3 or on a local file system.</p>
      */
-    inline ScriptBootstrapActionConfig& WithPath(Aws::String&& value) { SetPath(value); return *this;}
+    inline ScriptBootstrapActionConfig& WithPath(Aws::String&& value) { SetPath(std::move(value)); return *this;}
 
     /**
      * <p>Location of the script to run during a bootstrap action. Can be either a
@@ -100,7 +101,7 @@ namespace Model
     /**
      * <p>A list of command line arguments to pass to the bootstrap action script.</p>
      */
-    inline void SetArgs(Aws::Vector<Aws::String>&& value) { m_argsHasBeenSet = true; m_args = value; }
+    inline void SetArgs(Aws::Vector<Aws::String>&& value) { m_argsHasBeenSet = true; m_args = std::move(value); }
 
     /**
      * <p>A list of command line arguments to pass to the bootstrap action script.</p>
@@ -110,7 +111,7 @@ namespace Model
     /**
      * <p>A list of command line arguments to pass to the bootstrap action script.</p>
      */
-    inline ScriptBootstrapActionConfig& WithArgs(Aws::Vector<Aws::String>&& value) { SetArgs(value); return *this;}
+    inline ScriptBootstrapActionConfig& WithArgs(Aws::Vector<Aws::String>&& value) { SetArgs(std::move(value)); return *this;}
 
     /**
      * <p>A list of command line arguments to pass to the bootstrap action script.</p>
@@ -120,7 +121,7 @@ namespace Model
     /**
      * <p>A list of command line arguments to pass to the bootstrap action script.</p>
      */
-    inline ScriptBootstrapActionConfig& AddArgs(Aws::String&& value) { m_argsHasBeenSet = true; m_args.push_back(value); return *this; }
+    inline ScriptBootstrapActionConfig& AddArgs(Aws::String&& value) { m_argsHasBeenSet = true; m_args.push_back(std::move(value)); return *this; }
 
     /**
      * <p>A list of command line arguments to pass to the bootstrap action script.</p>

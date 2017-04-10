@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/dms/DatabaseMigrationService_EXPORTS.h>
 #include <aws/dms/model/Connection.h>
+#include <utility>
 
 namespace Aws
 {
@@ -57,7 +58,7 @@ namespace Model
     /**
      * <p>The connection tested.</p>
      */
-    inline void SetConnection(Connection&& value) { m_connection = value; }
+    inline void SetConnection(Connection&& value) { m_connection = std::move(value); }
 
     /**
      * <p>The connection tested.</p>
@@ -67,7 +68,7 @@ namespace Model
     /**
      * <p>The connection tested.</p>
      */
-    inline TestConnectionResult& WithConnection(Connection&& value) { SetConnection(value); return *this;}
+    inline TestConnectionResult& WithConnection(Connection&& value) { SetConnection(std::move(value)); return *this;}
 
   private:
     Connection m_connection;

@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/devicefarm/DeviceFarm_EXPORTS.h>
 #include <aws/devicefarm/model/Test.h>
+#include <utility>
 
 namespace Aws
 {
@@ -57,7 +58,7 @@ namespace Model
     /**
      * <p>A test condition that is evaluated.</p>
      */
-    inline void SetTest(Test&& value) { m_test = value; }
+    inline void SetTest(Test&& value) { m_test = std::move(value); }
 
     /**
      * <p>A test condition that is evaluated.</p>
@@ -67,7 +68,7 @@ namespace Model
     /**
      * <p>A test condition that is evaluated.</p>
      */
-    inline GetTestResult& WithTest(Test&& value) { SetTest(value); return *this;}
+    inline GetTestResult& WithTest(Test&& value) { SetTest(std::move(value)); return *this;}
 
   private:
     Test m_test;

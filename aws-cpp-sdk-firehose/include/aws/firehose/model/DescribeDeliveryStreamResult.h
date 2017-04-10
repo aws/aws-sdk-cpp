@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/firehose/Firehose_EXPORTS.h>
 #include <aws/firehose/model/DeliveryStreamDescription.h>
+#include <utility>
 
 namespace Aws
 {
@@ -52,7 +53,7 @@ namespace Model
     /**
      * <p>Information about the delivery stream.</p>
      */
-    inline void SetDeliveryStreamDescription(DeliveryStreamDescription&& value) { m_deliveryStreamDescription = value; }
+    inline void SetDeliveryStreamDescription(DeliveryStreamDescription&& value) { m_deliveryStreamDescription = std::move(value); }
 
     /**
      * <p>Information about the delivery stream.</p>
@@ -62,7 +63,7 @@ namespace Model
     /**
      * <p>Information about the delivery stream.</p>
      */
-    inline DescribeDeliveryStreamResult& WithDeliveryStreamDescription(DeliveryStreamDescription&& value) { SetDeliveryStreamDescription(value); return *this;}
+    inline DescribeDeliveryStreamResult& WithDeliveryStreamDescription(DeliveryStreamDescription&& value) { SetDeliveryStreamDescription(std::move(value)); return *this;}
 
   private:
     DeliveryStreamDescription m_deliveryStreamDescription;

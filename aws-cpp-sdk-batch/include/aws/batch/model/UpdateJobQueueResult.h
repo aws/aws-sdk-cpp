@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/batch/Batch_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -52,7 +53,7 @@ namespace Model
     /**
      * <p>The name of the job queue.</p>
      */
-    inline void SetJobQueueName(Aws::String&& value) { m_jobQueueName = value; }
+    inline void SetJobQueueName(Aws::String&& value) { m_jobQueueName = std::move(value); }
 
     /**
      * <p>The name of the job queue.</p>
@@ -67,7 +68,7 @@ namespace Model
     /**
      * <p>The name of the job queue.</p>
      */
-    inline UpdateJobQueueResult& WithJobQueueName(Aws::String&& value) { SetJobQueueName(value); return *this;}
+    inline UpdateJobQueueResult& WithJobQueueName(Aws::String&& value) { SetJobQueueName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the job queue.</p>
@@ -87,7 +88,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the job queue.</p>
      */
-    inline void SetJobQueueArn(Aws::String&& value) { m_jobQueueArn = value; }
+    inline void SetJobQueueArn(Aws::String&& value) { m_jobQueueArn = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the job queue.</p>
@@ -102,7 +103,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the job queue.</p>
      */
-    inline UpdateJobQueueResult& WithJobQueueArn(Aws::String&& value) { SetJobQueueArn(value); return *this;}
+    inline UpdateJobQueueResult& WithJobQueueArn(Aws::String&& value) { SetJobQueueArn(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the job queue.</p>

@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/cognito-identity/CognitoIdentity_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -60,7 +61,7 @@ namespace Model
      * <p>The provider name for an Amazon Cognito Identity User Pool. For example,
      * <code>cognito-idp.us-east-1.amazonaws.com/us-east-1_123456789</code>.</p>
      */
-    inline void SetProviderName(Aws::String&& value) { m_providerNameHasBeenSet = true; m_providerName = value; }
+    inline void SetProviderName(Aws::String&& value) { m_providerNameHasBeenSet = true; m_providerName = std::move(value); }
 
     /**
      * <p>The provider name for an Amazon Cognito Identity User Pool. For example,
@@ -78,7 +79,7 @@ namespace Model
      * <p>The provider name for an Amazon Cognito Identity User Pool. For example,
      * <code>cognito-idp.us-east-1.amazonaws.com/us-east-1_123456789</code>.</p>
      */
-    inline CognitoIdentityProvider& WithProviderName(Aws::String&& value) { SetProviderName(value); return *this;}
+    inline CognitoIdentityProvider& WithProviderName(Aws::String&& value) { SetProviderName(std::move(value)); return *this;}
 
     /**
      * <p>The provider name for an Amazon Cognito Identity User Pool. For example,
@@ -99,7 +100,7 @@ namespace Model
     /**
      * <p>The client ID for the Amazon Cognito Identity User Pool.</p>
      */
-    inline void SetClientId(Aws::String&& value) { m_clientIdHasBeenSet = true; m_clientId = value; }
+    inline void SetClientId(Aws::String&& value) { m_clientIdHasBeenSet = true; m_clientId = std::move(value); }
 
     /**
      * <p>The client ID for the Amazon Cognito Identity User Pool.</p>
@@ -114,7 +115,7 @@ namespace Model
     /**
      * <p>The client ID for the Amazon Cognito Identity User Pool.</p>
      */
-    inline CognitoIdentityProvider& WithClientId(Aws::String&& value) { SetClientId(value); return *this;}
+    inline CognitoIdentityProvider& WithClientId(Aws::String&& value) { SetClientId(std::move(value)); return *this;}
 
     /**
      * <p>The client ID for the Amazon Cognito Identity User Pool.</p>

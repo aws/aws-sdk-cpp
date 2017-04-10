@@ -17,6 +17,7 @@
 #include <aws/codedeploy/CodeDeployRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/codedeploy/model/RevisionLocation.h>
+#include <utility>
 
 namespace Aws
 {
@@ -56,7 +57,7 @@ namespace Model
      * <p>The name of an AWS CodeDeploy application associated with the applicable IAM
      * user or AWS account.</p>
      */
-    inline void SetApplicationName(Aws::String&& value) { m_applicationNameHasBeenSet = true; m_applicationName = value; }
+    inline void SetApplicationName(Aws::String&& value) { m_applicationNameHasBeenSet = true; m_applicationName = std::move(value); }
 
     /**
      * <p>The name of an AWS CodeDeploy application associated with the applicable IAM
@@ -74,7 +75,7 @@ namespace Model
      * <p>The name of an AWS CodeDeploy application associated with the applicable IAM
      * user or AWS account.</p>
      */
-    inline RegisterApplicationRevisionRequest& WithApplicationName(Aws::String&& value) { SetApplicationName(value); return *this;}
+    inline RegisterApplicationRevisionRequest& WithApplicationName(Aws::String&& value) { SetApplicationName(std::move(value)); return *this;}
 
     /**
      * <p>The name of an AWS CodeDeploy application associated with the applicable IAM
@@ -95,7 +96,7 @@ namespace Model
     /**
      * <p>A comment about the revision.</p>
      */
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = value; }
+    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
      * <p>A comment about the revision.</p>
@@ -110,7 +111,7 @@ namespace Model
     /**
      * <p>A comment about the revision.</p>
      */
-    inline RegisterApplicationRevisionRequest& WithDescription(Aws::String&& value) { SetDescription(value); return *this;}
+    inline RegisterApplicationRevisionRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
      * <p>A comment about the revision.</p>
@@ -133,7 +134,7 @@ namespace Model
      * <p>Information about the application revision to register, including type and
      * location.</p>
      */
-    inline void SetRevision(RevisionLocation&& value) { m_revisionHasBeenSet = true; m_revision = value; }
+    inline void SetRevision(RevisionLocation&& value) { m_revisionHasBeenSet = true; m_revision = std::move(value); }
 
     /**
      * <p>Information about the application revision to register, including type and
@@ -145,7 +146,7 @@ namespace Model
      * <p>Information about the application revision to register, including type and
      * location.</p>
      */
-    inline RegisterApplicationRevisionRequest& WithRevision(RevisionLocation&& value) { SetRevision(value); return *this;}
+    inline RegisterApplicationRevisionRequest& WithRevision(RevisionLocation&& value) { SetRevision(std::move(value)); return *this;}
 
   private:
     Aws::String m_applicationName;

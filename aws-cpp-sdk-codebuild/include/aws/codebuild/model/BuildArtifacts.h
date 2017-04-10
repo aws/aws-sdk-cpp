@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/codebuild/CodeBuild_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -56,7 +57,7 @@ namespace Model
     /**
      * <p>Information about the location of the build artifacts.</p>
      */
-    inline void SetLocation(Aws::String&& value) { m_locationHasBeenSet = true; m_location = value; }
+    inline void SetLocation(Aws::String&& value) { m_locationHasBeenSet = true; m_location = std::move(value); }
 
     /**
      * <p>Information about the location of the build artifacts.</p>
@@ -71,7 +72,7 @@ namespace Model
     /**
      * <p>Information about the location of the build artifacts.</p>
      */
-    inline BuildArtifacts& WithLocation(Aws::String&& value) { SetLocation(value); return *this;}
+    inline BuildArtifacts& WithLocation(Aws::String&& value) { SetLocation(std::move(value)); return *this;}
 
     /**
      * <p>Information about the location of the build artifacts.</p>
@@ -100,7 +101,7 @@ namespace Model
      * <p>This value is available only if the build project's <code>packaging</code>
      * value is set to <code>ZIP</code>.</p> </note>
      */
-    inline void SetSha256sum(Aws::String&& value) { m_sha256sumHasBeenSet = true; m_sha256sum = value; }
+    inline void SetSha256sum(Aws::String&& value) { m_sha256sumHasBeenSet = true; m_sha256sum = std::move(value); }
 
     /**
      * <p>The SHA-256 hash of the build artifact.</p> <p>You can use this hash along
@@ -124,7 +125,7 @@ namespace Model
      * <p>This value is available only if the build project's <code>packaging</code>
      * value is set to <code>ZIP</code>.</p> </note>
      */
-    inline BuildArtifacts& WithSha256sum(Aws::String&& value) { SetSha256sum(value); return *this;}
+    inline BuildArtifacts& WithSha256sum(Aws::String&& value) { SetSha256sum(std::move(value)); return *this;}
 
     /**
      * <p>The SHA-256 hash of the build artifact.</p> <p>You can use this hash along
@@ -156,7 +157,7 @@ namespace Model
      * <p>This value is available only if the build project's <code>packaging</code>
      * value is set to <code>ZIP</code>.</p> </note>
      */
-    inline void SetMd5sum(Aws::String&& value) { m_md5sumHasBeenSet = true; m_md5sum = value; }
+    inline void SetMd5sum(Aws::String&& value) { m_md5sumHasBeenSet = true; m_md5sum = std::move(value); }
 
     /**
      * <p>The MD5 hash of the build artifact.</p> <p>You can use this hash along with a
@@ -180,7 +181,7 @@ namespace Model
      * <p>This value is available only if the build project's <code>packaging</code>
      * value is set to <code>ZIP</code>.</p> </note>
      */
-    inline BuildArtifacts& WithMd5sum(Aws::String&& value) { SetMd5sum(value); return *this;}
+    inline BuildArtifacts& WithMd5sum(Aws::String&& value) { SetMd5sum(std::move(value)); return *this;}
 
     /**
      * <p>The MD5 hash of the build artifact.</p> <p>You can use this hash along with a

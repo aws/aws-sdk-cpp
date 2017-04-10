@@ -19,6 +19,7 @@
 #include <aws/batch/model/JQStatus.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/batch/model/ComputeEnvironmentOrder.h>
+#include <utility>
 
 namespace Aws
 {
@@ -61,7 +62,7 @@ namespace Model
     /**
      * <p>The name of the job queue.</p>
      */
-    inline void SetJobQueueName(Aws::String&& value) { m_jobQueueNameHasBeenSet = true; m_jobQueueName = value; }
+    inline void SetJobQueueName(Aws::String&& value) { m_jobQueueNameHasBeenSet = true; m_jobQueueName = std::move(value); }
 
     /**
      * <p>The name of the job queue.</p>
@@ -76,7 +77,7 @@ namespace Model
     /**
      * <p>The name of the job queue.</p>
      */
-    inline JobQueueDetail& WithJobQueueName(Aws::String&& value) { SetJobQueueName(value); return *this;}
+    inline JobQueueDetail& WithJobQueueName(Aws::String&& value) { SetJobQueueName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the job queue.</p>
@@ -96,7 +97,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the job queue.</p>
      */
-    inline void SetJobQueueArn(Aws::String&& value) { m_jobQueueArnHasBeenSet = true; m_jobQueueArn = value; }
+    inline void SetJobQueueArn(Aws::String&& value) { m_jobQueueArnHasBeenSet = true; m_jobQueueArn = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the job queue.</p>
@@ -111,7 +112,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the job queue.</p>
      */
-    inline JobQueueDetail& WithJobQueueArn(Aws::String&& value) { SetJobQueueArn(value); return *this;}
+    inline JobQueueDetail& WithJobQueueArn(Aws::String&& value) { SetJobQueueArn(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the job queue.</p>
@@ -131,7 +132,7 @@ namespace Model
     /**
      * <p>Describes the ability of the queue to accept new jobs.</p>
      */
-    inline void SetState(JQState&& value) { m_stateHasBeenSet = true; m_state = value; }
+    inline void SetState(JQState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
 
     /**
      * <p>Describes the ability of the queue to accept new jobs.</p>
@@ -141,7 +142,7 @@ namespace Model
     /**
      * <p>Describes the ability of the queue to accept new jobs.</p>
      */
-    inline JobQueueDetail& WithState(JQState&& value) { SetState(value); return *this;}
+    inline JobQueueDetail& WithState(JQState&& value) { SetState(std::move(value)); return *this;}
 
     /**
      * <p>The status of the job queue (for example, <code>CREATING</code> or
@@ -159,7 +160,7 @@ namespace Model
      * <p>The status of the job queue (for example, <code>CREATING</code> or
      * <code>VALID</code>).</p>
      */
-    inline void SetStatus(JQStatus&& value) { m_statusHasBeenSet = true; m_status = value; }
+    inline void SetStatus(JQStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
      * <p>The status of the job queue (for example, <code>CREATING</code> or
@@ -171,7 +172,7 @@ namespace Model
      * <p>The status of the job queue (for example, <code>CREATING</code> or
      * <code>VALID</code>).</p>
      */
-    inline JobQueueDetail& WithStatus(JQStatus&& value) { SetStatus(value); return *this;}
+    inline JobQueueDetail& WithStatus(JQStatus&& value) { SetStatus(std::move(value)); return *this;}
 
     /**
      * <p>A short, human-readable string to provide additional details about the
@@ -189,7 +190,7 @@ namespace Model
      * <p>A short, human-readable string to provide additional details about the
      * current status of the job queue.</p>
      */
-    inline void SetStatusReason(Aws::String&& value) { m_statusReasonHasBeenSet = true; m_statusReason = value; }
+    inline void SetStatusReason(Aws::String&& value) { m_statusReasonHasBeenSet = true; m_statusReason = std::move(value); }
 
     /**
      * <p>A short, human-readable string to provide additional details about the
@@ -207,7 +208,7 @@ namespace Model
      * <p>A short, human-readable string to provide additional details about the
      * current status of the job queue.</p>
      */
-    inline JobQueueDetail& WithStatusReason(Aws::String&& value) { SetStatusReason(value); return *this;}
+    inline JobQueueDetail& WithStatusReason(Aws::String&& value) { SetStatusReason(std::move(value)); return *this;}
 
     /**
      * <p>A short, human-readable string to provide additional details about the
@@ -249,7 +250,7 @@ namespace Model
      * which job placement is preferred. Compute environments are selected for job
      * placement in ascending order.</p>
      */
-    inline void SetComputeEnvironmentOrder(Aws::Vector<ComputeEnvironmentOrder>&& value) { m_computeEnvironmentOrderHasBeenSet = true; m_computeEnvironmentOrder = value; }
+    inline void SetComputeEnvironmentOrder(Aws::Vector<ComputeEnvironmentOrder>&& value) { m_computeEnvironmentOrderHasBeenSet = true; m_computeEnvironmentOrder = std::move(value); }
 
     /**
      * <p>The compute environments that are attached to the job queue and the order in
@@ -263,7 +264,7 @@ namespace Model
      * which job placement is preferred. Compute environments are selected for job
      * placement in ascending order.</p>
      */
-    inline JobQueueDetail& WithComputeEnvironmentOrder(Aws::Vector<ComputeEnvironmentOrder>&& value) { SetComputeEnvironmentOrder(value); return *this;}
+    inline JobQueueDetail& WithComputeEnvironmentOrder(Aws::Vector<ComputeEnvironmentOrder>&& value) { SetComputeEnvironmentOrder(std::move(value)); return *this;}
 
     /**
      * <p>The compute environments that are attached to the job queue and the order in
@@ -277,7 +278,7 @@ namespace Model
      * which job placement is preferred. Compute environments are selected for job
      * placement in ascending order.</p>
      */
-    inline JobQueueDetail& AddComputeEnvironmentOrder(ComputeEnvironmentOrder&& value) { m_computeEnvironmentOrderHasBeenSet = true; m_computeEnvironmentOrder.push_back(value); return *this; }
+    inline JobQueueDetail& AddComputeEnvironmentOrder(ComputeEnvironmentOrder&& value) { m_computeEnvironmentOrderHasBeenSet = true; m_computeEnvironmentOrder.push_back(std::move(value)); return *this; }
 
   private:
     Aws::String m_jobQueueName;

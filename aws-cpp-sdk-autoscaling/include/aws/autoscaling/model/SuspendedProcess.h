@@ -16,6 +16,7 @@
 #include <aws/autoscaling/AutoScaling_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -60,7 +61,7 @@ namespace Model
     /**
      * <p>The name of the suspended process.</p>
      */
-    inline void SetProcessName(Aws::String&& value) { m_processNameHasBeenSet = true; m_processName = value; }
+    inline void SetProcessName(Aws::String&& value) { m_processNameHasBeenSet = true; m_processName = std::move(value); }
 
     /**
      * <p>The name of the suspended process.</p>
@@ -75,7 +76,7 @@ namespace Model
     /**
      * <p>The name of the suspended process.</p>
      */
-    inline SuspendedProcess& WithProcessName(Aws::String&& value) { SetProcessName(value); return *this;}
+    inline SuspendedProcess& WithProcessName(Aws::String&& value) { SetProcessName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the suspended process.</p>
@@ -95,7 +96,7 @@ namespace Model
     /**
      * <p>The reason that the process was suspended.</p>
      */
-    inline void SetSuspensionReason(Aws::String&& value) { m_suspensionReasonHasBeenSet = true; m_suspensionReason = value; }
+    inline void SetSuspensionReason(Aws::String&& value) { m_suspensionReasonHasBeenSet = true; m_suspensionReason = std::move(value); }
 
     /**
      * <p>The reason that the process was suspended.</p>
@@ -110,7 +111,7 @@ namespace Model
     /**
      * <p>The reason that the process was suspended.</p>
      */
-    inline SuspendedProcess& WithSuspensionReason(Aws::String&& value) { SetSuspensionReason(value); return *this;}
+    inline SuspendedProcess& WithSuspensionReason(Aws::String&& value) { SetSuspensionReason(std::move(value)); return *this;}
 
     /**
      * <p>The reason that the process was suspended.</p>

@@ -16,6 +16,7 @@
 #include <aws/lightsail/Lightsail_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -53,7 +54,7 @@ namespace Model
     /**
      * <p>The list of active names returned by the get active names request.</p>
      */
-    inline void SetActiveNames(Aws::Vector<Aws::String>&& value) { m_activeNames = value; }
+    inline void SetActiveNames(Aws::Vector<Aws::String>&& value) { m_activeNames = std::move(value); }
 
     /**
      * <p>The list of active names returned by the get active names request.</p>
@@ -63,7 +64,7 @@ namespace Model
     /**
      * <p>The list of active names returned by the get active names request.</p>
      */
-    inline GetActiveNamesResult& WithActiveNames(Aws::Vector<Aws::String>&& value) { SetActiveNames(value); return *this;}
+    inline GetActiveNamesResult& WithActiveNames(Aws::Vector<Aws::String>&& value) { SetActiveNames(std::move(value)); return *this;}
 
     /**
      * <p>The list of active names returned by the get active names request.</p>
@@ -73,7 +74,7 @@ namespace Model
     /**
      * <p>The list of active names returned by the get active names request.</p>
      */
-    inline GetActiveNamesResult& AddActiveNames(Aws::String&& value) { m_activeNames.push_back(value); return *this; }
+    inline GetActiveNamesResult& AddActiveNames(Aws::String&& value) { m_activeNames.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The list of active names returned by the get active names request.</p>
@@ -96,7 +97,7 @@ namespace Model
      * <p>A token used for advancing to the next page of results from your get active
      * names request.</p>
      */
-    inline void SetNextPageToken(Aws::String&& value) { m_nextPageToken = value; }
+    inline void SetNextPageToken(Aws::String&& value) { m_nextPageToken = std::move(value); }
 
     /**
      * <p>A token used for advancing to the next page of results from your get active
@@ -114,7 +115,7 @@ namespace Model
      * <p>A token used for advancing to the next page of results from your get active
      * names request.</p>
      */
-    inline GetActiveNamesResult& WithNextPageToken(Aws::String&& value) { SetNextPageToken(value); return *this;}
+    inline GetActiveNamesResult& WithNextPageToken(Aws::String&& value) { SetNextPageToken(std::move(value)); return *this;}
 
     /**
      * <p>A token used for advancing to the next page of results from your get active

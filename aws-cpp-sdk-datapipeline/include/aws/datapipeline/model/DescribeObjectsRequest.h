@@ -17,6 +17,7 @@
 #include <aws/datapipeline/DataPipelineRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <utility>
 
 namespace Aws
 {
@@ -52,7 +53,7 @@ namespace Model
     /**
      * <p>The ID of the pipeline that contains the object definitions.</p>
      */
-    inline void SetPipelineId(Aws::String&& value) { m_pipelineIdHasBeenSet = true; m_pipelineId = value; }
+    inline void SetPipelineId(Aws::String&& value) { m_pipelineIdHasBeenSet = true; m_pipelineId = std::move(value); }
 
     /**
      * <p>The ID of the pipeline that contains the object definitions.</p>
@@ -67,7 +68,7 @@ namespace Model
     /**
      * <p>The ID of the pipeline that contains the object definitions.</p>
      */
-    inline DescribeObjectsRequest& WithPipelineId(Aws::String&& value) { SetPipelineId(value); return *this;}
+    inline DescribeObjectsRequest& WithPipelineId(Aws::String&& value) { SetPipelineId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the pipeline that contains the object definitions.</p>
@@ -93,7 +94,7 @@ namespace Model
      * You can pass as many as 25 identifiers in a single call to
      * <code>DescribeObjects</code>.</p>
      */
-    inline void SetObjectIds(Aws::Vector<Aws::String>&& value) { m_objectIdsHasBeenSet = true; m_objectIds = value; }
+    inline void SetObjectIds(Aws::Vector<Aws::String>&& value) { m_objectIdsHasBeenSet = true; m_objectIds = std::move(value); }
 
     /**
      * <p>The IDs of the pipeline objects that contain the definitions to be described.
@@ -107,7 +108,7 @@ namespace Model
      * You can pass as many as 25 identifiers in a single call to
      * <code>DescribeObjects</code>.</p>
      */
-    inline DescribeObjectsRequest& WithObjectIds(Aws::Vector<Aws::String>&& value) { SetObjectIds(value); return *this;}
+    inline DescribeObjectsRequest& WithObjectIds(Aws::Vector<Aws::String>&& value) { SetObjectIds(std::move(value)); return *this;}
 
     /**
      * <p>The IDs of the pipeline objects that contain the definitions to be described.
@@ -121,7 +122,7 @@ namespace Model
      * You can pass as many as 25 identifiers in a single call to
      * <code>DescribeObjects</code>.</p>
      */
-    inline DescribeObjectsRequest& AddObjectIds(Aws::String&& value) { m_objectIdsHasBeenSet = true; m_objectIds.push_back(value); return *this; }
+    inline DescribeObjectsRequest& AddObjectIds(Aws::String&& value) { m_objectIdsHasBeenSet = true; m_objectIds.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The IDs of the pipeline objects that contain the definitions to be described.
@@ -170,7 +171,7 @@ namespace Model
      * <code>DescribeObjects</code> with the marker value from the previous call to
      * retrieve the next set of results.</p>
      */
-    inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = value; }
+    inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = std::move(value); }
 
     /**
      * <p>The starting point for the results to be returned. For the first call, this
@@ -194,7 +195,7 @@ namespace Model
      * <code>DescribeObjects</code> with the marker value from the previous call to
      * retrieve the next set of results.</p>
      */
-    inline DescribeObjectsRequest& WithMarker(Aws::String&& value) { SetMarker(value); return *this;}
+    inline DescribeObjectsRequest& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
 
     /**
      * <p>The starting point for the results to be returned. For the first call, this

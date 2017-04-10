@@ -21,6 +21,7 @@
 #include <aws/ec2/model/IpRange.h>
 #include <aws/ec2/model/Ipv6Range.h>
 #include <aws/ec2/model/PrefixListId.h>
+#include <utility>
 
 namespace Aws
 {
@@ -94,7 +95,7 @@ namespace Model
      * <code>58</code> (ICMPv6), you can optionally specify a port range; if you don't,
      * traffic for all types and codes is allowed when authorizing rules. </p>
      */
-    inline void SetIpProtocol(Aws::String&& value) { m_ipProtocolHasBeenSet = true; m_ipProtocol = value; }
+    inline void SetIpProtocol(Aws::String&& value) { m_ipProtocolHasBeenSet = true; m_ipProtocol = std::move(value); }
 
     /**
      * <p>The IP protocol name (<code>tcp</code>, <code>udp</code>, <code>icmp</code>)
@@ -139,7 +140,7 @@ namespace Model
      * <code>58</code> (ICMPv6), you can optionally specify a port range; if you don't,
      * traffic for all types and codes is allowed when authorizing rules. </p>
      */
-    inline IpPermission& WithIpProtocol(Aws::String&& value) { SetIpProtocol(value); return *this;}
+    inline IpPermission& WithIpProtocol(Aws::String&& value) { SetIpProtocol(std::move(value)); return *this;}
 
     /**
      * <p>The IP protocol name (<code>tcp</code>, <code>udp</code>, <code>icmp</code>)
@@ -208,7 +209,7 @@ namespace Model
     /**
      * <p>One or more security group and AWS account ID pairs.</p>
      */
-    inline void SetUserIdGroupPairs(Aws::Vector<UserIdGroupPair>&& value) { m_userIdGroupPairsHasBeenSet = true; m_userIdGroupPairs = value; }
+    inline void SetUserIdGroupPairs(Aws::Vector<UserIdGroupPair>&& value) { m_userIdGroupPairsHasBeenSet = true; m_userIdGroupPairs = std::move(value); }
 
     /**
      * <p>One or more security group and AWS account ID pairs.</p>
@@ -218,7 +219,7 @@ namespace Model
     /**
      * <p>One or more security group and AWS account ID pairs.</p>
      */
-    inline IpPermission& WithUserIdGroupPairs(Aws::Vector<UserIdGroupPair>&& value) { SetUserIdGroupPairs(value); return *this;}
+    inline IpPermission& WithUserIdGroupPairs(Aws::Vector<UserIdGroupPair>&& value) { SetUserIdGroupPairs(std::move(value)); return *this;}
 
     /**
      * <p>One or more security group and AWS account ID pairs.</p>
@@ -228,7 +229,7 @@ namespace Model
     /**
      * <p>One or more security group and AWS account ID pairs.</p>
      */
-    inline IpPermission& AddUserIdGroupPairs(UserIdGroupPair&& value) { m_userIdGroupPairsHasBeenSet = true; m_userIdGroupPairs.push_back(value); return *this; }
+    inline IpPermission& AddUserIdGroupPairs(UserIdGroupPair&& value) { m_userIdGroupPairsHasBeenSet = true; m_userIdGroupPairs.push_back(std::move(value)); return *this; }
 
     /**
      * <p>One or more IPv4 ranges.</p>
@@ -243,7 +244,7 @@ namespace Model
     /**
      * <p>One or more IPv4 ranges.</p>
      */
-    inline void SetIpRanges(Aws::Vector<IpRange>&& value) { m_ipRangesHasBeenSet = true; m_ipRanges = value; }
+    inline void SetIpRanges(Aws::Vector<IpRange>&& value) { m_ipRangesHasBeenSet = true; m_ipRanges = std::move(value); }
 
     /**
      * <p>One or more IPv4 ranges.</p>
@@ -253,7 +254,7 @@ namespace Model
     /**
      * <p>One or more IPv4 ranges.</p>
      */
-    inline IpPermission& WithIpRanges(Aws::Vector<IpRange>&& value) { SetIpRanges(value); return *this;}
+    inline IpPermission& WithIpRanges(Aws::Vector<IpRange>&& value) { SetIpRanges(std::move(value)); return *this;}
 
     /**
      * <p>One or more IPv4 ranges.</p>
@@ -263,7 +264,7 @@ namespace Model
     /**
      * <p>One or more IPv4 ranges.</p>
      */
-    inline IpPermission& AddIpRanges(IpRange&& value) { m_ipRangesHasBeenSet = true; m_ipRanges.push_back(value); return *this; }
+    inline IpPermission& AddIpRanges(IpRange&& value) { m_ipRangesHasBeenSet = true; m_ipRanges.push_back(std::move(value)); return *this; }
 
     /**
      * <p>[EC2-VPC only] One or more IPv6 ranges.</p>
@@ -278,7 +279,7 @@ namespace Model
     /**
      * <p>[EC2-VPC only] One or more IPv6 ranges.</p>
      */
-    inline void SetIpv6Ranges(Aws::Vector<Ipv6Range>&& value) { m_ipv6RangesHasBeenSet = true; m_ipv6Ranges = value; }
+    inline void SetIpv6Ranges(Aws::Vector<Ipv6Range>&& value) { m_ipv6RangesHasBeenSet = true; m_ipv6Ranges = std::move(value); }
 
     /**
      * <p>[EC2-VPC only] One or more IPv6 ranges.</p>
@@ -288,7 +289,7 @@ namespace Model
     /**
      * <p>[EC2-VPC only] One or more IPv6 ranges.</p>
      */
-    inline IpPermission& WithIpv6Ranges(Aws::Vector<Ipv6Range>&& value) { SetIpv6Ranges(value); return *this;}
+    inline IpPermission& WithIpv6Ranges(Aws::Vector<Ipv6Range>&& value) { SetIpv6Ranges(std::move(value)); return *this;}
 
     /**
      * <p>[EC2-VPC only] One or more IPv6 ranges.</p>
@@ -298,7 +299,7 @@ namespace Model
     /**
      * <p>[EC2-VPC only] One or more IPv6 ranges.</p>
      */
-    inline IpPermission& AddIpv6Ranges(Ipv6Range&& value) { m_ipv6RangesHasBeenSet = true; m_ipv6Ranges.push_back(value); return *this; }
+    inline IpPermission& AddIpv6Ranges(Ipv6Range&& value) { m_ipv6RangesHasBeenSet = true; m_ipv6Ranges.push_back(std::move(value)); return *this; }
 
     /**
      * <p>(Valid for <a>AuthorizeSecurityGroupEgress</a>,
@@ -328,7 +329,7 @@ namespace Model
      * want to access through a VPC endpoint from instances associated with the
      * security group.</p>
      */
-    inline void SetPrefixListIds(Aws::Vector<PrefixListId>&& value) { m_prefixListIdsHasBeenSet = true; m_prefixListIds = value; }
+    inline void SetPrefixListIds(Aws::Vector<PrefixListId>&& value) { m_prefixListIdsHasBeenSet = true; m_prefixListIds = std::move(value); }
 
     /**
      * <p>(Valid for <a>AuthorizeSecurityGroupEgress</a>,
@@ -348,7 +349,7 @@ namespace Model
      * want to access through a VPC endpoint from instances associated with the
      * security group.</p>
      */
-    inline IpPermission& WithPrefixListIds(Aws::Vector<PrefixListId>&& value) { SetPrefixListIds(value); return *this;}
+    inline IpPermission& WithPrefixListIds(Aws::Vector<PrefixListId>&& value) { SetPrefixListIds(std::move(value)); return *this;}
 
     /**
      * <p>(Valid for <a>AuthorizeSecurityGroupEgress</a>,
@@ -368,7 +369,7 @@ namespace Model
      * want to access through a VPC endpoint from instances associated with the
      * security group.</p>
      */
-    inline IpPermission& AddPrefixListIds(PrefixListId&& value) { m_prefixListIdsHasBeenSet = true; m_prefixListIds.push_back(value); return *this; }
+    inline IpPermission& AddPrefixListIds(PrefixListId&& value) { m_prefixListIdsHasBeenSet = true; m_prefixListIds.push_back(std::move(value)); return *this; }
 
   private:
     Aws::String m_ipProtocol;

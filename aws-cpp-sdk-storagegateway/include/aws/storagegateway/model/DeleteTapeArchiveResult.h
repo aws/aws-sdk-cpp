@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/storagegateway/StorageGateway_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -60,7 +61,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the virtual tape that was deleted from the
      * virtual tape shelf (VTS).</p>
      */
-    inline void SetTapeARN(Aws::String&& value) { m_tapeARN = value; }
+    inline void SetTapeARN(Aws::String&& value) { m_tapeARN = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the virtual tape that was deleted from the
@@ -78,7 +79,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the virtual tape that was deleted from the
      * virtual tape shelf (VTS).</p>
      */
-    inline DeleteTapeArchiveResult& WithTapeARN(Aws::String&& value) { SetTapeARN(value); return *this;}
+    inline DeleteTapeArchiveResult& WithTapeARN(Aws::String&& value) { SetTapeARN(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the virtual tape that was deleted from the

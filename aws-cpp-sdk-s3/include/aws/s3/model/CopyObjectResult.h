@@ -16,6 +16,7 @@
 #include <aws/s3/S3_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
+#include <utility>
 
 namespace Aws
 {
@@ -47,7 +48,7 @@ namespace Model
     inline void SetETag(const Aws::String& value) { m_eTag = value; }
 
     
-    inline void SetETag(Aws::String&& value) { m_eTag = value; }
+    inline void SetETag(Aws::String&& value) { m_eTag = std::move(value); }
 
     
     inline void SetETag(const char* value) { m_eTag.assign(value); }
@@ -56,7 +57,7 @@ namespace Model
     inline CopyObjectResult& WithETag(const Aws::String& value) { SetETag(value); return *this;}
 
     
-    inline CopyObjectResult& WithETag(Aws::String&& value) { SetETag(value); return *this;}
+    inline CopyObjectResult& WithETag(Aws::String&& value) { SetETag(std::move(value)); return *this;}
 
     
     inline CopyObjectResult& WithETag(const char* value) { SetETag(value); return *this;}
@@ -68,13 +69,13 @@ namespace Model
     inline void SetLastModified(const Aws::Utils::DateTime& value) { m_lastModified = value; }
 
     
-    inline void SetLastModified(Aws::Utils::DateTime&& value) { m_lastModified = value; }
+    inline void SetLastModified(Aws::Utils::DateTime&& value) { m_lastModified = std::move(value); }
 
     
     inline CopyObjectResult& WithLastModified(const Aws::Utils::DateTime& value) { SetLastModified(value); return *this;}
 
     
-    inline CopyObjectResult& WithLastModified(Aws::Utils::DateTime&& value) { SetLastModified(value); return *this;}
+    inline CopyObjectResult& WithLastModified(Aws::Utils::DateTime&& value) { SetLastModified(std::move(value)); return *this;}
 
   private:
     Aws::String m_eTag;

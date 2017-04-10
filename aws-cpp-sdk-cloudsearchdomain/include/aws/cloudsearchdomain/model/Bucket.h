@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/cloudsearchdomain/CloudSearchDomain_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -56,7 +57,7 @@ namespace Model
     /**
      * <p>The facet value being counted.</p>
      */
-    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = value; }
+    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
 
     /**
      * <p>The facet value being counted.</p>
@@ -71,7 +72,7 @@ namespace Model
     /**
      * <p>The facet value being counted.</p>
      */
-    inline Bucket& WithValue(Aws::String&& value) { SetValue(value); return *this;}
+    inline Bucket& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
 
     /**
      * <p>The facet value being counted.</p>

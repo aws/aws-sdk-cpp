@@ -21,6 +21,7 @@
 #include <aws/organizations/model/ActionType.h>
 #include <aws/organizations/model/HandshakeParty.h>
 #include <aws/organizations/model/HandshakeResource.h>
+#include <utility>
 
 namespace Aws
 {
@@ -75,7 +76,7 @@ namespace Model
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> for handshake ID string
      * requires "h-" followed by from 8 to 32 lower-case letters or digits.</p>
      */
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = value; }
+    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
 
     /**
      * <p>The unique identifier (ID) of a handshake. The originating account creates
@@ -99,7 +100,7 @@ namespace Model
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> for handshake ID string
      * requires "h-" followed by from 8 to 32 lower-case letters or digits.</p>
      */
-    inline Handshake& WithId(Aws::String&& value) { SetId(value); return *this;}
+    inline Handshake& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
 
     /**
      * <p>The unique identifier (ID) of a handshake. The originating account creates
@@ -134,7 +135,7 @@ namespace Model
      * Formats Supported by Organizations</a> in the <i>AWS Organizations User
      * Guide</i>.</p>
      */
-    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = value; }
+    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of a handshake.</p> <p>For more information
@@ -161,7 +162,7 @@ namespace Model
      * Formats Supported by Organizations</a> in the <i>AWS Organizations User
      * Guide</i>.</p>
      */
-    inline Handshake& WithArn(Aws::String&& value) { SetArn(value); return *this;}
+    inline Handshake& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of a handshake.</p> <p>For more information
@@ -188,7 +189,7 @@ namespace Model
      * <p>Information about the two accounts that are participating in the
      * handshake.</p>
      */
-    inline void SetParties(Aws::Vector<HandshakeParty>&& value) { m_partiesHasBeenSet = true; m_parties = value; }
+    inline void SetParties(Aws::Vector<HandshakeParty>&& value) { m_partiesHasBeenSet = true; m_parties = std::move(value); }
 
     /**
      * <p>Information about the two accounts that are participating in the
@@ -200,7 +201,7 @@ namespace Model
      * <p>Information about the two accounts that are participating in the
      * handshake.</p>
      */
-    inline Handshake& WithParties(Aws::Vector<HandshakeParty>&& value) { SetParties(value); return *this;}
+    inline Handshake& WithParties(Aws::Vector<HandshakeParty>&& value) { SetParties(std::move(value)); return *this;}
 
     /**
      * <p>Information about the two accounts that are participating in the
@@ -212,7 +213,7 @@ namespace Model
      * <p>Information about the two accounts that are participating in the
      * handshake.</p>
      */
-    inline Handshake& AddParties(HandshakeParty&& value) { m_partiesHasBeenSet = true; m_parties.push_back(value); return *this; }
+    inline Handshake& AddParties(HandshakeParty&& value) { m_partiesHasBeenSet = true; m_parties.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The current state of the handshake. Use the state to trace the flow of the
@@ -272,7 +273,7 @@ namespace Model
      * not receive a response of any kind from the recipient before the expiration time
      * (15 days).</p> </li> </ul>
      */
-    inline void SetState(HandshakeState&& value) { m_stateHasBeenSet = true; m_state = value; }
+    inline void SetState(HandshakeState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
 
     /**
      * <p>The current state of the handshake. Use the state to trace the flow of the
@@ -312,7 +313,7 @@ namespace Model
      * not receive a response of any kind from the recipient before the expiration time
      * (15 days).</p> </li> </ul>
      */
-    inline Handshake& WithState(HandshakeState&& value) { SetState(value); return *this;}
+    inline Handshake& WithState(HandshakeState&& value) { SetState(std::move(value)); return *this;}
 
     /**
      * <p>The date and time that the handshake request was made.</p>
@@ -327,7 +328,7 @@ namespace Model
     /**
      * <p>The date and time that the handshake request was made.</p>
      */
-    inline void SetRequestedTimestamp(Aws::Utils::DateTime&& value) { m_requestedTimestampHasBeenSet = true; m_requestedTimestamp = value; }
+    inline void SetRequestedTimestamp(Aws::Utils::DateTime&& value) { m_requestedTimestampHasBeenSet = true; m_requestedTimestamp = std::move(value); }
 
     /**
      * <p>The date and time that the handshake request was made.</p>
@@ -337,7 +338,7 @@ namespace Model
     /**
      * <p>The date and time that the handshake request was made.</p>
      */
-    inline Handshake& WithRequestedTimestamp(Aws::Utils::DateTime&& value) { SetRequestedTimestamp(value); return *this;}
+    inline Handshake& WithRequestedTimestamp(Aws::Utils::DateTime&& value) { SetRequestedTimestamp(std::move(value)); return *this;}
 
     /**
      * <p>The date and time that the handshake expires. If the recipient of the
@@ -358,7 +359,7 @@ namespace Model
      * handshake request fails to respond before the specified date and time, the
      * handshake becomes inactive and is no longer valid.</p>
      */
-    inline void SetExpirationTimestamp(Aws::Utils::DateTime&& value) { m_expirationTimestampHasBeenSet = true; m_expirationTimestamp = value; }
+    inline void SetExpirationTimestamp(Aws::Utils::DateTime&& value) { m_expirationTimestampHasBeenSet = true; m_expirationTimestamp = std::move(value); }
 
     /**
      * <p>The date and time that the handshake expires. If the recipient of the
@@ -372,7 +373,7 @@ namespace Model
      * handshake request fails to respond before the specified date and time, the
      * handshake becomes inactive and is no longer valid.</p>
      */
-    inline Handshake& WithExpirationTimestamp(Aws::Utils::DateTime&& value) { SetExpirationTimestamp(value); return *this;}
+    inline Handshake& WithExpirationTimestamp(Aws::Utils::DateTime&& value) { SetExpirationTimestamp(std::move(value)); return *this;}
 
     /**
      * <p>The type of handshake, indicating what action occurs when the recipient
@@ -390,7 +391,7 @@ namespace Model
      * <p>The type of handshake, indicating what action occurs when the recipient
      * accepts the handshake.</p>
      */
-    inline void SetAction(ActionType&& value) { m_actionHasBeenSet = true; m_action = value; }
+    inline void SetAction(ActionType&& value) { m_actionHasBeenSet = true; m_action = std::move(value); }
 
     /**
      * <p>The type of handshake, indicating what action occurs when the recipient
@@ -402,7 +403,7 @@ namespace Model
      * <p>The type of handshake, indicating what action occurs when the recipient
      * accepts the handshake.</p>
      */
-    inline Handshake& WithAction(ActionType&& value) { SetAction(value); return *this;}
+    inline Handshake& WithAction(ActionType&& value) { SetAction(std::move(value)); return *this;}
 
     /**
      * <p>Additional information that is needed to process the handshake.</p>
@@ -417,7 +418,7 @@ namespace Model
     /**
      * <p>Additional information that is needed to process the handshake.</p>
      */
-    inline void SetResources(Aws::Vector<HandshakeResource>&& value) { m_resourcesHasBeenSet = true; m_resources = value; }
+    inline void SetResources(Aws::Vector<HandshakeResource>&& value) { m_resourcesHasBeenSet = true; m_resources = std::move(value); }
 
     /**
      * <p>Additional information that is needed to process the handshake.</p>
@@ -427,7 +428,7 @@ namespace Model
     /**
      * <p>Additional information that is needed to process the handshake.</p>
      */
-    inline Handshake& WithResources(Aws::Vector<HandshakeResource>&& value) { SetResources(value); return *this;}
+    inline Handshake& WithResources(Aws::Vector<HandshakeResource>&& value) { SetResources(std::move(value)); return *this;}
 
     /**
      * <p>Additional information that is needed to process the handshake.</p>
@@ -437,7 +438,7 @@ namespace Model
     /**
      * <p>Additional information that is needed to process the handshake.</p>
      */
-    inline Handshake& AddResources(HandshakeResource&& value) { m_resourcesHasBeenSet = true; m_resources.push_back(value); return *this; }
+    inline Handshake& AddResources(HandshakeResource&& value) { m_resourcesHasBeenSet = true; m_resources.push_back(std::move(value)); return *this; }
 
   private:
     Aws::String m_id;

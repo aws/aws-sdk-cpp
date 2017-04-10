@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/kinesisanalytics/KinesisAnalytics_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -58,7 +59,7 @@ namespace Model
     /**
      * <p>ARN of the input Amazon Kinesis stream to read.</p>
      */
-    inline void SetResourceARN(Aws::String&& value) { m_resourceARNHasBeenSet = true; m_resourceARN = value; }
+    inline void SetResourceARN(Aws::String&& value) { m_resourceARNHasBeenSet = true; m_resourceARN = std::move(value); }
 
     /**
      * <p>ARN of the input Amazon Kinesis stream to read.</p>
@@ -73,7 +74,7 @@ namespace Model
     /**
      * <p>ARN of the input Amazon Kinesis stream to read.</p>
      */
-    inline KinesisStreamsInput& WithResourceARN(Aws::String&& value) { SetResourceARN(value); return *this;}
+    inline KinesisStreamsInput& WithResourceARN(Aws::String&& value) { SetResourceARN(std::move(value)); return *this;}
 
     /**
      * <p>ARN of the input Amazon Kinesis stream to read.</p>
@@ -99,7 +100,7 @@ namespace Model
      * stream on your behalf. You need to grant the necessary permissions to this
      * role.</p>
      */
-    inline void SetRoleARN(Aws::String&& value) { m_roleARNHasBeenSet = true; m_roleARN = value; }
+    inline void SetRoleARN(Aws::String&& value) { m_roleARNHasBeenSet = true; m_roleARN = std::move(value); }
 
     /**
      * <p>ARN of the IAM role that Amazon Kinesis Analytics can assume to access the
@@ -120,7 +121,7 @@ namespace Model
      * stream on your behalf. You need to grant the necessary permissions to this
      * role.</p>
      */
-    inline KinesisStreamsInput& WithRoleARN(Aws::String&& value) { SetRoleARN(value); return *this;}
+    inline KinesisStreamsInput& WithRoleARN(Aws::String&& value) { SetRoleARN(std::move(value)); return *this;}
 
     /**
      * <p>ARN of the IAM role that Amazon Kinesis Analytics can assume to access the

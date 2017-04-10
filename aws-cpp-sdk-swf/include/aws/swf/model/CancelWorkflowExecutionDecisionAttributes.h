@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/swf/SWF_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -68,7 +69,7 @@ namespace Model
     /**
      * <p><i>Optional.</i> details of the cancellation.</p>
      */
-    inline void SetDetails(Aws::String&& value) { m_detailsHasBeenSet = true; m_details = value; }
+    inline void SetDetails(Aws::String&& value) { m_detailsHasBeenSet = true; m_details = std::move(value); }
 
     /**
      * <p><i>Optional.</i> details of the cancellation.</p>
@@ -83,7 +84,7 @@ namespace Model
     /**
      * <p><i>Optional.</i> details of the cancellation.</p>
      */
-    inline CancelWorkflowExecutionDecisionAttributes& WithDetails(Aws::String&& value) { SetDetails(value); return *this;}
+    inline CancelWorkflowExecutionDecisionAttributes& WithDetails(Aws::String&& value) { SetDetails(std::move(value)); return *this;}
 
     /**
      * <p><i>Optional.</i> details of the cancellation.</p>

@@ -16,6 +16,7 @@
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/ec2/EC2Request.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -78,7 +79,7 @@ namespace Model
     /**
      * <p>The ID of the conversion task.</p>
      */
-    inline void SetConversionTaskId(Aws::String&& value) { m_conversionTaskIdHasBeenSet = true; m_conversionTaskId = value; }
+    inline void SetConversionTaskId(Aws::String&& value) { m_conversionTaskIdHasBeenSet = true; m_conversionTaskId = std::move(value); }
 
     /**
      * <p>The ID of the conversion task.</p>
@@ -93,7 +94,7 @@ namespace Model
     /**
      * <p>The ID of the conversion task.</p>
      */
-    inline CancelConversionTaskRequest& WithConversionTaskId(Aws::String&& value) { SetConversionTaskId(value); return *this;}
+    inline CancelConversionTaskRequest& WithConversionTaskId(Aws::String&& value) { SetConversionTaskId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the conversion task.</p>
@@ -113,7 +114,7 @@ namespace Model
     /**
      * <p>The reason for canceling the conversion task.</p>
      */
-    inline void SetReasonMessage(Aws::String&& value) { m_reasonMessageHasBeenSet = true; m_reasonMessage = value; }
+    inline void SetReasonMessage(Aws::String&& value) { m_reasonMessageHasBeenSet = true; m_reasonMessage = std::move(value); }
 
     /**
      * <p>The reason for canceling the conversion task.</p>
@@ -128,7 +129,7 @@ namespace Model
     /**
      * <p>The reason for canceling the conversion task.</p>
      */
-    inline CancelConversionTaskRequest& WithReasonMessage(Aws::String&& value) { SetReasonMessage(value); return *this;}
+    inline CancelConversionTaskRequest& WithReasonMessage(Aws::String&& value) { SetReasonMessage(std::move(value)); return *this;}
 
     /**
      * <p>The reason for canceling the conversion task.</p>

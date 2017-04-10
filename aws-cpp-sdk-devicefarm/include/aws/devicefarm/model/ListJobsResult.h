@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/devicefarm/model/Job.h>
+#include <utility>
 
 namespace Aws
 {
@@ -59,7 +60,7 @@ namespace Model
     /**
      * <p>Information about the jobs.</p>
      */
-    inline void SetJobs(Aws::Vector<Job>&& value) { m_jobs = value; }
+    inline void SetJobs(Aws::Vector<Job>&& value) { m_jobs = std::move(value); }
 
     /**
      * <p>Information about the jobs.</p>
@@ -69,7 +70,7 @@ namespace Model
     /**
      * <p>Information about the jobs.</p>
      */
-    inline ListJobsResult& WithJobs(Aws::Vector<Job>&& value) { SetJobs(value); return *this;}
+    inline ListJobsResult& WithJobs(Aws::Vector<Job>&& value) { SetJobs(std::move(value)); return *this;}
 
     /**
      * <p>Information about the jobs.</p>
@@ -79,7 +80,7 @@ namespace Model
     /**
      * <p>Information about the jobs.</p>
      */
-    inline ListJobsResult& AddJobs(Job&& value) { m_jobs.push_back(value); return *this; }
+    inline ListJobsResult& AddJobs(Job&& value) { m_jobs.push_back(std::move(value)); return *this; }
 
     /**
      * <p>If the number of items that are returned is significantly large, this is an
@@ -100,7 +101,7 @@ namespace Model
      * identifier that is also returned, which can be used in a subsequent call to this
      * operation to return the next set of items in the list.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
      * <p>If the number of items that are returned is significantly large, this is an
@@ -121,7 +122,7 @@ namespace Model
      * identifier that is also returned, which can be used in a subsequent call to this
      * operation to return the next set of items in the list.</p>
      */
-    inline ListJobsResult& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline ListJobsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>If the number of items that are returned is significantly large, this is an

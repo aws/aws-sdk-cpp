@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/codecommit/CodeCommit_EXPORTS.h>
 #include <aws/codecommit/model/Commit.h>
+#include <utility>
 
 namespace Aws
 {
@@ -61,7 +62,7 @@ namespace Model
      * <p>A commit data type object that contains information about the specified
      * commit.</p>
      */
-    inline void SetCommit(Commit&& value) { m_commit = value; }
+    inline void SetCommit(Commit&& value) { m_commit = std::move(value); }
 
     /**
      * <p>A commit data type object that contains information about the specified
@@ -73,7 +74,7 @@ namespace Model
      * <p>A commit data type object that contains information about the specified
      * commit.</p>
      */
-    inline GetCommitResult& WithCommit(Commit&& value) { SetCommit(value); return *this;}
+    inline GetCommitResult& WithCommit(Commit&& value) { SetCommit(std::move(value)); return *this;}
 
   private:
     Commit m_commit;

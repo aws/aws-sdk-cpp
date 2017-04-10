@@ -17,6 +17,7 @@
 #include <aws/glacier/GlacierRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <utility>
 
 namespace Aws
 {
@@ -63,7 +64,7 @@ namespace Model
      * associated with the credentials used to sign the request. If you use an account
      * ID, do not include any hyphens ('-') in the ID.</p>
      */
-    inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
+    inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
 
     /**
      * <p>The <code>AccountId</code> value is the AWS account ID of the account that
@@ -90,7 +91,7 @@ namespace Model
      * associated with the credentials used to sign the request. If you use an account
      * ID, do not include any hyphens ('-') in the ID.</p>
      */
-    inline AddTagsToVaultRequest& WithAccountId(Aws::String&& value) { SetAccountId(value); return *this;}
+    inline AddTagsToVaultRequest& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
 
     /**
      * <p>The <code>AccountId</code> value is the AWS account ID of the account that
@@ -114,7 +115,7 @@ namespace Model
     /**
      * <p>The name of the vault.</p>
      */
-    inline void SetVaultName(Aws::String&& value) { m_vaultNameHasBeenSet = true; m_vaultName = value; }
+    inline void SetVaultName(Aws::String&& value) { m_vaultNameHasBeenSet = true; m_vaultName = std::move(value); }
 
     /**
      * <p>The name of the vault.</p>
@@ -129,7 +130,7 @@ namespace Model
     /**
      * <p>The name of the vault.</p>
      */
-    inline AddTagsToVaultRequest& WithVaultName(Aws::String&& value) { SetVaultName(value); return *this;}
+    inline AddTagsToVaultRequest& WithVaultName(Aws::String&& value) { SetVaultName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the vault.</p>
@@ -152,7 +153,7 @@ namespace Model
      * <p>The tags to add to the vault. Each tag is composed of a key and a value. The
      * value can be an empty string.</p>
      */
-    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = value; }
+    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
      * <p>The tags to add to the vault. Each tag is composed of a key and a value. The
@@ -164,49 +165,49 @@ namespace Model
      * <p>The tags to add to the vault. Each tag is composed of a key and a value. The
      * value can be an empty string.</p>
      */
-    inline AddTagsToVaultRequest& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(value); return *this;}
+    inline AddTagsToVaultRequest& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
      * <p>The tags to add to the vault. Each tag is composed of a key and a value. The
      * value can be an empty string.</p>
      */
-    inline AddTagsToVaultRequest& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags[key] = value; return *this; }
+    inline AddTagsToVaultRequest& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
     /**
      * <p>The tags to add to the vault. Each tag is composed of a key and a value. The
      * value can be an empty string.</p>
      */
-    inline AddTagsToVaultRequest& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags[key] = value; return *this; }
+    inline AddTagsToVaultRequest& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>The tags to add to the vault. Each tag is composed of a key and a value. The
      * value can be an empty string.</p>
      */
-    inline AddTagsToVaultRequest& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags[key] = value; return *this; }
+    inline AddTagsToVaultRequest& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>The tags to add to the vault. Each tag is composed of a key and a value. The
      * value can be an empty string.</p>
      */
-    inline AddTagsToVaultRequest& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags[key] = value; return *this; }
+    inline AddTagsToVaultRequest& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
      * <p>The tags to add to the vault. Each tag is composed of a key and a value. The
      * value can be an empty string.</p>
      */
-    inline AddTagsToVaultRequest& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags[key] = value; return *this; }
+    inline AddTagsToVaultRequest& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>The tags to add to the vault. Each tag is composed of a key and a value. The
      * value can be an empty string.</p>
      */
-    inline AddTagsToVaultRequest& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags[key] = value; return *this; }
+    inline AddTagsToVaultRequest& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>The tags to add to the vault. Each tag is composed of a key and a value. The
      * value can be an empty string.</p>
      */
-    inline AddTagsToVaultRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags[key] = value; return *this; }
+    inline AddTagsToVaultRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
   private:
     Aws::String m_accountId;

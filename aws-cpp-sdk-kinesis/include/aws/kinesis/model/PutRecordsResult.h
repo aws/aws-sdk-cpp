@@ -16,6 +16,7 @@
 #include <aws/kinesis/Kinesis_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/kinesis/model/PutRecordsResultEntry.h>
+#include <utility>
 
 namespace Aws
 {
@@ -88,7 +89,7 @@ namespace Model
      * in the result. A record that fails to be added to a stream includes
      * <code>ErrorCode</code> and <code>ErrorMessage</code> in the result.</p>
      */
-    inline void SetRecords(Aws::Vector<PutRecordsResultEntry>&& value) { m_records = value; }
+    inline void SetRecords(Aws::Vector<PutRecordsResultEntry>&& value) { m_records = std::move(value); }
 
     /**
      * <p>An array of successfully and unsuccessfully processed record results,
@@ -106,7 +107,7 @@ namespace Model
      * in the result. A record that fails to be added to a stream includes
      * <code>ErrorCode</code> and <code>ErrorMessage</code> in the result.</p>
      */
-    inline PutRecordsResult& WithRecords(Aws::Vector<PutRecordsResultEntry>&& value) { SetRecords(value); return *this;}
+    inline PutRecordsResult& WithRecords(Aws::Vector<PutRecordsResultEntry>&& value) { SetRecords(std::move(value)); return *this;}
 
     /**
      * <p>An array of successfully and unsuccessfully processed record results,
@@ -124,7 +125,7 @@ namespace Model
      * in the result. A record that fails to be added to a stream includes
      * <code>ErrorCode</code> and <code>ErrorMessage</code> in the result.</p>
      */
-    inline PutRecordsResult& AddRecords(PutRecordsResultEntry&& value) { m_records.push_back(value); return *this; }
+    inline PutRecordsResult& AddRecords(PutRecordsResultEntry&& value) { m_records.push_back(std::move(value)); return *this; }
 
   private:
     int m_failedRecordCount;

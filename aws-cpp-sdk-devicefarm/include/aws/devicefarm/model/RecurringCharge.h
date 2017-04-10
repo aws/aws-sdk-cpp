@@ -16,6 +16,7 @@
 #include <aws/devicefarm/DeviceFarm_EXPORTS.h>
 #include <aws/devicefarm/model/MonetaryAmount.h>
 #include <aws/devicefarm/model/RecurringChargeFrequency.h>
+#include <utility>
 
 namespace Aws
 {
@@ -58,7 +59,7 @@ namespace Model
     /**
      * <p>The cost of the recurring charge.</p>
      */
-    inline void SetCost(MonetaryAmount&& value) { m_costHasBeenSet = true; m_cost = value; }
+    inline void SetCost(MonetaryAmount&& value) { m_costHasBeenSet = true; m_cost = std::move(value); }
 
     /**
      * <p>The cost of the recurring charge.</p>
@@ -68,7 +69,7 @@ namespace Model
     /**
      * <p>The cost of the recurring charge.</p>
      */
-    inline RecurringCharge& WithCost(MonetaryAmount&& value) { SetCost(value); return *this;}
+    inline RecurringCharge& WithCost(MonetaryAmount&& value) { SetCost(std::move(value)); return *this;}
 
     /**
      * <p>The frequency in which charges will recur.</p>
@@ -83,7 +84,7 @@ namespace Model
     /**
      * <p>The frequency in which charges will recur.</p>
      */
-    inline void SetFrequency(RecurringChargeFrequency&& value) { m_frequencyHasBeenSet = true; m_frequency = value; }
+    inline void SetFrequency(RecurringChargeFrequency&& value) { m_frequencyHasBeenSet = true; m_frequency = std::move(value); }
 
     /**
      * <p>The frequency in which charges will recur.</p>
@@ -93,7 +94,7 @@ namespace Model
     /**
      * <p>The frequency in which charges will recur.</p>
      */
-    inline RecurringCharge& WithFrequency(RecurringChargeFrequency&& value) { SetFrequency(value); return *this;}
+    inline RecurringCharge& WithFrequency(RecurringChargeFrequency&& value) { SetFrequency(std::move(value)); return *this;}
 
   private:
     MonetaryAmount m_cost;

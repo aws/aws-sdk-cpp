@@ -16,6 +16,7 @@
 #include <aws/apigateway/APIGateway_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
+#include <utility>
 
 namespace Aws
 {
@@ -64,7 +65,7 @@ namespace Model
     /**
      * <p>The version identifier of the API documentation snapshot.</p>
      */
-    inline void SetVersion(Aws::String&& value) { m_versionHasBeenSet = true; m_version = value; }
+    inline void SetVersion(Aws::String&& value) { m_versionHasBeenSet = true; m_version = std::move(value); }
 
     /**
      * <p>The version identifier of the API documentation snapshot.</p>
@@ -79,7 +80,7 @@ namespace Model
     /**
      * <p>The version identifier of the API documentation snapshot.</p>
      */
-    inline DocumentationVersion& WithVersion(Aws::String&& value) { SetVersion(value); return *this;}
+    inline DocumentationVersion& WithVersion(Aws::String&& value) { SetVersion(std::move(value)); return *this;}
 
     /**
      * <p>The version identifier of the API documentation snapshot.</p>
@@ -99,7 +100,7 @@ namespace Model
     /**
      * <p>The date when the API documentation snapshot is created.</p>
      */
-    inline void SetCreatedDate(Aws::Utils::DateTime&& value) { m_createdDateHasBeenSet = true; m_createdDate = value; }
+    inline void SetCreatedDate(Aws::Utils::DateTime&& value) { m_createdDateHasBeenSet = true; m_createdDate = std::move(value); }
 
     /**
      * <p>The date when the API documentation snapshot is created.</p>
@@ -109,7 +110,7 @@ namespace Model
     /**
      * <p>The date when the API documentation snapshot is created.</p>
      */
-    inline DocumentationVersion& WithCreatedDate(Aws::Utils::DateTime&& value) { SetCreatedDate(value); return *this;}
+    inline DocumentationVersion& WithCreatedDate(Aws::Utils::DateTime&& value) { SetCreatedDate(std::move(value)); return *this;}
 
     /**
      * <p>The description of the API documentation snapshot.</p>
@@ -124,7 +125,7 @@ namespace Model
     /**
      * <p>The description of the API documentation snapshot.</p>
      */
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = value; }
+    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
      * <p>The description of the API documentation snapshot.</p>
@@ -139,7 +140,7 @@ namespace Model
     /**
      * <p>The description of the API documentation snapshot.</p>
      */
-    inline DocumentationVersion& WithDescription(Aws::String&& value) { SetDescription(value); return *this;}
+    inline DocumentationVersion& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
      * <p>The description of the API documentation snapshot.</p>

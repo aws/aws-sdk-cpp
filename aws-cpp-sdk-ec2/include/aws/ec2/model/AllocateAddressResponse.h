@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/DomainType.h>
 #include <aws/ec2/model/ResponseMetadata.h>
+#include <utility>
 
 namespace Aws
 {
@@ -59,7 +60,7 @@ namespace Model
     /**
      * <p>The Elastic IP address.</p>
      */
-    inline void SetPublicIp(Aws::String&& value) { m_publicIp = value; }
+    inline void SetPublicIp(Aws::String&& value) { m_publicIp = std::move(value); }
 
     /**
      * <p>The Elastic IP address.</p>
@@ -74,7 +75,7 @@ namespace Model
     /**
      * <p>The Elastic IP address.</p>
      */
-    inline AllocateAddressResponse& WithPublicIp(Aws::String&& value) { SetPublicIp(value); return *this;}
+    inline AllocateAddressResponse& WithPublicIp(Aws::String&& value) { SetPublicIp(std::move(value)); return *this;}
 
     /**
      * <p>The Elastic IP address.</p>
@@ -100,7 +101,7 @@ namespace Model
      * EC2-Classic (<code>standard</code>) or instances in a VPC
      * (<code>vpc</code>).</p>
      */
-    inline void SetDomain(DomainType&& value) { m_domain = value; }
+    inline void SetDomain(DomainType&& value) { m_domain = std::move(value); }
 
     /**
      * <p>Indicates whether this Elastic IP address is for use with instances in
@@ -114,7 +115,7 @@ namespace Model
      * EC2-Classic (<code>standard</code>) or instances in a VPC
      * (<code>vpc</code>).</p>
      */
-    inline AllocateAddressResponse& WithDomain(DomainType&& value) { SetDomain(value); return *this;}
+    inline AllocateAddressResponse& WithDomain(DomainType&& value) { SetDomain(std::move(value)); return *this;}
 
     /**
      * <p>[EC2-VPC] The ID that AWS assigns to represent the allocation of the Elastic
@@ -132,7 +133,7 @@ namespace Model
      * <p>[EC2-VPC] The ID that AWS assigns to represent the allocation of the Elastic
      * IP address for use with instances in a VPC.</p>
      */
-    inline void SetAllocationId(Aws::String&& value) { m_allocationId = value; }
+    inline void SetAllocationId(Aws::String&& value) { m_allocationId = std::move(value); }
 
     /**
      * <p>[EC2-VPC] The ID that AWS assigns to represent the allocation of the Elastic
@@ -150,7 +151,7 @@ namespace Model
      * <p>[EC2-VPC] The ID that AWS assigns to represent the allocation of the Elastic
      * IP address for use with instances in a VPC.</p>
      */
-    inline AllocateAddressResponse& WithAllocationId(Aws::String&& value) { SetAllocationId(value); return *this;}
+    inline AllocateAddressResponse& WithAllocationId(Aws::String&& value) { SetAllocationId(std::move(value)); return *this;}
 
     /**
      * <p>[EC2-VPC] The ID that AWS assigns to represent the allocation of the Elastic
@@ -165,13 +166,13 @@ namespace Model
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
 
     
     inline AllocateAddressResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
 
     
-    inline AllocateAddressResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
+    inline AllocateAddressResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
     Aws::String m_publicIp;

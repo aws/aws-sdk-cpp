@@ -16,6 +16,7 @@
 #include <aws/storagegateway/StorageGateway_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/storagegateway/model/DeviceiSCSIAttributes.h>
+#include <utility>
 
 namespace Aws
 {
@@ -61,7 +62,7 @@ namespace Model
      * <p>Specifies the unique Amazon Resource Name (ARN) of the device (tape drive or
      * media changer).</p>
      */
-    inline void SetVTLDeviceARN(Aws::String&& value) { m_vTLDeviceARNHasBeenSet = true; m_vTLDeviceARN = value; }
+    inline void SetVTLDeviceARN(Aws::String&& value) { m_vTLDeviceARNHasBeenSet = true; m_vTLDeviceARN = std::move(value); }
 
     /**
      * <p>Specifies the unique Amazon Resource Name (ARN) of the device (tape drive or
@@ -79,7 +80,7 @@ namespace Model
      * <p>Specifies the unique Amazon Resource Name (ARN) of the device (tape drive or
      * media changer).</p>
      */
-    inline VTLDevice& WithVTLDeviceARN(Aws::String&& value) { SetVTLDeviceARN(value); return *this;}
+    inline VTLDevice& WithVTLDeviceARN(Aws::String&& value) { SetVTLDeviceARN(std::move(value)); return *this;}
 
     /**
      * <p>Specifies the unique Amazon Resource Name (ARN) of the device (tape drive or
@@ -94,7 +95,7 @@ namespace Model
     inline void SetVTLDeviceType(const Aws::String& value) { m_vTLDeviceTypeHasBeenSet = true; m_vTLDeviceType = value; }
 
     
-    inline void SetVTLDeviceType(Aws::String&& value) { m_vTLDeviceTypeHasBeenSet = true; m_vTLDeviceType = value; }
+    inline void SetVTLDeviceType(Aws::String&& value) { m_vTLDeviceTypeHasBeenSet = true; m_vTLDeviceType = std::move(value); }
 
     
     inline void SetVTLDeviceType(const char* value) { m_vTLDeviceTypeHasBeenSet = true; m_vTLDeviceType.assign(value); }
@@ -103,7 +104,7 @@ namespace Model
     inline VTLDevice& WithVTLDeviceType(const Aws::String& value) { SetVTLDeviceType(value); return *this;}
 
     
-    inline VTLDevice& WithVTLDeviceType(Aws::String&& value) { SetVTLDeviceType(value); return *this;}
+    inline VTLDevice& WithVTLDeviceType(Aws::String&& value) { SetVTLDeviceType(std::move(value)); return *this;}
 
     
     inline VTLDevice& WithVTLDeviceType(const char* value) { SetVTLDeviceType(value); return *this;}
@@ -115,7 +116,7 @@ namespace Model
     inline void SetVTLDeviceVendor(const Aws::String& value) { m_vTLDeviceVendorHasBeenSet = true; m_vTLDeviceVendor = value; }
 
     
-    inline void SetVTLDeviceVendor(Aws::String&& value) { m_vTLDeviceVendorHasBeenSet = true; m_vTLDeviceVendor = value; }
+    inline void SetVTLDeviceVendor(Aws::String&& value) { m_vTLDeviceVendorHasBeenSet = true; m_vTLDeviceVendor = std::move(value); }
 
     
     inline void SetVTLDeviceVendor(const char* value) { m_vTLDeviceVendorHasBeenSet = true; m_vTLDeviceVendor.assign(value); }
@@ -124,7 +125,7 @@ namespace Model
     inline VTLDevice& WithVTLDeviceVendor(const Aws::String& value) { SetVTLDeviceVendor(value); return *this;}
 
     
-    inline VTLDevice& WithVTLDeviceVendor(Aws::String&& value) { SetVTLDeviceVendor(value); return *this;}
+    inline VTLDevice& WithVTLDeviceVendor(Aws::String&& value) { SetVTLDeviceVendor(std::move(value)); return *this;}
 
     
     inline VTLDevice& WithVTLDeviceVendor(const char* value) { SetVTLDeviceVendor(value); return *this;}
@@ -136,7 +137,7 @@ namespace Model
     inline void SetVTLDeviceProductIdentifier(const Aws::String& value) { m_vTLDeviceProductIdentifierHasBeenSet = true; m_vTLDeviceProductIdentifier = value; }
 
     
-    inline void SetVTLDeviceProductIdentifier(Aws::String&& value) { m_vTLDeviceProductIdentifierHasBeenSet = true; m_vTLDeviceProductIdentifier = value; }
+    inline void SetVTLDeviceProductIdentifier(Aws::String&& value) { m_vTLDeviceProductIdentifierHasBeenSet = true; m_vTLDeviceProductIdentifier = std::move(value); }
 
     
     inline void SetVTLDeviceProductIdentifier(const char* value) { m_vTLDeviceProductIdentifierHasBeenSet = true; m_vTLDeviceProductIdentifier.assign(value); }
@@ -145,7 +146,7 @@ namespace Model
     inline VTLDevice& WithVTLDeviceProductIdentifier(const Aws::String& value) { SetVTLDeviceProductIdentifier(value); return *this;}
 
     
-    inline VTLDevice& WithVTLDeviceProductIdentifier(Aws::String&& value) { SetVTLDeviceProductIdentifier(value); return *this;}
+    inline VTLDevice& WithVTLDeviceProductIdentifier(Aws::String&& value) { SetVTLDeviceProductIdentifier(std::move(value)); return *this;}
 
     
     inline VTLDevice& WithVTLDeviceProductIdentifier(const char* value) { SetVTLDeviceProductIdentifier(value); return *this;}
@@ -163,7 +164,7 @@ namespace Model
     /**
      * <p>A list of iSCSI information about a VTL device.</p>
      */
-    inline void SetDeviceiSCSIAttributes(DeviceiSCSIAttributes&& value) { m_deviceiSCSIAttributesHasBeenSet = true; m_deviceiSCSIAttributes = value; }
+    inline void SetDeviceiSCSIAttributes(DeviceiSCSIAttributes&& value) { m_deviceiSCSIAttributesHasBeenSet = true; m_deviceiSCSIAttributes = std::move(value); }
 
     /**
      * <p>A list of iSCSI information about a VTL device.</p>
@@ -173,7 +174,7 @@ namespace Model
     /**
      * <p>A list of iSCSI information about a VTL device.</p>
      */
-    inline VTLDevice& WithDeviceiSCSIAttributes(DeviceiSCSIAttributes&& value) { SetDeviceiSCSIAttributes(value); return *this;}
+    inline VTLDevice& WithDeviceiSCSIAttributes(DeviceiSCSIAttributes&& value) { SetDeviceiSCSIAttributes(std::move(value)); return *this;}
 
   private:
     Aws::String m_vTLDeviceARN;

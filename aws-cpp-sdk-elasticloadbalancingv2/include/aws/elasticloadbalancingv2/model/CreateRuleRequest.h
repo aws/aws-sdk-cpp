@@ -19,6 +19,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/elasticloadbalancingv2/model/RuleCondition.h>
 #include <aws/elasticloadbalancingv2/model/Action.h>
+#include <utility>
 
 namespace Aws
 {
@@ -53,7 +54,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the listener.</p>
      */
-    inline void SetListenerArn(Aws::String&& value) { m_listenerArnHasBeenSet = true; m_listenerArn = value; }
+    inline void SetListenerArn(Aws::String&& value) { m_listenerArnHasBeenSet = true; m_listenerArn = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the listener.</p>
@@ -68,7 +69,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the listener.</p>
      */
-    inline CreateRuleRequest& WithListenerArn(Aws::String&& value) { SetListenerArn(value); return *this;}
+    inline CreateRuleRequest& WithListenerArn(Aws::String&& value) { SetListenerArn(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the listener.</p>
@@ -127,7 +128,7 @@ namespace Model
      * &amp;amp;)</p> </li> <li> <p>* (matches 0 or more characters)</p> </li> <li>
      * <p>? (matches exactly 1 character)</p> </li> </ul>
      */
-    inline void SetConditions(Aws::Vector<RuleCondition>&& value) { m_conditionsHasBeenSet = true; m_conditions = value; }
+    inline void SetConditions(Aws::Vector<RuleCondition>&& value) { m_conditionsHasBeenSet = true; m_conditions = std::move(value); }
 
     /**
      * <p>A condition. Each condition specifies a field name and a single value.</p>
@@ -163,7 +164,7 @@ namespace Model
      * &amp;amp;)</p> </li> <li> <p>* (matches 0 or more characters)</p> </li> <li>
      * <p>? (matches exactly 1 character)</p> </li> </ul>
      */
-    inline CreateRuleRequest& WithConditions(Aws::Vector<RuleCondition>&& value) { SetConditions(value); return *this;}
+    inline CreateRuleRequest& WithConditions(Aws::Vector<RuleCondition>&& value) { SetConditions(std::move(value)); return *this;}
 
     /**
      * <p>A condition. Each condition specifies a field name and a single value.</p>
@@ -199,7 +200,7 @@ namespace Model
      * &amp;amp;)</p> </li> <li> <p>* (matches 0 or more characters)</p> </li> <li>
      * <p>? (matches exactly 1 character)</p> </li> </ul>
      */
-    inline CreateRuleRequest& AddConditions(RuleCondition&& value) { m_conditionsHasBeenSet = true; m_conditions.push_back(value); return *this; }
+    inline CreateRuleRequest& AddConditions(RuleCondition&& value) { m_conditionsHasBeenSet = true; m_conditions.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The priority for the rule. A listener can't have multiple rules with the same
@@ -235,7 +236,7 @@ namespace Model
      * <p>An action. Each action has the type <code>forward</code> and specifies a
      * target group.</p>
      */
-    inline void SetActions(Aws::Vector<Action>&& value) { m_actionsHasBeenSet = true; m_actions = value; }
+    inline void SetActions(Aws::Vector<Action>&& value) { m_actionsHasBeenSet = true; m_actions = std::move(value); }
 
     /**
      * <p>An action. Each action has the type <code>forward</code> and specifies a
@@ -247,7 +248,7 @@ namespace Model
      * <p>An action. Each action has the type <code>forward</code> and specifies a
      * target group.</p>
      */
-    inline CreateRuleRequest& WithActions(Aws::Vector<Action>&& value) { SetActions(value); return *this;}
+    inline CreateRuleRequest& WithActions(Aws::Vector<Action>&& value) { SetActions(std::move(value)); return *this;}
 
     /**
      * <p>An action. Each action has the type <code>forward</code> and specifies a
@@ -259,7 +260,7 @@ namespace Model
      * <p>An action. Each action has the type <code>forward</code> and specifies a
      * target group.</p>
      */
-    inline CreateRuleRequest& AddActions(Action&& value) { m_actionsHasBeenSet = true; m_actions.push_back(value); return *this; }
+    inline CreateRuleRequest& AddActions(Action&& value) { m_actionsHasBeenSet = true; m_actions.push_back(std::move(value)); return *this; }
 
   private:
     Aws::String m_listenerArn;

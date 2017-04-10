@@ -16,6 +16,7 @@
 #include <aws/opsworks/OpsWorks_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/opsworks/model/AgentVersion.h>
+#include <utility>
 
 namespace Aws
 {
@@ -65,7 +66,7 @@ namespace Model
      * that this value is the complete version number, not the abbreviated number used
      * by the console.</p>
      */
-    inline void SetAgentVersions(Aws::Vector<AgentVersion>&& value) { m_agentVersions = value; }
+    inline void SetAgentVersions(Aws::Vector<AgentVersion>&& value) { m_agentVersions = std::move(value); }
 
     /**
      * <p>The agent versions for the specified stack or configuration manager. Note
@@ -79,7 +80,7 @@ namespace Model
      * that this value is the complete version number, not the abbreviated number used
      * by the console.</p>
      */
-    inline DescribeAgentVersionsResult& WithAgentVersions(Aws::Vector<AgentVersion>&& value) { SetAgentVersions(value); return *this;}
+    inline DescribeAgentVersionsResult& WithAgentVersions(Aws::Vector<AgentVersion>&& value) { SetAgentVersions(std::move(value)); return *this;}
 
     /**
      * <p>The agent versions for the specified stack or configuration manager. Note
@@ -93,7 +94,7 @@ namespace Model
      * that this value is the complete version number, not the abbreviated number used
      * by the console.</p>
      */
-    inline DescribeAgentVersionsResult& AddAgentVersions(AgentVersion&& value) { m_agentVersions.push_back(value); return *this; }
+    inline DescribeAgentVersionsResult& AddAgentVersions(AgentVersion&& value) { m_agentVersions.push_back(std::move(value)); return *this; }
 
   private:
     Aws::Vector<AgentVersion> m_agentVersions;

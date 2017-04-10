@@ -20,6 +20,7 @@
 #include <aws/mturk-requester/model/ReviewPolicy.h>
 #include <aws/mturk-requester/model/QualificationRequirement.h>
 #include <aws/mturk-requester/model/HITLayoutParameter.h>
+#include <utility>
 
 namespace Aws
 {
@@ -145,7 +146,7 @@ namespace Model
      * <p> The amount of money the Requester will pay a Worker for successfully
      * completing the HIT. </p>
      */
-    inline void SetReward(Aws::String&& value) { m_rewardHasBeenSet = true; m_reward = value; }
+    inline void SetReward(Aws::String&& value) { m_rewardHasBeenSet = true; m_reward = std::move(value); }
 
     /**
      * <p> The amount of money the Requester will pay a Worker for successfully
@@ -163,7 +164,7 @@ namespace Model
      * <p> The amount of money the Requester will pay a Worker for successfully
      * completing the HIT. </p>
      */
-    inline CreateHITRequest& WithReward(Aws::String&& value) { SetReward(value); return *this;}
+    inline CreateHITRequest& WithReward(Aws::String&& value) { SetReward(std::move(value)); return *this;}
 
     /**
      * <p> The amount of money the Requester will pay a Worker for successfully
@@ -190,7 +191,7 @@ namespace Model
      * of task the HIT contains. On the Amazon Mechanical Turk web site, the HIT title
      * appears in search results, and everywhere the HIT is mentioned. </p>
      */
-    inline void SetTitle(Aws::String&& value) { m_titleHasBeenSet = true; m_title = value; }
+    inline void SetTitle(Aws::String&& value) { m_titleHasBeenSet = true; m_title = std::move(value); }
 
     /**
      * <p> The title of the HIT. A title should be short and descriptive about the kind
@@ -211,7 +212,7 @@ namespace Model
      * of task the HIT contains. On the Amazon Mechanical Turk web site, the HIT title
      * appears in search results, and everywhere the HIT is mentioned. </p>
      */
-    inline CreateHITRequest& WithTitle(Aws::String&& value) { SetTitle(value); return *this;}
+    inline CreateHITRequest& WithTitle(Aws::String&& value) { SetTitle(std::move(value)); return *this;}
 
     /**
      * <p> The title of the HIT. A title should be short and descriptive about the kind
@@ -236,7 +237,7 @@ namespace Model
      * <p> One or more words or phrases that describe the HIT, separated by commas.
      * These words are used in searches to find HITs. </p>
      */
-    inline void SetKeywords(Aws::String&& value) { m_keywordsHasBeenSet = true; m_keywords = value; }
+    inline void SetKeywords(Aws::String&& value) { m_keywordsHasBeenSet = true; m_keywords = std::move(value); }
 
     /**
      * <p> One or more words or phrases that describe the HIT, separated by commas.
@@ -254,7 +255,7 @@ namespace Model
      * <p> One or more words or phrases that describe the HIT, separated by commas.
      * These words are used in searches to find HITs. </p>
      */
-    inline CreateHITRequest& WithKeywords(Aws::String&& value) { SetKeywords(value); return *this;}
+    inline CreateHITRequest& WithKeywords(Aws::String&& value) { SetKeywords(std::move(value)); return *this;}
 
     /**
      * <p> One or more words or phrases that describe the HIT, separated by commas.
@@ -287,7 +288,7 @@ namespace Model
      * results, and in the HIT and assignment screens. A good description gives the
      * user enough information to evaluate the HIT before accepting it. </p>
      */
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = value; }
+    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
      * <p> A general description of the HIT. A description includes detailed
@@ -314,7 +315,7 @@ namespace Model
      * results, and in the HIT and assignment screens. A good description gives the
      * user enough information to evaluate the HIT before accepting it. </p>
      */
-    inline CreateHITRequest& WithDescription(Aws::String&& value) { SetDescription(value); return *this;}
+    inline CreateHITRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
      * <p> A general description of the HIT. A description includes detailed
@@ -350,7 +351,7 @@ namespace Model
      * larger than 64 kilobytes (65,535 bytes) in size, including whitespace. </p>
      * <p>Either a Question parameter or a HITLayoutId parameter must be provided.</p>
      */
-    inline void SetQuestion(Aws::String&& value) { m_questionHasBeenSet = true; m_question = value; }
+    inline void SetQuestion(Aws::String&& value) { m_questionHasBeenSet = true; m_question = std::move(value); }
 
     /**
      * <p> The data the person completing the HIT uses to produce the results. </p> <p>
@@ -377,7 +378,7 @@ namespace Model
      * larger than 64 kilobytes (65,535 bytes) in size, including whitespace. </p>
      * <p>Either a Question parameter or a HITLayoutId parameter must be provided.</p>
      */
-    inline CreateHITRequest& WithQuestion(Aws::String&& value) { SetQuestion(value); return *this;}
+    inline CreateHITRequest& WithQuestion(Aws::String&& value) { SetQuestion(std::move(value)); return *this;}
 
     /**
      * <p> The data the person completing the HIT uses to produce the results. </p> <p>
@@ -422,7 +423,7 @@ namespace Model
      * be different for each HIT you submit. It does not affect how your HITs are
      * grouped. </p>
      */
-    inline void SetRequesterAnnotation(Aws::String&& value) { m_requesterAnnotationHasBeenSet = true; m_requesterAnnotation = value; }
+    inline void SetRequesterAnnotation(Aws::String&& value) { m_requesterAnnotationHasBeenSet = true; m_requesterAnnotation = std::move(value); }
 
     /**
      * <p> An arbitrary data field. The RequesterAnnotation parameter lets your
@@ -458,7 +459,7 @@ namespace Model
      * be different for each HIT you submit. It does not affect how your HITs are
      * grouped. </p>
      */
-    inline CreateHITRequest& WithRequesterAnnotation(Aws::String&& value) { SetRequesterAnnotation(value); return *this;}
+    inline CreateHITRequest& WithRequesterAnnotation(Aws::String&& value) { SetRequesterAnnotation(std::move(value)); return *this;}
 
     /**
      * <p> An arbitrary data field. The RequesterAnnotation parameter lets your
@@ -488,7 +489,7 @@ namespace Model
      * <p> A condition that a Worker's Qualifications must meet before the Worker is
      * allowed to accept and complete the HIT. </p>
      */
-    inline void SetQualificationRequirements(Aws::Vector<QualificationRequirement>&& value) { m_qualificationRequirementsHasBeenSet = true; m_qualificationRequirements = value; }
+    inline void SetQualificationRequirements(Aws::Vector<QualificationRequirement>&& value) { m_qualificationRequirementsHasBeenSet = true; m_qualificationRequirements = std::move(value); }
 
     /**
      * <p> A condition that a Worker's Qualifications must meet before the Worker is
@@ -500,7 +501,7 @@ namespace Model
      * <p> A condition that a Worker's Qualifications must meet before the Worker is
      * allowed to accept and complete the HIT. </p>
      */
-    inline CreateHITRequest& WithQualificationRequirements(Aws::Vector<QualificationRequirement>&& value) { SetQualificationRequirements(value); return *this;}
+    inline CreateHITRequest& WithQualificationRequirements(Aws::Vector<QualificationRequirement>&& value) { SetQualificationRequirements(std::move(value)); return *this;}
 
     /**
      * <p> A condition that a Worker's Qualifications must meet before the Worker is
@@ -512,7 +513,7 @@ namespace Model
      * <p> A condition that a Worker's Qualifications must meet before the Worker is
      * allowed to accept and complete the HIT. </p>
      */
-    inline CreateHITRequest& AddQualificationRequirements(QualificationRequirement&& value) { m_qualificationRequirementsHasBeenSet = true; m_qualificationRequirements.push_back(value); return *this; }
+    inline CreateHITRequest& AddQualificationRequirements(QualificationRequirement&& value) { m_qualificationRequirementsHasBeenSet = true; m_qualificationRequirements.push_back(std::move(value)); return *this; }
 
     /**
      * <p> A unique identifier for this request which allows you to retry the call on
@@ -554,7 +555,7 @@ namespace Model
      * UniqueRequestToken made after the 24 hour limit could create duplicate HITs.
      * </p> </note>
      */
-    inline void SetUniqueRequestToken(Aws::String&& value) { m_uniqueRequestTokenHasBeenSet = true; m_uniqueRequestToken = value; }
+    inline void SetUniqueRequestToken(Aws::String&& value) { m_uniqueRequestTokenHasBeenSet = true; m_uniqueRequestToken = std::move(value); }
 
     /**
      * <p> A unique identifier for this request which allows you to retry the call on
@@ -596,7 +597,7 @@ namespace Model
      * UniqueRequestToken made after the 24 hour limit could create duplicate HITs.
      * </p> </note>
      */
-    inline CreateHITRequest& WithUniqueRequestToken(Aws::String&& value) { SetUniqueRequestToken(value); return *this;}
+    inline CreateHITRequest& WithUniqueRequestToken(Aws::String&& value) { SetUniqueRequestToken(std::move(value)); return *this;}
 
     /**
      * <p> A unique identifier for this request which allows you to retry the call on
@@ -631,7 +632,7 @@ namespace Model
      * You can specify for Mechanical Turk to take various actions based on the policy.
      * </p>
      */
-    inline void SetAssignmentReviewPolicy(ReviewPolicy&& value) { m_assignmentReviewPolicyHasBeenSet = true; m_assignmentReviewPolicy = value; }
+    inline void SetAssignmentReviewPolicy(ReviewPolicy&& value) { m_assignmentReviewPolicyHasBeenSet = true; m_assignmentReviewPolicy = std::move(value); }
 
     /**
      * <p> The Assignment-level Review Policy applies to the assignments under the HIT.
@@ -645,7 +646,7 @@ namespace Model
      * You can specify for Mechanical Turk to take various actions based on the policy.
      * </p>
      */
-    inline CreateHITRequest& WithAssignmentReviewPolicy(ReviewPolicy&& value) { SetAssignmentReviewPolicy(value); return *this;}
+    inline CreateHITRequest& WithAssignmentReviewPolicy(ReviewPolicy&& value) { SetAssignmentReviewPolicy(std::move(value)); return *this;}
 
     /**
      * <p> The HIT-level Review Policy applies to the HIT. You can specify for
@@ -663,7 +664,7 @@ namespace Model
      * <p> The HIT-level Review Policy applies to the HIT. You can specify for
      * Mechanical Turk to take various actions based on the policy. </p>
      */
-    inline void SetHITReviewPolicy(ReviewPolicy&& value) { m_hITReviewPolicyHasBeenSet = true; m_hITReviewPolicy = value; }
+    inline void SetHITReviewPolicy(ReviewPolicy&& value) { m_hITReviewPolicyHasBeenSet = true; m_hITReviewPolicy = std::move(value); }
 
     /**
      * <p> The HIT-level Review Policy applies to the HIT. You can specify for
@@ -675,7 +676,7 @@ namespace Model
      * <p> The HIT-level Review Policy applies to the HIT. You can specify for
      * Mechanical Turk to take various actions based on the policy. </p>
      */
-    inline CreateHITRequest& WithHITReviewPolicy(ReviewPolicy&& value) { SetHITReviewPolicy(value); return *this;}
+    inline CreateHITRequest& WithHITReviewPolicy(ReviewPolicy&& value) { SetHITReviewPolicy(std::move(value)); return *this;}
 
     /**
      * <p> The HITLayoutId allows you to use a pre-existing HIT design with placeholder
@@ -699,7 +700,7 @@ namespace Model
      * HITLayoutParameters. </p> <p> Constraints: Either a Question parameter or a
      * HITLayoutId parameter must be provided. </p>
      */
-    inline void SetHITLayoutId(Aws::String&& value) { m_hITLayoutIdHasBeenSet = true; m_hITLayoutId = value; }
+    inline void SetHITLayoutId(Aws::String&& value) { m_hITLayoutIdHasBeenSet = true; m_hITLayoutId = std::move(value); }
 
     /**
      * <p> The HITLayoutId allows you to use a pre-existing HIT design with placeholder
@@ -723,7 +724,7 @@ namespace Model
      * HITLayoutParameters. </p> <p> Constraints: Either a Question parameter or a
      * HITLayoutId parameter must be provided. </p>
      */
-    inline CreateHITRequest& WithHITLayoutId(Aws::String&& value) { SetHITLayoutId(value); return *this;}
+    inline CreateHITRequest& WithHITLayoutId(Aws::String&& value) { SetHITLayoutId(std::move(value)); return *this;}
 
     /**
      * <p> The HITLayoutId allows you to use a pre-existing HIT design with placeholder
@@ -752,7 +753,7 @@ namespace Model
      * with values using the HITLayoutParameter structure. For more information, see
      * HITLayout. </p>
      */
-    inline void SetHITLayoutParameters(Aws::Vector<HITLayoutParameter>&& value) { m_hITLayoutParametersHasBeenSet = true; m_hITLayoutParameters = value; }
+    inline void SetHITLayoutParameters(Aws::Vector<HITLayoutParameter>&& value) { m_hITLayoutParametersHasBeenSet = true; m_hITLayoutParameters = std::move(value); }
 
     /**
      * <p> If the HITLayoutId is provided, any placeholder values must be filled in
@@ -766,7 +767,7 @@ namespace Model
      * with values using the HITLayoutParameter structure. For more information, see
      * HITLayout. </p>
      */
-    inline CreateHITRequest& WithHITLayoutParameters(Aws::Vector<HITLayoutParameter>&& value) { SetHITLayoutParameters(value); return *this;}
+    inline CreateHITRequest& WithHITLayoutParameters(Aws::Vector<HITLayoutParameter>&& value) { SetHITLayoutParameters(std::move(value)); return *this;}
 
     /**
      * <p> If the HITLayoutId is provided, any placeholder values must be filled in
@@ -780,7 +781,7 @@ namespace Model
      * with values using the HITLayoutParameter structure. For more information, see
      * HITLayout. </p>
      */
-    inline CreateHITRequest& AddHITLayoutParameters(HITLayoutParameter&& value) { m_hITLayoutParametersHasBeenSet = true; m_hITLayoutParameters.push_back(value); return *this; }
+    inline CreateHITRequest& AddHITLayoutParameters(HITLayoutParameter&& value) { m_hITLayoutParametersHasBeenSet = true; m_hITLayoutParameters.push_back(std::move(value)); return *this; }
 
   private:
     int m_maxAssignments;

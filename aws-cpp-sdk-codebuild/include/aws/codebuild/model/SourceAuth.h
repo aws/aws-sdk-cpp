@@ -16,6 +16,7 @@
 #include <aws/codebuild/CodeBuild_EXPORTS.h>
 #include <aws/codebuild/model/SourceAuthType.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -64,7 +65,7 @@ namespace Model
      * <p>The authorization type to use. The only valid value is <code>OAUTH</code>,
      * which represents the OAuth authorization type.</p>
      */
-    inline void SetType(SourceAuthType&& value) { m_typeHasBeenSet = true; m_type = value; }
+    inline void SetType(SourceAuthType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
      * <p>The authorization type to use. The only valid value is <code>OAUTH</code>,
@@ -76,7 +77,7 @@ namespace Model
      * <p>The authorization type to use. The only valid value is <code>OAUTH</code>,
      * which represents the OAuth authorization type.</p>
      */
-    inline SourceAuth& WithType(SourceAuthType&& value) { SetType(value); return *this;}
+    inline SourceAuth& WithType(SourceAuthType&& value) { SetType(std::move(value)); return *this;}
 
     /**
      * <p>The resource value that applies to the specified authorization type.</p>
@@ -91,7 +92,7 @@ namespace Model
     /**
      * <p>The resource value that applies to the specified authorization type.</p>
      */
-    inline void SetResource(Aws::String&& value) { m_resourceHasBeenSet = true; m_resource = value; }
+    inline void SetResource(Aws::String&& value) { m_resourceHasBeenSet = true; m_resource = std::move(value); }
 
     /**
      * <p>The resource value that applies to the specified authorization type.</p>
@@ -106,7 +107,7 @@ namespace Model
     /**
      * <p>The resource value that applies to the specified authorization type.</p>
      */
-    inline SourceAuth& WithResource(Aws::String&& value) { SetResource(value); return *this;}
+    inline SourceAuth& WithResource(Aws::String&& value) { SetResource(std::move(value)); return *this;}
 
     /**
      * <p>The resource value that applies to the specified authorization type.</p>

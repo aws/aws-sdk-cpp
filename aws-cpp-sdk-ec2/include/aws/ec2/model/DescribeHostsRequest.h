@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/Filter.h>
+#include <utility>
 
 namespace Aws
 {
@@ -58,7 +59,7 @@ namespace Model
      * <p>The IDs of the Dedicated Hosts. The IDs are used for targeted instance
      * launches.</p>
      */
-    inline void SetHostIds(Aws::Vector<Aws::String>&& value) { m_hostIdsHasBeenSet = true; m_hostIds = value; }
+    inline void SetHostIds(Aws::Vector<Aws::String>&& value) { m_hostIdsHasBeenSet = true; m_hostIds = std::move(value); }
 
     /**
      * <p>The IDs of the Dedicated Hosts. The IDs are used for targeted instance
@@ -70,7 +71,7 @@ namespace Model
      * <p>The IDs of the Dedicated Hosts. The IDs are used for targeted instance
      * launches.</p>
      */
-    inline DescribeHostsRequest& WithHostIds(Aws::Vector<Aws::String>&& value) { SetHostIds(value); return *this;}
+    inline DescribeHostsRequest& WithHostIds(Aws::Vector<Aws::String>&& value) { SetHostIds(std::move(value)); return *this;}
 
     /**
      * <p>The IDs of the Dedicated Hosts. The IDs are used for targeted instance
@@ -82,7 +83,7 @@ namespace Model
      * <p>The IDs of the Dedicated Hosts. The IDs are used for targeted instance
      * launches.</p>
      */
-    inline DescribeHostsRequest& AddHostIds(Aws::String&& value) { m_hostIdsHasBeenSet = true; m_hostIds.push_back(value); return *this; }
+    inline DescribeHostsRequest& AddHostIds(Aws::String&& value) { m_hostIdsHasBeenSet = true; m_hostIds.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The IDs of the Dedicated Hosts. The IDs are used for targeted instance
@@ -103,7 +104,7 @@ namespace Model
     /**
      * <p>The token to retrieve the next page of results.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
      * <p>The token to retrieve the next page of results.</p>
@@ -118,7 +119,7 @@ namespace Model
     /**
      * <p>The token to retrieve the next page of results.</p>
      */
-    inline DescribeHostsRequest& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline DescribeHostsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>The token to retrieve the next page of results.</p>
@@ -201,7 +202,7 @@ namespace Model
      * <p> <code>availability-zone</code> - The Availability Zone of the host.</p>
      * </li> </ul>
      */
-    inline void SetFilter(Aws::Vector<Filter>&& value) { m_filterHasBeenSet = true; m_filter = value; }
+    inline void SetFilter(Aws::Vector<Filter>&& value) { m_filterHasBeenSet = true; m_filter = std::move(value); }
 
     /**
      * <p>One or more filters.</p> <ul> <li> <p> <code>instance-type</code> - The
@@ -233,7 +234,7 @@ namespace Model
      * <p> <code>availability-zone</code> - The Availability Zone of the host.</p>
      * </li> </ul>
      */
-    inline DescribeHostsRequest& WithFilter(Aws::Vector<Filter>&& value) { SetFilter(value); return *this;}
+    inline DescribeHostsRequest& WithFilter(Aws::Vector<Filter>&& value) { SetFilter(std::move(value)); return *this;}
 
     /**
      * <p>One or more filters.</p> <ul> <li> <p> <code>instance-type</code> - The
@@ -265,7 +266,7 @@ namespace Model
      * <p> <code>availability-zone</code> - The Availability Zone of the host.</p>
      * </li> </ul>
      */
-    inline DescribeHostsRequest& AddFilter(Filter&& value) { m_filterHasBeenSet = true; m_filter.push_back(value); return *this; }
+    inline DescribeHostsRequest& AddFilter(Filter&& value) { m_filterHasBeenSet = true; m_filter.push_back(std::move(value)); return *this; }
 
   private:
     Aws::Vector<Aws::String> m_hostIds;

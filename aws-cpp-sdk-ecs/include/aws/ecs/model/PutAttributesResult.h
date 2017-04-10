@@ -16,6 +16,7 @@
 #include <aws/ecs/ECS_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ecs/model/Attribute.h>
+#include <utility>
 
 namespace Aws
 {
@@ -53,7 +54,7 @@ namespace Model
     /**
      * <p>The attributes applied to your resource.</p>
      */
-    inline void SetAttributes(Aws::Vector<Attribute>&& value) { m_attributes = value; }
+    inline void SetAttributes(Aws::Vector<Attribute>&& value) { m_attributes = std::move(value); }
 
     /**
      * <p>The attributes applied to your resource.</p>
@@ -63,7 +64,7 @@ namespace Model
     /**
      * <p>The attributes applied to your resource.</p>
      */
-    inline PutAttributesResult& WithAttributes(Aws::Vector<Attribute>&& value) { SetAttributes(value); return *this;}
+    inline PutAttributesResult& WithAttributes(Aws::Vector<Attribute>&& value) { SetAttributes(std::move(value)); return *this;}
 
     /**
      * <p>The attributes applied to your resource.</p>
@@ -73,7 +74,7 @@ namespace Model
     /**
      * <p>The attributes applied to your resource.</p>
      */
-    inline PutAttributesResult& AddAttributes(Attribute&& value) { m_attributes.push_back(value); return *this; }
+    inline PutAttributesResult& AddAttributes(Attribute&& value) { m_attributes.push_back(std::move(value)); return *this; }
 
   private:
     Aws::Vector<Attribute> m_attributes;

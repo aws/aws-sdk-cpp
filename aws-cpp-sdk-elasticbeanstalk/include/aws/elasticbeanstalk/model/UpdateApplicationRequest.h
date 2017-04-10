@@ -16,6 +16,7 @@
 #include <aws/elasticbeanstalk/ElasticBeanstalk_EXPORTS.h>
 #include <aws/elasticbeanstalk/ElasticBeanstalkRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -59,7 +60,7 @@ namespace Model
      * <code>UpdateApplication</code> returns an <code>InvalidParameterValue</code>
      * error. </p>
      */
-    inline void SetApplicationName(Aws::String&& value) { m_applicationNameHasBeenSet = true; m_applicationName = value; }
+    inline void SetApplicationName(Aws::String&& value) { m_applicationNameHasBeenSet = true; m_applicationName = std::move(value); }
 
     /**
      * <p>The name of the application to update. If no such application is found,
@@ -80,7 +81,7 @@ namespace Model
      * <code>UpdateApplication</code> returns an <code>InvalidParameterValue</code>
      * error. </p>
      */
-    inline UpdateApplicationRequest& WithApplicationName(Aws::String&& value) { SetApplicationName(value); return *this;}
+    inline UpdateApplicationRequest& WithApplicationName(Aws::String&& value) { SetApplicationName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the application to update. If no such application is found,
@@ -105,7 +106,7 @@ namespace Model
      * <p>A new description for the application.</p> <p>Default: If not specified, AWS
      * Elastic Beanstalk does not update the description.</p>
      */
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = value; }
+    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
      * <p>A new description for the application.</p> <p>Default: If not specified, AWS
@@ -123,7 +124,7 @@ namespace Model
      * <p>A new description for the application.</p> <p>Default: If not specified, AWS
      * Elastic Beanstalk does not update the description.</p>
      */
-    inline UpdateApplicationRequest& WithDescription(Aws::String&& value) { SetDescription(value); return *this;}
+    inline UpdateApplicationRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
      * <p>A new description for the application.</p> <p>Default: If not specified, AWS

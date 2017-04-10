@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/states/SFN_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -51,7 +52,7 @@ namespace Model
     /**
      * <p>The name of the state.</p>
      */
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p>The name of the state.</p>
@@ -66,7 +67,7 @@ namespace Model
     /**
      * <p>The name of the state.</p>
      */
-    inline StateExitedEventDetails& WithName(Aws::String&& value) { SetName(value); return *this;}
+    inline StateExitedEventDetails& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the state.</p>
@@ -86,7 +87,7 @@ namespace Model
     /**
      * <p>The JSON output data of the state.</p>
      */
-    inline void SetOutput(Aws::String&& value) { m_outputHasBeenSet = true; m_output = value; }
+    inline void SetOutput(Aws::String&& value) { m_outputHasBeenSet = true; m_output = std::move(value); }
 
     /**
      * <p>The JSON output data of the state.</p>
@@ -101,7 +102,7 @@ namespace Model
     /**
      * <p>The JSON output data of the state.</p>
      */
-    inline StateExitedEventDetails& WithOutput(Aws::String&& value) { SetOutput(value); return *this;}
+    inline StateExitedEventDetails& WithOutput(Aws::String&& value) { SetOutput(std::move(value)); return *this;}
 
     /**
      * <p>The JSON output data of the state.</p>

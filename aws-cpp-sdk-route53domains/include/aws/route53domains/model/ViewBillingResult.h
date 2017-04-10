@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/route53domains/model/BillingRecord.h>
+#include <utility>
 
 namespace Aws
 {
@@ -69,7 +70,7 @@ namespace Model
      * value of <code>NextPageMarker</code> in the value of <code>Marker</code>.</p>
      * <p>Type: String</p> <p>Parent: <code>BillingRecords</code></p>
      */
-    inline void SetNextPageMarker(Aws::String&& value) { m_nextPageMarker = value; }
+    inline void SetNextPageMarker(Aws::String&& value) { m_nextPageMarker = std::move(value); }
 
     /**
      * <p>If there are more billing records than you specified for
@@ -93,7 +94,7 @@ namespace Model
      * value of <code>NextPageMarker</code> in the value of <code>Marker</code>.</p>
      * <p>Type: String</p> <p>Parent: <code>BillingRecords</code></p>
      */
-    inline ViewBillingResult& WithNextPageMarker(Aws::String&& value) { SetNextPageMarker(value); return *this;}
+    inline ViewBillingResult& WithNextPageMarker(Aws::String&& value) { SetNextPageMarker(std::move(value)); return *this;}
 
     /**
      * <p>If there are more billing records than you specified for
@@ -125,7 +126,7 @@ namespace Model
      * <code>Operation</code>, <code>InvoiceId</code>, <code>BillDate</code> and
      * <code>Price</code></p>
      */
-    inline void SetBillingRecords(Aws::Vector<BillingRecord>&& value) { m_billingRecords = value; }
+    inline void SetBillingRecords(Aws::Vector<BillingRecord>&& value) { m_billingRecords = std::move(value); }
 
     /**
      * <p>A summary of billing records.</p> <p>Type: Complex type containing a list of
@@ -141,7 +142,7 @@ namespace Model
      * <code>Operation</code>, <code>InvoiceId</code>, <code>BillDate</code> and
      * <code>Price</code></p>
      */
-    inline ViewBillingResult& WithBillingRecords(Aws::Vector<BillingRecord>&& value) { SetBillingRecords(value); return *this;}
+    inline ViewBillingResult& WithBillingRecords(Aws::Vector<BillingRecord>&& value) { SetBillingRecords(std::move(value)); return *this;}
 
     /**
      * <p>A summary of billing records.</p> <p>Type: Complex type containing a list of
@@ -157,7 +158,7 @@ namespace Model
      * <code>Operation</code>, <code>InvoiceId</code>, <code>BillDate</code> and
      * <code>Price</code></p>
      */
-    inline ViewBillingResult& AddBillingRecords(BillingRecord&& value) { m_billingRecords.push_back(value); return *this; }
+    inline ViewBillingResult& AddBillingRecords(BillingRecord&& value) { m_billingRecords.push_back(std::move(value)); return *this; }
 
   private:
     Aws::String m_nextPageMarker;

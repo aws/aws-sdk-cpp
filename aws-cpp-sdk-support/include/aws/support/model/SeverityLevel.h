@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/support/Support_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -63,7 +64,7 @@ namespace Model
      * correspond to response times returned to the caller in
      * <code>severityLevel.name</code>. </p>
      */
-    inline void SetCode(Aws::String&& value) { m_codeHasBeenSet = true; m_code = value; }
+    inline void SetCode(Aws::String&& value) { m_codeHasBeenSet = true; m_code = std::move(value); }
 
     /**
      * <p>One of four values: "low," "medium," "high," and "urgent". These values
@@ -84,7 +85,7 @@ namespace Model
      * correspond to response times returned to the caller in
      * <code>severityLevel.name</code>. </p>
      */
-    inline SeverityLevel& WithCode(Aws::String&& value) { SetCode(value); return *this;}
+    inline SeverityLevel& WithCode(Aws::String&& value) { SetCode(std::move(value)); return *this;}
 
     /**
      * <p>One of four values: "low," "medium," "high," and "urgent". These values
@@ -109,7 +110,7 @@ namespace Model
      * <p>The name of the severity level that corresponds to the severity level
      * code.</p>
      */
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p>The name of the severity level that corresponds to the severity level
@@ -127,7 +128,7 @@ namespace Model
      * <p>The name of the severity level that corresponds to the severity level
      * code.</p>
      */
-    inline SeverityLevel& WithName(Aws::String&& value) { SetName(value); return *this;}
+    inline SeverityLevel& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the severity level that corresponds to the severity level

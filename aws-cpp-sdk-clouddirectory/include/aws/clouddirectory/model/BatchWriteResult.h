@@ -16,6 +16,7 @@
 #include <aws/clouddirectory/CloudDirectory_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/clouddirectory/model/BatchWriteOperationResponse.h>
+#include <utility>
 
 namespace Aws
 {
@@ -53,7 +54,7 @@ namespace Model
     /**
      * <p>List of all the responses for each batch write.</p>
      */
-    inline void SetResponses(Aws::Vector<BatchWriteOperationResponse>&& value) { m_responses = value; }
+    inline void SetResponses(Aws::Vector<BatchWriteOperationResponse>&& value) { m_responses = std::move(value); }
 
     /**
      * <p>List of all the responses for each batch write.</p>
@@ -63,7 +64,7 @@ namespace Model
     /**
      * <p>List of all the responses for each batch write.</p>
      */
-    inline BatchWriteResult& WithResponses(Aws::Vector<BatchWriteOperationResponse>&& value) { SetResponses(value); return *this;}
+    inline BatchWriteResult& WithResponses(Aws::Vector<BatchWriteOperationResponse>&& value) { SetResponses(std::move(value)); return *this;}
 
     /**
      * <p>List of all the responses for each batch write.</p>
@@ -73,7 +74,7 @@ namespace Model
     /**
      * <p>List of all the responses for each batch write.</p>
      */
-    inline BatchWriteResult& AddResponses(BatchWriteOperationResponse&& value) { m_responses.push_back(value); return *this; }
+    inline BatchWriteResult& AddResponses(BatchWriteOperationResponse&& value) { m_responses.push_back(std::move(value)); return *this; }
 
   private:
     Aws::Vector<BatchWriteOperationResponse> m_responses;

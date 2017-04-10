@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/snowball/Snowball_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -63,7 +64,7 @@ namespace Model
      * <p>The key that starts an optional key range for an export job. Ranges are
      * inclusive and UTF-8 binary sorted.</p>
      */
-    inline void SetBeginMarker(Aws::String&& value) { m_beginMarkerHasBeenSet = true; m_beginMarker = value; }
+    inline void SetBeginMarker(Aws::String&& value) { m_beginMarkerHasBeenSet = true; m_beginMarker = std::move(value); }
 
     /**
      * <p>The key that starts an optional key range for an export job. Ranges are
@@ -81,7 +82,7 @@ namespace Model
      * <p>The key that starts an optional key range for an export job. Ranges are
      * inclusive and UTF-8 binary sorted.</p>
      */
-    inline KeyRange& WithBeginMarker(Aws::String&& value) { SetBeginMarker(value); return *this;}
+    inline KeyRange& WithBeginMarker(Aws::String&& value) { SetBeginMarker(std::move(value)); return *this;}
 
     /**
      * <p>The key that starts an optional key range for an export job. Ranges are
@@ -105,7 +106,7 @@ namespace Model
      * <p>The key that ends an optional key range for an export job. Ranges are
      * inclusive and UTF-8 binary sorted.</p>
      */
-    inline void SetEndMarker(Aws::String&& value) { m_endMarkerHasBeenSet = true; m_endMarker = value; }
+    inline void SetEndMarker(Aws::String&& value) { m_endMarkerHasBeenSet = true; m_endMarker = std::move(value); }
 
     /**
      * <p>The key that ends an optional key range for an export job. Ranges are
@@ -123,7 +124,7 @@ namespace Model
      * <p>The key that ends an optional key range for an export job. Ranges are
      * inclusive and UTF-8 binary sorted.</p>
      */
-    inline KeyRange& WithEndMarker(Aws::String&& value) { SetEndMarker(value); return *this;}
+    inline KeyRange& WithEndMarker(Aws::String&& value) { SetEndMarker(std::move(value)); return *this;}
 
     /**
      * <p>The key that ends an optional key range for an export job. Ranges are

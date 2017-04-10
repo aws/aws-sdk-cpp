@@ -16,6 +16,7 @@
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/ec2/EC2Request.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -81,7 +82,7 @@ namespace Model
      * <p>The ID of the current association between the original network ACL and the
      * subnet.</p>
      */
-    inline void SetAssociationId(Aws::String&& value) { m_associationIdHasBeenSet = true; m_associationId = value; }
+    inline void SetAssociationId(Aws::String&& value) { m_associationIdHasBeenSet = true; m_associationId = std::move(value); }
 
     /**
      * <p>The ID of the current association between the original network ACL and the
@@ -99,7 +100,7 @@ namespace Model
      * <p>The ID of the current association between the original network ACL and the
      * subnet.</p>
      */
-    inline ReplaceNetworkAclAssociationRequest& WithAssociationId(Aws::String&& value) { SetAssociationId(value); return *this;}
+    inline ReplaceNetworkAclAssociationRequest& WithAssociationId(Aws::String&& value) { SetAssociationId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the current association between the original network ACL and the
@@ -120,7 +121,7 @@ namespace Model
     /**
      * <p>The ID of the new network ACL to associate with the subnet.</p>
      */
-    inline void SetNetworkAclId(Aws::String&& value) { m_networkAclIdHasBeenSet = true; m_networkAclId = value; }
+    inline void SetNetworkAclId(Aws::String&& value) { m_networkAclIdHasBeenSet = true; m_networkAclId = std::move(value); }
 
     /**
      * <p>The ID of the new network ACL to associate with the subnet.</p>
@@ -135,7 +136,7 @@ namespace Model
     /**
      * <p>The ID of the new network ACL to associate with the subnet.</p>
      */
-    inline ReplaceNetworkAclAssociationRequest& WithNetworkAclId(Aws::String&& value) { SetNetworkAclId(value); return *this;}
+    inline ReplaceNetworkAclAssociationRequest& WithNetworkAclId(Aws::String&& value) { SetNetworkAclId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the new network ACL to associate with the subnet.</p>

@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/route53domains/Route53Domains_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -45,7 +46,7 @@ namespace Model
     inline void SetDomainName(const Aws::String& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
 
     
-    inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
+    inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = std::move(value); }
 
     
     inline void SetDomainName(const char* value) { m_domainNameHasBeenSet = true; m_domainName.assign(value); }
@@ -54,7 +55,7 @@ namespace Model
     inline DomainSuggestion& WithDomainName(const Aws::String& value) { SetDomainName(value); return *this;}
 
     
-    inline DomainSuggestion& WithDomainName(Aws::String&& value) { SetDomainName(value); return *this;}
+    inline DomainSuggestion& WithDomainName(Aws::String&& value) { SetDomainName(std::move(value)); return *this;}
 
     
     inline DomainSuggestion& WithDomainName(const char* value) { SetDomainName(value); return *this;}
@@ -66,7 +67,7 @@ namespace Model
     inline void SetAvailability(const Aws::String& value) { m_availabilityHasBeenSet = true; m_availability = value; }
 
     
-    inline void SetAvailability(Aws::String&& value) { m_availabilityHasBeenSet = true; m_availability = value; }
+    inline void SetAvailability(Aws::String&& value) { m_availabilityHasBeenSet = true; m_availability = std::move(value); }
 
     
     inline void SetAvailability(const char* value) { m_availabilityHasBeenSet = true; m_availability.assign(value); }
@@ -75,7 +76,7 @@ namespace Model
     inline DomainSuggestion& WithAvailability(const Aws::String& value) { SetAvailability(value); return *this;}
 
     
-    inline DomainSuggestion& WithAvailability(Aws::String&& value) { SetAvailability(value); return *this;}
+    inline DomainSuggestion& WithAvailability(Aws::String&& value) { SetAvailability(std::move(value)); return *this;}
 
     
     inline DomainSuggestion& WithAvailability(const char* value) { SetAvailability(value); return *this;}

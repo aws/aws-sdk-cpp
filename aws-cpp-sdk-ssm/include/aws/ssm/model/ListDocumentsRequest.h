@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ssm/model/DocumentFilter.h>
+#include <utility>
 
 namespace Aws
 {
@@ -53,7 +54,7 @@ namespace Model
      * <p>One or more filters. Use a filter to return a more specific list of
      * results.</p>
      */
-    inline void SetDocumentFilterList(Aws::Vector<DocumentFilter>&& value) { m_documentFilterListHasBeenSet = true; m_documentFilterList = value; }
+    inline void SetDocumentFilterList(Aws::Vector<DocumentFilter>&& value) { m_documentFilterListHasBeenSet = true; m_documentFilterList = std::move(value); }
 
     /**
      * <p>One or more filters. Use a filter to return a more specific list of
@@ -65,7 +66,7 @@ namespace Model
      * <p>One or more filters. Use a filter to return a more specific list of
      * results.</p>
      */
-    inline ListDocumentsRequest& WithDocumentFilterList(Aws::Vector<DocumentFilter>&& value) { SetDocumentFilterList(value); return *this;}
+    inline ListDocumentsRequest& WithDocumentFilterList(Aws::Vector<DocumentFilter>&& value) { SetDocumentFilterList(std::move(value)); return *this;}
 
     /**
      * <p>One or more filters. Use a filter to return a more specific list of
@@ -77,7 +78,7 @@ namespace Model
      * <p>One or more filters. Use a filter to return a more specific list of
      * results.</p>
      */
-    inline ListDocumentsRequest& AddDocumentFilterList(DocumentFilter&& value) { m_documentFilterListHasBeenSet = true; m_documentFilterList.push_back(value); return *this; }
+    inline ListDocumentsRequest& AddDocumentFilterList(DocumentFilter&& value) { m_documentFilterListHasBeenSet = true; m_documentFilterList.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The maximum number of items to return for this call. The call also returns a
@@ -116,7 +117,7 @@ namespace Model
      * <p>The token for the next set of items to return. (You received this token from
      * a previous call.)</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
      * <p>The token for the next set of items to return. (You received this token from
@@ -134,7 +135,7 @@ namespace Model
      * <p>The token for the next set of items to return. (You received this token from
      * a previous call.)</p>
      */
-    inline ListDocumentsRequest& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline ListDocumentsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>The token for the next set of items to return. (You received this token from

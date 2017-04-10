@@ -17,6 +17,7 @@
 #include <aws/xray/model/AnnotationValue.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/xray/model/ServiceId.h>
+#include <utility>
 
 namespace Aws
 {
@@ -58,7 +59,7 @@ namespace Model
     /**
      * <p>Values of the annotation.</p>
      */
-    inline void SetAnnotationValue(AnnotationValue&& value) { m_annotationValueHasBeenSet = true; m_annotationValue = value; }
+    inline void SetAnnotationValue(AnnotationValue&& value) { m_annotationValueHasBeenSet = true; m_annotationValue = std::move(value); }
 
     /**
      * <p>Values of the annotation.</p>
@@ -68,7 +69,7 @@ namespace Model
     /**
      * <p>Values of the annotation.</p>
      */
-    inline ValueWithServiceIds& WithAnnotationValue(AnnotationValue&& value) { SetAnnotationValue(value); return *this;}
+    inline ValueWithServiceIds& WithAnnotationValue(AnnotationValue&& value) { SetAnnotationValue(std::move(value)); return *this;}
 
     /**
      * <p>Services to which the annotation applies.</p>
@@ -83,7 +84,7 @@ namespace Model
     /**
      * <p>Services to which the annotation applies.</p>
      */
-    inline void SetServiceIds(Aws::Vector<ServiceId>&& value) { m_serviceIdsHasBeenSet = true; m_serviceIds = value; }
+    inline void SetServiceIds(Aws::Vector<ServiceId>&& value) { m_serviceIdsHasBeenSet = true; m_serviceIds = std::move(value); }
 
     /**
      * <p>Services to which the annotation applies.</p>
@@ -93,7 +94,7 @@ namespace Model
     /**
      * <p>Services to which the annotation applies.</p>
      */
-    inline ValueWithServiceIds& WithServiceIds(Aws::Vector<ServiceId>&& value) { SetServiceIds(value); return *this;}
+    inline ValueWithServiceIds& WithServiceIds(Aws::Vector<ServiceId>&& value) { SetServiceIds(std::move(value)); return *this;}
 
     /**
      * <p>Services to which the annotation applies.</p>
@@ -103,7 +104,7 @@ namespace Model
     /**
      * <p>Services to which the annotation applies.</p>
      */
-    inline ValueWithServiceIds& AddServiceIds(ServiceId&& value) { m_serviceIdsHasBeenSet = true; m_serviceIds.push_back(value); return *this; }
+    inline ValueWithServiceIds& AddServiceIds(ServiceId&& value) { m_serviceIdsHasBeenSet = true; m_serviceIds.push_back(std::move(value)); return *this; }
 
   private:
     AnnotationValue m_annotationValue;

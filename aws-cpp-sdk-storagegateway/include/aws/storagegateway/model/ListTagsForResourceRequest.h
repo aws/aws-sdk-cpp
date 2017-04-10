@@ -16,6 +16,7 @@
 #include <aws/storagegateway/StorageGateway_EXPORTS.h>
 #include <aws/storagegateway/StorageGatewayRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -54,7 +55,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the resource for which you want to list
      * tags.</p>
      */
-    inline void SetResourceARN(Aws::String&& value) { m_resourceARNHasBeenSet = true; m_resourceARN = value; }
+    inline void SetResourceARN(Aws::String&& value) { m_resourceARNHasBeenSet = true; m_resourceARN = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the resource for which you want to list
@@ -72,7 +73,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the resource for which you want to list
      * tags.</p>
      */
-    inline ListTagsForResourceRequest& WithResourceARN(Aws::String&& value) { SetResourceARN(value); return *this;}
+    inline ListTagsForResourceRequest& WithResourceARN(Aws::String&& value) { SetResourceARN(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the resource for which you want to list
@@ -96,7 +97,7 @@ namespace Model
      * <p>An opaque string that indicates the position at which to begin returning the
      * list of tags.</p>
      */
-    inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = value; }
+    inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = std::move(value); }
 
     /**
      * <p>An opaque string that indicates the position at which to begin returning the
@@ -114,7 +115,7 @@ namespace Model
      * <p>An opaque string that indicates the position at which to begin returning the
      * list of tags.</p>
      */
-    inline ListTagsForResourceRequest& WithMarker(Aws::String&& value) { SetMarker(value); return *this;}
+    inline ListTagsForResourceRequest& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
 
     /**
      * <p>An opaque string that indicates the position at which to begin returning the

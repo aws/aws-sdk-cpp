@@ -16,6 +16,7 @@
 #include <aws/redshift/Redshift_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -64,7 +65,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the IAM role, for example,
      * <code>arn:aws:iam::123456789012:role/RedshiftCopyUnload</code>. </p>
      */
-    inline void SetIamRoleArn(Aws::String&& value) { m_iamRoleArnHasBeenSet = true; m_iamRoleArn = value; }
+    inline void SetIamRoleArn(Aws::String&& value) { m_iamRoleArnHasBeenSet = true; m_iamRoleArn = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM role, for example,
@@ -82,7 +83,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the IAM role, for example,
      * <code>arn:aws:iam::123456789012:role/RedshiftCopyUnload</code>. </p>
      */
-    inline ClusterIamRole& WithIamRoleArn(Aws::String&& value) { SetIamRoleArn(value); return *this;}
+    inline ClusterIamRole& WithIamRoleArn(Aws::String&& value) { SetIamRoleArn(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM role, for example,
@@ -121,7 +122,7 @@ namespace Model
      * <code>removing</code>: The role is in the process of being disassociated with
      * the cluster.</p> </li> </ul>
      */
-    inline void SetApplyStatus(Aws::String&& value) { m_applyStatusHasBeenSet = true; m_applyStatus = value; }
+    inline void SetApplyStatus(Aws::String&& value) { m_applyStatusHasBeenSet = true; m_applyStatus = std::move(value); }
 
     /**
      * <p>A value that describes the status of the IAM role's association with an
@@ -154,7 +155,7 @@ namespace Model
      * <code>removing</code>: The role is in the process of being disassociated with
      * the cluster.</p> </li> </ul>
      */
-    inline ClusterIamRole& WithApplyStatus(Aws::String&& value) { SetApplyStatus(value); return *this;}
+    inline ClusterIamRole& WithApplyStatus(Aws::String&& value) { SetApplyStatus(std::move(value)); return *this;}
 
     /**
      * <p>A value that describes the status of the IAM role's association with an

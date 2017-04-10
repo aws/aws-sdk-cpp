@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/swf/SWF_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -56,7 +57,7 @@ namespace Model
     /**
      * <p>The user defined identifier associated with the workflow execution.</p>
      */
-    inline void SetWorkflowId(Aws::String&& value) { m_workflowIdHasBeenSet = true; m_workflowId = value; }
+    inline void SetWorkflowId(Aws::String&& value) { m_workflowIdHasBeenSet = true; m_workflowId = std::move(value); }
 
     /**
      * <p>The user defined identifier associated with the workflow execution.</p>
@@ -71,7 +72,7 @@ namespace Model
     /**
      * <p>The user defined identifier associated with the workflow execution.</p>
      */
-    inline WorkflowExecution& WithWorkflowId(Aws::String&& value) { SetWorkflowId(value); return *this;}
+    inline WorkflowExecution& WithWorkflowId(Aws::String&& value) { SetWorkflowId(std::move(value)); return *this;}
 
     /**
      * <p>The user defined identifier associated with the workflow execution.</p>
@@ -91,7 +92,7 @@ namespace Model
     /**
      * <p>A system-generated unique identifier for the workflow execution.</p>
      */
-    inline void SetRunId(Aws::String&& value) { m_runIdHasBeenSet = true; m_runId = value; }
+    inline void SetRunId(Aws::String&& value) { m_runIdHasBeenSet = true; m_runId = std::move(value); }
 
     /**
      * <p>A system-generated unique identifier for the workflow execution.</p>
@@ -106,7 +107,7 @@ namespace Model
     /**
      * <p>A system-generated unique identifier for the workflow execution.</p>
      */
-    inline WorkflowExecution& WithRunId(Aws::String&& value) { SetRunId(value); return *this;}
+    inline WorkflowExecution& WithRunId(Aws::String&& value) { SetRunId(std::move(value)); return *this;}
 
     /**
      * <p>A system-generated unique identifier for the workflow execution.</p>

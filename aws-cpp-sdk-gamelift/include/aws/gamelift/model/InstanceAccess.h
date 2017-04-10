@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/gamelift/model/OperatingSystem.h>
 #include <aws/gamelift/model/InstanceCredentials.h>
+#include <utility>
 
 namespace Aws
 {
@@ -59,7 +60,7 @@ namespace Model
     /**
      * <p>Unique identifier for a fleet containing the instance being accessed.</p>
      */
-    inline void SetFleetId(Aws::String&& value) { m_fleetIdHasBeenSet = true; m_fleetId = value; }
+    inline void SetFleetId(Aws::String&& value) { m_fleetIdHasBeenSet = true; m_fleetId = std::move(value); }
 
     /**
      * <p>Unique identifier for a fleet containing the instance being accessed.</p>
@@ -74,7 +75,7 @@ namespace Model
     /**
      * <p>Unique identifier for a fleet containing the instance being accessed.</p>
      */
-    inline InstanceAccess& WithFleetId(Aws::String&& value) { SetFleetId(value); return *this;}
+    inline InstanceAccess& WithFleetId(Aws::String&& value) { SetFleetId(std::move(value)); return *this;}
 
     /**
      * <p>Unique identifier for a fleet containing the instance being accessed.</p>
@@ -94,7 +95,7 @@ namespace Model
     /**
      * <p>Unique identifier for an instance being accessed.</p>
      */
-    inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
+    inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::move(value); }
 
     /**
      * <p>Unique identifier for an instance being accessed.</p>
@@ -109,7 +110,7 @@ namespace Model
     /**
      * <p>Unique identifier for an instance being accessed.</p>
      */
-    inline InstanceAccess& WithInstanceId(Aws::String&& value) { SetInstanceId(value); return *this;}
+    inline InstanceAccess& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
 
     /**
      * <p>Unique identifier for an instance being accessed.</p>
@@ -129,7 +130,7 @@ namespace Model
     /**
      * <p>IP address assigned to the instance.</p>
      */
-    inline void SetIpAddress(Aws::String&& value) { m_ipAddressHasBeenSet = true; m_ipAddress = value; }
+    inline void SetIpAddress(Aws::String&& value) { m_ipAddressHasBeenSet = true; m_ipAddress = std::move(value); }
 
     /**
      * <p>IP address assigned to the instance.</p>
@@ -144,7 +145,7 @@ namespace Model
     /**
      * <p>IP address assigned to the instance.</p>
      */
-    inline InstanceAccess& WithIpAddress(Aws::String&& value) { SetIpAddress(value); return *this;}
+    inline InstanceAccess& WithIpAddress(Aws::String&& value) { SetIpAddress(std::move(value)); return *this;}
 
     /**
      * <p>IP address assigned to the instance.</p>
@@ -164,7 +165,7 @@ namespace Model
     /**
      * <p>Operating system that is running on the instance.</p>
      */
-    inline void SetOperatingSystem(OperatingSystem&& value) { m_operatingSystemHasBeenSet = true; m_operatingSystem = value; }
+    inline void SetOperatingSystem(OperatingSystem&& value) { m_operatingSystemHasBeenSet = true; m_operatingSystem = std::move(value); }
 
     /**
      * <p>Operating system that is running on the instance.</p>
@@ -174,7 +175,7 @@ namespace Model
     /**
      * <p>Operating system that is running on the instance.</p>
      */
-    inline InstanceAccess& WithOperatingSystem(OperatingSystem&& value) { SetOperatingSystem(value); return *this;}
+    inline InstanceAccess& WithOperatingSystem(OperatingSystem&& value) { SetOperatingSystem(std::move(value)); return *this;}
 
     /**
      * <p>Credentials required to access the instance.</p>
@@ -189,7 +190,7 @@ namespace Model
     /**
      * <p>Credentials required to access the instance.</p>
      */
-    inline void SetCredentials(InstanceCredentials&& value) { m_credentialsHasBeenSet = true; m_credentials = value; }
+    inline void SetCredentials(InstanceCredentials&& value) { m_credentialsHasBeenSet = true; m_credentials = std::move(value); }
 
     /**
      * <p>Credentials required to access the instance.</p>
@@ -199,7 +200,7 @@ namespace Model
     /**
      * <p>Credentials required to access the instance.</p>
      */
-    inline InstanceAccess& WithCredentials(InstanceCredentials&& value) { SetCredentials(value); return *this;}
+    inline InstanceAccess& WithCredentials(InstanceCredentials&& value) { SetCredentials(std::move(value)); return *this;}
 
   private:
     Aws::String m_fleetId;

@@ -16,6 +16,7 @@
 #include <aws/iam/IAM_EXPORTS.h>
 #include <aws/iam/IAMRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -65,7 +66,7 @@ namespace Model
      * characters consisting of upper and lowercase alphanumeric characters with no
      * spaces. You can also include any of the following characters: =,.@-</p>
      */
-    inline void SetUserName(Aws::String&& value) { m_userNameHasBeenSet = true; m_userName = value; }
+    inline void SetUserName(Aws::String&& value) { m_userNameHasBeenSet = true; m_userName = std::move(value); }
 
     /**
      * <p>The name of the user whose service-specific credentials you want information
@@ -95,7 +96,7 @@ namespace Model
      * characters consisting of upper and lowercase alphanumeric characters with no
      * spaces. You can also include any of the following characters: =,.@-</p>
      */
-    inline ListServiceSpecificCredentialsRequest& WithUserName(Aws::String&& value) { SetUserName(value); return *this;}
+    inline ListServiceSpecificCredentialsRequest& WithUserName(Aws::String&& value) { SetUserName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the user whose service-specific credentials you want information
@@ -126,7 +127,7 @@ namespace Model
      * not specified, then AWS returns service-specific credentials for all
      * services.</p>
      */
-    inline void SetServiceName(Aws::String&& value) { m_serviceNameHasBeenSet = true; m_serviceName = value; }
+    inline void SetServiceName(Aws::String&& value) { m_serviceNameHasBeenSet = true; m_serviceName = std::move(value); }
 
     /**
      * <p>Filters the returned results to only those for the specified AWS service. If
@@ -147,7 +148,7 @@ namespace Model
      * not specified, then AWS returns service-specific credentials for all
      * services.</p>
      */
-    inline ListServiceSpecificCredentialsRequest& WithServiceName(Aws::String&& value) { SetServiceName(value); return *this;}
+    inline ListServiceSpecificCredentialsRequest& WithServiceName(Aws::String&& value) { SetServiceName(std::move(value)); return *this;}
 
     /**
      * <p>Filters the returned results to only those for the specified AWS service. If

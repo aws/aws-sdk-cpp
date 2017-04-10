@@ -17,6 +17,7 @@
 #include <aws/ec2/EC2Request.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -75,7 +76,7 @@ namespace Model
     /**
      * <p>One or more egress-only Internet gateway IDs.</p>
      */
-    inline void SetEgressOnlyInternetGatewayIds(Aws::Vector<Aws::String>&& value) { m_egressOnlyInternetGatewayIdsHasBeenSet = true; m_egressOnlyInternetGatewayIds = value; }
+    inline void SetEgressOnlyInternetGatewayIds(Aws::Vector<Aws::String>&& value) { m_egressOnlyInternetGatewayIdsHasBeenSet = true; m_egressOnlyInternetGatewayIds = std::move(value); }
 
     /**
      * <p>One or more egress-only Internet gateway IDs.</p>
@@ -85,7 +86,7 @@ namespace Model
     /**
      * <p>One or more egress-only Internet gateway IDs.</p>
      */
-    inline DescribeEgressOnlyInternetGatewaysRequest& WithEgressOnlyInternetGatewayIds(Aws::Vector<Aws::String>&& value) { SetEgressOnlyInternetGatewayIds(value); return *this;}
+    inline DescribeEgressOnlyInternetGatewaysRequest& WithEgressOnlyInternetGatewayIds(Aws::Vector<Aws::String>&& value) { SetEgressOnlyInternetGatewayIds(std::move(value)); return *this;}
 
     /**
      * <p>One or more egress-only Internet gateway IDs.</p>
@@ -95,7 +96,7 @@ namespace Model
     /**
      * <p>One or more egress-only Internet gateway IDs.</p>
      */
-    inline DescribeEgressOnlyInternetGatewaysRequest& AddEgressOnlyInternetGatewayIds(Aws::String&& value) { m_egressOnlyInternetGatewayIdsHasBeenSet = true; m_egressOnlyInternetGatewayIds.push_back(value); return *this; }
+    inline DescribeEgressOnlyInternetGatewaysRequest& AddEgressOnlyInternetGatewayIds(Aws::String&& value) { m_egressOnlyInternetGatewayIdsHasBeenSet = true; m_egressOnlyInternetGatewayIds.push_back(std::move(value)); return *this; }
 
     /**
      * <p>One or more egress-only Internet gateway IDs.</p>
@@ -142,7 +143,7 @@ namespace Model
     /**
      * <p>The token to retrieve the next page of results.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
      * <p>The token to retrieve the next page of results.</p>
@@ -157,7 +158,7 @@ namespace Model
     /**
      * <p>The token to retrieve the next page of results.</p>
      */
-    inline DescribeEgressOnlyInternetGatewaysRequest& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline DescribeEgressOnlyInternetGatewaysRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>The token to retrieve the next page of results.</p>

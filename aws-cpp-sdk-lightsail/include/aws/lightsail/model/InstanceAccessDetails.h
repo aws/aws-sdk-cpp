@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/lightsail/model/InstanceAccessProtocol.h>
+#include <utility>
 
 namespace Aws
 {
@@ -65,7 +66,7 @@ namespace Model
      * OpenSSH clients (e.g., command line SSH), you should save this value to
      * <code>tempkey-cert.pub</code>.</p>
      */
-    inline void SetCertKey(Aws::String&& value) { m_certKeyHasBeenSet = true; m_certKey = value; }
+    inline void SetCertKey(Aws::String&& value) { m_certKeyHasBeenSet = true; m_certKey = std::move(value); }
 
     /**
      * <p>For SSH access, the public key to use when accessing your instance For
@@ -86,7 +87,7 @@ namespace Model
      * OpenSSH clients (e.g., command line SSH), you should save this value to
      * <code>tempkey-cert.pub</code>.</p>
      */
-    inline InstanceAccessDetails& WithCertKey(Aws::String&& value) { SetCertKey(value); return *this;}
+    inline InstanceAccessDetails& WithCertKey(Aws::String&& value) { SetCertKey(std::move(value)); return *this;}
 
     /**
      * <p>For SSH access, the public key to use when accessing your instance For
@@ -108,7 +109,7 @@ namespace Model
     /**
      * <p>For SSH access, the date on which the temporary keys expire.</p>
      */
-    inline void SetExpiresAt(Aws::Utils::DateTime&& value) { m_expiresAtHasBeenSet = true; m_expiresAt = value; }
+    inline void SetExpiresAt(Aws::Utils::DateTime&& value) { m_expiresAtHasBeenSet = true; m_expiresAt = std::move(value); }
 
     /**
      * <p>For SSH access, the date on which the temporary keys expire.</p>
@@ -118,7 +119,7 @@ namespace Model
     /**
      * <p>For SSH access, the date on which the temporary keys expire.</p>
      */
-    inline InstanceAccessDetails& WithExpiresAt(Aws::Utils::DateTime&& value) { SetExpiresAt(value); return *this;}
+    inline InstanceAccessDetails& WithExpiresAt(Aws::Utils::DateTime&& value) { SetExpiresAt(std::move(value)); return *this;}
 
     /**
      * <p>The public IP address of the Amazon Lightsail instance.</p>
@@ -133,7 +134,7 @@ namespace Model
     /**
      * <p>The public IP address of the Amazon Lightsail instance.</p>
      */
-    inline void SetIpAddress(Aws::String&& value) { m_ipAddressHasBeenSet = true; m_ipAddress = value; }
+    inline void SetIpAddress(Aws::String&& value) { m_ipAddressHasBeenSet = true; m_ipAddress = std::move(value); }
 
     /**
      * <p>The public IP address of the Amazon Lightsail instance.</p>
@@ -148,7 +149,7 @@ namespace Model
     /**
      * <p>The public IP address of the Amazon Lightsail instance.</p>
      */
-    inline InstanceAccessDetails& WithIpAddress(Aws::String&& value) { SetIpAddress(value); return *this;}
+    inline InstanceAccessDetails& WithIpAddress(Aws::String&& value) { SetIpAddress(std::move(value)); return *this;}
 
     /**
      * <p>The public IP address of the Amazon Lightsail instance.</p>
@@ -168,7 +169,7 @@ namespace Model
     /**
      * <p>For RDP access, the temporary password of the Amazon EC2 instance.</p>
      */
-    inline void SetPassword(Aws::String&& value) { m_passwordHasBeenSet = true; m_password = value; }
+    inline void SetPassword(Aws::String&& value) { m_passwordHasBeenSet = true; m_password = std::move(value); }
 
     /**
      * <p>For RDP access, the temporary password of the Amazon EC2 instance.</p>
@@ -183,7 +184,7 @@ namespace Model
     /**
      * <p>For RDP access, the temporary password of the Amazon EC2 instance.</p>
      */
-    inline InstanceAccessDetails& WithPassword(Aws::String&& value) { SetPassword(value); return *this;}
+    inline InstanceAccessDetails& WithPassword(Aws::String&& value) { SetPassword(std::move(value)); return *this;}
 
     /**
      * <p>For RDP access, the temporary password of the Amazon EC2 instance.</p>
@@ -206,7 +207,7 @@ namespace Model
      * <p>For SSH access, the temporary private key. For OpenSSH clients (e.g., command
      * line SSH), you should save this value to <code>tempkey</code>).</p>
      */
-    inline void SetPrivateKey(Aws::String&& value) { m_privateKeyHasBeenSet = true; m_privateKey = value; }
+    inline void SetPrivateKey(Aws::String&& value) { m_privateKeyHasBeenSet = true; m_privateKey = std::move(value); }
 
     /**
      * <p>For SSH access, the temporary private key. For OpenSSH clients (e.g., command
@@ -224,7 +225,7 @@ namespace Model
      * <p>For SSH access, the temporary private key. For OpenSSH clients (e.g., command
      * line SSH), you should save this value to <code>tempkey</code>).</p>
      */
-    inline InstanceAccessDetails& WithPrivateKey(Aws::String&& value) { SetPrivateKey(value); return *this;}
+    inline InstanceAccessDetails& WithPrivateKey(Aws::String&& value) { SetPrivateKey(std::move(value)); return *this;}
 
     /**
      * <p>For SSH access, the temporary private key. For OpenSSH clients (e.g., command
@@ -245,7 +246,7 @@ namespace Model
     /**
      * <p>The protocol for these Amazon Lightsail instance access details.</p>
      */
-    inline void SetProtocol(InstanceAccessProtocol&& value) { m_protocolHasBeenSet = true; m_protocol = value; }
+    inline void SetProtocol(InstanceAccessProtocol&& value) { m_protocolHasBeenSet = true; m_protocol = std::move(value); }
 
     /**
      * <p>The protocol for these Amazon Lightsail instance access details.</p>
@@ -255,7 +256,7 @@ namespace Model
     /**
      * <p>The protocol for these Amazon Lightsail instance access details.</p>
      */
-    inline InstanceAccessDetails& WithProtocol(InstanceAccessProtocol&& value) { SetProtocol(value); return *this;}
+    inline InstanceAccessDetails& WithProtocol(InstanceAccessProtocol&& value) { SetProtocol(std::move(value)); return *this;}
 
     /**
      * <p>The name of this Amazon Lightsail instance.</p>
@@ -270,7 +271,7 @@ namespace Model
     /**
      * <p>The name of this Amazon Lightsail instance.</p>
      */
-    inline void SetInstanceName(Aws::String&& value) { m_instanceNameHasBeenSet = true; m_instanceName = value; }
+    inline void SetInstanceName(Aws::String&& value) { m_instanceNameHasBeenSet = true; m_instanceName = std::move(value); }
 
     /**
      * <p>The name of this Amazon Lightsail instance.</p>
@@ -285,7 +286,7 @@ namespace Model
     /**
      * <p>The name of this Amazon Lightsail instance.</p>
      */
-    inline InstanceAccessDetails& WithInstanceName(Aws::String&& value) { SetInstanceName(value); return *this;}
+    inline InstanceAccessDetails& WithInstanceName(Aws::String&& value) { SetInstanceName(std::move(value)); return *this;}
 
     /**
      * <p>The name of this Amazon Lightsail instance.</p>
@@ -305,7 +306,7 @@ namespace Model
     /**
      * <p>The user name to use when logging in to the Amazon Lightsail instance.</p>
      */
-    inline void SetUsername(Aws::String&& value) { m_usernameHasBeenSet = true; m_username = value; }
+    inline void SetUsername(Aws::String&& value) { m_usernameHasBeenSet = true; m_username = std::move(value); }
 
     /**
      * <p>The user name to use when logging in to the Amazon Lightsail instance.</p>
@@ -320,7 +321,7 @@ namespace Model
     /**
      * <p>The user name to use when logging in to the Amazon Lightsail instance.</p>
      */
-    inline InstanceAccessDetails& WithUsername(Aws::String&& value) { SetUsername(value); return *this;}
+    inline InstanceAccessDetails& WithUsername(Aws::String&& value) { SetUsername(std::move(value)); return *this;}
 
     /**
      * <p>The user name to use when logging in to the Amazon Lightsail instance.</p>

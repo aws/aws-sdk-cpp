@@ -16,6 +16,7 @@
 #include <aws/cloudfront/CloudFront_EXPORTS.h>
 #include <aws/cloudfront/CloudFrontRequest.h>
 #include <aws/cloudfront/model/DistributionConfig.h>
+#include <utility>
 
 namespace Aws
 {
@@ -49,7 +50,7 @@ namespace Model
     /**
      * The distribution's configuration information.
      */
-    inline void SetDistributionConfig(DistributionConfig&& value) { m_distributionConfigHasBeenSet = true; m_distributionConfig = value; }
+    inline void SetDistributionConfig(DistributionConfig&& value) { m_distributionConfigHasBeenSet = true; m_distributionConfig = std::move(value); }
 
     /**
      * The distribution's configuration information.
@@ -59,7 +60,7 @@ namespace Model
     /**
      * The distribution's configuration information.
      */
-    inline CreateDistribution2016_01_28Request& WithDistributionConfig(DistributionConfig&& value) { SetDistributionConfig(value); return *this;}
+    inline CreateDistribution2016_01_28Request& WithDistributionConfig(DistributionConfig&& value) { SetDistributionConfig(std::move(value)); return *this;}
 
   private:
     DistributionConfig m_distributionConfig;

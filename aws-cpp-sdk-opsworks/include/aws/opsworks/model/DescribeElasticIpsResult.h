@@ -16,6 +16,7 @@
 #include <aws/opsworks/OpsWorks_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/opsworks/model/ElasticIp.h>
+#include <utility>
 
 namespace Aws
 {
@@ -62,7 +63,7 @@ namespace Model
      * <p>An <code>ElasticIps</code> object that describes the specified Elastic IP
      * addresses.</p>
      */
-    inline void SetElasticIps(Aws::Vector<ElasticIp>&& value) { m_elasticIps = value; }
+    inline void SetElasticIps(Aws::Vector<ElasticIp>&& value) { m_elasticIps = std::move(value); }
 
     /**
      * <p>An <code>ElasticIps</code> object that describes the specified Elastic IP
@@ -74,7 +75,7 @@ namespace Model
      * <p>An <code>ElasticIps</code> object that describes the specified Elastic IP
      * addresses.</p>
      */
-    inline DescribeElasticIpsResult& WithElasticIps(Aws::Vector<ElasticIp>&& value) { SetElasticIps(value); return *this;}
+    inline DescribeElasticIpsResult& WithElasticIps(Aws::Vector<ElasticIp>&& value) { SetElasticIps(std::move(value)); return *this;}
 
     /**
      * <p>An <code>ElasticIps</code> object that describes the specified Elastic IP
@@ -86,7 +87,7 @@ namespace Model
      * <p>An <code>ElasticIps</code> object that describes the specified Elastic IP
      * addresses.</p>
      */
-    inline DescribeElasticIpsResult& AddElasticIps(ElasticIp&& value) { m_elasticIps.push_back(value); return *this; }
+    inline DescribeElasticIpsResult& AddElasticIps(ElasticIp&& value) { m_elasticIps.push_back(std::move(value)); return *this; }
 
   private:
     Aws::Vector<ElasticIp> m_elasticIps;

@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/elasticmapreduce/model/ShrinkPolicy.h>
+#include <utility>
 
 namespace Aws
 {
@@ -58,7 +59,7 @@ namespace Model
     /**
      * <p>Unique ID of the instance group to expand or shrink.</p>
      */
-    inline void SetInstanceGroupId(Aws::String&& value) { m_instanceGroupIdHasBeenSet = true; m_instanceGroupId = value; }
+    inline void SetInstanceGroupId(Aws::String&& value) { m_instanceGroupIdHasBeenSet = true; m_instanceGroupId = std::move(value); }
 
     /**
      * <p>Unique ID of the instance group to expand or shrink.</p>
@@ -73,7 +74,7 @@ namespace Model
     /**
      * <p>Unique ID of the instance group to expand or shrink.</p>
      */
-    inline InstanceGroupModifyConfig& WithInstanceGroupId(Aws::String&& value) { SetInstanceGroupId(value); return *this;}
+    inline InstanceGroupModifyConfig& WithInstanceGroupId(Aws::String&& value) { SetInstanceGroupId(std::move(value)); return *this;}
 
     /**
      * <p>Unique ID of the instance group to expand or shrink.</p>
@@ -111,7 +112,7 @@ namespace Model
      * <p>The EC2 InstanceIds to terminate. After you terminate the instances, the
      * instance group will not return to its original requested size.</p>
      */
-    inline void SetEC2InstanceIdsToTerminate(Aws::Vector<Aws::String>&& value) { m_eC2InstanceIdsToTerminateHasBeenSet = true; m_eC2InstanceIdsToTerminate = value; }
+    inline void SetEC2InstanceIdsToTerminate(Aws::Vector<Aws::String>&& value) { m_eC2InstanceIdsToTerminateHasBeenSet = true; m_eC2InstanceIdsToTerminate = std::move(value); }
 
     /**
      * <p>The EC2 InstanceIds to terminate. After you terminate the instances, the
@@ -123,7 +124,7 @@ namespace Model
      * <p>The EC2 InstanceIds to terminate. After you terminate the instances, the
      * instance group will not return to its original requested size.</p>
      */
-    inline InstanceGroupModifyConfig& WithEC2InstanceIdsToTerminate(Aws::Vector<Aws::String>&& value) { SetEC2InstanceIdsToTerminate(value); return *this;}
+    inline InstanceGroupModifyConfig& WithEC2InstanceIdsToTerminate(Aws::Vector<Aws::String>&& value) { SetEC2InstanceIdsToTerminate(std::move(value)); return *this;}
 
     /**
      * <p>The EC2 InstanceIds to terminate. After you terminate the instances, the
@@ -135,7 +136,7 @@ namespace Model
      * <p>The EC2 InstanceIds to terminate. After you terminate the instances, the
      * instance group will not return to its original requested size.</p>
      */
-    inline InstanceGroupModifyConfig& AddEC2InstanceIdsToTerminate(Aws::String&& value) { m_eC2InstanceIdsToTerminateHasBeenSet = true; m_eC2InstanceIdsToTerminate.push_back(value); return *this; }
+    inline InstanceGroupModifyConfig& AddEC2InstanceIdsToTerminate(Aws::String&& value) { m_eC2InstanceIdsToTerminateHasBeenSet = true; m_eC2InstanceIdsToTerminate.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The EC2 InstanceIds to terminate. After you terminate the instances, the
@@ -156,7 +157,7 @@ namespace Model
     /**
      * <p>Policy for customizing shrink operations.</p>
      */
-    inline void SetShrinkPolicy(ShrinkPolicy&& value) { m_shrinkPolicyHasBeenSet = true; m_shrinkPolicy = value; }
+    inline void SetShrinkPolicy(ShrinkPolicy&& value) { m_shrinkPolicyHasBeenSet = true; m_shrinkPolicy = std::move(value); }
 
     /**
      * <p>Policy for customizing shrink operations.</p>
@@ -166,7 +167,7 @@ namespace Model
     /**
      * <p>Policy for customizing shrink operations.</p>
      */
-    inline InstanceGroupModifyConfig& WithShrinkPolicy(ShrinkPolicy&& value) { SetShrinkPolicy(value); return *this;}
+    inline InstanceGroupModifyConfig& WithShrinkPolicy(ShrinkPolicy&& value) { SetShrinkPolicy(std::move(value)); return *this;}
 
   private:
     Aws::String m_instanceGroupId;

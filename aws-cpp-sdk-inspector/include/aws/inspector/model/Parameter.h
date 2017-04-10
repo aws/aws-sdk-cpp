@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/inspector/Inspector_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -54,7 +55,7 @@ namespace Model
     /**
      * <p>The name of the variable that is being replaced.</p>
      */
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p>The name of the variable that is being replaced.</p>
@@ -69,7 +70,7 @@ namespace Model
     /**
      * <p>The name of the variable that is being replaced.</p>
      */
-    inline Parameter& WithName(Aws::String&& value) { SetName(value); return *this;}
+    inline Parameter& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the variable that is being replaced.</p>
@@ -89,7 +90,7 @@ namespace Model
     /**
      * <p>The value assigned to the variable that is being replaced. </p>
      */
-    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = value; }
+    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
 
     /**
      * <p>The value assigned to the variable that is being replaced. </p>
@@ -104,7 +105,7 @@ namespace Model
     /**
      * <p>The value assigned to the variable that is being replaced. </p>
      */
-    inline Parameter& WithValue(Aws::String&& value) { SetValue(value); return *this;}
+    inline Parameter& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
 
     /**
      * <p>The value assigned to the variable that is being replaced. </p>

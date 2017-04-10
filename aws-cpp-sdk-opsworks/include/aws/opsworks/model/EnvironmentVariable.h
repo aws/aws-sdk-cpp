@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/opsworks/OpsWorks_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -65,7 +66,7 @@ namespace Model
      * letters, numbers, and underscores (_), but it must start with a letter or
      * underscore.</p>
      */
-    inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = value; }
+    inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
 
     /**
      * <p>(Required) The environment variable's name, which can consist of up to 64
@@ -89,7 +90,7 @@ namespace Model
      * letters, numbers, and underscores (_), but it must start with a letter or
      * underscore.</p>
      */
-    inline EnvironmentVariable& WithKey(Aws::String&& value) { SetKey(value); return *this;}
+    inline EnvironmentVariable& WithKey(Aws::String&& value) { SetKey(std::move(value)); return *this;}
 
     /**
      * <p>(Required) The environment variable's name, which can consist of up to 64
@@ -118,7 +119,7 @@ namespace Model
      * specify a value, it can contain up to 256 characters, which must all be
      * printable.</p>
      */
-    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = value; }
+    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
 
     /**
      * <p>(Optional) The environment variable's value, which can be left empty. If you
@@ -139,7 +140,7 @@ namespace Model
      * specify a value, it can contain up to 256 characters, which must all be
      * printable.</p>
      */
-    inline EnvironmentVariable& WithValue(Aws::String&& value) { SetValue(value); return *this;}
+    inline EnvironmentVariable& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
 
     /**
      * <p>(Optional) The environment variable's value, which can be left empty. If you

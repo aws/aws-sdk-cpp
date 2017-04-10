@@ -16,6 +16,7 @@
 #include <aws/cognito-idp/CognitoIdentityProvider_EXPORTS.h>
 #include <aws/cognito-idp/CognitoIdentityProviderRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -52,7 +53,7 @@ namespace Model
     /**
      * <p>The ID of the client associated with the user pool.</p>
      */
-    inline void SetClientId(Aws::String&& value) { m_clientIdHasBeenSet = true; m_clientId = value; }
+    inline void SetClientId(Aws::String&& value) { m_clientIdHasBeenSet = true; m_clientId = std::move(value); }
 
     /**
      * <p>The ID of the client associated with the user pool.</p>
@@ -67,7 +68,7 @@ namespace Model
     /**
      * <p>The ID of the client associated with the user pool.</p>
      */
-    inline ConfirmSignUpRequest& WithClientId(Aws::String&& value) { SetClientId(value); return *this;}
+    inline ConfirmSignUpRequest& WithClientId(Aws::String&& value) { SetClientId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the client associated with the user pool.</p>
@@ -90,7 +91,7 @@ namespace Model
      * <p>A keyed-hash message authentication code (HMAC) calculated using the secret
      * key of a user pool client and username plus the client ID in the message.</p>
      */
-    inline void SetSecretHash(Aws::String&& value) { m_secretHashHasBeenSet = true; m_secretHash = value; }
+    inline void SetSecretHash(Aws::String&& value) { m_secretHashHasBeenSet = true; m_secretHash = std::move(value); }
 
     /**
      * <p>A keyed-hash message authentication code (HMAC) calculated using the secret
@@ -108,7 +109,7 @@ namespace Model
      * <p>A keyed-hash message authentication code (HMAC) calculated using the secret
      * key of a user pool client and username plus the client ID in the message.</p>
      */
-    inline ConfirmSignUpRequest& WithSecretHash(Aws::String&& value) { SetSecretHash(value); return *this;}
+    inline ConfirmSignUpRequest& WithSecretHash(Aws::String&& value) { SetSecretHash(std::move(value)); return *this;}
 
     /**
      * <p>A keyed-hash message authentication code (HMAC) calculated using the secret
@@ -129,7 +130,7 @@ namespace Model
     /**
      * <p>The user name of the user whose registration you wish to confirm.</p>
      */
-    inline void SetUsername(Aws::String&& value) { m_usernameHasBeenSet = true; m_username = value; }
+    inline void SetUsername(Aws::String&& value) { m_usernameHasBeenSet = true; m_username = std::move(value); }
 
     /**
      * <p>The user name of the user whose registration you wish to confirm.</p>
@@ -144,7 +145,7 @@ namespace Model
     /**
      * <p>The user name of the user whose registration you wish to confirm.</p>
      */
-    inline ConfirmSignUpRequest& WithUsername(Aws::String&& value) { SetUsername(value); return *this;}
+    inline ConfirmSignUpRequest& WithUsername(Aws::String&& value) { SetUsername(std::move(value)); return *this;}
 
     /**
      * <p>The user name of the user whose registration you wish to confirm.</p>
@@ -164,7 +165,7 @@ namespace Model
     /**
      * <p>The confirmation code sent by a user's request to confirm registration.</p>
      */
-    inline void SetConfirmationCode(Aws::String&& value) { m_confirmationCodeHasBeenSet = true; m_confirmationCode = value; }
+    inline void SetConfirmationCode(Aws::String&& value) { m_confirmationCodeHasBeenSet = true; m_confirmationCode = std::move(value); }
 
     /**
      * <p>The confirmation code sent by a user's request to confirm registration.</p>
@@ -179,7 +180,7 @@ namespace Model
     /**
      * <p>The confirmation code sent by a user's request to confirm registration.</p>
      */
-    inline ConfirmSignUpRequest& WithConfirmationCode(Aws::String&& value) { SetConfirmationCode(value); return *this;}
+    inline ConfirmSignUpRequest& WithConfirmationCode(Aws::String&& value) { SetConfirmationCode(std::move(value)); return *this;}
 
     /**
      * <p>The confirmation code sent by a user's request to confirm registration.</p>

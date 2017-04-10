@@ -16,6 +16,7 @@
 #include <aws/elasticmapreduce/EMR_EXPORTS.h>
 #include <aws/elasticmapreduce/EMRRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -48,7 +49,7 @@ namespace Model
     /**
      * <p>The pagination token that indicates the set of results to retrieve.</p>
      */
-    inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = value; }
+    inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = std::move(value); }
 
     /**
      * <p>The pagination token that indicates the set of results to retrieve.</p>
@@ -63,7 +64,7 @@ namespace Model
     /**
      * <p>The pagination token that indicates the set of results to retrieve.</p>
      */
-    inline ListSecurityConfigurationsRequest& WithMarker(Aws::String&& value) { SetMarker(value); return *this;}
+    inline ListSecurityConfigurationsRequest& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
 
     /**
      * <p>The pagination token that indicates the set of results to retrieve.</p>

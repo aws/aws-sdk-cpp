@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/mturk-requester/model/HIT.h>
+#include <utility>
 
 namespace Aws
 {
@@ -48,7 +49,7 @@ namespace Model
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
 
     
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
@@ -57,7 +58,7 @@ namespace Model
     inline ListHITsForQualificationTypeResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     
-    inline ListHITsForQualificationTypeResult& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline ListHITsForQualificationTypeResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     
     inline ListHITsForQualificationTypeResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
@@ -93,7 +94,7 @@ namespace Model
     /**
      * <p> The list of HIT elements returned by the query.</p>
      */
-    inline void SetHITs(Aws::Vector<HIT>&& value) { m_hITs = value; }
+    inline void SetHITs(Aws::Vector<HIT>&& value) { m_hITs = std::move(value); }
 
     /**
      * <p> The list of HIT elements returned by the query.</p>
@@ -103,7 +104,7 @@ namespace Model
     /**
      * <p> The list of HIT elements returned by the query.</p>
      */
-    inline ListHITsForQualificationTypeResult& WithHITs(Aws::Vector<HIT>&& value) { SetHITs(value); return *this;}
+    inline ListHITsForQualificationTypeResult& WithHITs(Aws::Vector<HIT>&& value) { SetHITs(std::move(value)); return *this;}
 
     /**
      * <p> The list of HIT elements returned by the query.</p>
@@ -113,7 +114,7 @@ namespace Model
     /**
      * <p> The list of HIT elements returned by the query.</p>
      */
-    inline ListHITsForQualificationTypeResult& AddHITs(HIT&& value) { m_hITs.push_back(value); return *this; }
+    inline ListHITsForQualificationTypeResult& AddHITs(HIT&& value) { m_hITs.push_back(std::move(value)); return *this; }
 
   private:
     Aws::String m_nextToken;

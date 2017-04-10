@@ -17,6 +17,7 @@
 #include <aws/rds/RDSRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <utility>
 
 namespace Aws
 {
@@ -69,7 +70,7 @@ namespace Model
      * letter.</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive
      * hyphens.</p> </li> </ul>
      */
-    inline void SetDBClusterIdentifier(Aws::String&& value) { m_dBClusterIdentifierHasBeenSet = true; m_dBClusterIdentifier = value; }
+    inline void SetDBClusterIdentifier(Aws::String&& value) { m_dBClusterIdentifierHasBeenSet = true; m_dBClusterIdentifier = std::move(value); }
 
     /**
      * <p>The DB cluster identifier for the cluster being modified. This parameter is
@@ -99,7 +100,7 @@ namespace Model
      * letter.</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive
      * hyphens.</p> </li> </ul>
      */
-    inline ModifyDBClusterRequest& WithDBClusterIdentifier(Aws::String&& value) { SetDBClusterIdentifier(value); return *this;}
+    inline ModifyDBClusterRequest& WithDBClusterIdentifier(Aws::String&& value) { SetDBClusterIdentifier(std::move(value)); return *this;}
 
     /**
      * <p>The DB cluster identifier for the cluster being modified. This parameter is
@@ -139,7 +140,7 @@ namespace Model
      * or contain two consecutive hyphens</p> </li> </ul> <p>Example:
      * <code>my-cluster2</code> </p>
      */
-    inline void SetNewDBClusterIdentifier(Aws::String&& value) { m_newDBClusterIdentifierHasBeenSet = true; m_newDBClusterIdentifier = value; }
+    inline void SetNewDBClusterIdentifier(Aws::String&& value) { m_newDBClusterIdentifierHasBeenSet = true; m_newDBClusterIdentifier = std::move(value); }
 
     /**
      * <p>The new DB cluster identifier for the DB cluster when renaming a DB cluster.
@@ -169,7 +170,7 @@ namespace Model
      * or contain two consecutive hyphens</p> </li> </ul> <p>Example:
      * <code>my-cluster2</code> </p>
      */
-    inline ModifyDBClusterRequest& WithNewDBClusterIdentifier(Aws::String&& value) { SetNewDBClusterIdentifier(value); return *this;}
+    inline ModifyDBClusterRequest& WithNewDBClusterIdentifier(Aws::String&& value) { SetNewDBClusterIdentifier(std::move(value)); return *this;}
 
     /**
      * <p>The new DB cluster identifier for the DB cluster when renaming a DB cluster.
@@ -266,7 +267,7 @@ namespace Model
     /**
      * <p>The name of the DB cluster parameter group to use for the DB cluster.</p>
      */
-    inline void SetDBClusterParameterGroupName(Aws::String&& value) { m_dBClusterParameterGroupNameHasBeenSet = true; m_dBClusterParameterGroupName = value; }
+    inline void SetDBClusterParameterGroupName(Aws::String&& value) { m_dBClusterParameterGroupNameHasBeenSet = true; m_dBClusterParameterGroupName = std::move(value); }
 
     /**
      * <p>The name of the DB cluster parameter group to use for the DB cluster.</p>
@@ -281,7 +282,7 @@ namespace Model
     /**
      * <p>The name of the DB cluster parameter group to use for the DB cluster.</p>
      */
-    inline ModifyDBClusterRequest& WithDBClusterParameterGroupName(Aws::String&& value) { SetDBClusterParameterGroupName(value); return *this;}
+    inline ModifyDBClusterRequest& WithDBClusterParameterGroupName(Aws::String&& value) { SetDBClusterParameterGroupName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the DB cluster parameter group to use for the DB cluster.</p>
@@ -301,7 +302,7 @@ namespace Model
     /**
      * <p>A lst of VPC security groups that the DB cluster will belong to.</p>
      */
-    inline void SetVpcSecurityGroupIds(Aws::Vector<Aws::String>&& value) { m_vpcSecurityGroupIdsHasBeenSet = true; m_vpcSecurityGroupIds = value; }
+    inline void SetVpcSecurityGroupIds(Aws::Vector<Aws::String>&& value) { m_vpcSecurityGroupIdsHasBeenSet = true; m_vpcSecurityGroupIds = std::move(value); }
 
     /**
      * <p>A lst of VPC security groups that the DB cluster will belong to.</p>
@@ -311,7 +312,7 @@ namespace Model
     /**
      * <p>A lst of VPC security groups that the DB cluster will belong to.</p>
      */
-    inline ModifyDBClusterRequest& WithVpcSecurityGroupIds(Aws::Vector<Aws::String>&& value) { SetVpcSecurityGroupIds(value); return *this;}
+    inline ModifyDBClusterRequest& WithVpcSecurityGroupIds(Aws::Vector<Aws::String>&& value) { SetVpcSecurityGroupIds(std::move(value)); return *this;}
 
     /**
      * <p>A lst of VPC security groups that the DB cluster will belong to.</p>
@@ -321,7 +322,7 @@ namespace Model
     /**
      * <p>A lst of VPC security groups that the DB cluster will belong to.</p>
      */
-    inline ModifyDBClusterRequest& AddVpcSecurityGroupIds(Aws::String&& value) { m_vpcSecurityGroupIdsHasBeenSet = true; m_vpcSecurityGroupIds.push_back(value); return *this; }
+    inline ModifyDBClusterRequest& AddVpcSecurityGroupIds(Aws::String&& value) { m_vpcSecurityGroupIdsHasBeenSet = true; m_vpcSecurityGroupIds.push_back(std::move(value)); return *this; }
 
     /**
      * <p>A lst of VPC security groups that the DB cluster will belong to.</p>
@@ -368,7 +369,7 @@ namespace Model
      * printable ASCII character except "/", """, or "@".</p> <p>Constraints: Must
      * contain from 8 to 41 characters.</p>
      */
-    inline void SetMasterUserPassword(Aws::String&& value) { m_masterUserPasswordHasBeenSet = true; m_masterUserPassword = value; }
+    inline void SetMasterUserPassword(Aws::String&& value) { m_masterUserPasswordHasBeenSet = true; m_masterUserPassword = std::move(value); }
 
     /**
      * <p>The new password for the master database user. This password can contain any
@@ -389,7 +390,7 @@ namespace Model
      * printable ASCII character except "/", """, or "@".</p> <p>Constraints: Must
      * contain from 8 to 41 characters.</p>
      */
-    inline ModifyDBClusterRequest& WithMasterUserPassword(Aws::String&& value) { SetMasterUserPassword(value); return *this;}
+    inline ModifyDBClusterRequest& WithMasterUserPassword(Aws::String&& value) { SetMasterUserPassword(std::move(value)); return *this;}
 
     /**
      * <p>The new password for the master database user. This password can contain any
@@ -438,7 +439,7 @@ namespace Model
      * group cannot be removed from a DB cluster once it is associated with a DB
      * cluster.</p>
      */
-    inline void SetOptionGroupName(Aws::String&& value) { m_optionGroupNameHasBeenSet = true; m_optionGroupName = value; }
+    inline void SetOptionGroupName(Aws::String&& value) { m_optionGroupNameHasBeenSet = true; m_optionGroupName = std::move(value); }
 
     /**
      * <p>A value that indicates that the DB cluster should be associated with the
@@ -480,7 +481,7 @@ namespace Model
      * group cannot be removed from a DB cluster once it is associated with a DB
      * cluster.</p>
      */
-    inline ModifyDBClusterRequest& WithOptionGroupName(Aws::String&& value) { SetOptionGroupName(value); return *this;}
+    inline ModifyDBClusterRequest& WithOptionGroupName(Aws::String&& value) { SetOptionGroupName(std::move(value)); return *this;}
 
     /**
      * <p>A value that indicates that the DB cluster should be associated with the
@@ -539,7 +540,7 @@ namespace Model
      * maintenance window.</p> </li> <li> <p>Must be at least 30 minutes.</p> </li>
      * </ul>
      */
-    inline void SetPreferredBackupWindow(Aws::String&& value) { m_preferredBackupWindowHasBeenSet = true; m_preferredBackupWindow = value; }
+    inline void SetPreferredBackupWindow(Aws::String&& value) { m_preferredBackupWindowHasBeenSet = true; m_preferredBackupWindow = std::move(value); }
 
     /**
      * <p>The daily time range during which automated backups are created if automated
@@ -584,7 +585,7 @@ namespace Model
      * maintenance window.</p> </li> <li> <p>Must be at least 30 minutes.</p> </li>
      * </ul>
      */
-    inline ModifyDBClusterRequest& WithPreferredBackupWindow(Aws::String&& value) { SetPreferredBackupWindow(value); return *this;}
+    inline ModifyDBClusterRequest& WithPreferredBackupWindow(Aws::String&& value) { SetPreferredBackupWindow(std::move(value)); return *this;}
 
     /**
      * <p>The daily time range during which automated backups are created if automated
@@ -638,7 +639,7 @@ namespace Model
      * Guide.</i> </p> <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun</p>
      * <p>Constraints: Minimum 30-minute window.</p>
      */
-    inline void SetPreferredMaintenanceWindow(Aws::String&& value) { m_preferredMaintenanceWindowHasBeenSet = true; m_preferredMaintenanceWindow = value; }
+    inline void SetPreferredMaintenanceWindow(Aws::String&& value) { m_preferredMaintenanceWindowHasBeenSet = true; m_preferredMaintenanceWindow = std::move(value); }
 
     /**
      * <p>The weekly time range during which system maintenance can occur, in Universal
@@ -677,7 +678,7 @@ namespace Model
      * Guide.</i> </p> <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun</p>
      * <p>Constraints: Minimum 30-minute window.</p>
      */
-    inline ModifyDBClusterRequest& WithPreferredMaintenanceWindow(Aws::String&& value) { SetPreferredMaintenanceWindow(value); return *this;}
+    inline ModifyDBClusterRequest& WithPreferredMaintenanceWindow(Aws::String&& value) { SetPreferredMaintenanceWindow(std::move(value)); return *this;}
 
     /**
      * <p>The weekly time range during which system maintenance can occur, in Universal

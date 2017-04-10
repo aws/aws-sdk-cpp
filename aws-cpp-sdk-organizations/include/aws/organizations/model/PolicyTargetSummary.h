@@ -16,6 +16,7 @@
 #include <aws/organizations/Organizations_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/organizations/model/TargetType.h>
+#include <utility>
 
 namespace Aws
 {
@@ -82,7 +83,7 @@ namespace Model
      * followed by a second "-" dash and from 8 to 32 additional lower-case letters or
      * digits.</p> </li> </ul>
      */
-    inline void SetTargetId(Aws::String&& value) { m_targetIdHasBeenSet = true; m_targetId = value; }
+    inline void SetTargetId(Aws::String&& value) { m_targetIdHasBeenSet = true; m_targetId = std::move(value); }
 
     /**
      * <p>The unique identifier (ID) of the policy target.</p> <p>The <a
@@ -121,7 +122,7 @@ namespace Model
      * followed by a second "-" dash and from 8 to 32 additional lower-case letters or
      * digits.</p> </li> </ul>
      */
-    inline PolicyTargetSummary& WithTargetId(Aws::String&& value) { SetTargetId(value); return *this;}
+    inline PolicyTargetSummary& WithTargetId(Aws::String&& value) { SetTargetId(std::move(value)); return *this;}
 
     /**
      * <p>The unique identifier (ID) of the policy target.</p> <p>The <a
@@ -161,7 +162,7 @@ namespace Model
      * Formats Supported by Organizations</a> in the <i>AWS Organizations User
      * Guide</i>.</p>
      */
-    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = value; }
+    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the policy target.</p> <p>For more
@@ -188,7 +189,7 @@ namespace Model
      * Formats Supported by Organizations</a> in the <i>AWS Organizations User
      * Guide</i>.</p>
      */
-    inline PolicyTargetSummary& WithArn(Aws::String&& value) { SetArn(value); return *this;}
+    inline PolicyTargetSummary& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the policy target.</p> <p>For more
@@ -221,7 +222,7 @@ namespace Model
      * validate this parameter is a string of any of the characters in the ASCII
      * character range.</p>
      */
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p>The friendly name of the policy target.</p> <p>The <a
@@ -245,7 +246,7 @@ namespace Model
      * validate this parameter is a string of any of the characters in the ASCII
      * character range.</p>
      */
-    inline PolicyTargetSummary& WithName(Aws::String&& value) { SetName(value); return *this;}
+    inline PolicyTargetSummary& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>The friendly name of the policy target.</p> <p>The <a
@@ -268,7 +269,7 @@ namespace Model
     /**
      * <p>The type of the policy target.</p>
      */
-    inline void SetType(TargetType&& value) { m_typeHasBeenSet = true; m_type = value; }
+    inline void SetType(TargetType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
      * <p>The type of the policy target.</p>
@@ -278,7 +279,7 @@ namespace Model
     /**
      * <p>The type of the policy target.</p>
      */
-    inline PolicyTargetSummary& WithType(TargetType&& value) { SetType(value); return *this;}
+    inline PolicyTargetSummary& WithType(TargetType&& value) { SetType(std::move(value)); return *this;}
 
   private:
     Aws::String m_targetId;

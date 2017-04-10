@@ -19,6 +19,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/elasticloadbalancingv2/model/RuleCondition.h>
 #include <aws/elasticloadbalancingv2/model/Action.h>
+#include <utility>
 
 namespace Aws
 {
@@ -62,7 +63,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the rule.</p>
      */
-    inline void SetRuleArn(Aws::String&& value) { m_ruleArnHasBeenSet = true; m_ruleArn = value; }
+    inline void SetRuleArn(Aws::String&& value) { m_ruleArnHasBeenSet = true; m_ruleArn = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the rule.</p>
@@ -77,7 +78,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the rule.</p>
      */
-    inline Rule& WithRuleArn(Aws::String&& value) { SetRuleArn(value); return *this;}
+    inline Rule& WithRuleArn(Aws::String&& value) { SetRuleArn(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the rule.</p>
@@ -97,7 +98,7 @@ namespace Model
     /**
      * <p>The priority.</p>
      */
-    inline void SetPriority(Aws::String&& value) { m_priorityHasBeenSet = true; m_priority = value; }
+    inline void SetPriority(Aws::String&& value) { m_priorityHasBeenSet = true; m_priority = std::move(value); }
 
     /**
      * <p>The priority.</p>
@@ -112,7 +113,7 @@ namespace Model
     /**
      * <p>The priority.</p>
      */
-    inline Rule& WithPriority(Aws::String&& value) { SetPriority(value); return *this;}
+    inline Rule& WithPriority(Aws::String&& value) { SetPriority(std::move(value)); return *this;}
 
     /**
      * <p>The priority.</p>
@@ -132,7 +133,7 @@ namespace Model
     /**
      * <p>The conditions.</p>
      */
-    inline void SetConditions(Aws::Vector<RuleCondition>&& value) { m_conditionsHasBeenSet = true; m_conditions = value; }
+    inline void SetConditions(Aws::Vector<RuleCondition>&& value) { m_conditionsHasBeenSet = true; m_conditions = std::move(value); }
 
     /**
      * <p>The conditions.</p>
@@ -142,7 +143,7 @@ namespace Model
     /**
      * <p>The conditions.</p>
      */
-    inline Rule& WithConditions(Aws::Vector<RuleCondition>&& value) { SetConditions(value); return *this;}
+    inline Rule& WithConditions(Aws::Vector<RuleCondition>&& value) { SetConditions(std::move(value)); return *this;}
 
     /**
      * <p>The conditions.</p>
@@ -152,7 +153,7 @@ namespace Model
     /**
      * <p>The conditions.</p>
      */
-    inline Rule& AddConditions(RuleCondition&& value) { m_conditionsHasBeenSet = true; m_conditions.push_back(value); return *this; }
+    inline Rule& AddConditions(RuleCondition&& value) { m_conditionsHasBeenSet = true; m_conditions.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The actions.</p>
@@ -167,7 +168,7 @@ namespace Model
     /**
      * <p>The actions.</p>
      */
-    inline void SetActions(Aws::Vector<Action>&& value) { m_actionsHasBeenSet = true; m_actions = value; }
+    inline void SetActions(Aws::Vector<Action>&& value) { m_actionsHasBeenSet = true; m_actions = std::move(value); }
 
     /**
      * <p>The actions.</p>
@@ -177,7 +178,7 @@ namespace Model
     /**
      * <p>The actions.</p>
      */
-    inline Rule& WithActions(Aws::Vector<Action>&& value) { SetActions(value); return *this;}
+    inline Rule& WithActions(Aws::Vector<Action>&& value) { SetActions(std::move(value)); return *this;}
 
     /**
      * <p>The actions.</p>
@@ -187,7 +188,7 @@ namespace Model
     /**
      * <p>The actions.</p>
      */
-    inline Rule& AddActions(Action&& value) { m_actionsHasBeenSet = true; m_actions.push_back(value); return *this; }
+    inline Rule& AddActions(Action&& value) { m_actionsHasBeenSet = true; m_actions.push_back(std::move(value)); return *this; }
 
     /**
      * <p>Indicates whether this is the default rule.</p>

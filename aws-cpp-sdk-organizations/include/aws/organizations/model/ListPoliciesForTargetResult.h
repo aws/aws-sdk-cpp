@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/organizations/model/PolicySummary.h>
+#include <utility>
 
 namespace Aws
 {
@@ -54,7 +55,7 @@ namespace Model
     /**
      * <p>The list of policies that match the criteria in the request.</p>
      */
-    inline void SetPolicies(Aws::Vector<PolicySummary>&& value) { m_policies = value; }
+    inline void SetPolicies(Aws::Vector<PolicySummary>&& value) { m_policies = std::move(value); }
 
     /**
      * <p>The list of policies that match the criteria in the request.</p>
@@ -64,7 +65,7 @@ namespace Model
     /**
      * <p>The list of policies that match the criteria in the request.</p>
      */
-    inline ListPoliciesForTargetResult& WithPolicies(Aws::Vector<PolicySummary>&& value) { SetPolicies(value); return *this;}
+    inline ListPoliciesForTargetResult& WithPolicies(Aws::Vector<PolicySummary>&& value) { SetPolicies(std::move(value)); return *this;}
 
     /**
      * <p>The list of policies that match the criteria in the request.</p>
@@ -74,7 +75,7 @@ namespace Model
     /**
      * <p>The list of policies that match the criteria in the request.</p>
      */
-    inline ListPoliciesForTargetResult& AddPolicies(PolicySummary&& value) { m_policies.push_back(value); return *this; }
+    inline ListPoliciesForTargetResult& AddPolicies(PolicySummary&& value) { m_policies.push_back(std::move(value)); return *this; }
 
     /**
      * <p>If present, this value indicates that there is more output available than is
@@ -101,7 +102,7 @@ namespace Model
      * the output. You should repeat this until the <code>NextToken</code> response
      * element comes back as <code>null</code>.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
      * <p>If present, this value indicates that there is more output available than is
@@ -128,7 +129,7 @@ namespace Model
      * the output. You should repeat this until the <code>NextToken</code> response
      * element comes back as <code>null</code>.</p>
      */
-    inline ListPoliciesForTargetResult& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline ListPoliciesForTargetResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>If present, this value indicates that there is more output available than is

@@ -16,6 +16,7 @@
 #include <aws/rds/RDS_EXPORTS.h>
 #include <aws/rds/model/DBSecurityGroup.h>
 #include <aws/rds/model/ResponseMetadata.h>
+#include <utility>
 
 namespace Aws
 {
@@ -47,13 +48,13 @@ namespace Model
     inline void SetDBSecurityGroup(const DBSecurityGroup& value) { m_dBSecurityGroup = value; }
 
     
-    inline void SetDBSecurityGroup(DBSecurityGroup&& value) { m_dBSecurityGroup = value; }
+    inline void SetDBSecurityGroup(DBSecurityGroup&& value) { m_dBSecurityGroup = std::move(value); }
 
     
     inline AuthorizeDBSecurityGroupIngressResult& WithDBSecurityGroup(const DBSecurityGroup& value) { SetDBSecurityGroup(value); return *this;}
 
     
-    inline AuthorizeDBSecurityGroupIngressResult& WithDBSecurityGroup(DBSecurityGroup&& value) { SetDBSecurityGroup(value); return *this;}
+    inline AuthorizeDBSecurityGroupIngressResult& WithDBSecurityGroup(DBSecurityGroup&& value) { SetDBSecurityGroup(std::move(value)); return *this;}
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
@@ -62,13 +63,13 @@ namespace Model
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
 
     
     inline AuthorizeDBSecurityGroupIngressResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
 
     
-    inline AuthorizeDBSecurityGroupIngressResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
+    inline AuthorizeDBSecurityGroupIngressResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
     DBSecurityGroup m_dBSecurityGroup;

@@ -16,6 +16,7 @@
 #include <aws/elasticbeanstalk/ElasticBeanstalk_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -59,7 +60,7 @@ namespace Model
     /**
      * <p>The name of the framework.</p>
      */
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p>The name of the framework.</p>
@@ -74,7 +75,7 @@ namespace Model
     /**
      * <p>The name of the framework.</p>
      */
-    inline PlatformFramework& WithName(Aws::String&& value) { SetName(value); return *this;}
+    inline PlatformFramework& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the framework.</p>
@@ -94,7 +95,7 @@ namespace Model
     /**
      * <p>The version of the framework.</p>
      */
-    inline void SetVersion(Aws::String&& value) { m_versionHasBeenSet = true; m_version = value; }
+    inline void SetVersion(Aws::String&& value) { m_versionHasBeenSet = true; m_version = std::move(value); }
 
     /**
      * <p>The version of the framework.</p>
@@ -109,7 +110,7 @@ namespace Model
     /**
      * <p>The version of the framework.</p>
      */
-    inline PlatformFramework& WithVersion(Aws::String&& value) { SetVersion(value); return *this;}
+    inline PlatformFramework& WithVersion(Aws::String&& value) { SetVersion(std::move(value)); return *this;}
 
     /**
      * <p>The version of the framework.</p>

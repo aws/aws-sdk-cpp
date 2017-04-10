@@ -16,6 +16,7 @@
 #include <aws/apigateway/APIGateway_EXPORTS.h>
 #include <aws/apigateway/APIGatewayRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -50,7 +51,7 @@ namespace Model
     /**
      * <p>The ID of the <a>RestApi</a> you want to delete.</p>
      */
-    inline void SetRestApiId(Aws::String&& value) { m_restApiIdHasBeenSet = true; m_restApiId = value; }
+    inline void SetRestApiId(Aws::String&& value) { m_restApiIdHasBeenSet = true; m_restApiId = std::move(value); }
 
     /**
      * <p>The ID of the <a>RestApi</a> you want to delete.</p>
@@ -65,7 +66,7 @@ namespace Model
     /**
      * <p>The ID of the <a>RestApi</a> you want to delete.</p>
      */
-    inline DeleteRestApiRequest& WithRestApiId(Aws::String&& value) { SetRestApiId(value); return *this;}
+    inline DeleteRestApiRequest& WithRestApiId(Aws::String&& value) { SetRestApiId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the <a>RestApi</a> you want to delete.</p>

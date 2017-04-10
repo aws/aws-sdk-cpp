@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/s3/S3_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -46,7 +47,7 @@ namespace Model
     inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
 
     
-    inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = value; }
+    inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
 
     
     inline void SetKey(const char* value) { m_keyHasBeenSet = true; m_key.assign(value); }
@@ -55,7 +56,7 @@ namespace Model
     inline Error& WithKey(const Aws::String& value) { SetKey(value); return *this;}
 
     
-    inline Error& WithKey(Aws::String&& value) { SetKey(value); return *this;}
+    inline Error& WithKey(Aws::String&& value) { SetKey(std::move(value)); return *this;}
 
     
     inline Error& WithKey(const char* value) { SetKey(value); return *this;}
@@ -67,7 +68,7 @@ namespace Model
     inline void SetVersionId(const Aws::String& value) { m_versionIdHasBeenSet = true; m_versionId = value; }
 
     
-    inline void SetVersionId(Aws::String&& value) { m_versionIdHasBeenSet = true; m_versionId = value; }
+    inline void SetVersionId(Aws::String&& value) { m_versionIdHasBeenSet = true; m_versionId = std::move(value); }
 
     
     inline void SetVersionId(const char* value) { m_versionIdHasBeenSet = true; m_versionId.assign(value); }
@@ -76,7 +77,7 @@ namespace Model
     inline Error& WithVersionId(const Aws::String& value) { SetVersionId(value); return *this;}
 
     
-    inline Error& WithVersionId(Aws::String&& value) { SetVersionId(value); return *this;}
+    inline Error& WithVersionId(Aws::String&& value) { SetVersionId(std::move(value)); return *this;}
 
     
     inline Error& WithVersionId(const char* value) { SetVersionId(value); return *this;}
@@ -88,7 +89,7 @@ namespace Model
     inline void SetCode(const Aws::String& value) { m_codeHasBeenSet = true; m_code = value; }
 
     
-    inline void SetCode(Aws::String&& value) { m_codeHasBeenSet = true; m_code = value; }
+    inline void SetCode(Aws::String&& value) { m_codeHasBeenSet = true; m_code = std::move(value); }
 
     
     inline void SetCode(const char* value) { m_codeHasBeenSet = true; m_code.assign(value); }
@@ -97,7 +98,7 @@ namespace Model
     inline Error& WithCode(const Aws::String& value) { SetCode(value); return *this;}
 
     
-    inline Error& WithCode(Aws::String&& value) { SetCode(value); return *this;}
+    inline Error& WithCode(Aws::String&& value) { SetCode(std::move(value)); return *this;}
 
     
     inline Error& WithCode(const char* value) { SetCode(value); return *this;}
@@ -109,7 +110,7 @@ namespace Model
     inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
 
     
-    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = value; }
+    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
 
     
     inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
@@ -118,7 +119,7 @@ namespace Model
     inline Error& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
 
     
-    inline Error& WithMessage(Aws::String&& value) { SetMessage(value); return *this;}
+    inline Error& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
 
     
     inline Error& WithMessage(const char* value) { SetMessage(value); return *this;}

@@ -16,6 +16,7 @@
 #include <aws/apigateway/APIGateway_EXPORTS.h>
 #include <aws/apigateway/APIGatewayRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -56,7 +57,7 @@ namespace Model
     /**
      * <p>The <a>RestApi</a> identifier under which the <a>Model</a> exists.</p>
      */
-    inline void SetRestApiId(Aws::String&& value) { m_restApiIdHasBeenSet = true; m_restApiId = value; }
+    inline void SetRestApiId(Aws::String&& value) { m_restApiIdHasBeenSet = true; m_restApiId = std::move(value); }
 
     /**
      * <p>The <a>RestApi</a> identifier under which the <a>Model</a> exists.</p>
@@ -71,7 +72,7 @@ namespace Model
     /**
      * <p>The <a>RestApi</a> identifier under which the <a>Model</a> exists.</p>
      */
-    inline GetModelRequest& WithRestApiId(Aws::String&& value) { SetRestApiId(value); return *this;}
+    inline GetModelRequest& WithRestApiId(Aws::String&& value) { SetRestApiId(std::move(value)); return *this;}
 
     /**
      * <p>The <a>RestApi</a> identifier under which the <a>Model</a> exists.</p>
@@ -91,7 +92,7 @@ namespace Model
     /**
      * <p>The name of the model as an identifier.</p>
      */
-    inline void SetModelName(Aws::String&& value) { m_modelNameHasBeenSet = true; m_modelName = value; }
+    inline void SetModelName(Aws::String&& value) { m_modelNameHasBeenSet = true; m_modelName = std::move(value); }
 
     /**
      * <p>The name of the model as an identifier.</p>
@@ -106,7 +107,7 @@ namespace Model
     /**
      * <p>The name of the model as an identifier.</p>
      */
-    inline GetModelRequest& WithModelName(Aws::String&& value) { SetModelName(value); return *this;}
+    inline GetModelRequest& WithModelName(Aws::String&& value) { SetModelName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the model as an identifier.</p>

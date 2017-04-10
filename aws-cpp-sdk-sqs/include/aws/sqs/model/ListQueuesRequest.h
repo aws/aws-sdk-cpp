@@ -16,6 +16,7 @@
 #include <aws/sqs/SQS_EXPORTS.h>
 #include <aws/sqs/SQSRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -59,7 +60,7 @@ namespace Model
      * begins with the specified string are returned.</p> <p>Queue names are
      * case-sensitive.</p>
      */
-    inline void SetQueueNamePrefix(Aws::String&& value) { m_queueNamePrefixHasBeenSet = true; m_queueNamePrefix = value; }
+    inline void SetQueueNamePrefix(Aws::String&& value) { m_queueNamePrefixHasBeenSet = true; m_queueNamePrefix = std::move(value); }
 
     /**
      * <p>A string to use for filtering the list results. Only those queues whose name
@@ -80,7 +81,7 @@ namespace Model
      * begins with the specified string are returned.</p> <p>Queue names are
      * case-sensitive.</p>
      */
-    inline ListQueuesRequest& WithQueueNamePrefix(Aws::String&& value) { SetQueueNamePrefix(value); return *this;}
+    inline ListQueuesRequest& WithQueueNamePrefix(Aws::String&& value) { SetQueueNamePrefix(std::move(value)); return *this;}
 
     /**
      * <p>A string to use for filtering the list results. Only those queues whose name

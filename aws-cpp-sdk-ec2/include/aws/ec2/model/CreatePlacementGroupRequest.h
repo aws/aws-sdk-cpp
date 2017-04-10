@@ -17,6 +17,7 @@
 #include <aws/ec2/EC2Request.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/PlacementStrategy.h>
+#include <utility>
 
 namespace Aws
 {
@@ -82,7 +83,7 @@ namespace Model
      * <p>A name for the placement group.</p> <p>Constraints: Up to 255 ASCII
      * characters</p>
      */
-    inline void SetGroupName(Aws::String&& value) { m_groupNameHasBeenSet = true; m_groupName = value; }
+    inline void SetGroupName(Aws::String&& value) { m_groupNameHasBeenSet = true; m_groupName = std::move(value); }
 
     /**
      * <p>A name for the placement group.</p> <p>Constraints: Up to 255 ASCII
@@ -100,7 +101,7 @@ namespace Model
      * <p>A name for the placement group.</p> <p>Constraints: Up to 255 ASCII
      * characters</p>
      */
-    inline CreatePlacementGroupRequest& WithGroupName(Aws::String&& value) { SetGroupName(value); return *this;}
+    inline CreatePlacementGroupRequest& WithGroupName(Aws::String&& value) { SetGroupName(std::move(value)); return *this;}
 
     /**
      * <p>A name for the placement group.</p> <p>Constraints: Up to 255 ASCII
@@ -121,7 +122,7 @@ namespace Model
     /**
      * <p>The placement strategy.</p>
      */
-    inline void SetStrategy(PlacementStrategy&& value) { m_strategyHasBeenSet = true; m_strategy = value; }
+    inline void SetStrategy(PlacementStrategy&& value) { m_strategyHasBeenSet = true; m_strategy = std::move(value); }
 
     /**
      * <p>The placement strategy.</p>
@@ -131,7 +132,7 @@ namespace Model
     /**
      * <p>The placement strategy.</p>
      */
-    inline CreatePlacementGroupRequest& WithStrategy(PlacementStrategy&& value) { SetStrategy(value); return *this;}
+    inline CreatePlacementGroupRequest& WithStrategy(PlacementStrategy&& value) { SetStrategy(std::move(value)); return *this;}
 
   private:
     bool m_dryRun;

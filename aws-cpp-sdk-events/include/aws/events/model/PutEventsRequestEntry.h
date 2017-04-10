@@ -17,6 +17,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <utility>
 
 namespace Aws
 {
@@ -72,7 +73,7 @@ namespace Model
      * href="https://www.rfc-editor.org/rfc/rfc3339.txt">RFC3339</a>. If no timestamp
      * is provided, the timestamp of the <a>PutEvents</a> call is used.</p> </xhtml>
      */
-    inline void SetTime(Aws::Utils::DateTime&& value) { m_timeHasBeenSet = true; m_time = value; }
+    inline void SetTime(Aws::Utils::DateTime&& value) { m_timeHasBeenSet = true; m_time = std::move(value); }
 
     /**
      * <zonbook> <simpara>The timestamp of the event, per <ulink
@@ -92,7 +93,7 @@ namespace Model
      * href="https://www.rfc-editor.org/rfc/rfc3339.txt">RFC3339</a>. If no timestamp
      * is provided, the timestamp of the <a>PutEvents</a> call is used.</p> </xhtml>
      */
-    inline PutEventsRequestEntry& WithTime(Aws::Utils::DateTime&& value) { SetTime(value); return *this;}
+    inline PutEventsRequestEntry& WithTime(Aws::Utils::DateTime&& value) { SetTime(std::move(value)); return *this;}
 
     /**
      * <zonbook> <simpara>The source of the event.</simpara> </zonbook> <xhtml> <p>The
@@ -110,7 +111,7 @@ namespace Model
      * <zonbook> <simpara>The source of the event.</simpara> </zonbook> <xhtml> <p>The
      * source of the event.</p> </xhtml>
      */
-    inline void SetSource(Aws::String&& value) { m_sourceHasBeenSet = true; m_source = value; }
+    inline void SetSource(Aws::String&& value) { m_sourceHasBeenSet = true; m_source = std::move(value); }
 
     /**
      * <zonbook> <simpara>The source of the event.</simpara> </zonbook> <xhtml> <p>The
@@ -128,7 +129,7 @@ namespace Model
      * <zonbook> <simpara>The source of the event.</simpara> </zonbook> <xhtml> <p>The
      * source of the event.</p> </xhtml>
      */
-    inline PutEventsRequestEntry& WithSource(Aws::String&& value) { SetSource(value); return *this;}
+    inline PutEventsRequestEntry& WithSource(Aws::String&& value) { SetSource(std::move(value)); return *this;}
 
     /**
      * <zonbook> <simpara>The source of the event.</simpara> </zonbook> <xhtml> <p>The
@@ -161,7 +162,7 @@ namespace Model
      * Resource Name (ARN), which the event primarily concerns. Any number, including
      * zero, may be present.</p> </xhtml>
      */
-    inline void SetResources(Aws::Vector<Aws::String>&& value) { m_resourcesHasBeenSet = true; m_resources = value; }
+    inline void SetResources(Aws::Vector<Aws::String>&& value) { m_resourcesHasBeenSet = true; m_resources = std::move(value); }
 
     /**
      * <zonbook> <simpara>AWS resources, identified by Amazon Resource Name (ARN),
@@ -179,7 +180,7 @@ namespace Model
      * Resource Name (ARN), which the event primarily concerns. Any number, including
      * zero, may be present.</p> </xhtml>
      */
-    inline PutEventsRequestEntry& WithResources(Aws::Vector<Aws::String>&& value) { SetResources(value); return *this;}
+    inline PutEventsRequestEntry& WithResources(Aws::Vector<Aws::String>&& value) { SetResources(std::move(value)); return *this;}
 
     /**
      * <zonbook> <simpara>AWS resources, identified by Amazon Resource Name (ARN),
@@ -197,7 +198,7 @@ namespace Model
      * Resource Name (ARN), which the event primarily concerns. Any number, including
      * zero, may be present.</p> </xhtml>
      */
-    inline PutEventsRequestEntry& AddResources(Aws::String&& value) { m_resourcesHasBeenSet = true; m_resources.push_back(value); return *this; }
+    inline PutEventsRequestEntry& AddResources(Aws::String&& value) { m_resourcesHasBeenSet = true; m_resources.push_back(std::move(value)); return *this; }
 
     /**
      * <zonbook> <simpara>AWS resources, identified by Amazon Resource Name (ARN),
@@ -227,7 +228,7 @@ namespace Model
      * event detail.</simpara> </zonbook> <xhtml> <p>Free-form string used to decide
      * what fields to expect in the event detail.</p> </xhtml>
      */
-    inline void SetDetailType(Aws::String&& value) { m_detailTypeHasBeenSet = true; m_detailType = value; }
+    inline void SetDetailType(Aws::String&& value) { m_detailTypeHasBeenSet = true; m_detailType = std::move(value); }
 
     /**
      * <zonbook> <simpara>Free-form string used to decide what fields to expect in the
@@ -248,7 +249,7 @@ namespace Model
      * event detail.</simpara> </zonbook> <xhtml> <p>Free-form string used to decide
      * what fields to expect in the event detail.</p> </xhtml>
      */
-    inline PutEventsRequestEntry& WithDetailType(Aws::String&& value) { SetDetailType(value); return *this;}
+    inline PutEventsRequestEntry& WithDetailType(Aws::String&& value) { SetDetailType(std::move(value)); return *this;}
 
     /**
      * <zonbook> <simpara>Free-form string used to decide what fields to expect in the
@@ -282,7 +283,7 @@ namespace Model
      * containing fields, which may also contain nested subobjects. No constraints are
      * imposed on its contents.</p> </xhtml>
      */
-    inline void SetDetail(Aws::String&& value) { m_detailHasBeenSet = true; m_detail = value; }
+    inline void SetDetail(Aws::String&& value) { m_detailHasBeenSet = true; m_detail = std::move(value); }
 
     /**
      * <zonbook> <simpara>In the JSON sense, an object containing fields, which may
@@ -309,7 +310,7 @@ namespace Model
      * containing fields, which may also contain nested subobjects. No constraints are
      * imposed on its contents.</p> </xhtml>
      */
-    inline PutEventsRequestEntry& WithDetail(Aws::String&& value) { SetDetail(value); return *this;}
+    inline PutEventsRequestEntry& WithDetail(Aws::String&& value) { SetDetail(std::move(value)); return *this;}
 
     /**
      * <zonbook> <simpara>In the JSON sense, an object containing fields, which may

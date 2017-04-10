@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/gamelift/GameLift_EXPORTS.h>
 #include <aws/gamelift/model/GameSessionPlacement.h>
+#include <utility>
 
 namespace Aws
 {
@@ -55,7 +56,7 @@ namespace Model
      * <p>Object that describes the cancelled game session placement, with cancelled
      * status and an end time stamp. </p>
      */
-    inline void SetGameSessionPlacement(GameSessionPlacement&& value) { m_gameSessionPlacement = value; }
+    inline void SetGameSessionPlacement(GameSessionPlacement&& value) { m_gameSessionPlacement = std::move(value); }
 
     /**
      * <p>Object that describes the cancelled game session placement, with cancelled
@@ -67,7 +68,7 @@ namespace Model
      * <p>Object that describes the cancelled game session placement, with cancelled
      * status and an end time stamp. </p>
      */
-    inline StopGameSessionPlacementResult& WithGameSessionPlacement(GameSessionPlacement&& value) { SetGameSessionPlacement(value); return *this;}
+    inline StopGameSessionPlacementResult& WithGameSessionPlacement(GameSessionPlacement&& value) { SetGameSessionPlacement(std::move(value)); return *this;}
 
   private:
     GameSessionPlacement m_gameSessionPlacement;

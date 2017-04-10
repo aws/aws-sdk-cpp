@@ -16,6 +16,7 @@
 #include <aws/ds/DirectoryService_EXPORTS.h>
 #include <aws/ds/DirectoryServiceRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -52,7 +53,7 @@ namespace Model
     /**
      * <p>Contains the identifier of the directory to obtain the limits for.</p>
      */
-    inline void SetDirectoryId(Aws::String&& value) { m_directoryIdHasBeenSet = true; m_directoryId = value; }
+    inline void SetDirectoryId(Aws::String&& value) { m_directoryIdHasBeenSet = true; m_directoryId = std::move(value); }
 
     /**
      * <p>Contains the identifier of the directory to obtain the limits for.</p>
@@ -67,7 +68,7 @@ namespace Model
     /**
      * <p>Contains the identifier of the directory to obtain the limits for.</p>
      */
-    inline GetSnapshotLimitsRequest& WithDirectoryId(Aws::String&& value) { SetDirectoryId(value); return *this;}
+    inline GetSnapshotLimitsRequest& WithDirectoryId(Aws::String&& value) { SetDirectoryId(std::move(value)); return *this;}
 
     /**
      * <p>Contains the identifier of the directory to obtain the limits for.</p>

@@ -16,6 +16,7 @@
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/ec2/EC2Request.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -81,7 +82,7 @@ namespace Model
      * <p>[EC2-Classic, default VPC] The name of the security group. You can specify
      * either the security group name or the security group ID.</p>
      */
-    inline void SetGroupName(Aws::String&& value) { m_groupNameHasBeenSet = true; m_groupName = value; }
+    inline void SetGroupName(Aws::String&& value) { m_groupNameHasBeenSet = true; m_groupName = std::move(value); }
 
     /**
      * <p>[EC2-Classic, default VPC] The name of the security group. You can specify
@@ -99,7 +100,7 @@ namespace Model
      * <p>[EC2-Classic, default VPC] The name of the security group. You can specify
      * either the security group name or the security group ID.</p>
      */
-    inline DeleteSecurityGroupRequest& WithGroupName(Aws::String&& value) { SetGroupName(value); return *this;}
+    inline DeleteSecurityGroupRequest& WithGroupName(Aws::String&& value) { SetGroupName(std::move(value)); return *this;}
 
     /**
      * <p>[EC2-Classic, default VPC] The name of the security group. You can specify
@@ -120,7 +121,7 @@ namespace Model
     /**
      * <p>The ID of the security group. Required for a nondefault VPC.</p>
      */
-    inline void SetGroupId(Aws::String&& value) { m_groupIdHasBeenSet = true; m_groupId = value; }
+    inline void SetGroupId(Aws::String&& value) { m_groupIdHasBeenSet = true; m_groupId = std::move(value); }
 
     /**
      * <p>The ID of the security group. Required for a nondefault VPC.</p>
@@ -135,7 +136,7 @@ namespace Model
     /**
      * <p>The ID of the security group. Required for a nondefault VPC.</p>
      */
-    inline DeleteSecurityGroupRequest& WithGroupId(Aws::String&& value) { SetGroupId(value); return *this;}
+    inline DeleteSecurityGroupRequest& WithGroupId(Aws::String&& value) { SetGroupId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the security group. Required for a nondefault VPC.</p>

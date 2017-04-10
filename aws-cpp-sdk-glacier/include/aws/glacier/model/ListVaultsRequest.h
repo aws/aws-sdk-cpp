@@ -16,6 +16,7 @@
 #include <aws/glacier/Glacier_EXPORTS.h>
 #include <aws/glacier/GlacierRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -72,7 +73,7 @@ namespace Model
      * the credentials used to sign the request. If you specify your account ID, do not
      * include any hyphens ('-') in the ID.</p>
      */
-    inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
+    inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
 
     /**
      * <p>The <code>AccountId</code> value is the AWS account ID. This value must match
@@ -102,7 +103,7 @@ namespace Model
      * the credentials used to sign the request. If you specify your account ID, do not
      * include any hyphens ('-') in the ID.</p>
      */
-    inline ListVaultsRequest& WithAccountId(Aws::String&& value) { SetAccountId(value); return *this;}
+    inline ListVaultsRequest& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
 
     /**
      * <p>The <code>AccountId</code> value is the AWS account ID. This value must match
@@ -130,7 +131,7 @@ namespace Model
      * <p>A string used for pagination. The marker specifies the vault ARN after which
      * the listing of vaults should begin.</p>
      */
-    inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = value; }
+    inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = std::move(value); }
 
     /**
      * <p>A string used for pagination. The marker specifies the vault ARN after which
@@ -148,7 +149,7 @@ namespace Model
      * <p>A string used for pagination. The marker specifies the vault ARN after which
      * the listing of vaults should begin.</p>
      */
-    inline ListVaultsRequest& WithMarker(Aws::String&& value) { SetMarker(value); return *this;}
+    inline ListVaultsRequest& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
 
     /**
      * <p>A string used for pagination. The marker specifies the vault ARN after which
@@ -175,7 +176,7 @@ namespace Model
      * number of vaults returned might be fewer than the specified limit, but the
      * number of returned vaults never exceeds the limit.</p>
      */
-    inline void SetLimit(Aws::String&& value) { m_limitHasBeenSet = true; m_limit = value; }
+    inline void SetLimit(Aws::String&& value) { m_limitHasBeenSet = true; m_limit = std::move(value); }
 
     /**
      * <p>The maximum number of vaults to be returned. The default limit is 1000. The
@@ -196,7 +197,7 @@ namespace Model
      * number of vaults returned might be fewer than the specified limit, but the
      * number of returned vaults never exceeds the limit.</p>
      */
-    inline ListVaultsRequest& WithLimit(Aws::String&& value) { SetLimit(value); return *this;}
+    inline ListVaultsRequest& WithLimit(Aws::String&& value) { SetLimit(std::move(value)); return *this;}
 
     /**
      * <p>The maximum number of vaults to be returned. The default limit is 1000. The

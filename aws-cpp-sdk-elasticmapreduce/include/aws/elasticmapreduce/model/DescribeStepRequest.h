@@ -16,6 +16,7 @@
 #include <aws/elasticmapreduce/EMR_EXPORTS.h>
 #include <aws/elasticmapreduce/EMRRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -51,7 +52,7 @@ namespace Model
     /**
      * <p>The identifier of the cluster with steps to describe.</p>
      */
-    inline void SetClusterId(Aws::String&& value) { m_clusterIdHasBeenSet = true; m_clusterId = value; }
+    inline void SetClusterId(Aws::String&& value) { m_clusterIdHasBeenSet = true; m_clusterId = std::move(value); }
 
     /**
      * <p>The identifier of the cluster with steps to describe.</p>
@@ -66,7 +67,7 @@ namespace Model
     /**
      * <p>The identifier of the cluster with steps to describe.</p>
      */
-    inline DescribeStepRequest& WithClusterId(Aws::String&& value) { SetClusterId(value); return *this;}
+    inline DescribeStepRequest& WithClusterId(Aws::String&& value) { SetClusterId(std::move(value)); return *this;}
 
     /**
      * <p>The identifier of the cluster with steps to describe.</p>
@@ -86,7 +87,7 @@ namespace Model
     /**
      * <p>The identifier of the step to describe.</p>
      */
-    inline void SetStepId(Aws::String&& value) { m_stepIdHasBeenSet = true; m_stepId = value; }
+    inline void SetStepId(Aws::String&& value) { m_stepIdHasBeenSet = true; m_stepId = std::move(value); }
 
     /**
      * <p>The identifier of the step to describe.</p>
@@ -101,7 +102,7 @@ namespace Model
     /**
      * <p>The identifier of the step to describe.</p>
      */
-    inline DescribeStepRequest& WithStepId(Aws::String&& value) { SetStepId(value); return *this;}
+    inline DescribeStepRequest& WithStepId(Aws::String&& value) { SetStepId(std::move(value)); return *this;}
 
     /**
      * <p>The identifier of the step to describe.</p>

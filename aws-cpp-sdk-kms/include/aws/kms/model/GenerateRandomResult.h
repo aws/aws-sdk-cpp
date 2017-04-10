@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/kms/KMS_EXPORTS.h>
 #include <aws/core/utils/Array.h>
+#include <utility>
 
 namespace Aws
 {
@@ -52,7 +53,7 @@ namespace Model
     /**
      * <p>The unpredictable byte string.</p>
      */
-    inline void SetPlaintext(Aws::Utils::ByteBuffer&& value) { m_plaintext = value; }
+    inline void SetPlaintext(Aws::Utils::ByteBuffer&& value) { m_plaintext = std::move(value); }
 
     /**
      * <p>The unpredictable byte string.</p>
@@ -62,7 +63,7 @@ namespace Model
     /**
      * <p>The unpredictable byte string.</p>
      */
-    inline GenerateRandomResult& WithPlaintext(Aws::Utils::ByteBuffer&& value) { SetPlaintext(value); return *this;}
+    inline GenerateRandomResult& WithPlaintext(Aws::Utils::ByteBuffer&& value) { SetPlaintext(std::move(value)); return *this;}
 
   private:
     Aws::Utils::ByteBuffer m_plaintext;

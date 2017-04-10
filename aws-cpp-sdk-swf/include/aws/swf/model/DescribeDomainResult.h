@@ -16,6 +16,7 @@
 #include <aws/swf/SWF_EXPORTS.h>
 #include <aws/swf/model/DomainInfo.h>
 #include <aws/swf/model/DomainConfiguration.h>
+#include <utility>
 
 namespace Aws
 {
@@ -52,13 +53,13 @@ namespace Model
     inline void SetDomainInfo(const DomainInfo& value) { m_domainInfo = value; }
 
     
-    inline void SetDomainInfo(DomainInfo&& value) { m_domainInfo = value; }
+    inline void SetDomainInfo(DomainInfo&& value) { m_domainInfo = std::move(value); }
 
     
     inline DescribeDomainResult& WithDomainInfo(const DomainInfo& value) { SetDomainInfo(value); return *this;}
 
     
-    inline DescribeDomainResult& WithDomainInfo(DomainInfo&& value) { SetDomainInfo(value); return *this;}
+    inline DescribeDomainResult& WithDomainInfo(DomainInfo&& value) { SetDomainInfo(std::move(value)); return *this;}
 
     
     inline const DomainConfiguration& GetConfiguration() const{ return m_configuration; }
@@ -67,13 +68,13 @@ namespace Model
     inline void SetConfiguration(const DomainConfiguration& value) { m_configuration = value; }
 
     
-    inline void SetConfiguration(DomainConfiguration&& value) { m_configuration = value; }
+    inline void SetConfiguration(DomainConfiguration&& value) { m_configuration = std::move(value); }
 
     
     inline DescribeDomainResult& WithConfiguration(const DomainConfiguration& value) { SetConfiguration(value); return *this;}
 
     
-    inline DescribeDomainResult& WithConfiguration(DomainConfiguration&& value) { SetConfiguration(value); return *this;}
+    inline DescribeDomainResult& WithConfiguration(DomainConfiguration&& value) { SetConfiguration(std::move(value)); return *this;}
 
   private:
     DomainInfo m_domainInfo;

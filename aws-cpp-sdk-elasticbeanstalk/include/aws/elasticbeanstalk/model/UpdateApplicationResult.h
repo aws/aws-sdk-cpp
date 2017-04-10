@@ -16,6 +16,7 @@
 #include <aws/elasticbeanstalk/ElasticBeanstalk_EXPORTS.h>
 #include <aws/elasticbeanstalk/model/ApplicationDescription.h>
 #include <aws/elasticbeanstalk/model/ResponseMetadata.h>
+#include <utility>
 
 namespace Aws
 {
@@ -59,7 +60,7 @@ namespace Model
     /**
      * <p> The <a>ApplicationDescription</a> of the application. </p>
      */
-    inline void SetApplication(ApplicationDescription&& value) { m_application = value; }
+    inline void SetApplication(ApplicationDescription&& value) { m_application = std::move(value); }
 
     /**
      * <p> The <a>ApplicationDescription</a> of the application. </p>
@@ -69,7 +70,7 @@ namespace Model
     /**
      * <p> The <a>ApplicationDescription</a> of the application. </p>
      */
-    inline UpdateApplicationResult& WithApplication(ApplicationDescription&& value) { SetApplication(value); return *this;}
+    inline UpdateApplicationResult& WithApplication(ApplicationDescription&& value) { SetApplication(std::move(value)); return *this;}
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
@@ -78,13 +79,13 @@ namespace Model
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
 
     
     inline UpdateApplicationResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
 
     
-    inline UpdateApplicationResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
+    inline UpdateApplicationResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
     ApplicationDescription m_application;

@@ -16,6 +16,7 @@
 #include <aws/cognito-identity/CognitoIdentity_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/cognito-identity/model/UnprocessedIdentityId.h>
+#include <utility>
 
 namespace Aws
 {
@@ -62,7 +63,7 @@ namespace Model
      * <p>An array of UnprocessedIdentityId objects, each of which contains an
      * ErrorCode and IdentityId.</p>
      */
-    inline void SetUnprocessedIdentityIds(Aws::Vector<UnprocessedIdentityId>&& value) { m_unprocessedIdentityIds = value; }
+    inline void SetUnprocessedIdentityIds(Aws::Vector<UnprocessedIdentityId>&& value) { m_unprocessedIdentityIds = std::move(value); }
 
     /**
      * <p>An array of UnprocessedIdentityId objects, each of which contains an
@@ -74,7 +75,7 @@ namespace Model
      * <p>An array of UnprocessedIdentityId objects, each of which contains an
      * ErrorCode and IdentityId.</p>
      */
-    inline DeleteIdentitiesResult& WithUnprocessedIdentityIds(Aws::Vector<UnprocessedIdentityId>&& value) { SetUnprocessedIdentityIds(value); return *this;}
+    inline DeleteIdentitiesResult& WithUnprocessedIdentityIds(Aws::Vector<UnprocessedIdentityId>&& value) { SetUnprocessedIdentityIds(std::move(value)); return *this;}
 
     /**
      * <p>An array of UnprocessedIdentityId objects, each of which contains an
@@ -86,7 +87,7 @@ namespace Model
      * <p>An array of UnprocessedIdentityId objects, each of which contains an
      * ErrorCode and IdentityId.</p>
      */
-    inline DeleteIdentitiesResult& AddUnprocessedIdentityIds(UnprocessedIdentityId&& value) { m_unprocessedIdentityIds.push_back(value); return *this; }
+    inline DeleteIdentitiesResult& AddUnprocessedIdentityIds(UnprocessedIdentityId&& value) { m_unprocessedIdentityIds.push_back(std::move(value)); return *this; }
 
   private:
     Aws::Vector<UnprocessedIdentityId> m_unprocessedIdentityIds;

@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/storagegateway/StorageGateway_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -46,7 +47,7 @@ namespace Model
     inline void SetSnapshotId(const Aws::String& value) { m_snapshotId = value; }
 
     
-    inline void SetSnapshotId(Aws::String&& value) { m_snapshotId = value; }
+    inline void SetSnapshotId(Aws::String&& value) { m_snapshotId = std::move(value); }
 
     
     inline void SetSnapshotId(const char* value) { m_snapshotId.assign(value); }
@@ -55,7 +56,7 @@ namespace Model
     inline CreateSnapshotFromVolumeRecoveryPointResult& WithSnapshotId(const Aws::String& value) { SetSnapshotId(value); return *this;}
 
     
-    inline CreateSnapshotFromVolumeRecoveryPointResult& WithSnapshotId(Aws::String&& value) { SetSnapshotId(value); return *this;}
+    inline CreateSnapshotFromVolumeRecoveryPointResult& WithSnapshotId(Aws::String&& value) { SetSnapshotId(std::move(value)); return *this;}
 
     
     inline CreateSnapshotFromVolumeRecoveryPointResult& WithSnapshotId(const char* value) { SetSnapshotId(value); return *this;}
@@ -67,7 +68,7 @@ namespace Model
     inline void SetVolumeARN(const Aws::String& value) { m_volumeARN = value; }
 
     
-    inline void SetVolumeARN(Aws::String&& value) { m_volumeARN = value; }
+    inline void SetVolumeARN(Aws::String&& value) { m_volumeARN = std::move(value); }
 
     
     inline void SetVolumeARN(const char* value) { m_volumeARN.assign(value); }
@@ -76,7 +77,7 @@ namespace Model
     inline CreateSnapshotFromVolumeRecoveryPointResult& WithVolumeARN(const Aws::String& value) { SetVolumeARN(value); return *this;}
 
     
-    inline CreateSnapshotFromVolumeRecoveryPointResult& WithVolumeARN(Aws::String&& value) { SetVolumeARN(value); return *this;}
+    inline CreateSnapshotFromVolumeRecoveryPointResult& WithVolumeARN(Aws::String&& value) { SetVolumeARN(std::move(value)); return *this;}
 
     
     inline CreateSnapshotFromVolumeRecoveryPointResult& WithVolumeARN(const char* value) { SetVolumeARN(value); return *this;}
@@ -88,7 +89,7 @@ namespace Model
     inline void SetVolumeRecoveryPointTime(const Aws::String& value) { m_volumeRecoveryPointTime = value; }
 
     
-    inline void SetVolumeRecoveryPointTime(Aws::String&& value) { m_volumeRecoveryPointTime = value; }
+    inline void SetVolumeRecoveryPointTime(Aws::String&& value) { m_volumeRecoveryPointTime = std::move(value); }
 
     
     inline void SetVolumeRecoveryPointTime(const char* value) { m_volumeRecoveryPointTime.assign(value); }
@@ -97,7 +98,7 @@ namespace Model
     inline CreateSnapshotFromVolumeRecoveryPointResult& WithVolumeRecoveryPointTime(const Aws::String& value) { SetVolumeRecoveryPointTime(value); return *this;}
 
     
-    inline CreateSnapshotFromVolumeRecoveryPointResult& WithVolumeRecoveryPointTime(Aws::String&& value) { SetVolumeRecoveryPointTime(value); return *this;}
+    inline CreateSnapshotFromVolumeRecoveryPointResult& WithVolumeRecoveryPointTime(Aws::String&& value) { SetVolumeRecoveryPointTime(std::move(value)); return *this;}
 
     
     inline CreateSnapshotFromVolumeRecoveryPointResult& WithVolumeRecoveryPointTime(const char* value) { SetVolumeRecoveryPointTime(value); return *this;}

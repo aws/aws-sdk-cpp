@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/Filter.h>
+#include <utility>
 
 namespace Aws
 {
@@ -83,7 +84,7 @@ namespace Model
      * <p>One or more route table IDs.</p> <p>Default: Describes all your route
      * tables.</p>
      */
-    inline void SetRouteTableIds(Aws::Vector<Aws::String>&& value) { m_routeTableIdsHasBeenSet = true; m_routeTableIds = value; }
+    inline void SetRouteTableIds(Aws::Vector<Aws::String>&& value) { m_routeTableIdsHasBeenSet = true; m_routeTableIds = std::move(value); }
 
     /**
      * <p>One or more route table IDs.</p> <p>Default: Describes all your route
@@ -95,7 +96,7 @@ namespace Model
      * <p>One or more route table IDs.</p> <p>Default: Describes all your route
      * tables.</p>
      */
-    inline DescribeRouteTablesRequest& WithRouteTableIds(Aws::Vector<Aws::String>&& value) { SetRouteTableIds(value); return *this;}
+    inline DescribeRouteTablesRequest& WithRouteTableIds(Aws::Vector<Aws::String>&& value) { SetRouteTableIds(std::move(value)); return *this;}
 
     /**
      * <p>One or more route table IDs.</p> <p>Default: Describes all your route
@@ -107,7 +108,7 @@ namespace Model
      * <p>One or more route table IDs.</p> <p>Default: Describes all your route
      * tables.</p>
      */
-    inline DescribeRouteTablesRequest& AddRouteTableIds(Aws::String&& value) { m_routeTableIdsHasBeenSet = true; m_routeTableIds.push_back(value); return *this; }
+    inline DescribeRouteTablesRequest& AddRouteTableIds(Aws::String&& value) { m_routeTableIdsHasBeenSet = true; m_routeTableIds.push_back(std::move(value)); return *this; }
 
     /**
      * <p>One or more route table IDs.</p> <p>Default: Describes all your route
@@ -269,7 +270,7 @@ namespace Model
      * filter.</p> </li> <li> <p> <code>vpc-id</code> - The ID of the VPC for the route
      * table.</p> </li> </ul>
      */
-    inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = value; }
+    inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
 
     /**
      * <p>One or more filters.</p> <ul> <li> <p>
@@ -373,7 +374,7 @@ namespace Model
      * filter.</p> </li> <li> <p> <code>vpc-id</code> - The ID of the VPC for the route
      * table.</p> </li> </ul>
      */
-    inline DescribeRouteTablesRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(value); return *this;}
+    inline DescribeRouteTablesRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(std::move(value)); return *this;}
 
     /**
      * <p>One or more filters.</p> <ul> <li> <p>
@@ -477,7 +478,7 @@ namespace Model
      * filter.</p> </li> <li> <p> <code>vpc-id</code> - The ID of the VPC for the route
      * table.</p> </li> </ul>
      */
-    inline DescribeRouteTablesRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
+    inline DescribeRouteTablesRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 
   private:
     bool m_dryRun;

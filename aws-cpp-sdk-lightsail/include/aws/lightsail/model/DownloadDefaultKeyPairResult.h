@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/lightsail/Lightsail_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -52,7 +53,7 @@ namespace Model
     /**
      * <p>A base64-encoded public key of the <code>ssh-rsa</code> type.</p>
      */
-    inline void SetPublicKeyBase64(Aws::String&& value) { m_publicKeyBase64 = value; }
+    inline void SetPublicKeyBase64(Aws::String&& value) { m_publicKeyBase64 = std::move(value); }
 
     /**
      * <p>A base64-encoded public key of the <code>ssh-rsa</code> type.</p>
@@ -67,7 +68,7 @@ namespace Model
     /**
      * <p>A base64-encoded public key of the <code>ssh-rsa</code> type.</p>
      */
-    inline DownloadDefaultKeyPairResult& WithPublicKeyBase64(Aws::String&& value) { SetPublicKeyBase64(value); return *this;}
+    inline DownloadDefaultKeyPairResult& WithPublicKeyBase64(Aws::String&& value) { SetPublicKeyBase64(std::move(value)); return *this;}
 
     /**
      * <p>A base64-encoded public key of the <code>ssh-rsa</code> type.</p>
@@ -87,7 +88,7 @@ namespace Model
     /**
      * <p>A base64-encoded RSA private key.</p>
      */
-    inline void SetPrivateKeyBase64(Aws::String&& value) { m_privateKeyBase64 = value; }
+    inline void SetPrivateKeyBase64(Aws::String&& value) { m_privateKeyBase64 = std::move(value); }
 
     /**
      * <p>A base64-encoded RSA private key.</p>
@@ -102,7 +103,7 @@ namespace Model
     /**
      * <p>A base64-encoded RSA private key.</p>
      */
-    inline DownloadDefaultKeyPairResult& WithPrivateKeyBase64(Aws::String&& value) { SetPrivateKeyBase64(value); return *this;}
+    inline DownloadDefaultKeyPairResult& WithPrivateKeyBase64(Aws::String&& value) { SetPrivateKeyBase64(std::move(value)); return *this;}
 
     /**
      * <p>A base64-encoded RSA private key.</p>

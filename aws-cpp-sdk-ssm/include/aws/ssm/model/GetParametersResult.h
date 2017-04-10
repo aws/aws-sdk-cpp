@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ssm/model/Parameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -54,7 +55,7 @@ namespace Model
     /**
      * <p>A list of details for a parameter.</p>
      */
-    inline void SetParameters(Aws::Vector<Parameter>&& value) { m_parameters = value; }
+    inline void SetParameters(Aws::Vector<Parameter>&& value) { m_parameters = std::move(value); }
 
     /**
      * <p>A list of details for a parameter.</p>
@@ -64,7 +65,7 @@ namespace Model
     /**
      * <p>A list of details for a parameter.</p>
      */
-    inline GetParametersResult& WithParameters(Aws::Vector<Parameter>&& value) { SetParameters(value); return *this;}
+    inline GetParametersResult& WithParameters(Aws::Vector<Parameter>&& value) { SetParameters(std::move(value)); return *this;}
 
     /**
      * <p>A list of details for a parameter.</p>
@@ -74,7 +75,7 @@ namespace Model
     /**
      * <p>A list of details for a parameter.</p>
      */
-    inline GetParametersResult& AddParameters(Parameter&& value) { m_parameters.push_back(value); return *this; }
+    inline GetParametersResult& AddParameters(Parameter&& value) { m_parameters.push_back(std::move(value)); return *this; }
 
     /**
      * <p>A list of parameters that are not formatted correctly or do not run when
@@ -92,7 +93,7 @@ namespace Model
      * <p>A list of parameters that are not formatted correctly or do not run when
      * executed.</p>
      */
-    inline void SetInvalidParameters(Aws::Vector<Aws::String>&& value) { m_invalidParameters = value; }
+    inline void SetInvalidParameters(Aws::Vector<Aws::String>&& value) { m_invalidParameters = std::move(value); }
 
     /**
      * <p>A list of parameters that are not formatted correctly or do not run when
@@ -104,7 +105,7 @@ namespace Model
      * <p>A list of parameters that are not formatted correctly or do not run when
      * executed.</p>
      */
-    inline GetParametersResult& WithInvalidParameters(Aws::Vector<Aws::String>&& value) { SetInvalidParameters(value); return *this;}
+    inline GetParametersResult& WithInvalidParameters(Aws::Vector<Aws::String>&& value) { SetInvalidParameters(std::move(value)); return *this;}
 
     /**
      * <p>A list of parameters that are not formatted correctly or do not run when
@@ -116,7 +117,7 @@ namespace Model
      * <p>A list of parameters that are not formatted correctly or do not run when
      * executed.</p>
      */
-    inline GetParametersResult& AddInvalidParameters(Aws::String&& value) { m_invalidParameters.push_back(value); return *this; }
+    inline GetParametersResult& AddInvalidParameters(Aws::String&& value) { m_invalidParameters.push_back(std::move(value)); return *this; }
 
     /**
      * <p>A list of parameters that are not formatted correctly or do not run when

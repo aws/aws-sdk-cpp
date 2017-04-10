@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ecs/model/Cluster.h>
 #include <aws/ecs/model/Failure.h>
+#include <utility>
 
 namespace Aws
 {
@@ -54,7 +55,7 @@ namespace Model
     /**
      * <p>The list of clusters.</p>
      */
-    inline void SetClusters(Aws::Vector<Cluster>&& value) { m_clusters = value; }
+    inline void SetClusters(Aws::Vector<Cluster>&& value) { m_clusters = std::move(value); }
 
     /**
      * <p>The list of clusters.</p>
@@ -64,7 +65,7 @@ namespace Model
     /**
      * <p>The list of clusters.</p>
      */
-    inline DescribeClustersResult& WithClusters(Aws::Vector<Cluster>&& value) { SetClusters(value); return *this;}
+    inline DescribeClustersResult& WithClusters(Aws::Vector<Cluster>&& value) { SetClusters(std::move(value)); return *this;}
 
     /**
      * <p>The list of clusters.</p>
@@ -74,7 +75,7 @@ namespace Model
     /**
      * <p>The list of clusters.</p>
      */
-    inline DescribeClustersResult& AddClusters(Cluster&& value) { m_clusters.push_back(value); return *this; }
+    inline DescribeClustersResult& AddClusters(Cluster&& value) { m_clusters.push_back(std::move(value)); return *this; }
 
     /**
      * <p>Any failures associated with the call.</p>
@@ -89,7 +90,7 @@ namespace Model
     /**
      * <p>Any failures associated with the call.</p>
      */
-    inline void SetFailures(Aws::Vector<Failure>&& value) { m_failures = value; }
+    inline void SetFailures(Aws::Vector<Failure>&& value) { m_failures = std::move(value); }
 
     /**
      * <p>Any failures associated with the call.</p>
@@ -99,7 +100,7 @@ namespace Model
     /**
      * <p>Any failures associated with the call.</p>
      */
-    inline DescribeClustersResult& WithFailures(Aws::Vector<Failure>&& value) { SetFailures(value); return *this;}
+    inline DescribeClustersResult& WithFailures(Aws::Vector<Failure>&& value) { SetFailures(std::move(value)); return *this;}
 
     /**
      * <p>Any failures associated with the call.</p>
@@ -109,7 +110,7 @@ namespace Model
     /**
      * <p>Any failures associated with the call.</p>
      */
-    inline DescribeClustersResult& AddFailures(Failure&& value) { m_failures.push_back(value); return *this; }
+    inline DescribeClustersResult& AddFailures(Failure&& value) { m_failures.push_back(std::move(value)); return *this; }
 
   private:
     Aws::Vector<Cluster> m_clusters;

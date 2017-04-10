@@ -17,6 +17,7 @@
 #include <aws/codepipeline/CodePipelineRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/codepipeline/model/StageTransitionType.h>
+#include <utility>
 
 namespace Aws
 {
@@ -56,7 +57,7 @@ namespace Model
      * <p>The name of the pipeline in which you want to disable the flow of artifacts
      * from one stage to another.</p>
      */
-    inline void SetPipelineName(Aws::String&& value) { m_pipelineNameHasBeenSet = true; m_pipelineName = value; }
+    inline void SetPipelineName(Aws::String&& value) { m_pipelineNameHasBeenSet = true; m_pipelineName = std::move(value); }
 
     /**
      * <p>The name of the pipeline in which you want to disable the flow of artifacts
@@ -74,7 +75,7 @@ namespace Model
      * <p>The name of the pipeline in which you want to disable the flow of artifacts
      * from one stage to another.</p>
      */
-    inline DisableStageTransitionRequest& WithPipelineName(Aws::String&& value) { SetPipelineName(value); return *this;}
+    inline DisableStageTransitionRequest& WithPipelineName(Aws::String&& value) { SetPipelineName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the pipeline in which you want to disable the flow of artifacts
@@ -98,7 +99,7 @@ namespace Model
      * <p>The name of the stage where you want to disable the inbound or outbound
      * transition of artifacts.</p>
      */
-    inline void SetStageName(Aws::String&& value) { m_stageNameHasBeenSet = true; m_stageName = value; }
+    inline void SetStageName(Aws::String&& value) { m_stageNameHasBeenSet = true; m_stageName = std::move(value); }
 
     /**
      * <p>The name of the stage where you want to disable the inbound or outbound
@@ -116,7 +117,7 @@ namespace Model
      * <p>The name of the stage where you want to disable the inbound or outbound
      * transition of artifacts.</p>
      */
-    inline DisableStageTransitionRequest& WithStageName(Aws::String&& value) { SetStageName(value); return *this;}
+    inline DisableStageTransitionRequest& WithStageName(Aws::String&& value) { SetStageName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the stage where you want to disable the inbound or outbound
@@ -146,7 +147,7 @@ namespace Model
      * from transitioning from the stage after they have been processed by the actions
      * in that stage (outbound).</p>
      */
-    inline void SetTransitionType(StageTransitionType&& value) { m_transitionTypeHasBeenSet = true; m_transitionType = value; }
+    inline void SetTransitionType(StageTransitionType&& value) { m_transitionTypeHasBeenSet = true; m_transitionType = std::move(value); }
 
     /**
      * <p>Specifies whether artifacts will be prevented from transitioning into the
@@ -162,7 +163,7 @@ namespace Model
      * from transitioning from the stage after they have been processed by the actions
      * in that stage (outbound).</p>
      */
-    inline DisableStageTransitionRequest& WithTransitionType(StageTransitionType&& value) { SetTransitionType(value); return *this;}
+    inline DisableStageTransitionRequest& WithTransitionType(StageTransitionType&& value) { SetTransitionType(std::move(value)); return *this;}
 
     /**
      * <p>The reason given to the user why a stage is disabled, such as waiting for
@@ -183,7 +184,7 @@ namespace Model
      * manual approval or manual tests. This message is displayed in the pipeline
      * console UI.</p>
      */
-    inline void SetReason(Aws::String&& value) { m_reasonHasBeenSet = true; m_reason = value; }
+    inline void SetReason(Aws::String&& value) { m_reasonHasBeenSet = true; m_reason = std::move(value); }
 
     /**
      * <p>The reason given to the user why a stage is disabled, such as waiting for
@@ -204,7 +205,7 @@ namespace Model
      * manual approval or manual tests. This message is displayed in the pipeline
      * console UI.</p>
      */
-    inline DisableStageTransitionRequest& WithReason(Aws::String&& value) { SetReason(value); return *this;}
+    inline DisableStageTransitionRequest& WithReason(Aws::String&& value) { SetReason(std::move(value)); return *this;}
 
     /**
      * <p>The reason given to the user why a stage is disabled, such as waiting for

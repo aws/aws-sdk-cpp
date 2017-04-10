@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/sqs/model/MessageAttributeValue.h>
+#include <utility>
 
 namespace Aws
 {
@@ -58,7 +59,7 @@ namespace Model
      * <p>The URL of the Amazon SQS queue to which a message is sent.</p> <p>Queue URLs
      * are case-sensitive.</p>
      */
-    inline void SetQueueUrl(Aws::String&& value) { m_queueUrlHasBeenSet = true; m_queueUrl = value; }
+    inline void SetQueueUrl(Aws::String&& value) { m_queueUrlHasBeenSet = true; m_queueUrl = std::move(value); }
 
     /**
      * <p>The URL of the Amazon SQS queue to which a message is sent.</p> <p>Queue URLs
@@ -76,7 +77,7 @@ namespace Model
      * <p>The URL of the Amazon SQS queue to which a message is sent.</p> <p>Queue URLs
      * are case-sensitive.</p>
      */
-    inline SendMessageRequest& WithQueueUrl(Aws::String&& value) { SetQueueUrl(value); return *this;}
+    inline SendMessageRequest& WithQueueUrl(Aws::String&& value) { SetQueueUrl(std::move(value)); return *this;}
 
     /**
      * <p>The URL of the Amazon SQS queue to which a message is sent.</p> <p>Queue URLs
@@ -124,7 +125,7 @@ namespace Model
      * you send any characters that aren't included in this list, your request is
      * rejected.</p> </important>
      */
-    inline void SetMessageBody(Aws::String&& value) { m_messageBodyHasBeenSet = true; m_messageBody = value; }
+    inline void SetMessageBody(Aws::String&& value) { m_messageBodyHasBeenSet = true; m_messageBody = std::move(value); }
 
     /**
      * <p>The message to send. The maximum string size is 256 KB.</p> <important>
@@ -166,7 +167,7 @@ namespace Model
      * you send any characters that aren't included in this list, your request is
      * rejected.</p> </important>
      */
-    inline SendMessageRequest& WithMessageBody(Aws::String&& value) { SetMessageBody(value); return *this;}
+    inline SendMessageRequest& WithMessageBody(Aws::String&& value) { SetMessageBody(std::move(value)); return *this;}
 
     /**
      * <p>The message to send. The maximum string size is 256 KB.</p> <important>
@@ -234,7 +235,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html#message-attributes-items-validation">Message
      * Attribute Items and Validation</a> in the <i>Amazon SQS Developer Guide</i>.</p>
      */
-    inline void SetMessageAttributes(Aws::Map<Aws::String, MessageAttributeValue>&& value) { m_messageAttributesHasBeenSet = true; m_messageAttributes = value; }
+    inline void SetMessageAttributes(Aws::Map<Aws::String, MessageAttributeValue>&& value) { m_messageAttributesHasBeenSet = true; m_messageAttributes = std::move(value); }
 
     /**
      * <p>Each message attribute consists of a <code>Name</code>, <code>Type</code>,
@@ -250,7 +251,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html#message-attributes-items-validation">Message
      * Attribute Items and Validation</a> in the <i>Amazon SQS Developer Guide</i>.</p>
      */
-    inline SendMessageRequest& WithMessageAttributes(Aws::Map<Aws::String, MessageAttributeValue>&& value) { SetMessageAttributes(value); return *this;}
+    inline SendMessageRequest& WithMessageAttributes(Aws::Map<Aws::String, MessageAttributeValue>&& value) { SetMessageAttributes(std::move(value)); return *this;}
 
     /**
      * <p>Each message attribute consists of a <code>Name</code>, <code>Type</code>,
@@ -258,7 +259,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html#message-attributes-items-validation">Message
      * Attribute Items and Validation</a> in the <i>Amazon SQS Developer Guide</i>.</p>
      */
-    inline SendMessageRequest& AddMessageAttributes(const Aws::String& key, const MessageAttributeValue& value) { m_messageAttributesHasBeenSet = true; m_messageAttributes[key] = value; return *this; }
+    inline SendMessageRequest& AddMessageAttributes(const Aws::String& key, const MessageAttributeValue& value) { m_messageAttributesHasBeenSet = true; m_messageAttributes.emplace(key, value); return *this; }
 
     /**
      * <p>Each message attribute consists of a <code>Name</code>, <code>Type</code>,
@@ -266,7 +267,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html#message-attributes-items-validation">Message
      * Attribute Items and Validation</a> in the <i>Amazon SQS Developer Guide</i>.</p>
      */
-    inline SendMessageRequest& AddMessageAttributes(Aws::String&& key, const MessageAttributeValue& value) { m_messageAttributesHasBeenSet = true; m_messageAttributes[key] = value; return *this; }
+    inline SendMessageRequest& AddMessageAttributes(Aws::String&& key, const MessageAttributeValue& value) { m_messageAttributesHasBeenSet = true; m_messageAttributes.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>Each message attribute consists of a <code>Name</code>, <code>Type</code>,
@@ -274,7 +275,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html#message-attributes-items-validation">Message
      * Attribute Items and Validation</a> in the <i>Amazon SQS Developer Guide</i>.</p>
      */
-    inline SendMessageRequest& AddMessageAttributes(const Aws::String& key, MessageAttributeValue&& value) { m_messageAttributesHasBeenSet = true; m_messageAttributes[key] = value; return *this; }
+    inline SendMessageRequest& AddMessageAttributes(const Aws::String& key, MessageAttributeValue&& value) { m_messageAttributesHasBeenSet = true; m_messageAttributes.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>Each message attribute consists of a <code>Name</code>, <code>Type</code>,
@@ -282,7 +283,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html#message-attributes-items-validation">Message
      * Attribute Items and Validation</a> in the <i>Amazon SQS Developer Guide</i>.</p>
      */
-    inline SendMessageRequest& AddMessageAttributes(Aws::String&& key, MessageAttributeValue&& value) { m_messageAttributesHasBeenSet = true; m_messageAttributes[key] = value; return *this; }
+    inline SendMessageRequest& AddMessageAttributes(Aws::String&& key, MessageAttributeValue&& value) { m_messageAttributesHasBeenSet = true; m_messageAttributes.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
      * <p>Each message attribute consists of a <code>Name</code>, <code>Type</code>,
@@ -290,7 +291,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html#message-attributes-items-validation">Message
      * Attribute Items and Validation</a> in the <i>Amazon SQS Developer Guide</i>.</p>
      */
-    inline SendMessageRequest& AddMessageAttributes(const char* key, MessageAttributeValue&& value) { m_messageAttributesHasBeenSet = true; m_messageAttributes[key] = value; return *this; }
+    inline SendMessageRequest& AddMessageAttributes(const char* key, MessageAttributeValue&& value) { m_messageAttributesHasBeenSet = true; m_messageAttributes.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>Each message attribute consists of a <code>Name</code>, <code>Type</code>,
@@ -298,7 +299,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html#message-attributes-items-validation">Message
      * Attribute Items and Validation</a> in the <i>Amazon SQS Developer Guide</i>.</p>
      */
-    inline SendMessageRequest& AddMessageAttributes(const char* key, const MessageAttributeValue& value) { m_messageAttributesHasBeenSet = true; m_messageAttributes[key] = value; return *this; }
+    inline SendMessageRequest& AddMessageAttributes(const char* key, const MessageAttributeValue& value) { m_messageAttributesHasBeenSet = true; m_messageAttributes.emplace(key, value); return *this; }
 
     /**
      * <p>This parameter applies only to FIFO (first-in-first-out) queues.</p> <p>The
@@ -433,7 +434,7 @@ namespace Model
      * the MessageDeduplicationId Property</a> in the <i>Amazon Simple Queue Service
      * Developer Guide</i>.</p>
      */
-    inline void SetMessageDeduplicationId(Aws::String&& value) { m_messageDeduplicationIdHasBeenSet = true; m_messageDeduplicationId = value; }
+    inline void SetMessageDeduplicationId(Aws::String&& value) { m_messageDeduplicationIdHasBeenSet = true; m_messageDeduplicationId = std::move(value); }
 
     /**
      * <p>This parameter applies only to FIFO (first-in-first-out) queues.</p> <p>The
@@ -568,7 +569,7 @@ namespace Model
      * the MessageDeduplicationId Property</a> in the <i>Amazon Simple Queue Service
      * Developer Guide</i>.</p>
      */
-    inline SendMessageRequest& WithMessageDeduplicationId(Aws::String&& value) { SetMessageDeduplicationId(value); return *this;}
+    inline SendMessageRequest& WithMessageDeduplicationId(Aws::String&& value) { SetMessageDeduplicationId(std::move(value)); return *this;}
 
     /**
      * <p>This parameter applies only to FIFO (first-in-first-out) queues.</p> <p>The
@@ -688,7 +689,7 @@ namespace Model
      * the MessageGroupId Property</a> in the <i>Amazon Simple Queue Service Developer
      * Guide</i>.</p>
      */
-    inline void SetMessageGroupId(Aws::String&& value) { m_messageGroupIdHasBeenSet = true; m_messageGroupId = value; }
+    inline void SetMessageGroupId(Aws::String&& value) { m_messageGroupIdHasBeenSet = true; m_messageGroupId = std::move(value); }
 
     /**
      * <p>This parameter applies only to FIFO (first-in-first-out) queues.</p> <p>The
@@ -763,7 +764,7 @@ namespace Model
      * the MessageGroupId Property</a> in the <i>Amazon Simple Queue Service Developer
      * Guide</i>.</p>
      */
-    inline SendMessageRequest& WithMessageGroupId(Aws::String&& value) { SetMessageGroupId(value); return *this;}
+    inline SendMessageRequest& WithMessageGroupId(Aws::String&& value) { SetMessageGroupId(std::move(value)); return *this;}
 
     /**
      * <p>This parameter applies only to FIFO (first-in-first-out) queues.</p> <p>The

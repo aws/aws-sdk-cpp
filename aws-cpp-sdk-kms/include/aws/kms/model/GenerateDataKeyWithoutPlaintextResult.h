@@ -16,6 +16,7 @@
 #include <aws/kms/KMS_EXPORTS.h>
 #include <aws/core/utils/Array.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -53,7 +54,7 @@ namespace Model
     /**
      * <p>The encrypted data encryption key.</p>
      */
-    inline void SetCiphertextBlob(Aws::Utils::ByteBuffer&& value) { m_ciphertextBlob = value; }
+    inline void SetCiphertextBlob(Aws::Utils::ByteBuffer&& value) { m_ciphertextBlob = std::move(value); }
 
     /**
      * <p>The encrypted data encryption key.</p>
@@ -63,7 +64,7 @@ namespace Model
     /**
      * <p>The encrypted data encryption key.</p>
      */
-    inline GenerateDataKeyWithoutPlaintextResult& WithCiphertextBlob(Aws::Utils::ByteBuffer&& value) { SetCiphertextBlob(value); return *this;}
+    inline GenerateDataKeyWithoutPlaintextResult& WithCiphertextBlob(Aws::Utils::ByteBuffer&& value) { SetCiphertextBlob(std::move(value)); return *this;}
 
     /**
      * <p>The identifier of the CMK under which the data encryption key was generated
@@ -81,7 +82,7 @@ namespace Model
      * <p>The identifier of the CMK under which the data encryption key was generated
      * and encrypted.</p>
      */
-    inline void SetKeyId(Aws::String&& value) { m_keyId = value; }
+    inline void SetKeyId(Aws::String&& value) { m_keyId = std::move(value); }
 
     /**
      * <p>The identifier of the CMK under which the data encryption key was generated
@@ -99,7 +100,7 @@ namespace Model
      * <p>The identifier of the CMK under which the data encryption key was generated
      * and encrypted.</p>
      */
-    inline GenerateDataKeyWithoutPlaintextResult& WithKeyId(Aws::String&& value) { SetKeyId(value); return *this;}
+    inline GenerateDataKeyWithoutPlaintextResult& WithKeyId(Aws::String&& value) { SetKeyId(std::move(value)); return *this;}
 
     /**
      * <p>The identifier of the CMK under which the data encryption key was generated

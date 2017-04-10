@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/glacier/Glacier_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -58,7 +59,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the vault.</p>
      */
-    inline void SetVaultARN(Aws::String&& value) { m_vaultARN = value; }
+    inline void SetVaultARN(Aws::String&& value) { m_vaultARN = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the vault.</p>
@@ -73,7 +74,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the vault.</p>
      */
-    inline DescribeVaultResult& WithVaultARN(Aws::String&& value) { SetVaultARN(value); return *this;}
+    inline DescribeVaultResult& WithVaultARN(Aws::String&& value) { SetVaultARN(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the vault.</p>
@@ -93,7 +94,7 @@ namespace Model
     /**
      * <p>The name of the vault.</p>
      */
-    inline void SetVaultName(Aws::String&& value) { m_vaultName = value; }
+    inline void SetVaultName(Aws::String&& value) { m_vaultName = std::move(value); }
 
     /**
      * <p>The name of the vault.</p>
@@ -108,7 +109,7 @@ namespace Model
     /**
      * <p>The name of the vault.</p>
      */
-    inline DescribeVaultResult& WithVaultName(Aws::String&& value) { SetVaultName(value); return *this;}
+    inline DescribeVaultResult& WithVaultName(Aws::String&& value) { SetVaultName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the vault.</p>
@@ -134,7 +135,7 @@ namespace Model
      * value should be a string in the ISO 8601 date format, for example
      * <code>2012-03-20T17:03:43.221Z</code>.</p>
      */
-    inline void SetCreationDate(Aws::String&& value) { m_creationDate = value; }
+    inline void SetCreationDate(Aws::String&& value) { m_creationDate = std::move(value); }
 
     /**
      * <p>The Universal Coordinated Time (UTC) date when the vault was created. This
@@ -155,7 +156,7 @@ namespace Model
      * value should be a string in the ISO 8601 date format, for example
      * <code>2012-03-20T17:03:43.221Z</code>.</p>
      */
-    inline DescribeVaultResult& WithCreationDate(Aws::String&& value) { SetCreationDate(value); return *this;}
+    inline DescribeVaultResult& WithCreationDate(Aws::String&& value) { SetCreationDate(std::move(value)); return *this;}
 
     /**
      * <p>The Universal Coordinated Time (UTC) date when the vault was created. This
@@ -183,7 +184,7 @@ namespace Model
      * last vault inventory. This value should be a string in the ISO 8601 date format,
      * for example <code>2012-03-20T17:03:43.221Z</code>.</p>
      */
-    inline void SetLastInventoryDate(Aws::String&& value) { m_lastInventoryDate = value; }
+    inline void SetLastInventoryDate(Aws::String&& value) { m_lastInventoryDate = std::move(value); }
 
     /**
      * <p>The Universal Coordinated Time (UTC) date when Amazon Glacier completed the
@@ -204,7 +205,7 @@ namespace Model
      * last vault inventory. This value should be a string in the ISO 8601 date format,
      * for example <code>2012-03-20T17:03:43.221Z</code>.</p>
      */
-    inline DescribeVaultResult& WithLastInventoryDate(Aws::String&& value) { SetLastInventoryDate(value); return *this;}
+    inline DescribeVaultResult& WithLastInventoryDate(Aws::String&& value) { SetLastInventoryDate(std::move(value)); return *this;}
 
     /**
      * <p>The Universal Coordinated Time (UTC) date when Amazon Glacier completed the

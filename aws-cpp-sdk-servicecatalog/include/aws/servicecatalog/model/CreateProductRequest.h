@@ -20,6 +20,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/servicecatalog/model/ProvisioningArtifactProperties.h>
 #include <aws/servicecatalog/model/Tag.h>
+#include <utility>
 #include <aws/core/utils/UUID.h>
 
 namespace Aws
@@ -59,7 +60,7 @@ namespace Model
      * follows:</p> <p>"en" (English)</p> <p>"jp" (Japanese)</p> <p>"zh" (Chinese)</p>
      * <p>If no code is specified, "en" is used as the default.</p>
      */
-    inline void SetAcceptLanguage(Aws::String&& value) { m_acceptLanguageHasBeenSet = true; m_acceptLanguage = value; }
+    inline void SetAcceptLanguage(Aws::String&& value) { m_acceptLanguageHasBeenSet = true; m_acceptLanguage = std::move(value); }
 
     /**
      * <p>The language code to use for this operation. Supported language codes are as
@@ -80,7 +81,7 @@ namespace Model
      * follows:</p> <p>"en" (English)</p> <p>"jp" (Japanese)</p> <p>"zh" (Chinese)</p>
      * <p>If no code is specified, "en" is used as the default.</p>
      */
-    inline CreateProductRequest& WithAcceptLanguage(Aws::String&& value) { SetAcceptLanguage(value); return *this;}
+    inline CreateProductRequest& WithAcceptLanguage(Aws::String&& value) { SetAcceptLanguage(std::move(value)); return *this;}
 
     /**
      * <p>The language code to use for this operation. Supported language codes are as
@@ -102,7 +103,7 @@ namespace Model
     /**
      * <p>The name of the product.</p>
      */
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p>The name of the product.</p>
@@ -117,7 +118,7 @@ namespace Model
     /**
      * <p>The name of the product.</p>
      */
-    inline CreateProductRequest& WithName(Aws::String&& value) { SetName(value); return *this;}
+    inline CreateProductRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the product.</p>
@@ -137,7 +138,7 @@ namespace Model
     /**
      * <p>The owner of the product.</p>
      */
-    inline void SetOwner(Aws::String&& value) { m_ownerHasBeenSet = true; m_owner = value; }
+    inline void SetOwner(Aws::String&& value) { m_ownerHasBeenSet = true; m_owner = std::move(value); }
 
     /**
      * <p>The owner of the product.</p>
@@ -152,7 +153,7 @@ namespace Model
     /**
      * <p>The owner of the product.</p>
      */
-    inline CreateProductRequest& WithOwner(Aws::String&& value) { SetOwner(value); return *this;}
+    inline CreateProductRequest& WithOwner(Aws::String&& value) { SetOwner(std::move(value)); return *this;}
 
     /**
      * <p>The owner of the product.</p>
@@ -172,7 +173,7 @@ namespace Model
     /**
      * <p>The text description of the product.</p>
      */
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = value; }
+    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
      * <p>The text description of the product.</p>
@@ -187,7 +188,7 @@ namespace Model
     /**
      * <p>The text description of the product.</p>
      */
-    inline CreateProductRequest& WithDescription(Aws::String&& value) { SetDescription(value); return *this;}
+    inline CreateProductRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
      * <p>The text description of the product.</p>
@@ -207,7 +208,7 @@ namespace Model
     /**
      * <p>The distributor of the product.</p>
      */
-    inline void SetDistributor(Aws::String&& value) { m_distributorHasBeenSet = true; m_distributor = value; }
+    inline void SetDistributor(Aws::String&& value) { m_distributorHasBeenSet = true; m_distributor = std::move(value); }
 
     /**
      * <p>The distributor of the product.</p>
@@ -222,7 +223,7 @@ namespace Model
     /**
      * <p>The distributor of the product.</p>
      */
-    inline CreateProductRequest& WithDistributor(Aws::String&& value) { SetDistributor(value); return *this;}
+    inline CreateProductRequest& WithDistributor(Aws::String&& value) { SetDistributor(std::move(value)); return *this;}
 
     /**
      * <p>The distributor of the product.</p>
@@ -242,7 +243,7 @@ namespace Model
     /**
      * <p>Support information about the product.</p>
      */
-    inline void SetSupportDescription(Aws::String&& value) { m_supportDescriptionHasBeenSet = true; m_supportDescription = value; }
+    inline void SetSupportDescription(Aws::String&& value) { m_supportDescriptionHasBeenSet = true; m_supportDescription = std::move(value); }
 
     /**
      * <p>Support information about the product.</p>
@@ -257,7 +258,7 @@ namespace Model
     /**
      * <p>Support information about the product.</p>
      */
-    inline CreateProductRequest& WithSupportDescription(Aws::String&& value) { SetSupportDescription(value); return *this;}
+    inline CreateProductRequest& WithSupportDescription(Aws::String&& value) { SetSupportDescription(std::move(value)); return *this;}
 
     /**
      * <p>Support information about the product.</p>
@@ -277,7 +278,7 @@ namespace Model
     /**
      * <p>Contact email for product support.</p>
      */
-    inline void SetSupportEmail(Aws::String&& value) { m_supportEmailHasBeenSet = true; m_supportEmail = value; }
+    inline void SetSupportEmail(Aws::String&& value) { m_supportEmailHasBeenSet = true; m_supportEmail = std::move(value); }
 
     /**
      * <p>Contact email for product support.</p>
@@ -292,7 +293,7 @@ namespace Model
     /**
      * <p>Contact email for product support.</p>
      */
-    inline CreateProductRequest& WithSupportEmail(Aws::String&& value) { SetSupportEmail(value); return *this;}
+    inline CreateProductRequest& WithSupportEmail(Aws::String&& value) { SetSupportEmail(std::move(value)); return *this;}
 
     /**
      * <p>Contact email for product support.</p>
@@ -312,7 +313,7 @@ namespace Model
     /**
      * <p>Contact URL for product support.</p>
      */
-    inline void SetSupportUrl(Aws::String&& value) { m_supportUrlHasBeenSet = true; m_supportUrl = value; }
+    inline void SetSupportUrl(Aws::String&& value) { m_supportUrlHasBeenSet = true; m_supportUrl = std::move(value); }
 
     /**
      * <p>Contact URL for product support.</p>
@@ -327,7 +328,7 @@ namespace Model
     /**
      * <p>Contact URL for product support.</p>
      */
-    inline CreateProductRequest& WithSupportUrl(Aws::String&& value) { SetSupportUrl(value); return *this;}
+    inline CreateProductRequest& WithSupportUrl(Aws::String&& value) { SetSupportUrl(std::move(value)); return *this;}
 
     /**
      * <p>Contact URL for product support.</p>
@@ -347,7 +348,7 @@ namespace Model
     /**
      * <p>The type of the product to create.</p>
      */
-    inline void SetProductType(ProductType&& value) { m_productTypeHasBeenSet = true; m_productType = value; }
+    inline void SetProductType(ProductType&& value) { m_productTypeHasBeenSet = true; m_productType = std::move(value); }
 
     /**
      * <p>The type of the product to create.</p>
@@ -357,7 +358,7 @@ namespace Model
     /**
      * <p>The type of the product to create.</p>
      */
-    inline CreateProductRequest& WithProductType(ProductType&& value) { SetProductType(value); return *this;}
+    inline CreateProductRequest& WithProductType(ProductType&& value) { SetProductType(std::move(value)); return *this;}
 
     /**
      * <p>Tags to associate with the new product.</p>
@@ -372,7 +373,7 @@ namespace Model
     /**
      * <p>Tags to associate with the new product.</p>
      */
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = value; }
+    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
      * <p>Tags to associate with the new product.</p>
@@ -382,7 +383,7 @@ namespace Model
     /**
      * <p>Tags to associate with the new product.</p>
      */
-    inline CreateProductRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(value); return *this;}
+    inline CreateProductRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
      * <p>Tags to associate with the new product.</p>
@@ -392,7 +393,7 @@ namespace Model
     /**
      * <p>Tags to associate with the new product.</p>
      */
-    inline CreateProductRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
+    inline CreateProductRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
     /**
      * <p>Parameters for the provisioning artifact.</p>
@@ -407,7 +408,7 @@ namespace Model
     /**
      * <p>Parameters for the provisioning artifact.</p>
      */
-    inline void SetProvisioningArtifactParameters(ProvisioningArtifactProperties&& value) { m_provisioningArtifactParametersHasBeenSet = true; m_provisioningArtifactParameters = value; }
+    inline void SetProvisioningArtifactParameters(ProvisioningArtifactProperties&& value) { m_provisioningArtifactParametersHasBeenSet = true; m_provisioningArtifactParameters = std::move(value); }
 
     /**
      * <p>Parameters for the provisioning artifact.</p>
@@ -417,7 +418,7 @@ namespace Model
     /**
      * <p>Parameters for the provisioning artifact.</p>
      */
-    inline CreateProductRequest& WithProvisioningArtifactParameters(ProvisioningArtifactProperties&& value) { SetProvisioningArtifactParameters(value); return *this;}
+    inline CreateProductRequest& WithProvisioningArtifactParameters(ProvisioningArtifactProperties&& value) { SetProvisioningArtifactParameters(std::move(value)); return *this;}
 
     /**
      * <p>A token to disambiguate duplicate requests. You can create multiple resources
@@ -438,7 +439,7 @@ namespace Model
      * using the same input in multiple requests, provided that you also specify a
      * different idempotency token for each request.</p>
      */
-    inline void SetIdempotencyToken(Aws::String&& value) { m_idempotencyTokenHasBeenSet = true; m_idempotencyToken = value; }
+    inline void SetIdempotencyToken(Aws::String&& value) { m_idempotencyTokenHasBeenSet = true; m_idempotencyToken = std::move(value); }
 
     /**
      * <p>A token to disambiguate duplicate requests. You can create multiple resources
@@ -459,7 +460,7 @@ namespace Model
      * using the same input in multiple requests, provided that you also specify a
      * different idempotency token for each request.</p>
      */
-    inline CreateProductRequest& WithIdempotencyToken(Aws::String&& value) { SetIdempotencyToken(value); return *this;}
+    inline CreateProductRequest& WithIdempotencyToken(Aws::String&& value) { SetIdempotencyToken(std::move(value)); return *this;}
 
     /**
      * <p>A token to disambiguate duplicate requests. You can create multiple resources

@@ -18,6 +18,7 @@
 #include <aws/clouddirectory/model/FacetAttributeDefinition.h>
 #include <aws/clouddirectory/model/FacetAttributeReference.h>
 #include <aws/clouddirectory/model/RequiredAttributeBehavior.h>
+#include <utility>
 
 namespace Aws
 {
@@ -59,7 +60,7 @@ namespace Model
     /**
      * <p>The name of the facet attribute.</p>
      */
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p>The name of the facet attribute.</p>
@@ -74,7 +75,7 @@ namespace Model
     /**
      * <p>The name of the facet attribute.</p>
      */
-    inline FacetAttribute& WithName(Aws::String&& value) { SetName(value); return *this;}
+    inline FacetAttribute& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the facet attribute.</p>
@@ -103,7 +104,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_advanced.html#attributereferences">Attribute
      * References</a> for more information.</p>
      */
-    inline void SetAttributeDefinition(FacetAttributeDefinition&& value) { m_attributeDefinitionHasBeenSet = true; m_attributeDefinition = value; }
+    inline void SetAttributeDefinition(FacetAttributeDefinition&& value) { m_attributeDefinitionHasBeenSet = true; m_attributeDefinition = std::move(value); }
 
     /**
      * <p>A facet attribute consists of either a definition or a reference. This
@@ -119,7 +120,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_advanced.html#attributereferences">Attribute
      * References</a> for more information.</p>
      */
-    inline FacetAttribute& WithAttributeDefinition(FacetAttributeDefinition&& value) { SetAttributeDefinition(value); return *this;}
+    inline FacetAttribute& WithAttributeDefinition(FacetAttributeDefinition&& value) { SetAttributeDefinition(std::move(value)); return *this;}
 
     /**
      * <p>Attribute reference associated with the attribute. See <a
@@ -140,7 +141,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_advanced.html#attributereferences">Attribute
      * References</a> for more information.</p>
      */
-    inline void SetAttributeReference(FacetAttributeReference&& value) { m_attributeReferenceHasBeenSet = true; m_attributeReference = value; }
+    inline void SetAttributeReference(FacetAttributeReference&& value) { m_attributeReferenceHasBeenSet = true; m_attributeReference = std::move(value); }
 
     /**
      * <p>Attribute reference associated with the attribute. See <a
@@ -154,7 +155,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_advanced.html#attributereferences">Attribute
      * References</a> for more information.</p>
      */
-    inline FacetAttribute& WithAttributeReference(FacetAttributeReference&& value) { SetAttributeReference(value); return *this;}
+    inline FacetAttribute& WithAttributeReference(FacetAttributeReference&& value) { SetAttributeReference(std::move(value)); return *this;}
 
     /**
      * <p>The required behavior of the <code>FacetAttribute</code>.</p>
@@ -169,7 +170,7 @@ namespace Model
     /**
      * <p>The required behavior of the <code>FacetAttribute</code>.</p>
      */
-    inline void SetRequiredBehavior(RequiredAttributeBehavior&& value) { m_requiredBehaviorHasBeenSet = true; m_requiredBehavior = value; }
+    inline void SetRequiredBehavior(RequiredAttributeBehavior&& value) { m_requiredBehaviorHasBeenSet = true; m_requiredBehavior = std::move(value); }
 
     /**
      * <p>The required behavior of the <code>FacetAttribute</code>.</p>
@@ -179,7 +180,7 @@ namespace Model
     /**
      * <p>The required behavior of the <code>FacetAttribute</code>.</p>
      */
-    inline FacetAttribute& WithRequiredBehavior(RequiredAttributeBehavior&& value) { SetRequiredBehavior(value); return *this;}
+    inline FacetAttribute& WithRequiredBehavior(RequiredAttributeBehavior&& value) { SetRequiredBehavior(std::move(value)); return *this;}
 
   private:
     Aws::String m_name;

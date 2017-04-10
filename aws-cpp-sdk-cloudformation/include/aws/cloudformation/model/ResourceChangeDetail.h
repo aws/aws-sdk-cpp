@@ -19,6 +19,7 @@
 #include <aws/cloudformation/model/EvaluationType.h>
 #include <aws/cloudformation/model/ChangeSource.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -70,7 +71,7 @@ namespace Model
      * that AWS CloudFormation will change and whether the resource will be
      * recreated.</p>
      */
-    inline void SetTarget(ResourceTargetDefinition&& value) { m_targetHasBeenSet = true; m_target = value; }
+    inline void SetTarget(ResourceTargetDefinition&& value) { m_targetHasBeenSet = true; m_target = std::move(value); }
 
     /**
      * <p>A <code>ResourceTargetDefinition</code> structure that describes the field
@@ -84,7 +85,7 @@ namespace Model
      * that AWS CloudFormation will change and whether the resource will be
      * recreated.</p>
      */
-    inline ResourceChangeDetail& WithTarget(ResourceTargetDefinition&& value) { SetTarget(value); return *this;}
+    inline ResourceChangeDetail& WithTarget(ResourceTargetDefinition&& value) { SetTarget(std::move(value)); return *this;}
 
     /**
      * <p>Indicates whether AWS CloudFormation can determine the target value, and
@@ -138,7 +139,7 @@ namespace Model
      * the resource is recreated. If the resource is recreated, it will have a new
      * physical ID, so all references to that resource will also be updated.</p>
      */
-    inline void SetEvaluation(EvaluationType&& value) { m_evaluationHasBeenSet = true; m_evaluation = value; }
+    inline void SetEvaluation(EvaluationType&& value) { m_evaluationHasBeenSet = true; m_evaluation = std::move(value); }
 
     /**
      * <p>Indicates whether AWS CloudFormation can determine the target value, and
@@ -174,7 +175,7 @@ namespace Model
      * the resource is recreated. If the resource is recreated, it will have a new
      * physical ID, so all references to that resource will also be updated.</p>
      */
-    inline ResourceChangeDetail& WithEvaluation(EvaluationType&& value) { SetEvaluation(value); return *this;}
+    inline ResourceChangeDetail& WithEvaluation(EvaluationType&& value) { SetEvaluation(std::move(value)); return *this;}
 
     /**
      * <p>The group to which the <code>CausingEntity</code> value belongs. There are
@@ -243,7 +244,7 @@ namespace Model
      * to AWS CloudFormation until you run an update on the parent stack.</p> </li>
      * </ul>
      */
-    inline void SetChangeSource(ChangeSource&& value) { m_changeSourceHasBeenSet = true; m_changeSource = value; }
+    inline void SetChangeSource(ChangeSource&& value) { m_changeSourceHasBeenSet = true; m_changeSource = std::move(value); }
 
     /**
      * <p>The group to which the <code>CausingEntity</code> value belongs. There are
@@ -289,7 +290,7 @@ namespace Model
      * to AWS CloudFormation until you run an update on the parent stack.</p> </li>
      * </ul>
      */
-    inline ResourceChangeDetail& WithChangeSource(ChangeSource&& value) { SetChangeSource(value); return *this;}
+    inline ResourceChangeDetail& WithChangeSource(ChangeSource&& value) { SetChangeSource(std::move(value)); return *this;}
 
     /**
      * <p>The identity of the entity that triggered this change. This entity is a
@@ -322,7 +323,7 @@ namespace Model
      * <code>DirectModification</code>, no value is given for
      * <code>CausingEntity</code>.</p>
      */
-    inline void SetCausingEntity(Aws::String&& value) { m_causingEntityHasBeenSet = true; m_causingEntity = value; }
+    inline void SetCausingEntity(Aws::String&& value) { m_causingEntityHasBeenSet = true; m_causingEntity = std::move(value); }
 
     /**
      * <p>The identity of the entity that triggered this change. This entity is a
@@ -355,7 +356,7 @@ namespace Model
      * <code>DirectModification</code>, no value is given for
      * <code>CausingEntity</code>.</p>
      */
-    inline ResourceChangeDetail& WithCausingEntity(Aws::String&& value) { SetCausingEntity(value); return *this;}
+    inline ResourceChangeDetail& WithCausingEntity(Aws::String&& value) { SetCausingEntity(std::move(value)); return *this;}
 
     /**
      * <p>The identity of the entity that triggered this change. This entity is a

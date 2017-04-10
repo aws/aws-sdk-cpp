@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/route53domains/Route53Domains_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -52,7 +53,7 @@ namespace Model
     /**
      * <p>The domain name for which you requested a confirmation email.</p>
      */
-    inline void SetDomainName(Aws::String&& value) { m_domainName = value; }
+    inline void SetDomainName(Aws::String&& value) { m_domainName = std::move(value); }
 
     /**
      * <p>The domain name for which you requested a confirmation email.</p>
@@ -67,7 +68,7 @@ namespace Model
     /**
      * <p>The domain name for which you requested a confirmation email.</p>
      */
-    inline ResendContactReachabilityEmailResult& WithDomainName(Aws::String&& value) { SetDomainName(value); return *this;}
+    inline ResendContactReachabilityEmailResult& WithDomainName(Aws::String&& value) { SetDomainName(std::move(value)); return *this;}
 
     /**
      * <p>The domain name for which you requested a confirmation email.</p>
@@ -90,7 +91,7 @@ namespace Model
      * <p>The email address for the registrant contact at the time that we sent the
      * verification email.</p>
      */
-    inline void SetEmailAddress(Aws::String&& value) { m_emailAddress = value; }
+    inline void SetEmailAddress(Aws::String&& value) { m_emailAddress = std::move(value); }
 
     /**
      * <p>The email address for the registrant contact at the time that we sent the
@@ -108,7 +109,7 @@ namespace Model
      * <p>The email address for the registrant contact at the time that we sent the
      * verification email.</p>
      */
-    inline ResendContactReachabilityEmailResult& WithEmailAddress(Aws::String&& value) { SetEmailAddress(value); return *this;}
+    inline ResendContactReachabilityEmailResult& WithEmailAddress(Aws::String&& value) { SetEmailAddress(std::move(value)); return *this;}
 
     /**
      * <p>The email address for the registrant contact at the time that we sent the

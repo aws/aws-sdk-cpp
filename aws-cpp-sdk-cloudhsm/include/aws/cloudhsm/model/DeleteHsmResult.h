@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/cloudhsm/CloudHSM_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -58,7 +59,7 @@ namespace Model
     /**
      * <p>The status of the operation.</p>
      */
-    inline void SetStatus(Aws::String&& value) { m_status = value; }
+    inline void SetStatus(Aws::String&& value) { m_status = std::move(value); }
 
     /**
      * <p>The status of the operation.</p>
@@ -73,7 +74,7 @@ namespace Model
     /**
      * <p>The status of the operation.</p>
      */
-    inline DeleteHsmResult& WithStatus(Aws::String&& value) { SetStatus(value); return *this;}
+    inline DeleteHsmResult& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
 
     /**
      * <p>The status of the operation.</p>

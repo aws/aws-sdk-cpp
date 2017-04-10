@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/cognito-idp/CognitoIdentityProvider_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -57,7 +58,7 @@ namespace Model
     /**
      * <p>The minimum length of an attribute value of the string type.</p>
      */
-    inline void SetMinLength(Aws::String&& value) { m_minLengthHasBeenSet = true; m_minLength = value; }
+    inline void SetMinLength(Aws::String&& value) { m_minLengthHasBeenSet = true; m_minLength = std::move(value); }
 
     /**
      * <p>The minimum length of an attribute value of the string type.</p>
@@ -72,7 +73,7 @@ namespace Model
     /**
      * <p>The minimum length of an attribute value of the string type.</p>
      */
-    inline StringAttributeConstraintsType& WithMinLength(Aws::String&& value) { SetMinLength(value); return *this;}
+    inline StringAttributeConstraintsType& WithMinLength(Aws::String&& value) { SetMinLength(std::move(value)); return *this;}
 
     /**
      * <p>The minimum length of an attribute value of the string type.</p>
@@ -92,7 +93,7 @@ namespace Model
     /**
      * <p>The maximum length of an attribute value of the string type.</p>
      */
-    inline void SetMaxLength(Aws::String&& value) { m_maxLengthHasBeenSet = true; m_maxLength = value; }
+    inline void SetMaxLength(Aws::String&& value) { m_maxLengthHasBeenSet = true; m_maxLength = std::move(value); }
 
     /**
      * <p>The maximum length of an attribute value of the string type.</p>
@@ -107,7 +108,7 @@ namespace Model
     /**
      * <p>The maximum length of an attribute value of the string type.</p>
      */
-    inline StringAttributeConstraintsType& WithMaxLength(Aws::String&& value) { SetMaxLength(value); return *this;}
+    inline StringAttributeConstraintsType& WithMaxLength(Aws::String&& value) { SetMaxLength(std::move(value)); return *this;}
 
     /**
      * <p>The maximum length of an attribute value of the string type.</p>

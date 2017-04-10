@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/mturk-requester/model/ReviewPolicy.h>
 #include <aws/mturk-requester/model/ReviewReport.h>
+#include <utility>
 
 namespace Aws
 {
@@ -54,7 +55,7 @@ namespace Model
     /**
      * <p>The HITId of the HIT for which results have been returned.</p>
      */
-    inline void SetHITId(Aws::String&& value) { m_hITId = value; }
+    inline void SetHITId(Aws::String&& value) { m_hITId = std::move(value); }
 
     /**
      * <p>The HITId of the HIT for which results have been returned.</p>
@@ -69,7 +70,7 @@ namespace Model
     /**
      * <p>The HITId of the HIT for which results have been returned.</p>
      */
-    inline ListReviewPolicyResultsForHITResult& WithHITId(Aws::String&& value) { SetHITId(value); return *this;}
+    inline ListReviewPolicyResultsForHITResult& WithHITId(Aws::String&& value) { SetHITId(std::move(value)); return *this;}
 
     /**
      * <p>The HITId of the HIT for which results have been returned.</p>
@@ -92,7 +93,7 @@ namespace Model
      * <p> The name of the Assignment-level Review Policy. This contains only the
      * PolicyName element. </p>
      */
-    inline void SetAssignmentReviewPolicy(ReviewPolicy&& value) { m_assignmentReviewPolicy = value; }
+    inline void SetAssignmentReviewPolicy(ReviewPolicy&& value) { m_assignmentReviewPolicy = std::move(value); }
 
     /**
      * <p> The name of the Assignment-level Review Policy. This contains only the
@@ -104,7 +105,7 @@ namespace Model
      * <p> The name of the Assignment-level Review Policy. This contains only the
      * PolicyName element. </p>
      */
-    inline ListReviewPolicyResultsForHITResult& WithAssignmentReviewPolicy(ReviewPolicy&& value) { SetAssignmentReviewPolicy(value); return *this;}
+    inline ListReviewPolicyResultsForHITResult& WithAssignmentReviewPolicy(ReviewPolicy&& value) { SetAssignmentReviewPolicy(std::move(value)); return *this;}
 
     /**
      * <p>The name of the HIT-level Review Policy. This contains only the PolicyName
@@ -122,7 +123,7 @@ namespace Model
      * <p>The name of the HIT-level Review Policy. This contains only the PolicyName
      * element.</p>
      */
-    inline void SetHITReviewPolicy(ReviewPolicy&& value) { m_hITReviewPolicy = value; }
+    inline void SetHITReviewPolicy(ReviewPolicy&& value) { m_hITReviewPolicy = std::move(value); }
 
     /**
      * <p>The name of the HIT-level Review Policy. This contains only the PolicyName
@@ -134,7 +135,7 @@ namespace Model
      * <p>The name of the HIT-level Review Policy. This contains only the PolicyName
      * element.</p>
      */
-    inline ListReviewPolicyResultsForHITResult& WithHITReviewPolicy(ReviewPolicy&& value) { SetHITReviewPolicy(value); return *this;}
+    inline ListReviewPolicyResultsForHITResult& WithHITReviewPolicy(ReviewPolicy&& value) { SetHITReviewPolicy(std::move(value)); return *this;}
 
     /**
      * <p> Contains both ReviewResult and ReviewAction elements for an Assignment. </p>
@@ -149,7 +150,7 @@ namespace Model
     /**
      * <p> Contains both ReviewResult and ReviewAction elements for an Assignment. </p>
      */
-    inline void SetAssignmentReviewReport(ReviewReport&& value) { m_assignmentReviewReport = value; }
+    inline void SetAssignmentReviewReport(ReviewReport&& value) { m_assignmentReviewReport = std::move(value); }
 
     /**
      * <p> Contains both ReviewResult and ReviewAction elements for an Assignment. </p>
@@ -159,7 +160,7 @@ namespace Model
     /**
      * <p> Contains both ReviewResult and ReviewAction elements for an Assignment. </p>
      */
-    inline ListReviewPolicyResultsForHITResult& WithAssignmentReviewReport(ReviewReport&& value) { SetAssignmentReviewReport(value); return *this;}
+    inline ListReviewPolicyResultsForHITResult& WithAssignmentReviewReport(ReviewReport&& value) { SetAssignmentReviewReport(std::move(value)); return *this;}
 
     /**
      * <p>Contains both ReviewResult and ReviewAction elements for a particular HIT.
@@ -177,7 +178,7 @@ namespace Model
      * <p>Contains both ReviewResult and ReviewAction elements for a particular HIT.
      * </p>
      */
-    inline void SetHITReviewReport(ReviewReport&& value) { m_hITReviewReport = value; }
+    inline void SetHITReviewReport(ReviewReport&& value) { m_hITReviewReport = std::move(value); }
 
     /**
      * <p>Contains both ReviewResult and ReviewAction elements for a particular HIT.
@@ -189,7 +190,7 @@ namespace Model
      * <p>Contains both ReviewResult and ReviewAction elements for a particular HIT.
      * </p>
      */
-    inline ListReviewPolicyResultsForHITResult& WithHITReviewReport(ReviewReport&& value) { SetHITReviewReport(value); return *this;}
+    inline ListReviewPolicyResultsForHITResult& WithHITReviewReport(ReviewReport&& value) { SetHITReviewReport(std::move(value)); return *this;}
 
     
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
@@ -198,7 +199,7 @@ namespace Model
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
 
     
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
@@ -207,7 +208,7 @@ namespace Model
     inline ListReviewPolicyResultsForHITResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     
-    inline ListReviewPolicyResultsForHITResult& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline ListReviewPolicyResultsForHITResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     
     inline ListReviewPolicyResultsForHITResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}

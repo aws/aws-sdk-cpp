@@ -16,6 +16,7 @@
 #include <aws/iam/IAM_EXPORTS.h>
 #include <aws/iam/IAMRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -62,7 +63,7 @@ namespace Model
      * alphanumeric characters with no spaces. You can also include any of the
      * following characters: =,.@-</p>
      */
-    inline void SetUserName(Aws::String&& value) { m_userNameHasBeenSet = true; m_userName = value; }
+    inline void SetUserName(Aws::String&& value) { m_userNameHasBeenSet = true; m_userName = std::move(value); }
 
     /**
      * <p>The name of the IAM user associated with the SSH public key.</p> <p>This
@@ -89,7 +90,7 @@ namespace Model
      * alphanumeric characters with no spaces. You can also include any of the
      * following characters: =,.@-</p>
      */
-    inline DeleteSSHPublicKeyRequest& WithUserName(Aws::String&& value) { SetUserName(value); return *this;}
+    inline DeleteSSHPublicKeyRequest& WithUserName(Aws::String&& value) { SetUserName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the IAM user associated with the SSH public key.</p> <p>This
@@ -119,7 +120,7 @@ namespace Model
      * (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string
      * of characters that can consist of any upper or lowercased letter or digit.</p>
      */
-    inline void SetSSHPublicKeyId(Aws::String&& value) { m_sSHPublicKeyIdHasBeenSet = true; m_sSHPublicKeyId = value; }
+    inline void SetSSHPublicKeyId(Aws::String&& value) { m_sSHPublicKeyIdHasBeenSet = true; m_sSHPublicKeyId = std::move(value); }
 
     /**
      * <p>The unique identifier for the SSH public key.</p> <p>This parameter allows
@@ -140,7 +141,7 @@ namespace Model
      * (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string
      * of characters that can consist of any upper or lowercased letter or digit.</p>
      */
-    inline DeleteSSHPublicKeyRequest& WithSSHPublicKeyId(Aws::String&& value) { SetSSHPublicKeyId(value); return *this;}
+    inline DeleteSSHPublicKeyRequest& WithSSHPublicKeyId(Aws::String&& value) { SetSSHPublicKeyId(std::move(value)); return *this;}
 
     /**
      * <p>The unique identifier for the SSH public key.</p> <p>This parameter allows

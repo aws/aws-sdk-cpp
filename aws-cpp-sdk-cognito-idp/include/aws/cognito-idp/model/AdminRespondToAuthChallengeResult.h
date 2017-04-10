@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/cognito-idp/model/AuthenticationResultType.h>
+#include <utility>
 
 namespace Aws
 {
@@ -61,7 +62,7 @@ namespace Model
     /**
      * <p>The name of the challenge.</p>
      */
-    inline void SetChallengeName(ChallengeNameType&& value) { m_challengeName = value; }
+    inline void SetChallengeName(ChallengeNameType&& value) { m_challengeName = std::move(value); }
 
     /**
      * <p>The name of the challenge.</p>
@@ -71,7 +72,7 @@ namespace Model
     /**
      * <p>The name of the challenge.</p>
      */
-    inline AdminRespondToAuthChallengeResult& WithChallengeName(ChallengeNameType&& value) { SetChallengeName(value); return *this;}
+    inline AdminRespondToAuthChallengeResult& WithChallengeName(ChallengeNameType&& value) { SetChallengeName(std::move(value)); return *this;}
 
     /**
      * <p>The session.</p>
@@ -86,7 +87,7 @@ namespace Model
     /**
      * <p>The session.</p>
      */
-    inline void SetSession(Aws::String&& value) { m_session = value; }
+    inline void SetSession(Aws::String&& value) { m_session = std::move(value); }
 
     /**
      * <p>The session.</p>
@@ -101,7 +102,7 @@ namespace Model
     /**
      * <p>The session.</p>
      */
-    inline AdminRespondToAuthChallengeResult& WithSession(Aws::String&& value) { SetSession(value); return *this;}
+    inline AdminRespondToAuthChallengeResult& WithSession(Aws::String&& value) { SetSession(std::move(value)); return *this;}
 
     /**
      * <p>The session.</p>
@@ -121,7 +122,7 @@ namespace Model
     /**
      * <p>The challenge parameters.</p>
      */
-    inline void SetChallengeParameters(Aws::Map<Aws::String, Aws::String>&& value) { m_challengeParameters = value; }
+    inline void SetChallengeParameters(Aws::Map<Aws::String, Aws::String>&& value) { m_challengeParameters = std::move(value); }
 
     /**
      * <p>The challenge parameters.</p>
@@ -131,42 +132,42 @@ namespace Model
     /**
      * <p>The challenge parameters.</p>
      */
-    inline AdminRespondToAuthChallengeResult& WithChallengeParameters(Aws::Map<Aws::String, Aws::String>&& value) { SetChallengeParameters(value); return *this;}
+    inline AdminRespondToAuthChallengeResult& WithChallengeParameters(Aws::Map<Aws::String, Aws::String>&& value) { SetChallengeParameters(std::move(value)); return *this;}
 
     /**
      * <p>The challenge parameters.</p>
      */
-    inline AdminRespondToAuthChallengeResult& AddChallengeParameters(const Aws::String& key, const Aws::String& value) { m_challengeParameters[key] = value; return *this; }
+    inline AdminRespondToAuthChallengeResult& AddChallengeParameters(const Aws::String& key, const Aws::String& value) { m_challengeParameters.emplace(key, value); return *this; }
 
     /**
      * <p>The challenge parameters.</p>
      */
-    inline AdminRespondToAuthChallengeResult& AddChallengeParameters(Aws::String&& key, const Aws::String& value) { m_challengeParameters[key] = value; return *this; }
+    inline AdminRespondToAuthChallengeResult& AddChallengeParameters(Aws::String&& key, const Aws::String& value) { m_challengeParameters.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>The challenge parameters.</p>
      */
-    inline AdminRespondToAuthChallengeResult& AddChallengeParameters(const Aws::String& key, Aws::String&& value) { m_challengeParameters[key] = value; return *this; }
+    inline AdminRespondToAuthChallengeResult& AddChallengeParameters(const Aws::String& key, Aws::String&& value) { m_challengeParameters.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>The challenge parameters.</p>
      */
-    inline AdminRespondToAuthChallengeResult& AddChallengeParameters(Aws::String&& key, Aws::String&& value) { m_challengeParameters[key] = value; return *this; }
+    inline AdminRespondToAuthChallengeResult& AddChallengeParameters(Aws::String&& key, Aws::String&& value) { m_challengeParameters.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
      * <p>The challenge parameters.</p>
      */
-    inline AdminRespondToAuthChallengeResult& AddChallengeParameters(const char* key, Aws::String&& value) { m_challengeParameters[key] = value; return *this; }
+    inline AdminRespondToAuthChallengeResult& AddChallengeParameters(const char* key, Aws::String&& value) { m_challengeParameters.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>The challenge parameters.</p>
      */
-    inline AdminRespondToAuthChallengeResult& AddChallengeParameters(Aws::String&& key, const char* value) { m_challengeParameters[key] = value; return *this; }
+    inline AdminRespondToAuthChallengeResult& AddChallengeParameters(Aws::String&& key, const char* value) { m_challengeParameters.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>The challenge parameters.</p>
      */
-    inline AdminRespondToAuthChallengeResult& AddChallengeParameters(const char* key, const char* value) { m_challengeParameters[key] = value; return *this; }
+    inline AdminRespondToAuthChallengeResult& AddChallengeParameters(const char* key, const char* value) { m_challengeParameters.emplace(key, value); return *this; }
 
     /**
      * <p>The result returned by the server in response to the authentication
@@ -184,7 +185,7 @@ namespace Model
      * <p>The result returned by the server in response to the authentication
      * request.</p>
      */
-    inline void SetAuthenticationResult(AuthenticationResultType&& value) { m_authenticationResult = value; }
+    inline void SetAuthenticationResult(AuthenticationResultType&& value) { m_authenticationResult = std::move(value); }
 
     /**
      * <p>The result returned by the server in response to the authentication
@@ -196,7 +197,7 @@ namespace Model
      * <p>The result returned by the server in response to the authentication
      * request.</p>
      */
-    inline AdminRespondToAuthChallengeResult& WithAuthenticationResult(AuthenticationResultType&& value) { SetAuthenticationResult(value); return *this;}
+    inline AdminRespondToAuthChallengeResult& WithAuthenticationResult(AuthenticationResultType&& value) { SetAuthenticationResult(std::move(value)); return *this;}
 
   private:
     ChallengeNameType m_challengeName;

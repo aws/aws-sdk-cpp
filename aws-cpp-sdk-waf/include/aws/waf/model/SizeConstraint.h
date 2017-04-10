@@ -17,6 +17,7 @@
 #include <aws/waf/model/FieldToMatch.h>
 #include <aws/waf/model/TextTransformation.h>
 #include <aws/waf/model/ComparisonOperator.h>
+#include <utility>
 
 namespace Aws
 {
@@ -64,7 +65,7 @@ namespace Model
     /**
      * <p>Specifies where in a web request to look for the size constraint.</p>
      */
-    inline void SetFieldToMatch(FieldToMatch&& value) { m_fieldToMatchHasBeenSet = true; m_fieldToMatch = value; }
+    inline void SetFieldToMatch(FieldToMatch&& value) { m_fieldToMatchHasBeenSet = true; m_fieldToMatch = std::move(value); }
 
     /**
      * <p>Specifies where in a web request to look for the size constraint.</p>
@@ -74,7 +75,7 @@ namespace Model
     /**
      * <p>Specifies where in a web request to look for the size constraint.</p>
      */
-    inline SizeConstraint& WithFieldToMatch(FieldToMatch&& value) { SetFieldToMatch(value); return *this;}
+    inline SizeConstraint& WithFieldToMatch(FieldToMatch&& value) { SetFieldToMatch(std::move(value)); return *this;}
 
     /**
      * <p>Text transformations eliminate some of the unusual formatting that attackers
@@ -194,7 +195,7 @@ namespace Model
      * letters (A-Z) to lowercase (a-z).</p> <p> <b>URL_DECODE</b> </p> <p>Use this
      * option to decode a URL-encoded value.</p>
      */
-    inline void SetTextTransformation(TextTransformation&& value) { m_textTransformationHasBeenSet = true; m_textTransformation = value; }
+    inline void SetTextTransformation(TextTransformation&& value) { m_textTransformationHasBeenSet = true; m_textTransformation = std::move(value); }
 
     /**
      * <p>Text transformations eliminate some of the unusual formatting that attackers
@@ -274,7 +275,7 @@ namespace Model
      * letters (A-Z) to lowercase (a-z).</p> <p> <b>URL_DECODE</b> </p> <p>Use this
      * option to decode a URL-encoded value.</p>
      */
-    inline SizeConstraint& WithTextTransformation(TextTransformation&& value) { SetTextTransformation(value); return *this;}
+    inline SizeConstraint& WithTextTransformation(TextTransformation&& value) { SetTextTransformation(std::move(value)); return *this;}
 
     /**
      * <p>The type of comparison you want AWS WAF to perform. AWS WAF uses this in
@@ -334,7 +335,7 @@ namespace Model
      * <code>Size</code> is strictly greater than the size of the
      * <code>FieldToMatch</code> </p>
      */
-    inline void SetComparisonOperator(ComparisonOperator&& value) { m_comparisonOperatorHasBeenSet = true; m_comparisonOperator = value; }
+    inline void SetComparisonOperator(ComparisonOperator&& value) { m_comparisonOperatorHasBeenSet = true; m_comparisonOperator = std::move(value); }
 
     /**
      * <p>The type of comparison you want AWS WAF to perform. AWS WAF uses this in
@@ -374,7 +375,7 @@ namespace Model
      * <code>Size</code> is strictly greater than the size of the
      * <code>FieldToMatch</code> </p>
      */
-    inline SizeConstraint& WithComparisonOperator(ComparisonOperator&& value) { SetComparisonOperator(value); return *this;}
+    inline SizeConstraint& WithComparisonOperator(ComparisonOperator&& value) { SetComparisonOperator(std::move(value)); return *this;}
 
     /**
      * <p>The size in bytes that you want AWS WAF to compare against the size of the

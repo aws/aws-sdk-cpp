@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/elastictranscoder/ElasticTranscoder_EXPORTS.h>
 #include <aws/elastictranscoder/model/TimeSpan.h>
+#include <utility>
 
 namespace Aws
 {
@@ -57,7 +58,7 @@ namespace Model
     /**
      * <p>Settings that determine when a clip begins and how long it lasts.</p>
      */
-    inline void SetTimeSpan(TimeSpan&& value) { m_timeSpanHasBeenSet = true; m_timeSpan = value; }
+    inline void SetTimeSpan(TimeSpan&& value) { m_timeSpanHasBeenSet = true; m_timeSpan = std::move(value); }
 
     /**
      * <p>Settings that determine when a clip begins and how long it lasts.</p>
@@ -67,7 +68,7 @@ namespace Model
     /**
      * <p>Settings that determine when a clip begins and how long it lasts.</p>
      */
-    inline Clip& WithTimeSpan(TimeSpan&& value) { SetTimeSpan(value); return *this;}
+    inline Clip& WithTimeSpan(TimeSpan&& value) { SetTimeSpan(std::move(value)); return *this;}
 
   private:
     TimeSpan m_timeSpan;

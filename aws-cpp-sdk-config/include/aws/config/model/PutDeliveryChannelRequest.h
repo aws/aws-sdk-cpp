@@ -16,6 +16,7 @@
 #include <aws/config/ConfigService_EXPORTS.h>
 #include <aws/config/ConfigServiceRequest.h>
 #include <aws/config/model/DeliveryChannel.h>
+#include <utility>
 
 namespace Aws
 {
@@ -55,7 +56,7 @@ namespace Model
      * <p>The configuration delivery channel object that delivers the configuration
      * information to an Amazon S3 bucket, and to an Amazon SNS topic.</p>
      */
-    inline void SetDeliveryChannel(DeliveryChannel&& value) { m_deliveryChannelHasBeenSet = true; m_deliveryChannel = value; }
+    inline void SetDeliveryChannel(DeliveryChannel&& value) { m_deliveryChannelHasBeenSet = true; m_deliveryChannel = std::move(value); }
 
     /**
      * <p>The configuration delivery channel object that delivers the configuration
@@ -67,7 +68,7 @@ namespace Model
      * <p>The configuration delivery channel object that delivers the configuration
      * information to an Amazon S3 bucket, and to an Amazon SNS topic.</p>
      */
-    inline PutDeliveryChannelRequest& WithDeliveryChannel(DeliveryChannel&& value) { SetDeliveryChannel(value); return *this;}
+    inline PutDeliveryChannelRequest& WithDeliveryChannel(DeliveryChannel&& value) { SetDeliveryChannel(std::move(value)); return *this;}
 
   private:
     DeliveryChannel m_deliveryChannel;

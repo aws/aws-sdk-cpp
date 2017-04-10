@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/cloudfront/CloudFront_EXPORTS.h>
 #include <aws/cloudfront/model/Invalidation.h>
+#include <utility>
 
 namespace Aws
 {
@@ -57,7 +58,7 @@ namespace Model
     /**
      * The invalidation's information.
      */
-    inline void SetInvalidation(Invalidation&& value) { m_invalidation = value; }
+    inline void SetInvalidation(Invalidation&& value) { m_invalidation = std::move(value); }
 
     /**
      * The invalidation's information.
@@ -67,7 +68,7 @@ namespace Model
     /**
      * The invalidation's information.
      */
-    inline GetInvalidation2016_01_28Result& WithInvalidation(Invalidation&& value) { SetInvalidation(value); return *this;}
+    inline GetInvalidation2016_01_28Result& WithInvalidation(Invalidation&& value) { SetInvalidation(std::move(value)); return *this;}
 
   private:
     Invalidation m_invalidation;

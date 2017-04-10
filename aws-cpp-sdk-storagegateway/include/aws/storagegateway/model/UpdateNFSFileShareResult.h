@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/storagegateway/StorageGateway_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -57,7 +58,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the updated file share. </p>
      */
-    inline void SetFileShareARN(Aws::String&& value) { m_fileShareARN = value; }
+    inline void SetFileShareARN(Aws::String&& value) { m_fileShareARN = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the updated file share. </p>
@@ -72,7 +73,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the updated file share. </p>
      */
-    inline UpdateNFSFileShareResult& WithFileShareARN(Aws::String&& value) { SetFileShareARN(value); return *this;}
+    inline UpdateNFSFileShareResult& WithFileShareARN(Aws::String&& value) { SetFileShareARN(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the updated file share. </p>

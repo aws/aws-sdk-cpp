@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/s3/model/Tag.h>
 #include <aws/s3/model/AnalyticsAndOperator.h>
+#include <utility>
 
 namespace Aws
 {
@@ -54,7 +55,7 @@ namespace Model
     /**
      * The prefix to use when evaluating an analytics filter.
      */
-    inline void SetPrefix(Aws::String&& value) { m_prefixHasBeenSet = true; m_prefix = value; }
+    inline void SetPrefix(Aws::String&& value) { m_prefixHasBeenSet = true; m_prefix = std::move(value); }
 
     /**
      * The prefix to use when evaluating an analytics filter.
@@ -69,7 +70,7 @@ namespace Model
     /**
      * The prefix to use when evaluating an analytics filter.
      */
-    inline AnalyticsFilter& WithPrefix(Aws::String&& value) { SetPrefix(value); return *this;}
+    inline AnalyticsFilter& WithPrefix(Aws::String&& value) { SetPrefix(std::move(value)); return *this;}
 
     /**
      * The prefix to use when evaluating an analytics filter.
@@ -89,7 +90,7 @@ namespace Model
     /**
      * The tag to use when evaluating an analytics filter.
      */
-    inline void SetTag(Tag&& value) { m_tagHasBeenSet = true; m_tag = value; }
+    inline void SetTag(Tag&& value) { m_tagHasBeenSet = true; m_tag = std::move(value); }
 
     /**
      * The tag to use when evaluating an analytics filter.
@@ -99,7 +100,7 @@ namespace Model
     /**
      * The tag to use when evaluating an analytics filter.
      */
-    inline AnalyticsFilter& WithTag(Tag&& value) { SetTag(value); return *this;}
+    inline AnalyticsFilter& WithTag(Tag&& value) { SetTag(std::move(value)); return *this;}
 
     /**
      * A conjunction (logical AND) of predicates, which is used in evaluating an
@@ -117,7 +118,7 @@ namespace Model
      * A conjunction (logical AND) of predicates, which is used in evaluating an
      * analytics filter. The operator must have at least two predicates.
      */
-    inline void SetAnd(AnalyticsAndOperator&& value) { m_andHasBeenSet = true; m_and = value; }
+    inline void SetAnd(AnalyticsAndOperator&& value) { m_andHasBeenSet = true; m_and = std::move(value); }
 
     /**
      * A conjunction (logical AND) of predicates, which is used in evaluating an
@@ -129,7 +130,7 @@ namespace Model
      * A conjunction (logical AND) of predicates, which is used in evaluating an
      * analytics filter. The operator must have at least two predicates.
      */
-    inline AnalyticsFilter& WithAnd(AnalyticsAndOperator&& value) { SetAnd(value); return *this;}
+    inline AnalyticsFilter& WithAnd(AnalyticsAndOperator&& value) { SetAnd(std::move(value)); return *this;}
 
   private:
     Aws::String m_prefix;

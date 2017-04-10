@@ -16,6 +16,7 @@
 #include <aws/redshift/Redshift_EXPORTS.h>
 #include <aws/redshift/RedshiftRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -53,7 +54,7 @@ namespace Model
     /**
      * <p>The identifier of the Amazon Redshift cluster to restore the table to.</p>
      */
-    inline void SetClusterIdentifier(Aws::String&& value) { m_clusterIdentifierHasBeenSet = true; m_clusterIdentifier = value; }
+    inline void SetClusterIdentifier(Aws::String&& value) { m_clusterIdentifierHasBeenSet = true; m_clusterIdentifier = std::move(value); }
 
     /**
      * <p>The identifier of the Amazon Redshift cluster to restore the table to.</p>
@@ -68,7 +69,7 @@ namespace Model
     /**
      * <p>The identifier of the Amazon Redshift cluster to restore the table to.</p>
      */
-    inline RestoreTableFromClusterSnapshotRequest& WithClusterIdentifier(Aws::String&& value) { SetClusterIdentifier(value); return *this;}
+    inline RestoreTableFromClusterSnapshotRequest& WithClusterIdentifier(Aws::String&& value) { SetClusterIdentifier(std::move(value)); return *this;}
 
     /**
      * <p>The identifier of the Amazon Redshift cluster to restore the table to.</p>
@@ -94,7 +95,7 @@ namespace Model
      * have been created from the Amazon Redshift cluster specified by the
      * <code>ClusterIdentifier</code> parameter.</p>
      */
-    inline void SetSnapshotIdentifier(Aws::String&& value) { m_snapshotIdentifierHasBeenSet = true; m_snapshotIdentifier = value; }
+    inline void SetSnapshotIdentifier(Aws::String&& value) { m_snapshotIdentifierHasBeenSet = true; m_snapshotIdentifier = std::move(value); }
 
     /**
      * <p>The identifier of the snapshot to restore the table from. This snapshot must
@@ -115,7 +116,7 @@ namespace Model
      * have been created from the Amazon Redshift cluster specified by the
      * <code>ClusterIdentifier</code> parameter.</p>
      */
-    inline RestoreTableFromClusterSnapshotRequest& WithSnapshotIdentifier(Aws::String&& value) { SetSnapshotIdentifier(value); return *this;}
+    inline RestoreTableFromClusterSnapshotRequest& WithSnapshotIdentifier(Aws::String&& value) { SetSnapshotIdentifier(std::move(value)); return *this;}
 
     /**
      * <p>The identifier of the snapshot to restore the table from. This snapshot must
@@ -137,7 +138,7 @@ namespace Model
     /**
      * <p>The name of the source database that contains the table to restore from.</p>
      */
-    inline void SetSourceDatabaseName(Aws::String&& value) { m_sourceDatabaseNameHasBeenSet = true; m_sourceDatabaseName = value; }
+    inline void SetSourceDatabaseName(Aws::String&& value) { m_sourceDatabaseNameHasBeenSet = true; m_sourceDatabaseName = std::move(value); }
 
     /**
      * <p>The name of the source database that contains the table to restore from.</p>
@@ -152,7 +153,7 @@ namespace Model
     /**
      * <p>The name of the source database that contains the table to restore from.</p>
      */
-    inline RestoreTableFromClusterSnapshotRequest& WithSourceDatabaseName(Aws::String&& value) { SetSourceDatabaseName(value); return *this;}
+    inline RestoreTableFromClusterSnapshotRequest& WithSourceDatabaseName(Aws::String&& value) { SetSourceDatabaseName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the source database that contains the table to restore from.</p>
@@ -178,7 +179,7 @@ namespace Model
      * do not specify a <code>SourceSchemaName</code> value, the default is
      * <code>public</code>.</p>
      */
-    inline void SetSourceSchemaName(Aws::String&& value) { m_sourceSchemaNameHasBeenSet = true; m_sourceSchemaName = value; }
+    inline void SetSourceSchemaName(Aws::String&& value) { m_sourceSchemaNameHasBeenSet = true; m_sourceSchemaName = std::move(value); }
 
     /**
      * <p>The name of the source schema that contains the table to restore from. If you
@@ -199,7 +200,7 @@ namespace Model
      * do not specify a <code>SourceSchemaName</code> value, the default is
      * <code>public</code>.</p>
      */
-    inline RestoreTableFromClusterSnapshotRequest& WithSourceSchemaName(Aws::String&& value) { SetSourceSchemaName(value); return *this;}
+    inline RestoreTableFromClusterSnapshotRequest& WithSourceSchemaName(Aws::String&& value) { SetSourceSchemaName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the source schema that contains the table to restore from. If you
@@ -221,7 +222,7 @@ namespace Model
     /**
      * <p>The name of the source table to restore from.</p>
      */
-    inline void SetSourceTableName(Aws::String&& value) { m_sourceTableNameHasBeenSet = true; m_sourceTableName = value; }
+    inline void SetSourceTableName(Aws::String&& value) { m_sourceTableNameHasBeenSet = true; m_sourceTableName = std::move(value); }
 
     /**
      * <p>The name of the source table to restore from.</p>
@@ -236,7 +237,7 @@ namespace Model
     /**
      * <p>The name of the source table to restore from.</p>
      */
-    inline RestoreTableFromClusterSnapshotRequest& WithSourceTableName(Aws::String&& value) { SetSourceTableName(value); return *this;}
+    inline RestoreTableFromClusterSnapshotRequest& WithSourceTableName(Aws::String&& value) { SetSourceTableName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the source table to restore from.</p>
@@ -256,7 +257,7 @@ namespace Model
     /**
      * <p>The name of the database to restore the table to.</p>
      */
-    inline void SetTargetDatabaseName(Aws::String&& value) { m_targetDatabaseNameHasBeenSet = true; m_targetDatabaseName = value; }
+    inline void SetTargetDatabaseName(Aws::String&& value) { m_targetDatabaseNameHasBeenSet = true; m_targetDatabaseName = std::move(value); }
 
     /**
      * <p>The name of the database to restore the table to.</p>
@@ -271,7 +272,7 @@ namespace Model
     /**
      * <p>The name of the database to restore the table to.</p>
      */
-    inline RestoreTableFromClusterSnapshotRequest& WithTargetDatabaseName(Aws::String&& value) { SetTargetDatabaseName(value); return *this;}
+    inline RestoreTableFromClusterSnapshotRequest& WithTargetDatabaseName(Aws::String&& value) { SetTargetDatabaseName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the database to restore the table to.</p>
@@ -291,7 +292,7 @@ namespace Model
     /**
      * <p>The name of the schema to restore the table to.</p>
      */
-    inline void SetTargetSchemaName(Aws::String&& value) { m_targetSchemaNameHasBeenSet = true; m_targetSchemaName = value; }
+    inline void SetTargetSchemaName(Aws::String&& value) { m_targetSchemaNameHasBeenSet = true; m_targetSchemaName = std::move(value); }
 
     /**
      * <p>The name of the schema to restore the table to.</p>
@@ -306,7 +307,7 @@ namespace Model
     /**
      * <p>The name of the schema to restore the table to.</p>
      */
-    inline RestoreTableFromClusterSnapshotRequest& WithTargetSchemaName(Aws::String&& value) { SetTargetSchemaName(value); return *this;}
+    inline RestoreTableFromClusterSnapshotRequest& WithTargetSchemaName(Aws::String&& value) { SetTargetSchemaName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the schema to restore the table to.</p>
@@ -326,7 +327,7 @@ namespace Model
     /**
      * <p>The name of the table to create as a result of the current request.</p>
      */
-    inline void SetNewTableName(Aws::String&& value) { m_newTableNameHasBeenSet = true; m_newTableName = value; }
+    inline void SetNewTableName(Aws::String&& value) { m_newTableNameHasBeenSet = true; m_newTableName = std::move(value); }
 
     /**
      * <p>The name of the table to create as a result of the current request.</p>
@@ -341,7 +342,7 @@ namespace Model
     /**
      * <p>The name of the table to create as a result of the current request.</p>
      */
-    inline RestoreTableFromClusterSnapshotRequest& WithNewTableName(Aws::String&& value) { SetNewTableName(value); return *this;}
+    inline RestoreTableFromClusterSnapshotRequest& WithNewTableName(Aws::String&& value) { SetNewTableName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the table to create as a result of the current request.</p>

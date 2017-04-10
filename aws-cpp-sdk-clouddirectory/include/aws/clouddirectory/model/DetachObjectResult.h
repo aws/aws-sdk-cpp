@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/clouddirectory/CloudDirectory_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -52,7 +53,7 @@ namespace Model
     /**
      * <p>The <code>ObjectIdentifier</code> that was detached from the object.</p>
      */
-    inline void SetDetachedObjectIdentifier(Aws::String&& value) { m_detachedObjectIdentifier = value; }
+    inline void SetDetachedObjectIdentifier(Aws::String&& value) { m_detachedObjectIdentifier = std::move(value); }
 
     /**
      * <p>The <code>ObjectIdentifier</code> that was detached from the object.</p>
@@ -67,7 +68,7 @@ namespace Model
     /**
      * <p>The <code>ObjectIdentifier</code> that was detached from the object.</p>
      */
-    inline DetachObjectResult& WithDetachedObjectIdentifier(Aws::String&& value) { SetDetachedObjectIdentifier(value); return *this;}
+    inline DetachObjectResult& WithDetachedObjectIdentifier(Aws::String&& value) { SetDetachedObjectIdentifier(std::move(value)); return *this;}
 
     /**
      * <p>The <code>ObjectIdentifier</code> that was detached from the object.</p>

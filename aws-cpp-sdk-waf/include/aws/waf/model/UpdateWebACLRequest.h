@@ -19,6 +19,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/waf/model/WafAction.h>
 #include <aws/waf/model/WebACLUpdate.h>
+#include <utility>
 
 namespace Aws
 {
@@ -57,7 +58,7 @@ namespace Model
      * <code>WebACLId</code> is returned by <a>CreateWebACL</a> and by
      * <a>ListWebACLs</a>.</p>
      */
-    inline void SetWebACLId(Aws::String&& value) { m_webACLIdHasBeenSet = true; m_webACLId = value; }
+    inline void SetWebACLId(Aws::String&& value) { m_webACLIdHasBeenSet = true; m_webACLId = std::move(value); }
 
     /**
      * <p>The <code>WebACLId</code> of the <a>WebACL</a> that you want to update.
@@ -78,7 +79,7 @@ namespace Model
      * <code>WebACLId</code> is returned by <a>CreateWebACL</a> and by
      * <a>ListWebACLs</a>.</p>
      */
-    inline UpdateWebACLRequest& WithWebACLId(Aws::String&& value) { SetWebACLId(value); return *this;}
+    inline UpdateWebACLRequest& WithWebACLId(Aws::String&& value) { SetWebACLId(std::move(value)); return *this;}
 
     /**
      * <p>The <code>WebACLId</code> of the <a>WebACL</a> that you want to update.
@@ -100,7 +101,7 @@ namespace Model
     /**
      * <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
      */
-    inline void SetChangeToken(Aws::String&& value) { m_changeTokenHasBeenSet = true; m_changeToken = value; }
+    inline void SetChangeToken(Aws::String&& value) { m_changeTokenHasBeenSet = true; m_changeToken = std::move(value); }
 
     /**
      * <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
@@ -115,7 +116,7 @@ namespace Model
     /**
      * <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
      */
-    inline UpdateWebACLRequest& WithChangeToken(Aws::String&& value) { SetChangeToken(value); return *this;}
+    inline UpdateWebACLRequest& WithChangeToken(Aws::String&& value) { SetChangeToken(std::move(value)); return *this;}
 
     /**
      * <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
@@ -153,7 +154,7 @@ namespace Model
      * <code>Action</code>, <code>Priority</code>, and <code>RuleId</code> </p> </li>
      * <li> <p> <a>WafAction</a>: Contains <code>Type</code> </p> </li> </ul>
      */
-    inline void SetUpdates(Aws::Vector<WebACLUpdate>&& value) { m_updatesHasBeenSet = true; m_updates = value; }
+    inline void SetUpdates(Aws::Vector<WebACLUpdate>&& value) { m_updatesHasBeenSet = true; m_updates = std::move(value); }
 
     /**
      * <p>An array of updates to make to the <a>WebACL</a>.</p> <p>An array of
@@ -175,7 +176,7 @@ namespace Model
      * <code>Action</code>, <code>Priority</code>, and <code>RuleId</code> </p> </li>
      * <li> <p> <a>WafAction</a>: Contains <code>Type</code> </p> </li> </ul>
      */
-    inline UpdateWebACLRequest& WithUpdates(Aws::Vector<WebACLUpdate>&& value) { SetUpdates(value); return *this;}
+    inline UpdateWebACLRequest& WithUpdates(Aws::Vector<WebACLUpdate>&& value) { SetUpdates(std::move(value)); return *this;}
 
     /**
      * <p>An array of updates to make to the <a>WebACL</a>.</p> <p>An array of
@@ -197,7 +198,7 @@ namespace Model
      * <code>Action</code>, <code>Priority</code>, and <code>RuleId</code> </p> </li>
      * <li> <p> <a>WafAction</a>: Contains <code>Type</code> </p> </li> </ul>
      */
-    inline UpdateWebACLRequest& AddUpdates(WebACLUpdate&& value) { m_updatesHasBeenSet = true; m_updates.push_back(value); return *this; }
+    inline UpdateWebACLRequest& AddUpdates(WebACLUpdate&& value) { m_updatesHasBeenSet = true; m_updates.push_back(std::move(value)); return *this; }
 
     /**
      * <p>A default action for the web ACL, either ALLOW or BLOCK. AWS WAF performs the
@@ -218,7 +219,7 @@ namespace Model
      * default action if a request doesn't match the criteria in any of the rules in a
      * web ACL.</p>
      */
-    inline void SetDefaultAction(WafAction&& value) { m_defaultActionHasBeenSet = true; m_defaultAction = value; }
+    inline void SetDefaultAction(WafAction&& value) { m_defaultActionHasBeenSet = true; m_defaultAction = std::move(value); }
 
     /**
      * <p>A default action for the web ACL, either ALLOW or BLOCK. AWS WAF performs the
@@ -232,7 +233,7 @@ namespace Model
      * default action if a request doesn't match the criteria in any of the rules in a
      * web ACL.</p>
      */
-    inline UpdateWebACLRequest& WithDefaultAction(WafAction&& value) { SetDefaultAction(value); return *this;}
+    inline UpdateWebACLRequest& WithDefaultAction(WafAction&& value) { SetDefaultAction(std::move(value)); return *this;}
 
   private:
     Aws::String m_webACLId;

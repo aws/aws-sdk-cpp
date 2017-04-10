@@ -16,6 +16,7 @@
 #include <aws/firehose/Firehose_EXPORTS.h>
 #include <aws/firehose/FirehoseRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -48,7 +49,7 @@ namespace Model
     /**
      * <p>The name of the delivery stream.</p>
      */
-    inline void SetDeliveryStreamName(Aws::String&& value) { m_deliveryStreamNameHasBeenSet = true; m_deliveryStreamName = value; }
+    inline void SetDeliveryStreamName(Aws::String&& value) { m_deliveryStreamNameHasBeenSet = true; m_deliveryStreamName = std::move(value); }
 
     /**
      * <p>The name of the delivery stream.</p>
@@ -63,7 +64,7 @@ namespace Model
     /**
      * <p>The name of the delivery stream.</p>
      */
-    inline DescribeDeliveryStreamRequest& WithDeliveryStreamName(Aws::String&& value) { SetDeliveryStreamName(value); return *this;}
+    inline DescribeDeliveryStreamRequest& WithDeliveryStreamName(Aws::String&& value) { SetDeliveryStreamName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the delivery stream.</p>
@@ -104,7 +105,7 @@ namespace Model
      * <p>The ID of the destination to start returning the destination information.
      * Currently Firehose supports one destination per delivery stream.</p>
      */
-    inline void SetExclusiveStartDestinationId(Aws::String&& value) { m_exclusiveStartDestinationIdHasBeenSet = true; m_exclusiveStartDestinationId = value; }
+    inline void SetExclusiveStartDestinationId(Aws::String&& value) { m_exclusiveStartDestinationIdHasBeenSet = true; m_exclusiveStartDestinationId = std::move(value); }
 
     /**
      * <p>The ID of the destination to start returning the destination information.
@@ -122,7 +123,7 @@ namespace Model
      * <p>The ID of the destination to start returning the destination information.
      * Currently Firehose supports one destination per delivery stream.</p>
      */
-    inline DescribeDeliveryStreamRequest& WithExclusiveStartDestinationId(Aws::String&& value) { SetExclusiveStartDestinationId(value); return *this;}
+    inline DescribeDeliveryStreamRequest& WithExclusiveStartDestinationId(Aws::String&& value) { SetExclusiveStartDestinationId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the destination to start returning the destination information.

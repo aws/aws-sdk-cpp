@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/opsworks/OpsWorks_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -61,7 +62,7 @@ namespace Model
      * <p>The stack ID, which is an opaque string that you use to identify the stack
      * when performing actions such as <code>DescribeStacks</code>.</p>
      */
-    inline void SetStackId(Aws::String&& value) { m_stackId = value; }
+    inline void SetStackId(Aws::String&& value) { m_stackId = std::move(value); }
 
     /**
      * <p>The stack ID, which is an opaque string that you use to identify the stack
@@ -79,7 +80,7 @@ namespace Model
      * <p>The stack ID, which is an opaque string that you use to identify the stack
      * when performing actions such as <code>DescribeStacks</code>.</p>
      */
-    inline CreateStackResult& WithStackId(Aws::String&& value) { SetStackId(value); return *this;}
+    inline CreateStackResult& WithStackId(Aws::String&& value) { SetStackId(std::move(value)); return *this;}
 
     /**
      * <p>The stack ID, which is an opaque string that you use to identify the stack

@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/Filter.h>
+#include <utility>
 
 namespace Aws
 {
@@ -79,7 +80,7 @@ namespace Model
     /**
      * <p>One or more VPC IDs.</p> <p>Default: Describes all your VPCs.</p>
      */
-    inline void SetVpcIds(Aws::Vector<Aws::String>&& value) { m_vpcIdsHasBeenSet = true; m_vpcIds = value; }
+    inline void SetVpcIds(Aws::Vector<Aws::String>&& value) { m_vpcIdsHasBeenSet = true; m_vpcIds = std::move(value); }
 
     /**
      * <p>One or more VPC IDs.</p> <p>Default: Describes all your VPCs.</p>
@@ -89,7 +90,7 @@ namespace Model
     /**
      * <p>One or more VPC IDs.</p> <p>Default: Describes all your VPCs.</p>
      */
-    inline DescribeVpcsRequest& WithVpcIds(Aws::Vector<Aws::String>&& value) { SetVpcIds(value); return *this;}
+    inline DescribeVpcsRequest& WithVpcIds(Aws::Vector<Aws::String>&& value) { SetVpcIds(std::move(value)); return *this;}
 
     /**
      * <p>One or more VPC IDs.</p> <p>Default: Describes all your VPCs.</p>
@@ -99,7 +100,7 @@ namespace Model
     /**
      * <p>One or more VPC IDs.</p> <p>Default: Describes all your VPCs.</p>
      */
-    inline DescribeVpcsRequest& AddVpcIds(Aws::String&& value) { m_vpcIdsHasBeenSet = true; m_vpcIds.push_back(value); return *this; }
+    inline DescribeVpcsRequest& AddVpcIds(Aws::String&& value) { m_vpcIdsHasBeenSet = true; m_vpcIds.push_back(std::move(value)); return *this; }
 
     /**
      * <p>One or more VPC IDs.</p> <p>Default: Describes all your VPCs.</p>
@@ -200,7 +201,7 @@ namespace Model
      * filter.</p> </li> <li> <p> <code>vpc-id</code> - The ID of the VPC.</p> </li>
      * </ul>
      */
-    inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = value; }
+    inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
 
     /**
      * <p>One or more filters.</p> <ul> <li> <p> <code>cidr</code> - The IPv4 CIDR
@@ -264,7 +265,7 @@ namespace Model
      * filter.</p> </li> <li> <p> <code>vpc-id</code> - The ID of the VPC.</p> </li>
      * </ul>
      */
-    inline DescribeVpcsRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(value); return *this;}
+    inline DescribeVpcsRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(std::move(value)); return *this;}
 
     /**
      * <p>One or more filters.</p> <ul> <li> <p> <code>cidr</code> - The IPv4 CIDR
@@ -328,7 +329,7 @@ namespace Model
      * filter.</p> </li> <li> <p> <code>vpc-id</code> - The ID of the VPC.</p> </li>
      * </ul>
      */
-    inline DescribeVpcsRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
+    inline DescribeVpcsRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 
   private:
     bool m_dryRun;

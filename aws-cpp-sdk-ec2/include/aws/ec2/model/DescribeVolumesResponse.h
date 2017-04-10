@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/ResponseMetadata.h>
 #include <aws/ec2/model/Volume.h>
+#include <utility>
 
 namespace Aws
 {
@@ -60,7 +61,7 @@ namespace Model
     /**
      * <p>Information about the volumes.</p>
      */
-    inline void SetVolumes(Aws::Vector<Volume>&& value) { m_volumes = value; }
+    inline void SetVolumes(Aws::Vector<Volume>&& value) { m_volumes = std::move(value); }
 
     /**
      * <p>Information about the volumes.</p>
@@ -70,7 +71,7 @@ namespace Model
     /**
      * <p>Information about the volumes.</p>
      */
-    inline DescribeVolumesResponse& WithVolumes(Aws::Vector<Volume>&& value) { SetVolumes(value); return *this;}
+    inline DescribeVolumesResponse& WithVolumes(Aws::Vector<Volume>&& value) { SetVolumes(std::move(value)); return *this;}
 
     /**
      * <p>Information about the volumes.</p>
@@ -80,7 +81,7 @@ namespace Model
     /**
      * <p>Information about the volumes.</p>
      */
-    inline DescribeVolumesResponse& AddVolumes(Volume&& value) { m_volumes.push_back(value); return *this; }
+    inline DescribeVolumesResponse& AddVolumes(Volume&& value) { m_volumes.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The <code>NextToken</code> value to include in a future
@@ -107,7 +108,7 @@ namespace Model
      * can be used to retrieve the next page of results. This value is
      * <code>null</code> when there are no more results to return.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
      * <p>The <code>NextToken</code> value to include in a future
@@ -134,7 +135,7 @@ namespace Model
      * can be used to retrieve the next page of results. This value is
      * <code>null</code> when there are no more results to return.</p>
      */
-    inline DescribeVolumesResponse& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline DescribeVolumesResponse& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>The <code>NextToken</code> value to include in a future
@@ -152,13 +153,13 @@ namespace Model
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
 
     
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
+    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
 
     
     inline DescribeVolumesResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
 
     
-    inline DescribeVolumesResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
+    inline DescribeVolumesResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
     Aws::Vector<Volume> m_volumes;

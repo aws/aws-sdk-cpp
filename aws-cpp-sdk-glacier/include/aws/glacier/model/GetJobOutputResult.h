@@ -17,6 +17,7 @@
 #include <aws/core/utils/stream/ResponseStream.h>
 #include <aws/core/utils/Array.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -106,7 +107,7 @@ namespace Model
      * (the end of the archive), then the x-amz-sha256-tree-hash is returned as a
      * response header.</p> </li> </ul>
      */
-    inline void SetChecksum(Aws::String&& value) { m_checksum = value; }
+    inline void SetChecksum(Aws::String&& value) { m_checksum = std::move(value); }
 
     /**
      * <p>The checksum of the data in the response. This header is returned only when
@@ -154,7 +155,7 @@ namespace Model
      * (the end of the archive), then the x-amz-sha256-tree-hash is returned as a
      * response header.</p> </li> </ul>
      */
-    inline GetJobOutputResult& WithChecksum(Aws::String&& value) { SetChecksum(value); return *this;}
+    inline GetJobOutputResult& WithChecksum(Aws::String&& value) { SetChecksum(std::move(value)); return *this;}
 
     /**
      * <p>The checksum of the data in the response. This header is returned only when
@@ -209,7 +210,7 @@ namespace Model
      * downloaded, the response provides the range of bytes Amazon Glacier returned.
      * For example, bytes 0-1048575/8388608 returns the first 1 MB from 8 MB.</p>
      */
-    inline void SetContentRange(Aws::String&& value) { m_contentRange = value; }
+    inline void SetContentRange(Aws::String&& value) { m_contentRange = std::move(value); }
 
     /**
      * <p>The range of bytes returned by Amazon Glacier. If only partial output is
@@ -230,7 +231,7 @@ namespace Model
      * downloaded, the response provides the range of bytes Amazon Glacier returned.
      * For example, bytes 0-1048575/8388608 returns the first 1 MB from 8 MB.</p>
      */
-    inline GetJobOutputResult& WithContentRange(Aws::String&& value) { SetContentRange(value); return *this;}
+    inline GetJobOutputResult& WithContentRange(Aws::String&& value) { SetContentRange(std::move(value)); return *this;}
 
     /**
      * <p>The range of bytes returned by Amazon Glacier. If only partial output is
@@ -255,7 +256,7 @@ namespace Model
      * <p>Indicates the range units accepted. For more information, see <a
      * href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html">RFC2616</a>. </p>
      */
-    inline void SetAcceptRanges(Aws::String&& value) { m_acceptRanges = value; }
+    inline void SetAcceptRanges(Aws::String&& value) { m_acceptRanges = std::move(value); }
 
     /**
      * <p>Indicates the range units accepted. For more information, see <a
@@ -273,7 +274,7 @@ namespace Model
      * <p>Indicates the range units accepted. For more information, see <a
      * href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html">RFC2616</a>. </p>
      */
-    inline GetJobOutputResult& WithAcceptRanges(Aws::String&& value) { SetAcceptRanges(value); return *this;}
+    inline GetJobOutputResult& WithAcceptRanges(Aws::String&& value) { SetAcceptRanges(std::move(value)); return *this;}
 
     /**
      * <p>Indicates the range units accepted. For more information, see <a
@@ -306,7 +307,7 @@ namespace Model
      * Content-Type is text/csv. Otherwise, by default, vault inventory is returned as
      * JSON, and the Content-Type is application/json.</p>
      */
-    inline void SetContentType(Aws::String&& value) { m_contentType = value; }
+    inline void SetContentType(Aws::String&& value) { m_contentType = std::move(value); }
 
     /**
      * <p>The Content-Type depends on whether the job output is an archive or a vault
@@ -333,7 +334,7 @@ namespace Model
      * Content-Type is text/csv. Otherwise, by default, vault inventory is returned as
      * JSON, and the Content-Type is application/json.</p>
      */
-    inline GetJobOutputResult& WithContentType(Aws::String&& value) { SetContentType(value); return *this;}
+    inline GetJobOutputResult& WithContentType(Aws::String&& value) { SetContentType(std::move(value)); return *this;}
 
     /**
      * <p>The Content-Type depends on whether the job output is an archive or a vault
@@ -357,7 +358,7 @@ namespace Model
     /**
      * <p>The description of an archive.</p>
      */
-    inline void SetArchiveDescription(Aws::String&& value) { m_archiveDescription = value; }
+    inline void SetArchiveDescription(Aws::String&& value) { m_archiveDescription = std::move(value); }
 
     /**
      * <p>The description of an archive.</p>
@@ -372,7 +373,7 @@ namespace Model
     /**
      * <p>The description of an archive.</p>
      */
-    inline GetJobOutputResult& WithArchiveDescription(Aws::String&& value) { SetArchiveDescription(value); return *this;}
+    inline GetJobOutputResult& WithArchiveDescription(Aws::String&& value) { SetArchiveDescription(std::move(value)); return *this;}
 
     /**
      * <p>The description of an archive.</p>

@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/codepipeline/CodePipeline_EXPORTS.h>
 #include <aws/codepipeline/model/ThirdPartyJobDetails.h>
+#include <utility>
 
 namespace Aws
 {
@@ -61,7 +62,7 @@ namespace Model
      * <p>The details of the job, including any protected values defined for the
      * job.</p>
      */
-    inline void SetJobDetails(ThirdPartyJobDetails&& value) { m_jobDetails = value; }
+    inline void SetJobDetails(ThirdPartyJobDetails&& value) { m_jobDetails = std::move(value); }
 
     /**
      * <p>The details of the job, including any protected values defined for the
@@ -73,7 +74,7 @@ namespace Model
      * <p>The details of the job, including any protected values defined for the
      * job.</p>
      */
-    inline GetThirdPartyJobDetailsResult& WithJobDetails(ThirdPartyJobDetails&& value) { SetJobDetails(value); return *this;}
+    inline GetThirdPartyJobDetailsResult& WithJobDetails(ThirdPartyJobDetails&& value) { SetJobDetails(std::move(value)); return *this;}
 
   private:
     ThirdPartyJobDetails m_jobDetails;

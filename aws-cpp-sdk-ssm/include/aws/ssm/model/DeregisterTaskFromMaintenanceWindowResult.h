@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/ssm/SSM_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -52,7 +53,7 @@ namespace Model
     /**
      * <p>The ID of the Maintenance Window the task was removed from.</p>
      */
-    inline void SetWindowId(Aws::String&& value) { m_windowId = value; }
+    inline void SetWindowId(Aws::String&& value) { m_windowId = std::move(value); }
 
     /**
      * <p>The ID of the Maintenance Window the task was removed from.</p>
@@ -67,7 +68,7 @@ namespace Model
     /**
      * <p>The ID of the Maintenance Window the task was removed from.</p>
      */
-    inline DeregisterTaskFromMaintenanceWindowResult& WithWindowId(Aws::String&& value) { SetWindowId(value); return *this;}
+    inline DeregisterTaskFromMaintenanceWindowResult& WithWindowId(Aws::String&& value) { SetWindowId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the Maintenance Window the task was removed from.</p>
@@ -87,7 +88,7 @@ namespace Model
     /**
      * <p>The ID of the task removed from the Maintenance Window.</p>
      */
-    inline void SetWindowTaskId(Aws::String&& value) { m_windowTaskId = value; }
+    inline void SetWindowTaskId(Aws::String&& value) { m_windowTaskId = std::move(value); }
 
     /**
      * <p>The ID of the task removed from the Maintenance Window.</p>
@@ -102,7 +103,7 @@ namespace Model
     /**
      * <p>The ID of the task removed from the Maintenance Window.</p>
      */
-    inline DeregisterTaskFromMaintenanceWindowResult& WithWindowTaskId(Aws::String&& value) { SetWindowTaskId(value); return *this;}
+    inline DeregisterTaskFromMaintenanceWindowResult& WithWindowTaskId(Aws::String&& value) { SetWindowTaskId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the task removed from the Maintenance Window.</p>

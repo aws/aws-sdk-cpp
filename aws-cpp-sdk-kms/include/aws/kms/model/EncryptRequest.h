@@ -19,6 +19,7 @@
 #include <aws/core/utils/Array.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <utility>
 
 namespace Aws
 {
@@ -72,7 +73,7 @@ namespace Model
      * Unique Key ID Example - 12345678-1234-1234-1234-123456789012</p> </li> <li>
      * <p>Alias Name Example - alias/MyAliasName</p> </li> </ul>
      */
-    inline void SetKeyId(Aws::String&& value) { m_keyIdHasBeenSet = true; m_keyId = value; }
+    inline void SetKeyId(Aws::String&& value) { m_keyIdHasBeenSet = true; m_keyId = std::move(value); }
 
     /**
      * <p>A unique identifier for the customer master key. This value can be a globally
@@ -108,7 +109,7 @@ namespace Model
      * Unique Key ID Example - 12345678-1234-1234-1234-123456789012</p> </li> <li>
      * <p>Alias Name Example - alias/MyAliasName</p> </li> </ul>
      */
-    inline EncryptRequest& WithKeyId(Aws::String&& value) { SetKeyId(value); return *this;}
+    inline EncryptRequest& WithKeyId(Aws::String&& value) { SetKeyId(std::move(value)); return *this;}
 
     /**
      * <p>A unique identifier for the customer master key. This value can be a globally
@@ -135,7 +136,7 @@ namespace Model
     /**
      * <p>Data to be encrypted.</p>
      */
-    inline void SetPlaintext(Aws::Utils::ByteBuffer&& value) { m_plaintextHasBeenSet = true; m_plaintext = value; }
+    inline void SetPlaintext(Aws::Utils::ByteBuffer&& value) { m_plaintextHasBeenSet = true; m_plaintext = std::move(value); }
 
     /**
      * <p>Data to be encrypted.</p>
@@ -145,7 +146,7 @@ namespace Model
     /**
      * <p>Data to be encrypted.</p>
      */
-    inline EncryptRequest& WithPlaintext(Aws::Utils::ByteBuffer&& value) { SetPlaintext(value); return *this;}
+    inline EncryptRequest& WithPlaintext(Aws::Utils::ByteBuffer&& value) { SetPlaintext(std::move(value)); return *this;}
 
     /**
      * <p>Name-value pair that specifies the encryption context to be used for
@@ -172,7 +173,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/kms/latest/developerguide/encryption-context.html">Encryption
      * Context</a>.</p>
      */
-    inline void SetEncryptionContext(Aws::Map<Aws::String, Aws::String>&& value) { m_encryptionContextHasBeenSet = true; m_encryptionContext = value; }
+    inline void SetEncryptionContext(Aws::Map<Aws::String, Aws::String>&& value) { m_encryptionContextHasBeenSet = true; m_encryptionContext = std::move(value); }
 
     /**
      * <p>Name-value pair that specifies the encryption context to be used for
@@ -190,7 +191,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/kms/latest/developerguide/encryption-context.html">Encryption
      * Context</a>.</p>
      */
-    inline EncryptRequest& WithEncryptionContext(Aws::Map<Aws::String, Aws::String>&& value) { SetEncryptionContext(value); return *this;}
+    inline EncryptRequest& WithEncryptionContext(Aws::Map<Aws::String, Aws::String>&& value) { SetEncryptionContext(std::move(value)); return *this;}
 
     /**
      * <p>Name-value pair that specifies the encryption context to be used for
@@ -199,7 +200,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/kms/latest/developerguide/encryption-context.html">Encryption
      * Context</a>.</p>
      */
-    inline EncryptRequest& AddEncryptionContext(const Aws::String& key, const Aws::String& value) { m_encryptionContextHasBeenSet = true; m_encryptionContext[key] = value; return *this; }
+    inline EncryptRequest& AddEncryptionContext(const Aws::String& key, const Aws::String& value) { m_encryptionContextHasBeenSet = true; m_encryptionContext.emplace(key, value); return *this; }
 
     /**
      * <p>Name-value pair that specifies the encryption context to be used for
@@ -208,7 +209,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/kms/latest/developerguide/encryption-context.html">Encryption
      * Context</a>.</p>
      */
-    inline EncryptRequest& AddEncryptionContext(Aws::String&& key, const Aws::String& value) { m_encryptionContextHasBeenSet = true; m_encryptionContext[key] = value; return *this; }
+    inline EncryptRequest& AddEncryptionContext(Aws::String&& key, const Aws::String& value) { m_encryptionContextHasBeenSet = true; m_encryptionContext.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>Name-value pair that specifies the encryption context to be used for
@@ -217,7 +218,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/kms/latest/developerguide/encryption-context.html">Encryption
      * Context</a>.</p>
      */
-    inline EncryptRequest& AddEncryptionContext(const Aws::String& key, Aws::String&& value) { m_encryptionContextHasBeenSet = true; m_encryptionContext[key] = value; return *this; }
+    inline EncryptRequest& AddEncryptionContext(const Aws::String& key, Aws::String&& value) { m_encryptionContextHasBeenSet = true; m_encryptionContext.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>Name-value pair that specifies the encryption context to be used for
@@ -226,7 +227,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/kms/latest/developerguide/encryption-context.html">Encryption
      * Context</a>.</p>
      */
-    inline EncryptRequest& AddEncryptionContext(Aws::String&& key, Aws::String&& value) { m_encryptionContextHasBeenSet = true; m_encryptionContext[key] = value; return *this; }
+    inline EncryptRequest& AddEncryptionContext(Aws::String&& key, Aws::String&& value) { m_encryptionContextHasBeenSet = true; m_encryptionContext.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
      * <p>Name-value pair that specifies the encryption context to be used for
@@ -235,7 +236,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/kms/latest/developerguide/encryption-context.html">Encryption
      * Context</a>.</p>
      */
-    inline EncryptRequest& AddEncryptionContext(const char* key, Aws::String&& value) { m_encryptionContextHasBeenSet = true; m_encryptionContext[key] = value; return *this; }
+    inline EncryptRequest& AddEncryptionContext(const char* key, Aws::String&& value) { m_encryptionContextHasBeenSet = true; m_encryptionContext.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>Name-value pair that specifies the encryption context to be used for
@@ -244,7 +245,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/kms/latest/developerguide/encryption-context.html">Encryption
      * Context</a>.</p>
      */
-    inline EncryptRequest& AddEncryptionContext(Aws::String&& key, const char* value) { m_encryptionContextHasBeenSet = true; m_encryptionContext[key] = value; return *this; }
+    inline EncryptRequest& AddEncryptionContext(Aws::String&& key, const char* value) { m_encryptionContextHasBeenSet = true; m_encryptionContext.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>Name-value pair that specifies the encryption context to be used for
@@ -253,7 +254,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/kms/latest/developerguide/encryption-context.html">Encryption
      * Context</a>.</p>
      */
-    inline EncryptRequest& AddEncryptionContext(const char* key, const char* value) { m_encryptionContextHasBeenSet = true; m_encryptionContext[key] = value; return *this; }
+    inline EncryptRequest& AddEncryptionContext(const char* key, const char* value) { m_encryptionContextHasBeenSet = true; m_encryptionContext.emplace(key, value); return *this; }
 
     /**
      * <p>A list of grant tokens.</p> <p>For more information, see <a
@@ -274,7 +275,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant
      * Tokens</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
      */
-    inline void SetGrantTokens(Aws::Vector<Aws::String>&& value) { m_grantTokensHasBeenSet = true; m_grantTokens = value; }
+    inline void SetGrantTokens(Aws::Vector<Aws::String>&& value) { m_grantTokensHasBeenSet = true; m_grantTokens = std::move(value); }
 
     /**
      * <p>A list of grant tokens.</p> <p>For more information, see <a
@@ -288,7 +289,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant
      * Tokens</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
      */
-    inline EncryptRequest& WithGrantTokens(Aws::Vector<Aws::String>&& value) { SetGrantTokens(value); return *this;}
+    inline EncryptRequest& WithGrantTokens(Aws::Vector<Aws::String>&& value) { SetGrantTokens(std::move(value)); return *this;}
 
     /**
      * <p>A list of grant tokens.</p> <p>For more information, see <a
@@ -302,7 +303,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant
      * Tokens</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
      */
-    inline EncryptRequest& AddGrantTokens(Aws::String&& value) { m_grantTokensHasBeenSet = true; m_grantTokens.push_back(value); return *this; }
+    inline EncryptRequest& AddGrantTokens(Aws::String&& value) { m_grantTokensHasBeenSet = true; m_grantTokens.push_back(std::move(value)); return *this; }
 
     /**
      * <p>A list of grant tokens.</p> <p>For more information, see <a

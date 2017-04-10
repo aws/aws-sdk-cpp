@@ -16,6 +16,7 @@
 #include <aws/ecs/ECS_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -56,7 +57,7 @@ namespace Model
      * <p>The list of task definition family names that match the
      * <code>ListTaskDefinitionFamilies</code> request.</p>
      */
-    inline void SetFamilies(Aws::Vector<Aws::String>&& value) { m_families = value; }
+    inline void SetFamilies(Aws::Vector<Aws::String>&& value) { m_families = std::move(value); }
 
     /**
      * <p>The list of task definition family names that match the
@@ -68,7 +69,7 @@ namespace Model
      * <p>The list of task definition family names that match the
      * <code>ListTaskDefinitionFamilies</code> request.</p>
      */
-    inline ListTaskDefinitionFamiliesResult& WithFamilies(Aws::Vector<Aws::String>&& value) { SetFamilies(value); return *this;}
+    inline ListTaskDefinitionFamiliesResult& WithFamilies(Aws::Vector<Aws::String>&& value) { SetFamilies(std::move(value)); return *this;}
 
     /**
      * <p>The list of task definition family names that match the
@@ -80,7 +81,7 @@ namespace Model
      * <p>The list of task definition family names that match the
      * <code>ListTaskDefinitionFamilies</code> request.</p>
      */
-    inline ListTaskDefinitionFamiliesResult& AddFamilies(Aws::String&& value) { m_families.push_back(value); return *this; }
+    inline ListTaskDefinitionFamiliesResult& AddFamilies(Aws::String&& value) { m_families.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The list of task definition family names that match the
@@ -113,7 +114,7 @@ namespace Model
      * this value can be used to retrieve the next page of results. This value is
      * <code>null</code> when there are no more results to return.</p>
      */
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
      * <p>The <code>nextToken</code> value to include in a future
@@ -140,7 +141,7 @@ namespace Model
      * this value can be used to retrieve the next page of results. This value is
      * <code>null</code> when there are no more results to return.</p>
      */
-    inline ListTaskDefinitionFamiliesResult& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
+    inline ListTaskDefinitionFamiliesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>The <code>nextToken</code> value to include in a future

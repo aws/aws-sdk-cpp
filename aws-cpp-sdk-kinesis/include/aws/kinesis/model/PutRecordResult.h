@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/kinesis/Kinesis_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -58,7 +59,7 @@ namespace Model
     /**
      * <p>The shard ID of the shard where the data record was placed.</p>
      */
-    inline void SetShardId(Aws::String&& value) { m_shardId = value; }
+    inline void SetShardId(Aws::String&& value) { m_shardId = std::move(value); }
 
     /**
      * <p>The shard ID of the shard where the data record was placed.</p>
@@ -73,7 +74,7 @@ namespace Model
     /**
      * <p>The shard ID of the shard where the data record was placed.</p>
      */
-    inline PutRecordResult& WithShardId(Aws::String&& value) { SetShardId(value); return *this;}
+    inline PutRecordResult& WithShardId(Aws::String&& value) { SetShardId(std::move(value)); return *this;}
 
     /**
      * <p>The shard ID of the shard where the data record was placed.</p>
@@ -102,7 +103,7 @@ namespace Model
      * sequence number is the identifier associated with every record put into the
      * stream.</p>
      */
-    inline void SetSequenceNumber(Aws::String&& value) { m_sequenceNumber = value; }
+    inline void SetSequenceNumber(Aws::String&& value) { m_sequenceNumber = std::move(value); }
 
     /**
      * <p>The sequence number identifier that was assigned to the put data record. The
@@ -126,7 +127,7 @@ namespace Model
      * sequence number is the identifier associated with every record put into the
      * stream.</p>
      */
-    inline PutRecordResult& WithSequenceNumber(Aws::String&& value) { SetSequenceNumber(value); return *this;}
+    inline PutRecordResult& WithSequenceNumber(Aws::String&& value) { SetSequenceNumber(std::move(value)); return *this;}
 
     /**
      * <p>The sequence number identifier that was assigned to the put data record. The

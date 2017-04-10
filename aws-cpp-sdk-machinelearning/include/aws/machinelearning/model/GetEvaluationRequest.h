@@ -16,6 +16,7 @@
 #include <aws/machinelearning/MachineLearning_EXPORTS.h>
 #include <aws/machinelearning/MachineLearningRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -54,7 +55,7 @@ namespace Model
      * <code>MLModel</code> is recorded and cataloged. The ID provides the means to
      * access the information. </p>
      */
-    inline void SetEvaluationId(Aws::String&& value) { m_evaluationIdHasBeenSet = true; m_evaluationId = value; }
+    inline void SetEvaluationId(Aws::String&& value) { m_evaluationIdHasBeenSet = true; m_evaluationId = std::move(value); }
 
     /**
      * <p>The ID of the <code>Evaluation</code> to retrieve. The evaluation of each
@@ -75,7 +76,7 @@ namespace Model
      * <code>MLModel</code> is recorded and cataloged. The ID provides the means to
      * access the information. </p>
      */
-    inline GetEvaluationRequest& WithEvaluationId(Aws::String&& value) { SetEvaluationId(value); return *this;}
+    inline GetEvaluationRequest& WithEvaluationId(Aws::String&& value) { SetEvaluationId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the <code>Evaluation</code> to retrieve. The evaluation of each

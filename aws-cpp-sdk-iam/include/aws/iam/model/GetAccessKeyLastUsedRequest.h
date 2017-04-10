@@ -16,6 +16,7 @@
 #include <aws/iam/IAM_EXPORTS.h>
 #include <aws/iam/IAMRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -56,7 +57,7 @@ namespace Model
      * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
      * that can consist of any upper or lowercased letter or digit.</p>
      */
-    inline void SetAccessKeyId(Aws::String&& value) { m_accessKeyIdHasBeenSet = true; m_accessKeyId = value; }
+    inline void SetAccessKeyId(Aws::String&& value) { m_accessKeyIdHasBeenSet = true; m_accessKeyId = std::move(value); }
 
     /**
      * <p>The identifier of an access key.</p> <p>This parameter allows (per its <a
@@ -77,7 +78,7 @@ namespace Model
      * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
      * that can consist of any upper or lowercased letter or digit.</p>
      */
-    inline GetAccessKeyLastUsedRequest& WithAccessKeyId(Aws::String&& value) { SetAccessKeyId(value); return *this;}
+    inline GetAccessKeyLastUsedRequest& WithAccessKeyId(Aws::String&& value) { SetAccessKeyId(std::move(value)); return *this;}
 
     /**
      * <p>The identifier of an access key.</p> <p>This parameter allows (per its <a

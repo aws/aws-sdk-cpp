@@ -16,6 +16,7 @@
 #include <aws/lightsail/Lightsail_EXPORTS.h>
 #include <aws/lightsail/LightsailRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -48,7 +49,7 @@ namespace Model
     /**
      * <p>The name of the key pair to delete.</p>
      */
-    inline void SetKeyPairName(Aws::String&& value) { m_keyPairNameHasBeenSet = true; m_keyPairName = value; }
+    inline void SetKeyPairName(Aws::String&& value) { m_keyPairNameHasBeenSet = true; m_keyPairName = std::move(value); }
 
     /**
      * <p>The name of the key pair to delete.</p>
@@ -63,7 +64,7 @@ namespace Model
     /**
      * <p>The name of the key pair to delete.</p>
      */
-    inline DeleteKeyPairRequest& WithKeyPairName(Aws::String&& value) { SetKeyPairName(value); return *this;}
+    inline DeleteKeyPairRequest& WithKeyPairName(Aws::String&& value) { SetKeyPairName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the key pair to delete.</p>

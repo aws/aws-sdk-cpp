@@ -17,6 +17,7 @@
 #include <aws/directconnect/DirectConnectRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/directconnect/model/LoaContentType.h>
+#include <utility>
 
 namespace Aws
 {
@@ -59,7 +60,7 @@ namespace Model
      * information.</p> <p>Example: dxcon-abc123 or dxlag-abc123</p> <p>Default:
      * None</p>
      */
-    inline void SetConnectionId(Aws::String&& value) { m_connectionIdHasBeenSet = true; m_connectionId = value; }
+    inline void SetConnectionId(Aws::String&& value) { m_connectionIdHasBeenSet = true; m_connectionId = std::move(value); }
 
     /**
      * <p>The ID of a connection, LAG, or interconnect for which to get the LOA-CFA
@@ -80,7 +81,7 @@ namespace Model
      * information.</p> <p>Example: dxcon-abc123 or dxlag-abc123</p> <p>Default:
      * None</p>
      */
-    inline DescribeLoaRequest& WithConnectionId(Aws::String&& value) { SetConnectionId(value); return *this;}
+    inline DescribeLoaRequest& WithConnectionId(Aws::String&& value) { SetConnectionId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of a connection, LAG, or interconnect for which to get the LOA-CFA
@@ -108,7 +109,7 @@ namespace Model
      * If you supply this parameter, the LOA-CFA lists the provider name alongside your
      * company name as the requester of the cross connect.</p> <p>Default: None</p>
      */
-    inline void SetProviderName(Aws::String&& value) { m_providerNameHasBeenSet = true; m_providerName = value; }
+    inline void SetProviderName(Aws::String&& value) { m_providerNameHasBeenSet = true; m_providerName = std::move(value); }
 
     /**
      * <p>The name of the service provider who establishes connectivity on your behalf.
@@ -129,7 +130,7 @@ namespace Model
      * If you supply this parameter, the LOA-CFA lists the provider name alongside your
      * company name as the requester of the cross connect.</p> <p>Default: None</p>
      */
-    inline DescribeLoaRequest& WithProviderName(Aws::String&& value) { SetProviderName(value); return *this;}
+    inline DescribeLoaRequest& WithProviderName(Aws::String&& value) { SetProviderName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the service provider who establishes connectivity on your behalf.
@@ -157,7 +158,7 @@ namespace Model
      * Currently, the only supported value is "application/pdf".</p> <p>Default:
      * application/pdf</p>
      */
-    inline void SetLoaContentType(LoaContentType&& value) { m_loaContentTypeHasBeenSet = true; m_loaContentType = value; }
+    inline void SetLoaContentType(LoaContentType&& value) { m_loaContentTypeHasBeenSet = true; m_loaContentType = std::move(value); }
 
     /**
      * <p>A standard media type indicating the content type of the LOA-CFA document.
@@ -171,7 +172,7 @@ namespace Model
      * Currently, the only supported value is "application/pdf".</p> <p>Default:
      * application/pdf</p>
      */
-    inline DescribeLoaRequest& WithLoaContentType(LoaContentType&& value) { SetLoaContentType(value); return *this;}
+    inline DescribeLoaRequest& WithLoaContentType(LoaContentType&& value) { SetLoaContentType(std::move(value)); return *this;}
 
   private:
     Aws::String m_connectionId;

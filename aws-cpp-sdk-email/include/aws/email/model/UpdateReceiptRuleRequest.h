@@ -17,6 +17,7 @@
 #include <aws/email/SESRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/email/model/ReceiptRule.h>
+#include <utility>
 
 namespace Aws
 {
@@ -57,7 +58,7 @@ namespace Model
     /**
      * <p>The name of the receipt rule set to which the receipt rule belongs.</p>
      */
-    inline void SetRuleSetName(Aws::String&& value) { m_ruleSetNameHasBeenSet = true; m_ruleSetName = value; }
+    inline void SetRuleSetName(Aws::String&& value) { m_ruleSetNameHasBeenSet = true; m_ruleSetName = std::move(value); }
 
     /**
      * <p>The name of the receipt rule set to which the receipt rule belongs.</p>
@@ -72,7 +73,7 @@ namespace Model
     /**
      * <p>The name of the receipt rule set to which the receipt rule belongs.</p>
      */
-    inline UpdateReceiptRuleRequest& WithRuleSetName(Aws::String&& value) { SetRuleSetName(value); return *this;}
+    inline UpdateReceiptRuleRequest& WithRuleSetName(Aws::String&& value) { SetRuleSetName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the receipt rule set to which the receipt rule belongs.</p>
@@ -92,7 +93,7 @@ namespace Model
     /**
      * <p>A data structure that contains the updated receipt rule information.</p>
      */
-    inline void SetRule(ReceiptRule&& value) { m_ruleHasBeenSet = true; m_rule = value; }
+    inline void SetRule(ReceiptRule&& value) { m_ruleHasBeenSet = true; m_rule = std::move(value); }
 
     /**
      * <p>A data structure that contains the updated receipt rule information.</p>
@@ -102,7 +103,7 @@ namespace Model
     /**
      * <p>A data structure that contains the updated receipt rule information.</p>
      */
-    inline UpdateReceiptRuleRequest& WithRule(ReceiptRule&& value) { SetRule(value); return *this;}
+    inline UpdateReceiptRuleRequest& WithRule(ReceiptRule&& value) { SetRule(std::move(value)); return *this;}
 
   private:
     Aws::String m_ruleSetName;

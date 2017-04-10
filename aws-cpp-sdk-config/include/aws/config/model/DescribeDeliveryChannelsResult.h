@@ -16,6 +16,7 @@
 #include <aws/config/ConfigService_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/config/model/DeliveryChannel.h>
+#include <utility>
 
 namespace Aws
 {
@@ -59,7 +60,7 @@ namespace Model
     /**
      * <p>A list that contains the descriptions of the specified delivery channel.</p>
      */
-    inline void SetDeliveryChannels(Aws::Vector<DeliveryChannel>&& value) { m_deliveryChannels = value; }
+    inline void SetDeliveryChannels(Aws::Vector<DeliveryChannel>&& value) { m_deliveryChannels = std::move(value); }
 
     /**
      * <p>A list that contains the descriptions of the specified delivery channel.</p>
@@ -69,7 +70,7 @@ namespace Model
     /**
      * <p>A list that contains the descriptions of the specified delivery channel.</p>
      */
-    inline DescribeDeliveryChannelsResult& WithDeliveryChannels(Aws::Vector<DeliveryChannel>&& value) { SetDeliveryChannels(value); return *this;}
+    inline DescribeDeliveryChannelsResult& WithDeliveryChannels(Aws::Vector<DeliveryChannel>&& value) { SetDeliveryChannels(std::move(value)); return *this;}
 
     /**
      * <p>A list that contains the descriptions of the specified delivery channel.</p>
@@ -79,7 +80,7 @@ namespace Model
     /**
      * <p>A list that contains the descriptions of the specified delivery channel.</p>
      */
-    inline DescribeDeliveryChannelsResult& AddDeliveryChannels(DeliveryChannel&& value) { m_deliveryChannels.push_back(value); return *this; }
+    inline DescribeDeliveryChannelsResult& AddDeliveryChannels(DeliveryChannel&& value) { m_deliveryChannels.push_back(std::move(value)); return *this; }
 
   private:
     Aws::Vector<DeliveryChannel> m_deliveryChannels;

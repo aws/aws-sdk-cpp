@@ -16,6 +16,7 @@
 #include <aws/elasticache/ElastiCache_EXPORTS.h>
 #include <aws/elasticache/ElastiCacheRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -60,7 +61,7 @@ namespace Model
      * only snapshots associated with that specific replication group are
      * described.</p>
      */
-    inline void SetReplicationGroupId(Aws::String&& value) { m_replicationGroupIdHasBeenSet = true; m_replicationGroupId = value; }
+    inline void SetReplicationGroupId(Aws::String&& value) { m_replicationGroupIdHasBeenSet = true; m_replicationGroupId = std::move(value); }
 
     /**
      * <p>A user-supplied replication group identifier. If this parameter is specified,
@@ -81,7 +82,7 @@ namespace Model
      * only snapshots associated with that specific replication group are
      * described.</p>
      */
-    inline DescribeSnapshotsRequest& WithReplicationGroupId(Aws::String&& value) { SetReplicationGroupId(value); return *this;}
+    inline DescribeSnapshotsRequest& WithReplicationGroupId(Aws::String&& value) { SetReplicationGroupId(std::move(value)); return *this;}
 
     /**
      * <p>A user-supplied replication group identifier. If this parameter is specified,
@@ -106,7 +107,7 @@ namespace Model
      * <p>A user-supplied cluster identifier. If this parameter is specified, only
      * snapshots associated with that specific cache cluster are described.</p>
      */
-    inline void SetCacheClusterId(Aws::String&& value) { m_cacheClusterIdHasBeenSet = true; m_cacheClusterId = value; }
+    inline void SetCacheClusterId(Aws::String&& value) { m_cacheClusterIdHasBeenSet = true; m_cacheClusterId = std::move(value); }
 
     /**
      * <p>A user-supplied cluster identifier. If this parameter is specified, only
@@ -124,7 +125,7 @@ namespace Model
      * <p>A user-supplied cluster identifier. If this parameter is specified, only
      * snapshots associated with that specific cache cluster are described.</p>
      */
-    inline DescribeSnapshotsRequest& WithCacheClusterId(Aws::String&& value) { SetCacheClusterId(value); return *this;}
+    inline DescribeSnapshotsRequest& WithCacheClusterId(Aws::String&& value) { SetCacheClusterId(std::move(value)); return *this;}
 
     /**
      * <p>A user-supplied cluster identifier. If this parameter is specified, only
@@ -148,7 +149,7 @@ namespace Model
      * <p>A user-supplied name of the snapshot. If this parameter is specified, only
      * this snapshot are described.</p>
      */
-    inline void SetSnapshotName(Aws::String&& value) { m_snapshotNameHasBeenSet = true; m_snapshotName = value; }
+    inline void SetSnapshotName(Aws::String&& value) { m_snapshotNameHasBeenSet = true; m_snapshotName = std::move(value); }
 
     /**
      * <p>A user-supplied name of the snapshot. If this parameter is specified, only
@@ -166,7 +167,7 @@ namespace Model
      * <p>A user-supplied name of the snapshot. If this parameter is specified, only
      * this snapshot are described.</p>
      */
-    inline DescribeSnapshotsRequest& WithSnapshotName(Aws::String&& value) { SetSnapshotName(value); return *this;}
+    inline DescribeSnapshotsRequest& WithSnapshotName(Aws::String&& value) { SetSnapshotName(std::move(value)); return *this;}
 
     /**
      * <p>A user-supplied name of the snapshot. If this parameter is specified, only
@@ -196,7 +197,7 @@ namespace Model
      * shows snapshots that were manually created. If omitted, the output shows both
      * automatically and manually created snapshots.</p>
      */
-    inline void SetSnapshotSource(Aws::String&& value) { m_snapshotSourceHasBeenSet = true; m_snapshotSource = value; }
+    inline void SetSnapshotSource(Aws::String&& value) { m_snapshotSourceHasBeenSet = true; m_snapshotSource = std::move(value); }
 
     /**
      * <p>If set to <code>system</code>, the output shows snapshots that were
@@ -220,7 +221,7 @@ namespace Model
      * shows snapshots that were manually created. If omitted, the output shows both
      * automatically and manually created snapshots.</p>
      */
-    inline DescribeSnapshotsRequest& WithSnapshotSource(Aws::String&& value) { SetSnapshotSource(value); return *this;}
+    inline DescribeSnapshotsRequest& WithSnapshotSource(Aws::String&& value) { SetSnapshotSource(std::move(value)); return *this;}
 
     /**
      * <p>If set to <code>system</code>, the output shows snapshots that were
@@ -252,7 +253,7 @@ namespace Model
      * response includes only records beyond the marker, up to the value specified by
      * <code>MaxRecords</code>.</p>
      */
-    inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = value; }
+    inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = std::move(value); }
 
     /**
      * <p>An optional marker returned from a prior request. Use this marker for
@@ -276,7 +277,7 @@ namespace Model
      * response includes only records beyond the marker, up to the value specified by
      * <code>MaxRecords</code>.</p>
      */
-    inline DescribeSnapshotsRequest& WithMarker(Aws::String&& value) { SetMarker(value); return *this;}
+    inline DescribeSnapshotsRequest& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
 
     /**
      * <p>An optional marker returned from a prior request. Use this marker for

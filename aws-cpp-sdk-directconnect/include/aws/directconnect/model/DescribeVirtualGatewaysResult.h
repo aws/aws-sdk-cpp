@@ -16,6 +16,7 @@
 #include <aws/directconnect/DirectConnect_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/directconnect/model/VirtualGateway.h>
+#include <utility>
 
 namespace Aws
 {
@@ -59,7 +60,7 @@ namespace Model
     /**
      * <p>A list of virtual private gateways.</p>
      */
-    inline void SetVirtualGateways(Aws::Vector<VirtualGateway>&& value) { m_virtualGateways = value; }
+    inline void SetVirtualGateways(Aws::Vector<VirtualGateway>&& value) { m_virtualGateways = std::move(value); }
 
     /**
      * <p>A list of virtual private gateways.</p>
@@ -69,7 +70,7 @@ namespace Model
     /**
      * <p>A list of virtual private gateways.</p>
      */
-    inline DescribeVirtualGatewaysResult& WithVirtualGateways(Aws::Vector<VirtualGateway>&& value) { SetVirtualGateways(value); return *this;}
+    inline DescribeVirtualGatewaysResult& WithVirtualGateways(Aws::Vector<VirtualGateway>&& value) { SetVirtualGateways(std::move(value)); return *this;}
 
     /**
      * <p>A list of virtual private gateways.</p>
@@ -79,7 +80,7 @@ namespace Model
     /**
      * <p>A list of virtual private gateways.</p>
      */
-    inline DescribeVirtualGatewaysResult& AddVirtualGateways(VirtualGateway&& value) { m_virtualGateways.push_back(value); return *this; }
+    inline DescribeVirtualGatewaysResult& AddVirtualGateways(VirtualGateway&& value) { m_virtualGateways.push_back(std::move(value)); return *this; }
 
   private:
     Aws::Vector<VirtualGateway> m_virtualGateways;
