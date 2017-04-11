@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/opsworks/model/LayerType.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/opsworks/model/CloudWatchLogsConfiguration.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/opsworks/model/Recipes.h>
 #include <aws/opsworks/model/LifecycleEventConfiguration.h>
@@ -219,101 +220,126 @@ namespace Model
     /**
      * <p>The layer attributes.</p> <p>For the <code>HaproxyStatsPassword</code>,
      * <code>MysqlRootPassword</code>, and <code>GangliaPassword</code> attributes, AWS
-     * OpsWorks returns <code>*****FILTERED*****</code> instead of the actual value</p>
-     * <p>For an ECS Cluster layer, AWS OpsWorks the <code>EcsClusterArn</code>
-     * attribute is set to the cluster's ARN.</p>
+     * OpsWorks Stacks returns <code>*****FILTERED*****</code> instead of the actual
+     * value</p> <p>For an ECS Cluster layer, AWS OpsWorks Stacks the
+     * <code>EcsClusterArn</code> attribute is set to the cluster's ARN.</p>
      */
     inline const Aws::Map<LayerAttributesKeys, Aws::String>& GetAttributes() const{ return m_attributes; }
 
     /**
      * <p>The layer attributes.</p> <p>For the <code>HaproxyStatsPassword</code>,
      * <code>MysqlRootPassword</code>, and <code>GangliaPassword</code> attributes, AWS
-     * OpsWorks returns <code>*****FILTERED*****</code> instead of the actual value</p>
-     * <p>For an ECS Cluster layer, AWS OpsWorks the <code>EcsClusterArn</code>
-     * attribute is set to the cluster's ARN.</p>
+     * OpsWorks Stacks returns <code>*****FILTERED*****</code> instead of the actual
+     * value</p> <p>For an ECS Cluster layer, AWS OpsWorks Stacks the
+     * <code>EcsClusterArn</code> attribute is set to the cluster's ARN.</p>
      */
     inline void SetAttributes(const Aws::Map<LayerAttributesKeys, Aws::String>& value) { m_attributesHasBeenSet = true; m_attributes = value; }
 
     /**
      * <p>The layer attributes.</p> <p>For the <code>HaproxyStatsPassword</code>,
      * <code>MysqlRootPassword</code>, and <code>GangliaPassword</code> attributes, AWS
-     * OpsWorks returns <code>*****FILTERED*****</code> instead of the actual value</p>
-     * <p>For an ECS Cluster layer, AWS OpsWorks the <code>EcsClusterArn</code>
-     * attribute is set to the cluster's ARN.</p>
+     * OpsWorks Stacks returns <code>*****FILTERED*****</code> instead of the actual
+     * value</p> <p>For an ECS Cluster layer, AWS OpsWorks Stacks the
+     * <code>EcsClusterArn</code> attribute is set to the cluster's ARN.</p>
      */
     inline void SetAttributes(Aws::Map<LayerAttributesKeys, Aws::String>&& value) { m_attributesHasBeenSet = true; m_attributes = std::move(value); }
 
     /**
      * <p>The layer attributes.</p> <p>For the <code>HaproxyStatsPassword</code>,
      * <code>MysqlRootPassword</code>, and <code>GangliaPassword</code> attributes, AWS
-     * OpsWorks returns <code>*****FILTERED*****</code> instead of the actual value</p>
-     * <p>For an ECS Cluster layer, AWS OpsWorks the <code>EcsClusterArn</code>
-     * attribute is set to the cluster's ARN.</p>
+     * OpsWorks Stacks returns <code>*****FILTERED*****</code> instead of the actual
+     * value</p> <p>For an ECS Cluster layer, AWS OpsWorks Stacks the
+     * <code>EcsClusterArn</code> attribute is set to the cluster's ARN.</p>
      */
     inline Layer& WithAttributes(const Aws::Map<LayerAttributesKeys, Aws::String>& value) { SetAttributes(value); return *this;}
 
     /**
      * <p>The layer attributes.</p> <p>For the <code>HaproxyStatsPassword</code>,
      * <code>MysqlRootPassword</code>, and <code>GangliaPassword</code> attributes, AWS
-     * OpsWorks returns <code>*****FILTERED*****</code> instead of the actual value</p>
-     * <p>For an ECS Cluster layer, AWS OpsWorks the <code>EcsClusterArn</code>
-     * attribute is set to the cluster's ARN.</p>
+     * OpsWorks Stacks returns <code>*****FILTERED*****</code> instead of the actual
+     * value</p> <p>For an ECS Cluster layer, AWS OpsWorks Stacks the
+     * <code>EcsClusterArn</code> attribute is set to the cluster's ARN.</p>
      */
     inline Layer& WithAttributes(Aws::Map<LayerAttributesKeys, Aws::String>&& value) { SetAttributes(std::move(value)); return *this;}
 
     /**
      * <p>The layer attributes.</p> <p>For the <code>HaproxyStatsPassword</code>,
      * <code>MysqlRootPassword</code>, and <code>GangliaPassword</code> attributes, AWS
-     * OpsWorks returns <code>*****FILTERED*****</code> instead of the actual value</p>
-     * <p>For an ECS Cluster layer, AWS OpsWorks the <code>EcsClusterArn</code>
-     * attribute is set to the cluster's ARN.</p>
+     * OpsWorks Stacks returns <code>*****FILTERED*****</code> instead of the actual
+     * value</p> <p>For an ECS Cluster layer, AWS OpsWorks Stacks the
+     * <code>EcsClusterArn</code> attribute is set to the cluster's ARN.</p>
      */
     inline Layer& AddAttributes(const LayerAttributesKeys& key, const Aws::String& value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, value); return *this; }
 
     /**
      * <p>The layer attributes.</p> <p>For the <code>HaproxyStatsPassword</code>,
      * <code>MysqlRootPassword</code>, and <code>GangliaPassword</code> attributes, AWS
-     * OpsWorks returns <code>*****FILTERED*****</code> instead of the actual value</p>
-     * <p>For an ECS Cluster layer, AWS OpsWorks the <code>EcsClusterArn</code>
-     * attribute is set to the cluster's ARN.</p>
+     * OpsWorks Stacks returns <code>*****FILTERED*****</code> instead of the actual
+     * value</p> <p>For an ECS Cluster layer, AWS OpsWorks Stacks the
+     * <code>EcsClusterArn</code> attribute is set to the cluster's ARN.</p>
      */
     inline Layer& AddAttributes(LayerAttributesKeys&& key, const Aws::String& value) { m_attributesHasBeenSet = true; m_attributes.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>The layer attributes.</p> <p>For the <code>HaproxyStatsPassword</code>,
      * <code>MysqlRootPassword</code>, and <code>GangliaPassword</code> attributes, AWS
-     * OpsWorks returns <code>*****FILTERED*****</code> instead of the actual value</p>
-     * <p>For an ECS Cluster layer, AWS OpsWorks the <code>EcsClusterArn</code>
-     * attribute is set to the cluster's ARN.</p>
+     * OpsWorks Stacks returns <code>*****FILTERED*****</code> instead of the actual
+     * value</p> <p>For an ECS Cluster layer, AWS OpsWorks Stacks the
+     * <code>EcsClusterArn</code> attribute is set to the cluster's ARN.</p>
      */
     inline Layer& AddAttributes(const LayerAttributesKeys& key, Aws::String&& value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>The layer attributes.</p> <p>For the <code>HaproxyStatsPassword</code>,
      * <code>MysqlRootPassword</code>, and <code>GangliaPassword</code> attributes, AWS
-     * OpsWorks returns <code>*****FILTERED*****</code> instead of the actual value</p>
-     * <p>For an ECS Cluster layer, AWS OpsWorks the <code>EcsClusterArn</code>
-     * attribute is set to the cluster's ARN.</p>
+     * OpsWorks Stacks returns <code>*****FILTERED*****</code> instead of the actual
+     * value</p> <p>For an ECS Cluster layer, AWS OpsWorks Stacks the
+     * <code>EcsClusterArn</code> attribute is set to the cluster's ARN.</p>
      */
     inline Layer& AddAttributes(LayerAttributesKeys&& key, Aws::String&& value) { m_attributesHasBeenSet = true; m_attributes.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
      * <p>The layer attributes.</p> <p>For the <code>HaproxyStatsPassword</code>,
      * <code>MysqlRootPassword</code>, and <code>GangliaPassword</code> attributes, AWS
-     * OpsWorks returns <code>*****FILTERED*****</code> instead of the actual value</p>
-     * <p>For an ECS Cluster layer, AWS OpsWorks the <code>EcsClusterArn</code>
-     * attribute is set to the cluster's ARN.</p>
+     * OpsWorks Stacks returns <code>*****FILTERED*****</code> instead of the actual
+     * value</p> <p>For an ECS Cluster layer, AWS OpsWorks Stacks the
+     * <code>EcsClusterArn</code> attribute is set to the cluster's ARN.</p>
      */
     inline Layer& AddAttributes(LayerAttributesKeys&& key, const char* value) { m_attributesHasBeenSet = true; m_attributes.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>The layer attributes.</p> <p>For the <code>HaproxyStatsPassword</code>,
      * <code>MysqlRootPassword</code>, and <code>GangliaPassword</code> attributes, AWS
-     * OpsWorks returns <code>*****FILTERED*****</code> instead of the actual value</p>
-     * <p>For an ECS Cluster layer, AWS OpsWorks the <code>EcsClusterArn</code>
-     * attribute is set to the cluster's ARN.</p>
+     * OpsWorks Stacks returns <code>*****FILTERED*****</code> instead of the actual
+     * value</p> <p>For an ECS Cluster layer, AWS OpsWorks Stacks the
+     * <code>EcsClusterArn</code> attribute is set to the cluster's ARN.</p>
      */
     inline Layer& AddAttributes(const LayerAttributesKeys& key, const char* value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, value); return *this; }
+
+    /**
+     * <p>The Amazon CloudWatch Logs configuration settings for the layer.</p>
+     */
+    inline const CloudWatchLogsConfiguration& GetCloudWatchLogsConfiguration() const{ return m_cloudWatchLogsConfiguration; }
+
+    /**
+     * <p>The Amazon CloudWatch Logs configuration settings for the layer.</p>
+     */
+    inline void SetCloudWatchLogsConfiguration(const CloudWatchLogsConfiguration& value) { m_cloudWatchLogsConfigurationHasBeenSet = true; m_cloudWatchLogsConfiguration = value; }
+
+    /**
+     * <p>The Amazon CloudWatch Logs configuration settings for the layer.</p>
+     */
+    inline void SetCloudWatchLogsConfiguration(CloudWatchLogsConfiguration&& value) { m_cloudWatchLogsConfigurationHasBeenSet = true; m_cloudWatchLogsConfiguration = std::move(value); }
+
+    /**
+     * <p>The Amazon CloudWatch Logs configuration settings for the layer.</p>
+     */
+    inline Layer& WithCloudWatchLogsConfiguration(const CloudWatchLogsConfiguration& value) { SetCloudWatchLogsConfiguration(value); return *this;}
+
+    /**
+     * <p>The Amazon CloudWatch Logs configuration settings for the layer.</p>
+     */
+    inline Layer& WithCloudWatchLogsConfiguration(CloudWatchLogsConfiguration&& value) { SetCloudWatchLogsConfiguration(std::move(value)); return *this;}
 
     /**
      * <p>The ARN of the default IAM profile to be used for the layer's EC2 instances.
@@ -823,6 +849,8 @@ namespace Model
     bool m_shortnameHasBeenSet;
     Aws::Map<LayerAttributesKeys, Aws::String> m_attributes;
     bool m_attributesHasBeenSet;
+    CloudWatchLogsConfiguration m_cloudWatchLogsConfiguration;
+    bool m_cloudWatchLogsConfigurationHasBeenSet;
     Aws::String m_customInstanceProfileArn;
     bool m_customInstanceProfileArnHasBeenSet;
     Aws::String m_customJson;

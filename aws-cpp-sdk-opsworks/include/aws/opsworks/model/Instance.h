@@ -1068,37 +1068,37 @@ namespace Model
     inline Instance& WithRegisteredBy(const char* value) { SetRegisteredBy(value); return *this;}
 
     /**
-     * <p>The instance's reported AWS OpsWorks agent version.</p>
+     * <p>The instance's reported AWS OpsWorks Stacks agent version.</p>
      */
     inline const Aws::String& GetReportedAgentVersion() const{ return m_reportedAgentVersion; }
 
     /**
-     * <p>The instance's reported AWS OpsWorks agent version.</p>
+     * <p>The instance's reported AWS OpsWorks Stacks agent version.</p>
      */
     inline void SetReportedAgentVersion(const Aws::String& value) { m_reportedAgentVersionHasBeenSet = true; m_reportedAgentVersion = value; }
 
     /**
-     * <p>The instance's reported AWS OpsWorks agent version.</p>
+     * <p>The instance's reported AWS OpsWorks Stacks agent version.</p>
      */
     inline void SetReportedAgentVersion(Aws::String&& value) { m_reportedAgentVersionHasBeenSet = true; m_reportedAgentVersion = std::move(value); }
 
     /**
-     * <p>The instance's reported AWS OpsWorks agent version.</p>
+     * <p>The instance's reported AWS OpsWorks Stacks agent version.</p>
      */
     inline void SetReportedAgentVersion(const char* value) { m_reportedAgentVersionHasBeenSet = true; m_reportedAgentVersion.assign(value); }
 
     /**
-     * <p>The instance's reported AWS OpsWorks agent version.</p>
+     * <p>The instance's reported AWS OpsWorks Stacks agent version.</p>
      */
     inline Instance& WithReportedAgentVersion(const Aws::String& value) { SetReportedAgentVersion(value); return *this;}
 
     /**
-     * <p>The instance's reported AWS OpsWorks agent version.</p>
+     * <p>The instance's reported AWS OpsWorks Stacks agent version.</p>
      */
     inline Instance& WithReportedAgentVersion(Aws::String&& value) { SetReportedAgentVersion(std::move(value)); return *this;}
 
     /**
-     * <p>The instance's reported AWS OpsWorks agent version.</p>
+     * <p>The instance's reported AWS OpsWorks Stacks agent version.</p>
      */
     inline Instance& WithReportedAgentVersion(const char* value) { SetReportedAgentVersion(value); return *this;}
 

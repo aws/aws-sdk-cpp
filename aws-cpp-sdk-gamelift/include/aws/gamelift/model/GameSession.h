@@ -51,50 +51,50 @@ namespace Model
 
     /**
      * <p>Unique identifier for the game session. A game session ID has the following
-     * format: "arn:aws:gamelift:&lt;region&gt;::gamesession/&lt;fleet ID&gt;/&lt;game
-     * session ID&gt;".</p>
+     * format: <code>arn:aws:gamelift:&lt;region&gt;::gamesession/&lt;fleet
+     * ID&gt;/&lt;custom ID string or idempotency token&gt;</code>.</p>
      */
     inline const Aws::String& GetGameSessionId() const{ return m_gameSessionId; }
 
     /**
      * <p>Unique identifier for the game session. A game session ID has the following
-     * format: "arn:aws:gamelift:&lt;region&gt;::gamesession/&lt;fleet ID&gt;/&lt;game
-     * session ID&gt;".</p>
+     * format: <code>arn:aws:gamelift:&lt;region&gt;::gamesession/&lt;fleet
+     * ID&gt;/&lt;custom ID string or idempotency token&gt;</code>.</p>
      */
     inline void SetGameSessionId(const Aws::String& value) { m_gameSessionIdHasBeenSet = true; m_gameSessionId = value; }
 
     /**
      * <p>Unique identifier for the game session. A game session ID has the following
-     * format: "arn:aws:gamelift:&lt;region&gt;::gamesession/&lt;fleet ID&gt;/&lt;game
-     * session ID&gt;".</p>
+     * format: <code>arn:aws:gamelift:&lt;region&gt;::gamesession/&lt;fleet
+     * ID&gt;/&lt;custom ID string or idempotency token&gt;</code>.</p>
      */
     inline void SetGameSessionId(Aws::String&& value) { m_gameSessionIdHasBeenSet = true; m_gameSessionId = std::move(value); }
 
     /**
      * <p>Unique identifier for the game session. A game session ID has the following
-     * format: "arn:aws:gamelift:&lt;region&gt;::gamesession/&lt;fleet ID&gt;/&lt;game
-     * session ID&gt;".</p>
+     * format: <code>arn:aws:gamelift:&lt;region&gt;::gamesession/&lt;fleet
+     * ID&gt;/&lt;custom ID string or idempotency token&gt;</code>.</p>
      */
     inline void SetGameSessionId(const char* value) { m_gameSessionIdHasBeenSet = true; m_gameSessionId.assign(value); }
 
     /**
      * <p>Unique identifier for the game session. A game session ID has the following
-     * format: "arn:aws:gamelift:&lt;region&gt;::gamesession/&lt;fleet ID&gt;/&lt;game
-     * session ID&gt;".</p>
+     * format: <code>arn:aws:gamelift:&lt;region&gt;::gamesession/&lt;fleet
+     * ID&gt;/&lt;custom ID string or idempotency token&gt;</code>.</p>
      */
     inline GameSession& WithGameSessionId(const Aws::String& value) { SetGameSessionId(value); return *this;}
 
     /**
      * <p>Unique identifier for the game session. A game session ID has the following
-     * format: "arn:aws:gamelift:&lt;region&gt;::gamesession/&lt;fleet ID&gt;/&lt;game
-     * session ID&gt;".</p>
+     * format: <code>arn:aws:gamelift:&lt;region&gt;::gamesession/&lt;fleet
+     * ID&gt;/&lt;custom ID string or idempotency token&gt;</code>.</p>
      */
     inline GameSession& WithGameSessionId(Aws::String&& value) { SetGameSessionId(std::move(value)); return *this;}
 
     /**
      * <p>Unique identifier for the game session. A game session ID has the following
-     * format: "arn:aws:gamelift:&lt;region&gt;::gamesession/&lt;fleet ID&gt;/&lt;game
-     * session ID&gt;".</p>
+     * format: <code>arn:aws:gamelift:&lt;region&gt;::gamesession/&lt;fleet
+     * ID&gt;/&lt;custom ID string or idempotency token&gt;</code>.</p>
      */
     inline GameSession& WithGameSessionId(const char* value) { SetGameSessionId(value); return *this;}
 
@@ -346,62 +346,62 @@ namespace Model
     inline GameSession& AddGameProperties(GameProperty&& value) { m_gamePropertiesHasBeenSet = true; m_gameProperties.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>IP address of the game session. To connect to a Amazon GameLift server
-     * process, an app needs both the IP address and port number.</p>
+     * <p>IP address of the game session. To connect to a Amazon GameLift game server,
+     * an app needs both the IP address and port number.</p>
      */
     inline const Aws::String& GetIpAddress() const{ return m_ipAddress; }
 
     /**
-     * <p>IP address of the game session. To connect to a Amazon GameLift server
-     * process, an app needs both the IP address and port number.</p>
+     * <p>IP address of the game session. To connect to a Amazon GameLift game server,
+     * an app needs both the IP address and port number.</p>
      */
     inline void SetIpAddress(const Aws::String& value) { m_ipAddressHasBeenSet = true; m_ipAddress = value; }
 
     /**
-     * <p>IP address of the game session. To connect to a Amazon GameLift server
-     * process, an app needs both the IP address and port number.</p>
+     * <p>IP address of the game session. To connect to a Amazon GameLift game server,
+     * an app needs both the IP address and port number.</p>
      */
     inline void SetIpAddress(Aws::String&& value) { m_ipAddressHasBeenSet = true; m_ipAddress = std::move(value); }
 
     /**
-     * <p>IP address of the game session. To connect to a Amazon GameLift server
-     * process, an app needs both the IP address and port number.</p>
+     * <p>IP address of the game session. To connect to a Amazon GameLift game server,
+     * an app needs both the IP address and port number.</p>
      */
     inline void SetIpAddress(const char* value) { m_ipAddressHasBeenSet = true; m_ipAddress.assign(value); }
 
     /**
-     * <p>IP address of the game session. To connect to a Amazon GameLift server
-     * process, an app needs both the IP address and port number.</p>
+     * <p>IP address of the game session. To connect to a Amazon GameLift game server,
+     * an app needs both the IP address and port number.</p>
      */
     inline GameSession& WithIpAddress(const Aws::String& value) { SetIpAddress(value); return *this;}
 
     /**
-     * <p>IP address of the game session. To connect to a Amazon GameLift server
-     * process, an app needs both the IP address and port number.</p>
+     * <p>IP address of the game session. To connect to a Amazon GameLift game server,
+     * an app needs both the IP address and port number.</p>
      */
     inline GameSession& WithIpAddress(Aws::String&& value) { SetIpAddress(std::move(value)); return *this;}
 
     /**
-     * <p>IP address of the game session. To connect to a Amazon GameLift server
-     * process, an app needs both the IP address and port number.</p>
+     * <p>IP address of the game session. To connect to a Amazon GameLift game server,
+     * an app needs both the IP address and port number.</p>
      */
     inline GameSession& WithIpAddress(const char* value) { SetIpAddress(value); return *this;}
 
     /**
-     * <p>Port number for the game session. To connect to a Amazon GameLift server
-     * process, an app needs both the IP address and port number.</p>
+     * <p>Port number for the game session. To connect to a Amazon GameLift game
+     * server, an app needs both the IP address and port number.</p>
      */
     inline int GetPort() const{ return m_port; }
 
     /**
-     * <p>Port number for the game session. To connect to a Amazon GameLift server
-     * process, an app needs both the IP address and port number.</p>
+     * <p>Port number for the game session. To connect to a Amazon GameLift game
+     * server, an app needs both the IP address and port number.</p>
      */
     inline void SetPort(int value) { m_portHasBeenSet = true; m_port = value; }
 
     /**
-     * <p>Port number for the game session. To connect to a Amazon GameLift server
-     * process, an app needs both the IP address and port number.</p>
+     * <p>Port number for the game session. To connect to a Amazon GameLift game
+     * server, an app needs both the IP address and port number.</p>
      */
     inline GameSession& WithPort(int value) { SetPort(value); return *this;}
 

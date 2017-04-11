@@ -199,8 +199,8 @@ namespace Model
      * <h5>Request</h5> <pre><code>GET
      * /restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET HTTP/1.1 Content-Type:
      * application/json Host: apigateway.us-east-1.amazonaws.com X-Amz-Date:
-     * 20160608T031827Z Authorization: AWS4-HMAC-SHA256
-     * Credential={access_key_ID}/20160608/us-east-1/apigateway/aws4_request,
+     * 20170223T031827Z Authorization: AWS4-HMAC-SHA256
+     * Credential={access_key_ID}/20170223/us-east-1/apigateway/aws4_request,
      * SignedHeaders=content-type;host;x-amz-date, Signature={sig4_hash}</code></pre>
      * <h5>Response</h5> <pre><code>{ "_links": { "curies": [ { "href":
      * "http://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-integration-{rel}.html",
@@ -275,8 +275,8 @@ namespace Model
      * <h5>Request</h5> <pre><code>GET
      * /restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET HTTP/1.1 Content-Type:
      * application/json Host: apigateway.us-east-1.amazonaws.com X-Amz-Date:
-     * 20160608T031827Z Authorization: AWS4-HMAC-SHA256
-     * Credential={access_key_ID}/20160608/us-east-1/apigateway/aws4_request,
+     * 20170223T031827Z Authorization: AWS4-HMAC-SHA256
+     * Credential={access_key_ID}/20170223/us-east-1/apigateway/aws4_request,
      * SignedHeaders=content-type;host;x-amz-date, Signature={sig4_hash}</code></pre>
      * <h5>Response</h5> <pre><code>{ "_links": { "curies": [ { "href":
      * "http://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-integration-{rel}.html",
@@ -351,8 +351,8 @@ namespace Model
      * <h5>Request</h5> <pre><code>GET
      * /restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET HTTP/1.1 Content-Type:
      * application/json Host: apigateway.us-east-1.amazonaws.com X-Amz-Date:
-     * 20160608T031827Z Authorization: AWS4-HMAC-SHA256
-     * Credential={access_key_ID}/20160608/us-east-1/apigateway/aws4_request,
+     * 20170223T031827Z Authorization: AWS4-HMAC-SHA256
+     * Credential={access_key_ID}/20170223/us-east-1/apigateway/aws4_request,
      * SignedHeaders=content-type;host;x-amz-date, Signature={sig4_hash}</code></pre>
      * <h5>Response</h5> <pre><code>{ "_links": { "curies": [ { "href":
      * "http://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-integration-{rel}.html",
@@ -427,8 +427,8 @@ namespace Model
      * <h5>Request</h5> <pre><code>GET
      * /restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET HTTP/1.1 Content-Type:
      * application/json Host: apigateway.us-east-1.amazonaws.com X-Amz-Date:
-     * 20160608T031827Z Authorization: AWS4-HMAC-SHA256
-     * Credential={access_key_ID}/20160608/us-east-1/apigateway/aws4_request,
+     * 20170223T031827Z Authorization: AWS4-HMAC-SHA256
+     * Credential={access_key_ID}/20170223/us-east-1/apigateway/aws4_request,
      * SignedHeaders=content-type;host;x-amz-date, Signature={sig4_hash}</code></pre>
      * <h5>Response</h5> <pre><code>{ "_links": { "curies": [ { "href":
      * "http://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-integration-{rel}.html",
@@ -503,8 +503,8 @@ namespace Model
      * <h5>Request</h5> <pre><code>GET
      * /restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET HTTP/1.1 Content-Type:
      * application/json Host: apigateway.us-east-1.amazonaws.com X-Amz-Date:
-     * 20160608T031827Z Authorization: AWS4-HMAC-SHA256
-     * Credential={access_key_ID}/20160608/us-east-1/apigateway/aws4_request,
+     * 20170223T031827Z Authorization: AWS4-HMAC-SHA256
+     * Credential={access_key_ID}/20170223/us-east-1/apigateway/aws4_request,
      * SignedHeaders=content-type;host;x-amz-date, Signature={sig4_hash}</code></pre>
      * <h5>Response</h5> <pre><code>{ "_links": { "curies": [ { "href":
      * "http://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-integration-{rel}.html",
@@ -579,8 +579,8 @@ namespace Model
      * <h5>Request</h5> <pre><code>GET
      * /restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET HTTP/1.1 Content-Type:
      * application/json Host: apigateway.us-east-1.amazonaws.com X-Amz-Date:
-     * 20160608T031827Z Authorization: AWS4-HMAC-SHA256
-     * Credential={access_key_ID}/20160608/us-east-1/apigateway/aws4_request,
+     * 20170223T031827Z Authorization: AWS4-HMAC-SHA256
+     * Credential={access_key_ID}/20170223/us-east-1/apigateway/aws4_request,
      * SignedHeaders=content-type;host;x-amz-date, Signature={sig4_hash}</code></pre>
      * <h5>Response</h5> <pre><code>{ "_links": { "curies": [ { "href":
      * "http://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-integration-{rel}.html",
@@ -655,8 +655,8 @@ namespace Model
      * <h5>Request</h5> <pre><code>GET
      * /restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET HTTP/1.1 Content-Type:
      * application/json Host: apigateway.us-east-1.amazonaws.com X-Amz-Date:
-     * 20160608T031827Z Authorization: AWS4-HMAC-SHA256
-     * Credential={access_key_ID}/20160608/us-east-1/apigateway/aws4_request,
+     * 20170223T031827Z Authorization: AWS4-HMAC-SHA256
+     * Credential={access_key_ID}/20170223/us-east-1/apigateway/aws4_request,
      * SignedHeaders=content-type;host;x-amz-date, Signature={sig4_hash}</code></pre>
      * <h5>Response</h5> <pre><code>{ "_links": { "curies": [ { "href":
      * "http://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-integration-{rel}.html",
@@ -731,8 +731,8 @@ namespace Model
      * <h5>Request</h5> <pre><code>GET
      * /restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET HTTP/1.1 Content-Type:
      * application/json Host: apigateway.us-east-1.amazonaws.com X-Amz-Date:
-     * 20160608T031827Z Authorization: AWS4-HMAC-SHA256
-     * Credential={access_key_ID}/20160608/us-east-1/apigateway/aws4_request,
+     * 20170223T031827Z Authorization: AWS4-HMAC-SHA256
+     * Credential={access_key_ID}/20170223/us-east-1/apigateway/aws4_request,
      * SignedHeaders=content-type;host;x-amz-date, Signature={sig4_hash}</code></pre>
      * <h5>Response</h5> <pre><code>{ "_links": { "curies": [ { "href":
      * "http://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-integration-{rel}.html",
@@ -807,8 +807,8 @@ namespace Model
      * <h5>Request</h5> <pre><code>GET
      * /restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET HTTP/1.1 Content-Type:
      * application/json Host: apigateway.us-east-1.amazonaws.com X-Amz-Date:
-     * 20160608T031827Z Authorization: AWS4-HMAC-SHA256
-     * Credential={access_key_ID}/20160608/us-east-1/apigateway/aws4_request,
+     * 20170223T031827Z Authorization: AWS4-HMAC-SHA256
+     * Credential={access_key_ID}/20170223/us-east-1/apigateway/aws4_request,
      * SignedHeaders=content-type;host;x-amz-date, Signature={sig4_hash}</code></pre>
      * <h5>Response</h5> <pre><code>{ "_links": { "curies": [ { "href":
      * "http://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-integration-{rel}.html",
@@ -883,8 +883,8 @@ namespace Model
      * <h5>Request</h5> <pre><code>GET
      * /restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET HTTP/1.1 Content-Type:
      * application/json Host: apigateway.us-east-1.amazonaws.com X-Amz-Date:
-     * 20160608T031827Z Authorization: AWS4-HMAC-SHA256
-     * Credential={access_key_ID}/20160608/us-east-1/apigateway/aws4_request,
+     * 20170223T031827Z Authorization: AWS4-HMAC-SHA256
+     * Credential={access_key_ID}/20170223/us-east-1/apigateway/aws4_request,
      * SignedHeaders=content-type;host;x-amz-date, Signature={sig4_hash}</code></pre>
      * <h5>Response</h5> <pre><code>{ "_links": { "curies": [ { "href":
      * "http://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-integration-{rel}.html",
@@ -959,8 +959,8 @@ namespace Model
      * <h5>Request</h5> <pre><code>GET
      * /restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET HTTP/1.1 Content-Type:
      * application/json Host: apigateway.us-east-1.amazonaws.com X-Amz-Date:
-     * 20160608T031827Z Authorization: AWS4-HMAC-SHA256
-     * Credential={access_key_ID}/20160608/us-east-1/apigateway/aws4_request,
+     * 20170223T031827Z Authorization: AWS4-HMAC-SHA256
+     * Credential={access_key_ID}/20170223/us-east-1/apigateway/aws4_request,
      * SignedHeaders=content-type;host;x-amz-date, Signature={sig4_hash}</code></pre>
      * <h5>Response</h5> <pre><code>{ "_links": { "curies": [ { "href":
      * "http://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-integration-{rel}.html",

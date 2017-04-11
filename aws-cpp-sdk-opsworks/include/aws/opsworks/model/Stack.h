@@ -711,20 +711,20 @@ namespace Model
     inline Stack& WithUseCustomCookbooks(bool value) { SetUseCustomCookbooks(value); return *this;}
 
     /**
-     * <p>Whether the stack automatically associates the AWS OpsWorks built-in security
-     * groups with the stack's layers.</p>
+     * <p>Whether the stack automatically associates the AWS OpsWorks Stacks built-in
+     * security groups with the stack's layers.</p>
      */
     inline bool GetUseOpsworksSecurityGroups() const{ return m_useOpsworksSecurityGroups; }
 
     /**
-     * <p>Whether the stack automatically associates the AWS OpsWorks built-in security
-     * groups with the stack's layers.</p>
+     * <p>Whether the stack automatically associates the AWS OpsWorks Stacks built-in
+     * security groups with the stack's layers.</p>
      */
     inline void SetUseOpsworksSecurityGroups(bool value) { m_useOpsworksSecurityGroupsHasBeenSet = true; m_useOpsworksSecurityGroups = value; }
 
     /**
-     * <p>Whether the stack automatically associates the AWS OpsWorks built-in security
-     * groups with the stack's layers.</p>
+     * <p>Whether the stack automatically associates the AWS OpsWorks Stacks built-in
+     * security groups with the stack's layers.</p>
      */
     inline Stack& WithUseOpsworksSecurityGroups(bool value) { SetUseOpsworksSecurityGroups(value); return *this;}
 

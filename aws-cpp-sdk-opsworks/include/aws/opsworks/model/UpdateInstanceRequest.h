@@ -267,20 +267,21 @@ namespace Model
      * <p>The instance's operating system, which must be set to one of the following.
      * You cannot update an instance that is using a custom AMI.</p> <ul> <li> <p>A
      * supported Linux operating system: An Amazon Linux version, such as <code>Amazon
-     * Linux 2016.03</code>, <code>Amazon Linux 2015.09</code>, or <code>Amazon Linux
-     * 2015.03</code>.</p> </li> <li> <p>A supported Ubuntu operating system, such as
-     * <code>Ubuntu 16.04 LTS</code>, <code>Ubuntu 14.04 LTS</code>, or <code>Ubuntu
-     * 12.04 LTS</code>.</p> </li> <li> <p> <code>CentOS 7</code> </p> </li> <li> <p>
-     * <code>Red Hat Enterprise Linux 7</code> </p> </li> <li> <p>A supported Windows
-     * operating system, such as <code>Microsoft Windows Server 2012 R2 Base</code>,
-     * <code>Microsoft Windows Server 2012 R2 with SQL Server Express</code>,
-     * <code>Microsoft Windows Server 2012 R2 with SQL Server Standard</code>, or
-     * <code>Microsoft Windows Server 2012 R2 with SQL Server Web</code>.</p> </li>
-     * </ul> <p>For more information on the supported operating systems, see <a
+     * Linux 2016.09</code>, <code>Amazon Linux 2016.03</code>, <code>Amazon Linux
+     * 2015.09</code>, or <code>Amazon Linux 2015.03</code>.</p> </li> <li> <p>A
+     * supported Ubuntu operating system, such as <code>Ubuntu 16.04 LTS</code>,
+     * <code>Ubuntu 14.04 LTS</code>, or <code>Ubuntu 12.04 LTS</code>.</p> </li> <li>
+     * <p> <code>CentOS Linux 7</code> </p> </li> <li> <p> <code>Red Hat Enterprise
+     * Linux 7</code> </p> </li> <li> <p>A supported Windows operating system, such as
+     * <code>Microsoft Windows Server 2012 R2 Base</code>, <code>Microsoft Windows
+     * Server 2012 R2 with SQL Server Express</code>, <code>Microsoft Windows Server
+     * 2012 R2 with SQL Server Standard</code>, or <code>Microsoft Windows Server 2012
+     * R2 with SQL Server Web</code>.</p> </li> </ul> <p>For more information on the
+     * supported operating systems, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS
-     * OpsWorks Operating Systems</a>.</p> <p>The default option is the current Amazon
-     * Linux version. If you set this parameter to <code>Custom</code>, you must use
-     * the AmiId parameter to specify the custom AMI that you want to use. For more
+     * OpsWorks Stacks Operating Systems</a>.</p> <p>The default option is the current
+     * Amazon Linux version. If you set this parameter to <code>Custom</code>, you must
+     * use the AmiId parameter to specify the custom AMI that you want to use. For more
      * information on the supported operating systems, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">Operating
      * Systems</a>. For more information on how to use custom AMIs with OpsWorks, see
@@ -296,20 +297,21 @@ namespace Model
      * <p>The instance's operating system, which must be set to one of the following.
      * You cannot update an instance that is using a custom AMI.</p> <ul> <li> <p>A
      * supported Linux operating system: An Amazon Linux version, such as <code>Amazon
-     * Linux 2016.03</code>, <code>Amazon Linux 2015.09</code>, or <code>Amazon Linux
-     * 2015.03</code>.</p> </li> <li> <p>A supported Ubuntu operating system, such as
-     * <code>Ubuntu 16.04 LTS</code>, <code>Ubuntu 14.04 LTS</code>, or <code>Ubuntu
-     * 12.04 LTS</code>.</p> </li> <li> <p> <code>CentOS 7</code> </p> </li> <li> <p>
-     * <code>Red Hat Enterprise Linux 7</code> </p> </li> <li> <p>A supported Windows
-     * operating system, such as <code>Microsoft Windows Server 2012 R2 Base</code>,
-     * <code>Microsoft Windows Server 2012 R2 with SQL Server Express</code>,
-     * <code>Microsoft Windows Server 2012 R2 with SQL Server Standard</code>, or
-     * <code>Microsoft Windows Server 2012 R2 with SQL Server Web</code>.</p> </li>
-     * </ul> <p>For more information on the supported operating systems, see <a
+     * Linux 2016.09</code>, <code>Amazon Linux 2016.03</code>, <code>Amazon Linux
+     * 2015.09</code>, or <code>Amazon Linux 2015.03</code>.</p> </li> <li> <p>A
+     * supported Ubuntu operating system, such as <code>Ubuntu 16.04 LTS</code>,
+     * <code>Ubuntu 14.04 LTS</code>, or <code>Ubuntu 12.04 LTS</code>.</p> </li> <li>
+     * <p> <code>CentOS Linux 7</code> </p> </li> <li> <p> <code>Red Hat Enterprise
+     * Linux 7</code> </p> </li> <li> <p>A supported Windows operating system, such as
+     * <code>Microsoft Windows Server 2012 R2 Base</code>, <code>Microsoft Windows
+     * Server 2012 R2 with SQL Server Express</code>, <code>Microsoft Windows Server
+     * 2012 R2 with SQL Server Standard</code>, or <code>Microsoft Windows Server 2012
+     * R2 with SQL Server Web</code>.</p> </li> </ul> <p>For more information on the
+     * supported operating systems, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS
-     * OpsWorks Operating Systems</a>.</p> <p>The default option is the current Amazon
-     * Linux version. If you set this parameter to <code>Custom</code>, you must use
-     * the AmiId parameter to specify the custom AMI that you want to use. For more
+     * OpsWorks Stacks Operating Systems</a>.</p> <p>The default option is the current
+     * Amazon Linux version. If you set this parameter to <code>Custom</code>, you must
+     * use the AmiId parameter to specify the custom AMI that you want to use. For more
      * information on the supported operating systems, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">Operating
      * Systems</a>. For more information on how to use custom AMIs with OpsWorks, see
@@ -325,20 +327,21 @@ namespace Model
      * <p>The instance's operating system, which must be set to one of the following.
      * You cannot update an instance that is using a custom AMI.</p> <ul> <li> <p>A
      * supported Linux operating system: An Amazon Linux version, such as <code>Amazon
-     * Linux 2016.03</code>, <code>Amazon Linux 2015.09</code>, or <code>Amazon Linux
-     * 2015.03</code>.</p> </li> <li> <p>A supported Ubuntu operating system, such as
-     * <code>Ubuntu 16.04 LTS</code>, <code>Ubuntu 14.04 LTS</code>, or <code>Ubuntu
-     * 12.04 LTS</code>.</p> </li> <li> <p> <code>CentOS 7</code> </p> </li> <li> <p>
-     * <code>Red Hat Enterprise Linux 7</code> </p> </li> <li> <p>A supported Windows
-     * operating system, such as <code>Microsoft Windows Server 2012 R2 Base</code>,
-     * <code>Microsoft Windows Server 2012 R2 with SQL Server Express</code>,
-     * <code>Microsoft Windows Server 2012 R2 with SQL Server Standard</code>, or
-     * <code>Microsoft Windows Server 2012 R2 with SQL Server Web</code>.</p> </li>
-     * </ul> <p>For more information on the supported operating systems, see <a
+     * Linux 2016.09</code>, <code>Amazon Linux 2016.03</code>, <code>Amazon Linux
+     * 2015.09</code>, or <code>Amazon Linux 2015.03</code>.</p> </li> <li> <p>A
+     * supported Ubuntu operating system, such as <code>Ubuntu 16.04 LTS</code>,
+     * <code>Ubuntu 14.04 LTS</code>, or <code>Ubuntu 12.04 LTS</code>.</p> </li> <li>
+     * <p> <code>CentOS Linux 7</code> </p> </li> <li> <p> <code>Red Hat Enterprise
+     * Linux 7</code> </p> </li> <li> <p>A supported Windows operating system, such as
+     * <code>Microsoft Windows Server 2012 R2 Base</code>, <code>Microsoft Windows
+     * Server 2012 R2 with SQL Server Express</code>, <code>Microsoft Windows Server
+     * 2012 R2 with SQL Server Standard</code>, or <code>Microsoft Windows Server 2012
+     * R2 with SQL Server Web</code>.</p> </li> </ul> <p>For more information on the
+     * supported operating systems, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS
-     * OpsWorks Operating Systems</a>.</p> <p>The default option is the current Amazon
-     * Linux version. If you set this parameter to <code>Custom</code>, you must use
-     * the AmiId parameter to specify the custom AMI that you want to use. For more
+     * OpsWorks Stacks Operating Systems</a>.</p> <p>The default option is the current
+     * Amazon Linux version. If you set this parameter to <code>Custom</code>, you must
+     * use the AmiId parameter to specify the custom AMI that you want to use. For more
      * information on the supported operating systems, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">Operating
      * Systems</a>. For more information on how to use custom AMIs with OpsWorks, see
@@ -354,20 +357,21 @@ namespace Model
      * <p>The instance's operating system, which must be set to one of the following.
      * You cannot update an instance that is using a custom AMI.</p> <ul> <li> <p>A
      * supported Linux operating system: An Amazon Linux version, such as <code>Amazon
-     * Linux 2016.03</code>, <code>Amazon Linux 2015.09</code>, or <code>Amazon Linux
-     * 2015.03</code>.</p> </li> <li> <p>A supported Ubuntu operating system, such as
-     * <code>Ubuntu 16.04 LTS</code>, <code>Ubuntu 14.04 LTS</code>, or <code>Ubuntu
-     * 12.04 LTS</code>.</p> </li> <li> <p> <code>CentOS 7</code> </p> </li> <li> <p>
-     * <code>Red Hat Enterprise Linux 7</code> </p> </li> <li> <p>A supported Windows
-     * operating system, such as <code>Microsoft Windows Server 2012 R2 Base</code>,
-     * <code>Microsoft Windows Server 2012 R2 with SQL Server Express</code>,
-     * <code>Microsoft Windows Server 2012 R2 with SQL Server Standard</code>, or
-     * <code>Microsoft Windows Server 2012 R2 with SQL Server Web</code>.</p> </li>
-     * </ul> <p>For more information on the supported operating systems, see <a
+     * Linux 2016.09</code>, <code>Amazon Linux 2016.03</code>, <code>Amazon Linux
+     * 2015.09</code>, or <code>Amazon Linux 2015.03</code>.</p> </li> <li> <p>A
+     * supported Ubuntu operating system, such as <code>Ubuntu 16.04 LTS</code>,
+     * <code>Ubuntu 14.04 LTS</code>, or <code>Ubuntu 12.04 LTS</code>.</p> </li> <li>
+     * <p> <code>CentOS Linux 7</code> </p> </li> <li> <p> <code>Red Hat Enterprise
+     * Linux 7</code> </p> </li> <li> <p>A supported Windows operating system, such as
+     * <code>Microsoft Windows Server 2012 R2 Base</code>, <code>Microsoft Windows
+     * Server 2012 R2 with SQL Server Express</code>, <code>Microsoft Windows Server
+     * 2012 R2 with SQL Server Standard</code>, or <code>Microsoft Windows Server 2012
+     * R2 with SQL Server Web</code>.</p> </li> </ul> <p>For more information on the
+     * supported operating systems, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS
-     * OpsWorks Operating Systems</a>.</p> <p>The default option is the current Amazon
-     * Linux version. If you set this parameter to <code>Custom</code>, you must use
-     * the AmiId parameter to specify the custom AMI that you want to use. For more
+     * OpsWorks Stacks Operating Systems</a>.</p> <p>The default option is the current
+     * Amazon Linux version. If you set this parameter to <code>Custom</code>, you must
+     * use the AmiId parameter to specify the custom AMI that you want to use. For more
      * information on the supported operating systems, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">Operating
      * Systems</a>. For more information on how to use custom AMIs with OpsWorks, see
@@ -383,20 +387,21 @@ namespace Model
      * <p>The instance's operating system, which must be set to one of the following.
      * You cannot update an instance that is using a custom AMI.</p> <ul> <li> <p>A
      * supported Linux operating system: An Amazon Linux version, such as <code>Amazon
-     * Linux 2016.03</code>, <code>Amazon Linux 2015.09</code>, or <code>Amazon Linux
-     * 2015.03</code>.</p> </li> <li> <p>A supported Ubuntu operating system, such as
-     * <code>Ubuntu 16.04 LTS</code>, <code>Ubuntu 14.04 LTS</code>, or <code>Ubuntu
-     * 12.04 LTS</code>.</p> </li> <li> <p> <code>CentOS 7</code> </p> </li> <li> <p>
-     * <code>Red Hat Enterprise Linux 7</code> </p> </li> <li> <p>A supported Windows
-     * operating system, such as <code>Microsoft Windows Server 2012 R2 Base</code>,
-     * <code>Microsoft Windows Server 2012 R2 with SQL Server Express</code>,
-     * <code>Microsoft Windows Server 2012 R2 with SQL Server Standard</code>, or
-     * <code>Microsoft Windows Server 2012 R2 with SQL Server Web</code>.</p> </li>
-     * </ul> <p>For more information on the supported operating systems, see <a
+     * Linux 2016.09</code>, <code>Amazon Linux 2016.03</code>, <code>Amazon Linux
+     * 2015.09</code>, or <code>Amazon Linux 2015.03</code>.</p> </li> <li> <p>A
+     * supported Ubuntu operating system, such as <code>Ubuntu 16.04 LTS</code>,
+     * <code>Ubuntu 14.04 LTS</code>, or <code>Ubuntu 12.04 LTS</code>.</p> </li> <li>
+     * <p> <code>CentOS Linux 7</code> </p> </li> <li> <p> <code>Red Hat Enterprise
+     * Linux 7</code> </p> </li> <li> <p>A supported Windows operating system, such as
+     * <code>Microsoft Windows Server 2012 R2 Base</code>, <code>Microsoft Windows
+     * Server 2012 R2 with SQL Server Express</code>, <code>Microsoft Windows Server
+     * 2012 R2 with SQL Server Standard</code>, or <code>Microsoft Windows Server 2012
+     * R2 with SQL Server Web</code>.</p> </li> </ul> <p>For more information on the
+     * supported operating systems, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS
-     * OpsWorks Operating Systems</a>.</p> <p>The default option is the current Amazon
-     * Linux version. If you set this parameter to <code>Custom</code>, you must use
-     * the AmiId parameter to specify the custom AMI that you want to use. For more
+     * OpsWorks Stacks Operating Systems</a>.</p> <p>The default option is the current
+     * Amazon Linux version. If you set this parameter to <code>Custom</code>, you must
+     * use the AmiId parameter to specify the custom AMI that you want to use. For more
      * information on the supported operating systems, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">Operating
      * Systems</a>. For more information on how to use custom AMIs with OpsWorks, see
@@ -412,20 +417,21 @@ namespace Model
      * <p>The instance's operating system, which must be set to one of the following.
      * You cannot update an instance that is using a custom AMI.</p> <ul> <li> <p>A
      * supported Linux operating system: An Amazon Linux version, such as <code>Amazon
-     * Linux 2016.03</code>, <code>Amazon Linux 2015.09</code>, or <code>Amazon Linux
-     * 2015.03</code>.</p> </li> <li> <p>A supported Ubuntu operating system, such as
-     * <code>Ubuntu 16.04 LTS</code>, <code>Ubuntu 14.04 LTS</code>, or <code>Ubuntu
-     * 12.04 LTS</code>.</p> </li> <li> <p> <code>CentOS 7</code> </p> </li> <li> <p>
-     * <code>Red Hat Enterprise Linux 7</code> </p> </li> <li> <p>A supported Windows
-     * operating system, such as <code>Microsoft Windows Server 2012 R2 Base</code>,
-     * <code>Microsoft Windows Server 2012 R2 with SQL Server Express</code>,
-     * <code>Microsoft Windows Server 2012 R2 with SQL Server Standard</code>, or
-     * <code>Microsoft Windows Server 2012 R2 with SQL Server Web</code>.</p> </li>
-     * </ul> <p>For more information on the supported operating systems, see <a
+     * Linux 2016.09</code>, <code>Amazon Linux 2016.03</code>, <code>Amazon Linux
+     * 2015.09</code>, or <code>Amazon Linux 2015.03</code>.</p> </li> <li> <p>A
+     * supported Ubuntu operating system, such as <code>Ubuntu 16.04 LTS</code>,
+     * <code>Ubuntu 14.04 LTS</code>, or <code>Ubuntu 12.04 LTS</code>.</p> </li> <li>
+     * <p> <code>CentOS Linux 7</code> </p> </li> <li> <p> <code>Red Hat Enterprise
+     * Linux 7</code> </p> </li> <li> <p>A supported Windows operating system, such as
+     * <code>Microsoft Windows Server 2012 R2 Base</code>, <code>Microsoft Windows
+     * Server 2012 R2 with SQL Server Express</code>, <code>Microsoft Windows Server
+     * 2012 R2 with SQL Server Standard</code>, or <code>Microsoft Windows Server 2012
+     * R2 with SQL Server Web</code>.</p> </li> </ul> <p>For more information on the
+     * supported operating systems, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS
-     * OpsWorks Operating Systems</a>.</p> <p>The default option is the current Amazon
-     * Linux version. If you set this parameter to <code>Custom</code>, you must use
-     * the AmiId parameter to specify the custom AMI that you want to use. For more
+     * OpsWorks Stacks Operating Systems</a>.</p> <p>The default option is the current
+     * Amazon Linux version. If you set this parameter to <code>Custom</code>, you must
+     * use the AmiId parameter to specify the custom AMI that you want to use. For more
      * information on the supported operating systems, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">Operating
      * Systems</a>. For more information on how to use custom AMIs with OpsWorks, see
@@ -441,20 +447,21 @@ namespace Model
      * <p>The instance's operating system, which must be set to one of the following.
      * You cannot update an instance that is using a custom AMI.</p> <ul> <li> <p>A
      * supported Linux operating system: An Amazon Linux version, such as <code>Amazon
-     * Linux 2016.03</code>, <code>Amazon Linux 2015.09</code>, or <code>Amazon Linux
-     * 2015.03</code>.</p> </li> <li> <p>A supported Ubuntu operating system, such as
-     * <code>Ubuntu 16.04 LTS</code>, <code>Ubuntu 14.04 LTS</code>, or <code>Ubuntu
-     * 12.04 LTS</code>.</p> </li> <li> <p> <code>CentOS 7</code> </p> </li> <li> <p>
-     * <code>Red Hat Enterprise Linux 7</code> </p> </li> <li> <p>A supported Windows
-     * operating system, such as <code>Microsoft Windows Server 2012 R2 Base</code>,
-     * <code>Microsoft Windows Server 2012 R2 with SQL Server Express</code>,
-     * <code>Microsoft Windows Server 2012 R2 with SQL Server Standard</code>, or
-     * <code>Microsoft Windows Server 2012 R2 with SQL Server Web</code>.</p> </li>
-     * </ul> <p>For more information on the supported operating systems, see <a
+     * Linux 2016.09</code>, <code>Amazon Linux 2016.03</code>, <code>Amazon Linux
+     * 2015.09</code>, or <code>Amazon Linux 2015.03</code>.</p> </li> <li> <p>A
+     * supported Ubuntu operating system, such as <code>Ubuntu 16.04 LTS</code>,
+     * <code>Ubuntu 14.04 LTS</code>, or <code>Ubuntu 12.04 LTS</code>.</p> </li> <li>
+     * <p> <code>CentOS Linux 7</code> </p> </li> <li> <p> <code>Red Hat Enterprise
+     * Linux 7</code> </p> </li> <li> <p>A supported Windows operating system, such as
+     * <code>Microsoft Windows Server 2012 R2 Base</code>, <code>Microsoft Windows
+     * Server 2012 R2 with SQL Server Express</code>, <code>Microsoft Windows Server
+     * 2012 R2 with SQL Server Standard</code>, or <code>Microsoft Windows Server 2012
+     * R2 with SQL Server Web</code>.</p> </li> </ul> <p>For more information on the
+     * supported operating systems, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS
-     * OpsWorks Operating Systems</a>.</p> <p>The default option is the current Amazon
-     * Linux version. If you set this parameter to <code>Custom</code>, you must use
-     * the AmiId parameter to specify the custom AMI that you want to use. For more
+     * OpsWorks Stacks Operating Systems</a>.</p> <p>The default option is the current
+     * Amazon Linux version. If you set this parameter to <code>Custom</code>, you must
+     * use the AmiId parameter to specify the custom AMI that you want to use. For more
      * information on the supported operating systems, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">Operating
      * Systems</a>. For more information on how to use custom AMIs with OpsWorks, see
@@ -657,100 +664,107 @@ namespace Model
     inline UpdateInstanceRequest& WithEbsOptimized(bool value) { SetEbsOptimized(value); return *this;}
 
     /**
-     * <p>The default AWS OpsWorks agent version. You have the following options:</p>
-     * <ul> <li> <p> <code>INHERIT</code> - Use the stack's default agent version
-     * setting.</p> </li> <li> <p> <i>version_number</i> - Use the specified agent
-     * version. This value overrides the stack's default setting. To update the agent
-     * version, you must edit the instance configuration and specify a new version. AWS
-     * OpsWorks then automatically installs that version on the instance.</p> </li>
-     * </ul> <p>The default setting is <code>INHERIT</code>. To specify an agent
-     * version, you must use the complete version number, not the abbreviated number
-     * shown on the console. For a list of available agent version numbers, call
-     * <a>DescribeAgentVersions</a>.</p>
+     * <p>The default AWS OpsWorks Stacks agent version. You have the following
+     * options:</p> <ul> <li> <p> <code>INHERIT</code> - Use the stack's default agent
+     * version setting.</p> </li> <li> <p> <i>version_number</i> - Use the specified
+     * agent version. This value overrides the stack's default setting. To update the
+     * agent version, you must edit the instance configuration and specify a new
+     * version. AWS OpsWorks Stacks then automatically installs that version on the
+     * instance.</p> </li> </ul> <p>The default setting is <code>INHERIT</code>. To
+     * specify an agent version, you must use the complete version number, not the
+     * abbreviated number shown on the console. For a list of available agent version
+     * numbers, call <a>DescribeAgentVersions</a>.</p> <p>AgentVersion cannot be set to
+     * Chef 12.2.</p>
      */
     inline const Aws::String& GetAgentVersion() const{ return m_agentVersion; }
 
     /**
-     * <p>The default AWS OpsWorks agent version. You have the following options:</p>
-     * <ul> <li> <p> <code>INHERIT</code> - Use the stack's default agent version
-     * setting.</p> </li> <li> <p> <i>version_number</i> - Use the specified agent
-     * version. This value overrides the stack's default setting. To update the agent
-     * version, you must edit the instance configuration and specify a new version. AWS
-     * OpsWorks then automatically installs that version on the instance.</p> </li>
-     * </ul> <p>The default setting is <code>INHERIT</code>. To specify an agent
-     * version, you must use the complete version number, not the abbreviated number
-     * shown on the console. For a list of available agent version numbers, call
-     * <a>DescribeAgentVersions</a>.</p>
+     * <p>The default AWS OpsWorks Stacks agent version. You have the following
+     * options:</p> <ul> <li> <p> <code>INHERIT</code> - Use the stack's default agent
+     * version setting.</p> </li> <li> <p> <i>version_number</i> - Use the specified
+     * agent version. This value overrides the stack's default setting. To update the
+     * agent version, you must edit the instance configuration and specify a new
+     * version. AWS OpsWorks Stacks then automatically installs that version on the
+     * instance.</p> </li> </ul> <p>The default setting is <code>INHERIT</code>. To
+     * specify an agent version, you must use the complete version number, not the
+     * abbreviated number shown on the console. For a list of available agent version
+     * numbers, call <a>DescribeAgentVersions</a>.</p> <p>AgentVersion cannot be set to
+     * Chef 12.2.</p>
      */
     inline void SetAgentVersion(const Aws::String& value) { m_agentVersionHasBeenSet = true; m_agentVersion = value; }
 
     /**
-     * <p>The default AWS OpsWorks agent version. You have the following options:</p>
-     * <ul> <li> <p> <code>INHERIT</code> - Use the stack's default agent version
-     * setting.</p> </li> <li> <p> <i>version_number</i> - Use the specified agent
-     * version. This value overrides the stack's default setting. To update the agent
-     * version, you must edit the instance configuration and specify a new version. AWS
-     * OpsWorks then automatically installs that version on the instance.</p> </li>
-     * </ul> <p>The default setting is <code>INHERIT</code>. To specify an agent
-     * version, you must use the complete version number, not the abbreviated number
-     * shown on the console. For a list of available agent version numbers, call
-     * <a>DescribeAgentVersions</a>.</p>
+     * <p>The default AWS OpsWorks Stacks agent version. You have the following
+     * options:</p> <ul> <li> <p> <code>INHERIT</code> - Use the stack's default agent
+     * version setting.</p> </li> <li> <p> <i>version_number</i> - Use the specified
+     * agent version. This value overrides the stack's default setting. To update the
+     * agent version, you must edit the instance configuration and specify a new
+     * version. AWS OpsWorks Stacks then automatically installs that version on the
+     * instance.</p> </li> </ul> <p>The default setting is <code>INHERIT</code>. To
+     * specify an agent version, you must use the complete version number, not the
+     * abbreviated number shown on the console. For a list of available agent version
+     * numbers, call <a>DescribeAgentVersions</a>.</p> <p>AgentVersion cannot be set to
+     * Chef 12.2.</p>
      */
     inline void SetAgentVersion(Aws::String&& value) { m_agentVersionHasBeenSet = true; m_agentVersion = std::move(value); }
 
     /**
-     * <p>The default AWS OpsWorks agent version. You have the following options:</p>
-     * <ul> <li> <p> <code>INHERIT</code> - Use the stack's default agent version
-     * setting.</p> </li> <li> <p> <i>version_number</i> - Use the specified agent
-     * version. This value overrides the stack's default setting. To update the agent
-     * version, you must edit the instance configuration and specify a new version. AWS
-     * OpsWorks then automatically installs that version on the instance.</p> </li>
-     * </ul> <p>The default setting is <code>INHERIT</code>. To specify an agent
-     * version, you must use the complete version number, not the abbreviated number
-     * shown on the console. For a list of available agent version numbers, call
-     * <a>DescribeAgentVersions</a>.</p>
+     * <p>The default AWS OpsWorks Stacks agent version. You have the following
+     * options:</p> <ul> <li> <p> <code>INHERIT</code> - Use the stack's default agent
+     * version setting.</p> </li> <li> <p> <i>version_number</i> - Use the specified
+     * agent version. This value overrides the stack's default setting. To update the
+     * agent version, you must edit the instance configuration and specify a new
+     * version. AWS OpsWorks Stacks then automatically installs that version on the
+     * instance.</p> </li> </ul> <p>The default setting is <code>INHERIT</code>. To
+     * specify an agent version, you must use the complete version number, not the
+     * abbreviated number shown on the console. For a list of available agent version
+     * numbers, call <a>DescribeAgentVersions</a>.</p> <p>AgentVersion cannot be set to
+     * Chef 12.2.</p>
      */
     inline void SetAgentVersion(const char* value) { m_agentVersionHasBeenSet = true; m_agentVersion.assign(value); }
 
     /**
-     * <p>The default AWS OpsWorks agent version. You have the following options:</p>
-     * <ul> <li> <p> <code>INHERIT</code> - Use the stack's default agent version
-     * setting.</p> </li> <li> <p> <i>version_number</i> - Use the specified agent
-     * version. This value overrides the stack's default setting. To update the agent
-     * version, you must edit the instance configuration and specify a new version. AWS
-     * OpsWorks then automatically installs that version on the instance.</p> </li>
-     * </ul> <p>The default setting is <code>INHERIT</code>. To specify an agent
-     * version, you must use the complete version number, not the abbreviated number
-     * shown on the console. For a list of available agent version numbers, call
-     * <a>DescribeAgentVersions</a>.</p>
+     * <p>The default AWS OpsWorks Stacks agent version. You have the following
+     * options:</p> <ul> <li> <p> <code>INHERIT</code> - Use the stack's default agent
+     * version setting.</p> </li> <li> <p> <i>version_number</i> - Use the specified
+     * agent version. This value overrides the stack's default setting. To update the
+     * agent version, you must edit the instance configuration and specify a new
+     * version. AWS OpsWorks Stacks then automatically installs that version on the
+     * instance.</p> </li> </ul> <p>The default setting is <code>INHERIT</code>. To
+     * specify an agent version, you must use the complete version number, not the
+     * abbreviated number shown on the console. For a list of available agent version
+     * numbers, call <a>DescribeAgentVersions</a>.</p> <p>AgentVersion cannot be set to
+     * Chef 12.2.</p>
      */
     inline UpdateInstanceRequest& WithAgentVersion(const Aws::String& value) { SetAgentVersion(value); return *this;}
 
     /**
-     * <p>The default AWS OpsWorks agent version. You have the following options:</p>
-     * <ul> <li> <p> <code>INHERIT</code> - Use the stack's default agent version
-     * setting.</p> </li> <li> <p> <i>version_number</i> - Use the specified agent
-     * version. This value overrides the stack's default setting. To update the agent
-     * version, you must edit the instance configuration and specify a new version. AWS
-     * OpsWorks then automatically installs that version on the instance.</p> </li>
-     * </ul> <p>The default setting is <code>INHERIT</code>. To specify an agent
-     * version, you must use the complete version number, not the abbreviated number
-     * shown on the console. For a list of available agent version numbers, call
-     * <a>DescribeAgentVersions</a>.</p>
+     * <p>The default AWS OpsWorks Stacks agent version. You have the following
+     * options:</p> <ul> <li> <p> <code>INHERIT</code> - Use the stack's default agent
+     * version setting.</p> </li> <li> <p> <i>version_number</i> - Use the specified
+     * agent version. This value overrides the stack's default setting. To update the
+     * agent version, you must edit the instance configuration and specify a new
+     * version. AWS OpsWorks Stacks then automatically installs that version on the
+     * instance.</p> </li> </ul> <p>The default setting is <code>INHERIT</code>. To
+     * specify an agent version, you must use the complete version number, not the
+     * abbreviated number shown on the console. For a list of available agent version
+     * numbers, call <a>DescribeAgentVersions</a>.</p> <p>AgentVersion cannot be set to
+     * Chef 12.2.</p>
      */
     inline UpdateInstanceRequest& WithAgentVersion(Aws::String&& value) { SetAgentVersion(std::move(value)); return *this;}
 
     /**
-     * <p>The default AWS OpsWorks agent version. You have the following options:</p>
-     * <ul> <li> <p> <code>INHERIT</code> - Use the stack's default agent version
-     * setting.</p> </li> <li> <p> <i>version_number</i> - Use the specified agent
-     * version. This value overrides the stack's default setting. To update the agent
-     * version, you must edit the instance configuration and specify a new version. AWS
-     * OpsWorks then automatically installs that version on the instance.</p> </li>
-     * </ul> <p>The default setting is <code>INHERIT</code>. To specify an agent
-     * version, you must use the complete version number, not the abbreviated number
-     * shown on the console. For a list of available agent version numbers, call
-     * <a>DescribeAgentVersions</a>.</p>
+     * <p>The default AWS OpsWorks Stacks agent version. You have the following
+     * options:</p> <ul> <li> <p> <code>INHERIT</code> - Use the stack's default agent
+     * version setting.</p> </li> <li> <p> <i>version_number</i> - Use the specified
+     * agent version. This value overrides the stack's default setting. To update the
+     * agent version, you must edit the instance configuration and specify a new
+     * version. AWS OpsWorks Stacks then automatically installs that version on the
+     * instance.</p> </li> </ul> <p>The default setting is <code>INHERIT</code>. To
+     * specify an agent version, you must use the complete version number, not the
+     * abbreviated number shown on the console. For a list of available agent version
+     * numbers, call <a>DescribeAgentVersions</a>.</p> <p>AgentVersion cannot be set to
+     * Chef 12.2.</p>
      */
     inline UpdateInstanceRequest& WithAgentVersion(const char* value) { SetAgentVersion(value); return *this;}
 

@@ -62,6 +62,12 @@ GetMethodResult& GetMethodResult::operator =(const AmazonWebServiceResult<JsonVa
 
   }
 
+  if(jsonValue.ValueExists("requestValidatorId"))
+  {
+    m_requestValidatorId = jsonValue.GetString("requestValidatorId");
+
+  }
+
   if(jsonValue.ValueExists("operationName"))
   {
     m_operationName = jsonValue.GetString("operationName");

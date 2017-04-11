@@ -168,37 +168,58 @@ namespace Model
     inline Method& WithHttpMethod(const char* value) { SetHttpMethod(value); return *this;}
 
     /**
-     * <p>The method's authorization type.</p>
+     * <p>The method's authorization type. Valid values are <code>NONE</code> for open
+     * access, <code>AWS_IAM</code> for using AWS IAM permissions, <code>CUSTOM</code>
+     * for using a custom authorizer, or <code>COGNITO_USER_POOLS</code> for using a
+     * Cognito user pool.</p>
      */
     inline const Aws::String& GetAuthorizationType() const{ return m_authorizationType; }
 
     /**
-     * <p>The method's authorization type.</p>
+     * <p>The method's authorization type. Valid values are <code>NONE</code> for open
+     * access, <code>AWS_IAM</code> for using AWS IAM permissions, <code>CUSTOM</code>
+     * for using a custom authorizer, or <code>COGNITO_USER_POOLS</code> for using a
+     * Cognito user pool.</p>
      */
     inline void SetAuthorizationType(const Aws::String& value) { m_authorizationTypeHasBeenSet = true; m_authorizationType = value; }
 
     /**
-     * <p>The method's authorization type.</p>
+     * <p>The method's authorization type. Valid values are <code>NONE</code> for open
+     * access, <code>AWS_IAM</code> for using AWS IAM permissions, <code>CUSTOM</code>
+     * for using a custom authorizer, or <code>COGNITO_USER_POOLS</code> for using a
+     * Cognito user pool.</p>
      */
     inline void SetAuthorizationType(Aws::String&& value) { m_authorizationTypeHasBeenSet = true; m_authorizationType = std::move(value); }
 
     /**
-     * <p>The method's authorization type.</p>
+     * <p>The method's authorization type. Valid values are <code>NONE</code> for open
+     * access, <code>AWS_IAM</code> for using AWS IAM permissions, <code>CUSTOM</code>
+     * for using a custom authorizer, or <code>COGNITO_USER_POOLS</code> for using a
+     * Cognito user pool.</p>
      */
     inline void SetAuthorizationType(const char* value) { m_authorizationTypeHasBeenSet = true; m_authorizationType.assign(value); }
 
     /**
-     * <p>The method's authorization type.</p>
+     * <p>The method's authorization type. Valid values are <code>NONE</code> for open
+     * access, <code>AWS_IAM</code> for using AWS IAM permissions, <code>CUSTOM</code>
+     * for using a custom authorizer, or <code>COGNITO_USER_POOLS</code> for using a
+     * Cognito user pool.</p>
      */
     inline Method& WithAuthorizationType(const Aws::String& value) { SetAuthorizationType(value); return *this;}
 
     /**
-     * <p>The method's authorization type.</p>
+     * <p>The method's authorization type. Valid values are <code>NONE</code> for open
+     * access, <code>AWS_IAM</code> for using AWS IAM permissions, <code>CUSTOM</code>
+     * for using a custom authorizer, or <code>COGNITO_USER_POOLS</code> for using a
+     * Cognito user pool.</p>
      */
     inline Method& WithAuthorizationType(Aws::String&& value) { SetAuthorizationType(std::move(value)); return *this;}
 
     /**
-     * <p>The method's authorization type.</p>
+     * <p>The method's authorization type. Valid values are <code>NONE</code> for open
+     * access, <code>AWS_IAM</code> for using AWS IAM permissions, <code>CUSTOM</code>
+     * for using a custom authorizer, or <code>COGNITO_USER_POOLS</code> for using a
+     * Cognito user pool.</p>
      */
     inline Method& WithAuthorizationType(const char* value) { SetAuthorizationType(value); return *this;}
 
@@ -261,6 +282,41 @@ namespace Model
      * this method.</p>
      */
     inline Method& WithApiKeyRequired(bool value) { SetApiKeyRequired(value); return *this;}
+
+    /**
+     * <p>The identifier of a <a>RequestValidator</a> for request validation.</p>
+     */
+    inline const Aws::String& GetRequestValidatorId() const{ return m_requestValidatorId; }
+
+    /**
+     * <p>The identifier of a <a>RequestValidator</a> for request validation.</p>
+     */
+    inline void SetRequestValidatorId(const Aws::String& value) { m_requestValidatorIdHasBeenSet = true; m_requestValidatorId = value; }
+
+    /**
+     * <p>The identifier of a <a>RequestValidator</a> for request validation.</p>
+     */
+    inline void SetRequestValidatorId(Aws::String&& value) { m_requestValidatorIdHasBeenSet = true; m_requestValidatorId = std::move(value); }
+
+    /**
+     * <p>The identifier of a <a>RequestValidator</a> for request validation.</p>
+     */
+    inline void SetRequestValidatorId(const char* value) { m_requestValidatorIdHasBeenSet = true; m_requestValidatorId.assign(value); }
+
+    /**
+     * <p>The identifier of a <a>RequestValidator</a> for request validation.</p>
+     */
+    inline Method& WithRequestValidatorId(const Aws::String& value) { SetRequestValidatorId(value); return *this;}
+
+    /**
+     * <p>The identifier of a <a>RequestValidator</a> for request validation.</p>
+     */
+    inline Method& WithRequestValidatorId(Aws::String&& value) { SetRequestValidatorId(std::move(value)); return *this;}
+
+    /**
+     * <p>The identifier of a <a>RequestValidator</a> for request validation.</p>
+     */
+    inline Method& WithRequestValidatorId(const char* value) { SetRequestValidatorId(value); return *this;}
 
     /**
      * <p>A human-friendly operation identifier for the method. For example, you can
@@ -1123,6 +1179,8 @@ namespace Model
     bool m_authorizerIdHasBeenSet;
     bool m_apiKeyRequired;
     bool m_apiKeyRequiredHasBeenSet;
+    Aws::String m_requestValidatorId;
+    bool m_requestValidatorIdHasBeenSet;
     Aws::String m_operationName;
     bool m_operationNameHasBeenSet;
     Aws::Map<Aws::String, bool> m_requestParameters;
